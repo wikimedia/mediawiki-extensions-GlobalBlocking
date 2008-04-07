@@ -26,10 +26,9 @@ $messages['en'] = array(
 	'globalblocking-block-submit' => 'Block this IP address globally',
 	'globalblocking-block-success' => 'The IP address $1 has been successfully blocked on all Wikimedia projects. You may wish to consult the [[Special:Globalblocklist|list of global blocks]].',
 	'globalblocking-block-successsub' => 'Global block successful',
-	
 	'globalblocking-list' => 'List of globally blocked IP addresses',
 	'globalblocking-search-legend' => 'Search for a global block',
-	'globalblocking-search-ip' => wfMsg( 'ipaddress' ),
+	'globalblocking-search-ip' => 'IP Address:',
 	'globalblocking-search-submit' => 'Search for blocks',
 	'globalblocking-list-ipinvalid' => 'The IP address you searched for ($1) is invalid. Please enter a valid IP address.',
 	'globalblocking-search-errors' => "Your search was unsuccessful, because:\n\$1",
@@ -40,7 +39,7 @@ $messages['en'] = array(
 	
 	'globalblocking-unblock-ipinvalid' => 'The IP address ($1) you entered is invalid. Please note that you cannot enter a user name!',
 	'globalblocking-unblock-legend' => 'Remove a global block',
-	'globalblocking-unblock-ipaddress' => wfMsg( 'ipaddress' ),
+	'globalblocking-unblock-ipaddress' => 'IP Address:',
 	'globalblocking-unblock-submit' => 'Remove global block',
 	'globalblocking-unblock-reason' => 'Reason:',
 	'globalblocking-unblock-notblocked' => 'The IP address ($1) you entered is not globally blocked.',
