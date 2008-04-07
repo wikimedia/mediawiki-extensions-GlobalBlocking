@@ -60,7 +60,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 
 		$fields = array();
 		$fields['globalblocking-search-ip'] = wfInput( 'wpSearchIP', false, $ip );
-		$searchForm .= gbBuildForm( $fields, 'globalblocking-search-submit' );
+		$searchForm .= GlobalBlocking::buildForm( $fields, 'globalblocking-search-submit' );
 
 		$searchForm .= Xml::hidden( 'wpSearch', 1 );
 		$searchForm .= Xml::closeElement( 'form' ) . Xml::closeElement( 'fieldset' );
@@ -118,10 +118,10 @@ class SpecialGlobalBlockList extends SpecialPage {
 
 		$fields = array();
 
-		$fields['globalblocking-unblock-ipaddress'] = wfInput( 'unblockip', false, $this->mUnblockIP );
+		$fields['ipaddress'] = wfInput( 'unblockip', false, $this->mUnblockIP );
 		$fields['globalblocking-unblock-reason'] = wfInput( 'wpReason', false, $this->mReason );
 
-		$form .= gbBuildForm( $fields, 'globalblocking-unblock-submit' );
+		$form .= GlobalBlocking::buildForm( $fields, 'globalblocking-unblock-submit' );
 
 		$form .= Xml::hidden( 'wpEditToken', $wgUser->editToken() );
 
@@ -140,7 +140,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 			$ip = '';
 		}
 
-		if (0==($id = gbGetGlobalBlockId( $ip ))) {
+		if (0==($id = GlobalBlocking::getGlobalBlockId( $ip ))) {
 			$errors[] = array( 'globalblocking-unblock-notblocked', $ip );
 		}
 
@@ -148,7 +148,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 			return $errors;
 		}
 
-		$dbw = gbGetGlobalBlockingMaster();
+		$dbw = GlobalBlocking::getGlobalBlockingMaster();
 
 		$dbw->delete( 'globalblocks', array( 'gb_id' => $id ) );
 
@@ -174,7 +174,7 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 		$this->mForm = $form;
 		$this->mConds = $conds;
 		parent::__construct();
-		$this->mDb = gbGetGlobalBlockingSlave();
+		$this->mDb = GlobalBlocking::getGlobalBlockingSlave();
 	}
 
 	function formatRow( $row ) {

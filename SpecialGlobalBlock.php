@@ -20,10 +20,8 @@ class SpecialGlobalBlock extends SpecialPage {
 		$wgOut->enableClientCache( false );
 
 		// We expect one error message, the "pages in the special namespace cannot be edited" one.
-		if (count($errors = SpecialPage::getTitleFor('GlobalBlock')->getUserPermissionsErrors('globalblock', $wgUser))>1) {
-			unset($errors[array_search(array('ns-specialprotected'),$errors)]);
-
-			$wgOut->showPermissionsErrorPage( $errors );
+		if (!$this->userCanExecute( $wgUser )) {
+			$this->displayRestrictionError();
 			return;
 		}
 
@@ -83,12 +81,18 @@ class SpecialGlobalBlock extends SpecialPage {
 				$errors[] = array( 'globalblocking-block-expiryinvalid', $this->mExpiry );
 			}
 		}
+		
+		if (GlobalBlocking::getGlobalBlockId($ip)) {
+			$errors[] = array( 'globalblocking-block-alreadyblocked', $ip );
+		}
 
 		if (count($errors)>0)
 			return $errors;
 
 		// We're a-ok.
-		$dbw = gbGetGlobalBlockingMaster();
+		$dbw = GlobalBlocking::getGlobalBlockingMaster();
+		
+		GlobalBlocking::purgeExpired();
 
 		$row = array();
 		$row['gb_address'] = $ip;
@@ -101,7 +105,7 @@ class SpecialGlobalBlock extends SpecialPage {
 		$row['gb_range_start'] = 0;
 		$row['gb_range_end'] = 0;
 
-		$dbw->insert( 'globalblocks', $row );
+		$dbw->insert( 'globalblocks', $row, __METHOD__ );
 
 		// Log it.
 		$logParams = array();
@@ -158,7 +162,7 @@ class SpecialGlobalBlock extends SpecialPage {
 		$fields['globalblocking-block-options'] = wfCheckLabel( wfMsg( 'ipbanononly' ), 'wpAnonOnly', 'wpAnonOnly', $this->mAnonOnly );
 
 		// Build a form.
-		$form .= gbBuildForm( $fields, 'globalblocking-block-submit' );
+		$form .= GlobalBlocking::buildForm( $fields, 'globalblocking-block-submit' );
 
 		$form .= Xml::hidden( 'wpEditToken', $wgUser->editToken() );
 
@@ -181,9 +185,9 @@ class SpecialGlobalBlock extends SpecialPage {
 		if ($id == null) { $id = $name; }
 		if ($selected == null) { $selected = 'other'; }
 
-		$attribs = array( id => $id, name => $name, onchange => 'considerChangingExpiryFocus()' );
+		$attribs = array( 'id' => $id, 'name' => $name, 'onchange' => 'considerChangingExpiryFocus()' );
 
-		$selector .= xml::openElement( 'select', $attribs );
+		$selector .= Xml::openElement( 'select', $attribs );
 
 		foreach (explode(',', $expiryOptions) as $option) {
 			if ( strpos($option, ":") === false ) $option = "$option:$option";
