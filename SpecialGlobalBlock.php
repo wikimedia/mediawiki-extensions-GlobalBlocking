@@ -111,7 +111,7 @@ class SpecialGlobalBlock extends SpecialPage {
 		$logParams = array();
 		$logParams[] = $this->mExpiry;
 		if ($this->mAnonOnly)
-			$logParams[] = wfMsg( 'globalblocking-list-anononly' );
+			$logParams[] = wfMsgForContent( 'globalblocking-list-anononly' );
 
 		$page = new LogPage( 'gblblock' );
 
