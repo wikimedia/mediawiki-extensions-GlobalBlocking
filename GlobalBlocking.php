@@ -14,7 +14,6 @@ if ( ! defined( 'MEDIAWIKI' ) )
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 $dir = dirname(__FILE__);
-$wgExtensionFunctions[] = 'wfGlobalBlocking';
 $wgExtensionCredits['other'][] = array(
 	'name' => 'GlobalBlocking',
 	'author' => 'Andrew Garrett',
@@ -52,10 +51,6 @@ $wgGroupPermissions['steward']['globalunblock'] = true;
  */
 $wgGlobalBlockingDatabase = 'globalblocking';
 
-function wfGlobalBlocking() {
-	wfLoadExtensionMessages( 'GlobalBlocking' );
-}
-
 function gbGetUserPermissionsErrors( &$title, &$user, &$action, &$result ) {
 	global $wgUser;
 	$dbr = gbGetGlobalBlockingSlave();
@@ -82,6 +77,8 @@ function gbGetUserPermissionsErrors( &$title, &$user, &$action, &$result ) {
 			global $wgLang;
 			$expiry = $wgLang->timeanddate( wfTimestamp( TS_MW, $expiry ), true );
 		}
+		
+		wfLoadExtensionMessages( 'GlobalBlocking' );
 		
 		$result[] = array('globalblocking-blocked', $block->gb_by, $block->gb_by_wiki, $block->gb_reason, $expiry);
 		return false;
