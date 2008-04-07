@@ -1,10 +1,10 @@
 <?php
 if ( ! defined( 'MEDIAWIKI' ) )
 	die();
-    
+
 /**#@+
  * Provides a way to block an IP Address over multiple wikis sharing a database.
- * Requires 
+ * Requires
  * @addtogroup Extensions
  *
  * @link http://www.mediawiki.org/wiki/Extension:GlobalBlocking Documentation
@@ -17,6 +17,7 @@ $dir = dirname(__FILE__);
 $wgExtensionCredits['other'][] = array(
 	'name' => 'GlobalBlocking',
 	'author' => 'Andrew Garrett',
+	'version' => preg_replace('/^.* (\d\d\d\d-\d\d-\d\d) .*$/', '\1', '$LastChangedDate$'), #just the date of the last change
 	'description' => 'Allows IP addresses to be blocked across multiple wikis',
 	'descriptionmsg' => 'globalblocking_description',
 	'url' => 'http://www.mediawiki.org/wiki/Extension:GlobalBlocking',
@@ -57,19 +58,19 @@ function gbGetUserPermissionsErrors( &$title, &$user, &$action, &$result ) {
 	$ip = wfGetIp();
 
 	$conds = array( 'gb_address' => $ip, 'gb_timestamp<'.$dbr->timestamp(wfTimestampNow()) );
-	
+
 	if (!$wgUser->isAnon())
 		$conds['gb_anon_only'] = 0;
-		
+
 	// Get the blocks
 	$res = $dbr->select( 'globalblocks', '*', $conds );
-	
+
 	if ($dbr->numRows( $res )) {
 		if (!is_array($result)) {
 			$result = $result ? array($result) : array();
 		}
 		$block = $dbr->fetchObject( $res );
-		
+
 		$expiry = Block::decodeExpiry( $block->gb_expiry );
 		if ($expiry == 'infinity') {
 			$expiry = wfMsg( 'infiniteblock' );
@@ -77,7 +78,7 @@ function gbGetUserPermissionsErrors( &$title, &$user, &$action, &$result ) {
 			global $wgLang;
 			$expiry = $wgLang->timeanddate( wfTimestamp( TS_MW, $expiry ), true );
 		}
-		
+
 		wfLoadExtensionMessages( 'GlobalBlocking' );
 		
 		$result[] = array('globalblocking-blocked', $block->gb_by, $block->gb_by_wiki, $block->gb_reason, $expiry);
@@ -100,35 +101,35 @@ function gbGetGlobalBlockingSlave() {
 function gbBuildForm( $fields, $submitLabel ) {
 	$form = '';
 	$form .= "<table><tbody>";
-	
+
 	foreach( $fields as $labelmsg => $input ) {
 		$id = "mw-gb-$labelmsg";
 		$form .= Xml::openElement( 'tr', array( 'class' => $id ) );
-		
+
 		$form .= Xml::element( 'td', array(), wfMsg( $labelmsg ) );
-		
+
 		$form .= Xml::openElement( 'td' ) . $input . Xml::closeElement( 'td' );
-		
+
 		$form .= Xml::closeElement( 'tr' );
 	}
-	
+
 	$form .= "</tbody></table>";
-	
+
 	$form .= wfSubmitButton( wfMsg($submitLabel) );
-	
+
 	return $form;
 }
 
 function gbGetGlobalBlockId( $ip ) {
 	$dbr = gbGetGlobalBlockingSlave();
-	
+
 	$res = $dbr->select( 'globalblocks', 'gb_id', array( 'gb_address' => $ip ) );
-	
+
 	if ($dbr->numRows($res) == 0) {
 		return 0;
 	}
-	
+
 	$row = $dbr->fetchObject( $res );
-	
+
 	return $row->gb_id;
 }
