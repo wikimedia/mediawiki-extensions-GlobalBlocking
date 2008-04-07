@@ -15,12 +15,12 @@ if ( ! defined( 'MEDIAWIKI' ) )
  */
 $dir = dirname(__FILE__);
 $wgExtensionCredits['other'][] = array(
-	'name' => 'GlobalBlocking',
-	'author' => 'Andrew Garrett',
-	'version' => preg_replace('/^.* (\d\d\d\d-\d\d-\d\d) .*$/', '\1', '$LastChangedDate$'), #just the date of the last change
-	'description' => 'Allows IP addresses to be blocked across multiple wikis',
-	'descriptionmsg' => 'globalblocking_description',
-	'url' => 'http://www.mediawiki.org/wiki/Extension:GlobalBlocking',
+	'name'           => 'GlobalBlocking',
+	'author'         => 'Andrew Garrett',
+	'version'        => preg_replace('/^.* (\d\d\d\d-\d\d-\d\d) .*$/', '\1', '$LastChangedDate$'), #just the date of the last change
+	'description'    => 'Allows IP addresses to be blocked across multiple wikis',
+	'descriptionmsg' => 'globalblocking-desc',
+	'url'            => 'http://www.mediawiki.org/wiki/Extension:GlobalBlocking',
 );
 
 $wgExtensionMessagesFiles['GlobalBlocking'] =  "$dir/GlobalBlocking.i18n.php";

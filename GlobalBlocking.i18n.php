@@ -11,6 +11,7 @@ $messages = array();
  * @author Andrew Garrett
  */
 $messages['en'] = array(
+	'globalblocking-desc' => '[[Special:GlobalBlock|Allows]] IP addresses to be [[Special:GlobalBlockList|blocked across multiple wikis]]',
 	'globalblocking-block' => 'Globally block an IP address',
 	'globalblocking-expiry-options' => '-',
 	'globalblocking-block-intro' => 'You can use this page to block an IP address on all wikis.',
