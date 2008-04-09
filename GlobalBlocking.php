@@ -52,9 +52,17 @@ $wgGroupPermissions['steward']['globalunblock'] = true;
  */
 $wgGlobalBlockingDatabase = 'globalblocking';
 
+/**
+ * Whether to respect global blocks on this wiki. This is used so that
+ * global blocks can be set one one wiki, but not actually applied there
+ * (i.e. so people can contest them on that wiki.
+ */
+$wgApplyGlobalBlocks = true;
+
 class GlobalBlocking {
 	static function getUserPermissionsErrors( &$title, &$user, &$action, &$result ) {
-		if ($action == 'read') {
+		global $wgApplyGlobalBlocks;
+		if ($action == 'read' || !$wgApplyGlobalBlocks) {
 			return true;
 		}
 		
