@@ -121,8 +121,8 @@ Beachte, dass du keinen Benutzernamen eingeben darfst!',
 	'globalblocking-unblock-errors'          => 'Du kannst diese IP nicht global entsperren. Grund:
 $1',
 	'globalblocking-unblock-successsub'      => 'Erfolgreich global entsperrt',
-	'globalblocking-blocked'                 => "Deine IP-Adresse wurde von '''\$1''' (''\$2'') für alle Wikimedia-Wikis gesperrt.
-Als Begründung wurde ''\"\$3\"'' angegeben. Die Sperre dauert ''\$4''.",
+	'globalblocking-blocked'                 => "Deine IP-Adresse wurde von '''\$1''' ''(\$2)'' für alle Wikimedia-Wikis gesperrt.
+Als Begründung wurde ''„\$3“'' angegeben. Die Sperre dauert ''\$4''.",
 	'globalblocking-logpage'                 => 'Globales Sperrlogbuch',
 	'globalblocking-block-logentry'          => 'sperrte [[$1]] global für einen Zeitraum von $2 ($3)',
 	'globalblocking-unblock-logentry'        => 'entsperrte [[$1]] global',
