@@ -467,14 +467,54 @@ Ako dôvod udáva ''„$3“''. Blokovanie vyprší ''$4''.",
  * @author Sasa Stefanovic
  */
 $messages['sr-ec'] = array(
+	'globalblocking-desc'                    => '[[Special:GlobalBlock|Омогућује]] [[Special:GlobalBlockList|глобално блокирање]] ИП адреса на више викија',
+	'globalblocking-block'                   => 'Глобално блокирајте ИП адресу',
+	'globalblocking-block-intro'             => 'Можете користити ову страницу да блокирате ИП адресу на свим викијима.',
 	'globalblocking-block-reason'            => 'Разлог блока:',
+	'globalblocking-block-expiry'            => 'Блок истиче:',
+	'globalblocking-block-expiry-other'      => 'Друго време истека',
 	'globalblocking-block-expiry-otherfield' => 'Друго време:',
 	'globalblocking-block-legend'            => 'Блокирајте корисника глобално',
 	'globalblocking-block-options'           => 'Опције',
+	'globalblocking-block-errors'            => 'Блок није успешан због:
+$1',
+	'globalblocking-block-ipinvalid'         => 'ИП адреса ($1) коју сте унели није добра.
+Запамтите да не можете унети корисничко име!',
+	'globalblocking-block-expiryinvalid'     => 'Време истека блока које сте унели ($1) није исправно.',
+	'globalblocking-block-submit'            => 'Блокирајте ову ИП адресу глобално',
+	'globalblocking-block-success'           => 'Ип адреса $1 је успешно блокирана на свим Викимедијиним пројектима.
+Погледајте [[Special:Globalblocklist|списак глобалних блокова]].',
+	'globalblocking-block-successsub'        => 'Успешан глобални блок',
+	'globalblocking-block-alreadyblocked'    => 'ИП адреса $1 је већ блокирана глобално. Можете погледати списак постојећих [[Special:Globalblocklist|глобалних блокова]].',
+	'globalblocking-list'                    => 'Списак глобално блокираних ИП адреса',
+	'globalblocking-search-legend'           => 'Претражите глобалне блокове',
 	'globalblocking-search-ip'               => 'ИП адреса:',
+	'globalblocking-search-submit'           => 'Претражите блокове',
+	'globalblocking-list-ipinvalid'          => 'ИП адреса коју тражите ($1) није исправна.
+Молимо Вас унесите исправну ИП адресу.',
+	'globalblocking-search-errors'           => 'Ваша претрага није успешна због:
+$1',
+	'globalblocking-list-blockitem'          => "$1: '''$2''' (''$3'') глобално блокирао '''[[Special:Contributions/$4|$4]]''' ''($5)''",
 	'globalblocking-list-expiry'             => 'истиче $1',
 	'globalblocking-list-anononly'           => 'само анонимне',
 	'globalblocking-list-unblock'            => 'одблокирај',
+	'globalblocking-unblock-ipinvalid'       => 'ИП адреса ($1) коју сте унели није исправна.
+Запамтите да не можете уносити корисничка имена!',
+	'globalblocking-unblock-legend'          => 'Уклоните глобални блок',
+	'globalblocking-unblock-submit'          => 'Уклоните глобални блок',
+	'globalblocking-unblock-reason'          => 'Разлог:',
+	'globalblocking-unblock-notblocked'      => 'ИП адреса ($1) коју сте унели није глобално блокирана.',
+	'globalblocking-unblock-unblocked'       => "Успешно сте уклонили глобални блок #$2 за ИП адресу '''$1'''.",
+	'globalblocking-unblock-errors'          => 'Не можете уклонити глобални блок за ту ИП адресу због:
+$1',
+	'globalblocking-unblock-successsub'      => 'Глобални блок успешно уклоњен',
+	'globalblocking-blocked'                 => "Ваша ИП адреса је блокирана на свим Викимедијиним викијима. Корисник који је блокирао '''$1''' (''$2'').
+Разлог за блокаду је „''$3''”. Блок истиче ''$4''.",
+	'globalblocking-logpage'                 => 'Историја глобалних блокова',
+	'globalblocking-block-logentry'          => 'глобално блокирао [[$1]] са временом истицања од $2 ($3)',
+	'globalblocking-unblock-logentry'        => 'уклонио глобални блок за [[$1]]',
+	'globalblocklist'                        => 'Списак глобално блокираних ИП адреса',
+	'globalblock'                            => 'Глобално блокирајте ИП адресу',
 );
 
 /** Swedish (Svenska)
