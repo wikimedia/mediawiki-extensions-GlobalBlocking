@@ -147,7 +147,7 @@ $messages['fr'] = array(
 $1',
 	'globalblocking-block-ipinvalid'         => 'L’adresse IP ($1) que vous avez entrée est incorrecte.
 Veuillez noter que vous ne pouvez pas inscrire un nom d’utilisateur !',
-	'globalblocking-block-expiryinvalid'     => 'L’expiration que vous avez entrée ($) est incorrecte.',
+	'globalblocking-block-expiryinvalid'     => 'L’expiration que vous avez entrée ($1) est incorrecte.',
 	'globalblocking-block-submit'            => 'Bloquer globalement cette adresse IP',
 	'globalblocking-block-success'           => 'L’adresse IP $1 a été bloquée avec succès sur l’ensemble des projets Wikimedia.
 Vous pouvez consultez la liste des [[Special:Globalblocklist|comptes bloqués globalement]].',
