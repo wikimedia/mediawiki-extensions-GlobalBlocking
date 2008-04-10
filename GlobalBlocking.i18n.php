@@ -241,6 +241,7 @@ A razón que deu foi ''\"\$3\"''. A expiración do bloqueo será ''\$4''.",
  * @author Kaustubh
  */
 $messages['hi'] = array(
+	'globalblocking-desc'                    => 'आइपी एड्रेस को [[Special:GlobalBlockList|एक से ज्यादा विकियोंपर ब्लॉक]] करने की [[Special:GlobalBlock|अनुमति]] देता हैं।',
 	'globalblocking-block'                   => 'एक आइपी एड्रेस को ग्लोबलि ब्लॉक करें',
 	'globalblocking-block-intro'             => 'आप इस पन्ने का इस्तेमाल करके सभी विकियोंपर एक आईपी एड्रेस ब्लॉक कर सकतें हैं।',
 	'globalblocking-block-reason'            => 'इस ब्लॉक का कारण:',
@@ -283,6 +284,15 @@ $1',
 	'globalblock'                            => 'एक आइपी एड्रेसको ग्लोबल ब्लॉक करें',
 );
 
+/** Hungarian (Magyar)
+ * @author Dani
+ */
+$messages['hu'] = array(
+	'globalblocking-list-expiry'    => 'lejárat: $1',
+	'globalblocking-unblock-reason' => 'Ok:',
+	'globalblock'                   => 'IP-cím globális blokkolása',
+);
+
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
  */
@@ -293,6 +303,13 @@ $messages['lb'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Aner Dauer:',
 	'globalblocking-block-options'           => 'Optiounen',
 	'globalblocking-search-ip'               => 'IP-Adress:',
+);
+
+/** Marathi (मराठी)
+ * @author Kaustubh
+ */
+$messages['mr'] = array(
+	'globalblocking-desc' => 'आइपी अंकपत्त्याला [[Special:GlobalBlockList|अनेक विकिंवर ब्लॉक]] करण्याची [[Special:GlobalBlock|परवानगी]] देतो.',
 );
 
 /** Dutch (Nederlands)
