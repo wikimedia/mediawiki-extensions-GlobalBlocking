@@ -63,6 +63,16 @@ The reason given was ''\"$3\"''. The block's expiry is ''$4''.",
 	'globalblock' => 'Globally block an IP address',
 );
 
+/** Arabic (العربية)
+ * @author Meno25
+ */
+$messages['ar'] = array(
+	'globalblocking-block-reason'            => 'السبب لهذا المنع:',
+	'globalblocking-block-expiry'            => 'انتهاء المنع:',
+	'globalblocking-block-expiry-otherfield' => 'وقت آخر:',
+	'globalblocking-block-options'           => 'خيارات',
+);
+
 /** Bulgarian (Български)
  * @author DCLXVI
  */
@@ -309,7 +319,52 @@ $messages['lb'] = array(
  * @author Kaustubh
  */
 $messages['mr'] = array(
-	'globalblocking-desc' => 'आइपी अंकपत्त्याला [[Special:GlobalBlockList|अनेक विकिंवर ब्लॉक]] करण्याची [[Special:GlobalBlock|परवानगी]] देतो.',
+	'globalblocking-desc'                    => 'आइपी अंकपत्त्याला [[Special:GlobalBlockList|अनेक विकिंवर ब्लॉक]] करण्याची [[Special:GlobalBlock|परवानगी]] देतो.',
+	'globalblocking-block'                   => 'आयपी अंकपत्ता वैश्विक पातळीवर ब्लॉक करा',
+	'globalblocking-block-intro'             => 'तुम्ही हे पान वापरून एखाद्या आयपी अंकपत्त्याला सर्व विकिंवर ब्लॉक करू शकता.',
+	'globalblocking-block-reason'            => 'या ब्लॉक करीता कारण:',
+	'globalblocking-block-expiry'            => 'ब्लॉक समाप्ती:',
+	'globalblocking-block-expiry-other'      => 'इतर समाप्ती वेळ',
+	'globalblocking-block-expiry-otherfield' => 'इतर वेळ:',
+	'globalblocking-block-legend'            => 'एक सदस्य वैश्विक पातळीवर ब्लॉक करा',
+	'globalblocking-block-options'           => 'विकल्प',
+	'globalblocking-block-errors'            => 'ब्लॉक अयशस्वी झालेला आहे, कारण:
+$1',
+	'globalblocking-block-ipinvalid'         => 'तुम्ही दिलेला आयपी अंकपत्ता ($1) अयोग्य आहे.
+कृपया नोंद घ्या की तुम्ही सदस्य नाव देऊ शकत नाही!',
+	'globalblocking-block-expiryinvalid'     => 'तुम्ही दिलेली समाप्तीची वेळ ($1) अयोग्य आहे.',
+	'globalblocking-block-submit'            => 'ह्या आयपी अंकपत्त्याला वैश्विक पातळीवर ब्लॉक करा',
+	'globalblocking-block-successsub'        => 'वैश्विक ब्लॉक यशस्वी',
+	'globalblocking-block-alreadyblocked'    => '$1 हा आयपी अंकपत्ता अगोदरच ब्लॉक केलेला आहे. तुम्ही अस्तित्वात असलेले ब्लॉक [[Special:Globalblocklist|वैश्विक ब्लॉकच्या यादीत]] पाहू शकता.',
+	'globalblocking-list'                    => 'वैश्विक पातळीवर ब्लॉक केलेले आयपी अंकपत्ते',
+	'globalblocking-search-legend'           => 'एखाद्या वैश्विक ब्लॉक ला शोधा',
+	'globalblocking-search-ip'               => 'आयपी अंकपत्ता:',
+	'globalblocking-search-submit'           => 'ब्लॉक साठी शोध',
+	'globalblocking-list-ipinvalid'          => 'तुम्ही शोधायला दिलेला आयपी अंकपत्ता ($1) अयोग्य आहे.
+कृपया योग्य आयपी अंकपत्ता द्या.',
+	'globalblocking-search-errors'           => 'तुमचा शोध अयशस्वी झालेला आहे, कारण:
+$1',
+	'globalblocking-list-blockitem'          => "$1: '''$2''' (''$3'') वैश्विक पातळीवर ब्लॉक '''[[Special:Contributions/$4|$4]]''' ''($5)''",
+	'globalblocking-list-expiry'             => 'समाप्ती $1',
+	'globalblocking-list-anononly'           => 'फक्त-अनामिक',
+	'globalblocking-list-unblock'            => 'अनब्लॉक',
+	'globalblocking-unblock-ipinvalid'       => 'तुम्ही दिलेला आयपी अंकपत्ता ($1) अयोग्य आहे.
+कृपया नोंद घ्या की तुम्ही सदस्य नाव वापरू शकत नाही!',
+	'globalblocking-unblock-legend'          => 'एक वैश्विक ब्लॉक काढा',
+	'globalblocking-unblock-submit'          => 'वैश्विक ब्लॉक काढा',
+	'globalblocking-unblock-reason'          => 'कारण:',
+	'globalblocking-unblock-notblocked'      => 'तुम्ही दिलेला आयपी अंकपत्ता ($1) वैश्विक पातळीवर ब्लॉक केलेला नाही.',
+	'globalblocking-unblock-unblocked'       => "तुम्ही आयपी अंकपत्ता '''$1''' वर असणारा वैश्विक ब्लॉक #$2 यशस्वीरित्या काढलेला आहे",
+	'globalblocking-unblock-errors'          => 'तुम्ही या आयपी अंकपत्त्यावरील वैश्विक ब्लॉक काढू शकत नाही, कारण:
+$1',
+	'globalblocking-unblock-successsub'      => 'वैश्विक ब्लॉक काढलेला आहे',
+	'globalblocking-blocked'                 => "तुमचा आयपी अंकपत्ता सर्व विकिमीडिया विकिंवर '''\$1''' (''\$2'') ने ब्लॉक केलेला आहे.
+यासाठी ''\"\$3\"'' हे कारण दिलेले आहे. या ब्लॉक ची समाप्ती ''\$4'' आहे.",
+	'globalblocking-logpage'                 => 'वैश्विक ब्लॉक सूची',
+	'globalblocking-block-logentry'          => '$2 ($3) हा समाप्ती कालावधी देऊन [[$1]] ला वैश्विक पातळीवर ब्लॉक केले',
+	'globalblocking-unblock-logentry'        => '[[$1]] वरील वैश्विक ब्लॉक काढला',
+	'globalblocklist'                        => 'वैश्विक पातळीवर ब्लॉक केलेल्या आयपी अंकपत्त्यांची यादी',
+	'globalblock'                            => 'आयपी अंकपत्त्याला वैश्विक पातळीवर ब्लॉक करा',
 );
 
 /** Dutch (Nederlands)
@@ -424,6 +479,67 @@ $1',
 $messages['pl'] = array(
 	'globalblocking-block-logentry'   => 'zablokował globalnie [[$1]], czas blokady $2 ($3)',
 	'globalblocking-unblock-logentry' => 'usunął globalną blokadę z [[$1]]',
+);
+
+/** Portuguese (Português)
+ * @author Malafaya
+ */
+$messages['pt'] = array(
+	'globalblocking-search-ip' => 'Endereço IP:',
+);
+
+/** Russian (Русский)
+ * @author .:Ajvol:.
+ */
+$messages['ru'] = array(
+	'globalblocking-desc'                    => '[[Special:GlobalBlock|Разрешает]] блокировку IP-адресов [[Special:GlobalBlockList|на нескольких вики]]',
+	'globalblocking-block'                   => 'Глобальная блокировка IP-адреса',
+	'globalblocking-block-intro'             => 'Вы можете использовать эту страницу чтобы заблокировать IP-адрес на всех вики.',
+	'globalblocking-block-reason'            => 'Причина блокировки:',
+	'globalblocking-block-expiry'            => 'Закончится через:',
+	'globalblocking-block-expiry-other'      => 'другое время окончания',
+	'globalblocking-block-expiry-otherfield' => 'Другое время:',
+	'globalblocking-block-legend'            => 'Глобальное блокирование участника',
+	'globalblocking-block-options'           => 'Настройки',
+	'globalblocking-block-errors'            => 'Блокировка неудачна. Причина:
+$1',
+	'globalblocking-block-ipinvalid'         => 'Введённый вами IP-адрес ($1) ошибочен.
+Пожалуйста, обратите внимание, вы не можете вводить имя участника!',
+	'globalblocking-block-expiryinvalid'     => 'Введённый срок окончания ($1) ошибочен.',
+	'globalblocking-block-submit'            => 'Заблокировать этот IP-адрес глобально',
+	'globalblocking-block-success'           => 'IP-адрес $1 был успешно заблокирован во всех проектах Викимедиа.
+Вы можете обратиться к [[Special:Globalblocklist|списку глобальных блокировок]].',
+	'globalblocking-block-successsub'        => 'Глобальная блокировка выполнена успешно',
+	'globalblocking-block-alreadyblocked'    => 'IP-адрес $1 уже был заблокирован глобально. Вы можете просмотреть существующие блокировки в [[Special:Globalblocklist|списке глобальных блокировок]].',
+	'globalblocking-list'                    => 'Список глобально заблокированных IP-адресов',
+	'globalblocking-search-legend'           => 'Поиск глобальной блокировки',
+	'globalblocking-search-ip'               => 'IP-адрес:',
+	'globalblocking-search-submit'           => 'Найти блокировки',
+	'globalblocking-list-ipinvalid'          => 'Вы ищете ошибочный IP-адрес ($1).
+Пожалуйста введите корректный IP-адрес.',
+	'globalblocking-search-errors'           => 'Ваш поиск не был успешен. Причина:
+$1',
+	'globalblocking-list-blockitem'          => "$1: '''$2''' (''$3'') заблокирован глобально '''[[Special:Contributions/$4|$4]]''' ''($5)''",
+	'globalblocking-list-expiry'             => 'истекает $1',
+	'globalblocking-list-anononly'           => 'только анонимов',
+	'globalblocking-list-unblock'            => 'разблокировать',
+	'globalblocking-unblock-ipinvalid'       => 'Введённый вами IP-адрес ($1) ошибочен.
+Пожалуйста, обратите внимание, вы не можете вводить имя участника!',
+	'globalblocking-unblock-legend'          => 'Снятие глобальной блокировки',
+	'globalblocking-unblock-submit'          => 'Снять глобальную блокировку',
+	'globalblocking-unblock-reason'          => 'Причина:',
+	'globalblocking-unblock-notblocked'      => 'Введённый вами IP-адрес ($1) не заблокирован глобально.',
+	'globalblocking-unblock-unblocked'       => "Вы успешно сняли глобальную блокировку #$2 с IP-адреса '''$1'''",
+	'globalblocking-unblock-errors'          => 'Вы не можете снять глобальную блокировку с этого IP-адреса. Причина:
+$1',
+	'globalblocking-unblock-successsub'      => 'Глобальная блокировка успешно снята',
+	'globalblocking-blocked'                 => "Ваш IP-адрес был заблокирован во всех проектах Викимедиа участником '''$1''' (''$2'').
+Была указана причина: ''«$3»''. Срок блокировки: ''$4''.",
+	'globalblocking-logpage'                 => 'Журнал глобальных блокировок',
+	'globalblocking-block-logentry'          => 'заблокировал глобально [[$1]] со сроком блокировки $2 ($3)',
+	'globalblocking-unblock-logentry'        => 'снял глобальную блокировку с [[$1]]',
+	'globalblocklist'                        => 'Список заблокированных глобально IP-адресов',
+	'globalblock'                            => 'Глобальная блокировка IP-адреса',
 );
 
 /** Slovak (Slovenčina)
