@@ -477,15 +477,70 @@ $1',
  * @author Sp5uhe
  */
 $messages['pl'] = array(
-	'globalblocking-block-logentry'   => 'zablokował globalnie [[$1]], czas blokady $2 ($3)',
-	'globalblocking-unblock-logentry' => 'usunął globalną blokadę z [[$1]]',
+	'globalblocking-desc'                    => '[[Special:GlobalBlock|Umożliwia]] równoległe [[Special:GlobalBlockList|blokowanie dla wielu wiki]] adresów IP',
+	'globalblocking-block'                   => 'Zablokuj globalnie adres IP',
+	'globalblocking-block-intro'             => 'Możesz użyć tej strony do zablokowania adresu IP na wszystkich wiki.',
+	'globalblocking-block-reason'            => 'Powód zrobienia tej blokady',
+	'globalblocking-block-expiry'            => 'Czas blokady',
+	'globalblocking-block-expiry-other'      => 'Inny czas blokady',
+	'globalblocking-block-expiry-otherfield' => 'Inny czas blokady',
+	'globalblocking-block-legend'            => 'Zablokuj użytkownika globalnie',
+	'globalblocking-block-options'           => 'Opcje',
+	'globalblocking-block-errors'            => 'Zablokowanie nie powiodło się, ponieważ:
+$1',
+	'globalblocking-block-ipinvalid'         => 'Wprowadzony przez Ciebie adres IP ($1) jest nieprawidłowy.
+Zwróć uwagę na to, że nie możesz wprowadzić nazwy użytkownika!',
+	'globalblocking-block-expiryinvalid'     => 'Czas obowiązywania blokady ($1) jest nieprawidłowy.',
+	'globalblocking-block-submit'            => 'Zablokuj ten adres IP globalnie',
+	'globalblocking-block-success'           => 'Adres IP $1 został z powodzeniem zablokowany na wszystkich projektach Wikimedia.
+Możesz to sprawdzić w [[Special:Globalblocklist|spisie globalnych blokad]].',
+	'globalblocking-block-successsub'        => 'Globalna blokada wykonana',
+	'globalblocking-block-alreadyblocked'    => 'Adres IP $1 jest obecnie globalnie zablokowany. Możesz zobaczyć aktualnie obowiązujące blokady w [[Special:Globalblocklist|spisie globalnych blokad]].',
+	'globalblocking-list'                    => 'Spis globalnie zablokowanych adresów IP',
+	'globalblocking-search-legend'           => 'Szukaj globalnej blokady',
+	'globalblocking-search-ip'               => 'Adres IP:',
+	'globalblocking-search-submit'           => 'Szukaj blokad',
+	'globalblocking-list-ipinvalid'          => 'Adres IP którego szukasz ($1) jest nieprawidłowy.
+Wprowadź prawidłowy adres IP.',
+	'globalblocking-search-errors'           => 'Wyszukanie nie powiodło się, ponieważ:
+$1',
+	'globalblocking-list-blockitem'          => "$1: '''$2''' (''$3'') globalnie zablokował '''[[Special:Contributions/$4|$4]]''' ''($5)''",
+	'globalblocking-list-expiry'             => 'wygaśnie $1',
+	'globalblocking-list-anononly'           => 'tylko niezalogowani',
+	'globalblocking-list-unblock'            => 'odblokuj',
+	'globalblocking-unblock-ipinvalid'       => 'Wprowadzony przez Ciebie adres IP ($1) jest nieprawidłowy.
+Zwróć uwagę na to, że nie możesz wprowadzić nazwy użytkownika!',
+	'globalblocking-unblock-legend'          => 'Usuń globalną blokadę',
+	'globalblocking-unblock-submit'          => 'Usuń globalną blokadę',
+	'globalblocking-unblock-reason'          => 'Powód',
+	'globalblocking-unblock-notblocked'      => 'Adres IP ($1) który wprowadziłeś nie jest globalnie zablokowany.',
+	'globalblocking-unblock-unblocked'       => "Usunąłeś globalną blokadę $2 dla adresu IP '''$1'''",
+	'globalblocking-unblock-errors'          => 'Nie możesz usunąć globalnej blokady dla tego adresu IP, ponieważ:
+$1',
+	'globalblocking-unblock-successsub'      => 'Globalna blokada została zdjęta',
+	'globalblocking-blocked'                 => "Twój adres IP został zablokowany na wszystkich wiki należących do Wikimedia przez '''$1''' (''$2'').
+Przyczyna blokady: ''„$3”''. Blokada wygaśnie ''$4''.",
+	'globalblocking-logpage'                 => 'Rejestr globalnych blokad',
+	'globalblocking-block-logentry'          => 'zablokował globalnie [[$1]], czas blokady $2 ($3)',
+	'globalblocking-unblock-logentry'        => 'usunął globalną blokadę z [[$1]]',
+	'globalblocklist'                        => 'Spis globalnie zablokowanych adresów IP',
+	'globalblock'                            => 'Zablokuj globalnie adres IP',
 );
 
 /** Portuguese (Português)
  * @author Malafaya
  */
 $messages['pt'] = array(
-	'globalblocking-search-ip' => 'Endereço IP:',
+	'globalblocking-block'                   => 'Bloquear globalmente um endereço IP',
+	'globalblocking-block-reason'            => 'Motivo para este bloqueio:',
+	'globalblocking-block-expiry-otherfield' => 'Outra duração:',
+	'globalblocking-block-legend'            => 'Bloquear um utilizador globalmente',
+	'globalblocking-block-options'           => 'Opções',
+	'globalblocking-block-errors'            => 'O bloqueio não teve sucesso, porque:
+$1',
+	'globalblocking-search-ip'               => 'Endereço IP:',
+	'globalblocking-unblock-reason'          => 'Motivo:',
+	'globalblocking-logpage'                 => 'Registo de bloqueios globais',
 );
 
 /** Russian (Русский)
