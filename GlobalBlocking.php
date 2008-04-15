@@ -148,7 +148,7 @@ class GlobalBlocking {
 		
 		// Stand-alone transaction.
 		$dbw->begin();
-		$dbw->delete( 'globalblocks', 'gb_expiry<'.$dbw->addQuotes($dbw->timestamp()), __METHOD__ );
+		$dbw->delete( 'globalblocks', array('gb_expiry<'.$dbw->addQuotes($dbw->timestamp())), __METHOD__ );
 		$dbw->commit();
 	}
 }
