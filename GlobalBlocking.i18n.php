@@ -77,13 +77,18 @@ $messages['ar'] = array(
  * @author DCLXVI
  */
 $messages['bg'] = array(
-	'globalblocking-block-reason'   => 'Причина за блокирането:',
-	'globalblocking-block-submit'   => 'Блокиране на този IP адрес глобално',
-	'globalblocking-search-ip'      => 'IP адрес:',
-	'globalblocking-unblock-reason' => 'Причина:',
-	'globalblocking-logpage'        => 'Дневник на глобалните блокирания',
-	'globalblocklist'               => 'Списък на глобално блокираните IP адреси',
-	'globalblock'                   => 'Глобално блокиране на IP адрес',
+	'globalblocking-block-reason'       => 'Причина за блокирането:',
+	'globalblocking-block-legend'       => 'Глобално блокиране на потребител',
+	'globalblocking-block-submit'       => 'Блокиране на този IP адрес глобално',
+	'globalblocking-search-legend'      => 'Търсене на глобално блокиране',
+	'globalblocking-search-ip'          => 'IP адрес:',
+	'globalblocking-unblock-legend'     => 'Премахване на глобално блокиране',
+	'globalblocking-unblock-submit'     => 'Премахване на глобално блокиране',
+	'globalblocking-unblock-reason'     => 'Причина:',
+	'globalblocking-unblock-successsub' => 'Глобалното блокиране беше премахнато успешно',
+	'globalblocking-logpage'            => 'Дневник на глобалните блокирания',
+	'globalblocklist'                   => 'Списък на глобално блокираните IP адреси',
+	'globalblock'                       => 'Глобално блокиране на IP адрес',
 );
 
 /** German (Deutsch)
@@ -471,6 +476,13 @@ $1',
 	'globalblocking-unblock-logentry'        => 'fjernet global blokkering på [[$1]]',
 	'globalblocklist'                        => 'Liste over globalt blokkerte IP-adresser',
 	'globalblock'                            => 'Blokker en IP-adresse globalt',
+);
+
+/** Occitan (Occitan)
+ * @author Cedric31
+ */
+$messages['oc'] = array(
+	'globalblocking-unblock-reason' => 'Motiu :',
 );
 
 /** Polish (Polski)
