@@ -145,6 +145,27 @@ Als Begründung wurde ''„\$3“'' angegeben. Die Sperre dauert ''\$4''.",
 	'globalblock'                            => 'Eine IP-Adresse global sperren',
 );
 
+/** Esperanto (Esperanto)
+ * @author Yekrats
+ */
+$messages['eo'] = array(
+	'globalblocking-block-options'  => 'Opcioj',
+	'globalblocking-search-legend'  => 'Serĉu ĝeneralan forbaron',
+	'globalblocking-search-ip'      => 'IP-adreso:',
+	'globalblocking-search-submit'  => 'Serĉu forbarojn',
+	'globalblocking-list-ipinvalid' => 'La serĉita IP-adreso ($1) estas nevalida.
+Bonvolu enigi validan IP-adreson.',
+	'globalblocking-search-errors'  => 'Via serĉo estis malsukcesa, ĉar:
+$1',
+	'globalblocking-list-expiry'    => 'findato $1',
+	'globalblocking-list-anononly'  => 'nur anonimuloj',
+	'globalblocking-list-unblock'   => 'malforbaru',
+	'globalblocking-unblock-reason' => 'Kialo:',
+	'globalblocking-blocked'        => "Via IP-adreso estis forbarita en ĉiuj Wikimedia-retejoj de '''\$1''' (''\$2'').
+La kialo donata estis ''\"\$3\"''. La findato de la forbaro estas ''\$4''.",
+	'globalblock'                   => 'Ĝenerale forbaru IP-adreson',
+);
+
 /** French (Français)
  * @author Grondin
  */
@@ -482,7 +503,54 @@ $1',
  * @author Cedric31
  */
 $messages['oc'] = array(
-	'globalblocking-unblock-reason' => 'Motiu :',
+	'globalblocking-desc'                    => '[[Special:GlobalBlock|Permet]] lo blocatge de las adreças IP [[Special:GlobalBlockList|a travèrs maites wikis]]',
+	'globalblocking-block'                   => 'Blocar globalament una adreça IP',
+	'globalblocking-block-intro'             => 'Podètz utilizar aquesta pagina per blocar una adreça IP sus l’ensemble dels wikis.',
+	'globalblocking-block-reason'            => "Motius d'aqueste blocatge :",
+	'globalblocking-block-expiry'            => 'Plaja d’expiracion :',
+	'globalblocking-block-expiry-other'      => 'Autra durada d’expiracion',
+	'globalblocking-block-expiry-otherfield' => 'Autra durada :',
+	'globalblocking-block-legend'            => 'Blocar globalament un utilizaire',
+	'globalblocking-block-options'           => 'Opcions',
+	'globalblocking-block-errors'            => 'Lo blocatge a pas capitat, perque :
+$1',
+	'globalblocking-block-ipinvalid'         => "L’adreça IP ($1) qu'avètz picada es incorrècta.
+Notatz que podètz pas inscriure un nom d’utilizaire !",
+	'globalblocking-block-expiryinvalid'     => "L’expiracion qu'avètz picada ($1) es incorrècta.",
+	'globalblocking-block-submit'            => 'Blocar globalament aquesta adreça IP',
+	'globalblocking-block-success'           => 'L’adreça IP $1 es estada blocada amb succès sus l’ensemble dels projèctes Wikimèdia.
+Podètz consultaz la tièra dels [[Special:Globalblocklist|comptes blocats globalament]].',
+	'globalblocking-block-successsub'        => 'Blocatge global capitat',
+	'globalblocking-block-alreadyblocked'    => "L’adreça IP ja es blocada globalament. Podètz afichar los blocatges qu'existisson sus la tièra [[Special:Globalblocklist|dels blocatges globals]].",
+	'globalblocking-list'                    => 'Tièra de las adreças IP blocadas globalament',
+	'globalblocking-search-legend'           => 'Recèrca d’un blocatge global',
+	'globalblocking-search-ip'               => 'Adreça IP :',
+	'globalblocking-search-submit'           => 'Recèrca dels blocatges',
+	'globalblocking-list-ipinvalid'          => 'L’adreça IP que recercatz per ($1) es incorrècta.
+Picatz una adreça IP corrècta.',
+	'globalblocking-search-errors'           => 'Vòstra recèrca es estada infructuosa, perque :
+$1',
+	'globalblocking-list-blockitem'          => "* $1 : '''$2''' (''$3'') blocat globalament '''[[Special:Contribucions/$4|$4]]''' ''($5)''",
+	'globalblocking-list-expiry'             => 'expiracion $1',
+	'globalblocking-list-anononly'           => 'utilizaire non enregistrat unicament',
+	'globalblocking-list-unblock'            => 'desblocar',
+	'globalblocking-unblock-ipinvalid'       => "L’adreça IP ($1) qu'avètz picada es incorrècta.
+Notatz que podètz pas inscriure un nom d’utilizaire !",
+	'globalblocking-unblock-legend'          => 'Levar un blocatge global',
+	'globalblocking-unblock-submit'          => 'Levar lo blocatge global',
+	'globalblocking-unblock-reason'          => 'Motiu :',
+	'globalblocking-unblock-notblocked'      => "L’adreça IP ($1) qu'avètz indicada fa pas l’objècte de cap de blocatge global.",
+	'globalblocking-unblock-unblocked'       => "Avètz capitat de levar lo blocatge global n° $2 correspondent a l’adreça IP '''$1'''",
+	'globalblocking-unblock-errors'          => 'Podètz pas levar un blocatge global per aquesta adreça IP, perque :
+$1',
+	'globalblocking-unblock-successsub'      => 'Blocatge global levat amb succès',
+	'globalblocking-blocked'                 => "Vòstra adreça IP es estada blocada sus l’ensemble dels wiki per '''$1''' (''$2'').
+Lo motiu indicat es estat ''« $3 »''. L’expiracion del blocatge es pel ''$4''.",
+	'globalblocking-logpage'                 => 'Jornal dels blocatges globals',
+	'globalblocking-block-logentry'          => '[[$1]] blocat globalament amb una durada d’expiracion de $2 ($3)',
+	'globalblocking-unblock-logentry'        => 'blocatge global levat sus [[$1]]',
+	'globalblocklist'                        => 'Tièra de las adreças IP blocadas globalament',
+	'globalblock'                            => 'Blocar globalament una adreça IP',
 );
 
 /** Polish (Polski)
