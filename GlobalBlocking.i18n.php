@@ -446,6 +446,48 @@ De reden is ''\"\$3\"''. De blokkade verloopt op ''\$4''.",
 	'globalblock'                            => 'Een IP-adres globaal blokkeren',
 );
 
+/** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
+ * @author Jorunn
+ */
+$messages['nn'] = array(
+	'globalblocking-desc'                    => '[[Special:GlobalBlock|Gjer det råd]] å blokkera IP-adresser [[Special:GlobalBlockList|krosswiki]]',
+	'globalblocking-block'                   => 'Blokker ei IP-adresse krosswiki',
+	'globalblocking-block-intro'             => 'Du kan nytte denne sida til å blokkere ei IP-adresse krosswiki.',
+	'globalblocking-block-reason'            => 'Grunngjeving for blokkeringa:',
+	'globalblocking-block-expiry'            => 'Blokkeringa varer til:',
+	'globalblocking-block-expiry-other'      => 'Anna varigheit',
+	'globalblocking-block-expiry-otherfield' => 'Anna tid:',
+	'globalblocking-block-legend'            => 'Blokker ein brukar krosswiki',
+	'globalblocking-block-options'           => 'Alternativ',
+	'globalblocking-block-errors'            => 'Blokkeringa tok ikkje, grunna:',
+	'globalblocking-block-ipinvalid'         => 'IP-adressa du skreiv inn ($1) er ugyldig.
+Merk at du ikkje kan skrive inn brukarnamn.',
+	'globalblocking-block-expiryinvalid'     => 'Varigheita du skreiv inn ($1) er ikkje gyldig.',
+	'globalblocking-block-submit'            => 'Blokker denne IP-adressa krosswiki',
+	'globalblocking-block-success'           => 'IP-adressa $1 har vote blokkert på alle Wikimedia-prosjekta.
+Sjå òg [[Special:Globalblocklist|lista over krosswikiblokkeringar]].',
+	'globalblocking-block-successsub'        => 'Krosswikiblokkeringa vart utførd',
+	'globalblocking-block-alreadyblocked'    => 'IP-adressa $1 er allereide krosswikiblokkert. Du kan sjå blokkeringa på [[Special:GlobalBlockList|lista over krosswikiblokkeringar]].',
+	'globalblocking-list'                    => 'Liste over krosswikiblokkertet IP-adresser',
+	'globalblocking-search-legend'           => 'Søk etter ei krosswikiblokkering',
+	'globalblocking-search-ip'               => 'IP-adresse:',
+	'globalblocking-search-submit'           => 'Søk etter blokkeringar',
+	'globalblocking-list-ipinvalid'          => 'IP-adressa du skreiv inn ($1) er ikkje gyldig.
+Skriv inn ei gyldig IP-adresse.',
+	'globalblocking-search-errors'           => 'Søket ditt lukkast ikkje fordi:
+$1',
+	'globalblocking-list-blockitem'          => "$1 '''$2''' ('''$3''') blokkerte '''[[Special:Contributions/$4|$4]]''' krosswiki ''($5)''",
+	'globalblocking-list-expiry'             => 'varigheit $1',
+	'globalblocking-list-anononly'           => 'berre uregistrerte',
+	'globalblocking-list-unblock'            => 'fjern blokkeringa',
+	'globalblocking-unblock-ipinvalid'       => 'IP-adressa du skreiv inn ($1) er ugyldig.
+Merk at du ikkje kan skrive inn brukarnamn.',
+	'globalblocking-unblock-legend'          => 'Fjern ei krosswikiblokkering',
+	'globalblocking-unblock-submit'          => 'Fjern krosswikiblokkering',
+	'globalblocking-unblock-reason'          => 'Grunngjeving:',
+	'globalblocking-unblock-notblocked'      => 'IP-adressa du skreiv inn ($1) er ikkje krosswikiblokkert.',
+);
+
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
  * @author Jon Harald Søby
  */
