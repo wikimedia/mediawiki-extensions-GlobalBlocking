@@ -273,6 +273,16 @@ A razón que deu foi ''\"\$3\"''. A expiración do bloqueo será ''\$4''.",
 	'globalblock'                            => 'Bloquear globalmente un enderezo IP',
 );
 
+/** Manx (Gaelg)
+ * @author MacTire02
+ */
+$messages['gv'] = array(
+	'globalblocking-block-expiry-otherfield' => 'Am elley:',
+	'globalblocking-block-options'           => 'Reihghyn',
+	'globalblocking-search-ip'               => 'Enmys IP:',
+	'globalblocking-unblock-reason'          => 'Fa:',
+);
+
 /** Hindi (हिन्दी)
  * @author Kaustubh
  */
