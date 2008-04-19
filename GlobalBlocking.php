@@ -77,11 +77,7 @@ class GlobalBlocking {
 	
 		// Get the block
 		if ($block = $dbr->selectRow( 'globalblocks', '*', $conds, __METHOD__ )) {
-			if (!is_array($result)) {
-				$result = $result ? array($result) : array();
-			}
-			$block = $dbr->fetchObject( $res );
-	
+
 			$expiry = Block::decodeExpiry( $block->gb_expiry );
 			if ($expiry == 'infinity') {
 				$expiry = wfMsg( 'infiniteblock' );

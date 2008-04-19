@@ -8,7 +8,7 @@ class SpecialGlobalBlock extends SpecialPage {
 		SpecialPage::SpecialPage( 'GlobalBlock', 'globalblock' );
 	}
 
-	function execute() {
+	function execute( $par ) {
 		global $wgOut, $wgRequest, $wgUser;
 		$this->setHeaders();
 
@@ -150,7 +150,7 @@ class SpecialGlobalBlock extends SpecialPage {
 
 
 		// How long to block them for
-		if ($expiryOptions != '-') {
+		if ( wfMsg( 'globalblocking-expiry-options' ) != '-') {
 			# Drop-down list
 			$fields['globalblocking-block-expiry'] = $this->buildExpirySelector( 'wpExpiry', 'wpExpiry', $this->mExpirySelection );
 			$fields['globalblocking-block-expiry-otherfield'] = wfInput( 'wpExpiryOther', false, $this->mExpiry == $this->mExpirySelection ? '' : $this->mExpiry );

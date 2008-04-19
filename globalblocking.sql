@@ -11,7 +11,7 @@ CREATE TABLE /*$wgDBprefix*/globalblocks (
 	gb_range_end tinyblob NOT NULL,
 	PRIMARY KEY gb_id (gb_id),
 
-	UNIQUE INDEX gb_address (gb_address(255), gb_user, gb_auto, gb_anon_only),
+	UNIQUE INDEX gb_address (gb_address(255), gb_anon_only),
 
 	INDEX gb_range (gb_range_start(8), gb_range_end(8)),
 	INDEX gb_timestamp (gb_timestamp),

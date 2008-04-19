@@ -8,7 +8,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 		parent::__construct( 'GlobalBlockList' );
 	}
 
-	function execute() {
+	function execute( $par ) {
 		global $wgUser,$wgOut,$wgRequest;
 
 		$this->setHeaders();
@@ -46,7 +46,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 		$searchForm .= Xml::openElement( 'fieldset' ) .
 			Xml::element( 'legend', null, wfMsg( 'globalblocking-search-legend' ) );
 		$searchForm .= Xml::openElement( 'form', array( 'method' => 'post', 'action' => $wgScript, 'name' => 'globalblocklist-search' ) );
-		$searchform .= Xml::hidden( 'title',  SpecialPage::getTitleFor('GlobalBlockList')->getPrefixedText() );
+		$searchForm .= Xml::hidden( 'title',  SpecialPage::getTitleFor('GlobalBlockList')->getPrefixedText() );
 
 		if (count($errors)>0) {
 			$errorstr = '';
@@ -188,7 +188,7 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 			$options[] = $row->gb_reason;
 		}
 
-		$expiry = Block::decodeExpiry( $block->gb_expiry );
+		$expiry = Block::decodeExpiry( $row->gb_expiry );
 		if ($expiry == 'infinity') {
 			$expiry = wfMsg( 'infiniteblock' );
 		} else {
@@ -204,7 +204,7 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 
 		$sk = $wgUser->getSkin();
 
-		$unblocklink = '';
+		$unblockLink = '';
 		if (count(SpecialPage::getTitleFor( 'GlobalBlockList' )->getUserPermissionsErrors( 'globalunblock', $wgUser ))<=1 ) {
 			$titleObj = SpecialPage::getTitleFor( "GlobalBlockList" );
 			$unblockLink = ' (' . $sk->makeKnownLinkObj($titleObj, wfMsg( 'globalblocking-list-unblock' ), 'action=unblock&unblockip=' . urlencode( $row->gb_address ) ) . ')';
