@@ -71,6 +71,7 @@ $messages['ar'] = array(
 	'globalblocking-block-expiry'            => 'انتهاء المنع:',
 	'globalblocking-block-expiry-otherfield' => 'وقت آخر:',
 	'globalblocking-block-options'           => 'خيارات',
+	'globalblocking-logpage'                 => 'سجل المنع العام',
 );
 
 /** Bulgarian (Български)
@@ -347,8 +348,14 @@ $messages['lb'] = array(
 	'globalblocking-block-intro'             => 'Dir kënnt dës Säit benotzen fir eng IP-Adress op alle Wikien ze spären.',
 	'globalblocking-block-reason'            => 'Grond fir dës Spär:',
 	'globalblocking-block-expiry-otherfield' => 'Aner Dauer:',
+	'globalblocking-block-legend'            => 'E Benotzer global spären',
 	'globalblocking-block-options'           => 'Optiounen',
+	'globalblocking-block-successsub'        => 'Global gespaart',
+	'globalblocking-list'                    => 'Lëscht vun de global gespaarten IP-Adressen',
 	'globalblocking-search-ip'               => 'IP-Adress:',
+	'globalblocking-list-unblock'            => 'Spär ophiewen',
+	'globalblocking-unblock-reason'          => 'Grond:',
+	'globalblock'                            => 'Eng IP-Adress global spären',
 );
 
 /** Marathi (मराठी)
@@ -458,6 +465,7 @@ De reden is ''\"\$3\"''. De blokkade verloopt op ''\$4''.",
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
  * @author Jorunn
+ * @author Eirik
  */
 $messages['nn'] = array(
 	'globalblocking-desc'                    => '[[Special:GlobalBlock|Gjer det råd]] å blokkera IP-adresser [[Special:GlobalBlockList|krosswiki]]',
@@ -474,7 +482,7 @@ $messages['nn'] = array(
 Merk at du ikkje kan skrive inn brukarnamn.',
 	'globalblocking-block-expiryinvalid'     => 'Varigheita du skreiv inn ($1) er ikkje gyldig.',
 	'globalblocking-block-submit'            => 'Blokker denne IP-adressa krosswiki',
-	'globalblocking-block-success'           => 'IP-adressa $1 har vote blokkert på alle Wikimedia-prosjekta.
+	'globalblocking-block-success'           => 'IP-adressa $1 har vorte blokkert på alle Wikimedia-prosjekta.
 Sjå òg [[Special:Globalblocklist|lista over krosswikiblokkeringar]].',
 	'globalblocking-block-successsub'        => 'Krosswikiblokkeringa vart utførd',
 	'globalblocking-block-alreadyblocked'    => 'IP-adressa $1 er allereide krosswikiblokkert. Du kan sjå blokkeringa på [[Special:GlobalBlockList|lista over krosswikiblokkeringar]].',
@@ -664,15 +672,25 @@ Przyczyna blokady: ''„$3”''. Blokada wygaśnie ''$4''.",
  */
 $messages['pt'] = array(
 	'globalblocking-block'                   => 'Bloquear globalmente um endereço IP',
+	'globalblocking-block-intro'             => 'Você pode usar esta página para bloquear um endereço IP em todos os wikis.',
 	'globalblocking-block-reason'            => 'Motivo para este bloqueio:',
+	'globalblocking-block-expiry'            => 'Validade do bloqueio:',
+	'globalblocking-block-expiry-other'      => 'Outro tempo de validade',
 	'globalblocking-block-expiry-otherfield' => 'Outra duração:',
 	'globalblocking-block-legend'            => 'Bloquear um utilizador globalmente',
 	'globalblocking-block-options'           => 'Opções',
 	'globalblocking-block-errors'            => 'O bloqueio não teve sucesso, porque:
 $1',
+	'globalblocking-block-submit'            => 'Bloquear globalmente este endereço IP',
+	'globalblocking-block-successsub'        => 'Bloqueio global com sucesso',
+	'globalblocking-search-legend'           => 'Pesquisar bloqueio global',
 	'globalblocking-search-ip'               => 'Endereço IP:',
+	'globalblocking-search-submit'           => 'Pesquisar bloqueios',
+	'globalblocking-unblock-legend'          => 'Remover um bloqueio global',
+	'globalblocking-unblock-submit'          => 'Remover bloqueio global',
 	'globalblocking-unblock-reason'          => 'Motivo:',
 	'globalblocking-logpage'                 => 'Registo de bloqueios globais',
+	'globalblocklist'                        => 'Lista de endereços IP bloqueados globalmente',
 );
 
 /** Russian (Русский)
