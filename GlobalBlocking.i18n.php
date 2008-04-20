@@ -150,21 +150,24 @@ Als Begründung wurde ''„\$3“'' angegeben. Die Sperre dauert ''\$4''.",
  * @author Yekrats
  */
 $messages['eo'] = array(
-	'globalblocking-block-options'  => 'Opcioj',
-	'globalblocking-search-legend'  => 'Serĉu ĝeneralan forbaron',
-	'globalblocking-search-ip'      => 'IP-adreso:',
-	'globalblocking-search-submit'  => 'Serĉu forbarojn',
-	'globalblocking-list-ipinvalid' => 'La serĉita IP-adreso ($1) estas nevalida.
+	'globalblocking-block-options'    => 'Opcioj',
+	'globalblocking-block-submit'     => 'Forbaru ĉi tiun IP-adreson ĝenerale',
+	'globalblocking-block-successsub' => 'Ĝenerala forbaro estis sukcesa',
+	'globalblocking-search-legend'    => 'Serĉu ĝeneralan forbaron',
+	'globalblocking-search-ip'        => 'IP-adreso:',
+	'globalblocking-search-submit'    => 'Serĉu forbarojn',
+	'globalblocking-list-ipinvalid'   => 'La serĉita IP-adreso ($1) estas nevalida.
 Bonvolu enigi validan IP-adreson.',
-	'globalblocking-search-errors'  => 'Via serĉo estis malsukcesa, ĉar:
+	'globalblocking-search-errors'    => 'Via serĉo estis malsukcesa, ĉar:
 $1',
-	'globalblocking-list-expiry'    => 'findato $1',
-	'globalblocking-list-anononly'  => 'nur anonimuloj',
-	'globalblocking-list-unblock'   => 'malforbaru',
-	'globalblocking-unblock-reason' => 'Kialo:',
-	'globalblocking-blocked'        => "Via IP-adreso estis forbarita en ĉiuj Wikimedia-retejoj de '''\$1''' (''\$2'').
+	'globalblocking-list-expiry'      => 'findato $1',
+	'globalblocking-list-anononly'    => 'nur anonimuloj',
+	'globalblocking-list-unblock'     => 'malforbaru',
+	'globalblocking-unblock-reason'   => 'Kialo:',
+	'globalblocking-blocked'          => "Via IP-adreso estis forbarita en ĉiuj Wikimedia-retejoj de '''\$1''' (''\$2'').
 La kialo donata estis ''\"\$3\"''. La findato de la forbaro estas ''\$4''.",
-	'globalblock'                   => 'Ĝenerale forbaru IP-adreson',
+	'globalblocking-block-logentry'   => 'ĝenerale forbaris [[$1]] kun findato de $2 ($3)',
+	'globalblock'                     => 'Ĝenerale forbaru IP-adreson',
 );
 
 /** French (Français)
@@ -669,8 +672,10 @@ Przyczyna blokady: ''„$3”''. Blokada wygaśnie ''$4''.",
 
 /** Portuguese (Português)
  * @author Malafaya
+ * @author Lijealso
  */
 $messages['pt'] = array(
+	'globalblocking-desc'                    => '[[{{ns:Special}}:GlobalBlock|Permite]] que endereços IP sejam [[{{ns:Special}}:GlobalBlockList|bloqueados através de múltiplos wikis]]',
 	'globalblocking-block'                   => 'Bloquear globalmente um endereço IP',
 	'globalblocking-block-intro'             => 'Você pode usar esta página para bloquear um endereço IP em todos os wikis.',
 	'globalblocking-block-reason'            => 'Motivo para este bloqueio:',
@@ -681,16 +686,29 @@ $messages['pt'] = array(
 	'globalblocking-block-options'           => 'Opções',
 	'globalblocking-block-errors'            => 'O bloqueio não teve sucesso, porque:
 $1',
+	'globalblocking-block-ipinvalid'         => 'O endereço IP ($1) que introduziu é inválido.
+Por favor, note que não pode introduzir um nome de utilizador!',
 	'globalblocking-block-submit'            => 'Bloquear globalmente este endereço IP',
 	'globalblocking-block-successsub'        => 'Bloqueio global com sucesso',
+	'globalblocking-list'                    => 'Lista de endereços IP bloqueados globalmente',
 	'globalblocking-search-legend'           => 'Pesquisar bloqueio global',
 	'globalblocking-search-ip'               => 'Endereço IP:',
 	'globalblocking-search-submit'           => 'Pesquisar bloqueios',
+	'globalblocking-search-errors'           => 'A sua busca não teve sucesso, porque:
+$1',
+	'globalblocking-list-blockitem'          => "$1: '''$2''' (''$3'') bloqueou globalmente '''[[{{ns:Special}}:Contributions/$4|$4]]''' ''($5)''",
+	'globalblocking-unblock-ipinvalid'       => 'O endereço IP ($1) que introduziu é inválido.
+Por favor, note que não pode introduzir um nome de utilizador!',
 	'globalblocking-unblock-legend'          => 'Remover um bloqueio global',
 	'globalblocking-unblock-submit'          => 'Remover bloqueio global',
 	'globalblocking-unblock-reason'          => 'Motivo:',
+	'globalblocking-unblock-notblocked'      => 'O endereço IP ($1) que introduziu não está bloqueado globalmente.',
+	'globalblocking-unblock-errors'          => 'Você não pode remover o bloqueio global para esse endereço IP, porque:
+$1',
 	'globalblocking-logpage'                 => 'Registo de bloqueios globais',
+	'globalblocking-unblock-logentry'        => 'Removido bloqueio global em [[$1]]',
 	'globalblocklist'                        => 'Lista de endereços IP bloqueados globalmente',
+	'globalblock'                            => 'Bloquear um endereço IP globalmente',
 );
 
 /** Russian (Русский)
