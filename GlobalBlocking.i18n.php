@@ -150,24 +150,34 @@ Als Begründung wurde ''„\$3“'' angegeben. Die Sperre dauert ''\$4''.",
  * @author Yekrats
  */
 $messages['eo'] = array(
-	'globalblocking-block-options'    => 'Opcioj',
-	'globalblocking-block-submit'     => 'Forbaru ĉi tiun IP-adreson ĝenerale',
-	'globalblocking-block-successsub' => 'Ĝenerala forbaro estis sukcesa',
-	'globalblocking-search-legend'    => 'Serĉu ĝeneralan forbaron',
-	'globalblocking-search-ip'        => 'IP-adreso:',
-	'globalblocking-search-submit'    => 'Serĉu forbarojn',
-	'globalblocking-list-ipinvalid'   => 'La serĉita IP-adreso ($1) estas nevalida.
+	'globalblocking-block'              => 'Ĝenerale forbaru IP-adreson',
+	'globalblocking-block-reason'       => 'Kialo por ĉi tiu forbaro:',
+	'globalblocking-block-expiry'       => 'Findato de forbaro:',
+	'globalblocking-block-expiry-other' => 'Alia findato',
+	'globalblocking-block-legend'       => 'Forbaru uzanto ĝenerale',
+	'globalblocking-block-options'      => 'Opcioj',
+	'globalblocking-block-submit'       => 'Forbaru ĉi tiun IP-adreson ĝenerale',
+	'globalblocking-block-successsub'   => 'Ĝenerala forbaro estis sukcesa',
+	'globalblocking-list'               => 'Listo de ĝenerale forbaritaj IP-adresoj',
+	'globalblocking-search-legend'      => 'Serĉu ĝeneralan forbaron',
+	'globalblocking-search-ip'          => 'IP-adreso:',
+	'globalblocking-search-submit'      => 'Serĉu forbarojn',
+	'globalblocking-list-ipinvalid'     => 'La serĉita IP-adreso ($1) estas nevalida.
 Bonvolu enigi validan IP-adreson.',
-	'globalblocking-search-errors'    => 'Via serĉo estis malsukcesa, ĉar:
+	'globalblocking-search-errors'      => 'Via serĉo estis malsukcesa, ĉar:
 $1',
-	'globalblocking-list-expiry'      => 'findato $1',
-	'globalblocking-list-anononly'    => 'nur anonimuloj',
-	'globalblocking-list-unblock'     => 'malforbaru',
-	'globalblocking-unblock-reason'   => 'Kialo:',
-	'globalblocking-blocked'          => "Via IP-adreso estis forbarita en ĉiuj Wikimedia-retejoj de '''\$1''' (''\$2'').
+	'globalblocking-list-expiry'        => 'findato $1',
+	'globalblocking-list-anononly'      => 'nur anonimuloj',
+	'globalblocking-list-unblock'       => 'malforbaru',
+	'globalblocking-unblock-legend'     => 'Forigu ĝeneralan forbaron',
+	'globalblocking-unblock-submit'     => 'Forigu ĝeneralan forbaron',
+	'globalblocking-unblock-reason'     => 'Kialo:',
+	'globalblocking-unblock-successsub' => 'Ĝenerala forbaro estis sukcese forigita',
+	'globalblocking-blocked'            => "Via IP-adreso estis forbarita en ĉiuj Wikimedia-retejoj de '''\$1''' (''\$2'').
 La kialo donata estis ''\"\$3\"''. La findato de la forbaro estas ''\$4''.",
-	'globalblocking-block-logentry'   => 'ĝenerale forbaris [[$1]] kun findato de $2 ($3)',
-	'globalblock'                     => 'Ĝenerale forbaru IP-adreson',
+	'globalblocking-logpage'            => 'Loglibro de ĝeneralaj forbaroj',
+	'globalblocking-block-logentry'     => 'ĝenerale forbaris [[$1]] kun findato de $2 ($3)',
+	'globalblock'                       => 'Ĝenerale forbaru IP-adreson',
 );
 
 /** French (Français)
@@ -343,6 +353,13 @@ $messages['hu'] = array(
 	'globalblock'                   => 'IP-cím globális blokkolása',
 );
 
+/** Khmer (ភាសាខ្មែរ)
+ * @author គីមស៊្រុន
+ */
+$messages['km'] = array(
+	'globalblocking-unblock-reason' => 'មូលហេតុ',
+);
+
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
  */
@@ -356,8 +373,13 @@ $messages['lb'] = array(
 	'globalblocking-block-successsub'        => 'Global gespaart',
 	'globalblocking-list'                    => 'Lëscht vun de global gespaarten IP-Adressen',
 	'globalblocking-search-ip'               => 'IP-Adress:',
+	'globalblocking-search-submit'           => 'Späre sichen',
+	'globalblocking-list-anononly'           => 'nëmmen anonym Benotzer',
 	'globalblocking-list-unblock'            => 'Spär ophiewen',
+	'globalblocking-unblock-legend'          => 'Eng global Spär ophiewen',
+	'globalblocking-unblock-submit'          => 'Global Spär ophiewen',
 	'globalblocking-unblock-reason'          => 'Grond:',
+	'globalblocking-unblock-successsub'      => 'Global Spär ass opgehuewen',
 	'globalblock'                            => 'Eng IP-Adress global spären',
 );
 
