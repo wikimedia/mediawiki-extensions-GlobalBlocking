@@ -703,10 +703,12 @@ Por favor, note que não pode introduzir um nome de utilizador!',
 	'globalblocking-unblock-submit'          => 'Remover bloqueio global',
 	'globalblocking-unblock-reason'          => 'Motivo:',
 	'globalblocking-unblock-notblocked'      => 'O endereço IP ($1) que introduziu não está bloqueado globalmente.',
+	'globalblocking-unblock-unblocked'       => "Você removeu o bloqueio global #$2 sobre o endereço IP '''$1''' com sucesso",
 	'globalblocking-unblock-errors'          => 'Você não pode remover o bloqueio global para esse endereço IP, porque:
 $1',
+	'globalblocking-unblock-successsub'      => 'Bloqueio global removido com sucesso',
 	'globalblocking-logpage'                 => 'Registo de bloqueios globais',
-	'globalblocking-unblock-logentry'        => 'Removido bloqueio global em [[$1]]',
+	'globalblocking-unblock-logentry'        => 'Removido bloqueio global de [[$1]]',
 	'globalblocklist'                        => 'Lista de endereços IP bloqueados globalmente',
 	'globalblock'                            => 'Bloquear um endereço IP globalmente',
 );
