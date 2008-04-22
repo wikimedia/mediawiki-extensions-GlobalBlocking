@@ -76,20 +76,45 @@ $messages['ar'] = array(
 
 /** Bulgarian (Български)
  * @author DCLXVI
+ * @author Spiritia
  */
 $messages['bg'] = array(
-	'globalblocking-block-reason'       => 'Причина за блокирането:',
-	'globalblocking-block-legend'       => 'Глобално блокиране на потребител',
-	'globalblocking-block-submit'       => 'Блокиране на този IP адрес глобално',
-	'globalblocking-search-legend'      => 'Търсене на глобално блокиране',
-	'globalblocking-search-ip'          => 'IP адрес:',
-	'globalblocking-unblock-legend'     => 'Премахване на глобално блокиране',
-	'globalblocking-unblock-submit'     => 'Премахване на глобално блокиране',
-	'globalblocking-unblock-reason'     => 'Причина:',
-	'globalblocking-unblock-successsub' => 'Глобалното блокиране беше премахнато успешно',
-	'globalblocking-logpage'            => 'Дневник на глобалните блокирания',
-	'globalblocklist'                   => 'Списък на глобално блокираните IP адреси',
-	'globalblock'                       => 'Глобално блокиране на IP адрес',
+	'globalblocking-desc'                 => '[[Special:GlobalBlock|Позволява]] IP-адреси да се [[Special:GlobalBlockList|блокират едновременно в множество уикита]]',
+	'globalblocking-block'                => 'Глобално блокиране на IP-адрес',
+	'globalblocking-block-intro'          => 'Чрез тази страница може да се блокира IP-адрес едновременно във всички уикита.',
+	'globalblocking-block-reason'         => 'Причина за блокирането:',
+	'globalblocking-block-legend'         => 'Глобално блокиране на потребител',
+	'globalblocking-block-errors'         => 'Блокирането беше неуспешно, защото:
+$1',
+	'globalblocking-block-ipinvalid'      => 'Въведеният IP-адрес ($1) е невалиден.
+Имайте предвид, че не можете да въвеждате потребителско име!',
+	'globalblocking-block-expiryinvalid'  => 'Въведеният краен срок ($1) е невалиден.',
+	'globalblocking-block-submit'         => 'Блокиране на този IP адрес глобално',
+	'globalblocking-block-success'        => 'IP-адресът $1 беше успешно блокиран във всички проекти на Уикимедия.
+Прегледайте [[Special:Globalblocklist|списъка на глобалните блокирания]].',
+	'globalblocking-block-successsub'     => 'Глобалното блокиране беше успешно',
+	'globalblocking-block-alreadyblocked' => 'IP адресът $1 е вече блокиран глобално. Можете да прегледате съществуващите блокирания в [[Special:Globalblocklist|списъка с глобални блокирания]].',
+	'globalblocking-list'                 => 'Списък на глобално блокирани IP адреси',
+	'globalblocking-search-legend'        => 'Търсене на глобално блокиране',
+	'globalblocking-search-ip'            => 'IP адрес:',
+	'globalblocking-list-ipinvalid'       => 'Потърсеният от нас IP-адрес ($1) е невалиден.
+Въведете валиден IP-адрес.',
+	'globalblocking-unblock-ipinvalid'    => 'Въведеният IP адрес ($1) е невалиден.
+Имайте предвид, че не можете да въвеждате потребителско име!',
+	'globalblocking-unblock-legend'       => 'Премахване на глобално блокиране',
+	'globalblocking-unblock-submit'       => 'Премахване на глобално блокиране',
+	'globalblocking-unblock-reason'       => 'Причина:',
+	'globalblocking-unblock-notblocked'   => 'Въведеният IP адрес ($1) не е блокиран глобално.',
+	'globalblocking-unblock-unblocked'    => "Успешно премахнахте глобалното блокиране #$2 на IP адрес '''$1'''",
+	'globalblocking-unblock-errors'       => 'Не можете да премахнете глобалното блокиране на този IP адрес поради следната причина:
+$1',
+	'globalblocking-unblock-successsub'   => 'Глобалното блокиране беше премахнато успешно',
+	'globalblocking-blocked'              => "Вашият IP адрес беше блокиран във всички уикита на Уикимедия от '''$1''' (''$2'').
+Посочената причина е ''„$3“''. Срокът на изтичане на блокирането е ''$4''.",
+	'globalblocking-logpage'              => 'Дневник на глобалните блокирания',
+	'globalblocking-block-logentry'       => 'глобално блокиране на [[$1]] със срок на изтичане $2 ($3)',
+	'globalblocklist'                     => 'Списък на глобално блокираните IP адреси',
+	'globalblock'                         => 'Глобално блокиране на IP адрес',
 );
 
 /** German (Deutsch)
@@ -353,6 +378,15 @@ $messages['hu'] = array(
 	'globalblock'                   => 'IP-cím globális blokkolása',
 );
 
+/** Javanese (Basa Jawa)
+ * @author Meursault2004
+ */
+$messages['jv'] = array(
+	'globalblocking-search-ip'     => 'Alamat IP:',
+	'globalblocking-list-expiry'   => 'kadaluwarsa $1',
+	'globalblocking-list-anononly' => 'anon-waé',
+);
+
 /** Khmer (ភាសាខ្មែរ)
  * @author គីមស៊្រុន
  */
@@ -364,14 +398,18 @@ $messages['km'] = array(
  * @author Robby
  */
 $messages['lb'] = array(
+	'globalblocking-desc'                    => '[[Special:GlobalBlock|Erlaabt et]] IP-Adressen op [[Special:GlobalBlockList|méi Wikien mateneen ze spären]]',
 	'globalblocking-block'                   => 'Eng IP-Adress global spären',
 	'globalblocking-block-intro'             => 'Dir kënnt dës Säit benotzen fir eng IP-Adress op alle Wikien ze spären.',
 	'globalblocking-block-reason'            => 'Grond fir dës Spär:',
 	'globalblocking-block-expiry-otherfield' => 'Aner Dauer:',
 	'globalblocking-block-legend'            => 'E Benotzer global spären',
 	'globalblocking-block-options'           => 'Optiounen',
+	'globalblocking-block-submit'            => 'Dës IP-Adress global spären',
 	'globalblocking-block-successsub'        => 'Global gespaart',
+	'globalblocking-block-alreadyblocked'    => "D'IP-Adress $1 ass scho global gespaart. Dir kënnt d'Spären op der [[Special:Globalblocklist|Lëscht vun de globale Späre]] kucken.",
 	'globalblocking-list'                    => 'Lëscht vun de global gespaarten IP-Adressen',
+	'globalblocking-search-legend'           => 'Sich no enger globaler Spär',
 	'globalblocking-search-ip'               => 'IP-Adress:',
 	'globalblocking-search-submit'           => 'Späre sichen',
 	'globalblocking-list-anononly'           => 'nëmmen anonym Benotzer',
@@ -379,7 +417,11 @@ $messages['lb'] = array(
 	'globalblocking-unblock-legend'          => 'Eng global Spär ophiewen',
 	'globalblocking-unblock-submit'          => 'Global Spär ophiewen',
 	'globalblocking-unblock-reason'          => 'Grond:',
+	'globalblocking-unblock-notblocked'      => 'Déi IP-Adress déi dir aginn hutt ass net global gespaart.',
+	'globalblocking-unblock-unblocked'       => "Dir hutt d'global Spär #$2 vun der IP-Adress '''$1''' opgehuewen",
 	'globalblocking-unblock-successsub'      => 'Global Spär ass opgehuewen',
+	'globalblocking-logpage'                 => 'Lëscht vun de globale Spären',
+	'globalblocklist'                        => 'Lëscht vun de global gespaarten IP-Adressen',
 	'globalblock'                            => 'Eng IP-Adress global spären',
 );
 
