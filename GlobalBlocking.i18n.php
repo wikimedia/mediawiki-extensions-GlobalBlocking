@@ -63,6 +63,13 @@ The reason given was ''\"$3\"''. The block's expiry is ''$4''.",
 	'globalblock' => 'Globally block an IP address',
 );
 
+/** Aragonese (Aragonés)
+ * @author Juanpabl
+ */
+$messages['an'] = array(
+	'globalblocking-unblock-reason' => 'Razón:',
+);
+
 /** Arabic (العربية)
  * @author Meno25
  */
@@ -97,6 +104,7 @@ $1',
 	'globalblocking-list'                 => 'Списък на глобално блокирани IP адреси',
 	'globalblocking-search-legend'        => 'Търсене на глобално блокиране',
 	'globalblocking-search-ip'            => 'IP адрес:',
+	'globalblocking-search-submit'        => 'Търсене на блокирания',
 	'globalblocking-list-ipinvalid'       => 'Потърсеният от нас IP-адрес ($1) е невалиден.
 Въведете валиден IP-адрес.',
 	'globalblocking-unblock-ipinvalid'    => 'Въведеният IP адрес ($1) е невалиден.
@@ -202,6 +210,7 @@ $1',
 La kialo donata estis ''\"\$3\"''. La findato de la forbaro estas ''\$4''.",
 	'globalblocking-logpage'            => 'Loglibro de ĝeneralaj forbaroj',
 	'globalblocking-block-logentry'     => 'ĝenerale forbaris [[$1]] kun findato de $2 ($3)',
+	'globalblocklist'                   => 'Listo de ĝenerale forbaritaj IP-adresoj',
 	'globalblock'                       => 'Ĝenerale forbaru IP-adreson',
 );
 
@@ -376,6 +385,13 @@ $messages['hu'] = array(
 	'globalblocking-list-expiry'    => 'lejárat: $1',
 	'globalblocking-unblock-reason' => 'Ok:',
 	'globalblock'                   => 'IP-cím globális blokkolása',
+);
+
+/** Icelandic (Íslenska)
+ * @author S.Örvarr.S
+ */
+$messages['is'] = array(
+	'globalblocking-unblock-reason' => 'Ástæða:',
 );
 
 /** Javanese (Basa Jawa)
@@ -761,6 +777,8 @@ Por favor, note que não pode introduzir um nome de utilizador!',
 	'globalblocking-search-errors'           => 'A sua busca não teve sucesso, porque:
 $1',
 	'globalblocking-list-blockitem'          => "$1: '''$2''' (''$3'') bloqueou globalmente '''[[{{ns:Special}}:Contributions/$4|$4]]''' ''($5)''",
+	'globalblocking-list-anononly'           => 'só anónimos',
+	'globalblocking-list-unblock'            => 'desbloquear',
 	'globalblocking-unblock-ipinvalid'       => 'O endereço IP ($1) que introduziu é inválido.
 Por favor, note que não pode introduzir um nome de utilizador!',
 	'globalblocking-unblock-legend'          => 'Remover um bloqueio global',
