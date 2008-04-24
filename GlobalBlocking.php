@@ -106,25 +106,7 @@ class GlobalBlocking {
 	}
 	
 	static function buildForm( $fields, $submitLabel ) {
-		$form = '';
-		$form .= "<table><tbody>";
-	
-		foreach( $fields as $labelmsg => $input ) {
-			$id = "mw-gb-$labelmsg";
-			$form .= Xml::openElement( 'tr', array( 'class' => $id ) );
-	
-			$form .= Xml::element( 'td', array(), wfMsg( $labelmsg ) );
-	
-			$form .= Xml::openElement( 'td' ) . $input . Xml::closeElement( 'td' );
-	
-			$form .= Xml::closeElement( 'tr' );
-		}
-	
-		$form .= "</tbody></table>";
-	
-		$form .= wfSubmitButton( wfMsg($submitLabel) );
-	
-		return $form;
+		return wfBuildForm( $fields, $submitLabel );
 	}
 	
 	static function getGlobalBlockId( $ip ) {

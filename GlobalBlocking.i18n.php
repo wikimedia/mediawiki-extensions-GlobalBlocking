@@ -61,6 +61,10 @@ The reason given was ''\"$3\"''. The block's expiry is ''$4''.",
 
 	'globalblocklist' => 'List of globally blocked IP addresses',
 	'globalblock' => 'Globally block an IP address',
+	
+	// User rights
+	'right-globalblock' => 'Make global blocks',
+	'right-globalunblock' => 'Remove global blocks',
 );
 
 /** Aragonese (Aragonés)
