@@ -220,6 +220,7 @@ La kialo donata estis ''\"\$3\"''. La findato de la forbaro estas ''\$4''.",
 
 /** French (Français)
  * @author Grondin
+ * @author IAlex
  */
 $messages['fr'] = array(
 	'globalblocking-desc'                    => '[[Special:GlobalBlock|Permet]] le blocage des adresses IP [[Special:GlobalBlockList|à travers plusieurs wikis]]',
@@ -270,6 +271,8 @@ Le motif indiqué a été ''« $3 »''. L’expiration du blocage est pour le ''
 	'globalblocking-unblock-logentry'        => 'blocage global retiré sur [[$1]]',
 	'globalblocklist'                        => 'Liste des adresses IP bloquées globalement',
 	'globalblock'                            => 'Bloquer globalement une adresse IP',
+	'right-globalblock'                      => 'Bloquer des utilisateurs globalement',
+	'right-globalunblock'                    => 'Débloquer des utilisateurs bloqués globalement',
 );
 
 /** Galician (Galego)
@@ -644,6 +647,8 @@ $1',
 	'globalblocking-unblock-logentry'        => 'fjernet global blokkering på [[$1]]',
 	'globalblocklist'                        => 'Liste over globalt blokkerte IP-adresser',
 	'globalblock'                            => 'Blokker en IP-adresse globalt',
+	'right-globalblock'                      => 'Blokkere IP-er globalt',
+	'right-globalunblock'                    => 'Fjerne globale blokkeringer',
 );
 
 /** Occitan (Occitan)
