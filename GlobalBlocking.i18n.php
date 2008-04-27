@@ -467,6 +467,8 @@ $1',
 कृपया नोंद घ्या की तुम्ही सदस्य नाव देऊ शकत नाही!',
 	'globalblocking-block-expiryinvalid'     => 'तुम्ही दिलेली समाप्तीची वेळ ($1) अयोग्य आहे.',
 	'globalblocking-block-submit'            => 'ह्या आयपी अंकपत्त्याला वैश्विक पातळीवर ब्लॉक करा',
+	'globalblocking-block-success'           => '$1 या आयपी अंकपत्त्याला सर्व विकिंवर यशस्वीरित्या ब्लॉक करण्यात आलेले आहे.
+तुम्ही कदाचित [[Special:Globalblocklist|वैश्विक ब्लॉक्सची यादी]] पाहू इच्छिता.',
 	'globalblocking-block-successsub'        => 'वैश्विक ब्लॉक यशस्वी',
 	'globalblocking-block-alreadyblocked'    => '$1 हा आयपी अंकपत्ता अगोदरच ब्लॉक केलेला आहे. तुम्ही अस्तित्वात असलेले ब्लॉक [[Special:Globalblocklist|वैश्विक ब्लॉकच्या यादीत]] पाहू शकता.',
 	'globalblocking-list'                    => 'वैश्विक पातळीवर ब्लॉक केलेले आयपी अंकपत्ते',
@@ -498,6 +500,8 @@ $1',
 	'globalblocking-unblock-logentry'        => '[[$1]] वरील वैश्विक ब्लॉक काढला',
 	'globalblocklist'                        => 'वैश्विक पातळीवर ब्लॉक केलेल्या आयपी अंकपत्त्यांची यादी',
 	'globalblock'                            => 'आयपी अंकपत्त्याला वैश्विक पातळीवर ब्लॉक करा',
+	'right-globalblock'                      => 'वैश्विक ब्लॉक तयार करा',
+	'right-globalunblock'                    => 'वैश्विक ब्लॉक काढून टाका',
 );
 
 /** Dutch (Nederlands)
@@ -551,6 +555,8 @@ De reden is ''\"\$3\"''. De blokkade verloopt op ''\$4''.",
 	'globalblocking-unblock-logentry'        => 'heeft de globale blokkade voor [[$1]] verwijderd',
 	'globalblocklist'                        => 'Lijst van globaal geblokkeerde IP-adressen',
 	'globalblock'                            => 'Een IP-adres globaal blokkeren',
+	'right-globalblock'                      => 'Globale blokkades instellen',
+	'right-globalunblock'                    => 'Globale blokkades verwijderen',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
@@ -777,15 +783,20 @@ $messages['pt'] = array(
 $1',
 	'globalblocking-block-ipinvalid'         => 'O endereço IP ($1) que introduziu é inválido.
 Por favor, note que não pode introduzir um nome de utilizador!',
+	'globalblocking-block-expiryinvalid'     => 'A expiração que introduziu ($1) é inválida.',
 	'globalblocking-block-submit'            => 'Bloquear globalmente este endereço IP',
 	'globalblocking-block-successsub'        => 'Bloqueio global com sucesso',
+	'globalblocking-block-alreadyblocked'    => 'O endereço IP $1 já está bloqueado globalmente. Você pode ver o bloqueio existente na [[{{ns:Special}}:Globalblocklist|lista de bloqueios globais]].',
 	'globalblocking-list'                    => 'Lista de endereços IP bloqueados globalmente',
 	'globalblocking-search-legend'           => 'Pesquisar bloqueio global',
 	'globalblocking-search-ip'               => 'Endereço IP:',
 	'globalblocking-search-submit'           => 'Pesquisar bloqueios',
+	'globalblocking-list-ipinvalid'          => 'O endereço IP que procurou ($1) é inválido.
+Por favor, introduza um endereço IP válido.',
 	'globalblocking-search-errors'           => 'A sua busca não teve sucesso, porque:
 $1',
 	'globalblocking-list-blockitem'          => "$1: '''$2''' (''$3'') bloqueou globalmente '''[[{{ns:Special}}:Contributions/$4|$4]]''' ''($5)''",
+	'globalblocking-list-expiry'             => 'expira $1',
 	'globalblocking-list-anononly'           => 'só anónimos',
 	'globalblocking-list-unblock'            => 'desbloquear',
 	'globalblocking-unblock-ipinvalid'       => 'O endereço IP ($1) que introduziu é inválido.
@@ -798,10 +809,15 @@ Por favor, note que não pode introduzir um nome de utilizador!',
 	'globalblocking-unblock-errors'          => 'Você não pode remover o bloqueio global para esse endereço IP, porque:
 $1',
 	'globalblocking-unblock-successsub'      => 'Bloqueio global removido com sucesso',
+	'globalblocking-blocked'                 => "O seu endereço IP foi bloqueado em todos os wikis Wikimedia por '''\$1''' (''\$2'').
+O motivo dado foi ''\"\$3\"''. O bloqueio expira em ''\$4''.",
 	'globalblocking-logpage'                 => 'Registo de bloqueios globais',
+	'globalblocking-block-logentry'          => 'bloqueou globalmente [[$1]] com um tempo de expiração de $2 ($3)',
 	'globalblocking-unblock-logentry'        => 'Removido bloqueio global de [[$1]]',
 	'globalblocklist'                        => 'Lista de endereços IP bloqueados globalmente',
 	'globalblock'                            => 'Bloquear um endereço IP globalmente',
+	'right-globalblock'                      => 'Fazer bloqueios globais',
+	'right-globalunblock'                    => 'Remover bloqueios globais',
 );
 
 /** Russian (Русский)
@@ -910,6 +926,8 @@ Ako dôvod udáva ''„$3“''. Blokovanie vyprší ''$4''.",
 	'globalblocking-unblock-logentry'        => 'odstránil globálne blokovanie [[$1]]',
 	'globalblocklist'                        => 'Zoznam globálne zablokovaných IP adries',
 	'globalblock'                            => 'Globálne zablokovať IP adresu',
+	'right-globalblock'                      => 'Robiť globálne blokovania',
+	'right-globalunblock'                    => 'Odstraňovať globálne blokovania',
 );
 
 /** Serbian Cyrillic ekavian (ћирилица)
@@ -1017,6 +1035,8 @@ Anledningar var '''$3'''. Blockeringen utgår ''$4''.",
 	'globalblocking-unblock-logentry'        => 'tog bort global blockering på [[$1]]',
 	'globalblocklist'                        => 'Lista över globalt blockerade IP-adresser',
 	'globalblock'                            => 'Blockera en IP-adress globalt',
+	'right-globalblock'                      => 'Göra globala blockeringar',
+	'right-globalunblock'                    => 'Ta bort globala blockeringar',
 );
 
 /** Vietnamese (Tiếng Việt)
