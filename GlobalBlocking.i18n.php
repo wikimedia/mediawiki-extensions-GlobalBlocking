@@ -41,6 +41,8 @@ Please enter a valid IP address.',
 	'globalblocking-list-expiry' => 'expiry $1',
 	'globalblocking-list-anononly' => 'anon-only',
 	'globalblocking-list-unblock' => 'unblock',
+	'globalblocking-list-whitelisted' => 'locally disabled by $1: $2',
+	'globalblocking-list-whitelist' => 'local status',
 
 	'globalblocking-unblock-ipinvalid' => 'The IP address ($1) you entered is invalid.
 Please note that you cannot enter a user name!',
@@ -51,6 +53,16 @@ Please note that you cannot enter a user name!',
 	'globalblocking-unblock-unblocked' => "You have successfully removed the global block #$2 on the IP address '''$1'''",
 	'globalblocking-unblock-errors' => "You cannot remove a global block for that IP address, because:\n\$1",
 	'globalblocking-unblock-successsub' => 'Global block successfully removed',
+	
+	'globalblocking-whitelist-subtitle' => 'Editing the local status of a global block',
+	'globalblocking-whitelist-legend' => 'Change local status',
+	'globalblocking-whitelist-reason' => 'Reason for change:',
+	'globalblocking-whitelist-status' => 'Local status:',
+	'globalblocking-whitelist-statuslabel' => 'Disable this global block on this wiki',
+	'globalblocking-whitelist-submit' => 'Change local status',
+	'globalblocking-whitelist-whitelisted' => "You have successfully disabled the global block #$2 on the IP address '''$1''' on this wiki.",
+	'globalblocking-whitelist-dewhitelisted' => "You have successfully re-enabled the global block #$2 on the IP address '''$1''' on this wiki.",
+	'globalblocking-whitelist-successsub' => 'Local status successfully changed',
 
 	'globalblocking-blocked' => "Your IP address has been blocked on all Wikimedia wikis by '''$1''' (''$2'').
 The reason given was ''\"$3\"''. The block's expiry is ''$4''.",
@@ -58,6 +70,8 @@ The reason given was ''\"$3\"''. The block's expiry is ''$4''.",
 	'globalblocking-logpage' => 'Global block log',
 	'globalblocking-block-logentry' => 'globally blocked [[$1]] with an expiry time of $2 ($3)',
 	'globalblocking-unblock-logentry' => 'removed global block on [[$1]]',
+	'globalblocking-whitelist-logentry' => 'disabled the global block on [[$1]] locally',
+	'globalblocking-dewhitelist-logentry' => 're-enabled the global block on [[$1]] locally',
 
 	'globalblocklist' => 'List of globally blocked IP addresses',
 	'globalblock' => 'Globally block an IP address',
@@ -65,6 +79,7 @@ The reason given was ''\"$3\"''. The block's expiry is ''$4''.",
 	// User rights
 	'right-globalblock' => 'Make global blocks',
 	'right-globalunblock' => 'Remove global blocks',
+	'right-globalblock-whitelist' => 'Disable global blocks locally',
 );
 
 /** Aragonese (Aragonés)

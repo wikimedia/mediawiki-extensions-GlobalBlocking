@@ -37,10 +37,13 @@ $wgLogNames['gblblock'] = 'globalblocking-logpage';
 $wgLogHeaders['gblblock'] = 'globalblocking-logpagetext';
 $wgLogActions['gblblock/gblock'] = 'globalblocking-block-logentry';
 $wgLogActions['gblblock/gunblock'] = 'globalblocking-unblock-logentry';
+$wgLogActions['gblblock/whitelist'] = 'globalblocking-whitelist-logentry';
+$wgLogActions['gblblock/dewhitelist'] = 'globalblocking-dewhitelist-logentry';
 
 ## Permissions
 $wgGroupPermissions['steward']['globalblock'] = true;
 $wgGroupPermissions['steward']['globalunblock'] = true;
+$wgGroupPermissions['sysop']['globalblock-whitelist'] = true;
 
 ## CONFIGURATION
 /**
@@ -77,6 +80,12 @@ class GlobalBlocking {
 	
 		// Get the block
 		if ($block = $dbr->selectRow( 'globalblocks', '*', $conds, __METHOD__ )) {
+		
+			// Check for local whitelisting
+			if (GlobalBlocking::getWhitelistInfo( $block->gb_id ) ) {
+				// Block has been whitelisted.
+				return false;
+			}
 
 			$expiry = Block::decodeExpiry( $block->gb_expiry );
 			if ($expiry == 'infinity') {
@@ -128,5 +137,39 @@ class GlobalBlocking {
 		$dbw->begin();
 		$dbw->delete( 'globalblocks', array('gb_expiry<'.$dbw->addQuotes($dbw->timestamp())), __METHOD__ );
 		$dbw->commit();
+		
+		// Purge the global_block_whitelist table.
+		// We can't be perfect about this without an expensive check on the master
+		// for every single global block. However, we can be clever about it and store
+		// the expiry of global blocks in the global_block_whitelist table.
+		// That way, most blocks will fall out of the table naturally when they expire.
+		$dbw = wfGetDB( DB_MASTER );
+		$dbw->begin();
+		$dbw->delete( 'global_block_whitelist', array( 'gbw_expiry<'.$dbw->addQuotes($dbw->timestamp())), __METHOD__ );
+		$dbw->commit();
+	}
+	
+	static function getWhitelistInfo( $block_id = null, $block_ip = null ) {
+		$conds = array();
+		if ($block_id != null) {
+			$conds = array( 'gbw_id' => $block_id );
+		} elseif ($block_ip != null) {
+			$block_id = GlobalBlocking::getGlobalBlockId( $block_ip );
+			$conds = array( 'gbw_id' => $block_id );
+		} else {
+			//WTF?
+			return false;
+		}
+		
+		$dbr = wfGetDB( DB_SLAVE );
+		$row = $dbr->selectRow( 'global_block_whitelist', array( 'gbw_by', 'gbw_reason' ), $conds, __METHOD__ );
+		
+		if ($row == false) {
+			// Not whitelisted.
+			return false;
+		} else {
+			// Block has been whitelisted
+			return array( 'user' => $row->gbw_by, 'reason' => $row->gbw_reason );
+		}
 	}
 }
