@@ -58,10 +58,10 @@ Please note that you cannot enter a user name!',
 	'globalblocking-whitelist-legend' => 'Change local status',
 	'globalblocking-whitelist-reason' => 'Reason for change:',
 	'globalblocking-whitelist-status' => 'Local status:',
-	'globalblocking-whitelist-statuslabel' => 'Disable this global block on this wiki',
+	'globalblocking-whitelist-statuslabel' => 'Disable this global block on {{SITENAME}}',
 	'globalblocking-whitelist-submit' => 'Change local status',
-	'globalblocking-whitelist-whitelisted' => "You have successfully disabled the global block #$2 on the IP address '''$1''' on this wiki.",
-	'globalblocking-whitelist-dewhitelisted' => "You have successfully re-enabled the global block #$2 on the IP address '''$1''' on this wiki.",
+	'globalblocking-whitelist-whitelisted' => "You have successfully disabled the global block #$2 on the IP address '''$1''' on {{SITENAME}}.",
+	'globalblocking-whitelist-dewhitelisted' => "You have successfully re-enabled the global block #$2 on the IP address '''$1''' on {{SITENAME}}.",
 	'globalblocking-whitelist-successsub' => 'Local status successfully changed',
 
 	'globalblocking-blocked' => "Your IP address has been blocked on all Wikimedia wikis by '''$1''' (''$2'').
