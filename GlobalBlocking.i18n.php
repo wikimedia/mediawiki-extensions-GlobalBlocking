@@ -146,6 +146,7 @@ $1',
 
 /** German (Deutsch)
  * @author MF-Warburg
+ * @author Raimond Spekking
  */
 $messages['de'] = array(
 	'globalblocking-desc'                    => '[[Special:GlobalBlock|Sperrt]] IP-Adressen auf [[Special:GlobalBlockList|allen Wikis]]',
@@ -196,6 +197,9 @@ Als Begründung wurde ''„\$3“'' angegeben. Die Sperre dauert ''\$4''.",
 	'globalblocking-unblock-logentry'        => 'entsperrte [[$1]] global',
 	'globalblocklist'                        => 'Liste global gesperrter IP-Adressen',
 	'globalblock'                            => 'Eine IP-Adresse global sperren',
+
+	'right-globalblock'   => 'Globale Sperren einrichten',
+	'right-globalunblock' => 'Globale Sperren aufheben',
 );
 
 /** Esperanto (Esperanto)
