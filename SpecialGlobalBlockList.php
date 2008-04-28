@@ -126,7 +126,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 
 		$fields['ipaddress'] = wfInput( 'whitelistip', false, $this->mWhitelistIP, array( 'readonly' => 'readonly' ) );
 		$fields['globalblocking-whitelist-reason'] = wfInput( 'wpReason', false, $this->mReason );
-		$fields['globalblocking-whitelist-status'] = wfCheckLabel( wfMsg( 'globalblocking-whitelist-statuslabel' ), 'wpWhitelistStatus', 'wpWhitelistStatus', $cur_status );
+		$fields['globalblocking-whitelist-status'] = Xml::checkLabel( wfMsgExt( 'globalblocking-whitelist-statuslabel', 'parsemag' ), 'wpWhitelistStatus', 'wpWhitelistStatus', $cur_status );
 
 		$form .= GlobalBlocking::buildForm( $fields, 'globalblocking-whitelist-submit' );
 
