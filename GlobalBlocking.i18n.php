@@ -180,6 +180,9 @@ $1',
 	'globalblocking-list-expiry'             => 'Sperrdauer $1',
 	'globalblocking-list-anononly'           => 'nur Anonyme',
 	'globalblocking-list-unblock'            => 'entsperren',
+	'globalblocking-list-whitelisted'        => 'lokal abgeschaltet von $1: $2',
+	'globalblocking-list-whitelist'          => 'lokaler Status',
+
 	'globalblocking-unblock-ipinvalid'       => 'Du hast eine ungültige IP-Adresse ($1) eingegeben.
 Beachte, dass du keinen Benutzernamen eingeben darfst!',
 	'globalblocking-unblock-legend'          => 'Global entsperren',
@@ -190,16 +193,31 @@ Beachte, dass du keinen Benutzernamen eingeben darfst!',
 	'globalblocking-unblock-errors'          => 'Du kannst diese IP nicht global entsperren. Grund:
 $1',
 	'globalblocking-unblock-successsub'      => 'Erfolgreich global entsperrt',
+
+	'globalblocking-whitelist-subtitle'      => 'Lokalen Status einer globalen Sperre bearbeiten',
+	'globalblocking-whitelist-legend'        => 'Lokalen Status bearbeiten',
+	'globalblocking-whitelist-reason'        => 'Grund der Änderung:',
+	'globalblocking-whitelist-status'        => 'Lokaler Status:',
+	'globalblocking-whitelist-statuslabel'   => 'Diese globale Sperre auf {{SITENAME}} abschalten',
+	'globalblocking-whitelist-submit'        => 'Lokalen Status ändern',
+	'globalblocking-whitelist-whitelisted'   => "Du hast erfolgreich die globale Sperre #$2 der IP-Adresse '''$1''' auf {{SITENAME}} abgeschaltet.",
+	'globalblocking-whitelist-dewhitelisted' => "Du hast erfolgreich die globale Sperre #$2 der IP-Adresse '''$1''' auf {{SITENAME}} wieder eingeschaltet.",
+	'globalblocking-whitelist-successsub'    => 'Lokaler Status erfolgreich geändert',
+
 	'globalblocking-blocked'                 => "Deine IP-Adresse wurde von '''\$1''' ''(\$2)'' für alle Wikimedia-Wikis gesperrt.
 Als Begründung wurde ''„\$3“'' angegeben. Die Sperre dauert ''\$4''.",
 	'globalblocking-logpage'                 => 'Globales Sperrlogbuch',
-	'globalblocking-block-logentry'          => 'sperrte [[$1]] global für einen Zeitraum von $2 ($3)',
-	'globalblocking-unblock-logentry'        => 'entsperrte [[$1]] global',
+	'globalblocking-block-logentry'          => 'sperrte „[[$1]]“ global für einen Zeitraum von $2 ($3)',
+	'globalblocking-unblock-logentry'        => 'entsperrte „[[$1]]“ global',
+	'globalblocking-whitelist-logentry'      => 'schaltete die globale Sperre von „[[$1]]“ lokal ab',
+	'globalblocking-dewhitelist-logentry'    => 'schaltete die globale Sperre von „[[$1]]“ lokal wieder ein',
+
 	'globalblocklist'                        => 'Liste global gesperrter IP-Adressen',
 	'globalblock'                            => 'Eine IP-Adresse global sperren',
 
-	'right-globalblock'   => 'Globale Sperren einrichten',
-	'right-globalunblock' => 'Globale Sperren aufheben',
+	'right-globalblock'           => 'Globale Sperren einrichten',
+	'right-globalunblock'         => 'Globale Sperren aufheben',
+	'right-globalblock-whitelist' => 'Globale Sperren lokal abschalten',
 );
 
 /** Esperanto (Esperanto)
