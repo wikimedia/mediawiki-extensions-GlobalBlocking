@@ -267,6 +267,7 @@ Als Begründung wurde ''„\$3“'' angegeben. Die Sperre dauert ''\$4''.",
  * @author Yekrats
  */
 $messages['eo'] = array(
+	'globalblocking-desc'                    => '[[Special:GlobalBlock|Permesas]] IP-adreso esti [[Special:GlobalBlockList|forbarita trans multaj vikioj]].',
 	'globalblocking-block'                   => 'Ĝenerale forbaru IP-adreson',
 	'globalblocking-block-intro'             => 'Vi povas uzi ĉi tiun paĝon por forbari IP-adreson en ĉiuj vikioj.',
 	'globalblocking-block-reason'            => 'Kialo por ĉi tiu forbaro:',
@@ -279,8 +280,12 @@ $messages['eo'] = array(
 $1',
 	'globalblocking-block-ipinvalid'         => 'La IP-adreso ($1) kiun vi enigis estas nevalida.
 Bonvolu noti ke vi ne povas enigi salutnomo!',
+	'globalblocking-block-expiryinvalid'     => 'La findaton kiun vi enigis ($1) estas nevalida.',
 	'globalblocking-block-submit'            => 'Forbaru ĉi tiun IP-adreson ĝenerale',
+	'globalblocking-block-success'           => 'La IP-adreso $1 estis sukcese forbarita por ĉiuj projektoj de Wikimedia.
+Vi eble volas konsulti la [[Special:Globalblocklist|liston de ĝeneralaj forbaroj]].',
 	'globalblocking-block-successsub'        => 'Ĝenerala forbaro estis sukcesa',
+	'globalblocking-block-alreadyblocked'    => 'La IP-adreso $1 estas jam forbarita ĝenerale. Vi povas rigardi la ekzistanta forbaro en la [[Special:Globalblocklist|Listo de ĝeneralaj forbaroj]].',
 	'globalblocking-list'                    => 'Listo de ĝenerale forbaritaj IP-adresoj',
 	'globalblocking-search-legend'           => 'Serĉu ĝeneralan forbaron',
 	'globalblocking-search-ip'               => 'IP-adreso:',
@@ -301,6 +306,9 @@ Bonvolu noti ke vi ne povas enigi salutnomo!',
 	'globalblocking-unblock-submit'          => 'Forigu ĝeneralan forbaron',
 	'globalblocking-unblock-reason'          => 'Kialo:',
 	'globalblocking-unblock-notblocked'      => 'La IP-adreso ($1) kiun vi enigis ne estas ĝenerale forbarita.',
+	'globalblocking-unblock-unblocked'       => "Vi sukcese forigis la ĝeneralan forbaron #$2 por la IP-adreso '''$1'''",
+	'globalblocking-unblock-errors'          => 'Vi ne povas forigi ĝeneralan forbaron por tiu IP-adreso, ĉar:
+$1',
 	'globalblocking-unblock-successsub'      => 'Ĝenerala forbaro estis sukcese forigita',
 	'globalblocking-whitelist-subtitle'      => 'Redaktante la lokan statuson de ĝeneralan forbaron',
 	'globalblocking-whitelist-legend'        => 'Ŝanĝu lokan statuson',
@@ -308,12 +316,16 @@ Bonvolu noti ke vi ne povas enigi salutnomo!',
 	'globalblocking-whitelist-status'        => 'Loka statuso:',
 	'globalblocking-whitelist-statuslabel'   => 'Malebligu ĉi tiun ĝeneralan forbaron por {{SITENAME}}',
 	'globalblocking-whitelist-submit'        => 'Ŝanĝu lokan statuson',
+	'globalblocking-whitelist-whitelisted'   => "Vi sukcese malebligis la ĝeneralan forbaron #$2 por la IP-adreso '''$1''' en {{SITENAME}}.",
+	'globalblocking-whitelist-dewhitelisted' => "Vi sukcese reebligis la ĝeneralan forbaron #$2 por la IP-adreso '''$1''' en {{SITENAME}}.",
 	'globalblocking-whitelist-successsub'    => 'Loka statuso sukcese ŝanĝiĝis.',
 	'globalblocking-blocked'                 => "Via IP-adreso estis forbarita en ĉiuj Wikimedia-retejoj de '''\$1''' (''\$2'').
 La kialo donata estis ''\"\$3\"''. La findato de la forbaro estas ''\$4''.",
 	'globalblocking-logpage'                 => 'Loglibro de ĝeneralaj forbaroj',
 	'globalblocking-block-logentry'          => 'ĝenerale forbaris [[$1]] kun findato de $2 ($3)',
 	'globalblocking-unblock-logentry'        => 'forigis ĝeneralajn forbarojn por [[$1]]',
+	'globalblocking-whitelist-logentry'      => 'malebligis la ĝeneralan forbaron por [[$1]] loke',
+	'globalblocking-dewhitelist-logentry'    => 'reebligis la ĝeneralan forbaron por [[$1]] loke',
 	'globalblocklist'                        => 'Listo de ĝenerale forbaritaj IP-adresoj',
 	'globalblock'                            => 'Ĝenerale forbaru IP-adreson',
 	'right-globalblock'                      => 'Faru ĝeneralajn forbarojn',
@@ -531,6 +543,25 @@ $1',
  */
 $messages['hil'] = array(
 	'globalblocking-unblock-reason' => 'Rason:',
+);
+
+/** Croatian (Hrvatski)
+ * @author Suradnik13
+ */
+$messages['hr'] = array(
+	'globalblocking-desc'               => '[[Special:GlobalBlock|Omogućuje]] da IP adrese budu  [[Special:GlobalBlockList|blokirane na više wikija]]',
+	'globalblocking-block'              => 'Globalno blokiraj IP adresu',
+	'globalblocking-block-intro'        => 'Možete koristiti ovu stranicu kako biste blokirali IP adresu na svim wikijima.',
+	'globalblocking-block-reason'       => 'Razlog za ovo blokiranje:',
+	'globalblocking-block-expiry'       => 'Blokada istječe:',
+	'globalblocking-block-expiry-other' => 'Drugo vrijeme isteka',
+	'globalblocking-block-legend'       => 'Blokiraj suradnika globalno',
+	'globalblocking-block-successsub'   => 'Globalno blokiranje je uspješno',
+	'globalblocking-list'               => 'Popis globalno blokiranih IP adresa',
+	'globalblocking-search-ip'          => 'IP Adresa:',
+	'globalblocking-logpage'            => 'Evidencija globalne blokade',
+	'right-globalunblock'               => 'Ukloni globalne blokade',
+	'right-globalblock-whitelist'       => 'Onemogući globalno blokiranje lokalno',
 );
 
 /** Haitian (Kreyòl ayisyen)
