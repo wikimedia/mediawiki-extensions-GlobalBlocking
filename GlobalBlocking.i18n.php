@@ -82,6 +82,76 @@ The reason given was ''\"$3\"''. The block's expiry is ''$4''.",
 	'right-globalblock-whitelist' => 'Disable global blocks locally',
 );
 
+/** Afrikaans (Afrikaans)
+ * @author Arnobarnard
+ */
+$messages['af'] = array(
+	'globalblocking-desc'                    => '[[Special:GlobalBlock|Bewillig]] dat IP adresse [[Special:GlobalBlockList|oor veelvoudige wikis versper]] word',
+	'globalblocking-block'                   => "Versper 'n IP adres globaal",
+	'globalblocking-block-intro'             => "U kan hierdie bladsy gebruik om 'n IP adres op alle wikis te versper.",
+	'globalblocking-block-reason'            => 'Rede vir hierdie versperring:',
+	'globalblocking-block-expiry'            => 'Verstryk van versperring:',
+	'globalblocking-block-expiry-other'      => 'Ander verstryktyd',
+	'globalblocking-block-expiry-otherfield' => 'Ander tyd:',
+	'globalblocking-block-legend'            => "Versper 'n gebruiker globaal",
+	'globalblocking-block-options'           => 'Opsies',
+	'globalblocking-block-errors'            => 'Die versperring was nie suksesvol nie, as gevolg van:
+$1',
+	'globalblocking-block-ipinvalid'         => "Die IP adres ($1) wat U ingevoer het is ongeldig.
+Let asseblief dat U nie 'n gebruikersnaam kan invoer nie!",
+	'globalblocking-block-expiryinvalid'     => 'Die verstryking ($1) wat U ingevoer het is ongeldig.',
+	'globalblocking-block-submit'            => 'Versper hierdie IP adres globaal',
+	'globalblocking-block-success'           => 'Die IP adres $1 is suksesvol versper op alle Wikimedia projekte.
+U mag dalk die [[Special:Globalblocklist|lys van globale versperrings]] wil konsulteer.',
+	'globalblocking-block-successsub'        => 'Globale versperring suksesvol',
+	'globalblocking-block-alreadyblocked'    => 'Die IP adres $1 is alreeds globaal versper. U kan die bestaande versperring op die [[Special:Globalblocklist|lys van globale versperrings]] bekyk.',
+	'globalblocking-list'                    => 'Lys van globale versperde IP adresse',
+	'globalblocking-search-legend'           => "Soek vir 'n globale versperring",
+	'globalblocking-search-ip'               => 'IP adres:',
+	'globalblocking-search-submit'           => 'Soek vir versperrings',
+	'globalblocking-list-ipinvalid'          => "Die IP adres wat U na gesoek het ($1) is ongeldig.
+Voer asseblief 'n geldige IP adres in.",
+	'globalblocking-search-errors'           => 'U soektog was nie suksesvol nie, as gevolg van:
+$1',
+	'globalblocking-list-blockitem'          => "$1: '''$2''' (''$3'') het '''[[Special:Contributions/$4|$4]]''' globaal versper, met ''($5)''",
+	'globalblocking-list-expiry'             => 'verstryking $1',
+	'globalblocking-list-anononly'           => 'anoniem-alleen',
+	'globalblocking-list-unblock'            => 'deurlaat',
+	'globalblocking-list-whitelisted'        => 'lokaal afgeskakel deur $1: $2',
+	'globalblocking-list-whitelist'          => 'lokale status',
+	'globalblocking-unblock-ipinvalid'       => "Die IP adres ($1) wat U ingevoer het is ongeldig.
+Let asseblief dat U nie 'n gebruikersnaam kan invoer nie!",
+	'globalblocking-unblock-legend'          => "Verwyder 'n globale versperring",
+	'globalblocking-unblock-submit'          => 'Verwyder globale versperring',
+	'globalblocking-unblock-reason'          => 'Rede:',
+	'globalblocking-unblock-notblocked'      => 'Die IP adres ($1) wat U ingevoer het is nie globaal versper nie.',
+	'globalblocking-unblock-unblocked'       => "U het suksesvol die globale versperring #$2 op die IP adres '''$1''' verwyder",
+	'globalblocking-unblock-errors'          => 'U kan nie die globale versperring vir daardie IP adres verwyder nie, as gevolg van:
+$1',
+	'globalblocking-unblock-successsub'      => 'Globale versperring suksesvol verwyder',
+	'globalblocking-whitelist-subtitle'      => "Besig om die lokale status van 'n globale versperring te wysig",
+	'globalblocking-whitelist-legend'        => 'Wysig lokale status',
+	'globalblocking-whitelist-reason'        => 'Rede vir wysiging:',
+	'globalblocking-whitelist-status'        => 'Lokale status:',
+	'globalblocking-whitelist-statuslabel'   => 'Skakel hierdie globale versperring op {{SITENAME}} af',
+	'globalblocking-whitelist-submit'        => 'Wysig lokale status',
+	'globalblocking-whitelist-whitelisted'   => "U het suksesvol die globale versperring #$2 op die IP adres '''$1''' op {{SITENAME}} afgeskakel.",
+	'globalblocking-whitelist-dewhitelisted' => "U het suksesvol die globale versperring #$2 op die IP adres '''$1''' op {{SITENAME}} heraangeskakel.",
+	'globalblocking-whitelist-successsub'    => 'Lokale status suksesvol gewysig',
+	'globalblocking-blocked'                 => "U IP adres is versper op alle Wikimedia wikis deur '''\$1''' (''\$2'').
+Die rede gegee is ''\"\$3\"''. Die versperring verstryk is ''\$4''.",
+	'globalblocking-logpage'                 => 'Globale versperring boekstaaf',
+	'globalblocking-block-logentry'          => "[[$1]] is globaal versper met 'n verstryktyd van $2 ($3)",
+	'globalblocking-unblock-logentry'        => 'verwyder globale versperring op [[$1]]',
+	'globalblocking-whitelist-logentry'      => 'die globale versperring op [[$1]] is lokaal afgeskakel',
+	'globalblocking-dewhitelist-logentry'    => 'die globale versperring op [[$1]] is heraangeskakel',
+	'globalblocklist'                        => 'Lys van globaal versperde IP adresse',
+	'globalblock'                            => "Versper 'n IP adres globaal",
+	'right-globalblock'                      => 'Rig globale versperrings op',
+	'right-globalunblock'                    => 'Verwyder globale versperrings',
+	'right-globalblock-whitelist'            => 'Skakel globale versperrings lokaal af',
+);
+
 /** Aragonese (Aragonés)
  * @author Juanpabl
  */
@@ -1841,3 +1911,4 @@ $messages['zh-hant'] = array(
 	'right-globalunblock'         => '移除全域封鎖',
 	'right-globalblock-whitelist' => '在本地停用全域封鎖',
 );
+
