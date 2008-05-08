@@ -391,7 +391,7 @@ $1',
 	'globalblocking-whitelist-successsub'    => 'Loka statuso sukcese ŝanĝiĝis.',
 	'globalblocking-blocked'                 => "Via IP-adreso estis forbarita en ĉiuj Wikimedia-retejoj de '''\$1''' (''\$2'').
 La kialo donata estis ''\"\$3\"''. La findato de la forbaro estas ''\$4''.",
-	'globalblocking-logpage'                 => 'Loglibro de ĝeneralaj forbaroj',
+	'globalblocking-logpage'                 => 'Protokolo de ĝeneralaj forbaroj',
 	'globalblocking-block-logentry'          => 'ĝenerale forbaris [[$1]] kun findato de $2 ($3)',
 	'globalblocking-unblock-logentry'        => 'forigis ĝeneralajn forbarojn por [[$1]]',
 	'globalblocking-whitelist-logentry'      => 'malebligis la ĝeneralan forbaron por [[$1]] loke',
