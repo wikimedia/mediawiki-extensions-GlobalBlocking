@@ -880,8 +880,9 @@ De Grond den ugi gouf war ''\"\$3\"''. D'spär dauert ''\$4''.",
  * @author Shijualex
  */
 $messages['ml'] = array(
-	'globalblocking-search-ip'      => 'ഐപി വിലാസം:',
-	'globalblocking-unblock-reason' => 'കാരണം:',
+	'globalblocking-search-ip'        => 'ഐപി വിലാസം:',
+	'globalblocking-unblock-reason'   => 'കാരണം:',
+	'globalblocking-whitelist-reason' => 'മാറ്റം വരുത്താനുള്ള കാരണം:',
 );
 
 /** Marathi (मराठी)
@@ -1645,6 +1646,76 @@ $messages['th'] = array(
 	'globalblocking-block-errors' => 'การบล็อกครั้งนี้ไม่สำเร็จ เนื่องจาก :
 $1',
 	'globalblocking-search-ip'    => 'หมายเลขไอพี:',
+);
+
+/** Vèneto (Vèneto)
+ * @author Candalua
+ */
+$messages['vec'] = array(
+	'globalblocking-desc'                    => '[[Special:GlobalBlock|Consentir]] el bloco de un indirisso IP su [[Special:GlobalBlockList|tante wiki]]',
+	'globalblocking-block'                   => 'Bloca globalmente un indirisso IP',
+	'globalblocking-block-intro'             => 'Ti pol doparar sta pagina par blocar un indirisso IP su tute le wiki.',
+	'globalblocking-block-reason'            => 'Motivassion del bloco:',
+	'globalblocking-block-expiry'            => 'Scadensa del bloco:',
+	'globalblocking-block-expiry-other'      => 'Altra scadensa',
+	'globalblocking-block-expiry-otherfield' => 'Altro tenpo:',
+	'globalblocking-block-legend'            => 'Bloca un utente globalmente',
+	'globalblocking-block-options'           => 'Opzioni',
+	'globalblocking-block-errors'            => "El bloco no'l ga vu sucesso, parché:
+$1",
+	'globalblocking-block-ipinvalid'         => "L'indirisso IP ($1) che te gh'è scrito no'l xe valido.
+Par piaser tien conto che no ti pol inserir un nome utente!",
+	'globalblocking-block-expiryinvalid'     => 'La scadensa che ti ga inserìo ($1) no la xe valida.',
+	'globalblocking-block-submit'            => 'Bloca sto indirisso IP globalmente',
+	'globalblocking-block-success'           => "L'indirisso IP $1 el xe stà blocà con sucesso su tuti i progeti Wikimedia.
+Se ti vol, ti pol vardar la  [[Special:Globalblocklist|lista dei blochi globali]].",
+	'globalblocking-block-successsub'        => 'Bloco global efetuà',
+	'globalblocking-block-alreadyblocked'    => "L'indirisso IP $1 el xe de zà blocà globalmente. Ti pol védar el bloco esistente su la [[Special:Globalblocklist|lista dei blochi globali]].",
+	'globalblocking-list'                    => 'Lista de indirissi IP blocà globalmente',
+	'globalblocking-search-legend'           => 'Serca un bloco global',
+	'globalblocking-search-ip'               => 'Indirisso IP:',
+	'globalblocking-search-submit'           => 'Serca un bloco',
+	'globalblocking-list-ipinvalid'          => "L'indirisso IP che ti gà sercà ($1) no'l xe mìa valido.
+Par piaser, inserissi un indirisso IP valido.",
+	'globalblocking-search-errors'           => 'La to riserca no la gà catà gnente, parché:
+$1',
+	'globalblocking-list-blockitem'          => "$1: '''$2''' (''$3'') gà blocà globalmente '''[[Special:Contributions/$4|$4]]''' ''($5)''",
+	'globalblocking-list-expiry'             => 'scadensa $1',
+	'globalblocking-list-anononly'           => 'solo anonimi',
+	'globalblocking-list-unblock'            => 'desbloca',
+	'globalblocking-list-whitelisted'        => 'localmente disabilità da $1: $2',
+	'globalblocking-list-whitelist'          => 'stato local',
+	'globalblocking-unblock-ipinvalid'       => "L'indirisso IP che ti gà inserìo ($1) no'l xe mìa valido.
+Par piaser tien presente che no ti pol inserir un nome utente!",
+	'globalblocking-unblock-legend'          => 'Cava un bloco global',
+	'globalblocking-unblock-submit'          => 'Cava el bloco global',
+	'globalblocking-unblock-reason'          => 'Motivassion:',
+	'globalblocking-unblock-notblocked'      => "L'indirisso IP che ti gà inserìo ($1) no'l xe mìa blocà globalmente.",
+	'globalblocking-unblock-unblocked'       => "Ti gà cavà con sucesso el bloco global #$2 su l'indirisso IP '''$1'''",
+	'globalblocking-unblock-errors'          => 'No ti pol cavar un bloco global par sto indirisso IP, parché:
+$1',
+	'globalblocking-unblock-successsub'      => 'El bloco global el xe stà cava',
+	'globalblocking-whitelist-subtitle'      => 'Modifica el stato local de un bloco global',
+	'globalblocking-whitelist-legend'        => 'Canbia el stato local',
+	'globalblocking-whitelist-reason'        => 'Motivassion del canbiamento:',
+	'globalblocking-whitelist-status'        => 'Stato local:',
+	'globalblocking-whitelist-statuslabel'   => 'Disabilita sto bloco global su {{SITENAME}}',
+	'globalblocking-whitelist-submit'        => 'Canbia stato local',
+	'globalblocking-whitelist-whitelisted'   => "Ti ga disabilità el bloco global #$2 su l'indirisso IP '''$1''' su {{SITENAME}}",
+	'globalblocking-whitelist-dewhitelisted' => "Ti gà ri-ativà el bloco global #$2 su l'indirisso IP '''$1''' su {{SITENAME}}",
+	'globalblocking-whitelist-successsub'    => 'Stato local canbià',
+	'globalblocking-blocked'                 => "El to indirisso IP el xe stà blocà su tuti i progeti Wikimedia da '''\$1''' (''\$2'').
+La motivassion fornìa la xe ''\"\$3\"''. La scadensa del bloco la xe '\$4''.",
+	'globalblocking-logpage'                 => 'Registro dei blochi globali',
+	'globalblocking-block-logentry'          => '[[$1]] xe stà blocà globalmente con scadensa: $2 ($3)',
+	'globalblocking-unblock-logentry'        => 'cavà el bloco global su [[$1]]',
+	'globalblocking-whitelist-logentry'      => 'disabilità localmente el bloco global su [[$1]]',
+	'globalblocking-dewhitelist-logentry'    => 'ri-abilità localmente el bloco global su [[$1]]',
+	'globalblocklist'                        => 'Lista dei indirissi IP blocà globalmente',
+	'globalblock'                            => 'Bloca globalmente un indirisso IP',
+	'right-globalblock'                      => 'Bloca dei utenti globalmente',
+	'right-globalunblock'                    => 'Cava blochi globali',
+	'right-globalblock-whitelist'            => 'Disabilita localmente blochi globali',
 );
 
 /** Vietnamese (Tiếng Việt)
