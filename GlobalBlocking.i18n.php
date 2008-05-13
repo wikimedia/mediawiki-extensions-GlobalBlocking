@@ -880,9 +880,29 @@ De Grond den ugi gouf war ''\"\$3\"''. D'spär dauert ''\$4''.",
  * @author Shijualex
  */
 $messages['ml'] = array(
-	'globalblocking-search-ip'        => 'ഐപി വിലാസം:',
-	'globalblocking-unblock-reason'   => 'കാരണം:',
-	'globalblocking-whitelist-reason' => 'മാറ്റം വരുത്താനുള്ള കാരണം:',
+	'globalblocking-block'                   => 'ഒരു ഐപി വിലാസത്തെ ആഗോളമായി തടയുക',
+	'globalblocking-block-intro'             => 'ഒരു ഐപി വിലാസത്തെ എല്ലാ വിക്കികളിലും നിരോധിക്കുവാന്‍ താങ്കള്‍ക്കു ഈ താള്‍ ഉപയോഗിക്കാം.',
+	'globalblocking-block-reason'            => 'ഐപി വിലാസം തടയുവാനുള്ള കാരണം:',
+	'globalblocking-block-expiry'            => 'തടയലിന്റെ കാലാവധി:',
+	'globalblocking-block-expiry-other'      => 'മറ്റ് കാലാവധി',
+	'globalblocking-block-expiry-otherfield' => 'മറ്റ് കാലാവധി:',
+	'globalblocking-block-legend'            => 'ഒരു ഉപയോക്താവിനെ ആഗോളമായി തടയുക',
+	'globalblocking-block-errors'            => 'തടയല്‍ പരാജയപ്പെട്ടു, കാരണം: 
+$1',
+	'globalblocking-block-ipinvalid'         => 'താങ്കള്‍ കൊടുത്ത ഐപി വിലാസം ($1) അസാധുവാണ്‌. 
+താങ്കള്‍ക്കു ഇവിടെ ഒരു ഉപയോക്തൃനാമം കൊടുക്കുവാന്‍ പറ്റില്ല എന്നതു പ്രത്യേകം ശ്രദ്ധിക്കുക.',
+	'globalblocking-block-expiryinvalid'     => 'താങ്കള്‍ കൊടുത്ത കാലാവധി ($1) അസാധുവാണ്‌.',
+	'globalblocking-block-submit'            => 'ഈ ഐപിവിലാസത്തെ ആഗോളമായി തടയുക',
+	'globalblocking-block-successsub'        => 'ആഗോള തടയല്‍ വിജയകരം',
+	'globalblocking-list'                    => 'ആഗോളമായി തടയപ്പെട്ട ഐപി വിലാസങ്ങള്‍',
+	'globalblocking-search-legend'           => 'ആഗോള തടയലിന്റെ വിവരത്തിനായി തിരയുക',
+	'globalblocking-search-ip'               => 'ഐപി വിലാസം:',
+	'globalblocking-search-submit'           => 'തടയലിന്റെ വിവരങ്ങള്‍ തിരയുക',
+	'globalblocking-list-expiry'             => 'കാലാവധി $1',
+	'globalblocking-unblock-ipinvalid'       => 'താങ്കള്‍ കൊടുത്ത ഐപി വിലാസം ($1) അസാധുവാണ്‌. 
+താങ്കള്‍ക്കു ഇവിടെ ഒരു ഉപയോക്തൃനാമം കൊടുക്കുവാന്‍ പറ്റില്ല എന്നതു പ്രത്യേകം ശ്രദ്ധിക്കുക.',
+	'globalblocking-unblock-reason'          => 'കാരണം:',
+	'globalblocking-whitelist-reason'        => 'മാറ്റം വരുത്താനുള്ള കാരണം:',
 );
 
 /** Marathi (मराठी)
