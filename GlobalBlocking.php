@@ -45,6 +45,9 @@ $wgLogActions['gblblock/dewhitelist'] = 'globalblocking-dewhitelist-logentry';
 $wgGroupPermissions['steward']['globalblock'] = true;
 $wgGroupPermissions['steward']['globalunblock'] = true;
 $wgGroupPermissions['sysop']['globalblock-whitelist'] = true;
+$wgAvailableRights[] = 'globalblock';
+$wgAvailableRights[] = 'globalunblock';
+$wgAvailableRights[] = 'globalblock-whitelist';
 
 ## CONFIGURATION
 /**
