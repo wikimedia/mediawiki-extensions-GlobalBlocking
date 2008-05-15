@@ -174,6 +174,7 @@ $1',
 	'globalblocking-block-submit'            => 'امنع عنوان ب.إ هذا عالميًا',
 	'globalblocking-block-successsub'        => 'نجح المنع العالمي',
 	'globalblocking-unblock-reason'          => 'السبب:',
+	'globalblocking-whitelist-status'        => 'الحالة المحلية:',
 	'globalblocking-logpage'                 => 'سجل المنع العام',
 );
 
