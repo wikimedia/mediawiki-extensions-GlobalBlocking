@@ -88,7 +88,7 @@ class GlobalBlocking {
 			// Check for local whitelisting
 			if (GlobalBlocking::getWhitelistInfo( $block->gb_id ) ) {
 				// Block has been whitelisted.
-				return false;
+				return true;
 			}
 
 			$expiry = Block::decodeExpiry( $block->gb_expiry );
