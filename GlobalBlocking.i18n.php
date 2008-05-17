@@ -810,7 +810,8 @@ Alesan sing diwènèhaké yaiku ''\"\$3\"''. Blokade iki bakal kadaluwarsa ing '
  * @author គីមស៊្រុន
  */
 $messages['km'] = array(
-	'globalblocking-unblock-reason' => 'មូលហេតុ',
+	'globalblocking-block-options'  => 'ជំរើសនានា',
+	'globalblocking-unblock-reason' => 'មូលហេតុ៖',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
@@ -900,10 +901,27 @@ $1',
 	'globalblocking-search-ip'               => 'ഐപി വിലാസം:',
 	'globalblocking-search-submit'           => 'തടയലിന്റെ വിവരങ്ങള്‍ തിരയുക',
 	'globalblocking-list-expiry'             => 'കാലാവധി $1',
+	'globalblocking-list-whitelist'          => 'പ്രാദേശിക സ്ഥിതി',
 	'globalblocking-unblock-ipinvalid'       => 'താങ്കള്‍ കൊടുത്ത ഐപി വിലാസം ($1) അസാധുവാണ്‌. 
 താങ്കള്‍ക്കു ഇവിടെ ഒരു ഉപയോക്തൃനാമം കൊടുക്കുവാന്‍ പറ്റില്ല എന്നതു പ്രത്യേകം ശ്രദ്ധിക്കുക.',
 	'globalblocking-unblock-reason'          => 'കാരണം:',
+	'globalblocking-unblock-unblocked'       => "'''$1''' എന്ന ഐപി വിലാസത്തിന്മേലുള്ള #$2 എന്ന ആഗോള ബ്ലോക്ക് താങ്കള്‍ വിജയകരമായി ഒഴിവാക്കിയിരിക്കുന്നു",
+	'globalblocking-unblock-errors'          => 'ഈ ഐപി വിലാസത്തിന്മേലുള്ള ആഗോള ബ്ലോക്ക് ഒഴിവാക്കാന്‍ താങ്കള്‍ക്ക് പറ്റില്ല, അതിന്റെ കാരണം: $1',
+	'globalblocking-unblock-successsub'      => 'ആഗോള ബ്ലോക്ക് വിജയകരമായി നീക്കിയിരിക്കുന്നു',
+	'globalblocking-whitelist-subtitle'      => 'ആഗോള ബ്ലോക്കിന്റെ പ്രാദേശിക സ്ഥിതി പരിശോധിക്കുക',
+	'globalblocking-whitelist-legend'        => 'പ്രാദേശിക സ്ഥിതി മാറ്റുക',
 	'globalblocking-whitelist-reason'        => 'മാറ്റം വരുത്താനുള്ള കാരണം:',
+	'globalblocking-whitelist-status'        => 'പ്രാദേശിക സ്ഥിതി:',
+	'globalblocking-whitelist-statuslabel'   => '{{SITENAME}} സം‌രംഭത്തില്‍ ആഗോളബ്ലോക്ക് ഡിസേബിള്‍ ചെയ്യുക',
+	'globalblocking-whitelist-submit'        => 'പ്രാദേശിക സ്ഥിതി മാറ്റുക',
+	'globalblocking-whitelist-whitelisted'   => "'''$1''' എന്ന ഐപി വിലാസത്തിന്റെ #$2 എന്ന ആഗോളബ്ലോക്ക് {{SITENAME}} സം‌രംഭത്തില്‍ വിജയകരമായി പ്രവര്‍ത്തനരഹിതമാക്കിയിരിക്കുന്നു",
+	'globalblocking-whitelist-dewhitelisted' => "'''$1''' എന്ന ഐപി വിലാസത്തിന്റെ #$2 എന്ന ആഗോളബ്ലോക്ക് {{SITENAME}} സം‌രംഭത്തില്‍ വിജയകരമായി പ്രവര്‍ത്തനയോഗ്യമാക്കിയിരിക്കുന്നു.",
+	'globalblocking-whitelist-successsub'    => 'പ്രാദേശിക സ്ഥിതി വിജയകരമായി മാറ്റിയിരിക്കുന്നു',
+	'globalblocking-blocked'                 => "താങ്കളുടെ ഐപി വിലാസം എല്ലാ വിക്കിമീഡിയ സം‌രംഭങ്ങളിലും '''\$1''' (''\$2'') തടഞ്ഞിരിക്കുന്നു. അതിനു സൂചിപ്പിച്ച കാരണം ''\"\$3\"'' ആണ്‌. ബ്ലോക്കിന്റെ കാലാവധി തീരുന്നത് ''\$4''.",
+	'globalblocking-logpage'                 => 'ആഗോള തടയലിന്റെ പ്രവര്‍ത്തനരേഖ',
+	'globalblocking-block-logentry'          => '[[$1]]നെ $2 ($3) കാലവധിയോടെ ആഗോള ബ്ലോക്ക് ചെയ്തിരിക്കുന്നു.',
+	'globalblocking-unblock-logentry'        => '[[$1]]നു മേലുള്ള ആഗോള ബ്ലോക്ക് ഒഴിവാക്കിയിരിക്കുന്നു',
+	'globalblocking-whitelist-logentry'      => '[[$1]] നു മേലുള്ള ആഗോള ബ്ലോക്ക് പ്രാദേശികമായി ഒഴിവാക്കിയിരിക്കുന്നു',
 );
 
 /** Marathi (मराठी)
@@ -1667,6 +1685,13 @@ $messages['th'] = array(
 	'globalblocking-block-errors' => 'การบล็อกครั้งนี้ไม่สำเร็จ เนื่องจาก :
 $1',
 	'globalblocking-search-ip'    => 'หมายเลขไอพี:',
+);
+
+/** Turkish (Türkçe)
+ * @author Suelnur
+ */
+$messages['tr'] = array(
+	'globalblocking-unblock-reason' => 'Neden:',
 );
 
 /** Vèneto (Vèneto)
