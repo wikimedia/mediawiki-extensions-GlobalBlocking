@@ -1668,6 +1668,13 @@ Anledningar var '''$3'''. Blockeringen utgår ''$4''.",
 	'right-globalblock-whitelist'            => 'Slå av globala blockeringar lokalt',
 );
 
+/** Telugu (తెలుగు)
+ * @author వైజాసత్య
+ */
+$messages['te'] = array(
+	'globalblock' => 'సర్వత్రా ఈ ఐపీ చిరునామాను నిరోధించు',
+);
+
 /** Tajik (Cyrillic) (Тоҷикӣ/tojikī (Cyrillic))
  * @author Ibrahim
  */
