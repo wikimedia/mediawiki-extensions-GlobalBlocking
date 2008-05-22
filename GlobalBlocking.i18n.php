@@ -901,10 +901,16 @@ $1',
 	'globalblocking-search-ip'               => 'ഐപി വിലാസം:',
 	'globalblocking-search-submit'           => 'തടയലിന്റെ വിവരങ്ങള്‍ തിരയുക',
 	'globalblocking-list-expiry'             => 'കാലാവധി $1',
+	'globalblocking-list-anononly'           => 'അജ്ഞാത ഉപയോക്താക്കളെ മാത്രം',
+	'globalblocking-list-unblock'            => 'സ്വതന്ത്രമാക്കുക',
+	'globalblocking-list-whitelisted'        => '$1 ഇതിനെ പ്രാദേശികമായി നിര്‍‌വീര്യമാക്കിയിക്കുന്നു: $2',
 	'globalblocking-list-whitelist'          => 'പ്രാദേശിക സ്ഥിതി',
 	'globalblocking-unblock-ipinvalid'       => 'താങ്കള്‍ കൊടുത്ത ഐപി വിലാസം ($1) അസാധുവാണ്‌. 
 താങ്കള്‍ക്കു ഇവിടെ ഒരു ഉപയോക്തൃനാമം കൊടുക്കുവാന്‍ പറ്റില്ല എന്നതു പ്രത്യേകം ശ്രദ്ധിക്കുക.',
+	'globalblocking-unblock-legend'          => 'ആഗോള ബ്ലോക്ക് മാറ്റുക',
+	'globalblocking-unblock-submit'          => 'ആഗോള ബ്ലോക്ക് മാറ്റുക',
 	'globalblocking-unblock-reason'          => 'കാരണം:',
+	'globalblocking-unblock-notblocked'      => 'താങ്കള്‍ ചേര്‍ത്ത ഐപി വിലാസം ($1) ആഗോളമായി തടയപ്പെട്ടിട്ടില്ല.',
 	'globalblocking-unblock-unblocked'       => "'''$1''' എന്ന ഐപി വിലാസത്തിന്മേലുള്ള #$2 എന്ന ആഗോള ബ്ലോക്ക് താങ്കള്‍ വിജയകരമായി ഒഴിവാക്കിയിരിക്കുന്നു",
 	'globalblocking-unblock-errors'          => 'ഈ ഐപി വിലാസത്തിന്മേലുള്ള ആഗോള ബ്ലോക്ക് ഒഴിവാക്കാന്‍ താങ്കള്‍ക്ക് പറ്റില്ല, അതിന്റെ കാരണം: $1',
 	'globalblocking-unblock-successsub'      => 'ആഗോള ബ്ലോക്ക് വിജയകരമായി നീക്കിയിരിക്കുന്നു',
@@ -922,6 +928,11 @@ $1',
 	'globalblocking-block-logentry'          => '[[$1]]നെ $2 ($3) കാലവധിയോടെ ആഗോള ബ്ലോക്ക് ചെയ്തിരിക്കുന്നു.',
 	'globalblocking-unblock-logentry'        => '[[$1]]നു മേലുള്ള ആഗോള ബ്ലോക്ക് ഒഴിവാക്കിയിരിക്കുന്നു',
 	'globalblocking-whitelist-logentry'      => '[[$1]] നു മേലുള്ള ആഗോള ബ്ലോക്ക് പ്രാദേശികമായി ഒഴിവാക്കിയിരിക്കുന്നു',
+	'globalblocklist'                        => 'ആഗോളമായി തടയപ്പെട്ട ഐപിവിലാസങ്ങള്‍ പ്രദര്‍ശിപ്പിക്കുക',
+	'globalblock'                            => 'ഒരു ഐപി വിലാസത്തെ ആഗോളമായി തടയുക',
+	'right-globalblock'                      => 'ആഗോള തടയല്‍ നടത്തുക',
+	'right-globalunblock'                    => 'ആഗോള ബ്ലോക്ക് മാറ്റുക',
+	'right-globalblock-whitelist'            => 'ആഗോള തടയലിനെ പ്രാദേശികമായി നിര്‍‌വീര്യമാക്കുക',
 );
 
 /** Marathi (मराठी)
@@ -1669,10 +1680,16 @@ Anledningar var '''$3'''. Blockeringen utgår ''$4''.",
 );
 
 /** Telugu (తెలుగు)
+ * @author Veeven
  * @author వైజాసత్య
  */
 $messages['te'] = array(
-	'globalblock' => 'సర్వత్రా ఈ ఐపీ చిరునామాను నిరోధించు',
+	'globalblocking-block-options'    => 'ఎంపికలు',
+	'globalblocking-search-ip'        => 'IP చిరునామా:',
+	'globalblocking-unblock-reason'   => 'కారణం:',
+	'globalblocking-whitelist-reason' => 'మార్చడానికి కారణం:',
+	'globalblocking-whitelist-status' => 'స్థానిక స్థితి:',
+	'globalblock'                     => 'సర్వత్రా ఈ ఐపీ చిరునామాను నిరోధించు',
 );
 
 /** Tajik (Cyrillic) (Тоҷикӣ/tojikī (Cyrillic))
