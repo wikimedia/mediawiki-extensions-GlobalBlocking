@@ -165,6 +165,7 @@ $messages['an'] = array(
 /** Arabic (العربية)
  * @author Alnokta
  * @author Meno25
+ * @author OsamaK
  */
 $messages['ar'] = array(
 	'globalblocking-block-reason'            => 'السبب لهذا المنع:',
@@ -176,6 +177,9 @@ $messages['ar'] = array(
 $1',
 	'globalblocking-block-submit'            => 'امنع عنوان ب.إ هذا عالميًا',
 	'globalblocking-block-successsub'        => 'نجح المنع العالمي',
+	'globalblocking-search-ip'               => 'عنوان آي بي:',
+	'globalblocking-search-submit'           => 'ابحث عن منوعات',
+	'globalblocking-list-unblock'            => 'إزالة',
 	'globalblocking-unblock-reason'          => 'السبب:',
 	'globalblocking-whitelist-status'        => 'الحالة المحلية:',
 	'globalblocking-logpage'                 => 'سجل المنع العام',
@@ -363,7 +367,7 @@ Vi eble volas konsulti la [[Special:Globalblocklist|liston de ĝeneralaj forbaro
 	'globalblocking-list'                    => 'Listo de ĝenerale forbaritaj IP-adresoj',
 	'globalblocking-search-legend'           => 'Serĉu ĝeneralan forbaron',
 	'globalblocking-search-ip'               => 'IP-adreso:',
-	'globalblocking-search-submit'           => 'Serĉu forbarojn',
+	'globalblocking-search-submit'           => 'Serĉi forbarojn',
 	'globalblocking-list-ipinvalid'          => 'La serĉita IP-adreso ($1) estas nevalida.
 Bonvolu enigi validan IP-adreson.',
 	'globalblocking-search-errors'           => 'Via serĉo estis malsukcesa, ĉar:
@@ -371,7 +375,7 @@ $1',
 	'globalblocking-list-blockitem'          => "$1: '''$2''' (''$3'') ĝenerale forbaris uzanton '''[[Special:Contributions/$4|$4]]''' ''($5)''",
 	'globalblocking-list-expiry'             => 'findato $1',
 	'globalblocking-list-anononly'           => 'nur anonimuloj',
-	'globalblocking-list-unblock'            => 'malforbaru',
+	'globalblocking-list-unblock'            => 'malforbari',
 	'globalblocking-list-whitelisted'        => 'loke malebligita de $1: $2',
 	'globalblocking-list-whitelist'          => 'loka statuso',
 	'globalblocking-unblock-ipinvalid'       => 'La IP-adreso ($1) kiun vi enigis estas nevalida.
@@ -385,11 +389,11 @@ Bonvolu noti ke vi ne povas enigi salutnomo!',
 $1',
 	'globalblocking-unblock-successsub'      => 'Ĝenerala forbaro estis sukcese forigita',
 	'globalblocking-whitelist-subtitle'      => 'Redaktante la lokan statuson de ĝeneralan forbaron',
-	'globalblocking-whitelist-legend'        => 'Ŝanĝu lokan statuson',
+	'globalblocking-whitelist-legend'        => 'Ŝanĝi lokan statuson',
 	'globalblocking-whitelist-reason'        => 'Kialo por ŝanĝo:',
 	'globalblocking-whitelist-status'        => 'Loka statuso:',
 	'globalblocking-whitelist-statuslabel'   => 'Malebligu ĉi tiun ĝeneralan forbaron por {{SITENAME}}',
-	'globalblocking-whitelist-submit'        => 'Ŝanĝu lokan statuson',
+	'globalblocking-whitelist-submit'        => 'Ŝanĝi lokan statuson',
 	'globalblocking-whitelist-whitelisted'   => "Vi sukcese malebligis la ĝeneralan forbaron #$2 por la IP-adreso '''$1''' en {{SITENAME}}.",
 	'globalblocking-whitelist-dewhitelisted' => "Vi sukcese reebligis la ĝeneralan forbaron #$2 por la IP-adreso '''$1''' en {{SITENAME}}.",
 	'globalblocking-whitelist-successsub'    => 'Loka statuso sukcese ŝanĝiĝis.',
@@ -401,7 +405,7 @@ La kialo donata estis ''\"\$3\"''. La findato de la forbaro estas ''\$4''.",
 	'globalblocking-whitelist-logentry'      => 'malebligis la ĝeneralan forbaron por [[$1]] loke',
 	'globalblocking-dewhitelist-logentry'    => 'reebligis la ĝeneralan forbaron por [[$1]] loke',
 	'globalblocklist'                        => 'Listo de ĝenerale forbaritaj IP-adresoj',
-	'globalblock'                            => 'Ĝenerale forbaru IP-adreson',
+	'globalblock'                            => 'Ĝenerale forbari IP-adreson',
 	'right-globalblock'                      => 'Faru ĝeneralajn forbarojn',
 	'right-globalunblock'                    => 'Forigu ĝeneralajn forbarojn',
 	'right-globalblock-whitelist'            => 'Malebligu ĝeneralajn forbarojn loke',
@@ -817,6 +821,13 @@ $messages['km'] = array(
 	'globalblocking-unblock-reason' => 'មូលហេតុ៖',
 );
 
+/** Ripoarisch (Ripoarisch)
+ * @author Purodha
+ */
+$messages['ksh'] = array(
+	'globalblocking-unblock-reason' => 'Aanlass:',
+);
+
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
  */
@@ -859,6 +870,7 @@ Denkt w.e.g. drun datt Dir och e Benotzernumm agi kënnt!',
 	'globalblocking-unblock-errors'          => "Dir kënnt d'global Spär fir déi IP-Adress net ophiewen. Grond:
 $1",
 	'globalblocking-unblock-successsub'      => 'Global Spär ass opgehuewen',
+	'globalblocking-unblock-subtitle'        => 'Global Spär gëtt opgehuewen',
 	'globalblocking-whitelist-subtitle'      => 'De lokale Status vun enger globaler Spär änneren',
 	'globalblocking-whitelist-legend'        => 'De lokale Status änneren',
 	'globalblocking-whitelist-reason'        => 'Grond vun der Ännerung:',
@@ -1030,6 +1042,7 @@ Let op: u kunt geen gebruikersnaam opgeven!',
 U kunt een [[Special:Globalblocklist|lijst van alle globale blokkades]] bekijken.',
 	'globalblocking-block-successsub'        => 'Globale blokkade geslaagd',
 	'globalblocking-block-alreadyblocked'    => 'Het IP-adres $1 is al globaal geblokkeerd. U kunt de bestaande blokkade bekijken in de [[Special:Globalblocklist|lijst met globale blokkades]].',
+	'globalblocking-block-bigrange'          => 'De reeks die u hebt opgegeven ($1) is te groot om te blokkeren. U mag ten hoogste 65.536 adressen blokkeren (/16-reeksen)',
 	'globalblocking-list'                    => 'Lijst met globaal geblokeerde IP-adressen',
 	'globalblocking-search-legend'           => 'Naar een globale blokkade zoeken',
 	'globalblocking-search-ip'               => 'IP-adres:',
@@ -1054,6 +1067,7 @@ Let op: u kunt geen gebruikersnaam ingeven!',
 	'globalblocking-unblock-errors'          => 'U kunt de globale blokkade voor dat IP-adres niet verwijderen omdat:
 $1',
 	'globalblocking-unblock-successsub'      => 'De globale blokkade is verwijderd',
+	'globalblocking-unblock-subtitle'        => 'Globale blokkade aan het verwijderen',
 	'globalblocking-whitelist-subtitle'      => 'Bezig met het bewerken van de lokale status van een globale blokkade',
 	'globalblocking-whitelist-legend'        => 'Lokale status wijzigen',
 	'globalblocking-whitelist-reason'        => 'Reden:',
