@@ -76,8 +76,15 @@ class GlobalBlocking {
 		global $wgUser;
 		$dbr = GlobalBlocking::getGlobalBlockingSlave();
 		$ip = wfGetIp();
+		
+		$hex_ip = IP::toHex( $ip );
+		
+		$ip_pattern = substr( $hex_ip, 0, 4 ) . '%'; // Don't bother checking blocks out of this /16.
 	
-		$conds = array( 'gb_address' => $ip, 'gb_timestamp<'.$dbr->addQuotes($dbr->timestamp(wfTimestampNow())) );
+		$conds = array( 'gb_range_end>='.$dbr->addQuotes($hex_ip), // This block in the given range.
+				'gb_range_start<='.$dbr->addQuotes($hex_ip),
+				'gb_range_start like ' . $dbr->addQuotes( $ip_pattern ),
+				'gb_expiry>'.$dbr->addQuotes($dbr->timestamp(wfTimestampNow())) );
 	
 		if (!$wgUser->isAnon())
 			$conds['gb_anon_only'] = 0;
@@ -91,17 +98,14 @@ class GlobalBlocking {
 				return true;
 			}
 
-			$expiry = Block::decodeExpiry( $block->gb_expiry );
-			if ($expiry == 'infinity') {
-				$expiry = wfMsg( 'infiniteblock' );
-			} else {
-				global $wgLang;
-				$expiry = $wgLang->timeanddate( wfTimestamp( TS_MW, $expiry ), true );
-			}
+			$expiry = Block::formatExpiry( $block->gb_expiry );
 	
 			wfLoadExtensionMessages( 'GlobalBlocking' );
 			
-			$result[] = array('globalblocking-blocked', $block->gb_by, $block->gb_by_wiki, $block->gb_reason, $expiry);
+			$display_wiki = self::getWikiName( $block->gb_by_wiki );
+			$user_display = self::maybeLinkUserpage( $block->gb_by_wiki, $block->gb_by );
+			
+			$result[] = array('globalblocking-blocked', $user_display, $display_wiki, $block->gb_reason, $expirystr);
 			return false;
 		}
 	
@@ -116,10 +120,6 @@ class GlobalBlocking {
 	static function getGlobalBlockingSlave() {
 		global $wgGlobalBlockingDatabase;
 		return wfGetDB( DB_SLAVE, 'globalblocking', $wgGlobalBlockingDatabase );
-	}
-	
-	static function buildForm( $fields, $submitLabel ) {
-		return wfBuildForm( $fields, $submitLabel );
 	}
 	
 	static function getGlobalBlockId( $ip ) {
@@ -175,5 +175,25 @@ class GlobalBlocking {
 			// Block has been whitelisted
 			return array( 'user' => $row->gbw_by, 'reason' => $row->gbw_reason );
 		}
+	}
+	
+	static function getWikiName( $wiki_id ) {
+		if (class_exists('WikiMap')) {
+			// We can give more info than just the wiki id!
+			$wiki = WikiMap::getWiki( $wiki_id );
+			
+			return $wiki->getDisplayName();
+		}
+		
+		return $wiki_id;
+	}
+	
+	static function maybeLinkUserpage( $wiki_id, $user ) {
+		if (class_exists( 'WikiMap')) {
+			$wiki = WikiMap::getWiki( $wiki_id );
+			
+			return "[".$wiki->getUrl( "User:$user" )." $user]";
+		}
+		return $user;
 	}
 }

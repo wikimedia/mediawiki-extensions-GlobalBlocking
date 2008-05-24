@@ -36,7 +36,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 
 		// Validate search IP
 		$ip = $this->mSearchIP;
-		if (!(IP::isIPv4($ip) || IP::isIPv6($ip)) && strlen($ip)) {
+		if (!IP::isIPAddress($ip) && strlen($ip)) {
 			$errors[] = array('globalblocking-list-ipinvalid',$ip);
 			$ip = '';
 		}
@@ -47,13 +47,13 @@ class SpecialGlobalBlockList extends SpecialPage {
 		$searchForm = '';
 		$searchForm .= Xml::openElement( 'fieldset' ) .
 			Xml::element( 'legend', null, wfMsg( 'globalblocking-search-legend' ) );
-		$searchForm .= Xml::openElement( 'form', array( 'method' => 'post', 'action' => $wgScript, 'name' => 'globalblocklist-search' ) );
+		$searchForm .= Xml::openElement( 'form', array( 'method' => 'get', 'action' => $wgScript, 'name' => 'globalblocklist-search' ) );
 		$searchForm .= Xml::hidden( 'title',  SpecialPage::getTitleFor('GlobalBlockList')->getPrefixedText() );
 
 		if (count($errors)>0) {
 			$errorstr = '';
 			foreach ( $errors as $error ) {
-				$errorstr .= '* ' . call_user_func_array('wfMsgHtml', $error)."\n";
+				$errorstr .= '* ' . call_user_func_array('wfMsg', $error)."\n";
 			}
 
 			$searchForm .= Xml::openElement( 'div', array( 'class' => 'error' ) ) .
@@ -61,8 +61,8 @@ class SpecialGlobalBlockList extends SpecialPage {
 		}
 
 		$fields = array();
-		$fields['globalblocking-search-ip'] = wfInput( 'wpSearchIP', false, $ip );
-		$searchForm .= GlobalBlocking::buildForm( $fields, 'globalblocking-search-submit' );
+		$fields['globalblocking-search-ip'] = wfInput( 'wpSearchIP', 45, $ip );
+		$searchForm .= wfBuildForm( $fields, 'globalblocking-search-submit' );
 
 		$searchForm .= Xml::hidden( 'wpSearch', 1 );
 		$searchForm .= Xml::closeElement( 'form' ) . Xml::closeElement( 'fieldset' );
@@ -83,15 +83,24 @@ class SpecialGlobalBlockList extends SpecialPage {
 
 	function loadParameters() {
 		global $wgRequest,$wgUser;
-		$this->mSearchIP = $wgRequest->getVal( 'wpSearchIP' );
-		$this->mSearch = $wgRequest->getCheck( 'wpSearch' );
-		$this->mAction = $wgRequest->getVal( 'action', 'list' );
-		$this->mUnblockIP = $wgRequest->getVal( 'unblockip' );
-		$this->mWhitelistIP = $wgRequest->getVal( 'whitelistip' );
+		#$this->mSearchIP = $wgRequest->geText( 'wpSearchIP' );
+		$this->mSearch = $wgRequest->getText( 'wpSearch' );
+		$this->mAction = $wgRequest->getText( 'action', 'list' );
+		#$this->mUnblockIP = $wgRequest->getText( 'unblockip' );
+		#$this->mWhitelistIP = $wgRequest->getVal( 'whitelistip' );
 		$this->mWhitelistID = $wgRequest->getVal( 'whitelistid' );
-		$this->mWhitelistStatus = $wgRequest->getVal( 'wpWhitelistStatus' );
-		$this->mEditToken = $wgRequest->getVal( 'wpEditToken' );
-		$this->mReason = $wgRequest->getVal( 'wpReason' );
+		$this->mWhitelistStatus = $wgRequest->getCheck( 'wpWhitelistStatus' );
+		$this->mEditToken = $wgRequest->getText( 'wpEditToken' );
+		$this->mReason = $wgRequest->getText( 'wpReason' );
+		
+		// Normalise ranges if necessary.
+		$normalise_fields = array( 'mWhitelistIP' => 'whitelistip', 'mUnblockIP' => 'unblockip', 'mSearchIP' => 'wpSearchIP' );
+		
+		foreach( $normalise_fields as $object_field => $post_field ) {
+			$ip = $wgRequest->getText( $post_field );
+
+			$this->$object_field = Block::normaliseRange( $ip );
+		}
 	}
 	
 	function whitelistForm() {
@@ -124,11 +133,11 @@ class SpecialGlobalBlockList extends SpecialPage {
 
 		$fields = array();
 
-		$fields['ipaddress'] = wfInput( 'whitelistip', false, $this->mWhitelistIP, array( 'readonly' => 'readonly' ) );
-		$fields['globalblocking-whitelist-reason'] = wfInput( 'wpReason', false, $this->mReason );
+		$fields['ipaddress'] = wfInput( 'whitelistip', 45, $this->mWhitelistIP, array( 'readonly' => 'readonly' ) );
+		$fields['globalblocking-whitelist-reason'] = wfInput( 'wpReason', 45, $this->mReason );
 		$fields['globalblocking-whitelist-status'] = Xml::checkLabel( wfMsgExt( 'globalblocking-whitelist-statuslabel', 'parsemag' ), 'wpWhitelistStatus', 'wpWhitelistStatus', $cur_status );
 
-		$form .= GlobalBlocking::buildForm( $fields, 'globalblocking-whitelist-submit' );
+		$form .= wfBuildForm( $fields, 'globalblocking-whitelist-submit' );
 
 		$form .= Xml::hidden( 'wpEditToken', $wgUser->editToken() );
 
@@ -197,14 +206,14 @@ class SpecialGlobalBlockList extends SpecialPage {
 			return;
 		}
 		
-		$wgOut->setSubTitle( wfMsg( 'globalblocking-unblockform-subtitle' ) );
+		$wgOut->setSubTitle( wfMsg( 'globalblocking-unblock-subtitle' ) );
 
 		$form = '';
 
 		if (count($errors)>0) {
 			$errorstr = '';
 			foreach ( $errors as $error ) {
-				$errorstr .= '* ' . call_user_func_array('wfMsgHtml', $error)."\n";
+				$errorstr .= '* ' . call_user_func_array('wfMsg', $error)."\n";
 			}
 
 			$form .= Xml::openElement( 'div', array( 'class' => 'error' ) ) .
@@ -219,10 +228,10 @@ class SpecialGlobalBlockList extends SpecialPage {
 
 		$fields = array();
 
-		$fields['ipaddress'] = wfInput( 'unblockip', false, $this->mUnblockIP );
-		$fields['globalblocking-unblock-reason'] = wfInput( 'wpReason', false, $this->mReason );
+		$fields['ipaddress'] = wfInput( 'unblockip', 45, $this->mUnblockIP );
+		$fields['globalblocking-unblock-reason'] = wfInput( 'wpReason', 45, $this->mReason );
 
-		$form .= GlobalBlocking::buildForm( $fields, 'globalblocking-unblock-submit' );
+		$form .= wfBuildForm( $fields, 'globalblocking-unblock-submit' );
 
 		$form .= Xml::hidden( 'wpEditToken', $wgUser->editToken() );
 
@@ -236,7 +245,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 		global $wgOut,$wgUser;
 		$errors = array();
 		$ip = $this->mUnblockIP;
-		if (!(IP::isIPv4($ip) || IP::isIPv6($ip)) && strlen($ip)) {
+		if (!IP::isIPAddress($ip) && strlen($ip)) {
 			$errors[] = array('globalblocking-unblock-ipinvalid',$ip);
 			$ip = '';
 		}
@@ -280,25 +289,23 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 
 	function formatRow( $row ) {
 		global $wgLang,$wgUser;
-
+		
+		## One-time setup
+		static $sk=null;
+		
+		if (is_null($sk)) {
+			$sk = $wgUser->getSkin();
+		}
+		
+		## Setup
 		$timestamp = $row->gb_timestamp;
 		$expiry = $row->gb_expiry;
 		$options = array();
-
-		if (strlen($row->gb_reason)) {
-			$options[] = $row->gb_reason;
-		}
-
-		$expiry = Block::decodeExpiry( $row->gb_expiry );
-		if ($expiry == 'infinity') {
-			$expiry = wfMsg( 'infiniteblock' );
-		} else {
-			global $wgLang;
-			$expiry = $wgLang->timeanddate( wfTimestamp( TS_MW, $expiry ), true );
-		}
-		$options[] = wfMsg( 'globalblocking-list-expiry', $expiry);
 		
-		## Check for whitelisting.
+		## Options to display
+		$options[] = Block::formatExpiry( $expiry );
+		
+		# Check for whitelisting.
 		$wlinfo = GlobalBlocking::getWhitelistInfo( $row->gb_id );
 		if ($wlinfo) {
 			$options[] = wfMsg( 'globalblocking-list-whitelisted', User::whois($wlinfo['user']), $wlinfo['reason'] );
@@ -308,10 +315,11 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 
 		if ($row->gb_anon_only)
 			$options[] = wfMsg('globalblocking-list-anononly');
-
-		$sk = $wgUser->getSkin();
 		
 		$titleObj = SpecialPage::getTitleFor( "GlobalBlockList" );
+		
+		## Do afterthoughts (comment, links for admins)
+		$comment = $sk->commentBlock($row->gb_reason);
 
 		$unblockLink = '';
 		if (count(SpecialPage::getTitleFor( 'GlobalBlockList' )->getUserPermissionsErrors( 'globalunblock', $wgUser ))<=1 ) {
@@ -321,11 +329,16 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 		if (count(SpecialPage::getTitleFor( 'GlobalBlockList' )->getUserPermissionsErrors( 'globalblock-whitelist', $wgUser ))<=1) {
 			$whitelistLink = ' (' . $sk->makeKnownLinkObj($titleObj, wfMsg( 'globalblocking-list-whitelist' ), 'action=whitelist&whitelistip=' . urlencode( $row->gb_address ) . '&whitelistid=' . urlencode($row->gb_id) ) . ')';
 		}
-
+		
+		## Userpage link / Info on originating wiki
+		$display_wiki = GlobalBlocking::getWikiName( $row->gb_by_wiki );
+		$user_display = GlobalBlocking::maybeLinkUserpage( $row->gb_by_wiki, $row->gb_by );
+		
+		## Put it all together.
 		return Xml::openElement( 'li' ) .
 			wfMsgExt( 'globalblocking-list-blockitem', array( 'parseinline' ), $timestamp,
-				$row->gb_by, $row->gb_by_wiki, $row->gb_address,
-				implode( ', ', $options) ) . " $unblockLink $whitelistLink " .
+				$user_display, $display_wiki, $row->gb_address,
+				implode( ', ', $options) ) . " $comment $unblockLink $whitelistLink " .
 			Xml::closeElement( 'li' );
 	}
 
