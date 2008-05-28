@@ -739,6 +739,13 @@ $messages['hu'] = array(
 	'globalblock'                   => 'IP-cím globális blokkolása',
 );
 
+/** Indonesian (Bahasa Indonesia)
+ * @author Rex
+ */
+$messages['id'] = array(
+	'globalblocking-unblock-reason' => 'Alasan:',
+);
+
 /** Icelandic (Íslenska)
  * @author S.Örvarr.S
  */
@@ -828,6 +835,7 @@ $messages['km'] = array(
  * @author Purodha
  */
 $messages['ksh'] = array(
+	'globalblocking-list-anononly'  => 'nor namelose',
 	'globalblocking-unblock-reason' => 'Aanlass:',
 );
 
@@ -976,6 +984,7 @@ $1',
 तुम्ही कदाचित [[Special:Globalblocklist|वैश्विक ब्लॉक्सची यादी]] पाहू इच्छिता.',
 	'globalblocking-block-successsub'        => 'वैश्विक ब्लॉक यशस्वी',
 	'globalblocking-block-alreadyblocked'    => '$1 हा आयपी अंकपत्ता अगोदरच ब्लॉक केलेला आहे. तुम्ही अस्तित्वात असलेले ब्लॉक [[Special:Globalblocklist|वैश्विक ब्लॉकच्या यादीत]] पाहू शकता.',
+	'globalblocking-block-bigrange'          => 'तुम्ही दिलेली रेंज ($1) ही ब्लॉक करण्यासाठी खूप मोठी आहे. तुम्ही एकावेळी जास्तीत जास्त ६५,५३६ पत्ते ब्लॉक करू शकता (/१६ रेंज)',
 	'globalblocking-list'                    => 'वैश्विक पातळीवर ब्लॉक केलेले आयपी अंकपत्ते',
 	'globalblocking-search-legend'           => 'एखाद्या वैश्विक ब्लॉक ला शोधा',
 	'globalblocking-search-ip'               => 'आयपी अंकपत्ता:',
@@ -1000,6 +1009,7 @@ $1',
 	'globalblocking-unblock-errors'          => 'तुम्ही या आयपी अंकपत्त्यावरील वैश्विक ब्लॉक काढू शकत नाही, कारण:
 $1',
 	'globalblocking-unblock-successsub'      => 'वैश्विक ब्लॉक काढलेला आहे',
+	'globalblocking-unblock-subtitle'        => 'वैश्विक ब्लॉक काढत आहे',
 	'globalblocking-whitelist-subtitle'      => 'एका वैश्विक ब्लॉकची स्थानिक स्थिती संपादत आहे',
 	'globalblocking-whitelist-legend'        => 'स्थानिक स्थिती बदला',
 	'globalblocking-whitelist-reason'        => 'बदलांसाठीचे कारण:',
