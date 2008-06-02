@@ -543,7 +543,7 @@ $1',
 	'globalblocking-blocked'                 => "O seu enderezo IP foi bloqueado en todos os wikis Wikimedia por '''\$1''' (''\$2'').
 A razón que deu foi ''\"\$3\"''. A expiración do bloqueo será ''\$4''.",
 	'globalblocking-logpage'                 => 'Rexistro de bloqueos globais',
-	'globalblocking-block-logentry'          => 'bloqueou globalmente [[$1]] cun período de expiración de $2 ($3)',
+	'globalblocking-block-logentry'          => 'bloqueou globalmente a "[[$1]]" cun período de expiración de $2 ($3)',
 	'globalblocking-unblock-logentry'        => 'retirado o bloqueo global en [[$1]]',
 	'globalblocking-whitelist-logentry'      => 'deshabilitou localmente o bloqueo global en [[$1]]',
 	'globalblocking-dewhitelist-logentry'    => 'volveu habilitar localmente o bloqueo global en [[$1]]',
