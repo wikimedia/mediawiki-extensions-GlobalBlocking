@@ -865,6 +865,8 @@ D'Lëscht vun de globale Späre fannt Dir [[[Special:Globalblocklist|hei]].",
 	'globalblocking-search-submit'           => 'Späre sichen',
 	'globalblocking-list-ipinvalid'          => "D'IP-adress no däer Dir Gesicht hutt ($1) ass net korrekt.
 Gitt w.e.g eng korrekt IP-Adress an.",
+	'globalblocking-search-errors'           => 'Bäi ärer Sich gouf näischt fonnt, well:
+$1',
 	'globalblocking-list-blockitem'          => "$1: '''$2''' (vu(n) ''$3'') huet'''[[Special:Contributions/$4|$4]]''' global gespaart ''($5)''",
 	'globalblocking-list-expiry'             => 'Dauer vun der Spär $1',
 	'globalblocking-list-anononly'           => 'nëmmen anonym Benotzer',
@@ -897,6 +899,7 @@ De Grond den ugi gouf war ''\"\$3\"''. D'spär dauert ''\$4''.",
 	'globalblocking-block-logentry'          => '[[$1]] gouf global gespaart fir $2 ($3)',
 	'globalblocking-unblock-logentry'        => 'global Spär vum [[$1]] opgehuewen',
 	'globalblocking-whitelist-logentry'      => 'huet déi global Spär vum [[$1]] lokal ausgeschalt',
+	'globalblocking-dewhitelist-logentry'    => 'huet déi global Spär vun [[$1]] lokal nees aktivéiert',
 	'globalblocklist'                        => 'Lëscht vun de global gespaarten IP-Adressen',
 	'globalblock'                            => 'Eng IP-Adress global spären',
 	'right-globalblock'                      => 'Benotzer global spären',
@@ -1368,6 +1371,7 @@ $messages['ps'] = array(
 	'globalblocking-search-ip'               => 'IP پته:',
 	'globalblocking-list-whitelist'          => 'سيمه ايز دريځ',
 	'globalblocking-unblock-reason'          => 'سبب:',
+	'globalblocking-whitelist-reason'        => 'د بدلون سبب:',
 	'globalblocking-whitelist-status'        => 'سيمه ايز دريځ:',
 );
 
