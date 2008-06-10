@@ -413,6 +413,7 @@ La kialo donata estis ''\"\$3\"''. La findato de la forbaro estas ''\$4''.",
  * @author Grondin
  * @author IAlex
  * @author Sherbrooke
+ * @author Verdy p
  */
 $messages['fr'] = array(
 	'globalblocking-desc'                    => '[[Special:GlobalBlock|Permet]] le blocage des adresses IP [[Special:GlobalBlockList|à travers plusieurs wikis]]',
@@ -433,7 +434,7 @@ Veuillez noter que vous ne pouvez pas inscrire un nom d’utilisateur !',
 Vous pouvez consultez la liste des [[Special:Globalblocklist|comptes bloqués globalement]].',
 	'globalblocking-block-successsub'        => 'Blocage global réussi',
 	'globalblocking-block-alreadyblocked'    => 'L’adresse IP est déjà bloquée globalement. Vous pouvez afficher les blocages existants sur la liste [[Special:Globalblocklist|des blocages globaux]].',
-	'globalblocking-block-bigrange'          => "La plage que vous avez spécifiée ($1) est trop grande pour être bloquée. Vous ne pouvez pas bloquer plus de 65'536 adresses (plages en /16).",
+	'globalblocking-block-bigrange'          => 'La plage que vous avez spécifiée ($1) est trop grande pour être bloquée. Vous ne pouvez pas bloquer plus de 65&nbsp;536 adresses (plages en /16).',
 	'globalblocking-list'                    => 'Liste des adresses IP bloquées globalement',
 	'globalblocking-search-legend'           => 'Recherche d’un blocage global',
 	'globalblocking-search-ip'               => 'Adresse IP :',
@@ -1650,6 +1651,14 @@ $1',
 	'globalblock'                            => 'Глобално блокирајте ИП адресу',
 );
 
+/** Sundanese (Basa Sunda)
+ * @author Irwangatot
+ */
+$messages['su'] = array(
+	'globalblocking-unblock-reason'   => 'Alesan:',
+	'globalblocking-whitelist-reason' => 'Alesan parobahan:',
+);
+
 /** Swedish (Svenska)
  * @author M.M.S.
  */
@@ -1726,12 +1735,15 @@ Anledningar var '''$3'''. Blockeringen utgår ''$4''.",
  * @author వైజాసత్య
  */
 $messages['te'] = array(
-	'globalblocking-block-options'    => 'ఎంపికలు',
-	'globalblocking-search-ip'        => 'IP చిరునామా:',
-	'globalblocking-unblock-reason'   => 'కారణం:',
-	'globalblocking-whitelist-reason' => 'మార్చడానికి కారణం:',
-	'globalblocking-whitelist-status' => 'స్థానిక స్థితి:',
-	'globalblock'                     => 'సర్వత్రా ఈ ఐపీ చిరునామాను నిరోధించు',
+	'globalblocking-block-expiry-otherfield' => 'ఇతర సమయం:',
+	'globalblocking-block-options'           => 'ఎంపికలు',
+	'globalblocking-search-ip'               => 'IP చిరునామా:',
+	'globalblocking-unblock-reason'          => 'కారణం:',
+	'globalblocking-whitelist-legend'        => 'స్థానిక స్థితి మార్పు',
+	'globalblocking-whitelist-reason'        => 'మార్చడానికి కారణం:',
+	'globalblocking-whitelist-status'        => 'స్థానిక స్థితి:',
+	'globalblocking-whitelist-submit'        => 'స్థానిక స్థితిని మార్చండి',
+	'globalblock'                            => 'సర్వత్రా ఈ ఐపీ చిరునామాను నిరోధించు',
 );
 
 /** Tajik (Cyrillic) (Тоҷикӣ/tojikī (Cyrillic))
