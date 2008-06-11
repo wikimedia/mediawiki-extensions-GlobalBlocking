@@ -163,13 +163,14 @@ $messages['an'] = array(
 );
 
 /** Arabic (العربية)
- * @author Alnokta
  * @author Meno25
+ * @author Alnokta
  * @author OsamaK
  */
 $messages['ar'] = array(
 	'globalblocking-block-reason'            => 'السبب لهذا المنع:',
 	'globalblocking-block-expiry'            => 'انتهاء المنع:',
+	'globalblocking-block-expiry-other'      => 'وقت انتهاء آخر',
 	'globalblocking-block-expiry-otherfield' => 'وقت آخر:',
 	'globalblocking-block-legend'            => 'امنع مستخدم عالميًا',
 	'globalblocking-block-options'           => 'خيارات',
@@ -177,12 +178,28 @@ $messages['ar'] = array(
 $1',
 	'globalblocking-block-submit'            => 'امنع عنوان ب.إ هذا عالميًا',
 	'globalblocking-block-successsub'        => 'نجح المنع العالمي',
+	'globalblocking-search-legend'           => 'بحث عن منع عام',
 	'globalblocking-search-ip'               => 'عنوان آي بي:',
 	'globalblocking-search-submit'           => 'ابحث عن منوعات',
+	'globalblocking-list-expiry'             => 'الانتهاء $1',
+	'globalblocking-list-anononly'           => 'المجهولون فقط',
 	'globalblocking-list-unblock'            => 'إزالة',
+	'globalblocking-list-whitelist'          => 'الحالة المحلية',
+	'globalblocking-unblock-legend'          => 'إزالة منع عام',
+	'globalblocking-unblock-submit'          => 'إزالة المنع العام',
 	'globalblocking-unblock-reason'          => 'السبب:',
+	'globalblocking-unblock-successsub'      => 'المنع العام تمت إزالته بنجاح',
+	'globalblocking-unblock-subtitle'        => 'إزالة المنع العام',
+	'globalblocking-whitelist-legend'        => 'تغيير الحالة المحلية',
+	'globalblocking-whitelist-reason'        => 'السبب للتغيير:',
 	'globalblocking-whitelist-status'        => 'الحالة المحلية:',
+	'globalblocking-whitelist-submit'        => 'تغيير الحالة المحلية',
 	'globalblocking-logpage'                 => 'سجل المنع العام',
+	'globalblocklist'                        => 'قائمة عناوين الأيبي الممنوعة منعا عاما',
+	'globalblock'                            => 'منع عام لعنوان أيبي',
+	'right-globalblock'                      => 'عمل عمليات منع عامة',
+	'right-globalunblock'                    => 'إزالة عمليات المنع العامة',
+	'right-globalblock-whitelist'            => 'تعطيل عمليات المنع العامة محليا',
 );
 
 /** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
