@@ -759,8 +759,10 @@ $messages['hu'] = array(
 
 /** Indonesian (Bahasa Indonesia)
  * @author Rex
+ * @author Irwangatot
  */
 $messages['id'] = array(
+	'globalblocking-block-options'  => 'Pilihan',
 	'globalblocking-unblock-reason' => 'Alasan:',
 );
 
