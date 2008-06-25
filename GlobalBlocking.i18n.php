@@ -273,6 +273,7 @@ $1',
 	'globalblocking-unblock-errors'          => 'Не можете да премахнете глобалното блокиране на този IP адрес поради следната причина:
 $1',
 	'globalblocking-unblock-successsub'      => 'Глобалното блокиране беше премахнато успешно',
+	'globalblocking-unblock-subtitle'        => 'Премахване на глобално блокиране',
 	'globalblocking-whitelist-subtitle'      => 'Редактиране на локалния статут на глобално блокиране',
 	'globalblocking-whitelist-legend'        => 'Промяна на локалния статут',
 	'globalblocking-whitelist-reason'        => 'Причина за промяната:',
@@ -461,7 +462,7 @@ Veuillez noter que vous ne pouvez pas inscrire un nom d’utilisateur !',
 	'globalblocking-block-success'           => 'L’adresse IP $1 a été bloquée avec succès sur l’ensemble des projets Wikimedia.
 Vous pouvez consultez la liste des [[Special:Globalblocklist|comptes bloqués globalement]].',
 	'globalblocking-block-successsub'        => 'Blocage global réussi',
-	'globalblocking-block-alreadyblocked'    => 'L’adresse IP est déjà bloquée globalement. Vous pouvez afficher les blocages existants sur la liste [[Special:Globalblocklist|des blocages globaux]].',
+	'globalblocking-block-alreadyblocked'    => 'L’adresse IP $1 est déjà bloquée globalement. Vous pouvez afficher les blocages existants sur la liste [[Special:Globalblocklist|des blocages globaux]].',
 	'globalblocking-block-bigrange'          => 'La plage que vous avez spécifiée ($1) est trop grande pour être bloquée. Vous ne pouvez pas bloquer plus de 65&nbsp;536 adresses (plages en /16).',
 	'globalblocking-list'                    => 'Liste des adresses IP bloquées globalement',
 	'globalblocking-search-legend'           => 'Recherche d’un blocage global',
@@ -591,6 +592,13 @@ $messages['gv'] = array(
 	'globalblocking-block-options'           => 'Reihghyn',
 	'globalblocking-search-ip'               => 'Enmys IP:',
 	'globalblocking-unblock-reason'          => 'Fa:',
+);
+
+/** Hawaiian (Hawai`i)
+ * @author Singularity
+ */
+$messages['haw'] = array(
+	'globalblocking-unblock-reason' => 'Kumu:',
 );
 
 /** Hindi (हिन्दी)
