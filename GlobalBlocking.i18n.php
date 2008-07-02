@@ -415,6 +415,7 @@ Bonvolu noti ke vi ne povas enigi salutnomo!',
 	'globalblocking-unblock-errors'          => 'Vi ne povas forigi ĝeneralan forbaron por tiu IP-adreso, ĉar:
 $1',
 	'globalblocking-unblock-successsub'      => 'Ĝenerala forbaro estis sukcese forigita',
+	'globalblocking-unblock-subtitle'        => 'Forigante ĝeneralan forbaron',
 	'globalblocking-whitelist-subtitle'      => 'Redaktante la lokan statuson de ĝeneralan forbaron',
 	'globalblocking-whitelist-legend'        => 'Ŝanĝi lokan statuson',
 	'globalblocking-whitelist-reason'        => 'Kialo por ŝanĝo:',
@@ -776,6 +777,13 @@ $messages['hu'] = array(
 	'globalblock'                   => 'IP-cím globális blokkolása',
 );
 
+/** Interlingua (Interlingua)
+ * @author McDutchie
+ */
+$messages['ia'] = array(
+	'globalblocking-unblock-reason' => 'Motivo:',
+);
+
 /** Indonesian (Bahasa Indonesia)
  * @author Rex
  * @author Irwangatot
@@ -1089,7 +1097,7 @@ $messages['nl'] = array(
 	'globalblocking-block-legend'            => 'Een gebruiker globaal blokkeren',
 	'globalblocking-block-options'           => 'Opties',
 	'globalblocking-block-errors'            => 'De blokkade is niet geslaagd omdat: $1',
-	'globalblocking-block-ipinvalid'         => 'Het IP-adres dat u hebt opgegeven is onjuist.
+	'globalblocking-block-ipinvalid'         => 'Het IP-adres ($1) dat u hebt opgegeven is onjuist.
 Let op: u kunt geen gebruikersnaam opgeven!',
 	'globalblocking-block-expiryinvalid'     => 'De verloopdatum/tijd die u hebt opgegeven is ongeldig ($1).',
 	'globalblocking-block-submit'            => 'Dit IP-adres globaal blokkeren',
@@ -1112,7 +1120,7 @@ $1',
 	'globalblocking-list-unblock'            => 'blokkade opheffen',
 	'globalblocking-list-whitelisted'        => 'lokaal genegeerd door $1: $2',
 	'globalblocking-list-whitelist'          => 'lokale status',
-	'globalblocking-unblock-ipinvalid'       => 'Het IP-adres dat u hebt ingegeven is onjuist.
+	'globalblocking-unblock-ipinvalid'       => 'Het IP-adres ($1) dat u hebt ingegeven is onjuist.
 Let op: u kunt geen gebruikersnaam ingeven!',
 	'globalblocking-unblock-legend'          => 'Een globale blokkade verwijderen',
 	'globalblocking-unblock-submit'          => 'Globale blokkade verwijderen',
