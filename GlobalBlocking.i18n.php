@@ -1781,9 +1781,11 @@ Anledningar var '''$3'''. Blockeringen utgår ''$4''.",
  * @author వైజాసత్య
  */
 $messages['te'] = array(
+	'globalblocking-block-reason'            => 'ఈ నిరోధానికి కారణం:',
 	'globalblocking-block-expiry-otherfield' => 'ఇతర సమయం:',
 	'globalblocking-block-options'           => 'ఎంపికలు',
 	'globalblocking-search-ip'               => 'IP చిరునామా:',
+	'globalblocking-list-whitelist'          => 'స్థానిక స్థితి',
 	'globalblocking-unblock-reason'          => 'కారణం:',
 	'globalblocking-whitelist-legend'        => 'స్థానిక స్థితి మార్పు',
 	'globalblocking-whitelist-reason'        => 'మార్చడానికి కారణం:',
