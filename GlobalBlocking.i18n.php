@@ -602,6 +602,15 @@ $messages['haw'] = array(
 	'globalblocking-unblock-reason' => 'Kumu:',
 );
 
+/** Hebrew (עברית)
+ * @author Agbad
+ * @author Rotemliss
+ */
+$messages['he'] = array(
+	'globalblocking-block-intro'  => 'באפשרותכם להשתמש בדף זה כדי לחסום כתובת IP בכל אתרי הוויקי.',
+	'globalblocking-block-reason' => 'סיבה לחסימה זו:',
+);
+
 /** Hindi (हिन्दी)
  * @author Kaustubh
  */
