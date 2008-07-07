@@ -353,7 +353,7 @@ $1',
 	'globalblocking-whitelist-whitelisted'   => "Du hast erfolgreich die globale Sperre #$2 der IP-Adresse '''$1''' auf {{SITENAME}} aufgehoben.",
 	'globalblocking-whitelist-dewhitelisted' => "Du hast erfolgreich die globale Sperre #$2 der IP-Adresse '''$1''' auf {{SITENAME}} wieder eingeschaltet.",
 	'globalblocking-whitelist-successsub'    => 'Lokaler Status erfolgreich geändert',
-	'globalblocking-unblock-subtitle       ' => 'Globale Sperre aufheben',
+	'globalblocking-unblock-subtitle'        => 'Globale Sperre aufheben',
 	'globalblocking-blocked'                 => "Deine IP-Adresse wurde von '''\$1''' (''\$2'') für alle Wikimedia-Wikis gesperrt.
 Als Begründung wurde ''\"\$3\"'' angegeben. Die Sperre dauert ''\$4''.",
 	'globalblocking-logpage'                 => 'Globales Sperrlogbuch',
