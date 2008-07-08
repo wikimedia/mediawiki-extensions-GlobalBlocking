@@ -908,6 +908,8 @@ $messages['lb'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Aner Dauer:',
 	'globalblocking-block-legend'            => 'E Benotzer global spären',
 	'globalblocking-block-options'           => 'Optiounen',
+	'globalblocking-block-errors'            => "D'Spär huet net fonctionnéiert, well:
+$1",
 	'globalblocking-block-ipinvalid'         => 'Dir hutt eng ongëlteg IP-Adress ($1) aginn.
 Denkt w.e.g. drun datt Dir och e Benotzernumm agi kënnt!',
 	'globalblocking-block-submit'            => 'Dës IP-Adress global spären',
