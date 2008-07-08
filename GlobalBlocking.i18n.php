@@ -34,7 +34,7 @@ You may wish to consult the [[Special:Globalblocklist|list of global blocks]].',
 	
 	'globalblocking-list' => 'List of globally blocked IP addresses',
 	'globalblocking-search-legend' => 'Search for a global block',
-	'globalblocking-search-ip' => 'IP Address:',
+	'globalblocking-search-ip' => 'IP address:',
 	'globalblocking-search-submit' => 'Search for blocks',
 	'globalblocking-list-ipinvalid' => 'The IP address you searched for ($1) is invalid.
 Please enter a valid IP address.',
