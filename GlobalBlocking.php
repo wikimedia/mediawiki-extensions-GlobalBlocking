@@ -25,6 +25,7 @@ $wgExtensionCredits['other'][] = array(
 );
 
 $wgExtensionMessagesFiles['GlobalBlocking'] =  "$dir/GlobalBlocking.i18n.php";
+$wgExtensionAliasesFiles['GlobalBlocking'] = "$dir/GlobalBlocking.alias.php";
 $wgHooks['getUserPermissionsErrorsExpensive'][] = 'GlobalBlocking::getUserPermissionsErrors';
 
 $wgAutoloadClasses['SpecialGlobalBlock'] = "$dir/SpecialGlobalBlock.php";
