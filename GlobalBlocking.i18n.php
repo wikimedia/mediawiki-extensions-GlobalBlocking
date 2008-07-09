@@ -353,7 +353,6 @@ $1',
 	'globalblocking-whitelist-whitelisted'   => "Du hast erfolgreich die globale Sperre #$2 der IP-Adresse '''$1''' auf {{SITENAME}} aufgehoben.",
 	'globalblocking-whitelist-dewhitelisted' => "Du hast erfolgreich die globale Sperre #$2 der IP-Adresse '''$1''' auf {{SITENAME}} wieder eingeschaltet.",
 	'globalblocking-whitelist-successsub'    => 'Lokaler Status erfolgreich geändert',
-	'globalblocking-unblock-subtitle'        => 'Globale Sperre aufheben',
 	'globalblocking-blocked'                 => "Deine IP-Adresse wurde von '''\$1''' (''\$2'') für alle Wikimedia-Wikis gesperrt.
 Als Begründung wurde ''\"\$3\"'' angegeben. Die Sperre dauert ''\$4''.",
 	'globalblocking-logpage'                 => 'Globales Sperrlogbuch',
@@ -881,10 +880,21 @@ Alesan sing diwènèhaké yaiku ''\"\$3\"''. Blokade iki bakal kadaluwarsa ing '
 
 /** Khmer (ភាសាខ្មែរ)
  * @author គីមស៊្រុន
+ * @author Lovekhmer
  */
 $messages['km'] = array(
-	'globalblocking-block-options'  => 'ជំរើសនានា',
-	'globalblocking-unblock-reason' => 'មូលហេតុ៖',
+	'globalblocking-block-intro'      => 'អ្នកអាចប្រើប្រាស់ទំព័រនេះដើម្បីហាមឃាត់អាសយដ្ឋាន IP នៅគ្រប់វិគីទាំងអស់។',
+	'globalblocking-block-reason'     => 'មូលហេតុនៃការហាមឃាត់នេះ:',
+	'globalblocking-block-expiry'     => 'ពេលផុតកំនត់នៃការហាមឃាត់:',
+	'globalblocking-block-options'    => 'ជំរើសនានា',
+	'globalblocking-search-ip'        => 'អាសយដ្ឋានIP:',
+	'globalblocking-search-submit'    => 'ស្វែងរកចំពោះការហាមឃាត់',
+	'globalblocking-list-expiry'      => 'ផុតកំនត់ $1',
+	'globalblocking-list-anononly'    => 'អនាមិកជនប៉ុណ្ណោះ',
+	'globalblocking-list-unblock'     => 'ដកហូត',
+	'globalblocking-unblock-reason'   => 'មូលហេតុ៖',
+	'globalblocking-whitelist-reason' => 'មូលហេតុផ្លាស់ប្តូរ:',
+	'globalblocking-logpage'          => 'កំនត់ហេតុនៃការហាមឃាត់ជាសាកល',
 );
 
 /** Ripoarisch (Ripoarisch)
@@ -1973,7 +1983,7 @@ Lý do được đưa ra là ''\"\$3\"''. Thời gian hết hạn cấm là ''\$
 	'right-globalblock-whitelist'            => 'Tắt tác vụ cấm toàn cục',
 );
 
-/** Cantonese
+/** Yue (粵語)
  * @author Shinjiman
  */
 $messages['yue'] = array(
@@ -1986,7 +1996,8 @@ $messages['yue'] = array(
 	'globalblocking-block-expiry-otherfield' => '其它時間:',
 	'globalblocking-block-legend'            => '全域封鎖一位用戶',
 	'globalblocking-block-options'           => '選項',
-	'globalblocking-block-errors'            => "個封鎖唔成功，因為:\n$1",
+	'globalblocking-block-errors'            => '個封鎖唔成功，因為:
+$1',
 	'globalblocking-block-ipinvalid'         => '你所輸入嘅IP地址 ($1) 係無效嘅。
 請留意嘅係你唔可以輸入一個用戶名！',
 	'globalblocking-block-expiryinvalid'     => '你所輸入嘅到期 ($1) 係無效嘅。',
@@ -2001,14 +2012,14 @@ $messages['yue'] = array(
 	'globalblocking-search-submit'           => '搵封鎖',
 	'globalblocking-list-ipinvalid'          => '你所搵嘅IP地址 ($1) 係無效嘅。
 請輸入一個有效嘅IP地址。',
-	'globalblocking-search-errors'           => "你之前搵過嘅嘢唔成功，因為:\n\$1",
-	'globalblocking-list-blockitem'          => "$1: '''$2''' (''$3'') 全域封鎖咗 '''[[Special:Contributions/$4|$4]]''' ''($5)''",	
+	'globalblocking-search-errors'           => '你之前搵過嘅嘢唔成功，因為:
+$1',
+	'globalblocking-list-blockitem'          => "$1: '''$2''' (''$3'') 全域封鎖咗 '''[[Special:Contributions/$4|$4]]''' ''($5)''",
 	'globalblocking-list-expiry'             => '於$1到期',
 	'globalblocking-list-anononly'           => '限匿名',
 	'globalblocking-list-unblock'            => '解封',
 	'globalblocking-list-whitelisted'        => '由$1於本地封鎖: $2',
 	'globalblocking-list-whitelist'          => '本地狀態',
-
 	'globalblocking-unblock-ipinvalid'       => '你輸入嘅IP地址 ($1) 係無效嘅。
 請留意嘅係你唔可以輸入一個用戶名！',
 	'globalblocking-unblock-legend'          => '拎走一個全域封鎖',
@@ -2016,9 +2027,9 @@ $messages['yue'] = array(
 	'globalblocking-unblock-reason'          => '原因:',
 	'globalblocking-unblock-notblocked'      => '你所輸入嘅IP地址 ($1) 無被全域封鎖。',
 	'globalblocking-unblock-unblocked'       => "你己經成功噉拎走咗響IP地址 '''$1''' 嘅全域封鎖 #$2 ",
-	'globalblocking-unblock-errors'          => "你唔可以拎走嗰個IP地址嘅全域封鎖，因為:\n\$1",
+	'globalblocking-unblock-errors'          => '你唔可以拎走嗰個IP地址嘅全域封鎖，因為:
+$1',
 	'globalblocking-unblock-successsub'      => '全域封鎖已經成功噉拎走咗',
-	
 	'globalblocking-whitelist-subtitle'      => '編輯一個全域封鎖嘅本地狀態',
 	'globalblocking-whitelist-legend'        => '改本地狀態',
 	'globalblocking-whitelist-reason'        => '改嘅原因:',
@@ -2028,26 +2039,21 @@ $messages['yue'] = array(
 	'globalblocking-whitelist-whitelisted'   => "你已經成功噉響{{SITENAME}}嘅IP地址 '''$1''' 度停用咗全域封鎖 #$2。",
 	'globalblocking-whitelist-dewhitelisted' => "你已經成功噉響{{SITENAME}}嘅IP地址 '''$1''' 度再次啟用咗全域封鎖 #$2。",
 	'globalblocking-whitelist-successsub'    => '本地狀態已經成功噉改咗',
-
-	'globalblocking-blocked'                 => "你嘅IP地址已經由'''$1''' (''$2'') 響所有嘅Wikimedia wiki 度全部封鎖晒。
-個原因係 ''\"$3\"''。個封鎖會響''$4''到期。",
-
+	'globalblocking-blocked'                 => "你嘅IP地址已經由'''\$1''' (''\$2'') 響所有嘅Wikimedia wiki 度全部封鎖晒。
+個原因係 ''\"\$3\"''。個封鎖會響''\$4''到期。",
 	'globalblocking-logpage'                 => '全域封鎖日誌',
 	'globalblocking-block-logentry'          => '全域封鎖咗[[$1]]於 $2 ($3) 到期',
 	'globalblocking-unblock-logentry'        => '拎走咗[[$1]]嘅全域封鎖',
 	'globalblocking-whitelist-logentry'      => '停用咗[[$1]]響本地嘅全域封鎖',
 	'globalblocking-dewhitelist-logentry'    => '再開[[$1]]響本地嘅全域封鎖',
-
 	'globalblocklist'                        => '全域封鎖IP地址一覽',
 	'globalblock'                            => '全域封鎖一個IP地址',
-	
-	// User rights
-	'right-globalblock'           => '整一個全域封鎖',
-	'right-globalunblock'         => '拎走全域封鎖',
-	'right-globalblock-whitelist' => '響本地停用全域封鎖',
+	'right-globalblock'                      => '整一個全域封鎖',
+	'right-globalunblock'                    => '拎走全域封鎖',
+	'right-globalblock-whitelist'            => '響本地停用全域封鎖',
 );
 
-/** Simplified Chinese
+/** Simplified Chinese (‪中文(简体)‬)
  * @author Shinjiman
  */
 $messages['zh-hans'] = array(
@@ -2060,7 +2066,8 @@ $messages['zh-hans'] = array(
 	'globalblocking-block-expiry-otherfield' => '其它时间:',
 	'globalblocking-block-legend'            => '全域封锁一位用户',
 	'globalblocking-block-options'           => '选项',
-	'globalblocking-block-errors'            => "该封锁不唔成功，因为:\n$1",
+	'globalblocking-block-errors'            => '该封锁不唔成功，因为:
+$1',
 	'globalblocking-block-ipinvalid'         => '您所输入的IP地址 ($1) 是无效的。
 请留意的是您不可以输入一个用户名！',
 	'globalblocking-block-expiryinvalid'     => '您所输入的到期 ($1) 是无效的。',
@@ -2075,14 +2082,14 @@ $messages['zh-hans'] = array(
 	'globalblocking-search-submit'           => '搜寻封锁',
 	'globalblocking-list-ipinvalid'          => '您所搜自导引IP地址 ($1) 是无效的。
 请输入一个有效的IP地址。',
-	'globalblocking-search-errors'           => "您先前搜寻过的项目不成功，因为:\n\$1",
-	'globalblocking-list-blockitem'          => "$1: '''$2''' (''$3'') 全域封锁了 '''[[Special:Contributions/$4|$4]]''' ''($5)''",	
+	'globalblocking-search-errors'           => '您先前搜寻过的项目不成功，因为:
+$1',
+	'globalblocking-list-blockitem'          => "$1: '''$2''' (''$3'') 全域封锁了 '''[[Special:Contributions/$4|$4]]''' ''($5)''",
 	'globalblocking-list-expiry'             => '于$1到期',
 	'globalblocking-list-anononly'           => '只限匿名',
 	'globalblocking-list-unblock'            => '解除封锁',
 	'globalblocking-list-whitelisted'        => '由$1于本地封锁: $2',
 	'globalblocking-list-whitelist'          => '本地状态',
-
 	'globalblocking-unblock-ipinvalid'       => '您所输入的IP地址 ($1) 是无效的。
 请留意的是您不可以输入一个用户名！',
 	'globalblocking-unblock-legend'          => '移除一个全域封锁',
@@ -2090,9 +2097,9 @@ $messages['zh-hans'] = array(
 	'globalblocking-unblock-reason'          => '原因:',
 	'globalblocking-unblock-notblocked'      => '您所输入的IP地址 ($1) 没有被全域封锁。',
 	'globalblocking-unblock-unblocked'       => "您己经成功地移除了在IP地址 '''$1''' 上的全域封锁 #$2 ",
-	'globalblocking-unblock-errors'          => "您不可以移除该IP地址的全域封锁，因为:\n\$1",
+	'globalblocking-unblock-errors'          => '您不可以移除该IP地址的全域封锁，因为:
+$1',
 	'globalblocking-unblock-successsub'      => '全域封锁已经成功地移除',
-	
 	'globalblocking-whitelist-subtitle'      => '编辑一个全域封锁的本地状态',
 	'globalblocking-whitelist-legend'        => '更改本地状态',
 	'globalblocking-whitelist-reason'        => '改?原因:',
@@ -2102,26 +2109,21 @@ $messages['zh-hans'] = array(
 	'globalblocking-whitelist-whitelisted'   => "您已经成功地在{{SITENAME}}上的IP地址 '''$1''' 中停用了全域封锁 #$2。",
 	'globalblocking-whitelist-dewhitelisted' => "您已经成功地在{{SITENAME}}上的IP地址 '''$1''' 中再次启用了全域封锁 #$2。",
 	'globalblocking-whitelist-successsub'    => '本地状态已经成功地更改?',
-
-	'globalblocking-blocked'                 => "您的IP地址已经由'''$1''' (''$2'') 在所有的Wikimedia wiki 中全部封锁。
-而理由是 ''\"$3\"''。该封锁将会在''$4''到期。",
-
+	'globalblocking-blocked'                 => "您的IP地址已经由'''\$1''' (''\$2'') 在所有的Wikimedia wiki 中全部封锁。
+而理由是 ''\"\$3\"''。该封锁将会在''\$4''到期。",
 	'globalblocking-logpage'                 => '全域封锁日志',
 	'globalblocking-block-logentry'          => '全域封锁了[[$1]]于 $2 ($3) 到期',
 	'globalblocking-unblock-logentry'        => '移除了[[$1]]的全域封锁',
 	'globalblocking-whitelist-logentry'      => '停用了[[$1]]于本地的全域封锁',
 	'globalblocking-dewhitelist-logentry'    => '再次启用[[$1]]于本地的全域封锁',
-
 	'globalblocklist'                        => '全域封锁IP地址名单',
 	'globalblock'                            => '全域封锁一个IP地址',
-	
-	// User rights
-	'right-globalblock'           => '弄一个全域封锁',
-	'right-globalunblock'         => '移除全域封锁',
-	'right-globalblock-whitelist' => '在本地停用全域封锁',
+	'right-globalblock'                      => '弄一个全域封锁',
+	'right-globalunblock'                    => '移除全域封锁',
+	'right-globalblock-whitelist'            => '在本地停用全域封锁',
 );
 
-/** Traditional Chinese
+/** Traditional Chinese (‪中文(繁體)‬)
  * @author Shinjiman
  */
 $messages['zh-hant'] = array(
@@ -2134,7 +2136,8 @@ $messages['zh-hant'] = array(
 	'globalblocking-block-expiry-otherfield' => '其它時間:',
 	'globalblocking-block-legend'            => '全域封鎖一位用戶',
 	'globalblocking-block-options'           => '選項',
-	'globalblocking-block-errors'            => "該封鎖不唔成功，因為:\n$1",
+	'globalblocking-block-errors'            => '該封鎖不唔成功，因為:
+$1',
 	'globalblocking-block-ipinvalid'         => '您所輸入的IP地址 ($1) 是無效的。
 請留意的是您不可以輸入一個用戶名！',
 	'globalblocking-block-expiryinvalid'     => '您所輸入的到期 ($1) 是無效的。',
@@ -2149,14 +2152,14 @@ $messages['zh-hant'] = array(
 	'globalblocking-search-submit'           => '搜尋封鎖',
 	'globalblocking-list-ipinvalid'          => '您所搜尋的IP地址 ($1) 是無效的。
 請輸入一個有效的IP地址。',
-	'globalblocking-search-errors'           => "您先前搜尋過的項目不成功，因為:\n\$1",
-	'globalblocking-list-blockitem'          => "$1: '''$2''' (''$3'') 全域封鎖了 '''[[Special:Contributions/$4|$4]]''' ''($5)''",	
+	'globalblocking-search-errors'           => '您先前搜尋過的項目不成功，因為:
+$1',
+	'globalblocking-list-blockitem'          => "$1: '''$2''' (''$3'') 全域封鎖了 '''[[Special:Contributions/$4|$4]]''' ''($5)''",
 	'globalblocking-list-expiry'             => '於$1到期',
 	'globalblocking-list-anononly'           => '只限匿名',
 	'globalblocking-list-unblock'            => '解除封鎖',
 	'globalblocking-list-whitelisted'        => '由$1於本地封鎖: $2',
 	'globalblocking-list-whitelist'          => '本地狀態',
-
 	'globalblocking-unblock-ipinvalid'       => '您所輸入的IP地址 ($1) 是無效的。
 請留意的是您不可以輸入一個用戶名！',
 	'globalblocking-unblock-legend'          => '移除一個全域封鎖',
@@ -2164,9 +2167,9 @@ $messages['zh-hant'] = array(
 	'globalblocking-unblock-reason'          => '原因:',
 	'globalblocking-unblock-notblocked'      => '您所輸入的IP地址 ($1) 沒有被全域封鎖。',
 	'globalblocking-unblock-unblocked'       => "您己經成功地移除了在IP地址 '''$1''' 上的全域封鎖 #$2 ",
-	'globalblocking-unblock-errors'          => "您不可以移除該IP地址的全域封鎖，因為:\n\$1",
+	'globalblocking-unblock-errors'          => '您不可以移除該IP地址的全域封鎖，因為:
+$1',
 	'globalblocking-unblock-successsub'      => '全域封鎖已經成功地移除',
-	
 	'globalblocking-whitelist-subtitle'      => '編輯一個全域封鎖的本地狀態',
 	'globalblocking-whitelist-legend'        => '更改本地狀態',
 	'globalblocking-whitelist-reason'        => '改嘅原因:',
@@ -2176,22 +2179,17 @@ $messages['zh-hant'] = array(
 	'globalblocking-whitelist-whitelisted'   => "您已經成功地在{{SITENAME}}上的IP地址 '''$1''' 中停用了全域封鎖 #$2。",
 	'globalblocking-whitelist-dewhitelisted' => "您已經成功地在{{SITENAME}}上的IP地址 '''$1''' 中再次啟用了全域封鎖 #$2。",
 	'globalblocking-whitelist-successsub'    => '本地狀態已經成功地更改咗',
-
-	'globalblocking-blocked'                 => "您的IP地址已經由'''$1''' (''$2'') 在所有的Wikimedia wiki 中全部封鎖。
-而理由是 ''\"$3\"''。該封鎖將會在''$4''到期。",
-
+	'globalblocking-blocked'                 => "您的IP地址已經由'''\$1''' (''\$2'') 在所有的Wikimedia wiki 中全部封鎖。
+而理由是 ''\"\$3\"''。該封鎖將會在''\$4''到期。",
 	'globalblocking-logpage'                 => '全域封鎖日誌',
 	'globalblocking-block-logentry'          => '全域封鎖了[[$1]]於 $2 ($3) 到期',
 	'globalblocking-unblock-logentry'        => '移除了[[$1]]的全域封鎖',
 	'globalblocking-whitelist-logentry'      => '停用了[[$1]]於本地的全域封鎖',
 	'globalblocking-dewhitelist-logentry'    => '再次啟用[[$1]]於本地的全域封鎖',
-
 	'globalblocklist'                        => '全域封鎖IP地址名單',
 	'globalblock'                            => '全域封鎖一個IP地址',
-	
-	// User rights
-	'right-globalblock'           => '弄一個全域封鎖',
-	'right-globalunblock'         => '移除全域封鎖',
-	'right-globalblock-whitelist' => '在本地停用全域封鎖',
+	'right-globalblock'                      => '弄一個全域封鎖',
+	'right-globalunblock'                    => '移除全域封鎖',
+	'right-globalblock-whitelist'            => '在本地停用全域封鎖',
 );
 
