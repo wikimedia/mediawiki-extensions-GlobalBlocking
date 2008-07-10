@@ -11,12 +11,19 @@ $aliases = array();
  * @author Jon Harald Søby
  */
 $aliases['en'] = array(
-    'GlobalBlocking'            => array('GlobalBlocking')
+    'GlobalBlocking' => array( 'GlobalBlocking' ),
+);
+
+/** Hebrew (עברית)
+ * @author Rotem Liss
+ */
+$aliases['he'] = array(
+    'GlobalBlocking' => array( 'חסימה_כללית' ),
 );
 
 /** Norwegian (Norsk (bokmål))
  * @author Jon Harald Søby
  */
 $aliases['no'] = array(
-    'GlobalBlocking'            => array('Blokker_globalt', 'Global_blokkering')
+    'GlobalBlocking' => array( 'Blokker_globalt', 'Global_blokkering' ),
 );
