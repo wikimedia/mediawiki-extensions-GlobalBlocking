@@ -46,6 +46,11 @@ $aliases['hu'] = array(
 	'GlobalBlocking' => array( 'Globális blokkolás' ),
 );
 
+/** Luxembourgish (Lëtzebuergesch) */
+$aliases['lb'] = array(
+	'GlobalBlocking' => array( 'Global Spären' ),
+);
+
 /** Malay (Bahasa Melayu) */
 $aliases['ms'] = array(
 	'GlobalBlocking' => array( 'Sekatan_sejagat' ),
