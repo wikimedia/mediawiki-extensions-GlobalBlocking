@@ -33,7 +33,7 @@ $aliases['fr'] = array(
  * @author Rotem Liss
  */
 $aliases['he'] = array(
-    'GlobalBlocking' => array( 'חסימה_כללית' ),
+	'GlobalBlocking' => array( 'חסימה_כללית' ),
 );
 
 /** Haitian (Kreyòl ayisyen) */
@@ -56,10 +56,10 @@ $aliases['nl'] = array(
 	'GlobalBlocking' => array( 'GlobaalBlokkeren' ),
 );
 
-/** Norwegian (Norsk (bokmål))
+/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
  * @author Jon Harald Søby
  */
 $aliases['no'] = array(
-    'GlobalBlocking' => array( 'Blokker_globalt', 'Global_blokkering' ),
+	'GlobalBlocking' => array( 'Blokker_globalt', 'Global_blokkering' ),
 );
 
