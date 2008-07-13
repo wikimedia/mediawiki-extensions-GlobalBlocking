@@ -789,7 +789,9 @@ $messages['hu'] = array(
  * @author McDutchie
  */
 $messages['ia'] = array(
-	'globalblocking-unblock-reason' => 'Motivo:',
+	'globalblocking-block-expiry-otherfield' => 'Altere tempore:',
+	'globalblocking-list-anononly'           => 'anon-solmente',
+	'globalblocking-unblock-reason'          => 'Motivo:',
 );
 
 /** Indonesian (Bahasa Indonesia)
