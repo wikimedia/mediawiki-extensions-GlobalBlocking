@@ -68,3 +68,8 @@ $aliases['no'] = array(
 	'GlobalBlocking' => array( 'Blokker_globalt', 'Global_blokkering' ),
 );
 
+/** Swedish (Svenska) */
+$aliases['sv'] = array(
+	'GlobalBlocking' => array( 'Global blockering' ),
+);
+
