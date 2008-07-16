@@ -789,7 +789,7 @@ $messages['hu'] = array(
  * @author McDutchie
  */
 $messages['ia'] = array(
-	'globalblocking-block-expiry-otherfield' => 'Altere tempore:',
+	'globalblocking-block-expiry-otherfield' => 'Altere duration:',
 	'globalblocking-list-anononly'           => 'anon-solmente',
 	'globalblocking-unblock-reason'          => 'Motivo:',
 );
@@ -1180,6 +1180,7 @@ De reden is ''\"\$3\"''. De blokkade verloopt op ''\$4''.",
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
  * @author Jorunn
  * @author Eirik
+ * @author Siebrand
  */
 $messages['nn'] = array(
 	'globalblocking-desc'                    => '[[Special:GlobalBlock|Gjer det råd]] å blokkera IP-adresser [[Special:GlobalBlockList|krosswiki]]',
@@ -1199,7 +1200,8 @@ Merk at du ikkje kan skrive inn brukarnamn.',
 	'globalblocking-block-success'           => 'IP-adressa $1 har vorte blokkert på alle Wikimedia-prosjekta.
 Sjå òg [[Special:Globalblocklist|lista over krosswikiblokkeringar]].',
 	'globalblocking-block-successsub'        => 'Krosswikiblokkeringa vart utførd',
-	'globalblocking-block-alreadyblocked'    => 'IP-adressa $1 er allereide krosswikiblokkert. Du kan sjå blokkeringa på [[Special:GlobalBlockList|lista over krosswikiblokkeringar]].',
+	'globalblocking-block-alreadyblocked'    => 'IP-adressa $1 er allereide krosswikiblokkert.
+Du kan sjå blokkeringa på [[Special:Globalblocklist|lista over krosswikiblokkeringar]].',
 	'globalblocking-list'                    => 'Liste over krosswikiblokkertet IP-adresser',
 	'globalblocking-search-legend'           => 'Søk etter ei krosswikiblokkering',
 	'globalblocking-search-ip'               => 'IP-adresse:',
