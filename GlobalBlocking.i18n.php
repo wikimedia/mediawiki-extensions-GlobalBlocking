@@ -948,7 +948,7 @@ Denkt w.e.g. drun datt Dir och e Benotzernumm agi kënnt!',
 	'globalblocking-unblock-legend'          => 'Eng global Spär ophiewen',
 	'globalblocking-unblock-submit'          => 'Global Spär ophiewen',
 	'globalblocking-unblock-reason'          => 'Grond:',
-	'globalblocking-unblock-notblocked'      => 'Déi IP-Adress déi dir aginn hutt ass net global gespaart.',
+	'globalblocking-unblock-notblocked'      => "D'IP-Adress ($1) déi dir aginn hutt ass net global gespaart.",
 	'globalblocking-unblock-unblocked'       => "Dir hutt d'global Spär #$2 vun der IP-Adress '''$1''' opgehuewen",
 	'globalblocking-unblock-errors'          => "Dir kënnt d'global Spär fir déi IP-Adress net ophiewen. Grond:
 $1",
