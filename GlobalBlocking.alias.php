@@ -29,6 +29,11 @@ $aliases['fr'] = array(
 	'GlobalBlocking' => array( 'BlocageGlobal' ),
 );
 
+/** Galician (Galego) */
+$aliases['gl'] = array(
+	'GlobalBlocking' => array( 'Bloqueo global' ),
+);
+
 /** Hebrew (עברית)
  * @author Rotem Liss
  */
