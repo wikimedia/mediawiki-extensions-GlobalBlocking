@@ -1106,6 +1106,13 @@ $1',
 	'right-globalblock-whitelist'            => 'वैश्विक ब्लॉक स्थानिक पातळीवर रद्द करा',
 );
 
+/** Nahuatl (Nahuatl)
+ * @author Fluence
+ */
+$messages['nah'] = array(
+	'globalblocking-list-anononly' => 'zan ahtōcā',
+);
+
 /** Dutch (Nederlands)
  * @author Siebrand
  */
