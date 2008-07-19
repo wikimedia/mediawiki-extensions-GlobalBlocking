@@ -73,6 +73,11 @@ $aliases['no'] = array(
 	'GlobalBlocking' => array( 'Blokker_globalt', 'Global_blokkering' ),
 );
 
+/** Pashto (پښتو) */
+$aliases['ps'] = array(
+	'GlobalBlocking' => array( 'نړېوال بنديزونه' ),
+);
+
 /** Swedish (Svenska) */
 $aliases['sv'] = array(
 	'GlobalBlocking' => array( 'Global blockering' ),
