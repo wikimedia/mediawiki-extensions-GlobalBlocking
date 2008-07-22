@@ -168,6 +168,7 @@ $messages['an'] = array(
  * @author OsamaK
  */
 $messages['ar'] = array(
+	'globalblocking-desc'                    => '[[Special:GlobalBlock|يسمح]] بمنع عناوين الأيبي [[Special:GlobalBlockList|عبر ويكيات متعددة]]',
 	'globalblocking-block'                   => 'منع عام لعنوان أيبي',
 	'globalblocking-block-intro'             => 'أنت يمكنك استخدام هذه الصفحة لمنع عنوان أيبي في كل الويكيات.',
 	'globalblocking-block-reason'            => 'السبب لهذا المنع:',
@@ -178,14 +179,22 @@ $messages['ar'] = array(
 	'globalblocking-block-options'           => 'خيارات',
 	'globalblocking-block-errors'            => 'لقد فشل المنع بسبب:
 $1',
+	'globalblocking-block-ipinvalid'         => 'عنوان الأيبي ($1) الذي أدخلته غير صحيح.
+من فضلك لاحظ أنه لا يمكنك إدخال اسم مستخدم!',
+	'globalblocking-block-expiryinvalid'     => 'تاريخ الانتهاء الذي أدخلته ($1) غير صحيح.',
 	'globalblocking-block-submit'            => 'امنع عنوان ب.إ هذا عالميًا',
+	'globalblocking-block-success'           => 'عنوان الأيبي $1 تم منعه بنجاح في كل مشاريع ويكيميديا.
+ربما ترغب في رؤية [[Special:Globalblocklist|قائمة عمليات المنع العامة]].',
 	'globalblocking-block-successsub'        => 'نجح المنع العالمي',
 	'globalblocking-list'                    => 'قائمة عناوين الأيبي الممنوعة منعا عاما',
 	'globalblocking-search-legend'           => 'بحث عن منع عام',
 	'globalblocking-search-ip'               => 'عنوان آي بي:',
 	'globalblocking-search-submit'           => 'ابحث عن منوعات',
+	'globalblocking-list-ipinvalid'          => 'عنوان الأيبي الذي بحثت عنه ($1) غير صحيح.
+من فضلك أدخل عنوان أيبي صحيح.',
 	'globalblocking-search-errors'           => 'بحثك كان غير ناجح، بسبب:
 $1',
+	'globalblocking-list-blockitem'          => "$1: '''$2''' (''$3'') منع بشكل عام '''[[Special:Contributions/$4|$4]]''' ''($5)''",
 	'globalblocking-list-expiry'             => 'الانتهاء $1',
 	'globalblocking-list-anononly'           => 'المجهولون فقط',
 	'globalblocking-list-unblock'            => 'إزالة',
@@ -194,6 +203,10 @@ $1',
 	'globalblocking-unblock-legend'          => 'إزالة منع عام',
 	'globalblocking-unblock-submit'          => 'إزالة المنع العام',
 	'globalblocking-unblock-reason'          => 'السبب:',
+	'globalblocking-unblock-notblocked'      => 'عنوان الأيبي ($1) الذي أدخلته ليس ممنوعا منعا عاما.',
+	'globalblocking-unblock-unblocked'       => "أنت أزلت بنجاح المنع العام #$2 على عنوان الأيبي '''$1'''",
+	'globalblocking-unblock-errors'          => 'أنت لا يمكنك إزالة منع عام لعنوان الأيبي هذا، بسبب:
+$1',
 	'globalblocking-unblock-successsub'      => 'المنع العام تمت إزالته بنجاح',
 	'globalblocking-unblock-subtitle'        => 'إزالة المنع العام',
 	'globalblocking-whitelist-subtitle'      => 'تعديل الحالة المحلية لمنع عام',
@@ -204,8 +217,10 @@ $1',
 	'globalblocking-whitelist-submit'        => 'تغيير الحالة المحلية',
 	'globalblocking-whitelist-successsub'    => 'الحالة المحلية تم تغييرها بنجاح',
 	'globalblocking-logpage'                 => 'سجل المنع العام',
+	'globalblocking-block-logentry'          => 'منع بشكل عام [[$1]] لمدة $2 ($3)',
 	'globalblocking-unblock-logentry'        => 'أزال المنع العام على [[$1]]',
 	'globalblocking-whitelist-logentry'      => 'عطل المنع العام على [[$1]] محليا',
+	'globalblocking-dewhitelist-logentry'    => 'أعاد تفعيل المنع العام على [[$1]] محليا',
 	'globalblocklist'                        => 'قائمة عناوين الأيبي الممنوعة منعا عاما',
 	'globalblock'                            => 'منع عام لعنوان أيبي',
 	'right-globalblock'                      => 'عمل عمليات منع عامة',
@@ -224,6 +239,7 @@ $messages['be-tarask'] = array(
 	'globalblocking-list-anononly'           => 'толькі ананімаў',
 	'globalblocking-list-unblock'            => 'разблякаваць',
 	'globalblocking-unblock-reason'          => 'Прычына:',
+	'globalblocking-whitelist-reason'        => 'Прычына зьмены:',
 	'globalblocking-logpage'                 => 'Журнал глябальных блякаваньняў',
 	'globalblocklist'                        => 'Сьпіс глябальна заблякаваных IP-адрасоў',
 );
@@ -903,6 +919,8 @@ $messages['km'] = array(
  * @author Purodha
  */
 $messages['ksh'] = array(
+	'globalblocking-block-success'  => 'Di IP adress „$1“ eß jetz en alle Wikimedia Wikis jesperrt.
+Loor Der de [[Special:Globalblocklist|Leß med jlobale Sperre]] aan, wann de mieh esu en Sperre fenge wells.',
 	'globalblocking-list-anononly'  => 'nor namelose',
 	'globalblocking-unblock-reason' => 'Aanlass:',
 );
@@ -1532,6 +1550,52 @@ O motivo dado foi ''\"\$3\"''. O bloqueio expira em ''\$4''.",
 $messages['pt-br'] = array(
 	'globalblocking-desc'  => '[[{{ns:Special}}:GlobalBlock|Permite]] que endereços IP sejam [[{{ns:Special}}:GlobalBlockList|bloqueados através de múltiplos wikis]]',
 	'globalblocking-block' => 'Bloquear globalmente um endereço IP',
+);
+
+/** Romanian (Română)
+ * @author KlaudiuMihaila
+ */
+$messages['ro'] = array(
+	'globalblocking-block'                 => 'Blochează global o adresă IP',
+	'globalblocking-block-intro'           => 'Această pagină permite blocarea unei adrese IP pe toate proiectele wiki.',
+	'globalblocking-block-reason'          => 'Motiv pentru această blocare:',
+	'globalblocking-block-legend'          => 'Blochează global un utilizator',
+	'globalblocking-block-options'         => 'Opţiuni',
+	'globalblocking-block-errors'          => 'Blocarea nu a avut succes, din cauză că:
+$1',
+	'globalblocking-block-submit'          => 'Blochează global această adresă IP',
+	'globalblocking-block-successsub'      => 'Blocare globală cu succes',
+	'globalblocking-list'                  => 'Listă de adrese IP blocate global',
+	'globalblocking-search-legend'         => 'Caută blocare globală',
+	'globalblocking-search-ip'             => 'Adresă IP:',
+	'globalblocking-search-submit'         => 'Caută blocări',
+	'globalblocking-search-errors'         => 'Căutarea dumneavoastră nu a avut succes, din cauză că:
+$1',
+	'globalblocking-list-blockitem'        => "$1: '''$2''' (''$3'') a blocat global '''[[Special:Contributions/$4|$4]]''' ''($5)''",
+	'globalblocking-list-whitelisted'      => 'dezactivat local de $1: $2',
+	'globalblocking-list-whitelist'        => 'statut local',
+	'globalblocking-unblock-legend'        => 'Elimină o blocare globală',
+	'globalblocking-unblock-submit'        => 'Elimină blocare globală',
+	'globalblocking-unblock-reason'        => 'Motiv:',
+	'globalblocking-unblock-notblocked'    => 'Adresa IP $1 nu este blocată global.',
+	'globalblocking-unblock-errors'        => 'Nu puteţi elimina blocarea globală pentru acea adresă IP, din cauză că:
+$1',
+	'globalblocking-unblock-successsub'    => 'Blocare globală eliminată cu succes',
+	'globalblocking-unblock-subtitle'      => 'Eliminare blocare globală',
+	'globalblocking-whitelist-subtitle'    => 'Modificare statut local al unei blocări globale',
+	'globalblocking-whitelist-legend'      => 'Schimbă statut local',
+	'globalblocking-whitelist-reason'      => 'Motiv pentru schimbare:',
+	'globalblocking-whitelist-status'      => 'Statut local:',
+	'globalblocking-whitelist-statuslabel' => 'Dezactivează această blocare gloablă pe {{SITENAME}}',
+	'globalblocking-whitelist-submit'      => 'Schimbă statut local',
+	'globalblocking-whitelist-successsub'  => 'Statut global schimbat cu succes',
+	'globalblocking-logpage'               => 'Jurnal blocări globale',
+	'globalblocking-unblock-logentry'      => 'eliminat blocare globală pentru [[$1]]',
+	'globalblocklist'                      => 'Listă de adrese IP blocate global',
+	'globalblock'                          => 'Blochează global o adresă IP',
+	'right-globalblock'                    => 'Efectuează blocări globale',
+	'right-globalunblock'                  => 'Elimină blocări globale',
+	'right-globalblock-whitelist'          => 'Dezactivează local blocările globale',
 );
 
 /** Russian (Русский)
