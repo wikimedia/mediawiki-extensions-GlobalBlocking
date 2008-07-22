@@ -78,6 +78,16 @@ $aliases['ps'] = array(
 	'GlobalBlocking' => array( 'نړېوال بنديزونه' ),
 );
 
+/** Portuguese (Português) */
+$aliases['pt'] = array(
+	'GlobalBlocking' => array( 'Bloquear globalmente' ),
+);
+
+/** Brazilian Portuguese (Português do Brasil) */
+$aliases['pt-br'] = array(
+	'GlobalBlocking' => array( 'Bloquear globalmente' ),
+);
+
 /** Swedish (Svenska) */
 $aliases['sv'] = array(
 	'GlobalBlocking' => array( 'Global blockering' ),
