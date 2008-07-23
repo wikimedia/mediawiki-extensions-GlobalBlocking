@@ -186,6 +186,8 @@ $1',
 	'globalblocking-block-success'           => 'عنوان الأيبي $1 تم منعه بنجاح في كل مشاريع ويكيميديا.
 ربما ترغب في رؤية [[Special:Globalblocklist|قائمة عمليات المنع العامة]].',
 	'globalblocking-block-successsub'        => 'نجح المنع العالمي',
+	'globalblocking-block-alreadyblocked'    => 'عنوان الأيبي $1 ممنوع منعا عامل بالفعل. يمكنك رؤية المنع الموجود في [[Special:Globalblocklist|قائمة عمليات المنع العامة]].',
+	'globalblocking-block-bigrange'          => 'النطاق الذي حددته ($1) كبير جدا للمنع. يمكنك منع، كحد أقصى، 65,536 عنوان (نطاقات /16)',
 	'globalblocking-list'                    => 'قائمة عناوين الأيبي الممنوعة منعا عاما',
 	'globalblocking-search-legend'           => 'بحث عن منع عام',
 	'globalblocking-search-ip'               => 'عنوان آي بي:',
@@ -200,6 +202,8 @@ $1',
 	'globalblocking-list-unblock'            => 'إزالة',
 	'globalblocking-list-whitelisted'        => 'تم تعطيله محليا بواسطة $1: $2',
 	'globalblocking-list-whitelist'          => 'الحالة المحلية',
+	'globalblocking-unblock-ipinvalid'       => 'عنوان الأيبي ($1) الذي أدخلته غير صحيح.
+من فضلك لاحظ أنه لا يمكنك إدخال اسم مستخدم!',
 	'globalblocking-unblock-legend'          => 'إزالة منع عام',
 	'globalblocking-unblock-submit'          => 'إزالة المنع العام',
 	'globalblocking-unblock-reason'          => 'السبب:',
@@ -215,6 +219,8 @@ $1',
 	'globalblocking-whitelist-status'        => 'الحالة المحلية:',
 	'globalblocking-whitelist-statuslabel'   => 'تعطيل هذا المنع العام في {{SITENAME}}',
 	'globalblocking-whitelist-submit'        => 'تغيير الحالة المحلية',
+	'globalblocking-whitelist-whitelisted'   => "أنت عطلت بنجاح المنع العام #$2 على عنوان الأيبي '''$1''' في {{SITENAME}}.",
+	'globalblocking-whitelist-dewhitelisted' => "أنت أعدت تفعيل بنجاح المنع العام #$2 على عنوان الأيبي '''$1''' في {{SITENAME}}.",
 	'globalblocking-whitelist-successsub'    => 'الحالة المحلية تم تغييرها بنجاح',
 	'globalblocking-logpage'                 => 'سجل المنع العام',
 	'globalblocking-block-logentry'          => 'منع بشكل عام [[$1]] لمدة $2 ($3)',
@@ -276,6 +282,7 @@ $1',
 	'globalblocking-search-errors'           => 'Търсенето беше неуспешно. Причина:
 $1',
 	'globalblocking-list-expiry'             => 'срок на изтичане $1',
+	'globalblocking-list-anononly'           => 'само анонимни',
 	'globalblocking-list-unblock'            => 'отблокиране',
 	'globalblocking-list-whitelisted'        => 'локално изключен от $1: $2',
 	'globalblocking-list-whitelist'          => 'локален статут',
@@ -824,6 +831,13 @@ $messages['id'] = array(
  */
 $messages['is'] = array(
 	'globalblocking-unblock-reason' => 'Ástæða:',
+);
+
+/** Italian (Italiano)
+ * @author Darth Kule
+ */
+$messages['it'] = array(
+	'globalblocking-search-ip' => 'Indirizzo IP:',
 );
 
 /** Javanese (Basa Jawa)
