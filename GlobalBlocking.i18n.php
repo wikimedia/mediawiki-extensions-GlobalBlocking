@@ -87,9 +87,10 @@ The reason given was ''\"$3\"''. The block's expiry is ''$4''.",
 
 /** Afrikaans (Afrikaans)
  * @author Arnobarnard
+ * @author Naudefj
  */
 $messages['af'] = array(
-	'globalblocking-desc'                    => '[[Special:GlobalBlock|Bewillig]] dat IP adresse [[Special:GlobalBlockList|oor veelvoudige wikis versper]] word',
+	'globalblocking-desc'                    => "[[Special:GlobalBlock|Maak dit moontlik]] om IP-adresse [[Special:GlobalBlockList|oor veelvoudige wiki's]] te versper",
 	'globalblocking-block'                   => "Versper 'n IP adres globaal",
 	'globalblocking-block-intro'             => "U kan hierdie bladsy gebruik om 'n IP adres op alle wikis te versper.",
 	'globalblocking-block-reason'            => 'Rede vir hierdie versperring:',
@@ -108,6 +109,7 @@ Let asseblief dat U nie 'n gebruikersnaam kan invoer nie!",
 U mag dalk die [[Special:Globalblocklist|lys van globale versperrings]] wil konsulteer.',
 	'globalblocking-block-successsub'        => 'Globale versperring suksesvol',
 	'globalblocking-block-alreadyblocked'    => 'Die IP adres $1 is alreeds globaal versper. U kan die bestaande versperring op die [[Special:Globalblocklist|lys van globale versperrings]] bekyk.',
+	'globalblocking-block-bigrange'          => 'Die reeks wat u verskaf het ($1) is te groot om te versper. U mag op die meeste 65.536 adresse versper (/16-reekse)',
 	'globalblocking-list'                    => 'Lys van globale versperde IP adresse',
 	'globalblocking-search-legend'           => "Soek vir 'n globale versperring",
 	'globalblocking-search-ip'               => 'IP adres:',
@@ -132,6 +134,7 @@ Let asseblief dat U nie 'n gebruikersnaam kan invoer nie!",
 	'globalblocking-unblock-errors'          => 'U kan nie die globale versperring vir daardie IP adres verwyder nie, as gevolg van:
 $1',
 	'globalblocking-unblock-successsub'      => 'Globale versperring suksesvol verwyder',
+	'globalblocking-unblock-subtitle'        => 'Verwyder globale versperring',
 	'globalblocking-whitelist-subtitle'      => "Besig om die lokale status van 'n globale versperring te wysig",
 	'globalblocking-whitelist-legend'        => 'Wysig lokale status',
 	'globalblocking-whitelist-reason'        => 'Rede vir wysiging:',
@@ -175,23 +178,23 @@ $messages['ar'] = array(
 	'globalblocking-block-expiry'            => 'انتهاء المنع:',
 	'globalblocking-block-expiry-other'      => 'وقت انتهاء آخر',
 	'globalblocking-block-expiry-otherfield' => 'وقت آخر:',
-	'globalblocking-block-legend'            => 'امنع مستخدم عالميًا',
+	'globalblocking-block-legend'            => 'امنع مستخدم منعا عاما',
 	'globalblocking-block-options'           => 'خيارات',
 	'globalblocking-block-errors'            => 'لقد فشل المنع بسبب:
 $1',
 	'globalblocking-block-ipinvalid'         => 'عنوان الأيبي ($1) الذي أدخلته غير صحيح.
 من فضلك لاحظ أنه لا يمكنك إدخال اسم مستخدم!',
 	'globalblocking-block-expiryinvalid'     => 'تاريخ الانتهاء الذي أدخلته ($1) غير صحيح.',
-	'globalblocking-block-submit'            => 'امنع عنوان ب.إ هذا عالميًا',
+	'globalblocking-block-submit'            => 'منع عنوان الأيبي هذا منعا عاما',
 	'globalblocking-block-success'           => 'عنوان الأيبي $1 تم منعه بنجاح في كل مشاريع ويكيميديا.
 ربما ترغب في رؤية [[Special:Globalblocklist|قائمة عمليات المنع العامة]].',
-	'globalblocking-block-successsub'        => 'نجح المنع العالمي',
-	'globalblocking-block-alreadyblocked'    => 'عنوان الأيبي $1 ممنوع منعا عامل بالفعل. يمكنك رؤية المنع الموجود في [[Special:Globalblocklist|قائمة عمليات المنع العامة]].',
+	'globalblocking-block-successsub'        => 'نجح المنع العام',
+	'globalblocking-block-alreadyblocked'    => 'عنوان الأيبي $1 ممنوع منعا عاما بالفعل. يمكنك رؤية المنع الموجود في [[Special:Globalblocklist|قائمة عمليات المنع العامة]].',
 	'globalblocking-block-bigrange'          => 'النطاق الذي حددته ($1) كبير جدا للمنع. يمكنك منع، كحد أقصى، 65,536 عنوان (نطاقات /16)',
 	'globalblocking-list'                    => 'قائمة عناوين الأيبي الممنوعة منعا عاما',
 	'globalblocking-search-legend'           => 'بحث عن منع عام',
-	'globalblocking-search-ip'               => 'عنوان آي بي:',
-	'globalblocking-search-submit'           => 'ابحث عن منوعات',
+	'globalblocking-search-ip'               => 'عنوان الأيبي:',
+	'globalblocking-search-submit'           => 'بحث عن عمليات المنع',
 	'globalblocking-list-ipinvalid'          => 'عنوان الأيبي الذي بحثت عنه ($1) غير صحيح.
 من فضلك أدخل عنوان أيبي صحيح.',
 	'globalblocking-search-errors'           => 'بحثك كان غير ناجح، بسبب:
@@ -1005,6 +1008,7 @@ Loor Der de [[Special:Globalblocklist|Leß med jlobale Sperre]] aan, wann de mie
 
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
+ * @author Siebrand
  */
 $messages['lb'] = array(
 	'globalblocking-desc'                    => '[[Special:GlobalBlock|Erlaabt et]] IP-Adressen op [[Special:GlobalBlockList|méi Wikien mateneen ze spären]]',
@@ -1025,6 +1029,7 @@ Denkt w.e.g. drun datt Dir och e Benotzernumm agi kënnt!',
 D'Lëscht vun de globale Späre fannt Dir [[Special:Globalblocklist|hei]].",
 	'globalblocking-block-successsub'        => 'Global gespaart',
 	'globalblocking-block-alreadyblocked'    => "D'IP-Adress $1 ass scho global gespaart. Dir kënnt d'Spären op der [[Special:Globalblocklist|Lëscht vun de globale Späre]] kucken.",
+	'globalblocking-block-bigrange'          => 'De Beräich den dir uginn hutt ($1) ass ze grouss fir ze spären. Dir kënnt maximal 65.536 Adressen (/16 Beräicher) spären',
 	'globalblocking-list'                    => 'Lëscht vun de global gespaarten IP-Adressen',
 	'globalblocking-search-legend'           => 'Sich no enger globaler Spär',
 	'globalblocking-search-ip'               => 'IP-Adress:',
@@ -1206,7 +1211,9 @@ $1',
  * @author Fluence
  */
 $messages['nah'] = array(
-	'globalblocking-list-anononly' => 'zan ahtōcā',
+	'globalblocking-search-ip'      => 'IP:',
+	'globalblocking-list-anononly'  => 'zan ahtōcā',
+	'globalblocking-unblock-reason' => 'Īxtlamatiliztli:',
 );
 
 /** Dutch (Nederlands)
