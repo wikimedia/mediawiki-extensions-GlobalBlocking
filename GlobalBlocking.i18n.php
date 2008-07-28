@@ -540,6 +540,13 @@ Le motif indiqué a été « $3 ». L’expiration du blocage est pour le ''$4''
 	'right-globalblock-whitelist'            => 'Désactiver localement les blocages globaux',
 );
 
+/** Western Frisian (Frysk)
+ * @author Snakesteuben
+ */
+$messages['fy'] = array(
+	'globalblocking-block-expiry-otherfield' => 'In oare tiid:',
+);
+
 /** Galician (Galego)
  * @author Toliño
  * @author Prevert
