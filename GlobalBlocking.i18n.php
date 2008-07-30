@@ -641,8 +641,11 @@ $messages['haw'] = array(
  * @author Rotemliss
  */
 $messages['he'] = array(
-	'globalblocking-block-intro'  => 'באפשרותכם להשתמש בדף זה כדי לחסום כתובת IP בכל אתרי הוויקי.',
-	'globalblocking-block-reason' => 'סיבה לחסימה זו:',
+	'globalblocking-block-intro'             => 'באפשרותכם להשתמש בדף זה כדי לחסום כתובת IP בכל אתרי הוויקי.',
+	'globalblocking-block-reason'            => 'סיבה לחסימה זו:',
+	'globalblocking-block-expiry-otherfield' => 'זמן אחר:',
+	'globalblocking-search-ip'               => 'כתובת IP:',
+	'right-globalunblock'                    => 'הסרת חסימות גלובליות',
 );
 
 /** Hindi (हिन्दी)
