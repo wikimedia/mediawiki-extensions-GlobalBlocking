@@ -643,8 +643,25 @@ $messages['haw'] = array(
 $messages['he'] = array(
 	'globalblocking-block-intro'             => 'באפשרותכם להשתמש בדף זה כדי לחסום כתובת IP בכל אתרי הוויקי.',
 	'globalblocking-block-reason'            => 'סיבה לחסימה זו:',
+	'globalblocking-block-expiry'            => 'פקיעת חסימה:',
+	'globalblocking-block-expiry-other'      => 'זמן פקיעה אחר',
 	'globalblocking-block-expiry-otherfield' => 'זמן אחר:',
+	'globalblocking-block-options'           => 'אפשרויות',
+	'globalblocking-block-errors'            => 'החסימה נכשלה, בגלל:
+$1',
+	'globalblocking-block-submit'            => 'חסום גלובלית כתובת IP זו',
+	'globalblocking-block-successsub'        => 'חסימה גלובלית הצליחה',
+	'globalblocking-list'                    => 'רשימת כתובות IP שנחסמו גלובלית',
 	'globalblocking-search-ip'               => 'כתובת IP:',
+	'globalblocking-search-errors'           => 'חיפושכם נכשל, בגלל:
+$1',
+	'globalblocking-list-anononly'           => 'משתמשים אנונימיים בלבד',
+	'globalblocking-unblock-legend'          => 'הסרת חסימה גלובלית',
+	'globalblocking-unblock-submit'          => 'הסרת חסימה גלובלית',
+	'globalblocking-unblock-reason'          => 'סיבה:',
+	'globalblocking-blocked'                 => "כתובת ה־IP שלכם נחסמה בכל אתרי קרן ויקימדיה על־ידי '''\$1''' (''\$2'').
+הסיבה שניתנה הייתה ''\"\$3\"''. זמן פקיעת החסימה הינו ''\$4''.",
+	'right-globalblock'                      => 'יצירת חסימות גלובליות',
 	'right-globalunblock'                    => 'הסרת חסימות גלובליות',
 );
 
