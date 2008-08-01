@@ -186,7 +186,7 @@ $1',
 من فضلك لاحظ أنه لا يمكنك إدخال اسم مستخدم!',
 	'globalblocking-block-expiryinvalid'     => 'تاريخ الانتهاء الذي أدخلته ($1) غير صحيح.',
 	'globalblocking-block-submit'            => 'منع عنوان الأيبي هذا منعا عاما',
-	'globalblocking-block-success'           => 'عنوان الأيبي $1 تم منعه بنجاح في كل مشاريع ويكيميديا.
+	'globalblocking-block-success'           => 'عنوان الأيبي $1 تم منعه بنجاح في كل المشاريع ويكيميديا.
 ربما ترغب في رؤية [[Special:Globalblocklist|قائمة عمليات المنع العامة]].',
 	'globalblocking-block-successsub'        => 'نجح المنع العام',
 	'globalblocking-block-alreadyblocked'    => 'عنوان الأيبي $1 ممنوع منعا عاما بالفعل. يمكنك رؤية المنع الموجود في [[Special:Globalblocklist|قائمة عمليات المنع العامة]].',
@@ -225,7 +225,7 @@ $1',
 	'globalblocking-whitelist-whitelisted'   => "أنت عطلت بنجاح المنع العام #$2 على عنوان الأيبي '''$1''' في {{SITENAME}}.",
 	'globalblocking-whitelist-dewhitelisted' => "أنت أعدت تفعيل بنجاح المنع العام #$2 على عنوان الأيبي '''$1''' في {{SITENAME}}.",
 	'globalblocking-whitelist-successsub'    => 'الحالة المحلية تم تغييرها بنجاح',
-	'globalblocking-blocked'                 => "عنوان الأيبي الخاص بك تم منعه على كل ويكيات ويكيميديا بواسطة '''\$1''' (''\$2'').
+	'globalblocking-blocked'                 => "عنوان الأيبي الخاص بك تم منعه على كل الويكيات بواسطة '''\$1''' (''\$2'').
 السبب المعطى كان ''\"\$3\"''. تاريخ انتهاء المنع هو ''\$4''.",
 	'globalblocking-logpage'                 => 'سجل المنع العام',
 	'globalblocking-block-logentry'          => 'منع بشكل عام [[$1]] لمدة $2 ($3)',
@@ -325,6 +325,7 @@ $1',
 /** German (Deutsch)
  * @author MF-Warburg
  * @author Raimond Spekking
+ * @author Raymond
  */
 $messages['de'] = array(
 	'globalblocking-desc'                    => '[[Special:GlobalBlock|Sperrt]] IP-Adressen auf [[Special:GlobalBlockList|allen Wikis]]',
@@ -342,7 +343,7 @@ $1',
 Beachte, dass du keinen Benutzernamen eingeben darfst!',
 	'globalblocking-block-expiryinvalid'     => 'Die Sperrdauer ($1) ist ungültig.',
 	'globalblocking-block-submit'            => 'Diese IP-Adresse global sperren',
-	'globalblocking-block-success'           => 'Die IP-Adresse $1 wurde erfolgreich auf allen Wikimedia-Projekten gesperrt.
+	'globalblocking-block-success'           => 'Die IP-Adresse $1 wurde erfolgreich auf allen Projekten gesperrt.
 Die globale Sperrliste befindet sich [[Special:Globalblocklist|hier]].',
 	'globalblocking-block-successsub'        => 'Erfolgreich global gesperrt',
 	'globalblocking-block-alreadyblocked'    => 'Die IP-Adresse $1 wurde schon global gesperrt. Du kannst die bestehende Sperre in der [[Special:Globalblocklist|globalen Sperrliste]] einsehen.',
@@ -381,8 +382,8 @@ $1',
 	'globalblocking-whitelist-whitelisted'   => "Du hast erfolgreich die globale Sperre #$2 der IP-Adresse '''$1''' auf {{SITENAME}} aufgehoben.",
 	'globalblocking-whitelist-dewhitelisted' => "Du hast erfolgreich die globale Sperre #$2 der IP-Adresse '''$1''' auf {{SITENAME}} wieder eingeschaltet.",
 	'globalblocking-whitelist-successsub'    => 'Lokaler Status erfolgreich geändert',
-	'globalblocking-blocked'                 => "Deine IP-Adresse wurde von '''\$1''' (''\$2'') für alle Wikimedia-Wikis gesperrt.
-Als Begründung wurde ''\"\$3\"'' angegeben. Die Sperre dauert ''\$4''.",
+	'globalblocking-blocked'                 => "Deine IP-Adresse wurde von '''$1''' ''($2)'' für alle Wikis gesperrt.
+Als Begründung wurde ''„$3“'' angegeben. Die Sperre dauert ''$4''.",
 	'globalblocking-logpage'                 => 'Globales Sperrlogbuch',
 	'globalblocking-block-logentry'          => 'sperrte [[$1]] global für einen Zeitraum von $2 ($3)',
 	'globalblocking-unblock-logentry'        => 'entsperrte [[$1]] global',
@@ -649,8 +650,8 @@ $messages['he'] = array(
 	'globalblocking-block-options'           => 'אפשרויות',
 	'globalblocking-block-errors'            => 'החסימה נכשלה, בגלל:
 $1',
-	'globalblocking-block-submit'            => 'חסום גלובלית כתובת IP זו',
-	'globalblocking-block-successsub'        => 'חסימה גלובלית הצליחה',
+	'globalblocking-block-submit'            => 'חסימה גלובלית של כתובת ה־IP הזו',
+	'globalblocking-block-successsub'        => 'החסימה גלובלית הושלמה בהצלחה',
 	'globalblocking-list'                    => 'רשימת כתובות IP שנחסמו גלובלית',
 	'globalblocking-search-ip'               => 'כתובת IP:',
 	'globalblocking-search-errors'           => 'חיפושכם נכשל, בגלל:
@@ -659,7 +660,7 @@ $1',
 	'globalblocking-unblock-legend'          => 'הסרת חסימה גלובלית',
 	'globalblocking-unblock-submit'          => 'הסרת חסימה גלובלית',
 	'globalblocking-unblock-reason'          => 'סיבה:',
-	'globalblocking-blocked'                 => "כתובת ה־IP שלכם נחסמה בכל אתרי קרן ויקימדיה על־ידי '''\$1''' (''\$2'').
+	'globalblocking-blocked'                 => "כתובת ה־IP שלכם נחסמה בכל אתרי קרן ויקימדיה על ידי '''\$1''' (''\$2'').
 הסיבה שניתנה הייתה ''\"\$3\"''. זמן פקיעת החסימה הינו ''\$4''.",
 	'right-globalblock'                      => 'יצירת חסימות גלובליות',
 	'right-globalunblock'                    => 'הסרת חסימות גלובליות',
@@ -883,7 +884,7 @@ $1',
 	'globalblocking-block-ipinvalid'         => "L'indirizzo IP ($1) che hai inserito non è valido. Fai attenzione al fatto che non puoi inserire un nome utente!",
 	'globalblocking-block-expiryinvalid'     => 'La scadenza che hai inserito ($1) non è valida.',
 	'globalblocking-block-submit'            => 'Blocca questo indirizzo IP globalmente',
-	'globalblocking-block-success'           => "L'indirizzo IP $1 è stato bloccato con successo su tutti i progetti Wikimedia.
+	'globalblocking-block-success'           => "L'indirizzo IP $1 è stato bloccato con successo su tutti i progetti.
 Puoi consultare l'[[Special:Globalblocklist|elenco dei blocchi globali]].",
 	'globalblocking-block-successsub'        => 'Blocco globale eseguito con successo',
 	'globalblocking-block-alreadyblocked'    => "L'indirizzo IP $1 è già bloccato globalmente. È possibile consultare il blocco attivo nell'[[Special:Globalblocklist|elenco dei blocchi globali]].",
@@ -920,7 +921,7 @@ $1',
 	'globalblocking-whitelist-whitelisted'   => "Hai disattivato con successo il blocco globale #$2 sull'indirizzo IP '''$1''' su {{SITENAME}}.",
 	'globalblocking-whitelist-dewhitelisted' => "Hai riabilitato con successo il blocco globale #$2 sull'indirizzo IP '''$1''' su {{SITENAME}}.",
 	'globalblocking-whitelist-successsub'    => 'Stato locale cambiato con successo',
-	'globalblocking-blocked'                 => "Il tuo indirizzo IP è stato bloccato su tutti i progetti Wikimedia da '''\$1''' (''\$2'').
+	'globalblocking-blocked'                 => "Il tuo indirizzo IP è stato bloccato su tutte le wiki da '''\$1''' (''\$2'').
 Il motivo fornito è ''\"\$3\"''. La scadenza del blocco è ''\$4''.",
 	'globalblocking-logpage'                 => 'Log dei blocchi globali',
 	'globalblocking-block-logentry'          => 'bloccato globalmente [[$1]] con una scadenza di $2 ($3)',
@@ -936,6 +937,7 @@ Il motivo fornito è ''\"\$3\"''. La scadenza del blocco è ''\$4''.",
 
 /** Javanese (Basa Jawa)
  * @author Meursault2004
+ * @author Siebrand
  */
 $messages['jv'] = array(
 	'globalblocking-desc'                    => '[[Special:GlobalBlock|Marengaké]] alamat-alamat IP [[Special:GlobalBlockList|diblokir sacara lintas wiki]]',
@@ -1027,10 +1029,14 @@ $messages['km'] = array(
  * @author Purodha
  */
 $messages['ksh'] = array(
-	'globalblocking-block-success'  => 'Di IP adress „$1“ eß jetz en alle Wikimedia Wikis jesperrt.
+	'globalblocking-block-success'  => 'Di IP adress „$1“ eß jetz en alle Wikis jesperrt.
 Loor Der de [[Special:Globalblocklist|Leß med jlobale Sperre]] aan, wann de mieh esu en Sperre fenge wells.',
 	'globalblocking-list-anononly'  => 'nor namelose',
 	'globalblocking-unblock-reason' => 'Aanlass:',
+	'globalblocking-blocked'        => "Ding IP_Address es in alle Wikis jespert woode.
+Dä '''$1''' (''$2'') hädd_et jedonn.
+Sing Jrund wohr: „''$3''“.
+De Sperr bliet bestonn bes: ''$4''.",
 );
 
 /** Luxembourgish (Lëtzebuergesch)
@@ -1361,6 +1367,7 @@ Merk at du ikkje kan skrive inn brukarnamn.',
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
  * @author Jon Harald Søby
+ * @author Siebrand
  */
 $messages['no'] = array(
 	'globalblocking-desc'                    => '[[Special:GlobalBlock|Gjør det mulig]] å blokkere IP-adresser på [[Special:GlobalBlockList|alle wikier]]',
@@ -1377,7 +1384,7 @@ $messages['no'] = array(
 Merk at du ikke kan skrive inn brukernavn.',
 	'globalblocking-block-expiryinvalid'     => 'Varigheten du skrev inn ($1) er ugyldig.',
 	'globalblocking-block-submit'            => 'Blokker denne IP-adressen globalt',
-	'globalblocking-block-success'           => 'IP-adressen $1 har blitt blokkert på alle Wikimedia-prosjekter.
+	'globalblocking-block-success'           => 'IP-adressen $1 har blitt blokkert på alle prosjekter.
 Du ønsker kanskje å se [[Special:Globalblocklist|listen over globale blokkeringer]].',
 	'globalblocking-block-successsub'        => 'Global blokkering lyktes',
 	'globalblocking-block-alreadyblocked'    => 'IP-adressen $1 er blokkkert globalt fra før. Du kan se eksisterende blokkeringer på [[Special:Globalblocklist|listen over globale blokkeringer]].',
@@ -1416,7 +1423,7 @@ $1',
 	'globalblocking-whitelist-whitelisted'   => "Du har slått av global blokkering nr. $2 på IP-adressen '''$1''' på {{SITENAME}}.",
 	'globalblocking-whitelist-dewhitelisted' => "Du har slått på igjen global blokkering nr. $2 på IP-adressen '''$1''' på {{SITENAME}}.",
 	'globalblocking-whitelist-successsub'    => 'Lokal status endret',
-	'globalblocking-blocked'                 => "IP-adressen din har blitt blokkert på alle Wikimedia-wikier av '''$1''' (''$2'').
+	'globalblocking-blocked'                 => "IP-adressen din har blitt blokkert på alle wikier av '''$1''' (''$2'').
 Årsaken som ble oppgitt var '''$3'''. Blokkeringen utgår ''$4''.",
 	'globalblocking-logpage'                 => 'Global blokkeringslogg',
 	'globalblocking-block-logentry'          => 'blokkerte [[$1]] globalt med en varighet på $2 ($3)',
