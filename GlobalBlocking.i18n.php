@@ -26,7 +26,7 @@ $messages['en'] = array(
 Please note that you cannot enter a user name!',
 	'globalblocking-block-expiryinvalid' => 'The expiry you entered ($1) is invalid.',
 	'globalblocking-block-submit' => 'Block this IP address globally',
-	'globalblocking-block-success' => 'The IP address $1 has been successfully blocked on all Wikimedia projects.
+	'globalblocking-block-success' => 'The IP address $1 has been successfully blocked on all projects.
 You may wish to consult the [[Special:Globalblocklist|list of global blocks]].',
 	'globalblocking-block-successsub' => 'Global block successful',
 	'globalblocking-block-alreadyblocked' => 'The IP address $1 is already blocked globally. You can view the existing block on the [[Special:Globalblocklist|list of global blocks]].',
@@ -67,7 +67,7 @@ Please note that you cannot enter a user name!',
 	'globalblocking-whitelist-dewhitelisted' => "You have successfully re-enabled the global block #$2 on the IP address '''$1''' on {{SITENAME}}.",
 	'globalblocking-whitelist-successsub' => 'Local status successfully changed',
 
-	'globalblocking-blocked' => "Your IP address has been blocked on all Wikimedia wikis by '''$1''' (''$2'').
+	'globalblocking-blocked' => "Your IP address has been blocked on all wikis by '''$1''' (''$2'').
 The reason given was ''\"$3\"''. The block's expiry is ''$4''.",
 
 	'globalblocking-logpage' => 'Global block log',
