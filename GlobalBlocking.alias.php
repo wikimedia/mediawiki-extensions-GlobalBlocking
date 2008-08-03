@@ -16,12 +16,12 @@ $aliases['en'] = array(
 
 /** Arabic (العربية) */
 $aliases['ar'] = array(
-	'GlobalBlocking' => array( 'منع عام' ),
+	'GlobalBlocking' => array( 'منع_عام' ),
 );
 
 /** Egyptian Spoken Arabic (مصرى) */
 $aliases['arz'] = array(
-	'GlobalBlocking' => array( 'منع عام' ),
+	'GlobalBlocking' => array( 'منع_عام' ),
 );
 
 /** French (Français) */
