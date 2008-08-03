@@ -274,7 +274,7 @@ $1',
 Имайте предвид, че не можете да въвеждате потребителско име!',
 	'globalblocking-block-expiryinvalid'     => 'Въведеният краен срок ($1) е невалиден.',
 	'globalblocking-block-submit'            => 'Блокиране на този IP адрес глобално',
-	'globalblocking-block-success'           => 'IP-адресът $1 беше успешно блокиран във всички проекти на Уикимедия.
+	'globalblocking-block-success'           => 'IP-адресът $1 беше успешно блокиран във всички проекти.
 Прегледайте [[Special:Globalblocklist|списъка на глобалните блокирания]].',
 	'globalblocking-block-successsub'        => 'Глобалното блокиране беше успешно',
 	'globalblocking-block-alreadyblocked'    => 'IP адресът $1 е вече блокиран глобално. Можете да прегледате съществуващите блокирания в [[Special:Globalblocklist|списъка с глобални блокирания]].',
@@ -311,7 +311,7 @@ $1',
 	'globalblocking-whitelist-whitelisted'   => "Успешно изключихте глобално блокиране #$2 на IP адрес '''$1''' в {{SITENAME}}.",
 	'globalblocking-whitelist-dewhitelisted' => "Успешно активирахте глобално блокиране #$2 на IP адрес '''$1''' в {{SITENAME}}.",
 	'globalblocking-whitelist-successsub'    => 'Локалният статут беше променен успешно',
-	'globalblocking-blocked'                 => "Вашият IP адрес беше блокиран във всички уикита на Уикимедия от '''$1''' (''$2'').
+	'globalblocking-blocked'                 => "Вашият IP адрес беше блокиран във всички уикита от '''$1''' (''$2'').
 Посочената причина е ''„$3“''. Срокът на изтичане на блокирането е ''$4''.",
 	'globalblocking-logpage'                 => 'Дневник на глобалните блокирания',
 	'globalblocking-block-logentry'          => 'глобално блокиране на [[$1]] със срок на изтичане $2 ($3)',
@@ -1041,7 +1041,6 @@ De Sperr bliet bestonn bes: ''$4''.",
 
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
- * @author Siebrand
  */
 $messages['lb'] = array(
 	'globalblocking-desc'                    => '[[Special:GlobalBlock|Erlaabt et]] IP-Adressen op [[Special:GlobalBlockList|méi Wikien mateneen ze spären]]',
@@ -1058,8 +1057,8 @@ $1",
 	'globalblocking-block-ipinvalid'         => 'Dir hutt eng ongëlteg IP-Adress ($1) aginn.
 Denkt w.e.g. drun datt Dir och e Benotzernumm agi kënnt!',
 	'globalblocking-block-submit'            => 'Dës IP-Adress global spären',
-	'globalblocking-block-success'           => "D'IP-Adress $1 gouf op alle Wikimedia-Projeten gespaart.
-D'Lëscht vun de globale Späre fannt Dir [[Special:Globalblocklist|hei]].",
+	'globalblocking-block-success'           => "D'IP-Adress $1 gouf op alle Wikimedia-Projete gespaart.
+Vläicht wëllt Dir [[Special:Globalblocklist|Lëscht vun de globale Späre]] consultéieren.",
 	'globalblocking-block-successsub'        => 'Global gespaart',
 	'globalblocking-block-alreadyblocked'    => "D'IP-Adress $1 ass scho global gespaart. Dir kënnt d'Spären op der [[Special:Globalblocklist|Lëscht vun de globale Späre]] kucken.",
 	'globalblocking-block-bigrange'          => 'De Beräich den dir uginn hutt ($1) ass ze grouss fir ze spären. Dir kënnt maximal 65.536 Adressen (/16 Beräicher) spären',
@@ -1097,8 +1096,8 @@ $1",
 	'globalblocking-whitelist-whitelisted'   => "Dir hutt d'global Spär #$2 vun der IP-Adress '''$1''' op {{SITENAME}} opgehiuewen.",
 	'globalblocking-whitelist-dewhitelisted' => "Dir hutt d'global Spär #$2 vun der IP-Adress '''$1''' op {{SITENAME}} nees aktivéiert.",
 	'globalblocking-whitelist-successsub'    => 'De lokale Status gouf geännert',
-	'globalblocking-blocked'                 => "Är IP-adress gouf op alle wikimedia Wikie vum '''\$1''' (''\$2'') gespaart.
-De Grond den ugi gouf war ''\"\$3\"''. D'spär dauert ''\$4''.",
+	'globalblocking-blocked'                 => "Är IP-adress gouf op alle Wikimedia Wikie vum '''\$1''' (''\$2'') gespaart.
+De Grond den ugi gouf war ''\"\$3\"''. D'Spär dauert ''\$4''.",
 	'globalblocking-logpage'                 => 'Lëscht vun de globale Spären',
 	'globalblocking-block-logentry'          => '[[$1]] gouf global gespaart fir $2 ($3)',
 	'globalblocking-unblock-logentry'        => 'global Spär vum [[$1]] opgehuewen',
@@ -1251,6 +1250,7 @@ $messages['nah'] = array(
 
 /** Dutch (Nederlands)
  * @author Siebrand
+ * @author SPQRobin
  */
 $messages['nl'] = array(
 	'globalblocking-desc'                    => "[[Special:GlobalBlock|Maakt het mogelijk]] IP-addressen [[Special:GlobalBlockList|in meerdere wiki's tegelijk]] te blokkeren",
@@ -1267,7 +1267,7 @@ $messages['nl'] = array(
 Let op: u kunt geen gebruikersnaam opgeven!',
 	'globalblocking-block-expiryinvalid'     => 'De verloopdatum/tijd die u hebt opgegeven is ongeldig ($1).',
 	'globalblocking-block-submit'            => 'Dit IP-adres globaal blokkeren',
-	'globalblocking-block-success'           => 'De blokkade van het IP-adres $1 voor alle projecten van Wikimedia is geslaagd.
+	'globalblocking-block-success'           => 'De blokkade van het IP-adres $1 voor alle projecten is geslaagd.
 U kunt een [[Special:Globalblocklist|lijst van alle globale blokkades]] bekijken.',
 	'globalblocking-block-successsub'        => 'Globale blokkade geslaagd',
 	'globalblocking-block-alreadyblocked'    => 'Het IP-adres $1 is al globaal geblokkeerd. U kunt de bestaande blokkade bekijken in de [[Special:Globalblocklist|lijst met globale blokkades]].',
@@ -1306,7 +1306,7 @@ $1',
 	'globalblocking-whitelist-whitelisted'   => "U hebt de globale blokkade #$2 met het IP-adres '''$1''' op {{SITENAME}} opgeheven.",
 	'globalblocking-whitelist-dewhitelisted' => "U hebt de globale blokkade #$2 met het IP-adres '''$1''' op {{SITENAME}} opnieuw actief gemaakt.",
 	'globalblocking-whitelist-successsub'    => 'De lokale status is gewijzigd',
-	'globalblocking-blocked'                 => "Uw IP-adres is door '''\$1''' (''\$2'') geblokkeerd op alle wiki's van Wikimedia.
+	'globalblocking-blocked'                 => "Uw IP-adres is door '''\$1''' (''\$2'') geblokkeerd op alle wiki's.
 De reden is ''\"\$3\"''. De blokkade verloopt op ''\$4''.",
 	'globalblocking-logpage'                 => 'Globaal blokkeerlogboek',
 	'globalblocking-block-logentry'          => 'heeft [[$1]] globaal geblokkeerd met een verlooptijd van $2 ($3)',
