@@ -488,7 +488,7 @@ $messages['fr'] = array(
 Veuillez noter que vous ne pouvez pas inscrire un nom d’utilisateur !',
 	'globalblocking-block-expiryinvalid'     => 'L’expiration que vous avez entrée ($1) est incorrecte.',
 	'globalblocking-block-submit'            => 'Bloquer globalement cette adresse IP',
-	'globalblocking-block-success'           => 'L’adresse IP $1 a été bloquée avec succès sur l’ensemble des projets Wikimedia.
+	'globalblocking-block-success'           => 'L’adresse IP $1 a été bloquée avec succès sur l’ensemble des projets.
 Vous pouvez consultez la liste des [[Special:Globalblocklist|comptes bloqués globalement]].',
 	'globalblocking-block-successsub'        => 'Blocage global réussi',
 	'globalblocking-block-alreadyblocked'    => 'L’adresse IP $1 est déjà bloquée globalement. Vous pouvez afficher les blocages existants sur la liste [[Special:Globalblocklist|des blocages globaux]].',
@@ -528,7 +528,7 @@ $1',
 	'globalblocking-whitelist-dewhitelisted' => "Vous avez réactivé avec succès le blocage global n° $2 sur l'adresse IP '''$1''' sur {{SITENAME}}.",
 	'globalblocking-whitelist-successsub'    => 'Statut local changé avec succès',
 	'globalblocking-blocked'                 => "Votre adresse IP a été bloquée sur l’ensemble des wiki par '''$1''' (''$2'').
-Le motif indiqué a été « $3 ». L’expiration du blocage est pour le ''$4''.",
+Le motif indiqué était « $3 ». L’expiration du blocage est pour le ''$4''.",
 	'globalblocking-logpage'                 => 'Journal des blocages globaux',
 	'globalblocking-block-logentry'          => '[[$1]] bloqué globalement avec une durée d’expiration de $2 ($3)',
 	'globalblocking-unblock-logentry'        => 'blocage global retiré sur [[$1]]',
@@ -660,7 +660,7 @@ $1',
 	'globalblocking-unblock-legend'          => 'הסרת חסימה גלובלית',
 	'globalblocking-unblock-submit'          => 'הסרת חסימה גלובלית',
 	'globalblocking-unblock-reason'          => 'סיבה:',
-	'globalblocking-blocked'                 => "כתובת ה־IP שלכם נחסמה בכל אתרי קרן ויקימדיה על ידי '''\$1''' (''\$2'').
+	'globalblocking-blocked'                 => "כתובת ה־IP שלכם נחסמה בכל אתרי הוויקי על ידי '''\$1''' (''\$2'').
 הסיבה שניתנה הייתה ''\"\$3\"''. זמן פקיעת החסימה הינו ''\$4''.",
 	'right-globalblock'                      => 'יצירת חסימות גלובליות',
 	'right-globalunblock'                    => 'הסרת חסימות גלובליות',
@@ -1456,7 +1456,7 @@ $1',
 Notatz que podètz pas inscriure un nom d’utilizaire !",
 	'globalblocking-block-expiryinvalid'     => "L’expiracion qu'avètz picada ($1) es incorrècta.",
 	'globalblocking-block-submit'            => 'Blocar globalament aquesta adreça IP',
-	'globalblocking-block-success'           => 'L’adreça IP $1 es estada blocada amb succès sus l’ensemble dels projèctes Wikimèdia.
+	'globalblocking-block-success'           => 'L’adreça IP $1 es estada blocada amb succès sus l’ensemble dels projèctes.
 Podètz consultaz la tièra dels [[Special:Globalblocklist|comptes blocats globalament]].',
 	'globalblocking-block-successsub'        => 'Blocatge global capitat',
 	'globalblocking-block-alreadyblocked'    => "L’adreça IP ja es blocada globalament. Podètz afichar los blocatges qu'existisson sus la tièra [[Special:Globalblocklist|dels blocatges globals]].",
@@ -1496,7 +1496,7 @@ $1',
 	'globalblocking-whitelist-dewhitelisted' => "Avètz reactivat amb succès lo blocatge global n° $2 sus l'adreça IP '''$1''' sus {{SITENAME}}.",
 	'globalblocking-whitelist-successsub'    => 'Estatut local cambiat amb succès',
 	'globalblocking-blocked'                 => "Vòstra adreça IP es estada blocada sus l’ensemble dels wiki per '''$1''' (''$2'').
-Lo motiu indicat es estat ''« $3 »''. L’expiracion del blocatge es pel ''$4''.",
+Lo motiu indicat èra « $3 ». L’expiracion del blocatge es pel ''$4''.",
 	'globalblocking-logpage'                 => 'Jornal dels blocatges globals',
 	'globalblocking-block-logentry'          => '[[$1]] blocat globalament amb una durada d’expiracion de $2 ($3)',
 	'globalblocking-unblock-logentry'        => 'blocatge global levat sus [[$1]]',
