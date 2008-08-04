@@ -14,12 +14,16 @@ $aliases['en'] = array(
     'GlobalBlocking' => array( 'GlobalBlocking' ),
 );
 
-/** Arabic (العربية) */
+/** Arabic (العربية)
+ * @author Meno25
+ */
 $aliases['ar'] = array(
 	'GlobalBlocking' => array( 'منع_عام' ),
 );
 
-/** Egyptian Spoken Arabic (مصرى) */
+/** Egyptian Spoken Arabic (مصرى)
+ * @author Meno25
+ */
 $aliases['arz'] = array(
 	'GlobalBlocking' => array( 'منع_عام' ),
 );
