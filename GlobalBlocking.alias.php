@@ -1,6 +1,6 @@
 <?php
 /**
- * Aliases for Special:GlobalBlocking
+ * Aliases for Special:GlobalBlock
  *
  * @addtogroup Extensions
  */
@@ -11,89 +11,90 @@ $aliases = array();
  * @author Jon Harald Søby
  */
 $aliases['en'] = array(
-    'GlobalBlocking' => array( 'GlobalBlocking' ),
+	'GlobalBlock'     => array( 'GlobalBlock' ),
+	'GlobalBlockList' => array( 'GlobalBlockList' ),
 );
 
 /** Arabic (العربية)
  * @author Meno25
  */
 $aliases['ar'] = array(
-	'GlobalBlocking' => array( 'منع_عام' ),
+	'GlobalBlock' => array( 'منع_عام' ),
 );
 
 /** Egyptian Spoken Arabic (مصرى)
  * @author Meno25
  */
 $aliases['arz'] = array(
-	'GlobalBlocking' => array( 'منع_عام' ),
+	'GlobalBlock' => array( 'منع_عام' ),
 );
 
 /** French (Français) */
 $aliases['fr'] = array(
-	'GlobalBlocking' => array( 'BlocageGlobal' ),
+	'GlobalBlock' => array( 'BlocageGlobal' ),
 );
 
 /** Galician (Galego) */
 $aliases['gl'] = array(
-	'GlobalBlocking' => array( 'Bloqueo global' ),
+	'GlobalBlock' => array( 'Bloqueo global' ),
 );
 
 /** Hebrew (עברית)
  * @author Rotem Liss
  */
 $aliases['he'] = array(
-	'GlobalBlocking' => array( 'חסימה_כללית' ),
+	'GlobalBlock' => array( 'חסימה_כללית' ),
 );
 
 /** Haitian (Kreyòl ayisyen) */
 $aliases['ht'] = array(
-	'GlobalBlocking' => array( 'BlokajGlobal' ),
+	'GlobalBlock' => array( 'BlokajGlobal' ),
 );
 
 /** Hungarian (Magyar) */
 $aliases['hu'] = array(
-	'GlobalBlocking' => array( 'Globális blokkolás' ),
+	'GlobalBlock' => array( 'Globális blokkolás' ),
 );
 
 /** Luxembourgish (Lëtzebuergesch) */
 $aliases['lb'] = array(
-	'GlobalBlocking' => array( 'Global Spären' ),
+	'GlobalBlock' => array( 'Global Spären' ),
 );
 
 /** Malay (Bahasa Melayu) */
 $aliases['ms'] = array(
-	'GlobalBlocking' => array( 'Sekatan_sejagat' ),
+	'GlobalBlock' => array( 'Sekatan_sejagat' ),
 );
 
 /** Dutch (Nederlands) */
 $aliases['nl'] = array(
-	'GlobalBlocking' => array( 'GlobaalBlokkeren' ),
+	'GlobalBlock' => array( 'GlobaalBlokkeren' ),
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
  * @author Jon Harald Søby
  */
 $aliases['no'] = array(
-	'GlobalBlocking' => array( 'Blokker_globalt', 'Global_blokkering' ),
+	'GlobalBlock' => array( 'Blokker_globalt', 'Global_blokkering' ),
 );
 
 /** Pashto (پښتو) */
 $aliases['ps'] = array(
-	'GlobalBlocking' => array( 'نړېوال بنديزونه' ),
+	'GlobalBlock' => array( 'نړېوال بنديزونه' ),
 );
 
 /** Portuguese (Português) */
 $aliases['pt'] = array(
-	'GlobalBlocking' => array( 'Bloquear globalmente' ),
+	'GlobalBlock' => array( 'Bloquear globalmente' ),
 );
 
 /** Brazilian Portuguese (Português do Brasil) */
 $aliases['pt-br'] = array(
-	'GlobalBlocking' => array( 'Bloquear globalmente' ),
+	'GlobalBlock' => array( 'Bloquear globalmente' ),
 );
 
 /** Swedish (Svenska) */
 $aliases['sv'] = array(
-	'GlobalBlocking' => array( 'Global blockering' ),
+	'GlobalBlock' => array( 'Global blockering' ),
 );
 
