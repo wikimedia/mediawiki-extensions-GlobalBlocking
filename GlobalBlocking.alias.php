@@ -19,14 +19,16 @@ $aliases['en'] = array(
  * @author Meno25
  */
 $aliases['ar'] = array(
-	'GlobalBlock' => array( 'منع_عام' ),
+	'GlobalBlock'     => array( 'منع_عام' ),
+	'GlobalBlockList' => array( 'قائمة_منع_عامة' ),
 );
 
 /** Egyptian Spoken Arabic (مصرى)
  * @author Meno25
  */
 $aliases['arz'] = array(
-	'GlobalBlock' => array( 'منع_عام' ),
+	'GlobalBlock'     => array( 'منع_عام' ),
+	'GlobalBlockList' => array( 'قائمة_منع_عامة' ),
 );
 
 /** French (Français) */
@@ -68,7 +70,8 @@ $aliases['ms'] = array(
 
 /** Dutch (Nederlands) */
 $aliases['nl'] = array(
-	'GlobalBlock' => array( 'GlobaalBlokkeren' ),
+	'GlobalBlock'     => array( 'GlobaalBlokkeren' ),
+	'GlobalBlockList' => array( 'GlobaleBlokkadelijst', 'GlobaleBlokkeerlijst' ),
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
