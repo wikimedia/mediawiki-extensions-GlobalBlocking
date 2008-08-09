@@ -19,7 +19,7 @@ $aliases['en'] = array(
  * @author Meno25
  */
 $aliases['ar'] = array(
-	'GlobalBlock'     => array( 'منع_عام' ),
+	'GlobalBlock' => array( 'منع_عام' ),
 	'GlobalBlockList' => array( 'قائمة_منع_عامة' ),
 );
 
@@ -27,7 +27,7 @@ $aliases['ar'] = array(
  * @author Meno25
  */
 $aliases['arz'] = array(
-	'GlobalBlock'     => array( 'منع_عام' ),
+	'GlobalBlock' => array( 'منع_عام' ),
 	'GlobalBlockList' => array( 'قائمة_منع_عامة' ),
 );
 
@@ -70,7 +70,7 @@ $aliases['ms'] = array(
 
 /** Dutch (Nederlands) */
 $aliases['nl'] = array(
-	'GlobalBlock'     => array( 'GlobaalBlokkeren' ),
+	'GlobalBlock' => array( 'GlobaalBlokkeren' ),
 	'GlobalBlockList' => array( 'GlobaleBlokkadelijst', 'GlobaleBlokkeerlijst' ),
 );
 
@@ -78,7 +78,8 @@ $aliases['nl'] = array(
  * @author Jon Harald Søby
  */
 $aliases['no'] = array(
-	'GlobalBlock' => array( 'Blokker_globalt', 'Global_blokkering' ),
+	'GlobalBlock' => array( 'Blokker globalt', 'Global blokkering' ),
+	'GlobalBlockList' => array( 'Global blokkeringsliste' ),
 );
 
 /** Pashto (پښتو) */
