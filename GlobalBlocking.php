@@ -68,7 +68,7 @@ $wgGlobalBlockingDatabase = 'globalblocking';
 $wgApplyGlobalBlocks = true;
 
 class GlobalBlocking {
-	static function getUserPermissionsErrors( &$title, &$user, &$action, &$result ) {
+	static function getUserPermissionsErrors( &$title, &$user, $action, &$result ) {
 		global $wgApplyGlobalBlocks;
 		if ($action == 'read' || !$wgApplyGlobalBlocks) {
 			return true;
