@@ -1939,8 +1939,8 @@ $messages['sv'] = array(
 Notera att du inte kan skriva in användarnamn.',
 	'globalblocking-block-expiryinvalid'     => 'Varigheten du skrev in ($1) är ogiltig.',
 	'globalblocking-block-submit'            => 'Blockera denna IP-adress globalt',
-	'globalblocking-block-success'           => 'IP-adressen $1 har blivit blockerad på alla Wikimedia-projekt.
-Du vill kanske att se [[Special:Globalblocklist|listan över globala blockeringar]].',
+	'globalblocking-block-success'           => 'IP-adressen $1 har blivit blockerad på alla projekt.
+Du vill kanske se [[Special:Globalblocklist|listan över globala blockeringar]].',
 	'globalblocking-block-successsub'        => 'Global blockering lyckades',
 	'globalblocking-block-alreadyblocked'    => 'IP-adressen $1 är redan blockerad globalt. Du kan visa den existerande blockeringen på [[Special:Globalblocklist|listan över globala blockeringar]].',
 	'globalblocking-block-bigrange'          => 'IP-området du angav ($1) är för stort att blockeras. Du kan blockera högst 65&nbsp;536 adresser (/16-områden)',
@@ -1978,8 +1978,8 @@ $1',
 	'globalblocking-whitelist-whitelisted'   => "Du har slagit av global blockering nr. $2 på IP-adressen '''$1''' på {{SITENAME}}.",
 	'globalblocking-whitelist-dewhitelisted' => "Du har slagit på global blockering nr. $2 igen på IP-adressen '''$1''' på {{SITENAME}}.",
 	'globalblocking-whitelist-successsub'    => 'Lokal status ändrad',
-	'globalblocking-blocked'                 => "Din IP-adress har blivit blockerad på alla Wikimedia-wikier av '''$1''' (''$2'').
-Anledningar var '''$3'''. Blockeringen utgår ''$4''.",
+	'globalblocking-blocked'                 => "Din IP-adress har blivit blockerad på alla wikier av '''$1''' (''$2'').
+Anledningen var '''$3'''. Blockeringen utgår ''$4''.",
 	'globalblocking-logpage'                 => 'Logg för globala blockeringar',
 	'globalblocking-block-logentry'          => 'blockerade [[$1]] globalt med en varighet på $2 ($3)',
 	'globalblocking-unblock-logentry'        => 'tog bort global blockering på [[$1]]',
