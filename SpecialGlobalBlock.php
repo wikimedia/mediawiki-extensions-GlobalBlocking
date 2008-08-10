@@ -30,7 +30,10 @@ class SpecialGlobalBlock extends SpecialPage {
 		if ($wgRequest->wasPosted() && $wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ))) {
 			// They want to submit. Let's have a look.
 			$errors = $this->trySubmit();
-			return;
+			if( !$errors ) {
+				// Success!
+				return;
+			}
 		}
 
 		$errorstr = '';
