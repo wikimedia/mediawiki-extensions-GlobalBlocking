@@ -83,9 +83,9 @@ class SpecialGlobalBlock extends SpecialPage {
 			$errors[] = array( 'globalblocking-block-ipinvalid', $ip );
 		}
 
-		$expirestr = $this->mExpiry; // Already checked for 'other' expiry in loadParameters.
+		$expiry = Block::parseExpiryInput( $this->mExpiry );
 		
-		if ( false === (Block::parseExpiryInput($expirestr))) {
+		if ( false === $expiry ) {
 			$errors[] = array( 'globalblocking-block-expiryinvalid', $this->mExpiry );
 		}
 		
