@@ -106,7 +106,7 @@ class GlobalBlocking {
 			$display_wiki = self::getWikiName( $block->gb_by_wiki );
 			$user_display = self::maybeLinkUserpage( $block->gb_by_wiki, $block->gb_by );
 			
-			$result[] = array('globalblocking-blocked', $user_display, $display_wiki, $block->gb_reason, $expirystr);
+			$result[] = array('globalblocking-blocked', $user_display, $display_wiki, $block->gb_reason, $expiry);
 			return false;
 		}
 	

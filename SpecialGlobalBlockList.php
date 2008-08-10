@@ -107,7 +107,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 		global $wgScript,$wgRequest,$wgUser,$wgOut;
 		$errors = array();
 		
-		if (count(SpecialPage::getTitleFor( 'GlobalBlockList' )->getUserPermissionsErrors( 'globalblock-whitelist', $wgUser ))>1) {
+		if( !$wgUser->isAllowed( 'globalblock-whitelist' ) ) {
 			$this->displayRestrictionError();
 			return;
 		}
@@ -201,7 +201,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 				return;
 		}
 		
-		if (count(SpecialPage::getTitleFor( 'GlobalBlockList' )->getUserPermissionsErrors( 'globalunblock', $wgUser ))>1) {
+		if( $wgUser->isAllowed( 'globalunblock' ) ) {
 			$this->displayRestrictionError();
 			return;
 		}
@@ -319,15 +319,20 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 		$titleObj = SpecialPage::getTitleFor( "GlobalBlockList" );
 		
 		## Do afterthoughts (comment, links for admins)
-		$comment = $sk->commentBlock($row->gb_reason);
+		$info = array();
+		$info[] = $sk->commentBlock($row->gb_reason);
 
-		$unblockLink = '';
-		if (count(SpecialPage::getTitleFor( 'GlobalBlockList' )->getUserPermissionsErrors( 'globalunblock', $wgUser ))<=1 ) {
-			$unblockLink = ' (' . $sk->makeKnownLinkObj($titleObj, wfMsg( 'globalblocking-list-unblock' ), 'action=unblock&unblockip=' . urlencode( $row->gb_address ) ) . ')';
+		if( $wgUser->isAllowed( 'globalunblock' ) ) {
+			$info[] = '(' . $sk->makeKnownLinkObj($titleObj,
+				wfMsg( 'globalblocking-list-unblock' ),
+				'action=unblock&unblockip=' . urlencode( $row->gb_address ) ) . ')';
 		}
 		
-		if (count(SpecialPage::getTitleFor( 'GlobalBlockList' )->getUserPermissionsErrors( 'globalblock-whitelist', $wgUser ))<=1) {
-			$whitelistLink = ' (' . $sk->makeKnownLinkObj($titleObj, wfMsg( 'globalblocking-list-whitelist' ), 'action=whitelist&whitelistip=' . urlencode( $row->gb_address ) . '&whitelistid=' . urlencode($row->gb_id) ) . ')';
+		if( $wgUser->isAllowed( 'globalblock-whitelist' ) ) {
+			$info[] = '(' . $sk->makeKnownLinkObj($titleObj, 
+				wfMsg( 'globalblocking-list-whitelist' ),
+				'action=whitelist&whitelistip=' . urlencode( $row->gb_address ) .
+					'&whitelistid=' . urlencode($row->gb_id) ) . ')';
 		}
 		
 		## Userpage link / Info on originating wiki
@@ -338,7 +343,9 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 		return Xml::openElement( 'li' ) .
 			wfMsgExt( 'globalblocking-list-blockitem', array( 'parseinline' ), $timestamp,
 				$user_display, $display_wiki, $row->gb_address,
-				implode( ', ', $options) ) . " $comment $unblockLink $whitelistLink " .
+				implode( ', ', $options) ) .
+				' ' .
+				implode( ' ', $info ) .
 			Xml::closeElement( 'li' );
 	}
 
