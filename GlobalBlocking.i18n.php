@@ -86,7 +86,9 @@ The reason given was ''\"$3\"''. The block's expiry is ''$4''.",
 );
 
 /** Message documentation (Message documentation)
+ * @author Jon Harald Søby
  * @author Meno25
+ * @author Siebrand
  */
 $messages['qqq'] = array(
 	'globalblocking-block-expiry-otherfield' => '{{Identical|Other time}}',
