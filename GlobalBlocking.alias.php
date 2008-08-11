@@ -21,16 +21,20 @@ $aliases['en'] = array(
  * @author Meno25
  */
 $aliases['ar'] = array(
-	'GlobalBlock' => array( 'منع_عام' ),
-	'GlobalBlockList' => array( 'قائمة_منع_عامة' ),
+	'GlobalBlock'         => array( 'منع_عام' ),
+	'GlobalBlockList'     => array( 'قائمة_منع_عامة' ),
+	'RemoveGlobalBlock'   => array( 'رفع_منع_عام', 'إزالة_منع_عام' ),
+	'GlobalBlockStatus'   => array( 'قائمة_المنع_العام_البيضاء', 'حالة_المنع_العام', 'تعطيل_المنع_العام' ),
 );
 
 /** Egyptian Spoken Arabic (مصرى)
  * @author Meno25
  */
 $aliases['arz'] = array(
-	'GlobalBlock' => array( 'منع_عام' ),
-	'GlobalBlockList' => array( 'قائمة_منع_عامة' ),
+	'GlobalBlock'         => array( 'منع_عام' ),
+	'GlobalBlockList'     => array( 'قائمة_منع_عامة' ),
+	'RemoveGlobalBlock'   => array( 'رفع_منع_عام', 'إزالة_منع_عام' ),
+	'GlobalBlockStatus'   => array( 'قايمة_المنع_العام_البيضاء', 'حالة_المنع_العام', 'تعطيل_المنع_العام' ),
 );
 
 /** French (Français) */
