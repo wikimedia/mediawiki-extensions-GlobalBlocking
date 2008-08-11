@@ -72,6 +72,8 @@ class SpecialGlobalBlockStatus extends SpecialPage {
 			if ( !$wgRequest->wasPosted() ) {
 				$this->mWhitelistStatus = $this->mCurrentStatus;
 			}
+		} else {
+			$this->mCurrentStatus = true;
 		}
 	}
 

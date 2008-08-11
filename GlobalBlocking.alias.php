@@ -13,6 +13,8 @@ $aliases = array();
 $aliases['en'] = array(
 	'GlobalBlock'     => array( 'GlobalBlock' ),
 	'GlobalBlockList' => array( 'GlobalBlockList' ),
+	'RemoveGlobalBlock' => array( 'GlobalUnblock', 'RemoveGlobalBlock' ),
+	'GlobalBlockStatus' => array( 'GlobalBlockWhitelist', 'GlobalBlockStatus', 'DisableGlobalBlock' ),
 );
 
 /** Arabic (العربية)
