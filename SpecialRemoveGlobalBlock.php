@@ -23,8 +23,6 @@ class SpecialRemoveGlobalBlock extends SpecialPage {
 			$this->displayRestrictionError();
 			return;
 		}
-		
-		$wgOut->addWikiMsg( 'globalblocking-unblock-intro' );
 
 		$errors = '';
 
@@ -36,6 +34,8 @@ class SpecialRemoveGlobalBlock extends SpecialPage {
 				return;
 			}
 		}
+		
+		$wgOut->addWikiMsg( 'globalblocking-unblock-intro' );
 
 		if (is_array($errors) && count($errors)>0) {
 			$errorstr = '';
