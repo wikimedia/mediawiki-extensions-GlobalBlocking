@@ -32,6 +32,10 @@ $wgAutoloadClasses['SpecialGlobalBlock'] = "$dir/SpecialGlobalBlock.php";
 $wgSpecialPages['GlobalBlock'] = 'SpecialGlobalBlock';
 $wgAutoloadClasses['SpecialGlobalBlockList'] = "$dir/SpecialGlobalBlockList.php";
 $wgSpecialPages['GlobalBlockList'] = 'SpecialGlobalBlockList';
+$wgAutoloadClasses['SpecialGlobalBlockStatus'] = "$dir/SpecialGlobalBlockStatus.php";
+$wgSpecialPages['GlobalBlockStatus'] = 'SpecialGlobalBlockStatus';
+$wgAutoloadClasses['SpecialRemoveGlobalBlock'] = "$dir/SpecialRemoveGlobalBlock.php";
+$wgSpecialPages['RemoveGlobalBlock'] = 'SpecialRemoveGlobalBlock';
 
 ## Add global block log
 $wgLogTypes[] = 'gblblock';
@@ -40,7 +44,7 @@ $wgLogHeaders['gblblock'] = 'globalblocking-logpagetext';
 $wgLogActions['gblblock/gblock'] = 'globalblocking-block-logentry';
 $wgLogActions['gblblock/gunblock'] = 'globalblocking-unblock-logentry';
 $wgLogActions['gblblock/whitelist'] = 'globalblocking-whitelist-logentry';
-$wgLogActions['gblblock/dewhitelist'] = 'globalblocking-dewhitelist-logentry';
+$wgLogActions['gblblock/dwhitelist'] = 'globalblocking-dewhitelist-logentry'; // Stupid logging table doesn't like >16 chars
 
 ## Permissions
 $wgGroupPermissions['steward']['globalblock'] = true;
@@ -154,16 +158,15 @@ class GlobalBlocking {
 		$dbw->commit();
 	}
 	
-	static function getWhitelistInfo( $block_id = null, $block_ip = null ) {
+	static function getWhitelistInfo( $id = null, $address = null ) {
 		$conds = array();
-		if ($block_id != null) {
-			$conds = array( 'gbw_id' => $block_id );
-		} elseif ($block_ip != null) {
-			$block_id = GlobalBlocking::getGlobalBlockId( $block_ip );
-			$conds = array( 'gbw_id' => $block_id );
+		if ($id != null) {
+			$conds = array( 'gbw_id' => $id );
+		} elseif ($address != null) {
+			$conds = array( 'gbw_address' => $address );
 		} else {
 			//WTF?
-			return false;
+			throw new MWException( "Neither Block IP nor Block ID given for retrieving whitelist status" );
 		}
 		
 		$dbr = wfGetDB( DB_SLAVE );
@@ -176,6 +179,10 @@ class GlobalBlocking {
 			// Block has been whitelisted
 			return array( 'user' => $row->gbw_by, 'reason' => $row->gbw_reason );
 		}
+	}
+	
+	static function getWhitelistInfoByIP( $block_ip ) {
+		return self::getWhitelistInfo( null, $block_ip );
 	}
 	
 	static function getWikiName( $wiki_id ) {
