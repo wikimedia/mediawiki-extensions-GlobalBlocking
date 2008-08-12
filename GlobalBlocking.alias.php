@@ -21,20 +21,28 @@ $aliases['en'] = array(
  * @author Meno25
  */
 $aliases['ar'] = array(
-	'GlobalBlock'         => array( 'منع_عام' ),
-	'GlobalBlockList'     => array( 'قائمة_منع_عامة' ),
-	'RemoveGlobalBlock'   => array( 'رفع_منع_عام', 'إزالة_منع_عام' ),
-	'GlobalBlockStatus'   => array( 'قائمة_المنع_العام_البيضاء', 'حالة_المنع_العام', 'تعطيل_المنع_العام' ),
+	'GlobalBlock' => array( 'منع_عام' ),
+	'GlobalBlockList' => array( 'قائمة_منع_عامة' ),
+	'RemoveGlobalBlock' => array( 'رفع_منع_عام', 'إزالة_منع_عام' ),
+	'GlobalBlockStatus' => array( 'قائمة_المنع_العام_البيضاء', 'حالة_المنع_العام', 'تعطيل_المنع_العام' ),
 );
 
 /** Egyptian Spoken Arabic (مصرى)
  * @author Meno25
  */
 $aliases['arz'] = array(
-	'GlobalBlock'         => array( 'منع_عام' ),
-	'GlobalBlockList'     => array( 'قائمة_منع_عامة' ),
-	'RemoveGlobalBlock'   => array( 'رفع_منع_عام', 'إزالة_منع_عام' ),
-	'GlobalBlockStatus'   => array( 'قايمة_المنع_العام_البيضاء', 'حالة_المنع_العام', 'تعطيل_المنع_العام' ),
+	'GlobalBlock' => array( 'منع_عام' ),
+	'GlobalBlockList' => array( 'قائمة_منع_عامة' ),
+	'RemoveGlobalBlock' => array( 'رفع_منع_عام', 'إزالة_منع_عام' ),
+	'GlobalBlockStatus' => array( 'قايمة_المنع_العام_البيضاء', 'حالة_المنع_العام', 'تعطيل_المنع_العام' ),
+);
+
+/** German (Deutsch) */
+$aliases['de'] = array(
+	'GlobalBlock' => array( 'Globale Sperre' ),
+	'GlobalBlockList' => array( 'Liste globaler Sperren' ),
+	'RemoveGlobalBlock' => array( 'Globale Sperre aufheben' ),
+	'GlobalBlockStatus' => array( 'Ausnahme von globaler Sperre' ),
 );
 
 /** French (Français) */
@@ -78,6 +86,8 @@ $aliases['ms'] = array(
 $aliases['nl'] = array(
 	'GlobalBlock' => array( 'GlobaalBlokkeren' ),
 	'GlobalBlockList' => array( 'GlobaleBlokkadelijst', 'GlobaleBlokkeerlijst' ),
+	'RemoveGlobalBlock' => array( 'GlobaalDeblokkeren', 'GlobaleBlokkadeVerwijderen' ),
+	'GlobalBlockStatus' => array( 'WitteLijstGlobaleBlokkades', 'GlobaleBlokkadestatus' ),
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
