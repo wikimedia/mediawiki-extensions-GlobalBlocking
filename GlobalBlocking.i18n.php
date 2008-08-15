@@ -88,6 +88,8 @@ The reason given was ''\"$3\"''. The block's expiry is ''$4''.",
 
 	'globalblocklist' => 'List of globally blocked IP addresses',
 	'globalblock' => 'Globally block an IP address',
+	'globalblockstatus' => 'Local status of global blocks',
+	'removeglobalblock' => 'Remove a global block',
 	
 	// User rights
 	'right-globalblock' => 'Make global blocks',
