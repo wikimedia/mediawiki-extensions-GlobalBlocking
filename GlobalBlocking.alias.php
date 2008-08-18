@@ -70,6 +70,8 @@ $aliases['ht'] = array(
 /** Hungarian (Magyar) */
 $aliases['hu'] = array(
 	'GlobalBlock' => array( 'Globális blokkolás' ),
+	'GlobalBlockList' => array( 'Globális blokkok listája' ),
+	'RemoveGlobalBlock' => array( 'Globális feloldás' ),
 );
 
 /** Luxembourgish (Lëtzebuergesch) */
@@ -96,6 +98,8 @@ $aliases['nl'] = array(
 $aliases['no'] = array(
 	'GlobalBlock' => array( 'Blokker globalt', 'Global blokkering' ),
 	'GlobalBlockList' => array( 'Global blokkeringsliste' ),
+	'RemoveGlobalBlock' => array( 'Avblokker globalt', 'Global avblokkering' ),
+	'GlobalBlockStatus' => array( 'Hviteliste for global blokkering' ),
 );
 
 /** Pashto (پښتو) */
