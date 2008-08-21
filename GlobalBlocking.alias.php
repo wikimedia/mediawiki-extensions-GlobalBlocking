@@ -87,6 +87,14 @@ $aliases['ms'] = array(
 	'GlobalBlock' => array( 'Sekatan_sejagat' ),
 );
 
+/** Nedersaksisch (Nedersaksisch) */
+$aliases['nds-nl'] = array(
+	'GlobalBlock' => array( 'Globaal_blokkeren' ),
+	'GlobalBlockList' => array( 'Globale_blokkeerlieste' ),
+	'RemoveGlobalBlock' => array( 'Globaal_deblokkeren' ),
+	'GlobalBlockStatus' => array( 'Witte_lieste_blokkeringen' ),
+);
+
 /** Dutch (Nederlands) */
 $aliases['nl'] = array(
 	'GlobalBlock' => array( 'GlobaalBlokkeren' ),
