@@ -78,7 +78,7 @@ Please note that you cannot enter a user name!',
 	'globalblocking-whitelist-intro' => "You can use this form to edit the local status of a global block. If a global block is disabled on this wiki, users on the affected IP address will be able to edit normally. [[Special:Globalblocklist|Click here]] to return to the global block list.",
 
 	'globalblocking-blocked' => "Your IP address has been blocked on all wikis by '''$1''' (''$2'').
-The reason given was ''\"$3\"''. The block's expiry is ''$4''.",
+The reason given was ''\"$3\"''. The block ''$4''.",
 
 	'globalblocking-logpage' => 'Global block log',
 	'globalblocking-block-logentry' => 'globally blocked [[$1]] with an expiry time of $2 ($3)',
