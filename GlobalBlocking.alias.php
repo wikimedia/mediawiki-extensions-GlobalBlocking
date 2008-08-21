@@ -59,7 +59,10 @@ $aliases['gl'] = array(
  * @author Rotem Liss
  */
 $aliases['he'] = array(
-	'GlobalBlock' => array( 'חסימה_כללית' ),
+	'GlobalBlock'       => array( 'חסימה_גלובלית' ),
+	'GlobalBlockList'   => array( 'רשימת_חסומים_גלובליים' ),
+	'RemoveGlobalBlock' => array( 'שחרור_חסימה_גלובלית', 'הסרת_חסימה_גלובלית' ),
+	'GlobalBlockStatus' => array( 'רשימה_לבנה_לחסימה_גלובלית', 'מצב_חסימה_גלובלית', 'ביטול_חסימה_גלובלית' ),
 );
 
 /** Haitian (Kreyòl ayisyen) */
