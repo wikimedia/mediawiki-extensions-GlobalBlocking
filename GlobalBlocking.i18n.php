@@ -866,7 +866,7 @@ $messages['he'] = array(
 	'globalblocking-blocked' => "כתובת ה־IP שלכם נחסמה בכל אתרי הוויקי על ידי '''\$1''' (''\$2'').
 הסיבה שניתנה הייתה ''\"\$3\"''. זמן פקיעת החסימה הינו ''\$4''.",
 	'globalblocking-logpage' => 'יומן החסימות הגלובליות',
-	'globalblocking-block-logentry' => 'חסם באופן גלובלי את [[$1]] עם זמן פקיעה של $2 ($3)',
+	'globalblocking-block-logentry' => 'חסם באופן גלובלי את [[$1]] עם זמן פקיעה של $2',
 	'globalblocking-unblock-logentry' => 'הסיר את החסימה הגלובלית של [[$1]]',
 	'globalblocking-whitelist-logentry' => 'ביטל את החסימה הגלובלית של [[$1]] באופן מקומי',
 	'globalblocking-dewhitelist-logentry' => 'הפעיל מחדש את החסימה הגלובלית של [[$1]] באופן מקומי',
@@ -1117,7 +1117,7 @@ Per favor nota que tu non pote entrar un nomine de usator!',
 	'globalblocking-blocked' => "Tu adresse IP ha essite blocate in tote le wikis per '''\$1''' (''\$2'').
 Le motivo date esseva ''\"\$3\"''. Le expiration del blocada es ''\$4''.",
 	'globalblocking-logpage' => 'Registro de blocadas global',
-	'globalblocking-block-logentry' => 'blocava globalmente [[$1]] con un tempore de expiration de $2 ($3)',
+	'globalblocking-block-logentry' => 'blocava globalmente [[$1]] con un tempore de expiration de $2',
 	'globalblocking-unblock-logentry' => 'removeva blocada global de [[$1]]',
 	'globalblocking-whitelist-logentry' => 'disactivava localmente le blocada global de [[$1]]',
 	'globalblocking-dewhitelist-logentry' => 'reactivava localmente le blocada global de [[$1]]',
