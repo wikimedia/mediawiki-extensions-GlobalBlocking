@@ -78,7 +78,6 @@ class GlobalBlocking {
 			return true;
 		}
 		
-		global $wgUser;
 		$dbr = GlobalBlocking::getGlobalBlockingSlave();
 		$ip = wfGetIp();
 		
@@ -91,7 +90,7 @@ class GlobalBlocking {
 				'gb_range_start like ' . $dbr->addQuotes( $ip_pattern ),
 				'gb_expiry>'.$dbr->addQuotes($dbr->timestamp(wfTimestampNow())) );
 	
-		if (!$wgUser->isAnon())
+		if (!$user->isAnon())
 			$conds['gb_anon_only'] = 0;
 	
 		// Get the block
@@ -100,6 +99,11 @@ class GlobalBlocking {
 			// Check for local whitelisting
 			if (GlobalBlocking::getWhitelistInfo( $block->gb_id ) ) {
 				// Block has been whitelisted.
+				return true;
+			}
+			
+			if ( $user->isAllowed( 'ipblock-exempt' ) {
+				// User is exempt from IP blocks.
 				return true;
 			}
 
