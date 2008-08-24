@@ -28,10 +28,13 @@ Please note that you cannot enter a user name!',
 	'globalblocking-block-submit' => 'Block this IP address globally',
 	'globalblocking-block-success' => 'The IP address $1 has been successfully blocked on all projects.',
 	'globalblocking-block-successsub' => 'Global block successful',
-	'globalblocking-block-alreadyblocked' => 'The IP address $1 is already blocked globally. You can view the existing block on the [[Special:Globalblocklist|list of global blocks]].',
-	'globalblocking-block-bigrange' => 'The range you specified ($1) is too big to block. You may block, at most, 65,536 addresses (/16 ranges)',
+	'globalblocking-block-alreadyblocked' => 'The IP address $1 is already blocked globally.
+You can view the existing block on the [[Special:Globalblocklist|list of global blocks]].',
+	'globalblocking-block-bigrange' => 'The range you specified ($1) is too big to block.
+You may block, at most, 65,536 addresses (/16 ranges)',
 	
-	'globalblocking-list-intro' => 'This is a list of all global blocks which are currently in effect. Some blocks are marked as locally disabled: this means that they apply on other sites, but a local administrator has decided to disable them on this wiki.',
+	'globalblocking-list-intro' => 'This is a list of all global blocks which are currently in effect.
+Some blocks are marked as locally disabled: this means that they apply on other sites, but a local administrator has decided to disable them on this wiki.',
 	'globalblocking-list' => 'List of globally blocked IP addresses',
 	'globalblocking-search-legend' => 'Search for a global block',
 	'globalblocking-search-ip' => 'IP address:',
@@ -62,7 +65,8 @@ Please note that you cannot enter a user name!',
 	'globalblocking-unblock-errors' => "Your removal of the global block was unsuccessful, for the following {{PLURAL:$1|reason|reasons}}:",
 	'globalblocking-unblock-successsub' => 'Global block successfully removed',
 	'globalblocking-unblock-subtitle' => 'Removing global block',
-	'globalblocking-unblock-intro' => 'You can use this form to remove a global block. [[Special:GlobalBlockList|Click here]] to return to the global block list.',
+	'globalblocking-unblock-intro' => 'You can use this form to remove a global block.
+[[Special:GlobalBlockList|Click here]] to return to the global block list.',
 	
 	'globalblocking-whitelist' => 'Local status of global blocks',
 	'globalblocking-whitelist-legend' => 'Change local status',
@@ -73,12 +77,16 @@ Please note that you cannot enter a user name!',
 	'globalblocking-whitelist-whitelisted' => "You have successfully disabled the global block #$2 on the IP address '''$1''' on {{SITENAME}}.",
 	'globalblocking-whitelist-dewhitelisted' => "You have successfully re-enabled the global block #$2 on the IP address '''$1''' on {{SITENAME}}.",
 	'globalblocking-whitelist-successsub' => 'Local status successfully changed',
-	'globalblocking-whitelist-nochange' => 'You made no change to the local status of this block. [[Special:GlobalBlockList|Click here]] to return to the global block list.',
+	'globalblocking-whitelist-nochange' => 'You made no change to the local status of this block.
+[[Special:GlobalBlockList|Return to the global block list]].',
 	'globalblocking-whitelist-errors' => 'Your change to the local status of a global block was unsuccessful, for the following {{PLURAL:$1|reason|reasons}}:',
-	'globalblocking-whitelist-intro' => "You can use this form to edit the local status of a global block. If a global block is disabled on this wiki, users on the affected IP address will be able to edit normally. [[Special:Globalblocklist|Click here]] to return to the global block list.",
+	'globalblocking-whitelist-intro' => "You can use this form to edit the local status of a global block.
+If a global block is disabled on this wiki, users on the affected IP address will be able to edit normally.
+[[Special:Globalblocklist|Return to the global block list]].",
 
 	'globalblocking-blocked' => "Your IP address has been blocked on all wikis by '''$1''' (''$2'').
-The reason given was ''\"$3\"''. The block ''$4''.",
+The reason given was ''\"$3\"''.
+The block ''$4''.",
 
 	'globalblocking-logpage' => 'Global block log',
 	'globalblocking-block-logentry' => 'globally blocked [[$1]] with an expiry time of $2',
