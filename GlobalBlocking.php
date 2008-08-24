@@ -102,7 +102,7 @@ class GlobalBlocking {
 				return true;
 			}
 			
-			if ( $user->isAllowed( 'ipblock-exempt' ) {
+			if ( $user->isAllowed( 'ipblock-exempt' ) ) {
 				// User is exempt from IP blocks.
 				return true;
 			}
