@@ -20,7 +20,7 @@ $messages['en'] = array(
 	'globalblocking-block-expiry-other' => 'Other expiry time',
 	'globalblocking-block-expiry-otherfield' => 'Other time:',
 	'globalblocking-block-legend' => 'Block a user globally',
-	'globalblocking-block-options' => 'Options',
+	'globalblocking-block-options' => 'Options:',
 	'globalblocking-block-errors' => "Your block was unsuccessful, for the following {{PLURAL:$1|reason|reasons}}:",
 	'globalblocking-block-ipinvalid' => 'The IP address ($1) you entered is invalid.
 Please note that you cannot enter a user name!',

@@ -90,9 +90,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 				// They searched for a range. Match that exact range only
 				$conds = array( 'gb_address' => $ip );
 			} else {
-				// They searched for an IP. Match any range covering that IP
-				$ip = wfGetIp();
-		
+				// They searched for an IP. Match any range covering that IP		
 				$hex_ip = IP::toHex( $ip );
 				$ip_pattern = substr( $hex_ip, 0, 4 ) . '%'; // Don't bother checking blocks out of this /16.
 				
