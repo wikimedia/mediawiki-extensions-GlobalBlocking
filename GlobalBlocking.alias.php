@@ -45,6 +45,12 @@ $aliases['de'] = array(
 	'GlobalBlockStatus' => array( 'Ausnahme von globaler Sperre' ),
 );
 
+/** Finnish (Suomi) */
+$aliases['fi'] = array(
+	'GlobalBlock' => array( 'Globaali esto' ),
+	'GlobalBlockList' => array( 'Globaalien estojen lista' ),
+);
+
 /** French (Français) */
 $aliases['fr'] = array(
 	'GlobalBlock' => array( 'BlocageGlobal' ),
@@ -80,6 +86,9 @@ $aliases['hu'] = array(
 /** Luxembourgish (Lëtzebuergesch) */
 $aliases['lb'] = array(
 	'GlobalBlock' => array( 'Global Spären' ),
+	'GlobalBlockList' => array( 'Lëscht vun de globale Spären' ),
+	'RemoveGlobalBlock' => array( 'Global Spär ophiewen' ),
+	'GlobalBlockStatus' => array( 'Ausnahme vun der globaler Spär' ),
 );
 
 /** Malay (Bahasa Melayu) */
