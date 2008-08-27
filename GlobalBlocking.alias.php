@@ -47,7 +47,7 @@ $aliases['de'] = array(
 
 /** Finnish (Suomi) */
 $aliases['fi'] = array(
-	'GlobalBlock' => array( 'Globaali esto' ),
+	'GlobalBlock' => array( 'Globaaliesto' ),
 	'GlobalBlockList' => array( 'Globaalien estojen lista' ),
 );
 
