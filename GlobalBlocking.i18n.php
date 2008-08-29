@@ -89,6 +89,9 @@ The reason given was ''\"$3\"''.
 The block ''$4''.",
 
 	'globalblocking-logpage' => 'Global block log',
+	'globalblocking-logpagetext' => 'This is a log of global blocks which have been made and removed on this wiki.
+It should be noted that global blocks can be made and removed on other wikis, and that these global blocks may affect this wiki.
+To view all active global blocks, you may view the [[Special:GlobalBlockList|global block list]].',
 	'globalblocking-block-logentry' => 'globally blocked [[$1]] with an expiry time of $2',
 	'globalblocking-unblock-logentry' => 'removed global block on [[$1]]',
 	'globalblocking-whitelist-logentry' => 'disabled the global block on [[$1]] locally',
