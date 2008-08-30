@@ -1158,6 +1158,13 @@ A razón que deu foi ''\"\$3\"''. O bloqueo, ''\$4''.",
 	'right-globalblock-whitelist' => 'Deshabilitar bloqueos globais localmente',
 );
 
+/** Gothic (𐌲𐌿𐍄𐌹𐍃𐌺)
+ * @author Jocke Pirat
+ */
+$messages['got'] = array(
+	'globalblocking-unblock-reason' => 'Faírina:',
+);
+
 /** Manx (Gaelg)
  * @author MacTire02
  */
@@ -2693,6 +2700,8 @@ Por favor, note que não pode introduzir um nome de utilizador!',
 	'globalblocking-block-successsub' => 'Bloqueio global com sucesso',
 	'globalblocking-block-alreadyblocked' => 'O endereço IP $1 já está bloqueado globalmente.
 Você pode ver o bloqueio existente na [[Special:Globalblocklist|lista de bloqueios globais]].',
+	'globalblocking-block-bigrange' => 'O intervalo especificado ($1) é demasiado grande para ser bloqueado.
+Pode bloquear, no máximo, 65.536 endereços (intervalos /16)',
 	'globalblocking-list' => 'Lista de endereços IP bloqueados globalmente',
 	'globalblocking-search-legend' => 'Pesquisar bloqueio global',
 	'globalblocking-search-ip' => 'Endereço IP:',
@@ -2708,6 +2717,7 @@ Por favor, introduza um endereço IP válido.',
 	'globalblocking-list-whitelist' => 'estado local',
 	'globalblocking-goto-block' => 'Bloquear globalmente um endereço IP',
 	'globalblocking-goto-unblock' => 'Remover um bloqueio global',
+	'globalblocking-return' => 'Voltar à lista de bloqueios globais',
 	'globalblocking-notblocked' => 'O endereço IP ($1) introduzido não está bloqueado globalmente.',
 	'globalblocking-unblock' => 'Eliminar um bloqueio global',
 	'globalblocking-unblock-ipinvalid' => 'O endereço IP ($1) que introduziu é inválido.
@@ -3356,12 +3366,10 @@ $1',
 	'globalblocking-unblock-legend' => '拎走一個全域封鎖',
 	'globalblocking-unblock-submit' => '拎走全域封鎖',
 	'globalblocking-unblock-reason' => '原因:',
-	'globalblocking-unblock-notblocked' => '你所輸入嘅IP地址 ($1) 無被全域封鎖。',
-	'globalblocking-unblock-unblocked' => "你己經成功噉拎走咗響IP地址 '''$1''' 嘅全域封鎖 #$2 ",
+	'globalblocking-unblock-unblocked' => "你己經成功噉拎走咗響IP地址 '''$1''' 嘅全域封鎖 #$2",
 	'globalblocking-unblock-errors' => '你唔可以拎走嗰個IP地址嘅全域封鎖，因為:
 $1',
 	'globalblocking-unblock-successsub' => '全域封鎖已經成功噉拎走咗',
-	'globalblocking-whitelist-subtitle' => '編輯一個全域封鎖嘅本地狀態',
 	'globalblocking-whitelist-legend' => '改本地狀態',
 	'globalblocking-whitelist-reason' => '改嘅原因:',
 	'globalblocking-whitelist-status' => '本地狀態:',
@@ -3426,12 +3434,10 @@ $1',
 	'globalblocking-unblock-legend' => '移除一个全域封锁',
 	'globalblocking-unblock-submit' => '移除全域封锁',
 	'globalblocking-unblock-reason' => '原因:',
-	'globalblocking-unblock-notblocked' => '您所输入的IP地址 ($1) 没有被全域封锁。',
-	'globalblocking-unblock-unblocked' => "您己经成功地移除了在IP地址 '''$1''' 上的全域封锁 #$2 ",
+	'globalblocking-unblock-unblocked' => "您己经成功地移除了在IP地址 '''$1''' 上的全域封锁 #$2",
 	'globalblocking-unblock-errors' => '您不可以移除该IP地址的全域封锁，因为:
 $1',
 	'globalblocking-unblock-successsub' => '全域封锁已经成功地移除',
-	'globalblocking-whitelist-subtitle' => '编辑一个全域封锁的本地状态',
 	'globalblocking-whitelist-legend' => '更改本地状态',
 	'globalblocking-whitelist-reason' => '改?原因:',
 	'globalblocking-whitelist-status' => '本地状态:',
@@ -3502,7 +3508,7 @@ $1',
 	'globalblocking-unblock-legend' => '移除一個全域封鎖',
 	'globalblocking-unblock-submit' => '移除全域封鎖',
 	'globalblocking-unblock-reason' => '原因:',
-	'globalblocking-unblock-unblocked' => "您己經成功地移除了在IP地址 '''$1''' 上的全域封鎖 #$2 ",
+	'globalblocking-unblock-unblocked' => "您己經成功地移除了在IP地址 '''$1''' 上的全域封鎖 #$2",
 	'globalblocking-unblock-errors' => '您不可以移除該IP地址的全域封鎖，因為:
 $1',
 	'globalblocking-unblock-successsub' => '全域封鎖已經成功地移除',
