@@ -83,6 +83,14 @@ $aliases['hu'] = array(
 	'RemoveGlobalBlock' => array( 'Globális feloldás' ),
 );
 
+/** Indonesian (Bahasa Indonesia) */
+$aliases['id'] = array(
+	'GlobalBlock' => array( 'Pemblokiran global' ),
+	'GlobalBlockList' => array( 'Daftar pemblokiran global' ),
+	'RemoveGlobalBlock' => array( 'Batal pemblokiran global' ),
+	'GlobalBlockStatus' => array( 'Daftar pemblokiran global nonaktif' ),
+);
+
 /** Luxembourgish (Lëtzebuergesch) */
 $aliases['lb'] = array(
 	'GlobalBlock' => array( 'Global Spären' ),
