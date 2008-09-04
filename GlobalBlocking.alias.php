@@ -71,6 +71,14 @@ $aliases['he'] = array(
 	'GlobalBlockStatus' => array( 'רשימה_לבנה_לחסימה_גלובלית', 'מצב_חסימה_גלובלית', 'ביטול_חסימה_גלובלית' ),
 );
 
+/** Croatian (Hrvatski) */
+$aliases['hr'] = array(
+	'GlobalBlock' => array( 'Globalno_blokiraj' ),
+	'GlobalBlockList' => array( 'Globalno_blokirane_adrese' ),
+	'RemoveGlobalBlock' => array( 'Ukloni_globalno_blokiranje', 'Globalno_odblokiraj' ),
+	'GlobalBlockStatus' => array( 'Status_globalnog_blokiranja' ),
+);
+
 /** Haitian (Kreyòl ayisyen) */
 $aliases['ht'] = array(
 	'GlobalBlock' => array( 'BlokajGlobal' ),

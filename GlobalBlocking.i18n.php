@@ -516,19 +516,23 @@ $messages['bg'] = array(
 	'globalblocking-block-success' => 'IP-адресът $1 беше успешно блокиран във всички проекти.',
 	'globalblocking-block-successsub' => 'Глобалното блокиране беше успешно',
 	'globalblocking-block-alreadyblocked' => 'IP адресът $1 е вече блокиран глобално. Можете да прегледате съществуващите блокирания в [[Special:Globalblocklist|списъка с глобални блокирания]].',
+	'globalblocking-block-bigrange' => 'Избраният регистър ($1) е твърде голям, за да бъде изцяло блокиран.
+Наведнъж е възможно да се блокират най-много 65,536 адреса (/16 регистри)',
 	'globalblocking-list' => 'Списък на глобално блокирани IP адреси',
 	'globalblocking-search-legend' => 'Търсене на глобално блокиране',
 	'globalblocking-search-ip' => 'IP адрес:',
 	'globalblocking-search-submit' => 'Търсене на блокирания',
 	'globalblocking-list-ipinvalid' => 'Потърсеният от нас IP-адрес ($1) е невалиден.
 Въведете валиден IP-адрес.',
-	'globalblocking-search-errors' => 'Търсенето беше неуспешно. Причина:
+	'globalblocking-search-errors' => 'Търсенето беше неуспешно по {{PLURAL:$1|следната причина|следните причини}}: 
 $1',
+	'globalblocking-list-blockitem' => "$1: '''$2''' (''$3'') блокира глобално '''[[Special:Contributions/$4|$4]]''' ''($5)''",
 	'globalblocking-list-expiry' => 'срок на изтичане $1',
 	'globalblocking-list-anononly' => 'само анонимни',
 	'globalblocking-list-unblock' => 'отблокиране',
 	'globalblocking-list-whitelisted' => 'локално изключен от $1: $2',
 	'globalblocking-list-whitelist' => 'локален статут',
+	'globalblocking-goto-block' => 'Глобално блокиране на IP-адрес',
 	'globalblocking-goto-unblock' => 'Премахване на глобално блокиране',
 	'globalblocking-goto-status' => 'Промяна на локалния статут на глобално блокиране',
 	'globalblocking-return' => 'Връщане към списъка с глобалните блокирания',
@@ -543,6 +547,9 @@ $1',
 	'globalblocking-unblock-errors' => 'Не можете да премахнете глобалното блокиране на този IP адрес поради {{PLURAL:$1|следната причина|следните причини}}:',
 	'globalblocking-unblock-successsub' => 'Глобалното блокиране беше премахнато успешно',
 	'globalblocking-unblock-subtitle' => 'Премахване на глобално блокиране',
+	'globalblocking-unblock-intro' => 'Можете да използвате този формуляр, за да премахнете глобално блокиране.
+[[Special:Globalblocklist|Върнете се към списъка с глобални блокирания]].',
+	'globalblocking-whitelist' => 'Локално състояние на глобалните блокирания',
 	'globalblocking-whitelist-legend' => 'Промяна на локалния статут',
 	'globalblocking-whitelist-reason' => 'Причина за промяната:',
 	'globalblocking-whitelist-status' => 'Локален статут:',
@@ -551,12 +558,26 @@ $1',
 	'globalblocking-whitelist-whitelisted' => "Успешно изключихте глобално блокиране #$2 на IP адрес '''$1''' в {{SITENAME}}.",
 	'globalblocking-whitelist-dewhitelisted' => "Успешно активирахте глобално блокиране #$2 на IP адрес '''$1''' в {{SITENAME}}.",
 	'globalblocking-whitelist-successsub' => 'Локалният статут беше променен успешно',
+	'globalblocking-whitelist-nochange' => 'Не сте внесли промени в локалното състояние на това блокиране.
+[[Special:GlobalBlockList|Върнете се към списъка с глобални блокирания]].',
+	'globalblocking-whitelist-errors' => 'Вашият опит за промяна на локалното състояние на глобалното блокиране беше неуспешен по  {{PLURAL:$1|следната причина|следните причини}}:',
+	'globalblocking-whitelist-intro' => 'Можете да използвате този формуляр, за да промените локалното състояние на дадено глобално блокиране.
+Ако глобалното блокиране бъде свалено за това уики, потребителите с достъп от съответния IP-адрес ще могат да редактират нормално.
+[[Special:Globalblocklist|Върнете се към списъка с глобални блокирания]].',
 	'globalblocking-blocked' => "Вашият IP адрес беше блокиран във всички уикита от '''$1''' (''$2'').
 Посочената причина е ''„$3“''. Блокирането ''$4''.",
 	'globalblocking-logpage' => 'Дневник на глобалните блокирания',
+	'globalblocking-logpagetext' => 'Това е дневник на глобалните блокирания, които са били наложени или премахнати в това уики.
+Глобални блокирания могат да се налагат и премахват и в други уикита, и те могат да се отразят локално и тук.
+[[Special:GlobalBlockList|Вижте списъка на всички текущи глобални блокирания.]]',
 	'globalblocking-block-logentry' => 'глобално блокиране на [[$1]] със срок на изтичане $2',
+	'globalblocking-unblock-logentry' => 'премахна глобалното блокиране на [[$1]]',
+	'globalblocking-whitelist-logentry' => 'премахна на локално ниво глобалното блокиране на [[$1]]',
+	'globalblocking-dewhitelist-logentry' => 'възвърна на локално ниво глобалното блокиране на [[$1]]',
 	'globalblocklist' => 'Списък на глобално блокираните IP адреси',
 	'globalblock' => 'Глобално блокиране на IP адрес',
+	'globalblockstatus' => 'Локално състояние на глобалните блокирания',
+	'removeglobalblock' => 'Премахване на глобално блокиране',
 	'right-globalblock' => 'Създаване на глобални блокирания',
 	'right-globalunblock' => 'Премахване на глобални блокирания',
 	'right-globalblock-whitelist' => 'Локално спиране на глобалните блокирания',
@@ -1490,10 +1511,10 @@ Ako je globalno blokiranje onemogućeno na ovom wikiju, suradnici s tom IP adres
 Razlog je ''\"\$1\"''.
 Blokiranje ''\$4''.",
 	'globalblocking-logpage' => 'Evidencija globalnog blokiranja',
-	'globalblocking-block-logentry' => 'globalno blokiran [[$1]] s istekom vremena od $2',
-	'globalblocking-unblock-logentry' => 'uklonjeno globalno blokiranje za [[$1]]',
-	'globalblocking-whitelist-logentry' => 'onemogući globalno blokiranje za [[$1]] mjesno',
-	'globalblocking-dewhitelist-logentry' => 'omogući globalno blokiranje za [[$1]] mjesno',
+	'globalblocking-block-logentry' => 'globalno blokirao [[$1]] s istekom vremena od $2',
+	'globalblocking-unblock-logentry' => 'uklonio globalno blokiranje za [[$1]]',
+	'globalblocking-whitelist-logentry' => 'onemogućio globalno blokiranje za [[$1]] mjesno',
+	'globalblocking-dewhitelist-logentry' => 'omogućio globalno blokiranje za [[$1]] mjesno',
 	'globalblocklist' => 'Popis globalno blokiranih IP adresa',
 	'globalblock' => 'Globalno blokiraj IP adresu',
 	'globalblockstatus' => 'Mjesni status globalnih blokiranja',
@@ -2000,6 +2021,13 @@ Alesan sing diwènèhaké yaiku ''\"\$3\"''. Blokade iki bakal kadaluwarsa ing '
 	'right-globalblock' => 'Nggawé pamblokiran global',
 	'right-globalunblock' => 'Ilangana pamblokiran global',
 	'right-globalblock-whitelist' => 'Jabel blokade global sacara lokal',
+);
+
+/** Georgian (ქართული)
+ * @author Malafaya
+ */
+$messages['ka'] = array(
+	'globalblocking-unblock-reason' => 'მიზეზი:',
 );
 
 /** Khmer (ភាសាខ្មែរ)
