@@ -3481,6 +3481,11 @@ $1',
 你亦都可以睇吓個[[Special:Globalblocklist|全域封鎖一覽]]。',
 	'globalblocking-block-successsub' => '全域封鎖成功',
 	'globalblocking-block-alreadyblocked' => '個IP地址 $1 已經全域封鎖緊。你可以響[[Special:Globalblocklist|全域封鎖一覽]]度睇吓現時嘅封鎖。',
+	'globalblocking-block-bigrange' => '你所指定嘅範圍 ($1) 太大去封鎖。
+你可以封鎖，最多65,536個地址 (/16 範圍)',
+	
+	'globalblocking-list-intro' => '呢個係全部現時生效緊嘅全域封鎖。
+一啲嘅封鎖標明咗響本地停用：即係呢個封鎖響其它wiki度應用咗，但係本地管理員決定咗響呢個wiki度停用佢哋。',
 	'globalblocking-list' => '全域封鎖IP地址一覽',
 	'globalblocking-search-legend' => '搵一個全域封鎖',
 	'globalblocking-search-ip' => 'IP地址:',
@@ -3495,6 +3500,14 @@ $1',
 	'globalblocking-list-unblock' => '解封',
 	'globalblocking-list-whitelisted' => '由$1於本地封鎖: $2',
 	'globalblocking-list-whitelist' => '本地狀態',
+	'globalblocking-goto-block' => '全域封鎖一個 IP 地址',
+	'globalblocking-goto-unblock' => '拎走一個全域封鎖',
+	'globalblocking-goto-status' => '改一個全域封鎖嘅本地狀態',
+		
+	'globalblocking-return' => '返去全域封鎖一覽',
+	'globalblocking-notblocked' => '你所輸入嘅 IP 地址 ($1) 並無全域封鎖到。',
+
+	'globalblocking-unblock' => '拎走一個全域封鎖',
 	'globalblocking-unblock-ipinvalid' => '你輸入嘅IP地址 ($1) 係無效嘅。
 請留意嘅係你唔可以輸入一個用戶名！',
 	'globalblocking-unblock-legend' => '拎走一個全域封鎖',
@@ -3504,6 +3517,11 @@ $1',
 	'globalblocking-unblock-errors' => '你唔可以拎走嗰個IP地址嘅全域封鎖，因為:
 $1',
 	'globalblocking-unblock-successsub' => '全域封鎖已經成功噉拎走咗',
+	'globalblocking-unblock-subtitle' => '拎走全域封鎖',
+	'globalblocking-unblock-intro' => '你可以用呢個表去拎走一個全域封鎖。
+[[Special:GlobalBlockList|撳呢度]]返去個全域封鎖一覽。',
+	
+	'globalblocking-whitelist' => '全域封鎖嘅本地狀態',
 	'globalblocking-whitelist-legend' => '改本地狀態',
 	'globalblocking-whitelist-reason' => '改嘅原因:',
 	'globalblocking-whitelist-status' => '本地狀態:',
@@ -3512,15 +3530,30 @@ $1',
 	'globalblocking-whitelist-whitelisted' => "你已經成功噉響{{SITENAME}}嘅IP地址 '''$1''' 度停用咗全域封鎖 #$2。",
 	'globalblocking-whitelist-dewhitelisted' => "你已經成功噉響{{SITENAME}}嘅IP地址 '''$1''' 度再次啟用咗全域封鎖 #$2。",
 	'globalblocking-whitelist-successsub' => '本地狀態已經成功噉改咗',
+	'globalblocking-whitelist-nochange' => '你未對呢個封鎖嘅本地狀態改過嘢。
+[[Special:GlobalBlockList|返去全域封鎖一覽]]。',
+	'globalblocking-whitelist-errors' => '基於下面嘅{{PLURAL:$1|原因|原因}}，你改過嘅全域封鎖本地狀態唔成功：',
+	'globalblocking-whitelist-intro' => "你可以用呢個表去改全域封鎖嘅本地狀態。
+如果一個全域封鎖響呢個wiki度停用咗，受影響嘅 IP 地址可以正常噉編輯。
+[[Special:Globalblocklist|返去全域封鎖一覽]]。",
+
 	'globalblocking-blocked' => "你嘅IP地址已經由'''\$1''' (''\$2'') 響所有嘅Wikimedia wiki 度全部封鎖晒。
 個原因係 ''\"\$3\"''。個封鎖會響''\$4''到期。",
+
 	'globalblocking-logpage' => '全域封鎖日誌',
+	'globalblocking-logpagetext' => '呢個係響呢個wiki度，整過同拎走過嘅全域封鎖日誌。
+要留意嘅係全域封鎖可以響其它嘅wiki度整同拎走。
+要睇活躍嘅全域封鎖，你可以去睇個[[Special:GlobalBlockList|全域封鎖一覽]]。',
 	'globalblocking-block-logentry' => '全域封鎖咗[[$1]]於 $2 到期',
 	'globalblocking-unblock-logentry' => '拎走咗[[$1]]嘅全域封鎖',
 	'globalblocking-whitelist-logentry' => '停用咗[[$1]]響本地嘅全域封鎖',
 	'globalblocking-dewhitelist-logentry' => '再開[[$1]]響本地嘅全域封鎖',
 	'globalblocklist' => '全域封鎖IP地址一覽',
 	'globalblock' => '全域封鎖一個IP地址',
+	'globalblockstatus' => '全域封鎖嘅本地狀態',
+	'removeglobalblock' => '拎走一個全域封鎖',
+	
+	// User rights
 	'right-globalblock' => '整一個全域封鎖',
 	'right-globalunblock' => '拎走全域封鎖',
 	'right-globalblock-whitelist' => '響本地停用全域封鎖',
@@ -3549,6 +3582,11 @@ $1',
 您亦都可以参看[[Special:Globalblocklist|全域封锁名单]]。',
 	'globalblocking-block-successsub' => '全域封锁成功',
 	'globalblocking-block-alreadyblocked' => '该IP地址 $1 已经全域封锁中。您可以在[[Special:Globalblocklist|全域封锁名单]]中参看现时的封锁。',
+	'globalblocking-block-bigrange' => '您所指定的范围 ($1) 太大去封锁。
+您可以封锁，最多65,536个地址 (/16 范围)',
+	
+	'globalblocking-list-intro' => '这是全部现时生效中的全域封锁。
+一些的封锁已标明在本地停用：即是这个封锁在其它wiki上应用，但是本地管理员已决定在这个wiki上停用它们。',
 	'globalblocking-list' => '全域封锁IP地址名单',
 	'globalblocking-search-legend' => '搜寻一个全域封锁',
 	'globalblocking-search-ip' => 'IP地址:',
@@ -3563,6 +3601,14 @@ $1',
 	'globalblocking-list-unblock' => '解除封锁',
 	'globalblocking-list-whitelisted' => '由$1于本地封锁: $2',
 	'globalblocking-list-whitelist' => '本地状态',
+	'globalblocking-goto-block' => '全域封锁一个 IP 地址',
+	'globalblocking-goto-unblock' => '移除一个全域封锁',
+	'globalblocking-goto-status' => '改一个全域封锁?本地状态',
+		
+	'globalblocking-return' => '回到全域封锁名单',
+	'globalblocking-notblocked' => '您所输入的 IP 地址 ($1) 并无全域封锁。',
+
+	'globalblocking-unblock' => '移除一个全域封锁',
 	'globalblocking-unblock-ipinvalid' => '您所输入的IP地址 ($1) 是无效的。
 请留意的是您不可以输入一个用户名！',
 	'globalblocking-unblock-legend' => '移除一个全域封锁',
@@ -3572,6 +3618,11 @@ $1',
 	'globalblocking-unblock-errors' => '您不可以移除该IP地址的全域封锁，因为:
 $1',
 	'globalblocking-unblock-successsub' => '全域封锁已经成功地移除',
+	'globalblocking-unblock-subtitle' => '移除全域封锁',
+	'globalblocking-unblock-intro' => '您可以用这个表格去移除一个全域封锁。
+[[Special:GlobalBlockList|点击这里]]回到全域封锁名单。',
+	
+	'globalblocking-whitelist' => '全域封锁的本地状态',
 	'globalblocking-whitelist-legend' => '更改本地状态',
 	'globalblocking-whitelist-reason' => '改?原因:',
 	'globalblocking-whitelist-status' => '本地状态:',
@@ -3579,16 +3630,30 @@ $1',
 	'globalblocking-whitelist-submit' => '更改本地状态',
 	'globalblocking-whitelist-whitelisted' => "您已经成功地在{{SITENAME}}上的IP地址 '''$1''' 中停用了全域封锁 #$2。",
 	'globalblocking-whitelist-dewhitelisted' => "您已经成功地在{{SITENAME}}上的IP地址 '''$1''' 中再次启用了全域封锁 #$2。",
-	'globalblocking-whitelist-successsub' => '本地状态已经成功地更改?',
+	'globalblocking-whitelist-successsub' => '本地状态已经成功地更改',
+	'globalblocking-whitelist-nochange' => '您未对这个封锁的本地状态更改过。
+[[Special:GlobalBlockList|回到全域封锁名单]]。',
+	'globalblocking-whitelist-errors' => '基于以下的{{PLURAL:$1|原因|原因}}，您更改过的全域封锁本地状态不成功：',
+	'globalblocking-whitelist-intro' => "您可以利用这个表格去更改全域封锁的本地状态。
+如果一个全域封锁在这个wiki度停用，受影响的 IP 地址可以正常地编辑。
+[[Special:Globalblocklist|回到全域封锁名单]]。",
+
 	'globalblocking-blocked' => "您的IP地址已经由'''\$1''' (''\$2'') 在所有的Wikimedia wiki 中全部封锁。
 而理由是 ''\"\$3\"''。该封锁将会在''\$4''到期。",
 	'globalblocking-logpage' => '全域封锁日志',
+	'globalblocking-logpagetext' => '这个是在这个wiki中，弄过和移除整过的全域封锁日志。
+要留意的是全域封锁可以在其它的wiki中度弄和移除。
+要查看活跃的全域封锁，您可以去参阅[[Special:GlobalBlockList|全域封锁名单]]。',
 	'globalblocking-block-logentry' => '全域封锁了[[$1]]于 $2 到期',
 	'globalblocking-unblock-logentry' => '移除了[[$1]]的全域封锁',
 	'globalblocking-whitelist-logentry' => '停用了[[$1]]于本地的全域封锁',
 	'globalblocking-dewhitelist-logentry' => '再次启用[[$1]]于本地的全域封锁',
 	'globalblocklist' => '全域封锁IP地址名单',
 	'globalblock' => '全域封锁一个IP地址',
+	'globalblockstatus' => '全域封锁的本地状态',
+	'removeglobalblock' => '移除一个全域封锁',
+	
+	// User rights
 	'right-globalblock' => '弄一个全域封锁',
 	'right-globalunblock' => '移除全域封锁',
 	'right-globalblock-whitelist' => '在本地停用全域封锁',
@@ -3618,6 +3683,11 @@ $1',
 您亦都可以參看[[Special:Globalblocklist|全域封鎖名單]]。',
 	'globalblocking-block-successsub' => '全域封鎖成功',
 	'globalblocking-block-alreadyblocked' => '該IP地址 $1 已經全域封鎖中。您可以在[[Special:Globalblocklist|全域封鎖名單]]中參看現時的封鎖。',
+	'globalblocking-block-bigrange' => '您所指定的範圍 ($1) 太大去封鎖。
+您可以封鎖，最多65,536個地址 (/16 範圍)',
+	
+	'globalblocking-list-intro' => '這是全部現時生效中的全域封鎖。
+一些的封鎖已標明在本地停用：即是這個封鎖在其它wiki上應用，但是本地管理員已決定在這個wiki上停用它們。',
 	'globalblocking-block-bigrange' => '指定封鎖的區段($1)過於龐大。
 您最多只能封鎖65536個IP位址( /16區段)',
 	'globalblocking-list' => '全域封鎖IP地址名單',
@@ -3634,9 +3704,15 @@ $1',
 	'globalblocking-list-unblock' => '解除封鎖',
 	'globalblocking-list-whitelisted' => '由$1於本地封鎖: $2',
 	'globalblocking-list-whitelist' => '本地狀態',
-	'globalblocking-goto-unblock' => '移除全域封鎖',
+	'globalblocking-goto-block' => '全域封鎖一個 IP 地址',
+	'globalblocking-goto-unblock' => '移除一個全域封鎖',
+	'globalblocking-goto-status' => '改一個全域封鎖嘅本地狀態',
+		
 	'globalblocking-return' => '回到全域封鎖清單',
 	'globalblocking-notblocked' => '您輸入的IP位址($1)尚未被全域封鎖。',
+
+	'globalblocking-unblock' => '移除一個全域封鎖',
+	'globalblocking-goto-unblock' => '移除全域封鎖',
 	'globalblocking-unblock-ipinvalid' => '您所輸入的IP地址 ($1) 是無效的。
 請留意的是您不可以輸入一個用戶名！',
 	'globalblocking-unblock-legend' => '移除一個全域封鎖',
@@ -3646,6 +3722,11 @@ $1',
 	'globalblocking-unblock-errors' => '您不可以移除該IP地址的全域封鎖，因為:
 $1',
 	'globalblocking-unblock-successsub' => '全域封鎖已經成功地移除',
+	'globalblocking-unblock-subtitle' => '移除全域封鎖',
+	'globalblocking-unblock-intro' => '您可以用這個表格去移除一個全域封鎖。
+[[Special:GlobalBlockList|點擊這裏]]回到全域封鎖名單。',
+	
+	'globalblocking-whitelist' => '全域封鎖的本地狀態',
 	'globalblocking-whitelist-legend' => '更改本地狀態',
 	'globalblocking-whitelist-reason' => '改嘅原因:',
 	'globalblocking-whitelist-status' => '本地狀態:',
@@ -3653,16 +3734,30 @@ $1',
 	'globalblocking-whitelist-submit' => '更改本地狀態',
 	'globalblocking-whitelist-whitelisted' => "您已經成功地在{{SITENAME}}上的IP地址 '''$1''' 中停用了全域封鎖 #$2。",
 	'globalblocking-whitelist-dewhitelisted' => "您已經成功地在{{SITENAME}}上的IP地址 '''$1''' 中再次啟用了全域封鎖 #$2。",
-	'globalblocking-whitelist-successsub' => '本地狀態已經成功地更改咗',
+	'globalblocking-whitelist-successsub' => '本地狀態已經成功地更改',
+	'globalblocking-whitelist-nochange' => '您未對這個封鎖的本地狀態更改過。
+[[Special:GlobalBlockList|回到全域封鎖名單]]。',
+	'globalblocking-whitelist-errors' => '基於以下的{{PLURAL:$1|原因|原因}}，您更改過的全域封鎖本地狀態不成功：',
+	'globalblocking-whitelist-intro' => "您可以利用這個表格去更改全域封鎖的本地狀態。
+如果一個全域封鎖在這個wiki度停用，受影響的 IP 地址可以正常地編輯。
+[[Special:Globalblocklist|回到全域封鎖名單]]。",
+
 	'globalblocking-blocked' => "您的IP地址已經由'''\$1''' (''\$2'') 在所有的Wikimedia wiki 中全部封鎖。
 而理由是 ''\"\$3\"''。該封鎖將會在''\$4''到期。",
 	'globalblocking-logpage' => '全域封鎖日誌',
+	'globalblocking-logpagetext' => '這個是在這個wiki中，弄過和移除整過的全域封鎖日誌。
+要留意的是全域封鎖可以在其它的wiki中度弄和移除。
+要查看活躍的全域封鎖，您可以去參閱[[Special:GlobalBlockList|全域封鎖名單]]。',
 	'globalblocking-block-logentry' => '全域封鎖了[[$1]]於 $2 到期',
 	'globalblocking-unblock-logentry' => '移除了[[$1]]的全域封鎖',
 	'globalblocking-whitelist-logentry' => '停用了[[$1]]於本地的全域封鎖',
 	'globalblocking-dewhitelist-logentry' => '再次啟用[[$1]]於本地的全域封鎖',
 	'globalblocklist' => '全域封鎖IP地址名單',
 	'globalblock' => '全域封鎖一個IP地址',
+	'globalblockstatus' => '全域封鎖的本地狀態',
+	'removeglobalblock' => '移除一個全域封鎖',
+	
+	// User rights
 	'right-globalblock' => '弄一個全域封鎖',
 	'right-globalunblock' => '移除全域封鎖',
 	'right-globalblock-whitelist' => '在本地停用全域封鎖',
