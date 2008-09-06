@@ -1676,6 +1676,9 @@ Per favor nota que tu non pote entrar un nomine de usator!',
 Le motivo date esseva ''\"\$3\"''.
 Le blocada ''\$4''.",
 	'globalblocking-logpage' => 'Registro de blocadas global',
+	'globalblocking-logpagetext' => 'Isto es un registro de blocadas global que ha essite facite e removite in iste wiki.
+Il debe esser notate que le blocadas global pote esser facite e removite in altere wikis, e que iste blocadas global pote afficer etiam iste wiki.
+Pro vider tote le blocadas global active, tu pote vider le [[Special:GlobalBlockList|lista de blocadas global]].',
 	'globalblocking-block-logentry' => 'blocava globalmente [[$1]] con un tempore de expiration de $2',
 	'globalblocking-unblock-logentry' => 'removeva blocada global de [[$1]]',
 	'globalblocking-whitelist-logentry' => 'disactivava localmente le blocada global de [[$1]]',
@@ -1832,7 +1835,7 @@ $messages['it'] = array(
 	'globalblocking-unblock-legend' => 'Rimuovi un blocco globale',
 	'globalblocking-unblock-submit' => 'Rimuovi blocco globale',
 	'globalblocking-unblock-reason' => 'Motivo del blocco:',
-	'globalblocking-unblock-unblocked' => "Hai rimosso con successo il blocco globale #2 sull'indirizzo IP '''$1'''",
+	'globalblocking-unblock-unblocked' => "È stato rimosso con successo il blocco globale #$2 sull'indirizzo IP '''$1'''",
 	'globalblocking-unblock-errors' => 'La rimozione del blocco globale che hai richiesto non è stata eseguita per {{PLURAL:$1|il seguente motivo|i seguenti motivi}}:',
 	'globalblocking-unblock-successsub' => 'Blocco globale rimosso con successo',
 	'globalblocking-unblock-subtitle' => 'Rimozione blocco globale',

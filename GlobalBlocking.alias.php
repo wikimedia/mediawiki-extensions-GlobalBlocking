@@ -99,6 +99,13 @@ $aliases['id'] = array(
 	'GlobalBlockStatus' => array( 'Daftar pemblokiran global nonaktif' ),
 );
 
+/** Korean (한국어) */
+$aliases['ko'] = array(
+	'GlobalBlock' => array( '전체차단' ),
+	'GlobalBlockList' => array( '전체차단목록' ),
+	'RemoveGlobalBlock' => array( '전체차단취소', '전체차단해제' ),
+);
+
 /** Luxembourgish (Lëtzebuergesch) */
 $aliases['lb'] = array(
 	'GlobalBlock' => array( 'Global Spären' ),
