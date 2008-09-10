@@ -144,6 +144,12 @@ $messages['qqq'] = array(
 	'globalblocking-whitelist-reason' => '{{Identical|Reason for change}}',
 	'globalblocking-whitelist-status' => '{{Identical|Local status}}',
 	'globalblocking-whitelist-submit' => '{{Identical|Change local status}}',
+	'globalblocking-blocked' => "A message shown to a [[mw:Extension:GlobalBlocking|globally blocked]] user trying to edit.
+
+* <code>$1</code> is the username of the blocking user (steward), with link
+* <code>$2</code> is the project name where the user is registered (usually “meta.wikimedia.org” on Wikimedia servers)
+* <code>$3</code> is the reason specified by the blocking user
+* <code>$4</code> is either the contents of [[MediaWiki:Infiniteblock]] (''{{int:Infiniteblock}}''), or [[MediaWiki:Expiringblock]] (''{{int:Expiringblock}}'') with the expiry time",
 	'globalblocking-logpagetext' => 'Shown as header of [[meta:Special:Log/gblblock]] (example only, this extension is not installed on Betawiki)',
 	'globalblocking-unblock-logentry' => "This message is a log entry. '''$1''' are contributions of an IP. For an example see http://meta.wikimedia.org/wiki/Special:Log/gblblock?uselang=en",
 	'globalblock' => 'Same special page with this page:
@@ -168,14 +174,12 @@ $messages['af'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Ander tyd:',
 	'globalblocking-block-legend' => "Versper 'n gebruiker globaal",
 	'globalblocking-block-options' => 'Opsies',
-	'globalblocking-block-errors' => 'Die versperring was nie suksesvol nie, as gevolg van:
-$1',
+	'globalblocking-block-errors' => 'Die versperring was nie suksesvol nie, as gevolg van die volgende {{PLURAL:$1|rede|redes}}:',
 	'globalblocking-block-ipinvalid' => "Die IP adres ($1) wat U ingevoer het is ongeldig.
 Let asseblief dat U nie 'n gebruikersnaam kan invoer nie!",
 	'globalblocking-block-expiryinvalid' => 'Die verstryking ($1) wat U ingevoer het is ongeldig.',
 	'globalblocking-block-submit' => 'Versper hierdie IP adres globaal',
-	'globalblocking-block-success' => 'Die IP adres $1 is suksesvol versper op alle Wikimedia projekte.
-U mag dalk die [[Special:GlobalBlockList|lys van globale versperrings]] wil konsulteer.',
+	'globalblocking-block-success' => 'Die IP adres $1 is op alle Wikimedia projekte geblokkeer.',
 	'globalblocking-block-successsub' => 'Globale versperring suksesvol',
 	'globalblocking-block-alreadyblocked' => 'Die IP adres $1 is alreeds globaal versper. U kan die bestaande versperring op die [[Special:GlobalBlockList|lys van globale versperrings]] bekyk.',
 	'globalblocking-block-bigrange' => 'Die reeks wat u verskaf het ($1) is te groot om te versper. U mag op die meeste 65.536 adresse versper (/16-reekse)',
@@ -185,8 +189,7 @@ U mag dalk die [[Special:GlobalBlockList|lys van globale versperrings]] wil kons
 	'globalblocking-search-submit' => 'Soek vir versperrings',
 	'globalblocking-list-ipinvalid' => "Die IP adres wat U na gesoek het ($1) is ongeldig.
 Voer asseblief 'n geldige IP adres in.",
-	'globalblocking-search-errors' => 'U soektog was nie suksesvol nie, as gevolg van:
-$1',
+	'globalblocking-search-errors' => 'U soektog was nie suksesvol nie, as gevolg van die volgende {{PLURAL:$1|rede|redes}}:',
 	'globalblocking-list-blockitem' => "$1: '''$2''' (''$3'') het '''[[Special:Contributions/$4|$4]]''' globaal versper, met ''($5)''",
 	'globalblocking-list-expiry' => 'verstryking $1',
 	'globalblocking-list-anononly' => 'anoniem-alleen',
@@ -199,8 +202,7 @@ Let asseblief dat U nie 'n gebruikersnaam kan invoer nie!",
 	'globalblocking-unblock-submit' => 'Verwyder globale versperring',
 	'globalblocking-unblock-reason' => 'Rede:',
 	'globalblocking-unblock-unblocked' => "U het suksesvol die globale versperring #$2 op die IP adres '''$1''' verwyder",
-	'globalblocking-unblock-errors' => 'U kan nie die globale versperring vir daardie IP adres verwyder nie, as gevolg van:
-$1',
+	'globalblocking-unblock-errors' => 'Die globale versperring is nie verwyder as gevolg van die volgende {{PLURAL:$1|rede|redes}}:',
 	'globalblocking-unblock-successsub' => 'Globale versperring suksesvol verwyder',
 	'globalblocking-unblock-subtitle' => 'Verwyder globale versperring',
 	'globalblocking-whitelist-legend' => 'Wysig lokale status',
@@ -300,7 +302,7 @@ $messages['ar'] = array(
 [[Special:GlobalBlockList|رجوع إلى قائمة المنع العامة]].',
 	'globalblocking-whitelist-errors' => 'تغييرك للحالة المحلية للمنع العام لم يكن ناجحا، {{PLURAL:$1|للسبب التالي|للأسباب التالية}}:',
 	'globalblocking-whitelist-intro' => 'يمكنك استخدام هذه الاستمارة لتعديل الحالة المحلية لمنع عام. لو أن منعا عاما تم تعطيله في هذا الويكي، المستخدمون على عنوان الأيبي المتأثر سيمكنهم التعديل بشكل طبيعي.
-[[Special:GlobalBlockList|اضغط هنا]] للرجوع إلى قائمة المنع العامة.',
+[[Special:GlobalBlockList|رجوع إلى قائمة المنع العامة]].',
 	'globalblocking-blocked' => "عنوان الأيبي الخاص بك تم منعه على كل الويكيات بواسطة '''\$1''' (''\$2'').
 السبب المعطى كان ''\"\$3\"''. المنع ''\$4''.",
 	'globalblocking-logpage' => 'سجل المنع العام',
@@ -694,7 +696,7 @@ Můžete se vrátit na [[Special:GlobalBlockList|seznam globálně zablokovanýc
 	'globalblocking-whitelist-errors' => 'Z {{PLURAL:$1|následujícího důvodu|následujících důvodů}} se nepodařilo změnit lokální stav globálního zablokování:',
 	'globalblocking-whitelist-intro' => 'Tento formulář můžete použít na změnu místního stavu globálního zablokování. Pokud bude globální blok na této wiki zrušen, budou moci uživatelé na dotčené IP adrese normálně editovat. [[Special:GlobalBlockList|Návrat se seznam globální bloků]]',
 	'globalblocking-blocked' => "Vaší IP adrese byla globálně na všech wiki zablokována možnost editace. Zablokoval vás uživatel '''$1''' (''$2'').
-Udaným důvodem bylo ''„$3“''. Zablokování ''$4''.",
+Udaným důvodem bylo ''„$3“''. Zablokování platí ''$4''.",
 	'globalblocking-logpage' => 'Kniha globálních zablokování',
 	'globalblocking-logpagetext' => 'Toto je kniha globální blokování a jejich uvolnění provedených na této wiki. 
 Globální blokování lze provést i na jiných wiki a i ty ovlivňují blokování na této wiki. 
@@ -795,6 +797,13 @@ Für eine Liste aller aktiven globalen Sperren siehe die [[Special:GlobalBlockLi
 	'right-globalblock' => 'Globale Sperren einrichten',
 	'right-globalunblock' => 'Globale Sperren aufheben',
 	'right-globalblock-whitelist' => 'Globale Sperren lokal abschalten',
+);
+
+/** Greek (Ελληνικά)
+ * @author Consta
+ */
+$messages['el'] = array(
+	'globalblocking-unblock-reason' => 'Λόγος:',
 );
 
 /** Esperanto (Esperanto)
@@ -1714,7 +1723,7 @@ Ingat, Anda tidak dapat memasukkan nama pengguna!',
 	'globalblocking-block-success' => 'Alamat IP $1 berhasil diblokir di seluruh proyek.',
 	'globalblocking-block-successsub' => 'Pemblokiran global berhasil',
 	'globalblocking-block-alreadyblocked' => 'Alamat IP $1 telah diblokir secara global.
-Anda dapat melihat [[Special:GlobalBlockList|daftar pemblokiran global]].',
+Anda dapat melihat pemblokiran saat ini di [[Special:GlobalBlockList|daftar pemblokiran global]].',
 	'globalblocking-block-bigrange' => 'Rentang yang Anda masukkan ($1) terlalu besar untuk diblokir.
 Anda dapat memblokir maksimum 65.536 alamat (/16 rentang)',
 	'globalblocking-list-intro' => 'Ini adalah daftar seluruh pemblokiran global yang efektif pada saat ini.
@@ -1762,7 +1771,7 @@ Ingat, Anda tidak dapat memasukkan nama pengguna!',
 [[Special:GlobalBlockList|Kembali ke daftar pemblokiran global]].',
 	'globalblocking-whitelist-errors' => 'Perubahan atas status lokal dari pemblokiran global tidak berhasil; atas {{PLURAL:$1|alasan|alasan-alasan}} berikut:',
 	'globalblocking-whitelist-intro' => 'Anda dapat menggunakan formulir ini untuk menyunting status lokal dari suatu pemblokiran global.
-Jika sebuah pemblokiran global dinon-aktifkan di wiki ini, pengguna-pengguna dengan alamat IP tersebut akan dapat menyunting secara normal.
+Jika sebuah pemblokiran global dinon-aktifkan di wiki ini, pengguna-pengguna dengan alamat IP tersebut akan dapat kembali menyunting secara normal.
 [[Special:GlobalBlockList|Kembali ke daftar pemblokiran global]].',
 	'globalblocking-blocked' => "Alamat IP Anda telah diblokir di seluruh wiki oleh '''\$1''' (''\$2'').
 Alasan pemblokiran adalah ''\"\$3\"''.
@@ -2055,6 +2064,7 @@ $messages['km'] = array(
 /** Korean (한국어)
  * @author Albamhandae
  * @author Ficell
+ * @author Kwj2772
  */
 $messages['ko'] = array(
 	'globalblocking-block' => 'IP 주소를 모든 위키에서 차단',
@@ -2066,8 +2076,13 @@ $messages['ko'] = array(
 	'globalblocking-list-blockitem' => "$1: '''$2''' ($3) 이(가) '''[[Special:Contributions/$4|$4]]''' 을(를) 전체 위키에서 차단하였습니다. ($5)",
 	'globalblocking-goto-status' => '전체 차단의 로컬 상태 바꾸기',
 	'globalblocking-unblock' => '전체 차단 제거',
+	'globalblocking-unblock-reason' => '이유:',
 	'globalblocking-whitelist' => '전체 차단의 로컬 상태',
+	'globalblocking-blocked' => "당신은 '''\$1''' (''\$2'')에 의해 모든 위키에서 차단되었습니다.
+차단 사유는 \"\$3\"이며, 기한은 \"\$4\"입니다.",
 	'globalblocking-logpage' => '전체 위키 차단 기록',
+	'globalblocking-block-logentry' => '[[$1]] 사용자를 모든 위키에서 $2 차단함',
+	'globalblocking-unblock-logentry' => '[[$1]]의 전체 위키 차단을 해제함',
 	'globalblocklist' => '모든 위키에서 차단된 IP 목록',
 	'globalblock' => '전체 위키에서 IP 주소를 차단',
 	'globalblockstatus' => '전체 차단의 로컬 상태',
@@ -2616,8 +2631,12 @@ Merk at du ikke kan skrive inn brukernavn.',
 	'globalblocking-whitelist-errors' => 'Endringen i lokal status lyktes ikke fordi:<!--{{PLURAL:$1}}-->',
 	'globalblocking-whitelist-intro' => 'Du kan bruke dette skjemaet til å redigere en global blokkerings lokale status. Om en global blokkering er slått av på denne wikien, vil brukerne av de påvirkede IP-adressene kunne redigere normalt. [[Special:GlobalBlockList|Tilbake til den globale blokkeringslista.]]',
 	'globalblocking-blocked' => "IP-adressen din har blitt blokkert på alle wikier av '''$1''' (''$2'').
-Årsaken som ble oppgitt var '''$3'''. Blokkeringen utgår ''$4''.",
+Årsaken som ble oppgitt var '''$3'''.
+Blokkeringen ''$4''.",
 	'globalblocking-logpage' => 'Global blokkeringslogg',
+	'globalblocking-logpagetext' => 'Dette er en logg over globale blokkeringer som har blitt gjort eller fjernet på denne wikien.
+Det burde merkes at globale blokkeringer goså kan foretas på andre wikier, og at disse vil ha utslag på denne wikien.
+For å vise alle aktive globale blokkeringer, se den [[Special:GlobalBlockList|globale blokkeringslisten]].',
 	'globalblocking-block-logentry' => 'blokkerte [[$1]] globalt med en varighet på $2',
 	'globalblocking-unblock-logentry' => 'fjernet global blokkering på [[$1]]',
 	'globalblocking-whitelist-logentry' => 'slo av global blokkering av [[$1]] lokalt',
@@ -2886,6 +2905,7 @@ $messages['pt-br'] = array(
 );
 
 /** Romanian (Română)
+ * @author Firilacroco
  * @author KlaudiuMihaila
  */
 $messages['ro'] = array(
@@ -2893,7 +2913,7 @@ $messages['ro'] = array(
 	'globalblocking-block-intro' => 'Această pagină permite blocarea unei adrese IP pe toate proiectele wiki.',
 	'globalblocking-block-reason' => 'Motiv pentru această blocare:',
 	'globalblocking-block-legend' => 'Blochează global un utilizator',
-	'globalblocking-block-options' => 'Opţiuni',
+	'globalblocking-block-options' => 'Opţiuni:',
 	'globalblocking-block-errors' => 'Blocarea nu a avut succes, din cauză că:
 $1',
 	'globalblocking-block-submit' => 'Blochează global această adresă IP',
@@ -3386,7 +3406,8 @@ Xin chú ý rằng không thể nhập một tên người dùng!',
 	'globalblocking-block-submit' => 'Cấm địa chỉ IP này trên toàn hệ thống',
 	'globalblocking-block-success' => 'Đã cấm thành công địa chỉ IP $1 trên tất cả các dự án.',
 	'globalblocking-block-successsub' => 'Cấm thành công trên toàn hệ thống',
-	'globalblocking-block-alreadyblocked' => 'Địa chỉ IP $1 đã bị cấm trên toàn hệ thống rồi. Bạn có thể xem những IP đang bị cấm tại [[Special:GlobalBlockList|danh sách các lần cấm toàn hệ thống]].',
+	'globalblocking-block-alreadyblocked' => 'Địa chỉ IP $1 đã bị cấm trên toàn hệ thống.
+Bạn có thể xem những IP đang bị cấm tại [[Special:GlobalBlockList|danh sách các lần cấm toàn hệ thống]].',
 	'globalblocking-block-bigrange' => 'Tầm địa chỉ mà bạn chỉ định ($1) quá lớn nên không thể cấm. Bạn chỉ có thể cấm nhiều nhất là 65.536 địa chỉ (tầm vực /16)',
 	'globalblocking-list-intro' => 'Đây là danh sách tác vụ cấm toàn cục hiện hành.
 Một số tác vụ cấm bị tắt cục bộ, tức là người dùng vẫn bị cấm tại các website kia, nhưng một quản lý viên tại đây quyết định bỏ cấm tại wiki này.',
@@ -3486,7 +3507,6 @@ $1',
 	'globalblocking-block-alreadyblocked' => '個IP地址 $1 已經全域封鎖緊。你可以響[[Special:GlobalBlockList|全域封鎖一覽]]度睇吓現時嘅封鎖。',
 	'globalblocking-block-bigrange' => '你所指定嘅範圍 ($1) 太大去封鎖。
 你可以封鎖，最多65,536個地址 (/16 範圍)',
-	
 	'globalblocking-list-intro' => '呢個係全部現時生效緊嘅全域封鎖。
 一啲嘅封鎖標明咗響本地停用：即係呢個封鎖響其它wiki度應用咗，但係本地管理員決定咗響呢個wiki度停用佢哋。',
 	'globalblocking-list' => '全域封鎖IP地址一覽',
@@ -3506,10 +3526,8 @@ $1',
 	'globalblocking-goto-block' => '全域封鎖一個 IP 地址',
 	'globalblocking-goto-unblock' => '拎走一個全域封鎖',
 	'globalblocking-goto-status' => '改一個全域封鎖嘅本地狀態',
-		
 	'globalblocking-return' => '返去全域封鎖一覽',
 	'globalblocking-notblocked' => '你所輸入嘅 IP 地址 ($1) 並無全域封鎖到。',
-
 	'globalblocking-unblock' => '拎走一個全域封鎖',
 	'globalblocking-unblock-ipinvalid' => '你輸入嘅IP地址 ($1) 係無效嘅。
 請留意嘅係你唔可以輸入一個用戶名！',
@@ -3523,7 +3541,6 @@ $1',
 	'globalblocking-unblock-subtitle' => '拎走全域封鎖',
 	'globalblocking-unblock-intro' => '你可以用呢個表去拎走一個全域封鎖。
 [[Special:GlobalBlockList|撳呢度]]返去個全域封鎖一覽。',
-	
 	'globalblocking-whitelist' => '全域封鎖嘅本地狀態',
 	'globalblocking-whitelist-legend' => '改本地狀態',
 	'globalblocking-whitelist-reason' => '改嘅原因:',
@@ -3536,13 +3553,11 @@ $1',
 	'globalblocking-whitelist-nochange' => '你未對呢個封鎖嘅本地狀態改過嘢。
 [[Special:GlobalBlockList|返去全域封鎖一覽]]。',
 	'globalblocking-whitelist-errors' => '基於下面嘅{{PLURAL:$1|原因|原因}}，你改過嘅全域封鎖本地狀態唔成功：',
-	'globalblocking-whitelist-intro' => "你可以用呢個表去改全域封鎖嘅本地狀態。
+	'globalblocking-whitelist-intro' => '你可以用呢個表去改全域封鎖嘅本地狀態。
 如果一個全域封鎖響呢個wiki度停用咗，受影響嘅 IP 地址可以正常噉編輯。
-[[Special:GlobalBlockList|返去全域封鎖一覽]]。",
-
+[[Special:GlobalBlockList|返去全域封鎖一覽]]。',
 	'globalblocking-blocked' => "你嘅IP地址已經由'''\$1''' (''\$2'') 響所有嘅Wikimedia wiki 度全部封鎖晒。
 個原因係 ''\"\$3\"''。個封鎖會響''\$4''到期。",
-
 	'globalblocking-logpage' => '全域封鎖日誌',
 	'globalblocking-logpagetext' => '呢個係響呢個wiki度，整過同拎走過嘅全域封鎖日誌。
 要留意嘅係全域封鎖可以響其它嘅wiki度整同拎走。
@@ -3555,8 +3570,6 @@ $1',
 	'globalblock' => '全域封鎖一個IP地址',
 	'globalblockstatus' => '全域封鎖嘅本地狀態',
 	'removeglobalblock' => '拎走一個全域封鎖',
-	
-	// User rights
 	'right-globalblock' => '整一個全域封鎖',
 	'right-globalunblock' => '拎走全域封鎖',
 	'right-globalblock-whitelist' => '響本地停用全域封鎖',
@@ -3587,7 +3600,6 @@ $1',
 	'globalblocking-block-alreadyblocked' => '该IP地址 $1 已经全域封锁中。您可以在[[Special:GlobalBlockList|全域封锁名单]]中参看现时的封锁。',
 	'globalblocking-block-bigrange' => '您所指定的范围 ($1) 太大去封锁。
 您可以封锁，最多65,536个地址 (/16 范围)',
-	
 	'globalblocking-list-intro' => '这是全部现时生效中的全域封锁。
 一些的封锁已标明在本地停用：即是这个封锁在其它wiki上应用，但是本地管理员已决定在这个wiki上停用它们。',
 	'globalblocking-list' => '全域封锁IP地址名单',
@@ -3607,10 +3619,8 @@ $1',
 	'globalblocking-goto-block' => '全域封锁一个 IP 地址',
 	'globalblocking-goto-unblock' => '移除一个全域封锁',
 	'globalblocking-goto-status' => '改一个全域封锁?本地状态',
-		
 	'globalblocking-return' => '回到全域封锁名单',
 	'globalblocking-notblocked' => '您所输入的 IP 地址 ($1) 并无全域封锁。',
-
 	'globalblocking-unblock' => '移除一个全域封锁',
 	'globalblocking-unblock-ipinvalid' => '您所输入的IP地址 ($1) 是无效的。
 请留意的是您不可以输入一个用户名！',
@@ -3624,7 +3634,6 @@ $1',
 	'globalblocking-unblock-subtitle' => '移除全域封锁',
 	'globalblocking-unblock-intro' => '您可以用这个表格去移除一个全域封锁。
 [[Special:GlobalBlockList|点击这里]]回到全域封锁名单。',
-	
 	'globalblocking-whitelist' => '全域封锁的本地状态',
 	'globalblocking-whitelist-legend' => '更改本地状态',
 	'globalblocking-whitelist-reason' => '改?原因:',
@@ -3637,10 +3646,9 @@ $1',
 	'globalblocking-whitelist-nochange' => '您未对这个封锁的本地状态更改过。
 [[Special:GlobalBlockList|回到全域封锁名单]]。',
 	'globalblocking-whitelist-errors' => '基于以下的{{PLURAL:$1|原因|原因}}，您更改过的全域封锁本地状态不成功：',
-	'globalblocking-whitelist-intro' => "您可以利用这个表格去更改全域封锁的本地状态。
+	'globalblocking-whitelist-intro' => '您可以利用这个表格去更改全域封锁的本地状态。
 如果一个全域封锁在这个wiki度停用，受影响的 IP 地址可以正常地编辑。
-[[Special:GlobalBlockList|回到全域封锁名单]]。",
-
+[[Special:GlobalBlockList|回到全域封锁名单]]。',
 	'globalblocking-blocked' => "您的IP地址已经由'''\$1''' (''\$2'') 在所有的Wikimedia wiki 中全部封锁。
 而理由是 ''\"\$3\"''。该封锁将会在''\$4''到期。",
 	'globalblocking-logpage' => '全域封锁日志',
@@ -3655,8 +3663,6 @@ $1',
 	'globalblock' => '全域封锁一个IP地址',
 	'globalblockstatus' => '全域封锁的本地状态',
 	'removeglobalblock' => '移除一个全域封锁',
-	
-	// User rights
 	'right-globalblock' => '弄一个全域封锁',
 	'right-globalunblock' => '移除全域封锁',
 	'right-globalblock-whitelist' => '在本地停用全域封锁',
@@ -3686,13 +3692,10 @@ $1',
 您亦都可以參看[[Special:GlobalBlockList|全域封鎖名單]]。',
 	'globalblocking-block-successsub' => '全域封鎖成功',
 	'globalblocking-block-alreadyblocked' => '該IP地址 $1 已經全域封鎖中。您可以在[[Special:GlobalBlockList|全域封鎖名單]]中參看現時的封鎖。',
-	'globalblocking-block-bigrange' => '您所指定的範圍 ($1) 太大去封鎖。
-您可以封鎖，最多65,536個地址 (/16 範圍)',
-	
-	'globalblocking-list-intro' => '這是全部現時生效中的全域封鎖。
-一些的封鎖已標明在本地停用：即是這個封鎖在其它wiki上應用，但是本地管理員已決定在這個wiki上停用它們。',
 	'globalblocking-block-bigrange' => '指定封鎖的區段($1)過於龐大。
 您最多只能封鎖65536個IP位址( /16區段)',
+	'globalblocking-list-intro' => '這是全部現時生效中的全域封鎖。
+一些的封鎖已標明在本地停用：即是這個封鎖在其它wiki上應用，但是本地管理員已決定在這個wiki上停用它們。',
 	'globalblocking-list' => '全域封鎖IP地址名單',
 	'globalblocking-search-legend' => '搜尋一個全域封鎖',
 	'globalblocking-search-ip' => 'IP地址:',
@@ -3708,14 +3711,11 @@ $1',
 	'globalblocking-list-whitelisted' => '由$1於本地封鎖: $2',
 	'globalblocking-list-whitelist' => '本地狀態',
 	'globalblocking-goto-block' => '全域封鎖一個 IP 地址',
-	'globalblocking-goto-unblock' => '移除一個全域封鎖',
+	'globalblocking-goto-unblock' => '移除全域封鎖',
 	'globalblocking-goto-status' => '改一個全域封鎖嘅本地狀態',
-		
 	'globalblocking-return' => '回到全域封鎖清單',
 	'globalblocking-notblocked' => '您輸入的IP位址($1)尚未被全域封鎖。',
-
 	'globalblocking-unblock' => '移除一個全域封鎖',
-	'globalblocking-goto-unblock' => '移除全域封鎖',
 	'globalblocking-unblock-ipinvalid' => '您所輸入的IP地址 ($1) 是無效的。
 請留意的是您不可以輸入一個用戶名！',
 	'globalblocking-unblock-legend' => '移除一個全域封鎖',
@@ -3728,7 +3728,6 @@ $1',
 	'globalblocking-unblock-subtitle' => '移除全域封鎖',
 	'globalblocking-unblock-intro' => '您可以用這個表格去移除一個全域封鎖。
 [[Special:GlobalBlockList|點擊這裏]]回到全域封鎖名單。',
-	
 	'globalblocking-whitelist' => '全域封鎖的本地狀態',
 	'globalblocking-whitelist-legend' => '更改本地狀態',
 	'globalblocking-whitelist-reason' => '改嘅原因:',
@@ -3741,10 +3740,9 @@ $1',
 	'globalblocking-whitelist-nochange' => '您未對這個封鎖的本地狀態更改過。
 [[Special:GlobalBlockList|回到全域封鎖名單]]。',
 	'globalblocking-whitelist-errors' => '基於以下的{{PLURAL:$1|原因|原因}}，您更改過的全域封鎖本地狀態不成功：',
-	'globalblocking-whitelist-intro' => "您可以利用這個表格去更改全域封鎖的本地狀態。
+	'globalblocking-whitelist-intro' => '您可以利用這個表格去更改全域封鎖的本地狀態。
 如果一個全域封鎖在這個wiki度停用，受影響的 IP 地址可以正常地編輯。
-[[Special:GlobalBlockList|回到全域封鎖名單]]。",
-
+[[Special:GlobalBlockList|回到全域封鎖名單]]。',
 	'globalblocking-blocked' => "您的IP地址已經由'''\$1''' (''\$2'') 在所有的Wikimedia wiki 中全部封鎖。
 而理由是 ''\"\$3\"''。該封鎖將會在''\$4''到期。",
 	'globalblocking-logpage' => '全域封鎖日誌',
@@ -3759,8 +3757,6 @@ $1',
 	'globalblock' => '全域封鎖一個IP地址',
 	'globalblockstatus' => '全域封鎖的本地狀態',
 	'removeglobalblock' => '移除一個全域封鎖',
-	
-	// User rights
 	'right-globalblock' => '弄一個全域封鎖',
 	'right-globalunblock' => '移除全域封鎖',
 	'right-globalblock-whitelist' => '在本地停用全域封鎖',
