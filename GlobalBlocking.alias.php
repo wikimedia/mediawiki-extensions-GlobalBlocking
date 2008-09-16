@@ -145,6 +145,12 @@ $aliases['no'] = array(
 	'GlobalBlockStatus' => array( 'Hviteliste for global blokkering' ),
 );
 
+/** Polish (Polski) */
+$aliases['pl'] = array(
+	'GlobalBlockList' => array( 'Spis globalnie zablokowanych adresów IP' ),
+	'GlobalBlockStatus' => array( 'Lokalny status globalnych blokad' ),
+);
+
 /** Pashto (پښتو) */
 $aliases['ps'] = array(
 	'GlobalBlock' => array( 'نړېوال بنديزونه' ),
