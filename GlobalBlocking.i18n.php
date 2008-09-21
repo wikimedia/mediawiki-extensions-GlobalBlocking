@@ -1963,6 +1963,7 @@ Per visualizzare tutti i blocchi globali attivi si veda l'[[Special:GlobalBlockL
 
 /** Japanese (日本語)
  * @author Aotake
+ * @author Fievarsty
  * @author Muttley
  */
 $messages['ja'] = array(
@@ -2033,7 +2034,7 @@ $messages['ja'] = array(
 	'globalblocking-blocked' => "このIPアドレスは、'''$1'''('''$2''')によって全ての関連ウィキプロジェクトからからブロックされています。
 理由は'''$3'''です。
 ブロック解除予定:'''$4'''",
-	'globalblocking-logpage' => 'グローバルブロックのログ',
+	'globalblocking-logpage' => 'グローバルブロックログ',
 	'globalblocking-logpagetext' => '以下はこのウィキで実施および解除されたグローバルブロックのログです。グローバルブロックは他のウィキでも実施したり解除したりすることができ、その結果がこのウィキにも及びます。現在有効なグローバルブロックの一覧は[[Special:GlobalBlockList]]を参照してください。',
 	'globalblocking-block-logentry' => '[[$1]]はグローバルブロックされました。$2に解除されます。',
 	'globalblocking-unblock-logentry' => '[[$1]]へのグローバルブロックを解除しました',
