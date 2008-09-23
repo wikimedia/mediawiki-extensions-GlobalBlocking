@@ -2132,6 +2132,8 @@ $messages['km'] = array(
 	'globalblocking-block-intro' => 'អ្នកអាចប្រើប្រាស់ទំព័រនេះដើម្បីហាមឃាត់អាសយដ្ឋាន IP នៅគ្រប់វិគីទាំងអស់។',
 	'globalblocking-block-reason' => 'មូលហេតុនៃការហាមឃាត់នេះ:',
 	'globalblocking-block-expiry' => 'ពេលផុតកំនត់នៃការហាមឃាត់:',
+	'globalblocking-block-expiry-other' => 'រយៈពេលផុតកំនត់ផ្សេងទៀត',
+	'globalblocking-block-expiry-otherfield' => 'រយៈពេលផុតកំនត់ផ្សេងទៀត៖',
 	'globalblocking-block-options' => 'ជំរើសនានា៖',
 	'globalblocking-search-ip' => 'អាសយដ្ឋានIP:',
 	'globalblocking-search-submit' => 'ស្វែងរកចំពោះការហាមឃាត់',
@@ -2250,10 +2252,10 @@ Udder jangk zeröck noh de
 [[Special:GlobalBlockList|{{int:Globalblocking-list}}]].',
 	'globalblocking-whitelist-errors' => 'Dinge Versooch, aan dä Sperr nur för hee dat Wiki jet ze ändere, hät nit jeflupp.
 {{PLURAL:$1|Der Jrond|De Jrönde sin}}:',
-	'globalblocking-whitelist-intro' => '
-You can use this form to edit the local status of a global block.
-If a global block is disabled on this wiki, users on the affected IP address will be able to edit normally.
-Jangk zeröck noh de
+	'globalblocking-whitelist-intro' => 'För en Sperr en alle Wikis kanns De hee, nur för dat Wiki
+en Ußnahm maache. Wann esu en Sperr hee em Wiki ußjesaz es,
+künne de Metmaacher en hee däm Wiki fun dä IP-Adress udder
+dä IP-Adresse uß janz nommaal alles don. Jangk zeröck noh de
 [[Special:GlobalBlockList|{{int:Globalblocking-list}}]].',
 	'globalblocking-blocked' => "Ding IP_Address es in alle Wikis jespert woode.
 Dä '''$1''' (''$2'') hädd_et jedonn.
@@ -3559,6 +3561,7 @@ $messages['uk'] = array(
 	'globalblocking-list-intro' => 'Це список усіх наявних глобальних блокувань.
 Деякі блокування відзначені як вимкнені локально, тобто в деяких вікі адміністратор вирішив відключити блокування локально.',
 	'globalblocking-list' => 'Список глобально заблокованих IP-адрес',
+	'globalblocking-search-legend' => 'Пошук глобального блокування',
 	'globalblocking-search-ip' => 'IP-адреса:',
 	'globalblocking-search-submit' => 'Знайти блокування',
 	'globalblocking-list-ipinvalid' => 'IP-адреса ($1), яку ви ввели, неправильна.
