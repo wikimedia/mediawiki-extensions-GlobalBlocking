@@ -169,5 +169,7 @@ $aliases['pt-br'] = array(
 /** Swedish (Svenska) */
 $aliases['sv'] = array(
 	'GlobalBlock' => array( 'Global blockering' ),
+	'GlobalBlockList' => array( 'Global blockeringslista' ),
+	'RemoveGlobalBlock' => array( 'Global avblockering' ),
 );
 
