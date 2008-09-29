@@ -978,8 +978,8 @@ $messages['es'] = array(
 	'globalblocking-block-successsub' => 'El bloqueo global tuvo éxito',
 	'globalblocking-block-alreadyblocked' => 'La dirección IP $1 ya está bloqueada globalmente.
 Puede ver el bloqueo existente en la [[Special:GlobalBlockList|lista de bloqueos globales]].',
-	'globalblocking-block-bigrange' => 'La gama que usted especificó ($1) es más grande que bloquear.
-Puede bloquear, al más, 65.536 direcciónes (las gamas de /16)',
+	'globalblocking-block-bigrange' => 'El rango que especificaste ($1) es demasiado grande para ser bloqueado.
+Puedes bloquear, a lo sumo, 65.536 direcciones (un rango de /16)',
 	'globalblocking-list-intro' => 'Esta es una lista de todos los bloqueos globales que actualmente están en efecto.
 Algunos bloqueos están marcados como desactivados localmente: esto significa que se aplican en otros sitios, y que un administrador local ha decidido desactivarlos en esta wiki.',
 	'globalblocking-list' => 'Lista de direcciones IP bloqueadas globalmente',
@@ -994,18 +994,18 @@ Por favor, introduce una dirección IP válida.',
 	'globalblocking-list-whitelisted' => 'desactivado localmente por $1: $2',
 	'globalblocking-list-whitelist' => 'estatus local',
 	'globalblocking-goto-block' => 'Bloquear globalmente una dirección IP',
-	'globalblocking-goto-unblock' => 'Remover un bloqueo global',
+	'globalblocking-goto-unblock' => 'Quitar un bloqueo global',
 	'globalblocking-goto-status' => 'Cambiar estatus local de un bloqueo global',
 	'globalblocking-return' => 'Volver a la lista de bloqueos globales',
 	'globalblocking-notblocked' => 'La dirección IP ($1) que escribiste no está bloqueada globalmente.',
-	'globalblocking-unblock' => 'Remover un bloqueo global',
-	'globalblocking-unblock-legend' => 'Remover un bloqueo global',
-	'globalblocking-unblock-submit' => 'Remover el bloqueo global',
+	'globalblocking-unblock' => 'Quitar un bloqueo global',
+	'globalblocking-unblock-legend' => 'Quitar un bloqueo global',
+	'globalblocking-unblock-submit' => 'Quitar el bloqueo global',
 	'globalblocking-unblock-reason' => 'Razón:',
-	'globalblocking-unblock-unblocked' => "Usted ha removido con éxito el bloqueo global #$2 en la dirección IP '''$1'''",
-	'globalblocking-unblock-successsub' => 'Se removió el bloqueo global con éxito',
-	'globalblocking-unblock-subtitle' => 'Removiendo bloqueo global',
-	'globalblocking-unblock-intro' => 'Puede usar esta forma para remover un bloqueo global.
+	'globalblocking-unblock-unblocked' => "Has quitado con éxito el bloqueo global #$2 en la dirección IP '''$1'''",
+	'globalblocking-unblock-successsub' => 'Se quitço el bloqueo global con éxito',
+	'globalblocking-unblock-subtitle' => 'Quitando bloqueo global',
+	'globalblocking-unblock-intro' => 'Puedes usar este formulario para quitar un bloqueo global.
 [[Special:GlobalBlockList|Haga clic aquí]] para volver a la lista de bloqueos globales.',
 	'globalblocking-whitelist' => 'Estatus local de bloqueos globales',
 	'globalblocking-whitelist-legend' => 'Cambiar estatus local',
@@ -1019,8 +1019,8 @@ Por favor, introduce una dirección IP válida.',
 	'globalblocking-whitelist-nochange' => 'Usted no hizo ningún cambio al estatus local de este bloqueo.
 [[Special:GlobalBlockList|Volver a la lista de bloqueos globales]].',
 	'globalblocking-whitelist-errors' => 'Su cambio al estatus local de un bloqueo global no tuvo éxito, a causa de {{PLURAL:$1|la siguiente razón|las siguientes razones}}:',
-	'globalblocking-whitelist-intro' => 'Usted puede usar esta forma para editar el estatus local de un bloqueo global.
-Si un bloqueo global está desactivado en esta wiki, los usuarios de la dirección IP afectada poderán editar normalmente.
+	'globalblocking-whitelist-intro' => 'Puedes usar este formulario para editar el estatus local de un bloqueo global.
+Si un bloqueo global está desactivado en esta wiki, los usuarios de la dirección IP afectada podrán editar normalmente.
 [[Special:GlobalBlockList|Volver a la lista de bloqueos globales]].',
 	'globalblocking-blocked' => "'''$1''' (''$2'') bloqueó su dirección IP en todos los wikis.
 El motivo dado fue ''«$3»''.
@@ -1031,7 +1031,7 @@ El bloqueo ''$4''.",
 	'globalblocklist' => 'Lista de direcciones IP bloqueadas globalmente',
 	'globalblock' => 'Bloquear una dirección IP globalmente',
 	'globalblockstatus' => 'Estatus local de bloqueos globales',
-	'removeglobalblock' => 'Remover un bloqueo global',
+	'removeglobalblock' => 'Quitar un bloqueo global',
 	'right-globalblock' => 'Hacer bloqueos globales',
 	'right-globalunblock' => 'Remover bloqueos globales',
 	'right-globalblock-whitelist' => 'Desactivar bloqueos globales localmente',
