@@ -980,8 +980,8 @@ $messages['es'] = array(
 Puede ver el bloqueo existente en la [[Special:GlobalBlockList|lista de bloqueos globales]].',
 	'globalblocking-block-bigrange' => 'La gama que usted especificó ($1) es más grande que bloquear.
 Puede bloquear, al más, 65.536 direcciónes (las gamas de /16)',
-	'globalblocking-list-intro' => 'Ésta es una lista de todos los bloqueos globales que actualmente están en efecto.
-Algunos bloqueos están marcados desactivados localmente: esto significa que aplican en otros sitios, pero un administrador local ha decidido a desactivarlos en esta wiki.',
+	'globalblocking-list-intro' => 'Esta es una lista de todos los bloqueos globales que actualmente están en efecto.
+Algunos bloqueos están marcados como desactivados localmente: esto significa que se aplican en otros sitios, y que un administrador local ha decidido desactivarlos en esta wiki.',
 	'globalblocking-list' => 'Lista de direcciones IP bloqueadas globalmente',
 	'globalblocking-search-legend' => 'Buscar un bloqueo global',
 	'globalblocking-search-ip' => 'Dirección IP:',
