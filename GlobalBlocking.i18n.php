@@ -881,7 +881,7 @@ $messages['eo'] = array(
 	'globalblocking-block-expiry' => 'Findato de forbaro:',
 	'globalblocking-block-expiry-other' => 'Alia findato',
 	'globalblocking-block-expiry-otherfield' => 'Alia daŭro:',
-	'globalblocking-block-legend' => 'Forbaru uzanto ĝenerale',
+	'globalblocking-block-legend' => 'Forbari uzanto ĝenerale',
 	'globalblocking-block-options' => 'Preferoj:',
 	'globalblocking-block-errors' => 'La forbaro malsukcesis, pro la {{PLURAL:$1|jena kialo|jenaj kialoj}}:
 $1',
@@ -956,7 +956,7 @@ Vidi ĉiujn aktivajn ĝeneralajn forbarojn, vi povas vidi la [[Special:GlobalBlo
 	'globalblock' => 'Ĝenerale forbari IP-adreson',
 	'globalblockstatus' => 'Loka statuso de ĝeneralaj forbaroj',
 	'removeglobalblock' => 'Forigi ĝeneralan blokon',
-	'right-globalblock' => 'Faru ĝeneralajn forbarojn',
+	'right-globalblock' => 'Fari ĝeneralajn forbarojn',
 	'right-globalunblock' => 'Forigu ĝeneralajn forbarojn',
 	'right-globalblock-whitelist' => 'Malebligu ĝeneralajn forbarojn loke',
 );
@@ -2096,8 +2096,8 @@ $messages['ja'] = array(
 	'globalblocking-blocked' => "このIPアドレスは、'''$1'''('''$2''')によって全ての関連ウィキプロジェクトからからブロックされています。
 理由は'''$3'''です。
 ブロック解除予定:'''$4'''",
-	'globalblocking-logpage' => 'グローバルブロックログ',
-	'globalblocking-logpagetext' => '以下はこのウィキで実施および解除されたグローバルブロックのログです。グローバルブロックは他のウィキでも実施したり解除したりすることができ、その結果がこのウィキにも及びます。現在有効なグローバルブロックの一覧は[[Special:GlobalBlockList]]を参照してください。',
+	'globalblocking-logpage' => 'グローバルブロック記録',
+	'globalblocking-logpagetext' => '以下はこのウィキで実施および解除されたグローバルブロックの記録です。グローバルブロックは他のウィキでも実施したり解除したりすることができ、その結果がこのウィキにも及びます。現在有効なグローバルブロックの一覧は[[Special:GlobalBlockList]]を参照してください。',
 	'globalblocking-block-logentry' => '[[$1]]をグローバルブロックしました。$2に解除されます。',
 	'globalblocking-unblock-logentry' => '[[$1]]へのグローバルブロックを解除しました',
 	'globalblocking-whitelist-logentry' => '[[$1]]へのグローバルブロックをローカルで無効にしました',
