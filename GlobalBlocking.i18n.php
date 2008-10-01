@@ -42,7 +42,7 @@ Some blocks are marked as locally disabled: this means that they apply on other 
 	'globalblocking-list-ipinvalid' => 'The IP address you searched for ($1) is invalid.
 Please enter a valid IP address.',
 	'globalblocking-search-errors' => "Your search was unsuccessful, for the following {{PLURAL:$1|reason|reasons}}:",
-	'globalblocking-list-blockitem' => "$1: <div class=\"plainlinks\">'''$2'''</div> (''$3'') globally blocked [[Special:Contributions/$4|$4]] ''($5)''",
+	'globalblocking-list-blockitem' => "$1: <span class=\"plainlinks\">'''$2'''</span> (''$3'') globally blocked [[Special:Contributions/$4|$4]] ''($5)''",
 	'globalblocking-list-expiry' => 'expiry $1',
 	'globalblocking-list-anononly' => 'anonymous only',
 	'globalblocking-list-unblock' => 'remove',
