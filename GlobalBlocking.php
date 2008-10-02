@@ -27,6 +27,7 @@ $wgExtensionCredits['other'][] = array(
 $wgExtensionMessagesFiles['GlobalBlocking'] =  "$dir/GlobalBlocking.i18n.php";
 $wgExtensionAliasesFiles['GlobalBlocking'] = "$dir/GlobalBlocking.alias.php";
 $wgHooks['getUserPermissionsErrorsExpensive'][] = 'GlobalBlocking::getUserPermissionsErrors';
+$wgHooks['UserIsBlockedGlobally'][] = 'GlobalBlocking::isBlockedGlobally';
 
 $wgAutoloadClasses['SpecialGlobalBlock'] = "$dir/SpecialGlobalBlock.php";
 $wgSpecialPages['GlobalBlock'] = 'SpecialGlobalBlock';
@@ -77,20 +78,38 @@ class GlobalBlocking {
 		if ($action == 'read' || !$wgApplyGlobalBlocks) {
 			return true;
 		}
-		
-		$dbr = GlobalBlocking::getGlobalBlockingSlave();
 		$ip = wfGetIp();
+		$blockError = self::getUserBlockErrors( $user, $ip );
+		if( !empty($blockError) ) {
+			$result[] = $blockError;
+			return false;
+		}
+		return true;
+	}
+	
+	static function isBlockedGlobally( &$user, $ip, &$blocked ) {
+		$blockError = self::getUserBlockErrors( $user, $ip );
+		if( $blockError ) {
+			$blocked = true;
+			return false;
+		}
+		return true;
+	}
+		
+	static function getUserBlockErrors( $user, $ip ) {
+		$dbr = GlobalBlocking::getGlobalBlockingSlave();
 		
 		$hex_ip = IP::toHex( $ip );
-		
 		$ip_pattern = substr( $hex_ip, 0, 4 ) . '%'; // Don't bother checking blocks out of this /16.
 	
-		$conds = array( 'gb_range_end>='.$dbr->addQuotes($hex_ip), // This block in the given range.
-				'gb_range_start<='.$dbr->addQuotes($hex_ip),
-				'gb_range_start like ' . $dbr->addQuotes( $ip_pattern ),
-				'gb_expiry>'.$dbr->addQuotes($dbr->timestamp(wfTimestampNow())) );
+		$conds = array( 
+			'gb_range_end>='.$dbr->addQuotes($hex_ip), // This block in the given range.
+			'gb_range_start<='.$dbr->addQuotes($hex_ip),
+			'gb_range_start like ' . $dbr->addQuotes( $ip_pattern ),
+			'gb_expiry>'.$dbr->addQuotes($dbr->timestamp(wfTimestampNow())) 
+		);
 	
-		if (!$user->isAnon())
+		if ( !$user->isAnon() )
 			$conds['gb_anon_only'] = 0;
 	
 		// Get the block
@@ -99,12 +118,12 @@ class GlobalBlocking {
 			// Check for local whitelisting
 			if (GlobalBlocking::getWhitelistInfo( $block->gb_id ) ) {
 				// Block has been whitelisted.
-				return true;
+				return array();
 			}
 			
 			if ( $user->isAllowed( 'ipblock-exempt' ) ) {
 				// User is exempt from IP blocks.
-				return true;
+				return array();
 			}
 
 			$expiry = Block::formatExpiry( $block->gb_expiry );
@@ -114,11 +133,9 @@ class GlobalBlocking {
 			$display_wiki = self::getWikiName( $block->gb_by_wiki );
 			$user_display = self::maybeLinkUserpage( $block->gb_by_wiki, $block->gb_by );
 			
-			$result[] = array('globalblocking-blocked', $user_display, $display_wiki, $block->gb_reason, $expiry);
-			return false;
+			return array('globalblocking-blocked', $user_display, $display_wiki, $block->gb_reason, $expiry);
 		}
-	
-		return true;
+		return array();
 	}
 	
 	static function getGlobalBlockingMaster() {
