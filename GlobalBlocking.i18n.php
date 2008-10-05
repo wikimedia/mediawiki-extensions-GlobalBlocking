@@ -643,20 +643,20 @@ Entreu, si us plau, una adreça IP vàlida.",
 	'globalblocking-list-whitelisted' => 'desactivat localment per $1: $2',
 	'globalblocking-list-whitelist' => 'estat local',
 	'globalblocking-goto-block' => 'Bloqueja globalment una adreça IP',
-	'globalblocking-goto-unblock' => 'Cancel·la un bloqueig global',
+	'globalblocking-goto-unblock' => 'Canceŀla un bloqueig global',
 	'globalblocking-goto-status' => "Canvi de l'estat local d'un blocatge global",
 	'globalblocking-return' => 'Torna a la llista de bloquejos globals',
 	'globalblocking-notblocked' => "L'adreça IP que heu introduït ($1) no està bloquejada globalment.",
-	'globalblocking-unblock' => 'Cancel·la un bloqueig global',
+	'globalblocking-unblock' => 'Canceŀla un bloqueig global',
 	'globalblocking-unblock-ipinvalid' => "L'adreça IP ($1) introduïda no és vàlida.
 Recordau que no podeu introduir un nom d'usuari!",
-	'globalblocking-unblock-legend' => 'Cancel·la un bloqueig global',
-	'globalblocking-unblock-submit' => 'Cancel·la un bloqueig global',
+	'globalblocking-unblock-legend' => 'Canceŀla un bloqueig global',
+	'globalblocking-unblock-submit' => 'Canceŀla un bloqueig global',
 	'globalblocking-unblock-reason' => 'Raó:',
 	'globalblocking-unblock-unblocked' => "Heu eliminat el bloqueig global #$2 a l'adreça IP '''$1'''",
 	'globalblocking-unblock-errors' => 'La vostra eliminació de bloqueig global ha estat infructuosa, {{PLURAL:$1|pel següent motiu|pels següents motius}}:',
-	'globalblocking-unblock-successsub' => "S'ha cancel·lat correctament el bloqueig global",
-	'globalblocking-unblock-subtitle' => "S'està cancel·lant el bloqueig global",
+	'globalblocking-unblock-successsub' => "S'ha canceŀlat correctament el bloqueig global",
+	'globalblocking-unblock-subtitle' => "S'està canceŀlant el bloqueig global",
 	'globalblocking-unblock-intro' => 'Podeu usar aquest formulari per a eliminar un bloqueig global.
 [[Special:GlobalBlockList|Cliqueu ací]] per a retornar a la llista de bloquejos globals.',
 	'globalblocking-whitelist' => 'Estat local dels bloquejos globals',
@@ -682,14 +682,14 @@ El bloqueig té la data d'expiració següent: ''$4''.",
 Cal notar que els bloquejos globals es poden aplicar i eliminar des d'altres wikis, i aquests bloquejos globals poden afectar aquest wiki.
 Per a veure tots els bloquejos globals actius, vegeu la [[Special:GlobalBlockList|llista de bloquejos globals]].",
 	'globalblocking-block-logentry' => "[[$1]] blocat globalment amb una data d'expiració de $2",
-	'globalblocking-unblock-logentry' => "S'ha cancel·lat el bloqueig global de [[$1]]",
+	'globalblocking-unblock-logentry' => "S'ha canceŀlat el bloqueig global de [[$1]]",
 	'globalblocking-whitelist-logentry' => "S'ha inhabilitat localment el bloqueig global de [[$1]]",
 	'globalblocking-dewhitelist-logentry' => "S'ha rehabilitat localment el bloqueig global de [[$1]]",
 	'globalblocklist' => 'Llista de les adreces IP bloquejades globalment',
 	'globalblock' => 'Bloqueja una adreça IP globalment',
 	'globalblockstatus' => 'Estat local dels bloquejos globals',
-	'removeglobalblock' => 'Cancel·la el bloqueig global',
-	'right-globalunblock' => 'Cancel·la bloquejos globals',
+	'removeglobalblock' => 'Canceŀla el bloqueig global',
+	'right-globalunblock' => 'Canceŀlar bloquejos globals',
 	'right-globalblock-whitelist' => 'Inhabilita els bloquejos globals localment',
 );
 
@@ -3313,6 +3313,7 @@ $messages['sah'] = array(
 	'globalblocking-list-anononly' => 'ааттамматах эрэ кыттааччылары',
 	'globalblocking-list-unblock' => 'хааччаҕын уһул',
 	'globalblocking-list-whitelisted' => '$1 миэстэтигэр араарбыт: $2',
+	'globalblocking-list-whitelist' => 'маннааҕы турук (статус)',
 	'globalblocking-unblock-reason' => 'Төрүөтэ:',
 	'globalblocking-whitelist-reason' => 'Уларытыы төрүөтэ:',
 );
@@ -3553,7 +3554,7 @@ För att se alla aktiva globala blockeringar, kan du se den [[Special:GlobalBloc
 $messages['te'] = array(
 	'globalblocking-block-reason' => 'ఈ నిరోధానికి కారణం:',
 	'globalblocking-block-expiry-otherfield' => 'ఇతర సమయం:',
-	'globalblocking-block-options' => 'ఎంపికలు',
+	'globalblocking-block-options' => 'ఎంపికలు:',
 	'globalblocking-search-ip' => 'IP చిరునామా:',
 	'globalblocking-list-whitelist' => 'స్థానిక స్థితి',
 	'globalblocking-unblock-reason' => 'కారణం:',
@@ -3662,6 +3663,24 @@ $messages['uk'] = array(
 	'globalblocking-whitelist-intro' => 'Ви можете використовувати цю форму для зміни локального стану глобального блокування.
 Якщо глобальне блокування виключене у цій вікі, то користувачі з відповідними IP-адресами зможуть нормально редагувати.
 [[Special:GlobalBlockList|Повернутися до списку глобальних глобувань]].',
+	'globalblocking-blocked' => "Ваша IP-адреса була заблокована у всіх вікі користувачем '''\$1''' (''\$2'').
+Причиною вказано ''\"\$3\"''.
+Блокування ''\$4''.",
+	'globalblocking-logpage' => 'Журнал глобальних блокувань',
+	'globalblocking-logpagetext' => 'Це журнал глобальних блокувань, встановлених і знятих в цієї вікі.
+Слід зазначити, що глобальні блокування можуть бути встановлені в інших вікі, але діяти також у цій вікі.
+Щоб переглянути список всіх глобальних блокувань, зверніться до [[Special:GlobalBlockList|відповідного списку]].',
+	'globalblocking-block-logentry' => 'глобально заблокував [[$1]] з терміном блокування $2',
+	'globalblocking-unblock-logentry' => 'зняв глобальне блокування з [[$1]]',
+	'globalblocking-whitelist-logentry' => 'локально відключене глобальне блокування [[$1]]',
+	'globalblocking-dewhitelist-logentry' => 'локально відновлене глобальне блокування [[$1]]',
+	'globalblocklist' => 'Список глобально заблокованих IP-адрес',
+	'globalblock' => 'Глобальне блокування IP-адреси',
+	'globalblockstatus' => 'Локальний стан глобальних блокувань',
+	'removeglobalblock' => 'Зняти глобальне блокування',
+	'right-globalblock' => 'накладання глобальних блокувань',
+	'right-globalunblock' => 'зняття глобальних блокувань',
+	'right-globalblock-whitelist' => 'Локальне відключення глобального блокування',
 );
 
 /** Vèneto (Vèneto)
