@@ -3159,6 +3159,14 @@ $messages['pt-br'] = array(
 	'globalblocking-block' => 'Bloquear globalmente um endereço IP',
 );
 
+/** Quechua (Runa Simi)
+ * @author AlimanRuna
+ */
+$messages['qu'] = array(
+	'globalblocking-list' => "Sapsita hark'asqa IP tiyaykuna",
+	'globalblocking-whitelist' => "Sapsi hark'asqakunap kayllapi kachkaynin",
+);
+
 /** Romanian (Română)
  * @author Firilacroco
  * @author KlaudiuMihaila
