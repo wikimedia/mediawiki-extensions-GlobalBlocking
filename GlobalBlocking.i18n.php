@@ -504,6 +504,14 @@ Pa ver tolos bloqueos globales activos, pues ver la [[Special:GlobalBlockList|ll
 	'right-globalblock-whitelist' => 'Desactivar llocalmente bloqueos globales',
 );
 
+/** Samogitian (Žemaitėška)
+ * @author Hugo.arg
+ */
+$messages['bat-smg'] = array(
+	'globalblocking-list' => 'Gluobalē ožblokoutu IP adresū sārošos',
+	'globalblocking-list-expiry' => 'beng galiuotė $1',
+);
+
 /** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
  * @author EugeneZelenko
  */
