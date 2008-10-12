@@ -2421,10 +2421,17 @@ Denkt w.e.g. drun datt Dir och e Benotzernumm agi kënnt!',
 	'globalblocking-whitelist-successsub' => 'De lokale Status gouf geännert',
 	'globalblocking-whitelist-nochange' => "Dir hutt de lokale Status vun dëser Spär net geännert.
 [[Special:GlobalBlockList|Zréck op d'Lëscht vun de globale Spären]].",
+	'globalblocking-whitelist-errors' => 'Är Ännerung vum lokale Status vun enger globaler Spär huet aus {{PLURAL:$1|dësem Grond|dëse Grënn}} net fonctionéiert:',
+	'globalblocking-whitelist-intro' => "Dir kënnt dëse Formulaire benotze fir de lokal Status vun enger globaler Spär z'änneren.
+Wann eng global Spär op dëser Wiki opgehuewe gëtt, kënne Benotzer déi déi betraffen IP-Adresse benotzen normal Ännerungen maachen.
+[[Special:GlobalBlockList|Zréck op d'Lëscht vun de globale Spären]].",
 	'globalblocking-blocked' => "Är IP-Adress gouf op alle Wikimedia Wikie vum '''\$1''' (''\$2'') gespaart.
 De Grond den ugi gouf war ''\"\$3\"''.
 De Beräich ''\$4''.",
 	'globalblocking-logpage' => 'Lëscht vun de globale Spären',
+	'globalblocking-logpagetext' => "Dëst ass eng Lëscht vun de globale Spären déi op dëser Wiki gemaach an opgehuewe goufen.
+Dir sollt wëssen datt global Spären op anere Wikien gemaach an opgehuewe kënne ginn an datt déi global Spären dës Wiki beaflosse kënnen.
+Fir all aktiv global Spären ze gesinn, gitt w.e.g op d'[[Special:GlobalBlockList|Lëscht vun de globale Spären]].",
 	'globalblocking-block-logentry' => '[[$1]] gouf global gespaart fir $2',
 	'globalblocking-unblock-logentry' => 'global Spär vum [[$1]] opgehuewen',
 	'globalblocking-whitelist-logentry' => 'huet déi global Spär vum [[$1]] lokal ausgeschalt',
