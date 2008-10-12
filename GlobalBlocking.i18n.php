@@ -786,6 +786,13 @@ Všechny aktivní globální blokování naleznete na [[Special:GlobalBlockList|
 	'right-globalblock-whitelist' => 'Definování výjimek z globálního zablokování',
 );
 
+/** Welsh (Cymraeg)
+ * @author Lloffiwr
+ */
+$messages['cy'] = array(
+	'globalblocking-block-expiry-otherfield' => 'Cyfnod arall:',
+);
+
 /** German (Deutsch)
  * @author MF-Warburg
  * @author Raimond Spekking
@@ -1947,6 +1954,7 @@ Untuk menampilkan seluruh pemblokiran global yang aktif saat ini, Anda dapat mel
  * @author S.Örvarr.S
  */
 $messages['is'] = array(
+	'globalblocking-block-expiry-otherfield' => 'Annar tími:',
 	'globalblocking-unblock-reason' => 'Ástæða:',
 );
 
@@ -3132,6 +3140,8 @@ Por favor, note que não pode introduzir um nome de utilizador!',
 	'globalblocking-unblock-errors' => 'Você não pôde remover este bloqueio global, {{PLURAL:$1|pelo seguinte motivo|pelos seguintes motivos}}:',
 	'globalblocking-unblock-successsub' => 'Bloqueio global removido com sucesso',
 	'globalblocking-unblock-subtitle' => 'Removendo bloqueio global',
+	'globalblocking-unblock-intro' => 'Você pode usar este formulário para eliminar um bloqueio global.
+[[Special:GlobalBlockList|Clique aqui]] para voltar à lista de bloqueios globais.',
 	'globalblocking-whitelist' => 'Estado local de bloqueios globais',
 	'globalblocking-whitelist-legend' => 'Alterar estado local',
 	'globalblocking-whitelist-reason' => 'Motivo da alteração:',
