@@ -1422,6 +1422,13 @@ $messages['got'] = array(
 	'globalblocking-unblock-reason' => 'Faírina:',
 );
 
+/** Ancient Greek (Ἀρχαία ἑλληνικὴ)
+ * @author Omnipaedista
+ */
+$messages['grc'] = array(
+	'globalblocking-block-options' => 'Ἐπιλογαί:',
+);
+
 /** Manx (Gaelg)
  * @author MacTire02
  */
@@ -2698,13 +2705,13 @@ $messages['nl'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Andere tijd:',
 	'globalblocking-block-legend' => 'Een gebruiker globaal blokkeren',
 	'globalblocking-block-options' => 'Opties:',
-	'globalblocking-block-errors' => 'De blokkade is niet geslaagd om de volgende {{PLURAL:$1|reden|redenen}}:',
+	'globalblocking-block-errors' => 'De blokkade is niet ingesteld om de volgende {{PLURAL:$1|reden|redenen}}:',
 	'globalblocking-block-ipinvalid' => 'Het IP-adres ($1) dat u hebt opgegeven is onjuist.
 Let op: u kunt geen gebruikersnaam opgeven!',
 	'globalblocking-block-expiryinvalid' => 'De verloopdatum/tijd die u hebt opgegeven is ongeldig ($1).',
 	'globalblocking-block-submit' => 'Dit IP-adres globaal blokkeren',
 	'globalblocking-block-success' => 'Het IP-adres $1 is op alle projecten geblokkeerd.',
-	'globalblocking-block-successsub' => 'Globale blokkade geslaagd',
+	'globalblocking-block-successsub' => 'Globale blokkade ingesteld',
 	'globalblocking-block-alreadyblocked' => 'Het IP-adres $1 is al globaal geblokkeerd. U kunt de bestaande blokkade bekijken in de [[Special:GlobalBlockList|lijst met globale blokkades]].',
 	'globalblocking-block-bigrange' => 'De reeks die u hebt opgegeven ($1) is te groot om te blokkeren. U mag ten hoogste 65.536 adressen blokkeren (/16-reeksen)',
 	'globalblocking-list-intro' => 'Dit is een lijst met alle globale blokkades die op het moment actief zijn.
@@ -2716,7 +2723,7 @@ Dit betekent dat ze op andere sites van toepassing zijn, maar dat een lokale beh
 	'globalblocking-search-submit' => 'Naar blokkades zoeken',
 	'globalblocking-list-ipinvalid' => 'Het IP-adres waar u naar zocht is onjuist ($1).
 Voer een correct IP-adres in.',
-	'globalblocking-search-errors' => 'Uw zoekopdracht is niet geslaagd om de volgende {{PLURAL:$1|reden|redenen}}:',
+	'globalblocking-search-errors' => 'Uw zoekopdracht kende {{PLURAL:$1|het volgende probleem|de volgende problemen}}:',
 	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') heeft [[Special:Contributions/\$4|\$4]] globaal geblokkeerd ''(\$5)''",
 	'globalblocking-list-expiry' => 'verloopt $1',
 	'globalblocking-list-anononly' => 'alleen anoniemen',
