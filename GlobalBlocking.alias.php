@@ -48,7 +48,8 @@ $aliases['de'] = array(
 /** Finnish (Suomi) */
 $aliases['fi'] = array(
 	'GlobalBlock' => array( 'Globaaliesto' ),
-	'GlobalBlockList' => array( 'Globaalien estojen lista' ),
+	'GlobalBlockList' => array( 'Globaaliestojen lista' ),
+	'RemoveGlobalBlock' => array( 'Poista globaaliesto' ),
 );
 
 /** French (Français) */
@@ -117,6 +118,9 @@ $aliases['lb'] = array(
 /** Malay (Bahasa Melayu) */
 $aliases['ms'] = array(
 	'GlobalBlock' => array( 'Sekatan_sejagat' ),
+	'GlobalBlockList' => array( 'Senarai_sekatan_sejagat' ),
+	'RemoveGlobalBlock' => array( 'Batal_sekatan_sejagat' ),
+	'GlobalBlockStatus' => array( 'Senarai_putih_sekatan_sejagat' ),
 );
 
 /** Nedersaksisch (Nedersaksisch) */
@@ -143,6 +147,11 @@ $aliases['no'] = array(
 	'GlobalBlockList' => array( 'Global blokkeringsliste' ),
 	'RemoveGlobalBlock' => array( 'Avblokker globalt', 'Global avblokkering' ),
 	'GlobalBlockStatus' => array( 'Hviteliste for global blokkering' ),
+);
+
+/** Occitan (Occitan) */
+$aliases['oc'] = array(
+	'GlobalBlock' => array( 'BlocatgeGlobal' ),
 );
 
 /** Polish (Polski) */
