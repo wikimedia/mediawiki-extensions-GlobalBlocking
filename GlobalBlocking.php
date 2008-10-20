@@ -210,8 +210,10 @@ class GlobalBlocking {
 		if (class_exists('WikiMap')) {
 			// We can give more info than just the wiki id!
 			$wiki = WikiMap::getWiki( $wiki_id );
-			
-			return $wiki->getDisplayName();
+				
+			if ($wiki) {
+				return $wiki->getDisplayName();
+			}
 		}
 		
 		return $wiki_id;
@@ -221,7 +223,9 @@ class GlobalBlocking {
 		if (class_exists( 'WikiMap')) {
 			$wiki = WikiMap::getWiki( $wiki_id );
 			
-			return "[".$wiki->getUrl( "User:$user" )." $user]";
+			if ($wiki) {
+				return "[".$wiki->getUrl( "User:$user" )." $user]";
+			}
 		}
 		return $user;
 	}
