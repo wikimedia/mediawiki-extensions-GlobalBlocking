@@ -156,7 +156,9 @@ $aliases['oc'] = array(
 
 /** Polish (Polski) */
 $aliases['pl'] = array(
+	'GlobalBlock' => array( 'Zablokuj globalnie' ),
 	'GlobalBlockList' => array( 'Spis globalnie zablokowanych adresów IP' ),
+	'RemoveGlobalBlock' => array( 'Odblokuj globalnie' ),
 	'GlobalBlockStatus' => array( 'Lokalny status globalnych blokad' ),
 );
 
