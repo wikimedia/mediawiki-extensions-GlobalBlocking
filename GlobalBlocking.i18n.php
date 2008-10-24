@@ -617,6 +617,13 @@ $1',
 	'right-globalblock-whitelist' => 'Локално спиране на глобалните блокирания',
 );
 
+/** Bosnian (Bosanski)
+ * @author CERminator
+ */
+$messages['bs'] = array(
+	'globalblocking-list-anononly' => 'samo anonimni korisnici',
+);
+
 /** Catalan (Català)
  * @author Paucabot
  * @author SMP
