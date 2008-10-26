@@ -2459,6 +2459,13 @@ Fir all aktiv global Spären ze gesinn, gitt w.e.g op d'[[Special:GlobalBlockLis
 	'right-globalblock-whitelist' => 'Global Späre lokal ausschalten',
 );
 
+/** Eastern Mari (Олык Марий)
+ * @author Сай
+ */
+$messages['mhr'] = array(
+	'globalblocking-unblock-reason' => 'Амал:',
+);
+
 /** Malayalam (മലയാളം)
  * @author Shijualex
  */
@@ -3172,6 +3179,8 @@ Por favor, note que não pode introduzir um nome de utilizador!',
 	'globalblocking-whitelist-whitelisted' => "Você desactivou com sucesso o bloqueio global #$2 sobre o endereço IP '''$1''' em {{SITENAME}}.",
 	'globalblocking-whitelist-dewhitelisted' => "Você reactivou com sucesso o bloqueio global #$2 sobre o endereço IP '''$1''' em {{SITENAME}}.",
 	'globalblocking-whitelist-successsub' => 'Estado local alterado com sucesso',
+	'globalblocking-whitelist-nochange' => 'Você não fez qualquer alteração ao estado local deste bloqueio.
+[[Special:GlobalBlockList|Voltar à lista de bloqueios globais]].',
 	'globalblocking-whitelist-errors' => 'A sua alteração ao estado local de um bloqueio global não teve sucesso {{PLURAL:$1|pela seguinte razão|pelas seguintes razões}}:',
 	'globalblocking-blocked' => "O seu endereço IP foi bloqueado em todos os wikis por '''\$1''' (''\$2'').
 O motivo dado foi ''\"\$3\"''.
@@ -3913,6 +3922,13 @@ Xem [[Special:GlobalBlockList|tất cả các tác vụ cấm toàn cục]].',
  */
 $messages['vo'] = array(
 	'globalblocking-unblock-reason' => 'Kod:',
+);
+
+/** Yiddish (ייִדיש)
+ * @author פוילישער
+ */
+$messages['yi'] = array(
+	'removeglobalblock' => 'אויפהייבן גלאבאלן בלאק',
 );
 
 /** Yue (粵語)
