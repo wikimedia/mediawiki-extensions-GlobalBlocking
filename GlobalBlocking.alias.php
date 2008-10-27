@@ -117,10 +117,10 @@ $aliases['lb'] = array(
 
 /** Malay (Bahasa Melayu) */
 $aliases['ms'] = array(
-	'GlobalBlock' => array( 'Sekatan_sejagat' ),
-	'GlobalBlockList' => array( 'Senarai_sekatan_sejagat' ),
-	'RemoveGlobalBlock' => array( 'Batal_sekatan_sejagat' ),
-	'GlobalBlockStatus' => array( 'Senarai_putih_sekatan_sejagat' ),
+	'GlobalBlock' => array( 'Sekatan sejagat' ),
+	'GlobalBlockList' => array( 'Senarai sekatan sejagat' ),
+	'RemoveGlobalBlock' => array( 'Batal sekatan sejagat' ),
+	'GlobalBlockStatus' => array( 'Senarai putih sekatan sejagat' ),
 );
 
 /** Nedersaksisch (Nedersaksisch) */
