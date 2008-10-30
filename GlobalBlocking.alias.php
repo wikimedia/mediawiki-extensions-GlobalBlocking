@@ -100,6 +100,13 @@ $aliases['id'] = array(
 	'GlobalBlockStatus' => array( 'Daftar pemblokiran global nonaktif' ),
 );
 
+/** Japanese (日本語) */
+$aliases['ja'] = array(
+	'GlobalBlock' => array( 'グローバルブロック', 'グローバル・ブロック' ),
+	'GlobalBlockList' => array( 'グローバルブロック一覧', 'グローバル・ブロック一覧' ),
+	'RemoveGlobalBlock' => array( 'グローバルブロック解除', 'グローバル・ブロック解除' ),
+);
+
 /** Korean (한국어) */
 $aliases['ko'] = array(
 	'GlobalBlock' => array( '전체차단' ),
@@ -151,7 +158,8 @@ $aliases['no'] = array(
 
 /** Occitan (Occitan) */
 $aliases['oc'] = array(
-	'GlobalBlock' => array( 'BlocatgeGlobal' ),
+	'GlobalBlock' => array( 'Blocatge global', 'BlocatgeGlobal' ),
+	'RemoveGlobalBlock' => array( 'Desblocatge global', 'DesblocatgeGlobal' ),
 );
 
 /** Polish (Polski) */
