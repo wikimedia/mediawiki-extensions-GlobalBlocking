@@ -621,6 +621,7 @@ $1',
  * @author CERminator
  */
 $messages['bs'] = array(
+	'globalblocking-block-options' => 'Opcije:',
 	'globalblocking-list-anononly' => 'samo anonimni korisnici',
 );
 
