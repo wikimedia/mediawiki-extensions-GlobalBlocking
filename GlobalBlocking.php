@@ -37,6 +37,8 @@ $wgAutoloadClasses['SpecialGlobalBlockStatus'] = "$dir/SpecialGlobalBlockStatus.
 $wgSpecialPages['GlobalBlockStatus'] = 'SpecialGlobalBlockStatus';
 $wgAutoloadClasses['SpecialRemoveGlobalBlock'] = "$dir/SpecialRemoveGlobalBlock.php";
 $wgSpecialPages['RemoveGlobalBlock'] = 'SpecialRemoveGlobalBlock';
+$wgAutoloadClasses['ApiGlobalBlocks'] = "$dir/ApiGlobalBlocks.php";
+$wgAPIListModules['globalblocks'] = 'ApiGlobalBlocks';
 
 ## Add global block log
 $wgLogTypes[] = 'gblblock';
