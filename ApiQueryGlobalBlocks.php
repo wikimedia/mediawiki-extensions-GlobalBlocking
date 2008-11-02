@@ -129,8 +129,8 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 				$block['reason'] = $row->gb_reason;
 			if($fld_range)
 			{
-				$block['rangestart'] = IP::hexToIP($row->gb_range_start);
-				$block['rangeend'] = IP::hexToIP($row->gb_range_end);
+				$block['rangestart'] = IP::hexToQuad($row->gb_range_start);
+				$block['rangeend'] = IP::hexToQuad($row->gb_range_end);
 			}
 			$data[] = $block;
 		}
