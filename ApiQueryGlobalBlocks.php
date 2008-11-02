@@ -129,25 +129,13 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 				$block['reason'] = $row->gb_reason;
 			if($fld_range)
 			{
-				$block['rangestart'] = self::convertHexIP($row->gb_range_start);
-				$block['rangeend'] = self::convertHexIP($row->gb_range_end);
+				$block['rangestart'] = IP::hexToIP($row->gb_range_start);
+				$block['rangeend'] = IP::hexToIP($row->gb_range_end);
 			}
 			$data[] = $block;
 		}
 		$result->setIndexedTagName($data, 'block');
 		$result->addValue('query', $this->getModuleName(), $data);
-	}
-	
-	protected static function convertHexIP($ip)
-	{
-		// Converts a hexadecimal IP to nnn.nnn.nnn.nnn format
-		$dec = wfBaseConvert($ip, 16, 10);
-		$parts[3] = $dec % 256;
-		$dec /= 256;
-		$parts[2] = $dec % 256;
-		$dec /= 256;
-		$parts[1] = $dec % 256;
-		$parts[0] = $dec / 256;
 	}
 
 	public function getAllowedParams() {
