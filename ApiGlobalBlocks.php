@@ -194,6 +194,10 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 			)
 		);
 	}
+	
+	protected function getDB() {
+		return GlobalBlocking::getGlobalBlockingSlave();
+	}
 
 	public function getParamDescription() {
 		return array (
@@ -215,7 +219,7 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 
 	protected function getExamples() {
 		return array (	'api.php?action=query&list=globalblocks',
-				'api.php?action=query&list=globalblocks&bgip=217.121.114.116'
+				'api.php?action=query&list=globalblocks&bgaddresses=217.121.114.116'
 		);
 	}
 
