@@ -172,6 +172,7 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 			'addresses' => array(
 				ApiBase :: PARAM_ISMULTI => true
 			),
+			'ip' => null,
 			'limit' => array(
 				ApiBase :: PARAM_DFLT => 10,
 				ApiBase :: PARAM_TYPE => 'limit',
@@ -219,7 +220,7 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 
 	protected function getExamples() {
 		return array (	'api.php?action=query&list=globalblocks',
-				'api.php?action=query&list=globalblocks&bgaddresses=217.121.114.116'
+				'api.php?action=query&list=globalblocks&bgip=217.121.114.116'
 		);
 	}
 
