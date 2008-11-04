@@ -40,6 +40,11 @@ $wgSpecialPages['RemoveGlobalBlock'] = 'SpecialRemoveGlobalBlock';
 $wgAutoloadClasses['ApiQueryGlobalBlocks'] = "$dir/ApiQueryGlobalBlocks.php";
 $wgAPIListModules['globalblocks'] = 'ApiQueryGlobalBlocks';
 
+$wgSpecialPageGroups['GlobalBlock'] = 'users';
+$wgSpecialPageGroups['GlobalBlockList'] = 'users';
+$wgSpecialPageGroups['GlobalBlockStatus'] = 'users';
+$wgSpecialPageGroups['RemoveGlobalBlock'] = 'users';
+
 ## Add global block log
 $wgLogTypes[] = 'gblblock';
 $wgLogNames['gblblock'] = 'globalblocking-logpage';
