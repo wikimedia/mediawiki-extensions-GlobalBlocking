@@ -155,6 +155,6 @@ class SpecialGlobalBlockStatus extends SpecialPage {
 		$form .= Xml::closeElement( 'form' );
 		$form .= Xml::closeElement( 'fieldset' );
 
-		$wgOut->addHtml( $form );
+		$wgOut->addHTML( $form );
 	}
 }

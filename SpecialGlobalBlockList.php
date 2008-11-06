@@ -78,7 +78,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 		$searchForm .= wfBuildForm( $fields, 'globalblocking-search-submit' );
 
 		$searchForm .= Xml::closeElement( 'form' ) . Xml::closeElement( 'fieldset' );
-		$wgOut->addHtml( $searchForm );
+		$wgOut->addHTML( $searchForm );
 
 		// Build a list of blocks.
 		$conds = array();
@@ -105,7 +105,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 
 		$pager = new GlobalBlockListPager( $this, $conds );
 
-		$wgOut->addHtml( $pager->getNavigationBar() .
+		$wgOut->addHTML( $pager->getNavigationBar() .
 				Xml::tags( 'ul', null, $pager->getBody() ) .
 				$pager->getNavigationBar() );
 	}
