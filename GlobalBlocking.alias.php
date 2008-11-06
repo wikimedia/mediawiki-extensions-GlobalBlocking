@@ -37,6 +37,13 @@ $aliases['arz'] = array(
 	'GlobalBlockStatus' => array( 'قايمة_المنع_العام_البيضاء', 'حالة_المنع_العام', 'تعطيل_المنع_العام' ),
 );
 
+/** Bosnian (Bosanski) */
+$aliases['bs'] = array(
+	'GlobalBlock' => array( 'GlobalnoBlokiranje' ),
+	'GlobalBlockList' => array( 'ListaGlobalnogBlokiranja' ),
+	'RemoveGlobalBlock' => array( 'GlobalnoDeblokiranje' ),
+);
+
 /** German (Deutsch) */
 $aliases['de'] = array(
 	'GlobalBlock' => array( 'Globale Sperre' ),
