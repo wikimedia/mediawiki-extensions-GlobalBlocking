@@ -2213,7 +2213,9 @@ Alesan sing diwènèhaké yaiku ''\"\$3\"''. Blokade iki bakal kadaluwarsa ing '
  * @author Malafaya
  */
 $messages['ka'] = array(
+	'globalblocking-list' => 'გლობალურად ბლოკირებული IP-მისამართების სია',
 	'globalblocking-unblock-reason' => 'მიზეზი:',
+	'removeglobalblock' => 'გლობალური ბლოკირების მოხსნა',
 );
 
 /** Khmer (ភាសាខ្មែរ)
@@ -2354,7 +2356,7 @@ Dä '''$1''' (''$2'') hädd_et jedonn.
 Sing Jrund wohr: „''$3''“.
 De Sperr bliet bestonn bes: ''$4''.",
 	'globalblocking-logpage' => 'Logboch fum IP-Adresse en alle Wikis sperre',
-	'globalblocking-logpagetext' => "Dat es et Logbooch met alle Sperre, di op alle Wikis op eimohl jemaat ov opjehovve woode sen.
+	'globalblocking-logpagetext' => "Dat es et Logboch met alle Sperre, di op alle Wikis op eimohl jemaat ov opjehovve woode sen.
 Mer moß sesch em klore sen, dat die Sperre ''op ander Wikis'' jemaat woode sin künne.
 Dobei donn se ävver och för hee dat Wiki wirke.
 Öm der all de jrad jötijje Sperre för all de Wikis op eijmohl aanzeloohre, jangk noh de [[Special:GlobalBlockList|{{int:Globalblocking-list}}]].",
