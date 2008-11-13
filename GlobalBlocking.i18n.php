@@ -621,7 +621,10 @@ $1',
  * @author CERminator
  */
 $messages['bs'] = array(
+	'globalblocking-block-expiry-otherfield' => 'Ostali period:',
 	'globalblocking-block-options' => 'Opcije:',
+	'globalblocking-block-submit' => 'Globalno blokiraj ovu IP adresu',
+	'globalblocking-search-ip' => 'IP adresa:',
 	'globalblocking-list-anononly' => 'samo anonimni korisnici',
 );
 
@@ -2143,6 +2146,7 @@ $messages['ja'] = array(
 
 /** Javanese (Basa Jawa)
  * @author Meursault2004
+ * @author Pras
  */
 $messages['jv'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Marengaké]] alamat-alamat IP [[Special:GlobalBlockList|diblokir sacara lintas wiki]]',
@@ -2153,9 +2157,8 @@ $messages['jv'] = array(
 	'globalblocking-block-expiry-other' => 'Wektu kadaluwarsa liya',
 	'globalblocking-block-expiry-otherfield' => 'Wektu liya:',
 	'globalblocking-block-legend' => 'Blokir sawijining panganggo sacara global',
-	'globalblocking-block-options' => 'Opsi-opsi',
-	'globalblocking-block-errors' => 'Blokadené ora suksès, amerga:
-$1',
+	'globalblocking-block-options' => 'Pilihan:',
+	'globalblocking-block-errors' => 'Pamblokiran ora kasil, amarga {{PLURAL:$1|alesan|alesan-alesan}} iki:',
 	'globalblocking-block-ipinvalid' => 'AlamatIP sing dilebokaké ($1) iku ora absah.
 Tulung digatèkaké yèn panjenengan ora bisa nglebokaké jeneng panganggo!',
 	'globalblocking-block-expiryinvalid' => 'Wektu kadaluwarsa sing dilebokaké ($1) ora absah.',
@@ -2164,29 +2167,40 @@ Tulung digatèkaké yèn panjenengan ora bisa nglebokaké jeneng panganggo!',
 Panjenengan mbok-menawa kersa mirsani [[Special:GlobalBlockList|daftar blokade global]].',
 	'globalblocking-block-successsub' => 'Pamblokiran global bisa kasil suksès',
 	'globalblocking-block-alreadyblocked' => 'Alamat IP $1 wis diblokir sacara global. Panjenengan bisa ndeleng blokade sing ana ing kaca [[Special:GlobalBlockList|daftar blokade global]].',
+	'globalblocking-block-bigrange' => 'Rentang sing panjenengan lebokaké ($1) kekamban kanggo diblokir.
+Panjenengan bisa mblokir, paling akèh, 65.536 alamat (/16 rentang)',
+	'globalblocking-list-intro' => 'Iki dhaptar kabèh pamblokiran global sing ana.
+Sawetara pamblokiran ditandhani minangka ora-aktif sacara lokal: iki tegesé pambokiran iki aktif ing situs liya, nanging pangurus lokal mutusaké mbukak blokade ing wiki lokal kasebut.',
 	'globalblocking-list' => 'Daftar alamat-alamat IP sing diblokir sacara global',
 	'globalblocking-search-legend' => 'Nggolèki blokade global',
 	'globalblocking-search-ip' => 'Alamat IP:',
 	'globalblocking-search-submit' => 'Nggolèki blokade',
 	'globalblocking-list-ipinvalid' => 'Alamat IP sing digolèki ($1) iku ora absah.
 Tulung lebokna alamat IP sing absah.',
-	'globalblocking-search-errors' => 'Panggolèkan panjenengan ora ana kasilé, amarga:
-$1',
+	'globalblocking-search-errors' => 'Panggolèkan panjenengan ora kasil, amarga {{PLURAL:$1|alesan|alesan-alesan}} iki:',
 	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') sacara global mblokir [[Special:Contributions/\$4|\$4]] ''(\$5)''",
 	'globalblocking-list-expiry' => 'kadaluwarsa $1',
 	'globalblocking-list-anononly' => 'anon-waé',
 	'globalblocking-list-unblock' => 'batal blokir',
 	'globalblocking-list-whitelisted' => 'dijabel sacara lokal déning $1: $2',
 	'globalblocking-list-whitelist' => 'status lokal',
+	'globalblocking-goto-block' => 'Blokir alamat IP sacara global',
+	'globalblocking-goto-unblock' => 'Busak pamblokiran global',
+	'globalblocking-goto-status' => 'Owahi status lokal kanggo sawijining pamblokiran global',
+	'globalblocking-return' => 'Bali menyang dhaptar pamblokiran global',
+	'globalblocking-notblocked' => 'Alamat IP ($1) sing panjenengan lebokaké ora diblokir sacara global.',
+	'globalblocking-unblock' => 'Jabel pamblokiran global',
 	'globalblocking-unblock-ipinvalid' => 'AlamatIP sing dilebokaké ($1) iku ora absah.
 Tulung digatèkaké yèn panjenengan ora bisa nglebokaké jeneng panganggo!',
 	'globalblocking-unblock-legend' => 'Ilangana sawijining pamblokiran global',
-	'globalblocking-unblock-submit' => 'Ilangana pamblokiran global',
+	'globalblocking-unblock-submit' => 'Jabel pamblokiran global',
 	'globalblocking-unblock-reason' => 'Alesan:',
-	'globalblocking-unblock-unblocked' => "Panjenengan sacara suksès ngilangi blokade global #$2 ing alamat IP '''$1'''",
-	'globalblocking-unblock-errors' => 'Panjenengan ora bisa ngilangi blokade global kanggo alamat IP iku, amerga:
-$1',
-	'globalblocking-unblock-successsub' => 'Blokade global bisa dibatalaké',
+	'globalblocking-unblock-unblocked' => "Panjenengan sacara suksès njabel blokade global #$2 ing alamat IP '''$1'''",
+	'globalblocking-unblock-errors' => 'Panjenengan gagal njabel blokade global, kanthi {{PLURAL:$1|alesan|alesan}}:',
+	'globalblocking-unblock-successsub' => 'Blokade global bisa dijabel',
+	'globalblocking-unblock-subtitle' => 'Njabel blokade global',
+	'globalblocking-unblock-intro' => '[[Special:GlobalBlockList|Klik ing kéné]] kanggo bali menyang dhaptar pamblokiran global.',
+	'globalblocking-whitelist' => 'Status lokal saka pamblokiran global',
 	'globalblocking-whitelist-legend' => 'Ganti status lokal',
 	'globalblocking-whitelist-reason' => 'Alesané diganti:',
 	'globalblocking-whitelist-status' => 'Status lokal:',
@@ -2195,15 +2209,27 @@ $1',
 	'globalblocking-whitelist-whitelisted' => "Panjenengan sacara suksès njabel blokade global #$2 ing alamat IP '''$1''' ing {{SITENAME}}.",
 	'globalblocking-whitelist-dewhitelisted' => "Panjenengan sacara suksès blokade global #$2 ing alamat IP '''$1''' ing {{SITENAME}}.",
 	'globalblocking-whitelist-successsub' => 'Status lokal kasil diganti',
-	'globalblocking-blocked' => "Alamat IP panjenengan diblokir ing kabèh wiki Wikimedia déning '''\$1''' (''\$2'').
-Alesan sing diwènèhaké yaiku ''\"\$3\"''. Blokade iki bakal kadaluwarsa ing ''\$4''.",
+	'globalblocking-whitelist-nochange' => 'Panjenengan ora ngowahi status lokal pamblokiran iki.
+[[Special:GlobalBlockList|Bali menyang dhaptar pamblokiran global]].',
+	'globalblocking-whitelist-errors' => 'Pangowahan marang status lokal saka pamblokiran global ora kasil; amarga {{PLURAL:$1|alesan|alesan-alesan}} iki:',
+	'globalblocking-whitelist-intro' => 'Panjenengan bisa migunakaké formulir iki kanggo nyunting status lokal saka sawijining pamblokiran global.
+Yèn pamblokiran dinon-aktifaké ing wiki iki, panganggo-panganggo kanthi alamat IP kasebut bakal bisa nyunting kaya adaté.
+[[Special:GlobalBlockList|Bali menyang dhaptar pamblokiran global]].',
+	'globalblocking-blocked' => "Alamat IP panjenengan diblokir ing kabèh wiki '''\$1''' (''\$2'').
+Alesan pamblokiran yakuwi ''\"\$3\"''. 
+Pamblokiran ''\$4''.",
 	'globalblocking-logpage' => 'Log pamblokiran global',
+	'globalblocking-logpagetext' => 'Iki log pamblokiran global sing digawé lan dibusak ing situs iki.
+Perlu diweruhi yèn pamblokiran global disa digawé lan dibusak ing wiki liya sing bisa karasa uga ing wiki iki.
+Kanggo mirsani kabèh pamblokiran global sing aktif wektu iki, pirsani ing[[Special:GlobalBlockList|dhaptar pamblokiran global]] iki.',
 	'globalblocking-block-logentry' => 'diblokir sacara global [[$1]] mawa wektu kadaluwarsa $2',
 	'globalblocking-unblock-logentry' => 'jabelen blokade global ing [[$1]]',
 	'globalblocking-whitelist-logentry' => 'njabel blokade global ing [[$1]] sacara lokal',
 	'globalblocking-dewhitelist-logentry' => 'trapna ulang blokade global ing [[$1]] sacara lokal',
 	'globalblocklist' => 'Tuduhna daftar alamat-alamat IP sing diblokir sacara global',
 	'globalblock' => 'Mblokir alamat IP sacara global',
+	'globalblockstatus' => 'Status lokal saka pamblokiran global',
+	'removeglobalblock' => 'Jabel pamblokiran global',
 	'right-globalblock' => 'Nggawé pamblokiran global',
 	'right-globalunblock' => 'Ilangana pamblokiran global',
 	'right-globalblock-whitelist' => 'Jabel blokade global sacara lokal',
