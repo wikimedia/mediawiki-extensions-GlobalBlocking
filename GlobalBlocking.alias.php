@@ -41,7 +41,7 @@ $aliases['arz'] = array(
 $aliases['bs'] = array(
 	'GlobalBlock' => array( 'GlobalnoBlokiranje' ),
 	'GlobalBlockList' => array( 'ListaGlobalnogBlokiranja' ),
-	'RemoveGlobalBlock' => array( 'GlobalnoDeblokiranje' ),
+	'RemoveGlobalBlock' => array( 'GlobalnoDeblokiranje', 'UklanjanjeGlobalnogBlokiranja' ),
 );
 
 /** German (Deutsch) */
