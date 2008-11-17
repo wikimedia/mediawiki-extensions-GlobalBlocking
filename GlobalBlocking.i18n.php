@@ -624,6 +624,7 @@ $messages['bs'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Ostali period:',
 	'globalblocking-block-options' => 'Opcije:',
 	'globalblocking-block-submit' => 'Globalno blokiraj ovu IP adresu',
+	'globalblocking-list' => 'Spisak globalno blokiranih IP adresa',
 	'globalblocking-search-ip' => 'IP adresa:',
 	'globalblocking-list-anononly' => 'samo anonimni korisnici',
 );
@@ -3494,6 +3495,7 @@ Všetky aktívne blokovania si môžete pozrieť na [[Special:GlobalBlockList|zo
 
 /** Serbian Cyrillic ekavian (ћирилица)
  * @author Sasa Stefanovic
+ * @author Јованвб
  */
 $messages['sr-ec'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Омогућује]] [[Special:GlobalBlockList|глобално блокирање]] ИП адреса на више викија',
@@ -3524,6 +3526,9 @@ $messages['sr-ec'] = array(
 	'globalblocking-list-expiry' => 'истиче $1',
 	'globalblocking-list-anononly' => 'само анонимне',
 	'globalblocking-list-unblock' => 'одблокирај',
+	'globalblocking-list-whitelist' => 'локални статус',
+	'globalblocking-goto-unblock' => 'Уклони глобални блок',
+	'globalblocking-unblock' => 'Уклони глобални блок',
 	'globalblocking-unblock-ipinvalid' => 'ИП адреса ($1) коју сте унели није исправна.
 Запамтите да не можете уносити корисничка имена!',
 	'globalblocking-unblock-legend' => 'Уклоните глобални блок',
@@ -3532,6 +3537,8 @@ $messages['sr-ec'] = array(
 	'globalblocking-unblock-unblocked' => "Успешно сте уклонили глобални блок #$2 за ИП адресу '''$1'''.",
 	'globalblocking-unblock-errors' => 'Не можете уклонити глобални блок за ту ИП адресу због {{PLURAL:$1|следећег разлога|следећих разлога}}:',
 	'globalblocking-unblock-successsub' => 'Глобални блок успешно уклоњен',
+	'globalblocking-unblock-subtitle' => 'Уклањање глобалног блока',
+	'globalblocking-whitelist-reason' => 'Разлог за промену:',
 	'globalblocking-blocked' => "Ваша ИП адреса је блокирана на свим Викимедијиним викијима. Корисник који је блокирао '''$1''' (''$2'').
 Разлог за блокаду је „''$3''”. Блок истиче ''$4''.",
 	'globalblocking-logpage' => 'Историја глобалних блокова',
@@ -3539,6 +3546,8 @@ $messages['sr-ec'] = array(
 	'globalblocking-unblock-logentry' => 'уклонио глобални блок за [[$1]]',
 	'globalblocklist' => 'Списак глобално блокираних ИП адреса',
 	'globalblock' => 'Глобално блокирајте ИП адресу',
+	'removeglobalblock' => 'Уклони глобални блок',
+	'right-globalunblock' => 'Уклони глобалне блокове',
 );
 
 /** Sundanese (Basa Sunda)
