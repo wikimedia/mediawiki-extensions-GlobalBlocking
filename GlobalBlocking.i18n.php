@@ -1435,10 +1435,12 @@ $messages['got'] = array(
 );
 
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
+ * @author Crazymadlover
  * @author Omnipaedista
  */
 $messages['grc'] = array(
 	'globalblocking-block-options' => 'Ἐπιλογαί:',
+	'globalblocking-unblock-reason' => 'Αἰτία:',
 );
 
 /** Manx (Gaelg)
@@ -3291,6 +3293,14 @@ $1',
 	'right-globalblock' => 'Efectuează blocări globale',
 	'right-globalunblock' => 'Elimină blocări globale',
 	'right-globalblock-whitelist' => 'Dezactivează local blocările globale',
+);
+
+/** Tarandíne (Tarandíne)
+ * @author Joetaras
+ */
+$messages['roa-tara'] = array(
+	'globalblocking-block-expiry-otherfield' => 'Otre orarie:',
+	'globalblocking-unblock-reason' => 'Mutive:',
 );
 
 /** Russian (Русский)
