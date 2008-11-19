@@ -3691,6 +3691,7 @@ $messages['tr'] = array(
 /** Ukrainian (Українська)
  * @author AS
  * @author Ahonc
+ * @author NickK
  */
 $messages['uk'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Дозволяє]] блокування IP-адрес [[Special:GlobalBlockList|на кількох вікі]]',
@@ -3728,7 +3729,7 @@ $messages['uk'] = array(
 	'globalblocking-list-unblock' => 'розблокувати',
 	'globalblocking-list-whitelisted' => 'локально відключив $1: $2',
 	'globalblocking-list-whitelist' => 'локальний стан',
-	'globalblocking-goto-block' => 'Заблоквати IP-адресу глобально',
+	'globalblocking-goto-block' => 'Заблокувати IP-адресу глобально',
 	'globalblocking-goto-unblock' => 'Зняти глобальне блокування',
 	'globalblocking-goto-status' => 'Змінити локальний стан глобального блокування',
 	'globalblocking-return' => 'Повернутися до списку глобальних блокувань',
@@ -3758,7 +3759,7 @@ $messages['uk'] = array(
 [[Special:GlobalBlockList|Повернутися до списку глобальних блокувань]].',
 	'globalblocking-whitelist-errors' => 'Спроа змінити локальний стан глобального блокування не вдалася. {{PLURAL:$1|Причина|Причини}}:',
 	'globalblocking-whitelist-intro' => 'Ви можете використовувати цю форму для зміни локального стану глобального блокування.
-Якщо глобальне блокування виключене у цій вікі, то користувачі з відповідними IP-адресами зможуть нормально редагувати.
+Якщо глобальне блокування вимкнене у цій вікі, то користувачі з відповідними IP-адресами зможуть нормально редагувати.
 [[Special:GlobalBlockList|Повернутися до списку глобальних глобувань]].',
 	'globalblocking-blocked' => "Ваша IP-адреса була заблокована у всіх вікі користувачем '''\$1''' (''\$2'').
 Причиною вказано ''\"\$3\"''.

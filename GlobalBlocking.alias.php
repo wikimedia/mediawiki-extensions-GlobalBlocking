@@ -112,6 +112,7 @@ $aliases['ja'] = array(
 	'GlobalBlock' => array( 'グローバルブロック', 'グローバル・ブロック' ),
 	'GlobalBlockList' => array( 'グローバルブロック一覧', 'グローバル・ブロック一覧' ),
 	'RemoveGlobalBlock' => array( 'グローバルブロック解除', 'グローバル・ブロック解除' ),
+	'GlobalBlockStatus' => array( 'グローバルブロック無効', 'グローバルブロックホワイトリスト' ),
 );
 
 /** Korean (한국어) */
