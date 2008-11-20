@@ -621,12 +621,38 @@ $1',
  * @author CERminator
  */
 $messages['bs'] = array(
+	'globalblocking-desc' => '[[Special:GlobalBlock|Omogućava]] da se IP adrese [[Special:GlobalBlockList|blokiraju na većem broju wikija]]',
+	'globalblocking-block-intro' => 'Možete koristiti ovu stranicu za blokiranje IP adrese na svim wikijima.',
+	'globalblocking-block-reason' => 'Razlog za ovu blokadu',
+	'globalblocking-block-expiry' => 'Isticanje blokade:',
+	'globalblocking-block-expiry-other' => 'Ostali vremenski period',
 	'globalblocking-block-expiry-otherfield' => 'Ostali period:',
+	'globalblocking-block-legend' => 'Blokiranje korisnika globalno',
 	'globalblocking-block-options' => 'Opcije:',
+	'globalblocking-block-errors' => 'Vaše blokiranje je bilo bez uspjeha, iz {{PLURAL:$1|slijedećeg razloga|slijedećih razloga}}:',
 	'globalblocking-block-submit' => 'Globalno blokiraj ovu IP adresu',
+	'globalblocking-block-successsub' => 'Globalno blokiranje uspješno',
 	'globalblocking-list' => 'Spisak globalno blokiranih IP adresa',
 	'globalblocking-search-ip' => 'IP adresa:',
+	'globalblocking-search-submit' => 'Pretraga blokada',
 	'globalblocking-list-anononly' => 'samo anonimni korisnici',
+	'globalblocking-list-unblock' => 'ukloni',
+	'globalblocking-list-whitelist' => 'lokalni status',
+	'globalblocking-return' => 'Vrati se na spisak globalnih blokada',
+	'globalblocking-unblock-legend' => 'Uklanjanje globalne blokade',
+	'globalblocking-unblock-submit' => 'Ukloni globalnu blokadu',
+	'globalblocking-unblock-successsub' => 'Globalna blokada uspješno uklonjena',
+	'globalblocking-whitelist' => 'Lokalno stanje globalnih blokada',
+	'globalblocking-whitelist-reason' => 'Razlog za promjenu:',
+	'globalblocking-whitelist-status' => 'Lokalni status:',
+	'globalblocking-whitelist-statuslabel' => 'Onemogući ovu globalnu blokadu na {{SITENAME}}',
+	'globalblocking-whitelist-successsub' => 'Lokalni status uspješno promijenjen',
+	'globalblocking-blocked' => "Vaša IP adresa je blokirana na svim wikijima od strane '''\$1''' (sa ''\$2'').
+Naveden je razlog ''\"\$3\"''.
+Ova blokada ''\$4''.",
+	'globalblocking-logpage' => 'Zapis globalnih blokada',
+	'globalblockstatus' => 'Lokalni status globalnih blokada',
+	'right-globalblock-whitelist' => 'Onemogućavanje globalnih blokada na lokalnom nivou',
 );
 
 /** Catalan (Català)
