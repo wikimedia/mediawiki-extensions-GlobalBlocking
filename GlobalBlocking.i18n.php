@@ -2524,6 +2524,23 @@ $messages['mhr'] = array(
 	'globalblocking-unblock-reason' => 'Амал:',
 );
 
+/** Macedonian (Македонски)
+ * @author Brest
+ */
+$messages['mk'] = array(
+	'globalblocking-block-reason' => 'Образложение за ова блокирање:',
+	'globalblocking-block-expiry' => 'Рок на блокирање:',
+	'globalblocking-block-expiry-other' => 'Друг рок на блокирање',
+	'globalblocking-block-expiry-otherfield' => 'Друго време:',
+	'globalblocking-block-legend' => 'Глобално блокирање на корисник',
+	'globalblocking-block-options' => 'Опции:',
+	'globalblocking-block-errors' => 'Вашето блокирање беше неуспешно, од {{PLURAL:$1|следнава причина|следниве причини}}:',
+	'globalblocking-block-ipinvalid' => 'IP адресата ($1) која ја внесовте не е валидна.
+Напомена: не може да се внесува корисничко име!',
+	'globalblocking-block-expiryinvalid' => 'Рокот на истекување кој го внесовте ($1) не е валиден.',
+	'globalblocking-block-submit' => 'Глобално блокирање на оваа IP адреса',
+);
+
 /** Malayalam (മലയാളം)
  * @author Shijualex
  */

@@ -67,6 +67,8 @@ $aliases['fr'] = array(
 /** Galician (Galego) */
 $aliases['gl'] = array(
 	'GlobalBlock' => array( 'Bloqueo global' ),
+	'GlobalBlockList' => array( 'Lista de bloqueos globais', 'Listaxe de bloqueos globais' ),
+	'RemoveGlobalBlock' => array( 'Desbloqueo global' ),
 );
 
 /** Hebrew (עברית)
