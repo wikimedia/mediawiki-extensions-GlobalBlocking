@@ -1479,6 +1479,7 @@ $messages['got'] = array(
  */
 $messages['grc'] = array(
 	'globalblocking-block-options' => 'Ἐπιλογαί:',
+	'globalblocking-list-unblock' => 'ἀφαιρεῖν',
 	'globalblocking-unblock-reason' => 'Αἰτία:',
 );
 
@@ -2314,6 +2315,7 @@ $messages['km'] = array(
  */
 $messages['ko'] = array(
 	'globalblocking-block' => 'IP 주소를 모든 위키에서 차단',
+	'globalblocking-block-expiry' => '차단 기간:',
 	'globalblocking-block-expiry-otherfield' => '다른 기간:',
 	'globalblocking-block-expiryinvalid' => '당신이 입력한 기한($1)이 잘못되었습니다.',
 	'globalblocking-list-intro' => '현재 유효한 전체 차단의 목록입니다. 전체 차단은 로컬의 관리자의 권한으로 무효화 할 수 있습니다. 단 로컬에서 무효화하더라도 다른 위키에서는 차단 상태가 지속됩니다.',
