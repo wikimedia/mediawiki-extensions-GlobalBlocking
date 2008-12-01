@@ -2317,6 +2317,7 @@ $messages['ko'] = array(
 	'globalblocking-block' => 'IP 주소를 모든 위키에서 차단',
 	'globalblocking-block-expiry' => '차단 기간:',
 	'globalblocking-block-expiry-otherfield' => '다른 기간:',
+	'globalblocking-block-options' => '설정:',
 	'globalblocking-block-expiryinvalid' => '당신이 입력한 기한($1)이 잘못되었습니다.',
 	'globalblocking-list-intro' => '현재 유효한 전체 차단의 목록입니다. 전체 차단은 로컬의 관리자의 권한으로 무효화 할 수 있습니다. 단 로컬에서 무효화하더라도 다른 위키에서는 차단 상태가 지속됩니다.',
 	'globalblocking-list' => '모든 위키에서 차단된 IP 목록',
@@ -2328,6 +2329,9 @@ $messages['ko'] = array(
 	'globalblocking-unblock' => '전체 차단 제거',
 	'globalblocking-unblock-reason' => '이유:',
 	'globalblocking-whitelist' => '전체 차단의 로컬 상태',
+	'globalblocking-whitelist-reason' => '바꾸는 이유:',
+	'globalblocking-whitelist-status' => '로컬 상태:',
+	'globalblocking-whitelist-statuslabel' => '{{SITENAME}}에서 전체 위키 차단을 비활성화하기',
 	'globalblocking-blocked' => "당신은 '''\$1''' (''\$2'')에 의해 모든 위키에서 차단되었습니다.
 차단 사유는 \"\$3\"이며, 기한은 \"\$4\"입니다.",
 	'globalblocking-logpage' => '전체 위키 차단 기록',
@@ -3480,6 +3484,19 @@ $messages['sah'] = array(
 	'globalblocking-list-whitelist' => 'маннааҕы турук (статус)',
 	'globalblocking-unblock-reason' => 'Төрүөтэ:',
 	'globalblocking-whitelist-reason' => 'Уларытыы төрүөтэ:',
+);
+
+/** Sinhala (සිංහල)
+ * @author නන්දිමිතුරු
+ */
+$messages['si'] = array(
+	'globalblocking-block-options' => 'විකල්පයන්:',
+	'globalblocking-search-ip' => 'අන්තර්ජාල ලිපිනය:',
+	'globalblocking-list-anononly' => 'නිර්නාමිකයන් පමණයි',
+	'globalblocking-list-unblock' => 'ඉවත්කරන්න',
+	'globalblocking-list-whitelist' => 'ස්ථානික තත්ත්වය',
+	'globalblocking-unblock-reason' => 'හේතුව:',
+	'globalblocking-whitelist-reason' => 'වෙනස්වීමට හේතුව:',
 );
 
 /** Slovak (Slovenčina)
