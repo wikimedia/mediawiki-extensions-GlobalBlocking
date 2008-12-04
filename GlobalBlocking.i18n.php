@@ -2314,19 +2314,25 @@ $messages['km'] = array(
  * @author Kwj2772
  */
 $messages['ko'] = array(
+	'globalblocking-desc' => '특정 IP를 [[Special:GlobalBlockList|모든 위키에서]] [[Special:GlobalBlock|차단]]할 수 있는 권한을 줌',
 	'globalblocking-block' => 'IP 주소를 모든 위키에서 차단',
+	'globalblocking-block-reason' => '차단하는 이유:',
 	'globalblocking-block-expiry' => '차단 기간:',
 	'globalblocking-block-expiry-otherfield' => '다른 기간:',
 	'globalblocking-block-options' => '설정:',
 	'globalblocking-block-expiryinvalid' => '당신이 입력한 기한($1)이 잘못되었습니다.',
+	'globalblocking-block-submit' => '이 IP 주소를 전체 위키에서 차단',
+	'globalblocking-block-successsub' => '전체 차단 성공',
 	'globalblocking-list-intro' => '현재 유효한 전체 차단의 목록입니다. 전체 차단은 로컬의 관리자의 권한으로 무효화 할 수 있습니다. 단 로컬에서 무효화하더라도 다른 위키에서는 차단 상태가 지속됩니다.',
 	'globalblocking-list' => '모든 위키에서 차단된 IP 목록',
 	'globalblocking-search-legend' => '전체 차단 찾기',
 	'globalblocking-search-ip' => 'IP 주소:',
 	'globalblocking-search-submit' => '차단 찾기',
+	'globalblocking-list-ipinvalid' => '당신이 입력한 IP 주소가 잘못되었습니다.
+유효한 IP 주소를 입력해주세요.',
 	'globalblocking-list-blockitem' => '$1: <span class="plainlinks">\'\'\'$2\'\'\'</span> ($3) 이(가) [[Special:Contributions/$4|$4]] 을(를) 전체 위키에서 차단하였습니다. ($5)',
 	'globalblocking-goto-status' => '전체 차단의 로컬 상태 바꾸기',
-	'globalblocking-unblock' => '전체 차단 제거',
+	'globalblocking-unblock' => '전체 차단 해제',
 	'globalblocking-unblock-reason' => '이유:',
 	'globalblocking-whitelist' => '전체 차단의 로컬 상태',
 	'globalblocking-whitelist-reason' => '바꾸는 이유:',
@@ -2340,6 +2346,8 @@ $messages['ko'] = array(
 	'globalblocklist' => '모든 위키에서 차단된 IP 목록',
 	'globalblock' => '전체 위키에서 IP 주소를 차단',
 	'globalblockstatus' => '전체 차단의 로컬 상태',
+	'right-globalblock' => '전체 위키 차단',
+	'right-globalunblock' => '전체 위키에서 차단을 해제',
 );
 
 /** Ripoarisch (Ripoarisch)
@@ -2709,7 +2717,7 @@ Sila ambil perhatian bahawa anda tidak boleh menyatakan nama pengguna!',
 Anda boleh melihat sekatan ini di [[Special:GlobalBlockList|senarai sekatan sejagat]].',
 	'globalblocking-block-bigrange' => 'Julat yang anda nyatakan ($1) terlalu besar.
 Anda hanya boleh menyekat sehingga 65,536 alamat (julat /16)',
-	'globalblocking-list-intro' => 'Berikut ialah senarai sekatan sejagat yang sedang berkuat kuasa.
+	'globalblocking-list-intro' => 'Yang berikut ialah senarai sekatan sejagat yang sedang berkuat kuasa.
 Sesetengah sekatan telah dimatikan di wiki tempatan. Dalam kata lain, sekatan itu berkuat kuasa di wiki-wiki lain tetapi pentadbir tempatan telah memutuskan untuk membatalkan sekatan itu di wiki ini.',
 	'globalblocking-list' => 'Senarai sekatan sejagat',
 	'globalblocking-search-legend' => 'Cari sekatan sejagat',
@@ -2760,7 +2768,7 @@ Jika suatu sekatan sejagat dimatikan di wiki ini, pengguna alamat IP yang berken
 Sebab yang diberikan ialah ''\"\$3\"''.
 Sekatan ini ''\$4''.",
 	'globalblocking-logpage' => 'Log sekatan sejagat',
-	'globalblocking-logpagetext' => 'Berikut ialah log sekatan sejagat yang telah dikenakan dan dibatalkan di wiki ini. Sila ambil perhatian bahawa sekatan sejagat boleh dikenakan dan dibatalkan di wiki-wiki lain, justeru berkuatkuasa di wiki ini juga. Anda juga boleh melihat [[Special:GlobalBlockList|senarai semakan sejagat yang sedang berkuatkuasa]].',
+	'globalblocking-logpagetext' => 'Yang berikut ialah log sekatan sejagat yang telah dikenakan dan dibatalkan di wiki ini. Sila ambil perhatian bahawa sekatan sejagat boleh dikenakan dan dibatalkan di wiki-wiki lain, justeru berkuatkuasa di wiki ini juga. Anda juga boleh melihat [[Special:GlobalBlockList|senarai semakan sejagat yang sedang berkuatkuasa]].',
 	'globalblocking-block-logentry' => 'menyekat [[$1]] di semua wiki sehingga $2',
 	'globalblocking-unblock-logentry' => 'membatalkan sekatan sejagat terhadap [[$1]]',
 	'globalblocking-whitelist-logentry' => 'mematikan sekatan sejagat terhadap [[$1]] di wiki tempatan',
