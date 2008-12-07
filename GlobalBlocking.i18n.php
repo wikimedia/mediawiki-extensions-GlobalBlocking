@@ -3381,6 +3381,7 @@ $messages['roa-tara'] = array(
 );
 
 /** Russian (Русский)
+ * @author Ferrer
  * @author Александр Сигачёв
  */
 $messages['ru'] = array(
@@ -3469,7 +3470,7 @@ $1',
 	'removeglobalblock' => 'Снять глобальную блокировку',
 	'right-globalblock' => 'наложение глобальных блокировок',
 	'right-globalunblock' => 'снятие глобальных блокировок',
-	'right-globalblock-whitelist' => 'Локальное отключение глобальных блокировок',
+	'right-globalblock-whitelist' => 'локальное отключение глобальных блокировок',
 );
 
 /** Yakut (Саха тыла)
