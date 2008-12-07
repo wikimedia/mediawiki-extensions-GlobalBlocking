@@ -2177,7 +2177,7 @@ $messages['ja'] = array(
 	'globalblocking-block-logentry' => '[[$1]]をグローバルブロックしました。$2に解除されます。',
 	'globalblocking-unblock-logentry' => '[[$1]]へのグローバルブロックを解除しました',
 	'globalblocking-whitelist-logentry' => '[[$1]]へのグローバルブロックをローカルで無効にしました',
-	'globalblocking-dewhitelist-logentry' => 'ローカルにおける[[$1]]へのグローバルブロックを再有効化する',
+	'globalblocking-dewhitelist-logentry' => 'ローカルにおける[[$1]]へのグローバルブロックを再有効化しました',
 	'globalblocklist' => 'グローバルブロックされたIPアドレスのリスト',
 	'globalblock' => 'このIPアドレスをグローバルブロックする',
 	'globalblockstatus' => 'グローバルブロックのローカルステータス',
@@ -2331,6 +2331,7 @@ $messages['ko'] = array(
 	'globalblocking-list-ipinvalid' => '당신이 입력한 IP 주소가 잘못되었습니다.
 유효한 IP 주소를 입력해주세요.',
 	'globalblocking-list-blockitem' => '$1: <span class="plainlinks">\'\'\'$2\'\'\'</span> ($3) 이(가) [[Special:Contributions/$4|$4]] 을(를) 전체 위키에서 차단하였습니다. ($5)',
+	'globalblocking-list-anononly' => '익명 사용자만',
 	'globalblocking-goto-status' => '전체 차단의 로컬 상태 바꾸기',
 	'globalblocking-unblock' => '전체 차단 해제',
 	'globalblocking-unblock-reason' => '이유:',
