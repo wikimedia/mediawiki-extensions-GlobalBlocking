@@ -2289,23 +2289,24 @@ $messages['ka'] = array(
 
 /** Khmer (ភាសាខ្មែរ)
  * @author Lovekhmer
+ * @author Thearith
  * @author គីមស៊្រុន
  */
 $messages['km'] = array(
 	'globalblocking-block-intro' => 'អ្នកអាចប្រើប្រាស់ទំព័រនេះដើម្បីហាមឃាត់អាសយដ្ឋាន IP នៅគ្រប់វិគីទាំងអស់។',
 	'globalblocking-block-reason' => 'មូលហេតុនៃការហាមឃាត់នេះ:',
-	'globalblocking-block-expiry' => 'ពេលផុតកំនត់នៃការហាមឃាត់:',
-	'globalblocking-block-expiry-other' => 'រយៈពេលផុតកំនត់ផ្សេងទៀត',
-	'globalblocking-block-expiry-otherfield' => 'រយៈពេលផុតកំនត់ផ្សេងទៀត៖',
-	'globalblocking-block-options' => 'ជំរើសនានា៖',
+	'globalblocking-block-expiry' => 'ពេលផុតកំណត់នៃការហាមឃាត់:',
+	'globalblocking-block-expiry-other' => 'រយៈពេលផុតកំណត់ផ្សេងទៀត',
+	'globalblocking-block-expiry-otherfield' => 'រយៈពេលផុតកំណត់ផ្សេងទៀត៖',
+	'globalblocking-block-options' => 'ជម្រើសនានា៖',
 	'globalblocking-search-ip' => 'អាសយដ្ឋានIP:',
 	'globalblocking-search-submit' => 'ស្វែងរកចំពោះការហាមឃាត់',
-	'globalblocking-list-expiry' => 'ផុតកំនត់ $1',
+	'globalblocking-list-expiry' => 'ផុតកំណត់ $1',
 	'globalblocking-list-anononly' => 'អនាមិកជនប៉ុណ្ណោះ',
 	'globalblocking-list-unblock' => 'ដកហូត',
 	'globalblocking-unblock-reason' => 'មូលហេតុ៖',
 	'globalblocking-whitelist-reason' => 'មូលហេតុផ្លាស់ប្តូរ៖',
-	'globalblocking-logpage' => 'កំនត់ហេតុនៃការហាមឃាត់ជាសាកល',
+	'globalblocking-logpage' => 'កំណត់ហេតុនៃការហាមឃាត់ជាសាកល',
 );
 
 /** Korean (한국어)
@@ -3117,6 +3118,7 @@ Per visionar totes los blocatges globals actius, podètz visitar la [[Special:Gl
  * @author Amikeco
  */
 $messages['os'] = array(
+	'globalblocking-block-expiry-otherfield' => 'Æндæр рæстæг:',
 	'globalblocking-unblock-reason' => 'Аххос:',
 );
 
