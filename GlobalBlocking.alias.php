@@ -71,6 +71,14 @@ $aliases['gl'] = array(
 	'RemoveGlobalBlock' => array( 'Desbloqueo global' ),
 );
 
+/** Swiss German (Alemannisch) */
+$aliases['gsw'] = array(
+	'GlobalBlock' => array( 'Wältwyti Sperri' ),
+	'GlobalBlockList' => array( 'Lischt vu wältwyte Sperrine' ),
+	'RemoveGlobalBlock' => array( 'Wältwyti Sperri uffhebe' ),
+	'GlobalBlockStatus' => array( 'Uusnahme vun ere wältwyte Sperri' ),
+);
+
 /** Hebrew (עברית)
  * @author Rotem Liss
  */

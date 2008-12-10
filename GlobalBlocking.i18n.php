@@ -1103,6 +1103,13 @@ El bloqueo ''$4''.",
 	'right-globalblock-whitelist' => 'Desactivar bloqueos globales localmente',
 );
 
+/** Estonian (Eesti)
+ * @author Jaan513
+ */
+$messages['et'] = array(
+	'globalblocking-search-ip' => 'IP aadress:',
+);
+
 /** Persian (فارسی)
  * @author Huji
  * @author Mardetanha
