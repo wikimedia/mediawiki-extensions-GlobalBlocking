@@ -1486,6 +1486,7 @@ $messages['got'] = array(
  */
 $messages['grc'] = array(
 	'globalblocking-block-options' => 'Ἐπιλογαί:',
+	'globalblocking-search-ip' => 'IP-διεύθυνσις:',
 	'globalblocking-list-unblock' => 'ἀφαιρεῖν',
 	'globalblocking-unblock-reason' => 'Αἰτία:',
 );
@@ -2326,10 +2327,15 @@ $messages['ko'] = array(
 	'globalblocking-block' => 'IP 주소를 모든 위키에서 차단',
 	'globalblocking-block-reason' => '차단하는 이유:',
 	'globalblocking-block-expiry' => '차단 기간:',
+	'globalblocking-block-expiry-other' => '다른 기간',
 	'globalblocking-block-expiry-otherfield' => '다른 기간:',
+	'globalblocking-block-legend' => '사용자를 전체 위키에서 차단하기',
 	'globalblocking-block-options' => '설정:',
+	'globalblocking-block-ipinvalid' => '당신이 입력한 IP 주소 ($1) 가 잘못되었습니다.
+계정 이름을 입력할 수 없다는 것을 알아 두시기 바랍니다!',
 	'globalblocking-block-expiryinvalid' => '당신이 입력한 기한($1)이 잘못되었습니다.',
 	'globalblocking-block-submit' => '이 IP 주소를 전체 위키에서 차단',
+	'globalblocking-block-success' => 'IP 주소 $1이 모든 프로젝트에서 성공적으로 차단되었습니다.',
 	'globalblocking-block-successsub' => '전체 차단 성공',
 	'globalblocking-list-intro' => '현재 유효한 전체 차단의 목록입니다. 전체 차단은 로컬의 관리자의 권한으로 무효화 할 수 있습니다. 단 로컬에서 무효화하더라도 다른 위키에서는 차단 상태가 지속됩니다.',
 	'globalblocking-list' => '모든 위키에서 차단된 IP 목록',
@@ -2340,8 +2346,13 @@ $messages['ko'] = array(
 유효한 IP 주소를 입력해주세요.',
 	'globalblocking-list-blockitem' => '$1: <span class="plainlinks">\'\'\'$2\'\'\'</span> ($3) 이(가) [[Special:Contributions/$4|$4]] 을(를) 전체 위키에서 차단하였습니다. ($5)',
 	'globalblocking-list-anononly' => '익명 사용자만',
+	'globalblocking-goto-unblock' => '전체 차단 해제',
 	'globalblocking-goto-status' => '전체 차단의 로컬 상태 바꾸기',
 	'globalblocking-unblock' => '전체 차단 해제',
+	'globalblocking-unblock-ipinvalid' => '당신이 입력한 IP 주소 ($1) 가 잘못되었습니다.
+계정 이름을 입력할 수 없다는 것을 알아 두시기 바랍니다!',
+	'globalblocking-unblock-legend' => '전체 차단 해제',
+	'globalblocking-unblock-submit' => '전체 차단 해제',
 	'globalblocking-unblock-reason' => '이유:',
 	'globalblocking-whitelist' => '전체 차단의 로컬 상태',
 	'globalblocking-whitelist-reason' => '바꾸는 이유:',
@@ -3126,6 +3137,7 @@ Per visionar totes los blocatges globals actius, podètz visitar la [[Special:Gl
  */
 $messages['os'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Æндæр рæстæг:',
+	'globalblocking-block-alreadyblocked' => 'IP-адрис $1 раздæр хъодыгонд æрцыд глобалонæй. Фен [[Special:GlobalBlockList|глобалон хъодыты номхыгъд]].',
 	'globalblocking-unblock-reason' => 'Аххос:',
 );
 
