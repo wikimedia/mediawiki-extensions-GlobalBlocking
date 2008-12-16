@@ -37,11 +37,18 @@ $aliases['arz'] = array(
 	'GlobalBlockStatus' => array( 'قايمة_المنع_العام_البيضاء', 'حالة_المنع_العام', 'تعطيل_المنع_العام' ),
 );
 
+/** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца)) */
+$aliases['be-tarask'] = array(
+	'GlobalBlock' => array( 'Глябальнае_блякаваньне' ),
+	'GlobalBlockList' => array( 'Сьпіс_глябальных_блякаваньняў' ),
+);
+
 /** Bosnian (Bosanski) */
 $aliases['bs'] = array(
 	'GlobalBlock' => array( 'GlobalnoBlokiranje' ),
 	'GlobalBlockList' => array( 'ListaGlobalnogBlokiranja' ),
 	'RemoveGlobalBlock' => array( 'GlobalnoDeblokiranje', 'UklanjanjeGlobalnogBlokiranja' ),
+	'GlobalBlockStatus' => array( 'GlobalniDopusteniSpisak' ),
 );
 
 /** German (Deutsch) */
