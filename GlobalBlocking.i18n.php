@@ -546,7 +546,7 @@ $messages['be-tarask'] = array(
 	'globalblocking-search-submit' => 'Пошук блякаваньняў',
 	'globalblocking-list-ipinvalid' => 'Няслушны ІР-адрас ($1), які Вы шукаеце.
 Калі ласка, увядзіце слушны ІР-адрас.',
-	'globalblocking-search-errors' => 'Ваш пошук быў няўдалым, па {{PLURAL:$1|наступнай прычыне|наступным прычынам}}:',
+	'globalblocking-search-errors' => 'Ваш пошук быў няўдалым па {{PLURAL:$1|наступнай прычыне|наступных прычынах}}:',
 	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') глябальна заблякаваў [[Special:Contributions/\$4|\$4]] ''(\$5)''",
 	'globalblocking-list-expiry' => 'канчаецца $1',
 	'globalblocking-list-anononly' => 'толькі ананімаў',
@@ -558,8 +558,22 @@ $messages['be-tarask'] = array(
 	'globalblocking-goto-status' => 'Зьмяніць лякальны статус глябальнага блякаваньня',
 	'globalblocking-return' => 'Вярнуцца да сьпісу глябальных блякаваньняў',
 	'globalblocking-notblocked' => 'Уведзены ІР-адрас ($1) не заблякаваны глябальна.',
+	'globalblocking-unblock' => 'Разблякаваць глябальна',
+	'globalblocking-unblock-ipinvalid' => 'Уведзены Вамі ІР-адрас ($1) — няслушны.
+Калі ласка, зьвярніце ўвагу, што Вы ня можаце ўводзіць імя ўдзельніка!',
+	'globalblocking-unblock-legend' => 'Глябальнае разблякаваньне',
+	'globalblocking-unblock-submit' => 'Разблякаваць глябальна',
 	'globalblocking-unblock-reason' => 'Прычына:',
+	'globalblocking-unblock-unblocked' => "Вы пасьпяхова глябальна разблякавалі IP-адрас '''$1''' (#$2)",
+	'globalblocking-unblock-errors' => 'Спроба глябальнага разблякаваньня не атрымалася па {{PLURAL:$1|наступнай прычыне|наступным прычынам}}:',
+	'globalblocking-unblock-successsub' => 'Глябальнае разблякаваньне пасьпяховае',
+	'globalblocking-unblock-subtitle' => 'Зьняцьце глябальнага блякаваньня',
+	'globalblocking-unblock-intro' => 'Вы можаце карыстацца гэтай формай для глябальнага разблякаваньня.
+[[Special:GlobalBlockList|Націсьніце тут]], каб вярнуцца да сьпісу глябальных блякаваньняў.',
+	'globalblocking-whitelist-legend' => 'Зьмена лякальнага статусу',
 	'globalblocking-whitelist-reason' => 'Прычына зьмены:',
+	'globalblocking-whitelist-status' => 'Лякальны статус:',
+	'globalblocking-whitelist-successsub' => 'Лякальны статус пасьпяхова зьменены',
 	'globalblocking-logpage' => 'Журнал глябальных блякаваньняў',
 	'globalblocklist' => 'Сьпіс глябальна заблякаваных IP-адрасоў',
 );
@@ -2473,6 +2487,7 @@ $messages['km'] = array(
 /** Korean (한국어)
  * @author Albamhandae
  * @author Ficell
+ * @author Klutzy
  * @author Kwj2772
  */
 $messages['ko'] = array(
@@ -2504,11 +2519,12 @@ $messages['ko'] = array(
 	'globalblocking-goto-unblock' => '전체 차단 해제',
 	'globalblocking-goto-status' => '전체 차단의 로컬 상태 바꾸기',
 	'globalblocking-unblock' => '전체 차단 해제',
-	'globalblocking-unblock-ipinvalid' => '당신이 입력한 IP 주소 ($1) 가 잘못되었습니다.
-계정 이름을 입력할 수 없다는 것을 알아 두시기 바랍니다!',
+	'globalblocking-unblock-ipinvalid' => '입력한 IP 주소($1)가 잘못되었습니다.
+계정 이름은 입력이 불가능하다는 것을 주의해주세요.',
 	'globalblocking-unblock-legend' => '전체 차단 해제',
 	'globalblocking-unblock-submit' => '전체 차단 해제',
 	'globalblocking-unblock-reason' => '이유:',
+	'globalblocking-unblock-errors' => '전체 차단 해제에 실패했습니다. 이유는 다음과 같습니다:',
 	'globalblocking-whitelist' => '전체 차단의 로컬 상태',
 	'globalblocking-whitelist-legend' => '로컬 상태 변경',
 	'globalblocking-whitelist-reason' => '바꾸는 이유:',
