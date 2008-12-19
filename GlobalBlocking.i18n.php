@@ -565,17 +565,41 @@ $messages['be-tarask'] = array(
 	'globalblocking-unblock-submit' => 'Разблякаваць глябальна',
 	'globalblocking-unblock-reason' => 'Прычына:',
 	'globalblocking-unblock-unblocked' => "Вы пасьпяхова глябальна разблякавалі IP-адрас '''$1''' (#$2)",
-	'globalblocking-unblock-errors' => 'Спроба глябальнага разблякаваньня не атрымалася па {{PLURAL:$1|наступнай прычыне|наступным прычынам}}:',
+	'globalblocking-unblock-errors' => 'Спроба глябальнага разблякаваньня не атрымалася па {{PLURAL:$1|наступнай прычыне|наступных прычынах}}:',
 	'globalblocking-unblock-successsub' => 'Глябальнае разблякаваньне пасьпяховае',
 	'globalblocking-unblock-subtitle' => 'Зьняцьце глябальнага блякаваньня',
 	'globalblocking-unblock-intro' => 'Вы можаце карыстацца гэтай формай для глябальнага разблякаваньня.
 [[Special:GlobalBlockList|Націсьніце тут]], каб вярнуцца да сьпісу глябальных блякаваньняў.',
+	'globalblocking-whitelist' => 'Лякальны статус глябальных блякаваньняў',
 	'globalblocking-whitelist-legend' => 'Зьмена лякальнага статусу',
 	'globalblocking-whitelist-reason' => 'Прычына зьмены:',
 	'globalblocking-whitelist-status' => 'Лякальны статус:',
+	'globalblocking-whitelist-statuslabel' => 'Адключыць гэтае глябальнае блякаваньне ў {{GRAMMAR:месны|{{SITENAME}}}}',
+	'globalblocking-whitelist-submit' => 'Зьмяніць лякальны статус',
+	'globalblocking-whitelist-whitelisted' => "Глябальнае блякаваньне #$2 IP-адрасу '''$1''' было пасьпяхова адключанае ў {{GRAMMAR:месны|{{SITENAME}}}}.",
+	'globalblocking-whitelist-dewhitelisted' => "Глябальнае блякаваньне #$2 IP-адрасу '''$1''' было пасьпяхова адноўленае ў {{GRAMMAR:месны|{{SITENAME}}}}.",
 	'globalblocking-whitelist-successsub' => 'Лякальны статус пасьпяхова зьменены',
+	'globalblocking-whitelist-nochange' => 'Вы не зьмянілі лякальны статус гэтага блякаваньня.
+[[Special:GlobalBlockList|Вярнуцца да сьпісу глябальных блякаваньняў]].',
+	'globalblocking-whitelist-errors' => 'Спроба зьмяніць лякальны статус гэтага глябальнага блякаваньня была няўдалай па {{PLURAL:$1|наступнай прычыне|наступных прычынах}}:',
+	'globalblocking-whitelist-intro' => 'Вы можаце карыстацца гэтай формай для рэдагаваньня лякальнага статусу глябальнага блякаваньня.
+Калі глябальнае блякаваньне будзе адключанае ў гэтай вікі, удзельнікі з адпаведнымі ІР-адрасамі будуць мець магчымасьць звычайнага рэдагаваньня старонак.
+[[Special:GlobalBlockList|Вярнуцца да сьпісу глябальных блякаваньняў]].',
+	'globalblocking-blocked' => "Ваш ІР-адрас быў заблякаваны ва ўсіх вікі ўдзельнікам '''$1''' (''$2'').
+Прычына блякаваньня: ''«$3»''.
+Блякаваньне ''$4''.",
 	'globalblocking-logpage' => 'Журнал глябальных блякаваньняў',
+	'globalblocking-logpagetext' => 'Гэта сьпіс глябальных блякаваньняў, якія былі зробленыя і адмененыя ў гэтай вікі.
+Майце на ўвазе, што глябальныя блякаваньні могуць быць зробленыя і адмененыя ў іншых вікі, але глябальныя блякаваньні могуць дзейнічаць таксама і ў гэтай вікі.
+Вы можаце паглядзець усе актыўныя глябальныя блякаваньні [[Special:GlobalBlockList|тут]].',
+	'globalblocking-block-logentry' => 'глябальна заблякаваны [[$1]] на тэрмін $2',
+	'globalblocking-unblock-logentry' => 'глябальна разблякаваў [[$1]]',
+	'globalblocking-whitelist-logentry' => 'лякальна адключанае глябальнае блякаваньне [[$1]]',
+	'globalblocking-dewhitelist-logentry' => 'лякальна адноўленае глябальнае блякаваньне [[$1]]',
 	'globalblocklist' => 'Сьпіс глябальна заблякаваных IP-адрасоў',
+	'globalblock' => 'Глябальнае блякаваньне ІР-адрасу',
+	'globalblockstatus' => 'Лякальны статус глябальных блякаваньняў',
+	'removeglobalblock' => 'Разблякаваць глябальна',
 );
 
 /** Bulgarian (Български)
@@ -687,8 +711,12 @@ Zapamtite da ovdje ne možete unijeti korisničko ime!',
 	'globalblocking-block-submit' => 'Globalno blokiraj ovu IP adresu',
 	'globalblocking-block-success' => 'IP adresa $1 je uspješno blokirana na svim projektima.',
 	'globalblocking-block-successsub' => 'Globalno blokiranje uspješno',
+	'globalblocking-block-alreadyblocked' => 'IP adresa $1 je već blokirana globalno.
+Možete pregledati postojeće blokade na [[Special:GlobalBlockList|spisku globalnih blokada]].',
 	'globalblocking-block-bigrange' => 'Okvir koji ste odredili ($1) je prevelik za blokiranje.
 Možete blokirati, najviše, 65.536 adresa (1/16 okvira)',
+	'globalblocking-list-intro' => 'Ovo je spisak svih globalnih blokada koje su trenutni na snazi.
+Neke blokade su označene kao lokalno onemogućene: to znači da se one primjenjuju na drugim sajtovima, ali je lokalni administrator odlučio da ih ukloni na ovoj wiki.',
 	'globalblocking-list' => 'Spisak globalno blokiranih IP adresa',
 	'globalblocking-search-legend' => 'Pretraga globalnih blokada',
 	'globalblocking-search-ip' => 'IP adresa:',
@@ -717,6 +745,8 @@ Zapamtite da ovdje ne možete unijeti korisničko ime!',
 	'globalblocking-unblock-errors' => 'Vaše uklanjanje globalne blokade je bilo neuspješno iz {{PLURAL:$1|slijedećeg razloga|slijedećih razloga}}:',
 	'globalblocking-unblock-successsub' => 'Globalna blokada uspješno uklonjena',
 	'globalblocking-unblock-subtitle' => 'Uklanjanje globalne blokade',
+	'globalblocking-unblock-intro' => 'Možete koristiti ovaj obrazac da uklonite globalnu blokadu.
+[[Special:GlobalBlockList|Kliknite ovdje]] za povratak na spisak globalnih blokada.',
 	'globalblocking-whitelist' => 'Lokalno stanje globalnih blokada',
 	'globalblocking-whitelist-legend' => 'Promjena lokalnog statusa',
 	'globalblocking-whitelist-reason' => 'Razlog za promjenu:',
@@ -728,13 +758,21 @@ Zapamtite da ovdje ne možete unijeti korisničko ime!',
 	'globalblocking-whitelist-successsub' => 'Lokalni status uspješno promijenjen',
 	'globalblocking-whitelist-nochange' => 'Niste napravili izmjene lokalnog statusa ove blokade.
 [[Special:GlobalBlockList|Povratak na spisak globalnih blokada]].',
+	'globalblocking-whitelist-errors' => 'Vaša izmjena lokalnog statusa globalne blokade nije bila izmjena iz {{PLURAL:$1|slijedećeg razloga|slijedećih razloga}}:',
+	'globalblocking-whitelist-intro' => 'Možete koristiti ovaj obrazac za uređivanje lokalnog statusa globalne blokade.
+Ako je globalna blokada onemogućena na ovoj wiki, korisnici na blokiranoj IP adresi će biti u mogućnosti na normalno uređuju.
+[[Special:GlobalBlockList|Povratak na spisak globalnih blokada]].',
 	'globalblocking-blocked' => "Vaša IP adresa je blokirana na svim wikijima od strane '''\$1''' (sa ''\$2'').
 Naveden je razlog ''\"\$3\"''.
 Ova blokada ''\$4''.",
 	'globalblocking-logpage' => 'Zapis globalnih blokada',
+	'globalblocking-logpagetext' => 'Ovo je zapis globalnih blokada koji su napravljene i uklonjene na ovoj wiki.
+Treba obratiti pažnju da se globalne blokade mogu napraviti i ukloniti na drugim wikijima i da te globalne blokade utjecati na ovu wiki.
+Da bi ste pregledali aktivne globalne blokade, kliknite na [[Special:GlobalBlockList|spisak globalnih blokada]].',
 	'globalblocking-block-logentry' => 'je globalno blokirao [[$1]] sa vremenom isticanja blokade od $2',
 	'globalblocking-unblock-logentry' => 'je uklonjena globalna blokada za [[$1]]',
 	'globalblocking-whitelist-logentry' => 'onemogući globalnu blokadu [[$1]] lokalno',
+	'globalblocking-dewhitelist-logentry' => 'ponovno omogućena globalna blokada lokalno na [[$1]]',
 	'globalblocklist' => 'Spisak globalno blokiranih IP adresa',
 	'globalblock' => 'Globalno blokiranje IP adrese',
 	'globalblockstatus' => 'Lokalni status globalnih blokada',
