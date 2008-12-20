@@ -144,11 +144,11 @@ class SpecialGlobalBlockStatus extends SpecialPage {
 
 		$fields = array();
 
-		$fields['ipaddress'] = wfInput( 'address', 45, $this->mAddress );
-		$fields['globalblocking-whitelist-reason'] = wfInput( 'wpReason', 45, $this->mReason );
+		$fields['ipaddress'] = Xml::input( 'address', 45, $this->mAddress );
+		$fields['globalblocking-whitelist-reason'] = Xml::input( 'wpReason', 45, $this->mReason );
 		$fields['globalblocking-whitelist-status'] = Xml::checkLabel( wfMsgExt( 'globalblocking-whitelist-statuslabel', 'parsemag' ), 'wpWhitelistStatus', 'wpWhitelistStatus', $this->mCurrentStatus );
 
-		$form .= wfBuildForm( $fields, 'globalblocking-whitelist-submit' );
+		$form .= Xml::buildForm( $fields, 'globalblocking-whitelist-submit' );
 
 		$form .= Xml::hidden( 'wpEditToken', $wgUser->editToken() );
 

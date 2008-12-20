@@ -114,10 +114,10 @@ class SpecialRemoveGlobalBlock extends SpecialPage {
 
 		$fields = array();
 
-		$fields['ipaddress'] = wfInput( 'address', 45, $this->mUnblockIP );
-		$fields['globalblocking-unblock-reason'] = wfInput( 'wpReason', 45, $this->mReason );
+		$fields['ipaddress'] = Xml::input( 'address', 45, $this->mUnblockIP );
+		$fields['globalblocking-unblock-reason'] = Xml::input( 'wpReason', 45, $this->mReason );
 
-		$form .= wfBuildForm( $fields, 'globalblocking-unblock-submit' );
+		$form .= Xml::buildForm( $fields, 'globalblocking-unblock-submit' );
 
 		$form .= Xml::hidden( 'wpEditToken', $wgUser->editToken() );
 

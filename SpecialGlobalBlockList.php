@@ -74,8 +74,8 @@ class SpecialGlobalBlockList extends SpecialPage {
 		}
 
 		$fields = array();
-		$fields['globalblocking-search-ip'] = wfInput( 'ip', 45, $ip );
-		$searchForm .= wfBuildForm( $fields, 'globalblocking-search-submit' );
+		$fields['globalblocking-search-ip'] = Xml::input( 'ip', 45, $ip );
+		$searchForm .= Xml::buildForm( $fields, 'globalblocking-search-submit' );
 
 		$searchForm .= Xml::closeElement( 'form' ) . Xml::closeElement( 'fieldset' );
 		$wgOut->addHTML( $searchForm );
