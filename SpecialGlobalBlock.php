@@ -165,9 +165,9 @@ class SpecialGlobalBlock extends SpecialPage {
 		$fields = array ();
 
 		// Who to block
-		$fields['ipaddress'] = wfInput( 'wpAddress', 45, $this->mAddress );
+		$fields['ipaddress'] = Xml::input( 'wpAddress', 45, $this->mAddress );
 		// Why to block them
-		$fields['globalblocking-block-reason'] = wfInput( 'wpReason', 45, $this->mReason );
+		$fields['globalblocking-block-reason'] = Xml::input( 'wpReason', 45, $this->mReason );
 
 		// How long to block them for
 		if ( ( $dropdown = wfMsgNoTrans( 'globalblocking-expiry-options' ) ) != '-') {
@@ -179,17 +179,17 @@ class SpecialGlobalBlock extends SpecialPage {
 		}
 		
 		if ($dropdown == false ) {
-			$fields['globalblocking-block-expiry'] = wfInput( 'wpExpiry', 45, $this->mExpiry );
+			$fields['globalblocking-block-expiry'] = Xml::input( 'wpExpiry', 45, $this->mExpiry );
 		} else {
 			$fields['globalblocking-block-expiry'] = $this->buildExpirySelector( 'wpExpiry', 'wpExpiry', $this->mExpirySelection, $dropdown );
-			$fields['globalblocking-block-expiry-otherfield'] = wfInput( 'wpExpiryOther', 45, $this->mExpiry == $this->mExpirySelection ? '' : $this->mExpiry );
+			$fields['globalblocking-block-expiry-otherfield'] = Xml::input( 'wpExpiryOther', 45, $this->mExpiry == $this->mExpirySelection ? '' : $this->mExpiry );
 		}
 
 		// Block all users, or just anonymous ones
-		$fields['globalblocking-block-options'] = wfCheckLabel( wfMsg( 'ipbanononly' ), 'wpAnonOnly', 'wpAnonOnly', $this->mAnonOnly );
+		$fields['globalblocking-block-options'] = Xml::checkLabel( wfMsg( 'ipbanononly' ), 'wpAnonOnly', 'wpAnonOnly', $this->mAnonOnly );
 
 		// Build a form.
-		$form .= wfBuildForm( $fields, 'globalblocking-block-submit' );
+		$form .= Xml::buildForm( $fields, 'globalblocking-block-submit' );
 
 		$form .= Xml::hidden( 'wpEditToken', $wgUser->editToken() );
 
