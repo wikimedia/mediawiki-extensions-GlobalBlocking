@@ -600,6 +600,9 @@ $messages['be-tarask'] = array(
 	'globalblock' => 'Глябальнае блякаваньне ІР-адрасу',
 	'globalblockstatus' => 'Лякальны статус глябальных блякаваньняў',
 	'removeglobalblock' => 'Разблякаваць глябальна',
+	'right-globalblock' => 'глябальныя блякаваньні',
+	'right-globalunblock' => 'глябальныя разблякаваньні',
+	'right-globalblock-whitelist' => 'Лякальнае адключэньне глябальных блякаваньняў',
 );
 
 /** Bulgarian (Български)
@@ -1064,7 +1067,7 @@ Pšosym źiwaj na to, až njamóžoš wužywarske mě zapódaś!',
 	'globalblocking-block-success' => 'IP-adresa $1 jo se wuspěšnje na wšych projektach blokěrowała.',
 	'globalblocking-block-successsub' => 'Globalne blokěrowanje wuspěšne',
 	'globalblocking-block-alreadyblocked' => 'IP-adresa $1 jo južo globalnje blokěrowana.
-Móžoš se woglědaś eksistujuce blokěrowanje na [[Special:GlobalBlockList|lisćinje globalnych blokěrowanjow]].',
+Móžoš se woglědaś eksistěrujuce blokěrowanje na [[Special:GlobalBlockList|lisćinje globalnych blokěrowanjow]].',
 	'globalblocking-block-bigrange' => 'Wobcerk, kótaryž sy pódał ($1), jo pśewjeliki za blokěrowanje.
 Móžoš blokěrowaś w njewušem paźe 65.536 adresow (/16 wobcerkow)',
 	'globalblocking-list-intro' => 'To jo lisćina wšych globalnych blokěrowanjow, kótarež su tuchylu płaśiwe.
@@ -1965,6 +1968,28 @@ Za popis svih aktivnih globalnih blokiranja, pogledajte [[Special:GlobalBlockLis
 	'right-globalblock-whitelist' => 'Mjesno uklanjanje globalnog blokiranja',
 );
 
+/** Upper Sorbian (Hornjoserbsce)
+ * @author Michawiki
+ */
+$messages['hsb'] = array(
+	'globalblocking-desc' => '[[Special:GlobalBlock|Zmóžnja]] IP-adresy [[Special:GlobalBlockList|přez wjacore wikije blokować]]',
+	'globalblocking-block' => 'IP-adresu globalnje blokować',
+	'globalblocking-block-intro' => 'Móžeš tutu stronu wužiwać, zo by Ip-adresu na wšěch wikijach blokował.',
+	'globalblocking-block-reason' => 'Přičina za tute blokowanje:',
+	'globalblocking-block-expiry' => 'Spadnjenje blokowanja:',
+	'globalblocking-block-expiry-other' => 'Druhi čas spadnjenja',
+	'globalblocking-block-expiry-otherfield' => 'Druhi čas:',
+	'globalblocking-block-legend' => 'Wužiwarja globalnje blokować',
+	'globalblocking-block-options' => 'Opcije:',
+	'globalblocking-block-errors' => 'Twoje blokowanje je ze {{PLURAL:$1|slědowaceje přičiny|slědowaceju přičinow|slědowacych přičinow|slědowacych přičinow}} njewuspěšne było:',
+	'globalblocking-block-ipinvalid' => 'IP-adresa ($1), kotruž sy zapodał, je njepłaćiwa.
+Prošu dźiwaj na to, zo njesměš wužiwarske mjeno zapodać!',
+	'globalblocking-block-expiryinvalid' => 'Čas spadnjenja, kotryž sy zapodał ($1), je njepłaćiwy.',
+	'globalblocking-block-submit' => 'Tutu IP-adresu globalnje blokować',
+	'globalblocking-block-success' => 'IP-adresa $1 bu wuspěšnje we wšěch projektach blokowana.',
+	'globalblocking-block-successsub' => 'Globalne blokowanje wuspěšne',
+);
+
 /** Haitian (Kreyòl ayisyen)
  * @author Jvm
  */
@@ -2382,7 +2407,7 @@ $messages['ja'] = array(
 	'globalblocking-whitelist-intro' => 'このフォームを使用してグローバルブロックのローカルステータスを変更できます。
 もしグローバルブロックがこのウィキで無効になっている場合は、該当IPアドレスは通常の編集ができるようになります。
 [[Special:GlobalBlockList|グローバルブロックリストに戻る]]。',
-	'globalblocking-blocked' => "このIPアドレスは、'''$1'''('''$2''')によって全ての関連ウィキプロジェクトからからブロックされています。
+	'globalblocking-blocked' => "このIPアドレスは、'''$1'''('''$2''')によって全ての関連ウィキプロジェクトからブロックされています。
 理由は'''$3'''です。
 ブロック解除予定:'''$4'''",
 	'globalblocking-logpage' => 'グローバルブロック記録',
@@ -2563,6 +2588,7 @@ $messages['ko'] = array(
 	'globalblocking-unblock-submit' => '전체 차단 해제',
 	'globalblocking-unblock-reason' => '이유:',
 	'globalblocking-unblock-errors' => '전체 차단 해제에 실패했습니다. 이유는 다음과 같습니다:',
+	'globalblocking-unblock-subtitle' => '전체 차단 해제',
 	'globalblocking-whitelist' => '전체 차단의 로컬 상태',
 	'globalblocking-whitelist-legend' => '로컬 상태 변경',
 	'globalblocking-whitelist-reason' => '바꾸는 이유:',
@@ -2574,6 +2600,8 @@ $messages['ko'] = array(
 	'globalblocking-logpage' => '전체 위키 차단 기록',
 	'globalblocking-block-logentry' => '[[$1]] 사용자를 모든 위키에서 $2 차단함',
 	'globalblocking-unblock-logentry' => '[[$1]]의 전체 위키 차단을 해제함',
+	'globalblocking-whitelist-logentry' => '[[$1]]의 전체 차단을 로컬에서 비활성화함',
+	'globalblocking-dewhitelist-logentry' => '[[$1]]의 전체 차단을 로컬에서 다시 활성화함',
 	'globalblocklist' => '모든 위키에서 차단된 IP 목록',
 	'globalblock' => '전체 위키에서 IP 주소를 차단',
 	'globalblockstatus' => '전체 차단의 로컬 상태',
