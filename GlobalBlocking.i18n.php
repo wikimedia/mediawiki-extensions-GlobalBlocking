@@ -232,6 +232,9 @@ Die rede gegee is ''\"\$3\"''. Die versperring verstryk is ''\$4''.",
  */
 $messages['an'] = array(
 	'globalblocking-unblock-reason' => 'Razón:',
+	'right-globalblock' => 'Fer bloqueyos globals',
+	'right-globalunblock' => 'Sacar bloqueyos globals',
+	'right-globalblock-whitelist' => 'Desautibar localment os bloqueyos globals',
 );
 
 /** Arabic (العربية)
@@ -1988,6 +1991,72 @@ Prošu dźiwaj na to, zo njesměš wužiwarske mjeno zapodać!',
 	'globalblocking-block-submit' => 'Tutu IP-adresu globalnje blokować',
 	'globalblocking-block-success' => 'IP-adresa $1 bu wuspěšnje we wšěch projektach blokowana.',
 	'globalblocking-block-successsub' => 'Globalne blokowanje wuspěšne',
+	'globalblocking-block-alreadyblocked' => 'IP-adresa $1 je hižo globalnje zablokokowana.
+Móžeš sej eksistowace blokowanje na [[Special:GlobalBlockList|lisćinje globalnych blokowanjow]] wobhladać.',
+	'globalblocking-block-bigrange' => 'Wobwod, kotryž sy podał ($1), je přewulki za blokowanje.
+Móžeš maksimalnje 65.636 adresow (/16 wobwodow) blokować.',
+	'globalblocking-list-intro' => 'To je lisćina wšěch lokalnych blokowanjow, kotrež su tuchwilu aktiwne.
+Někotre blokowanja su jako lokalnje znjemóžnjene markěrowane. To woznamjenja, zo skutkuja na druhich projektach, ale lokalny administrator je rozsudźił, je na tutym wikiju znjemóžnić.',
+	'globalblocking-list' => 'Lisćina globalnych zablokowanych IP-adresow',
+	'globalblocking-search-legend' => 'Globalne blokowanje pytać',
+	'globalblocking-search-ip' => 'IP-adresa:',
+	'globalblocking-search-submit' => 'Blokowanja pytać',
+	'globalblocking-list-ipinvalid' => 'IP-adresu, kotruž sy pytał ($1), je njepłaćiwa.
+Prošu zapodaj płaćiwu IP-adresu.',
+	'globalblocking-search-errors' => 'Twoje pytanje njeje ze {{PLURAL:$1|slědowaceje přičiny|slědowaceju přičinow|slědowacych přičinow|slědowacych přičinow}} wuspěšne było:',
+	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') je [[Special:Contributions/\$4|\$4]] ''(\$5)'' globalnje zablokował",
+	'globalblocking-list-expiry' => 'Čas spadnjenja $1',
+	'globalblocking-list-anononly' => 'jenož anonymne',
+	'globalblocking-list-unblock' => 'wotstronić',
+	'globalblocking-list-whitelisted' => 'lokalnje znjemóžnjeny wot $1: $2',
+	'globalblocking-list-whitelist' => 'lokalny status',
+	'globalblocking-goto-block' => 'IP-adresu globalnje blokować',
+	'globalblocking-goto-unblock' => 'Globalne blokowanje wotstronić',
+	'globalblocking-goto-status' => 'Lokalny status za globalne blokowanje změnić',
+	'globalblocking-return' => 'Wróćo k lisćinje globalnych blokowanjow',
+	'globalblocking-notblocked' => 'IP-adresa ($1), kotruž sy zapodał, njeje globalnje zablokowana.',
+	'globalblocking-unblock' => 'Globalne blokowanje wotstronić',
+	'globalblocking-unblock-ipinvalid' => 'IP-adresa ($1), kotruž sy zapodał, je njepłaćiwa.
+Prošu dźiwaj na to, zo njesměš wužiwarske mjeno zapodać!',
+	'globalblocking-unblock-legend' => 'Globalne blokowanje wotstronić',
+	'globalblocking-unblock-submit' => 'Globalne blokowanje wotstronić',
+	'globalblocking-unblock-reason' => 'Přičina:',
+	'globalblocking-unblock-unblocked' => "Sy globalne blokowanje #$2 za IP-adresu '''$1''' wuspěšnje wotstronił",
+	'globalblocking-unblock-errors' => 'Wotstronjenje globalneho blokowanja bě ze {{PLURAL:$1|slědowaceje přičiny|slědowaceju přičinow|slědowacych přičinow|slědowacych přičinow}} njewuspěšne:',
+	'globalblocking-unblock-successsub' => 'Globalne blokowanje wuspěšnje wotstronjene',
+	'globalblocking-unblock-subtitle' => 'Globalne blokowanje so wotstronja',
+	'globalblocking-unblock-intro' => 'Móžeš tutón formular wužiwać, zo by globalne blokowanje wotstronił.
+[[Special:GlobalBlockList|Klikń sem]], zo by so k lisćinje globalnych blokowanjow wróćił.',
+	'globalblocking-whitelist' => 'Lokalny status globalnych blokowanjow',
+	'globalblocking-whitelist-legend' => 'Lokalny status změnić',
+	'globalblocking-whitelist-reason' => 'Přičina za změnu:',
+	'globalblocking-whitelist-status' => 'Lokalny status:',
+	'globalblocking-whitelist-statuslabel' => 'Tute globalne blokowanje na {{GRAMMAR:lokatiw|{{SITENAME}}}} znjemóžnić',
+	'globalblocking-whitelist-submit' => 'Lokalny status změnić',
+	'globalblocking-whitelist-whitelisted' => "Sy globalne blokowanje #$2 za IP-adresu '''$1''' na {{GRAMMAR:lokatiw|{{SITENAME}}}} wuspěšnje znjemóžnił.",
+	'globalblocking-whitelist-dewhitelisted' => "Sy globalne blokowanje #$2 za IP-adresu '''$1''' na {{GRAMMAR:lokatiw|{{SITENAME}}}} zaso zmóžnił.",
+	'globalblocking-whitelist-successsub' => 'Lokalny status wuspěšnje změnjeny',
+	'globalblocking-whitelist-nochange' => 'Njejsy lokalny status tutoho blokowanja změnił.
+[[Special:GlobalBlockList|Wróćo k lisćinje globalnych blokowanjow]].',
+	'globalblocking-whitelist-errors' => 'Twoje změnjenje lokalneho statusa globalneho blokowanja bě ze {{PLURAL:$1|slědowaceje přičiny|slědowaceju přičinow|slědowacych přičinow|slědowacych přičinow}} njewuspěšne:',
+	'globalblocking-whitelist-intro' => 'Móžeš tutón formular wužiwać, zo by lokalny status globalneho blokowanja wobdźěłał.
+Jeli je globalne blokowanje na tutym wikiju znjemóžnjene, móža wužiwarjo z wotpowědnej IP-adresu normalnje wobdźěłać.
+[[Special:GlobalBlockList|Wróćo k lisćinje globalnych blokowanjow]].',
+	'globalblocking-blocked' => "Twoja IP-adresa bu na wšěch wikijach wot '''\$1''' (''\$2'') zablokowana.
+Podata přičina bě ''\"\$3\"''.
+Blokowanje ''\$4''.",
+	'globalblocking-logpage' => 'Protokol globalnych blokowanjow',
+	'globalblocking-block-logentry' => 'je [[$1]] za dobu $2 globalnje zablokował',
+	'globalblocking-unblock-logentry' => 'je globalne blokowanje za [[$1]] wotstronił',
+	'globalblocking-whitelist-logentry' => 'je globalne blokowanje za [[$1]] lokalnje znjemóžnił',
+	'globalblocking-dewhitelist-logentry' => 'je globalne blokowanje za [[$1]] lokalnje zaso zmóžnił',
+	'globalblocklist' => 'Lisćina globalnych zablokowanych IP-adresow',
+	'globalblock' => 'IP-adresu globalnje blokować',
+	'globalblockstatus' => 'Lokalny status globalnych blokowanjow',
+	'removeglobalblock' => 'Globalne blokowanje wotstronić',
+	'right-globalblock' => 'Globalne blokowanja činić',
+	'right-globalunblock' => 'Globalne blokowanja wotstronić',
+	'right-globalblock-whitelist' => 'Globalne blokowanja lokalnje znjemóžnić',
 );
 
 /** Haitian (Kreyòl ayisyen)
@@ -3377,7 +3446,11 @@ Per visionar totes los blocatges globals actius, podètz visitar la [[Special:Gl
 $messages['os'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Æндæр рæстæг:',
 	'globalblocking-block-alreadyblocked' => 'IP-адрис $1 раздæр хъодыгонд æрцыд глобалонæй. Фен [[Special:GlobalBlockList|глобалон хъодыты номхыгъд]].',
+	'globalblocking-unblock' => 'Аиуварс кæн глобалон хъоды',
+	'globalblocking-unblock-submit' => 'Аиуварс кæн глобалон хъоды',
 	'globalblocking-unblock-reason' => 'Аххос:',
+	'globalblocking-unblock-errors' => 'Глобалон хъоды аиуварс кæнын нæ бантысти. {{PLURAL:$1|Аххос|Аххостæ}}:',
+	'removeglobalblock' => 'Аиуварс кæн глобалон хъоды',
 );
 
 /** Polish (Polski)
