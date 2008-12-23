@@ -147,6 +147,14 @@ $aliases['lb'] = array(
 	'GlobalBlockStatus' => array( 'Ausnahme vun der globaler Spär' ),
 );
 
+/** Macedonian (Македонски) */
+$aliases['mk'] = array(
+	'GlobalBlock' => array( 'ГлобалноБлокирање' ),
+	'GlobalBlockList' => array( 'ЛистаНаГлобалниБлокирања' ),
+	'RemoveGlobalBlock' => array( 'ГлобалниДеблокирања', 'БришиГлобаленБлок' ),
+	'GlobalBlockStatus' => array( 'СтатусНаГлобаленБлок', 'ОневозможиГлобаленБлок' ),
+);
+
 /** Malay (Bahasa Melayu) */
 $aliases['ms'] = array(
 	'GlobalBlock' => array( 'Sekatan sejagat' ),
