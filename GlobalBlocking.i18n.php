@@ -3319,7 +3319,7 @@ For å visa alle aktive globale blokkeringar, sjå den [[Special:GlobalBlockList
 	'globalblocking-unblock-logentry' => 'fjerna global blokkering på [[$1]]',
 	'globalblocking-whitelist-logentry' => 'slo av global blokkering av [[$1]] lokalt',
 	'globalblocking-dewhitelist-logentry' => 'slo på att global blokkering av [[$1]] lokalt',
-	'globalblocklist' => 'Lista over globalt blokkerte IP-adresser',
+	'globalblocklist' => 'Lista over IP-adresser blokkerte globalt',
 	'globalblock' => 'Blokker ei IP-adressa globalt',
 	'globalblockstatus' => 'Lokal status for globale blokkeringar',
 	'removeglobalblock' => 'Fjern ei global blokkering',
@@ -4178,7 +4178,8 @@ $1',
  * @author AnakngAraw
  */
 $messages['tl'] = array(
-	'globalblocking-block' => 'Pandaigdigang haranging/hadlangan ang isang adres ng IP',
+	'globalblocking-desc' => '[[Special:GlobalBlock|Nagpapahintulot]] na [[Special:GlobalBlockList|mahadlangan/maharang sa kahabaan ng maraming mga wiki]] ang mga adres ng IP',
+	'globalblocking-block' => 'Pandaigdigang harangin/hadlangan ang isang adres ng IP',
 	'globalblocking-block-intro' => 'Magagamit mo ang pahinang ito para hadlangan/harangin ang isang adres ng IP sa lahat ng mga wiki.',
 	'globalblocking-block-reason' => 'Dahilan para sa pagharang/paghadlang na ito:',
 	'globalblocking-block-expiry' => 'Pagtatapos ng pagharang/paghadlang:',
@@ -4190,8 +4191,23 @@ $messages['tl'] = array(
 	'globalblocking-block-ipinvalid' => 'Hindi tanggap ang ipinasok mong adres ng IP ($1).
 Pakitaandaang hindi mo maipapasok ang isang pangalan ng tagagamit!',
 	'globalblocking-block-expiryinvalid' => 'Hindi tanggap ang ipinasok ($1) mong panahon ng pagtatapos.',
+	'globalblocking-block-submit' => 'Pandaigdigang hadlangan ang adres ng IP na ito',
+	'globalblocking-block-success' => 'Matagumpay na nahadlangan ang adres ng IP na $1 sa lahat ng mga proyekto.',
+	'globalblocking-block-successsub' => 'Matagumpay ang pagharang na pandaigdigan',
+	'globalblocking-block-alreadyblocked' => 'Umiiral na ang pandaigdigang pagharang sa adres ng IP na $1.
+Matitingnan mo ang umiiral na paghadlang sa [[Special:GlobalBlockList|talaan ng mga pandaigdigang paghadlang]].',
+	'globalblocking-block-bigrange' => 'Ang saklaw na tinukoy ($1) mo ay napakalaki para hadlangan.
+Maaari kang mangharang, sa pinakamarami, ng 65,536 mga adres (/16 sakop)',
+	'globalblocking-list-intro' => 'Talaan ito ng lahat ng mga pangkasalukuyang umiiral na pandaigdigang mga paghadlang. 
+May ilang mga pagharang na tinatakan bilang hinadlangan sa iisang pook (lokal) lamang: nangangahulugang umiiral din ang mga ito sa iba pang mga sayt/sityo, subalit may isang katutubong tagapangasiwang nagpasya na huwag paganahin ang mga ito sa wiking ito.',
+	'globalblocking-list' => 'Talaan ng mga adres ng IP na may pandaigdigang pagkakaharang',
+	'globalblocking-search-legend' => 'Maghanap ng isang pandaigdigang pagharang',
 	'globalblocking-search-ip' => 'Adres ng IP:',
 	'globalblocking-search-submit' => 'Maghanap ng mga pagharang/paghadlang',
+	'globalblocking-list-ipinvalid' => 'Hindi tanggap ang hinanap mong ($1) adres ng IP. 
+Pakipasok ang isang naaangkop na adres ng IP.',
+	'globalblocking-search-errors' => 'Hindi matagumapay ang iyong paghahanap, dahil sa sumusunod na {{PLURAL:$1|dahilan|mga dahilan}}:',
+	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') pandaigdigang hinarang/hinadlangan si [[Special:Contributions/\$4|\$4]] ''(\$5)''",
 	'globalblocking-list-expiry' => 'katapusan $1',
 	'globalblocking-list-anononly' => 'hindi nagpapakilala lamang',
 	'globalblocking-list-unblock' => 'tanggalin',
@@ -4202,6 +4218,11 @@ Pakitaandaang hindi mo maipapasok ang isang pangalan ng tagagamit!',
 	'globalblocking-goto-status' => 'Baguhin ang kalagayang pampook (lokal) para sa isang pagharang/paghadlang',
 	'globalblocking-return' => 'Bumalik sa talaan ng mga pandaigdigang paghaharang/paghahadlang',
 	'globalblocking-notblocked' => 'Hindi hinarang/hinadlangang pandaigdigan ang ipinasok mong adres ng IP ($1)',
+	'globalblocking-unblock' => 'Tanggalin ang isang pandaigdigang paghahadlang',
+	'globalblocking-unblock-ipinvalid' => 'Hindi tanggap ang ipinasok mong adres ng IP ($1).
+Pakitandaang hindi mo maaaring ipasok ang isang pangalan ng tagagamit!',
+	'globalblocking-unblock-legend' => 'Tanggalin ang isang pandaigdigang pagharang',
+	'globalblocking-unblock-submit' => 'Tanggalin ang pandaigdigang paghadlang',
 	'globalblocking-unblock-reason' => 'Dahilan:',
 	'globalblocking-unblock-unblocked' => "Matagumpay mong natanggal ang pandaigdigang pagharang/paghahadlang na #$2 para sa adres ng IP na '''$1'''",
 	'globalblocking-unblock-errors' => 'Hindi matagumpay ang pagtatanggal mong pandaigdigang pagharang/paghahadlang, dahil sa sumusunod na {{PLURAL:$1|dahilan|mga dahilan}}:',
@@ -4209,19 +4230,39 @@ Pakitaandaang hindi mo maipapasok ang isang pangalan ng tagagamit!',
 	'globalblocking-unblock-subtitle' => 'Tinatanggal ang pandaigdigang pagharang/paghadlang',
 	'globalblocking-unblock-intro' => 'Magagamit mo ang pormularyong ito upang tanggalin ang isang pandaigdigang pagharang/paghadlang.
 [[Special:GlobalBlockList|Pindutin dito]] para makabalik sa talaan ng mga pandaigdigang paghaharang.',
-	'globalblocking-whitelist-legend' => 'Baguhin ang katutubong/lokal na kalagayan',
+	'globalblocking-whitelist' => 'Katutubo o lokal na kalagayan ng mga pandaigdigang paghadlang',
+	'globalblocking-whitelist-legend' => 'Baguhin ang katutubo o lokal na kalagayan',
 	'globalblocking-whitelist-reason' => 'Dahilan ng pagbabago:',
 	'globalblocking-whitelist-status' => 'Katutubong kalagayan:',
 	'globalblocking-whitelist-statuslabel' => 'Huwag paganahin ang pandaigdigang paghadlang/pagharang na ito sa {{SITENAME}}',
 	'globalblocking-whitelist-submit' => 'Baguhin ang kalagayang pampook (lokal)',
 	'globalblocking-whitelist-whitelisted' => "Matagumpay mong napawalan ng bisa ng pandaigdigang pagharang/paghadlang na #$2 sa adres ng IP na '''$1''' na nasa {{SITENAME}}.",
-	'globalblocking-whitelist-dewhitelisted' => "Matagumpay mong muling-buhayin (pinagana uli) ang pandaigdigang pagharang na #$2 sa adres ng IP na '''$1''' na nasa {{SITENAME}}.",
+	'globalblocking-whitelist-dewhitelisted' => "Matagumpay mong muling-binuhay (pinagana uli) ang pandaigdigang pagharang na #$2 sa adres ng IP na '''$1''' na nasa {{SITENAME}}.",
 	'globalblocking-whitelist-successsub' => 'Matagumpay na nabago ang katutubong kalagayan',
+	'globalblocking-whitelist-nochange' => 'Wala kang ginawang pagbabago para sa katutubong kalagayan ng paghadlang na ito.
+[[Special:GlobalBlockList|Magbalik sa talaan ng mga pandaigdigang pagharang]].',
+	'globalblocking-whitelist-errors' => 'Hindi matagumpay ang pagbabagong ginawa mo sa katutubong kalagayan ng isang pandaigdigang pagharang, dahil sa sumusunod na {{PLURAL:$1|dahilan|mga dahilan}}:',
+	'globalblocking-whitelist-intro' => 'Magagamit mo ang pormularyong ito para magbago ng katutubong kalagayan ng isang pandaigdigang pagharang.
+Kapag hindi pinagana ang isang pandaigdigang paghadlang sa wiking ito, maaaring mamatnugot sa karaniwang paraan ang mga tatagamit na nasa loob ng apektadong adres ng IP.
+[[Special:GlobalBlockList|Bumalik sa talaan ng mga pandaigdigang pagharang]]',
+	'globalblocking-blocked' => "Hinadlangan ni '''\$1''' (''\$2'') ang adres ng IP mo sa lahat ng mga wiki. 
+Ang ibinigay na dahilan ay ''\"\$3\"''.
+Ang pagharang ay ''\$4''.",
 	'globalblocking-logpage' => 'Talaan ng pandaigdigang pagharang/paghadlang',
+	'globalblocking-logpagetext' => 'Isa itong talaan ng mga pandaigdigang pagharang na isinagawa at tinanggal mula sa wiking ito.
+Dapat tandaan na maaaring gawin ang pandaigdigang mga paghadlang at alisin mula sa iba pang mga wiki, at maaaring makaapekto sa wiking ito ang ganitong mga pandaigdigang pagharang.
+Para matanaw ang lahat ng mga masigla o gumaganang pandaigdigang mga paghadlang, maaari mong tingnan ang [[Special:GlobalBlockList|talaan ng mga pandaigdigang pagharang]].',
+	'globalblocking-block-logentry' => 'Pandaigdigang hinarang/hinadlangan ang [[$1]] na may panahon o oras ng pagtatapos na $2',
+	'globalblocking-unblock-logentry' => 'tinanggal ang pandaigdigang pagharang sa/kay [[$1]]',
+	'globalblocking-whitelist-logentry' => 'hindi pinagana/pinaandar sa katutubo o lokal na pook ang pandaigdigang pagharang o paghadlang sa/kay [[$1]]',
 	'globalblocking-dewhitelist-logentry' => 'Muling binuhay/pinagana sa katutubong (lokal na) pook ang pandaigdigang pagharang o paghadlang sa/kay [[$1]]',
 	'globalblocklist' => 'Talaan ng mga adres ng IP na may pandaigdigang paghadlang/pagharang',
 	'globalblock' => 'Pandaigdigang harangin/hadlangan ang isang adres ng IP',
-	'globalblockstatus' => 'Katutubong katayuan ng mga paghadlang/pagharang na pandaigdigan',
+	'globalblockstatus' => 'Katutubo/lokal na kalagayan ng mga paghadlang/pagharang na pandaigdigan',
+	'removeglobalblock' => 'Tanggalin ang isang pandaigdigang paghahadlang',
+	'right-globalblock' => 'Gumawa ng pandaigdigang mga pagharang',
+	'right-globalunblock' => 'Tanggalin ang mga pandaigdigang paghahadlang',
+	'right-globalblock-whitelist' => 'Pampook (lokal) lamang na hindi paganahin/huwag paandarin ang mga pandaigdigang pagharang',
 );
 
 /** Turkish (Türkçe)
