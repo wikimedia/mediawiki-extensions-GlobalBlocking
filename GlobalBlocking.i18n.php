@@ -4146,6 +4146,7 @@ För att se alla aktiva globala blockeringar, kan du se den [[Special:GlobalBloc
  * @author వైజాసత్య
  */
 $messages['te'] = array(
+	'globalblocking-block-intro' => 'ఈ పేజీని ఉపయోగించి మీరు అన్ని వికీలలోనూ ఒక IP చిరునామాని నిరోధించగలరు.',
 	'globalblocking-block-reason' => 'ఈ నిరోధానికి కారణం:',
 	'globalblocking-block-expiry-otherfield' => 'ఇతర సమయం:',
 	'globalblocking-block-options' => 'ఎంపికలు:',
@@ -4156,6 +4157,7 @@ $messages['te'] = array(
 	'globalblocking-whitelist-reason' => 'మార్చడానికి కారణం:',
 	'globalblocking-whitelist-status' => 'స్థానిక స్థితి:',
 	'globalblocking-whitelist-submit' => 'స్థానిక స్థితిని మార్చండి',
+	'globalblocking-whitelist-successsub' => 'స్థానిక స్థితిని విజయవంతంగా మార్చాం',
 	'globalblock' => 'సర్వత్రా ఈ ఐపీ చిరునామాను నిరోధించు',
 );
 
