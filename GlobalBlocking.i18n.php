@@ -2657,6 +2657,7 @@ $messages['ko'] = array(
 	'globalblocking-list-anononly' => '익명 사용자만',
 	'globalblocking-list-unblock' => '차단 해제',
 	'globalblocking-list-whitelisted' => '$1에 의해 로컬에서 해제됨: $2',
+	'globalblocking-goto-block' => 'IP를 전체 위키에서 차단',
 	'globalblocking-goto-unblock' => '전체 차단 해제',
 	'globalblocking-goto-status' => '전체 차단의 로컬 상태 바꾸기',
 	'globalblocking-unblock' => '전체 차단 해제',
@@ -2666,6 +2667,7 @@ $messages['ko'] = array(
 	'globalblocking-unblock-submit' => '전체 차단 해제',
 	'globalblocking-unblock-reason' => '이유:',
 	'globalblocking-unblock-errors' => '전체 차단 해제에 실패했습니다. 이유는 다음과 같습니다:',
+	'globalblocking-unblock-successsub' => '전체 차단이 성공적으로 해제되었습니다.',
 	'globalblocking-unblock-subtitle' => '전체 차단 해제',
 	'globalblocking-whitelist' => '전체 차단의 로컬 상태',
 	'globalblocking-whitelist-legend' => '로컬 상태 변경',
@@ -2684,8 +2686,10 @@ $messages['ko'] = array(
 	'globalblocklist' => '모든 위키에서 차단된 IP 목록',
 	'globalblock' => '전체 위키에서 IP 주소를 차단',
 	'globalblockstatus' => '전체 차단의 로컬 상태',
+	'removeglobalblock' => '전체 차단을 해제',
 	'right-globalblock' => '전체 위키 차단',
 	'right-globalunblock' => '전체 위키에서 차단을 해제',
+	'right-globalblock-whitelist' => '로컬에서 전체 차단을 비활성화',
 );
 
 /** Ripoarisch (Ripoarisch)
