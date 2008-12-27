@@ -4355,9 +4355,11 @@ Para matanaw ang lahat ng mga masigla o gumaganang pandaigdigang mga paghadlang,
 );
 
 /** Turkish (Türkçe)
+ * @author Runningfridgesrule
  * @author Suelnur
  */
 $messages['tr'] = array(
+	'globalblocking-list' => 'Küresel olarak erişimi durdurulmuş IP adresleri listesi',
 	'globalblocking-unblock-reason' => 'Neden:',
 );
 
