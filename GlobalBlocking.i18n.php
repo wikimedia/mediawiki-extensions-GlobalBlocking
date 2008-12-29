@@ -2708,20 +2708,60 @@ $messages['ka'] = array(
  * @author គីមស៊្រុន
  */
 $messages['km'] = array(
+	'globalblocking-block' => 'រាំងខ្ទប់​អាសយដ្ឋាន IP ជា​សកល',
 	'globalblocking-block-intro' => 'អ្នកអាចប្រើប្រាស់ទំព័រនេះដើម្បីហាមឃាត់អាសយដ្ឋាន IP នៅគ្រប់វិគីទាំងអស់។',
 	'globalblocking-block-reason' => 'មូលហេតុនៃការហាមឃាត់នេះ:',
 	'globalblocking-block-expiry' => 'ពេលផុតកំណត់នៃការហាមឃាត់:',
 	'globalblocking-block-expiry-other' => 'រយៈពេលផុតកំណត់ផ្សេងទៀត',
 	'globalblocking-block-expiry-otherfield' => 'រយៈពេលផុតកំណត់ផ្សេងទៀត៖',
+	'globalblocking-block-legend' => 'រាំងខ្ទប់​អ្នកប្រើប្រាស់​ជា​សកល',
 	'globalblocking-block-options' => 'ជម្រើសនានា៖',
+	'globalblocking-block-errors' => 'ការរាំងខ្ទប់​របស់​អ្នក មិន​បាន​ជោគជ័យ​ទេ, សម្រាប់ {{PLURAL:$1|ហេតុផល|ហេតុផល}}​ដូចតទៅ:',
+	'globalblocking-block-expiryinvalid' => 'រយៈពេល​ផុតកំណត់​ដែល​អ្នក​បាន​បញ្ចូល ($1) មិន​ត្រឹមត្រូវ​ទេ​។',
+	'globalblocking-block-submit' => 'រាំងខ្ទប់​អាសយដ្ឋាន IP ជា​សកល',
+	'globalblocking-block-success' => 'អាសយដ្ឋាន IP $1 ត្រូវ​បាន​រាំងខ្ទប់​លើ​គ្រប់​គម្រោង​ទាំងអស់ ដោយជោគជ័យ​ហើយ​។',
+	'globalblocking-block-successsub' => 'រាំងខ្ទប់​​ជា​សកល​ដោយជោគជ័យ',
+	'globalblocking-search-legend' => 'ស្វែងរក​ការរាំងខ្ទប់​សកល',
 	'globalblocking-search-ip' => 'អាសយដ្ឋានIP:',
 	'globalblocking-search-submit' => 'ស្វែងរកចំពោះការហាមឃាត់',
+	'globalblocking-search-errors' => 'ការស្វែងរក​របស់​អ្នក​មិន​ទទួល​បាន​ជោគជ័យ​ទេ, សម្រាប់ {{PLURAL:$1|ហេតុផល|ហេតុផល}}​ដូចតទៅ:',
 	'globalblocking-list-expiry' => 'ផុតកំណត់ $1',
 	'globalblocking-list-anononly' => 'អនាមិកជនប៉ុណ្ណោះ',
 	'globalblocking-list-unblock' => 'ដកហូត',
+	'globalblocking-list-whitelisted' => 'បាន​បិទ​ជា​មូលដ្ឋាន​ដោយ $1: $2',
+	'globalblocking-list-whitelist' => 'ស្ថានភាព​មូលដ្ឋាន',
+	'globalblocking-goto-block' => 'រាំងខ្ទប់​អាសយដ្ឋាន​ជា​សកល',
+	'globalblocking-goto-unblock' => 'ដកចេញ​ការរាំងខ្ទប់​សកល',
+	'globalblocking-return' => 'ត្រឡប់​ទៅកាន់​បញ្ជី​នៃ​ការរាំងខ្ទប់​សកល',
+	'globalblocking-notblocked' => 'អាសយដ្ឋាន IP ($1) ដែល​អ្នក​បាន​បញ្ចូល​មិន​ត្រូវ​បាន​រាំងខ្ទប់​ជា​សកល​ទេ​។',
+	'globalblocking-unblock' => 'ដកចេញ​ការរាំងខ្ទប់​សកល',
+	'globalblocking-unblock-ipinvalid' => 'អាសយដ្ឋាន IP ($1) ដែល​អ្នក​បាន​បញ្ចូល​មិន​ត្រឹមត្រូវ​ទេ​។
+
+សូម​ចំណាំ​ថា អ្នក​មិន​អាច​បញ្ចូល​ឈ្មោះអ្នកប្រើប្រាស់​បាន​ទេ!',
+	'globalblocking-unblock-legend' => 'ដកចេញ​ការរាំងខ្ទប់​សកល',
+	'globalblocking-unblock-submit' => 'ដាកចេញ​ការរាំងខ្ទប់​សកល',
 	'globalblocking-unblock-reason' => 'មូលហេតុ៖',
+	'globalblocking-unblock-unblocked' => "អ្នក​បាន​ដកចេញ​ការរាំងខ្ទប់​សកល ដោយជោគជ័យ #$2 នៅលើ​អាសយដ្ឋាន IP '''$1'''",
+	'globalblocking-unblock-successsub' => 'ដកចេញ​ការរាំងខ្ទប់​សកល ដោយជោគជ័យ',
+	'globalblocking-unblock-subtitle' => 'ដកចេញ​ការរាំងខ្ទប់​សកល',
+	'globalblocking-unblock-intro' => 'អ្នក​បាន​ប្រើប្រាស់​ទម្រង់​នេះ ដើម្បី​ដកចេញ​ការរាំងខ្ទប់​សកល​។
+
+[[Special:GlobalBlockList|ចុច​ទីនេះ]] ដើម្បី​ត្រឡប់​ទៅកាន់​បញ្ចី​រាំងខ្ទប់​សកល​។',
+	'globalblocking-whitelist-legend' => 'ប្ដូរ​ស្ថានភាព​មូលដ្ឋាន',
 	'globalblocking-whitelist-reason' => 'មូលហេតុផ្លាស់ប្តូរ៖',
+	'globalblocking-whitelist-status' => 'ស្ថានភាព​មូលដ្ឋាន:',
+	'globalblocking-whitelist-submit' => 'ប្ដូរ​ស្ថានភាព​មូលដ្ឋាន',
+	'globalblocking-whitelist-successsub' => 'បាន​ប្ដូរ​ស្ថានភាព​មូលដ្ឋាន ដោយ​ជោគជ័យ',
+	'globalblocking-blocked' => "អាសយដ្ឋាន IP ត្រូវ​បាន​រាំងខ្ទប់​នៅលើ​វិគី​ទាំងអស់​ដោយ '''\$1''' (''\$2'') ។
+
+ហេតុផល​គឺ ''\"\$3\"'' ។
+
+ការរាំងខ្ទប់ ''\$4'' ។",
 	'globalblocking-logpage' => 'កំណត់ហេតុនៃការហាមឃាត់ជាសាកល',
+	'globalblocking-unblock-logentry' => 'ដកចេញ​ការរាំងខ្ទប់​សកល​នៅលើ [[$1]]',
+	'globalblock' => 'រាំងខ្ទប់​ជា​សកល​ចំពោះ​អាសយដ្ឋាន IP',
+	'removeglobalblock' => 'ដកចេញ​ការរាំងខ្ទប់​សកល',
+	'right-globalunblock' => 'ដកចេញ​ការរាំងខ្ទប់​សកល',
 );
 
 /** Korean (한국어)
@@ -3242,10 +3282,14 @@ $messages['nah'] = array(
  */
 $messages['nds'] = array(
 	'globalblocking-block-reason' => 'Grund för de Sperr:',
+	'globalblocking-block-expiry' => 'Sperrduur:',
 	'globalblocking-block-expiry-other' => 'Annere Aflooptied',
 	'globalblocking-block-expiry-otherfield' => 'Annere Tied:',
 	'globalblocking-block-legend' => 'En Bruker global sperren',
 	'globalblocking-block-options' => 'Opschonen:',
+	'globalblocking-search-legend' => 'Globale Sperr söken',
+	'globalblocking-search-ip' => 'IP-Adress:',
+	'globalblocking-search-submit' => 'Sperren söken',
 	'globalblocking-search-errors' => 'De Söök hett nix funnen. Dit {{PLURAL:$1|is de Grund|sünd de Grünn}}:',
 	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') hett [[Special:Contributions/\$4|\$4]] global sperrt ''(\$5)''",
 	'globalblocking-list-expiry' => 'löppt $1 ut',
@@ -3270,11 +3314,17 @@ $messages['nds'] = array(
 	'globalblocking-whitelist-statuslabel' => 'Disse globale Sperr op {{SITENAME}} opheven',
 	'globalblocking-whitelist-submit' => 'Lokalen Status ännern',
 	'globalblocking-logpage' => 'Global Sperrlogbook',
+	'globalblocking-block-logentry' => 'hett [[$1]] för en Tied vun $2 global sperrt',
 	'globalblocking-unblock-logentry' => 'hett de globale Sperr för [[$1]] ophoven',
+	'globalblocking-whitelist-logentry' => 'hett de globale Sperr vun [[$1]] lokal afschalt',
+	'globalblocking-dewhitelist-logentry' => 'hett de globale Sperr vun [[$1]] lokal wedder inschalt',
+	'globalblocklist' => 'List vun all global sperrte IP-Adressen',
+	'globalblock' => 'En IP-Adress global sperren',
 	'globalblockstatus' => 'Lokalen Status vun de globale Sperr',
 	'removeglobalblock' => 'Globale Sperr opheven',
 	'right-globalblock' => 'Globale Sperren maken',
 	'right-globalunblock' => 'Globale Sperren opheven',
+	'right-globalblock-whitelist' => 'Globale Sperren lokal afschalten',
 );
 
 /** Nedersaksisch (Nedersaksisch)
@@ -4353,6 +4403,7 @@ $messages['te'] = array(
 $messages['tet'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Tempu seluk:',
 	'globalblocking-search-ip' => 'Diresaun IP:',
+	'globalblocking-unblock-reason' => 'Motivu:',
 );
 
 /** Tajik (Cyrillic) (Тоҷикӣ (Cyrillic))
