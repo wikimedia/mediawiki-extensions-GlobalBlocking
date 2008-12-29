@@ -232,6 +232,7 @@ Die rede gegee is ''\"\$3\"''. Die versperring verstryk is ''\$4''.",
  */
 $messages['am'] = array(
 	'globalblocking-block-expiry-otherfield' => 'ሌላ ጊዜ፦',
+	'globalblocking-unblock-reason' => 'ምክንያት:',
 );
 
 /** Aragonese (Aragonés)
@@ -1150,9 +1151,24 @@ Aby se woglědał wšykne aktiwne globalne blokěrowanja, móžoš se woglědaś
 
 /** Greek (Ελληνικά)
  * @author Consta
+ * @author ZaDiak
  */
 $messages['el'] = array(
+	'globalblocking-block-expiry' => 'Λήξη φραγής:',
+	'globalblocking-block-expiry-otherfield' => 'Άλλος χρόνος:',
+	'globalblocking-block-options' => 'Επιλογές:',
+	'globalblocking-search-ip' => 'διεύθυνση IP:',
+	'globalblocking-search-submit' => 'Αναζήτηση για φραγές',
+	'globalblocking-list-expiry' => 'λήξη $1',
+	'globalblocking-list-anononly' => 'μόνο ανώνυμος',
+	'globalblocking-list-unblock' => 'αφαίρεση',
+	'globalblocking-list-whitelist' => 'τοπική κατάσταση',
 	'globalblocking-unblock-reason' => 'Λόγος:',
+	'globalblocking-whitelist-legend' => 'Αλλαγή τοπικής κατάστασης',
+	'globalblocking-whitelist-reason' => 'Λόγος αλλαγής:',
+	'globalblocking-whitelist-status' => 'Τοπική κατάσταση:',
+	'globalblocking-whitelist-submit' => 'Αλλαγή τοπικής κατάστασης',
+	'globalblocking-whitelist-successsub' => 'Η τοπική κατάσταση άλλαξε επιτυχώς',
 );
 
 /** Esperanto (Esperanto)
@@ -4013,6 +4029,53 @@ $messages['sah'] = array(
 	'globalblocking-whitelist-reason' => 'Уларытыы төрүөтэ:',
 );
 
+/** Sicilian (Sicilianu)
+ * @author Santu
+ */
+$messages['scn'] = array(
+	'globalblocking-desc' => '[[Special:GlobalBlock|Pirmetti]] di [[Special:GlobalBlockList|bluccari supra a chiossai wiki]] nnirizzi IP',
+	'globalblocking-block' => 'Blocca gubbalmenti nu nnirizzu IP',
+	'globalblocking-block-intro' => 'È pussìbbili usari sta pàggina pi bluccari nu nnirizzu IP supra a tutti li wiki.',
+	'globalblocking-block-reason' => 'Mutivu pô bloccu:',
+	'globalblocking-block-expiry' => 'Finuta dô bloccu:',
+	'globalblocking-block-expiry-other' => 'Àutri tempi di scadenza',
+	'globalblocking-block-expiry-otherfield' => 'Durata non ntâ lista:',
+	'globalblocking-block-legend' => "Blocca n'utenti glubbalmenti",
+	'globalblocking-block-options' => 'Opzioni:',
+	'globalblocking-block-errors' => 'Lu bloccu non fu fattu pi {{PLURAL:$1|stu mutivu|sti mutivi}}:',
+	'globalblocking-block-ipinvalid' => 'Lu nnirizzu IP ($1) ca nziristi nun è vàlidu. Teni accura ô fattu ca non po nziriri nu nomu utenti!',
+	'globalblocking-block-expiryinvalid' => 'La scadenza ca nziristi ($1) non vali.',
+	'globalblocking-block-submit' => 'Blocca stu nnirizzu IP glubbalmenti',
+	'globalblocking-block-success' => 'Lu nnirizzu IP $1 vinni bluccatu cu successu supra a tutti li pruggetti.',
+	'globalblocking-block-successsub' => 'Bloccu glubbali fattu cu successu',
+	'globalblocking-block-alreadyblocked' => 'Lu nnirizzu IP $1 già vinni bluccatu. È pussìbbili taliari lu bloccu attivu ntâ [[Special:GlobalBlockList|lista dê blocchi glubbali]].',
+	'globalblocking-block-bigrange' => 'La classi ca nnicasti ($1) è troppu granni pi èssiri bluccata. È pussìbbili bluccari, ô cchiossai, 65.536 nnirizzi (classi /16)',
+	'globalblocking-list-intro' => "Ccà di sècutu c'è la lista di tutti li blocchi ca sunnu ora attivi. Ci sunnu tanti blocchi signaliati comu disattivati lucalmenti: chistu voli diri ca chissi sunnu attivi supra a àutri siti, ma n'amministraturi lucali dicidìu di disattivàrili supra a ddà wiki.",
+	'globalblocking-list' => 'Lista di li nnirizzi IP bluccati glubbalmenti',
+	'globalblocking-search-legend' => 'Cerca nu bloccu glubbali',
+	'globalblocking-search-ip' => 'Nnirizzu IP:',
+	'globalblocking-search-submit' => 'Circata di blocchi',
+	'globalblocking-list-ipinvalid' => 'Lu nnirizzu IP ca circasti ($1) non vali. Nzirisci nu nnirizzu IP ca vali.',
+	'globalblocking-search-errors' => 'La tò circata non desi nuddu risurtatu pi {{PLURAL:$1|stu mutivu|sti mutivi}}:',
+	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') bluccau glubbalmenti [[Special:Contributions/\$4|\$4]] ''(\$5)''",
+	'globalblocking-list-expiry' => 'finuta dû bloccu $1',
+	'globalblocking-list-anononly' => 'Sulu anònimi',
+	'globalblocking-list-unblock' => 'rimovi',
+	'globalblocking-list-whitelisted' => 'disattivatu lucalmenti di $1: $2',
+	'globalblocking-list-whitelist' => 'statu lucali',
+	'globalblocking-goto-block' => 'Blocca glubbalmenti nu nnirizzu IP',
+	'globalblocking-goto-unblock' => 'Scancella nu bloccu glubbali',
+	'globalblocking-goto-status' => 'Cancia statu lucali di nu bloccu glubbali',
+	'globalblocking-return' => 'Torna ntâ lista dê blocchi glubbali',
+	'globalblocking-notblocked' => 'Lu nnirizzu IP ($1) ca nziristi nun è bluccatu glubbalmenti.',
+	'globalblocking-unblock' => 'Scancella nu bloccu glubbali',
+	'globalblocking-unblock-ipinvalid' => 'Lu nnirizzu IP ($1) ca nziristi non vali. Teni accura ô fattu ca non pooi nziriri nu nomu utenti!',
+	'globalblocking-unblock-legend' => 'Scancella nu bloccu glubbali',
+	'globalblocking-unblock-submit' => 'Scancella bloccu glubbali',
+	'globalblocking-unblock-reason' => 'Mutivu dû bloccu:',
+	'globalblocking-unblock-unblocked' => "Vinni scancillatu cu successu lu bloccu glubbali #$2 pupra a lu nnirizzu IP '''$1'''",
+);
+
 /** Sinhala (සිංහල)
  * @author නන්දිමිතුරු
  */
@@ -4282,6 +4345,14 @@ $messages['te'] = array(
 	'globalblocking-whitelist-submit' => 'స్థానిక స్థితిని మార్చండి',
 	'globalblocking-whitelist-successsub' => 'స్థానిక స్థితిని విజయవంతంగా మార్చాం',
 	'globalblock' => 'సర్వత్రా ఈ ఐపీ చిరునామాను నిరోధించు',
+);
+
+/** Tetum (Tetun)
+ * @author MF-Warburg
+ */
+$messages['tet'] = array(
+	'globalblocking-block-expiry-otherfield' => 'Tempu seluk:',
+	'globalblocking-search-ip' => 'Diresaun IP:',
 );
 
 /** Tajik (Cyrillic) (Тоҷикӣ (Cyrillic))
