@@ -2792,6 +2792,7 @@ $messages['ko'] = array(
 	'globalblocking-search-submit' => '차단 찾기',
 	'globalblocking-list-ipinvalid' => '당신이 입력한 IP 주소가 잘못되었습니다.
 유효한 IP 주소를 입력해주세요.',
+	'globalblocking-search-errors' => '당신의 검색이 성공적으로 진행되지 못했습니다. 다음의 이유를 확인해보세요:',
 	'globalblocking-list-blockitem' => '$1: <span class="plainlinks">\'\'\'$2\'\'\'</span> ($3) 이(가) [[Special:Contributions/$4|$4]] 을(를) 전체 위키에서 차단하였습니다. ($5)',
 	'globalblocking-list-anononly' => '익명 사용자만',
 	'globalblocking-list-unblock' => '차단 해제',
@@ -4439,7 +4440,74 @@ $messages['tet'] = array(
  * @author Ibrahim
  */
 $messages['tg-cyrl'] = array(
+	'globalblocking-block' => 'Бастани як нишонаи IP ба сурати саросарӣ',
+	'globalblocking-block-intro' => 'Шумо ин саҳифаро барои бастани нишонаи IP дар ҳамаи викиҳо метавонед истифода баред.',
+	'globalblocking-block-reason' => 'Сабабе барои ин бастан:',
+	'globalblocking-block-expiry' => 'Хоти қатъи дастрасӣ:',
+	'globalblocking-block-expiry-other' => 'Дигар вақти хотима',
+	'globalblocking-block-expiry-otherfield' => 'Дигар вақт:',
+	'globalblocking-block-legend' => 'Бастани дастрасии корбар ба сурати саросарӣ',
+	'globalblocking-block-options' => 'Ихтиёрот:',
+	'globalblocking-block-errors' => 'Бастани дастрасии аз тарафи шумо номуваффақ шуд, аз рӯи {{PLURAL:$1|сабаби|сабаҳои}} зерин:',
+	'globalblocking-block-ipinvalid' => 'Нишонаи IP ($1) шумо ворид намуда номӯътабар аст.
+Лутфан дар хотир нигоҳ доред, ки шумо наметавонед як номи корбариро ворид кунед!',
+	'globalblocking-block-expiryinvalid' => 'Санаи эътибороти шумо вориднамуд ($1) номӯътабар аст.',
+	'globalblocking-block-submit' => 'Бастани ин нишонаи IP ба сурати саросарӣ',
+	'globalblocking-block-success' => 'Нишонаи IP $1 бо муваффақият дар ҳамаи лоиҳаҳо баста шуд.',
+	'globalblocking-block-successsub' => 'Бастани дастрасӣ ба сурати саросарӣ муваффақ шуд',
+	'globalblocking-block-alreadyblocked' => 'Нишонаи IP $1 қаблан саросарӣ басташуда аст.
+Шумо метавонед бастаҳои вуҷуддоштаро дар [[Special:GlobalBlockList|феҳристи бастаҳои саросарӣ]] бинигаред.',
+	'globalblocking-list' => 'Феҳристи нишонаҳои IP саросари басташуда',
+	'globalblocking-search-legend' => 'Ҷустуҷӯи саросари басташуда',
+	'globalblocking-search-ip' => 'Нишонаи IP:',
+	'globalblocking-search-submit' => 'Ҷустуҷӯи басташудаҳо',
+	'globalblocking-list-ipinvalid' => 'Нишонаи IP шумо ҷустуҷӯ намуда ($1) номӯътабар аст.
+Лутфан нишонаи IP мӯътабареро ворид кунед.',
+	'globalblocking-search-errors' => 'Ҷустуҷӯи шумо номуваффақ буд, аз рӯи {{PLURAL:$1|сабаби|сабабҳои}} зерин:',
+	'globalblocking-list-expiry' => 'хотима $1',
+	'globalblocking-list-anononly' => 'фақат гумном',
+	'globalblocking-list-unblock' => 'пок кардан',
+	'globalblocking-list-whitelisted' => 'маҳаллӣ ғайрифаъол карда шудааст аз тарафи $1: $2',
+	'globalblocking-list-whitelist' => 'вазъияти маҳаллӣ',
+	'globalblocking-goto-block' => 'Саросарӣ бастани як нишонаи IP',
+	'globalblocking-goto-unblock' => 'Пок кардани бастаи саросарӣ',
+	'globalblocking-goto-status' => 'Тағйири вазъияти маҳаллӣ ба як бастаи саросарӣ',
+	'globalblocking-return' => 'Бозгашта ба феҳристи бастаҳои саросарӣ',
+	'globalblocking-notblocked' => 'Нишонаи IP ($1) шумо ворид карда саросарӣ баста нашудааст.',
+	'globalblocking-unblock' => 'Пок кардани бастаи саросарӣ',
+	'globalblocking-unblock-ipinvalid' => 'Нишоани IP ($1) ворид намуда номӯътабар аст.
+Лутфан дар ёд доред, ки шумо наметавонед як номи корбариро ворид кунед!',
+	'globalblocking-unblock-legend' => 'Пок кардани бастаи саросарӣ',
+	'globalblocking-unblock-submit' => 'Пок кардани бастаи саросарӣ',
+	'globalblocking-unblock-reason' => 'Сабаб:',
+	'globalblocking-unblock-unblocked' => "Шумо бо муваффақият бастаи саросарии #$2 аз рӯи нишонаи IP '''$1''' пок кардед",
+	'globalblocking-unblock-errors' => 'Поккунии бастаи саросарии шумо номуваффақ шуд, аз {{PLURAL:$1|сабаби|сабабҳои}} зерин:',
+	'globalblocking-unblock-successsub' => 'Бастаи саросарӣ бо муваффақият пок шуд',
+	'globalblocking-unblock-subtitle' => 'Дар ҳоли пок кардани баста саросарӣ',
+	'globalblocking-unblock-intro' => 'Шумо метавонед барои пок кардани бастаи саросарӣ аз ин форм истифода баред.
+Барои бозгашт ба феҳристи бастаи саросарӣ [[Special:GlobalBlockList|инҷо клик кунед]].',
+	'globalblocking-whitelist' => 'Вазъияти маҳаллии бастаҳои саросарӣ',
+	'globalblocking-whitelist-legend' => 'Тағйири вазъияти маҳаллӣ',
 	'globalblocking-whitelist-reason' => 'Сабаби тағйир:',
+	'globalblocking-whitelist-status' => 'Вазъияти маҳаллӣ:',
+	'globalblocking-whitelist-statuslabel' => 'Ғайрифаъол кардани ин бастаи саросарӣ дар {{SITENAME}}',
+	'globalblocking-whitelist-submit' => 'Тағйири вазъияти маҳаллӣ',
+	'globalblocking-whitelist-successsub' => 'Вазъияти маҳаллӣ бо муваффақият тағйир ёфт',
+	'globalblocking-whitelist-nochange' => 'Шумо ягон тағйире ба вазъияти маҳалли ин қатъи дастрасӣ ворид накардед.
+[[Special:GlobalBlockList|Баргардед ба феҳристи қатъи дастрасии саросарӣ]].',
+	'globalblocking-blocked' => "Нишоани IP шумо дар ҳамаи викиҳо тавассути '''\$1''' (''\$2'') баста шудааст.
+Сабаби додашуда ''\"\$3\"'' буд.
+Бастаи ''\$4''.",
+	'globalblocking-logpage' => 'Гузориши бастаи саросарӣ',
+	'globalblocking-unblock-logentry' => 'қатъи дастрасии саросарӣ дар [[$1]] пок шуд',
+	'globalblocking-whitelist-logentry' => 'қатъи дастрасии саросарӣ дар [[$1]] маҳаллӣ ғайрифаъол шуд',
+	'globalblocklist' => 'Феҳристи нишонаҳои IP саросарӣ қатъ кардашуда',
+	'globalblock' => 'Ба сурати саросарӣ қатъ кардани нишонаи IP',
+	'globalblockstatus' => 'Вазъияти маҳаллии қатъи дастрасии саросарӣ',
+	'removeglobalblock' => 'Пок кардани қатъи дастрасӣ',
+	'right-globalblock' => 'Эҷоди қатъи дастрасиҳои саросарӣ',
+	'right-globalunblock' => 'Ҳазфи қатъи дастрасиҳои саросарӣ',
+	'right-globalblock-whitelist' => 'Ғайри фаъол кардани қатъи дастрасиҳои саросарӣ ба таври маҳаллӣ',
 );
 
 /** Thai (ไทย)
