@@ -2785,6 +2785,10 @@ $messages['ko'] = array(
 	'globalblocking-block-submit' => '이 IP 주소를 전체 위키에서 차단',
 	'globalblocking-block-success' => 'IP 주소 $1이 모든 프로젝트에서 성공적으로 차단되었습니다.',
 	'globalblocking-block-successsub' => '전체 차단 성공',
+	'globalblocking-block-alreadyblocked' => 'IP 주소 $1은 이미 전체적으로 차단되었습니다.
+당신은 [[Special:GlobalBlockList|전체 차단된 사용자의 목록]]에서 현재 차단된 IP를 볼 수 있습니다.',
+	'globalblocking-block-bigrange' => '당신이 입력한 범위는 차단하기에 너무 넓습니다.
+당신은 아무리 많아도, 65,536개의 주소 (/16 광역) 이상을 차단할 수 없습니다.',
 	'globalblocking-list-intro' => '현재 유효한 전체 차단의 목록입니다. 전체 차단은 로컬의 관리자의 권한으로 무효화 할 수 있습니다. 단 로컬에서 무효화하더라도 다른 위키에서는 차단 상태가 지속됩니다.',
 	'globalblocking-list' => '모든 위키에서 차단된 IP 목록',
 	'globalblocking-search-legend' => '전체 차단 찾기',
@@ -3542,8 +3546,8 @@ For å visa alle aktive globale blokkeringar, sjå den [[Special:GlobalBlockList
 	'globalblock' => 'Blokker ei IP-adressa globalt',
 	'globalblockstatus' => 'Lokal status for globale blokkeringar',
 	'removeglobalblock' => 'Fjern ei global blokkering',
-	'right-globalblock' => 'Gjennomfør globale blokkeringar',
-	'right-globalunblock' => 'Fjern globale blokkeringar',
+	'right-globalblock' => 'Gjennomføra globale blokkeringar',
+	'right-globalunblock' => 'Fjerna globale blokkeringar',
 	'right-globalblock-whitelist' => 'Slå av globale blokkeringar lokalt',
 );
 
