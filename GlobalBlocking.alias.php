@@ -163,6 +163,12 @@ $aliases['ms'] = array(
 	'GlobalBlockStatus' => array( 'Senarai putih sekatan sejagat' ),
 );
 
+/** Maltese (Malti) */
+$aliases['mt'] = array(
+	'GlobalBlock' => array( 'BlokkGlobali' ),
+	'GlobalBlockList' => array( 'ListaBlokkGlobali' ),
+);
+
 /** Nedersaksisch (Nedersaksisch) */
 $aliases['nds-nl'] = array(
 	'GlobalBlock' => array( 'Globaal_blokkeren' ),

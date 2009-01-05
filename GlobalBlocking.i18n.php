@@ -1264,6 +1264,7 @@ Vidi ĉiujn aktivajn ĝeneralajn forbarojn, vi povas vidi la [[Special:GlobalBlo
 
 /** Spanish (Español)
  * @author Aleator
+ * @author Lin linao
  * @author Remember the dot
  * @author Sanbec
  */
@@ -1274,6 +1275,7 @@ $messages['es'] = array(
 	'globalblocking-block-legend' => 'Bloquear un usuario globalmente',
 	'globalblocking-block-options' => 'Opciones:',
 	'globalblocking-block-errors' => 'Tu bloqueo falló por {{PLURAL:$1|la siguiente razón|las siguientes razones}}:',
+	'globalblocking-block-ipinvalid' => 'La dirección IP ($1) que ingresaste no es válida. Por favor, ten en cuenta que no puedes introducir un nombre de usuario.',
 	'globalblocking-block-submit' => 'Bloquear esta dirección IP globalmente',
 	'globalblocking-block-success' => 'La dirección IP $1 ha sido bloqueada con éxito en todos los proyectos.',
 	'globalblocking-block-successsub' => 'El bloqueo global tuvo éxito',
@@ -2810,6 +2812,7 @@ $messages['ko'] = array(
 	'globalblocking-unblock-legend' => '전체 차단 해제',
 	'globalblocking-unblock-submit' => '전체 차단 해제',
 	'globalblocking-unblock-reason' => '이유:',
+	'globalblocking-unblock-unblocked' => "IP 주소 '''$1'''에 대한 전체 차단 #$2가 성공적으로 해제되었습니다.",
 	'globalblocking-unblock-errors' => '전체 차단 해제에 실패했습니다. 이유는 다음과 같습니다:',
 	'globalblocking-unblock-successsub' => '전체 차단이 성공적으로 해제되었습니다.',
 	'globalblocking-unblock-subtitle' => '전체 차단 해제',
@@ -4896,8 +4899,11 @@ Xem [[Special:GlobalBlockList|tất cả các tác vụ cấm toàn cục]].',
 
 /** Volapük (Volapük)
  * @author Malafaya
+ * @author Smeira
  */
 $messages['vo'] = array(
+	'globalblocking-search-ip' => 'Ladet-IP:',
+	'globalblocking-list-unblock' => 'moükön',
 	'globalblocking-unblock-reason' => 'Kod:',
 );
 
