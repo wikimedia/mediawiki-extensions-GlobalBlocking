@@ -970,6 +970,7 @@ Všechny aktivní globální blokování naleznete na [[Special:GlobalBlockList|
  */
 $messages['cy'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Cyfnod arall:',
+	'globalblocking-logpage' => 'Lòg blocio wici-gyfan',
 );
 
 /** German (Deutsch)
@@ -2909,6 +2910,7 @@ $messages['ko'] = array(
 	'globalblocking-goto-block' => 'IP를 전체 위키에서 차단',
 	'globalblocking-goto-unblock' => '전체 차단 해제',
 	'globalblocking-goto-status' => '전체 차단의 로컬 상태 바꾸기',
+	'globalblocking-notblocked' => '당신이 입력한 IP 주소 ($1)은 전체 차단되지 않았습니다.',
 	'globalblocking-unblock' => '전체 차단 해제',
 	'globalblocking-unblock-ipinvalid' => '입력한 IP 주소($1)가 잘못되었습니다.
 계정 이름은 입력이 불가능하다는 것을 주의해주세요.',
@@ -5098,13 +5100,85 @@ Xem [[Special:GlobalBlockList|tất cả các tác vụ cấm toàn cục]].',
  * @author Smeira
  */
 $messages['vo'] = array(
+	'globalblocking-desc' => '[[Special:GlobalBlock|Dälon]] ladetis-IP ad [[Special:GlobalBlockList|pablokön in vüks mödik]]',
+	'globalblocking-block' => 'Blokön ladeti-IP valöpo',
+	'globalblocking-block-intro' => 'Kanol gebön padi at ad blokön ladeti-IP in vüks valik.',
 	'globalblocking-block-reason' => 'Kod blokama at:',
 	'globalblocking-block-expiry' => 'Blokamadul:',
+	'globalblocking-block-expiry-otherfield' => 'Tim votik:',
+	'globalblocking-block-legend' => 'Blokön gebani valöpo',
+	'globalblocking-block-errors' => 'Blokam olik no eplöpon, sekü {{PLURAL:$1|kod|kods}} sököl:',
+	'globalblocking-block-ipinvalid' => 'Ladet-IP fa ol pepenöl no lonöfon. Demolös, das no dalol penön gebananemi is!',
+	'globalblocking-block-expiryinvalid' => 'Dul fa ol pepenöl ($1) no lonöfon.',
+	'globalblocking-block-submit' => 'Blokön ladeti-IP at valöpo',
+	'globalblocking-block-success' => 'Ladet-IP: $1 peblokon benosekiko pro proyegs valik.',
+	'globalblocking-block-successsub' => 'Blokam valöpik benosekik',
+	'globalblocking-block-alreadyblocked' => 'Ladet-IP: $1 ya peblokon valöpo.
+Kanol logön blokami dabinöl su [[Special:GlobalBlockList|lised blokamas valöpik]].',
+	'globalblocking-list-intro' => 'Is palisedons blokams valöpik anu lonöföls valiks.
+Blokams anik pabepenons as topiko pesädunöls: atos sinifon, das lonöfons su bevüresodatopäds votik, ab guvan topik esludon ad sädunön onis in vük okik.',
+	'globalblocking-list' => 'Lised ladetas-IP valöpo peblokölas',
+	'globalblocking-search-legend' => 'Sukön blokami valöpik',
 	'globalblocking-search-ip' => 'Ladet-IP:',
 	'globalblocking-search-submit' => 'Sukön blokamis',
+	'globalblocking-list-ipinvalid' => 'Ladet-IP fa ol pesuköl ($1) no lonöfon.
+Penolös ladeti-IP lonöföl.',
+	'globalblocking-search-errors' => 'Suk olik no eplopon, sekü {{PLURAL:$1|kod|kods}} sököl:',
+	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') päblokon valöpo [[Special:Contributions/\$4|\$4]] ''(\$5)''",
+	'globalblocking-list-expiry' => 'dul jü $1',
 	'globalblocking-list-anononly' => 'te nennemik',
 	'globalblocking-list-unblock' => 'moükön',
+	'globalblocking-list-whitelisted' => 'penemögükon topiko fa geban: $1: $2',
+	'globalblocking-list-whitelist' => 'stad topik',
+	'globalblocking-goto-block' => 'Blokön ladeti-IP valöpo',
+	'globalblocking-goto-unblock' => 'Moükön blokami valöpik',
+	'globalblocking-goto-status' => 'Votükön stadi topik blokama valöpik',
+	'globalblocking-return' => 'Geikön lü lised blokamas valöpik',
+	'globalblocking-notblocked' => 'Ladet-IP fa ol pepenöl ($1) no peblokon valöpo.',
+	'globalblocking-unblock' => 'Moükön blokami valöpik',
+	'globalblocking-unblock-ipinvalid' => 'Ladet-IP fa ol pepenöl ($1) no lonöfon.
+Demolös, das no dalon penön gebananemi!',
+	'globalblocking-unblock-legend' => 'Moükön blokami valöpik',
+	'globalblocking-unblock-submit' => 'Moükön blokami valöpik',
 	'globalblocking-unblock-reason' => 'Kod:',
+	'globalblocking-unblock-unblocked' => "Emoükol benosekiko blokami valöpik: #$2 ladeta-IP: '''$1'''",
+	'globalblocking-unblock-errors' => 'Moükam olik blokama valöpik no eplöpon, sekü {{PLURAL:$1|kod|kods}} fovik:',
+	'globalblocking-unblock-successsub' => 'Blokam valöpik pemoükon benosekiko',
+	'globalblocking-unblock-subtitle' => 'Moükön blokami valöpik',
+	'globalblocking-unblock-intro' => 'Kanol gebön fometi at ad moükön blokami valöpik.
+[[Special:GlobalBlockList|Is]] otuvol lised blokamas valöpik.',
+	'globalblocking-whitelist' => 'Stad topik blokamas valöpik',
+	'globalblocking-whitelist-legend' => 'Votükön stadi topik',
+	'globalblocking-whitelist-reason' => 'Kod votükama:',
+	'globalblocking-whitelist-status' => 'Stad topik:',
+	'globalblocking-whitelist-statuslabel' => 'Sädunön blokami valöpik at in {{SITENAME}}',
+	'globalblocking-whitelist-submit' => 'Votükön stadi topik',
+	'globalblocking-whitelist-whitelisted' => "Esädunol benosekiko blokami valöpik: #$2 ladeta-IP: '''$1''' in {{SITENAME}}.",
+	'globalblocking-whitelist-dewhitelisted' => "Edönudunol benosekiko blokami valöpik: #$2 ladeta-IP: '''$1''' in {{SITENAME}}.",
+	'globalblocking-whitelist-successsub' => 'Stad topik pevotükon benosekiko',
+	'globalblocking-whitelist-nochange' => 'No evotükol stadi topik blokama at. [[Special:GloablBlockList|Geikön lü lised blokamas valöpik]].',
+	'globalblocking-whitelist-errors' => 'Votükam olik stada topik blokama valöpik no eplöpon, sekü {{PLURAL:$1|kod|kods}} sököl:',
+	'globalblocking-whitelist-intro' => 'Kanol gebön fometi at ad votükön stadi topik blokama valöpik.
+If blokam valöpik pesädunon in vük at, gebans ladetas-IP teföl okanons redakön nensäkädiko.
+[[Special:GlobalBlockList|Geikön lü lised blokamas valöpik]].',
+	'globalblocking-blocked' => "Ladet-IP olik peblokon in vüks falik fa geban: '''$1''' ('''$2''').
+Kod äbinon: ''„$3“''.
+Blokam dulon ''$4''.",
+	'globalblocking-logpage' => 'Jenotalised blokamas valöpik',
+	'globalblocking-logpagetext' => 'Atos binon jenotalised blokamas valöpik, kels peledunons e/u pemoükons in vük at.
+Demolös, das blokams valöpik kanons paledunön e pamoükön in vüks votik, e das blokams valöpik at kanons tefön vüki at.
+Kanol tuvön blokamis valöpik lonöfol valik in [[Special:GlobalBlockList|lised blokamas valöpik]].',
+	'globalblocking-block-logentry' => 'eblokon valöpo gebani: [[$1]], blokamadul: $2',
+	'globalblocking-unblock-logentry' => 'blokam valöpik pemoükon in [[$1]]',
+	'globalblocking-whitelist-logentry' => 'enemögükon blokami valöpik in [[$1]] topiko',
+	'globalblocking-dewhitelist-logentry' => 'edönumögükon blokami valöpik in [[$1]] topiko',
+	'globalblocklist' => 'Lised ladetas-IP valöpo peblokölas',
+	'globalblock' => 'blokön ladeti-IP valöpo',
+	'globalblockstatus' => 'Stad topik blokamas valöpik',
+	'removeglobalblock' => 'Moükön blokami valöpik',
+	'right-globalblock' => 'Dunön blokamis valöpik',
+	'right-globalunblock' => 'Moükön blokamis valöpik',
+	'right-globalblock-whitelist' => 'Sädunön blokamis valöpik topiko',
 );
 
 /** Yiddish (ייִדיש)
@@ -5210,6 +5284,7 @@ $1',
 /** Simplified Chinese (‪中文(简体)‬)
  * @author Gaoxuewei
  * @author Shinjiman
+ * @author Wmr89502270
  */
 $messages['zh-hans'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|允许]]IP地址可以[[Special:GlobalBlockList|在多个wiki中封锁]]',
@@ -5220,7 +5295,7 @@ $messages['zh-hans'] = array(
 	'globalblocking-block-expiry-other' => '其它的到期时间',
 	'globalblocking-block-expiry-otherfield' => '其它时间:',
 	'globalblocking-block-legend' => '全域封锁一位用户',
-	'globalblocking-block-options' => '选项',
+	'globalblocking-block-options' => '选项：',
 	'globalblocking-block-errors' => '该封锁不唔成功，因为:
 $1',
 	'globalblocking-block-ipinvalid' => '您所输入的IP地址 ($1) 是无效的。
