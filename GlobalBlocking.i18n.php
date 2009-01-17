@@ -3137,6 +3137,22 @@ Fir all aktiv global Spären ze gesinn, gitt w.e.g op d'[[Special:GlobalBlockLis
 	'right-globalblock-whitelist' => 'Global Späre lokal ausschalten',
 );
 
+/** Lithuanian (Lietuvių)
+ * @author Homo
+ */
+$messages['lt'] = array(
+	'globalblocking-block' => 'Visuotinai blokuoti IP adresą',
+	'globalblocking-block-reason' => 'Blokavimo priežastis:',
+	'globalblocking-block-expiry' => 'Blokavimas galioja iki:',
+	'globalblocking-block-options' => 'Parinktys:',
+	'globalblocking-block-successsub' => 'Visuotinis blokavimas pavyko',
+	'globalblocking-search-ip' => 'IP adresas:',
+	'globalblocking-search-submit' => 'Ieškoti blokavimų',
+	'globalblocking-list-anononly' => 'tik anonimai',
+	'globalblocking-unblock-reason' => 'Priežastis:',
+	'globalblocklist' => 'Visuotinai blokuotų IP adresų sąrašas',
+);
+
 /** Eastern Mari (Олык Марий)
  * @author Сай
  */
