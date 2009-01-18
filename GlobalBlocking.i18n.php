@@ -1732,7 +1732,7 @@ Para ver todos os bloqueos globais activos, pode ollar a [[Special:GlobalBlockLi
 	'right-globalblock-whitelist' => 'Deshabilitar bloqueos globais localmente',
 );
 
-/** Gothic (𐌲𐌿𐍄𐌹𐍃𐌺)
+/** Gothic
  * @author Jocke Pirat
  */
 $messages['got'] = array(
@@ -4059,10 +4059,12 @@ Para ver todos os bloqueios globais, poderá consultar a [[Special:GlobalBlockLi
 
 /** Brazilian Portuguese (Português do Brasil)
  * @author Brunoy Anastasiya Seryozhenko
+ * @author Heldergeovane
  */
 $messages['pt-br'] = array(
 	'globalblocking-desc' => '[[{{ns:Special}}:GlobalBlock|Permite]] que endereços IP sejam [[{{ns:Special}}:GlobalBlockList|bloqueados através de múltiplos wikis]]',
 	'globalblocking-block' => 'Bloquear globalmente um endereço IP',
+	'globalblocking-block-success' => 'O endereço IP $1 foi bloqueado com sucesso em todos os projetos.',
 );
 
 /** Quechua (Runa Simi)

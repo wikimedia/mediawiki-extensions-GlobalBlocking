@@ -76,6 +76,7 @@ $aliases['gl'] = array(
 	'GlobalBlock' => array( 'Bloqueo global' ),
 	'GlobalBlockList' => array( 'Lista de bloqueos globais', 'Listaxe de bloqueos globais' ),
 	'RemoveGlobalBlock' => array( 'Desbloqueo global' ),
+	'GlobalBlockStatus' => array( 'Lista branca de bloqueos globais' ),
 );
 
 /** Swiss German (Alemannisch) */
@@ -222,6 +223,14 @@ $aliases['pt'] = array(
 /** Brazilian Portuguese (Português do Brasil) */
 $aliases['pt-br'] = array(
 	'GlobalBlock' => array( 'Bloquear globalmente' ),
+);
+
+/** Sanskrit (संस्कृत) */
+$aliases['sa'] = array(
+	'GlobalBlock' => array( 'वैश्विकप्रतिबन्ध' ),
+	'GlobalBlockList' => array( 'वैश्विकप्रतिबन्धसूची' ),
+	'RemoveGlobalBlock' => array( 'वैश्विकअप्रतिबन्ध' ),
+	'GlobalBlockStatus' => array( 'वैश्विकअप्रतिबन्धसूची' ),
 );
 
 /** Swedish (Svenska) */
