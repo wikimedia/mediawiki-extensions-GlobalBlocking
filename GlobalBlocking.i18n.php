@@ -232,6 +232,7 @@ Die rede gegee is ''\"\$3\"''. Die versperring verstryk is ''\$4''.",
  */
 $messages['am'] = array(
 	'globalblocking-block-expiry-otherfield' => 'ሌላ ጊዜ፦',
+	'globalblocking-block-options' => 'ምርጫዎች:',
 	'globalblocking-unblock-reason' => 'ምክንያት:',
 );
 
@@ -4226,10 +4227,21 @@ $1',
  * @author HalanTul
  */
 $messages['sah'] = array(
+	'globalblocking-desc' => '[[Special:GlobalBlockList|Хас да биикигэ]] IP аадырыһы [[Special:GlobalBlock|бобору көҥүллүүр]]',
+	'globalblocking-block' => 'IP аадырыһы бырайыактарга барыларыгар бобуу',
+	'globalblocking-block-intro' => 'Бу сирэйи туһанан IP аадырыһы бары биикилэргэ бобуоххун сөп.',
 	'globalblocking-block-reason' => 'Бобуу төрүөтэ:',
 	'globalblocking-block-expiry' => 'Бобуу бүтүүтэ:',
 	'globalblocking-block-expiry-other' => 'Бүтүү атын больдьоҕо',
 	'globalblocking-block-expiry-otherfield' => 'Атын болдьох:',
+	'globalblocking-block-legend' => 'Кыттааччыны бары бырайыактарга хааччахтааһын',
+	'globalblocking-block-options' => 'Туруоруулар:',
+	'globalblocking-block-errors' => 'Хааччахтааһын сатаммата, {{PLURAL:$1|төрүөтэ|төрүөттэрэ}}:',
+	'globalblocking-block-ipinvalid' => 'Киллэрбит ($1) IP-ҥ алҕастаах.
+Бука диэн өйдөө, кытааччы аатын киллэрэр кыаҕыҥ суох!',
+	'globalblocking-block-expiryinvalid' => 'Болдьообутуҥ ($1) алҕастаах.',
+	'globalblocking-block-submit' => 'Бу IP-ну бары бырайыактарга хааччахтаа',
+	'globalblocking-block-success' => '$1 IP туох баар бырайыактарга хааччахтанна.',
 	'globalblocking-search-ip' => 'IP аадырыһа:',
 	'globalblocking-search-submit' => 'Бобуулары бул',
 	'globalblocking-list-ipinvalid' => 'Эн сыыһа IP аадырыһы көрдөөтүҥ ($1).
