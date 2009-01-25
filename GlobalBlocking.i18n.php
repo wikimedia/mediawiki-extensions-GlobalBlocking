@@ -4242,18 +4242,76 @@ $messages['sah'] = array(
 	'globalblocking-block-expiryinvalid' => 'Болдьообутуҥ ($1) алҕастаах.',
 	'globalblocking-block-submit' => 'Бу IP-ну бары бырайыактарга хааччахтаа',
 	'globalblocking-block-success' => '$1 IP туох баар бырайыактарга хааччахтанна.',
+	'globalblocking-block-successsub' => 'Хааччахтааһын сатанна',
+	'globalblocking-block-alreadyblocked' => 'Бу IP номнуо хааччахтаммыт.
+[[Special:GlobalBlockList|Бырайыактар ыккардыларынааҕы хааччахтар тиһиктэригэр]] билиҥҥи хааччахтары көрүөххүн сөп.',
+	'globalblocking-block-bigrange' => 'Эппит ($1) диапазонуҥ хааччахтыырга наһаа улахан.
+65 536 аадырыһы (/16 уобалас) биирдэ хааччахтыаххын сөп.',
+	'globalblocking-list-intro' => 'Бу бырайыактар ыккардыларыгар туттуллар хааччахтар тиһиктэрэ.
+Сорох хааччахтар сорох бырайыактарга арахсыбыт курдук көстөллөр: ол аата, хааччахтааһын ол биирдиилээн биикигэ дьаһабыл быһаарыытынан уһуллубут, ол гынан баран атын бырайыактарга үлэлиир.',
+	'globalblocking-list' => 'Бырайыактар ыккардыларынааҕы бобуллубут IP-лар тиһиктэрэ',
+	'globalblocking-search-legend' => 'Бобууну көрдөөһүн',
 	'globalblocking-search-ip' => 'IP аадырыһа:',
 	'globalblocking-search-submit' => 'Бобуулары бул',
 	'globalblocking-list-ipinvalid' => 'Эн сыыһа IP аадырыһы көрдөөтүҥ ($1).
 Бука диэн сөптөөх IP-ны киллэр.',
 	'globalblocking-search-errors' => 'Көрдөөбүтүҥ сатаммата, ол {{PLURAL:$1|төрүөтэ|төрүөттэрэ}}:',
+	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') бу кыттааччыны бопто: [[Special:Contributions/\$4|\$4]] ''(\$5)''",
 	'globalblocking-list-expiry' => 'болдьоҕо баччаҕа бүтэр: $1',
 	'globalblocking-list-anononly' => 'ааттамматах эрэ кыттааччылары',
 	'globalblocking-list-unblock' => 'хааччаҕын уһул',
 	'globalblocking-list-whitelisted' => '$1 миэстэтигэр араарбыт: $2',
 	'globalblocking-list-whitelist' => 'маннааҕы турук (статус)',
+	'globalblocking-goto-block' => 'IP-ны бары бырайыактарга боп',
+	'globalblocking-goto-unblock' => 'Бобууну суох гын',
+	'globalblocking-goto-status' => 'Бобуу туругун уларытыы',
+	'globalblocking-return' => 'Бобуулар тиһиктэригэр төннүү',
+	'globalblocking-notblocked' => 'Эн киллэрбит IP-ҥ ($1) бырайыактарга барытыгар бобуллубатах.',
+	'globalblocking-unblock' => 'Бобууну уһул',
+	'globalblocking-unblock-ipinvalid' => 'Киллэрбит IP-ҥ алҕастаах ($1).
+Кыттааччы аатын киллэрэр табыллыбатын билэр инигин.',
+	'globalblocking-unblock-legend' => 'Бобууну устуу',
+	'globalblocking-unblock-submit' => 'Бобууну суох оҥор',
 	'globalblocking-unblock-reason' => 'Төрүөтэ:',
+	'globalblocking-unblock-unblocked' => "'''$1''' IP-тан #$2 бобууну уһуллуҥ",
+	'globalblocking-unblock-errors' => 'Бобууну уһулар сатаммата, {{PLURAL:$1|төрүөтэ|төрүөттэрэ}} маннык:',
+	'globalblocking-unblock-successsub' => 'Бобуу сөпкө уһулунна',
+	'globalblocking-unblock-subtitle' => 'Бобууну уһулуу',
+	'globalblocking-unblock-intro' => 'Бу форманы туһанан бобууну суох оҥоруоххун сөп.
+Бобуу тиһигин көрүүгэ төннүөххүн баҕардаххына [[Special:GlobalBlockList|маны баттаа]].',
+	'globalblocking-whitelist' => 'Бырайыактар ыккардыларынааҕы бобуулар олохтоох туруктара (локальное состояние)',
+	'globalblocking-whitelist-legend' => 'Олохтоох турук (локальный статус) уларытыыта',
 	'globalblocking-whitelist-reason' => 'Уларытыы төрүөтэ:',
+	'globalblocking-whitelist-status' => 'Олохтоох (локальнай) турук:',
+	'globalblocking-whitelist-statuslabel' => 'Бу бобууну {{SITENAME}} саайтыгар араар',
+	'globalblocking-whitelist-submit' => 'Олохтоох (локальнай) туругу уларытыы',
+	'globalblocking-whitelist-whitelisted' => "IP-ны '''$1''' {{SITENAME}} саайтыгар хааччахтаныытын уһуллуҥ.",
+	'globalblocking-whitelist-dewhitelisted' => "IP '''$1''' {{SITENAME}} саайтыгар бобуллуутун сөпкө төннөрдүҥ.",
+	'globalblocking-whitelist-successsub' => 'Олохтоох (локал) статус сөпкө уларыйда',
+	'globalblocking-whitelist-nochange' => 'Бу бобуу олохтоох (локал) туругун уларыппатыҥ.
+[[Special:GlobalBlockList|Бобуу тиһигэр төнүн]].',
+	'globalblocking-whitelist-errors' => 'Олохтоох туругу уларытыы табыллыбытата. {{PLURAL:$1|Төрүөтэ|Төрүөттэрэ}} маннык:',
+	'globalblocking-whitelist-intro' => 'Бу форманы туһанан бырайыактар ыккардыларынааҕы бобуу олохтоох (локал) туругун уларытыаххын сөп. 
+Өскө бырайыак ыккардынааҕы бобуу бу биикигэ араарыллар түбэлтэтигэр бобуллубут IP-тан киирэр кыттааччылар сирэйдэри уларытар кыахтаныахтара.
+[[Special:GlobalBlockList|Бобуу тиһигэр төннөргө]].',
+	'globalblocking-blocked' => "Эн IP-гыттан бары биикилэргэ киирэри '''\$1''' (''\$2'') боппут.
+Ыйыллыбыт төрүөтэ: ''\"\$3\"''.
+Бобуу ''\$4''.",
+	'globalblocking-logpage' => 'Бырайыактар ыккардыларынааҕы бобуу сурунаала',
+	'globalblocking-logpagetext' => 'Бырайыактар ыккардыларынааҕы бобуу сурунаала, манна хааччахтааһыны туруоруу уонна ону устуу суруллар.
+Бырайыак ыккардыларынааҕы бобуу атын биикигэ туруоруллубут буолуон сөп, оччоҕо ол бобуу бу биикигэ эмиэ үлэлиир.
+Туох баар бобуулары көрөргө [[Special:GlobalBlockList|бары бобуулар аналлаах тиһиктэрин]] көр.',
+	'globalblocking-block-logentry' => 'бырайыактарга барытыгар [[$1]] бопто, болдьоҕо: $2',
+	'globalblocking-unblock-logentry' => '[[$1]]-тан бобууну уһулла',
+	'globalblocking-whitelist-logentry' => 'бырайыактарга барытыгар дьайар бобуу [[$1]] манна араарыллыбыт',
+	'globalblocking-dewhitelist-logentry' => 'бырайыактарга барытыгар дьайар бобуу [[$1]] иккистээн холбонно',
+	'globalblocklist' => 'Бырйыактарга барыларыгар бобуллубут IP-лар тиһиктэрэ',
+	'globalblock' => 'IP-ны бары бырайыактарга бобуу',
+	'globalblockstatus' => 'Бырайыактарга барыларыгар бобуу олохтоох (локал) туруга',
+	'removeglobalblock' => 'Бырайыактарга барытыгар бобуллууну уһул',
+	'right-globalblock' => 'Бырайыактарга барыларыгар дьайар бобууну туруоруу',
+	'right-globalunblock' => 'бобууну устуу',
+	'right-globalblock-whitelist' => 'бырайыактарга барытыгар дьайар бобуулары араарыы',
 );
 
 /** Sicilian (Sicilianu)
