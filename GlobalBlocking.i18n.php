@@ -1365,6 +1365,19 @@ $messages['et'] = array(
 	'globalblocking-search-ip' => 'IP aadress:',
 );
 
+/** Basque (Euskara)
+ * @author An13sa
+ */
+$messages['eu'] = array(
+	'globalblocking-block-reason' => 'Blokeoaren arrazoia:',
+	'globalblocking-block-expiry' => 'Blokeoaren iraungipena:',
+	'globalblocking-block-options' => 'Aukerak:',
+	'globalblocking-search-ip' => 'IP helbidea:',
+	'globalblocking-list-unblock' => 'kendu',
+	'globalblocking-unblock-reason' => 'Arrazoia:',
+	'globalblocking-whitelist-reason' => 'Aldaketaren arrazoia:',
+);
+
 /** Persian (فارسی)
  * @author Huji
  * @author Mardetanha
