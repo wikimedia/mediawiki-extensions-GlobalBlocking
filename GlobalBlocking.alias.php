@@ -145,7 +145,7 @@ $aliases['lb'] = array(
 	'GlobalBlock' => array( 'Global Spären' ),
 	'GlobalBlockList' => array( 'Lëscht vun de globale Spären' ),
 	'RemoveGlobalBlock' => array( 'Global Spär ophiewen' ),
-	'GlobalBlockStatus' => array( 'Ausnahme vun der globaler Spär' ),
+	'GlobalBlockStatus' => array( 'Ausnahm vun der globaler Spär' ),
 );
 
 /** Macedonian (Македонски) */
