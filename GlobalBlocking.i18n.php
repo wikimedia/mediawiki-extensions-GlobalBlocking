@@ -2635,6 +2635,7 @@ Per visualizzare tutti i blocchi globali attivi si veda l'[[Special:GlobalBlockL
 /** Japanese (日本語)
  * @author Aotake
  * @author Fievarsty
+ * @author Hosiryuhosi
  * @author Muttley
  */
 $messages['ja'] = array(
@@ -2712,7 +2713,7 @@ $messages['ja'] = array(
 	'globalblocking-whitelist-logentry' => '[[$1]] のグローバルブロックをローカルで無効にしました',
 	'globalblocking-dewhitelist-logentry' => '[[$1]] のグローバルブロックをローカルで再有効化しました',
 	'globalblocklist' => 'グローバルブロックされたIPアドレスのリスト',
-	'globalblock' => 'このIPアドレスをグローバルブロックする',
+	'globalblock' => 'IPアドレスをグローバルブロックする',
 	'globalblockstatus' => 'グローバルブロックのローカルステータス',
 	'removeglobalblock' => 'グローバルブロックを解除する',
 	'right-globalblock' => '他利用者のグローバルブロック',
