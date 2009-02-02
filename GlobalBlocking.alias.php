@@ -59,6 +59,14 @@ $aliases['de'] = array(
 	'GlobalBlockStatus' => array( 'Ausnahme von globaler Sperre' ),
 );
 
+/** Lower Sorbian (Dolnoserbski) */
+$aliases['dsb'] = array(
+	'GlobalBlock' => array( 'Globalne blokěrowanje' ),
+	'GlobalBlockList' => array( 'Lisćina globalnych blokěrowanjow' ),
+	'RemoveGlobalBlock' => array( 'Globalne blokěrowanje wótpóraś' ),
+	'GlobalBlockStatus' => array( 'Wuwześa z globalnego blokěrowanja' ),
+);
+
 /** Finnish (Suomi) */
 $aliases['fi'] = array(
 	'GlobalBlock' => array( 'Globaaliesto' ),
@@ -103,6 +111,14 @@ $aliases['hr'] = array(
 	'GlobalBlockList' => array( 'Globalno_blokirane_adrese' ),
 	'RemoveGlobalBlock' => array( 'Ukloni_globalno_blokiranje', 'Globalno_odblokiraj' ),
 	'GlobalBlockStatus' => array( 'Status_globalnog_blokiranja' ),
+);
+
+/** Upper Sorbian (Hornjoserbsce) */
+$aliases['hsb'] = array(
+	'GlobalBlock' => array( 'Globalne blokowanje' ),
+	'GlobalBlockList' => array( 'Lisćina globalnych blokowanjow' ),
+	'RemoveGlobalBlock' => array( 'Globalne blokowanje wotstronić' ),
+	'GlobalBlockStatus' => array( 'Wuwzaća z globalneho blokowanja' ),
 );
 
 /** Haitian (Kreyòl ayisyen) */

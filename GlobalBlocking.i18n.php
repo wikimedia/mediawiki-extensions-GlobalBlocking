@@ -2918,6 +2918,7 @@ $messages['ko'] = array(
 유효한 IP 주소를 입력해주세요.',
 	'globalblocking-search-errors' => '당신의 검색이 성공적으로 진행되지 못했습니다. 다음의 이유를 확인해보세요:',
 	'globalblocking-list-blockitem' => '$1: <span class="plainlinks">\'\'\'$2\'\'\'</span> ($3) 이(가) [[Special:Contributions/$4|$4]] 을(를) 전체 위키에서 차단하였습니다. ($5)',
+	'globalblocking-list-expiry' => '기한 $1',
 	'globalblocking-list-anononly' => '익명 사용자만',
 	'globalblocking-list-unblock' => '차단 해제',
 	'globalblocking-list-whitelisted' => '$1에 의해 로컬에서 해제됨: $2',
@@ -3160,12 +3161,14 @@ $messages['lt'] = array(
 	'globalblocking-block-reason' => 'Blokavimo priežastis:',
 	'globalblocking-block-expiry' => 'Blokavimas galioja iki:',
 	'globalblocking-block-options' => 'Parinktys:',
+	'globalblocking-block-submit' => 'Visuotinai blokuoti šį IP adresą',
 	'globalblocking-block-successsub' => 'Visuotinis blokavimas pavyko',
 	'globalblocking-search-ip' => 'IP adresas:',
 	'globalblocking-search-submit' => 'Ieškoti blokavimų',
 	'globalblocking-list-anononly' => 'tik anonimai',
 	'globalblocking-unblock-reason' => 'Priežastis:',
 	'globalblocklist' => 'Visuotinai blokuotų IP adresų sąrašas',
+	'globalblock' => 'Visuotinai blokuoti IP adresą',
 );
 
 /** Eastern Mari (Олык Марий)
