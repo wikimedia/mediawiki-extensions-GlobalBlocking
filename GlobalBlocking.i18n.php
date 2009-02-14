@@ -1153,24 +1153,95 @@ Aby se woglědał wšykne aktiwne globalne blokěrowanja, móžoš se woglědaś
 
 /** Greek (Ελληνικά)
  * @author Consta
+ * @author Dead3y3
  * @author ZaDiak
  */
 $messages['el'] = array(
+	'globalblocking-desc' => '[[Special:GlobalBlock|Επιτρέπει]] διευθύνσεις IP να [[Special:GlobalBlockList|φραγούν σε πολλαπλά wikis]]',
+	'globalblocking-block' => 'Καθολική φραγή μιας διεύθυνσης IP',
+	'globalblocking-block-intro' => 'Μπορείτε να χρησιμοποιήσετε αυτή τη σελίδα για να φράξετε μια διεύθυνση IP σε όλα τα wikis',
+	'globalblocking-block-reason' => 'Λόγος για αυτή τη φραγή:',
 	'globalblocking-block-expiry' => 'Λήξη φραγής:',
+	'globalblocking-block-expiry-other' => 'Άλλος χρόνος λήξης',
 	'globalblocking-block-expiry-otherfield' => 'Άλλος χρόνος:',
+	'globalblocking-block-legend' => 'Φραγή ενός χρήστη καθολικά',
 	'globalblocking-block-options' => 'Επιλογές:',
+	'globalblocking-block-errors' => 'Η φραγή σας ήταν ανεπιτυχής, για {{PLURAL:$1|τον ακόλουθο λόγο|τους ακόλουθους λόγους}}:',
+	'globalblocking-block-ipinvalid' => 'Η διεύθυνση IP ($1) που εισάγατε είναι άκυρη.<br/>
+Παρακαλώ σημειώστε ότι δεν μπορείτε να εισαγετε ένα όνομα χρήστη!',
+	'globalblocking-block-expiryinvalid' => 'Η ημερομηνία λήξης που εισάγατε ($1) είναι άκυρη.',
+	'globalblocking-block-submit' => 'Φραγή αυτής της διεύθυνσης IP καθολικά',
+	'globalblocking-block-success' => 'Η διεύθυνση IP $1 φράχτηκε επιτυχώς σε όλα τα εγχειρήματα.',
+	'globalblocking-block-successsub' => 'Καθολική φραγή επιτυχής',
+	'globalblocking-block-alreadyblocked' => 'Η διεύθυνση IP $1 είναι ήδη φραγμένη καθολικά.<br/>
+Μπορείτε να δείτε την υπάρχουσα φραγή στον [[Special:GlobalBlockList|κατάλογο καθολικών φραγών]].',
+	'globalblocking-block-bigrange' => 'Το εύρος που ορίσατε ($1) είναι πολύ μεγάλο για να φραγεί.<br/>
+Μπορείτε να φράξετε, το πολύ, 65.536 διευθύνσεις (/16 εύρη)',
+	'globalblocking-list-intro' => 'Αυτός είναι ένας κατάλογος με όλες τις καθολικές φραγές οι οποίες ισχύουν αυτή τη στιγμή.<br/>
+Μερικές φραγές είναι σημασμένες ως τοπικά απενεργοποιημένες: αυτό σημαίνει ότι εφαρμόζονται σε άλλους ιστοτόπους, αλλά ο τοπικός διαχειριστής έχει αποφασίσει να τις απενεργοποιήσει σε αυτό το wiki.',
+	'globalblocking-list' => 'Κατάλογος καθολικά φραγμένων διευθύνσεων IP',
+	'globalblocking-search-legend' => 'Αναζήτηση για μια καθολική φραγή',
 	'globalblocking-search-ip' => 'διεύθυνση IP:',
 	'globalblocking-search-submit' => 'Αναζήτηση για φραγές',
+	'globalblocking-list-ipinvalid' => 'Η διεύθυνση IP για την οποία αναζητήσατε ($1) είναι άκυρη.<br />
+Παρακαλώ εισάγετε μια έγκυρη διεύθυνση IP.',
+	'globalblocking-search-errors' => 'Η αναζήτηση σας ήταν ανεπιτυχής, για {{PLURAL:$1|τον ακόλουθο λόγο|τους ακόλουθους λόγους}}:',
+	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">Ο/Η '''\$2'''</span> (''\$3'') έφραξε καθολικά τον/την [[Special:Contributions/\$4|\$4]] ''(\$5)''",
 	'globalblocking-list-expiry' => 'λήξη $1',
 	'globalblocking-list-anononly' => 'μόνο ανώνυμος',
 	'globalblocking-list-unblock' => 'αφαίρεση',
+	'globalblocking-list-whitelisted' => 'τοπικά απενεργοποιημένη από τον/την $1: $2',
 	'globalblocking-list-whitelist' => 'τοπική κατάσταση',
+	'globalblocking-goto-block' => 'Καθολική φραγή μιας διεύθυνσης IP',
+	'globalblocking-goto-unblock' => 'Αφαίρεση μιας καθολικής φραγής',
+	'globalblocking-goto-status' => 'Αλλαγή τοπικής κατάστασης για μια καθολική φραγή',
+	'globalblocking-return' => 'Επιστροφή στον κατάλογο καθολικών φραγών',
+	'globalblocking-notblocked' => 'Η διεύθυνση IP ($1) που εισάγατε δεν είναι καθολικά φραγμένη.',
+	'globalblocking-unblock' => 'Αφαίρεση μιας καθολικής φραγής',
+	'globalblocking-unblock-ipinvalid' => 'Η διεύθυνσης IP ($1) που εισάγατε είναι άκυρη.<br />
+Παρακαλώ σημειώστε ότι δεν μπορείτε να εισαγετε ένα όνομα χρήστη!',
+	'globalblocking-unblock-legend' => 'Αφαίρεση μιας καθολικής φραγής',
+	'globalblocking-unblock-submit' => 'Αφαίρεση καθολικής φραγής',
 	'globalblocking-unblock-reason' => 'Λόγος:',
+	'globalblocking-unblock-unblocked' => "Αφαιρέσατε επιτυχώς την καθολική φραγή #$2 στην διεύθυνση IP '''$1'''",
+	'globalblocking-unblock-errors' => 'Η αφαίρεση σας της καθολικής φραγής ήταν ανεπιτυχής, για {{PLURAL:$1|τον ακόλουθο λόγο|τους ακόλουθους λόγους}}:',
+	'globalblocking-unblock-successsub' => 'Καθολική φραγή αφαιρέθηκε επιτυχώς',
+	'globalblocking-unblock-subtitle' => 'Αφαίρεση καθολικής φραγής',
+	'globalblocking-unblock-intro' => 'Μπορείτε να χρησιμοποιήσετε αυτή τη φόρμα για να αφαιρέσετε μια καθολική φραγή.<br />
+[[Special:GlobalBlockList|Κάντε κλικ εδώ]] για να επιστρέψετε στον κατάλογο καθολικών φραγών.',
+	'globalblocking-whitelist' => 'Τοπική κατάσταση καθολικών φραγών',
 	'globalblocking-whitelist-legend' => 'Αλλαγή τοπικής κατάστασης',
 	'globalblocking-whitelist-reason' => 'Λόγος αλλαγής:',
 	'globalblocking-whitelist-status' => 'Τοπική κατάσταση:',
+	'globalblocking-whitelist-statuslabel' => 'Απενεργοποίηση αυτής της καθολικής φραγής στον ιστότοπο {{SITENAME}}',
 	'globalblocking-whitelist-submit' => 'Αλλαγή τοπικής κατάστασης',
+	'globalblocking-whitelist-whitelisted' => "Απενεργοποιήσατε επιτυχώς την καθολική φραγή #$2 στην διεύθυνση IP '''$1''' στον ιστότοπο {{SITENAME}}.",
+	'globalblocking-whitelist-dewhitelisted' => "Ενεργοποιήσατε πάλι επιτυχώς την καθολική φραγή #$2 στην διεύθυνση IP '''$1''' στον ιστότοπο {{SITENAME}}.",
 	'globalblocking-whitelist-successsub' => 'Η τοπική κατάσταση άλλαξε επιτυχώς',
+	'globalblocking-whitelist-nochange' => 'Δεν έχετε κάνει καμία αλλαγή στην τοπική κατάσταση αυτής της φραγής.<br />
+[[Special:GlobalBlockList|Επιστροφή στον κατάλογο καθολικών φραγών]].',
+	'globalblocking-whitelist-errors' => 'Η αλλαγή σας στην τοπική κατάσταση μιας καθολικής φραγής ήταν ανεπιτυχής, για {{PLURAL:$1|τον ακόλουθο λόγο|τους ακόλουθους λόγους}}:',
+	'globalblocking-whitelist-intro' => 'Μπορείτε να χρησιμοποιήσετε αυτή τη φόρμα για να επεξεργαστείτε την τοπική κατάσταση μιας καθολικής φραγής.<br />
+Αν μια καθολική φραγή είναι απενεργοποιημένη σε αυτό το wiki, οι χρήστες της επηρεαζόμενης διεύθυνσης IP θα είναι ικανοί να επεξεργαστούν σελίδες κανονικά.<br />
+[[Special:GlobalBlockList|Επιστροφή στον κατάλογο καθολικών φραγών]].',
+	'globalblocking-blocked' => "Η διεύθυνση IP σας έχει φραγεί σε όλα τα wikis από τον/την '''$1''' (''$2'').<br />
+Ο λόγος που δόθηκε ήταν ''«$3»''.<br />
+Τύπος φραγής: ''$4''.",
+	'globalblocking-logpage' => 'Αρχείο καταγραφής καθολικών φραγών',
+	'globalblocking-logpagetext' => 'Αυτό είναι ένα αρχείο καταγραφής των καθολικών φραγών οι οποίες έχουν γίνει και αφαιρέθηκαν σε αυτό το wiki.<br />
+Πρέπει να σημειωθεί ότι οι καθολικές φραγές μπορούν να γίνουν και να αφαιρεθούν σε άλλα wikis, και ότι αυτές οι καθολικές φραγές μπορεί να επηρεάσουν αυτό το wiki.<br />
+Για να δείτε όλες τις ενεργές καθολικές φραγές, μπορείτε να δείτε τον [[Special:GlobalBlockList|κατάλογο καθολικών φραγών]].',
+	'globalblocking-block-logentry' => 'έφραξε καθολικά τον/την [[$1]] με χρόνο λήξης $2',
+	'globalblocking-unblock-logentry' => 'αφαίρεσε την καθολική φραγή στον/στην [[$1]]',
+	'globalblocking-whitelist-logentry' => 'απενεργοποίησε την καθολική φραγή στον/στην [[$1]] τοπικά',
+	'globalblocking-dewhitelist-logentry' => 'ενεργοποίησε πάλι την καθολική φραγή στον/στην [[$1]] τοπικά',
+	'globalblocklist' => 'Κατάλογος καθολικά φραγμένων διευθύνσεων IP',
+	'globalblock' => 'Καθολική φραγή μιας διεύθυνσης IP',
+	'globalblockstatus' => 'Τοπική κατάσταση καθολικών φραγών',
+	'removeglobalblock' => 'Αφαίρεση μιας καθολικής φραγής',
+	'right-globalblock' => 'Δημιουργία καθολικών φραγών',
+	'right-globalunblock' => 'Αφαίρεση καθολικών φραγών',
+	'right-globalblock-whitelist' => 'Απενεργοποίηση καθολικών φραγών τοπικά',
 );
 
 /** Esperanto (Esperanto)
