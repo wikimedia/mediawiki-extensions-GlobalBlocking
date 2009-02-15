@@ -133,6 +133,14 @@ $aliases['hu'] = array(
 	'RemoveGlobalBlock' => array( 'Globális feloldás' ),
 );
 
+/** Interlingua (Interlingua) */
+$aliases['ia'] = array(
+	'GlobalBlock' => array( 'BlocadaGlobal' ),
+	'GlobalBlockList' => array( 'ListaDeBlocadasGlobal' ),
+	'RemoveGlobalBlock' => array( 'DisblocadaGlobal', 'RemoverBlocadaGlobal' ),
+	'GlobalBlockStatus' => array( 'ListaBlancDeBlocadasGlobal', 'StatoDeBlocadasGlobal', 'DisactivarBlocadaGlobal' ),
+);
+
 /** Indonesian (Bahasa Indonesia) */
 $aliases['id'] = array(
 	'GlobalBlock' => array( 'Pemblokiran global' ),
@@ -254,5 +262,13 @@ $aliases['sv'] = array(
 	'GlobalBlock' => array( 'Global blockering' ),
 	'GlobalBlockList' => array( 'Global blockeringslista' ),
 	'RemoveGlobalBlock' => array( 'Global avblockering' ),
+);
+
+/** Tagalog (Tagalog) */
+$aliases['tl'] = array(
+	'GlobalBlock' => array( 'Pandaigdigang paghadlang' ),
+	'GlobalBlockList' => array( 'Talaan ng pandaigdigang paghadlang' ),
+	'RemoveGlobalBlock' => array( 'Pandaigdigang hindi paghadlang', 'Tanggalin ang pandaigdigang paghadlang' ),
+	'GlobalBlockStatus' => array( 'Puting talaan ng pandaigdigang paghadlang', 'Kalagayan ng pandaigdigang paghadlang', 'Huwag paganahin ang pandaigdigang paghadlang' ),
 );
 

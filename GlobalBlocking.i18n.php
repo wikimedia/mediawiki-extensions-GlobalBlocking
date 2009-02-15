@@ -3849,6 +3849,13 @@ For å vise alle aktive globale blokkeringer, se den [[Special:GlobalBlockList|g
 	'right-globalblock-whitelist' => 'Slå av globale blokkeringer lokalt',
 );
 
+/** Novial (Novial)
+ * @author Malafaya
+ */
+$messages['nov'] = array(
+	'globalblocking-unblock-reason' => 'Resone:',
+);
+
 /** Occitan (Occitan)
  * @author Cedric31
  */
