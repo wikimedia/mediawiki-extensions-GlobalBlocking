@@ -67,6 +67,14 @@ $aliases['dsb'] = array(
 	'GlobalBlockStatus' => array( 'Wuwześa z globalnego blokěrowanja' ),
 );
 
+/** Spanish (Español) */
+$aliases['es'] = array(
+	'GlobalBlock' => array( 'Bloquear_global', 'Bloqueo_global' ),
+	'GlobalBlockList' => array( 'Lista_de_bloqueos_globales', 'Lista_bloqueos_globales' ),
+	'RemoveGlobalBlock' => array( 'Desbloquear_global' ),
+	'GlobalBlockStatus' => array( 'Lista_blanca_de_bloqueos_globales', 'Lista_blanca_bloqueos_globales' ),
+);
+
 /** Finnish (Suomi) */
 $aliases['fi'] = array(
 	'GlobalBlock' => array( 'Globaaliesto' ),
@@ -135,10 +143,10 @@ $aliases['hu'] = array(
 
 /** Interlingua (Interlingua) */
 $aliases['ia'] = array(
-	'GlobalBlock' => array( 'BlocadaGlobal' ),
-	'GlobalBlockList' => array( 'ListaDeBlocadasGlobal' ),
-	'RemoveGlobalBlock' => array( 'DisblocadaGlobal', 'RemoverBlocadaGlobal' ),
-	'GlobalBlockStatus' => array( 'ListaBlancDeBlocadasGlobal', 'StatoDeBlocadasGlobal', 'DisactivarBlocadaGlobal' ),
+	'GlobalBlock' => array( 'Blocada global' ),
+	'GlobalBlockList' => array( 'Lista de blocadas global' ),
+	'RemoveGlobalBlock' => array( 'Disblocada global', 'Remover blocada global' ),
+	'GlobalBlockStatus' => array( 'Lista blanc de blocadas global', 'Stato de blocadas global', 'Disactivar blocada global' ),
 );
 
 /** Indonesian (Bahasa Indonesia) */
