@@ -1167,17 +1167,17 @@ $messages['el'] = array(
 	'globalblocking-block-legend' => 'Φραγή ενός χρήστη καθολικά',
 	'globalblocking-block-options' => 'Επιλογές:',
 	'globalblocking-block-errors' => 'Η φραγή σας ήταν ανεπιτυχής, για {{PLURAL:$1|τον ακόλουθο λόγο|τους ακόλουθους λόγους}}:',
-	'globalblocking-block-ipinvalid' => 'Η διεύθυνση IP ($1) που εισάγατε είναι άκυρη.<br/>
+	'globalblocking-block-ipinvalid' => 'Η διεύθυνση IP ($1) που εισάγατε είναι άκυρη.<br />
 Παρακαλώ σημειώστε ότι δεν μπορείτε να εισαγετε ένα όνομα χρήστη!',
 	'globalblocking-block-expiryinvalid' => 'Η ημερομηνία λήξης που εισάγατε ($1) είναι άκυρη.',
 	'globalblocking-block-submit' => 'Φραγή αυτής της διεύθυνσης IP καθολικά',
 	'globalblocking-block-success' => 'Η διεύθυνση IP $1 φράχτηκε επιτυχώς σε όλα τα εγχειρήματα.',
 	'globalblocking-block-successsub' => 'Καθολική φραγή επιτυχής',
-	'globalblocking-block-alreadyblocked' => 'Η διεύθυνση IP $1 είναι ήδη φραγμένη καθολικά.<br/>
+	'globalblocking-block-alreadyblocked' => 'Η διεύθυνση IP $1 είναι ήδη φραγμένη καθολικά.<br />
 Μπορείτε να δείτε την υπάρχουσα φραγή στον [[Special:GlobalBlockList|κατάλογο καθολικών φραγών]].',
-	'globalblocking-block-bigrange' => 'Το εύρος που ορίσατε ($1) είναι πολύ μεγάλο για να φραγεί.<br/>
+	'globalblocking-block-bigrange' => 'Το εύρος που ορίσατε ($1) είναι πολύ μεγάλο για να φραγεί.<br />
 Μπορείτε να φράξετε, το πολύ, 65.536 διευθύνσεις (/16 εύρη)',
-	'globalblocking-list-intro' => 'Αυτός είναι ένας κατάλογος με όλες τις καθολικές φραγές οι οποίες ισχύουν αυτή τη στιγμή.<br/>
+	'globalblocking-list-intro' => 'Αυτός είναι ένας κατάλογος με όλες τις καθολικές φραγές οι οποίες ισχύουν αυτή τη στιγμή.<br />
 Μερικές φραγές είναι σημασμένες ως τοπικά απενεργοποιημένες: αυτό σημαίνει ότι εφαρμόζονται σε άλλους ιστοτόπους, αλλά ο τοπικός διαχειριστής έχει αποφασίσει να τις απενεργοποιήσει σε αυτό το wiki.',
 	'globalblocking-list' => 'Κατάλογος καθολικά φραγμένων διευθύνσεων IP',
 	'globalblocking-search-legend' => 'Αναζήτηση για μια καθολική φραγή',
@@ -1675,7 +1675,7 @@ Veuillez entrez une adresse IP correcte.',
 	'globalblocking-goto-unblock' => 'Enlever un blocage global',
 	'globalblocking-goto-status' => 'Modifier le statut local d’un blocage global',
 	'globalblocking-return' => 'Retourner à la liste des blocages globaux',
-	'globalblocking-notblocked' => "L’adresse IP ($1) que vous avez inscrite n'est pas globalement bloquée.",
+	'globalblocking-notblocked' => 'L’adresse IP ($1) que vous avez indiquée n’est pas bloquée globalement.',
 	'globalblocking-unblock' => 'Enlever un blocage global',
 	'globalblocking-unblock-ipinvalid' => 'L’adresse IP que vous avez indiquée ($1) est incorrecte.
 Veuillez noter que que vous ne pouvez pas entrer un nom d’utilisateur !',
@@ -1690,18 +1690,20 @@ $1',
 	'globalblocking-unblock-intro' => 'Vous pouvez utiliser ce formulaire pour retirer un blocage global.
 [[Special:GlobalBlockList|Cliquez ici]] pour revenir à la liste globale des blocages.',
 	'globalblocking-whitelist' => 'Statut local des blocages globaux',
-	'globalblocking-whitelist-legend' => 'Changer le statut local',
+	'globalblocking-whitelist-legend' => 'Changer l’état local',
 	'globalblocking-whitelist-reason' => 'Raison de la modification :',
-	'globalblocking-whitelist-status' => 'Statut local :',
+	'globalblocking-whitelist-status' => 'État local :',
 	'globalblocking-whitelist-statuslabel' => 'Désactiver ce blocage global sur {{SITENAME}}',
 	'globalblocking-whitelist-submit' => 'Changer le statut local',
 	'globalblocking-whitelist-whitelisted' => "Vous avez désactivé avec succès le blocage global n° $2 sur l'adresse IP '''$1''' sur {{SITENAME}}.",
 	'globalblocking-whitelist-dewhitelisted' => "Vous avez réactivé avec succès le blocage global n° $2 sur l'adresse IP '''$1''' sur {{SITENAME}}.",
-	'globalblocking-whitelist-successsub' => 'Statut local changé avec succès',
-	'globalblocking-whitelist-nochange' => 'Vous n’avez pas modifié le statut local de ce blocage.
-[[Special:GlobalBlockList|Revenir à la liste globale des blocages]].',
-	'globalblocking-whitelist-errors' => 'Votre modifications vers le statut local d’un blocage global n’a pas été couronnée de succès pour {{PLURAL:$1|le motif suivant|les motifs suivants}} :',
-	'globalblocking-whitelist-intro' => 'Vous pouvez utiliser ce formulaire pour modifier le statut local d’un blocage global. Si un blocage global est désactivé sur ce wiki, les utilisateurs concernés par l’adresse IP pourront éditer normalement. [[Special:GlobalBlockList|Cliquez ici]] pour retourner à la liste globale.',
+	'globalblocking-whitelist-successsub' => 'État local changé avec succès',
+	'globalblocking-whitelist-nochange' => 'Vous n’avez pas modifié l’état local de ce blocage.
+[[Special:GlobalBlockList|Revenir à la liste des blocages globaux]].',
+	'globalblocking-whitelist-errors' => 'Votre changement de l’état local d’un blocage global n’a pas réussi pour {{PLURAL:$1|le motif suivant|les motifs suivants}} :',
+	'globalblocking-whitelist-intro' => 'Vous pouvez utiliser ce formulaire pour modifier l’état local d’un blocage global.
+Si un blocage global est désactivé sur ce wiki, les utilisateurs des adresses IP affectées pourront modifier normalement.
+[[Special:GlobalBlockList|Retourner à la liste des bloquages globaux]].',
 	'globalblocking-blocked' => "Votre adresse IP a été bloquée sur l’ensemble des wiki par '''$1''' (''$2'').
 Le motif indiqué était « $3 ». La plage ''$4''.",
 	'globalblocking-logpage' => 'Historique des blocages globaux',
@@ -2613,6 +2615,15 @@ Untuk menampilkan seluruh pemblokiran global yang aktif saat ini, Anda dapat mel
 	'right-globalblock' => 'Melakukan pemblokiran global',
 	'right-globalunblock' => 'Menghapuskan pemblokiran global',
 	'right-globalblock-whitelist' => 'Menonaktifkan suatu pemblokiran global di wiki lokal',
+);
+
+/** Ido (Ido)
+ * @author Malafaya
+ */
+$messages['io'] = array(
+	'globalblocking-block-expiry-otherfield' => 'Altra tempo:',
+	'globalblocking-block-options' => 'Selekti:',
+	'globalblocking-unblock-reason' => 'Motivo:',
 );
 
 /** Icelandic (Íslenska)
