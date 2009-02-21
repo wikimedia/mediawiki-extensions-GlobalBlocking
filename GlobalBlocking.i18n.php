@@ -1751,7 +1751,7 @@ Por favor, decátese de que non pode teclear un nome de usuario!',
 	'globalblocking-block-submit' => 'Bloquear este enderezo IP globalmente',
 	'globalblocking-block-success' => 'O enderezo IP $1 foi bloqueado con éxito en todos os proxectos.',
 	'globalblocking-block-successsub' => 'Bloqueo global exitoso',
-	'globalblocking-block-alreadyblocked' => 'O enderezo IP "$1" xa está globalmente bloqueado. Pode ver os bloqueos vixentes na [[Special:GlobalBlockList|listaxe de bloqueos globais]].',
+	'globalblocking-block-alreadyblocked' => 'O enderezo IP "$1" xa está globalmente bloqueado. Pode ver os bloqueos vixentes na [[Special:GlobalBlockList|lista de bloqueos globais]].',
 	'globalblocking-block-bigrange' => 'O rango especificado ($1) é demasiado grande para bloquealo. Pode bloquear, como máximo, 65.536 enderezos (/16 rangos)',
 	'globalblocking-list-intro' => 'Esta é unha lista de todos os bloqueos globais vixentes.
 Algúns bloqueos están marcados como deshabilitados localmente: isto significa que se aplican noutros sitios, pero que un administrador local decidiu retirar o bloqueo neste wiki.',
