@@ -977,6 +977,7 @@ $messages['cy'] = array(
 /** German (Deutsch)
  * @author MF-Warburg
  * @author Raimond Spekking
+ * @author Umherirrender
  */
 $messages['de'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Sperrt]] IP-Adressen auf [[Special:GlobalBlockList|allen Wikis]]',
@@ -1034,16 +1035,16 @@ Beachte, dass du keinen Benutzernamen eingeben darfst!',
 	'globalblocking-whitelist-status' => 'Lokaler Status:',
 	'globalblocking-whitelist-statuslabel' => 'Diese globale Sperre auf {{SITENAME}} aufheben',
 	'globalblocking-whitelist-submit' => 'Lokalen Status ändern',
-	'globalblocking-whitelist-whitelisted' => "Du hast erfolgreich die globale Sperre #$2 der IP-Adresse '''$1''' auf {{SITENAME}} aufgehoben.",
-	'globalblocking-whitelist-dewhitelisted' => "Du hast erfolgreich die globale Sperre #$2 der IP-Adresse '''$1''' auf {{SITENAME}} wieder eingeschaltet.",
+	'globalblocking-whitelist-whitelisted' => "Du hast erfolgreich die globale Sperre der IP-Adresse '''$1''' (Sperr-ID $2) auf {{SITENAME}} aufgehoben.",
+	'globalblocking-whitelist-dewhitelisted' => "Du hast erfolgreich die globale Sperre der IP-Adresse '''$1''' (Sperr-ID $2) auf {{SITENAME}} wieder eingeschaltet.",
 	'globalblocking-whitelist-successsub' => 'Lokaler Status erfolgreich geändert',
 	'globalblocking-whitelist-nochange' => 'Du hast den lokalen Status der Sperre nicht verändert.
-[[Special:GlobalBlockList|Zurück zur Liste der globalen Sperre]]',
+[[Special:GlobalBlockList|Zurück zur Liste der globalen Sperre]].',
 	'globalblocking-whitelist-errors' => 'Deine Änderung des lokalen Status einer globalen Sperre war nicht erfolgreich. {{PLURAL:$1|Grund|Gründe}}:',
 	'globalblocking-whitelist-intro' => 'Du kannst mit diesem Formular den lokalen Status einer globalen Sperre ändern. Wenn eine globale Sperre in dem Wiki deaktiviert wurde, können Seiten über die entsprechende IP-Adresse normal bearbeitet werden. [[Special:GlobalBlockList|Klicke hier]], um zur Liste der globalen Sperren zurückzukehren.',
 	'globalblocking-blocked' => "Deine IP-Adresse wurde von '''$1''' ''($2)'' für alle Wikis gesperrt.
 Als Begründung wurde ''„$3“'' angegeben. Die Sperre ''$4''.",
-	'globalblocking-logpage' => 'Globales Sperrlogbuch',
+	'globalblocking-logpage' => 'Globales Sperr-Logbuch',
 	'globalblocking-logpagetext' => 'Dies ist das Logbuch der globalen Sperren, die in diesem Wiki eingerichtet oder aufgehoben wurden.
 Globale Sperren können in einem anderen Wiki eingerichtet und aufgehoben werden, so dass die dortigen Sperren auch dieses Wiki betreffen können.
 Für eine Liste aller aktiven globalen Sperren siehe die [[Special:GlobalBlockList|globale Sperrliste]].',
@@ -1058,6 +1059,30 @@ Für eine Liste aller aktiven globalen Sperren siehe die [[Special:GlobalBlockLi
 	'right-globalblock' => 'Globale Sperren einrichten',
 	'right-globalunblock' => 'Globale Sperren aufheben',
 	'right-globalblock-whitelist' => 'Globale Sperren lokal abschalten',
+);
+
+/** German (formal address) (Deutsch (Sie-Form))
+ * @author MichaelFrey
+ * @author Umherirrender
+ */
+$messages['de-formal'] = array(
+	'globalblocking-block-ipinvalid' => 'Sie haben eine ungültige IP-Adresse ($1) eingegeben.
+Beachten Sie, dass Sie keinen Benutzernamen eingeben dürfen!',
+	'globalblocking-block-alreadyblocked' => 'Die IP-Adresse $1 wurde schon global gesperrt. Sie können die bestehende Sperre in der [[Special:GlobalBlockList|globalen Sperrliste]] einsehen.',
+	'globalblocking-block-bigrange' => 'Der Adressbereich, den Sie angegeben haben ($1) ist zu groß.
+Sie können höchstens 65.536 IPs sperren (/16-Adressbereiche)',
+	'globalblocking-unblock-ipinvalid' => 'Sie haben eine ungültige IP-Adresse ($1) eingegeben.
+Beachten Sie, dass Sie keinen Benutzernamen eingeben dürfen!',
+	'globalblocking-unblock-unblocked' => "Sie haben erfolgreich die IP-Adresse '''$1''' (Sperr-ID $2) entsperrt",
+	'globalblocking-unblock-intro' => 'Mit diesem Formular können Sie eine globale Sperre aufheben. [[Special:GlobalBlockList|Klicken Sie hier]], um zur Liste der globalen Sperren zurückzukehren.',
+	'globalblocking-whitelist-whitelisted' => "Sie haben erfolgreich die globale Sperre der IP-Adresse '''$1''' (Sperr-ID $2) auf {{SITENAME}} aufgehoben.",
+	'globalblocking-whitelist-dewhitelisted' => "Sie haben erfolgreich die globale Sperre der IP-Adresse '''$1''' (Sperr-ID $2) auf {{SITENAME}} wieder eingeschaltet.",
+	'globalblocking-whitelist-nochange' => 'Sie haben den lokalen Status der Sperre nicht verändert.
+[[Special:GlobalBlockList|Zurück zur Liste der globalen Sperre]].',
+	'globalblocking-whitelist-errors' => 'Ihre Änderung des lokalen Status einer globalen Sperre war nicht erfolgreich. {{PLURAL:$1|Grund|Gründe}}:',
+	'globalblocking-whitelist-intro' => 'Sie können mit diesem Formular den lokalen Status einer globalen Sperre ändern. Wenn eine globale Sperre in dem Wiki deaktiviert wurde, können Seiten über die entsprechende IP-Adresse normal bearbeitet werden. [[Special:GlobalBlockList|Klicken Sie hier]], um zur Liste der globalen Sperren zurückzukehren.',
+	'globalblocking-blocked' => "Ihre IP-Adresse wurde von '''$1''' ''($2)'' für alle Wikis gesperrt.
+Als Begründung wurde ''„$3“'' angegeben. Die Sperre ''$4''.",
 );
 
 /** Lower Sorbian (Dolnoserbski)
