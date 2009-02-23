@@ -118,6 +118,7 @@ To view all active global blocks, you may view the [[Special:GlobalBlockList|glo
  * @author Purodha
  * @author Raymond
  * @author Siebrand
+ * @author Tgr
  */
 $messages['qqq'] = array(
 	'globalblocking-desc' => 'Short description of this extension, shown on [[Special:Version]]. Do not translate or change links.',
@@ -130,6 +131,7 @@ $messages['qqq'] = array(
 
 * $1 – the ''number'' of errors (not the errors themselves)",
 	'globalblocking-block-ipinvalid' => '{{Identical|The IP address ($1) ...}}',
+	'globalblocking-list-intro' => 'Appears on top of [[Special:Globalblocklist]] (part of [[mw:Extension:GlobalBlocking|Extension:GlobalBlocking]], which is not installed on Betawiki; example: [[wikipedia:Special:Globalblocklist]]).',
 	'globalblocking-search-ip' => '{{Identical|IP Address}}',
 	'globalblocking-list-blockitem' => '* $1 is a time stamp
 * $2 is the blocking user
@@ -150,7 +152,7 @@ $messages['qqq'] = array(
 * <code>$2</code> is the project name where the user is registered (usually “meta.wikimedia.org” on Wikimedia servers)
 * <code>$3</code> is the reason specified by the blocking user
 * <code>$4</code> is either the contents of [[MediaWiki:Infiniteblock]] (''{{int:Infiniteblock}}''), or [[MediaWiki:Expiringblock]] (''{{int:Expiringblock}}'') with the expiry time",
-	'globalblocking-logpagetext' => 'Shown as header of [[meta:Special:Log/gblblock]] (example only, this extension is not installed on Betawiki)',
+	'globalblocking-logpagetext' => 'Shown as header of [[Special:Log/gblblock]] (part of [[mw:Extension:GlobalBlocking|Extension:GlobalBlocking]], which is not installed on Betawiki; example: [[wikipedia:Special:Log/gblblock]])',
 	'globalblocking-unblock-logentry' => "This message is a log entry. '''$1''' are contributions of an IP. For an example see http://meta.wikimedia.org/wiki/Special:Log/gblblock?uselang=en",
 	'globalblock' => 'Same special page with this page:
 
@@ -2648,7 +2650,10 @@ Untuk menampilkan seluruh pemblokiran global yang aktif saat ini, Anda dapat mel
 $messages['io'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Altra tempo:',
 	'globalblocking-block-options' => 'Selekti:',
+	'globalblocking-list-anononly' => 'nur anonima',
+	'globalblocking-list-unblock' => 'forigar',
 	'globalblocking-unblock-reason' => 'Motivo:',
+	'globalblocking-whitelist-reason' => 'Motivo di la chanjo:',
 );
 
 /** Icelandic (Íslenska)

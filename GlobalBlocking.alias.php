@@ -257,6 +257,13 @@ $aliases['pt-br'] = array(
 	'GlobalBlock' => array( 'Bloquear globalmente' ),
 );
 
+/** Romanian (Română) */
+$aliases['ro'] = array(
+	'GlobalBlock' => array( 'Blocare globală' ),
+	'GlobalBlockList' => array( 'Lista de blocări globale' ),
+	'RemoveGlobalBlock' => array( 'Deblocare globală', 'Elimină blocarea globală' ),
+);
+
 /** Sanskrit (संस्कृत) */
 $aliases['sa'] = array(
 	'GlobalBlock' => array( 'वैश्विकप्रतिबन्ध' ),
