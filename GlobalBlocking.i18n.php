@@ -2650,6 +2650,7 @@ Untuk menampilkan seluruh pemblokiran global yang aktif saat ini, Anda dapat mel
 $messages['io'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Altra tempo:',
 	'globalblocking-block-options' => 'Selekti:',
+	'globalblocking-search-ip' => 'IP-adreso:',
 	'globalblocking-list-anononly' => 'nur anonima',
 	'globalblocking-list-unblock' => 'forigar',
 	'globalblocking-unblock-reason' => 'Motivo:',
