@@ -3266,6 +3266,96 @@ Fir all aktiv global Spären ze gesinn, gitt w.e.g op d'[[Special:GlobalBlockLis
 	'right-globalblock-whitelist' => 'Global Späre lokal ausschalten',
 );
 
+/** Limburgish (Limburgs)
+ * @author Ooswesthoesbes
+ */
+$messages['li'] = array(
+	'globalblocking-desc' => "[[Special:GlobalBlock|Maak 't meugelijk]] IP-addresse [[Special:GlobalBlockList|in meerdere wiki's tegeliek]] te blokkere",
+	'globalblocking-block' => 'Een IP-adres globaal blokkere',
+	'globalblocking-block-intro' => "De kins deze pagina gebroeke om 'n IP-adres op alle wiki's te blokkere.",
+	'globalblocking-block-reason' => 'Reeje veur dees blokkaasj:',
+	'globalblocking-block-expiry' => 'Verloupdatom blókkaasj:',
+	'globalblocking-block-expiry-other' => 'Anger verlouptermien',
+	'globalblocking-block-expiry-otherfield' => 'Angere tied:',
+	'globalblocking-block-legend' => "'ne Gebroeker globaal blokkere",
+	'globalblocking-block-options' => 'Opties:',
+	'globalblocking-block-errors' => 'De blókkaasj is neet ingesteldj om de volgendje {{PLURAL:$1|reeje|reeje}}:',
+	'globalblocking-block-ipinvalid' => "'t IP-adres ($1) det se höbs opgegaeve is neet zjuus.
+Lèt óp: de kins geine gebroekersnaam opgaeve!",
+	'globalblocking-block-expiryinvalid' => 'De verlouppdatum/tied daese höbs opgegaeve is óngèljig ($1).',
+	'globalblocking-block-submit' => 'Dit IP-adres globaal blokkere',
+	'globalblocking-block-success' => "'t IP-adres $1 is op alle perjèkter geblokkeerdj.",
+	'globalblocking-block-successsub' => 'Globale ingesteldj',
+	'globalblocking-block-alreadyblocked' => "'t IP $1 is al globaal gezatj. De kins de bestaondje blok bekiek in de [[Special:GlobalBlockList|liejst met globale blokkades]].",
+	'globalblocking-block-bigrange' => 'De reeks dae se höbs opgegaeve ($1) is te groot om te blokkere. De maags ten hoogste 65.536 adresse blokkere (/16-reekse)',
+	'globalblocking-list-intro' => "Dit is 'n lies mit alle globale blokkades die op 't moment actief zeen.
+Sommige blokkades zeen gemarkeerd es lokaal opgeheve.
+Dit betekent det ze op andere sites van toepassing zeen, mer det 'ne lokale beheerder haet beslaote det de blokkade op deze wiki neet van toepassing is.",
+	'globalblocking-list' => "Lies mit globaal vasse IP'ers.",
+	'globalblocking-search-legend' => "Nao 'ne globale blok zeuke",
+	'globalblocking-search-ip' => 'IP-adres:',
+	'globalblocking-search-submit' => 'Nao blokkaasj zeuke',
+	'globalblocking-list-ipinvalid' => "Het IP-adres wo s enao zochs is onjuus ($1).
+Voer 'n correct IP-adres in.",
+	'globalblocking-search-errors' => "De zeukopdrach kinde {{PLURAL:$1|'t volgende probleem|de volgende probleme}}:",
+	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') haet [[Special:Contributions/\$4|\$4]] globaal geblokkeerd ''(\$5)''",
+	'globalblocking-list-expiry' => 'verlöp $1',
+	'globalblocking-list-anononly' => 'allein anonieme',
+	'globalblocking-list-unblock' => 'blok opheffe',
+	'globalblocking-list-whitelisted' => 'lokaal genegeerd door $1: $2',
+	'globalblocking-list-whitelist' => 'lokaal status',
+	'globalblocking-goto-block' => 'IP-adres globaal blokkere',
+	'globalblocking-goto-unblock' => 'Globaal bloks wisse',
+	'globalblocking-goto-status' => "Lokaal status ven 'ne globale blokkaasj angere",
+	'globalblocking-return' => 'Trök nao de lies mit globaal blokkaasj',
+	'globalblocking-notblocked' => "'t Ingegaeve IP-adres ($1) is neet globaal gezatj.",
+	'globalblocking-unblock' => 'Globaal blok wisse',
+	'globalblocking-unblock-ipinvalid' => "'t IP-adres ($1) det se höbs ingegaeve is onzjuus.
+Lèt óp: de kins geine gebroekersnaam ingaeve!",
+	'globalblocking-unblock-legend' => "'ne Globale blok wisse",
+	'globalblocking-unblock-submit' => 'Globale blok wisse',
+	'globalblocking-unblock-reason' => 'Reeje:',
+	'globalblocking-unblock-unblocked' => "De höbs 'ne globaal blok mit nummer $2 veur t IP-adres '''$1''' gewis",
+	'globalblocking-unblock-errors' => 'De globaale blok is neet gewis om de volgende {{PLURAL:$1|reden|redene}}:',
+	'globalblocking-unblock-successsub' => 'De globale blok is gewis',
+	'globalblocking-unblock-subtitle' => 'Globale blok aan t wisse',
+	'globalblocking-unblock-intro' => "De kins dit formeleer gebroeke om 'ne globaale blok op te heffe.
+[[Special:GlobalBlockList|Trökgaon nao de lies met globale blokkades]].",
+	'globalblocking-whitelist' => 'Lokale status ven global bloks',
+	'globalblocking-whitelist-legend' => 'Lokale status angere',
+	'globalblocking-whitelist-reason' => 'Reeje:',
+	'globalblocking-whitelist-status' => 'Lokaal status:',
+	'globalblocking-whitelist-statuslabel' => 'Dizze globale blok op {{SITENAME}} oetzitte',
+	'globalblocking-whitelist-submit' => 'Lokaal status angere',
+	'globalblocking-whitelist-whitelisted' => "De höbs de globale blokkaasj #$2 mit 't IP-adres '''$1''' op {{SITENAME}} eweggedoon.",
+	'globalblocking-whitelist-dewhitelisted' => "De höbs de globale blokkade #$2 met t IP-adres '''$1''' op {{SITENAME}} opnuuj actief gemaat.",
+	'globalblocking-whitelist-successsub' => 'De lokaal status is anges',
+	'globalblocking-whitelist-nochange' => 'De höbs de lokaal status ven deze blok neet angerd.
+[[Special:GlobalBlockList|Trökkere nao de lies met globale blokkades]].',
+	'globalblocking-whitelist-errors' => 'De kos de lokale status van de globale blokkade neet wiezige om de volgende {{PLURAL:$1|rede|redene}}:',
+	'globalblocking-whitelist-intro' => "De kins dit formulier gebroeke om de lokale status van 'n globale blokkade te wiezige.
+Als een globale blokkade op deze wiki is opgeheve, kunne gebroekers vanaaf  t IP-adres geeuon bewerkinge oetvoere.
+[[Special:GlobalBlockList|Trökkere nao de lies met globale blokkades]].",
+	'globalblocking-blocked' => "De IP-adres is door '''\$1''' (''\$2'') geblokkeerd op alle wiki's.
+De rede is ''\"\$3\"''.
+De blokkade ''\$4''.",
+	'globalblocking-logpage' => 'Globaal bloklogbook',
+	'globalblocking-logpagetext' => "Dit logbook bevat aangemaakte en verwiejderde globale blokkades op deze wiki.
+Globale blokkades kunne ouk op andere wiki's aangemaat en verwiederd worde, en invloed hebbe op deze wiki.
+Alle globale blokkades stoan in de [[Special:GlobalBlockList|liest met globale blokkades]].",
+	'globalblocking-block-logentry' => 'haet [[$1]] globaal gezatj mit de verlouptied es $2',
+	'globalblocking-unblock-logentry' => 'haet de globaal bol veur [[$1]] gewösj',
+	'globalblocking-whitelist-logentry' => 'haet de globaal blok van [[$1]] lokaal opgeheffe',
+	'globalblocking-dewhitelist-logentry' => 'haet de globaal blok van [[$1]] lokaal opnuuj ingesteldj',
+	'globalblocklist' => 'Lies ven globaal geblókkieërdje IP-adrèsser',
+	'globalblock' => "'n IP-adres globaal zitte",
+	'globalblockstatus' => 'Lokaal status ven globaal bloks',
+	'removeglobalblock' => 'Globaal blok wisse',
+	'right-globalblock' => 'Globaal bloks instelle',
+	'right-globalunblock' => 'Globaal bloks wisse',
+	'right-globalblock-whitelist' => 'Globaal bloks lokaal negere',
+);
+
 /** Lithuanian (Lietuvių)
  * @author Homo
  */
