@@ -4748,6 +4748,28 @@ $messages['sr-ec'] = array(
 	'right-globalunblock' => 'Уклони глобалне блокове',
 );
 
+/** Seeltersk (Seeltersk)
+ * @author Pyt
+ */
+$messages['stq'] = array(
+	'globalblocking-desc' => '[[Special:GlobalBlock|Speert]] IP-Adressen ap [[Special:GlobalBlockList|aal Wikis]]',
+	'globalblocking-block' => 'Ne IP-Adresse globoal speere',
+	'globalblocking-block-intro' => 'Ap disse Siede koast du IP-Adressen foar aal Wikis speere.',
+	'globalblocking-block-reason' => 'Gruund foar ju Speere:',
+	'globalblocking-block-expiry' => 'Speerduur:',
+	'globalblocking-block-expiry-other' => 'Uur Duur:',
+	'globalblocking-block-expiry-otherfield' => 'Uur Duur (ängelsk):',
+	'globalblocking-block-legend' => 'N Benutser globoal speere',
+	'globalblocking-block-options' => 'Optione:',
+	'globalblocking-block-errors' => 'Ju Speere hied naan Ärfoulch. {{PLURAL:$1|Gruund|Gruunde}}:',
+	'globalblocking-block-ipinvalid' => 'Du hääst ne uungultige IP-Adresse ($1) ienroat.
+Beoachtje, dät du naan Benutsernoome ienreeke doarst!',
+	'globalblocking-block-expiryinvalid' => 'Ju Speerduur ($1) is uungultich.',
+	'globalblocking-block-submit' => 'Disse IP-Adresse globoal speere',
+	'globalblocking-block-success' => 'Ju IP-Adresse $1 wuud mäd Ärfoulch ap aal Projekte speerd.',
+	'globalblocking-block-successsub' => 'Mäd Ärfoulch globoal speerd',
+);
+
 /** Sundanese (Basa Sunda)
  * @author Irwangatot
  */
