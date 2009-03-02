@@ -3005,6 +3005,7 @@ $messages['km'] = array(
 $messages['ko'] = array(
 	'globalblocking-desc' => '특정 IP를 [[Special:GlobalBlockList|모든 위키에서]] [[Special:GlobalBlock|차단]]할 수 있는 권한을 줌',
 	'globalblocking-block' => 'IP 주소를 모든 위키에서 차단',
+	'globalblocking-block-intro' => '당신은 모든 위키에서 특정 IP를 차단할 때 이 페이지를 사용할 수 있습니다.',
 	'globalblocking-block-reason' => '차단하는 이유:',
 	'globalblocking-block-expiry' => '차단 기간:',
 	'globalblocking-block-expiry-other' => '다른 기간',
