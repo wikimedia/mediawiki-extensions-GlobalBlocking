@@ -160,9 +160,21 @@ class SpecialGlobalBlock extends SpecialPage {
 		$fields = array ();
 
 		// Who to block
-		$fields['ipaddress'] = Xml::input( 'wpAddress', 45, $this->mAddress );
+		$fields['ipaddress'] =
+			Xml::input( 'wpAddress',
+				45,
+				$this->mAddress,
+				array('id' => 'mw-globalblock-address' )
+			);
+		
 		// Why to block them
-		$fields['globalblocking-block-reason'] = Xml::input( 'wpReason', 45, $this->mReason );
+		$fields['globalblocking-block-reason'] =
+			Xml::input(
+				'wpReason',
+					45,
+					$this->mReason,
+					array( 'id' => 'mw-globalblock-reason' )
+				);
 
 		// How long to block them for
 		if ( ( $dropdown = wfMsgNoTrans( 'globalblocking-expiry-options' ) ) != '-') {
@@ -174,14 +186,38 @@ class SpecialGlobalBlock extends SpecialPage {
 		}
 		
 		if ($dropdown == false ) {
-			$fields['globalblocking-block-expiry'] = Xml::input( 'wpExpiry', 45, $this->mExpiry );
+			$fields['globalblocking-block-expiry'] =
+				Xml::input(
+					'wpExpiry',
+					45,
+					$this->mExpiry,
+					array( 'id' => 'mw-globalblock-expiry' )
+				);
 		} else {
-			$fields['globalblocking-block-expiry'] = $this->buildExpirySelector( 'wpExpiry', 'wpExpiry', $this->mExpirySelection, $dropdown );
-			$fields['globalblocking-block-expiry-otherfield'] = Xml::input( 'wpExpiryOther', 45, $this->mExpiry == $this->mExpirySelection ? '' : $this->mExpiry );
+			$fields['globalblocking-block-expiry'] =
+				$this->buildExpirySelector(
+					'wpExpiry',
+					'mw-globalblock-expiry-selector',
+					$this->mExpirySelection,
+					$dropdown
+				);
+			$fields['globalblocking-block-expiry-otherfield'] =
+				Xml::input(
+					'wpExpiryOther',
+					45,
+					$this->mExpiry == $this->mExpirySelection ? '' : $this->mExpiry,
+					array( 'id' => 'mw-globalblock-expiry-other' )
+				);
 		}
 
 		// Block all users, or just anonymous ones
-		$fields['globalblocking-block-options'] = Xml::checkLabel( wfMsg( 'ipbanononly' ), 'wpAnonOnly', 'wpAnonOnly', $this->mAnonOnly );
+		$fields['globalblocking-block-options'] =
+			Xml::checkLabel(
+				wfMsg( 'ipbanononly' ),
+				'wpAnonOnly',
+				'mw-globalblock-anon-only',
+				$this->mAnonOnly
+			);
 
 		// Build a form.
 		$submitMsg = $this->mModifyForm
