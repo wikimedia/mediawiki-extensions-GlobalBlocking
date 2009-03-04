@@ -1,6 +1,4 @@
 <?php
-if ( ! defined( 'MEDIAWIKI' ) )
-	die();
 
 class SpecialGlobalBlockList extends SpecialPage {
 	public $mSearchIP, $mSearch;
@@ -157,23 +155,41 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 			$options[] = wfMsg('globalblocking-list-anononly');
 		
 		$titleObj = SpecialPage::getTitleFor( "GlobalBlockList" );
-		$whitelistTitle = SpecialPage::getTitleFor( "GlobalBlockStatus" );
-		$unblockTitle = SpecialPage::getTitleFor( "RemoveGlobalBlock" );
 		
 		## Do afterthoughts (comment, links for admins)
 		$info = array();
 		$info[] = $sk->commentBlock($row->gb_reason);
 
 		if( $wgUser->isAllowed( 'globalunblock' ) ) {
-			$info[] = '(' . $sk->makeKnownLinkObj($unblockTitle,
-				wfMsg( 'globalblocking-list-unblock' ),
-				'address=' . urlencode( $row->gb_address ) ) . ')';
+			$unblockTitle = SpecialPage::getTitleFor( "RemoveGlobalBlock" );
+			$info[] = '(' . $sk->link($unblockTitle, 
+								wfMsgExt( 'globalblocking-list-unblock', 'parseinline' ),
+								array(),
+								array( 'address' => $row->gb_address )
+							) .
+						')';
 		}
 		
 		if( $wgUser->isAllowed( 'globalblock-whitelist' ) ) {
-			$info[] = '(' . $sk->makeKnownLinkObj($whitelistTitle, 
-				wfMsg( 'globalblocking-list-whitelist' ),
-				'address=' . urlencode( $row->gb_address ) ) . ')';
+			$whitelistTitle = SpecialPage::getTitleFor( "GlobalBlockStatus" );
+			$info[] = '(' . $sk->link($whitelistTitle, 
+								wfMsgExt( 'globalblocking-list-whitelist', 'parseinline' ),
+								array(),
+								array( 'address' => $row->gb_address )
+							) .
+						')';
+		}
+		
+		if ( $wgUser->isAllowed( 'globalblock' ) ) {
+			$reblockTitle = SpecialPage::getTitleFor( 'GlobalBlock' );
+			$msg = wfMsgExt( 'globalblocking-list-modify', 'parseinline' );
+			$link = $sk->link(
+						$reblockTitle,
+						$msg,
+						array(),
+						array( 'wpAddress' => $row->gb_address, 'modify' => 1 )
+					);
+			$info[] = "($link)";
 		}
 		
 		## Userpage link / Info on originating wiki

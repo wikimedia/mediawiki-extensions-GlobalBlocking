@@ -88,7 +88,7 @@ class SpecialRemoveGlobalBlock extends SpecialPage {
 		$dbw->delete( 'globalblocks', array( 'gb_id' => $id ), __METHOD__ );
 
 		$page = new LogPage( 'gblblock' );
-		$page->addEntry( 'gunblock', SpecialPage::getTitleFor( 'Contributions', $ip ), $this->mReason );
+		$page->addEntry( 'gunblock', Title::makeTitleSafe( NS_USER, $ip ), $this->mReason );
 
 		$successmsg = wfMsgExt( 'globalblocking-unblock-unblocked', array( 'parse' ), $ip, $id );
 		$wgOut->addHTML( $successmsg );
