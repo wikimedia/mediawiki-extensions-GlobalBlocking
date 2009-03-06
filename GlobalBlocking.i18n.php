@@ -2077,7 +2077,7 @@ $messages['he'] = array(
 	'globalblocking-block-success' => 'כתובת ה־IP $1 נחסמה בהצלחה בכל אתרי הוויקי.',
 	'globalblocking-modify-success' => 'החסימה הגלובלית של $1 שונתה בהצלחה',
 	'globalblocking-block-successsub' => 'החסימה הגלובלית הושלמה בהצלחה',
-	'globalblocking-modify-successsub' => 'החסומה הגלובלית שונתה בהצלחה',
+	'globalblocking-modify-successsub' => 'החסימה הגלובלית שונתה בהצלחה',
 	'globalblocking-block-alreadyblocked' => 'כתובת ה־IP $1 כבר נחסמה באופן גלובלי.
 באפשרותכם לצפות בחסימה הקיימת ב[[Special:GlobalBlockList|רשימת החסימות הגלובליות]],
 או לשנות את הגדרות החסימה הקיימת באמצעות שליחה מחדש של הטופס.',
