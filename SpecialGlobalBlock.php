@@ -92,7 +92,7 @@ class SpecialGlobalBlock extends SpecialPage {
 
 	function loadParameters() {
 		global $wgRequest;
-		$this->mAddress = $wgRequest->getText( 'wpAddress' );
+		$this->mAddress = trim( $wgRequest->getText( 'wpAddress' ) );
 		$this->mReason = $wgRequest->getText( 'wpReason' );
 		$this->mExpiry = $this->mExpirySelection = $wgRequest->getText( 'wpExpiry' );
 		if ($this->mExpiry == 'other') {
