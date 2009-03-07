@@ -14,7 +14,7 @@ class SpecialGlobalBlock extends SpecialPage {
 		global $wgOut, $wgRequest, $wgUser;
 		$this->setHeaders();
 
-		$this->loadParameters();
+		$this->loadParameters( $par );
 
 		$wgOut->setPageTitle( wfMsg( 'globalblocking-block' ) );
 		$wgOut->setRobotPolicy( "noindex,nofollow" );
@@ -90,9 +90,12 @@ class SpecialGlobalBlock extends SpecialPage {
 		return $errorstr;
 	}
 
-	function loadParameters() {
+	function loadParameters( $par ) {
 		global $wgRequest;
 		$this->mAddress = trim( $wgRequest->getText( 'wpAddress' ) );
+		if (!$this->mAddress)
+			$this->mAddress = $par;
+			
 		$this->mReason = $wgRequest->getText( 'wpReason' );
 		$this->mExpiry = $this->mExpirySelection = $wgRequest->getText( 'wpExpiry' );
 		if ($this->mExpiry == 'other') {
