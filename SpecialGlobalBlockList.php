@@ -110,7 +110,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 
 	function loadParameters() {
 		global $wgRequest,$wgUser;
-		$this->mSearchIP = Block::normaliseRange($wgRequest->getText( 'ip' ));
+		$this->mSearchIP = Block::normaliseRange( trim($wgRequest->getText( 'ip' )) );
 	}
 }
 

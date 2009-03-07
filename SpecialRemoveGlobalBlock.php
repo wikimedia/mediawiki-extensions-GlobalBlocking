@@ -62,7 +62,7 @@ class SpecialRemoveGlobalBlock extends SpecialPage {
 
 	function loadParameters() {
 		global $wgRequest;
-		$this->mUnblockIP = $wgRequest->getText( 'address' );
+		$this->mUnblockIP = trim($wgRequest->getText( 'address' ));
 		$this->mReason = $wgRequest->getText( 'wpReason' );
 		$this->mEditToken = $wgRequest->getText( 'wpEditToken' );
 	}
