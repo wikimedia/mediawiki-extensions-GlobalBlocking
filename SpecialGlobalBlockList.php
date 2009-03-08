@@ -126,7 +126,7 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 	}
 
 	function formatRow( $row ) {
-		global $wgLang,$wgUser;
+		global $wgLang, $wgUser;
 		
 		## One-time setup
 		static $sk=null;
@@ -198,11 +198,15 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 		
 		## Put it all together.
 		return Xml::openElement( 'li' ) .
-			wfMsgExt( 'globalblocking-list-blockitem', array( 'parseinline' ), $timestamp,
-				$user_display, $display_wiki, $row->gb_address,
-				implode( ', ', $options) ) .
-				' ' .
-				implode( ' ', $info ) .
+			wfMsgExt( 'globalblocking-list-blockitem', array( 'parseinline' ),
+				$timestamp,
+				$user_display,
+				$display_wiki,
+				$row->gb_address,
+				$wgLang->commaList( $options)
+			) .
+			' ' .
+			implode( ' ', $info ) .
 			Xml::closeElement( 'li' );
 	}
 
