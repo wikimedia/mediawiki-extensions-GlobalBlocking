@@ -163,7 +163,8 @@ $messages['qqq'] = array(
 * <code>$3</code> is the reason specified by the blocking user
 * <code>$4</code> is either the contents of [[MediaWiki:Infiniteblock]] (''{{int:Infiniteblock}}''), or [[MediaWiki:Expiringblock]] (''{{int:Expiringblock}}'') with the expiry time",
 	'globalblocking-logpagetext' => 'Shown as header of [[Special:Log/gblblock]] (part of [[mw:Extension:GlobalBlocking|Extension:GlobalBlocking]], which is not installed on Betawiki; example: [[wikipedia:Special:Log/gblblock]])',
-	'globalblocking-block2-logentry' => '$1 is a link to a user page of the form User:Name, $2 is a reason for the action.',
+	'globalblocking-block2-logentry' => '* $1 is a link to a user page of the form User:Name
+* $2 is a reason for the action.',
 	'globalblocking-unblock-logentry' => "This message is a log entry. '''$1''' are contributions of an IP. For an example see http://meta.wikimedia.org/wiki/Special:Log/gblblock?uselang=en",
 	'globalblocking-modify-logentry' => '$1 is a link to a user page of the form User:Name, $2 is a reason for the action.',
 	'globalblock' => 'Same special page with this page:
@@ -3810,6 +3811,7 @@ $messages['nah'] = array(
 $messages['nds'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Sperrt]] IP-Adressen op [[Special:GlobalBlockList|all Wikis]]',
 	'globalblocking-block' => 'En IP-Adress global sperren',
+	'globalblocking-modify-intro' => 'Mit dit Formular kannst du en globale Sperr instellen un ännern.',
 	'globalblocking-block-intro' => 'Op disse Sied kannst du IP-Adressen för alle Wikis sperren.',
 	'globalblocking-block-reason' => 'Grund för de Sperr:',
 	'globalblocking-block-expiry' => 'Sperrduur:',
@@ -3822,9 +3824,15 @@ $messages['nds'] = array(
 Denk dor an, dat du keen Brukernaam ingeven kannst!',
 	'globalblocking-block-expiryinvalid' => 'De Sperrduur ($1) is ungüllig.',
 	'globalblocking-block-submit' => 'Disse IP-Adress global sperren',
+	'globalblocking-modify-submit' => 'Disse globale Sperr ännern',
 	'globalblocking-block-success' => 'De IP-Adress $1 is op all Projekten sperrt.',
+	'globalblocking-modify-success' => 'De globale Sperr vun $1 is nu ännert',
 	'globalblocking-block-successsub' => 'Globale Sperr instellt',
-	'globalblocking-block-alreadyblocked' => 'De IP-Adress $1 is al global sperrt. Du kannst de Sperr in de [[Special:GlobalBlockList|globale Sperrlist]] ankieken.',
+	'globalblocking-modify-successsub' => 'Globale Sperr ännert',
+	'globalblocking-block-alreadyblocked' => 'De IP-Adress $1 is al global sperrt.
+Du kannst de Sperr in de [[Special:GlobalBlockList|globale Sperrlist]] ankieken oder de vörhannen Sperr över dit Formular ännern.',
+	'globalblocking-block-bigrange' => 'De angeven IP-Block ($1) is to groot.
+Du kannst hööchstens 65.536 Adressen sperren (/16-IP-Blöck)',
 	'globalblocking-list' => 'List vun global sperrte IP-Adressen',
 	'globalblocking-search-legend' => 'Globale Sperr söken',
 	'globalblocking-search-ip' => 'IP-Adress:',
@@ -3866,11 +3874,16 @@ Denk dor an, dat du keen Brukernaam ingeven kannst!',
 	'globalblocking-whitelist-nochange' => 'Du hest den lokalen Status vun de Sperr nich ännert.
 [[Special:GlobalBlockList|Trüch na de List vun globale Sperren]]',
 	'globalblocking-whitelist-errors' => 'Dien Ännern vun’n lokalen Status vun en globale Sperr hett nich klappt. {{PLURAL:$1|Grund|Grünn}}:',
+	'globalblocking-blocked' => "Dien IP-Adress is vun '''$1''' (''$2'') op all Wikis sperrt worrn.
+De Grund is mit ''„$3“'' angeven.
+De Sperr ''$4''.",
 	'globalblocking-logpage' => 'Global Sperrlogbook',
 	'globalblocking-block-logentry' => 'hett [[$1]] för en Tied vun $2 global sperrt',
+	'globalblocking-block2-logentry' => 'hett [[$1]] ($2) global sperrt',
 	'globalblocking-unblock-logentry' => 'hett de globale Sperr för [[$1]] ophoven',
 	'globalblocking-whitelist-logentry' => 'hett de globale Sperr vun [[$1]] lokal afschalt',
 	'globalblocking-dewhitelist-logentry' => 'hett de globale Sperr vun [[$1]] lokal wedder inschalt',
+	'globalblocking-modify-logentry' => 'hett de globale Sperr vun [[$1]] ($2) ännert',
 	'globalblocking-logentry-expiry' => 'löppt $1 ut',
 	'globalblocking-logentry-noexpiry' => 'löppt nich ut',
 	'globalblocklist' => 'List vun all global sperrte IP-Adressen',
@@ -4097,10 +4110,12 @@ For å visa alle aktive globale blokkeringar, sjå den [[Special:GlobalBlockList
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
  * @author Jon Harald Søby
+ * @author Laaknor
  */
 $messages['no'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Gjør det mulig]] å blokkere IP-adresser på [[Special:GlobalBlockList|alle wikier]]',
 	'globalblocking-block' => 'Blokker en IP-adresse globalt',
+	'globalblocking-modify-intro' => 'Du kan bruke dette skjemaet for å endre innstillingene av en global blokkering.',
 	'globalblocking-block-intro' => 'Du kan bruke denne siden for å blokkere en IP-adresse på alle wikier.',
 	'globalblocking-block-reason' => 'Blokkeringsårsak:',
 	'globalblocking-block-expiry' => 'Varighet:',
@@ -4113,9 +4128,14 @@ $messages['no'] = array(
 Merk at du ikke kan skrive inn brukernavn.',
 	'globalblocking-block-expiryinvalid' => 'Varigheten du skrev inn ($1) er ugyldig.',
 	'globalblocking-block-submit' => 'Blokker denne IP-adressen globalt',
+	'globalblocking-modify-submit' => 'Endre denne globale blokkering',
 	'globalblocking-block-success' => 'IP-adressen $1 har blitt blokkert på alle prosjekter.',
+	'globalblocking-modify-success' => 'Den globale blokkeringen av $1 har blitt endret',
 	'globalblocking-block-successsub' => 'Global blokkering lyktes',
-	'globalblocking-block-alreadyblocked' => 'IP-adressen $1 er blokkkert globalt fra før. Du kan se eksisterende blokkeringer på [[Special:GlobalBlockList|listen over globale blokkeringer]].',
+	'globalblocking-modify-successsub' => 'Global blokkering har blitt endret',
+	'globalblocking-block-alreadyblocked' => 'IP-adressen $1 er blokkert globalt fra før. 
+Du kan se eksisterende blokkeringer på [[Special:GlobalBlockList|listen over globale blokkeringer]],
+eller redigere innstillingene av den eksisterende blokkeringen ved å lagre dette skjemaet på nytt.',
 	'globalblocking-block-bigrange' => 'IP-området du oppga ($1) er for stort til å blokkeres. Du kan blokkere maks 65&nbsp;536 adresser (/16-områder)',
 	'globalblocking-list-intro' => 'Dette er en liste over nåværende globale blokkeringer. Noen blokkeringer er slått av lokalt; dette betyr at den gjelder andre steder, men at en lokal administrator har bestemt seg for å slå av blokkeringen på sin wiki.',
 	'globalblocking-list' => 'Liste over globalt blokkerte IP-adresser',
