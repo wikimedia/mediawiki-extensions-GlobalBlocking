@@ -75,6 +75,8 @@ Please note that you cannot enter a user name!',
 [[Special:GlobalBlockList|Click here]] to return to the global block list.',
 	
 	'globalblocking-whitelist' => 'Local status of global blocks',
+	'globalblocking-whitelist-notapplied' => 'Global blocks are not applied at this wiki,
+so the local status of global blocks is not changeable',
 	'globalblocking-whitelist-legend' => 'Change local status',
 	'globalblocking-whitelist-reason' => 'Reason for change:',
 	'globalblocking-whitelist-status' => 'Local status:',

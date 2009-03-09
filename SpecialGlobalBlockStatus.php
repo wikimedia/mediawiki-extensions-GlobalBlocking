@@ -23,6 +23,12 @@ class SpecialGlobalBlockStatus extends SpecialPage {
 			$this->displayRestrictionError();
 			return;
 		}
+		
+		global $wgApplyGlobalBlocks;
+		if (!$wgApplyGlobalBlocks) {
+			$this->addWikiMsg( 'globalblocking-whitelist-notapplied' );
+			return;
+		}
 
 		$errors = '';
 

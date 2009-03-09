@@ -170,7 +170,8 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 						')';
 		}
 		
-		if( $wgUser->isAllowed( 'globalblock-whitelist' ) ) {
+		global $wgApplyGlobalBlocks;
+		if( $wgUser->isAllowed( 'globalblock-whitelist' ) && $wgApplyGlobalBlocks ) {
 			$whitelistTitle = SpecialPage::getTitleFor( "GlobalBlockStatus" );
 			$info[] = '(' . $sk->link($whitelistTitle, 
 								wfMsgExt( 'globalblocking-list-whitelist', 'parseinline' ),
