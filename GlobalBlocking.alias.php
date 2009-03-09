@@ -84,7 +84,7 @@ $aliases['fi'] = array(
 
 /** French (Français) */
 $aliases['fr'] = array(
-	'GlobalBlock' => array( 'BlocageGlobal' ),
+	'GlobalBlock' => array( 'Blocage global', 'BlocageGlobal' ),
 );
 
 /** Galician (Galego) */
