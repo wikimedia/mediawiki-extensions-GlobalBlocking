@@ -2127,6 +2127,8 @@ $messages['he'] = array(
 	'globalblocking-unblock-subtitle' => 'הסרת חסימה גלובלית',
 	'globalblocking-unblock-intro' => 'באפשרותכם להשתמש בטופס זה כדי להסיר חסימה גלובלית. [[Special:GlobalBlockList|חזרה לרשימת החסימות הגלובליות]].',
 	'globalblocking-whitelist' => 'המצב המקומי של החסימות הגלובליות',
+	'globalblocking-whitelist-notapplied' => 'חסימות גלובליות אינן פעילות באתר זה,
+לכן לא ניתן לשנות את המצב המקומי שלהן.',
 	'globalblocking-whitelist-legend' => 'שינוי המצב המקומי',
 	'globalblocking-whitelist-reason' => 'סיבה לשינוי:',
 	'globalblocking-whitelist-status' => 'מצב מקומי:',
