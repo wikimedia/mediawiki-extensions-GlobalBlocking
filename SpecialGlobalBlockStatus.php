@@ -61,7 +61,7 @@ class SpecialGlobalBlockStatus extends SpecialPage {
 
 	function loadParameters() {
 		global $wgRequest;
-		$this->mAddress = trim(Block::normaliseRange( $wgRequest->getText( 'address' ) ));
+		$this->mAddress = Block::normaliseRange( trim( $wgRequest->getText( 'address' ) ) );
 		$this->mReason = $wgRequest->getText( 'wpReason' );
 		$this->mWhitelistStatus = $wgRequest->getCheck( 'wpWhitelistStatus' );
 		$this->mEditToken = $wgRequest->getText( 'wpEditToken' );
