@@ -271,6 +271,7 @@ $messages['an'] = array(
 $messages['ar'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|يسمح]] بمنع عناوين الأيبي [[Special:GlobalBlockList|عبر ويكيات متعددة]]',
 	'globalblocking-block' => 'منع عام لعنوان أيبي',
+	'globalblocking-modify-intro' => 'يمكنك استخدام هذه الاستمارة لتغيير إعدادات المنع العام.',
 	'globalblocking-block-intro' => 'أنت يمكنك استخدام هذه الصفحة لمنع عنوان أيبي في كل الويكيات.',
 	'globalblocking-block-reason' => 'السبب لهذا المنع:',
 	'globalblocking-block-expiry' => 'انتهاء المنع:',
@@ -283,9 +284,14 @@ $messages['ar'] = array(
 من فضلك لاحظ أنه لا يمكنك إدخال اسم مستخدم!',
 	'globalblocking-block-expiryinvalid' => 'تاريخ الانتهاء الذي أدخلته ($1) غير صحيح.',
 	'globalblocking-block-submit' => 'منع عنوان الأيبي هذا منعا عاما',
+	'globalblocking-modify-submit' => 'تعديل هذا المنع العام',
 	'globalblocking-block-success' => 'عنوان الأيبي $1 تم منعه بنجاح في كل المشاريع.',
+	'globalblocking-modify-success' => 'المنع العام على $1 تم تعديله بنجاح',
 	'globalblocking-block-successsub' => 'نجح المنع العام',
-	'globalblocking-block-alreadyblocked' => 'عنوان الأيبي $1 ممنوع منعا عاما بالفعل. يمكنك رؤية المنع الموجود في [[Special:GlobalBlockList|قائمة عمليات المنع العامة]].',
+	'globalblocking-modify-successsub' => 'المنع العام تم تعديله بنجاح',
+	'globalblocking-block-alreadyblocked' => 'عنوان الأيبي $1 ممنوع منعا عاما بالفعل.
+يمكنك رؤية المنع الموجود في [[Special:GlobalBlockList|قائمة عمليات المنع العامة]]،
+أو تعديل إعدادات المنع الموجود عن طريق إعادة تنفيذ هذه الاستمارة.',
 	'globalblocking-block-bigrange' => 'النطاق الذي حددته ($1) كبير جدا للمنع. يمكنك منع، كحد أقصى، 65,536 عنوان (نطاقات /16)',
 	'globalblocking-list-intro' => 'هذه قائمة بكل عمليات المنع العامة الحالية. بعض عمليات المنع معلمة كمعطلة محليا: هذا يعني أنها تنطبق على المواقع الأخرى، لكن إداريا محليا قرر تعطيلها في هذا الويكي.',
 	'globalblocking-list' => 'قائمة عناوين الأيبي الممنوعة منعا عاما',
@@ -301,6 +307,7 @@ $messages['ar'] = array(
 	'globalblocking-list-unblock' => 'إزالة',
 	'globalblocking-list-whitelisted' => 'تم تعطيله محليا بواسطة $1: $2',
 	'globalblocking-list-whitelist' => 'الحالة المحلية',
+	'globalblocking-list-modify' => 'تعديل',
 	'globalblocking-goto-block' => 'منع عام لعنوان أيبي',
 	'globalblocking-goto-unblock' => 'إزالة منع عام',
 	'globalblocking-goto-status' => 'تغيير الحالة المحلية لمنع عام',
@@ -319,6 +326,8 @@ $messages['ar'] = array(
 	'globalblocking-unblock-intro' => 'يمكنك استخدام هذه الاستمارة لإزالة منع عام.
 [[Special:GlobalBlockList|اضغط هنا]] للرجوع إلى قائمة المنع العامة.',
 	'globalblocking-whitelist' => 'الحالة المحلية لعمليات المنع العامة',
+	'globalblocking-whitelist-notapplied' => 'عمليات المنع العامة لا يتم تطبيقها في هذه الويكي،
+لذا فالحالة المحلية لعمليات المنع العامة لا يمكن تعديلها.',
 	'globalblocking-whitelist-legend' => 'تغيير الحالة المحلية',
 	'globalblocking-whitelist-reason' => 'السبب للتغيير:',
 	'globalblocking-whitelist-status' => 'الحالة المحلية:',
@@ -339,9 +348,13 @@ $messages['ar'] = array(
 ينبغي ملاحظة أن عمليات المنع العامة يمكن عملها وإزالتها على الويكيات الأخرى، وأن عمليات المنع العامة هذه ربما تؤثر على هذا الويكي.
 لرؤية كل عمليات المنع العامة النشطة، يمكنك رؤية [[Special:GlobalBlockList|قائمة المنع العامة]].',
 	'globalblocking-block-logentry' => 'منع بشكل عام [[$1]] لمدة $2',
+	'globalblocking-block2-logentry' => 'ممنوع منعا عاما [[$1]] ($2)',
 	'globalblocking-unblock-logentry' => 'أزال المنع العام على [[$1]]',
 	'globalblocking-whitelist-logentry' => 'عطل المنع العام على [[$1]] محليا',
 	'globalblocking-dewhitelist-logentry' => 'أعاد تفعيل المنع العام على [[$1]] محليا',
+	'globalblocking-modify-logentry' => 'عدل المنع العام في [[$1]] ($2)',
+	'globalblocking-logentry-expiry' => 'ينتهي في $1',
+	'globalblocking-logentry-noexpiry' => 'لا انتهاء مضبوط',
 	'globalblocklist' => 'قائمة عناوين الأيبي الممنوعة منعا عاما',
 	'globalblock' => 'منع عام لعنوان أيبي',
 	'globalblockstatus' => 'الحالة المحلية للمنع العام',
@@ -2276,6 +2289,7 @@ $messages['hil'] = array(
 /** Croatian (Hrvatski)
  * @author CERminator
  * @author Dalibor Bosits
+ * @author SpeedyGonsales
  * @author Suradnik13
  */
 $messages['hr'] = array(
@@ -2296,7 +2310,8 @@ Uzmite u obzir da ne možete upisati suradničko ime!',
 	'globalblocking-block-success' => 'IP adresa $1 je uspješno blokirana na svim projektima.',
 	'globalblocking-block-successsub' => 'Globalno blokiranje je uspješno',
 	'globalblocking-block-alreadyblocked' => 'IP adresa $1 je već globalno blokirana.
-Možete vidjeti postojeća blokiranja na [[Special:GlobalBlockList|popisu globalnih blokiranja]].',
+Možete vidjeti postojeća blokiranja na [[Special:GlobalBlockList|popisu globalnih blokiranja]],
+ili promijeniti postavke postojećeg blokiranja slanjem ovog obrasca.',
 	'globalblocking-block-bigrange' => 'Opseg koji ste odredili ($1) je prevelik za blokiranje.
 Možete blokirati najviše 65,536 adresa (/16 opseg)',
 	'globalblocking-list-intro' => 'Ovo je popis globalno blokiranih adresu trenutačno aktivnih.
@@ -2357,6 +2372,8 @@ Za popis svih aktivnih globalnih blokiranja, pogledajte [[Special:GlobalBlockLis
 	'globalblocking-unblock-logentry' => 'uklonio globalno blokiranje za [[$1]]',
 	'globalblocking-whitelist-logentry' => 'onemogućio globalno blokiranje za [[$1]] mjesno',
 	'globalblocking-dewhitelist-logentry' => 'omogućio globalno blokiranje za [[$1]] mjesno',
+	'globalblocking-logentry-expiry' => 'blokada istječe $1',
+	'globalblocking-logentry-noexpiry' => 'istek nije postavljen',
 	'globalblocklist' => 'Popis globalno blokiranih IP adresa',
 	'globalblock' => 'Globalno blokiraj IP adresu',
 	'globalblockstatus' => 'Mjesni status globalnih blokiranja',
@@ -2684,6 +2701,8 @@ Per favor nota que tu non pote entrar un nomine de usator!',
 	'globalblocking-unblock-intro' => 'Tu pote usar iste formulario pro remover un blocada global.
 [[Special:GlobalBlockList|Clicca hic]] pro retornar al lista de blocadas global.',
 	'globalblocking-whitelist' => 'Stato local de blocadas global',
+	'globalblocking-whitelist-notapplied' => 'Le blocadas global non es applicate in iste wiki,
+dunque le stato local del blocadas global non pote esser modificate.',
 	'globalblocking-whitelist-legend' => 'Cambiar stato local',
 	'globalblocking-whitelist-reason' => 'Motivo pro cambio:',
 	'globalblocking-whitelist-status' => 'Stato local:',
@@ -3445,6 +3464,8 @@ Denkt w.e.g. drun datt Dir och e Benotzernumm agi kënnt!',
 	'globalblocking-unblock-intro' => "Dir kënnt dëse Formulaire benotze fir eng global Spär opzehiewen.
 [[Special:GlobalBlockList|Klickt hei]] fir zréck op d'Lëscht vun de globale Spären.",
 	'globalblocking-whitelist' => 'Lokale Statut vun e globale Spären',
+	'globalblocking-whitelist-notapplied' => 'Global Späre sinn op dëser Wiki net aktivéiert,
+dofir kann de lokale Status vu globale Spären net geännert ginn.',
 	'globalblocking-whitelist-legend' => 'De lokale Status änneren',
 	'globalblocking-whitelist-reason' => 'Grond vun der Ännerung:',
 	'globalblocking-whitelist-status' => 'Lokale Status:',
@@ -3472,6 +3493,8 @@ Fir all aktiv global Spären ze gesinn, gitt w.e.g op d'[[Special:GlobalBlockLis
 	'globalblocking-whitelist-logentry' => 'huet déi global Spär vum [[$1]] lokal ausgeschalt',
 	'globalblocking-dewhitelist-logentry' => 'huet déi global Spär vun [[$1]] lokal nees aktivéiert',
 	'globalblocking-modify-logentry' => 'huet déi global Spär geännert op [[$1]] ($2)',
+	'globalblocking-logentry-expiry' => 'bis $1',
+	'globalblocking-logentry-noexpiry' => 'keen Enn vun der Spär festgeluecht',
 	'globalblocklist' => 'Lëscht vun de global gespaarten IP-Adressen',
 	'globalblock' => 'Eng IP-Adress global spären',
 	'globalblockstatus' => 'Lokale Statut vu globale Spären',
