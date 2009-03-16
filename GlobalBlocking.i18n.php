@@ -1381,7 +1381,9 @@ Bonvolu noti ke vi ne povas enigi salutnomo!',
 	'globalblocking-block-submit' => 'Forbari ĉi tiun IP-adreson ĝenerale',
 	'globalblocking-modify-submit' => 'Modifi ĉi tiun ĝeneralan forbaron',
 	'globalblocking-block-success' => 'La IP-adreso $1 estis sukcese forbarita por ĉiuj projektoj.',
+	'globalblocking-modify-success' => 'La ĝenerala forbaro por $1 estis sukcese modifita.',
 	'globalblocking-block-successsub' => 'Ĝenerala forbaro estis sukcesa',
+	'globalblocking-modify-successsub' => 'Ĝenerala forbaro estis modifita sukcese',
 	'globalblocking-block-alreadyblocked' => 'La IP-adreso $1 estas jam forbarita ĝenerale. 
 Vi povas rigardi la ekzistanta forbaro en la [[Special:GlobalBlockList|Listo de ĝeneralaj forbaroj]],
 aŭ modifi la agordojn de la ekzistanta forbaro resendante ĉi tiun formularon.',
@@ -1462,6 +1464,7 @@ Vidi ĉiujn aktivajn ĝeneralajn forbarojn, vi povas vidi la [[Special:GlobalBlo
 /** Spanish (Español)
  * @author Aleator
  * @author Crazymadlover
+ * @author Dferg
  * @author Lin linao
  * @author Remember the dot
  * @author Sanbec
@@ -1553,6 +1556,8 @@ Para ver todos los bloqueos globales activos, usted puede ver [[Special:GlobalBl
 	'globalblocking-whitelist-logentry' => 'desactivó el bloqueo global en [[$1]] localmente',
 	'globalblocking-dewhitelist-logentry' => 'Se reactivó el bloqueo global en [[$1]] localmente',
 	'globalblocking-modify-logentry' => 'modificado el bloqueo global en [[$1]] ($2)',
+	'globalblocking-logentry-expiry' => 'caduca el $1',
+	'globalblocking-logentry-noexpiry' => 'sin fecha de caducidad',
 	'globalblocklist' => 'Lista de direcciones IP bloqueadas globalmente',
 	'globalblock' => 'Bloquear una dirección IP globalmente',
 	'globalblockstatus' => 'Estatus local de bloqueos globales',
