@@ -954,7 +954,8 @@ Uvědomte si, že nemůžete zadat uživatelské jméno!',
 	'globalblocking-block-submit' => 'Globálně zablokovat tuto IP adresu',
 	'globalblocking-block-success' => 'IP adresa $1 byla na všech projektech úspěšně zablokována.',
 	'globalblocking-block-successsub' => 'Úspěšné globální zablokování',
-	'globalblocking-block-alreadyblocked' => 'IP adresa $1 již je globálně zablokována. Existující zablokování si můžete prohlédnout na [[Special:GlobalBlockList|seznamu globálních bloků]]',
+	'globalblocking-block-alreadyblocked' => 'IP adresa $1 již je globálně zablokována.
+Existující zablokování si můžete prohlédnout na [[Special:GlobalBlockList|seznamu globálních bloků]], nastavení stávajícího bloku můžete změnit opětovným odesláním tohoto formuláře.',
 	'globalblocking-block-bigrange' => 'Nelze zablokovat vámi uvedený rozsah ($1), protože je příliš velký. Můžete zablokovat maximálně 65&nbsp;535 adres (rozsah /16).',
 	'globalblocking-list-intro' => 'Toto je seznam všech platných globálních zablokování. Některá zablokování jsou označena jako lokálně zneplatněná: to znamená, že působí na ostatních wiki, ale místní správce se rozhodl je na této wiki vypnout.',
 	'globalblocking-list' => 'Seznam globálně zablokovaných IP adres',
@@ -1029,6 +1030,7 @@ $messages['cy'] = array(
 /** German (Deutsch)
  * @author MF-Warburg
  * @author Metalhead64
+ * @author Purodha
  * @author Raimond Spekking
  * @author Umherirrender
  */
@@ -1114,7 +1116,7 @@ Für eine Liste aller aktiven globalen Sperren siehe die [[Special:GlobalBlockLi
 	'globalblocking-unblock-logentry' => 'entsperrte [[$1]] global',
 	'globalblocking-whitelist-logentry' => 'schaltete die globale Sperre von „[[$1]]“ lokal ab',
 	'globalblocking-dewhitelist-logentry' => 'schaltete die globale Sperre von „[[$1]]“ lokal wieder ein',
-	'globalblocking-modify-logentry' => 'änderte die globale Sperre an [[$1]] ($2)',
+	'globalblocking-modify-logentry' => 'änderte die globale Sperre für [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'bis $1',
 	'globalblocking-logentry-noexpiry' => 'kein Sperrende festgelegt',
 	'globalblocklist' => 'Liste global gesperrter IP-Adressen',
@@ -1365,14 +1367,15 @@ $messages['el'] = array(
  */
 $messages['eo'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Permesas]] IP-adreso esti [[Special:GlobalBlockList|forbarita trans multaj vikioj]].',
-	'globalblocking-block' => 'Ĝenerale forbaru IP-adreson',
+	'globalblocking-block' => 'Ĝenerale forbari IP-adreson',
+	'globalblocking-modify-intro' => 'Vi povas uzi ĉi tiun formularon por ŝanĝi la agordojn de ĝeneralan forbaron.',
 	'globalblocking-block-intro' => 'Vi povas uzi ĉi tiun paĝon por forbari IP-adreson en ĉiuj vikioj.',
 	'globalblocking-block-reason' => 'Kialo por ĉi tiu forbaro:',
-	'globalblocking-block-expiry' => 'Findato de forbaro:',
-	'globalblocking-block-expiry-other' => 'Alia findato',
-	'globalblocking-block-expiry-otherfield' => 'Alia daŭro:',
+	'globalblocking-block-expiry' => 'Limdato de forbaro:',
+	'globalblocking-block-expiry-other' => 'Alia limdato',
+	'globalblocking-block-expiry-otherfield' => 'Alia tempo:',
 	'globalblocking-block-legend' => 'Forbari uzanto ĝenerale',
-	'globalblocking-block-options' => 'Preferoj:',
+	'globalblocking-block-options' => 'Opcioj:',
 	'globalblocking-block-errors' => 'La forbaro malsukcesis, pro la {{PLURAL:$1|jena kialo|jenaj kialoj}}:
 $1',
 	'globalblocking-block-ipinvalid' => 'La IP-adreso ($1) kiun vi enigis estas nevalida.
@@ -3231,8 +3234,10 @@ $messages['ko'] = array(
 계정 이름을 입력할 수 없다는 것을 알아 두시기 바랍니다!',
 	'globalblocking-block-expiryinvalid' => '당신이 입력한 기한($1)이 잘못되었습니다.',
 	'globalblocking-block-submit' => '이 IP 주소를 전체 위키에서 차단',
+	'globalblocking-modify-submit' => '차단 설정 변경',
 	'globalblocking-block-success' => 'IP 주소 $1이 모든 프로젝트에서 성공적으로 차단되었습니다.',
 	'globalblocking-block-successsub' => '전체 차단 성공',
+	'globalblocking-modify-successsub' => '전체 차단 설정이 성공적으로 변경되었습니다.',
 	'globalblocking-block-alreadyblocked' => 'IP 주소 $1은 이미 전체적으로 차단되었습니다.
 당신은 [[Special:GlobalBlockList|전체 차단된 사용자의 목록]]에서 현재 차단된 IP를 보거나,
 이 양식을 사용하여 이미 차단된 IP의 차단 설정을 변경할 수 있습니다.',
@@ -3252,6 +3257,7 @@ $messages['ko'] = array(
 	'globalblocking-list-unblock' => '차단 해제',
 	'globalblocking-list-whitelisted' => '$1에 의해 로컬에서 해제됨: $2',
 	'globalblocking-list-whitelist' => '로컬 상태 변경',
+	'globalblocking-list-modify' => '차단 설정 변경',
 	'globalblocking-goto-block' => 'IP를 전체 위키에서 차단',
 	'globalblocking-goto-unblock' => '전체 차단 해제',
 	'globalblocking-goto-status' => '전체 차단의 로컬 상태 바꾸기',
@@ -3268,20 +3274,26 @@ $messages['ko'] = array(
 	'globalblocking-unblock-successsub' => '전체 차단이 성공적으로 해제되었습니다.',
 	'globalblocking-unblock-subtitle' => '전체 차단 해제',
 	'globalblocking-whitelist' => '전체 차단의 로컬 상태',
+	'globalblocking-whitelist-notapplied' => '이 위키에서는 전체 차단이 적용되지 않습니다.
+따라서 전체 차단의 로컬 상태를 바꿀 수 없습니다.',
 	'globalblocking-whitelist-legend' => '로컬 상태 변경',
 	'globalblocking-whitelist-reason' => '바꾸는 이유:',
 	'globalblocking-whitelist-status' => '로컬 상태:',
 	'globalblocking-whitelist-statuslabel' => '{{SITENAME}}에서 전체 위키 차단을 비활성화하기',
 	'globalblocking-whitelist-submit' => '로컬 상태 변경',
 	'globalblocking-whitelist-whitelisted' => "{{SITENAME}}에서 IP 주소 '''$1'''에 대한 전체 차단 #$2를 비활성화하는 데 성공했습니다.",
+	'globalblocking-whitelist-dewhitelisted' => "{{SITENAME}}에서 IP 주소 '''$1'''에 대한 전체 차단 #$2가 성공적으로 다시 활성화되었습니다.",
 	'globalblocking-whitelist-successsub' => '전체 차단의 로컬 상태가 성공적으로 변경되었습니다.',
+	'globalblocking-whitelist-errors' => '다음 이유로 인해 전체 차단의 로컬 상태를 변경하는 데 실패했습니다:',
 	'globalblocking-blocked' => "당신은 '''\$1''' (''\$2'')에 의해 모든 위키에서 차단되었습니다.
 차단 사유는 \"\$3\"이며, 기한은 \"\$4\"입니다.",
 	'globalblocking-logpage' => '전체 위키 차단 기록',
 	'globalblocking-block-logentry' => '[[$1]] 사용자를 모든 위키에서 $2 차단함',
+	'globalblocking-block2-logentry' => '[[$1]] 사용자를 모든 위키에서 차단함 ($2)',
 	'globalblocking-unblock-logentry' => '[[$1]]의 전체 위키 차단을 해제함',
 	'globalblocking-whitelist-logentry' => '[[$1]]의 전체 차단을 로컬에서 비활성화함',
 	'globalblocking-dewhitelist-logentry' => '[[$1]]의 전체 차단을 로컬에서 다시 활성화함',
+	'globalblocking-modify-logentry' => '[[$1]]에 대한 전체 차단 설정을 변경 ($2)',
 	'globalblocking-logentry-expiry' => '$1에 해제',
 	'globalblocklist' => '모든 위키에서 차단된 IP 목록',
 	'globalblock' => '전체 위키에서 IP 주소를 차단',
