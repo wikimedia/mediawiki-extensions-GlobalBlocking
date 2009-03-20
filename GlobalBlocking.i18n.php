@@ -4641,12 +4641,107 @@ Para ver todos os bloqueios globais, poderá consultar a [[Special:GlobalBlockLi
 
 /** Brazilian Portuguese (Português do Brasil)
  * @author Brunoy Anastasiya Seryozhenko
+ * @author Eduardo.mps
  * @author Heldergeovane
  */
 $messages['pt-br'] = array(
 	'globalblocking-desc' => '[[{{ns:Special}}:GlobalBlock|Permite]] que endereços IP sejam [[{{ns:Special}}:GlobalBlockList|bloqueados através de múltiplos wikis]]',
 	'globalblocking-block' => 'Bloquear globalmente um endereço IP',
+	'globalblocking-modify-intro' => 'Você pode usar este formulário para alterar as definições de um bloqueio global.',
+	'globalblocking-block-intro' => 'Você pode usar esta página para bloquear um endereço IP em todos os wikis.',
+	'globalblocking-block-reason' => 'Motivo para este bloqueio:',
+	'globalblocking-block-expiry' => 'Validade do bloqueio:',
+	'globalblocking-block-expiry-other' => 'Outro tempo de validade',
+	'globalblocking-block-expiry-otherfield' => 'Outra duração:',
+	'globalblocking-block-legend' => 'Bloquear um utilizador globalmente',
+	'globalblocking-block-options' => 'Opções:',
+	'globalblocking-block-errors' => 'O bloqueio não teve sucesso {{PLURAL:$1|pelo seguinte motivo|pelos seguintes motivos}}:',
+	'globalblocking-block-ipinvalid' => 'O endereço IP ($1) que introduziu é inválido.
+Por favor, note que não pode introduzir um nome de utilizador!',
+	'globalblocking-block-expiryinvalid' => 'A expiração que introduziu ($1) é inválida.',
+	'globalblocking-block-submit' => 'Bloquear globalmente este endereço IP',
+	'globalblocking-modify-submit' => 'Modificar este bloqueio global',
 	'globalblocking-block-success' => 'O endereço IP $1 foi bloqueado com sucesso em todos os projetos.',
+	'globalblocking-modify-success' => 'O bloqueio global sobre $1 foi modificado com sucesso',
+	'globalblocking-block-successsub' => 'Bloqueio global bem sucedido',
+	'globalblocking-modify-successsub' => 'Bloqueio global modificado bem sucedido',
+	'globalblocking-block-alreadyblocked' => 'O endereço IP $1 já está bloqueado globalmente.
+Você pode ver o bloqueio existente na [[Special:GlobalBlockList|lista de bloqueios globais]],
+ou modificar as definições do bloqueio existente ao re-submeter este formulário.',
+	'globalblocking-block-bigrange' => 'O intervalo especificado ($1) é grande demais para ser bloqueado.
+Pode bloquear, no máximo, 65.536 endereços (intervalos /16)',
+	'globalblocking-list-intro' => 'Isto é uma lista de todos os bloqueios globais que estão atualmente em efeito.
+Alguns bloqueios está marcados como desativados localmente: isto significa que se aplicam a outros sítios, mas um administrador local decidiu desativá-los neste wiki.',
+	'globalblocking-list' => 'Lista de endereços IP bloqueados globalmente',
+	'globalblocking-search-legend' => 'Pesquisar por um bloqueio global',
+	'globalblocking-search-ip' => 'Endereço IP:',
+	'globalblocking-search-submit' => 'Pesquisar bloqueios',
+	'globalblocking-list-ipinvalid' => 'O endereço IP que procurou ($1) é inválido.
+Por favor, introduza um endereço IP válido.',
+	'globalblocking-search-errors' => 'A sua busca não teve sucesso {{PLURAL:$1|pelo seguinte motivo|pelos seguintes motivos}}:',
+	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') bloqueou globalmente [[Special:Contributions/\$4|\$4]] ''(\$5)''",
+	'globalblocking-list-expiry' => 'expira $1',
+	'globalblocking-list-anononly' => 'só anônimos',
+	'globalblocking-list-unblock' => 'desbloquear',
+	'globalblocking-list-whitelisted' => 'localmente desativado por $1: $2',
+	'globalblocking-list-whitelist' => 'estado local',
+	'globalblocking-list-modify' => 'modificar',
+	'globalblocking-goto-block' => 'Bloquear globalmente um endereço IP',
+	'globalblocking-goto-unblock' => 'Remover um bloqueio global',
+	'globalblocking-goto-status' => 'Alterar estado local de um bloqueio global',
+	'globalblocking-return' => 'Voltar à lista de bloqueios globais',
+	'globalblocking-notblocked' => 'O endereço IP ($1) introduzido não está bloqueado globalmente.',
+	'globalblocking-unblock' => 'Eliminar um bloqueio global',
+	'globalblocking-unblock-ipinvalid' => 'O endereço IP ($1) que introduziu é inválido.
+Por favor, note que não pode introduzir um nome de utilizador!',
+	'globalblocking-unblock-legend' => 'Remover um bloqueio global',
+	'globalblocking-unblock-submit' => 'Remover bloqueio global',
+	'globalblocking-unblock-reason' => 'Motivo:',
+	'globalblocking-unblock-unblocked' => "Você removeu o bloqueio global #$2 sobre o endereço IP '''$1''' com sucesso",
+	'globalblocking-unblock-errors' => 'Você não pôde remover este bloqueio global, {{PLURAL:$1|pelo seguinte motivo|pelos seguintes motivos}}:',
+	'globalblocking-unblock-successsub' => 'Bloqueio global removido com sucesso',
+	'globalblocking-unblock-subtitle' => 'Removendo bloqueio global',
+	'globalblocking-unblock-intro' => 'Você pode usar este formulário para eliminar um bloqueio global.
+[[Special:GlobalBlockList|Clique aqui]] para voltar à lista de bloqueios globais.',
+	'globalblocking-whitelist' => 'Estado local de bloqueios globais',
+	'globalblocking-whitelist-notapplied' => 'Bloqueios globais não são aplicados neste wiki,
+logo o estado local de bloqueios globais não pode ser modificado.',
+	'globalblocking-whitelist-legend' => 'Alterar estado local',
+	'globalblocking-whitelist-reason' => 'Motivo da alteração:',
+	'globalblocking-whitelist-status' => 'Estado local:',
+	'globalblocking-whitelist-statuslabel' => 'Desativar este bloqueio global em {{SITENAME}}',
+	'globalblocking-whitelist-submit' => 'Alterar estado local',
+	'globalblocking-whitelist-whitelisted' => "Você desativou com sucesso o bloqueio global #$2 sobre o endereço IP '''$1''' em {{SITENAME}}.",
+	'globalblocking-whitelist-dewhitelisted' => "Você reativou com sucesso o bloqueio global #$2 sobre o endereço IP '''$1''' em {{SITENAME}}.",
+	'globalblocking-whitelist-successsub' => 'Estado local alterado com sucesso',
+	'globalblocking-whitelist-nochange' => 'Você não fez qualquer alteração ao estado local deste bloqueio.
+[[Special:GlobalBlockList|Voltar à lista de bloqueios globais]].',
+	'globalblocking-whitelist-errors' => 'A sua alteração ao estado local de um bloqueio global não teve sucesso {{PLURAL:$1|pela seguinte razão|pelas seguintes razões}}:',
+	'globalblocking-whitelist-intro' => 'Você pode usar este formulário para editar o estado local de um bloqueio global.
+Se um bloqueio global está desativado neste wiki, os utilizadores nos endereços IP afetados poderão editar normalmente.
+[[Special:GlobalBlockList|Voltar à lista de bloqueios globais]].',
+	'globalblocking-blocked' => "O seu endereço IP foi bloqueado em todos os wikis por '''\$1''' (''\$2'').
+O motivo dado foi ''\"\$3\"''.
+O bloqueio ''\$4''.",
+	'globalblocking-logpage' => 'Registro de bloqueios globais',
+	'globalblocking-logpagetext' => 'Isto é um registro de bloqueios globais que foram feitos e removidos neste wiki.
+Deve ser notado que bloqueios globais podem ser feitos e removidos em outros wikis, e que estes bloqueios globais podem afetar este wiki.
+Para ver todos os bloqueios globais, poderá consultar a [[Special:GlobalBlockList|lista de bloqueios globais]].',
+	'globalblocking-block-logentry' => 'bloqueou globalmente [[$1]] com um tempo de expiração de $2',
+	'globalblocking-block2-logentry' => '[[$1]] ($2) bloqueado globalmente',
+	'globalblocking-unblock-logentry' => 'Removido bloqueio global de [[$1]]',
+	'globalblocking-whitelist-logentry' => 'desativou o bloqueio global sobre [[$1]] localmente',
+	'globalblocking-dewhitelist-logentry' => 'reativou o bloqueio global sobre [[$1]] localmente',
+	'globalblocking-modify-logentry' => 'modificado o bloqueio global sobre [[$1]] ($2)',
+	'globalblocking-logentry-expiry' => 'expira em $1',
+	'globalblocking-logentry-noexpiry' => 'nenhum prazo especificado',
+	'globalblocklist' => 'Lista de endereços IP bloqueados globalmente',
+	'globalblock' => 'Bloquear um endereço IP globalmente',
+	'globalblockstatus' => 'Estado local de bloqueios globais',
+	'removeglobalblock' => 'Remover um bloqueio global',
+	'right-globalblock' => 'Fazer bloqueios globais',
+	'right-globalunblock' => 'Remover bloqueios globais',
+	'right-globalblock-whitelist' => 'Desativar bloqueios globais localmente',
 );
 
 /** Quechua (Runa Simi)
