@@ -1594,6 +1594,7 @@ $messages['eu'] = array(
 
 /** Persian (فارسی)
  * @author Huji
+ * @author Ladsgroup
  * @author Mardetanha
  */
 $messages['fa'] = array(
@@ -1611,6 +1612,7 @@ $messages['fa'] = array(
 توجه داشته باشید که شما نمی‌توانید یک نام کاربری را وارد کنید!',
 	'globalblocking-block-expiryinvalid' => 'زمان خاتمه‌ای که وارد کردید ($1) غیر مجاز است.',
 	'globalblocking-block-submit' => 'قطع دسترسی سراسری این نشانی اینترنتی',
+	'globalblocking-modify-submit' => 'اصلاح این بستن سراسری',
 	'globalblocking-block-success' => 'دسترسی نشانی اینترنتی $1 با موفقیت در تمام پروژه‌های قطع شد.',
 	'globalblocking-block-successsub' => 'قطع دسترسی سراسری موفق بود',
 	'globalblocking-block-alreadyblocked' => 'دسترسی نشانی اینتری $1 از قبل به طور سراسری بسته است.
@@ -3548,7 +3550,8 @@ Lèt óp: de kins geine gebroekersnaam opgaeve!",
 	'globalblocking-modify-success' => 'De wikiwiej spiekering veur $1 is angerdj',
 	'globalblocking-block-successsub' => 'Globale ingesteldj',
 	'globalblocking-modify-successsub' => 'De wikiwiej spiekering is angerdj',
-	'globalblocking-block-alreadyblocked' => "'t IP $1 is al globaal gezatj. De kins de bestaondje blok bekiek in de [[Special:GlobalBlockList|liejst met globale blokkades]].",
+	'globalblocking-block-alreadyblocked' => "'t IP $1 is al globaal gezatj. 
+De kins de bestaondje blok bekiek in de [[Special:GlobalBlockList|liejst met globale blokkades]] óddere instellinger ven bestäönj blök aanpasse doearch gegaeves oet dit fórm ópnuuj óp te slaon.",
 	'globalblocking-block-bigrange' => 'De reeks dae se höbs opgegaeve ($1) is te groot om te blokkere. De maags ten hoogste 65.536 adresse blokkere (/16-reekse)',
 	'globalblocking-list-intro' => "Dit is 'n lies mit alle globale blokkades die op 't moment actief zeen.
 Sommige blokkades zeen gemarkeerd es lokaal opgeheve.
@@ -3585,6 +3588,7 @@ Lèt óp: de kins geine gebroekersnaam ingaeve!",
 	'globalblocking-unblock-intro' => "De kins dit formeleer gebroeke om 'ne globaale blok op te heffe.
 [[Special:GlobalBlockList|Trökgaon nao de lies met globale blokkades]].",
 	'globalblocking-whitelist' => 'Lokale status ven global bloks',
+	'globalblocking-whitelist-notapplied' => 'Globaal bloks waere neet toegepas óp deze wiki, dus de lokaal status ven globale blök kan neet angerdj waere.',
 	'globalblocking-whitelist-legend' => 'Lokale status angere',
 	'globalblocking-whitelist-reason' => 'Reeje:',
 	'globalblocking-whitelist-status' => 'Lokaal status:',
@@ -3607,10 +3611,13 @@ De blokkade ''\$4''.",
 Globale blokkades kunne ouk op andere wiki's aangemaat en verwiederd worde, en invloed hebbe op deze wiki.
 Alle globale blokkades stoan in de [[Special:GlobalBlockList|liest met globale blokkades]].",
 	'globalblocking-block-logentry' => 'haet [[$1]] globaal gezatj mit de verlouptied es $2',
+	'globalblocking-block2-logentry' => 'haet [[$1]] wikiwied geblok ($2)',
 	'globalblocking-unblock-logentry' => 'haet de globaal bol veur [[$1]] gewösj',
 	'globalblocking-whitelist-logentry' => 'haet de globaal blok van [[$1]] lokaal opgeheffe',
 	'globalblocking-dewhitelist-logentry' => 'haet de globaal blok van [[$1]] lokaal opnuuj ingesteldj',
+	'globalblocking-modify-logentry' => 'haet de wikiwieje blók veur [[$1]] aangepas ($5)',
 	'globalblocking-logentry-expiry' => 'verlöp $1',
+	'globalblocking-logentry-noexpiry' => 'geine doer gezatj',
 	'globalblocklist' => 'Lies ven globaal geblókkieërdje IP-adrèsser',
 	'globalblock' => "'n IP-adres globaal zitte",
 	'globalblockstatus' => 'Lokaal status ven globaal bloks',
