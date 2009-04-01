@@ -4997,6 +4997,8 @@ $messages['sah'] = array(
 	'globalblocking-unblock-intro' => 'Бу форманы туһанан бобууну суох оҥоруоххун сөп.
 Бобуу тиһигин көрүүгэ төннүөххүн баҕардаххына [[Special:GlobalBlockList|маны баттаа]].',
 	'globalblocking-whitelist' => 'Бырайыактар ыккардыларынааҕы бобуулар олохтоох туруктара (локальное состояние)',
+	'globalblocking-whitelist-notapplied' => 'Бу биикигэ аан бобуулар туттуллубаттар,
+ол иһин олохтоох (локальнай) стаатустар уларытыллар кыахтара суох.',
 	'globalblocking-whitelist-legend' => 'Олохтоох турук (локальный статус) уларытыыта',
 	'globalblocking-whitelist-reason' => 'Уларытыы төрүөтэ:',
 	'globalblocking-whitelist-status' => 'Олохтоох (локальнай) турук:',
@@ -5927,6 +5929,18 @@ Par védar tuti i blochi globali ativi, varda l'[[Special:GlobalBlockList|elenco
 	'right-globalblock' => 'Bloca dei utenti globalmente',
 	'right-globalunblock' => 'Cava blochi globali',
 	'right-globalblock-whitelist' => 'Disabilita localmente blochi globali',
+);
+
+/** Veps (Vepsan kel')
+ * @author Triple-ADHD-AS
+ * @author Игорь Бродский
+ */
+$messages['vep'] = array(
+	'globalblocking-block-expiry-otherfield' => 'Toine aig:',
+	'globalblocking-search-ip' => 'IP-adres:',
+	'globalblocking-list-unblock' => 'Heitta blokiruind',
+	'globalblocking-unblock-reason' => 'Sü:',
+	'globalblocking-whitelist-reason' => 'Toižetandan sü:',
 );
 
 /** Vietnamese (Tiếng Việt)
