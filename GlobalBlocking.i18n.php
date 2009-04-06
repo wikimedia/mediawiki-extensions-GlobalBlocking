@@ -3624,11 +3624,11 @@ De blokkade ''\$4''.",
 Globale blokkades kunne ouk op andere wiki's aangemaat en verwiederd worde, en invloed hebbe op deze wiki.
 Alle globale blokkades stoan in de [[Special:GlobalBlockList|liest met globale blokkades]].",
 	'globalblocking-block-logentry' => 'haet [[$1]] globaal gezatj mit de verlouptied es $2',
-	'globalblocking-block2-logentry' => 'haet [[$1]] wikiwied geblok ($2)',
+	'globalblocking-block2-logentry' => 'haet [[$1]] globaal geblok ($2)',
 	'globalblocking-unblock-logentry' => 'haet de globaal bol veur [[$1]] gewösj',
 	'globalblocking-whitelist-logentry' => 'haet de globaal blok van [[$1]] lokaal opgeheffe',
 	'globalblocking-dewhitelist-logentry' => 'haet de globaal blok van [[$1]] lokaal opnuuj ingesteldj',
-	'globalblocking-modify-logentry' => 'haet de wikiwieje blok veur [[$1]] aangepas ($2)',
+	'globalblocking-modify-logentry' => 'haet de globale blok veur [[$1]] aangepas ($2)',
 	'globalblocking-logentry-expiry' => 'verlöp $1',
 	'globalblocking-logentry-noexpiry' => 'geine doer gezatj',
 	'globalblocklist' => 'Lies ven globaal geblókkieërdje IP-adrèsser',
@@ -6247,7 +6247,8 @@ $1',
 	'globalblocking-block-success' => '该IP地址 $1 已经在所有Wikimedia计划中成功地封锁。
 您亦都可以参看[[Special:GlobalBlockList|全域封锁名单]]。',
 	'globalblocking-block-successsub' => '全域封锁成功',
-	'globalblocking-block-alreadyblocked' => '该IP地址 $1 已经全域封锁中。您可以在[[Special:GlobalBlockList|全域封锁名单]]中参看现时的封锁。',
+	'globalblocking-block-alreadyblocked' => '该IP地址 $1 已经被全域封锁。
+您可以在[[Special:GlobalBlockList|全域封锁名单]]中参看现时的封锁，或通过修改重新提交此表单设置现有封锁。',
 	'globalblocking-block-bigrange' => '您所指定的范围 ($1) 太大去封锁。
 您可以封锁，最多65,536个地址 (/16 范围)',
 	'globalblocking-list-intro' => '这是全部现时生效中的全域封锁。
