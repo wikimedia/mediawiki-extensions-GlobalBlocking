@@ -4557,6 +4557,7 @@ $messages['ps'] = array(
 
 /** Portuguese (Português)
  * @author 555
+ * @author GKnedo
  * @author Lijealso
  * @author Malafaya
  * @author Waldir
@@ -4645,7 +4646,7 @@ O bloqueio ''\$4''.",
 Deve ser notado que bloqueios globais podem ser feitos e removidos noutros wikis, e que estes bloqueios globais pode afectar este wiki.
 Para ver todos os bloqueios globais, poderá consultar a [[Special:GlobalBlockList|lista de bloqueios globais]].',
 	'globalblocking-block-logentry' => 'bloqueou globalmente [[$1]] com um tempo de expiração de $2',
-	'globalblocking-block2-logentry' => '[[$1]] ($2) bloqueado globalmente',
+	'globalblocking-block2-logentry' => '[[$1]] está completamente bloqueado por ($2)',
 	'globalblocking-unblock-logentry' => 'Removido bloqueio global de [[$1]]',
 	'globalblocking-whitelist-logentry' => 'desactivou o bloqueio global sobre [[$1]] localmente',
 	'globalblocking-dewhitelist-logentry' => 'reactivou o bloqueio global sobre [[$1]] localmente',
@@ -5532,6 +5533,7 @@ $messages['tg-cyrl'] = array(
 );
 
 /** Thai (ไทย)
+ * @author Octahedron80
  * @author Passawuth
  */
 $messages['th'] = array(
@@ -5541,6 +5543,7 @@ $messages['th'] = array(
 	'globalblocking-block-errors' => 'การบล็อกครั้งนี้ไม่สำเร็จ เนื่องจาก :
 $1',
 	'globalblocking-search-ip' => 'หมายเลขไอพี:',
+	'globalblocking-unblock-reason' => 'เหตุผล:',
 );
 
 /** Tagalog (Tagalog)
