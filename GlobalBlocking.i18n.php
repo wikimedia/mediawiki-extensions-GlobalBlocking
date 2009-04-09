@@ -1586,9 +1586,12 @@ Para ver todos los bloqueos globales activos, usted puede ver [[Special:GlobalBl
 
 /** Estonian (Eesti)
  * @author Jaan513
+ * @author Ker
  */
 $messages['et'] = array(
+	'globalblocking-list' => 'Globaalselt blokeeritud IP-aadresside loend',
 	'globalblocking-search-ip' => 'IP aadress:',
+	'globalblocking-whitelist' => 'Globaalsete blokeeringute lokaalne olek',
 );
 
 /** Basque (Euskara)
@@ -1723,7 +1726,9 @@ Huomaathan ettet voi syöttää käyttäjätunnusta.',
 	'globalblocking-block-submit' => 'Estä tämä IP-osoite globaalisti',
 	'globalblocking-block-success' => 'IP-osoite $1 on estetty kaikissa projekteissa.',
 	'globalblocking-block-successsub' => 'Globaaliesto onnistui',
-	'globalblocking-block-alreadyblocked' => 'IP-osoite $1 on jo estetty globaalisti. Voit tarkastella estoa [[Special:GlobalBlockList|globaalien estojen luettelosta]].',
+	'globalblocking-block-alreadyblocked' => 'IP-osoite $1 on jo estetty globaalisti.
+Voit tarkastella estoa [[Special:GlobalBlockList|globaalien estojen luettelosta]]
+tai muokata nykyisen eston asetuksia lähettämällä tämän lomakkeen uudelleen.',
 	'globalblocking-block-bigrange' => 'Antamasi osoiteavaruus $1 on liian suuri. Voit estää korkeintaan 65&nbsp;536 osoitetta kerralla (/16-avaruus)',
 	'globalblocking-list-intro' => 'Tämä lista sisältää kaikki voimassa olevat globaalit estot. Jotkut estoista on saatettu merkitä paikallisesti poiskytketyiksi: tämä tarkoittaa että esto on voimassa muilla sivustoilla, mutta paikallinen ylläpitäjä on päättänyt poiskytkeä eston paikallisesta wikistä.',
 	'globalblocking-list' => 'Globaalisti estetyt IP-osoitteet',
@@ -2005,7 +2010,7 @@ Para ver todos os bloqueos globais activos, pode ollar a [[Special:GlobalBlockLi
 	'right-globalblock-whitelist' => 'Deshabilitar bloqueos globais localmente',
 );
 
-/** Gothic
+/** Gothic (Gothic)
  * @author Jocke Pirat
  */
 $messages['got'] = array(
@@ -3810,10 +3815,12 @@ $1',
 
 /** Malay (Bahasa Melayu)
  * @author Aviator
+ * @author Izzudin
  */
 $messages['ms'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Membolehkan]] sekatan alamat IP di [[Special:GlobalBlockList|pelbagai wiki]] sekaligus',
 	'globalblocking-block' => 'Sekat alamat IP di semua wiki',
+	'globalblocking-modify-intro' => 'Anda boleh gunakan borang ini untuk tukar tetapan penyekatan global.',
 	'globalblocking-block-intro' => 'Anda boleh menggunakan laman khas ini untuk menyekat alamat IP di semua wiki.',
 	'globalblocking-block-reason' => 'Sebab sekatan ini:',
 	'globalblocking-block-expiry' => 'Tamat:',
@@ -3826,10 +3833,13 @@ $messages['ms'] = array(
 Sila ambil perhatian bahawa anda tidak boleh menyatakan nama pengguna!',
 	'globalblocking-block-expiryinvalid' => 'Tarikh tamat yang anda nyatakan ($1) tidak sah.',
 	'globalblocking-block-submit' => 'Sekat alamat IP ini di semua wiki',
+	'globalblocking-modify-submit' => 'Ubah penyekatan global ini',
 	'globalblocking-block-success' => 'Alamat IP $1 telah disekat di semua projek wiki.',
+	'globalblocking-modify-success' => 'Sekatan sejagat pada $1 telah berjaya diubah',
 	'globalblocking-block-successsub' => 'Sekatan sejagat berjaya',
+	'globalblocking-modify-successsub' => 'Sekatan sejagat berjaya diubah',
 	'globalblocking-block-alreadyblocked' => 'Alamat IP $1 telah pun disekat di semua wiki.
-Anda boleh melihat sekatan ini di [[Special:GlobalBlockList|senarai sekatan sejagat]].',
+Anda boleh melihat sekatan ini di [[Special:GlobalBlockList|senarai sekatan sejagat]], atau ubah tetapan untuk sekatan ini dengan menghantar semula borang ini.',
 	'globalblocking-block-bigrange' => 'Julat yang anda nyatakan ($1) terlalu besar.
 Anda hanya boleh menyekat sehingga 65,536 alamat (julat /16)',
 	'globalblocking-list-intro' => 'Yang berikut ialah senarai sekatan sejagat yang sedang berkuat kuasa.
@@ -3847,6 +3857,7 @@ Sila nyatakan alamat IP yang sah.',
 	'globalblocking-list-unblock' => 'nyahsekat',
 	'globalblocking-list-whitelisted' => 'dimatikan di wiki tempatan oleh $1: $2',
 	'globalblocking-list-whitelist' => 'status tempatan',
+	'globalblocking-list-modify' => 'ubahsuai',
 	'globalblocking-goto-block' => 'Sekat alamat IP di semua wiki',
 	'globalblocking-goto-unblock' => 'Batalkan sekatan sejagat',
 	'globalblocking-goto-status' => 'Tukar status tempatan bagi sekatan sejagat',
@@ -3865,6 +3876,8 @@ Sila ambil perhatian bahawa anda tidak boleh menyatakan nama pengguna!',
 	'globalblocking-unblock-intro' => 'Anda boleh menggunakan borang ini untuk membatalkan sekatan sejagat.
 [[Special:GlobalBlockList|Klik di sini]] untuk kembali ke senarai sekatan sejagat.',
 	'globalblocking-whitelist' => 'Status tempatan bagi sekatan sejagat',
+	'globalblocking-whitelist-notapplied' => 'Sekatan sejagat tidak digunakan di wiki ini,
+maka status sekatan sejagat tidak boleh diubah.',
 	'globalblocking-whitelist-legend' => 'Tukar status tempatan',
 	'globalblocking-whitelist-reason' => 'Sebab:',
 	'globalblocking-whitelist-status' => 'Status tempatan:',
@@ -3885,9 +3898,13 @@ Sekatan ini ''\$4''.",
 	'globalblocking-logpage' => 'Log sekatan sejagat',
 	'globalblocking-logpagetext' => 'Yang berikut ialah log sekatan sejagat yang telah dikenakan dan dibatalkan di wiki ini. Sila ambil perhatian bahawa sekatan sejagat boleh dikenakan dan dibatalkan di wiki-wiki lain, justeru berkuatkuasa di wiki ini juga. Anda juga boleh melihat [[Special:GlobalBlockList|senarai semakan sejagat yang sedang berkuatkuasa]].',
 	'globalblocking-block-logentry' => 'menyekat [[$1]] di semua wiki sehingga $2',
+	'globalblocking-block2-logentry' => '[[$1]] ($2) telah disekat secara sejagat',
 	'globalblocking-unblock-logentry' => 'membatalkan sekatan sejagat terhadap [[$1]]',
 	'globalblocking-whitelist-logentry' => 'mematikan sekatan sejagat terhadap [[$1]] di wiki tempatan',
 	'globalblocking-dewhitelist-logentry' => 'menghidupkan semula sekatan sejagat terhadap [[$1]] di wiki tempatan',
+	'globalblocking-modify-logentry' => 'sekatan sejagat untuk [[$1]] ($2) telah diubahsuai',
+	'globalblocking-logentry-expiry' => 'luput $1',
+	'globalblocking-logentry-noexpiry' => 'perluputan tidak ditetapkan',
 	'globalblocklist' => 'Senarai sekatan sejagat',
 	'globalblock' => 'Sekat alamat IP di semua wiki',
 	'globalblockstatus' => 'Status tempatan bagi sekatan sejagat',
@@ -4018,6 +4035,7 @@ För en List mit all aktive globale Sperren kiek na de [[Special:GlobalBlockList
  * @author Servien
  */
 $messages['nds-nl'] = array(
+	'globalblocking-block-options' => 'Opties:',
 	'globalblocking-whitelist' => 'Lokale staotus van globale blokkeringen',
 	'globalblocklist' => 'Lieste van globaal eblokkeren IP-adressen',
 	'globalblockstatus' => 'Lokale staotus van globale blokkeringen',
