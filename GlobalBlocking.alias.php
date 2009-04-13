@@ -157,6 +157,13 @@ $aliases['id'] = array(
 	'GlobalBlockStatus' => array( 'Daftar pemblokiran global nonaktif' ),
 );
 
+/** Italian (Italiano) */
+$aliases['it'] = array(
+	'GlobalBlock' => array( 'BloccoGlobale' ),
+	'GlobalBlockList' => array( 'ListaBlocchiGlobali' ),
+	'RemoveGlobalBlock' => array( 'SbloccoGlobale' ),
+);
+
 /** Japanese (日本語) */
 $aliases['ja'] = array(
 	'GlobalBlock' => array( 'グローバルブロック', 'グローバル・ブロック' ),
