@@ -5220,6 +5220,7 @@ Všetky aktívne blokovania si môžete pozrieť na [[Special:GlobalBlockList|zo
 /** Serbian Cyrillic ekavian (ћирилица)
  * @author Sasa Stefanovic
  * @author Јованвб
+ * @author Михајло Анђелковић
  */
 $messages['sr-ec'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Омогућује]] [[Special:GlobalBlockList|глобално блокирање]] ИП адреса на више викија',
@@ -5230,7 +5231,7 @@ $messages['sr-ec'] = array(
 	'globalblocking-block-expiry-other' => 'Друго време истека',
 	'globalblocking-block-expiry-otherfield' => 'Друго време:',
 	'globalblocking-block-legend' => 'Блокирајте корисника глобално',
-	'globalblocking-block-options' => 'Опције',
+	'globalblocking-block-options' => 'Опције:',
 	'globalblocking-block-errors' => 'Блок није успешан због {{PLURAL:$1|следеђег разлога|следећих разлога}}:',
 	'globalblocking-block-ipinvalid' => 'ИП адреса ($1) коју сте унели није добра.
 Запамтите да не можете унети корисничко име!',
