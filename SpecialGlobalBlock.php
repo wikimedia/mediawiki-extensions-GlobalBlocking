@@ -37,6 +37,10 @@ class SpecialGlobalBlock extends SpecialPage {
 			}
 		}
 		
+		if ( GlobalBlocking::getGlobalBlockId( $this->mAddress ) ) {
+			$this->mModifyForm = true;
+		}
+		
 		if ($this->mModifyForm) {
 			$dbr = GlobalBlocking::getGlobalBlockingSlave();
 			$block = $dbr->selectRow( 'globalblocks',
