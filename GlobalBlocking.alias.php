@@ -87,6 +87,14 @@ $aliases['fr'] = array(
 	'GlobalBlock' => array( 'Blocage global', 'BlocageGlobal' ),
 );
 
+/** Franco-Provençal (Arpetan) */
+$aliases['frp'] = array(
+	'GlobalBlock' => array( 'Blocâjo global', 'BlocâjoGlobal' ),
+	'GlobalBlockList' => array( 'Lista des blocâjos globals', 'ListaDesBlocâjosGlobals' ),
+	'RemoveGlobalBlock' => array( 'Dèblocâjo global', 'DèblocâjoGlobal' ),
+	'GlobalBlockStatus' => array( 'Lista blanche des blocâjos globals', 'ListaBlancheDesBlocâjosGlobals' ),
+);
+
 /** Galician (Galego) */
 $aliases['gl'] = array(
 	'GlobalBlock' => array( 'Bloqueo global' ),
