@@ -850,6 +850,7 @@ Da bi ste pregledali aktivne globalne blokade, kliknite na [[Special:GlobalBlock
 );
 
 /** Catalan (Català)
+ * @author Aleator
  * @author Paucabot
  * @author SMP
  */
@@ -867,6 +868,7 @@ $messages['ca'] = array(
 Recordau que no podeu introduir un nom d'usuari!",
 	'globalblocking-block-expiryinvalid' => 'La caducitat introduïda ($1) no és vàlida.',
 	'globalblocking-block-submit' => 'Bloqueja aquesta adreça IP globalment',
+	'globalblocking-block-success' => "L'adreça IP $1 ha estat blocada a tots els projectes de forma satisfactòria.",
 	'globalblocking-list-intro' => 'Aquesta és una llista de tots els bloquejos globals que actualment estan en vigor.
 Alguns bloquejos estan marcats com a desactivats localment: això vol dir que estan activats a altres llocs web però que un administrador local ha decidit desactivar en aquest wiki.',
 	'globalblocking-list' => 'Llista de les adreces IP bloquejades globalment',
