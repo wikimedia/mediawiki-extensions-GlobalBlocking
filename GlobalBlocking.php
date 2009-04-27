@@ -15,6 +15,7 @@ if ( ! defined( 'MEDIAWIKI' ) )
  */
 $dir = dirname(__FILE__);
 $wgExtensionCredits['other'][] = array(
+	'path'           => __FILE__,
 	'name'           => 'GlobalBlocking',
 	'author'         => 'Andrew Garrett',
 	'description'    => 'Allows IP addresses to be blocked across multiple wikis',
