@@ -25,6 +25,11 @@ class GlobalBlocking {
 	}
 		
 	static function getUserBlockErrors( $user, $ip ) {
+		static $result = null;
+		
+		// Instance cache
+		if (!is_null($result)) return $result;
+	
 		$dbr = GlobalBlocking::getGlobalBlockingSlave();
 		
 		$hex_ip = IP::toHex( $ip );
@@ -46,12 +51,12 @@ class GlobalBlocking {
 			// Check for local whitelisting
 			if (GlobalBlocking::getWhitelistInfo( $block->gb_id ) ) {
 				// Block has been whitelisted.
-				return array();
+				return $result = array();
 			}
 			
 			if ( $user->isAllowed( 'ipblock-exempt' ) ) {
 				// User is exempt from IP blocks.
-				return array();
+				return $result = array();
 			}
 
 			$expiry = Block::formatExpiry( $block->gb_expiry );
@@ -61,9 +66,9 @@ class GlobalBlocking {
 			$display_wiki = self::getWikiName( $block->gb_by_wiki );
 			$user_display = self::maybeLinkUserpage( $block->gb_by_wiki, $block->gb_by );
 			
-			return array('globalblocking-blocked', $user_display, $display_wiki, $block->gb_reason, $expiry);
+			return $result = array('globalblocking-blocked', $user_display, $display_wiki, $block->gb_reason, $expiry);
 		}
-		return array();
+		return $result = array();
 	}
 	
 	static function getGlobalBlockingMaster() {
