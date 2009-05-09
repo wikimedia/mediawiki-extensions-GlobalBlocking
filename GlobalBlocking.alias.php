@@ -187,6 +187,14 @@ $aliases['ko'] = array(
 	'RemoveGlobalBlock' => array( '전체차단취소', '전체차단해제' ),
 );
 
+/** Ripoarisch (Ripoarisch) */
+$aliases['ksh'] = array(
+	'GlobalBlock' => array( 'Jemeinsam Sperre' ),
+	'GlobalBlockList' => array( 'Leß met jemeinsam Sperre' ),
+	'RemoveGlobalBlock' => array( 'Jemeinsam Sperre ophävve', 'Jemeinsam Sperre ophevve' ),
+	'GlobalBlockStatus' => array( 'Ußnahme vun de jemeinsam Sperre' ),
+);
+
 /** Luxembourgish (Lëtzebuergesch) */
 $aliases['lb'] = array(
 	'GlobalBlock' => array( 'Global Spären' ),

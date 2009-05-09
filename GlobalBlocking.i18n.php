@@ -143,7 +143,7 @@ $messages['qqq'] = array(
 
 * $1 – the ''number'' of errors (not the errors themselves)",
 	'globalblocking-block-ipinvalid' => '{{Identical|The IP address ($1) ...}}',
-	'globalblocking-list-intro' => 'Appears on top of [[Special:Globalblocklist]] (part of [[mw:Extension:GlobalBlocking|Extension:GlobalBlocking]], which is not installed on Betawiki; example: [[wikipedia:Special:Globalblocklist]]).',
+	'globalblocking-list-intro' => 'Appears on top of [[Special:Globalblocklist]] (part of [[mw:Extension:GlobalBlocking|Extension:GlobalBlocking]], which is not installed on translatewiki.net; example: [[wikipedia:Special:Globalblocklist]]).',
 	'globalblocking-search-ip' => '{{Identical|IP Address}}',
 	'globalblocking-list-blockitem' => '* $1 is a time stamp
 * $2 is the blocking user
@@ -164,7 +164,7 @@ $messages['qqq'] = array(
 * <code>$2</code> is the project name where the user is registered (usually “meta.wikimedia.org” on Wikimedia servers)
 * <code>$3</code> is the reason specified by the blocking user
 * <code>$4</code> is either the contents of [[MediaWiki:Infiniteblock]] (''{{int:Infiniteblock}}''), or [[MediaWiki:Expiringblock]] (''{{int:Expiringblock}}'') with the expiry time",
-	'globalblocking-logpagetext' => 'Shown as header of [[Special:Log/gblblock]] (part of [[mw:Extension:GlobalBlocking|Extension:GlobalBlocking]], which is not installed on Betawiki; example: [[wikipedia:Special:Log/gblblock]])',
+	'globalblocking-logpagetext' => 'Shown as header of [[Special:Log/gblblock]] (part of [[mw:Extension:GlobalBlocking|Extension:GlobalBlocking]], which is not installed on translatewiki.net; example: [[wikipedia:Special:Log/gblblock]])',
 	'globalblocking-block2-logentry' => '* $1 is a link to a user page of the form User:Name
 * $2 is a reason for the action.',
 	'globalblocking-unblock-logentry' => "This message is a log entry. '''$1''' are contributions of an IP. For an example see http://meta.wikimedia.org/wiki/Special:Log/gblblock?uselang=en",
@@ -333,7 +333,7 @@ $messages['ar'] = array(
 	'globalblocking-whitelist-status' => 'الحالة المحلية:',
 	'globalblocking-whitelist-statuslabel' => 'تعطيل هذا المنع العام في {{SITENAME}}',
 	'globalblocking-whitelist-submit' => 'تغيير الحالة المحلية',
-	'globalblocking-whitelist-whitelisted' => "أنت عطلت بنجاح المنع العام #$2 على عنوان الأيبي '''$1''' في {{SITENAME}}.",
+	'globalblocking-whitelist-whitelisted' => "لقد عطلت بنجاح المنع العام #$2 على عنوان الأيبي '''$1''' في {{SITENAME}}.",
 	'globalblocking-whitelist-dewhitelisted' => "أنت أعدت تفعيل بنجاح المنع العام #$2 على عنوان الأيبي '''$1''' في {{SITENAME}}.",
 	'globalblocking-whitelist-successsub' => 'الحالة المحلية تم تغييرها بنجاح',
 	'globalblocking-whitelist-nochange' => 'أنت لم تقم بأي تغيير للحالة المحلية لهذا المنع.
@@ -5306,7 +5306,7 @@ Du koast höchstens 65.536 IPs speere (/16-Adresseberäkke)',
 	'globalblocking-search-legend' => 'Ne globoale Speere säike',
 	'globalblocking-search-ip' => 'IP-Adresse:',
 	'globalblocking-search-submit' => 'Speeren säike',
-	'globalblocking-list-ipinvalid' => 'Du hääst ne uungultige IP-Adresse ienroat.
+	'globalblocking-list-ipinvalid' => 'Du hääst ne uungultige IP-Adresse ienroat ($1).
 Reek ne gultige IP-Adresse ien.',
 	'globalblocking-search-errors' => 'Ju Säike hied naan Ärfoulch. {{PLURAL:$1|Gruund|Gruunde}}:',
 	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (ap ''\$3'') speerde [[Special:Contributions/\$4|\$4]] globoal ''(\$5)''",
