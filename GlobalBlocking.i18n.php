@@ -4558,8 +4558,8 @@ Wszystkie aktywne globalne blokady można zobaczyć w [[Special:GlobalBlockList|
 	'globalblock' => 'Zablokuj globalnie adres IP',
 	'globalblockstatus' => 'Lokalny status globalnych blokad',
 	'removeglobalblock' => 'Usuwanie globalnej blokady',
-	'right-globalblock' => 'Twórz globalne blokady',
-	'right-globalunblock' => 'Zdejmij globalne blokady',
+	'right-globalblock' => 'Zakładanie globalnych blokad',
+	'right-globalunblock' => 'Zdejmowanie globalnych blokad',
 	'right-globalblock-whitelist' => 'Lokalne odblokowywanie globalnych blokad',
 );
 
