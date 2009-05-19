@@ -853,6 +853,7 @@ Da bi ste pregledali aktivne globalne blokade, kliknite na [[Special:GlobalBlock
  * @author Aleator
  * @author Paucabot
  * @author SMP
+ * @author Solde
  */
 $messages['ca'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Permet]] [[Special:GlobalBlockList|bloquejar]] les adreces IP de diversos wikis',
@@ -894,7 +895,7 @@ Entreu, si us plau, una adreça IP vàlida.",
 Recordau que no podeu introduir un nom d'usuari!",
 	'globalblocking-unblock-legend' => 'Canceŀla un bloqueig global',
 	'globalblocking-unblock-submit' => 'Canceŀla un bloqueig global',
-	'globalblocking-unblock-reason' => 'Raó:',
+	'globalblocking-unblock-reason' => 'Motiu:',
 	'globalblocking-unblock-unblocked' => "Heu eliminat el bloqueig global #$2 a l'adreça IP '''$1'''",
 	'globalblocking-unblock-errors' => 'La vostra eliminació de bloqueig global ha estat infructuosa, {{PLURAL:$1|pel següent motiu|pels següents motius}}:',
 	'globalblocking-unblock-successsub' => "S'ha canceŀlat correctament el bloqueig global",
