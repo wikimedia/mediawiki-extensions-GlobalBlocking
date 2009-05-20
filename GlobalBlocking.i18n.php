@@ -4253,6 +4253,7 @@ For å visa alle aktive globale blokkeringar, sjå den [[Special:GlobalBlockList
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
  * @author Jon Harald Søby
  * @author Laaknor
+ * @author Nghtwlkr
  */
 $messages['no'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Gjør det mulig]] å blokkere IP-adresser på [[Special:GlobalBlockList|alle wikier]]',
@@ -4293,6 +4294,7 @@ Skriv inn en gyldig IP-adresse.',
 	'globalblocking-list-unblock' => 'avblokker',
 	'globalblocking-list-whitelisted' => 'slått av lokalt av $1: $2',
 	'globalblocking-list-whitelist' => 'lokal status',
+	'globalblocking-list-modify' => 'endre',
 	'globalblocking-goto-block' => 'Blokker in IP-adresse globalt',
 	'globalblocking-goto-unblock' => 'Fjern en global blokkering',
 	'globalblocking-goto-status' => 'Endre lokal status for en global blokkering',
@@ -4332,6 +4334,9 @@ For å vise alle aktive globale blokkeringer, se den [[Special:GlobalBlockList|g
 	'globalblocking-unblock-logentry' => 'fjernet global blokkering på [[$1]]',
 	'globalblocking-whitelist-logentry' => 'slo av global blokkering av [[$1]] lokalt',
 	'globalblocking-dewhitelist-logentry' => 'slo på igjen global blokkering av [[$1]] lokalt',
+	'globalblocking-modify-logentry' => 'endret den globale blokkeringen av [[$1]] ($2)',
+	'globalblocking-logentry-expiry' => 'utgår $1',
+	'globalblocking-logentry-noexpiry' => 'ingen utgangstid satt',
 	'globalblocklist' => 'Liste over globalt blokkerte IP-adresser',
 	'globalblock' => 'Blokker en IP-adresse globalt',
 	'globalblockstatus' => 'Lokal status for globale blokkeringer',
