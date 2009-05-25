@@ -85,6 +85,7 @@ $aliases['fi'] = array(
 /** French (Français) */
 $aliases['fr'] = array(
 	'GlobalBlock' => array( 'Blocage global', 'BlocageGlobal' ),
+	'RemoveGlobalBlock' => array( 'Déblocage global', 'DéblocageGlobal' ),
 );
 
 /** Franco-Provençal (Arpetan) */
