@@ -6272,6 +6272,7 @@ $1',
 );
 
 /** Simplified Chinese (‪中文(简体)‬)
+ * @author Bencmq
  * @author Gaoxuewei
  * @author Shinjiman
  * @author Wmr89502270
@@ -6351,9 +6352,7 @@ $1',
 	'globalblocking-blocked' => "您的IP地址已经由'''\$1''' (''\$2'') 在所有的Wikimedia wiki 中全部封锁。
 而理由是 ''\"\$3\"''。该封锁将会在''\$4''到期。",
 	'globalblocking-logpage' => '全域封锁日志',
-	'globalblocking-logpagetext' => '这个是在这个wiki中，弄过和移除整过的全域封锁日志。
-要留意的是全域封锁可以在其它的wiki中度弄和移除。
-要查看活跃的全域封锁，您可以去参阅[[Special:GlobalBlockList|全域封锁名单]]。',
+	'globalblocking-logpagetext' => '这个是在这个wiki中的全域封锁日志。要留意的是全域封锁可以在其它的wiki中被创建和移除并且会影响到这个wiki。要查看活跃的全域封锁，您可以去参阅[[Special:GlobalBlockList|全域封锁名单]]。',
 	'globalblocking-block-logentry' => '全域封锁了[[$1]]于 $2 到期',
 	'globalblocking-unblock-logentry' => '移除了[[$1]]的全域封锁',
 	'globalblocking-whitelist-logentry' => '停用了[[$1]]于本地的全域封锁',
