@@ -1590,11 +1590,13 @@ Para ver todos los bloqueos globales activos, usted puede ver [[Special:GlobalBl
 /** Estonian (Eesti)
  * @author Jaan513
  * @author Ker
+ * @author WikedKentaur
  */
 $messages['et'] = array(
 	'globalblocking-list' => 'Globaalselt blokeeritud IP-aadresside loend',
 	'globalblocking-search-ip' => 'IP aadress:',
 	'globalblocking-whitelist' => 'Globaalsete blokeeringute lokaalne olek',
+	'globalblocking-logpage' => 'Globaalne blokeerimise logi',
 );
 
 /** Basque (Euskara)
