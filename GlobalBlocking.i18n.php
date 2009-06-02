@@ -3267,14 +3267,14 @@ $messages['ko'] = array(
 	'globalblocking-block-alreadyblocked' => 'IP 주소 $1은 이미 전체적으로 차단되었습니다.
 당신은 [[Special:GlobalBlockList|전체 차단된 사용자의 목록]]에서 현재 차단된 IP를 보거나,
 이 양식을 사용하여 이미 차단된 IP의 차단 설정을 변경할 수 있습니다.',
-	'globalblocking-block-bigrange' => '당신이 입력한 범위는 차단하기에 너무 넓습니다.
+	'globalblocking-block-bigrange' => '당신이 입력한 범위 ($1)는 차단하기에 너무 넓습니다.
 당신은 아무리 많아도, 65,536개의 주소 (/16 광역) 이상을 차단할 수 없습니다.',
 	'globalblocking-list-intro' => '현재 유효한 전체 차단의 목록입니다. 전체 차단은 로컬의 관리자의 권한으로 무효화 할 수 있습니다. 단 로컬에서 무효화하더라도 다른 위키에서는 차단 상태가 지속됩니다.',
 	'globalblocking-list' => '모든 위키에서 차단된 IP 목록',
 	'globalblocking-search-legend' => '전체 차단 찾기',
 	'globalblocking-search-ip' => 'IP 주소:',
 	'globalblocking-search-submit' => '차단 찾기',
-	'globalblocking-list-ipinvalid' => '당신이 입력한 IP 주소가 잘못되었습니다.
+	'globalblocking-list-ipinvalid' => '당신이 입력한 IP 주소 ($1)가 잘못되었습니다.
 유효한 IP 주소를 입력해주세요.',
 	'globalblocking-search-errors' => '당신의 검색이 성공적으로 진행되지 못했습니다. 다음의 이유를 확인해보세요:',
 	'globalblocking-list-blockitem' => '$1: <span class="plainlinks">\'\'\'$2\'\'\'</span> ($3) 이(가) [[Special:Contributions/$4|$4]] 을(를) 전체 위키에서 차단하였습니다. ($5)',
@@ -5067,6 +5067,14 @@ $messages['sah'] = array(
 	'right-globalblock' => 'Бырайыактарга барыларыгар дьайар бобууну туруоруу',
 	'right-globalunblock' => 'бобууну устуу',
 	'right-globalblock-whitelist' => 'бырайыактарга барытыгар дьайар бобуулары араарыы',
+);
+
+/** Sardinian (Sardu)
+ * @author Marzedu
+ */
+$messages['sc'] = array(
+	'globalblocking-search-ip' => 'Indiritzu IP:',
+	'globalblocking-unblock-reason' => 'Motivu:',
 );
 
 /** Sicilian (Sicilianu)
