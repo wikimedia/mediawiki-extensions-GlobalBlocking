@@ -1033,6 +1033,7 @@ Všechny aktivní globální blokování naleznete na [[Special:GlobalBlockList|
 	'right-globalblock' => 'Globální blokování',
 	'right-globalunblock' => 'Rušení globálních blokování',
 	'right-globalblock-whitelist' => 'Definování výjimek z globálního zablokování',
+	'right-globalblock-exempt' => 'Obcházení globálního blokování',
 );
 
 /** Welsh (Cymraeg)
@@ -1142,6 +1143,7 @@ Für eine Liste aller aktiven globalen Sperren siehe die [[Special:GlobalBlockLi
 	'right-globalblock' => 'Globale Sperren einrichten',
 	'right-globalunblock' => 'Globale Sperren aufheben',
 	'right-globalblock-whitelist' => 'Globale Sperren lokal abschalten',
+	'right-globalblock-exempt' => 'Globale Sperren umgehen',
 );
 
 /** German (formal address) (Deutsch (Sie-Form))
@@ -1270,6 +1272,7 @@ Aby se woglědał wšykne aktiwne globalne blokěrowanja, móžoš se woglědaś
 	'right-globalblock' => 'Globalne blokěrowanja napóraś',
 	'right-globalunblock' => 'Globalne blokěrowanja wótpóraś',
 	'right-globalblock-whitelist' => 'Globalne blokěrowanja lokalnje wótpóraś',
+	'right-globalblock-exempt' => 'Globalne blokěrowanja wobejś',
 );
 
 /** Greek (Ελληνικά)
@@ -1905,6 +1908,7 @@ Pour visionner tous les blocages globaux actifs, vous pouvez visiter la [[Specia
 	'right-globalblock' => 'Bloquer des utilisateurs globalement',
 	'right-globalunblock' => "Retirer des blocages globaux d'utilisateurs",
 	'right-globalblock-whitelist' => 'Désactiver localement des blocages globaux',
+	'right-globalblock-exempt' => 'Passer outre les blocages globaux',
 );
 
 /** Western Frisian (Frysk)
@@ -2014,6 +2018,7 @@ Para ver todos os bloqueos globais activos, pode ollar a [[Special:GlobalBlockLi
 	'right-globalblock' => 'Realizar bloqueos globais',
 	'right-globalunblock' => 'Eliminar bloqueos globais',
 	'right-globalblock-whitelist' => 'Deshabilitar bloqueos globais localmente',
+	'right-globalblock-exempt' => 'Saltar os bloqueos globais',
 );
 
 /** Gothic (Gothic)
@@ -2135,7 +2140,7 @@ Go ne Lischt vu allene aktive wältwyte Sperrine aaluege, lueg uf dr [[Special:G
  */
 $messages['gv'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Am elley:',
-	'globalblocking-block-options' => 'Reihghyn',
+	'globalblocking-block-options' => 'Reihyn:',
 	'globalblocking-search-ip' => 'Enmys IP:',
 	'globalblocking-unblock-reason' => 'Fa:',
 );
@@ -2518,6 +2523,7 @@ Zo by sej wšě aktiwne globalne blokowanja wobhladał, móžeš sej [[Special:G
 	'right-globalblock' => 'Globalne blokowanja činić',
 	'right-globalunblock' => 'Globalne blokowanja wotstronić',
 	'right-globalblock-whitelist' => 'Globalne blokowanja lokalnje znjemóžnić',
+	'right-globalblock-exempt' => 'Globalne blokowanja wobeńć',
 );
 
 /** Haitian (Kreyòl ayisyen)
@@ -3444,6 +3450,7 @@ Dobei donn se ävver och för hee dat Wiki wirke.
 	'right-globalblock' => 'En Sperr för en IP-Address en alle Wikis enreschte',
 	'right-globalunblock' => 'En Sperr fun alle Wiki ophevve',
 	'right-globalblock-whitelist' => 'En Sperr för en IP-Address en alle Wikis ophevve, ävver nur för hee dat Wiki',
+	'right-globalblock-exempt' => 'Jemeinsam Sperre ömjonn',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
@@ -4147,6 +4154,7 @@ Alle globale blokkades staan in de [[Special:GlobalBlockList|lijst met globale b
 	'right-globalblock' => 'Globale blokkades instellen',
 	'right-globalunblock' => 'Globale blokkades verwijderen',
 	'right-globalblock-whitelist' => 'Globale blokkades lokaal negeren',
+	'right-globalblock-exempt' => 'Globale blokkades omzeilen',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
@@ -5237,6 +5245,7 @@ Všetky aktívne blokovania si môžete pozrieť na [[Special:GlobalBlockList|zo
 	'right-globalblock' => 'Robiť globálne blokovania',
 	'right-globalunblock' => 'Odstraňovať globálne blokovania',
 	'right-globalblock-whitelist' => 'Lokálne vypnúť globálne blokovania',
+	'right-globalblock-exempt' => 'Obísť globálne blokovania',
 );
 
 /** Serbian Cyrillic ekavian (ћирилица)
@@ -5793,6 +5802,7 @@ Tüm aktif küresel engellemeri görmek için, [[Special:GlobalBlockList|kürese
 	'right-globalblock' => 'Küresel engellemeler yap',
 	'right-globalunblock' => 'Küresel engellemeleri kaldır',
 	'right-globalblock-whitelist' => 'Küresel engellemeleri yerel olarak devre dışı bırak',
+	'right-globalblock-exempt' => 'Küresel engellemeleri atla',
 );
 
 /** Ukrainian (Українська)
