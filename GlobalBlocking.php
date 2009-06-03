@@ -64,6 +64,7 @@ $wgGroupPermissions['sysop']['globalblock-whitelist'] = true;
 $wgAvailableRights[] = 'globalblock';
 $wgAvailableRights[] = 'globalunblock';
 $wgAvailableRights[] = 'globalblock-whitelist';
+$wgAvailableRights[] = 'globalblock-exempt';
 
 ## CONFIGURATION
 /**

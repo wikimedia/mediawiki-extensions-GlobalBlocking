@@ -118,6 +118,7 @@ To view all active global blocks, you may view the [[Special:GlobalBlockList|glo
 	'right-globalblock' => 'Make global blocks',
 	'right-globalunblock' => 'Remove global blocks',
 	'right-globalblock-whitelist' => 'Disable global blocks locally',
+	'right-globalblock-exempt' => 'Bypass global blocks',
 );
 
 /** Message documentation (Message documentation)
