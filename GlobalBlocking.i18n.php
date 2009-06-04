@@ -2249,6 +2249,7 @@ $messages['he'] = array(
 	'right-globalblock' => 'יצירת חסימות גלובליות',
 	'right-globalunblock' => 'הסרת חסימות גלובליות',
 	'right-globalblock-whitelist' => 'ביטול חסימות גלובליות באופן מקומי',
+	'right-globalblock-exempt' => 'עקיפת חסימות גלובליות',
 );
 
 /** Hindi (हिन्दी)
