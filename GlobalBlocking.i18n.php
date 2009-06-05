@@ -124,6 +124,7 @@ To view all active global blocks, you may view the [[Special:GlobalBlockList|glo
 /** Message documentation (Message documentation)
  * @author Darth Kule
  * @author Ficell
+ * @author Fryed-peach
  * @author Jon Harald Søby
  * @author Meno25
  * @author Mormegil
@@ -176,6 +177,7 @@ $messages['qqq'] = array(
 	'right-globalblock' => '{{doc-right}}',
 	'right-globalunblock' => '{{doc-right}}',
 	'right-globalblock-whitelist' => '{{doc-right}}',
+	'right-globalblock-exempt' => '{{doc-right}}',
 );
 
 /** Afrikaans (Afrikaans)
@@ -657,6 +659,7 @@ $messages['be-tarask'] = array(
 	'right-globalblock' => 'глябальныя блякаваньні',
 	'right-globalunblock' => 'глябальныя разблякаваньні',
 	'right-globalblock-whitelist' => 'Лякальнае адключэньне глябальных блякаваньняў',
+	'right-globalblock-exempt' => 'ігнараваньне глябальных блякаваньняў',
 );
 
 /** Bulgarian (Български)
@@ -848,6 +851,7 @@ Da bi ste pregledali aktivne globalne blokade, kliknite na [[Special:GlobalBlock
 	'right-globalblock' => 'Pravljenje globalnih blokada',
 	'right-globalunblock' => 'Uklanjanje globalnih blokada',
 	'right-globalblock-whitelist' => 'Onemogućavanje globalnih blokada na lokalnom nivou',
+	'right-globalblock-exempt' => 'Zaobilaženje globalnih blokada',
 );
 
 /** Catalan (Català)
@@ -2133,6 +2137,7 @@ Go ne Lischt vu allene aktive wältwyte Sperrine aaluege, lueg uf dr [[Special:G
 	'right-globalblock' => 'Wältwyti Sperrine yyrichte',
 	'right-globalunblock' => 'Wältwyti Sperrine ufhebe',
 	'right-globalblock-whitelist' => 'Wältwyti Sperrine lokal abschalte',
+	'right-globalblock-exempt' => 'Wältwyti Sperrine umgoh',
 );
 
 /** Manx (Gaelg)
@@ -2779,6 +2784,7 @@ Pro vider tote le blocadas global active, tu pote vider le [[Special:GlobalBlock
 	'right-globalblock' => 'Facer blocadas global',
 	'right-globalunblock' => 'Remover blocadas global',
 	'right-globalblock-whitelist' => 'Disactivar blocadas global localmente',
+	'right-globalblock-exempt' => 'Contornar blocadas global',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -3082,6 +3088,7 @@ $messages['ja'] = array(
 	'right-globalblock' => '他利用者のグローバルブロック',
 	'right-globalunblock' => 'グローバルブロックを解除する',
 	'right-globalblock-whitelist' => 'グローバルブロックをローカルで無効にする',
+	'right-globalblock-exempt' => 'グローバルブロックを回避する',
 );
 
 /** Javanese (Basa Jawa)
@@ -4582,6 +4589,7 @@ Wszystkie aktywne globalne blokady można zobaczyć w [[Special:GlobalBlockList|
 	'right-globalblock' => 'Zakładanie globalnych blokad',
 	'right-globalunblock' => 'Zdejmowanie globalnych blokad',
 	'right-globalblock-whitelist' => 'Lokalne odblokowywanie globalnych blokad',
+	'right-globalblock-exempt' => 'Ignorowanie globalnych blokad',
 );
 
 /** Pashto (پښتو)
@@ -4701,6 +4709,7 @@ Para ver todos os bloqueios globais, poderá consultar a [[Special:GlobalBlockLi
 	'right-globalblock' => 'Fazer bloqueios globais',
 	'right-globalunblock' => 'Remover bloqueios globais',
 	'right-globalblock-whitelist' => 'Desactivar bloqueios globais localmente',
+	'right-globalblock-exempt' => 'Contornar bloqueios globais',
 );
 
 /** Brazilian Portuguese (Português do Brasil)
@@ -4974,6 +4983,7 @@ $1',
 	'right-globalblock' => 'наложение глобальных блокировок',
 	'right-globalunblock' => 'снятие глобальных блокировок',
 	'right-globalblock-whitelist' => 'локальное отключение глобальных блокировок',
+	'right-globalblock-exempt' => 'обход глобальных блокировок',
 );
 
 /** Yakut (Саха тыла)
@@ -6105,6 +6115,7 @@ Xem [[Special:GlobalBlockList|tất cả các tác vụ cấm toàn cục]].',
 	'right-globalblock' => 'Cấm toàn cục',
 	'right-globalunblock' => 'Bỏ cấm toàn cục',
 	'right-globalblock-whitelist' => 'Tắt tác vụ cấm toàn cục',
+	'right-globalblock-exempt' => 'Bỏ qua vụ cấm toàn cục',
 );
 
 /** Volapük (Volapük)
