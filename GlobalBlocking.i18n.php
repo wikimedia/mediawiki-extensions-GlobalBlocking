@@ -4471,6 +4471,7 @@ Per visionar totes los blocatges globals actius, podètz visitar la [[Special:Gl
 	'right-globalblock' => "Blocar d'utilizaires globalament",
 	'right-globalunblock' => "Desblocar d'utilizaires blocats globalament",
 	'right-globalblock-whitelist' => 'Desactivar localament los blocatges globals',
+	'right-globalblock-exempt' => 'Passar otra los blocatges globals',
 );
 
 /** Ossetic (Иронау)
