@@ -1487,6 +1487,7 @@ Vidi ĉiujn aktivajn ĝeneralajn forbarojn, vi povas vidi la [[Special:GlobalBlo
 	'right-globalblock' => 'Fari ĝeneralajn forbarojn',
 	'right-globalunblock' => 'Forigu ĝeneralajn forbarojn',
 	'right-globalblock-whitelist' => 'Malebligu ĝeneralajn forbarojn loke',
+	'right-globalblock-exempt' => 'Preterigi ĝeneralajn forbarojn',
 );
 
 /** Spanish (Español)
@@ -3465,7 +3466,7 @@ Dobei donn se ävver och för hee dat Wiki wirke.
  * @author Robby
  */
 $messages['lb'] = array(
-	'globalblocking-desc' => '[[Special:GlobalBlock|Erlaabt et]] IP-Adressen op [[Special:GlobalBlockList|méi Wikien mateneen ze spären]]',
+	'globalblocking-desc' => '[[Special:GlobalBlock|Erlaabt et]] IP-Adressen op [[Special:GlobalBlockList|méi Wikie mateneen ze spären]]',
 	'globalblocking-block' => 'Eng IP-Adress global spären',
 	'globalblocking-modify-intro' => "Dir kënnt dëse Formulaire benotzen fir eng global Spär z'änneren.",
 	'globalblocking-block-intro' => 'Dir kënnt dës Säit benotzen fir eng IP-Adress op alle Wikien ze spären.',
@@ -3561,6 +3562,7 @@ Fir all aktiv global Spären ze gesinn, gitt w.e.g op d'[[Special:GlobalBlockLis
 	'right-globalblock' => 'Benotzer global spären',
 	'right-globalunblock' => 'Global Spären ophiewen',
 	'right-globalblock-whitelist' => 'Global Späre lokal ausschalten',
+	'right-globalblock-exempt' => 'Global Spären ëmgoen',
 );
 
 /** Limburgish (Limburgs)
@@ -4366,6 +4368,7 @@ For å vise alle aktive globale blokkeringer, se den [[Special:GlobalBlockList|g
 	'right-globalblock' => 'Blokkere IP-er globalt',
 	'right-globalunblock' => 'Fjerne globale blokkeringer',
 	'right-globalblock-whitelist' => 'Slå av globale blokkeringer lokalt',
+	'right-globalblock-exempt' => 'Gå utenom globale blokkeringer',
 );
 
 /** Novial (Novial)
@@ -6003,6 +6006,7 @@ Par védar tuti i blochi globali ativi, varda l'[[Special:GlobalBlockList|elenco
 	'right-globalblock' => 'Bloca dei utenti globalmente',
 	'right-globalunblock' => 'Cava blochi globali',
 	'right-globalblock-whitelist' => 'Disabilita localmente blochi globali',
+	'right-globalblock-exempt' => 'Scavalca blochi globali',
 );
 
 /** Veps (Vepsan kel')
