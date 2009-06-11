@@ -1283,6 +1283,7 @@ Aby se woglědał wšykne aktiwne globalne blokěrowanja, móžoš se woglědaś
  * @author Consta
  * @author Dead3y3
  * @author Geraki
+ * @author Omnipaedista
  * @author ZaDiak
  */
 $messages['el'] = array(
@@ -1383,6 +1384,7 @@ $messages['el'] = array(
 	'right-globalblock' => 'Δημιουργία καθολικών φραγών',
 	'right-globalunblock' => 'Αφαίρεση καθολικών φραγών',
 	'right-globalblock-whitelist' => 'Απενεργοποίηση καθολικών φραγών τοπικά',
+	'right-globalblock-exempt' => 'Παράκαμψη καθολικών φραγών',
 );
 
 /** Esperanto (Esperanto)
