@@ -2812,7 +2812,8 @@ Ingat, Anda tidak dapat memasukkan nama pengguna!',
 	'globalblocking-block-success' => 'Alamat IP $1 berhasil diblokir di seluruh proyek.',
 	'globalblocking-block-successsub' => 'Pemblokiran global berhasil',
 	'globalblocking-block-alreadyblocked' => 'Alamat IP $1 telah diblokir secara global.
-Anda dapat melihat pemblokiran saat ini di [[Special:GlobalBlockList|daftar pemblokiran global]].',
+Anda dapat melihat status pemblokiran tersebut di [[Special:GlobalBlockList|daftar pemblokiran global]],
+atau ubah status pemblokiran dengan mengirimkan kembali formulir ini.',
 	'globalblocking-block-bigrange' => 'Rentang yang Anda masukkan ($1) terlalu besar untuk diblokir.
 Anda dapat memblokir maksimum 65.536 alamat (/16 rentang)',
 	'globalblocking-list-intro' => 'Ini adalah daftar seluruh pemblokiran global yang efektif pada saat ini.
@@ -3943,6 +3944,7 @@ Sekatan ini ''\$4''.",
  * @author Botuzhaleny-sodamo
  */
 $messages['myv'] = array(
+	'globalblocking-list-anononly' => 'ансяк лемтеме',
 	'globalblocking-unblock-reason' => 'Тувталось:',
 );
 
