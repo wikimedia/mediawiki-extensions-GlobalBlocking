@@ -95,6 +95,7 @@ If a global block is disabled on this wiki, users on the affected IP address wil
 	'globalblocking-blocked' => "Your IP address has been blocked on all wikis by '''$1''' (''$2'').
 The reason given was ''\"$3\"''.
 The block ''$4''.",
+	'globalblocking-blocked-nopassreset' => "You cannot reset user's passwords because you are blocked globally.",
 
 	'globalblocking-logpage' => 'Global block log',
 	'globalblocking-logpagetext' => 'This is a log of global blocks which have been made and removed on this wiki.

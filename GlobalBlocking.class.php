@@ -268,4 +268,15 @@ class GlobalBlocking {
 
 		return array();
 	}
+	
+	static function onMailPassword( $name, &$error ) {
+		global $wgUser;
+		
+		if ( GlobalBlocking::getUserBlockErrors( $wgUser, wfGetIp() ) ) {
+			wfLoadExtensionMessages( 'GlobalBlocking' );
+			$error = wfMsg( 'globalblocking-blocked-nopassreset' );
+			return false;
+		}
+		return true;
+	}
 }
