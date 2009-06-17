@@ -366,6 +366,7 @@ $messages['ar'] = array(
 	'right-globalblock' => 'عمل عمليات منع عامة',
 	'right-globalunblock' => 'إزالة عمليات المنع العامة',
 	'right-globalblock-whitelist' => 'تعطيل عمليات المنع العامة محليا',
+	'right-globalblock-exempt' => 'تجاوز عمليات المنع العامة',
 );
 
 /** Egyptian Spoken Arabic (مصرى)
@@ -641,6 +642,7 @@ $messages['be-tarask'] = array(
 	'globalblocking-blocked' => "Ваш ІР-адрас быў заблякаваны ва ўсіх вікі ўдзельнікам '''$1''' (''$2'').
 Прычына блякаваньня: ''«$3»''.
 Блякаваньне ''$4''.",
+	'globalblocking-blocked-nopassreset' => 'Вы ня можаце аднавіць пароль удзельніка, таму што Вы заблякаваны глябальна.',
 	'globalblocking-logpage' => 'Журнал глябальных блякаваньняў',
 	'globalblocking-logpagetext' => 'Гэта сьпіс глябальных блякаваньняў, якія былі зробленыя і адмененыя ў гэтай вікі.
 Майце на ўвазе, што глябальныя блякаваньні могуць быць зробленыя і адмененыя ў іншых вікі, але глябальныя блякаваньні могуць дзейнічаць таксама і ў гэтай вікі.
@@ -833,6 +835,7 @@ Ako je globalna blokada onemogućena na ovoj wiki, korisnici na blokiranoj IP ad
 	'globalblocking-blocked' => "Vaša IP adresa je blokirana na svim wikijima od strane '''\$1''' (sa ''\$2'').
 Naveden je razlog ''\"\$3\"''.
 Ova blokada ''\$4''.",
+	'globalblocking-blocked-nopassreset' => 'Ne možete poništiti korisničku šifru jer ste globalno blokirani.',
 	'globalblocking-logpage' => 'Zapis globalnih blokada',
 	'globalblocking-logpagetext' => 'Ovo je zapis globalnih blokada koji su napravljene i uklonjene na ovoj wiki.
 Treba obratiti pažnju da se globalne blokade mogu napraviti i ukloniti na drugim wikijima i da te globalne blokade utjecati na ovu wiki.
@@ -1129,6 +1132,7 @@ Deshalb kann der lokale Status von globalen Sperren nicht geändert werden.',
 	'globalblocking-whitelist-intro' => 'Du kannst mit diesem Formular den lokalen Status einer globalen Sperre ändern. Wenn eine globale Sperre in dem Wiki deaktiviert wurde, können Seiten über die entsprechende IP-Adresse normal bearbeitet werden. [[Special:GlobalBlockList|Klicke hier]], um zur Liste der globalen Sperren zurückzukehren.',
 	'globalblocking-blocked' => "Deine IP-Adresse wurde von '''$1''' ''($2)'' für alle Wikis gesperrt.
 Als Begründung wurde ''„$3“'' angegeben. Die Sperre ''$4''.",
+	'globalblocking-blocked-nopassreset' => 'Du kannst kein Passwort eines Benutzers zurücksetzen, da du global gesperrt wurdest.',
 	'globalblocking-logpage' => 'Globales Sperr-Logbuch',
 	'globalblocking-logpagetext' => 'Dies ist das Logbuch der globalen Sperren, die in diesem Wiki eingerichtet oder aufgehoben wurden.
 Globale Sperren können in einem anderen Wiki eingerichtet und aufgehoben werden, so dass die dortigen Sperren auch dieses Wiki betreffen können.
@@ -1258,6 +1262,7 @@ Jolic globalne blokěrowanje jo znjemóžnjone na toś tom wikiju, wužywarje na
 	'globalblocking-blocked' => "Waša IP-adresa jo se blokěrowała wót '''\$1''' (''\$2'') na wšych wikijach.
 Pódana pśicyna jo była ''\"\$3\"''.
 Blokěrowanje ''\$4''.",
+	'globalblocking-blocked-nopassreset' => 'Njamóžoš gronidła wužywarja slědk wzaś, dokulaž sy globalnje blokěrowany.',
 	'globalblocking-logpage' => 'Protokol globalnych blokěrowanjow',
 	'globalblocking-logpagetext' => 'To jo protokol globalnych blokěrowanjow, kótarež su se cynili a wótpórali na toś tom wikiju.
 Ty by měł źiwaś na to, až globalne blokěrowanja daju se cyniś a wótpóraś na drugich wikijach a až toś te globalne blokěrowanja mógu wobwliwowaś toś ten wiki.
@@ -1897,6 +1902,7 @@ Si un blocage global est désactivé sur ce wiki, les utilisateurs des adresses 
 	'globalblocking-blocked' => "Votre adresse IP a été bloquée sur l’ensemble des wikis par '''$1''' (''$2'').
 Le motif indiqué était « $3 ».
 Blocage : ''$4''.",
+	'globalblocking-blocked-nopassreset' => 'Vous ne pouvez pas réinitialiser les mots de passe d’utilisateur parce que vous êtes bloqué globalement.',
 	'globalblocking-logpage' => 'Journal des blocages globaux',
 	'globalblocking-logpagetext' => 'Voici un journal des blocages globaux qui ont été faits et retirés sur ce wiki.
 Notez que les blocages globaux peuvent être faits ou annulés sur d’autres wikis, et que ces blocages globaux sont de nature à interférer sur ce wiki.
@@ -2007,6 +2013,7 @@ Se un bloqueo global está deshabilitado neste wiki, os usuarios que usen o ende
 [[Special:GlobalBlockList|Voltar á lista dos bloqueos globais]].',
 	'globalblocking-blocked' => "O seu enderezo IP foi bloqueado en todos os wikis por '''\$1''' (''\$2'').
 A razón que deu foi ''\"\$3\"''. O bloqueo, ''\$4''.",
+	'globalblocking-blocked-nopassreset' => 'Non pode restablecer o contrasinal do usuario porque vostede está bloqueado globalmente.',
 	'globalblocking-logpage' => 'Rexistro de bloqueos globais',
 	'globalblocking-logpagetext' => 'Este é un rexistro dos bloqueos globais que foron feitos e retirados neste wiki.
 Déase de conta de que os bloqueos globais poden ser feitos e retirados noutros wikis e este bloqueos poden afectar a este.
@@ -2122,6 +2129,7 @@ Obacht: D derfsch kei Benutzername yygee!',
 	'globalblocking-whitelist-intro' => 'Du chasch mit däm Formular dr lokal Status vun ere wältwyte Sperri ändere. Wänn e wältwyti Sperri in däm Wiki deaktiviert woren isch, chenne Syte iber die IP-Adräss normal bearbeitet wäre. [[Special:GlobalBlockList|Druck do]], zum uf d Lischt vu dr wältwyte Sperrine zruckzgoh.',
 	'globalblocking-blocked' => "Dyyni IP-Adräss isch vu '''$1''' ''($2)'' fir alli Wiki gsperrt wore.
 As Grund isch ''„$3“'' aagee wore. D Sperri ''$4''.",
+	'globalblocking-blocked-nopassreset' => 'Du chasch s Passwort vum Benutzer nit zrucksetze, wel Du wältwyt gsperrt bisch.',
 	'globalblocking-logpage' => 'Wältwyt Sperrlogbuech',
 	'globalblocking-logpagetext' => 'Des isch s Logbuech vu dr wältwyte Sperrine, wu in däm Wiki yygrichtet oder ufghobe wore sin.
 Wältwyti Sperrine chenne in eme andere Wiki yygrichtet un ufghobe wäre, dodemit chenne au d Sperrine in däm Wiki troffe wäre.
@@ -2515,6 +2523,7 @@ Jeli je globalne blokowanje na tutym wikiju znjemóžnjene, móža wužiwarjo z 
 	'globalblocking-blocked' => "Twoja IP-adresa bu na wšěch wikijach wot '''\$1''' (''\$2'') zablokowana.
 Podata přičina bě ''\"\$3\"''.
 Blokowanje ''\$4''.",
+	'globalblocking-blocked-nopassreset' => 'Njemóžeš hesła wužiwarja cofnyć, dokelž sy globalnje blokowany.',
 	'globalblocking-logpage' => 'Protokol globalnych blokowanjow',
 	'globalblocking-logpagetext' => 'To je protokol globalnych blokowanjow, kotrež buchu na tutym wikiju přewjedźene a wotstronjene.
 Wobkedźbuj, zo globalne blokowanja dadźa so na druhich wikijach přewjesć a wotstronić a zo tute globalne blokowanja móža tutón wiki wobwliwować.
@@ -2799,6 +2808,7 @@ Pro vider tote le blocadas global active, tu pote vider le [[Special:GlobalBlock
 $messages['id'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Memungkinkan]] pemblokiran alamat IP [[Special:GlobalBlockList|sekaligus di banyak wiki]]',
 	'globalblocking-block' => 'Memblokir sebuah alamat IP secara global',
+	'globalblocking-modify-intro' => 'Anda dapat menggunakan formulir ini untuk mengubah pengaturan suatu pemblokiran global.',
 	'globalblocking-block-intro' => 'Anda dapat menggunakan halaman ini untuk memblokir sebuah alamat IP di seluruh wiki.',
 	'globalblocking-block-reason' => 'Alasan pemblokiran:',
 	'globalblocking-block-expiry' => 'Kadaluwarsa:',
@@ -2811,8 +2821,11 @@ $messages['id'] = array(
 Ingat, Anda tidak dapat memasukkan nama pengguna!',
 	'globalblocking-block-expiryinvalid' => 'Waktu kadaluwarsa tidak sah ($1).',
 	'globalblocking-block-submit' => 'Blokir alamat IP ini secara global',
+	'globalblocking-modify-submit' => 'Ubah pengaturan pemblokiran global ini',
 	'globalblocking-block-success' => 'Alamat IP $1 berhasil diblokir di seluruh proyek.',
+	'globalblocking-modify-success' => 'Pemblokiran global atas $1 telah berhasil diubah',
 	'globalblocking-block-successsub' => 'Pemblokiran global berhasil',
+	'globalblocking-modify-successsub' => 'Pemblokiran global berhasil diubah',
 	'globalblocking-block-alreadyblocked' => 'Alamat IP $1 telah diblokir secara global.
 Anda dapat melihat status pemblokiran tersebut di [[Special:GlobalBlockList|daftar pemblokiran global]],
 atau ubah status pemblokiran dengan mengirimkan kembali formulir ini.',
@@ -2833,6 +2846,7 @@ Harap masukkan alamat IP yang sah.',
 	'globalblocking-list-unblock' => 'hapuskan',
 	'globalblocking-list-whitelisted' => 'dinon-aktifkan di wiki lokal oleh $1: $2',
 	'globalblocking-list-whitelist' => 'status di wiki lokal',
+	'globalblocking-list-modify' => 'ubah',
 	'globalblocking-goto-block' => 'Memblokir alamat IP secara global',
 	'globalblocking-goto-unblock' => 'Menghapuskan pemblokiran global',
 	'globalblocking-goto-status' => 'Mengubah status lokal untuk sebuah pemblokiran global',
@@ -2851,6 +2865,8 @@ Ingat, Anda tidak dapat memasukkan nama pengguna!',
 	'globalblocking-unblock-intro' => 'Anda dapat menggunakan formulir ini untuk membatalkan sebuah pemblokiran global.
 [[Special:GlobalBlockList|Klik di sini]] untuk kembali ke daftar pemblokiran global.',
 	'globalblocking-whitelist' => 'Status wiki lokal atas pemblokiran global',
+	'globalblocking-whitelist-notapplied' => 'Pemblokiran global tidak digunakan pada wiki ini,
+jadi status lokal dari suatu pemblokiran global tidak dapat diubah.',
 	'globalblocking-whitelist-legend' => 'Mengubah status di wiki lokal',
 	'globalblocking-whitelist-reason' => 'Alasan perubahan:',
 	'globalblocking-whitelist-status' => 'Status di wiki lokal:',
@@ -2873,9 +2889,13 @@ Pemblokiran ''\$4''.",
 Sebagai catatan, pemblokiran global dapat dibuat dan dihapuskan di wiki lain yang akan juga mempengaruhi wiki ini.
 Untuk menampilkan seluruh pemblokiran global yang aktif saat ini, Anda dapat melihat [[Special:GlobalBlockList|daftar pemblokiran global]].',
 	'globalblocking-block-logentry' => 'memblokir secara global [[$1]] dengan kadaluwarsa $2',
+	'globalblocking-block2-logentry' => 'memblokir global [[$1]] ($2)',
 	'globalblocking-unblock-logentry' => 'menghapuskan pemblokiran global atas [[$1]]',
 	'globalblocking-whitelist-logentry' => 'menonaktifkan pemblokiran global atas [[$1]] di wiki lokal',
 	'globalblocking-dewhitelist-logentry' => 'mengaktifkan kembali pemblokiran global pada [[$1]] di wiki lokal',
+	'globalblocking-modify-logentry' => 'mengubah pemblokiran global atas [[$1]] ($2)',
+	'globalblocking-logentry-expiry' => 'kadaluwarsa $1',
+	'globalblocking-logentry-noexpiry' => 'selamanya',
 	'globalblocklist' => 'Daftar alamat IP yang diblokir secara global',
 	'globalblock' => 'Memblokir suatu alamat IP secara global',
 	'globalblockstatus' => 'Status pemblokiran global di wiki lokal',
@@ -2883,6 +2903,7 @@ Untuk menampilkan seluruh pemblokiran global yang aktif saat ini, Anda dapat mel
 	'right-globalblock' => 'Melakukan pemblokiran global',
 	'right-globalunblock' => 'Menghapuskan pemblokiran global',
 	'right-globalblock-whitelist' => 'Menonaktifkan suatu pemblokiran global di wiki lokal',
+	'right-globalblock-exempt' => 'Tidak dikenakan pemblokiran global',
 );
 
 /** Ido (Ido)
@@ -4151,6 +4172,7 @@ Als een globale blokkade op deze wiki is opgeheven, kunnen gebruikers vanaf het 
 	'globalblocking-blocked' => "Uw IP-adres is door '''\$1''' (''\$2'') geblokkeerd op alle wiki's.
 De reden is ''\"\$3\"''.
 De blokkade ''\$4''.",
+	'globalblocking-blocked-nopassreset' => 'U kunt het wachtwoord van gebruikers niet opnieuw instellen omdat u globaal geblokkeerd bent.',
 	'globalblocking-logpage' => 'Globaal blokkeerlogboek',
 	'globalblocking-logpagetext' => "Dit logboek bevat aangemaakte en verwijderde globale blokkades op deze wiki.
 Globale blokkades kunnen ook op andere wiki's aangemaakt en verwijderd worden, en invloed hebben op deze wiki.
@@ -4461,6 +4483,7 @@ d'aquel fach l'estatut local del blocatge global pòt pas èsser modificat.",
 	'globalblocking-whitelist-intro' => "Podètz utilizar aqueste formulari per modificar l'estatut local d’un blocatge global. Se un blocatge global es desactivat sus aqueste wiki, los utilizaires concernits per l’adreça IP poiràn editar normalament. [[Special:GlobalBlockList|Clicatz aicí]] per tornar a la lista globala.",
 	'globalblocking-blocked' => "Vòstra adreça IP es estada blocada sus l’ensemble dels wiki per '''$1''' (''$2'').
 Lo motiu indicat èra « $3 ». La plaja ''$4''.",
+	'globalblocking-blocked-nopassreset' => 'Podètz pas tornar inicializar los senhals d’utilizaire perque sètz blocat(ada) globalament.',
 	'globalblocking-logpage' => 'Jornal dels blocatges globals',
 	'globalblocking-logpagetext' => 'Vaquí un jornal dels blocatges globals que son estats faches e revocats sus aqueste wiki.
 Deuriá èsser relevat que los blocatges globals pòdon èsser faches o anullats sus d’autres wikis, e que losdiches blocatges globals son de natura a interferir sus aqueste wiki.
@@ -4974,6 +4997,7 @@ $1',
 	'globalblocking-blocked' => "Ваш IP-адрес был заблокирован во всех вики участником '''$1''' (''$2'').
 Была указана причина: ''«$3»''.
 Блокировка ''$4''.",
+	'globalblocking-blocked-nopassreset' => 'Вы не можете сбрасывать пароли участников, так как вы заблокированы на глобальном уровне.',
 	'globalblocking-logpage' => 'Журнал глобальных блокировок',
 	'globalblocking-logpagetext' => 'Это журнал глобальных блокировок, установленных и снятых в этой вики.
 Следует отметить, что глобальные блокировки могут быть установлены в других вики, но действовать также и в данной вики.
@@ -5247,6 +5271,7 @@ Môžete sa vrátiť na [[Special:GlobalBlockList|Zoznam globálnych blokovaní]
 Môžete sa vrátiť na [[Special:GlobalBlockList|Zoznam globálnych blokovaní]].',
 	'globalblocking-blocked' => "Vašu IP adresu zablokoval na všetkých wiki '''$1''' (''$2'').
 Ako dôvod udáva ''„$3“''. Blokovanie vyprší ''$4''.",
+	'globalblocking-blocked-nopassreset' => 'Nemôžete nastaviť nové heslo používateľovi, pretože ste globáne zablokovaný.',
 	'globalblocking-logpage' => 'Záznam globálnych blokovaní',
 	'globalblocking-logpagetext' => 'Toto je záznam globálnych blokovaní, ktoré boli vytvorené a zrušené na tejto wiki.
 Mali by ste pamätať na to, že globálne blokovania je možné vytvoriť a odstrániť na iných wiki a tieto globálne blokovania môžu ovplyvniť túto wiki.
