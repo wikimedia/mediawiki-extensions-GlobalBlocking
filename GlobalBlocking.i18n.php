@@ -134,6 +134,7 @@ To view all active global blocks, you may view the [[Special:GlobalBlockList|glo
  * @author Raymond
  * @author Siebrand
  * @author Tgr
+ * @author Urhixidur
  */
 $messages['qqq'] = array(
 	'globalblocking-desc' => 'Short description of this extension, shown on [[Special:Version]]. Do not translate or change links.',
@@ -146,6 +147,7 @@ $messages['qqq'] = array(
 
 * $1 – the ''number'' of errors (not the errors themselves)",
 	'globalblocking-block-ipinvalid' => '{{Identical|The IP address ($1) ...}}',
+	'globalblocking-block-bigrange' => 'Not clear at all what the English message means about ranges. Unfortunately, http://www.mediawiki.org/wiki/Extension:GlobalBlocking supplies no explanation whatsoever.',
 	'globalblocking-list-intro' => 'Appears on top of [[Special:Globalblocklist]] (part of [[mw:Extension:GlobalBlocking|Extension:GlobalBlocking]], which is not installed on translatewiki.net; example: [[wikipedia:Special:Globalblocklist]]).',
 	'globalblocking-search-ip' => '{{Identical|IP Address}}',
 	'globalblocking-list-blockitem' => '* $1 is a time stamp
@@ -347,6 +349,7 @@ $messages['ar'] = array(
 [[Special:GlobalBlockList|رجوع إلى قائمة المنع العامة]].',
 	'globalblocking-blocked' => "عنوان الأيبي الخاص بك تم منعه على كل الويكيات بواسطة '''\$1''' (''\$2'').
 السبب المعطى كان ''\"\$3\"''. المنع ''\$4''.",
+	'globalblocking-blocked-nopassreset' => 'لا يمكنك إعادة ضبط كلمات سر المستخدم لأنك ممنوع منعا عاما.',
 	'globalblocking-logpage' => 'سجل المنع العام',
 	'globalblocking-logpagetext' => 'هذا سجل بعمليات المنع العامة التي تم عملها وإزالتها على هذا الويكي.
 ينبغي ملاحظة أن عمليات المنع العامة يمكن عملها وإزالتها على الويكيات الأخرى، وأن عمليات المنع العامة هذه ربما تؤثر على هذا الويكي.
@@ -1022,6 +1025,7 @@ Pokud bude globální blok na této wiki zrušen, budou moci uživatelé na dot�
 [[Special:GlobalBlockList|Návrat na seznam globálních bloků]].',
 	'globalblocking-blocked' => "Vaší IP adrese byla globálně na všech wiki zablokována možnost editace. Zablokoval vás uživatel '''$1''' (''$2'').
 Udaným důvodem bylo ''„$3“''. Zablokování platí ''$4''.",
+	'globalblocking-blocked-nopassreset' => 'Nemůžete žádat o zaslání nového hesla, protože jste globálně {{GENDER:|zablokován|zablokována|zablokován}}.',
 	'globalblocking-logpage' => 'Kniha globálních zablokování',
 	'globalblocking-logpagetext' => 'Toto je kniha globální blokování a jejich uvolnění provedených na této wiki. 
 Globální blokování lze provést i na jiných wiki a i ty ovlivňují blokování na této wiki. 
@@ -1821,6 +1825,7 @@ Kaikki voimassa olevat globaaliestot ovat [[Special:GlobalBlockList|globaaliesto
  * @author PieRRoMaN
  * @author Seb35
  * @author Sherbrooke
+ * @author Urhixidur
  * @author Verdy p
  * @author Zetud
  */
@@ -1838,7 +1843,7 @@ $messages['fr'] = array(
 	'globalblocking-block-errors' => 'Le blocage a échoué pour {{PLURAL:$1|la raison suivante|les raisons suivantes}} :',
 	'globalblocking-block-ipinvalid' => 'L’adresse IP ($1) que vous avez entrée est incorrecte.
 Veuillez noter que vous ne pouvez pas inscrire un nom d’utilisateur !',
-	'globalblocking-block-expiryinvalid' => 'L’expiration que vous avez entrée ($1) est incorrecte.',
+	'globalblocking-block-expiryinvalid' => 'La durée d’expiration que vous avez entrée ($1) est incorrecte.',
 	'globalblocking-block-submit' => 'Bloquer globalement cette adresse IP',
 	'globalblocking-modify-submit' => 'Modifier ce blocage global',
 	'globalblocking-block-success' => 'L’adresse IP $1 a été bloquée sur l’ensemble des projets.',
@@ -1848,7 +1853,7 @@ Veuillez noter que vous ne pouvez pas inscrire un nom d’utilisateur !',
 	'globalblocking-block-alreadyblocked' => 'L’adresse IP $1 est déjà bloquée globalement.
 Vous pouvez afficher les blocages existants sur la [[Special:GlobalBlockList|liste des blocages globaux]]
 ou reconfigurer ce blocage en soumettant de nouveau ce formulaire.',
-	'globalblocking-block-bigrange' => 'La plage que vous avez spécifiée ($1) est trop grande pour être bloquée. Vous ne pouvez pas bloquer plus de 65&nbsp;536 adresses (plages en /16).',
+	'globalblocking-block-bigrange' => 'La plage que vous avez spécifiée ($1) est trop grande pour être bloquée. Vous ne pouvez pas bloquer plus de 65&nbsp;536 adresses.',
 	'globalblocking-list-intro' => 'Voici la liste de tous les blocages globaux actifs. Quelques plages sont marquées comme localement désactivées : ceci signifie qu’elles sont appliquées sur d’autres sites, mais qu’un administrateur local a décidé de les désactiver sur ce wiki.',
 	'globalblocking-list' => 'Liste des adresses IP bloquées globalement',
 	'globalblocking-search-legend' => 'Rechercher un blocage global',
@@ -1891,7 +1896,7 @@ de ce fait le statut local du blocage global ne peut être modifié.',
 	'globalblocking-whitelist-statuslabel' => 'Désactiver ce blocage global sur {{SITENAME}}',
 	'globalblocking-whitelist-submit' => 'Changer le statut local',
 	'globalblocking-whitelist-whitelisted' => "Vous avez désactivé avec succès le blocage global n° $2 sur l'adresse IP '''$1''' sur {{SITENAME}}.",
-	'globalblocking-whitelist-dewhitelisted' => "Vous avez réactivé avec succès le blocage global n° $2 sur l'adresse IP '''$1''' sur {{SITENAME}}.",
+	'globalblocking-whitelist-dewhitelisted' => "Vous avez réactivé avec succès le blocage global n° $2 de l’adresse IP '''$1''' sur {{SITENAME}}.",
 	'globalblocking-whitelist-successsub' => 'Statut local modifié avec succès',
 	'globalblocking-whitelist-nochange' => 'Vous n’avez pas modifié l’état local de ce blocage.
 [[Special:GlobalBlockList|Revenir à la liste des blocages globaux]].',
@@ -2806,7 +2811,7 @@ Pro vider tote le blocadas global active, tu pote vider le [[Special:GlobalBlock
  * @author Rex
  */
 $messages['id'] = array(
-	'globalblocking-desc' => '[[Special:GlobalBlock|Memungkinkan]] pemblokiran alamat IP [[Special:GlobalBlockList|sekaligus di banyak wiki]]',
+	'globalblocking-desc' => '[[Special:GlobalBlock|Memblokir]] alamat IP [[Special:GlobalBlockList|di banyak wiki sekaligus]]',
 	'globalblocking-block' => 'Memblokir sebuah alamat IP secara global',
 	'globalblocking-modify-intro' => 'Anda dapat menggunakan formulir ini untuk mengubah pengaturan suatu pemblokiran global.',
 	'globalblocking-block-intro' => 'Anda dapat menggunakan halaman ini untuk memblokir sebuah alamat IP di seluruh wiki.',
@@ -2884,6 +2889,7 @@ Jika sebuah pemblokiran global dinon-aktifkan di wiki ini, pengguna-pengguna den
 	'globalblocking-blocked' => "Alamat IP Anda telah diblokir di seluruh wiki oleh '''\$1''' (''\$2'').
 Alasan pemblokiran adalah ''\"\$3\"''.
 Pemblokiran ''\$4''.",
+	'globalblocking-blocked-nopassreset' => 'Anda tidak dapat mengganti kata sandi pengguna karena Anda sedang diblokir secara global.',
 	'globalblocking-logpage' => 'Log pemblokiran global',
 	'globalblocking-logpagetext' => 'Ini adalah log pemblokiran global yang dibuat dan dihapuskan di wiki ini.
 Sebagai catatan, pemblokiran global dapat dibuat dan dihapuskan di wiki lain yang akan juga mempengaruhi wiki ini.
@@ -3098,6 +3104,7 @@ $messages['ja'] = array(
 	'globalblocking-blocked' => "あなたのIPアドレスは、'''$1''' ('''$2''') によって全ての関連ウィキプロジェクトからブロックされています。
 理由は'''$3'''です。
 ブロック解除予定は'''$4''' です。",
+	'globalblocking-blocked-nopassreset' => 'あなたはグローバルブロックを受けているため、利用者パスワードを再設定できません。',
 	'globalblocking-logpage' => 'グローバルブロック記録',
 	'globalblocking-logpagetext' => '以下はこのウィキで実施および解除されたグローバルブロックの記録です。グローバルブロックは他のウィキでも実施したり解除したりすることができ、その結果がこのウィキにも及びます。現在有効なグローバルブロックの一覧は[[Special:GlobalBlockList]]を参照してください。',
 	'globalblocking-block-logentry' => '[[$1]] を $2 グローバルブロックしました',
@@ -3465,6 +3472,7 @@ dä IP-Adresse uß janz nommaal alles don. Jangk zeröck noh de
 Dä '''$1''' (''$2'') hädd_et jedonn.
 Sing Jrund wohr: „''$3''“.
 De Sperr bliet bestonn bes: ''$4''.",
+	'globalblocking-blocked-nopassreset' => 'Do kanns andere Metmaachere ier Paßwoot nit retuur säze, Do bes en alle Wikis jesperrt.',
 	'globalblocking-logpage' => 'Logboch fum IP-Adresse en alle Wikis sperre',
 	'globalblocking-logpagetext' => "Dat es et Logboch met alle Sperre, di op alle Wikis op eimohl jemaat ov opjehovve woode sen.
 Mer moß sesch em klore sen, dat die Sperre ''op ander Wikis'' jemaat woode sin künne.
@@ -3569,6 +3577,7 @@ Wann eng global Spär op dëser Wiki opgehuewe gëtt, kënne Benotzer déi déi 
 	'globalblocking-blocked' => "Är IP-Adress gouf op alle Wikimedia Wikie vum '''\$1''' (''\$2'') gespaart.
 De Grond den ugi gouf war ''\"\$3\"''.
 De Beräich ''\$4''.",
+	'globalblocking-blocked-nopassreset' => 'Dir kënnt engem Benotzer säi Paswuert net zrécksetze well Dir global gespaart sidd.',
 	'globalblocking-logpage' => 'Lëscht vun de globale Spären',
 	'globalblocking-logpagetext' => "Dëst ass eng Lëscht vun de globale Spären déi op dëser Wiki gemaach an opgehuewe goufen.
 Dir sollt wëssen datt global Spären op anere Wikien gemaach an opgehuewe kënne ginn an datt déi global Spären dës Wiki beaflosse kënnen.
@@ -4377,6 +4386,7 @@ så den lokale statusen for globale blokkeringer kan ikke endres her.',
 	'globalblocking-blocked' => "IP-adressen din har blitt blokkert på alle wikier av '''$1''' (''$2'').
 Årsaken som ble oppgitt var '''$3'''.
 Blokkeringen ''$4''.",
+	'globalblocking-blocked-nopassreset' => 'Du kan ikke nullstille brukerpassord fordi du er blokkert globalt.',
 	'globalblocking-logpage' => 'Global blokkeringslogg',
 	'globalblocking-logpagetext' => 'Dette er en logg over globale blokkeringer som har blitt gjort eller fjernet på denne wikien.
 Det burde merkes at globale blokkeringer goså kan foretas på andre wikier, og at disse vil ha utslag på denne wikien.
@@ -4519,6 +4529,14 @@ $messages['os'] = array(
 	'removeglobalblock' => 'Аиуварс кæн глобалон хъоды',
 );
 
+/** Deitsch (Deitsch)
+ * @author Xqt
+ */
+$messages['pdc'] = array(
+	'globalblocking-unblock-reason' => 'Grund:',
+	'globalblocking-logentry-expiry' => 'bis $1',
+);
+
 /** Polish (Polski)
  * @author Derbeth
  * @author Leinad
@@ -4603,6 +4621,7 @@ Jeśli globalna blokada zostanie zdjęta na tej wiki, użytkownicy będą mogli 
 	'globalblocking-blocked' => "Twój adres IP został zablokowany na wszystkich wiki przez '''$1''' (''$2'').
 Przyczyna blokady: ''„$3”''.
 Blokada ''$4''.",
+	'globalblocking-blocked-nopassreset' => 'Nie możesz resetować haseł użytkowników, ponieważ zostałeś zablokowany globalnie.',
 	'globalblocking-logpage' => 'Rejestr globalnych blokad',
 	'globalblocking-logpagetext' => 'To jest rejestr globalnych blokad, które zostały nałożone i zdjęte na tej wiki.
 Należy mieć na uwadze, że globalne blokady mogą być nakładane i zdejmowane na innych wiki i ich działanie obejmuje także tę wiki.
