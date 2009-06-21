@@ -5848,6 +5848,7 @@ Eğer bir küresel engelleme bu vikide devre dışı bırakılmış ise, etkilen
 	'globalblocking-blocked' => "IP adresiniz '''\$1''' (''\$2'') tarafından tüm vikilerde engellendi.
 Verilen sebep şu: ''\"\$3\"''.
 Engelleme ''\$4''.",
+	'globalblocking-blocked-nopassreset' => 'Küresel olarak engellenmiş olduğunuz için kullanıcının şifresini sıfırlayamazsınız.',
 	'globalblocking-logpage' => 'Küresel engelleme günlüğü',
 	'globalblocking-logpagetext' => 'Bu, bu vikide yapılan ve kaldırılan küresel engellemelerin günlüğüdür.
 Küresel engellemelerin diğer vikilerde yapılıp kaldırılabileceğini, ve bu küresel engellemelerin bu vikiyi etkileyebileceğini unutmayın.
