@@ -1480,6 +1480,7 @@ Se ĝenerala forbaro estas malŝaltita en ĉi tiu vikio, uzantoj de tiu IP-adres
 	'globalblocking-blocked' => "Via IP-adreso estis forbarita en ĉiuj Wikimedia-retejoj de '''\$1''' (''\$2'').
 La kialo donata estis ''\"\$3\"''. 
 La forbaro estas ''\$4''.",
+	'globalblocking-blocked-nopassreset' => 'Vi ne povas restarigi pasvortojn de aliaj uzantoj, cxar vi estas forbarita ĝenerale.',
 	'globalblocking-logpage' => 'Protokolo de ĝeneralaj forbaroj',
 	'globalblocking-logpagetext' => 'Jen protokolo de ĝeneralaj forbaroj kiuj estis faritaj kaj forigitaj en ĉi tiu vikio.
 Estas notinda ke ĝeneralaj forbaroj povas esti faritaj kaj forigitaj en aliaj vikioj, kaj ĉi tiuj forbaroj povas efiki ĉi tiun vikion.
