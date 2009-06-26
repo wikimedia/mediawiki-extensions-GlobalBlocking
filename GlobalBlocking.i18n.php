@@ -1518,13 +1518,13 @@ $messages['es'] = array(
 	'globalblocking-block-intro' => 'Puede usar esta página para bloquear una dirección IP en todos los wikis.',
 	'globalblocking-block-reason' => 'Motivo para este bloqueo:',
 	'globalblocking-block-expiry' => 'Caducidad del bloqueo:',
-	'globalblocking-block-expiry-other' => 'Otro tiempo de expiración',
+	'globalblocking-block-expiry-other' => 'Otro tiempo de caducidad',
 	'globalblocking-block-expiry-otherfield' => 'Otro tiempo:',
 	'globalblocking-block-legend' => 'Bloquear un usuario globalmente',
 	'globalblocking-block-options' => 'Opciones:',
 	'globalblocking-block-errors' => 'Tu bloqueo falló por {{PLURAL:$1|la siguiente razón|las siguientes razones}}:',
 	'globalblocking-block-ipinvalid' => 'La dirección IP ($1) que ingresaste no es válida. Por favor, ten en cuenta que no puedes introducir un nombre de usuario.',
-	'globalblocking-block-expiryinvalid' => 'La expiración que ingresó ($1) es inválida.',
+	'globalblocking-block-expiryinvalid' => 'La caducidad que introdujo ($1) es inválida.',
 	'globalblocking-block-submit' => 'Bloquear esta dirección IP globalmente',
 	'globalblocking-modify-submit' => 'Modificar este bloqueo global',
 	'globalblocking-block-success' => 'La dirección IP $1 ha sido bloqueada con éxito en todos los proyectos.',
@@ -1544,10 +1544,10 @@ Algunos bloqueos están marcados como desactivados localmente: esto significa qu
 	'globalblocking-list-ipinvalid' => 'La dirección IP que buscaste ($1) no es válida.
 Por favor, introduce una dirección IP válida.',
 	'globalblocking-search-errors' => 'Tu búsqueda no tuvo éxito por {{PLURAL:$1|la siguiente razón|las siguientes razones}}:',
-	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') bloqueó globalmente [[Special:Contributions/\$4|\$4]] ''(\$5)''",
+	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') bloqueó globalmente a [[Special:Contributions/\$4|\$4]] ''(\$5)''",
 	'globalblocking-list-expiry' => 'expira $1',
 	'globalblocking-list-anononly' => 'sólo anónimos',
-	'globalblocking-list-unblock' => 'remover',
+	'globalblocking-list-unblock' => 'desbloquear',
 	'globalblocking-list-whitelisted' => 'desactivado localmente por $1: $2',
 	'globalblocking-list-whitelist' => 'estatus local',
 	'globalblocking-list-modify' => 'modificar',
@@ -1588,16 +1588,17 @@ Si un bloqueo global está desactivado en esta wiki, los usuarios de la direcci�
 	'globalblocking-blocked' => "'''$1''' (''$2'') bloqueó su dirección IP en todos los wikis.
 El motivo dado fue ''«$3»''.
 El bloqueo ''$4''.",
+	'globalblocking-blocked-nopassreset' => 'No puede resetear las claves de los usuarios porque usted está bloqueado globalmente.',
 	'globalblocking-logpage' => 'Registro de bloqueos globales',
 	'globalblocking-logpagetext' => 'Esta es una lista de bloqueos globales los cuales han sido hechos y removidos en este wiki.
 Debería ser notado que los bloqueos globales pueden ser hechos y removidos en otros wikis, y que estos bloqueos globales pueden afectar este wiki.
 Para ver todos los bloqueos globales activos, usted puede ver [[Special:GlobalBlockList|lista de bloqueos globales]].',
-	'globalblocking-block-logentry' => 'bloqueado globalmente [[$1]] con un tiempo de expiración de $2',
-	'globalblocking-block2-logentry' => 'Bloqueado globalmente [[$1]] ($2)',
-	'globalblocking-unblock-logentry' => 'removido bloqueo global en [[$1]]',
+	'globalblocking-block-logentry' => 'bloqueó globalmente a [[$1]] con un tiempo de caducidad de $2',
+	'globalblocking-block2-logentry' => 'bloqueó globalmente a [[$1]] ($2)',
+	'globalblocking-unblock-logentry' => 'desactivado el bloqueo global en [[$1]]',
 	'globalblocking-whitelist-logentry' => 'desactivó el bloqueo global en [[$1]] localmente',
 	'globalblocking-dewhitelist-logentry' => 'Se reactivó el bloqueo global en [[$1]] localmente',
-	'globalblocking-modify-logentry' => 'modificado el bloqueo global en [[$1]] ($2)',
+	'globalblocking-modify-logentry' => 'modificó el bloqueo global en [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'caduca el $1',
 	'globalblocking-logentry-noexpiry' => 'sin fecha de caducidad',
 	'globalblocklist' => 'Lista de direcciones IP bloqueadas globalmente',
@@ -1605,8 +1606,9 @@ Para ver todos los bloqueos globales activos, usted puede ver [[Special:GlobalBl
 	'globalblockstatus' => 'Estatus local de bloqueos globales',
 	'removeglobalblock' => 'Quitar un bloqueo global',
 	'right-globalblock' => 'Hacer bloqueos globales',
-	'right-globalunblock' => 'Remover bloqueos globales',
+	'right-globalunblock' => 'Quitar un bloqueo global',
 	'right-globalblock-whitelist' => 'Desactivar bloqueos globales localmente',
+	'right-globalblock-exempt' => 'Eludir bloqueos globales',
 );
 
 /** Estonian (Eesti)
@@ -2808,6 +2810,7 @@ Pro vider tote le blocadas global active, tu pote vider le [[Special:GlobalBlock
 );
 
 /** Indonesian (Bahasa Indonesia)
+ * @author Bennylin
  * @author Irwangatot
  * @author Rex
  */
@@ -2851,7 +2854,7 @@ Harap masukkan alamat IP yang sah.',
 	'globalblocking-list-anononly' => 'hanya pengguna anonim',
 	'globalblocking-list-unblock' => 'hapuskan',
 	'globalblocking-list-whitelisted' => 'dinon-aktifkan di wiki lokal oleh $1: $2',
-	'globalblocking-list-whitelist' => 'status di wiki lokal',
+	'globalblocking-list-whitelist' => 'status lokal',
 	'globalblocking-list-modify' => 'ubah',
 	'globalblocking-goto-block' => 'Memblokir alamat IP secara global',
 	'globalblocking-goto-unblock' => 'Menghapuskan pemblokiran global',
@@ -2875,7 +2878,7 @@ Ingat, Anda tidak dapat memasukkan nama pengguna!',
 jadi status lokal dari suatu pemblokiran global tidak dapat diubah.',
 	'globalblocking-whitelist-legend' => 'Mengubah status di wiki lokal',
 	'globalblocking-whitelist-reason' => 'Alasan perubahan:',
-	'globalblocking-whitelist-status' => 'Status di wiki lokal:',
+	'globalblocking-whitelist-status' => 'Status lokal:',
 	'globalblocking-whitelist-statuslabel' => 'Menon-aktifkan pemblokiran global ini di {{SITENAME}}',
 	'globalblocking-whitelist-submit' => 'Mengubah status di wiki lokal',
 	'globalblocking-whitelist-whitelisted' => "Anda telah berhasil membatalkan pemblokiran global #$2 atas alamat IP '''$1''' di {{SITENAME}}.",
