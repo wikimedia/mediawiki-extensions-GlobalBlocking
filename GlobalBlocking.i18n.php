@@ -1773,6 +1773,7 @@ Anna kelvollinen IP-osoite.',
 	'globalblocking-list-unblock' => 'poista',
 	'globalblocking-list-whitelisted' => 'paikallisesti poiskytketty käyttäjän $1 toimesta: $2',
 	'globalblocking-list-whitelist' => 'paikallinen tila',
+	'globalblocking-list-modify' => 'muuta',
 	'globalblocking-goto-block' => 'Estä IP-osoite globaalisti',
 	'globalblocking-goto-unblock' => 'Poista globaaliesto',
 	'globalblocking-goto-status' => 'Vaihda globaalin eston paikallista tilaa',
@@ -2787,6 +2788,7 @@ dunque le stato local del blocadas global non pote esser modificate.',
 	'globalblocking-blocked' => "Tu adresse IP ha essite blocate in tote le wikis per '''\$1''' (''\$2'').
 Le motivo date esseva ''\"\$3\"''.
 Le blocada ''\$4''.",
+	'globalblocking-blocked-nopassreset' => 'Tu non pote reinitialisar le contrasignos de usatores proque tu ha essite blocate globalmente.',
 	'globalblocking-logpage' => 'Registro de blocadas global',
 	'globalblocking-logpagetext' => 'Isto es un registro de blocadas global que ha essite facite e removite in iste wiki.
 Il debe esser notate que le blocadas global pote esser facite e removite in altere wikis, e que iste blocadas global pote afficer etiam iste wiki.
