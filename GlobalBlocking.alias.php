@@ -160,10 +160,10 @@ $aliases['ia'] = array(
 
 /** Indonesian (Bahasa Indonesia) */
 $aliases['id'] = array(
-	'GlobalBlock' => array( 'Pemblokiran global' ),
-	'GlobalBlockList' => array( 'Daftar pemblokiran global' ),
-	'RemoveGlobalBlock' => array( 'Batal pemblokiran global' ),
-	'GlobalBlockStatus' => array( 'Daftar pemblokiran global nonaktif' ),
+	'GlobalBlock' => array( 'Pemblokiran global', 'Pemblokiran global' ),
+	'GlobalBlockList' => array( 'Daftar pemblokiran global', 'DaftarPemblokiranGlobal' ),
+	'RemoveGlobalBlock' => array( 'Batalkan pemblokiran global', 'BatalkanPemblokiranGlobal' ),
+	'GlobalBlockStatus' => array( 'Daftar putih pemblokiran global', 'DaftarPutihPemblokiranGlobal' ),
 );
 
 /** Italian (Italiano) */
