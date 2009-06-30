@@ -3153,7 +3153,9 @@ Tulung digatèkaké yèn panjenengan ora bisa nglebokaké jeneng panganggo!',
 	'globalblocking-block-success' => 'Alamat IP $1 bisa diblokir sacara suksès ing kabèh proyèk Wikimedia.
 Panjenengan mbok-menawa kersa mirsani [[Special:GlobalBlockList|daftar blokade global]].',
 	'globalblocking-block-successsub' => 'Pamblokiran global bisa kasil suksès',
-	'globalblocking-block-alreadyblocked' => 'Alamat IP $1 wis diblokir sacara global. Panjenengan bisa ndeleng blokade sing ana ing kaca [[Special:GlobalBlockList|daftar blokade global]].',
+	'globalblocking-block-alreadyblocked' => 'Alamat IP $1 wis diblokir sacara global. 
+Panjenengan bisa mirsani blokade sing ana ing [[Special:GlobalBlockList|dhaptar blokade global]],
+utawa owahi status pamblokiran sing ana kanthi ngirimaké manèh formulir iki.',
 	'globalblocking-block-bigrange' => 'Rentang sing panjenengan lebokaké ($1) kekamban kanggo diblokir.
 Panjenengan bisa mblokir, paling akèh, 65.536 alamat (/16 rentang)',
 	'globalblocking-list-intro' => 'Iki dhaptar kabèh pamblokiran global sing ana.
