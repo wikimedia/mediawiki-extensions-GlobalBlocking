@@ -372,6 +372,15 @@ $messages['ar'] = array(
 	'right-globalblock-exempt' => 'تجاوز عمليات المنع العامة',
 );
 
+/** Aramaic (ܐܪܡܝܐ)
+ * @author Basharh
+ */
+$messages['arc'] = array(
+	'globalblocking-block-expiry-otherfield' => 'ܥܕܢܐ ܐܚܪܬܐ:',
+	'globalblocking-block-options' => 'ܓܒܝܬ̈ܐ',
+	'globalblocking-whitelist-reason' => 'ܥܠܬܐ ܠܫܚܠܦܬܐ:',
+);
+
 /** Egyptian Spoken Arabic (مصرى)
  * @author Meno25
  * @author Ramsis II
