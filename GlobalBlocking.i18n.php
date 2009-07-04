@@ -1606,7 +1606,7 @@ Para ver todos los bloqueos globales activos, usted puede ver [[Special:GlobalBl
 	'globalblocking-block2-logentry' => 'bloqueó globalmente a [[$1]] ($2)',
 	'globalblocking-unblock-logentry' => 'desactivado el bloqueo global en [[$1]]',
 	'globalblocking-whitelist-logentry' => 'desactivó el bloqueo global en [[$1]] localmente',
-	'globalblocking-dewhitelist-logentry' => 'Se reactivó el bloqueo global en [[$1]] localmente',
+	'globalblocking-dewhitelist-logentry' => 'reactivó localmente el bloqueo global en [[$1]]',
 	'globalblocking-modify-logentry' => 'modificó el bloqueo global en [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'caduca el $1',
 	'globalblocking-logentry-noexpiry' => 'sin fecha de caducidad',
@@ -3722,18 +3722,22 @@ Alle globale blokkades stoan in de [[Special:GlobalBlockList|liest met globale b
 
 /** Lithuanian (Lietuvių)
  * @author Homo
+ * @author Matasg
  */
 $messages['lt'] = array(
 	'globalblocking-block' => 'Visuotinai blokuoti IP adresą',
 	'globalblocking-block-reason' => 'Blokavimo priežastis:',
 	'globalblocking-block-expiry' => 'Blokavimas galioja iki:',
 	'globalblocking-block-expiry-otherfield' => 'Kitas laikas:',
+	'globalblocking-block-legend' => 'Bloguoti naudotoją visuose projektuose',
 	'globalblocking-block-options' => 'Parinktys:',
 	'globalblocking-block-submit' => 'Visuotinai blokuoti šį IP adresą',
 	'globalblocking-block-successsub' => 'Visuotinis blokavimas pavyko',
 	'globalblocking-search-ip' => 'IP adresas:',
 	'globalblocking-search-submit' => 'Ieškoti blokavimų',
 	'globalblocking-list-anononly' => 'tik anonimai',
+	'globalblocking-list-unblock' => 'pašalinti',
+	'globalblocking-list-whitelist' => 'vietinis statusas',
 	'globalblocking-unblock-reason' => 'Priežastis:',
 	'globalblocklist' => 'Visuotinai blokuotų IP adresų sąrašas',
 	'globalblock' => 'Visuotinai blokuoti IP adresą',
