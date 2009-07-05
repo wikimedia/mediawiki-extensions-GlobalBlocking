@@ -1065,6 +1065,20 @@ $messages['cy'] = array(
 	'globalblocking-logpage' => 'Lòg blocio wici-gyfan',
 );
 
+/** Danish (Dansk)
+ * @author Masz
+ */
+$messages['da'] = array(
+	'globalblocking-whitelist-legend' => 'Ændr lokal status',
+	'globalblocking-whitelist-reason' => 'Årsag til ændring:',
+	'globalblocking-whitelist-status' => 'Lokal status:',
+	'globalblocking-whitelist-statuslabel' => 'Ophæv global blokering på {{SITENAME}}',
+	'globalblocking-whitelist-intro' => 'Du kan bruge denne formular, til at ophæve en global blokering lokalt. Hvis blokeringen bliver ophævet, kan den globalt blokerede bruger redigere sider normalt. Se også [[Special:GlobalBlockList|loggen for globale blokeringer]].',
+	'right-globalblock' => 'Blokere brugere globalt',
+	'right-globalunblock' => 'Ophæve globale blokeringer',
+	'right-globalblock-whitelist' => 'Ophæve globale blokeringer lokalt',
+);
+
 /** German (Deutsch)
  * @author MF-Warburg
  * @author Metalhead64
@@ -5130,8 +5144,8 @@ $messages['sah'] = array(
 	'globalblocking-whitelist-status' => 'Олохтоох (локальнай) турук:',
 	'globalblocking-whitelist-statuslabel' => 'Бу бобууну {{SITENAME}} саайтыгар араар',
 	'globalblocking-whitelist-submit' => 'Олохтоох (локальнай) туругу уларытыы',
-	'globalblocking-whitelist-whitelisted' => "IP-ны '''$1''' {{SITENAME}} саайтыгар хааччахтаныытын уһуллуҥ.",
-	'globalblocking-whitelist-dewhitelisted' => "IP '''$1''' {{SITENAME}} саайтыгар бобуллуутун сөпкө төннөрдүҥ.",
+	'globalblocking-whitelist-whitelisted' => "IP-ны '''$1''' {{SITENAME}} саайтыгар #$2 хааччахтаныытын уһуллуҥ.",
+	'globalblocking-whitelist-dewhitelisted' => "IP '''$1''' {{SITENAME}} саайтыгар #$2 бобуллуутун сөпкө төннөрдүҥ.",
 	'globalblocking-whitelist-successsub' => 'Олохтоох (локал) статус сөпкө уларыйда',
 	'globalblocking-whitelist-nochange' => 'Бу бобуу олохтоох (локал) туругун уларыппатыҥ.
 [[Special:GlobalBlockList|Бобуу тиһигэр төнүн]].',
@@ -5142,6 +5156,7 @@ $messages['sah'] = array(
 	'globalblocking-blocked' => "Эн IP-гыттан бары биикилэргэ киирэри '''\$1''' (''\$2'') боппут.
 Ыйыллыбыт төрүөтэ: ''\"\$3\"''.
 Бобуу ''\$4''.",
+	'globalblocking-blocked-nopassreset' => 'Атыттар киирии тылларын сотор кыаҕыҥ суох, тоҕо диэтэххэ эн бэлиэтэммит аатыҥ үрдүк таһымҥа хааччахтаммыт.',
 	'globalblocking-logpage' => 'Бырайыактар ыккардыларынааҕы бобуу сурунаала',
 	'globalblocking-logpagetext' => 'Бырайыактар ыккардыларынааҕы бобуу сурунаала, манна хааччахтааһыны туруоруу уонна ону устуу суруллар.
 Бырайыак ыккардыларынааҕы бобуу атын биикигэ туруоруллубут буолуон сөп, оччоҕо ол бобуу бу биикигэ эмиэ үлэлиир.
@@ -5161,6 +5176,7 @@ $messages['sah'] = array(
 	'right-globalblock' => 'Бырайыактарга барыларыгар дьайар бобууну туруоруу',
 	'right-globalunblock' => 'бобууну устуу',
 	'right-globalblock-whitelist' => 'бырайыактарга барытыгар дьайар бобуулары араарыы',
+	'right-globalblock-exempt' => 'Үрдүк таһымҥа бобууну тумнуу',
 );
 
 /** Sardinian (Sardu)
