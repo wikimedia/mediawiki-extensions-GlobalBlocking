@@ -4568,6 +4568,7 @@ $messages['os'] = array(
  * @author Xqt
  */
 $messages['pdc'] = array(
+	'globalblocking-list-modify' => 'ennere',
 	'globalblocking-unblock-reason' => 'Grund:',
 	'globalblocking-logentry-expiry' => 'bis $1',
 );
