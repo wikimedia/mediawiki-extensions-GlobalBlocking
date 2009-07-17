@@ -161,7 +161,11 @@ class SpecialGlobalBlock extends SpecialPage {
 
 		$form .= Xml::openElement( 'fieldset' ) .
 			Xml::element( 'legend', null, wfMsg( 'globalblocking-block-legend' ) );
-		$form .= Xml::openElement( 'form', array( 'method' => 'post', 'action' => $wgScript, 'name' => 'uluser' ) );
+		$form .= Xml::openElement( 'form',
+									array( 'method' => 'post',
+											'action' => $wgScript,
+											'name' => 'uluser',
+											'id' => 'mw-globalblock-form' ) );
 		$form .= Xml::hidden( 'title',  SpecialPage::getTitleFor('GlobalBlock')->getPrefixedText() );
 
 		$fields = array ();
