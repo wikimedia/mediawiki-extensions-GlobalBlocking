@@ -3753,6 +3753,7 @@ $messages['lt'] = array(
 	'globalblocking-list-unblock' => 'pašalinti',
 	'globalblocking-list-whitelist' => 'vietinis statusas',
 	'globalblocking-unblock-reason' => 'Priežastis:',
+	'globalblocking-logpage' => 'Visuotinio blokavimo sąrašas',
 	'globalblocklist' => 'Visuotinai blokuotų IP adresų sąrašas',
 	'globalblock' => 'Visuotinai blokuoti IP adresą',
 );
@@ -5591,6 +5592,7 @@ $messages['te'] = array(
 	'globalblocking-block-expiry-otherfield' => 'ఇతర సమయం:',
 	'globalblocking-block-options' => 'ఎంపికలు:',
 	'globalblocking-search-ip' => 'IP చిరునామా:',
+	'globalblocking-list-unblock' => 'తొలగించు',
 	'globalblocking-list-whitelist' => 'స్థానిక స్థితి',
 	'globalblocking-unblock-reason' => 'కారణం:',
 	'globalblocking-whitelist-legend' => 'స్థానిక స్థితి మార్పు',
