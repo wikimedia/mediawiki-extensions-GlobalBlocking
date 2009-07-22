@@ -160,7 +160,7 @@ $aliases['ia'] = array(
 
 /** Indonesian (Bahasa Indonesia) */
 $aliases['id'] = array(
-	'GlobalBlock' => array( 'Pemblokiran global', 'Pemblokiran global' ),
+	'GlobalBlock' => array( 'Pemblokiran global', 'PemblokiranGlobal' ),
 	'GlobalBlockList' => array( 'Daftar pemblokiran global', 'DaftarPemblokiranGlobal' ),
 	'RemoveGlobalBlock' => array( 'Batalkan pemblokiran global', 'BatalkanPemblokiranGlobal' ),
 	'GlobalBlockStatus' => array( 'Daftar putih pemblokiran global', 'DaftarPutihPemblokiranGlobal' ),
@@ -299,6 +299,14 @@ $aliases['sa'] = array(
 	'GlobalBlockList' => array( 'वैश्विकप्रतिबन्धसूची' ),
 	'RemoveGlobalBlock' => array( 'वैश्विकअप्रतिबन्ध' ),
 	'GlobalBlockStatus' => array( 'वैश्विकअप्रतिबन्धसूची' ),
+);
+
+/** Slovak (Slovenčina) */
+$aliases['sk'] = array(
+	'GlobalBlock' => array( 'GlobálneBlokovanie' ),
+	'GlobalBlockList' => array( 'ZoznamGlobálnehoBlokovania' ),
+	'RemoveGlobalBlock' => array( 'GlobálneOdblokovanie' ),
+	'GlobalBlockStatus' => array( 'BielaListinaGlobálnehoBlokovania' ),
 );
 
 /** Swedish (Svenska) */
