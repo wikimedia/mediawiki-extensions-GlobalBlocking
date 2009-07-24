@@ -134,6 +134,7 @@ To view all active global blocks, you may view the [[Special:GlobalBlockList|glo
  * @author Raymond
  * @author Siebrand
  * @author Tgr
+ * @author Umherirrender
  * @author Urhixidur
  */
 $messages['qqq'] = array(
@@ -168,7 +169,7 @@ $messages['qqq'] = array(
 * <code>$1</code> is the username of the blocking user (steward), with link
 * <code>$2</code> is the project name where the user is registered (usually “meta.wikimedia.org” on Wikimedia servers)
 * <code>$3</code> is the reason specified by the blocking user
-* <code>$4</code> is either the contents of [[MediaWiki:Infiniteblock]] (''{{int:Infiniteblock}}''), or [[MediaWiki:Expiringblock]] (''{{int:Expiringblock}}'') with the expiry time",
+* <code>$4</code> is either the contents of {{msg-mw|Infiniteblock}} (''{{int:Infiniteblock}}''), or {{msg-mw|Expiringblock}} (''{{int:Expiringblock}}'') with the expiry time",
 	'globalblocking-logpagetext' => 'Shown as header of [[Special:Log/gblblock]] (part of [[mw:Extension:GlobalBlocking|Extension:GlobalBlocking]], which is not installed on translatewiki.net; example: [[wikipedia:Special:Log/gblblock]])',
 	'globalblocking-block2-logentry' => '* $1 is a link to a user page of the form User:Name
 * $2 is a reason for the action.',
@@ -1080,6 +1081,7 @@ $messages['da'] = array(
 );
 
 /** German (Deutsch)
+ * @author Lukas9950
  * @author MF-Warburg
  * @author Metalhead64
  * @author Purodha
