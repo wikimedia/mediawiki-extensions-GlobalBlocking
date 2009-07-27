@@ -1757,6 +1757,7 @@ $messages['fa'] = array(
 
 /** Finnish (Suomi)
  * @author Agony
+ * @author Cimon Avaro
  * @author Crt
  * @author Jaakonam
  * @author Nike
@@ -1838,6 +1839,8 @@ Kaikki voimassa olevat globaaliestot ovat [[Special:GlobalBlockList|globaaliesto
 	'globalblocking-unblock-logentry' => 'poisti IP-osoitteen [[$1]] globaalin eston',
 	'globalblocking-whitelist-logentry' => 'kytki globaalin eston [[$1]] pois paikallisesti',
 	'globalblocking-dewhitelist-logentry' => 'kytki globaalin eston [[$1]] uudelleen paikallisesti',
+	'globalblocking-logentry-expiry' => 'vanhenee $1',
+	'globalblocking-logentry-noexpiry' => 'vanhentumisaikaa ei asetettu',
 	'globalblocklist' => 'Globaalisti estetyt IP-osoitteet',
 	'globalblock' => 'Estä IP-osoite globaalisti',
 	'globalblockstatus' => 'Globaalien estojen paikallinen tila',
