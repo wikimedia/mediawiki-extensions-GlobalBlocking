@@ -1767,6 +1767,7 @@ $messages['fa'] = array(
 $messages['fi'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Mahdollistaa]] IP-osoitteiden [[Special:GlobalBlockList|estämisen useasta wikistä kerralla]].',
 	'globalblocking-block' => 'Estä IP-osoite globaalisti',
+	'globalblocking-modify-intro' => 'Voit käyttää tätä lomaketta muuttaaksesi globaaliestojen asetuksia.',
 	'globalblocking-block-intro' => 'Voit käyttää tätä sivua IP-osoitteen estämiseen kaikista wikeistä.',
 	'globalblocking-block-reason' => 'Perustelu',
 	'globalblocking-block-expiry' => 'Kesto',
@@ -1779,8 +1780,11 @@ $messages['fi'] = array(
 Huomaathan ettet voi syöttää käyttäjätunnusta.',
 	'globalblocking-block-expiryinvalid' => 'Antamasi eston kesto ”$1” oli virheellinen.',
 	'globalblocking-block-submit' => 'Estä tämä IP-osoite globaalisti',
+	'globalblocking-modify-submit' => 'Muuta tätä globaaliestoa',
 	'globalblocking-block-success' => 'IP-osoite $1 on estetty kaikissa projekteissa.',
+	'globalblocking-modify-success' => 'Käyttäjän $1 globaaliestoa on onnistuneesti muutettu',
 	'globalblocking-block-successsub' => 'Globaaliesto onnistui',
+	'globalblocking-modify-successsub' => 'Globaaliestoa muutettu onnistuneesti',
 	'globalblocking-block-alreadyblocked' => 'IP-osoite $1 on jo estetty globaalisti.
 Voit tarkastella estoa [[Special:GlobalBlockList|globaalien estojen luettelosta]]
 tai muokata nykyisen eston asetuksia lähettämällä tämän lomakkeen uudelleen.',
@@ -1817,6 +1821,8 @@ Huomaathan ettet voi syöttää käyttäjätunnusta!',
 	'globalblocking-unblock-subtitle' => 'Globaalieston poisto',
 	'globalblocking-unblock-intro' => 'Voit käyttää tätä lomaketta globaalin eston poistamiseksi. Voit myös palata takaisin [[Special:GlobalBlockList|globaalien estojen listaan]].',
 	'globalblocking-whitelist' => 'Globaalien estojen paikallinen tila',
+	'globalblocking-whitelist-notapplied' => 'Globaaliestoja ei sovelleta tässä wikissä, 
+joten paikallisten globaaliestojen tilaa ei voi muuttaa.',
 	'globalblocking-whitelist-legend' => 'Vaihda paikallinen tila',
 	'globalblocking-whitelist-reason' => 'Perustelu',
 	'globalblocking-whitelist-status' => 'Paikallinen tila:',
@@ -1831,14 +1837,17 @@ Huomaathan ettet voi syöttää käyttäjätunnusta!',
 	'globalblocking-blocked' => "'''$1''' (''$2'') on estänyt IP-osoitteesi kaikissa wikeissä.
 Syy: ''$3''
 Esto: ''$4''",
+	'globalblocking-blocked-nopassreset' => 'Et voi nollata käyttäjien salasanoja, koska sinulla on globaaliesto.',
 	'globalblocking-logpage' => 'Globaaliestoloki',
 	'globalblocking-logpagetext' => 'Tämä on loki tässä wikissä tehdyistä ja poistetuista globaaliestoista.
 Globaaliestoja voi tehdä ja poistaa myös muissa wikeissä, ja ne voivat vaikuttaa tähän wikiin.
 Kaikki voimassa olevat globaaliestot ovat [[Special:GlobalBlockList|globaaliestojen listalla]].',
 	'globalblocking-block-logentry' => 'globaalisti estetty [[$1]], vanhenemisaika $2',
+	'globalblocking-block2-logentry' => 'esti globaalisti käyttäjän [[$1]] ($2)',
 	'globalblocking-unblock-logentry' => 'poisti IP-osoitteen [[$1]] globaalin eston',
 	'globalblocking-whitelist-logentry' => 'kytki globaalin eston [[$1]] pois paikallisesti',
 	'globalblocking-dewhitelist-logentry' => 'kytki globaalin eston [[$1]] uudelleen paikallisesti',
+	'globalblocking-modify-logentry' => 'muutti globaaliestoa käyttäjälle [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'vanhenee $1',
 	'globalblocking-logentry-noexpiry' => 'vanhentumisaikaa ei asetettu',
 	'globalblocklist' => 'Globaalisti estetyt IP-osoitteet',
@@ -1848,6 +1857,7 @@ Kaikki voimassa olevat globaaliestot ovat [[Special:GlobalBlockList|globaaliesto
 	'right-globalblock' => 'Estää globaalisti',
 	'right-globalunblock' => 'Poistaa globaaleja estoja',
 	'right-globalblock-whitelist' => 'Poiskytkeä globaaleja estoja paikallisesti',
+	'right-globalblock-exempt' => 'Ohittaa globaaliestot',
 );
 
 /** French (Français)
@@ -3533,6 +3543,7 @@ Dobei donn se ävver och för hee dat Wiki wirke.
 );
 
 /** Luxembourgish (Lëtzebuergesch)
+ * @author Les Meloures
  * @author Robby
  */
 $messages['lb'] = array(
@@ -3568,7 +3579,7 @@ E puer Spären sinn lokal ausgeschalt: dat heescht si si just op anere Site gël
 	'globalblocking-search-submit' => 'Späre sichen',
 	'globalblocking-list-ipinvalid' => "D'IP-adress no däer Dir Gesicht hutt ($1) ass net korrekt.
 Gitt w.e.g eng korrekt IP-Adress an.",
-	'globalblocking-search-errors' => 'Bäi ärer Sich gouf, aus {{PLURAL:$1|dësem Grond|dëse Grënn}} näischt fonnt:',
+	'globalblocking-search-errors' => 'Bei ärer Sich gouf, aus {{PLURAL:$1|dësem Grond|dëse Grënn}} näischt fonnt:',
 	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (vu(n) ''\$3'') huet [[Special:Contributions/\$4|\$4]] global gespaart ''(\$5)''",
 	'globalblocking-list-expiry' => 'Dauer vun der Spär $1',
 	'globalblocking-list-anononly' => 'nëmmen anonym Benotzer',
