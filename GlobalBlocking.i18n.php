@@ -1639,6 +1639,7 @@ Para ver todos los bloqueos globales activos, usted puede ver [[Special:GlobalBl
 /** Estonian (Eesti)
  * @author Jaan513
  * @author Ker
+ * @author Pikne
  * @author WikedKentaur
  */
 $messages['et'] = array(
@@ -1646,18 +1647,30 @@ $messages['et'] = array(
 	'globalblocking-search-ip' => 'IP aadress:',
 	'globalblocking-whitelist' => 'Globaalsete blokeeringute lokaalne olek',
 	'globalblocking-logpage' => 'Globaalne blokeerimise logi',
+	'globalblocklist' => 'Globaalselt blokeeritud IP-aadresside loend',
 );
 
 /** Basque (Euskara)
  * @author An13sa
+ * @author Kobazulo
  */
 $messages['eu'] = array(
 	'globalblocking-block-reason' => 'Blokeoaren arrazoia:',
 	'globalblocking-block-expiry' => 'Blokeoaren iraungipena:',
 	'globalblocking-block-options' => 'Aukerak:',
+	'globalblocking-search-legend' => 'Blokeo global bat bilatu',
 	'globalblocking-search-ip' => 'IP helbidea:',
+	'globalblocking-search-submit' => 'Blokeoak bilatu',
+	'globalblocking-list-anononly' => 'anonimoak bakarrik',
 	'globalblocking-list-unblock' => 'kendu',
+	'globalblocking-list-modify' => 'aldatu',
+	'globalblocking-goto-unblock' => 'Blokeo global bat kendu',
+	'globalblocking-unblock' => 'Blokeo global bat kendu',
+	'globalblocking-unblock-legend' => 'Blokeo global bat kendu',
+	'globalblocking-unblock-submit' => 'Blokeo globala kendu',
 	'globalblocking-unblock-reason' => 'Arrazoia:',
+	'globalblocking-unblock-successsub' => 'Blokeo globala ongi kendu da',
+	'globalblocking-unblock-subtitle' => 'Blokeo globala kentzen',
 	'globalblocking-whitelist-reason' => 'Aldaketaren arrazoia:',
 );
 
@@ -5376,6 +5389,7 @@ Všetky aktívne blokovania si môžete pozrieť na [[Special:GlobalBlockList|zo
 $messages['sr-ec'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Омогућује]] [[Special:GlobalBlockList|глобално блокирање]] ИП адреса на више викија',
 	'globalblocking-block' => 'Глобално блокирајте ИП адресу',
+	'globalblocking-modify-intro' => 'Овом формом мењате подешавања глобалног блока.',
 	'globalblocking-block-intro' => 'Можете користити ову страницу да блокирате ИП адресу на свим викијима.',
 	'globalblocking-block-reason' => 'Разлог блока:',
 	'globalblocking-block-expiry' => 'Блок истиче:',
@@ -5388,8 +5402,11 @@ $messages['sr-ec'] = array(
 Запамтите да не можете унети корисничко име!',
 	'globalblocking-block-expiryinvalid' => 'Време истека блока које сте унели ($1) није исправно.',
 	'globalblocking-block-submit' => 'Блокирајте ову ИП адресу глобално',
+	'globalblocking-modify-submit' => 'Промени овај глобални блок',
 	'globalblocking-block-success' => 'Ип адреса $1 је успешно блокирана на свим Викимедијиним пројектима.',
+	'globalblocking-modify-success' => 'Глобални блок на $1 је успешно промењен',
 	'globalblocking-block-successsub' => 'Успешан глобални блок',
+	'globalblocking-modify-successsub' => 'Глобални блок је успешно промењен',
 	'globalblocking-block-alreadyblocked' => 'ИП адреса $1 је већ блокирана глобално. Можете погледати списак постојећих [[Special:GlobalBlockList|глобалних блокова]].',
 	'globalblocking-list' => 'Списак глобално блокираних ИП адреса',
 	'globalblocking-search-legend' => 'Претражите глобалне блокове',
