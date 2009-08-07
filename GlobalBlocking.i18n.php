@@ -1643,11 +1643,25 @@ Para ver todos los bloqueos globales activos, usted puede ver [[Special:GlobalBl
  * @author WikedKentaur
  */
 $messages['et'] = array(
+	'globalblocking-list-intro' => 'Siin on loetletud globaalsed blokeeringud, mis on praegu jõus.
+Mõned blokeeringud on märgitud kui siin vikis välja lülitatud – see tähendab, et blokeering kehtib teistes vikides, aga siinne ülem on otsustanud, et siin pole vastavat blokeeringut vaja.',
 	'globalblocking-list' => 'Globaalselt blokeeritud IP-aadresside loend',
-	'globalblocking-search-ip' => 'IP aadress:',
-	'globalblocking-whitelist' => 'Globaalsete blokeeringute lokaalne olek',
+	'globalblocking-search-legend' => 'Globaalse blokeeringu otsimine',
+	'globalblocking-search-ip' => 'IP-aadress:',
+	'globalblocking-search-submit' => 'Otsi blokeeringuid',
+	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') blokeeris globaalselt kasutaja [[Special:Contributions/\$4|\$4]] ''(\$5)''",
+	'globalblocking-list-anononly' => 'ainult nimetuna',
+	'globalblocking-list-whitelisted' => '$1 lülitas siin vikis blokeeringu välja: $2',
+	'globalblocking-goto-block' => 'Blokeeri IP-aadress globaalselt',
+	'globalblocking-goto-unblock' => 'Eemalda globaalne blokeering',
+	'globalblocking-goto-status' => 'Muuda globaalse blokeeringu kohalikku olekut',
+	'globalblocking-whitelist' => 'Globaalsete blokeeringute kohalik olek',
 	'globalblocking-logpage' => 'Globaalne blokeerimise logi',
 	'globalblocklist' => 'Globaalselt blokeeritud IP-aadresside loend',
+	'right-globalblock' => 'Blokeerida globaalselt',
+	'right-globalunblock' => 'Eemaldada globaalseid blokeeringuid',
+	'right-globalblock-whitelist' => 'Kohalikus vikis globaalseid blokeeringuid välja lülitada',
+	'right-globalblock-exempt' => 'Mööduda globaalsetest blokeeringutest',
 );
 
 /** Basque (Euskara)
@@ -2676,10 +2690,12 @@ Rezon ki te bay la se ''\"\$3\"''. Tan expirasyon blòkaj la se ''\$4''.",
 /** Hungarian (Magyar)
  * @author Dani
  * @author Dorgan
+ * @author Glanthor Reviol
  */
 $messages['hu'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Lehetővé teszi]] IP-címek [[Special:GlobalBlockList|blokkolását]] egyszerre több wikiben',
 	'globalblocking-block' => 'IP-cím globális blokkolása',
+	'globalblocking-modify-intro' => 'Ezen az űrlapon módosíthatod egy globális blokk beállításait.',
 	'globalblocking-block-intro' => 'A lap segítségével az összes wikin blokkolhatsz egy IP-címet.',
 	'globalblocking-block-reason' => 'A blokk oka:',
 	'globalblocking-block-expiry' => 'A blokk lejárata:',
@@ -2692,10 +2708,14 @@ $messages['hu'] = array(
 Nem adhatsz meg felhasználói nevet!',
 	'globalblocking-block-expiryinvalid' => 'A megadott lejárati idő ($1) érvénytelen.',
 	'globalblocking-block-submit' => 'IP-cím blokkolása globálisan',
-	'globalblocking-block-success' => 'Az IP-cím sikeresen blokkolva lett az összes projekten.',
+	'globalblocking-modify-submit' => 'Globális blokk módosítása',
+	'globalblocking-block-success' => 'Az „$1” IP-cím sikeresen blokkolva lett az összes projekten.',
+	'globalblocking-modify-success' => '$1 globális blokkja sikeresen módosítva',
 	'globalblocking-block-successsub' => 'A globális blokkolás sikerült',
-	'globalblocking-block-alreadyblocked' => 'Az IP cím ($1) már blokkolva van globálisan.
-Az érvényben lévő blokkol listáját [[Special:GlobalBlockList|ezen a lapon]] tekintheted meg.',
+	'globalblocking-modify-successsub' => 'Globális blokk sikeresen módosítva',
+	'globalblocking-block-alreadyblocked' => 'Az $1 IP cím már blokkolva van globálisan.
+Az érvényben lévő blokkot a [[Special:GlobalBlockList|globális blokkok listájában]] tekintheted meg,
+vagy módosíthatod a jelenleg érvényben lévő blokk beállításait ezen űrlap elküldésével.',
 	'globalblocking-block-bigrange' => 'Az általad megadott tartomány ($1) túl nagy a blokkoláshoz.
 Legfeljebb 65 536 címet blokkolhatsz (/16-os tartományokat)',
 	'globalblocking-list-intro' => 'Ezen a lapon a jelenleg érvényben lévő globális blokkok listája látható.
@@ -2713,6 +2733,7 @@ Kérlek adj meg egy érvényes címet.',
 	'globalblocking-list-unblock' => 'eltávolítás',
 	'globalblocking-list-whitelisted' => 'helyben feloldotta $1: $2',
 	'globalblocking-list-whitelist' => 'helyi állapot',
+	'globalblocking-list-modify' => 'módosítás',
 	'globalblocking-goto-block' => 'IP-cím globális blokkolása',
 	'globalblocking-goto-unblock' => 'Globális blokk eltávolítása',
 	'globalblocking-goto-status' => 'Globális blokk helyi állapotának megváltoztatása',
@@ -2724,17 +2745,22 @@ Nem adhatsz meg felhasználói nevet!',
 	'globalblocking-unblock-legend' => 'Globális blokk eltávolítása',
 	'globalblocking-unblock-submit' => 'Globális blokk eltávolítása',
 	'globalblocking-unblock-reason' => 'Ok:',
+	'globalblocking-unblock-unblocked' => "Sikeresen eltávolítottad a(z) $2 azonosítójú globális blokkot a(z) '''$1''' IP-címről",
 	'globalblocking-unblock-errors' => 'A globális blokk eltávolítása sikertelen az alábbi {{PLURAL:$1|ok|okok}} miatt:',
 	'globalblocking-unblock-successsub' => 'Globális blokk sikeresen eltávolítva',
 	'globalblocking-unblock-subtitle' => 'Globális blokk eltávolítása',
 	'globalblocking-unblock-intro' => 'Az űrlap használatával eltávolíthatsz egy globális blokkot.
 [[Special:GlobalBlockList|Kattints ide]] a globális blokkok listájához való visszatéréshez.',
 	'globalblocking-whitelist' => 'Globális blokkok helyi állapota',
+	'globalblocking-whitelist-notapplied' => 'A globális blokkok nem érvényesek ezen a wikin,
+így a helyi állapotuk nem módosítható.',
 	'globalblocking-whitelist-legend' => 'Helyi állapot megváltoztatása',
 	'globalblocking-whitelist-reason' => 'Változtatás oka:',
 	'globalblocking-whitelist-status' => 'Helyi állapot:',
 	'globalblocking-whitelist-statuslabel' => 'A blokk feloldása a(z) {{SITENAME}} wikin',
 	'globalblocking-whitelist-submit' => 'Helyi állapot megváltoztatása',
+	'globalblocking-whitelist-whitelisted' => "Sikeresen kikapcsoltad a(z) '''$1''' IP-címre vonatkozó $2 azonosítójú blokkot a(z) {{SITENAME}} wikin.",
+	'globalblocking-whitelist-dewhitelisted' => "Sikeresen engedélyezted a(z) '''$1''' IP-címre vonatkozó $2 azonosítójú blokkot a(z) {{SITENAME}} wikin.",
 	'globalblocking-whitelist-successsub' => 'Helyi állapot sikeresen megváltoztatva',
 	'globalblocking-whitelist-nochange' => 'Nem változtattad meg a blokk helyi állapotát.
 [[Special:GlobalBlockList|Visszatérés a globális blokkok listájához]].',
@@ -2745,14 +2771,19 @@ Ha egy globális blokk fel van oldva ezen a wikin, az IP-címet használó szerk
 	'globalblocking-blocked' => "Az IP-címedet az összes wikin blokkolta '''$1''' (''$2'').
 A blokkolás oka: „$3”.
 A blokk ''$4''.",
+	'globalblocking-blocked-nopassreset' => 'Nem kérhetsz új jelszót, mert globálisan blokkolva vagy.',
 	'globalblocking-logpage' => 'Globális blokkolási napló',
 	'globalblocking-logpagetext' => 'Ez azon globális blokkok naplója, amelyet ezen a wikin készítettek és távolítottak el.
 Globális blokkokat más wikiken is készíthetnek és távolíthatnak el, ezek hatással lehetnek erre a wikire is.
 Az összes aktív blokk listáját a [[Special:GlobalBlockList|globális blokkok listáján]] találod meg.',
 	'globalblocking-block-logentry' => 'globálisan blokkolta [[$1]] szerkesztőt, $2 lejárati idővel',
+	'globalblocking-block2-logentry' => 'globálisan blokkolta [[$1]] szerkesztőt ($2)',
 	'globalblocking-unblock-logentry' => 'eltávolította [[$1]] globális blokkját',
 	'globalblocking-whitelist-logentry' => 'feloldotta [[$1]] globális blokkját helyileg',
 	'globalblocking-dewhitelist-logentry' => 'újra engedélyezte [[$1]] globális blokkját helyileg',
+	'globalblocking-modify-logentry' => 'módosította [[$1]] globális blokkját ($2)',
+	'globalblocking-logentry-expiry' => 'lejárat: $1',
+	'globalblocking-logentry-noexpiry' => 'nem adott meg lejárati időt',
 	'globalblocklist' => 'Globálisan blokkolt IP-címek listája',
 	'globalblock' => 'IP-cím globális blokkolása',
 	'globalblockstatus' => 'Globális blokkok helyi állapota',
@@ -2760,6 +2791,7 @@ Az összes aktív blokk listáját a [[Special:GlobalBlockList|globális blokkok
 	'right-globalblock' => 'globális blokkok készítése',
 	'right-globalunblock' => 'globális blokkok eltávolítása',
 	'right-globalblock-whitelist' => 'globális blokkok kikapcsolása helyileg',
+	'right-globalblock-exempt' => 'globális blokkok figyelmen kívül hagyása',
 );
 
 /** Interlingua (Interlingua)
