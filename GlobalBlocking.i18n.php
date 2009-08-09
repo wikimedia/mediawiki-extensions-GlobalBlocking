@@ -1637,12 +1637,28 @@ Para ver todos los bloqueos globales activos, usted puede ver [[Special:GlobalBl
 );
 
 /** Estonian (Eesti)
+ * @author Avjoska
  * @author Jaan513
  * @author Ker
  * @author Pikne
  * @author WikedKentaur
  */
 $messages['et'] = array(
+	'globalblocking-desc' => '[[Special:GlobalBlock|Lubab]] IP-aadresse [[Special:GlobalBlockList|korraga mitmetes vikides blokeerida]].',
+	'globalblocking-block' => 'Blokeeri IP-aadress globaalselt',
+	'globalblocking-modify-intro' => 'Seda vormi saad kasutada globaalse blokeeringu sätete muutmiseks.',
+	'globalblocking-block-intro' => 'Seda lehekülge saad IP-aadressi kõigis vikiprojektides blokeerimiseks kasutada.',
+	'globalblocking-block-reason' => 'Selle blokeeringu põhjus:',
+	'globalblocking-block-expiry' => 'Blokeeringu tähtaeg:',
+	'globalblocking-block-expiry-other' => 'Muu tähtaeg',
+	'globalblocking-block-expiry-otherfield' => 'Muu aeg:',
+	'globalblocking-block-legend' => 'Blokeeri kasutaja globaalselt',
+	'globalblocking-block-submit' => 'Blokeeri see IP-aadress globaalselt',
+	'globalblocking-modify-submit' => 'Muuda seda globaalset blokeeringut',
+	'globalblocking-block-success' => 'IP-aadress $1 on edukalt blokeeritud kõigis projektides.',
+	'globalblocking-modify-success' => 'Kasutaja $1 globaalne blokeering on edukalt muudetud',
+	'globalblocking-block-successsub' => 'Globaalne blokeering õnnestus',
+	'globalblocking-modify-successsub' => 'Globaalse blokeeringu muudatused õnnestusid',
 	'globalblocking-list-intro' => 'Siin on loetletud globaalsed blokeeringud, mis on praegu jõus.
 Mõned blokeeringud on märgitud kui siin vikis välja lülitatud – see tähendab, et blokeering kehtib teistes vikides, aga siinne ülem on otsustanud, et siin pole vastavat blokeeringut vaja.',
 	'globalblocking-list' => 'Globaalselt blokeeritud IP-aadresside loend',
@@ -3385,7 +3401,7 @@ $messages['km'] = array(
  * @author Kwj2772
  */
 $messages['ko'] = array(
-	'globalblocking-desc' => '특정 IP를 [[Special:GlobalBlockList|모든 위키에서]] [[Special:GlobalBlock|차단]]할 수 있는 권한을 줌',
+	'globalblocking-desc' => '특정 IP를 [[Special:GlobalBlockList|모든 위키]]에서 [[Special:GlobalBlock|차단]]하는 권한을 추가',
 	'globalblocking-block' => 'IP 주소를 모든 위키에서 차단',
 	'globalblocking-modify-intro' => '당신은 전체 차단 설정을 변경할 때 이 양식을 사용할 수 있습니다.',
 	'globalblocking-block-intro' => '당신은 모든 위키에서 특정 IP를 차단할 때 이 페이지를 사용할 수 있습니다.',
@@ -3402,6 +3418,7 @@ $messages['ko'] = array(
 	'globalblocking-block-submit' => '이 IP 주소를 전체 위키에서 차단',
 	'globalblocking-modify-submit' => '차단 설정 변경',
 	'globalblocking-block-success' => 'IP 주소 $1이 모든 프로젝트에서 성공적으로 차단되었습니다.',
+	'globalblocking-modify-success' => '$1 계정에 대한 광역 차단 설정이 변경되었습니다.',
 	'globalblocking-block-successsub' => '전체 차단 성공',
 	'globalblocking-modify-successsub' => '전체 차단 설정이 성공적으로 변경되었습니다.',
 	'globalblocking-block-alreadyblocked' => 'IP 주소 $1은 이미 전체적으로 차단되었습니다.
@@ -3416,7 +3433,7 @@ $messages['ko'] = array(
 	'globalblocking-search-submit' => '차단 찾기',
 	'globalblocking-list-ipinvalid' => '당신이 입력한 IP 주소 ($1)가 잘못되었습니다.
 유효한 IP 주소를 입력해주세요.',
-	'globalblocking-search-errors' => '당신의 검색이 성공적으로 진행되지 못했습니다. 다음의 이유를 확인해보세요:',
+	'globalblocking-search-errors' => '검색에 실패했습니다. 아래의 원인를 확인해주세요.',
 	'globalblocking-list-blockitem' => '$1: <span class="plainlinks">\'\'\'$2\'\'\'</span> ($3) 이(가) [[Special:Contributions/$4|$4]] 을(를) 전체 위키에서 차단하였습니다. ($5)',
 	'globalblocking-list-expiry' => '기한 $1',
 	'globalblocking-list-anononly' => '익명 사용자만',
@@ -3450,9 +3467,10 @@ $messages['ko'] = array(
 	'globalblocking-whitelist-whitelisted' => "{{SITENAME}}에서 IP 주소 '''$1'''에 대한 전체 차단 #$2를 비활성화하는 데 성공했습니다.",
 	'globalblocking-whitelist-dewhitelisted' => "{{SITENAME}}에서 IP 주소 '''$1'''에 대한 전체 차단 #$2가 성공적으로 다시 활성화되었습니다.",
 	'globalblocking-whitelist-successsub' => '전체 차단의 로컬 상태가 성공적으로 변경되었습니다.',
-	'globalblocking-whitelist-errors' => '다음 이유로 인해 전체 차단의 로컬 상태를 변경하는 데 실패했습니다:',
+	'globalblocking-whitelist-errors' => '광역 차단 설정 변경에 실패했습니다. 이유는 다음과 같습니다: $1',
 	'globalblocking-blocked' => "당신은 '''\$1''' (''\$2'')에 의해 모든 위키에서 차단되었습니다.
 차단 사유는 \"\$3\"이며, 기한은 \"\$4\"입니다.",
+	'globalblocking-blocked-nopassreset' => '당신은 모든 위키에서 차단되었기 때문에 비밀번호를 바꿀 수 없습니다.',
 	'globalblocking-logpage' => '전체 위키 차단 기록',
 	'globalblocking-block-logentry' => '[[$1]] 사용자를 모든 위키에서 $2 차단함',
 	'globalblocking-block2-logentry' => '[[$1]] 사용자를 모든 위키에서 차단함 ($2)',
@@ -3468,6 +3486,7 @@ $messages['ko'] = array(
 	'right-globalblock' => '전체 위키 차단',
 	'right-globalunblock' => '전체 위키에서 차단을 해제',
 	'right-globalblock-whitelist' => '로컬에서 전체 차단을 비활성화',
+	'right-globalblock-exempt' => '전체 차단을 우회',
 );
 
 /** Ripoarisch (Ripoarisch)
@@ -4630,6 +4649,7 @@ $messages['os'] = array(
  * @author Xqt
  */
 $messages['pdc'] = array(
+	'globalblocking-block-expiry-otherfield' => 'Annre Zeit:',
 	'globalblocking-list-modify' => 'ennere',
 	'globalblocking-unblock-reason' => 'Grund:',
 	'globalblocking-logentry-expiry' => 'bis $1',
@@ -6258,6 +6278,7 @@ Nếu tác vụ cấm bị tắt tại wiki này, những người dùng những
 	'globalblocking-blocked' => "Địa chỉ IP của bạn đã bị '''$1''' (''$2'') cấm trên tất cả các wiki.
 Lý do được đưa ra là “''$3''”.
 Thời hạn cấm: ''$4''.",
+	'globalblocking-blocked-nopassreset' => 'Bạn không thể tái tạo mật khẩu vì bạn đã bị cấm trên toàn hệ thống.',
 	'globalblocking-logpage' => 'Nhật trình cấm trên toàn hệ thống',
 	'globalblocking-logpagetext' => 'Đây là danh sách các tác vụ cấm toàn cục được thực hiện hoặc lùi lại tại wiki này. Lưu ý rằng có thể thực hiện và lùi các tác vụ cấm tại wiki khác, nhưng các tác vụ cấm đó cũng có hiệu lực tại đây.
 
