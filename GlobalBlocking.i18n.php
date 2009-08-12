@@ -2096,6 +2096,14 @@ Pour visionner tous les blocages globaux actifs, vous pouvez visiter la [[Specia
 	'right-globalblock-exempt' => 'Passer outre les blocages globaux',
 );
 
+/** Franco-Provençal (Arpetan)
+ * @author Cedric31
+ */
+$messages['frp'] = array(
+	'globalblocking-list-modify' => 'modifiér',
+	'globalblocking-unblock-reason' => 'Rêson :',
+);
+
 /** Western Frisian (Frysk)
  * @author Snakesteuben
  */
@@ -5161,11 +5169,14 @@ deci statutul local al blocărilor globale nu poate fi modificat.',
 	'globalblocking-whitelist-dewhitelisted' => "Blocarea #$2 a adresei IP '''$1''' la {{SITENAME}} a fost reactivată cu succes.",
 	'globalblocking-whitelist-successsub' => 'Statut global schimbat cu succes',
 	'globalblocking-logpage' => 'Jurnal blocări globale',
+	'globalblocking-block2-logentry' => 'blocat global pe [[$1]] ($2)',
 	'globalblocking-unblock-logentry' => 'eliminat blocare globală pentru [[$1]]',
 	'globalblocking-logentry-expiry' => 'expiră la $1',
 	'globalblocking-logentry-noexpiry' => 'nicio dată de expirare setată',
 	'globalblocklist' => 'Listă de adrese IP blocate global',
 	'globalblock' => 'Blochează global o adresă IP',
+	'globalblockstatus' => 'Statutul local al blocărilor globale',
+	'removeglobalblock' => 'Elimină o blocare globală',
 	'right-globalblock' => 'Efectuează blocări globale',
 	'right-globalunblock' => 'Elimină blocări globale',
 	'right-globalblock-whitelist' => 'Dezactivează local blocările globale',
