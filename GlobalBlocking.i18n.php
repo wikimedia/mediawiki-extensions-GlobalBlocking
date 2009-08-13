@@ -1215,17 +1215,21 @@ Für eine Liste aller aktiven globalen Sperren siehe die [[Special:GlobalBlockLi
 );
 
 /** German (formal address) (Deutsch (Sie-Form))
+ * @author Imre
  * @author MichaelFrey
  * @author Umherirrender
  */
 $messages['de-formal'] = array(
 	'globalblocking-modify-intro' => 'Sie können dieses Formular nutzen, um die Einstellungen einer globalen Sperre zu ändern.',
+	'globalblocking-block-intro' => 'Auf dieser Seite können Sie IP-Adressen für alle Wikis sperren.',
 	'globalblocking-block-ipinvalid' => 'Sie haben eine ungültige IP-Adresse ($1) eingegeben.
 Beachten Sie, dass Sie keinen Benutzernamen eingeben dürfen!',
 	'globalblocking-block-alreadyblocked' => 'Die IP-Adresse $1 wurde schon global gesperrt.
 Sie können die bestehende Sperre in der [[Special:GlobalBlockList|globalen Sperrliste]] einsehen oder die Einstellungen der Sperre über dieses Formular ändern.',
 	'globalblocking-block-bigrange' => 'Der Adressbereich, den Sie angegeben haben ($1) ist zu groß.
 Sie können höchstens 65.536 IPs sperren (/16-Adressbereiche)',
+	'globalblocking-list-ipinvalid' => 'Sie haben eine ungültige IP-Adresse ($1) eingegeben.
+Bitte geben Sie eine gültige IP-Adresse ein.',
 	'globalblocking-unblock-ipinvalid' => 'Sie haben eine ungültige IP-Adresse ($1) eingegeben.
 Beachten Sie, dass Sie keinen Benutzernamen eingeben dürfen!',
 	'globalblocking-unblock-unblocked' => "Sie haben erfolgreich die IP-Adresse '''$1''' (Sperr-ID $2) entsperrt",
@@ -1238,6 +1242,7 @@ Beachten Sie, dass Sie keinen Benutzernamen eingeben dürfen!',
 	'globalblocking-whitelist-intro' => 'Sie können mit diesem Formular den lokalen Status einer globalen Sperre ändern. Wenn eine globale Sperre in dem Wiki deaktiviert wurde, können Seiten über die entsprechende IP-Adresse normal bearbeitet werden. [[Special:GlobalBlockList|Klicken Sie hier]], um zur Liste der globalen Sperren zurückzukehren.',
 	'globalblocking-blocked' => "Ihre IP-Adresse wurde von '''$1''' ''($2)'' für alle Wikis gesperrt.
 Als Begründung wurde ''„$3“'' angegeben. Die Sperre ''$4''.",
+	'globalblocking-blocked-nopassreset' => 'Sie können kein Passwort eines Benutzers zurücksetzen, da Sie global gesperrt wurden.',
 );
 
 /** Lower Sorbian (Dolnoserbski)
