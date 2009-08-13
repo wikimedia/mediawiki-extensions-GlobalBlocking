@@ -923,7 +923,7 @@ Alguns bloquejos estan marcats com a desactivats localment: això vol dir que es
 Entreu, si us plau, una adreça IP vàlida.",
 	'globalblocking-search-errors' => 'La vostra recerca ha resultat infructuosa {{PLURAL:$1|pel següent motiu|pels següents motius}}:',
 	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') ha blocat globalment l'usuari [[Special:Contributions/\$4|\$4]] (''\$5'')",
-	'globalblocking-list-expiry' => 'caduca a $1',
+	'globalblocking-list-expiry' => 'venç el $1',
 	'globalblocking-list-anononly' => 'només anònims',
 	'globalblocking-list-unblock' => 'Suprimeix',
 	'globalblocking-list-whitelisted' => 'desactivat localment per $1: $2',
@@ -977,7 +977,7 @@ Per a veure tots els bloquejos globals actius, vegeu la [[Special:GlobalBlockLis
 	'globalblocking-whitelist-logentry' => "S'ha inhabilitat localment el bloqueig global de [[$1]]",
 	'globalblocking-dewhitelist-logentry' => "S'ha rehabilitat localment el bloqueig global de [[$1]]",
 	'globalblocking-modify-logentry' => "S'ha modificat el bloqueig global de [[$1]] ($2)",
-	'globalblocking-logentry-expiry' => 'Caduca $1',
+	'globalblocking-logentry-expiry' => 'Venç el $1',
 	'globalblocking-logentry-noexpiry' => "No s'ha especificat la caducitat",
 	'globalblocklist' => 'Llista de les adreces IP bloquejades globalment',
 	'globalblock' => 'Bloqueja una adreça IP globalment',
@@ -1430,6 +1430,7 @@ $messages['el'] = array(
 	'globalblocking-blocked' => "Η διεύθυνση IP σας έχει φραγεί σε όλα τα wikis από τον/την '''$1''' (''$2'').<br />
 Ο λόγος που δόθηκε ήταν ''«$3»''.<br />
 Τύπος φραγής: ''$4''.",
+	'globalblocking-blocked-nopassreset' => 'Δεν μπορείτε να επαναφέρετε του κωδικούς χρήστη επειδή είστε καθολικά φραγμένος.',
 	'globalblocking-logpage' => 'Αρχείο καταγραφής καθολικών φραγών',
 	'globalblocking-logpagetext' => 'Αυτό είναι ένα αρχείο καταγραφής των καθολικών φραγών οι οποίες έχουν γίνει και αφαιρέθηκαν σε αυτό το wiki.<br />
 Πρέπει να σημειωθεί ότι οι καθολικές φραγές μπορούν να γίνουν και να αφαιρεθούν σε άλλα wikis, και ότι αυτές οι καθολικές φραγές μπορεί να επηρεάσουν αυτό το wiki.<br />
@@ -5780,6 +5781,7 @@ $messages['su'] = array(
 
 /** Swedish (Svenska)
  * @author Boivie
+ * @author Fluff
  * @author Jon Harald Søby
  * @author M.M.S.
  * @author Rotsee
@@ -5877,6 +5879,7 @@ För att se alla aktiva globala blockeringar, kan du se den [[Special:GlobalBloc
 	'right-globalblock' => 'Göra globala blockeringar',
 	'right-globalunblock' => 'Ta bort globala blockeringar',
 	'right-globalblock-whitelist' => 'Slå av globala blockeringar lokalt',
+	'right-globalblock-exempt' => 'Gå förbi globala blockeringar',
 );
 
 /** Telugu (తెలుగు)
