@@ -1755,8 +1755,14 @@ Kehtivus: ''$4''",
 	'globalblocking-logpagetext' => 'Siin logis on selles vikis üles seatud ja eemaldatud globaalsed blokeeringud.
 Tuleks arvesse võtta, et globaalseid blokeeringuid saab teistes vikides üles seada ja eemaldada ning et need globaalsed blokeeringud võivad puudutada ka seda vikit.
 Kõigi jõus olevate blokeeringute nägemiseks võid vaadata [[Special:GlobalBlockList|globaalsete blokeeringute nimekirja]].',
+	'globalblocking-block-logentry' => 'blokeeris globaalselt kasutaja [[$1]] aegumistähtajaga $2',
 	'globalblocking-block2-logentry' => 'blokeeris globaalselt kasutaja [[$1]] ($2)',
+	'globalblocking-unblock-logentry' => 'eemaldas IP-aadressi [[$1]] globaalse blokeeringu',
+	'globalblocking-whitelist-logentry' => 'lülitas kohalikus vikis kasutaja [[$1]] globaalse blokeeringu välja',
+	'globalblocking-dewhitelist-logentry' => 'taaskehtestas kohalikult kasutaja [[$1]] globaalse blokeeringu',
+	'globalblocking-modify-logentry' => 'muutis kasutaja [[$1]] globaalset blokeeringut ($2)',
 	'globalblocking-logentry-expiry' => 'aegub $1',
+	'globalblocking-logentry-noexpiry' => 'aegumistähtajata',
 	'globalblocklist' => 'Globaalselt blokeeritud IP-aadresside loend',
 	'globalblock' => 'Blokeeri IP-aadress globaalselt',
 	'globalblockstatus' => 'Globaalsete blokeeringute kohalik olek',
@@ -2104,9 +2110,10 @@ Pour visionner tous les blocages globaux actifs, vous pouvez visiter la [[Specia
 
 /** Franco-Provençal (Arpetan)
  * @author Cedric31
+ * @author ChrisPtDe
  */
 $messages['frp'] = array(
-	'globalblocking-list-modify' => 'modifiér',
+	'globalblocking-list-modify' => 'changiér',
 	'globalblocking-unblock-reason' => 'Rêson :',
 );
 
