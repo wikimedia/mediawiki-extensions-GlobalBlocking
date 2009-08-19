@@ -4210,6 +4210,15 @@ Sekatan ini ''\$4''.",
 	'right-globalblock-whitelist' => 'Mematikan sekatan sejagat di wiki tempatan',
 );
 
+/** Maltese (Malti)
+ * @author Chrisportelli
+ */
+$messages['mt'] = array(
+	'globalblocking-blocked' => "L-indrizz IP tiegħek ġie imblukkat fuq il-wikis kollha minn '''\$1''' (''\$2'').
+Ir-raġuni li ngħatat kienet ''\"\$3\"''.
+Il-blokk huwa ''\$4''.",
+);
+
 /** Erzya (Эрзянь)
  * @author Botuzhaleny-sodamo
  */
@@ -4681,7 +4690,7 @@ Notatz que podètz pas inscriure un nom d’utilizaire !",
 	'globalblocking-block-alreadyblocked' => "L’adreça IP $1 ja es blocada globalament.
 Podètz afichar los blocatges qu'existisson sus la tièra [[Special:GlobalBlockList|dels blocatges globals]], o tornar configurar aqueste blocatge en sosmetent aqueste formulari tornamai.",
 	'globalblocking-block-bigrange' => "La plaja qu'avètz especificada ($1) es tròp granda per èsser blocada. Podètz pas blocar mai de 65'536 adreças (plajas en /16).",
-	'globalblocking-list-intro' => 'Vaquí la lista de totes los blocatges globals actius. Qualques plajas son marcadas coma localament desactivadas : aquò significa que son aplicadas sus d’autres sits, mas qu’un administrator local a decidit de las desactivar sus aqueste wiki.',
+	'globalblocking-list-intro' => 'Vaquí la lista de totes los blocatges globals actius. Qualques plajas son marcadas coma localament desactivadas : aquò significa que son aplicadas sus d’autres sites, mas qu’un administrator local a decidit de las desactivar sus aqueste wiki.',
 	'globalblocking-list' => 'Tièra de las adreças IP blocadas globalament',
 	'globalblocking-search-legend' => 'Recèrca d’un blocatge global',
 	'globalblocking-search-ip' => 'Adreça IP :',
@@ -6724,6 +6733,7 @@ $1',
 /** Simplified Chinese (‪中文(简体)‬)
  * @author Bencmq
  * @author Gaoxuewei
+ * @author Liangent
  * @author PhiLiP
  * @author Shinjiman
  * @author Wmr89502270
@@ -6805,6 +6815,7 @@ $1',
 	'globalblocking-logpage' => '全域封锁日志',
 	'globalblocking-logpagetext' => '这个是在这个wiki中的全域封锁日志。要留意的是全域封锁可以在其它的wiki中被创建和移除并且会影响到这个wiki。要查看活跃的全域封锁，您可以去参阅[[Special:GlobalBlockList|全域封锁名单]]。',
 	'globalblocking-block-logentry' => '全域封锁了[[$1]]于 $2 到期',
+	'globalblocking-block2-logentry' => '已全域封禁[[$1]]（$2）',
 	'globalblocking-unblock-logentry' => '移除了[[$1]]的全域封锁',
 	'globalblocking-whitelist-logentry' => '停用了[[$1]]于本地的全域封锁',
 	'globalblocking-dewhitelist-logentry' => '再次启用[[$1]]于本地的全域封锁',
