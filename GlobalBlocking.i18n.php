@@ -197,7 +197,7 @@ $messages['af'] = array(
 	'globalblocking-block-expiry-other' => 'Ander verstryktyd',
 	'globalblocking-block-expiry-otherfield' => 'Ander tyd:',
 	'globalblocking-block-legend' => "Versper 'n gebruiker globaal",
-	'globalblocking-block-options' => 'Opsies',
+	'globalblocking-block-options' => 'Opsies:',
 	'globalblocking-block-errors' => 'Die versperring was nie suksesvol nie, as gevolg van die volgende {{PLURAL:$1|rede|redes}}:',
 	'globalblocking-block-ipinvalid' => "Die IP adres ($1) wat U ingevoer het is ongeldig.
 Let asseblief dat U nie 'n gebruikersnaam kan invoer nie!",
