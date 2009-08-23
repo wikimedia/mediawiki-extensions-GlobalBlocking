@@ -237,10 +237,12 @@ Let asseblief dat U nie 'n gebruikersnaam kan invoer nie!",
 	'globalblocking-whitelist-whitelisted' => "U het suksesvol die globale versperring #$2 op die IP adres '''$1''' op {{SITENAME}} afgeskakel.",
 	'globalblocking-whitelist-dewhitelisted' => "U het suksesvol die globale versperring #$2 op die IP adres '''$1''' op {{SITENAME}} heraangeskakel.",
 	'globalblocking-whitelist-successsub' => 'Lokale status suksesvol gewysig',
-	'globalblocking-blocked' => "U IP adres is versper op alle Wikimedia wikis deur '''\$1''' (''\$2'').
-Die rede gegee is ''\"\$3\"''. Die versperring verstryk is ''\$4''.",
+	'globalblocking-blocked' => "U IP-adres is deur '''\$1''' (''\$2'') op alle wiki's geblokkeer.
+Die rede hiervoor is ''\"\$3\"''.
+Die blokkade ''\$4''.",
 	'globalblocking-logpage' => 'Globale versperring boekstaaf',
 	'globalblocking-block-logentry' => "[[$1]] is globaal versper met 'n verstryktyd van $2",
+	'globalblocking-block2-logentry' => 'het [[$1]] globaal geblokkeer ($2)',
 	'globalblocking-unblock-logentry' => 'verwyder globale versperring op [[$1]]',
 	'globalblocking-whitelist-logentry' => 'die globale versperring op [[$1]] is lokaal afgeskakel',
 	'globalblocking-dewhitelist-logentry' => 'die globale versperring op [[$1]] is heraangeskakel',
