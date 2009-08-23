@@ -1723,6 +1723,8 @@ Palun sisesta õige IP-aadress.',
 	'globalblocking-return' => 'Naase blobaalsete blokeeringute loendisse',
 	'globalblocking-notblocked' => 'Sisestatud IP-aadress $1 ei ole globaalselt blokeeritud.',
 	'globalblocking-unblock' => 'Eemalda globaalne blokeering',
+	'globalblocking-unblock-ipinvalid' => 'Sisestatud IP-aadress $1 on vigane.
+Pane tähele, et kasutajanime ei saa sisestada!',
 	'globalblocking-unblock-legend' => 'Eemalda globaalne blokeering',
 	'globalblocking-unblock-submit' => 'Eemalda globaalne blokeering',
 	'globalblocking-unblock-reason' => 'Põhjus:',
@@ -1751,6 +1753,7 @@ Kui globaalne blokeering on selles vikis välja lülitatud, saavad kasutajad sel
 	'globalblocking-blocked' => "'''$1''' (''$2'') on sinu IP-aadressi kõigis vikides blokeerinud.
 Põhjus: ''$3''
 Kehtivus: ''$4''",
+	'globalblocking-blocked-nopassreset' => 'Sa ei saa kasutaja salasõna lähtestada, sest oled globaalselt blokeeritud.',
 	'globalblocking-logpage' => 'Globaalne blokeerimise logi',
 	'globalblocking-logpagetext' => 'Siin logis on selles vikis üles seatud ja eemaldatud globaalsed blokeeringud.
 Tuleks arvesse võtta, et globaalseid blokeeringuid saab teistes vikides üles seada ja eemaldada ning et need globaalsed blokeeringud võivad puudutada ka seda vikit.
@@ -4112,6 +4115,7 @@ $1',
 /** Malay (Bahasa Melayu)
  * @author Aviator
  * @author Izzudin
+ * @author Kurniasan
  */
 $messages['ms'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Membolehkan]] sekatan alamat IP di [[Special:GlobalBlockList|pelbagai wiki]] sekaligus',
@@ -4194,7 +4198,7 @@ Sekatan ini ''\$4''.",
 	'globalblocking-logpage' => 'Log sekatan sejagat',
 	'globalblocking-logpagetext' => 'Yang berikut ialah log sekatan sejagat yang telah dikenakan dan dibatalkan di wiki ini. Sila ambil perhatian bahawa sekatan sejagat boleh dikenakan dan dibatalkan di wiki-wiki lain, justeru berkuatkuasa di wiki ini juga. Anda juga boleh melihat [[Special:GlobalBlockList|senarai semakan sejagat yang sedang berkuatkuasa]].',
 	'globalblocking-block-logentry' => 'menyekat [[$1]] di semua wiki sehingga $2',
-	'globalblocking-block2-logentry' => '[[$1]] ($2) telah disekat secara sejagat',
+	'globalblocking-block2-logentry' => '[[$1]] telah disekat secara sejagat ($2)',
 	'globalblocking-unblock-logentry' => 'membatalkan sekatan sejagat terhadap [[$1]]',
 	'globalblocking-whitelist-logentry' => 'mematikan sekatan sejagat terhadap [[$1]] di wiki tempatan',
 	'globalblocking-dewhitelist-logentry' => 'menghidupkan semula sekatan sejagat terhadap [[$1]] di wiki tempatan',
@@ -5605,7 +5609,7 @@ $messages['sl'] = array(
 	'globalblocking-block2-logentry' => 'globalno blokiran uporabnik [[$1]] ($2)',
 );
 
-/** Serbian Cyrillic ekavian (ћирилица)
+/** Serbian Cyrillic ekavian (Српски (ћирилица))
  * @author Sasa Stefanovic
  * @author Јованвб
  * @author Михајло Анђелковић
@@ -5668,7 +5672,7 @@ $messages['sr-ec'] = array(
 	'right-globalunblock' => 'Уклони глобалне блокове',
 );
 
-/** latinica (latinica)
+/** Serbian Latin ekavian (Srpski (latinica))
  * @author Michaello
  */
 $messages['sr-el'] = array(
