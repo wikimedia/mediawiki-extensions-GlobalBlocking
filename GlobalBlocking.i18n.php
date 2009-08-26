@@ -6640,6 +6640,7 @@ $messages['wo'] = array(
  * @author פוילישער
  */
 $messages['yi'] = array(
+	'globalblocking-unblock-reason' => 'אורזאַך:',
 	'removeglobalblock' => 'אויפהייבן גלאבאלן בלאק',
 );
 
