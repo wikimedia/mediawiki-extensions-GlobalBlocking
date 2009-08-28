@@ -589,7 +589,7 @@ $messages['be-tarask'] = array(
 	'globalblocking-block-expiry-other' => 'Іншы тэрмін',
 	'globalblocking-block-expiry-otherfield' => 'Іншы тэрмін:',
 	'globalblocking-block-legend' => 'Глябальнае блякаваньне ўдзельніка',
-	'globalblocking-block-options' => 'Налады:',
+	'globalblocking-block-options' => 'Устаноўкі:',
 	'globalblocking-block-errors' => 'Блякаваньне не адбылося па {{PLURAL:$1|наступнай прычыне|наступных прычынах}}:',
 	'globalblocking-block-ipinvalid' => 'Уведзены Вамі ІР-адрас ($1) — няслушны.
 Калі ласка, зьвярніце ўвагу, што Вы ня можаце ўводзіць імя ўдзельніка!',
