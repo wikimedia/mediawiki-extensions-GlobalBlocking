@@ -779,6 +779,13 @@ $messages['bn'] = array(
 	'globalblocking-whitelist-status' => 'স্থানীয় অবস্থা:',
 );
 
+/** Breton (Brezhoneg)
+ * @author Fulup
+ */
+$messages['br'] = array(
+	'globalblocking-block2-logentry' => 'en deus stanket [[$1]] dre-vras ($2)',
+);
+
 /** Bosnian (Bosanski)
  * @author CERminator
  */
