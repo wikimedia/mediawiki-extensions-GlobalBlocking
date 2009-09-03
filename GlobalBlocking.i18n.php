@@ -5004,6 +5004,7 @@ Se um bloqueio global está desactivado neste wiki, os utilizadores nos endereç
 	'globalblocking-blocked' => "O seu endereço IP foi bloqueado em todos os wikis por '''\$1''' (''\$2'').
 O motivo dado foi ''\"\$3\"''.
 O bloqueio ''\$4''.",
+	'globalblocking-blocked-nopassreset' => 'Você não pode repor palavras-chave de utilizadores porque você está bloqueado globalmente.',
 	'globalblocking-logpage' => 'Registo de bloqueios globais',
 	'globalblocking-logpagetext' => 'Isto é um registo de bloqueios globais que foram feitos e removidos neste wiki.
 Deve ser notado que bloqueios globais podem ser feitos e removidos noutros wikis, e que estes bloqueios globais pode afectar este wiki.
