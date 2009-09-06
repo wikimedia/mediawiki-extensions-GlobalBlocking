@@ -995,6 +995,7 @@ Per a veure tots els bloquejos globals actius, vegeu la [[Special:GlobalBlockLis
 	'right-globalblock' => 'Gestiona bloquejos globals',
 	'right-globalunblock' => 'Canceŀlar bloquejos globals',
 	'right-globalblock-whitelist' => 'Inhabilita els bloquejos globals localment',
+	'right-globalblock-exempt' => 'Obvia els bloquejos globals',
 );
 
 /** Czech (Česky)
