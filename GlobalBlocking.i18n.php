@@ -3561,7 +3561,7 @@ $messages['ko'] = array(
 	'globalblocking-search-submit' => '차단 찾기',
 	'globalblocking-list-ipinvalid' => '당신이 입력한 IP 주소 ($1)가 잘못되었습니다.
 유효한 IP 주소를 입력해주세요.',
-	'globalblocking-search-errors' => '검색에 실패했습니다. 아래의 원인를 확인해주세요.',
+	'globalblocking-search-errors' => '검색에 실패했습니다. 아래의 {{PLURAL:$1|원인}}를 확인해주세요.',
 	'globalblocking-list-blockitem' => '$1: <span class="plainlinks">\'\'\'$2\'\'\'</span> ($3) 이(가) [[Special:Contributions/$4|$4]] 을(를) 전체 위키에서 차단하였습니다. ($5)',
 	'globalblocking-list-expiry' => '기한 $1',
 	'globalblocking-list-anononly' => '익명 사용자만',
