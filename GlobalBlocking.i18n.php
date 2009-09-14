@@ -5929,6 +5929,7 @@ $messages['te'] = array(
 	'globalblocking-block-expiry-otherfield' => 'ఇతర సమయం:',
 	'globalblocking-block-options' => 'ఎంపికలు:',
 	'globalblocking-search-ip' => 'IP చిరునామా:',
+	'globalblocking-search-errors' => 'ఈ క్రింది {{PLURAL:$1|కారణం|కారణాల}} వల్ల, మీ అన్వేషణ విఫలమైంది:',
 	'globalblocking-list-unblock' => 'తొలగించు',
 	'globalblocking-list-whitelist' => 'స్థానిక స్థితి',
 	'globalblocking-unblock-reason' => 'కారణం:',
