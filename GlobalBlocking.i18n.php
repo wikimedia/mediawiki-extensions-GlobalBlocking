@@ -5141,6 +5141,7 @@ Para ver todos os bloqueios globais, poderá consultar a [[Special:GlobalBlockLi
 $messages['qu'] = array(
 	'globalblocking-list' => "Sapsita hark'asqa IP tiyaykuna",
 	'globalblocking-whitelist' => "Sapsi hark'asqakunap kayllapi kachkaynin",
+	'globalblocking-block2-logentry' => "sapsilla hark'an [[$1]] sutiyuqta ($2)",
 );
 
 /** Romanian (Română)
