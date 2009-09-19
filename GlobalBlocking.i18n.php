@@ -6445,6 +6445,7 @@ Par védar tuti i blochi globali ativi, varda l'[[Special:GlobalBlockList|elenco
  * @author Игорь Бродский
  */
 $messages['vep'] = array(
+	'globalblocking-block-reason' => 'Necen blokiruindan sü:',
 	'globalblocking-block-expiry-otherfield' => 'Toine aig:',
 	'globalblocking-search-ip' => 'IP-adres:',
 	'globalblocking-list-unblock' => 'Heitta blokiruind',
