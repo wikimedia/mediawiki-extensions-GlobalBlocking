@@ -4912,6 +4912,7 @@ Wszystkie aktywne globalne blokady można zobaczyć w [[Special:GlobalBlockList|
  */
 $messages['ps'] = array(
 	'globalblocking-block-expiry-otherfield' => 'بل وخت:',
+	'globalblocking-block-options' => 'خوښنې:',
 	'globalblocking-search-ip' => 'IP پته:',
 	'globalblocking-list-whitelist' => 'سيمه ايز دريځ',
 	'globalblocking-unblock-reason' => 'سبب:',
