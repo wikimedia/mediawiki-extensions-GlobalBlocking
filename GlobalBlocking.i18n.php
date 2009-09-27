@@ -1713,7 +1713,7 @@ Pane tähele, et kasutajanime ei saa sisestada.',
 	'globalblocking-block-alreadyblocked' => 'IP-aadress $1 on juba globaalselt blokeeritud.
 Sa saad [[Special:GlobalBlockList|globaalsete blokeeringute nimekirjas]] olemasolevat blokeeringut vaatada või selle vormi taasesitamisega olemasoleva blokeeringu seadeid muuta.',
 	'globalblocking-list-intro' => 'Siin on loetletud globaalsed blokeeringud, mis on praegu jõus.
-Mõned blokeeringud on märgitud kui siin vikis välja lülitatud – see tähendab, et blokeering kehtib teistes vikides, aga siinne ülem on otsustanud, et siin pole vastavat blokeeringut vaja.',
+Mõned blokeeringud on märgitud kui siin vikis välja lülitatud – see tähendab, et blokeering kehtib teistes vikides, aga siinne administraator on otsustanud, et siin pole vastavat blokeeringut vaja.',
 	'globalblocking-list' => 'Globaalselt blokeeritud IP-aadresside loend',
 	'globalblocking-search-legend' => 'Globaalse blokeeringu otsimine',
 	'globalblocking-search-ip' => 'IP-aadress:',
@@ -3991,6 +3991,7 @@ $messages['mk'] = array(
 );
 
 /** Malayalam (മലയാളം)
+ * @author Praveenp
  * @author Shijualex
  */
 $messages['ml'] = array(
@@ -4033,7 +4034,7 @@ $1',
 	'globalblocking-whitelist-whitelisted' => "'''$1''' എന്ന ഐപി വിലാസത്തിന്റെ #$2 എന്ന ആഗോളബ്ലോക്ക് {{SITENAME}} സം‌രംഭത്തില്‍ വിജയകരമായി പ്രവര്‍ത്തനരഹിതമാക്കിയിരിക്കുന്നു",
 	'globalblocking-whitelist-dewhitelisted' => "'''$1''' എന്ന ഐപി വിലാസത്തിന്റെ #$2 എന്ന ആഗോളബ്ലോക്ക് {{SITENAME}} സം‌രംഭത്തില്‍ വിജയകരമായി പ്രവര്‍ത്തനയോഗ്യമാക്കിയിരിക്കുന്നു.",
 	'globalblocking-whitelist-successsub' => 'പ്രാദേശിക സ്ഥിതി വിജയകരമായി മാറ്റിയിരിക്കുന്നു',
-	'globalblocking-blocked' => "താങ്കളുടെ ഐപി വിലാസം എല്ലാ വിക്കിമീഡിയ സം‌രംഭങ്ങളിലും '''\$1''' (''\$2'') തടഞ്ഞിരിക്കുന്നു. അതിനു സൂചിപ്പിച്ച കാരണം ''\"\$3\"'' ആണ്‌. ബ്ലോക്കിന്റെ കാലാവധി തീരുന്നത് ''\$4''.",
+	'globalblocking-blocked' => "താങ്കളുടെ ഐപി വിലാസം എല്ലാ വിക്കിമീഡിയ സം‌രംഭങ്ങളിലും '''\$1''' (''\$2'') തടഞ്ഞിരിക്കുന്നു. അതിനു സൂചിപ്പിച്ച കാരണം ''\"\$3\"'' ആണ്‌. ബ്ലോക്കിന്റെ കാലാവധി ''\$4''.",
 	'globalblocking-logpage' => 'ആഗോള തടയലിന്റെ പ്രവര്‍ത്തനരേഖ',
 	'globalblocking-block-logentry' => '[[$1]]നെ $2 കാലവധിയോടെ ആഗോള ബ്ലോക്ക് ചെയ്തിരിക്കുന്നു.',
 	'globalblocking-unblock-logentry' => '[[$1]]നു മേലുള്ള ആഗോള ബ്ലോക്ക് ഒഴിവാക്കിയിരിക്കുന്നു',
