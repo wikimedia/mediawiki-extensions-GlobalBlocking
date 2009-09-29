@@ -2489,8 +2489,7 @@ $messages['hi'] = array(
 	'globalblocking-block-expiry-otherfield' => 'अन्य समय:',
 	'globalblocking-block-legend' => 'एक सदस्य को ग्लोबली ब्लॉक करें',
 	'globalblocking-block-options' => 'विकल्प',
-	'globalblocking-block-errors' => 'ब्लॉक अयशस्वी हुआ, कारण:
-$1',
+	'globalblocking-block-errors' => 'ब्लॉक अयशस्वी हुआ, कारण:',
 	'globalblocking-block-ipinvalid' => 'आपने दिया हुआ आईपी एड्रेस ($1) अवैध हैं।
 कृपया ध्यान दें आप सदस्यनाम नहीं दे सकतें!',
 	'globalblocking-block-expiryinvalid' => 'आपने दिया हुआ समाप्ती समय ($1) अवैध हैं।',
@@ -2775,8 +2774,7 @@ $messages['ht'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Lòt tan:',
 	'globalblocking-block-legend' => 'Bloke yon itilizatè globalman',
 	'globalblocking-block-options' => 'Opsyon yo',
-	'globalblocking-block-errors' => 'Blokaj sa pa reyisi, paske:  
-$1',
+	'globalblocking-block-errors' => 'Blokaj sa pa reyisi, paske:',
 	'globalblocking-block-ipinvalid' => 'Adrès IP sa ($1) ou te antre a envalid.
 Souple note ke ou pa kapab antre yon non itlizatè!',
 	'globalblocking-block-expiryinvalid' => 'Expirasyon ($1) ou te antre a envalid.',
@@ -4065,8 +4063,7 @@ $messages['mr'] = array(
 	'globalblocking-block-expiry-otherfield' => 'इतर वेळ:',
 	'globalblocking-block-legend' => 'एक सदस्य वैश्विक पातळीवर ब्लॉक करा',
 	'globalblocking-block-options' => 'विकल्प',
-	'globalblocking-block-errors' => 'ब्लॉक अयशस्वी झालेला आहे, कारण:
-$1',
+	'globalblocking-block-errors' => 'ब्लॉक अयशस्वी झालेला आहे, कारण:',
 	'globalblocking-block-ipinvalid' => 'तुम्ही दिलेला आयपी अंकपत्ता ($1) अयोग्य आहे.
 कृपया नोंद घ्या की तुम्ही सदस्य नाव देऊ शकत नाही!',
 	'globalblocking-block-expiryinvalid' => 'तुम्ही दिलेली समाप्तीची वेळ ($1) अयोग्य आहे.',
@@ -6035,8 +6032,7 @@ $messages['th'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|อนุญาต]]ให้คุณสามารถบล็อกผู้ใช้ที่เป็น ไอพี [[Special:GlobalBlockList|ในหลาย ๆ วิกิ]]ในครั้งเดียวได้',
 	'globalblocking-block-reason' => 'เหตุผลสำหรับการบล็อก:',
 	'globalblocking-block-expiry' => 'หมดอายุ:',
-	'globalblocking-block-errors' => 'การบล็อกครั้งนี้ไม่สำเร็จ เนื่องจาก :
-$1',
+	'globalblocking-block-errors' => 'การบล็อกครั้งนี้ไม่สำเร็จ เนื่องจาก :',
 	'globalblocking-search-ip' => 'หมายเลขไอพี:',
 	'globalblocking-unblock-reason' => 'เหตุผล:',
 );
