@@ -3732,6 +3732,14 @@ Dobei donn se ävver och för hee dat Wiki wirke.
 	'right-globalblock-exempt' => 'Jemeinsam Sperre ömjonn',
 );
 
+/** Latin (Latina)
+ * @author UV
+ */
+$messages['la'] = array(
+	'globalblocking-whitelist' => 'Status localis obstructionum globalium',
+	'globalblockstatus' => 'Status localis obstructionum globalium',
+);
+
 /** Luxembourgish (Lëtzebuergesch)
  * @author Les Meloures
  * @author Robby
