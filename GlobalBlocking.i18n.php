@@ -3450,10 +3450,12 @@ Kanggo mirsani kabèh pamblokiran global sing aktif wektu iki, pirsani ing[[Spec
 );
 
 /** Georgian (ქართული)
+ * @author BRUTE
  * @author Malafaya
  */
 $messages['ka'] = array(
 	'globalblocking-list' => 'გლობალურად ბლოკირებული IP-მისამართების სია',
+	'globalblocking-search-ip' => 'IP მისამართი:',
 	'globalblocking-unblock-reason' => 'მიზეზი:',
 	'removeglobalblock' => 'გლობალური ბლოკირების მოხსნა',
 );
