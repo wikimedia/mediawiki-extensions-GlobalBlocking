@@ -3457,6 +3457,8 @@ $messages['ka'] = array(
 	'globalblocking-list' => 'გლობალურად ბლოკირებული IP-მისამართების სია',
 	'globalblocking-search-ip' => 'IP მისამართი:',
 	'globalblocking-unblock-reason' => 'მიზეზი:',
+	'globalblocking-blocked-nopassreset' => 'თქვენ არ შეგიძლიათ მომხმარებლის პაროლის შეცვლა, რადგან თქვენი ანგარიში გლობალურად ბლოკირებულია.',
+	'globalblocking-block2-logentry' => 'გლობალურად დაბლოკილია [[$1]] ($2)',
 	'removeglobalblock' => 'გლობალური ბლოკირების მოხსნა',
 );
 
