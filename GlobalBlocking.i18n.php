@@ -1255,6 +1255,22 @@ Als Begründung wurde ''„$3“'' angegeben. Die Sperre ''$4''.",
 	'globalblocking-blocked-nopassreset' => 'Sie können kein Passwort eines Benutzers zurücksetzen, da Sie global gesperrt wurden.',
 );
 
+/** Zazaki (Zazaki)
+ * @author Xoser
+ */
+$messages['diq'] = array(
+	'globalblocking-logentry-expiry' => 'qediyeno $1',
+	'globalblocking-logentry-noexpiry' => 'eyarê qediyayîşî nika nironiyo',
+	'globalblocklist' => 'Liteyê IPyî ke wîkîyê hemî de blok biyê',
+	'globalblock' => 'Yew adresê IPyî wîkîyê hemî de blok bike',
+	'globalblockstatus' => 'Statuyê lokaliyê blokanê hemî',
+	'removeglobalblock' => 'Yew global blok wedarne',
+	'right-globalblock' => 'Blokanê globalî bike',
+	'right-globalunblock' => 'Blokanê globalî wedarne',
+	'right-globalblock-whitelist' => 'Lokal wîkî de blokanê globalî biqefilne',
+	'right-globalblock-exempt' => 'Global blokî bypass bike',
+);
+
 /** Lower Sorbian (Dolnoserbski)
  * @author Michawiki
  */
