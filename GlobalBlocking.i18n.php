@@ -3472,6 +3472,7 @@ Kanggo mirsani kabèh pamblokiran global sing aktif wektu iki, pirsani ing[[Spec
 $messages['ka'] = array(
 	'globalblocking-list' => 'გლობალურად ბლოკირებული IP-მისამართების სია',
 	'globalblocking-search-ip' => 'IP მისამართი:',
+	'globalblocking-list-unblock' => 'წაშლა',
 	'globalblocking-unblock-reason' => 'მიზეზი:',
 	'globalblocking-blocked-nopassreset' => 'თქვენ არ შეგიძლიათ მომხმარებლის პაროლის შეცვლა, რადგან თქვენი ანგარიში გლობალურად ბლოკირებულია.',
 	'globalblocking-block2-logentry' => 'გლობალურად დაბლოკილია [[$1]] ($2)',
@@ -6004,6 +6005,7 @@ $messages['te'] = array(
 	'globalblocking-whitelist-status' => 'స్థానిక స్థితి:',
 	'globalblocking-whitelist-submit' => 'స్థానిక స్థితిని మార్చండి',
 	'globalblocking-whitelist-successsub' => 'స్థానిక స్థితిని విజయవంతంగా మార్చాం',
+	'globalblocking-logpage' => 'సార్వత్రిక నిరోధాల చిట్టా',
 	'globalblock' => 'సర్వత్రా ఈ ఐపీ చిరునామాను నిరోధించు',
 );
 
