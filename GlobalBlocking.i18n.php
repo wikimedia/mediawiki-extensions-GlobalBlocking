@@ -1256,9 +1256,89 @@ Als Begründung wurde ''„$3“'' angegeben. Die Sperre ''$4''.",
 );
 
 /** Zazaki (Zazaki)
+ * @author Aspar
  * @author Xoser
  */
 $messages['diq'] = array(
+	'globalblocking-desc' => 'IP addreslerinin [[Special:GlobalBlockList|çoklu vikiler boyunca engellenmesine]] [[Special:GlobalBlock|izin verir]]',
+	'globalblocking-block' => "yew adresa Ip'i bı global bloke bıker",
+	'globalblocking-modify-intro' => 'qey vurnayişê eyarê blokeya globalek şıma eşkêni no form bışuxulni.',
+	'globalblocking-block-intro' => 'şıma pê no peleşkêni yew IPadres heme wikiyan de bloke bıker.',
+	'globalblocking-block-reason' => 'sebebê blokebiyayişi:',
+	'globalblocking-block-expiry' => 'qediyayişê bloki:',
+	'globalblocking-block-expiry-other' => 'wexê qediyayişi yo bin',
+	'globalblocking-block-expiry-otherfield' => 'wexto bin:',
+	'globalblocking-block-legend' => 'yew karber bo global bloke bıker',
+	'globalblocking-block-options' => 'Tercihi:',
+	'globalblocking-block-errors' => 'blokekerdış nêbı, semedê no {{PLURAL:$1|sebeb ra|sebeban ra}}:',
+	'globalblocking-block-ipinvalid' => 'IP addresa ke şıma pê keweni cı ($1) nemeqbulo.
+xo vir ra mekerê ke şıma nêeşkeni pê nameyê yew karberi cıkewi!',
+	'globalblocking-block-expiryinvalid' => 'Girdiğiniz bitiş ($1) geçersiz.',
+	'globalblocking-block-submit' => 'na IPadres bı global bloke bıker',
+	'globalblocking-modify-submit' => 'na blokeyê globali wedar',
+	'globalblocking-block-success' => "IPadresa $1'i heme projeyan de bı serkewte bloke bi.",
+	'globalblocking-modify-success' => "blokeyê globalê ke serê $1'i de yi bıserkewte vuriya.",
+	'globalblocking-block-successsub' => 'blokeya globali bı serkewteya',
+	'globalblocking-modify-successsub' => 'blokeya globali bı serkewte vuriya',
+	'globalblocking-block-alreadyblocked' => "IP adresa $1'i ca ra bı global bloke biyayeya.
+şıma blokeya mevcudi [[Special:GlobalBlockList|listeya blokeyi ya globali]] ra eşkêni bıvini,
+ya zi şıma eşkêni no form anciya bışawe u eyarê blokeya mewcudi bıvurni.",
+	'globalblocking-block-bigrange' => "mabêno ke şıma diyari kerdo ($1) qey bloke kerdışi zaf gırdo.
+şıma tewr zaf adresa 65.536'i (/16 mabên) eşkêni bıvurni",
+	'globalblocking-list-intro' => 'na liste, listeya heme blokebiyayeyê globalana.
+tayi blokeyi bı battal nişan biyê: manayê ına, blokebiyayişi keyepelê binan de zi beni,',
+	'globalblocking-list' => 'listeya IPadresan a ke bı globali cıresayişê inan vındariyo.',
+	'globalblocking-search-legend' => 'bıgêr yew blokeya globali',
+	'globalblocking-search-ip' => "Adresa IP'i:",
+	'globalblocking-search-submit' => 'blokan bıgêr',
+	'globalblocking-list-ipinvalid' => 'IP adresa ke şıma gêreni cı ($1) neömeqbulo.
+kerem kerê pê yew IP adresa meqbul cıkewe.',
+	'globalblocking-search-errors' => 'cıgêrayiş serkewte nêbı, seba no {{PLURAL:$1|sebeb ra|sebeban ra}}:',
+	'globalblocking-list-blockitem' => "karberê \$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3''), [[Special:Contributions/\$4|\$4]]'i bı global bloke bı ''(\$5)''",
+	'globalblocking-list-expiry' => 'qediyayiş $1',
+	'globalblocking-list-anononly' => 'têna anonim',
+	'globalblocking-list-unblock' => 'werad/wedar',
+	'globalblocking-list-whitelisted' => "hetê $1'i ra bı mehelli pasif bı: $2",
+	'globalblocking-list-whitelist' => 'weziyeto mehelli',
+	'globalblocking-list-modify' => 'bıvurn',
+	'globalblocking-goto-block' => 'yew IPadres bı global bloke bıker',
+	'globalblocking-goto-unblock' => 'yew blokê globali wedar/werad',
+	'globalblocking-goto-status' => 'qey yew blokeya globali weziyeto mehelli bıvurn',
+	'globalblocking-return' => 'agêr listeya blokeyi ya globali',
+	'globalblocking-notblocked' => 'IP adresa ke şıma pê keweni cı ($1) bı global blokebiyaye niya.',
+	'globalblocking-unblock' => 'yew blokê globali wedar/werad',
+	'globalblocking-unblock-ipinvalid' => 'IP adresa ke şıma pê keweni cı ($1) nemeqbulo.
+xo vir ra mekerê ke şıma nêeşkeni pê nameyê yew karberi cıkewi!',
+	'globalblocking-unblock-legend' => 'yew blokê globali wedar/werad',
+	'globalblocking-unblock-submit' => 'blokê globali wedar/werad',
+	'globalblocking-unblock-reason' => 'çıra:',
+	'globalblocking-unblock-unblocked' => "#$2 blokeya globali ya ke IPadresa '''$1'''i de ya şıma bı serkewte wedarna/da wera",
+	'globalblocking-unblock-errors' => 'wedarıtışê şıma yo blokeya globali serkewte nêbı, seba no {{PLURAL:$1|sebeb ra|sebeban ra}}:',
+	'globalblocking-unblock-successsub' => 'blokeya globali bı serkewte wedariya/wera diya',
+	'globalblocking-unblock-subtitle' => 'blokeya globali wedariyena/wera diyena',
+	'globalblocking-unblock-intro' => 'şıma eşkêni no form qey wedarıtışê yew blokeya globali bışuxulni.
+qey agêrayişê listeya blokeya globali [[Special:GlobalBlockList|tiya bıtıknê]].',
+	'globalblocking-whitelist' => 'Küresel engellemelerin yerel durumları',
+	'globalblocking-whitelist-notapplied' => 'blokê globali na wiki de tetbiq nıbeni,
+mo sebeb ra weziyeto mehelli yê blokeyê globalan nêvuriyeno.',
+	'globalblocking-whitelist-legend' => 'weziyetê mehelli bıvurn',
+	'globalblocking-whitelist-reason' => 'sebebê vurnayişi:',
+	'globalblocking-whitelist-status' => 'weziyeto mehelli',
+	'globalblocking-whitelist-statuslabel' => "no blokê globali keyepelê {{SITENAME}}'i de battal verd",
+	'globalblocking-whitelist-submit' => 'weziyeto mehelli bıvurn',
+	'globalblocking-whitelist-whitelisted' => "şıma keyepelê {{SITENAME}}i de blokeya IPaddresa '''$1'''i ya globali #$2 bı serkewte battal verda.",
+	'globalblocking-whitelist-dewhitelisted' => "şıma keyepelê {{SITENAME}}i de blokeya IPaddresa '''$1'''i ya globali #$2 bı serkewte reyna eşt faaliyet.",
+	'globalblocking-whitelist-successsub' => 'weziyeto mehelli bı serkewte vuriya',
+	'globalblocking-whitelist-nochange' => 'şıma weziyetê mehelli yo na blokeyi re çı vurnayiş nêkerd.
+[[Special:GlobalBlockList|agêrê listeya blokeyi ya globali]].',
+	'globalblocking-whitelist-errors' => 'vurnayişo ke şıma weziyetê mehelli yo blokeya globali re kerdo serkewte nêbı, semedê no {{PLURAL:$1|sebeb ra|sebeban ra}}:',
+	'globalblocking-whitelist-intro' => 'Küresel bir engellemenin yerel durumunu değiştirmek için bu formu kullanabilirsiniz.
+Eğer bir küresel engelleme bu vikide devre dışı bırakılmış ise, etkilenen IP adresindeki kullanıcılar normal olarak değişiklik yapabilecektir.
+[[Special:GlobalBlockList|Küresel engelleme listesine geri dönün]].',
+	'globalblocking-blocked' => "IP adresa şıma hetê '''\$1''' (''\$2'') ra heme wikiyan de bloke bı.
+sebebo ke beyan biyo: ''\"\$3\"''.
+bloke kerdış ''\$4''.",
+	'globalblocking-blocked-nopassreset' => 'şıma bı global blok biyê u no sebeb ra şıma nêeşkeni şifreya karberi sıfır keri.',
 	'globalblocking-logentry-expiry' => 'qediyeno $1',
 	'globalblocking-logentry-noexpiry' => 'eyarê qediyayîşî nika nironiyo',
 	'globalblocklist' => 'Liteyê IPyî ke wîkîyê hemî de blok biyê',
