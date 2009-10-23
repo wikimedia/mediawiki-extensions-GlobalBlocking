@@ -102,10 +102,15 @@ class SpecialGlobalBlockList extends SpecialPage {
 		}
 
 		$pager = new GlobalBlockListPager( $this, $conds );
-
-		$wgOut->addHTML( $pager->getNavigationBar() .
-				Xml::tags( 'ul', null, $pager->getBody() ) .
-				$pager->getNavigationBar() );
+		$body = $pager->getBody();
+		if( $body != '' ) {
+			$wgOut->addHTML( $pager->getNavigationBar() .
+					Html::rawElement( 'ul', array(), $body ) .
+					$pager->getNavigationBar() );
+		} else {
+			$wgOut->wrapWikiMsg( "<div class='mw-globalblocking-noresults'>\n$1</div>\n",
+				array( 'globalblocking-list-noresults' ) );
+		}
 	}
 
 	function loadParameters() {
