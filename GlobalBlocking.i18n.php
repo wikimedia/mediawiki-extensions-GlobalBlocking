@@ -621,6 +621,7 @@ $messages['be-tarask'] = array(
 	'globalblocking-list-whitelisted' => 'лякальна адключыў $1: $2',
 	'globalblocking-list-whitelist' => 'лякальны статус',
 	'globalblocking-list-modify' => 'зьмяніць',
+	'globalblocking-list-noresults' => 'Запытаны IP-адрас не заблякаваны.',
 	'globalblocking-goto-block' => 'Заблякаваць ІР-адрас глябальна',
 	'globalblocking-goto-unblock' => 'Разблякаваць глябальна',
 	'globalblocking-goto-status' => 'Зьмяніць лякальны статус глябальнага блякаваньня',
@@ -1693,6 +1694,7 @@ Vidi ĉiujn aktivajn ĝeneralajn forbarojn, vi povas vidi la [[Special:GlobalBlo
  * @author Lin linao
  * @author Remember the dot
  * @author Sanbec
+ * @author Translationista
  */
 $messages['es'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Permite]] bloquear direcciones IP [[Special:GlobalBlockList|simultáneamente en varios wikis]]',
@@ -1703,7 +1705,7 @@ $messages['es'] = array(
 	'globalblocking-block-expiry' => 'Caducidad del bloqueo:',
 	'globalblocking-block-expiry-other' => 'Otro tiempo de caducidad',
 	'globalblocking-block-expiry-otherfield' => 'Otro tiempo:',
-	'globalblocking-block-legend' => 'Bloquear un usuario globalmente',
+	'globalblocking-block-legend' => 'Bloquear una dirección IP globalmente',
 	'globalblocking-block-options' => 'Opciones:',
 	'globalblocking-block-errors' => 'Tu bloqueo falló por {{PLURAL:$1|la siguiente razón|las siguientes razones}}:',
 	'globalblocking-block-ipinvalid' => 'La dirección IP ($1) que ingresaste no es válida. Por favor, ten en cuenta que no puedes introducir un nombre de usuario.',
@@ -1734,6 +1736,7 @@ Por favor, introduce una dirección IP válida.',
 	'globalblocking-list-whitelisted' => 'desactivado localmente por $1: $2',
 	'globalblocking-list-whitelist' => 'estatus local',
 	'globalblocking-list-modify' => 'modificar',
+	'globalblocking-list-noresults' => 'La dirección IP solicitada no está bloqueada.',
 	'globalblocking-goto-block' => 'Bloquear globalmente una dirección IP',
 	'globalblocking-goto-unblock' => 'Quitar un bloqueo global',
 	'globalblocking-goto-status' => 'Cambiar estatus local de un bloqueo global',
@@ -5419,7 +5422,7 @@ $messages['ru'] = array(
 	'globalblocking-block-expiry' => 'Закончится через:',
 	'globalblocking-block-expiry-other' => 'другое время окончания',
 	'globalblocking-block-expiry-otherfield' => 'Другое время:',
-	'globalblocking-block-legend' => 'Глобальное блокирование участника',
+	'globalblocking-block-legend' => 'Глобальная блокировка участника',
 	'globalblocking-block-options' => 'Настройки:',
 	'globalblocking-block-errors' => 'Блокировка неудачна. {{PLURAL:$1|Причина|Причины}}:
 $1',
@@ -5454,6 +5457,7 @@ $1',
 	'globalblocking-list-whitelisted' => 'локально отключил $1: $2',
 	'globalblocking-list-whitelist' => 'локальное состояние',
 	'globalblocking-list-modify' => 'изменить',
+	'globalblocking-list-noresults' => 'Запрашиваемый адрес не заблокирован.',
 	'globalblocking-goto-block' => 'Заблокировать IP-адрес глобально',
 	'globalblocking-goto-unblock' => 'Убрать глобальную блокировку',
 	'globalblocking-goto-status' => 'Изменить локальное состояние глобальной блокировки',
