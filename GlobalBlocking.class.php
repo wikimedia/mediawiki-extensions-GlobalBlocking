@@ -279,4 +279,25 @@ class GlobalBlocking {
 		}
 		return true;
 	}
+
+	/**
+	 * Creates a link to the global block log
+	 * @param array $msg Message with a link to the global block log
+	 * @param string $ip The IP address to be checked
+	 * @return boolean true
+	 */
+	static function getBlockLogLink( &$msg, $ip ) {
+		# IP addresses can be blocked only.
+		if ( !IP::isIPAddress( $ip ) ) {
+			return true;
+		}
+
+		wfLoadExtensionMessages( 'GlobalBlocking' );
+		$msg[] = Html::rawElement(
+			'span',
+			array( 'class' => 'mw-globalblock-loglink plainlinks' ),
+			wfMsgExt( 'globalblocking-loglink', 'parseinline', $ip )
+		);
+		return true;
+	}
 }
