@@ -177,6 +177,8 @@ $messages['qqq'] = array(
 * $2 is a reason for the action.',
 	'globalblocking-unblock-logentry' => "This message is a log entry. '''$1''' are contributions of an IP. For an example see http://meta.wikimedia.org/wiki/Special:Log/gblblock?uselang=en",
 	'globalblocking-modify-logentry' => '$1 is a link to a user page of the form User:Name, $2 is a reason for the action.',
+	'globalblocking-loglink' => 'Shown at Special:IPBlocklist when the GlobalBlocking extension is enabled (not on translatewiki).
+* $1 is the requested IP address',
 	'globalblock' => 'Same special page with this page:
 
 * [[MediaWiki:Globalblocking-block/{{SUBPAGENAME}}]]',
@@ -801,7 +803,7 @@ $messages['bs'] = array(
 	'globalblocking-block-expiry' => 'Isticanje blokade:',
 	'globalblocking-block-expiry-other' => 'Ostali vremenski period',
 	'globalblocking-block-expiry-otherfield' => 'Ostali period:',
-	'globalblocking-block-legend' => 'Blokiranje korisnika globalno',
+	'globalblocking-block-legend' => 'Blokiranje IP adrese globalno',
 	'globalblocking-block-options' => 'Opcije:',
 	'globalblocking-block-errors' => 'Vaše blokiranje je bilo bez uspjeha, iz {{PLURAL:$1|slijedećeg razloga|slijedećih razloga}}:',
 	'globalblocking-block-ipinvalid' => 'IP adresa ($1) koju ste unijeli nije validna.
@@ -833,6 +835,7 @@ Molimo Vas unesite validnu IP adresu.',
 	'globalblocking-list-whitelisted' => 'lokalno onemogućena od strane $1: $2',
 	'globalblocking-list-whitelist' => 'lokalni status',
 	'globalblocking-list-modify' => 'izmijeni',
+	'globalblocking-list-noresults' => 'Zahtijevana IP adresa nije blokirana.',
 	'globalblocking-goto-block' => 'Globalno blokirajte IP adrese',
 	'globalblocking-goto-unblock' => 'Ukloni globalnu blokadu',
 	'globalblocking-goto-status' => 'Promijenite lokalni status globalne blokade',
@@ -1220,6 +1223,7 @@ Für eine Liste aller aktiven globalen Sperren siehe die [[Special:GlobalBlockLi
 	'globalblocking-modify-logentry' => 'änderte die globale Sperre für [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'bis $1',
 	'globalblocking-logentry-noexpiry' => 'kein Sperrende festgelegt',
+	'globalblocking-loglink' => 'Status der globalen Sperre der IP-Adresse [[Special:GlobalBlockList/$1|$1]] prüfen.',
 	'globalblocklist' => 'Liste global gesperrter IP-Adressen',
 	'globalblock' => 'IP-Adresse global sperren',
 	'globalblockstatus' => 'Lokaler Status der globalen Sperre',
@@ -1358,6 +1362,7 @@ Tüm aktif küresel engellemeri görmek için, [[Special:GlobalBlockList|kürese
 	'globalblocking-modify-logentry' => "serê [[$1]] ($2)'i de blokeya global wedariya / wera diya",
 	'globalblocking-logentry-expiry' => 'qediyeno $1',
 	'globalblocking-logentry-noexpiry' => 'eyarê qediyayîşî nika nironiyo',
+	'globalblocking-loglink' => 'Konrolê halê blok-globali yê IP adresi bıkerê  [[Special:GlobalBlockList/$1|$1]].',
 	'globalblocklist' => 'Liteyê IPyî ke wîkîyê hemî de blok biyê',
 	'globalblock' => 'Yew adresê IPyî wîkîyê hemî de blok bike',
 	'globalblockstatus' => 'Statuyê lokaliyê blokanê hemî',
@@ -2228,6 +2233,7 @@ Pour visionner tous les blocages globaux actifs, vous pouvez visiter la [[Specia
 	'globalblocking-modify-logentry' => 'a modifié le blocage global de [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'expire le $1',
 	'globalblocking-logentry-noexpiry' => "date d'expiration non spécifiée",
+	'globalblocking-loglink' => "Vérifiez le statut de blocage global pour l'adresse IP [[Special:GlobalBlockList/$1|$1]].",
 	'globalblocklist' => 'Liste des adresses IP bloquées globalement',
 	'globalblock' => 'Bloquer globalement une adresse IP',
 	'globalblockstatus' => 'Statuts locaux des blocages globaux',
@@ -2349,6 +2355,7 @@ Para ver todos os bloqueos globais activos, pode ollar a [[Special:GlobalBlockLi
 	'globalblocking-modify-logentry' => 'modificou o bloqueo global de "[[$1]]" ($2)',
 	'globalblocking-logentry-expiry' => 'caduca o $1',
 	'globalblocking-logentry-noexpiry' => 'non hai fixada ningunha caducidade',
+	'globalblocking-loglink' => 'Comprobe o estado do bloqueo global do enderezo IP [[Special:GlobalBlockList/$1|$1]].',
 	'globalblocklist' => 'Lista dos bloqueos globais a enderezos IP',
 	'globalblock' => 'Bloquear globalmente un enderezo IP',
 	'globalblockstatus' => 'Estado local dos bloqueos globais',
@@ -3976,6 +3983,7 @@ Fir all aktiv global Spären ze gesinn, gitt w.e.g op d'[[Special:GlobalBlockLis
 );
 
 /** Limburgish (Limburgs)
+ * @author Aelske
  * @author Benopat
  * @author Ooswesthoesbes
  * @author Pahles
@@ -3997,8 +4005,8 @@ Lèt óp: de kins geine gebroekersnaam opgaeve!",
 	'globalblocking-block-expiryinvalid' => 'De verlouppdatum/tied daese höbs opgegaeve is óngèljig ($1).',
 	'globalblocking-block-submit' => 'Dit IP-adres globaal blokkere',
 	'globalblocking-modify-submit' => 'Anger dees wikiwiej spiekering',
-	'globalblocking-block-success' => "'t IP-adres $1 is op alle perjèkter geblokkeerdj.",
-	'globalblocking-modify-success' => 'De wikiwiej spiekering veur $1 is angerdj',
+	'globalblocking-block-success' => "'t IP-adres $1 is op alle projekte geblokkeerd",
+	'globalblocking-modify-success' => 'De wikipediablokkering veur $1 is veranderd',
 	'globalblocking-block-successsub' => 'Globale ingesteldj',
 	'globalblocking-modify-successsub' => 'De wikiwiej spiekering is angerdj',
 	'globalblocking-block-alreadyblocked' => "'t IP $1 is al globaal geblok. 
