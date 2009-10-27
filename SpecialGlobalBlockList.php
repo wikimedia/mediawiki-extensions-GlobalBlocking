@@ -12,7 +12,8 @@ class SpecialGlobalBlockList extends SpecialPage {
 		global $wgUser,$wgOut,$wgRequest;
 
 		$this->setHeaders();
-		$this->loadParameters();
+		$ip = isset( $par ) ? $par : $wgRequest->getText( 'ip' );
+		$this->loadParameters( $ip );
 
 		$wgOut->setPageTitle( wfMsg( 'globalblocking-list' ) );
 		$wgOut->setRobotPolicy( "noindex,nofollow" );
@@ -113,9 +114,9 @@ class SpecialGlobalBlockList extends SpecialPage {
 		}
 	}
 
-	function loadParameters() {
-		global $wgRequest,$wgUser;
-		$this->mSearchIP = Block::normaliseRange( trim($wgRequest->getText( 'ip' )) );
+	function loadParameters( $ip ) {
+		global $wgUser;
+		$this->mSearchIP = Block::normaliseRange( trim( $ip ) );
 	}
 }
 
