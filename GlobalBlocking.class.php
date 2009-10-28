@@ -299,8 +299,14 @@ class GlobalBlocking {
 	 * @return boolean true
 	 */
 	static function getBlockLogLink( &$msg, $ip ) {
-		# IP addresses can be blocked only.
+		// Fast return if it is a username. IP addresses can be blocked only.
 		if ( !IP::isIPAddress( $ip ) ) {
+			return true;
+		}
+
+		$block = self::getGlobalBlockingBlock( $ip, true );
+		if( !$block ) {
+			// Fast return if not globally blocked
 			return true;
 		}
 
