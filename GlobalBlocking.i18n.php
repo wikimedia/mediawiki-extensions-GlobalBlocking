@@ -110,7 +110,7 @@ To view all active global blocks, you may view the [[Special:GlobalBlockList|glo
 	'globalblocking-modify-logentry' => 'modified the global block on [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'expires $1',
 	'globalblocking-logentry-noexpiry' => 'no expiry set',
-	'globalblocking-loglink' => 'Check the global block status of the IP address [[Special:GlobalBlockList/$1|$1]].',
+	'globalblocking-loglink' => 'Check the global block status of the IP address [[{{#Special:GlobalBlockList}}/$1|$1]].',
 
 	'globalblocklist' => 'List of globally blocked IP addresses',
 	'globalblock' => 'Globally block an IP address',
