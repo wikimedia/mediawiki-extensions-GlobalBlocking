@@ -29,25 +29,9 @@ class GlobalBlocking {
 		
 		// Instance cache
 		if (!is_null($result)) return $result;
-	
-		$dbr = GlobalBlocking::getGlobalBlockingSlave();
-		
-		$hex_ip = IP::toHex( $ip );
-		$ip_pattern = substr( $hex_ip, 0, 4 ) . '%'; // Don't bother checking blocks out of this /16.
-	
-		$conds = array( 
-			'gb_range_end>='.$dbr->addQuotes($hex_ip), // This block in the given range.
-			'gb_range_start<='.$dbr->addQuotes($hex_ip),
-			'gb_range_start like ' . $dbr->addQuotes( $ip_pattern ),
-			'gb_expiry>'.$dbr->addQuotes($dbr->timestamp(wfTimestampNow())) 
-		);
-	
-		if ( !$user->isAnon() )
-			$conds['gb_anon_only'] = 0;
-	
-		// Get the block
-		if ($block = $dbr->selectRow( 'globalblocks', '*', $conds, __METHOD__ )) {
-		
+
+		$block = getGlobalBlockingBlock( $ip, $user->isAnon() );
+		if  ( $block ) {
 			// Check for local whitelisting
 			if (GlobalBlocking::getWhitelistInfo( $block->gb_id ) ) {
 				// Block has been whitelisted.
@@ -71,7 +55,35 @@ class GlobalBlocking {
 		}
 		return $result = array();
 	}
-	
+
+	/**
+	 * Get a block
+	 * @param string $ip The IP address to be checked
+	 * @param boolean $anon Get anon blocks only
+	 * @return object The block
+	 */
+	static function getGlobalBlockingBlock( $ip, $anon ) {
+		$dbr = GlobalBlocking::getGlobalBlockingSlave();
+
+		$hex_ip = IP::toHex( $ip );
+		$ip_pattern = substr( $hex_ip, 0, 4 ) . '%'; // Don't bother checking blocks out of this /16.
+
+		$conds = array( 
+			'gb_range_end>='.$dbr->addQuotes( $hex_ip ), // This block in the given range.
+			'gb_range_start<='.$dbr->addQuotes( $hex_ip ),
+			'gb_range_start like ' . $dbr->addQuotes( $ip_pattern ),
+			'gb_expiry>'.$dbr->addQuotes( $dbr->timestamp( wfTimestampNow() ) )
+		);
+
+		if ( !$anon ) {
+			$conds['gb_anon_only'] = 0;
+		}
+
+		// Get the block
+		$block = $dbr->selectRow( 'globalblocks', '*', $conds, __METHOD__ );
+		return $block;
+	}
+
 	static function getGlobalBlockingMaster() {
 		global $wgGlobalBlockingDatabase;
 		return wfGetDB( DB_MASTER, 'globalblocking', $wgGlobalBlockingDatabase );
