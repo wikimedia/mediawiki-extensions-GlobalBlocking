@@ -30,7 +30,7 @@ class GlobalBlocking {
 		// Instance cache
 		if (!is_null($result)) return $result;
 
-		$block = getGlobalBlockingBlock( $ip, $user->isAnon() );
+		$block = self::getGlobalBlockingBlock( $ip, $user->isAnon() );
 		if  ( $block ) {
 			// Check for local whitelisting
 			if (GlobalBlocking::getWhitelistInfo( $block->gb_id ) ) {
