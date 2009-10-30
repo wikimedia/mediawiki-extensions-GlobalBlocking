@@ -2234,7 +2234,7 @@ Pour visionner tous les blocages globaux actifs, vous pouvez visiter la [[Specia
 	'globalblocking-modify-logentry' => 'a modifié le blocage global de [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'expire le $1',
 	'globalblocking-logentry-noexpiry' => "date d'expiration non spécifiée",
-	'globalblocking-loglink' => "Vérifiez le statut de blocage global pour l'adresse IP [[{{#Special:GlobalBlockList}}/$1|$1]].",
+	'globalblocking-loglink' => "L'adresse IP $1 est bloquée globalement ([[{{#Special:GlobalBlockList}}/$1|détails]]).",
 	'globalblocklist' => 'Liste des adresses IP bloquées globalement',
 	'globalblock' => 'Bloquer globalement une adresse IP',
 	'globalblockstatus' => 'Statuts locaux des blocages globaux',
@@ -2880,6 +2880,7 @@ Zo by sej wšě aktiwne globalne blokowanja wobhladał, móžeš sej [[Special:G
 	'globalblocking-modify-logentry' => 'je globalne blokowanje na [[$1]] ($2) změnił',
 	'globalblocking-logentry-expiry' => 'spadnje $1',
 	'globalblocking-logentry-noexpiry' => 'žane spadnjenje postajene',
+	'globalblocking-loglink' => 'IP-adresa $1 je globalnje zablokowana ([[{{#Special:GlobalBlockList}}/$1|wšě podrobnosće]]).',
 	'globalblocklist' => 'Lisćina globalnych zablokowanych IP-adresow',
 	'globalblock' => 'IP-adresu globalnje blokować',
 	'globalblockstatus' => 'Lokalny status globalnych blokowanjow',
@@ -4124,6 +4125,7 @@ $messages['mhr'] = array(
 );
 
 /** Macedonian (Македонски)
+ * @author Bjankuloski06
  * @author Brest
  */
 $messages['mk'] = array(
@@ -4131,7 +4133,7 @@ $messages['mk'] = array(
 	'globalblocking-block-expiry' => 'Рок на блокирање:',
 	'globalblocking-block-expiry-other' => 'Друг рок на блокирање',
 	'globalblocking-block-expiry-otherfield' => 'Друго време:',
-	'globalblocking-block-legend' => 'Глобално блокирање на корисник',
+	'globalblocking-block-legend' => 'Глобално блокирање на IP-адреса',
 	'globalblocking-block-options' => 'Опции:',
 	'globalblocking-block-errors' => 'Вашето блокирање беше неуспешно, од {{PLURAL:$1|следнава причина|следниве причини}}:',
 	'globalblocking-block-ipinvalid' => 'IP адресата ($1) која ја внесовте не е валидна.
@@ -6234,6 +6236,7 @@ $messages['tg-cyrl'] = array(
 );
 
 /** Thai (ไทย)
+ * @author Ans
  * @author Octahedron80
  * @author Passawuth
  */
@@ -6241,7 +6244,7 @@ $messages['th'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|อนุญาต]]ให้คุณสามารถบล็อกผู้ใช้ที่เป็น ไอพี [[Special:GlobalBlockList|ในหลาย ๆ วิกิ]]ในครั้งเดียวได้',
 	'globalblocking-block-reason' => 'เหตุผลสำหรับการบล็อก:',
 	'globalblocking-block-expiry' => 'หมดอายุ:',
-	'globalblocking-block-errors' => 'การบล็อกครั้งนี้ไม่สำเร็จ เนื่องจาก :',
+	'globalblocking-block-errors' => 'การสกัดกั้นไม่สำเร็จ เนื่องจาก{{PLURAL:$1|เหตุผลต่อไปนี้}}:',
 	'globalblocking-search-ip' => 'หมายเลขไอพี:',
 	'globalblocking-unblock-reason' => 'เหตุผล:',
 );
