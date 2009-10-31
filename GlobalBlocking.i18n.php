@@ -111,7 +111,8 @@ To view all active global blocks, you may view the [[Special:GlobalBlockList|glo
 	'globalblocking-logentry-expiry' => 'expires $1',
 	'globalblocking-logentry-noexpiry' => 'no expiry set',
 	'globalblocking-loglink' => 'The IP address $1 is blocked globally ([[{{#Special:GlobalBlockList}}/$1|full details]]).',
-
+	'globalblocking-showlog' => 'This IP address has been blocked previously.
+The block log is provided below for reference:',
 	'globalblocklist' => 'List of globally blocked IP addresses',
 	'globalblock' => 'Globally block an IP address',
 	'globalblockstatus' => 'Local status of global blocks',

@@ -146,7 +146,7 @@ class SpecialGlobalBlock extends SpecialPage {
 
 	function form( $error ) {
 		global $wgUser, $wgRequest,$wgScript,$wgOut;
-		
+
 		$form = '';
 
 		// Introduction
@@ -155,12 +155,11 @@ class SpecialGlobalBlock extends SpecialPage {
 		} else {
 			$wgOut->addWikiMsg( 'globalblocking-block-intro' );
 		}
-		
+
 		// Add errors
 		$wgOut->addHTML( $error );
 
-		$form .= Xml::openElement( 'fieldset' ) .
-			Xml::element( 'legend', null, wfMsg( 'globalblocking-block-legend' ) );
+		$form .= Xml::fieldset( wfMsg( 'globalblocking-block-legend' ) );
 		$form .= Xml::openElement( 'form',
 									array( 'method' => 'post',
 											'action' => $wgScript,
@@ -243,6 +242,22 @@ class SpecialGlobalBlock extends SpecialPage {
 		$form .= Xml::closeElement( 'fieldset' );
 
 		$wgOut->addHTML( $form );
+
+		// Show loglist of previous blocks
+		if ( $this->mAddress ) {
+			$title = Title::makeTitleSafe( NS_USER, $this->mAddress );
+			LogEventsList::showLogExtract(
+				$wgOut,
+				'gblblock',
+				$title->getPrefixedText(),
+				'',
+				array(
+					'lim' => 10,
+					'msgKey' => 'globalblocking-showlog',
+					'showIfEmpty' => false
+				)
+			);
+		}
 	}
 
 	function buildExpirySelector( $name, $id = null, $selected = null, $expiryOptions = null ) {
