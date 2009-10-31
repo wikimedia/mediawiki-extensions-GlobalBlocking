@@ -786,8 +786,10 @@ $messages['bn'] = array(
 
 /** Breton (Brezhoneg)
  * @author Fulup
+ * @author Y-M D
  */
 $messages['br'] = array(
+	'globalblocking-unblock-reason' => 'Abeg :',
 	'globalblocking-block2-logentry' => 'en deus stanket [[$1]] dre-vras ($2)',
 );
 
@@ -1469,6 +1471,7 @@ Aby se woglědał wšykne aktiwne globalne blokěrowanja, móžoš se woglědaś
 	'globalblocking-modify-logentry' => 'jo změnił globalne blokěrowanje na [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'pśepadnjo $1',
 	'globalblocking-logentry-noexpiry' => 'žedne pśepadnjenje póstajone',
+	'globalblocking-loglink' => 'IP-adresa $1 jo globalnje zablokěrowana ([[{{#Special:GlobalBlockList}}/$1|drobnostki]]).',
 	'globalblocklist' => 'Lisćina globalnje blokěrowanych IP-adresow',
 	'globalblock' => 'IP-adresu globalnje blokěrowaś',
 	'globalblockstatus' => 'Lokalny status globalnych blokěrowanjow',
@@ -2356,7 +2359,7 @@ Para ver todos os bloqueos globais activos, pode ollar a [[Special:GlobalBlockLi
 	'globalblocking-modify-logentry' => 'modificou o bloqueo global de "[[$1]]" ($2)',
 	'globalblocking-logentry-expiry' => 'caduca o $1',
 	'globalblocking-logentry-noexpiry' => 'non hai fixada ningunha caducidade',
-	'globalblocking-loglink' => 'Comprobe o estado do bloqueo global do enderezo IP [[{{#Special:GlobalBlockList}}/$1|$1]].',
+	'globalblocking-loglink' => 'O enderezo IP $1 está bloqueado globalmente ([[{{#Special:GlobalBlockList}}/$1|máis detalles]]).',
 	'globalblocklist' => 'Lista dos bloqueos globais a enderezos IP',
 	'globalblock' => 'Bloquear globalmente un enderezo IP',
 	'globalblockstatus' => 'Estado local dos bloqueos globais',
@@ -6450,6 +6453,7 @@ Tüm aktif küresel engellemeri görmek için, [[Special:GlobalBlockList|kürese
 	'globalblocking-modify-logentry' => '[[$1]] ($2) üzerinde küresel engellemeyi değiştirdi',
 	'globalblocking-logentry-expiry' => '$1 tarihinde bitiyor',
 	'globalblocking-logentry-noexpiry' => 'bitiş tarihi ayarlanmadı',
+	'globalblocking-loglink' => 'IP adresi $1 küresel olarak engellenmiş ([[{{#Special:GlobalBlockList}}/$1|tüm ayrıntılar]]).',
 	'globalblocklist' => 'Küresel olarak engellenmiş IP adresleri listesi',
 	'globalblock' => 'Bir IP adresini küresel olarak engelle',
 	'globalblockstatus' => 'Küresel engellemelerin yerel durumları',
