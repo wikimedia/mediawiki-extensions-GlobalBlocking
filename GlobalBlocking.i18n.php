@@ -1099,6 +1099,8 @@ Všechny aktivní globální blokování naleznete na [[Special:GlobalBlockList|
 	'globalblocking-logentry-expiry' => 'vyprší $1',
 	'globalblocking-logentry-noexpiry' => 'bez vypršení',
 	'globalblocking-loglink' => 'IP adresa $1 je globálně zablokována ([[{{#Special:GlobalBlockList}}/$1|podrobnosti]]).',
+	'globalblocking-showlog' => 'Tato IP adresa byla dříve blokována.
+Zde je pro přehled zobrazen výpis z knihy zablokování:',
 	'globalblocklist' => 'Seznam globálně blokovaných IP adres',
 	'globalblock' => 'Globálně zablokovat IP adresu',
 	'globalblockstatus' => 'Místní stav globálního blokování',
@@ -1228,6 +1230,8 @@ Für eine Liste aller aktiven globalen Sperren siehe die [[Special:GlobalBlockLi
 	'globalblocking-logentry-expiry' => 'bis $1',
 	'globalblocking-logentry-noexpiry' => 'kein Sperrende festgelegt',
 	'globalblocking-loglink' => 'Die IP-Adresse $1 ist global gesperrt ([[{{#Special:GlobalBlockList}}/$1|Details]]).',
+	'globalblocking-showlog' => 'Diese IP-Adresse war früher gesperrt.
+Es folgt ein Auszug aus dem Benutzersperr-Logbuch:',
 	'globalblocklist' => 'Liste global gesperrter IP-Adressen',
 	'globalblock' => 'IP-Adresse global sperren',
 	'globalblockstatus' => 'Lokaler Status der globalen Sperre',
@@ -1473,6 +1477,8 @@ Aby se woglědał wšykne aktiwne globalne blokěrowanja, móžoš se woglědaś
 	'globalblocking-logentry-expiry' => 'pśepadnjo $1',
 	'globalblocking-logentry-noexpiry' => 'žedne pśepadnjenje póstajone',
 	'globalblocking-loglink' => 'IP-adresa $1 jo globalnje zablokěrowana ([[{{#Special:GlobalBlockList}}/$1|drobnostki]]).',
+	'globalblocking-showlog' => 'Toś ta IP-adresa jo se pjerwjej zablokěrowała.
+Protokol blokěrowanjow jo dołojce pódał slědujuce ako referencu:',
 	'globalblocklist' => 'Lisćina globalnje blokěrowanych IP-adresow',
 	'globalblock' => 'IP-adresu globalnje blokěrowaś',
 	'globalblockstatus' => 'Lokalny status globalnych blokěrowanjow',
@@ -2239,6 +2245,8 @@ Pour visionner tous les blocages globaux actifs, vous pouvez visiter la [[Specia
 	'globalblocking-logentry-expiry' => 'expire le $1',
 	'globalblocking-logentry-noexpiry' => "date d'expiration non spécifiée",
 	'globalblocking-loglink' => "L'adresse IP $1 est bloquée globalement ([[{{#Special:GlobalBlockList}}/$1|détails]]).",
+	'globalblocking-showlog' => 'Cette adresse IP a été bloquée antérieurement.
+Le journal des blocages est disponible ci-dessous :',
 	'globalblocklist' => 'Liste des adresses IP bloquées globalement',
 	'globalblock' => 'Bloquer globalement une adresse IP',
 	'globalblockstatus' => 'Statuts locaux des blocages globaux',
@@ -2361,6 +2369,8 @@ Para ver todos os bloqueos globais activos, pode ollar a [[Special:GlobalBlockLi
 	'globalblocking-logentry-expiry' => 'caduca o $1',
 	'globalblocking-logentry-noexpiry' => 'non hai fixada ningunha caducidade',
 	'globalblocking-loglink' => 'O enderezo IP $1 está bloqueado globalmente ([[{{#Special:GlobalBlockList}}/$1|máis detalles]]).',
+	'globalblocking-showlog' => 'Este enderezo IP foi bloqueado previamente.
+Velaquí está o rexistro de bloqueos, por se quere consultalo:',
 	'globalblocklist' => 'Lista dos bloqueos globais a enderezos IP',
 	'globalblock' => 'Bloquear globalmente un enderezo IP',
 	'globalblockstatus' => 'Estado local dos bloqueos globais',
@@ -2885,6 +2895,8 @@ Zo by sej wšě aktiwne globalne blokowanja wobhladał, móžeš sej [[Special:G
 	'globalblocking-logentry-expiry' => 'spadnje $1',
 	'globalblocking-logentry-noexpiry' => 'žane spadnjenje postajene',
 	'globalblocking-loglink' => 'IP-adresa $1 je globalnje zablokowana ([[{{#Special:GlobalBlockList}}/$1|wšě podrobnosće]]).',
+	'globalblocking-showlog' => 'Tuta IP-adresa bu prjedy zablokowana.
+Protokol blokowanjow podawa so deleka jako referencu:',
 	'globalblocklist' => 'Lisćina globalnych zablokowanych IP-adresow',
 	'globalblock' => 'IP-adresu globalnje blokować',
 	'globalblockstatus' => 'Lokalny status globalnych blokowanjow',
@@ -3270,6 +3282,9 @@ Untuk menampilkan seluruh pemblokiran global yang aktif saat ini, Anda dapat mel
 	'globalblocking-modify-logentry' => 'mengubah pemblokiran global atas [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'kadaluwarsa $1',
 	'globalblocking-logentry-noexpiry' => 'selamanya',
+	'globalblocking-loglink' => 'Alamat IP $1 diblokir secara global ([[{{#Special:GlobalBlockList}}/$1|detail lengkap]]).',
+	'globalblocking-showlog' => 'Alamat IP ini telah diblokir sebelumnya.
+Log pemblokiran disediakan di bawah ini sebagai rujukan:',
 	'globalblocklist' => 'Daftar alamat IP yang diblokir secara global',
 	'globalblock' => 'Memblokir suatu alamat IP secara global',
 	'globalblockstatus' => 'Status pemblokiran global di wiki lokal',
@@ -3681,7 +3696,7 @@ $messages['ko'] = array(
 	'globalblocking-block-expiry' => '차단 기간:',
 	'globalblocking-block-expiry-other' => '다른 기간',
 	'globalblocking-block-expiry-otherfield' => '다른 기간:',
-	'globalblocking-block-legend' => '사용자를 전체 위키에서 차단하기',
+	'globalblocking-block-legend' => '특정 IP를 전체 위키에서 차단하기',
 	'globalblocking-block-options' => '설정:',
 	'globalblocking-block-errors' => '다음 {{PLURAL:$1|이유로|$1가지 이유로}} 인해 차단하는 데 실패하였습니다:',
 	'globalblocking-block-ipinvalid' => '당신이 입력한 IP 주소 ($1) 가 잘못되었습니다.
@@ -3713,6 +3728,7 @@ $messages['ko'] = array(
 	'globalblocking-list-whitelisted' => '$1에 의해 로컬에서 해제됨: $2',
 	'globalblocking-list-whitelist' => '로컬 상태 변경',
 	'globalblocking-list-modify' => '차단 설정 변경',
+	'globalblocking-list-noresults' => '당신이 입력한 IP 주소는 차단되지 않았습니다.',
 	'globalblocking-goto-block' => 'IP를 전체 위키에서 차단',
 	'globalblocking-goto-unblock' => '전체 차단 해제',
 	'globalblocking-goto-status' => '전체 차단의 로컬 상태 바꾸기',
@@ -3725,9 +3741,11 @@ $messages['ko'] = array(
 	'globalblocking-unblock-submit' => '전체 차단 해제',
 	'globalblocking-unblock-reason' => '이유:',
 	'globalblocking-unblock-unblocked' => "IP 주소 '''$1'''에 대한 전체 차단 #$2가 성공적으로 해제되었습니다.",
-	'globalblocking-unblock-errors' => '전체 차단 해제에 실패했습니다. 이유는 다음과 같습니다:',
+	'globalblocking-unblock-errors' => '전체 차단 해제에 실패했습니다. {{PLURAL:$1|이유}}는 다음과 같습니다:',
 	'globalblocking-unblock-successsub' => '전체 차단이 성공적으로 해제되었습니다.',
 	'globalblocking-unblock-subtitle' => '전체 차단 해제',
+	'globalblocking-unblock-intro' => '이 양식을 이용해 전체 차단을 해제할 수 있습니다.
+전체 차단된 IP의 목록을 보려면 [[Special:GlobalBlockList|이곳]]을 클릭하십시오.',
 	'globalblocking-whitelist' => '전체 차단의 로컬 상태',
 	'globalblocking-whitelist-notapplied' => '이 위키에서는 전체 차단이 적용되지 않습니다.
 따라서 전체 차단의 로컬 상태를 바꿀 수 없습니다.',
@@ -4216,7 +4234,7 @@ $messages['ml'] = array(
 	'globalblocking-whitelist-legend' => 'പ്രാദേശിക സ്ഥിതി മാറ്റുക',
 	'globalblocking-whitelist-reason' => 'മാറ്റം വരുത്താനുള്ള കാരണം:',
 	'globalblocking-whitelist-status' => 'പ്രാദേശിക സ്ഥിതി:',
-	'globalblocking-whitelist-statuslabel' => '{{SITENAME}} സം‌രംഭത്തില്‍ ആഗോളബ്ലോക്ക് ഡിസേബിള്‍ ചെയ്യുക',
+	'globalblocking-whitelist-statuslabel' => '{{SITENAME}} സം‌രംഭത്തില്‍ ആഗോളതടയലുകൾ പ്രവർത്തനരഹിതമാക്കുക',
 	'globalblocking-whitelist-submit' => 'പ്രാദേശിക സ്ഥിതി മാറ്റുക',
 	'globalblocking-whitelist-whitelisted' => "'''$1''' എന്ന ഐപി വിലാസത്തിന്റെ #$2 എന്ന ആഗോളബ്ലോക്ക് {{SITENAME}} സം‌രംഭത്തില്‍ വിജയകരമായി പ്രവര്‍ത്തനരഹിതമാക്കിയിരിക്കുന്നു",
 	'globalblocking-whitelist-dewhitelisted' => "'''$1''' എന്ന ഐപി വിലാസത്തിന്റെ #$2 എന്ന ആഗോളബ്ലോക്ക് {{SITENAME}} സം‌രംഭത്തില്‍ വിജയകരമായി പ്രവര്‍ത്തനയോഗ്യമാക്കിയിരിക്കുന്നു.",
@@ -4239,6 +4257,8 @@ $messages['ml'] = array(
 	'globalblocking-logentry-expiry' => '$1-നു അവസാനിക്കുന്നു',
 	'globalblocking-logentry-noexpiry' => 'അവസാനിക്കൽ ക്രമീകരിച്ചിട്ടില്ല',
 	'globalblocking-loglink' => 'ഐ.പി. വിലാസം $1 ആഗോളമായി തടയപ്പെട്ടിരിക്കുന്നു ([[{{#Special:GlobalBlockList}}/$1|പൂർണ്ണ വിവരങ്ങൾ]]).',
+	'globalblocking-showlog' => 'ഈ ഐ.പി. വിലാസം മുമ്പേ തടയപ്പെട്ടിട്ടുള്ളതാണ്.
+അവലംബമായി തടയൽ രേഖ താഴെ കൊടുക്കുന്നു:',
 	'globalblocklist' => 'ആഗോളമായി തടയപ്പെട്ട ഐപിവിലാസങ്ങള്‍ പ്രദര്‍ശിപ്പിക്കുക',
 	'globalblock' => 'ഒരു ഐപി വിലാസത്തെ ആഗോളമായി തടയുക',
 	'globalblockstatus' => 'ആഗോള തടയലുകളുടെ പ്രാദേശിക സ്ഥിതി',
@@ -4660,6 +4680,8 @@ Alle globale blokkades staan in de [[Special:GlobalBlockList|lijst met globale b
 	'globalblocking-logentry-expiry' => 'vervalt op $1',
 	'globalblocking-logentry-noexpiry' => 'geen vervaldatum ingesteld',
 	'globalblocking-loglink' => 'Het IP-adres is globaal geblokkeerd ([[{{#Special:GlobalBlockList}}/$1|volledige details]])',
+	'globalblocking-showlog' => 'Dit IP-adres is eerder geblokkeerd geweest.
+Het blokkeerlogboek wordt hieronder weergegeven:',
 	'globalblocklist' => 'Lijst van globaal geblokkeerde IP-adressen',
 	'globalblock' => 'Een IP-adres globaal blokkeren',
 	'globalblockstatus' => 'Lokale status van globale blokkades',
@@ -5106,6 +5128,8 @@ Wszystkie aktywne globalne blokady można zobaczyć w [[Special:GlobalBlockList|
 	'globalblocking-logentry-expiry' => 'wygasa $1',
 	'globalblocking-logentry-noexpiry' => 'wygaśnięcie nie ustalone',
 	'globalblocking-loglink' => 'Adres IP $1 jest zablokowany globalnie ([[{{#Special:GlobalBlockList}}/$1|pełny opis]]).',
+	'globalblocking-showlog' => 'Ten adres IP był wcześniej blokowany.
+Poniżej, dla odniesienia możesz sprawdzić rejestr blokad.',
 	'globalblocklist' => 'Spis globalnie zablokowanych adresów IP',
 	'globalblock' => 'Zablokuj globalnie adres IP',
 	'globalblockstatus' => 'Lokalny status globalnych blokad',
@@ -5538,6 +5562,8 @@ $1',
 	'globalblocking-logentry-expiry' => 'истекает  $1',
 	'globalblocking-logentry-noexpiry' => 'срок действия не установлен',
 	'globalblocking-loglink' => 'IP-адрес $1 заблокирован глобально ([[{{#Special:GlobalBlockList}}/$1|подробнее]]).',
+	'globalblocking-showlog' => 'Этот IP-адрес уже был заблокирован ранее.
+Ниже для справки приведён журнал блокировок:',
 	'globalblocklist' => 'Список заблокированных глобально IP-адресов',
 	'globalblock' => 'Глобальная блокировка IP-адреса',
 	'globalblockstatus' => 'Локальные состояния глобальных блокировок',
@@ -6455,6 +6481,8 @@ Tüm aktif küresel engellemeri görmek için, [[Special:GlobalBlockList|kürese
 	'globalblocking-logentry-expiry' => '$1 tarihinde bitiyor',
 	'globalblocking-logentry-noexpiry' => 'bitiş tarihi ayarlanmadı',
 	'globalblocking-loglink' => 'IP adresi $1 küresel olarak engellenmiş ([[{{#Special:GlobalBlockList}}/$1|tüm ayrıntılar]]).',
+	'globalblocking-showlog' => 'Bu IP adresi daha önce engellenmiş.
+Engelleme günlüğü referans için aşağıda verilmiştir:',
 	'globalblocklist' => 'Küresel olarak engellenmiş IP adresleri listesi',
 	'globalblock' => 'Bir IP adresini küresel olarak engelle',
 	'globalblockstatus' => 'Küresel engellemelerin yerel durumları',
