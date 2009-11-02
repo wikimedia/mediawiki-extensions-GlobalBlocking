@@ -1610,7 +1610,7 @@ $messages['eo'] = array(
 	'globalblocking-block-expiry' => 'Limdato de forbaro:',
 	'globalblocking-block-expiry-other' => 'Alia limdato',
 	'globalblocking-block-expiry-otherfield' => 'Alia tempo:',
-	'globalblocking-block-legend' => 'Forbari uzanto ĝenerale',
+	'globalblocking-block-legend' => 'Forbari IP-adreson ĝenerale',
 	'globalblocking-block-options' => 'Opcioj:',
 	'globalblocking-block-errors' => 'La forbaro malsukcesis, pro la {{PLURAL:$1|jena kialo|jenaj kialoj}}:
 $1',
@@ -1709,6 +1709,7 @@ Vidi ĉiujn aktivajn ĝeneralajn forbarojn, vi povas vidi la [[Special:GlobalBlo
  * @author Crazymadlover
  * @author Dferg
  * @author Lin linao
+ * @author Locos epraix
  * @author Remember the dot
  * @author Sanbec
  * @author Translationista
@@ -1804,6 +1805,9 @@ Para ver todos los bloqueos globales activos, usted puede ver [[Special:GlobalBl
 	'globalblocking-modify-logentry' => 'modificó el bloqueo global en [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'caduca el $1',
 	'globalblocking-logentry-noexpiry' => 'sin fecha de caducidad',
+	'globalblocking-loglink' => 'La dirección IP $1 está bloqueada globalmente ([[{{#Special:GlobalBlockList}}/$1|detalles]]).',
+	'globalblocking-showlog' => 'Esta dirección IP ha sido bloqueada previamente.
+El registro de bloqueos se proporciona a continuación como referencia:',
 	'globalblocklist' => 'Lista de direcciones IP bloqueadas globalmente',
 	'globalblock' => 'Bloquear una dirección IP globalmente',
 	'globalblockstatus' => 'Estatus local de bloqueos globales',
@@ -2490,6 +2494,8 @@ Go ne Lischt vu allene aktive wältwyte Sperrine aaluege, lueg uf dr [[Special:G
 	'globalblocking-logentry-expiry' => 'bis $1',
 	'globalblocking-logentry-noexpiry' => 'kei Sperränd feschtgleit',
 	'globalblocking-loglink' => 'D IP-Adräss $1 isch wältwyt gsperrt ([[{{#Special:GlobalBlockList}}/$1|Details]]).',
+	'globalblocking-showlog' => 'Die IP-Adräss isch fiejer gsperrt gsi.
+Do chunnt e Uuszug us em Benutzersperr-Logbuech:',
 	'globalblocklist' => 'Lischt vu wältwyt gsperrte IP-Adrässe',
 	'globalblock' => 'E IP-Adräss wältwyt sperre',
 	'globalblockstatus' => 'Lokaler Status vu dr wältwyte Sperri',
@@ -3173,6 +3179,8 @@ Pro vider tote le blocadas global active, tu pote vider le [[Special:GlobalBlock
 	'globalblocking-logentry-expiry' => 'expira le $1',
 	'globalblocking-logentry-noexpiry' => 'data de expiration non specificate',
 	'globalblocking-loglink' => 'Le adresse IP $1 es blocate globalmente ([[{{#Special:GlobalBlockList}}/$1|detalios complete]]).',
+	'globalblocking-showlog' => 'Iste adresse IP ha essite blocate previemente.
+Le registro de blocadas es fornite ci infra pro referentia:',
 	'globalblocklist' => 'Lista de adresses IP blocate globalmente',
 	'globalblock' => 'Blocar globalmente un adresse IP',
 	'globalblockstatus' => 'Stato local de blocadas global',
@@ -3502,6 +3510,8 @@ $messages['ja'] = array(
 	'globalblocking-logentry-expiry' => '有効期限: $1',
 	'globalblocking-logentry-noexpiry' => '期限設定なし',
 	'globalblocking-loglink' => 'IP アドレス $1 はグローバルブロックされています ([[{{#Special:GlobalBlockList}}/$1|全詳細]])。',
+	'globalblocking-showlog' => 'この IP アドレスは以前にブロックされたことがあります。
+参考のためにブロック記録を以下に示します。',
 	'globalblocklist' => 'グローバルブロックされたIPアドレス一覧',
 	'globalblock' => 'IPアドレスをグローバルブロックする',
 	'globalblockstatus' => 'グローバルブロックのローカル状態',
@@ -5088,7 +5098,7 @@ Zwróć uwagę na to, że nie możesz wprowadzić nazwy użytkownika!',
 	'globalblocking-unblock-legend' => 'Zdejmowanie globalnej blokady',
 	'globalblocking-unblock-submit' => 'Zdejmij globalną blokadę',
 	'globalblocking-unblock-reason' => 'Powód',
-	'globalblocking-unblock-unblocked' => "Zdjąłeś globalną blokadę $2 dla adresu IP '''$1'''",
+	'globalblocking-unblock-unblocked' => "{{GENDER:|Zdjąłeś|Zdjęłaś}} globalną blokadę $2 dla adresu IP '''$1'''",
 	'globalblocking-unblock-errors' => 'Nie udało się zdjąć globalnej blokady z {{PLURAL:$1|poniższego powodu|poniższych powodów}}:',
 	'globalblocking-unblock-successsub' => 'Globalna blokada została zdjęta',
 	'globalblocking-unblock-subtitle' => 'Zdejmowanie globalnej blokady',
@@ -5129,7 +5139,7 @@ Wszystkie aktywne globalne blokady można zobaczyć w [[Special:GlobalBlockList|
 	'globalblocking-logentry-noexpiry' => 'wygaśnięcie nie ustalone',
 	'globalblocking-loglink' => 'Adres IP $1 jest zablokowany globalnie ([[{{#Special:GlobalBlockList}}/$1|pełny opis]]).',
 	'globalblocking-showlog' => 'Ten adres IP był wcześniej blokowany.
-Poniżej, dla odniesienia możesz sprawdzić rejestr blokad.',
+Poniżej znajduje się rejestr blokad:',
 	'globalblocklist' => 'Spis globalnie zablokowanych adresów IP',
 	'globalblock' => 'Zablokuj globalnie adres IP',
 	'globalblockstatus' => 'Lokalny status globalnych blokad',
@@ -6058,6 +6068,7 @@ $messages['su'] = array(
 /** Swedish (Svenska)
  * @author Boivie
  * @author Fluff
+ * @author GameOn
  * @author Jon Harald Søby
  * @author M.M.S.
  * @author Rotsee
@@ -6071,7 +6082,7 @@ $messages['sv'] = array(
 	'globalblocking-block-expiry' => 'Varighet:',
 	'globalblocking-block-expiry-other' => 'Annan varighet',
 	'globalblocking-block-expiry-otherfield' => 'Annan tid:',
-	'globalblocking-block-legend' => 'Blockerar en användare globalt',
+	'globalblocking-block-legend' => 'Blockera en användare globalt',
 	'globalblocking-block-options' => 'Alternativ:',
 	'globalblocking-block-errors' => 'Blockeringen misslyckades på grund av följande {{PLURAL:$1|anledning|anledningar}}:',
 	'globalblocking-block-ipinvalid' => 'IP-adressen du skrev in ($1) är ogiltig.
@@ -6148,6 +6159,7 @@ För att se alla aktiva globala blockeringar, kan du se den [[Special:GlobalBloc
 	'globalblocking-modify-logentry' => 'modifierade den globala blockeringen på [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'varaktighet $1',
 	'globalblocking-logentry-noexpiry' => 'ingen utgångstid satt',
+	'globalblocking-loglink' => 'IP-adressen $1 är blockerad globalt ([[{{#Special:GlobalBlockList}}/$1|detaljer]]).',
 	'globalblocklist' => 'Lista över globalt blockerade IP-adresser',
 	'globalblock' => 'Blockera en IP-adress globalt',
 	'globalblockstatus' => 'Lokal status för globala blockeringar',
