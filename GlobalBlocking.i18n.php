@@ -676,6 +676,9 @@ $messages['be-tarask'] = array(
 	'globalblocking-modify-logentry' => 'зьмененае глябальнае блякаваньне [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'канчаецца $1',
 	'globalblocking-logentry-noexpiry' => 'сканчэньне ня ўстаноўленае',
+	'globalblocking-loglink' => 'IP-адрас заблякаваны глябальна ([[{{#Special:GlobalBlockList}}/$1|ўсе падрабязнасьці]]).',
+	'globalblocking-showlog' => 'Гэты IP-адрас быў заблякаваны раней.
+Ніжэй пададзены журнал блякаваньняў для даведкі:',
 	'globalblocklist' => 'Сьпіс глябальна заблякаваных IP-адрасоў',
 	'globalblock' => 'Глябальнае блякаваньне ІР-адрасу',
 	'globalblockstatus' => 'Лякальны статус глябальных блякаваньняў',
@@ -790,6 +793,7 @@ $messages['bn'] = array(
  * @author Y-M D
  */
 $messages['br'] = array(
+	'globalblocking-list-modify' => 'kemmañ',
 	'globalblocking-unblock-reason' => 'Abeg :',
 	'globalblocking-block2-logentry' => 'en deus stanket [[$1]] dre-vras ($2)',
 );
@@ -3327,6 +3331,7 @@ $messages['is'] = array(
 /** Italian (Italiano)
  * @author BrokenArrow
  * @author Darth Kule
+ * @author Gianfranco
  * @author Melos
  */
 $messages['it'] = array(
@@ -3338,7 +3343,7 @@ $messages['it'] = array(
 	'globalblocking-block-expiry' => 'Scadenza del blocco:',
 	'globalblocking-block-expiry-other' => 'Altri tempi di scadenza',
 	'globalblocking-block-expiry-otherfield' => 'Durata non in elenco:',
-	'globalblocking-block-legend' => 'Blocca un utente globalmente',
+	'globalblocking-block-legend' => 'Blocca globalmente un indirizzo IP',
 	'globalblocking-block-options' => 'Opzioni:',
 	'globalblocking-block-errors' => 'Il blocco non è stato eseguito per {{PLURAL:$1|il seguente motivo|i seguenti motivi}}:',
 	'globalblocking-block-ipinvalid' => "L'indirizzo IP ($1) che hai inserito non è valido. Fai attenzione al fatto che non puoi inserire un nome utente!",
@@ -3365,6 +3370,7 @@ $messages['it'] = array(
 	'globalblocking-list-whitelisted' => 'disattivato localmente da $1: $2',
 	'globalblocking-list-whitelist' => 'stato locale',
 	'globalblocking-list-modify' => 'modifica',
+	'globalblocking-list-noresults' => "L'indirizzo IP richiesto non è bloccato.",
 	'globalblocking-goto-block' => 'Blocca globalmente un indirizzo IP',
 	'globalblocking-goto-unblock' => 'Rimuovi un blocco globale',
 	'globalblocking-goto-status' => 'Cambia stato locale di un blocco globale',
@@ -5005,7 +5011,9 @@ Per visionar totes los blocatges globals actius, podètz visitar la [[Special:Gl
 	'globalblocking-modify-logentry' => 'a modificat lo blocatge global de [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'expira lo $1',
 	'globalblocking-logentry-noexpiry' => "data d'expiracion pas especificada",
-	'globalblocking-loglink' => "Verificatz l'estatut de blocatge global per l'adreça IP [[{{#Special:GlobalBlockList}}/$1|$1]].",
+	'globalblocking-loglink' => "L'adreça IP $1 es blocada globalament ([[{{#Special:GlobalBlockList}}/$1|detalhs]]).",
+	'globalblocking-showlog' => 'Aquesta adreça IP es estada blocada anteriorament.
+Lo jornal dels blocatges es disponible çaijós :',
 	'globalblocklist' => 'Tièra de las adreças IP blocadas globalament',
 	'globalblock' => 'Blocar globalament una adreça IP',
 	'globalblockstatus' => 'Estatuts locals dels blocatges globals',
