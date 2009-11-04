@@ -789,13 +789,19 @@ $messages['bn'] = array(
 );
 
 /** Breton (Brezhoneg)
+ * @author Fohanno
  * @author Fulup
  * @author Y-M D
  */
 $messages['br'] = array(
+	'globalblocking-block-options' => 'Dibarzhioù :',
+	'globalblocking-search-ip' => "Chomlec'h IP :",
+	'globalblocking-list-unblock' => 'lemel',
 	'globalblocking-list-modify' => 'kemmañ',
 	'globalblocking-unblock-reason' => 'Abeg :',
+	'globalblocking-whitelist-status' => "Statud lec'hel :",
 	'globalblocking-block2-logentry' => 'en deus stanket [[$1]] dre-vras ($2)',
+	'removeglobalblock' => 'Lemel ur stankadur hollek',
 );
 
 /** Bosnian (Bosanski)
@@ -4264,6 +4270,9 @@ $messages['ml'] = array(
 	'globalblocking-blocked' => "താങ്കളുടെ ഐപി വിലാസം എല്ലാ വിക്കിമീഡിയ സം‌രംഭങ്ങളിലും '''\$1''' (''\$2'') തടഞ്ഞിരിക്കുന്നു. അതിനു സൂചിപ്പിച്ച കാരണം ''\"\$3\"'' ആണ്‌. ബ്ലോക്കിന്റെ കാലാവധി ''\$4''.",
 	'globalblocking-blocked-nopassreset' => 'താങ്കൾ ആഗോളമായി തടയപ്പെട്ടിരിക്കുന്നതിനാൽ രഹസ്യവാക്ക് പുനഃക്രമീകരിക്കാൻ കഴിയില്ല.',
 	'globalblocking-logpage' => 'ആഗോള തടയലിന്റെ പ്രവര്‍ത്തനരേഖ',
+	'globalblocking-logpagetext' => 'ഈ വിക്കിയിൽ നിന്ന് സൃഷ്ടിക്കുകയോ നീക്കംചെയ്യുകയോ ചെയ്ത ആഗോള തടയലുകളുടെ രേഖയാണിത്.
+മറ്റ് വിക്കികളിൽ നിന്ന് ആഗോള തടയലുകൾ സൃഷ്ടിക്കാൻ കഴിയുമെന്നും, അവ ഇവിടെ പ്രാബല്യത്തിലുണ്ടാകുമെന്നും ഓർക്കുക.
+പ്രാബല്യത്തിലുള്ള എല്ലാ ആഗോള തടയലുകളും [[Special:GlobalBlockList|ആഗോള തടയൽ പട്ടികയിൽ]] താങ്കൾക്ക് കാണാവുന്നതാണ്.',
 	'globalblocking-block-logentry' => '[[$1]]നെ $2 കാലവധിയോടെ ആഗോള ബ്ലോക്ക് ചെയ്തിരിക്കുന്നു.',
 	'globalblocking-block2-logentry' => '[[$1]] ആഗോളമായി തടയപ്പെട്ടിരിക്കുന്നു ($2)',
 	'globalblocking-unblock-logentry' => '[[$1]]നു മേലുള്ള ആഗോള ബ്ലോക്ക് ഒഴിവാക്കിയിരിക്കുന്നു',
