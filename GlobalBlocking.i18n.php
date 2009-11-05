@@ -899,6 +899,9 @@ Da bi ste pregledali aktivne globalne blokade, kliknite na [[Special:GlobalBlock
 	'globalblocking-modify-logentry' => 'izmijenjena globalna blokada [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'ističe $1',
 	'globalblocking-logentry-noexpiry' => 'nije postavljeno vrijeme isticanja',
+	'globalblocking-loglink' => 'IP adresa $1 je blokirana globalno ([[{{#Special:GlobalBlockList}}/$1|svi detalji]]).',
+	'globalblocking-showlog' => 'Ova IP adresa je ranije bila blokirana.
+Zapisnik blokiranja je naveden ispod kao referenca:',
 	'globalblocklist' => 'Spisak globalno blokiranih IP adresa',
 	'globalblock' => 'Globalno blokiranje IP adrese',
 	'globalblockstatus' => 'Lokalni status globalnih blokada',
@@ -1736,14 +1739,14 @@ $messages['es'] = array(
 	'globalblocking-block-legend' => 'Bloquear una dirección IP globalmente',
 	'globalblocking-block-options' => 'Opciones:',
 	'globalblocking-block-errors' => 'Tu bloqueo falló por {{PLURAL:$1|la siguiente razón|las siguientes razones}}:',
-	'globalblocking-block-ipinvalid' => 'La dirección IP ($1) que ingresaste no es válida. Por favor, ten en cuenta que no puedes introducir un nombre de usuario.',
+	'globalblocking-block-ipinvalid' => 'La dirección IP ($1) que introduciste no es válida. Por favor, ten en cuenta que no puedes introducir un nombre de usuario.',
 	'globalblocking-block-expiryinvalid' => 'La caducidad que introdujo ($1) es inválida.',
 	'globalblocking-block-submit' => 'Bloquear esta dirección IP globalmente',
 	'globalblocking-modify-submit' => 'Modificar este bloqueo global',
 	'globalblocking-block-success' => 'La dirección IP $1 ha sido bloqueada con éxito en todos los proyectos.',
 	'globalblocking-modify-success' => 'El bloqueo global en $1 ha sido exitosamente modificado',
 	'globalblocking-block-successsub' => 'El bloqueo global tuvo éxito',
-	'globalblocking-modify-successsub' => 'Bloqueo global modificado exitosamente',
+	'globalblocking-modify-successsub' => 'Bloqueo global modificado con éxito',
 	'globalblocking-block-alreadyblocked' => 'La dirección IP $1 ya está bloqueada globalmente.
 Puede ver el bloqueo existente en la [[Special:GlobalBlockList|lista de bloqueos globales]], o modificar las configuraciones del bloqueo existente reeenviando este formulario.',
 	'globalblocking-block-bigrange' => 'El rango que especificaste ($1) es demasiado grande para ser bloqueado.
@@ -1762,7 +1765,7 @@ Por favor, introduce una dirección IP válida.',
 	'globalblocking-list-anononly' => 'sólo anónimos',
 	'globalblocking-list-unblock' => 'desbloquear',
 	'globalblocking-list-whitelisted' => 'desactivado localmente por $1: $2',
-	'globalblocking-list-whitelist' => 'estatus local',
+	'globalblocking-list-whitelist' => 'estado local',
 	'globalblocking-list-modify' => 'modificar',
 	'globalblocking-list-noresults' => 'La dirección IP solicitada no está bloqueada.',
 	'globalblocking-goto-block' => 'Bloquear globalmente una dirección IP',
@@ -1771,13 +1774,13 @@ Por favor, introduce una dirección IP válida.',
 	'globalblocking-return' => 'Volver a la lista de bloqueos globales',
 	'globalblocking-notblocked' => 'La dirección IP ($1) que escribiste no está bloqueada globalmente.',
 	'globalblocking-unblock' => 'Quitar un bloqueo global',
-	'globalblocking-unblock-ipinvalid' => 'La dirección IP ($1) que ingresó es inválida.
-Por favor note que usted no puede ingresar un usuario!',
+	'globalblocking-unblock-ipinvalid' => 'La dirección IP ($1) que introdujo es inválida.
+¡Por favor tenga en cuenta que no puede introducir un nombre de usuario!',
 	'globalblocking-unblock-legend' => 'Quitar un bloqueo global',
 	'globalblocking-unblock-submit' => 'Quitar el bloqueo global',
 	'globalblocking-unblock-reason' => 'Motivo:',
 	'globalblocking-unblock-unblocked' => "Has quitado con éxito el bloqueo global #$2 en la dirección IP '''$1'''",
-	'globalblocking-unblock-errors' => 'Su remoción del bloqueo global fracasó, por las siguientes {{PLURAL:$1|razón|razones}}:',
+	'globalblocking-unblock-errors' => 'La eliminación del bloqueo global fracasó, por las siguientes {{PLURAL:$1|razón|razones}}:',
 	'globalblocking-unblock-successsub' => 'Se quitó el bloqueo global con éxito',
 	'globalblocking-unblock-subtitle' => 'Quitando bloqueo global',
 	'globalblocking-unblock-intro' => 'Puedes usar este formulario para quitar un bloqueo global.
@@ -1793,7 +1796,7 @@ entonces el status de bloqueos globales no pueden ser modificados.',
 	'globalblocking-whitelist-whitelisted' => "Has desactivado con éxito el bloqueo global #$2 de la dirección IP '''$1''' en {{SITENAME}}.",
 	'globalblocking-whitelist-dewhitelisted' => "Has reactivado con éxito el bloqueo global #$2 de la dirección IP '''$1''' en {{SITENAME}}.",
 	'globalblocking-whitelist-successsub' => 'Se cambió el estatus local con éxito',
-	'globalblocking-whitelist-nochange' => 'Usted no hizo ningún cambio al estatus local de este bloqueo.
+	'globalblocking-whitelist-nochange' => 'Usted no hizo ningún cambio al estado local de este bloqueo.
 [[Special:GlobalBlockList|Volver a la lista de bloqueos globales]].',
 	'globalblocking-whitelist-errors' => 'Su cambio al estatus local de un bloqueo global no tuvo éxito, a causa de {{PLURAL:$1|la siguiente razón|las siguientes razones}}:',
 	'globalblocking-whitelist-intro' => 'Puedes usar este formulario para editar el estatus local de un bloqueo global.
@@ -1802,14 +1805,14 @@ Si un bloqueo global está desactivado en esta wiki, los usuarios de la direcci�
 	'globalblocking-blocked' => "'''$1''' (''$2'') bloqueó su dirección IP en todos los wikis.
 El motivo dado fue ''«$3»''.
 El bloqueo ''$4''.",
-	'globalblocking-blocked-nopassreset' => 'No puede resetear las claves de los usuarios porque usted está bloqueado globalmente.',
+	'globalblocking-blocked-nopassreset' => 'No puede solicitar recordatorios de claves de usuario porque usted está bloqueado globalmente.',
 	'globalblocking-logpage' => 'Registro de bloqueos globales',
 	'globalblocking-logpagetext' => 'Esta es una lista de bloqueos globales los cuales han sido hechos y removidos en este wiki.
 Debería ser notado que los bloqueos globales pueden ser hechos y removidos en otros wikis, y que estos bloqueos globales pueden afectar este wiki.
 Para ver todos los bloqueos globales activos, usted puede ver [[Special:GlobalBlockList|lista de bloqueos globales]].',
 	'globalblocking-block-logentry' => 'bloqueó globalmente a [[$1]] con un tiempo de caducidad de $2',
 	'globalblocking-block2-logentry' => 'bloqueó globalmente a [[$1]] ($2)',
-	'globalblocking-unblock-logentry' => 'desactivado el bloqueo global en [[$1]]',
+	'globalblocking-unblock-logentry' => 'desactivó el bloqueo global en [[$1]]',
 	'globalblocking-whitelist-logentry' => 'desactivó el bloqueo global en [[$1]] localmente',
 	'globalblocking-dewhitelist-logentry' => 'reactivó localmente el bloqueo global en [[$1]]',
 	'globalblocking-modify-logentry' => 'modificó el bloqueo global en [[$1]] ($2)',
@@ -3087,6 +3090,9 @@ Az összes aktív blokk listáját a [[Special:GlobalBlockList|globális blokkok
 	'globalblocking-modify-logentry' => 'módosította [[$1]] globális blokkját ($2)',
 	'globalblocking-logentry-expiry' => 'lejárat: $1',
 	'globalblocking-logentry-noexpiry' => 'nem adott meg lejárati időt',
+	'globalblocking-loglink' => 'A(z) $1 IP-cím globálisan blokkolva ([[{{#Special:GlobalBlockList}}/$1|részletek]]).',
+	'globalblocking-showlog' => 'Ez az IP-cím már volt blokkolva korábban.
+A blokkolási napló alább látható tájékoztatásul:',
 	'globalblocklist' => 'Globálisan blokkolt IP-címek listája',
 	'globalblock' => 'IP-cím globális blokkolása',
 	'globalblockstatus' => 'Globális blokkok helyi állapota',
@@ -6535,7 +6541,7 @@ $messages['uk'] = array(
 	'globalblocking-block-expiry' => 'Закінчиться:',
 	'globalblocking-block-expiry-other' => 'Інший час завершення',
 	'globalblocking-block-expiry-otherfield' => 'Інший час:',
-	'globalblocking-block-legend' => 'Глобальне блокування користувача',
+	'globalblocking-block-legend' => 'Глобальне блокування IP-адреси',
 	'globalblocking-block-options' => 'Налаштування:',
 	'globalblocking-block-errors' => 'Спроба блокування не вдалася через {{PLURAL:$1|наступну причину|наступні причини}}:',
 	'globalblocking-block-ipinvalid' => "Уведена вами IP-адреса ($1) неправильна.
