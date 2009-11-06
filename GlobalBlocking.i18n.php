@@ -3090,8 +3090,8 @@ Az összes aktív blokk listáját a [[Special:GlobalBlockList|globális blokkok
 	'globalblocking-modify-logentry' => 'módosította [[$1]] globális blokkját ($2)',
 	'globalblocking-logentry-expiry' => 'lejárat: $1',
 	'globalblocking-logentry-noexpiry' => 'nem adott meg lejárati időt',
-	'globalblocking-loglink' => 'A(z) $1 IP-cím globálisan blokkolva ([[{{#Special:GlobalBlockList}}/$1|részletek]]).',
-	'globalblocking-showlog' => 'Ez az IP-cím már volt blokkolva korábban.
+	'globalblocking-loglink' => 'A(z) $1 IP-cím globálisan blokkolva van ([[{{#Special:GlobalBlockList}}/$1|részletek]]).',
+	'globalblocking-showlog' => 'Ez az IP-cím korábban már blokkolva volt.
 A blokkolási napló alább látható tájékoztatásul:',
 	'globalblocklist' => 'Globálisan blokkolt IP-címek listája',
 	'globalblock' => 'IP-cím globális blokkolása',
@@ -4029,6 +4029,8 @@ Fir all aktiv global Spären ze gesinn, gitt w.e.g op d'[[Special:GlobalBlockLis
 	'globalblocking-logentry-expiry' => 'bis $1',
 	'globalblocking-logentry-noexpiry' => 'keen Enn vun der Spär festgeluecht',
 	'globalblocking-loglink' => "D'IP-Adress $1 ass global gespaart ([[{{#Special:GlobalBlockList}}/$1|fir all Detailer]]).",
+	'globalblocking-showlog' => "Dës IP-Adress gouf virdru gespaart.
+D'Lëscht vun de Späre steet hei ënnendrënner.",
 	'globalblocklist' => 'Lëscht vun de global gespaarten IP-Adressen',
 	'globalblock' => 'Eng IP-Adress global spären',
 	'globalblockstatus' => 'Lokale Statut vu globale Spären',
