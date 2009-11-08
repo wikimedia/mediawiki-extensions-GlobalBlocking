@@ -214,7 +214,7 @@ Let asseblief dat U nie 'n gebruikersnaam kan invoer nie!",
 	'globalblocking-block-bigrange' => 'Die reeks wat u verskaf het ($1) is te groot om te versper. U mag op die meeste 65.536 adresse versper (/16-reekse)',
 	'globalblocking-list' => 'Lys van globale versperde IP adresse',
 	'globalblocking-search-legend' => "Soek vir 'n globale versperring",
-	'globalblocking-search-ip' => 'IP adres:',
+	'globalblocking-search-ip' => 'IP-adres:',
 	'globalblocking-search-submit' => 'Soek vir versperrings',
 	'globalblocking-list-ipinvalid' => "Die IP adres wat U na gesoek het ($1) is ongeldig.
 Voer asseblief 'n geldige IP adres in.",
@@ -1739,7 +1739,7 @@ $messages['es'] = array(
 	'globalblocking-block-legend' => 'Bloquear una dirección IP globalmente',
 	'globalblocking-block-options' => 'Opciones:',
 	'globalblocking-block-errors' => 'Tu bloqueo falló por {{PLURAL:$1|la siguiente razón|las siguientes razones}}:',
-	'globalblocking-block-ipinvalid' => 'La dirección IP ($1) que introduciste no es válida. Por favor, ten en cuenta que no puedes introducir un nombre de usuario.',
+	'globalblocking-block-ipinvalid' => 'La dirección IP ($1) que introdujiste no es válida. Por favor, ten en cuenta que no puedes introducir un nombre de usuario.',
 	'globalblocking-block-expiryinvalid' => 'La caducidad que introdujo ($1) es inválida.',
 	'globalblocking-block-submit' => 'Bloquear esta dirección IP globalmente',
 	'globalblocking-modify-submit' => 'Modificar este bloqueo global',
@@ -5061,6 +5061,7 @@ $messages['pdc'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Annre Zeit:',
 	'globalblocking-list-modify' => 'ennere',
 	'globalblocking-unblock-reason' => 'Grund:',
+	'globalblocking-whitelist-reason' => 'Grund fer die Ennering:',
 	'globalblocking-logentry-expiry' => 'bis $1',
 );
 
