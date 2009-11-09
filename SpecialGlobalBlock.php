@@ -36,26 +36,28 @@ class SpecialGlobalBlock extends SpecialPage {
 				return;
 			}
 		}
-		
+
 		if ( GlobalBlocking::getGlobalBlockId( $this->mAddress ) ) {
 			$this->mModifyForm = true;
 		}
-		
-		if ($this->mModifyForm) {
+
+		if ( $this->mModifyForm ) {
 			$dbr = GlobalBlocking::getGlobalBlockingSlave();
 			$block = $dbr->selectRow( 'globalblocks',
 									'*',
 									array( 'gb_address' => $this->mAddress ),
 									__METHOD__ );
-			if ($block->gb_expiry == 'infinity') {
-				$this->mExpirySelection = 'indefinite';
-			} else {
-				$this->mExpiry = wfTimestamp( TS_ISO_8601, $block->gb_expiry );
+			if ( $block ) {
+				if ( $block->gb_expiry == 'infinity' ) {
+					$this->mExpirySelection = 'indefinite';
+				} else {
+					$this->mExpiry = wfTimestamp( TS_ISO_8601, $block->gb_expiry );
+				}
+				$this->mAnonOnly = $block->gb_anon_only;
+				$this->mReason = $block->gb_reason;
 			}
-			$this->mAnonOnly = $block->gb_anon_only;
-			$this->mReason = $block->gb_reason;
 		}
-		
+
 		$errorstr = null;
 
 		if (is_array($errors) && count($errors)>0) {
