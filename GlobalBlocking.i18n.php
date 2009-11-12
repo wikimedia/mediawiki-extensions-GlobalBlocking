@@ -5194,15 +5194,16 @@ $messages['ps'] = array(
 /** Portuguese (Português)
  * @author 555
  * @author GKnedo
+ * @author Hamilton Abreu
  * @author Lijealso
  * @author Malafaya
  * @author Waldir
  */
 $messages['pt'] = array(
-	'globalblocking-desc' => '[[Special:GlobalBlock|Permite]] que endereços IP sejam [[Special:GlobalBlockList|bloqueados através de múltiplos wikis]]',
+	'globalblocking-desc' => '[[Special:GlobalBlock|Permite]] que endereços IP sejam [[Special:GlobalBlockList|bloqueados em várias wikis]]',
 	'globalblocking-block' => 'Bloquear globalmente um endereço IP',
 	'globalblocking-modify-intro' => 'Você pode usar este formulário para alterar as definições de um bloqueio global.',
-	'globalblocking-block-intro' => 'Você pode usar esta página para bloquear um endereço IP em todos os wikis.',
+	'globalblocking-block-intro' => 'Pode usar esta página para bloquear um endereço IP em todas as wikis.',
 	'globalblocking-block-reason' => 'Motivo para este bloqueio:',
 	'globalblocking-block-expiry' => 'Validade do bloqueio:',
 	'globalblocking-block-expiry-other' => 'Outro tempo de validade',
@@ -5225,7 +5226,7 @@ ou modificar as definições do bloqueio existente ao re-submeter este formulár
 	'globalblocking-block-bigrange' => 'O intervalo especificado ($1) é demasiado grande para ser bloqueado.
 Pode bloquear, no máximo, 65.536 endereços (intervalos /16)',
 	'globalblocking-list-intro' => 'Isto é uma lista de todos os bloqueios globais que estão actualmente em efeito.
-Alguns bloqueios está marcados como desactivados localmente: isto significa que se aplicam a outros sítios, mas um administrador local decidiu desactivá-los neste wiki.',
+Alguns bloqueios estão marcados como localmente desactivados: isto significa que se aplicam a outros sítios, mas um administrador local decidiu desactivá-los nesta wiki.',
 	'globalblocking-list' => 'Lista de endereços IP bloqueados globalmente',
 	'globalblocking-search-legend' => 'Pesquisar bloqueio global',
 	'globalblocking-search-ip' => 'Endereço IP:',
@@ -5258,7 +5259,7 @@ Por favor, note que não pode introduzir um nome de utilizador!',
 	'globalblocking-unblock-intro' => 'Você pode usar este formulário para eliminar um bloqueio global.
 [[Special:GlobalBlockList|Clique aqui]] para voltar à lista de bloqueios globais.',
 	'globalblocking-whitelist' => 'Estado local de bloqueios globais',
-	'globalblocking-whitelist-notapplied' => 'Bloqueios globais não são aplicados neste wiki,
+	'globalblocking-whitelist-notapplied' => 'Bloqueios globais não são aplicados nesta wiki,
 logo o estado local de bloqueios globais não pode ser modificado.',
 	'globalblocking-whitelist-legend' => 'Alterar estado local',
 	'globalblocking-whitelist-reason' => 'Motivo da alteração:',
@@ -5271,17 +5272,17 @@ logo o estado local de bloqueios globais não pode ser modificado.',
 	'globalblocking-whitelist-nochange' => 'Você não fez qualquer alteração ao estado local deste bloqueio.
 [[Special:GlobalBlockList|Voltar à lista de bloqueios globais]].',
 	'globalblocking-whitelist-errors' => 'A sua alteração ao estado local de um bloqueio global não teve sucesso {{PLURAL:$1|pela seguinte razão|pelas seguintes razões}}:',
-	'globalblocking-whitelist-intro' => 'Você pode usar este formulário para editar o estado local de um bloqueio global.
-Se um bloqueio global está desactivado neste wiki, os utilizadores nos endereços IP afectados poderão editar normalmente.
+	'globalblocking-whitelist-intro' => 'Pode usar este formulário para editar o estado local de um bloqueio global.
+Se um bloqueio global está desactivado nesta wiki, os utilizadores nos endereços IP afectados poderão editar normalmente.
 [[Special:GlobalBlockList|Voltar à lista de bloqueios globais]].',
-	'globalblocking-blocked' => "O seu endereço IP foi bloqueado em todos os wikis por '''\$1''' (''\$2'').
+	'globalblocking-blocked' => "O seu endereço IP foi bloqueado em todas as wikis por '''\$1''' (''\$2'').
 O motivo dado foi ''\"\$3\"''.
-O bloqueio ''\$4''.",
+Duração: ''\$4''.",
 	'globalblocking-blocked-nopassreset' => 'Você não pode repor palavras-chave de utilizadores porque você está bloqueado globalmente.',
 	'globalblocking-logpage' => 'Registo de bloqueios globais',
-	'globalblocking-logpagetext' => 'Isto é um registo de bloqueios globais que foram feitos e removidos neste wiki.
-Deve ser notado que bloqueios globais podem ser feitos e removidos noutros wikis, e que estes bloqueios globais pode afectar este wiki.
-Para ver todos os bloqueios globais, poderá consultar a [[Special:GlobalBlockList|lista de bloqueios globais]].',
+	'globalblocking-logpagetext' => 'Este é um registo de bloqueios globais que foram feitos e removidos nesta wiki.
+Deve ser notado que bloqueios globais podem também ser feitos e removidos noutras wikis e que esses bloqueios poderão afectar esta wiki.
+Para ver todos os bloqueios globais, consulte a [[Special:GlobalBlockList|lista de bloqueios globais]].',
 	'globalblocking-block-logentry' => 'bloqueou globalmente [[$1]] com um tempo de expiração de $2',
 	'globalblocking-block2-logentry' => '[[$1]] está completamente bloqueado por ($2)',
 	'globalblocking-unblock-logentry' => 'Removido bloqueio global de [[$1]]',
@@ -5911,7 +5912,7 @@ $messages['sr-ec'] = array(
 	'globalblocking-block-expiry' => 'Блок истиче:',
 	'globalblocking-block-expiry-other' => 'Друго време истека',
 	'globalblocking-block-expiry-otherfield' => 'Друго време:',
-	'globalblocking-block-legend' => 'Блокирајте корисника глобално',
+	'globalblocking-block-legend' => 'Глобално блокирање IP адресе',
 	'globalblocking-block-options' => 'Опције:',
 	'globalblocking-block-errors' => 'Блок није успешан због {{PLURAL:$1|следеђег разлога|следећих разлога}}:',
 	'globalblocking-block-ipinvalid' => 'ИП адреса ($1) коју сте унели није добра.
@@ -5962,6 +5963,7 @@ $messages['sr-ec'] = array(
 
 /** Serbian Latin ekavian (Srpski (latinica))
  * @author Michaello
+ * @author Михајло Анђелковић
  */
 $messages['sr-el'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Omogućuje]] [[Special:GlobalBlockList|globalno blokiranje]] IP adresa na više vikija',
@@ -5972,7 +5974,7 @@ $messages['sr-el'] = array(
 	'globalblocking-block-expiry' => 'Blok ističe:',
 	'globalblocking-block-expiry-other' => 'Drugo vreme isteka',
 	'globalblocking-block-expiry-otherfield' => 'Drugo vreme:',
-	'globalblocking-block-legend' => 'Blokirajte korisnika globalno',
+	'globalblocking-block-legend' => 'Globalno blokiranje IP adrese',
 	'globalblocking-block-options' => 'Opcije:',
 	'globalblocking-block-errors' => 'Blok nije uspešan zbog {{PLURAL:$1|sledeđeg razloga|sledećih razloga}}:',
 	'globalblocking-block-ipinvalid' => 'IP adresa ($1) koju ste uneli nije dobra.
