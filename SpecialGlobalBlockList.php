@@ -164,57 +164,54 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 		
 		## Do afterthoughts (comment, links for admins)
 		$info = array();
-		$info[] = $sk->commentBlock($row->gb_reason);
 
 		if( $wgUser->isAllowed( 'globalunblock' ) ) {
 			$unblockTitle = SpecialPage::getTitleFor( "RemoveGlobalBlock" );
-			$info[] = '(' . $sk->link($unblockTitle, 
+			$info[] = $sk->link( $unblockTitle, 
 								wfMsgExt( 'globalblocking-list-unblock', 'parseinline' ),
 								array(),
 								array( 'address' => $row->gb_address )
-							) .
-						')';
+							);
 		}
-		
+
 		global $wgApplyGlobalBlocks;
 		if( $wgUser->isAllowed( 'globalblock-whitelist' ) && $wgApplyGlobalBlocks ) {
 			$whitelistTitle = SpecialPage::getTitleFor( "GlobalBlockStatus" );
-			$info[] = '(' . $sk->link($whitelistTitle, 
+			$info[] = $sk->link( $whitelistTitle, 
 								wfMsgExt( 'globalblocking-list-whitelist', 'parseinline' ),
 								array(),
 								array( 'address' => $row->gb_address )
-							) .
-						')';
+							);
 		}
-		
+
 		if ( $wgUser->isAllowed( 'globalblock' ) ) {
 			$reblockTitle = SpecialPage::getTitleFor( 'GlobalBlock' );
 			$msg = wfMsgExt( 'globalblocking-list-modify', 'parseinline' );
-			$link = $sk->link(
+			$info[] = $sk->link(
 						$reblockTitle,
 						$msg,
 						array(),
 						array( 'wpAddress' => $row->gb_address, 'modify' => 1 )
 					);
-			$info[] = "($link)";
 		}
-		
+
 		## Userpage link / Info on originating wiki
 		$display_wiki = GlobalBlocking::getWikiName( $row->gb_by_wiki );
 		$user_display = GlobalBlocking::maybeLinkUserpage( $row->gb_by_wiki, $row->gb_by );
-		
+		$infoItems = count( $info ) ? wfMsg( 'parentheses', $wgLang->pipeList( $info ) ) : '';
+
 		## Put it all together.
-		return Xml::openElement( 'li' ) .
-			wfMsgExt( 'globalblocking-list-blockitem', array( 'parseinline' ),
-				$timestamp,
-				$user_display,
-				$display_wiki,
-				$row->gb_address,
-				$wgLang->commaList( $options)
-			) .
-			' ' .
-			implode( ' ', $info ) .
-			Xml::closeElement( 'li' );
+		return Html::rawElement( 'li', array(),
+				wfMsgExt( 'globalblocking-list-blockitem', array( 'parseinline' ),
+					$timestamp,
+					$user_display,
+					$display_wiki,
+					$row->gb_address,
+					$wgLang->commaList( $options )
+					) . ' ' .
+				$sk->commentBlock( $row->gb_reason ) . ' ' .
+				$infoItems
+			);
 	}
 
 	function getQueryInfo() {
