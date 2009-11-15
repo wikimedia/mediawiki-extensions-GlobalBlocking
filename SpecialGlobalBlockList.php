@@ -16,6 +16,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 		$this->loadParameters( $ip );
 
 		$wgOut->setPageTitle( wfMsg( 'globalblocking-list' ) );
+		$wgOut->setSubtitle( GlobalBlocking::buildSubtitleLinks( 'GlobalBlockList' ) );
 		$wgOut->setRobotPolicy( "noindex,nofollow" );
 		$wgOut->setArticleRelated( false );
 		$wgOut->enableClientCache( false );
@@ -36,16 +37,6 @@ class SpecialGlobalBlockList extends SpecialPage {
 
 		$wgOut->addWikiMsg( 'globalblocking-list-intro' );
 		
-		// Add a few useful links
-		$link_list = /*message-->title*/array( 'globalblocking-goto-block' => 'GlobalBlock', 'globalblocking-goto-unblock' => 'RemoveGlobalBlock', 'globalblocking-goto-status' => 'GlobalBlockStatus' );
-		$links = '';
-		$sk = $wgUser->getSkin();
-		foreach( $link_list as $msg => $pagename ) {
-			$title = SpecialPage::getTitleFor( $pagename );
-			$links .= Xml::tags( 'li', null, $sk->makeKnownLinkObj( $title, wfMsg( $msg ) ) );
-		}
-		
-		$wgOut->addHTML( Xml::tags( 'ul', null, $links ) );
 
 		// Build the search form
 		$searchForm = '';

@@ -318,4 +318,38 @@ class GlobalBlocking {
 		);
 		return true;
 	}
+	/**
+	 * Build links to other global blocking special pages, shown in the subtitle
+	 * @param string $pagetype The calling special page name
+	 * @return string links to special pages
+	 */
+	static function buildSubtitleLinks( $pagetype ) {
+		global $wgUser, $wgLang;
+
+		// Add a few useful links
+		$links = array();
+		$sk = $wgUser->getSkin();
+
+		// Don't show a link to a special page on the special page itself.
+		// Show the links only if the user has sufficient rights
+		if( $pagetype != 'GlobalBlockList' ) {
+			$title = SpecialPage::getTitleFor( 'GlobalBlockList' );
+			$links[] = $sk->linkKnown( $title, wfMsg( 'globalblocklist' ) );
+		}
+
+		if( $pagetype != 'GlobalBlock' && $wgUser->isAllowed( 'globalblock' ) ) {
+			$title = SpecialPage::getTitleFor( 'GlobalBlock' );
+			$links[] = $sk->linkKnown( $title, wfMsg( 'globalblocking-goto-block' ) );
+		}
+		if( $pagetype != 'RemoveGlobalBlock' && $wgUser->isAllowed( 'globalunblock' ) ) {
+			$title = SpecialPage::getTitleFor( 'RemoveGlobalBlock' );
+			$links[] = $sk->linkKnown( $title, wfMsg( 'globalblocking-goto-unblock' ) );
+		}
+		if( $pagetype != 'GlobalBlockStatus' && $wgUser->isAllowed( 'globalblock-whitelist' ) ) {
+			$title = SpecialPage::getTitleFor( 'GlobalBlockStatus' );
+			$links[] = $sk->linkKnown( $title, wfMsg( 'globalblocking-goto-status' ) );
+		}
+		$linkItems = count( $links ) ? wfMsg( 'parentheses', $wgLang->pipeList( $links ) ) : '';
+		return $linkItems;
+	}
 }

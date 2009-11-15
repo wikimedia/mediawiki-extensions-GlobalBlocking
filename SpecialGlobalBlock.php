@@ -17,6 +17,7 @@ class SpecialGlobalBlock extends SpecialPage {
 		$this->loadParameters( $par );
 
 		$wgOut->setPageTitle( wfMsg( 'globalblocking-block' ) );
+		$wgOut->setSubtitle( GlobalBlocking::buildSubtitleLinks( 'GlobalBlock' ) );
 		$wgOut->setRobotPolicy( "noindex,nofollow" );
 		$wgOut->setArticleRelated( false );
 		$wgOut->enableClientCache( false );
