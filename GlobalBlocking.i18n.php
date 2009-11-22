@@ -794,8 +794,10 @@ $messages['bn'] = array(
  * @author Y-M D
  */
 $messages['br'] = array(
+	'globalblocking-block-reason' => 'Abegoù ar stankadenn-se :',
 	'globalblocking-block-options' => 'Dibarzhioù :',
 	'globalblocking-search-ip' => "Chomlec'h IP :",
+	'globalblocking-search-submit' => 'Klask stankadennoù',
 	'globalblocking-list-unblock' => 'lemel',
 	'globalblocking-list-modify' => 'kemmañ',
 	'globalblocking-unblock-reason' => 'Abeg :',
