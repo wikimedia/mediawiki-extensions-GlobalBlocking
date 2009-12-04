@@ -795,14 +795,25 @@ $messages['bn'] = array(
  */
 $messages['br'] = array(
 	'globalblocking-block-reason' => 'Abeg ar stankadenn-mañ :',
+	'globalblocking-block-expiry' => 'Termen ar stankadenn :',
 	'globalblocking-block-options' => 'Dibarzhioù :',
 	'globalblocking-search-ip' => "Chomlec'h IP :",
 	'globalblocking-search-submit' => 'Klask stankadennoù',
+	'globalblocking-list-anononly' => 'dianv hepken',
 	'globalblocking-list-unblock' => 'lemel',
+	'globalblocking-list-whitelist' => "statud lec'hel",
 	'globalblocking-list-modify' => 'kemmañ',
+	'globalblocking-goto-unblock' => 'Tennañ ur stankadenn hollek',
+	'globalblocking-unblock' => 'Tennañ ur stankadenn hollek',
+	'globalblocking-unblock-legend' => 'Tennañ ur stankadenn hollek',
+	'globalblocking-unblock-submit' => 'Tennañ ar stankadenn hollek',
 	'globalblocking-unblock-reason' => 'Abeg :',
 	'globalblocking-whitelist-status' => "Statud lec'hel :",
+	'globalblocking-whitelist-submit' => "Kemmañ ar statud lec'hel",
+	'globalblocking-logpage' => 'Marilh ar stankadennoù hollek',
 	'globalblocking-block2-logentry' => 'en deus stanket [[$1]] dre-vras ($2)',
+	'globalblocking-logentry-expiry' => "Termenet d'an $1",
+	'globalblocking-logentry-noexpiry' => "n'eo ket roet an deiziad termen",
 	'removeglobalblock' => 'Lemel ur stankadur hollek',
 );
 
