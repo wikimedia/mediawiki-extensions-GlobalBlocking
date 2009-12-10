@@ -6276,6 +6276,8 @@ $messages['te'] = array(
 	'globalblocking-whitelist-successsub' => 'స్థానిక స్థితిని విజయవంతంగా మార్చాం',
 	'globalblocking-logpage' => 'సార్వత్రిక నిరోధాల చిట్టా',
 	'globalblock' => 'సర్వత్రా ఈ ఐపీ చిరునామాను నిరోధించు',
+	'right-globalblock' => 'సార్వత్రిక నిరోధాల్ని చేయడం',
+	'right-globalunblock' => 'సార్వత్రిక నిరోధాల్ని తొలగించడం',
 );
 
 /** Tetum (Tetun)
