@@ -6269,6 +6269,7 @@ $messages['te'] = array(
 	'globalblocking-list-whitelist' => 'స్థానిక స్థితి',
 	'globalblocking-unblock-reason' => 'కారణం:',
 	'globalblocking-unblock-successsub' => 'సార్వత్రిక నిరోధాన్ని జయప్రదంగా తొలగించారు',
+	'globalblocking-whitelist' => 'సార్వత్రిక నిరోధాల యొక్క స్థానిక స్థితి',
 	'globalblocking-whitelist-legend' => 'స్థానిక స్థితి మార్పు',
 	'globalblocking-whitelist-reason' => 'మార్చడానికి కారణం:',
 	'globalblocking-whitelist-status' => 'స్థానిక స్థితి:',
