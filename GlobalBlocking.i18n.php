@@ -3693,6 +3693,7 @@ Kanggo mirsani kabèh pamblokiran global sing aktif wektu iki, pirsani ing[[Spec
  * @author Malafaya
  */
 $messages['ka'] = array(
+	'globalblocking-block-successsub' => 'გლობალური ბლოკირება წარმატებით დამთავრდა',
 	'globalblocking-list' => 'გლობალურად ბლოკირებული IP-მისამართების სია',
 	'globalblocking-search-ip' => 'IP მისამართი:',
 	'globalblocking-list-unblock' => 'წაშლა',
@@ -4926,7 +4927,7 @@ $messages['no'] = array(
 	'globalblocking-block-expiry' => 'Varighet:',
 	'globalblocking-block-expiry-other' => 'Annen varighet',
 	'globalblocking-block-expiry-otherfield' => 'Annen tid:',
-	'globalblocking-block-legend' => 'Blokker en bruker globalt',
+	'globalblocking-block-legend' => 'Blokker en IP-adresse globalt',
 	'globalblocking-block-options' => 'Alternativer:',
 	'globalblocking-block-errors' => 'Blokkeringen mislyktes fordi:<!--{{PLURAL:$1}}-->',
 	'globalblocking-block-ipinvalid' => 'IP-adressen du skrev inn ($1) er ugyldig.
@@ -6311,7 +6312,13 @@ $messages['te'] = array(
 	'globalblocking-search-errors' => 'ఈ క్రింది {{PLURAL:$1|కారణం|కారణాల}} వల్ల, మీ అన్వేషణ విఫలమైంది:',
 	'globalblocking-list-unblock' => 'తొలగించు',
 	'globalblocking-list-whitelist' => 'స్థానిక స్థితి',
+	'globalblocking-goto-status' => 'సార్వత్రిక నిరోధానికి స్థానిక స్థితిని మార్చండి',
+	'globalblocking-return' => 'తిరిగి సార్వత్రిక నిరోధాల జాబితాకి',
+	'globalblocking-unblock' => 'సార్వత్రిక నిరోధపు తొలగింపు',
+	'globalblocking-unblock-legend' => 'సార్వత్రిక నిరోధపు తొలగింపు',
+	'globalblocking-unblock-submit' => 'సార్వత్రిక నిరోధాన్ని తొలగించు',
 	'globalblocking-unblock-reason' => 'కారణం:',
+	'globalblocking-unblock-errors' => 'మీ సార్వత్రిక నిరోధపు ఎత్తివేత విఫలమైంది, ఈ క్రింది {{PLURAL:$1|కారణం|కారణాల}} వల్ల:',
 	'globalblocking-unblock-successsub' => 'సార్వత్రిక నిరోధాన్ని జయప్రదంగా తొలగించారు',
 	'globalblocking-whitelist' => 'సార్వత్రిక నిరోధాల యొక్క స్థానిక స్థితి',
 	'globalblocking-whitelist-legend' => 'స్థానిక స్థితి మార్పు',
