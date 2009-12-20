@@ -3874,7 +3874,7 @@ $messages['ko'] = array(
 	'globalblocking-whitelist-notapplied' => '이 위키에서는 전체 차단이 적용되지 않습니다.
 따라서 전체 차단의 로컬 상태를 바꿀 수 없습니다.',
 	'globalblocking-whitelist-legend' => '로컬 상태 변경',
-	'globalblocking-whitelist-reason' => '바꾸는 이유:',
+	'globalblocking-whitelist-reason' => '이유:',
 	'globalblocking-whitelist-status' => '로컬 상태:',
 	'globalblocking-whitelist-statuslabel' => '{{SITENAME}}에서 전체 위키 차단을 비활성화하기',
 	'globalblocking-whitelist-submit' => '로컬 상태 변경',
@@ -3893,6 +3893,7 @@ $messages['ko'] = array(
 	'globalblocking-dewhitelist-logentry' => '[[$1]]의 전체 차단을 로컬에서 다시 활성화함',
 	'globalblocking-modify-logentry' => '[[$1]]에 대한 전체 차단 설정을 변경 ($2)',
 	'globalblocking-logentry-expiry' => '$1에 해제',
+	'globalblocking-loglink' => 'IP 주소 $1은 모든 위키에서 차단되었습니다. ([[{{#Special:GlobalBlockList}}/$1|자세한 정보]])',
 	'globalblocklist' => '모든 위키에서 차단된 IP 목록',
 	'globalblock' => '전체 위키에서 IP 주소를 차단',
 	'globalblockstatus' => '전체 차단의 로컬 상태',
@@ -4281,6 +4282,8 @@ $messages['mhr'] = array(
  * @author Brest
  */
 $messages['mk'] = array(
+	'globalblocking-block' => 'Глобално блокирање на IP-адреса',
+	'globalblocking-modify-intro' => 'Користете го овој образец за менување на нагодувањата за еден глобален блок.',
 	'globalblocking-block-reason' => 'Образложение за ова блокирање:',
 	'globalblocking-block-expiry' => 'Рок на блокирање:',
 	'globalblocking-block-expiry-other' => 'Друг рок на блокирање',
@@ -4292,7 +4295,11 @@ $messages['mk'] = array(
 Напомена: не може да се внесува корисничко име!',
 	'globalblocking-block-expiryinvalid' => 'Рокот на истекување кој го внесовте ($1) не е валиден.',
 	'globalblocking-block-submit' => 'Глобално блокирање на оваа IP адреса',
+	'globalblocking-modify-submit' => 'Измени го овој глобален блок',
 	'globalblocking-block-successsub' => 'Глобалното блокирање е успешно',
+	'globalblocking-modify-successsub' => 'Глобалниот блок е успешно изменет.',
+	'globalblocking-block-bigrange' => 'Назначениот опсег ($1) е преголем за блокирање.
+Можете да блокирате највеќе до 65 536 адреси (/16 регистри)',
 	'globalblocking-search-ip' => 'IP-адреса:',
 	'globalblocking-search-submit' => 'Пребарај блокирања',
 	'globalblocking-list-expiry' => 'истекува $1',
@@ -6371,12 +6378,13 @@ $messages['te'] = array(
 	'globalblocking-unblock-successsub' => 'సార్వత్రిక నిరోధాన్ని జయప్రదంగా తొలగించారు',
 	'globalblocking-whitelist' => 'సార్వత్రిక నిరోధాల యొక్క స్థానిక స్థితి',
 	'globalblocking-whitelist-legend' => 'స్థానిక స్థితి మార్పు',
-	'globalblocking-whitelist-reason' => 'మార్చడానికి కారణం:',
+	'globalblocking-whitelist-reason' => 'కారణం:',
 	'globalblocking-whitelist-status' => 'స్థానిక స్థితి:',
 	'globalblocking-whitelist-submit' => 'స్థానిక స్థితిని మార్చండి',
 	'globalblocking-whitelist-successsub' => 'స్థానిక స్థితిని విజయవంతంగా మార్చాం',
 	'globalblocking-logpage' => 'సార్వత్రిక నిరోధాల చిట్టా',
 	'globalblock' => 'సర్వత్రా ఈ ఐపీ చిరునామాను నిరోధించు',
+	'globalblockstatus' => 'సార్వత్రిక నిరోధాల స్థానిక స్థితి',
 	'right-globalblock' => 'సార్వత్రిక నిరోధాల్ని చేయడం',
 	'right-globalunblock' => 'సార్వత్రిక నిరోధాల్ని తొలగించడం',
 );
