@@ -445,7 +445,7 @@ $messages['arz'] = array(
 	'globalblocking-block-expiry' => 'انتهاء المنع:',
 	'globalblocking-block-expiry-other' => 'وقت انتها تاني',
 	'globalblocking-block-expiry-otherfield' => 'وقت تاني:',
-	'globalblocking-block-legend' => 'اعمل منع عام ليوزر',
+	'globalblocking-block-legend' => 'اعمل منع عام لأيبي',
 	'globalblocking-block-options' => 'اختيارات:',
 	'globalblocking-block-errors' => 'المنع اللى عملته مانفعش، علشان {{PLURAL:$1|السبب دا|الاسباب دي}}:',
 	'globalblocking-block-ipinvalid' => 'عنوان الأيبى ($1) اللى دخلته مش صحيح.
@@ -455,10 +455,11 @@ $messages['arz'] = array(
 	'globalblocking-block-success' => 'عنوان الاى بى $1 اتمنع بنجاح فى كل المشاريع',
 	'globalblocking-block-successsub' => 'المنع العام ناجح',
 	'globalblocking-block-alreadyblocked' => 'عنوان الايبى $1 ممنوع منع عام من قبل كدا.
-ممكن تشوف المنع الموجود هنا [[Special:GlobalBlockList|لستة المنع العام]].',
+ممكن تشوف المنع الموجود هنا [[Special:GlobalBlockList|لستة المنع العام]].
+أو تعديل إعدادات المنع الموجود عن طريق إعادة تنفيذ هذه الاستمارة.',
 	'globalblocking-block-bigrange' => 'النطاق اللى حددته ($1) كبير قوى على المنع. انت ممكن تمنع، كحد أقصى، 65,536 عنوان (نطاقات /16)',
-	'globalblocking-list-intro' => 'دى لستة بكل عمليات المنع العام اللى شغالة دلوقتي.
-فى شوية منهم متعلم على انهم متعطلين ع المستوى المحلي، دا معناه انهم بينطبقو على المواقع التانية
+	'globalblocking-list-intro' => 'دى لستة بكل عمليات المنع العام اللى شغالة دلوقتى.
+فى شوية منهم متعلم على انهم متعطلين ع المستوى المحلى، دا معناه انهم بينطبقو على المواقع التانية
 بس فى ادارى محلى قرر يعطلها فى الويكى دا.',
 	'globalblocking-list' => 'لستة عناوين الأيبى الممنوعة منع عام',
 	'globalblocking-search-legend' => 'تدوير على منع عام',
@@ -492,7 +493,7 @@ $messages['arz'] = array(
 [[Special:GlobalBlockList|دوس هنا]] علشان ترجع للستة المنع العام.',
 	'globalblocking-whitelist' => 'الحالة المحلية لعمليات المنع العامة',
 	'globalblocking-whitelist-legend' => 'غير الحالة المحلية',
-	'globalblocking-whitelist-reason' => 'سبب التغيير:',
+	'globalblocking-whitelist-reason' => 'سبب:',
 	'globalblocking-whitelist-status' => 'الحالة المحلية:',
 	'globalblocking-whitelist-statuslabel' => '{{SITENAME}} عطل المنع العام دا على',
 	'globalblocking-whitelist-submit' => 'غير الحالة المحلية.',
@@ -502,7 +503,7 @@ $messages['arz'] = array(
 	'globalblocking-whitelist-nochange' => 'انت ما عملتش اى تغيير فى للحالة المحلية للمنع دا.
 [[Special:GlobalBlockList|ارجع للستة المنع العام]].',
 	'globalblocking-whitelist-errors' => 'التغيير اللى عملته للحالة المحلية للمنع العام ما نجحش،علشان{{PLURAL:$1|السبب دا|الاسباب دي}}:',
-	'globalblocking-whitelist-intro' => 'ممكن تستعمل الاستمارة دى علشان تعدل الحالة المحلية للمنع العام.لو  فى منع عام متعطل على الويكى دا ،اليوزرز على عنوان الاى بى المتاثر ح يقدرو يعملو تعديل بشكل طبيعي.
+	'globalblocking-whitelist-intro' => 'ممكن تستعمل الاستمارة دى علشان تعدل الحالة المحلية للمنع العام.لو  فى منع عام متعطل على الويكى دا ،اليوزرز على عنوان الاى بى المتاثر ح يقدرو يعملو تعديل بشكل طبيعى.
 [[Special:GlobalBlockList|الرجوع للستة المنع العامة]].',
 	'globalblocking-blocked' => "'''\$1''' (''\$2'') عمل منع لعنوان الاى بى بتاعك  على كل الويكيهات.
 السبب هو ''\"\$3\"''.
@@ -3860,6 +3861,14 @@ $messages['km'] = array(
 	'right-globalunblock' => 'ដកចេញ​ការរាំងខ្ទប់​សកល',
 );
 
+/** Kannada (ಕನ್ನಡ)
+ * @author Nayvik
+ */
+$messages['kn'] = array(
+	'globalblocking-unblock-reason' => 'ಕಾರಣ:',
+	'globalblocking-whitelist-reason' => 'ಕಾರಣ:',
+);
+
 /** Korean (한국어)
  * @author Albamhandae
  * @author Ficell
@@ -6704,12 +6713,22 @@ $messages['tk'] = array(
 	'globalblocking-whitelist-submit' => 'Ýerli statusy üýtget',
 	'globalblocking-whitelist-successsub' => 'Ýerli status şowly üýtgedildi',
 	'globalblocking-logpage' => 'Global blokirleme gündeligi',
+	'globalblocking-block-logentry' => '[[$1]], $2 gutaryş wagty bilen global blokirlendi',
+	'globalblocking-block2-logentry' => 'global blokirlendi [[$1]] ($2)',
+	'globalblocking-unblock-logentry' => '[[$1]] üçin global blokirleme aýyryldy',
+	'globalblocking-whitelist-logentry' => '[[$1]] üçin global blokirleme ýerli tertipde ýapyldy',
+	'globalblocking-dewhitelist-logentry' => '[[$1]] üçin global blokirleme ýerli tertipde gaýtadan açyldy',
+	'globalblocking-modify-logentry' => '[[$1]] ($2) üçin global blokirlemäni üýtgetdi',
+	'globalblocking-logentry-expiry' => 'gutarýar $1',
+	'globalblocking-logentry-noexpiry' => 'gutaryş möhleti goýulmady',
 	'globalblocking-loglink' => '$1 IP adresi global blokirlendi ([[{{#Special:GlobalBlockList}}/$1|ähli jikme-jikler]]).',
 	'globalblocklist' => 'Global blokirlenen IP adresleriniň sanawy',
 	'globalblock' => 'IP adresini global blokirle',
 	'globalblockstatus' => 'Global blokirlemeleriň ýerli statusy',
 	'removeglobalblock' => 'Global blokirlemäni aýyr',
+	'right-globalblock' => 'Global blokirleme ediň',
 	'right-globalunblock' => 'Global blokirlemeleri aýyr',
+	'right-globalblock-whitelist' => 'Global blokirlemeleri ýerli tertipde ýap',
 );
 
 /** Tagalog (Tagalog)
@@ -6935,6 +6954,7 @@ Engelleme günlüğü referans için aşağıda verilmiştir:',
 $messages['uk'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Дозволяє]] блокування IP-адрес [[Special:GlobalBlockList|на кількох вікі]]',
 	'globalblocking-block' => 'Глобальне блокування IP-адреси',
+	'globalblocking-modify-intro' => 'Ви можете використати цю форму для зміни параметрів глобального блокування.',
 	'globalblocking-block-intro' => 'За допомогою цієї сторінки ви можете заблокувати IP-адресу в усіх вікі.',
 	'globalblocking-block-reason' => 'Причина цього блокування:',
 	'globalblocking-block-expiry' => 'Закінчиться:',
@@ -6951,6 +6971,7 @@ $messages['uk'] = array(
 	'globalblocking-block-success' => 'IP-адреса $1 була успішно заблокована в усіх проектах.',
 	'globalblocking-modify-success' => 'Глобальне блокування $1 успішно змінене',
 	'globalblocking-block-successsub' => 'Глобальне блокування пройшло успішно.',
+	'globalblocking-modify-successsub' => 'Глобальне блокування успішно змінено',
 	'globalblocking-block-alreadyblocked' => 'IP-адреса $1 вже є глобально заблокованою.
 Ви можете переглянути поточні блокування у [[Special:GlobalBlockList|списку глобальних блокувань]] або змінити параметри поточного блокування, повторно відправивши цю форму.',
 	'globalblocking-block-bigrange' => 'Зазначений вами діапазон ($1) завеликий для блокування.
@@ -6971,6 +6992,7 @@ $messages['uk'] = array(
 	'globalblocking-list-whitelisted' => 'локально відключив $1: $2',
 	'globalblocking-list-whitelist' => 'локальний стан',
 	'globalblocking-list-modify' => 'змінити',
+	'globalblocking-list-noresults' => 'Зазначена IP-адреса не заблокована.',
 	'globalblocking-goto-block' => 'Заблокувати IP-адресу глобально',
 	'globalblocking-goto-unblock' => 'Зняти глобальне блокування',
 	'globalblocking-goto-status' => 'Змінити локальний стан глобального блокування',
@@ -6989,6 +7011,8 @@ $messages['uk'] = array(
 	'globalblocking-unblock-intro' => 'Ви можете використовувати цю форму для зняття глобального блокування.
 [[Special:GlobalBlockList|Клацніть сюди]], щоб повернутися до списку глобальних блокувань.',
 	'globalblocking-whitelist' => 'Локальний стан глобальних блокувань',
+	'globalblocking-whitelist-notapplied' => 'Глобальні блокування не застосовуються в цій вікі,
+тому локальний статус глобальних блокувань не може бути змінений.',
 	'globalblocking-whitelist-legend' => 'Зміна локального стану',
 	'globalblocking-whitelist-reason' => 'Причина:',
 	'globalblocking-whitelist-status' => 'Локальний стан:',
@@ -7006,15 +7030,22 @@ $messages['uk'] = array(
 	'globalblocking-blocked' => "Ваша IP-адреса була заблокована у всіх вікі користувачем '''\$1''' (''\$2'').
 Причиною вказано ''\"\$3\"''.
 Блокування ''\$4''.",
+	'globalblocking-blocked-nopassreset' => 'Ви не можете змінювати паролі користувачів, тому що ви заблоковані на глобальному рівні.',
 	'globalblocking-logpage' => 'Журнал глобальних блокувань',
 	'globalblocking-logpagetext' => 'Це журнал глобальних блокувань, встановлених і знятих в цієї вікі.
 Слід зазначити, що глобальні блокування можуть бути встановлені в інших вікі, але діяти також у цій вікі.
 Щоб переглянути список всіх глобальних блокувань, зверніться до [[Special:GlobalBlockList|відповідного списку]].',
 	'globalblocking-block-logentry' => 'глобально заблокував [[$1]] з терміном блокування $2',
+	'globalblocking-block2-logentry' => 'глобально заблокував [[$1]] ($2)',
 	'globalblocking-unblock-logentry' => 'зняв глобальне блокування з [[$1]]',
 	'globalblocking-whitelist-logentry' => 'локально відключене глобальне блокування [[$1]]',
 	'globalblocking-dewhitelist-logentry' => 'локально відновлене глобальне блокування [[$1]]',
+	'globalblocking-modify-logentry' => 'змінив глобальне блокування [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'закінчується $1',
+	'globalblocking-logentry-noexpiry' => 'не встановлено термін дії',
+	'globalblocking-loglink' => 'IP-адреса $1 заблокована глобально ([[{{#Special:GlobalBlockList}}/$1|детальніше]]).',
+	'globalblocking-showlog' => 'Ця IP-адреса вже була заблокована раніше.
+Для довідки нижче наведений журнал блокувань:',
 	'globalblocklist' => 'Список глобально заблокованих IP-адрес',
 	'globalblock' => 'Глобальне блокування IP-адреси',
 	'globalblockstatus' => 'Локальний стан глобальних блокувань',
@@ -7554,6 +7585,7 @@ $1',
 /** Traditional Chinese (‪中文(繁體)‬)
  * @author Alexsh
  * @author Gaoxuewei
+ * @author Mark85296341
  * @author Shinjiman
  */
 $messages['zh-hant'] = array(
@@ -7649,7 +7681,7 @@ $1',
 	'globalblocking-modify-logentry' => '修改全域封鎖[[$1]] （$2）',
 	'globalblocking-logentry-expiry' => '過期 $1',
 	'globalblocking-logentry-noexpiry' => '未設置過期',
-	'globalblocking-loglink' => 'IP地址$1 被全域封鎖（[[{{#Special:GlobalBlockList}}/$1|詳細信息]]）。',
+	'globalblocking-loglink' => 'IP位址$1 被全域封鎖（[[{{#Special:GlobalBlockList}}/$1|詳細資訊]]）。',
 	'globalblocking-showlog' => '這個IP地址已經被封鎖。
 封鎖記錄提供如下，供參考：',
 	'globalblocklist' => '全域封鎖IP地址名單',
