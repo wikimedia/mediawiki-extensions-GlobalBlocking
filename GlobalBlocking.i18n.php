@@ -774,6 +774,7 @@ $1',
 	'globalblocking-list-unblock' => 'отблокиране',
 	'globalblocking-list-whitelisted' => 'локално изключен от $1: $2',
 	'globalblocking-list-whitelist' => 'локален статут',
+	'globalblocking-list-noresults' => 'Заявеният IP-адрес не е блокиран.',
 	'globalblocking-goto-block' => 'Глобално блокиране на IP-адрес',
 	'globalblocking-goto-unblock' => 'Премахване на глобално блокиране',
 	'globalblocking-goto-status' => 'Промяна на локалния статут на глобално блокиране',
@@ -816,6 +817,7 @@ $1',
 	'globalblocking-unblock-logentry' => 'премахна глобалното блокиране на [[$1]]',
 	'globalblocking-whitelist-logentry' => 'премахна на локално ниво глобалното блокиране на [[$1]]',
 	'globalblocking-dewhitelist-logentry' => 'възвърна на локално ниво глобалното блокиране на [[$1]]',
+	'globalblocking-logentry-noexpiry' => 'не е зададено изтичане',
 	'globalblocklist' => 'Списък на глобално блокираните IP адреси',
 	'globalblock' => 'Глобално блокиране на IP адрес',
 	'globalblockstatus' => 'Локално състояние на глобалните блокирания',
@@ -823,6 +825,7 @@ $1',
 	'right-globalblock' => 'Създаване на глобални блокирания',
 	'right-globalunblock' => 'Премахване на глобални блокирания',
 	'right-globalblock-whitelist' => 'Локално спиране на глобалните блокирания',
+	'right-globalblock-exempt' => 'Пренебрегване на глобалните блокирания',
 );
 
 /** Bengali (বাংলা)
@@ -1757,6 +1760,7 @@ Bonvolu enigi validan IP-adreson.',
 	'globalblocking-list-whitelisted' => 'loke malebligita de $1: $2',
 	'globalblocking-list-whitelist' => 'loka statuso',
 	'globalblocking-list-modify' => 'modifi',
+	'globalblocking-list-noresults' => 'La petita IP-adreso ne estas forbarita.',
 	'globalblocking-goto-block' => 'Ĝenerale forbari IP-adreson',
 	'globalblocking-goto-unblock' => 'Forigi ĝeneralan blokon',
 	'globalblocking-goto-status' => 'Ŝanĝigi lokan statuson por ĝenerala forbaro',
@@ -1778,7 +1782,7 @@ Bonvolu noti ke vi ne povas enigi salutnomo!',
 	'globalblocking-whitelist-notapplied' => 'Ĝeneralaj forbaroj ne estas aplikataj en ĉi tiu vikio,
 do la loka statuso de ĝenerala forbaroj ne povas esti modifita.',
 	'globalblocking-whitelist-legend' => 'Ŝanĝi lokan statuson',
-	'globalblocking-whitelist-reason' => 'Kialo por ŝanĝo:',
+	'globalblocking-whitelist-reason' => 'Kialo:',
 	'globalblocking-whitelist-status' => 'Loka statuso:',
 	'globalblocking-whitelist-statuslabel' => 'Malebligi ĉi tiun ĝeneralan forbaron por {{SITENAME}}',
 	'globalblocking-whitelist-submit' => 'Ŝanĝi lokan statuson',
@@ -1807,6 +1811,9 @@ Vidi ĉiujn aktivajn ĝeneralajn forbarojn, vi povas vidi la [[Special:GlobalBlo
 	'globalblocking-modify-logentry' => 'modifis la ĝeneralan forbaron je [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'finas je $1',
 	'globalblocking-logentry-noexpiry' => 'neniu fintempo',
+	'globalblocking-loglink' => 'La IP-adreso $1 estas forbarita ĝenerale ([[{{#Special:GlobalBlockList}}/$1|plenaj detaloj]]).',
+	'globalblocking-showlog' => 'Ĉi tiu IP-adreso estis antaŭe forbarita.
+Jen la protokolo pri forbaroj sube por via referenco:',
 	'globalblocklist' => 'Listo de ĝenerale forbaritaj IP-adresoj',
 	'globalblock' => 'Ĝenerale forbari IP-adreson',
 	'globalblockstatus' => 'Loka statuso de ĝeneralaj forbaroj',
@@ -2203,6 +2210,7 @@ Anna kelvollinen IP-osoite.',
 	'globalblocking-list-whitelisted' => 'paikallisesti poiskytketty käyttäjän $1 toimesta: $2',
 	'globalblocking-list-whitelist' => 'paikallinen tila',
 	'globalblocking-list-modify' => 'muuta',
+	'globalblocking-list-noresults' => 'Pyydettyä IP-osoitetta ei ole estetty.',
 	'globalblocking-goto-block' => 'Estä IP-osoite globaalisti',
 	'globalblocking-goto-unblock' => 'Poista globaaliesto',
 	'globalblocking-goto-status' => 'Vaihda globaalin eston paikallista tilaa',
@@ -2236,7 +2244,7 @@ joten paikallisten globaaliestojen tilaa ei voi muuttaa.',
 	'globalblocking-blocked' => "'''$1''' (''$2'') on estänyt IP-osoitteesi kaikissa wikeissä.
 Syy: ''$3''
 Esto: ''$4''",
-	'globalblocking-blocked-nopassreset' => 'Et voi nollata käyttäjien salasanoja, koska sinulla on globaaliesto.',
+	'globalblocking-blocked-nopassreset' => 'Et voi palauttaa käyttäjien salasanoja, koska sinut on estetty globaalisti.',
 	'globalblocking-logpage' => 'Globaaliestoloki',
 	'globalblocking-logpagetext' => 'Tämä on loki tässä wikissä tehdyistä ja poistetuista globaaliestoista.
 Globaaliestoja voi tehdä ja poistaa myös muissa wikeissä, ja ne voivat vaikuttaa tähän wikiin.
@@ -2249,6 +2257,9 @@ Kaikki voimassa olevat globaaliestot ovat [[Special:GlobalBlockList|globaaliesto
 	'globalblocking-modify-logentry' => 'muutti globaaliestoa käyttäjälle [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'vanhenee $1',
 	'globalblocking-logentry-noexpiry' => 'vanhentumisaikaa ei asetettu',
+	'globalblocking-loglink' => 'IP-osoite $1 on estetty globaalisti ([[{{#Special:GlobalBlockList}}/$1|tiedot]]).',
+	'globalblocking-showlog' => 'Tämä IP-osoite on estetty aiemmin.
+Alla on ote estolokista.',
 	'globalblocklist' => 'Globaalisti estetyt IP-osoitteet',
 	'globalblock' => 'Estä IP-osoite globaalisti',
 	'globalblockstatus' => 'Globaalien estojen paikallinen tila',
@@ -6657,6 +6668,76 @@ $messages['tg-cyrl'] = array(
 	'right-globalblock-whitelist' => 'Ғайри фаъол кардани қатъи дастрасиҳои саросарӣ ба таври маҳаллӣ',
 );
 
+/** Tajik (Latin) (Тоҷикӣ (Latin))
+ * @author Liangent
+ */
+$messages['tg-latn'] = array(
+	'globalblocking-block' => 'Bastani jak nişonai IP ba surati sarosarī',
+	'globalblocking-block-intro' => 'Şumo in sahifaro baroi bastani nişonai IP dar hamai vikiho metavoned istifoda bared.',
+	'globalblocking-block-reason' => 'Sababe baroi in bastan:',
+	'globalblocking-block-expiry' => "Xoti qat'i dastrasī:",
+	'globalblocking-block-expiry-other' => 'Digar vaqti xotima',
+	'globalblocking-block-expiry-otherfield' => 'Digar vaqt:',
+	'globalblocking-block-options' => 'Ixtijorot:',
+	'globalblocking-block-errors' => 'Bastani dastrasiji az tarafi şumo nomuvaffaq şud, az rūi {{PLURAL:$1|sababi|sabahoi}} zerin:',
+	'globalblocking-block-ipinvalid' => "Nişonai IP ($1) şumo vorid namuda nomū'tabar ast.
+Lutfan dar xotir nigoh dored, ki şumo nametavoned jak nomi korbariro vorid kuned!",
+	'globalblocking-block-expiryinvalid' => "Sanai e'tiboroti şumo voridnamud ($1) nomū'tabar ast.",
+	'globalblocking-block-submit' => 'Bastani in nişonai IP ba surati sarosarī',
+	'globalblocking-block-success' => 'Nişonai IP $1 bo muvaffaqijat dar hamai loihaho basta şud.',
+	'globalblocking-block-successsub' => 'Bastani dastrasī ba surati sarosarī muvaffaq şud',
+	'globalblocking-list' => 'Fehristi nişonahoi IP sarosari bastaşuda',
+	'globalblocking-search-legend' => 'Çustuçūi sarosari bastaşuda',
+	'globalblocking-search-ip' => 'Nişonai IP:',
+	'globalblocking-search-submit' => 'Çustuçūi bastaşudaho',
+	'globalblocking-list-ipinvalid' => "Nişonai IP şumo çustuçū namuda ($1) nomū'tabar ast.
+Lutfan nişonai IP mū'tabarero vorid kuned.",
+	'globalblocking-search-errors' => 'Çustuçūi şumo nomuvaffaq bud, az rūi {{PLURAL:$1|sababi|sababhoi}} zerin:',
+	'globalblocking-list-expiry' => 'xotima $1',
+	'globalblocking-list-anononly' => 'faqat gumnom',
+	'globalblocking-list-unblock' => 'pok kardan',
+	'globalblocking-list-whitelisted' => "mahallī ƣajrifa'ol karda şudaast az tarafi $1: $2",
+	'globalblocking-list-whitelist' => "vaz'ijati mahallī",
+	'globalblocking-goto-block' => 'Sarosarī bastani jak nişonai IP',
+	'globalblocking-goto-unblock' => 'Pok kardani bastai sarosarī',
+	'globalblocking-goto-status' => "Taƣjiri vaz'ijati mahallī ba jak bastai sarosarī",
+	'globalblocking-return' => 'Bozgaşta ba fehristi bastahoi sarosarī',
+	'globalblocking-notblocked' => 'Nişonai IP ($1) şumo vorid karda sarosarī basta naşudaast.',
+	'globalblocking-unblock' => 'Pok kardani bastai sarosarī',
+	'globalblocking-unblock-ipinvalid' => "Nişoani IP ($1) vorid namuda nomū'tabar ast.
+Lutfan dar jod dored, ki şumo nametavoned jak nomi korbariro vorid kuned!",
+	'globalblocking-unblock-legend' => 'Pok kardani bastai sarosarī',
+	'globalblocking-unblock-submit' => 'Pok kardani bastai sarosarī',
+	'globalblocking-unblock-reason' => 'Sabab:',
+	'globalblocking-unblock-unblocked' => "Şumo bo muvaffaqijat bastai sarosariji #$2 az rūi nişonai IP '''$1''' pok karded",
+	'globalblocking-unblock-errors' => 'Pokkuniji bastai sarosariji şumo nomuvaffaq şud, az {{PLURAL:$1|sababi|sababhoi}} zerin:',
+	'globalblocking-unblock-successsub' => 'Bastai sarosarī bo muvaffaqijat pok şud',
+	'globalblocking-unblock-subtitle' => 'Dar holi pok kardani basta sarosarī',
+	'globalblocking-unblock-intro' => 'Şumo metavoned baroi pok kardani bastai sarosarī az in form istifoda bared.
+Baroi bozgaşt ba fehristi bastai sarosarī [[Special:GlobalBlockList|inço klik kuned]].',
+	'globalblocking-whitelist' => "Vaz'ijati mahalliji bastahoi sarosarī",
+	'globalblocking-whitelist-legend' => "Taƣjiri vaz'ijati mahallī",
+	'globalblocking-whitelist-status' => "Vaz'ijati mahallī:",
+	'globalblocking-whitelist-statuslabel' => "Ƣajrifa'ol kardani in bastai sarosarī dar {{SITENAME}}",
+	'globalblocking-whitelist-submit' => "Taƣjiri vaz'ijati mahallī",
+	'globalblocking-whitelist-successsub' => "Vaz'ijati mahallī bo muvaffaqijat taƣjir joft",
+	'globalblocking-whitelist-nochange' => "Şumo jagon taƣjire ba vaz'ijati mahalli in qat'i dastrasī vorid nakarded.
+[[Special:GlobalBlockList|Bargarded ba fehristi qat'i dastrasiji sarosarī]].",
+	'globalblocking-blocked' => "Nişoani IP şumo dar hamai vikiho tavassuti '''\$1''' (''\$2'') basta şudaast.
+Sababi dodaşuda ''\"\$3\"'' bud.
+Bastai ''\$4''.",
+	'globalblocking-logpage' => 'Guzorişi bastai sarosarī',
+	'globalblocking-unblock-logentry' => "qat'i dastrasiji sarosarī dar [[$1]] pok şud",
+	'globalblocking-whitelist-logentry' => "qat'i dastrasiji sarosarī dar [[$1]] mahallī ƣajrifa'ol şud",
+	'globalblocklist' => "Fehristi nişonahoi IP sarosarī qat' kardaşuda",
+	'globalblock' => "Ba surati sarosarī qat' kardani nişonai IP",
+	'globalblockstatus' => "Vaz'ijati mahalliji qat'i dastrasiji sarosarī",
+	'removeglobalblock' => "Pok kardani qat'i dastrasī",
+	'right-globalblock' => "Eçodi qat'i dastrasihoi sarosarī",
+	'right-globalunblock' => "Hazfi qat'i dastrasihoi sarosarī",
+	'right-globalblock-whitelist' => "Ƣajri fa'ol kardani qat'i dastrasihoi sarosarī ba tavri mahallī",
+);
+
 /** Thai (ไทย)
  * @author Ans
  * @author Octahedron80
@@ -7053,6 +7134,7 @@ $messages['uk'] = array(
 	'right-globalblock' => 'накладання глобальних блокувань',
 	'right-globalunblock' => 'зняття глобальних блокувань',
 	'right-globalblock-whitelist' => 'Локальне відключення глобального блокування',
+	'right-globalblock-exempt' => 'Обхід глобальних блокувань',
 );
 
 /** Vèneto (Vèneto)
