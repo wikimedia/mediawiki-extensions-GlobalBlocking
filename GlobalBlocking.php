@@ -29,7 +29,7 @@ $wgExtensionAliasesFiles['GlobalBlocking'] = "$dir/GlobalBlocking.alias.php";
 $wgHooks['getUserPermissionsErrorsExpensive'][] = 'GlobalBlocking::getUserPermissionsErrors';
 $wgHooks['UserIsBlockedGlobally'][] = 'GlobalBlocking::isBlockedGlobally';
 $wgHooks['UserLoginMailPassword'][] = 'GlobalBlocking::onMailPassword';
-$wgHooks['getOtherBlockLogLink'][] = 'GlobalBlocking::getBlockLogLink';
+$wgHooks['OtherBlockLogLink'][] = 'GlobalBlocking::getBlockLogLink';
 
 $wgAutoloadClasses['SpecialGlobalBlock'] = "$dir/SpecialGlobalBlock.php";
 $wgSpecialPages['GlobalBlock'] = 'SpecialGlobalBlock';
