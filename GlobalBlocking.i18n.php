@@ -827,8 +827,11 @@ $1',
 	'globalblocking-unblock-logentry' => 'премахна глобалното блокиране на [[$1]]',
 	'globalblocking-whitelist-logentry' => 'премахна на локално ниво глобалното блокиране на [[$1]]',
 	'globalblocking-dewhitelist-logentry' => 'възвърна на локално ниво глобалното блокиране на [[$1]]',
+	'globalblocking-logentry-expiry' => 'изтича $1',
 	'globalblocking-logentry-noexpiry' => 'не е зададено изтичане',
 	'globalblocking-loglink' => 'IP-адресът $1 е блокиран глобално ([[{{#Special:GlobalBlockList}}/$1|пълни данни]]).',
+	'globalblocking-showlog' => 'Този IP-адрес е бил блокиран преди.
+За справка по-долу следва дневник на блокирането:',
 	'globalblocklist' => 'Списък на глобално блокираните IP адреси',
 	'globalblock' => 'Глобално блокиране на IP адрес',
 	'globalblockstatus' => 'Локално състояние на глобалните блокирания',
@@ -5705,6 +5708,7 @@ Para sua referência, é apresentado abaixo o registo de bloqueios:',
  * @author Brunoy Anastasiya Seryozhenko
  * @author Eduardo.mps
  * @author Heldergeovane
+ * @author Luckas Blade
  */
 $messages['pt-br'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Permite]] que endereços IP sejam [[Special:GlobalBlockList|bloqueados através de múltiplos wikis]]',
@@ -5715,7 +5719,7 @@ $messages['pt-br'] = array(
 	'globalblocking-block-expiry' => 'Validade do bloqueio:',
 	'globalblocking-block-expiry-other' => 'Outro tempo de validade',
 	'globalblocking-block-expiry-otherfield' => 'Outra duração:',
-	'globalblocking-block-legend' => 'Bloquear um utilizador globalmente',
+	'globalblocking-block-legend' => 'Bloquear um endereço IP globalmente',
 	'globalblocking-block-options' => 'Opções:',
 	'globalblocking-block-errors' => 'O bloqueio não teve sucesso {{PLURAL:$1|pelo seguinte motivo|pelos seguintes motivos}}:',
 	'globalblocking-block-ipinvalid' => 'O endereço IP ($1) que introduziu é inválido.
@@ -5748,6 +5752,7 @@ Por favor, introduza um endereço IP válido.',
 	'globalblocking-list-whitelisted' => 'localmente desativado por $1: $2',
 	'globalblocking-list-whitelist' => 'estado local',
 	'globalblocking-list-modify' => 'modificar',
+	'globalblocking-list-noresults' => 'O endereço IP solicitado não está bloqueado.',
 	'globalblocking-goto-block' => 'Bloquear globalmente um endereço IP',
 	'globalblocking-goto-unblock' => 'Remover um bloqueio global',
 	'globalblocking-goto-status' => 'Alterar estado local de um bloqueio global',
@@ -5769,7 +5774,7 @@ Por favor, note que não pode introduzir um nome de utilizador!',
 	'globalblocking-whitelist-notapplied' => 'Bloqueios globais não são aplicados neste wiki,
 logo o estado local de bloqueios globais não pode ser modificado.',
 	'globalblocking-whitelist-legend' => 'Alterar estado local',
-	'globalblocking-whitelist-reason' => 'Motivo da alteração:',
+	'globalblocking-whitelist-reason' => 'Motivo:',
 	'globalblocking-whitelist-status' => 'Estado local:',
 	'globalblocking-whitelist-statuslabel' => 'Desativar este bloqueio global em {{SITENAME}}',
 	'globalblocking-whitelist-submit' => 'Alterar estado local',
@@ -5798,6 +5803,9 @@ Para ver todos os bloqueios globais, poderá consultar a [[Special:GlobalBlockLi
 	'globalblocking-modify-logentry' => 'modificado o bloqueio global sobre [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'expira em $1',
 	'globalblocking-logentry-noexpiry' => 'nenhum prazo especificado',
+	'globalblocking-loglink' => 'O endereço IP $1 está bloqueado globalmente ([[{{#Special:GlobalBlockList}}/$1|detalhes]]).',
+	'globalblocking-showlog' => 'Este endereço IP já foi bloqueado anteriormente.
+O registro de bloqueios é fornecido abaixo como referência:',
 	'globalblocklist' => 'Lista de endereços IP bloqueados globalmente',
 	'globalblock' => 'Bloquear um endereço IP globalmente',
 	'globalblockstatus' => 'Estado local de bloqueios globais',
