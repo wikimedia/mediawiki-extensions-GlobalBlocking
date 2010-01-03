@@ -3936,7 +3936,13 @@ $messages['ka'] = array(
 	'globalblocking-blocked-nopassreset' => 'თქვენ არ შეგიძლიათ მომხმარებლის პაროლის შეცვლა, რადგან თქვენი ანგარიში გლობალურად ბლოკირებულია.',
 	'globalblocking-logpage' => 'გლობალური ბლოკირების ჟურნალი',
 	'globalblocking-block2-logentry' => 'გლობალურად დაბლოკილია [[$1]] ($2)',
+	'globalblocklist' => 'გლობალურად დაბლოკილი IP მისამართების სია',
+	'globalblock' => 'IP მისამართის გლობალური ბლოკირება',
+	'globalblockstatus' => 'გლობალური ბლოკირების ლოკალური სტატუსი',
 	'removeglobalblock' => 'გლობალური ბლოკირების მოხსნა',
+	'right-globalblock' => 'გლობალური ბლოკირების გაკეთება',
+	'right-globalunblock' => 'გლობალური ბლოკირების მოხსნა',
+	'right-globalblock-whitelist' => 'გლობალური ბლოკირების ლოკალური გამორთვა',
 );
 
 /** Khmer (ភាសាខ្មែរ)
@@ -5938,6 +5944,8 @@ Pe piacere vide ca tu non ge puè mettere 'nu nome utende!",
 	'globalblocking-whitelist-status' => 'State locale:',
 	'globalblocking-logentry-expiry' => "scade 'u $1",
 	'globalblocking-logentry-noexpiry' => "nisciuna scadenze 'mbostate",
+	'removeglobalblock' => "Live 'nu blocche globale",
+	'right-globalblock' => 'Mitte le blocche globale',
 );
 
 /** Russian (Русский)
