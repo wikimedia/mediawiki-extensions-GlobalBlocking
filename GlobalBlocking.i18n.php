@@ -4104,6 +4104,8 @@ $messages['ko'] = array(
 	'globalblocking-modify-logentry' => '[[$1]]에 대한 전체 차단 설정을 변경 ($2)',
 	'globalblocking-logentry-expiry' => '$1에 해제',
 	'globalblocking-loglink' => 'IP 주소 $1은 모든 위키에서 차단되었습니다. ([[{{#Special:GlobalBlockList}}/$1|자세한 정보]])',
+	'globalblocking-showlog' => '이 IP 주소는 이전에 차단된 적이 있습니다.
+아래의 차단 기록을 참고하십시오:',
 	'globalblocklist' => '모든 위키에서 차단된 IP 목록',
 	'globalblock' => '전체 위키에서 IP 주소를 차단',
 	'globalblockstatus' => '전체 차단의 로컬 상태',
@@ -5931,21 +5933,87 @@ Pe piacere vide ca tu non ge puè mettere 'nu nome utende!",
 	'globalblocking-modify-success' => "'U bluecche globale sus a $1 ha state cangiate cu successe",
 	'globalblocking-block-successsub' => 'Bluècche globale riuscite',
 	'globalblocking-modify-successsub' => 'Blocche globale cangiate cu successe',
+	'globalblocking-block-alreadyblocked' => "L'indirizze IP $1 ha state ggià bloccate.<br />
+Tu puè vedè le bluecche ca esistene sus a l'[[Special:GlobalBlockList|elenghe de le bluecche globale]], o cangià l'imbostaziune de le bluecche ca esistene e re-confermà stu module.",
+	'globalblocking-block-bigrange' => "L'indervalle ca è specificate ($1) jè troppe gruèsse pe bloccà.<br />
+Tu puè bloccà, assaije assaije, 65.536 indirizze (/16 indervalle)",
+	'globalblocking-list-intro' => "Quiste jè l'elenghe de tutte le bluecche globale ca mò stonne a funzionane.<br />
+Certe blocche sonde signate cumme disabbilitate in locale: quiste signifeche ca lore se applecascene su otre site, ma 'n'amministratore locale ha decise de disabbilitarle sus a sta Uicchi.",
 	'globalblocking-list' => 'Elenghe de le indirizze IP bloccate globalmende',
 	'globalblocking-search-legend' => "Cirche 'nu blocche globale",
 	'globalblocking-search-ip' => 'Indirizze IP:',
 	'globalblocking-search-submit' => 'Cirche le blocche',
+	'globalblocking-list-ipinvalid' => "L'indirizze IP ca è cercate ($1) jè invalide.<br />
+Pe piacere mitte 'n'indirizze IP valide.",
+	'globalblocking-search-errors' => "'A ricerca toje non g'à avute resultate, {{PLURAL:$1|pu seguende|pe le seguende}} mutive:",
+	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') bloccate globalmende [[Special:Contributions/\$4|\$4]] ''(\$5)''",
 	'globalblocking-list-expiry' => "scade 'u $1",
+	'globalblocking-list-anononly' => 'sulamende anonime',
 	'globalblocking-list-unblock' => 'live',
+	'globalblocking-list-whitelisted' => 'localmende disabbiletate da $1: $2',
 	'globalblocking-list-whitelist' => 'state locale',
 	'globalblocking-list-modify' => 'cange',
+	'globalblocking-list-noresults' => "L'indirizze IP richieste non g'è bloccate.",
+	'globalblocking-goto-block' => "Bluecche globalmende 'n'indirizze IP",
+	'globalblocking-goto-unblock' => "Live 'nu blocche globale",
+	'globalblocking-goto-status' => "Cange 'u state locale pe 'nu blocche globale",
+	'globalblocking-return' => "Tuèrne a l'elenghe de le blocche globale",
+	'globalblocking-notblocked' => "L'indirizze IP ($1) ca tu è mise non g'è bloccate globalmende.",
+	'globalblocking-unblock' => "Live 'nu blocche globale",
+	'globalblocking-unblock-ipinvalid' => "L'indirizze IP ($1) ca tu è mise jè invalide.<br />
+Pe piacere vide ca tu non ge puè mettere 'nu nome utende!",
+	'globalblocking-unblock-legend' => "Live 'nu blocche globale",
+	'globalblocking-unblock-submit' => "Live 'nu blocche globale",
 	'globalblocking-unblock-reason' => 'Mutive:',
+	'globalblocking-unblock-unblocked' => "Tu è luate 'u blocche globale #$2 cu successe sus a l'indirizze IP '''$1'''",
+	'globalblocking-unblock-errors' => "'U luamende d'u blocche globale non g'à riuscute, {{PLURAL:$1|pu seguende|pe le seguende}} mutive:",
+	'globalblocking-unblock-successsub' => 'Blocche globale luate cu successe',
+	'globalblocking-unblock-subtitle' => "Stoche a leve 'u blocche globale",
+	'globalblocking-unblock-intro' => "Tu puè ausà stu module pe luà 'nu blocche globale.<br />
+[[Special:GlobalBlockList|Cazze aqquà]] pe turnà a l'elenghe de le blocche globale.",
+	'globalblocking-whitelist' => 'State locale de le blocche globale',
+	'globalblocking-whitelist-notapplied' => "Le blocche globale non g'onne state applicate a sta Uicchi, accussì 'u state locale de le blocche globale non ge pò essere cangiate.",
+	'globalblocking-whitelist-legend' => "Cange 'u state locale",
 	'globalblocking-whitelist-reason' => 'Mutive:',
 	'globalblocking-whitelist-status' => 'State locale:',
+	'globalblocking-whitelist-statuslabel' => 'Disabbilete stu blocche globale sus a {{SITENAME}}',
+	'globalblocking-whitelist-submit' => "Cange 'u state locale",
+	'globalblocking-whitelist-whitelisted' => "Tu è disabbilitate cu successe 'u blocche globale #$2 sus a l'indirizze IP '''$1''' sus a {{SITENAME}}.",
+	'globalblocking-whitelist-dewhitelisted' => "Tu è riabbilitate cu successe 'u blocche globale #$2 sus a l'indirizze IP '''$1''' sus a {{SITENAME}}.",
+	'globalblocking-whitelist-successsub' => 'ìU state locale ha state cangiate cu successe',
+	'globalblocking-whitelist-nochange' => "Tu non gè fatte cangiaminde sus a le state locale de stu blocche.<br />
+[[Special:GlobalBlockList|Tuèrne a l'elenghe de le blocche globale]].",
+	'globalblocking-whitelist-errors' => "'U cangiamende tune a 'u state locale d'u blocche globale non g'à riuscite, {{PLURAL:$1|pu|pe le}} seguende mutive:",
+	'globalblocking-whitelist-intro' => "Tu puè ausà stu module pe cangià 'u state locale de 'nu blocche globale.<br />
+Ce 'nu blocche globale jè disabbilitate sus a sta Uicchi, l'utinde ca usane ste indirizze IP ponne turnà a fa cangiaminde normalmende.<br />
+[[Special:GlobalBlockList|Tuèrne a l'elenghe de le blocche globale]].",
+	'globalblocking-blocked' => "L'indirizze UP tune ha state bloccate sus a tutte le Uicchi da '''\$1''' (''\$2'').<br />
+'U mutive date ha state ''\"\$3\"''.<br />
+'U blocche ''\$4''.",
+	'globalblocking-blocked-nopassreset' => "tu non ge puè azzerà 'a password de l'utende purcé è state bloccate globalmende.",
+	'globalblocking-logpage' => 'Archivije de le blocche globale',
+	'globalblocking-logpagetext' => "Quiste è 'n'archivije de le blocche globale ca onne state fatte o luate da sus a sta Uicchi.<br />
+S'avesse notà ca le blocche globale ponne essere fatte e luate pure sus a otre Uicchi, e 'u stesse onne effette sus a sta Uicchi.<br />
+Pe vedè tutte le blocche globale attive, tu puè vedè l'[[Special:GlobalBlockList|elenghe de le blocche globale]].",
+	'globalblocking-block-logentry' => "bloccate globalmende [[$1]] cu 'na scadenze de $2",
+	'globalblocking-block2-logentry' => 'bloccate globalmende [[$1]] ($2)',
+	'globalblocking-unblock-logentry' => 'blocche globale luate sus a [[$1]]',
+	'globalblocking-whitelist-logentry' => "'u blocche globale sus a [[$1]] disabbilitate localmende",
+	'globalblocking-dewhitelist-logentry' => "'u blocche globale sus a [[$1]] riabbilitate localmende",
+	'globalblocking-modify-logentry' => "'u blocche globale sus a [[$1]] ha state cangiate ($2)",
 	'globalblocking-logentry-expiry' => "scade 'u $1",
 	'globalblocking-logentry-noexpiry' => "nisciuna scadenze 'mbostate",
+	'globalblocking-loglink' => "L'indirizze IP $1 ha state bloccate globalmende ([[{{#Special:GlobalBlockList}}/$1|dettaglie comblete]]).",
+	'globalblocking-showlog' => "Quiste indirizze IP ha state bloccate precedendemende.<br />
+L'archivije de le blocche t'avène date aqquà sotte pe conzultazione:",
+	'globalblocklist' => 'Elenghe de le indirizze IP bloccate globalmende',
+	'globalblock' => "Blocche globalmende 'n'indirizze IP",
+	'globalblockstatus' => 'State locale de le blocche globale',
 	'removeglobalblock' => "Live 'nu blocche globale",
 	'right-globalblock' => 'Mitte le blocche globale',
+	'right-globalunblock' => 'Live le blocche globale',
+	'right-globalblock-whitelist' => 'Disabbilete le blocche globale localmende',
+	'right-globalblock-exempt' => 'Zumbe le blocche globale',
 );
 
 /** Russian (Русский)
