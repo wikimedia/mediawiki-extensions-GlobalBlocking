@@ -859,6 +859,7 @@ $messages['bn'] = array(
  */
 $messages['br'] = array(
 	'globalblocking-block' => "Stankañ en un doare hollek ur chomlec'h IP",
+	'globalblocking-modify-intro' => "Gellout a reoc'h implijout ar furmskrid evit kefluniañ ur stankadenn hollek.",
 	'globalblocking-block-intro' => "Tu 'zo deoc'h implij ar bajenn-mañ evit stankañ ur chomlec'h IP war an holl wikioù.",
 	'globalblocking-block-reason' => 'Abeg ar stankadenn-mañ :',
 	'globalblocking-block-expiry' => 'Termen ar stankadenn :',
@@ -908,6 +909,7 @@ Mar plij lakait ur chomlec'h IP reizh.",
 	'globalblocking-whitelist-status' => "Statud lec'hel :",
 	'globalblocking-whitelist-statuslabel' => 'Diweredekaat ar stankadenn hollek war {{SITENAME}}',
 	'globalblocking-whitelist-submit' => "Kemmañ ar statud lec'hel",
+	'globalblocking-whitelist-whitelisted' => "Diweredekaet ho peus ar stankadenn hollek #$2 evit ar chomlec'h IP '''$1''' war {{SITENAME}}.",
 	'globalblocking-whitelist-successsub' => "Kemmet eo bet statud lec'hel",
 	'globalblocking-blocked' => "Stanket eo bet ho chomlec'h IP war an holl wikioù gat '''\$1''' (''\$2'').
 An abeg a oa ''\"\$3\"''.
