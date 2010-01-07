@@ -4333,7 +4333,7 @@ De Beräich ''\$4''.",
 	'globalblocking-blocked-nopassreset' => 'Dir kënnt engem Benotzer säi Paswuert net zrécksetze well Dir global gespaart sidd.',
 	'globalblocking-logpage' => 'Lëscht vun de globale Spären',
 	'globalblocking-logpagetext' => "Dëst ass eng Lëscht vun de globale Spären déi op dëser Wiki gemaach an opgehuewe goufen.
-Dir sollt wëssen datt global Spären op anere Wikien gemaach an opgehuewe kënne ginn an datt déi global Spären dës Wiki beaflosse kënnen.
+Dir sollt wëssen datt global Spären op anere Wikie gemaach an opgehuewe kënne ginn an datt déi global Spären dës Wiki beaflosse kënnen.
 Fir all aktiv global Spären ze gesinn, gitt w.e.g op d'[[Special:GlobalBlockList|Lëscht vun de globale Spären]].",
 	'globalblocking-block-logentry' => '[[$1]] gouf global gespaart fir $2',
 	'globalblocking-block2-logentry' => 'huet global gespaart [[$1]] ($2)',
