@@ -5590,6 +5590,27 @@ Poniżej znajduje się rejestr blokad:',
 	'right-globalblock-exempt' => 'Ignorowanie globalnych blokad',
 );
 
+/** Piedmontese (Piemontèis)
+ * @author Dragonòt
+ */
+$messages['pms'] = array(
+	'globalblocking-desc' => '[[Special:GlobalBlock|A përmëtt]] che adrësse IP a sio [[Special:GlobalBlockList|blocà su vàire wiki]]',
+	'globalblocking-block' => "Blòca globalment n'adrëssa IP:",
+	'globalblocking-modify-intro' => "It peule dovré sta forma-sì për cangé j'ampostassion d'un blòch global.",
+	'globalblocking-block-intro' => "It peule dovré sta pàgina-sì për bloché n'adrëssa IP su tute le wiki.",
+	'globalblocking-block-reason' => 'Rason për sto blòch-sì:',
+	'globalblocking-block-expiry' => 'Fin dël blòch:',
+	'globalblocking-block-expiry-other' => 'Àutr temp ëd fin',
+	'globalblocking-block-expiry-otherfield' => 'Àutr temp:',
+	'globalblocking-block-legend' => "Blòca n'adrëssa IP globalment",
+	'globalblocking-block-options' => 'Opsion:',
+	'globalblocking-block-errors' => "Tò blòch a l'é pa andàit bin, për {{PLURAL:$1|la rason|le rason}} sota:",
+	'globalblocking-block-ipinvalid' => "L'adrëssa IP ($1) ch'it l'has ansërì a l'é pa bon-a.
+Për piasì nòta ch'it peule pa ansërì un nòm utent!",
+	'globalblocking-block-expiryinvalid' => "La fin ch'it l'has ansërì ($1) a l'é pa bon-a.",
+	'globalblocking-block-submit' => "Blòca st'adrëssa IP-sì globalment.",
+);
+
 /** Pashto (پښتو)
  * @author Ahmed-Najib-Biabani-Ibrahimkhel
  */
