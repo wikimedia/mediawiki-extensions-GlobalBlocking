@@ -4096,6 +4096,8 @@ $messages['ko'] = array(
 	'globalblocking-whitelist-whitelisted' => "{{SITENAME}}에서 IP 주소 '''$1'''에 대한 전체 차단 #$2를 비활성화하는 데 성공했습니다.",
 	'globalblocking-whitelist-dewhitelisted' => "{{SITENAME}}에서 IP 주소 '''$1'''에 대한 전체 차단 #$2가 성공적으로 다시 활성화되었습니다.",
 	'globalblocking-whitelist-successsub' => '전체 차단의 로컬 상태가 성공적으로 변경되었습니다.',
+	'globalblocking-whitelist-nochange' => '전체 차단의 로컬 상태를 바꾸지 않았습니다.
+[[Special:GlobalBlockList|전체 차단된 IP의 목록으로 돌아갑니다]].',
 	'globalblocking-whitelist-errors' => '광역 차단 설정 변경에 실패했습니다. 이유는 다음과 같습니다: $1',
 	'globalblocking-blocked' => "당신은 '''\$1''' (''\$2'')에 의해 모든 위키에서 차단되었습니다.
 차단 사유는 \"\$3\"이며, 기한은 \"\$4\"입니다.",
@@ -4108,6 +4110,7 @@ $messages['ko'] = array(
 	'globalblocking-dewhitelist-logentry' => '[[$1]]의 전체 차단을 로컬에서 다시 활성화함',
 	'globalblocking-modify-logentry' => '[[$1]]에 대한 전체 차단 설정을 변경 ($2)',
 	'globalblocking-logentry-expiry' => '$1에 해제',
+	'globalblocking-logentry-noexpiry' => '기한이 정해지지 않음',
 	'globalblocking-loglink' => 'IP 주소 $1은 모든 위키에서 차단되었습니다. ([[{{#Special:GlobalBlockList}}/$1|자세한 정보]])',
 	'globalblocking-showlog' => '이 IP 주소는 이전에 차단된 적이 있습니다.
 아래의 차단 기록을 참고하십시오:',
@@ -4247,6 +4250,8 @@ Et {{int:blocklogpage}} es hee dronger opjeföhrt, do kanns De nohkike, wat wohr
  */
 $messages['la'] = array(
 	'globalblocking-whitelist' => 'Status localis obstructionum globalium',
+	'globalblocking-showlog' => 'Hic locus IP antea obstructus est.
+Commodule notatio obstructionum subter datur.',
 	'globalblockstatus' => 'Status localis obstructionum globalium',
 );
 
@@ -5609,6 +5614,94 @@ $messages['pms'] = array(
 Për piasì nòta ch'it peule pa ansërì un nòm utent!",
 	'globalblocking-block-expiryinvalid' => "La fin ch'it l'has ansërì ($1) a l'é pa bon-a.",
 	'globalblocking-block-submit' => "Blòca st'adrëssa IP-sì globalment.",
+	'globalblocking-modify-submit' => 'Modìfica sto blòch global-sì',
+	'globalblocking-block-success' => "L'adrëssa IP $1 a l'é stàita blocà da bin dzora tùit ij proget.",
+	'globalblocking-modify-success' => "Ël blòch global ëd $1 a l'é stàit modificà da bin",
+	'globalblocking-block-successsub' => 'Blòch global andàit bin',
+	'globalblocking-modify-successsub' => 'Blòch global modificà da bin',
+	'globalblocking-block-alreadyblocked' => "L'adrëssa IP $1 a l'é già blocà globalment.
+It peule vëdde ël blòch esistent an sla [[Special:GlobalBlockList|lista dij blòch globaj]],
+o modifiché j'ampostassion dij blòch esistent an rispedend sta forma-sì.",
+	'globalblocking-block-bigrange' => "L'antërval ch'it l'has spessifià ($1) a l'é tròp gròss da bloché.
+It peule bloché, al pi, 65.536 adrësse (/16 antërvaj)",
+	'globalblocking-list-intro' => "Sta sì a l'é na lista ëd tùit ij blòch globaj che a son al moment ativ.
+Cheich blòch a son marcà com localment disabilità: sòn sì a veul dì ch'a-i son dzora àutr sit, ma che n'aministrador local a l'ha decidù ëd disabilitelo dzora sta wiki-sì.",
+	'globalblocking-list' => "Lista d'adrësse IP blocà globalment",
+	'globalblocking-search-legend' => 'Serca un blòch global',
+	'globalblocking-search-ip' => 'Adrëssa IP:',
+	'globalblocking-search-submit' => 'Serca blòch',
+	'globalblocking-list-ipinvalid' => "L'adrëssa IP ch'it l'has sercà ($1) a l'é pa bon.
+Për piasì ansëriss n'adrëssa IP bon.",
+	'globalblocking-search-errors' => "Toa arserca a l'é stàita sensa arzultà, për {{PLURAL:$1|la rason|le rason}} sota:",
+	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') blocà globalment [[Special:Contributions/\$4|\$4]] ''(\$5)''",
+	'globalblocking-list-expiry' => 'finiss $1',
+	'globalblocking-list-anononly' => 'mach anònim',
+	'globalblocking-list-unblock' => 'gava',
+	'globalblocking-list-whitelisted' => 'disabilità localment da $1: $2',
+	'globalblocking-list-whitelist' => 'stat local',
+	'globalblocking-list-modify' => 'modìfica',
+	'globalblocking-list-noresults' => "L'adrëssa IP ciamà a l'é pa blocà",
+	'globalblocking-goto-block' => "Blòca globalment n'adrëssa IP",
+	'globalblocking-goto-unblock' => 'Gava un blòch global',
+	'globalblocking-goto-status' => 'Cangia stat local për un blòch global',
+	'globalblocking-return' => 'Artorna a la lista dij blòch globaj',
+	'globalblocking-notblocked' => "L'adrëssa IP ($1) ch'it l'has ansërì a l'é pa blocà globalment.",
+	'globalblocking-unblock' => 'Gava un blòch global',
+	'globalblocking-unblock-ipinvalid' => "L'adrëssa IP ($1) ch'it l'has ansërì a l'é pa bon-a.
+Për piasì nòta ch'it peule pa ansërì un nòm utent!",
+	'globalblocking-unblock-legend' => 'Gava un blòch global',
+	'globalblocking-unblock-submit' => 'Gava blòch global',
+	'globalblocking-unblock-reason' => 'Rason:',
+	'globalblocking-unblock-unblocked' => "It l'has gavà da bin ël blòch global $2 dzora l'adrëssa IP '''$1'''",
+	'globalblocking-unblock-errors' => "It l'has pa riussì a gavé ël blòch global, për {{PLURAL:$1|la rason|le rason}} sota:",
+	'globalblocking-unblock-successsub' => 'Blòch global gavà da bin',
+	'globalblocking-unblock-subtitle' => 'Gavé blòch global',
+	'globalblocking-unblock-intro' => 'It peule dovré sta forma-sì për gavé un blòch global.
+[[Special:GlobalBlockList|Sgnaca sì]] për artorné a la lista dij blòch globaj.',
+	'globalblocking-whitelist' => 'Stat local dij blòch globaj',
+	'globalblocking-whitelist-notapplied' => 'Blòch globaj a son pa aplicà a sta wiki-sì,
+parèj lë stat local dij blòch globaj a peul pa esse modifià.',
+	'globalblocking-whitelist-legend' => 'Cangia stat local',
+	'globalblocking-whitelist-reason' => 'Rason:',
+	'globalblocking-whitelist-status' => 'Stat local:',
+	'globalblocking-whitelist-statuslabel' => 'Disabìlita sto blòch global-sì dzora a {{SITENAME}}',
+	'globalblocking-whitelist-submit' => 'Cangia stat local',
+	'globalblocking-whitelist-whitelisted' => "It l'has disabilità da bin ël blòch global  #$2 dl'adrëssa IP '''$1''' dzora a {{SITENAME}}.",
+	'globalblocking-whitelist-dewhitelisted' => "It l'has riabilità da bin ël blòch global  #$2 dl'adrëssa IP '''$1''' dzora a {{SITENAME}}.",
+	'globalblocking-whitelist-successsub' => 'Stat local cangià da bin',
+	'globalblocking-whitelist-nochange' => "It l'has pa fàit gnun cambe a lë stat local dë sto blòch-sì.
+[[Special:GlobalBlockList|Artorna a la lista dij blòch globaj]].",
+	'globalblocking-whitelist-errors' => "Tò cambe a lë stat local d'un blòch global a l'é pa andàit bin, për {{PLURAL:$1|la rason|le rason}} sota:",
+	'globalblocking-whitelist-intro' => "It peule dovré sta forma-sì për modifiché lë stat local d'un blòch global.
+Se un blòch global a l'é disabilità dzora a sta wiki-sì, utent dzora a l'adrëssa IP colpì a podran modifiché normalment.
+[[Special:GlobalBlockList|Artorna a la lista dij blòch globaj]].",
+	'globalblocking-blocked' => "Toa adrëssa IP a l'é stàita blocà dzora a tute le wiki da '''\$1''' (''\$2'').
+La rason dàita a l'é stàita ''\"\$3\"''.
+Ël blòch ''\$4''.",
+	'globalblocking-blocked-nopassreset' => "It peule pa torna amposté la ciav ëd l'utent përchè it ses blocà gobalment.",
+	'globalblocking-logpage' => 'Registr dij blòch globaj',
+	'globalblocking-logpagetext' => "Sto sì a l'é un registr dij blòch globaj che a son ëstàit fàit e gavà dzora a sta wiki-sì.
+As podrìa notesse che blòch globaj a peulo esse fàit e gava dzora a àutre wiki, e che sti blòch globaj a peulo colpì sta wiki-sì.
+Për vëdde tùit ij blòch globaj ativ, it peule vëdde la [[Special:GlobalBlockList|lista dij blòch globaj]].",
+	'globalblocking-block-logentry' => 'blocà globalment [[$1]] con un temp ëd fin ëd $2',
+	'globalblocking-block2-logentry' => 'blocà globalment [[$1]] ($2)',
+	'globalblocking-unblock-logentry' => 'gavà blòch global dzora a [[$1]]',
+	'globalblocking-whitelist-logentry' => 'disabilità ël blòch global localment dzora a [[$1]]',
+	'globalblocking-dewhitelist-logentry' => 'riabilità ël blòch global localment dzora a [[$1]]',
+	'globalblocking-modify-logentry' => 'modificà ël blòch global dzora a [[$1]] ($2)',
+	'globalblocking-logentry-expiry' => 'finiss $1',
+	'globalblocking-logentry-noexpiry' => 'pa ancó finì',
+	'globalblocking-loglink' => "L'adrëssa IP $1 a l'é blocà globalment ([[{{#Special:GlobalBlockList}}/$1|detaj complet]]).",
+	'globalblocking-showlog' => "L'adrëssa IP a l'é stàita blocà prima.
+Ël registr dij blòch a l'é dàit sota për arferiment:",
+	'globalblocklist' => "Lista dl'adrësse IP blocà globalment",
+	'globalblock' => "Blòca globalment n'adrëssa IP",
+	'globalblockstatus' => 'Stat local dij blòch globaj',
+	'removeglobalblock' => 'Gava un blòch global',
+	'right-globalblock' => 'Fà blòch globaj',
+	'right-globalunblock' => 'Gava blòch globaj',
+	'right-globalblock-whitelist' => 'Disabìlita blòch globaj localment',
+	'right-globalblock-exempt' => 'Passa dzora a blòch globaj',
 );
 
 /** Pashto (پښتو)
