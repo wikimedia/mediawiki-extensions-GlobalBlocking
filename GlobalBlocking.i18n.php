@@ -3885,6 +3885,7 @@ Kanggo mirsani kabèh pamblokiran global sing aktif wektu iki, pirsani ing[[Spec
  * @author Malafaya
  */
 $messages['ka'] = array(
+	'globalblocking-block-reason' => 'ბლოკირების მიზეზი:',
 	'globalblocking-block-expiry-otherfield' => 'სხვა დრო:',
 	'globalblocking-block-legend' => 'მომხმარებლის გლობალური ბლოკირება',
 	'globalblocking-block-errors' => 'ბლოკირების მცდელობა წარუმატებელია, {{PLURAL:$1|მიზეზი|მიზეზები}}:',
