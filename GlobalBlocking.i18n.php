@@ -5481,7 +5481,7 @@ $messages['pdc'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Annre Zeit:',
 	'globalblocking-list-modify' => 'ennere',
 	'globalblocking-unblock-reason' => 'Grund:',
-	'globalblocking-whitelist-reason' => 'Grund fer die Ennering:',
+	'globalblocking-whitelist-reason' => 'Grund:',
 	'globalblocking-logentry-expiry' => 'bis $1',
 );
 
