@@ -271,7 +271,7 @@ As 'n globale blokkade op hierdie wiki opgehef is, kan gebruikers vanaf die IP-a
 [[Special:GlobalBlockList|Keer terug na die lys van globale blokkades]].",
 	'globalblocking-blocked' => "U IP-adres is deur '''\$1''' (''\$2'') op alle wiki's geblokkeer.
 Die rede hiervoor is ''\"\$3\"''.
-Die blokkade ''\$4''.",
+Die blokkade is ''\$4''.",
 	'globalblocking-blocked-nopassreset' => 'U kan nie wagwoorde van gebruikers herstel nie omdat u globaal geblokkeer word.',
 	'globalblocking-logpage' => 'Globale versperring boekstaaf',
 	'globalblocking-logpagetext' => "Die logboek bevat blokkades wat op hierdie wiki geskep of verwyder is.
@@ -900,6 +900,8 @@ Mar plij lakait ur chomlec'h IP reizh.",
 	'globalblocking-return' => 'Distreiñ da roll ar stankadennoù hollek',
 	'globalblocking-notblocked' => "N'eo ket stanket en un doare hollek ar chomlec'h IP ($1) ho peus lakaet.",
 	'globalblocking-unblock' => 'Lemel kuit ur stankadenn hollek',
+	'globalblocking-unblock-ipinvalid' => "N'eo ket reizh ar chomlec'h IP hoc'h eus lakaet ($1).
+Mar plij bezit war evezh, ne c'halloc'h ket lakaat anv un implijer !",
 	'globalblocking-unblock-legend' => 'Lemel kuit ur stankadenn hollek',
 	'globalblocking-unblock-submit' => 'Lemel kuit ar stankadenn hollek',
 	'globalblocking-unblock-reason' => 'Abeg :',
