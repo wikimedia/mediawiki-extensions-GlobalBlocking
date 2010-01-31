@@ -430,7 +430,7 @@ $messages['ar'] = array(
 $messages['arc'] = array(
 	'globalblocking-block-expiry-otherfield' => 'ܥܕܢܐ ܐܚܪܬܐ:',
 	'globalblocking-block-options' => 'ܓܒܝܬ̈ܐ',
-	'globalblocking-whitelist-reason' => 'ܥܠܬܐ ܠܫܚܠܦܬܐ:',
+	'globalblocking-whitelist-reason' => 'ܥܠܬܐ:',
 );
 
 /** Egyptian Spoken Arabic (مصرى)
@@ -2102,7 +2102,7 @@ $messages['eu'] = array(
 	'globalblocking-unblock-reason' => 'Arrazoia:',
 	'globalblocking-unblock-successsub' => 'Blokeo globala ongi kendu da',
 	'globalblocking-unblock-subtitle' => 'Blokeo globala kentzen',
-	'globalblocking-whitelist-reason' => 'Aldaketaren arrazoia:',
+	'globalblocking-whitelist-reason' => 'Arrazoia:',
 );
 
 /** Persian (فارسی)
