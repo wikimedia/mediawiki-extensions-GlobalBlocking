@@ -1304,7 +1304,7 @@ $messages['de'] = array(
 Beachte, dass du keinen Benutzernamen eingeben darfst!',
 	'globalblocking-block-expiryinvalid' => 'Die Sperrdauer ($1) ist ungültig.',
 	'globalblocking-block-submit' => 'IP-Adresse global sperren',
-	'globalblocking-modify-submit' => 'Diese globale Sperre ändern',
+	'globalblocking-modify-submit' => 'Globale Sperre ändern',
 	'globalblocking-block-success' => 'Die IP-Adresse $1 wurde erfolgreich auf allen Projekten gesperrt.',
 	'globalblocking-modify-success' => 'Die globale Sperre an $1 wurde erfolgreich geändert',
 	'globalblocking-block-successsub' => 'Erfolgreich global gesperrt',
