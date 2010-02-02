@@ -79,8 +79,7 @@ Please note that you cannot enter a user name!',
 	'globalblocking-unblock-errors' => "Your removal of the global block was unsuccessful, for the following {{PLURAL:$1|reason|reasons}}:",
 	'globalblocking-unblock-successsub' => 'Global block successfully removed',
 	'globalblocking-unblock-subtitle' => 'Removing global block',
-	'globalblocking-unblock-intro' => 'You can use this form to remove a global block.
-[[Special:GlobalBlockList|Click here]] to return to the global block list.',
+	'globalblocking-unblock-intro' => 'You can use this form to remove a global block.',
 	
 	'globalblocking-whitelist' => 'Local status of global blocks',
 	'globalblocking-whitelist-notapplied' => 'Global blocks are not applied at this wiki,
