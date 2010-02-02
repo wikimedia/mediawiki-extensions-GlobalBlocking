@@ -104,6 +104,7 @@ class SpecialGlobalBlock extends SpecialPage {
 			$this->mAddress = $par;
 			
 		$this->mReason = $wgRequest->getText( 'wpReason' );
+		$this->mReasonList = $wgRequest->getText( 'wpBlockReasonList' );
 		$this->mExpiry = $this->mExpirySelection = $wgRequest->getText( 'wpExpiry' );
 		if ($this->mExpiry == 'other') {
 			$this->mExpiry = $wgRequest->getText( 'wpExpiryOther' );
@@ -123,7 +124,15 @@ class SpecialGlobalBlock extends SpecialPage {
 		if ($this->mModify)
 			$options[] = 'modify';
 		
-		$errors = GlobalBlocking::block( $this->mAddress, $this->mReason, $this->mExpiry, $options );
+		$reasonstr = $this->mReasonList;
+		if( $reasonstr != 'other' && $this->mReason != '' ) {
+			// Entry from drop down menu + additional comment
+			$reasonstr .= wfMsgForContent( 'colon-separator' ) . $this->mReason;
+		} elseif( $reasonstr == 'other' ) {
+			$reasonstr = $this->mReason;
+		}
+
+		$errors = GlobalBlocking::block( $this->mAddress, $reasonstr, $this->mExpiry, $options );
 		
 		if ( count($errors) ) {
 			return $errors;
@@ -181,12 +190,15 @@ class SpecialGlobalBlock extends SpecialPage {
 			);
 			
 		// How long to block them for
-		if ( ( $dropdown = wfMsgNoTrans( 'globalblocking-expiry-options' ) ) != '-') {
-			# Drop-down list
-		} elseif ( ( $dropdown = wfMsgNoTrans( 'ipboptions' ) ) != '-' ) {
-			# Also a drop-down list
-		} else {
-			$dropdown = false;
+		$dropdown = wfMsgForContentNoTrans( 'globalblocking-expiry-options' );
+		if ( $dropdown === '' || $dropdown == '-' ) {
+			// 'globalblocking-expiry-options' is empty, try the message from core
+			$dropdown = wfMsgForContentNoTrans( 'ipboptions' );
+			if ( wfEmptyMsg( 'ipboptions', $dropdown ) || $dropdown === '' || $dropdown == '-' ) {
+				// 'ipboptions' is empty too. Do not show a dropdown
+				// Do not assume that 'ipboptions' exists forever, therefore check with wfEmptyMsg too
+				$dropdown = false;
+			}
 		}
 		
 		if ($dropdown == false ) {
@@ -216,6 +228,15 @@ class SpecialGlobalBlock extends SpecialPage {
 		
 		// Why to block them
 		$fields['globalblocking-block-reason'] =
+			Xml::listDropDown(
+				'wpBlockReasonList',
+				wfMsgForContent( 'globalblocking-block-reason-dropdown' ),
+				wfMsgForContent( 'globalblocking-block-reasonotherlist' ),
+				$this->mReasonList,
+				'mw-globalblock-reasonlist'
+			);
+
+		$fields['globalblocking-block-otherreason'] =
 			Xml::input(
 				'wpReason',
 					45,

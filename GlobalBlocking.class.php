@@ -349,6 +349,10 @@ class GlobalBlocking {
 			$title = SpecialPage::getTitleFor( 'GlobalBlockStatus' );
 			$links[] = $sk->linkKnown( $title, wfMsg( 'globalblocking-goto-status' ) );
 		}
+		if( $pagetype == 'GlobalBlock' && $wgUser->isAllowed( 'editinterface' ) ) {
+			$title = Title::makeTitle( NS_MEDIAWIKI, 'Globalblocking-block-reason-dropdown' );
+			$links[] = $sk->linkKnown( $title, wfMsg( 'globalblocking-block-edit-dropdown' ), array(), array( 'action' => 'edit' ) );
+		}
 		$linkItems = count( $links ) ? wfMsg( 'parentheses', $wgLang->pipeList( $links ) ) : '';
 		return $linkItems;
 	}

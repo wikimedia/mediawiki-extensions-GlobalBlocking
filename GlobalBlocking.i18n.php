@@ -16,8 +16,15 @@ $messages['en'] = array(
 	'globalblocking-expiry-options' => '-', # do not translate or duplicate this message to other languages
 	'globalblocking-modify-intro' => 'You can use this form to change the settings of a global block.',
 	'globalblocking-block-intro' => 'You can use this page to block an IP address on all wikis.',
-	'globalblocking-block-reason' => 'Reason for this block:',
-	'globalblocking-block-expiry' => 'Block expiry:',
+	'globalblocking-block-reason' => 'Reason:',
+	'globalblocking-block-otherreason' => 'Other/additional reason:',
+	'globalblocking-block-reasonotherlist' => 'Other reason',
+	'globalblocking-block-reason-dropdown' => '* Common block reasons
+** Crosswiki spamming
+** Crosswiki abuse
+** Vandalism',
+	'globalblocking-block-edit-dropdown' => 'Edit block reasons',
+	'globalblocking-block-expiry' => 'Expiry:',
 	'globalblocking-block-expiry-other' => 'Other expiry time',
 	'globalblocking-block-expiry-otherfield' => 'Other time:',
 	'globalblocking-block-legend' => 'Block an IP address globally',
