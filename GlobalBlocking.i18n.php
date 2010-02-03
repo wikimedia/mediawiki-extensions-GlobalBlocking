@@ -204,8 +204,15 @@ $messages['af'] = array(
 	'globalblocking-block' => "Versper 'n IP adres globaal",
 	'globalblocking-modify-intro' => "U kan hierdie vorm gebruik om die instellings van 'n globale blokkade te verander.",
 	'globalblocking-block-intro' => "U kan hierdie bladsy gebruik om 'n IP adres op alle wikis te versper.",
-	'globalblocking-block-reason' => 'Rede vir hierdie versperring:',
-	'globalblocking-block-expiry' => 'Verstryk van versperring:',
+	'globalblocking-block-reason' => 'Rede:',
+	'globalblocking-block-otherreason' => 'Ander/ekstra rede:',
+	'globalblocking-block-reasonotherlist' => 'Ander rede',
+	'globalblocking-block-reason-dropdown' => "* Algemene redes vir blokkades
+** Spam oor veelvuldige wiki's
+** Misbruik oor veelvuldige wiki's
+** Vandalisme",
+	'globalblocking-block-edit-dropdown' => 'Werk die lys van redes by',
+	'globalblocking-block-expiry' => 'Verval:',
 	'globalblocking-block-expiry-other' => 'Ander verstryktyd',
 	'globalblocking-block-expiry-otherfield' => 'Ander tyd:',
 	'globalblocking-block-legend' => "Versper 'n IP-adres globaal",
@@ -636,8 +643,15 @@ $messages['be-tarask'] = array(
 	'globalblocking-block' => 'Глябальнае блякаваньне IP-адрасу',
 	'globalblocking-modify-intro' => 'Вы можаце выкарыстоўваць гэтую форму, каб зьмяняць устаноўкі глябальнага блякаваньня.',
 	'globalblocking-block-intro' => 'Вы можаце выкарыстоўваць гэту старонку для блякаваньня ІР-адрасу на ўсіх вікі.',
-	'globalblocking-block-reason' => 'Прычына блякаваньня:',
-	'globalblocking-block-expiry' => 'Тэрмін блякаваньня:',
+	'globalblocking-block-reason' => 'Прычына:',
+	'globalblocking-block-otherreason' => 'Іншая/дадатковая прычына:',
+	'globalblocking-block-reasonotherlist' => 'Іншая прычына',
+	'globalblocking-block-reason-dropdown' => '* Агульныя прычыны блякаваньняў
+** Cпам у розных вікі
+** Злоўжываньні у розных вікі
+** Вандалізм',
+	'globalblocking-block-edit-dropdown' => 'Рэдагаваць прычыны блякяваньняў',
+	'globalblocking-block-expiry' => 'Тэрмін:',
 	'globalblocking-block-expiry-other' => 'Іншы тэрмін',
 	'globalblocking-block-expiry-otherfield' => 'Іншы тэрмін:',
 	'globalblocking-block-legend' => 'Глябальнае блякаваньне IP-адрасу',
@@ -861,11 +875,15 @@ $messages['bn'] = array(
  * @author Y-M D
  */
 $messages['br'] = array(
+	'globalblocking-desc' => "[[Special:GlobalBlock|Posubl]] eo stankañ ar chomlec'hioù IP [[Special:GlobalBlockList|dre wikioù disheñvel]]",
 	'globalblocking-block' => "Stankañ en un doare hollek ur chomlec'h IP",
 	'globalblocking-modify-intro' => "Gellout a reoc'h implijout ar furmskrid evit kefluniañ ur stankadenn hollek.",
 	'globalblocking-block-intro' => "Tu 'zo deoc'h implij ar bajenn-mañ evit stankañ ur chomlec'h IP war an holl wikioù.",
-	'globalblocking-block-reason' => 'Abeg ar stankadenn-mañ :',
-	'globalblocking-block-expiry' => 'Termen ar stankadenn :',
+	'globalblocking-block-reason' => 'Abeg :',
+	'globalblocking-block-otherreason' => 'Abegoù all/ouzhpenn :',
+	'globalblocking-block-reasonotherlist' => 'Abeg all',
+	'globalblocking-block-edit-dropdown' => 'Kemmañ an abegoù stankañ dre ziouer',
+	'globalblocking-block-expiry' => 'Termen :',
 	'globalblocking-block-expiry-other' => 'Padelezh termen all',
 	'globalblocking-block-expiry-otherfield' => 'Padelezh all :',
 	'globalblocking-block-legend' => "Stankañ en un doare hollek ur chomlec'h IP",
@@ -886,6 +904,7 @@ Mar plij bezit war evezh, ne c'helloc'h ket lakaat anv un implijer !",
 	'globalblocking-search-submit' => 'Klask stankadennoù',
 	'globalblocking-list-ipinvalid' => "Direizh eo ar chomlec'h IP a glaskoc'h evit ($1).
 Mar plij lakait ur chomlec'h IP reizh.",
+	'globalblocking-search-errors' => 'Mat eo bet ho klask evit an {{PLURAL:$1|abeg|abegoù}} da heul :',
 	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') en deus stanket en un doare hollek [[Special:Contributions/\$4|\$4]] ''(\$5)''",
 	'globalblocking-list-expiry' => 'Termenadenn $1',
 	'globalblocking-list-anononly' => 'dizanv hepken',
@@ -908,6 +927,7 @@ Mar plij bezit war evezh, ne c'halloc'h ket lakaat anv un implijer !",
 	'globalblocking-unblock-unblocked' => "Ar stankadenn hollek niverenn $2 hag a glot gant ar chomlec'h IP '''$1''' a zo bet tennet.",
 	'globalblocking-unblock-successsub' => 'Tennet eo bet ar stankadenn hollek',
 	'globalblocking-unblock-subtitle' => 'Dilamidigezh ar stankadenn hollek',
+	'globalblocking-unblock-intro' => "Tu 'zo deoc'h implijout ar furmskrid-mañ evit dilemel ur stankadenn hollek.",
 	'globalblocking-whitelist' => "Statud lec'hel ar stankadennoù hollek",
 	'globalblocking-whitelist-legend' => "Kemmañ ar statud lec'hel",
 	'globalblocking-whitelist-reason' => 'Abeg :',
@@ -924,10 +944,13 @@ Stankadenn : ''\$4''.",
 	'globalblocking-block2-logentry' => 'en deus stanket [[$1]] dre-vras ($2)',
 	'globalblocking-unblock-logentry' => 'en deus tennet stankadenn hollek [[$1]]',
 	'globalblocking-whitelist-logentry' => "en deus dilemet en un doare lec'hel stankadenn hollek [[$1]]",
+	'globalblocking-dewhitelist-logentry' => "en deus adgweredekaet en un doare lec'hel stankadenn hollek [[$1]]",
 	'globalblocking-modify-logentry' => 'en deus kemmet stankadenn hollek [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => "a ya d'e dermen d'an $1",
 	'globalblocking-logentry-noexpiry' => "n'eus bet resisaet deiziad termen ebet",
 	'globalblocking-loglink' => "Ar c'homlec'h IP $1 a zo stanket en un doare hollek ([[{{#Special:GlobalBlockList}}/$1|muioc'h a ditouroù]]).",
+	'globalblocking-showlog' => "Stanket eo bet an implijer-mañ c'hoazh.
+A-is emañ marilh ar stankadennoù :",
 	'globalblocklist' => "Roll ar chomlec'hioù IP stanket en un doare hollek",
 	'globalblock' => "Stankañ en un doare hollek ur chomlec'h IP",
 	'globalblockstatus' => "Statud lec'hel ar stankadennoù hollek",
@@ -946,8 +969,15 @@ $messages['bs'] = array(
 	'globalblocking-block' => 'Globalno blokiranje IP adrese',
 	'globalblocking-modify-intro' => 'Možete koristiti ovaj obrazac za izmjenu postavki globalne blokade.',
 	'globalblocking-block-intro' => 'Možete koristiti ovu stranicu za blokiranje IP adrese na svim wikijima.',
-	'globalblocking-block-reason' => 'Razlog za ovu blokadu',
-	'globalblocking-block-expiry' => 'Isticanje blokade:',
+	'globalblocking-block-reason' => 'Razlog:',
+	'globalblocking-block-otherreason' => 'Ostali/dodatni razlog:',
+	'globalblocking-block-reasonotherlist' => 'Ostali razlozi',
+	'globalblocking-block-reason-dropdown' => '* Uobičajeni razlozi blokiranja
+** Spamovi na više wikija
+** Zloupotreba na više wikiija
+** Vandalizam',
+	'globalblocking-block-edit-dropdown' => 'Uredi razloge blokiranja',
+	'globalblocking-block-expiry' => 'Ističe:',
 	'globalblocking-block-expiry-other' => 'Ostali vremenski period',
 	'globalblocking-block-expiry-otherfield' => 'Ostali period:',
 	'globalblocking-block-legend' => 'Blokiranje IP adrese globalno',
@@ -2316,8 +2346,15 @@ $messages['fr'] = array(
 	'globalblocking-block' => 'Bloquer globalement une adresse IP',
 	'globalblocking-modify-intro' => 'Vous pouvez utiliser ce formulaire pour configurer un blocage global.',
 	'globalblocking-block-intro' => 'Vous pouvez utiliser cette page pour bloquer une adresse IP sur l’ensemble des wikis.',
-	'globalblocking-block-reason' => 'Motif de ce blocage :',
-	'globalblocking-block-expiry' => 'Expiration du blocage :',
+	'globalblocking-block-reason' => 'Motif :',
+	'globalblocking-block-otherreason' => 'Motif autre / supplémentaire :',
+	'globalblocking-block-reasonotherlist' => 'Autre motif',
+	'globalblocking-block-reason-dropdown' => '* Raisons communes de blocage
+** Spam sur plusieurs wikis
+** Abus sur plusieurs wikis
+** Vandalisme',
+	'globalblocking-block-edit-dropdown' => 'Modifier les motifs de blocage par défaut',
+	'globalblocking-block-expiry' => 'Expiration :',
 	'globalblocking-block-expiry-other' => 'Autre durée d’expiration',
 	'globalblocking-block-expiry-otherfield' => 'Autre durée :',
 	'globalblocking-block-legend' => 'Bloquer globalement une adresse IP',
@@ -4267,6 +4304,11 @@ $messages['lb'] = array(
 	'globalblocking-block-reason' => 'Grond:',
 	'globalblocking-block-otherreason' => 'Aneren/zousätzleche Grond:',
 	'globalblocking-block-reasonotherlist' => 'Anere Grond',
+	'globalblocking-block-reason-dropdown' => '* Heefegst Spärgrënn
+** Spam op méi Wikien
+** Mëssbrauch op méi Wikien
+** Vandalismus',
+	'globalblocking-block-edit-dropdown' => 'Spärgrënn änneren',
 	'globalblocking-block-expiry' => 'Dauer:',
 	'globalblocking-block-expiry-other' => 'Aner Dauer vun der Spär',
 	'globalblocking-block-expiry-otherfield' => 'Aner Dauer:',
@@ -4508,8 +4550,15 @@ $messages['mk'] = array(
 	'globalblocking-block' => 'Глобално блокирање на IP-адреса',
 	'globalblocking-modify-intro' => 'Користете го овој образец за менување на нагодувањата за еден глобален блок.',
 	'globalblocking-block-intro' => 'Оваа страница служи за блокирање на IP-адреса на сите викија.',
-	'globalblocking-block-reason' => 'Образложение за ова блокирање:',
-	'globalblocking-block-expiry' => 'Рок на блокирање:',
+	'globalblocking-block-reason' => 'Причина:',
+	'globalblocking-block-otherreason' => 'Друга/дополнителна причина:',
+	'globalblocking-block-reasonotherlist' => 'Друга причина',
+	'globalblocking-block-reason-dropdown' => '* Чести причини за блокирање
+** Спамирање низ повеќе викија
+** Злоупотреби низ повеќе викија
+** Вандализам',
+	'globalblocking-block-edit-dropdown' => 'Уреди причини за блокирање',
+	'globalblocking-block-expiry' => 'Истекува:',
 	'globalblocking-block-expiry-other' => 'Друг рок на блокирање',
 	'globalblocking-block-expiry-otherfield' => 'Друго време:',
 	'globalblocking-block-legend' => 'Глобално блокирање на IP-адреса',
@@ -5617,11 +5666,11 @@ $messages['pms'] = array(
 	'globalblocking-block-reason' => 'Rason:',
 	'globalblocking-block-otherreason' => 'Rason àutra/adissional:',
 	'globalblocking-block-reasonotherlist' => 'Àutra rason',
-	'globalblocking-block-reason-dropdown' => '* Rason comun-e ëd blòch
-** Spam tra wiki
+	'globalblocking-block-reason-dropdown' => '* Rason sòlite ëd blocagi
+** Rumenta tra wiki
 ** Abus tra wiki
 ** Vandalism',
-	'globalblocking-block-edit-dropdown' => 'Motiv dël blòch',
+	'globalblocking-block-edit-dropdown' => 'Motiv dël blocagi',
 	'globalblocking-block-expiry' => 'Fin:',
 	'globalblocking-block-expiry-other' => 'Àutr temp ëd fin',
 	'globalblocking-block-expiry-otherfield' => 'Àutr temp:',
@@ -6768,8 +6817,15 @@ $messages['sv'] = array(
 	'globalblocking-block' => 'Blockerar en IP-adress globalt',
 	'globalblocking-modify-intro' => 'Du kan använda detta formulär för att ändra inställningarna för en global blockering.',
 	'globalblocking-block-intro' => 'Du kan använda denna sida för att blockera en IP-adress på alla wikier.',
-	'globalblocking-block-reason' => 'Blockeringsorsak:',
-	'globalblocking-block-expiry' => 'Varighet:',
+	'globalblocking-block-reason' => 'Anledning:',
+	'globalblocking-block-otherreason' => 'Annan/ytterligare anledning:',
+	'globalblocking-block-reasonotherlist' => 'Annan anledning',
+	'globalblocking-block-reason-dropdown' => '* Vanliga blockeringsanledningar
+** Crosswiki-spamning
+** Crosswiki-missbruk
+** Vandalisering',
+	'globalblocking-block-edit-dropdown' => 'Redigera blockeringsanledningar',
+	'globalblocking-block-expiry' => 'Går ut:',
 	'globalblocking-block-expiry-other' => 'Annan varighet',
 	'globalblocking-block-expiry-otherfield' => 'Annan tid:',
 	'globalblocking-block-legend' => 'Blockera en användare globalt',
@@ -6871,7 +6927,9 @@ $messages['te'] = array(
 	'globalblocking-block' => 'ఒక ఐపీ చిరునామాని సార్వత్రికంగా నిరోధించు',
 	'globalblocking-modify-intro' => 'సార్వత్రిక నిరోధం యొక్క అమరికలను మార్చడానికి ఈ క్రింది ఫారాన్ని ఉపయోగించగలరు.',
 	'globalblocking-block-intro' => 'ఈ పేజీని ఉపయోగించి మీరు అన్ని వికీలలోనూ ఒక IP చిరునామాని నిరోధించగలరు.',
-	'globalblocking-block-reason' => 'ఈ నిరోధానికి కారణం:',
+	'globalblocking-block-reason' => 'కారణం:',
+	'globalblocking-block-otherreason' => 'ఇతర/అదనపు కారణం:',
+	'globalblocking-block-reasonotherlist' => 'ఇతర కారణం',
 	'globalblocking-block-expiry' => 'నిరోధపు కాలపరిమితి:',
 	'globalblocking-block-expiry-other' => 'ఇతర కాలపరిమితి సమయం',
 	'globalblocking-block-expiry-otherfield' => 'ఇతర సమయం:',
