@@ -4071,7 +4071,14 @@ $messages['ko'] = array(
 	'globalblocking-block' => 'IP 주소를 모든 위키에서 차단',
 	'globalblocking-modify-intro' => '당신은 전체 차단 설정을 변경할 때 이 양식을 사용할 수 있습니다.',
 	'globalblocking-block-intro' => '당신은 모든 위키에서 특정 IP를 차단할 때 이 페이지를 사용할 수 있습니다.',
-	'globalblocking-block-reason' => '차단하는 이유:',
+	'globalblocking-block-reason' => '이유:',
+	'globalblocking-block-otherreason' => '다른 이유/추가적인 이유:',
+	'globalblocking-block-reasonotherlist' => '다른 이유',
+	'globalblocking-block-reason-dropdown' => '*일반적인 차단 이유
+** 여러 위키에서의 광고/스팸 행위
+** 여러 위키에서의 부정 행위
+** 문서 훼손',
+	'globalblocking-block-edit-dropdown' => '차단 이유 목록 편집하기',
 	'globalblocking-block-expiry' => '차단 기간:',
 	'globalblocking-block-expiry-other' => '다른 기간',
 	'globalblocking-block-expiry-otherfield' => '다른 기간:',
@@ -5797,7 +5804,7 @@ $messages['pt'] = array(
 	'globalblocking-modify-intro' => 'Pode usar este formulário para alterar as definições de um bloqueio global.',
 	'globalblocking-block-intro' => 'Pode usar esta página para bloquear um endereço IP em todas as wikis.',
 	'globalblocking-block-reason' => 'Motivo para este bloqueio:',
-	'globalblocking-block-expiry' => 'Validade do bloqueio:',
+	'globalblocking-block-expiry' => 'Expiração:',
 	'globalblocking-block-expiry-other' => 'Outro tempo de validade',
 	'globalblocking-block-expiry-otherfield' => 'Outra duração:',
 	'globalblocking-block-legend' => 'Bloquear um endereço IP globalmente',
@@ -6100,8 +6107,15 @@ $messages['roa-tara'] = array(
 	'globalblocking-block' => "Bluecche globalmende 'n'indirizze IP",
 	'globalblocking-modify-intro' => "Tu puè ausà stu module pe cangià le 'mbostaziune d'u blocche globale.",
 	'globalblocking-block-intro' => "Tu puè ausà sta pàgene pe bloccà 'n'indirizze IP sus a tutte le uicchi.",
-	'globalblocking-block-reason' => 'Mutive pe stu blocche:',
-	'globalblocking-block-expiry' => "Scadenze d'u blocche:",
+	'globalblocking-block-reason' => 'Mutive:',
+	'globalblocking-block-otherreason' => 'Otre/addizionale mutive:',
+	'globalblocking-block-reasonotherlist' => 'Otre mutive',
+	'globalblocking-block-reason-dropdown' => "* Mutive comune de blocche
+** Spamming 'mbrà le Uicchi
+** Abuse de 'ngorce 'mbrà le Uicchi
+** Vandalisme",
+	'globalblocking-block-edit-dropdown' => "Cange le mutive d'u blocche",
+	'globalblocking-block-expiry' => 'Scadenze:',
 	'globalblocking-block-expiry-other' => 'Otre orarie de scadenze',
 	'globalblocking-block-expiry-otherfield' => 'Otre orarie:',
 	'globalblocking-block-legend' => "Bluècche 'n'indirizze IP globalmende",
@@ -7395,6 +7409,7 @@ Para matanaw ang lahat ng mga masigla o gumaganang pandaigdigang mga paghadlang,
 );
 
 /** Turkish (Türkçe)
+ * @author Homonihilis
  * @author Joseph
  * @author Runningfridgesrule
  * @author Suelnur
@@ -7405,6 +7420,9 @@ $messages['tr'] = array(
 	'globalblocking-modify-intro' => 'Bir küresel engellemenin ayarlarını değiştirmek için bu formu kullanabilirsiniz.',
 	'globalblocking-block-intro' => 'Bu sayfayı, bir IP adresini tüm vikilerde engellemek için kullanabilirsiniz.',
 	'globalblocking-block-reason' => 'Engellemenin sebebi:',
+	'globalblocking-block-otherreason' => 'Diğer/Ek sebepler:',
+	'globalblocking-block-reasonotherlist' => 'Diğer sebepler',
+	'globalblocking-block-edit-dropdown' => 'Engelleme sebeplerini değiştirin',
 	'globalblocking-block-expiry' => 'Engelleme bitişi:',
 	'globalblocking-block-expiry-other' => 'Diğer bitiş zamanı',
 	'globalblocking-block-expiry-otherfield' => 'Diğer zaman:',
@@ -7630,7 +7648,9 @@ $messages['vec'] = array(
 	'globalblocking-modify-intro' => 'Con sto modulo te pol canbiar le inpostassion de un bloco globale.',
 	'globalblocking-block-intro' => 'Ti pol doparar sta pagina par blocar un indirisso IP su tute le wiki.',
 	'globalblocking-block-reason' => 'Motivassion:',
+	'globalblocking-block-otherreason' => 'Altra motivazion o motivazion agiuntiva:',
 	'globalblocking-block-reasonotherlist' => 'Altra motivassion',
+	'globalblocking-block-edit-dropdown' => 'Canbia i motivi del bloco',
 	'globalblocking-block-expiry' => 'Scadensa:',
 	'globalblocking-block-expiry-other' => 'Altra scadensa',
 	'globalblocking-block-expiry-otherfield' => 'Altro tenpo:',
