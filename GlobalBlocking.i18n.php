@@ -5329,6 +5329,10 @@ $messages['no'] = array(
 	'globalblocking-block-reason' => 'Årsak:',
 	'globalblocking-block-otherreason' => 'Annen/ytterligere årsak:',
 	'globalblocking-block-reasonotherlist' => 'Annen årsak',
+	'globalblocking-block-reason-dropdown' => '* Vanlige blokkeringsårsaker
+** Crosswiki-spamming
+** Crosswiki-misbruk
+** Vandalisme',
 	'globalblocking-block-edit-dropdown' => 'Rediger blokkeringsgrunner',
 	'globalblocking-block-expiry' => 'Utgår:',
 	'globalblocking-block-expiry-other' => 'Annen varighet',
@@ -7430,11 +7434,11 @@ $messages['tr'] = array(
 	'globalblocking-block' => 'Bir IP adresini küresel olarak engelle',
 	'globalblocking-modify-intro' => 'Bir küresel engellemenin ayarlarını değiştirmek için bu formu kullanabilirsiniz.',
 	'globalblocking-block-intro' => 'Bu sayfayı, bir IP adresini tüm vikilerde engellemek için kullanabilirsiniz.',
-	'globalblocking-block-reason' => 'Engellemenin sebebi:',
+	'globalblocking-block-reason' => 'Sebep:',
 	'globalblocking-block-otherreason' => 'Diğer/Ek sebepler:',
 	'globalblocking-block-reasonotherlist' => 'Diğer sebepler',
 	'globalblocking-block-edit-dropdown' => 'Engelleme sebeplerini değiştirin',
-	'globalblocking-block-expiry' => 'Engelleme bitişi:',
+	'globalblocking-block-expiry' => 'Bitiş:',
 	'globalblocking-block-expiry-other' => 'Diğer bitiş zamanı',
 	'globalblocking-block-expiry-otherfield' => 'Diğer zaman:',
 	'globalblocking-block-legend' => 'Bir IP adresini küresel olarak engelle',
