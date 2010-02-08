@@ -3746,7 +3746,13 @@ $messages['ja'] = array(
 	'globalblocking-modify-intro' => 'このフォームを使って、グローバルブロックの設定を変更できます。',
 	'globalblocking-block-intro' => 'このページで全ウィキにおいてIPアドレスをブロックできます。',
 	'globalblocking-block-reason' => '理由:',
-	'globalblocking-block-expiry' => 'ブロック期限:',
+	'globalblocking-block-otherreason' => '他の、または追加の理由:',
+	'globalblocking-block-reasonotherlist' => 'その他の理由',
+	'globalblocking-block-reason-dropdown' => '*共通ブロックの理由
+**ウィキ間のスパム
+**ウィキ間での不正利用
+**荒らし',
+	'globalblocking-block-expiry' => '期限:',
 	'globalblocking-block-expiry-other' => 'その他の有効期限',
 	'globalblocking-block-expiry-otherfield' => '期間 (その他のとき)',
 	'globalblocking-block-legend' => 'IP アドレスをグローバルブロックする',
