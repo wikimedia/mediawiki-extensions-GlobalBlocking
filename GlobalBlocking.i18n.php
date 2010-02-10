@@ -1787,8 +1787,8 @@ $messages['eo'] = array(
 	'globalblocking-block' => 'Ĝenerale forbari IP-adreson',
 	'globalblocking-modify-intro' => 'Vi povas uzi ĉi tiun formularon por ŝanĝi la agordojn de ĝeneralan forbaron.',
 	'globalblocking-block-intro' => 'Vi povas uzi ĉi tiun paĝon por forbari IP-adreson en ĉiuj vikioj.',
-	'globalblocking-block-reason' => 'Kialo por ĉi tiu forbaro:',
-	'globalblocking-block-expiry' => 'Limdato de forbaro:',
+	'globalblocking-block-reason' => 'Kialo:',
+	'globalblocking-block-expiry' => 'Findaŭro:',
 	'globalblocking-block-expiry-other' => 'Alia limdato',
 	'globalblocking-block-expiry-otherfield' => 'Alia tempo:',
 	'globalblocking-block-legend' => 'Forbari IP-adreson ĝenerale',
@@ -1905,7 +1905,13 @@ $messages['es'] = array(
 	'globalblocking-modify-intro' => 'Puedes usar este formulario para cambiar las configuraciones de un bloqueo global.',
 	'globalblocking-block-intro' => 'Puede usar esta página para bloquear una dirección IP en todos los wikis.',
 	'globalblocking-block-reason' => 'Motivo:',
+	'globalblocking-block-otherreason' => 'Otros/razón adicional:',
 	'globalblocking-block-reasonotherlist' => 'Otro motivo',
+	'globalblocking-block-reason-dropdown' => '* Motivos comunes de bloqueo
+** Spam sobre varios wikis
+** Abusos sobre varios wikis
+** Vandalismo',
+	'globalblocking-block-edit-dropdown' => 'Editar motivos de bloqueo',
 	'globalblocking-block-expiry' => 'Caducidad:',
 	'globalblocking-block-expiry-other' => 'Otro tiempo de caducidad',
 	'globalblocking-block-expiry-otherfield' => 'Otro tiempo:',
@@ -5449,8 +5455,15 @@ $messages['oc'] = array(
 	'globalblocking-block' => 'Blocar globalament una adreça IP',
 	'globalblocking-modify-intro' => 'Podètz utilizar aqueste formulari per configurar un blocatge global.',
 	'globalblocking-block-intro' => 'Podètz utilizar aquesta pagina per blocar una adreça IP sus l’ensemble dels wikis.',
-	'globalblocking-block-reason' => "Motius d'aqueste blocatge :",
-	'globalblocking-block-expiry' => 'Plaja d’expiracion :',
+	'globalblocking-block-reason' => 'Motiu :',
+	'globalblocking-block-otherreason' => 'Autra rason / rason suplementària :',
+	'globalblocking-block-reasonotherlist' => 'Autra rason',
+	'globalblocking-block-reason-dropdown' => '* Rasons comunas de blocatge
+** Spam sus mantun wiki
+** Abús sus mantun wiki
+** Vandalisme',
+	'globalblocking-block-edit-dropdown' => 'Modificar los motius de blocatge per defaut',
+	'globalblocking-block-expiry' => 'Expiracion :',
 	'globalblocking-block-expiry-other' => 'Autra durada d’expiracion',
 	'globalblocking-block-expiry-otherfield' => 'Autra durada :',
 	'globalblocking-block-legend' => 'Blocar globalament una adreça IP',
@@ -7443,6 +7456,10 @@ $messages['tr'] = array(
 	'globalblocking-block-reason' => 'Sebep:',
 	'globalblocking-block-otherreason' => 'Diğer/Ek sebepler:',
 	'globalblocking-block-reasonotherlist' => 'Diğer sebepler',
+	'globalblocking-block-reason-dropdown' => '* Genel engelleme sebepleri
+** Çaprazviki spam
+** Çaprazviki suistimali
+** Vandallık',
 	'globalblocking-block-edit-dropdown' => 'Engelleme sebeplerini değiştirin',
 	'globalblocking-block-expiry' => 'Bitiş:',
 	'globalblocking-block-expiry-other' => 'Diğer bitiş zamanı',
