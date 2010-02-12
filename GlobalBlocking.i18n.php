@@ -2571,6 +2571,15 @@ Lo jornal des blocâjos est disponiblo ce-desot :',
 	'right-globalblock-exempt' => 'Passar per-dessus los blocâjos globâls',
 );
 
+/** Friulian (Furlan)
+ * @author Klenje
+ */
+$messages['fur'] = array(
+	'globalblocking-block-reason' => 'Reson:',
+	'globalblocking-search-ip' => 'Direzion IP:',
+	'globalblocking-list-unblock' => 'gjave',
+);
+
 /** Western Frisian (Frysk)
  * @author Snakesteuben
  */
