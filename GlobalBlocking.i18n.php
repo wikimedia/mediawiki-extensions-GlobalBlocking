@@ -339,7 +339,7 @@ $messages['ar'] = array(
 	'globalblocking-block' => 'منع عام لعنوان أيبي',
 	'globalblocking-modify-intro' => 'يمكنك استخدام هذه الاستمارة لتغيير إعدادات المنع العام.',
 	'globalblocking-block-intro' => 'أنت يمكنك استخدام هذه الصفحة لمنع عنوان أيبي في كل الويكيات.',
-	'globalblocking-block-reason' => 'السبب لهذا المنع:',
+	'globalblocking-block-reason' => 'السبب:',
 	'globalblocking-block-expiry' => 'انتهاء المنع:',
 	'globalblocking-block-expiry-other' => 'وقت انتهاء آخر',
 	'globalblocking-block-expiry-otherfield' => 'وقت آخر:',
@@ -1315,6 +1315,7 @@ $messages['da'] = array(
 );
 
 /** German (Deutsch)
+ * @author DaSch
  * @author Lukas9950
  * @author MF-Warburg
  * @author Metalhead64
@@ -1327,7 +1328,8 @@ $messages['de'] = array(
 	'globalblocking-block' => 'IP-Adresse global sperren',
 	'globalblocking-modify-intro' => 'Du kannst dieses Formular nutzen, um die Einstellungen einer globalen Sperre zu ändern.',
 	'globalblocking-block-intro' => 'Auf dieser Seite kannst du IP-Adressen für alle Wikis sperren.',
-	'globalblocking-block-reason' => 'Grund für die Sperre:',
+	'globalblocking-block-reason' => 'Grund:',
+	'globalblocking-block-otherreason' => 'Anderer/ergänzender Grund:',
 	'globalblocking-block-reasonotherlist' => 'Andere Begründung',
 	'globalblocking-block-edit-dropdown' => 'Sperrgründe bearbeiten',
 	'globalblocking-block-expiry' => 'Sperrdauer:',
