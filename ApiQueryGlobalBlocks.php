@@ -205,6 +205,12 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 	public function getDescription() {
 		return 'List all globally blocked IP addresses.';
 	}
+	
+	public function getParamDescription() {
+		return array_merge( parent::getPossibleErrors(), array(
+			array ( 'code' => 'cidrtoobroad', 'info' => 'CIDR ranges broader than /16 are not accepted' ),
+		) );
+	}
 
 	protected function getExamples() {
 		return array (	'api.php?action=query&list=globalblocks',
