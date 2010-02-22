@@ -18,7 +18,6 @@ $wgExtensionCredits['other'][] = array(
 	'path'           => __FILE__,
 	'name'           => 'GlobalBlocking',
 	'author'         => 'Andrew Garrett',
-	'description'    => 'Allows IP addresses to be blocked across multiple wikis',
 	'descriptionmsg' => 'globalblocking-desc',
 	'url'            => 'http://www.mediawiki.org/wiki/Extension:GlobalBlocking',
 );
