@@ -2264,7 +2264,10 @@ $messages['fi'] = array(
 	'globalblocking-block' => 'Estä IP-osoite globaalisti',
 	'globalblocking-modify-intro' => 'Voit käyttää tätä lomaketta muuttaaksesi globaaliestojen asetuksia.',
 	'globalblocking-block-intro' => 'Voit käyttää tätä sivua IP-osoitteen estämiseen kaikista wikeistä.',
-	'globalblocking-block-reason' => 'Perustelu',
+	'globalblocking-block-reason' => 'Syy',
+	'globalblocking-block-otherreason' => 'Muu syy tai tarkennus',
+	'globalblocking-block-reasonotherlist' => 'Muu syy',
+	'globalblocking-block-edit-dropdown' => 'Muokkaa estosyitä',
 	'globalblocking-block-expiry' => 'Kesto',
 	'globalblocking-block-expiry-other' => 'Muu kestoaika',
 	'globalblocking-block-expiry-otherfield' => 'Muu aika',
@@ -5853,6 +5856,7 @@ $messages['ps'] = array(
 /** Portuguese (Português)
  * @author 555
  * @author GKnedo
+ * @author Giro720
  * @author Hamilton Abreu
  * @author Lijealso
  * @author Malafaya
@@ -5863,7 +5867,7 @@ $messages['pt'] = array(
 	'globalblocking-block' => 'Bloquear globalmente um endereço IP',
 	'globalblocking-modify-intro' => 'Pode usar este formulário para alterar as definições de um bloqueio global.',
 	'globalblocking-block-intro' => 'Pode usar esta página para bloquear um endereço IP em todas as wikis.',
-	'globalblocking-block-reason' => 'Motivo para este bloqueio:',
+	'globalblocking-block-reason' => 'Motivo:',
 	'globalblocking-block-expiry' => 'Expiração:',
 	'globalblocking-block-expiry-other' => 'Outro tempo de validade',
 	'globalblocking-block-expiry-otherfield' => 'Outra duração:',
