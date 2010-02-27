@@ -5849,7 +5849,7 @@ $messages['ps'] = array(
 	'globalblocking-search-ip' => 'IP پته:',
 	'globalblocking-list-whitelist' => 'سيمه ايز دريځ',
 	'globalblocking-unblock-reason' => 'سبب:',
-	'globalblocking-whitelist-reason' => 'د بدلون سبب:',
+	'globalblocking-whitelist-reason' => 'سبب:',
 	'globalblocking-whitelist-status' => 'سيمه ايز دريځ:',
 );
 
