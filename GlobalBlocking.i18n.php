@@ -638,6 +638,7 @@ $messages['bat-smg'] = array(
  * @author EugeneZelenko
  * @author Jim-by
  * @author Red Winged Duck
+ * @author Zedlik
  */
 $messages['be-tarask'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Дазваляе]] блякаваньне IP-адрасоў у [[Special:GlobalBlockList|некалькіх вікі]]',
@@ -649,7 +650,7 @@ $messages['be-tarask'] = array(
 	'globalblocking-block-reasonotherlist' => 'Іншая прычына',
 	'globalblocking-block-reason-dropdown' => '* Агульныя прычыны блякаваньняў
 ** Cпам у розных вікі
-** Злоўжываньні у розных вікі
+** Злоўжываньні ў розных вікі
 ** Вандалізм',
 	'globalblocking-block-edit-dropdown' => 'Рэдагаваць прычыны блякяваньняў',
 	'globalblocking-block-expiry' => 'Тэрмін:',
@@ -2256,6 +2257,7 @@ $messages['fa'] = array(
  * @author Crt
  * @author Jaakonam
  * @author Nike
+ * @author Silvonen
  * @author Str4nd
  * @author Tarmo
  */
@@ -2350,7 +2352,7 @@ Kaikki voimassa olevat globaaliestot ovat [[Special:GlobalBlockList|globaaliesto
 	'globalblocking-logentry-expiry' => 'vanhenee $1',
 	'globalblocking-logentry-noexpiry' => 'vanhentumisaikaa ei asetettu',
 	'globalblocking-loglink' => 'IP-osoite $1 on estetty globaalisti ([[{{#Special:GlobalBlockList}}/$1|tiedot]]).',
-	'globalblocking-showlog' => 'Tämä IP-osoite on estetty aiemmin.
+	'globalblocking-showlog' => 'Tämä IP-osoite on ollut estettynä.
 Alla on ote estolokista.',
 	'globalblocklist' => 'Globaalisti estetyt IP-osoitteet',
 	'globalblock' => 'Estä IP-osoite globaalisti',
