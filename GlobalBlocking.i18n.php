@@ -3157,8 +3157,15 @@ $messages['hsb'] = array(
 	'globalblocking-block' => 'IP-adresu globalnje blokować',
 	'globalblocking-modify-intro' => 'Móžeš tutón formular wužiwać, zo by nastajenja globalneho blokowanja změnił.',
 	'globalblocking-block-intro' => 'Móžeš tutu stronu wužiwać, zo by Ip-adresu na wšěch wikijach blokował.',
-	'globalblocking-block-reason' => 'Přičina za tute blokowanje:',
-	'globalblocking-block-expiry' => 'Spadnjenje blokowanja:',
+	'globalblocking-block-reason' => 'Přičina:',
+	'globalblocking-block-otherreason' => 'Druha/přidatna přičina:',
+	'globalblocking-block-reasonotherlist' => 'Druha přičina',
+	'globalblocking-block-reason-dropdown' => '* Zwučene přičiny blokowanja
+** Spamowanje crosswiki
+** Znjewužiwanje crosswiki
+** Wandalizm',
+	'globalblocking-block-edit-dropdown' => 'Přičiny blokowanja wobdźěłać',
+	'globalblocking-block-expiry' => 'Spadnjenje:',
 	'globalblocking-block-expiry-other' => 'Druhi čas spadnjenja',
 	'globalblocking-block-expiry-otherfield' => 'Druhi čas:',
 	'globalblocking-block-legend' => 'IP-adresu globalnje blokować',
