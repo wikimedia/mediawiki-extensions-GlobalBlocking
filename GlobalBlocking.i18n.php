@@ -1344,6 +1344,10 @@ $messages['de'] = array(
 	'globalblocking-block-reason' => 'Grund:',
 	'globalblocking-block-otherreason' => 'Anderer/ergänzender Grund:',
 	'globalblocking-block-reasonotherlist' => 'Andere Begründung',
+	'globalblocking-block-reason-dropdown' => '* Gemeinsame Sperrgründe
+** Spam in mehreren Wikis
+** Missbrauch in mehreren Wikis
+** Vandalismus',
 	'globalblocking-block-edit-dropdown' => 'Sperrgründe bearbeiten',
 	'globalblocking-block-expiry' => 'Sperrdauer:',
 	'globalblocking-block-expiry-other' => 'Andere Dauer',
