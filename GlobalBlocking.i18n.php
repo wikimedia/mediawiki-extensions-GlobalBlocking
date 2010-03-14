@@ -1343,7 +1343,7 @@ $messages['de'] = array(
 	'globalblocking-block-intro' => 'Auf dieser Seite kannst du IP-Adressen für alle Wikis sperren.',
 	'globalblocking-block-reason' => 'Grund:',
 	'globalblocking-block-otherreason' => 'Anderer/ergänzender Grund:',
-	'globalblocking-block-reasonotherlist' => 'Andere Begründung',
+	'globalblocking-block-reasonotherlist' => 'Anderer Grund',
 	'globalblocking-block-reason-dropdown' => '* Gemeinsame Sperrgründe
 ** Spam in mehreren Wikis
 ** Missbrauch in mehreren Wikis
