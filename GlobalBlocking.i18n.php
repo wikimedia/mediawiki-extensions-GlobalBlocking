@@ -5987,6 +5987,7 @@ Para sua referência, é apresentado abaixo o registo de bloqueios:',
  * @author Eduardo.mps
  * @author Heldergeovane
  * @author Luckas Blade
+ * @author Sir Lestaty de Lioncourt
  */
 $messages['pt-br'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Permite]] que endereços IP sejam [[Special:GlobalBlockList|bloqueados através de múltiplos wikis]]',
@@ -5994,6 +5995,13 @@ $messages['pt-br'] = array(
 	'globalblocking-modify-intro' => 'Você pode usar este formulário para alterar as definições de um bloqueio global.',
 	'globalblocking-block-intro' => 'Você pode usar esta página para bloquear um endereço IP em todos os wikis.',
 	'globalblocking-block-reason' => 'Motivo para este bloqueio:',
+	'globalblocking-block-otherreason' => 'Outro motivo/motivo adicional:',
+	'globalblocking-block-reasonotherlist' => 'Outro motivo',
+	'globalblocking-block-reason-dropdown' => '* Motivos comuns de bloqueio
+** Spam sobre vários wikis
+** Abusos sobre vários wikis
+** Vandalismo',
+	'globalblocking-block-edit-dropdown' => 'Editar motivos de bloqueio',
 	'globalblocking-block-expiry' => 'Validade do bloqueio:',
 	'globalblocking-block-expiry-other' => 'Outro tempo de validade',
 	'globalblocking-block-expiry-otherfield' => 'Outra duração:',
