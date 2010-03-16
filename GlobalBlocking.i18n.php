@@ -2143,8 +2143,8 @@ Allpool on toodud blokeerimislogi:',
  * @author Kobazulo
  */
 $messages['eu'] = array(
-	'globalblocking-block-reason' => 'Blokeoaren arrazoia:',
-	'globalblocking-block-expiry' => 'Blokeoaren iraungipena:',
+	'globalblocking-block-reason' => 'Arrazoia:',
+	'globalblocking-block-expiry' => 'Iraungipena:',
 	'globalblocking-block-options' => 'Aukerak:',
 	'globalblocking-search-legend' => 'Blokeo global bat bilatu',
 	'globalblocking-search-ip' => 'IP helbidea:',
@@ -4045,7 +4045,10 @@ $messages['ka'] = array(
 ბლოკირება ''\$4''.",
 	'globalblocking-blocked-nopassreset' => 'თქვენ არ შეგიძლიათ მომხმარებლის პაროლის შეცვლა, რადგან თქვენი ანგარიში გლობალურად ბლოკირებულია.',
 	'globalblocking-logpage' => 'გლობალური ბლოკირების ჟურნალი',
+	'globalblocking-block-logentry' => 'გლობალურად დაბლოკილია [[$1]]; ვადა გასდის $2',
 	'globalblocking-block2-logentry' => 'გლობალურად დაბლოკილია [[$1]] ($2)',
+	'globalblocking-unblock-logentry' => 'მოხსნილია გლობალური ბლოკირება [[$1]]-ზე',
+	'globalblocking-logentry-expiry' => 'ვადა გასდის $1',
 	'globalblocklist' => 'გლობალურად დაბლოკილი IP მისამართების სია',
 	'globalblock' => 'IP მისამართის გლობალური ბლოკირება',
 	'globalblockstatus' => 'გლობალური ბლოკირების ლოკალური სტატუსი',
