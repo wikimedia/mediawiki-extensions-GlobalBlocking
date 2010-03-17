@@ -1694,6 +1694,7 @@ Protokol blokěrowanjow jo dołojce pódał slědujuce ako referencu:',
 
 /** Greek (Ελληνικά)
  * @author Consta
+ * @author Crazymadlover
  * @author Dead3y3
  * @author Geraki
  * @author Omnipaedista
@@ -1704,8 +1705,10 @@ $messages['el'] = array(
 	'globalblocking-block' => 'Καθολική φραγή μιας διεύθυνσης IP',
 	'globalblocking-modify-intro' => 'Μπορείτε να χρησιμοποιείσετε αυτή τη φόρμα για να αλλάξετε τις ρυθμίσεις μιας καθολικής φραγής.',
 	'globalblocking-block-intro' => 'Μπορείτε να χρησιμοποιήσετε αυτή τη σελίδα για να φράξετε μια διεύθυνση IP σε όλα τα wikis',
-	'globalblocking-block-reason' => 'Λόγος για αυτή τη φραγή:',
-	'globalblocking-block-expiry' => 'Λήξη φραγής:',
+	'globalblocking-block-reason' => 'Αιτία:',
+	'globalblocking-block-otherreason' => 'Άλλος/πρόσθετος λόγος:',
+	'globalblocking-block-reasonotherlist' => 'Άλλος λόγος',
+	'globalblocking-block-expiry' => 'Λήξη:',
 	'globalblocking-block-expiry-other' => 'Άλλος χρόνος λήξης',
 	'globalblocking-block-expiry-otherfield' => 'Άλλος χρόνος:',
 	'globalblocking-block-legend' => 'Φραγή μιας διεύθυνσης IP καθολικά',

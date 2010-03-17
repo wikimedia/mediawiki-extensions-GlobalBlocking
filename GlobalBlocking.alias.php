@@ -199,7 +199,7 @@ $aliases['ko'] = array(
 	'RemoveGlobalBlock' => array( '전체차단취소', '전체차단해제' ),
 );
 
-/** Ripoarisch (Ripoarisch) */
+/** Colognian (Ripoarisch) */
 $aliases['ksh'] = array(
 	'GlobalBlock' => array( 'Jemeinsam Sperre' ),
 	'GlobalBlockList' => array( 'Leß met jemeinsam Sperre' ),
