@@ -1593,8 +1593,15 @@ $messages['dsb'] = array(
 	'globalblocking-block' => 'Ip-adresu globalnje blokěrowaś',
 	'globalblocking-modify-intro' => 'Móžoš toś ten formular wužywaś, aby změnił nastajenja globalnego blokěrowanja',
 	'globalblocking-block-intro' => 'Móžoš tos ten bok wužywaś, aby blokěrował IP-adresu na wšych wikijach.',
-	'globalblocking-block-reason' => 'Pśicyna za toś to blokěrowanje:',
-	'globalblocking-block-expiry' => 'Cas blokěrowanja:',
+	'globalblocking-block-reason' => 'Pśicyna:',
+	'globalblocking-block-otherreason' => 'Druga/pśidatna pśicyna:',
+	'globalblocking-block-reasonotherlist' => 'Druga pśicyna',
+	'globalblocking-block-reason-dropdown' => '* Zwucone pśicyny za blokěrowanje
+** Spamowanje crosswiki
+** Znjewužywanje crosswiki
+** Wandalizm',
+	'globalblocking-block-edit-dropdown' => 'Pśicyny blokěrowanja wobźěłaś',
+	'globalblocking-block-expiry' => 'Spadnjenje:',
 	'globalblocking-block-expiry-other' => 'Drugi cas spadnjenja',
 	'globalblocking-block-expiry-otherfield' => 'Drugi cas:',
 	'globalblocking-block-legend' => 'IP-adresu globalnje blokěrowaś',
@@ -1678,7 +1685,7 @@ Aby se woglědał wšykne aktiwne globalne blokěrowanja, móžoš se woglědaś
 	'globalblocking-dewhitelist-logentry' => 'jo globalne blokěrowanje za [[$1]] zasej lokalnje zmóžnił',
 	'globalblocking-modify-logentry' => 'jo změnił globalne blokěrowanje na [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'pśepadnjo $1',
-	'globalblocking-logentry-noexpiry' => 'žedne pśepadnjenje póstajone',
+	'globalblocking-logentry-noexpiry' => 'žedno pśepadnjenje póstajone',
 	'globalblocking-loglink' => 'IP-adresa $1 jo globalnje zablokěrowana ([[{{#Special:GlobalBlockList}}/$1|drobnostki]]).',
 	'globalblocking-showlog' => 'Toś ta IP-adresa jo se pjerwjej zablokěrowała.
 Protokol blokěrowanjow jo dołojce pódał slědujuce ako referencu:',
@@ -3805,6 +3812,7 @@ $messages['ja'] = array(
 **ウィキ間のスパム
 **ウィキ間での不正利用
 **荒らし',
+	'globalblocking-block-edit-dropdown' => 'ブロック理由を編集',
 	'globalblocking-block-expiry' => '期限:',
 	'globalblocking-block-expiry-other' => 'その他の有効期限',
 	'globalblocking-block-expiry-otherfield' => '期間 (その他のとき)',
