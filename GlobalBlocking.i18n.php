@@ -4932,6 +4932,7 @@ $1',
 );
 
 /** Malay (Bahasa Melayu)
+ * @author Aurora
  * @author Aviator
  * @author Izzudin
  * @author Kurniasan
@@ -4942,6 +4943,7 @@ $messages['ms'] = array(
 	'globalblocking-modify-intro' => 'Anda boleh gunakan borang ini untuk tukar tetapan penyekatan global.',
 	'globalblocking-block-intro' => 'Anda boleh menggunakan laman khas ini untuk menyekat alamat IP di semua wiki.',
 	'globalblocking-block-reason' => 'Sebab sekatan ini:',
+	'globalblocking-block-reasonotherlist' => 'Sebab lain',
 	'globalblocking-block-expiry' => 'Tamat:',
 	'globalblocking-block-expiry-other' => 'Waktu tamat lain',
 	'globalblocking-block-expiry-otherfield' => 'Waktu lain:',
