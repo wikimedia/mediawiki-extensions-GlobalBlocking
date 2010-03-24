@@ -1819,7 +1819,13 @@ $messages['eo'] = array(
 	'globalblocking-modify-intro' => 'Vi povas uzi ĉi tiun formularon por ŝanĝi la agordojn de ĝeneralan forbaron.',
 	'globalblocking-block-intro' => 'Vi povas uzi ĉi tiun paĝon por forbari IP-adreson en ĉiuj vikioj.',
 	'globalblocking-block-reason' => 'Kialo:',
+	'globalblocking-block-otherreason' => 'Alia/plua kialo:',
 	'globalblocking-block-reasonotherlist' => 'Alia kialo',
+	'globalblocking-block-reason-dropdown' => '* Oftaj kialoj de forbarado
+** Transvikia spamado
+** Transvikia misuzado
+** Vandalismo',
+	'globalblocking-block-edit-dropdown' => 'Redakti kialojn por forbaro',
 	'globalblocking-block-expiry' => 'Findaŭro:',
 	'globalblocking-block-expiry-other' => 'Alia limdato',
 	'globalblocking-block-expiry-otherfield' => 'Alia tempo:',
