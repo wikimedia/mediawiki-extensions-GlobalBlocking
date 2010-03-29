@@ -3362,6 +3362,11 @@ $messages['hu'] = array(
 	'globalblocking-block-reason' => 'Indoklás:',
 	'globalblocking-block-otherreason' => 'Egyéb/további indok:',
 	'globalblocking-block-reasonotherlist' => 'Egyéb indok',
+	'globalblocking-block-reason-dropdown' => '* Gyakori blokkolási okok
+** Wikiközi spammelés
+** Wikiközi visszaélés
+** Vandalizmus',
+	'globalblocking-block-edit-dropdown' => 'Blokkolási okok szerkesztése',
 	'globalblocking-block-expiry' => 'Lejárat:',
 	'globalblocking-block-expiry-other' => 'Más lejárati idő',
 	'globalblocking-block-expiry-otherfield' => 'Más időtartam:',
@@ -5905,6 +5910,13 @@ $messages['pt'] = array(
 	'globalblocking-modify-intro' => 'Pode usar este formulário para alterar as definições de um bloqueio global.',
 	'globalblocking-block-intro' => 'Pode usar esta página para bloquear um endereço IP em todas as wikis.',
 	'globalblocking-block-reason' => 'Motivo:',
+	'globalblocking-block-otherreason' => 'Outro motivo ou motivo adicional:',
+	'globalblocking-block-reasonotherlist' => 'Outro motivo',
+	'globalblocking-block-reason-dropdown' => '* Motivos comuns de bloqueio
+** Spam em várias wikis
+** Abuso em várias wikis
+** Vandalismo',
+	'globalblocking-block-edit-dropdown' => 'Editar motivos de bloqueio',
 	'globalblocking-block-expiry' => 'Expiração:',
 	'globalblocking-block-expiry-other' => 'Outro tempo de validade',
 	'globalblocking-block-expiry-otherfield' => 'Outra duração:',
