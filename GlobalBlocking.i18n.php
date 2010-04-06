@@ -5949,7 +5949,7 @@ ou modificar as definições do bloqueio existente ao re-submeter este formulár
 	'globalblocking-block-bigrange' => 'O intervalo especificado ($1) é demasiado grande para ser bloqueado.
 Pode bloquear, no máximo, 65.536 endereços (intervalos /16)',
 	'globalblocking-list-intro' => 'Esta é uma lista de todos os bloqueios globais em efeito.
-Alguns estão marcados como desactivados localmente: isto significa que se aplicam a outros sítios, mas um administrador local decidiu desactivá-los nesta wiki.',
+Alguns estão marcados como desactivados localmente: isto significa que se aplicam a outros sites, mas um administrador local decidiu desactivá-los nesta wiki.',
 	'globalblocking-list' => 'Lista de endereços IP bloqueados globalmente',
 	'globalblocking-search-legend' => 'Pesquisar bloqueio global',
 	'globalblocking-search-ip' => 'Endereço IP:',
