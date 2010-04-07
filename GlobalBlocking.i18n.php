@@ -1833,9 +1833,9 @@ $messages['eo'] = array(
 	'globalblocking-block-options' => 'Opcioj:',
 	'globalblocking-block-errors' => 'La forbaro malsukcesis, pro la {{PLURAL:$1|jena kialo|jenaj kialoj}}:
 $1',
-	'globalblocking-block-ipinvalid' => 'La IP-adreso ($1) kiun vi enigis estas nevalida.
+	'globalblocking-block-ipinvalid' => 'La IP-adreso ($1) kiun vi enigis estas malvalida.
 Bonvolu noti ke vi ne povas enigi salutnomo!',
-	'globalblocking-block-expiryinvalid' => 'La findaton kiun vi enigis ($1) estas nevalida.',
+	'globalblocking-block-expiryinvalid' => 'La findaton kiun vi enigis ($1) estas malvalida.',
 	'globalblocking-block-submit' => 'Forbari ĉi tiun IP-adreson ĝenerale',
 	'globalblocking-modify-submit' => 'Modifi ĉi tiun ĝeneralan forbaron',
 	'globalblocking-block-success' => 'La IP-adreso $1 estis sukcese forbarita por ĉiuj projektoj.',
@@ -1850,10 +1850,10 @@ Vi povas forbari maksimume 65,536 adrresojn (/16 IP-intervalojn)',
 	'globalblocking-list-intro' => 'Jen listo de ĉiuj transvikiaj forbaroj kiuj nune efikas.
 Iuj forbaroj estas markitaj kiel loke permesitaj; ĉi tiu signifas ke la forbaro efikas en aliaj vikioj, sed loka administranto decidis permesi la konton en ĉi tiu vikio.',
 	'globalblocking-list' => 'Listo de ĝenerale forbaritaj IP-adresoj',
-	'globalblocking-search-legend' => 'Serĉu ĝeneralan forbaron',
+	'globalblocking-search-legend' => 'Serĉi ĝeneralan forbaron',
 	'globalblocking-search-ip' => 'IP-adreso:',
 	'globalblocking-search-submit' => 'Serĉi forbarojn',
-	'globalblocking-list-ipinvalid' => 'La serĉita IP-adreso ($1) estas nevalida.
+	'globalblocking-list-ipinvalid' => 'La serĉita IP-adreso ($1) estas malvalida.
 Bonvolu enigi validan IP-adreson.',
 	'globalblocking-search-errors' => 'Via serĉo estis malsukcesa, ĉar la {{PLURAL:$1|jena kialo|jenaj kialoj}}:',
 	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') ĝenerale forbaris uzanton [[Special:Contributions/\$4|\$4]] ''(\$5)''",
@@ -1870,8 +1870,8 @@ Bonvolu enigi validan IP-adreson.',
 	'globalblocking-return' => 'Reiri al listo de ĝeneralaj forbaroj',
 	'globalblocking-notblocked' => 'La IP-adreso ($1) kiun vi enigis ne estas ĝenerale forbarita.',
 	'globalblocking-unblock' => 'Forigi ĝeneralan blokon',
-	'globalblocking-unblock-ipinvalid' => 'La IP-adreso ($1) kiun vi enigis estas nevalida.
-Bonvolu noti ke vi ne povas enigi salutnomo!',
+	'globalblocking-unblock-ipinvalid' => 'La IP-adreso ($1) kiun vi enigis estas malvalida.
+Bonvolu noti ke vi ne povas enigi salutnomon!',
 	'globalblocking-unblock-legend' => 'Forigi ĝeneralan forbaron',
 	'globalblocking-unblock-submit' => 'Forigi ĝeneralan forbaron',
 	'globalblocking-unblock-reason' => 'Kialo:',
@@ -4771,7 +4771,7 @@ $messages['ml'] = array(
 	'globalblocking-desc' => 'ഐ.പി. വിലാസങ്ങളെ [[Special:GlobalBlockList|വിവിധ വിക്കികളിൽ തടയാൻ]] [[Special:GlobalBlock|അനുവദിക്കുന്നു]]',
 	'globalblocking-block' => 'ഒരു ഐ.പി. വിലാസത്തെ ആഗോളമായി തടയുക',
 	'globalblocking-modify-intro' => 'ആഗോള തടയലിന്റെ ക്രമീകണങ്ങൾ മാറ്റാൻ ഈ ഫോം താങ്കൾക്ക് ഉപയോഗിക്കാവുന്നതാണ്.',
-	'globalblocking-block-intro' => 'ഒരു ഐ.പി. വിലാസത്തെ എല്ലാ വിക്കികളിലും നിരോധിക്കുവാന്‍ താങ്കള്‍ക്കു ഈ താള്‍ ഉപയോഗിക്കാം.',
+	'globalblocking-block-intro' => 'ഈ താൾ ഉപയോഗിച്ച് ഒരു ഐ.പി. വിലാസത്തെ എല്ലാ വിക്കികളിലും തടയാൻ താങ്കൾക്ക് സാധിക്കും.',
 	'globalblocking-block-reason' => 'കാരണം:',
 	'globalblocking-block-otherreason' => 'മറ്റ്/കൂടുതൽ കാരണം:',
 	'globalblocking-block-reasonotherlist' => 'മറ്റ് കാരണം',
@@ -4785,15 +4785,15 @@ $messages['ml'] = array(
 	'globalblocking-block-expiry-otherfield' => 'മറ്റ് കാലാവധി:',
 	'globalblocking-block-legend' => 'ഒരു ഐ.പി. വിലാസത്തെ ആഗോളമായി തടയുക',
 	'globalblocking-block-options' => 'ഐച്ഛികങ്ങൾ:',
-	'globalblocking-block-errors' => 'തടയല്‍ പരാജയപ്പെട്ടു, താഴെ പറയുന്ന {{PLURAL:$1|കാരണത്താൽ|കാരണങ്ങളാൽ}}:',
-	'globalblocking-block-ipinvalid' => 'താങ്കള്‍ കൊടുത്ത ഐ.പി. വിലാസം ($1) അസാധുവാണ്‌. 
-താങ്കള്‍ക്കു ഇവിടെ ഒരു ഉപയോക്തൃനാമം കൊടുക്കുവാന്‍ പറ്റില്ല എന്നതു പ്രത്യേകം ശ്രദ്ധിക്കുക.',
-	'globalblocking-block-expiryinvalid' => 'താങ്കള്‍ കൊടുത്ത കാലാവധി ($1) അസാധുവാണ്‌.',
+	'globalblocking-block-errors' => 'തടയൽ പരാജയപ്പെട്ടു, താഴെ പറയുന്ന {{PLURAL:$1|കാരണത്താൽ|കാരണങ്ങളാൽ}}:',
+	'globalblocking-block-ipinvalid' => 'താങ്കൾ കൊടുത്ത ഐ.പി. വിലാസം ($1) അസാധുവാണ്‌. 
+താങ്കൾക്കു ഇവിടെ ഒരു ഉപയോക്തൃനാമം കൊടുക്കുവാൻ പറ്റില്ല എന്നതു പ്രത്യേകം ശ്രദ്ധിക്കുക.',
+	'globalblocking-block-expiryinvalid' => 'താങ്കൾ കൊടുത്ത കാലാവധി ($1) അസാധുവാണ്‌.',
 	'globalblocking-block-submit' => 'ഈ ഐ.പി.വിലാസത്തെ ആഗോളമായി തടയുക',
 	'globalblocking-modify-submit' => 'ഈ ആഗോള തടയലിൽ മാറ്റം വരുത്തുക',
 	'globalblocking-block-success' => 'എല്ലാ പദ്ധതികളിൽ നിന്നും $1 എന്ന ഐ.പി. വിലാസത്തെ വിജയകരമായി തടഞ്ഞിരിക്കുന്നു.',
 	'globalblocking-modify-success' => '$1 മേൽ ഉണ്ടായിരുന്ന ആഗോള തടയലിൽ വിജയകരമായി മാറ്റം വരുത്തിയിരിക്കുന്നു',
-	'globalblocking-block-successsub' => 'ആഗോള തടയല്‍ വിജയകരം',
+	'globalblocking-block-successsub' => 'ആഗോള തടയൽ വിജയകരം',
 	'globalblocking-modify-successsub' => 'ആഗോള തടയലിൽ വിജയകരമായി മാറ്റം വരുത്തിയിരിക്കുന്നു',
 	'globalblocking-block-alreadyblocked' => '$1 എന്ന ഐ.പി. വിലാസം ആഗോളമായി തടയപ്പെട്ടിരിക്കുന്ന ഒന്നാണ്.
 താങ്കൾക്ക് നിലവിലുള്ള തടയലുകൾ [[Special:GlobalBlockList|ആഗോള തടയലുകളുടെ പട്ടികയിൽ]] കാണാവുന്നതാണ്,
@@ -4802,10 +4802,10 @@ $messages['ml'] = array(
 താങ്കൾക്ക് പരമാവധി 65,536 വിലാസങ്ങൾ (/16 പരിധികൾ) തടയാവുന്നതാണ്.',
 	'globalblocking-list-intro' => 'ഇപ്പോൾ പ്രാവർത്തികമായിട്ടുള്ള ആഗോള തടയലുകളുടെ പട്ടികയാണിത്.
 ചില തടയലുകൾ പ്രാദേശികമായി അനുഭവത്തിലില്ല എന്ന് അടയാളപ്പെടുത്തിയിട്ടുണ്ടാകും; അതിനർത്ഥം അവ മറ്റ് സൈറ്റുകളിൽ അനുഭവത്തിലുണ്ടാവാമെങ്കിലും, ഈ വിക്കിയിലെ ഒരു കാര്യനിർവാഹകൻ അത് നടപ്പിലാക്കണ്ട എന്ന് ഇവിടെ തീരുമാനിച്ചിട്ടുണ്ടെന്നാണ്.',
-	'globalblocking-list' => 'ആഗോളമായി തടയപ്പെട്ട ഐ.പി. വിലാസങ്ങള്‍',
+	'globalblocking-list' => 'ആഗോളമായി തടയപ്പെട്ട ഐ.പി. വിലാസങ്ങൾ',
 	'globalblocking-search-legend' => 'ആഗോള തടയലിന്റെ വിവരത്തിനായി തിരയുക',
 	'globalblocking-search-ip' => 'ഐ.പി. വിലാസം:',
-	'globalblocking-search-submit' => 'തടയലിന്റെ വിവരങ്ങള്‍ തിരയുക',
+	'globalblocking-search-submit' => 'തടയലിന്റെ വിവരങ്ങൾ തിരയുക',
 	'globalblocking-list-ipinvalid' => 'താങ്കൾ തിരഞ്ഞ ഐ.പി. വിലാസം ($1) സാധുവല്ല.
 ദയവായി സാധുവായ ഐ.പി. വിലാസം നൽകുക.',
 	'globalblocking-search-errors' => 'താഴെ പറയുന്ന {{PLURAL:$1|കാരണത്താൽ|കാരണങ്ങളാൽ}} തിരച്ചിൽ വിജയകരമല്ലായിരുന്നു:',
@@ -4813,7 +4813,7 @@ $messages['ml'] = array(
 	'globalblocking-list-expiry' => 'കാലാവധി $1',
 	'globalblocking-list-anononly' => 'അജ്ഞാത ഉപയോക്താക്കളെ മാത്രം',
 	'globalblocking-list-unblock' => 'സ്വതന്ത്രമാക്കുക',
-	'globalblocking-list-whitelisted' => '$1 ഇതിനെ പ്രാദേശികമായി നിര്‍‌വീര്യമാക്കിയിക്കുന്നു: $2',
+	'globalblocking-list-whitelisted' => '$1 ഇതിനെ പ്രാദേശികമായി നിർ‌വീര്യമാക്കിയിക്കുന്നു: $2',
 	'globalblocking-list-whitelist' => 'പ്രാദേശിക സ്ഥിതി',
 	'globalblocking-list-modify' => 'പുനർനിശ്ചയിക്കുക',
 	'globalblocking-list-noresults' => 'ആവശ്യപ്പെട്ട ഐ.പി. വിലാസത്തെ തടഞ്ഞിട്ടില്ല.',
@@ -4823,13 +4823,13 @@ $messages['ml'] = array(
 	'globalblocking-return' => 'ആഗോള തടയലുകളുടെ പട്ടികയിലേയ്ക്ക് തിരിച്ചു പോവുക',
 	'globalblocking-notblocked' => 'താങ്കൾ നൽകിയ ഐ.പി. വിലാസം ($1) ആഗോളം തടയപ്പെട്ടിട്ടില്ല.',
 	'globalblocking-unblock' => 'ആഗോള തടയൽ നീക്കുക',
-	'globalblocking-unblock-ipinvalid' => 'താങ്കള്‍ കൊടുത്ത ഐ.പി. വിലാസം ($1) അസാധുവാണ്‌. 
-താങ്കള്‍ക്കു ഇവിടെ ഒരു ഉപയോക്തൃനാമം കൊടുക്കുവാന്‍ പറ്റില്ല എന്നതു പ്രത്യേകം ശ്രദ്ധിക്കുക.',
+	'globalblocking-unblock-ipinvalid' => 'താങ്കൾ കൊടുത്ത ഐ.പി. വിലാസം ($1) അസാധുവാണ്‌. 
+താങ്കൾക്കു ഇവിടെ ഒരു ഉപയോക്തൃനാമം കൊടുക്കുവാൻ പറ്റില്ല എന്നതു പ്രത്യേകം ശ്രദ്ധിക്കുക.',
 	'globalblocking-unblock-legend' => 'ആഗോള തടയൽ മാറ്റുക',
 	'globalblocking-unblock-submit' => 'ആഗോള തടയൽ മാറ്റുക',
 	'globalblocking-unblock-reason' => 'കാരണം:',
-	'globalblocking-unblock-unblocked' => "'''$1''' എന്ന ഐ.പി. വിലാസത്തിന്മേലുള്ള #$2 എന്ന ആഗോള തടയൽ താങ്കള്‍ വിജയകരമായി ഒഴിവാക്കിയിരിക്കുന്നു",
-	'globalblocking-unblock-errors' => 'ഈ ഐ.പി. വിലാസത്തിന്മേലുള്ള ആഗോള തടയൽ ഒഴിവാക്കാന്‍ താങ്കള്‍ക്ക് പറ്റില്ല, അതിന്റെ {{PLURAL:$1|കാരണം|കാരണങ്ങൾ}}: $1',
+	'globalblocking-unblock-unblocked' => "'''$1''' എന്ന ഐ.പി. വിലാസത്തിന്മേലുള്ള #$2 എന്ന ആഗോള തടയൽ താങ്കൾ വിജയകരമായി ഒഴിവാക്കിയിരിക്കുന്നു",
+	'globalblocking-unblock-errors' => 'ഈ ഐ.പി. വിലാസത്തിന്മേലുള്ള ആഗോള തടയൽ ഒഴിവാക്കാൻ താങ്കൾക്ക് പറ്റില്ല, അതിന്റെ {{PLURAL:$1|കാരണം|കാരണങ്ങൾ}}: $1',
 	'globalblocking-unblock-successsub' => 'ആഗോള തടയൽ വിജയകരമായി നീക്കിയിരിക്കുന്നു',
 	'globalblocking-unblock-subtitle' => 'ആഗോള തടയൽ നീക്കംചെയ്യുന്നു',
 	'globalblocking-unblock-intro' => 'ആഗോള തടയൽ ഒഴിവാക്കാനായി താങ്കൾക്ക് ഈ ഫോം ഉപയോഗിക്കാവുന്നതാണ്.',
@@ -4839,10 +4839,10 @@ $messages['ml'] = array(
 	'globalblocking-whitelist-legend' => 'പ്രാദേശിക സ്ഥിതി മാറ്റുക',
 	'globalblocking-whitelist-reason' => 'കാരണം:',
 	'globalblocking-whitelist-status' => 'പ്രാദേശിക സ്ഥിതി:',
-	'globalblocking-whitelist-statuslabel' => '{{SITENAME}} സം‌രംഭത്തില്‍ ഈ ആഗോള തടയൽ ഒഴിവാക്കുക',
+	'globalblocking-whitelist-statuslabel' => '{{SITENAME}} സം‌രംഭത്തിൽ ഈ ആഗോള തടയൽ ഒഴിവാക്കുക',
 	'globalblocking-whitelist-submit' => 'പ്രാദേശിക സ്ഥിതി മാറ്റുക',
-	'globalblocking-whitelist-whitelisted' => "'''$1''' എന്ന ഐ.പി. വിലാസത്തിന്റെ #$2 എന്ന ആഗോളതടയൽ {{SITENAME}} സം‌രംഭത്തില്‍ വിജയകരമായി പ്രവര്‍ത്തനരഹിതമാക്കിയിരിക്കുന്നു",
-	'globalblocking-whitelist-dewhitelisted' => "'''$1''' എന്ന ഐ.പി. വിലാസത്തിന്റെ #$2 എന്ന ആഗോളതടയൽ {{SITENAME}} സം‌രംഭത്തില്‍ വിജയകരമായി പ്രവര്‍ത്തനയോഗ്യമാക്കിയിരിക്കുന്നു.",
+	'globalblocking-whitelist-whitelisted' => "'''$1''' എന്ന ഐ.പി. വിലാസത്തിന്റെ #$2 എന്ന ആഗോളതടയൽ {{SITENAME}} സം‌രംഭത്തിൽ വിജയകരമായി പ്രവർത്തനരഹിതമാക്കിയിരിക്കുന്നു",
+	'globalblocking-whitelist-dewhitelisted' => "'''$1''' എന്ന ഐ.പി. വിലാസത്തിന്റെ #$2 എന്ന ആഗോളതടയൽ {{SITENAME}} സം‌രംഭത്തിൽ വിജയകരമായി പ്രവർത്തനയോഗ്യമാക്കിയിരിക്കുന്നു.",
 	'globalblocking-whitelist-successsub' => 'പ്രാദേശിക സ്ഥിതി വിജയകരമായി മാറ്റിയിരിക്കുന്നു',
 	'globalblocking-whitelist-nochange' => 'ഈ തടയലിന്റെ പ്രാദേശിക സ്ഥിതിയിൽ താങ്കൾ മാറ്റമൊന്നും വരുത്തിയില്ല.
 [[Special:GlobalBlockList|ആഗോള തടയൽ പട്ടികയിലേയ്ക്ക് തിരിച്ചു പോവുക]]',
@@ -4852,7 +4852,7 @@ $messages['ml'] = array(
 [[Special:GlobalBlockList|ആഗോള തടയലുകളുടെ പട്ടികയിലേയ്ക്ക് തിരിച്ചുപോവുക]]',
 	'globalblocking-blocked' => "താങ്കളുടെ ഐ.പി. വിലാസം എല്ലാ വിക്കിമീഡിയ സം‌രംഭങ്ങളിലും '''\$1''' (''\$2'') തടഞ്ഞിരിക്കുന്നു. അതിനു സൂചിപ്പിച്ച കാരണം ''\"\$3\"'' ആണ്‌. തടയലിന്റെ കാലാവധി ''\$4''.",
 	'globalblocking-blocked-nopassreset' => 'താങ്കൾ ആഗോളമായി തടയപ്പെട്ടിരിക്കുന്നതിനാൽ രഹസ്യവാക്ക് പുനഃക്രമീകരിക്കാൻ കഴിയില്ല.',
-	'globalblocking-logpage' => 'ആഗോള തടയലിന്റെ പ്രവര്‍ത്തനരേഖ',
+	'globalblocking-logpage' => 'ആഗോള തടയലിന്റെ പ്രവർത്തനരേഖ',
 	'globalblocking-logpagetext' => 'ഈ വിക്കിയിൽ നിന്ന് സൃഷ്ടിക്കുകയോ നീക്കംചെയ്യുകയോ ചെയ്ത ആഗോള തടയലുകളുടെ രേഖയാണിത്.
 മറ്റ് വിക്കികളിൽ നിന്ന് ആഗോള തടയലുകൾ സൃഷ്ടിക്കാൻ കഴിയുമെന്നും, അവ ഇവിടെ പ്രാബല്യത്തിലുണ്ടാകുമെന്നും ഓർക്കുക.
 പ്രാബല്യത്തിലുള്ള എല്ലാ ആഗോള തടയലുകളും [[Special:GlobalBlockList|ആഗോള തടയൽ പട്ടികയിൽ]] താങ്കൾക്ക് കാണാവുന്നതാണ്.',
@@ -4867,13 +4867,13 @@ $messages['ml'] = array(
 	'globalblocking-loglink' => 'ഐ.പി. വിലാസം $1 ആഗോളമായി തടയപ്പെട്ടിരിക്കുന്നു ([[{{#Special:GlobalBlockList}}/$1|പൂർണ്ണ വിവരങ്ങൾ]]).',
 	'globalblocking-showlog' => 'ഈ ഐ.പി. വിലാസം മുമ്പേ തടയപ്പെട്ടിട്ടുള്ളതാണ്.
 അവലംബമായി തടയൽ രേഖ താഴെ കൊടുക്കുന്നു:',
-	'globalblocklist' => 'ആഗോളമായി തടയപ്പെട്ട ഐപിവിലാസങ്ങള്‍ പ്രദര്‍ശിപ്പിക്കുക',
+	'globalblocklist' => 'ആഗോളമായി തടയപ്പെട്ട ഐപിവിലാസങ്ങൾ പ്രദർശിപ്പിക്കുക',
 	'globalblock' => 'ഒരു ഐ.പി. വിലാസത്തെ ആഗോളമായി തടയുക',
 	'globalblockstatus' => 'ആഗോള തടയലുകളുടെ പ്രാദേശിക സ്ഥിതി',
 	'removeglobalblock' => 'ആഗോള തടയൽ നീക്കുക',
-	'right-globalblock' => 'ആഗോള തടയല്‍ നടത്തുക',
+	'right-globalblock' => 'ആഗോള തടയൽ നടത്തുക',
 	'right-globalunblock' => 'ആഗോള തടയൽ മാറ്റുക',
-	'right-globalblock-whitelist' => 'ആഗോള തടയലിനെ പ്രാദേശികമായി നിര്‍‌വീര്യമാക്കുക',
+	'right-globalblock-whitelist' => 'ആഗോള തടയലിനെ പ്രാദേശികമായി നിർ‌വീര്യമാക്കുക',
 	'right-globalblock-exempt' => 'ആഗോള തടയലുകളെ പാർശ്വവത്കരിച്ചു ഗമിക്കുക',
 );
 
