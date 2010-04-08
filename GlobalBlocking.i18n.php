@@ -3721,6 +3721,7 @@ $messages['is'] = array(
 
 /** Italian (Italiano)
  * @author BrokenArrow
+ * @author Civvì
  * @author Darth Kule
  * @author Gianfranco
  * @author Melos
@@ -3730,8 +3731,8 @@ $messages['it'] = array(
 	'globalblocking-block' => 'Blocca globalmente un indirizzo IP',
 	'globalblocking-modify-intro' => 'Questo modulo può essere utilizzato per modificare le impostazioni di un blocco globale.',
 	'globalblocking-block-intro' => 'È possibile usare questa pagina per bloccare un indirizzo IP su tutte le wiki.',
-	'globalblocking-block-reason' => 'Motivo per il blocco:',
-	'globalblocking-block-expiry' => 'Scadenza del blocco:',
+	'globalblocking-block-reason' => 'Motivo:',
+	'globalblocking-block-expiry' => 'Scadenza:',
 	'globalblocking-block-expiry-other' => 'Altri tempi di scadenza',
 	'globalblocking-block-expiry-otherfield' => 'Durata non in elenco:',
 	'globalblocking-block-legend' => 'Blocca globalmente un indirizzo IP',
