@@ -3732,6 +3732,7 @@ $messages['it'] = array(
 	'globalblocking-modify-intro' => 'Questo modulo può essere utilizzato per modificare le impostazioni di un blocco globale.',
 	'globalblocking-block-intro' => 'È possibile usare questa pagina per bloccare un indirizzo IP su tutte le wiki.',
 	'globalblocking-block-reason' => 'Motivo:',
+	'globalblocking-block-reasonotherlist' => 'Altra motivazione',
 	'globalblocking-block-expiry' => 'Scadenza:',
 	'globalblocking-block-expiry-other' => 'Altri tempi di scadenza',
 	'globalblocking-block-expiry-otherfield' => 'Durata non in elenco:',
@@ -3782,7 +3783,7 @@ $messages['it'] = array(
 	'globalblocking-whitelist-notapplied' => 'I blocchi globali non sono attivi su questo sito wiki.
 Non è possibile modificare lo stato locale dei blocchi globali.',
 	'globalblocking-whitelist-legend' => 'Cambia stato locale',
-	'globalblocking-whitelist-reason' => 'Motivo del cambiamento:',
+	'globalblocking-whitelist-reason' => 'Motivo:',
 	'globalblocking-whitelist-status' => 'Stato locale:',
 	'globalblocking-whitelist-statuslabel' => 'Disattiva il blocco globale su {{SITENAME}}',
 	'globalblocking-whitelist-submit' => 'Cambia stato locale',
