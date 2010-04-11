@@ -4023,9 +4023,14 @@ Kanggo mirsani kabèh pamblokiran global sing aktif wektu iki, pirsani ing[[Spec
 /** Georgian (ქართული)
  * @author BRUTE
  * @author Malafaya
+ * @author გიორგიმელა
  */
 $messages['ka'] = array(
-	'globalblocking-block-reason' => 'ბლოკირების მიზეზი:',
+	'globalblocking-desc' => 'ნებას რთავს [[Special:GlobalBlock|დაბლოკოს]]  IP-მისამართები [[Special:GlobalBlockList|რამდენიმე ვიკიში]]',
+	'globalblocking-block' => 'IP მისამართის გლობალურად დაბლოკვა',
+	'globalblocking-block-intro' => 'თქვენ შეგიძლიათ გამოიყენოთ ეს გვერდი რათა დაბლოკოთ IP ყველა ვიკის.',
+	'globalblocking-block-reason' => 'მიზეზი:',
+	'globalblocking-block-otherreason' => 'სხვა/დამატებითი მიზეზი:',
 	'globalblocking-block-expiry-otherfield' => 'სხვა დრო:',
 	'globalblocking-block-legend' => 'მომხმარებლის გლობალური ბლოკირება',
 	'globalblocking-block-errors' => 'ბლოკირების მცდელობა წარუმატებელია, {{PLURAL:$1|მიზეზი|მიზეზები}}:',
@@ -5680,7 +5685,7 @@ $messages['pl'] = array(
 	'globalblocking-block-reasonotherlist' => 'Inny powód',
 	'globalblocking-block-reason-dropdown' => '* Najczęstsze powody blokad** Spamowanie w wielu projektach** Nadużycia w wielu projektach** Wandalizm',
 	'globalblocking-block-edit-dropdown' => 'Edytuj przyczynę blokady',
-	'globalblocking-block-expiry' => 'Czas blokady',
+	'globalblocking-block-expiry' => 'Czas blokady:',
 	'globalblocking-block-expiry-other' => 'Inny czas blokady',
 	'globalblocking-block-expiry-otherfield' => 'Inny czas blokady',
 	'globalblocking-block-legend' => 'Zablokuj globalnie adres IP',
