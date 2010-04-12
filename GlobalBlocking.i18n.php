@@ -4028,14 +4028,25 @@ Kanggo mirsani kabèh pamblokiran global sing aktif wektu iki, pirsani ing[[Spec
 $messages['ka'] = array(
 	'globalblocking-desc' => 'ნებას რთავს [[Special:GlobalBlock|დაბლოკოს]]  IP-მისამართები [[Special:GlobalBlockList|რამდენიმე ვიკიში]]',
 	'globalblocking-block' => 'IP მისამართის გლობალურად დაბლოკვა',
+	'globalblocking-modify-intro' => 'თქვენ შეგიძლიათ ამ ფორმის გამოენება გლობალური ბლოკირების სტატუსის შესაცვლელად.',
 	'globalblocking-block-intro' => 'თქვენ შეგიძლიათ გამოიყენოთ ეს გვერდი რათა დაბლოკოთ IP ყველა ვიკის.',
 	'globalblocking-block-reason' => 'მიზეზი:',
 	'globalblocking-block-otherreason' => 'სხვა/დამატებითი მიზეზი:',
+	'globalblocking-block-reasonotherlist' => 'სხვა მიზეზი',
+	'globalblocking-block-reason-dropdown' => '* ბლოკირების სტანდარტული მიზეზები
+** ტრანსვიკი სპამი
+** ტრანსვიკი ბოროტად გამოყენება
+** ვანდალიზმი',
+	'globalblocking-block-edit-dropdown' => 'დაბლოკვის მიზეზების ჩამატება',
+	'globalblocking-block-expiry' => 'ვადის გვასვლა:',
+	'globalblocking-block-expiry-other' => 'სხვა ვადის გასვლა',
 	'globalblocking-block-expiry-otherfield' => 'სხვა დრო:',
 	'globalblocking-block-legend' => 'მომხმარებლის გლობალური ბლოკირება',
+	'globalblocking-block-options' => 'კონფიგურაცია',
 	'globalblocking-block-errors' => 'ბლოკირების მცდელობა წარუმატებელია, {{PLURAL:$1|მიზეზი|მიზეზები}}:',
 	'globalblocking-block-ipinvalid' => 'თქვენს მიერ მითითებული IP მისამართი ($1) არასწორია.
 გთოვთ, გაითვალისწინეთ, თქვენ არ შეგიძლიათ მომხმარებლის სახელის შეყვანა!',
+	'globalblocking-block-expiryinvalid' => 'შეყვანილი ვადა ($1) არასწორია',
 	'globalblocking-block-submit' => 'ამ IP მისამართის გლობალური ბლოკირება',
 	'globalblocking-modify-submit' => 'ამ გლობალური ბლოკირების შეცვლა',
 	'globalblocking-block-success' => 'IP მისამართი $1 წარმატებით დაიბლოკა ყველა პროექტში.',
@@ -4045,9 +4056,25 @@ $messages['ka'] = array(
 	'globalblocking-block-alreadyblocked' => 'IP მისამართი $1 უკვე დაბლოკილია გლობალურად.
 თქვენ შეგიძლიათ ნახოთ არსებული ბლოკირება [[Special:GlobalBlockList|გლობალური ბლოკირებების სიაზე]],
 ან შეცვალოთ არსებული ბლოკირების პარამეტრები, ამ ფორმის განმეორებით გაგზავნით.',
+	'globalblocking-block-bigrange' => 'თქვენს მიერ მითითებული დიაპაზონი ($1) ნამეტანად დიდია დასაბლოკად
+თქვენ შეგიძლიათ დაბლოკოთ 65,536 მისამართზე მეტი',
+	'globalblocking-list-intro' => 'ეს არის ყველა არსებული გლობალური დაბლოკვის სია.
+ზოგი ბლოკი არის მონიშნული როგორც ლოკალურად გაუქმებული:
+ეს ნიშნავს იმას, რომ ბლოკი არსებობდა სხვა საიტზე, თუმცა ლოკალურმა ადმინისტრატორმა მისი გაუქმება არჩია',
 	'globalblocking-list' => 'გლობალურად ბლოკირებული IP-მისამართების სია',
+	'globalblocking-search-legend' => 'მოიძიეთ გლობალური ბლოკი',
 	'globalblocking-search-ip' => 'IP მისამართი:',
+	'globalblocking-search-submit' => 'მოიძიეთ დაბლოკვები',
+	'globalblocking-list-ipinvalid' => 'შეყვანილი IP ($1) არის არასწორი.
+გთხოვთ შეიყვანოთ კორექტული IP',
+	'globalblocking-search-errors' => 'თქვენი ძიება ვერ შენარჩუნდა:
+ {{PLURAL:$1|მიზეზი|მიზეზებუ}}:
+$1',
+	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'')გლობალურად დაბლოკა [[Special:Contributions/\$4|\$4]] ''(\$5)''",
+	'globalblocking-list-expiry' => 'ვადა გასდის $1',
+	'globalblocking-list-anononly' => 'მხოლოდ ანონიმები',
 	'globalblocking-list-unblock' => 'წაშლა',
+	'globalblocking-list-whitelisted' => 'ლოკალურად გათიშა $1: $2',
 	'globalblocking-list-whitelist' => 'ლოკალური სტატუსი',
 	'globalblocking-list-modify' => 'შეცვლა',
 	'globalblocking-list-noresults' => 'მოთხოვნილი IP მისამართი არ არის დაბლოკილი.',
@@ -4076,19 +4103,30 @@ $messages['ka'] = array(
 	'globalblocking-whitelist-statuslabel' => 'ამ გლობალური ბლოკირების გამორთვა {{SITENAME}}-ზე',
 	'globalblocking-whitelist-submit' => 'ლოკალური სტატუსის შეცვლა',
 	'globalblocking-whitelist-whitelisted' => "თქვენ წარმატებით გამორთეთ გლობალური ბლოკირება #$2 IP მისამართი '''$1''' {{SITENAME}}-ზე.",
+	'globalblocking-whitelist-dewhitelisted' => "თქვენ წარმატებით აღადგინეთ გლობალური ბლოკირება #$2 IP მისამართზე '''$1''' {{SITENAME}}-ზე.",
 	'globalblocking-whitelist-successsub' => 'ლოკალური სტატუსი წარმატებით შეიცვალა',
 	'globalblocking-whitelist-nochange' => 'თქვენ არ შეგიტანიათ ამ ბლოკირების ლოკალურ სტატუსზე.
 [[Special:GlobalBlockList|გლობალური ბლოკირების სიაზე დაბრუნება]].',
 	'globalblocking-whitelist-errors' => 'გლობალური ბლოკირების ლოკალური სტატუსის შეცვლა ვერ მოხერხდა. {{PLURAL:$1|მიზეზი|მიზეზები}}:',
+	'globalblocking-whitelist-intro' => 'თქვენ შეგიძლიათ გამოიყენოთ ეს ფორმა გლობალური ბლოკის შესასწორებლად.
+თუ გლობალური ბლოკი ამ ვიკიზე გათიშულია, ამ IP მისამართის მქონე მომხმარებლები შესძლებენ ნორმალურად რედაქტირებას.
+[[Special:GlobalBlockList|დაბლოკვის სიაში დაბრუნება]].',
 	'globalblocking-blocked' => "თქვენი IP მისამართი დაბლოკილ იქნა ყველა ვიკიზე მომხმარებელ '''\$1''' (''\$2'') მიერ.
 მითითებულ იქნა მიზეზი ''\"\$3\"''.
 ბლოკირება ''\$4''.",
 	'globalblocking-blocked-nopassreset' => 'თქვენ არ შეგიძლიათ მომხმარებლის პაროლის შეცვლა, რადგან თქვენი ანგარიში გლობალურად ბლოკირებულია.',
 	'globalblocking-logpage' => 'გლობალური ბლოკირების ჟურნალი',
+	'globalblocking-logpagetext' => 'ეს არის ამ ვიკიში განხორციელებული გლობალური დაბლოკვების ნუსხა,
+გასათვალისწინებელია, რომ გლობალური ბლოკი შესაძლოა არ იყო დაყენებული ამ ვიკიში - თუმცა ისინი თქვენ ვიკისაც ეხებიან.
+ყველა ბლოკის სანახავად იხილეთ [[Special:GlobalBlockList|სია]].',
 	'globalblocking-block-logentry' => 'გლობალურად დაბლოკილია [[$1]]; ვადა გასდის $2',
 	'globalblocking-block2-logentry' => 'გლობალურად დაბლოკილია [[$1]] ($2)',
 	'globalblocking-unblock-logentry' => 'მოხსნილია გლობალური ბლოკირება [[$1]]-ზე',
+	'globalblocking-whitelist-logentry' => 'ლოკალურად გათიშულია ბლოკი [[$1]]',
+	'globalblocking-modify-logentry' => 'შეცვალა გლობალური ბლოკი [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'ვადა გასდის $1',
+	'globalblocking-logentry-noexpiry' => 'ვადა არ არის დანიშნული',
+	'globalblocking-loglink' => 'IP-მისამართი დაბლოკა $1 -მა გლობალურად ([[{{#Special:GlobalBlockList}}/$1|დამ. ინფ.]]).',
 	'globalblocklist' => 'გლობალურად დაბლოკილი IP მისამართების სია',
 	'globalblock' => 'IP მისამართის გლობალური ბლოკირება',
 	'globalblockstatus' => 'გლობალური ბლოკირების ლოკალური სტატუსი',
@@ -5685,7 +5723,7 @@ $messages['pl'] = array(
 	'globalblocking-block-reasonotherlist' => 'Inny powód',
 	'globalblocking-block-reason-dropdown' => '* Najczęstsze powody blokad** Spamowanie w wielu projektach** Nadużycia w wielu projektach** Wandalizm',
 	'globalblocking-block-edit-dropdown' => 'Edytuj przyczynę blokady',
-	'globalblocking-block-expiry' => 'Czas blokady:',
+	'globalblocking-block-expiry' => 'Upływa',
 	'globalblocking-block-expiry-other' => 'Inny czas blokady',
 	'globalblocking-block-expiry-otherfield' => 'Inny czas blokady',
 	'globalblocking-block-legend' => 'Zablokuj globalnie adres IP',
