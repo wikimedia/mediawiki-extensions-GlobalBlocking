@@ -2156,10 +2156,12 @@ Allpool on toodud blokeerimislogi:',
 
 /** Basque (Euskara)
  * @author An13sa
+ * @author Joxemai
  * @author Kobazulo
  */
 $messages['eu'] = array(
 	'globalblocking-block-reason' => 'Arrazoia:',
+	'globalblocking-block-reasonotherlist' => 'Beste arrazoi bat',
 	'globalblocking-block-expiry' => 'Iraungipena:',
 	'globalblocking-block-options' => 'Aukerak:',
 	'globalblocking-search-legend' => 'Blokeo global bat bilatu',
@@ -4206,6 +4208,7 @@ $messages['kn'] = array(
 
 /** Korean (한국어)
  * @author Albamhandae
+ * @author Devunt
  * @author Ficell
  * @author Klutzy
  * @author Kwj2772
@@ -4223,7 +4226,7 @@ $messages['ko'] = array(
 ** 여러 위키에서의 부정 행위
 ** 문서 훼손',
 	'globalblocking-block-edit-dropdown' => '차단 이유 목록 편집하기',
-	'globalblocking-block-expiry' => '차단 기간:',
+	'globalblocking-block-expiry' => '기간:',
 	'globalblocking-block-expiry-other' => '다른 기간',
 	'globalblocking-block-expiry-otherfield' => '다른 기간:',
 	'globalblocking-block-legend' => '특정 IP를 전체 위키에서 차단하기',
@@ -4289,6 +4292,9 @@ $messages['ko'] = array(
 	'globalblocking-whitelist-nochange' => '전체 차단의 로컬 상태를 바꾸지 않았습니다.
 [[Special:GlobalBlockList|전체 차단된 IP의 목록으로 돌아갑니다]].',
 	'globalblocking-whitelist-errors' => '광역 차단 설정 변경에 실패했습니다. 이유는 다음과 같습니다: $1',
+	'globalblocking-whitelist-intro' => '이 양식을 통해 전체 차단의 로컬 상태를 바꿀 수 있습니다.
+전체 차단이 이 위키에서 비활성화되면 해당 IP 주소를 이용하는 사용자는 정상적으로 편집할 수 있게 됩니다.
+[[Special:GlobalBlockList|전체 차단 목록으로 돌아가기]].',
 	'globalblocking-blocked' => "당신은 '''\$1''' (''\$2'')에 의해 모든 위키에서 차단되었습니다.
 차단 사유는 \"\$3\"이며, 기한은 \"\$4\"입니다.",
 	'globalblocking-blocked-nopassreset' => '당신은 모든 위키에서 차단되었기 때문에 비밀번호를 바꿀 수 없습니다.',
@@ -8141,6 +8147,14 @@ $messages['wo'] = array(
  * @author פוילישער
  */
 $messages['yi'] = array(
+	'globalblocking-block-reason' => 'גרונד:',
+	'globalblocking-block-otherreason' => 'אַנדער/נאך א סיבה:',
+	'globalblocking-block-reasonotherlist' => 'אַנדער סיבה',
+	'globalblocking-block-reason-dropdown' => '* געמיינזאַמע בלאָקירן גרונדן
+** אַריבערוויקי ספאַם
+** אַריבערוויקי קרומבאַניץ 
+** וואַנדאַליזם',
+	'globalblocking-block-edit-dropdown' => 'רעדאַקטירן בלאקירונג סיבות',
 	'globalblocking-unblock-reason' => 'אורזאַך:',
 	'removeglobalblock' => 'אויפהייבן גלאבאלן בלאק',
 );
