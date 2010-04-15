@@ -3593,6 +3593,7 @@ Le registro de blocadas es fornite ci infra pro referentia:',
  * @author Bennylin
  * @author Irwangatot
  * @author IvanLanin
+ * @author Iwan Novirion
  * @author Rex
  */
 $messages['id'] = array(
@@ -3600,7 +3601,14 @@ $messages['id'] = array(
 	'globalblocking-block' => 'Memblokir sebuah alamat IP secara global',
 	'globalblocking-modify-intro' => 'Anda dapat menggunakan formulir ini untuk mengubah pengaturan suatu pemblokiran global.',
 	'globalblocking-block-intro' => 'Anda dapat menggunakan halaman ini untuk memblokir sebuah alamat IP di seluruh wiki.',
-	'globalblocking-block-reason' => 'Alasan pemblokiran:',
+	'globalblocking-block-reason' => 'Alasan:',
+	'globalblocking-block-otherreason' => 'Alasan lain/tambahan:',
+	'globalblocking-block-reasonotherlist' => 'Alasan lain',
+	'globalblocking-block-reason-dropdown' => '* Alasan pemblokiran umum
+** Spam crosswiki
+** Penyalahgunaan crosswiki
+** Vandalisme',
+	'globalblocking-block-edit-dropdown' => 'Sunting alasan pemblokiran',
 	'globalblocking-block-expiry' => 'Kadaluwarsa:',
 	'globalblocking-block-expiry-other' => 'Waktu lain',
 	'globalblocking-block-expiry-otherfield' => 'Waktu lain:',
@@ -3722,6 +3730,7 @@ $messages['is'] = array(
 );
 
 /** Italian (Italiano)
+ * @author Beta16
  * @author BrokenArrow
  * @author Civvì
  * @author Darth Kule
@@ -3734,7 +3743,9 @@ $messages['it'] = array(
 	'globalblocking-modify-intro' => 'Questo modulo può essere utilizzato per modificare le impostazioni di un blocco globale.',
 	'globalblocking-block-intro' => 'È possibile usare questa pagina per bloccare un indirizzo IP su tutte le wiki.',
 	'globalblocking-block-reason' => 'Motivo:',
+	'globalblocking-block-otherreason' => 'Altri motivi/dettagli:',
 	'globalblocking-block-reasonotherlist' => 'Altra motivazione',
+	'globalblocking-block-edit-dropdown' => 'Modifica i motivi per il blocco',
 	'globalblocking-block-expiry' => 'Scadenza:',
 	'globalblocking-block-expiry-other' => 'Altri tempi di scadenza',
 	'globalblocking-block-expiry-otherfield' => 'Durata non in elenco:',
@@ -3809,6 +3820,9 @@ Per visualizzare tutti i blocchi globali attivi si veda l'[[Special:GlobalBlockL
 	'globalblocking-modify-logentry' => 'ha modificato il blocco globale di [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'scade il $1',
 	'globalblocking-logentry-noexpiry' => 'nessuna scadenza impostata',
+	'globalblocking-loglink' => "L'indirizzo IP $1 è bloccato a livello globale ([[{{#Special:GlobalBlockList}}/$1|vedi dettagli]]).",
+	'globalblocking-showlog' => 'Questo indirizzo IP è stato bloccato in precedenza.
+Il registro dei blocchi è riportato di seguito per informazione:',
 	'globalblocklist' => 'Elenco degli indirizzi IP bloccati globalmente',
 	'globalblock' => 'Blocca globalmente un indirizzo IP',
 	'globalblockstatus' => 'Stato locale di blocchi globali',
