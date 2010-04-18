@@ -3496,7 +3496,7 @@ $messages['ia'] = array(
 ** Vandalismo',
 	'globalblocking-block-edit-dropdown' => 'Modificar le motivos pro blocar',
 	'globalblocking-block-expiry' => 'Expiration:',
-	'globalblocking-block-expiry-other' => 'Altere tempore de expiration',
+	'globalblocking-block-expiry-other' => 'Altere termino de expiration',
 	'globalblocking-block-expiry-otherfield' => 'Altere duration:',
 	'globalblocking-block-legend' => 'Blocar un adresse IP globalmente',
 	'globalblocking-block-options' => 'Optiones:',
@@ -8172,6 +8172,7 @@ $messages['yi'] = array(
 ** אַריבערוויקי קרומבאַניץ 
 ** וואַנדאַליזם',
 	'globalblocking-block-edit-dropdown' => 'רעדאַקטירן בלאקירונג סיבות',
+	'globalblocking-block-expiry' => 'אויסלאז:',
 	'globalblocking-unblock-reason' => 'אורזאַך:',
 	'removeglobalblock' => 'אויפהייבן גלאבאלן בלאק',
 );
