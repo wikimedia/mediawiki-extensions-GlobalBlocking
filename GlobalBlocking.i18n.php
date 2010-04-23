@@ -884,6 +884,10 @@ $messages['br'] = array(
 	'globalblocking-block-reason' => 'Abeg :',
 	'globalblocking-block-otherreason' => 'Abegoù all/ouzhpenn :',
 	'globalblocking-block-reasonotherlist' => 'Abeg all',
+	'globalblocking-block-reason-dropdown' => '* Abegoù anavezet evit ar stankadenn
+** Strob war meur a wikioù
+** Kammarveroù war meur a wikioù
+** Vandalerezh',
 	'globalblocking-block-edit-dropdown' => 'Kemmañ an abegoù stankañ dre ziouer',
 	'globalblocking-block-expiry' => 'Termen :',
 	'globalblocking-block-expiry-other' => 'Padelezh termen all',
@@ -927,6 +931,7 @@ Mar plij bezit war evezh, ne c'halloc'h ket lakaat anv un implijer !",
 	'globalblocking-unblock-submit' => 'Lemel kuit ar stankadenn hollek',
 	'globalblocking-unblock-reason' => 'Abeg :',
 	'globalblocking-unblock-unblocked' => "Ar stankadenn hollek niverenn $2 hag a glot gant ar chomlec'h IP '''$1''' a zo bet tennet.",
+	'globalblocking-unblock-errors' => "An dilammadenn eus ar stankadenn hollek en deus c'hwitet evit an {{PLURAL:$1|abeg|abegoù}} da-heul :",
 	'globalblocking-unblock-successsub' => 'Tennet eo bet ar stankadenn hollek',
 	'globalblocking-unblock-subtitle' => 'Dilamidigezh ar stankadenn hollek',
 	'globalblocking-unblock-intro' => "Tu 'zo deoc'h implijout ar furmskrid-mañ evit dilemel ur stankadenn hollek.",
@@ -938,6 +943,7 @@ Mar plij bezit war evezh, ne c'halloc'h ket lakaat anv un implijer !",
 	'globalblocking-whitelist-submit' => "Kemmañ ar statud lec'hel",
 	'globalblocking-whitelist-whitelisted' => "Diweredekaet ho peus ar stankadenn hollek #$2 evit ar chomlec'h IP '''$1''' war {{SITENAME}}.",
 	'globalblocking-whitelist-successsub' => "Kemmet eo bet statud lec'hel",
+	'globalblocking-whitelist-errors' => "Ar c'hemm eus statud lec'hel ur stankadenn hollek en deus c'hwitet evit an {{PLURAL:$1|abeg|abegoù}} da-heul :",
 	'globalblocking-blocked' => "Stanket eo bet ho chomlec'h IP war an holl wikioù gat '''\$1''' (''\$2'').
 An abeg a oa ''\"\$3\"''.
 Stankadenn : ''\$4''.",
