@@ -27,7 +27,7 @@ class SpecialGlobalBlockStatus extends SpecialPage {
 		
 		global $wgApplyGlobalBlocks;
 		if (!$wgApplyGlobalBlocks) {
-			$this->addWikiMsg( 'globalblocking-whitelist-notapplied' );
+			$wgOut->addWikiMsg( 'globalblocking-whitelist-notapplied' );
 			return;
 		}
 
