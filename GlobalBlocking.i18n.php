@@ -133,6 +133,7 @@ The block log is provided below for reference:',
 
 /** Message documentation (Message documentation)
  * @author Darth Kule
+ * @author EugeneZelenko
  * @author Ficell
  * @author Fryed-peach
  * @author Jon Harald Søby
@@ -151,6 +152,10 @@ $messages['qqq'] = array(
 	'globalblocking-block' => 'Same special page with this page:
 
 * [[MediaWiki:Globalblock/{{SUBPAGENAME}}]]',
+	'globalblocking-block-reason' => '{{Identical/Reason}}',
+	'globalblocking-block-otherreason' => '{{Identical/Other/additional reason}}',
+	'globalblocking-block-reasonotherlist' => '{{Identical|Other reason}}',
+	'globalblocking-block-expiry' => '{{Identical/Expiry}}',
 	'globalblocking-block-expiry-otherfield' => '{{Identical|Other time}}',
 	'globalblocking-block-options' => '{{Identical|Options}}',
 	'globalblocking-block-errors' => "The first line of the error message shown on [[Special:GlobalBlock]] (see [[mw:Extension:GlobalBlocking]]) if the block has been unsuccessful. After this message, a list of specific errors is shown (see [[Special:Prefixindex/MediaWiki:Globalblocking-block-bigrange|globalblocking-block-bigrange]], [[Special:Prefixindex/MediaWiki:Globalblocking-block-expiryinvalid|globalblocking-block-expiryinvalid]] etc.).
@@ -1469,7 +1474,7 @@ Bitte geben Sie eine gültige IP-Adresse ein.',
 	'globalblocking-unblock-ipinvalid' => 'Sie haben eine ungültige IP-Adresse ($1) eingegeben.
 Beachten Sie, dass Sie keinen Benutzernamen eingeben dürfen!',
 	'globalblocking-unblock-unblocked' => "Sie haben erfolgreich die IP-Adresse '''$1''' (Sperr-ID $2) entsperrt",
-	'globalblocking-unblock-intro' => 'Mit diesem Formular können Sie eine globale Sperre aufheben. [[Special:GlobalBlockList|Klicken Sie hier]], um zur Liste der globalen Sperren zurückzukehren.',
+	'globalblocking-unblock-intro' => 'Mit diesem Formular können Sie eine globale Sperre aufheben.',
 	'globalblocking-whitelist-whitelisted' => "Sie haben erfolgreich die globale Sperre der IP-Adresse '''$1''' (Sperr-ID $2) auf {{SITENAME}} aufgehoben.",
 	'globalblocking-whitelist-dewhitelisted' => "Sie haben erfolgreich die globale Sperre der IP-Adresse '''$1''' (Sperr-ID $2) auf {{SITENAME}} wieder eingeschaltet.",
 	'globalblocking-whitelist-nochange' => 'Sie haben den lokalen Status der Sperre nicht verändert.
@@ -4343,7 +4348,7 @@ $messages['ko'] = array(
 	'right-globalblock-exempt' => '전체 차단을 우회',
 );
 
-/** Ripoarisch (Ripoarisch)
+/** Colognian (Ripoarisch)
  * @author Purodha
  */
 $messages['ksh'] = array(
@@ -8183,7 +8188,7 @@ $messages['yi'] = array(
 	'removeglobalblock' => 'אויפהייבן גלאבאלן בלאק',
 );
 
-/** Yue (粵語)
+/** Cantonese (粵語)
  * @author Shinjiman
  */
 $messages['yue'] = array(
