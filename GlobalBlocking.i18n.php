@@ -2140,7 +2140,7 @@ Kui globaalne blokeering on selles vikis välja lülitatud, saavad kasutajad sel
 Põhjus: ''$3''
 Kehtivus: ''$4''",
 	'globalblocking-blocked-nopassreset' => 'Sa ei saa kasutaja salasõna lähtestada, sest oled globaalselt blokeeritud.',
-	'globalblocking-logpage' => 'Globaalne blokeerimise logi',
+	'globalblocking-logpage' => 'Globaalne blokeerimislogi',
 	'globalblocking-logpagetext' => 'Siin logis on selles vikis üles seatud ja eemaldatud globaalsed blokeeringud.
 Tuleks arvesse võtta, et globaalseid blokeeringuid saab teistes vikides üles seada ja eemaldada ning et need globaalsed blokeeringud võivad puudutada ka seda vikit.
 Kõigi jõus olevate blokeeringute nägemiseks võid vaadata [[Special:GlobalBlockList|globaalsete blokeeringute nimekirja]].',
@@ -6541,6 +6541,14 @@ $1',
 	'right-globalblock-exempt' => 'обход глобальных блокировок',
 );
 
+/** Rusyn (русиньскый язык)
+ * @author Gazeb
+ */
+$messages['rue'] = array(
+	'globalblocking-block-reason' => 'Причіна:',
+	'globalblocking-search-ip' => 'IP-адреса:',
+);
+
 /** Yakut (Саха тыла)
  * @author HalanTul
  */
@@ -6658,6 +6666,7 @@ $messages['sc'] = array(
 );
 
 /** Sicilian (Sicilianu)
+ * @author Gmelfi
  * @author Melos
  * @author Santu
  */
@@ -6706,6 +6715,7 @@ $messages['scn'] = array(
 	'globalblocking-unblock-errors' => "La scancillazzioni dû bloccu glubbali c'addumannasti non fi fatta pi {{PLURAL:$1|stu mutivu|sti  mutivi}}:",
 	'globalblocking-unblock-successsub' => 'Bloccu glubbali scancillatu cu successu',
 	'globalblocking-unblock-subtitle' => 'Scancillazzioni bloccu glubbali',
+	'globalblockstatus' => 'Statu lucali di blocca glubbali',
 	'right-globalblock-exempt' => 'Bypassa li blocchi globali',
 );
 
