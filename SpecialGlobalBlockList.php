@@ -207,7 +207,7 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 
 	function getQueryInfo() {
 		$conds = $this->mConds;
-		#$conds[] = 'gb_expiry>' . $this->mDb->addQuotes( $this->mDb->timestamp() );
+		$conds[] = 'gb_expiry>' . $this->mDb->addQuotes( $this->mDb->timestamp() );
 		return array(
 			'tables' => 'globalblocks',
 			'fields' => '*',
