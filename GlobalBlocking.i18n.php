@@ -6747,6 +6747,13 @@ $messages['sk'] = array(
 	'globalblocking-modify-intro' => 'Tento formulár môžete použiť na zmenu nastavení globálneho blokovania.',
 	'globalblocking-block-intro' => 'Táto stránka slúži na zablokovanie IP adresy na všetkých wiki.',
 	'globalblocking-block-reason' => 'Dôvod blokovania:',
+	'globalblocking-block-otherreason' => 'Iný/ďalší dôvod:',
+	'globalblocking-block-reasonotherlist' => 'Iný dôvod',
+	'globalblocking-block-reason-dropdown' => '* Bežné dôvody blokovania
+** Spam na viacerých wiki
+** Zneužitie na viacerých wiki
+** Vandalizmus',
+	'globalblocking-block-edit-dropdown' => 'Upraviť dôvody blokovania',
 	'globalblocking-block-expiry' => 'Vypršanie blokovania:',
 	'globalblocking-block-expiry-other' => 'Iný čas vypršania',
 	'globalblocking-block-expiry-otherfield' => 'Iný čas:',
