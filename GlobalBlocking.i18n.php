@@ -4354,6 +4354,14 @@ $messages['ko'] = array(
 	'right-globalblock-exempt' => '전체 차단을 우회',
 );
 
+/** Karachay-Balkar (Къарачай-Малкъар)
+ * @author Iltever
+ */
+$messages['krc'] = array(
+	'globalblocklist' => 'Глобал халда блокланнган IP-адреслени списогу',
+	'globalblockstatus' => 'Глобал блоклауланы локал халлары',
+);
+
 /** Colognian (Ripoarisch)
  * @author Purodha
  */
@@ -6849,9 +6857,19 @@ Dolu je pre informáciu záznam blokovaní:',
 );
 
 /** Slovenian (Slovenščina)
+ * @author Dbc334
  * @author Smihael
  */
 $messages['sl'] = array(
+	'globalblocking-block' => 'Globalno blokiraj IP-naslov',
+	'globalblocking-block-reason' => 'Razlog:',
+	'globalblocking-block-otherreason' => 'Drug/dodaten razlog:',
+	'globalblocking-block-reasonotherlist' => 'Drug razlog',
+	'globalblocking-block-legend' => 'Blokiraj IP-naslov globalno',
+	'globalblocking-block-submit' => 'Blokiraj ta IP-naslov globalno',
+	'globalblocking-list' => 'Seznam globalno blokiranih IP-naslovov',
+	'globalblocking-goto-block' => 'Globalno blokiraj IP-naslov',
+	'globalblocking-whitelist-reason' => 'Razlog:',
 	'globalblocking-block2-logentry' => 'globalno blokiran uporabnik [[$1]] ($2)',
 );
 
