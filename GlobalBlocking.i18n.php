@@ -8024,6 +8024,11 @@ $messages['vi'] = array(
 	'globalblocking-block-reason' => 'Lý do cấm:',
 	'globalblocking-block-otherreason' => 'Lý do khác/bổ sung:',
 	'globalblocking-block-reasonotherlist' => 'Lý do khác',
+	'globalblocking-block-reason-dropdown' => '* Lý do cấm thường gặp
+** Spam các wiki
+** Lạm dụng các wiki
+** Phá hoại',
+	'globalblocking-block-edit-dropdown' => 'Sửa đổi các lý do cấm',
 	'globalblocking-block-expiry' => 'Hết hạn cấm:',
 	'globalblocking-block-expiry-other' => 'Thời gian hết hạn khác',
 	'globalblocking-block-expiry-otherfield' => 'Thời hạn khác:',
@@ -8435,6 +8440,7 @@ $1',
 /** Traditional Chinese (‪中文(繁體)‬)
  * @author Alexsh
  * @author Gaoxuewei
+ * @author Horacewai2
  * @author Mark85296341
  * @author Shinjiman
  */
@@ -8443,8 +8449,15 @@ $messages['zh-hant'] = array(
 	'globalblocking-block' => '全域封鎖一個IP地址',
 	'globalblocking-modify-intro' => '您可以使用本表單改變全域封鎖的設置。',
 	'globalblocking-block-intro' => '您可以用這個頁面去封鎖全部wiki中的一個IP地址。',
-	'globalblocking-block-reason' => '封鎖的理由:',
-	'globalblocking-block-expiry' => '封鎖到期:',
+	'globalblocking-block-reason' => '封鎖的原因:',
+	'globalblocking-block-otherreason' => '其它／附加的理由：',
+	'globalblocking-block-reasonotherlist' => '其它理由',
+	'globalblocking-block-reason-dropdown' => '* 一般封禁原因
+** 跨維基破壞
+** 跨維基濫用
+** 破壞',
+	'globalblocking-block-edit-dropdown' => '編輯查封原因',
+	'globalblocking-block-expiry' => '封鎖到期日:',
 	'globalblocking-block-expiry-other' => '其它的到期時間',
 	'globalblocking-block-expiry-otherfield' => '其它時間:',
 	'globalblocking-block-legend' => '全域封鎖一個IP地址',
