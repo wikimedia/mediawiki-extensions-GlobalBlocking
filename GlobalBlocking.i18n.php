@@ -315,6 +315,35 @@ Die blokkeerlogboek word hieronder weergegee:',
 	'right-globalblock-exempt' => 'Omseil globale blokkades',
 );
 
+/** Gheg Albanian (Gegë)
+ * @author Mdupont
+ */
+$messages['aln'] = array(
+	'globalblocking-desc' => '[[Special:GlobalBlock|Lejon]] IP adresat që do të [[Special:GlobalBlockList|bllokuar të gjithë të shumta wikis]]',
+	'globalblocking-block' => 'Globalisht bllokojnë një adresë IP',
+	'globalblocking-modify-intro' => 'Ju mund të përdorni këtë formular për të ndryshuar parametrat e një bllok globale.',
+	'globalblocking-block-intro' => 'Ju mund të përdorni këtë faqe për të bllokuar një adresë IP në të gjitha wikis.',
+	'globalblocking-block-reason' => 'Arsyeja:',
+	'globalblocking-block-otherreason' => 'Të tjera / arsye shtesë:',
+	'globalblocking-block-reasonotherlist' => 'arsye të tjera',
+	'globalblocking-block-reason-dropdown' => '* Bllok arsye të përbashkëta spamming Crosswiki ** ** ** Crosswiki abuzimit vandalizëm',
+	'globalblocking-block-edit-dropdown' => 'bllok arsye Edit',
+	'globalblocking-block-expiry' => 'Skadimi:',
+	'globalblocking-block-expiry-other' => 'kohë të tjera të kalimit',
+	'globalblocking-block-expiry-otherfield' => 'kohë të tjera:',
+	'globalblocking-block-legend' => 'Blloku një adresë IP globalisht',
+	'globalblocking-block-options' => 'Mundësitë e zgjedhjes:',
+	'globalblocking-block-errors' => 'blloku juaj ka qenë i pasuksesshëm, për këto {{PLURAL:$1|arsye|arsye}}:',
+	'globalblocking-block-ipinvalid' => 'Adresa IP ($1) keni hyrë është i pavlefshëm. Ju lutem vini re se ju nuk mund të hyjë në një emër përdoruesi!',
+	'globalblocking-block-expiryinvalid' => 'Skadimit të hyrë ($1) është e pavlefshme.',
+	'globalblocking-block-submit' => 'Blloko këtë adresë IP globalisht',
+	'globalblocking-modify-submit' => 'Modifiko këtë bllok globale',
+	'globalblocking-block-success' => 'IP adresa $1 u bllokua me sukses në të gjitha projektet.',
+	'globalblocking-modify-success' => 'Blloku globale për $1 u ndryshua me sukses',
+	'globalblocking-block-successsub' => 'Global bllok i suksesshëm',
+	'globalblocking-modify-successsub' => 'Global bllok modifikuar me sukses',
+);
+
 /** Amharic (አማርኛ)
  * @author Codex Sinaiticus
  */
@@ -2699,7 +2728,7 @@ Por favor, teclee un enderezo IP válido.',
 	'globalblocking-goto-block' => 'Bloquear globalmente un enderezo IP',
 	'globalblocking-goto-unblock' => 'Retirar un bloqueo global',
 	'globalblocking-goto-status' => 'Cambiar o estado local dun bloqueo global',
-	'globalblocking-return' => 'Voltar á lista de bloqueos globais',
+	'globalblocking-return' => 'Volver á lista de bloqueos globais',
 	'globalblocking-notblocked' => 'O enderezo IP ($1) que inseriu non está globalmente bloqueado.',
 	'globalblocking-unblock' => 'Retirar un bloqueo global',
 	'globalblocking-unblock-ipinvalid' => 'O enderezo IP ($1) que tecleou é inválido.
@@ -2724,11 +2753,11 @@ polo que o estado local dos bloqueos globais non pode ser modificado.',
 	'globalblocking-whitelist-dewhitelisted' => "Volveu habilitar con éxito en {{SITENAME}} o bloqueo global #$2 do enderezo IP '''$1'''.",
 	'globalblocking-whitelist-successsub' => 'O estado local foi trocado con éxito',
 	'globalblocking-whitelist-nochange' => 'Non lle fixo ningún cambio ao estado local deste bloqueo.
-[[Special:GlobalBlockList|Voltar á lista dos bloqueos globais]].',
+[[Special:GlobalBlockList|Volver á lista dos bloqueos globais]].',
 	'globalblocking-whitelist-errors' => 'O cambio do estado local dun bloqueo global fracasou {{PLURAL:$1|polo seguinte motivo|polos seguintes motivos}}:',
 	'globalblocking-whitelist-intro' => 'Pode usar este formulario para editar o estado local dun bloqueo global.
 Se un bloqueo global está deshabilitado neste wiki, os usuarios que usen o enderezo IP afectado poderán editar sen problemas.
-[[Special:GlobalBlockList|Voltar á lista dos bloqueos globais]].',
+[[Special:GlobalBlockList|Volver á lista dos bloqueos globais]].',
 	'globalblocking-blocked' => "O seu enderezo IP foi bloqueado en todos os wikis por '''\$1''' (''\$2'').
 A razón que deu foi ''\"\$3\"''. O bloqueo, ''\$4''.",
 	'globalblocking-blocked-nopassreset' => 'Non pode restablecer o contrasinal do usuario porque vostede está bloqueado globalmente.',
