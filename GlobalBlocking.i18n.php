@@ -3749,6 +3749,13 @@ Log pemblokiran disediakan di bawah ini sebagai rujukan:',
 	'right-globalblock-exempt' => 'Tidak dikenakan pemblokiran global',
 );
 
+/** Igbo (Igbo) */
+$messages['ig'] = array(
+	'globalblocking-block-reason' => 'Mgbaghaputa:',
+	'globalblocking-unblock-reason' => 'Mgbaghaputa:',
+	'globalblocking-whitelist-reason' => 'Mgbaghaputa:',
+);
+
 /** Ido (Ido)
  * @author Malafaya
  */
@@ -5778,6 +5785,7 @@ $messages['os'] = array(
  * @author Xqt
  */
 $messages['pdc'] = array(
+	'globalblocking-block-reasonotherlist' => 'Annerer Grund',
 	'globalblocking-block-expiry-otherfield' => 'Annre Zeit:',
 	'globalblocking-list-modify' => 'ennere',
 	'globalblocking-unblock-reason' => 'Grund:',
