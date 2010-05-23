@@ -357,7 +357,9 @@ $messages['am'] = array(
  * @author Juanpabl
  */
 $messages['an'] = array(
+	'globalblocking-block-reason' => 'Razón:',
 	'globalblocking-unblock-reason' => 'Razón:',
+	'globalblocking-whitelist-reason' => 'Razón:',
 	'right-globalblock' => 'Fer bloqueyos globals',
 	'right-globalunblock' => 'Sacar bloqueyos globals',
 	'right-globalblock-whitelist' => 'Desautibar localment os bloqueyos globals',
@@ -795,7 +797,7 @@ $messages['bg'] = array(
 	'globalblocking-block' => 'Глобално блокиране на IP-адрес',
 	'globalblocking-modify-intro' => 'Може да използвате тази форма, за да промените настройките на глобално блокиране.',
 	'globalblocking-block-intro' => 'Чрез тази страница може да се блокира IP-адрес едновременно във всички уикита.',
-	'globalblocking-block-reason' => 'Причина за блокирането:',
+	'globalblocking-block-reason' => 'Причина:',
 	'globalblocking-block-expiry' => 'Изтичане на блокирането:',
 	'globalblocking-block-expiry-other' => 'Друг срок за изтичане',
 	'globalblocking-block-expiry-otherfield' => 'Друг срок:',
