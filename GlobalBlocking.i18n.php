@@ -978,6 +978,7 @@ Mar plij bezit war evezh, ne c'halloc'h ket lakaat anv un implijer !",
 	'globalblocking-whitelist-statuslabel' => 'Diweredekaat ar stankadenn hollek-mañ war {{SITENAME}}',
 	'globalblocking-whitelist-submit' => "Kemmañ ar statud lec'hel",
 	'globalblocking-whitelist-whitelisted' => "Diweredekaet ho peus ar stankadenn hollek #$2 evit ar chomlec'h IP '''$1''' war {{SITENAME}}.",
+	'globalblocking-whitelist-dewhitelisted' => "Adgweredekaet ho peus ar stankadenn hollek #$2 evit ar chomlec'h IP '''$1''' war {{SITENAME}}.",
 	'globalblocking-whitelist-successsub' => "Kemmet eo bet ar statud lec'hel",
 	'globalblocking-whitelist-errors' => "Ar c'hemm eus statud lec'hel ur stankadenn hollek en deus c'hwitet evit an {{PLURAL:$1|abeg|abegoù}} da-heul :",
 	'globalblocking-blocked' => "Stanket eo bet ho chomlec'h IP war an holl wikioù gant '''\$1''' (''\$2'').
