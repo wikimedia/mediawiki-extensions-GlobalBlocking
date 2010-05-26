@@ -45,8 +45,6 @@ class GlobalBlocking {
 			}
 
 			$expiry = Block::formatExpiry( $block->gb_expiry );
-	
-			wfLoadExtensionMessages( 'GlobalBlocking' );
 			
 			$display_wiki = self::getWikiName( $block->gb_by_wiki );
 			$user_display = self::maybeLinkUserpage( $block->gb_by_wiki, $block->gb_by );
@@ -285,7 +283,6 @@ class GlobalBlocking {
 		global $wgUser;
 		
 		if ( GlobalBlocking::getUserBlockErrors( $wgUser, wfGetIp() ) ) {
-			wfLoadExtensionMessages( 'GlobalBlocking' );
 			$error = wfMsg( 'globalblocking-blocked-nopassreset' );
 			return false;
 		}
@@ -310,7 +307,6 @@ class GlobalBlocking {
 			return true;
 		}
 
-		wfLoadExtensionMessages( 'GlobalBlocking' );
 		$msg[] = Html::rawElement(
 			'span',
 			array( 'class' => 'mw-globalblock-loglink plainlinks' ),

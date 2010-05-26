@@ -4,7 +4,6 @@ class SpecialRemoveGlobalBlock extends SpecialPage {
 	public $mAddress, $mReason;
 
 	function __construct() {
-		wfLoadExtensionMessages('GlobalBlocking');
 		SpecialPage::SpecialPage( 'RemoveGlobalBlock', 'globalunblock' );
 	}
 
