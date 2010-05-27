@@ -4,6 +4,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 	public $mSearchIP, $mSearch;
 
 	function __construct() {
+		wfLoadExtensionMessages('GlobalBlocking');
 		parent::__construct( 'GlobalBlockList' );
 	}
 

@@ -6,6 +6,7 @@ class SpecialGlobalBlock extends SpecialPage {
 	public $mAddress, $mReason, $mExpiry, $mAnonOnly;
 
 	function __construct() {
+		wfLoadExtensionMessages('GlobalBlocking');
 		SpecialPage::SpecialPage( 'GlobalBlock', 'globalblock' );
 	}
 
