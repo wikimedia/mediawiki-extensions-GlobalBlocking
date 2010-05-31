@@ -4779,6 +4779,14 @@ $messages['lt'] = array(
 	'globalblock' => 'Visuotinai blokuoti IP adresą',
 );
 
+/** Latvian (Latviešu)
+ * @author GreenZeb
+ */
+$messages['lv'] = array(
+	'globalblocking-list' => 'Globāli bloķēto IP adrešu saraksts',
+	'right-globalblock' => 'Veikt lietotāju globālu bloķēšanu',
+);
+
 /** Eastern Mari (Олык Марий)
  * @author Сай
  */
@@ -5199,6 +5207,8 @@ Sekatan ini ''\$4''.",
  * @author Chrisportelli
  */
 $messages['mt'] = array(
+	'globalblocking-unblock-intro' => "Tista' tuża' din il-formola sabiex tneħħi blokk globali.",
+	'globalblocking-whitelist' => 'Stat lokali tal-blokki globali',
 	'globalblocking-blocked' => "L-indrizz IP tiegħek ġie imblukkat fuq il-wikis kollha minn '''\$1''' (''\$2'').
 Ir-raġuni li ngħatat kienet ''\"\$3\"''.
 Il-blokk huwa ''\$4''.",
