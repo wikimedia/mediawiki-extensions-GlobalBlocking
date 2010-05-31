@@ -6037,6 +6037,8 @@ Për vëdde tùit ij blocagi globaj ativ, a peul vëdde la [[Special:GlobalBlock
  * @author Ahmed-Najib-Biabani-Ibrahimkhel
  */
 $messages['ps'] = array(
+	'globalblocking-block-reason' => 'سبب:',
+	'globalblocking-block-expiry' => 'د پای نېټه:',
 	'globalblocking-block-expiry-otherfield' => 'بل وخت:',
 	'globalblocking-block-options' => 'خوښنې:',
 	'globalblocking-search-ip' => 'IP پته:',
