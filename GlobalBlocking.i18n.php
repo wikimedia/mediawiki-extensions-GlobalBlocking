@@ -4279,6 +4279,7 @@ $messages['km'] = array(
  * @author Nayvik
  */
 $messages['kn'] = array(
+	'globalblocking-block-reason' => 'ಕಾರಣ:',
 	'globalblocking-unblock-reason' => 'ಕಾರಣ:',
 	'globalblocking-whitelist-reason' => 'ಕಾರಣ:',
 );
@@ -5816,6 +5817,7 @@ $messages['pdc'] = array(
 /** Polish (Polski)
  * @author Derbeth
  * @author Leinad
+ * @author Nux
  * @author Sp5uhe
  */
 $messages['pl'] = array(
@@ -5876,7 +5878,7 @@ Zwróć uwagę na to, że nie możesz wprowadzić nazwy użytkownika!',
 	'globalblocking-unblock-legend' => 'Zdejmowanie globalnej blokady',
 	'globalblocking-unblock-submit' => 'Zdejmij globalną blokadę',
 	'globalblocking-unblock-reason' => 'Powód',
-	'globalblocking-unblock-unblocked' => "{{GENDER:|Zdjąłeś|Zdjęłaś}} globalną blokadę $2 dla adresu IP '''$1'''",
+	'globalblocking-unblock-unblocked' => "Globalna blokada $2 dla adresu IP '''$1''' została zdjęta.",
 	'globalblocking-unblock-errors' => 'Nie udało się zdjąć globalnej blokady z {{PLURAL:$1|poniższego powodu|poniższych powodów}}:',
 	'globalblocking-unblock-successsub' => 'Globalna blokada została zdjęta',
 	'globalblocking-unblock-subtitle' => 'Zdejmowanie globalnej blokady',
