@@ -4820,7 +4820,7 @@ $messages['mk'] = array(
 	'globalblocking-block-errors' => 'Вашето блокирање беше неуспешно, од {{PLURAL:$1|следнава причина|следниве причини}}:',
 	'globalblocking-block-ipinvalid' => 'IP-адресата ($1) која ја внесовте не е важечка.
 Напомена: не може да се внесува корисничко име!',
-	'globalblocking-block-expiryinvalid' => 'Рокот на истекување кој го внесовте ($1) не е валиден.',
+	'globalblocking-block-expiryinvalid' => 'Рокот на истекување кој го внесовте ($1) не е важечки.',
 	'globalblocking-block-submit' => 'Глобално блокирање на оваа IP-адреса',
 	'globalblocking-modify-submit' => 'Измени го овој глобален блок',
 	'globalblocking-block-success' => 'IP-адресата $1 е успешно блокирана на сите проекти.',
