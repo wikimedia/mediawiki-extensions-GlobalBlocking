@@ -6050,6 +6050,8 @@ Për vëdde tùit ij blocagi globaj ativ, a peul vëdde la [[Special:GlobalBlock
  */
 $messages['ps'] = array(
 	'globalblocking-block-reason' => 'سبب:',
+	'globalblocking-block-otherreason' => 'بل/اضافي سبب:',
+	'globalblocking-block-reasonotherlist' => 'بل سبب',
 	'globalblocking-block-expiry' => 'د پای نېټه:',
 	'globalblocking-block-expiry-otherfield' => 'بل وخت:',
 	'globalblocking-block-options' => 'خوښنې:',
@@ -6944,8 +6946,12 @@ $messages['sr-ec'] = array(
 	'globalblocking-block' => 'Глобално блокирајте ИП адресу',
 	'globalblocking-modify-intro' => 'Овом формом мењате подешавања глобалног блока.',
 	'globalblocking-block-intro' => 'Можете користити ову страницу да блокирате ИП адресу на свим викијима.',
-	'globalblocking-block-reason' => 'Разлог блока:',
-	'globalblocking-block-expiry' => 'Блок истиче:',
+	'globalblocking-block-reason' => 'Разлог:',
+	'globalblocking-block-reason-dropdown' => '* Уобичајени разлози за блок
+** Међувики спам
+** Међувики малтретирање
+** Вандализам',
+	'globalblocking-block-expiry' => 'Истек:',
 	'globalblocking-block-expiry-other' => 'Друго време истека',
 	'globalblocking-block-expiry-otherfield' => 'Друго време:',
 	'globalblocking-block-legend' => 'Глобално блокирање IP адресе',
@@ -6984,13 +6990,15 @@ $messages['sr-ec'] = array(
 	'globalblocking-unblock-errors' => 'Не можете уклонити глобални блок за ту ИП адресу због {{PLURAL:$1|следећег разлога|следећих разлога}}:',
 	'globalblocking-unblock-successsub' => 'Глобални блок успешно уклоњен',
 	'globalblocking-unblock-subtitle' => 'Уклањање глобалног блока',
-	'globalblocking-whitelist-reason' => 'Разлог за промену:',
+	'globalblocking-whitelist-reason' => 'Разлог:',
 	'globalblocking-blocked' => "Ваша ИП адреса је блокирана на свим Викимедијиним викијима. Корисник који је блокирао '''$1''' (''$2'').
 Разлог за блокаду је „''$3''”. 
 Блок ''$4''.",
 	'globalblocking-logpage' => 'Историја глобалних блокова',
 	'globalblocking-block-logentry' => 'глобално блокирао [[$1]] са временом истицања од $2',
 	'globalblocking-unblock-logentry' => 'уклонио глобални блок за [[$1]]',
+	'globalblocking-logentry-expiry' => 'истиче $1',
+	'globalblocking-logentry-noexpiry' => 'није назначен рок истека',
 	'globalblocklist' => 'Списак глобално блокираних ИП адреса',
 	'globalblock' => 'Глобално блокирајте ИП адресу',
 	'removeglobalblock' => 'Уклони глобални блок',
