@@ -2,7 +2,8 @@
 /**
  * Aliases for Special:GlobalBlock
  *
- * @addtogroup Extensions
+ * @file
+ * @ingroup Extensions
  */
 
 $aliases = array();

@@ -5,7 +5,9 @@ if ( ! defined( 'MEDIAWIKI' ) )
 /**#@+
  * Provides a way to block an IP Address over multiple wikis sharing a database.
  * Requires
- * @addtogroup Extensions
+ *
+ * @file
+ * @ingroup Extensions
  *
  * @link http://www.mediawiki.org/wiki/Extension:GlobalBlocking Documentation
  *
