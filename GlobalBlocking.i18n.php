@@ -1246,6 +1246,11 @@ Per més detalls, a continuació es mostra el registre de bloquejos:',
 	'right-globalblock-exempt' => 'Obvia els bloquejos globals',
 );
 
+/** Chechen (Нохчийн) */
+$messages['ce'] = array(
+	'globalblocking-unblock-reason' => 'Бахьан:',
+);
+
 /** Czech (Česky)
  * @author Li-sung
  * @author Mormegil
@@ -4102,6 +4107,7 @@ Kanggo mirsani kabèh pamblokiran global sing aktif wektu iki, pirsani ing[[Spec
 
 /** Georgian (ქართული)
  * @author BRUTE
+ * @author ITshnik
  * @author Malafaya
  * @author გიორგიმელა
  */
@@ -4203,10 +4209,12 @@ $1',
 	'globalblocking-block2-logentry' => 'გლობალურად დაბლოკილია [[$1]] ($2)',
 	'globalblocking-unblock-logentry' => 'მოხსნილია გლობალური ბლოკირება [[$1]]-ზე',
 	'globalblocking-whitelist-logentry' => 'ლოკალურად გათიშულია ბლოკი [[$1]]',
+	'globalblocking-dewhitelist-logentry' => 'გლობალური ბლოკირება ხელახლა ჩართულია [[$1]]ზე ლოკალურად',
 	'globalblocking-modify-logentry' => 'შეცვალა გლობალური ბლოკი [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'ვადა გასდის $1',
 	'globalblocking-logentry-noexpiry' => 'ვადა არ არის დანიშნული',
 	'globalblocking-loglink' => 'IP-მისამართი დაბლოკა $1 -მა გლობალურად ([[{{#Special:GlobalBlockList}}/$1|დამ. ინფ.]]).',
+	'globalblocking-showlog' => 'ეს IP მისამართი დაბლოკილი იყო ადრე. ქვემოთ მოყვანილია ამონაწერი ბლოკირებათა ჟურნალიდან:',
 	'globalblocklist' => 'გლობალურად დაბლოკილი IP მისამართების სია',
 	'globalblock' => 'IP მისამართის გლობალური ბლოკირება',
 	'globalblockstatus' => 'გლობალური ბლოკირების ლოკალური სტატუსი',
@@ -4214,6 +4222,7 @@ $1',
 	'right-globalblock' => 'გლობალური ბლოკირების გაკეთება',
 	'right-globalunblock' => 'გლობალური ბლოკირების მოხსნა',
 	'right-globalblock-whitelist' => 'გლობალური ბლოკირების ლოკალური გამორთვა',
+	'right-globalblock-exempt' => 'გლობალური ბლოკირების გვერდის ავლა',
 );
 
 /** Khmer (ភាសាខ្មែរ)
