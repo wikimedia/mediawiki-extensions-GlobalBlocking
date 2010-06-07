@@ -6989,7 +6989,9 @@ $messages['sr-ec'] = array(
 	'globalblocking-list-anononly' => 'само анонимне',
 	'globalblocking-list-unblock' => 'одблокирај',
 	'globalblocking-list-whitelist' => 'локални статус',
+	'globalblocking-goto-block' => 'Блокирај IP адресу глобално',
 	'globalblocking-goto-unblock' => 'Уклони глобални блок',
+	'globalblocking-return' => 'Врати се на списак глобалних блокова',
 	'globalblocking-unblock' => 'Уклони глобални блок',
 	'globalblocking-unblock-ipinvalid' => 'ИП адреса ($1) коју сте унели није исправна.
 Запамтите да не можете уносити корисничка имена!',
@@ -7000,7 +7002,10 @@ $messages['sr-ec'] = array(
 	'globalblocking-unblock-errors' => 'Не можете уклонити глобални блок за ту ИП адресу због {{PLURAL:$1|следећег разлога|следећих разлога}}:',
 	'globalblocking-unblock-successsub' => 'Глобални блок успешно уклоњен',
 	'globalblocking-unblock-subtitle' => 'Уклањање глобалног блока',
+	'globalblocking-unblock-intro' => 'Можете користити ову форму да уклоните глобални блок.',
 	'globalblocking-whitelist-reason' => 'Разлог:',
+	'globalblocking-whitelist-status' => 'Локални статус:',
+	'globalblocking-whitelist-submit' => 'Промени локални статус',
 	'globalblocking-blocked' => "Ваша ИП адреса је блокирана на свим Викимедијиним викијима. Корисник који је блокирао '''$1''' (''$2'').
 Разлог за блокаду је „''$3''”. 
 Блок ''$4''.",
