@@ -363,7 +363,7 @@ $messages['an'] = array(
 	'globalblocking-whitelist-reason' => 'Razón:',
 	'right-globalblock' => 'Fer bloqueyos globals',
 	'right-globalunblock' => 'Sacar bloqueyos globals',
-	'right-globalblock-whitelist' => 'Desautibar localment os bloqueyos globals',
+	'right-globalblock-whitelist' => 'Desactivar localment os bloqueyos globals',
 );
 
 /** Arabic (العربية)
@@ -902,9 +902,15 @@ $1',
  * @author Bellayet
  */
 $messages['bn'] = array(
+	'globalblocking-block-reason' => 'কারণ:',
+	'globalblocking-block-otherreason' => 'অন্য/বাড়তি কারণ:',
+	'globalblocking-block-reasonotherlist' => 'অন্য কারণ:',
+	'globalblocking-block-edit-dropdown' => 'বাধাদানের কারণ সম্পাদনা',
+	'globalblocking-block-expiry' => 'মেয়াদ উত্তীর্ণ:',
 	'globalblocking-list-unblock' => 'অপসারণ',
 	'globalblocking-list-modify' => 'পরিবর্তন',
 	'globalblocking-unblock-reason' => 'কারণ:',
+	'globalblocking-whitelist-reason' => 'কারণ:',
 	'globalblocking-whitelist-status' => 'স্থানীয় অবস্থা:',
 );
 
