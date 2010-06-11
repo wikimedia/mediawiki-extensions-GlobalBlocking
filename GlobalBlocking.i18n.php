@@ -3788,7 +3788,7 @@ $messages['io'] = array(
 	'globalblocking-list-anononly' => 'nur anonima',
 	'globalblocking-list-unblock' => 'forigar',
 	'globalblocking-unblock-reason' => 'Motivo:',
-	'globalblocking-whitelist-reason' => 'Motivo di la chanjo:',
+	'globalblocking-whitelist-reason' => 'Motivo:',
 );
 
 /** Icelandic (Íslenska)
@@ -4702,7 +4702,7 @@ De kins de bestaonde blok betrachte in de [[Special:GlobalBlockList|lies mit glo
 	'globalblocking-list-intro' => "Dit is 'n lies mit alle globale blokkades die op 't moment actief zeen.
 Sommige blokkades zeen gemarkeerd es lokaal opgeheve.
 Dit betekent det ze op andere sites van toepassing zeen, mer det 'ne lokale beheerder haet beslaote det de blokkade op deze wiki neet van toepassing is.",
-	'globalblocking-list' => "Lies mit globaal vasse IP'ers.",
+	'globalblocking-list' => 'Lies van globaal geblokkeerde IP-adresse',
 	'globalblocking-search-legend' => "Nao 'ne globale blok zeuke",
 	'globalblocking-search-ip' => 'IP-adres:',
 	'globalblocking-search-submit' => 'Nao blokkaasj zeuke',
@@ -4732,7 +4732,7 @@ Lèt óp: de kins geine gebroekersnaam ingaeve!",
 	'globalblocking-unblock-successsub' => 'De globale blok is gewis',
 	'globalblocking-unblock-subtitle' => 'Globale blok aan t wisse',
 	'globalblocking-unblock-intro' => "De kins dit formeleer gebroeke om 'ne globaale blok op te heffe.",
-	'globalblocking-whitelist' => 'Lokale status ven global bloks',
+	'globalblocking-whitelist' => 'Lokale status van globale bloks',
 	'globalblocking-whitelist-notapplied' => 'Globaal bloks waere neet toegepas op deze wiki, dus de lokale status van globaal bloks kan neet verangerdj waere.',
 	'globalblocking-whitelist-legend' => 'Lokale status angere',
 	'globalblocking-whitelist-reason' => 'Reeje:',
@@ -4763,7 +4763,7 @@ Alle globale blokkades stoan in de [[Special:GlobalBlockList|liest met globale b
 	'globalblocking-modify-logentry' => 'haet de globale blok veur [[$1]] aangepas ($2)',
 	'globalblocking-logentry-expiry' => 'verlöp $1',
 	'globalblocking-logentry-noexpiry' => 'geine doer gezatj',
-	'globalblocklist' => 'Lies ven globaal geblókkieërdje IP-adrèsser',
+	'globalblocklist' => 'Lies van globaal geblokkeerde IP-adresse',
 	'globalblock' => "'n IP-adres globaal zitte",
 	'globalblockstatus' => 'Lokaal status ven globaal bloks',
 	'removeglobalblock' => 'Globaal blok wisse',
