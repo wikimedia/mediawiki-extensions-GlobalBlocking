@@ -8500,7 +8500,7 @@ $1',
 	'globalblocking-list-noresults' => '请求的IP地址没有被封锁。',
 	'globalblocking-goto-block' => '全域封锁一个 IP 地址',
 	'globalblocking-goto-unblock' => '移除一个全域封锁',
-	'globalblocking-goto-status' => '改一个全域封锁?本地状态',
+	'globalblocking-goto-status' => '修改全域封锁的本地状态',
 	'globalblocking-return' => '回到全域封锁名单',
 	'globalblocking-notblocked' => '您所输入的 IP 地址 （$1） 并无全域封锁。',
 	'globalblocking-unblock' => '移除一个全域封锁',
@@ -8562,6 +8562,7 @@ $1',
  * @author Alexsh
  * @author Gaoxuewei
  * @author Horacewai2
+ * @author Liangent
  * @author Mark85296341
  * @author Shinjiman
  */
@@ -8617,7 +8618,7 @@ $1',
 	'globalblocking-list-noresults' => '請求的IP地址沒有被封鎖。',
 	'globalblocking-goto-block' => '全域封鎖一個 IP 地址',
 	'globalblocking-goto-unblock' => '移除全域封鎖',
-	'globalblocking-goto-status' => '改一個全域封鎖嘅本地狀態',
+	'globalblocking-goto-status' => '修改全域封鎖的本地狀態',
 	'globalblocking-return' => '回到全域封鎖清單',
 	'globalblocking-notblocked' => '您輸入的IP位址（$1）尚未被全域封鎖。',
 	'globalblocking-unblock' => '移除一個全域封鎖',
