@@ -8345,6 +8345,7 @@ $messages['yi'] = array(
 	'globalblocking-block-edit-dropdown' => 'רעדאַקטירן בלאקירונג סיבות',
 	'globalblocking-block-expiry' => 'אויסלאז:',
 	'globalblocking-unblock-reason' => 'אורזאַך:',
+	'globalblocking-whitelist-reason' => 'אורזאַך:',
 	'removeglobalblock' => 'אויפהייבן גלאבאלן בלאק',
 );
 
