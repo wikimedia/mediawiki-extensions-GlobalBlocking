@@ -1548,6 +1548,7 @@ $messages['diq'] = array(
 	'globalblocking-modify-intro' => 'qey vurnayişê eyarê blokeya globali şıma eşkêni no form bışuxulni.',
 	'globalblocking-block-intro' => 'şıma pê no peleşkêni yew IPadres heme wikiyan de bloke bıker.',
 	'globalblocking-block-reason' => 'Sebeb:',
+	'globalblocking-block-reasonotherlist' => 'Sebebo bin',
 	'globalblocking-block-expiry' => 'Çi wext de qediyeno:',
 	'globalblocking-block-expiry-other' => 'wexê qediyayişi yo bin',
 	'globalblocking-block-expiry-otherfield' => 'wexto bin:',
