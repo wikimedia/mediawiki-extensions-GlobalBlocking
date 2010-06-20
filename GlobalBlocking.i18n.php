@@ -1548,7 +1548,13 @@ $messages['diq'] = array(
 	'globalblocking-modify-intro' => 'qey vurnayişê eyarê blokeya globali şıma eşkêni no form bışuxulni.',
 	'globalblocking-block-intro' => 'şıma pê no peleşkêni yew IPadres heme wikiyan de bloke bıker.',
 	'globalblocking-block-reason' => 'Sebeb:',
+	'globalblocking-block-otherreason' => 'Sebebo bin:',
 	'globalblocking-block-reasonotherlist' => 'Sebebo bin',
+	'globalblocking-block-reason-dropdown' => '* Sebebanê blok kerdışi
+** Crosswiki spam kerdış
+** Crosswiki xeripnayış
+** Vandalizm kerdış',
+	'globalblocking-block-edit-dropdown' => 'Sebebê blokî bivurne',
 	'globalblocking-block-expiry' => 'Çi wext de qediyeno:',
 	'globalblocking-block-expiry-other' => 'wexê qediyayişi yo bin',
 	'globalblocking-block-expiry-otherfield' => 'wexto bin:',
@@ -6641,6 +6647,7 @@ $1',
 $messages['rue'] = array(
 	'globalblocking-block-reason' => 'Причіна:',
 	'globalblocking-search-ip' => 'IP-адреса:',
+	'globalblocking-whitelist-reason' => 'Причіна:',
 );
 
 /** Yakut (Саха тыла)
@@ -6964,10 +6971,13 @@ $messages['sr-ec'] = array(
 	'globalblocking-modify-intro' => 'Овом формом мењате подешавања глобалног блока.',
 	'globalblocking-block-intro' => 'Можете користити ову страницу да блокирате ИП адресу на свим викијима.',
 	'globalblocking-block-reason' => 'Разлог:',
+	'globalblocking-block-otherreason' => 'Други/додатни разлог:',
+	'globalblocking-block-reasonotherlist' => 'Други разлог',
 	'globalblocking-block-reason-dropdown' => '* Уобичајени разлози за блок
 ** Међувики спам
 ** Међувики малтретирање
 ** Вандализам',
+	'globalblocking-block-edit-dropdown' => 'Измени разлоге за блок',
 	'globalblocking-block-expiry' => 'Истек:',
 	'globalblocking-block-expiry-other' => 'Друго време истека',
 	'globalblocking-block-expiry-otherfield' => 'Друго време:',
