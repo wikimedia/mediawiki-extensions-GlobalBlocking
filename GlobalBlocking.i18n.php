@@ -7047,10 +7047,13 @@ $messages['sr-el'] = array(
 	'globalblocking-modify-intro' => 'Ovom formom menjate podešavanja globalnog bloka.',
 	'globalblocking-block-intro' => 'Možete koristiti ovu stranicu da blokirate IP adresu na svim vikijima.',
 	'globalblocking-block-reason' => 'Razlog:',
+	'globalblocking-block-otherreason' => 'Drugi/dodatni razlog:',
+	'globalblocking-block-reasonotherlist' => 'Drugi razlog',
 	'globalblocking-block-reason-dropdown' => '* Uobičajeni razlozi za blok
 ** Međuviki spam
 ** Međuviki maltretiranje
 ** Vandalizam',
+	'globalblocking-block-edit-dropdown' => 'Izmeni razloge za blok',
 	'globalblocking-block-expiry' => 'Istek:',
 	'globalblocking-block-expiry-other' => 'Drugo vreme isteka',
 	'globalblocking-block-expiry-otherfield' => 'Drugo vreme:',
