@@ -2964,17 +2964,25 @@ $messages['haw'] = array(
  * @author Agbad
  * @author Rotemliss
  * @author YaronSh
+ * @author Yonidebest
  */
 $messages['he'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|אפשרות]] ל[[Special:GlobalBlockList|חסימה גלובלית בין אתרי הוויקי]] של כתובות IP',
 	'globalblocking-block' => 'חסימה גלובלית של כתובת IP',
 	'globalblocking-modify-intro' => 'באפשרותכם להשתמש בטופס זה כדי לשנות את ההגדרות של חסימה גלובלית.',
 	'globalblocking-block-intro' => 'באפשרותכם להשתמש בדף זה כדי לחסום כתובת IP בכל אתרי הוויקי.',
-	'globalblocking-block-reason' => 'סיבה לחסימה:',
-	'globalblocking-block-expiry' => 'פקיעת החסימה:',
+	'globalblocking-block-reason' => 'סיבה:',
+	'globalblocking-block-otherreason' => 'סיבה נוספת/אחרת:',
+	'globalblocking-block-reasonotherlist' => 'סיבה אחרת',
+	'globalblocking-block-reason-dropdown' => '* סיבות חסימה נפוצות
+** ספאם בין-מיזמי
+** התעללות בין-מיזמית
+** ונדליזם',
+	'globalblocking-block-edit-dropdown' => 'עריכת סיבות החסימה',
+	'globalblocking-block-expiry' => 'זמן פקיעה:',
 	'globalblocking-block-expiry-other' => 'זמן פקיעה אחר',
 	'globalblocking-block-expiry-otherfield' => 'זמן אחר:',
-	'globalblocking-block-legend' => 'חסימה גלובלית של משתמש',
+	'globalblocking-block-legend' => 'חסימה גלובלית של כתובת IP',
 	'globalblocking-block-options' => 'אפשרויות:',
 	'globalblocking-block-errors' => 'החסימה נכשלה בגלל {{PLURAL:$1|הסיבה הבאה|הסיבות הבאות}}:',
 	'globalblocking-block-ipinvalid' => 'כתובת ה־IP שהקלדתם ($1) אינה תקינה.
@@ -3005,6 +3013,7 @@ $messages['he'] = array(
 	'globalblocking-list-whitelisted' => 'בוטל באופן מקומי על ידי $1: $2',
 	'globalblocking-list-whitelist' => 'מצב מקומי',
 	'globalblocking-list-modify' => 'שינוי',
+	'globalblocking-list-noresults' => 'כתובת ה־IP המבוקשת אינה חסומה.',
 	'globalblocking-goto-block' => 'חסימה גלובלית של כתובת IP',
 	'globalblocking-goto-unblock' => 'הסרת חסימה גלובלית',
 	'globalblocking-goto-status' => 'שינוי המצב המקומי של חסימה גלובלית',
@@ -3020,7 +3029,7 @@ $messages['he'] = array(
 	'globalblocking-unblock-errors' => 'הסרת החסימה הגלובלית נכשלה בגלל {{PLURAL:$1|הסיבה הבאה|הסיבות הבאות}}:',
 	'globalblocking-unblock-successsub' => 'החסימה הגלובלית הוסרה בהצלחה',
 	'globalblocking-unblock-subtitle' => 'הסרת חסימה גלובלית',
-	'globalblocking-unblock-intro' => 'באפשרותכם להשתמש בטופס זה כדי להסיר חסימה גלובלית. [[Special:GlobalBlockList|חזרה לרשימת החסימות הגלובליות]].',
+	'globalblocking-unblock-intro' => 'ניתן להיעזר בטופס זה כדי להסיר חסימה גלובלית.',
 	'globalblocking-whitelist' => 'המצב המקומי של החסימות הגלובליות',
 	'globalblocking-whitelist-notapplied' => 'חסימות גלובליות אינן פעילות באתר זה,
 לכן לא ניתן לשנות את המצב המקומי שלהן.',
@@ -3051,6 +3060,8 @@ $messages['he'] = array(
 	'globalblocking-modify-logentry' => 'שינה את החסימה הגלובלית של [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'עם זמן פקיעה של $1',
 	'globalblocking-logentry-noexpiry' => 'ללא זמן פקיעה',
+	'globalblocking-loglink' => 'כתובת ה־IP &rlm;$1 חסום באופן גלובלי ([[{{#Special:GlobalBlockList}}/$1|פרטים נוספים]]).',
+	'globalblocking-showlog' => 'כתובת IP זו נחסמה בעבר. להלן יומן החסימות:',
 	'globalblocklist' => 'רשימת כתובות IP החסומות באופן גלובלי',
 	'globalblock' => 'חסימת כתובת IP באופן גלובלי',
 	'globalblockstatus' => 'המצב המקומי של החסימות הגלובליות',
