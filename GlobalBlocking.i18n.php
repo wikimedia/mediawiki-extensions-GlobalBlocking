@@ -6346,14 +6346,15 @@ $messages['qu'] = array(
 );
 
 /** Romanian (Română)
+ * @author Cin
  * @author Firilacroco
  * @author KlaudiuMihaila
  * @author Mihai
  */
 $messages['ro'] = array(
 	'globalblocking-block' => 'Blochează global o adresă IP',
-	'globalblocking-block-intro' => 'Această pagină permite blocarea unei adrese IP pe toate proiectele wiki.',
-	'globalblocking-block-reason' => 'Motiv pentru această blocare:',
+	'globalblocking-block-intro' => 'Puteţi utiliza această pagină pentru a bloca o adresă IP pe toate wikiurile.',
+	'globalblocking-block-reason' => 'Motiv:',
 	'globalblocking-block-expiry' => 'Expirarea blocării:',
 	'globalblocking-block-expiry-other' => 'Alte termene de expirare',
 	'globalblocking-block-expiry-otherfield' => 'Alt termen:',
@@ -6379,7 +6380,7 @@ Atenție, nu poate fi introdus un nume de utilizator!',
 	'globalblocking-list-anononly' => 'doar anonimi',
 	'globalblocking-list-unblock' => 'elimină',
 	'globalblocking-list-whitelisted' => 'dezactivat local de $1: $2',
-	'globalblocking-list-whitelist' => 'statut local',
+	'globalblocking-list-whitelist' => 'stare locală',
 	'globalblocking-list-modify' => 'modifică',
 	'globalblocking-goto-block' => 'Blochează global o adresă IP',
 	'globalblocking-goto-unblock' => 'Elimină o blocare globală',
@@ -6400,7 +6401,7 @@ Atenție, nu poate fi introdus un nume de utilizator!',
 	'globalblocking-whitelist-notapplied' => 'Blocările globale nu se aplică în acest wiki,
 deci statutul local al blocărilor globale nu poate fi modificat.',
 	'globalblocking-whitelist-legend' => 'Schimbă statut local',
-	'globalblocking-whitelist-reason' => 'Motiv pentru schimbare:',
+	'globalblocking-whitelist-reason' => 'Motiv:',
 	'globalblocking-whitelist-status' => 'Statut local:',
 	'globalblocking-whitelist-statuslabel' => 'Dezactivează această blocare gloablă pe {{SITENAME}}',
 	'globalblocking-whitelist-submit' => 'Schimbă statut local',
