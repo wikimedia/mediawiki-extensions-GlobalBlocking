@@ -6350,10 +6350,11 @@ $messages['qu'] = array(
  * @author Firilacroco
  * @author KlaudiuMihaila
  * @author Mihai
+ * @author Minisarm
  */
 $messages['ro'] = array(
 	'globalblocking-block' => 'Blochează global o adresă IP',
-	'globalblocking-block-intro' => 'Puteţi utiliza această pagină pentru a bloca o adresă IP pe toate wikiurile.',
+	'globalblocking-block-intro' => 'Această pagină permite blocarea unei adrese IP pe toate proiectele wiki.',
 	'globalblocking-block-reason' => 'Motiv:',
 	'globalblocking-block-expiry' => 'Expirarea blocării:',
 	'globalblocking-block-expiry-other' => 'Alte termene de expirare',
@@ -6380,7 +6381,7 @@ Atenție, nu poate fi introdus un nume de utilizator!',
 	'globalblocking-list-anononly' => 'doar anonimi',
 	'globalblocking-list-unblock' => 'elimină',
 	'globalblocking-list-whitelisted' => 'dezactivat local de $1: $2',
-	'globalblocking-list-whitelist' => 'stare locală',
+	'globalblocking-list-whitelist' => 'statut local',
 	'globalblocking-list-modify' => 'modifică',
 	'globalblocking-goto-block' => 'Blochează global o adresă IP',
 	'globalblocking-goto-unblock' => 'Elimină o blocare globală',
