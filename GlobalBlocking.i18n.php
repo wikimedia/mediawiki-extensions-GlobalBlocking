@@ -920,7 +920,7 @@ $messages['bn'] = array(
  * @author Y-M D
  */
 $messages['br'] = array(
-	'globalblocking-desc' => "[[Special:GlobalBlock|Posubl]] eo stankañ ar chomlec'hioù IP [[Special:GlobalBlockList|dre wikioù disheñvel]]",
+	'globalblocking-desc' => "[[Special:GlobalBlock|Posupl]] eo stankañ ar chomlec'hioù IP [[Special:GlobalBlockList|dre wikioù disheñvel]]",
 	'globalblocking-block' => "Stankañ en un doare hollek ur chomlec'h IP",
 	'globalblocking-modify-intro' => "Gellout a reoc'h implijout ar furmskrid evit kefluniañ ur stankadenn hollek.",
 	'globalblocking-block-intro' => "Tu zo deoc'h implijout ar bajenn-mañ evit stankañ ur chomlec'h IP war an holl wikioù.",
@@ -2537,7 +2537,7 @@ $1',
 	'globalblocking-whitelist-notapplied' => 'Les blocages globaux ne sont pas appliqués à ce wiki,
 de ce fait le statut local du blocage global ne peut être modifié.',
 	'globalblocking-whitelist-legend' => 'Modifier le statut local',
-	'globalblocking-whitelist-reason' => 'Raison :',
+	'globalblocking-whitelist-reason' => 'Motif :',
 	'globalblocking-whitelist-status' => 'État local :',
 	'globalblocking-whitelist-statuslabel' => 'Désactiver ce blocage global sur {{SITENAME}}',
 	'globalblocking-whitelist-submit' => 'Changer le statut local',
