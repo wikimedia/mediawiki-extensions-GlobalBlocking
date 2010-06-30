@@ -2976,8 +2976,8 @@ $messages['he'] = array(
 	'globalblocking-block-reasonotherlist' => 'סיבה אחרת',
 	'globalblocking-block-reason-dropdown' => '* סיבות חסימה נפוצות
 ** ספאם בין-מיזמי
-** התעללות בין-מיזמית
-** ונדליזם',
+** שימוש לרעה בין-מיזמי
+** השחתה',
 	'globalblocking-block-edit-dropdown' => 'עריכת סיבות החסימה',
 	'globalblocking-block-expiry' => 'זמן פקיעה:',
 	'globalblocking-block-expiry-other' => 'זמן פקיעה אחר',
@@ -3060,8 +3060,9 @@ $messages['he'] = array(
 	'globalblocking-modify-logentry' => 'שינה את החסימה הגלובלית של [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'עם זמן פקיעה של $1',
 	'globalblocking-logentry-noexpiry' => 'ללא זמן פקיעה',
-	'globalblocking-loglink' => 'כתובת ה־IP &rlm;$1 חסום באופן גלובלי ([[{{#Special:GlobalBlockList}}/$1|פרטים נוספים]]).',
-	'globalblocking-showlog' => 'כתובת IP זו נחסמה בעבר. להלן יומן החסימות:',
+	'globalblocking-loglink' => 'כתובת ה־IP שמספרה $1 חסומה באופן גלובלי ([[{{#Special:GlobalBlockList}}/$1|פרטים נוספים]]).',
+	'globalblocking-showlog' => 'כתובת IP זו נחסמה בעבר.
+יומן החסימות מוצג להלן:',
 	'globalblocklist' => 'רשימת כתובות IP החסומות באופן גלובלי',
 	'globalblock' => 'חסימת כתובת IP באופן גלובלי',
 	'globalblockstatus' => 'המצב המקומי של החסימות הגלובליות',
