@@ -910,11 +910,16 @@ $messages['bn'] = array(
 	'globalblocking-block-reasonotherlist' => 'অন্য কারণ:',
 	'globalblocking-block-edit-dropdown' => 'বাধাদানের কারণ সম্পাদনা',
 	'globalblocking-block-expiry' => 'মেয়াদ উত্তীর্ণ:',
+	'globalblocking-block-expiry-otherfield' => 'অন্য সময়:',
+	'globalblocking-search-ip' => 'আইপি ঠিকানা:',
 	'globalblocking-list-unblock' => 'অপসারণ',
+	'globalblocking-list-whitelist' => 'স্থানীয় অবস্থা',
 	'globalblocking-list-modify' => 'পরিবর্তন',
 	'globalblocking-unblock-reason' => 'কারণ:',
+	'globalblocking-whitelist-legend' => 'স্থানীয় অবস্থা পরিবর্তন',
 	'globalblocking-whitelist-reason' => 'কারণ:',
 	'globalblocking-whitelist-status' => 'স্থানীয় অবস্থা:',
+	'globalblocking-whitelist-submit' => 'স্থানীয় অবস্থা পরিবর্তন',
 );
 
 /** Breton (Brezhoneg)
@@ -1000,7 +1005,7 @@ dre-se ne c'hell ket bezañ kemmet statud lec'hel ar stankadenn hollek.",
 	'globalblocking-blocked' => "Stanket eo bet ho chomlec'h IP war an holl wikioù gant '''\$1''' (''\$2'').
 An abeg a oa ''\"\$3\"''.
 Stankadenn : ''\$4''.",
-	'globalblocking-blocked-nopassreset' => "Ne c'helloc'h ket adderaouekaat gerioù-tremen implijerien dre ma 'z oc'h stanket en un doare hollek.",
+	'globalblocking-blocked-nopassreset' => "Ne c'hellit ket adderaouekaat gerioù-tremen implijerien dre ma 'z oc'h stanket en un doare hollek.",
 	'globalblocking-logpage' => 'Marilh ar stankadennoù hollek',
 	'globalblocking-block-logentry' => 'en deus stanket [[$1]] en un doare hollek, gant un hirder termen a $2',
 	'globalblocking-block2-logentry' => 'en deus stanket [[$1]] dre-vras ($2)',
@@ -1788,6 +1793,7 @@ Mɔxexea ''\$4''.",
  * @author Geraki
  * @author Omnipaedista
  * @author ZaDiak
+ * @author Απεργός
  */
 $messages['el'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Επιτρέπει]] διευθύνσεις IP να [[Special:GlobalBlockList|φραγούν σε πολλαπλά wikis]]',
@@ -1797,6 +1803,11 @@ $messages['el'] = array(
 	'globalblocking-block-reason' => 'Αιτία:',
 	'globalblocking-block-otherreason' => 'Άλλος/πρόσθετος λόγος:',
 	'globalblocking-block-reasonotherlist' => 'Άλλος λόγος',
+	'globalblocking-block-reason-dropdown' => '* Συνήθεις λόγοι φραγής
+** Spam σε πολλαπλά wiki
+** Κατάχρηση λογαριασμού σε πολλαπλά wiki
+** Βανδαλισμός',
+	'globalblocking-block-edit-dropdown' => 'Επεξεργασία των αιτίων για φραγή',
 	'globalblocking-block-expiry' => 'Λήξη:',
 	'globalblocking-block-expiry-other' => 'Άλλος χρόνος λήξης',
 	'globalblocking-block-expiry-otherfield' => 'Άλλος χρόνος:',
@@ -1833,6 +1844,7 @@ $messages['el'] = array(
 	'globalblocking-list-whitelisted' => 'τοπικά απενεργοποιημένη από τον/την $1: $2',
 	'globalblocking-list-whitelist' => 'τοπική κατάσταση',
 	'globalblocking-list-modify' => 'τροποποίηση',
+	'globalblocking-list-noresults' => 'Η ζητούμενη διεύθυνση IP δεν είναι φραγμένη.',
 	'globalblocking-goto-block' => 'Καθολική φραγή μιας διεύθυνσης IP',
 	'globalblocking-goto-unblock' => 'Αφαίρεση μιας καθολικής φραγής',
 	'globalblocking-goto-status' => 'Αλλαγή τοπικής κατάστασης για μια καθολική φραγή',
@@ -1882,6 +1894,9 @@ $messages['el'] = array(
 	'globalblocking-modify-logentry' => 'τροποποίησε την καθολική φραγή στον/στην [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'λήγει $1',
 	'globalblocking-logentry-noexpiry' => 'δεν τέθηκε ημερομηνία λήξης',
+	'globalblocking-loglink' => 'Η διεύθυνση IP $1 φράχτηκε καθολικά ([[{{#Special:GlobalBlockList}}/$1|δείτε όλες τις λεπτομέρειες]]).',
+	'globalblocking-showlog' => 'Αυτή η διεύθυνση IP έχει φραγεί προηγουμένως.
+Το αρχείο καταγραφής φραγών παρουσιάζεται παρακάτω:',
 	'globalblocklist' => 'Κατάλογος καθολικά φραγμένων διευθύνσεων IP',
 	'globalblock' => 'Καθολική φραγή μιας διεύθυνσης IP',
 	'globalblockstatus' => 'Τοπική κατάσταση καθολικών φραγών',
