@@ -4728,10 +4728,17 @@ $messages['li'] = array(
 	'globalblocking-modify-intro' => "Doe kins deze breef broeke-n óm g'r instèllinger ven 'ner wikiwiejer spiekering tö-n angere.",
 	'globalblocking-block-intro' => "De kins deze pagina gebroeke om 'n IP-adres op alle wiki's te blokkere.",
 	'globalblocking-block-reason' => 'Reeje:',
-	'globalblocking-block-expiry' => 'Verloupdatom blókkaasj:',
+	'globalblocking-block-otherreason' => 'Angere/additionele ree:',
+	'globalblocking-block-reasonotherlist' => 'Angere ree',
+	'globalblocking-block-reason-dropdown' => "* Väöl veurkómmendje blokreje
+** Spamme in meerder wiki's
+** Misbroek van meerder wiki's
+** Vandalisme",
+	'globalblocking-block-edit-dropdown' => 'Bewerk lies van rejer',
+	'globalblocking-block-expiry' => 'Verloup:',
 	'globalblocking-block-expiry-other' => 'Anger verlouptermien',
 	'globalblocking-block-expiry-otherfield' => 'Angere tied:',
-	'globalblocking-block-legend' => "'ne Gebroeker globaal blokkere",
+	'globalblocking-block-legend' => 'Dit IP-adres globaal blokkere',
 	'globalblocking-block-options' => 'Opties:',
 	'globalblocking-block-errors' => 'De blókkaasj is neet ingesteldj om de volgendje {{PLURAL:$1|reeje|reeje}}:',
 	'globalblocking-block-ipinvalid' => "'t IP-adres ($1) det se höbs opgegaeve is neet zjuus.
@@ -4763,6 +4770,7 @@ Voer 'n correct IP-adres in.",
 	'globalblocking-list-whitelisted' => 'lokaal genegeerd door $1: $2',
 	'globalblocking-list-whitelist' => 'lokaal status',
 	'globalblocking-list-modify' => 'anger',
+	'globalblocking-list-noresults' => 'De aangevraoge IP is neet geblok.',
 	'globalblocking-goto-block' => 'IP-adres globaal blokkere',
 	'globalblocking-goto-unblock' => 'Globaal bloks wisse',
 	'globalblocking-goto-status' => "Lokaal status ven 'ne globale blokkaasj angere",
@@ -4798,6 +4806,7 @@ Als een globale blokkade op deze wiki is opgeheve, kunne gebroekers vanaaf  t IP
 	'globalblocking-blocked' => "De IP-adres is door '''\$1''' (''\$2'') geblokkeerd op alle wiki's.
 De rede is ''\"\$3\"''.
 De blokkade ''\$4''.",
+	'globalblocking-blocked-nopassreset' => "Doe kins 't wachwaord neet resette ómdesse wikiwied geblok bös gewaore.",
 	'globalblocking-logpage' => 'Globaal bloklogbook',
 	'globalblocking-logpagetext' => "Dit logbook bevat aangemaakte en verwiejderde globale blokkades op deze wiki.
 Globale blokkades kunne ouk op andere wiki's aangemaat en verwiederd worde, en invloed hebbe op deze wiki.
@@ -4810,6 +4819,9 @@ Alle globale blokkades stoan in de [[Special:GlobalBlockList|liest met globale b
 	'globalblocking-modify-logentry' => 'haet de globale blok veur [[$1]] aangepas ($2)',
 	'globalblocking-logentry-expiry' => 'verlöp $1',
 	'globalblocking-logentry-noexpiry' => 'geine doer gezatj',
+	'globalblocking-loglink' => "'t IP-adres is globaal geblokkeerd ([[{{#Special:GlobalBlockList}}/$1|volledige details]])",
+	'globalblocking-showlog' => "Dit IP-adres is eerder geblokkeerd gewaes.
+'t Blokkeerlogbook wört hiejonger weergaeve:",
 	'globalblocklist' => 'Lies van globaal geblokkeerde IP-adresse',
 	'globalblock' => "'n IP-adres globaal zitte",
 	'globalblockstatus' => 'Lokaal status ven globaal bloks',
@@ -4817,6 +4829,7 @@ Alle globale blokkades stoan in de [[Special:GlobalBlockList|liest met globale b
 	'right-globalblock' => 'Globaal bloks instelle',
 	'right-globalunblock' => 'Globaal bloks wisse',
 	'right-globalblock-whitelist' => 'Globaal bloks lokaal negere',
+	'right-globalblock-exempt' => 'Loup globaal bloks óm',
 );
 
 /** Lithuanian (Lietuvių)
