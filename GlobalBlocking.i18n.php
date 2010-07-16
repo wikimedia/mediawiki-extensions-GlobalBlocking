@@ -2389,6 +2389,10 @@ $messages['fi'] = array(
 	'globalblocking-block-reason' => 'Syy',
 	'globalblocking-block-otherreason' => 'Muu syy tai tarkennus',
 	'globalblocking-block-reasonotherlist' => 'Muu syy',
+	'globalblocking-block-reason-dropdown' => '* Yleiset estosyyt
+** Usean wikin sotkeminen
+** Usean wikin väärinkäyttö
+** Vandalismi',
 	'globalblocking-block-edit-dropdown' => 'Muokkaa estosyitä',
 	'globalblocking-block-expiry' => 'Kesto',
 	'globalblocking-block-expiry-other' => 'Muu kestoaika',
