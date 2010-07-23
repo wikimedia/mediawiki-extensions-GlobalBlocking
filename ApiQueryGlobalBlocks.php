@@ -137,6 +137,10 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 		$result->addValue('query', $this->getModuleName(), $data);
 	}
 
+	public function getCacheMode($params) {
+		return 'public';
+	}
+
 	public function getAllowedParams() {
 		return array (
 			'start' => array(
