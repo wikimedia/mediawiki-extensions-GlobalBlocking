@@ -7,7 +7,7 @@ class SpecialGlobalBlock extends SpecialPage {
 
 	function __construct() {
 		wfLoadExtensionMessages('GlobalBlocking');
-		SpecialPage::SpecialPage( 'GlobalBlock', 'globalblock' );
+		parent::SpecialPage( 'GlobalBlock', 'globalblock' );
 	}
 
 	function execute( $par ) {
