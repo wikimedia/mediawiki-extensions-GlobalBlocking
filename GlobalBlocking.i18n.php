@@ -3822,11 +3822,13 @@ Log pemblokiran disediakan di bawah ini sebagai rujukan:',
 	'right-globalblock-exempt' => 'Tidak dikenakan pemblokiran global',
 );
 
-/** Igbo (Igbo) */
+/** Igbo (Igbo)
+ * @author Ukabia
+ */
 $messages['ig'] = array(
-	'globalblocking-block-reason' => 'Mgbaghaputa:',
-	'globalblocking-unblock-reason' => 'Mgbaghaputa:',
-	'globalblocking-whitelist-reason' => 'Mgbaghaputa:',
+	'globalblocking-block-reason' => 'Mgbághapụtà:',
+	'globalblocking-unblock-reason' => 'Mgbághapụtà:',
+	'globalblocking-whitelist-reason' => 'Mgbághapụtà:',
 );
 
 /** Ido (Ido)
