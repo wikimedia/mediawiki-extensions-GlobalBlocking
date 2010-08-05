@@ -3828,6 +3828,8 @@ Log pemblokiran disediakan di bawah ini sebagai rujukan:',
 $messages['ig'] = array(
 	'globalblocking-block-reason' => 'Mgbághapụtà:',
 	'globalblocking-block-expiry' => 'Gbá okà:',
+	'globalblocking-block-options' => 'I cho, ka I chogị:',
+	'globalblocking-list-unblock' => 'wéfù',
 	'globalblocking-unblock-reason' => 'Mgbághapụtà:',
 	'globalblocking-whitelist-reason' => 'Mgbághapụtà:',
 );
