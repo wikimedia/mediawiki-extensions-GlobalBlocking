@@ -2985,6 +2985,14 @@ $messages['gv'] = array(
 	'globalblocking-unblock-reason' => 'Fa:',
 );
 
+/** Hausa (هَوُسَ) */
+$messages['ha'] = array(
+	'globalblocking-block-reason' => 'Dalili:',
+	'globalblocking-block-reasonotherlist' => 'Wani dalili',
+	'globalblocking-unblock-reason' => 'Dalili:',
+	'globalblocking-whitelist-reason' => 'Dalili:',
+);
+
 /** Hawaiian (Hawai`i)
  * @author Singularity
  */
