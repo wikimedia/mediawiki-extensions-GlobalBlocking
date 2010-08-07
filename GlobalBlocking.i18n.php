@@ -1265,6 +1265,14 @@ $messages['ce'] = array(
 	'globalblocking-unblock-reason' => 'Бахьан:',
 );
 
+/** Sorani (کوردی) */
+$messages['ckb'] = array(
+	'globalblocking-block-reason' => 'هۆکار:',
+	'globalblocking-block-reasonotherlist' => 'هۆکاری دیکە',
+	'globalblocking-unblock-reason' => 'هۆکار:',
+	'globalblocking-whitelist-reason' => 'هۆکار:',
+);
+
 /** Czech (Česky)
  * @author Li-sung
  * @author Mormegil
