@@ -1789,8 +1789,8 @@ Protokol blokěrowanjow jo dołojce pódał slědujuce ako referencu:',
  */
 $messages['ee'] = array(
 	'globalblocking-block-expiry' => 'Nuwuwu:',
-	'globalblocking-blocked' => "'''\$1''' (''\$2'') xemɔ na wòƒe 'IP address' le wikiwo katã dzi.<br/>
-Nusita wòwoɔ enye be ''\"\$3\"''.<br/>
+	'globalblocking-blocked' => "'''\$1''' (''\$2'') xemɔ na wòƒe 'IP address' le wikiwo katã dzi.<br />
+Nusita wòwoɔ enye be ''\"\$3\"''.<br />
 Mɔxexea ''\$4''.",
 );
 
@@ -8128,6 +8128,13 @@ $messages['uk'] = array(
 	'right-globalunblock' => 'зняття глобальних блокувань',
 	'right-globalblock-whitelist' => 'Локальне відключення глобального блокування',
 	'right-globalblock-exempt' => 'Обхід глобальних блокувань',
+);
+
+/** Urdu (اردو) */
+$messages['ur'] = array(
+	'globalblocking-block-reason' => 'وجہ:',
+	'globalblocking-unblock-reason' => 'وجہ:',
+	'globalblocking-whitelist-reason' => 'وجہ:',
 );
 
 /** Vèneto (Vèneto)
