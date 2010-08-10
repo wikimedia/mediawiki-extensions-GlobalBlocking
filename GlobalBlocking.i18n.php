@@ -5062,7 +5062,7 @@ $messages['ml'] = array(
 	'globalblocking-list-expiry' => 'കാലാവധി $1',
 	'globalblocking-list-anononly' => 'അജ്ഞാത ഉപയോക്താക്കളെ മാത്രം',
 	'globalblocking-list-unblock' => 'സ്വതന്ത്രമാക്കുക',
-	'globalblocking-list-whitelisted' => '$1 ഇതിനെ പ്രാദേശികമായി നിർ‌വീര്യമാക്കിയിക്കുന്നു: $2',
+	'globalblocking-list-whitelisted' => '$1 ഇതിനെ പ്രാദേശികമായി നിർവീര്യമാക്കിയിക്കുന്നു: $2',
 	'globalblocking-list-whitelist' => 'പ്രാദേശിക സ്ഥിതി',
 	'globalblocking-list-modify' => 'പുനർനിശ്ചയിക്കുക',
 	'globalblocking-list-noresults' => 'ആവശ്യപ്പെട്ട ഐ.പി. വിലാസത്തെ തടഞ്ഞിട്ടില്ല.',
@@ -5122,7 +5122,7 @@ $messages['ml'] = array(
 	'removeglobalblock' => 'ആഗോള തടയൽ നീക്കുക',
 	'right-globalblock' => 'ആഗോള തടയൽ നടത്തുക',
 	'right-globalunblock' => 'ആഗോള തടയൽ മാറ്റുക',
-	'right-globalblock-whitelist' => 'ആഗോള തടയലിനെ പ്രാദേശികമായി നിർ‌വീര്യമാക്കുക',
+	'right-globalblock-whitelist' => 'ആഗോള തടയലിനെ പ്രാദേശികമായി നിർവീര്യമാക്കുക',
 	'right-globalblock-exempt' => 'ആഗോള തടയലുകളെ പാർശ്വവത്കരിച്ചു ഗമിക്കുക',
 );
 
