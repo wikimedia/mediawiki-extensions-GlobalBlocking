@@ -2287,19 +2287,29 @@ $messages['eu'] = array(
 );
 
 /** Persian (فارسی)
+ * @author Bersam
+ * @author Ebraminio
  * @author Huji
  * @author Ladsgroup
  * @author Mardetanha
+ * @author Wayiran
  */
 $messages['fa'] = array(
 	'globalblocking-desc' => 'قطع دسترسی نشانی‌های اینترنتی [[Special:GlobalBlockList|در چندین ویکی]] را [[Special:GlobalBlock|ممکن می‌سازد]]',
 	'globalblocking-block' => 'قطع دسترسی یک نشانی اینترنتی به صورت سراسری',
 	'globalblocking-block-intro' => 'شما می‌توانید از این صفحه برای قطع دسترسی یک نشانی اینترنتی در تمام ویکی‌ها استفاده کنید.',
 	'globalblocking-block-reason' => 'دلیل:',
+	'globalblocking-block-otherreason' => 'دلایل دیگر/اضافی:',
+	'globalblocking-block-reasonotherlist' => 'دیگر دلایل',
+	'globalblocking-block-reason-dropdown' => '* دلیل‌های متداول بستن
+** هرزه‌نگاری در چند ویکی
+** فحاشی در چند ویکی
+** خرابکاری',
+	'globalblocking-block-edit-dropdown' => 'ویرایش دلایل قطع‌دسترسی',
 	'globalblocking-block-expiry' => 'خاتمه:',
 	'globalblocking-block-expiry-other' => 'زمان‌ خاتمه دیگر',
 	'globalblocking-block-expiry-otherfield' => 'زمانی دیگر:',
-	'globalblocking-block-legend' => 'قطع دسترسی یک کاربر به صورت سراسری',
+	'globalblocking-block-legend' => 'قطع دسترسی نشانی یک آی‌پی به صورت سراسری',
 	'globalblocking-block-options' => 'گزینه‌ها:',
 	'globalblocking-block-errors' => 'قطع دسترسی شما به این {{PLURAL:$1|دلیل|دلایل}} ناموفق بود:',
 	'globalblocking-block-ipinvalid' => 'نشانی اینترنتی که شما وارد کردید ($1) غیر مجاز است.
@@ -2328,6 +2338,8 @@ $messages['fa'] = array(
 	'globalblocking-list-unblock' => 'حذف',
 	'globalblocking-list-whitelisted' => 'توسط $1: $2 به طور محلی غیر فعال شد',
 	'globalblocking-list-whitelist' => 'وضعیت محلی',
+	'globalblocking-list-modify' => 'تغییر',
+	'globalblocking-list-noresults' => 'آی‌پی درخواست شده مسدود نمی‌باشد.',
 	'globalblocking-goto-block' => 'قطع دسترسی سراسری یک نشانی اینترنتی',
 	'globalblocking-goto-unblock' => 'حذف یک قطع دسترسی سراسری',
 	'globalblocking-goto-status' => 'تغییر وضعیت محلی یک قطع دسترسی سراسری',
@@ -2370,6 +2382,8 @@ $messages['fa'] = array(
 	'globalblocking-unblock-logentry' => 'حذف قطع دسترسی سراسری [[$1]]',
 	'globalblocking-whitelist-logentry' => 'غیر فعال کردن قطع دسترسی سراسری [[$1]] به طور محلی',
 	'globalblocking-dewhitelist-logentry' => 'دوباره فعال کردن قطع دسترسی سراسری [[$1]] به طور محلی',
+	'globalblocking-logentry-expiry' => '$1 منقضی می‌شود',
+	'globalblocking-logentry-noexpiry' => 'هیچ انقضایی تنظیم نشده',
 	'globalblocklist' => 'فهرست نشانی‌های اینترنتی بسته شده به طور سراسری',
 	'globalblock' => 'قطع دصترسی سراسری یک نشانی اینترنتی',
 	'globalblockstatus' => 'وضعیت محلی قعط دسترسی‌های سراسری',
