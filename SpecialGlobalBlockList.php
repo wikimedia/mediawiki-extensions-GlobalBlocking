@@ -9,7 +9,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 	}
 
 	function execute( $par ) {
-		global $wgUser,$wgOut,$wgRequest;
+		global $wgOut, $wgRequest;
 
 		$this->setHeaders();
 		$ip = isset( $par ) ? $par : $wgRequest->getText( 'ip' );
@@ -25,7 +25,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 	}
 
 	function showList( ) {
-		global $wgOut,$wgScript,$wgUser;
+		global $wgOut, $wgScript;
 		$errors = array();
 
 		// Validate search IP
@@ -106,7 +106,6 @@ class SpecialGlobalBlockList extends SpecialPage {
 	}
 
 	function loadParameters( $ip ) {
-		global $wgUser;
 		$this->mSearchIP = Block::normaliseRange( trim( $ip ) );
 	}
 }

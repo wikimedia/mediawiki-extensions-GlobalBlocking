@@ -136,7 +136,7 @@ class SpecialGlobalBlockStatus extends SpecialPage {
 	}
 
 	function form( $error ) {
-		global $wgRequest,$wgUser,$wgOut;
+		global $wgUser, $wgOut;
 		
 		$wgOut->addWikiMsg( 'globalblocking-whitelist-intro' );
 		

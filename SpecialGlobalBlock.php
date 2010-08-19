@@ -157,7 +157,7 @@ class SpecialGlobalBlock extends SpecialPage {
 	}
 
 	function form( $error ) {
-		global $wgUser, $wgRequest,$wgScript,$wgOut;
+		global $wgUser, $wgScript, $wgOut;
 
 		$form = '';
 

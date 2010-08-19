@@ -48,34 +48,40 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 		$fld_range = isset($prop['range']);
 
 		$result = $this->getResult();
-		$pageSet = $this->getPageSet();
-		$titles = $pageSet->getTitles();
 		$data = array();
 
 		$this->addTables('globalblocks');
-		if($fld_id)
+		if ($fld_id) {
 			$this->addFields('gb_id');
-		if($fld_address)
+		}
+		if ($fld_address) {
 			$this->addFields(array('gb_address', 'gb_anon_only'));
-		if($fld_by)
+		}
+		if ($fld_by) {
 			$this->addFields(array('gb_by', 'gb_by_wiki'));
-		if($fld_timestamp)
+		}
+		if ($fld_timestamp) {
 			$this->addFields('gb_timestamp');
-		if($fld_expiry)
+		}
+		if ($fld_expiry) {
 			$this->addFields('gb_expiry');
-		if($fld_reason)
+		}
+		if ($fld_reason) {
 			$this->addFields('gb_reason');
-		if($fld_range)
+		}
+		if ($fld_range) {
 			$this->addFields(array('gb_range_start', 'gb_range_end'));
+		}
 
 		$this->addOption('LIMIT', $params['limit'] + 1);
 		$this->addWhereRange('gb_timestamp', $params['dir'], $params['start'], $params['end']);
-		if(isset($params['ids']))
+		if (isset($params['ids'])) {
 			$this->addWhereFld('gb_id', $params['ids']);
-		if(isset($params['addresses']))
+		}
+		if (isset($params['addresses'])) {
 			$this->addWhereFld('gb_address', $params['addresses']);
-		if(isset($params['ip']))
-		{
+		}
+		if(isset($params['ip'])) {
 			list($ip, $range) = IP::parseCIDR($params['ip']);
 			if($ip && $range)
 			{

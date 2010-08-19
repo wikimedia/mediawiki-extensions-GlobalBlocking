@@ -103,7 +103,7 @@ class SpecialRemoveGlobalBlock extends SpecialPage {
 	}
 
 	function form( ) {
-		global $wgScript,$wgRequest,$wgUser,$wgOut;
+		global $wgScript, $wgUser, $wgOut;
 
 		$form = '';
 
