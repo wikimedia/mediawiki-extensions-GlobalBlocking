@@ -2292,6 +2292,7 @@ $messages['eu'] = array(
  * @author Huji
  * @author Ladsgroup
  * @author Mardetanha
+ * @author Sahim
  * @author Wayiran
  */
 $messages['fa'] = array(
@@ -2380,6 +2381,7 @@ $messages['fa'] = array(
 باید توجه داشت که قطع دسترسی‌های سراسری می‌تواند در ویکی‌های دیگر ایجاد یا حذف شود، و چنین قطع دسترسی‌هایی می‌تواند در این ویکی تاثیر بگذارد.
 برای مشاهدهٔ تمام قطع دسترسی‌های سراسری فعال، شما می‌توانید [[Special:GlobalBlockList|فهرست قطع دسترسی‌های سراسری]] را ببینید.',
 	'globalblocking-block-logentry' => 'دسترسی [[$1]] را تا $2 به طور سراسری قطع کرد',
+	'globalblocking-block2-logentry' => 'قطع دسترسی سراسری [[$1]] ($2)',
 	'globalblocking-unblock-logentry' => 'حذف قطع دسترسی سراسری [[$1]]',
 	'globalblocking-whitelist-logentry' => 'غیر فعال کردن قطع دسترسی سراسری [[$1]] به طور محلی',
 	'globalblocking-dewhitelist-logentry' => 'دوباره فعال کردن قطع دسترسی سراسری [[$1]] به طور محلی',
@@ -2394,6 +2396,7 @@ $messages['fa'] = array(
 	'right-globalblock' => 'ایجاد قطع دسترسی‌های سراسری',
 	'right-globalunblock' => 'حذف قطع دسترسی‌های سراسری',
 	'right-globalblock-whitelist' => 'غیر فعال کردن قطع دسترسی‌های سراسری به طور محلی',
+	'right-globalblock-exempt' => 'گذرگاه قطع دسترسی‌های سراسری',
 );
 
 /** Finnish (Suomi)
