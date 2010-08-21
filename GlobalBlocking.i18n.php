@@ -145,11 +145,12 @@ The block log is provided below for reference:',
  * @author Raymond
  * @author Siebrand
  * @author Tgr
+ * @author The Evil IP address
  * @author Umherirrender
  * @author Urhixidur
  */
 $messages['qqq'] = array(
-	'globalblocking-desc' => 'Short description of this extension, shown on [[Special:Version]]. Do not translate or change links.',
+	'globalblocking-desc' => '{{desc}}',
 	'globalblocking-block' => 'Same special page with this page:
 
 * [[MediaWiki:Globalblock/{{SUBPAGENAME}}]]',
@@ -2298,6 +2299,7 @@ $messages['eu'] = array(
 $messages['fa'] = array(
 	'globalblocking-desc' => 'قطع دسترسی نشانی‌های اینترنتی [[Special:GlobalBlockList|در چندین ویکی]] را [[Special:GlobalBlock|ممکن می‌سازد]]',
 	'globalblocking-block' => 'قطع دسترسی یک نشانی اینترنتی به صورت سراسری',
+	'globalblocking-modify-intro' => 'می‌توانید از این فرم برای تغییر تنظیمات بستن سراسری استفاده کنید.',
 	'globalblocking-block-intro' => 'شما می‌توانید از این صفحه برای قطع دسترسی یک نشانی اینترنتی در تمام ویکی‌ها استفاده کنید.',
 	'globalblocking-block-reason' => 'دلیل:',
 	'globalblocking-block-otherreason' => 'دلایل دیگر/اضافی:',
@@ -2319,7 +2321,9 @@ $messages['fa'] = array(
 	'globalblocking-block-submit' => 'قطع دسترسی سراسری این نشانی اینترنتی',
 	'globalblocking-modify-submit' => 'اصلاح این بستن سراسری',
 	'globalblocking-block-success' => 'دسترسی نشانی اینترنتی $1 با موفقیت در تمام پروژه‌های قطع شد.',
+	'globalblocking-modify-success' => 'بستن سراسری $1 با موفقیت تغییر یافت',
 	'globalblocking-block-successsub' => 'قطع دسترسی سراسری موفق بود',
+	'globalblocking-modify-successsub' => 'بستن سراسری با موفقیت تغییر یافت',
 	'globalblocking-block-alreadyblocked' => 'دسترسی نشانی اینتری $1 از قبل به طور سراسری بسته است.
 شما می‌توانید قطع دسترسی موجود را در [[Special:GlobalBlockList|فهرست قطع دسترسی‌های سراسری]] ببینید.',
 	'globalblocking-block-bigrange' => 'بازه‌ای که شما معین کردید ($1) بیش از اندازه بزرگ است.
@@ -2358,6 +2362,8 @@ $messages['fa'] = array(
 	'globalblocking-unblock-subtitle' => 'حذف قطع دسترسی سراسری',
 	'globalblocking-unblock-intro' => 'شما می‌توانید این فرم را برای حذف یک قطع دسترسی سراسری استفاده کنید.',
 	'globalblocking-whitelist' => 'وضعیت محلی قطع دسترسی‌های سراسری',
+	'globalblocking-whitelist-notapplied' => 'بستن‌های سراسری در این ویکی اعمال نشده است،
+بنابراین وضعیت محلی بستن‌های سراسری را نمی‌توان تغییر داد.',
 	'globalblocking-whitelist-legend' => 'تغییر وضعیت محلی',
 	'globalblocking-whitelist-reason' => 'دلیل:',
 	'globalblocking-whitelist-status' => 'وضعیت محلی:',
@@ -2385,6 +2391,7 @@ $messages['fa'] = array(
 	'globalblocking-unblock-logentry' => 'حذف قطع دسترسی سراسری [[$1]]',
 	'globalblocking-whitelist-logentry' => 'غیر فعال کردن قطع دسترسی سراسری [[$1]] به طور محلی',
 	'globalblocking-dewhitelist-logentry' => 'دوباره فعال کردن قطع دسترسی سراسری [[$1]] به طور محلی',
+	'globalblocking-modify-logentry' => 'بستن سراسری [[$1]] ($2) تغییر کرد',
 	'globalblocking-logentry-expiry' => '$1 منقضی می‌شود',
 	'globalblocking-logentry-noexpiry' => 'هیچ انقضایی تنظیم نشده',
 	'globalblocking-loglink' => 'آدرس آی‌پی $۱ به صورت سراسری مسدود شده‌است ([[{{#Special:GlobalBlockList}}/$1|جزئیات کامل]]).',
@@ -7058,6 +7065,7 @@ $messages['sl'] = array(
 	'globalblocking-block-submit' => 'Blokiraj ta IP-naslov globalno',
 	'globalblocking-list' => 'Seznam globalno blokiranih IP-naslovov',
 	'globalblocking-goto-block' => 'Globalno blokiraj IP-naslov',
+	'globalblocking-unblock-reason' => 'Razlog:',
 	'globalblocking-whitelist-reason' => 'Razlog:',
 	'globalblocking-block2-logentry' => 'globalno blokiran uporabnik [[$1]] ($2)',
 );
