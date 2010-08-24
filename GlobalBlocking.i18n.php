@@ -8404,9 +8404,11 @@ $messages['vo'] = array(
 	'globalblocking-block' => 'Blokön ladeti-IP valöpo',
 	'globalblocking-block-intro' => 'Kanol gebön padi at ad blokön ladeti-IP in vüks valik.',
 	'globalblocking-block-reason' => 'Kod:',
+	'globalblocking-block-reasonotherlist' => 'Kod votik',
 	'globalblocking-block-expiry' => 'Blokamadul:',
 	'globalblocking-block-expiry-otherfield' => 'Tim votik:',
-	'globalblocking-block-legend' => 'Blokön gebani valöpo',
+	'globalblocking-block-legend' => 'Blokön ladeti-IP valöpo',
+	'globalblocking-block-options' => 'Välots:',
 	'globalblocking-block-errors' => 'Blokam olik no eplöpon, sekü {{PLURAL:$1|kod|kods}} sököl:',
 	'globalblocking-block-ipinvalid' => 'Ladet-IP fa ol pepenöl no lonöfon. Demolös, das no dalol penön gebananemi is!',
 	'globalblocking-block-expiryinvalid' => 'Dul fa ol pepenöl ($1) no lonöfon.',
@@ -8455,7 +8457,8 @@ Demolös, das no dalon penön gebananemi!',
 	'globalblocking-whitelist-whitelisted' => "Esädunol benosekiko blokami valöpik: #$2 ladeta-IP: '''$1''' in {{SITENAME}}.",
 	'globalblocking-whitelist-dewhitelisted' => "Edönudunol benosekiko blokami valöpik: #$2 ladeta-IP: '''$1''' in {{SITENAME}}.",
 	'globalblocking-whitelist-successsub' => 'Stad topik pevotükon benosekiko',
-	'globalblocking-whitelist-nochange' => 'No evotükol stadi topik blokama at. [[Special:GloablBlockList|Geikön lü lised blokamas valöpik]].',
+	'globalblocking-whitelist-nochange' => 'No evotükol stadi topik blokama at.
+[[Special:GlobalBlockList|Gegolön lü lised blokamas valöpik]].',
 	'globalblocking-whitelist-errors' => 'Votükam olik stada topik blokama valöpik no eplöpon, sekü {{PLURAL:$1|kod|kods}} sököl:',
 	'globalblocking-whitelist-intro' => 'Kanol gebön fometi at ad votükön stadi topik blokama valöpik.
 If blokam valöpik pesädunon in vük at, gebans ladetas-IP teföl okanons redakön nensäkädiko.
