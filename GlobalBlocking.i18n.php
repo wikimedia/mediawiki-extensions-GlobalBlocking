@@ -174,6 +174,7 @@ $messages['qqq'] = array(
 * $5 are the block options',
 	'globalblocking-list-anononly' => '{{Identical|Anon only}}',
 	'globalblocking-list-whitelist' => '{{Identical|Local status}}',
+	'globalblocking-list-modify' => '{{Identical|Modify}}',
 	'globalblocking-unblock-ipinvalid' => '{{Identical|The IP address ($1) ...}}',
 	'globalblocking-unblock-reason' => '{{Identical|Reason}}',
 	'globalblocking-whitelist-legend' => '{{Identical|Change local status}}',
