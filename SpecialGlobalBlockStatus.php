@@ -5,7 +5,7 @@ class SpecialGlobalBlockStatus extends SpecialPage {
 
 	function __construct() {
 		wfLoadExtensionMessages('GlobalBlocking');
-		parent::SpecialPage( 'GlobalBlockStatus', 'globalblock-whitelist' );
+		parent::__construct( 'GlobalBlockStatus', 'globalblock-whitelist' );
 	}
 
 	function execute( $par ) {

@@ -5,7 +5,7 @@ class SpecialRemoveGlobalBlock extends SpecialPage {
 
 	function __construct() {
 		wfLoadExtensionMessages('GlobalBlocking');
-		parent::SpecialPage( 'RemoveGlobalBlock', 'globalunblock' );
+		parent::__construct( 'RemoveGlobalBlock', 'globalunblock' );
 	}
 
 	function execute( $par ) {
