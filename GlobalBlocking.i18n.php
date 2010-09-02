@@ -6436,9 +6436,24 @@ O registro de bloqueios é fornecido abaixo como referência:',
  * @author AlimanRuna
  */
 $messages['qu'] = array(
+	'globalblocking-block-reason' => 'Kayrayku:',
+	'globalblocking-block-otherreason' => 'Huk/aswan rayku:',
+	'globalblocking-block-reasonotherlist' => 'Huk rayku',
+	'globalblocking-block-reason-dropdown' => "* Hark'anapaq sapsi raykukuna
+** Wikipura spam yapay
+** Wikipura millay ruray
+** Wandalismu",
+	'globalblocking-block-edit-dropdown' => "Hark'aypa hamunta llamk'apuy",
+	'globalblocking-block-expiry' => "Hark'ay kaykama:",
 	'globalblocking-list' => "Sapsita hark'asqa IP tiyaykuna",
 	'globalblocking-whitelist' => "Sapsi hark'asqakunap kayllapi kachkaynin",
 	'globalblocking-block2-logentry' => "sapsilla hark'an [[$1]] sutiyuqta ($2)",
+	'globalblocking-loglink' => "$1 sutiyuq IP tiyayqa tukuy wikikunapaqmi hark'asqa ([[{{#Special:GlobalBlockList}}/$1|tukuyta rikuy]]).",
+	'globalblocking-showlog' => "Kay IP tiyayqa ñawpaqta hark'asqam.
+Hark'ay hallch'ataqa kaypim rikunki willasunaykipaq:",
+	'globalblocklist' => "Sapsita hark'asqa IP tiyaykuna",
+	'globalblock' => "IP huchha imamaytata tukuy wikikunapaq hark'ay",
+	'globalblockstatus' => "Sapsi hark'asqakunap kayllapi kachkaynin",
 );
 
 /** Romanian (Română)
