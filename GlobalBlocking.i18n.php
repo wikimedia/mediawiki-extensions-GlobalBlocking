@@ -5242,11 +5242,17 @@ $messages['ms'] = array(
 	'globalblocking-modify-intro' => 'Anda boleh gunakan borang ini untuk tukar tetapan penyekatan global.',
 	'globalblocking-block-intro' => 'Anda boleh menggunakan laman khas ini untuk menyekat alamat IP di semua wiki.',
 	'globalblocking-block-reason' => 'Alasan:',
+	'globalblocking-block-otherreason' => 'Sebab lain/tambahan:',
 	'globalblocking-block-reasonotherlist' => 'Sebab lain',
+	'globalblocking-block-reason-dropdown' => '* Sebab-sebab sekatan lazim
+** Spam merentasi wiki
+** Penyalahgunaan merentasi wiki
+** Vandalisme',
+	'globalblocking-block-edit-dropdown' => 'Sunting sebab sekatan',
 	'globalblocking-block-expiry' => 'Tamat:',
 	'globalblocking-block-expiry-other' => 'Waktu tamat lain',
 	'globalblocking-block-expiry-otherfield' => 'Waktu lain:',
-	'globalblocking-block-legend' => 'Sekat pengguna di semua wiki',
+	'globalblocking-block-legend' => 'Sekat alamat IP di semua wiki',
 	'globalblocking-block-options' => 'Pilihan:',
 	'globalblocking-block-errors' => 'Sekatan anda tidak dapat dilakukan kerana {{PLURAL:$1|sebab|sebab-sebab}} berikut:',
 	'globalblocking-block-ipinvalid' => 'Alamat IP tersebut ($1) tidak sah.
@@ -5278,6 +5284,7 @@ Sila nyatakan alamat IP yang sah.',
 	'globalblocking-list-whitelisted' => 'dimatikan di wiki tempatan oleh $1: $2',
 	'globalblocking-list-whitelist' => 'status tempatan',
 	'globalblocking-list-modify' => 'ubahsuai',
+	'globalblocking-list-noresults' => 'Alamat IP yang diminta tidak disekat.',
 	'globalblocking-goto-block' => 'Sekat alamat IP di semua wiki',
 	'globalblocking-goto-unblock' => 'Batalkan sekatan sejagat',
 	'globalblocking-goto-status' => 'Tukar status tempatan bagi sekatan sejagat',
@@ -5314,6 +5321,7 @@ Jika suatu sekatan sejagat dimatikan di wiki ini, pengguna alamat IP yang berken
 	'globalblocking-blocked' => "Alamat IP anda telah disekat di semua wiki oleh '''\$1''' (''\$2'').
 Sebab yang diberikan ialah ''\"\$3\"''.
 Sekatan ini ''\$4''.",
+	'globalblocking-blocked-nopassreset' => 'Anda tidak boleh mengeset semula kata laluan pengguna kerana anda telah disekat di semua wiki.',
 	'globalblocking-logpage' => 'Log sekatan sejagat',
 	'globalblocking-logpagetext' => 'Yang berikut ialah log sekatan sejagat yang telah dikenakan dan dibatalkan di wiki ini. Sila ambil perhatian bahawa sekatan sejagat boleh dikenakan dan dibatalkan di wiki-wiki lain, justeru berkuatkuasa di wiki ini juga. Anda juga boleh melihat [[Special:GlobalBlockList|senarai semakan sejagat yang sedang berkuatkuasa]].',
 	'globalblocking-block-logentry' => 'menyekat [[$1]] di semua wiki sehingga $2',
@@ -5324,6 +5332,8 @@ Sekatan ini ''\$4''.",
 	'globalblocking-modify-logentry' => 'sekatan sejagat untuk [[$1]] ($2) telah diubahsuai',
 	'globalblocking-logentry-expiry' => 'luput $1',
 	'globalblocking-logentry-noexpiry' => 'perluputan tidak ditetapkan',
+	'globalblocking-loglink' => 'Alamat IP $1 telah disekat di semua wiki ([[{{#Special:GlobalBlockList}}/$1|butiran penuh]]).',
+	'globalblocking-showlog' => 'Alamat IP ini pernah disekat sebelum ini. Log sekatan disediakan di bawah sebagai rujukan:',
 	'globalblocklist' => 'Senarai sekatan sejagat',
 	'globalblock' => 'Sekat alamat IP di semua wiki',
 	'globalblockstatus' => 'Status tempatan bagi sekatan sejagat',
@@ -5331,6 +5341,7 @@ Sekatan ini ''\$4''.",
 	'right-globalblock' => 'Mengenakan sekatan sejagat',
 	'right-globalunblock' => 'Membatalkan sekatan sejagat',
 	'right-globalblock-whitelist' => 'Mematikan sekatan sejagat di wiki tempatan',
+	'right-globalblock-exempt' => 'Mengatasi sekatan sejagat',
 );
 
 /** Maltese (Malti)
