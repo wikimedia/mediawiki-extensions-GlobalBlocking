@@ -7461,6 +7461,17 @@ Blockeringsloggen visas nedan som referens:',
 	'right-globalblock-exempt' => 'Gå förbi globala blockeringar',
 );
 
+/** Swahili (Kiswahili) */
+$messages['sw'] = array(
+	'globalblocking-block-reason' => 'Sababu:',
+	'globalblocking-block-otherreason' => 'Sababu nyingine:',
+	'globalblocking-block-expiry' => 'Itakwisha:',
+	'globalblocking-block-expiry-otherfield' => 'Kipindi kingine:',
+	'globalblocking-list-unblock' => 'ondoa',
+	'globalblocking-unblock-reason' => 'Sababu:',
+	'globalblocking-whitelist-reason' => 'Sababu:',
+);
+
 /** Telugu (తెలుగు)
  * @author Veeven
  * @author వైజాసత్య
