@@ -4696,7 +4696,7 @@ E puer Spären sinn lokal ausgeschalt: dat heescht si si just op anere Site gël
 	'globalblocking-search-legend' => 'Sich no enger globaler Spär',
 	'globalblocking-search-ip' => 'IP-Adress:',
 	'globalblocking-search-submit' => 'Späre sichen',
-	'globalblocking-list-ipinvalid' => "D'IP-adress no däer Dir Gesicht hutt ($1) ass net korrekt.
+	'globalblocking-list-ipinvalid' => "D'IP-adress no där Dir Gesicht hutt ($1) ass net korrekt.
 Gitt w.e.g eng korrekt IP-Adress an.",
 	'globalblocking-search-errors' => 'Bei ärer Sich gouf, aus {{PLURAL:$1|dësem Grond|dëse Grënn}} näischt fonnt:',
 	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (vu(n) ''\$3'') huet [[Special:Contributions/\$4|\$4]] global gespaart ''(\$5)''",
