@@ -927,6 +927,7 @@ $messages['bn'] = array(
 /** Breton (Brezhoneg)
  * @author Fohanno
  * @author Fulup
+ * @author Gwendal
  * @author Y-M D
  */
 $messages['br'] = array(
@@ -957,8 +958,13 @@ Bezit war evezh, n'hallit ket lakaat anv un implijer !",
 	'globalblocking-modify-success' => 'Kemmet eo bet stankadenn hollek $1',
 	'globalblocking-block-successsub' => 'Graet eo bet ar stankadenn hollek',
 	'globalblocking-modify-successsub' => 'Kemmet eo bet ar stankadenn hollek',
+	'globalblocking-block-alreadyblocked' => "Ar chomlec'h IP $1 a zo stanket en un doare hollek dija.
+Gallout a rit diskwel ar stankadennoù e [[Special:GlobalBlockList|listenn ar stankadennoù hollek]],
+pe kemm ar c'hefluniadur eus ar stankadennoù hag a zo, dre kinnig en-dro ar furmskrid.",
 	'globalblocking-block-bigrange' => "Al lijorenn hoc'h eus spisaet ($1) a zo re vras evit bezañ stanket.
 D'ar muiañ e c'helloc'h stankañ 65 536 chomlec'h (/16 lijorenn)",
+	'globalblocking-list-intro' => "Sed aze listenn ar stankadennoù hollek oberiat.
+Lodennoù 'zo a zo merket evel diweredekaet war al lec'h: da laret eo e vez arloet kement-mañ e lec'hiennoù all, met ur merour lec'hel en deus dibabet diweredekaat anezho er wiki-mañ.",
 	'globalblocking-list' => "Roll ar chomlec'hioù IP stanket en un doare hollek",
 	'globalblocking-search-legend' => "Klask war-lerc'h ur stankadenn hollek",
 	'globalblocking-search-ip' => "Chomlec'h IP :",
@@ -1004,11 +1010,17 @@ dre-se ne c'hell ket bezañ kemmet statud lec'hel ar stankadenn hollek.",
 	'globalblocking-whitelist-nochange' => "N'hoc'h eus ket kemmet stad lec'hel ar stankadenn-se.
 [[Special:GlobalBlockList|Distreiñ da roll ar stankadennoù hollek]].",
 	'globalblocking-whitelist-errors' => "Ar c'hemm eus statud lec'hel ur stankadenn hollek en deus c'hwitet evit an {{PLURAL:$1|abeg|abegoù}} da-heul :",
+	'globalblocking-whitelist-intro' => "Gallout a rit implijout ar furmskrid-mañ evit kemm statud lec'hel ur stankadenn hollek.
+Mard eo diweredekaet ur stankadenn hollek er wiki-mañ, an implijerien gant ar chomlec'hioù IP merket a c'hello kemmañ d'un doare normal.
+[[Special:GlobalBlockList|Mont en-dro e listenn ar stankadennoù hollek]].",
 	'globalblocking-blocked' => "Stanket eo bet ho chomlec'h IP war an holl wikioù gant '''\$1''' (''\$2'').
 An abeg a oa ''\"\$3\"''.
 Stankadenn : ''\$4''.",
 	'globalblocking-blocked-nopassreset' => "Ne c'hellit ket adderaouekaat gerioù-tremen implijerien dre ma 'z oc'h stanket en un doare hollek.",
 	'globalblocking-logpage' => 'Marilh ar stankadennoù hollek',
+	'globalblocking-logpagetext' => "Seda aze marilh ar stankadennoù hollek a zo bet graet ha tennet er wiki-mañ.
+Ar stankadennoù hollek a c'hell bezañ graet pe tennet e wikioù all, hag ar stankadennoù hollek-mañ a c'hell merkañ ar wiki-mañ.
+Evit gwelout holl ar stankadennoù 'zo, gallout a rit mont da welet [[Special:GlobalBlockList|listenn ar stankadennoù hollek]].",
 	'globalblocking-block-logentry' => 'en deus stanket [[$1]] en un doare hollek, gant un hirder termen a $2',
 	'globalblocking-block2-logentry' => 'en deus stanket [[$1]] dre-vras ($2)',
 	'globalblocking-unblock-logentry' => 'en deus tennet stankadenn hollek [[$1]]',
