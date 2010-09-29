@@ -7508,6 +7508,16 @@ $messages['sw'] = array(
 	'globalblocking-whitelist-reason' => 'Sababu:',
 );
 
+/** Tamil (தமிழ்)
+ * @author TRYPPN
+ */
+$messages['ta'] = array(
+	'globalblocking-block-reason' => 'காரணம்:',
+	'globalblocking-block-options' => 'விருப்பத்தேர்வுகள்:',
+	'globalblocking-whitelist-reason' => 'காரணம்:',
+	'globalblocking-whitelist-status' => 'உள்ளூர் நிலைமை:',
+);
+
 /** Telugu (తెలుగు)
  * @author Veeven
  * @author వైజాసత్య
