@@ -7514,6 +7514,9 @@ $messages['sw'] = array(
 $messages['ta'] = array(
 	'globalblocking-block-reason' => 'காரணம்:',
 	'globalblocking-block-options' => 'விருப்பத்தேர்வுகள்:',
+	'globalblocking-list-unblock' => 'நீக்கு',
+	'globalblocking-list-modify' => 'திருத்தம் செய்',
+	'globalblocking-unblock-reason' => 'காரணம்:',
 	'globalblocking-whitelist-reason' => 'காரணம்:',
 	'globalblocking-whitelist-status' => 'உள்ளூர் நிலைமை:',
 );
@@ -8594,6 +8597,7 @@ $messages['yi'] = array(
 ** וואַנדאַליזם',
 	'globalblocking-block-edit-dropdown' => 'רעדאַקטירן בלאקירונג סיבות',
 	'globalblocking-block-expiry' => 'אויסלאז:',
+	'globalblocking-block-expiry-other' => 'אַנדער אויסלאז צײַט',
 	'globalblocking-unblock-reason' => 'אורזאַך:',
 	'globalblocking-whitelist-reason' => 'אורזאַך:',
 	'removeglobalblock' => 'אויפהייבן גלאבאלן בלאק',
