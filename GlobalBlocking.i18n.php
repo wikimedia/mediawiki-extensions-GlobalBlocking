@@ -6235,8 +6235,10 @@ $messages['ps'] = array(
 	'globalblocking-search-ip' => 'IP پته:',
 	'globalblocking-list-whitelist' => 'سيمه ايز دريځ',
 	'globalblocking-unblock-reason' => 'سبب:',
+	'globalblocking-whitelist-legend' => 'سيمه ايز دريځ بدلول',
 	'globalblocking-whitelist-reason' => 'سبب:',
 	'globalblocking-whitelist-status' => 'سيمه ايز دريځ:',
+	'globalblocking-whitelist-submit' => 'سيمه ايز دريځ بدلول',
 );
 
 /** Portuguese (Português)
@@ -8264,6 +8266,10 @@ $messages['vec'] = array(
 	'globalblocking-block-reason' => 'Motivassion:',
 	'globalblocking-block-otherreason' => 'Altra motivazion o motivazion agiuntiva:',
 	'globalblocking-block-reasonotherlist' => 'Altra motivassion',
+	'globalblocking-block-reason-dropdown' => '* Motivi comuni de bloco
+** Spam crosswiki  
+** Abuso crosswiki 
+** Vandalismo',
 	'globalblocking-block-edit-dropdown' => 'Canbia i motivi del bloco',
 	'globalblocking-block-expiry' => 'Scadensa:',
 	'globalblocking-block-expiry-other' => 'Altra scadensa',
