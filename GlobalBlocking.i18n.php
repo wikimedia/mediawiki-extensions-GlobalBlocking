@@ -7515,8 +7515,10 @@ $messages['sw'] = array(
  */
 $messages['ta'] = array(
 	'globalblocking-block-reason' => 'காரணம்:',
+	'globalblocking-block-expiry' => 'முடிவுறுதல்:',
 	'globalblocking-block-expiry-otherfield' => 'வேறு நேரம்:',
 	'globalblocking-block-options' => 'விருப்பத்தேர்வுகள்:',
+	'globalblocking-search-ip' => 'ஐ.பி. முகவரி:',
 	'globalblocking-list-unblock' => 'நீக்கு',
 	'globalblocking-list-modify' => 'திருத்தம் செய்',
 	'globalblocking-unblock-reason' => 'காரணம்:',
