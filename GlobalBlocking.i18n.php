@@ -4410,6 +4410,8 @@ $messages['km'] = array(
  */
 $messages['kn'] = array(
 	'globalblocking-block-reason' => 'ಕಾರಣ:',
+	'globalblocking-block-otherreason' => 'ಇತರ/ಹೆಚ್ಚುವರಿ ಕಾರಣ:',
+	'globalblocking-block-reasonotherlist' => 'ಇತರ ಕಾರಣ',
 	'globalblocking-unblock-reason' => 'ಕಾರಣ:',
 	'globalblocking-whitelist-reason' => 'ಕಾರಣ:',
 );
@@ -5194,7 +5196,11 @@ $messages['ml'] = array(
  * @author Chinneeb
  */
 $messages['mn'] = array(
+	'globalblocking-block-reason' => 'Шалтгаан:',
+	'globalblocking-block-otherreason' => 'Өөр/нэмэлт шалтгаан:',
 	'globalblocking-block-expiry-otherfield' => 'Өөр хугацаа:',
+	'globalblocking-unblock-reason' => 'Шалтгаан:',
+	'globalblocking-whitelist-reason' => 'Шалтгаан:',
 );
 
 /** Marathi (मराठी)
@@ -7612,6 +7618,7 @@ $messages['te'] = array(
 	'globalblocking-whitelist-logentry' => '[[$1]]పై సార్వత్రిక నిరోధాన్ని స్థానికంగా అచేతనం చేసారు',
 	'globalblocking-dewhitelist-logentry' => '[[$1]]పై సార్వత్రిక నిరోధాన్ని స్థానికంగా పునఃచేతనం చేసారు',
 	'globalblocking-modify-logentry' => '[[$1]]పై సార్వత్రిక నిరోధాన్ని మార్చారు ($2)',
+	'globalblocking-logentry-expiry' => '$1న కాలంచెల్లుతుంది',
 	'globalblocking-loglink' => '$1 అనే ఐపీ చిరునామాని సార్వత్రికంగా నిరోధించారు ([[{{#Special:GlobalBlockList}}/$1|పూర్తి వివరాలు]]).',
 	'globalblocking-showlog' => 'ఈ ఐపీ చిరునామాని గతంలో నిరోధించి ఉన్నారు.
 మీ సమాచారం కోసం నిరోధపు చిట్టాని క్రింద ఇస్తున్నాం:',
