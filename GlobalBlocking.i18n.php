@@ -2311,9 +2311,9 @@ $messages['eu'] = array(
  */
 $messages['fa'] = array(
 	'globalblocking-desc' => 'قطع دسترسی نشانی‌های اینترنتی [[Special:GlobalBlockList|در چندین ویکی]] را [[Special:GlobalBlock|ممکن می‌سازد]]',
-	'globalblocking-block' => 'قطع دسترسی یک نشانی اینترنتی به صورت سراسری',
+	'globalblocking-block' => 'قطع دسترسی یک نشانی آی‌پی به صورت سراسری',
 	'globalblocking-modify-intro' => 'می‌توانید از این فرم برای تغییر تنظیمات بستن سراسری استفاده کنید.',
-	'globalblocking-block-intro' => 'شما می‌توانید از این صفحه برای قطع دسترسی یک نشانی اینترنتی در تمام ویکی‌ها استفاده کنید.',
+	'globalblocking-block-intro' => 'شما می‌توانید از این صفحه برای قطع دسترسی یک نشانی آی‌پی در تمام ویکی‌ها استفاده کنید.',
 	'globalblocking-block-reason' => 'دلیل:',
 	'globalblocking-block-otherreason' => 'دلایل دیگر/اضافی:',
 	'globalblocking-block-reasonotherlist' => 'دیگر دلایل',
@@ -2328,12 +2328,12 @@ $messages['fa'] = array(
 	'globalblocking-block-legend' => 'قطع دسترسی نشانی یک آی‌پی به صورت سراسری',
 	'globalblocking-block-options' => 'گزینه‌ها:',
 	'globalblocking-block-errors' => 'قطع دسترسی شما به این {{PLURAL:$1|دلیل|دلایل}} ناموفق بود:',
-	'globalblocking-block-ipinvalid' => 'نشانی اینترنتی که شما وارد کردید ($1) غیر مجاز است.
+	'globalblocking-block-ipinvalid' => 'نشانی آی‌پی که وارد کردید ($1) غیر مجاز است.
 توجه داشته باشید که شما نمی‌توانید یک نام کاربری را وارد کنید!',
 	'globalblocking-block-expiryinvalid' => 'زمان خاتمه‌ای که وارد کردید ($1) غیر مجاز است.',
-	'globalblocking-block-submit' => 'قطع دسترسی سراسری این نشانی اینترنتی',
+	'globalblocking-block-submit' => 'قطع دسترسی سراسری این نشانی آی‌پی',
 	'globalblocking-modify-submit' => 'اصلاح این بستن سراسری',
-	'globalblocking-block-success' => 'دسترسی نشانی اینترنتی $1 با موفقیت در تمام پروژه‌های قطع شد.',
+	'globalblocking-block-success' => 'دسترسی نشانی آی‌پی $1 با موفقیت در تمام پروژه‌ها قطع شد.',
 	'globalblocking-modify-success' => 'بستن سراسری $1 با موفقیت تغییر یافت',
 	'globalblocking-block-successsub' => 'قطع دسترسی سراسری موفق بود',
 	'globalblocking-modify-successsub' => 'بستن سراسری با موفقیت تغییر یافت',
@@ -2347,8 +2347,8 @@ $messages['fa'] = array(
 	'globalblocking-search-legend' => 'جستجو برای یک قطع دسترسی سراسری',
 	'globalblocking-search-ip' => 'نشانی آی‌پی:',
 	'globalblocking-search-submit' => 'جستجوی قطع دسترسی‌ها',
-	'globalblocking-list-ipinvalid' => 'نشانی اینترنتی که شما جستجو کردید ($1) غیر مجاز است.
-لطفاً یک نشانی اینترنتی مجاز وارد کنید.',
+	'globalblocking-list-ipinvalid' => 'نشانی آی‌پی که شما جستجو کردید ($1) غیر مجاز است.
+لطفاً یک نشانی آی‌پی مجاز وارد کنید.',
 	'globalblocking-search-errors' => 'جستجوی شما به {{PLURAL:$1|دلیل|دلایل}} روبرو ناموفق بود:',
 	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') دسترسی [[Special:Contributions/\$4|\$4]] ''(\$5)'' را به طور سراسری بست",
 	'globalblocking-list-expiry' => 'خاتمه $1',
@@ -2358,18 +2358,18 @@ $messages['fa'] = array(
 	'globalblocking-list-whitelist' => 'وضعیت محلی',
 	'globalblocking-list-modify' => 'تغییر',
 	'globalblocking-list-noresults' => 'آی‌پی درخواست شده مسدود نمی‌باشد.',
-	'globalblocking-goto-block' => 'قطع دسترسی سراسری یک نشانی اینترنتی',
+	'globalblocking-goto-block' => 'قطع دسترسی سراسری یک نشانی آی‌پی',
 	'globalblocking-goto-unblock' => 'حذف یک قطع دسترسی سراسری',
 	'globalblocking-goto-status' => 'تغییر وضعیت محلی یک قطع دسترسی سراسری',
 	'globalblocking-return' => 'بازگشت به فهرست قطع دسترسی‌های سراسری',
-	'globalblocking-notblocked' => 'دسترسی نشانی اینترنتی که وارد کردید ($1) به طور سراسری بسته نیست.',
+	'globalblocking-notblocked' => 'دسترسی نشانی آی‌پی که وارد کردید ($1) به طور سراسری بسته نیست.',
 	'globalblocking-unblock' => 'حذف یک قطع دسترسی سراسری',
-	'globalblocking-unblock-ipinvalid' => 'نشانی اینترنتی که وارد کردید ($1) غیر مجاز است.
+	'globalblocking-unblock-ipinvalid' => 'نشانی آی‌پی که وارد کردید ($1) غیر مجاز است.
 لطفاً توجه داشته باشید که نمی‌تواند یک نام کاربری را وارد کنید.',
 	'globalblocking-unblock-legend' => 'حذف یک قطع دسترسی سراسری',
 	'globalblocking-unblock-submit' => 'حذف قطع دصترسی سراسری',
 	'globalblocking-unblock-reason' => 'دلیل:',
-	'globalblocking-unblock-unblocked' => "شما با موفقیت قطع دسترسی سراسری شماره $2 را از نشانی اینترنتی '''$1''' برداشتید",
+	'globalblocking-unblock-unblocked' => "شما با موفقیت قطع دسترسی سراسری شماره $2 را از نشانی آی‌پی '''$1''' برداشتید",
 	'globalblocking-unblock-errors' => 'حذف قطع دسترسی سراسری به {{PLURAL:$1|دلیل|دلایل}} روبرو ناموفق بود:',
 	'globalblocking-unblock-successsub' => 'قطع دسترسی سراسری با موفقیت حذف شد',
 	'globalblocking-unblock-subtitle' => 'حذف قطع دسترسی سراسری',
@@ -2382,17 +2382,17 @@ $messages['fa'] = array(
 	'globalblocking-whitelist-status' => 'وضعیت محلی:',
 	'globalblocking-whitelist-statuslabel' => 'غیر فعال کردن قطع دسترسی سراسری در {{SITENAME}}',
 	'globalblocking-whitelist-submit' => 'تغییر وضعیت محلی',
-	'globalblocking-whitelist-whitelisted' => "شما با موفقیت قطع دسترسی شماره $2 را روی نشانی اینترنتی '''$1''' در {{SITENAME}} غیر فعال کردید.",
-	'globalblocking-whitelist-dewhitelisted' => "شما با موفقیت قطع دسترسی شماره $2 را روی نشانی اینترنتی '''$1''' در {{SITENAME}} دوباره فعال کردید.",
+	'globalblocking-whitelist-whitelisted' => "شما با موفقیت قطع دسترسی شماره $2 را روی نشانی آی‌پی '''$1''' در {{SITENAME}} غیر فعال کردید.",
+	'globalblocking-whitelist-dewhitelisted' => "شما با موفقیت قطع دسترسی شماره $2 را روی نشانی آی‌پی '''$1''' در {{SITENAME}} دوباره فعال کردید.",
 	'globalblocking-whitelist-successsub' => 'وضعیت محلی به طور موفق تغییر یافت',
 	'globalblocking-whitelist-nochange' => 'شما تغییری در وضعیت محلی این قطع دسترسی سراسری ایجاد نکردید
 [[Special:GlobalBlockList|بازگشت به فهرست قطع دسترسی های سراسری]].',
 	'globalblocking-whitelist-errors' => 'تغییری که شما در وضعیت محلی یک قطع دسترسی سراسری ایجاد کردید به {{PLURAL:$1|دلیل|دلایل}} روبرو موفق نبود:',
 	'globalblocking-whitelist-intro' => 'شما می‌توانید از این فرم برای ویرایش وضعیت محلی یک قطع دسترسی سراسری استفاده کنید.
-اگر یک قطع دسترسی سراسری در این ویکی غیر فعال شود، کاربرهایی که روی نشانی اینترنتی مربوط به آن قرار دارند قادر به ویرایش به صورت معمولی خواهند بود.
+اگر یک قطع دسترسی سراسری در این ویکی غیر فعال شود، کاربرهایی که روی نشانی آی‌پی مربوط به آن قرار دارند قادر به ویرایش به صورت معمولی خواهند بود.
 [[Special:GlobalBlockList|بازگشت به فهرست قطع دسترسی‌های سراسری]].',
-	'globalblocking-blocked' => "دسترسی نشانی اینترنتی شما به تمام ویکی‌ها توسط '''$1''' (''$2'') قطع شده است.
-دلیل ارائه شده چنین بوده است: ''«$3'»''.
+	'globalblocking-blocked' => "دسترسی نشانی آی‌پی شما به تمام ویکی‌ها توسط '''$1''' (''$2'') قطع شده است.
+دلیل ارائه شده چنین بوده است: ''«$3»''.
 این قطع دسترسی ''$4''.",
 	'globalblocking-blocked-nopassreset' => 'شما نمی‌توانید کلمات عبور کاربران را تغییر دهید ، زیرا شما به صورت سراسری مسدود شده‌اید.',
 	'globalblocking-logpage' => 'سیاههٔ قطع دسترسی سراسری',
@@ -2400,17 +2400,17 @@ $messages['fa'] = array(
 باید توجه داشت که قطع دسترسی‌های سراسری می‌تواند در ویکی‌های دیگر ایجاد یا حذف شود، و چنین قطع دسترسی‌هایی می‌تواند در این ویکی تاثیر بگذارد.
 برای مشاهدهٔ تمام قطع دسترسی‌های سراسری فعال، شما می‌توانید [[Special:GlobalBlockList|فهرست قطع دسترسی‌های سراسری]] را ببینید.',
 	'globalblocking-block-logentry' => 'دسترسی [[$1]] را تا $2 به طور سراسری قطع کرد',
-	'globalblocking-block2-logentry' => 'قطع دسترسی سراسری [[$1]] ($2)',
-	'globalblocking-unblock-logentry' => 'حذف قطع دسترسی سراسری [[$1]]',
-	'globalblocking-whitelist-logentry' => 'غیر فعال کردن قطع دسترسی سراسری [[$1]] به طور محلی',
-	'globalblocking-dewhitelist-logentry' => 'دوباره فعال کردن قطع دسترسی سراسری [[$1]] به طور محلی',
-	'globalblocking-modify-logentry' => 'بستن سراسری [[$1]] ($2) تغییر کرد',
-	'globalblocking-logentry-expiry' => '$1 منقضی می‌شود',
+	'globalblocking-block2-logentry' => 'دسترسی [[$1]] را به طور سراسری قطع کرد ($2)',
+	'globalblocking-unblock-logentry' => 'قطع دسترسی سراسری [[$1]] را حذف کرد',
+	'globalblocking-whitelist-logentry' => 'قطع دسترسی سراسری [[$1]] را به طور محلی غیر فعال کرد',
+	'globalblocking-dewhitelist-logentry' => 'قطع دسترسی سراسری [[$1]] را به طور محلی دوباره فعال کرد',
+	'globalblocking-modify-logentry' => 'قطع دسترسی سراسری [[$1]] را تغییر داد ($2)',
+	'globalblocking-logentry-expiry' => 'انقضا $1',
 	'globalblocking-logentry-noexpiry' => 'هیچ انقضایی تنظیم نشده',
 	'globalblocking-loglink' => 'آدرس آی‌پی $۱ به صورت سراسری مسدود شده‌است ([[{{#Special:GlobalBlockList}}/$1|جزئیات کامل]]).',
 	'globalblocking-showlog' => 'دسترسی این کاربر قبلاً بسته شده‌است. سیاههٔ قطع دسترسی در زیر نمایش یافته است :',
 	'globalblocklist' => 'فهرست نشانی‌های اینترنتی بسته شده به طور سراسری',
-	'globalblock' => 'قطع دصترسی سراسری یک نشانی اینترنتی',
+	'globalblock' => 'قطع دصترسی سراسری یک نشانی آی‌پی',
 	'globalblockstatus' => 'وضعیت محلی قعط دسترسی‌های سراسری',
 	'removeglobalblock' => 'حذف یک قطع دسترسی سراسری',
 	'right-globalblock' => 'ایجاد قطع دسترسی‌های سراسری',
@@ -4412,6 +4412,7 @@ $messages['kn'] = array(
 	'globalblocking-block-reason' => 'ಕಾರಣ:',
 	'globalblocking-block-otherreason' => 'ಇತರ/ಹೆಚ್ಚುವರಿ ಕಾರಣ:',
 	'globalblocking-block-reasonotherlist' => 'ಇತರ ಕಾರಣ',
+	'globalblocking-block-expiry-otherfield' => 'ಇತರ ಸಮಯ:',
 	'globalblocking-unblock-reason' => 'ಕಾರಣ:',
 	'globalblocking-whitelist-reason' => 'ಕಾರಣ:',
 );
@@ -5198,6 +5199,7 @@ $messages['ml'] = array(
 $messages['mn'] = array(
 	'globalblocking-block-reason' => 'Шалтгаан:',
 	'globalblocking-block-otherreason' => 'Өөр/нэмэлт шалтгаан:',
+	'globalblocking-block-reasonotherlist' => 'Өөр шалтгаан',
 	'globalblocking-block-expiry-otherfield' => 'Өөр хугацаа:',
 	'globalblocking-unblock-reason' => 'Шалтгаан:',
 	'globalblocking-whitelist-reason' => 'Шалтгаан:',
@@ -5644,6 +5646,7 @@ Het blokkeerlogboek wordt hieronder weergegeven:',
  * @author Harald Khan
  * @author Jon Harald Søby
  * @author Jorunn
+ * @author Nghtwlkr
  */
 $messages['nn'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Gjer det råd]] å blokkera IP-adresser [[Special:GlobalBlockList|krosswiki]]',
@@ -5651,7 +5654,9 @@ $messages['nn'] = array(
 	'globalblocking-modify-intro' => 'Du kan nytta dette skjemaet til å endra instillingane til ei global blokkering.',
 	'globalblocking-block-intro' => 'Du kan nytte denne sida til å blokkere ei IP-adresse krosswiki.',
 	'globalblocking-block-reason' => 'Årsak:',
-	'globalblocking-block-expiry' => 'Blokkeringa varer til:',
+	'globalblocking-block-otherreason' => 'Annan grunn/tilleggsgrunn:',
+	'globalblocking-block-reasonotherlist' => 'Annan årsak',
+	'globalblocking-block-expiry' => 'Opphøyrstid:',
 	'globalblocking-block-expiry-other' => 'Anna varigheit',
 	'globalblocking-block-expiry-otherfield' => 'Anna tid:',
 	'globalblocking-block-legend' => 'Blokker ein brukar krosswiki',
@@ -6517,12 +6522,15 @@ Hark'ay hallch'ataqa kaypim rikunki willasunaykipaq:",
  * @author KlaudiuMihaila
  * @author Mihai
  * @author Minisarm
+ * @author Stelistcristi
  */
 $messages['ro'] = array(
 	'globalblocking-block' => 'Blochează global o adresă IP',
 	'globalblocking-block-intro' => 'Această pagină permite blocarea unei adrese IP pe toate proiectele wiki.',
 	'globalblocking-block-reason' => 'Motiv:',
+	'globalblocking-block-otherreason' => 'Altul/motiv suplimentar:',
 	'globalblocking-block-reasonotherlist' => 'Alt motiv',
+	'globalblocking-block-edit-dropdown' => 'Modifică motivele blocării',
 	'globalblocking-block-expiry' => 'Expirare:',
 	'globalblocking-block-expiry-other' => 'Alte termene de expirare',
 	'globalblocking-block-expiry-otherfield' => 'Alt termen:',
@@ -6550,6 +6558,7 @@ Atenție, nu poate fi introdus un nume de utilizator!',
 	'globalblocking-list-whitelisted' => 'dezactivat local de $1: $2',
 	'globalblocking-list-whitelist' => 'statut local',
 	'globalblocking-list-modify' => 'modifică',
+	'globalblocking-list-noresults' => 'Adresa IP solicitată nu este blocată.',
 	'globalblocking-goto-block' => 'Blochează global o adresă IP',
 	'globalblocking-goto-unblock' => 'Elimină o blocare globală',
 	'globalblocking-goto-status' => 'Schimbă statutul local al unei blocări globale',
@@ -6576,11 +6585,15 @@ deci statutul local al blocărilor globale nu poate fi modificat.',
 	'globalblocking-whitelist-whitelisted' => "Blocarea #$2 a adresei IP '''$1''' la {{SITENAME}} a fost dezactivată cu succes.",
 	'globalblocking-whitelist-dewhitelisted' => "Blocarea #$2 a adresei IP '''$1''' la {{SITENAME}} a fost reactivată cu succes.",
 	'globalblocking-whitelist-successsub' => 'Statut global schimbat cu succes',
+	'globalblocking-blocked' => "Adresa dvs. IP a fost blocată pe toate wiki-urile de către '''$1''' (''$2'').
+Motivul dat a fost ''„$3”''.
+Blocarea ''$4''.",
 	'globalblocking-logpage' => 'Jurnal blocări globale',
 	'globalblocking-block2-logentry' => 'blocat global pe [[$1]] ($2)',
 	'globalblocking-unblock-logentry' => 'eliminat blocare globală pentru [[$1]]',
 	'globalblocking-logentry-expiry' => 'expiră la $1',
 	'globalblocking-logentry-noexpiry' => 'nicio dată de expirare setată',
+	'globalblocking-loglink' => 'Adresa IP $1 este blocată global ([[{{#Special:GlobalBlockList}}/$1|detalii complete]]).',
 	'globalblocklist' => 'Listă de adrese IP blocate global',
 	'globalblock' => 'Blochează global o adresă IP',
 	'globalblockstatus' => 'Statutul local al blocărilor globale',
@@ -6825,9 +6838,64 @@ $1',
  * @author Gazeb
  */
 $messages['rue'] = array(
+	'globalblocking-block' => 'Заблоковати IP адресу ґлобално',
 	'globalblocking-block-reason' => 'Причіна:',
+	'globalblocking-block-otherreason' => 'Інша/далша причіна:',
+	'globalblocking-block-reasonotherlist' => 'Інша причіна',
+	'globalblocking-block-reason-dropdown' => '* Часты причіны блокованя
+** Спам на різных вікі
+** Знеужываня на різных вікі
+** Вандалізм',
+	'globalblocking-block-edit-dropdown' => 'Едітовати причіны блоковань',
+	'globalblocking-block-expiry' => 'Кінчіть:',
+	'globalblocking-block-expiry-other' => 'Інша довжка блоку',
+	'globalblocking-block-expiry-otherfield' => 'Іншый час:',
+	'globalblocking-block-legend' => 'Ґлобално блоковати IP адресу',
+	'globalblocking-block-options' => 'Можности:',
+	'globalblocking-modify-submit' => 'Змінити тото ґлобалне блокованя',
 	'globalblocking-search-ip' => 'IP-адреса:',
+	'globalblocking-search-submit' => 'Найти блокованя',
+	'globalblocking-list-expiry' => 'кінчіть ся $1',
+	'globalblocking-list-anononly' => 'лем анонімы',
+	'globalblocking-list-unblock' => 'уволнити',
+	'globalblocking-list-whitelisted' => 'локално знеплатнив $1: $2',
+	'globalblocking-list-whitelist' => 'локалный статус',
+	'globalblocking-list-modify' => 'змінити',
+	'globalblocking-list-noresults' => 'Зазначена IP-адреса не є блокована.',
+	'globalblocking-goto-block' => 'Заблоковати IP адресу ґлобално',
+	'globalblocking-goto-unblock' => 'Зняти ґлобалне блокованя',
+	'globalblocking-goto-status' => 'Змінити локалный статус ґлобалного блокованя',
+	'globalblocking-return' => 'Навернутя на список ґлобалных блоковань',
+	'globalblocking-notblocked' => 'Вами зазначена IP адреса ($1) не є ґлобално блокована.',
+	'globalblocking-unblock' => 'Зняти ґлобалне блокованя',
+	'globalblocking-unblock-ipinvalid' => 'Вами зазначена IP адреса ($1) не є платна.
+Усвідомте собі, же не можете задати імя хоснователя!',
+	'globalblocking-unblock-legend' => 'Знятя ґлобалного блокованя',
+	'globalblocking-unblock-submit' => 'Зняти ґлобалне блокованя',
+	'globalblocking-unblock-reason' => 'Причіна:',
+	'globalblocking-unblock-unblocked' => "Успішно сьте зняли ґлобалне блокованя #$2 з IP адресы '''$1'''",
+	'globalblocking-unblock-errors' => 'Спроба зняти ґлобалне блокованя ся не подарила. {{PLURAL:$1|Причіна|Причіны}}:',
+	'globalblocking-unblock-successsub' => 'Ґлобалне блокованя успішно зняте',
+	'globalblocking-unblock-subtitle' => 'Знятя ґлобалного блокованя',
+	'globalblocking-unblock-intro' => 'Тым формуларём можете зняти ґлобалне блокованя.',
+	'globalblocking-whitelist' => 'Локалный статус ґлобалного блокованя',
+	'globalblocking-whitelist-legend' => 'Зміна локалного статуса',
 	'globalblocking-whitelist-reason' => 'Причіна:',
+	'globalblocking-whitelist-status' => 'Локалный статус:',
+	'globalblocking-whitelist-submit' => 'Змінити локалный статус',
+	'globalblocking-logentry-expiry' => 'кінчіть ся $1',
+	'globalblocking-logentry-noexpiry' => 'без терміну закінчіня',
+	'globalblocking-loglink' => 'IP адреса $1 є ґлобално блокованя ([[{{#Special:GlobalBlockList}}/$1|детайлы]]).',
+	'globalblocking-showlog' => 'Тота IP адреса была уж скоре блокована.
+Ту є про перегляд вказаный выпис з книгы блокованя:',
+	'globalblocklist' => 'Список ґлобално заблокованых IP адрес',
+	'globalblock' => 'Заблоковати IP адресу ґлобално',
+	'globalblockstatus' => 'Локалный статус ґлобалного блокованя',
+	'removeglobalblock' => 'Зняти ґлобалне блокованя',
+	'right-globalblock' => 'Ґлобалне блокованя',
+	'right-globalunblock' => 'Знятя ґлобалных блоковань',
+	'right-globalblock-whitelist' => 'Дефінованя вынятків з ґлобалного блокованя',
+	'right-globalblock-exempt' => 'Обходжаня ґлобалных блоковань',
 );
 
 /** Yakut (Саха тыла)
@@ -7543,6 +7611,7 @@ $messages['te'] = array(
 	'globalblocking-block-reason' => 'కారణం:',
 	'globalblocking-block-otherreason' => 'ఇతర/అదనపు కారణం:',
 	'globalblocking-block-reasonotherlist' => 'ఇతర కారణం',
+	'globalblocking-block-edit-dropdown' => 'నిరోధపు కారణాలను మార్చండి',
 	'globalblocking-block-expiry' => 'కాలపరిమితి:',
 	'globalblocking-block-expiry-other' => 'ఇతర కాలపరిమితి సమయం',
 	'globalblocking-block-expiry-otherfield' => 'ఇతర సమయం:',
@@ -7619,6 +7688,7 @@ $messages['te'] = array(
 	'globalblocking-dewhitelist-logentry' => '[[$1]]పై సార్వత్రిక నిరోధాన్ని స్థానికంగా పునఃచేతనం చేసారు',
 	'globalblocking-modify-logentry' => '[[$1]]పై సార్వత్రిక నిరోధాన్ని మార్చారు ($2)',
 	'globalblocking-logentry-expiry' => '$1న కాలంచెల్లుతుంది',
+	'globalblocking-logentry-noexpiry' => 'కాలపరిమితిని అమర్చలేదు',
 	'globalblocking-loglink' => '$1 అనే ఐపీ చిరునామాని సార్వత్రికంగా నిరోధించారు ([[{{#Special:GlobalBlockList}}/$1|పూర్తి వివరాలు]]).',
 	'globalblocking-showlog' => 'ఈ ఐపీ చిరునామాని గతంలో నిరోధించి ఉన్నారు.
 మీ సమాచారం కోసం నిరోధపు చిట్టాని క్రింద ఇస్తున్నాం:',
