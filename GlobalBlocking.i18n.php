@@ -7245,6 +7245,7 @@ Dolu je pre informáciu záznam blokovaní:',
  * @author Smihael
  */
 $messages['sl'] = array(
+	'globalblocking-desc' => '[[Special:GlobalBlock|Omogoča]] blokado IP-naslovov [[Special:GlobalBlockList|preko več wikijev]]',
 	'globalblocking-block' => 'Globalno blokiraj IP-naslov',
 	'globalblocking-block-reason' => 'Razlog:',
 	'globalblocking-block-otherreason' => 'Drug/dodaten razlog:',
@@ -8733,9 +8734,20 @@ $messages['yi'] = array(
 	'globalblocking-block-edit-dropdown' => 'רעדאַקטירן בלאקירונג סיבות',
 	'globalblocking-block-expiry' => 'אויסלאז:',
 	'globalblocking-block-expiry-other' => 'אַנדער אויסלאז צײַט',
+	'globalblocking-block-expiry-otherfield' => 'אַנדער צײַט:',
 	'globalblocking-unblock-reason' => 'אורזאַך:',
 	'globalblocking-whitelist-reason' => 'אורזאַך:',
 	'removeglobalblock' => 'אויפהייבן גלאבאלן בלאק',
+);
+
+/** Yoruba (Yorùbá)
+ * @author Demmy
+ */
+$messages['yo'] = array(
+	'globalblocking-block-reason' => 'Ìdíẹ̀:',
+	'globalblocking-list-unblock' => 'ṣèyọkúrò',
+	'globalblocking-unblock-reason' => 'Ìdíẹ̀:',
+	'globalblocking-logentry-expiry' => 'yíò parí $1',
 );
 
 /** Cantonese (粵語)
