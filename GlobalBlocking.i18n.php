@@ -672,7 +672,7 @@ Pa ver tolos bloqueos globales activos, pues ver la [[Special:GlobalBlockList|ll
 /** Samogitian (Žemaitėška)
  * @author Hugo.arg
  */
-$messages['bat-smg'] = array(
+$messages['sgs'] = array(
 	'globalblocking-list' => 'Gluobalē ožblokoutu IP adresū sārošos',
 	'globalblocking-list-expiry' => 'beng galiuotė $1',
 );
