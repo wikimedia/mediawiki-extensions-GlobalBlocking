@@ -483,8 +483,13 @@ $messages['ar'] = array(
  * @author Basharh
  */
 $messages['arc'] = array(
+	'globalblocking-block-reason' => 'ܥܠܬܐ:',
+	'globalblocking-block-otherreason' => 'ܥܠܬܐ ܐܚܪܬܐ/ܢܩܝܦܬܐ:',
+	'globalblocking-block-reasonotherlist' => 'ܥܠܬܐ ܐܚܪܬܐ',
 	'globalblocking-block-expiry-otherfield' => 'ܥܕܢܐ ܐܚܪܬܐ:',
 	'globalblocking-block-options' => 'ܓܒܝܬ̈ܐ',
+	'globalblocking-list-anononly' => 'ܠܐ ܝܕ̈ܝܥܐ ܒܠܚܘܕ',
+	'globalblocking-list-whitelist' => 'ܐܝܟܢܝܘܬܐ ܕܘܟܬܢܝܬܐ',
 	'globalblocking-whitelist-reason' => 'ܥܠܬܐ:',
 );
 
@@ -669,14 +674,6 @@ Pa ver tolos bloqueos globales activos, pues ver la [[Special:GlobalBlockList|ll
 	'right-globalblock-whitelist' => 'Desactivar llocalmente bloqueos globales',
 );
 
-/** Samogitian (Žemaitėška)
- * @author Hugo.arg
- */
-$messages['sgs'] = array(
-	'globalblocking-list' => 'Gluobalē ožblokoutu IP adresū sārošos',
-	'globalblocking-list-expiry' => 'beng galiuotė $1',
-);
-
 /** Belarusian (Беларуская)
  * @author Тест
  */
@@ -814,6 +811,7 @@ $messages['bg'] = array(
 	'globalblocking-modify-intro' => 'Може да използвате тази форма, за да промените настройките на глобално блокиране.',
 	'globalblocking-block-intro' => 'Чрез тази страница може да се блокира IP-адрес едновременно във всички уикита.',
 	'globalblocking-block-reason' => 'Причина:',
+	'globalblocking-block-otherreason' => 'Друга или допълнителна причина:',
 	'globalblocking-block-reasonotherlist' => 'Друга причина',
 	'globalblocking-block-expiry' => 'Изтичане на блокирането:',
 	'globalblocking-block-expiry-other' => 'Друг срок за изтичане',
@@ -2192,6 +2190,10 @@ $messages['et'] = array(
 	'globalblocking-block-reason' => 'Põhjus:',
 	'globalblocking-block-otherreason' => 'Muu või täiendav põhjus:',
 	'globalblocking-block-reasonotherlist' => 'Muu põhjus',
+	'globalblocking-block-reason-dropdown' => '* Tavalised blokeerimispõhjused
+** Rämpspostitamine erinevates vikides
+** Rikkumised erinevates vikides
+** Vandalism',
 	'globalblocking-block-edit-dropdown' => 'Muuda blokeerimispõhjuseid',
 	'globalblocking-block-expiry' => 'Aegumistähtaeg:',
 	'globalblocking-block-expiry-other' => 'Muu tähtaeg',
@@ -3071,6 +3073,7 @@ $messages['haw'] = array(
 
 /** Hebrew (עברית)
  * @author Agbad
+ * @author Amire80
  * @author Rotemliss
  * @author YaronSh
  * @author Yonidebest
@@ -3155,7 +3158,7 @@ $messages['he'] = array(
 	'globalblocking-whitelist-intro' => 'באפשרותכם להשתמש בטופס זה כדי לערוך את המצב המקומי של חסימה גלובלית. אם החסימה הגלובלית תבוטל באתר זה, המשתמשים בכתובת ה־IP המושפעת מהחסימה יוכלו לערוך כרגיל. [[Special:GlobalBlockList|חזרה לרשימת החסימות הגלובליות]].',
 	'globalblocking-blocked' => "כתובת ה־IP שלכם נחסמה בכל אתרי הוויקי על ידי '''\$1''' ('''\$2''').
 הסיבה שניתנה הייתה '''\"\$3\"'''.
-זמן פקיעת החסימה הינו '''\$4'''.",
+זמן פקיעת החסימה: '''\$4'''.",
 	'globalblocking-blocked-nopassreset' => 'אין באפשרותכם לאפס סיסמאות של משתמשים כיוון שאתם חסומים באופן גלובלי.',
 	'globalblocking-logpage' => 'יומן החסימות הגלובליות',
 	'globalblocking-logpagetext' => 'זהו יומן החסימות הגלובליות שהופעלו והוסרו באתר זה.
@@ -7158,6 +7161,14 @@ $messages['scn'] = array(
 	'right-globalblock-exempt' => 'Bypassa li blocchi globali',
 );
 
+/** Samogitian (Žemaitėška)
+ * @author Hugo.arg
+ */
+$messages['sgs'] = array(
+	'globalblocking-list' => 'Gluobalē ožblokoutu IP adresū sārošos',
+	'globalblocking-list-expiry' => 'beng galiuotė $1',
+);
+
 /** Sinhala (සිංහල)
  * @author නන්දිමිතුරු
  */
@@ -8068,6 +8079,10 @@ $messages['tk'] = array(
 	'globalblocking-block-reason' => 'Sebäp:',
 	'globalblocking-block-otherreason' => 'Başga/goşmaça sebäp:',
 	'globalblocking-block-reasonotherlist' => 'Başga sebäp',
+	'globalblocking-block-reason-dropdown' => '* Umumy blokirleme sebäpleri
+** Wiki-ara spam
+** Wiki-ara betniýetli ulanyş
+** Wandalizm',
 	'globalblocking-block-edit-dropdown' => 'Blokirleme sebäplerini redaktirle',
 	'globalblocking-block-expiry' => 'Blokirlemäniň gutarýan senesi:',
 	'globalblocking-block-expiry-other' => 'Başga gutaryş wagty',
