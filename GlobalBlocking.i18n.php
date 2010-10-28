@@ -674,6 +674,120 @@ Pa ver tolos bloqueos globales activos, pues ver la [[Special:GlobalBlockList|ll
 	'right-globalblock-whitelist' => 'Desactivar llocalmente bloqueos globales',
 );
 
+/** Bashkir (Башҡорт)
+ * @author Assele
+ */
+$messages['ba'] = array(
+	'globalblocking-desc' => 'IP адрестарҙы [[Special:GlobalBlockList|бер нисә викила дөйөм бикләү]] [[Special:GlobalBlock|мөмкинлеге бирә]]',
+	'globalblocking-block' => 'IP адресты дөйөм бикләү',
+	'globalblocking-modify-intro' => 'Дөйөм бикләү көйләүҙәрен үҙгәтеү өсөн ошо форманы ҡуллана алаһығыҙ.',
+	'globalblocking-block-intro' => 'IP адресты бөтә викиларҙа бикләү өсөн ошо битте ҡуллана алаһығыҙ.',
+	'globalblocking-block-reason' => 'Сәбәп:',
+	'globalblocking-block-otherreason' => 'Башҡа/өҫтәмә сәбәп:',
+	'globalblocking-block-reasonotherlist' => 'Башҡа сәбәп',
+	'globalblocking-block-reason-dropdown' => '* Ғәҙәттәге бикләү сәбәптәре
+** Вики-ара спам
+** Вики-ара урынһыҙ ҡулланыуҙар
+** Вандаллыҡ',
+	'globalblocking-block-edit-dropdown' => 'Бикләү сәбәптәрен мөхәррирләргә',
+	'globalblocking-block-expiry' => 'Тамамлана:',
+	'globalblocking-block-expiry-other' => 'Башҡа тамамланыу ваҡыты',
+	'globalblocking-block-expiry-otherfield' => 'Башҡа ваҡыт:',
+	'globalblocking-block-legend' => 'IP адресты дөйөм бикләү',
+	'globalblocking-block-options' => 'Көйләүҙәр:',
+	'globalblocking-block-errors' => 'Һеҙҙең бикләүегеҙ түбәндәге {{PLURAL:$1|сәбәп|сәбәптәр}} арҡаһында уңышһыҙ тамамланды:',
+	'globalblocking-block-ipinvalid' => 'Һеҙ кереткән IP адрес ($1) дөрөҫ түгел.
+Зинһар, ҡатнашыусы исемен керетә алмауығыҙҙы иғтибарға алығыҙ!',
+	'globalblocking-block-expiryinvalid' => 'Һеҙ кереткән тамамланыу ваҡыты ($1) дөрөҫ түгел.',
+	'globalblocking-block-submit' => 'Был IP адресты дөйөм бикләргә',
+	'globalblocking-modify-submit' => 'Был дөйөм бикләүҙе үҙгәртергә',
+	'globalblocking-block-success' => '$1 IP адресы бөтә проекттарҙа ла уңышлы бикләнде.',
+	'globalblocking-modify-success' => '$1 дөйөм бикләү уңышлы үҙгәртелде.',
+	'globalblocking-block-successsub' => 'Дөйөм бикләү уңышлы тамамланды',
+	'globalblocking-modify-successsub' => 'Дөйөм бикләү уңышлы үҙгәртелде',
+	'globalblocking-block-alreadyblocked' => '$1 IP адресы дөйөм бикләнгән ине инде.
+[[Special:GlobalBlockList|Һеҙ дөйөм бикләүҙәр исемлегендә]] булған бикләүҙәрҙе ҡарай алаһығыҙ, йәки булған бикләүҙең көйләүҙәрен, ошо форманы ҡабаттан ебәреп, үҙгәртә алаһығыҙ.',
+	'globalblocking-block-bigrange' => 'Һеҙ күрһәткән арауыҡ ($1) бикләу өсөн бигерәк ҙур.
+Һеҙ иң күбендә 65 536 адрес бикләй алаһығыҙ (/16 арауыҡ)',
+	'globalblocking-list-intro' => 'Был — хәҙерге ваҡытта булған дөйөм бикләүҙәр исемлеге.
+Ҡайһы бер бикләүҙәр урында һүндерелгән, тип билдәләнгән: был улар башҡа сайттарҙа ҡулланыла, әммә урындағы хәким был викила уларҙы һүндерергә булған, тигәнде аңлата.',
+	'globalblocking-list' => 'Дөйөм бикләнгән IP адрестар исемлеге',
+	'globalblocking-search-legend' => 'Дөйөм бикләүҙе эҙләү',
+	'globalblocking-search-ip' => 'IP-адрес:',
+	'globalblocking-search-submit' => 'Бикләүҙәрҙе табырға',
+	'globalblocking-list-ipinvalid' => 'Һеҙ эҙләгән IP адрес ($1) дөрөҫ түгел.
+Зинһар, дөрөҫ IP адрес керетегеҙ.',
+	'globalblocking-search-errors' => 'Һеҙҙең эҙләүегеҙ түбәндәге {{PLURAL:$1|сәбәп|сәбәптәр}} арҡаһында уңышһыҙ тамамланды:',
+	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') [[Special:Contributions/\$4|\$4]] адресын дөйөм бикләгән ''(\$5)''",
+	'globalblocking-list-expiry' => '$1 тамамлана',
+	'globalblocking-list-anononly' => 'танылмағандар ғына',
+	'globalblocking-list-unblock' => 'бикте алырға',
+	'globalblocking-list-whitelisted' => '$1 тарафынан урында һүндерелгән: $2',
+	'globalblocking-list-whitelist' => 'урындағы торошо',
+	'globalblocking-list-modify' => 'үҙгәртергә',
+	'globalblocking-list-noresults' => 'Һоратылған IP адрес бикләнмәгән.',
+	'globalblocking-goto-block' => 'IP адресты дөйөм бикләргә',
+	'globalblocking-goto-unblock' => 'Дөйөм бикте алырға',
+	'globalblocking-goto-status' => 'Дөйөм биктең урындағы торошон үҙгәртергә',
+	'globalblocking-return' => 'Дөйөм бикләүҙәр исемлегенә кире ҡайтырға',
+	'globalblocking-notblocked' => 'Һеҙ кереткән IP адрес ($1) дөйөм бикләнмәгән.',
+	'globalblocking-unblock' => 'Дөйөм бикте алырға',
+	'globalblocking-unblock-ipinvalid' => 'Һеҙ кереткән IP адрес ($1) дөрөҫ түгел.
+Зинһар, ҡатнашыусы исемен керетә алмауығыҙҙы иғтибарға алығыҙ!',
+	'globalblocking-unblock-legend' => 'Дөйөм бикте алыу',
+	'globalblocking-unblock-submit' => 'Дөйөм бикте алырға',
+	'globalblocking-unblock-reason' => 'Сәбәп:',
+	'globalblocking-unblock-unblocked' => "Һеҙ '''$1''' IP адресынан №$2 дөйөм бикте уңышлы алдығыҙ.",
+	'globalblocking-unblock-errors' => 'Һеҙҙең бикте алыуығыҙ түбәндәге {{PLURAL:$1|сәбәп|сәбәптәр}} арҡаһында уңышһыҙ тамамланды:',
+	'globalblocking-unblock-successsub' => 'Дөйөм бик уңышлы кире алынды',
+	'globalblocking-unblock-subtitle' => 'Дөйөм бикте алыу',
+	'globalblocking-unblock-intro' => 'Дөйөм бикте алыу өсөн ошо форманы ҡуллана алаһығыҙ.',
+	'globalblocking-whitelist' => 'Дөйөм биктәрҙең урындағы торошо',
+	'globalblocking-whitelist-notapplied' => 'Был викила дөйөм биктәр ҡулланылмай, 
+шуға күрә дөйөм биктәрҙең урындағы торошо үҙгәртелә алмай.',
+	'globalblocking-whitelist-legend' => 'Урындағы торошто үҙгәртеү',
+	'globalblocking-whitelist-reason' => 'Сәбәп:',
+	'globalblocking-whitelist-status' => 'Урындағы торошо:',
+	'globalblocking-whitelist-statuslabel' => '{{SITENAME}} проектында был дөйөм бикте һүндерергә',
+	'globalblocking-whitelist-submit' => 'Урындағы торошто үҙгәртергә',
+	'globalblocking-whitelist-whitelisted' => "Һеҙ {{SITENAME}} проектында '''$1''' IP адресының №$2 дөйөм биген уңышлы һүндерҙегеҙ.",
+	'globalblocking-whitelist-dewhitelisted' => "Һеҙ {{SITENAME}} проектында '''$1''' IP адресының №$2 дөйөм биген уңышлы тергеҙҙегеҙ.",
+	'globalblocking-whitelist-successsub' => 'Урындағы торош уңышлы үҙгәртелде',
+	'globalblocking-whitelist-nochange' => 'Һеҙ был биктең урындағы торошон үҙгәртмәнегеҙ.
+[[Special:GlobalBlockList|Дөйөм бикләүҙәр исемлегенә кире ҡайтырға]].',
+	'globalblocking-whitelist-errors' => 'Һеҙҙең биктең урындағы торошон үҙәртеүегеҙ түбәндәге {{PLURAL:$1|сәбәп|сәбәптәр}} арҡаһында уңышһыҙ тамамланды:',
+	'globalblocking-whitelist-intro' => 'Дөйөм бикләүҙең урындағы торошон үҙгәртеү өсөн ошо форманы ҡуллана алаһығыҙ.
+Әгәр был викила дөйөм бикләү һүндерелгән булһа, ул IP адреслы ҡатнашыусылар биттәрҙе ғәҙәттәгесә үҙгәртә аласаҡ.
+[[Special:GlobalBlockList|Дөйөм бикләүҙәр исемлегенә кире ҡайтырға]].',
+	'globalblocking-blocked' => "Һеҙҙең IP адресығыҙ бөтә вики проекттарҙа '''\$1''' (''\$2'') тарафынан бикләнгән.
+Күрһәтелгән сәбәп: ''\"\$3\"''.
+Бикләү ''\$4''.",
+	'globalblocking-blocked-nopassreset' => 'Һеҙ ҡатнашыусыларҙың паролен үҙгәртә алмайһығыҙ, сөнки дөйөм бикләнгәнһегеҙ.',
+	'globalblocking-logpage' => 'Дөйөм бикләүҙәр яҙмалары журналы',
+	'globalblocking-logpagetext' => 'Был — ошо вики проектта ҡуйылған йәки һүндерелгән дөйөм бикләү яҙмалары журналы.
+Дөйөм бикләүҙәр башҡа вики проекттарҙа ҡуйыла йәки һүндерелә ала һәм был вики проектта ҡулланыла ала икәнен иғтибарға алырға кәрәк.
+Һеҙ шулай уҡ [[Special:GlobalBlockList|дөйөм бикләүҙәр исемлеген]] ҡарай алаһығыҙ.',
+	'globalblocking-block-logentry' => '[[$1]] IP адресын дөйөм бикләгән, тамамланыу ваҡыты: $2',
+	'globalblocking-block2-logentry' => '[[$1]] IP адресын дөйөм бикләгән ($2)',
+	'globalblocking-unblock-logentry' => '[[$1]] IP адресының дөйөм биген алған',
+	'globalblocking-whitelist-logentry' => '[[$1]] IP адресының дөйөм биген урында һүндергән',
+	'globalblocking-dewhitelist-logentry' => '[[$1]] IP адресының дөйөм биген урында тергеҙгән',
+	'globalblocking-modify-logentry' => '[[$1]] IP адресының дөйөм биген үҙгәрткән ($2)',
+	'globalblocking-logentry-expiry' => '$1 тамамлана',
+	'globalblocking-logentry-noexpiry' => 'тамамланыу ваҡыты билдәләнмәгән',
+	'globalblocking-loglink' => '$1 IP адресы дөйөм бикләнгән ([[{{#Special:GlobalBlockList}}/$1|тулыраҡ мәғлүмәт]]).',
+	'globalblocking-showlog' => 'Был IP адрес бикләнгән ине инде.
+Түбәндә белешмә өсөн бикләү яҙмалары журналы килтерелгән:',
+	'globalblocklist' => 'Дөйөм бикләнгән IP адрестар исемлеге',
+	'globalblock' => 'IP адресты дөйөм бикләү',
+	'globalblockstatus' => 'Дөйөм биктәрҙең урындағы торошо',
+	'removeglobalblock' => 'Дөйөм бикте алырға',
+	'right-globalblock' => 'Дөйөм бикләү',
+	'right-globalunblock' => 'Дөйөм биктәрҙе алыу',
+	'right-globalblock-whitelist' => 'Дөйөм биктәрҙе урында һүндереү',
+	'right-globalblock-exempt' => 'Дөйөм биктәрҙе урап үтеү',
+);
+
 /** Belarusian (Беларуская)
  * @author Тест
  */
