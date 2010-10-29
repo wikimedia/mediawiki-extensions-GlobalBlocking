@@ -145,8 +145,8 @@ class SpecialGlobalBlockStatus extends SpecialPage {
 		$form .= Xml::openElement( 'fieldset' ) . Xml::element( 'legend', null, wfMsg( 'globalblocking-whitelist-legend' ) );
 		$form .= Xml::openElement( 'form', array( 'method' => 'post', 'action' => $this->getTitle()->getFullURL(), 'name' => 'globalblock-whitelist' ) );
 
-		$form .= Xml::hidden( 'title', $this->getTitle()->getPrefixedText() );
-		$form .= Xml::hidden( 'action', 'whitelist' );
+		$form .= Html::hidden( 'title', $this->getTitle()->getPrefixedText() );
+		$form .= Html::hidden( 'action', 'whitelist' );
 
 		$fields = array();
 
@@ -156,7 +156,7 @@ class SpecialGlobalBlockStatus extends SpecialPage {
 
 		$form .= Xml::buildForm( $fields, 'globalblocking-whitelist-submit' );
 
-		$form .= Xml::hidden( 'wpEditToken', $wgUser->editToken() );
+		$form .= Html::hidden( 'wpEditToken', $wgUser->editToken() );
 
 		$form .= Xml::closeElement( 'form' );
 		$form .= Xml::closeElement( 'fieldset' );

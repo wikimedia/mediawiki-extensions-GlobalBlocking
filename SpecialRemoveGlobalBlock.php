@@ -109,8 +109,8 @@ class SpecialRemoveGlobalBlock extends SpecialPage {
 		$form .= Xml::openElement( 'fieldset' ) . Xml::element( 'legend', null, wfMsg( 'globalblocking-unblock-legend' ) );
 		$form .= Xml::openElement( 'form', array( 'method' => 'post', 'action' => $wgScript, 'name' => 'globalblock-unblock' ) );
 
-		$form .= Xml::hidden( 'title', $this->getTitle()->getPrefixedText() );
-		$form .= Xml::hidden( 'action', 'unblock' );
+		$form .= Html::hidden( 'title', $this->getTitle()->getPrefixedText() );
+		$form .= Html::hidden( 'action', 'unblock' );
 
 		$fields = array();
 
@@ -119,7 +119,7 @@ class SpecialRemoveGlobalBlock extends SpecialPage {
 
 		$form .= Xml::buildForm( $fields, 'globalblocking-unblock-submit' );
 
-		$form .= Xml::hidden( 'wpEditToken', $wgUser->editToken() );
+		$form .= Html::hidden( 'wpEditToken', $wgUser->editToken() );
 
 		$form .= Xml::closeElement( 'form' );
 		$form .= Xml::closeElement( 'fieldset' );

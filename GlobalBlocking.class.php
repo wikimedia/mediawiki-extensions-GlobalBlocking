@@ -283,7 +283,6 @@ class GlobalBlocking {
 		global $wgUser;
 		
 		if ( GlobalBlocking::getUserBlockErrors( $wgUser, wfGetIp() ) ) {
-			wfLoadExtensionMessages( 'GlobalBlocking' );
 			$error = wfMsg( 'globalblocking-blocked-nopassreset' );
 			return false;
 		}
@@ -308,7 +307,6 @@ class GlobalBlocking {
 			return true;
 		}
 
-		wfLoadExtensionMessages( 'GlobalBlocking' );
 		$msg[] = Html::rawElement(
 			'span',
 			array( 'class' => 'mw-globalblock-loglink plainlinks' ),

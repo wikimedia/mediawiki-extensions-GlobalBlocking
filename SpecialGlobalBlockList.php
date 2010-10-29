@@ -42,7 +42,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 		$searchForm .= Xml::openElement( 'fieldset' ) .
 			Xml::element( 'legend', null, wfMsg( 'globalblocking-search-legend' ) );
 		$searchForm .= Xml::openElement( 'form', array( 'method' => 'get', 'action' => $wgScript, 'name' => 'globalblocklist-search' ) );
-		$searchForm .= Xml::hidden( 'title',  SpecialPage::getTitleFor('GlobalBlockList')->getPrefixedText() );
+		$searchForm .= Html::hidden( 'title',  SpecialPage::getTitleFor('GlobalBlockList')->getPrefixedText() );
 
 		if (is_array($errors) && count($errors)>0) {
 			$errorstr = '';

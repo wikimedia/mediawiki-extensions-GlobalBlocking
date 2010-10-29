@@ -176,7 +176,7 @@ class SpecialGlobalBlock extends SpecialPage {
 											'action' => $wgScript,
 											'name' => 'uluser',
 											'id' => 'mw-globalblock-form' ) );
-		$form .= Xml::hidden( 'title',  SpecialPage::getTitleFor('GlobalBlock')->getPrefixedText() );
+		$form .= Html::hidden( 'title',  SpecialPage::getTitleFor('GlobalBlock')->getPrefixedText() );
 
 		$fields = array ();
 
@@ -259,7 +259,7 @@ class SpecialGlobalBlock extends SpecialPage {
 
 		$form .= Xml::hidden( 'wpEditToken', $wgUser->editToken() );
 		if ($this->mModifyForm)
-			$form .= Xml::hidden( 'wpModify', 1 );
+			$form .= Html::hidden( 'wpModify', 1 );
 
 		$form .= Xml::closeElement( 'form' );
 		$form .= Xml::closeElement( 'fieldset' );
