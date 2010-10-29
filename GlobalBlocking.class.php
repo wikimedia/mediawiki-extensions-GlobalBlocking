@@ -45,8 +45,6 @@ class GlobalBlocking {
 			}
 
 			$expiry = Block::formatExpiry( $block->gb_expiry );
-	
-			wfLoadExtensionMessages( 'GlobalBlocking' );
 			
 			$display_wiki = self::getWikiName( $block->gb_by_wiki );
 			$user_display = self::maybeLinkUserpage( $block->gb_by_wiki, $block->gb_by );
