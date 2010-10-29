@@ -257,7 +257,7 @@ class SpecialGlobalBlock extends SpecialPage {
 			? 'globalblocking-modify-submit' : 'globalblocking-block-submit';
 		$form .= Xml::buildForm( $fields, $submitMsg );
 
-		$form .= Xml::hidden( 'wpEditToken', $wgUser->editToken() );
+		$form .= Html::hidden( 'wpEditToken', $wgUser->editToken() );
 		if ($this->mModifyForm)
 			$form .= Html::hidden( 'wpModify', 1 );
 

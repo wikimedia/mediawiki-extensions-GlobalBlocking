@@ -124,7 +124,6 @@ class GlobalBlocking {
 	}
 	
 	static function getWhitelistInfo( $id = null, $address = null ) {
-		$conds = array();
 		if ($id != null) {
 			$conds = array( 'gbw_id' => $id );
 		} elseif ($address != null) {
