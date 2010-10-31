@@ -80,9 +80,9 @@ $specialPageAliases['eo'] = array(
 
 /** Spanish (Español) */
 $specialPageAliases['es'] = array(
-	'GlobalBlock' => array( 'Bloquear_global', 'Bloqueo_global' ),
+	'GlobalBlock' => array( 'BloquearGlobal', 'Bloquear_global', 'Bloqueo_global' ),
 	'GlobalBlockList' => array( 'Lista_de_bloqueos_globales', 'Lista_bloqueos_globales' ),
-	'RemoveGlobalBlock' => array( 'Desbloquear_global' ),
+	'RemoveGlobalBlock' => array( 'DesbloquearGlobal', 'Desbloquear_global' ),
 	'GlobalBlockStatus' => array( 'Lista_blanca_de_bloqueos_globales', 'Lista_blanca_bloqueos_globales' ),
 );
 
