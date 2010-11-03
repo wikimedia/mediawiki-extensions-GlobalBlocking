@@ -5256,7 +5256,7 @@ $messages['ml'] = array(
 	'globalblocking-block-expiry-otherfield' => 'മറ്റ് കാലാവധി:',
 	'globalblocking-block-legend' => 'ഒരു ഐ.പി. വിലാസത്തെ ആഗോളമായി തടയുക',
 	'globalblocking-block-options' => 'ഐച്ഛികങ്ങൾ:',
-	'globalblocking-block-errors' => 'തടയൽ പരാജയപ്പെട്ടു, താഴെ പറയുന്ന {{PLURAL:$1|കാരണത്താൽ|കാരണങ്ങളാൽ}}:',
+	'globalblocking-block-errors' => 'താഴെ പറയുന്ന {{PLURAL:$1|കാരണത്താൽ|കാരണങ്ങളാൽ}} തടയൽ പരാജയപ്പെട്ടു:',
 	'globalblocking-block-ipinvalid' => 'താങ്കൾ കൊടുത്ത ഐ.പി. വിലാസം ($1) അസാധുവാണ്‌. 
 താങ്കൾക്കു ഇവിടെ ഒരു ഉപയോക്തൃനാമം കൊടുക്കുവാൻ പറ്റില്ല എന്നതു പ്രത്യേകം ശ്രദ്ധിക്കുക.',
 	'globalblocking-block-expiryinvalid' => 'താങ്കൾ കൊടുത്ത കാലാവധി ($1) അസാധുവാണ്‌.',
