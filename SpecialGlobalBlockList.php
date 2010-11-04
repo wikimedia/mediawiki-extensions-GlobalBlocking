@@ -149,8 +149,6 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 		if ($row->gb_anon_only)
 			$options[] = wfMsg('globalblocking-list-anononly');
 		
-		$titleObj = SpecialPage::getTitleFor( "GlobalBlockList" );
-		
 		## Do afterthoughts (comment, links for admins)
 		$info = array();
 
