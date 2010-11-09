@@ -5065,6 +5065,7 @@ $messages['lt'] = array(
 );
 
 /** Latvian (Latviešu)
+ * @author Geimeris
  * @author GreenZeb
  * @author Papuass
  */
@@ -5086,6 +5087,7 @@ Lūdzu, ievadiet derīgu IP adresi.',
 	'globalblocking-whitelist-reason' => 'Iemesls:',
 	'globalblocking-whitelist-status' => 'Lokālais statuss:',
 	'globalblocking-whitelist-submit' => 'Mainīt lokālo statusu',
+	'globalblocklist' => 'Globāli bloķēto IP adrešu saraksts',
 	'right-globalblock' => 'Veikt lietotāju globālu bloķēšanu',
 );
 
