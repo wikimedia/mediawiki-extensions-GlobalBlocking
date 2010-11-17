@@ -5560,6 +5560,10 @@ Il-blokk huwa ''\$4''.",
  * @author Botuzhaleny-sodamo
  */
 $messages['myv'] = array(
+	'globalblocking-block-reason' => 'Тувталось:',
+	'globalblocking-block-otherreason' => 'Лия/поладкс тувталось:',
+	'globalblocking-block-reasonotherlist' => 'Лия тувтал',
+	'globalblocking-block-expiry' => 'Шказо лиси:',
 	'globalblocking-list-anononly' => 'ансяк лемтеме',
 	'globalblocking-unblock-reason' => 'Тувталось:',
 );
