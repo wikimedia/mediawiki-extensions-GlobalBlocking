@@ -3917,7 +3917,7 @@ $messages['id'] = array(
 ** Penyalahgunaan crosswiki
 ** Vandalisme',
 	'globalblocking-block-edit-dropdown' => 'Sunting alasan pemblokiran',
-	'globalblocking-block-expiry' => 'Kadaluwarsa:',
+	'globalblocking-block-expiry' => 'Kedaluwarsa:',
 	'globalblocking-block-expiry-other' => 'Waktu lain',
 	'globalblocking-block-expiry-otherfield' => 'Waktu lain:',
 	'globalblocking-block-legend' => 'Blokir suatu alamat IP secara global',
@@ -3925,7 +3925,7 @@ $messages['id'] = array(
 	'globalblocking-block-errors' => 'Pemblokiran tidak berhasil, atas {{PLURAL:$1|alasan|alasan-alasan}} berikut:',
 	'globalblocking-block-ipinvalid' => 'Anda memasukkan alamat IP ($1) yang tidak sah.
 Ingat, Anda tidak dapat memasukkan nama pengguna!',
-	'globalblocking-block-expiryinvalid' => 'Waktu kadaluwarsa tidak sah ($1).',
+	'globalblocking-block-expiryinvalid' => 'Waktu kedaluwarsa tidak sah ($1).',
 	'globalblocking-block-submit' => 'Blokir alamat IP ini secara global',
 	'globalblocking-modify-submit' => 'Ubah pengaturan pemblokiran global ini',
 	'globalblocking-block-success' => 'Alamat IP $1 berhasil diblokir di seluruh proyek.',
@@ -3947,7 +3947,7 @@ Beberapa pemblokiran ditandai sebagai non-aktif pada wiki lokal: ini artinya pem
 Harap masukkan alamat IP yang sah.',
 	'globalblocking-search-errors' => 'Pencarian Anda tidak berhasil, untuk {{PLURAL:$1|alasan|alasan-alasan}} berikut:',
 	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') memblokir secara global [[Special:Contributions/\$4|\$4]] ''(\$5)''",
-	'globalblocking-list-expiry' => 'kadaluwarsa $1',
+	'globalblocking-list-expiry' => 'kedaluwarsa $1',
 	'globalblocking-list-anononly' => 'hanya pengguna anonim',
 	'globalblocking-list-unblock' => 'hapuskan',
 	'globalblocking-list-whitelisted' => 'dinon-aktifkan di wiki lokal oleh $1: $2',
@@ -3995,13 +3995,13 @@ Pemblokiran ''\$4''.",
 	'globalblocking-logpagetext' => 'Ini adalah log pemblokiran global yang dibuat dan dihapuskan di wiki ini.
 Sebagai catatan, pemblokiran global dapat dibuat dan dihapuskan di wiki lain yang akan juga mempengaruhi wiki ini.
 Untuk menampilkan seluruh pemblokiran global yang aktif saat ini, Anda dapat melihat [[Special:GlobalBlockList|daftar pemblokiran global]].',
-	'globalblocking-block-logentry' => 'memblokir secara global [[$1]] dengan kadaluwarsa $2',
+	'globalblocking-block-logentry' => 'memblokir secara global [[$1]] dengan kedaluwarsa $2',
 	'globalblocking-block2-logentry' => 'memblokir global [[$1]] ($2)',
 	'globalblocking-unblock-logentry' => 'menghapuskan pemblokiran global atas [[$1]]',
 	'globalblocking-whitelist-logentry' => 'menonaktifkan pemblokiran global atas [[$1]] di wiki lokal',
 	'globalblocking-dewhitelist-logentry' => 'mengaktifkan kembali pemblokiran global pada [[$1]] di wiki lokal',
 	'globalblocking-modify-logentry' => 'mengubah pemblokiran global atas [[$1]] ($2)',
-	'globalblocking-logentry-expiry' => 'kadaluwarsa $1',
+	'globalblocking-logentry-expiry' => 'kedaluwarsa $1',
 	'globalblocking-logentry-noexpiry' => 'selamanya',
 	'globalblocking-loglink' => 'Alamat IP $1 diblokir secara global ([[{{#Special:GlobalBlockList}}/$1|detail lengkap]]).',
 	'globalblocking-showlog' => 'Alamat IP ini telah diblokir sebelumnya.
