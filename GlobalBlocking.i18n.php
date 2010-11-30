@@ -5043,6 +5043,7 @@ Alle globale blokkades stoan in de [[Special:GlobalBlockList|liest met globale b
 );
 
 /** Lithuanian (Lietuvių)
+ * @author Garas
  * @author Homo
  * @author Matasg
  */
@@ -5061,7 +5062,13 @@ $messages['lt'] = array(
 	'globalblocking-list-unblock' => 'pašalinti',
 	'globalblocking-list-whitelist' => 'vietinis statusas',
 	'globalblocking-unblock-reason' => 'Priežastis:',
+	'globalblocking-whitelist-reason' => 'Priežastis:',
+	'globalblocking-blocked' => "Jūsų IP adresas visuose projektuose užblokavo '''\$1''' (''\$2'').
+Nurodyta priežastis ''\"\$3\"''.
+Užblokavimas ''\$4''.",
 	'globalblocking-logpage' => 'Visuotinio blokavimo sąrašas',
+	'globalblocking-logentry-expiry' => 'baigia galioti $1',
+	'globalblocking-logentry-noexpiry' => 'galiojimas nenurodytas',
 	'globalblocklist' => 'Visuotinai blokuotų IP adresų sąrašas',
 	'globalblock' => 'Visuotinai blokuoti IP adresą',
 );
