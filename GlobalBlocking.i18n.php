@@ -4166,13 +4166,14 @@ Il registro dei blocchi è riportato di seguito per informazione:',
  * @author Fryed-peach
  * @author Hosiryuhosi
  * @author Muttley
+ * @author 青子守歌
  */
 $messages['ja'] = array(
 	'globalblocking-desc' => 'IPアドレスを[[Special:GlobalBlockList|複数のウィキで横断的に]][[Special:GlobalBlock|ブロックする]]',
 	'globalblocking-block' => 'IPアドレスをグローバルブロックする',
 	'globalblocking-modify-intro' => 'このフォームを使って、グローバルブロックの設定を変更できます。',
 	'globalblocking-block-intro' => 'このページで全ウィキにおいてIPアドレスをブロックできます。',
-	'globalblocking-block-reason' => '理由:',
+	'globalblocking-block-reason' => '理由：',
 	'globalblocking-block-otherreason' => '他の、または追加の理由:',
 	'globalblocking-block-reasonotherlist' => 'その他の理由',
 	'globalblocking-block-reason-dropdown' => '*共通ブロックの理由
@@ -4222,7 +4223,7 @@ $messages['ja'] = array(
 	'globalblocking-unblock-ipinvalid' => 'あなたが入力したIPアドレス ($1) には誤りがあります。アカウント名では入力できない点に注意してください！',
 	'globalblocking-unblock-legend' => 'グローバルブロックを解除する',
 	'globalblocking-unblock-submit' => 'グローバルブロックを解除',
-	'globalblocking-unblock-reason' => '理由:',
+	'globalblocking-unblock-reason' => '理由：',
 	'globalblocking-unblock-unblocked' => "IPアドレス '''$1''' に対するグローバルブロック #$2 を解除しました",
 	'globalblocking-unblock-errors' => '実施しようとしたグローバルブロックの解除は以下の{{PLURAL:$1|理由}}により実行できませんでした:',
 	'globalblocking-unblock-successsub' => 'グローバルブロックの解除に成功',
@@ -4231,7 +4232,7 @@ $messages['ja'] = array(
 	'globalblocking-whitelist' => 'グローバルブロックのローカル状態',
 	'globalblocking-whitelist-notapplied' => 'このウィキではグローバルブロックは適用されず、よってグローバルブロックのローカル状態を変更できません。',
 	'globalblocking-whitelist-legend' => 'ローカル状態の変更',
-	'globalblocking-whitelist-reason' => '理由:',
+	'globalblocking-whitelist-reason' => '理由：',
 	'globalblocking-whitelist-status' => 'ローカル状態:',
 	'globalblocking-whitelist-statuslabel' => '{{SITENAME}}でのグローバルブロックを無効にする',
 	'globalblocking-whitelist-submit' => 'ローカル状態を変更',
