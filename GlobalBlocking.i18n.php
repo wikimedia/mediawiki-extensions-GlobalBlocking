@@ -4181,7 +4181,7 @@ $messages['ja'] = array(
 **ウィキ間での不正利用
 **荒らし',
 	'globalblocking-block-edit-dropdown' => 'ブロック理由を編集',
-	'globalblocking-block-expiry' => '期限:',
+	'globalblocking-block-expiry' => '有効期限：',
 	'globalblocking-block-expiry-other' => 'その他の有効期限',
 	'globalblocking-block-expiry-otherfield' => '期間 (その他のとき)',
 	'globalblocking-block-legend' => 'IP アドレスをグローバルブロックする',
