@@ -6175,6 +6175,7 @@ $messages['pdc'] = array(
 
 /** Polish (Polski)
  * @author Derbeth
+ * @author Lampak
  * @author Leinad
  * @author Nux
  * @author Sp5uhe
@@ -6188,7 +6189,7 @@ $messages['pl'] = array(
 	'globalblocking-block-otherreason' => 'Inny lub dodatkowy powód',
 	'globalblocking-block-reasonotherlist' => 'Inny powód',
 	'globalblocking-block-reason-dropdown' => '* Najczęstsze powody blokad** Spamowanie w wielu projektach** Nadużycia w wielu projektach** Wandalizm',
-	'globalblocking-block-edit-dropdown' => 'Edytuj przyczynę blokady',
+	'globalblocking-block-edit-dropdown' => 'Edytuj listę przyczyn blokady',
 	'globalblocking-block-expiry' => 'Upływa',
 	'globalblocking-block-expiry-other' => 'Inny czas blokady',
 	'globalblocking-block-expiry-otherfield' => 'Inny czas blokady',
