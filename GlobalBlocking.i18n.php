@@ -3303,13 +3303,14 @@ $messages['he'] = array(
 
 /** Hindi (हिन्दी)
  * @author Kaustubh
+ * @author Shyam123.ckp
  */
 $messages['hi'] = array(
 	'globalblocking-desc' => 'आइपी एड्रेस को [[Special:GlobalBlockList|एक से ज्यादा विकियोंपर ब्लॉक]] करने की [[Special:GlobalBlock|अनुमति]] देता हैं।',
 	'globalblocking-block' => 'एक आइपी एड्रेस को ग्लोबलि ब्लॉक करें',
 	'globalblocking-block-intro' => 'आप इस पन्ने का इस्तेमाल करके सभी विकियोंपर एक आईपी एड्रेस ब्लॉक कर सकतें हैं।',
 	'globalblocking-block-reason' => 'कारण:',
-	'globalblocking-block-expiry' => 'ब्लॉक समाप्ति:',
+	'globalblocking-block-expiry' => 'अवरुद्ध-ब्लॉक समाप्ति वैश्विक',
 	'globalblocking-block-expiry-other' => 'अन्य समाप्ती समय',
 	'globalblocking-block-expiry-otherfield' => 'अन्य समय:',
 	'globalblocking-block-legend' => 'एक सदस्य को ग्लोबली ब्लॉक करें',
@@ -3329,8 +3330,7 @@ $messages['hi'] = array(
 	'globalblocking-search-submit' => 'ब्लॉक खोजें',
 	'globalblocking-list-ipinvalid' => 'आपने खोजने के लिये दिया हुआ आइपी एड्रेस ($1) अवैध हैं।
 कृपया वैध आइपी एड्रेस दें।',
-	'globalblocking-search-errors' => 'आपकी खोज़ अयशस्वी हुई हैं, कारण:
-$1',
+	'globalblocking-search-errors' => 'वैश्विक अवरुद्ध-खोज त्रुटियों',
 	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') ग्लोबली ब्लॉक किया [[Special:Contributions/\$4|\$4]] ''(\$5)''",
 	'globalblocking-list-expiry' => 'समाप्ती $1',
 	'globalblocking-list-anononly' => 'सिर्फ-अनामक',
@@ -3343,8 +3343,7 @@ $1',
 	'globalblocking-unblock-submit' => 'ग्लोबल ब्लॉक हटायें',
 	'globalblocking-unblock-reason' => 'कारण:',
 	'globalblocking-unblock-unblocked' => "आपने '''$1''' इस आइपी एड्रेस पर होने वाला ग्लोबल ब्लॉक #$2 हटा दिया हैं",
-	'globalblocking-unblock-errors' => 'आप इस आईपी एड्रेस का ग्लोबल ब्लॉक हटा नहीं सकतें, कारण:
-$1',
+	'globalblocking-unblock-errors' => 'वैश्विक अवरुद्ध त्रुटियों खोल देना',
 	'globalblocking-unblock-successsub' => 'ग्लोबल ब्लॉक हटा दिया गया हैं',
 	'globalblocking-whitelist-legend' => 'स्थानिक स्थिती बदलें',
 	'globalblocking-whitelist-reason' => 'कारण:',
