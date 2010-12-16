@@ -9010,6 +9010,7 @@ $messages['wuu'] = array(
  * @author פוילישער
  */
 $messages['yi'] = array(
+	'globalblocking-block' => 'בלאקירן גלאבאַליש IP אַדרעס',
 	'globalblocking-block-reason' => 'אורזאַך:',
 	'globalblocking-block-otherreason' => 'אַנדער/נאך א סיבה:',
 	'globalblocking-block-reasonotherlist' => 'אַנדער סיבה',
@@ -9021,8 +9022,16 @@ $messages['yi'] = array(
 	'globalblocking-block-expiry' => 'אויסלאז:',
 	'globalblocking-block-expiry-other' => 'אַנדער אויסלאז צײַט',
 	'globalblocking-block-expiry-otherfield' => 'אַנדער צײַט:',
+	'globalblocking-search-ip' => 'IP אַדרעס:',
+	'globalblocking-list-expiry' => 'אויסלאז $1',
+	'globalblocking-list-unblock' => 'אַראָפּנעמען',
 	'globalblocking-unblock-reason' => 'אורזאַך:',
 	'globalblocking-whitelist-reason' => 'אורזאַך:',
+	'globalblocking-block-logentry' => 'בלאקירט גלאבאַליש "[[$1]]" מיט אן אויסלאז צײַט פֿון $2',
+	'globalblocking-block2-logentry' => 'בלאקירט גלאבאַליש [[$1]] ($2)',
+	'globalblocking-unblock-logentry' => 'אַוועקגענומען גלאבאלע פאַרשפּאַרן פֿון [[$1]]',
+	'globalblocking-logentry-expiry' => 'ביז $1',
+	'globalblocking-logentry-noexpiry' => 'קיין אויסלאז צײַט',
 	'removeglobalblock' => 'אויפהייבן גלאבאלן בלאק',
 );
 
