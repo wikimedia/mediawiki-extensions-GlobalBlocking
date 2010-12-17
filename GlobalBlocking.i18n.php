@@ -7300,16 +7300,48 @@ $messages['sgs'] = array(
 );
 
 /** Sinhala (සිංහල)
+ * @author Thameera123
  * @author නන්දිමිතුරු
  */
 $messages['si'] = array(
 	'globalblocking-block-options' => 'විකල්පයන්:',
 	'globalblocking-search-ip' => 'අන්තර්ජාල ලිපිනය:',
+	'globalblocking-list-expiry' => 'කල් ඉකුත්වීම $1',
 	'globalblocking-list-anononly' => 'නිර්නාමිකයන් පමණයි',
 	'globalblocking-list-unblock' => 'ඉවත්කරන්න',
+	'globalblocking-list-whitelisted' => 'පෙදෙසිව අක්‍රීය කළේ $1: $2',
 	'globalblocking-list-whitelist' => 'ස්ථානික තත්ත්වය',
+	'globalblocking-list-modify' => 'වෙනස් කරන්න',
+	'globalblocking-list-noresults' => 'ඉල්ලුම් කළ IP ලිපිනය වාරණය කර නැත',
+	'globalblocking-goto-block' => 'IP ලිපිනයක් ගෝලීයව වාරණය කරන්න',
+	'globalblocking-goto-unblock' => 'ගෝලීය වාරණයක් ඉවත් කරන්න',
+	'globalblocking-goto-status' => 'ගෝලීය වාරණයක පෙදෙසි තත්වය වෙනස් කරන්න',
+	'globalblocking-return' => 'ගෝලීය වාරණ ලයිස්තුවට නැවත පිවිසෙන්න',
+	'globalblocking-notblocked' => 'ඔබ ඇතුළත් කළ IP ලිපිනය ($1) ගෝලීයව වාරණය කර නැත',
+	'globalblocking-unblock' => 'ගෝලීය වාරණයක් ඉවත් කරන්න',
+	'globalblocking-unblock-ipinvalid' => 'ඔබ ඇතුළත් කළ IP ලිපිනය ($1) අවලංගු එකකි. 
+ඔබට පරිශීලක නමක් ඇතුළත් කළ නොහැකි බව කරුණාවෙන් සළකන්න.',
+	'globalblocking-unblock-legend' => 'ගෝලීය වාරණයක් ඉවත් කරන්න',
+	'globalblocking-unblock-submit' => 'ගෝලීය වාරණය ඉවත් කරන්න',
 	'globalblocking-unblock-reason' => 'හේතුව:',
+	'globalblocking-unblock-unblocked' => "'''$1''' IP ලිපිනයේ #$2 ගෝලීය වාරණය සාර්ථකව ඉවත් කරන ලදී",
+	'globalblocking-unblock-errors' => 'ගෝලීය වාරණය ඉවත්කිරීම අසාර්ථක විය',
+	'globalblocking-unblock-successsub' => 'ගෝලීය වාරණය සාර්ථකව ඉවත්කරන ලදී',
+	'globalblocking-unblock-subtitle' => 'ගෝලීය වාරණය ඉවත් කරමින්',
+	'globalblocking-unblock-intro' => 'මෙමෙ පෝරමය ඔබට ගෝලීය වාරණයක් ඉවත් කිරීම සඳහා භාවිතා කළ හැකිය.',
+	'globalblocking-whitelist' => 'ගෝලීය වාරණවල පෙදෙසි තත්වය',
+	'globalblocking-whitelist-notapplied' => 'ගෝලීය වාරණ මෙම විකියට අදාළ නැත,
+එබැවින් මෙහි ගෝලීය වාරණවල පෙදෙසි තත්වය වෙනස් කළ නොහැක.',
+	'globalblocking-whitelist-legend' => 'පෙදෙසි තත්වය වෙනස් කරන්න',
 	'globalblocking-whitelist-reason' => 'හේතුව:',
+	'globalblocking-whitelist-status' => 'පෙදෙසි තත්වය:',
+	'globalblocking-whitelist-statuslabel' => '{{SITENAME}} හි ගෝලීය වාරණය අවලංගු කරන්න',
+	'globalblocking-whitelist-submit' => 'පෙදෙසි තත්වය වෙනස් කරන්න',
+	'globalblocking-whitelist-whitelisted' => "{{SITENAME}} හි '''$1''' IP ලිපිනයේ #$2 ගෝලීය වාරණය සාර්ථකව ඉවත් කරන ලදී",
+	'globalblocking-whitelist-dewhitelisted' => "{{SITENAME}} හි '''$1''' IP ලිපිනයේ #$2 ගෝලීය වාරණය සාර්ථකව නැවත සක්‍රීීය කරන ලදී",
+	'globalblocking-whitelist-successsub' => 'පෙදෙසි තත්වය සාර්ථකව වෙනස් විය',
+	'globalblocking-whitelist-nochange' => 'ඔබ මේ වාරණයේ පෙදෙසි තත්වයට වෙනසක් සිදුකර නැත.
+[[Special:GlobalBlockList|ගෝලීය වාරණ ලයිස්තුවට ආපසු යන්න]].',
 );
 
 /** Slovak (Slovenčina)
@@ -7536,6 +7568,13 @@ Dnevnik blokiranja je na voljo spodaj:',
 	'right-globalunblock' => 'Odstranjevanje globalnih blokad',
 	'right-globalblock-whitelist' => 'Onemogočanje globalnih blokad na lokalni ravni',
 	'right-globalblock-exempt' => 'Izmikanje globalnim blokadam',
+);
+
+/** Albanian (Shqip)
+ * @author Mikullovci11
+ */
+$messages['sq'] = array(
+	'globalblocking-whitelist-reason' => 'Arsyeja:',
 );
 
 /** Serbian Cyrillic ekavian (Српски (ћирилица))
