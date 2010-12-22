@@ -7302,6 +7302,7 @@ $messages['sgs'] = array(
 /** Sinhala (සිංහල)
  * @author Budhajeewa
  * @author Thameera123
+ * @author තඹරු විජේසේකර
  * @author නන්දිමිතුරු
  */
 $messages['si'] = array(
@@ -7384,6 +7385,7 @@ $messages['si'] = array(
 	'globalblocking-block2-logentry' => '[[$1]] ගෝලීයව වාරණය කරනලදී ($2)',
 	'globalblocking-unblock-logentry' => '[[$1]] වෙත පනවා තිබූ ගෝලීය වාරණය ඉවත් කෙරිනි',
 	'globalblocking-modify-logentry' => '[[$1]] වෙත පනවා තිබූ ගෝලීය වාරණය වෙනස් කෙරිනි ($2)',
+	'globalblocking-logentry-expiry' => 'කල් ඉකුත්වීම $1',
 	'globalblocking-logentry-noexpiry' => 'කල් ඉකුතුවක් නියම කර නැත',
 	'globalblocking-loglink' => '$1 IP ලිපිනය ගෝලීය වාරණය කෙරිනි ([[{{#Special:GlobalBlockList}}/$1|සම්පූර්ණ විස්තර]]).',
 	'globalblocking-showlog' => 'මෙම IP ලිපිනය මීට පෙර අවහිර කරනු ලැබ ඇත.
