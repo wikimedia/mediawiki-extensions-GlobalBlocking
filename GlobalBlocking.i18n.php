@@ -7381,6 +7381,7 @@ $messages['si'] = array(
 	'globalblocking-whitelist-successsub' => 'පෙදෙසි තත්වය සාර්ථකව වෙනස් විය',
 	'globalblocking-whitelist-nochange' => 'ඔබ මේ වාරණයේ පෙදෙසි තත්වයට වෙනසක් සිදුකර නැත.
 [[Special:GlobalBlockList|ගෝලීය වාරණ ලයිස්තුවට ආපසු යන්න]].',
+	'globalblocking-blocked-nopassreset' => 'ඔබ ගෝලීයව වාරණිත බැවින් පරිශීලක මුරපද වෙනස් කළ නොහැක.',
 	'globalblocking-block-logentry' => '$2 ඉකුත්වීම් කාලයක් සහිතව [[$1]] ගෝලීයව වාරණය කෙරිනි',
 	'globalblocking-block2-logentry' => '[[$1]] ගෝලීයව වාරණය කරනලදී ($2)',
 	'globalblocking-unblock-logentry' => '[[$1]] වෙත පනවා තිබූ ගෝලීය වාරණය ඉවත් කෙරිනි',
@@ -7395,6 +7396,7 @@ $messages['si'] = array(
 	'removeglobalblock' => 'ගෝලීය වාරණයක් ඉවත් කරන්න',
 	'right-globalblock' => 'ගෝලීය වාරණ තනන්න',
 	'right-globalunblock' => 'ගෝලීය වාරණ ඉවත් කරන්න',
+	'right-globalblock-whitelist' => 'ගෝලීය වාරණයන් ප්‍රාදේශීයව අහෝසි කරන්න',
 	'right-globalblock-exempt' => 'ගෝලීය වාරණ මගහරින්න',
 );
 
