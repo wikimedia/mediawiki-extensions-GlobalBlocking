@@ -7338,6 +7338,8 @@ $messages['si'] = array(
 එසේ නැතිනම් මෙම ෆෝරමය නැවත එවීමෙන් දැනට පවතින වාරණයේ සැකසුම් වෙනස් කළ හැක.',
 	'globalblocking-block-bigrange' => 'ඔබ දැක්වූ පරාසය ($1) වාරණය සඳහා විශාල වැඩිය.
 ඔබට උපරිම වශයෙන් ලිපින 65,536ක්(/පරාස 16ක්) වාරණය කළ හැක.',
+	'globalblocking-list-intro' => 'මේ දැන් ක්‍රියාත්මක තත්වයේ පවතින ගෝලීය වාරණ ලයිස්තුවකි.
+ඇතැම් වාරණ ප්‍රාදේශිය අක්‍රීය ලෙස දක්වා ඇත: එයින් හැඟවෙන්නේ එම වාරණ අනෙක් අඩවි මත ක්‍රියා කරන නමුත් මෙම විකියේදී ඒවා අක්‍රීය කෙරුමට ප්‍රාදේශීය පරිපාලකයෙකු තීරණය කර ඇති බවයි.',
 	'globalblocking-list' => 'ගෝලීයව වාරණය කළ IP ලිපින ලයිස්තුව',
 	'globalblocking-search-legend' => 'ගෝලීය වාරණයක් සඳහා සොයන්න',
 	'globalblocking-search-ip' => 'අන්තර්ජාල ලිපිනය:',
@@ -7345,6 +7347,7 @@ $messages['si'] = array(
 	'globalblocking-list-ipinvalid' => 'ඔබ සෙවූ IP ලිපිනය ($1) සදොස්ය.
 කරුණාකර නිවැරදි IP ලිපිනයක් ඇතුලත් කරන්න.',
 	'globalblocking-search-errors' => 'පහත සඳහන් {{PLURAL:$1|හේතුව|හේතූන්}} නිසා සෙවුම අසාර්ථක විය:',
+	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') [[Special:Contributions/\$4|\$4]] ගෝලීයව වාරිතයි. ''(\$5)''",
 	'globalblocking-list-expiry' => 'කල් ඉකුත්වීම $1',
 	'globalblocking-list-anononly' => 'නිර්නාමිකයන් පමණයි',
 	'globalblocking-list-unblock' => 'ඉවත්කරන්න',
@@ -7381,10 +7384,23 @@ $messages['si'] = array(
 	'globalblocking-whitelist-successsub' => 'පෙදෙසි තත්වය සාර්ථකව වෙනස් විය',
 	'globalblocking-whitelist-nochange' => 'ඔබ මේ වාරණයේ පෙදෙසි තත්වයට වෙනසක් සිදුකර නැත.
 [[Special:GlobalBlockList|ගෝලීය වාරණ ලයිස්තුවට ආපසු යන්න]].',
+	'globalblocking-whitelist-errors' => 'පහත සඳහන් {{PLURAL:$1|හේතුව|හේතූන්}} නිසා ඔබේ ගෝලීය වාරණයක ප්‍රාදේශීය තත්වය වෙනස් කෙරුම අසාර්ථක විය:',
+	'globalblocking-whitelist-intro' => 'ගෝලීය වාරණයක ප්‍රාදේශිය තත්වය වෙනස් කෙරුමට ඔබට මෙම ෆෝරමය භාවිතා කළ හැක.
+ගෝලීය වාරණයක් මෙම විකියේදී අක්‍රීය නම්, අදාළ වාරණය බලපාන IP ලිපිනයෙන් එන පරිශීලකයන්ට සාමාන්‍ය ලෙස සංස්කරණ කටයුතු කළ හැකි වනු ඇත.
+[[Special:GlobalBlockList|ගෝලීය වාරණ ලයිස්තුවට ආපසු යන්න]].',
+	'globalblocking-blocked' => "'''\$1''' (''\$2'') විසින් ඔබේ IP ලිපිනය සියළුම විකි මතදී වාරිතයි.
+ලබාදුන් හේතුව වන්නේ ''\"\$3\"''.
+වාරණය වන්නේ ''\$4''.",
 	'globalblocking-blocked-nopassreset' => 'ඔබ ගෝලීයව වාරණිත බැවින් පරිශීලක මුරපද වෙනස් කළ නොහැක.',
+	'globalblocking-logpage' => 'ගෝලීය වාරණ ලොගය',
+	'globalblocking-logpagetext' => 'මේ මෙම විකිය මත තැනූ හා ඉවත් කළ ගෝලීය වාරණ ලොගයකි.
+අනෙකුත් විකියන් මතදීද ගෝලීය වාරණ තැනීමට හා ඉවත් කිරීමට ඉඩ ඇති බවත්, එම ගෝලීය වාරණ මෙම විකිය මතද ක්‍රියාත්මක විය හැකි බව සැලකිය යුතුය.
+සියළු සක්‍රීය ගෝලීය වාරණ දැක ගැනීමට [[Special:GlobalBlockList|ගෝලීය වාරණ ලයිස්තුව]] වෙත යන්න.',
 	'globalblocking-block-logentry' => '$2 ඉකුත්වීම් කාලයක් සහිතව [[$1]] ගෝලීයව වාරණය කෙරිනි',
 	'globalblocking-block2-logentry' => '[[$1]] ගෝලීයව වාරණය කරනලදී ($2)',
 	'globalblocking-unblock-logentry' => '[[$1]] වෙත පනවා තිබූ ගෝලීය වාරණය ඉවත් කෙරිනි',
+	'globalblocking-whitelist-logentry' => 'ගෝලීය වාරණය [[$1]] මතදී ප්‍රාදේශීයව අක්‍රීය කෙරිනි',
+	'globalblocking-dewhitelist-logentry' => 'ගෝලීය වාරණය [[$1]] මතදී ප්‍රාදේශීයව ප්‍රති-සක්‍රීය කෙරිනි',
 	'globalblocking-modify-logentry' => '[[$1]] වෙත පනවා තිබූ ගෝලීය වාරණය වෙනස් කෙරිනි ($2)',
 	'globalblocking-logentry-expiry' => 'කල් ඉකුත්වීම $1',
 	'globalblocking-logentry-noexpiry' => 'කල් ඉකුතුවක් නියම කර නැත',
@@ -7393,6 +7409,7 @@ $messages['si'] = array(
 අවහිරි කිරීම් ලඝු සටහන යොමුව සඳහා පහතින් සපයනු ලැබේ:',
 	'globalblocklist' => 'ගෝලීයව වාරණය කළ IP ලිපින ලයිස්තුව',
 	'globalblock' => 'IP ලිපිනයක් ගෝලීයව වාරණය කරන්න',
+	'globalblockstatus' => 'ගෝලීය වාරණවල ප්‍රාදේශිය තත්වය',
 	'removeglobalblock' => 'ගෝලීය වාරණයක් ඉවත් කරන්න',
 	'right-globalblock' => 'ගෝලීය වාරණ තනන්න',
 	'right-globalunblock' => 'ගෝලීය වාරණ ඉවත් කරන්න',
