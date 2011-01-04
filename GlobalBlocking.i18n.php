@@ -3606,6 +3606,7 @@ Protokol blokowanjow podawa so deleka jako referencu:',
 );
 
 /** Haitian (Kreyòl ayisyen)
+ * @author Boukman
  * @author Jvm
  */
 $messages['ht'] = array(
@@ -3613,53 +3614,53 @@ $messages['ht'] = array(
 	'globalblocking-block' => 'Bloke yon adrès IP globalman',
 	'globalblocking-block-intro' => 'Ou kapab itilize paj sa pou bloke yon adrès IP nan tou wiki yo.',
 	'globalblocking-block-reason' => 'Rezon:',
-	'globalblocking-block-expiry' => 'Blokaj expirasyon:',
-	'globalblocking-block-expiry-other' => 'Lòt tan tèminasyon',
-	'globalblocking-block-expiry-otherfield' => 'Lòt tan:',
-	'globalblocking-block-legend' => 'Bloke yon itilizatè globalman',
-	'globalblocking-block-options' => 'Opsyon yo',
-	'globalblocking-block-errors' => 'Blokaj sa pa reyisi, paske:',
-	'globalblocking-block-ipinvalid' => 'Adrès IP sa ($1) ou te antre a envalid.
-Souple note ke ou pa kapab antre yon non itlizatè!',
-	'globalblocking-block-expiryinvalid' => 'Expirasyon ($1) ou te antre a envalid.',
+	'globalblocking-block-expiry' => 'Ekspirasyon:',
+	'globalblocking-block-expiry-other' => 'Lòt delè pou ekspirasyon',
+	'globalblocking-block-expiry-otherfield' => 'Lòt delè:',
+	'globalblocking-block-legend' => 'Bloke yon adrès IP globalman',
+	'globalblocking-block-options' => 'Opsyon yo:',
+	'globalblocking-block-errors' => 'Blokaj sa pa reyisi pou {{PLURAL:$1|rezon sa|rezon sa yo}}:',
+	'globalblocking-block-ipinvalid' => 'Adrès IP sa ($1) ou te antre a pa valab.
+Tanpri note ke ou pa kapab antre yon non itlizatè!',
+	'globalblocking-block-expiryinvalid' => 'Expirasyon ($1) ou te antre a pa valab.',
 	'globalblocking-block-submit' => 'Bloke adrès IP sa globalman',
-	'globalblocking-block-success' => 'Adrès IP sa $1 te bloke avèk siksès nan tout projè Wikimedia yo.',
+	'globalblocking-block-success' => 'Adrès IP $1 byen bloke nan tout pwojè yo.',
 	'globalblocking-block-successsub' => 'Blokaj global reyisi',
-	'globalblocking-block-alreadyblocked' => 'Adrès IP sa $1 deja bloke globalman. Ou ka wè blokaj ki deja ekziste a nan [[Special:GlobalBlockList|lis blokaj global yo]].',
+	'globalblocking-block-alreadyblocked' => 'Adrès IP $1 deja bloke globalman.
+Ou ka wè blokaj ki deja ekziste a nan [[Special:GlobalBlockList|lis blokaj global yo]], oubyen voye fomilè sa ankò pou modifye paramèt blokaj la.',
 	'globalblocking-list' => 'Lis adrès IP ki bloke globalman yo',
 	'globalblocking-search-legend' => 'Chache pou yon blokaj global',
 	'globalblocking-search-ip' => 'Adrès IP:',
 	'globalblocking-search-submit' => 'Chache pou blokaj yo',
-	'globalblocking-list-ipinvalid' => "Adrès IP ou t'ap chache a ($1) envalid.
-Souple antre yon adrès IP ki valid.",
-	'globalblocking-search-errors' => 'Bouskay ou a pa t’ reyisi, paske:
-$1',
+	'globalblocking-list-ipinvalid' => 'Adrès IP ou t ap chache pou ($1) pa valab.
+Tanpri antre yon adrès IP ki valab.',
+	'globalblocking-search-errors' => 'Rechèch ou a pa t reyisi pou rezon {{PLURAL:$1|sa|sa yo}}:',
 	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') bloke globalman '''[[Special:Contributions/\$4|\$4]]''' ''(\$5)''",
 	'globalblocking-list-expiry' => 'expirasyon $1',
 	'globalblocking-list-anononly' => 'Anonim sèlman',
 	'globalblocking-list-unblock' => 'Debloke',
-	'globalblocking-list-whitelisted' => 'Te lokalman deaktive pa $1: $2',
+	'globalblocking-list-whitelisted' => 'Te deaktive lokalman pa $1: $2',
 	'globalblocking-list-whitelist' => 'estati lokal',
-	'globalblocking-unblock-ipinvalid' => 'Adrès IP ($1) ou te antre a envalid.
-Silvouplè note ke ou pa kapab antre yon non itilizatè!',
+	'globalblocking-unblock-ipinvalid' => 'Adrès IP ($1) ou te antre a pa valab.
+Tanpri note ke ou pa kapab antre yon non itilizatè!',
 	'globalblocking-unblock-legend' => 'Retire yon blokaj global',
 	'globalblocking-unblock-submit' => 'Retire blokaj global',
 	'globalblocking-unblock-reason' => 'Rezon:',
-	'globalblocking-unblock-unblocked' => "Ou reyisi nan retire blokaj global #$2 sa sou adrès IP '''$1'''",
-	'globalblocking-unblock-errors' => 'Ou pa kabap retire yon blokaj global pou adrès IP sa, paske:
-$1',
-	'globalblocking-unblock-successsub' => 'Blokaj global te retire avèk siksès.',
+	'globalblocking-unblock-unblocked' => "Ou reyisi retire blokaj global #$2 sou adrès IP '''$1'''",
+	'globalblocking-unblock-errors' => 'Ou pa t kabap retire yon blokaj global pou adrès IP sa pou rezon {{PLURAL:$1|sa|sa yo}}:',
+	'globalblocking-unblock-successsub' => 'Blokaj global reyisi retire.',
 	'globalblocking-whitelist-legend' => 'Chanje estati local',
 	'globalblocking-whitelist-reason' => 'Rezon:',
 	'globalblocking-whitelist-status' => 'Estati lokal:',
 	'globalblocking-whitelist-statuslabel' => 'Dezame blokaj global sa nan {{SITENAME}}',
 	'globalblocking-whitelist-submit' => 'Chanje estati lokal',
-	'globalblocking-whitelist-whitelisted' => "Ou te dezame avèk siksès blokaj global sa #$2 pou adrès IP '''$1''' nan {{SITENAME}}.",
-	'globalblocking-whitelist-dewhitelisted' => "Ou te re-pemèt blokaj global la #$2 sou adrès IP '''$1''' nan {{SITENAME}}.",
-	'globalblocking-whitelist-successsub' => 'Estati lokal te chanje avèk siksès',
-	'globalblocking-blocked' => "Adrès IP w la te bloke nan tout Wikimedia wikis pa '''\$1''' (''\$2'').
-Rezon ki te bay la se ''\"\$3\"''. Tan expirasyon blòkaj la se ''\$4''.",
-	'globalblocking-logpage' => 'Lòg blokaj global',
+	'globalblocking-whitelist-whitelisted' => "Ou reyisi retire blokaj global #$2 pou adrès IP '''$1''' nan {{SITENAME}}.",
+	'globalblocking-whitelist-dewhitelisted' => "Ou te reyisi remèt blokaj global #$2 sou adrès IP '''$1''' nan {{SITENAME}}.",
+	'globalblocking-whitelist-successsub' => 'Estati lokal te reyisi chanje',
+	'globalblocking-blocked' => "Adrès IP w la te bloke nan tout wiki yo pa '''\$1''' (''\$2'').
+Rezon ki te bay la se ''\"\$3\"''.
+Blòkaj la ''\$4''.",
+	'globalblocking-logpage' => 'Jounal blokaj global',
 	'globalblocking-block-logentry' => 'globalman bloke [[$1]] avèk yon tan expirasyon $2',
 	'globalblocking-unblock-logentry' => 'retire blokaj global la sou [[$1]]',
 	'globalblocking-whitelist-logentry' => 'dezame blokaj global la sou [[$1]] lokalman',
