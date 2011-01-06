@@ -5106,7 +5106,7 @@ Lūdzu, ievadiet derīgu IP adresi.',
  */
 $messages['mg'] = array(
 	'globalblocking-logpage' => 'Tatitr’asa momban’ny sakana ankapobe',
-	'globalblocking-logpagetext' => "Ity ny tatitr'asa momban'ny sakana ankapobe natao ary nesorina tamin'ity wiki ity.
+	'globalblocking-logpagetext' => "Ity ny laogy momban'ny sakana ankapobe natao ary nesorina tamin'ity wiki ity.
 Tokony fantarina eny amin'ny wiki hafa mahazo esorina ny sakana ankapobe, ary mety mikasika an'ity wiki ity ny sakana ankapobe.
 Raha te-hijery ny sakana ankapobe miasa, azonao jerena ny [[Special:GlobalBlockList|lisitry ny sakana ankapobe]].",
 	'globalblocking-block-logentry' => "nanao sakana ankapobe tamin'i [[$1]] ary ny daty itsaharany dia $2",
@@ -5118,8 +5118,8 @@ Raha te-hijery ny sakana ankapobe miasa, azonao jerena ny [[Special:GlobalBlockL
 	'globalblocking-logentry-expiry' => "mitsahatra amin'ny $1",
 	'globalblocking-logentry-noexpiry' => 'tsy nametraka daty itsaharana',
 	'globalblocking-loglink' => "Voasakana amin'ny ankapobeny ny adiresy IP $1 ([[{{#Special:GlobalBlockList}}/$1|hijery ny antsipirihany]]).",
-	'globalblocking-showlog' => "Efa voasakana ity adiresy IP ity taloha.
-Eo ambany ny tatitr'asa momban'ny fanakanana.",
+	'globalblocking-showlog' => 'Efa voasakana ity adiresy IP ity taloha.
+Eo ambany ny laogim-panakanana.',
 	'globalblocklist' => "Lisitry ny adiresy IP voasakana amin'ny ankapobe",
 );
 
