@@ -3661,7 +3661,7 @@ Tanpri note ke ou pa kapab antre yon non itilizatè!',
 Rezon ki te bay la se ''\"\$3\"''.
 Blòkaj la ''\$4''.",
 	'globalblocking-logpage' => 'Jounal blokaj global',
-	'globalblocking-block-logentry' => 'globalman bloke [[$1]] avèk yon tan expirasyon $2',
+	'globalblocking-block-logentry' => 'te bloke globalman [[$1]] avèk yon tan expirasyon $2',
 	'globalblocking-unblock-logentry' => 'retire blokaj global la sou [[$1]]',
 	'globalblocking-whitelist-logentry' => 'dezame blokaj global la sou [[$1]] lokalman',
 	'globalblocking-dewhitelist-logentry' => 're-mete blokaj global sou [[$1]] lokalman',
