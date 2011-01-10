@@ -3610,9 +3610,9 @@ Protokol blokowanjow podawa so deleka jako referencu:',
  * @author Jvm
  */
 $messages['ht'] = array(
-	'globalblocking-desc' => '[[Special:GlobalBlock|Pemèt]] Pou vin adrès IP yo [[Special:GlobalBlockList|bloke atravè plizyè wiki]]',
+	'globalblocking-desc' => '[[Special:GlobalBlock|Pemèt]] adrès IP yo [[Special:GlobalBlockList|bloke atravè plizyè wiki]]',
 	'globalblocking-block' => 'Bloke yon adrès IP globalman',
-	'globalblocking-block-intro' => 'Ou kapab itilize paj sa pou bloke yon adrès IP nan tou wiki yo.',
+	'globalblocking-block-intro' => 'Ou kapab itilize paj sa pou bloke yon adrès IP nan tout wiki yo.',
 	'globalblocking-block-reason' => 'Rezon:',
 	'globalblocking-block-expiry' => 'Ekspirasyon:',
 	'globalblocking-block-expiry-other' => 'Lòt delè pou ekspirasyon',
@@ -3620,9 +3620,9 @@ $messages['ht'] = array(
 	'globalblocking-block-legend' => 'Bloke yon adrès IP globalman',
 	'globalblocking-block-options' => 'Opsyon yo:',
 	'globalblocking-block-errors' => 'Blokaj sa pa reyisi pou {{PLURAL:$1|rezon sa|rezon sa yo}}:',
-	'globalblocking-block-ipinvalid' => 'Adrès IP sa ($1) ou te antre a pa valab.
+	'globalblocking-block-ipinvalid' => 'Adrès IP sa ($1) ou te antre a pa bon.
 Tanpri note ke ou pa kapab antre yon non itlizatè!',
-	'globalblocking-block-expiryinvalid' => 'Expirasyon ($1) ou te antre a pa valab.',
+	'globalblocking-block-expiryinvalid' => 'Expirasyon ($1) ou te antre a pa bon.',
 	'globalblocking-block-submit' => 'Bloke adrès IP sa globalman',
 	'globalblocking-block-success' => 'Adrès IP $1 byen bloke nan tout pwojè yo.',
 	'globalblocking-block-successsub' => 'Blokaj global reyisi',
@@ -3632,8 +3632,8 @@ Ou ka wè blokaj ki deja ekziste a nan [[Special:GlobalBlockList|lis blokaj glob
 	'globalblocking-search-legend' => 'Chache pou yon blokaj global',
 	'globalblocking-search-ip' => 'Adrès IP:',
 	'globalblocking-search-submit' => 'Chache pou blokaj yo',
-	'globalblocking-list-ipinvalid' => 'Adrès IP ou t ap chache pou ($1) pa valab.
-Tanpri antre yon adrès IP ki valab.',
+	'globalblocking-list-ipinvalid' => 'Adrès IP ou t ap chache pou ($1) pa bon.
+Tanpri antre yon adrès IP ki bon.',
 	'globalblocking-search-errors' => 'Rechèch ou a pa t reyisi pou rezon {{PLURAL:$1|sa|sa yo}}:',
 	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') bloke globalman '''[[Special:Contributions/\$4|\$4]]''' ''(\$5)''",
 	'globalblocking-list-expiry' => 'expirasyon $1',
@@ -3641,7 +3641,7 @@ Tanpri antre yon adrès IP ki valab.',
 	'globalblocking-list-unblock' => 'Debloke',
 	'globalblocking-list-whitelisted' => 'Te deaktive lokalman pa $1: $2',
 	'globalblocking-list-whitelist' => 'estati lokal',
-	'globalblocking-unblock-ipinvalid' => 'Adrès IP ($1) ou te antre a pa valab.
+	'globalblocking-unblock-ipinvalid' => 'Adrès IP ($1) ou te antre a pa bon.
 Tanpri note ke ou pa kapab antre yon non itilizatè!',
 	'globalblocking-unblock-legend' => 'Retire yon blokaj global',
 	'globalblocking-unblock-submit' => 'Retire blokaj global',
@@ -3661,7 +3661,7 @@ Tanpri note ke ou pa kapab antre yon non itilizatè!',
 Rezon ki te bay la se ''\"\$3\"''.
 Blòkaj la ''\$4''.",
 	'globalblocking-logpage' => 'Jounal blokaj global',
-	'globalblocking-block-logentry' => 'te bloke globalman [[$1]] avèk yon tan expirasyon $2',
+	'globalblocking-block-logentry' => 'te bloke globalman [[$1]] avèk yon tan ekspirasyon $2',
 	'globalblocking-unblock-logentry' => 'retire blokaj global la sou [[$1]]',
 	'globalblocking-whitelist-logentry' => 'dezame blokaj global la sou [[$1]] lokalman',
 	'globalblocking-dewhitelist-logentry' => 're-mete blokaj global sou [[$1]] lokalman',
