@@ -1399,9 +1399,14 @@ Per més detalls, a continuació es mostra el registre de bloquejos:',
 	'right-globalblock-exempt' => 'Obvia els bloquejos globals',
 );
 
-/** Chechen (Нохчийн) */
+/** Chechen (Нохчийн)
+ * @author Sasan700
+ */
 $messages['ce'] = array(
+	'globalblocking-block-reasonotherlist' => 'Кхин бахьан',
+	'globalblocking-list' => 'МогIам, сацийна массанхьара IP-долу меттиг',
 	'globalblocking-unblock-reason' => 'Бахьан:',
+	'globalblocklist' => 'МогIам, массанхьа сацийна IP-долу меттиг',
 );
 
 /** Sorani (کوردی) */
