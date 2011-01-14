@@ -1407,6 +1407,7 @@ $messages['ce'] = array(
 	'globalblocking-list' => 'МогIам, сацийна массанхьара IP-долу меттиг',
 	'globalblocking-unblock-reason' => 'Бахьан:',
 	'globalblocklist' => 'МогIам, массанхьа сацийна IP-долу меттиг',
+	'globalblockstatus' => 'Хlоттайелчаьрца долу хьал, масхьара сацорца',
 );
 
 /** Sorani (کوردی) */
@@ -7665,9 +7666,10 @@ $messages['sq'] = array(
 	'globalblocking-whitelist-reason' => 'Arsyeja:',
 );
 
-/** Serbian Cyrillic ekavian (Српски (ћирилица))
+/** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
  * @author Sasa Stefanovic
  * @author Јованвб
+ * @author Жељко Тодоровић
  * @author Михајло Анђелковић
  */
 $messages['sr-ec'] = array(
@@ -7711,7 +7713,7 @@ $messages['sr-ec'] = array(
 	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') глобално блокирао [[Special:Contributions/\$4|\$4]] ''(\$5)''",
 	'globalblocking-list-expiry' => 'истиче $1',
 	'globalblocking-list-anononly' => 'само анонимне',
-	'globalblocking-list-unblock' => 'одблокирај',
+	'globalblocking-list-unblock' => 'деблокирај',
 	'globalblocking-list-whitelist' => 'локални статус',
 	'globalblocking-goto-block' => 'Блокирај IP адресу глобално',
 	'globalblocking-goto-unblock' => 'Уклони глобални блок',
@@ -7754,8 +7756,9 @@ $messages['sr-ec'] = array(
 	'right-globalblock-whitelist' => 'Онемогући глобалне блокове локално',
 );
 
-/** Serbian Latin ekavian (Srpski (latinica))
+/** Serbian Latin ekavian (‪Srpski (latinica)‬)
  * @author Michaello
+ * @author Жељко Тодоровић
  * @author Михајло Анђелковић
  */
 $messages['sr-el'] = array(
@@ -7798,7 +7801,7 @@ Molimo Vas unesite ispravnu IP adresu.',
 	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') globalno blokirao [[Special:Contributions/\$4|\$4]] ''(\$5)''",
 	'globalblocking-list-expiry' => 'ističe $1',
 	'globalblocking-list-anononly' => 'samo anonimne',
-	'globalblocking-list-unblock' => 'odblokiraj',
+	'globalblocking-list-unblock' => 'deblokiraj',
 	'globalblocking-list-whitelist' => 'lokalni status',
 	'globalblocking-goto-block' => 'Blokiraj IP adresu globalno',
 	'globalblocking-goto-unblock' => 'Ukloni globalni blok',
