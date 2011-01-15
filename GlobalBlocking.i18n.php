@@ -9282,6 +9282,7 @@ $1',
  * @author Bencmq
  * @author Gaoxuewei
  * @author Liangent
+ * @author Mark85296341
  * @author PhiLiP
  * @author Shinjiman
  * @author Wmr89502270
@@ -9292,8 +9293,8 @@ $messages['zh-hans'] = array(
 	'globalblocking-modify-intro' => '您可以使用本表单改变全域封锁的设置。',
 	'globalblocking-block-intro' => '您可以用这个页面去封锁全部wiki中的一个IP地址。',
 	'globalblocking-block-reason' => '原因：',
-	'globalblocking-block-otherreason' => '其它／附加的理由：',
-	'globalblocking-block-reasonotherlist' => '其它理由',
+	'globalblocking-block-otherreason' => '其他／附加的理由：',
+	'globalblocking-block-reasonotherlist' => '其他理由',
 	'globalblocking-block-reason-dropdown' => '* 一般封禁原因
 ** 跨维基破坏
 ** 跨维基滥用
@@ -9405,42 +9406,42 @@ $1',
  * @author Shinjiman
  */
 $messages['zh-hant'] = array(
-	'globalblocking-desc' => '[[Special:GlobalBlock|容許]]IP地址可以[[Special:GlobalBlockList|在多個wiki中封鎖]]',
-	'globalblocking-block' => '全域封鎖一個IP地址',
-	'globalblocking-modify-intro' => '您可以使用本表單改變全域封鎖的設置。',
-	'globalblocking-block-intro' => '您可以用這個頁面去封鎖全部wiki中的一個IP地址。',
-	'globalblocking-block-reason' => '封鎖的原因:',
-	'globalblocking-block-otherreason' => '其它／附加的理由：',
-	'globalblocking-block-reasonotherlist' => '其它理由',
+	'globalblocking-desc' => '[[Special:GlobalBlock|容許]] IP 位址可以[[Special:GlobalBlockList|在多個 wiki 中封鎖]]',
+	'globalblocking-block' => '全域封鎖一個 IP 地址',
+	'globalblocking-modify-intro' => '您可以使用本表單改變全域封鎖的設定。',
+	'globalblocking-block-intro' => '您可以用這個頁面去封鎖全部 wiki 中的一個 IP 位址。',
+	'globalblocking-block-reason' => '封鎖的原因：',
+	'globalblocking-block-otherreason' => '其他／附加的理由：',
+	'globalblocking-block-reasonotherlist' => '其他理由',
 	'globalblocking-block-reason-dropdown' => '* 一般封禁原因
 ** 跨維基破壞
 ** 跨維基濫用
 ** 破壞',
 	'globalblocking-block-edit-dropdown' => '編輯查封原因',
-	'globalblocking-block-expiry' => '封鎖到期日:',
+	'globalblocking-block-expiry' => '封鎖到期日：',
 	'globalblocking-block-expiry-other' => '其它的到期時間',
-	'globalblocking-block-expiry-otherfield' => '其它時間:',
-	'globalblocking-block-legend' => '全域封鎖一個IP地址',
+	'globalblocking-block-expiry-otherfield' => '其他時間：',
+	'globalblocking-block-legend' => '全域封鎖一個 IP 地址',
 	'globalblocking-block-options' => '選項',
 	'globalblocking-block-errors' => '該封鎖不成功，因為如下{{PLURAL:$1|原因|原因}}：',
-	'globalblocking-block-ipinvalid' => '您所輸入的IP地址 （$1） 是無效的。
+	'globalblocking-block-ipinvalid' => '您所輸入的 IP 地址 （$1） 是無效的。
 請留意的是您不可以輸入一個用戶名！',
 	'globalblocking-block-expiryinvalid' => '您所輸入的到期 （$1） 是無效的。',
-	'globalblocking-block-submit' => '全域封鎖這個IP地址',
+	'globalblocking-block-submit' => '全域封鎖這個 IP 地址',
 	'globalblocking-modify-submit' => '修改這個全域封鎖',
-	'globalblocking-block-success' => '該IP地址$1 已經在所有的項目中成功地封鎖。',
+	'globalblocking-block-success' => '該 IP 地址 $1 已經在所有的項目中成功地封鎖。',
 	'globalblocking-modify-success' => '$1 的全域封鎖已經被成功修改',
 	'globalblocking-block-successsub' => '全域封鎖成功',
 	'globalblocking-modify-successsub' => '全域封鎖已修改成功',
-	'globalblocking-block-alreadyblocked' => '該IP地址 $1 已經全域封鎖中。
-您可以在[[Special:GlobalBlockList|全域封鎖名單]]中參看現時的封鎖，或通過修改重新提交此表單設置現有封鎖。',
+	'globalblocking-block-alreadyblocked' => '該 IP 地址 $1 已經全域封鎖中。
+您可以在[[Special:GlobalBlockList|全域封鎖名單]]中參見現時的封鎖，或透過修改重新提交此表單設定現有封鎖。',
 	'globalblocking-block-bigrange' => '指定封鎖的區段（$1）過於龐大。
-您最多只能封鎖65536個IP位址（ /16區段）',
+您最多只能封鎖 65536 個 IP 位址（ /16區段）',
 	'globalblocking-list-intro' => '這是全部現時生效中的全域封鎖。
-一些的封鎖已標明在本地停用：即是這個封鎖在其它wiki上應用，但是本地管理員已決定在這個wiki上停用它們。',
-	'globalblocking-list' => '全域封鎖IP地址名單',
+一些的封鎖已標明在本地停用：即是這個封鎖在其他 wiki 上應用，但是本地管理員已決定在這個 wiki 上停用它們。',
+	'globalblocking-list' => '全域封鎖 IP 位址名單',
 	'globalblocking-search-legend' => '搜尋一個全域封鎖',
-	'globalblocking-search-ip' => 'IP地址:',
+	'globalblocking-search-ip' => 'IP 位址：',
 	'globalblocking-search-submit' => '搜尋封鎖',
 	'globalblocking-list-ipinvalid' => '您所搜尋的IP地址 （$1） 是無效的。
 請輸入一個有效的IP地址。',
@@ -9464,7 +9465,7 @@ $1',
 請留意的是您不可以輸入一個用戶名！',
 	'globalblocking-unblock-legend' => '移除一個全域封鎖',
 	'globalblocking-unblock-submit' => '移除全域封鎖',
-	'globalblocking-unblock-reason' => '原因:',
+	'globalblocking-unblock-reason' => '原因：',
 	'globalblocking-unblock-unblocked' => "您己經成功地移除了在IP地址 '''$1''' 上的全域封鎖 #$2",
 	'globalblocking-unblock-errors' => '您不可以移除該IP地址的全域封鎖，因為:
 $1',
