@@ -9407,7 +9407,7 @@ $1',
  */
 $messages['zh-hant'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|容許]] IP 位址可以[[Special:GlobalBlockList|在多個 wiki 中封鎖]]',
-	'globalblocking-block' => '全域封鎖一個 IP 地址',
+	'globalblocking-block' => '全域封鎖一個 IP 位址',
 	'globalblocking-modify-intro' => '您可以使用本表單改變全域封鎖的設定。',
 	'globalblocking-block-intro' => '您可以用這個頁面去封鎖全部 wiki 中的一個 IP 位址。',
 	'globalblocking-block-reason' => '封鎖的原因：',
@@ -9421,19 +9421,19 @@ $messages['zh-hant'] = array(
 	'globalblocking-block-expiry' => '封鎖到期日：',
 	'globalblocking-block-expiry-other' => '其它的到期時間',
 	'globalblocking-block-expiry-otherfield' => '其他時間：',
-	'globalblocking-block-legend' => '全域封鎖一個 IP 地址',
+	'globalblocking-block-legend' => '全域封鎖一個 IP 位址',
 	'globalblocking-block-options' => '選項',
 	'globalblocking-block-errors' => '該封鎖不成功，因為如下{{PLURAL:$1|原因|原因}}：',
-	'globalblocking-block-ipinvalid' => '您所輸入的 IP 地址 （$1） 是無效的。
+	'globalblocking-block-ipinvalid' => '您所輸入的 IP 位址 （$1） 是無效的。
 請留意的是您不可以輸入一個用戶名！',
 	'globalblocking-block-expiryinvalid' => '您所輸入的到期 （$1） 是無效的。',
-	'globalblocking-block-submit' => '全域封鎖這個 IP 地址',
+	'globalblocking-block-submit' => '全域封鎖這個 IP 位址',
 	'globalblocking-modify-submit' => '修改這個全域封鎖',
-	'globalblocking-block-success' => '該 IP 地址 $1 已經在所有的項目中成功地封鎖。',
+	'globalblocking-block-success' => '該 IP 位址 $1 已經在所有的項目中成功地封鎖。',
 	'globalblocking-modify-success' => '$1 的全域封鎖已經被成功修改',
 	'globalblocking-block-successsub' => '全域封鎖成功',
 	'globalblocking-modify-successsub' => '全域封鎖已修改成功',
-	'globalblocking-block-alreadyblocked' => '該 IP 地址 $1 已經全域封鎖中。
+	'globalblocking-block-alreadyblocked' => '該 IP 位址 $1 已經全域封鎖中。
 您可以在[[Special:GlobalBlockList|全域封鎖名單]]中參見現時的封鎖，或透過修改重新提交此表單設定現有封鎖。',
 	'globalblocking-block-bigrange' => '指定封鎖的區段（$1）過於龐大。
 您最多只能封鎖 65536 個 IP 位址（ /16區段）',
@@ -9443,31 +9443,31 @@ $messages['zh-hant'] = array(
 	'globalblocking-search-legend' => '搜尋一個全域封鎖',
 	'globalblocking-search-ip' => 'IP 位址：',
 	'globalblocking-search-submit' => '搜尋封鎖',
-	'globalblocking-list-ipinvalid' => '您所搜尋的IP地址 （$1） 是無效的。
-請輸入一個有效的IP地址。',
-	'globalblocking-search-errors' => '您先前搜尋過的項目不成功，因為:
+	'globalblocking-list-ipinvalid' => '您所搜尋的 IP 位址 （$1） 是無效的。
+請輸入一個有效的 IP 位址。',
+	'globalblocking-search-errors' => '您先前搜尋過的項目不成功，因為：
 $1',
-	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> （''\$3''） 全域封鎖了 [[Special:Contributions/\$4|\$4]] ''（\$5）''",
+	'globalblocking-list-blockitem' => "\$1：<span class=\"plainlinks\">'''\$2'''</span> （''\$3''） 全域封鎖了 [[Special:Contributions/\$4|\$4]] ''（\$5）''",
 	'globalblocking-list-expiry' => '於$1到期',
 	'globalblocking-list-anononly' => '只限匿名',
 	'globalblocking-list-unblock' => '解除封鎖',
-	'globalblocking-list-whitelisted' => '由$1於本地封鎖: $2',
+	'globalblocking-list-whitelisted' => '由 $1 於本地封鎖：$2',
 	'globalblocking-list-whitelist' => '本地狀態',
 	'globalblocking-list-modify' => '修改',
-	'globalblocking-list-noresults' => '請求的IP地址沒有被封鎖。',
-	'globalblocking-goto-block' => '全域封鎖一個 IP 地址',
+	'globalblocking-list-noresults' => '請求的 IP 位址沒有被封鎖。',
+	'globalblocking-goto-block' => '全域封鎖一個 IP 位址',
 	'globalblocking-goto-unblock' => '移除全域封鎖',
 	'globalblocking-goto-status' => '修改全域封鎖的本地狀態',
 	'globalblocking-return' => '回到全域封鎖清單',
-	'globalblocking-notblocked' => '您輸入的IP位址（$1）尚未被全域封鎖。',
+	'globalblocking-notblocked' => '您輸入的 IP 位址（$1）尚未被全域封鎖。',
 	'globalblocking-unblock' => '移除一個全域封鎖',
-	'globalblocking-unblock-ipinvalid' => '您所輸入的IP地址 （$1） 是無效的。
+	'globalblocking-unblock-ipinvalid' => '您所輸入的 IP 位址 （$1） 是無效的。
 請留意的是您不可以輸入一個用戶名！',
 	'globalblocking-unblock-legend' => '移除一個全域封鎖',
 	'globalblocking-unblock-submit' => '移除全域封鎖',
 	'globalblocking-unblock-reason' => '原因：',
-	'globalblocking-unblock-unblocked' => "您己經成功地移除了在IP地址 '''$1''' 上的全域封鎖 #$2",
-	'globalblocking-unblock-errors' => '您不可以移除該IP地址的全域封鎖，因為:
+	'globalblocking-unblock-unblocked' => "您己經成功地移除了在 IP 位址 '''$1''' 上的全域封鎖 #$2",
+	'globalblocking-unblock-errors' => '您不可以移除該 IP 位址的全域封鎖，因為：
 $1',
 	'globalblocking-unblock-successsub' => '全域封鎖已經成功地移除',
 	'globalblocking-unblock-subtitle' => '移除全域封鎖',
@@ -9477,25 +9477,25 @@ $1',
 所以本地全域封鎖狀態沒有被修改。',
 	'globalblocking-whitelist-legend' => '更改本地狀態',
 	'globalblocking-whitelist-reason' => '原因：',
-	'globalblocking-whitelist-status' => '本地狀態:',
+	'globalblocking-whitelist-status' => '本地狀態：',
 	'globalblocking-whitelist-statuslabel' => '停用在{{SITENAME}}上的全域封鎖',
 	'globalblocking-whitelist-submit' => '更改本地狀態',
-	'globalblocking-whitelist-whitelisted' => "您已經成功地在{{SITENAME}}上的IP地址 '''$1''' 中停用了全域封鎖 #$2。",
-	'globalblocking-whitelist-dewhitelisted' => "您已經成功地在{{SITENAME}}上的IP地址 '''$1''' 中再次啟用了全域封鎖 #$2。",
+	'globalblocking-whitelist-whitelisted' => "您已經成功地在{{SITENAME}}上的 IP 位址 '''$1''' 中停用了全域封鎖 #$2。",
+	'globalblocking-whitelist-dewhitelisted' => "您已經成功地在{{SITENAME}}上的 IP 位址 '''$1''' 中再次啟用了全域封鎖 #$2。",
 	'globalblocking-whitelist-successsub' => '本地狀態已經成功地更改',
 	'globalblocking-whitelist-nochange' => '您未對這個封鎖的本地狀態更改過。
 [[Special:GlobalBlockList|回到全域封鎖名單]]。',
 	'globalblocking-whitelist-errors' => '基於以下的{{PLURAL:$1|原因|原因}}，您更改過的全域封鎖本地狀態不成功：',
 	'globalblocking-whitelist-intro' => '您可以利用這個表格去更改全域封鎖的本地狀態。
-如果一個全域封鎖在這個wiki度停用，受影響的 IP 地址可以正常地編輯。
+如果一個全域封鎖在這個 wiki 度停用，受影響的 IP 位址可以正常地編輯。
 [[Special:GlobalBlockList|回到全域封鎖名單]]。',
-	'globalblocking-blocked' => "您的IP地址已經由'''\$1''' （''\$2''） 在所有的Wikimedia wiki 中全部封鎖。
+	'globalblocking-blocked' => "您的 IP 位址 已經由'''\$1''' （''\$2''） 在所有的 Wikimedia wiki 中全部封鎖。
 而理由是 ''\"\$3\"''。該封鎖將會在''\$4''到期。",
 	'globalblocking-blocked-nopassreset' => '您無法修改用戶密碼，因為您正被全域封鎖。',
 	'globalblocking-logpage' => '全域封鎖日誌',
-	'globalblocking-logpagetext' => '這個是在這個wiki中，弄過和移除整過的全域封鎖日誌。
-要留意的是全域封鎖可以在其它的wiki中度弄和移除。
-要查看活躍的全域封鎖，您可以去參閱[[Special:GlobalBlockList|全域封鎖名單]]。',
+	'globalblocking-logpagetext' => '這個是在這個 wiki 中，弄過和移除整過的全域封鎖日誌。
+要留意的是全域封鎖可以在其它的 wiki 中度弄和移除。
+要檢視活躍的全域封鎖，您可以去參閱[[Special:GlobalBlockList|全域封鎖名單]]。',
 	'globalblocking-block-logentry' => '全域封鎖了[[$1]]於 $2 到期',
 	'globalblocking-block2-logentry' => '已全域封鎖[[$1]]（$2）',
 	'globalblocking-unblock-logentry' => '移除了[[$1]]的全域封鎖',
@@ -9503,12 +9503,12 @@ $1',
 	'globalblocking-dewhitelist-logentry' => '再次啟用[[$1]]於本地的全域封鎖',
 	'globalblocking-modify-logentry' => '修改全域封鎖[[$1]] （$2）',
 	'globalblocking-logentry-expiry' => '過期 $1',
-	'globalblocking-logentry-noexpiry' => '未設置過期',
-	'globalblocking-loglink' => 'IP位址$1 被全域封鎖（[[{{#Special:GlobalBlockList}}/$1|詳細資訊]]）。',
-	'globalblocking-showlog' => '這個IP地址已經被封鎖。
+	'globalblocking-logentry-noexpiry' => '未設定過期',
+	'globalblocking-loglink' => 'IP 位址 $1 被全域封鎖（[[{{#Special:GlobalBlockList}}/$1|詳細資訊]]）。',
+	'globalblocking-showlog' => '這個 IP 位址已經被封鎖。
 封鎖記錄提供如下，供參考：',
-	'globalblocklist' => '全域封鎖IP地址名單',
-	'globalblock' => '全域封鎖一個IP地址',
+	'globalblocklist' => '全域封鎖 IP 位址名單',
+	'globalblock' => '全域封鎖一個 IP 位址',
 	'globalblockstatus' => '全域封鎖的本地狀態',
 	'removeglobalblock' => '移除一個全域封鎖',
 	'right-globalblock' => '弄一個全域封鎖',
