@@ -2460,7 +2460,7 @@ $messages['fa'] = array(
 ** فحاشی در چند ویکی
 ** خرابکاری',
 	'globalblocking-block-edit-dropdown' => 'ویرایش دلایل قطع‌دسترسی',
-	'globalblocking-block-expiry' => 'انقضا:',
+	'globalblocking-block-expiry' => 'انقضاء:',
 	'globalblocking-block-expiry-other' => 'زمان‌ خاتمه دیگر',
 	'globalblocking-block-expiry-otherfield' => 'زمانی دیگر:',
 	'globalblocking-block-legend' => 'قطع دسترسی نشانی یک آی‌پی به صورت سراسری',
@@ -2532,7 +2532,7 @@ $messages['fa'] = array(
 	'globalblocking-blocked' => "دسترسی نشانی آی‌پی شما به تمام ویکی‌ها توسط '''$1''' (''$2'') قطع شده است.
 دلیل ارائه شده چنین بوده است: ''«$3»''.
 این قطع دسترسی ''$4''.",
-	'globalblocking-blocked-nopassreset' => 'شما نمی‌توانید کلمات عبور کاربران را تغییر دهید ، زیرا شما به صورت سراسری مسدود شده‌اید.',
+	'globalblocking-blocked-nopassreset' => 'شما نمی‌توانید کلمات عبور کاربران را تغییر دهید زیرا شما به صورت سراسری مسدود شده‌اید.',
 	'globalblocking-logpage' => 'سیاههٔ قطع دسترسی سراسری',
 	'globalblocking-logpagetext' => 'این یک سیاهه از قطع دسترسی‌های سراسری است که در این ویکی ایجاد و حذف شده‌اند.
 باید توجه داشت که قطع دسترسی‌های سراسری می‌تواند در ویکی‌های دیگر ایجاد یا حذف شود، و چنین قطع دسترسی‌هایی می‌تواند در این ویکی تاثیر بگذارد.
@@ -2545,8 +2545,9 @@ $messages['fa'] = array(
 	'globalblocking-modify-logentry' => 'قطع دسترسی سراسری [[$1]] را تغییر داد ($2)',
 	'globalblocking-logentry-expiry' => 'انقضا $1',
 	'globalblocking-logentry-noexpiry' => 'هیچ انقضایی تنظیم نشده',
-	'globalblocking-loglink' => 'آدرس آی‌پی $۱ به صورت سراسری مسدود شده‌است ([[{{#Special:GlobalBlockList}}/$1|جزئیات کامل]]).',
-	'globalblocking-showlog' => 'دسترسی این کاربر قبلاً بسته شده‌است. سیاههٔ قطع دسترسی در زیر نمایش یافته است :',
+	'globalblocking-loglink' => 'آدرس آی‌پی $1 به صورت سراسری مسدود شده‌است ([[{{#Special:GlobalBlockList}}/$1|جزئیات کامل]]).',
+	'globalblocking-showlog' => 'این آدرس آی‌پی قبلاً بسته شده‌است.
+سیاههٔ قطع دسترسی در زیر نمایش‌یافته‌است:',
 	'globalblocklist' => 'فهرست نشانی‌های اینترنتی بسته شده به طور سراسری',
 	'globalblock' => 'قطع دصترسی سراسری یک نشانی آی‌پی',
 	'globalblockstatus' => 'وضعیت محلی قطع‌ دسترسی‌های سراسری',
