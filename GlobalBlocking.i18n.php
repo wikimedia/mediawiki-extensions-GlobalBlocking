@@ -2475,8 +2475,9 @@ $messages['fa'] = array(
 	'globalblocking-modify-success' => 'بستن سراسری $1 با موفقیت تغییر یافت',
 	'globalblocking-block-successsub' => 'قطع دسترسی سراسری موفق بود',
 	'globalblocking-modify-successsub' => 'بستن سراسری با موفقیت تغییر یافت',
-	'globalblocking-block-alreadyblocked' => 'دسترسی نشانی اینتری $1 از قبل به طور سراسری بسته است.
-شما می‌توانید قطع دسترسی موجود را در [[Special:GlobalBlockList|فهرست قطع دسترسی‌های سراسری]] ببینید.',
+	'globalblocking-block-alreadyblocked' => 'دسترسی نشانی آی‌پی $1 از قبل به طور سراسری بسته است.
+شما می‌توانید قطع دسترسی موجود را در [[Special:GlobalBlockList|فهرست قطع دسترسی‌های سراسری]] ببینید،
+یا تنظیمات قطع دسترسی فعلی را با ارسال دوباره این فرم تغییر دهید.',
 	'globalblocking-block-bigrange' => 'بازه‌ای که شما معین کردید ($1) بیش از اندازه بزرگ است.
 شما حداکثر می‌توانید ۶۵۵۳۶ نشانی (یک بازه ‎/16) را غیر فعال کنید.',
 	'globalblocking-list-intro' => 'این فهرستی از تمام قطع دسترسی‌های سراسری است که در حال حاضر فعال هستند.
@@ -2546,8 +2547,8 @@ $messages['fa'] = array(
 	'globalblocking-logentry-expiry' => 'انقضا $1',
 	'globalblocking-logentry-noexpiry' => 'هیچ انقضایی تنظیم نشده',
 	'globalblocking-loglink' => 'آدرس آی‌پی $1 به صورت سراسری مسدود شده‌است ([[{{#Special:GlobalBlockList}}/$1|جزئیات کامل]]).',
-	'globalblocking-showlog' => 'این آدرس آی‌پی قبلاً بسته شده‌است.
-سیاههٔ قطع دسترسی در زیر نمایش‌یافته‌است:',
+	'globalblocking-showlog' => 'این نشانی آی‌پی قبلاً بسته شده‌است.
+سیاههٔ قطع دسترسی در زیر نمایش یافته‌است:',
 	'globalblocklist' => 'فهرست نشانی‌های اینترنتی بسته شده به طور سراسری',
 	'globalblock' => 'قطع دصترسی سراسری یک نشانی آی‌پی',
 	'globalblockstatus' => 'وضعیت محلی قطع‌ دسترسی‌های سراسری',
