@@ -674,7 +674,7 @@ Pa ver tolos bloqueos globales activos, pues ver la [[Special:GlobalBlockList|ll
 	'right-globalblock-whitelist' => 'Desactivar llocalmente bloqueos globales',
 );
 
-/** Bashkir (Башҡорт)
+/** Bashkir (Башҡортса)
  * @author Assele
  */
 $messages['ba'] = array(
@@ -797,7 +797,7 @@ $messages['be'] = array(
 	'globalblocking-whitelist-reason' => 'Прычына:',
 );
 
-/** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
+/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Jim-by
  * @author Red Winged Duck
@@ -1667,7 +1667,7 @@ Es folgt ein Auszug aus dem Benutzersperr-Logbuch:',
 	'right-globalblock-exempt' => 'Globale Sperren umgehen',
 );
 
-/** German (formal address) (Deutsch (Sie-Form))
+/** German (formal address) (‪Deutsch (Sie-Form)‬)
  * @author Imre
  * @author MichaelFrey
  * @author Umherirrender
@@ -6556,6 +6556,7 @@ Para sua referência, é apresentado abaixo o registo de bloqueios:',
 /** Brazilian Portuguese (Português do Brasil)
  * @author Brunoy Anastasiya Seryozhenko
  * @author Eduardo.mps
+ * @author Helder.wiki
  * @author Heldergeovane
  * @author Luckas Blade
  * @author Sir Lestaty de Lioncourt
@@ -9406,6 +9407,7 @@ $1',
  * @author Liangent
  * @author Mark85296341
  * @author Shinjiman
+ * @author Waihorace
  */
 $messages['zh-hant'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|容許]] IP 位址可以[[Special:GlobalBlockList|在多個 wiki 中封鎖]]',
