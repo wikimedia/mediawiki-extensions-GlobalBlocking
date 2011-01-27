@@ -7661,12 +7661,23 @@ $messages['sq'] = array(
 	'globalblocking-block-reasonotherlist' => 'Arsye tjetër',
 	'globalblocking-block-expiry-otherfield' => 'Kohë tjetër:',
 	'globalblocking-block-options' => 'Opcionet:',
+	'globalblocking-search-legend' => 'Kërkoni bllokim globale',
 	'globalblocking-search-ip' => 'IP Adresë/përdorues',
+	'globalblocking-search-submit' => 'Kërkim për bllokimet',
+	'globalblocking-list-ipinvalid' => 'Ju e keni dhënë një adresë IP ($1) të pavlefshëm.
+Ju lutem shkruani një adresë IP të vlefshme.',
+	'globalblocking-list-expiry' => 'Kohëzgjatja e bllokimit $1',
+	'globalblocking-list-anononly' => 'Vetëm anonimet',
 	'globalblocking-list-unblock' => 'grise',
 	'globalblocking-list-whitelist' => 'statusi lokal',
 	'globalblocking-list-modify' => 'modifiko',
+	'globalblocking-unblock' => 'Grise bllokimin global',
+	'globalblocking-unblock-legend' => 'Grise bllokimin global',
+	'globalblocking-unblock-submit' => 'Grise bllokimin global',
 	'globalblocking-unblock-reason' => 'Arsyeja:',
+	'globalblocking-unblock-subtitle' => 'Grise bllokimin global',
 	'globalblocking-whitelist-reason' => 'Arsyeja:',
+	'globalblocking-whitelist-status' => 'Statusi lokal',
 );
 
 /** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
