@@ -7655,22 +7655,61 @@ Dnevnik blokiranja je na voljo spodaj:',
 
 /** Albanian (Shqip)
  * @author Mikullovci11
+ * @author Olsi
  */
 $messages['sq'] = array(
+	'globalblocking-desc' => '[[Special:GlobalBlock|Lejon]] adresat IP të jenë [[Special:GlobalBlockList|të bllokuara në shumë wiki]]',
+	'globalblocking-block' => 'Bllokoni globalisht një adresë IP',
+	'globalblocking-modify-intro' => 'Ju mund të përdorni këtë formular për të ndryshuar parametrat e një bllokimi global.',
+	'globalblocking-block-intro' => 'Ju mund të përdorni këtë faqe për të bllokuar një adresë IP në të gjithë wiki-t.',
 	'globalblocking-block-reason' => 'Arsyeja:',
+	'globalblocking-block-otherreason' => 'Arsye tjetër/shtesë:',
 	'globalblocking-block-reasonotherlist' => 'Arsye tjetër',
+	'globalblocking-block-reason-dropdown' => '*Arsye të shpeshta bllokimi
+**Spam
+**Abuzim
+**Vandalizëm',
+	'globalblocking-block-edit-dropdown' => 'Redakto arsyet e bllokimit',
+	'globalblocking-block-expiry' => 'Afati',
+	'globalblocking-block-expiry-other' => 'Kohë tjetër skadimi:',
 	'globalblocking-block-expiry-otherfield' => 'Kohë tjetër:',
+	'globalblocking-block-legend' => 'Bllokoni një adresë IP globalisht',
 	'globalblocking-block-options' => 'Opcionet:',
+	'globalblocking-block-errors' => 'Bllokimi juaj ishte i pasuksesshëm, për {{PLURAL:$1|arsyen|arsyet}} e mëposhtme:',
+	'globalblocking-block-ipinvalid' => 'Adresa IP ($1) që shkruat është e pavlefshme.
+Ju lutemi vini re se ju nuk mund të shkruani një emër përdoruesi!',
+	'globalblocking-block-expiryinvalid' => 'Afati që dhatë ($1) është i pavlefshëm.',
+	'globalblocking-block-submit' => 'Bllokojeni këtë adresë IP globalisht',
+	'globalblocking-modify-submit' => 'Modifikoni këtë bllokim global',
+	'globalblocking-block-success' => 'Adresa IP $1 është bllokuar me sukses në të gjitha projektet.',
+	'globalblocking-modify-success' => 'Bllokimi global në $1 është modifikuar me sukses',
+	'globalblocking-block-successsub' => 'Bllokim global me sukses',
+	'globalblocking-modify-successsub' => 'Modifikim i bllokimit global me sukses',
+	'globalblocking-block-alreadyblocked' => 'Adresa IP $1 është e bllokuar tashmë globalisht.
+Ju mund ta shihni këtë bllokim ekzistues në [[Special:GlobalBlockList|listën e bllokimeve globale]],
+ose të modifikoni parametrat e bllokimit ekzistues duke riparaqitur këtë formular.',
+	'globalblocking-block-bigrange' => "Vargu që specifikuat ($1) është shumë i madh për t'u bllokuar.
+Ju mund të bllokoni, të shumtën, 65,536 adresa (/16 vargje)",
+	'globalblocking-list-intro' => "Kjo është një listë e të gjitha bllokimeve globale që janë aktualisht në fuqi.
+Disa bllokime janë të shënuara si të çaktivizuara në nivel lokal: kjo do të thotë se ato zbatohen në sajte të tjera, por një administrator lokal ka vendosur t'i zhbllokojë ata në këtë wiki.",
+	'globalblocking-list' => 'Lista e adresave IP të bllokuara globalisht',
 	'globalblocking-search-legend' => 'Kërkoni bllokim globale',
 	'globalblocking-search-ip' => 'IP Adresë/përdorues',
 	'globalblocking-search-submit' => 'Kërkim për bllokimet',
 	'globalblocking-list-ipinvalid' => 'Ju e keni dhënë një adresë IP ($1) të pavlefshëm.
 Ju lutem shkruani një adresë IP të vlefshme.',
+	'globalblocking-search-errors' => 'Kërkimi juaj ishte i pasuksesshëm, për {{PLURAL:$1|arsyen|arsyet}} e mëposhtme:',
+	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') bllokoi globalisht [[Special:Contributions/\$4|\$4]] ''(\$5)''",
 	'globalblocking-list-expiry' => 'Kohëzgjatja e bllokimit $1',
 	'globalblocking-list-anononly' => 'Vetëm anonimet',
 	'globalblocking-list-unblock' => 'grise',
+	'globalblocking-list-whitelisted' => 'çaktivizuar në nivel lokal nga $1: $2',
 	'globalblocking-list-whitelist' => 'statusi lokal',
 	'globalblocking-list-modify' => 'modifiko',
+	'globalblocking-list-noresults' => 'Adresa IP e kërkuar nuk është e bllokuar.',
+	'globalblocking-goto-block' => 'Bllokoni globalisht një adresë IP',
+	'globalblocking-goto-unblock' => 'Grisni një bllokimin global',
+	'globalblocking-goto-status' => 'Ndryshoni statusin lokal për një bllokim global',
 	'globalblocking-unblock' => 'Grise bllokimin global',
 	'globalblocking-unblock-legend' => 'Grise bllokimin global',
 	'globalblocking-unblock-submit' => 'Grise bllokimin global',
