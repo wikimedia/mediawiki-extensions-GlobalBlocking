@@ -1532,6 +1532,8 @@ Zde je pro přehled zobrazen výpis z knihy zablokování:',
  * @author Lloffiwr
  */
 $messages['cy'] = array(
+	'globalblocking-block-reason' => 'Rheswm:',
+	'globalblocking-block-reasonotherlist' => 'Rheswm arall',
 	'globalblocking-block-expiry-otherfield' => 'Cyfnod arall:',
 	'globalblocking-logpage' => 'Lòg blocio wici-gyfan',
 );
@@ -4529,7 +4531,7 @@ $messages['km'] = array(
 	'globalblocking-unblock' => 'ដកចេញ​ការរាំងខ្ទប់​សកល',
 	'globalblocking-unblock-ipinvalid' => 'អាសយដ្ឋាន IP ($1) ដែល​អ្នក​បាន​បញ្ចូល​មិន​ត្រឹមត្រូវ​ទេ​។
 
-សូម​ចំណាំ​ថា អ្នក​មិន​អាច​បញ្ចូល​ឈ្មោះអ្នកប្រើប្រាស់​បាន​ទេ!',
+សូម​ចំណាំ​ថា អ្នក​មិន​អាច​បញ្ចូល​ឈ្មោះរបស់អ្នកប្រើប្រាស់​បាន​ទេ!',
 	'globalblocking-unblock-legend' => 'ដកចេញ​ការរាំងខ្ទប់​សកល',
 	'globalblocking-unblock-submit' => 'ដាកចេញ​ការរាំងខ្ទប់​សកល',
 	'globalblocking-unblock-reason' => 'មូលហេតុ៖',
