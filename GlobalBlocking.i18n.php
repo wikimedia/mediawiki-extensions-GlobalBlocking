@@ -138,6 +138,7 @@ The block log is provided below for reference:',
  * @author Ficell
  * @author Fryed-peach
  * @author Jon Harald Søby
+ * @author Lloffiwr
  * @author Meno25
  * @author Mormegil
  * @author Nike
@@ -158,7 +159,9 @@ $messages['qqq'] = array(
 	'globalblocking-block-reason' => '{{Identical|Reason}}',
 	'globalblocking-block-otherreason' => '{{Identical/Other/additional reason}}',
 	'globalblocking-block-reasonotherlist' => '{{Identical|Other reason}}',
-	'globalblocking-block-expiry' => '{{Identical/Expiry}}',
+	'globalblocking-block-expiry' => 'After the colon, the user can enter a timestamp on which the block automatically ends or a time period like "1 hour", "2 days", "1 year" etc. But in English only because the time period is parsed by the underlying OS, not by MediaWiki.
+
+{{Identical/Expiry}}',
 	'globalblocking-block-expiry-otherfield' => '{{Identical|Other time}}',
 	'globalblocking-block-options' => '{{Identical|Options}}',
 	'globalblocking-block-errors' => "The first line of the error message shown on [[Special:GlobalBlock]] (see [[mw:Extension:GlobalBlocking]]) if the block has been unsuccessful. After this message, a list of specific errors is shown (see [[Special:Prefixindex/MediaWiki:Globalblocking-block-bigrange|globalblocking-block-bigrange]], [[Special:Prefixindex/MediaWiki:Globalblocking-block-expiryinvalid|globalblocking-block-expiryinvalid]] etc.).
@@ -1534,7 +1537,11 @@ Zde je pro přehled zobrazen výpis z knihy zablokování:',
 $messages['cy'] = array(
 	'globalblocking-block-reason' => 'Rheswm:',
 	'globalblocking-block-reasonotherlist' => 'Rheswm arall',
+	'globalblocking-block-expiry' => 'I ddod i ben am/wedi:',
 	'globalblocking-block-expiry-otherfield' => 'Cyfnod arall:',
+	'globalblocking-block-options' => 'Dewisiadau:',
+	'globalblocking-unblock-reason' => 'Rheswm:',
+	'globalblocking-whitelist-reason' => 'Rheswm:',
 	'globalblocking-logpage' => 'Lòg blocio wici-gyfan',
 );
 
@@ -4524,6 +4531,7 @@ $messages['km'] = array(
 	'globalblocking-list-unblock' => 'ដកហូត',
 	'globalblocking-list-whitelisted' => 'បាន​បិទ​ជា​មូលដ្ឋាន​ដោយ $1: $2',
 	'globalblocking-list-whitelist' => 'ស្ថានភាព​មូលដ្ឋាន',
+	'globalblocking-list-modify' => 'កែសំរួល',
 	'globalblocking-goto-block' => 'រាំងខ្ទប់​អាសយដ្ឋាន​ជា​សកល',
 	'globalblocking-goto-unblock' => 'ដកចេញ​ការរាំងខ្ទប់​សកល',
 	'globalblocking-return' => 'ត្រឡប់​ទៅកាន់​បញ្ជី​នៃ​ការរាំងខ្ទប់​សកល',
