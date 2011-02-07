@@ -4820,6 +4820,13 @@ Et {{int:blocklogpage}} es hee dronger opjeföhrt, do kanns De nohkike, wat wohr
 	'right-globalblock-exempt' => 'Jemeinsam Sperre ömjonn',
 );
 
+/** Kurdish (Latin) (Kurdî (Latin))
+ * @author George Animal
+ */
+$messages['ku-latn'] = array(
+	'globalblocking-whitelist-reason' => 'Sedem:',
+);
+
 /** Latin (Latina)
  * @author UV
  */
