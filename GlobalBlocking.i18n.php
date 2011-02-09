@@ -4710,7 +4710,14 @@ $messages['ksh'] = array(
 	'globalblocking-modify-intro' => 'Hee kanns de Enstellunge för de Sperre övver ettlijje Wikis ändere.',
 	'globalblocking-block-intro' => 'He op dä Sigg kans De IP-Address en alle Wikis sperre.',
 	'globalblocking-block-reason' => 'Aanlass:',
-	'globalblocking-block-expiry' => 'De Dooer for ze Sperre:',
+	'globalblocking-block-otherreason' => 'Ene andere ov zohsäzlejje Jrund:',
+	'globalblocking-block-reasonotherlist' => 'Ene andere Jrond',
+	'globalblocking-block-reason-dropdown' => '* Jemeinsam Jrönde för et Sperre
+** Spam en etlijje Wikis
+** Hät en etlijje Wikis Meß jemaat 
+** Kappotmaachereie',
+	'globalblocking-block-edit-dropdown' => 'De Jründ för et Sperre beärrbejde',
+	'globalblocking-block-expiry' => 'De Dooer för ze Sperre:',
 	'globalblocking-block-expiry-other' => 'En ander Dooer',
 	'globalblocking-block-expiry-otherfield' => 'Ander Dooer (op änglesch):',
 	'globalblocking-block-legend' => 'Don en <i lang="en">IP</i>-Addräß en alle Wikis sperre',
