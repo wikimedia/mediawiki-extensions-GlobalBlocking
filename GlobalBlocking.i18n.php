@@ -7734,13 +7734,63 @@ Ju lutem shkruani një adresë IP të vlefshme.',
 	'globalblocking-goto-block' => 'Bllokoni globalisht një adresë IP',
 	'globalblocking-goto-unblock' => 'Grisni një bllokimin global',
 	'globalblocking-goto-status' => 'Ndryshoni statusin lokal për një bllokim global',
+	'globalblocking-return' => 'Kthehuni tek lista e bllokimeve globale',
+	'globalblocking-notblocked' => 'Adresa IP ($1) që shkruat nuk është e bllokuar globalisht.',
 	'globalblocking-unblock' => 'Grise bllokimin global',
+	'globalblocking-unblock-ipinvalid' => 'Adresa IP ($1) që shkruat është e pavlefshme.
+Ju lutemi vini re se ju nuk mund të shkruani një emër përdoruesi!',
 	'globalblocking-unblock-legend' => 'Grise bllokimin global',
 	'globalblocking-unblock-submit' => 'Grise bllokimin global',
 	'globalblocking-unblock-reason' => 'Arsyeja:',
+	'globalblocking-unblock-unblocked' => "Ju keni hequr me sukses bllokimin global #$2 tek adresa IP '''$1'''",
+	'globalblocking-unblock-errors' => 'Heqja e bllokimit global ishte e pasuksesshme, për {{PLURAL:$1|arsyen|arsyet}} e mëposhtme:',
+	'globalblocking-unblock-successsub' => 'Bllokimi global u hoq me sukses',
 	'globalblocking-unblock-subtitle' => 'Grise bllokimin global',
+	'globalblocking-unblock-intro' => 'Ju mund të përdorni këtë formular për të hequr një bllokim global.',
+	'globalblocking-whitelist' => 'Statusi lokal i bllokimeve globale',
+	'globalblocking-whitelist-notapplied' => 'Bllokimet globale nuk janë të aplikuara në këtë wiki,
+kështu që statusi i bllokimeve globale nuk mund të modifikohet.',
+	'globalblocking-whitelist-legend' => 'Ndrysho statusin lokal',
 	'globalblocking-whitelist-reason' => 'Arsyeja:',
 	'globalblocking-whitelist-status' => 'Statusi lokal',
+	'globalblocking-whitelist-statuslabel' => 'Çaktivizo këtë bllokim global në {{SITENAME}}',
+	'globalblocking-whitelist-submit' => 'Ndrysho statusin lokal',
+	'globalblocking-whitelist-whitelisted' => "Ju keni çaktivizuar me sukses bllokimin global #$2 tek adresa IP '''$1''' në {{SITENAME}}.",
+	'globalblocking-whitelist-dewhitelisted' => "Ju keni ri-aktivizuar me sukses bllokimin global #$2 tek adresa IP '''$1''' në {{SITENAME}}.",
+	'globalblocking-whitelist-successsub' => 'Statusi lokal u ndryshua me sukses',
+	'globalblocking-whitelist-nochange' => 'Ju nuk bëtë ndonjë ndryshim tek statusi lokal i këtij bllokimi.
+[[Special:GlobalBlockList|Kthehuni tek lista e bllokimve globale]].',
+	'globalblocking-whitelist-errors' => 'Ndryshimi juaj tek statusi lokal i bllokimit global ishte i pasuksesshëm, për {{PLURAL:$1|arsyen|arsyet}} e mëposhtme:',
+	'globalblocking-whitelist-intro' => 'Ju mund të përdorni këtë formular për të redaktuar statusin lokal të një bllokimi global.
+Nëse një bllokim global është i çaktivizuar në këtë wiki, përdoruesit e adresës IP do të jenë në gjendje të redaktojnë normalisht.
+[[Special:GlobalBlockList|Kthehuni tek lsita e bllokimeve globale]].',
+	'globalblocking-blocked' => "Adresa juaj IP është bllokuar në të gjithë wiki-t nga '''\$1''' (''\$2'').
+Arsyeja e dhënë ishte ''\"\$3\"''.
+Bllokimi ''\$4''.",
+	'globalblocking-blocked-nopassreset' => 'Ju nuk mund të rivendosni fjalëkalimet e përdoresve sepse jeni i bllokuar globalisht.',
+	'globalblocking-logpage' => 'Regjistri i bllokimeve globale',
+	'globalblocking-logpagetext' => 'Ky është një regjistër i bllokimeve globale që janë bërë dhe hequr në këtë wiki.
+Duhet të theksohet se bllokimet globale mund të bëhen dhe të hiqen në wiki-t e tjerë, dhe këtë bllokime globale mund të ndikojnë në këtë wiki.
+Për të parë të gjitha bllokimet globale aktive, ju mund të shikoni [[Special:GlobalBlockList|listën e bllokimeve globale]].',
+	'globalblocking-block-logentry' => 'bllokoi globalisht [[$1]] për një kohë prej $2',
+	'globalblocking-block2-logentry' => 'bllokoi globalisht [[$1]] ($2)',
+	'globalblocking-unblock-logentry' => 'hoqi bllokimin global në [[$1]]',
+	'globalblocking-whitelist-logentry' => 'çaktivizoi bllokimin global për [[$1]] në nivel lokal',
+	'globalblocking-dewhitelist-logentry' => 'ri-çaktivizoi bllokimin global për [[$1]] në nivel lokal',
+	'globalblocking-modify-logentry' => 'modifikoi bllokimin global në [[$1]] ($2)',
+	'globalblocking-logentry-expiry' => 'skadon $1',
+	'globalblocking-logentry-noexpiry' => 'nuk u vendos afat',
+	'globalblocking-loglink' => 'Adresa IP $1 është bllokuar globalisht ([[{{#Special:GlobalBlockList}}/$1|detajet e plota]]).',
+	'globalblocking-showlog' => 'Kjo adresë IP është bllokuar më parë.
+Regjistri i bllokimit është poshtë për referncë:',
+	'globalblocklist' => 'Lista e adresave IP të bllokuara globalisht',
+	'globalblock' => 'Bllokoni globalisht një adresë IP',
+	'globalblockstatus' => 'Statusi lokal i bllokimeve globale',
+	'removeglobalblock' => 'Hiq një bllokim global',
+	'right-globalblock' => 'Bëni bllokime globale',
+	'right-globalunblock' => 'Hiqni bllokime globale',
+	'right-globalblock-whitelist' => 'Çaktivizoni bllokimet globale në nivel lokal',
+	'right-globalblock-exempt' => 'Anashkaloni bllokimet globale',
 );
 
 /** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
