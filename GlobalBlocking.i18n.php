@@ -8803,6 +8803,14 @@ Engelleme günlüğü referans için aşağıda verilmiştir:',
 	'right-globalblock-exempt' => 'Küresel engellemeleri atla',
 );
 
+/** Tuvinian (Тыва дыл)
+ * @author Sborsody
+ */
+$messages['tyv'] = array(
+	'globalblocking-block-reason' => 'Чылдагаан:',
+	'globalblocking-unblock-reason' => 'Чылдагаан:',
+);
+
 /** Ukrainian (Українська)
  * @author AS
  * @author Ahonc
