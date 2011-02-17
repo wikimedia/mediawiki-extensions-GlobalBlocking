@@ -4831,6 +4831,8 @@ Et {{int:blocklogpage}} es hee dronger opjeföhrt, do kanns De nohkike, wat wohr
  * @author George Animal
  */
 $messages['ku-latn'] = array(
+	'globalblocking-search-ip' => "Adresê IP'ê:",
+	'globalblocking-unblock-reason' => 'Sedem:',
 	'globalblocking-whitelist-reason' => 'Sedem:',
 );
 
