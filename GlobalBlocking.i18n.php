@@ -4831,6 +4831,10 @@ Et {{int:blocklogpage}} es hee dronger opjeföhrt, do kanns De nohkike, wat wohr
  * @author George Animal
  */
 $messages['ku-latn'] = array(
+	'globalblocking-block-reason' => 'Sedem:',
+	'globalblocking-block-reasonotherlist' => 'Sedemekî din',
+	'globalblocking-block-expiry-otherfield' => 'Demeka din:',
+	'globalblocking-block-submit' => 'Vê IP yê li her cihî asteng bike',
 	'globalblocking-search-ip' => "Adresê IP'ê:",
 	'globalblocking-unblock-reason' => 'Sedem:',
 	'globalblocking-whitelist-reason' => 'Sedem:',
