@@ -589,12 +589,15 @@ $messages['arz'] = array(
 
 /** Asturian (Asturianu)
  * @author Esbardu
+ * @author Xuacu
  */
 $messages['ast'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Permite]] [[Special:GlobalBlockList|bloquiar en múltiples wikis]] direicciones IP',
 	'globalblocking-block' => 'Bloquiar globalmente una direición IP',
 	'globalblocking-block-intro' => 'Pues usar esta páxina pa bloquiar una direición IP en toles wikis.',
 	'globalblocking-block-reason' => 'Motivu:',
+	'globalblocking-block-otherreason' => 'Motivu distintu/adicional:',
+	'globalblocking-block-reasonotherlist' => 'Otru motivu',
 	'globalblocking-block-expiry' => 'Caducidá del bloquéu:',
 	'globalblocking-block-expiry-other' => 'Otra caducidá',
 	'globalblocking-block-expiry-otherfield' => 'Otru periodu:',
