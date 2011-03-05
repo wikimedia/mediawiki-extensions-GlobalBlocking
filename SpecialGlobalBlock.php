@@ -221,7 +221,7 @@ class SpecialGlobalBlock extends SpecialPage {
 					'wpExpiryOther',
 					45,
 					$this->mExpiry == $this->mExpirySelection ? '' : $this->mExpiry,
-					array( 'id' => 'mw-globalblock-expiry-other' )
+					array( 'id' => 'mw-globalblock-expiry-selector-other' )
 				);
 		}
 		
@@ -264,6 +264,9 @@ class SpecialGlobalBlock extends SpecialPage {
 		$form .= Xml::closeElement( 'form' );
 		$form .= Xml::closeElement( 'fieldset' );
 
+		#FIXME: make this actually use HTMLForm, instead of just its JavaScript
+		$wgOut->addModules( 'mediawiki.htmlform' );
+		
 		$wgOut->addHTML( $form );
 
 		// Show loglist of previous blocks
@@ -289,7 +292,10 @@ class SpecialGlobalBlock extends SpecialPage {
 		if ($id == null) { $id = $name; }
 		if ($selected == null) { $selected = 'other'; }
 
-		$attribs = array( 'id' => $id, 'name' => $name, 'onchange' => 'considerChangingExpiryFocus()' );
+		$attribs = array(
+			'id' => $id,
+			'name' => $name,
+			'class' => 'mw-htmlform-select-or-other' ); # FIXME: make this actually use HTMLForm
 
 		$selector .= Xml::openElement( 'select', $attribs );
 
