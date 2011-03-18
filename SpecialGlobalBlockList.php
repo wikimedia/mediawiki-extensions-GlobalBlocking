@@ -142,6 +142,7 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 			$expiry = Block::decodeExpiry( $expiry );
 			$options[] = wfMsgExt(
 				'expiringblock',
+				'parseinline',
 				$wgLang->date( $expiry ),
 				$wgLang->time( $expiry )
 			);

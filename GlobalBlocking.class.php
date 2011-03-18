@@ -51,6 +51,7 @@ class GlobalBlocking {
 				$expiry = Block::decodeExpiry( $block->gb_expiry );
 				$expiry = wfMsgExt(
 					'expiringblock',
+					'parseinline',
 					$wgLang->date( $expiry ),
 					$wgLang->time( $expiry )
 				);
