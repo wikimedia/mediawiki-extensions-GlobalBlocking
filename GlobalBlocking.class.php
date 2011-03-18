@@ -38,8 +38,7 @@ class GlobalBlocking {
 				return $result = array();
 			}
 			
-			if ( $user->isAllowed( 'ipblock-exempt' ) ||
-				$user->isAllowed( 'globalblock-exempt' ) ) {
+			if ( $user->isAllowed( 'ipblock-exempt', 'globalblock-exempt' ) ) {
 				// User is exempt from IP blocks.
 				return $result = array();
 			}
@@ -243,7 +242,7 @@ class GlobalBlocking {
 	static function block( $address, $reason, $expiry, $options = array() ) {
 		global $wgContLang;
 		
-		$expiry = Block::parseExpiryInput( $expiry );
+		$expiry = SpecialBlock::parseExpiryInput( $expiry );
 		$errors = self::insertBlock( $address, $reason, $expiry, $options );
 		
 		if ( count($errors) > 0 )
