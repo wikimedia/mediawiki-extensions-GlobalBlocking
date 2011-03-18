@@ -25,6 +25,7 @@ class GlobalBlocking {
 	}
 		
 	static function getUserBlockErrors( $user, $ip ) {
+		global $wgLang;
 		static $result = null;
 		
 		// Instance cache
@@ -43,7 +44,17 @@ class GlobalBlocking {
 				return $result = array();
 			}
 
-			$expiry = Block::formatExpiry( $block->gb_expiry );
+			# Messy B/C until $wgLang->formatExpiry() is well embedded
+			if( Block::decodeExpiry( $block->gb_expiry ) == 'infinity' ){
+				$expiry = wfMsgExt( 'infiniteblock', 'parseinline' );
+			} else {
+				$expiry = Block::decodeExpiry( $block->gb_expiry );
+				$expiry = wfMsgExt(
+					'expiringblock',
+					$wgLang->date( $expiry ),
+					$wgLang->time( $expiry )
+				);
+			}
 			
 			$display_wiki = self::getWikiName( $block->gb_by_wiki );
 			$user_display = self::maybeLinkUserpage( $block->gb_by_wiki, $block->gb_by );

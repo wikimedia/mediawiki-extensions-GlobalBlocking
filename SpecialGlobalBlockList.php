@@ -135,8 +135,17 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 		$expiry = $row->gb_expiry;
 		$options = array();
 		
-		## Options to display
-		$options[] = Block::formatExpiry( $expiry );
+		# Messy B/C until $wgLang->formatExpiry() is well embedded
+		if( Block::decodeExpiry( $expiry ) == 'infinity' ){
+			$options[] = wfMsgExt( 'infiniteblock', 'parseinline' );
+		} else {
+			$expiry = Block::decodeExpiry( $expiry );
+			$options[] = wfMsgExt(
+				'expiringblock',
+				$wgLang->date( $expiry ),
+				$wgLang->time( $expiry )
+			);
+		}
 		
 		# Check for whitelisting.
 		$wlinfo = GlobalBlocking::getWhitelistInfo( $row->gb_id );
