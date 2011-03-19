@@ -1550,8 +1550,10 @@ $messages['cy'] = array(
 
 /** Danish (Dansk)
  * @author Masz
+ * @author Peter Alberti
  */
 $messages['da'] = array(
+	'globalblocking-block-reason' => 'Begrundelse:',
 	'globalblocking-whitelist-legend' => 'Ændr lokal status',
 	'globalblocking-whitelist-reason' => 'Begrundelse:',
 	'globalblocking-whitelist-status' => 'Lokal status:',
@@ -5621,11 +5623,12 @@ $messages['myv'] = array(
 
 /** Nahuatl (Nāhuatl)
  * @author Fluence
+ * @author Teòtlalili
  */
 $messages['nah'] = array(
 	'globalblocking-search-ip' => 'IP:',
 	'globalblocking-list-anononly' => 'zan ahtōcā',
-	'globalblocking-unblock-reason' => 'Īxtlamatiliztli:',
+	'globalblocking-unblock-reason' => 'Tlèka:',
 );
 
 /** Low German (Plattdüütsch)
