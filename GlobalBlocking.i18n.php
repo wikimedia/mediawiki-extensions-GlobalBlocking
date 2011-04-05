@@ -3187,12 +3187,15 @@ Do chunnt e Uuszug us em Benutzersperr-Logbuech:',
 
 /** Manx (Gaelg)
  * @author MacTire02
+ * @author Shimmin Beg
  */
 $messages['gv'] = array(
+	'globalblocking-block-reason' => 'Fa:',
 	'globalblocking-block-expiry-otherfield' => 'Am elley:',
 	'globalblocking-block-options' => 'Reihyn:',
 	'globalblocking-search-ip' => 'Enmys IP:',
 	'globalblocking-unblock-reason' => 'Fa:',
+	'globalblocking-whitelist-reason' => 'Fa:',
 );
 
 /** Hausa (هَوُسَ) */
