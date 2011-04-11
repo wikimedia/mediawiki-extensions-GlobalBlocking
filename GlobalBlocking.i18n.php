@@ -1400,10 +1400,10 @@ Per més detalls, a continuació es mostra el registre de bloquejos:',
 	'globalblock' => 'Bloqueja una adreça IP globalment',
 	'globalblockstatus' => 'Estat local dels bloquejos globals',
 	'removeglobalblock' => 'Canceŀla el bloqueig global',
-	'right-globalblock' => 'Gestiona bloquejos globals',
+	'right-globalblock' => 'Fer blocatges globals',
 	'right-globalunblock' => 'Canceŀlar bloquejos globals',
-	'right-globalblock-whitelist' => 'Inhabilita els bloquejos globals localment',
-	'right-globalblock-exempt' => 'Obvia els bloquejos globals',
+	'right-globalblock-whitelist' => 'Desactivar a nivell local els blocatges globals',
+	'right-globalblock-exempt' => 'Eludir els blocatges globals',
 );
 
 /** Chechen (Нохчийн)
@@ -7810,6 +7810,7 @@ Regjistri i bllokimit është poshtë për referncë:',
 );
 
 /** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
+ * @author Rancher
  * @author Sasa Stefanovic
  * @author Јованвб
  * @author Жељко Тодоровић
@@ -7875,9 +7876,9 @@ $messages['sr-ec'] = array(
 	'globalblocking-whitelist-reason' => 'Разлог:',
 	'globalblocking-whitelist-status' => 'Локални статус:',
 	'globalblocking-whitelist-submit' => 'Промени локални статус',
-	'globalblocking-blocked' => "Ваша ИП адреса је блокирана на свим Викимедијиним викијима. Корисник који је блокирао '''$1''' (''$2'').
-Разлог за блокаду је „''$3''”. 
-Блок ''$4''.",
+	'globalblocking-blocked' => "Ваша IP адреса је блокирана на свим викијима од стране {{GENDER:$1|корисника|кориснице|корисника}} '''$1''' (''$2'').
+Разлог за блокирање: ''$3''. 
+Трајање: ''$4''.",
 	'globalblocking-logpage' => 'Историја глобалних блокова',
 	'globalblocking-block-logentry' => 'глобално блокирао [[$1]] са временом истицања од $2',
 	'globalblocking-block2-logentry' => 'глобално блокиран [[$1]] ($2)',
