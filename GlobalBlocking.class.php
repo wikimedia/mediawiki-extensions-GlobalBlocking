@@ -289,7 +289,7 @@ class GlobalBlocking {
 		return array();
 	}
 	
-	static function onMailPassword( $name, &$error ) {
+	static function onSpecialPasswordResetOnSubmit( &$users, $data, &$error ) {
 		global $wgUser;
 		
 		if ( GlobalBlocking::getUserBlockErrors( $wgUser, wfGetIp() ) ) {
