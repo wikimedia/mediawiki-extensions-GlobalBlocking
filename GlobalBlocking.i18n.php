@@ -688,6 +688,19 @@ Pa ver tolos bloqueos globales activos, pues ver la [[Special:GlobalBlockList|ll
 	'right-globalblock-whitelist' => 'Desactivar llocalmente bloqueos globales',
 );
 
+/** Azerbaijani (Azərbaycanca)
+ * @author Cekli829
+ */
+$messages['az'] = array(
+	'globalblocking-block-reason' => 'Səbəb:',
+	'globalblocking-block-reasonotherlist' => 'Digər səbəb',
+	'globalblocking-block-expiry' => 'Bitmə müddəti:',
+	'globalblocking-block-expiry-otherfield' => 'Başqa vaxt:',
+	'globalblocking-search-ip' => 'IP ünvanı:',
+	'globalblocking-unblock-reason' => 'Səbəb:',
+	'globalblocking-whitelist-reason' => 'Səbəb:',
+);
+
 /** Bashkir (Башҡортса)
  * @author Assele
  */
@@ -1563,6 +1576,7 @@ $messages['cy'] = array(
  */
 $messages['da'] = array(
 	'globalblocking-block-reason' => 'Begrundelse:',
+	'globalblocking-block-reasonotherlist' => 'Anden grund',
 	'globalblocking-whitelist-legend' => 'Ændr lokal status',
 	'globalblocking-whitelist-reason' => 'Begrundelse:',
 	'globalblocking-whitelist-status' => 'Lokal status:',
