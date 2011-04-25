@@ -1576,6 +1576,7 @@ $messages['cy'] = array(
  */
 $messages['da'] = array(
 	'globalblocking-block-reason' => 'Begrundelse:',
+	'globalblocking-block-otherreason' => 'Anden/uddybende begrundelse:',
 	'globalblocking-block-reasonotherlist' => 'Anden grund',
 	'globalblocking-whitelist-legend' => 'Ændr lokal status',
 	'globalblocking-whitelist-reason' => 'Begrundelse:',
