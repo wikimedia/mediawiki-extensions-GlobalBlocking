@@ -6218,6 +6218,16 @@ Lo jornal dels blocatges es disponible çaijós :',
 	'right-globalblock-exempt' => 'Passar otra los blocatges globals',
 );
 
+/** Oriya (ଓଡ଼ିଆ)
+ * @author Odisha1
+ */
+$messages['or'] = array(
+	'globalblocking-block-reason' => 'କାରଣ:',
+	'globalblocking-list-unblock' => 'ବାହାର କରିବା',
+	'globalblocking-unblock-reason' => 'କାରଣ:',
+	'globalblocking-whitelist-reason' => 'କାରଣ:',
+);
+
 /** Ossetic (Иронау)
  * @author Amikeco
  */
