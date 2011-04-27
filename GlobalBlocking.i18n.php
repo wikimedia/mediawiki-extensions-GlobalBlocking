@@ -696,7 +696,9 @@ $messages['az'] = array(
 	'globalblocking-block-reasonotherlist' => 'Digər səbəb',
 	'globalblocking-block-expiry' => 'Bitmə müddəti:',
 	'globalblocking-block-expiry-otherfield' => 'Başqa vaxt:',
+	'globalblocking-block-options' => 'Nizamlamalar:',
 	'globalblocking-search-ip' => 'IP ünvanı:',
+	'globalblocking-list-whitelist' => 'lokal status',
 	'globalblocking-unblock-reason' => 'Səbəb:',
 	'globalblocking-whitelist-reason' => 'Səbəb:',
 );
@@ -6855,6 +6857,7 @@ Blocarea ''$4''.",
 	'right-globalblock' => 'Efectuează blocări globale',
 	'right-globalunblock' => 'Elimină blocări globale',
 	'right-globalblock-whitelist' => 'Dezactivează local blocările globale',
+	'right-globalblock-exempt' => 'Ocolește blocările globale',
 );
 
 /** Tarandíne (Tarandíne)
