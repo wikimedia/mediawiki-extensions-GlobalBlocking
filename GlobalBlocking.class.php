@@ -6,6 +6,11 @@ class GlobalBlocking {
 		if ($action == 'read' || !$wgApplyGlobalBlocks) {
 			return true;
 		}
+		if ( $user->isAllowed( 'ipblock-exempt' ) ||
+			$user->isAllowed( 'globalblock-exempt' ) ) {
+			// User is exempt from IP blocks.
+			return true;
+		}
 		$ip = wfGetIp();
 		$blockError = self::getUserBlockErrors( $user, $ip );
 		if( !empty($blockError) ) {
