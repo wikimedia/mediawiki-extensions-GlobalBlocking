@@ -690,9 +690,11 @@ Pa ver tolos bloqueos globales activos, pues ver la [[Special:GlobalBlockList|ll
 
 /** Azerbaijani (Azərbaycanca)
  * @author Cekli829
+ * @author Vugar 1981
  */
 $messages['az'] = array(
 	'globalblocking-block-reason' => 'Səbəb:',
+	'globalblocking-block-otherreason' => 'Digər/əlavə səbəb:',
 	'globalblocking-block-reasonotherlist' => 'Digər səbəb',
 	'globalblocking-block-expiry' => 'Bitmə müddəti:',
 	'globalblocking-block-expiry-otherfield' => 'Başqa vaxt:',
@@ -701,6 +703,7 @@ $messages['az'] = array(
 	'globalblocking-list-whitelist' => 'lokal status',
 	'globalblocking-unblock-reason' => 'Səbəb:',
 	'globalblocking-whitelist-reason' => 'Səbəb:',
+	'globalblocking-logpage' => 'Qlobal blok gündəliyi',
 );
 
 /** Bashkir (Башҡортса)
