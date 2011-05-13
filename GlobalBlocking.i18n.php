@@ -632,7 +632,7 @@ Por favor escribi una direición IP válida.',
 	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') bloquió globalmente a [[Special:Contributions/\$4|\$4]] ''(\$5)''",
 	'globalblocking-list-expiry' => 'caducidá $1',
 	'globalblocking-list-anononly' => 'namái anónimos',
-	'globalblocking-list-unblock' => 'eliminar',
+	'globalblocking-list-unblock' => 'desaniciar',
 	'globalblocking-list-whitelisted' => 'desactiváu llocalmente por $1: $2',
 	'globalblocking-list-whitelist' => 'estatus llocal',
 	'globalblocking-list-modify' => 'camudar',
@@ -5814,6 +5814,7 @@ $messages['nds-nl'] = array(
 );
 
 /** Dutch (Nederlands)
+ * @author Romaine
  * @author SPQRobin
  * @author Siebrand
  */
@@ -5851,7 +5852,7 @@ U kunt de bestaande blokkade bekijken in de [[Special:GlobalBlockList|lijst met 
 	'globalblocking-list-intro' => 'Dit is een lijst met alle globale blokkades die op het moment actief zijn.
 Sommige blokkades zijn gemarkeerd als lokaal opgeheven.
 Dit betekent dat ze op andere sites van toepassing zijn, maar dat een lokale beheerder heeft besloten dat de blokkade op deze wiki niet van toepassing is.',
-	'globalblocking-list' => 'Lijst met globaal geblokeerde IP-adressen',
+	'globalblocking-list' => 'Lijst met globaal geblokkeerde IP-adressen',
 	'globalblocking-search-legend' => 'Naar een globale blokkade zoeken',
 	'globalblocking-search-ip' => 'IP-adres:',
 	'globalblocking-search-submit' => 'Naar blokkades zoeken',
