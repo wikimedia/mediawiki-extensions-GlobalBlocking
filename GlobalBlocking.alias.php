@@ -8,9 +8,7 @@
 
 $specialPageAliases = array();
 
-/** English
- * @author Jon Harald Søby
- */
+/** English (English) */
 $specialPageAliases['en'] = array(
 	'GlobalBlock' => array( 'GlobalBlock' ),
 	'GlobalBlockList' => array( 'GlobalBlockList' ),
@@ -34,7 +32,7 @@ $specialPageAliases['arz'] = array(
 	'GlobalBlockStatus' => array( 'ليستة_البلوك_العام_البيضا', 'حالة_البلوك_العام', 'تعطيل_البلوك_العام' ),
 );
 
-/** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца)) */
+/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬) */
 $specialPageAliases['be-tarask'] = array(
 	'GlobalBlock' => array( 'Глябальнае_блякаваньне' ),
 	'GlobalBlockList' => array( 'Сьпіс_глябальных_блякаваньняў' ),
@@ -125,10 +123,10 @@ $specialPageAliases['frp'] = array(
 
 /** Galician (Galego) */
 $specialPageAliases['gl'] = array(
-	'GlobalBlock' => array( 'Bloqueo global' ),
-	'GlobalBlockList' => array( 'Lista de bloqueos globais' ),
-	'RemoveGlobalBlock' => array( 'Desbloqueo global' ),
-	'GlobalBlockStatus' => array( 'Lista branca de bloqueos globais' ),
+	'GlobalBlock' => array( 'Bloqueo_global' ),
+	'GlobalBlockList' => array( 'Lista_de_bloqueos_globais' ),
+	'RemoveGlobalBlock' => array( 'Desbloqueo_global' ),
+	'GlobalBlockStatus' => array( 'Lista_branca_de_bloqueos_globais' ),
 );
 
 /** Swiss German (Alemannisch) */
@@ -166,6 +164,9 @@ $specialPageAliases['hsb'] = array(
 /** Haitian (Kreyòl ayisyen) */
 $specialPageAliases['ht'] = array(
 	'GlobalBlock' => array( 'BlokajGlobal' ),
+	'GlobalBlockList' => array( 'LisBlokajGlobal' ),
+	'RemoveGlobalBlock' => array( 'DeblokajGlobal', 'RetireBlokajGlobal' ),
+	'GlobalBlockStatus' => array( 'LisPèmètBlokajGlobal', 'EstatiBlokajGlobal', 'DeaktiveBlokajGlobal' ),
 );
 
 /** Hungarian (Magyar) */
@@ -205,6 +206,13 @@ $specialPageAliases['ja'] = array(
 	'GlobalBlockList' => array( 'グローバルブロック一覧', 'グローバル・ブロック一覧' ),
 	'RemoveGlobalBlock' => array( 'グローバルブロック解除', 'グローバル・ブロック解除' ),
 	'GlobalBlockStatus' => array( 'グローバルブロックホワイトリスト', 'グローバルブロック状態', 'グローバルブロック無効' ),
+);
+
+/** Georgian (ქართული) */
+$specialPageAliases['ka'] = array(
+	'GlobalBlock' => array( 'გლობალური_დაბლოკვა' ),
+	'GlobalBlockList' => array( 'გლობალური_ბლოკირებების_სია' ),
+	'RemoveGlobalBlock' => array( 'გლობალური_ბლოკის_მოხსნა' ),
 );
 
 /** Korean (한국어) */
@@ -381,12 +389,19 @@ $specialPageAliases['tr'] = array(
 	'GlobalBlock' => array( 'KüreselEngel' ),
 	'GlobalBlockList' => array( 'KüreselEngelListesi' ),
 	'RemoveGlobalBlock' => array( 'KüreselEngelKaldırma' ),
-	'GlobalBlockStatus' => array( 'KüreselEngelBeyazListesi' ),
+	'GlobalBlockStatus' => array( 'KüreselEngelBeyazListesi', 'KüreselEngelDurumu' ),
 );
 
 /** Vèneto (Vèneto) */
 $specialPageAliases['vec'] = array(
 	'GlobalBlock' => array( 'BlocoGlobal' ),
+);
+
+/** Vietnamese (Tiếng Việt) */
+$specialPageAliases['vi'] = array(
+	'GlobalBlock' => array( 'Cấm_toàn_cục' ),
+	'GlobalBlockList' => array( 'Danh_sách_cấm_toàn_cục' ),
+	'RemoveGlobalBlock' => array( 'Bỏ_cấm_toàn_cục' ),
 );
 
 /** Simplified Chinese (‪中文(简体)‬) */
