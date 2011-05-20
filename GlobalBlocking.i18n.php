@@ -1619,9 +1619,15 @@ $messages['cy'] = array(
  * @author Peter Alberti
  */
 $messages['da'] = array(
+	'globalblocking-block' => 'Bloker en IP-adresse globalt',
 	'globalblocking-block-reason' => 'Begrundelse:',
 	'globalblocking-block-otherreason' => 'Anden/uddybende begrundelse:',
 	'globalblocking-block-reasonotherlist' => 'Anden grund',
+	'globalblocking-block-edit-dropdown' => 'Rediger blokeringsbegrundelser',
+	'globalblocking-block-legend' => 'Bloker en IP-adresse globalt',
+	'globalblocking-block-errors' => 'Din blokering lykkedes ikke af følgende {{PLURAL:$1|årsag|årsager}}:',
+	'globalblocking-block-success' => 'IP-adressen $1 er blevet blokeret på alle projekter.',
+	'globalblocking-search-ip' => 'IP-adresse:',
 	'globalblocking-whitelist-legend' => 'Ændr lokal status',
 	'globalblocking-whitelist-reason' => 'Begrundelse:',
 	'globalblocking-whitelist-status' => 'Lokal status:',
