@@ -1627,7 +1627,12 @@ $messages['da'] = array(
 	'globalblocking-block-legend' => 'Bloker en IP-adresse globalt',
 	'globalblocking-block-errors' => 'Din blokering lykkedes ikke af følgende {{PLURAL:$1|årsag|årsager}}:',
 	'globalblocking-block-success' => 'IP-adressen $1 er blevet blokeret på alle projekter.',
+	'globalblocking-block-bigrange' => 'Intervallet, du angav, ($1) er for stort, til at det kan blokeres.
+Du kan højst blokere 65.536 adresser (/16-intervaller)',
 	'globalblocking-search-ip' => 'IP-adresse:',
+	'globalblocking-list-unblock' => 'fjern',
+	'globalblocking-list-whitelisted' => 'slået fra lokalt af $1: $2',
+	'globalblocking-unblock-submit' => 'Ophæv global blokering',
 	'globalblocking-whitelist-legend' => 'Ændr lokal status',
 	'globalblocking-whitelist-reason' => 'Begrundelse:',
 	'globalblocking-whitelist-status' => 'Lokal status:',
