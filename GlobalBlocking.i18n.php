@@ -1611,7 +1611,7 @@ $messages['cy'] = array(
 	'globalblocking-block-options' => 'Dewisiadau:',
 	'globalblocking-unblock-reason' => 'Rheswm:',
 	'globalblocking-whitelist-reason' => 'Rheswm:',
-	'globalblocking-logpage' => 'Lòg blocio wici-gyfan',
+	'globalblocking-logpage' => 'Lòg blocio cydwici',
 );
 
 /** Danish (Dansk)
