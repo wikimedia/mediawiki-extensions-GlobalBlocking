@@ -2546,7 +2546,7 @@ $messages['fa'] = array(
 	'globalblocking-modify-intro' => 'می‌توانید از این فرم برای تغییر تنظیمات بستن سراسری استفاده کنید.',
 	'globalblocking-block-intro' => 'شما می‌توانید از این صفحه برای قطع دسترسی یک نشانی آی‌پی در تمام ویکی‌ها استفاده کنید.',
 	'globalblocking-block-reason' => 'دلیل:',
-	'globalblocking-block-otherreason' => 'دلایل دیگر/اضافی:',
+	'globalblocking-block-otherreason' => 'دلیل دیگر/اضافی:',
 	'globalblocking-block-reasonotherlist' => 'دیگر دلایل',
 	'globalblocking-block-reason-dropdown' => '* دلیل‌های متداول بستن
 ** هرزه‌نگاری در چند ویکی
