@@ -1617,27 +1617,35 @@ $messages['cy'] = array(
 /** Danish (Dansk)
  * @author Masz
  * @author Peter Alberti
+ * @author Sarrus
  */
 $messages['da'] = array(
 	'globalblocking-block' => 'Bloker en IP-adresse globalt',
+	'globalblocking-modify-intro' => 'Du kan bruge denne formular til at ændre indstillingerne for en global blokkering',
+	'globalblocking-block-intro' => 'Du kan bruge denne side til at blokere en IP-adresse på alle wikier.',
 	'globalblocking-block-reason' => 'Begrundelse:',
 	'globalblocking-block-otherreason' => 'Anden/uddybende begrundelse:',
 	'globalblocking-block-reasonotherlist' => 'Anden grund',
 	'globalblocking-block-edit-dropdown' => 'Rediger blokeringsbegrundelser',
 	'globalblocking-block-legend' => 'Bloker en IP-adresse globalt',
 	'globalblocking-block-errors' => 'Din blokering lykkedes ikke af følgende {{PLURAL:$1|årsag|årsager}}:',
+	'globalblocking-modify-submit' => 'Ændr denne globale blokering',
 	'globalblocking-block-success' => 'IP-adressen $1 er blevet blokeret på alle projekter.',
 	'globalblocking-block-bigrange' => 'Intervallet, du angav, ($1) er for stort, til at det kan blokeres.
 Du kan højst blokere 65.536 adresser (/16-intervaller)',
+	'globalblocking-list' => 'Liste over globalt blokerede IP-adresser',
 	'globalblocking-search-ip' => 'IP-adresse:',
 	'globalblocking-list-unblock' => 'fjern',
 	'globalblocking-list-whitelisted' => 'slået fra lokalt af $1: $2',
+	'globalblocking-goto-unblock' => 'Ophæv en global blokering',
 	'globalblocking-unblock-submit' => 'Ophæv global blokering',
 	'globalblocking-whitelist-legend' => 'Ændr lokal status',
 	'globalblocking-whitelist-reason' => 'Begrundelse:',
 	'globalblocking-whitelist-status' => 'Lokal status:',
 	'globalblocking-whitelist-statuslabel' => 'Ophæv global blokering på {{SITENAME}}',
+	'globalblocking-whitelist-submit' => 'Ændr lokal status',
 	'globalblocking-whitelist-intro' => 'Du kan bruge denne formular, til at ophæve en global blokering lokalt. Hvis blokeringen bliver ophævet, kan den globalt blokerede bruger redigere sider normalt. Se også [[Special:GlobalBlockList|loggen for globale blokeringer]].',
+	'globalblocking-logpage' => 'Global blokeringslog',
 	'right-globalblock' => 'Blokere brugere globalt',
 	'right-globalunblock' => 'Ophæve globale blokeringer',
 	'right-globalblock-whitelist' => 'Ophæve globale blokeringer lokalt',
