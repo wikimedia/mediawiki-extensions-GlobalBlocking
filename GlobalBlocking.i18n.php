@@ -373,6 +373,7 @@ $messages['an'] = array(
 );
 
 /** Arabic (العربية)
+ * @author Aiman titi
  * @author Alnokta
  * @author Loya
  * @author Meno25
@@ -386,6 +387,10 @@ $messages['ar'] = array(
 	'globalblocking-block-reason' => 'السبب:',
 	'globalblocking-block-otherreason' => 'سبب آخر/إضافي:',
 	'globalblocking-block-reasonotherlist' => 'سبب آخر',
+	'globalblocking-block-reason-dropdown' => '* الأسباب العامة للمنع
+ **تعارضات الويكي غير المرغوب فيه
+ ** وجود التعارضات
+ ** التخريب',
 	'globalblocking-block-edit-dropdown' => 'عدل أسباب المنع',
 	'globalblocking-block-expiry' => 'الانتهاء:',
 	'globalblocking-block-expiry-other' => 'وقت انتهاء آخر',
