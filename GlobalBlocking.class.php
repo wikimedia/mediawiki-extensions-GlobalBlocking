@@ -44,7 +44,7 @@ class GlobalBlocking {
 				return $result = array();
 			}
 			
-			if ( $user->isAllowed( 'ipblock-exempt', 'globalblock-exempt' ) ) {
+			if ( $user->isAllowed( 'ipblock-exempt' ) || $user->isAllowed( 'globalblock-exempt' ) ) {
 				// User is exempt from IP blocks.
 				return $result = array();
 			}
