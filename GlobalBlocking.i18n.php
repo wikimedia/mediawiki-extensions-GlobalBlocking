@@ -2566,7 +2566,7 @@ $messages['fa'] = array(
 ** فحاشی در چند ویکی
 ** خرابکاری',
 	'globalblocking-block-edit-dropdown' => 'ویرایش دلایل قطع‌دسترسی',
-	'globalblocking-block-expiry' => 'انقضاء:',
+	'globalblocking-block-expiry' => 'زمان سرآمدن:',
 	'globalblocking-block-expiry-other' => 'زمان‌ خاتمه دیگر',
 	'globalblocking-block-expiry-otherfield' => 'زمانی دیگر:',
 	'globalblocking-block-legend' => 'قطع دسترسی نشانی یک آی‌پی به صورت سراسری',
