@@ -5697,11 +5697,14 @@ Sekatan ini ''\$4''.",
  * @author Chrisportelli
  */
 $messages['mt'] = array(
+	'globalblocking-list' => "Lista ta' indirizzi IP imblukkati globalment",
 	'globalblocking-unblock-intro' => "Tista' tuża' din il-formola sabiex tneħħi blokk globali.",
 	'globalblocking-whitelist' => 'Stat lokali tal-blokki globali',
 	'globalblocking-blocked' => "L-indrizz IP tiegħek ġie imblukkat fuq il-wikis kollha minn '''\$1''' (''\$2'').
 Ir-raġuni li ngħatat kienet ''\"\$3\"''.
 Il-blokk huwa ''\$4''.",
+	'globalblocklist' => "Lista ta' indirizzi IP imblukkati globalment",
+	'globalblockstatus' => 'Stat lokali tal-blokki globali',
 );
 
 /** Erzya (Эрзянь)
@@ -9553,6 +9556,7 @@ $1',
  * @author PhiLiP
  * @author Shinjiman
  * @author Wmr89502270
+ * @author Xiaomingyan
  */
 $messages['zh-hans'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|允许]][[Special:GlobalBlockList|在多个wiki中封禁]]IP地址',
@@ -9638,8 +9642,7 @@ $1',
 	'globalblocking-whitelist-intro' => '您可以利用这个表格去更改全域封锁的本地状态。
 如果一个全域封锁在这个wiki度停用，受影响的 IP 地址可以正常地编辑。
 [[Special:GlobalBlockList|回到全域封锁名单]]。',
-	'globalblocking-blocked' => "您的IP地址已经由'''\$1''' （''\$2''） 在所有的Wikimedia wiki 中全部封锁。
-而理由是 ''\"\$3\"''。该封锁将会在''\$4''到期。",
+	'globalblocking-blocked' => "你的IP地址已经由'''$1'''（''$2''）在所有wiki中封禁。理由是''“$3”''。该封禁''$4''。",
 	'globalblocking-blocked-nopassreset' => '您无法修改用户密码，因为您正被全域封锁。',
 	'globalblocking-logpage' => '全域封锁日志',
 	'globalblocking-logpagetext' => '这个是在这个wiki中的全域封锁日志。要留意的是全域封锁可以在其它的wiki中被创建和移除并且会影响到这个wiki。要查看活跃的全域封锁，您可以去参阅[[Special:GlobalBlockList|全域封锁名单]]。',
