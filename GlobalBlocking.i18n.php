@@ -1615,7 +1615,9 @@ $messages['cy'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Cyfnod arall:',
 	'globalblocking-block-options' => 'Dewisiadau:',
 	'globalblocking-unblock-reason' => 'Rheswm:',
+	'globalblocking-whitelist-legend' => 'Newid y statws lleol',
 	'globalblocking-whitelist-reason' => 'Rheswm:',
+	'globalblocking-whitelist-status' => 'Statws lleol:',
 	'globalblocking-logpage' => 'Lòg blocio cydwici',
 );
 
