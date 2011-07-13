@@ -8930,6 +8930,27 @@ Engelleme günlüğü referans için aşağıda verilmiştir:',
 	'right-globalblock-exempt' => 'Küresel engellemeleri atla',
 );
 
+/** Tatar (Cyrillic) (Татарча/Tatarça (Cyrillic))
+ * @author Ильнар
+ */
+$messages['tt-cyrl'] = array(
+	'globalblocking-list' => 'Гомум чикләнгән IP-юлламалар исемлеге',
+	'globalblocking-search-legend' => 'Гомум чикләүне эзләү',
+	'globalblocking-search-ip' => 'IP юлламасы:',
+	'globalblocking-search-submit' => 'Чикләүләрне эзләү',
+	'globalblocking-whitelist' => 'Гомум чикләүләрнең җирле халәте',
+	'globalblocking-whitelist-notapplied' => 'Әлеге викида гомум чикләүләр кулланылмый,
+шуңа күрә гомум чикләүләрнең җирле халәтләрен үзгәртү мөмкин түгел.',
+	'globalblocking-whitelist-legend' => 'Җирле халәтне үзгәртү',
+	'globalblocking-whitelist-reason' => 'Сәбәп:',
+	'globalblocking-whitelist-status' => 'Җирле халәт:',
+	'globalblocking-whitelist-statuslabel' => 'Әлеге гомум чикләүне {{grammar:genitive|{{SITENAME}}}} проектында сүндерү',
+	'globalblocking-whitelist-submit' => 'Җирле халәтне үзгәртү',
+	'globalblocking-whitelist-whitelisted' => "{{grammar:genitive|{{SITENAME}}}} проектында IP-юлламасы '''$1''' кулланучы исеме  #$2 булган кулланучының гомум чикләүләрен сүндерү уңышлы үтте.",
+	'globalblocking-whitelist-dewhitelisted' => "{{grammar:genitive|{{SITENAME}}}} проектында IP-юлламасы - '''$1''' кулланучы исеме - #$2 булган кулланучының гомум чикләүләрен яңадан билгеләү уңышлы үтте.",
+	'globalblocking-whitelist-successsub' => 'Җирле халәтне үзгәртү уңышлы үтте.',
+);
+
 /** Tuvinian (Тыва дыл)
  * @author Sborsody
  */
