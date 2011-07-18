@@ -2290,6 +2290,7 @@ Jen la protokolo pri forbaroj sube por via referenco:',
  * @author Dferg
  * @author Lin linao
  * @author Locos epraix
+ * @author Mor
  * @author Peter17
  * @author Remember the dot
  * @author Sanbec
@@ -2381,9 +2382,9 @@ El motivo dado fue ''«$3»''.
 El bloqueo ''$4''.",
 	'globalblocking-blocked-nopassreset' => 'No puede solicitar recordatorios de claves de usuario porque usted está bloqueado globalmente.',
 	'globalblocking-logpage' => 'Registro de bloqueos globales',
-	'globalblocking-logpagetext' => 'Esta es una lista de bloqueos globales los cuales han sido hechos y removidos en este wiki.
-Debería ser notado que los bloqueos globales pueden ser hechos y removidos en otros wikis, y que estos bloqueos globales pueden afectar este wiki.
-Para ver todos los bloqueos globales activos, usted puede ver [[Special:GlobalBlockList|lista de bloqueos globales]].',
+	'globalblocking-logpagetext' => 'Esta es una lista de bloqueos globales que se han hecho y retirado en este wiki.
+Hay que señalar que los bloqueos globales pueden ser hechos y retirados en otros wikis, y que estos bloqueos globales pueden afectar a este wiki.
+Para ver todos los bloqueos globales activos, puede ver [[Special:GlobalBlockList|lista de bloqueos globales]].',
 	'globalblocking-block-logentry' => 'bloqueó globalmente a [[$1]] con un tiempo de caducidad de $2',
 	'globalblocking-block2-logentry' => 'bloqueó globalmente a [[$1]] ($2)',
 	'globalblocking-unblock-logentry' => 'desactivó el bloqueo global en [[$1]]',
