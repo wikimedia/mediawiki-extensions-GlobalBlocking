@@ -9584,7 +9584,7 @@ $1',
  */
 $messages['zh-hans'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|允许]][[Special:GlobalBlockList|在多个wiki中封禁]]IP地址',
-	'globalblocking-block' => '全域封锁一个IP地址',
+	'globalblocking-block' => '全局封禁IP地址',
 	'globalblocking-modify-intro' => '您可以使用本表单改变全域封锁的设置。',
 	'globalblocking-block-intro' => '您可以用这个页面去封锁全部wiki中的一个IP地址。',
 	'globalblocking-block-reason' => '原因：',
@@ -9682,7 +9682,7 @@ $1',
 	'globalblocking-showlog' => '这个IP地址已经被封锁。
 封锁记录提供如下，供参考：',
 	'globalblocklist' => '全域封锁IP地址名单',
-	'globalblock' => '全域封锁一个IP地址',
+	'globalblock' => '全局封禁IP地址',
 	'globalblockstatus' => '全域封锁的本地状态',
 	'removeglobalblock' => '移除一个全域封锁',
 	'right-globalblock' => '弄一个全域封锁',
