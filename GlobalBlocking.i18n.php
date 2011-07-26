@@ -5837,7 +5837,7 @@ För en List mit all aktive globale Sperren kiek na de [[Special:GlobalBlockList
  * @author Servien
  */
 $messages['nds-nl'] = array(
-	'globalblocking-block-options' => 'Opties:',
+	'globalblocking-block-options' => 'Opsies:',
 	'globalblocking-whitelist' => 'Lokale staotus van globale blokkeringen',
 	'globalblocklist' => 'Lieste van globaal eblokkeren IP-adressen',
 	'globalblockstatus' => 'Lokale staotus van globale blokkeringen',
