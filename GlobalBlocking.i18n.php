@@ -6303,7 +6303,7 @@ $messages['or'] = array(
 	'globalblocking-whitelist-reason' => 'କାରଣ:',
 );
 
-/** Ossetic (Иронау)
+/** Ossetic (Ирон)
  * @author Amikeco
  */
 $messages['os'] = array(
@@ -7275,7 +7275,7 @@ $messages['rue'] = array(
 	'right-globalblock-exempt' => 'Обходжаня ґлобалных блоковань',
 );
 
-/** Yakut (Саха тыла)
+/** Sakha (Саха тыла)
  * @author HalanTul
  */
 $messages['sah'] = array(
