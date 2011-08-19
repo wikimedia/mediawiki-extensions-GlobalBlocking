@@ -6561,6 +6561,16 @@ Për vëdde tùit ij blocagi globaj ativ, a peul vëdde la [[Special:GlobalBlock
 	'right-globalblock-exempt' => 'Passé dzora a ij blocagi globaj',
 );
 
+/** Western Punjabi (پنجابی)
+ * @author Khalid Mahmood
+ */
+$messages['pnb'] = array(
+	'removeglobalblock' => 'گلوبل تالا ہٹاؤ',
+	'right-globalblock' => 'گلوبل روکاں لاؤ',
+	'right-globalunblock' => 'گلوبل روکاں ہٹاؤ',
+	'right-globalblock-exempt' => 'گلوبل روکاں نون نان تکو',
+);
+
 /** Pashto (پښتو)
  * @author Ahmed-Najib-Biabani-Ibrahimkhel
  */
