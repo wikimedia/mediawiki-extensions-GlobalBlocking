@@ -5514,6 +5514,7 @@ $messages['mn'] = array(
 );
 
 /** Marathi (मराठी)
+ * @author Htt
  * @author Kaustubh
  */
 $messages['mr'] = array(
@@ -5525,7 +5526,7 @@ $messages['mr'] = array(
 	'globalblocking-block-expiry-other' => 'इतर समाप्ती वेळ',
 	'globalblocking-block-expiry-otherfield' => 'इतर वेळ:',
 	'globalblocking-block-legend' => 'एक सदस्य वैश्विक पातळीवर ब्लॉक करा',
-	'globalblocking-block-options' => 'विकल्प',
+	'globalblocking-block-options' => 'विकल्प:',
 	'globalblocking-block-errors' => 'ब्लॉक अयशस्वी झालेला आहे, कारण:',
 	'globalblocking-block-ipinvalid' => 'तुम्ही दिलेला आयपी अंकपत्ता ($1) अयोग्य आहे.
 कृपया नोंद घ्या की तुम्ही सदस्य नाव देऊ शकत नाही!',
