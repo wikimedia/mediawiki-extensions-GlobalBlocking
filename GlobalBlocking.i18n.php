@@ -6566,6 +6566,43 @@ Për vëdde tùit ij blocagi globaj ativ, a peul vëdde la [[Special:GlobalBlock
  * @author Khalid Mahmood
  */
 $messages['pnb'] = array(
+	'globalblocking-block' => 'گلوبلی اس IP پتے نوں روکو',
+	'globalblocking-modify-intro' => 'تسی ایس فارم نوں ایس گلوبل روک دا سٹیٹس بدلن لئی ورت سکدے او۔',
+	'globalblocking-block-intro' => 'تسی اس صفحے نوں سارے وکیاں تے IP پتے نوں روکن واسطے ورت سکدے او۔',
+	'globalblocking-block-reason' => 'وجہ:',
+	'globalblocking-block-otherreason' => 'دوجی/ہور وجہ:',
+	'globalblocking-block-reasonotherlist' => 'ہور وجہ',
+	'globalblocking-block-reason-dropdown' => '*چھوٹے موٹی روک دی وجہ
+**اک توں بوتے وکیاں تے سپیمنگ
+**اک توں بوتے وکیاں دا غلط ورتن
+**گند مارنا',
+	'globalblocking-block-edit-dropdown' => 'روک دی وجہ تبدیل کرو',
+	'globalblocking-block-expiry' => 'انت:',
+	'globalblocking-block-expiry-other' => 'دوجا انت ویلا',
+	'globalblocking-block-expiry-otherfield' => 'دوجے ویلے:',
+	'globalblocking-block-legend' => 'IP پتے نوں گلوبلی روکو',
+	'globalblocking-block-options' => 'چنوتیاں:',
+	'globalblocking-block-errors' => 'تسی روک نئیں سکے، {{PLURAL:$1|اس وجہ توں|ایناں وجاں توں}}:',
+	'globalblocking-block-ipinvalid' => 'جیڑا IP ($1) تسی لکھیا اے اوہ غلط اے۔
+اے گل یاد رکھو تسی ورتن ناں نئیں لکھ سکدے!',
+	'globalblocking-block-expiryinvalid' => 'جیڑا انت ویلا تسی لکھیا اے ($1) اوہ غلط اے۔',
+	'globalblocking-block-submit' => 'IP پتے نوں گلوبلی روکو',
+	'globalblocking-modify-submit' => 'گلوبل روک نوں تبدیل کرو',
+	'globalblocking-block-success' => 'اے IP پتہ $1 سارے ویونتاں تے روکیا ہویا اے۔',
+	'globalblocking-modify-success' => '$1 دے اتے گلوبل روک تبدیل کر دتی گئی اے',
+	'globalblocking-block-successsub' => 'گلوبل روک لگ گئی اے',
+	'globalblocking-modify-successsub' => 'گلوبل روک تبدیل ہو گئی اے',
+	'globalblocking-list-expiry' => 'انت $1',
+	'globalblocking-list-anononly' => 'صرف گمنام',
+	'globalblocking-list-unblock' => 'ہٹاؤ',
+	'globalblocking-list-whitelist' => 'لوکل حالت',
+	'globalblocking-list-modify' => 'تبدیل کرو',
+	'globalblocking-list-noresults' => 'پچھیا گیا IP پتے نوں نئیں روکیا گیا۔',
+	'globalblocking-goto-block' => 'گلوبلی اس IP پتے نوں روکو',
+	'globalblocking-goto-unblock' => 'گلوبل روک ہٹاؤ',
+	'globalblocking-unblock-legend' => 'گلوبل روک ہٹاؤ',
+	'globalblocking-unblock-submit' => 'گلوبل روک ہٹاؤ',
+	'globalblocking-unblock-reason' => 'وجہ:',
 	'removeglobalblock' => 'گلوبل تالا ہٹاؤ',
 	'right-globalblock' => 'گلوبل روکاں لاؤ',
 	'right-globalunblock' => 'گلوبل روکاں ہٹاؤ',
