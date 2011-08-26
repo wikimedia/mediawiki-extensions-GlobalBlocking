@@ -220,7 +220,7 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 		) );
 	}
 
-	protected function getExamples() {
+	public function getExamples() {
 		return array (	'api.php?action=query&list=globalblocks',
 				'api.php?action=query&list=globalblocks&bgip=217.121.114.116'
 		);
