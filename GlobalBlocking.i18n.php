@@ -1634,6 +1634,7 @@ $messages['da'] = array(
 	'globalblocking-block-otherreason' => 'Anden/uddybende begrundelse:',
 	'globalblocking-block-reasonotherlist' => 'Anden grund',
 	'globalblocking-block-edit-dropdown' => 'Rediger blokeringsbegrundelser',
+	'globalblocking-block-expiry' => 'Udløber:',
 	'globalblocking-block-legend' => 'Bloker en IP-adresse globalt',
 	'globalblocking-block-errors' => 'Din blokering lykkedes ikke af følgende {{PLURAL:$1|årsag|årsager}}:',
 	'globalblocking-modify-submit' => 'Ændr denne globale blokering',
