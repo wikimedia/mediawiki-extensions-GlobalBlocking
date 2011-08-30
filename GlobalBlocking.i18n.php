@@ -6301,7 +6301,9 @@ Lo jornal dels blocatges es disponible çaijós :',
  */
 $messages['or'] = array(
 	'globalblocking-block-reason' => 'କାରଣ:',
+	'globalblocking-block-options' => 'କାମସବୁ:',
 	'globalblocking-list-unblock' => 'ବାହାର କରିବା',
+	'globalblocking-list-modify' => 'ରୂପାନ୍ତର',
 	'globalblocking-unblock-reason' => 'କାରଣ:',
 	'globalblocking-whitelist-reason' => 'କାରଣ:',
 );
