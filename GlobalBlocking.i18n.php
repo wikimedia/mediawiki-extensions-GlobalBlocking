@@ -5186,6 +5186,7 @@ Alle globale blokkades stoan in de [[Special:GlobalBlockList|liest met globale b
 );
 
 /** Lithuanian (Lietuvių)
+ * @author Eitvys200
  * @author Garas
  * @author Homo
  * @author Matasg
@@ -5193,6 +5194,7 @@ Alle globale blokkades stoan in de [[Special:GlobalBlockList|liest met globale b
 $messages['lt'] = array(
 	'globalblocking-block' => 'Visuotinai blokuoti IP adresą',
 	'globalblocking-block-reason' => 'Priežastis:',
+	'globalblocking-block-reasonotherlist' => 'Kita priežastis',
 	'globalblocking-block-expiry' => 'Blokavimas galioja iki:',
 	'globalblocking-block-expiry-otherfield' => 'Kitas laikas:',
 	'globalblocking-block-legend' => 'Bloguoti naudotoją visuose projektuose',
@@ -6921,10 +6923,15 @@ Hark'ay hallch'ataqa kaypim rikunki willasunaykipaq:",
  */
 $messages['ro'] = array(
 	'globalblocking-block' => 'Blochează global o adresă IP',
+	'globalblocking-modify-intro' => 'Puteți folosi acest formular pentru a schimba setările unei blocări globale.',
 	'globalblocking-block-intro' => 'Această pagină permite blocarea unei adrese IP pe toate proiectele wiki.',
 	'globalblocking-block-reason' => 'Motiv:',
 	'globalblocking-block-otherreason' => 'Altul/motiv suplimentar:',
 	'globalblocking-block-reasonotherlist' => 'Alt motiv',
+	'globalblocking-block-reason-dropdown' => '* Motive comune pentru blocare
+** Spam pe mai multe wikiuri
+** Abuz pe mai multe wikiuri
+** Vandalism',
 	'globalblocking-block-edit-dropdown' => 'Modifică motivele blocării',
 	'globalblocking-block-expiry' => 'Expirare:',
 	'globalblocking-block-expiry-other' => 'Alte termene de expirare',
