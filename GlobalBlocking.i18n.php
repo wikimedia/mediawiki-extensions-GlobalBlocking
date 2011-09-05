@@ -144,6 +144,7 @@ The block log is provided below for reference:',
  * @author Nike
  * @author Purodha
  * @author Raymond
+ * @author SPQRobin
  * @author Siebrand
  * @author Tgr
  * @author The Evil IP address
@@ -190,7 +191,8 @@ $messages['qqq'] = array(
 * <code>$1</code> is the username of the blocking user (steward), with link
 * <code>$2</code> is the project name where the user is registered (usually “meta.wikimedia.org” on Wikimedia servers)
 * <code>$3</code> is the reason specified by the blocking user
-* <code>$4</code> is either the contents of {{msg-mw|Infiniteblock}} (''{{int:Infiniteblock}}''), or {{msg-mw|Expiringblock}} (''{{int:Expiringblock}}'') with the expiry time",
+* <code>$4</code> is either the contents of {{msg-mw|Infiniteblock}} (''{{int:Infiniteblock}}''), or {{msg-mw|Expiringblock}} (''{{int:Expiringblock}}'') with the expiry time
+* <code>$5</code> is the IP address (not used by default)",
 	'globalblocking-logpagetext' => 'Shown as header of [[Special:Log/gblblock]] (part of [[mw:Extension:GlobalBlocking|Extension:GlobalBlocking]], which is not installed on translatewiki.net; example: [[wikipedia:Special:Log/gblblock]])',
 	'globalblocking-block2-logentry' => '* $1 is a link to a user page of the form User:Name
 * $2 is a reason for the action.',
@@ -695,6 +697,7 @@ Pa ver tolos bloqueos globales activos, pues ver la [[Special:GlobalBlockList|ll
 
 /** Azerbaijani (Azərbaycanca)
  * @author Cekli829
+ * @author Vago
  * @author Vugar 1981
  */
 $messages['az'] = array(
@@ -706,6 +709,7 @@ $messages['az'] = array(
 	'globalblocking-block-options' => 'Nizamlamalar:',
 	'globalblocking-search-ip' => 'IP ünvanı:',
 	'globalblocking-list-whitelist' => 'lokal status',
+	'globalblocking-list-modify' => 'dəyişmək',
 	'globalblocking-unblock-reason' => 'Səbəb:',
 	'globalblocking-whitelist-reason' => 'Səbəb:',
 	'globalblocking-logpage' => 'Qlobal blok gündəliyi',
