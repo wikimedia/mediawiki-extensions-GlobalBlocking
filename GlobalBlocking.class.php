@@ -1,9 +1,12 @@
 <?php
 
 class GlobalBlocking {
+	/**
+	 * @return Boolean
+	 */
 	static function getUserPermissionsErrors( &$title, &$user, $action, &$result ) {
 		global $wgApplyGlobalBlocks;
-		if ($action == 'read' || !$wgApplyGlobalBlocks) {
+		if ( $action == 'read' || !$wgApplyGlobalBlocks ) {
 			return true;
 		}
 		if ( $user->isAllowed( 'ipblock-exempt' ) ||
@@ -13,13 +16,16 @@ class GlobalBlocking {
 		}
 		$ip = wfGetIp();
 		$blockError = self::getUserBlockErrors( $user, $ip );
-		if( !empty($blockError) ) {
+		if( !empty( $blockError ) ) {
 			$result[] = $blockError;
 			return false;
 		}
 		return true;
 	}
-	
+
+	/**
+	 * @return Boolean
+	 */
 	static function isBlockedGlobally( &$user, $ip, &$blocked ) {
 		$blockError = self::getUserBlockErrors( $user, $ip );
 		if( $blockError ) {
@@ -28,18 +34,22 @@ class GlobalBlocking {
 		}
 		return true;
 	}
-		
+
+	/**
+	 * @return Array: empty or a message key with parameters
+	 */
 	static function getUserBlockErrors( $user, $ip ) {
-		global $wgLang;
 		static $result = null;
 		
 		// Instance cache
-		if (!is_null($result)) return $result;
+		if ( !is_null( $result ) ) { return $result; }
 
 		$block = self::getGlobalBlockingBlock( $ip, $user->isAnon() );
 		if  ( $block ) {
+			global $wgLang;
+
 			// Check for local whitelisting
-			if (GlobalBlocking::getWhitelistInfo( $block->gb_id ) ) {
+			if ( GlobalBlocking::getWhitelistInfo( $block->gb_id ) ) {
 				// Block has been whitelisted.
 				return $result = array();
 			}
@@ -65,7 +75,8 @@ class GlobalBlocking {
 			$display_wiki = self::getWikiName( $block->gb_by_wiki );
 			$user_display = self::maybeLinkUserpage( $block->gb_by_wiki, $block->gb_by );
 			
-			return $result = array('globalblocking-blocked', $user_display, $display_wiki, $block->gb_reason, $expiry);
+			return $result = array( 'globalblocking-blocked',
+				$user_display, $display_wiki, $block->gb_reason, $expiry, $ip );
 		}
 		return $result = array();
 	}
