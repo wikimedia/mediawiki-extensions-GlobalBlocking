@@ -100,7 +100,7 @@ so the local status of global blocks cannot be modified.',
 If a global block is disabled on this wiki, users on the affected IP address will be able to edit normally.
 [[Special:GlobalBlockList|Return to the global block list]].",
 
-	'globalblocking-blocked' => "Your IP address has been blocked on all wikis by '''$1''' (''$2'').
+	'globalblocking-blocked' => "Your IP address $5 has been blocked on all wikis by '''$1''' (''$2'').
 The reason given was ''\"$3\"''.
 The block ''$4''.",
 	'globalblocking-blocked-nopassreset' => "You cannot reset user's passwords because you are blocked globally.",
