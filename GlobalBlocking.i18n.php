@@ -987,6 +987,10 @@ $messages['bg'] = array(
 	'globalblocking-block-reason' => 'Причина:',
 	'globalblocking-block-otherreason' => 'Друга или допълнителна причина:',
 	'globalblocking-block-reasonotherlist' => 'Друга причина',
+	'globalblocking-block-reason-dropdown' => '* Най-често срещани причини за блокиране
+ ** Crosswiki спам
+ ** Crosswiki злоупотреба
+ ** Вандализъм',
 	'globalblocking-block-edit-dropdown' => 'Редактиране на причините за блокиране',
 	'globalblocking-block-expiry' => 'Срок на изтичане:',
 	'globalblocking-block-expiry-other' => 'Друг срок за изтичане',
@@ -5088,7 +5092,7 @@ dofir kann de lokale Status vu globale Spären net geännert ginn.',
 	'globalblocking-whitelist-intro' => "Dir kënnt dëse Formulaire benotze fir de lokal Status vun enger globaler Spär z'änneren.
 Wann eng global Spär op dëser Wiki opgehuewe gëtt, kënne Benotzer déi déi betraffen IP-Adresse benotzen normal Ännerungen maachen.
 [[Special:GlobalBlockList|Zréck op d'Lëscht vun de globale Spären]].",
-	'globalblocking-blocked' => "Är IP-Adress gouf op alle Wikimedia Wikie vum '''\$1''' (''\$2'') gespaart.
+	'globalblocking-blocked' => "Är IP-Adress \$5 gouf op alle Wikimedia Wikie vum '''\$1''' (''\$2'') gespaart.
 De Grond den ugi gouf war ''\"\$3\"''.
 De Beräich ''\$4''.",
 	'globalblocking-blocked-nopassreset' => 'Dir kënnt engem Benotzer säi Paswuert net zrécksetze well Dir global gespaart sidd.',
@@ -9123,6 +9127,7 @@ $messages['tyv'] = array(
 /** Ukrainian (Українська)
  * @author AS
  * @author Ahonc
+ * @author Dim Grits
  * @author NickK
  * @author Prima klasy4na
  */
@@ -9208,7 +9213,7 @@ $messages['uk'] = array(
 	'globalblocking-whitelist-intro' => 'Ви можете використовувати цю форму для зміни локального стану глобального блокування.
 Якщо глобальне блокування вимкнене у цій вікі, то користувачі з відповідними IP-адресами зможуть нормально редагувати.
 [[Special:GlobalBlockList|Повернутися до списку глобальних глобувань]].',
-	'globalblocking-blocked' => "Ваша IP-адреса була заблокована у всіх вікі користувачем '''\$1''' (''\$2'').
+	'globalblocking-blocked' => "Ваша IP-адреса \$5 була заблокована на всіх вікіпроектах користувачем '''\$1''' (''\$2'').
 Причиною вказано ''\"\$3\"''.
 Блокування ''\$4''.",
 	'globalblocking-blocked-nopassreset' => 'Ви не можете змінювати паролі користувачів, тому що ви заблоковані на глобальному рівні.',
