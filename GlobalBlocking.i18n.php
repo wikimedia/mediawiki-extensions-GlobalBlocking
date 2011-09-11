@@ -3303,7 +3303,7 @@ Obacht: D derfsch kei Benutzername yygee!',
 [[Special:GlobalBlockList|Zruck zue dr Lischt vu dr wältwyte Sperrine]]',
 	'globalblocking-whitelist-errors' => 'Dyyni Änderig vum lokale Status vun ere wältwyte Sperri isch nit erfolgryych gsi. {{PLURAL:$1|Grund|Grind}}:',
 	'globalblocking-whitelist-intro' => 'Du chasch mit däm Formular dr lokal Status vun ere wältwyte Sperri ändere. Wänn e wältwyti Sperri in däm Wiki deaktiviert woren isch, chenne Syte iber die IP-Adräss normal bearbeitet wäre. [[Special:GlobalBlockList|Druck do]], zum uf d Lischt vu dr wältwyte Sperrine zruckzgoh.',
-	'globalblocking-blocked' => "Dyyni IP-Adräss isch vu '''$1''' ''($2)'' fir alli Wiki gsperrt wore.
+	'globalblocking-blocked' => "Dyyni IP-Adräss $5 isch vu '''$1''' ''($2)'' fir alli Wiki gsperrt wore.
 As Grund isch ''„$3“'' aagee wore. D Sperri ''$4''.",
 	'globalblocking-blocked-nopassreset' => 'Du chasch s Passwort vum Benutzer nit zrucksetze, wel Du wältwyt gsperrt bisch.',
 	'globalblocking-logpage' => 'Wältwyt Sperrlogbuech',
@@ -4339,13 +4339,14 @@ Il registro dei blocchi è riportato di seguito per informazione:',
  * @author Fryed-peach
  * @author Hosiryuhosi
  * @author Muttley
+ * @author Schu
  * @author 青子守歌
  */
 $messages['ja'] = array(
-	'globalblocking-desc' => 'IPアドレスを[[Special:GlobalBlockList|複数のウィキで横断的に]][[Special:GlobalBlock|ブロックする]]',
-	'globalblocking-block' => 'IPアドレスをグローバルブロックする',
+	'globalblocking-desc' => 'IP アドレスを[[Special:GlobalBlockList|複数のウィキで横断的に]][[Special:GlobalBlock|ブロックします。]]',
+	'globalblocking-block' => 'IPアドレスをグローバルブロック',
 	'globalblocking-modify-intro' => 'このフォームを使って、グローバルブロックの設定を変更できます。',
-	'globalblocking-block-intro' => 'このページで全ウィキにおいてIPアドレスをブロックできます。',
+	'globalblocking-block-intro' => 'このページで全ウィキでの IP アドレスをブロックできます。',
 	'globalblocking-block-reason' => '理由：',
 	'globalblocking-block-otherreason' => '他の、または追加の理由:',
 	'globalblocking-block-reasonotherlist' => 'その他の理由',
@@ -4357,7 +4358,7 @@ $messages['ja'] = array(
 	'globalblocking-block-expiry' => '有効期限：',
 	'globalblocking-block-expiry-other' => 'その他の有効期限',
 	'globalblocking-block-expiry-otherfield' => '期間 (その他のとき)',
-	'globalblocking-block-legend' => 'IP アドレスをグローバルブロックする',
+	'globalblocking-block-legend' => 'IP アドレスをグローバルブロック',
 	'globalblocking-block-options' => 'オプション:',
 	'globalblocking-block-errors' => '実施しようとしたブロックは以下の{{PLURAL:$1|理由}}のために実行できませんでした:',
 	'globalblocking-block-ipinvalid' => 'あなたが入力したIPアドレス ($1) には誤りがあります。アカウント名では入力できない点に注意してください！',
@@ -4387,17 +4388,17 @@ $messages['ja'] = array(
 	'globalblocking-list-whitelist' => 'ローカル状態',
 	'globalblocking-list-modify' => '改変',
 	'globalblocking-list-noresults' => '指定された IP アドレスはブロックされていません。',
-	'globalblocking-goto-block' => 'IPアドレスをグローバルブロックする',
+	'globalblocking-goto-block' => 'IPアドレスをグローバルブロック',
 	'globalblocking-goto-unblock' => 'グローバルブロックを解除',
 	'globalblocking-goto-status' => 'グローバルブロックのローカル状態を変更',
 	'globalblocking-return' => 'グローバルブロック一覧へ戻る',
 	'globalblocking-notblocked' => '入力したIPアドレス ($1) はグローバルブロックを受けていません。',
-	'globalblocking-unblock' => 'グローバルブロックを解除する',
+	'globalblocking-unblock' => 'グローバルブロックを解除',
 	'globalblocking-unblock-ipinvalid' => 'あなたが入力したIPアドレス ($1) には誤りがあります。アカウント名では入力できない点に注意してください！',
-	'globalblocking-unblock-legend' => 'グローバルブロックを解除する',
+	'globalblocking-unblock-legend' => 'グローバルブロックを解除',
 	'globalblocking-unblock-submit' => 'グローバルブロックを解除',
 	'globalblocking-unblock-reason' => '理由：',
-	'globalblocking-unblock-unblocked' => "IPアドレス '''$1''' に対するグローバルブロック #$2 を解除しました",
+	'globalblocking-unblock-unblocked' => "IPアドレス '''$1''' に対するグローバルブロック #$2 を解除に成功しました。",
 	'globalblocking-unblock-errors' => '実施しようとしたグローバルブロックの解除は以下の{{PLURAL:$1|理由}}により実行できませんでした:',
 	'globalblocking-unblock-successsub' => 'グローバルブロックの解除に成功',
 	'globalblocking-unblock-subtitle' => 'グローバルブロックを解除中',
@@ -4417,7 +4418,7 @@ $messages['ja'] = array(
 	'globalblocking-whitelist-intro' => 'このフォームを使用してグローバルブロックのローカル状態を変更できます。
 もしグローバルブロックがこのウィキで無効になっている場合は、該当IPアドレスは通常の編集ができるようになります。
 [[Special:GlobalBlockList|グローバルブロックの一覧に戻る]]。',
-	'globalblocking-blocked' => "あなたのIPアドレスは、'''$1''' ('''$2''') によって全ての関連ウィキからブロックされています。
+	'globalblocking-blocked' => "あなたのIPアドレス $5 は、'''$1''' ('''$2''') によって全ての関連ウィキからブロックされています。
 理由は'''$3'''です。
 このブロックは'''$4'''の予定です。",
 	'globalblocking-blocked-nopassreset' => 'あなたはグローバルブロックを受けているため、利用者パスワードを再設定できません。',
@@ -4435,13 +4436,13 @@ $messages['ja'] = array(
 	'globalblocking-showlog' => 'この IP アドレスは以前にブロックされたことがあります。
 参考のためにブロック記録を以下に示します。',
 	'globalblocklist' => 'グローバルブロックされたIPアドレス一覧',
-	'globalblock' => 'IPアドレスをグローバルブロックする',
+	'globalblock' => 'IPアドレスをグローバルブロック',
 	'globalblockstatus' => 'グローバルブロックのローカル状態',
-	'removeglobalblock' => 'グローバルブロックを解除する',
+	'removeglobalblock' => 'グローバルブロックを解除',
 	'right-globalblock' => '他利用者のグローバルブロック',
-	'right-globalunblock' => 'グローバルブロックを解除する',
-	'right-globalblock-whitelist' => 'グローバルブロックをローカルで無効にする',
-	'right-globalblock-exempt' => 'グローバルブロックを回避する',
+	'right-globalunblock' => 'グローバルブロックを解除',
+	'right-globalblock-whitelist' => 'グローバルブロックをローカルで無効化',
+	'right-globalblock-exempt' => 'グローバルブロックを回避',
 );
 
 /** Javanese (Basa Jawa)
@@ -6502,8 +6503,8 @@ więc lokalny status globalnej blokady nie może być zmieniony.',
 	'globalblocking-whitelist-intro' => 'Możesz użyć tego formularza do lokalnego odblokowania globalnie nałożonej blokady.
 Jeśli globalna blokada zostanie zdjęta na tej wiki, użytkownicy będą mogli normalnie edytować z odblokowanego adresu IP.
 [[Special:GlobalBlockList|Powrót do spisu globalnie zablokowanych adresów IP]].',
-	'globalblocking-blocked' => "Twój adres IP został zablokowany na wszystkich wiki przez '''$1''' (''$2'').
-Przyczyna blokady: ''„$3”''.
+	'globalblocking-blocked' => "Twój adres IP $5 został zablokowany we wszystkich wiki przez '''$1''' (''$2'').
+Przyczyna blokady ''„$3”''.
 Blokada ''$4''.",
 	'globalblocking-blocked-nopassreset' => 'Nie możesz resetować haseł użytkowników, ponieważ zostałeś zablokowany globalnie.',
 	'globalblocking-logpage' => 'Rejestr globalnych blokad',
@@ -7211,6 +7212,7 @@ L'archivije de le blocche t'avène date aqquà sotte pe conzultazione:",
 );
 
 /** Russian (Русский)
+ * @author Dim Grits
  * @author Ferrer
  * @author Александр Сигачёв
  */
@@ -7299,7 +7301,7 @@ $1',
 	'globalblocking-whitelist-intro' => 'Вы можете использовать эту форму для изменения локального состояния глобальной блокировки.
 Если глобальная блокировка будет выключена в этой вики, участники с соответствующими IP-адресами смогут нормально редактировать страницы.
 [[Special:GlobalBlockList|Вернуться к списку глобальных блокировок]].',
-	'globalblocking-blocked' => "Ваш IP-адрес был заблокирован во всех вики участником '''$1''' (''$2'').
+	'globalblocking-blocked' => "Ваш IP-адрес $5 был заблокирован во всех вики участником '''$1''' (''$2'').
 Была указана причина: ''«$3»''.
 Блокировка ''$4''.",
 	'globalblocking-blocked-nopassreset' => 'Вы не можете сбрасывать пароли участников, так как вы заблокированы на глобальном уровне.',
@@ -7409,7 +7411,7 @@ $messages['rue'] = array(
 	'globalblocking-whitelist-intro' => 'За помочі того формуларя можете змінити локалный статус ґлобалного блокованя.
 Кідь буде ґлобалне блокованя на тій вікі зрушене, хоснователї будуть мочі на одповідній IP адресї нормално едітовати.
 [[Special:GlobalBlockList|Навернутя на список ґлобалных блоковань]].',
-	'globalblocking-blocked' => "Вашій IP aдресї было ґлобално заблокована на вшыткых вікі можность едітованя. Заблоковав вас хоснователь '''$1''' (''$2'').
+	'globalblocking-blocked' => "Вашій IP aдресї $5 было ґлобално заблокована на вшыткых вікі можность едітованя. Заблоковав вас хоснователь '''$1''' (''$2'').
 Уведенов причінов было ''„$3“''. Блокованя тырвать до ''$4''.",
 	'globalblocking-blocked-nopassreset' => 'Не можете жадати о посланя нового гесла, бо сьте ґлобално {{GENDER:|блокованый|блокована|блокованый}}.',
 	'globalblocking-logpage' => 'Лоґ ґлобалных блоковань',
