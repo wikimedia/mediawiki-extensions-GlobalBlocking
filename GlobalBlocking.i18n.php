@@ -2539,7 +2539,7 @@ seega ei saa globaalsete blokeeringute kohalikku olekut muuta.',
 	'globalblocking-whitelist-intro' => 'Seda vormi saab kasutada globaalse blokeeringu kohaliku oleku muutmiseks.
 Kui globaalne blokeering on selles vikis välja lülitatud, saavad kasutajad selle IP-aadressi alt tavapäraselt toimetada.
 [[Special:GlobalBlockList|Naase globaalsete blokeeringute nimekirja]].',
-	'globalblocking-blocked' => "'''$1''' (''$2'') on sinu IP-aadressi kõigis vikides blokeerinud.
+	'globalblocking-blocked' => "'''$1''' (''$2'') on sinu IP-aadressi $5 kõigis vikides blokeerinud.
 Põhjus: ''$3''
 Kehtivus: ''$4''",
 	'globalblocking-blocked-nopassreset' => 'Sa ei saa kasutaja salasõna lähtestada, sest oled globaalselt blokeeritud.',
