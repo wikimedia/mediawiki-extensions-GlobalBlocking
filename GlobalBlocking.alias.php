@@ -392,6 +392,11 @@ $specialPageAliases['tr'] = array(
 	'GlobalBlockStatus' => array( 'KüreselEngelBeyazListesi', 'KüreselEngelDurumu' ),
 );
 
+/** Tatar (Cyrillic script) (Татарча) */
+$specialPageAliases['tt-cyrl'] = array(
+	'GlobalBlock' => array( 'Глобаль_тыю' ),
+);
+
 /** Vèneto (Vèneto) */
 $specialPageAliases['vec'] = array(
 	'GlobalBlock' => array( 'BlocoGlobal' ),
@@ -402,6 +407,14 @@ $specialPageAliases['vi'] = array(
 	'GlobalBlock' => array( 'Cấm_toàn_cục' ),
 	'GlobalBlockList' => array( 'Danh_sách_cấm_toàn_cục' ),
 	'RemoveGlobalBlock' => array( 'Bỏ_cấm_toàn_cục' ),
+);
+
+/** Cantonese (粵語) */
+$specialPageAliases['yue'] = array(
+	'GlobalBlock' => array( '全域查封' ),
+	'GlobalBlockList' => array( '全域封禁一覽' ),
+	'RemoveGlobalBlock' => array( '全域解封' ),
+	'GlobalBlockStatus' => array( '全域封禁白名單' ),
 );
 
 /** Simplified Chinese (‪中文(简体)‬) */
