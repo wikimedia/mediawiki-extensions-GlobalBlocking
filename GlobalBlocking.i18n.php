@@ -6380,6 +6380,7 @@ Lo jornal dels blocatges es disponible çaijós :',
 
 /** Oriya (ଓଡ଼ିଆ)
  * @author Odisha1
+ * @author Psubhashish
  */
 $messages['or'] = array(
 	'globalblocking-block-reason' => 'କାରଣ:',
@@ -6388,6 +6389,15 @@ $messages['or'] = array(
 	'globalblocking-list-modify' => 'ରୂପାନ୍ତର',
 	'globalblocking-unblock-reason' => 'କାରଣ:',
 	'globalblocking-whitelist-reason' => 'କାରଣ:',
+	'globalblocking-block-logentry' => '[[$1]]ଙ୍କୁ ବିଶ୍ଵ ସାରା ଅଟକାଯାଇଛି ଯାହା $2 ପରେ ସଚଳ ହେବ',
+	'globalblocking-block2-logentry' => '[[$1]] ଙ୍କୁ ବିଶ୍ଵ ସାରା ଅଟକାଇଦିଆଗଲା ($2)',
+	'globalblocking-unblock-logentry' => '[[$1]]ଙ୍କ ଉପରେ ଥିବା ବିଶ୍ଵ ଅଟକକୁ ହଟାଇ ଦିଆଗଲା',
+	'globalblocking-whitelist-logentry' => '[[$1]]ଙ୍କ ଉପରେ ଥିବା ବିଶ୍ଵ ଅଟକକୁ ସ୍ଥାନୀୟ ଭାବରେ ଅଚଳ କରିଦିଆଗଲା',
+	'globalblocking-dewhitelist-logentry' => '[[$1]]ଙ୍କ ଉପରେ ଥିବା ବିଶ୍ଵ ଅଟକକୁ ସ୍ଥାନୀୟ ଭାବରେ ଆଉଥରେ ସଚଳ କରାଗଲା',
+	'globalblocking-modify-logentry' => '[[$1]]ଙ୍କ ଉପରେ ଥିବା ବିଶ୍ଵ ଅଟକକୁ ବଦଳଗଲା ($2)',
+	'globalblocking-logentry-expiry' => '$1ରେ ଅଚଳ ହୋଇଯିବ',
+	'globalblocking-logentry-noexpiry' => 'ଅଚଳହେବା ଗୋଠ ନାହିଁ',
+	'globalblocking-loglink' => '$1 ଙ୍କ IP ଠିକଣା ବିଶ୍ଵସାରା ଅଟକାଯାଇଛି ([[{{#Special:GlobalBlockList}}/$1|ସବିଶେଷ]]).',
 );
 
 /** Ossetic (Ирон)
