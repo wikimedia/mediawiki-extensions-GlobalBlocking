@@ -2803,7 +2803,7 @@ joten paikallisten globaaliestojen tilaa ei voi muuttaa.',
 	'globalblocking-whitelist-nochange' => 'Et tehnyt muutoksia tämän eston paikalliseen tilaan. [[Special:GlobalBlockList|Voit myös palata globaaliestojen listaan]].',
 	'globalblocking-whitelist-errors' => 'Globaalin eston paikallisen tilan muuttaminen epäonnistui {{PLURAL:$1|seuraavan syyn|seuraavien syiden}} takia:',
 	'globalblocking-whitelist-intro' => 'Voit käyttää tätä lomaketta globaalieston paikallisen tilan muokkaamiseksi. Jos globaaliesto on poiskytetty tästä wikistä, IP-osoitetta käyttävät käyttäjät voivat muokata normaalisti. [[Special:GlobalBlockList|Napsauta tästä]] palataksesi takaisin globaalien estojen listaan.',
-	'globalblocking-blocked' => "'''$1''' (''$2'') on estänyt IP-osoitteesi kaikissa wikeissä.
+	'globalblocking-blocked' => "'''$1''' (''$2'') on estänyt IP-osoitteesi $5 kaikissa wikeissä.
 Syy: ''$3''
 Esto: ''$4''",
 	'globalblocking-blocked-nopassreset' => 'Et voi palauttaa käyttäjien salasanoja, koska sinut on estetty globaalisti.',
@@ -6384,7 +6384,10 @@ Lo jornal dels blocatges es disponible çaijós :',
  */
 $messages['or'] = array(
 	'globalblocking-block-reason' => 'କାରଣ:',
+	'globalblocking-block-reasonotherlist' => 'ଅଲଗା କାରଣ',
+	'globalblocking-block-expiry-otherfield' => 'ବାକି ସମୟ:',
 	'globalblocking-block-options' => 'କାମସବୁ:',
+	'globalblocking-search-ip' => 'ଆଇ.ପି. ଠିକଣା:',
 	'globalblocking-list-unblock' => 'ବାହାର କରିବା',
 	'globalblocking-list-modify' => 'ରୂପାନ୍ତର',
 	'globalblocking-unblock-reason' => 'କାରଣ:',
