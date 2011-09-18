@@ -1242,7 +1242,7 @@ dre-se ne c'hell ket bezañ kemmet statud lec'hel ar stankadenn hollek.",
 	'globalblocking-whitelist-intro' => "Gallout a rit implijout ar furmskrid-mañ evit kemm statud lec'hel ur stankadenn hollek.
 Mard eo diweredekaet ur stankadenn hollek er wiki-mañ, an implijerien gant ar chomlec'hioù IP merket a c'hello kemmañ d'un doare normal.
 [[Special:GlobalBlockList|Mont en-dro e listenn ar stankadennoù hollek]].",
-	'globalblocking-blocked' => "Stanket eo bet ho chomlec'h IP war an holl wikioù gant '''\$1''' (''\$2'').
+	'globalblocking-blocked' => "Stanket eo bet ho chomlec'h IP \$5 war an holl wikioù gant '''\$1''' (''\$2'').
 An abeg a oa ''\"\$3\"''.
 Stankadenn : ''\$4''.",
 	'globalblocking-blocked-nopassreset' => "Ne c'hellit ket adderaouekaat gerioù-tremen implijerien dre ma 'z oc'h stanket en un doare hollek.",
@@ -6383,15 +6383,80 @@ Lo jornal dels blocatges es disponible çaijós :',
  * @author Psubhashish
  */
 $messages['or'] = array(
+	'globalblocking-block' => 'ଏହି IP ଠିକଣାଟି ଜଗତଯାକ ଉଇକିରେ ଅଟକାଇ ଦେବେ',
+	'globalblocking-modify-intro' => 'ଏହି ଜଗତ ଅଟକକୁ ବଦଳାଇବା ନିମନ୍ତେ ଆପଣ ଏହି ଫର୍ମଟି ବ୍ୟବହାର କରିପାରିବେ ।',
+	'globalblocking-block-intro' => 'ସବୁ ଉଇକିରେ ଆପଣ ଏହ ଇପୃଷ୍ଠା ବ୍ୟବହାର କରି ଏକ IP ଠିକଣାକୁ ଅଟକାଇପାରିବେ ।',
 	'globalblocking-block-reason' => 'କାରଣ:',
+	'globalblocking-block-otherreason' => 'ବାକି/ଅଧିକ କାରଣ:',
 	'globalblocking-block-reasonotherlist' => 'ଅଲଗା କାରଣ',
+	'globalblocking-block-reason-dropdown' => '* ସାଧାରଣ ଅଟକ କାରଣ
+** ଅଲଗା ଅଲଗା ଉଇକିରେ ସ୍ପାମିଙ୍ଗ
+** ଅଲଗା ଅଲଗା ଉଇକିରେ ଅପବ୍ୟବହାର
+** ବର୍ବରତା',
+	'globalblocking-block-edit-dropdown' => 'ସମ୍ପାଦନା ଅଟକ କାରଣମାନ',
+	'globalblocking-block-expiry' => 'ମିଆଦ:',
+	'globalblocking-block-expiry-other' => 'ବାକି ମିଆଦ ସମୟ',
 	'globalblocking-block-expiry-otherfield' => 'ବାକି ସମୟ:',
+	'globalblocking-block-legend' => 'ଏକ IP ଠିକଣାକୁ ଜଗତ ସାରା ଅଟକାଇ ଦେବେ',
 	'globalblocking-block-options' => 'କାମସବୁ:',
+	'globalblocking-block-errors' => 'ତଳଲିଖିତ {{PLURAL:$1|ଗୋଟିଏ କାରଣ|ଗୋଟି କାରଣ}} ନିମନ୍ତେ  ଆପଣଙ୍କ ଦେଇ କରାଯାଇଥିବା ଅଟକ ବିଫଳ ହେଲା:',
+	'globalblocking-block-ipinvalid' => 'ଆପଣ ଦେଇଥିବା IP ଠିକଣାଟି ($1) ଭୁଲ ଅଟେ ।
+ଜାଣିରଖନ୍ତୁ ଯେ ଆପଣ ଏକ ଇଉଜର ନାମ ଦେଇପାରିବେ ନାହିଁ !',
+	'globalblocking-block-expiryinvalid' => 'ଆପଣ ଦେଇଥିବା ମିଆଦଟି ($1) କାମ କରୁନାହିଁ।',
+	'globalblocking-block-submit' => 'ଏକ IP ଠିକଣାକୁ ଜଗତ ସାରା ଅଟକାଇ ଦେବେ',
+	'globalblocking-modify-submit' => 'ଜଗତ ଯାକ ଅଟକକୁ ବଦଳାଇବେ',
+	'globalblocking-block-success' => 'ଏହି IP ଠିକଣା ($1 )ଟି ସଫଳ ଭାବରେ ସବୁ ପ୍ରକଳ୍ପରେ ଅଟକାଇଦିଆଗଲା ।',
+	'globalblocking-modify-success' => '$1 ଉପରେ ଥିବା ଜଗତ ସାରା ଅଟକ ସଫଳ ଭାବରେ ବଦଳାଗଲା',
+	'globalblocking-block-successsub' => 'ଜଗତ ସାରା ଅଟକ ସଫଳ ହେଲା',
+	'globalblocking-modify-successsub' => 'ସଫଳଭାବରେ ଜଗତ ସାରା ଅଟକାଇବା ସଫଳ ହେଲା',
+	'globalblocking-block-bigrange' => 'ଆପଣ ଦେଇଥିବା ସୀମା ($1) ଅଟକାଇବା ପାଇଁ ଖୁବ ବଡ଼ ବୋଲି ବୋଧ ହୁଏ ।
+ଆପଣ ସବୁଠାରୁ ଅଧିକ ହେଲେ, ୬୫, ୫୩୬ ଗୋଟି ଠିକଣା ଅଟକାଇ ପାରିବେ (/୧୬ ଗୋଟି ସୀମା)',
+	'globalblocking-list' => 'ଜଗତ ସାରା ଅଟକାଯାଇଥିବା IP ଠିକଣାର ତାଲିକା',
+	'globalblocking-search-legend' => 'ଜଗତ ସାରା ଥିବା ଅଟକ ପାଇଁ ଖୋଜିବେ',
 	'globalblocking-search-ip' => 'ଆଇ.ପି. ଠିକଣା:',
+	'globalblocking-search-submit' => 'ଅଟକ ପାଇଁ ଖୋଜିବେ',
+	'globalblocking-list-ipinvalid' => 'ଆପଣ ଖୋଜିଥିବା IP ଠିକଣା ($1)ଟି ଭୁଲ ଅଟେ ।
+ଏକ ସଚଳ IP ଠିକଣା ଦିଅନ୍ତୁ ।',
+	'globalblocking-search-errors' => 'ତଳଲିଖିତ {{PLURAL:$1|ଗୋଟିଏ କାରଣ|ଗୋଟି କାରଣ}} ନିମନ୍ତେ  ଆପଣଙ୍କର ଖୋଜିବା ବିଫଳ ହେଲା:',
+	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') [[Special:Contributions/\$4|\$4]] ''(\$5)''ଙ୍କୁ ଜଗତ ସାରା ଅଟକାଗଲା",
+	'globalblocking-list-expiry' => '$1ରେ ଅଚଳ ହୋଇଯିବ',
+	'globalblocking-list-anononly' => 'କେବଳ ବେନାମି',
 	'globalblocking-list-unblock' => 'ବାହାର କରିବା',
+	'globalblocking-list-whitelisted' => ' $1ଙ୍କ ଦେଇ ସ୍ଥାନୀୟ ଭାବେ ଅଚଳ କରାଯାଇଅଛି: $2',
+	'globalblocking-list-whitelist' => 'ସ୍ଥାନୀୟ ସ୍ଥିତି',
 	'globalblocking-list-modify' => 'ରୂପାନ୍ତର',
+	'globalblocking-list-noresults' => 'ଅନୁରୋଧ କରାଯାଇଥିବା IP ଠିକଣାଟି ଅଟକାଗଲା ନାହିଁ ।',
+	'globalblocking-goto-block' => 'ଏକ IP ଠିକଣାଟିକୁ ଜଗତଯାକ ଉଇକିରେ ଅଟକାଇ ଦେବେ',
+	'globalblocking-goto-unblock' => 'ଏକ ଜଗତ ସାରାର ଅଟକକୁ ହଟାଇଦେବେ',
+	'globalblocking-goto-status' => 'ଏକ ଜଗତ ସାରାରର ଅଟକର ସ୍ଥିତିକୁ ବଦଳାଇବେ',
+	'globalblocking-return' => 'ଜଗତ ସାରାର ଅଟକସବୁର ତାଲିକା ଫେରିଯିବେ',
+	'globalblocking-notblocked' => 'ଆପଣ ଦେଇଥିବା IP ଠିକଣା ($1)ଟି ଜଗତ ଯାକ ଅଟକଯାଇନାହିଁ ।',
+	'globalblocking-unblock' => 'ଏକ ଜଗତ ସାରାର ଅଟକକୁ ହଟାଇଦେବେ',
+	'globalblocking-unblock-ipinvalid' => 'ଆପଣ ଦେଇଥିବା IP ଠିକଣାଟି ($1) ଭୁଲ ଅଟେ ।
+ଜାଣିରଖନ୍ତୁ ଯେ ଆପଣ ଏକ ଇଉଜର ନାମ ଦେଇପାରିବେ ନାହିଁ !',
+	'globalblocking-unblock-legend' => 'ଏକ ଜଗତ ସାରାର ଅଟକକୁ ହଟାଇଦେବେ',
+	'globalblocking-unblock-submit' => 'ଏକ ଜଗତ ସାରାର ଅଟକକୁ ହଟାଇଦେବେ',
 	'globalblocking-unblock-reason' => 'କାରଣ:',
+	'globalblocking-unblock-unblocked' => "'''$1''' IP ଠିକଣା ଉପରେ ଲାଗିଥିବା ଜଗତ ବାସନ୍ଦ #$2କୁ ଆପଣ ସଫଳ ଭାବେ ଉଠାଇ ଦେଲେ",
+	'globalblocking-unblock-errors' => 'ତଳଲିଖିତ {{PLURAL:$1|ଗୋଟିଏ କାରଣ|ଗୋଟି କାରଣ}} ନିମନ୍ତେ  ଆପଣଙ୍କର ଜଗତ ବାସନ୍ଦ ହଟାଇବା ବିଫଳ ହେଲା:',
+	'globalblocking-unblock-successsub' => 'ଜଗତ ବାସନ୍ଦ ସଫଳ ଭାବେ ହଟାଇଦିଆଗଲା',
+	'globalblocking-unblock-subtitle' => 'ଜଗତ ବାସନ୍ଦ ହଟାଉଛୁଁ',
+	'globalblocking-unblock-intro' => 'ଆପଣ ଏକ ଜଗତ ବାସନ୍ଦ ଉଠାଇବେ ନିମନ୍ତେ ଏହି ଫର୍ମର ବ୍ୟବହାର କରିପାରିବେ ।',
+	'globalblocking-whitelist' => 'ଜଗତ ବାସନ୍ଦର ଆଞ୍ଚଳିକ ସ୍ଥିତି',
+	'globalblocking-whitelist-notapplied' => 'ଏହି ଉଇକି ପାଇଁ ଜଗତ ବାସନ୍ଦ ଲାଗୁ ହେବ ନାହିଁ,
+ତେଣୁ ଜଗତ ବାସନ୍ଦର ଆଞ୍ଚଳିକ ସ୍ଥିତି ବଦଳାଯାଇପାରିବ ନାହିଁ ।',
+	'globalblocking-whitelist-legend' => 'ଆଞ୍ଚଳିକ ସ୍ଥିତି ବଦଳାଇବେ',
 	'globalblocking-whitelist-reason' => 'କାରଣ:',
+	'globalblocking-whitelist-status' => 'ସ୍ଥାନୀୟ ସ୍ଥିତି:',
+	'globalblocking-whitelist-statuslabel' => '{{SITENAME}} ସାଇଟ ଉପରେ ଲାଗିଥିବା ଜଗତ ବାସନ୍ଦ ଉଠାଇଦେବେ',
+	'globalblocking-whitelist-submit' => 'ଆଞ୍ଚଳିକ ସ୍ଥିତି ବଦଳାଇବେ',
+	'globalblocking-whitelist-whitelisted' => "'''$1''' IP ଠିକଣା ଉପରେ ଲାଗିଥିବା {{SITENAME}}ର ଜଗତ ବାସନ୍ଦ #$2କୁ ଆପଣ ସଫଳ ଭାବେ ଅଚଳ କରିଦେଲେ ।",
+	'globalblocking-whitelist-dewhitelisted' => "'''$1''' IP ଠିକଣା ଉପରେ ଲାଗିଥିବା {{SITENAME}}ର ଜଗତ ବାସନ୍ଦ #$2କୁ ଆପଣ ସଫଳ ଭାବେ ଆଉଥରେ ସଚଳ କରିଦେଲେ ।",
+	'globalblocking-whitelist-successsub' => 'ଆଞ୍ଚଳିକ ସ୍ଥିତି ସଫଳ ଭାବେ ବଦଳାଇ ଦେଲେ',
+	'globalblocking-whitelist-nochange' => 'ଏହି ବାସନ୍ଦରେ ଆପଣ ଆଞ୍ଚଳିକ ସ୍ଥିତିରେ କିଛି ବି ବଦଳାଇଲେ ନାହିଁ ।
+[[Special:GlobalBlockList|ଜଗତ ବାସନ୍ଦ ତାଳିକାକୁ ଫେରିଯିବେ]] ।',
+	'globalblocking-whitelist-errors' => 'ତଳଲିଖିତ {{PLURAL:$1|ଗୋଟିଏ କାରଣ|ଗୋଟି କାରଣ}} ନିମନ୍ତେ  ଆପଣଙ୍କର ଜଗତ ବାସନ୍ଦର ଆଞ୍ଚଳିକ ସ୍ଥିତି ବଦଳାଇବା ବିଫଳ ହେଲା:',
+	'globalblocking-blocked-nopassreset' => 'ଆପଣଙ୍କୁ ଜଗତଯାକ ବାସନ୍ଦ କରାଯାଇଥିବାରୁ ଆପଣ ନିଜର ସଭ୍ୟ ପାସବାର୍ଡ଼ ବଦଳାଇପାରିବେ ନାହିଁ ।',
 	'globalblocking-block-logentry' => '[[$1]]ଙ୍କୁ ବିଶ୍ଵ ସାରା ଅଟକାଯାଇଛି ଯାହା $2 ପରେ ସଚଳ ହେବ',
 	'globalblocking-block2-logentry' => '[[$1]] ଙ୍କୁ ବିଶ୍ଵ ସାରା ଅଟକାଇଦିଆଗଲା ($2)',
 	'globalblocking-unblock-logentry' => '[[$1]]ଙ୍କ ଉପରେ ଥିବା ବିଶ୍ଵ ଅଟକକୁ ହଟାଇ ଦିଆଗଲା',
@@ -6749,6 +6814,7 @@ $messages['ps'] = array(
  * @author Hamilton Abreu
  * @author Lijealso
  * @author Malafaya
+ * @author SandroHc
  * @author Waldir
  */
 $messages['pt'] = array(
@@ -6834,7 +6900,7 @@ logo o estado local de bloqueios globais não pode ser modificado.',
 	'globalblocking-whitelist-intro' => 'Pode usar este formulário para editar o estado local de um bloqueio global.
 Se um bloqueio global está desactivado nesta wiki, os utilizadores nos endereços IP afectados poderão editar normalmente.
 [[Special:GlobalBlockList|Voltar à lista de bloqueios globais]].',
-	'globalblocking-blocked' => "O seu endereço IP foi bloqueado em todas as wikis por '''\$1''' (''\$2'').
+	'globalblocking-blocked' => "O seu endereço IP \$5 foi bloqueado em todas as wikis por '''\$1''' (''\$2'').
 O motivo dado foi ''\"\$3\"''.
 Duração: ''\$4''.",
 	'globalblocking-blocked-nopassreset' => 'Não pode repor palavras-chave de utilizadores porque está bloqueado globalmente.',
