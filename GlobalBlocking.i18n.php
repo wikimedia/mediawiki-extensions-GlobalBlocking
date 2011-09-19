@@ -6457,6 +6457,7 @@ $messages['or'] = array(
 [[Special:GlobalBlockList|ଜଗତ ବାସନ୍ଦ ତାଳିକାକୁ ଫେରିଯିବେ]] ।',
 	'globalblocking-whitelist-errors' => 'ତଳଲିଖିତ {{PLURAL:$1|ଗୋଟିଏ କାରଣ|ଗୋଟି କାରଣ}} ନିମନ୍ତେ  ଆପଣଙ୍କର ଜଗତ ବାସନ୍ଦର ଆଞ୍ଚଳିକ ସ୍ଥିତି ବଦଳାଇବା ବିଫଳ ହେଲା:',
 	'globalblocking-blocked-nopassreset' => 'ଆପଣଙ୍କୁ ଜଗତଯାକ ବାସନ୍ଦ କରାଯାଇଥିବାରୁ ଆପଣ ନିଜର ସଭ୍ୟ ପାସବାର୍ଡ଼ ବଦଳାଇପାରିବେ ନାହିଁ ।',
+	'globalblocking-logpage' => 'ଜଗତ ଅଟକ ଇତିହାସ',
 	'globalblocking-block-logentry' => '[[$1]]ଙ୍କୁ ବିଶ୍ଵ ସାରା ଅଟକାଯାଇଛି ଯାହା $2 ପରେ ସଚଳ ହେବ',
 	'globalblocking-block2-logentry' => '[[$1]] ଙ୍କୁ ବିଶ୍ଵ ସାରା ଅଟକାଇଦିଆଗଲା ($2)',
 	'globalblocking-unblock-logentry' => '[[$1]]ଙ୍କ ଉପରେ ଥିବା ବିଶ୍ଵ ଅଟକକୁ ହଟାଇ ଦିଆଗଲା',
@@ -6466,6 +6467,16 @@ $messages['or'] = array(
 	'globalblocking-logentry-expiry' => '$1ରେ ଅଚଳ ହୋଇଯିବ',
 	'globalblocking-logentry-noexpiry' => 'ଅଚଳହେବା ଗୋଠ ନାହିଁ',
 	'globalblocking-loglink' => '$1 ଙ୍କ IP ଠିକଣା ବିଶ୍ଵସାରା ଅଟକାଯାଇଛି ([[{{#Special:GlobalBlockList}}/$1|ସବିଶେଷ]]).',
+	'globalblocking-showlog' => 'ଏହି IP ଠିକଣାଟି ଆଗରୁ ଅଟକାଯାଇଅଛି ।
+ତଳେ ଅଟକ ଇତିହାସ ଅବଗତି ନିମନ୍ତେ ଦିଆଗଲା:',
+	'globalblocklist' => 'ଜଗତ ସାରା ଅଟକାଯାଇଥିବା IP ଠିକଣାର ତାଲିକା',
+	'globalblock' => 'ଏହି IP ଠିକଣାଟି ଜଗତଯାକ ଉଇକିରେ ଅଟକାଇ ଦେବେ',
+	'globalblockstatus' => 'ଜଗତ ବାସନ୍ଦର ଆଞ୍ଚଳିକ ସ୍ଥିତି',
+	'removeglobalblock' => 'ଏକ ଜଗତ ଯାକର ଅଟକକୁ ହଟାଇଦେବେ',
+	'right-globalblock' => 'ଜଗତ ଯାକ ବାସନ୍ଦ କରିବେ',
+	'right-globalunblock' => 'ଏକ ଜଗତ ଯାକର ବାସନ୍ଦକୁ ହଟାଇଦେବେ',
+	'right-globalblock-whitelist' => 'ଜଗତ ବାସନ୍ଦକୁ ଆଞ୍ଚଳିକ ଭାବରେ ଅଚଳ କରିବେ',
+	'right-globalblock-exempt' => 'ଜଗତ ଯାକ ବାସନ୍ଦକୁ ଅଲଗା ପଥଗାମୀ କରିବେ',
 );
 
 /** Ossetic (Ирон)
