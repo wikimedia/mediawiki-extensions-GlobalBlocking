@@ -1665,6 +1665,8 @@ $messages['da'] = array(
 	'globalblocking-block-expiry' => 'Udløber:',
 	'globalblocking-block-legend' => 'Bloker en IP-adresse globalt',
 	'globalblocking-block-errors' => 'Din blokering lykkedes ikke af følgende {{PLURAL:$1|årsag|årsager}}:',
+	'globalblocking-block-ipinvalid' => 'IP-adressen, du indtastede ($1), er ugyldig.
+Bemærk venligst, at du ikke kan indtaste et brugernavn!',
 	'globalblocking-modify-submit' => 'Ændr denne globale blokering',
 	'globalblocking-block-success' => 'IP-adressen $1 er blevet blokeret på alle projekter.',
 	'globalblocking-block-bigrange' => 'Intervallet, du angav, ($1) er for stort, til at det kan blokeres.
@@ -1677,9 +1679,11 @@ Du kan højst blokere 65.536 adresser (/16-intervaller)',
 	'globalblocking-list-whitelisted' => 'slået fra lokalt af $1: $2',
 	'globalblocking-list-whitelist' => 'lokal status',
 	'globalblocking-goto-unblock' => 'Ophæv en global blokering',
+	'globalblocking-unblock' => 'Ophæv en global blokering',
 	'globalblocking-unblock-legend' => 'Ophæv en global blokering',
 	'globalblocking-unblock-submit' => 'Ophæv global blokering',
 	'globalblocking-unblock-reason' => 'Begrundelse:',
+	'globalblocking-unblock-subtitle' => 'Ophæver global blokering',
 	'globalblocking-whitelist-legend' => 'Ændr lokal status',
 	'globalblocking-whitelist-reason' => 'Begrundelse:',
 	'globalblocking-whitelist-status' => 'Lokal status:',
@@ -1700,6 +1704,7 @@ Blokeringen ''\$4''.",
 	'right-globalblock' => 'Blokere brugere globalt',
 	'right-globalunblock' => 'Ophæve globale blokeringer',
 	'right-globalblock-whitelist' => 'Ophæve globale blokeringer lokalt',
+	'right-globalblock-exempt' => 'Omgå globale blokeringer',
 );
 
 /** German (Deutsch)
@@ -5209,7 +5214,7 @@ Lèt óp: de kins geine gebroekersnaam ingaeve!",
 	'globalblocking-whitelist-intro' => "De kins dit formulier gebroeke om de lokale status van 'n globale blokkade te wiezige.
 Als een globale blokkade op deze wiki is opgeheve, kunne gebroekers vanaaf  t IP-adres geeuon bewerkinge oetvoere.
 [[Special:GlobalBlockList|Trökkere nao de lies met globale blokkades]].",
-	'globalblocking-blocked' => "De IP-adres is door '''\$1''' (''\$2'') geblokkeerd op alle wiki's.
+	'globalblocking-blocked' => "Dien IP-adres \$5 is door '''\$1''' (''\$2'') geblokkeerd op alle wiki's.
 De rede is ''\"\$3\"''.
 De blokkade ''\$4''.",
 	'globalblocking-blocked-nopassreset' => "Doe kins 't wachwaord neet resette ómdesse wikiwied geblok bös gewaore.",
