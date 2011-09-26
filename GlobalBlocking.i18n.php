@@ -6155,6 +6155,7 @@ For å visa alle aktive globale blokkeringar, sjå den [[Special:GlobalBlockList
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
+ * @author Event
  * @author Jon Harald Søby
  * @author Laaknor
  * @author Nghtwlkr
@@ -6237,8 +6238,7 @@ så den lokale statusen for globale blokkeringer kan ikke endres her.',
 	'globalblocking-whitelist-nochange' => 'Du endret ikke denne blokkeringens lokale status. [[Special:GlobalBlockList|Tilbake til den globale blokkeringslista.]]',
 	'globalblocking-whitelist-errors' => 'Endringen i lokal status lyktes ikke fordi:<!--{{PLURAL:$1}}-->',
 	'globalblocking-whitelist-intro' => 'Du kan bruke dette skjemaet til å redigere en global blokkerings lokale status. Om en global blokkering er slått av på denne wikien, vil brukerne av de påvirkede IP-adressene kunne redigere normalt. [[Special:GlobalBlockList|Tilbake til den globale blokkeringslista.]]',
-	'globalblocking-blocked' => "IP-adressen din har blitt blokkert på alle wikier av '''$1''' (''$2'').
-Årsaken som ble oppgitt var '''$3'''.
+	'globalblocking-blocked' => "IP-adressen din ($5) har blitt blokkert på alle wikier av '''$1''' (''$2'') med følgende begrunnelse: '''$3'''.
 Blokkeringen ''$4''.",
 	'globalblocking-blocked-nopassreset' => 'Du kan ikke nullstille brukerpassord fordi du er blokkert globalt.',
 	'globalblocking-logpage' => 'Global blokkeringslogg',
