@@ -502,6 +502,7 @@ $messages['arc'] = array(
 	'globalblocking-block-reasonotherlist' => 'ܥܠܬܐ ܐܚܪܬܐ',
 	'globalblocking-block-expiry-otherfield' => 'ܥܕܢܐ ܐܚܪܬܐ:',
 	'globalblocking-block-options' => 'ܓܒܝܬ̈ܐ',
+	'globalblocking-list' => 'ܡܟܬܒܘܬܐ ܕܦܪ̈ܫܓܢܐ ܕܐܝܦܝ ܚܪ̈ܝܡܐ ܓܘܢܐܝܬ',
 	'globalblocking-list-anononly' => 'ܠܐ ܝܕ̈ܝܥܐ ܒܠܚܘܕ',
 	'globalblocking-list-whitelist' => 'ܐܝܟܢܝܘܬܐ ܕܘܟܬܢܝܬܐ',
 	'globalblocking-whitelist-reason' => 'ܥܠܬܐ:',
