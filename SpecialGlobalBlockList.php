@@ -105,7 +105,10 @@ class SpecialGlobalBlockList extends SpecialPage {
 	}
 
 	function loadParameters( $ip ) {
-		$this->mSearchIP = Block::normaliseRange( trim( $ip ) );
+		$ip = trim( $ip );
+		$this->mSearchIP = ( $ip !== '' )
+			? Block::normaliseRange( $ip )
+			: '';
 	}
 }
 
