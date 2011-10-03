@@ -1662,14 +1662,22 @@ $messages['da'] = array(
 	'globalblocking-block-reason' => 'Begrundelse:',
 	'globalblocking-block-otherreason' => 'Anden/uddybende begrundelse:',
 	'globalblocking-block-reasonotherlist' => 'Anden grund',
+	'globalblocking-block-reason-dropdown' => '* Normale blokeringsbegrundelser
+** Crosswikispamming
+** Crosswikimisbrug
+** Hærværk',
 	'globalblocking-block-edit-dropdown' => 'Rediger blokeringsbegrundelser',
 	'globalblocking-block-expiry' => 'Udløber:',
 	'globalblocking-block-legend' => 'Bloker en IP-adresse globalt',
 	'globalblocking-block-errors' => 'Din blokering lykkedes ikke af følgende {{PLURAL:$1|årsag|årsager}}:',
 	'globalblocking-block-ipinvalid' => 'IP-adressen, du indtastede ($1), er ugyldig.
 Bemærk venligst, at du ikke kan indtaste et brugernavn!',
+	'globalblocking-block-expiryinvalid' => 'Den udløbstid, du valgte ($1) er ugyldigt',
+	'globalblocking-block-submit' => 'Blokér denne ip-adresse globalt',
 	'globalblocking-modify-submit' => 'Ændr denne globale blokering',
 	'globalblocking-block-success' => 'IP-adressen $1 er blevet blokeret på alle projekter.',
+	'globalblocking-modify-success' => 'Den globale blokering på $1 er blevet ændret',
+	'globalblocking-modify-successsub' => 'Global blokering er ændret',
 	'globalblocking-block-bigrange' => 'Intervallet, du angav, ($1) er for stort, til at det kan blokeres.
 Du kan højst blokere 65.536 adresser (/16-intervaller)',
 	'globalblocking-list' => 'Liste over globalt blokerede IP-adresser',
