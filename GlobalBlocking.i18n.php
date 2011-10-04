@@ -6770,6 +6770,7 @@ Për vëdde tùit ij blocagi globaj ativ, a peul vëdde la [[Special:GlobalBlock
  * @author Khalid Mahmood
  */
 $messages['pnb'] = array(
+	'globalblocking-desc' => '[[Special:GlobalBlock|Allows]] آئی پی پتے [[Special:GlobalBlockList|blocked across multiple wikis]] تے۔',
 	'globalblocking-block' => 'گلوبلی اس IP پتے نوں روکو',
 	'globalblocking-modify-intro' => 'تسی ایس فارم نوں ایس گلوبل روک دا سٹیٹس بدلن لئی ورت سکدے او۔',
 	'globalblocking-block-intro' => 'تسی اس صفحے نوں سارے وکیاں تے IP پتے نوں روکن واسطے ورت سکدے او۔',
@@ -6796,12 +6797,16 @@ $messages['pnb'] = array(
 	'globalblocking-modify-success' => '$1 دے اتے گلوبل روک تبدیل کر دتی گئی اے',
 	'globalblocking-block-successsub' => 'گلوبل روک لگ گئی اے',
 	'globalblocking-modify-successsub' => 'گلوبل روک تبدیل ہو گئی اے',
+	'globalblocking-block-bigrange' => 'جیہڑی رینج تساں دسی اے ($1) چوکھی وڈی اے جے اودے تے روک لگے۔ تسیں زیادہ توں زیادہ 65,536 پتے روک سکدے او (/16 رینجاں)',
+	'globalblocking-list-intro' => 'اے جگت روکے گیاں دی لسٹ اے جیہڑی کہ ہن چل رئی اے۔ کج روکاں لوکل نیں: جیدا ایہ مطلب اے جے اوہ دوجیاں سائیٹاں تے وی چلدیاں نیں پر اک لوکل مکھۓ نین اے اوناں نوں ایس وکی نکارہ کیتا۔',
+	'globalblocking-list' => 'جگت روک آئی پی پتیاں دی لسٹ',
 	'globalblocking-search-legend' => 'گلوبل روک نوں کھوجو',
 	'globalblocking-search-ip' => 'آئی پی پتہ:',
 	'globalblocking-search-submit' => 'روکاں نوں کھوجو',
 	'globalblocking-list-ipinvalid' => 'جیڑا IP پتہ ($1) تسی کھوجیا اے اوہ غلط اے۔
 مہربانی کر کے ٹھیک IP پتہ لکھو۔',
 	'globalblocking-search-errors' => 'تواڈی کھوج نقام رئی، {{PLURAL:$1|اس وجہ توں|ایناں وجاں توں}}:',
+	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') جگت روکے [[خاص:کم/\$4|\$4]] ''(\$5)''",
 	'globalblocking-list-expiry' => 'انت $1',
 	'globalblocking-list-anononly' => 'صرف گمنام',
 	'globalblocking-list-unblock' => 'ہٹاؤ',
@@ -6839,8 +6844,17 @@ $messages['pnb'] = array(
 	'globalblocking-whitelist-nochange' => 'تساں ایس روک دے لوکل سٹیٹس تے کوئی تبدیلی نئیں کیتی۔
 [[خاص:جگت روک لسٹ|جگت روک لسٹ ول واپسی]]۔',
 	'globalblocking-whitelist-errors' => 'تواڈی جگت روک لوکل سٹیٹس دی کامیاب نئیں، تھلے دتیاں گیاں {{انیک:$1|وجہ|وجہاں}} توں:',
+	'globalblocking-whitelist-intro' => 'تسیں ایس فارم نوں اک جگت روک لوکل سٹیٹس نوں بدلن لئی ورت سکدے او۔
+اگر اک جگت روک ایس وکی تے کم نئیں کردی، ورتن والے متاثرہ آئی پی پتے اینوں تبدیل کرن گے۔
+[[خاص:جگت روک لسٹ|جگت روک لسٹ ول چلو]]',
+	'globalblocking-blocked' => "تواڈا آئی پی پتہ \$5 سارے وکیاں تے روک دتا اے '''\$1''' (''\$2'') نیں۔
+وجہ ''\"\$3\"'' دتی گئی۔ 
+روک ''\$4''",
 	'globalblocking-blocked-nopassreset' => 'تسیں اک ورتن والے دی کنجی نئیں بدل سکدے کیوں جے تساں تے جگت روک اے۔',
 	'globalblocking-logpage' => 'جگت روک لاگ',
+	'globalblocking-logpagetext' => 'ایہ جگت روکاں دی لاگ اے جیہڑی بنائی گئی اے تے ایس وکی توں ہٹا دتی گئی اے۔
+اے گل یاد رکھن والی اے جے جگت روکاں بنایاں جا سکدیاں نیں تے دوجے وکیاں تے ہٹائیاں جاسکدیاں نیں، تے ایہ جگت روکاں  ایس وکی تے وی اثر پاندیاں نیں۔ 
+سارے چلدے جگت روکاں نوں ویکھن لئی تسیں ویکھو [[خاص:جگت روک لسٹ|جگت روک لسٹ]]',
 	'globalblocking-block-logentry' => 'جگت روک [[$1]] جیدا مکن ویلہ $2 اے۔',
 	'globalblocking-block2-logentry' => 'جگت روکیا گیا[[$1]] ($2)',
 	'globalblocking-unblock-logentry' => 'جگت روک [[$1]] توں ہٹادتی گئی۔',
