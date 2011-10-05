@@ -4967,10 +4967,10 @@ en Ußnahm maache. Wann esu en Sperr hee em Wiki ußjesaz es,
 künne de Metmaacher en hee däm Wiki fun dä IP-Adress udder
 dä IP-Adresse uß janz nommaal alles don. Jangk zeröck noh de
 [[Special:GlobalBlockList|{{int:Globalblocking-list}}]].',
-	'globalblocking-blocked' => "Ding IP_Address es in alle Wikis jespert woode.
+	'globalblocking-blocked' => "Ding IP_Address $5 es in alle Wikis jespert woode.
 Dä '''$1''' (''$2'') hädd_et jedonn.
 Sing Jrund wohr: „''$3''“.
-De Sperr bliet bestonn bes: ''$4''.",
+De Sperr jeiht ''$4''.",
 	'globalblocking-blocked-nopassreset' => 'Do kanns andere Metmaachere ier Paßwoot nit retuur säze, Do bes en alle Wikis jesperrt.',
 	'globalblocking-logpage' => 'Logboch fum IP-Adresse en alle Wikis sperre',
 	'globalblocking-logpagetext' => "Dat es et Logboch met alle Sperre, di op alle Wikis op eimohl jemaat ov opjehovve woode sen.
@@ -6797,6 +6797,9 @@ $messages['pnb'] = array(
 	'globalblocking-modify-success' => '$1 دے اتے گلوبل روک تبدیل کر دتی گئی اے',
 	'globalblocking-block-successsub' => 'گلوبل روک لگ گئی اے',
 	'globalblocking-modify-successsub' => 'گلوبل روک تبدیل ہو گئی اے',
+	'globalblocking-block-alreadyblocked' => 'آی پی پتہ $1 پورے جگ تے روکیا گیا جے۔
+تسیں ہن دی روک ویکھ سکدے او [[خاص:جگت روک لسٹ|جگت روکاں دی لسٹ]] تے،
+یا ہن دی روک دے ول نوں  بدلو ایس فارم نوں دوبارہ پعر کے۔',
 	'globalblocking-block-bigrange' => 'جیہڑی رینج تساں دسی اے ($1) چوکھی وڈی اے جے اودے تے روک لگے۔ تسیں زیادہ توں زیادہ 65,536 پتے روک سکدے او (/16 رینجاں)',
 	'globalblocking-list-intro' => 'اے جگت روکے گیاں دی لسٹ اے جیہڑی کہ ہن چل رئی اے۔ کج روکاں لوکل نیں: جیدا ایہ مطلب اے جے اوہ دوجیاں سائیٹاں تے وی چلدیاں نیں پر اک لوکل مکھۓ نین اے اوناں نوں ایس وکی نکارہ کیتا۔',
 	'globalblocking-list' => 'جگت روک آئی پی پتیاں دی لسٹ',
