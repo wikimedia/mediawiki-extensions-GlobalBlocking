@@ -6886,15 +6886,23 @@ $messages['ps'] = array(
 	'globalblocking-block-reason' => 'سبب:',
 	'globalblocking-block-otherreason' => 'بل/اضافي سبب:',
 	'globalblocking-block-reasonotherlist' => 'بل سبب',
+	'globalblocking-block-reason-dropdown' => '* د بنديز ټولګړي سببونه
+** په ويکي ګانو کې اپلاتې
+** په ويکي ګانو کې ناوړه چارې
+** ورانکاري',
 	'globalblocking-block-expiry' => 'د پای نېټه:',
 	'globalblocking-block-expiry-otherfield' => 'بل وخت:',
 	'globalblocking-block-options' => 'خوښنې:',
 	'globalblocking-search-ip' => 'IP پته:',
 	'globalblocking-search-submit' => 'د بنديزونو لپاره پلټل',
 	'globalblocking-list-anononly' => 'يوازې ورکنومی',
+	'globalblocking-list-unblock' => 'غورځول',
 	'globalblocking-list-whitelist' => 'سيمه ايز دريځ',
 	'globalblocking-list-modify' => 'بدلول',
+	'globalblocking-unblock' => 'يو نړيوال بنديز غورځول',
+	'globalblocking-unblock-submit' => 'نړيوال بنديز غورځول',
 	'globalblocking-unblock-reason' => 'سبب:',
+	'globalblocking-unblock-subtitle' => 'نړيوال بنديز غورځول',
 	'globalblocking-whitelist-legend' => 'سيمه ايز دريځ بدلول',
 	'globalblocking-whitelist-reason' => 'سبب:',
 	'globalblocking-whitelist-status' => 'سيمه ايز دريځ:',
