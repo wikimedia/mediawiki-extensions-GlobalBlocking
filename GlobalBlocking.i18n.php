@@ -207,10 +207,10 @@ For more information about Global Blocking, see http://www.mediawiki.org/wiki/Gl
 	'globalblock' => 'Same special page with this page:
 
 * [[MediaWiki:Globalblocking-block/{{SUBPAGENAME}}]]',
-	'right-globalblock' => '{{doc-right}}',
-	'right-globalunblock' => '{{doc-right}}',
-	'right-globalblock-whitelist' => '{{doc-right}}',
-	'right-globalblock-exempt' => '{{doc-right}}',
+	'right-globalblock' => '{{doc-right|globalblock}}',
+	'right-globalunblock' => '{{doc-right|globalunblock}}',
+	'right-globalblock-whitelist' => '{{doc-right|globalblock-whitelist}}',
+	'right-globalblock-exempt' => '{{doc-right|globalblock-exempt}}',
 );
 
 /** Afrikaans (Afrikaans)
@@ -1861,8 +1861,9 @@ Beachten Sie, dass Sie keinen Benutzernamen eingeben dürfen!',
 [[Special:GlobalBlockList|Zurück zur Liste der globalen Sperre]].',
 	'globalblocking-whitelist-errors' => 'Ihre Änderung des lokalen Status einer globalen Sperre war nicht erfolgreich. {{PLURAL:$1|Grund|Gründe}}:',
 	'globalblocking-whitelist-intro' => 'Sie können mit diesem Formular den lokalen Status einer globalen Sperre ändern. Wenn eine globale Sperre in dem Wiki deaktiviert wurde, können Seiten über die entsprechende IP-Adresse normal bearbeitet werden. [[Special:GlobalBlockList|Klicken Sie hier]], um zur Liste der globalen Sperren zurückzukehren.',
-	'globalblocking-blocked' => "Ihre IP-Adresse wurde von '''$1''' ''($2)'' für alle Wikis gesperrt.
-Als Begründung wurde ''„$3“'' angegeben. Die Sperre ''$4''.",
+	'globalblocking-blocked' => "Ihre IP-Adresse $5 wurde von '''$1''' ''($2)'' für alle Wikis gesperrt.
+Als Begründung wurde ''„$3“'' angegeben. 
+Die Sperre ''$4''.",
 	'globalblocking-blocked-nopassreset' => 'Sie können kein Passwort eines Benutzers zurücksetzen, da Sie global gesperrt wurden.',
 );
 
