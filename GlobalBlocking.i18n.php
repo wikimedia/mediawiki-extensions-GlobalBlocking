@@ -1475,9 +1475,9 @@ així que l'estat local dels bloquejos globals no pot ser modificat.",
 	'globalblocking-whitelist-intro' => "Podeu fer servir aquest formulari per a editar l'estat local d'un bloqueig global.
 Si un bloqueig global està desactivat en aquest wiki, els usuaris de l'adreça IP afectada podran editar normalment.
 [[Special:GlobalBlockList|Retorna a la llista de bloqueigs globals]].",
-	'globalblocking-blocked' => "La vostra adreça IP ha estat blocada en tots els wikis per l'usuari '''$1''' (''$2'').
-El motiu donat és: «''$3''».
-El bloqueig té la data d'expiració següent: ''$4''.",
+	'globalblocking-blocked' => "La vostra adreça IP $5 ha estat blocada en tots els wikis per l'usuari '''$1''' (''$2'').
+El motiu donat és: $3.
+Aquest blocatge té la data d'expiració següent: ''$4''.",
 	'globalblocking-blocked-nopassreset' => "No podeu reinicialitzar les contrasenyes d'usuari perquè estau bloquejat globalment.",
 	'globalblocking-logpage' => 'Registre de bloquejos globals',
 	'globalblocking-logpagetext' => "Això és un registre dels bloquejos globals que s'han fet o s'han eliminat en aquest wiki.
