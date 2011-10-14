@@ -1,6 +1,6 @@
 <?php
 
-/*
+/**
  * Created on Nov 1, 2008
  *
  * GlobalBlocking extension
@@ -191,7 +191,7 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 			)
 		);
 	}
-	
+
 	protected function getDB() {
 		return GlobalBlocking::getGlobalBlockingSlave();
 	}
@@ -213,7 +213,7 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 	public function getDescription() {
 		return 'List all globally blocked IP addresses.';
 	}
-	
+
 	public function getPossibleErrors() {
 		return array_merge( parent::getPossibleErrors(), array(
 			array ( 'code' => 'cidrtoobroad', 'info' => 'CIDR ranges broader than /16 are not accepted' ),
