@@ -181,7 +181,7 @@ class SpecialGlobalBlock extends SpecialPage {
 		$fields = array();
 
 		// Who to block
-		$fields['ipaddress'] =
+		$fields['globalblocking-ipaddress'] =
 			Xml::input( 'wpAddress',
 				45,
 				$this->mAddress,
@@ -246,7 +246,7 @@ class SpecialGlobalBlock extends SpecialPage {
 		// Block all users, or just anonymous ones
 		$fields['globalblocking-block-options'] =
 			Xml::checkLabel(
-				wfMsg( 'ipbanononly' ),
+				wfMsg( 'globalblocking-ipbanononly' ),
 				'wpAnonOnly',
 				'mw-globalblock-anon-only',
 				$this->mAnonOnly
