@@ -171,6 +171,8 @@ For more information about Global Blocking, see http://www.mediawiki.org/wiki/Gl
 {{Identical/Expiry}}',
 	'globalblocking-block-expiry-otherfield' => '{{Identical|Other time}}',
 	'globalblocking-block-options' => '{{Identical|Options}}',
+	'globalblocking-ipaddress' => 'Form label for ip-address',
+	'globalblocking-ipbanononly' => 'Label for checkbox to block anonymouse users only.',
 	'globalblocking-block-errors' => "The first line of the error message shown on [[Special:GlobalBlock]] (see [[mw:Extension:GlobalBlocking]]) if the block has been unsuccessful. After this message, a list of specific errors is shown (see [[Special:Prefixindex/MediaWiki:Globalblocking-block-bigrange|globalblocking-block-bigrange]], [[Special:Prefixindex/MediaWiki:Globalblocking-block-expiryinvalid|globalblocking-block-expiryinvalid]] etc.).
 
 * $1 – the ''number'' of errors (not the errors themselves)",
