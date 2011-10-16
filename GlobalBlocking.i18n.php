@@ -1180,6 +1180,8 @@ $messages['br'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Amzervezh all :',
 	'globalblocking-block-legend' => "Stankañ ur chomlec'h IP en un doare hollek",
 	'globalblocking-block-options' => 'Dibarzhioù :',
+	'globalblocking-ipaddress' => "Chomlec'h IP :",
+	'globalblocking-ipbanononly' => 'Stankañ an implijerien dizanv hepken',
 	'globalblocking-block-errors' => "C'hwitet eo ar stankadenn evit an {{PLURAL:$1|abeg|abegoù}} da-heul :",
 	'globalblocking-block-ipinvalid' => "Direizh eo ar chomlec'h IP lakaet ($1).
 Bezit war evezh, n'hallit ket lakaat anv un implijer !",
@@ -1721,6 +1723,7 @@ Blokeringen ''\$4''.",
 /** German (Deutsch)
  * @author DaSch
  * @author Imre
+ * @author Kghbln
  * @author Lukas9950
  * @author MF-Warburg
  * @author Metalhead64
@@ -1746,6 +1749,8 @@ $messages['de'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Andere Dauer (englisch):',
 	'globalblocking-block-legend' => 'IP-Adresse global sperren',
 	'globalblocking-block-options' => 'Optionen:',
+	'globalblocking-ipaddress' => 'IP-Adresse:',
+	'globalblocking-ipbanononly' => 'Nur anonyme Benutzer sperren',
 	'globalblocking-block-errors' => 'Die Sperre war nicht erfolgreich. {{PLURAL:$1|Grund|Gründe}}:',
 	'globalblocking-block-ipinvalid' => 'Du hast eine ungültige IP-Adresse ($1) eingegeben.
 Beachte, dass du keinen Benutzernamen eingeben darfst!',
@@ -2880,6 +2885,8 @@ $messages['fr'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Autre durée :',
 	'globalblocking-block-legend' => 'Bloquer globalement une adresse IP',
 	'globalblocking-block-options' => 'Options :',
+	'globalblocking-ipaddress' => 'Adresse IP :',
+	'globalblocking-ipbanononly' => 'Bloquer uniquement les utilisateurs anonymes',
 	'globalblocking-block-errors' => 'Le blocage a échoué pour {{PLURAL:$1|la raison suivante|les raisons suivantes}} :',
 	'globalblocking-block-ipinvalid' => 'L’adresse IP ($1) que vous avez entrée est incorrecte.
 Veuillez noter que vous ne pouvez pas inscrire un nom d’utilisateur !',
@@ -2995,6 +3002,8 @@ $messages['frp'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Ôtro temps :',
 	'globalblocking-block-legend' => 'Blocar dens l’ensemblo una adrèce IP',
 	'globalblocking-block-options' => 'Chouèx :',
+	'globalblocking-ipaddress' => 'Adrèce IP :',
+	'globalblocking-ipbanononly' => 'Blocar ren que los utilisators pas encartâs',
 	'globalblocking-block-errors' => 'Lo blocâjo at pas reussi por {{PLURAL:$1|ceta rêson|cetes rêsons}} :',
 	'globalblocking-block-ipinvalid' => 'L’adrèce IP ($1) que vos éd buchiê est fôssa.
 Volyéd notar que vos pouede pas buchiér un nom d’utilisator !',
@@ -3127,6 +3136,8 @@ $messages['gl'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Outro período de tempo:',
 	'globalblocking-block-legend' => 'Bloquear un enderezo IP globalmente',
 	'globalblocking-block-options' => 'Opcións:',
+	'globalblocking-ipaddress' => 'Enderezo IP:',
+	'globalblocking-ipbanononly' => 'Bloquear só os usuarios anónimos',
 	'globalblocking-block-errors' => 'O seu bloqueo non puido levarse a cabo {{PLURAL:$1|pola seguinte razón|polas seguintes razóns}}:',
 	'globalblocking-block-ipinvalid' => 'O enderezo IP ($1) que tecleou é inválido.
 Por favor, decátese de que non pode teclear un nome de usuario!',
@@ -3240,6 +3251,7 @@ $messages['grc'] = array(
 );
 
 /** Swiss German (Alemannisch)
+ * @author Als-Chlämens
  * @author Als-Holder
  */
 $messages['gsw'] = array(
@@ -3260,6 +3272,8 @@ $messages['gsw'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Anderi Duur (änglisch):',
 	'globalblocking-block-legend' => 'E IP-Adräss  wältwyt sperre',
 	'globalblocking-block-options' => 'Optione:',
+	'globalblocking-ipaddress' => 'IP-Addräss:',
+	'globalblocking-ipbanononly' => 'Nume anonymi Benutzer sperre',
 	'globalblocking-block-errors' => 'D Sperri isch nit erfolgryych gsi. {{PLURAL:$1|Grund|Grind}}:',
 	'globalblocking-block-ipinvalid' => 'Du hesch e uugiltigi IP-Adräss ($1) yygee.
 Obacht, Du chasch kei Benutzername yygee!',
@@ -3401,6 +3415,8 @@ $messages['he'] = array(
 	'globalblocking-block-expiry-otherfield' => 'זמן אחר:',
 	'globalblocking-block-legend' => 'חסימה גלובלית של כתובת IP',
 	'globalblocking-block-options' => 'אפשרויות:',
+	'globalblocking-ipaddress' => 'כתובת IP:',
+	'globalblocking-ipbanononly' => 'לחסום משתמשים אלמוניים בלבד',
 	'globalblocking-block-errors' => 'החסימה נכשלה בגלל {{PLURAL:$1|הסיבה הבאה|הסיבות הבאות}}:',
 	'globalblocking-block-ipinvalid' => 'כתובת ה־IP שהקלדתם ($1) אינה תקינה.
 שימו לב שאין באפשרותכם להכניס שם משתמש!',
@@ -3999,6 +4015,8 @@ $messages['ia'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Altere duration:',
 	'globalblocking-block-legend' => 'Blocar un adresse IP globalmente',
 	'globalblocking-block-options' => 'Optiones:',
+	'globalblocking-ipaddress' => 'Adresse IP:',
+	'globalblocking-ipbanononly' => 'Blocar solmente usatores anonyme',
 	'globalblocking-block-errors' => 'Tu blocada non ha succedite, pro le sequente {{PLURAL:$1|motivo|motivos}}:',
 	'globalblocking-block-ipinvalid' => 'Le adresse IP ($1) que tu entrava es invalide.
 Per favor nota que tu non pote entrar un nomine de usator!',
@@ -4896,6 +4914,7 @@ $messages['ksh'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Ander Dooer (op änglesch):',
 	'globalblocking-block-legend' => 'Don en <i lang="en">IP</i>-Addräß en alle Wikis sperre',
 	'globalblocking-block-options' => 'Enstellunge:',
+	'globalblocking-ipaddress' => 'De <i lang="en">IP</i>-Adräß:',
 	'globalblocking-block-errors' => 'Dat Sperre hät nit jeklapp.
 {{PLURAL:$1|Der Jrond:|De Jrönd:|Woröm, wesse mer nit.}}',
 	'globalblocking-block-ipinvalid' => 'Do häs en kapodde IP-Address ($1) aanjejovve.
@@ -5163,6 +5182,8 @@ $messages['li'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Angere tied:',
 	'globalblocking-block-legend' => 'Dit IP-adres globaal blokkere',
 	'globalblocking-block-options' => 'Opties:',
+	'globalblocking-ipaddress' => 'IP-adres:',
+	'globalblocking-ipbanononly' => 'Blokkeer allein anoniem gebroekers',
 	'globalblocking-block-errors' => 'De blókkaasj is neet ingesteldj om de volgendje {{PLURAL:$1|reeje|reeje}}:',
 	'globalblocking-block-ipinvalid' => "'t IP-adres ($1) det se höbs opgegaeve is neet zjuus.
 Lèt óp: de kins geine gebroekersnaam opgaeve!",
@@ -5392,6 +5413,8 @@ $messages['mk'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Друго време:',
 	'globalblocking-block-legend' => 'Глобално блокирање на IP-адреса',
 	'globalblocking-block-options' => 'Нагодувања:',
+	'globalblocking-ipaddress' => 'IP-адреса:',
+	'globalblocking-ipbanononly' => 'Блокирај само анонимни корисници',
 	'globalblocking-block-errors' => 'Вашето блокирање беше неуспешно, од {{PLURAL:$1|следнава причина|следниве причини}}:',
 	'globalblocking-block-ipinvalid' => 'IP-адресата ($1) која ја внесовте не е важечка.
 Напомена: не може да се внесува корисничко име!',
@@ -5707,6 +5730,8 @@ $messages['ms'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Waktu lain:',
 	'globalblocking-block-legend' => 'Sekat alamat IP di semua wiki',
 	'globalblocking-block-options' => 'Pilihan:',
+	'globalblocking-ipaddress' => 'Alamat IP:',
+	'globalblocking-ipbanononly' => 'Sekat pengguna tanpa nama sahaja',
 	'globalblocking-block-errors' => 'Sekatan anda tidak dapat dilakukan kerana {{PLURAL:$1|sebab|sebab-sebab}} berikut:',
 	'globalblocking-block-ipinvalid' => 'Alamat IP tersebut ($1) tidak sah.
 Sila ambil perhatian bahawa anda tidak boleh menyatakan nama pengguna!',
@@ -5968,6 +5993,8 @@ $messages['nl'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Andere tijd:',
 	'globalblocking-block-legend' => 'Een IP-adres globaal blokkeren',
 	'globalblocking-block-options' => 'Opties:',
+	'globalblocking-ipaddress' => 'IP-adres:',
+	'globalblocking-ipbanononly' => 'Alleen anonieme gebruikers blokkeren',
 	'globalblocking-block-errors' => 'De blokkade is niet ingesteld om de volgende {{PLURAL:$1|reden|redenen}}:',
 	'globalblocking-block-ipinvalid' => 'Het IP-adres ($1) dat u hebt opgegeven is onjuist.
 Let op: u kunt geen gebruikersnaam opgeven!',
@@ -8058,6 +8085,8 @@ $messages['sl'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Drugačen čas:',
 	'globalblocking-block-legend' => 'Blokiraj IP-naslov globalno',
 	'globalblocking-block-options' => 'Možnosti:',
+	'globalblocking-ipaddress' => 'IP-naslov:',
+	'globalblocking-ipbanononly' => 'Blokiraj samo brezimne uporabnike',
 	'globalblocking-block-errors' => 'Vaša blokada je bila neuspešna zaradi {{PLURAL:$1|naslednjega razloga|naslednjih razlogov}}:',
 	'globalblocking-block-ipinvalid' => 'Vnesen IP-naslov ($1) ni veljaven.
 Prosimo, upoštevajte, da ne morete vnesti uporabniškega imena!',
@@ -9578,6 +9607,8 @@ $messages['vi'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Thời hạn khác:',
 	'globalblocking-block-legend' => 'Cấm địa chỉ IP trên toàn hệ thống',
 	'globalblocking-block-options' => 'Tùy chọn:',
+	'globalblocking-ipaddress' => 'Địa chỉ IP:',
+	'globalblocking-ipbanononly' => 'Chỉ cấm người dùng vô danh',
 	'globalblocking-block-errors' => 'Cấm không thành công vì {{PLURAL:$1||các}} lý do sau:',
 	'globalblocking-block-ipinvalid' => 'Bạn đã nhập địa chỉ IP ($1) không hợp lệ.
 Xin chú ý rằng không thể nhập một tên người dùng!',
