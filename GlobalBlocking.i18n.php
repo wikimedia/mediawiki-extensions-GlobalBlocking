@@ -385,6 +385,7 @@ $messages['an'] = array(
 /** Arabic (العربية)
  * @author Aiman titi
  * @author Alnokta
+ * @author AwamerT
  * @author Loya
  * @author Meno25
  * @author OsamaK
@@ -407,6 +408,8 @@ $messages['ar'] = array(
 	'globalblocking-block-expiry-otherfield' => 'وقت آخر:',
 	'globalblocking-block-legend' => 'منع عنوان أيبي منعا عاما',
 	'globalblocking-block-options' => 'خيارات:',
+	'globalblocking-ipaddress' => 'عنوان الأيبي:',
+	'globalblocking-ipbanononly' => 'امنع المستخدمين المجهولين فقط',
 	'globalblocking-block-errors' => 'منعك كان غير ناجح، {{PLURAL:$1|للسبب التالي|للأسباب التالية}}:',
 	'globalblocking-block-ipinvalid' => 'عنوان الأيبي ($1) الذي أدخلته غير صحيح.
 من فضلك لاحظ أنه لا يمكنك إدخال اسم مستخدم!',
@@ -469,7 +472,7 @@ $messages['ar'] = array(
 	'globalblocking-whitelist-errors' => 'تغييرك للحالة المحلية للمنع العام لم يكن ناجحا، {{PLURAL:$1|للسبب التالي|للأسباب التالية}}:',
 	'globalblocking-whitelist-intro' => 'يمكنك استخدام هذه الاستمارة لتعديل الحالة المحلية لمنع عام. لو أن منعا عاما تم تعطيله في هذا الويكي، المستخدمون على عنوان الأيبي المتأثر سيمكنهم التعديل بشكل طبيعي.
 [[Special:GlobalBlockList|رجوع إلى قائمة المنع العامة]].',
-	'globalblocking-blocked' => "عنوان الأيبي الخاص بك تم منعه على كل الويكيات بواسطة '''\$1''' (''\$2'').
+	'globalblocking-blocked' => "عنوان الأيبي الخاص بك \$5 تم منعه على كل الويكيات بواسطة '''\$1''' (''\$2'').
 السبب المعطى كان ''\"\$3\"''. المنع ''\$4''.",
 	'globalblocking-blocked-nopassreset' => 'لا يمكنك إعادة ضبط كلمات سر المستخدم لأنك ممنوع منعا عاما.',
 	'globalblocking-logpage' => 'سجل المنع العام',
@@ -886,6 +889,8 @@ $messages['be-tarask'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Іншы тэрмін:',
 	'globalblocking-block-legend' => 'Глябальнае блякаваньне IP-адрасу',
 	'globalblocking-block-options' => 'Налады:',
+	'globalblocking-ipaddress' => 'IP-адрас:',
+	'globalblocking-ipbanononly' => 'Блякаваць толькі ананімаў',
 	'globalblocking-block-errors' => 'Блякаваньне не адбылося па {{PLURAL:$1|наступнай прычыне|наступных прычынах}}:',
 	'globalblocking-block-ipinvalid' => 'Уведзены Вамі ІР-адрас ($1) — няслушны.
 Калі ласка, зьвярніце ўвагу, што Вы ня можаце ўводзіць імя ўдзельніка!',
@@ -1551,6 +1556,8 @@ $messages['cs'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Jiný čas vypršení:',
 	'globalblocking-block-legend' => 'Globálně zablokovat IP adresu',
 	'globalblocking-block-options' => 'Možnosti:',
+	'globalblocking-ipaddress' => 'IP adresa:',
+	'globalblocking-ipbanononly' => 'Zablokovat pouze anonymní uživatele',
 	'globalblocking-block-errors' => 'Blokování se {{PLURAL:$1|z následujícího důvodu|z následujících důvodů}} nezdařilo:',
 	'globalblocking-block-ipinvalid' => 'Vámi zadaná IP adresa ($1) je neplatná.
 Uvědomte si, že nemůžete zadat uživatelské jméno!',
@@ -4109,6 +4116,7 @@ Le registro de blocadas es fornite ci infra pro referentia:',
 );
 
 /** Indonesian (Bahasa Indonesia)
+ * @author Aldnonymous
  * @author Anakmalaysia
  * @author Bennylin
  * @author Irwangatot
@@ -4134,6 +4142,8 @@ $messages['id'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Waktu lain:',
 	'globalblocking-block-legend' => 'Blokir suatu alamat IP secara global',
 	'globalblocking-block-options' => 'Pilihan:',
+	'globalblocking-ipaddress' => 'Alamat IP:',
+	'globalblocking-ipbanononly' => 'Hanya blokir pengguna anonim',
 	'globalblocking-block-errors' => 'Pemblokiran tidak berhasil, atas {{PLURAL:$1|alasan|alasan-alasan}} berikut:',
 	'globalblocking-block-ipinvalid' => 'Anda memasukkan alamat IP ($1) yang tidak sah.
 Ingat, Anda tidak dapat memasukkan nama pengguna!',
@@ -6588,6 +6598,8 @@ $messages['pl'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Inny czas blokady',
 	'globalblocking-block-legend' => 'Zablokuj globalnie adres IP',
 	'globalblocking-block-options' => 'Opcje:',
+	'globalblocking-ipaddress' => 'Adres IP',
+	'globalblocking-ipbanononly' => 'Blokuj wyłącznie niezalogowanych użytkowników',
 	'globalblocking-block-errors' => 'Zablokowanie nie powiodło się z {{PLURAL:$1|następującego powodu|następujących powodów}}:',
 	'globalblocking-block-ipinvalid' => 'Wprowadzony przez Ciebie adres IP ($1) jest nieprawidłowy.
 Zwróć uwagę na to, że nie możesz wprowadzić nazwy użytkownika!',
