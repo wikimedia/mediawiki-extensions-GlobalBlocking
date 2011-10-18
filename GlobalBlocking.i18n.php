@@ -5077,6 +5077,7 @@ $messages['lb'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Aner Dauer:',
 	'globalblocking-block-legend' => 'Eng IP-Adress global spären',
 	'globalblocking-block-options' => 'Optiounen:',
+	'globalblocking-ipaddress' => 'IP-Adress:',
 	'globalblocking-block-errors' => "D'Spär huet net fonctionnéiert, aus {{PLURAL:$1|dësem Grond|dëse Grënn}}:",
 	'globalblocking-block-ipinvalid' => 'Dir hutt eng ongëlteg IP-Adress ($1) aginn.
 Denkt w.e.g. drun datt Dir och e Benotzernumm agi kënnt!',
@@ -7459,6 +7460,8 @@ $messages['ru'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Другое время:',
 	'globalblocking-block-legend' => 'Глобальная блокировка участника',
 	'globalblocking-block-options' => 'Настройки:',
+	'globalblocking-ipaddress' => 'IP-адрес:',
+	'globalblocking-ipbanononly' => 'Блокировать только анонимных участников',
 	'globalblocking-block-errors' => 'Блокировка неудачна. {{PLURAL:$1|Причина|Причины}}:
 $1',
 	'globalblocking-block-ipinvalid' => 'Введённый вами IP-адрес ($1) ошибочен.
