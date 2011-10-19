@@ -6938,8 +6938,10 @@ $messages['ps'] = array(
 	'globalblocking-block-expiry' => 'د پای نېټه:',
 	'globalblocking-block-expiry-otherfield' => 'بل وخت:',
 	'globalblocking-block-options' => 'خوښنې:',
+	'globalblocking-ipaddress' => 'IP پته:',
 	'globalblocking-search-ip' => 'IP پته:',
 	'globalblocking-search-submit' => 'د بنديزونو لپاره پلټل',
+	'globalblocking-list-expiry' => 'پای نېټه $1',
 	'globalblocking-list-anononly' => 'يوازې ورکنومی',
 	'globalblocking-list-unblock' => 'غورځول',
 	'globalblocking-list-whitelist' => 'سيمه ايز دريځ',
@@ -6952,6 +6954,7 @@ $messages['ps'] = array(
 	'globalblocking-whitelist-reason' => 'سبب:',
 	'globalblocking-whitelist-status' => 'سيمه ايز دريځ:',
 	'globalblocking-whitelist-submit' => 'سيمه ايز دريځ بدلول',
+	'globalblocking-logentry-expiry' => 'پای نېټه $1',
 );
 
 /** Portuguese (Português)
