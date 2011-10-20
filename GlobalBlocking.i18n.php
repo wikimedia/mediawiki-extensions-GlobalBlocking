@@ -5544,6 +5544,8 @@ $messages['ml'] = array(
 	'globalblocking-block-expiry-otherfield' => 'മറ്റ് കാലാവധി:',
 	'globalblocking-block-legend' => 'ഒരു ഐ.പി. വിലാസത്തെ ആഗോളമായി തടയുക',
 	'globalblocking-block-options' => 'ഐച്ഛികങ്ങൾ:',
+	'globalblocking-ipaddress' => 'ഐ.പി. വിലാസം:',
+	'globalblocking-ipbanononly' => 'അജ്ഞാത ഉപയോക്താക്കളെ മാത്രം തടയുക',
 	'globalblocking-block-errors' => 'താഴെ പറയുന്ന {{PLURAL:$1|കാരണത്താൽ|കാരണങ്ങളാൽ}} തടയൽ പരാജയപ്പെട്ടു:',
 	'globalblocking-block-ipinvalid' => 'താങ്കൾ കൊടുത്ത ഐ.പി. വിലാസം ($1) അസാധുവാണ്‌. 
 താങ്കൾക്കു ഇവിടെ ഒരു ഉപയോക്തൃനാമം കൊടുക്കുവാൻ പറ്റില്ല എന്നതു പ്രത്യേകം ശ്രദ്ധിക്കുക.',
@@ -8342,6 +8344,7 @@ $messages['sr-ec'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Друго време:',
 	'globalblocking-block-legend' => 'Глобално блокирање IP адресе',
 	'globalblocking-block-options' => 'Опције:',
+	'globalblocking-ipaddress' => 'ИП адреса:',
 	'globalblocking-block-errors' => 'Блок није успешан због {{PLURAL:$1|следеђег разлога|следећих разлога}}:',
 	'globalblocking-block-ipinvalid' => 'ИП адреса ($1) коју сте унели није добра.
 Запамтите да не можете унети корисничко име!',
@@ -8352,7 +8355,9 @@ $messages['sr-ec'] = array(
 	'globalblocking-modify-success' => 'Глобални блок на $1 је успешно промењен',
 	'globalblocking-block-successsub' => 'Успешан глобални блок',
 	'globalblocking-modify-successsub' => 'Глобални блок је успешно промењен',
-	'globalblocking-block-alreadyblocked' => 'ИП адреса $1 је већ блокирана глобално. Можете погледати списак постојећих [[Special:GlobalBlockList|глобалних блокова]].',
+	'globalblocking-block-alreadyblocked' => 'ИП адреса $1 је већ глобално блокирана.
+Можете погледати списак постојећих [[Special:GlobalBlockList|глобалних блокирања]],
+или пак изменити поставке постојеће блокаде тако што ћете поново поднети овај образац.',
 	'globalblocking-block-bigrange' => 'Наведени опсег ($1) је превелик да би био блокиран.
 Можете блокирати највише 65.536 адреса (/16 опсези)',
 	'globalblocking-list' => 'Списак глобално блокираних ИП адреса',
@@ -8384,9 +8389,9 @@ $messages['sr-ec'] = array(
 	'globalblocking-whitelist-reason' => 'Разлог:',
 	'globalblocking-whitelist-status' => 'Локални статус:',
 	'globalblocking-whitelist-submit' => 'Промени локални статус',
-	'globalblocking-blocked' => "Ваша IP адреса је блокирана на свим викијима од стране {{GENDER:$1|корисника|кориснице|корисника}} '''$1''' (''$2'').
-Разлог за блокирање: ''$3''. 
-Трајање: ''$4''.",
+	'globalblocking-blocked' => "Ваша ИП адреса \$5 је блокирана на свим викијима од '''\$1''' (''\$2'').
+Наведени разлог гласи: „''\"\$3\"''“.
+Блокада ''\$4''.",
 	'globalblocking-logpage' => 'Историја глобалних блокова',
 	'globalblocking-block-logentry' => 'глобално блокирао [[$1]] са временом истицања од $2',
 	'globalblocking-block2-logentry' => 'глобално блокиран [[$1]] ($2)',
