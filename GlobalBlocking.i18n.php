@@ -5078,6 +5078,7 @@ $messages['lb'] = array(
 	'globalblocking-block-legend' => 'Eng IP-Adress global spären',
 	'globalblocking-block-options' => 'Optiounen:',
 	'globalblocking-ipaddress' => 'IP-Adress:',
+	'globalblocking-ipbanononly' => 'Nëmmen anonym Benotzer spären',
 	'globalblocking-block-errors' => "D'Spär huet net fonctionnéiert, aus {{PLURAL:$1|dësem Grond|dëse Grënn}}:",
 	'globalblocking-block-ipinvalid' => 'Dir hutt eng ongëlteg IP-Adress ($1) aginn.
 Denkt w.e.g. drun datt Dir och e Benotzernumm agi kënnt!',
