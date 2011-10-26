@@ -4927,6 +4927,7 @@ $messages['ksh'] = array(
 	'globalblocking-block-legend' => 'Don en <i lang="en">IP</i>-Addräß en alle Wikis sperre',
 	'globalblocking-block-options' => 'Enstellunge:',
 	'globalblocking-ipaddress' => 'De <i lang="en">IP</i>-Adräß:',
+	'globalblocking-ipbanononly' => 'Bloß de Namelose sperre',
 	'globalblocking-block-errors' => 'Dat Sperre hät nit jeklapp.
 {{PLURAL:$1|Der Jrond:|De Jrönd:|Woröm, wesse mer nit.}}',
 	'globalblocking-block-ipinvalid' => 'Do häs en kapodde IP-Address ($1) aanjejovve.
@@ -9219,6 +9220,7 @@ Ibinigay sa ibaba ang talaan ng paghadlang upang masangguni:',
 );
 
 /** Turkish (Türkçe)
+ * @author Emperyan
  * @author Homonihilis
  * @author Joseph
  * @author Runningfridgesrule
@@ -9242,6 +9244,7 @@ $messages['tr'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Diğer zaman:',
 	'globalblocking-block-legend' => 'Bir IP adresini küresel olarak engelle',
 	'globalblocking-block-options' => 'Seçenekler:',
+	'globalblocking-ipaddress' => 'IP adresi:',
 	'globalblocking-block-errors' => 'Engelleme başarısız, şu {{PLURAL:$1|sebepten|sebeplerden}} dolayı:',
 	'globalblocking-block-ipinvalid' => 'Girdiğiniz IP addresi ($1) geçersiz.
 Lütfen bir kullanıcı adı giremeyeceğinizi unutmayın!',
