@@ -3726,6 +3726,8 @@ $messages['hsb'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Druhi čas:',
 	'globalblocking-block-legend' => 'IP-adresu globalnje blokować',
 	'globalblocking-block-options' => 'Opcije:',
+	'globalblocking-ipaddress' => 'IP-adresa:',
+	'globalblocking-ipbanononly' => 'Jenož anonymnych wužiwarjow blokować',
 	'globalblocking-block-errors' => 'Twoje blokowanje je ze {{PLURAL:$1|slědowaceje přičiny|slědowaceju přičinow|slědowacych přičinow|slědowacych přičinow}} njewuspěšne było:',
 	'globalblocking-block-ipinvalid' => 'IP-adresa ($1), kotruž sy zapodał, je njepłaćiwa.
 Prošu dźiwaj na to, zo njesměš wužiwarske mjeno zapodać!',
@@ -3790,7 +3792,7 @@ tohodla lokalny status globalnych blokowanjow njeda so změnić.',
 	'globalblocking-whitelist-intro' => 'Móžeš tutón formular wužiwać, zo by lokalny status globalneho blokowanja wobdźěłał.
 Jeli je globalne blokowanje na tutym wikiju znjemóžnjene, móža wužiwarjo z wotpowědnej IP-adresu normalnje wobdźěłać.
 [[Special:GlobalBlockList|Wróćo k lisćinje globalnych blokowanjow]].',
-	'globalblocking-blocked' => "Twoja IP-adresa bu na wšěch wikijach wot '''\$1''' (''\$2'') zablokowana.
+	'globalblocking-blocked' => "Twoja IP-adresa \$5 bu na wšěch wikijach wot '''\$1''' (''\$2'') zablokowana.
 Podata přičina bě ''\"\$3\"''.
 Blokowanje ''\$4''.",
 	'globalblocking-blocked-nopassreset' => 'Njemóžeš hesła wužiwarja cofnyć, dokelž sy globalnje blokowany.',
