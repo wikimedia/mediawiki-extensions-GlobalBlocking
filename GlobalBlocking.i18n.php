@@ -1649,13 +1649,59 @@ Zde je pro přehled zobrazen výpis z knihy zablokování:',
 
 /** Welsh (Cymraeg)
  * @author Lloffiwr
+ * @author Pwyll
  */
 $messages['cy'] = array(
+	'globalblocking-desc' => 'Yn [[Special:GlobalBlock|galluogi]] cyfeiriadau IP i gael eu [[Special:GlobalBlockList|blocio ar sawl wici gwahanol]]',
+	'globalblocking-block' => 'Blocio cyfeiriad IP yn fyd-eang',
+	'globalblocking-modify-intro' => "Gallwch ddefnyddio'r ffurflen hon i newid gosodiadau bloc byd-eang.",
+	'globalblocking-block-intro' => "Gallwch ddefnyddio'r dudalen hon i flocio cyfeiriad IP ar bob wici.",
 	'globalblocking-block-reason' => 'Rheswm:',
+	'globalblocking-block-otherreason' => 'Rheswm arall/ychwanegol:',
 	'globalblocking-block-reasonotherlist' => 'Rheswm arall',
+	'globalblocking-block-reason-dropdown' => '* Rhesymau cyffredin dros flocio
+** Spamio trawswici
+** Camddefnydd trawswici
+** Fandaliaeth',
+	'globalblocking-block-edit-dropdown' => 'Golygu rhesymau dros flocio',
 	'globalblocking-block-expiry' => 'I ddod i ben am/wedi:',
+	'globalblocking-block-expiry-other' => 'Amser darfod gwahanol',
 	'globalblocking-block-expiry-otherfield' => 'Cyfnod arall:',
+	'globalblocking-block-legend' => 'Blocio cyfeiriad IP yn fyd-eang',
 	'globalblocking-block-options' => 'Dewisiadau:',
+	'globalblocking-ipaddress' => 'Cyfeiriad IP:',
+	'globalblocking-ipbanononly' => 'Blocio defnyddwyr anhysbys yn unig',
+	'globalblocking-block-errors' => 'Roedd eich bloc yn aflwyddiannus, oherwydd y {{PLURAL:$1|rheswm|rhesymau}} canlynol:',
+	'globalblocking-block-ipinvalid' => "Mae'r cyfeiriad IP ($1) a nodwyd gennych yn annilys.
+Noder nad oes modd defnyddio enw defnyddiwr os gwelwch yn dda!",
+	'globalblocking-block-submit' => "Blocio'r cyfeiriad IP hwn yn fyd-eang",
+	'globalblocking-modify-submit' => "Addasu'r bloc byd-eang hwn",
+	'globalblocking-block-success' => "Mae cyfeiriad IP $1 wedi'i flocio'n llwyddiannus ar bob prosiect.",
+	'globalblocking-modify-success' => "Mae'r bloc byd-eang ar $1 wedi'i addasu'n llwyddiannus.",
+	'globalblocking-block-successsub' => 'Bloc byd-eang llwyddiannus',
+	'globalblocking-modify-successsub' => 'Addaswyd y bloc byd-eang yn llwyddiannus',
+	'globalblocking-block-alreadyblocked' => "Mae'r cyfeiriad IP $1 wedi'i flocio'n fyd-eang eisoes.
+Gallwch weld y bloc sy'n bodoli eisoes ar [[Special:GlobalBlockList|y rhestr o flociau byd-eang]], neu addasu gosodiadau y bloc hwnnw trwy ail-gyflwyno'r ffurflen hon.",
+	'globalblocking-block-bigrange' => "Mae'r ystod a nodwyd gennych ($1) yn rhy fawr i'w flocio.
+Gallwch flocio uchafswm o 65,536 o gyfeiriadau (/ystod)",
+	'globalblocking-list-intro' => "Dyma restr o'r holl flociau byd-eang sy'n weithredol ar hyn o bryd.
+Nodir rhai blociau fel rhai a analluwyd yn lleol: golyga hyn eu bod yn weithredol ar safleoedd eraill, ond bod gweinyddwr lleol wedi penderfynu eu analluogi ar y wici hwn.",
+	'globalblocking-list' => 'Rhestr o gyfeiriadau IP a flociwyd yn fyd-eang',
+	'globalblocking-search-legend' => 'Chwilio am floc byd-eang',
+	'globalblocking-search-ip' => 'Cyfeiriad IP:',
+	'globalblocking-search-submit' => 'Chwilio am flociau',
+	'globalblocking-list-ipinvalid' => "Mae'r cyfeiriad IP roeddech wedi chwilio amdano ($1) yn annilys.
+Nodwch gyfeiriad IP dilys os gwelwch yn dda.",
+	'globalblocking-search-errors' => 'Roedd eich chwiliad yn aflwyddiannus, am y {{PLURAL:$1|rheswm|rhesymau}} canlynol:',
+	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') blociwyd yn fyd-eang [[Special:Contributions/\$4|\$4]] ''(\$5)''",
+	'globalblocking-list-expiry' => 'yn dod i ben am $1',
+	'globalblocking-list-anononly' => 'anhysbys yn unig',
+	'globalblocking-list-unblock' => 'tynnu',
+	'globalblocking-list-whitelisted' => 'analluogwyd yn lleol gan $1, $2',
+	'globalblocking-list-whitelist' => 'statws lleol',
+	'globalblocking-list-modify' => 'addasu',
+	'globalblocking-list-noresults' => "Nid yw cyfeiriad IP yr ymholiad wedi'i rwystro.",
+	'globalblocking-goto-block' => 'Blocio cyfeiriad IP yn fyd-eang',
 	'globalblocking-unblock-reason' => 'Rheswm:',
 	'globalblocking-whitelist-legend' => 'Newid y statws lleol',
 	'globalblocking-whitelist-reason' => 'Rheswm:',
