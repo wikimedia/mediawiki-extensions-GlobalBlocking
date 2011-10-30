@@ -2676,6 +2676,7 @@ $messages['eu'] = array(
  * @author Ebraminio
  * @author Huji
  * @author Ladsgroup
+ * @author Leyth
  * @author Mardetanha
  * @author Sahim
  * @author Wayiran
@@ -2698,6 +2699,8 @@ $messages['fa'] = array(
 	'globalblocking-block-expiry-otherfield' => 'زمانی دیگر:',
 	'globalblocking-block-legend' => 'قطع دسترسی نشانی یک آی‌پی به صورت سراسری',
 	'globalblocking-block-options' => 'گزینه‌ها:',
+	'globalblocking-ipaddress' => 'نشانی آی‌پی:',
+	'globalblocking-ipbanononly' => 'فقط بستن کاربران گمنام',
 	'globalblocking-block-errors' => 'قطع دسترسی شما به این {{PLURAL:$1|دلیل|دلایل}} ناموفق بود:',
 	'globalblocking-block-ipinvalid' => 'نشانی آی‌پی که وارد کردید ($1) غیر مجاز است.
 توجه داشته باشید که شما نمی‌توانید یک نام کاربری را وارد کنید!',
@@ -4853,6 +4856,8 @@ $messages['ko'] = array(
 	'globalblocking-block-expiry-otherfield' => '다른 기간:',
 	'globalblocking-block-legend' => '특정 IP를 전체 위키에서 차단하기',
 	'globalblocking-block-options' => '설정:',
+	'globalblocking-ipaddress' => 'IP 주소:',
+	'globalblocking-ipbanononly' => '익명 사용자만 차단',
 	'globalblocking-block-errors' => '다음 {{PLURAL:$1|이유로|$1가지 이유로}} 인해 차단하는 데 실패하였습니다:',
 	'globalblocking-block-ipinvalid' => '당신이 입력한 IP 주소 ($1) 가 잘못되었습니다.
 계정 이름을 입력할 수 없다는 것을 알아 두시기 바랍니다!',
@@ -4917,7 +4922,7 @@ $messages['ko'] = array(
 	'globalblocking-whitelist-intro' => '이 양식을 통해 전체 차단의 로컬 상태를 바꿀 수 있습니다.
 전체 차단이 이 위키에서 비활성화되면 해당 IP 주소를 이용하는 사용자는 정상적으로 편집할 수 있게 됩니다.
 [[Special:GlobalBlockList|전체 차단 목록으로 돌아가기]].',
-	'globalblocking-blocked' => "당신은 '''\$1''' (''\$2'')에 의해 모든 위키에서 차단되었습니다.
+	'globalblocking-blocked' => "당신의 IP 주소 \$5는 '''\$1''' (''\$2'')에 의해 모든 위키에서 차단되었습니다.
 차단 사유는 \"\$3\"이며, 기한은 \"\$4\"입니다.",
 	'globalblocking-blocked-nopassreset' => '당신은 모든 위키에서 차단되었기 때문에 비밀번호를 바꿀 수 없습니다.',
 	'globalblocking-logpage' => '전체 위키 차단 기록',
@@ -5081,14 +5086,15 @@ Et {{int:blocklogpage}} es hee dronger opjeföhrt, do kanns De nohkike, wat wohr
 	'right-globalblock-exempt' => 'Jemeinsam Sperre ömjonn',
 );
 
-/** Kurdish (Latin) (Kurdî (Latin))
+/** Kurdish (Latin script) (‪Kurdî (latînî)‬)
  * @author George Animal
+ * @author Gomada
  */
 $messages['ku-latn'] = array(
 	'globalblocking-block-reason' => 'Sedem:',
 	'globalblocking-block-reasonotherlist' => 'Sedemekî din',
 	'globalblocking-block-expiry-otherfield' => 'Demeka din:',
-	'globalblocking-block-submit' => 'Vê IP yê li her cihî asteng bike',
+	'globalblocking-block-submit' => "Vê IP'yê li her cihî asteng bike",
 	'globalblocking-search-ip' => "Adresê IP'ê:",
 	'globalblocking-unblock-reason' => 'Sedem:',
 	'globalblocking-whitelist-reason' => 'Sedem:',
