@@ -628,6 +628,8 @@ $messages['ast'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Otru periodu:',
 	'globalblocking-block-legend' => 'Bloquiar globalmente una direición IP',
 	'globalblocking-block-options' => 'Opciones:',
+	'globalblocking-ipaddress' => 'Direición IP:',
+	'globalblocking-ipbanononly' => 'Bloquiar namái usuarios anónimos',
 	'globalblocking-block-errors' => 'El bloquéu nun tuvo ésitu {{PLURAL:$1|pol siguiente motivu|polos siguientes motivos}}:',
 	'globalblocking-block-ipinvalid' => "La direición IP ($1) qu'especificasti nun ye válida.
 ¡Por favor fíxate en que nun pues poner un nome d'usuariu!",
