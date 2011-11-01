@@ -1404,6 +1404,7 @@ Zapisnik blokiranja je naveden ispod kao referenca:',
  * @author Paucabot
  * @author SMP
  * @author Solde
+ * @author Toniher
  */
 $messages['ca'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Permet]] [[Special:GlobalBlockList|bloquejar]] les adreces IP de diversos wikis',
@@ -1423,6 +1424,8 @@ $messages['ca'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Una altra durada:',
 	'globalblocking-block-legend' => 'Bloqueja aquesta adreça IP globalment',
 	'globalblocking-block-options' => 'Opcions:',
+	'globalblocking-ipaddress' => 'Adreça IP:',
+	'globalblocking-ipbanononly' => 'Bloca només els usuaris anònims',
 	'globalblocking-block-errors' => "El bloqueig no s'ha completat correctament, per {{PLURAL:$1|la següent raó|les següents raons}}:",
 	'globalblocking-block-ipinvalid' => "L'adreça IP ($1) introduïda no és vàlida.
 Recordau que no podeu introduir un nom d'usuari!",
@@ -6290,6 +6293,8 @@ $messages['no'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Annen tid:',
 	'globalblocking-block-legend' => 'Blokker en IP-adresse globalt',
 	'globalblocking-block-options' => 'Alternativer:',
+	'globalblocking-ipaddress' => 'IP-adresse:',
+	'globalblocking-ipbanononly' => 'Blokker bare anonyme brukere',
 	'globalblocking-block-errors' => 'Blokkeringen mislyktes fordi:<!--{{PLURAL:$1}}-->',
 	'globalblocking-block-ipinvalid' => 'IP-adressen du skrev inn ($1) er ugyldig.
 Merk at du ikke kan skrive inn brukernavn.',
