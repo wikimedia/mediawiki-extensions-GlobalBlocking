@@ -135,6 +135,7 @@ The block log is provided below for reference:',
 );
 
 /** Message documentation (Message documentation)
+ * @author Crt
  * @author Darth Kule
  * @author EugeneZelenko
  * @author Ficell
@@ -172,7 +173,7 @@ For more information about Global Blocking, see http://www.mediawiki.org/wiki/Gl
 	'globalblocking-block-expiry-otherfield' => '{{Identical|Other time}}',
 	'globalblocking-block-options' => '{{Identical|Options}}',
 	'globalblocking-ipaddress' => 'Form label for ip-address',
-	'globalblocking-ipbanononly' => 'Label for checkbox to block anonymouse users only.',
+	'globalblocking-ipbanononly' => 'Label for checkbox to block anonymous users only.',
 	'globalblocking-block-errors' => "The first line of the error message shown on [[Special:GlobalBlock]] (see [[mw:Extension:GlobalBlocking]]) if the block has been unsuccessful. After this message, a list of specific errors is shown (see [[Special:Prefixindex/MediaWiki:Globalblocking-block-bigrange|globalblocking-block-bigrange]], [[Special:Prefixindex/MediaWiki:Globalblocking-block-expiryinvalid|globalblocking-block-expiryinvalid]] etc.).
 
 * $1 – the ''number'' of errors (not the errors themselves)",
@@ -2136,8 +2137,8 @@ togodla lokalny status globalnych blokěrowanjow njedajo se změniś.',
 	'globalblocking-whitelist-intro' => 'Móžoš wužiwaś toś ten formular, aby wobźěłał lokalny status globalnego blokěrowanja.
 Jolic globalne blokěrowanje jo znjemóžnjone na toś tom wikiju, wužywarje na pótrjefjonej IP-adresy mógu normalnje wobźěłaś.
 [[Special:GlobalBlockList|Slědk k lisćinje globalnych blokěrowanjow]].',
-	'globalblocking-blocked' => "Waša IP-adresa jo se blokěrowała wót '''\$1''' (''\$2'') na wšych wikijach.
-Pódana pśicyna jo była ''\"\$3\"''.
+	'globalblocking-blocked' => "Waša IP-adresa \$5 jo se blokěrowała wót '''\$1''' (''\$2'') na wšych wikijach.
+Pódana pśicyna jo była ''\"3\"''.
 Blokěrowanje ''\$4''.",
 	'globalblocking-blocked-nopassreset' => 'Njamóžoš gronidła wužywarja slědk wzaś, dokulaž sy globalnje blokěrowany.',
 	'globalblocking-logpage' => 'Protokol globalnych blokěrowanjow',
@@ -6939,7 +6940,7 @@ $messages['pnb'] = array(
 	'globalblocking-unblock-submit' => 'گلوبل روک ہٹاؤ',
 	'globalblocking-unblock-reason' => 'وجہ:',
 	'globalblocking-unblock-unblocked' => "تساں کامیابی نال گلوبل روک #$2 آئی پی پتے '''$1''' توں ہٹا دتی اے۔",
-	'globalblocking-unblock-errors' => 'تواڈا گلوبل روک نئیں چل سکی تھلے دتیاں گیاں {{انیک:$1|وجہ|وجہاں}}: توں:',
+	'globalblocking-unblock-errors' => '!تواڈا گلوبل روک نئیں چل سکی تھلے دتیاں گیاں {{انیک:$1|وجہ|وجہاں}}: توں:',
 	'globalblocking-unblock-successsub' => 'جگت روک ہٹادتی گئی',
 	'globalblocking-unblock-subtitle' => 'جگت روک ہٹا ریاں واں',
 	'globalblocking-unblock-intro' => 'تسی اے فارم جگت روک نوں ہٹان لئی ورت سکدے او۔',
@@ -8639,6 +8640,7 @@ $messages['su'] = array(
 /** Swedish (Svenska)
  * @author Ainali
  * @author Boivie
+ * @author Diupwijk
  * @author Fluff
  * @author GameOn
  * @author Jon Harald Søby
@@ -8664,6 +8666,8 @@ $messages['sv'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Annan tid:',
 	'globalblocking-block-legend' => 'Blockera en användare globalt',
 	'globalblocking-block-options' => 'Alternativ:',
+	'globalblocking-ipaddress' => 'IP-adress:',
+	'globalblocking-ipbanononly' => 'Blockera endast oinloggade användare',
 	'globalblocking-block-errors' => 'Blockeringen misslyckades på grund av följande {{PLURAL:$1|anledning|anledningar}}:',
 	'globalblocking-block-ipinvalid' => 'IP-adressen du skrev in ($1) är ogiltig.
 Notera att du inte kan skriva in användarnamn.',
