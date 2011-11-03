@@ -2073,6 +2073,8 @@ $messages['dsb'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Drugi cas:',
 	'globalblocking-block-legend' => 'IP-adresu globalnje blokěrowaś',
 	'globalblocking-block-options' => 'Opcije:',
+	'globalblocking-ipaddress' => 'IP-adresa:',
+	'globalblocking-ipbanononly' => 'Jano anonymnych wužywarjow blokěrowaś',
 	'globalblocking-block-errors' => 'Wašo blokěrowanje jo było njewuspěšne ze {{PLURAL:$1|slědujuceje pśicyny|slědujuceju pśicynowu|slědujucych pśicynow|slědujucych pśicynow}}:',
 	'globalblocking-block-ipinvalid' => 'IP-adresa ($1), kótaruž sy zapódał, jo njepłaśiwa.
 Pšosym źiwaj na to, až njamóžoš wužywarske mě zapódaś!',
@@ -2138,7 +2140,7 @@ togodla lokalny status globalnych blokěrowanjow njedajo se změniś.',
 Jolic globalne blokěrowanje jo znjemóžnjone na toś tom wikiju, wužywarje na pótrjefjonej IP-adresy mógu normalnje wobźěłaś.
 [[Special:GlobalBlockList|Slědk k lisćinje globalnych blokěrowanjow]].',
 	'globalblocking-blocked' => "Waša IP-adresa \$5 jo se blokěrowała wót '''\$1''' (''\$2'') na wšych wikijach.
-Pódana pśicyna jo była ''\"3\"''.
+Pódana pśicyna jo była ''\"\$3\"''.
 Blokěrowanje ''\$4''.",
 	'globalblocking-blocked-nopassreset' => 'Njamóžoš gronidła wužywarja slědk wzaś, dokulaž sy globalnje blokěrowany.',
 	'globalblocking-logpage' => 'Protokol globalnych blokěrowanjow',
