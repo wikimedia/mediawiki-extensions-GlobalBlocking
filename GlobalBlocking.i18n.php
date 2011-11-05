@@ -1719,6 +1719,7 @@ Nodwch gyfeiriad IP dilys os gwelwch yn dda.",
  * @author Masz
  * @author Peter Alberti
  * @author Sarrus
+ * @author Tjernobyl
  */
 $messages['da'] = array(
 	'globalblocking-block' => 'Bloker en IP-adresse globalt',
@@ -1734,6 +1735,9 @@ $messages['da'] = array(
 	'globalblocking-block-edit-dropdown' => 'Rediger blokeringsbegrundelser',
 	'globalblocking-block-expiry' => 'Udløber:',
 	'globalblocking-block-legend' => 'Bloker en IP-adresse globalt',
+	'globalblocking-block-options' => 'Indstillinger:',
+	'globalblocking-ipaddress' => 'IP-adresse:',
+	'globalblocking-ipbanononly' => 'Kun anonyme brugere spærres',
 	'globalblocking-block-errors' => 'Din blokering lykkedes ikke af følgende {{PLURAL:$1|årsag|årsager}}:',
 	'globalblocking-block-ipinvalid' => 'IP-adressen, du indtastede ($1), er ugyldig.
 Bemærk venligst, at du ikke kan indtaste et brugernavn!',
@@ -1742,16 +1746,22 @@ Bemærk venligst, at du ikke kan indtaste et brugernavn!',
 	'globalblocking-modify-submit' => 'Ændr denne globale blokering',
 	'globalblocking-block-success' => 'IP-adressen $1 er blevet blokeret på alle projekter.',
 	'globalblocking-modify-success' => 'Den globale blokering på $1 er blevet ændret',
+	'globalblocking-block-successsub' => 'Global blokering lykkedes',
 	'globalblocking-modify-successsub' => 'Global blokering er ændret',
 	'globalblocking-block-bigrange' => 'Intervallet, du angav, ($1) er for stort, til at det kan blokeres.
 Du kan højst blokere 65.536 adresser (/16-intervaller)',
 	'globalblocking-list' => 'Liste over globalt blokerede IP-adresser',
 	'globalblocking-search-ip' => 'IP-adresse:',
+	'globalblocking-search-submit' => 'Søg efter blokke',
+	'globalblocking-list-ipinvalid' => 'IP-adressen du søgte efter ($1) er ugyldig.
+Skriv en gyldig IP-adresse.',
 	'globalblocking-list-expiry' => 'varighed $1',
 	'globalblocking-list-anononly' => 'kun anonyme',
 	'globalblocking-list-unblock' => 'fjern',
 	'globalblocking-list-whitelisted' => 'slået fra lokalt af $1: $2',
 	'globalblocking-list-whitelist' => 'lokal status',
+	'globalblocking-list-modify' => 'Ændr',
+	'globalblocking-list-noresults' => 'Den efterspurgte IP-adresse er ikke blokeret.',
 	'globalblocking-goto-unblock' => 'Ophæv en global blokering',
 	'globalblocking-unblock' => 'Ophæv en global blokering',
 	'globalblocking-unblock-legend' => 'Ophæv en global blokering',
