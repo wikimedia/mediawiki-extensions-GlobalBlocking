@@ -6535,6 +6535,8 @@ $messages['or'] = array(
 	'globalblocking-block-expiry-otherfield' => 'ବାକି ସମୟ:',
 	'globalblocking-block-legend' => 'ଏକ IP ଠିକଣାକୁ ଜଗତ ସାରା ଅଟକାଇ ଦେବେ',
 	'globalblocking-block-options' => 'କାମସବୁ:',
+	'globalblocking-ipaddress' => 'ଆଇ.ପି. ଠିକଣା:',
+	'globalblocking-ipbanononly' => 'କେବଳ ବେନାମି ସଭ୍ୟଙ୍କୁ ଅଟକାଇଦିଅନ୍ତୁ',
 	'globalblocking-block-errors' => 'ତଳଲିଖିତ {{PLURAL:$1|ଗୋଟିଏ କାରଣ|ଗୋଟି କାରଣ}} ନିମନ୍ତେ  ଆପଣଙ୍କ ଦେଇ କରାଯାଇଥିବା ଅଟକ ବିଫଳ ହେଲା:',
 	'globalblocking-block-ipinvalid' => 'ଆପଣ ଦେଇଥିବା IP ଠିକଣାଟି ($1) ଭୁଲ ଅଟେ ।
 ଜାଣିରଖନ୍ତୁ ଯେ ଆପଣ ଏକ ଇଉଜର ନାମ ଦେଇପାରିବେ ନାହିଁ !',
