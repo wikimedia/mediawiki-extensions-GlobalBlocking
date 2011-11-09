@@ -2573,6 +2573,8 @@ $messages['et'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Muu aeg:',
 	'globalblocking-block-legend' => 'Blokeeri IP-aadress globaalselt',
 	'globalblocking-block-options' => 'Sätted:',
+	'globalblocking-ipaddress' => 'IP-aadress:',
+	'globalblocking-ipbanononly' => 'Blokeeri ainult anonüümseid kasutajaid',
 	'globalblocking-block-errors' => 'Blokeerimine ei õnnestunud {{PLURAL:$1|järgneval põhjusel|järgnevatel põhjustel}}:',
 	'globalblocking-block-ipinvalid' => 'Sisestatud IP aadress $1 on vigane.
 Pane tähele, et kasutajanime ei saa sisestada.',
@@ -4825,7 +4827,7 @@ $messages['km'] = array(
 	'globalblocking-whitelist-status' => 'ស្ថានភាព​មូលដ្ឋាន:',
 	'globalblocking-whitelist-submit' => 'ប្ដូរ​ស្ថានភាព​មូលដ្ឋាន',
 	'globalblocking-whitelist-successsub' => 'បាន​ប្ដូរ​ស្ថានភាព​មូលដ្ឋាន ដោយ​ជោគជ័យ',
-	'globalblocking-blocked' => "អាសយដ្ឋាន IP ត្រូវ​បាន​រាំងខ្ទប់​នៅលើ​វិគី​ទាំងអស់​ដោយ '''\$1''' (''\$2'') ។
+	'globalblocking-blocked' => "អាសយដ្ឋាន IP  \$5 ត្រូវ​បាន​រាំងខ្ទប់​នៅលើ​វិគី​ទាំងអស់​ដោយ '''\$1''' (''\$2'') ។
 
 ហេតុផល​គឺ ''\"\$3\"'' ។
 
