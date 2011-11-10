@@ -4336,10 +4336,15 @@ $messages['io'] = array(
 
 /** Icelandic (Íslenska)
  * @author S.Örvarr.S
+ * @author Snævar
  */
 $messages['is'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Annar tími:',
 	'globalblocking-unblock-reason' => 'Ástæða:',
+	'globalblocking-logpage' => 'Altæk eyðingarskrá',
+	'globalblocking-logpagetext' => 'Þetta er skrá yfir altækar bannanir og afbannanir á notendum.
+Altæk bönn ná yfir wiki á öllum tungumálum. Þannig gildir altækt bann sem var sett á öðrum wiki einnig hér.
+Tæmandi lista yfir öll virk altæk bönn er að finna á [[Special:GlobalBlockList|Listi yfir altæk bönn]].',
 );
 
 /** Italian (Italiano)
@@ -4780,6 +4785,7 @@ $1',
  * @author Lovekhmer
  * @author Thearith
  * @author គីមស៊្រុន
+ * @author វ័ណថារិទ្ធ
  */
 $messages['km'] = array(
 	'globalblocking-block' => 'រាំងខ្ទប់​អាសយដ្ឋាន IP ជា​សកល',
@@ -4798,7 +4804,7 @@ $messages['km'] = array(
 	'globalblocking-block-success' => 'អាសយដ្ឋាន IP $1 ត្រូវ​បាន​រាំងខ្ទប់​លើ​គ្រប់​គម្រោង​ទាំងអស់ ដោយជោគជ័យ​ហើយ​។',
 	'globalblocking-block-successsub' => 'រាំងខ្ទប់​​ជា​សកល​ដោយជោគជ័យ',
 	'globalblocking-search-legend' => 'ស្វែងរក​ការរាំងខ្ទប់​សកល',
-	'globalblocking-search-ip' => 'អាសយដ្ឋានIP:',
+	'globalblocking-search-ip' => 'អាសយដ្ឋាន IP ៖',
 	'globalblocking-search-submit' => 'ស្វែងរកចំពោះការហាមឃាត់',
 	'globalblocking-search-errors' => 'ការស្វែងរក​របស់​អ្នក​មិន​ទទួល​បាន​ជោគជ័យ​ទេ, សម្រាប់ {{PLURAL:$1|ហេតុផល|ហេតុផល}}​ដូចតទៅ:',
 	'globalblocking-list-expiry' => 'ផុតកំណត់ $1',
