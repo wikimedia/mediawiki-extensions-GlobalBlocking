@@ -4339,12 +4339,117 @@ $messages['io'] = array(
  * @author Snævar
  */
 $messages['is'] = array(
+	'globalblocking-desc' => '[[Special:GlobalBlock|Leyfir]] bönnun á vistföngum [[Special:GlobalBlockList|yfir mörg wiki verkefni]]',
+	'globalblocking-block' => 'Banna vistfang altækt',
+	'globalblocking-modify-intro' => 'Þú getur notað þetta eyðublað til að breyta stillingum altæks banns.',
+	'globalblocking-block-intro' => 'Þú getur notað þessa síðu til að banna vistföng á öllum wiki verkefnum.',
+	'globalblocking-block-reason' => 'Ástæða:',
+	'globalblocking-block-otherreason' => 'Önnur ástæða:',
+	'globalblocking-block-reasonotherlist' => 'Önnur ástæða',
+	'globalblocking-block-reason-dropdown' => '*Algengar ástæður fyrir bönnun
+*Altækar amasendingar
+*Altæk misnotkun
+*Skemmdarverk',
+	'globalblocking-block-edit-dropdown' => 'Breyta ástæðu fyrir banni',
+	'globalblocking-block-expiry' => 'Rennur út:',
+	'globalblocking-block-expiry-other' => 'Önnur gildislok',
 	'globalblocking-block-expiry-otherfield' => 'Annar tími:',
+	'globalblocking-block-legend' => 'Banna vistfang altækt',
+	'globalblocking-block-options' => 'Möguleikar:',
+	'globalblocking-ipaddress' => 'Vistfang:',
+	'globalblocking-ipbanononly' => 'Banna einungis ónafngreinda notendur',
+	'globalblocking-block-errors' => 'Bannið þitt mistókst, vegna eftirfarandi {{PLURAL:$1|ástæðu|ástæðna}}:',
+	'globalblocking-block-ipinvalid' => 'Vistfangið ($1) sem þú tilgreindir er ógilt.
+Athugaðu að þú getur ekki tilgreint notendanafn!',
+	'globalblocking-block-expiryinvalid' => 'Gildislokin sem þú tilgreindir ($1) eru ógild.',
+	'globalblocking-block-submit' => 'Banna þetta vistfang altækt',
+	'globalblocking-modify-submit' => 'Breyta þessu altæku banni',
+	'globalblocking-block-success' => 'Tókst að banna vistfangið $1 öllum verkefnum.',
+	'globalblocking-modify-success' => 'Tókst að breyta altæka banninu $1',
+	'globalblocking-block-successsub' => 'Altækt bann tókst',
+	'globalblocking-modify-successsub' => 'Tókst að breyta altæku banni',
+	'globalblocking-block-alreadyblocked' => 'Vistfangið $1 er þegar bannað altækt.
+Þú getur skoðað það bann sem fyrir er á [[Special:GlobalBlockList|lista yfir altæk bönn]],
+eða breytt stillingum bannsins með því að endursenda þetta eyðublað.',
+	'globalblocking-block-bigrange' => 'Fjöldabannið sem þú tilgreindir ($1) er of stórt til að banna.
+Þú mátt banna, í mestalagi, 65.536 vistföng (/16 raðir)',
+	'globalblocking-list-intro' => 'Hér er listi yfir öll altæk bönn sem eru enn virk
+Þau bönn sem eru merkt sem óvirk svæðisbundið eiga við aðrar wiki síður en möppudýr á þessari síðu hefur ákveðið að afvirkja bannið á þessum wiki.',
+	'globalblocking-list' => 'Altæk bönn vistfanga',
+	'globalblocking-search-legend' => 'Leita að altæku banni',
+	'globalblocking-search-ip' => 'Vistfang:',
+	'globalblocking-search-submit' => 'Leita að bönnum',
+	'globalblocking-list-ipinvalid' => 'Vistfangið sem þú leitaðir að ($1) er ógilt.
+Vinsamlegast sláðu inn gilt vistfang.',
+	'globalblocking-search-errors' => 'Leitin þín mistókst, vegna eftirfarandi {{PLURAL:$1|ástæðu|ástæðna}}:',
+	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') bannaði altækt [[Special:Contributions/\$4|\$4]] ''(\$5)''",
+	'globalblocking-list-expiry' => 'rennur út $1',
+	'globalblocking-list-anononly' => 'nafnlausir eingöngu',
+	'globalblocking-list-unblock' => 'fjarlægja',
+	'globalblocking-list-whitelisted' => 'Óvirkt svæðisbundið af $1: $2',
+	'globalblocking-list-whitelist' => 'Svæðisbundin staða:',
+	'globalblocking-list-modify' => 'breyta',
+	'globalblocking-list-noresults' => 'Umbeðið vistfang er ekki í bannað.',
+	'globalblocking-goto-block' => 'Banna vistfang altækt',
+	'globalblocking-goto-unblock' => 'Fjarlægja altækt bann',
+	'globalblocking-goto-status' => 'Breyta staðbundri stöðu altæks banns',
+	'globalblocking-return' => 'Fara aftur á lista yfir altæk bönn',
+	'globalblocking-notblocked' => 'Vistfangið ($1) sem þú tilgreindir er ekki bannað altækt.',
+	'globalblocking-unblock' => 'Fjarlægja altækt bann',
+	'globalblocking-unblock-ipinvalid' => 'Vistfangið ($1) sem þú tilgreindir er ógilt.
+Athugaðu að þú getur ekki tilgreint notendanafn!',
+	'globalblocking-unblock-legend' => 'Fjarlægja altækt bann',
+	'globalblocking-unblock-submit' => 'Fjarlægja altækt bann',
 	'globalblocking-unblock-reason' => 'Ástæða:',
+	'globalblocking-unblock-unblocked' => "Þér hefur tekist að fjarlægja altæka bannið #$2 á vistfanginu '''$1'''",
+	'globalblocking-unblock-errors' => 'Fjarlægingin þín mistókst, vegna eftirfarandi {{PLURAL:$1|ástæðu|ástæðna}}:',
+	'globalblocking-unblock-successsub' => 'Tókst að fjarlægja altækt bann',
+	'globalblocking-unblock-subtitle' => 'Fjarlægji altækt bann',
+	'globalblocking-unblock-intro' => 'Þú getur notað þetta eyðublað til að fjarlægja altækt bann.',
+	'globalblocking-whitelist' => 'Svæðisbundin staða altækra banna',
+	'globalblocking-whitelist-notapplied' => 'Altæk bönn eru óstudd á þessum wiki,
+svo ekki er hægt að breyta staðbundinni stöðu altækra banna.',
+	'globalblocking-whitelist-legend' => 'Breyta svæðisbundnri stöðu',
+	'globalblocking-whitelist-reason' => 'Ástæða:',
+	'globalblocking-whitelist-status' => 'Svæðisbundin staða:',
+	'globalblocking-whitelist-statuslabel' => 'Óvirkja þetta alvirka bann á {{SITENAME}}',
+	'globalblocking-whitelist-submit' => 'Breyta svæðisbundnri stöðu',
+	'globalblocking-whitelist-whitelisted' => "Þér hefur tekist að óvirkja altæka bannið #$2 á vistfanginu '''$1''' á {{SITENAME}}.",
+	'globalblocking-whitelist-dewhitelisted' => "Þér hefur tekist að endurvirkja altæka bannið #$2 á vistfanginu '''$1''' á {{SITENAME}}.",
+	'globalblocking-whitelist-successsub' => 'Tókst að breyta staðbundinni stöðu banns.',
+	'globalblocking-whitelist-nochange' => 'Þú gerðir engar breytingar á staðbundinni stöðu bannsins.
+[[Special:GlobalBlockList|Fara á lista yfir altæk bönn]].',
+	'globalblocking-whitelist-errors' => 'Breyting þín á staðbundinni stöðu altæks banns mistókst, vegna eftirfarandi {{PLURAL:$1|ástæðu|ástæðna}}:',
+	'globalblocking-whitelist-intro' => 'Þú getur notað þetta eyðublað til að breyta staðbundinni stöðu altæks banns.
+Ef altækt bann er óvirkjað á þessum wiki, geta notendur á þeim vistföngum sem bannið beinist að breytt eins og venjulega.
+[[Special:GlobalBlockList|Fara á lista yfir altæk bönn]].',
+	'globalblocking-blocked' => "Vistfang þitt \$5 hefur verið bannað á öllum wiki verkefnum af '''\$1''' (''\$2'').
+Ástæða bannsins var: ''\"\$3\"''
+Bannið ''\$4''.",
+	'globalblocking-blocked-nopassreset' => 'Þú getur ekki endurstillt lykilorð notenda því þú ert bannaður altækt.',
 	'globalblocking-logpage' => 'Altæk eyðingarskrá',
 	'globalblocking-logpagetext' => 'Þetta er skrá yfir altækar bannanir og afbannanir á notendum.
 Altæk bönn ná yfir wiki á öllum tungumálum. Þannig gildir altækt bann sem var sett á öðrum wiki einnig hér.
 Tæmandi lista yfir öll virk altæk bönn er að finna á [[Special:GlobalBlockList|Listi yfir altæk bönn]].',
+	'globalblocking-block-logentry' => 'bannaði altækt „[[$1]]“; rennur út eftir: $2',
+	'globalblocking-block2-logentry' => 'bannaði altækt [[$1]] ($2)',
+	'globalblocking-unblock-logentry' => 'fjarlægði altækt bann sem beindist að [[$1]]',
+	'globalblocking-whitelist-logentry' => 'óvirkjaði altæka bannið á [[$1]] svæðisbundið',
+	'globalblocking-dewhitelist-logentry' => 'endurvirkjaði altæka bannið á [[$1]] svæðisbundið',
+	'globalblocking-modify-logentry' => 'breytti altæku banni á [[$1]] ($2)',
+	'globalblocking-logentry-expiry' => 'rennur út $1',
+	'globalblocking-logentry-noexpiry' => 'Engin gildislok tilgreind',
+	'globalblocking-loglink' => 'Vistfangið $1 er bannað altækt ([[{{#Special:GlobalBlockList}}/$1|frekari upplýsingar]])',
+	'globalblocking-showlog' => 'Vistfangið hefur verið bannað áður.
+Síðasta færsla vistfangsins úr bönnunarskrá er sýnd hér fyrir neðan til skýringar:',
+	'globalblocklist' => 'Listi yfir altæk bönn vistfanga',
+	'globalblock' => 'Banna vistfang altækt',
+	'globalblockstatus' => 'Svæðisbundin staða altækra banna',
+	'removeglobalblock' => 'Fjarlægja altækt bann',
+	'right-globalblock' => 'Búa til altækt bann',
+	'right-globalunblock' => 'Fjarlægja altæk bönn',
+	'right-globalblock-whitelist' => 'Óvirkja altæk bönn staðbundið',
+	'right-globalblock-exempt' => 'Hunsa altæk bönn',
 );
 
 /** Italian (Italiano)
@@ -9461,6 +9566,7 @@ $messages['tyv'] = array(
  * @author Dim Grits
  * @author NickK
  * @author Prima klasy4na
+ * @author Sodmy
  */
 $messages['uk'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Дозволяє]] блокування IP-адрес [[Special:GlobalBlockList|на кількох вікі]]',
@@ -9480,6 +9586,8 @@ $messages['uk'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Інший час:',
 	'globalblocking-block-legend' => 'Глобальне блокування IP-адреси',
 	'globalblocking-block-options' => 'Налаштування:',
+	'globalblocking-ipaddress' => 'IP-адреса:',
+	'globalblocking-ipbanononly' => 'Блокувати тільки анонімних користувачів',
 	'globalblocking-block-errors' => 'Спроба блокування не вдалася через {{PLURAL:$1|наступну причину|наступні причини}}:',
 	'globalblocking-block-ipinvalid' => "Уведена вами IP-адреса ($1) неправильна.
 Зверніть увагу, що ви не можете вводити ім'я користувача!",
