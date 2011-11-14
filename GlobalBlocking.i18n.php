@@ -3959,6 +3959,7 @@ Blòkaj la ''\$4''.",
 
 /** Hungarian (Magyar)
  * @author Dani
+ * @author Dj
  * @author Dorgan
  * @author Glanthor Reviol
  */
@@ -3980,6 +3981,8 @@ $messages['hu'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Más időtartam:',
 	'globalblocking-block-legend' => 'IP-cím globális blokkolása',
 	'globalblocking-block-options' => 'Beállítások:',
+	'globalblocking-ipaddress' => 'IP-cím:',
+	'globalblocking-ipbanononly' => 'Csak anonim felhasználók blokkolása',
 	'globalblocking-block-errors' => 'A blokkolás nem sikerült, az alábbi {{PLURAL:$1|ok|okok}} miatt:',
 	'globalblocking-block-ipinvalid' => 'Az általad megadott IP-cím ($1) érvénytelen.
 Nem adhatsz meg felhasználói nevet!',
@@ -4045,8 +4048,8 @@ Nem adhatsz meg felhasználói nevet!',
 	'globalblocking-whitelist-intro' => 'Az alábbi űrlap használatával megváltoztathatod egy globális blokk helyi állapotát.
 Ha egy globális blokk fel van oldva ezen a wikin, az IP-címet használó szerkesztők újra képesek lesznek szerkeszteni a wikit.
 [[Special:GlobalBlockList|Visszatérés a globális blokkok listájához]].',
-	'globalblocking-blocked' => "Az IP-címedet az összes wikin blokkolta '''$1''' (''$2'').
-A blokkolás oka: „$3”.
+	'globalblocking-blocked' => "Az IP-címedet ($5) az összes wikin blokkolta '''$1''' (''$2'').
+A blokkolás oka: ''„$3”''.
 A blokk ''$4''.",
 	'globalblocking-blocked-nopassreset' => 'Nem kérhetsz új jelszót, mert globálisan blokkolva vagy.',
 	'globalblocking-logpage' => 'Globális blokkolási napló',
