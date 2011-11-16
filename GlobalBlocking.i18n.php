@@ -6032,7 +6032,11 @@ Sekatan ini ''\$4''.",
  */
 $messages['mt'] = array(
 	'globalblocking-list' => "Lista ta' indirizzi IP imblukkati globalment",
+	'globalblocking-search-legend' => 'Fittex għal blokk globali',
+	'globalblocking-search-ip' => 'Indirizz IP:',
 	'globalblocking-search-submit' => 'Fittex għal blokki',
+	'globalblocking-goto-unblock' => 'Neħħi blokk globali',
+	'globalblocking-unblock' => 'Neħħi blokk globali',
 	'globalblocking-unblock-intro' => "Tista' tuża' din il-formola sabiex tneħħi blokk globali.",
 	'globalblocking-whitelist' => 'Stat lokali tal-blokki globali',
 	'globalblocking-blocked' => "L-indrizz IP tiegħek ġie imblukkat fuq il-wikis kollha minn '''\$1''' (''\$2'').
@@ -7039,7 +7043,7 @@ $messages['pnb'] = array(
 	'globalblocking-block-successsub' => 'گلوبل روک لگ گئی اے',
 	'globalblocking-modify-successsub' => 'گلوبل روک تبدیل ہو گئی اے',
 	'globalblocking-block-alreadyblocked' => 'آی پی پتہ $1 پورے جگ تے روکیا گیا جے۔
-تسیں ہن دی روک ویکھ سکدے او [[خاص:جگت روک لسٹ|جگت روکاں دی لسٹ]] تے،
+تسیں ہن دی روک ویکھ سکدے او [[Special:GlobalBlockList|جگت روکاں دی لسٹ]] تے،
 یا ہن دی روک دے ول نوں  بدلو ایس فارم نوں دوبارہ پعر کے۔',
 	'globalblocking-block-bigrange' => 'جیہڑی رینج تساں دسی اے ($1) چوکھی وڈی اے جے اودے تے روک لگے۔ تسیں زیادہ توں زیادہ 65,536 پتے روک سکدے او (/16 رینجاں)',
 	'globalblocking-list-intro' => 'اے جگت روکے گیاں دی لسٹ اے جیہڑی کہ ہن چل رئی اے۔ کج روکاں لوکل نیں: جیدا ایہ مطلب اے جے اوہ دوجیاں سائیٹاں تے وی چلدیاں نیں پر اک لوکل مکھۓ نین اے اوناں نوں ایس وکی نکارہ کیتا۔',
@@ -7050,7 +7054,7 @@ $messages['pnb'] = array(
 	'globalblocking-list-ipinvalid' => 'جیڑا IP پتہ ($1) تسی کھوجیا اے اوہ غلط اے۔
 مہربانی کر کے ٹھیک IP پتہ لکھو۔',
 	'globalblocking-search-errors' => 'تواڈی کھوج نقام رئی، {{PLURAL:$1|اس وجہ توں|ایناں وجاں توں}}:',
-	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') جگت روکے [[خاص:کم/\$4|\$4]] ''(\$5)''",
+	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') جگت روکے [[Special:Contributions/\$4|\$4]] ''(\$5)''",
 	'globalblocking-list-expiry' => 'انت $1',
 	'globalblocking-list-anononly' => 'صرف گمنام',
 	'globalblocking-list-unblock' => 'ہٹاؤ',
@@ -7070,7 +7074,7 @@ $messages['pnb'] = array(
 	'globalblocking-unblock-submit' => 'گلوبل روک ہٹاؤ',
 	'globalblocking-unblock-reason' => 'وجہ:',
 	'globalblocking-unblock-unblocked' => "تساں کامیابی نال گلوبل روک #$2 آئی پی پتے '''$1''' توں ہٹا دتی اے۔",
-	'globalblocking-unblock-errors' => '!تواڈا گلوبل روک نئیں چل سکی تھلے دتیاں گیاں {{انیک:$1|وجہ|وجہاں}}: توں:',
+	'globalblocking-unblock-errors' => 'تواڈا گلوبل روک نئیں چل سکی تھلے دتیاں گیاں {{PLURAL:$1|وجہ|وجہاں}}: توں:',
 	'globalblocking-unblock-successsub' => 'جگت روک ہٹادتی گئی',
 	'globalblocking-unblock-subtitle' => 'جگت روک ہٹا ریاں واں',
 	'globalblocking-unblock-intro' => 'تسی اے فارم جگت روک نوں ہٹان لئی ورت سکدے او۔',
@@ -7086,11 +7090,11 @@ $messages['pnb'] = array(
 	'globalblocking-whitelist-dewhitelisted' => "تساں کامیابی نال جگت روک #$2 آئی پی پتے '''$1''' {{ساغٹناں}} توں ہٹا دتی اے۔",
 	'globalblocking-whitelist-successsub' => 'لوکل سٹیٹس کامیابی نال بدل دتا گیا اے۔',
 	'globalblocking-whitelist-nochange' => 'تساں ایس روک دے لوکل سٹیٹس تے کوئی تبدیلی نئیں کیتی۔
-[[خاص:جگت روک لسٹ|جگت روک لسٹ ول واپسی]]۔',
+[[Special:GlobalBlockList|جگت روک لسٹ ول واپسی]]۔',
 	'globalblocking-whitelist-errors' => 'تواڈی جگت روک لوکل سٹیٹس دی کامیاب نئیں، تھلے دتیاں گیاں {{انیک:$1|وجہ|وجہاں}} توں:',
 	'globalblocking-whitelist-intro' => 'تسیں ایس فارم نوں اک جگت روک لوکل سٹیٹس نوں بدلن لئی ورت سکدے او۔
 اگر اک جگت روک ایس وکی تے کم نئیں کردی، ورتن والے متاثرہ آئی پی پتے اینوں تبدیل کرن گے۔
-[[خاص:جگت روک لسٹ|جگت روک لسٹ ول چلو]]',
+[[Special:GlobalBlockList|جگت روک لسٹ ول چلو]]',
 	'globalblocking-blocked' => "تواڈا آئی پی پتہ \$5 سارے وکیاں تے روک دتا اے '''\$1''' (''\$2'') نیں۔
 وجہ ''\"\$3\"'' دتی گئی۔ 
 روک ''\$4''",
@@ -7158,6 +7162,7 @@ $messages['ps'] = array(
  * @author GKnedo
  * @author Giro720
  * @author Hamilton Abreu
+ * @author João Sousa
  * @author Lijealso
  * @author Malafaya
  * @author SandroHc
@@ -7181,6 +7186,8 @@ $messages['pt'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Outra duração:',
 	'globalblocking-block-legend' => 'Bloquear um endereço IP globalmente',
 	'globalblocking-block-options' => 'Opções:',
+	'globalblocking-ipaddress' => 'Endereço IP:',
+	'globalblocking-ipbanononly' => 'Bloquear apenas utilizadores anónimos',
 	'globalblocking-block-errors' => 'O bloqueio não teve sucesso {{PLURAL:$1|pelo seguinte motivo|pelos seguintes motivos}}:',
 	'globalblocking-block-ipinvalid' => 'O endereço IP ($1) que introduziu é inválido.
 Por favor, note que não pode introduzir um nome de utilizador!',
@@ -7428,7 +7435,7 @@ Hark'ay hallch'ataqa kaypim rikunki willasunaykipaq:",
  * @author Stelistcristi
  */
 $messages['ro'] = array(
-	'globalblocking-desc' => '[[Special:GlobalBlock|Permine]] adresele IP să fie [[Special:GlobalBlockList|blocate pe mai multe wikiuri]]',
+	'globalblocking-desc' => '[[Special:GlobalBlock|Permite]] ca adresele IP să fie [[Special:GlobalBlockList|blocate pe mai multe wikiuri]]',
 	'globalblocking-block' => 'Blochează global o adresă IP',
 	'globalblocking-modify-intro' => 'Puteți folosi acest formular pentru a schimba setările unei blocări globale.',
 	'globalblocking-block-intro' => 'Această pagină permite blocarea unei adrese IP pe toate proiectele wiki.',
@@ -7445,6 +7452,8 @@ $messages['ro'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Alt termen:',
 	'globalblocking-block-legend' => 'Blochează global o adresă IP',
 	'globalblocking-block-options' => 'Opțiuni:',
+	'globalblocking-ipaddress' => 'Adresă IP:',
+	'globalblocking-ipbanononly' => 'Blochează doar utilizatorii anonimi',
 	'globalblocking-block-errors' => 'Blocarea nu a avut succes, din {{PLURAL:$1|următorul motiv|următoarele motive}}:',
 	'globalblocking-block-ipinvalid' => 'Adresa IP introdusă ($1) este invalidă.
 Atenție, nu poate fi introdus un nume de utilizator!',
@@ -8719,7 +8728,7 @@ Beoachtje, dät du naan Benutsernoome ienreeke doarst!',
 Du koast ju bestoundene Speere in ju [[Special:GlobalBlockList|globoale Speerlieste]] bekiekje of do Ienstaalengen fon ju Speere uur dit Formular annerje.',
 	'globalblocking-block-bigrange' => 'Die Adresseberäk, dän du ounroat hääst ($1) is tou groot.
 Du koast höchstens 65.536 IPs speere (/16-Adresseberäkke)',
-	'globalblocking-list-intro' => 'Dit is ne Lieste fon aal gultige globoale Speeren. Wäkke Speeren wuuden lokoal deaktivierd. Dät betjut, dät do Speeren ap uur Projekte gultich sunt, man dät n lokoalen Administrator äntschat häd, do foar dit Wiki tou deaktivierjen.',
+	'globalblocking-list-intro' => 'Dit is ne Lieste fon aal gultige globoale Speeren. Wäkke Speeren wuuden lokoal deaktivierd. Dät betjut, dät do Speeren ap uur Projekte gultich sunt, man dät n lokoalen Administrator äntskat häd, do foar dit Wiki tou deaktivierjen.',
 	'globalblocking-list' => 'Lieste fon lokoal speerde IP-Adressen',
 	'globalblocking-search-legend' => 'Ne globoale Speere säike',
 	'globalblocking-search-ip' => 'IP-Adresse:',
@@ -8731,7 +8740,7 @@ Reek ne gultige IP-Adresse ien.',
 	'globalblocking-list-expiry' => 'Speerduur $1',
 	'globalblocking-list-anononly' => 'bloot Anonyme',
 	'globalblocking-list-unblock' => 'äntspeere',
-	'globalblocking-list-whitelisted' => 'lokoal ouschalted fon $1: $2',
+	'globalblocking-list-whitelisted' => 'lokoal ouskalted fon $1: $2',
 	'globalblocking-list-whitelist' => 'lokoalen Stoatus',
 	'globalblocking-list-modify' => 'annerje',
 	'globalblocking-goto-block' => 'IP-Adresse globoal speere',
