@@ -2437,6 +2437,7 @@ Jen la protokolo pri forbaroj sube por via referenco:',
  * @author Remember the dot
  * @author Sanbec
  * @author Translationista
+ * @author Vivaelcelta
  */
 $messages['es'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Permite]] bloquear direcciones IP [[Special:GlobalBlockList|simultáneamente en varios wikis]]',
@@ -2456,6 +2457,8 @@ $messages['es'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Otro tiempo:',
 	'globalblocking-block-legend' => 'Bloquear una dirección IP globalmente',
 	'globalblocking-block-options' => 'Opciones:',
+	'globalblocking-ipaddress' => 'Dirección IP:',
+	'globalblocking-ipbanononly' => 'Bloquear sólo los usuarios anónimos',
 	'globalblocking-block-errors' => 'Tu bloqueo falló por {{PLURAL:$1|la siguiente razón|las siguientes razones}}:',
 	'globalblocking-block-ipinvalid' => 'La dirección IP ($1) que introdujiste no es válida. Por favor, ten en cuenta que no puedes introducir un nombre de usuario.',
 	'globalblocking-block-expiryinvalid' => 'La caducidad que introdujo ($1) es inválida.',
