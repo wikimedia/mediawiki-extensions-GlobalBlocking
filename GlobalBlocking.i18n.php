@@ -4594,6 +4594,7 @@ $messages['ja'] = array(
 	'globalblocking-block-expiry-otherfield' => '期間 (その他のとき)',
 	'globalblocking-block-legend' => 'IP アドレスをグローバルブロック',
 	'globalblocking-block-options' => 'オプション:',
+	'globalblocking-ipaddress' => 'IP アドレス:',
 	'globalblocking-block-errors' => '実施しようとしたブロックは以下の{{PLURAL:$1|理由}}のために実行できませんでした:',
 	'globalblocking-block-ipinvalid' => 'あなたが入力したIPアドレス ($1) には誤りがあります。アカウント名では入力できない点に注意してください！',
 	'globalblocking-block-expiryinvalid' => '入力した期限 ($1) に誤りがあります。',
