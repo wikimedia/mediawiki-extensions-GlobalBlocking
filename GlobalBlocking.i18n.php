@@ -9185,14 +9185,23 @@ Bastai ''\$4''.",
 
 /** Thai (ไทย)
  * @author Ans
+ * @author Horus
  * @author Octahedron80
  * @author Passawuth
  */
 $messages['th'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|อนุญาต]]ให้คุณสามารถบล็อกผู้ใช้ที่เป็น ไอพี [[Special:GlobalBlockList|ในหลาย ๆ วิกิ]]ในครั้งเดียวได้',
 	'globalblocking-block-reason' => 'เหตุผล:',
+	'globalblocking-block-otherreason' => 'เหตุผลอื่น/เพิ่มเติม',
+	'globalblocking-block-reasonotherlist' => 'เหตุผลอื่น',
+	'globalblocking-block-edit-dropdown' => 'แก้ไขเหตุผลการบล็อก',
 	'globalblocking-block-expiry' => 'หมดอายุ:',
+	'globalblocking-block-expiry-other' => 'เวลาหมดอายุอื่น',
+	'globalblocking-block-expiry-otherfield' => 'เวลาอื่น:',
+	'globalblocking-block-options' => 'ตัวเลือก:',
+	'globalblocking-ipaddress' => 'ที่อยู่ไอพี:',
 	'globalblocking-block-errors' => 'การสกัดกั้นไม่สำเร็จ เนื่องจาก{{PLURAL:$1|เหตุผลต่อไปนี้}}:',
+	'globalblocking-block-submit' => 'บล็อกที่อยู่ไอพีนี้ทั่วโลก',
 	'globalblocking-search-ip' => 'หมายเลขไอพี:',
 	'globalblocking-unblock-reason' => 'เหตุผล:',
 );
