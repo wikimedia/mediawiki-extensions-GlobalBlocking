@@ -3316,7 +3316,7 @@ Velaquí está o rexistro de bloqueos, por se quere consultalo:',
  * @author Jocke Pirat
  */
 $messages['got'] = array(
-	'globalblocking-unblock-reason' => 'Faírina:',
+	'globalblocking-unblock-reason' => '𐍆𐌰𐌹𐍂𐌹𐌽𐌰:',
 );
 
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
@@ -9556,7 +9556,7 @@ Engelleme günlüğü referans için aşağıda verilmiştir:',
 	'right-globalblock-exempt' => 'Küresel engellemeleri atla',
 );
 
-/** Tatar (Cyrillic) (Татарча/Tatarça (Cyrillic))
+/** Tatar (Cyrillic script) (Татарча)
  * @author Ильнар
  */
 $messages['tt-cyrl'] = array(
