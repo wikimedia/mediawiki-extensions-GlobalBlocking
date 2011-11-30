@@ -4484,6 +4484,8 @@ $messages['it'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Durata non in elenco:',
 	'globalblocking-block-legend' => 'Blocca globalmente un indirizzo IP',
 	'globalblocking-block-options' => 'Opzioni:',
+	'globalblocking-ipaddress' => 'Indirizzo IP:',
+	'globalblocking-ipbanononly' => 'Blocca solo utenti anonimi',
 	'globalblocking-block-errors' => 'Il blocco non è stato eseguito per {{PLURAL:$1|il seguente motivo|i seguenti motivi}}:',
 	'globalblocking-block-ipinvalid' => "L'indirizzo IP ($1) che hai inserito non è valido. Fai attenzione al fatto che non puoi inserire un nome utente!",
 	'globalblocking-block-expiryinvalid' => 'La scadenza che hai inserito ($1) non è valida.',
@@ -8071,6 +8073,7 @@ $messages['sgs'] = array(
  * @author Thameera123
  * @author තඹරු විජේසේකර
  * @author නන්දිමිතුරු
+ * @author පසිඳු කාවින්ද
  */
 $messages['si'] = array(
 	'globalblocking-desc' => 'IP ලිපිනය [[Special:GlobalBlockList|විකියන් කිහිපයකදී අවහිර කිරීමට]] [[Special:GlobalBlock|ඉඩදෙයි]]',
@@ -8090,6 +8093,7 @@ $messages['si'] = array(
 	'globalblocking-block-expiry-otherfield' => 'අනෙකුත් වේලාව:',
 	'globalblocking-block-legend' => 'IP ලිපිනයක් ගෝලීයව වාරණය කරන්න',
 	'globalblocking-block-options' => 'විකල්පයන්:',
+	'globalblocking-ipaddress' => 'IP ලිපිනය:',
 	'globalblocking-block-errors' => 'පහත සඳහන් {{PLURAL:$1|හේතුව|හේතූන්}} නිසා වාරණය අසාර්ථක විය:',
 	'globalblocking-block-ipinvalid' => 'ඔබ ඇතුළත් කළ IP ලිපිනය ($1) සදොස්ය. 
 ඔබට පරිශීලක නමක් ඇතුළත් කළ නොහැකි බව සළකන්න!',
