@@ -3153,7 +3153,7 @@ S’un blocâjo globâl est dèsactivâ sur ceti vouiqui, los utilisators a les 
 	'globalblocking-blocked' => "Voutra adrèce IP $5 at étâ blocâ sur l’ensemblo des vouiquis per '''$1''' (''$2'').
 La rêson balyê ére ''« $3 »''.
 Blocâjo : ''$4''.",
-	'globalblocking-blocked-nopassreset' => 'Vos pouede pas tornar inicialisar los mots de pâssa d’utilisator perce que vos éte blocâ dens l’ensemblo.',
+	'globalblocking-blocked-nopassreset' => 'Vos pouede pas tornar inicialisar los contresegnos d’usanciér perce que vos éte blocâ dens l’ensemblo.',
 	'globalblocking-logpage' => 'Jornal des blocâjos globâls',
 	'globalblocking-logpagetext' => 'Vê-que lo jornal des blocâjos globâls qu’ont étâ fêts et pués enlevâs sur ceti vouiqui.
 Notâd que los blocâjos globâls pôvont étre fêts et pués enlevâs sur d’ôtros vouiquis, et que celos blocâjos globâls pôvont afèctar ceti vouiqui.
