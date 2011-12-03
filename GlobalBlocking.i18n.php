@@ -2703,6 +2703,7 @@ $messages['eu'] = array(
  * @author Mardetanha
  * @author Sahim
  * @author Wayiran
+ * @author ZxxZxxZ
  */
 $messages['fa'] = array(
 	'globalblocking-desc' => 'قطع دسترسی نشانی‌های اینترنتی [[Special:GlobalBlockList|در چندین ویکی]] را [[Special:GlobalBlock|ممکن می‌سازد]]',
@@ -2789,8 +2790,8 @@ $messages['fa'] = array(
 	'globalblocking-whitelist-intro' => 'شما می‌توانید از این فرم برای ویرایش وضعیت محلی یک قطع دسترسی سراسری استفاده کنید.
 اگر یک قطع دسترسی سراسری در این ویکی غیر فعال شود، کاربرهایی که روی نشانی آی‌پی مربوط به آن قرار دارند قادر به ویرایش به صورت معمولی خواهند بود.
 [[Special:GlobalBlockList|بازگشت به فهرست قطع دسترسی‌های سراسری]].',
-	'globalblocking-blocked' => "دسترسی نشانی آی‌پی شما به تمام ویکی‌ها توسط '''$1''' (''$2'') قطع شده است.
-دلیل ارائه شده چنین بوده است: ''«$3»''.
+	'globalblocking-blocked' => "دسترسی نشانی آی‌پی شما $5 به تمام ویکی‌ها توسط '''$1''' (''$2'') قطع شده‌است.
+دلیل ارائه شده این است: ''«$3»''.
 این قطع دسترسی ''$4''.",
 	'globalblocking-blocked-nopassreset' => 'شما نمی‌توانید کلمات عبور کاربران را تغییر دهید زیرا شما به صورت سراسری مسدود شده‌اید.',
 	'globalblocking-logpage' => 'سیاههٔ قطع دسترسی سراسری',
@@ -4597,6 +4598,7 @@ $messages['ja'] = array(
 	'globalblocking-block-legend' => 'IP アドレスをグローバルブロック',
 	'globalblocking-block-options' => 'オプション:',
 	'globalblocking-ipaddress' => 'IP アドレス:',
+	'globalblocking-ipbanononly' => '匿名利用者のみブロック',
 	'globalblocking-block-errors' => '実施しようとしたブロックは以下の{{PLURAL:$1|理由}}のために実行できませんでした:',
 	'globalblocking-block-ipinvalid' => 'あなたが入力したIPアドレス ($1) には誤りがあります。アカウント名では入力できない点に注意してください！',
 	'globalblocking-block-expiryinvalid' => '入力した期限 ($1) に誤りがあります。',
@@ -5856,6 +5858,7 @@ $messages['mr'] = array(
 	'globalblocking-block' => 'आयपी अंकपत्ता वैश्विक पातळीवर ब्लॉक करा',
 	'globalblocking-block-intro' => 'तुम्ही हे पान वापरून एखाद्या आयपी अंकपत्त्याला सर्व विकिंवर ब्लॉक करू शकता.',
 	'globalblocking-block-reason' => 'कारण:',
+	'globalblocking-block-reasonotherlist' => 'इतर कारणे',
 	'globalblocking-block-expiry' => 'ब्लॉक समाप्ती:',
 	'globalblocking-block-expiry-other' => 'इतर समाप्ती वेळ',
 	'globalblocking-block-expiry-otherfield' => 'इतर वेळ:',
@@ -5886,6 +5889,7 @@ $1',
 	'globalblocking-list-unblock' => 'अनब्लॉक',
 	'globalblocking-list-whitelisted' => '$1 ने स्थानिक पातळीवर रद्द केले: $2',
 	'globalblocking-list-whitelist' => 'स्थानिक स्थिती',
+	'globalblocking-list-modify' => 'बदला',
 	'globalblocking-unblock-ipinvalid' => 'तुम्ही दिलेला आयपी अंकपत्ता ($1) अयोग्य आहे.
 कृपया नोंद घ्या की तुम्ही सदस्य नाव वापरू शकत नाही!',
 	'globalblocking-unblock-legend' => 'एक वैश्विक ब्लॉक काढा',
@@ -5911,6 +5915,7 @@ $1',
 	'globalblocking-unblock-logentry' => '[[$1]] वरील वैश्विक ब्लॉक काढला',
 	'globalblocking-whitelist-logentry' => '[[$1]] वरचा वैश्विक ब्लॉक स्थानिक पातळीवर रद्द केला',
 	'globalblocking-dewhitelist-logentry' => '[[$1]] वरचा वैश्विक ब्लॉक स्थानिक पातळीवर पुन्हा दिला',
+	'globalblocking-logentry-expiry' => 'समाप्ती $1',
 	'globalblocklist' => 'वैश्विक पातळीवर ब्लॉक केलेल्या आयपी अंकपत्त्यांची यादी',
 	'globalblock' => 'आयपी अंकपत्त्याला वैश्विक पातळीवर ब्लॉक करा',
 	'right-globalblock' => 'वैश्विक ब्लॉक तयार करा',
