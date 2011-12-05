@@ -1181,8 +1181,8 @@ $messages['br'] = array(
 	'globalblocking-block-otherreason' => 'Abegoù all/ouzhpenn :',
 	'globalblocking-block-reasonotherlist' => 'Abeg all',
 	'globalblocking-block-reason-dropdown' => '* Abegoù anavezet evit ar stankadenn
-** Strob war meur a wikioù
-** Kammarveroù war meur a wikioù
+** Strob war meur a wiki
+** Kammimplijoù war meur a wiki
 ** Vandalerezh',
 	'globalblocking-block-edit-dropdown' => 'Kemmañ an abegoù stankañ dre ziouer',
 	'globalblocking-block-expiry' => 'Termen :',
@@ -1207,8 +1207,8 @@ Gallout a rit diskwel ar stankadennoù e [[Special:GlobalBlockList|listenn ar st
 pe kemm ar c'hefluniadur eus ar stankadennoù hag a zo, dre kinnig en-dro ar furmskrid.",
 	'globalblocking-block-bigrange' => "Al lijorenn hoc'h eus spisaet ($1) a zo re vras evit bezañ stanket.
 D'ar muiañ e c'helloc'h stankañ 65 536 chomlec'h (/16 lijorenn)",
-	'globalblocking-list-intro' => "Sed aze listenn ar stankadennoù hollek oberiat.
-Lodennoù 'zo a zo merket evel diweredekaet war al lec'h: da laret eo e vez arloet kement-mañ e lec'hiennoù all, met ur merour lec'hel en deus dibabet diweredekaat anezho er wiki-mañ.",
+	'globalblocking-list-intro' => "Setu aze roll ar stankadennoù hollek oberiat.
+Lod anezho zo merket evel diweredekaet e lec'hioù zo : ar pezh a dalvez e vezont lakaet da dalvezout war lec'hiennoù all, hag ur merour lec'hel en deus dibabet diweredekaat anezho er wiki-mañ.",
 	'globalblocking-list' => "Roll ar chomlec'hioù IP stanket en un doare hollek",
 	'globalblocking-search-legend' => "Klask war-lerc'h ur stankadenn hollek",
 	'globalblocking-search-ip' => "Chomlec'h IP :",
@@ -1262,14 +1262,14 @@ An abeg a oa ''\"\$3\"''.
 Stankadenn : ''\$4''.",
 	'globalblocking-blocked-nopassreset' => "Ne c'hellit ket adderaouekaat gerioù-tremen implijerien dre ma 'z oc'h stanket en un doare hollek.",
 	'globalblocking-logpage' => 'Marilh ar stankadennoù hollek',
-	'globalblocking-logpagetext' => "Seda aze marilh ar stankadennoù hollek a zo bet graet ha tennet er wiki-mañ.
-Ar stankadennoù hollek a c'hell bezañ graet pe tennet e wikioù all, hag ar stankadennoù hollek-mañ a c'hell merkañ ar wiki-mañ.
-Evit gwelout holl ar stankadennoù 'zo, gallout a rit mont da welet [[Special:GlobalBlockList|listenn ar stankadennoù hollek]].",
-	'globalblocking-block-logentry' => 'en deus stanket [[$1]] en un doare hollek, gant un hirder termen a $2',
+	'globalblocking-logpagetext' => "Setu aze marilh ar stankadennoù hollek zo bet lakaet e plas ha lamet kuit er wiki-mañ.
+Notit mat e c'hall ar stankadennoù hollek bezañ lakaet e plas pe dilamet war wikioù all, hag e c'hall ar stankadennoù hollek-se degas strafuilh war ar wiki-mañ.
+Evit gwelet an holl stankadennoù oberiant evit ar poent e c'hallit mont da sellet ouzh [[Special:GlobalBlockList|roll ar stankadennoù hollek]].",
+	'globalblocking-block-logentry' => 'en deus stanket [[$1]] en un doare hollek, gant ur pad termen a $2',
 	'globalblocking-block2-logentry' => 'en deus stanket [[$1]] dre-vras ($2)',
 	'globalblocking-unblock-logentry' => 'en deus tennet stankadenn hollek [[$1]]',
 	'globalblocking-whitelist-logentry' => "en deus dilemet en un doare lec'hel stankadenn hollek [[$1]]",
-	'globalblocking-dewhitelist-logentry' => "en deus adgweredekaet en un doare lec'hel stankadenn hollek [[$1]]",
+	'globalblocking-dewhitelist-logentry' => "en deus adweredekaet en un doare lec'hel stankadenn hollek [[$1]]",
 	'globalblocking-modify-logentry' => 'en deus kemmet stankadenn hollek [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => "a ya d'e dermen d'an $1",
 	'globalblocking-logentry-noexpiry' => "n'eus bet resisaet deiziad termen ebet",
@@ -1283,7 +1283,7 @@ A-is emañ marilh ar stankadennoù :",
 	'right-globalblock' => 'Stankañ implijerien en un doare hollek',
 	'right-globalunblock' => 'Lemel ar stankadennoù hollek',
 	'right-globalblock-whitelist' => "Diweredekaat en un doare lec'hel ar stankadennoù hollek",
-	'right-globalblock-exempt' => 'Mont a dreuz ar stankadennoù hollek',
+	'right-globalblock-exempt' => 'Mont dreist ar stankadennoù hollek',
 );
 
 /** Bosnian (Bosanski)
