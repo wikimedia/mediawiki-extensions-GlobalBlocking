@@ -5850,6 +5850,7 @@ $messages['mn'] = array(
 
 /** Marathi (मराठी)
  * @author Htt
+ * @author Kaajawa
  * @author Kaustubh
  * @author Rahuldeshmukh101
  */
@@ -5859,12 +5860,14 @@ $messages['mr'] = array(
 	'globalblocking-block-intro' => 'तुम्ही हे पान वापरून एखाद्या आयपी अंकपत्त्याला सर्व विकिंवर ब्लॉक करू शकता.',
 	'globalblocking-block-reason' => 'कारण:',
 	'globalblocking-block-reasonotherlist' => 'इतर कारणे',
+	'globalblocking-block-edit-dropdown' => 'प्रतिबंधाची कारणे संपादित करा',
 	'globalblocking-block-expiry' => 'ब्लॉक समाप्ती:',
 	'globalblocking-block-expiry-other' => 'इतर समाप्ती वेळ',
 	'globalblocking-block-expiry-otherfield' => 'इतर वेळ:',
 	'globalblocking-block-legend' => 'एक सदस्य वैश्विक पातळीवर ब्लॉक करा',
 	'globalblocking-block-options' => 'विकल्प:',
 	'globalblocking-ipaddress' => 'अंकपत्ता',
+	'globalblocking-ipbanononly' => 'केवळ अनामिक सदस्यांना प्रतिबंधीत करा',
 	'globalblocking-block-errors' => 'ब्लॉक अयशस्वी झालेला आहे, कारण:',
 	'globalblocking-block-ipinvalid' => 'तुम्ही दिलेला आयपी अंकपत्ता ($1) अयोग्य आहे.
 कृपया नोंद घ्या की तुम्ही सदस्य नाव देऊ शकत नाही!',
