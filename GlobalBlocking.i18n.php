@@ -10221,6 +10221,7 @@ $1',
 /** Simplified Chinese (‪中文(简体)‬)
  * @author Anakmalaysia
  * @author Bencmq
+ * @author Breawycker
  * @author Gaoxuewei
  * @author Liangent
  * @author Mark85296341
@@ -10247,6 +10248,8 @@ $messages['zh-hans'] = array(
 	'globalblocking-block-expiry-otherfield' => '其它时间:',
 	'globalblocking-block-legend' => '全域封锁一个IP地址',
 	'globalblocking-block-options' => '选项：',
+	'globalblocking-ipaddress' => 'IP地址：',
+	'globalblocking-ipbanononly' => '仅阻止匿名用户',
 	'globalblocking-block-errors' => '该封锁不成功，因为如下{{PLURAL:$1|原因|原因}}：',
 	'globalblocking-block-ipinvalid' => '您所输入的IP地址 （$1） 是无效的。
 请留意的是您不可以输入一个用户名！',
