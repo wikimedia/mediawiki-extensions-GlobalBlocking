@@ -21,7 +21,7 @@ $wgExtensionCredits['other'][] = array(
 	'name'           => 'GlobalBlocking',
 	'author'         => 'Andrew Garrett',
 	'descriptionmsg' => 'globalblocking-desc',
-	'url'            => 'http://www.mediawiki.org/wiki/Extension:GlobalBlocking',
+	'url'            => 'https://www.mediawiki.org/wiki/Extension:GlobalBlocking',
 );
 
 $wgExtensionMessagesFiles['GlobalBlocking'] =  "$dir/GlobalBlocking.i18n.php";
