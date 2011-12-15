@@ -187,6 +187,7 @@ For more information about Global Blocking, see http://www.mediawiki.org/wiki/Gl
 * $4 is the blocked user
 * $5 are the block options',
 	'globalblocking-list-anononly' => '{{Identical|Anon only}}',
+	'globalblocking-list-unblock' => '{{Identical|Remove}}',
 	'globalblocking-list-whitelist' => '{{Identical|Local status}}',
 	'globalblocking-list-modify' => '{{Identical|Modify}}',
 	'globalblocking-unblock-ipinvalid' => '{{Identical|The IP address ($1) ...}}',
@@ -1803,17 +1804,17 @@ Blokeringen ''\$4''.",
  * @author Umherirrender
  */
 $messages['de'] = array(
-	'globalblocking-desc' => '[[Special:GlobalBlock|Sperrt]] IP-Adressen auf [[Special:GlobalBlockList|allen Wikis]]',
+	'globalblocking-desc' => 'Ermöglicht das [[Special:GlobalBlock|Sperren]] von IP-Adressen auf [[Special:GlobalBlockList|allen Wikis]]',
 	'globalblocking-block' => 'IP-Adresse global sperren',
 	'globalblocking-modify-intro' => 'Du kannst dieses Formular nutzen, um die Einstellungen einer globalen Sperre zu ändern.',
 	'globalblocking-block-intro' => 'Auf dieser Seite kannst du IP-Adressen für alle Wikis sperren.',
 	'globalblocking-block-reason' => 'Grund:',
 	'globalblocking-block-otherreason' => 'Anderer/ergänzender Grund:',
 	'globalblocking-block-reasonotherlist' => 'Anderer Grund',
-	'globalblocking-block-reason-dropdown' => '* Gemeinsame Sperrgründe
+	'globalblocking-block-reason-dropdown' => '* Allgemeine Sperrgründe
 ** Spam in mehreren Wikis
 ** Missbrauch in mehreren Wikis
-** Vandalismus',
+** Vandalismus in mehreren Wikis',
 	'globalblocking-block-edit-dropdown' => 'Sperrgründe bearbeiten',
 	'globalblocking-block-expiry' => 'Sperrdauer:',
 	'globalblocking-block-expiry-other' => 'Andere Dauer',
