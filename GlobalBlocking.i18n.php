@@ -1713,6 +1713,7 @@ Nodwch gyfeiriad IP dilys os gwelwch yn dda.",
 	'globalblocking-whitelist-legend' => 'Newid y statws lleol',
 	'globalblocking-whitelist-reason' => 'Rheswm:',
 	'globalblocking-whitelist-status' => 'Statws lleol:',
+	'globalblocking-whitelist-submit' => 'Newid y statws lleol',
 	'globalblocking-logpage' => 'Lòg blocio cydwici',
 );
 
