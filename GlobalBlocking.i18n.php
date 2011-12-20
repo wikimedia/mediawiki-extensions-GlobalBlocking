@@ -8345,6 +8345,7 @@ $messages['sk'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Iný čas:',
 	'globalblocking-block-legend' => 'Globálne zablokovať IP adresu',
 	'globalblocking-block-options' => 'Voľby:',
+	'globalblocking-ipaddress' => 'IP adresa:',
 	'globalblocking-block-errors' => 'Blokovanie bolo neúspešné z {{PLURAL:$1|nasledovného dôvodu|nasledovných dôvodov}}:',
 	'globalblocking-block-ipinvalid' => 'IP adresa ($1), ktorú ste zadali nie je platná.
 Majte na pamäti, že nemôžete zadať meno používateľa!',
@@ -8406,8 +8407,9 @@ Môžete sa vrátiť na [[Special:GlobalBlockList|Zoznam globálnych blokovaní]
 	'globalblocking-whitelist-errors' => 'Vaša zmena lokálneho stavu globálneho blokovania bola neúspešná z {{PLURAL:$1|nasledovného dôvodu|nasledovných dôvodov}}:',
 	'globalblocking-whitelist-intro' => 'Tento formulár slúži na úpravu lokálneho stavu globálneho blokovania. Ak vypnete globálne blokovanie pre túto wiki, používatelia z danej IP adresy budú môcť normálne vykonávať úpravy.
 Môžete sa vrátiť na [[Special:GlobalBlockList|Zoznam globálnych blokovaní]].',
-	'globalblocking-blocked' => "Vašu IP adresu zablokoval na všetkých wiki '''$1''' (''$2'').
-Ako dôvod udáva ''„$3“''. Blokovanie vyprší ''$4''.",
+	'globalblocking-blocked' => "Vašu IP adresu $5 zablokoval na všetkých wiki '''$1''' (''$2'').
+Ako dôvod udáva ''„$3“''.
+Blokovanie ''$4''.",
 	'globalblocking-blocked-nopassreset' => 'Nemôžete nastaviť nové heslo používateľovi, pretože ste globáne zablokovaný.',
 	'globalblocking-logpage' => 'Záznam globálnych blokovaní',
 	'globalblocking-logpagetext' => 'Toto je záznam globálnych blokovaní, ktoré boli vytvorené a zrušené na tejto wiki.
