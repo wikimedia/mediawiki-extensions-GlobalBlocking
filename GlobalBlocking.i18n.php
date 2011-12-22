@@ -5972,10 +5972,12 @@ $messages['mn'] = array(
  * @author Kaajawa
  * @author Kaustubh
  * @author Rahuldeshmukh101
+ * @author V.narsikar
  */
 $messages['mr'] = array(
 	'globalblocking-desc' => 'आइपी अंकपत्त्याला [[Special:GlobalBlockList|अनेक विकिंवर ब्लॉक]] करण्याची [[Special:GlobalBlock|परवानगी]] देतो.',
 	'globalblocking-block' => 'आयपी अंकपत्ता वैश्विक पातळीवर ब्लॉक करा',
+	'globalblocking-modify-intro' => 'वैश्विक रोध बदलविण्यासाठी आपण या आवेदनपत्राचा वापर करू शकता.',
 	'globalblocking-block-intro' => 'तुम्ही हे पान वापरून एखाद्या आयपी अंकपत्त्याला सर्व विकिंवर ब्लॉक करू शकता.',
 	'globalblocking-block-reason' => 'कारण:',
 	'globalblocking-block-otherreason' => 'इतर / अतिरिक्त कारण:',
@@ -5993,18 +5995,23 @@ $messages['mr'] = array(
 कृपया नोंद घ्या की तुम्ही सदस्य नाव देऊ शकत नाही!',
 	'globalblocking-block-expiryinvalid' => 'तुम्ही दिलेली समाप्तीची वेळ ($1) अयोग्य आहे.',
 	'globalblocking-block-submit' => 'ह्या आयपी अंकपत्त्याला वैश्विक पातळीवर ब्लॉक करा',
+	'globalblocking-modify-submit' => 'हा वैश्विक रोध बदलवा',
 	'globalblocking-block-success' => '$1 या आयपी अंकपत्त्याला सर्व विकिंवर यशस्वीरित्या ब्लॉक करण्यात आलेले आहे.
 तुम्ही कदाचित [[Special:GlobalBlockList|वैश्विक ब्लॉक्सची यादी]] पाहू इच्छिता.',
+	'globalblocking-modify-success' => '$1  वर असलेला वैश्विक रोध यशस्वीरित्या अनुरूप करण्यात आलेला आहे.',
 	'globalblocking-block-successsub' => 'वैश्विक ब्लॉक यशस्वी',
+	'globalblocking-modify-successsub' => 'वैश्विक रोध यशस्वीरित्या अनुरूपित.',
 	'globalblocking-block-alreadyblocked' => '$1 हा आयपी अंकपत्ता अगोदरच ब्लॉक केलेला आहे. तुम्ही अस्तित्वात असलेले ब्लॉक [[Special:GlobalBlockList|वैश्विक ब्लॉकच्या यादीत]] पाहू शकता.',
 	'globalblocking-block-bigrange' => 'तुम्ही दिलेली रेंज ($1) ही ब्लॉक करण्यासाठी खूप मोठी आहे. तुम्ही एकावेळी जास्तीत जास्त ६५,५३६ पत्ते ब्लॉक करू शकता (/१६ रेंज)',
+	'globalblocking-list-intro' => 'ही सध्या क्रियान्वित असलेल्या सर्व वैश्विक रोधांची यादी आहे.
+या पैकी काही रोधांवर स्थानिकरित्या हटविल्याची खूण केल्या गेलेली आहे:याचा अर्थ असा कि, हा रोध इतर संकेतस्थळांवर लागु आहे, परंतु,स्थानिक प्रशासकाने या विकिवर तो रोध हटविण्याचा निर्णय घेतला आहे.',
 	'globalblocking-list' => 'वैश्विक पातळीवर ब्लॉक केलेले आयपी अंकपत्ते',
 	'globalblocking-search-legend' => 'एखाद्या वैश्विक ब्लॉक ला शोधा',
 	'globalblocking-search-ip' => 'आयपी अंकपत्ता:',
 	'globalblocking-search-submit' => 'ब्लॉक साठी शोध',
 	'globalblocking-list-ipinvalid' => 'तुम्ही शोधायला दिलेला आयपी अंकपत्ता ($1) अयोग्य आहे.
 कृपया योग्य आयपी अंकपत्ता द्या.',
-	'globalblocking-search-errors' => 'तुमचा शोध अयशस्वी झालेला आहे, {{PLURAL:$1|कारण|कारण }}:',
+	'globalblocking-search-errors' => 'आपला शोध पुढील कारण/कारणांसाठी अयशस्वी झालेला आहे {{PLURAL:$1|कारण|कारणे}}:',
 	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') वैश्विक पातळीवर ब्लॉक [[Special:Contributions/\$4|\$4]] ''(\$5)''",
 	'globalblocking-list-expiry' => 'समाप्ती $1',
 	'globalblocking-list-anononly' => 'फक्त-अनामिक',
@@ -6015,7 +6022,9 @@ $messages['mr'] = array(
 	'globalblocking-list-noresults' => 'विनंती केलेला अंकपत्ता अथवा सदस्यनाव प्रतिबंधीत केलेले नाही.',
 	'globalblocking-goto-block' => '(आयपी ) अंकपत्ता वैश्विक पातळीवर ब्लॉक करा',
 	'globalblocking-goto-unblock' => 'एक वैश्विक ब्लॉक काढा',
+	'globalblocking-goto-status' => 'वैश्विक रोधाची स्थानिक स्थिती बदलवा',
 	'globalblocking-return' => 'वैश्विक पातळीवर ब्लॉक असलेल्यांची यादी द्या',
+	'globalblocking-notblocked' => 'आपण टाकलेला ($1) हा आय पी अंकपत्ता हा वैश्विकरित्या रोधित नाही.',
 	'globalblocking-unblock' => 'एक वैश्विक ब्लॉक काढा',
 	'globalblocking-unblock-ipinvalid' => 'तुम्ही दिलेला आयपी अंकपत्ता ($1) अयोग्य आहे.
 कृपया नोंद घ्या की तुम्ही सदस्य नाव वापरू शकत नाही!',
@@ -6023,12 +6032,12 @@ $messages['mr'] = array(
 	'globalblocking-unblock-submit' => 'वैश्विक ब्लॉक काढा',
 	'globalblocking-unblock-reason' => 'कारण:',
 	'globalblocking-unblock-unblocked' => "तुम्ही आयपी अंकपत्ता '''$1''' वर असणारा वैश्विक ब्लॉक #$2 यशस्वीरित्या काढलेला आहे",
-	'globalblocking-unblock-errors' => 'तुम्ही या आयपी अंकपत्त्यावरील वैश्विक ब्लॉक काढू शकत नाही, कारण:
-$1',
+	'globalblocking-unblock-errors' => 'आपले या आयपी अंकपत्त्यावरील वैश्विक रोध काढणे अयशस्वी झाले आहे,{{PLURAL:$1|कारण|कारणे}}:',
 	'globalblocking-unblock-successsub' => 'वैश्विक ब्लॉक काढलेला आहे',
 	'globalblocking-unblock-subtitle' => 'वैश्विक ब्लॉक काढत आहे',
 	'globalblocking-unblock-intro' => 'तुम्ही ह्या पानाचा वापर वैश्विक ब्लॉक काढण्या साठी करू शकता',
 	'globalblocking-whitelist' => 'वैश्विक ब्लॉकची स्थानिक स्थिति',
+	'globalblocking-whitelist-notapplied' => 'वैश्विक रोधांचे या विकिवर प्रयोजन  नाही,त्यामुळे वैश्विक रोधांची स्थानिक स्थिती अनुरूपित करता येऊ शकत नाही.',
 	'globalblocking-whitelist-legend' => 'स्थानिक स्थिती बदला',
 	'globalblocking-whitelist-reason' => 'कारण:',
 	'globalblocking-whitelist-status' => 'स्थानिक स्थिती:',
@@ -6037,20 +6046,36 @@ $1',
 	'globalblocking-whitelist-whitelisted' => "तुम्ही '''$1''' या अंकपत्त्याचा वैश्विक ब्लॉक #$2 {{SITENAME}} वर रद्द केलेला आहे.",
 	'globalblocking-whitelist-dewhitelisted' => "तुम्ही '''$1''' या अंकपत्त्याचा वैश्विक ब्लॉक #$2 {{SITENAME}} वर पुन्हा दिलेला आहे.",
 	'globalblocking-whitelist-successsub' => 'स्थानिक स्थिती बदलली',
-	'globalblocking-blocked' => "तुमचा आयपी अंकपत्ता (\$5) सर्व विकिमीडिया विकींवर '''\$1''' (''\$2'') ने ब्लॉक केलेला आहे.
-यासाठी ''\"\$3\"'' हे कारण दिलेले आहे.  ही बंदी ''\$4''.",
+	'globalblocking-whitelist-nochange' => 'वैश्विक रोधाच्या स्थानिक स्थितीत आपण काहीच बदल केला नाही.
+[[Special:GlobalBlockList|वैश्विक रोधांच्या यादीकडे परत]].',
+	'globalblocking-whitelist-errors' => 'वैश्विक रोधाच्या स्थानिक स्थितीत आपण केलेला बदल अयशस्वी होता.त्याची {{PLURAL:$1|कारण|कारणे}} पुढीलप्रमाणे:',
+	'globalblocking-whitelist-intro' => 'आपण हे आवेदनपत्र वैश्विक रोधाची स्थानिक स्थिती संपादण्यास वापरू शकता.जर या विकिवर वैश्विक रोध वगळण्यात आला असेल तर बाधित अंकपत्त्याचा वापरकर्ता सामान्यपणे संपादने करू शकेल.
+[[Special:GlobalBlockList|वैश्विक रोधांच्या यादीकडे परत]].',
+	'globalblocking-blocked' => "तुमचा आयपी अंकपत्ता \$5 सर्व  विकींवर '''\$1''' (''\$2'') ने रोधित केलेला आहे.
+यासाठी ''\"\$3\"'' हे कारण दिलेले आहे.
+ही बंदी ''\$4'' वर.",
+	'globalblocking-blocked-nopassreset' => 'आपण सदस्याचा परवलीचा शब्द पुनर्स्थापित करू शकत नाही कारण आपणांवर वैश्विक रोध आहे.',
 	'globalblocking-logpage' => 'वैश्विक ब्लॉक सूची',
+	'globalblocking-logpagetext' => 'हा या विकिवर लावण्यात आलेल्या व काढलेल्या वैश्विक रोधांचा  क्रमलेख आहे.याची नोंद घ्यावी कि,इतर विकिंवर वैश्विक रोध लावल्या व काढल्या जाऊ शकतात, जेणेकरून या विकिवर त्याचा परिणाम होऊ शकतो.सध्या क्रियाशील असणारे वैश्विक रोध बघण्यासाठी बघा:[[Special:GlobalBlockList|वैश्विक रोध यादी]].',
 	'globalblocking-block-logentry' => '$2 हा समाप्ती कालावधी देऊन [[$1]] ला वैश्विक पातळीवर ब्लॉक केले',
+	'globalblocking-block2-logentry' => '[[$1]]ला वैश्विकरित्या रोधित केले ($2)',
 	'globalblocking-unblock-logentry' => '[[$1]] वरील वैश्विक ब्लॉक काढला',
 	'globalblocking-whitelist-logentry' => '[[$1]] वरचा वैश्विक ब्लॉक स्थानिक पातळीवर रद्द केला',
 	'globalblocking-dewhitelist-logentry' => '[[$1]] वरचा वैश्विक ब्लॉक स्थानिक पातळीवर पुन्हा दिला',
+	'globalblocking-modify-logentry' => '[[$1]]वर असणारा वैश्विक रोध अनुरूपित केला ($2)',
 	'globalblocking-logentry-expiry' => 'समाप्ती $1',
 	'globalblocking-logentry-noexpiry' => 'अनंत',
+	'globalblocking-loglink' => '$1 हा आयपी अंकपत्ता वैश्विकरित्या रोधित केला  ([[{{#Special:GlobalBlockList}}/$1|संपूर्ण तपशील]]).',
+	'globalblocking-showlog' => 'हा आयपी अंकपत्ता पूर्वी वैश्विकरित्या रोधित केल्या गेला होता.
+संदर्भासाठी रोधाचा क्रमलेख खाली देण्यात येत आहे:',
 	'globalblocklist' => 'वैश्विक पातळीवर ब्लॉक केलेल्या आयपी अंकपत्त्यांची यादी',
 	'globalblock' => 'आयपी अंकपत्त्याला वैश्विक पातळीवर ब्लॉक करा',
+	'globalblockstatus' => 'वैश्विक रोधाची स्थानिक स्थिती',
+	'removeglobalblock' => 'वैश्विक रोध हटवा',
 	'right-globalblock' => 'वैश्विक ब्लॉक तयार करा',
 	'right-globalunblock' => 'वैश्विक ब्लॉक काढून टाका',
 	'right-globalblock-whitelist' => 'वैश्विक ब्लॉक स्थानिक पातळीवर रद्द करा',
+	'right-globalblock-exempt' => 'वैश्विक रोधास बगल द्या',
 );
 
 /** Malay (Bahasa Melayu)
