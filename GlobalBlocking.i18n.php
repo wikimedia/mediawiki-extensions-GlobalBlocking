@@ -241,6 +241,7 @@ $messages['af'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Ander tyd:',
 	'globalblocking-block-legend' => "Versper 'n IP-adres globaal",
 	'globalblocking-block-options' => 'Opsies:',
+	'globalblocking-ipaddress' => 'IP-adres:',
 	'globalblocking-block-errors' => 'Die versperring was nie suksesvol nie, as gevolg van die volgende {{PLURAL:$1|rede|redes}}:',
 	'globalblocking-block-ipinvalid' => "Die IP adres ($1) wat U ingevoer het is ongeldig.
 Let asseblief dat U nie 'n gebruikersnaam kan invoer nie!",
@@ -8705,7 +8706,7 @@ Regjistri i bllokimit është poshtë për referncë:',
 $messages['sr-ec'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Омогућује]] [[Special:GlobalBlockList|глобално блокирање]] ИП адреса на више викија',
 	'globalblocking-block' => 'Глобално блокирајте ИП адресу',
-	'globalblocking-modify-intro' => 'Овом формом мењате подешавања глобалног блока.',
+	'globalblocking-modify-intro' => 'Овим обрасцем можете да промените поставке глобалне блокаде.',
 	'globalblocking-block-intro' => 'Можете користити ову страницу да блокирате ИП адресу на свим викијима.',
 	'globalblocking-block-reason' => 'Разлог:',
 	'globalblocking-block-otherreason' => 'Други/додатни разлог:',
@@ -8746,7 +8747,7 @@ $messages['sr-ec'] = array(
 	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') глобално блокирао [[Special:Contributions/\$4|\$4]] ''(\$5)''",
 	'globalblocking-list-expiry' => 'истиче $1',
 	'globalblocking-list-anononly' => 'само анонимне',
-	'globalblocking-list-unblock' => 'деблокирај',
+	'globalblocking-list-unblock' => 'уклони',
 	'globalblocking-list-whitelist' => 'локални статус',
 	'globalblocking-goto-block' => 'Блокирај IP адресу глобално',
 	'globalblocking-goto-unblock' => 'Уклони глобални блок',
@@ -8812,6 +8813,7 @@ $messages['sr-el'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Drugo vreme:',
 	'globalblocking-block-legend' => 'Globalno blokiranje IP adrese',
 	'globalblocking-block-options' => 'Opcije:',
+	'globalblocking-ipaddress' => 'IP adresa:',
 	'globalblocking-block-errors' => 'Blok nije uspešan zbog {{PLURAL:$1|sledeđeg razloga|sledećih razloga}}:',
 	'globalblocking-block-ipinvalid' => 'IP adresa ($1) koju ste uneli nije dobra.
 Zapamtite da ne možete uneti korisničko ime!',
@@ -8822,6 +8824,9 @@ Zapamtite da ne možete uneti korisničko ime!',
 	'globalblocking-modify-success' => 'Globalni blok na $1 je uspešno promenjen',
 	'globalblocking-block-successsub' => 'Uspešan globalni blok',
 	'globalblocking-modify-successsub' => 'Globalni blok je uspešno promenjen',
+	'globalblocking-block-alreadyblocked' => 'IP adresa $1 je već globalno blokirana.
+Možete pogledati spisak postojećih [[Special:GlobalBlockList|globalnih blokiranja]],
+ili pak izmeniti postavke postojeće blokade tako što ćete ponovo podneti ovaj obrazac.',
 	'globalblocking-block-bigrange' => 'Navedeni opseg ($1) je prevelik da bi bio blokiran.
 Možete blokirati najviše 65.536 adresa (/16 opsezi)',
 	'globalblocking-list' => 'Spisak globalno blokiranih IP adresa',
@@ -8853,9 +8858,9 @@ Zapamtite da ne možete unositi korisnička imena!',
 	'globalblocking-whitelist-reason' => 'Razlog:',
 	'globalblocking-whitelist-status' => 'Lokalni status:',
 	'globalblocking-whitelist-submit' => 'Promeni lokalni status',
-	'globalblocking-blocked' => "Vaša IP adresa je blokirana na svim Vikimedijinim vikijima. Korisnik koji je blokirao '''$1''' (''$2'').
-Razlog za blokadu je „''$3''”. 
-Blok ''$4''.",
+	'globalblocking-blocked' => "Vaša IP adresa \$5 je blokirana na svim vikijima od '''\$1''' (''\$2'').
+Navedeni razlog glasi: „''\"\$3\"''“.
+Blokada ''\$4''.",
 	'globalblocking-logpage' => 'Istorija globalnih blokova',
 	'globalblocking-block-logentry' => 'globalno blokirao [[$1]] sa vremenom isticanja od $2',
 	'globalblocking-block2-logentry' => 'globalno blokiran [[$1]] ($2)',
@@ -10523,6 +10528,8 @@ $messages['zh-hant'] = array(
 	'globalblocking-block-expiry-otherfield' => '其他時間：',
 	'globalblocking-block-legend' => '全域封鎖一個 IP 位址',
 	'globalblocking-block-options' => '選項',
+	'globalblocking-ipaddress' => 'IP地址：',
+	'globalblocking-ipbanononly' => '僅阻止匿名用戶',
 	'globalblocking-block-errors' => '該封鎖不成功，因為如下{{PLURAL:$1|原因|原因}}：',
 	'globalblocking-block-ipinvalid' => '您所輸入的 IP 位址 （$1） 是無效的。
 請留意的是您不可以輸入一個用戶名！',
