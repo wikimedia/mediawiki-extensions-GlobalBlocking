@@ -284,6 +284,14 @@ $specialPageAliases['mt'] = array(
 	'GlobalBlockList' => array( 'ListaBlokkGlobali' ),
 );
 
+/** Norwegian Bokmål (‪Norsk (bokmål)‬) */
+$specialPageAliases['nb'] = array(
+	'GlobalBlock' => array( 'Blokker_globalt', 'Global_blokkering' ),
+	'GlobalBlockList' => array( 'Global_blokkeringsliste' ),
+	'RemoveGlobalBlock' => array( 'Avblokker_globalt', 'Global_avblokkering' ),
+	'GlobalBlockStatus' => array( 'Hviteliste_for_global_blokkering' ),
+);
+
 /** Nedersaksisch (Nedersaksisch) */
 $specialPageAliases['nds-nl'] = array(
 	'GlobalBlock' => array( 'Globaal_blokkeren' ),
@@ -303,14 +311,6 @@ $specialPageAliases['nl'] = array(
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬) */
 $specialPageAliases['nn'] = array(
 	'GlobalBlockList' => array( 'Global_blokkeringsliste' ),
-);
-
-/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬) */
-$specialPageAliases['nb'] = array(
-	'GlobalBlock' => array( 'Blokker_globalt', 'Global_blokkering' ),
-	'GlobalBlockList' => array( 'Global_blokkeringsliste' ),
-	'RemoveGlobalBlock' => array( 'Avblokker_globalt', 'Global_avblokkering' ),
-	'GlobalBlockStatus' => array( 'Hviteliste_for_global_blokkering' ),
 );
 
 /** Occitan (Occitan) */
@@ -353,7 +353,7 @@ $specialPageAliases['ro'] = array(
 	'GlobalBlockStatus' => array( 'Lista_albă_de_blocări_globale', 'Stare_blocare_globală', 'Dezactivare_blocare_globală' ),
 );
 
-/** Sanskrit (संस्कृत) */
+/** Sanskrit (संस्कृतम्) */
 $specialPageAliases['sa'] = array(
 	'GlobalBlock' => array( 'वैश्विकप्रतिबन्ध' ),
 	'GlobalBlockList' => array( 'वैश्विकप्रतिबन्धसूची' ),
@@ -432,8 +432,3 @@ $specialPageAliases['zh-hant'] = array(
 	'RemoveGlobalBlock' => array( '解除全域封禁' ),
 	'GlobalBlockStatus' => array( '全域封禁白名單' ),
 );
-
-/**
- * For backwards compatibility with MediaWiki 1.15 and earlier.
- */
-$aliases =& $specialPageAliases;
