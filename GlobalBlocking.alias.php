@@ -306,7 +306,7 @@ $specialPageAliases['nn'] = array(
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬) */
-$specialPageAliases['no'] = array(
+$specialPageAliases['nb'] = array(
 	'GlobalBlock' => array( 'Blokker_globalt', 'Global_blokkering' ),
 	'GlobalBlockList' => array( 'Global_blokkeringsliste' ),
 	'RemoveGlobalBlock' => array( 'Avblokker_globalt', 'Global_avblokkering' ),

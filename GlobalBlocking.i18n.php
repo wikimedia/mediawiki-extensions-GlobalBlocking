@@ -6577,7 +6577,7 @@ For å visa alle aktive globale blokkeringar, sjå den [[Special:GlobalBlockList
  * @author Laaknor
  * @author Nghtwlkr
  */
-$messages['no'] = array(
+$messages['nb'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Gjør det mulig]] å blokkere IP-adresser på [[Special:GlobalBlockList|alle wikier]]',
 	'globalblocking-block' => 'Blokker en IP-adresse globalt',
 	'globalblocking-modify-intro' => 'Du kan bruke dette skjemaet for å endre innstillingene av en global blokkering.',
