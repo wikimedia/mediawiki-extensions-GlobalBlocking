@@ -749,6 +749,7 @@ $messages['az'] = array(
 
 /** Bashkir (Башҡортса)
  * @author Assele
+ * @author Haqmar
  */
 $messages['ba'] = array(
 	'globalblocking-desc' => 'IP адрестарҙы [[Special:GlobalBlockList|бер нисә викила дөйөм бикләү]] [[Special:GlobalBlock|мөмкинлеге бирә]]',
@@ -832,7 +833,7 @@ $messages['ba'] = array(
 	'globalblocking-whitelist-intro' => 'Дөйөм бикләүҙең урындағы торошон үҙгәртеү өсөн ошо форманы ҡуллана алаһығыҙ.
 Әгәр был викила дөйөм бикләү һүндерелгән булһа, ул IP адреслы ҡатнашыусылар биттәрҙе ғәҙәттәгесә үҙгәртә аласаҡ.
 [[Special:GlobalBlockList|Дөйөм бикләүҙәр исемлегенә кире ҡайтырға]].',
-	'globalblocking-blocked' => "Һеҙҙең IP адресығыҙ бөтә вики проекттарҙа '''\$1''' (''\$2'') тарафынан бикләнгән.
+	'globalblocking-blocked' => "Һеҙҙең IP адресығыҙ \$5 бөтә вики проекттарҙа '''\$1''' (''\$2'') тарафынан бикләнгән.
 Күрһәтелгән сәбәп: ''\"\$3\"''.
 Бикләү ''\$4''.",
 	'globalblocking-blocked-nopassreset' => 'Һеҙ ҡатнашыусыларҙың паролен үҙгәртә алмайһығыҙ, сөнки дөйөм бикләнгәнһегеҙ.',
@@ -3599,6 +3600,7 @@ $messages['he'] = array(
 );
 
 /** Hindi (हिन्दी)
+ * @author Ansumang
  * @author Kaustubh
  * @author Shyam123.ckp
  */
@@ -3607,6 +3609,7 @@ $messages['hi'] = array(
 	'globalblocking-block' => 'एक आइपी एड्रेस को ग्लोबलि ब्लॉक करें',
 	'globalblocking-block-intro' => 'आप इस पन्ने का इस्तेमाल करके सभी विकियोंपर एक आईपी एड्रेस ब्लॉक कर सकतें हैं।',
 	'globalblocking-block-reason' => 'कारण:',
+	'globalblocking-block-reasonotherlist' => 'अन्य कारण',
 	'globalblocking-block-expiry' => 'अवरुद्ध-ब्लॉक समाप्ति वैश्विक',
 	'globalblocking-block-expiry-other' => 'अन्य समाप्ती समय',
 	'globalblocking-block-expiry-otherfield' => 'अन्य समय:',
@@ -7316,9 +7319,12 @@ $messages['ps'] = array(
 ** ورانکاري',
 	'globalblocking-block-edit-dropdown' => 'د بنديز سببونه سمول',
 	'globalblocking-block-expiry' => 'د پای نېټه:',
+	'globalblocking-block-expiry-other' => 'د پای بل وخت',
 	'globalblocking-block-expiry-otherfield' => 'بل وخت:',
+	'globalblocking-block-legend' => 'په يوې آي پي پتې نړېوال بنديز لګول',
 	'globalblocking-block-options' => 'خوښنې:',
 	'globalblocking-ipaddress' => 'IP پته:',
+	'globalblocking-ipbanononly' => 'يواځې په ورکنومو کارنانو بنديز لګول',
 	'globalblocking-search-ip' => 'IP پته:',
 	'globalblocking-search-submit' => 'د بنديزونو لپاره پلټل',
 	'globalblocking-list-expiry' => 'پای نېټه $1',
@@ -8179,6 +8185,7 @@ $messages['sc'] = array(
 );
 
 /** Sicilian (Sicilianu)
+ * @author Aushulz
  * @author Gmelfi
  * @author Melos
  * @author Santu
@@ -8214,6 +8221,7 @@ $messages['scn'] = array(
 	'globalblocking-list-unblock' => 'rimovi',
 	'globalblocking-list-whitelisted' => 'disattivatu lucalmenti di $1: $2',
 	'globalblocking-list-whitelist' => 'statu lucali',
+	'globalblocking-list-modify' => 'cancia',
 	'globalblocking-goto-block' => 'Blocca glubbalmenti nu nnirizzu IP',
 	'globalblocking-goto-unblock' => 'Scancella nu bloccu glubbali',
 	'globalblocking-goto-status' => 'Cancia statu lucali di nu bloccu glubbali',
@@ -8228,6 +8236,8 @@ $messages['scn'] = array(
 	'globalblocking-unblock-errors' => "La scancillazzioni dû bloccu glubbali c'addumannasti non fi fatta pi {{PLURAL:$1|stu mutivu|sti  mutivi}}:",
 	'globalblocking-unblock-successsub' => 'Bloccu glubbali scancillatu cu successu',
 	'globalblocking-unblock-subtitle' => 'Scancillazzioni bloccu glubbali',
+	'globalblocking-whitelist-reason' => 'Mutivu:',
+	'globalblocking-logentry-expiry' => 'scari $1',
 	'globalblockstatus' => 'Statu lucali di blocca glubbali',
 	'right-globalblock-exempt' => 'Bypassa li blocchi globali',
 );
@@ -8266,6 +8276,7 @@ $messages['si'] = array(
 	'globalblocking-block-legend' => 'IP ලිපිනයක් ගෝලීයව වාරණය කරන්න',
 	'globalblocking-block-options' => 'විකල්පයන්:',
 	'globalblocking-ipaddress' => 'IP ලිපිනය:',
+	'globalblocking-ipbanononly' => 'නිර්නාමික පරිශීලකයන් පමණක් වාරණය කරන්න',
 	'globalblocking-block-errors' => 'පහත සඳහන් {{PLURAL:$1|හේතුව|හේතූන්}} නිසා වාරණය අසාර්ථක විය:',
 	'globalblocking-block-ipinvalid' => 'ඔබ ඇතුළත් කළ IP ලිපිනය ($1) සදොස්ය. 
 ඔබට පරිශීලක නමක් ඇතුළත් කළ නොහැකි බව සළකන්න!',
@@ -10303,7 +10314,7 @@ $messages['yo'] = array(
 	'globalblocking-list-noresults' => 'Àdírẹ́sì IP tìtọrọ kó jẹ́ dídílọ́nà.',
 	'globalblocking-unblock-reason' => 'Ìdíẹ̀:',
 	'globalblocking-whitelist-reason' => 'Ìdíẹ̀:',
-	'globalblocking-logentry-expiry' => 'yíò parí $1',
+	'globalblocking-logentry-expiry' => 'yíò parí ní $1',
 );
 
 /** Cantonese (粵語)
