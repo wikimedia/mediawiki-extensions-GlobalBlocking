@@ -1122,6 +1122,7 @@ $messages['bn'] = array(
 	'globalblocking-block-legend' => 'একটি আইপি ঠিকানাকে গ্লোবালি বাধা প্রদান করো',
 	'globalblocking-block-options' => 'অপশন:',
 	'globalblocking-ipaddress' => 'আইপি ঠিকানা:',
+	'globalblocking-ipbanononly' => 'কেবল বেনামী ব্যবহারকারীদের বাধা দেওয়া হোক',
 	'globalblocking-block-errors' => 'আপনার ব্লক ব্যর্থ হয়েছে, নিচের {{PLURAL:$1|কারণে|কারণসমূহের জন্য}}:',
 	'globalblocking-block-expiryinvalid' => 'মেয়াদ উত্তীর্ণের যে সময় ($1) আপনি প্রবেশ করিয়েছেন তা গ্রহণযোগ্য নয়।',
 	'globalblocking-block-submit' => 'এই আইপি ঠিকানাকে গ্লোবালি বাধাদান করো',
@@ -2338,6 +2339,8 @@ $messages['eo'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Alia tempo:',
 	'globalblocking-block-legend' => 'Forbari IP-adreson ĝenerale',
 	'globalblocking-block-options' => 'Opcioj:',
+	'globalblocking-ipaddress' => 'IP-adreso:',
+	'globalblocking-ipbanononly' => 'Forbari nur anonimulojn',
 	'globalblocking-block-errors' => 'La forbaro malsukcesis, pro la {{PLURAL:$1|jena kialo|jenaj kialoj}}:
 $1',
 	'globalblocking-block-ipinvalid' => 'La IP-adreso ($1) kiun vi enigis estas malvalida.
@@ -3609,20 +3612,30 @@ $messages['hi'] = array(
 	'globalblocking-block' => 'एक आइपी एड्रेस को ग्लोबलि ब्लॉक करें',
 	'globalblocking-block-intro' => 'आप इस पन्ने का इस्तेमाल करके सभी विकियोंपर एक आईपी एड्रेस ब्लॉक कर सकतें हैं।',
 	'globalblocking-block-reason' => 'कारण:',
+	'globalblocking-block-otherreason' => 'अन्य/अतिरिक्त कारण:',
 	'globalblocking-block-reasonotherlist' => 'अन्य कारण',
+	'globalblocking-block-reason-dropdown' => '* आम ब्लॉक कारण
+ ** क्रॉसविकि स्पैमिंग
+ ** क्रॉसविकि दुरुपयोग
+ ** बर्बरता',
+	'globalblocking-block-edit-dropdown' => 'सम्पादन अवरोधी कारण',
 	'globalblocking-block-expiry' => 'अवरुद्ध-ब्लॉक समाप्ति वैश्विक',
 	'globalblocking-block-expiry-other' => 'अन्य समाप्ती समय',
 	'globalblocking-block-expiry-otherfield' => 'अन्य समय:',
 	'globalblocking-block-legend' => 'एक सदस्य को ग्लोबली ब्लॉक करें',
 	'globalblocking-block-options' => 'विकल्प',
+	'globalblocking-ipaddress' => 'आईपी पता:',
+	'globalblocking-ipbanononly' => 'केवल अनाम सदस्यों पे प्रतिबंध लगाएँ',
 	'globalblocking-block-errors' => 'ब्लॉक अयशस्वी हुआ, कारण:',
 	'globalblocking-block-ipinvalid' => 'आपने दिया हुआ आईपी एड्रेस ($1) अवैध हैं।
 कृपया ध्यान दें आप सदस्यनाम नहीं दे सकतें!',
 	'globalblocking-block-expiryinvalid' => 'आपने दिया हुआ समाप्ती समय ($1) अवैध हैं।',
 	'globalblocking-block-submit' => 'इस आईपी को ग्लोबली ब्लॉक करें',
+	'globalblocking-modify-submit' => 'इस वैश्विक अवरोध को संशोधित करें',
 	'globalblocking-block-success' => '$1 इस आयपी एड्रेसको सभी विकिंयोंपर ब्लॉक कर दिया गया हैं।
 आप शायद [[Special:GlobalBlockList|वैश्विक ब्लॉक सूची]] देखना चाहते हैं।',
 	'globalblocking-block-successsub' => 'ग्लोबल ब्लॉक यशस्वी हुआ',
+	'globalblocking-modify-successsub' => 'वैश्विक अवरोध सफलतापूर्वक संशोधित हुई',
 	'globalblocking-block-alreadyblocked' => '$1 इस आइपी एड्रेसको पहलेसे ब्लॉक किया हुआ हैं। आप अस्तित्वमें होनेवाले ब्लॉक [[Special:GlobalBlockList|वैश्विक ब्लॉक सूचीमें]] देख सकतें हैं।',
 	'globalblocking-list' => 'ग्लोबल ब्लॉक किये हुए आईपी एड्रेसोंकी सूची',
 	'globalblocking-search-legend' => 'ग्लोबल ब्लॉक खोजें',
@@ -3637,6 +3650,8 @@ $messages['hi'] = array(
 	'globalblocking-list-unblock' => 'अनब्लॉक',
 	'globalblocking-list-whitelisted' => '$1 ने स्थानिक स्तरपर रद्द किया: $2',
 	'globalblocking-list-whitelist' => 'स्थानिक स्थिती',
+	'globalblocking-list-modify' => 'संशोधित करें',
+	'globalblocking-goto-unblock' => 'एक वैश्विक अवरोध हटाएँ',
 	'globalblocking-unblock-ipinvalid' => 'आपने दिया हुआ आईपी एड्रेस ($1) अवैध हैं।
 कृपया ध्यान दें आप सदस्यनाम नहीं दे सकतें!',
 	'globalblocking-unblock-legend' => 'ग्लोबल ब्लॉक हटायें',
@@ -3645,6 +3660,8 @@ $messages['hi'] = array(
 	'globalblocking-unblock-unblocked' => "आपने '''$1''' इस आइपी एड्रेस पर होने वाला ग्लोबल ब्लॉक #$2 हटा दिया हैं",
 	'globalblocking-unblock-errors' => 'वैश्विक अवरुद्ध त्रुटियों खोल देना',
 	'globalblocking-unblock-successsub' => 'ग्लोबल ब्लॉक हटा दिया गया हैं',
+	'globalblocking-unblock-subtitle' => 'वैश्विक अवरोध हटा रहे हैं',
+	'globalblocking-whitelist' => 'वैश्विक अवरोध के स्थानीय स्थिति',
 	'globalblocking-whitelist-legend' => 'स्थानिक स्थिती बदलें',
 	'globalblocking-whitelist-reason' => 'कारण:',
 	'globalblocking-whitelist-status' => 'स्थानिक स्थिती:',
@@ -3660,8 +3677,11 @@ $messages['hi'] = array(
 	'globalblocking-unblock-logentry' => '[[$1]] का ग्लोबल ब्लॉक निकाल दिया',
 	'globalblocking-whitelist-logentry' => '[[$1]] पर दिया हुआ वैश्विक ब्लॉक स्थानिक स्तरपर रद्द कर दिया',
 	'globalblocking-dewhitelist-logentry' => '[[$1]] पर दिया हुआ वैश्विक ब्लॉक स्थानिक स्तरपर फिरसे दिया',
+	'globalblocking-logentry-expiry' => 'समयसीमा समाप्त $1',
+	'globalblocking-logentry-noexpiry' => 'कोई समय सीमा सेट नहीं',
 	'globalblocklist' => 'ग्लोबल ब्लॉक होनेवाले आइपी एड्रेसकी सूची',
 	'globalblock' => 'एक आइपी एड्रेसको ग्लोबल ब्लॉक करें',
+	'removeglobalblock' => 'एक वैश्विक अवरोध हटाएँ',
 	'right-globalblock' => 'वैश्विक ब्लॉक तैयार करें',
 	'right-globalunblock' => 'वैश्विक ब्लॉक हटा दें',
 	'right-globalblock-whitelist' => 'वैश्विक ब्लॉक स्थानिक स्तरपर रद्द करें',
@@ -7310,6 +7330,7 @@ $messages['pnb'] = array(
  * @author Ahmed-Najib-Biabani-Ibrahimkhel
  */
 $messages['ps'] = array(
+	'globalblocking-block' => 'په يوې آی پي پتې نړېواله بنديز لګول',
 	'globalblocking-block-reason' => 'سبب:',
 	'globalblocking-block-otherreason' => 'بل/اضافي سبب:',
 	'globalblocking-block-reasonotherlist' => 'بل سبب',
@@ -7325,6 +7346,12 @@ $messages['ps'] = array(
 	'globalblocking-block-options' => 'خوښنې:',
 	'globalblocking-ipaddress' => 'IP پته:',
 	'globalblocking-ipbanononly' => 'يواځې په ورکنومو کارنانو بنديز لګول',
+	'globalblocking-block-submit' => 'په دې آي پي پتې نړېوال بنديز لګول',
+	'globalblocking-modify-submit' => 'دا نړېوال بنديز بدلول',
+	'globalblocking-block-successsub' => 'نړېوال بنديز بريالی شو',
+	'globalblocking-modify-successsub' => 'د نړېوال بنديز بدلون بريالی شو',
+	'globalblocking-list' => 'د نړېوال بنديز لګېدلو آي پي پتو لړليک',
+	'globalblocking-search-legend' => 'د يوه نړېوال بنديز پلټل',
 	'globalblocking-search-ip' => 'IP پته:',
 	'globalblocking-search-submit' => 'د بنديزونو لپاره پلټل',
 	'globalblocking-list-expiry' => 'پای نېټه $1',
@@ -7332,15 +7359,33 @@ $messages['ps'] = array(
 	'globalblocking-list-unblock' => 'غورځول',
 	'globalblocking-list-whitelist' => 'سيمه ايز دريځ',
 	'globalblocking-list-modify' => 'بدلول',
+	'globalblocking-list-noresults' => 'په غوښتلې آي پي پتې بنديز نه دی.',
+	'globalblocking-goto-block' => 'په يوې آی پي پتې نړېواله بنديز لګول',
+	'globalblocking-goto-unblock' => 'يو نړيوال بنديز غورځول',
+	'globalblocking-return' => 'د نړېوالو بنديزونو لړليک ته ورګرځېدل.',
+	'globalblocking-notblocked' => 'د ($1) آی پي پته چې مو ورکړې په نړېواله توګه بنديز شوې نه ده.',
 	'globalblocking-unblock' => 'يو نړيوال بنديز غورځول',
+	'globalblocking-unblock-legend' => 'يو نړيوال بنديز غورځول',
 	'globalblocking-unblock-submit' => 'نړيوال بنديز غورځول',
 	'globalblocking-unblock-reason' => 'سبب:',
 	'globalblocking-unblock-subtitle' => 'نړيوال بنديز غورځول',
+	'globalblocking-unblock-intro' => 'تاسې دا فورمه د يوه نړېوال بنديز د لرې کولو لپاره کارولی شی.',
+	'globalblocking-whitelist' => 'د نړېوالو بنديزونو سيمه ايز دريځ',
 	'globalblocking-whitelist-legend' => 'سيمه ايز دريځ بدلول',
 	'globalblocking-whitelist-reason' => 'سبب:',
 	'globalblocking-whitelist-status' => 'سيمه ايز دريځ:',
+	'globalblocking-whitelist-statuslabel' => 'په {{SITENAME}} کې نړېوال بنديز ناچارنول',
 	'globalblocking-whitelist-submit' => 'سيمه ايز دريځ بدلول',
+	'globalblocking-whitelist-successsub' => 'سيمه ايز دريځ په برياليتوب بدل شو',
+	'globalblocking-logpage' => 'د نړېوال بنديز يادښت',
+	'globalblocking-block2-logentry' => 'نړېوال بنديز لګېدلي [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'پای نېټه $1',
+	'globalblocklist' => 'د نړېوال بنديز لګېدلو آي پي پتو لړليک',
+	'globalblock' => 'په يوې آی پي پتې نړېواله بنديز لګول',
+	'globalblockstatus' => 'د نړېوالو بنديزونو سيمه ايز دريځ',
+	'removeglobalblock' => 'يو نړيوال بنديز غورځول',
+	'right-globalblock' => 'نړېوال بنديز لګول',
+	'right-globalunblock' => 'نړېوال بنديزونه غورځول',
 );
 
 /** Portuguese (Português)
@@ -7474,6 +7519,7 @@ Para sua referência, é apresentado abaixo o registo de bloqueios:',
  * @author Helder.wiki
  * @author Heldergeovane
  * @author Luckas Blade
+ * @author Rafael Vargas
  * @author Sir Lestaty de Lioncourt
  */
 $messages['pt-br'] = array(
@@ -7494,6 +7540,8 @@ $messages['pt-br'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Outra duração:',
 	'globalblocking-block-legend' => 'Bloquear um endereço IP globalmente',
 	'globalblocking-block-options' => 'Opções:',
+	'globalblocking-ipaddress' => 'Endereço IP:',
+	'globalblocking-ipbanononly' => 'Bloquear apenas usuários anônimos',
 	'globalblocking-block-errors' => 'O bloqueio não teve sucesso {{PLURAL:$1|pelo seguinte motivo|pelos seguintes motivos}}:',
 	'globalblocking-block-ipinvalid' => 'O endereço IP ($1) que introduziu é inválido.
 Por favor, note que não pode introduzir um nome de utilizador!',
@@ -7559,8 +7607,8 @@ logo o estado local de bloqueios globais não pode ser modificado.',
 	'globalblocking-whitelist-intro' => 'Você pode usar este formulário para editar o estado local de um bloqueio global.
 Se um bloqueio global está desativado neste wiki, os utilizadores nos endereços IP afetados poderão editar normalmente.
 [[Special:GlobalBlockList|Voltar à lista de bloqueios globais]].',
-	'globalblocking-blocked' => "O seu endereço IP foi bloqueado em todos os wikis por '''\$1''' (''\$2'').
-O motivo dado foi ''\"\$3\"''.
+	'globalblocking-blocked' => "O seu endereço IP \$5 foi bloqueado em todos os wikis por '''\$1''' (''\$2'').
+O motivo apontado foi ''\"\$3\"''.
 O bloqueio ''\$4''.",
 	'globalblocking-blocked-nopassreset' => 'Você não pode repor palavras-chave de utilizadores porque você está bloqueado globalmente.',
 	'globalblocking-logpage' => 'Registro de bloqueios globais',
@@ -7739,6 +7787,7 @@ $messages['roa-tara'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Otre orarie:',
 	'globalblocking-block-legend' => "Bluècche 'n'indirizze IP globalmende",
 	'globalblocking-block-options' => 'Opziune:',
+	'globalblocking-ipaddress' => 'Indirizze IP:',
 	'globalblocking-block-errors' => "'U blocche tune non g'à riuscite, {{PLURAL:$1|pe stu|pe le seguende}} mutive:",
 	'globalblocking-block-ipinvalid' => "L'indirizze IP ($1) ca tu è mise non g'è valide.<br />
 Pe piacere vide ca tu non ge puè mettere 'nu nome utende!",
@@ -9151,6 +9200,8 @@ $messages['te'] = array(
 	'globalblocking-block-expiry-otherfield' => 'ఇతర సమయం:',
 	'globalblocking-block-legend' => 'ఐపీ చిరునామా సార్వత్రిక నిరోధం',
 	'globalblocking-block-options' => 'ఎంపికలు:',
+	'globalblocking-ipaddress' => 'ఐపీ చిరునామా:',
+	'globalblocking-ipbanononly' => 'అజ్ఞాత వాడుకరులను మాత్రమే నిరోధించండి',
 	'globalblocking-block-errors' => 'మీ నిరోధం విఫలమైంది, ఈ క్రింది {{PLURAL:$1|కారణం|కారణాల}} వల్ల:',
 	'globalblocking-block-ipinvalid' => 'మీరు ఇచ్చిన ఐపీ చిరునామా ($1) చెల్లదు.
 మీరు వాడుకరి పేరుని ఇవ్వకూడదని గమనించండి!',
