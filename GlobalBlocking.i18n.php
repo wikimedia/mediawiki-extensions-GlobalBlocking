@@ -2445,6 +2445,7 @@ Jen la protokolo pri forbaroj sube por via referenco:',
  * @author Locos epraix
  * @author Mor
  * @author Peter17
+ * @author Platonides
  * @author Remember the dot
  * @author Sanbec
  * @author Translationista
@@ -2533,7 +2534,7 @@ entonces el status de bloqueos globales no pueden ser modificados.',
 	'globalblocking-whitelist-intro' => 'Puedes usar este formulario para editar el estatus local de un bloqueo global.
 Si un bloqueo global está desactivado en esta wiki, los usuarios de la dirección IP afectada podrán editar normalmente.
 [[Special:GlobalBlockList|Volver a la lista de bloqueos globales]].',
-	'globalblocking-blocked' => "'''$1''' (''$2'') bloqueó su dirección IP en todos los wikis.
+	'globalblocking-blocked' => "'''$1''' (''$2'') bloqueó su dirección IP $5 en todos los wikis.
 El motivo dado fue ''«$3»''.
 El bloqueo ''$4''.",
 	'globalblocking-blocked-nopassreset' => 'No puede solicitar recordatorios de claves de usuario porque usted está bloqueado globalmente.',
@@ -4470,7 +4471,7 @@ Ti agkita kadagiti amin nga agdama a serra, kitaen ti [[Special:GlobalBlockList|
 Ti listaan ti serra ket naikabil dita baba tapno mausar a reperensia:',
 	'globalblocklist' => 'Listaan dagiti naserraan nga IP a pagtaengan iti sangalubongan',
 	'globalblock' => 'Sangalubongan a seraan ti IP a pagtaengan',
-	'globalblockstatus' => 'Local a kasasaad iti sangalubongan a serra',
+	'globalblockstatus' => 'Lokal a kasasaad iti sangalubongan a serra',
 	'removeglobalblock' => 'Ikkaten ti maysa a sangalubongan a serra',
 	'right-globalblock' => 'Agaramid kadagiti sangalubongan a serra',
 	'right-globalunblock' => 'Ikikkaten dagiti sangalubongan a serra',
@@ -5711,7 +5712,9 @@ $messages['lv'] = array(
 ** Noteikumu neievērošana vairākos viki
 ** Vandālisms',
 	'globalblocking-block-expiry-otherfield' => 'Cits laiks:',
+	'globalblocking-block-legend' => 'Bloķēt IP adresi globāli',
 	'globalblocking-ipaddress' => 'IP adrese:',
+	'globalblocking-ipbanononly' => 'Bloķēt tikai anonīmos lietotājus',
 	'globalblocking-list' => 'Globāli bloķēto IP adrešu saraksts',
 	'globalblocking-search-ip' => 'IP adrese:',
 	'globalblocking-list-ipinvalid' => 'IP adrese, ko tu ievadīji ($1), ir nederīga.
@@ -6884,7 +6887,7 @@ $messages['or'] = array(
 	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') [[Special:Contributions/\$4|\$4]] ''(\$5)''ଙ୍କୁ ଜଗତ ସାରା ଅଟକାଗଲା",
 	'globalblocking-list-expiry' => '$1ରେ ଅଚଳ ହୋଇଯିବ',
 	'globalblocking-list-anononly' => 'କେବଳ ବେନାମି',
-	'globalblocking-list-unblock' => 'ବାହାର କରିବା',
+	'globalblocking-list-unblock' => 'କାଢ଼ିଦେବେ',
 	'globalblocking-list-whitelisted' => ' $1ଙ୍କ ଦେଇ ସ୍ଥାନୀୟ ଭାବେ ଅଚଳ କରାଯାଇଅଛି: $2',
 	'globalblocking-list-whitelist' => 'ସ୍ଥାନୀୟ ସ୍ଥିତି',
 	'globalblocking-list-modify' => 'ରୂପାନ୍ତର',
@@ -8391,7 +8394,7 @@ $messages['si'] = array(
 	'globalblocking-whitelist-intro' => 'ගෝලීය වාරණයක ප්‍රාදේශිය තත්වය වෙනස් කෙරුමට ඔබට මෙම ෆෝරමය භාවිතා කළ හැක.
 ගෝලීය වාරණයක් මෙම විකියේදී අක්‍රීය නම්, අදාළ වාරණය බලපාන IP ලිපිනයෙන් එන පරිශීලකයන්ට සාමාන්‍ය ලෙස සංස්කරණ කටයුතු කළ හැකි වනු ඇත.
 [[Special:GlobalBlockList|ගෝලීය වාරණ ලයිස්තුවට ආපසු යන්න]].',
-	'globalblocking-blocked' => "'''\$1''' (''\$2'') විසින් ඔබේ IP ලිපිනය සියළුම විකි මතදී වාරිතයි.
+	'globalblocking-blocked' => "ඔබේ අයිපී ලිපිනය \$5 '''\$1''' (''\$2'') විසින් සියළුම විකි මතදී වාරිතයි.
 ලබාදුන් හේතුව වන්නේ ''\"\$3\"''.
 වාරණය වන්නේ ''\$4''.",
 	'globalblocking-blocked-nopassreset' => 'ඔබ ගෝලීයව වාරණිත බැවින් පරිශීලක මුරපද වෙනස් කළ නොහැක.',
@@ -9168,19 +9171,39 @@ $messages['sw'] = array(
 );
 
 /** Tamil (தமிழ்)
+ * @author Shanmugamp7
  * @author TRYPPN
  */
 $messages['ta'] = array(
 	'globalblocking-block-reason' => 'காரணம்:',
+	'globalblocking-block-edit-dropdown' => 'தடை காரணங்களை தொகு',
 	'globalblocking-block-expiry' => 'முடிவுறுதல்:',
+	'globalblocking-block-expiry-other' => 'மற்ற காலாவதியாகும் நேரம்',
 	'globalblocking-block-expiry-otherfield' => 'வேறு நேரம்:',
+	'globalblocking-block-legend' => 'உலகளவில் ஒரு IP முகவரியை தடு',
 	'globalblocking-block-options' => 'விருப்பத்தேர்வுகள்:',
+	'globalblocking-ipaddress' => 'ஐ.பி. முகவரி:',
+	'globalblocking-ipbanononly' => 'அடையாளம் தெரியாத பயனர்களை மட்டும் தடு',
+	'globalblocking-block-errors' => 'உங்கள் தடை தோல்வியடைந்து, பின்வரும் {{PLURAL:$1| காரணம்|காரணங்கள்}}:',
 	'globalblocking-search-ip' => 'ஐ.பி. முகவரி:',
 	'globalblocking-list-unblock' => 'நீக்கு',
 	'globalblocking-list-modify' => 'திருத்தம் செய்',
+	'globalblocking-unblock-legend' => 'உலகளவிய தடையை நீக்கு',
+	'globalblocking-unblock-submit' => 'உலகளவிய தடையை நீக்கு',
 	'globalblocking-unblock-reason' => 'காரணம்:',
+	'globalblocking-unblock-unblocked' => "நீங்கள் வெற்றிகரமாக உலகளவிய தடை #$2 வை IP முகவரி '''$1''' ல் நீக்கிவிட்டீர்கள்.",
+	'globalblocking-unblock-errors' => 'உங்கள் தடை நீக்கல் தோல்வியடைந்தது, பின்வரும் {{PLURAL:$1| காரணம்|காரணங்கள்}}:',
+	'globalblocking-unblock-successsub' => 'உலகளவிய தடை வெற்றிகரமாக நீக்கப்பட்டது.',
+	'globalblocking-unblock-subtitle' => 'உலகளவிய தடையை நீக்கு',
+	'globalblocking-unblock-intro' => 'நீங்கள் இந்த படிவத்தை ஒரு உலகளவிய தடையை நீக்க பயன்படுத்தலாம்.',
+	'globalblocking-whitelist' => 'உலகளாவிய தடையின் உள்ளமை நிலை',
+	'globalblocking-whitelist-notapplied' => 'உலகளாவிய தடுப்புகள் இந்த விக்கியில் பயன்படுத்தப்படவில்லை.
+எனவே உலகளாவிய தடுப்புகளின் உள் நிலையை திருத்த முடியாது.',
+	'globalblocking-whitelist-legend' => 'உள் நிலை மாற்று',
 	'globalblocking-whitelist-reason' => 'காரணம்:',
 	'globalblocking-whitelist-status' => 'உள்ளூர் நிலைமை:',
+	'globalblocking-whitelist-statuslabel' => '{{SITENAME}} ல் உலகளவிய தடையை செயலிழக்க செய்',
+	'globalblocking-whitelist-submit' => 'உள் நிலை மாற்று',
 );
 
 /** Telugu (తెలుగు)
