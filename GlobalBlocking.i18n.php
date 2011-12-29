@@ -4428,7 +4428,7 @@ Pangngaasi a lagipem a saan ka a makaikabil ti nagan ti agar-aramat!',
 	'globalblocking-unblock-legend' => 'Ikkaten ti maysa a sangalubongan a serra',
 	'globalblocking-unblock-submit' => 'Ikkaten ti sangalubongan a serra',
 	'globalblocking-unblock-reason' => 'Rason:',
-	'globalblocking-unblock-unblocked' => "Nagballigi ka ti pinag-ikkat ti sangalubongan a serra #2 idiay IP a pagtaengan '''$1'''",
+	'globalblocking-unblock-unblocked' => "Nagballigi ka ti pinag-ikkat ti sangalubongan a serra #$2 idiay IP a pagtaengan '''$1'''",
 	'globalblocking-unblock-errors' => 'Napaay ti pinagikkat mo ti sangalubongan a serra, kadagiti sumaganad {{PLURAL:$1|rason|dagiti rason}}:',
 	'globalblocking-unblock-successsub' => 'Balligi ti pinagikkat ti sangalubongan a serra',
 	'globalblocking-unblock-subtitle' => 'Ikikkaten ti sangalubongan a serra',
@@ -4441,8 +4441,8 @@ ket ti lokal a kasaad iti sangalubongan a serra ket saan a mabaliwan.',
 	'globalblocking-whitelist-status' => 'Lokal a kasasaad:',
 	'globalblocking-whitelist-statuslabel' => 'Ibaldado daytoy a sangalubongan a serra idiay {{SITENAME}}',
 	'globalblocking-whitelist-submit' => 'Sukatan ti lokal a kasasaad',
-	'globalblocking-whitelist-whitelisted' => "Balligi ti pinagbaldadom ti sangalubongan a serra #2 idiay IP a pagtaengan '''$1''' idiay {{SITENAME}}.",
-	'globalblocking-whitelist-dewhitelisted' => "Balligi ti pinagsublim ti sangalubongan a serra #2 idiay IP a pagtaengan '''$1''' idiay {{SITENAME}}.",
+	'globalblocking-whitelist-whitelisted' => "Balligi ti pinagbaldadom ti sangalubongan a serra #$2 idiay IP a pagtaengan '''$1''' idiay {{SITENAME}}.",
+	'globalblocking-whitelist-dewhitelisted' => "Balligi ti pinagsublim ti sangalubongan a serra #$2 idiay IP a pagtaengan '''$1''' idiay {{SITENAME}}.",
 	'globalblocking-whitelist-successsub' => 'Balligi ti pinagsukat ti lokal a kasasaad',
 	'globalblocking-whitelist-nochange' => 'Awan ti sinukatan iti lokal a kasasaad iti daytoy a serra.
 [[Special:GlobalBlockList|Agsubli idiay listaan ti sangalubongan a serra]].',
@@ -5695,6 +5695,7 @@ Užblokavimas ''\$4''.",
 	'globalblocking-logentry-noexpiry' => 'galiojimas nenurodytas',
 	'globalblocklist' => 'Visuotinai blokuotų IP adresų sąrašas',
 	'globalblock' => 'Visuotinai blokuoti IP adresą',
+	'removeglobalblock' => 'Pašalinti pasaulini blokavimą',
 );
 
 /** Latvian (Latviešu)
@@ -6890,7 +6891,7 @@ $messages['or'] = array(
 	'globalblocking-list-unblock' => 'କାଢ଼ିଦେବେ',
 	'globalblocking-list-whitelisted' => ' $1ଙ୍କ ଦେଇ ସ୍ଥାନୀୟ ଭାବେ ଅଚଳ କରାଯାଇଅଛି: $2',
 	'globalblocking-list-whitelist' => 'ସ୍ଥାନୀୟ ସ୍ଥିତି',
-	'globalblocking-list-modify' => 'ରୂପାନ୍ତର',
+	'globalblocking-list-modify' => 'ରୂପାନ୍ତର କରିବେ',
 	'globalblocking-list-noresults' => 'ଅନୁରୋଧ କରାଯାଇଥିବା IP ଠିକଣାଟି ଅଟକାଗଲା ନାହିଁ ।',
 	'globalblocking-goto-block' => 'ଏକ IP ଠିକଣାଟିକୁ ଜଗତଯାକ ଉଇକିରେ ଅଟକାଇ ଦେବେ',
 	'globalblocking-goto-unblock' => 'ଏକ ଜଗତ ସାରାର ଅଟକକୁ ହଟାଇଦେବେ',
@@ -9185,6 +9186,8 @@ $messages['ta'] = array(
 	'globalblocking-ipaddress' => 'ஐ.பி. முகவரி:',
 	'globalblocking-ipbanononly' => 'அடையாளம் தெரியாத பயனர்களை மட்டும் தடு',
 	'globalblocking-block-errors' => 'உங்கள் தடை தோல்வியடைந்து, பின்வரும் {{PLURAL:$1| காரணம்|காரணங்கள்}}:',
+	'globalblocking-block-successsub' => 'உலகளவிய தடை வெற்றிகரமாக செயல்படுத்தப்பட்டது.',
+	'globalblocking-modify-successsub' => 'உலகளவிய தடை வெற்றிகரமாக திருத்தப்பட்டது.',
 	'globalblocking-search-ip' => 'ஐ.பி. முகவரி:',
 	'globalblocking-list-unblock' => 'நீக்கு',
 	'globalblocking-list-modify' => 'திருத்தம் செய்',
@@ -10101,17 +10104,21 @@ El registro dei blochi se pol védarlo qua de soto par comodità:',
 	'right-globalblock-exempt' => 'Scavalca blochi globali',
 );
 
-/** Veps (Vepsan kel')
+/** Veps (Vepsän kel')
  * @author Triple-ADHD-AS
  * @author Игорь Бродский
  */
 $messages['vep'] = array(
 	'globalblocking-block-reason' => 'Sü:',
 	'globalblocking-block-expiry-otherfield' => 'Toine aig:',
+	'globalblocking-block-options' => 'Opcijad:',
+	'globalblocking-ipaddress' => 'IP-adres:',
 	'globalblocking-search-ip' => 'IP-adres:',
 	'globalblocking-list-unblock' => 'Heitta blokiruind',
+	'globalblocking-list-modify' => 'modificiruida',
 	'globalblocking-unblock-reason' => 'Sü:',
 	'globalblocking-whitelist-reason' => 'Sü:',
+	'globalblocking-whitelist-status' => 'Lokaline status:',
 );
 
 /** Vietnamese (Tiếng Việt)
