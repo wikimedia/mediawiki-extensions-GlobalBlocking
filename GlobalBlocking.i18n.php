@@ -4952,6 +4952,7 @@ $messages['ka'] = array(
 	'globalblocking-block-expiry-otherfield' => 'სხვა დრო:',
 	'globalblocking-block-legend' => 'მომხმარებლის გლობალური ბლოკირება',
 	'globalblocking-block-options' => 'კონფიგურაცია',
+	'globalblocking-ipaddress' => 'IP-მისამართი:',
 	'globalblocking-block-errors' => 'ბლოკირების მცდელობა წარუმატებელია, {{PLURAL:$1|მიზეზი|მიზეზები}}:',
 	'globalblocking-block-ipinvalid' => 'თქვენს მიერ მითითებული IP მისამართი ($1) არასწორია.
 გთოვთ, გაითვალისწინეთ, თქვენ არ შეგიძლიათ მომხმარებლის სახელის შეყვანა!',
@@ -9176,7 +9177,15 @@ $messages['sw'] = array(
  * @author TRYPPN
  */
 $messages['ta'] = array(
+	'globalblocking-modify-intro' => 'நீங்கள் இந்த படிவத்தை உலகளாவிய தடையின் அமைப்புகளை மாற்ற பயன்படுத்தலாம்.',
+	'globalblocking-block-intro' => 'நீங்கள் இந்த பக்கத்தை ஒரு IP முகவரியை அனைத்து விக்கிகளிலும் தடை செய்ய பயன்படுத்தலாம்.',
 	'globalblocking-block-reason' => 'காரணம்:',
+	'globalblocking-block-otherreason' => 'மற்ற/கூடுதல் காரணங்கள்',
+	'globalblocking-block-reasonotherlist' => 'மற்ற காரணங்கள்',
+	'globalblocking-block-reason-dropdown' => '* பொதுவான தடைக்கான காரணங்கள்
+** Crosswiki spamming
+** Crosswiki முறைகேடு
+** Vandalism',
 	'globalblocking-block-edit-dropdown' => 'தடை காரணங்களை தொகு',
 	'globalblocking-block-expiry' => 'முடிவுறுதல்:',
 	'globalblocking-block-expiry-other' => 'மற்ற காலாவதியாகும் நேரம்',
@@ -9186,11 +9195,29 @@ $messages['ta'] = array(
 	'globalblocking-ipaddress' => 'ஐ.பி. முகவரி:',
 	'globalblocking-ipbanononly' => 'அடையாளம் தெரியாத பயனர்களை மட்டும் தடு',
 	'globalblocking-block-errors' => 'உங்கள் தடை தோல்வியடைந்து, பின்வரும் {{PLURAL:$1| காரணம்|காரணங்கள்}}:',
+	'globalblocking-block-submit' => 'உலகளவில் இந்த IP முகவரியை தடைசெய்',
 	'globalblocking-block-successsub' => 'உலகளவிய தடை வெற்றிகரமாக செயல்படுத்தப்பட்டது.',
 	'globalblocking-modify-successsub' => 'உலகளவிய தடை வெற்றிகரமாக திருத்தப்பட்டது.',
+	'globalblocking-list' => 'உலகளவில் தடை செய்யப்பட்ட IP முகவரிகளின் பட்டியல்.',
+	'globalblocking-search-legend' => 'ஒரு உலகளவிய தடையை தேடு',
 	'globalblocking-search-ip' => 'ஐ.பி. முகவரி:',
+	'globalblocking-search-submit' => 'தடைகளை தேடு',
+	'globalblocking-list-ipinvalid' => '($1)க்காக நீங்கள் தேடிய IP முகவரி செல்லாதது.
+தயவுசெய்து ஒரு செல்லத்தக்க  IP முகவரியை உள்ளிடவும்',
+	'globalblocking-search-errors' => 'உங்கள் தேடல் தோல்வியடைந்தது, பின்வரும் {{PLURAL:$1|காரணம்|காரணங்கள்}}:',
+	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') உலகளவில் தடைசெய்யப்பட்டது [[Special:Contributions/\$4|\$4]] ''(\$5)''",
+	'globalblocking-list-expiry' => 'காலாவதியாகும் $1',
+	'globalblocking-list-anononly' => 'அநாமதேய பயனர்கள் மட்டும்',
 	'globalblocking-list-unblock' => 'நீக்கு',
+	'globalblocking-list-whitelisted' => 'உள்ளமைவாக தடுக்கப்பட்டுள்ளது $1: $2 ஆல்',
+	'globalblocking-list-whitelist' => 'உள் நிலைமை',
 	'globalblocking-list-modify' => 'திருத்தம் செய்',
+	'globalblocking-list-noresults' => 'கோரிய IP  முகவரி தடை செய்யப்படவில்லை',
+	'globalblocking-goto-block' => 'உலகளவில் ஒரு IP முகவரியை தடைசெய்',
+	'globalblocking-goto-unblock' => 'ஒரு உலகளவிய தடையை நீக்கு',
+	'globalblocking-goto-status' => 'ஒரு உலகளவிய தடையின் உள்ளமைவு நிலைமையை மாற்று',
+	'globalblocking-return' => 'உலகளாவிய தடையின் பட்டியலுக்கு திரும்பு',
+	'globalblocking-unblock' => 'ஒரு உலகளவிய தடையை நீக்கு',
 	'globalblocking-unblock-legend' => 'உலகளவிய தடையை நீக்கு',
 	'globalblocking-unblock-submit' => 'உலகளவிய தடையை நீக்கு',
 	'globalblocking-unblock-reason' => 'காரணம்:',
@@ -9207,6 +9234,14 @@ $messages['ta'] = array(
 	'globalblocking-whitelist-status' => 'உள்ளூர் நிலைமை:',
 	'globalblocking-whitelist-statuslabel' => '{{SITENAME}} ல் உலகளவிய தடையை செயலிழக்க செய்',
 	'globalblocking-whitelist-submit' => 'உள் நிலை மாற்று',
+	'globalblocklist' => 'உலகளவில் தடை செய்யப்பட்ட IP முகவரிகளின் பட்டியல்',
+	'globalblock' => 'உலகளவில் ஒரு IP முகவரியை தடைசெய்',
+	'globalblockstatus' => 'உலகளவிய தடையின் உள்நிலைமை',
+	'removeglobalblock' => 'ஒரு உலகளவிய தடையை நீக்கு',
+	'right-globalblock' => 'உலகளவிய தடையை உருவாக்கு',
+	'right-globalunblock' => 'உலகளவிய தடைகளை நீக்கு',
+	'right-globalblock-whitelist' => 'உள்ளமைவில் உலகளாவிய தடைகளை செயல்நீக்கவும்',
+	'right-globalblock-exempt' => 'உலகளவிய தடையை மீறு',
 );
 
 /** Telugu (తెలుగు)
