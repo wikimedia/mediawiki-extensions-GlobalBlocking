@@ -2951,6 +2951,79 @@ Alla on ote estolokista.',
 	'right-globalblock-exempt' => 'Ohittaa globaaliestot',
 );
 
+/** Faroese (Føroyskt)
+ * @author EileenSanda
+ */
+$messages['fo'] = array(
+	'globalblocking-block' => 'Sperra eina IP adressu globalt',
+	'globalblocking-modify-intro' => 'Tú kanst brúka henda formularin fyri at broyta innstillingarnar fyri eina globala blokkadu.',
+	'globalblocking-block-intro' => 'Tú kanst brúka hesa síðu fyri at sperra eina IP adressu á øllum wikium.',
+	'globalblocking-block-reason' => 'Orsøk:',
+	'globalblocking-block-otherreason' => 'Onnur orsøk:',
+	'globalblocking-block-reasonotherlist' => 'Onnur orsøk',
+	'globalblocking-block-reason-dropdown' => '* Vanligar orsøkir fyri sperring
+** Spamming á fleiri wikium
+** Misnýtsla á fleiri wikium
+** Herverk (vandalisma)',
+	'globalblocking-block-edit-dropdown' => 'Rætta orsøkir fyri sperring',
+	'globalblocking-block-expiry' => 'Gongur út:',
+	'globalblocking-block-expiry-other' => 'Onnur tíð sum gongur út',
+	'globalblocking-block-expiry-otherfield' => 'Onnur tíð:',
+	'globalblocking-block-legend' => 'Sperra eina IP adressu globalt',
+	'globalblocking-block-options' => 'Møguleikar:',
+	'globalblocking-ipaddress' => 'IP-adressa:',
+	'globalblocking-ipbanononly' => 'Sperra bert dulnevndir brúkarar',
+	'globalblocking-block-errors' => 'Tín sperring miseydnaðist, orsakað av fylgjandi {{PLURAL:$1|orsøk|orsøkum}}:',
+	'globalblocking-block-ipinvalid' => 'IP adressan ($1) sum tú tastaði inn er ógyldug.
+Vinarliga legg til merkis at tú kanst ikki inntasta eitt brúkaranavn!',
+	'globalblocking-block-expiryinvalid' => 'Tann tíðin sum tú hevur skrivað ($1) at ganga út er ógyldug.',
+	'globalblocking-block-submit' => 'Sperra hesa IP adressuna globalt',
+	'globalblocking-modify-submit' => 'Broyt hesa globalu sperring',
+	'globalblocking-block-success' => 'IP adressan $1 er blivin sperrað við hepni á øllum verkætlanum.',
+	'globalblocking-modify-success' => 'Globala sperringin á $1 er blivin broytt.',
+	'globalblocking-block-successsub' => 'Global sperring eydnaðist',
+	'globalblocking-modify-successsub' => 'Tað eydnaðist at broyta globalu sperringina',
+	'globalblocking-block-alreadyblocked' => 'IP adressan $1 er longu sperrað globalt.
+Tú kanst síggja verandi sperring á [[Special:GlobalBlockList|lista við globalum sperringum]],
+ella broyta innstillingarnar á verandi sperring við at senda henda formularin enn einaferð.',
+	'globalblocking-block-bigrange' => 'Røðin sum tú skrivaði ($1) er ov stórt til sperring.
+Tú kanst í mesta lagi sperra 65.536 adressur (/16 intervallir)',
+	'globalblocking-search-ip' => 'IP adressa:',
+	'globalblocking-search-submit' => 'Leita eftir sperringum',
+	'globalblocking-list-ipinvalid' => 'IP adressan, sum tú leitaði eftir ($1) er ógildug.
+Vinarliga skriva eina gylduga IP adressu.',
+	'globalblocking-search-errors' => 'Tín leitan gav onki úrslit av fylgjandi {{PLURAL:$1|orsøk|orsøkum}}:',
+	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') sperraði globalt [[Special:Contributions/\$4|\$4]] ''(\$5)''",
+	'globalblocking-list-expiry' => 'gongur út $1',
+	'globalblocking-list-anononly' => 'bert dulnevnd',
+	'globalblocking-list-unblock' => 'tak burtur',
+	'globalblocking-list-whitelisted' => 'sligið frá lokalt av $1: $2',
+	'globalblocking-list-whitelist' => 'lokalur status',
+	'globalblocking-list-modify' => 'broyt',
+	'globalblocking-list-noresults' => 'Umbidnað IP adressan er ikki sperrað.',
+	'globalblocking-goto-block' => 'Sperra eina IP adressu globalt',
+	'globalblocking-goto-unblock' => 'Tak burtur globala sperring',
+	'globalblocking-unblock-legend' => 'Tak burtur eina globala sperring',
+	'globalblocking-unblock-submit' => 'Tak burtur globala sperring',
+	'globalblocking-unblock-reason' => 'Orsøk:',
+	'globalblocking-unblock-unblocked' => "Tað eydnaðist tær at taka burtur globalu sperringina #$2 á IP adressu '''$1'''",
+	'globalblocking-whitelist-reason' => 'Orsøk:',
+	'globalblocking-whitelist-status' => 'Lokalur status:',
+	'globalblocking-whitelist-statuslabel' => 'Tak burtur globala sperring á {{SITENAME}}',
+	'globalblocking-whitelist-submit' => 'Broyt lokala støðu',
+	'globalblocking-whitelist-whitelisted' => "Tað eydnaðist tær at taka burtur globala sperring #$2 á IP adressuni '''$1''' á {{SITENAME}}.",
+	'globalblocking-blocked-nopassreset' => 'Tú kanst ikki nullstilla loyniorð hjá brúkarum, tí tú ert sperrað/ur globalt.',
+	'globalblocking-logpage' => 'Globalut sperringsloggur',
+	'globalblocking-block-logentry' => 'global sperring [[$1]] sum gongur út $2',
+	'globalblocking-block2-logentry' => 'globalt blokkerað/ur [[$1]] ($2)',
+	'globalblocking-unblock-logentry' => 'tók burtur globala sperring á',
+	'globalblocking-loglink' => 'IP adressan $1 er sperrað globalt ([[{{#Special:GlobalBlockList}}/$1|sí fullfíggjaða kunning]]).',
+	'globalblocking-showlog' => 'Henda IP adressan er áður blivin sperrað.
+Sperringarloggurin er her niðanfyri fyri ávísing:',
+	'globalblocklist' => 'Listi við globalt sperraðum IP adressum',
+	'globalblock' => 'Blokkera IP adressu globalt',
+);
+
 /** French (Français)
  * @author Crochet.david
  * @author Gomoko
@@ -3100,10 +3173,10 @@ $messages['frp'] = array(
 	'globalblocking-block-legend' => 'Blocar dens l’ensemblo una adrèce IP',
 	'globalblocking-block-options' => 'Chouèx :',
 	'globalblocking-ipaddress' => 'Adrèce IP :',
-	'globalblocking-ipbanononly' => 'Blocar ren que los utilisators pas encartâs',
+	'globalblocking-ipbanononly' => 'Blocar ren que los usanciérs pas encartâs',
 	'globalblocking-block-errors' => 'Lo blocâjo at pas reussi por {{PLURAL:$1|ceta rêson|cetes rêsons}} :',
 	'globalblocking-block-ipinvalid' => 'L’adrèce IP ($1) que vos éd buchiê est fôssa.
-Volyéd notar que vos pouede pas buchiér un nom d’utilisator !',
+Volyéd notar que vos pouede pas buchiér un nom d’usanciér !',
 	'globalblocking-block-expiryinvalid' => 'Lo temps d’èxpiracion que vos éd buchiê ($1) est fôx.',
 	'globalblocking-block-submit' => 'Blocar dens l’ensemblo ceta adrèce IP',
 	'globalblocking-modify-submit' => 'Changiér ceti blocâjo globâl',
@@ -3127,7 +3200,7 @@ Volyéd buchiér una adrèce IP valida.',
 	'globalblocking-search-errors' => 'Voutra rechèrche at pas reussia por {{PLURAL:$1|ceta rêson|cetes rêsons}} :',
 	'globalblocking-list-blockitem' => "\$1 : <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') at blocâ dens l’ensemblo [[Special:Contributions/\$4|\$4]] ''(\$5)''",
 	'globalblocking-list-expiry' => 'èxpiracion $1',
-	'globalblocking-list-anononly' => 'ren que los utilisators pas encartâs',
+	'globalblocking-list-anononly' => 'solament los usanciérs pas encartâs',
 	'globalblocking-list-unblock' => 'enlevar',
 	'globalblocking-list-whitelisted' => 'dèsactivâ localament per $1 : $2',
 	'globalblocking-list-whitelist' => 'statut local',
@@ -3140,7 +3213,7 @@ Volyéd buchiér una adrèce IP valida.',
 	'globalblocking-notblocked' => 'L’adrèce IP ($1) que vos éd buchiê est pas blocâ dens l’ensemblo.',
 	'globalblocking-unblock' => 'Enlevar un blocâjo globâl',
 	'globalblocking-unblock-ipinvalid' => 'L’adrèce IP ($1) que vos éd buchiê est fôssa.
-Volyéd notar que vos pouede pas buchiér un nom d’utilisator !',
+Volyéd notar que vos pouede pas buchiér un nom d’usanciér !',
 	'globalblocking-unblock-legend' => 'Enlevar un blocâjo globâl',
 	'globalblocking-unblock-submit' => 'Enlevar lo blocâjo globâl',
 	'globalblocking-unblock-reason' => 'Rêson :',
@@ -3164,7 +3237,7 @@ de ceti fêt lo statut local du blocâjo globâl pôt pas étre changiê.',
 [[Special:GlobalBlockList|Tornar a la lista des blocâjos globâls]].',
 	'globalblocking-whitelist-errors' => 'Lo changement du statut local d’un blocâjo globâl at pas reussi por {{PLURAL:$1|ceta rêson|cetes rêsons}} :',
 	'globalblocking-whitelist-intro' => 'Vos pouede utilisar ceti formulèro por changiér lo statut local d’un blocâjo globâl.
-S’un blocâjo globâl est dèsactivâ sur ceti vouiqui, los utilisators a les adrèces IP afèctâs porront changiér normalament.
+S’un blocâjo globâl est dèsactivâ sur ceti vouiqui, los usanciérs a les adrèces IP afèctâs porront changiér normalament.
 [[Special:GlobalBlockList|Tornar a la lista des blocâjos globâls]].',
 	'globalblocking-blocked' => "Voutra adrèce IP $5 at étâ blocâ sur l’ensemblo des vouiquis per '''$1''' (''$2'').
 La rêson balyê ére ''« $3 »''.
@@ -3189,8 +3262,8 @@ Lo jornal des blocâjos est disponiblo ce-desot :',
 	'globalblock' => 'Blocar dens l’ensemblo una adrèce IP',
 	'globalblockstatus' => 'Statuts locals des blocâjos globâls',
 	'removeglobalblock' => 'Enlevar un blocâjo globâl',
-	'right-globalblock' => 'Blocar des utilisators dens l’ensemblo',
-	'right-globalunblock' => 'Enlevar des utilisators blocâs dens l’ensemblo',
+	'right-globalblock' => 'Blocar des usanciérs dens l’ensemblo',
+	'right-globalunblock' => 'Enlevar des usanciérs blocâs dens l’ensemblo',
 	'right-globalblock-whitelist' => 'Dèsactivar localament los blocâjos globâls',
 	'right-globalblock-exempt' => 'Passar per-dessus los blocâjos globâls',
 );
@@ -3635,6 +3708,7 @@ $messages['hi'] = array(
 	'globalblocking-modify-submit' => 'इस वैश्विक अवरोध को संशोधित करें',
 	'globalblocking-block-success' => '$1 इस आयपी एड्रेसको सभी विकिंयोंपर ब्लॉक कर दिया गया हैं।
 आप शायद [[Special:GlobalBlockList|वैश्विक ब्लॉक सूची]] देखना चाहते हैं।',
+	'globalblocking-modify-success' => 'वैश्विक अवरोध $1 पे सफलता पुर्बक संशोधित किया गया',
 	'globalblocking-block-successsub' => 'ग्लोबल ब्लॉक यशस्वी हुआ',
 	'globalblocking-modify-successsub' => 'वैश्विक अवरोध सफलतापूर्वक संशोधित हुई',
 	'globalblocking-block-alreadyblocked' => '$1 इस आइपी एड्रेसको पहलेसे ब्लॉक किया हुआ हैं। आप अस्तित्वमें होनेवाले ब्लॉक [[Special:GlobalBlockList|वैश्विक ब्लॉक सूचीमें]] देख सकतें हैं।',
@@ -3652,7 +3726,11 @@ $messages['hi'] = array(
 	'globalblocking-list-whitelisted' => '$1 ने स्थानिक स्तरपर रद्द किया: $2',
 	'globalblocking-list-whitelist' => 'स्थानिक स्थिती',
 	'globalblocking-list-modify' => 'संशोधित करें',
+	'globalblocking-goto-block' => 'ग्लोबली एक आईपी पते को अवरोध करें',
 	'globalblocking-goto-unblock' => 'एक वैश्विक अवरोध हटाएँ',
+	'globalblocking-goto-status' => 'एक वैश्विक अवरोध के लिए स्थानीय स्थिति बदले',
+	'globalblocking-return' => 'वैश्विक अवरोध के तालिका में बापिस जाएँ',
+	'globalblocking-unblock' => 'एक वैश्विक अवरोध निकाले',
 	'globalblocking-unblock-ipinvalid' => 'आपने दिया हुआ आईपी एड्रेस ($1) अवैध हैं।
 कृपया ध्यान दें आप सदस्यनाम नहीं दे सकतें!',
 	'globalblocking-unblock-legend' => 'ग्लोबल ब्लॉक हटायें',
@@ -3662,6 +3740,7 @@ $messages['hi'] = array(
 	'globalblocking-unblock-errors' => 'वैश्विक अवरुद्ध त्रुटियों खोल देना',
 	'globalblocking-unblock-successsub' => 'ग्लोबल ब्लॉक हटा दिया गया हैं',
 	'globalblocking-unblock-subtitle' => 'वैश्विक अवरोध हटा रहे हैं',
+	'globalblocking-unblock-intro' => 'आप इस प्रपत्र की उपयोग वैश्विक अवरोध को निकालने मे कर सकते हैं ।',
 	'globalblocking-whitelist' => 'वैश्विक अवरोध के स्थानीय स्थिति',
 	'globalblocking-whitelist-legend' => 'स्थानिक स्थिती बदलें',
 	'globalblocking-whitelist-reason' => 'कारण:',
@@ -3675,17 +3754,21 @@ $messages['hi'] = array(
 इसके लिये ''\"\$3\"'' यह कारण दिया हुआ हैं। इस ब्लॉक की समाप्ति ''\$4'' हैं।",
 	'globalblocking-logpage' => 'ग्लोबल ब्लॉक सूची',
 	'globalblocking-block-logentry' => '[[$1]] को ग्लोबली ब्लॉक किया समाप्ति समय $2',
+	'globalblocking-block2-logentry' => 'ग्लोबली अवरोधित [[$1]] ($2)',
 	'globalblocking-unblock-logentry' => '[[$1]] का ग्लोबल ब्लॉक निकाल दिया',
 	'globalblocking-whitelist-logentry' => '[[$1]] पर दिया हुआ वैश्विक ब्लॉक स्थानिक स्तरपर रद्द कर दिया',
 	'globalblocking-dewhitelist-logentry' => '[[$1]] पर दिया हुआ वैश्विक ब्लॉक स्थानिक स्तरपर फिरसे दिया',
+	'globalblocking-modify-logentry' => 'वैश्विक अवरोध को संशोधित करें [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'समयसीमा समाप्त $1',
 	'globalblocking-logentry-noexpiry' => 'कोई समय सीमा सेट नहीं',
 	'globalblocklist' => 'ग्लोबल ब्लॉक होनेवाले आइपी एड्रेसकी सूची',
 	'globalblock' => 'एक आइपी एड्रेसको ग्लोबल ब्लॉक करें',
+	'globalblockstatus' => 'वैश्विक अवरोध के स्थानीय स्थिति',
 	'removeglobalblock' => 'एक वैश्विक अवरोध हटाएँ',
 	'right-globalblock' => 'वैश्विक ब्लॉक तैयार करें',
 	'right-globalunblock' => 'वैश्विक ब्लॉक हटा दें',
 	'right-globalblock-whitelist' => 'वैश्विक ब्लॉक स्थानिक स्तरपर रद्द करें',
+	'right-globalblock-exempt' => 'बाईपास वैश्विक ब्लॉक',
 );
 
 /** Hiligaynon (Ilonggo)
@@ -6034,11 +6117,11 @@ $messages['mr'] = array(
 	'globalblocking-block-expiryinvalid' => 'तुम्ही दिलेली समाप्तीची वेळ ($1) अयोग्य आहे.',
 	'globalblocking-block-submit' => 'ह्या आयपी अंकपत्त्याला वैश्विक पातळीवर ब्लॉक करा',
 	'globalblocking-modify-submit' => 'हा वैश्विक रोध बदलवा',
-	'globalblocking-block-success' => '$1 या आयपी अंकपत्त्याला सर्व विकिंवर यशस्वीरित्या ब्लॉक करण्यात आलेले आहे.',
+	'globalblocking-block-success' => '$1 या आयपी अंकपत्त्याला सर्व विकिंवर यशस्वीरित्या अवरोधित करण्यात आलेले आहे.',
 	'globalblocking-modify-success' => '$1  वर असलेला वैश्विक रोध यशस्वीरित्या अनुरूप करण्यात आलेला आहे.',
 	'globalblocking-block-successsub' => 'वैश्विक ब्लॉक यशस्वी',
 	'globalblocking-modify-successsub' => 'वैश्विक रोध यशस्वीरित्या अनुरूपित.',
-	'globalblocking-block-alreadyblocked' => '$1 हा आयपी अंकपत्ता अगोदरच ब्लॉक केलेला आहे. तुम्ही अस्तित्वात असलेले ब्लॉक [[Special:GlobalBlockList|वैश्विक ब्लॉकच्या यादीत]] पाहू शकता.',
+	'globalblocking-block-alreadyblocked' => '$1 हा आयपी अंकपत्ता अगोदरच वैश्विकरित्या अवरूद्ध केलेला आहे. तुम्ही अस्तित्वात असलेले अवरोध [[Special:GlobalBlockList|वैश्विक अवरोधाच्या यादीत]] पाहू शकता, किंवा हे आवेदनपत्र पुन्हा सादर करून सध्या अस्तित्वात असलेल्या अवरोधाची मांडणी बदलू शकता',
 	'globalblocking-block-bigrange' => 'तुम्ही दिलेली रेंज ($1) ही ब्लॉक करण्यासाठी खूप मोठी आहे. तुम्ही एकावेळी जास्तीत जास्त ६५,५३६ पत्ते ब्लॉक करू शकता (/१६ रेंज)',
 	'globalblocking-list-intro' => 'ही सध्या क्रियान्वित असलेल्या सर्व वैश्विक रोधांची यादी आहे.
 या पैकी काही रोधांवर स्थानिकरित्या हटविल्याची खूण केल्या गेलेली आहे:याचा अर्थ असा कि, हा रोध इतर संकेतस्थळांवर लागु आहे, परंतु,स्थानिक प्रशासकाने या विकिवर तो रोध हटविण्याचा निर्णय घेतला आहे.',
@@ -9196,8 +9279,14 @@ $messages['ta'] = array(
 	'globalblocking-ipbanononly' => 'அடையாளம் தெரியாத பயனர்களை மட்டும் தடு',
 	'globalblocking-block-errors' => 'உங்கள் தடை தோல்வியடைந்து, பின்வரும் {{PLURAL:$1| காரணம்|காரணங்கள்}}:',
 	'globalblocking-block-submit' => 'உலகளவில் இந்த IP முகவரியை தடைசெய்',
+	'globalblocking-modify-submit' => 'இந்த உலகளவிய தடையை திருத்து',
+	'globalblocking-block-success' => 'IPமுகவரி $1 அனைத்து திட்டங்களிலும் வெற்றிகரமாக தடுக்கப்பட்டது.',
+	'globalblocking-modify-success' => '$1 ல் உலகலவிய தடை வெற்றிகரமாக திருத்தப்பட்டது.',
 	'globalblocking-block-successsub' => 'உலகளவிய தடை வெற்றிகரமாக செயல்படுத்தப்பட்டது.',
 	'globalblocking-modify-successsub' => 'உலகளவிய தடை வெற்றிகரமாக திருத்தப்பட்டது.',
+	'globalblocking-block-alreadyblocked' => 'IP முகவரி $1 ஏற்கனவே உலகளவில் தடுக்கப்பட்டுள்ளது.
+ஏற்கனவே உள்ள தடையை [[Special:GlobalBlockList|உலகளவிய தடைகளின் பட்டியல்]] மூலம் நீங்கள் பார்க்கலாம்.
+அல்லது இந்த படிவத்தை மறு சமர்ப்பித்தல் மூலம் ஏற்கனவே உள்ள தடையின் அமைவுகளை திருத்தவும்.',
 	'globalblocking-list' => 'உலகளவில் தடை செய்யப்பட்ட IP முகவரிகளின் பட்டியல்.',
 	'globalblocking-search-legend' => 'ஒரு உலகளவிய தடையை தேடு',
 	'globalblocking-search-ip' => 'ஐ.பி. முகவரி:',
