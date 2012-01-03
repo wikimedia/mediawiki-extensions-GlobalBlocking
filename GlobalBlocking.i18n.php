@@ -8206,6 +8206,15 @@ $messages['rue'] = array(
 	'right-globalblock-exempt' => 'Обходжаня ґлобалных блоковань',
 );
 
+/** Sanskrit (संस्कृतम्)
+ * @author Ansumang
+ */
+$messages['sa'] = array(
+	'globalblocking-block-reason' => 'कारणम् :',
+	'globalblocking-unblock-reason' => 'कारणम् :',
+	'globalblocking-whitelist-reason' => 'कारणम् :',
+);
+
 /** Sakha (Саха тыла)
  * @author HalanTul
  */
@@ -9331,6 +9340,8 @@ $messages['ta'] = array(
 	'globalblocking-whitelist-status' => 'உள்ளூர் நிலைமை:',
 	'globalblocking-whitelist-statuslabel' => '{{SITENAME}} ல் உலகளவிய தடையை செயலிழக்க செய்',
 	'globalblocking-whitelist-submit' => 'உள் நிலை மாற்று',
+	'globalblocking-block2-logentry' => 'உலகளவில் தடைசெய்யப்பட்டுள்ளது [[$1]] ($2)',
+	'globalblocking-unblock-logentry' => ' [[$1]] ல் நீக்கப்பட்ட உலகளவிய தடைகள்',
 	'globalblocklist' => 'உலகளவில் தடை செய்யப்பட்ட IP முகவரிகளின் பட்டியல்',
 	'globalblock' => 'உலகளவில் ஒரு IP முகவரியை தடைசெய்',
 	'globalblockstatus' => 'உலகளவிய தடையின் உள்நிலைமை',
@@ -10248,9 +10259,16 @@ $messages['vep'] = array(
 	'globalblocking-search-ip' => 'IP-adres:',
 	'globalblocking-list-unblock' => 'Heitta blokiruind',
 	'globalblocking-list-modify' => 'modificiruida',
+	'globalblocking-list-noresults' => 'Ectud IP-adres ei ole blokiruidud.',
+	'globalblocking-goto-block' => 'Blokiruida IP-adres kogonaz',
+	'globalblocking-goto-unblock' => 'Heitta kogonaz blokiruind',
+	'globalblocking-unblock-legend' => 'Heitta kogonaz blokiruind',
 	'globalblocking-unblock-reason' => 'Sü:',
+	'globalblocking-unblock-subtitle' => 'Heitta kogonaz blokiruind',
 	'globalblocking-whitelist-reason' => 'Sü:',
 	'globalblocking-whitelist-status' => 'Lokaline status:',
+	'globalblocking-whitelist-submit' => 'Toižetada lokaline status',
+	'globalblockstatus' => 'Kogonaz-blokiruindoiden lokaline status',
 );
 
 /** Vietnamese (Tiếng Việt)
