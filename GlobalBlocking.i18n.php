@@ -222,6 +222,7 @@ For more information about Global Blocking, see http://www.mediawiki.org/wiki/Gl
 /** Afrikaans (Afrikaans)
  * @author Arnobarnard
  * @author Naudefj
+ * @author පසිඳු කාවින්ද
  */
 $messages['af'] = array(
 	'globalblocking-desc' => "[[Special:GlobalBlock|Maak dit moontlik]] om IP-adresse [[Special:GlobalBlockList|oor veelvoudige wiki's]] te versper",
@@ -242,6 +243,7 @@ $messages['af'] = array(
 	'globalblocking-block-legend' => "Versper 'n IP-adres globaal",
 	'globalblocking-block-options' => 'Opsies:',
 	'globalblocking-ipaddress' => 'IP-adres:',
+	'globalblocking-ipbanononly' => 'Blok anonieme gebruikers slegs',
 	'globalblocking-block-errors' => 'Die versperring was nie suksesvol nie, as gevolg van die volgende {{PLURAL:$1|rede|redes}}:',
 	'globalblocking-block-ipinvalid' => "Die IP adres ($1) wat U ingevoer het is ongeldig.
 Let asseblief dat U nie 'n gebruikersnaam kan invoer nie!",
@@ -4464,10 +4466,10 @@ $messages['ilo'] = array(
 	'globalblocking-block-reason' => 'Rason:',
 	'globalblocking-block-otherreason' => 'Sabali/dadduma pay a rason:',
 	'globalblocking-block-reasonotherlist' => 'Sabali a rason',
-	'globalblocking-block-reason-dropdown' => '* Kadawyan a rasrason ti pinagserra
-** Pinagspam kadagiti amin a wiki
-** Pinagabuso kadagiti amin a wiki
-** Vandalismo',
+	'globalblocking-block-reason-dropdown' => '* Kadawyan a rasrason ti panagserra
+** Panagspam kadagiti amin a wiki
+** Panag-abuso kadagiti amin a wiki
+** Bandalismo',
 	'globalblocking-block-edit-dropdown' => 'Urnosen dagiti rason ti panagserra',
 	'globalblocking-block-expiry' => 'Agpaso:',
 	'globalblocking-block-expiry-other' => 'Sabali pay a pinagpaso nga oras',
