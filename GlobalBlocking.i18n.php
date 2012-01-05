@@ -8949,6 +8949,7 @@ $messages['sr-ec'] = array(
 	'globalblocking-whitelist-legend' => 'Промена локалног стања',
 	'globalblocking-whitelist-reason' => 'Разлог:',
 	'globalblocking-whitelist-status' => 'Локални статус:',
+	'globalblocking-whitelist-statuslabel' => 'Онемогући ову глобалну блокаду на {{SITENAME}}',
 	'globalblocking-whitelist-submit' => 'Промени локално стање',
 	'globalblocking-whitelist-whitelisted' => "Успешно сте онемогућили глобалну блокаду #$2 за ИП адресу '''$1''' на пројекту {{SITENAME}}.",
 	'globalblocking-whitelist-dewhitelisted' => "Успешно сте омогућили глобалну блокаду #$2 за ИП адресу '''$1''' на пројекту {{SITENAME}}.",
