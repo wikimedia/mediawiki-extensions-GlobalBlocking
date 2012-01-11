@@ -6206,6 +6206,7 @@ $messages['mn'] = array(
  * @author Htt
  * @author Kaajawa
  * @author Kaustubh
+ * @author Mahitgar
  * @author Rahuldeshmukh101
  * @author V.narsikar
  */
@@ -6217,6 +6218,12 @@ $messages['mr'] = array(
 	'globalblocking-block-reason' => 'कारण:',
 	'globalblocking-block-otherreason' => 'इतर / अतिरिक्त कारण:',
 	'globalblocking-block-reasonotherlist' => 'इतर कारणे',
+	'globalblocking-block-reason-dropdown' => '* सामान्य प्रतिबंधन कारणे
+** आंतरविकि उत्पात
+** आंतरविकि अनिष्ट आचरण 
+**आंतरविकि व्यक्तिगत आरोप 
+** आंतरविकि शिवीगाळ
+** उपद्रव',
 	'globalblocking-block-edit-dropdown' => 'प्रतिबंधाची कारणे संपादित करा',
 	'globalblocking-block-expiry' => 'समाप्ती:',
 	'globalblocking-block-expiry-other' => 'इतर समाप्ती वेळ',
