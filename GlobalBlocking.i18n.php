@@ -10638,6 +10638,7 @@ $messages['yi'] = array(
 	'globalblocking-logentry-expiry' => 'ביז $1',
 	'globalblocking-logentry-noexpiry' => 'קיין אויסלאז צײַט',
 	'removeglobalblock' => 'אויפהייבן גלאבאלן בלאק',
+	'right-globalblock' => 'אײַנריכטן גלאבאָלע בלאקן',
 	'right-globalunblock' => 'אַראָפנעמען גלאבאָלע בלאקן',
 );
 
