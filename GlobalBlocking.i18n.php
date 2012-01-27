@@ -8092,6 +8092,7 @@ L'archivije de le blocche t'avène date aqquà sotte pe conzultazione:",
 /** Russian (Русский)
  * @author Dim Grits
  * @author Ferrer
+ * @author Kaganer
  * @author Александр Сигачёв
  */
 $messages['ru'] = array(
@@ -8183,7 +8184,7 @@ $1',
 [[Special:GlobalBlockList|Вернуться к списку глобальных блокировок]].',
 	'globalblocking-blocked' => "Ваш IP-адрес $5 был заблокирован во всех вики участником '''$1''' (''$2'').
 Была указана причина: ''«$3»''.
-Блокировка ''$4''.",
+Эта блокировка ''$4''.",
 	'globalblocking-blocked-nopassreset' => 'Вы не можете сбрасывать пароли участников, так как вы заблокированы на глобальном уровне.',
 	'globalblocking-logpage' => 'Журнал глобальных блокировок',
 	'globalblocking-logpagetext' => 'Это журнал глобальных блокировок, установленных и снятых в этой вики.
@@ -9069,7 +9070,7 @@ $messages['sr-ec'] = array(
 Наведени разлог гласи: „''\"\$3\"''“.
 Блокада ''\$4''.",
 	'globalblocking-logpage' => 'Историја глобалних блокова',
-	'globalblocking-block-logentry' => 'глобално блокирао [[$1]] са временом истицања од $2',
+	'globalblocking-block-logentry' => '{{GENDER:|је глобално блокирао|је глобално блокирала|је глобално блокирао}} [[$1]] с роком истицања од $2',
 	'globalblocking-block2-logentry' => 'глобално блокиран [[$1]] ($2)',
 	'globalblocking-unblock-logentry' => 'уклонио глобални блок за [[$1]]',
 	'globalblocking-whitelist-logentry' => 'локално онемогућен глобални блок над [[$1]]',
