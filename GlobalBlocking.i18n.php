@@ -2101,8 +2101,8 @@ tayi blokeyi bı battal nişan biyê: manayê ına, blokebiyayişi keyepelê bin
 	'globalblocking-search-legend' => 'bıgêr yew blokeya globali',
 	'globalblocking-search-ip' => "Adresa IP'i:",
 	'globalblocking-search-submit' => 'blokan bıgêr',
-	'globalblocking-list-ipinvalid' => 'IP adresa ke şıma gêreni cı ($1) neömeqbulo.
-kerem kerê pê yew IP adresa meqbul cıkewe.',
+	'globalblocking-list-ipinvalid' => 'IP adresa ke şıma geyrenê cı ($1) nêvêrena.
+Kerem kerên, pê jû IP-adresa vêrdiye cı kewên.',
 	'globalblocking-search-errors' => 'cıgêrayiş serkewte nêbı, seba no {{PLURAL:$1|sebeb ra|sebeban ra}}:',
 	'globalblocking-list-blockitem' => "karberê \$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3''), [[Special:Contributions/\$4|\$4]]'i bı global bloke bı ''(\$5)''",
 	'globalblocking-list-expiry' => 'qediyayiş $1',
