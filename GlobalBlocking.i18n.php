@@ -3639,6 +3639,22 @@ Do chunnt e Uuszug us em Benutzersperr-Logbuech:',
 	'right-globalblock-exempt' => 'Wältwyti Sperrine umgoh',
 );
 
+/** Gujarati (ગુજરાતી)
+ * @author KartikMistry
+ */
+$messages['gu'] = array(
+	'globalblocking-block-reason' => 'કારણ:',
+	'globalblocking-block-reasonotherlist' => 'બીજું કારણ',
+	'globalblocking-block-expiry-otherfield' => 'અન્ય સમય:',
+	'globalblocking-block-options' => 'વિકલ્પો:',
+	'globalblocking-ipaddress' => 'IP સરનામું:',
+	'globalblocking-search-ip' => 'IP સરનામું:',
+	'globalblocking-list-unblock' => 'દુર કરો',
+	'globalblocking-unblock-reason' => 'કારણ:',
+	'globalblocking-whitelist-reason' => 'કારણ:',
+	'globalblocking-whitelist-status' => 'સ્થાનિક સ્થિતિ:',
+);
+
 /** Manx (Gaelg)
  * @author MacTire02
  * @author Shimmin Beg
