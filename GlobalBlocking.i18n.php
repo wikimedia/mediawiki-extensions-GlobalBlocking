@@ -3644,6 +3644,7 @@ Do chunnt e Uuszug us em Benutzersperr-Logbuech:',
  * @author Sushant savla
  */
 $messages['gu'] = array(
+	'globalblocking-block' => 'IP ને વૈશ્વિક રીતે પ્રતિબંધીત કરો',
 	'globalblocking-block-reason' => 'કારણ:',
 	'globalblocking-block-otherreason' => 'અન્ય/વધારાનું કારણ:',
 	'globalblocking-block-reasonotherlist' => 'બીજું કારણ',
@@ -3676,6 +3677,7 @@ $messages['gu'] = array(
 	'globalblocking-unblock' => 'વૈશ્વીક પ્રતિબંધ હટાવો',
 	'globalblocking-unblock-submit' => 'વૈશ્વીક સમૂહ હટાવો',
 	'globalblocking-unblock-reason' => 'કારણ:',
+	'globalblocking-unblock-subtitle' => 'વૈશ્વીક પ્રતિબંધ હટાવાય છે',
 	'globalblocking-whitelist-legend' => 'સ્થાનિક સ્થિતિ બદલો',
 	'globalblocking-whitelist-reason' => 'કારણ:',
 	'globalblocking-whitelist-status' => 'સ્થાનિક સ્થિતિ:',
@@ -3691,6 +3693,7 @@ $messages['gu'] = array(
 	'globalblockstatus' => 'વૈશ્વીક પ્રતિબંધોનો સ્થાનીય સ્તર',
 	'removeglobalblock' => 'વૈશ્વીક પ્રતિબંધ હટાવો',
 	'right-globalblock' => 'વૈશ્વીક પ્રતિબંધો બનાવો',
+	'right-globalblock-whitelist' => 'વૈશ્વીક પ્રતિબંધને સ્થાનીય સ્તરે હટાવો',
 	'right-globalblock-exempt' => 'વૈશ્વીક પ્રતિબંધો દરગુજર કરો',
 );
 
