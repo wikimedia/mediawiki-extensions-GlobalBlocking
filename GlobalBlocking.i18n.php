@@ -47,7 +47,7 @@ You can view the existing block on the [[Special:GlobalBlockList|list of global 
 or modify the settings of the existing block by re-submitting this form.',
 	'globalblocking-block-bigrange' => 'The range you specified ($1) is too big to block.
 You may block, at most, 65,536 addresses (/16 ranges)',
-	
+
 	'globalblocking-list-intro' => 'This is a list of all global blocks which are currently in effect.
 Some blocks are marked as locally disabled: this means that they apply on other sites, but a local administrator has decided to disable them on this wiki.',
 	'globalblocking-list' => 'List of globally blocked IP addresses',
@@ -68,7 +68,7 @@ Please enter a valid IP address.',
 	'globalblocking-goto-block' => 'Globally block an IP address',
 	'globalblocking-goto-unblock' => 'Remove a global block',
 	'globalblocking-goto-status' => 'Change local status for a global block',
-		
+
 	'globalblocking-return' => 'Return to the list of global blocks',
 	'globalblocking-notblocked' => 'The IP address ($1) you entered is not globally blocked.',
 
@@ -83,7 +83,7 @@ Please note that you cannot enter a user name!',
 	'globalblocking-unblock-successsub' => 'Global block successfully removed',
 	'globalblocking-unblock-subtitle' => 'Removing global block',
 	'globalblocking-unblock-intro' => 'You can use this form to remove a global block.',
-	
+
 	'globalblocking-whitelist' => 'Local status of global blocks',
 	'globalblocking-whitelist-notapplied' => 'Global blocks are not applied at this wiki,
 so the local status of global blocks cannot be modified.',
@@ -126,12 +126,16 @@ The block log is provided below for reference:',
 	'globalblock' => 'Globally block an IP address',
 	'globalblockstatus' => 'Local status of global blocks',
 	'removeglobalblock' => 'Remove a global block',
-	
+
 	// User rights
 	'right-globalblock' => 'Make global blocks',
+	'action-globalblock' => 'make global blocks',
 	'right-globalunblock' => 'Remove global blocks',
+	'action-globalunblock' => 'remove global blocks',
 	'right-globalblock-whitelist' => 'Disable global blocks locally',
+	'action-globalblock-whitelist' => 'disable global blocks locally',
 	'right-globalblock-exempt' => 'Bypass global blocks',
+	'action-globalblock-exempt' => 'bypass global blocks',
 );
 
 /** Message documentation (Message documentation)
