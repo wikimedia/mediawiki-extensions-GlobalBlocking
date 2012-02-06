@@ -154,7 +154,7 @@ class SpecialGlobalBlockStatus extends SpecialPage {
 		$fields = array();
 
 		// uses ipaddress msg
-		$fields['ipaddress'] = Xml::input( 'address', 45, $this->mAddress );
+		$fields['globalblocking-ipaddress'] = Xml::input( 'address', 45, $this->mAddress );
 		$fields['globalblocking-whitelist-reason'] = Xml::input( 'wpReason', 45, $this->mReason );
 		$fields['globalblocking-whitelist-status'] = Xml::checkLabel( wfMsgExt( 'globalblocking-whitelist-statuslabel', 'parsemag' ), 'wpWhitelistStatus', 'wpWhitelistStatus', $this->mCurrentStatus );
 
