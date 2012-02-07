@@ -1099,9 +1099,13 @@ $messages['be-tarask'] = array(
 	'globalblockstatus' => 'Лякальны статус глябальных блякаваньняў',
 	'removeglobalblock' => 'Разблякаваць глябальна',
 	'right-globalblock' => 'глябальныя блякаваньні',
+	'action-globalblock' => 'стварыць глябальныя блякаваньні',
 	'right-globalunblock' => 'глябальныя разблякаваньні',
+	'action-globalunblock' => 'зьняць глябальныя блякаваньні',
 	'right-globalblock-whitelist' => 'Лякальнае адключэньне глябальных блякаваньняў',
+	'action-globalblock-whitelist' => 'адключыць глябальныя блякаваньні лякальна',
 	'right-globalblock-exempt' => 'ігнараваньне глябальных блякаваньняў',
+	'action-globalblock-exempt' => 'ігнараваць глябальныя блякаваньні',
 );
 
 /** Bulgarian (Български)
@@ -1767,9 +1771,13 @@ Zde je pro přehled zobrazen výpis z knihy zablokování:',
 	'globalblockstatus' => 'Místní stav globálního blokování',
 	'removeglobalblock' => 'Odstranit globální zablokování',
 	'right-globalblock' => 'Globální blokování',
+	'action-globalblock' => 'globálně blokovat',
 	'right-globalunblock' => 'Rušení globálních blokování',
+	'action-globalunblock' => 'rušit globální blokování',
 	'right-globalblock-whitelist' => 'Definování výjimek z globálního zablokování',
+	'action-globalblock-whitelist' => 'definovat výjimky z globálního zablokování',
 	'right-globalblock-exempt' => 'Obcházení globálního blokování',
+	'action-globalblock-exempt' => 'obcházet globální blokování',
 );
 
 /** Welsh (Cymraeg)
@@ -2028,9 +2036,13 @@ Es folgt ein Auszug aus dem Benutzersperr-Logbuch:',
 	'globalblockstatus' => 'Lokaler Status der globalen Sperre',
 	'removeglobalblock' => 'Globale Sperre aufheben',
 	'right-globalblock' => 'Globale Sperren einrichten',
+	'action-globalblock' => 'globale Sperren einzurichten',
 	'right-globalunblock' => 'Globale Sperren aufheben',
-	'right-globalblock-whitelist' => 'Globale Sperren lokal abschalten',
+	'action-globalunblock' => 'globale Sperren aufzuheben',
+	'right-globalblock-whitelist' => 'Globale Sperren lokal aufheben',
+	'action-globalblock-whitelist' => 'globale Sperren lokal aufzuheben',
 	'right-globalblock-exempt' => 'Globale Sperren umgehen',
+	'action-globalblock-exempt' => 'globale Sperren zu umgehen',
 );
 
 /** German (formal address) (‪Deutsch (Sie-Form)‬)
@@ -2293,9 +2305,13 @@ Protokol blokěrowanjow jo dołojce pódał slědujuce ako referencu:',
 	'globalblockstatus' => 'Lokalny status globalnych blokěrowanjow',
 	'removeglobalblock' => 'Globalne blokěrowanje wótpóraś',
 	'right-globalblock' => 'Globalne blokěrowanja napóraś',
+	'action-globalblock' => 'globalne blokěrowanja napóraś',
 	'right-globalunblock' => 'Globalne blokěrowanja wótpóraś',
+	'action-globalunblock' => 'globalne blokěrowanja wótpóraś',
 	'right-globalblock-whitelist' => 'Globalne blokěrowanja lokalnje wótpóraś',
+	'action-globalblock-whitelist' => 'globalne blokěrowanja lokalnje wótpóraś',
 	'right-globalblock-exempt' => 'Globalne blokěrowanja wobejś',
+	'action-globalblock-exempt' => 'globalne blokěrowanja wobejś',
 );
 
 /** Ewe (Eʋegbe)
@@ -2552,6 +2568,7 @@ Jen la protokolo pri forbaroj sube por via referenco:',
 
 /** Spanish (Español)
  * @author Aleator
+ * @author Armando-Martin
  * @author Crazymadlover
  * @author Dferg
  * @author Fitoschido
@@ -2672,9 +2689,13 @@ El registro de bloqueos se proporciona a continuación como referencia:',
 	'globalblockstatus' => 'Estatus local de bloqueos globales',
 	'removeglobalblock' => 'Quitar un bloqueo global',
 	'right-globalblock' => 'Hacer bloqueos globales',
+	'action-globalblock' => 'hacer bloques mundiales',
 	'right-globalunblock' => 'Quitar un bloqueo global',
+	'action-globalunblock' => 'eliminar bloqueos globales',
 	'right-globalblock-whitelist' => 'Desactivar bloqueos globales localmente',
+	'action-globalblock-whitelist' => 'deshabilitar localmente bloqueos globales',
 	'right-globalblock-exempt' => 'Eludir bloqueos globales',
+	'action-globalblock-exempt' => 'eludir bloqueos globales',
 );
 
 /** Estonian (Eesti)
@@ -3260,9 +3281,13 @@ Le journal des blocages est disponible ci-dessous :',
 	'globalblockstatus' => 'Statuts locaux des blocages globaux',
 	'removeglobalblock' => 'Supprimer un blocage global',
 	'right-globalblock' => 'Bloquer des utilisateurs globalement',
+	'action-globalblock' => 'faire des blocages globaux',
 	'right-globalunblock' => "Retirer des blocages globaux d'utilisateurs",
+	'action-globalunblock' => 'supprimer des blocages globaux',
 	'right-globalblock-whitelist' => 'Désactiver localement des blocages globaux',
+	'action-globalblock-whitelist' => 'désactiver localement les blocages globaux',
 	'right-globalblock-exempt' => 'Passer outre les blocages globaux',
+	'action-globalblock-exempt' => 'passer outre les blocages globaux',
 );
 
 /** Franco-Provençal (Arpetan)
@@ -3511,9 +3536,13 @@ Velaquí está o rexistro de bloqueos, por se quere consultalo:',
 	'globalblockstatus' => 'Estado local dos bloqueos globais',
 	'removeglobalblock' => 'Retirar un bloqueo global',
 	'right-globalblock' => 'Realizar bloqueos globais',
+	'action-globalblock' => 'realizar bloqueos globais',
 	'right-globalunblock' => 'Eliminar bloqueos globais',
+	'action-globalunblock' => 'eliminar bloqueos globais',
 	'right-globalblock-whitelist' => 'Deshabilitar bloqueos globais localmente',
-	'right-globalblock-exempt' => 'Saltar os bloqueos globais',
+	'action-globalblock-whitelist' => 'deshabilitar bloqueos globais localmente',
+	'right-globalblock-exempt' => 'Saltar bloqueos globais',
+	'action-globalblock-exempt' => 'saltar bloqueos globais',
 );
 
 /** Gothic (Gothic)
@@ -3671,14 +3700,21 @@ $messages['gu'] = array(
 	'globalblocking-ipaddress' => 'IP સરનામું:',
 	'globalblocking-ipbanononly' => 'માત્ર અજ્ઞાત સભ્ય છુપાવો',
 	'globalblocking-block-errors' => 'તમારા દ્વારા લગાવેલ પ્રતિબંધ નીચેના {{PLURAL:$1|કારણ|કારણો}}ને લીધે અસફળ રહ્યો:',
+	'globalblocking-block-ipinvalid' => 'તમે દાખલ કરેલ IP સરનામું ($1) અયોગ્ય છે.
+મહેરબાની કરીને નોંધ લો કે તમે સભ્યનામ દાખલ કરી શકશો નહી!',
+	'globalblocking-block-expiryinvalid' => 'તમે  જણાવેલ કાલાતીત સીમા  ($1) અમાન્ય છે',
 	'globalblocking-block-submit' => 'IP એડ્રેસ પર વૈશ્વીક પ્રતિબંધ મૂકો',
 	'globalblocking-modify-submit' => 'આ વૈશ્વીક સમૂહને બદલો',
+	'globalblocking-block-success' => 'IP એડ્રેસ $1 પર બધી પરિયોજનાઓ ઉપર પ્રતિબંધ મુકાયો',
 	'globalblocking-modify-success' => 'વૈશ્વીક પ્રતિબંધ $1 ને સફળતા પૂર્વક સુધારાયો.',
 	'globalblocking-block-successsub' => 'વૈશ્વીક પ્રતિબંધ સફળ',
 	'globalblocking-modify-successsub' => 'વૈશ્વીક સમૂહને સફળતા પૂર્વક બદલાયો',
+	'globalblocking-list' => 'વૈશ્વીક રીતે પ્રતિબંધીત IP એડ્રેસની યાદી',
 	'globalblocking-search-legend' => 'વૈશ્વીક સમૂહ શોધો',
 	'globalblocking-search-ip' => 'IP સરનામું:',
 	'globalblocking-search-submit' => 'પ્રતિબંધને શોધો',
+	'globalblocking-list-ipinvalid' => 'ત્તમે શોધો છો તે IP એડ્રેસ  ($1) અમાન્ય છે.
+મહેરબાની કરી વૈધ IP એડ્રેસ આપો.',
 	'globalblocking-search-errors' => 'નીચેના {{PLURAL:$1|કારણ|કારણો}}ને લીધે, તમારી શોધ અસફળ રહી હતી:',
 	'globalblocking-list-expiry' => 'કાલાતીત $1',
 	'globalblocking-list-anononly' => 'માત્ર અજ્ઞાત',
@@ -3691,10 +3727,12 @@ $messages['gu'] = array(
 	'globalblocking-goto-unblock' => 'વૈશ્વીક પ્રતિબંધ હટાવો',
 	'globalblocking-goto-status' => 'વૈશ્વિક પ્રતિબંધનું સ્થાનીક સ્તર ધરાવો',
 	'globalblocking-return' => 'વૈશ્વીક સમોહોની યાદી પર પાછા જાવ',
+	'globalblocking-notblocked' => 'તમે લખેલો IP એડ્રેસ ($1) વૈશ્વીક રીતે પ્રતિબંધિત છે.',
 	'globalblocking-unblock' => 'વૈશ્વીક પ્રતિબંધ હટાવો',
 	'globalblocking-unblock-legend' => 'વૈશ્વીક પ્રતિબંધ હટાવાયો',
 	'globalblocking-unblock-submit' => 'વૈશ્વીક સમૂહ હટાવો',
 	'globalblocking-unblock-reason' => 'કારણ:',
+	'globalblocking-unblock-unblocked' => "તમે સફળતા પૂર્વક  IP એડ્રેસ '''$1''' પરનો વૈશ્વીક પ્રતિબંધ #$2 હટાવ્યો",
 	'globalblocking-unblock-errors' => 'તમારા દ્વારા લગાવેલ પ્રતિબંધ નીચેના {{PLURAL:$1|કારણ|કારણો}}ને લીધે અસફળ રહ્યો:',
 	'globalblocking-unblock-successsub' => 'વૈશ્વીક પ્રતિબંધ સફળતા પૂર્વક હટાવાયો',
 	'globalblocking-unblock-subtitle' => 'વૈશ્વીક પ્રતિબંધ હટાવાય છે',
@@ -3705,21 +3743,33 @@ $messages['gu'] = array(
 	'globalblocking-whitelist-legend' => 'સ્થાનિક સ્થિતિ બદલો',
 	'globalblocking-whitelist-reason' => 'કારણ:',
 	'globalblocking-whitelist-status' => 'સ્થાનિક સ્થિતિ:',
+	'globalblocking-whitelist-statuslabel' => '{{SITENAME}} પરનો વૈશ્વીક પ્રતિબંધ હટાવો',
 	'globalblocking-whitelist-submit' => 'સ્થાનિક સ્થિતિ બદલો',
 	'globalblocking-whitelist-successsub' => 'સ્થાનીય સ્તર સફળતા પૂર્વક બદલાયો',
 	'globalblocking-blocked-nopassreset' => 'તમે સભ્યનો પાસવર્ડ ફરી ન ગોઠવી શકો કેમકે તમારા પર વૈશ્વીક પ્રતિબંધ લાગેલો છે.',
 	'globalblocking-logpage' => 'સામૂહિક પ્રતિબંધનો લોગ',
+	'globalblocking-block-logentry' => '[[$1]] પર પ્રતિબંધ $2 સુધી મુકવામાં આવ્યો છે.',
 	'globalblocking-block2-logentry' => 'વૈશ્વીક રીતે પ્રતિબંધીત [[$1]] ($2)',
 	'globalblocking-unblock-logentry' => '[[$1]] નો વૈશ્વીક પ્રતિબંધ રદ્દ કરો',
+	'globalblocking-whitelist-logentry' => '[[$1]] પરનો વૈશ્વીક પ્રતિબંધ સ્થાનીય સ્તરે નિષ્ક્રીય કરો',
+	'globalblocking-dewhitelist-logentry' => '[[$1]] પરનો વૈશ્વીક પ્રતિબંધ સ્થાનીય સ્તરે ફરી સષ્ક્રીય કરો',
+	'globalblocking-modify-logentry' => '[[$1]] ($2) પ્રના વૈશ્વીક પ્રતિબંધ મઠાર્યા',
 	'globalblocking-logentry-expiry' => 'કાલાતીત $1',
 	'globalblocking-logentry-noexpiry' => 'કાલાતિત સમૂહ નથી',
+	'globalblocking-showlog' => 'આ IP એડ્રેસ પર પહેલા રોક લગાવાઈ છે.
+રોકા લગાવાયેલા IP એડ્રેસની યાદિ આ મુજબ છે',
 	'globalblocklist' => 'વૈશ્વીક રીતે પ્રતિબંધીત IP એડ્રેસની યાદી',
 	'globalblock' => 'IP ને વૈશ્વિક રીતે પ્રતિબંધીત કરો',
 	'globalblockstatus' => 'વૈશ્વીક પ્રતિબંધોનો સ્થાનીય સ્તર',
 	'removeglobalblock' => 'વૈશ્વીક પ્રતિબંધ હટાવો',
 	'right-globalblock' => 'વૈશ્વીક પ્રતિબંધો બનાવો',
+	'action-globalblock' => 'વૈશ્વીક પ્રતિબંધો બનાવો',
+	'right-globalunblock' => 'વૈશ્વીક પ્રતિબંધ હટાવો',
+	'action-globalunblock' => 'વૈશ્વીક પ્રતિબંધ હટાવો',
 	'right-globalblock-whitelist' => 'વૈશ્વીક પ્રતિબંધને સ્થાનીય સ્તરે હટાવો',
+	'action-globalblock-whitelist' => 'વૈશ્વીક પ્રતિબંધને સ્થાનીય સ્તરે નિષ્ક્રીય કરો',
 	'right-globalblock-exempt' => 'વૈશ્વીક પ્રતિબંધો દરગુજર કરો',
+	'action-globalblock-exempt' => 'વૈશ્વીક પ્રતિબંધો દરગુજર કરો',
 );
 
 /** Manx (Gaelg)
@@ -3861,9 +3911,13 @@ $messages['he'] = array(
 	'globalblockstatus' => 'המצב המקומי של החסימות הגלובליות',
 	'removeglobalblock' => 'הסרת חסימה גלובלית',
 	'right-globalblock' => 'יצירת חסימות גלובליות',
+	'action-globalblock' => 'לעשות חסימות גלובליות',
 	'right-globalunblock' => 'הסרת חסימות גלובליות',
+	'action-globalunblock' => 'לשחרר חסימות גלובליות',
 	'right-globalblock-whitelist' => 'ביטול חסימות גלובליות באופן מקומי',
+	'action-globalblock-whitelist' => 'לכבות חסימות גלובליות באופן מקומי',
 	'right-globalblock-exempt' => 'עקיפת חסימות גלובליות',
+	'action-globalblock-exempt' => 'לעקוף חסימות גלובליות',
 );
 
 /** Hindi (हिन्दी)
@@ -4203,9 +4257,13 @@ Protokol blokowanjow podawa so deleka jako referencu:',
 	'globalblockstatus' => 'Lokalny status globalnych blokowanjow',
 	'removeglobalblock' => 'Globalne blokowanje wotstronić',
 	'right-globalblock' => 'Globalne blokowanja činić',
+	'action-globalblock' => 'globalne blokowanja činić',
 	'right-globalunblock' => 'Globalne blokowanja wotstronić',
+	'action-globalunblock' => 'globalne blokowanja wotstronić',
 	'right-globalblock-whitelist' => 'Globalne blokowanja lokalnje znjemóžnić',
+	'action-globalblock-whitelist' => 'globalne blokowanja lokalnje znjemóžnić',
 	'right-globalblock-exempt' => 'Globalne blokowanja wobeńć',
+	'action-globalblock-exempt' => 'globalne blokowanja wobeńć',
 );
 
 /** Haitian (Kreyòl ayisyen)
@@ -4502,9 +4560,13 @@ Le registro de blocadas es fornite ci infra pro referentia:',
 	'globalblockstatus' => 'Stato local de blocadas global',
 	'removeglobalblock' => 'Remover un blocada global',
 	'right-globalblock' => 'Facer blocadas global',
+	'action-globalblock' => 'facer blocadas global',
 	'right-globalunblock' => 'Remover blocadas global',
+	'action-globalunblock' => 'remover blocadas global',
 	'right-globalblock-whitelist' => 'Disactivar blocadas global localmente',
+	'action-globalblock-whitelist' => 'disactivar blocadas global localmente',
 	'right-globalblock-exempt' => 'Contornar blocadas global',
+	'action-globalblock-exempt' => 'contornar blocadas global',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -5796,9 +5858,13 @@ D'Lëscht vun de Späre steet hei ënnendrënner.",
 	'globalblockstatus' => 'Lokale Statut vu globale Spären',
 	'removeglobalblock' => 'Eng global Spär ophiewen',
 	'right-globalblock' => 'Benotzer global spären',
+	'action-globalblock' => 'global Späre maachen',
 	'right-globalunblock' => 'Global Spären ophiewen',
+	'action-globalunblock' => 'global Spären ophiewen',
 	'right-globalblock-whitelist' => 'Global Späre lokal ausschalten',
+	'action-globalblock-whitelist' => 'global Späre lokal ausschalten',
 	'right-globalblock-exempt' => 'Global Spären ëmgoen',
+	'action-globalblock-exempt' => 'global Spären ëmgoen',
 );
 
 /** Limburgish (Limburgs)
@@ -6514,9 +6580,13 @@ Sekatan ini ''\$4''.",
 	'globalblockstatus' => 'Status tempatan bagi sekatan sejagat',
 	'removeglobalblock' => 'Batalkan sekatan sejagat',
 	'right-globalblock' => 'Mengenakan sekatan sejagat',
+	'action-globalblock' => 'membuat sekatan sejagat',
 	'right-globalunblock' => 'Membatalkan sekatan sejagat',
+	'action-globalunblock' => 'membuang sekatan sejagat',
 	'right-globalblock-whitelist' => 'Mematikan sekatan sejagat di wiki tempatan',
+	'action-globalblock-whitelist' => 'mematikan sekatan sejagat secara setempat',
 	'right-globalblock-exempt' => 'Mengatasi sekatan sejagat',
+	'action-globalblock-exempt' => 'memintas sekatan sejagat',
 );
 
 /** Maltese (Malti)
