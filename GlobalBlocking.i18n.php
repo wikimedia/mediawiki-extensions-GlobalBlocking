@@ -1099,13 +1099,13 @@ $messages['be-tarask'] = array(
 	'globalblockstatus' => 'Лякальны статус глябальных блякаваньняў',
 	'removeglobalblock' => 'Разблякаваць глябальна',
 	'right-globalblock' => 'глябальныя блякаваньні',
-	'action-globalblock' => 'стварыць глябальныя блякаваньні',
+	'action-globalblock' => 'стварэньне глябальных блякаваньняў',
 	'right-globalunblock' => 'глябальныя разблякаваньні',
-	'action-globalunblock' => 'зьняць глябальныя блякаваньні',
+	'action-globalunblock' => 'зьняцьце глябальных блякаваньняў',
 	'right-globalblock-whitelist' => 'Лякальнае адключэньне глябальных блякаваньняў',
-	'action-globalblock-whitelist' => 'адключыць глябальныя блякаваньні лякальна',
+	'action-globalblock-whitelist' => 'адключэньне глябальных блякаваньняў лякальна',
 	'right-globalblock-exempt' => 'ігнараваньне глябальных блякаваньняў',
-	'action-globalblock-exempt' => 'ігнараваць глябальныя блякаваньні',
+	'action-globalblock-exempt' => 'ігнараваньне глябальных блякаваньняў',
 );
 
 /** Bulgarian (Български)
@@ -3677,6 +3677,7 @@ Do chunnt e Uuszug us em Benutzersperr-Logbuech:',
 );
 
 /** Gujarati (ગુજરાતી)
+ * @author Dsvyas
  * @author KartikMistry
  * @author Sushant savla
  */
@@ -3716,6 +3717,7 @@ $messages['gu'] = array(
 	'globalblocking-list-ipinvalid' => 'ત્તમે શોધો છો તે IP એડ્રેસ  ($1) અમાન્ય છે.
 મહેરબાની કરી વૈધ IP એડ્રેસ આપો.',
 	'globalblocking-search-errors' => 'નીચેના {{PLURAL:$1|કારણ|કારણો}}ને લીધે, તમારી શોધ અસફળ રહી હતી:',
+	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'')એ [[Special:Contributions/\$4|\$4]] પર વૈશ્વિક પ્રતિબંધ મુક્યો ''(\$5)''",
 	'globalblocking-list-expiry' => 'કાલાતીત $1',
 	'globalblocking-list-anononly' => 'માત્ર અજ્ઞાત',
 	'globalblocking-list-unblock' => 'દુર કરો',
@@ -3729,6 +3731,8 @@ $messages['gu'] = array(
 	'globalblocking-return' => 'વૈશ્વીક સમોહોની યાદી પર પાછા જાવ',
 	'globalblocking-notblocked' => 'તમે લખેલો IP એડ્રેસ ($1) વૈશ્વીક રીતે પ્રતિબંધિત છે.',
 	'globalblocking-unblock' => 'વૈશ્વીક પ્રતિબંધ હટાવો',
+	'globalblocking-unblock-ipinvalid' => 'તમે દાખલ કરેલ IP સરનામું ($1) અયોગ્ય છે.
+મહેરબાની કરીને નોંધ લો કે તમે સભ્યનામ દાખલ કરી શકશો નહી!',
 	'globalblocking-unblock-legend' => 'વૈશ્વીક પ્રતિબંધ હટાવાયો',
 	'globalblocking-unblock-submit' => 'વૈશ્વીક સમૂહ હટાવો',
 	'globalblocking-unblock-reason' => 'કારણ:',
@@ -3745,7 +3749,11 @@ $messages['gu'] = array(
 	'globalblocking-whitelist-status' => 'સ્થાનિક સ્થિતિ:',
 	'globalblocking-whitelist-statuslabel' => '{{SITENAME}} પરનો વૈશ્વીક પ્રતિબંધ હટાવો',
 	'globalblocking-whitelist-submit' => 'સ્થાનિક સ્થિતિ બદલો',
+	'globalblocking-whitelist-whitelisted' => "તમે {{SITENAME}} પર સફળતા પૂર્વક  IP એડ્રેસ '''$1''' પરનો વૈશ્વીક પ્રતિબંધ #$2 હટાવ્યો",
 	'globalblocking-whitelist-successsub' => 'સ્થાનીય સ્તર સફળતા પૂર્વક બદલાયો',
+	'globalblocking-blocked' => "તમારું IP સરનામું \$5 દરેક વિકિ પર '''\$1''' (''\$2'') વડે પ્રતિબંધિત છે. 
+તેના માટે ''\"\$3\"'' કારણ આપેલ છે.
+પ્રતિબંધ ''\$4''.",
 	'globalblocking-blocked-nopassreset' => 'તમે સભ્યનો પાસવર્ડ ફરી ન ગોઠવી શકો કેમકે તમારા પર વૈશ્વીક પ્રતિબંધ લાગેલો છે.',
 	'globalblocking-logpage' => 'સામૂહિક પ્રતિબંધનો લોગ',
 	'globalblocking-block-logentry' => '[[$1]] પર પ્રતિબંધ $2 સુધી મુકવામાં આવ્યો છે.',
@@ -5581,9 +5589,13 @@ $messages['ko'] = array(
 	'globalblockstatus' => '전체 차단의 로컬 상태',
 	'removeglobalblock' => '전체 차단을 해제',
 	'right-globalblock' => '전체 위키 차단',
+	'action-globalblock' => '전체 위키 차단을 할',
 	'right-globalunblock' => '전체 위키에서 차단을 해제',
+	'action-globalunblock' => '전체 위키 차단을 해제할',
 	'right-globalblock-whitelist' => '로컬에서 전체 차단을 비활성화',
+	'action-globalblock-whitelist' => '로컬에서 전체 차단을 비활성화할',
 	'right-globalblock-exempt' => '전체 차단을 우회',
+	'action-globalblock-exempt' => '전체 차단을 우회할',
 );
 
 /** Karachay-Balkar (Къарачай-Малкъар)
@@ -6218,9 +6230,13 @@ $messages['mk'] = array(
 	'globalblockstatus' => 'Локален статус на глобални блокови',
 	'removeglobalblock' => 'Отстранување на глобален блок',
 	'right-globalblock' => 'Вршење на глобални блокирања',
+	'action-globalblock' => 'вршење на глобални блокирања',
 	'right-globalunblock' => 'Отстранување на глобални блокирања',
+	'action-globalunblock' => 'отстранување на глобални блокирања',
 	'right-globalblock-whitelist' => 'Локално оневозможување на глобални блокови',
-	'right-globalblock-exempt' => 'Заобиколи глобални блокови',
+	'action-globalblock-whitelist' => 'локално оневозможување на глобални блокови',
+	'right-globalblock-exempt' => 'Заобиколување глобални блокови',
+	'action-globalblock-exempt' => 'заобиколување на глобални блокови',
 );
 
 /** Malayalam (മലയാളം)
