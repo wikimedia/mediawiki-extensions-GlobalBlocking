@@ -3710,6 +3710,13 @@ $messages['gu'] = array(
 	'globalblocking-modify-success' => 'વૈશ્વીક પ્રતિબંધ $1 ને સફળતા પૂર્વક સુધારાયો.',
 	'globalblocking-block-successsub' => 'વૈશ્વીક પ્રતિબંધ સફળ',
 	'globalblocking-modify-successsub' => 'વૈશ્વીક સમૂહને સફળતા પૂર્વક બદલાયો',
+	'globalblocking-block-alreadyblocked' => 'IP એડ્રેસ $1 પર પહેલેથી પ્રતિબંધ લગાવેલો છે.
+તમે [[Special:GlobalBlockList|વૈશ્વીક પ્રતિબંધોની યાદી]] પર તેમને જોઈ શકશો 
+કે આ ફોર્મ ભરીને હાલના પ્રતિબંધોના વિકલ્પો બદલી શક્શો.',
+	'globalblocking-block-bigrange' => 'પ્રતિબંધ મૂકવા તમે જણાવેલી ($1) શ્રેણી અત્યમ્ત લાંબી છે.
+તમે વધુમાં વધુ 65,536 એડ્રેસ પ્રતિબંધીત કરી શકો (/16 ranges)',
+	'globalblocking-list-intro' => 'હાલના સક્રીય વૈશ્વીક પ્રતિબંધોની આ યાદી છે.
+અમુક પ્રતિબંધોને સ્થાનીય રીતે પર્તિબંધીત બતાવેલા છે: તેઓ અર્થ ઍમ છે કે તેઓ અન્ય વેબ સાઈટ પ્ર જઈ શકશે માત્ર સ્થાનીય પ્રબંધકે તેને માત્ર આ વિકિ પર પ્રતિબંધીત કર્યો છે.',
 	'globalblocking-list' => 'વૈશ્વીક રીતે પ્રતિબંધીત IP એડ્રેસની યાદી',
 	'globalblocking-search-legend' => 'વૈશ્વીક સમૂહ શોધો',
 	'globalblocking-search-ip' => 'IP સરનામું:',
@@ -3750,7 +3757,14 @@ $messages['gu'] = array(
 	'globalblocking-whitelist-statuslabel' => '{{SITENAME}} પરનો વૈશ્વીક પ્રતિબંધ હટાવો',
 	'globalblocking-whitelist-submit' => 'સ્થાનિક સ્થિતિ બદલો',
 	'globalblocking-whitelist-whitelisted' => "તમે {{SITENAME}} પર સફળતા પૂર્વક  IP એડ્રેસ '''$1''' પરનો વૈશ્વીક પ્રતિબંધ #$2 હટાવ્યો",
+	'globalblocking-whitelist-dewhitelisted' => "તમે {{SITENAME}} પર સફળતા પૂર્વક  IP એડ્રેસ '''$1''' પરનો વૈશ્વીક પ્રતિબંધ #$2 ફરી કાર્યાન્વીત કર્યો.",
 	'globalblocking-whitelist-successsub' => 'સ્થાનીય સ્તર સફળતા પૂર્વક બદલાયો',
+	'globalblocking-whitelist-nochange' => 'તમે આ પ્રતિબંધના સ્થાનીય સ્થિતીમાં કોઈ ફેરફાર અન્થી કર્યાં. 
+[[Special:GlobalBlockList|વૈશ્વીક પ્રતિબંધ પાદી પર પાછા જાવ]].',
+	'globalblocking-whitelist-errors' => 'તમારા દ્વારા લગાવેલ પ્રતિબંધ નીચેના {{PLURAL:$1|કારણ|કારણો}}ને લીધે અસફળ રહ્યો:',
+	'globalblocking-whitelist-intro' => 'તમે આ ફોર્મનો વપરાશ કરીને વૈશ્વીક પ્રતિબંધના સ્થાનીય વિકલ્પો બદલી શકશો.
+જો આ વિકિ પર વૈશ્વીક પ્રતિબંધ નિષ્ક્રીય કર્યો, તો અસરગ્રસ્ત  IP એડ્રેસ સામાન્ય રૂપે ફેરફાર કરી શકશે.
+[[Special:GlobalBlockList|વૈશ્વીક પ્રતિબંધ યાદી પર પાછા જાવ]].',
 	'globalblocking-blocked' => "તમારું IP સરનામું \$5 દરેક વિકિ પર '''\$1''' (''\$2'') વડે પ્રતિબંધિત છે. 
 તેના માટે ''\"\$3\"'' કારણ આપેલ છે.
 પ્રતિબંધ ''\$4''.",
@@ -3764,6 +3778,7 @@ $messages['gu'] = array(
 	'globalblocking-modify-logentry' => '[[$1]] ($2) પ્રના વૈશ્વીક પ્રતિબંધ મઠાર્યા',
 	'globalblocking-logentry-expiry' => 'કાલાતીત $1',
 	'globalblocking-logentry-noexpiry' => 'કાલાતિત સમૂહ નથી',
+	'globalblocking-loglink' => 'IP એડ્રેસ $1 પર વૈશ્વીક પ્રતિબંધ મૂકાયો. ([[{{#Special:GlobalBlockList}}/$1|પૂર્ણ માહિતી]]).',
 	'globalblocking-showlog' => 'આ IP એડ્રેસ પર પહેલા રોક લગાવાઈ છે.
 રોકા લગાવાયેલા IP એડ્રેસની યાદિ આ મુજબ છે',
 	'globalblocklist' => 'વૈશ્વીક રીતે પ્રતિબંધીત IP એડ્રેસની યાદી',
@@ -4783,7 +4798,7 @@ Pangngaasi a lagipem a saan ka a makaikabil ti nagan ti agar-aramat!',
 	'globalblocking-unblock-successsub' => 'Balligi ti pinagikkat ti sangalubongan a serra',
 	'globalblocking-unblock-subtitle' => 'Ikikkaten ti sangalubongan a serra',
 	'globalblocking-unblock-intro' => 'Mausar mo daytoy a kinabuklan ti pinagikkat ti sangalubongan a serra.',
-	'globalblocking-whitelist' => 'Local a kasasaad iti sangalubongan a serra',
+	'globalblocking-whitelist' => 'Lokal a kasasaad iti sangalubongan a serra',
 	'globalblocking-whitelist-notapplied' => 'TI sangalubongan a serra ket saan a naikabil ditoy a wiki,
 ket ti lokal a kasaad iti sangalubongan a serra ket saan a mabaliwan.',
 	'globalblocking-whitelist-legend' => 'Sukatan ti lokal a kasasaad',
@@ -4824,9 +4839,13 @@ Ti listaan ti serra ket naikabil dita baba tapno mausar a reperensia:',
 	'globalblockstatus' => 'Lokal a kasasaad iti sangalubongan a serra',
 	'removeglobalblock' => 'Ikkaten ti maysa a sangalubongan a serra',
 	'right-globalblock' => 'Agaramid kadagiti sangalubongan a serra',
-	'right-globalunblock' => 'Ikikkaten dagiti sangalubongan a serra',
+	'action-globalblock' => 'agaramid kadagiti sanglubongan a serra',
+	'right-globalunblock' => 'Ikkaten dagiti sangalubongan a serra',
+	'action-globalunblock' => 'ikkaten dagiti sanglubongan a serra',
 	'right-globalblock-whitelist' => 'Ibaldado a lokal dagiti sangalubongan a serra',
+	'action-globalblock-whitelist' => 'ibaldado a lokal dagiti sanglubongan a serra',
 	'right-globalblock-exempt' => 'Palabsan dagiti sangalubongan a serra',
+	'action-globalblock-exempt' => 'palabsan dagiti sangalubongan a serra',
 );
 
 /** Ido (Ido)
