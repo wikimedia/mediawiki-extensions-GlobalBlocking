@@ -2962,9 +2962,13 @@ $messages['fa'] = array(
 	'globalblockstatus' => 'وضعیت محلی قطع‌ دسترسی‌های سراسری',
 	'removeglobalblock' => 'حذف یک قطع دسترسی سراسری',
 	'right-globalblock' => 'ایجاد قطع دسترسی‌های سراسری',
+	'action-globalblock' => 'ایجاد قطع دسترسی‌های سراسری',
 	'right-globalunblock' => 'حذف قطع دسترسی‌های سراسری',
+	'action-globalunblock' => 'حذف قطع دسترسی‌های سراسری',
 	'right-globalblock-whitelist' => 'غیر فعال کردن قطع دسترسی‌های سراسری به طور محلی',
+	'action-globalblock-whitelist' => 'غیر فعال کردن قطع دسترسی‌های سراسری به‌صورت محلی',
 	'right-globalblock-exempt' => 'گذرگاه قطع دسترسی‌های سراسری',
+	'action-globalblock-exempt' => 'کنارگذاشتن قطع دسترسی‌های سراسری',
 );
 
 /** Finnish (Suomi)
@@ -3682,6 +3686,7 @@ Do chunnt e Uuszug us em Benutzersperr-Logbuech:',
  * @author Sushant savla
  */
 $messages['gu'] = array(
+	'globalblocking-desc' => '[[Special:GlobalBlock|Allows]] IP ઍડ્રેસને [[Special:GlobalBlockList|વિવિધ વિકિ પરપ્રતિબંધીત કરવા]]ઉપયોગિ છે.',
 	'globalblocking-block' => 'IP ને વૈશ્વિક રીતે પ્રતિબંધીત કરો',
 	'globalblocking-modify-intro' => 'તમે આ ફોર્મ વાપરીને આ વૈશ્વિક ખાતાની વિકલ્પ વ્યવસ્થા બદલી શકો છો.',
 	'globalblocking-block-intro' => 'તમે આ પૃષ્ઠ વાપરીને દરેક વિકિ પર કોઈ IP ઍડ્રેસ પર પ્રતિબંધ મૂકી શકો છો',
@@ -7002,9 +7007,13 @@ Het blokkeerlogboek wordt hieronder weergegeven:',
 	'globalblockstatus' => 'Lokale status van globale blokkades',
 	'removeglobalblock' => 'Globale blokkade verwijderen',
 	'right-globalblock' => 'Globale blokkades instellen',
+	'action-globalblock' => 'globale blokkades in te stellen',
 	'right-globalunblock' => 'Globale blokkades verwijderen',
+	'action-globalunblock' => 'global blokkades te verwijderen',
 	'right-globalblock-whitelist' => 'Globale blokkades lokaal negeren',
+	'action-globalblock-whitelist' => 'globale blokkades lokaal te negeren',
 	'right-globalblock-exempt' => 'Globale blokkades omzeilen',
+	'action-globalblock-exempt' => 'globale blokkades te omzeilen',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
