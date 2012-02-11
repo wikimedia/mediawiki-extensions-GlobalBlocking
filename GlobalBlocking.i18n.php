@@ -494,9 +494,13 @@ O rechistro de bloqueyos se proporciona contino como referencia:',
 	'globalblockstatus' => 'Estau local de bloqueyos globals',
 	'removeglobalblock' => 'Sacar un bloqueyo global',
 	'right-globalblock' => 'Fer bloqueyos globals',
+	'action-globalblock' => 'Fer bloqueyos globals',
 	'right-globalunblock' => 'Sacar bloqueyos globals',
+	'action-globalunblock' => 'Eliminar os bloqueyos globals',
 	'right-globalblock-whitelist' => 'Desactivar localment os bloqueyos globals',
+	'action-globalblock-whitelist' => 'Desactivar localment os bloqueyos globals',
 	'right-globalblock-exempt' => 'Eludir bloqueyos globals',
+	'action-globalblock-exempt' => 'Eludir os bloqueyos globals',
 );
 
 /** Arabic (العربية)
@@ -3775,6 +3779,7 @@ $messages['gu'] = array(
 પ્રતિબંધ ''\$4''.",
 	'globalblocking-blocked-nopassreset' => 'તમે સભ્યનો પાસવર્ડ ફરી ન ગોઠવી શકો કેમકે તમારા પર વૈશ્વીક પ્રતિબંધ લાગેલો છે.',
 	'globalblocking-logpage' => 'સામૂહિક પ્રતિબંધનો લોગ',
+	'globalblocking-logpagetext' => 'આ વિકિ પરની આ વૈશ્વીક પ્રતિબંધ મુકવા અને હટાવવા સંબંધે થયેલ ફેરફારની યાદી છે. એ વાત ધ્યાનમાં લેશો કે અન્ય વિકિ પર પણ વૈશ્વીક પ્રતિબંધ લગાડી અને હટાવી શકાય છે, જે આ વિકિ ને અસર કરી શકે છે.  બધા સક્રીય પ્રતિબંધની યાદી અહીં જોઈ શકાશે : [[Special:GlobalBlockList|global block list]]',
 	'globalblocking-block-logentry' => '[[$1]] પર પ્રતિબંધ $2 સુધી મુકવામાં આવ્યો છે.',
 	'globalblocking-block2-logentry' => 'વૈશ્વીક રીતે પ્રતિબંધીત [[$1]] ($2)',
 	'globalblocking-unblock-logentry' => '[[$1]] નો વૈશ્વીક પ્રતિબંધ રદ્દ કરો',
@@ -7699,7 +7704,7 @@ $messages['pnb'] = array(
 	'globalblocking-whitelist-successsub' => 'لوکل سٹیٹس کامیابی نال بدل دتا گیا اے۔',
 	'globalblocking-whitelist-nochange' => 'تساں ایس روک دے لوکل سٹیٹس تے کوئی تبدیلی نئیں کیتی۔
 [[Special:GlobalBlockList|جگت روک لسٹ ول واپسی]]۔',
-	'globalblocking-whitelist-errors' => 'تواڈی جگت روک لوکل سٹیٹس دی کامیاب نئیں، تھلے دتیاں گیاں {{انیک:$1|وجہ|وجہاں}} توں:',
+	'globalblocking-whitelist-errors' => 'تواڈی جگت روک لوکل سٹیٹس دی کامیاب نئیں، تھلے دتیاں گیاں {{PLURAL:$1|وجہ|وجہاں}} توں:',
 	'globalblocking-whitelist-intro' => 'تسیں ایس فارم نوں اک جگت روک لوکل سٹیٹس نوں بدلن لئی ورت سکدے او۔
 اگر اک جگت روک ایس وکی تے کم نئیں کردی، ورتن والے متاثرہ آئی پی پتے اینوں تبدیل کرن گے۔
 [[Special:GlobalBlockList|جگت روک لسٹ ول چلو]]',
@@ -7710,7 +7715,7 @@ $messages['pnb'] = array(
 	'globalblocking-logpage' => 'جگت روک لاگ',
 	'globalblocking-logpagetext' => 'ایہ جگت روکاں دی لاگ اے جیہڑی بنائی گئی اے تے ایس وکی توں ہٹا دتی گئی اے۔
 اے گل یاد رکھن والی اے جے جگت روکاں بنایاں جا سکدیاں نیں تے دوجے وکیاں تے ہٹائیاں جاسکدیاں نیں، تے ایہ جگت روکاں  ایس وکی تے وی اثر پاندیاں نیں۔ 
-سارے چلدے جگت روکاں نوں ویکھن لئی تسیں ویکھو [[خاص:جگت روک لسٹ|جگت روک لسٹ]]',
+سارے چلدے جگت روکاں نوں ویکھن لئی تسیں ویکھو [[Special:GlobalBlockList|جگت روک لسٹ]]',
 	'globalblocking-block-logentry' => 'جگت روک [[$1]] جیدا مکن ویلہ $2 اے۔',
 	'globalblocking-block2-logentry' => 'جگت روکیا گیا[[$1]] ($2)',
 	'globalblocking-unblock-logentry' => 'جگت روک [[$1]] توں ہٹادتی گئی۔',
@@ -7719,7 +7724,7 @@ $messages['pnb'] = array(
 	'globalblocking-modify-logentry' => 'جگت روک نوں [[$1]] ($2) تے بدلو',
 	'globalblocking-logentry-expiry' => 'انت $1',
 	'globalblocking-logentry-noexpiry' => 'کوئی مکن سیٹ نئیں',
-	'globalblocking-loglink' => 'آئی پی پتہ $1 تے جگت روک اے ([[{{#حاص:جگت روکلسٹ}}/$1|پوری گل]])',
+	'globalblocking-loglink' => 'آئی پی پتہ $1 تے جگت روک اے ([[{{#Special:GlobalBlockList}}/$1|پوری گل]])',
 	'globalblocking-showlog' => 'آئی پی پتہ پہلے وی روکیا گیا اے۔
 روک لاگ تھلے اتے پتے لئی دتی گئی اے:',
 	'globalblocklist' => 'جگت روک آئی پی پتیاں دی لسٹ',
@@ -11083,6 +11088,7 @@ $1',
  * @author Horacewai2
  * @author Liangent
  * @author Mark85296341
+ * @author Oapbtommy
  * @author Shinjiman
  * @author Waihorace
  */
@@ -11133,7 +11139,7 @@ $1',
 	'globalblocking-list-blockitem' => "\$1：<span class=\"plainlinks\">'''\$2'''</span> （''\$3''） 全域封鎖了 [[Special:Contributions/\$4|\$4]] ''（\$5）''",
 	'globalblocking-list-expiry' => '於$1到期',
 	'globalblocking-list-anononly' => '只限匿名',
-	'globalblocking-list-unblock' => '解除封鎖',
+	'globalblocking-list-unblock' => '移除',
 	'globalblocking-list-whitelisted' => '由 $1 於本地封鎖：$2',
 	'globalblocking-list-whitelist' => '本地狀態',
 	'globalblocking-list-modify' => '修改',
