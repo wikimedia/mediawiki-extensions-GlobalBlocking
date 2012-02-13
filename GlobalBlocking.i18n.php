@@ -1408,9 +1408,13 @@ A-is emañ marilh ar stankadennoù :",
 	'globalblockstatus' => "Statud lec'hel ar stankadennoù hollek",
 	'removeglobalblock' => 'Lemel ur stankadur hollek',
 	'right-globalblock' => 'Stankañ implijerien en un doare hollek',
+	'action-globalblock' => 'Ober stankadennoù hollek',
 	'right-globalunblock' => 'Lemel ar stankadennoù hollek',
+	'action-globalunblock' => 'Lemel ar stankadennoù hollek',
 	'right-globalblock-whitelist' => "Diweredekaat en un doare lec'hel ar stankadennoù hollek",
-	'right-globalblock-exempt' => 'Mont dreist ar stankadennoù hollek',
+	'action-globalblock-whitelist' => "Diweredekaat en un doare lec'hel ar stankadennoù hollek",
+	'right-globalblock-exempt' => "Mont dreist d'ar stankadennoù hollek",
+	'action-globalblock-exempt' => "Mont dreist d'ar stankadennoù hollek",
 );
 
 /** Bosnian (Bosanski)
@@ -9594,6 +9598,7 @@ $messages['sw'] = array(
  * @author TRYPPN
  */
 $messages['ta'] = array(
+	'globalblocking-block' => 'உலகளவில் ஒரு IP முகவரியை தடைசெய்',
 	'globalblocking-modify-intro' => 'நீங்கள் இந்த படிவத்தை உலகளாவிய தடையின் அமைப்புகளை மாற்ற பயன்படுத்தலாம்.',
 	'globalblocking-block-intro' => 'நீங்கள் இந்த பக்கத்தை ஒரு IP முகவரியை அனைத்து விக்கிகளிலும் தடை செய்ய பயன்படுத்தலாம்.',
 	'globalblocking-block-reason' => 'காரணம்:',
@@ -9657,6 +9662,7 @@ $messages['ta'] = array(
 	'globalblocking-whitelist-status' => 'உள்ளூர் நிலைமை:',
 	'globalblocking-whitelist-statuslabel' => '{{SITENAME}} ல் உலகளவிய தடையை செயலிழக்க செய்',
 	'globalblocking-whitelist-submit' => 'உள் நிலை மாற்று',
+	'globalblocking-whitelist-successsub' => 'உள்ளமைவு நிலை வெற்றிகரமாக மாற்றப்பட்டது',
 	'globalblocking-block2-logentry' => 'உலகளவில் தடைசெய்யப்பட்டுள்ளது [[$1]] ($2)',
 	'globalblocking-unblock-logentry' => ' [[$1]] ல் நீக்கப்பட்ட உலகளவிய தடைகள்',
 	'globalblocklist' => 'உலகளவில் தடை செய்யப்பட்ட IP முகவரிகளின் பட்டியல்',
@@ -9664,8 +9670,11 @@ $messages['ta'] = array(
 	'globalblockstatus' => 'உலகளவிய தடையின் உள்நிலைமை',
 	'removeglobalblock' => 'ஒரு உலகளவிய தடையை நீக்கு',
 	'right-globalblock' => 'உலகளவிய தடையை உருவாக்கு',
+	'action-globalblock' => 'உலகளவிய தடையை உருவாக்கு',
 	'right-globalunblock' => 'உலகளவிய தடைகளை நீக்கு',
+	'action-globalunblock' => 'உலகளவிய தடையை நீக்கு',
 	'right-globalblock-whitelist' => 'உள்ளமைவில் உலகளாவிய தடைகளை செயல்நீக்கவும்',
+	'action-globalblock-whitelist' => 'உள்ளமைவில் உலகளாவிய தடைகளை செயல்நீக்கவும்',
 	'right-globalblock-exempt' => 'உலகளவிய தடையை மீறு',
 );
 
