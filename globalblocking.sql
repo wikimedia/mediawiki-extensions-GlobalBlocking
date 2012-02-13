@@ -9,7 +9,7 @@ CREATE TABLE /*$wgDBprefix*/globalblocks (
 	gb_expiry varbinary(14) NOT NULL default '',
 	gb_range_start varbinary(32) NOT NULL, -- Needs 32, not 8 for IPv6 support
 	gb_range_end varbinary(32) NOT NULL,
-	
+
 	PRIMARY KEY gb_id (gb_id),
 
 	UNIQUE INDEX gb_address (gb_address, gb_anon_only),

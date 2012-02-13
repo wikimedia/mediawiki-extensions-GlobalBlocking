@@ -36,6 +36,8 @@ class GlobalBlocking {
 	}
 
 	/**
+	 * @param $user User
+	 * @param $ip
 	 * @return Array: empty or a message key with parameters
 	 */
 	static function getUserBlockErrors( $user, $ip ) {
