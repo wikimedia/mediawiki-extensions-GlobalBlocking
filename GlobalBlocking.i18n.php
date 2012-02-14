@@ -1843,6 +1843,8 @@ Nodwch gyfeiriad IP dilys os gwelwch yn dda.",
 	'globalblocking-list-modify' => 'addasu',
 	'globalblocking-list-noresults' => "Nid yw cyfeiriad IP yr ymholiad wedi'i rwystro.",
 	'globalblocking-goto-block' => 'Blocio cyfeiriad IP yn fyd-eang',
+	'globalblocking-unblock-ipinvalid' => "Mae'r cyfeiriad IP ($1) a nodwyd gennych yn annilys.
+Noder nad oes modd defnyddio enw defnyddiwr os gwelwch yn dda!",
 	'globalblocking-unblock-reason' => 'Rheswm:',
 	'globalblocking-whitelist-legend' => 'Newid y statws lleol',
 	'globalblocking-whitelist-reason' => 'Rheswm:',
@@ -9070,9 +9072,13 @@ Dnevnik blokiranja je na voljo spodaj:',
 	'globalblockstatus' => 'Lokalno stanje globalnih blokad',
 	'removeglobalblock' => 'Odstrani globalno blokado',
 	'right-globalblock' => 'Uveljavljanje globalnih blokad',
+	'action-globalblock' => 'uveljavljanje globalnih blokad',
 	'right-globalunblock' => 'Odstranjevanje globalnih blokad',
+	'action-globalunblock' => 'odstranjevanje globalnih blokad',
 	'right-globalblock-whitelist' => 'Onemogočanje globalnih blokad na lokalni ravni',
+	'action-globalblock-whitelist' => 'onemogočanje globalnih blokad na lokalni ravni',
 	'right-globalblock-exempt' => 'Izmikanje globalnim blokadam',
+	'action-globalblock-exempt' => 'izmikanje globalnim blokadam',
 );
 
 /** Albanian (Shqip)
