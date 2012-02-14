@@ -83,30 +83,29 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 		}
 		if(isset($params['ip'])) {
 			list($ip, $range) = IP::parseCIDR($params['ip']);
-			if($ip && $range)
-			{
+			if($ip && $range) {
 				# We got a CIDR range
 				if($range < 16)
 					$this->dieUsage('CIDR ranges broader than /16 are not accepted', 'cidrtoobroad');
 				$lower = wfBaseConvert($ip, 10, 16, 8, false);
 				$upper = wfBaseConvert($ip + pow(2, 32 - $range) - 1, 10, 16, 8, false);
-			}
-			else
+			} else {
 				$lower = $upper = IP::toHex($params['ip']);
+			}
 			$prefix = substr($lower, 0, 4);
-			$this->addWhere(array(
-				"gb_range_start LIKE '$prefix%'",
-				"gb_range_start <= '$lower'",
-				"gb_range_end >= '$upper'"
-			));
+			$this->addWhere( array(
+					"gb_range_start LIKE '$prefix%'",
+					"gb_range_start <= '$lower'",
+					"gb_range_end >= '$upper'"
+				)
+			);
 		}
 
 		$res = $this->select(__METHOD__);
 
 		$count = 0;
 		foreach ( $res as $row ) {
-			if(++$count > $params['limit'])
-			{
+			if(++$count > $params['limit']) {
 				// We've had enough
 				$this->setContinueEnumParameter('start', wfTimestamp(TS_ISO_8601, $row->gb_timestamp));
 				break;
@@ -114,14 +113,12 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 			$block = array();
 			if($fld_id)
 				$block['id'] = $row->gb_id;
-			if($fld_address)
-			{
+			if($fld_address) {
 				$block['address'] = $row->gb_address;
 				if($row->gb_anon_only)
 					$block['anononly'] = '';
 			}
-			if($fld_by)
-			{
+			if($fld_by) {
 				$block['by'] = $row->gb_by;
 				$block['bywiki'] = $row->gb_by_wiki;
 			}
@@ -131,8 +128,7 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 				$block['expiry'] = Block::decodeExpiry($row->gb_expiry, TS_ISO_8601);
 			if($fld_reason)
 				$block['reason'] = $row->gb_reason;
-			if($fld_range)
-			{
+			if($fld_range) {
 				$block['rangestart'] = IP::hexToQuad($row->gb_range_start);
 				$block['rangeend'] = IP::hexToQuad($row->gb_range_end);
 			}
