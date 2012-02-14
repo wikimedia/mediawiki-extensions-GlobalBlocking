@@ -8,16 +8,18 @@ class SpecialRemoveGlobalBlock extends SpecialPage {
 	}
 
 	function execute( $par ) {
-		global $wgOut, $wgRequest, $wgUser;
+		global $wgUser;
 		$this->setHeaders();
 
 		$this->loadParameters();
 
-		$wgOut->setPageTitle( wfMsg( 'globalblocking-unblock' ) );
-		$wgOut->setSubtitle( GlobalBlocking::buildSubtitleLinks( 'RemoveGlobalBlock' ) );
-		$wgOut->setRobotPolicy( "noindex,nofollow" );
-		$wgOut->setArticleRelated( false );
-		$wgOut->enableClientCache( false );
+		$out = $this->getOutput();
+
+		$out->setPageTitle( wfMsg( 'globalblocking-unblock' ) );
+		$out->setSubtitle( GlobalBlocking::buildSubtitleLinks( 'RemoveGlobalBlock' ) );
+		$out->setRobotPolicy( "noindex,nofollow" );
+		$out->setArticleRelated( false );
+		$out->enableClientCache( false );
 
 		if (!$this->userCanExecute( $wgUser )) {
 			$this->displayRestrictionError();
@@ -26,7 +28,8 @@ class SpecialRemoveGlobalBlock extends SpecialPage {
 
 		$errors = '';
 
-		if ($wgRequest->wasPosted() && $wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ))) {
+		$request = $this->getRequest();
+		if ( $request->wasPosted() && $wgUser->matchEditToken( $request->getVal( 'wpEditToken' ) ) ) {
 			// They want to submit. Let's have a look.
 			$errors = $this->trySubmit();
 			if( !$errors ) {
@@ -34,12 +37,12 @@ class SpecialRemoveGlobalBlock extends SpecialPage {
 				return;
 			}
 		}
-		
-		$wgOut->addWikiMsg( 'globalblocking-unblock-intro' );
+
+		$out->addWikiMsg( 'globalblocking-unblock-intro' );
 
 		if (is_array($errors) && count($errors)>0) {
 			$errorstr = '';
-			
+
 			foreach ( $errors as $error ) {
 				if (is_array($error)) {
 					$msg = array_shift($error);
@@ -49,15 +52,14 @@ class SpecialRemoveGlobalBlock extends SpecialPage {
 				}
 				$errorstr .= Xml::tags( 'li', null, wfMsgExt( $msg, array( 'parseinline' ), $error ) );
 			}
-			
+
 			$errorstr = Xml::tags( 'ul', array( 'class' => 'error' ), $errorstr );
 			$errorstr = wfMsgExt( 'globalblocking-unblock-errors', array('parse'), array( count( $errors ) ) ) . $errorstr;
 			$errorstr = Xml::tags( 'div', array( 'class' => 'error' ), $errorstr );
-			$wgOut->addHTML( $errorstr );
+			$out->addHTML( $errorstr );
 		}
-		
-		$this->form( );
 
+		$this->form();
 	}
 
 	function loadParameters() {
@@ -68,7 +70,7 @@ class SpecialRemoveGlobalBlock extends SpecialPage {
 	}
 
 	function trySubmit() {
-		global $wgOut,$wgUser;
+		global $wgOut;
 		$errors = array();
 		$ip = $this->mUnblockIP;
 		if (!IP::isIPAddress($ip) && strlen($ip)) {
@@ -84,6 +86,7 @@ class SpecialRemoveGlobalBlock extends SpecialPage {
 			return $errors;
 		}
 
+		$out = $this->getOutput();
 		$dbw = GlobalBlocking::getGlobalBlockingMaster();
 		$dbw->delete( 'globalblocks', array( 'gb_id' => $id ), __METHOD__ );
 
@@ -91,12 +94,12 @@ class SpecialRemoveGlobalBlock extends SpecialPage {
 		$page->addEntry( 'gunblock', Title::makeTitleSafe( NS_USER, $ip ), $this->mReason );
 
 		$successmsg = wfMsgExt( 'globalblocking-unblock-unblocked', array( 'parse' ), $ip, $id );
-		$wgOut->addHTML( $successmsg );
+		$out->addHTML( $successmsg );
 
-		$link = $wgUser->getSkin()->makeKnownLinkObj( SpecialPage::getTitleFor( 'GlobalBlockList' ), wfMsg( 'globalblocking-return' ) );
-		$wgOut->addHTML( $link );
+		$link = Linker::makeKnownLinkObj( SpecialPage::getTitleFor( 'GlobalBlockList' ), wfMsg( 'globalblocking-return' ) );
+		$out->addHTML( $link );
 
-		$wgOut->setSubtitle(wfMsg('globalblocking-unblock-successsub'));
+		$out->setSubtitle(wfMsg('globalblocking-unblock-successsub'));
 
 		return array();
 	}

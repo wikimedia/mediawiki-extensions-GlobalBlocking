@@ -10,16 +10,17 @@ class SpecialGlobalBlock extends SpecialPage {
 	}
 
 	function execute( $par ) {
-		global $wgOut, $wgRequest, $wgUser;
+		global $wgUser;
 		$this->setHeaders();
 
 		$this->loadParameters( $par );
 
-		$wgOut->setPageTitle( wfMsg( 'globalblocking-block' ) );
-		$wgOut->setSubtitle( GlobalBlocking::buildSubtitleLinks( 'GlobalBlock' ) );
-		$wgOut->setRobotPolicy( "noindex,nofollow" );
-		$wgOut->setArticleRelated( false );
-		$wgOut->enableClientCache( false );
+		$out = $this->getOutput();
+		$out->setPageTitle( wfMsg( 'globalblocking-block' ) );
+		$out->setSubtitle( GlobalBlocking::buildSubtitleLinks( 'GlobalBlock' ) );
+		$out->setRobotPolicy( "noindex,nofollow" );
+		$out->setArticleRelated( false );
+		$out->enableClientCache( false );
 
 		if (!$this->userCanExecute( $wgUser )) {
 			$this->displayRestrictionError();
@@ -28,7 +29,8 @@ class SpecialGlobalBlock extends SpecialPage {
 
 		$errors = '';
 
-		if ($wgRequest->wasPosted() && $wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ))) {
+		$request = $this->getRequest();
+		if ( $request->wasPosted() && $wgUser->matchEditToken( $request->getVal( 'wpEditToken' ) ) ) {
 			// They want to submit. Let's have a look.
 			$errors = $this->trySubmit();
 			if( !$errors ) {
@@ -114,15 +116,14 @@ class SpecialGlobalBlock extends SpecialPage {
 	}
 
 	function trySubmit() {
-		global $wgOut, $wgUser;
 		$options = array();
-		$skin = $wgUser->getSkin();
 
 		if ($this->mAnonOnly)
 			$options[] = 'anon-only';
 		if ($this->mModify)
 			$options[] = 'modify';
 
+		$out = $this->getOutput();
 		$reasonstr = $this->mReasonList;
 		if( $reasonstr != 'other' && $this->mReason != '' ) {
 			// Entry from drop down menu + additional comment
@@ -145,12 +146,12 @@ class SpecialGlobalBlock extends SpecialPage {
 			$subMessage = 'globalblocking-block-successsub';
 		}
 
-		$wgOut->addWikitext( wfMsg($textMessage, $this->mAddress ) );
-		$wgOut->setSubtitle( wfMsg( $subMessage ) );
+		$out->addWikitext( wfMsg($textMessage, $this->mAddress ) );
+		$out->setSubtitle( wfMsg( $subMessage ) );
 
-		$link = $skin->link( SpecialPage::getTitleFor( 'GlobalBlockList' ),
+		$link = Linker::link( SpecialPage::getTitleFor( 'GlobalBlockList' ),
 							wfMsg( 'globalblocking-return' ) );
-		$wgOut->addHTML( $link );
+		$out->addHTML( $link );
 
 		return array();
 	}
