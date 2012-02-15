@@ -2340,6 +2340,7 @@ Mɔxexea ''\$4''.",
  * @author Crazymadlover
  * @author Dead3y3
  * @author Geraki
+ * @author Glavkos
  * @author Omnipaedista
  * @author ZaDiak
  * @author Απεργός
@@ -2429,8 +2430,8 @@ $messages['el'] = array(
 	'globalblocking-whitelist-intro' => 'Μπορείτε να χρησιμοποιήσετε αυτή τη φόρμα για να επεξεργαστείτε την τοπική κατάσταση μιας καθολικής φραγής.<br />
 Αν μια καθολική φραγή είναι απενεργοποιημένη σε αυτό το wiki, οι χρήστες της επηρεαζόμενης διεύθυνσης IP θα είναι ικανοί να επεξεργαστούν σελίδες κανονικά.<br />
 [[Special:GlobalBlockList|Επιστροφή στον κατάλογο καθολικών φραγών]].',
-	'globalblocking-blocked' => "Η διεύθυνση IP σας έχει φραγεί σε όλα τα wikis από τον/την '''$1''' (''$2'').<br />
-Ο λόγος που δόθηκε ήταν ''«$3»''.<br />
+	'globalblocking-blocked' => "Η διεύθυνση IP σας έχει φραγεί σε όλα τα wikis από τον/την '''$1''' (''$2'').
+Ο λόγος που δόθηκε ήταν ''«$3»''.
 Τύπος φραγής: ''$4''.",
 	'globalblocking-blocked-nopassreset' => 'Δεν μπορείτε να επαναφέρετε του κωδικούς χρήστη επειδή είστε καθολικά φραγμένος.',
 	'globalblocking-logpage' => 'Αρχείο καταγραφής καθολικών φραγών',
@@ -2453,7 +2454,9 @@ $messages['el'] = array(
 	'globalblockstatus' => 'Τοπική κατάσταση καθολικών φραγών',
 	'removeglobalblock' => 'Αφαίρεση μιας καθολικής φραγής',
 	'right-globalblock' => 'Δημιουργία καθολικών φραγών',
+	'action-globalblock' => 'Δημιουργία καθολικών φραγών',
 	'right-globalunblock' => 'Αφαίρεση καθολικών φραγών',
+	'action-globalunblock' => 'Κατάργηση καθολικών φραγών',
 	'right-globalblock-whitelist' => 'Απενεργοποίηση καθολικών φραγών τοπικά',
 	'right-globalblock-exempt' => 'Παράκαμψη καθολικών φραγών',
 );
@@ -5446,11 +5449,18 @@ $messages['km'] = array(
 	'globalblocking-block-reason' => 'មូលហេតុ៖',
 	'globalblocking-block-otherreason' => 'មូលហេតុផ្សេង​ៗ/បន្ថែមទៀត៖',
 	'globalblocking-block-reasonotherlist' => 'មូលហេតុផ្សេង​ទៀត​',
+	'globalblocking-block-reason-dropdown' => '* មូលហេតុរាំងខ្ទប់ទូទៅ
+** ការពង្រាយស្ប៉ាមឆ្លងវិគី
+** ការបំពានច្បាប់ឆ្លងវិគី
+** ការបំផ្លិចបំផ្លាញសម្បត្តិសាធារណៈ',
+	'globalblocking-block-edit-dropdown' => 'កែប្រែមូលហេតុនៃការហាមឃាត់',
 	'globalblocking-block-expiry' => 'ផុតកំណត់៖',
 	'globalblocking-block-expiry-other' => 'រយៈពេលផុតកំណត់ផ្សេងទៀត',
 	'globalblocking-block-expiry-otherfield' => 'រយៈពេលផុតកំណត់ផ្សេងទៀត៖',
 	'globalblocking-block-legend' => 'រាំងខ្ទប់​អាសយដ្ឋាន​IPជា​សកល',
 	'globalblocking-block-options' => 'ជម្រើសនានា៖',
+	'globalblocking-ipaddress' => 'អាសយដ្ឋាន IP ៖',
+	'globalblocking-ipbanononly' => 'រាំងខ្ទប់​តែ​អ្នកប្រើប្រាស់​អនាមិក',
 	'globalblocking-block-errors' => 'ការរាំងខ្ទប់​របស់​អ្នក មិន​បាន​ជោគជ័យ​ទេ, សម្រាប់ {{PLURAL:$1|ហេតុផល|ហេតុផល}}​ដូចតទៅ:',
 	'globalblocking-block-expiryinvalid' => 'រយៈពេល​ផុតកំណត់​ដែល​អ្នក​បាន​បញ្ចូល ($1) មិន​ត្រឹមត្រូវ​ទេ​។',
 	'globalblocking-block-submit' => 'រាំងខ្ទប់​អាសយដ្ឋាន IP ជា​សកល',
