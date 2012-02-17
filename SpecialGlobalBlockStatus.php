@@ -131,7 +131,7 @@ class SpecialGlobalBlockStatus extends SpecialPage {
 			$out->addWikiMsg( 'globalblocking-whitelist-dewhitelisted', $ip, $id );
 		}
 
-		$link = $wgUser->getSkin()->makeKnownLinkObj( SpecialPage::getTitleFor( 'GlobalBlockList' ), wfMsg( 'globalblocking-return' ) );
+		$link = Linker::makeKnownLinkObj( SpecialPage::getTitleFor( 'GlobalBlockList' ), wfMsg( 'globalblocking-return' ) );
 		$out->addHTML( $link );
 
 		$out->setSubtitle(wfMsg('globalblocking-whitelist-successsub'));
