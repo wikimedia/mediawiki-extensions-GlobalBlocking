@@ -11029,8 +11029,7 @@ $messages['zh-hans'] = array(
 您可以在[[Special:GlobalBlockList|全域封锁名单]]中参看现时的封锁，或通过修改重新提交此表单设置现有封锁。',
 	'globalblocking-block-bigrange' => '您所指定的范围 （$1） 太大去封锁。
 您可以封锁，最多65,536个地址 （/16 范围）',
-	'globalblocking-list-intro' => '这是全部现时生效中的全域封锁。
-一些的封锁已标明在本地停用：即是这个封锁在其它wiki上应用，但是本地管理员已决定在这个wiki上停用它们。',
+	'globalblocking-list-intro' => '下表列出当前有效的全域封禁。部分封禁项目被标示为已在本地禁用，表示该项封禁在其他站点上仍然有效，但本地管理员已在本地禁用。',
 	'globalblocking-list' => '全局封禁IP地址列表',
 	'globalblocking-search-legend' => '搜寻一个全域封锁',
 	'globalblocking-search-ip' => 'IP地址:',
