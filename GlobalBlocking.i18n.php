@@ -4851,7 +4851,7 @@ Ti serra ''\$4'' .",
 	'globalblocking-logpagetext' => 'Daytoy ket listaan dagiti sangalubongan a serra a naaramid ken naikkat ditoy a wiki.
 Laglagipen a ti sangalubongan a serra ket maaramid ken maikkat kadagiti sabali a wiki, ken dagitoy a sangalubongan a serra ket tignayen na daytoy a wiki.
 Ti agkita kadagiti amin nga agdama a serra, kitaen ti [[Special:GlobalBlockList|listaan ti sangalubongan a serra]].',
-	'globalblocking-block-logentry' => 'sangalubonga a naserraan [[$1]] nga addaan ti oras ti pinagpaso a $2',
+	'globalblocking-block-logentry' => 'sangalubongan a naserraan [[$1]] nga addaan ti oras ti pinagpaso a $2',
 	'globalblocking-block2-logentry' => 'sangalubongan a naserraan [[$1]] ($2)',
 	'globalblocking-unblock-logentry' => 'ikkaten ti sangalubongan a serra idiay [[$1]]',
 	'globalblocking-whitelist-logentry' => 'ibaldado ti sangalubongan a serra idiay [[$1]] lokal laeng',
@@ -8437,9 +8437,13 @@ $1',
 	'globalblockstatus' => 'Локальные состояния глобальных блокировок',
 	'removeglobalblock' => 'Снять глобальную блокировку',
 	'right-globalblock' => 'наложение глобальных блокировок',
+	'action-globalblock' => 'наложение глобальных блокировок',
 	'right-globalunblock' => 'снятие глобальных блокировок',
+	'action-globalunblock' => 'снятие глобальных блокировок',
 	'right-globalblock-whitelist' => 'локальное отключение глобальных блокировок',
+	'action-globalblock-whitelist' => 'локальное отключение глобальных блокировок',
 	'right-globalblock-exempt' => 'обход глобальных блокировок',
+	'action-globalblock-exempt' => 'обход глобальных блокировок',
 );
 
 /** Rusyn (Русиньскый)
