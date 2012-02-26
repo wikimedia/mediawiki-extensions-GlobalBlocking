@@ -7825,7 +7825,9 @@ $messages['ps'] = array(
 	'globalblockstatus' => 'د نړېوالو بنديزونو سيمه ايز دريځ',
 	'removeglobalblock' => 'يو نړيوال بنديز غورځول',
 	'right-globalblock' => 'نړېوال بنديز لګول',
+	'action-globalblock' => 'نړېوال بنديزونه لګول',
 	'right-globalunblock' => 'نړېوال بنديزونه غورځول',
+	'action-globalunblock' => 'نړېوال بنديزونه غورځول',
 );
 
 /** Portuguese (Português)
