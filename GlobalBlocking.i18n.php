@@ -7418,6 +7418,7 @@ $messages['pdc'] = array(
 );
 
 /** Polish (Polski)
+ * @author BeginaFelicysym
  * @author Derbeth
  * @author Lampak
  * @author Leinad
@@ -7530,9 +7531,13 @@ Poniżej znajduje się rejestr blokad:',
 	'globalblockstatus' => 'Lokalny status globalnych blokad',
 	'removeglobalblock' => 'Usuwanie globalnej blokady',
 	'right-globalblock' => 'Zakładanie globalnych blokad',
+	'action-globalblock' => 'zakładanie globalnych blokad',
 	'right-globalunblock' => 'Zdejmowanie globalnych blokad',
+	'action-globalunblock' => 'zdejmowanie globalnych blokad',
 	'right-globalblock-whitelist' => 'Lokalne odblokowywanie globalnych blokad',
+	'action-globalblock-whitelist' => 'lokalne odblokowywanie globalnych blokad',
 	'right-globalblock-exempt' => 'Ignorowanie globalnych blokad',
+	'action-globalblock-exempt' => 'ignorowanie globalnych blokad',
 );
 
 /** Piedmontese (Piemontèis)
