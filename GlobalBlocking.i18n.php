@@ -6408,9 +6408,13 @@ $messages['ml'] = array(
 	'globalblockstatus' => 'ആഗോള തടയലുകളുടെ പ്രാദേശിക സ്ഥിതി',
 	'removeglobalblock' => 'ആഗോള തടയൽ നീക്കുക',
 	'right-globalblock' => 'ആഗോള തടയൽ നടത്തുക',
+	'action-globalblock' => 'ആഗോള തടയലുകൾ നടപ്പിൽ വരുത്തുക',
 	'right-globalunblock' => 'ആഗോള തടയൽ മാറ്റുക',
+	'action-globalunblock' => 'ആഗോള തടയലുകൾ നീക്കുക',
 	'right-globalblock-whitelist' => 'ആഗോള തടയലിനെ പ്രാദേശികമായി നിർവീര്യമാക്കുക',
-	'right-globalblock-exempt' => 'ആഗോള തടയലുകളെ പാർശ്വവത്കരിച്ചു ഗമിക്കുക',
+	'action-globalblock-whitelist' => 'ആഗോള തടയലുകൾ പ്രാദേശികമായി സജ്ജമല്ലാതാക്കുക',
+	'right-globalblock-exempt' => 'ആഗോള തടയലുകളെ പാർശ്വവത്കരിച്ചു പോവുക',
+	'action-globalblock-exempt' => 'ആഗോള തടയലുകൾ പാർശ്വവത്കരിച്ചു പോവുക',
 );
 
 /** Mongolian (Монгол)
