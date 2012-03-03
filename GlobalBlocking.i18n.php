@@ -858,14 +858,19 @@ $messages['az'] = array(
 	'globalblocking-block-reason' => 'Səbəb:',
 	'globalblocking-block-otherreason' => 'Digər/əlavə səbəb:',
 	'globalblocking-block-reasonotherlist' => 'Digər səbəb',
+	'globalblocking-block-edit-dropdown' => 'Bloklama səbəblərini redaktə et',
 	'globalblocking-block-expiry' => 'Bitmə müddəti:',
 	'globalblocking-block-expiry-otherfield' => 'Başqa vaxt:',
 	'globalblocking-block-options' => 'Nizamlamalar:',
+	'globalblocking-ipaddress' => 'IP ünvanı:',
 	'globalblocking-search-ip' => 'IP ünvanı:',
+	'globalblocking-list-unblock' => 'çıxar',
 	'globalblocking-list-whitelist' => 'lokal status',
 	'globalblocking-list-modify' => 'dəyişmək',
 	'globalblocking-unblock-reason' => 'Səbəb:',
 	'globalblocking-whitelist-reason' => 'Səbəb:',
+	'globalblocking-whitelist-status' => 'Lokal status:',
+	'globalblocking-whitelist-submit' => 'Lokal statusu dəyiş',
 	'globalblocking-logpage' => 'Qlobal blok gündəliyi',
 );
 
@@ -1423,6 +1428,7 @@ A-is emañ marilh ar stankadennoù :",
 
 /** Bosnian (Bosanski)
  * @author CERminator
+ * @author DzWiki
  */
 $messages['bs'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Omogućava]] da se IP adrese [[Special:GlobalBlockList|blokiraju na većem broju wikija]]',
@@ -1442,6 +1448,7 @@ $messages['bs'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Ostali period:',
 	'globalblocking-block-legend' => 'Blokiranje IP adrese globalno',
 	'globalblocking-block-options' => 'Opcije:',
+	'globalblocking-ipaddress' => 'IP adresa:',
 	'globalblocking-block-errors' => 'Vaše blokiranje je bilo bez uspjeha, iz {{PLURAL:$1|slijedećeg razloga|slijedećih razloga}}:',
 	'globalblocking-block-ipinvalid' => 'IP adresa ($1) koju ste unijeli nije validna.
 Zapamtite da ovdje ne možete unijeti korisničko ime!',
@@ -5327,6 +5334,7 @@ Kanggo mirsani kabèh pamblokiran global sing aktif wektu iki, pirsani ing[[Spec
 
 /** Georgian (ქართული)
  * @author BRUTE
+ * @author David1010
  * @author ITshnik
  * @author Malafaya
  * @author გიორგიმელა
@@ -5350,6 +5358,7 @@ $messages['ka'] = array(
 	'globalblocking-block-legend' => 'მომხმარებლის გლობალური ბლოკირება',
 	'globalblocking-block-options' => 'კონფიგურაცია',
 	'globalblocking-ipaddress' => 'IP-მისამართი:',
+	'globalblocking-ipbanononly' => 'მხოლოდ ანონიმური მომხმარებლების დაბლოკვა',
 	'globalblocking-block-errors' => 'ბლოკირების მცდელობა წარუმატებელია, {{PLURAL:$1|მიზეზი|მიზეზები}}:',
 	'globalblocking-block-ipinvalid' => 'თქვენს მიერ მითითებული IP მისამართი ($1) არასწორია.
 გთოვთ, გაითვალისწინეთ, თქვენ არ შეგიძლიათ მომხმარებლის სახელის შეყვანა!',
@@ -5418,7 +5427,7 @@ $1',
 	'globalblocking-whitelist-intro' => 'თქვენ შეგიძლიათ გამოიყენოთ ეს ფორმა გლობალური ბლოკის შესასწორებლად.
 თუ გლობალური ბლოკი ამ ვიკიზე გათიშულია, ამ IP მისამართის მქონე მომხმარებლები შესძლებენ ნორმალურად რედაქტირებას.
 [[Special:GlobalBlockList|დაბლოკვის სიაში დაბრუნება]].',
-	'globalblocking-blocked' => "თქვენი IP მისამართი დაბლოკილ იქნა ყველა ვიკიზე მომხმარებელ '''\$1''' (''\$2'') მიერ.
+	'globalblocking-blocked' => "თქვენი IP მისამართი \$5 დაბლოკილ იქნა ყველა ვიკიზე მომხმარებელ '''\$1''' (''\$2'') მიერ.
 მითითებულ იქნა მიზეზი ''\"\$3\"''.
 ბლოკირება ''\$4''.",
 	'globalblocking-blocked-nopassreset' => 'თქვენ არ შეგიძლიათ მომხმარებლის პაროლის შეცვლა, რადგან თქვენი ანგარიში გლობალურად ბლოკირებულია.',
@@ -5441,7 +5450,9 @@ $1',
 	'globalblockstatus' => 'გლობალური ბლოკირების ლოკალური სტატუსი',
 	'removeglobalblock' => 'გლობალური ბლოკირების მოხსნა',
 	'right-globalblock' => 'გლობალური ბლოკირების გაკეთება',
+	'action-globalblock' => 'გლობალური ბლოკირებების გაკეთება',
 	'right-globalunblock' => 'გლობალური ბლოკირების მოხსნა',
+	'action-globalunblock' => 'გლობალური ბლოკირებების მოხსნა',
 	'right-globalblock-whitelist' => 'გლობალური ბლოკირების ლოკალური გამორთვა',
 	'right-globalblock-exempt' => 'გლობალური ბლოკირების გვერდის ავლა',
 );
@@ -10323,8 +10334,8 @@ bu yüzden küresel engellemelerin yerel durumu değiştirilemez.',
 	'globalblocking-whitelist-intro' => 'Küresel bir engellemenin yerel durumunu değiştirmek için bu formu kullanabilirsiniz.
 Eğer bir küresel engelleme bu vikide devre dışı bırakılmış ise, etkilenen IP adresindeki kullanıcılar normal olarak değişiklik yapabilecektir.
 [[Special:GlobalBlockList|Küresel engelleme listesine geri dönün]].',
-	'globalblocking-blocked' => "IP adresiniz '''\$1''' (''\$2'') tarafından tüm vikilerde engellendi.
-Verilen sebep şu: ''\"\$3\"''.
+	'globalblocking-blocked' => "IP adresiniz \$5 '''\$1''' (''\$2'') tarafından tüm vikilerde engellendi.
+Verilen gerekçe ''\"\$3\"''.
 Engelleme ''\$4''.",
 	'globalblocking-blocked-nopassreset' => 'Küresel olarak engellenmiş olduğunuz için kullanıcının şifresini sıfırlayamazsınız.',
 	'globalblocking-logpage' => 'Küresel engelleme günlüğü',
