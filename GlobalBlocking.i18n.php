@@ -2982,7 +2982,7 @@ $messages['fa'] = array(
 	'globalblocking-dewhitelist-logentry' => 'قطع دسترسی سراسری [[$1]] را به طور محلی دوباره فعال کرد',
 	'globalblocking-modify-logentry' => 'قطع دسترسی سراسری [[$1]] را تغییر داد ($2)',
 	'globalblocking-logentry-expiry' => 'انقضا $1',
-	'globalblocking-logentry-noexpiry' => 'هیچ انقضایی تنظیم نشده',
+	'globalblocking-logentry-noexpiry' => 'هیچ انقضایی تنظیم نشده‌است',
 	'globalblocking-loglink' => 'آدرس آی‌پی $1 به صورت سراسری مسدود شده‌است ([[{{#Special:GlobalBlockList}}/$1|جزئیات کامل]]).',
 	'globalblocking-showlog' => 'این نشانی آی‌پی قبلاً بسته شده‌است.
 سیاههٔ قطع دسترسی در زیر نمایش یافته‌است:',
