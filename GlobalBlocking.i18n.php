@@ -5454,7 +5454,9 @@ $1',
 	'right-globalunblock' => 'გლობალური ბლოკირების მოხსნა',
 	'action-globalunblock' => 'გლობალური ბლოკირებების მოხსნა',
 	'right-globalblock-whitelist' => 'გლობალური ბლოკირების ლოკალური გამორთვა',
+	'action-globalblock-whitelist' => 'გლობალური ბლოკირების ლოკალური გამორთვა',
 	'right-globalblock-exempt' => 'გლობალური ბლოკირების გვერდის ავლა',
+	'action-globalblock-exempt' => 'გლობალური ბლოკირების გვერდის ავლა',
 );
 
 /** Khmer (ភាសាខ្មែរ)
