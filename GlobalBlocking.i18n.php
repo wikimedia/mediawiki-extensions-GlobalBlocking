@@ -11035,6 +11035,7 @@ $1',
  * @author Breawycker
  * @author Gaoxuewei
  * @author Liangent
+ * @author Linforest
  * @author Mark85296341
  * @author PhiLiP
  * @author Shinjiman
@@ -11146,9 +11147,13 @@ $1',
 	'globalblockstatus' => '全域封锁的本地状态',
 	'removeglobalblock' => '移除一个全域封锁',
 	'right-globalblock' => '弄一个全域封锁',
+	'action-globalblock' => '进行全域封锁',
 	'right-globalunblock' => '移除全域封锁',
+	'action-globalunblock' => '删除全域封锁',
 	'right-globalblock-whitelist' => '在本地停用全域封锁',
+	'action-globalblock-whitelist' => '本地禁用全域封锁',
 	'right-globalblock-exempt' => '绕过全域封锁',
+	'action-globalblock-exempt' => '绕过全域封锁',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
