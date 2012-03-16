@@ -5009,9 +5009,13 @@ Síðasta færsla vistfangsins úr bönnunarskrá er sýnd hér fyrir neðan til
 	'globalblockstatus' => 'Svæðisbundin staða altækra banna',
 	'removeglobalblock' => 'Fjarlægja altækt bann',
 	'right-globalblock' => 'Búa til altækt bann',
+	'action-globalblock' => 'Búa til altækt bann',
 	'right-globalunblock' => 'Fjarlægja altæk bönn',
+	'action-globalunblock' => 'Fjarlægja altæk bönn',
 	'right-globalblock-whitelist' => 'Óvirkja altæk bönn staðbundið',
+	'action-globalblock-whitelist' => 'Óvirkja altæk bönn staðbundið',
 	'right-globalblock-exempt' => 'Hunsa altæk bönn',
+	'action-globalblock-exempt' => 'Hunsa altæk bönn',
 );
 
 /** Italian (Italiano)
