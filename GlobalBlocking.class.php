@@ -44,7 +44,9 @@ class GlobalBlocking {
 		static $result = null;
 
 		// Instance cache
-		if ( !is_null( $result ) ) { return $result; }
+		if ( !is_null( $result ) ) {
+			return $result;
+		}
 
 		$block = self::getGlobalBlockingBlock( $ip, $user->isAnon() );
 		if  ( $block ) {
@@ -61,25 +63,23 @@ class GlobalBlocking {
 				return $result = array();
 			}
 
+			$blockTimestamp = $wgLang->timeanddate( wfTimestamp( TS_MW, $block->gb_timestamp ), true );
+
 			# Messy B/C until $wgLang->formatExpiry() is well embedded
-			if( Block::decodeExpiry( $block->gb_expiry ) == 'infinity' ){
-				$expiry = wfMsgExt( 'infiniteblock', 'parseinline' );
+			$blockExpiry = Block::decodeExpiry( $block->gb_expiry );
+			if( $blockExpiry == 'infinity' ){
+				$blockExpiry = wfMessage( 'infiniteblock' )->text();
 			} else {
-				$expiry = Block::decodeExpiry( $block->gb_expiry );
-				$expiry = wfMsgExt(
-					'expiringblock',
-					'parseinline',
-					$wgLang->date( $expiry ),
-					$wgLang->time( $expiry )
-				);
+				$blockExpiry = $wgLang->timeanddate( wfTimestamp( TS_MW, $blockExpiry ), true );
 			}
 
 			$display_wiki = self::getWikiName( $block->gb_by_wiki );
-			$user_display = self::maybeLinkUserpage( $block->gb_by_wiki, $block->gb_by );
+			$blockingUser = self::maybeLinkUserpage( $block->gb_by_wiki, $block->gb_by );
 
-			return $result = array( 'globalblocking-blocked',
-				$user_display, $display_wiki, $block->gb_reason, $expiry, $ip );
+			return $result = array( 'globalblocking-ipblocked',
+				$blockingUser, $display_wiki, $block->gb_reason, $blockTimestamp, $blockExpiry, $ip );
 		}
+
 		return $result = array();
 	}
 
