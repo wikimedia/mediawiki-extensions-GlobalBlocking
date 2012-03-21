@@ -814,6 +814,18 @@ nun se pue camudar l'estáu de los bloqueos globales.",
 	'globalblocking-whitelist-intro' => "Pues usar esti formulariu pa editar l'estatus llocal d'un bloquéu global.
 Si un bloquéu global ta desactiváu nesta wiki, los usuarios de la direición IP afectada podrán editar normalmente.
 [[Special:GlobalBlockList|Tornar a la llista de bloqueos globales]].",
+	'globalblocking-ipblocked' => "'''La to direición IP se bloquió en toles wikis.'''
+
+El bloquéu fizolu \$1 ( \$2 ).
+El motivu conseñáu ye ''\$3''.
+
+ * Data d'aniciu del bloquéu:  \$4 
+ * Data de fin del bloquéu:  \$5 
+
+Ponte en contautu con \$1 si quies discutir el bloquéu.
+Nun podrás usar la función \"{{int:emailuser}}\" nun siendo qu'especificares una direición de corréu electrónicu válida nes [[Special:Preferences|preferencies de la cuenta]] y nun tengas torgao usala.
+La to direición IP actual ye  \$6.
+Por favor inclúi tolos detalles anteriores nes consultes que faigas.",
 	'globalblocking-blocked-nopassreset' => "Nun puedes reaniciar les contraseñes d'usuariu porque tas bloquiáu de mou global.",
 	'globalblocking-logpage' => 'Rexistru de bloqueos globales',
 	'globalblocking-logpagetext' => "Esti ye un rexistru de bloqueos globales que fueron efeutuaos o eliminaos nesta wiki.
@@ -994,6 +1006,7 @@ $messages['be'] = array(
  * @author EugeneZelenko
  * @author Jim-by
  * @author Red Winged Duck
+ * @author Wizardist
  * @author Zedlik
  */
 $messages['be-tarask'] = array(
@@ -1080,6 +1093,18 @@ $messages['be-tarask'] = array(
 	'globalblocking-whitelist-intro' => 'Вы можаце карыстацца гэтай формай для рэдагаваньня лякальнага статусу глябальнага блякаваньня.
 Калі глябальнае блякаваньне будзе адключанае ў гэтай вікі, удзельнікі з адпаведнымі ІР-адрасамі будуць мець магчымасьць звычайнага рэдагаваньня старонак.
 [[Special:GlobalBlockList|Вярнуцца да сьпісу глябальных блякаваньняў]].',
+	'globalblocking-ipblocked' => "'''Ваш IP-адрас быў заблякаваны ва ўсіх праектах.'''
+
+Блякаваньне зрабіў $1 (з $2).
+Прычына: ''$3''.
+
+* Пачатак дзеяньня блякаваньня: $4
+* Канец дзеяньня блякаваньня: $5
+
+Вы можаце зьвярнуцца да $1, каб атрымаць тлумачэньне.
+Вы ня зможаце {{lc:{{int:emailuser}}}}, пакуль не пазначыце слушны адрас e-mail у [[Special:Preferences|наладах]] і ня скончыцца трываньне забароны на карыстаньне гэтай функцыяй.
+Ваш бягучы IP-адрас — $6.
+Калі ласка, уключайце ўсе вышэй пазначаныя зьвесткі, калі будзеце рабіць будзь-якія запыты.",
 	'globalblocking-blocked-nopassreset' => 'Вы ня можаце аднавіць пароль удзельніка, таму што Вы заблякаваны глябальна.',
 	'globalblocking-logpage' => 'Журнал глябальных блякаваньняў',
 	'globalblocking-logpagetext' => 'Гэта сьпіс глябальных блякаваньняў, якія былі зробленыя і адмененыя ў гэтай вікі.
@@ -6371,6 +6396,18 @@ $messages['ml'] = array(
 	'globalblocking-whitelist-intro' => 'ആഗോള തടയലിന്റെ പ്രാദേശിക സ്ഥിതിയിൽ തിരുത്തലുകൾ വരുത്താൻ താങ്കൾക്ക് ഈ ഫോം ഉപയോഗിക്കാവുന്നതാണ്.
 ഒരു ആഗോള തടയൽ ഈ വിക്കിയിൽ നിർജീവമാക്കപ്പെട്ടിട്ടുണ്ടെങ്കിൽ, പ്രസ്തുത ഐ.പി. വിലാസത്തിലെ ഉപയോക്താക്കൾക്ക് സാധാരണപോലെ തിരുത്താൻ കഴിയുന്നതാണ്.
 [[Special:GlobalBlockList|ആഗോള തടയലുകളുടെ പട്ടികയിലേയ്ക്ക് തിരിച്ചുപോവുക]]',
+	'globalblocking-ipblocked' => "'''താങ്കളുടെ ഐ.പി. വിലാസം എല്ലാ വിക്കികളിലും തടയപ്പെട്ടിരിക്കുന്നു'''
+
+തടയൽ നടപ്പിലാക്കിയത് \$1 (\$2) ആണ്.
+നൽകിയിരിക്കുന്ന കാരണം ''\$3'' ആണ്.
+
+*തടയൽ തുടങ്ങിയത്: \$4
+*തടയൽ കാലഹരണപ്പെടുന്നത്: \$5
+
+തടയലിനെക്കുറിച്ച് സംവദിക്കാൻ താങ്കൾക്ക് \$1 എന്ന ഉപയോക്താവിനെ ബന്ധപ്പെടാവുന്നതാണ്.
+താങ്കളുടെ [[Special:Preferences|അംഗത്വ ക്രമീകരണങ്ങളിൽ]] സാധുവായ ഇമെയിൽ വിലാസം വ്യക്തമാക്കിയിട്ടില്ലെങ്കിൽ, അത് ഉപയോഗിക്കുന്നതിൽ നിന്നും താങ്കൾ തടയപ്പെട്ടിട്ടില്ലെങ്കിൽ കൂടി, \"{{int:emailuser}}\" സൗകര്യം ഉപയോഗിക്കാൻ കഴിയുന്നതല്ല.
+താങ്കളുടെ ഇപ്പോഴത്തെ ഐ.പി. വിലാസം \$6 ആണ്.
+താങ്കൾ നടത്തുന്ന എല്ലാ ചോദ്യങ്ങളിലും മുകളിൽ നൽകിയിരിക്കുന്ന വിവരങ്ങൾ ചേർക്കുക.",
 	'globalblocking-blocked-nopassreset' => 'താങ്കൾ ആഗോളമായി തടയപ്പെട്ടിരിക്കുന്നതിനാൽ രഹസ്യവാക്ക് പുനഃക്രമീകരിക്കാൻ കഴിയില്ല.',
 	'globalblocking-logpage' => 'ആഗോള തടയലിന്റെ പ്രവർത്തനരേഖ',
 	'globalblocking-logpagetext' => 'ഈ വിക്കിയിൽ നിന്ന് സൃഷ്ടിക്കുകയോ നീക്കംചെയ്യുകയോ ചെയ്ത ആഗോള തടയലുകളുടെ രേഖയാണിത്.
@@ -6618,6 +6655,18 @@ maka status sekatan sejagat tidak boleh diubah.',
 	'globalblocking-whitelist-intro' => 'Gunakan borang ini untuk mengubah status tempatan bagi suatu sekatan sejagat.
 Jika suatu sekatan sejagat dimatikan di wiki ini, pengguna alamat IP yang berkenaan boleh menyunting seperti biasa.
 [[Special:GlobalBlockList|Kembali ke senarai sekatan sejagat]].',
+	'globalblocking-ipblocked' => "'''Alamat IP anda telah disekat di semua wiki.'''
+
+Sekatan ini dibuat oleh \$1 (\$2).
+Sebab yang dinyatakan ialah ''\$3''.
+
+* Sekatan bermula: \$4
+* Sekatan tamat: \$5
+
+Anda boleh menghubungi \$1 untuk membincangkan sekatan ini.
+Anda tidak boleh menggunakan ciri \"{{int:emailuser}}\" melainkan jika alamat e-mel yang sah dinyatakan dalam [[Special:Preferences|keutamaan akaun]] anda, dan anda belum disekat daripada menggunakannya.
+Alamat IP anda sekarang ialah \$6.
+Sila sertakan semua butiran di atas dalam sebarang pertanyaan yang anda lakukan.",
 	'globalblocking-blocked-nopassreset' => 'Anda tidak boleh mengeset semula kata laluan pengguna kerana anda telah disekat di semua wiki.',
 	'globalblocking-logpage' => 'Log sekatan sejagat',
 	'globalblocking-logpagetext' => 'Yang berikut ialah log sekatan sejagat yang telah dikenakan dan dibatalkan di wiki ini. Sila ambil perhatian bahawa sekatan sejagat boleh dikenakan dan dibatalkan di wiki-wiki lain, justeru berkuatkuasa di wiki ini juga. Anda juga boleh melihat [[Special:GlobalBlockList|senarai semakan sejagat yang sedang berkuatkuasa]].',
@@ -6903,6 +6952,7 @@ $messages['nds-nl'] = array(
 );
 
 /** Dutch (Nederlands)
+ * @author AvatarTeam
  * @author Romaine
  * @author SPQRobin
  * @author Siebrand
@@ -6990,6 +7040,18 @@ Let op: u kunt geen gebruikersnaam ingeven!',
 	'globalblocking-whitelist-intro' => 'U kunt dit formulier gebruiken om de lokale status van een globale blokkade te wijzigen.
 Als een globale blokkade op deze wiki is opgeheven, kunnen gebruikers vanaf het IP-adres gewoon bewerkingen uitvoeren.
 [[Special:GlobalBlockList|Terugkeren naar de lijst met globale blokkades]].',
+	'globalblocking-ipblocked' => "'''Uw IP-adres is geblokkeerd op alle wiki's.'''
+
+De blokkade is uitgevoerd door \$1 (\$2).
+De reden hiervoor is ''\$3''.
+
+* Start blokkade: \$4
+* Blokkade vervalt op: \$5
+
+U kunt contact op nemen met \$1 om de blokkade te bespreken.
+U kunt de functie \"{{int:emailuser}}\" niet gebruiken tenzij er een geldig e-mail adres in bij uw [[Special:Preferences|account voorkeuren]] is ingevuld, en u hier niet voor geblokkeerd bent.
+Uw huidige IP-adres is \$6.
+Vermeld de bovenstaande gegevens wanneer u hierop reacgeert.",
 	'globalblocking-blocked-nopassreset' => 'U kunt het wachtwoord van gebruikers niet opnieuw instellen omdat u globaal geblokkeerd bent.',
 	'globalblocking-logpage' => 'Globaal blokkeerlogboek',
 	'globalblocking-logpagetext' => "Dit logboek bevat aangemaakte en verwijderde globale blokkades op deze wiki.
@@ -8953,6 +9015,7 @@ Dolu je pre informáciu záznam blokovaní:',
 
 /** Slovenian (Slovenščina)
  * @author Dbc334
+ * @author Irena Plahuta
  * @author Smihael
  */
 $messages['sl'] = array(
@@ -9040,6 +9103,18 @@ zato lokalnega stanja globalnih blokad ni mogoče spremeniti.',
 	'globalblocking-whitelist-intro' => 'Ta obrazec lahko uporabite za urejanje lokalnega stanja globalne blokade.
 Če je globalna blokada na tem wikiju onemogočena, bodo uporabniki na določenem IP-naslovu lahko normalno urejali.
 [[Special:GlobalBlockList|Vrnitev na seznam globalnih blokad]].',
+	'globalblocking-ipblocked' => '\'\'\'Vaš IP naslov je blokiran na vseh straneh projekta Wikipedija.\'\'\'
+
+Blokiral Vas je uporabnik $1 ($2).
+Razlog je $3.
+
+* Začetek blokade: $4.
+* Potek blokade: $5.
+
+Lahko stopite v stik z uporabnikom $1 in se pogovorite o blokadi. 
+Ne morete uporabljati storitve "{{int:emailuser}}", dokler v svojih [[Special:Preferences|nastavitvah računa]] nimate veljavnega elektonskega naslova in Vam njegove uporabe še nismo preprečili.
+Vaš trenutni IP naslov je $6.
+Prosimo, vključite v vsako prošnjo vse zgornje podatke.',
 	'globalblocking-blocked-nopassreset' => 'Ne morete ponastaviti gesla uporabnika, ker je globalno blokiran.',
 	'globalblocking-logpage' => 'Dnevnik globalnih blokad',
 	'globalblocking-logpagetext' => 'To je dnevnik globalnih blokad, ki so bile izvedene ali odstranjene na tem wikiju.
