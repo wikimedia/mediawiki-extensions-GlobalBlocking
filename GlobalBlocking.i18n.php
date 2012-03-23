@@ -5910,6 +5910,18 @@ dofir kann de lokale Status vu globale Spären net geännert ginn.',
 	'globalblocking-whitelist-intro' => "Dir kënnt dëse Formulaire benotze fir de lokal Status vun enger globaler Spär z'änneren.
 Wann eng global Spär op dëser Wiki opgehuewe gëtt, kënne Benotzer déi déi betraffen IP-Adresse benotzen normal Ännerungen maachen.
 [[Special:GlobalBlockList|Zréck op d'Lëscht vun de globale Spären]].",
+	'globalblocking-ipblocked' => "'''Är IP-Adress gouf op alle Wikie gespaart.'''
+
+D'Spär gouf vum $1 ($2) gemaach.
+De Grond deen ugi gouf ass ''$3''.
+
+* Ufank vun der Spär: $4
+* Enn vun der Spär: $5
+
+Dir kënnt Iech un de(n) $1 adresséieren, fir iwwer d'Spär ze diskutéieren.
+Dir kënnt d'Fonctioun „{{int:emailuser}}“ net benotzen, bis eng valabel E-Mail-Adress an Ären [[Special:Preferences|Astellungen]] ugi gouf und dtioun net fir Iech gespaart gouf.
+Är aktuell IP-Adress ass $6.
+Gitt w.e.g. alle Detailer déi Dir hei driwwer fannt an Ären Ufroen un.",
 	'globalblocking-blocked-nopassreset' => 'Dir kënnt engem Benotzer säi Paswuert net zrécksetze well Dir global gespaart sidd.',
 	'globalblocking-logpage' => 'Lëscht vun de globale Spären',
 	'globalblocking-logpagetext' => "Dëst ass eng Lëscht vun de globale Spären déi op dëser Wiki gemaach an opgehuewe goufen.
