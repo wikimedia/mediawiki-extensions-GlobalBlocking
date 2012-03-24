@@ -5,7 +5,7 @@ class GlobalBlocking {
 	 * @return Boolean
 	 */
 	static function getUserPermissionsErrors( &$title, &$user, $action, &$result ) {
-		global $wgApplyGlobalBlocks;
+		global $wgApplyGlobalBlocks, $wgRequest;
 		if ( $action == 'read' || !$wgApplyGlobalBlocks ) {
 			return true;
 		}
@@ -14,7 +14,7 @@ class GlobalBlocking {
 			// User is exempt from IP blocks.
 			return true;
 		}
-		$ip = wfGetIp();
+		$ip = $wgRequest->getIP();
 		$blockError = self::getUserBlockErrors( $user, $ip );
 		if( !empty( $blockError ) ) {
 			$result[] = $blockError;
