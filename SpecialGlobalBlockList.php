@@ -8,23 +8,22 @@ class SpecialGlobalBlockList extends SpecialPage {
 	}
 
 	function execute( $par ) {
-		global $wgOut, $wgRequest;
-
+		$out = $this->getOutput();
 		$this->setHeaders();
-		$ip = isset( $par ) ? $par : $wgRequest->getText( 'ip' );
+		$ip = isset( $par ) ? $par : $this->getRequest()->getText( 'ip' );
 		$this->loadParameters( $ip );
 
-		$wgOut->setPageTitle( wfMsg( 'globalblocking-list' ) );
-		$wgOut->setSubtitle( GlobalBlocking::buildSubtitleLinks( 'GlobalBlockList' ) );
-		$wgOut->setRobotPolicy( "noindex,nofollow" );
-		$wgOut->setArticleRelated( false );
-		$wgOut->enableClientCache( false );
+		$out->setPageTitle( wfMsg( 'globalblocking-list' ) );
+		$out->setSubtitle( GlobalBlocking::buildSubtitleLinks( 'GlobalBlockList' ) );
+		$out->setRobotPolicy( "noindex,nofollow" );
+		$out->setArticleRelated( false );
+		$out->enableClientCache( false );
 
 		$this->showList();
 	}
 
 	function showList( ) {
-		global $wgOut, $wgScript;
+		global $wgScript;
 		$errors = array();
 
 		// Validate search IP
@@ -34,8 +33,8 @@ class SpecialGlobalBlockList extends SpecialPage {
 			$ip = '';
 		}
 
-		$wgOut->addWikiMsg( 'globalblocking-list-intro' );
-		
+		$out = $this->getOutput();
+		$out->addWikiMsg( 'globalblocking-list-intro' );
 
 		// Build the search form
 		$searchForm = '';
@@ -46,7 +45,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 
 		if (is_array($errors) && count($errors)>0) {
 			$errorstr = '';
-			
+
 			foreach ( $errors as $error ) {
 				if (is_array($error)) {
 					$msg = array_shift($error);
@@ -54,12 +53,12 @@ class SpecialGlobalBlockList extends SpecialPage {
 					$msg = $error;
 					$error = array();
 				}
-				
+
 				$errorstr .= Xml::tags( 'li', null, wfMsgExt( $msg, array( 'parseinline' ), $error ) );
 			}
 
-			$wgOut->addWikiMsg( 'globalblocking-unblock-errors', count($errors) );
-			$wgOut->addHTML( Xml::tags( 'ul', array( 'class' => 'error' ), $errorstr ) );
+			$out->addWikiMsg( 'globalblocking-unblock-errors', count($errors) );
+			$out->addHTML( Xml::tags( 'ul', array( 'class' => 'error' ), $errorstr ) );
 		}
 
 		$fields = array();
@@ -67,24 +66,24 @@ class SpecialGlobalBlockList extends SpecialPage {
 		$searchForm .= Xml::buildForm( $fields, 'globalblocking-search-submit' );
 
 		$searchForm .= Xml::closeElement( 'form' ) . Xml::closeElement( 'fieldset' );
-		$wgOut->addHTML( $searchForm );
+		$out->addHTML( $searchForm );
 
 		// Build a list of blocks.
 		$conds = array();
-		
+
 		if (strlen($ip)) {
 			list ($range_start, $range_end) = IP::parseRange( $ip );
-			
+
 			if ($range_start != $range_end) {
 				// They searched for a range. Match that exact range only
 				$conds = array( 'gb_address' => $ip );
 			} else {
-				// They searched for an IP. Match any range covering that IP		
+				// They searched for an IP. Match any range covering that IP
 				$hex_ip = IP::toHex( $ip );
 				$ip_pattern = substr( $hex_ip, 0, 4 ) . '%'; // Don't bother checking blocks out of this /16.
-				
+
 				$dbr = wfGetDB( DB_SLAVE );
-			
+
 				$conds = array( 'gb_range_end>='.$dbr->addQuotes($hex_ip), // This block in the given range.
 						'gb_range_start<='.$dbr->addQuotes($hex_ip),
 						'gb_range_start like ' . $dbr->addQuotes( $ip_pattern ),
@@ -95,11 +94,11 @@ class SpecialGlobalBlockList extends SpecialPage {
 		$pager = new GlobalBlockListPager( $this, $conds );
 		$body = $pager->getBody();
 		if( $body != '' ) {
-			$wgOut->addHTML( $pager->getNavigationBar() .
+			$out->addHTML( $pager->getNavigationBar() .
 					Html::rawElement( 'ul', array(), $body ) .
 					$pager->getNavigationBar() );
 		} else {
-			$wgOut->wrapWikiMsg( "<div class='mw-globalblocking-noresults'>\n$1</div>\n",
+			$out->wrapWikiMsg( "<div class='mw-globalblocking-noresults'>\n$1</div>\n",
 				array( 'globalblocking-list-noresults' ) );
 		}
 	}
@@ -125,19 +124,12 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 
 	function formatRow( $row ) {
 		global $wgLang, $wgUser;
-		
-		## One-time setup
-		static $sk=null;
-		
-		if (is_null($sk)) {
-			$sk = $wgUser->getSkin();
-		}
-		
+
 		## Setup
 		$timestamp = $row->gb_timestamp;
 		$expiry = $row->gb_expiry;
 		$options = array();
-		
+
 		# Messy B/C until $wgLang->formatExpiry() is well embedded
 		if( Block::decodeExpiry( $expiry ) == 'infinity' ){
 			$options[] = wfMsgExt( 'infiniteblock', 'parseinline' );
@@ -150,24 +142,24 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 				$wgLang->time( $expiry )
 			);
 		}
-		
+
 		# Check for whitelisting.
 		$wlinfo = GlobalBlocking::getWhitelistInfo( $row->gb_id );
 		if ($wlinfo) {
 			$options[] = wfMsg( 'globalblocking-list-whitelisted', User::whois($wlinfo['user']), $wlinfo['reason'] );
 		}
-		
+
 		$timestamp = $wgLang->timeanddate( wfTimestamp( TS_MW, $timestamp ), true );
 
 		if ($row->gb_anon_only)
 			$options[] = wfMsg('globalblocking-list-anononly');
-		
+
 		## Do afterthoughts (comment, links for admins)
 		$info = array();
 
 		if( $wgUser->isAllowed( 'globalunblock' ) ) {
 			$unblockTitle = SpecialPage::getTitleFor( "RemoveGlobalBlock" );
-			$info[] = $sk->link( $unblockTitle, 
+			$info[] = Linker::link( $unblockTitle,
 								wfMsgExt( 'globalblocking-list-unblock', 'parseinline' ),
 								array(),
 								array( 'address' => $row->gb_address )
@@ -177,7 +169,7 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 		global $wgApplyGlobalBlocks;
 		if( $wgUser->isAllowed( 'globalblock-whitelist' ) && $wgApplyGlobalBlocks ) {
 			$whitelistTitle = SpecialPage::getTitleFor( "GlobalBlockStatus" );
-			$info[] = $sk->link( $whitelistTitle, 
+			$info[] = Linker::link( $whitelistTitle,
 								wfMsgExt( 'globalblocking-list-whitelist', 'parseinline' ),
 								array(),
 								array( 'address' => $row->gb_address )
@@ -187,7 +179,7 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 		if ( $wgUser->isAllowed( 'globalblock' ) ) {
 			$reblockTitle = SpecialPage::getTitleFor( 'GlobalBlock' );
 			$msg = wfMsgExt( 'globalblocking-list-modify', 'parseinline' );
-			$info[] = $sk->link(
+			$info[] = Linker::link(
 						$reblockTitle,
 						$msg,
 						array(),
@@ -209,7 +201,7 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 					$row->gb_address,
 					$wgLang->commaList( $options )
 					) . ' ' .
-				$sk->commentBlock( $row->gb_reason ) . ' ' .
+						Linker::commentBlock( $row->gb_reason ) . ' ' .
 				$infoItems
 			);
 	}
