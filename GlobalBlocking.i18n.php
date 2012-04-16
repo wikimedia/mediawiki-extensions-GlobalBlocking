@@ -5137,9 +5137,13 @@ Il registro dei blocchi è riportato di seguito per informazione:',
 	'globalblockstatus' => 'Stato locale di blocchi globali',
 	'removeglobalblock' => 'Rimuovi un blocco globale',
 	'right-globalblock' => 'Effettua blocchi globali',
+	'action-globalblock' => 'effettuare blocchi globali',
 	'right-globalunblock' => 'Rimuove blocchi globali',
+	'action-globalunblock' => 'rimuovere blocchi globali',
 	'right-globalblock-whitelist' => 'Disattiva blocchi globali localmente',
+	'action-globalblock-whitelist' => 'disattivare blocchi globali localmente',
 	'right-globalblock-exempt' => 'Bypassa i blocchi globali',
+	'action-globalblock-exempt' => 'bypassare i blocchi globali',
 );
 
 /** Japanese (日本語)
@@ -5438,6 +5442,18 @@ $1',
 	'globalblocking-whitelist-intro' => 'თქვენ შეგიძლიათ გამოიყენოთ ეს ფორმა გლობალური ბლოკის შესასწორებლად.
 თუ გლობალური ბლოკი ამ ვიკიზე გათიშულია, ამ IP მისამართის მქონე მომხმარებლები შესძლებენ ნორმალურად რედაქტირებას.
 [[Special:GlobalBlockList|დაბლოკვის სიაში დაბრუნება]].',
+	'globalblocking-ipblocked' => "'''თქვენი IP მისამართი დაიბლოკა ყველა ვიკიში.'''
+
+ბლოკირება განახორციელა \$1 (\$2).
+მიზეზი შემდეგია ''\$3''.
+
+* ბლოკირების დაწყება: \$4
+* ბლოკირების დასრულება: \$5
+
+თქვენ არ შეგიძლიათ დაუკავშირდეთ \$1 ბლოკირების განსახილველად.
+თქვენ ვერ შეძლებთ გამოიყენოთ \"{{int:emailuser}}\" მახასიათებელი, თუ სწორი ელ.ფოსტა არის მითითებული თქვენი [[Special:Preferences|ანგარიშის კონფიგურაციაში]] და თქვენ არ გქონდათ დაბლოკილი მისი გამოყენება.
+თქვემი მიმდინარე IP მისამართი არის \$6.
+გთხოვთ, შეიყვანეთ ყველა ზემოთჩამოთვლილი დეტალი თქვენ კითხვებზე.",
 	'globalblocking-blocked-nopassreset' => 'თქვენ არ შეგიძლიათ მომხმარებლის პაროლის შეცვლა, რადგან თქვენი ანგარიში გლობალურად ბლოკირებულია.',
 	'globalblocking-logpage' => 'გლობალური ბლოკირების ჟურნალი',
 	'globalblocking-logpagetext' => 'ეს არის ამ ვიკიში განხორციელებული გლობალური დაბლოკვების ნუსხა,
@@ -7454,6 +7470,17 @@ $messages['pdc'] = array(
 	'globalblocking-logentry-expiry' => 'bis $1',
 );
 
+/** Pälzisch (Pälzisch)
+ * @author Manuae
+ */
+$messages['pfl'] = array(
+	'globalblocking-block-options' => 'Meschlischkaide:',
+	'globalblocking-ipbanononly' => 'Bloos ubekonde Benudza schberre',
+	'globalblocking-block-errors' => 'Die Schber hoh ned gklabd, weesche {{PLURAL:$1|reason|reasons}}:',
+	'globalblocking-list-whitelisted' => 'lokal abgschdeld vun $1: $2',
+	'globalblocking-list-modify' => 'änere',
+);
+
 /** Polish (Polski)
  * @author BeginaFelicysym
  * @author Derbeth
@@ -8356,6 +8383,7 @@ L'archivije de le blocche t'avène date aqquà sotte pe conzultazione:",
 );
 
 /** Russian (Русский)
+ * @author DR
  * @author Dim Grits
  * @author Ferrer
  * @author Kaganer
@@ -8448,6 +8476,19 @@ $1',
 	'globalblocking-whitelist-intro' => 'Вы можете использовать эту форму для изменения локального состояния глобальной блокировки.
 Если глобальная блокировка будет выключена в этой вики, участники с соответствующими IP-адресами смогут нормально редактировать страницы.
 [[Special:GlobalBlockList|Вернуться к списку глобальных блокировок]].',
+	'globalblocking-ipblocked' => "'''Ваш IP-адрес был заблокирован на всех вики.'' '
+
+Блокировка была наложена \$1  (\$2).
+При этом была указана следующая причина блокировки ''\$3''.
+
+ * начало блокировки: \$4 
+ * окончание блокировки: \$5 
+
+Вы можете связаться с \$1 для обсуждения данной блокировки.
+Вы можете использовать функцию \"{{int:emailuser}}\" только если при блокировке не был наложен запрет на её использование, а в [[Special:Preferences|настройках]] указан действующий адрес электронной почты.
+Ваш текущий IP-адрес  \$6 .
+
+Пожалуйста, указывайте всю вышеприведённую информацию в своих запросах, касающихся этой блокировки.",
 	'globalblocking-blocked-nopassreset' => 'Вы не можете сбрасывать пароли участников, так как вы заблокированы на глобальном уровне.',
 	'globalblocking-logpage' => 'Журнал глобальных блокировок',
 	'globalblocking-logpagetext' => 'Это журнал глобальных блокировок, установленных и снятых в этой вики.
@@ -8985,16 +9026,16 @@ Môžete sa vrátiť na [[Special:GlobalBlockList|Zoznam globálnych blokovaní]
 Môžete sa vrátiť na [[Special:GlobalBlockList|Zoznam globálnych blokovaní]].',
 	'globalblocking-ipblocked' => "'''Vaša IP adresa bola zablokovaná na všetkých wiki.'''
 
-Zablokoval: \$1 (\$2).
-Dôvod zablokovania: ''\$3''.
+Zablokoval: $1 ($2).
+Dôvod zablokovania: ''$3''.
 
-* Zablokované: \$4
-* Blokovanie vyprší: \$5
+* Zablokované: $4
+* Blokovanie vyprší: $5
 
-Pre diskusiu ohľadom zablokovania môžete kontaktovať \$1.
-Funkciu \"{{int:emailuser}}\" môžete použiť len ak máte v [[Special:Preferences|nastaveniach]] uvedenú korektnú e-mailovú adresu a nemáte použitie funkcie zablokované.
-Vaša aktuálna IP adresa je \$6.
-Do prípadných dotazov prosím zahrňte všetky uvedené informácie.",
+Ak chcete o zablokovaní diskutovať, môžete kontaktovať $1.
+Funkciu „{{int:emailuser}}“ môžete použiť len ak máte v [[Special:Preferences|nastaveniach]] uvedenú korektnú e-mailovú adresu a nemáte použitie funkcie zablokované.
+Vaša aktuálna IP adresa je $6.
+V prípade otázok prosím uveďte všetky uvedené informácie.",
 	'globalblocking-blocked-nopassreset' => 'Nemôžete nastaviť nové heslo používateľovi, pretože ste globáne zablokovaný.',
 	'globalblocking-logpage' => 'Záznam globálnych blokovaní',
 	'globalblocking-logpagetext' => 'Toto je záznam globálnych blokovaní, ktoré boli vytvorené a zrušené na tejto wiki.
@@ -9022,7 +9063,7 @@ Dolu je pre informáciu záznam blokovaní:',
 	'right-globalblock-whitelist' => 'Lokálne vypnúť globálne blokovania',
 	'action-globalblock-whitelist' => 'definovať výnimky z globálnych blokovaní',
 	'right-globalblock-exempt' => 'Obchádzať globálne blokovania',
-	'action-globalblock-exempt' => 'obísť globálne blokovania',
+	'action-globalblock-exempt' => 'obchádzať globálne blokovania',
 );
 
 /** Slovenian (Slovenščina)
