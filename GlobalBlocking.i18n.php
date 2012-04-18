@@ -5153,6 +5153,7 @@ Il registro dei blocchi è riportato di seguito per informazione:',
  * @author Hosiryuhosi
  * @author Muttley
  * @author Schu
+ * @author Shirayuki
  * @author 青子守歌
  */
 $messages['ja'] = array(
@@ -5252,9 +5253,13 @@ $messages['ja'] = array(
 	'globalblockstatus' => 'グローバルブロックのローカル状態',
 	'removeglobalblock' => 'グローバルブロックを解除',
 	'right-globalblock' => '他利用者のグローバルブロック',
+	'action-globalblock' => 'グローバルブロックを作成',
 	'right-globalunblock' => 'グローバルブロックを解除',
+	'action-globalunblock' => 'グローバルブロックを削除',
 	'right-globalblock-whitelist' => 'グローバルブロックをローカルで無効化',
+	'action-globalblock-whitelist' => 'ローカルでグローバルブロックを無効にする',
 	'right-globalblock-exempt' => 'グローバルブロックを回避',
+	'action-globalblock-exempt' => 'グローバルブロックを迂回',
 );
 
 /** Javanese (Basa Jawa)
