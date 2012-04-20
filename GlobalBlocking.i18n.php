@@ -5657,6 +5657,17 @@ $messages['ko'] = array(
 	'globalblocking-whitelist-intro' => '이 양식을 통해 전체 차단의 로컬 상태를 바꿀 수 있습니다.
 전체 차단이 이 위키에서 비활성화되면 해당 IP 주소를 이용하는 사용자는 정상적으로 편집할 수 있게 됩니다.
 [[Special:GlobalBlockList|전체 차단 목록으로 돌아가기]].',
+	'globalblocking-ipblocked' => "'''당신의 IP 주소는 모든 위키에서 차단되었습니다.'''
+
+\$1 (\$2) 사용자가 차단하였고, 이유는 ''\$3''입니다.
+
+* 차단 시작 시각: \$4
+* 차단 만료 시각: \$5
+
+차단에 대해 이의가 있거나 논의할 것이 있다면 \$1 사용자에게 문의할 수 있습니다.
+[[Special:Preferences|사용자 환경 설정]]에서 올바른 이메일 주소를 적지 않았거나 이메일 보내기가 금지되었다면 \"{{int:emailuser}}\" 기능을 사용할 수 없습니다.
+당신이 쓰고 있는 현재 IP 주소는 \$6입니다.
+문의할 사항이 있을 때는 위의 모든 정보를 포함시켜 주십시오.",
 	'globalblocking-blocked-nopassreset' => '당신은 모든 위키에서 차단되었기 때문에 비밀번호를 바꿀 수 없습니다.',
 	'globalblocking-logpage' => '전체 위키 차단 기록',
 	'globalblocking-logpagetext' => '이 페이지는 이 위키에서 이루어진 전체 차단 및 해제와 관련된 기록입니다.
