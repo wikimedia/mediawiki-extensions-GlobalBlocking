@@ -5157,12 +5157,12 @@ Il registro dei blocchi è riportato di seguito per informazione:',
  * @author 青子守歌
  */
 $messages['ja'] = array(
-	'globalblocking-desc' => 'IP アドレスを[[Special:GlobalBlockList|複数のウィキで横断的に]][[Special:GlobalBlock|ブロックします。]]',
+	'globalblocking-desc' => 'IPアドレスを[[Special:GlobalBlockList|複数のウィキで横断的に]][[Special:GlobalBlock|ブロックします。]]',
 	'globalblocking-block' => 'IPアドレスをグローバルブロック',
 	'globalblocking-modify-intro' => 'このフォームを使って、グローバルブロックの設定を変更できます。',
 	'globalblocking-block-intro' => 'このページで全ウィキでの IP アドレスをブロックできます。',
 	'globalblocking-block-reason' => '理由：',
-	'globalblocking-block-otherreason' => '他の、または追加の理由:',
+	'globalblocking-block-otherreason' => 'その他の理由：',
 	'globalblocking-block-reasonotherlist' => 'その他の理由',
 	'globalblocking-block-reason-dropdown' => '*共通ブロックの理由
 **ウィキ間のスパム
@@ -5256,7 +5256,7 @@ $messages['ja'] = array(
 	'action-globalblock' => 'グローバルブロックを作成',
 	'right-globalunblock' => 'グローバルブロックを解除',
 	'action-globalunblock' => 'グローバルブロックを削除',
-	'right-globalblock-whitelist' => 'グローバルブロックをローカルで無効化',
+	'right-globalblock-whitelist' => 'ローカルでグローバルブロックを無効にする',
 	'action-globalblock-whitelist' => 'ローカルでグローバルブロックを無効にする',
 	'right-globalblock-exempt' => 'グローバルブロックを回避',
 	'action-globalblock-exempt' => 'グローバルブロックを迂回',
