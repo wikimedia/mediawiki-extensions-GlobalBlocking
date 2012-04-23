@@ -7093,9 +7093,9 @@ De reden hiervoor is ''\$3''.
 * Blokkade vervalt op: \$5
 
 U kunt contact op nemen met \$1 om de blokkade te bespreken.
-U kunt de functie \"{{int:emailuser}}\" niet gebruiken tenzij er een geldig e-mail adres in bij uw [[Special:Preferences|account voorkeuren]] is ingevuld, en u hier niet voor geblokkeerd bent.
+U kunt de functie \"{{int:emailuser}}\" niet gebruiken tenzij er een geldig e-mailadres in uw [[Special:Preferences|voorkeuren]] is ingevuld en uw e-mailfuncties niet geblokkeerd zijn.
 Uw huidige IP-adres is \$6.
-Vermeld de bovenstaande gegevens wanneer u hierop reacgeert.",
+Vermeld de bovenstaande gegevens wanneer u hierop reageert.",
 	'globalblocking-blocked-nopassreset' => 'U kunt het wachtwoord van gebruikers niet opnieuw instellen omdat u globaal geblokkeerd bent.',
 	'globalblocking-logpage' => 'Globaal blokkeerlogboek',
 	'globalblocking-logpagetext' => "Dit logboek bevat aangemaakte en verwijderde globale blokkades op deze wiki.
