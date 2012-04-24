@@ -3706,6 +3706,17 @@ Obacht: D derfsch kei Benutzername yygee!',
 [[Special:GlobalBlockList|Zruck zue dr Lischt vu dr wältwyte Sperrine]]',
 	'globalblocking-whitelist-errors' => 'Dyyni Änderig vum lokale Status vun ere wältwyte Sperri isch nit erfolgryych gsi. {{PLURAL:$1|Grund|Grind}}:',
 	'globalblocking-whitelist-intro' => 'Du chasch mit däm Formular dr lokal Status vun ere wältwyte Sperri ändere. Wänn e wältwyti Sperri in däm Wiki deaktiviert woren isch, chenne Syte iber die IP-Adräss normal bearbeitet wäre. [[Special:GlobalBlockList|Druck do]], zum uf d Lischt vu dr wältwyte Sperrine zruckzgoh.',
+	'globalblocking-ipblocked' => "'''Dyy IP-Adräss isch uf allne Wiki gsperrt.'''
+
+D Sperrig isch durgfiert wore dur $1 ($2).
+Dr Grund, wu aagee woren isch, isch ''$3''.
+
+* Aafang vu dr Sperri: $4
+* Ablauf vu dr Sperri: $5
+
+Du chasch di an $1 wände go d Sperri dischpetiere.
+Du chasch d Funktion „{{int:emailuser}}“ nit nutze, bis e giltigi E-Mail-Adräss in dyyne [[Special:Preferences|Yystellige]] aagee woren isch un Du nit dra ghinderet wirsch, die Funktion z bruche.Dy aktuäll IP-Adräss isch $6.
+Bitte gib alli Detail, wu obe aagee sin, in Dyne Aafrogen aa.",
 	'globalblocking-blocked-nopassreset' => 'Du chasch s Passwort vum Benutzer nit zrucksetze, wel Du wältwyt gsperrt bisch.',
 	'globalblocking-logpage' => 'Wältwyt Sperrlogbuech',
 	'globalblocking-logpagetext' => 'Des isch s Logbuech vu dr wältwyte Sperrine, wu in däm Wiki yygrichtet oder ufghobe wore sin.
@@ -3727,9 +3738,13 @@ Do chunnt e Uuszug us em Benutzersperr-Logbuech:',
 	'globalblockstatus' => 'Lokaler Status vu dr wältwyte Sperri',
 	'removeglobalblock' => 'Wältwyti Sperri ufhebe',
 	'right-globalblock' => 'Wältwyti Sperrine yyrichte',
+	'action-globalblock' => 'wältwyti Sperrine yyzrichte',
 	'right-globalunblock' => 'Wältwyti Sperrine ufhebe',
+	'action-globalunblock' => 'wältwyti Sperrine ufzhebe',
 	'right-globalblock-whitelist' => 'Wältwyti Sperrine lokal abschalte',
+	'action-globalblock-whitelist' => 'wältwyti Sperrine lokal abzschalte',
 	'right-globalblock-exempt' => 'Wältwyti Sperrine umgoh',
+	'action-globalblock-exempt' => 'wältwyti Sperrine z umgoh',
 );
 
 /** Gujarati (ગુજરાતી)
@@ -5154,6 +5169,7 @@ Il registro dei blocchi è riportato di seguito per informazione:',
  * @author Muttley
  * @author Schu
  * @author Shirayuki
+ * @author Whym
  * @author 青子守歌
  */
 $messages['ja'] = array(
@@ -5234,6 +5250,18 @@ $messages['ja'] = array(
 	'globalblocking-whitelist-intro' => 'このフォームを使用してグローバルブロックのローカル状態を変更できます。
 もしグローバルブロックがこのウィキで無効になっている場合は、該当IPアドレスは通常の編集ができるようになります。
 [[Special:GlobalBlockList|グローバルブロックの一覧に戻る]]。',
+	'globalblocking-ipblocked' => "'''あなたのIPアドレスはすべてのウィキでブロックされました。'''
+
+ブロックをしたのは $1 ($2) です。
+理由は ''$3'' とされています。
+
+* ブロックの開始：$4
+* ブロックの終了：$5
+
+このブロックについて議論するために $1 に連絡してもかまいません。
+「{{int:emailuser}}」の機能を使うには、[[Special:Preferences|アカウントの設定]]で有効なメールアドレスを指定し、その使用がブロックされていない必要があります。
+あなたの現在のIPアドレスは $6 です。
+問い合わせをする際には、上記の事項すべてを含めてください。",
 	'globalblocking-blocked-nopassreset' => 'あなたはグローバルブロックを受けているため、利用者パスワードを再設定できません。',
 	'globalblocking-logpage' => 'グローバルブロック記録',
 	'globalblocking-logpagetext' => '以下はこのウィキで実施および解除されたグローバルブロックの記録です。グローバルブロックは他のウィキでも実施したり解除したりすることができ、その結果がこのウィキにも及びます。現在有効なグローバルブロックの一覧は[[Special:GlobalBlockList]]を参照してください。',
