@@ -2,6 +2,10 @@
 
 class GlobalBlocking {
 	/**
+	 * @param $title Title
+	 * @param $user User
+	 * @param $action
+	 * @param $result
 	 * @return Boolean
 	 */
 	static function getUserPermissionsErrors( &$title, &$user, $action, &$result ) {
@@ -17,13 +21,16 @@ class GlobalBlocking {
 		$ip = $wgRequest->getIP();
 		$blockError = self::getUserBlockErrors( $user, $ip );
 		if( !empty( $blockError ) ) {
-			$result[] = $blockError;
+			$result = array( $blockError );
 			return false;
 		}
 		return true;
 	}
 
 	/**
+	 * @param $user User
+	 * @param $ip
+	 * @param $blocked bool
 	 * @return Boolean
 	 */
 	static function isBlockedGlobally( &$user, $ip, &$blocked ) {
@@ -111,16 +118,26 @@ class GlobalBlocking {
 		return $block;
 	}
 
+	/**
+	 * @return DatabaseBase
+	 */
 	static function getGlobalBlockingMaster() {
 		global $wgGlobalBlockingDatabase;
 		return wfGetDB( DB_MASTER, 'globalblocking', $wgGlobalBlockingDatabase );
 	}
 
+	/**
+	 * @return DatabaseBase
+	 */
 	static function getGlobalBlockingSlave() {
 		global $wgGlobalBlockingDatabase;
 		return wfGetDB( DB_SLAVE, 'globalblocking', $wgGlobalBlockingDatabase );
 	}
 
+	/**
+	 * @param $ip string
+	 * @return int
+	 */
 	static function getGlobalBlockId( $ip ) {
 		$dbr = GlobalBlocking::getGlobalBlockingSlave();
 
@@ -152,6 +169,12 @@ class GlobalBlocking {
 		$dbw->commit();
 	}
 
+	/**
+	 * @param $id null|int
+	 * @param $address null|string
+	 * @return array|bool
+	 * @throws MWException
+	 */
 	static function getWhitelistInfo( $id = null, $address = null ) {
 		if ($id != null) {
 			$conds = array( 'gbw_id' => $id );
@@ -174,10 +197,18 @@ class GlobalBlocking {
 		}
 	}
 
+	/**
+	 * @param $block_ip string
+	 * @return array|bool
+	 */
 	static function getWhitelistInfoByIP( $block_ip ) {
 		return self::getWhitelistInfo( null, $block_ip );
 	}
 
+	/**
+	 * @param $wiki_id int
+	 * @return String
+	 */
 	static function getWikiName( $wiki_id ) {
 		if (class_exists('WikiMap')) {
 			// We can give more info than just the wiki id!
@@ -191,6 +222,11 @@ class GlobalBlocking {
 		return $wiki_id;
 	}
 
+	/**
+	 * @param $wiki_id
+	 * @param $user string
+	 * @return string
+	 */
 	static function maybeLinkUserpage( $wiki_id, $user ) {
 		if (class_exists( 'WikiMap')) {
 			$wiki = WikiMap::getWiki( $wiki_id );
@@ -202,6 +238,13 @@ class GlobalBlocking {
 		return $user;
 	}
 
+	/**
+	 * @param $address string
+	 * @param $reason string
+	 * @param $expiry string|bool
+	 * @param $options array
+	 * @return array
+	 */
 	static function insertBlock( $address, $reason, $expiry, $options = array() ) {
 		global $wgUser;
 		$errors = array();
@@ -239,7 +282,7 @@ class GlobalBlocking {
 
 		// Normalise the range
 		if ($range_start != $range_end) {
-			$ip = Block::normaliseRange( $ip );
+			$ip = IP::sanitizeRange( $ip );
 		}
 
 		if (count($errors)>0)
@@ -261,7 +304,7 @@ class GlobalBlocking {
 		$row['gb_reason'] = $reason;
 		$row['gb_timestamp'] = $dbw->timestamp(wfTimestampNow());
 		$row['gb_anon_only'] = $anonOnly;
-		$row['gb_expiry'] = Block::encodeExpiry($expiry, $dbw);
+		$row['gb_expiry'] = $dbw->encodeExpiry( $expiry, $dbw );
 		list( $row['gb_range_start'], $row['gb_range_end'] ) = array( $range_start, $range_end );
 
 		$dbw->insert( 'globalblocks', $row, __METHOD__ );
@@ -269,6 +312,13 @@ class GlobalBlocking {
 		return array();
 	}
 
+	/**
+	 * @param $address string
+	 * @param $reason string
+	 * @param $expiry string
+	 * @param $options array
+	 * @return array
+	 */
 	static function block( $address, $reason, $expiry, $options = array() ) {
 		global $wgContLang;
 
@@ -307,6 +357,12 @@ class GlobalBlocking {
 		return array();
 	}
 
+	/**
+	 * @param $users
+	 * @param $data
+	 * @param $error
+	 * @return bool
+	 */
 	static function onSpecialPasswordResetOnSubmit( &$users, $data, &$error ) {
 		global $wgUser;
 

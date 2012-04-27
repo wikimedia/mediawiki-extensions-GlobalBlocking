@@ -70,7 +70,6 @@ class SpecialRemoveGlobalBlock extends SpecialPage {
 	}
 
 	function trySubmit() {
-		global $wgOut;
 		$errors = array();
 		$ip = $this->mUnblockIP;
 		if (!IP::isIPAddress($ip) && strlen($ip)) {
