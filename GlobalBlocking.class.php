@@ -17,7 +17,7 @@ class GlobalBlocking {
 		$ip = $wgRequest->getIP();
 		$blockError = self::getUserBlockErrors( $user, $ip );
 		if( !empty( $blockError ) ) {
-			$result[] = $blockError;
+			$result = array( $blockError );
 			return false;
 		}
 		return true;
