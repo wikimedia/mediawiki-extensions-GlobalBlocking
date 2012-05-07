@@ -3981,18 +3981,18 @@ $messages['he'] = array(
 	'globalblocking-whitelist-nochange' => 'לא ביצעתם שינוי במצב המקומי של חסימה זו. [[Special:GlobalBlockList|חזרה לרשימת החסימות הגלובליות]].',
 	'globalblocking-whitelist-errors' => 'השינוי למצב המקומי של החסימה הגלובלית נכשל בגלל {{PLURAL:$1|הסיבה הבאה|הסיבות הבאות}}:',
 	'globalblocking-whitelist-intro' => 'באפשרותכם להשתמש בטופס זה כדי לערוך את המצב המקומי של חסימה גלובלית. אם החסימה הגלובלית תבוטל באתר זה, המשתמשים בכתובת ה־IP המושפעת מהחסימה יוכלו לערוך כרגיל. [[Special:GlobalBlockList|חזרה לרשימת החסימות הגלובליות]].',
-	'globalblocking-ipblocked' => "'''כתובת ה-IP שלך נחסמה על בכל אתרי ויקי'''
+	'globalblocking-ipblocked' => "'''כתובת ה־IP שלך נחסמה על בכל אתרי הוויקי.'''
 
-החסימה בוצעה על ידי  \$1  (\$2).
+החסימה בוצעה על־ידי \$1 (באתר \$2).
 הסיבה לחסימה היא '''\$3'''.
 
- * תחילת החסימה:  \$4 
- * פקיעת תוקף החסימה:  \$5 
+ * תחילת החסימה: \$4 
+ * פקיעת תוקף החסימה: \$5 
 
-באפשרותך לפנות ל-\$1  כדי לדון על החסימה.
-אין באפשרותך להשתמש בתכונה \"{{int:emailuser}}\" אלא אם כתובת הדואר האלקטרוני ב[[מיוחד: Preferences|העדפות]] היא היא חוקית ולא נחסמת משימוש בתכונה זו.
-כתובת ה-IP הנוכחית שלך היא \$6.
-אנא ציינו את כל הפרטים לעיל בכל פניה בנושא.",
+באפשרותך לפנות ל־\$1  כדי לדון בחסימה.
+אין באפשרותך להשתמש בתכונה \"{{int:emailuser}}\" אלא אם כתובת הדואר האלקטרוני ב[[Special:Preferences|העדפות]] תקינה ולא נחסמת משימוש בתכונה זו.
+כתובת ה־IP הנוכחית שלך היא \$6.
+נא לציין את כל הפרטים לעיל בכל פנייה בנושא.",
 	'globalblocking-blocked-nopassreset' => 'אין באפשרותכם לאפס סיסמאות של משתמשים כיוון שאתם חסומים באופן גלובלי.',
 	'globalblocking-logpage' => 'יומן החסימות הגלובליות',
 	'globalblocking-logpagetext' => 'זהו יומן החסימות הגלובליות שהופעלו והוסרו באתר זה.
@@ -5186,7 +5186,7 @@ Il registro dei blocchi è riportato di seguito per informazione:',
  * @author 青子守歌
  */
 $messages['ja'] = array(
-	'globalblocking-desc' => 'IPアドレスを[[Special:GlobalBlockList|複数のウィキで横断的に]][[Special:GlobalBlock|ブロックします。]]',
+	'globalblocking-desc' => 'IPアドレスを[[Special:GlobalBlockList|複数のウィキで横断的に]][[Special:GlobalBlock|ブロックする]]',
 	'globalblocking-block' => 'IPアドレスをグローバルブロック',
 	'globalblocking-modify-intro' => 'このフォームを使って、グローバルブロックの設定を変更できます。',
 	'globalblocking-block-intro' => 'このページで全ウィキでの IP アドレスをブロックできます。',
@@ -9371,6 +9371,7 @@ Regjistri i bllokimit është poshtë për referncë:',
 );
 
 /** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
+ * @author FriedrickMILBarbarossa
  * @author Rancher
  * @author Sasa Stefanovic
  * @author Јованвб
@@ -9449,7 +9450,7 @@ $messages['sr-ec'] = array(
 	'globalblocking-whitelist-whitelisted' => "Успешно сте онемогућили глобалну блокаду #$2 за ИП адресу '''$1''' на пројекту {{SITENAME}}.",
 	'globalblocking-whitelist-dewhitelisted' => "Успешно сте омогућили глобалну блокаду #$2 за ИП адресу '''$1''' на пројекту {{SITENAME}}.",
 	'globalblocking-whitelist-errors' => 'Не можете да промените локално стање глобалне блокаде због {{PLURAL:$1|следећег разлога|следећих разлога}}:',
-	'globalblocking-logpage' => 'Историја глобалних блокова',
+	'globalblocking-logpage' => 'Дневник глобалних блокирања',
 	'globalblocking-block-logentry' => '{{GENDER:|је глобално блокирао|је глобално блокирала|је глобално блокирао}} [[$1]] с роком истицања од $2',
 	'globalblocking-block2-logentry' => 'глобално блокиран [[$1]] ($2)',
 	'globalblocking-unblock-logentry' => 'уклонио глобални блок за [[$1]]',
@@ -9472,6 +9473,7 @@ $messages['sr-ec'] = array(
 );
 
 /** Serbian (Latin script) (‪Srpski (latinica)‬)
+ * @author FriedrickMILBarbarossa
  * @author Michaello
  * @author Жељко Тодоровић
  * @author Михајло Анђелковић
@@ -9539,7 +9541,7 @@ Zapamtite da ne možete unositi korisnička imena!',
 	'globalblocking-whitelist-reason' => 'Razlog:',
 	'globalblocking-whitelist-status' => 'Lokalni status:',
 	'globalblocking-whitelist-submit' => 'Promeni lokalni status',
-	'globalblocking-logpage' => 'Istorija globalnih blokova',
+	'globalblocking-logpage' => 'Dnevnik globalnih blokiranja',
 	'globalblocking-block-logentry' => 'globalno blokirao [[$1]] sa vremenom isticanja od $2',
 	'globalblocking-block2-logentry' => 'globalno blokiran [[$1]] ($2)',
 	'globalblocking-unblock-logentry' => 'uklonio globalni blok za [[$1]]',
