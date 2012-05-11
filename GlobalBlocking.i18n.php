@@ -2124,6 +2124,7 @@ Bitte Geben Sie alle oben angegebenen Details in Ihren Anfragen an.",
 
 /** Zazaki (Zazaki)
  * @author Aspar
+ * @author Erdemaslancan
  * @author Mirzali
  * @author Xoser
  */
@@ -2145,6 +2146,7 @@ $messages['diq'] = array(
 	'globalblocking-block-expiry-otherfield' => 'wexto bin:',
 	'globalblocking-block-legend' => "adresa IP'yi bı global bloke bıker",
 	'globalblocking-block-options' => 'Tercihi:',
+	'globalblocking-ipaddress' => "Adresa IP'i:",
 	'globalblocking-block-errors' => 'blokekerdış nêbı, semedê no {{PLURAL:$1|sebeb ra|sebeban ra}}:',
 	'globalblocking-block-ipinvalid' => 'IP addresa ke şıma pê keweni cı ($1) nemeqbulo.
 xo vir ra mekerê ke şıma nêeşkeni pê nameyê yew karberi cıkewi!',
@@ -2175,7 +2177,7 @@ Kerem kerên, pê jû IP-adresa vêrdiye cı kewên.',
 	'globalblocking-list-unblock' => 'werad/wedar',
 	'globalblocking-list-whitelisted' => "hetê $1'i ra bı mehelli pasif bı: $2",
 	'globalblocking-list-whitelist' => 'weziyeto mehelli',
-	'globalblocking-list-modify' => 'bıvurn',
+	'globalblocking-list-modify' => 'bıvurne',
 	'globalblocking-list-noresults' => 'IPadres bloke nêbı',
 	'globalblocking-goto-block' => 'yew IPadres bı global bloke bıker',
 	'globalblocking-goto-unblock' => 'yew blokê globali wedar/werad',
@@ -7182,7 +7184,7 @@ $messages['nn'] = array(
 	'globalblocking-block-intro' => 'Du kan nytte denne sida til å blokkere ei IP-adresse krosswiki.',
 	'globalblocking-block-reason' => 'Årsak:',
 	'globalblocking-block-otherreason' => 'Annan grunn/tilleggsgrunn:',
-	'globalblocking-block-reasonotherlist' => 'Annan årsak',
+	'globalblocking-block-reasonotherlist' => 'Anna årsak',
 	'globalblocking-block-expiry' => 'Opphøyrstid:',
 	'globalblocking-block-expiry-other' => 'Anna varigheit',
 	'globalblocking-block-expiry-otherfield' => 'Anna tid:',
