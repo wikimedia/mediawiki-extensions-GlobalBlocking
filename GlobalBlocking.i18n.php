@@ -725,6 +725,18 @@ $messages['arz'] = array(
 	'right-globalblock-whitelist' => 'عطل المنع العام على المستوى المحلي',
 );
 
+/** Assamese (অসমীয়া)
+ * @author Bishnu Saikia
+ */
+$messages['as'] = array(
+	'globalblocking-block-reason' => 'কাৰণ:',
+	'globalblocking-block-reasonotherlist' => 'অন্য কাৰণ',
+	'globalblocking-block-expiry' => 'ম্যাদ উকলিব:',
+	'globalblocking-block-expiry-otherfield' => 'অন্য সময়:',
+	'globalblocking-block-options' => 'বিকল্পসমূহ',
+	'globalblocking-list-unblock' => 'অপসাৰণ',
+);
+
 /** Asturian (Asturianu)
  * @author Esbardu
  * @author Xuacu
@@ -1769,6 +1781,18 @@ Uvědomte si, že nemůžete zadat uživatelské jméno!',
 	'globalblocking-whitelist-intro' => 'Pomocí tohoto formuláře můžete změnit místní stav globálního zablokování.
 Pokud bude globální blok na této wiki zrušen, budou moci uživatelé na dotčené IP adrese normálně editovat.
 [[Special:GlobalBlockList|Návrat na seznam globálních bloků]].',
+	'globalblocking-ipblocked' => "'''Vaší IP adrese byla na všech wiki zablokována možnost editace.'''
+
+Zablokování provedl $1 ($2).
+Udaným důvodem bylo ''$3''.
+
+* Začátek blokování: $4
+* Zablokování vyprší: $5
+
+Pokud chcete zablokování prodiskutovat, můžete kontaktovat uživatele $1.
+Uvědomte si, že nemůžete použít nabídku „{{int:emailuser}}“, jestliže ve svém [[Special:Preferences|nastavení]] nemáte uvedenu platnou e-mailovou adresu nebo pokud vám byla tato možnost zakázána.
+Vaše současná IP adresa je $6.
+Ve všech dotazech na správce uvádějte všechny výše zobrazené informace.",
 	'globalblocking-blocked-nopassreset' => 'Nemůžete žádat o zaslání nového hesla, protože jste globálně {{GENDER:|zablokován|zablokována|zablokován}}.',
 	'globalblocking-logpage' => 'Kniha globálních zablokování',
 	'globalblocking-logpagetext' => 'Toto je kniha globální blokování a jejich uvolnění provedených na této wiki.
@@ -1939,6 +1963,7 @@ Skriv en gyldig IP-adresse.',
 
 /** German (Deutsch)
  * @author DaSch
+ * @author Geitost
  * @author Imre
  * @author Kghbln
  * @author Lukas9950
@@ -1980,8 +2005,8 @@ Beachte, dass du keinen Benutzernamen eingeben darfst!',
 	'globalblocking-modify-successsub' => 'Globale Sperre erfolgreich geändert',
 	'globalblocking-block-alreadyblocked' => 'Die IP-Adresse $1 wurde schon global gesperrt.
 Du kannst die bestehende Sperre in der [[Special:GlobalBlockList|globalen Sperrliste]] einsehen oder die Einstellungen der Sperre über dieses Formular ändern.',
-	'globalblocking-block-bigrange' => 'Der Adressbereich, den du angegeben hast ($1) ist zu groß.
-Du kannst höchstens 65.536 IPs sperren (/16-Adressbereiche)',
+	'globalblocking-block-bigrange' => 'Der Adressbereich, den du angegeben hast ($1), ist zu groß zum Sperren.
+Du kannst höchstens 65.536 IPs sperren (/16-Adressbereiche).',
 	'globalblocking-list-intro' => 'Dies ist eine Liste aller gültigen globalen Sperren.
 Die Markierung von Sperren als lokal deaktiviert bedeutet, dass die Sperren auf anderen Projekten gültig sind, aber ein lokaler Administrator entschieden hat, sie für dieses Wiki zu deaktivieren.',
 	'globalblocking-list' => 'Liste global gesperrter IP-Adressen',
@@ -2081,6 +2106,7 @@ Du kannst höchstens 65'536 IPs sperren (/16-Adressbereiche).",
 );
 
 /** German (formal address) (‪Deutsch (Sie-Form)‬)
+ * @author Geitost
  * @author Imre
  * @author Kghbln
  * @author MichaelFrey
@@ -2093,8 +2119,8 @@ $messages['de-formal'] = array(
 Beachten Sie, dass Sie keinen Benutzernamen eingeben dürfen!',
 	'globalblocking-block-alreadyblocked' => 'Die IP-Adresse $1 wurde schon global gesperrt.
 Sie können die bestehende Sperre in der [[Special:GlobalBlockList|globalen Sperrliste]] einsehen oder die Einstellungen der Sperre über dieses Formular ändern.',
-	'globalblocking-block-bigrange' => 'Der Adressbereich, den Sie angegeben haben ($1) ist zu groß.
-Sie können höchstens 65.536 IPs sperren (/16-Adressbereiche)',
+	'globalblocking-block-bigrange' => 'Der Adressbereich, den Sie angegeben haben ($1), ist zu groß zum Sperren.
+Sie können höchstens 65.536 IPs sperren (/16-Adressbereiche).',
 	'globalblocking-list-ipinvalid' => 'Sie haben eine ungültige IP-Adresse ($1) eingegeben.
 Bitte geben Sie eine gültige IP-Adresse ein.',
 	'globalblocking-unblock-ipinvalid' => 'Sie haben eine ungültige IP-Adresse ($1) eingegeben.
@@ -2325,6 +2351,18 @@ togodla lokalny status globalnych blokěrowanjow njedajo se změniś.',
 	'globalblocking-whitelist-intro' => 'Móžoš wužiwaś toś ten formular, aby wobźěłał lokalny status globalnego blokěrowanja.
 Jolic globalne blokěrowanje jo znjemóžnjone na toś tom wikiju, wužywarje na pótrjefjonej IP-adresy mógu normalnje wobźěłaś.
 [[Special:GlobalBlockList|Slědk k lisćinje globalnych blokěrowanjow]].',
+	'globalblocking-ipblocked' => "'''Twója IP-adresa jo se na wšych wikijach blokěrowała.'''
+
+Blokěrowanje jo \$1 (\$2) pśewjadł.
+Pódana pśicyna jo ''\$3''.
+
+* Zachopjeńk blokěrowanja: \$4
+* Kóńc blokěrowanja: \$5
+
+Móžoš se z \$1 do zwiska stajiś, aby blokěrowanje diskutěrował.
+Njamóžoš funkciju \"{{int:emailuser}}\" wužywaś, snaźkuli płaśiwa e-mailowa adresa jo se w swójich [[Special:Preferences|kontowych nastajenjach]] pódała a njejsy blokěrowany ju wužywaś.
+Twója aktualna IP-adresa jo \$6.
+Pšosym zapśimjej wšykne górjejce naspomnjete drobnostki do napšašowanjow, kótarež cyniš.",
 	'globalblocking-blocked-nopassreset' => 'Njamóžoš gronidła wužywarja slědk wzaś, dokulaž sy globalnje blokěrowany.',
 	'globalblocking-logpage' => 'Protokol globalnych blokěrowanjow',
 	'globalblocking-logpagetext' => 'To jo protokol globalnych blokěrowanjow, kótarež su se cynili a wótpórali na toś tom wikiju.
@@ -2984,6 +3022,18 @@ $messages['fa'] = array(
 	'globalblocking-whitelist-intro' => 'شما می‌توانید از این فرم برای ویرایش وضعیت محلی یک قطع دسترسی سراسری استفاده کنید.
 اگر یک قطع دسترسی سراسری در این ویکی غیر فعال شود، کاربرهایی که روی نشانی آی‌پی مربوط به آن قرار دارند قادر به ویرایش به صورت معمولی خواهند بود.
 [[Special:GlobalBlockList|بازگشت به فهرست قطع دسترسی‌های سراسری]].',
+	'globalblocking-ipblocked' => "'''نشانی آی‌پی شما در همهٔ ویکی‌ها بسته شده‌است.'''
+
+بستن توسط $1 ($2) انجام شده‌است.
+دلیل ارائه‌شده این است: ''$3''.
+
+* آغاز بستن: $4
+* پایان بستن: $5
+
+برای بحث پیرامون این بستن می‌توانید با $1 تماس بگیرید.
+شما نمی‌توانید از قابلیت «{{int:emailuser}}» استفاده کنید مگر اینکه پست الکترونیکی مجاز را در [[Special:Preferences|ترجیحات حساب کاربری‌تان]] مشخص کرده باشید، برای استفاده از آن بسته نیستید.
+نشانی آی‌پی شما $6 است.
+لطفً همهٔ جزئیات بالا را در هر درخواستی که می‌خواهید انجام  دهید ذکر کنید.",
 	'globalblocking-blocked-nopassreset' => 'شما نمی‌توانید کلمات عبور کاربران را تغییر دهید زیرا شما به صورت سراسری مسدود شده‌اید.',
 	'globalblocking-logpage' => 'سیاههٔ قطع دسترسی سراسری',
 	'globalblocking-logpagetext' => 'این یک سیاهه از قطع دسترسی‌های سراسری است که در این ویکی ایجاد و حذف شده‌اند.
@@ -3214,6 +3264,7 @@ Sperringarloggurin er her niðanfyri fyri ávísing:',
  * @author PieRRoMaN
  * @author Seb35
  * @author Sherbrooke
+ * @author Toto Azéro
  * @author Urhixidur
  * @author Verdy p
  * @author Zetud
@@ -3301,7 +3352,7 @@ de ce fait le statut local du blocage global ne peut être modifié.',
 	'globalblocking-whitelist-errors' => 'La modification du statut local d’un blocage global a échoué pour {{PLURAL:$1|la raison suivante|les raisons suivantes}} :',
 	'globalblocking-whitelist-intro' => 'Vous pouvez utiliser ce formulaire pour modifier l’état local d’un blocage global.
 Si un blocage global est désactivé sur ce wiki, les utilisateurs des adresses IP affectées pourront modifier normalement.
-[[Special:GlobalBlockList|Retourner à la liste des bloquages globaux]].',
+[[Special:GlobalBlockList|Retourner à la liste des blocages globaux]].',
 	'globalblocking-ipblocked' => "'''Votre adresse IP a été bloquée sur tous les wikis.'''
 
 Le blocage a été fait par \$1 (\$2).
@@ -3844,7 +3895,7 @@ $messages['gu'] = array(
 	'globalblocking-logpagetext' => 'આ વિકિ પરની આ વૈશ્વીક પ્રતિબંધ મુકવા અને હટાવવા સંબંધે થયેલ ફેરફારની યાદી છે. એ વાત ધ્યાનમાં લેશો કે અન્ય વિકિ પર પણ વૈશ્વીક પ્રતિબંધ લગાડી અને હટાવી શકાય છે, જે આ વિકિ ને અસર કરી શકે છે.  બધા સક્રીય પ્રતિબંધની યાદી અહીં જોઈ શકાશે : [[Special:GlobalBlockList|global block list]]',
 	'globalblocking-block-logentry' => '[[$1]] પર પ્રતિબંધ $2 સુધી મુકવામાં આવ્યો છે.',
 	'globalblocking-block2-logentry' => 'વૈશ્વીક રીતે પ્રતિબંધીત [[$1]] ($2)',
-	'globalblocking-unblock-logentry' => '[[$1]] નો વૈશ્વીક પ્રતિબંધ રદ્દ કરો',
+	'globalblocking-unblock-logentry' => '[[$1]] નો વૈશ્વીક પ્રતિબંધ હટાવ્યો',
 	'globalblocking-whitelist-logentry' => '[[$1]] પરનો વૈશ્વીક પ્રતિબંધ સ્થાનીય સ્તરે નિષ્ક્રીય કરો',
 	'globalblocking-dewhitelist-logentry' => '[[$1]] પરનો વૈશ્વીક પ્રતિબંધ સ્થાનીય સ્તરે ફરી સષ્ક્રીય કરો',
 	'globalblocking-modify-logentry' => '[[$1]] ($2) પ્રના વૈશ્વીક પ્રતિબંધ મઠાર્યા',
@@ -4836,7 +4887,7 @@ $messages['ilo'] = array(
 	'globalblocking-block-options' => 'Dagiti pinagpilian:',
 	'globalblocking-ipaddress' => 'IP a pagtaengan:',
 	'globalblocking-ipbanononly' => 'Serraan dagiti di am-ammo nga agar-aramat laeng',
-	'globalblocking-block-errors' => 'Napaay ti pinagserram, kadagiti sumaganad {{PLURAL:$1|rason|dagiti rason}}:',
+	'globalblocking-block-errors' => 'Napaay ti panagserram, kadagiti sumaganad {{PLURAL:$1|rason|dagiti rason}}:',
 	'globalblocking-block-ipinvalid' => 'Ti IP a pagtaengan ($1) nga inkabil mo ket imbalido.
 Pangngaasi a lagipem a saan ka a makaikabil ti nagan ti agar-aramat!',
 	'globalblocking-block-expiryinvalid' => 'Ti pinagpaso nga inkabil mo ($1) ket imbalido.',
@@ -4879,11 +4930,11 @@ Pangngaasi a lagipem a saan ka a makaikabil ti nagan ti agar-aramat!',
 	'globalblocking-unblock-legend' => 'Ikkaten ti maysa a sangalubongan a serra',
 	'globalblocking-unblock-submit' => 'Ikkaten ti sangalubongan a serra',
 	'globalblocking-unblock-reason' => 'Rason:',
-	'globalblocking-unblock-unblocked' => "Nagballigi ka ti pinag-ikkat ti sangalubongan a serra #$2 idiay IP a pagtaengan '''$1'''",
-	'globalblocking-unblock-errors' => 'Napaay ti pinagikkat mo ti sangalubongan a serra, kadagiti sumaganad {{PLURAL:$1|rason|dagiti rason}}:',
-	'globalblocking-unblock-successsub' => 'Balligi ti pinagikkat ti sangalubongan a serra',
+	'globalblocking-unblock-unblocked' => "Nagballigi ka ti panag-ikkat ti sangalubongan a serra #$2 idiay IP a pagtaengan '''$1'''",
+	'globalblocking-unblock-errors' => 'Napaay ti panagikkat mo ti sangalubongan a serra, kadagiti sumaganad {{PLURAL:$1|rason|dagiti rason}}:',
+	'globalblocking-unblock-successsub' => 'Balligi ti panagikkat ti sangalubongan a serra',
 	'globalblocking-unblock-subtitle' => 'Ikikkaten ti sangalubongan a serra',
-	'globalblocking-unblock-intro' => 'Mausar mo daytoy a kinabuklan ti pinagikkat ti sangalubongan a serra.',
+	'globalblocking-unblock-intro' => 'Mausar mo daytoy a kinabuklan ti panagikkat ti sangalubongan a serra.',
 	'globalblocking-whitelist' => 'Lokal a kasasaad iti sangalubongan a serra',
 	'globalblocking-whitelist-notapplied' => 'TI sangalubongan a serra ket saan a naikabil ditoy a wiki,
 ket ti lokal a kasaad iti sangalubongan a serra ket saan a mabaliwan.',
@@ -4894,19 +4945,31 @@ ket ti lokal a kasaad iti sangalubongan a serra ket saan a mabaliwan.',
 	'globalblocking-whitelist-submit' => 'Sukatan ti lokal a kasasaad',
 	'globalblocking-whitelist-whitelisted' => "Balligi ti pinagbaldadom ti sangalubongan a serra #$2 idiay IP a pagtaengan '''$1''' idiay {{SITENAME}}.",
 	'globalblocking-whitelist-dewhitelisted' => "Balligi ti pinagsublim ti sangalubongan a serra #$2 idiay IP a pagtaengan '''$1''' idiay {{SITENAME}}.",
-	'globalblocking-whitelist-successsub' => 'Balligi ti pinagsukat ti lokal a kasasaad',
+	'globalblocking-whitelist-successsub' => 'Balligi ti panagsukat ti lokal a kasasaad',
 	'globalblocking-whitelist-nochange' => 'Awan ti sinukatan iti lokal a kasasaad iti daytoy a serra.
 [[Special:GlobalBlockList|Agsubli idiay listaan ti sangalubongan a serra]].',
 	'globalblocking-whitelist-errors' => 'Napaay ti pinagikkat mo ti lokal a kasasaad ti sangalubongan a serra, kadagiti sumaganad {{PLURAL:$1|rason|dagiti rason}}:',
 	'globalblocking-whitelist-intro' => 'Mausar mo daytoy a kinabuklan ti pinagurnos ti lokal a kasasaad iti sangalubongan a serra.
 No nabaldado ti sangalubongan a serra iti daytoy a wiki, dagiti agar-aramat iti naarigan nga IP a pagtaengan ket mabalin da ti kadawyan nga agurnos.
 [[Special:GlobalBlockList|Agsubli idiay listaan ti sangalubongan a serra]].',
+	'globalblocking-ipblocked' => "'''Ti IP a pagtaengam ket naserraan kadagiti amina wiki.'''
+
+Ti serra ket inaramid babaen ni \$1 (\$2).
+Ti rason a naited ket ''\$3''.
+
+* Rugi ti serra: \$4
+* Kalpasan ti serra: \$5
+
+Mabalinmo a kontaken ni \$1 tapno makisao iti daytoy a serra.
+Saan mo a mabalin nga usaren ti \"{{int:emailuser}}\" a langa no awan ti umisu ang e-surat a pagtaengan a nainaganan idiay  [[Special:Preferences|kakaykayatan ti pakabilangam]] ken saanka a naseraan ti panagusarmo.
+Ti agdama nga IP a pagtaengam ket \$6.
+Pangngaasi nga iramanmo dagiti salaysay dita ngato para kadagiti amin a salusodmo.",
 	'globalblocking-blocked-nopassreset' => 'Saan mo a maipasubli ti kontrasenias ti agar-aramat ngamin ket naserraan iti sangalubongan.',
 	'globalblocking-logpage' => 'Listaan ti sangalubongan a serra',
 	'globalblocking-logpagetext' => 'Daytoy ket listaan dagiti sangalubongan a serra a naaramid ken naikkat ditoy a wiki.
 Laglagipen a ti sangalubongan a serra ket maaramid ken maikkat kadagiti sabali a wiki, ken dagitoy a sangalubongan a serra ket tignayen na daytoy a wiki.
 Ti agkita kadagiti amin nga agdama a serra, kitaen ti [[Special:GlobalBlockList|listaan ti sangalubongan a serra]].',
-	'globalblocking-block-logentry' => 'sangalubongan a naserraan [[$1]] nga addaan ti oras ti pinagpaso a $2',
+	'globalblocking-block-logentry' => 'sangalubongan a naserraan [[$1]] nga addaan ti oras ti panagpaso a $2',
 	'globalblocking-block2-logentry' => 'sangalubongan a naserraan [[$1]] ($2)',
 	'globalblocking-unblock-logentry' => 'ikkaten ti sangalubongan a serra idiay [[$1]]',
 	'globalblocking-whitelist-logentry' => 'ibaldado ti sangalubongan a serra idiay [[$1]] lokal laeng',
@@ -4914,7 +4977,7 @@ Ti agkita kadagiti amin nga agdama a serra, kitaen ti [[Special:GlobalBlockList|
 	'globalblocking-modify-logentry' => 'binaliwan ti sangalubongan a serra idiay [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'agpaso $1',
 	'globalblocking-logentry-noexpiry' => 'awan ti agpaso nga agasmang',
-	'globalblocking-loglink' => 'Ti IP a pagtaengan $1 ket naserraan iti sangalubongan ([[{{#Special:GlobalBlockList}}/$1|dagiti amin a detalye]]).',
+	'globalblocking-loglink' => 'Ti IP a pagtaengan $1 ket naserraan iti sangalubongan ([[{{#Special:GlobalBlockList}}/$1|dagiti amin a salaysay]]).',
 	'globalblocking-showlog' => 'Daytoy nga IP a pagtaengan ket naserraan idin.
 Ti listaan ti serra ket naikabil dita baba tapno mausar a reperensia:',
 	'globalblocklist' => 'Listaan dagiti naserraan nga IP a pagtaengan iti sangalubongan',
@@ -5033,6 +5096,18 @@ svo ekki er hægt að breyta staðbundinni stöðu altækra banna.',
 	'globalblocking-whitelist-intro' => 'Þú getur notað þetta eyðublað til að breyta staðbundinni stöðu altæks banns.
 Ef altækt bann er óvirkjað á þessum wiki, geta notendur á þeim vistföngum sem bannið beinist að breytt eins og venjulega.
 [[Special:GlobalBlockList|Fara á lista yfir altæk bönn]].',
+	'globalblocking-ipblocked' => "'''Vistfangið þitt hefur verið bannað á öllum wiki verkefnum.'''
+
+Bannið var sett af $1 (á $2).
+Ástæðan sem gefin var er ''$3''.
+
+* Upphaf banns: $4
+* Rennur út: $5
+
+Þú getur haft samband við $1 eða einhvern annan stjórnanda til að ræða bannið. 
+Athugið að „Senda þessum notanda tölvupóst“ möguleikinn er óvirkur nema þú hafir skráð gilt netfang í [[Special:Preferences|stillingunum]] þínum og að bannið nái ekki yfir þann möguleika. 
+IP-talan þín er $6. 
+Vinsamlegast taktu það fram í fyrirspurnum þínum.",
 	'globalblocking-blocked-nopassreset' => 'Þú getur ekki endurstillt lykilorð notenda því þú ert bannaður altækt.',
 	'globalblocking-logpage' => 'Altæk eyðingarskrá',
 	'globalblocking-logpagetext' => 'Þetta er skrá yfir altækar bannanir og afbannanir á notendum.
@@ -5299,7 +5374,7 @@ $messages['ja'] = array(
 	'action-globalblock' => 'グローバルブロックを作成',
 	'right-globalunblock' => 'グローバルブロックを解除',
 	'action-globalunblock' => 'グローバルブロックを削除',
-	'right-globalblock-whitelist' => 'ローカルでグローバルブロックを無効にする',
+	'right-globalblock-whitelist' => 'ローカルでグローバルブロックを無効化',
 	'action-globalblock-whitelist' => 'ローカルでグローバルブロックを無効にする',
 	'right-globalblock-exempt' => 'グローバルブロックを回避',
 	'action-globalblock-exempt' => 'グローバルブロックを迂回',
@@ -6027,6 +6102,16 @@ D'Lëscht vun de Späre steet hei ënnendrënner.",
 	'action-globalblock-exempt' => 'global Spären ëmgoen',
 );
 
+/** Lezghian (Лезги)
+ * @author Migraghvi
+ */
+$messages['lez'] = array(
+	'globalblocking-block-expiry-otherfield' => 'Муькуь вахт:',
+	'globalblocking-list-modify' => 'дегишун',
+	'globalblocking-unblock-reason' => 'Себеб:',
+	'globalblocking-whitelist-reason' => 'Себеб:',
+);
+
 /** Limburgish (Limburgs)
  * @author Aelske
  * @author Benopat
@@ -6116,6 +6201,18 @@ Lèt óp: de kins geine gebroekersnaam ingaeve!",
 	'globalblocking-whitelist-intro' => "De kins dit formulier gebroeke om de lokale status van 'n globale blokkade te wiezige.
 Als een globale blokkade op deze wiki is opgeheve, kunne gebroekers vanaaf  t IP-adres geeuon bewerkinge oetvoere.
 [[Special:GlobalBlockList|Trökkere nao de lies met globale blokkades]].",
+	'globalblocking-ipblocked' => "'''Dien IP-adres is geblokkeerdj op alle wiki's.'''
+
+De blokkaasj is oetgeveurdj door \$1 (\$2).
+De raeje hieveur is ''\$3''.
+
+* Start blokkaasj: \$4
+* Blokkaasj vervèltj op: \$5
+
+De kuns contak opnömme mit \$1 óm de blokkaasj te bespraeke.
+De kins de functie \"{{int:emailuser}}\" neet gebroeke behauve es t'r e gèljig e-mailadres in dien [[Special:Preferences|veurkäöre]] is ingevöldj en dien e-mailfuncties neet geblokkeerdj zeen.
+Dien hujig IP-adres is \$6.
+Vermeldj de baovestaondke gegaeves es se hie óp reageers.",
 	'globalblocking-blocked-nopassreset' => "Doe kins 't wachwaord neet resette ómdesse wikiwied geblok bös gewaore.",
 	'globalblocking-logpage' => 'Globaal bloklogbook',
 	'globalblocking-logpagetext' => "Dit logbook bevat aangemaakte en verwiejderde globale blokkades op deze wiki.
@@ -9215,18 +9312,18 @@ zato lokalnega stanja globalnih blokad ni mogoče spremeniti.',
 	'globalblocking-whitelist-intro' => 'Ta obrazec lahko uporabite za urejanje lokalnega stanja globalne blokade.
 Če je globalna blokada na tem wikiju onemogočena, bodo uporabniki na določenem IP-naslovu lahko normalno urejali.
 [[Special:GlobalBlockList|Vrnitev na seznam globalnih blokad]].',
-	'globalblocking-ipblocked' => '\'\'\'Vaš IP naslov je blokiran na vseh straneh projekta Wikipedija.\'\'\'
+	'globalblocking-ipblocked' => "'''Vaš IP-naslov je blokiran na vseh wikijih.'''
 
-Blokiral Vas je uporabnik $1 ($2).
-Razlog je $3.
+Blokiral vas je uporabnik $1 ($2).
+Razlog je ''$3''.
 
-* Začetek blokade: $4.
-* Potek blokade: $5.
+* Začetek blokade: $4
+* Potek blokade: $5
 
 Lahko stopite v stik z uporabnikom $1 in se pogovorite o blokadi. 
-Ne morete uporabljati storitve "{{int:emailuser}}", dokler v svojih [[Special:Preferences|nastavitvah računa]] nimate veljavnega elektonskega naslova in Vam njegove uporabe še nismo preprečili.
-Vaš trenutni IP naslov je $6.
-Prosimo, vključite v vsako prošnjo vse zgornje podatke.',
+Ne morete uporabljati možnosti »{{int:emailuser}}«, dokler v svojih [[Special:Preferences|nastavitvah računa]] nimate veljavnega elektonskega naslova in vam njegove uporabe še nismo preprečili.
+Vaš trenutni IP-naslov je $6.
+Prosimo, da v vsako prošnjo vključite vse zgornje podatke.",
 	'globalblocking-blocked-nopassreset' => 'Ne morete ponastaviti gesla uporabnika, ker je globalno blokiran.',
 	'globalblocking-logpage' => 'Dnevnik globalnih blokad',
 	'globalblocking-logpagetext' => 'To je dnevnik globalnih blokad, ki so bile izvedene ali odstranjene na tem wikiju.
@@ -9646,6 +9743,7 @@ $messages['su'] = array(
  * @author M.M.S.
  * @author Per
  * @author Rotsee
+ * @author WikiPhoenix
  */
 $messages['sv'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Tillåter]] IP-adresser att bli [[Special:GlobalBlockList|blockerade tvärs över mångfaldiga wikier]]',
@@ -9749,7 +9847,9 @@ Blockeringsloggen visas nedan som referens:',
 	'globalblockstatus' => 'Lokal status för globala blockeringar',
 	'removeglobalblock' => 'Ta bort en global blockering',
 	'right-globalblock' => 'Göra globala blockeringar',
+	'action-globalblock' => 'skapa globala blockeringar',
 	'right-globalunblock' => 'Ta bort globala blockeringar',
+	'action-globalunblock' => 'ta bort globala blockeringar',
 	'right-globalblock-whitelist' => 'Slå av globala blockeringar lokalt',
 	'right-globalblock-exempt' => 'Gå förbi globala blockeringar',
 );
@@ -10031,7 +10131,7 @@ $messages['tg-cyrl'] = array(
 	'right-globalblock-whitelist' => 'Ғайри фаъол кардани қатъи дастрасиҳои саросарӣ ба таври маҳаллӣ',
 );
 
-/** Tajik (Latin script) (tojikī)
+/** Tajik (Latin script) (Tojikī)
  * @author Liangent
  */
 $messages['tg-latn'] = array(
@@ -10345,6 +10445,13 @@ Ibinigay sa ibaba ang talaan ng paghadlang upang masangguni:',
 	'right-globalblock-exempt' => 'Laktawan ang mga pagharang na pandaigdigan',
 );
 
+/** Толышә зывон (Толышә зывон)
+ * @author Гусейн
+ */
+$messages['tly'] = array(
+	'globalblocking-search-ip' => 'IP-унвон:',
+);
+
 /** Turkish (Türkçe)
  * @author Emperyan
  * @author Homonihilis
@@ -10371,6 +10478,7 @@ $messages['tr'] = array(
 	'globalblocking-block-legend' => 'Bir IP adresini küresel olarak engelle',
 	'globalblocking-block-options' => 'Seçenekler:',
 	'globalblocking-ipaddress' => 'IP adresi:',
+	'globalblocking-ipbanononly' => 'Yalnızca anonim kullanıcıları engelle',
 	'globalblocking-block-errors' => 'Engelleme başarısız, şu {{PLURAL:$1|sebepten|sebeplerden}} dolayı:',
 	'globalblocking-block-ipinvalid' => 'Girdiğiniz IP addresi ($1) geçersiz.
 Lütfen bir kullanıcı adı giremeyeceğinizi unutmayın!',
@@ -10721,7 +10829,7 @@ El registro dei blochi se pol védarlo qua de soto par comodità:',
 	'right-globalblock-exempt' => 'Scavalca blochi globali',
 );
 
-/** Veps (Vepsän kel')
+/** Veps (Vepsän kel’)
  * @author Triple-ADHD-AS
  * @author Игорь Бродский
  */
@@ -11136,6 +11244,7 @@ $1',
  * @author Shinjiman
  * @author Wmr89502270
  * @author Xiaomingyan
+ * @author Yfdyh000
  */
 $messages['zh-hans'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|允许]][[Special:GlobalBlockList|在多个wiki中封禁]]IP地址',
@@ -11222,6 +11331,18 @@ $1',
 	'globalblocking-whitelist-intro' => '您可以利用这个表格去更改全域封锁的本地状态。
 如果一个全域封锁在这个wiki度停用，受影响的 IP 地址可以正常地编辑。
 [[Special:GlobalBlockList|回到全域封锁名单]]。',
+	'globalblocking-ipblocked' => "'''您的IP地址已被在所有维基上封禁。'''
+
+封禁执行者是：$1 ($2)。
+给出的理由是：''$3''。
+
+* 封禁开始时间：$4
+* 封禁到期时间：$5
+
+您可以联系 $1 来讨论此封禁。
+您不能使用“{{int:emailuser}}”功能，除非在您的[[Special:Preferences|帐户参数设置]]中设定了一个有效的电子邮件地址，并且该功能没有被此次封禁所禁用。
+您当前的IP地址是 $6。
+请在提出任何异议时提供上述所有信息。",
 	'globalblocking-blocked-nopassreset' => '您无法修改用户密码，因为您正被全域封锁。',
 	'globalblocking-logpage' => '全局封禁日志',
 	'globalblocking-logpagetext' => '这个是在这个wiki中的全域封锁日志。要留意的是全域封锁可以在其它的wiki中被创建和移除并且会影响到这个wiki。要查看活跃的全域封锁，您可以去参阅[[Special:GlobalBlockList|全域封锁名单]]。',
