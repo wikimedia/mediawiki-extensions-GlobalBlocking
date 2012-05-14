@@ -5222,6 +5222,19 @@ Non è possibile modificare lo stato locale dei blocchi globali.',
 	'globalblocking-whitelist-errors' => 'Il tuo cambiamento allo stato locale di un blocco globale non è stato effettuato per {{PLURAL:$1|il seguente motivo|i seguenti motivi}}:',
 	'globalblocking-whitelist-intro' => "È possibile usare questo modulo per modificare lo stato locale di un blocco globale. Se un blocco globale è disattivato su questa wiki, gli utenti che utilizzano l'indirizzo IP colpito saranno in grado di editare normalmente.
 [[Special:GlobalBlockList|Fai clic qui]] per tornare all'elenco dei blocchi globali.",
+	'globalblocking-ipblocked' => "'''Il tuo indirizzo IP è stato bloccato su tutte le wiki.'''
+
+Il blocco è stato imposto da \$1 (\$2).
+La motivazione del blocco è la seguente: ''\$3''.
+
+* Inizio del blocco: \$4
+* Scadenza del blocco: \$5
+
+Se lo si desidera, è possibile contattare \$1 per discutere del blocco.
+Si noti che la funzione \"{{int:emailuser}}\" non è attiva se non è stato registrato un indirizzo e-mail valido nelle proprie [[Special:Preferences|preferenze]] o se l'utilizzo di tale funzione è stato bloccato.
+
+L'indirizzo IP attuale è \$6.
+Si prega di specificare tutti i dettagli precedenti in qualsiasi richiesta di chiarimenti.",
 	'globalblocking-blocked-nopassreset' => "Non è possibile reimpostare la password dell'utente perché sei bloccato a livello globale.",
 	'globalblocking-logpage' => 'Log dei blocchi globali',
 	'globalblocking-logpagetext' => "Di seguito sono elencati i blocchi globali che sono stati effettuati e rimossi su questa wiki. I blocchi globali possono essere effettuati su altre wiki e questi blocchi globali possono essere validi anche su questa wiki.
