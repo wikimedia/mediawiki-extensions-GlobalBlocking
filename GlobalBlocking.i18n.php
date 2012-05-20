@@ -11481,6 +11481,18 @@ $1',
 	'globalblocking-whitelist-intro' => '您可以利用這個表格去更改全域封鎖的本地狀態。
 如果一個全域封鎖在這個 wiki 度停用，受影響的 IP 位址可以正常地編輯。
 [[Special:GlobalBlockList|回到全域封鎖名單]]。',
+	'globalblocking-ipblocked' => "'''您的IP地址已被在所有维基上封禁。'''
+
+這個封禁是由$1 ($2) 作出的。
+给出的理由是''$3''。
+
+* 封禁開始時間：$4
+* 封禁到期時間：$5
+
+您可以聯繫 $1 來討論此封禁。
+您不能使用“{{int:emailuser}}”功能，除非在您的[[Special:Preferences|參數設置]]中設定了一個有效的電郵地址，並且該功能沒有被此次封禁被禁用。
+您現在的IP地址是 $6。
+請在提出任何查詢時提供上述所有信息。",
 	'globalblocking-blocked-nopassreset' => '您無法修改用戶密碼，因為您正被全域封鎖。',
 	'globalblocking-logpage' => '全域封鎖日誌',
 	'globalblocking-logpagetext' => '這個是在這個 wiki 中，弄過和移除整過的全域封鎖日誌。
@@ -11502,8 +11514,12 @@ $1',
 	'globalblockstatus' => '全域封鎖的本地狀態',
 	'removeglobalblock' => '移除一個全域封鎖',
 	'right-globalblock' => '弄一個全域封鎖',
+	'action-globalblock' => '弄一個全域封鎖',
 	'right-globalunblock' => '移除全域封鎖',
+	'action-globalunblock' => '移除全域封鎖',
 	'right-globalblock-whitelist' => '在本地停用全域封鎖',
+	'action-globalblock-whitelist' => '在本地停用全域封鎖',
 	'right-globalblock-exempt' => '繞過全域封鎖',
+	'action-globalblock-exempt' => '繞過全域封鎖',
 );
 
