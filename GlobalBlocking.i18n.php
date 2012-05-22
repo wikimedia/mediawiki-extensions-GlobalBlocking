@@ -7373,7 +7373,7 @@ For å visa alle aktive globale blokkeringar, sjå den [[Special:GlobalBlockList
 	'globalblocking-dewhitelist-logentry' => 'slo på att global blokkering av [[$1]] lokalt',
 	'globalblocking-modify-logentry' => 'endra den globale blokkeringa av [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'endar $1',
-	'globalblocking-logentry-noexpiry' => 'endelaus blokkering',
+	'globalblocking-logentry-noexpiry' => 'inga tidsavgrensing er sett',
 	'globalblocklist' => 'Lista over IP-adresser blokkerte globalt',
 	'globalblock' => 'Blokker ei IP-adressa globalt',
 	'globalblockstatus' => 'Lokal status for globale blokkeringar',
