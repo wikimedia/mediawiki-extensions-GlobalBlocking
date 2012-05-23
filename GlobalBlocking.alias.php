@@ -38,6 +38,14 @@ $specialPageAliases['be-tarask'] = array(
 	'GlobalBlockList' => array( 'Сьпіс_глябальных_блякаваньняў' ),
 );
 
+/** Banjar (Bahasa Banjar) */
+$specialPageAliases['bjn'] = array(
+	'GlobalBlock' => array( 'Pamblukiran_global' ),
+	'GlobalBlockList' => array( 'Daptar_pamblukiran_global' ),
+	'RemoveGlobalBlock' => array( 'Walangakan_pamblukiran_global' ),
+	'GlobalBlockStatus' => array( 'Daptar_putih_pamblukiran_global' ),
+);
+
 /** Breton (Brezhoneg) */
 $specialPageAliases['br'] = array(
 	'GlobalBlock' => array( 'StankadennHollek' ),
@@ -131,10 +139,10 @@ $specialPageAliases['gl'] = array(
 
 /** Swiss German (Alemannisch) */
 $specialPageAliases['gsw'] = array(
-	'GlobalBlock' => array( 'Wältwyti Sperri' ),
-	'GlobalBlockList' => array( 'Lischt vu wältwyte Sperrine' ),
-	'RemoveGlobalBlock' => array( 'Wältwyti Sperri uffhebe' ),
-	'GlobalBlockStatus' => array( 'Uusnahme vun ere wältwyte Sperri' ),
+	'GlobalBlock' => array( 'Wältwyti_Sperri' ),
+	'GlobalBlockList' => array( 'Lischt_vu_wältwyte_Sperrine' ),
+	'RemoveGlobalBlock' => array( 'Wältwyti_Sperri_uffhebe' ),
+	'GlobalBlockStatus' => array( 'Uusnahme_vun_ere_wältwyte_Sperri' ),
 );
 
 /** Hebrew (עברית) */
@@ -143,6 +151,14 @@ $specialPageAliases['he'] = array(
 	'GlobalBlockList' => array( 'רשימת_חסומים_גלובליים' ),
 	'RemoveGlobalBlock' => array( 'שחרור_חסימה_גלובלית', 'הסרת_חסימה_גלובלית' ),
 	'GlobalBlockStatus' => array( 'רשימה_לבנה_לחסימה_גלובלית', 'מצב_חסימה_גלובלית', 'ביטול_חסימה_גלובלית' ),
+);
+
+/** Hindi (हिन्दी) */
+$specialPageAliases['hi'] = array(
+	'GlobalBlock' => array( 'वैश्विक_अवरोध', 'वैश्विक_अवरोधन' ),
+	'GlobalBlockList' => array( 'वैश्विक_अवरोध_सूची' ),
+	'RemoveGlobalBlock' => array( 'वैश्विक_अवरोध_हटाएँ', 'वैश्विक_अवरोध_हटायें' ),
+	'GlobalBlockStatus' => array( 'वैश्विक_अवरोध_स्थानीय_स्थिति' ),
 );
 
 /** Croatian (Hrvatski) */
