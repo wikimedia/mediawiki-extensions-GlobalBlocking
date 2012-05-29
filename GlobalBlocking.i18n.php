@@ -1895,6 +1895,7 @@ Noder nad oes modd defnyddio enw defnyddiwr os gwelwch yn dda!",
  * @author Tjernobyl
  */
 $messages['da'] = array(
+	'globalblocking-desc' => '[[Special:GlobalBlock|Tillader]] at IP-adresser bliver [[Special:GlobalBlockList|blokeret på tværs af talrige wikier]]',
 	'globalblocking-block' => 'Bloker en IP-adresse globalt',
 	'globalblocking-modify-intro' => 'Du kan bruge denne formular til at ændre indstillingerne for en global blokkering',
 	'globalblocking-block-intro' => 'Du kan bruge denne side til at blokere en IP-adresse på alle wikier.',
