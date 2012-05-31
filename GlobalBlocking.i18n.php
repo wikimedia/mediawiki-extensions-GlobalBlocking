@@ -732,9 +732,16 @@ $messages['as'] = array(
 	'globalblocking-block-reason' => 'কাৰণ:',
 	'globalblocking-block-reasonotherlist' => 'অন্য কাৰণ',
 	'globalblocking-block-expiry' => 'ম্যাদ উকলিব:',
+	'globalblocking-block-expiry-other' => 'অন্যান্য ম্যাদ উকলাৰ সময়',
 	'globalblocking-block-expiry-otherfield' => 'অন্য সময়:',
 	'globalblocking-block-options' => 'বিকল্পসমূহ',
+	'globalblocking-ipaddress' => 'আইপি ঠিকনা:',
 	'globalblocking-list-unblock' => 'অপসাৰণ',
+	'globalblocking-list-modify' => 'পৰিবৰ্তন',
+	'globalblocking-unblock-reason' => ' কাৰণ:',
+	'globalblocking-logentry-expiry' => 'ম্যাদ উকলিব $1',
+	'globalblockstatus' => 'গ্লোবাল বাধাৰ স্থানীয় অৱস্থা',
+	'action-globalunblock' => 'গোলকীয় বাধা আতৰাওক',
 );
 
 /** Asturian (Asturianu)
