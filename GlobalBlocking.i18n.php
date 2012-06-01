@@ -727,18 +727,78 @@ $messages['arz'] = array(
 
 /** Assamese (অসমীয়া)
  * @author Bishnu Saikia
+ * @author Gitartha.bordoloi
  */
 $messages['as'] = array(
+	'globalblocking-desc' => 'আই পি ঠিকনাসমূহ [[Special:GlobalBlockList|একাধিক ৱিকিত বাধা দিয়াত]] [[Special:GlobalBlock|অনুমতি দিয়ে]]',
+	'globalblocking-block' => 'এটা আই পি ঠিকনা গোলকীয়ভাৱে বাৰণ কৰক',
+	'globalblocking-modify-intro' => 'আপুনি এই প্ৰপত্ৰ ব্যৱহাৰ কৰি এই গোলকীয় বাৰণৰ ছেটিং সলাব পাৰে।',
+	'globalblocking-block-intro' => 'আপুনি এই পৃষ্ঠা ব্যৱহাৰি কৰি সকলো ৱিকিতে এটা আই পি ঠিকনা বাৰণ কৰিব পাৰিব।',
 	'globalblocking-block-reason' => 'কাৰণ:',
+	'globalblocking-block-otherreason' => 'অন্য/অতিৰিক্ত কাৰণ:',
 	'globalblocking-block-reasonotherlist' => 'অন্য কাৰণ',
+	'globalblocking-block-reason-dropdown' => '* প্ৰতিবন্ধকৰ সাধাৰণ কাৰণসমূহ
+** ক্ৰছ্‌ৱিকি স্পেমিং
+** ক্ৰছ্‌ৱিকি অভদ্ৰামি
+** ধ্বংসপ্ৰৱণতা',
+	'globalblocking-block-edit-dropdown' => 'প্ৰতিবন্ধকৰ কাৰণসমূহ সম্পাদনা কৰক',
 	'globalblocking-block-expiry' => 'ম্যাদ উকলিব:',
 	'globalblocking-block-expiry-other' => 'অন্যান্য ম্যাদ উকলাৰ সময়',
 	'globalblocking-block-expiry-otherfield' => 'অন্য সময়:',
+	'globalblocking-block-legend' => 'এটা আই পি ঠিকনাক গোলকীয়াভাৱে বাৰণ কৰক',
 	'globalblocking-block-options' => 'বিকল্পসমূহ',
 	'globalblocking-ipaddress' => 'আইপি ঠিকনা:',
+	'globalblocking-ipbanononly' => 'কেৱল বেনামী ব্যৱহাৰকাৰীক বাৰণ কৰক',
+	'globalblocking-block-errors' => 'এই {{PLURAL:$1|কাৰণৰ|কাৰণসমূহৰ}} বাবে আপোনাৰ প্ৰতিবন্ধক অসফল হৈছে:',
+	'globalblocking-block-ipinvalid' => 'আপুনি দিয়া আই পি ঠিকনাটো ($1) অবৈধ।
+অনুগ্ৰহ কৰি মন কৰক যে আপুনি সদস্যনাম লিখিব নোৱাৰে!',
+	'globalblocking-block-expiryinvalid' => 'আপুনি লিখা ম্যাদ উকলাৰ সময় ($1) অবৈধ।',
+	'globalblocking-block-submit' => 'এই আই পি ঠিকনাক গোলকীয়াভাৱে বাৰণ কৰক',
+	'globalblocking-modify-submit' => 'এই গোলকীয় বাধা পৰিৱৰ্তন কৰক',
+	'globalblocking-block-success' => 'আই পি ঠিকনা $1ক সকলো প্ৰকল্পতে সফলতাৰে বাধা দিয়া হৈছে।',
+	'globalblocking-modify-success' => '$1ৰ গোলকীয় বাধা সফলতাৰে পৰিৱৰ্তন কৰা হৈছে',
+	'globalblocking-block-successsub' => 'গোলকীয় বাধা সফল',
+	'globalblocking-modify-successsub' => "গোলকীয় বাধা সফলতাৰে পৰিৱৰ্তন কৰা হ'ল",
+	'globalblocking-block-alreadyblocked' => 'আই পি ঠিকনা $1ক ইতিমধ্যেই গোলকীয়াভাৱে বাৰণ কৰা হৈছে।
+[[Special:GlobalBlockList|গোলকীয় প্ৰতিবন্ধৰ তালিকা]]ত আপুনি বৰ্তমানৰ প্ৰতিবন্ধকসমূহ চাব পাৰিব, বা এই প্ৰপত্ৰ পুনৰ জমা কৰি কোনো প্ৰতিবন্ধকৰ ছেটিংসমূহ সলাব পাৰিব।',
+	'globalblocking-block-bigrange' => 'আপুনি নিৰ্দেশ কৰা পৰিসীমা ($1) বাৰণৰ বাবে অতি ডাঙৰ।
+আপুনি অন্ততঃ ৬৫,৫৩৬ ঠিকনা (/১৬ পৰিসীমা) বাৰণ কৰিব পাৰিব',
+	'globalblocking-search-legend' => 'গোলকীয় প্ৰতিবন্ধক অনুসন্ধান কৰক',
+	'globalblocking-search-ip' => 'আইপি ঠিকনা:',
+	'globalblocking-search-submit' => 'প্ৰতিবন্ধক অনুসন্ধান কৰক',
+	'globalblocking-list-ipinvalid' => 'আপুনি সন্ধান কৰা আইপি ঠিকনাটো ($1) অবৈধ।
+অনুগ্ৰহ কৰি এটা বৈধ আইপি ঠিকনা লিখক।',
+	'globalblocking-search-errors' => 'এই {{PLURAL:$1|কাৰণত|কাৰণসমূহৰ বাবে}}আপোনাৰ সন্ধান অসফল হৈছে:',
+	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') গোলকীয়ভাৱে বাৰণ কৰা
+[[Special:Contributions/\$4|\$4]] ''(\$5)''",
+	'globalblocking-list-expiry' => 'ম্যাদ উকলিব $1',
+	'globalblocking-list-anononly' => 'কেৱল বেনামী',
 	'globalblocking-list-unblock' => 'অপসাৰণ',
+	'globalblocking-list-whitelisted' => '$1ৰ দ্বাৰা স্থানীয়ভাৱে নিষ্ক্ৰিয়: $2',
+	'globalblocking-list-whitelist' => 'স্থানীয় অৱস্থা',
 	'globalblocking-list-modify' => 'পৰিবৰ্তন',
+	'globalblocking-list-noresults' => 'অনুৰোধ কৰা আই পি ঠিকনাটো বাৰণ কৰা হোৱা নাই।',
+	'globalblocking-goto-block' => 'এটা আই পি ঠিকনা গোলকীয়ভাৱে বাৰণ কৰক',
+	'globalblocking-goto-unblock' => 'এটা গোলকীয় বাধা আঁতৰাওক',
+	'globalblocking-goto-status' => 'এটা গোলকীয় বাধাৰ স্থানীয় অৱস্থা সলাওক',
+	'globalblocking-return' => 'গোলকীয় প্ৰতিবন্ধকৰ তালিকালৈ উভতি যাওক',
+	'globalblocking-notblocked' => 'আপুনি লিখা আই পি ঠিকনাটো ($1) গোলকীয়ভাৱে বাৰণ কৰা নাই।',
+	'globalblocking-unblock' => 'এটা গোলকীয় প্ৰতিবন্ধক আঁতৰাওক',
+	'globalblocking-unblock-ipinvalid' => 'আপুনি দিয়া আই পি ঠিকনাটো ($1) অবৈধ।
+অনুগ্ৰহ কৰি মন কৰক যে আপুনি সদস্যনাম লিখিব নোৱাৰে!',
+	'globalblocking-unblock-legend' => 'এটা গোলকীয় প্ৰতিবন্ধক আঁতৰাওক',
+	'globalblocking-unblock-submit' => 'গোলকীয় প্ৰতিবন্ধক আঁতৰাওক',
 	'globalblocking-unblock-reason' => ' কাৰণ:',
+	'globalblocking-unblock-unblocked' => "আপুনি '''$1''' আই পি ঠিকনাত থকা গোলকীয় প্ৰতিবন্ধক #$2 সফলতাৰে আঁতৰ কৰিলে",
+	'globalblocking-unblock-errors' => 'এই {{PLURAL:$1|কাৰণত|কাৰণসমূহৰ বাবে}} আপোনাৰ গোলকীয় প্ৰতিবন্ধক বাতিল অসফল হৈছে:',
+	'globalblocking-unblock-successsub' => 'গোলকীয় প্ৰতিবন্ধক সফলতাৰে আঁতৰ কৰা হৈছে',
+	'globalblocking-unblock-subtitle' => 'গোলকীয় প্ৰতিবন্ধক আঁতৰোৱা হৈছে',
+	'globalblocking-unblock-intro' => 'এই প্ৰপত্ৰ ব্যৱহাৰ কৰি আপুনি এটা গোলকীয় প্ৰতিবন্ধক আঁতৰাব পাৰিব।',
+	'globalblocking-whitelist-reason' => ' কাৰণ:',
+	'globalblocking-whitelist-status' => 'স্থানীয় অৱস্থা:',
+	'globalblocking-whitelist-statuslabel' => '{{SITENAME}}ত এই গোলকীয় প্ৰতিবন্ধক নিষ্ক্ৰিয় কৰক',
+	'globalblocking-whitelist-submit' => 'স্থানীয় অৱস্থা পৰিৱর্তন কৰক',
+	'globalblocking-whitelist-whitelisted' => "আপুনি {{SITENAME}}ত '''$1''' আই পি ঠিকনাৰ #$2 গোলকীয় প্ৰতিবন্ধক সফলতাৰে নিষ্ক্ৰিয় কৰিলে",
 	'globalblocking-logentry-expiry' => 'ম্যাদ উকলিব $1',
 	'globalblockstatus' => 'গ্লোবাল বাধাৰ স্থানীয় অৱস্থা',
 	'action-globalunblock' => 'গোলকীয় বাধা আতৰাওক',
