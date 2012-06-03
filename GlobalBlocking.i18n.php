@@ -763,6 +763,9 @@ $messages['as'] = array(
 [[Special:GlobalBlockList|গোলকীয় প্ৰতিবন্ধৰ তালিকা]]ত আপুনি বৰ্তমানৰ প্ৰতিবন্ধকসমূহ চাব পাৰিব, বা এই প্ৰপত্ৰ পুনৰ জমা কৰি কোনো প্ৰতিবন্ধকৰ ছেটিংসমূহ সলাব পাৰিব।',
 	'globalblocking-block-bigrange' => 'আপুনি নিৰ্দেশ কৰা পৰিসীমা ($1) বাৰণৰ বাবে অতি ডাঙৰ।
 আপুনি অন্ততঃ ৬৫,৫৩৬ ঠিকনা (/১৬ পৰিসীমা) বাৰণ কৰিব পাৰিব',
+	'globalblocking-list-intro' => "বৰ্তমান সক্ৰিয় হৈ থকা সকলো গোলকীয় প্ৰতিবন্ধকৰ তালিকা ইয়াত দিয়া হ'ল।
+কিছুমান প্ৰতিবন্ধক স্থানীয়ভাৱে নিষ্ক্ৰিয় বুলি চিহ্নিত কৰা হৈছে: ইয়াৰ অৰ্থ এই যে সেইবোৰে আন চাইটৰ কাম কৰি আছে, কিন্তু এজন স্থানীয় প্ৰশাসকে এই ৱিকিত সেইবোৰ নিষ্ক্ৰিয় কৰাৰ সিদ্ধান্ত লৈছে।",
+	'globalblocking-list' => 'গোলকীয়ভাৱে বাৰণ কৰা আইপি ঠিকনাৰ তালিকা',
 	'globalblocking-search-legend' => 'গোলকীয় প্ৰতিবন্ধক অনুসন্ধান কৰক',
 	'globalblocking-search-ip' => 'আইপি ঠিকনা:',
 	'globalblocking-search-submit' => 'প্ৰতিবন্ধক অনুসন্ধান কৰক',
@@ -794,14 +797,48 @@ $messages['as'] = array(
 	'globalblocking-unblock-successsub' => 'গোলকীয় প্ৰতিবন্ধক সফলতাৰে আঁতৰ কৰা হৈছে',
 	'globalblocking-unblock-subtitle' => 'গোলকীয় প্ৰতিবন্ধক আঁতৰোৱা হৈছে',
 	'globalblocking-unblock-intro' => 'এই প্ৰপত্ৰ ব্যৱহাৰ কৰি আপুনি এটা গোলকীয় প্ৰতিবন্ধক আঁতৰাব পাৰিব।',
+	'globalblocking-whitelist' => 'গোলকীয় প্ৰতিবন্ধকৰ স্থানীয় অৱস্থা',
+	'globalblocking-whitelist-notapplied' => 'এই ৱিকিত গোলকীয় প্ৰতিবন্ধক প্ৰয়োগ কৰা হোৱা নাই,
+গতিকে গোলকীয় প্ৰতিবন্ধকৰ স্থানীয় অৱস্থা পৰিৱৰ্তন কৰিব নোৱাৰি।',
+	'globalblocking-whitelist-legend' => 'স্থানীয় অৱস্থা পৰিৱর্তন কৰক',
 	'globalblocking-whitelist-reason' => ' কাৰণ:',
 	'globalblocking-whitelist-status' => 'স্থানীয় অৱস্থা:',
 	'globalblocking-whitelist-statuslabel' => '{{SITENAME}}ত এই গোলকীয় প্ৰতিবন্ধক নিষ্ক্ৰিয় কৰক',
 	'globalblocking-whitelist-submit' => 'স্থানীয় অৱস্থা পৰিৱর্তন কৰক',
 	'globalblocking-whitelist-whitelisted' => "আপুনি {{SITENAME}}ত '''$1''' আই পি ঠিকনাৰ #$2 গোলকীয় প্ৰতিবন্ধক সফলতাৰে নিষ্ক্ৰিয় কৰিলে",
+	'globalblocking-whitelist-dewhitelisted' => "আপুনি {{SITENAME}}ত '''$1''' আই পি ঠিকনাৰ #$2 গোলকীয় প্ৰতিবন্ধক সফলতাৰে পুনঃসক্ৰিয় কৰিলে।",
+	'globalblocking-whitelist-successsub' => "স্থানীয় অৱস্থা সফলতাৰে পৰিৱৰ্তন কৰা হ'ল",
+	'globalblocking-whitelist-nochange' => 'আপুনি এই প্ৰতিবন্ধকৰ স্থানীয় অৱস্থাৰ পৰিৱৰ্তন কৰা নাই।
+[[Special:GlobalBlockList|গোলকীয় প্ৰতিবন্ধকৰ তালিকালৈ ঘূৰি যাওক]]।',
+	'globalblocking-whitelist-errors' => "{{PLURAL:$1|টা কাৰণত|টা কাৰণত}} আপুনি গোলকীয় প্ৰতিবন্ধকটোৰ স্থানীয় অৱস্থাত কৰা পৰিৱৰ্তন সফল নহ'ল:",
+	'globalblocking-whitelist-intro' => 'আপুনি এই প্ৰপত্ৰ ব্যৱহাৰ কৰি এটা গোলকীয় প্ৰতিবন্ধকৰ স্থানীয় অৱস্থা সলাব পাৰিব।
+যদি এটা গোলকীয় প্ৰতিবন্ধক এই ৱিকিত নিষ্ক্ৰিয় হৈ আছে, তেন্তে প্ৰভাৱিত আইপি ঠিকনাৰ ব্যৱহাৰকাৰীসকলে কোনো অসুবিধা নোহোৱাকৈ সম্পাদনা কৰিব পাৰিব।
+[[Special:GlobalBlockList|গোলকীয় প্ৰতিবন্ধকৰ তালিকালৈ ঘূৰি যাওক]]।',
+	'globalblocking-blocked-nopassreset' => 'আপুনি ব্যৱহাৰকাৰীৰ গুপ্তশব্দ ন-কৈ বহুৱাব নোৱাৰে কাৰণ আপোনাক গোলকীয়ভাৱে বাৰণ কৰা হৈছে।',
+	'globalblocking-logpage' => "গোলকীয় প্ৰতিবন্ধক ল'গ",
+	'globalblocking-block-logentry' => 'ম্যাদ উকলা সময় $2 সহ গোলকীয়ভাৱে বাৰণ কৰা [[$1]]',
+	'globalblocking-block2-logentry' => 'গোলকীয়ভাৱে বাৰণ কৰা [[$1]] ($2)',
+	'globalblocking-unblock-logentry' => "[[$1]]ৰ গোলকীয় প্ৰতিবন্ধক আঁতৰোৱা হ'ল",
+	'globalblocking-whitelist-logentry' => "[[$1]]ত গোলকীয় প্ৰতিবন্ধক স্থানীয়ভাৱে নিষ্ক্ৰিয় কৰা হ'ল",
+	'globalblocking-dewhitelist-logentry' => "[[$1]]ত গোলকীয় প্ৰতিবন্ধক স্থানীয়ভাৱে পুনঃসক্ৰিয় কৰা হ'ল",
+	'globalblocking-modify-logentry' => "[[$1]]ৰ গোলকীয় প্ৰতিবন্ধক পৰিৱৰ্তন কৰা হ'ল ($2)",
 	'globalblocking-logentry-expiry' => 'ম্যাদ উকলিব $1',
+	'globalblocking-logentry-noexpiry' => 'কোনো ম্যাদ উকলা সময় ঠিক কৰা হোৱা নাই',
+	'globalblocking-loglink' => 'আইপি ঠিকনা $1ক গোলকীয়ভাৱে বাৰণ কৰা হৈছে ([[{{#Special:GlobalBlockList}}/$1|সবিশেষ বিৱৰণ]])।',
+	'globalblocking-showlog' => 'এই আইপি ঠিকনাটোক পূৰ্বতে অৱৰোধ কৰা হৈছিল।
+তথ্যসূত্ৰ হিছাপে তলত অৱৰোধ ল’গ দিয়া হ’ল:',
+	'globalblocklist' => 'গোলকীয়ভাৱে বাৰণ কৰা আইপি ঠিকনাৰ তালিকা',
+	'globalblock' => 'এটা আইপি ঠিকনা গোলকীয়ভাৱে বাৰণ কৰক',
 	'globalblockstatus' => 'গ্লোবাল বাধাৰ স্থানীয় অৱস্থা',
+	'removeglobalblock' => 'এটা গোলকীয় প্ৰতিবন্ধক আঁতৰাওক',
+	'right-globalblock' => 'গোলকীয় প্ৰতিবন্ধক সৃষ্টি কৰক',
+	'action-globalblock' => 'গোলকীয় প্ৰতিবন্ধক সৃষ্টি কৰক',
+	'right-globalunblock' => 'গোলকীয় প্ৰতিবন্ধক আঁতৰাওক',
 	'action-globalunblock' => 'গোলকীয় বাধা আতৰাওক',
+	'right-globalblock-whitelist' => 'স্থানীয়ভাৱে গোলকীয় প্ৰতিবন্ধক নিষ্ক্ৰিয় কৰক',
+	'action-globalblock-whitelist' => 'স্থানীয়ভাৱে গোলকীয় প্ৰতিবন্ধক নিষ্ক্ৰিয় কৰক',
+	'right-globalblock-exempt' => 'গোলকীয় প্ৰতিবন্ধক বাইপাছ কৰক',
+	'action-globalblock-exempt' => 'গোলকীয় প্ৰতিবন্ধক বাইপাছ কৰক',
 );
 
 /** Asturian (Asturianu)
@@ -2937,6 +2974,18 @@ seega ei saa globaalsete blokeeringute kohalikku olekut muuta.',
 	'globalblocking-whitelist-intro' => 'Seda vormi saab kasutada globaalse blokeeringu kohaliku oleku muutmiseks.
 Kui globaalne blokeering on selles vikis välja lülitatud, saavad kasutajad selle IP-aadressi alt tavapäraselt toimetada.
 [[Special:GlobalBlockList|Naase globaalsete blokeeringute nimekirja]].',
+	'globalblocking-ipblocked' => "'''Sinu IP-aadress on kõigis vikides blokeeritud.'''
+
+Blokeerija: \$1 (\$2).
+Põhjus: ''\$3''.
+
+* Blokeeringu algusaeg: \$4
+* Blokeeringu aegumistähtaeg: \$5
+
+Et blokeeringuga seonduvat arutada, saad ühendust võta kasutajaga \$1.
+Funktsiooni \"{{int:emailuser}}\" saad kasutada vaid siis, kui sinu [[Special:Preferences|konto eelistustes]] on määratud sobiv e-posti aadressi ja kui sul pole keelatud seda kasutada.
+Praegu on sinu IP-aadress \$6.
+Palun lisa kõigi võimalike järelepärimiste juurde ülaltoodud üksikasjad.",
 	'globalblocking-blocked-nopassreset' => 'Sa ei saa kasutaja salasõna lähtestada, sest oled globaalselt blokeeritud.',
 	'globalblocking-logpage' => 'Globaalne blokeerimislogi',
 	'globalblocking-logpagetext' => 'Siin logis on selles vikis üles seatud ja eemaldatud globaalsed blokeeringud.
