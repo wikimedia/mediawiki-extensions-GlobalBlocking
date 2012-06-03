@@ -1992,7 +1992,7 @@ Noder nad oes modd defnyddio enw defnyddiwr os gwelwch yn dda!",
 	'globalblocking-logpage' => 'Lòg blocio cydwici',
 );
 
-/** Danish (Dansk)
+/** Danish (dansk)
  * @author Masz
  * @author Peter Alberti
  * @author Sarrus
@@ -2885,7 +2885,7 @@ El registro de bloqueos se proporciona a continuación como referencia:',
 	'action-globalblock-exempt' => 'eludir bloqueos globales',
 );
 
-/** Estonian (Eesti)
+/** Estonian (eesti)
  * @author Avjoska
  * @author Jaan513
  * @author Ker
@@ -3181,7 +3181,7 @@ $messages['fa'] = array(
 	'action-globalblock-exempt' => 'کنارگذاشتن قطع دسترسی‌های سراسری',
 );
 
-/** Finnish (Suomi)
+/** Finnish (suomi)
  * @author Agony
  * @author Cimon Avaro
  * @author Crt
