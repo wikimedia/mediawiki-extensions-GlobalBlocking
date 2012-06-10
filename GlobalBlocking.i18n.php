@@ -3931,6 +3931,7 @@ Do chunnt e Uuszug us em Benutzersperr-Logbuech:',
 );
 
 /** Gujarati (ગુજરાતી)
+ * @author Ashok modhvadia
  * @author Dsvyas
  * @author KartikMistry
  * @author Sushant savla
@@ -4003,7 +4004,7 @@ $messages['gu'] = array(
 	'globalblocking-unblock-successsub' => 'વૈશ્વીક પ્રતિબંધ સફળતા પૂર્વક હટાવાયો',
 	'globalblocking-unblock-subtitle' => 'વૈશ્વીક પ્રતિબંધ હટાવાય છે',
 	'globalblocking-unblock-intro' => 'તમે આ ફોર્મ વાપરી વૈશ્વીક પ્રતિબંધ હટાવી શકો છો',
-	'globalblocking-whitelist' => 'વૈશ્વીક પ્રતિબંધોનો સ્થાનીય સ્તર',
+	'globalblocking-whitelist' => 'વૈશ્વીક પ્રતિબંધોની સ્થાનીય સ્થિતિ',
 	'globalblocking-whitelist-notapplied' => 'આ વિકિ પર વૈશ્વીક પ્રતિબંધ લગાવાયા નથી
 આથી વૈશ્વીક પ્રતિબંધોનું સ્થનીય સ્થિતી સુધારી નહીં શકાય',
 	'globalblocking-whitelist-legend' => 'સ્થાનિક સ્થિતિ બદલો',
@@ -4036,7 +4037,7 @@ $messages['gu'] = array(
 રોકા લગાવાયેલા IP એડ્રેસની યાદિ આ મુજબ છે',
 	'globalblocklist' => 'વૈશ્વીક રીતે પ્રતિબંધીત IP એડ્રેસની યાદી',
 	'globalblock' => 'IP ને વૈશ્વિક રીતે પ્રતિબંધીત કરો',
-	'globalblockstatus' => 'વૈશ્વીક પ્રતિબંધોનો સ્થાનીય સ્તર',
+	'globalblockstatus' => 'વૈશ્વીક પ્રતિબંધોની સ્થાનીય સ્થિતિ',
 	'removeglobalblock' => 'વૈશ્વીક પ્રતિબંધ હટાવો',
 	'right-globalblock' => 'વૈશ્વીક પ્રતિબંધો બનાવો',
 	'action-globalblock' => 'વૈશ્વીક પ્રતિબંધો બનાવો',
@@ -5442,8 +5443,8 @@ $messages['ja'] = array(
 現在のブロックの状態は[[Special:GlobalBlockList|グローバルブロック一覧]]で確認できます。
 また、このフォームから再投稿することで、ブロック設定を修正できます。',
 	'globalblocking-block-bigrange' => '指定したレンジ ($1) が広すぎるためブロックできません。ブロックできるアドレスの最大数は 65,536 (/16 レンジ) です。',
-	'globalblocking-list-intro' => 'これは現在有効なグローバルブロックの全一覧です。
-いくつかは「ローカルで無効」とマークされています。このマークのあるグローバルブロックは他のサイトでは有効ですが、このウィキではローカル管理者が無効とすることにしたことを意味します。',
+	'globalblocking-list-intro' => 'これは現在有効なすべてのグローバルブロックの一覧です。
+「ローカルで無効」の印が付いたブロックがいくつかあります。この印があるグローバルブロックは他のサイトでは有効ですが、このウィキではローカル管理者が無効とすることにしたことを意味します。',
 	'globalblocking-list' => 'グローバルブロックを受けているIPアドレス一覧',
 	'globalblocking-search-legend' => 'グローバルブロックの検索',
 	'globalblocking-search-ip' => 'IPアドレス:',
@@ -5469,7 +5470,7 @@ $messages['ja'] = array(
 	'globalblocking-unblock-legend' => 'グローバルブロックを解除',
 	'globalblocking-unblock-submit' => 'グローバルブロックを解除',
 	'globalblocking-unblock-reason' => '理由：',
-	'globalblocking-unblock-unblocked' => "IPアドレス '''$1''' に対するグローバルブロック #$2 を解除に成功しました。",
+	'globalblocking-unblock-unblocked' => "IPアドレス '''$1''' に対するグローバルブロック #$2 を解除しました",
 	'globalblocking-unblock-errors' => '実施しようとしたグローバルブロックの解除は以下の{{PLURAL:$1|理由}}により実行できませんでした:',
 	'globalblocking-unblock-successsub' => 'グローバルブロックの解除に成功',
 	'globalblocking-unblock-subtitle' => 'グローバルブロックを解除中',
@@ -6105,6 +6106,7 @@ $messages['ku-latn'] = array(
 	'globalblocking-block-reason' => 'Sedem:',
 	'globalblocking-block-reasonotherlist' => 'Sedemekî din',
 	'globalblocking-block-expiry-otherfield' => 'Demeka din:',
+	'globalblocking-block-options' => 'Vebijêrk:',
 	'globalblocking-block-submit' => "Vê IP'yê li her cihî asteng bike",
 	'globalblocking-search-ip' => "Adresê IP'ê:",
 	'globalblocking-unblock-reason' => 'Sedem:',
