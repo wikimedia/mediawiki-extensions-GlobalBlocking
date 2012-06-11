@@ -2290,6 +2290,7 @@ $messages['diq'] = array(
 	'globalblocking-block-legend' => "adresa IP'yi bı global bloke bıker",
 	'globalblocking-block-options' => 'Tercihi:',
 	'globalblocking-ipaddress' => "Adresa IP'i:",
+	'globalblocking-ipbanononly' => 'Anonim karbera tenya bloqe ke',
 	'globalblocking-block-errors' => 'blokekerdış nêbı, semedê no {{PLURAL:$1|sebeb ra|sebeban ra}}:',
 	'globalblocking-block-ipinvalid' => 'IP addresa ke şıma pê keweni cı ($1) nemeqbulo.
 xo vir ra mekerê ke şıma nêeşkeni pê nameyê yew karberi cıkewi!',
@@ -2375,10 +2376,14 @@ Logê bloki qe referansi cor de mocnayiyo',
 	'globalblock' => 'Yew adresê IPyî wîkîyê hemî de blok bike',
 	'globalblockstatus' => 'Statuyê lokaliyê blokanê hemî',
 	'removeglobalblock' => 'Yew global blok wedarne',
-	'right-globalblock' => 'Blokanê globalî bike',
+	'right-globalblock' => 'Global bloqe bıke',
+	'action-globalblock' => 'Global bloqe bıke',
 	'right-globalunblock' => 'Blokanê globalî wedarne',
+	'action-globalunblock' => 'Blokanê globalî wedarne',
 	'right-globalblock-whitelist' => 'Lokal wîkî de blokanê globalî biqefilne',
+	'action-globalblock-whitelist' => 'Lokal blokanê globalî biqefilne',
 	'right-globalblock-exempt' => 'Global blokî bypass bike',
+	'action-globalblock-exempt' => 'Global blokî bypass bike',
 );
 
 /** Lower Sorbian (Dolnoserbski)
