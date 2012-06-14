@@ -853,7 +853,7 @@ $messages['as'] = array(
 	'action-globalblock-exempt' => 'গোলকীয় প্ৰতিবন্ধক বাইপাছ কৰক',
 );
 
-/** Asturian (Asturianu)
+/** Asturian (asturianu)
  * @author Esbardu
  * @author Xuacu
  */
@@ -984,7 +984,7 @@ El rexistru de bloqueos s'ufre darréu pa referencia:",
 	'action-globalblock-exempt' => 'saltar los bloqueos globales',
 );
 
-/** Azerbaijani (Azərbaycanca)
+/** Azerbaijani (azərbaycanca)
  * @author Cekli829
  * @author Vago
  * @author Vugar 1981
@@ -1121,7 +1121,7 @@ $messages['ba'] = array(
 	'right-globalblock-exempt' => 'Дөйөм биктәрҙе урап үтеү',
 );
 
-/** Belarusian (Беларуская)
+/** Belarusian (беларуская)
  * @author Тест
  */
 $messages['be'] = array(
@@ -1263,7 +1263,7 @@ $messages['be-tarask'] = array(
 	'action-globalblock-exempt' => 'ігнараваньне глябальных блякаваньняў',
 );
 
-/** Bulgarian (Български)
+/** Bulgarian (български)
  * @author DCLXVI
  * @author Spiritia
  * @author Turin
@@ -1442,7 +1442,7 @@ $messages['bn'] = array(
 	'right-globalblock-exempt' => 'গ্লোবাল বাধা বাইপাস করো',
 );
 
-/** Breton (Brezhoneg)
+/** Breton (brezhoneg)
  * @author Fohanno
  * @author Fulup
  * @author Gwendal
@@ -1563,7 +1563,7 @@ A-is emañ marilh ar stankadennoù :",
 	'action-globalblock-exempt' => "Mont dreist d'ar stankadennoù hollek",
 );
 
-/** Bosnian (Bosanski)
+/** Bosnian (bosanski)
  * @author CERminator
  * @author DzWiki
  */
@@ -1676,7 +1676,7 @@ Zapisnik blokiranja je naveden ispod kao referenca:',
 	'right-globalblock-exempt' => 'Zaobilaženje globalnih blokada',
 );
 
-/** Catalan (Català)
+/** Catalan (català)
  * @author Aleator
  * @author Paucabot
  * @author SMP
@@ -1805,7 +1805,7 @@ $messages['ce'] = array(
 	'globalblockstatus' => 'Хlоттайелчаьрца долу хьал, масхьара сацорца',
 );
 
-/** Sorani (کوردی) */
+/** Sorani Kurdish (کوردی) */
 $messages['ckb'] = array(
 	'globalblocking-block-reason' => 'هۆکار:',
 	'globalblocking-block-reasonotherlist' => 'هۆکاری دیکە',
@@ -1813,7 +1813,7 @@ $messages['ckb'] = array(
 	'globalblocking-whitelist-reason' => 'هۆکار:',
 );
 
-/** Czech (Česky)
+/** Czech (česky)
  * @author Li-sung
  * @author Mormegil
  */
@@ -2515,7 +2515,7 @@ Protokol blokěrowanjow jo dołojce pódał slědujuce ako referencu:',
 	'action-globalblock-exempt' => 'globalne blokěrowanja wobejś',
 );
 
-/** Ewe (Eʋegbe)
+/** Ewe (eʋegbe)
  * @author Natsubee
  */
 $messages['ee'] = array(
@@ -2761,7 +2761,7 @@ Jen la protokolo pri forbaroj sube por via referenco:',
 	'right-globalblock-exempt' => 'Preterigi ĝeneralajn forbarojn',
 );
 
-/** Spanish (Español)
+/** Spanish (español)
  * @author Aleator
  * @author Armando-Martin
  * @author Crazymadlover
@@ -3033,7 +3033,7 @@ Allpool on toodud blokeerimislogi:',
 	'action-globalblock-exempt' => 'globaalsetest blokeeringutest mööduda',
 );
 
-/** Basque (Euskara)
+/** Basque (euskara)
  * @author An13sa
  * @author Joxemai
  * @author Kobazulo
@@ -3317,7 +3317,7 @@ Alla on ote estolokista.',
 	'right-globalblock-exempt' => 'Ohittaa globaaliestot',
 );
 
-/** Faroese (Føroyskt)
+/** Faroese (føroyskt)
  * @author EileenSanda
  */
 $messages['fo'] = array(
@@ -3390,7 +3390,7 @@ Sperringarloggurin er her niðanfyri fyri ávísing:',
 	'globalblock' => 'Blokkera IP adressu globalt',
 );
 
-/** French (Français)
+/** French (français)
  * @author Crochet.david
  * @author Gomoko
  * @author Grondin
@@ -3530,7 +3530,7 @@ Le journal des blocages est disponible ci-dessous :',
 	'action-globalblock-exempt' => 'passer outre les blocages globaux',
 );
 
-/** Franco-Provençal (Arpetan)
+/** Franco-Provençal (arpetan)
  * @author Cedric31
  * @author ChrisPtDe
  */
@@ -3645,7 +3645,7 @@ Lo jornal des blocâjos est disponiblo ce-desot :',
 	'right-globalblock-exempt' => 'Passar per-dessus los blocâjos globâls',
 );
 
-/** Friulian (Furlan)
+/** Friulian (furlan)
  * @author Klenje
  */
 $messages['fur'] = array(
@@ -4319,7 +4319,7 @@ $messages['hil'] = array(
 	'globalblocking-unblock-reason' => 'Rason:',
 );
 
-/** Croatian (Hrvatski)
+/** Croatian (hrvatski)
  * @author CERminator
  * @author Dalibor Bosits
  * @author Ex13
@@ -4626,7 +4626,7 @@ Tanpri note ke ou pa kapab antre yon non itilizatè!',
 	'right-globalblock-whitelist' => 'Dezame blokaj global yo lokalman',
 );
 
-/** Hungarian (Magyar)
+/** Hungarian (magyar)
  * @author Dani
  * @author Dj
  * @author Dorgan
@@ -4747,7 +4747,7 @@ A blokkolási napló alább látható tájékoztatásul:',
 	'action-globalblock-exempt' => 'globális blokkok figyelmen kívül hagyása',
 );
 
-/** Interlingua (Interlingua)
+/** Interlingua (interlingua)
  * @author McDutchie
  */
 $messages['ia'] = array(
@@ -5147,7 +5147,7 @@ $messages['io'] = array(
 	'globalblocking-whitelist-reason' => 'Motivo:',
 );
 
-/** Icelandic (Íslenska)
+/** Icelandic (íslenska)
  * @author S.Örvarr.S
  * @author Snævar
  */
@@ -5278,7 +5278,7 @@ Síðasta færsla vistfangsins úr bönnunarskrá er sýnd hér fyrir neðan til
 	'action-globalblock-exempt' => 'Hunsa altæk bönn',
 );
 
-/** Italian (Italiano)
+/** Italian (italiano)
  * @author Beta16
  * @author BrokenArrow
  * @author Civvì
@@ -6399,7 +6399,7 @@ Alle globale blokkades stoan in de [[Special:GlobalBlockList|liest met globale b
 	'action-globalblock-exempt' => 'loup wikiwiej bloks óm',
 );
 
-/** Lithuanian (Lietuvių)
+/** Lithuanian (lietuvių)
  * @author Eitvys200
  * @author Garas
  * @author Homo
@@ -6456,7 +6456,7 @@ Atkreipkite dėmesį, kad negalima įvesti vartotojo vardo!',
 	'removeglobalblock' => 'Pašalinti pasaulini blokavimą',
 );
 
-/** Latvian (Latviešu)
+/** Latvian (latviešu)
  * @author Geimeris
  * @author GreenZeb
  * @author Papuass
@@ -6516,7 +6516,7 @@ $messages['mhr'] = array(
 	'globalblocking-unblock-reason' => 'Амал:',
 );
 
-/** Macedonian (Македонски)
+/** Macedonian (македонски)
  * @author Bjankuloski06
  * @author Brest
  */
@@ -6778,7 +6778,7 @@ $messages['ml'] = array(
 	'action-globalblock-exempt' => 'ആഗോള തടയലുകൾ പാർശ്വവത്കരിച്ചു പോവുക',
 );
 
-/** Mongolian (Монгол)
+/** Mongolian (монгол)
  * @author Chinneeb
  */
 $messages['mn'] = array(
@@ -7422,7 +7422,7 @@ Het blokkeerlogboek wordt hieronder weergegeven:',
 	'action-globalblock-exempt' => 'globale blokkades te omzeilen',
 );
 
-/** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
+/** Norwegian Nynorsk (‪norsk (nynorsk)‬)
  * @author Eirik
  * @author Harald Khan
  * @author Jon Harald Søby
@@ -7533,7 +7533,7 @@ $messages['nov'] = array(
 	'globalblocking-unblock-reason' => 'Resone:',
 );
 
-/** Occitan (Occitan)
+/** Occitan (occitan)
  * @author Cedric31
  */
 $messages['oc'] = array(
@@ -7793,7 +7793,7 @@ $messages['pfl'] = array(
 	'globalblocking-list-modify' => 'änere',
 );
 
-/** Polish (Polski)
+/** Polish (polski)
  * @author BeginaFelicysym
  * @author Derbeth
  * @author Lampak
@@ -8218,7 +8218,7 @@ $messages['ps'] = array(
 	'action-globalunblock' => 'نړېوال بنديزونه غورځول',
 );
 
-/** Portuguese (Português)
+/** Portuguese (português)
  * @author 555
  * @author GKnedo
  * @author Giro720
@@ -8340,7 +8340,7 @@ Para sua referência, é apresentado abaixo o registo de bloqueios:',
 	'right-globalblock-exempt' => 'Contornar bloqueios globais',
 );
 
-/** Brazilian Portuguese (Português do Brasil)
+/** Brazilian Portuguese (português do Brasil)
  * @author Brunoy Anastasiya Seryozhenko
  * @author Eduardo.mps
  * @author Helder.wiki
@@ -8484,7 +8484,7 @@ Hark'ay hallch'ataqa kaypim rikunki willasunaykipaq:",
 	'globalblockstatus' => "Sapsi hark'asqakunap kayllapi kachkaynin",
 );
 
-/** Romanian (Română)
+/** Romanian (română)
  * @author Cin
  * @author Firilacroco
  * @author KlaudiuMihaila
@@ -8587,7 +8587,7 @@ Jurnalul blocărilor este disponibil mai jos:',
 	'right-globalblock-exempt' => 'Ocolește blocările globale',
 );
 
-/** Tarandíne (Tarandíne)
+/** tarandíne (tarandíne)
  * @author Joetaras
  */
 $messages['roa-tara'] = array(
@@ -8698,7 +8698,7 @@ L'archivije de le blocche t'avène date aqquà sotte pe conzultazione:",
 	'right-globalblock-exempt' => 'Zumbe le blocche globale',
 );
 
-/** Russian (Русский)
+/** Russian (русский)
  * @author DR
  * @author Dim Grits
  * @author Ferrer
@@ -8951,7 +8951,7 @@ $messages['sa'] = array(
 	'globalblocking-whitelist-reason' => 'कारणम् :',
 );
 
-/** Sakha (Саха тыла)
+/** Sakha (саха тыла)
  * @author HalanTul
  */
 $messages['sah'] = array(
@@ -9063,7 +9063,7 @@ $messages['sah'] = array(
 	'right-globalblock-exempt' => 'Үрдүк таһымҥа бобууну тумнуу',
 );
 
-/** Sardinian (Sardu)
+/** Sardinian (sardu)
  * @author Marzedu
  */
 $messages['sc'] = array(
@@ -9071,7 +9071,7 @@ $messages['sc'] = array(
 	'globalblocking-unblock-reason' => 'Motivu:',
 );
 
-/** Sicilian (Sicilianu)
+/** Sicilian (sicilianu)
  * @author Aushulz
  * @author Gmelfi
  * @author Melos
@@ -9255,7 +9255,7 @@ $messages['si'] = array(
 	'right-globalblock-exempt' => 'ගෝලීය වාරණ මගහරින්න',
 );
 
-/** Slovak (Slovenčina)
+/** Slovak (slovenčina)
  * @author Helix84
  * @author Teslaton
  */
@@ -9382,7 +9382,7 @@ Dolu je pre informáciu záznam blokovaní:',
 	'action-globalblock-exempt' => 'obchádzať globálne blokovania',
 );
 
-/** Slovenian (Slovenščina)
+/** Slovenian (slovenščina)
  * @author Dbc334
  * @author Irena Plahuta
  * @author Smihael
@@ -9514,7 +9514,7 @@ Dnevnik blokiranja je na voljo spodaj:',
 	'action-globalblock-exempt' => 'izmikanje globalnim blokadam',
 );
 
-/** Albanian (Shqip)
+/** Albanian (shqip)
  * @author Mikullovci11
  * @author Olsi
  */
@@ -9629,7 +9629,7 @@ Regjistri i bllokimit është poshtë për referncë:',
 	'right-globalblock-exempt' => 'Anashkaloni bllokimet globale',
 );
 
-/** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (‪српски (ћирилица)‬)
  * @author FriedrickMILBarbarossa
  * @author Rancher
  * @author Sasa Stefanovic
@@ -9731,7 +9731,7 @@ $messages['sr-ec'] = array(
 	'right-globalblock-exempt' => 'заобилажење глобалних блокада',
 );
 
-/** Serbian (Latin script) (‪Srpski (latinica)‬)
+/** Serbian (Latin script) (‪srpski (latinica)‬)
  * @author FriedrickMILBarbarossa
  * @author Michaello
  * @author Жељко Тодоровић
@@ -9893,7 +9893,7 @@ $messages['su'] = array(
 	'globalblocking-whitelist-reason' => 'Alesan:',
 );
 
-/** Swedish (Svenska)
+/** Swedish (svenska)
  * @author Ainali
  * @author Boivie
  * @author Diupwijk
@@ -10211,7 +10211,7 @@ $messages['te'] = array(
 	'right-globalblock-exempt' => 'సార్వత్రిక నిరోధాలని తప్పించగలడం',
 );
 
-/** Tetum (Tetun)
+/** Tetum (tetun)
  * @author MF-Warburg
  */
 $messages['tet'] = array(
@@ -10221,7 +10221,7 @@ $messages['tet'] = array(
 	'globalblocking-unblock-reason' => 'Motivu:',
 );
 
-/** Tajik (Cyrillic script) (Тоҷикӣ)
+/** Tajik (Cyrillic script) (тоҷикӣ)
  * @author Ibrahim
  */
 $messages['tg-cyrl'] = array(
@@ -10291,7 +10291,7 @@ $messages['tg-cyrl'] = array(
 	'right-globalblock-whitelist' => 'Ғайри фаъол кардани қатъи дастрасиҳои саросарӣ ба таври маҳаллӣ',
 );
 
-/** Tajik (Latin script) (Tojikī)
+/** Tajik (Latin script) (tojikī)
  * @author Liangent
  */
 $messages['tg-latn'] = array(
@@ -10605,7 +10605,7 @@ Ibinigay sa ibaba ang talaan ng paghadlang upang masangguni:',
 	'right-globalblock-exempt' => 'Laktawan ang mga pagharang na pandaigdigan',
 );
 
-/** Толышә зывон (Толышә зывон)
+/** толышә зывон (толышә зывон)
  * @author Гусейн
  */
 $messages['tly'] = array(
@@ -10730,7 +10730,7 @@ Engelleme günlüğü referans için aşağıda verilmiştir:',
 	'right-globalblock-exempt' => 'Küresel engellemeleri atla',
 );
 
-/** Tatar (Cyrillic script) (Татарча)
+/** Tatar (Cyrillic script) (татарча)
  * @author Ильнар
  */
 $messages['tt-cyrl'] = array(
@@ -10759,7 +10759,7 @@ $messages['tyv'] = array(
 	'globalblocking-unblock-reason' => 'Чылдагаан:',
 );
 
-/** Ukrainian (Українська)
+/** Ukrainian (українська)
  * @author AS
  * @author Ahonc
  * @author Dim Grits
@@ -10884,7 +10884,7 @@ $messages['ur'] = array(
 	'globalblocking-whitelist-reason' => 'وجہ:',
 );
 
-/** Vèneto (Vèneto)
+/** vèneto (vèneto)
  * @author Candalua
  */
 $messages['vec'] = array(
@@ -11392,7 +11392,7 @@ $1',
 	'right-globalblock-whitelist' => '響本地停用全域封鎖',
 );
 
-/** Simplified Chinese (‪中文(简体)‬)
+/** Simplified Chinese (‪中文（简体）‬)
  * @author Anakmalaysia
  * @author Bencmq
  * @author Breawycker
@@ -11531,7 +11531,7 @@ $1',
 	'action-globalblock-exempt' => '绕过全域封锁',
 );
 
-/** Traditional Chinese (‪中文(繁體)‬)
+/** Traditional Chinese (‪中文（繁體）‬)
  * @author Alexsh
  * @author Anakmalaysia
  * @author Gaoxuewei
