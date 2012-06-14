@@ -8035,9 +8035,13 @@ Për vëdde tùit ij blocagi globaj ativ, a peul vëdde la [[Special:GlobalBlock
 	'globalblockstatus' => 'Statù local dij blocagi globaj',
 	'removeglobalblock' => 'Gavé un blocagi global',
 	'right-globalblock' => 'Fé dij blocagi globaj',
+	'action-globalblock' => 'fé dij blocagi globaj',
 	'right-globalunblock' => 'Gavé dij blocagi globaj',
+	'action-globalunblock' => 'gavé dij blocagi globaj',
 	'right-globalblock-whitelist' => 'Disabilité dij blocagi globaj localment',
-	'right-globalblock-exempt' => 'Passé dzora a ij blocagi globaj',
+	'action-globalblock-whitelist' => 'disabilité dij blocagi globaj localment',
+	'right-globalblock-exempt' => 'Passé dzora ai blocagi globaj',
+	'action-globalblock-exempt' => 'passé dzora ai blocagi globaj',
 );
 
 /** Western Punjabi (پنجابی)
