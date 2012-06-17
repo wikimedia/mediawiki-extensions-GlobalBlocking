@@ -1015,6 +1015,7 @@ $messages['az'] = array(
 /** Bashkir (Башҡортса)
  * @author Assele
  * @author Haqmar
+ * @author ҒатаУлла
  */
 $messages['ba'] = array(
 	'globalblocking-desc' => 'IP адрестарҙы [[Special:GlobalBlockList|бер нисә викила дөйөм бикләү]] [[Special:GlobalBlock|мөмкинлеге бирә]]',
@@ -1119,9 +1120,13 @@ $messages['ba'] = array(
 	'globalblockstatus' => 'Дөйөм биктәрҙең урындағы торошо',
 	'removeglobalblock' => 'Дөйөм бикте алырға',
 	'right-globalblock' => 'Дөйөм бикләү',
+	'action-globalblock' => 'Дөйөм бикләү',
 	'right-globalunblock' => 'Дөйөм биктәрҙе алыу',
+	'action-globalunblock' => 'Дөйөм биктәрҙе алыу',
 	'right-globalblock-whitelist' => 'Дөйөм биктәрҙе урында һүндереү',
+	'action-globalblock-whitelist' => 'Дөйөм биктәрҙе урында һүндереү',
 	'right-globalblock-exempt' => 'Дөйөм биктәрҙе урап үтеү',
+	'action-globalblock-exempt' => 'Дөйөм биктәрҙе урап үтеү',
 );
 
 /** Belarusian (беларуская)
