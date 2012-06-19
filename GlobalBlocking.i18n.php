@@ -10543,6 +10543,7 @@ $messages['tl'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Ibang oras/panahon:',
 	'globalblocking-block-legend' => 'Pandaigdigang harangin ang isang adres ng IP',
 	'globalblocking-block-options' => 'Mga pagpipilian:',
+	'globalblocking-ipaddress' => 'Tirahan ng IP:',
 	'globalblocking-block-errors' => 'Hindi nagtagumpay ang pagharang/paghadlang mo, dahil sa sumusunod na mga {{PLURAL:$1|dahilan|mga dahilan}}:',
 	'globalblocking-block-ipinvalid' => 'Hindi tanggap ang ipinasok mong adres ng IP ($1).
 Pakitaandaang hindi mo maipapasok ang isang pangalan ng tagagamit!',
@@ -10629,9 +10630,13 @@ Ibinigay sa ibaba ang talaan ng paghadlang upang masangguni:',
 	'globalblockstatus' => 'Katutubo/lokal na kalagayan ng mga paghadlang/pagharang na pandaigdigan',
 	'removeglobalblock' => 'Tanggalin ang isang pandaigdigang paghahadlang',
 	'right-globalblock' => 'Gumawa ng pandaigdigang mga pagharang',
+	'action-globalblock' => 'gumawa ng pandaigdigang mga pagharang',
 	'right-globalunblock' => 'Tanggalin ang mga pandaigdigang paghahadlang',
+	'action-globalunblock' => 'tanggalin ang pandaigdigang mga pagharang',
 	'right-globalblock-whitelist' => 'Pampook (lokal) lamang na hindi paganahin/huwag paandarin ang mga pandaigdigang pagharang',
+	'action-globalblock-whitelist' => 'pampook na huwag paganahin ang pandaigdigang mga pagharang',
 	'right-globalblock-exempt' => 'Laktawan ang mga pagharang na pandaigdigan',
+	'action-globalblock-exempt' => 'laktawan ang mga pagharang na pandaigdigan',
 );
 
 /** толышә зывон (толышә зывон)
