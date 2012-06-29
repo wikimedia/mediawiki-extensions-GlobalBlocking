@@ -8043,6 +8043,18 @@ parèj lë stat local dij blocagi globaj a peul pa esse modificà.',
 	'globalblocking-whitelist-intro' => "A peul dovré cost formolari për modifiché lë statù local d'un blocagi global.
 Se un blocagi global a l'é disabilità dzora a sta wiki-sì, j'utent con l'adrëssa IP colpìa a podran modifiché normalment.
 [[Special:GlobalBlockList|Artorné a la lista dij blocagi globaj]].",
+	'globalblocking-ipblocked' => "'''Toa adrëssa IP a l'é staita blocà dzora tute le wiki-'''
+
+Ël blòch a l'é stait fait da \$1 (\$2).
+La rason daita a l'é ''\$3''.
+
+* Inissi dël blòch: \$4
+* Fin dël blòch: \$5
+
+It peule contaté \$1 për discute ël blòch.
+It peule pa dovré la funsion \"{{int:emailuser}}\" a men che n'adrëssa ëd corel bon-a a sia specificà ant ij tò [[Special:Preferences|account preferences]] e che it sie pa stait blocà dal dovrela.
+Toa adrëssa IP corenta a l'é \$6.
+Për piasì anseriss tuit ij detaj prece4dent an minca custion ch'it fase.",
 	'globalblocking-blocked-nopassreset' => "A peule pa torna amposté la ciav d'utent përchè a l'é blocà daspërtut.",
 	'globalblocking-logpage' => 'Registr dij blocagi globaj',
 	'globalblocking-logpagetext' => "Cost-sì a l'é un registr dij blocagi globaj che a son ëstàit fàit e gavà dzora a sta wiki-sì.
