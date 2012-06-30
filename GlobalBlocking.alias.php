@@ -32,7 +32,13 @@ $specialPageAliases['arz'] = array(
 	'GlobalBlockStatus' => array( 'ليستة_البلوك_العام_البيضا', 'حالة_البلوك_العام', 'تعطيل_البلوك_العام' ),
 );
 
-/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬) */
+/** Assamese (অসমীয়া) */
+$specialPageAliases['as'] = array(
+	'GlobalBlock' => array( 'গোলকীয়_অৱৰোধ' ),
+	'GlobalBlockList' => array( 'গোলকীয়_অৱৰোধ_তালিকা' ),
+);
+
+/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬) */
 $specialPageAliases['be-tarask'] = array(
 	'GlobalBlock' => array( 'Глябальнае_блякаваньне' ),
 	'GlobalBlockList' => array( 'Сьпіс_глябальных_блякаваньняў' ),
@@ -77,7 +83,7 @@ $specialPageAliases['diq'] = array(
 	'GlobalBlockStatus' => array( 'GlobalBloqeListeyoPak' ),
 );
 
-/** Lower Sorbian (Dolnoserbski) */
+/** Lower Sorbian (dolnoserbski) */
 $specialPageAliases['dsb'] = array(
 	'GlobalBlock' => array( 'Globalne_blokěrowanje' ),
 	'GlobalBlockList' => array( 'Lisćina_globalnych_blokěrowanjow' ),
@@ -137,7 +143,7 @@ $specialPageAliases['frp'] = array(
 	'GlobalBlockStatus' => array( 'Lista_blanche_des_blocâjos_globâls', 'ListaBlancheDesBlocâjosGlobâls' ),
 );
 
-/** Galician (Galego) */
+/** Galician (galego) */
 $specialPageAliases['gl'] = array(
 	'GlobalBlock' => array( 'Bloqueo_global' ),
 	'GlobalBlockList' => array( 'Lista_de_bloqueos_globais' ),
@@ -177,7 +183,7 @@ $specialPageAliases['hr'] = array(
 	'GlobalBlockStatus' => array( 'Status_globalnog_blokiranja' ),
 );
 
-/** Upper Sorbian (Hornjoserbsce) */
+/** Upper Sorbian (hornjoserbsce) */
 $specialPageAliases['hsb'] = array(
 	'GlobalBlock' => array( 'Globalne_blokowanje' ),
 	'GlobalBlockList' => array( 'Lisćina_globalnych_blokowanjow' ),
