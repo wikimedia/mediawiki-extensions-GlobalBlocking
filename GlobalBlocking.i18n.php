@@ -392,7 +392,7 @@ $messages['am'] = array(
 	'globalblocking-unblock-reason' => 'ምክንያት:',
 );
 
-/** Aragonese (Aragonés)
+/** Aragonese (aragonés)
  * @author Juanpabl
  */
 $messages['an'] = array(
@@ -1141,7 +1141,7 @@ $messages['be'] = array(
 	'globalblocking-whitelist-reason' => 'Прычына:',
 );
 
-/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Jim-by
  * @author Red Winged Duck
@@ -2397,7 +2397,7 @@ Logê bloki qe referansi cor de mocnayiyo',
 	'action-globalblock-exempt' => 'Global blokî bypass bike',
 );
 
-/** Lower Sorbian (Dolnoserbski)
+/** Lower Sorbian (dolnoserbski)
  * @author Michawiki
  */
 $messages['dsb'] = array(
@@ -3672,7 +3672,7 @@ $messages['fy'] = array(
 	'globalblocking-block-expiry-otherfield' => 'In oare tiid:',
 );
 
-/** Galician (Galego)
+/** Galician (galego)
  * @author Prevert
  * @author Toliño
  */
@@ -4444,7 +4444,7 @@ Evidencija blokiranja navedena je niže kao napomena:',
 	'right-globalblock-exempt' => 'Zaobilaženje globalnih blokiranja',
 );
 
-/** Upper Sorbian (Hornjoserbsce)
+/** Upper Sorbian (hornjoserbsce)
  * @author Michawiki
  */
 $messages['hsb'] = array(
@@ -8876,7 +8876,7 @@ $1',
 	'action-globalblock-exempt' => 'обход глобальных блокировок',
 );
 
-/** Rusyn (Русиньскый)
+/** Rusyn (русиньскый)
  * @author Gazeb
  */
 $messages['rue'] = array(
@@ -9170,7 +9170,7 @@ $messages['scn'] = array(
 	'right-globalblock-exempt' => 'Bypassa li blocchi globali',
 );
 
-/** Samogitian (Žemaitėška)
+/** Samogitian (žemaitėška)
  * @author Hugo.arg
  */
 $messages['sgs'] = array(
