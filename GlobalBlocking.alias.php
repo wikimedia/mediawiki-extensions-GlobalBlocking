@@ -159,6 +159,12 @@ $specialPageAliases['gsw'] = array(
 	'GlobalBlockStatus' => array( 'Uusnahme_vun_ere_wältwyte_Sperri' ),
 );
 
+/** Gujarati (ગુજરાતી) */
+$specialPageAliases['gu'] = array(
+	'GlobalBlock' => array( 'વૈશ્વિકપ્રતિબંધ' ),
+	'GlobalBlockList' => array( 'વૈશ્વિકપ્રતિબંધયાદી' ),
+);
+
 /** Hebrew (עברית) */
 $specialPageAliases['he'] = array(
 	'GlobalBlock' => array( 'חסימה_גלובלית' ),

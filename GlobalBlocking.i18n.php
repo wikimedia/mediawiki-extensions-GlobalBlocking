@@ -3980,7 +3980,7 @@ $messages['gu'] = array(
 	'globalblocking-modify-submit' => 'આ વૈશ્વીક સમૂહને બદલો',
 	'globalblocking-block-success' => 'IP એડ્રેસ $1 પર બધી પરિયોજનાઓ ઉપર પ્રતિબંધ મુકાયો',
 	'globalblocking-modify-success' => 'વૈશ્વીક પ્રતિબંધ $1 ને સફળતા પૂર્વક સુધારાયો.',
-	'globalblocking-block-successsub' => 'વૈશ્વીક પ્રતિબંધ સફળ',
+	'globalblocking-block-successsub' => 'વૈશ્વિક પ્રતિબંધ સફળ',
 	'globalblocking-modify-successsub' => 'વૈશ્વીક સમૂહને સફળતા પૂર્વક બદલાયો',
 	'globalblocking-block-alreadyblocked' => 'IP એડ્રેસ $1 પર પહેલેથી પ્રતિબંધ લગાવેલો છે.
 તમે [[Special:GlobalBlockList|વૈશ્વીક પ્રતિબંધોની યાદી]] પર તેમને જોઈ શકશો
@@ -3990,7 +3990,7 @@ $messages['gu'] = array(
 	'globalblocking-list-intro' => 'હાલના સક્રીય વૈશ્વીક પ્રતિબંધોની આ યાદી છે.
 અમુક પ્રતિબંધોને સ્થાનીય રીતે પર્તિબંધીત બતાવેલા છે: તેઓ અર્થ ઍમ છે કે તેઓ અન્ય વેબ સાઈટ પ્ર જઈ શકશે માત્ર સ્થાનીય પ્રબંધકે તેને માત્ર આ વિકિ પર પ્રતિબંધીત કર્યો છે.',
 	'globalblocking-list' => 'વૈશ્વીક રીતે પ્રતિબંધીત IP એડ્રેસની યાદી',
-	'globalblocking-search-legend' => 'વૈશ્વીક સમૂહ શોધો',
+	'globalblocking-search-legend' => 'વૈશ્વિક સમૂહ શોધો',
 	'globalblocking-search-ip' => 'IP સરનામું:',
 	'globalblocking-search-submit' => 'પ્રતિબંધને શોધો',
 	'globalblocking-list-ipinvalid' => 'ત્તમે શોધો છો તે IP એડ્રેસ  ($1) અમાન્ય છે.
@@ -8043,18 +8043,18 @@ parèj lë stat local dij blocagi globaj a peul pa esse modificà.',
 	'globalblocking-whitelist-intro' => "A peul dovré cost formolari për modifiché lë statù local d'un blocagi global.
 Se un blocagi global a l'é disabilità dzora a sta wiki-sì, j'utent con l'adrëssa IP colpìa a podran modifiché normalment.
 [[Special:GlobalBlockList|Artorné a la lista dij blocagi globaj]].",
-	'globalblocking-ipblocked' => "'''Toa adrëssa IP a l'é staita blocà dzora tute le wiki-'''
+	'globalblocking-ipblocked' => "'''Soa adrëssa IP a l'é stàita blocà dzora tute le wiki-'''
 
-Ël blòch a l'é stait fait da \$1 (\$2).
-La rason daita a l'é ''\$3''.
+Ël blocagi a l'é stàit fàit da \$1 (\$2).
+La rason ësmonùa a l'é ''\$3''.
 
-* Inissi dël blòch: \$4
-* Fin dël blòch: \$5
+* Inissi dël blocagi: \$4
+* Fin dël blocagi: \$5
 
-It peule contaté \$1 për discute ël blòch.
-It peule pa dovré la funsion \"{{int:emailuser}}\" a men che n'adrëssa ëd corel bon-a a sia specificà ant ij tò [[Special:Preferences|account preferences]] e che it sie pa stait blocà dal dovrela.
-Toa adrëssa IP corenta a l'é \$6.
-Për piasì anseriss tuit ij detaj prece4dent an minca custion ch'it fase.",
+A peul contaté \$1 për discute dël blocagi.
+A peul pa dovré la funsion \"{{int:emailuser}}\" gavà che n'adrëssa ëd pòsta eletrònica bon-a a sia specificà ant ij [[Special:Preferences|sò gust]] e che a sia pa stàit blocà dal dovrela.
+Soa adrëssa IP corenta a l'é \$6.
+Për piasì ch'a anserissa tuti ij detaj precedent an tuta arcesta ch'a fasa.",
 	'globalblocking-blocked-nopassreset' => "A peule pa torna amposté la ciav d'utent përchè a l'é blocà daspërtut.",
 	'globalblocking-logpage' => 'Registr dij blocagi globaj',
 	'globalblocking-logpagetext' => "Cost-sì a l'é un registr dij blocagi globaj che a son ëstàit fàit e gavà dzora a sta wiki-sì.
