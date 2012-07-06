@@ -3989,7 +3989,7 @@ $messages['gu'] = array(
 તમે વધુમાં વધુ 65,536 એડ્રેસ પ્રતિબંધીત કરી શકો (/16 ranges)',
 	'globalblocking-list-intro' => 'હાલના સક્રીય વૈશ્વીક પ્રતિબંધોની આ યાદી છે.
 અમુક પ્રતિબંધોને સ્થાનીય રીતે પર્તિબંધીત બતાવેલા છે: તેઓ અર્થ ઍમ છે કે તેઓ અન્ય વેબ સાઈટ પ્ર જઈ શકશે માત્ર સ્થાનીય પ્રબંધકે તેને માત્ર આ વિકિ પર પ્રતિબંધીત કર્યો છે.',
-	'globalblocking-list' => 'વૈશ્વીક રીતે પ્રતિબંધીત IP એડ્રેસની યાદી',
+	'globalblocking-list' => 'વૈશ્વિક રીતે પ્રતિબંધીત IP એડ્રેસની યાદી',
 	'globalblocking-search-legend' => 'વૈશ્વિક સમૂહ શોધો',
 	'globalblocking-search-ip' => 'IP સરનામું:',
 	'globalblocking-search-submit' => 'પ્રતિબંધને શોધો',
@@ -4051,7 +4051,7 @@ $messages['gu'] = array(
 	'globalblocking-loglink' => 'IP એડ્રેસ $1 પર વૈશ્વીક પ્રતિબંધ મૂકાયો. ([[{{#Special:GlobalBlockList}}/$1|પૂર્ણ માહિતી]]).',
 	'globalblocking-showlog' => 'આ IP એડ્રેસ પર પહેલા રોક લગાવાઈ છે.
 રોકા લગાવાયેલા IP એડ્રેસની યાદિ આ મુજબ છે',
-	'globalblocklist' => 'વૈશ્વીક રીતે પ્રતિબંધીત IP એડ્રેસની યાદી',
+	'globalblocklist' => 'વૈશ્વિક રીતે પ્રતિબંધીત IP એડ્રેસની યાદી',
 	'globalblock' => 'IP ને વૈશ્વિક રીતે પ્રતિબંધીત કરો',
 	'globalblockstatus' => 'વૈશ્વીક પ્રતિબંધોની સ્થાનીય સ્થિતિ',
 	'removeglobalblock' => 'વૈશ્વીક પ્રતિબંધ હટાવો',
@@ -8043,7 +8043,7 @@ parèj lë stat local dij blocagi globaj a peul pa esse modificà.',
 	'globalblocking-whitelist-intro' => "A peul dovré cost formolari për modifiché lë statù local d'un blocagi global.
 Se un blocagi global a l'é disabilità dzora a sta wiki-sì, j'utent con l'adrëssa IP colpìa a podran modifiché normalment.
 [[Special:GlobalBlockList|Artorné a la lista dij blocagi globaj]].",
-	'globalblocking-ipblocked' => "'''Soa adrëssa IP a l'é stàita blocà dzora tute le wiki-'''
+	'globalblocking-ipblocked' => "'''Soa adrëssa IP a l'é stàita blocà dzora tute le wiki.'''
 
 Ël blocagi a l'é stàit fàit da \$1 (\$2).
 La rason ësmonùa a l'é ''\$3''.
@@ -10556,6 +10556,7 @@ $messages['tl'] = array(
 	'globalblocking-block-legend' => 'Pandaigdigang harangin ang isang adres ng IP',
 	'globalblocking-block-options' => 'Mga pagpipilian:',
 	'globalblocking-ipaddress' => 'Tirahan ng IP:',
+	'globalblocking-ipbanononly' => 'Hadlangan ang hindi nakikilalang mga tagagamit lamang',
 	'globalblocking-block-errors' => 'Hindi nagtagumpay ang pagharang/paghadlang mo, dahil sa sumusunod na mga {{PLURAL:$1|dahilan|mga dahilan}}:',
 	'globalblocking-block-ipinvalid' => 'Hindi tanggap ang ipinasok mong adres ng IP ($1).
 Pakitaandaang hindi mo maipapasok ang isang pangalan ng tagagamit!',
@@ -10621,6 +10622,18 @@ kaya't hindi mababago ang pampook na kalagayan ng pandaigdigang mga paghadlang."
 	'globalblocking-whitelist-intro' => 'Magagamit mo ang pormularyong ito para magbago ng katutubong kalagayan ng isang pandaigdigang pagharang.
 Kapag hindi pinagana ang isang pandaigdigang paghadlang sa wiking ito, maaaring mamatnugot sa karaniwang paraan ang mga tatagamit na nasa loob ng apektadong adres ng IP.
 [[Special:GlobalBlockList|Bumalik sa talaan ng mga pandaigdigang pagharang]]',
+	'globalblocking-ipblocked' => "''' Ang iyong tirahang IP ay hinadlangan sa lahat ng mga wiki.'''
+
+Ang pagharang ay ginawa ni \$1 (\$2).
+Ang ibinigay na dahilan ay ''\$3''.
+
+* Simula ng harang: \$4
+* Pagtatapos ng harang: \$5
+
+Maaari kang makipag-ugnayan kay \$1 upang talakayin ang paghadlang.
+Hindi mo maaaring gamitin ang tampok na \"{{int:emailuser}}\" maliban na lamang kung ang isang katanggap-tanggap na e-liham ay tinukoy sa iyong [[Special:Preferences|mga kanaisang pang-akawnt]] at hindi ka naharang mula sa paggamit niyon.
+Ang pangkasalukuyang tirahan mo ng IP ay ang \$6
+Paki isama ang lahat ng mga detalyeng nasa itaas sa anumang mga pagtatanong na gagawin mo.",
 	'globalblocking-blocked-nopassreset' => 'Hindi mo maaaring itakdang muli ang hudyat ng tagagamit dahil pandaigdigan kang hinarang.',
 	'globalblocking-logpage' => 'Talaan ng pandaigdigang pagharang/paghadlang',
 	'globalblocking-logpagetext' => 'Isa itong talaan ng mga pandaigdigang pagharang na isinagawa at tinanggal mula sa wiking ito.
@@ -11497,7 +11510,7 @@ $messages['zh-hans'] = array(
 $1',
 	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> （''\$3''） 全域封锁了 [[Special:Contributions/\$4|\$4]] ''（\$5）''",
 	'globalblocking-list-expiry' => '于$1到期',
-	'globalblocking-list-anononly' => '只限匿名',
+	'globalblocking-list-anononly' => '仅匿名用户',
 	'globalblocking-list-unblock' => '解除封锁',
 	'globalblocking-list-whitelisted' => '由$1于本地封锁: $2',
 	'globalblocking-list-whitelist' => '本地状态',
