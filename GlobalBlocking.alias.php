@@ -421,10 +421,10 @@ $specialPageAliases['sv'] = array(
 
 /** Tagalog (Tagalog) */
 $specialPageAliases['tl'] = array(
-	'GlobalBlock' => array( 'Pandaigdigang paghadlang' ),
-	'GlobalBlockList' => array( 'Talaan ng pandaigdigang paghadlang' ),
-	'RemoveGlobalBlock' => array( 'Pandaigdigang hindi paghadlang', 'Tanggalin ang pandaigdigang paghadlang' ),
-	'GlobalBlockStatus' => array( 'Puting talaan ng pandaigdigang paghadlang', 'Kalagayan ng pandaigdigang paghadlang', 'Huwag paganahin ang pandaigdigang paghadlang' ),
+	'GlobalBlock' => array( 'Pandaigdigang_paghadlang' ),
+	'GlobalBlockList' => array( 'Talaan_ng_pandaigdigang_paghadlang' ),
+	'RemoveGlobalBlock' => array( 'Pandaigdigang_hindi_paghadlang', 'Tanggalin_ang_pandaigdigang_paghadlang' ),
+	'GlobalBlockStatus' => array( 'Puting_talaan_ng_pandaigdigang_paghadlang', 'Kalagayan_ng_pandaigdigang_paghadlang', 'Huwag_paganahin_ang_pandaigdigang_paghadlang' ),
 );
 
 /** Turkish (Türkçe) */
