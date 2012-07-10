@@ -5858,6 +5858,7 @@ $messages['kn'] = array(
  * @author Ficell
  * @author Klutzy
  * @author Kwj2772
+ * @author 아라
  */
 $messages['ko'] = array(
 	'globalblocking-desc' => '특정 IP를 [[Special:GlobalBlockList|모든 위키]]에서 [[Special:GlobalBlock|차단]]하는 권한을 추가',
@@ -5884,7 +5885,7 @@ $messages['ko'] = array(
 계정 이름을 입력할 수 없다는 것을 알아 두시기 바랍니다!',
 	'globalblocking-block-expiryinvalid' => '당신이 입력한 기한($1)이 잘못되었습니다.',
 	'globalblocking-block-submit' => '이 IP 주소를 전체 위키에서 차단',
-	'globalblocking-modify-submit' => '차단 설정 변경',
+	'globalblocking-modify-submit' => '차단 설정 바꾸기',
 	'globalblocking-block-success' => 'IP 주소 $1이 모든 프로젝트에서 성공적으로 차단되었습니다.',
 	'globalblocking-modify-success' => '$1 계정에 대한 광역 차단 설정이 변경되었습니다.',
 	'globalblocking-block-successsub' => '전체 차단 성공',
@@ -5907,8 +5908,8 @@ $messages['ko'] = array(
 	'globalblocking-list-anononly' => '익명 사용자만',
 	'globalblocking-list-unblock' => '차단 해제',
 	'globalblocking-list-whitelisted' => '$1에 의해 로컬에서 해제됨: $2',
-	'globalblocking-list-whitelist' => '로컬 상태 변경',
-	'globalblocking-list-modify' => '차단 설정 변경',
+	'globalblocking-list-whitelist' => '로컬 상태',
+	'globalblocking-list-modify' => '차단 설정 바꾸기',
 	'globalblocking-list-noresults' => '당신이 입력한 IP 주소는 차단되지 않았습니다.',
 	'globalblocking-goto-block' => 'IP를 전체 위키에서 차단',
 	'globalblocking-goto-unblock' => '전체 차단 해제',
@@ -5929,11 +5930,11 @@ $messages['ko'] = array(
 	'globalblocking-whitelist' => '전체 차단의 로컬 상태',
 	'globalblocking-whitelist-notapplied' => '이 위키에서는 전체 차단이 적용되지 않습니다.
 따라서 전체 차단의 로컬 상태를 바꿀 수 없습니다.',
-	'globalblocking-whitelist-legend' => '로컬 상태 변경',
+	'globalblocking-whitelist-legend' => '로컬 상태 바꾸기',
 	'globalblocking-whitelist-reason' => '이유:',
 	'globalblocking-whitelist-status' => '로컬 상태:',
 	'globalblocking-whitelist-statuslabel' => '{{SITENAME}}에서 전체 위키 차단을 비활성화하기',
-	'globalblocking-whitelist-submit' => '로컬 상태 변경',
+	'globalblocking-whitelist-submit' => '로컬 상태 바꾸기',
 	'globalblocking-whitelist-whitelisted' => "{{SITENAME}}에서 IP 주소 '''$1'''에 대한 전체 차단 #$2를 비활성화하는 데 성공했습니다.",
 	'globalblocking-whitelist-dewhitelisted' => "{{SITENAME}}에서 IP 주소 '''$1'''에 대한 전체 차단 #$2가 성공적으로 다시 활성화되었습니다.",
 	'globalblocking-whitelist-successsub' => '전체 차단의 로컬 상태가 성공적으로 변경되었습니다.',
@@ -5964,7 +5965,7 @@ $messages['ko'] = array(
 	'globalblocking-unblock-logentry' => '[[$1]]의 전체 위키 차단을 해제함',
 	'globalblocking-whitelist-logentry' => '[[$1]]의 전체 차단을 로컬에서 비활성화함',
 	'globalblocking-dewhitelist-logentry' => '[[$1]]의 전체 차단을 로컬에서 다시 활성화함',
-	'globalblocking-modify-logentry' => '[[$1]]에 대한 전체 차단 설정을 변경 ($2)',
+	'globalblocking-modify-logentry' => '[[$1]]에 대한 전체 차단 설정을 바꾸기 ($2)',
 	'globalblocking-logentry-expiry' => '$1에 해제',
 	'globalblocking-logentry-noexpiry' => '기한이 정해지지 않음',
 	'globalblocking-loglink' => 'IP 주소 $1은 모든 위키에서 차단되었습니다. ([[{{#Special:GlobalBlockList}}/$1|자세한 정보]])',
