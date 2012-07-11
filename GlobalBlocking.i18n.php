@@ -1015,7 +1015,7 @@ $messages['az'] = array(
 	'globalblocking-logpage' => 'Qlobal blok gündəliyi',
 );
 
-/** Bashkir (Башҡортса)
+/** Bashkir (башҡортса)
  * @author Assele
  * @author Haqmar
  * @author ҒатаУлла
@@ -1805,7 +1805,7 @@ Per més detalls, a continuació es mostra el registre de bloquejos:',
 	'right-globalblock-exempt' => 'Eludir els blocatges globals',
 );
 
-/** Chechen (Нохчийн)
+/** Chechen (нохчийн)
  * @author Sasan700
  */
 $messages['ce'] = array(
@@ -5985,7 +5985,7 @@ $messages['ko'] = array(
 	'action-globalblock-exempt' => '전체 차단을 우회할',
 );
 
-/** Karachay-Balkar (Къарачай-Малкъар)
+/** Karachay-Balkar (къарачай-малкъар)
  * @author Iltever
  */
 $messages['krc'] = array(
@@ -6288,7 +6288,7 @@ D'Lëscht vun de Späre steet hei ënnendrënner.",
 	'action-globalblock-exempt' => 'global Spären ëmgoen',
 );
 
-/** Lezghian (Лезги)
+/** Lezghian (лезги)
  * @author Migraghvi
  */
 $messages['lez'] = array(
@@ -6539,7 +6539,7 @@ Eo ambany ny laogim-panakanana.',
 	'globalblocklist' => "Lisitry ny adiresy IP voasakana amin'ny ankapobe",
 );
 
-/** Eastern Mari (Олык Марий)
+/** Eastern Mari (олык марий)
  * @author Сай
  */
 $messages['mhr'] = array(
@@ -7080,7 +7080,7 @@ $messages['mt'] = array(
 	'globalblockstatus' => 'Stat lokali tal-blokki globali',
 );
 
-/** Erzya (Эрзянь)
+/** Erzya (эрзянь)
  * @author Botuzhaleny-sodamo
  */
 $messages['myv'] = array(
@@ -7102,7 +7102,7 @@ $messages['nah'] = array(
 	'globalblocking-unblock-reason' => 'Tlèka:',
 );
 
-/** Norwegian Bokmål (‪Norsk (bokmål)‬)
+/** Norwegian Bokmål (‪norsk (bokmål)‬)
  * @author Event
  * @author Laaknor
  * @author Nghtwlkr
@@ -7187,6 +7187,18 @@ så den lokale statusen for globale blokkeringer kan ikke endres her.',
 	'globalblocking-whitelist-nochange' => 'Du endret ikke denne blokkeringens lokale status. [[Special:GlobalBlockList|Tilbake til den globale blokkeringslista.]]',
 	'globalblocking-whitelist-errors' => 'Endringen i lokal status lyktes ikke fordi:<!--{{PLURAL:$1}}-->',
 	'globalblocking-whitelist-intro' => 'Du kan bruke dette skjemaet til å redigere en global blokkerings lokale status. Om en global blokkering er slått av på denne wikien, vil brukerne av de påvirkede IP-adressene kunne redigere normalt. [[Special:GlobalBlockList|Tilbake til den globale blokkeringslista.]]',
+	'globalblocking-ipblocked' => "'''Din IP-adresse har blitt blokkert på alle wikier.'''
+
+Blokkeringen ble utført av \$1 (\$2).
+Begrunnelsen var ''\$3''.
+
+* Blokkeringsstart: \$4
+* Blokkeringsutløp: \$5
+
+Du kan ta kontakt med \$1 for å diskutere saken.
+Du kan ikke bruker \"{{int:emailuser}}\"-mekanismen med mindre en gyldig e-post-adresse er angitt i dine [[Special:Preferences|konto-innstillinger]] og du ikke har blitt blokkert fra å bruke den.
+Din nåværende IP-adresse er \$6.
+Vennligst ta med alle detaljene over i enhver henvendelse du gjør.",
 	'globalblocking-blocked-nopassreset' => 'Du kan ikke nullstille brukerpassord fordi du er blokkert globalt.',
 	'globalblocking-logpage' => 'Global blokkeringslogg',
 	'globalblocking-logpagetext' => 'Dette er en logg over globale blokkeringer som har blitt gjort eller fjernet på denne wikien.
@@ -7208,9 +7220,13 @@ Blokkeringsloggen vises under som referanse:',
 	'globalblockstatus' => 'Lokal status for globale blokkeringer',
 	'removeglobalblock' => 'Fjern en global blokkering',
 	'right-globalblock' => 'Blokkere IP-er globalt',
-	'right-globalunblock' => 'Fjerne globale blokkeringer',
+	'action-globalblock' => 'utfør globale blokkeringer',
+	'right-globalunblock' => 'Fjern globale blokkeringer',
+	'action-globalunblock' => 'fjern globale blokkeringer',
 	'right-globalblock-whitelist' => 'Slå av globale blokkeringer lokalt',
+	'action-globalblock-whitelist' => 'deaktiver globale blokkeringer lokalt',
 	'right-globalblock-exempt' => 'Gå utenom globale blokkeringer',
+	'action-globalblock-exempt' => 'gå utenom globale blokkeringer',
 );
 
 /** Low German (Plattdüütsch)
@@ -10811,7 +10827,7 @@ $messages['tt-cyrl'] = array(
 	'globalblocking-whitelist-successsub' => 'Җирле халәтне үзгәртү уңышлы үтте.',
 );
 
-/** Tuvinian (Тыва дыл)
+/** Tuvinian (тыва дыл)
  * @author Sborsody
  */
 $messages['tyv'] = array(
@@ -11049,7 +11065,7 @@ El registro dei blochi se pol védarlo qua de soto par comodità:',
 	'right-globalblock-exempt' => 'Scavalca blochi globali',
 );
 
-/** Veps (Vepsän kel’)
+/** Veps (vepsän kel’)
  * @author Triple-ADHD-AS
  * @author Игорь Бродский
  */
