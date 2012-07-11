@@ -440,6 +440,12 @@ $specialPageAliases['tt-cyrl'] = array(
 	'GlobalBlock' => array( 'Глобаль_тыю' ),
 );
 
+/** Ukrainian (українська) */
+$specialPageAliases['uk'] = array(
+	'GlobalBlock' => array( 'Глобальне_блокування' ),
+	'GlobalBlockList' => array( 'Перелік_глобальних_блокувань' ),
+);
+
 /** vèneto (vèneto) */
 $specialPageAliases['vec'] = array(
 	'GlobalBlock' => array( 'BlocoGlobal' ),
