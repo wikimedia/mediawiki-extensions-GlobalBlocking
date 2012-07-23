@@ -2295,11 +2295,11 @@ $messages['diq'] = array(
 ** Crosswiki xeripnayış
 ** Vandalizm kerdış',
 	'globalblocking-block-edit-dropdown' => 'Sebebê blokî bivurne',
-	'globalblocking-block-expiry' => 'Çi wext de qediyeno:',
+	'globalblocking-block-expiry' => 'Qedyayış:',
 	'globalblocking-block-expiry-other' => 'wexê qediyayişi yo bin',
 	'globalblocking-block-expiry-otherfield' => 'wexto bin:',
 	'globalblocking-block-legend' => "adresa IP'yi bı global bloke bıker",
-	'globalblocking-block-options' => 'Tercihi:',
+	'globalblocking-block-options' => 'Weçinegi:',
 	'globalblocking-ipaddress' => "Adresa IP'i:",
 	'globalblocking-ipbanononly' => 'Anonim karbera tenya bloqe ke',
 	'globalblocking-block-errors' => 'blokekerdış nêbı, semedê no {{PLURAL:$1|sebeb ra|sebeban ra}}:',
@@ -3214,6 +3214,7 @@ $messages['fa'] = array(
  * @author Cimon Avaro
  * @author Crt
  * @author Jaakonam
+ * @author Linnea
  * @author Nedergard
  * @author Nike
  * @author Pxos
@@ -3301,6 +3302,18 @@ joten paikallisten globaaliestojen tilaa ei voi muuttaa.',
 	'globalblocking-whitelist-nochange' => 'Et tehnyt muutoksia tämän eston paikalliseen tilaan. [[Special:GlobalBlockList|Voit myös palata globaaliestojen listaan]].',
 	'globalblocking-whitelist-errors' => 'Globaalin eston paikallisen tilan muuttaminen epäonnistui {{PLURAL:$1|seuraavan syyn|seuraavien syiden}} takia:',
 	'globalblocking-whitelist-intro' => 'Voit käyttää tätä lomaketta globaalieston paikallisen tilan muokkaamiseksi. Jos globaaliesto on poiskytetty tästä wikistä, IP-osoitetta käyttävät käyttäjät voivat muokata normaalisti. [[Special:GlobalBlockList|Napsauta tästä]] palataksesi takaisin globaalien estojen listaan.',
+	'globalblocking-ipblocked' => "'''IP-osoitteesi on estetty kaikissa wikeissä.'''
+
+Eston suoritti \$1 (\$2).
+Syyksi annettiin ''\$3''.
+
+* Eston alku: \$4
+* Eston vanheneminen: \$5
+
+Voit ottaa yhteyttä käyttäjään \$1 keskustellaksi estosta.
+Et pysty käyttämään toimintoa \"{{int:emailuser}}\" ellet ole määritellyt toimivaa sähköpostiosoitetta [[Special:Preferences|asetuksissasi]] ja jos sinua ei ole estetty käyttämästä sitä.
+Tämän hetkinen IP-osoitteesi on \$6.
+Kerro kaikki nämä tiedot keskustellessasi estosta.",
 	'globalblocking-blocked-nopassreset' => 'Et voi palauttaa käyttäjien salasanoja, koska sinut on estetty globaalisti.',
 	'globalblocking-logpage' => 'Globaaliestoloki',
 	'globalblocking-logpagetext' => 'Tämä on loki tässä wikissä tehdyistä ja poistetuista globaaliestoista.
@@ -5863,7 +5876,7 @@ $messages['kn'] = array(
 $messages['ko'] = array(
 	'globalblocking-desc' => '특정 IP를 [[Special:GlobalBlockList|모든 위키]]에서 [[Special:GlobalBlock|차단]]하는 권한을 추가',
 	'globalblocking-block' => 'IP 주소를 모든 위키에서 차단',
-	'globalblocking-modify-intro' => '당신은 전체 차단 설정을 변경할 때 이 양식을 사용할 수 있습니다.',
+	'globalblocking-modify-intro' => '당신은 전체 차단 설정을 바꿀 때 이 양식을 사용할 수 있습니다.',
 	'globalblocking-block-intro' => '당신은 모든 위키에서 특정 IP를 차단할 때 이 페이지를 사용할 수 있습니다.',
 	'globalblocking-block-reason' => '이유:',
 	'globalblocking-block-otherreason' => '다른 이유/추가적인 이유:',
@@ -5887,12 +5900,12 @@ $messages['ko'] = array(
 	'globalblocking-block-submit' => '이 IP 주소를 전체 위키에서 차단',
 	'globalblocking-modify-submit' => '차단 설정 바꾸기',
 	'globalblocking-block-success' => 'IP 주소 $1이 모든 프로젝트에서 성공적으로 차단되었습니다.',
-	'globalblocking-modify-success' => '$1 계정에 대한 광역 차단 설정이 변경되었습니다.',
+	'globalblocking-modify-success' => '$1 계정에 대한 광역 차단 설정이 바뀌었습니다.',
 	'globalblocking-block-successsub' => '전체 차단 성공',
-	'globalblocking-modify-successsub' => '전체 차단 설정이 성공적으로 변경되었습니다.',
+	'globalblocking-modify-successsub' => '전체 차단 설정이 성공적으로 바뀌었습니다.',
 	'globalblocking-block-alreadyblocked' => 'IP 주소 $1은 이미 전체적으로 차단되었습니다.
 당신은 [[Special:GlobalBlockList|전체 차단된 사용자의 목록]]에서 현재 차단된 IP를 보거나,
-이 양식을 사용하여 이미 차단된 IP의 차단 설정을 변경할 수 있습니다.',
+이 양식을 사용하여 이미 차단된 IP의 차단 설정을 바꿀 수 있습니다.',
 	'globalblocking-block-bigrange' => '당신이 입력한 범위 ($1)는 차단하기에 너무 넓습니다.
 당신은 아무리 많아도, 65,536개의 주소 (/16 광역) 이상을 차단할 수 없습니다.',
 	'globalblocking-list-intro' => '현재 유효한 전체 차단의 목록입니다. 전체 차단은 로컬의 관리자의 권한으로 무효화 할 수 있습니다. 단 로컬에서 무효화하더라도 다른 위키에서는 차단 상태가 지속됩니다.',
@@ -5937,10 +5950,10 @@ $messages['ko'] = array(
 	'globalblocking-whitelist-submit' => '로컬 상태 바꾸기',
 	'globalblocking-whitelist-whitelisted' => "{{SITENAME}}에서 IP 주소 '''$1'''에 대한 전체 차단 #$2를 비활성화하는 데 성공했습니다.",
 	'globalblocking-whitelist-dewhitelisted' => "{{SITENAME}}에서 IP 주소 '''$1'''에 대한 전체 차단 #$2가 성공적으로 다시 활성화되었습니다.",
-	'globalblocking-whitelist-successsub' => '전체 차단의 로컬 상태가 성공적으로 변경되었습니다.',
+	'globalblocking-whitelist-successsub' => '전체 차단의 로컬 상태가 성공적으로 바뀌었습니다.',
 	'globalblocking-whitelist-nochange' => '전체 차단의 로컬 상태를 바꾸지 않았습니다.
 [[Special:GlobalBlockList|전체 차단된 IP의 목록으로 돌아갑니다]].',
-	'globalblocking-whitelist-errors' => '광역 차단 설정 변경에 실패했습니다. 이유는 다음과 같습니다: $1',
+	'globalblocking-whitelist-errors' => '광역 차단 설정 바꾸기에 실패했습니다. {{PLURAL:$1|이유}}는 다음과 같습니다:',
 	'globalblocking-whitelist-intro' => '이 양식을 통해 전체 차단의 로컬 상태를 바꿀 수 있습니다.
 전체 차단이 이 위키에서 비활성화되면 해당 IP 주소를 이용하는 사용자는 정상적으로 편집할 수 있게 됩니다.
 [[Special:GlobalBlockList|전체 차단 목록으로 돌아가기]].',
