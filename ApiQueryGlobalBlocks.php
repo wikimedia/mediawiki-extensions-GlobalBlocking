@@ -125,7 +125,7 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 			if($fld_timestamp)
 				$block['timestamp'] = wfTimestamp(TS_ISO_8601, $row->gb_timestamp);
 			if($fld_expiry)
-				$block['expiry'] = Block::decodeExpiry($row->gb_expiry, TS_ISO_8601);
+				$block['expiry'] = $this->getLanguage()->formatExpiry($row->gb_expiry, TS_ISO_8601);
 			if($fld_reason)
 				$block['reason'] = $row->gb_reason;
 			if($fld_range) {
