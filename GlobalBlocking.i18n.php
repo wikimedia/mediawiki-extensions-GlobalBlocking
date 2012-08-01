@@ -2283,7 +2283,7 @@ Bitte Geben Sie alle oben angegebenen Details in Ihren Anfragen an.",
  * @author Xoser
  */
 $messages['diq'] = array(
-	'globalblocking-desc' => 'IP addreslerinin [[Special:GlobalBlockList|çoklu vikiler boyunca engellenmesine]] [[Special:GlobalBlock|izin verir]]',
+	'globalblocking-desc' => 'Adresanê IP yer [[Special:GlobalBlockList|zafın wikiyan heta wedaryayışi rê]] [[Special:GlobalBlock|icazet dano]]',
 	'globalblocking-block' => "yew adresa Ip'i bı global bloke bıker",
 	'globalblocking-modify-intro' => 'qey vurnayişê eyarê blokeya globali şıma eşkêni no form bışuxulni.',
 	'globalblocking-block-intro' => 'şıma pê no peleşkêni yew IPadres heme wikiyan de bloke bıker.',
@@ -2367,6 +2367,18 @@ mo sebeb ra weziyeto mehelli yê blokeyê globalan nêvuriyeno.',
 	'globalblocking-whitelist-intro' => 'Küresel bir engellemenin yerel durumunu değiştirmek için bu formu kullanabilirsiniz.
 Eğer bir küresel engelleme bu vikide devre dışı bırakılmış ise, etkilenen IP adresindeki kullanıcılar normal olarak değişiklik yapabilecektir.
 [[Special:GlobalBlockList|Küresel engelleme listesine geri dönün]].',
+	'globalblocking-ipblocked' => "'''Adresê IP da şıma wikiya pêron dı bloqe biyo.'''
+
+Bloqe kerden \$1 (\$2).
+Sebebê bloqi ''\$3''.
+
+* Bloqe dest pêkin: \$4
+* Bloqe qedyin: \$5
+
+Şıma şenê \$1 ya qandê sebebê bloqe kerdış irtibat kewê.
+Şıma nêşenê se \"{{int:emailuser}}\" ra cırê e-posta bırışê, [[Special:Preferences|tercihan dê hesabi ra]] ra bloqe kerdışê xo bıvine.
+Ip adresiy aşımaya newki \$6.
+Reca kem mesaco ke şıma de bırışê cori rınd buwanê hewna mesacê xo marê bırışê.",
 	'globalblocking-blocked-nopassreset' => 'şıma bı global blok biyê u no sebeb ra şıma nêeşkeni şifreya karberi sıfır keri.',
 	'globalblocking-logpage' => 'rocaneyê blokeyê globali',
 	'globalblocking-logpagetext' => 'Bu, bu vikide yapılan ve kaldırılan küresel engellemelerin günlüğüdür.
@@ -9015,9 +9027,38 @@ $messages['rue'] = array(
 
 /** Sanskrit (संस्कृतम्)
  * @author Ansumang
+ * @author Shubha
  */
 $messages['sa'] = array(
+	'globalblocking-desc' => 'ऐपि सङ्केतस्य [[Special:GlobalBlockList|विभिन्नेषु विकीषु अवरोधं]] कर्तुं [[Special:GlobalBlock|अनुमतिः]] दीयते ।',
+	'globalblocking-block' => 'एकस्य ऐपिसङ्केतस्य वैश्विकस्तरे अवरुद्ध्यताम्',
+	'globalblocking-modify-intro' => 'अस्य वैश्विकावरोधस्य स्थितेः परिवर्तनाय इदं रूपम् उपयोक्तुम् अर्हति ।',
+	'globalblocking-block-intro' => 'सर्वासु विकीषु कस्यचित् एपि सङ्केतस्य अवरोधाय इदं पृष्ठम् उपयोक्तुम् अर्हति ।',
 	'globalblocking-block-reason' => 'कारणम् :',
+	'globalblocking-block-otherreason' => 'अपरम्/अतिरिक्तं कारणम् :',
+	'globalblocking-block-reasonotherlist' => 'अन्यत् कारणम्',
+	'globalblocking-block-edit-dropdown' => 'अवरोधकारणं सम्पाद्यताम्',
+	'globalblocking-block-expiry' => 'समाप्तिः :',
+	'globalblocking-block-expiry-other' => 'अन्यस्य समाप्तिसमयः',
+	'globalblocking-block-expiry-otherfield' => 'अन्यः समयः :',
+	'globalblocking-block-legend' => 'वैश्विकस्तरे एपि सङ्केतः अवरुद्ध्यताम्',
+	'globalblocking-block-options' => 'विकल्पाः :',
+	'globalblocking-ipaddress' => 'एपि सङ्केताः :',
+	'globalblocking-ipbanononly' => 'अनामकसदस्यमात्रम् अवरुद्ध्यताम्',
+	'globalblocking-block-errors' => 'भवतः अवरोधः असफलः यतः {{PLURAL:$1|कारणम्|कारणानि}}:',
+	'globalblocking-block-ipinvalid' => 'भवता लिखितः एपि सङ्केतः ($1) अमान्यः ।
+योजकनाम लेखितुं न शक्यते इति कृपया ज्ञायताम् !',
+	'globalblocking-block-expiryinvalid' => 'भवता दत्तः समाप्तिसमयः ($1) अमान्यः ।',
+	'globalblocking-block-submit' => 'वैश्विकस्तरे एपि सङ्केतः अवरुद्ध्यताम्',
+	'globalblocking-modify-submit' => 'अस्य वैश्विकाभिलेखस्य परिवर्तनं क्रियताम्',
+	'globalblocking-block-success' => 'सर्वासु विकीषु $1 एपि सङ्केतः यशस्वितया अवरुद्धः ।',
+	'globalblocking-modify-success' => '$1 सम्बद्धः वैश्विकावरोधः यशस्वितया परिवर्तितः',
+	'globalblocking-block-successsub' => 'वैश्विकावरोधः यशस्वी जातः',
+	'globalblocking-modify-successsub' => 'वैश्विकावरोधः यशस्वितया परिवर्तितः',
+	'globalblocking-list' => 'कृतवैश्विकावरोधानाम् एपिसङ्केतानाम् आवली',
+	'globalblocking-search-legend' => 'वैश्विकावरोधस्य अन्वेषणम्',
+	'globalblocking-search-ip' => 'एपि सङ्केतः :',
+	'globalblocking-search-submit' => 'अवरोधानाम् अन्वेषणम्',
 	'globalblocking-unblock-reason' => 'कारणम् :',
 	'globalblocking-whitelist-reason' => 'कारणम् :',
 );
