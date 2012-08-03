@@ -157,6 +157,7 @@ The block log is provided below for reference:',
  * @author Lloffiwr
  * @author Meno25
  * @author Mormegil
+ * @author Nemo bis
  * @author Nike
  * @author Purodha
  * @author Raymond
@@ -219,6 +220,7 @@ After this message, a list of specific errors is shown (see {{msg-mw|Globalblock
 * $4 is a timestamp for when the block was set
 * $5 is a timestamp for when the block will expire (or {{msg-mw|infiniteblock}})
 * $6 is the IP address of the globally blocked user.',
+	'globalblocking-logpage' => 'Name of the log, shown in the Special:Log dropdown for the log type selection and in the log header.',
 	'globalblocking-logpagetext' => 'Shown as header of [[Special:Log/gblblock]] (part of [[mw:Extension:GlobalBlocking|Extension:GlobalBlocking]], which is not installed on translatewiki.net; example: [[wikipedia:Special:Log/gblblock]])',
 	'globalblocking-block2-logentry' => '* $1 is a link to a user page of the form User:Name
 * $2 is a reason for the action.',
@@ -5321,6 +5323,7 @@ Síðasta færsla vistfangsins úr bönnunarskrá er sýnd hér fyrir neðan til
  * @author Darth Kule
  * @author Gianfranco
  * @author Melos
+ * @author Nemo bis
  */
 $messages['it'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Permette]] di [[Special:GlobalBlockList|bloccare su più wiki]] indirizzi IP',
@@ -5412,7 +5415,7 @@ Si noti che la funzione \"{{int:emailuser}}\" non è attiva se non è stato regi
 L'indirizzo IP attuale è \$6.
 Si prega di specificare tutti i dettagli precedenti in qualsiasi richiesta di chiarimenti.",
 	'globalblocking-blocked-nopassreset' => "Non è possibile reimpostare la password dell'utente perché sei bloccato a livello globale.",
-	'globalblocking-logpage' => 'Log dei blocchi globali',
+	'globalblocking-logpage' => 'Blocchi globali',
 	'globalblocking-logpagetext' => "Di seguito sono elencati i blocchi globali che sono stati effettuati e rimossi su questa wiki. I blocchi globali possono essere effettuati su altre wiki e questi blocchi globali possono essere validi anche su questa wiki.
 Per visualizzare tutti i blocchi globali attivi si veda l'[[Special:GlobalBlockList|elenco dei blocchi globali]].",
 	'globalblocking-block-logentry' => 'ha bloccato globalmente [[$1]] con una scadenza di $2',
@@ -9059,6 +9062,22 @@ $messages['sa'] = array(
 	'globalblocking-search-legend' => 'वैश्विकावरोधस्य अन्वेषणम्',
 	'globalblocking-search-ip' => 'एपि सङ्केतः :',
 	'globalblocking-search-submit' => 'अवरोधानाम् अन्वेषणम्',
+	'globalblocking-search-errors' => 'भवतः अन्वेषणं असफलं यतः {{PLURAL:$1|कारणम्|कारणानि}}:',
+	'globalblocking-list-expiry' => 'समाप्तिः $1',
+	'globalblocking-list-anononly' => 'अनामकमात्रम्',
+	'globalblocking-list-unblock' => 'निष्कास्यताम्',
+	'globalblocking-list-whitelisted' => '$1 इत्यनेन स्थानीयावरोधः कृतः: $2',
+	'globalblocking-list-whitelist' => 'स्थानीयस्थितिः',
+	'globalblocking-list-modify' => 'परिष्क्रियताम्',
+	'globalblocking-list-noresults' => 'प्रार्थितः एपि सङ्केतः न अवरुद्धः ।',
+	'globalblocking-goto-block' => 'एकस्य ऐपिसङ्केतस्य वैश्विकस्तरे अवरुद्ध्यताम्',
+	'globalblocking-goto-unblock' => 'वैश्विकावरोधः अपनीयताम्',
+	'globalblocking-goto-status' => 'वैश्विकावरोधस्य स्थानीयस्थितिः परिवर्त्यताम्',
+	'globalblocking-return' => 'वैश्विकावरोधावलीं प्रति प्रतिनिवर्त्यताम्',
+	'globalblocking-notblocked' => 'भवता लिखितस्य ($1) एपिसङ्केतस्य वैश्विकावरोधः नास्ति ।',
+	'globalblocking-unblock' => 'वैश्विकावरोधः अपनीयताम्',
+	'globalblocking-unblock-ipinvalid' => 'भवता लिखितः एपि सङ्केतः ($1) अमान्यः ।
+योजकनाम लेखितुं न शक्यते इति कृपया ज्ञायताम् !',
 	'globalblocking-unblock-reason' => 'कारणम् :',
 	'globalblocking-whitelist-reason' => 'कारणम् :',
 );
