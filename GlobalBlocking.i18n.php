@@ -5896,7 +5896,7 @@ $messages['ko'] = array(
 	'globalblocking-block-reason' => '이유:',
 	'globalblocking-block-otherreason' => '다른 이유/추가적인 이유:',
 	'globalblocking-block-reasonotherlist' => '다른 이유',
-	'globalblocking-block-reason-dropdown' => '*일반적인 차단 이유
+	'globalblocking-block-reason-dropdown' => '* 일반적인 차단 이유
 ** 여러 위키에서의 광고/스팸 행위
 ** 여러 위키에서의 부정 행위
 ** 문서 훼손',
