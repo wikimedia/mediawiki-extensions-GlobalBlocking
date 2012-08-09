@@ -2018,6 +2018,7 @@ Noder nad oes modd defnyddio enw defnyddiwr os gwelwch yn dda!",
 );
 
 /** Danish (dansk)
+ * @author Hylle
  * @author Masz
  * @author Peter Alberti
  * @author Sarrus
@@ -2037,6 +2038,7 @@ $messages['da'] = array(
 ** Hærværk',
 	'globalblocking-block-edit-dropdown' => 'Rediger blokeringsbegrundelser',
 	'globalblocking-block-expiry' => 'Udløber:',
+	'globalblocking-block-expiry-otherfield' => 'Anden tid:',
 	'globalblocking-block-legend' => 'Bloker en IP-adresse globalt',
 	'globalblocking-block-options' => 'Indstillinger:',
 	'globalblocking-ipaddress' => 'IP-adresse:',
@@ -2668,7 +2670,9 @@ $messages['el'] = array(
 	'right-globalunblock' => 'Αφαίρεση καθολικών φραγών',
 	'action-globalunblock' => 'Κατάργηση καθολικών φραγών',
 	'right-globalblock-whitelist' => 'Απενεργοποίηση καθολικών φραγών τοπικά',
+	'action-globalblock-whitelist' => 'απενεργοποίηση καθολικών φραγών τοπικά',
 	'right-globalblock-exempt' => 'Παράκαμψη καθολικών φραγών',
+	'action-globalblock-exempt' => 'παράκαμψη καθολικών φραγών',
 );
 
 /** Esperanto (Esperanto)
@@ -3231,6 +3235,7 @@ $messages['fa'] = array(
  * @author Linnea
  * @author Nedergard
  * @author Nike
+ * @author Olli
  * @author Pxos
  * @author Silvonen
  * @author Str4nd
@@ -3351,8 +3356,11 @@ Alla on ote estolokista.',
 	'right-globalblock' => 'Estää globaalisti',
 	'action-globalblock' => 'asettaa globaaleja estoja',
 	'right-globalunblock' => 'Poistaa globaaleja estoja',
+	'action-globalunblock' => 'poista globaalit estot',
 	'right-globalblock-whitelist' => 'Poiskytkeä globaaleja estoja paikallisesti',
+	'action-globalblock-whitelist' => 'poista käytöstä globaalit estot paikallisesti',
 	'right-globalblock-exempt' => 'Ohittaa globaaliestot',
+	'action-globalblock-exempt' => 'läpipäästä globaalit estot',
 );
 
 /** Faroese (føroyskt)
@@ -4914,6 +4922,7 @@ Le registro de blocadas es fornite ci infra pro referentia:',
  * @author Aldnonymous
  * @author Anakmalaysia
  * @author Bennylin
+ * @author Farras
  * @author Irwangatot
  * @author IvanLanin
  * @author Iwan Novirion
@@ -5025,8 +5034,11 @@ Log pemblokiran disediakan di bawah ini sebagai rujukan:',
 	'globalblockstatus' => 'Status pemblokiran global di wiki lokal',
 	'removeglobalblock' => 'Menghapuskan pemblokiran global',
 	'right-globalblock' => 'Melakukan pemblokiran global',
+	'action-globalblock' => 'lakukan pemblokiran global',
 	'right-globalunblock' => 'Menghapuskan pemblokiran global',
+	'action-globalunblock' => 'hapus pemblokiran global',
 	'right-globalblock-whitelist' => 'Menonaktifkan suatu pemblokiran global di wiki lokal',
+	'action-globalblock-whitelist' => 'nonaktifkan pemblokiran global di wiki lokal',
 	'right-globalblock-exempt' => 'Tidak dikenakan pemblokiran global',
 );
 
@@ -6462,16 +6474,20 @@ Alle globale blokkades stoan in de [[Special:GlobalBlockList|liest met globale b
  * @author Garas
  * @author Homo
  * @author Matasg
+ * @author Vogone
  */
 $messages['lt'] = array(
 	'globalblocking-block' => 'Visuotinai blokuoti IP adresą',
 	'globalblocking-block-reason' => 'Priežastis:',
 	'globalblocking-block-otherreason' => 'Kita/papildoma priežastis:',
 	'globalblocking-block-reasonotherlist' => 'Kita priežastis',
+	'globalblocking-block-edit-dropdown' => 'Redaguoti blokavimų priežastis',
 	'globalblocking-block-expiry' => 'Galiojimo pabaiga:',
 	'globalblocking-block-expiry-otherfield' => 'Kitas laikas:',
 	'globalblocking-block-legend' => 'Blokuoti IP adresą globaliai',
 	'globalblocking-block-options' => 'Parinktys:',
+	'globalblocking-ipaddress' => 'IP adresas:',
+	'globalblocking-ipbanononly' => 'Blokuoti tik anoniminius naudotojus',
 	'globalblocking-block-errors' => 'Jūsų blokavimas buvo nesėkmingas, dėl šių  {{PLURAL:$1|priežasties|priežasčių}}:',
 	'globalblocking-block-ipinvalid' => 'IP adresas ( $1 ) kuri įrašėte negalimas.
 Atkreipkite dėmesį, kad negalima įvesti vartotojo vardo!',
@@ -6503,6 +6519,7 @@ Atkreipkite dėmesį, kad negalima įvesti vartotojo vardo!',
 	'globalblocking-unblock-successsub' => 'Pasaulinis blokavimas sėkmingai pašalintas',
 	'globalblocking-unblock-subtitle' => 'Šalinamas pasaulinis blokavimas',
 	'globalblocking-unblock-intro' => 'Šią formą galite naudoti norėdami pašalinti pasaulini blokavimą.',
+	'globalblocking-whitelist-legend' => 'Pakeisti vietos statusą',
 	'globalblocking-whitelist-reason' => 'Priežastis:',
 	'globalblocking-whitelist-status' => 'Vietos statusas:',
 	'globalblocking-whitelist-submit' => 'Pakeisti vietos statusą',
@@ -8668,9 +8685,13 @@ Jurnalul blocărilor este disponibil mai jos:',
 	'globalblockstatus' => 'Statutul local al blocărilor globale',
 	'removeglobalblock' => 'Elimină o blocare globală',
 	'right-globalblock' => 'Efectuează blocări globale',
+	'action-globalblock' => 'efectuați blocări globale',
 	'right-globalunblock' => 'Elimină blocări globale',
+	'action-globalunblock' => 'eliminați blocări globale',
 	'right-globalblock-whitelist' => 'Dezactivează local blocările globale',
+	'action-globalblock-whitelist' => 'dezactivați local blocări globale',
 	'right-globalblock-exempt' => 'Ocolește blocările globale',
+	'action-globalblock-exempt' => 'treceți peste blocările globale',
 );
 
 /** tarandíne (tarandíne)
@@ -8942,6 +8963,8 @@ $messages['rue'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Іншый час:',
 	'globalblocking-block-legend' => 'Ґлобално блоковати IP адресу',
 	'globalblocking-block-options' => 'Можности:',
+	'globalblocking-ipaddress' => 'IP-адреса:',
+	'globalblocking-ipbanononly' => 'Заблоковати лем анонімных хоснователїв',
 	'globalblocking-block-errors' => 'Спроба наставити ґлобалне блокованя ся не подарила про  {{PLURAL:$1|наступну причіну|наступны причіны}}:',
 	'globalblocking-block-ipinvalid' => 'Вами зазначена IP адреса ($1) не є платна.
 Усвідомте собі, же не можете задати імя хоснователя!',
@@ -9023,9 +9046,13 @@ $messages['rue'] = array(
 	'globalblockstatus' => 'Локалный статус ґлобалного блокованя',
 	'removeglobalblock' => 'Зняти ґлобалне блокованя',
 	'right-globalblock' => 'Ґлобалне блокованя',
+	'action-globalblock' => 'ґлобално блоковати',
 	'right-globalunblock' => 'Знятя ґлобалных блоковань',
+	'action-globalunblock' => 'зняти ґлобалны блокованя',
 	'right-globalblock-whitelist' => 'Дефінованя вынятків з ґлобалного блокованя',
+	'action-globalblock-whitelist' => 'дефіновати выняткы з ґловалного блокованя',
 	'right-globalblock-exempt' => 'Обходжаня ґлобалных блоковань',
+	'action-globalblock-exempt' => 'обходити ґлобалне блокованя',
 );
 
 /** Sanskrit (संस्कृतम्)
@@ -9884,6 +9911,7 @@ $messages['sr-ec'] = array(
 	'globalblocking-whitelist-whitelisted' => "Успешно сте онемогућили глобалну блокаду #$2 за ИП адресу '''$1''' на пројекту {{SITENAME}}.",
 	'globalblocking-whitelist-dewhitelisted' => "Успешно сте омогућили глобалну блокаду #$2 за ИП адресу '''$1''' на пројекту {{SITENAME}}.",
 	'globalblocking-whitelist-errors' => 'Не можете да промените локално стање глобалне блокаде због {{PLURAL:$1|следећег разлога|следећих разлога}}:',
+	'globalblocking-blocked-nopassreset' => 'Не можете да ресетујете корисничку лозинку јер сте глобално блокирани.',
 	'globalblocking-logpage' => 'Дневник глобалних блокирања',
 	'globalblocking-block-logentry' => '{{GENDER:|је глобално блокирао|је глобално блокирала|је глобално блокирао}} [[$1]] с роком истицања од $2',
 	'globalblocking-block2-logentry' => 'глобално блокиран [[$1]] ($2)',
@@ -9901,7 +9929,9 @@ $messages['sr-ec'] = array(
 	'globalblockstatus' => 'Локално стање глобалних блокада',
 	'removeglobalblock' => 'Уклони глобални блок',
 	'right-globalblock' => 'Постави глобалне блокове',
+	'action-globalblock' => 'постави глобалне блокове',
 	'right-globalunblock' => 'Уклони глобалне блокове',
+	'action-globalunblock' => 'обриши глобалне блокове',
 	'right-globalblock-whitelist' => 'Онемогући глобалне блокове локално',
 	'right-globalblock-exempt' => 'заобилажење глобалних блокада',
 );
@@ -10201,6 +10231,7 @@ $messages['sw'] = array(
 );
 
 /** Tamil (தமிழ்)
+ * @author Balajijagadesh
  * @author Shanmugamp7
  * @author TRYPPN
  */
@@ -10270,6 +10301,7 @@ $messages['ta'] = array(
 	'globalblocking-whitelist-statuslabel' => '{{SITENAME}} ல் உலகளவிய தடையை செயலிழக்க செய்',
 	'globalblocking-whitelist-submit' => 'உள் நிலை மாற்று',
 	'globalblocking-whitelist-successsub' => 'உள்ளமைவு நிலை வெற்றிகரமாக மாற்றப்பட்டது',
+	'globalblocking-logpage' => 'உலக தடை உள்ளீடு',
 	'globalblocking-block2-logentry' => 'உலகளவில் தடைசெய்யப்பட்டுள்ளது [[$1]] ($2)',
 	'globalblocking-unblock-logentry' => ' [[$1]] ல் நீக்கப்பட்ட உலகளவிய தடைகள்',
 	'globalblocklist' => 'உலகளவில் தடை செய்யப்பட்ட IP முகவரிகளின் பட்டியல்',
@@ -10283,6 +10315,7 @@ $messages['ta'] = array(
 	'right-globalblock-whitelist' => 'உள்ளமைவில் உலகளாவிய தடைகளை செயல்நீக்கவும்',
 	'action-globalblock-whitelist' => 'உள்ளமைவில் உலகளாவிய தடைகளை செயல்நீக்கவும்',
 	'right-globalblock-exempt' => 'உலகளவிய தடையை மீறு',
+	'action-globalblock-exempt' => 'உலகளவிய தடையை மீறு',
 );
 
 /** Telugu (తెలుగు)
