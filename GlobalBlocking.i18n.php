@@ -9025,6 +9025,18 @@ $messages['rue'] = array(
 	'globalblocking-whitelist-intro' => 'За помочі того формуларя можете змінити локалный статус ґлобалного блокованя.
 Кідь буде ґлобалне блокованя на тій вікі зрушене, хоснователї будуть мочі на одповідній IP адресї нормално едітовати.
 [[Special:GlobalBlockList|Навернутя на список ґлобалных блоковань]].',
+	'globalblocking-ipblocked' => "'''Ваша IP адреса была заблокована на вшыткых вікі.'''
+
+Заблокованя учінив $1 ($2).
+Уведженов прічінов было ''$3''.
+
+* Початок блокованя: $4
+* Заблокованя кінчіть: $5
+
+Кідь хочете заблокованя передіскутовати, можете ся споїти з хоснователём $1.
+Тямте, же не можете хосновати функцію „{{int:emailuser}}“, кідь у своїм [[Special:Preferences|наставлїню]] не мате правилну імейлову адресу або кідь вам тота можливость была заказана.
+Ваша сучасна IP адреса є $6.
+У вшыткых вопросах на адміністратора пиште вшыткы горї зображены інформації.",
 	'globalblocking-blocked-nopassreset' => 'Не можете жадати о посланя нового гесла, бо сьте ґлобално {{GENDER:|блокованый|блокована|блокованый}}.',
 	'globalblocking-logpage' => 'Лоґ ґлобалных блоковань',
 	'globalblocking-logpagetext' => 'Тото є лоґ ґлобалного блокованя і їх уволнїня выконаных на тій вікі.
@@ -9452,7 +9464,9 @@ $messages['si'] = array(
 	'globalblockstatus' => 'ගෝලීය වාරණවල ප්‍රාදේශිය තත්වය',
 	'removeglobalblock' => 'ගෝලීය වාරණයක් ඉවත් කරන්න',
 	'right-globalblock' => 'ගෝලීය වාරණ තනන්න',
+	'action-globalblock' => 'ගෝලීය වාරණ සිදු කරන්න',
 	'right-globalunblock' => 'ගෝලීය වාරණ ඉවත් කරන්න',
+	'action-globalunblock' => 'ගෝලීය වාරණ ඉවත් කරන්න',
 	'right-globalblock-whitelist' => 'ගෝලීය වාරණයන් ප්‍රාදේශීයව අහෝසි කරන්න',
 	'right-globalblock-exempt' => 'ගෝලීය වාරණ මගහරින්න',
 );
@@ -9856,7 +9870,7 @@ $messages['sr-ec'] = array(
 	'globalblocking-block-expiry-other' => 'Друго време истека',
 	'globalblocking-block-expiry-otherfield' => 'Друго време:',
 	'globalblocking-block-legend' => 'Глобално блокирање IP адресе',
-	'globalblocking-block-options' => 'Опције:',
+	'globalblocking-block-options' => 'Поставке:',
 	'globalblocking-ipaddress' => 'ИП адреса:',
 	'globalblocking-ipbanononly' => 'Блокирај само анонимне кориснике',
 	'globalblocking-block-errors' => 'Блок није успешан због {{PLURAL:$1|следеђег разлога|следећих разлога}}:',
@@ -9911,7 +9925,7 @@ $messages['sr-ec'] = array(
 	'globalblocking-whitelist-whitelisted' => "Успешно сте онемогућили глобалну блокаду #$2 за ИП адресу '''$1''' на пројекту {{SITENAME}}.",
 	'globalblocking-whitelist-dewhitelisted' => "Успешно сте омогућили глобалну блокаду #$2 за ИП адресу '''$1''' на пројекту {{SITENAME}}.",
 	'globalblocking-whitelist-errors' => 'Не можете да промените локално стање глобалне блокаде због {{PLURAL:$1|следећег разлога|следећих разлога}}:',
-	'globalblocking-blocked-nopassreset' => 'Не можете да ресетујете корисничку лозинку јер сте глобално блокирани.',
+	'globalblocking-blocked-nopassreset' => 'Не можете да промените лозинку корисника јер сте блокирани глобално.',
 	'globalblocking-logpage' => 'Дневник глобалних блокирања',
 	'globalblocking-block-logentry' => '{{GENDER:|је глобално блокирао|је глобално блокирала|је глобално блокирао}} [[$1]] с роком истицања од $2',
 	'globalblocking-block2-logentry' => 'глобално блокиран [[$1]] ($2)',
@@ -9929,11 +9943,13 @@ $messages['sr-ec'] = array(
 	'globalblockstatus' => 'Локално стање глобалних блокада',
 	'removeglobalblock' => 'Уклони глобални блок',
 	'right-globalblock' => 'Постави глобалне блокове',
-	'action-globalblock' => 'постави глобалне блокове',
+	'action-globalblock' => 'Вршење глобалних блокирања',
 	'right-globalunblock' => 'Уклони глобалне блокове',
-	'action-globalunblock' => 'обриши глобалне блокове',
+	'action-globalunblock' => 'Брисање глобалних блокада',
 	'right-globalblock-whitelist' => 'Онемогући глобалне блокове локално',
+	'action-globalblock-whitelist' => 'локално онемогућавање глобалних блокада',
 	'right-globalblock-exempt' => 'заобилажење глобалних блокада',
+	'action-globalblock-exempt' => 'заобилажење глобалних блокада',
 );
 
 /** Serbian (Latin script) (‪srpski (latinica)‬)
