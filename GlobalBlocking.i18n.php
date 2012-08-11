@@ -4677,6 +4677,7 @@ Tanpri note ke ou pa kapab antre yon non itilizatè!',
  * @author Dj
  * @author Dorgan
  * @author Glanthor Reviol
+ * @author TK-999
  */
 $messages['hu'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Lehetővé teszi]] IP-címek [[Special:GlobalBlockList|blokkolását]] egyszerre több wikiben',
@@ -4763,6 +4764,18 @@ Nem adhatsz meg felhasználói nevet!',
 	'globalblocking-whitelist-intro' => 'Az alábbi űrlap használatával megváltoztathatod egy globális blokk helyi állapotát.
 Ha egy globális blokk fel van oldva ezen a wikin, az IP-címet használó szerkesztők újra képesek lesznek szerkeszteni a wikit.
 [[Special:GlobalBlockList|Visszatérés a globális blokkok listájához]].',
+	'globalblocking-ipblocked' => "'''Az IP-címedet az összes wikin blokkolták.'''
+
+A blokkot \$1 hozta létre (\$2).
+A megadott indoklás: ''\$3''.
+
+* A blokk kezdete: \$4
+* A blokk vége: \$5
+
+Kapcsolatba léphetsz \$1 felhasználóval a blokk megbeszéléséhez.
+Az \"{{int:emailuser}}\" funkciót csak akkor használhatod, ha megadtál egy érvényes e-mail címet a [[Special:Preferences|beállításaidban]] és nem tiltottak el a használatától.
+A jelenlegi IP-címed \$6.
+Kérlek, az összes kapcsolódó kérdésedhez csatold a fenti részleteket.",
 	'globalblocking-blocked-nopassreset' => 'Nem kérhetsz új jelszót, mert globálisan blokkolva vagy.',
 	'globalblocking-logpage' => 'Globális blokkolási napló',
 	'globalblocking-logpagetext' => 'Ez azon globális blokkok naplója, amelyet ezen a wikin készítettek és távolítottak el.
