@@ -622,9 +622,13 @@ $messages['ar'] = array(
 	'globalblockstatus' => 'الحالة المحلية للمنع العام',
 	'removeglobalblock' => 'إزالة منع عام',
 	'right-globalblock' => 'عمل عمليات منع عامة',
+	'action-globalblock' => 'عمل عمليات المنع العامة',
 	'right-globalunblock' => 'إزالة عمليات المنع العامة',
+	'action-globalunblock' => 'إزالة عمليات المنع العامة',
 	'right-globalblock-whitelist' => 'تعطيل عمليات المنع العامة محليا',
+	'action-globalblock-whitelist' => 'تعطيل عمليات المنع العامة محليا',
 	'right-globalblock-exempt' => 'تجاوز عمليات المنع العامة',
+	'action-globalblock-exempt' => 'تجاوز عمليات المنع العامة',
 );
 
 /** Aramaic (ܐܪܡܝܐ)
@@ -2785,7 +2789,9 @@ Jen la protokolo pri forbaroj sube por via referenco:',
 	'globalblockstatus' => 'Loka statuso de ĝeneralaj forbaroj',
 	'removeglobalblock' => 'Forigi ĝeneralan forbaron',
 	'right-globalblock' => 'Fari ĝeneralajn forbarojn',
+	'action-globalblock' => 'fari ĝeneralajn forbarojn',
 	'right-globalunblock' => 'Forigi ĝeneralajn forbarojn',
+	'action-globalunblock' => 'forigi ĝeneralajn forbarojn',
 	'right-globalblock-whitelist' => 'Malŝalti ĝeneralajn forbarojn loke',
 	'right-globalblock-exempt' => 'Preterigi ĝeneralajn forbarojn',
 );
@@ -7621,7 +7627,7 @@ For å visa alle aktive globale blokkeringar, sjå den [[Special:GlobalBlockList
 	'globalblocking-modify-logentry' => 'endra den globale blokkeringa av [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'endar $1',
 	'globalblocking-logentry-noexpiry' => 'inga tidsavgrensing er sett',
-	'globalblocklist' => 'Lista over IP-adresser blokkerte globalt',
+	'globalblocklist' => 'Liste over globalt blokkerte IP-adresser',
 	'globalblock' => 'Blokker ei IP-adressa globalt',
 	'globalblockstatus' => 'Lokal status for globale blokkeringar',
 	'removeglobalblock' => 'Fjern ei global blokkering',
@@ -9744,6 +9750,7 @@ Dnevnik blokiranja je na voljo spodaj:',
 );
 
 /** Albanian (shqip)
+ * @author FatosMorina
  * @author Mikullovci11
  * @author Olsi
  */
@@ -9832,6 +9839,19 @@ kështu që statusi i bllokimeve globale nuk mund të modifikohet.',
 	'globalblocking-whitelist-intro' => 'Ju mund të përdorni këtë formular për të redaktuar statusin lokal të një bllokimi global.
 Nëse një bllokim global është i çaktivizuar në këtë wiki, përdoruesit e adresës IP do të jenë në gjendje të redaktojnë normalisht.
 [[Special:GlobalBlockList|Kthehuni tek lsita e bllokimeve globale]].',
+	'globalblocking-ipblocked' => '\'\'\'IP adresa juaj është bllokuar në të gjitha wikit.\'\'\'
+
+Bllokimi ishte bërë nga $1 ($2).
+Arsyeja është \'\'$3\'\'.
+
+* Fillimi i bllokimit: $4
+* Skadimi i bllokimit: $5
+
+Ju mund të kontaktoni $1 për ta diskutuar bllokimin.
+Ju nuk mund ta përdorni veçorinë "{{int:emailuser}}" derisa një e-mail adresë e vlefshme të jetë cekur në [[Special:Preferenca|Preferencat e llogarisë ]] dhe ju nuk jeni bllokuar nga përdorimi i saj. 
+You cannot use the "{{int:emailuser}}" feature unless a valid e-mail address is specified in your [[Special:Preferences|account preferences]] and you have not been blocked from using it.
+Your current IP address is $6.
+Please include all above details in any queries you make.',
 	'globalblocking-blocked-nopassreset' => 'Ju nuk mund të rivendosni fjalëkalimet e përdoresve sepse jeni i bllokuar globalisht.',
 	'globalblocking-logpage' => 'Regjistri i bllokimeve globale',
 	'globalblocking-logpagetext' => 'Ky është një regjistër i bllokimeve globale që janë bërë dhe hequr në këtë wiki.
@@ -9853,9 +9873,13 @@ Regjistri i bllokimit është poshtë për referncë:',
 	'globalblockstatus' => 'Statusi lokal i bllokimeve globale',
 	'removeglobalblock' => 'Hiq një bllokim global',
 	'right-globalblock' => 'Bëni bllokime globale',
+	'action-globalblock' => 'bë bllokim të përgjithshëm',
 	'right-globalunblock' => 'Hiqni bllokime globale',
+	'action-globalunblock' => 'largo bllokimet e përgjithshme',
 	'right-globalblock-whitelist' => 'Çaktivizoni bllokimet globale në nivel lokal',
+	'action-globalblock-whitelist' => 'pamundëso lokalisht bllokimet e përgjithshme',
 	'right-globalblock-exempt' => 'Anashkaloni bllokimet globale',
+	'action-globalblock-exempt' => 'tejkalo bllokimet e përgjithshme',
 );
 
 /** Serbian (Cyrillic script) (‪српски (ћирилица)‬)
@@ -9938,7 +9962,7 @@ $messages['sr-ec'] = array(
 	'globalblocking-whitelist-whitelisted' => "Успешно сте онемогућили глобалну блокаду #$2 за ИП адресу '''$1''' на пројекту {{SITENAME}}.",
 	'globalblocking-whitelist-dewhitelisted' => "Успешно сте омогућили глобалну блокаду #$2 за ИП адресу '''$1''' на пројекту {{SITENAME}}.",
 	'globalblocking-whitelist-errors' => 'Не можете да промените локално стање глобалне блокаде због {{PLURAL:$1|следећег разлога|следећих разлога}}:',
-	'globalblocking-blocked-nopassreset' => 'Не можете да промените лозинку корисника јер сте блокирани глобално.',
+	'globalblocking-blocked-nopassreset' => 'Не можете да промените лозинку корисника јер сте глобално блокирани.',
 	'globalblocking-logpage' => 'Дневник глобалних блокирања',
 	'globalblocking-block-logentry' => '{{GENDER:|је глобално блокирао|је глобално блокирала|је глобално блокирао}} [[$1]] с роком истицања од $2',
 	'globalblocking-block2-logentry' => 'глобално блокиран [[$1]] ($2)',
@@ -9956,13 +9980,13 @@ $messages['sr-ec'] = array(
 	'globalblockstatus' => 'Локално стање глобалних блокада',
 	'removeglobalblock' => 'Уклони глобални блок',
 	'right-globalblock' => 'Постави глобалне блокове',
-	'action-globalblock' => 'Вршење глобалних блокирања',
+	'action-globalblock' => 'постављање глобалних блокирања',
 	'right-globalunblock' => 'Уклони глобалне блокове',
-	'action-globalunblock' => 'Брисање глобалних блокада',
+	'action-globalunblock' => 'Брисање глобалних блокова',
 	'right-globalblock-whitelist' => 'Онемогући глобалне блокове локално',
-	'action-globalblock-whitelist' => 'локално онемогућавање глобалних блокада',
+	'action-globalblock-whitelist' => 'локално онемогућавање глобалних блокова',
 	'right-globalblock-exempt' => 'заобилажење глобалних блокада',
-	'action-globalblock-exempt' => 'заобилажење глобалних блокада',
+	'action-globalblock-exempt' => 'заобилажење глобалних блокова',
 );
 
 /** Serbian (Latin script) (‪srpski (latinica)‬)
@@ -10248,12 +10272,15 @@ Blockeringsloggen visas nedan som referens:',
 	'right-globalblock-exempt' => 'Gå förbi globala blockeringar',
 );
 
-/** Swahili (Kiswahili) */
+/** Swahili (Kiswahili)
+ * @author Stephenwanjau
+ */
 $messages['sw'] = array(
 	'globalblocking-block-reason' => 'Sababu:',
 	'globalblocking-block-otherreason' => 'Sababu nyingine:',
 	'globalblocking-block-expiry' => 'Itakwisha:',
 	'globalblocking-block-expiry-otherfield' => 'Kipindi kingine:',
+	'globalblocking-block-options' => 'Chaguo:',
 	'globalblocking-list-unblock' => 'ondoa',
 	'globalblocking-unblock-reason' => 'Sababu:',
 	'globalblocking-whitelist-reason' => 'Sababu:',
