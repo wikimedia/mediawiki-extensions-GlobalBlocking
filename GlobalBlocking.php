@@ -76,7 +76,7 @@ $wgAvailableRights[] = 'globalblock-exempt';
  *
  * If this is not on the primary database connection, don't forget
  * to also set up $wgDBservers to have an entry with a groupLoads
- * setting for the 'GlobalBlocking' group.
+ * setting for the 'globalblocking' group.
  */
 $wgGlobalBlockingDatabase = 'globalblocking';
 
