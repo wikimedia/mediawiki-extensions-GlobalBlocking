@@ -1700,6 +1700,7 @@ Zapisnik blokiranja je naveden ispod kao referenca:',
  * @author SMP
  * @author Solde
  * @author Toniher
+ * @author Vriullop
  */
 $messages['ca'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Permet]] [[Special:GlobalBlockList|bloquejar]] les adreces IP de diversos wikis',
@@ -1786,6 +1787,18 @@ així que l'estat local dels bloquejos globals no pot ser modificat.",
 	'globalblocking-whitelist-intro' => "Podeu fer servir aquest formulari per a editar l'estat local d'un bloqueig global.
 Si un bloqueig global està desactivat en aquest wiki, els usuaris de l'adreça IP afectada podran editar normalment.
 [[Special:GlobalBlockList|Retorna a la llista de bloqueigs globals]].",
+	'globalblocking-ipblocked' => "'''La vostra adreça IP ha estat blocada en tots els wikis.'''
+
+El bloqueig ha estat fet per \$1 (\$2).
+El motiu donat és ''\$3''.
+
+* Inici del bloqueig: \$4
+* Caducitat del bloqueig: \$5
+
+Podeu contactar amb \$1 per discutir el bloqueig.
+No podeu utilitzar la funció \"{{int:emailuser}}\" si no heu especificat una adreça de correu vàlida en les [[Special:Preferences|preferències del vostre compte]] o si teniu blocat el seu ús.
+La vostra adreça IP actual és \$6.
+Us demanem que afegiu tota la informació de més amunt en qualsevol consulta que feu al respecte.",
 	'globalblocking-blocked-nopassreset' => "No podeu reinicialitzar les contrasenyes d'usuari perquè estau bloquejat globalment.",
 	'globalblocking-logpage' => 'Registre de bloquejos globals',
 	'globalblocking-logpagetext' => "Això és un registre dels bloquejos globals que s'han fet o s'han eliminat en aquest wiki.
@@ -4379,6 +4392,15 @@ $messages['hi'] = array(
 	'right-globalblock-exempt' => 'बाईपास वैश्विक ब्लॉक',
 );
 
+/** Fiji Hindi (Latin script) (Fiji Hindi)
+ * @author Karthi.dr
+ */
+$messages['hif-latn'] = array(
+	'globalblocking-block-reason' => 'Kaaran:',
+	'globalblocking-unblock-reason' => 'Kaaran:',
+	'globalblocking-whitelist-reason' => 'Kaaran:',
+);
+
 /** Hiligaynon (Ilonggo)
  * @author Jose77
  */
@@ -5630,8 +5652,12 @@ $messages['ja'] = array(
 $messages['jv'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Marengaké]] alamat-alamat IP [[Special:GlobalBlockList|diblokir sacara lintas wiki]]',
 	'globalblocking-block' => 'Blokir alamat IP sacara global',
+	'globalblocking-modify-intro' => 'Sampéyan bisa nganggo pormulir iki kanggo ngganti pangaturan blokiran global.',
 	'globalblocking-block-intro' => 'Panjenengan bisa nganggo kaca iki kanggo mblokir sawijining alamat IP ing kabèh wiki.',
 	'globalblocking-block-reason' => 'Alesan:',
+	'globalblocking-block-otherreason' => 'Alesan liya/tambahan:',
+	'globalblocking-block-reasonotherlist' => 'Alesan liya',
+	'globalblocking-block-edit-dropdown' => 'Sunting alesan blokir',
 	'globalblocking-block-expiry' => 'Kadaluwarsa:',
 	'globalblocking-block-expiry-other' => 'Wektu kadaluwarsa liya',
 	'globalblocking-block-expiry-otherfield' => 'Wektu liya:',
@@ -5667,6 +5693,8 @@ Tulung lebokna alamat IP sing absah.',
 	'globalblocking-list-unblock' => 'batal blokir',
 	'globalblocking-list-whitelisted' => 'dijabel sacara lokal déning $1: $2',
 	'globalblocking-list-whitelist' => 'status lokal',
+	'globalblocking-list-modify' => 'owah',
+	'globalblocking-list-noresults' => 'Alamat IP sing dijaluk ora lagi diblokir.',
 	'globalblocking-goto-block' => 'Blokir alamat IP sacara global',
 	'globalblocking-goto-unblock' => 'Busak pamblokiran global',
 	'globalblocking-goto-status' => 'Owahi status lokal kanggo sawijining pamblokiran global',
@@ -5684,6 +5712,8 @@ Tulung digatèkaké yèn panjenengan ora bisa nglebokaké jeneng panganggo!',
 	'globalblocking-unblock-subtitle' => 'Njabel blokade global',
 	'globalblocking-unblock-intro' => 'Sampéyan bisa nganggo pormulir iki kanggo nyingkiraké blokiran global.',
 	'globalblocking-whitelist' => 'Status lokal saka pamblokiran global',
+	'globalblocking-whitelist-notapplied' => 'Blokiran global ora sumadhiya nèng wiki iki,
+dadiné status lokal saka blokiran global ora bisa diowah-owah.',
 	'globalblocking-whitelist-legend' => 'Ganti status lokal',
 	'globalblocking-whitelist-reason' => 'Alesan:',
 	'globalblocking-whitelist-status' => 'Status lokal:',
@@ -5698,21 +5728,30 @@ Tulung digatèkaké yèn panjenengan ora bisa nglebokaké jeneng panganggo!',
 	'globalblocking-whitelist-intro' => 'Panjenengan bisa migunakaké formulir iki kanggo nyunting status lokal saka sawijining pamblokiran global.
 Yèn pamblokiran dinon-aktifaké ing wiki iki, panganggo-panganggo kanthi alamat IP kasebut bakal bisa nyunting kaya adaté.
 [[Special:GlobalBlockList|Bali menyang dhaptar pamblokiran global]].',
+	'globalblocking-blocked-nopassreset' => 'Sampéyan ora bisa ngganti tembung sandhi amarga Sampéyan diblokir global.',
 	'globalblocking-logpage' => 'Log pamblokiran global',
 	'globalblocking-logpagetext' => 'Iki log pamblokiran global sing digawé lan dibusak ing situs iki.
 Perlu diweruhi yèn pamblokiran global disa digawé lan dibusak ing wiki liya sing bisa karasa uga ing wiki iki.
 Kanggo mirsani kabèh pamblokiran global sing aktif wektu iki, pirsani ing[[Special:GlobalBlockList|dhaptar pamblokiran global]] iki.',
 	'globalblocking-block-logentry' => 'diblokir sacara global [[$1]] mawa wektu kadaluwarsa $2',
+	'globalblocking-block2-logentry' => 'Diblokir global [[$1]] ($2)',
 	'globalblocking-unblock-logentry' => 'jabelen blokade global ing [[$1]]',
 	'globalblocking-whitelist-logentry' => 'njabel blokade global ing [[$1]] sacara lokal',
 	'globalblocking-dewhitelist-logentry' => 'trapna ulang blokade global ing [[$1]] sacara lokal',
+	'globalblocking-modify-logentry' => 'ngowah blokiran global nèng [[$1]] ($2)',
+	'globalblocking-logentry-expiry' => 'kedaluwarsa $1',
+	'globalblocking-logentry-noexpiry' => 'wates kedaluwarsa ora ana',
+	'globalblocking-loglink' => 'Alamat IP $1 diblokir global ([[{{#Special:GlobalBlockList}}/$1|rincian jangkepé]]).',
 	'globalblocklist' => 'Tuduhna daftar alamat-alamat IP sing diblokir sacara global',
 	'globalblock' => 'Mblokir alamat IP sacara global',
 	'globalblockstatus' => 'Status lokal saka pamblokiran global',
 	'removeglobalblock' => 'Jabel pamblokiran global',
 	'right-globalblock' => 'Nggawé pamblokiran global',
+	'action-globalblock' => 'gawé blokiran global',
 	'right-globalunblock' => 'Ilangana pamblokiran global',
+	'action-globalunblock' => 'singkiraké blokiran global',
 	'right-globalblock-whitelist' => 'Jabel blokade global sacara lokal',
+	'action-globalblock-whitelist' => 'patèni blokiran global sacara lokal',
 	'right-globalblock-exempt' => 'Liwati blokiran global',
 	'action-globalblock-exempt' => 'liwati blokiran global',
 );
@@ -7154,6 +7193,7 @@ Sila sertakan semua butiran di atas dalam sebarang pertanyaan yang anda lakukan.
 $messages['mt'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Tħalli]] li indirizzi IP jiġu [[Special:GlobalBlockList|mblukkati fuq aktar minn wiki waħda]]',
 	'globalblocking-block' => 'Imblokka indirizz IP globalment',
+	'globalblocking-modify-intro' => "Inti ma tistax tuża din il-formola sabiex tbiddel il-konfigurazzjoni ta' blokk globali.",
 	'globalblocking-block-intro' => "Tista' tuża din il-paġna sabiex timblokka indirizz IP fuq il-wikis kollha.",
 	'globalblocking-block-reason' => 'Raġuni:',
 	'globalblocking-block-otherreason' => 'Raġuni oħra/addizzjonali:',
@@ -7179,25 +7219,88 @@ Kun af li ma tistax iddaħħal isem tal-utent!',
 	'globalblocking-block-success' => "L-indirizz IP $1 ġie mbullkat b'suċċess fuq il-proġetti kollha.",
 	'globalblocking-modify-success' => 'Il-blokk globali fuq $1 ġie modifikat',
 	'globalblocking-block-successsub' => "Il-blokk globali sar b'suċċess",
+	'globalblocking-modify-successsub' => 'L-immodifikar tal-blokk globali rnexxiet',
+	'globalblocking-block-alreadyblocked' => "L-indirizz IP $1 huwa diġà mblukkat globalment. Tista' tara l-blokk eżistenti fuq il-[[Special:GlobalBlockList|lista ta' blokki globali]], jew immodifika l-konfigurazzjoni tal-blokk eżistenti billi terġa' tibgħat din il-formola.",
+	'globalblocking-block-bigrange' => "Il-klassi li indikajt ($1) huwa wisq kbir sabiex timblokka. Tista' timblokka massimu ta' 65,536 indirizz (klassi /16)",
+	'globalblocking-list-intro' => 'Din hija lista tal-blokki globali kollha li huma attivi. Xi blokki huma mmarkati bħala diżattivati lokalment: dna ifisser li dawn japplikaw għal siti oħra, però amministratur lokali ddeċieda li jiddiżattivahom fuq din il-wiki.',
 	'globalblocking-list' => "Lista ta' indirizzi IP imblukkati globalment",
 	'globalblocking-search-legend' => 'Fittex għal blokk globali',
 	'globalblocking-search-ip' => 'Indirizz IP:',
 	'globalblocking-search-submit' => 'Fittex għal blokki',
+	'globalblocking-list-ipinvalid' => 'L-indirizz IP li fittixt ($1) huwa invalidu. Jekk jogħġbok daħħal indirizz IP validu.',
+	'globalblocking-search-errors' => 'It-tfittxija tiegħek ma tat l-ebda riżultat għar-{{PLURAL:$1|raġuni|raġunijiet}} segwenti:',
+	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') imblokka globalment [[Special:Contributions/\$4|\$4]] ''(\$5)''",
+	'globalblocking-list-expiry' => 'tiskadi fil-$1',
 	'globalblocking-list-anononly' => 'anonimi biss',
 	'globalblocking-list-unblock' => 'neħħi',
+	'globalblocking-list-whitelisted' => 'diżattivat lokalment minn $1: $2',
+	'globalblocking-list-whitelist' => 'stat lokali',
 	'globalblocking-list-modify' => 'immodifika',
 	'globalblocking-list-noresults' => 'L-indirizz IP rikjest mhuwiex imblukkat.',
+	'globalblocking-goto-block' => 'Imblokka indirizz IP globalment',
 	'globalblocking-goto-unblock' => 'Neħħi blokk globali',
+	'globalblocking-goto-status' => 'Biddel l-istat lokali għal blokk globali',
+	'globalblocking-return' => "Irritorna għal-lista ta' blokki globali",
+	'globalblocking-notblocked' => 'L-indirizz IP ($1) li daħħalt mhuwiex imblukkat globalment.',
 	'globalblocking-unblock' => 'Neħħi blokk globali',
+	'globalblocking-unblock-ipinvalid' => 'L-indirizz IP ($1) li daħħalt huwa invalidu.
+Kun af li ma tistax iddaħħal isem tal-utent!',
 	'globalblocking-unblock-legend' => 'Neħħi blokk globali',
 	'globalblocking-unblock-submit' => 'Neħħi blokk globali',
 	'globalblocking-unblock-reason' => 'Raġuni:',
+	'globalblocking-unblock-unblocked' => "Irnexxielek tneħħi l-blokk gobali #$2 fuq l-indirizz IP '''$1'''",
+	'globalblocking-unblock-errors' => 'It-tneħħija tal-blokk globali ma rnexxiex għar-{{PLURAL:$1|raġuni|raġunijiet}} segwenti:',
+	'globalblocking-unblock-successsub' => "Il-blokk globali tneħħa b'suċċess",
 	'globalblocking-unblock-intro' => "Tista' tuża' din il-formola sabiex tneħħi blokk globali.",
 	'globalblocking-whitelist' => 'Stat lokali tal-blokki globali',
+	'globalblocking-whitelist-notapplied' => "Blokki globali ma japplikawx fuq din il-wiki, għalhekk l-istat lokali ta' blokki globali ma jistax jiġi modifikat.",
+	'globalblocking-whitelist-legend' => 'Biddel l-istat lokali',
 	'globalblocking-whitelist-reason' => 'Raġuni:',
 	'globalblocking-whitelist-status' => 'Stat lokali:',
+	'globalblocking-whitelist-statuslabel' => 'Iddiżattiva l-blokk globali fuq {{SITENAME}}',
+	'globalblocking-whitelist-submit' => 'Biddel l-istat lokali',
+	'globalblocking-whitelist-whitelisted' => "Għadek kif iddiżattivajt b'suċċess il-blokk globali #$2 fuq l-indirizz IP '''$1''' fuq {{SITENAME}}.",
+	'globalblocking-whitelist-dewhitelisted' => "Għadek kif erġajt attivajt mill-ġdid il-blokk globali #$2 fuq l-indirizz IP '''$1''' fuq {{SITENAME}}.",
+	'globalblocking-whitelist-successsub' => "L-istat lokali ġie mibdul b'suċċess",
+	'globalblocking-whitelist-nochange' => "M'għamilt l-ebda bidla fl-istat lokali ta' dan il-blokk. [[Special:GlobalBlockList|Irritorna lura għal-lista ta' blokki globali]].",
+	'globalblocking-whitelist-errors' => "Il-bidla tiegħek fl-istat lokali ta' blokk globali ma rnexxietx għar-{{PLURAL:$1|raġuni|raġunijiet}} segwenti:",
+	'globalblocking-whitelist-intro' => "Tista' tuża din il-formola biex timmodifika l-istat lokali ta' blokk globali. Jekk blokk gobali huwa diżattivat fuq din il-wiki, l-utenti li jużaw l-indirizz IP affettwat ikunu jistgħu jimmodifikaw normalment. [[Special:GlobalBlockList|Irritorna lura għal-lista ta' blokki globali]].",
+	'globalblocking-ipblocked' => "'''L-indirizz IP tiegħek ġie mblukkat fuq il-wikis kollha.'''
+
+Il-blokk sar minn \$1 (\$2).
+Ir-raġuni li ngħatat hi ''\$3''.
+
+* Bidu tal-blokk: \$4
+* Skadenza tal-blokk: \$5
+
+Tista' tikkuntatja lil \$1 sabiex tiddiskuti l-blokk.
+Ma tistax tuża l-funzjoni \"{{int:emailuser}}\" sakemm indirizz elettroniku validu mhuwiex speċifiku fil-[[Special:Preferences|preferenzi]] tal-kont tiegħek u ma ġejtx imblukkat milli tużah
+L-indirizz IP attwali tiegħek huwa \$6.
+Inkludi d-dettalji t'hawn fuq għal kwalunkwe rikjesta li tagħmel.",
+	'globalblocking-blocked-nopassreset' => 'Ma tistax tirrisettja l-password tal-utent minħabba li inti mblukkat globalment.',
+	'globalblocking-logpage' => 'Blokki globali',
+	'globalblocking-logpagetext' => "Dawn huwa reġistru ta' blokki globali li saru u tneħħew fuq din il-wiki. Kun af li blokki globali jistgħu jsiru u jitneħħew fuq wikis oħrajn, u li dawn il-blokki globali jistgħu jaffettwaw din il-wiki.
+Sabiex tara l-blokki globali attivi kollha, żur il-[[Special:GlobalBlockList|lista ta' blokki globali]].",
+	'globalblocking-block-logentry' => "imblokka globalment lil [[$1]] bi skadenza ta' $2",
+	'globalblocking-block2-logentry' => 'imblokka globalment lil [[$1]] ($2)',
+	'globalblocking-unblock-logentry' => 'neħħa l-blokk globali fuq [[$1]]',
+	'globalblocking-whitelist-logentry' => 'iddiżattiva l-blokk globali fuq [[$1]] lokalment',
+	'globalblocking-dewhitelist-logentry' => "reġa' attiva l-blokk globali fuq [[$1]] lokalment",
+	'globalblocking-modify-logentry' => 'immodifika l-blokk globali fuq [[$1]] ($2)',
+	'globalblocking-logentry-expiry' => 'jiskadi fil-$1',
+	'globalblocking-logentry-noexpiry' => 'l-ebda skadenza ma ngħatat',
+	'globalblocking-loglink' => 'L-indirizz IP $1 huwa mblukkat globalment ([[{{#Special:GlobalBlockList}}/$1|dettalji kollha]]).',
+	'globalblocking-showlog' => 'Dan l-indirizz IP ġie mblukkat qabel. Ir-reġistru tal-blokki huwa mogħti hawn taħt bħala referenza:',
 	'globalblocklist' => "Lista ta' indirizzi IP imblukkati globalment",
+	'globalblock' => 'Imblokka globalment indirizz IP',
 	'globalblockstatus' => 'Stat lokali tal-blokki globali',
+	'removeglobalblock' => 'Neħħi blokk globali',
+	'right-globalblock' => 'Jagħmel blokk globali',
+	'action-globalblock' => 'tagħmel blokki globali',
+	'right-globalunblock' => 'Ineħħi blokki globali',
+	'action-globalunblock' => 'tneħħi blokki globali',
+	'right-globalblock-whitelist' => 'Jiddiżattiva blokki globali lokalment',
+	'action-globalblock-whitelist' => 'tiddiżattiva blokki globali lokalment',
 );
 
 /** Erzya (эрзянь)
@@ -10359,6 +10462,7 @@ $messages['sw'] = array(
 
 /** Tamil (தமிழ்)
  * @author Balajijagadesh
+ * @author Karthi.dr
  * @author Shanmugamp7
  * @author TRYPPN
  * @author மதனாஹரன்
@@ -10378,14 +10482,14 @@ $messages['ta'] = array(
 	'globalblocking-block-expiry' => 'முடிவுறுதல்:',
 	'globalblocking-block-expiry-other' => 'மற்ற காலாவதியாகும் நேரம்',
 	'globalblocking-block-expiry-otherfield' => 'வேறு நேரம்:',
-	'globalblocking-block-legend' => 'உலகளவில் ஒரு IP முகவரியை தடு',
+	'globalblocking-block-legend' => 'உலக அளவில் ஓர் ஐ.பி. முகவரியைத் தடைசெய்',
 	'globalblocking-block-options' => 'விருப்பத்தேர்வுகள்:',
 	'globalblocking-ipaddress' => 'ஐ.பி. முகவரி:',
 	'globalblocking-ipbanononly' => 'அடையாளம் தெரியாத பயனர்களை மட்டும் தடு',
 	'globalblocking-block-errors' => 'உங்கள் தடை தோல்வியடைந்து, பின்வரும் {{PLURAL:$1| காரணம்|காரணங்கள்}}:',
 	'globalblocking-block-ipinvalid' => 'நீங்கள் உள்ளிட்ட இணைய விதிமுறை முகவரி ($1) தவறானது. தயவு செய்து நீங்கள் ஒரு பயனர் பெயரை உள்ளிட முடியாது என்பதை நினைவில் கொள்ளவும்!',
 	'globalblocking-block-submit' => 'உலகளவில் இந்த IP முகவரியை தடைசெய்',
-	'globalblocking-modify-submit' => 'இந்த உலகளவிய தடையை திருத்து',
+	'globalblocking-modify-submit' => 'இந்த உலகளாவிய தடையைத் திருத்து',
 	'globalblocking-block-success' => 'IPமுகவரி $1 அனைத்து திட்டங்களிலும் வெற்றிகரமாக தடுக்கப்பட்டது.',
 	'globalblocking-modify-success' => '$1 ல் உலகலவிய தடை வெற்றிகரமாக திருத்தப்பட்டது.',
 	'globalblocking-block-successsub' => 'உலகளவிய தடை வெற்றிகரமாக செயல்படுத்தப்பட்டது.',
@@ -10394,7 +10498,7 @@ $messages['ta'] = array(
 ஏற்கனவே உள்ள தடையை [[Special:GlobalBlockList|உலகளவிய தடைகளின் பட்டியல்]] மூலம் நீங்கள் பார்க்கலாம்.
 அல்லது இந்த படிவத்தை மறு சமர்ப்பித்தல் மூலம் ஏற்கனவே உள்ள தடையின் அமைவுகளை திருத்தவும்.',
 	'globalblocking-list' => 'உலகளவில் தடை செய்யப்பட்ட IP முகவரிகளின் பட்டியல்.',
-	'globalblocking-search-legend' => 'ஒரு உலகளவிய தடையை தேடு',
+	'globalblocking-search-legend' => 'ஓர் உலகளாவிய தடையைத் தேடு',
 	'globalblocking-search-ip' => 'ஐ.பி. முகவரி:',
 	'globalblocking-search-submit' => 'தடைகளை தேடு',
 	'globalblocking-list-ipinvalid' => '($1)க்காக நீங்கள் தேடிய IP முகவரி செல்லாதது.
@@ -10402,28 +10506,28 @@ $messages['ta'] = array(
 	'globalblocking-search-errors' => 'உங்கள் தேடல் தோல்வியடைந்தது, பின்வரும் {{PLURAL:$1|காரணம்|காரணங்கள்}}:',
 	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') உலகளவில் தடைசெய்யப்பட்டது [[Special:Contributions/\$4|\$4]] ''(\$5)''",
 	'globalblocking-list-expiry' => 'காலாவதியாகும் $1',
-	'globalblocking-list-anononly' => 'அநாமதேய பயனர்கள் மட்டும்',
+	'globalblocking-list-anononly' => 'அடையாளம் காட்டாத பயனர்கள் மட்டும்',
 	'globalblocking-list-unblock' => 'நீக்கு',
 	'globalblocking-list-whitelisted' => 'உள்ளமைவாக தடுக்கப்பட்டுள்ளது $1: $2 ஆல்',
 	'globalblocking-list-whitelist' => 'உள் நிலைமை',
 	'globalblocking-list-modify' => 'திருத்தம் செய்',
 	'globalblocking-list-noresults' => 'கோரிய IP  முகவரி தடை செய்யப்படவில்லை',
 	'globalblocking-goto-block' => 'உலகளவில் ஒரு IP முகவரியை தடைசெய்',
-	'globalblocking-goto-unblock' => 'ஒரு உலகளவிய தடையை நீக்கு',
-	'globalblocking-goto-status' => 'ஒரு உலகளவிய தடையின் உள்ளமைவு நிலைமையை மாற்று',
+	'globalblocking-goto-unblock' => 'ஒரு உலகளாவிய தடையை நீக்கு',
+	'globalblocking-goto-status' => 'ஒரு உலகளாவிய தடையின் உள்ளமைவு நிலைமையை மாற்று',
 	'globalblocking-return' => 'உலகளாவிய தடையின் பட்டியலுக்கு திரும்பு',
 	'globalblocking-notblocked' => 'நீங்கள் உள்ளிட்ட இணைய விதிமுறை முகவரி ($1) உலகளவில் தடுக்கப்படவில்லை.',
-	'globalblocking-unblock' => 'ஒரு உலகளவிய தடையை நீக்கு',
+	'globalblocking-unblock' => 'ஒரு உலகளாவிய தடையை நீக்கு',
 	'globalblocking-unblock-ipinvalid' => 'நீங்கள் உள்ளிட்ட இணைய விதிமுறை முகவரி ($1) தவறானது.
 தயவு செய்து நீங்கள் ஒரு பயனர் பெயரை உள்ளிட முடியாது என்பதை நினைவில் கொள்ளவும்!',
-	'globalblocking-unblock-legend' => 'உலகளவிய தடையை நீக்கு',
-	'globalblocking-unblock-submit' => 'உலகளவிய தடையை நீக்கு',
+	'globalblocking-unblock-legend' => 'உலகளாவிய தடையை நீக்கு',
+	'globalblocking-unblock-submit' => 'உலகளாவிய தடையை நீக்கு',
 	'globalblocking-unblock-reason' => 'காரணம்:',
-	'globalblocking-unblock-unblocked' => "நீங்கள் வெற்றிகரமாக உலகளவிய தடை #$2 வை IP முகவரி '''$1''' ல் நீக்கிவிட்டீர்கள்.",
+	'globalblocking-unblock-unblocked' => "நீங்கள் வெற்றிகரமாக உலகளாவிய தடை #$2 வை IP முகவரி '''$1''' ல் நீக்கிவிட்டீர்கள்.",
 	'globalblocking-unblock-errors' => 'உங்கள் தடை நீக்கல் தோல்வியடைந்தது, பின்வரும் {{PLURAL:$1| காரணம்|காரணங்கள்}}:',
-	'globalblocking-unblock-successsub' => 'உலகளவிய தடை வெற்றிகரமாக நீக்கப்பட்டது.',
-	'globalblocking-unblock-subtitle' => 'உலகளவிய தடையை நீக்கு',
-	'globalblocking-unblock-intro' => 'நீங்கள் இந்த படிவத்தை ஒரு உலகளவிய தடையை நீக்க பயன்படுத்தலாம்.',
+	'globalblocking-unblock-successsub' => 'உலகளாவிய தடை வெற்றிகரமாக நீக்கப்பட்டது.',
+	'globalblocking-unblock-subtitle' => 'உலகளாவிய தடையை நீக்கு',
+	'globalblocking-unblock-intro' => 'நீங்கள் இந்த படிவத்தை ஒரு உலகளாவிய தடையை நீக்க பயன்படுத்தலாம்.',
 	'globalblocking-whitelist' => 'உலகளாவிய தடையின் உள்ளமை நிலை',
 	'globalblocking-whitelist-notapplied' => 'உலகளாவிய தடுப்புகள் இந்த விக்கியில் பயன்படுத்தப்படவில்லை.
 எனவே உலகளாவிய தடுப்புகளின் உள் நிலையை திருத்த முடியாது.',
@@ -10453,16 +10557,16 @@ $messages['ta'] = array(
 	'globalblocking-logentry-expiry' => '$1இல் முடிகிறது',
 	'globalblocklist' => 'உலகளவில் தடை செய்யப்பட்ட IP முகவரிகளின் பட்டியல்',
 	'globalblock' => 'உலகளவில் ஒரு IP முகவரியை தடைசெய்',
-	'globalblockstatus' => 'உலகளவிய தடையின் உள்நிலைமை',
-	'removeglobalblock' => 'ஒரு உலகளவிய தடையை நீக்கு',
-	'right-globalblock' => 'உலகளவிய தடையை உருவாக்கு',
-	'action-globalblock' => 'உலகளவிய தடையை உருவாக்கு',
-	'right-globalunblock' => 'உலகளவிய தடைகளை நீக்கு',
-	'action-globalunblock' => 'உலகளவிய தடையை நீக்கு',
+	'globalblockstatus' => 'உலகளாவிய தடையின் உள்நிலைமை',
+	'removeglobalblock' => 'ஒரு உலகளாவிய தடையை நீக்கு',
+	'right-globalblock' => 'உலகளாவிய தடையை உருவாக்கு',
+	'action-globalblock' => 'உலகளாவிய தடையை உருவாக்கு',
+	'right-globalunblock' => 'உலகளாவிய தடைகளை நீக்கு',
+	'action-globalunblock' => 'உலகளாவிய தடையை நீக்கு',
 	'right-globalblock-whitelist' => 'உள்ளமைவில் உலகளாவிய தடைகளை செயல்நீக்கவும்',
 	'action-globalblock-whitelist' => 'உள்ளமைவில் உலகளாவிய தடைகளை செயல்நீக்கவும்',
-	'right-globalblock-exempt' => 'உலகளவிய தடையை மீறு',
-	'action-globalblock-exempt' => 'உலகளவிய தடையை மீறு',
+	'right-globalblock-exempt' => 'உலகளாவிய தடையை மீறு',
+	'action-globalblock-exempt' => 'உலகளாவிய தடையை மீறு',
 );
 
 /** Telugu (తెలుగు)
@@ -11816,7 +11920,7 @@ $messages['zh-hans'] = array(
 	'globalblocking-list-intro' => '下表列出当前有效的全域封禁。部分封禁项目被标示为已在本地禁用，表示该项封禁在其他站点上仍然有效，但本地管理员已在本地禁用。',
 	'globalblocking-list' => '全局封禁IP地址列表',
 	'globalblocking-search-legend' => '搜寻一个全域封锁',
-	'globalblocking-search-ip' => 'IP地址:',
+	'globalblocking-search-ip' => 'IP地址：',
 	'globalblocking-search-submit' => '搜寻封锁',
 	'globalblocking-list-ipinvalid' => '您所搜自导引IP地址 （$1） 是无效的。
 请输入一个有效的IP地址。',
@@ -11861,8 +11965,8 @@ $1',
 	'globalblocking-whitelist-nochange' => '您未对这个封锁的本地状态更改过。
 [[Special:GlobalBlockList|回到全域封锁名单]]。',
 	'globalblocking-whitelist-errors' => '基于以下的{{PLURAL:$1|原因|原因}}，您更改过的全域封锁本地状态不成功：',
-	'globalblocking-whitelist-intro' => '您可以利用这个表格去更改全域封锁的本地状态。
-如果一个全域封锁在这个wiki度停用，受影响的 IP 地址可以正常地编辑。
+	'globalblocking-whitelist-intro' => '您可以利用这个表单来更改全域封锁的本地状态。
+如果一个全域封锁在此wiki停用，受影响的IP地址可以正常地编辑。
 [[Special:GlobalBlockList|回到全域封锁名单]]。',
 	'globalblocking-ipblocked' => "'''您的IP地址已被在所有维基上封禁。'''
 
@@ -11894,7 +11998,7 @@ $1',
 	'globalblock' => '全局封禁IP地址',
 	'globalblockstatus' => '全域封锁的本地状态',
 	'removeglobalblock' => '移除一个全域封锁',
-	'right-globalblock' => '弄一个全域封锁',
+	'right-globalblock' => '进行全域封锁',
 	'action-globalblock' => '进行全域封锁',
 	'right-globalunblock' => '移除全域封锁',
 	'action-globalunblock' => '删除全域封锁',
@@ -11953,7 +12057,7 @@ $messages['zh-hant'] = array(
 一些的封鎖已標明在本地停用：即是這個封鎖在其他 wiki 上應用，但是本地管理員已決定在這個 wiki 上停用它們。',
 	'globalblocking-list' => '全域封鎖 IP 位址名單',
 	'globalblocking-search-legend' => '搜尋一個全域封鎖',
-	'globalblocking-search-ip' => 'IP 位址：',
+	'globalblocking-search-ip' => 'IP位址：',
 	'globalblocking-search-submit' => '搜尋封鎖',
 	'globalblocking-list-ipinvalid' => '您所搜尋的 IP 位址 （$1） 是無效的。
 請輸入一個有效的 IP 位址。',
@@ -11998,8 +12102,8 @@ $1',
 	'globalblocking-whitelist-nochange' => '您未對這個封鎖的本地狀態更改過。
 [[Special:GlobalBlockList|回到全域封鎖名單]]。',
 	'globalblocking-whitelist-errors' => '基於以下的{{PLURAL:$1|原因|原因}}，您更改過的全域封鎖本地狀態不成功：',
-	'globalblocking-whitelist-intro' => '您可以利用這個表格去更改全域封鎖的本地狀態。
-如果一個全域封鎖在這個 wiki 度停用，受影響的 IP 位址可以正常地編輯。
+	'globalblocking-whitelist-intro' => '您可以利用這個表單來更改全域封鎖的本地狀態。
+如果一個全域封鎖在此wiki停用，受影響的IP位址可以正常地編輯。
 [[Special:GlobalBlockList|回到全域封鎖名單]]。',
 	'globalblocking-ipblocked' => "'''您的IP地址已被在所有维基上封禁。'''
 
@@ -12033,8 +12137,8 @@ $1',
 	'globalblock' => '全域封鎖一個 IP 位址',
 	'globalblockstatus' => '全域封鎖的本地狀態',
 	'removeglobalblock' => '移除一個全域封鎖',
-	'right-globalblock' => '弄一個全域封鎖',
-	'action-globalblock' => '弄一個全域封鎖',
+	'right-globalblock' => '進行全域封鎖',
+	'action-globalblock' => '進行全域封鎖',
 	'right-globalunblock' => '移除全域封鎖',
 	'action-globalunblock' => '移除全域封鎖',
 	'right-globalblock-whitelist' => '在本地停用全域封鎖',
