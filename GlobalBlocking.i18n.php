@@ -1398,9 +1398,13 @@ $1',
 
 /** Bengali (বাংলা)
  * @author Bellayet
+ * @author Nasir8891
  * @author Wikitanvir
  */
 $messages['bn'] = array(
+	'globalblocking-block' => 'একটি আইপি ঠিকানাকে গ্লেবালি বাধা প্রদান করুন',
+	'globalblocking-modify-intro' => 'এই ফর্মটি ব্যবহার করে আপনি আপনার গ্লোবাল ব্লক পরিবর্তন করতে পারবেন।',
+	'globalblocking-block-intro' => 'এই পাতাটি ব্যবহার করে আপনি কোনো আইপি ঠিকানা সকল উইকি ব্যবহারে বাধা দিতে পারেন।',
 	'globalblocking-block-reason' => 'কারণ:',
 	'globalblocking-block-otherreason' => 'অন্য/বাড়তি কারণ:',
 	'globalblocking-block-reasonotherlist' => 'অন্য কারণ:',
@@ -1416,6 +1420,7 @@ $messages['bn'] = array(
 	'globalblocking-block-expiryinvalid' => 'মেয়াদ উত্তীর্ণের যে সময় ($1) আপনি প্রবেশ করিয়েছেন তা গ্রহণযোগ্য নয়।',
 	'globalblocking-block-submit' => 'এই আইপি ঠিকানাকে গ্লোবালি বাধাদান করো',
 	'globalblocking-modify-submit' => 'এই গ্লোবাল বাধাটি পরিবর্তন করুন',
+	'globalblocking-block-success' => '$1 আইপি ঠিকানাটি সফলভাবে সকল উইকি প্রকল্পে বাধা দেয়া হয়েছে।',
 	'globalblocking-modify-success' => '$1-এর ওপর থাকা গ্লোবাল বাধাটি সফলভাবে পরিবর্তিত হয়েছে',
 	'globalblocking-block-successsub' => 'গ্লোবাল বাধাটি সফল',
 	'globalblocking-modify-successsub' => 'গ্লোবাল বাধাটি সফলভাবে পরিবর্তিত হয়েছে।',
@@ -1423,19 +1428,28 @@ $messages['bn'] = array(
 	'globalblocking-search-legend' => 'গ্লোবাল বাধার জন্য অনুসন্ধান',
 	'globalblocking-search-ip' => 'আইপি ঠিকানা:',
 	'globalblocking-search-submit' => 'বাধার জন্য অনুসন্ধান',
+	'globalblocking-search-errors' => 'আপনার ব্লক ব্যর্থ হয়েছে, নিচের {{PLURAL:$1|কারণে|কারণসমূহের জন্য}}:',
+	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') গ্লোবালি বাধা দেয়া হয়েছে [[Special:Contributions/\$4|\$4]] ''(\$5)''",
 	'globalblocking-list-expiry' => 'মেয়াদ উত্তীর্ণের সময় $1',
 	'globalblocking-list-anononly' => 'শুধুমাত্র বেনামী',
 	'globalblocking-list-unblock' => 'অপসারণ',
+	'globalblocking-list-whitelisted' => 'স্থানীয়ভাবে নিস্ক্রিয় করেছেন $1: $2',
 	'globalblocking-list-whitelist' => 'স্থানীয় অবস্থা',
 	'globalblocking-list-modify' => 'পরিবর্তন',
+	'globalblocking-list-noresults' => 'অনুরোধকৃত আইপি ঠিকানাটি ব্লক করা হয়নি।',
 	'globalblocking-goto-block' => 'একটি আইপি ঠিকানাকে গ্লেবালি বাধা প্রদান করুন',
 	'globalblocking-goto-unblock' => 'একটি গ্লোবাল বাধা তুলে নাও',
 	'globalblocking-goto-status' => 'একটি গ্লোবল বাধার স্থানীয় অবস্থা পরিবর্তন করুন',
 	'globalblocking-return' => 'গ্লোবাল বাধার তালিকায় ফিরে যান',
+	'globalblocking-notblocked' => 'আপনি যে আইপি ঠিকানাটি লিখেছেন ($1) সেটি গ্লোবালি ব্লক করা নয়।',
 	'globalblocking-unblock' => 'একটি গ্লোবাল বাধা তুলে নাও',
+	'globalblocking-unblock-ipinvalid' => 'আপনার লেখা আইপি ঠিকানা $1 সঠিক নয়। 
+অনুগ্রহ করে লক্ষ্য করুন আপনি কোনো নির্দিষ্ট ব্যবহারকারী না, লিখতে পারবেন না!',
 	'globalblocking-unblock-legend' => 'একটি গ্লোবাল বাধা তুলে নাও',
 	'globalblocking-unblock-submit' => 'গ্লোবাল বাধা তুলে নাও',
 	'globalblocking-unblock-reason' => 'কারণ:',
+	'globalblocking-unblock-unblocked' => "আপনি সফলভাবে '''$1''' আইপি ঠিকানাগুলো থেকে গ্লোবাল ব্লক #$2 অপসারণ করেছেন",
+	'globalblocking-unblock-errors' => 'গ্লোবাল ব্লক অপসারণ সফল হয়নি, {{PLURAL:$1|কারণে|কারণগুলোর জন্য}}:',
 	'globalblocking-unblock-successsub' => 'গ্লোবাল বাধা সফলভাবে তুলে নেওয়া হয়েছে',
 	'globalblocking-unblock-subtitle' => 'গ্লোবাল বাধা তুলে নেওয়া হয়েছে',
 	'globalblocking-unblock-intro' => 'গ্লোবাল বাধা তুলে নিতে আপনি নিচের ফর্মটি ব্যবহার করতে পারেন।',
@@ -1446,8 +1460,17 @@ $messages['bn'] = array(
 	'globalblocking-whitelist-statuslabel' => '{{SITENAME}} সাইটে গ্লোবাল বাধাটি নিষ্ক্রিয় করো',
 	'globalblocking-whitelist-submit' => 'স্থানীয় অবস্থা পরিবর্তন',
 	'globalblocking-whitelist-successsub' => 'স্থানীয় অবস্থা সফলভাবে পরিবর্তিত হয়েছে',
+	'globalblocking-blocked-nopassreset' => 'আপনি পাসওয়ার্ড পরিবর্তন করতে পারবেন না, কারণ আপনাকে গ্লোবালি বাধা দেয়া হয়েছে।',
+	'globalblocking-logpage' => 'গ্লোবাল ব্লক লগ',
+	'globalblocking-block-logentry' => '[[$1]] গ্লোবালি ব্লক করা হয়েছে, মেয়াদ উত্তীর্ণএর সময় $2',
+	'globalblocking-block2-logentry' => 'গ্লোবালি ব্লক করা হয়েছে [[$1]] ($2)',
+	'globalblocking-unblock-logentry' => 'গ্লোবাল ব্লক অপসারণ করা হয়েছে [[$1]]',
+	'globalblocking-whitelist-logentry' => '[[$1]] তে লোকালি গ্লোবাল ব্লক অপসারণ করা হয়েছে',
+	'globalblocking-dewhitelist-logentry' => '[[$1]] লোকালি গ্লোবাল ব্লক পুনরায় সক্রিয় করা হয়েছে',
+	'globalblocking-modify-logentry' => 'গ্লোবাল ব্লক সম্পাদনা করা হয়েছে [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'মেয়াদ উত্তীর্ণের সময় $1',
 	'globalblocking-logentry-noexpiry' => 'কোনো মেয়াদ উত্তীর্ণের সময় ঠিক করা হয়নি',
+	'globalblocking-loglink' => '$1 আইপি গ্লোবালি ব্লক করা হয়েছে ([[{{#Special:GlobalBlockList}}/$1|বিস্তারিত বর্ণনা]])।',
 	'globalblocking-showlog' => 'এই ব্যবহারকারীকে পূর্বেও বাধা প্রদান করা হয়েছিলো।
 তথ্যসূত্র হিসেবে তাই পূর্বের বাধাদানের লগটি নিচে প্রদর্শন করা হচ্ছে:',
 	'globalblocklist' => 'গ্লোবালি বাধা বলবৎ রয়েছে এমন আইপি ঠিকানাসমূহের তালিকা',
@@ -1455,9 +1478,13 @@ $messages['bn'] = array(
 	'globalblockstatus' => 'গ্লোবাল বাধা স্থানীয় অবস্থা',
 	'removeglobalblock' => 'একটি গ্লোবাল বাধা তুলে নাও',
 	'right-globalblock' => 'গ্লোবাল বাধা তৈরি করো',
+	'action-globalblock' => 'গ্লোবাল বাধা তৈরি করো',
 	'right-globalunblock' => 'গ্লোবাল বাধা তুলে নাও',
+	'action-globalunblock' => 'গ্লোবাল বাধা অপসারণ',
 	'right-globalblock-whitelist' => 'স্থানীয়ভাবে গ্লোবাল বাধা নিষ্ক্রিয় করো',
+	'action-globalblock-whitelist' => 'স্থানীয়ভাবে গ্লোবাল বাধা নিষ্ক্রিয় করো',
 	'right-globalblock-exempt' => 'গ্লোবাল বাধা বাইপাস করো',
+	'action-globalblock-exempt' => 'গ্লোবাল বাধা বাইপাস করো',
 );
 
 /** Breton (brezhoneg)
@@ -3720,9 +3747,13 @@ Lo jornal des blocâjos est disponiblo ce-desot :',
 	'globalblockstatus' => 'Statuts locals des blocâjos globâls',
 	'removeglobalblock' => 'Enlevar un blocâjo globâl',
 	'right-globalblock' => 'Blocar des usanciérs dens l’ensemblo',
+	'action-globalblock' => 'fâre des blocâjos globâls',
 	'right-globalunblock' => 'Enlevar des usanciérs blocâs dens l’ensemblo',
+	'action-globalunblock' => 'enlevar des blocâjos globâls',
 	'right-globalblock-whitelist' => 'Dèsactivar localament los blocâjos globâls',
+	'action-globalblock-whitelist' => 'dèsactivar localament los blocâjos globâls',
 	'right-globalblock-exempt' => 'Passar per-dessus los blocâjos globâls',
+	'action-globalblock-exempt' => 'passar per-dessus los blocâjos globâls',
 );
 
 /** Friulian (furlan)
@@ -5672,7 +5703,9 @@ Tulung digatèkaké yèn panjenengan ora bisa nglebokaké jeneng panganggo!',
 	'globalblocking-block-submit' => 'Blokir alamat IP iki sacara global',
 	'globalblocking-modify-submit' => 'Owah blokiran global iki',
 	'globalblocking-block-success' => 'Alamat IP $1 suksès diblokir saka kabèh proyèk.',
+	'globalblocking-modify-success' => 'Blokiran global nèng $1 sukses diowah',
 	'globalblocking-block-successsub' => 'Pamblokiran global bisa kasil suksès',
+	'globalblocking-modify-successsub' => 'Blokiran global suksès diowah',
 	'globalblocking-block-alreadyblocked' => 'Alamat IP $1 wis diblokir sacara global.
 Panjenengan bisa mirsani blokade sing ana ing [[Special:GlobalBlockList|dhaptar blokade global]],
 utawa owahi status pamblokiran sing ana kanthi ngirimaké manèh formulir iki.',
@@ -10447,14 +10480,18 @@ Blockeringsloggen visas nedan som referens:',
 );
 
 /** Swahili (Kiswahili)
+ * @author Kwisha
  * @author Stephenwanjau
  */
 $messages['sw'] = array(
 	'globalblocking-block-reason' => 'Sababu:',
 	'globalblocking-block-otherreason' => 'Sababu nyingine:',
+	'globalblocking-block-reasonotherlist' => 'Sababu nyingine',
 	'globalblocking-block-expiry' => 'Itakwisha:',
 	'globalblocking-block-expiry-otherfield' => 'Kipindi kingine:',
 	'globalblocking-block-options' => 'Chaguo:',
+	'globalblocking-ipaddress' => 'Anwani ya IP:',
+	'globalblocking-search-ip' => 'Anwani ya IP:',
 	'globalblocking-list-unblock' => 'ondoa',
 	'globalblocking-unblock-reason' => 'Sababu:',
 	'globalblocking-whitelist-reason' => 'Sababu:',
@@ -10555,6 +10592,7 @@ $messages['ta'] = array(
 	'globalblocking-block2-logentry' => 'உலகளவில் தடைசெய்யப்பட்டுள்ளது [[$1]] ($2)',
 	'globalblocking-unblock-logentry' => ' [[$1]] ல் நீக்கப்பட்ட உலகளவிய தடைகள்',
 	'globalblocking-logentry-expiry' => '$1இல் முடிகிறது',
+	'globalblocking-loglink' => 'இணைய நெறிமுறை முகவரி $1 உலகளவில் தடை செய்யப்பட்டது ([[{{#Special:GlobalBlockList}}/$1|முழுத் தகவல்கள்]]).',
 	'globalblocklist' => 'உலகளவில் தடை செய்யப்பட்ட IP முகவரிகளின் பட்டியல்',
 	'globalblock' => 'உலகளவில் ஒரு IP முகவரியை தடைசெய்',
 	'globalblockstatus' => 'உலகளாவிய தடையின் உள்நிலைமை',
