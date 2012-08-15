@@ -3772,6 +3772,17 @@ $messages['fy'] = array(
 	'globalblocking-block-expiry-otherfield' => 'In oare tiid:',
 );
 
+/** Irish (Gaeilge)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['ga'] = array(
+	'globalblocking-block-reason' => 'Fáth:',
+	'globalblocking-block-expiry' => 'Am éaga:',
+	'globalblocking-block-options' => 'Roghanna:',
+	'globalblocking-unblock-reason' => 'Fáth:',
+	'globalblocking-whitelist-reason' => 'Fáth:',
+);
+
 /** Galician (galego)
  * @author Prevert
  * @author Toliño
@@ -7722,6 +7733,54 @@ Het blokkeerlogboek wordt hieronder weergegeven:',
 	'action-globalblock-whitelist' => 'globale blokkades lokaal te negeren',
 	'right-globalblock-exempt' => 'Globale blokkades omzeilen',
 	'action-globalblock-exempt' => 'globale blokkades te omzeilen',
+);
+
+/** ‪Nederlands (informeel)‬ (‪Nederlands (informeel)‬)
+ * @author Siebrand
+ */
+$messages['nl-informal'] = array(
+	'globalblocking-modify-intro' => 'Je kunt dit formulier gebruiken om de instellingen van een globale blokkade te wijzigen.',
+	'globalblocking-block-intro' => "Je kunt deze pagina gebruiken om een IP-adres op alle wiki's te blokkeren.",
+	'globalblocking-block-errors' => 'Je blokkade is niet ingesteld om de volgende {{PLURAL:$1|reden|redenen}}:',
+	'globalblocking-block-ipinvalid' => 'Het IP-adres ($1) dat je hebt opgegeven is onjuist.
+Let op: je kunt geen gebruikersnaam opgeven!',
+	'globalblocking-block-expiryinvalid' => 'De vervaldatum/tijd die je hebt opgegeven is ongeldig ($1).',
+	'globalblocking-block-alreadyblocked' => 'Het IP-adres $1 is al globaal geblokkeerd.
+Je kunt de bestaande blokkade bekijken in de [[Special:GlobalBlockList|lijst met globale blokkades]] of de instellingen van de bestaande blokkade aanpassen door de gegevens uit dit formulier opnieuw op te slaan.',
+	'globalblocking-block-bigrange' => 'De reeks die je hebt opgegeven ($1) is te groot om te blokkeren. Je mag ten hoogste 65.536 adressen blokkeren (/16-reeksen)',
+	'globalblocking-list-ipinvalid' => 'Het IP-adres waar je naar zocht is onjuist ($1).
+Voer een correct IP-adres in.',
+	'globalblocking-search-errors' => 'Je zoekopdracht kende {{PLURAL:$1|het volgende probleem|de volgende problemen}}:',
+	'globalblocking-notblocked' => 'Het IP-adres ($1) dat je hebt ingegeven is niet globaal geblokkeerd.',
+	'globalblocking-unblock-ipinvalid' => 'Het IP-adres ($1) dat je hebt ingegeven is onjuist.
+Let op: je kunt geen gebruikersnaam ingeven!',
+	'globalblocking-unblock-unblocked' => "Je hebt de globale blokkade met nummer $2 voor het IP-adres '''$1''' verwijderd",
+	'globalblocking-unblock-errors' => 'De globale blokkade die je hebt opgegeven is niet verwijderd om de volgende {{PLURAL:$1|reden|redenen}}:',
+	'globalblocking-unblock-intro' => 'Je kunt dit formulier gebruik om een globale blokkade op te heffen.',
+	'globalblocking-whitelist-whitelisted' => "Je hebt de globale blokkade #$2 met het IP-adres '''$1''' op {{SITENAME}} opgeheven.",
+	'globalblocking-whitelist-dewhitelisted' => "Je hebt de globale blokkade #$2 met het IP-adres '''$1''' op {{SITENAME}} opnieuw actief gemaakt.",
+	'globalblocking-whitelist-nochange' => 'Je hebt de lokale status van deze blokkade niet gewijzigd.
+[[Special:GlobalBlockList|Terugkeren naar de lijst met globale blokkades]].',
+	'globalblocking-whitelist-errors' => 'Je kon de lokale status van de globale blokkade niet wijzigen om de volgende {{PLURAL:$1|reden|redenen}}:',
+	'globalblocking-whitelist-intro' => 'Je kunt dit formulier gebruiken om de lokale status van een globale blokkade te wijzigen.
+Als een globale blokkade op deze wiki is opgeheven, kunnen gebruikers vanaf het IP-adres gewoon bewerkingen uitvoeren.
+[[Special:GlobalBlockList|Terugkeren naar de lijst met globale blokkades]].',
+	'globalblocking-ipblocked' => "'''Je IP-adres is geblokkeerd op alle wiki's.'''
+
+De blokkade is uitgevoerd door \$1 (\$2).
+De reden hiervoor is ''\$3''.
+
+* Start blokkade: \$4
+* Blokkade vervalt op: \$5
+
+Je kunt contact op nemen met \$1 om de blokkade te bespreken.
+Je kunt de functie \"{{int:emailuser}}\" niet gebruiken tenzij er een geldig e-mailadres in je [[Special:Preferences|voorkeuren]] is ingevuld en je e-mailfuncties niet geblokkeerd zijn.
+Je huidige IP-adres is \$6.
+Vermeld de bovenstaande gegevens wanneer je hierop reageert.",
+	'globalblocking-blocked-nopassreset' => 'Je kunt het wachtwoord van gebruikers niet opnieuw instellen omdat je globaal geblokkeerd bent.',
+	'globalblocking-logpagetext' => "Dit logboek bevat aangemaakte en verwijderde globale blokkades op deze wiki.
+Globale blokkades kunnen ook op andere wiki's aangemaakt en verwijderd worden, en invloed hebben op deze wiki.
+Alle globale blokkades kan je bekijken in de [[Special:GlobalBlockList|lijst met globale blokkades]].",
 );
 
 /** Norwegian Nynorsk (‪norsk (nynorsk)‬)
