@@ -1428,6 +1428,8 @@ $messages['bn'] = array(
 	'globalblocking-search-legend' => 'গ্লোবাল বাধার জন্য অনুসন্ধান',
 	'globalblocking-search-ip' => 'আইপি ঠিকানা:',
 	'globalblocking-search-submit' => 'বাধার জন্য অনুসন্ধান',
+	'globalblocking-list-ipinvalid' => 'অনুসন্ধানের জন্য লেখা আপনার আইপি ঠিকানাটি ($1) সঠিক নয়।
+অনুগ্রহ করে একটি সঠিক আইপি ঠিকানা লিখুন।',
 	'globalblocking-search-errors' => 'আপনার ব্লক ব্যর্থ হয়েছে, নিচের {{PLURAL:$1|কারণে|কারণসমূহের জন্য}}:',
 	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') গ্লোবালি বাধা দেয়া হয়েছে [[Special:Contributions/\$4|\$4]] ''(\$5)''",
 	'globalblocking-list-expiry' => 'মেয়াদ উত্তীর্ণের সময় $1',
@@ -1454,12 +1456,19 @@ $messages['bn'] = array(
 	'globalblocking-unblock-subtitle' => 'গ্লোবাল বাধা তুলে নেওয়া হয়েছে',
 	'globalblocking-unblock-intro' => 'গ্লোবাল বাধা তুলে নিতে আপনি নিচের ফর্মটি ব্যবহার করতে পারেন।',
 	'globalblocking-whitelist' => 'গ্লোবাল বাধা স্থানীয় অবস্থা',
+	'globalblocking-whitelist-notapplied' => 'এই উইকির ক্ষেত্রে গ্লোবাল ব্লক প্রযোজ্য নয়,
+তাই গ্লোবাল ব্লকের স্থানীয় অবস্থা পরিবর্তন সম্ভব না।',
 	'globalblocking-whitelist-legend' => 'স্থানীয় অবস্থা পরিবর্তন',
 	'globalblocking-whitelist-reason' => 'কারণ:',
 	'globalblocking-whitelist-status' => 'স্থানীয় অবস্থা:',
 	'globalblocking-whitelist-statuslabel' => '{{SITENAME}} সাইটে গ্লোবাল বাধাটি নিষ্ক্রিয় করো',
 	'globalblocking-whitelist-submit' => 'স্থানীয় অবস্থা পরিবর্তন',
+	'globalblocking-whitelist-whitelisted' => "আপনি {{SITENAME}}তে সফলভাবে '''$1''' আইপি ঠিকানার জন্য #$2 গ্লোবাল ব্লক অপসারন করেছেন।",
+	'globalblocking-whitelist-dewhitelisted' => "আপনি {{SITENAME}}তে সফলভাবে '''$1''' আইপি ঠিকানার জন্য #$2 গ্লোবাল ব্লক পুনরায় সক্রিয় করেছেন।",
 	'globalblocking-whitelist-successsub' => 'স্থানীয় অবস্থা সফলভাবে পরিবর্তিত হয়েছে',
+	'globalblocking-whitelist-nochange' => 'এই ব্লকের স্থানীয় অবস্থার কোনো পরিবর্তন হয়নি।
+[[Special:GlobalBlockList|গ্লোবাল ব্লেকর তালিকায় ফিরে যান]]।',
+	'globalblocking-whitelist-errors' => 'গ্লোবাল ব্লক অপসারণ সফল হয়নি, {{PLURAL:$1|কারণে|কারণগুলোর জন্য}}:',
 	'globalblocking-blocked-nopassreset' => 'আপনি পাসওয়ার্ড পরিবর্তন করতে পারবেন না, কারণ আপনাকে গ্লোবালি বাধা দেয়া হয়েছে।',
 	'globalblocking-logpage' => 'গ্লোবাল ব্লক লগ',
 	'globalblocking-block-logentry' => '[[$1]] গ্লোবালি ব্লক করা হয়েছে, মেয়াদ উত্তীর্ণএর সময় $2',
@@ -5786,6 +5795,8 @@ Kanggo mirsani kabèh pamblokiran global sing aktif wektu iki, pirsani ing[[Spec
 	'globalblocking-logentry-expiry' => 'kedaluwarsa $1',
 	'globalblocking-logentry-noexpiry' => 'wates kedaluwarsa ora ana',
 	'globalblocking-loglink' => 'Alamat IP $1 diblokir global ([[{{#Special:GlobalBlockList}}/$1|rincian jangkepé]]).',
+	'globalblocking-showlog' => 'Alamat IP iki wis tau diblokir sakdurungé.
+Log pamblokiran sumadhiya nèng ngisor kanggo rujukan:',
 	'globalblocklist' => 'Tuduhna daftar alamat-alamat IP sing diblokir sacara global',
 	'globalblock' => 'Mblokir alamat IP sacara global',
 	'globalblockstatus' => 'Status lokal saka pamblokiran global',
@@ -9349,6 +9360,10 @@ $messages['sa'] = array(
 	'globalblocking-block-reason' => 'कारणम् :',
 	'globalblocking-block-otherreason' => 'अपरम्/अतिरिक्तं कारणम् :',
 	'globalblocking-block-reasonotherlist' => 'अन्यत् कारणम्',
+	'globalblocking-block-reason-dropdown' => '* सामान्यावरोधस्य कारणानि
+ ** क्रास्विकि-अनिष्टसन्देशप्रेषणम्
+ ** क्रास्विकि-दुरुपयोगः
+ ** नाशकत्वम्',
 	'globalblocking-block-edit-dropdown' => 'अवरोधकारणं सम्पाद्यताम्',
 	'globalblocking-block-expiry' => 'समाप्तिः :',
 	'globalblocking-block-expiry-other' => 'अन्यस्य समाप्तिसमयः',
@@ -9367,11 +9382,21 @@ $messages['sa'] = array(
 	'globalblocking-modify-success' => '$1 सम्बद्धः वैश्विकावरोधः यशस्वितया परिवर्तितः',
 	'globalblocking-block-successsub' => 'वैश्विकावरोधः यशस्वी जातः',
 	'globalblocking-modify-successsub' => 'वैश्विकावरोधः यशस्वितया परिवर्तितः',
+	'globalblocking-block-alreadyblocked' => '$1 ऐ पि सङ्केतः पूर्वमेव वैश्विकरूपेण अवरुद्धः अस्ति ।
+विद्यमानः अवरोधः भवता अत्र द्रष्टुं शक्यते [[Special:GlobalBlockList|list of global blocks]],
+अथवा अस्य प्रपत्रस्य पुनरुपस्थापनेन विद्यमानस्य अवरोधस्य विन्यासं परिवर्तयितुम् अर्हति ।',
+	'globalblocking-block-bigrange' => 'भवता निर्दिष्टा परिधिः ($1) अवरोधाय अति दीर्घा वर्तते ।
+गरिष्ठं नाम ६५, ५३६ सङ्केतान् अवरोद्धुम् अर्हति (/१६ परिधिः)',
+	'globalblocking-list-intro' => 'एषा अद्यत्वे विद्यमाना वैश्विकावरुद्धानाम् आवली ।
+केचन अवरोधाः स्थाने निष्क्रियाः : तन्नाम ते अन्येषु क्षेत्रेषु सक्रियाः सन्ति, किन्तु स्थानीयप्रबन्धकः अस्यां वीक्यां तान् निष्क्रियान् अकरोत् ।',
 	'globalblocking-list' => 'कृतवैश्विकावरोधानाम् एपिसङ्केतानाम् आवली',
 	'globalblocking-search-legend' => 'वैश्विकावरोधस्य अन्वेषणम्',
 	'globalblocking-search-ip' => 'एपि सङ्केतः :',
 	'globalblocking-search-submit' => 'अवरोधानाम् अन्वेषणम्',
+	'globalblocking-list-ipinvalid' => '($1) कृते भवता अन्विष्टः ऐ पि सङ्केतः अमान्यः विद्यते ।
+कृपया योग्यः ऐ पि सङ्केतः योज्यताम् ।',
 	'globalblocking-search-errors' => 'भवतः अन्वेषणं असफलं यतः {{PLURAL:$1|कारणम्|कारणानि}}:',
+	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') वैश्विकस्तरे अवरुद्धः  [[Special:Contributions/\$4|\$4]] ''(\$5)''",
 	'globalblocking-list-expiry' => 'समाप्तिः $1',
 	'globalblocking-list-anononly' => 'अनामकमात्रम्',
 	'globalblocking-list-unblock' => 'निष्कास्यताम्',
@@ -10646,7 +10671,7 @@ $messages['ta'] = array(
 உங்கள் இப்போதைய இணைய நெறிமுறை இலக்கம் \$6 ஆகும்.
 தயவு செய்து நீங்கள் மேற்கொள்ளும் எந்தவொரு வினவலிலும் மேலேயுள்ள விபரங்கள் அனைத்தையும் உள்ளடக்கவும்.",
 	'globalblocking-blocked-nopassreset' => 'நீங்கள் உலகளவில் தடை செய்யப்பட்டுள்ளதால் பயனரின் கடவுச் சொல்களை மீளமைக்க முடியாது.',
-	'globalblocking-logpage' => 'உலக தடை உள்ளீடு',
+	'globalblocking-logpage' => 'உலகளவிய தடைப் பதிகை',
 	'globalblocking-block-logentry' => '$2 என்னும் முடிவும் நேரத்துடன் [[$1]] என்பவர் தடை செய்யப்பட்டார்',
 	'globalblocking-block2-logentry' => 'உலகளவில் தடைசெய்யப்பட்டுள்ளது [[$1]] ($2)',
 	'globalblocking-unblock-logentry' => ' [[$1]] ல் நீக்கப்பட்ட உலகளவிய தடைகள்',
@@ -11451,11 +11476,53 @@ $messages['uk'] = array(
 	'right-globalblock-exempt' => 'Обхід глобальних блокувань',
 );
 
-/** Urdu (اردو) */
+/** Urdu (اردو)
+ * @author පසිඳු කාවින්ද
+ */
 $messages['ur'] = array(
 	'globalblocking-block-reason' => 'وجہ:',
+	'globalblocking-block-reasonotherlist' => 'دوسرے کی وجہ',
+	'globalblocking-block-edit-dropdown' => 'بلاک کی وجوہات میں ترمیم کریں',
+	'globalblocking-block-expiry' => 'ختم:',
+	'globalblocking-block-expiry-other' => 'دوسرے کے ختم ہونے کے وقت',
+	'globalblocking-block-expiry-otherfield' => 'دوسرے وقت:',
+	'globalblocking-block-legend' => 'عالمی سطح پر ایک آئی پی ایڈریس بلاک',
+	'globalblocking-block-options' => 'اختیارات:',
+	'globalblocking-ipaddress' => 'آئی پی ایڈریس:',
+	'globalblocking-ipbanononly' => 'گمنام صارفین صرف بلاک',
+	'globalblocking-block-submit' => 'عالمی سطح پر اس کا آئی پی ایڈریس بلاک',
+	'globalblocking-modify-submit' => 'اس عالمی بلاک میں ترمیم',
+	'globalblocking-block-successsub' => 'عالمی بلاک کامیاب',
+	'globalblocking-modify-successsub' => 'عالمی بلاک بار کامیابی',
+	'globalblocking-list' => 'عالمی سطح پر بلاک IP پتے کی فہرست',
+	'globalblocking-search-legend' => 'ایک عالمی بلاک تلاش کریں',
+	'globalblocking-search-ip' => 'آئی پی ایڈریس:',
+	'globalblocking-list-anononly' => 'گمنام صرف',
+	'globalblocking-list-unblock' => 'حذف کریں',
+	'globalblocking-list-whitelist' => 'مقامی حیثیت',
+	'globalblocking-list-modify' => 'میں ترمیم',
+	'globalblocking-goto-block' => 'عالمی سطح پر ایک آئی پی ایڈریس بلاک',
+	'globalblocking-goto-unblock' => 'ایک عالمی بلاک حذف کریں',
+	'globalblocking-goto-status' => 'ایک عالمی بلاک مقامی کیفیت تبدیل کریں',
+	'globalblocking-unblock' => 'ایک عالمی بلاک حذف کریں',
+	'globalblocking-unblock-legend' => 'ایک عالمی بلاک حذف کریں',
+	'globalblocking-unblock-submit' => 'عالمی بلاک حذف کریں',
 	'globalblocking-unblock-reason' => 'وجہ:',
+	'globalblocking-unblock-successsub' => 'عالمی بلاک کو کامیابی سے ہٹا دیا',
+	'globalblocking-unblock-subtitle' => 'عالمی بلاک اتارنے',
+	'globalblocking-unblock-intro' => 'آپ ایک عالمی بلاک کو ہٹانے کے لئے اس فارم استعمال کر سکتے ہیں.',
+	'globalblocking-whitelist' => 'عالمی بلاکس کی مقامی حیثیت',
+	'globalblocking-whitelist-legend' => 'مقامی مقام تبدیل کریں',
 	'globalblocking-whitelist-reason' => 'وجہ:',
+	'globalblocking-whitelist-status' => 'مقامی کا درجہ:',
+	'globalblocking-whitelist-submit' => 'مقامی مقام تبدیل کریں',
+	'globalblocking-logentry-noexpiry' => 'کوئی ختم ہونے کا سیٹ',
+	'globalblock' => 'عالمی سطح پر ایک آئی پی ایڈریس بلاک',
+	'action-globalunblock' => 'عالمی بلاکس حذف کریں',
+	'right-globalblock-whitelist' => 'عالمی بلاکس کے مقامی غیر فعال کریں',
+	'action-globalblock-whitelist' => 'عالمی بلاکس کے مقامی غیر فعال کریں',
+	'right-globalblock-exempt' => 'عالمی بلاکس کو چھوڑنے والے',
+	'action-globalblock-exempt' => 'عالمی بلاکس کو چھوڑنے والے',
 );
 
 /** vèneto (vèneto)
