@@ -6688,10 +6688,13 @@ $messages['lv'] = array(
 Lūdzu, ievadiet derīgu IP adresi.',
 	'globalblocking-list-whitelist' => 'lokālais statuss',
 	'globalblocking-unblock-reason' => 'Iemesls:',
+	'globalblocking-whitelist-legend' => 'Mainīt lokālo statusu',
 	'globalblocking-whitelist-reason' => 'Iemesls:',
 	'globalblocking-whitelist-status' => 'Lokālais statuss:',
 	'globalblocking-whitelist-submit' => 'Mainīt lokālo statusu',
+	'globalblocking-logpage' => 'Globālais bloķēšanas žurnāls',
 	'globalblocklist' => 'Globāli bloķēto IP adrešu saraksts',
+	'globalblock' => 'Globāli bloķēt IP adresi',
 	'right-globalblock' => 'Veikt lietotāju globālu bloķēšanu',
 );
 
@@ -9433,8 +9436,25 @@ $messages['sa'] = array(
 	'globalblocking-whitelist-successsub' => 'स्थानीयस्थितिः परिवर्तितः अस्ति',
 	'globalblocking-whitelist-nochange' => 'अस्य अवरोधस्य स्थानीयस्थितेः न किमपि परिवर्तनं भवता कृतं । [[Special:GlobalBlockList|वैश्विकावरोधावलिं प्रति प्रत्यागम्यताम्]]',
 	'globalblocking-whitelist-errors' => 'भवता कृतं वैश्विकावरोधस्य स्थानीयस्थितेः परिवर्तनम् असफलं यतः {{PLURAL:$1|कारणम्|कारणानि}}:',
+	'globalblocking-whitelist-intro' => 'वैश्विकावरोधस्य स्थानीयस्थितेः सम्पादनाय इदं प्रपत्रम् उपयोक्तुम् अर्हति ।
+अस्यां वीक्यां वैश्विकावरोधः यदि निष्क्रियः कृतः, परिणत-ऐ पि-सङ्केतयुक्ताः योजकाः सामान्यरीत्या सम्पादयितुम् अर्हन्ति ।
+[[Special:GlobalBlockList|वैश्विकावरोधावलीं प्रति निरवर्तनम्]]',
+	'globalblocking-ipblocked' => "'''भवतः ऐ पि सङ्केतः सर्वासु वीकीषु अवरुद्धः अस्ति ।'''
+अवरोधः \$1 (\$2) इत्यनेन कृतः ।
+दत्तं कारणम् एवमस्ति ''\$3''।
+
+* अवरोधस्य आरम्भः: \$4
+* अवरोधस्य अन्त्यम्: \$5
+
+अवरोधविषये चर्चयितुं भवान् \$1 इत्यनेन मेलितुम् अर्हति ।
+भवता \"{{int:emailuser}}\" इत्येतत् उपयोक्तुं न शक्यते यदि मान्यः ईपत्रसङ्केतः [[Special:Preferences|लेखस्य आद्यता]] इत्यस्मिन् निर्दिष्टः न स्यात्, भवान् तस्य उपयोगाय अवरुद्धः नास्ति ।
+सम्प्रति भवतः ऐ पि सङ्केतः \$6 ।
+कृपया एतानि सर्वाणि विवरणानि प्रश्नावसरे दीयन्ताम् ।",
 	'globalblocking-blocked-nopassreset' => 'योजकस्य कूटशब्दः भवता पुनर्निर्णेतुं न शक्यते यतः भवान् वैश्विकावरुद्धः अस्ति ।',
 	'globalblocking-logpage' => 'वैश्विकावरोधस्य सूची',
+	'globalblocking-logpagetext' => 'अस्यां वीक्यां कृतानां निष्कासितानां सर्वेषाम् वैश्विकावरोधानां वृत्तमिदम् ।
+ज्ञातव्यं यत् अन्यासु वीकीषु वैश्विकावरोधाः कर्तुम् अपसारयितुञ्च शक्याः, एतेषां वैश्विकावरोधानां परिणामः अस्यां वीक्यां भवेत् ।
+सर्वेषां सक्रियावरोधानां दर्शनाय भवता अत्र [[Special:GlobalBlockList|global block list]] द्रष्टुं शक्यते ।',
 	'globalblocking-block-logentry' => '[[$1]] इत्यस्य  वैश्विकावरोधस्य समाप्तिसमयः $2',
 	'globalblocking-block2-logentry' => 'वैश्विकावरोधः  [[$1]] ($2)',
 	'globalblocking-unblock-logentry' => '[[$1]] इत्यस्य वैश्विकावरोधः निष्कासितः',
