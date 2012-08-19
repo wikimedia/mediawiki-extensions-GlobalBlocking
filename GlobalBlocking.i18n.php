@@ -642,7 +642,9 @@ $messages['arc'] = array(
 	'globalblocking-block-options' => 'ܓܒܝܬ̈ܐ',
 	'globalblocking-list' => 'ܡܟܬܒܘܬܐ ܕܦܪ̈ܫܓܢܐ ܕܐܝܦܝ (IP) ܚܪ̈ܝܡܐ ܓܘܢܐܝܬ',
 	'globalblocking-list-anononly' => 'ܠܐ ܝܕ̈ܝܥܐ ܒܠܚܘܕ',
+	'globalblocking-list-unblock' => 'ܠܚܝ',
 	'globalblocking-list-whitelist' => 'ܐܝܟܢܝܘܬܐ ܕܘܟܬܢܝܬܐ',
+	'globalblocking-whitelist' => 'ܐܝܟܢܝܘܬܐ ܕܘܟܬܢܝܬܐ ܕܚܪܡܐ ܓܘܢܝܐ',
 	'globalblocking-whitelist-reason' => 'ܥܠܬܐ:',
 	'globalblocklist' => 'ܡܟܬܒܘܬܐ ܕܦܪ̈ܫܓܢܐ ܕܐܝܦܝ (IP) ܚܪ̈ܝܡܐ ܓܘܢܐܝܬ',
 );
@@ -3060,7 +3062,7 @@ Palun sisesta õige IP-aadress.',
 	'globalblocking-goto-block' => 'Blokeeri IP-aadress globaalselt',
 	'globalblocking-goto-unblock' => 'Eemalda globaalne blokeering',
 	'globalblocking-goto-status' => 'Muuda globaalse blokeeringu kohalikku olekut',
-	'globalblocking-return' => 'Naase blobaalsete blokeeringute loendisse',
+	'globalblocking-return' => 'Naase globaalsete blokeeringute loendisse',
 	'globalblocking-notblocked' => 'Sisestatud IP-aadress $1 ei ole globaalselt blokeeritud.',
 	'globalblocking-unblock' => 'Eemalda globaalne blokeering',
 	'globalblocking-unblock-ipinvalid' => 'Sisestatud IP-aadress $1 on vigane.
