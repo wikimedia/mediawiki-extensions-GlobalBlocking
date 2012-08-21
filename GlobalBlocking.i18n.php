@@ -3530,8 +3530,8 @@ $messages['fr'] = array(
 	'globalblocking-block-reason' => 'Motif :',
 	'globalblocking-block-otherreason' => 'Motif autre / supplémentaire :',
 	'globalblocking-block-reasonotherlist' => 'Autre motif',
-	'globalblocking-block-reason-dropdown' => '* Raisons communes de blocage
-** Spam sur plusieurs wikis
+	'globalblocking-block-reason-dropdown' => '* Raisons fréquentes de blocage
+** Pollupostage sur plusieurs wikis
 ** Abus sur plusieurs wikis
 ** Vandalisme',
 	'globalblocking-block-edit-dropdown' => 'Modifier les motifs de blocage par défaut',
