@@ -5688,13 +5688,13 @@ $messages['ja'] = array(
 	'globalblockstatus' => 'グローバルブロックのローカル状態',
 	'removeglobalblock' => 'グローバルブロックを解除',
 	'right-globalblock' => '他利用者のグローバルブロック',
-	'action-globalblock' => 'グローバルブロックを作成',
+	'action-globalblock' => '他利用者のグローバルブロック',
 	'right-globalunblock' => 'グローバルブロックを解除',
-	'action-globalunblock' => 'グローバルブロックを削除',
-	'right-globalblock-whitelist' => 'ローカルでグローバルブロックを無効化',
-	'action-globalblock-whitelist' => 'ローカルでグローバルブロックを無効にする',
+	'action-globalunblock' => 'グローバルブロックの解除',
+	'right-globalblock-whitelist' => 'グローバルブロックをローカルで無効化',
+	'action-globalblock-whitelist' => 'グローバルブロックのローカルでの無効化',
 	'right-globalblock-exempt' => 'グローバルブロックを回避',
-	'action-globalblock-exempt' => 'グローバルブロックを迂回',
+	'action-globalblock-exempt' => 'グローバルブロックの回避',
 );
 
 /** Javanese (Basa Jawa)
