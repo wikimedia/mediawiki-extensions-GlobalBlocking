@@ -127,14 +127,12 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 
 		## Setup
 		$timestamp = $row->gb_timestamp;
-		$expiry = $row->gb_expiry;
+		$expiry = $wgLang->formatExpiry( $row->gb_expiry, TS_MW );
 		$options = array();
 
-		# Messy B/C until $wgLang->formatExpiry() is well embedded
-		if( Block::decodeExpiry( $expiry ) == 'infinity' ){
+		if ( $expiry == 'infinity' ) {
 			$options[] = wfMsgExt( 'infiniteblock', 'parseinline' );
 		} else {
-			$expiry = Block::decodeExpiry( $expiry );
 			$options[] = wfMsgExt(
 				'expiringblock',
 				'parseinline',

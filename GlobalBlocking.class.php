@@ -72,17 +72,11 @@ class GlobalBlocking {
 
 			$blockTimestamp = $wgLang->timeanddate( wfTimestamp( TS_MW, $block->gb_timestamp ), true );
 
-			# Messy B/C until $wgLang->formatExpiry() is well embedded
-			$blockExpiry = Block::decodeExpiry( $block->gb_expiry );
-			if( $blockExpiry == 'infinity' ){
-				$blockExpiry = wfMessage( 'infiniteblock' )->text();
-			} else {
-				$blockExpiry = $wgLang->timeanddate( wfTimestamp( TS_MW, $blockExpiry ), true );
-			}
+			$blockExpiry = $wgLang->formatExpiry( $block->gb_expiry );
 
 			$display_wiki = self::getWikiName( $block->gb_by_wiki );
 			$blockingUser = self::maybeLinkUserpage( $block->gb_by_wiki, $block->gb_by );
-			
+
 			return $result = array( 'globalblocking-ipblocked',
 				$blockingUser, $display_wiki, $block->gb_reason, $blockTimestamp, $blockExpiry, $ip );
 		}
