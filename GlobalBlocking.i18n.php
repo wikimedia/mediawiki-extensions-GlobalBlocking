@@ -6048,7 +6048,7 @@ $messages['ko'] = array(
 ** 여러 위키에서의 부정 행위
 ** 문서 훼손',
 	'globalblocking-block-edit-dropdown' => '차단 이유 목록 편집하기',
-	'globalblocking-block-expiry' => '기간:',
+	'globalblocking-block-expiry' => '기한:',
 	'globalblocking-block-expiry-other' => '다른 기간',
 	'globalblocking-block-expiry-otherfield' => '다른 기간:',
 	'globalblocking-block-legend' => '특정 IP를 전체 위키에서 차단하기',
