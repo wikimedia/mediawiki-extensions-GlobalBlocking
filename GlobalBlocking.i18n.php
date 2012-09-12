@@ -11383,6 +11383,7 @@ $messages['tyv'] = array(
 /** Ukrainian (українська)
  * @author AS
  * @author Ahonc
+ * @author Base
  * @author Dim Grits
  * @author Microcell
  * @author NickK
@@ -11511,6 +11512,7 @@ $messages['uk'] = array(
 	'right-globalblock' => 'накладання глобальних блокувань',
 	'right-globalunblock' => 'зняття глобальних блокувань',
 	'right-globalblock-whitelist' => 'Локальне відключення глобального блокування',
+	'action-globalblock-whitelist' => 'локальне відключення глобального блокування',
 	'right-globalblock-exempt' => 'Обхід глобальних блокувань',
 );
 
