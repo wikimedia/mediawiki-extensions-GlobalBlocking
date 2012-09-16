@@ -10594,6 +10594,7 @@ Blockeringsloggen visas nedan som referens:',
 	'right-globalunblock' => 'Ta bort globala blockeringar',
 	'action-globalunblock' => 'ta bort globala blockeringar',
 	'right-globalblock-whitelist' => 'Slå av globala blockeringar lokalt',
+	'action-globalblock-whitelist' => 'Inaktivera globala blockeringar lokalt',
 	'right-globalblock-exempt' => 'Gå förbi globala blockeringar',
 );
 
