@@ -38,7 +38,7 @@ $specialPageAliases['as'] = array(
 	'GlobalBlockList' => array( 'গোলকীয়_অৱৰোধ_তালিকা' ),
 );
 
-/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬) */
+/** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎) */
 $specialPageAliases['be-tarask'] = array(
 	'GlobalBlock' => array( 'Глябальнае_блякаваньне' ),
 	'GlobalBlockList' => array( 'Сьпіс_глябальных_блякаваньняў' ),
@@ -321,7 +321,7 @@ $specialPageAliases['mt'] = array(
 	'GlobalBlockList' => array( 'ListaBlokkGlobali' ),
 );
 
-/** Norwegian Bokmål (‪norsk (bokmål)‬) */
+/** Norwegian Bokmål (norsk (bokmål)‎) */
 $specialPageAliases['nb'] = array(
 	'GlobalBlock' => array( 'Blokker_globalt', 'Global_blokkering' ),
 	'GlobalBlockList' => array( 'Global_blokkeringsliste' ),
@@ -345,7 +345,7 @@ $specialPageAliases['nl'] = array(
 	'GlobalBlockStatus' => array( 'WitteLijstGlobaleBlokkades', 'GlobaleBlokkadestatus' ),
 );
 
-/** Norwegian Nynorsk (‪norsk (nynorsk)‬) */
+/** Norwegian Nynorsk (norsk (nynorsk)‎) */
 $specialPageAliases['nn'] = array(
 	'GlobalBlockList' => array( 'Global_blokkeringsliste' ),
 );
@@ -466,7 +466,7 @@ $specialPageAliases['yue'] = array(
 	'GlobalBlockStatus' => array( '全域封禁白名單' ),
 );
 
-/** Simplified Chinese (‪中文（简体）‬) */
+/** Simplified Chinese (中文（简体）‎) */
 $specialPageAliases['zh-hans'] = array(
 	'GlobalBlock' => array( '全域封禁' ),
 	'GlobalBlockList' => array( '全域封禁列表' ),
@@ -474,7 +474,7 @@ $specialPageAliases['zh-hans'] = array(
 	'GlobalBlockStatus' => array( '全域封禁白名单' ),
 );
 
-/** Traditional Chinese (‪中文（繁體）‬) */
+/** Traditional Chinese (中文（繁體）‎) */
 $specialPageAliases['zh-hant'] = array(
 	'GlobalBlock' => array( '全域封禁' ),
 	'GlobalBlockList' => array( '全域封禁列表' ),
