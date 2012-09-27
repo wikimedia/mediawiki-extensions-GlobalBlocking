@@ -8,19 +8,18 @@ class SpecialGlobalBlockStatus extends SpecialPage {
 	}
 
 	function execute( $par ) {
-		global $wgUser;
 		$this->setHeaders();
 
 		$this->loadParameters();
 
 		$out = $this->getOutput();
-		$out->setPageTitle( wfMsg( 'globalblocking-whitelist' ) );
+		$out->setPageTitle( $this->msg( 'globalblocking-whitelist' ) );
 		$out->setSubtitle( GlobalBlocking::buildSubtitleLinks( 'GlobalBlockStatus' ) );
 		$out->setRobotPolicy( "noindex,nofollow" );
 		$out->setArticleRelated( false );
 		$out->enableClientCache( false );
 
-		if (!$this->userCanExecute( $wgUser )) {
+		if ( !$this->userCanExecute( $this->getUser() ) ) {
 			$this->displayRestrictionError();
 			return;
 		}
@@ -34,7 +33,7 @@ class SpecialGlobalBlockStatus extends SpecialPage {
 		$errors = '';
 
 		$request = $this->getRequest();
-		if ( $request->wasPosted() && $wgUser->matchEditToken( $request->getVal( 'wpEditToken' ) ) ) {
+		if ( $request->wasPosted() && $this->getUser()->matchEditToken( $request->getVal( 'wpEditToken' ) ) ) {
 			// They want to submit. Let's have a look.
 			$errors = $this->trySubmit();
 			if( !$errors ) {
@@ -46,7 +45,6 @@ class SpecialGlobalBlockStatus extends SpecialPage {
 		$errorstr = '';
 
 		if (is_array($errors) && count($errors)>0) {
-
 			foreach ( $errors as $error ) {
 				if (is_array($error)) {
 					$msg = array_shift($error);
@@ -54,10 +52,11 @@ class SpecialGlobalBlockStatus extends SpecialPage {
 					$msg = $error;
 					$error = array();
 				}
-				$errorstr .= Xml::tags( 'li', null, wfMsgExt( $msg, array( 'parseinline' ), $error ) );
+				$errorstr .= Xml::tags( 'li', null, $this->msg( $msg, $error )->parse() );
 			}
 
-			$errorstr = wfMsgExt( 'globalblocking-whitelist-errors', array( 'parse' ), array( count( $errors ) ) ) .
+			$errorstr = $this->msg( 'globalblocking-whitelist-errors' )
+				->numParams( count( $errors ) )->parseAsBlock() .
 				Xml::tags( 'ul', array( 'class' => 'error' ), $errorstr );
 
 			$errorstr = Xml::tags( 'div', array( 'class' => 'error' ), $errorstr );
@@ -70,14 +69,14 @@ class SpecialGlobalBlockStatus extends SpecialPage {
 		$request = $this->getRequest();
 		$ip = trim( $request->getText( 'address' ) );
 		$this->mAddress = ( $ip !== '' || $request->wasPosted() )
-			? Block::normaliseRange( $ip )
+			? IP::sanitizeRange( $ip )
 			: '';
 		$this->mReason = $request->getText( 'wpReason' );
 		$this->mWhitelistStatus = $request->getCheck( 'wpWhitelistStatus' );
 		$this->mEditToken = $request->getText( 'wpEditToken' );
 
 		if ( $this->mAddress ) {
-			$this->mCurrentStatus = ( GlobalBlocking::getWhitelistInfoByIP( $this->mAddress ) !== false);
+			$this->mCurrentStatus = ( GlobalBlocking::getWhitelistInfoByIP( $this->mAddress ) !== false );
 
 			if ( !$request->wasPosted() ) {
 				$this->mWhitelistStatus = $this->mCurrentStatus;
@@ -88,8 +87,6 @@ class SpecialGlobalBlockStatus extends SpecialPage {
 	}
 
 	function trySubmit() {
-		global $wgUser;
-
 		$ip = $this->mAddress;
 
 		// Is it blocked?
@@ -115,7 +112,14 @@ class SpecialGlobalBlockStatus extends SpecialPage {
 			// global_block_whitelist table, which allows us to purge it when the block has expired.
 			$expiry = $gdbr->selectField( 'globalblocks', 'gb_expiry', array( 'gb_id' => $id ), __METHOD__ );
 
-			$row = array('gbw_by' => $wgUser->getId(), 'gbw_by_text' => $wgUser->getName(), 'gbw_reason' => $this->mReason, 'gbw_address' => $ip, 'gbw_expiry' => $expiry, 'gbw_id' => $id);
+			$row = array(
+				'gbw_by' => $this->getUser()->getId(),
+				'gbw_by_text' => $this->getUser()->getName(),
+				'gbw_reason' => $this->mReason,
+				'gbw_address' => $ip,
+				'gbw_expiry' => $expiry,
+				'gbw_id' => $id
+			);
 			$dbw->replace( 'global_block_whitelist', array( 'gbw_id' ), $row, __METHOD__ );
 
 			$page = new LogPage( 'gblblock' );
@@ -130,25 +134,26 @@ class SpecialGlobalBlockStatus extends SpecialPage {
 			$page->addEntry( 'dwhitelist', Title::makeTitleSafe( NS_USER, $ip ), $this->mReason );
 			$out->addWikiMsg( 'globalblocking-whitelist-dewhitelisted', $ip, $id );
 		}
-		
-		$link = Linker::makeKnownLinkObj( SpecialPage::getTitleFor( 'GlobalBlockList' ), wfMsg( 'globalblocking-return' ) );
+
+		$link = Linker::linkKnown(
+			SpecialPage::getTitleFor( 'GlobalBlockList' ),
+			$this->msg( 'globalblocking-return' )->escaped()
+		);
 		$out->addHTML( $link );
 
-		$out->setSubtitle(wfMsg('globalblocking-whitelist-successsub'));
+		$out->setSubtitle( $this->msg('globalblocking-whitelist-successsub') );
 
 		return array();
 	}
 
 	function form( $error ) {
-		global $wgUser;
-
 		$out = $this->getOutput();
 		$out->addWikiMsg( 'globalblocking-whitelist-intro' );
 
 		$out->addHTML( $error );
 
 		$form = '';
-		$form .= Xml::openElement( 'fieldset' ) . Xml::element( 'legend', null, wfMsg( 'globalblocking-whitelist-legend' ) );
+		$form .= Xml::openElement( 'fieldset' ) . Xml::element( 'legend', null, $this->msg( 'globalblocking-whitelist-legend' )->text() );
 		$form .= Xml::openElement( 'form', array( 'method' => 'post', 'action' => $this->getTitle()->getFullURL(), 'name' => 'globalblock-whitelist' ) );
 
 		$form .= Html::hidden( 'title', $this->getTitle()->getPrefixedText() );
@@ -159,11 +164,16 @@ class SpecialGlobalBlockStatus extends SpecialPage {
 		// uses ipaddress msg
 		$fields['globalblocking-ipaddress'] = Xml::input( 'address', 45, $this->mAddress );
 		$fields['globalblocking-whitelist-reason'] = Xml::input( 'wpReason', 45, $this->mReason );
-		$fields['globalblocking-whitelist-status'] = Xml::checkLabel( wfMsgExt( 'globalblocking-whitelist-statuslabel', 'parsemag' ), 'wpWhitelistStatus', 'wpWhitelistStatus', $this->mCurrentStatus );
+		$fields['globalblocking-whitelist-status'] = Xml::checkLabel(
+			$this->msg( 'globalblocking-whitelist-statuslabel' )->text(),
+			'wpWhitelistStatus',
+			'wpWhitelistStatus',
+			$this->mCurrentStatus
+		);
 
 		$form .= Xml::buildForm( $fields, 'globalblocking-whitelist-submit' );
 
-		$form .= Html::hidden( 'wpEditToken', $wgUser->editToken() );
+		$form .= Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() );
 
 		$form .= Xml::closeElement( 'form' );
 		$form .= Xml::closeElement( 'fieldset' );

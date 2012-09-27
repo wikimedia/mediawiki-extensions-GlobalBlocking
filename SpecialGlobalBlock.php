@@ -1,28 +1,26 @@
 <?php
-if ( ! defined( 'MEDIAWIKI' ) )
-	die();
 
 class SpecialGlobalBlock extends SpecialPage {
-	public $mAddress, $mReason, $mExpiry, $mAnonOnly;
+	public $mAddress, $mReason, $mExpiry, $mAnonOnly, $mModifyForm, $mExpirySelection,
+		$mReasonList, $mModify;
 
 	function __construct() {
 		parent::__construct( 'GlobalBlock', 'globalblock' );
 	}
 
 	function execute( $par ) {
-		global $wgUser;
 		$this->setHeaders();
 
 		$this->loadParameters( $par );
 
 		$out = $this->getOutput();
-		$out->setPageTitle( wfMsg( 'globalblocking-block' ) );
+		$out->setPageTitle( $this->msg( 'globalblocking-block' ) );
 		$out->setSubtitle( GlobalBlocking::buildSubtitleLinks( 'GlobalBlock' ) );
 		$out->setRobotPolicy( "noindex,nofollow" );
 		$out->setArticleRelated( false );
 		$out->enableClientCache( false );
 
-		if (!$this->userCanExecute( $wgUser )) {
+		if (!$this->userCanExecute( $this->getUser() )) {
 			$this->displayRestrictionError();
 			return;
 		}
@@ -30,7 +28,7 @@ class SpecialGlobalBlock extends SpecialPage {
 		$errors = '';
 
 		$request = $this->getRequest();
-		if ( $request->wasPosted() && $wgUser->matchEditToken( $request->getVal( 'wpEditToken' ) ) ) {
+		if ( $request->wasPosted() && $this->getUser()->matchEditToken( $request->getVal( 'wpEditToken' ) ) ) {
 			// They want to submit. Let's have a look.
 			$errors = $this->trySubmit();
 			if( !$errors ) {
@@ -45,10 +43,12 @@ class SpecialGlobalBlock extends SpecialPage {
 
 		if ( $this->mModifyForm ) {
 			$dbr = GlobalBlocking::getGlobalBlockingSlave();
-			$block = $dbr->selectRow( 'globalblocks',
-									'*',
-									array( 'gb_address' => $this->mAddress ),
-									__METHOD__ );
+			$block = $dbr->selectRow(
+				'globalblocks',
+				'*',
+				array( 'gb_address' => $this->mAddress ),
+				__METHOD__
+			);
 			if ( $block ) {
 				if ( $block->gb_expiry == 'infinity' ) {
 					$this->mExpirySelection = 'indefinite';
@@ -78,7 +78,7 @@ class SpecialGlobalBlock extends SpecialPage {
 				$msg = $error;
 				$error = array();
 			}
-			$errorstr .= Xml::tags( 'li', null, wfMsgExt( $msg, array( 'parseinline' ), $error ) );
+			$errorstr .= Xml::tags( 'li', null, $this->msg( $msg, $error )->parse() );
 
 			// Special case
 			if ($msg == 'globalblocking-block-alreadyblocked') {
@@ -87,10 +87,7 @@ class SpecialGlobalBlock extends SpecialPage {
 		}
 
 		$errorstr = Xml::tags( 'ul', null, $errorstr );
-		$header = wfMsgExt( 'globalblocking-block-errors',
-								'parse',
-								array(count( $errors ))
-							);
+		$header = $this->msg( 'globalblocking-block-errors' )->numParams( count( $errors ) )->parseAsBlock();
 		$errorstr = "$header\n$errorstr";
 
 		$errorstr = Xml::tags( 'div', array( 'class' => 'error' ), $errorstr );
@@ -99,20 +96,21 @@ class SpecialGlobalBlock extends SpecialPage {
 	}
 
 	function loadParameters( $par ) {
-		global $wgRequest;
-		$this->mAddress = trim( $wgRequest->getText( 'wpAddress' ) );
+		$request = $this->getRequest();
+
+		$this->mAddress = trim( $request->getText( 'wpAddress' ) );
 		if (!$this->mAddress)
 			$this->mAddress = $par;
 
-		$this->mReason = $wgRequest->getText( 'wpReason' );
-		$this->mReasonList = $wgRequest->getText( 'wpBlockReasonList' );
-		$this->mExpiry = $this->mExpirySelection = $wgRequest->getText( 'wpExpiry' );
+		$this->mReason = $request->getText( 'wpReason' );
+		$this->mReasonList = $request->getText( 'wpBlockReasonList' );
+		$this->mExpiry = $this->mExpirySelection = $request->getText( 'wpExpiry' );
 		if ($this->mExpiry == 'other') {
-			$this->mExpiry = $wgRequest->getText( 'wpExpiryOther' );
+			$this->mExpiry = $request->getText( 'wpExpiryOther' );
 		}
-		$this->mAnonOnly = $wgRequest->getBool( 'wpAnonOnly' );
-		$this->mModify = $wgRequest->getBool( 'wpModify' );
-		$this->mModifyForm = $wgRequest->getCheck( 'modify' );
+		$this->mAnonOnly = $request->getBool( 'wpAnonOnly' );
+		$this->mModify = $request->getBool( 'wpModify' );
+		$this->mModifyForm = $request->getCheck( 'modify' );
 	}
 
 	function trySubmit() {
@@ -127,7 +125,8 @@ class SpecialGlobalBlock extends SpecialPage {
 		$reasonstr = $this->mReasonList;
 		if( $reasonstr != 'other' && $this->mReason != '' ) {
 			// Entry from drop down menu + additional comment
-			$reasonstr .= wfMsgForContent( 'colon-separator' ) . $this->mReason;
+			$reasonstr .= $this->msg( 'colon-separator' )->inContentLanguage()->text() .
+				$this->mReason;
 		} elseif( $reasonstr == 'other' ) {
 			$reasonstr = $this->mReason;
 		}
@@ -146,77 +145,81 @@ class SpecialGlobalBlock extends SpecialPage {
 			$subMessage = 'globalblocking-block-successsub';
 		}
 
-		$out->addWikitext( wfMsg($textMessage, $this->mAddress ) );
-		$out->setSubtitle( wfMsg( $subMessage ) );
+		$out->addWikitext( $this->msg($textMessage, $this->mAddress )->text() );
+		$out->setSubtitle( $this->msg( $subMessage ) );
 
-		$link = Linker::link( SpecialPage::getTitleFor( 'GlobalBlockList' ),
-							wfMsg( 'globalblocking-return' ) );
+		$link = Linker::link(
+			SpecialPage::getTitleFor( 'GlobalBlockList' ),
+			$this->msg( 'globalblocking-return' )->escaped()
+		);
 		$out->addHTML( $link );
 
 		return array();
 	}
 
 	function form( $error ) {
-		global $wgUser, $wgScript, $wgOut;
+		global $wgScript;
 
 		$form = '';
+		$out = $this->getOutput();
 
 		// Introduction
-		if ($this->mModifyForm) {
-			$wgOut->addWikiMsg( 'globalblocking-modify-intro' );
+		if ( $this->mModifyForm ) {
+			$out->addWikiMsg( 'globalblocking-modify-intro' );
 		} else {
-			$wgOut->addWikiMsg( 'globalblocking-block-intro' );
+			$out->addWikiMsg( 'globalblocking-block-intro' );
 		}
 
 		// Add errors
-		$wgOut->addHTML( $error );
+		$out->addHTML( $error );
 
-		$form .= Xml::fieldset( wfMsg( 'globalblocking-block-legend' ) );
-		$form .= Xml::openElement( 'form',
-									array( 'method' => 'post',
-											'action' => $wgScript,
-											'name' => 'uluser',
-											'id' => 'mw-globalblock-form' ) );
+		$form .= Xml::fieldset( $this->msg( 'globalblocking-block-legend' )->text() );
+		$form .= Xml::openElement(
+			'form',
+			array(
+				'method' => 'post',
+				'action' => $wgScript,
+				'name' => 'uluser',
+				'id' => 'mw-globalblock-form' )
+		);
 		$form .= Html::hidden( 'title',  SpecialPage::getTitleFor('GlobalBlock')->getPrefixedText() );
 
 		$fields = array();
 
 		// Who to block
-		$fields['globalblocking-ipaddress'] =
-			Xml::input( 'wpAddress',
-				45,
-				$this->mAddress,
-				array('id' => 'mw-globalblock-address' )
-			);
+		$fields['globalblocking-ipaddress'] = Xml::input(
+			'wpAddress',
+			45,
+			$this->mAddress,
+			array('id' => 'mw-globalblock-address' )
+		);
 
 		// How long to block them for
-		$dropdown = wfMsgForContentNoTrans( 'globalblocking-expiry-options' );
-		if ( $dropdown === '' || $dropdown == '-' ) {
+		$dropdown = wfMessage( 'globalblocking-expiry-options' );
+		if ( $dropdown->isDisabled() ) {
 			// 'globalblocking-expiry-options' is empty, try the message from core
-			$dropdown = wfMsgForContentNoTrans( 'ipboptions' );
-			if ( wfEmptyMsg( 'ipboptions', $dropdown ) || $dropdown === '' || $dropdown == '-' ) {
+			$dropdown = wfMessage( 'ipboptions' );
+			if ( $dropdown->isDisabled() ) {
 				// 'ipboptions' is empty too. Do not show a dropdown
-				// Do not assume that 'ipboptions' exists forever, therefore check with wfEmptyMsg too
+				// Do not assume that 'ipboptions' exists forever, therefore check too
 				$dropdown = false;
 			}
 		}
 
-		if ( $dropdown == false ) {
-			$fields['globalblocking-block-expiry'] =
-				Xml::input(
-					'wpExpiry',
-					45,
-					$this->mExpiry,
-					array( 'id' => 'mw-globalblock-expiry' )
-				);
+		if ( $dropdown === false ) {
+			$fields['globalblocking-block-expiry'] = Xml::input(
+				'wpExpiry',
+				45,
+				$this->mExpiry,
+				array( 'id' => 'mw-globalblock-expiry' )
+			);
 		} else {
-			$fields['globalblocking-block-expiry'] =
-				$this->buildExpirySelector(
-					'wpExpiry',
-					'mw-globalblock-expiry-selector',
-					$this->mExpirySelection,
-					$dropdown
-				);
+			$fields['globalblocking-block-expiry'] = $this->buildExpirySelector(
+				'wpExpiry',
+				'mw-globalblock-expiry-selector',
+				$this->mExpirySelection,
+				$dropdown->inContentLanguage()->plain()
+			);
 			$fields['globalblocking-block-expiry-otherfield'] =
 				Xml::input(
 					'wpExpiryOther',
@@ -227,54 +230,51 @@ class SpecialGlobalBlock extends SpecialPage {
 		}
 
 		// Why to block them
-		$fields['globalblocking-block-reason'] =
-			Xml::listDropDown(
-				'wpBlockReasonList',
-				wfMsgForContent( 'globalblocking-block-reason-dropdown' ),
-				wfMsgForContent( 'globalblocking-block-reasonotherlist' ),
-				$this->mReasonList,
-				'mw-globalblock-reasonlist'
-			);
+		$fields['globalblocking-block-reason'] = Xml::listDropDown(
+			'wpBlockReasonList',
+			$this->msg( 'globalblocking-block-reason-dropdown' )->inContentLanguage()->text(),
+			$this->msg( 'globalblocking-block-reasonotherlist' )->inContentLanguage()->text(),
+			$this->mReasonList,
+			'mw-globalblock-reasonlist'
+		);
 
-		$fields['globalblocking-block-otherreason'] =
-			Xml::input(
-				'wpReason',
-					45,
-					$this->mReason,
-					array( 'id' => 'mw-globalblock-reason' )
-				);
+		$fields['globalblocking-block-otherreason'] = Xml::input(
+			'wpReason',
+			45,
+			$this->mReason,
+			array( 'id' => 'mw-globalblock-reason' )
+		);
 
 		// Block all users, or just anonymous ones
-		$fields['globalblocking-block-options'] =
-			Xml::checkLabel(
-				wfMsg( 'globalblocking-ipbanononly' ),
-				'wpAnonOnly',
-				'mw-globalblock-anon-only',
-				$this->mAnonOnly
-			);
+		$fields['globalblocking-block-options'] = Xml::checkLabel(
+			$this->msg( 'globalblocking-ipbanononly' )->text(),
+			'wpAnonOnly',
+			'mw-globalblock-anon-only',
+			$this->mAnonOnly
+		);
 
 		// Build a form.
 		$submitMsg = $this->mModifyForm
 			? 'globalblocking-modify-submit' : 'globalblocking-block-submit';
 		$form .= Xml::buildForm( $fields, $submitMsg );
 
-		$form .= Html::hidden( 'wpEditToken', $wgUser->editToken() );
+		$form .= Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() );
 		if ($this->mModifyForm)
 			$form .= Html::hidden( 'wpModify', 1 );
 
 		$form .= Xml::closeElement( 'form' );
 		$form .= Xml::closeElement( 'fieldset' );
 
-		#FIXME: make this actually use HTMLForm, instead of just its JavaScript
-		$wgOut->addModules( 'mediawiki.htmlform' );
+		# @todo FIXME: make this actually use HTMLForm, instead of just its JavaScript
+		$out->addModules( 'mediawiki.htmlform' );
 
-		$wgOut->addHTML( $form );
+		$out->addHTML( $form );
 
 		// Show loglist of previous blocks
 		if ( $this->mAddress ) {
 			$title = Title::makeTitleSafe( NS_USER, $this->mAddress );
 			LogEventsList::showLogExtract(
-				$wgOut,
+				$out,
 				'gblblock',
 				$title->getPrefixedText(),
 				'',
@@ -290,25 +290,38 @@ class SpecialGlobalBlock extends SpecialPage {
 	function buildExpirySelector( $name, $id = null, $selected = null, $expiryOptions = null ) {
 		$selector = '';
 
-		if ($id == null) { $id = $name; }
-		if ($selected == null) { $selected = 'other'; }
+		if ($id == null) {
+			$id = $name;
+		}
+
+		if ($selected == null) {
+			$selected = 'other';
+		}
 
 		$attribs = array(
 			'id' => $id,
 			'name' => $name,
-			'class' => 'mw-htmlform-select-or-other' ); # FIXME: make this actually use HTMLForm
+			'class' => 'mw-htmlform-select-or-other'
+		); # @todo FIXME: make this actually use HTMLForm
 
 		$selector .= Xml::openElement( 'select', $attribs );
 
 		foreach (explode(',', $expiryOptions) as $option) {
-			if ( strpos($option, ":") === false ) $option = "$option:$option";
+			if ( strpos($option, ":") === false ) {
+				$option = "$option:$option";
+			}
 			list($show, $value) = explode(":", $option);
-			$show = htmlspecialchars($show);
-			$value = htmlspecialchars($value);
+
+			$show = htmlspecialchars( $show );
+			$value = htmlspecialchars( $value );
 			$selector .= Xml::option( $show, $value, $value == $selected );
 		}
 
-		$selector .= Xml::option( wfMsg( 'globalblocking-block-expiry-other' ), 'other', 'other' == $selected );
+		$selector .= Xml::option(
+			$this->msg( 'globalblocking-block-expiry-other' )->text(),
+			'other',
+			'other' == $selected
+		);
 
 		$selector .= Xml::closeElement( 'select' );
 

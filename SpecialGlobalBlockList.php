@@ -13,7 +13,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 		$ip = isset( $par ) ? $par : $this->getRequest()->getText( 'ip' );
 		$this->loadParameters( $ip );
 
-		$out->setPageTitle( wfMsg( 'globalblocking-list' ) );
+		$out->setPageTitle( $this->msg( 'globalblocking-list' ) );
 		$out->setSubtitle( GlobalBlocking::buildSubtitleLinks( 'GlobalBlockList' ) );
 		$out->setRobotPolicy( "noindex,nofollow" );
 		$out->setArticleRelated( false );
@@ -39,7 +39,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 		// Build the search form
 		$searchForm = '';
 		$searchForm .= Xml::openElement( 'fieldset' ) .
-			Xml::element( 'legend', null, wfMsg( 'globalblocking-search-legend' ) );
+			Xml::element( 'legend', null, $this->msg( 'globalblocking-search-legend' )->text() );
 		$searchForm .= Xml::openElement( 'form', array( 'method' => 'get', 'action' => $wgScript, 'name' => 'globalblocklist-search' ) );
 		$searchForm .= Html::hidden( 'title',  SpecialPage::getTitleFor('GlobalBlockList')->getPrefixedText() );
 
@@ -54,7 +54,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 					$error = array();
 				}
 
-				$errorstr .= Xml::tags( 'li', null, wfMsgExt( $msg, array( 'parseinline' ), $error ) );
+				$errorstr .= Xml::tags( 'li', null, $this->msg( $msg, $error )->parse() );
 			}
 
 			$out->addWikiMsg( 'globalblocking-unblock-errors', count($errors) );
@@ -87,7 +87,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 				$conds = array( 'gb_range_end>='.$dbr->addQuotes($hex_ip), // This block in the given range.
 						'gb_range_start<='.$dbr->addQuotes($hex_ip),
 						'gb_range_start like ' . $dbr->addQuotes( $ip_pattern ),
-						'gb_expiry>'.$dbr->addQuotes($dbr->timestamp(wfTimestampNow())) );
+						'gb_expiry>'.$dbr->addQuotes($dbr->timestamp( wfTimestampNow())) );
 			}
 		}
 
@@ -98,15 +98,17 @@ class SpecialGlobalBlockList extends SpecialPage {
 					Html::rawElement( 'ul', array(), $body ) .
 					$pager->getNavigationBar() );
 		} else {
-			$out->wrapWikiMsg( "<div class='mw-globalblocking-noresults'>\n$1</div>\n",
-				array( 'globalblocking-list-noresults' ) );
+			$out->wrapWikiMsg(
+				"<div class='mw-globalblocking-noresults'>\n$1</div>\n",
+				array( 'globalblocking-list-noresults' )
+			);
 		}
 	}
 
 	function loadParameters( $ip ) {
 		$ip = trim( $ip );
 		$this->mSearchIP = ( $ip !== '' )
-			? Block::normaliseRange( $ip )
+			? IP::sanitizeRange( $ip )
 			: '';
 	}
 }
@@ -123,85 +125,87 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 	}
 
 	function formatRow( $row ) {
-		global $wgLang, $wgUser;
-
 		## Setup
 		$timestamp = $row->gb_timestamp;
-		$expiry = $wgLang->formatExpiry( $row->gb_expiry, TS_MW );
+		$expiry = $this->getLanguage()->formatExpiry( $row->gb_expiry, TS_MW );
 		$options = array();
 
 		if ( $expiry == 'infinity' ) {
-			$options[] = wfMsgExt( 'infiniteblock', 'parseinline' );
+			$options[] = $this->msg( 'infiniteblock' )->parse();
 		} else {
-			$options[] = wfMsgExt(
+			$options[] = $this->msg(
 				'expiringblock',
-				'parseinline',
-				$wgLang->date( $expiry ),
-				$wgLang->time( $expiry )
-			);
+				$this->getLanguage()->date( $expiry ),
+				$this->getLanguage()->time( $expiry )
+			)->parse();
 		}
 
 		# Check for whitelisting.
 		$wlinfo = GlobalBlocking::getWhitelistInfo( $row->gb_id );
 		if ($wlinfo) {
-			$options[] = wfMsg( 'globalblocking-list-whitelisted', User::whois($wlinfo['user']), $wlinfo['reason'] );
+			$options[] = $this->msg(
+				'globalblocking-list-whitelisted',
+				User::whois($wlinfo['user']), $wlinfo['reason']
+			)->text();
 		}
 
-		$timestamp = $wgLang->timeanddate( wfTimestamp( TS_MW, $timestamp ), true );
+		$timestamp = $this->getLanguage()->timeanddate( wfTimestamp( TS_MW, $timestamp ), true );
 
 		if ($row->gb_anon_only)
-			$options[] = wfMsg('globalblocking-list-anononly');
+			$options[] = $this->msg('globalblocking-list-anononly')->text();
 
 		## Do afterthoughts (comment, links for admins)
 		$info = array();
 
-		if( $wgUser->isAllowed( 'globalunblock' ) ) {
+		if( $this->getUser()->isAllowed( 'globalunblock' ) ) {
 			$unblockTitle = SpecialPage::getTitleFor( "RemoveGlobalBlock" );
 			$info[] = Linker::link( $unblockTitle,
-								wfMsgExt( 'globalblocking-list-unblock', 'parseinline' ),
-								array(),
-								array( 'address' => $row->gb_address )
-							);
+				$this->msg( 'globalblocking-list-unblock' )->parse(),
+				array(),
+				array( 'address' => $row->gb_address )
+			);
 		}
 
 		global $wgApplyGlobalBlocks;
-		if( $wgUser->isAllowed( 'globalblock-whitelist' ) && $wgApplyGlobalBlocks ) {
+		if( $this->getUser()->isAllowed( 'globalblock-whitelist' ) && $wgApplyGlobalBlocks ) {
 			$whitelistTitle = SpecialPage::getTitleFor( "GlobalBlockStatus" );
 			$info[] = Linker::link( $whitelistTitle,
-								wfMsgExt( 'globalblocking-list-whitelist', 'parseinline' ),
-								array(),
-								array( 'address' => $row->gb_address )
-							);
+				$this->msg( 'globalblocking-list-whitelist' )->parse(),
+				array(),
+				array( 'address' => $row->gb_address )
+			);
 		}
 
-		if ( $wgUser->isAllowed( 'globalblock' ) ) {
+		if ( $this->getUser()->isAllowed( 'globalblock' ) ) {
 			$reblockTitle = SpecialPage::getTitleFor( 'GlobalBlock' );
-			$msg = wfMsgExt( 'globalblocking-list-modify', 'parseinline' );
+			$msg = $this->msg( 'globalblocking-list-modify' )->parse();
 			$info[] = Linker::link(
-						$reblockTitle,
-						$msg,
-						array(),
-						array( 'wpAddress' => $row->gb_address, 'modify' => 1 )
-					);
+				$reblockTitle,
+				$msg,
+				array(),
+				array( 'wpAddress' => $row->gb_address, 'modify' => 1 )
+			);
 		}
 
 		## Userpage link / Info on originating wiki
 		$display_wiki = GlobalBlocking::getWikiName( $row->gb_by_wiki );
 		$user_display = GlobalBlocking::maybeLinkUserpage( $row->gb_by_wiki, $row->gb_by );
-		$infoItems = count( $info ) ? wfMsg( 'parentheses', $wgLang->pipeList( $info ) ) : '';
+		$infoItems = count( $info ) ?
+			$this->msg( 'parentheses', $this->getLanguage()->pipeList( $info ) )->text() :
+			'';
 
 		## Put it all together.
 		return Html::rawElement( 'li', array(),
-				wfMsgExt( 'globalblocking-list-blockitem', array( 'parseinline' ),
-					$timestamp,
-					$user_display,
-					$display_wiki,
-					$row->gb_address,
-					$wgLang->commaList( $options )
-					) . ' ' .
-						Linker::commentBlock( $row->gb_reason ) . ' ' .
-				$infoItems
-			);
+			$this->msg( 'globalblocking-list-blockitem',
+				$timestamp,
+				$user_display,
+				$display_wiki,
+				$row->gb_address,
+				$this->getLanguage()->commaList( $options )
+			)->parse() . ' ' .
+			Linker::commentBlock( $row->gb_reason ) . ' ' .
+			$infoItems
+		);
 	}
 
 	function getQueryInfo() {

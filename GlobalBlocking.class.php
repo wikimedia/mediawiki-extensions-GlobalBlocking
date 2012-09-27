@@ -4,8 +4,8 @@ class GlobalBlocking {
 	/**
 	 * @param $title Title
 	 * @param $user User
-	 * @param $action
-	 * @param $result
+	 * @param $action string
+	 * @param $result mixed
 	 * @return Boolean
 	 */
 	static function getUserPermissionsErrors( &$title, &$user, $action, &$result ) {
@@ -29,7 +29,7 @@ class GlobalBlocking {
 
 	/**
 	 * @param $user User
-	 * @param $ip
+	 * @param $ip string
 	 * @param $blocked bool
 	 * @return Boolean
 	 */
@@ -44,7 +44,7 @@ class GlobalBlocking {
 
 	/**
 	 * @param $user User
-	 * @param $ip
+	 * @param $ip string
 	 * @return Array: empty or a message key with parameters
 	 */
 	static function getUserBlockErrors( $user, $ip ) {
@@ -330,13 +330,14 @@ class GlobalBlocking {
 		$flags = array();
 
 		if ($anonOnly)
-			$flags[] = wfMsgForContent( 'globalblocking-list-anononly' );
+			$flags[] = wfMessage( 'globalblocking-list-anononly' )->inContentLanguage()->text();
 
 		if ( $expiry != 'infinity' ) {
 			$displayExpiry = $wgContLang->timeanddate( $expiry );
-			$flags[] = wfMsgForContent( 'globalblocking-logentry-expiry', $displayExpiry );
+			$flags[] = wfMessage( 'globalblocking-logentry-expiry', $displayExpiry )
+				->inContentLanguage()->text();
 		} else {
-			$flags[] = wfMsgForContent( 'globalblocking-logentry-noexpiry' );
+			$flags[] = wfMessage( 'globalblocking-logentry-noexpiry' )->inContentLanguage()->text();
 		}
 
 		$info = implode( ', ', $flags );
@@ -358,10 +359,10 @@ class GlobalBlocking {
 	 * @return bool
 	 */
 	static function onSpecialPasswordResetOnSubmit( &$users, $data, &$error ) {
-		global $wgUser;
+		global $wgUser, $wgRequest;
 
-		if ( GlobalBlocking::getUserBlockErrors( $wgUser, wfGetIp() ) ) {
-			$error = wfMsg( 'globalblocking-blocked-nopassreset' );
+		if ( GlobalBlocking::getUserBlockErrors( $wgUser, $wgRequest->getIP() ) ) {
+			$error = wfMessage( 'globalblocking-blocked-nopassreset' )->text();
 			return false;
 		}
 		return true;
@@ -388,7 +389,7 @@ class GlobalBlocking {
 		$msg[] = Html::rawElement(
 			'span',
 			array( 'class' => 'mw-globalblock-loglink plainlinks' ),
-			wfMsgExt( 'globalblocking-loglink', 'parseinline', $ip )
+			wfMessage( 'globalblocking-loglink', $ip )->parse()
 		);
 		return true;
 	}
@@ -408,26 +409,31 @@ class GlobalBlocking {
 		// Show the links only if the user has sufficient rights
 		if( $pagetype != 'GlobalBlockList' ) {
 			$title = SpecialPage::getTitleFor( 'GlobalBlockList' );
-			$links[] = Linker::linkKnown( $title, wfMsg( 'globalblocklist' ) );
+			$links[] = Linker::linkKnown( $title, wfMessage( 'globalblocklist' )->escaped() );
 		}
 
 		if( $pagetype != 'GlobalBlock' && $wgUser->isAllowed( 'globalblock' ) ) {
 			$title = SpecialPage::getTitleFor( 'GlobalBlock' );
-			$links[] = Linker::linkKnown( $title, wfMsg( 'globalblocking-goto-block' ) );
+			$links[] = Linker::linkKnown( $title, wfMessage( 'globalblocking-goto-block' )->escaped() );
 		}
 		if( $pagetype != 'RemoveGlobalBlock' && $wgUser->isAllowed( 'globalunblock' ) ) {
 			$title = SpecialPage::getTitleFor( 'RemoveGlobalBlock' );
-			$links[] = Linker::linkKnown( $title, wfMsg( 'globalblocking-goto-unblock' ) );
+			$links[] = Linker::linkKnown( $title, wfMessage( 'globalblocking-goto-unblock' )->escaped() );
 		}
 		if( $pagetype != 'GlobalBlockStatus' && $wgUser->isAllowed( 'globalblock-whitelist' ) ) {
 			$title = SpecialPage::getTitleFor( 'GlobalBlockStatus' );
-			$links[] = Linker::linkKnown( $title, wfMsg( 'globalblocking-goto-status' ) );
+			$links[] = Linker::linkKnown( $title, wfMessage( 'globalblocking-goto-status' )->escaped() );
 		}
 		if( $pagetype == 'GlobalBlock' && $wgUser->isAllowed( 'editinterface' ) ) {
 			$title = Title::makeTitle( NS_MEDIAWIKI, 'Globalblocking-block-reason-dropdown' );
-			$links[] = Linker::linkKnown( $title, wfMsg( 'globalblocking-block-edit-dropdown' ), array(), array( 'action' => 'edit' ) );
+			$links[] = Linker::linkKnown(
+				$title,
+				wfMessage( 'globalblocking-block-edit-dropdown' )->escaped(),
+				array(),
+				array( 'action' => 'edit' )
+			);
 		}
-		$linkItems = count( $links ) ? wfMsg( 'parentheses', $wgLang->pipeList( $links ) ) : '';
+		$linkItems = count( $links ) ? wfMessage( 'parentheses', $wgLang->pipeList( $links ) )->text() : '';
 		return $linkItems;
 	}
 }
