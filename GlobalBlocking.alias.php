@@ -38,6 +38,12 @@ $specialPageAliases['as'] = array(
 	'GlobalBlockList' => array( 'গোলকীয়_অৱৰোধ_তালিকা' ),
 );
 
+/** Bashkir (башҡортса) */
+$specialPageAliases['ba'] = array(
+	'GlobalBlock' => array( 'GlobalBlock' ),
+	'GlobalBlockList' => array( 'GlobalBlockList' ),
+);
+
 /** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎) */
 $specialPageAliases['be-tarask'] = array(
 	'GlobalBlock' => array( 'Глябальнае_блякаваньне' ),

@@ -3428,11 +3428,11 @@ Alla on ote estolokista.',
 	'right-globalblock' => 'Estää globaalisti',
 	'action-globalblock' => 'asettaa globaaleja estoja',
 	'right-globalunblock' => 'Poistaa globaaleja estoja',
-	'action-globalunblock' => 'poista globaalit estot',
+	'action-globalunblock' => 'poistaa järjestelmänlaajuisia estoja',
 	'right-globalblock-whitelist' => 'Poiskytkeä globaaleja estoja paikallisesti',
-	'action-globalblock-whitelist' => 'poista käytöstä globaalit estot paikallisesti',
+	'action-globalblock-whitelist' => 'poistaa käytöstä järjestelmänlaajuisia estoja paikallisesti',
 	'right-globalblock-exempt' => 'Ohittaa globaaliestot',
-	'action-globalblock-exempt' => 'läpipäästä globaalit estot',
+	'action-globalblock-exempt' => 'ohittaa järjestelmänlaajuisia estoja',
 );
 
 /** Faroese (føroyskt)
