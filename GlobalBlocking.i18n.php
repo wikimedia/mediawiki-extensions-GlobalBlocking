@@ -1150,7 +1150,7 @@ $messages['be'] = array(
 	'globalblocking-whitelist-reason' => 'Прычына:',
 );
 
-/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
  * @author EugeneZelenko
  * @author Jim-by
  * @author Red Winged Duck
@@ -2289,11 +2289,11 @@ Es folgt ein Auszug aus dem Benutzersperr-Logbuch:',
  * @author Geitost
  */
 $messages['de-ch'] = array(
-	'globalblocking-block-bigrange' => "Der Adressbereich, den du angegeben hast ($1) ist zu gross.
+	'globalblocking-block-bigrange' => "Der Adressbereich, den du angegeben hast ($1), ist zu gross zum Sperren.
 Du kannst höchstens 65'536 IPs sperren (/16-Adressbereiche).",
 );
 
-/** German (formal address) (‪Deutsch (Sie-Form)‬)
+/** German (formal address) (Deutsch (Sie-Form)‎)
  * @author Geitost
  * @author Imre
  * @author Kghbln
@@ -3337,10 +3337,10 @@ $messages['fi'] = array(
 	'globalblocking-block-ipinvalid' => 'Antamasi IP-osoite $1 oli virheellinen.
 Huomaathan ettet voi syöttää käyttäjätunnusta.',
 	'globalblocking-block-expiryinvalid' => 'Antamasi eston kesto ”$1” oli virheellinen.',
-	'globalblocking-block-submit' => 'Estä tämä IP-osoite järjestelmänlaajuisesti',
+	'globalblocking-block-submit' => 'Estä IP-osoite järjestelmänlaajuisesti',
 	'globalblocking-modify-submit' => 'Muuta tätä järjestelmänlaajuista estoa',
 	'globalblocking-block-success' => 'IP-osoite $1 on estetty kaikissa projekteissa.',
-	'globalblocking-modify-success' => 'Käyttäjän $1 järjestelmänlaajuista estoa on onnistuneesti muutettu',
+	'globalblocking-modify-success' => 'Käyttäjän $1 järjestelmänlaajuinen esto päivitettiin',
 	'globalblocking-block-successsub' => 'Järjestelmänlaajuinen esto onnistui',
 	'globalblocking-modify-successsub' => 'Järjestelmänlaajuista estoa muutettu onnistuneesti',
 	'globalblocking-block-alreadyblocked' => 'IP-osoite $1 on jo estetty järjestelmänlaajuisesti.
@@ -4215,7 +4215,7 @@ $messages['gv'] = array(
 	'globalblocking-whitelist-reason' => 'Fa:',
 );
 
-/** Hausa (هَوُسَ) */
+/** Hausa (Hausa) */
 $messages['ha'] = array(
 	'globalblocking-block-reason' => 'Dalili:',
 	'globalblocking-block-reasonotherlist' => 'Wani dalili',
@@ -6323,7 +6323,7 @@ Et {{int:blocklogpage}} es hee dronger opjeföhrt, do kanns De nohkike, wat wohr
 	'action-globalblock-exempt' => 'Jemeinsamme Sperre fun alle Wikis ömjonn',
 );
 
-/** Kurdish (Latin script) (‪Kurdî (latînî)‬)
+/** Kurdish (Latin script) (Kurdî (latînî)‎)
  * @author George Animal
  * @author Gomada
  */
@@ -7400,7 +7400,7 @@ $messages['nah'] = array(
 	'globalblocking-unblock-reason' => 'Tlèka:',
 );
 
-/** Norwegian Bokmål (‪norsk (bokmål)‬)
+/** Norwegian Bokmål (norsk (bokmål)‎)
  * @author Event
  * @author Laaknor
  * @author Nghtwlkr
@@ -7766,7 +7766,7 @@ Het blokkeerlogboek wordt hieronder weergegeven:',
 	'action-globalblock-exempt' => 'globale blokkades te omzeilen',
 );
 
-/** ‪Nederlands (informeel)‬ (‪Nederlands (informeel)‬)
+/** Nederlands (informeel)‎ (Nederlands (informeel)‎)
  * @author Siebrand
  */
 $messages['nl-informal'] = array(
@@ -7814,7 +7814,7 @@ Globale blokkades kunnen ook op andere wiki's aangemaakt en verwijderd worden, e
 Alle globale blokkades kan je bekijken in de [[Special:GlobalBlockList|lijst met globale blokkades]].",
 );
 
-/** Norwegian Nynorsk (‪norsk (nynorsk)‬)
+/** Norwegian Nynorsk (norsk (nynorsk)‎)
  * @author Eirik
  * @author Harald Khan
  * @author Jon Harald Søby
@@ -10197,7 +10197,7 @@ Regjistri i bllokimit është poshtë për referncë:',
 	'action-globalblock-exempt' => 'tejkalo bllokimet e përgjithshme',
 );
 
-/** Serbian (Cyrillic script) (‪српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (српски (ћирилица)‎)
  * @author FriedrickMILBarbarossa
  * @author Rancher
  * @author Sasa Stefanovic
@@ -12117,7 +12117,7 @@ $1',
 	'right-globalblock-whitelist' => '響本地停用全域封鎖',
 );
 
-/** Simplified Chinese (‪中文（简体）‬)
+/** Simplified Chinese (中文（简体）‎)
  * @author Anakmalaysia
  * @author Bencmq
  * @author Breawycker
@@ -12256,7 +12256,7 @@ $1',
 	'action-globalblock-exempt' => '绕过全域封锁',
 );
 
-/** Traditional Chinese (‪中文（繁體）‬)
+/** Traditional Chinese (中文（繁體）‎)
  * @author Alexsh
  * @author Anakmalaysia
  * @author Gaoxuewei
