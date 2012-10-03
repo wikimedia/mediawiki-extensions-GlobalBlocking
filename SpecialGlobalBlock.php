@@ -20,7 +20,7 @@ class SpecialGlobalBlock extends SpecialPage {
 		$out->setArticleRelated( false );
 		$out->enableClientCache( false );
 
-		if (!$this->userCanExecute( $this->getUser() )) {
+		if ( !$this->userCanExecute( $this->getUser() ) ) {
 			$this->displayRestrictionError();
 			return;
 		}
@@ -31,7 +31,7 @@ class SpecialGlobalBlock extends SpecialPage {
 		if ( $request->wasPosted() && $this->getUser()->matchEditToken( $request->getVal( 'wpEditToken' ) ) ) {
 			// They want to submit. Let's have a look.
 			$errors = $this->trySubmit();
-			if( !$errors ) {
+			if ( !$errors ) {
 				// Success!
 				return;
 			}
@@ -62,7 +62,7 @@ class SpecialGlobalBlock extends SpecialPage {
 
 		$errorstr = null;
 
-		if (is_array($errors) && count($errors)>0) {
+		if ( is_array( $errors ) && count( $errors ) > 0 ) {
 			$errorstr = $this->formatErrors( $errors );
 		}
 
@@ -72,8 +72,8 @@ class SpecialGlobalBlock extends SpecialPage {
 	function formatErrors( $errors ) {
 		$errorstr = '';
 		foreach ( $errors as $error ) {
-			if (is_array($error)) {
-				$msg = array_shift($error);
+			if ( is_array( $error ) ) {
+				$msg = array_shift( $error );
 			} else {
 				$msg = $error;
 				$error = array();
@@ -81,7 +81,7 @@ class SpecialGlobalBlock extends SpecialPage {
 			$errorstr .= Xml::tags( 'li', null, $this->msg( $msg, $error )->parse() );
 
 			// Special case
-			if ($msg == 'globalblocking-block-alreadyblocked') {
+			if ( $msg == 'globalblocking-block-alreadyblocked' ) {
 				$this->mModifyForm = true;
 			}
 		}
@@ -99,13 +99,14 @@ class SpecialGlobalBlock extends SpecialPage {
 		$request = $this->getRequest();
 
 		$this->mAddress = trim( $request->getText( 'wpAddress' ) );
-		if (!$this->mAddress)
+		if ( !$this->mAddress ) {
 			$this->mAddress = $par;
+		}
 
 		$this->mReason = $request->getText( 'wpReason' );
 		$this->mReasonList = $request->getText( 'wpBlockReasonList' );
 		$this->mExpiry = $this->mExpirySelection = $request->getText( 'wpExpiry' );
-		if ($this->mExpiry == 'other') {
+		if ( $this->mExpiry == 'other' ) {
 			$this->mExpiry = $request->getText( 'wpExpiryOther' );
 		}
 		$this->mAnonOnly = $request->getBool( 'wpAnonOnly' );
@@ -116,28 +117,30 @@ class SpecialGlobalBlock extends SpecialPage {
 	function trySubmit() {
 		$options = array();
 
-		if ($this->mAnonOnly)
+		if ( $this->mAnonOnly ) {
 			$options[] = 'anon-only';
-		if ($this->mModify)
+		}
+		if ( $this->mModify ) {
 			$options[] = 'modify';
+		}
 
 		$out = $this->getOutput();
 		$reasonstr = $this->mReasonList;
-		if( $reasonstr != 'other' && $this->mReason != '' ) {
+		if ( $reasonstr != 'other' && $this->mReason != '' ) {
 			// Entry from drop down menu + additional comment
 			$reasonstr .= $this->msg( 'colon-separator' )->inContentLanguage()->text() .
 				$this->mReason;
-		} elseif( $reasonstr == 'other' ) {
+		} elseif ( $reasonstr == 'other' ) {
 			$reasonstr = $this->mReason;
 		}
 
 		$errors = GlobalBlocking::block( $this->mAddress, $reasonstr, $this->mExpiry, $options );
 
-		if ( count($errors) ) {
+		if ( count( $errors ) ) {
 			return $errors;
 		}
 
-		if ($this->mModify) {
+		if ( $this->mModify ) {
 			$textMessage = 'globalblocking-modify-success';
 			$subMessage = 'globalblocking-modify-successsub';
 		} else {
@@ -145,7 +148,7 @@ class SpecialGlobalBlock extends SpecialPage {
 			$subMessage = 'globalblocking-block-successsub';
 		}
 
-		$out->addWikitext( $this->msg($textMessage, $this->mAddress )->text() );
+		$out->addWikitext( $this->msg( $textMessage, $this->mAddress )->text() );
 		$out->setSubtitle( $this->msg( $subMessage ) );
 
 		$link = Linker::link(
@@ -182,7 +185,7 @@ class SpecialGlobalBlock extends SpecialPage {
 				'name' => 'uluser',
 				'id' => 'mw-globalblock-form' )
 		);
-		$form .= Html::hidden( 'title',  SpecialPage::getTitleFor('GlobalBlock')->getPrefixedText() );
+		$form .= Html::hidden( 'title', SpecialPage::getTitleFor( 'GlobalBlock' )->getPrefixedText() );
 
 		$fields = array();
 
@@ -191,7 +194,7 @@ class SpecialGlobalBlock extends SpecialPage {
 			'wpAddress',
 			45,
 			$this->mAddress,
-			array('id' => 'mw-globalblock-address' )
+			array( 'id' => 'mw-globalblock-address' )
 		);
 
 		// How long to block them for
@@ -259,8 +262,9 @@ class SpecialGlobalBlock extends SpecialPage {
 		$form .= Xml::buildForm( $fields, $submitMsg );
 
 		$form .= Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() );
-		if ($this->mModifyForm)
+		if ( $this->mModifyForm ) {
 			$form .= Html::hidden( 'wpModify', 1 );
+		}
 
 		$form .= Xml::closeElement( 'form' );
 		$form .= Xml::closeElement( 'fieldset' );
@@ -290,11 +294,11 @@ class SpecialGlobalBlock extends SpecialPage {
 	function buildExpirySelector( $name, $id = null, $selected = null, $expiryOptions = null ) {
 		$selector = '';
 
-		if ($id == null) {
+		if ( $id == null ) {
 			$id = $name;
 		}
 
-		if ($selected == null) {
+		if ( $selected == null ) {
 			$selected = 'other';
 		}
 
@@ -306,11 +310,11 @@ class SpecialGlobalBlock extends SpecialPage {
 
 		$selector .= Xml::openElement( 'select', $attribs );
 
-		foreach (explode(',', $expiryOptions) as $option) {
-			if ( strpos($option, ":") === false ) {
+		foreach ( explode( ',', $expiryOptions ) as $option ) {
+			if ( strpos( $option, ":" ) === false ) {
 				$option = "$option:$option";
 			}
-			list($show, $value) = explode(":", $option);
+			list( $show, $value ) = explode( ":", $option );
 
 			$show = htmlspecialchars( $show );
 			$value = htmlspecialchars( $value );

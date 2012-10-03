@@ -22,14 +22,14 @@ class SpecialGlobalBlockList extends SpecialPage {
 		$this->showList();
 	}
 
-	function showList( ) {
+	function showList() {
 		global $wgScript;
 		$errors = array();
 
 		// Validate search IP
 		$ip = $this->mSearchIP;
-		if (!IP::isIPAddress($ip) && strlen($ip)) {
-			$errors[] = array('globalblocking-list-ipinvalid',$ip);
+		if ( !IP::isIPAddress( $ip ) && strlen( $ip ) ) {
+			$errors[] = array( 'globalblocking-list-ipinvalid', $ip );
 			$ip = '';
 		}
 
@@ -41,14 +41,14 @@ class SpecialGlobalBlockList extends SpecialPage {
 		$searchForm .= Xml::openElement( 'fieldset' ) .
 			Xml::element( 'legend', null, $this->msg( 'globalblocking-search-legend' )->text() );
 		$searchForm .= Xml::openElement( 'form', array( 'method' => 'get', 'action' => $wgScript, 'name' => 'globalblocklist-search' ) );
-		$searchForm .= Html::hidden( 'title',  SpecialPage::getTitleFor('GlobalBlockList')->getPrefixedText() );
+		$searchForm .= Html::hidden( 'title', SpecialPage::getTitleFor( 'GlobalBlockList' )->getPrefixedText() );
 
-		if (is_array($errors) && count($errors)>0) {
+		if ( is_array( $errors ) && count( $errors ) > 0 ) {
 			$errorstr = '';
 
 			foreach ( $errors as $error ) {
-				if (is_array($error)) {
-					$msg = array_shift($error);
+				if ( is_array( $error ) ) {
+					$msg = array_shift( $error );
 				} else {
 					$msg = $error;
 					$error = array();
@@ -57,7 +57,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 				$errorstr .= Xml::tags( 'li', null, $this->msg( $msg, $error )->parse() );
 			}
 
-			$out->addWikiMsg( 'globalblocking-unblock-errors', count($errors) );
+			$out->addWikiMsg( 'globalblocking-unblock-errors', count( $errors ) );
 			$out->addHTML( Xml::tags( 'ul', array( 'class' => 'error' ), $errorstr ) );
 		}
 
@@ -71,10 +71,10 @@ class SpecialGlobalBlockList extends SpecialPage {
 		// Build a list of blocks.
 		$conds = array();
 
-		if (strlen($ip)) {
-			list ($range_start, $range_end) = IP::parseRange( $ip );
+		if ( strlen( $ip ) ) {
+			list ( $range_start, $range_end ) = IP::parseRange( $ip );
 
-			if ($range_start != $range_end) {
+			if ( $range_start != $range_end ) {
 				// They searched for a range. Match that exact range only
 				$conds = array( 'gb_address' => $ip );
 			} else {
@@ -84,19 +84,19 @@ class SpecialGlobalBlockList extends SpecialPage {
 
 				$dbr = wfGetDB( DB_SLAVE );
 
-				$conds = array( 'gb_range_end>='.$dbr->addQuotes($hex_ip), // This block in the given range.
-						'gb_range_start<='.$dbr->addQuotes($hex_ip),
-						'gb_range_start like ' . $dbr->addQuotes( $ip_pattern ),
-						'gb_expiry>'.$dbr->addQuotes($dbr->timestamp( wfTimestampNow())) );
+				$conds = array( 'gb_range_end>=' . $dbr->addQuotes( $hex_ip ), // This block in the given range.
+					'gb_range_start<=' . $dbr->addQuotes( $hex_ip ),
+					'gb_range_start like ' . $dbr->addQuotes( $ip_pattern ),
+					'gb_expiry>' . $dbr->addQuotes( $dbr->timestamp( wfTimestampNow() ) ) );
 			}
 		}
 
 		$pager = new GlobalBlockListPager( $this, $conds );
 		$body = $pager->getBody();
-		if( $body != '' ) {
+		if ( $body != '' ) {
 			$out->addHTML( $pager->getNavigationBar() .
-					Html::rawElement( 'ul', array(), $body ) .
-					$pager->getNavigationBar() );
+				Html::rawElement( 'ul', array(), $body ) .
+				$pager->getNavigationBar() );
 		} else {
 			$out->wrapWikiMsg(
 				"<div class='mw-globalblocking-noresults'>\n$1</div>\n",
@@ -142,22 +142,23 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 
 		# Check for whitelisting.
 		$wlinfo = GlobalBlocking::getWhitelistInfo( $row->gb_id );
-		if ($wlinfo) {
+		if ( $wlinfo ) {
 			$options[] = $this->msg(
 				'globalblocking-list-whitelisted',
-				User::whois($wlinfo['user']), $wlinfo['reason']
+				User::whois( $wlinfo['user'] ), $wlinfo['reason']
 			)->text();
 		}
 
 		$timestamp = $this->getLanguage()->timeanddate( wfTimestamp( TS_MW, $timestamp ), true );
 
-		if ($row->gb_anon_only)
-			$options[] = $this->msg('globalblocking-list-anononly')->text();
+		if ( $row->gb_anon_only ) {
+			$options[] = $this->msg( 'globalblocking-list-anononly' )->text();
+		}
 
 		## Do afterthoughts (comment, links for admins)
 		$info = array();
 
-		if( $this->getUser()->isAllowed( 'globalunblock' ) ) {
+		if ( $this->getUser()->isAllowed( 'globalunblock' ) ) {
 			$unblockTitle = SpecialPage::getTitleFor( "RemoveGlobalBlock" );
 			$info[] = Linker::link( $unblockTitle,
 				$this->msg( 'globalblocking-list-unblock' )->parse(),
@@ -167,7 +168,7 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 		}
 
 		global $wgApplyGlobalBlocks;
-		if( $this->getUser()->isAllowed( 'globalblock-whitelist' ) && $wgApplyGlobalBlocks ) {
+		if ( $this->getUser()->isAllowed( 'globalblock-whitelist' ) && $wgApplyGlobalBlocks ) {
 			$whitelistTitle = SpecialPage::getTitleFor( "GlobalBlockStatus" );
 			$info[] = Linker::link( $whitelistTitle,
 				$this->msg( 'globalblocking-list-whitelist' )->parse(),
@@ -203,8 +204,8 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 				$row->gb_address,
 				$this->getLanguage()->commaList( $options )
 			)->parse() . ' ' .
-			Linker::commentBlock( $row->gb_reason ) . ' ' .
-			$infoItems
+				Linker::commentBlock( $row->gb_reason ) . ' ' .
+				$infoItems
 		);
 	}
 

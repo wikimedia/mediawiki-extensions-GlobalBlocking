@@ -20,7 +20,7 @@ class SpecialRemoveGlobalBlock extends SpecialPage {
 		$out->setArticleRelated( false );
 		$out->enableClientCache( false );
 
-		if (!$this->userCanExecute( $this->getUser() )) {
+		if ( !$this->userCanExecute( $this->getUser() ) ) {
 			$this->displayRestrictionError();
 			return;
 		}
@@ -31,7 +31,7 @@ class SpecialRemoveGlobalBlock extends SpecialPage {
 		if ( $request->wasPosted() && $this->getUser()->matchEditToken( $request->getVal( 'wpEditToken' ) ) ) {
 			// They want to submit. Let's have a look.
 			$errors = $this->trySubmit();
-			if( !$errors ) {
+			if ( !$errors ) {
 				// Success!
 				return;
 			}
@@ -39,12 +39,12 @@ class SpecialRemoveGlobalBlock extends SpecialPage {
 
 		$out->addWikiMsg( 'globalblocking-unblock-intro' );
 
-		if (is_array($errors) && count($errors)>0) {
+		if ( is_array( $errors ) && count( $errors ) > 0 ) {
 			$errorstr = '';
 
 			foreach ( $errors as $error ) {
-				if (is_array($error)) {
-					$msg = array_shift($error);
+				if ( is_array( $error ) ) {
+					$msg = array_shift( $error );
 				} else {
 					$msg = $error;
 					$error = array();
@@ -70,12 +70,12 @@ class SpecialRemoveGlobalBlock extends SpecialPage {
 	function trySubmit() {
 		$errors = array();
 		$ip = $this->mUnblockIP;
-		if (!IP::isIPAddress($ip) && strlen($ip)) {
-			$errors[] = array('globalblocking-unblock-ipinvalid',$ip);
+		if ( !IP::isIPAddress( $ip ) && strlen( $ip ) ) {
+			$errors[] = array( 'globalblocking-unblock-ipinvalid', $ip );
 			$ip = '';
 		}
 
-		if ( ($id = GlobalBlocking::getGlobalBlockId( $ip ) ) == 0 ) {
+		if ( ( $id = GlobalBlocking::getGlobalBlockId( $ip ) ) == 0 ) {
 			$errors[] = array( 'globalblocking-notblocked', $ip );
 		}
 
@@ -99,12 +99,12 @@ class SpecialRemoveGlobalBlock extends SpecialPage {
 		);
 		$out->addHTML( $link );
 
-		$out->setSubtitle( $this->msg('globalblocking-unblock-successsub') );
+		$out->setSubtitle( $this->msg( 'globalblocking-unblock-successsub' ) );
 
 		return array();
 	}
 
-	function form( ) {
+	function form() {
 		global $wgScript;
 
 		$form = '';

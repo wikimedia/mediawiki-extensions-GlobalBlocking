@@ -1,6 +1,7 @@
 <?php
-if ( ! defined( 'MEDIAWIKI' ) )
+if ( !defined( 'MEDIAWIKI' ) ) {
 	die();
+}
 
 /**#@+
  * Provides a way to block an IP Address over multiple wikis sharing a database.
@@ -15,7 +16,7 @@ if ( ! defined( 'MEDIAWIKI' ) )
  * @author Andrew Garrett <andrew@epstone.net>
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
-$dir = dirname(__FILE__);
+$dir = dirname( __FILE__ );
 $wgExtensionCredits['other'][] = array(
 	'path'           => __FILE__,
 	'name'           => 'GlobalBlocking',
@@ -24,7 +25,7 @@ $wgExtensionCredits['other'][] = array(
 	'url'            => 'https://www.mediawiki.org/wiki/Extension:GlobalBlocking',
 );
 
-$wgExtensionMessagesFiles['GlobalBlocking'] =  "$dir/GlobalBlocking.i18n.php";
+$wgExtensionMessagesFiles['GlobalBlocking'] = "$dir/GlobalBlocking.i18n.php";
 $wgExtensionMessagesFiles['GlobalBlockingAlias'] = "$dir/GlobalBlocking.alias.php";
 
 $wgHooks['getUserPermissionsErrorsExpensive'][] = 'GlobalBlocking::getUserPermissionsErrors';

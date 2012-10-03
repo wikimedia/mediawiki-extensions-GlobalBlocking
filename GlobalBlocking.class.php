@@ -14,13 +14,14 @@ class GlobalBlocking {
 			return true;
 		}
 		if ( $user->isAllowed( 'ipblock-exempt' ) ||
-			$user->isAllowed( 'globalblock-exempt' ) ) {
+			$user->isAllowed( 'globalblock-exempt' )
+		) {
 			// User is exempt from IP blocks.
 			return true;
 		}
 		$ip = $wgRequest->getIP();
 		$blockError = self::getUserBlockErrors( $user, $ip );
-		if( !empty( $blockError ) ) {
+		if ( !empty( $blockError ) ) {
 			$result = array( $blockError );
 			return false;
 		}
@@ -35,7 +36,7 @@ class GlobalBlocking {
 	 */
 	static function isBlockedGlobally( &$user, $ip, &$blocked ) {
 		$blockError = self::getUserBlockErrors( $user, $ip );
-		if( $blockError ) {
+		if ( $blockError ) {
 			$blocked = true;
 			return false;
 		}
@@ -56,7 +57,7 @@ class GlobalBlocking {
 		}
 
 		$block = self::getGlobalBlockingBlock( $ip, $user->isAnon() );
-		if  ( $block ) {
+		if ( $block ) {
 			global $wgLang;
 
 			// Check for local whitelisting
@@ -97,10 +98,10 @@ class GlobalBlocking {
 		$ip_pattern = substr( $hex_ip, 0, 4 ) . '%'; // Don't bother checking blocks out of this /16.
 
 		$conds = array(
-			'gb_range_end>='.$dbr->addQuotes( $hex_ip ), // This block in the given range.
-			'gb_range_start<='.$dbr->addQuotes( $hex_ip ),
+			'gb_range_end>=' . $dbr->addQuotes( $hex_ip ), // This block in the given range.
+			'gb_range_start<=' . $dbr->addQuotes( $hex_ip ),
 			'gb_range_start like ' . $dbr->addQuotes( $ip_pattern ),
-			'gb_expiry>'.$dbr->addQuotes( $dbr->timestamp( wfTimestampNow() ) )
+			'gb_expiry>' . $dbr->addQuotes( $dbr->timestamp( wfTimestampNow() ) )
 		);
 
 		if ( !$anon ) {
@@ -135,8 +136,9 @@ class GlobalBlocking {
 	static function getGlobalBlockId( $ip ) {
 		$dbr = GlobalBlocking::getGlobalBlockingSlave();
 
-		if (!($row = $dbr->selectRow( 'globalblocks', 'gb_id', array( 'gb_address' => $ip ), __METHOD__ )))
+		if ( !( $row = $dbr->selectRow( 'globalblocks', 'gb_id', array( 'gb_address' => $ip ), __METHOD__ ) ) ) {
 			return 0;
+		}
 
 		return $row->gb_id;
 	}
@@ -149,7 +151,7 @@ class GlobalBlocking {
 
 		// Stand-alone transaction.
 		$dbw->begin();
-		$dbw->delete( 'globalblocks', array('gb_expiry<'.$dbw->addQuotes($dbw->timestamp())), __METHOD__ );
+		$dbw->delete( 'globalblocks', array( 'gb_expiry<' . $dbw->addQuotes( $dbw->timestamp() ) ), __METHOD__ );
 		$dbw->commit();
 
 		// Purge the global_block_whitelist table.
@@ -159,7 +161,7 @@ class GlobalBlocking {
 		// That way, most blocks will fall out of the table naturally when they expire.
 		$dbw = wfGetDB( DB_MASTER );
 		$dbw->begin();
-		$dbw->delete( 'global_block_whitelist', array( 'gbw_expiry<'.$dbw->addQuotes($dbw->timestamp())), __METHOD__ );
+		$dbw->delete( 'global_block_whitelist', array( 'gbw_expiry<' . $dbw->addQuotes( $dbw->timestamp() ) ), __METHOD__ );
 		$dbw->commit();
 	}
 
@@ -170,9 +172,9 @@ class GlobalBlocking {
 	 * @throws MWException
 	 */
 	static function getWhitelistInfo( $id = null, $address = null ) {
-		if ($id != null) {
+		if ( $id != null ) {
 			$conds = array( 'gbw_id' => $id );
-		} elseif ($address != null) {
+		} elseif ( $address != null ) {
 			$conds = array( 'gbw_address' => $address );
 		} else {
 			//WTF?
@@ -182,7 +184,7 @@ class GlobalBlocking {
 		$dbr = wfGetDB( DB_SLAVE );
 		$row = $dbr->selectRow( 'global_block_whitelist', array( 'gbw_by', 'gbw_reason' ), $conds, __METHOD__ );
 
-		if ($row == false) {
+		if ( $row == false ) {
 			// Not whitelisted.
 			return false;
 		} else {
@@ -204,11 +206,11 @@ class GlobalBlocking {
 	 * @return String
 	 */
 	static function getWikiName( $wiki_id ) {
-		if (class_exists('WikiMap')) {
+		if ( class_exists( 'WikiMap' ) ) {
 			// We can give more info than just the wiki id!
 			$wiki = WikiMap::getWiki( $wiki_id );
 
-			if ($wiki) {
+			if ( $wiki ) {
 				return $wiki->getDisplayName();
 			}
 		}
@@ -222,11 +224,11 @@ class GlobalBlocking {
 	 * @return string
 	 */
 	static function maybeLinkUserpage( $wiki_id, $user ) {
-		if (class_exists( 'WikiMap')) {
+		if ( class_exists( 'WikiMap' ) ) {
 			$wiki = WikiMap::getWiki( $wiki_id );
 
-			if ($wiki) {
-				return "[".$wiki->getUrl( "User:$user" )." $user]";
+			if ( $wiki ) {
+				return "[" . $wiki->getUrl( "User:$user" ) . " $user]";
 			}
 		}
 		return $user;
@@ -252,7 +254,7 @@ class GlobalBlocking {
 		$anonOnly = in_array( 'anon-only', $options );
 		$modify = in_array( 'modify', $options );
 
-		if (!IP::isIPAddress($ip)) {
+		if ( !IP::isIPAddress( $ip ) ) {
 			// Invalid IP address.
 			$errors[] = array( 'globalblocking-block-ipinvalid', $ip );
 		}
@@ -261,7 +263,7 @@ class GlobalBlocking {
 			$errors[] = array( 'globalblocking-block-expiryinvalid', $expiry );
 		}
 
-		$existingBlock = GlobalBlocking::getGlobalBlockId($ip);
+		$existingBlock = GlobalBlocking::getGlobalBlockId( $ip );
 		if ( !$modify && $existingBlock ) {
 			$errors[] = array( 'globalblocking-block-alreadyblocked', $ip );
 		}
@@ -269,25 +271,26 @@ class GlobalBlocking {
 		// Check for too-big ranges.
 		list( $range_start, $range_end ) = IP::parseRange( $ip );
 
-		if (substr( $range_start, 0, 4 ) != substr( $range_end, 0, 4 )) {
+		if ( substr( $range_start, 0, 4 ) != substr( $range_end, 0, 4 ) ) {
 			// Range crosses a /16 boundary.
 			$errors[] = array( 'globalblocking-block-bigrange', $ip );
 		}
 
 		// Normalise the range
-		if ($range_start != $range_end) {
+		if ( $range_start != $range_end ) {
 			$ip = IP::sanitizeRange( $ip );
 		}
 
-		if (count($errors)>0)
+		if ( count( $errors ) > 0 ) {
 			return $errors;
+		}
 
 		// We're a-ok.
 		$dbw = GlobalBlocking::getGlobalBlockingMaster();
 
 		// Delete the old block, if applicable
 
-		if ($modify) {
+		if ( $modify ) {
 			$dbw->delete( 'globalblocks', array( 'gb_id' => $existingBlock ), __METHOD__ );
 		}
 
@@ -296,7 +299,7 @@ class GlobalBlocking {
 		$row['gb_by'] = $wgUser->getName();
 		$row['gb_by_wiki'] = wfWikiId();
 		$row['gb_reason'] = $reason;
-		$row['gb_timestamp'] = $dbw->timestamp(wfTimestampNow());
+		$row['gb_timestamp'] = $dbw->timestamp( wfTimestampNow() );
 		$row['gb_anon_only'] = $anonOnly;
 		$row['gb_expiry'] = $dbw->encodeExpiry( $expiry, $dbw );
 		list( $row['gb_range_start'], $row['gb_range_end'] ) = array( $range_start, $range_end );
@@ -319,8 +322,9 @@ class GlobalBlocking {
 		$expiry = SpecialBlock::parseExpiryInput( $expiry );
 		$errors = self::insertBlock( $address, $reason, $expiry, $options );
 
-		if ( count($errors) > 0 )
+		if ( count( $errors ) > 0 ) {
 			return $errors;
+		}
 
 		$anonOnly = in_array( 'anon-only', $options );
 		$modify = in_array( 'modify', $options );
@@ -329,8 +333,9 @@ class GlobalBlocking {
 		$logAction = $modify ? 'modify' : 'gblock2';
 		$flags = array();
 
-		if ($anonOnly)
+		if ( $anonOnly ) {
 			$flags[] = wfMessage( 'globalblocking-list-anononly' )->inContentLanguage()->text();
+		}
 
 		if ( $expiry != 'infinity' ) {
 			$displayExpiry = $wgContLang->timeanddate( $expiry );
@@ -346,7 +351,7 @@ class GlobalBlocking {
 		$page->addEntry( $logAction,
 			Title::makeTitleSafe( NS_USER, $address ),
 			$reason,
-			array($info, $address)
+			array( $info, $address )
 		);
 
 		return array();
@@ -381,7 +386,7 @@ class GlobalBlocking {
 		}
 
 		$block = self::getGlobalBlockingBlock( $ip, true );
-		if( !$block ) {
+		if ( !$block ) {
 			// Fast return if not globally blocked
 			return true;
 		}
@@ -407,24 +412,24 @@ class GlobalBlocking {
 
 		// Don't show a link to a special page on the special page itself.
 		// Show the links only if the user has sufficient rights
-		if( $pagetype != 'GlobalBlockList' ) {
+		if ( $pagetype != 'GlobalBlockList' ) {
 			$title = SpecialPage::getTitleFor( 'GlobalBlockList' );
 			$links[] = Linker::linkKnown( $title, wfMessage( 'globalblocklist' )->escaped() );
 		}
 
-		if( $pagetype != 'GlobalBlock' && $wgUser->isAllowed( 'globalblock' ) ) {
+		if ( $pagetype != 'GlobalBlock' && $wgUser->isAllowed( 'globalblock' ) ) {
 			$title = SpecialPage::getTitleFor( 'GlobalBlock' );
 			$links[] = Linker::linkKnown( $title, wfMessage( 'globalblocking-goto-block' )->escaped() );
 		}
-		if( $pagetype != 'RemoveGlobalBlock' && $wgUser->isAllowed( 'globalunblock' ) ) {
+		if ( $pagetype != 'RemoveGlobalBlock' && $wgUser->isAllowed( 'globalunblock' ) ) {
 			$title = SpecialPage::getTitleFor( 'RemoveGlobalBlock' );
 			$links[] = Linker::linkKnown( $title, wfMessage( 'globalblocking-goto-unblock' )->escaped() );
 		}
-		if( $pagetype != 'GlobalBlockStatus' && $wgUser->isAllowed( 'globalblock-whitelist' ) ) {
+		if ( $pagetype != 'GlobalBlockStatus' && $wgUser->isAllowed( 'globalblock-whitelist' ) ) {
 			$title = SpecialPage::getTitleFor( 'GlobalBlockStatus' );
 			$links[] = Linker::linkKnown( $title, wfMessage( 'globalblocking-goto-status' )->escaped() );
 		}
-		if( $pagetype == 'GlobalBlock' && $wgUser->isAllowed( 'editinterface' ) ) {
+		if ( $pagetype == 'GlobalBlock' && $wgUser->isAllowed( 'editinterface' ) ) {
 			$title = Title::makeTitle( NS_MEDIAWIKI, 'Globalblocking-block-reason-dropdown' );
 			$links[] = Linker::linkKnown(
 				$title,

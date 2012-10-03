@@ -25,7 +25,7 @@ class SpecialGlobalBlockStatus extends SpecialPage {
 		}
 
 		global $wgApplyGlobalBlocks;
-		if (!$wgApplyGlobalBlocks) {
+		if ( !$wgApplyGlobalBlocks ) {
 			$out->addWikiMsg( 'globalblocking-whitelist-notapplied' );
 			return;
 		}
@@ -36,7 +36,7 @@ class SpecialGlobalBlockStatus extends SpecialPage {
 		if ( $request->wasPosted() && $this->getUser()->matchEditToken( $request->getVal( 'wpEditToken' ) ) ) {
 			// They want to submit. Let's have a look.
 			$errors = $this->trySubmit();
-			if( !$errors ) {
+			if ( !$errors ) {
 				// Success!
 				return;
 			}
@@ -44,10 +44,10 @@ class SpecialGlobalBlockStatus extends SpecialPage {
 
 		$errorstr = '';
 
-		if (is_array($errors) && count($errors)>0) {
+		if ( is_array( $errors ) && count( $errors ) > 0 ) {
 			foreach ( $errors as $error ) {
-				if (is_array($error)) {
-					$msg = array_shift($error);
+				if ( is_array( $error ) ) {
+					$msg = array_shift( $error );
 				} else {
 					$msg = $error;
 					$error = array();
@@ -90,7 +90,7 @@ class SpecialGlobalBlockStatus extends SpecialPage {
 		$ip = $this->mAddress;
 
 		// Is it blocked?
-		if ( !($id = GlobalBlocking::getGlobalBlockId( $ip ) ) ) {
+		if ( !( $id = GlobalBlocking::getGlobalBlockId( $ip ) ) ) {
 			return array( array( 'globalblocking-notblocked', $ip ) );
 		}
 
@@ -98,14 +98,14 @@ class SpecialGlobalBlockStatus extends SpecialPage {
 		$cur_status = $this->mCurrentStatus;
 
 		// Already whitelisted.
-		if ($cur_status == $new_status) {
-			return array('globalblocking-whitelist-nochange');
+		if ( $cur_status == $new_status ) {
+			return array( 'globalblocking-whitelist-nochange' );
 		}
 
 		$dbw = wfGetDB( DB_MASTER );
 
 		$out = $this->getOutput();
-		if ($new_status == true) {
+		if ( $new_status == true ) {
 			$gdbr = GlobalBlocking::getGlobalBlockingSlave();
 
 			// Find the expiry of the block. This is important so that we can store it in the
@@ -141,7 +141,7 @@ class SpecialGlobalBlockStatus extends SpecialPage {
 		);
 		$out->addHTML( $link );
 
-		$out->setSubtitle( $this->msg('globalblocking-whitelist-successsub') );
+		$out->setSubtitle( $this->msg( 'globalblocking-whitelist-successsub' ) );
 
 		return array();
 	}
