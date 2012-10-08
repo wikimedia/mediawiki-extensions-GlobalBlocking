@@ -9934,6 +9934,7 @@ Dolu je pre informáciu záznam blokovaní:',
 
 /** Slovenian (slovenščina)
  * @author Dbc334
+ * @author Eleassar
  * @author Irena Plahuta
  * @author Smihael
  */
@@ -10049,7 +10050,7 @@ Potrebno je opozoriti, da je globalne blokade mogoče izvesti ali odstraniti na 
 	'globalblocking-logentry-noexpiry' => 'potek ni določen',
 	'globalblocking-loglink' => 'IP-naslov $1 je globalno blokiran ([[{{#Special:GlobalBlockList}}/$1|vse podrobnosti]]).',
 	'globalblocking-showlog' => 'Ta IP-naslov je že bil blokiran.
-Dnevnik blokiranja je na voljo spodaj:',
+Za sklicevanje so tukaj navedeni zapisi o blokiranju:',
 	'globalblocklist' => 'Seznam globalno blokiranih IP-naslovov',
 	'globalblock' => 'Globalno blokiraj IP-naslov',
 	'globalblockstatus' => 'Lokalno stanje globalnih blokad',
