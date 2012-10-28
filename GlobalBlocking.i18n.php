@@ -5467,7 +5467,6 @@ Síðasta færsla vistfangsins úr bönnunarskrá er sýnd hér fyrir neðan til
 $messages['it'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Permette]] di [[Special:GlobalBlockList|bloccare su più wiki]] indirizzi IP',
 	'globalblocking-block' => 'Blocca globalmente un indirizzo IP',
-	'globalblocking-expiry-options' => '-',
 	'globalblocking-modify-intro' => 'Questo modulo può essere utilizzato per modificare le impostazioni di un blocco globale.',
 	'globalblocking-block-intro' => 'È possibile usare questa pagina per bloccare un indirizzo IP su tutte le wiki.',
 	'globalblocking-block-reason' => 'Motivo:',
@@ -5597,7 +5596,6 @@ Il registro dei blocchi è riportato di seguito per informazione:',
 $messages['ja'] = array(
 	'globalblocking-desc' => 'IPアドレスを[[Special:GlobalBlockList|複数のウィキで横断的に]][[Special:GlobalBlock|ブロックする]]',
 	'globalblocking-block' => 'IPアドレスをグローバルブロック',
-	'globalblocking-expiry-options' => '-',
 	'globalblocking-modify-intro' => 'このフォームを使って、グローバルブロックの設定を変更できます。',
 	'globalblocking-block-intro' => 'このページで全ウィキでの IP アドレスをブロックできます。',
 	'globalblocking-block-reason' => '理由：',
@@ -6194,7 +6192,6 @@ $messages['krc'] = array(
 $messages['ksh'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Älaup]] <i lang="en">IP</i>-Addräße ze [[Special:GlobalBlockList|sperre övver ettlijje Wikis]].',
 	'globalblocking-block' => 'En IP-Address en alle Wikis sperre',
-	'globalblocking-expiry-options' => '-',
 	'globalblocking-modify-intro' => 'Hee kanns de Enstellunge för de Sperre övver ettlijje Wikis ändere.',
 	'globalblocking-block-intro' => 'He op dä Sigg kans De IP-Address en alle Wikis sperre.',
 	'globalblocking-block-reason' => 'Aanlass:',
@@ -9632,7 +9629,6 @@ $messages['sc'] = array(
 $messages['scn'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Pirmetti]] di [[Special:GlobalBlockList|bluccari supra a chiossai wiki]] nnirizzi IP',
 	'globalblocking-block' => 'Blocca gubbalmenti nu nnirizzu IP',
-	'globalblocking-expiry-options' => '-',
 	'globalblocking-block-intro' => 'È pussìbbili usari sta pàggina pi bluccari nu nnirizzu IP supra a tutti li wiki.',
 	'globalblocking-block-reason' => 'Mutivu:',
 	'globalblocking-block-expiry' => 'Finuta dô bloccu:', # Fuzzy
@@ -11154,7 +11150,6 @@ Blokirleme gündeligi salgylanmak üçin aşakda berilýär:',
 $messages['tl'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Nagpapahintulot]] na [[Special:GlobalBlockList|mahadlangan/maharang sa kahabaan ng maraming mga wiki]] ang mga adres ng IP',
 	'globalblocking-block' => 'Pandaigdigang harangin/hadlangan ang isang adres ng IP',
-	'globalblocking-expiry-options' => '-',
 	'globalblocking-modify-intro' => 'Magagamit mo ang pormularyong ito upang baguhin ang mga pagtatakda ng isang pandaigdigang paghadlang.',
 	'globalblocking-block-intro' => 'Magagamit mo ang pahinang ito para hadlangan/harangin ang isang adres ng IP sa lahat ng mga wiki.',
 	'globalblocking-block-reason' => 'Dahilan:',
@@ -11446,7 +11441,6 @@ $messages['tyv'] = array(
 $messages['uk'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Дозволяє]] блокування IP-адрес [[Special:GlobalBlockList|на кількох вікі]]',
 	'globalblocking-block' => 'Глобальне блокування IP-адреси',
-	'globalblocking-expiry-options' => '-',
 	'globalblocking-modify-intro' => 'Ви можете використати цю форму для зміни параметрів глобального блокування.',
 	'globalblocking-block-intro' => 'За допомогою цієї сторінки ви можете заблокувати IP-адресу в усіх вікі.',
 	'globalblocking-block-reason' => 'Причина:',
@@ -12146,7 +12140,6 @@ $1',
 $messages['zh-hans'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|允许]][[Special:GlobalBlockList|在多个wiki中封禁]]IP地址',
 	'globalblocking-block' => '全局封禁IP地址',
-	'globalblocking-expiry-options' => '-',
 	'globalblocking-modify-intro' => '您可以使用本表单改变全域封锁的设置。',
 	'globalblocking-block-intro' => '您可以用这个页面去封锁全部wiki中的一个IP地址。',
 	'globalblocking-block-reason' => '原因：',
@@ -12283,7 +12276,6 @@ $1',
 $messages['zh-hant'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|容許]] IP 位址可以[[Special:GlobalBlockList|在多個 wiki 中封鎖]]',
 	'globalblocking-block' => '全域封鎖一個 IP 位址',
-	'globalblocking-expiry-options' => '-',
 	'globalblocking-modify-intro' => '您可以使用本表單改變全域封鎖的設定。',
 	'globalblocking-block-intro' => '您可以用這個頁面去封鎖全部 wiki 中的一個 IP 位址。',
 	'globalblocking-block-reason' => '封鎖的原因：',
