@@ -73,7 +73,7 @@ class GlobalBlocking {
 
 			$blockTimestamp = $wgLang->timeanddate( wfTimestamp( TS_MW, $block->gb_timestamp ), true );
 
-			$blockExpiry = $wgLang->formatExpiry( $block->gb_expiry, TS_MW );
+			$blockExpiry = $wgLang->formatExpiry( $block->gb_expiry );
 
 			$display_wiki = self::getWikiName( $block->gb_by_wiki );
 			$blockingUser = self::maybeLinkUserpage( $block->gb_by_wiki, $block->gb_by );
