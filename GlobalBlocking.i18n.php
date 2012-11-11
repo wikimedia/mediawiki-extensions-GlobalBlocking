@@ -172,7 +172,7 @@ The block log is provided below for reference:',
  * @author Тест
  */
 $messages['qqq'] = array(
-	'globalblocking-desc' => '{{desc}}',
+	'globalblocking-desc' => '{{desc|name=Global Blocking|url=http://www.mediawiki.org/wiki/Extension:GlobalBlocking}}',
 	'globalblocking-block' => 'Same special page with this page:
 
 * [[MediaWiki:Globalblock/{{SUBPAGENAME}}]]',
