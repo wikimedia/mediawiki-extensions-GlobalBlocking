@@ -11558,10 +11558,13 @@ $messages['uk'] = array(
 	'globalblockstatus' => 'Локальний стан глобальних блокувань',
 	'removeglobalblock' => 'Зняти глобальне блокування',
 	'right-globalblock' => 'накладання глобальних блокувань',
+	'action-globalblock' => 'накладання глобального блокування',
 	'right-globalunblock' => 'зняття глобальних блокувань',
+	'action-globalunblock' => 'зняття глобального блокування',
 	'right-globalblock-whitelist' => 'Локальне відключення глобального блокування',
 	'action-globalblock-whitelist' => 'локальне відключення глобального блокування',
 	'right-globalblock-exempt' => 'Обхід глобальних блокувань',
+	'action-globalblock-exempt' => 'обхід глобального блокування',
 );
 
 /** Urdu (اردو)
