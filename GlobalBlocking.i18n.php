@@ -1876,10 +1876,11 @@ $messages['ce'] = array(
 );
 
 /** Sorani Kurdish (کوردی)
+ * @author Calak
  */
 $messages['ckb'] = array(
 	'globalblocking-block-reason' => 'هۆکار:',
-	'globalblocking-block-reasonotherlist' => 'هۆکاری دیکە',
+	'globalblocking-block-reasonotherlist' => 'ھۆکاری تر',
 	'globalblocking-unblock-reason' => 'هۆکار:',
 	'globalblocking-whitelist-reason' => 'هۆکار:',
 );
