@@ -2969,12 +2969,12 @@ Si un bloqueo global está desactivado en esta wiki, los usuarios de la direcci�
 El bloqueo fue hecho por \$1 ( \$2 ).
 La razón aducida es ''\$3''.
 
- * Fecha de inicio del bloqueo:  \$4 
- * Fecha de fin del bloqueo:  \$5 
+* Fecha de inicio del bloqueo: \$4 
+* Fecha de fin del bloqueo: \$5 
 
 Usted puede ponerse en contacto con \$1 para discutir el bloqueo.
-No puede utilizar la función \"{{int:emailuser}}\" si no ha especificado una dirección de correo electrónico válida en [[Special:Preferences|account sus preferencias]] y no ha sido bloqueado para su uso.
-Su dirección IP actual es  \$6.
+No podrá utilizar la función \"{{int:emailuser}}\" si no ha especificado una dirección de correo electrónico válida en [[Special:Preferences|sus preferencias]] y no haya sido bloqueado para su uso.
+Su dirección IP actual es \$6.
 Por favor incluya todos los detalles anteriores en las consultas que realice.",
 	'globalblocking-blocked-nopassreset' => 'No puede solicitar recordatorios de claves de usuario porque usted está bloqueado globalmente.',
 	'globalblocking-logpage' => 'Registro de bloqueos globales',
