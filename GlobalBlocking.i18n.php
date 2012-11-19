@@ -1747,7 +1747,7 @@ $messages['ca'] = array(
 	'globalblocking-modify-intro' => 'Podeu usar aquest formulari per canviar els paràmetres del bloqueig global.',
 	'globalblocking-block-intro' => 'Podeu usar aquesta pàgina per bloquejar una adreça IP a tots els wikis.',
 	'globalblocking-block-reason' => 'Motiu:',
-	'globalblocking-block-otherreason' => 'Motius diferents o addicionals:',
+	'globalblocking-block-otherreason' => 'Motiu diferent o addicional:',
 	'globalblocking-block-reasonotherlist' => 'Altres motius',
 	'globalblocking-block-reason-dropdown' => '* Motius habituals de bloqueig
 ** Spam crosswiki
