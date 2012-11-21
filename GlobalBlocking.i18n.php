@@ -8165,6 +8165,13 @@ $messages['os'] = array(
 	'removeglobalblock' => 'Аиуварс кæн глобалон хъоды',
 );
 
+/** Picard (Picard)
+ * @author Geoleplubo
+ */
+$messages['pcd'] = array(
+	'globalblocking-list' => 'Lisse des adrèches IP blotchées globalemint',
+);
+
 /** Deitsch (Deitsch)
  * @author Xqt
  */
