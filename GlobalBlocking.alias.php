@@ -410,6 +410,14 @@ $specialPageAliases['sa'] = array(
 	'GlobalBlockStatus' => array( 'वैश्विकअप्रतिबन्धसूची' ),
 );
 
+/** Sicilian (sicilianu) */
+$specialPageAliases['scn'] = array(
+	'GlobalBlock' => array( 'BloccoGlobale' ),
+	'GlobalBlockList' => array( 'ElencoBlocchiGlobali', 'ListaBlocchiGlobali' ),
+	'RemoveGlobalBlock' => array( 'SbloccoGlobale' ),
+	'GlobalBlockStatus' => array( 'StatoLocaleBloccoGlobale', 'DisabilitaBloccoGlobale', 'ListaBiancaBloccoGlobale' ),
+);
+
 /** Slovak (slovenčina) */
 $specialPageAliases['sk'] = array(
 	'GlobalBlock' => array( 'GlobálneBlokovanie' ),
