@@ -1287,6 +1287,7 @@ $messages['be-tarask'] = array(
 /** Bulgarian (български)
  * @author DCLXVI
  * @author Spiritia
+ * @author Stanqo
  * @author Turin
  */
 $messages['bg'] = array(
@@ -1307,6 +1308,8 @@ $messages['bg'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Друг срок:',
 	'globalblocking-block-legend' => 'Глобално блокиране на IP-адрес',
 	'globalblocking-block-options' => 'Настройки:',
+	'globalblocking-ipaddress' => 'IP адрес:',
+	'globalblocking-ipbanononly' => 'Блокиране само на нерегистрирани потребители',
 	'globalblocking-block-errors' => 'Блокирането беше неуспешно поради {{PLURAL:$1|следната причина|следните причини}}:',
 	'globalblocking-block-ipinvalid' => 'Въведеният IP-адрес ($1) е невалиден.
 Имайте предвид, че не можете да въвеждате потребителско име!',
@@ -1394,6 +1397,7 @@ $1',
 	'globalblockstatus' => 'Локално състояние на глобалните блокирания',
 	'removeglobalblock' => 'Премахване на глобално блокиране',
 	'right-globalblock' => 'Създаване на глобални блокирания',
+	'action-globalblock' => 'Създаване на глобални блокирания',
 	'right-globalunblock' => 'Премахване на глобални блокирания',
 	'right-globalblock-whitelist' => 'Локално спиране на глобалните блокирания',
 	'right-globalblock-exempt' => 'Пренебрегване на глобалните блокирания',
