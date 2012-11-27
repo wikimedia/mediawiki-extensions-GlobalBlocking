@@ -335,7 +335,7 @@ $specialPageAliases['nb'] = array(
 	'GlobalBlockStatus' => array( 'Hviteliste_for_global_blokkering' ),
 );
 
-/** Nedersaksisch (Nedersaksisch) */
+/** Nedersaksies (Nedersaksies) */
 $specialPageAliases['nds-nl'] = array(
 	'GlobalBlock' => array( 'Globaal_blokkeren' ),
 	'GlobalBlockList' => array( 'Globale_blokkeerlieste' ),
