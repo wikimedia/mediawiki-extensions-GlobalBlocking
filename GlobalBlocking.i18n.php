@@ -8174,6 +8174,7 @@ $messages['os'] = array(
  */
 $messages['pcd'] = array(
 	'globalblocking-list' => 'Lisse des adrèches IP blotchées globalemint',
+	'globalblocklist' => 'Lisse des adrèches IP blotchées globalemint',
 );
 
 /** Deitsch (Deitsch)
