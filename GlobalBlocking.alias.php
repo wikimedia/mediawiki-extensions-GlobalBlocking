@@ -273,6 +273,11 @@ $specialPageAliases['ksh'] = array(
 	'GlobalBlockStatus' => array( 'Ußnahme_vun_de_jemeinsam_Sperre' ),
 );
 
+/** Cornish (kernowek) */
+$specialPageAliases['kw'] = array(
+	'GlobalBlock' => array( 'DifenOllvysel' ),
+);
+
 /** Ladino (Ladino) */
 $specialPageAliases['lad'] = array(
 	'GlobalBlock' => array( 'BloqueoGlobbal' ),
