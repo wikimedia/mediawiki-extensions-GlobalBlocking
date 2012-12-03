@@ -645,6 +645,7 @@ $messages['arc'] = array(
 	'globalblocking-list-anononly' => 'ܠܐ ܝܕ̈ܝܥܐ ܒܠܚܘܕ',
 	'globalblocking-list-unblock' => 'ܠܚܝ',
 	'globalblocking-list-whitelist' => 'ܐܝܟܢܝܘܬܐ ܕܘܟܬܢܝܬܐ',
+	'globalblocking-unblock-reason' => 'ܥܠܬܐ:',
 	'globalblocking-whitelist' => 'ܐܝܟܢܝܘܬܐ ܕܘܟܬܢܝܬܐ ܕܚܪܡܐ ܓܘܢܝܐ',
 	'globalblocking-whitelist-reason' => 'ܥܠܬܐ:',
 	'globalblocklist' => 'ܡܟܬܒܘܬܐ ܕܦܪ̈ܫܓܢܐ ܕܐܝܦܝ (IP) ܚܪ̈ܝܡܐ ܓܘܢܐܝܬ',
