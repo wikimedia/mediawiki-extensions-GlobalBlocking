@@ -85,7 +85,7 @@ $specialPageAliases['de'] = array(
 $specialPageAliases['diq'] = array(
 	'GlobalBlock' => array( 'GlobalBloqe' ),
 	'GlobalBlockList' => array( 'GlobalBloqeListe' ),
-	'RemoveGlobalBlock' => array( 'GlobalBloqeAhulne' ),
+	'RemoveGlobalBlock' => array( 'GlobalBloqebERDIŞ' ),
 	'GlobalBlockStatus' => array( 'GlobalBloqeListeyoPak' ),
 );
 
