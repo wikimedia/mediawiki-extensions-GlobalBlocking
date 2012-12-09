@@ -1026,6 +1026,28 @@ $messages['az'] = array(
 	'globalblocking-logpage' => 'Qlobal blok gündəliyi',
 );
 
+/** South Azerbaijani (تورکجه)
+ * @author Amir a57
+ */
+$messages['azb'] = array(
+	'globalblocking-block-reason' => 'ندن:',
+	'globalblocking-block-otherreason' => 'آیری/آرتیق دلیل:',
+	'globalblocking-block-reasonotherlist' => 'آیری دلیل‌لر',
+	'globalblocking-block-edit-dropdown' => 'باغلاما سبب‌لرینی دییشدیر ائت',
+	'globalblocking-block-expiry' => 'بیتمه مدتی:',
+	'globalblocking-block-expiry-otherfield' => 'باشقا واخت',
+	'globalblocking-block-options' => 'سئچیم‌لر',
+	'globalblocking-ipaddress' => 'آی‌پی آدرسی:',
+	'globalblocking-search-ip' => 'آی‌پی آدرسی:',
+	'globalblocking-list-unblock' => 'سیل',
+	'globalblocking-list-whitelist' => 'یئرلی وضعیت',
+	'globalblocking-list-modify' => 'دییشمک',
+	'globalblocking-whitelist-reason' => 'ندن:',
+	'globalblocking-whitelist-status' => 'یئرلی وضعیت',
+	'globalblocking-whitelist-submit' => 'یئرلی وضعیتی دییشدیر',
+	'globalblocking-logpage' => 'سراسری باغلانما سیاهه سی',
+);
+
 /** Bashkir (башҡортса)
  * @author Assele
  * @author Haqmar
