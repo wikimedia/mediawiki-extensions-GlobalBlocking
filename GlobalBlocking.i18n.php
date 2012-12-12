@@ -1042,10 +1042,13 @@ $messages['azb'] = array(
 	'globalblocking-list-unblock' => 'سیل',
 	'globalblocking-list-whitelist' => 'یئرلی وضعیت',
 	'globalblocking-list-modify' => 'دییشمک',
+	'globalblocking-unblock-reason' => 'ندن:',
+	'globalblocking-whitelist-legend' => 'یئرلی وضعیتی دییشدیر',
 	'globalblocking-whitelist-reason' => 'ندن:',
 	'globalblocking-whitelist-status' => 'یئرلی وضعیت',
 	'globalblocking-whitelist-submit' => 'یئرلی وضعیتی دییشدیر',
 	'globalblocking-logpage' => 'سراسری باغلانما سیاهه سی',
+	'globalblocking-logentry-expiry' => '$1-ده بیتیر',
 );
 
 /** Bashkir (башҡортса)
