@@ -3431,16 +3431,16 @@ joten niiden paikallista tilaa ei voi muuttaa.',
 [[Special:GlobalBlockList|Palaa järjestelmänlaajuisten estojen listaan]].',
 	'globalblocking-ipblocked' => "'''IP-osoitteesi on estetty kaikissa wikeissä.'''
 
-Eston suoritti \$1 (\$2).
-Syyksi annettiin ''\$3''.
+Eston on asettanut $1 ($2).
+Syy: ''$3''.
 
-* Eston alku: \$4
-* Eston vanheneminen: \$5
+* Eston alkamisaika: $4
+* Eston päättymisaika: $5
 
-Voit ottaa yhteyttä käyttäjään \$1 keskustellaksi estosta.
-Et pysty käyttämään toimintoa \"{{int:emailuser}}\" ellet ole määritellyt toimivaa sähköpostiosoitetta [[Special:Preferences|asetuksissasi]] ja jos sinua ei ole estetty käyttämästä sitä.
-Tämän hetkinen IP-osoitteesi on \$6.
-Kerro kaikki nämä tiedot keskustellessasi estosta.",
+Voit ottaa yhteyttä käyttäjään $1 keskustellaksi estosta.
+Et pysty käyttämään toimintoa ”{{int:emailuser}}” ellet ole asettanut voimassa olevaa sähköpostiosoitetta [[Special:Preferences|asetuksissasi]] tai jos esto on asetettu koskemaan myös sähköpostin lähettämistä.
+IP-osoitteesi on $6.
+Liitä kaikki yllä olevat tiedot mahdollisiin kyselyihisi.",
 	'globalblocking-blocked-nopassreset' => 'Et voi palauttaa käyttäjien salasanoja, koska sinut on estetty järjestelmänlaajuisesti.',
 	'globalblocking-logpage' => 'Järjestelmänlaajuinen estoloki',
 	'globalblocking-logpagetext' => 'Tämä on loki tässä wikissä tehdyistä ja poistetuista järjestelmänlaajuisista estoista.
