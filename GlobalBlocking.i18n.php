@@ -5198,6 +5198,7 @@ Log pemblokiran disediakan di bawah ini sebagai rujukan:',
 	'right-globalblock-whitelist' => 'Menonaktifkan suatu pemblokiran global di wiki lokal',
 	'action-globalblock-whitelist' => 'nonaktifkan pemblokiran global di wiki lokal',
 	'right-globalblock-exempt' => 'Tidak dikenakan pemblokiran global',
+	'action-globalblock-exempt' => 'lewati pemblokiran global',
 );
 
 /** Igbo (Igbo)
@@ -12313,6 +12314,7 @@ $1',
  * @author Mark85296341
  * @author Oapbtommy
  * @author Shinjiman
+ * @author Shirayuki
  * @author Waihorace
  */
 $messages['zh-hant'] = array(
@@ -12333,7 +12335,7 @@ $messages['zh-hant'] = array(
 	'globalblocking-block-expiry-otherfield' => '其他時間：',
 	'globalblocking-block-legend' => '全域封鎖一個 IP 位址',
 	'globalblocking-block-options' => '選項',
-	'globalblocking-ipaddress' => 'IP地址：',
+	'globalblocking-ipaddress' => 'IP位址：',
 	'globalblocking-ipbanononly' => '僅阻止匿名用戶',
 	'globalblocking-block-errors' => '該封鎖不成功，因為如下{{PLURAL:$1|原因|原因}}：',
 	'globalblocking-block-ipinvalid' => '您所輸入的 IP 位址 （$1） 是無效的。
