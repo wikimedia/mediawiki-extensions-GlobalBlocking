@@ -7411,6 +7411,8 @@ Sabiex tara l-blokki globali attivi kollha, żur il-[[Special:GlobalBlockList|li
 	'action-globalunblock' => 'tneħħi blokki globali',
 	'right-globalblock-whitelist' => 'Jiddiżattiva blokki globali lokalment',
 	'action-globalblock-whitelist' => 'tiddiżattiva blokki globali lokalment',
+	'right-globalblock-exempt' => 'Jaqbeż blokki globali',
+	'action-globalblock-exempt' => 'taqbeż blokki globali',
 );
 
 /** Erzya (эрзянь)
