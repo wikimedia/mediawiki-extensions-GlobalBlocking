@@ -3696,7 +3696,7 @@ $messages['frp'] = array(
 	'globalblocking-block-reason' => 'Rêson :',
 	'globalblocking-block-otherreason' => 'Ôtra rêson / rêson de ples :',
 	'globalblocking-block-reasonotherlist' => 'Ôtra rêson',
-	'globalblocking-block-reason-dropdown' => '* Rêsons de blocâjo les ples corentes
+	'globalblocking-block-reason-dropdown' => '* Rêsons corentes de blocâjo
 ** Spame sur un mouél de vouiquis
 ** Abus sur un mouél de vouiquis
 ** Vandalismo',
@@ -5647,7 +5647,7 @@ $messages['ja'] = array(
 	'globalblocking-ipbanononly' => '匿名利用者のみブロック',
 	'globalblocking-block-errors' => '以下の{{PLURAL:$1|理由}}により、ブロックできませんでした：',
 	'globalblocking-block-ipinvalid' => '入力したIPアドレス ($1) は無効です。
-利用者名は入力できないことにご注意ください！',
+利用者名は入力できないことにご注意ください!',
 	'globalblocking-block-expiryinvalid' => '入力した期限 ($1) に誤りがあります。',
 	'globalblocking-block-submit' => 'このIPアドレスをグローバルブロック',
 	'globalblocking-modify-submit' => 'このグローバルブロックを修正',
@@ -5682,7 +5682,8 @@ $messages['ja'] = array(
 	'globalblocking-return' => 'グローバルブロック一覧へ戻る',
 	'globalblocking-notblocked' => '入力したIPアドレス ($1) はグローバルブロックを受けていません。',
 	'globalblocking-unblock' => 'グローバルブロックを解除',
-	'globalblocking-unblock-ipinvalid' => 'あなたが入力したIPアドレス ($1) には誤りがあります。アカウント名では入力できない点に注意してください！',
+	'globalblocking-unblock-ipinvalid' => '入力したIPアドレス ($1) は無効です。
+利用者名は入力できないことにご注意ください!',
 	'globalblocking-unblock-legend' => 'グローバルブロックを解除',
 	'globalblocking-unblock-submit' => 'グローバルブロックを解除',
 	'globalblocking-unblock-reason' => '理由：',
