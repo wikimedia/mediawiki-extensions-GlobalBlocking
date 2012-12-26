@@ -10790,6 +10790,8 @@ $messages['ta'] = array(
 	'globalblocking-unblock-logentry' => ' [[$1]] ல் நீக்கப்பட்ட உலகளவிய தடைகள்',
 	'globalblocking-logentry-expiry' => '$1இல் முடிகிறது',
 	'globalblocking-loglink' => 'இணைய நெறிமுறை முகவரி $1 உலகளவில் தடை செய்யப்பட்டது ([[{{#Special:GlobalBlockList}}/$1|முழுத் தகவல்கள்]]).',
+	'globalblocking-showlog' => 'இந்த ஐபி முகவரி முன்பே தடை செய்யப்பட்டுள்ளது.
+தடைப் பதிகை ஒப்பீட்டிற்காக கீழே வழங்கப்பட்டுள்ளது:',
 	'globalblocklist' => 'உலகளவில் தடை செய்யப்பட்ட IP முகவரிகளின் பட்டியல்',
 	'globalblock' => 'உலகளவில் ஒரு IP முகவரியை தடைசெய்',
 	'globalblockstatus' => 'உலகளாவிய தடையின் உள்நிலைமை',
