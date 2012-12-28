@@ -3723,8 +3723,8 @@ Vos pouede fâre vêre los blocâjos ègzistents sur la [[Special:GlobalBlockLis
 ou ben tornar configurar cél blocâjo en tornent sometre ceti formulèro.',
 	'globalblocking-block-bigrange' => 'La plage d’adrèces IP que vos éd spècefiâ ($1) est trop granta por étre blocâ.
 Vos pouede pas blocar més de 65&nbsp;536 adrèces (plages d’adrèces IP /16)',
-	'globalblocking-list-intro' => 'Vê-que la lista de tôs los blocâjos globâls actifs.
-Quârques plages sont marcâs coment dèsactivâs localament : cen vôt dére que sont aplicâs sur d’ôtros setos, mas qu’un administrator local at dècidâ de les dèsactivar sur ceti vouiqui.',
+	'globalblocking-list-intro' => 'O est na lista de tôs los blocâjos globâls que sont ora actifs.
+Doux-três blocâjos sont marcâs coment dèsactivâs localament : cen vôt dére que sont aplicâs sur d’ôtros setos, mas qu’un administrator local at dècidâ de los dèsactivar sur ceti vouiqui.',
 	'globalblocking-list' => 'Lista a les adrèces IP blocâs dens l’ensemblo',
 	'globalblocking-search-legend' => 'Rechèrchiér un blocâjo globâl',
 	'globalblocking-search-ip' => 'Adrèce IP :',
