@@ -11474,6 +11474,25 @@ $messages['tyv'] = array(
 	'globalblocking-unblock-reason' => 'Чылдагаан:',
 );
 
+/** Uyghur (Arabic script) (ئۇيغۇرچە)
+ * @author Sahran
+ */
+$messages['ug-arab'] = array(
+	'globalblocking-block-reason' => 'سەۋەب:',
+	'globalblocking-block-otherreason' => 'باشقا/قوشۇمچە سەۋەب:',
+	'globalblocking-block-reasonotherlist' => 'باشقا سەۋەب',
+	'globalblocking-block-edit-dropdown' => 'چەكلەش سەۋەبىنى تەھرىرلە',
+	'globalblocking-block-expiry' => 'مۇددىتى:',
+	'globalblocking-block-expiry-otherfield' => 'باشقا ۋاقىت:',
+	'globalblocking-block-options' => 'تاللانمىلار:',
+	'globalblocking-ipaddress' => 'IP ئادرېس:',
+	'globalblocking-search-ip' => 'IP ئادرېس:',
+	'globalblocking-list-unblock' => 'چىقىرىۋەت',
+	'globalblocking-unblock-reason' => 'سەۋەب:',
+	'globalblocking-whitelist-reason' => 'سەۋەب:',
+	'globalblocking-logentry-expiry' => '$1 ۋاقتى توشىدۇ',
+);
+
 /** Ukrainian (українська)
  * @author AS
  * @author Ahonc
