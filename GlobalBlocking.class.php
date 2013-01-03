@@ -228,7 +228,7 @@ class GlobalBlocking {
 			$wiki = WikiMap::getWiki( $wiki_id );
 
 			if ( $wiki ) {
-				return "[" . $wiki->getUrl( "User:$user" ) . " $user]";
+				return "[" . $wiki->getFullUrl( "User:$user" ) . " $user]";
 			}
 		}
 		return $user;
