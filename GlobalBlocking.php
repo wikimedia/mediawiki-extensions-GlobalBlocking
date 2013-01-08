@@ -88,3 +88,7 @@ $wgGlobalBlockingDatabase = 'globalblocking';
  */
 $wgApplyGlobalBlocks = true;
 
+/**
+ * Whether to block a request if an IP in the XFF is blocked
+ */
+$wgGlobalBlockingBlockXFF = true;

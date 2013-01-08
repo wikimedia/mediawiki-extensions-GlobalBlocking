@@ -114,6 +114,18 @@ You can contact $1 to discuss the block.
 You cannot use the \"{{int:emailuser}}\" feature unless a valid email address is specified in your [[Special:Preferences|account preferences]] and you have not been blocked from using it.
 Your current IP address is $6.
 Please include all above details in any queries you make.",
+	'globalblocking-ipblocked-xff' => "'''One or more proxy servers used by your request is globally blocked'''
+
+The block was made by $1 ($2).
+The reason given is ''$3''.
+
+* Start of block: $4
+* Expiry of block: $5
+
+You can contact $1 to discuss the block.
+You cannot use the \"{{int:emailuser}}\" feature unless a valid email address is specified in your [[Special:Preferences|account preferences]] and you have not been blocked from using it.
+The blocked proxy address was $6.
+Please include all above details in any queries you make.",
 	'globalblocking-blocked-nopassreset' => "You cannot reset user's passwords because you are blocked globally.",
 
 	'globalblocking-logpage' => 'Global block log',
@@ -269,6 +281,7 @@ Parameters:
 * $4 - a timestamp for when the block was set
 * $5 - a timestamp for when the block will expire (or {{msg-mw|infiniteblock}})
 * $6 - the IP address of the globally blocked user',
+	'globalblocking-ipblocked-xff' => "A message shown to users who have one or more proxies in their XFF header who's IP are blocked.",
 	'globalblocking-logpage' => '{{doc-logpage}}',
 	'globalblocking-logpagetext' => 'Shown as header of [[Special:Log/gblblock]] (part of [[mw:Extension:GlobalBlocking|Extension:GlobalBlocking]], which is not installed on translatewiki.net; example: [[wikipedia:Special:Log/gblblock]])',
 	'globalblocking-block-logentry' => 'Used as a log entry. Parameters:

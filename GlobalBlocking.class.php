@@ -49,6 +49,7 @@ class GlobalBlocking {
 	 * @return Array: empty or a message key with parameters
 	 */
 	static function getUserBlockErrors( $user, $ip ) {
+		global $wgLang, $wgRequest, $wgGlobalBlockingBlockXFF;
 		static $result = null;
 
 		// Instance cache
@@ -56,30 +57,52 @@ class GlobalBlocking {
 			return $result;
 		}
 
+		if ( $user->isAllowed( 'ipblock-exempt' ) || $user->isAllowed( 'globalblock-exempt' ) ) {
+			// User is exempt from IP blocks.
+			return $result = array();
+		}
+
 		$block = self::getGlobalBlockingBlock( $ip, $user->isAnon() );
 		if ( $block ) {
-			global $wgLang;
-
 			// Check for local whitelisting
 			if ( GlobalBlocking::getWhitelistInfo( $block->gb_id ) ) {
 				// Block has been whitelisted.
 				return $result = array();
 			}
 
-			if ( $user->isAllowed( 'ipblock-exempt' ) || $user->isAllowed( 'globalblock-exempt' ) ) {
-				// User is exempt from IP blocks.
-				return $result = array();
-			}
-
 			$blockTimestamp = $wgLang->timeanddate( wfTimestamp( TS_MW, $block->gb_timestamp ), true );
-
 			$blockExpiry = $wgLang->formatExpiry( $block->gb_expiry );
-
 			$display_wiki = self::getWikiName( $block->gb_by_wiki );
 			$blockingUser = self::maybeLinkUserpage( $block->gb_by_wiki, $block->gb_by );
-
 			return $result = array( 'globalblocking-ipblocked',
 				$blockingUser, $display_wiki, $block->gb_reason, $blockTimestamp, $blockExpiry, $ip );
+		}
+
+		if ( $wgGlobalBlockingBlockXFF ) {
+			$xffIps = $wgRequest->getHeader( 'X-Forwarded-For' );
+			if ( $xffIps ) {
+				$xffIps = array_map( 'trim', explode( ',', $xffIps ) );
+				$blocks = self::checkIpsForBlock( $xffIps, $user->isAnon() );
+				if ( count( $blocks ) > 0 ) {
+					list ( $blockIP, $block ) = self::getAppliedBlock( $xffIps, $blocks );
+					$blockTimestamp = $wgLang->timeanddate(
+						wfTimestamp( TS_MW, $block->gb_timestamp ),
+						true
+					);
+					$blockExpiry = $wgLang->formatExpiry( $block->gb_expiry );
+					$display_wiki = self::getWikiName( $block->gb_by_wiki );
+					$blockingUser = self::maybeLinkUserpage( $block->gb_by_wiki, $block->gb_by );
+					return $result = array(
+						'globalblocking-ipblocked-xff',
+						$blockingUser,
+						$display_wiki,
+						$block->gb_reason,
+						$blockTimestamp,
+						$blockExpiry,
+						$blockIP
+					);
+				}
+			}
 		}
 
 		return $result = array();
@@ -94,15 +117,7 @@ class GlobalBlocking {
 	static function getGlobalBlockingBlock( $ip, $anon ) {
 		$dbr = GlobalBlocking::getGlobalBlockingSlave();
 
-		$hex_ip = IP::toHex( $ip );
-		$ip_pattern = substr( $hex_ip, 0, 4 ) . '%'; // Don't bother checking blocks out of this /16.
-
-		$conds = array(
-			'gb_range_end>=' . $dbr->addQuotes( $hex_ip ), // This block in the given range.
-			'gb_range_start<=' . $dbr->addQuotes( $hex_ip ),
-			'gb_range_start like ' . $dbr->addQuotes( $ip_pattern ),
-			'gb_expiry>' . $dbr->addQuotes( $dbr->timestamp( wfTimestampNow() ) )
-		);
+		$conds = self::getRangeCondition( $ip );
 
 		if ( !$anon ) {
 			$conds['gb_anon_only'] = 0;
@@ -111,6 +126,81 @@ class GlobalBlocking {
 		// Get the block
 		$block = $dbr->selectRow( 'globalblocks', '*', $conds, __METHOD__ );
 		return $block;
+	}
+
+	/**
+	 * Get a database range condition for an IP address
+	 * @param string $ip The IP address
+	 * @param boolean $anon Get anon blocks only
+	 * @return string a SQL condition
+	 */
+	static function getRangeCondition( $ip ) {
+		$dbr = GlobalBlocking::getGlobalBlockingSlave();
+
+		$hex_ip = IP::toHex( $ip );
+		$ip_pattern = substr( $hex_ip, 0, 4 ) . '%'; // Don't bother checking blocks out of this /16.
+
+		$cond = array(
+			'gb_range_end>=' . $dbr->addQuotes( $hex_ip ), // This block in the given range.
+			'gb_range_start<=' . $dbr->addQuotes( $hex_ip ),
+			'gb_range_start like ' . $dbr->addQuotes( $ip_pattern ),
+			'gb_expiry>' . $dbr->addQuotes( $dbr->timestamp( wfTimestampNow() ) )
+		);
+
+		return $cond;
+	}
+
+	/**
+	 * Check an array of IPs for a block on any
+	 * @param Array $ips The Array of IP addresses to be checked
+	 * @param boolean $anon Get anon blocks only
+	 * @return Array of applicable blocks
+	 */
+	static function checkIpsForBlock( $ips, $anon ) {
+		$dbr = GlobalBlocking::getGlobalBlockingSlave();
+		$conds = array();
+		foreach ( $ips as $ip ) {
+			if ( IP::isValid( $ip ) ) {
+				$conds[] = $dbr->makeList( self::getRangeCondition( $ip ), LIST_AND );
+			}
+		}
+		$conds = array( $dbr->makeList( $conds, LIST_OR ) );
+
+		if ( !$anon ) {
+			$conds['gb_anon_only'] = 0;
+		}
+
+		$blocks = array();
+		$results = $dbr->select( 'globalblocks', '*', $conds, __METHOD__ );
+		if ( !$results ) {
+			return array();
+		}
+
+		foreach ( $results as $block ) {
+			if ( !GlobalBlocking::getWhitelistInfo( $block->gb_id ) ) {
+				$blocks[] = $block;
+			}
+		}
+
+		return $blocks;
+	}
+
+	/**
+	 * From a list of XFF ips, and list of blocks that apply, choose the block that will
+	 * be shown to the end user. Using the first block in the array for now.
+	 *
+	 * @param Array $ips The Array of IP addresses to be checked
+	 * @param Array $blocks The Array of blocks (db rows)
+	 * @return Array ($ip, $block) the chosen ip and block
+	 */
+	private static function getAppliedBlock( $ips, $blocks ) {
+		$block = array_shift( $blocks );
+		foreach ( $ips as $ip ) {
+			$ipHex = IP::toHex( $ip );
+			if ( $block->gb_range_start <= $ipHex && $block->gb_range_end >= $ipHex ) {
+				return array( $ip, $block );
+			}
+		}
 	}
 
 	/**
