@@ -184,8 +184,7 @@ $messages['qqq'] = array(
 The top star is the unclicked list. The double-starred items are the reasons in the list.
 For more information about Global Blocking, see http://www.mediawiki.org/wiki/Global_Blocking',
 	'globalblocking-block-expiry' => 'After the colon, the user can enter a timestamp on which the block automatically ends or a time period like "1 hour", "2 days", "1 year" etc. But in English only because the time period is parsed by the underlying OS, not by MediaWiki.
-
-{{Identical/Expiry}}',
+{{Identical|Expiry}}',
 	'globalblocking-block-expiry-otherfield' => '{{Identical|Other time}}',
 	'globalblocking-block-options' => '{{Identical|Options}}',
 	'globalblocking-ipaddress' => 'Form label for ip-address',
