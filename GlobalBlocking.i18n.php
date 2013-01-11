@@ -6094,8 +6094,8 @@ $messages['kn'] = array(
 $messages['ko'] = array(
 	'globalblocking-desc' => '특정 IP를 [[Special:GlobalBlockList|모든 위키]]에서 [[Special:GlobalBlock|차단]]하는 권한을 추가',
 	'globalblocking-block' => 'IP 주소를 모든 위키에서 차단',
-	'globalblocking-modify-intro' => '당신은 전체 차단 설정을 바꿀 때 이 양식을 사용할 수 있습니다.',
-	'globalblocking-block-intro' => '당신은 모든 위키에서 특정 IP를 차단할 때 이 페이지를 사용할 수 있습니다.',
+	'globalblocking-modify-intro' => '전체 차단 설정을 바꿀 때 이 양식을 사용할 수 있습니다.',
+	'globalblocking-block-intro' => '모든 위키에서 특정 IP를 차단할 때 이 페이지를 사용할 수 있습니다.',
 	'globalblocking-block-reason' => '이유:',
 	'globalblocking-block-otherreason' => '다른 이유/추가적인 이유:',
 	'globalblocking-block-reasonotherlist' => '다른 이유',
@@ -6112,9 +6112,9 @@ $messages['ko'] = array(
 	'globalblocking-ipaddress' => 'IP 주소:',
 	'globalblocking-ipbanononly' => '익명 사용자만 차단',
 	'globalblocking-block-errors' => '다음 {{PLURAL:$1|이유로|$1가지 이유로}} 인해 차단하는 데 실패하였습니다:',
-	'globalblocking-block-ipinvalid' => '당신이 입력한 IP 주소 ($1) 가 잘못되었습니다.
-계정 이름을 입력할 수 없다는 것을 알아 두시기 바랍니다!',
-	'globalblocking-block-expiryinvalid' => '당신이 입력한 기한($1)이 잘못되었습니다.',
+	'globalblocking-block-ipinvalid' => '입력한 IP 주소 ($1) 가 잘못되었습니다.
+계정 이름을 입력할 수 없다는 것을 참고하시기 바랍니다!',
+	'globalblocking-block-expiryinvalid' => '입력한 기한($1)이 잘못되었습니다.',
 	'globalblocking-block-submit' => '이 IP 주소를 전체 위키에서 차단',
 	'globalblocking-modify-submit' => '차단 설정 바꾸기',
 	'globalblocking-block-success' => 'IP 주소 $1이 모든 프로젝트에서 성공적으로 차단되었습니다.',
@@ -6122,16 +6122,16 @@ $messages['ko'] = array(
 	'globalblocking-block-successsub' => '전체 차단 성공',
 	'globalblocking-modify-successsub' => '전체 차단 설정이 성공적으로 바뀌었습니다.',
 	'globalblocking-block-alreadyblocked' => 'IP 주소 $1은 이미 전체적으로 차단되었습니다.
-당신은 [[Special:GlobalBlockList|전체 차단된 사용자의 목록]]에서 현재 차단된 IP를 보거나,
+[[Special:GlobalBlockList|전체 차단된 사용자의 목록]]에서 현재 차단된 IP를 보거나,
 이 양식을 사용하여 이미 차단된 IP의 차단 설정을 바꿀 수 있습니다.',
-	'globalblocking-block-bigrange' => '당신이 입력한 범위 ($1)는 차단하기에 너무 넓습니다.
-당신은 아무리 많아도, 65,536개의 주소 (/16 광역) 이상을 차단할 수 없습니다.',
+	'globalblocking-block-bigrange' => '입력한 범위 ($1)는 차단하기에 너무 넓습니다.
+아무리 많아도, 65,536개의 주소 (/16 광역) 이상을 차단할 수 없습니다.',
 	'globalblocking-list-intro' => '현재 유효한 전체 차단의 목록입니다. 전체 차단은 로컬의 관리자의 권한으로 무효화 할 수 있습니다. 단 로컬에서 무효화하더라도 다른 위키에서는 차단 상태가 지속됩니다.',
 	'globalblocking-list' => '모든 위키에서 차단된 IP 목록',
 	'globalblocking-search-legend' => '전체 차단 찾기',
 	'globalblocking-search-ip' => 'IP 주소:',
 	'globalblocking-search-submit' => '차단 찾기',
-	'globalblocking-list-ipinvalid' => '당신이 입력한 IP 주소 ($1)가 잘못되었습니다.
+	'globalblocking-list-ipinvalid' => '입력한 IP 주소 ($1)가 잘못되었습니다.
 유효한 IP 주소를 입력해주세요.',
 	'globalblocking-search-errors' => '검색에 실패했습니다. 아래의 {{PLURAL:$1|원인}}를 확인해주세요.',
 	'globalblocking-list-blockitem' => '$1: <span class="plainlinks">\'\'\'$2\'\'\'</span> ($3) 이(가) [[Special:Contributions/$4|$4]] 을(를) 전체 위키에서 차단하였습니다. ($5)',
@@ -6141,12 +6141,12 @@ $messages['ko'] = array(
 	'globalblocking-list-whitelisted' => '$1에 의해 로컬에서 해제됨: $2',
 	'globalblocking-list-whitelist' => '로컬 상태',
 	'globalblocking-list-modify' => '차단 설정 바꾸기',
-	'globalblocking-list-noresults' => '당신이 입력한 IP 주소는 차단되지 않았습니다.',
+	'globalblocking-list-noresults' => '입력한 IP 주소는 차단되지 않았습니다.',
 	'globalblocking-goto-block' => 'IP를 전체 위키에서 차단',
 	'globalblocking-goto-unblock' => '전체 차단 해제',
 	'globalblocking-goto-status' => '전체 차단의 로컬 상태 바꾸기',
 	'globalblocking-return' => '전체 차단된 IP의 목록으로 돌아가기',
-	'globalblocking-notblocked' => '당신이 입력한 IP 주소 ($1)은 전체 차단되지 않았습니다.',
+	'globalblocking-notblocked' => '입력한 IP 주소 ($1)은 전체 차단되지 않았습니다.',
 	'globalblocking-unblock' => '전체 차단 해제',
 	'globalblocking-unblock-ipinvalid' => '입력한 IP 주소($1)가 잘못되었습니다.
 계정 이름은 입력이 불가능하다는 것을 주의해주세요.',
@@ -6184,9 +6184,9 @@ $messages['ko'] = array(
 
 차단에 대해 이의가 있거나 논의할 것이 있다면 \$1 사용자에게 문의할 수 있습니다.
 [[Special:Preferences|사용자 환경 설정]]에서 올바른 이메일 주소를 적지 않았거나 이메일 보내기가 금지되었다면 \"{{int:emailuser}}\" 기능을 사용할 수 없습니다.
-당신이 쓰고 있는 현재 IP 주소는 \$6입니다.
-문의할 사항이 있을 때는 위의 모든 정보를 포함시켜 주십시오.",
-	'globalblocking-blocked-nopassreset' => '당신은 모든 위키에서 차단되었기 때문에 비밀번호를 바꿀 수 없습니다.',
+쓰고 있는 현재 IP 주소는 \$6입니다.
+문의할 사항이 있을 때는 위의 모든 정보를 포함시키세요.",
+	'globalblocking-blocked-nopassreset' => '모든 위키에서 차단되었기 때문에 비밀번호를 바꿀 수 없습니다.',
 	'globalblocking-logpage' => '전체 위키 차단 기록',
 	'globalblocking-logpagetext' => '이 페이지는 이 위키에서 이루어진 전체 차단 및 해제와 관련된 기록입니다.
 전체 차단은 다른 위키에서 이루어질 수 있으며 이 위키에 영향을 줄 수 있다는 것을 알아두십시오.
