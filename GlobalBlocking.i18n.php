@@ -187,7 +187,8 @@ For more information about Global Blocking, see http://www.mediawiki.org/wiki/Gl
 {{Identical|Expiry}}',
 	'globalblocking-block-expiry-otherfield' => '{{Identical|Other time}}',
 	'globalblocking-block-options' => '{{Identical|Options}}',
-	'globalblocking-ipaddress' => 'Form label for ip-address',
+	'globalblocking-ipaddress' => 'Form label for ip-address.
+{{Identical|IP Address}}',
 	'globalblocking-ipbanononly' => 'Label for checkbox to block anonymous users only.',
 	'globalblocking-block-errors' => "The first line of the error message shown on [[Special:GlobalBlock]] (see [[mw:Extension:GlobalBlocking]]) if the block has been unsuccessful.
 
