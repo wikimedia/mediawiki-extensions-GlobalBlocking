@@ -8078,6 +8078,7 @@ Lo jornal dels blocatges es disponible çaijós :',
 );
 
 /** Oriya (ଓଡ଼ିଆ)
+ * @author Jnanaranjan Sahu
  * @author Odisha1
  * @author Psubhashish
  */
@@ -8187,9 +8188,13 @@ $messages['or'] = array(
 	'globalblockstatus' => 'ଜଗତ ବାସନ୍ଦର ଆଞ୍ଚଳିକ ସ୍ଥିତି',
 	'removeglobalblock' => 'ଏକ ଜଗତ ଯାକର ଅଟକକୁ ହଟାଇଦେବେ',
 	'right-globalblock' => 'ଜଗତ ଯାକ ବାସନ୍ଦ କରିବେ',
+	'action-globalblock' => 'ଜାଗତିକ ବାସନ୍ଦ ତିଆରି କରିବେ',
 	'right-globalunblock' => 'ଏକ ଜଗତ ଯାକର ବାସନ୍ଦକୁ ହଟାଇଦେବେ',
+	'action-globalunblock' => 'ଜାଗତିକ ବାସନ୍ଦ ହଟାଇବେ',
 	'right-globalblock-whitelist' => 'ଜଗତ ବାସନ୍ଦକୁ ଆଞ୍ଚଳିକ ଭାବରେ ଅଚଳ କରିବେ',
+	'action-globalblock-whitelist' => 'ଜାଗତିକ ବାସନ୍ଦକୁ ଆଞ୍ଚଳିକ ଭାବରେ ଅଚଳ କରିବେ',
 	'right-globalblock-exempt' => 'ଜଗତ ଯାକ ବାସନ୍ଦକୁ ଅଲଗା ପଥଗାମୀ କରିବେ',
+	'action-globalblock-exempt' => 'ଜାଗତିକ ବାସନ୍ଦକୁ ଅଲଗା ପଥଗାମୀ କରିବେ',
 );
 
 /** Ossetic (Ирон)
