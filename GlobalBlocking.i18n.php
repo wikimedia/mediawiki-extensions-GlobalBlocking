@@ -11706,6 +11706,7 @@ $messages['ur'] = array(
 
 /** vèneto (vèneto)
  * @author Candalua
+ * @author GatoSelvadego
  */
 $messages['vec'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Consentir]] el bloco de un indirisso IP su [[Special:GlobalBlockList|tante wiki]]',
@@ -11725,6 +11726,8 @@ $messages['vec'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Altro tenpo:',
 	'globalblocking-block-legend' => 'Bloca un indirisso IP globalmente',
 	'globalblocking-block-options' => 'Opzioni:',
+	'globalblocking-ipaddress' => 'Indiriso IP:',
+	'globalblocking-ipbanononly' => 'Bloca soło che i utenti anonemi',
 	'globalblocking-block-errors' => "El bloco no'l ga vu sucesso, par {{PLURAL:$1|el seguente motivo|i seguenti motivi}}:",
 	'globalblocking-block-ipinvalid' => "L'indirisso IP ($1) che te gh'è scrito no'l xe valido.
 Par piaser tien conto che no ti pol inserir un nome utente!",
@@ -11784,6 +11787,19 @@ No se pol mia canbiar el stato locale dei blochi globali.',
 	'globalblocking-whitelist-errors' => "El to canbiamento al stato locale de un bloco globale no'l xe mia stà fato par {{PLURAL:$1|el seguente motivo|i seguenti motivi}}:",
 	'globalblocking-whitelist-intro' => "Ti pol doparar sto modulo par canbiar el stato locale de un bloco globale. Se un blocco globale el xe disativà su sta wiki, i utenti che i dòpara l'indirisso IP colpìo i sarà in grado de far modifiche normalmente.
 [[Special:GlobalBlockList|Struca qua]] par tornar indrìo a l'elenco dei blochi globali.",
+	'globalblocking-ipblocked' => "'''El to indiriso IP el xe sta blocà so tute łe wiki.'''
+
+El bloco el xe sta fato da \$1 (\$2).
+Ła motivasion del bloco ła xe ła seguente: ''\$3''.
+
+* Inisio del bloco: \$4
+* Scadensa del bloco: \$5
+
+Vołendo, xe posibiłe contatar \$1 par discutare del bloco.
+Se fa notar che ła funsion \"{{int:emailuser}}\" nó ła xe ativa se nó xe sta registrà un indiriso e-mail vałido inte łe propie [[Special:Preferences|preferense]] o se 'l utiłixo de cheła funsion el xe sta blocà.
+
+El to indiriso IP atuałe el xe \$6.
+Se prega de spesifegar tuti i detaji presedenti in calsiasi dimanda de ciarimenti.",
 	'globalblocking-blocked-nopassreset' => 'No te podi resetar le password dei utenti, parché a te sì blocà globalmente.',
 	'globalblocking-logpage' => 'Registro dei blochi globali',
 	'globalblocking-logpagetext' => "De sèvito xe elencà i blochi globali che xe stà messi o cavà su sta wiki. I blochi globali i pol vegner fati su altre wiki e sti blochi globali i pol èssar validi anca su sta wiki.
@@ -11804,9 +11820,13 @@ El registro dei blochi se pol védarlo qua de soto par comodità:',
 	'globalblockstatus' => 'Stato locale de blochi globali',
 	'removeglobalblock' => 'Cava un bloco globale',
 	'right-globalblock' => 'Bloca dei utenti globalmente',
+	'action-globalblock' => 'efetuar blochi globałi',
 	'right-globalunblock' => 'Cava blochi globali',
+	'action-globalunblock' => 'cavar blochi globałi',
 	'right-globalblock-whitelist' => 'Disabilita localmente blochi globali',
+	'action-globalblock-whitelist' => 'dixabiłitare blochi globałi localmente',
 	'right-globalblock-exempt' => 'Scavalca blochi globali',
+	'action-globalblock-exempt' => 'scavalcar blochi globali',
 );
 
 /** Veps (vepsän kel’)
