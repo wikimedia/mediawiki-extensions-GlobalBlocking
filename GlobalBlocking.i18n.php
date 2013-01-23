@@ -638,13 +638,14 @@ $messages['ar'] = array(
 );
 
 /** Aramaic (ܐܪܡܝܐ)
+ * @author 334a
  * @author Basharh
  */
 $messages['arc'] = array(
 	'globalblocking-block-reason' => 'ܥܠܬܐ:',
 	'globalblocking-block-otherreason' => 'ܥܠܬܐ ܐܚܪܬܐ/ܢܩܝܦܬܐ:',
 	'globalblocking-block-reasonotherlist' => 'ܥܠܬܐ ܐܚܪܬܐ',
-	'globalblocking-block-expiry-otherfield' => 'ܥܕܢܐ ܐܚܪܬܐ:',
+	'globalblocking-block-expiry-otherfield' => 'ܥܕܢܐ ܐܚܪܢܐ:',
 	'globalblocking-block-options' => 'ܓܒܝܬ̈ܐ',
 	'globalblocking-list' => 'ܡܟܬܒܘܬܐ ܕܦܪ̈ܫܓܢܐ ܕܐܝܦܝ (IP) ܚܪ̈ܝܡܐ ܓܘܢܐܝܬ',
 	'globalblocking-list-anononly' => 'ܠܐ ܝܕ̈ܝܥܐ ܒܠܚܘܕ',
