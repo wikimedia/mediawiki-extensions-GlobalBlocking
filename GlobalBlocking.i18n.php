@@ -6190,15 +6190,15 @@ $messages['ko'] = array(
 문의할 사항이 있을 때는 위의 모든 정보를 포함시키세요.",
 	'globalblocking-blocked-nopassreset' => '모든 위키에서 차단되었기 때문에 비밀번호를 바꿀 수 없습니다.',
 	'globalblocking-logpage' => '전체 위키 차단 기록',
-	'globalblocking-logpagetext' => '이 페이지는 이 위키에서 이루어진 전체 차단 및 해제와 관련된 기록입니다.
-전체 차단은 다른 위키에서 이루어질 수 있으며 이 위키에 영향을 줄 수 있다는 것을 알아두십시오.
+	'globalblocking-logpagetext' => '이 위키에서 이루어진 전체 차단 및 해제와 관련된 기록입니다.
+전체 차단은 다른 위키에서 이루어질 수 있으며 이 위키에 영향을 줄 수 있다는 것을 참고하세요.
 지금 활성화된 모든 [[Special:GlobalBlockList|전체 차단 목록]]을 볼 수 있습니다.',
-	'globalblocking-block-logentry' => '[[$1]] 사용자를 모든 위키에서 $2 차단함',
-	'globalblocking-block2-logentry' => '[[$1]] 사용자를 모든 위키에서 차단함 ($2)',
-	'globalblocking-unblock-logentry' => '[[$1]]의 전체 위키 차단을 해제함',
-	'globalblocking-whitelist-logentry' => '[[$1]]의 전체 차단을 로컬에서 비활성화함',
-	'globalblocking-dewhitelist-logentry' => '[[$1]]의 전체 차단을 로컬에서 다시 활성화함',
-	'globalblocking-modify-logentry' => '[[$1]]에 대한 전체 차단 설정을 바꾸기 ($2)',
+	'globalblocking-block-logentry' => '사용자가 [[$1]] 사용자를 모든 위키에서 $2 차단했습니다',
+	'globalblocking-block2-logentry' => '사용자가 [[$1]] 사용자를 모든 위키에서 차단했습니다 ($2)',
+	'globalblocking-unblock-logentry' => '사용자가 [[$1]]의 전체 위키 차단을 해제했습니다',
+	'globalblocking-whitelist-logentry' => '사용자가 [[$1]]의 전체 차단을 로컬에서 비활성화했습니다',
+	'globalblocking-dewhitelist-logentry' => '사용자가 [[$1]]의 전체 차단을 로컬에서 다시 활성화했습나다',
+	'globalblocking-modify-logentry' => '사용자가 [[$1]]에 대한 전체 차단 설정을 바꿨습니다 ($2)',
 	'globalblocking-logentry-expiry' => '$1에 해제',
 	'globalblocking-logentry-noexpiry' => '기한이 정해지지 않음',
 	'globalblocking-loglink' => 'IP 주소 $1은 모든 위키에서 차단되었습니다. ([[{{#Special:GlobalBlockList}}/$1|자세한 정보]])',
