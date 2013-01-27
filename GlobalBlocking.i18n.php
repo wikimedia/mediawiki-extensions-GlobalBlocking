@@ -7670,7 +7670,7 @@ För en List mit all aktive globale Sperren kiek na de [[Special:GlobalBlockList
 	'right-globalblock-whitelist' => 'Globale Sperren lokal afschalten',
 );
 
-/** Nedersaksisch (Nedersaksisch)
+/** Nedersaksies (Nedersaksies)
  * @author Servien
  */
 $messages['nds-nl'] = array(
