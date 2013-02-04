@@ -647,14 +647,15 @@ $messages['arc'] = array(
 	'globalblocking-block-reasonotherlist' => 'ܥܠܬܐ ܐܚܪܬܐ',
 	'globalblocking-block-expiry-otherfield' => 'ܥܕܢܐ ܐܚܪܢܐ:',
 	'globalblocking-block-options' => 'ܓܒܝܬ̈ܐ',
-	'globalblocking-list' => 'ܡܟܬܒܘܬܐ ܕܦܪ̈ܫܓܢܐ ܕܐܝܦܝ (IP) ܚܪ̈ܝܡܐ ܓܘܢܐܝܬ',
+	'globalblocking-list' => 'ܡܟܬܒܘܬܐ ܕܡܘ̈ܢܥܐ ܕܐܝܦܝ (IP) ܚܪ̈ܝܡܐ ܓܘܢܐܝܬ',
 	'globalblocking-list-anononly' => 'ܠܐ ܝܕ̈ܝܥܐ ܒܠܚܘܕ',
 	'globalblocking-list-unblock' => 'ܠܚܝ',
 	'globalblocking-list-whitelist' => 'ܐܝܟܢܝܘܬܐ ܕܘܟܬܢܝܬܐ',
 	'globalblocking-unblock-reason' => 'ܥܠܬܐ:',
 	'globalblocking-whitelist' => 'ܐܝܟܢܝܘܬܐ ܕܘܟܬܢܝܬܐ ܕܚܪܡܐ ܓܘܢܝܐ',
 	'globalblocking-whitelist-reason' => 'ܥܠܬܐ:',
-	'globalblocklist' => 'ܡܟܬܒܘܬܐ ܕܦܪ̈ܫܓܢܐ ܕܐܝܦܝ (IP) ܚܪ̈ܝܡܐ ܓܘܢܐܝܬ',
+	'globalblocking-logpage' => 'ܣܓܠܐ ܓܘܢܝܐ ܕܚܪܡܐ',
+	'globalblocklist' => 'ܡܟܬܒܘܬܐ ܕܡܘ̈ܢܥܐ ܕܐܝܦܝ (IP) ܚܪ̈ܝܡܐ ܓܘܢܐܝܬ',
 );
 
 /** Egyptian Spoken Arabic (مصرى)
