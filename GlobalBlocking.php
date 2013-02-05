@@ -43,6 +43,8 @@ $wgAutoloadClasses['SpecialRemoveGlobalBlock'] = "$dir/SpecialRemoveGlobalBlock.
 $wgSpecialPages['RemoveGlobalBlock'] = 'SpecialRemoveGlobalBlock';
 $wgAutoloadClasses['ApiQueryGlobalBlocks'] = "$dir/ApiQueryGlobalBlocks.php";
 $wgAPIListModules['globalblocks'] = 'ApiQueryGlobalBlocks';
+$wgAutoloadClasses['ApiGlobalBlock'] = "$dir/ApiGlobalBlock.php";
+$wgAPIModules['globalblock'] = 'ApiGlobalBlock';
 
 $wgAutoloadClasses['GlobalBlocking'] = "$dir/GlobalBlocking.class.php";
 
