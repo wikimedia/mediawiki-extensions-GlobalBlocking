@@ -332,7 +332,7 @@ $specialPageAliases['mt'] = array(
 	'GlobalBlockList' => array( 'ListaBlokkGlobali' ),
 );
 
-/** Norwegian Bokmål (norsk (bokmål)‎) */
+/** Norwegian Bokmål (norsk bokmål) */
 $specialPageAliases['nb'] = array(
 	'GlobalBlock' => array( 'Blokker_globalt', 'Global_blokkering' ),
 	'GlobalBlockList' => array( 'Global_blokkeringsliste' ),
@@ -356,7 +356,7 @@ $specialPageAliases['nl'] = array(
 	'GlobalBlockStatus' => array( 'WitteLijstGlobaleBlokkades', 'GlobaleBlokkadestatus' ),
 );
 
-/** Norwegian Nynorsk (norsk (nynorsk)‎) */
+/** Norwegian Nynorsk (norsk nynorsk) */
 $specialPageAliases['nn'] = array(
 	'GlobalBlockList' => array( 'Global_blokkeringsliste' ),
 );
