@@ -9190,9 +9190,13 @@ L'archivije de le blocche t'avène date aqquà sotte pe conzultazione:",
 	'globalblockstatus' => 'State locale de le blocche globale',
 	'removeglobalblock' => "Live 'nu blocche globale",
 	'right-globalblock' => 'Mitte le blocche globale',
+	'action-globalblock' => 'mitte le blocche globbale',
 	'right-globalunblock' => 'Live le blocche globale',
+	'action-globalunblock' => 'live le blocche globbale',
 	'right-globalblock-whitelist' => 'Disabbilete le blocche globale localmende',
+	'action-globalblock-whitelist' => 'disabbilete le blocche globbale localmende',
 	'right-globalblock-exempt' => 'Zumbe le blocche globale',
+	'action-globalblock-exempt' => 'zumbe le blocche globbale',
 );
 
 /** Russian (русский)
