@@ -9106,6 +9106,7 @@ $messages['roa-tara'] = array(
 	'globalblocking-block-legend' => "Bluècche 'n'indirizze IP globalmende",
 	'globalblocking-block-options' => 'Opziune:',
 	'globalblocking-ipaddress' => 'Indirizze IP:',
+	'globalblocking-ipbanononly' => 'Bluècche sulamende le utinde anonime',
 	'globalblocking-block-errors' => "'U blocche tune non g'à riuscite, {{PLURAL:$1|pe stu|pe le seguende}} mutive:",
 	'globalblocking-block-ipinvalid' => "L'indirizze IP ($1) ca tu è mise non g'è valide.<br />
 Pe piacere vide ca tu non ge puè mettere 'nu nome utende!",
@@ -9169,6 +9170,18 @@ Pe piacere vide ca tu non ge puè mettere 'nu nome utende!",
 	'globalblocking-whitelist-intro' => "Tu puè ausà stu module pe cangià 'u state locale de 'nu blocche globale.<br />
 Ce 'nu blocche globale jè disabbilitate sus a sta Uicchi, l'utinde ca usane ste indirizze IP ponne turnà a fa cangiaminde normalmende.<br />
 [[Special:GlobalBlockList|Tuèrne a l'elenghe de le blocche globale]].",
+	'globalblocking-ipblocked' => "'''L'indirizze IP tune ha state bloccate sus a tutte le uicchi.'''
+
+'U blocche ha state fatte da \$1 (\$2).
+'U mutive date ha state ''\$3''.
+
+* Inizie d'u blocche: \$4
+* Fine d'u blocche: \$5
+
+Tu puè condattà \$1 pe 'ngazzarte sus a 'u blocche.
+Non ge puè ausà 'a funzione \"{{int:emailuser}}\" senze 'n'indirizze e-mail valide ca adda essere specificate jndr'à le [[Special:Preferences|preferenze tune]] e tu non g'è state bloccate da ausarle.
+L'indirizze IP tune de mò jè \$6.
+Pe piacere 'nglude tutte le dettaglie de aqquà sus jndr'à ogne richieste ca face.",
 	'globalblocking-blocked-nopassreset' => "tu non ge puè azzerà 'a password de l'utende purcé è state bloccate globalmende.",
 	'globalblocking-logpage' => 'Archivije de le blocche globale',
 	'globalblocking-logpagetext' => "Quiste è 'n'archivije de le blocche globale ca onne state fatte o luate da sus a sta Uicchi.<br />
