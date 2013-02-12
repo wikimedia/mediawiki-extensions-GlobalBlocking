@@ -64,10 +64,8 @@ $wgLogActions['gblblock/modify'] = 'globalblocking-modify-logentry';
 
 ## Permissions
 $wgGroupPermissions['steward']['globalblock'] = true;
-$wgGroupPermissions['steward']['globalunblock'] = true;
 $wgGroupPermissions['sysop']['globalblock-whitelist'] = true;
 $wgAvailableRights[] = 'globalblock';
-$wgAvailableRights[] = 'globalunblock';
 $wgAvailableRights[] = 'globalblock-whitelist';
 $wgAvailableRights[] = 'globalblock-exempt';
 

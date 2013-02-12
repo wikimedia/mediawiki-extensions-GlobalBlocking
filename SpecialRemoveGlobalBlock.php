@@ -4,7 +4,7 @@ class SpecialRemoveGlobalBlock extends SpecialPage {
 	public $mAddress, $mReason;
 
 	function __construct() {
-		parent::__construct( 'RemoveGlobalBlock', 'globalunblock' );
+		parent::__construct( 'RemoveGlobalBlock', 'globalblock' );
 	}
 
 	function execute( $par ) {

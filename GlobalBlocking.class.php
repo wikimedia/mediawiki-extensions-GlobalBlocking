@@ -506,12 +506,12 @@ class GlobalBlocking {
 			$title = SpecialPage::getTitleFor( 'GlobalBlockList' );
 			$links[] = Linker::linkKnown( $title, wfMessage( 'globalblocklist' )->escaped() );
 		}
-
-		if ( $pagetype != 'GlobalBlock' && $wgUser->isAllowed( 'globalblock' ) ) {
+		$canBlock = $wgUser->isAllowed( 'globalblock' );
+		if ( $pagetype != 'GlobalBlock' && $canBlock ) {
 			$title = SpecialPage::getTitleFor( 'GlobalBlock' );
 			$links[] = Linker::linkKnown( $title, wfMessage( 'globalblocking-goto-block' )->escaped() );
 		}
-		if ( $pagetype != 'RemoveGlobalBlock' && $wgUser->isAllowed( 'globalunblock' ) ) {
+		if ( $pagetype != 'RemoveGlobalBlock' && $canBlock ) {
 			$title = SpecialPage::getTitleFor( 'RemoveGlobalBlock' );
 			$links[] = Linker::linkKnown( $title, wfMessage( 'globalblocking-goto-unblock' )->escaped() );
 		}
