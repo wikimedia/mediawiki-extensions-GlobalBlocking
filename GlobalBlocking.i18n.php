@@ -228,9 +228,11 @@ See also:
 	'globalblocking-logpagetext' => 'Shown as header of [[Special:Log/gblblock]] (part of [[mw:Extension:GlobalBlocking|Extension:GlobalBlocking]], which is not installed on translatewiki.net; example: [[wikipedia:Special:Log/gblblock]])',
 	'globalblocking-block2-logentry' => '* $1 is a link to a user page of the form User:Name
 * $2 is a reason for the action.',
-	'globalblocking-unblock-logentry' => "This message is a log entry. '''$1''' are contributions of an IP. For an example see http://meta.wikimedia.org/wiki/Special:Log/gblblock?uselang=en",
+	'globalblocking-unblock-logentry' => 'This message is a log entry. Parameters:
+* $1 are contributions of an IP.
+For an example see [{{canonicalurl:meta:Special:Log/gblblock|uselang=en}} meta:Special:Log/gblblock?uselang=en]',
 	'globalblocking-modify-logentry' => '$1 is a link to a user page of the form User:Name, $2 is a reason for the action.',
-	'globalblocking-loglink' => 'Shown at Special:IPBlocklist when the GlobalBlocking extension is enabled (not on translatewiki).
+	'globalblocking-loglink' => 'Shown at [[Special:IPBlocklist]] when the GlobalBlocking extension is enabled (not on translatewiki).
 * $1 is the requested IP address',
 	'globalblocking-showlog' => 'See also:
 * {{msg-mw|Blocklog-showlog}}',
