@@ -3221,6 +3221,7 @@ $messages['eu'] = array(
  * @author Ladsgroup
  * @author Leyth
  * @author Mardetanha
+ * @author Mjbmr
  * @author Sahim
  * @author Wayiran
  * @author ZxxZxxZ
@@ -3286,7 +3287,7 @@ $messages['fa'] = array(
 	'globalblocking-unblock-ipinvalid' => 'نشانی آی‌پی که وارد کردید ($1) غیر مجاز است.
 لطفاً توجه داشته باشید که نمی‌تواند یک نام کاربری را وارد کنید.',
 	'globalblocking-unblock-legend' => 'حذف یک قطع دسترسی سراسری',
-	'globalblocking-unblock-submit' => 'حذف قطع دصترسی سراسری',
+	'globalblocking-unblock-submit' => 'حذف قطع دسترسی سراسری',
 	'globalblocking-unblock-reason' => 'دلیل:',
 	'globalblocking-unblock-unblocked' => "شما با موفقیت قطع دسترسی سراسری شماره $2 را از نشانی آی‌پی '''$1''' برداشتید",
 	'globalblocking-unblock-errors' => 'حذف قطع دسترسی سراسری به {{PLURAL:$1|دلیل|دلایل}} روبرو ناموفق بود:',
@@ -3339,7 +3340,7 @@ $messages['fa'] = array(
 	'globalblocking-showlog' => 'این نشانی آی‌پی قبلاً بسته شده‌است.
 سیاههٔ قطع دسترسی در زیر نمایش یافته‌است:',
 	'globalblocklist' => 'فهرست نشانی‌های اینترنتی بسته شده به طور سراسری',
-	'globalblock' => 'قطع دصترسی سراسری یک نشانی آی‌پی',
+	'globalblock' => 'قطع دسترسی سراسری یک نشانی آی‌پی',
 	'globalblockstatus' => 'وضعیت محلی قطع‌ دسترسی‌های سراسری',
 	'removeglobalblock' => 'حذف یک قطع دسترسی سراسری',
 	'right-globalblock' => 'ایجاد قطع دسترسی‌های سراسری',
