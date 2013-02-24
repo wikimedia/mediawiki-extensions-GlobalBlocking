@@ -188,7 +188,7 @@ For more information about Global Blocking, see http://www.mediawiki.org/wiki/Gl
 	'globalblocking-block-expiry-otherfield' => '{{Identical|Other time}}',
 	'globalblocking-block-options' => '{{Identical|Options}}',
 	'globalblocking-ipaddress' => 'Form label for ip-address.
-{{Identical|IP Address}}',
+{{Identical|IP address}}',
 	'globalblocking-ipbanononly' => 'Label for checkbox to block anonymous users only.',
 	'globalblocking-block-errors' => "The first line of the error message shown on [[Special:GlobalBlock]] (see [[mw:Extension:GlobalBlocking]]) if the block has been unsuccessful.
 
@@ -199,7 +199,7 @@ See also:
 	'globalblocking-block-ipinvalid' => '{{Identical|The IP address ($1) ...}}',
 	'globalblocking-block-bigrange' => 'Not clear at all what the English message means about ranges. Unfortunately, http://www.mediawiki.org/wiki/Extension:GlobalBlocking supplies no explanation whatsoever.',
 	'globalblocking-list-intro' => 'Appears on top of [[Special:Globalblocklist]] (part of [[mw:Extension:GlobalBlocking|Extension:GlobalBlocking]], which is not installed on translatewiki.net; example: [[wikipedia:Special:Globalblocklist]]).',
-	'globalblocking-search-ip' => '{{Identical|IP Address}}',
+	'globalblocking-search-ip' => '{{Identical|IP address}}',
 	'globalblocking-search-errors' => 'See also:
 * {{msg-mw|Globalblocking-block-errors}}',
 	'globalblocking-list-blockitem' => '* $1 is a time stamp
