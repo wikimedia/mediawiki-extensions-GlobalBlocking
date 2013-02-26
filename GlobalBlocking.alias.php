@@ -475,6 +475,7 @@ $specialPageAliases['vi'] = array(
 	'GlobalBlock' => array( 'Cấm_toàn_cục' ),
 	'GlobalBlockList' => array( 'Danh_sách_cấm_toàn_cục' ),
 	'RemoveGlobalBlock' => array( 'Bỏ_cấm_toàn_cục' ),
+	'GlobalBlockStatus' => array( 'Danh_sách_miễn_cấm_toàn_cục' ),
 );
 
 /** Cantonese (粵語) */
