@@ -111,7 +111,7 @@ The reason given is ''$3''.
 * Expiry of block: $5
 
 You can contact $1 to discuss the block.
-You cannot use the \"{{int:emailuser}}\" feature unless a valid e-mail address is specified in your [[Special:Preferences|account preferences]] and you have not been blocked from using it.
+You cannot use the \"{{int:emailuser}}\" feature unless a valid email address is specified in your [[Special:Preferences|account preferences]] and you have not been blocked from using it.
 Your current IP address is $6.
 Please include all above details in any queries you make.",
 	'globalblocking-blocked-nopassreset' => "You cannot reset user's passwords because you are blocked globally.",
