@@ -173,9 +173,7 @@ The block log is provided below for reference:',
  */
 $messages['qqq'] = array(
 	'globalblocking-desc' => '{{desc|name=Global Blocking|url=http://www.mediawiki.org/wiki/Extension:GlobalBlocking}}',
-	'globalblocking-block' => 'Same special page with this page:
-
-* [[MediaWiki:Globalblock/{{SUBPAGENAME}}]]',
+	'globalblocking-block' => '{{Identical|Globally block IP address}}',
 	'globalblocking-expiry-options' => '{{notranslate}}',
 	'globalblocking-block-reason' => '{{Identical|Reason}}',
 	'globalblocking-block-otherreason' => '{{Identical/Other/additional reason}}',
@@ -211,6 +209,7 @@ See also:
 	'globalblocking-list-unblock' => '{{Identical|Remove}}',
 	'globalblocking-list-whitelist' => '{{Identical|Local status}}',
 	'globalblocking-list-modify' => '{{Identical|Modify}}',
+	'globalblocking-goto-block' => '{{Identical|Globally block IP address}}',
 	'globalblocking-unblock-ipinvalid' => '{{Identical|The IP address ($1) ...}}',
 	'globalblocking-unblock-reason' => '{{Identical|Reason}}',
 	'globalblocking-whitelist-legend' => '{{Identical|Change local status}}',
@@ -236,9 +235,7 @@ For an example see [{{canonicalurl:meta:Special:Log/gblblock|uselang=en}} meta:S
 * $1 is the requested IP address',
 	'globalblocking-showlog' => 'See also:
 * {{msg-mw|Blocklog-showlog}}',
-	'globalblock' => 'Same special page with this page:
-
-* [[MediaWiki:Globalblocking-block/{{SUBPAGENAME}}]]',
+	'globalblock' => '{{Identical|Globally block IP address}}',
 	'right-globalblock' => '{{doc-right|globalblock}}',
 	'action-globalblock' => '{{doc-action|globalblock}}',
 	'right-globalunblock' => '{{doc-right|globalunblock}}',
