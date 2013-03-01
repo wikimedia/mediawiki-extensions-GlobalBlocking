@@ -217,12 +217,12 @@ See also:
 	'globalblocking-whitelist-status' => '{{Identical|Local status}}',
 	'globalblocking-whitelist-submit' => '{{Identical|Change local status}}',
 	'globalblocking-ipblocked' => 'A message shown to a [[mw:Extension:GlobalBlocking|globally blocked]] user trying to edit. This message is similar to a [[MediaWiki:Blockedtext|MediaWiki core message]]. Parameters:
-* $1 is the username of the blocking user (steward), with a link
-* $2 is the project name where the blocking user is registered (usually “meta.wikimedia.org” on Wikimedia servers)
-* $3 is the reason specified by the blocking user
-* $4 is a timestamp for when the block was set
-* $5 is a timestamp for when the block will expire (or {{msg-mw|infiniteblock}})
-* $6 is the IP address of the globally blocked user.',
+* $1 - the username of the blocking user (steward), with a link
+* $2 - the project name where the blocking user is registered (usually "meta.wikimedia.org" on Wikimedia servers)
+* $3 - the reason specified by the blocking user
+* $4 - a timestamp for when the block was set
+* $5 - a timestamp for when the block will expire (or {{msg-mw|infiniteblock}})
+* $6 - the IP address of the globally blocked user',
 	'globalblocking-logpage' => '{{doc-logpage}}',
 	'globalblocking-logpagetext' => 'Shown as header of [[Special:Log/gblblock]] (part of [[mw:Extension:GlobalBlocking|Extension:GlobalBlocking]], which is not installed on translatewiki.net; example: [[wikipedia:Special:Log/gblblock]])',
 	'globalblocking-block2-logentry' => '* $1 is a link to a user page of the form User:Name
