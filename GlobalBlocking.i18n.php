@@ -6806,6 +6806,13 @@ $messages['mhr'] = array(
 	'globalblocking-unblock-reason' => 'Амал:',
 );
 
+/** Minangkabau (Baso Minangkabau)
+ * @author Iwan Novirion
+ */
+$messages['min'] = array(
+	'globalblocking-logentry-noexpiry' => 'salamonyo',
+);
+
 /** Macedonian (македонски)
  * @author Bjankuloski06
  * @author Brest
