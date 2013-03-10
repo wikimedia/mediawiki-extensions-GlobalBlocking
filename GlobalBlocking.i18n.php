@@ -1917,6 +1917,9 @@ $messages['ce'] = array(
 $messages['ckb'] = array(
 	'globalblocking-block-reason' => 'هۆکار:',
 	'globalblocking-block-reasonotherlist' => 'ھۆکاری تر',
+	'globalblocking-block-expiry-otherfield' => 'کاتی تر:',
+	'globalblocking-ipaddress' => 'ناونیشانی ئایپی:',
+	'globalblocking-search-ip' => 'ناونیشانی ئایپی:',
 	'globalblocking-unblock-reason' => 'هۆکار:',
 	'globalblocking-whitelist-reason' => 'هۆکار:',
 );
