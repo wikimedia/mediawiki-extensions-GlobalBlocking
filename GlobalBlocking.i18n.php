@@ -2121,6 +2121,7 @@ Noder nad oes modd defnyddio enw defnyddiwr os gwelwch yn dda!",
  * @author Masz
  * @author Peter Alberti
  * @author Sarrus
+ * @author Steenth
  * @author Tjernobyl
  */
 $messages['da'] = array(
@@ -2152,8 +2153,8 @@ Bemærk venligst, at du ikke kan indtaste et brugernavn!',
 	'globalblocking-modify-success' => 'Den globale blokering på $1 er blevet ændret',
 	'globalblocking-block-successsub' => 'Global blokering lykkedes',
 	'globalblocking-modify-successsub' => 'Global blokering er ændret',
-	'globalblocking-block-alreadyblocked' => 'IP-adressen  $1 er allerede blokeret globalt.
-På [[Special: GlobalBlockList|list af globale blokke]], kan du få vist den eksisterende blokering eller ændre indstillingerne for den eksisterende blokering ved at genindsende denne formular.', # Fuzzy
+	'globalblocking-block-alreadyblocked' => 'IP-adressen $1 er allerede blokeret globalt.
+Du kan få vist eksisterende blok på [[Special:GlobalBlockList|listen af globale blokke]], eller ændre indstillingerne for den eksisterende blok ved at accepterer denne form.',
 	'globalblocking-block-bigrange' => 'Intervallet, du angav, ($1) er for stort, til at det kan blokeres.
 Du kan højst blokere 65.536 adresser (/16-intervaller)',
 	'globalblocking-list-intro' => 'Dette er en liste over alle globale blokeringer, som for øjeblikket i er aktive.
@@ -2165,7 +2166,7 @@ Nogle blokeringer er markeret som lokalt deaktiveret: Dette betyder, at de finde
 	'globalblocking-list-ipinvalid' => 'IP-adressen du søgte efter ($1) er ugyldig.
 Skriv en gyldig IP-adresse.',
 	'globalblocking-search-errors' => 'Din søgning lykkedes ikke af følgende  {{PLURAL:$1| årsag|årsager}}:',
-	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">''' \$2 '''</span> ('' \$3 '') globalt blokeret [[Special: bidrag / \$4 | \$4 ]] ''(\$5)''", # Fuzzy
+	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> ('' \$3 '') globalt blokeret [[Special:Contributions/\$4|\$4]] ''(\$5)''",
 	'globalblocking-list-expiry' => 'varighed $1',
 	'globalblocking-list-anononly' => 'kun anonyme',
 	'globalblocking-list-unblock' => 'fjern',
@@ -2175,6 +2176,7 @@ Skriv en gyldig IP-adresse.',
 	'globalblocking-list-noresults' => 'Den efterspurgte IP-adresse er ikke blokeret.',
 	'globalblocking-goto-block' => 'Globalt blokeret en IP-adresse',
 	'globalblocking-goto-unblock' => 'Ophæv en global blokering',
+	'globalblocking-goto-status' => 'Ændre lokale status for en global blokering',
 	'globalblocking-unblock' => 'Ophæv en global blokering',
 	'globalblocking-unblock-legend' => 'Ophæv en global blokering',
 	'globalblocking-unblock-submit' => 'Ophæv global blokering',
