@@ -2116,6 +2116,7 @@ Noder nad oes modd defnyddio enw defnyddiwr os gwelwch yn dda!",
 );
 
 /** Danish (dansk)
+ * @author Fnielsen
  * @author Hylle
  * @author Jan Friberg
  * @author Masz
@@ -2138,6 +2139,7 @@ $messages['da'] = array(
 ** Hærværk',
 	'globalblocking-block-edit-dropdown' => 'Rediger blokeringsbegrundelser',
 	'globalblocking-block-expiry' => 'Udløber:',
+	'globalblocking-block-expiry-other' => 'Anden udløbstid',
 	'globalblocking-block-expiry-otherfield' => 'Anden tid:',
 	'globalblocking-block-legend' => 'Bloker en IP-adresse globalt',
 	'globalblocking-block-options' => 'Indstillinger:',
