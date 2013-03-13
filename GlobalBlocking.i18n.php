@@ -2128,7 +2128,7 @@ Noder nad oes modd defnyddio enw defnyddiwr os gwelwch yn dda!",
 $messages['da'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Tillader]] at IP-adresser bliver [[Special:GlobalBlockList|blokeret på tværs af talrige wikier]]',
 	'globalblocking-block' => 'Bloker en IP-adresse globalt',
-	'globalblocking-modify-intro' => 'Du kan bruge denne formular til at ændre indstillingerne for en global blokkering',
+	'globalblocking-modify-intro' => 'Du kan bruge denne formular til at ændre indstillingerne for en global blokering',
 	'globalblocking-block-intro' => 'Du kan bruge denne side til at blokere en IP-adresse på alle wikier.',
 	'globalblocking-block-reason' => 'Begrundelse:',
 	'globalblocking-block-otherreason' => 'Anden/uddybende begrundelse:',
@@ -2156,7 +2156,7 @@ Bemærk venligst, at du ikke kan indtaste et brugernavn!',
 	'globalblocking-block-successsub' => 'Global blokering lykkedes',
 	'globalblocking-modify-successsub' => 'Global blokering er ændret',
 	'globalblocking-block-alreadyblocked' => 'IP-adressen $1 er allerede blokeret globalt.
-Du kan få vist eksisterende blok på [[Special:GlobalBlockList|listen af globale blokke]], eller ændre indstillingerne for den eksisterende blok ved at accepterer denne form.',
+Du kan få vist eksisterende blokeringer på [[Special:GlobalBlockList|listen af globale blokeringer]], eller ændre indstillingerne for den eksisterende blok ved at accepterer denne form.',
 	'globalblocking-block-bigrange' => 'Intervallet, du angav, ($1) er for stort, til at det kan blokeres.
 Du kan højst blokere 65.536 adresser (/16-intervaller)',
 	'globalblocking-list-intro' => 'Dette er en liste over alle globale blokeringer, som for øjeblikket i er aktive.
@@ -2164,7 +2164,7 @@ Nogle blokeringer er markeret som lokalt deaktiveret: Dette betyder, at de finde
 	'globalblocking-list' => 'Liste over globalt blokerede IP-adresser',
 	'globalblocking-search-legend' => 'Søg efter en global blokering',
 	'globalblocking-search-ip' => 'IP-adresse:',
-	'globalblocking-search-submit' => 'Søg efter blokke',
+	'globalblocking-search-submit' => 'Søg efter blokeringer',
 	'globalblocking-list-ipinvalid' => 'IP-adressen du søgte efter ($1) er ugyldig.
 Skriv en gyldig IP-adresse.',
 	'globalblocking-search-errors' => 'Din søgning lykkedes ikke af følgende  {{PLURAL:$1| årsag|årsager}}:',
@@ -2179,29 +2179,74 @@ Skriv en gyldig IP-adresse.',
 	'globalblocking-goto-block' => 'Globalt blokeret en IP-adresse',
 	'globalblocking-goto-unblock' => 'Ophæv en global blokering',
 	'globalblocking-goto-status' => 'Ændre lokale status for en global blokering',
+	'globalblocking-return' => 'Tilbage til listen over globale blokkeringer',
+	'globalblocking-notblocked' => 'IP-adressen du angav ($1) blokeres ikke globalt.',
 	'globalblocking-unblock' => 'Ophæv en global blokering',
+	'globalblocking-unblock-ipinvalid' => 'IP-adressen, du indtastede ($1), er ugyldig.
+Bemærk venligst, at du ikke kan indtaste et brugernavn!',
 	'globalblocking-unblock-legend' => 'Ophæv en global blokering',
 	'globalblocking-unblock-submit' => 'Ophæv global blokering',
 	'globalblocking-unblock-reason' => 'Begrundelse:',
+	'globalblocking-unblock-unblocked' => "Du har fjernet den globale blokering #$2 til IP-adressen '''$1'''",
+	'globalblocking-unblock-errors' => 'Din fjernelse af den globale blokering lykkedes ikke med følgende {{PLURAL:$1|årsag|årsager}}:',
+	'globalblocking-unblock-successsub' => 'Global blokeringen fjernet',
 	'globalblocking-unblock-subtitle' => 'Ophæver global blokering',
+	'globalblocking-unblock-intro' => 'Du kan bruge denne form til at fjerne en global blokering.',
+	'globalblocking-whitelist' => 'Lokal status for global blokering',
+	'globalblocking-whitelist-notapplied' => 'Global blokeringer bruges ikke på denne wiki,
+så den lokale status for global blokering ikke kan ændres.',
 	'globalblocking-whitelist-legend' => 'Ændr lokal status',
 	'globalblocking-whitelist-reason' => 'Begrundelse:',
 	'globalblocking-whitelist-status' => 'Lokal status:',
 	'globalblocking-whitelist-statuslabel' => 'Ophæv global blokering på {{SITENAME}}',
 	'globalblocking-whitelist-submit' => 'Ændr lokal status',
+	'globalblocking-whitelist-whitelisted' => "Du har fjernet den globale blokering #$2 af IP-adressen '''$1''' på {{SITENAME}}.",
+	'globalblocking-whitelist-dewhitelisted' => "Du har fjernet den globale blokering #$2 af IP-adressen '''$1''' på {{SITENAME}}.",
+	'globalblocking-whitelist-successsub' => 'Lokal status er blevet ændret',
+	'globalblocking-whitelist-nochange' => 'Du har ikke foretaget nogen ændring lokale status for denne blokering.
+[[Special:GlobalBlockList|Vende tilbage til den globale blokeringsliste]].',
+	'globalblocking-whitelist-errors' => 'Din ændring af den lokale status af en global blokering lykkedes ikke, med følgende {{PLURAL:$1|årsag|årsager}}:',
 	'globalblocking-whitelist-intro' => 'Du kan bruge denne formular, til at ophæve en global blokering lokalt. Hvis blokeringen bliver ophævet, kan den globalt blokerede bruger redigere sider normalt. Se også [[Special:GlobalBlockList|loggen for globale blokeringer]].',
+	'globalblocking-ipblocked' => "''' Din IP-adresse er blokeret på alle wiki'er.'' '
+
+Blokeringen blev lavet af \$1 ( \$2 ).
+Begrundelsen er ''\$3''.
+
+* Start af blok: \$4
+* udløbet af blok: \$5
+
+Du kan kontakte \$1 at diskutere blokeringen.
+Du kan ikke bruge funktionen \"{{int:emailuser}}\", medmindre en gyldig e-mail-adresse er blevet angivet i deres [[Special:Preferences|account preferences]] og du er ikke blevet blokeret fra at bruge den.
+Din aktuelle IP-adresse er \$6 .
+Medtag alle ovenfor detaljer i enhver henvendelse du gør.",
+	'globalblocking-blocked-nopassreset' => 'Du kan ikke nulstille brugeradgangskoder, fordi du er blokeret globalt.',
 	'globalblocking-logpage' => 'Global blokeringslog',
+	'globalblocking-logpagetext' => "Dette er en log over globale blokeringer, der er blevet gennemført eller fjernet på denne wiki.
+Det skal bemærkes, at globale blokeringer kan foretages og fjernet på andre wiki'er, og at disse globale blokeringer kan påvirke denne wiki.
+For at få vist alle aktive globale blokeringer, kan du få vist [[Special:GlobalBlockList|den globale blokringsliste]].",
 	'globalblocking-block-logentry' => 'blokerede [[$1]] globalt med en udløbstid på $2',
 	'globalblocking-block2-logentry' => 'blokerede [[$1]] globalt ($2)',
 	'globalblocking-unblock-logentry' => 'fjernede global blokering af [[$1]]',
+	'globalblocking-whitelist-logentry' => 'deaktiveret den globale blokering på [[$1]] lokalt',
+	'globalblocking-dewhitelist-logentry' => 'genaktiverer globale blokering på [[$1]] lokalt',
 	'globalblocking-modify-logentry' => 'ændrede den globale blokering af [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'udløber $1',
+	'globalblocking-logentry-noexpiry' => 'ingen udløb sat',
+	'globalblocking-loglink' => 'IP-adressen $1 er blokeret globalt ([[{{#Special:GlobalBlockList}}/$1|detaljer]]).',
+	'globalblocking-showlog' => 'Denne IP-adresse er tidligere blevet blokeret.
+Blokeringsloggen vises nedenfor som reference:',
+	'globalblocklist' => 'Liste over globalt blokerede IP-adresser',
 	'globalblock' => 'Bloker en IP-adresse globalt',
+	'globalblockstatus' => 'Lokal status for globale blokeringer',
 	'removeglobalblock' => 'Ophæv en global blokering',
 	'right-globalblock' => 'Blokere brugere globalt',
+	'action-globalblock' => 'foretage globale blokeringer',
 	'right-globalunblock' => 'Ophæve globale blokeringer',
+	'action-globalunblock' => 'fjerne globale blokeringer',
 	'right-globalblock-whitelist' => 'Ophæve globale blokeringer lokalt',
+	'action-globalblock-whitelist' => 'deaktivere globale blokeringer lokalt',
 	'right-globalblock-exempt' => 'Omgå globale blokeringer',
+	'action-globalblock-exempt' => 'omgå globale blokeringer',
 );
 
 /** German (Deutsch)
