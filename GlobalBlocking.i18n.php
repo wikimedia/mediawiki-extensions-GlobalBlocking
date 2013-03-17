@@ -195,9 +195,31 @@ After this message, a list of specific errors is shown (see {{msg-mw|Globalblock
 See also:
 * {{msg-mw|Globalblocking-search-errors}}",
 	'globalblocking-block-ipinvalid' => '{{Identical|The IP address ($1) ...}}',
+	'globalblocking-block-expiryinvalid' => 'Used as error message. Parameters:
+* $1 - timestamp of expiry',
+	'globalblocking-block-success' => 'Used in Special:GlobalBlock. Parameters:
+* $1 - IP address
+See also:
+* {{msg-mw|Globalblocking-block-successsub}} - sub message',
+	'globalblocking-modify-success' => 'Used in Special:GlobalBlock. Parameters:
+* $1 - IP address
+See also:
+* {{msg-mw|Globalblocking-modify-successsub}} - sub message',
+	'globalblocking-block-successsub' => 'Used in Special:GlobalBlock.
+
+See also:
+* {{msg-mw|Globalblocking-block-success}} - main message',
+	'globalblocking-modify-successsub' => 'Used in Special:GlobalBlock.
+
+See also:
+* {{msg-mw|Globalblocking-modify-success}} - main message',
+	'globalblocking-block-alreadyblocked' => 'Used as error message. Parameters:
+* $1 - IP address',
 	'globalblocking-block-bigrange' => 'Not clear at all what the English message means about ranges. Unfortunately, http://www.mediawiki.org/wiki/Extension:GlobalBlocking supplies no explanation whatsoever.',
 	'globalblocking-list-intro' => 'Appears on top of [[Special:Globalblocklist]] (part of [[mw:Extension:GlobalBlocking|Extension:GlobalBlocking]], which is not installed on translatewiki.net; example: [[wikipedia:Special:Globalblocklist]]).',
 	'globalblocking-search-ip' => '{{Identical|IP address}}',
+	'globalblocking-list-ipinvalid' => 'Used as error message in Special:GlobalBlockList. Parameters:
+* $1 - IP address',
 	'globalblocking-search-errors' => 'See also:
 * {{msg-mw|Globalblocking-block-errors}}',
 	'globalblocking-list-blockitem' => '* $1 is a time stamp
@@ -205,17 +227,41 @@ See also:
 * $3 is the source wiki for the blocking user
 * $4 is the blocked user
 * $5 are the block options',
+	'globalblocking-list-expiry' => 'Unused at this time. Parameters:
+* $1 - ...',
 	'globalblocking-list-anononly' => '{{Identical|Anon only}}',
 	'globalblocking-list-unblock' => '{{Identical|Remove}}',
+	'globalblocking-list-whitelisted' => 'Used as a block option in Special:GlobalBlockList. Parameters:
+* $1 - username
+* $2 - reason',
 	'globalblocking-list-whitelist' => '{{Identical|Local status}}',
 	'globalblocking-list-modify' => '{{Identical|Modify}}',
 	'globalblocking-goto-block' => '{{Identical|Globally block IP address}}',
+	'globalblocking-notblocked' => 'Used as error message in Special:GlobalBlockStatus and Special:RemoveGlobalBlock. Parameters:
+* $1 - IP address',
 	'globalblocking-unblock-ipinvalid' => '{{Identical|The IP address ($1) ...}}',
 	'globalblocking-unblock-reason' => '{{Identical|Reason}}',
+	'globalblocking-unblock-unblocked' => 'Used as success message in Special:RemoveGlobalBlock. Parameters:
+* $1 - IP address
+* $2 - global block ID',
+	'globalblocking-unblock-errors' => 'Used in Special:GlobalBlockList and Special:RemoveGlobalBlock.
+
+This message is followed by list of error messages.
+
+Parameters:
+* $1 - number of errors',
 	'globalblocking-whitelist-legend' => '{{Identical|Change local status}}',
 	'globalblocking-whitelist-reason' => '{{Identical|Reason}}',
 	'globalblocking-whitelist-status' => '{{Identical|Local status}}',
 	'globalblocking-whitelist-submit' => '{{Identical|Change local status}}',
+	'globalblocking-whitelist-whitelisted' => 'Used as success message in Special:GlobalBlockStatus. Parameters:
+* $1 - IP address
+* $2 - global block ID',
+	'globalblocking-whitelist-dewhitelisted' => 'Used as success message in Special:GlobalBlockStatus. Parameters:
+* $1 - IP address
+* $2 - global block ID',
+	'globalblocking-whitelist-errors' => 'Used as error message in Special:GlobalBlockStatus. Parameters:
+* $1 - number of errors',
 	'globalblocking-ipblocked' => 'A message shown to a [[mw:Extension:GlobalBlocking|globally blocked]] user trying to edit. This message is similar to a [[MediaWiki:Blockedtext|MediaWiki core message]]. Parameters:
 * $1 - the username of the blocking user (steward), with a link
 * $2 - the project name where the blocking user is registered (usually "meta.wikimedia.org" on Wikimedia servers)
@@ -225,12 +271,23 @@ See also:
 * $6 - the IP address of the globally blocked user',
 	'globalblocking-logpage' => '{{doc-logpage}}',
 	'globalblocking-logpagetext' => 'Shown as header of [[Special:Log/gblblock]] (part of [[mw:Extension:GlobalBlocking|Extension:GlobalBlocking]], which is not installed on translatewiki.net; example: [[wikipedia:Special:Log/gblblock]])',
+	'globalblocking-block-logentry' => 'Used as a log entry. Parameters:
+* $1 - a link to a user page of the form User:Name
+* $2 - an expiry time',
 	'globalblocking-block2-logentry' => '* $1 is a link to a user page of the form User:Name
 * $2 is a reason for the action.',
 	'globalblocking-unblock-logentry' => 'This message is a log entry. Parameters:
 * $1 are contributions of an IP.
 For an example see [{{canonicalurl:meta:Special:Log/gblblock|uselang=en}} meta:Special:Log/gblblock?uselang=en]',
-	'globalblocking-modify-logentry' => '$1 is a link to a user page of the form User:Name, $2 is a reason for the action.',
+	'globalblocking-whitelist-logentry' => 'Used as a log entry. Parameters:
+* $1 - a link to a user page of the form User:Name',
+	'globalblocking-dewhitelist-logentry' => 'Used as a log entry. Parameters:
+* $1 - a link to a user page of the form User:Name',
+	'globalblocking-modify-logentry' => 'Used as a log entry. Parameters:
+* $1 - a link to a user page of the form User:Name
+* $2 - a reason for the action',
+	'globalblocking-logentry-expiry' => 'Used as a flag. Parameters:
+* $1 - expiry time and date',
 	'globalblocking-loglink' => 'Shown at [[Special:IPBlocklist]] when the GlobalBlocking extension is enabled (not on translatewiki).
 * $1 is the requested IP address',
 	'globalblocking-showlog' => 'See also:
