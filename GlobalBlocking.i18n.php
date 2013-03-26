@@ -305,7 +305,11 @@ For an example see [{{canonicalurl:meta:Special:Log/gblblock|uselang=en}} meta:S
 * $1 is the requested IP address',
 	'globalblocking-showlog' => 'See also:
 * {{msg-mw|Blocklog-showlog}}',
-	'globalblock' => '{{Identical|Globally block IP address}}',
+	'globalblocklist' => '{{doc-special|GlobalBlockList}}',
+	'globalblock' => '{{doc-special|GlobalBlock}}
+{{Identical|Globally block IP address}}',
+	'globalblockstatus' => '{{doc-special|GlobalBlockStatus}}',
+	'removeglobalblock' => '{{doc-special|RemoveGlobalBlock}}',
 	'right-globalblock' => '{{doc-right|globalblock}}',
 	'action-globalblock' => '{{doc-action|globalblock}}',
 	'right-globalunblock' => '{{doc-right|globalunblock}}',
@@ -2425,6 +2429,18 @@ Du kannst dich an $1 wenden, um über die Sperre zu diskutieren.
 Du kannst nicht die Funktion „{{int:emailuser}}“ benutzen, bis eine gültige E-Mail-Adresse in deinen [[Special:Preferences|Einstellungen]] angegeben wurde und du nicht gehindert wirst, diese Funktion zu nutzen.
 Deine aktuelle IP-Adresse ist $6.
 Bitte gib alle oben angegebenen Details in deinen Anfragen an.",
+	'globalblocking-ipblocked-xff' => "'''Ein oder mehrere Proxyserver, die für deine Anfrage verwendet werden, ist global gesperrt.'''
+
+Die Sperrung wurde durchgeführt von  $1 ($2).
+Die angegebene Begründung ist: ''$3''.
+
+* Beginn der Sperre: $4
+* Auslauf der Sperre: $5
+
+Du kannst $1 kontaktieren, um die Sperre zu diskutieren.
+Du kannst nicht die Funktion „{{int:emailuser}}“ nutzen, bis eine gültige E-Mail-Adresse in deinen [[Special:Preferences|Einstellungen]] hinterlegt und dir die Verwendung dieser Funktion nicht verweigert wurde.
+Die gesperrte Proxy-Adresse war $6.
+Bitte gib alle oben stehenden Einzelheiten in allen Anfragen an.",
 	'globalblocking-blocked-nopassreset' => 'Du kannst kein Passwort eines Benutzers zurücksetzen, da du global gesperrt wurdest.',
 	'globalblocking-logpage' => 'Globales Sperr-Logbuch',
 	'globalblocking-logpagetext' => 'Dies ist das Logbuch der globalen Sperren, die in diesem Wiki eingerichtet oder aufgehoben wurden.
@@ -3794,6 +3810,18 @@ Vous pouvez contacter \$1 pour discuter du blocage.
 Vous ne pouvez pas utiliser la fonctionnalité \"{{int:emailuser}}\" à moins d'avoir spécifié une adresse de courriel valide dans vos [[Special:Preferences|préférences de compte]] et de n'avoir pas bloqué son utilisation.
 Votre adresse IP actuelle est \$6.
 Veuillez inclure tous les détails ci-dessus dans toutes les demandes que vous ferez.",
+	'globalblocking-ipblocked-xff' => "'''Un ou plus des serveurs proxy utilisés par votre requête sont bloqués de façon générale'''
+
+Le blocage a été fait par \$1 (\$2).
+Le motif indiqué est ''\$3''.
+
+* Début du blocage: \$4
+* Expiration du blocage: \$5
+
+Vous pouvez contacter \$1 pour discuter du blocage.
+Vous ne pouvez pas utiliser la fonctionnalité \"{{int:emailuser}}\" à moins qu’une adresse électronique valide soit spécifiée dans vos [[Special:Preferences|préférences de compte]] et que vous n’avez pas été bloqué dans son utilisation.
+L’adresse du proxy bloqué est \$6.
+Veuillez inclure tous les détails ci-dessus dans les demandes que vous ferez.",
 	'globalblocking-blocked-nopassreset' => 'Vous ne pouvez pas réinitialiser les mots de passe d’utilisateur parce que vous êtes bloqué globalement.',
 	'globalblocking-logpage' => 'Journal des blocages globaux',
 	'globalblocking-logpagetext' => 'Voici un journal des blocages globaux qui ont été faits et retirés sur ce wiki.
@@ -5861,6 +5889,18 @@ $messages['ja'] = array(
 「{{int:emailuser}}」の機能を使うには、[[Special:Preferences|アカウントの設定]]で有効なメールアドレスを指定し、その使用がブロックされていない必要があります。
 あなたの現在のIPアドレスは $6 です。
 問い合わせをする際には、上記の事項すべてを含めてください。",
+	'globalblocking-ipblocked-xff' => "'''あなたのリクエストで使用している1つ以上のプロキシサーバーでグローバルにグロックされました。'''
+
+ブロックをしたのは $1 ($2) です。
+理由は ''$3'' とされています。
+
+* ブロックの開始: $4
+* ブロックの終了: $5
+
+このブロックについて議論するために $1 に連絡してもかまいません。
+「{{int:emailuser}}」の機能を使うには、[[Special:Preferences|アカウントの設定]]で有効なメールアドレスを指定し、その使用がブロックされていない必要があります。
+ブロックされたプロキシのアドレスは $6 です。
+問い合わせをする際には、上記の事項すべてを含めてください。",
 	'globalblocking-blocked-nopassreset' => 'あなたはグローバルブロックを受けているため、利用者パスワードを再設定できません。',
 	'globalblocking-logpage' => 'グローバルブロック記録',
 	'globalblocking-logpagetext' => '以下はこのウィキで実施および解除されたグローバルブロックの記録です。グローバルブロックは他のウィキでも実施したり解除したりすることができ、その結果がこのウィキにも及びます。現在有効なグローバルブロックの一覧は[[Special:GlobalBlockList]]を参照してください。',
@@ -6110,8 +6150,20 @@ $1',
 
 თქვენ არ შეგიძლიათ დაუკავშირდეთ \$1 ბლოკირების განსახილველად.
 თქვენ ვერ შეძლებთ გამოიყენოთ \"{{int:emailuser}}\" მახასიათებელი, თუ სწორი ელ.ფოსტა არის მითითებული თქვენი [[Special:Preferences|ანგარიშის კონფიგურაციაში]] და თქვენ არ გქონდათ დაბლოკილი მისი გამოყენება.
-თქვემი მიმდინარე IP მისამართი არის \$6.
-გთხოვთ, შეიყვანეთ ყველა ზემოთჩამოთვლილი დეტალი თქვენ კითხვებზე.",
+თქვენი მიმდინარე IP მისამართი არის \$6.
+გთხოვთ, დაურთეთ ყველა ზემოთ ჩამოთვლილი დეტალი თქვენ კითხვებს.",
+	'globalblocking-ipblocked-xff' => "'''თქვენ მიერ მოთხოვნილი ერთი ან რამდენიმე პროქსი სერვერი დაბლოკილია გლობალურად.'''
+
+ბლოკირება განახორციელა მომხმარებელმა \$1 (\$2).
+მიზეზი შემდეგია ''\$3''.
+
+* ბლოკირების დაწყება: \$4
+* ბლოკირების დასრულება: \$5
+
+თქვენ არ შეგიძლიათ დაუკავშირდეთ \$1 ბლოკირების განსახილველად.
+თქვენ ვერ შეძლებთ გამოიყენოთ \"{{int:emailuser}}\" მახასიათებელი, თუ სწორი ელ.ფოსტა არის მითითებული თქვენი [[Special:Preferences|ანგარიშის კონფიგურაციაში]] და თქვენ არ გქონდათ დაბლოკილი მისი გამოყენება.
+დაბლოკილი პროქსის მისამართი არის \$6.
+გთხოვთ, დაურთეთ ყველა ზემოთ ჩამოთვლილი დეტალი თქვენ კითხვებს.",
 	'globalblocking-blocked-nopassreset' => 'თქვენ არ შეგიძლიათ მომხმარებლის პაროლის შეცვლა, რადგან თქვენი ანგარიში გლობალურად ბლოკირებულია.',
 	'globalblocking-logpage' => 'გლობალური ბლოკირების ჟურნალი',
 	'globalblocking-logpagetext' => 'ეს არის ამ ვიკიში განხორციელებული გლობალური დაბლოკვების ნუსხა,
@@ -7027,7 +7079,7 @@ $messages['mk'] = array(
 	'globalblocking-ipblocked' => "'''Вашата IP-адреса е блокирана на сите викија.'''
 
 Блокот го направи $1 ($2).
-Наведената причина гласи: ''$3''.
+Наведената причина гласи: „$3“.
 
 * Започнува: $4
 * Истекнува: $5
@@ -7035,6 +7087,18 @@ $messages['mk'] = array(
 Можете да се обратите кај $1 за да поразговарате за блокот.
 Нема да можете да ја користите функцијата „{{int:emailuser}}“ доколку не сте внеле важечка е-пошта во [[Special:Preferences|нагодувањата на сметката]] или доколку е блокирана за користење.
 Вашата тековна IP-адреса е $6.
+Напишете ги сите наведени податоци кога се обраќате во врска со блокот.",
+	'globalblocking-ipblocked-xff' => "'''Еден или повеќе застапнички опслужувачи што ги користи вашето барање е глобално блокиран'''
+
+Блокот го направи $1 ($2).
+Наведената причина гласи: „$3“.
+
+* Започнува: $4
+* Истекнува: $5
+
+Можете да се обратите кај $1 за да поразговарате за блокот.
+Нема да можете да ја користите функцијата „{{int:emailuser}}“ доколку не сте внеле важечка е-пошта во [[Special:Preferences|нагодувањата на сметката]] или доколку е блокирана за користење.
+Адресата на блокираниот застапник е $6.
 Напишете ги сите наведени податоци кога се обраќате во врска со блокот.",
 	'globalblocking-blocked-nopassreset' => 'Не можете да ја смените лозинката на корисникот бидејќи сте блокирани глобално.',
 	'globalblocking-logpage' => 'Дневник на глобални блокирања',
