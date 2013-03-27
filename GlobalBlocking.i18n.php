@@ -7785,6 +7785,7 @@ Blokkeringsloggen vises under som referanse:',
 );
 
 /** Low German (Plattdüütsch)
+ * @author Joachim Mos
  * @author Slomox
  */
 $messages['nds'] = array(
@@ -7798,6 +7799,7 @@ $messages['nds'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Annere Tied:',
 	'globalblocking-block-legend' => 'En Bruker global sperren', # Fuzzy
 	'globalblocking-block-options' => 'Opschonen:',
+	'globalblocking-ipaddress' => 'IP-Adress:',
 	'globalblocking-block-errors' => 'De Sperr hett nich klappt. Dat harr {{PLURAL:$1|dissen Grund|disse Grünn}}:',
 	'globalblocking-block-ipinvalid' => 'Du hest en ungüllige IP-Adress ($1) ingeven.
 Denk dor an, dat du keen Brukernaam ingeven kannst!',
