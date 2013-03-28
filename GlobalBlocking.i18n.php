@@ -2293,6 +2293,18 @@ Du kan kontakte \$1 at diskutere blokeringen.
 Du kan ikke bruge funktionen \"{{int:emailuser}}\", medmindre en gyldig e-mail-adresse er blevet angivet i deres [[Special:Preferences|account preferences]] og du er ikke blevet blokeret fra at bruge den.
 Din aktuelle IP-adresse er \$6 .
 Medtag alle ovenfor detaljer i enhver henvendelse du gør.",
+	'globalblocking-ipblocked-xff' => "'''En eller flere proxyservere, der blev brugt til din anmodning, er blokeret globalt'''
+
+Blokeringen blev udført af \$1 (\$2).
+Begrundelsen var ''\$3''.
+
+* Blokeringen startede: \$4
+* Blokeringen udløber: \$5
+
+Du kan kontakte \$1 for at diskutere blokeringen.
+Du kan ikke bruge \"{{int:emailuser}}\"-funktionen, medmindre du har angivet en gyldig e-mail-adresse i dine [[Special:Preferences|kontoindstillinger]], og du ikke er blevet blokeret fra at bruge den.
+Den blokerede proxyadresse var \$6.
+Vær venlig at inkludere alle detaljerne ovenfor i enhver henvendelse, du måtte foretage.",
 	'globalblocking-blocked-nopassreset' => 'Du kan ikke nulstille brugeradgangskoder, fordi du er blokeret globalt.',
 	'globalblocking-logpage' => 'Global blokeringslog',
 	'globalblocking-logpagetext' => "Dette er en log over globale blokeringer, der er blevet gennemført eller fjernet på denne wiki.
@@ -12087,6 +12099,7 @@ $messages['vep'] = array(
 );
 
 /** Vietnamese (Tiếng Việt)
+ * @author Cheers!
  * @author Minh Nguyen
  * @author Vinhtantran
  */
@@ -12184,6 +12197,18 @@ Bạn có thể liên lạc với $1 để thảo luận về vụ cấm này.
 Bạn chỉ có thể sử dụng tíng năng “{{int:emailuser}}” sau khi đặt địa chỉ thư điện tử hợp lệ trong [[Special:Preferences|tùy chọn tài khoản]] nếu chưa cấm sử dụng tính năng này.
 Địa chỉ IP hiện tại của bạn là $6.
 Xin vui lòng bao gồm các chi tiết ở trên khi nào hỏi về vụ cấm này.",
+	'globalblocking-ipblocked-xff' => "'''Địa chỉ IP của bạn đã bị cấm tại tất cả các wiki.'''
+
+Người cấm là $1 ($2).
+Lý do là ''$3''.
+
+* Lúc bắt đầu cấm: $4
+* Thời hạn cấm: $5
+
+Bạn có thể liên lạc với $1 để thảo luận về vụ cấm này.
+Bạn chỉ có thể sử dụng tíng năng “{{int:emailuser}}” sau khi khai báo chỉ thư điện tử hợp lệ trong [[Special:Preferences|tùy chọn tài khoản]] nếu bạn chưa cấm sử dụng tính năng này.
+Địa chỉ IP hiện tại của bạn là $6.
+Xin vui lòng kèm theo các chi tiết ở trên khi bạn có bất cứ đề yêu cầu nào về vụ cấm này.",
 	'globalblocking-blocked-nopassreset' => 'Bạn không thể tái tạo mật khẩu vì bạn đã bị cấm trên toàn hệ thống.',
 	'globalblocking-logpage' => 'Nhật trình cấm trên toàn hệ thống',
 	'globalblocking-logpagetext' => 'Đây là danh sách các tác vụ cấm toàn cục được thực hiện hoặc lùi lại tại wiki này. Lưu ý rằng có thể thực hiện và lùi các tác vụ cấm tại wiki khác, nhưng các tác vụ cấm đó cũng có hiệu lực tại đây.
