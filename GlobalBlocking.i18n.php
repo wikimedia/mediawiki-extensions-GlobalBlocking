@@ -4107,9 +4107,21 @@ O motivo achegado é ''\$3''.
 * Caducidade do bloqueo: \$5
 
 Pode poñerse en contacto con \$1 para conversar acerca do bloqueo.
-Non pode facer uso da ferramenta \"{{int:emailuser}}\" a menos que especificase un enderezo de correo electrónico válido nas [[Special:Preferences|preferencias da súa conta]] e este non foi bloqueado.
+Non pode facer uso da ferramenta \"{{int:emailuser}}\" a menos que especificase un enderezo de correo electrónico válido nas [[Special:Preferences|preferencias da súa conta]] e o seu uso non fose bloqueado.
 O seu enderezo IP actual é \$6.
-Por favor, inclúa todos os datos anteriores en calquera das consultas que faga.",
+Por favor, inclúa todos os datos anteriores en calquera consulta que faga.",
+	'globalblocking-ipblocked-xff' => "'''Un ou máis servidores proxy usados pola súa solicitude foron bloqueados globalmente.'''
+
+\$1 (\$2) realizou o bloqueo.
+O motivo achegado é ''\$3''.
+
+* Inicio do bloqueo: \$4
+* Caducidade do bloqueo: \$5
+
+Pode poñerse en contacto con \$1 para conversar acerca do bloqueo.
+Non pode facer uso da ferramenta \"{{int:emailuser}}\" a menos que especificase un enderezo de correo electrónico válido nas [[Special:Preferences|preferencias da súa conta]] e o seu uso non fose bloqueado.
+O enderezo proxy bloqueado foi \$6.
+Por favor, inclúa todos os datos anteriores en calquera consulta que faga.",
 	'globalblocking-blocked-nopassreset' => 'Non pode restablecer o contrasinal do usuario porque vostede está bloqueado globalmente.',
 	'globalblocking-logpage' => 'Rexistro de bloqueos globais',
 	'globalblocking-logpagetext' => 'Este é un rexistro dos bloqueos globais que foron feitos e retirados neste wiki.
