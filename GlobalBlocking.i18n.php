@@ -1051,6 +1051,18 @@ Ponte en contautu con \$1 si quies discutir el bloquéu.
 Nun podrás usar la función \"{{int:emailuser}}\" nun siendo qu'especificares una direición de corréu electrónicu válida nes [[Special:Preferences|preferencies de la cuenta]] y nun tengas torgao usala.
 La to direición IP actual ye  \$6.
 Por favor inclúi tolos detalles anteriores nes consultes que faigas.",
+	'globalblocking-ipblocked-xff' => "'''Un sirvidor proxy o más usáu pola so solicitú ta bloquiáu de mou global.'''
+
+\$1 (\$2) fizo esti bloquéu.
+El motivu dau ye ''\$3''.
+
+* Principiu del bloquéu: \$4
+* Caducidá del bloquéu: \$5
+
+Pue ponese'n contautu con \$1 pa discutir el bloquéu.
+Nun pue usar la carauterística \"{{int:emailuser}}\" mentanto nun conseñe una direición de corréu electrónicu válida nes [[Special:Preferences|preferencies de la so cuenta]] y nun tenga bloquiao usala.
+La direición del proxy bloquiáu foi \$6.
+Por favor, incluya tolos datos anteriores en cualquier consulta que faiga.",
 	'globalblocking-blocked-nopassreset' => "Nun puedes reaniciar les contraseñes d'usuariu porque tas bloquiáu de mou global.",
 	'globalblocking-logpage' => 'Rexistru de bloqueos globales',
 	'globalblocking-logpagetext' => "Esti ye un rexistru de bloqueos globales que fueron efeutuaos o eliminaos nesta wiki.
@@ -6311,7 +6323,7 @@ $messages['kn'] = array(
  * @author 아라
  */
 $messages['ko'] = array(
-	'globalblocking-desc' => '특정 IP를 [[Special:GlobalBlockList|모든 위키]]에서 [[Special:GlobalBlock|차단]]하는 권한을 추가',
+	'globalblocking-desc' => 'IP 주소를 [[Special:GlobalBlockList|모든 위키]]에서 [[Special:GlobalBlock|차단]]할 수 있습니다',
 	'globalblocking-block' => 'IP 주소를 모든 위키에서 차단',
 	'globalblocking-modify-intro' => '전체 차단 설정을 바꿀 때 이 양식을 사용할 수 있습니다.',
 	'globalblocking-block-intro' => '모든 위키에서 특정 IP를 차단할 때 이 페이지를 사용할 수 있습니다.',
@@ -6396,15 +6408,28 @@ $messages['ko'] = array(
 [[Special:GlobalBlockList|전체 차단 목록으로 돌아가기]].',
 	'globalblocking-ipblocked' => "'''당신의 IP 주소는 모든 위키에서 차단되었습니다.'''
 
-\$1 (\$2) 사용자가 차단하였고, 이유는 ''\$3''입니다.
+\$1 (\$2) 사용자가 차단하였습니다.
+이유는 ''\$3''입니다.
 
 * 차단 시작 시각: \$4
 * 차단 만료 시각: \$5
 
-차단에 대해 이의가 있거나 논의할 것이 있다면 \$1 사용자에게 문의할 수 있습니다.
+차단에 대해 이의가 있거나 토론하려면 \$1 사용자에게 문의할 수 있습니다.
 [[Special:Preferences|사용자 환경 설정]]에서 올바른 이메일 주소를 적지 않았거나 이메일 보내기가 금지되었다면 \"{{int:emailuser}}\" 기능을 사용할 수 없습니다.
-쓰고 있는 현재 IP 주소는 \$6입니다.
-문의할 사항이 있을 때는 위의 모든 정보를 포함시키세요.",
+현재 IP 주소는 \$6입니다.
+문의할 사항이 있을 때는 위의 모든 정보를 포함하세요.",
+	'globalblocking-ipblocked-xff' => "'''당신의 요청으로 사용 중인 하나 이상의 프록시 서버는 전체 차단되었습니다'''
+
+\$1 (\$2) 사용자가 차단하였습니다.
+이유는 ''\$3''입니다.
+
+* 차단 시작 시각: \$4
+* 차단 만료 시각: \$5
+
+차단에 대해 이의가 있거나 토론하려면 \$1 사용자에게 문의할 수 있습니다.
+[[Special:Preferences|사용자 환경 설정]]에서 올바른 이메일 주소를 적지 않았거나 이메일 보내기가 금지되었다면 \"{{int:emailuser}}\" 기능을 사용할 수 없습니다.
+차단된 프록시 주소는 \$6입니다.
+문의할 사항이 있을 때는 위의 모든 정보를 포함하세요.",
 	'globalblocking-blocked-nopassreset' => '모든 위키에서 차단되었기 때문에 비밀번호를 바꿀 수 없습니다.',
 	'globalblocking-logpage' => '전체 위키 차단 기록',
 	'globalblocking-logpagetext' => '이 위키에서 이루어진 전체 차단 및 해제와 관련된 기록입니다.
