@@ -7948,6 +7948,7 @@ $messages['nds-nl'] = array(
  * @author Romaine
  * @author SPQRobin
  * @author Siebrand
+ * @author User555
  */
 $messages['nl'] = array(
 	'globalblocking-desc' => "[[Special:GlobalBlock|Maakt het mogelijk]] IP-addressen [[Special:GlobalBlockList|in meerdere wiki's tegelijk]] te blokkeren",
@@ -8044,6 +8045,28 @@ U kunt contact op nemen met \$1 om de blokkade te bespreken.
 U kunt de functie \"{{int:emailuser}}\" niet gebruiken tenzij er een geldig e-mailadres in uw [[Special:Preferences|voorkeuren]] is ingevuld en uw e-mailfuncties niet geblokkeerd zijn.
 Uw huidige IP-adres is \$6.
 Vermeld de bovenstaande gegevens wanneer u hierop reageert.",
+	'globalblocking-ipblocked-xff' => "'''Uw IP-adres is geblokkeerd op alle wiki's.'''
+
+De blokkade is uitgevoerd door \$1 (\$2).
+De reden hiervoor is ''\$3''.
+
+* Start blokkade: \$4
+* Blokkade vervalt op: \$5
+
+U kunt contact op nemen met \$1 om de blokkade te bespreken.
+U kunt de functie \"{{int:emailuser}}\" niet gebruiken tenzij er een geldig e-mailadres in uw [[Special:Preferences|voorkeuren]] is ingevuld en uw e-mailfuncties niet geblokkeerd zijn.
+Uw huidige IP-adres is \$6.
+Vermeld de bovenstaande gegevens wanneer u hierop reageert.
+Microsoft↓
+''' Een of meer proxyservers die worden gebruikt door uw verzoek wordt wereldwijd geblokkeerd '''
+N!Het blok werd gemaakt door  \$1  ( \$2 ).
+De gegeven reden is '' \$3 ''.
+N! * Start van blok:  \$4 
+ * verstrijken van blok:  \$5 
+N!U kunt contact opnemen met  \$1  om te bespreken het blok.
+U kunt de functie \"{{int:emailuser}}\" niet gebruiken tenzij een geldig e-mailadres is opgegeven in uw [[Special: Preferences|account voorkeuren]] en u bent niet geblokkeerd van het gebruik ervan.
+De geblokkeerde proxyadres was  \$6 .
+Vermeld alle bovenstaande gegevens in alle query's die u maakt.", # Fuzzy
 	'globalblocking-blocked-nopassreset' => 'U kunt het wachtwoord van gebruikers niet opnieuw instellen omdat u globaal geblokkeerd bent.',
 	'globalblocking-logpage' => 'Globaal blokkeerlogboek',
 	'globalblocking-logpagetext' => "Dit logboek bevat aangemaakte en verwijderde globale blokkades op deze wiki.
@@ -12234,7 +12257,7 @@ Bạn có thể liên lạc với $1 để thảo luận về vụ cấm này.
 Bạn chỉ có thể sử dụng tíng năng “{{int:emailuser}}” sau khi đặt địa chỉ thư điện tử hợp lệ trong [[Special:Preferences|tùy chọn tài khoản]] nếu chưa cấm sử dụng tính năng này.
 Địa chỉ IP hiện tại của bạn là $6.
 Xin vui lòng bao gồm các chi tiết ở trên khi nào hỏi về vụ cấm này.",
-	'globalblocking-ipblocked-xff' => "'''Địa chỉ IP của bạn đã bị cấm tại tất cả các wiki.'''
+	'globalblocking-ipblocked-xff' => "'''Yêu cầu của bạn sử dụng một hay nhiều máy chủ proxy đã bị cấm tại tất cả các wiki.'''
 
 Người cấm là $1 ($2).
 Lý do là ''$3''.
@@ -12244,7 +12267,7 @@ Lý do là ''$3''.
 
 Bạn có thể liên lạc với $1 để thảo luận về vụ cấm này.
 Bạn chỉ có thể sử dụng tíng năng “{{int:emailuser}}” sau khi khai báo chỉ thư điện tử hợp lệ trong [[Special:Preferences|tùy chọn tài khoản]] nếu bạn chưa cấm sử dụng tính năng này.
-Địa chỉ IP hiện tại của bạn là $6.
+Địa chỉ proxy bị cấm là $6.
 Xin vui lòng kèm theo các chi tiết ở trên khi bạn có bất cứ đề yêu cầu nào về vụ cấm này.",
 	'globalblocking-blocked-nopassreset' => 'Bạn không thể tái tạo mật khẩu vì bạn đã bị cấm trên toàn hệ thống.',
 	'globalblocking-logpage' => 'Nhật trình cấm trên toàn hệ thống',
