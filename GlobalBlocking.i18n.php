@@ -8045,28 +8045,6 @@ U kunt contact op nemen met \$1 om de blokkade te bespreken.
 U kunt de functie \"{{int:emailuser}}\" niet gebruiken tenzij er een geldig e-mailadres in uw [[Special:Preferences|voorkeuren]] is ingevuld en uw e-mailfuncties niet geblokkeerd zijn.
 Uw huidige IP-adres is \$6.
 Vermeld de bovenstaande gegevens wanneer u hierop reageert.",
-	'globalblocking-ipblocked-xff' => "'''Uw IP-adres is geblokkeerd op alle wiki's.'''
-
-De blokkade is uitgevoerd door \$1 (\$2).
-De reden hiervoor is ''\$3''.
-
-* Start blokkade: \$4
-* Blokkade vervalt op: \$5
-
-U kunt contact op nemen met \$1 om de blokkade te bespreken.
-U kunt de functie \"{{int:emailuser}}\" niet gebruiken tenzij er een geldig e-mailadres in uw [[Special:Preferences|voorkeuren]] is ingevuld en uw e-mailfuncties niet geblokkeerd zijn.
-Uw huidige IP-adres is \$6.
-Vermeld de bovenstaande gegevens wanneer u hierop reageert.
-Microsoft↓
-''' Een of meer proxyservers die worden gebruikt door uw verzoek wordt wereldwijd geblokkeerd '''
-N!Het blok werd gemaakt door  \$1  ( \$2 ).
-De gegeven reden is '' \$3 ''.
-N! * Start van blok:  \$4 
- * verstrijken van blok:  \$5 
-N!U kunt contact opnemen met  \$1  om te bespreken het blok.
-U kunt de functie \"{{int:emailuser}}\" niet gebruiken tenzij een geldig e-mailadres is opgegeven in uw [[Special: Preferences|account voorkeuren]] en u bent niet geblokkeerd van het gebruik ervan.
-De geblokkeerde proxyadres was  \$6 .
-Vermeld alle bovenstaande gegevens in alle query's die u maakt.", # Fuzzy
 	'globalblocking-blocked-nopassreset' => 'U kunt het wachtwoord van gebruikers niet opnieuw instellen omdat u globaal geblokkeerd bent.',
 	'globalblocking-logpage' => 'Globaal blokkeerlogboek',
 	'globalblocking-logpagetext' => "Dit logboek bevat aangemaakte en verwijderde globale blokkades op deze wiki.
