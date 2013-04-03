@@ -5789,6 +5789,19 @@ Si noti che la funzione \"{{int:emailuser}}\" non è attiva se non è stato regi
 
 L'indirizzo IP attuale è \$6.
 Si prega di specificare tutti i dettagli precedenti in qualsiasi richiesta di chiarimenti.",
+	'globalblocking-ipblocked-xff' => "'''Uno o più server proxy usato nella tua richiesta è stato bloccato su tutte le wiki.'''
+
+Il blocco è stato imposto da \$1 (\$2).
+La motivazione del blocco è la seguente: ''\$3''.
+
+* Inizio del blocco: \$4
+* Scadenza del blocco: \$5
+
+Se lo si desidera, è possibile contattare \$1 per discutere del blocco.
+Si noti che la funzione \"{{int:emailuser}}\" non è attiva se non è stato registrato un indirizzo email valido nelle proprie [[Special:Preferences|preferenze]] o se l'utilizzo di tale funzione è stato bloccato.
+
+L'indirizzo del proxy bloccato è \$6.
+Si prega di specificare tutti i dettagli precedenti in qualsiasi richiesta di chiarimenti.",
 	'globalblocking-blocked-nopassreset' => "Non è possibile reimpostare la password dell'utente perché sei bloccato a livello globale.",
 	'globalblocking-logpage' => 'Blocchi globali',
 	'globalblocking-logpagetext' => "Di seguito sono elencati i blocchi globali che sono stati effettuati e rimossi su questa wiki. I blocchi globali possono essere effettuati su altre wiki e questi blocchi globali possono essere validi anche su questa wiki.
