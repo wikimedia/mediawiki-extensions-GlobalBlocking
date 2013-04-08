@@ -8018,10 +8018,10 @@ Voer een correct IP-adres in.',
 	'globalblocking-goto-unblock' => 'Globale blokkades verwijderen',
 	'globalblocking-goto-status' => 'Lokale status van een globale blokkade wijzigen',
 	'globalblocking-return' => 'Terug naar de lijst met globale blokkades',
-	'globalblocking-notblocked' => 'Het ingegeven IP-adres ($1) is niet globaal geblokkeerd.',
+	'globalblocking-notblocked' => 'Het opgegeven IP-adres ($1) is niet globaal geblokkeerd.',
 	'globalblocking-unblock' => 'Globale blokkades verwijderen',
-	'globalblocking-unblock-ipinvalid' => 'Het IP-adres ($1) dat u hebt ingegeven is onjuist.
-Let op: u kunt geen gebruikersnaam ingeven!',
+	'globalblocking-unblock-ipinvalid' => 'Het IP-adres ($1) dat u hebt opgegeven is onjuist.
+Let op: u kunt geen gebruikersnaam opgeven!',
 	'globalblocking-unblock-legend' => 'Een globale blokkade verwijderen',
 	'globalblocking-unblock-submit' => 'Globale blokkade verwijderen',
 	'globalblocking-unblock-reason' => 'Reden:',
@@ -8104,9 +8104,9 @@ Je kunt de bestaande blokkade bekijken in de [[Special:GlobalBlockList|lijst met
 	'globalblocking-list-ipinvalid' => 'Het IP-adres waar je naar zocht is onjuist ($1).
 Voer een correct IP-adres in.',
 	'globalblocking-search-errors' => 'Je zoekopdracht kende {{PLURAL:$1|het volgende probleem|de volgende problemen}}:',
-	'globalblocking-notblocked' => 'Het IP-adres ($1) dat je hebt ingegeven is niet globaal geblokkeerd.',
-	'globalblocking-unblock-ipinvalid' => 'Het IP-adres ($1) dat je hebt ingegeven is onjuist.
-Let op: je kunt geen gebruikersnaam ingeven!',
+	'globalblocking-notblocked' => 'Het IP-adres ($1) dat je hebt opgegeven is niet globaal geblokkeerd.',
+	'globalblocking-unblock-ipinvalid' => 'Het IP-adres ($1) dat je hebt opgegeven is onjuist.
+Let op: je kunt geen gebruikersnaam opgeven!',
 	'globalblocking-unblock-unblocked' => "Je hebt de globale blokkade met nummer $2 voor het IP-adres '''$1''' verwijderd",
 	'globalblocking-unblock-errors' => 'De globale blokkade die je hebt opgegeven is niet verwijderd om de volgende {{PLURAL:$1|reden|redenen}}:',
 	'globalblocking-unblock-intro' => 'Je kunt dit formulier gebruik om een globale blokkade op te heffen.',
