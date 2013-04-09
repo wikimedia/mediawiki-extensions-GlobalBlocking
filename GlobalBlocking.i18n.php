@@ -7552,6 +7552,18 @@ Anda boleh menghubungi \$1 untuk membincangkan sekatan ini.
 Anda tidak boleh menggunakan ciri \"{{int:emailuser}}\" melainkan jika alamat e-mel yang sah dinyatakan dalam [[Special:Preferences|keutamaan akaun]] anda, dan anda belum disekat daripada menggunakannya.
 Alamat IP anda sekarang ialah \$6.
 Sila sertakan semua butiran di atas dalam sebarang pertanyaan yang anda lakukan.",
+	'globalblocking-ipblocked-xff' => "'''Sekurang-kurangnya satu pelayan proksi yang digunakan oleh pemohonan anda telah disekat di peringkat sejagat'''
+
+Sekatan tersebut telah dilakukan oleh \$1 (\$2).
+Sebab yang diberikan adalah: ''\$3''.
+
+* Sekatan bermula: \$4
+* Sekatan tamat: \$5
+
+Anda boleh menghubungi \$1 untuk membincangkan sekatan ini.
+Anda tidak boleh menggunakan ciri \"{{int:emailuser}}\" melainkan alamat e-mel yang sah dinyatakan di dalam [[Special:Preferences|keutamaan akaun]] anda dan anda belum disekat daripada menggunakannya.
+Alamat proksi yang disekat itu ialah \$6.
+Sila sertakan semua keterangan di atas dalam sebarang pertanyaan.",
 	'globalblocking-blocked-nopassreset' => 'Anda tidak boleh mengeset semula kata laluan pengguna kerana anda telah disekat di semua wiki.',
 	'globalblocking-logpage' => 'Log sekatan sejagat',
 	'globalblocking-logpagetext' => 'Yang berikut ialah log sekatan sejagat yang telah dikenakan dan dibatalkan di wiki ini. Sila ambil perhatian bahawa sekatan sejagat boleh dikenakan dan dibatalkan di wiki-wiki lain, justeru berkuatkuasa di wiki ini juga. Anda juga boleh melihat [[Special:GlobalBlockList|senarai semakan sejagat yang sedang berkuatkuasa]].',

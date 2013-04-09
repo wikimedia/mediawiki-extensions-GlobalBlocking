@@ -32,7 +32,7 @@ $specialPageAliases['arz'] = array(
 	'GlobalBlockStatus' => array( 'ليستة_البلوك_العام_البيضا', 'حالة_البلوك_العام', 'تعطيل_البلوك_العام' ),
 );
 
-/** Assamese (অসমীয়া) */
+/** Assamese (অসমীয়া) */
 $specialPageAliases['as'] = array(
 	'GlobalBlock' => array( 'গোলকীয়_অৱৰোধ' ),
 	'GlobalBlockList' => array( 'গোলকীয়_অৱৰোধ_তালিকা' ),
@@ -405,6 +405,7 @@ $specialPageAliases['ro'] = array(
 $specialPageAliases['ru'] = array(
 	'GlobalBlock' => array( 'Глобальная_блокировка' ),
 	'GlobalBlockList' => array( 'Список_глобальных_блокировок', 'Глобальные_блокировки' ),
+	'RemoveGlobalBlock' => array( 'Глобальная_разблокировка' ),
 );
 
 /** Sanskrit (संस्कृतम्) */
