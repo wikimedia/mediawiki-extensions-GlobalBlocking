@@ -2450,10 +2450,10 @@ Der angegebene Grund ist ''$3''.
 * Ablauf der Sperre: $5
 
 Du kannst dich an $1 wenden, um über die Sperre zu diskutieren.
-Du kannst nicht die Funktion „{{int:emailuser}}“ benutzen, bis eine gültige E-Mail-Adresse in deinen [[Special:Preferences|Einstellungen]] angegeben wurde und du nicht gehindert wirst, diese Funktion zu nutzen.
+Du kannst die Funktion „{{int:emailuser}}“ nicht benutzen, bis eine gültige E-Mail-Adresse in deinen [[Special:Preferences|Einstellungen]] angegeben wurde und solange diese Funktion bei dir nicht gesperrt wurde.
 Deine aktuelle IP-Adresse ist $6.
 Bitte gib alle oben angegebenen Details in deinen Anfragen an.",
-	'globalblocking-ipblocked-xff' => "'''Ein oder mehrere Proxyserver, die für deine Anfrage verwendet werden, ist global gesperrt.'''
+	'globalblocking-ipblocked-xff' => "'''Ein oder mehrere Proxyserver, die für deine Anfrage verwendet werden, ist oder sind global gesperrt.'''
 
 Die Sperrung wurde durchgeführt von  $1 ($2).
 Die angegebene Begründung ist: ''$3''.
@@ -2462,9 +2462,9 @@ Die angegebene Begründung ist: ''$3''.
 * Auslauf der Sperre: $5
 
 Du kannst $1 kontaktieren, um die Sperre zu diskutieren.
-Du kannst nicht die Funktion „{{int:emailuser}}“ nutzen, bis eine gültige E-Mail-Adresse in deinen [[Special:Preferences|Einstellungen]] hinterlegt und dir die Verwendung dieser Funktion nicht verweigert wurde.
+Du kannst die Funktion „{{int:emailuser}}“ nicht nutzen, bis eine gültige E-Mail-Adresse in deinen [[Special:Preferences|Einstellungen]] hinterlegt und solange dir die Verwendung dieser Funktion nicht verweigert wurde.
 Die gesperrte Proxy-Adresse war $6.
-Bitte gib alle oben stehenden Einzelheiten in allen Anfragen an.",
+Bitte gib alle oben stehenden Einzelheiten in deinen Anfragen an.",
 	'globalblocking-blocked-nopassreset' => 'Du kannst kein Passwort eines Benutzers zurücksetzen, da du global gesperrt wurdest.',
 	'globalblocking-logpage' => 'Globales Sperr-Logbuch',
 	'globalblocking-logpagetext' => 'Dies ist das Logbuch der globalen Sperren, die in diesem Wiki eingerichtet oder aufgehoben wurden.
@@ -2501,6 +2501,30 @@ Es folgt ein Auszug aus dem Benutzersperr-Logbuch:',
 $messages['de-ch'] = array(
 	'globalblocking-block-bigrange' => "Der Adressbereich, den du angegeben hast ($1), ist zu gross zum Sperren.
 Du kannst höchstens 65'536 IPs sperren (/16-Adressbereiche).",
+	'globalblocking-ipblocked' => "'''Deine IP-Adresse wurde auf allen Wikis gesperrt.'''
+
+Die Sperrung wurde durchgeführt durch $1 ($2).
+Der angegebene Grund ist ''$3''.
+
+* Beginn der Sperre: $4
+* Ablauf der Sperre: $5
+
+Du kannst dich an $1 wenden, um über die Sperre zu diskutieren.
+Du kannst die Funktion «{{int:emailuser}}» nicht benutzen, bis eine gültige E-Mail-Adresse in deinen [[Special:Preferences|Einstellungen]] angegeben wurde und solange diese Funktion bei dir nicht gesperrt wurde.
+Deine aktuelle IP-Adresse ist $6.
+Bitte gib alle oben angegebenen Details in deinen Anfragen an.",
+	'globalblocking-ipblocked-xff' => "'''Ein oder mehrere Proxyserver, die für deine Anfrage verwendet werden, ist oder sind global gesperrt.'''
+
+Die Sperrung wurde durchgeführt von  $1 ($2).
+Die angegebene Begründung ist: ''$3''.
+
+* Beginn der Sperre: $4
+* Auslauf der Sperre: $5
+
+Du kannst $1 kontaktieren, um die Sperre zu diskutieren.
+Du kannst die Funktion «{{int:emailuser}}» nicht nutzen, bis eine gültige E-Mail-Adresse in deinen [[Special:Preferences|Einstellungen]] hinterlegt und solange dir die Verwendung dieser Funktion nicht verweigert wurde.
+Die gesperrte Proxy-Adresse war $6.
+Bitte gib alle oben stehenden Einzelheiten in deinen Anfragen an.",
 );
 
 /** German (formal address) (Deutsch (Sie-Form)‎)
@@ -2540,9 +2564,21 @@ Der angegebene Grund ist ''$3''.
 * Ablauf der Sperre: $5
 
 Sie können sich an $1 wenden, um über die Sperre zu diskutieren.
-Sie können nicht die Funktion „{{int:emailuser}}“ benutzen, bis eine gültige E-Mail-Adresse in Ihren [[Special:Preferences|Einstellungen]] angegeben wurde und Sie nicht daran gehindert werden, diese Funktion zu nutzen.
+Sie können die Funktion „{{int:emailuser}}“ nicht benutzen, bis eine gültige E-Mail-Adresse in Ihren [[Special:Preferences|Einstellungen]] angegeben wurde und solange diese Funktion bei Ihnen nicht gesperrt wurde.
 Ihre aktuelle IP-Adresse ist $6.
-Bitte Geben Sie alle oben angegebenen Details in Ihren Anfragen an.",
+Bitte geben Sie alle oben angegebenen Details in Ihren Anfragen an.",
+	'globalblocking-ipblocked-xff' => "'''Ein oder mehrere Proxyserver, die für Ihre Anfrage verwendet werden, ist oder sind global gesperrt.'''
+
+Die Sperrung wurde durchgeführt von  $1 ($2).
+Die angegebene Begründung ist: ''$3''.
+
+* Beginn der Sperre: $4
+* Auslauf der Sperre: $5
+
+Sie können $1 kontaktieren, um die Sperre zu diskutieren.
+Sie können die Funktion „{{int:emailuser}}“ nicht nutzen, bis eine gültige E-Mail-Adresse in Ihren [[Special:Preferences|Einstellungen]] hinterlegt und solange Ihnen die Verwendung dieser Funktion nicht verweigert wurde.
+Die gesperrte Proxy-Adresse war $6.
+Bitte geben Sie alle oben stehenden Einzelheiten in Ihren Anfragen an.",
 	'globalblocking-blocked-nopassreset' => 'Sie können kein Passwort eines Benutzers zurücksetzen, da Sie global gesperrt wurden.',
 );
 
