@@ -9488,6 +9488,18 @@ Tu puè condattà \$1 pe 'ngazzarte sus a 'u blocche.
 Non ge puè ausà 'a funzione \"{{int:emailuser}}\" senze 'n'indirizze e-mail valide ca adda essere specificate jndr'à le [[Special:Preferences|preferenze tune]] e tu non g'è state bloccate da ausarle.
 L'indirizze IP tune de mò jè \$6.
 Pe piacere 'nglude tutte le dettaglie de aqquà sus jndr'à ogne richieste ca face.",
+	'globalblocking-ipblocked-xff' => "'''Une o cchiù server proxy ausate da 'a richiesta toje jè bloccate globbalmende'''
+
+'U blocche ha state fatte da \$1 (\$2).
+'U mutive date ha state ''\$3''.
+
+* Inizie d'u blocche: \$4
+* Fine d'u blocche: \$5
+
+Tu puè condattà \$1 pe 'ngazzarte sus a 'u blocche.
+Non ge puè ausà 'a funzione \"{{int:emailuser}}\" senze 'n'indirizze e-mail valide ca adda essere specificate jndr'à le [[Special:Preferences|preferenze tune]] e tu non g'è state bloccate da ausarle.
+L'indirizze IP tune de mò jè \$6.
+Pe piacere 'nglude tutte le dettaglie de aqquà sus jndr'à ogne richieste ca face.",
 	'globalblocking-blocked-nopassreset' => "tu non ge puè azzerà 'a password de l'utende purcé è state bloccate globalmende.",
 	'globalblocking-logpage' => 'Archivije de le blocche globale',
 	'globalblocking-logpagetext' => "Quiste è 'n'archivije de le blocche globale ca onne state fatte o luate da sus a sta Uicchi.<br />
