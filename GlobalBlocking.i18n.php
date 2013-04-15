@@ -3270,7 +3270,7 @@ $messages['et'] = array(
 ** Vandalism',
 	'globalblocking-block-edit-dropdown' => 'Muuda blokeerimispõhjuseid',
 	'globalblocking-block-expiry' => 'Aegumistähtaeg:',
-	'globalblocking-block-expiry-other' => 'Muu tähtaeg',
+	'globalblocking-block-expiry-other' => 'Muu aegumistähtaeg',
 	'globalblocking-block-expiry-otherfield' => 'Muu aeg:',
 	'globalblocking-block-legend' => 'Blokeeri IP-aadress globaalselt',
 	'globalblocking-block-options' => 'Sätted:',
@@ -3279,7 +3279,7 @@ $messages['et'] = array(
 	'globalblocking-block-errors' => 'Blokeerimine ei õnnestunud {{PLURAL:$1|järgneval põhjusel|järgnevatel põhjustel}}:',
 	'globalblocking-block-ipinvalid' => 'Sisestatud IP aadress $1 on vigane.
 Pane tähele, et kasutajanime ei saa sisestada.',
-	'globalblocking-block-expiryinvalid' => 'Valitud tähtaeg ($1) on vigane.',
+	'globalblocking-block-expiryinvalid' => 'Sisestatud aegumistähtaeg ($1) on vigane.',
 	'globalblocking-block-submit' => 'Blokeeri see IP-aadress globaalselt',
 	'globalblocking-modify-submit' => 'Muuda seda globaalset blokeeringut',
 	'globalblocking-block-success' => 'IP-aadress $1 on edukalt blokeeritud kõigis projektides.',
@@ -3860,27 +3860,27 @@ Si un blocage global est désactivé sur ce wiki, les utilisateurs des adresses 
 [[Special:GlobalBlockList|Retourner à la liste des blocages globaux]].',
 	'globalblocking-ipblocked' => "'''Votre adresse IP a été bloquée sur tous les wikis.'''
 
-Le blocage a été fait par \$1 (\$2).
-Le motif donné est ''\$3''. 
+Le blocage a été fait par $1 ($2).
+Le motif donné est ''$3''. 
 
-* Début du blocage: \$4
-* Expiration du blocage: \$5
+* Début du blocage : $4
+* Expiration du blocage : $5
 
-Vous pouvez contacter \$1 pour discuter du blocage.
-Vous ne pouvez pas utiliser la fonctionnalité \"{{int:emailuser}}\" à moins d'avoir spécifié une adresse de courriel valide dans vos [[Special:Preferences|préférences de compte]] et de n'avoir pas bloqué son utilisation.
-Votre adresse IP actuelle est \$6.
+Vous pouvez contacter $1 pour discuter du blocage.
+Vous ne pouvez pas utiliser la fonctionnalité « {{int:emailuser}} » à moins d’avoir spécifié une adresse de courriel valide dans vos [[Special:Preferences|préférences de compte]] et de n’avoir pas bloqué son utilisation.
+Votre adresse IP actuelle est $6.
 Veuillez inclure tous les détails ci-dessus dans toutes les demandes que vous ferez.",
-	'globalblocking-ipblocked-xff' => "'''Un ou plus des serveurs proxy utilisés par votre requête sont bloqués de façon générale'''
+	'globalblocking-ipblocked-xff' => "'''Un ou plus des serveurs mandataires utilisés par votre requête sont bloqués de façon générale'''
 
-Le blocage a été fait par \$1 (\$2).
-Le motif indiqué est ''\$3''.
+Le blocage a été fait par $1 ($2).
+Le motif indiqué est ''$3''.
 
-* Début du blocage: \$4
-* Expiration du blocage: \$5
+* Début du blocage : $4
+* Expiration du blocage : $5
 
-Vous pouvez contacter \$1 pour discuter du blocage.
-Vous ne pouvez pas utiliser la fonctionnalité \"{{int:emailuser}}\" à moins qu’une adresse électronique valide soit spécifiée dans vos [[Special:Preferences|préférences de compte]] et que vous n’avez pas été bloqué dans son utilisation.
-L’adresse du proxy bloqué est \$6.
+Vous pouvez contacter $1 pour discuter du blocage.
+Vous ne pouvez pas utiliser la fonctionnalité « {{int:emailuser}} » à moins qu’une adresse électronique valide soit spécifiée dans vos [[Special:Preferences|préférences de compte]] et que vous n’avez pas été bloqué dans son utilisation.
+L’adresse du mandataire bloqué est $6.
 Veuillez inclure tous les détails ci-dessus dans les demandes que vous ferez.",
 	'globalblocking-blocked-nopassreset' => 'Vous ne pouvez pas réinitialiser les mots de passe d’utilisateur parce que vous êtes bloqué globalement.',
 	'globalblocking-logpage' => 'Journal des blocages globaux',
@@ -7083,6 +7083,8 @@ $messages['mhr'] = array(
  */
 $messages['min'] = array(
 	'globalblocking-logentry-noexpiry' => 'salamonyo',
+	'globalblocklist' => 'Dafta alamaik IP nan disakek sacaro global',
+	'globalblockstatus' => 'Satus sakek global di wiki iko',
 );
 
 /** Macedonian (македонски)
