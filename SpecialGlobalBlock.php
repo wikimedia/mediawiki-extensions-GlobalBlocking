@@ -161,8 +161,6 @@ class SpecialGlobalBlock extends SpecialPage {
 	}
 
 	function form( $error ) {
-		global $wgScript;
-
 		$form = '';
 		$out = $this->getOutput();
 
@@ -181,12 +179,10 @@ class SpecialGlobalBlock extends SpecialPage {
 			'form',
 			array(
 				'method' => 'post',
-				'action' => $wgScript,
+				'action' => $this->getFullTitle()->getLocalURL(),
 				'name' => 'uluser',
 				'id' => 'mw-globalblock-form' )
 		);
-		$form .= Html::hidden( 'title', SpecialPage::getTitleFor( 'GlobalBlock' )->getPrefixedText() );
-
 		$fields = array();
 
 		// Who to block
