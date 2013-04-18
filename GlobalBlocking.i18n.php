@@ -11893,6 +11893,7 @@ $messages['ug-arab'] = array(
  * @author Microcell
  * @author NickK
  * @author Prima klasy4na
+ * @author RLuts
  * @author Sodmy
  */
 $messages['uk'] = array(
@@ -11978,7 +11979,7 @@ $messages['uk'] = array(
 	'globalblocking-whitelist-errors' => 'Спроба змінити локальний стан глобального блокування не вдалася. {{PLURAL:$1|Причина|Причини}}:',
 	'globalblocking-whitelist-intro' => 'Ви можете використовувати цю форму для зміни локального стану глобального блокування.
 Якщо глобальне блокування вимкнене у цій вікі, то користувачі з відповідними IP-адресами зможуть нормально редагувати.
-[[Special:GlobalBlockList|Повернутися до списку глобальних глобувань]].',
+[[Special:GlobalBlockList|Повернутися до списку глобальних блокувань]].',
 	'globalblocking-ipblocked' => "'''Вашу IP-адресу заблоковано на всіх проектах Фонду.'''
 
 Блокування накладено \$1 (\$2).
