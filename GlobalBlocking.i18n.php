@@ -8601,6 +8601,7 @@ $messages['pfl'] = array(
  * @author Leinad
  * @author Nux
  * @author Sp5uhe
+ * @author WTM
  */
 $messages['pl'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Umożliwia]] równoczesne [[Special:GlobalBlockList|blokowanie]] adresów IP na wielu wiki',
@@ -8686,7 +8687,7 @@ Jeśli globalna blokada zostanie zdjęta na tej wiki, użytkownicy będą mogli 
 [[Special:GlobalBlockList|Powrót do spisu globalnie zablokowanych adresów IP]].',
 	'globalblocking-ipblocked' => "'''Twój adres IP został zablokowany na wszystkie strony wiki.'''
 
-Blokada została złożona przez  \$1  (\$2).
+Blokada została założona przez  \$1  (\$2).
 Podany powód to ''\$3''.
 
  * Początek blokady:  \$4 
