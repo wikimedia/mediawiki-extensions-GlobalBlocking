@@ -7083,7 +7083,7 @@ $messages['mhr'] = array(
  */
 $messages['min'] = array(
 	'globalblocking-logentry-noexpiry' => 'salamonyo',
-	'globalblocklist' => 'Dafta alamaik IP nan disakek sacaro global',
+	'globalblocklist' => 'Daftar alamaik IP nan disakek sacaro global',
 	'globalblockstatus' => 'Satus sakek global di wiki iko',
 );
 

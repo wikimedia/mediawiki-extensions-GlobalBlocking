@@ -464,6 +464,7 @@ $specialPageAliases['tt-cyrl'] = array(
 $specialPageAliases['uk'] = array(
 	'GlobalBlock' => array( 'Глобальне_блокування' ),
 	'GlobalBlockList' => array( 'Перелік_глобальних_блокувань' ),
+	'RemoveGlobalBlock' => array( 'Глобальне_розблокування' ),
 );
 
 /** vèneto (vèneto) */
