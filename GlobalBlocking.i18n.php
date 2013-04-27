@@ -7082,9 +7082,39 @@ $messages['mhr'] = array(
  * @author Iwan Novirion
  */
 $messages['min'] = array(
+	'globalblocking-block-expiry' => 'Sampai:',
+	'globalblocking-list-intro' => 'Iko daftar saluruah sakek global nan efektif sangkek kini ko.
+Babarapo sakek ditandoi sabagai non-aktif pado wiki lokal: iko artinyo sakek ko aktif pado wiki lainnyo, tapi Panguruih di wiki lokal alah mamutuihan untuak menon-aktifkannyo pado wiki ko.',
+	'globalblocking-list' => 'Daftar sakek global alamaik IP',
+	'globalblocking-search-legend' => 'Pancarian sakek global',
+	'globalblocking-search-ip' => 'Alamaik IP:',
+	'globalblocking-search-submit' => 'Cari nan tasakek',
+	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') manyakek sacaro global [[Special:Contributions/\$4|\$4]] ''(\$5)''",
+	'globalblocking-list-expiry' => 'sampai $1',
+	'globalblocking-list-anononly' => 'hanyo pangguno anonim',
+	'globalblocking-list-unblock' => 'hapuih',
+	'globalblocking-list-whitelisted' => 'dinon-aktifkan di wiki lokal dek $1: $2',
+	'globalblocking-list-whitelist' => 'statuih lokal',
+	'globalblocking-list-modify' => 'ubah',
+	'globalblocking-list-noresults' => 'Alamaik IP nan dimintak indak sadang disakek.',
+	'globalblocking-goto-block' => 'Manyakek alamaik IP sacaro global',
+	'globalblocking-goto-unblock' => 'Hapuih sakek global',
+	'globalblocking-goto-status' => 'Ubah statuih lokal untuak sakek global',
+	'globalblocking-return' => 'Baliak ka daftar sakek global',
+	'globalblocking-whitelist' => 'Statuih wiki lokal ateh sakek global',
+	'globalblocking-whitelist-legend' => 'Ubah statuih di wiki lokal',
+	'globalblocking-whitelist-reason' => 'Alasan:',
+	'globalblocking-whitelist-status' => 'Statuih lokal:',
+	'globalblocking-whitelist-statuslabel' => 'Non-aktifkan sakek global ko di {{SITENAME}}',
+	'globalblocking-whitelist-submit' => 'Ubah statuih',
+	'globalblocking-whitelist-intro' => 'Sanak dapek manggunoan formulir iko untuak manyuntiang statuih lokal dari sakek global.
+Jikok sakek global dinon-aktifkan di wiki ko, pangguno jo alamaik IP tasabuik akan dapek manyuntiang baliak sacaro normal.
+[[Special:GlobalBlockList|Baliak ka daftar sakek global]].',
+	'globalblocking-logpage' => 'Log sakek global',
+	'globalblocking-logentry-expiry' => 'sampai $1',
 	'globalblocking-logentry-noexpiry' => 'salamonyo',
 	'globalblocklist' => 'Daftar alamaik IP nan disakek sacaro global',
-	'globalblockstatus' => 'Satus sakek global di wiki iko',
+	'globalblockstatus' => 'Satuih sakek global di wiki ko',
 );
 
 /** Macedonian (македонски)
