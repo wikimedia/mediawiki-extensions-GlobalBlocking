@@ -7083,8 +7083,8 @@ $messages['mhr'] = array(
  */
 $messages['min'] = array(
 	'globalblocking-block-expiry' => 'Sampai:',
-	'globalblocking-list-intro' => 'Iko daftar saluruah sakek global nan efektif sangkek kini ko.
-Babarapo sakek ditandoi sabagai non-aktif pado wiki lokal: iko artinyo sakek ko aktif pado wiki lainnyo, tapi Panguruih di wiki lokal alah mamutuihan untuak menon-aktifkannyo pado wiki ko.',
+	'globalblocking-list-intro' => 'Iko daftar saluruah sakek global nan efektip sangkek kini ko.
+Babarapo sakek ditandoi sabagai non-aktip pado wiki lokal: iko artinyo sakek ko aktip pado wiki lainnyo, tapi Panguruih di wiki lokal alah mamutuihan untuak menon-aktipannyo pado wiki iko.',
 	'globalblocking-list' => 'Daftar sakek global alamaik IP',
 	'globalblocking-search-legend' => 'Pancarian sakek global',
 	'globalblocking-search-ip' => 'Alamaik IP:',
@@ -7105,10 +7105,10 @@ Babarapo sakek ditandoi sabagai non-aktif pado wiki lokal: iko artinyo sakek ko 
 	'globalblocking-whitelist-legend' => 'Ubah statuih di wiki lokal',
 	'globalblocking-whitelist-reason' => 'Alasan:',
 	'globalblocking-whitelist-status' => 'Statuih lokal:',
-	'globalblocking-whitelist-statuslabel' => 'Non-aktifkan sakek global ko di {{SITENAME}}',
+	'globalblocking-whitelist-statuslabel' => 'Non-aktipan sakek global ko di {{SITENAME}}',
 	'globalblocking-whitelist-submit' => 'Ubah statuih',
-	'globalblocking-whitelist-intro' => 'Sanak dapek manggunoan formulir iko untuak manyuntiang statuih lokal dari sakek global.
-Jikok sakek global dinon-aktifkan di wiki ko, pangguno jo alamaik IP tasabuik akan dapek manyuntiang baliak sacaro normal.
+	'globalblocking-whitelist-intro' => 'Sanak dapek manggunoan formulir ko untuak manyuntiang statuih lokal dari sakek global.
+Jikok sakek global dinon-aktipan di wiki ko, pangguno jo alamaik IP tasabuik akan dapek manyuntiang baliak sacaro normal.
 [[Special:GlobalBlockList|Baliak ka daftar sakek global]].',
 	'globalblocking-logpage' => 'Log sakek global',
 	'globalblocking-logentry-expiry' => 'sampai $1',
