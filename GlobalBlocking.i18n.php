@@ -425,7 +425,7 @@ Alle globale blokkades is opgeteken in die [[Special:GlobalBlockList|lys van glo
 	'globalblocking-loglink' => 'Die IP-adres is globaal geblokkeer ([[{{#Special:GlobalBlockList}}/$1|volledige details]]).',
 	'globalblocking-showlog' => 'Die IP-adres was vantevore geblokkeer gewees.
 Die blokkeerlogboek word hieronder weergegee:',
-	'globalblocklist' => 'Lys van globaal versperde IP adresse',
+	'globalblocklist' => 'Lys van globaal geblokkeerde IP-adresse',
 	'globalblock' => "Versper 'n IP adres globaal",
 	'globalblockstatus' => 'Lokale status van globale blokkades',
 	'removeglobalblock' => "Verwyder 'n globale blokkade",
