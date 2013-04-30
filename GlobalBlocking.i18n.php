@@ -7114,7 +7114,7 @@ Jikok sakek global dinon-aktipan di wiki ko, pangguno jo alamaik IP tasabuik aka
 	'globalblocking-logentry-expiry' => 'sampai $1',
 	'globalblocking-logentry-noexpiry' => 'salamonyo',
 	'globalblocklist' => 'Daftar alamaik IP nan disakek sacaro global',
-	'globalblockstatus' => 'Satuih sakek global di wiki ko',
+	'globalblockstatus' => 'Statuih sakek global di wiki ko',
 );
 
 /** Macedonian (македонски)
