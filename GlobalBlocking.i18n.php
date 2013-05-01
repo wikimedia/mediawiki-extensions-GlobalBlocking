@@ -12270,7 +12270,7 @@ $messages['vi'] = array(
 	'globalblocking-block-reasonotherlist' => 'Lý do khác',
 	'globalblocking-block-reason-dropdown' => '* Lý do cấm thường gặp
 ** Spam các wiki
-** Lạm dụng các wiki
+** Sai phạm tại các wiki
 ** Phá hoại',
 	'globalblocking-block-edit-dropdown' => 'Sửa đổi các lý do cấm',
 	'globalblocking-block-expiry' => 'Hết hạn cấm:',
