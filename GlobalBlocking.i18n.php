@@ -12201,6 +12201,19 @@ Se fa notar che ła funsion \"{{int:emailuser}}\" nó ła xe ativa se nó xe sta
 
 El to indiriso IP atuałe el xe \$6.
 Se prega de spesifegar tuti i detaji presedenti in calsiasi dimanda de ciarimenti.",
+	'globalblocking-ipblocked-xff' => "'''Uno o più server proxy doparà ne la to richiesta el xe stà blocà su tute le wiki.'''
+
+El bloco lo ga meso \$1 (\$2).
+La motivasion del bloco xe: ''\$3''.
+
+* Inisio del bloco: \$4
+* Scadensa del bloco: \$5
+
+Se te vol, te pol contatar \$1 par discùtar del bloco.
+Nota che la funsion \"{{int:emailuser}}\" no la xe ativa se no te ghè mia registrà un indiriso email valido ne le to [[Special:Preferences|preferense]] o se l'utilizo de sta funsione el xe stà blocà.
+
+L'indiriso del proxy bloccà el xe \$6.
+Se prega de specificar tuti i detagli precedenti in qualsiasi richiesta de ciarimenti.",
 	'globalblocking-blocked-nopassreset' => 'No te podi resetar le password dei utenti, parché a te sì blocà globalmente.',
 	'globalblocking-logpage' => 'Registro dei blochi globali',
 	'globalblocking-logpagetext' => "De sèvito xe elencà i blochi globali che xe stà messi o cavà su sta wiki. I blochi globali i pol vegner fati su altre wiki e sti blochi globali i pol èssar validi anca su sta wiki.
