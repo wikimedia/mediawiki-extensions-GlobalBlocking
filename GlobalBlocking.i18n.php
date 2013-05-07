@@ -7124,6 +7124,9 @@ Babarapo sakek ditandoi sabagai non-aktip pado wiki lokal: iko artinyo sakek ko 
 Jikok sakek global dinon-aktipan di wiki ko, pangguno jo alamaik IP tasabuik akan dapek manyuntiang baliak sacaro normal.
 [[Special:GlobalBlockList|Baliak ka daftar sakek global]].',
 	'globalblocking-logpage' => 'Log sakek global',
+	'globalblocking-logpagetext' => 'Iko log sakek global nan dibuek dan dihapuih pado wiki ko.
+Sabagai catatan, sakek global dapek dibuek dan dihapuih di wiki lain nan ka mampangaruahi wiki ko juo.
+Untuak manampilan kasaluruahan sakek global nan aktip kini ko, Sanak dapek mancaliak [[Special:GlobalBlockList|daftar sakek global]].',
 	'globalblocking-logentry-expiry' => 'sampai $1',
 	'globalblocking-logentry-noexpiry' => 'salamonyo',
 	'globalblocklist' => 'Daftar alamaik IP nan disakek sacaro global',
