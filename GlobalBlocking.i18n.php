@@ -1988,11 +1988,15 @@ Per més detalls, a continuació es mostra el registre de bloquejos:',
 
 /** Chechen (нохчийн)
  * @author Sasan700
+ * @author Умар
  */
 $messages['ce'] = array(
+	'globalblocking-block-reason' => 'Бахьан:',
 	'globalblocking-block-reasonotherlist' => 'Кхин бахьан',
+	'globalblocking-block-expiry' => 'Хан чекхйолу:',
 	'globalblocking-list' => 'МогIам, сацийна массанхьара IP-долу меттиг',
 	'globalblocking-unblock-reason' => 'Бахьан:',
+	'globalblocking-whitelist-reason' => 'Бахьан:',
 	'globalblocklist' => 'МогIам, массанхьа сацийна IP-долу меттиг',
 	'globalblockstatus' => 'Хlоттайелчаьрца долу хьал, масхьара сацорца',
 );
