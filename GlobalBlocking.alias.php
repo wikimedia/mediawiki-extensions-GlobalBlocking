@@ -480,6 +480,11 @@ $specialPageAliases['vi'] = array(
 	'GlobalBlockStatus' => array( 'Danh_sách_miễn_cấm_toàn_cục' ),
 );
 
+/** Yiddish (ייִדיש) */
+$specialPageAliases['yi'] = array(
+	'GlobalBlock' => array( 'גלאבאלער_בלאק' ),
+);
+
 /** Cantonese (粵語) */
 $specialPageAliases['yue'] = array(
 	'GlobalBlock' => array( '全域查封' ),
