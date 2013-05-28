@@ -3649,7 +3649,7 @@ joten niiden paikallista tilaa ei voi muuttaa.',
 	'globalblocking-whitelist-nochange' => 'Et tehnyt muutoksia tämän eston paikalliseen tilaan.
 [[Special:GlobalBlockList|Palaa järjestelmänlaajuisten estojen listaan]].',
 	'globalblocking-whitelist-errors' => 'Järjestelmänlaajuisen eston paikallisen tilan muuttaminen epäonnistui {{PLURAL:$1|seuraavan syyn|seuraavien syiden}} takia:',
-	'globalblocking-whitelist-intro' => 'Voit käyttää tätä lomaketta järjestelmänlaajuisen eston paikallisen tilan muokkaamiseksi. Jos järjestelmänlaajuinen esto on poiskytetty tästä wikistä, IP-osoitetta käyttävät käyttäjät voivat muokata normaalisti.
+	'globalblocking-whitelist-intro' => 'Voit käyttää tätä lomaketta järjestelmänlaajuisen eston paikallisen tilan muokkaamiseksi. Jos järjestelmänlaajuinen esto on poiskytketty tästä wikistä, IP-osoitetta käyttävät käyttäjät voivat muokata normaalisti.
 [[Special:GlobalBlockList|Palaa järjestelmänlaajuisten estojen listaan]].',
 	'globalblocking-ipblocked' => "'''IP-osoitteesi on estetty kaikissa wikeissä.'''
 
@@ -6791,15 +6791,27 @@ Wann eng global Spär op dëser Wiki opgehuewe gëtt, kënne Benotzer déi déi 
 [[Special:GlobalBlockList|Zréck op d'Lëscht vun de globale Spären]].",
 	'globalblocking-ipblocked' => "'''Är IP-Adress gouf op alle Wikie gespaart.'''
 
-D'Spär gouf vum $1 ($2) gemaach.
-De Grond deen ugi gouf ass ''$3''.
+D'Spär gouf vum \$1 (\$2) gemaach.
+De Grond deen ugi gouf ass ''\$3''.
 
-* Ufank vun der Spär: $4
-* Enn vun der Spär: $5
+* Ufank vun der Spär: \$4
+* Enn vun der Spär: \$5
 
-Dir kënnt Iech un de(n) $1 adresséieren, fir iwwer d'Spär ze diskutéieren.
-Dir kënnt d'Fonctioun „{{int:emailuser}}“ net benotzen, bis eng valabel E-Mail-Adress an Ären [[Special:Preferences|Astellungen]] ugi gouf und dtioun net fir Iech gespaart gouf.
-Är aktuell IP-Adress ass $6.
+Dir kënnt Iech un de(n) \$1 adresséieren, fir iwwer d'Spär ze diskutéieren.
+Dir kënnt d'Fonctioun \"{{int:emailuser}}\" net benotzen, bis eng valabel E-Mail-Adress an Ären [[Special:Preferences|Astellungen]] ugi gouf an net fir Iech gespaart gouf.
+Är aktuell IP-Adress ass \$6.
+Gitt w.e.g. alle Detailer déi Dir hei driwwer fannt an Ären Ufroen un.",
+	'globalblocking-ipblocked-xff' => "'''Een oder méi Proxy-Serveren déi Dir benotzt ass global gespaart.'''
+
+D'Spär gouf vum \$1 (\$2) gemaach.
+De Grond deen ugi gouf ass ''\$3''.
+
+* Ufank vun der Spär: \$4
+* Enn vun der Spär: \$5
+
+Dir kënnt Iech un de(n) \$1 adresséieren, fir iwwer d'Spär ze diskutéieren.
+Dir kënnt d'Fonctioun *{{int:emailuser}}\" net benotzen, bis eng valabel E-Mail-Adress an Ären [[Special:Preferences|Astellungen]] ugi gouf an net fir Iech gespaart gouf.
+Déi blockéiert Proxy-Adress war \$6.
 Gitt w.e.g. alle Detailer déi Dir hei driwwer fannt an Ären Ufroen un.",
 	'globalblocking-blocked-nopassreset' => 'Dir kënnt engem Benotzer säi Paswuert net zrécksetze well Dir global gespaart sidd.',
 	'globalblocking-logpage' => 'Lëscht vun de globale Spären',
