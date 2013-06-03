@@ -819,7 +819,7 @@ $messages['arz'] = array(
 	'right-globalblock-whitelist' => 'عطل المنع العام على المستوى المحلي',
 );
 
-/** Assamese (অসমীয়া)
+/** Assamese (অসমীয়া)
  * @author Bishnu Saikia
  * @author Gitartha.bordoloi
  */
@@ -3122,6 +3122,7 @@ Jen la protokolo pri forbaroj sube por via referenco:',
  * @author Fitoschido
  * @author Lin linao
  * @author Locos epraix
+ * @author MarcoAurelio
  * @author Mor
  * @author Peter17
  * @author Platonides
@@ -7833,7 +7834,7 @@ $messages['nah'] = array(
 	'globalblocking-unblock-reason' => 'Tlèka:',
 );
 
-/** Norwegian Bokmål (norsk (bokmål)‎)
+/** Norwegian Bokmål (norsk bokmål)
  * @author Event
  * @author Laaknor
  * @author Nghtwlkr
@@ -8060,7 +8061,7 @@ För en List mit all aktive globale Sperren kiek na de [[Special:GlobalBlockList
 	'right-globalblock-whitelist' => 'Globale Sperren lokal afschalten',
 );
 
-/** Nedersaksies (Nedersaksies)
+/** Low Saxon (Netherlands) (Nedersaksies)
  * @author Servien
  */
 $messages['nds-nl'] = array(
@@ -8262,7 +8263,7 @@ Globale blokkades kunnen ook op andere wiki's aangemaakt en verwijderd worden, e
 Alle globale blokkades kan je bekijken in de [[Special:GlobalBlockList|lijst met globale blokkades]].",
 );
 
-/** Norwegian Nynorsk (norsk (nynorsk)‎)
+/** Norwegian Nynorsk (norsk nynorsk)
  * @author Eirik
  * @author Harald Khan
  * @author Jon Harald Søby
@@ -8481,7 +8482,7 @@ Lo jornal dels blocatges es disponible çaijós :',
 	'right-globalblock-exempt' => 'Passar otra los blocatges globals',
 );
 
-/** Oriya (ଓଡ଼ିଆ)
+/** Oriya (ଓଡ଼ିଆ)
  * @author Jnanaranjan Sahu
  * @author Odisha1
  * @author Psubhashish
@@ -9223,6 +9224,7 @@ Para sua referência, é apresentado abaixo o registo de bloqueios:',
  * @author Eduardo.mps
  * @author Helder.wiki
  * @author Heldergeovane
+ * @author Luckas
  * @author Luckas Blade
  * @author Rafael Vargas
  * @author Sir Lestaty de Lioncourt
