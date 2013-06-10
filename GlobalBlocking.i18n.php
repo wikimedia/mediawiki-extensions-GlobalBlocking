@@ -1065,16 +1065,16 @@ La direición del proxy bloquiáu foi \$6.
 Por favor, incluya tolos datos anteriores en cualquier consulta que faiga.",
 	'globalblocking-blocked-nopassreset' => "Nun puedes reaniciar les contraseñes d'usuariu porque tas bloquiáu de mou global.",
 	'globalblocking-logpage' => 'Rexistru de bloqueos globales',
-	'globalblocking-logpagetext' => "Esti ye un rexistru de bloqueos globales que fueron efeutuaos o eliminaos nesta wiki.
-Ha recordase que los bloqueos globales puen efeutuase y eliminase n'otres wikis, y qu'esos bloqueos globales puen afeutar a esta wiki.
-Pa ver tolos bloqueos globales activos, pues ver la [[Special:GlobalBlockList|llista de bloqueos globales]].",
+	'globalblocking-logpagetext' => "Esti ye un rexistru de bloqueos globales que s'efeutuaron o desaniciaron nesta wiki.
+Tien de recordar que los bloqueos globales puen efeutuase y desaniciase n'otres wikis, y qu'esos bloqueos globales puen afeutar a esta wiki.
+Pa ver tolos bloqueos globales activos, pue ver la [[Special:GlobalBlockList|llista de bloqueos globales]].",
 	'globalblocking-block-logentry' => 'bloquió globalmente a [[$1]] con una caducidá de $2',
 	'globalblocking-block2-logentry' => 'bloquió globalmente a [[$1]] ($2)',
 	'globalblocking-unblock-logentry' => "eliminó'l bloquéu global de [[$1]]",
 	'globalblocking-whitelist-logentry' => "desactivó'l bloquéu global de [[$1]] llocalmente",
 	'globalblocking-dewhitelist-logentry' => "reactivó'l bloquéu global de [[$1]] llocalmente",
 	'globalblocking-modify-logentry' => "camudó'l bloquéu global de [[$1]] ($2)",
-	'globalblocking-logentry-expiry' => 'caduca el $1',
+	'globalblocking-logentry-expiry' => "caduca'l $1",
 	'globalblocking-logentry-noexpiry' => 'nun se conseñó la caducidá',
 	'globalblocking-loglink' => 'La direición IP $1 ta bloquiada globalmente ([[{{#Special:GlobalBlockList}}/$1|más detalles]]).',
 	'globalblocking-showlog' => "Esta direición IP yá se bloquió previamente.
@@ -1146,6 +1146,7 @@ $messages['azb'] = array(
 /** Bashkir (башҡортса)
  * @author Assele
  * @author Haqmar
+ * @author Рустам Нурыев
  * @author ҒатаУлла
  */
 $messages['ba'] = array(
@@ -1181,7 +1182,7 @@ $messages['ba'] = array(
 	'globalblocking-block-bigrange' => 'Һеҙ күрһәткән арауыҡ ($1) бикләу өсөн бигерәк ҙур.
 Һеҙ иң күбендә 65 536 адрес бикләй алаһығыҙ (/16 арауыҡ)',
 	'globalblocking-list-intro' => 'Был — хәҙерге ваҡытта булған дөйөм бикләүҙәр исемлеге.
-Ҡайһы бер бикләүҙәр урында һүндерелгән, тип билдәләнгән: был улар башҡа сайттарҙа ҡулланыла, әммә урындағы хәким был викила уларҙы һүндерергә булған, тигәнде аңлата.',
+Ҡайһы бер бикләүҙәр урында һүндерелгән, тип билдәләнгән: был улар башҡа сайттарҙа ҡулланыла, әммә урындағы хаким был викила уларҙы һүндерергә булған, тигәнде аңлата.',
 	'globalblocking-list' => 'Дөйөм бикләнгән IP адрестар исемлеге',
 	'globalblocking-search-legend' => 'Дөйөм бикләүҙе эҙләү',
 	'globalblocking-search-ip' => 'IP-адрес:',
@@ -1230,7 +1231,7 @@ $messages['ba'] = array(
 	'globalblocking-whitelist-intro' => 'Дөйөм бикләүҙең урындағы торошон үҙгәртеү өсөн ошо форманы ҡуллана алаһығыҙ.
 Әгәр был викила дөйөм бикләү һүндерелгән булһа, ул IP адреслы ҡатнашыусылар биттәрҙе ғәҙәттәгесә үҙгәртә аласаҡ.
 [[Special:GlobalBlockList|Дөйөм бикләүҙәр исемлегенә кире ҡайтырға]].',
-	'globalblocking-blocked-nopassreset' => 'Һеҙ ҡатнашыусыларҙың паролен үҙгәртә алмайһығыҙ, сөнки дөйөм бикләнгәнһегеҙ.',
+	'globalblocking-blocked-nopassreset' => 'Һеҙ ҡатнашыусыларҙың серһүҙен үҙгәртә алмайһығыҙ, сөнки дөйөм бикләнгәнһегеҙ.',
 	'globalblocking-logpage' => 'Дөйөм бикләүҙәр яҙмалары журналы',
 	'globalblocking-logpagetext' => 'Был — ошо вики проектта ҡуйылған йәки һүндерелгән дөйөм бикләү яҙмалары журналы.
 Дөйөм бикләүҙәр башҡа вики проекттарҙа ҡуйыла йәки һүндерелә ала һәм был вики проектта ҡулланыла ала икәнен иғтибарға алырға кәрәк.
@@ -12841,6 +12842,7 @@ $1',
  * @author Anakmalaysia
  * @author Gaoxuewei
  * @author Horacewai2
+ * @author Justincheng12345
  * @author Liangent
  * @author Mark85296341
  * @author Oapbtommy
@@ -12849,7 +12851,7 @@ $1',
  * @author Waihorace
  */
 $messages['zh-hant'] = array(
-	'globalblocking-desc' => '[[Special:GlobalBlock|容許]] IP 位址可以[[Special:GlobalBlockList|在多個 wiki 中封鎖]]',
+	'globalblocking-desc' => '[[Special:GlobalBlock|容許]]IP位址可以[[Special:GlobalBlockList|於多個維基中封鎖]]',
 	'globalblocking-block' => '全域封鎖一個 IP 位址',
 	'globalblocking-modify-intro' => '您可以使用本表單改變全域封鎖的設定。',
 	'globalblocking-block-intro' => '您可以用這個頁面去封鎖全部 wiki 中的一個 IP 位址。',
@@ -12945,6 +12947,18 @@ $1',
 您可以聯繫 $1 來討論此封禁。
 您不能使用“{{int:emailuser}}”功能，除非在您的[[Special:Preferences|參數設置]]中設定了一個有效的電郵地址，並且該功能沒有被此次封禁被禁用。
 您現在的IP地址是 $6。
+請在提出任何查詢時提供上述所有信息。",
+	'globalblocking-ipblocked-xff' => "'''您使用的一或多個代理伺服器已於所有維基上封禁。'''
+
+此封禁由$1（$2）作出。
+理由為''$3''。
+
+* 封禁開始時間：$4
+* 封禁到期時間：$5
+
+您可以聯繫$1討論此封禁。
+您不能使用「{{int:emailuser}}」功能，除非您的[[Special:Preferences|參數設置]]中設定了一個有效的電郵地址，且該功能沒有於是次封禁中禁用。
+遭封禁的代理伺服器位址為$6。
 請在提出任何查詢時提供上述所有信息。",
 	'globalblocking-blocked-nopassreset' => '您無法修改用戶密碼，因為您正被全域封鎖。',
 	'globalblocking-logpage' => '全域封鎖日誌',
