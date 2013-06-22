@@ -3760,7 +3760,7 @@ Vinarliga skriva eina gylduga IP adressu.',
 	'globalblocking-logpage' => 'Globalut sperringsloggur',
 	'globalblocking-block-logentry' => 'global sperring [[$1]] sum gongur út $2',
 	'globalblocking-block2-logentry' => 'globalt blokkerað/ur [[$1]] ($2)',
-	'globalblocking-unblock-logentry' => 'tók burtur globala sperring á', # Fuzzy
+	'globalblocking-unblock-logentry' => 'tók burtur globala sperring á [[$1]]',
 	'globalblocking-loglink' => 'IP adressan $1 er sperrað globalt ([[{{#Special:GlobalBlockList}}/$1|sí fullfíggjaða kunning]]).',
 	'globalblocking-showlog' => 'Henda IP adressan er áður blivin sperrað.
 Sperringarloggurin er her niðanfyri fyri ávísing:',
