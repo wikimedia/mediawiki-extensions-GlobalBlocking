@@ -8657,7 +8657,7 @@ $messages['pfl'] = array(
 	'globalblocking-ipbanononly' => 'Bloos ubekonde Benudza schberre',
 	'globalblocking-block-errors' => 'Die Schber hoh ned gklabd, weesche {{PLURAL:$1|reason|reasons}}:',
 	'globalblocking-list-whitelisted' => 'lokal abgschdeld vun $1: $2',
-	'globalblocking-list-modify' => 'änere',
+	'globalblocking-list-modify' => 'ännare',
 );
 
 /** Polish (polski)
