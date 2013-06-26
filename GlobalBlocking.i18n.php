@@ -1997,10 +1997,15 @@ $messages['ce'] = array(
 	'globalblocking-block-edit-dropdown' => 'Бахьанин список нисяр',
 	'globalblocking-block-expiry' => 'Хан чекхйолу:',
 	'globalblocking-block-expiry-otherfield' => 'Кхин хан:',
-	'globalblocking-list' => 'МогIам, блоктоьхна массанхьара IP-долу меттиг',
+	'globalblocking-block-alreadyblocked' => 'IP-адрес $1 хӀийнцале глобально блоктоьхна ду.
+Хьан йиш ю дулуш долу блоктохаршка хьажа [[Special:GlobalBlockList|глобальни блоктохарши могӀам]]
+я йолуш йолу блоктохаран параметрш хийца, юха хӀара форма дӀаяхьитина.',
+	'globalblocking-list' => 'МогIам, массанхьа блоктоьхна IP-адресаш',
+	'globalblocking-list-expiry' => 'чекхйолу $1',
 	'globalblocking-unblock-reason' => 'Бахьан:',
 	'globalblocking-whitelist-reason' => 'Бахьан:',
-	'globalblocklist' => 'МогIам, массанхьа блоктоьхна IP-долу меттиг',
+	'globalblocking-logentry-expiry' => 'чекхйолу $1',
+	'globalblocklist' => 'МогIам, массанхьа блоктоьхна IP-адресаш',
 	'globalblockstatus' => 'Хlоттайелчаьрца долу хьал, масхьара сацорца',
 );
 
