@@ -1261,6 +1261,34 @@ $messages['ba'] = array(
 	'action-globalblock-exempt' => 'Дөйөм биктәрҙе урап үтеү',
 );
 
+/** Bikol Central (Bikol Central)
+ * @author Geopoet
+ */
+$messages['bcl'] = array(
+	'globalblocking-desc' => '[[Special:GlobalBlock|Tinutugutan]] An IP na mga estada na [[Special:GlobalBlockList|pinagkubkob sa pag-iribahan nin kadaklang mga wikis]]',
+	'globalblocking-block' => 'Pankinabanong kinubkob an IP na estada',
+	'globalblocking-modify-intro' => 'Ika makakagamit kaining porma sa pagliwat nin mga panuytoy nin sarong pankinabanong pangubkob.',
+	'globalblocking-block-intro' => 'Ika makakagamit kaining pahina sa pagkubkob nin sarong IP na estada nin gabos na mga wikis.',
+	'globalblocking-block-reason' => 'Rason:',
+	'globalblocking-block-otherreason' => 'Iba pa/kadugangan na rason:',
+	'globalblocking-block-reasonotherlist' => 'Ibang rason',
+	'globalblocking-block-reason-dropdown' => '* Pirmehang rason nin pagkubkob 
+** Pambalyuhang wiki sa espam 
+** Pambalyuhang wiki sa abuso 
+** Bandalismo',
+	'globalblocking-block-edit-dropdown' => 'Liwaton an mga rason nin pagkubkob',
+	'globalblocking-block-expiry' => 'Kapasohan:',
+	'globalblocking-block-expiry-other' => 'Ibang kapasohan sa oras',
+	'globalblocking-block-expiry-otherfield' => 'Ibang oras:',
+	'globalblocking-block-legend' => 'Kubkubon an IP na estadang pankinabanon',
+	'globalblocking-block-options' => 'Mga Pamimilian:',
+	'globalblocking-ipaddress' => 'IP na estada:',
+	'globalblocking-ipbanononly' => 'Kubkubon an dae bistadong paragamit sana',
+	'globalblocking-block-expiryinvalid' => 'An kapasohan na saimong pinag-entrada ($1) imbalido.',
+	'globalblocking-block-submit' => 'Pankinabanon na kubkubon ining IP na estada',
+	'globalblocking-modify-submit' => 'Hirahon ining pankinabanong kubkob',
+);
+
 /** Belarusian (беларуская)
  * @author Тест
  */
