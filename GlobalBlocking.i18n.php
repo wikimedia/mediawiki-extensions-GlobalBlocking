@@ -300,7 +300,8 @@ For an example see [{{canonicalurl:meta:Special:Log/gblblock|uselang=en}} meta:S
 * $1 - a link to a user page of the form User:Name
 * $2 - a reason for the action',
 	'globalblocking-logentry-expiry' => 'Used as a flag. Parameters:
-* $1 - expiry time and date',
+* $1 - expiry time and date
+{{Identical|Expire}}',
 	'globalblocking-loglink' => 'Shown at [[Special:IPBlocklist]] when the GlobalBlocking extension is enabled (not on translatewiki).
 * $1 is the requested IP address',
 	'globalblocking-showlog' => 'See also:
@@ -1400,6 +1401,18 @@ $messages['be-tarask'] = array(
 Вы можаце зьвярнуцца да $1, каб атрымаць тлумачэньне.
 Вы ня зможаце {{lc:{{int:emailuser}}}}, пакуль не пазначыце слушны адрас e-mail у [[Special:Preferences|наладах]] і ня скончыцца трываньне забароны на карыстаньне гэтай функцыяй.
 Ваш бягучы IP-адрас — $6.
+Калі ласка, уключайце ўсе вышэй пазначаныя зьвесткі, калі будзеце рабіць будзь-якія запыты.",
+	'globalblocking-ipblocked-xff' => "'''Адзін ці некалькі проксі-сэрвэраў, ужытых у вашым запыце, заблякаваныя глябальна'''
+
+Блякаваньне зрабіў $1 ($2).
+Прычына: ''$3''.
+
+* Пачатак дзеяньня блякаваньня: $4
+* Канец дзеяньня блякаваньня: $5
+
+Вы можаце зьвярнуцца да $1, каб атрымаць тлумачэньне.
+Вы ня зможаце {{int:emailuser}}, пакуль не пазначыце слушны адрас e-mail у [[Special:Preferences|наладах]] і калі толькі вам не забаранілі гэта зрабіць.
+Адрас заблякаванага проксі — $6.
 Калі ласка, уключайце ўсе вышэй пазначаныя зьвесткі, калі будзеце рабіць будзь-якія запыты.",
 	'globalblocking-blocked-nopassreset' => 'Вы ня можаце аднавіць пароль удзельніка, таму што Вы заблякаваны глябальна.',
 	'globalblocking-logpage' => 'Журнал глябальных блякаваньняў',
@@ -10573,6 +10586,18 @@ Razlog je ''$3''.
 Lahko stopite v stik z uporabnikom $1 in se pogovorite o blokadi. 
 Ne morete uporabljati možnosti »{{int:emailuser}}«, dokler v svojih [[Special:Preferences|nastavitvah računa]] nimate veljavnega elektonskega naslova in vam njegove uporabe še nismo preprečili.
 Vaš trenutni IP-naslov je $6.
+Prosimo, da v vsako prošnjo vključite vse zgornje podatke.",
+	'globalblocking-ipblocked-xff' => "'''Eden ali več strežnikov proxy, s katerimi ste izvedli zahtevo, je globalno blokiranih'''
+
+Blokiral jih je uporabnik $1 ($2).
+Razlog je ''$3''.
+
+* Začetek blokade: $4
+* Potek blokade: $5
+
+Lahko stopite v stik z uporabnikom $1 in se pogovorite o blokadi. 
+Ne morete uporabljati možnosti »{{int:emailuser}}«, dokler v svojih [[Special:Preferences|nastavitvah računa]] nimate veljavnega elektonskega naslova in vam njegove uporabe še nismo preprečili.
+Blokirani naslov proxyja je $6.
 Prosimo, da v vsako prošnjo vključite vse zgornje podatke.",
 	'globalblocking-blocked-nopassreset' => 'Ne morete ponastaviti gesla uporabnika, ker je globalno blokiran.',
 	'globalblocking-logpage' => 'Dnevnik globalnih blokad',
