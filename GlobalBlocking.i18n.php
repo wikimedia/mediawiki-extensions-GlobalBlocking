@@ -1283,11 +1283,114 @@ $messages['bcl'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Ibang oras:',
 	'globalblocking-block-legend' => 'Kubkubon an IP na estadang pankinabanon',
 	'globalblocking-block-options' => 'Mga Pamimilian:',
-	'globalblocking-ipaddress' => 'IP na estada:',
+	'globalblocking-ipaddress' => 'Estada kan IP:',
 	'globalblocking-ipbanononly' => 'Kubkubon an dae bistadong paragamit sana',
+	'globalblocking-block-errors' => 'An saimong pagkubkob bakong matrayumpo, nin huli sa minasunod na {{PLURAL:$1|rason|mga rason}}:',
+	'globalblocking-block-ipinvalid' => 'An estada kan IP na ($1) na saimong pinagkaag imbalido.
+Pakitandae tabi na ika da makaka-entrada nin pangaran kan sarong paragamit!',
 	'globalblocking-block-expiryinvalid' => 'An kapasohan na saimong pinag-entrada ($1) imbalido.',
 	'globalblocking-block-submit' => 'Pankinabanon na kubkubon ining IP na estada',
 	'globalblocking-modify-submit' => 'Hirahon ining pankinabanong kubkob',
+	'globalblocking-block-success' => 'An estada kan IP matrayumpong pinagkubkob sa gabos na mga proyekto.', # Fuzzy
+	'globalblocking-modify-success' => 'An pankinabanong pagkubkob kan $1 matrayumpong pinaghira',
+	'globalblocking-block-successsub' => 'Pankinabanong pagkubkob matrayumpo',
+	'globalblocking-modify-successsub' => 'Pankinabanong pagkubkob matrayumpong pinaghira',
+	'globalblocking-block-alreadyblocked' => 'An estada kan IP $1 pankinabanong pinagkubkob na.
+Ika makakatanaw kan eksistidong kubkob sa  [[Special:GlobalBlockList|list of global blocks]], o makakapaghira nin mga panuytoy kan eksistidong kubkob sa paagi nin pagsumiter otro kaining porma.',
+	'globalblocking-block-bigrange' => 'An hikwas na saimong pinagsambit ($1) grabe kadakulaon na pagkubkubon.
+Ika makakakubkob, sa pinakagulpi, 65,536 na mga estada (/16 na mga kahikwasan)',
+	'globalblocking-list-intro' => 'Ini sarong listahan kan gabos na pankinabanong mga kubkob na sa presente epektibo pa.
+Nagkapirang mga kubkob an markado nang dae pinapagana sa lokal: ini boot sabihon na sinda mai-aplikar sa ibang mga sityo, alagad sarong lokal na administrador an nakapagdesisyon na sinda dae pagaganahon sa wiking ini.',
+	'globalblocking-list' => 'Listahan kan pankinabanong pinagkubkob na mga estada kan IP',
+	'globalblocking-search-legend' => 'Maghanap nin sarong pankinabanong kubkob',
+	'globalblocking-search-ip' => 'Estada kan IP:',
+	'globalblocking-search-submit' => 'Maghanap nin mga kubkob',
+	'globalblocking-list-ipinvalid' => 'An estada kan IP na saimong pinaghahanap para sa ($1) sarong imbalido.
+Pakikaag tabi nin sarong balidong estada kan IP.',
+	'globalblocking-search-errors' => 'An saimong paghahanap bakong matrayumpo, nin huli sa minasunod na {{PLURAL:$1|rason|mga rason}}:',
+	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') pankinabanong pinagkubkob [[Special:Contributions/\$4|\$4]] ''(\$5)''",
+	'globalblocking-list-expiry' => 'Kapalsohan sa $1',
+	'globalblocking-list-anononly' => 'dae nagpapabisto sana',
+	'globalblocking-list-unblock' => 'tangkason',
+	'globalblocking-list-whitelisted' => 'lokal na dae pinapagana ni $1: $2',
+	'globalblocking-list-whitelist' => 'lokal na kamugtakan',
+	'globalblocking-list-modify' => 'hirahon',
+	'globalblocking-list-noresults' => 'An pinaghahagad na estada kan IP dae tabi pinagkubkob.',
+	'globalblocking-goto-block' => 'Pankinabanong kinubkob an estada kan IP',
+	'globalblocking-goto-unblock' => 'Tangkason an sarong pankinaban na kubkob',
+	'globalblocking-goto-status' => 'Liwaton an lokal na kamugtakan para sa sarong pankinaban na kubkob',
+	'globalblocking-return' => 'Bumalik sa listahan kan pankinaban na mga kubkob',
+	'globalblocking-notblocked' => 'An estada kan IP ($1) na saimong pinag-entrada dae tabi pankinaban na pinagkubkob.',
+	'globalblocking-unblock' => 'Tangkason an sarong pankinaban na kubkob',
+	'globalblocking-unblock-ipinvalid' => 'An estada kan IP na ($1) na saimong pinagkaag imbalido.
+Pakitandae tabi na ika dae makaka-entrada nin pangaran kan sarong paragamit!',
+	'globalblocking-unblock-legend' => 'Tangkason an sarong pankinaban na kubkob',
+	'globalblocking-unblock-submit' => 'Tangkason an pankinaban na kubkob',
+	'globalblocking-unblock-reason' => 'Rason:',
+	'globalblocking-unblock-unblocked' => "Ika matrayumpong nakapagtangkas kan pankinaban na kubkob #$2 sa estada kan IP na '''$1'''",
+	'globalblocking-unblock-errors' => 'An saimong pagtangkas kan pankinaban na kubkob bako tabing matrayumpo, nin huli sa minasunod na {{PLURAL:$1|rason|mga rason}}:',
+	'globalblocking-unblock-successsub' => 'Pankinaban na kubkob matrayumpong pinagtangkas',
+	'globalblocking-unblock-subtitle' => 'Tinatangkas an pankinaban na kubkob',
+	'globalblocking-unblock-intro' => 'Ika makakagamit kaining porma tanganing tangkason an sarong pankinaban na kubkob.',
+	'globalblocking-whitelist' => 'Lokal na kamugtakan kan pankinaban na mga kubkob',
+	'globalblocking-whitelist-notapplied' => 'Pankinaban na mga kubkob bako tabi aplikado digde sa wiki, kaya an lokal na kamugtakan kan pankinaban na mga kubkob dae tabi mahihira.',
+	'globalblocking-whitelist-legend' => 'Liwaton an lokal na kamugtakan',
+	'globalblocking-whitelist-reason' => 'Rason:',
+	'globalblocking-whitelist-status' => 'Lokal na kamugtakan:',
+	'globalblocking-whitelist-statuslabel' => 'Dae pagpaganahon ining pankinaban na kubkob na yaon sa {{SITENAME}}',
+	'globalblocking-whitelist-submit' => 'Liwaton an lokal na kamugtakan',
+	'globalblocking-whitelist-whitelisted' => "Ika matrayumpong nakapagtangkas kan pankinaban na kubkob #$2 sa estada kan IP na '''$1''' na yaon sa {{SITENAME}}.",
+	'globalblocking-whitelist-dewhitelisted' => "Ika matrayumpong pinagpagana otro an pankinaban na kubkob #$2 sa estada kan IP na '''$1''' na yaon sa {{SITENAME}}.",
+	'globalblocking-whitelist-successsub' => 'Lokal na kamugtakan matrayumpong pinagliwat',
+	'globalblocking-whitelist-nochange' => 'Ika dae nakapaghimo nin kaliwatan sa lokal na kamugtakan kaining kubkob.
+[[Special:GlobalBlockList|Bumalik sa pankinaban na listahan nin kubkob]].',
+	'globalblocking-whitelist-errors' => 'An saimong pagliwat sa lokal na kamugtakan kan sarong pankinaban na kubkob bako tabing matrayumpo, nin huli sa minasunod na  {{PLURAL:$1|rason|mga rason}}:',
+	'globalblocking-whitelist-intro' => 'Ika makakagamit kaining porma sa pagliwat kan lokal na kamugtakan kan sarong pankinaban na kubkob.
+Kun an sarong pankinaban na kubkob dae pinagpagana digde sa wiki, mga paragamit kan apektadong estada kan IP normal na makakapagliwat.
+[[Special:GlobalBlockList|Bumalik sa pankinaban na listahan nin kubkob]].',
+	'globalblocking-ipblocked' => "'''An saimong estada kan IP pinagkubkob na sa gabos na mga wikis.'''
+
+An kubkob pinaghimo ni \$1 (\$2).
+An rason na pinagtao iyo na ''\$3''. 
+* An poon kan kubkob: \$4 
+* An kapasohan kan kubkob: \$5
+
+Ika makakakontak ki \$1 tanganing orolayan an kubkob.
+Ika dae makakagamit kan \"{{int:emailuser}}\" na estima laen lang kun may sarong balidong e-surat na estada an pinagsambit sa saimong [[Special:Preferences|panindog na mga kamuyahan]] asin ika dae pa pinagkubkob sa paggagamit kaini.
+An saimong presenteng estada kan IP iyo an \$6.
+Pakibale tabi an gabos na mga detalye sa arinman na mga kahaputan na saimong hinimo.",
+	'globalblocking-ipblocked-xff' => '\'\'\'Saro o dakol na mga proksing serbidor an pinaggagamit kan saimong hinahagad na pankinabang pinagkubkob na\'\'\'
+
+An pagkubkob hinimo ni $1($2).
+An rason na itinao iyo na "$3".
+
+*An poon kan kubkob: $4
+*An kapasohan kan kubkob: $5
+
+Ika makakakontak ki $1 tanganing orolayan an kubkob. Ika dae makakagamit kan "{{int:emailuser}}" na estima laen lang kun may sarong balidong e-surat na estada an pinagsambit sa saimong [[Special:Preferences|panindog na mga kamuyahan]] asin ika dae pa pinagkubkob sa paggagamit kaini. 
+
+An pinagkubkob na proksing estada iyo an $6.
+An saimong presenteng estada kan IP iyo an $6. Pakibale tabi an gabos na mga detalye sa itaas sa arinman na mga kahaputan na saimong hinimo.',
+	'globalblocking-blocked-nopassreset' => 'Ika dae makakapagbago kan mga pasa-taramon kan paragamit nin huli ta ika pankinaban na pinagkubkob.',
+	'globalblocking-logpage' => 'Talaan nin pankinaban na kubkob',
+	'globalblocking-logpagetext' => 'Ini sarong talaan nin pankinaban na mga kubkob na pinaghihimo asin pinagtatangkas sa wiki na ini.
+Ini dapat na pakantandae na an pankinaban na kubkob mapupuwedeng mahihimo asin matatangkas sa ibang mga wikis, asin ta ining mga pankinaban na kubkob makaka-apekto kaining wiki.
+Tanganing tanawon an gabos na aktibong pankinaban na mga kubkob, ika mapuwedeng makatanaw sa [[Special:GlobalBlockList|listahan kan pankinaban na kubkob]].',
+	'globalblocking-block-logentry' => 'pankinabanong pinagkubkob si [[$1]] na igwang oras nin kapasohan na $2',
+	'globalblocking-block2-logentry' => 'pankinaban na pinagkubkob si [[$1]] ($2)',
+	'globalblocking-unblock-logentry' => 'pinagtangkas an pankinaban na kubkob ki [[$1]]',
+	'globalblocking-whitelist-logentry' => 'dae pinagpagana an pankinaban na kubkob ki [[$1]] sa lokal',
+	'globalblocking-dewhitelist-logentry' => 'pinagpagana otro an pankinaban na kubkob ki [[$1]] sa lokal',
+	'globalblocking-modify-logentry' => 'pinaghira an pankinaban na kubkob ki [[$1]] ($2)',
+	'globalblocking-logentry-expiry' => 'mapalso sa $1',
+	'globalblocking-logentry-noexpiry' => 'mayong ikinaag na kapasohan',
+	'globalblocking-loglink' => 'An estada kan IP na $1 pankinaban na pinagkubkob ([[{{#Special:GlobalBlockList}}/$1|kabilogan na mga detalye]]).',
+	'globalblocking-showlog' => 'Ining estada kan IP dati nang pinagkubkob.
+An talaan nin kubkob pinaghaya sa ibaba bilang reperensiya:',
+	'globalblocklist' => 'Listahan kan pankinabanong pinagkubkob na mga estada kan IP',
+	'globalblock' => 'Pankinabanong kinubkob an estada kan IP',
+	'globalblockstatus' => 'Lokal na kamugtakan kan pankinaban na mga kubkob',
+	'removeglobalblock' => 'Tangkason an sarong pankinaban na kubkob',
 );
 
 /** Belarusian (беларуская)
