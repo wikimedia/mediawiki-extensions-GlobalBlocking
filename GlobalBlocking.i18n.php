@@ -1291,7 +1291,7 @@ Pakitandae tabi na ika da makaka-entrada nin pangaran kan sarong paragamit!',
 	'globalblocking-block-expiryinvalid' => 'An kapasohan na saimong pinag-entrada ($1) imbalido.',
 	'globalblocking-block-submit' => 'Pankinabanon na kubkubon ining IP na estada',
 	'globalblocking-modify-submit' => 'Hirahon ining pankinabanong kubkob',
-	'globalblocking-block-success' => 'An estada kan IP matrayumpong pinagkubkob sa gabos na mga proyekto.', # Fuzzy
+	'globalblocking-block-success' => 'An estada kan IP an matrayumpong pinagkubkob sa gabos na mga proyekto.', # Fuzzy
 	'globalblocking-modify-success' => 'An pankinabanong pagkubkob kan $1 matrayumpong pinaghira',
 	'globalblocking-block-successsub' => 'Pankinabanong pagkubkob matrayumpo',
 	'globalblocking-modify-successsub' => 'Pankinabanong pagkubkob matrayumpong pinaghira',
@@ -1391,6 +1391,14 @@ An talaan nin kubkob pinaghaya sa ibaba bilang reperensiya:',
 	'globalblock' => 'Pankinabanong kinubkob an estada kan IP',
 	'globalblockstatus' => 'Lokal na kamugtakan kan pankinaban na mga kubkob',
 	'removeglobalblock' => 'Tangkason an sarong pankinaban na kubkob',
+	'right-globalblock' => 'Maghimo nin pankinaban na mga kubkob',
+	'action-globalblock' => 'maghimo nin pankinaban na mga kubkob',
+	'right-globalunblock' => 'Tangkason an pankinaban na mga kubkob',
+	'action-globalunblock' => 'tangkason an pankinaban na mga kubkob',
+	'right-globalblock-whitelist' => 'Dae pagpaganahon an pankinaban na mga kubkob sa lokal',
+	'action-globalblock-whitelist' => 'dae pagpaganahon an pankinaban na mga kubkob sa lokal',
+	'right-globalblock-exempt' => 'Salambawan an pankinaban na mga kubkob',
+	'action-globalblock-exempt' => 'salambawan an pankinaban na mga kubkob',
 );
 
 /** Belarusian (беларуская)
