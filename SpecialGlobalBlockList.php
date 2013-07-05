@@ -157,8 +157,8 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 
 		## Do afterthoughts (comment, links for admins)
 		$info = array();
-
-		if ( $this->getUser()->isAllowed( 'globalunblock' ) ) {
+		$canBlock = $this->getUser()->isAllowed( 'globalblock' );
+		if ( $canBlock ) {
 			$unblockTitle = SpecialPage::getTitleFor( "RemoveGlobalBlock" );
 			$info[] = Linker::link( $unblockTitle,
 				$this->msg( 'globalblocking-list-unblock' )->parse(),
@@ -177,7 +177,7 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 			);
 		}
 
-		if ( $this->getUser()->isAllowed( 'globalblock' ) ) {
+		if ( $canBlock ) {
 			$reblockTitle = SpecialPage::getTitleFor( 'GlobalBlock' );
 			$msg = $this->msg( 'globalblocking-list-modify' )->parse();
 			$info[] = Linker::link(

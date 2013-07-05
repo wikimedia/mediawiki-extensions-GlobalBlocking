@@ -151,7 +151,6 @@ The block log is provided below for reference:',
 	// User rights
 	'right-globalblock' => 'Make global blocks',
 	'action-globalblock' => 'make global blocks',
-	'right-globalunblock' => 'Remove global blocks',
 	'action-globalunblock' => 'remove global blocks',
 	'right-globalblock-whitelist' => 'Disable global blocks locally',
 	'action-globalblock-whitelist' => 'disable global blocks locally',
