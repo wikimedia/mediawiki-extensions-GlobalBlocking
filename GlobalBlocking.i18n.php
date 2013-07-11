@@ -3577,6 +3577,7 @@ $messages['eu'] = array(
  * @author Leyth
  * @author Mardetanha
  * @author Mjbmr
+ * @author Reza1615
  * @author Sahim
  * @author Wayiran
  * @author ZxxZxxZ
@@ -3678,6 +3679,18 @@ $messages['fa'] = array(
 شما نمی‌توانید از قابلیت «{{int:emailuser}}» استفاده کنید مگر اینکه پست الکترونیکی مجاز را در [[Special:Preferences|ترجیحات حساب کاربری‌تان]] مشخص کرده باشید، برای استفاده از آن بسته نیستید.
 نشانی آی‌پی شما $6 است.
 لطفً همهٔ جزئیات بالا را در هر درخواستی که می‌خواهید انجام  دهید ذکر کنید.",
+	'globalblocking-ipblocked-xff' => "'''نشانی آی‌پی یا پروکسی شما در همهٔ ویکی‌ها بسته شده‌است.'''
+
+بستن توسط $1 ($2) انجام شده‌است.
+دلیل ارائه‌شده این است: ''$3''.
+
+* آغاز بستن: $4
+* پایان بستن: $5
+
+برای بحث پیرامون این بستن می‌توانید با $1 تماس بگیرید.
+شما نمی‌توانید از قابلیت «{{int:emailuser}}» استفاده کنید مگر اینکه پست الکترونیکی مجاز را در [[Special:Preferences|ترجیحات حساب کاربری‌تان]] مشخص کرده باشید، برای استفاده از آن بسته نیستید.
+نشانی آی‌پی شما $6 است.
+لطفً همهٔ جزئیات بالا را در هر درخواستی که می‌خواهید انجام  دهید ذکر کنید.",
 	'globalblocking-blocked-nopassreset' => 'شما نمی‌توانید کلمات عبور کاربران را تغییر دهید زیرا شما به صورت سراسری مسدود شده‌اید.',
 	'globalblocking-logpage' => 'سیاههٔ قطع دسترسی سراسری',
 	'globalblocking-logpagetext' => 'این یک سیاهه از قطع دسترسی‌های سراسری است که در این ویکی ایجاد و حذف شده‌اند.
@@ -3698,9 +3711,8 @@ $messages['fa'] = array(
 	'globalblock' => 'قطع دسترسی سراسری یک نشانی آی‌پی',
 	'globalblockstatus' => 'وضعیت محلی قطع‌ دسترسی‌های سراسری',
 	'removeglobalblock' => 'حذف یک قطع دسترسی سراسری',
-	'right-globalblock' => 'ایجاد قطع دسترسی‌های سراسری',
+	'right-globalblock' => 'ایجاد و حذف بستن‌های سراسری',
 	'action-globalblock' => 'ایجاد قطع دسترسی‌های سراسری',
-	'right-globalunblock' => 'حذف قطع دسترسی‌های سراسری',
 	'action-globalunblock' => 'حذف قطع دسترسی‌های سراسری',
 	'right-globalblock-whitelist' => 'غیر فعال کردن قطع دسترسی‌های سراسری به طور محلی',
 	'action-globalblock-whitelist' => 'غیر فعال کردن قطع دسترسی‌های سراسری به‌صورت محلی',
@@ -4349,9 +4361,8 @@ Velaquí está o rexistro de bloqueos, por se quere consultalo:',
 	'globalblock' => 'Bloquear globalmente un enderezo IP',
 	'globalblockstatus' => 'Estado local dos bloqueos globais',
 	'removeglobalblock' => 'Retirar un bloqueo global',
-	'right-globalblock' => 'Realizar bloqueos globais',
+	'right-globalblock' => 'Realizar e retirar bloqueos globais',
 	'action-globalblock' => 'realizar bloqueos globais',
-	'right-globalunblock' => 'Eliminar bloqueos globais',
 	'action-globalunblock' => 'eliminar bloqueos globais',
 	'right-globalblock-whitelist' => 'Deshabilitar bloqueos globais localmente',
 	'action-globalblock-whitelist' => 'deshabilitar bloqueos globais localmente',
@@ -8809,6 +8820,7 @@ $messages['pfl'] = array(
 
 /** Polish (polski)
  * @author BeginaFelicysym
+ * @author Chrumps
  * @author Derbeth
  * @author Lampak
  * @author Leinad
@@ -8930,9 +8942,8 @@ Poniżej znajduje się rejestr blokad:',
 	'globalblock' => 'Zablokuj globalnie adres IP',
 	'globalblockstatus' => 'Lokalny status globalnych blokad',
 	'removeglobalblock' => 'Usuwanie globalnej blokady',
-	'right-globalblock' => 'Zakładanie globalnych blokad',
+	'right-globalblock' => 'Zakładanie i zdejmowanie globalnych blokad',
 	'action-globalblock' => 'zakładanie globalnych blokad',
-	'right-globalunblock' => 'Zdejmowanie globalnych blokad',
 	'action-globalunblock' => 'zdejmowanie globalnych blokad',
 	'right-globalblock-whitelist' => 'Lokalne odblokowywanie globalnych blokad',
 	'action-globalblock-whitelist' => 'lokalne odblokowywanie globalnych blokad',
