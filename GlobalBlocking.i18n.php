@@ -2267,6 +2267,18 @@ Pokud chcete zablokování prodiskutovat, můžete kontaktovat uživatele $1.
 Uvědomte si, že nemůžete použít nabídku „{{int:emailuser}}“, jestliže ve svém [[Special:Preferences|nastavení]] nemáte uvedenu platnou e-mailovou adresu nebo pokud vám byla tato možnost zakázána.
 Vaše současná IP adresa je $6.
 Ve všech dotazech na správce uvádějte všechny výše zobrazené informace.",
+	'globalblocking-ipblocked-xff' => "'''Jeden nebo více proxy serverů, které váš požadavek použivá, bylo globálně zablokováno.'''
+
+Zablokování provedl $1 ($2).
+Udaným důvodem bylo ''$3''.
+
+* Začátek blokování: $4
+* Zablokování vyprší: $5
+
+Pokud chcete zablokování prodiskutovat, můžete kontaktovat uživatele $1.
+Uvědomte si, že nemůžete použít nabídku „{{int:emailuser}}“, jestliže ve svém [[Special:Preferences|nastavení]] nemáte uvedenu platnou e-mailovou adresu nebo pokud vám byla tato možnost zakázána.
+Vaše současná IP adresa je $6.
+Ve všech dotazech na správce uvádějte všechny výše zobrazené informace.",
 	'globalblocking-blocked-nopassreset' => 'Nemůžete žádat o zaslání nového hesla, protože jste globálně {{GENDER:|zablokován|zablokována|zablokován}}.',
 	'globalblocking-logpage' => 'Kniha globálních zablokování',
 	'globalblocking-logpagetext' => 'Toto je kniha globální blokování a jejich uvolnění provedených na této wiki.
@@ -2287,9 +2299,8 @@ Zde je pro přehled zobrazen výpis z knihy zablokování:',
 	'globalblock' => 'Globálně zablokovat IP adresu',
 	'globalblockstatus' => 'Místní stav globálního blokování',
 	'removeglobalblock' => 'Odstranit globální zablokování',
-	'right-globalblock' => 'Globální blokování',
+	'right-globalblock' => 'Tvorba a rušení globálních zablokování',
 	'action-globalblock' => 'globálně blokovat',
-	'right-globalunblock' => 'Rušení globálních blokování',
 	'action-globalunblock' => 'rušit globální blokování',
 	'right-globalblock-whitelist' => 'Definování výjimek z globálního zablokování',
 	'action-globalblock-whitelist' => 'definovat výjimky z globálního zablokování',
