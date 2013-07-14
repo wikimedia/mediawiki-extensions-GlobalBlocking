@@ -12880,6 +12880,7 @@ $1',
  * @author Anakmalaysia
  * @author Bencmq
  * @author Breawycker
+ * @author Byfserag
  * @author Gaoxuewei
  * @author Hydra
  * @author Liangent
@@ -13006,9 +13007,8 @@ $1',
 	'globalblock' => '全局封禁IP地址',
 	'globalblockstatus' => '全域封锁的本地状态',
 	'removeglobalblock' => '移除一个全域封锁',
-	'right-globalblock' => '进行全域封锁',
+	'right-globalblock' => '进行或解封全域封锁',
 	'action-globalblock' => '进行全域封锁',
-	'right-globalunblock' => '移除全域封锁',
 	'action-globalunblock' => '删除全域封锁',
 	'right-globalblock-whitelist' => '在本地停用全域封锁',
 	'action-globalblock-whitelist' => '本地禁用全域封锁',
