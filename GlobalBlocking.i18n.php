@@ -2141,6 +2141,7 @@ Per més detalls, a continuació es mostra el registre de bloquejos:',
  * @author Умар
  */
 $messages['ce'] = array(
+	'globalblocking-modify-intro' => 'Ахьа лело мега хӀара форма глобальни блоктохаран параметраш хийца.',
 	'globalblocking-block-reason' => 'Бахьан:',
 	'globalblocking-block-reasonotherlist' => 'Кхин бахьан',
 	'globalblocking-block-edit-dropdown' => 'Бахьанин список нисяр',
@@ -2151,6 +2152,7 @@ $messages['ce'] = array(
 я йолуш йолу блоктохаран параметрш хийца, юха хӀара форма дӀаяхьитина.',
 	'globalblocking-list' => 'МогIам, массанхьа блоктоьхна IP-адресаш',
 	'globalblocking-list-expiry' => 'чекхйолу $1',
+	'globalblocking-goto-status' => 'Хийца хьал глобальни блоетохаран',
 	'globalblocking-unblock-reason' => 'Бахьан:',
 	'globalblocking-unblock-intro' => 'Хьан йиш ю лело хӀара форма глобальни блок дӀайокхуш.',
 	'globalblocking-whitelist' => 'ХӀоттайелчаьрца долу хьал, глобальни блоктохарна',
@@ -2158,9 +2160,11 @@ $messages['ce'] = array(
 	'globalblocking-whitelist-reason' => 'Бахьан:',
 	'globalblocking-whitelist-status' => 'Хьал:',
 	'globalblocking-whitelist-statuslabel' => 'ДӀаяккха хӀара глобальни блок {{grammar:genitive|{{SITENAME}}}} чохь',
+	'globalblocking-whitelist-submit' => 'Хьал хийцар',
+	'globalblocking-whitelist-errors' => 'Глобальни блоктохаран хьал хийца тар цаделира. $1 Бахьна:', # Fuzzy
 	'globalblocking-whitelist-intro' => 'Хьан йиш ю лело хӀара форма глобальни блокана хийцамаш бан.
-ХӀокху вмки чохь глобални блокдӀаяккхахь цхьа долу IP-адрес лелош болу декъашхошна таро хир ю тамехь тадарш дан.
-[[Special:GlobalBlockList|ЮхагӀо глобални блоктохаран списке хьажа]].',
+ХӀокху вики чохь глобальни блокдӀаяккхахь цхьа долу IP-адрес лелош болу декъашхошна таро хир ю тамехь тадарш дан.
+[[Special:GlobalBlockList|ЮхагӀо глобальни блоктохаран списке хьажа]].',
 	'globalblocking-logentry-expiry' => 'чекхйолу $1',
 	'globalblocklist' => 'МогIам, массанхьа блоктоьхна IP-адресаш',
 	'globalblockstatus' => 'Хlоттайелчаьрца долу хьал, масхьара сацорца',
