@@ -9284,6 +9284,7 @@ $messages['ps'] = array(
  * @author Hamilton Abreu
  * @author João Sousa
  * @author Lijealso
+ * @author Luckas
  * @author Malafaya
  * @author SandroHc
  * @author Waldir
@@ -9337,7 +9338,7 @@ Por favor, introduza um endereço IP válido.',
 	'globalblocking-list-expiry' => 'expira $1',
 	'globalblocking-list-anononly' => 'só anónimos',
 	'globalblocking-list-unblock' => 'desbloquear',
-	'globalblocking-list-whitelisted' => 'localmente desactivado por $1: $2',
+	'globalblocking-list-whitelisted' => 'localmente desativado por $1: $2',
 	'globalblocking-list-whitelist' => 'estado local',
 	'globalblocking-list-modify' => 'modificar',
 	'globalblocking-list-noresults' => 'O endereço IP solicitado não está bloqueado.',
@@ -9372,12 +9373,12 @@ logo o estado local de bloqueios globais não pode ser modificado.',
 [[Special:GlobalBlockList|Voltar à lista de bloqueios globais]].',
 	'globalblocking-whitelist-errors' => 'A sua alteração ao estado local de um bloqueio global não teve sucesso {{PLURAL:$1|pela seguinte razão|pelas seguintes razões}}:',
 	'globalblocking-whitelist-intro' => 'Pode usar este formulário para editar o estado local de um bloqueio global.
-Se um bloqueio global está desactivado nesta wiki, os utilizadores nos endereços IP afectados poderão editar normalmente.
+Se um bloqueio global está desativado nesta wiki, os utilizadores nos endereços IP afetados poderão editar normalmente.
 [[Special:GlobalBlockList|Voltar à lista de bloqueios globais]].',
 	'globalblocking-blocked-nopassreset' => 'Não pode repor palavras-chave de utilizadores porque está bloqueado globalmente.',
 	'globalblocking-logpage' => 'Registo de bloqueios globais',
 	'globalblocking-logpagetext' => 'Este é um registo de bloqueios globais que foram feitos e removidos nesta wiki.
-Deve ser notado que bloqueios globais podem também ser feitos e removidos noutras wikis e que esses bloqueios poderão afectar esta wiki.
+Deve ser notado que bloqueios globais podem também ser feitos e removidos noutras wikis e que esses bloqueios poderão afetar esta wiki.
 Para ver todos os bloqueios globais, consulte a [[Special:GlobalBlockList|lista de bloqueios globais]].',
 	'globalblocking-block-logentry' => 'bloqueou globalmente [[$1]] com um tempo de expiração de $2',
 	'globalblocking-block2-logentry' => 'bloqueou globalmente [[$1]] ($2)',
@@ -9394,8 +9395,7 @@ Para sua referência, é apresentado abaixo o registo de bloqueios:',
 	'globalblock' => 'Bloquear um endereço IP globalmente',
 	'globalblockstatus' => 'Estado local de bloqueios globais',
 	'removeglobalblock' => 'Remover um bloqueio global',
-	'right-globalblock' => 'Fazer bloqueios globais',
-	'right-globalunblock' => 'Remover bloqueios globais',
+	'right-globalblock' => 'Fazer bloqueios globais', # Fuzzy
 	'right-globalblock-whitelist' => 'Desactivar bloqueios globais localmente',
 	'right-globalblock-exempt' => 'Contornar bloqueios globais',
 );
