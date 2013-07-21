@@ -2148,7 +2148,7 @@ $messages['ce'] = array(
 	'globalblocking-block-expiry-otherfield' => 'Кхин хан:',
 	'globalblocking-block-alreadyblocked' => 'IP-адрес $1 хӀийнцале глобально блоктоьхна ду.
 Хьан йиш ю дулуш долу блоктохаршка хьажа [[Special:GlobalBlockList|глобальни блоктохарши могӀам]]
-я йолуш йолу блоктохаран параметрш хийца, юха хӀара форма дӀаяхьитина.',
+я йолуш йолу блоктохаран параметраш хийца, юха хӀара форма дӀаяхьитина.',
 	'globalblocking-list' => 'МогIам, массанхьа блоктоьхна IP-адресаш',
 	'globalblocking-list-expiry' => 'чекхйолу $1',
 	'globalblocking-goto-status' => 'Хийца хьал глобальни блоетохаран',
@@ -4830,8 +4830,7 @@ $messages['he'] = array(
 	'globalblockstatus' => 'המצב המקומי של החסימות הגלובליות',
 	'removeglobalblock' => 'הסרת חסימה גלובלית',
 	'right-globalblock' => 'יצירה והסרה של חסימות גלובליות',
-	'action-globalblock' => 'לעשות חסימות גלובליות',
-	'action-globalunblock' => 'לשחרר חסימות גלובליות',
+	'action-globalblock' => 'לעשות חסימות גלובליות', # Fuzzy
 	'right-globalblock-whitelist' => 'ביטול חסימות גלובליות באופן מקומי',
 	'action-globalblock-whitelist' => 'לכבות חסימות גלובליות באופן מקומי',
 	'right-globalblock-exempt' => 'עקיפת חסימות גלובליות',
@@ -6703,8 +6702,7 @@ $messages['ko'] = array(
 	'globalblockstatus' => '전체 차단의 로컬 상태',
 	'removeglobalblock' => '전체 차단을 해제',
 	'right-globalblock' => '전체 위키 차단과 차단 해제',
-	'action-globalblock' => '전체 위키 차단을 할',
-	'action-globalunblock' => '전체 위키 차단을 해제할',
+	'action-globalblock' => '전체 위키 차단을 할', # Fuzzy
 	'right-globalblock-whitelist' => '로컬에서 전체 차단을 비활성화',
 	'action-globalblock-whitelist' => '로컬에서 전체 차단을 비활성화할',
 	'right-globalblock-exempt' => '전체 차단을 우회',
@@ -8385,8 +8383,7 @@ Het blokkeerlogboek wordt hieronder weergegeven:',
 	'globalblockstatus' => 'Lokale status van globale blokkades',
 	'removeglobalblock' => 'Globale blokkade verwijderen',
 	'right-globalblock' => 'Globale blokkades instellen en verwijderen',
-	'action-globalblock' => 'globale blokkades in te stellen',
-	'action-globalunblock' => 'global blokkades te verwijderen',
+	'action-globalblock' => 'globale blokkades in te stellen', # Fuzzy
 	'right-globalblock-whitelist' => 'Globale blokkades lokaal negeren',
 	'action-globalblock-whitelist' => 'globale blokkades lokaal te negeren',
 	'right-globalblock-exempt' => 'Globale blokkades omzeilen',
@@ -13015,8 +13012,7 @@ $1',
 	'globalblockstatus' => '全域封锁的本地状态',
 	'removeglobalblock' => '移除一个全域封锁',
 	'right-globalblock' => '进行或解封全域封锁',
-	'action-globalblock' => '进行全域封锁',
-	'action-globalunblock' => '删除全域封锁',
+	'action-globalblock' => '进行全域封锁', # Fuzzy
 	'right-globalblock-whitelist' => '在本地停用全域封锁',
 	'action-globalblock-whitelist' => '本地禁用全域封锁',
 	'right-globalblock-exempt' => '绕过全域封锁',
