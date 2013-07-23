@@ -73,6 +73,13 @@ $specialPageAliases['bs'] = array(
 	'GlobalBlockStatus' => array( 'GlobalniDopusteniSpisak' ),
 );
 
+/** Chechen (нохчийн) */
+$specialPageAliases['ce'] = array(
+	'GlobalBlock' => array( 'Глобальни_блоктохар' ),
+	'GlobalBlockList' => array( 'Глобальни_блоктохаршан_могӀам' ),
+	'RemoveGlobalBlock' => array( 'Глобальни_блокдӀаяккхар' ),
+);
+
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'GlobalBlock' => array( 'Globale_Sperre' ),
