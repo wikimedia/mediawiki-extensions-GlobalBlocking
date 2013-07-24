@@ -2149,22 +2149,32 @@ $messages['ce'] = array(
 	'globalblocking-block-alreadyblocked' => 'IP-адрес $1 хӀийнцале глобально блоктоьхна ду.
 Хьан йиш ю дулуш долу блоктохаршка хьажа [[Special:GlobalBlockList|глобальни блоктохарши могӀам]]
 я йолуш йолу блоктохаран параметраш хийца, юха хӀара форма дӀаяхьитина.',
+	'globalblocking-list-intro' => 'ХӀара бу блоктоьхна болу декъашхойн могӀам.',
 	'globalblocking-list' => 'МогIам, массанхьа блоктоьхна IP-адресаш',
+	'globalblocking-search-legend' => 'Глобальни блоктохарш лахар',
 	'globalblocking-search-submit' => 'Лаха блоктоьхарш',
+	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') глобальни блоктоьхна [[Special:Contributions/\$4|\$4]] ''(\$5)''",
 	'globalblocking-list-expiry' => 'чекхйолу $1',
+	'globalblocking-list-whitelist' => 'локальни хьал',
 	'globalblocking-goto-status' => 'Хийца хьал глобальни блоетохаран',
 	'globalblocking-unblock-reason' => 'Бахьан:',
 	'globalblocking-unblock-intro' => 'Хьан йиш ю лело хӀара форма глобальни блок дӀайокхуш.',
-	'globalblocking-whitelist' => 'ХӀоттайелчаьрца долу хьал, глобальни блоктохарна',
+	'globalblocking-whitelist' => 'Глобальни блоктохаран локальни хьал',
 	'globalblocking-whitelist-legend' => 'Хьал хийцар',
 	'globalblocking-whitelist-reason' => 'Бахьан:',
-	'globalblocking-whitelist-status' => 'Хьал:',
+	'globalblocking-whitelist-status' => 'Локальни хьал:',
 	'globalblocking-whitelist-statuslabel' => 'ДӀаяккха хӀара глобальни блок {{grammar:genitive|{{SITENAME}}}} чохь',
-	'globalblocking-whitelist-submit' => 'Хьал хийцар',
+	'globalblocking-whitelist-submit' => 'Локальни хьал хийца',
+	'globalblocking-whitelist-successsub' => 'Локальни хьал кхиамца хийцина',
 	'globalblocking-whitelist-errors' => 'Глобальни блоктохаран хьал хийца тар цаделира. $1 Бахьна:', # Fuzzy
 	'globalblocking-whitelist-intro' => 'Хьан йиш ю лело хӀара форма глобальни блокана хийцамаш бан.
 ХӀокху вики чохь глобальни блокдӀаяккхахь цхьа долу IP-адрес лелош болу декъашхошна таро хир ю тамехь тадарш дан.
 [[Special:GlobalBlockList|ЮхагӀо глобальни блоктохаран списке хьажа]].',
+	'globalblocking-logpage' => 'Глобальни блоктоьхарш болу тептар',
+	'globalblocking-logpagetext' => 'ХӀара ду хӀокху вики чохь глобальни блоктохаршан а блокдӀаяккхаршан а тептар.
+Массо глобальни  блоктохарше хьажа  [[Special:GlobalBlockList|кхузахь]].',
+	'globalblocking-block-logentry' => 'глобальни блоктоьхна [[$1]] $2 ханна',
+	'globalblocking-block2-logentry' => 'глобальни блоктоьхна [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'чекхйолу $1',
 	'globalblocklist' => 'МогIам, массанхьа блоктоьхна IP-адресаш',
 	'globalblockstatus' => 'ХӀоттайелчаьрца долу хьал, глобальни блоктохарна',
@@ -3553,8 +3563,7 @@ Allpool on toodud blokeerimislogi:',
 	'globalblockstatus' => 'Globaalsete blokeeringute kohalik olek',
 	'removeglobalblock' => 'Eemalda globaalne blokeering',
 	'right-globalblock' => 'Lisada ja eemaldada globaalseid blokeeringuid',
-	'action-globalblock' => 'globaalselt blokeerida',
-	'action-globalunblock' => 'eemaldada globaalseid blokeeringuid',
+	'action-globalblock' => 'globaalseid blokeeringuid lisada ega eemaldada',
 	'right-globalblock-whitelist' => 'Kohalikus vikis globaalseid blokeeringuid välja lülitada',
 	'action-globalblock-whitelist' => 'kohalikus vikis globaalseid blokeeringuid välja lülitada',
 	'right-globalblock-exempt' => 'Mööduda globaalsetest blokeeringutest',
@@ -9769,10 +9778,8 @@ L'archivije de le blocche t'avène date aqquà sotte pe conzultazione:",
 	'globalblock' => "Blocche globalmende 'n'indirizze IP",
 	'globalblockstatus' => 'State locale de le blocche globale',
 	'removeglobalblock' => "Live 'nu blocche globale",
-	'right-globalblock' => 'Mitte le blocche globale',
-	'action-globalblock' => 'mitte le blocche globbale',
-	'right-globalunblock' => 'Live le blocche globale',
-	'action-globalunblock' => 'live le blocche globbale',
+	'right-globalblock' => 'Sckaffe e live le blocche globbale',
+	'action-globalblock' => 'sckaffe e live le blocche globbale',
 	'right-globalblock-whitelist' => 'Disabbilete le blocche globale localmende',
 	'action-globalblock-whitelist' => 'disabbilete le blocche globbale localmende',
 	'right-globalblock-exempt' => 'Zumbe le blocche globale',
@@ -11199,6 +11206,7 @@ $messages['su'] = array(
  * @author Fluff
  * @author GameOn
  * @author Jon Harald Søby
+ * @author Jopparn
  * @author M.M.S.
  * @author Per
  * @author Rotsee
@@ -11305,13 +11313,12 @@ Blockeringsloggen visas nedan som referens:',
 	'globalblock' => 'Blockera en IP-adress globalt',
 	'globalblockstatus' => 'Lokal status för globala blockeringar',
 	'removeglobalblock' => 'Ta bort en global blockering',
-	'right-globalblock' => 'Göra globala blockeringar',
-	'action-globalblock' => 'skapa globala blockeringar',
-	'right-globalunblock' => 'Ta bort globala blockeringar',
-	'action-globalunblock' => 'ta bort globala blockeringar',
+	'right-globalblock' => 'Skapa och ta bort globala blockeringar',
+	'action-globalblock' => 'skapa och ta bort globala blockeringar',
 	'right-globalblock-whitelist' => 'Slå av globala blockeringar lokalt',
 	'action-globalblock-whitelist' => 'Inaktivera globala blockeringar lokalt',
 	'right-globalblock-exempt' => 'Gå förbi globala blockeringar',
+	'action-globalblock-exempt' => 'Gå runt globala blockeringar',
 );
 
 /** Swahili (Kiswahili)
