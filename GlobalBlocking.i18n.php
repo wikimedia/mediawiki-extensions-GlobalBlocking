@@ -2150,12 +2150,13 @@ $messages['ce'] = array(
 Хьан йиш ю дулуш долу блоктохаршка хьажа [[Special:GlobalBlockList|глобальни блоктохарши могӀам]]
 я йолуш йолу блоктохаран параметраш хийца, юха хӀара форма дӀаяхьитина.',
 	'globalblocking-list-intro' => 'ХӀара бу блоктоьхна болу декъашхойн могӀам.',
-	'globalblocking-list' => 'МогIам, массанхьа блоктоьхна IP-адресаш',
+	'globalblocking-list' => 'Глобальни блоктоьхна IP-адресин могӀам',
 	'globalblocking-search-legend' => 'Глобальни блоктохарш лахар',
 	'globalblocking-search-submit' => 'Лаха блоктоьхарш',
 	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') глобальни блоктоьхна [[Special:Contributions/\$4|\$4]] ''(\$5)''",
 	'globalblocking-list-expiry' => 'чекхйолу $1',
 	'globalblocking-list-whitelist' => 'локальни хьал',
+	'globalblocking-list-noresults' => 'И адрес блоктоьхна дац.',
 	'globalblocking-goto-status' => 'Хийца хьал глобальни блоетохаран',
 	'globalblocking-unblock-reason' => 'Бахьан:',
 	'globalblocking-unblock-intro' => 'Хьан йиш ю лело хӀара форма глобальни блок дӀайокхуш.',
@@ -2176,7 +2177,7 @@ $messages['ce'] = array(
 	'globalblocking-block-logentry' => 'глобальни блоктоьхна [[$1]] $2 ханна',
 	'globalblocking-block2-logentry' => 'глобальни блоктоьхна [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'чекхйолу $1',
-	'globalblocklist' => 'МогIам, массанхьа блоктоьхна IP-адресаш',
+	'globalblocklist' => 'Глобальни блоктоьхна IP-адресин могӀам',
 	'globalblockstatus' => 'ХӀоттайелчаьрца долу хьал, глобальни блоктохарна',
 );
 
@@ -8385,7 +8386,7 @@ Het blokkeerlogboek wordt hieronder weergegeven:',
 	'globalblockstatus' => 'Lokale status van globale blokkades',
 	'removeglobalblock' => 'Globale blokkade verwijderen',
 	'right-globalblock' => 'Globale blokkades instellen en verwijderen',
-	'action-globalblock' => 'globale blokkades in te stellen', # Fuzzy
+	'action-globalblock' => 'globale blokkades in te stellen en te verwijderen',
 	'right-globalblock-whitelist' => 'Globale blokkades lokaal negeren',
 	'action-globalblock-whitelist' => 'globale blokkades lokaal te negeren',
 	'right-globalblock-exempt' => 'Globale blokkades omzeilen',
