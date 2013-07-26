@@ -9791,6 +9791,7 @@ L'archivije de le blocche t'avène date aqquà sotte pe conzultazione:",
  * @author DR
  * @author Dim Grits
  * @author Ferrer
+ * @author KPu3uC B Poccuu
  * @author Kaganer
  * @author Александр Сигачёв
  */
@@ -9914,10 +9915,8 @@ $1',
 	'globalblock' => 'Глобальная блокировка IP-адреса',
 	'globalblockstatus' => 'Локальные состояния глобальных блокировок',
 	'removeglobalblock' => 'Снять глобальную блокировку',
-	'right-globalblock' => 'наложение глобальных блокировок',
-	'action-globalblock' => 'наложение глобальных блокировок',
-	'right-globalunblock' => 'снятие глобальных блокировок',
-	'action-globalunblock' => 'снятие глобальных блокировок',
+	'right-globalblock' => 'Наложение и снятие глобальных блокировок',
+	'action-globalblock' => 'наложение и снятие глобальных блокировок',
 	'right-globalblock-whitelist' => 'локальное отключение глобальных блокировок',
 	'action-globalblock-whitelist' => 'локальное отключение глобальных блокировок',
 	'right-globalblock-exempt' => 'обход глобальных блокировок',
