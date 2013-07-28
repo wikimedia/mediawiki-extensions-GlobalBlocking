@@ -12888,6 +12888,7 @@ $1',
  * @author Hydra
  * @author Liangent
  * @author Linforest
+ * @author Liuxinyu970226
  * @author Mark85296341
  * @author PhiLiP
  * @author Shinjiman
@@ -12992,6 +12993,18 @@ $1',
 您不能使用“{{int:emailuser}}”功能，除非在您的[[Special:Preferences|帐户参数设置]]中设定了一个有效的电子邮件地址，并且该功能没有被此次封禁所禁用。
 您当前的IP地址是 $6。
 请在提出任何异议时提供上述所有信息。",
+	'globalblocking-ipblocked-xff' => "'''您要使用的一个或更多的代理服务器已被全局封禁'''
+
+封禁由$1 ($2)执行。
+给出的原因是''$3''。
+
+* 封禁开始时间：$4
+* 封禁结束时间：$5
+
+您可以与$1联系以讨论此次封禁。
+您不能使用“{{int:emailuser}}”功能，除非在您的[[Special:Preferences|帐户参数设置]]中设定了一个有效的电子邮件地址，并且此次封禁未禁用该功能。
+您当前的代理地址是 $6。
+请在提出任何异议时提供上述所有信息。",
 	'globalblocking-blocked-nopassreset' => '您无法修改用户密码，因为您正被全域封锁。',
 	'globalblocking-logpage' => '全局封禁日志',
 	'globalblocking-logpagetext' => '这个是在这个wiki中的全域封锁日志。要留意的是全域封锁可以在其它的wiki中被创建和移除并且会影响到这个wiki。要查看活跃的全域封锁，您可以去参阅[[Special:GlobalBlockList|全域封锁名单]]。',
@@ -13011,7 +13024,7 @@ $1',
 	'globalblockstatus' => '全域封锁的本地状态',
 	'removeglobalblock' => '移除一个全域封锁',
 	'right-globalblock' => '进行或解封全域封锁',
-	'action-globalblock' => '进行全域封锁', # Fuzzy
+	'action-globalblock' => '进行或解除全域封锁',
 	'right-globalblock-whitelist' => '在本地停用全域封锁',
 	'action-globalblock-whitelist' => '本地禁用全域封锁',
 	'right-globalblock-exempt' => '绕过全域封锁',
