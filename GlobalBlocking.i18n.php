@@ -2192,6 +2192,7 @@ $messages['ckb'] = array(
 	'globalblocking-search-ip' => 'ناونیشانی ئایپی:',
 	'globalblocking-unblock-reason' => 'هۆکار:',
 	'globalblocking-whitelist-reason' => 'هۆکار:',
+	'right-globalblock-whitelist' => 'ناچالاککردنی خۆماڵیی بەربەستنە سەرانسەرییەکان',
 );
 
 /** Czech (česky)
