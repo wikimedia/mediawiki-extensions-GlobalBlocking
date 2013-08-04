@@ -2189,6 +2189,7 @@ $messages['ckb'] = array(
 	'globalblocking-search-ip' => 'ناونیشانی ئایپی:',
 	'globalblocking-unblock-reason' => 'هۆکار:',
 	'globalblocking-whitelist-reason' => 'هۆکار:',
+	'right-globalblock' => 'دروستکردن و لابردنی بەربەستنە جیھانییەکان',
 	'right-globalblock-whitelist' => 'ناچالاککردنی خۆماڵیی بەربەستنە سەرانسەرییەکان',
 );
 
@@ -5515,10 +5516,8 @@ Le registro de blocadas es fornite ci infra pro referentia:',
 	'globalblock' => 'Blocar globalmente un adresse IP',
 	'globalblockstatus' => 'Stato local de blocadas global',
 	'removeglobalblock' => 'Remover un blocada global',
-	'right-globalblock' => 'Facer blocadas global',
-	'action-globalblock' => 'facer blocadas global',
-	'right-globalunblock' => 'Remover blocadas global',
-	'action-globalunblock' => 'remover blocadas global',
+	'right-globalblock' => 'Blocar e disblocar globalmente',
+	'action-globalblock' => 'blocar o disblocar globalmente',
 	'right-globalblock-whitelist' => 'Disactivar blocadas global localmente',
 	'action-globalblock-whitelist' => 'disactivar blocadas global localmente',
 	'right-globalblock-exempt' => 'Contornar blocadas global',
@@ -6596,7 +6595,7 @@ $messages['ko'] = array(
 	'globalblocking-block-options' => '설정:',
 	'globalblocking-ipaddress' => 'IP 주소:',
 	'globalblocking-ipbanononly' => '익명 사용자만 차단',
-	'globalblocking-block-errors' => '다음 {{PLURAL:$1|이유로|$1가지 이유로}} 인해 차단하는 데 실패하였습니다:',
+	'globalblocking-block-errors' => '다음 {{PLURAL:$1|이유}}로 인해 차단하는 데 실패하였습니다:',
 	'globalblocking-block-ipinvalid' => '입력한 IP 주소 ($1) 가 잘못되었습니다.
 계정 이름을 입력할 수 없다는 것을 참고하시기 바랍니다!',
 	'globalblocking-block-expiryinvalid' => '입력한 기한($1)이 잘못되었습니다.',
@@ -6618,7 +6617,7 @@ $messages['ko'] = array(
 	'globalblocking-search-submit' => '차단 찾기',
 	'globalblocking-list-ipinvalid' => '입력한 IP 주소 ($1)가 잘못되었습니다.
 유효한 IP 주소를 입력해주세요.',
-	'globalblocking-search-errors' => '검색에 실패했습니다. 아래의 {{PLURAL:$1|원인}}를 확인해주세요.',
+	'globalblocking-search-errors' => '검색에 실패했습니다. {{PLURAL:$1|이유}}는 다음과 같습니다:',
 	'globalblocking-list-blockitem' => '$1: <span class="plainlinks">\'\'\'$2\'\'\'</span> ($3) 이(가) [[Special:Contributions/$4|$4]] 을(를) 전역 차단하였습니다. ($5)',
 	'globalblocking-list-expiry' => '기한 $1',
 	'globalblocking-list-anononly' => '익명 사용자만',
