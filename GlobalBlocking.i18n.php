@@ -2152,6 +2152,7 @@ $messages['ce'] = array(
 	'globalblocking-search-submit' => 'Лаха блоктоьхарш',
 	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') глобальни блоктоьхна [[Special:Contributions/\$4|\$4]] ''(\$5)''",
 	'globalblocking-list-expiry' => 'чекхйолу $1',
+	'globalblocking-list-anononly' => 'цӀе хьулйина декъашхойн бен',
 	'globalblocking-list-whitelist' => 'локальни хьал',
 	'globalblocking-list-noresults' => 'И адрес блоктоьхна дац.',
 	'globalblocking-goto-status' => 'Хийца хьал глобальни блоетохаран',
