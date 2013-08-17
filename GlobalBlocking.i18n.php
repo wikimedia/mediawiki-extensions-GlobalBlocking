@@ -4838,7 +4838,7 @@ $messages['he'] = array(
 	'globalblockstatus' => 'המצב המקומי של החסימות הגלובליות',
 	'removeglobalblock' => 'הסרת חסימה גלובלית',
 	'right-globalblock' => 'יצירה והסרה של חסימות גלובליות',
-	'action-globalblock' => 'לעשות חסימות גלובליות', # Fuzzy
+	'action-globalblock' => 'ליצור ולהסיר חסימות גלובליות',
 	'right-globalblock-whitelist' => 'ביטול חסימות גלובליות באופן מקומי',
 	'action-globalblock-whitelist' => 'לכבות חסימות גלובליות באופן מקומי',
 	'right-globalblock-exempt' => 'עקיפת חסימות גלובליות',
@@ -6617,7 +6617,7 @@ $messages['ko'] = array(
 	'globalblocking-search-ip' => 'IP 주소:',
 	'globalblocking-search-submit' => '차단 찾기',
 	'globalblocking-list-ipinvalid' => '입력한 IP 주소 ($1)가 잘못되었습니다.
-유효한 IP 주소를 입력해주세요.',
+할바른 IP 주소를 입력해주세요.',
 	'globalblocking-search-errors' => '검색에 실패했습니다. {{PLURAL:$1|이유}}는 다음과 같습니다:',
 	'globalblocking-list-blockitem' => '$1: <span class="plainlinks">\'\'\'$2\'\'\'</span> ($3) 이(가) [[Special:Contributions/$4|$4]] 을(를) 전역 차단하였습니다. ($5)',
 	'globalblocking-list-expiry' => '기한 $1',
@@ -12146,6 +12146,7 @@ $messages['ug-arab'] = array(
 /** Ukrainian (українська)
  * @author AS
  * @author Ahonc
+ * @author Andriykopanytsia
  * @author Base
  * @author Dim Grits
  * @author Microcell
@@ -12273,10 +12274,8 @@ $messages['uk'] = array(
 	'globalblock' => 'Глобальне блокування IP-адреси',
 	'globalblockstatus' => 'Локальний стан глобальних блокувань',
 	'removeglobalblock' => 'Зняти глобальне блокування',
-	'right-globalblock' => 'накладання глобальних блокувань',
-	'action-globalblock' => 'накладання глобального блокування',
-	'right-globalunblock' => 'зняття глобальних блокувань',
-	'action-globalunblock' => 'зняття глобального блокування',
+	'right-globalblock' => 'Накладання і вилучення глобальних блокувань',
+	'action-globalblock' => 'накласти і вилучити глобальні блокування',
 	'right-globalblock-whitelist' => 'Локальне відключення глобального блокування',
 	'action-globalblock-whitelist' => 'локальне відключення глобального блокування',
 	'right-globalblock-exempt' => 'Обхід глобальних блокувань',
