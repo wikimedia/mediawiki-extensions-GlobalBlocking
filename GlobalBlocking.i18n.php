@@ -201,6 +201,8 @@ For more information about Global Blocking, see http://www.mediawiki.org/wiki/Gl
 	'globalblocking-block-errors' => "The first line of the error message shown on [[Special:GlobalBlock]] (see [[mw:Extension:GlobalBlocking]]) if the block has been unsuccessful.
 
 After this message, a list of specific errors is shown (see {{msg-mw|Globalblocking-block-bigrange}}, {{msg-mw|Globalblocking-block-expiryinvalid}} etc.).
+
+Parameters:
 * $1 – the ''number'' of errors (not the errors themselves)
 See also:
 * {{msg-mw|Globalblocking-search-errors}}",
@@ -225,12 +227,23 @@ See also:
 * {{msg-mw|Globalblocking-modify-success}} - main message',
 	'globalblocking-block-alreadyblocked' => 'Used as error message. Parameters:
 * $1 - IP address',
-	'globalblocking-block-bigrange' => 'Not clear at all what the English message means about ranges. Unfortunately, http://www.mediawiki.org/wiki/Extension:GlobalBlocking supplies no explanation whatsoever.',
+	'globalblocking-block-bigrange' => 'Used as error message.
+
+The user specify the IP range by the start and end IP addresses.
+
+But if the specified IP range crosses a /16 boundary, this error occurs.
+
+Parameters:
+* $1 - the IP range (contains the start and end IP addresses)',
 	'globalblocking-list-intro' => 'Appears on top of [[Special:Globalblocklist]] (part of [[mw:Extension:GlobalBlocking|Extension:GlobalBlocking]], which is not installed on translatewiki.net; example: [[wikipedia:Special:Globalblocklist]]).',
 	'globalblocking-search-ip' => '{{Identical|IP address}}',
 	'globalblocking-list-ipinvalid' => 'Used as error message in Special:GlobalBlockList. Parameters:
 * $1 - IP address',
-	'globalblocking-search-errors' => 'See also:
+	'globalblocking-search-errors' => 'Unused at this time.
+
+Parameters:
+* $1 - number of reasons
+See also:
 * {{msg-mw|Globalblocking-block-errors}}',
 	'globalblocking-list-blockitem' => '* $1 is a time stamp
 * $2 is the blocking user
@@ -280,7 +293,15 @@ Parameters:
 * $4 - a timestamp for when the block was set
 * $5 - a timestamp for when the block will expire (or {{msg-mw|infiniteblock}})
 * $6 - the IP address of the globally blocked user',
-	'globalblocking-ipblocked-xff' => "A message shown to users who have one or more proxies in their XFF header who's IP are blocked.",
+	'globalblocking-ipblocked-xff' => "A message shown to users who have one or more proxies in their XFF header who's IP are blocked.
+
+Parameters:
+* $1 - username
+* $2 - wikiname
+* $3 - reason
+* $4 - start timestamp of block; localized timestamp
+* $5 - expiry timestamp of block; localized timestamp or the message {{msg-mw|Infiniteblock}}
+* $6 - IP address which is blocked",
 	'globalblocking-logpage' => '{{doc-logpage}}',
 	'globalblocking-logpagetext' => 'Shown as header of [[Special:Log/gblblock]] (part of [[mw:Extension:GlobalBlocking|Extension:GlobalBlocking]], which is not installed on translatewiki.net; example: [[wikipedia:Special:Log/gblblock]])',
 	'globalblocking-block-logentry' => 'Used as a log entry. Parameters:
@@ -312,7 +333,6 @@ For an example see [{{canonicalurl:meta:Special:Log/gblblock|uselang=en}} meta:S
 	'removeglobalblock' => '{{doc-special|RemoveGlobalBlock}}',
 	'right-globalblock' => '{{doc-right|globalblock}}',
 	'action-globalblock' => '{{doc-action|globalblock}}',
-	'action-globalunblock' => '{{doc-action|globalunblock}}',
 	'right-globalblock-whitelist' => '{{doc-right|globalblock-whitelist}}',
 	'action-globalblock-whitelist' => '{{doc-action|globalblock-whitelist}}',
 	'right-globalblock-exempt' => '{{doc-right|globalblock-exempt}}',
