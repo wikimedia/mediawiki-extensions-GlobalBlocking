@@ -5687,9 +5687,9 @@ $messages['ig'] = array(
  */
 $messages['ilo'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Agpalubos]] kadagiti IP a pagtaengan a [[Special:GlobalBlockList|maserraan kadagiti amin a wiki]]',
-	'globalblocking-block' => 'Sangalubongan na a seraan ti IP a pagtaengan',
-	'globalblocking-modify-intro' => 'Mausar mo daytoy a kinabuklan ti pinagsukat dagiti kasasaad iti sangalubongan a serra.',
-	'globalblocking-block-intro' => 'Mausar mo daytoy a panid ti pinagserra ti IP a pagtaengan kadagiti amin a wiki.',
+	'globalblocking-block' => 'Sangalubongan a seraanna ti IP a pagtaengan',
+	'globalblocking-modify-intro' => 'Mausarmo daytoy a kinabuklan ti panagsukat kadagiti kasasaad iti sangalubongan a serra.',
+	'globalblocking-block-intro' => 'Mausarmo daytoy a panid ti panagserra ti IP a pagtaengan kadagiti amin a wiki.',
 	'globalblocking-block-reason' => 'Rason:',
 	'globalblocking-block-otherreason' => 'Sabali/dadduma pay a rason:',
 	'globalblocking-block-reasonotherlist' => 'Sabali a rason',
@@ -5699,36 +5699,36 @@ $messages['ilo'] = array(
 ** Bandalismo',
 	'globalblocking-block-edit-dropdown' => 'Urnosen dagiti rason ti panagserra',
 	'globalblocking-block-expiry' => 'Agpaso:',
-	'globalblocking-block-expiry-other' => 'Sabali pay a pinagpaso nga oras',
+	'globalblocking-block-expiry-other' => 'Sabali pay a panagpaso nga oras',
 	'globalblocking-block-expiry-otherfield' => 'Sabali nga oras:',
 	'globalblocking-block-legend' => 'Serraan ti IP a pagtaengan iti sangalubongan',
-	'globalblocking-block-options' => 'Dagiti pinagpilian:',
+	'globalblocking-block-options' => 'Dagiti pagpilian:',
 	'globalblocking-ipaddress' => 'IP a pagtaengan:',
 	'globalblocking-ipbanononly' => 'Serraan dagiti di am-ammo nga agar-aramat laeng',
-	'globalblocking-block-errors' => 'Napaay ti panagserram, kadagiti sumaganad {{PLURAL:$1|rason|dagiti rason}}:',
-	'globalblocking-block-ipinvalid' => 'Ti IP a pagtaengan ($1) nga inkabil mo ket imbalido.
-Pangngaasi a lagipem a saan ka a makaikabil ti nagan ti agar-aramat!',
-	'globalblocking-block-expiryinvalid' => 'Ti pinagpaso nga inkabil mo ($1) ket imbalido.',
+	'globalblocking-block-errors' => 'Napaay ti panagserram, para iti sumaganad a {{PLURAL:$1|rason|rasrason}}:',
+	'globalblocking-block-ipinvalid' => 'Ti IP a pagtaengan ($1) nga inkabilmo ket imbalido.
+Pangngaasi a lagipem a saanka a makaikabil ti nagan ti agar-aramat!',
+	'globalblocking-block-expiryinvalid' => 'Ti panagpaso nga inkabilmo ($1) ket imbalido.',
 	'globalblocking-block-submit' => 'Serraan daytoy nga IP a pagtaengan iti sangalubongan',
 	'globalblocking-modify-submit' => 'Baliwam daytoy sangalubongan a serra',
 	'globalblocking-block-success' => 'Ti IP a pagtaengan $1 ket nagballigi a naseraan kadagiti amin a gandat.',
 	'globalblocking-modify-success' => 'Ti sangalubongan a serra idiay $1 ket naballigi a nabaliwan',
 	'globalblocking-block-successsub' => 'Balligi ti sangalubongan a serra',
-	'globalblocking-modify-successsub' => 'Balligi ti pinagbaliw ti sangalubongan a serra',
+	'globalblocking-modify-successsub' => 'Balligi ti panagbaliw ti sangalubongan a serra',
 	'globalblocking-block-alreadyblocked' => 'Ti IP a pagtaengan $1 ket naserraan metten iti sangalubongan.
 Makitam ti addaan a serra idiay [[Special:GlobalBlockList|listaan dagiti sangalubongan a serra]],
-wenno baliwam ti kasasaad ti addaan a serra babaeten ti pinagited iti daytoy a kinabuklan.',
+wenno baliwam ti kasasaad ti addaan a serra babaeten ti panagited iti daytoy a kinabuklan.',
 	'globalblocking-block-bigrange' => 'Ti nasakup a nainaganan a ($1) ket dakkel unay a maserraan.
 Maserraam, ti kaaduuan a, 65, 536 a pagtaengan (/16 nasaksakup)',
 	'globalblocking-list-intro' => 'Daytoy ket listaan kadagiti amin a sangalubongan a serra nga agdama a banag.
-Adda dagiti serra a namarkaan a kas lokal a nabaldado: kayat na a sawen daytoy a naikabil da kadagit sabali a pagsaadan, ngem ti lokal nga administrador ket ipato na a nabaldado iti daytoy a wiki.',
+Adda dagiti serra a namarkaan a kas lokal a nabaldado: kayat na a sawen daytoy a naikabil da kadagit sabali a pagsaadan, ngem ti lokal nga administrador ket ipatona a nabaldado iti daytoy a wiki.',
 	'globalblocking-list' => 'Listaan dagiti naserraan nga IP a pagtaengan iti sangalubongan',
 	'globalblocking-search-legend' => 'Agbiruk iti sangalubongan a serra',
 	'globalblocking-search-ip' => 'IP a pagtaengan:',
 	'globalblocking-search-submit' => 'Agbiruk kadagiti serra',
-	'globalblocking-list-ipinvalid' => 'Ti IP a pagtaengan a biniruk mo iti ($1) ket imbalido.
-Pangngaasi ta agikabil iti umisu nga IP a pagtaengan.',
-	'globalblocking-search-errors' => 'Napaay ti pinagbiruk mo, kadagiti sumaganad {{PLURAL:$1|rason|dagiti rason}}:',
+	'globalblocking-list-ipinvalid' => 'Ti IP a pagtaengan a binirukmo iti ($1) ket imbalido.
+Pangngaasi nga agikabil iti umiso nga IP a pagtaengan.',
+	'globalblocking-search-errors' => 'Napaay ti pinagbirukmo, kadagiti sumaganad a {{PLURAL:$1|rason|rasrason}}:',
 	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') sangalubongan a naserraan [[Special:Contributions/\$4|\$4]] ''(\$5)''",
 	'globalblocking-list-expiry' => 'agpaso $1',
 	'globalblocking-list-anononly' => 'di amammo laeng',
@@ -5741,36 +5741,36 @@ Pangngaasi ta agikabil iti umisu nga IP a pagtaengan.',
 	'globalblocking-goto-unblock' => 'Ikkaten ti maysa a sangalubongan a serra',
 	'globalblocking-goto-status' => 'Sukatan ti lokal a kasasaad ti maysa a sangalubongan a serra',
 	'globalblocking-return' => 'Agsubli idiay listaan kadagiti sangalubongan a serra',
-	'globalblocking-notblocked' => 'Ti IP a pagtaengan ($1) nga inkabil mo ket saan saan a naserraan iti sangalubongan.',
+	'globalblocking-notblocked' => 'Ti IP a pagtaengan ($1) nga inkabilmo ket saan a naserraan iti sangalubongan.',
 	'globalblocking-unblock' => 'Ikkaten ti maysa a sangalubongan a serra',
-	'globalblocking-unblock-ipinvalid' => 'Ti IP a pagtaengan ($1) nga inkabil mo ket imbalido.
-Pangngaasi a lagipem a saan ka a makaikabil ti nagan ti agar-aramat!',
+	'globalblocking-unblock-ipinvalid' => 'Ti IP a pagtaengan ($1) nga inkabilmo ket imbalido.
+Pangngaasi a lagipem a saanka a makaikabil ti nagan ti agar-aramat!',
 	'globalblocking-unblock-legend' => 'Ikkaten ti maysa a sangalubongan a serra',
 	'globalblocking-unblock-submit' => 'Ikkaten ti sangalubongan a serra',
 	'globalblocking-unblock-reason' => 'Rason:',
-	'globalblocking-unblock-unblocked' => "Nagballigi ka ti panag-ikkat ti sangalubongan a serra #$2 idiay IP a pagtaengan '''$1'''",
-	'globalblocking-unblock-errors' => 'Napaay ti panagikkat mo ti sangalubongan a serra, kadagiti sumaganad {{PLURAL:$1|rason|dagiti rason}}:',
+	'globalblocking-unblock-unblocked' => "Nagballigika iti panag-ikkat ti sangalubongan a serra #$2 idiay IP a pagtaengan '''$1'''",
+	'globalblocking-unblock-errors' => 'Napaay ti panagikkatmo ti sangalubongan a serra, kadagiti sumaganad a {{PLURAL:$1|rason|rasrason}}:',
 	'globalblocking-unblock-successsub' => 'Balligi ti panagikkat ti sangalubongan a serra',
 	'globalblocking-unblock-subtitle' => 'Ikikkaten ti sangalubongan a serra',
-	'globalblocking-unblock-intro' => 'Mausar mo daytoy a kinabuklan ti panagikkat ti sangalubongan a serra.',
+	'globalblocking-unblock-intro' => 'Mausarmo daytoy a kinabuklan ti panagikkat ti sangalubongan a serra.',
 	'globalblocking-whitelist' => 'Lokal a kasasaad iti sangalubongan a serra',
-	'globalblocking-whitelist-notapplied' => 'TI sangalubongan a serra ket saan a naikabil ditoy a wiki,
+	'globalblocking-whitelist-notapplied' => 'Ti sangalubongan a serra ket saan a naikabil ditoy a wiki,
 ket ti lokal a kasaad iti sangalubongan a serra ket saan a mabaliwan.',
 	'globalblocking-whitelist-legend' => 'Sukatan ti lokal a kasasaad',
 	'globalblocking-whitelist-reason' => 'Rason:',
 	'globalblocking-whitelist-status' => 'Lokal a kasasaad:',
 	'globalblocking-whitelist-statuslabel' => 'Ibaldado daytoy a sangalubongan a serra idiay {{SITENAME}}',
 	'globalblocking-whitelist-submit' => 'Sukatan ti lokal a kasasaad',
-	'globalblocking-whitelist-whitelisted' => "Balligi ti pinagbaldadom ti sangalubongan a serra #$2 idiay IP a pagtaengan '''$1''' idiay {{SITENAME}}.",
-	'globalblocking-whitelist-dewhitelisted' => "Balligi ti pinagsublim ti sangalubongan a serra #$2 idiay IP a pagtaengan '''$1''' idiay {{SITENAME}}.",
+	'globalblocking-whitelist-whitelisted' => "Balligi ti panagbaldadom ti sangalubongan a serra #$2 idiay IP a pagtaengan '''$1''' idiay {{SITENAME}}.",
+	'globalblocking-whitelist-dewhitelisted' => "Balligi ti panagisublim ti sangalubongan a serra #$2 idiay IP a pagtaengan '''$1''' idiay {{SITENAME}}.",
 	'globalblocking-whitelist-successsub' => 'Balligi ti panagsukat ti lokal a kasasaad',
 	'globalblocking-whitelist-nochange' => 'Awan ti sinukatan iti lokal a kasasaad iti daytoy a serra.
 [[Special:GlobalBlockList|Agsubli idiay listaan ti sangalubongan a serra]].',
-	'globalblocking-whitelist-errors' => 'Napaay ti pinagikkat mo ti lokal a kasasaad ti sangalubongan a serra, kadagiti sumaganad {{PLURAL:$1|rason|dagiti rason}}:',
-	'globalblocking-whitelist-intro' => 'Mausar mo daytoy a kinabuklan ti pinagurnos ti lokal a kasasaad iti sangalubongan a serra.
-No nabaldado ti sangalubongan a serra iti daytoy a wiki, dagiti agar-aramat iti naarigan nga IP a pagtaengan ket mabalin da ti kadawyan nga agurnos.
+	'globalblocking-whitelist-errors' => 'Napaay ti panagikkatmo iti lokal a kasasaad ti sangalubongan a serra, kadagiti sumaganad a {{PLURAL:$1|rason|rasrason}}:',
+	'globalblocking-whitelist-intro' => 'Mausarmo daytoy a kinabuklan ti panagurnos ti lokal a kasasaad iti sangalubongan a serra.
+No nabaldado ti sangalubongan a serra iti daytoy a wiki, dagiti agar-aramat iti naarigan nga IP a pagtaengan ket mabalinda ti kadawyan nga agurnos.
 [[Special:GlobalBlockList|Agsubli idiay listaan ti sangalubongan a serra]].',
-	'globalblocking-ipblocked' => "'''Ti IP a pagtaengam ket naserraan kadagiti amina wiki.'''
+	'globalblocking-ipblocked' => "'''Ti IP a pagtaengam ket naserraan kadagiti amin a wiki.'''
 
 Ti serra ket inaramid babaen ni \$1 (\$2).
 Ti rason a naited ket ''\$3''.
@@ -5779,19 +5779,31 @@ Ti rason a naited ket ''\$3''.
 * Kalpasan ti serra: \$5
 
 Mabalinmo a kontaken ni \$1 tapno makisao iti daytoy a serra.
-Saan mo a mabalin nga usaren ti \"{{int:emailuser}}\" a langa no awan ti umisu ang e-surat a pagtaengan a nainaganan idiay  [[Special:Preferences|kakaykayatan ti pakabilangam]] ken saanka a naseraan ti panagusarmo.
+Saanmo a mabalin nga usaren ti \"{{int:emailuser}}\" a langa no awan ti umisu nga esurat a pagtaengan a nainaganan idiay  [[Special:Preferences|kakaykayatan ti pakabilangam]] ken saanka a naseraan ti panagusarmo.
 Ti agdama nga IP a pagtaengam ket \$6.
 Pangngaasi nga iramanmo dagiti salaysay dita ngato para kadagiti amin a salusodmo.",
-	'globalblocking-blocked-nopassreset' => 'Saan mo a maipasubli ti kontrasenias ti agar-aramat ngamin ket naserraan iti sangalubongan.',
+	'globalblocking-ipblocked-xff' => "'''Maysa wenno ad-adu pay kadagiti pannakbagi a server nga inusar babaen ti kiddawmo ket sangalubongan a naserraan'''
+
+Tiserra ket inramid idi babaen ni \$1 (\$2).
+Ti rason a naited ket ''\$3''.
+
+* Rugi ti serra: \$4
+* Kalpasan ti serra: \$5
+
+Mabalinmo a kontaken ni \$1 tapno makisao iti daytoy a serra.
+Saanmo a mabalin nga usaren ti \"{{int:emailuser}}\" a langa malaksid no adda ti umiso nga esurat a pagtaengan ti nainaganan kadagiti [[Special:Preferences|kakaykayatn ti pakabilangam]] ken saanka pay a naseraan manipud ti panagusar iti daytoy.
+Ti naserraan a pannakbagi a pagtaengan idi ket \$6.
+Pangngaasi nga iramanmo dagiti salaysay dita ngato para kadagiti amin a salusodmo.",
+	'globalblocking-blocked-nopassreset' => 'Saanmo a maipasubli ti kontrasenias ti agar-aramat ngamin ket naserraan iti sangalubongan.',
 	'globalblocking-logpage' => 'Listaan ti sangalubongan a serra',
 	'globalblocking-logpagetext' => 'Daytoy ket listaan dagiti sangalubongan a serra a naaramid ken naikkat ditoy a wiki.
-Laglagipen a ti sangalubongan a serra ket maaramid ken maikkat kadagiti sabali a wiki, ken dagitoy a sangalubongan a serra ket tignayen na daytoy a wiki.
+Laglagipen a ti sangalubongan a serra ket maaramid ken maikkat kadagiti sabali a wiki, ken dagitoy a sangalubongan a serra ket tignayenna daytoy a wiki.
 Ti agkita kadagiti amin nga agdama a serra, kitaen ti [[Special:GlobalBlockList|listaan ti sangalubongan a serra]].',
-	'globalblocking-block-logentry' => 'sangalubongan a naserraan [[$1]] nga addaan ti oras ti panagpaso a $2',
+	'globalblocking-block-logentry' => 'sangalubongan a naserraan [[$1]] nga addaan ti oras ti panagpaso iti $2',
 	'globalblocking-block2-logentry' => 'sangalubongan a naserraan [[$1]] ($2)',
 	'globalblocking-unblock-logentry' => 'ikkaten ti sangalubongan a serra idiay [[$1]]',
-	'globalblocking-whitelist-logentry' => 'ibaldado ti sangalubongan a serra idiay [[$1]] lokal laeng',
-	'globalblocking-dewhitelist-logentry' => 'ipasubli ti sangalubongan a serra idiay [[$1]] lokal laeng',
+	'globalblocking-whitelist-logentry' => 'ibaldado ti sangalubongan a serra idiay [[$1]] a lokal laeng',
+	'globalblocking-dewhitelist-logentry' => 'ipasubli ti sangalubongan a serra idiay [[$1]] a lokal laeng',
 	'globalblocking-modify-logentry' => 'binaliwan ti sangalubongan a serra idiay [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'agpaso $1',
 	'globalblocking-logentry-noexpiry' => 'awan ti agpaso nga agasmang',
@@ -5802,10 +5814,8 @@ Ti listaan ti serra ket naikabil dita baba tapno mausar a reperensia:',
 	'globalblock' => 'Sangalubongan a seraan ti IP a pagtaengan',
 	'globalblockstatus' => 'Lokal a kasasaad iti sangalubongan a serra',
 	'removeglobalblock' => 'Ikkaten ti maysa a sangalubongan a serra',
-	'right-globalblock' => 'Agaramid kadagiti sangalubongan a serra',
-	'action-globalblock' => 'agaramid kadagiti sanglubongan a serra',
-	'right-globalunblock' => 'Ikkaten dagiti sangalubongan a serra',
-	'action-globalunblock' => 'ikkaten dagiti sanglubongan a serra',
+	'right-globalblock' => 'Agaramid ken agikkat kadagiti sangalubongan a serra',
+	'action-globalblock' => 'agaramid ken agikkat kadagiti sanglubongan a serra',
 	'right-globalblock-whitelist' => 'Ibaldado a lokal dagiti sangalubongan a serra',
 	'action-globalblock-whitelist' => 'ibaldado a lokal dagiti sanglubongan a serra',
 	'right-globalblock-exempt' => 'Palabsan dagiti sangalubongan a serra',
