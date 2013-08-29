@@ -286,7 +286,11 @@ Parameters:
 * $2 - global block ID',
 	'globalblocking-whitelist-errors' => 'Used as error message in Special:GlobalBlockStatus. Parameters:
 * $1 - number of errors',
-	'globalblocking-ipblocked' => 'A message shown to a [[mw:Extension:GlobalBlocking|globally blocked]] user trying to edit. This message is similar to a [[MediaWiki:Blockedtext|MediaWiki core message]]. Parameters:
+	'globalblocking-ipblocked' => 'A message shown to a [[mw:Extension:GlobalBlocking|globally blocked]] user trying to edit.
+
+This message is similar to a [[MediaWiki:Blockedtext|MediaWiki core message]].
+
+Parameters:
 * $1 - the username of the blocking user (steward), with a link
 * $2 - the project name where the blocking user is registered (usually "meta.wikimedia.org" on Wikimedia servers)
 * $3 - the reason specified by the blocking user
