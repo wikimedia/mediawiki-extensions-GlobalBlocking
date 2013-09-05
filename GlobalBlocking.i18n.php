@@ -2163,6 +2163,7 @@ Per més detalls, a continuació es mostra el registre de bloquejos:',
 $messages['ce'] = array(
 	'globalblocking-modify-intro' => 'Ахьа лело мега хӀара форма глобальни блоктохаран параметраш хийца.',
 	'globalblocking-block-reason' => 'Бахьан:',
+	'globalblocking-block-otherreason' => 'Кхин бахьна/тӀетохар:',
 	'globalblocking-block-reasonotherlist' => 'Кхин бахьан',
 	'globalblocking-block-edit-dropdown' => 'Бахьанин список нисяр',
 	'globalblocking-block-expiry' => 'Хан чекхйолу:',
@@ -4316,7 +4317,7 @@ Por favor, decátese de que non pode teclear un nome de usuario!',
 	'globalblocking-modify-submit' => 'Modificar este bloqueo global',
 	'globalblocking-block-success' => 'O enderezo IP $1 foi bloqueado con éxito en todos os proxectos.',
 	'globalblocking-modify-success' => 'O bloqueo global que $1 tiña foi modificado con éxito',
-	'globalblocking-block-successsub' => 'Bloqueo global exitoso',
+	'globalblocking-block-successsub' => 'O bloqueo global realizouse correctamente',
 	'globalblocking-modify-successsub' => 'O bloqueo global foi modificado con éxito',
 	'globalblocking-block-alreadyblocked' => 'O enderezo IP "$1" xa está globalmente bloqueado.
 Pode ollar os bloqueos vixentes na [[Special:GlobalBlockList|lista de bloqueos globais]]
