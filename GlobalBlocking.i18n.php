@@ -245,11 +245,12 @@ Parameters:
 * $1 - number of reasons
 See also:
 * {{msg-mw|Globalblocking-block-errors}}',
-	'globalblocking-list-blockitem' => '* $1 is a time stamp
-* $2 is the blocking user
-* $3 is the source wiki for the blocking user
-* $4 is the blocked user
-* $5 are the block options',
+	'globalblocking-list-blockitem' => 'Parameters:
+* $1 - a timestamp (time and date, localized)
+* $2 - the blocking user
+* $3 - the source wiki for the blocking user
+* $4 - the blocked user
+* $5 - the list of block options',
 	'globalblocking-list-expiry' => 'Unused at this time. Parameters:
 * $1 - ...
 {{Identicai|Expiry}}',
@@ -311,8 +312,11 @@ Parameters:
 	'globalblocking-block-logentry' => 'Used as a log entry. Parameters:
 * $1 - a link to a user page of the form User:Name
 * $2 - an expiry time',
-	'globalblocking-block2-logentry' => '* $1 is a link to a user page of the form User:Name
-* $2 is a reason for the action.',
+	'globalblocking-block2-logentry' => 'Used as a log entry. Parameters:
+* $1 - a link to a user page of the form User:Name
+* $2 - a reason for the action
+See also:
+* {{msg-mw|Globalblocking-modify-logentry}}',
 	'globalblocking-unblock-logentry' => 'This message is a log entry. Parameters:
 * $1 are contributions of an IP.
 For an example see [{{canonicalurl:meta:Special:Log/gblblock|uselang=en}} meta:Special:Log/gblblock?uselang=en]',
@@ -322,7 +326,9 @@ For an example see [{{canonicalurl:meta:Special:Log/gblblock|uselang=en}} meta:S
 * $1 - a link to a user page of the form User:Name',
 	'globalblocking-modify-logentry' => 'Used as a log entry. Parameters:
 * $1 - a link to a user page of the form User:Name
-* $2 - a reason for the action',
+* $2 - a reason for the action
+See also:
+* {{msg-mw|Globalblocking-block2-logentry}}',
 	'globalblocking-logentry-expiry' => 'Used as a flag. Parameters:
 * $1 - expiry time and date
 {{Identical|Expire}}',
@@ -9440,6 +9446,7 @@ Para sua referência, é apresentado abaixo o registo de bloqueios:',
 
 /** Brazilian Portuguese (português do Brasil)
  * @author Brunoy Anastasiya Seryozhenko
+ * @author Cainamarques
  * @author Eduardo.mps
  * @author Helder.wiki
  * @author Heldergeovane
@@ -9553,8 +9560,7 @@ O registro de bloqueios é fornecido abaixo como referência:',
 	'globalblock' => 'Bloquear um endereço IP globalmente',
 	'globalblockstatus' => 'Estado local de bloqueios globais',
 	'removeglobalblock' => 'Remover um bloqueio global',
-	'right-globalblock' => 'Fazer bloqueios globais',
-	'right-globalunblock' => 'Remover bloqueios globais',
+	'right-globalblock' => 'Executar e remover bloqueios globais',
 	'right-globalblock-whitelist' => 'Desativar bloqueios globais localmente',
 	'right-globalblock-exempt' => 'Contornar bloqueios globais',
 );
