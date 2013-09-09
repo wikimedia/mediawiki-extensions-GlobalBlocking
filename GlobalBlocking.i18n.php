@@ -318,7 +318,7 @@ Parameters:
 See also:
 * {{msg-mw|Globalblocking-modify-logentry}}',
 	'globalblocking-unblock-logentry' => 'This message is a log entry. Parameters:
-* $1 are contributions of an IP.
+* $1 - contributions of an IP
 For an example see [{{canonicalurl:meta:Special:Log/gblblock|uselang=en}} meta:Special:Log/gblblock?uselang=en]',
 	'globalblocking-whitelist-logentry' => 'Used as a log entry. Parameters:
 * $1 - a link to a user page of the form User:Name',
@@ -8301,13 +8301,14 @@ $messages['nds-nl'] = array(
 
 /** Dutch (Nederlands)
  * @author AvatarTeam
+ * @author HanV
  * @author Romaine
  * @author SPQRobin
  * @author Siebrand
  * @author User555
  */
 $messages['nl'] = array(
-	'globalblocking-desc' => "[[Special:GlobalBlock|Maakt het mogelijk]] IP-addressen [[Special:GlobalBlockList|in meerdere wiki's tegelijk]] te blokkeren",
+	'globalblocking-desc' => "[[Special:GlobalBlock|Maakt het mogelijk]] IP-adressen [[Special:GlobalBlockList|in meerdere wiki's tegelijk]] te blokkeren",
 	'globalblocking-block' => 'Een IP-adres globaal blokkeren',
 	'globalblocking-modify-intro' => 'U kunt dit formulier gebruiken om de instellingen van een globale blokkade te wijzigen.',
 	'globalblocking-block-intro' => "U kunt deze pagina gebruiken om een IP-adres op alle wiki's te blokkeren.",
@@ -8351,7 +8352,7 @@ Voer een correct IP-adres in.',
 	'globalblocking-search-errors' => 'Uw zoekopdracht kende {{PLURAL:$1|het volgende probleem|de volgende problemen}}:',
 	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') heeft [[Special:Contributions/\$4|\$4]] globaal geblokkeerd ''(\$5)''",
 	'globalblocking-list-expiry' => 'vervalt $1',
-	'globalblocking-list-anononly' => 'alleen anoniemen',
+	'globalblocking-list-anononly' => 'alleen anonieme',
 	'globalblocking-list-unblock' => 'blokkade opheffen',
 	'globalblocking-list-whitelisted' => 'lokaal genegeerd door $1: $2',
 	'globalblocking-list-whitelist' => 'lokale status',
@@ -8632,10 +8633,10 @@ Notatz que podètz pas inscriure un nom d’utilizaire !",
 	'globalblocking-block-successsub' => 'Blocatge global capitat',
 	'globalblocking-modify-successsub' => 'Blocatge global modificat amb succès',
 	'globalblocking-block-alreadyblocked' => "L’adreça IP $1 ja es blocada globalament.
-Podètz afichar los blocatges qu'existisson sus la tièra [[Special:GlobalBlockList|dels blocatges globals]], o tornar configurar aqueste blocatge en sosmetent aqueste formulari tornamai.",
+Podètz afichar los blocatges qu'existisson sus la lista [[Special:GlobalBlockList|dels blocatges globals]], o tornar configurar aqueste blocatge en sosmetent aqueste formulari tornamai.",
 	'globalblocking-block-bigrange' => "La plaja qu'avètz especificada ($1) es tròp granda per èsser blocada. Podètz pas blocar mai de 65'536 adreças (plajas en /16).",
 	'globalblocking-list-intro' => 'Vaquí la lista de totes los blocatges globals actius. Qualques plajas son marcadas coma localament desactivadas : aquò significa que son aplicadas sus d’autres sites, mas qu’un administrator local a decidit de las desactivar sus aqueste wiki.',
-	'globalblocking-list' => 'Tièra de las adreças IP blocadas globalament',
+	'globalblocking-list' => 'Lista de las adreças IP blocadas globalament',
 	'globalblocking-search-legend' => 'Recèrca d’un blocatge global',
 	'globalblocking-search-ip' => 'Adreça IP :',
 	'globalblocking-search-submit' => 'Recèrca dels blocatges',
@@ -8698,7 +8699,7 @@ Per visionar totes los blocatges globals actius, podètz visitar la [[Special:Gl
 	'globalblocking-loglink' => "L'adreça IP $1 es blocada globalament ([[{{#Special:GlobalBlockList}}/$1|detalhs]]).",
 	'globalblocking-showlog' => 'Aquesta adreça IP es estada blocada anteriorament.
 Lo jornal dels blocatges es disponible çaijós :',
-	'globalblocklist' => 'Tièra de las adreças IP blocadas globalament',
+	'globalblocklist' => 'Lista de las adreças IP blocadas globalament',
 	'globalblock' => 'Blocar globalament una adreça IP',
 	'globalblockstatus' => 'Estatuts locals dels blocatges globals',
 	'removeglobalblock' => 'Suprimir un blocatge global',
