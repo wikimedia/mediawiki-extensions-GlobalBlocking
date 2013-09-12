@@ -289,6 +289,8 @@ Parameters:
 * $1 - number of errors',
 	'globalblocking-ipblocked' => 'A message shown to a [[mw:Extension:GlobalBlocking|globally blocked]] user trying to edit.
 
+Refers to {{msg-mw|Emailuser}}.
+
 This message is similar to a [[MediaWiki:Blockedtext|MediaWiki core message]].
 
 Parameters:
@@ -296,9 +298,11 @@ Parameters:
 * $2 - the project name where the blocking user is registered (usually "meta.wikimedia.org" on Wikimedia servers)
 * $3 - the reason specified by the blocking user
 * $4 - a timestamp for when the block was set
-* $5 - a timestamp for when the block will expire (or {{msg-mw|infiniteblock}})
+* $5 - a timestamp for when the block will expire (or {{msg-mw|Infiniteblock}})
 * $6 - the IP address of the globally blocked user',
 	'globalblocking-ipblocked-xff' => "A message shown to users who have one or more proxies in their XFF header who's IP are blocked.
+
+Refers to {{msg-mw|Emailuser}}.
 
 Parameters:
 * $1 - username
