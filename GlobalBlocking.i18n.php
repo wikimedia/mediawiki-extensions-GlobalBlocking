@@ -5532,6 +5532,18 @@ Tu pote contactar \$1 pro discuter le blocada.
 Pro usar le function \"{{int:emailuser}}\" tu debe haber specificate un adresse de e-mail valide in le [[Special:Preferences|preferentias de tu conto]] e tu non ha essite blocate pro le uso de illo.
 Tu adresse IP actual es \$6.
 Per favor include tote le detalios hic supra in omne questiones que tu pone.",
+	'globalblocking-ipblocked-xff' => "'''Un o plus servitores proxy usate per tu requesta ha essite blogate globalmente.'''
+
+Le blocada esseva instituite per \$1 (\$2).
+Le motivo specificate es ''\$3''.
+
+* Initio del blocada: \$4
+* Expiration del blocada: \$5
+
+Tu pote contactar \$1 pro discuter le blocada.
+Tu non pote usar le function \"{{int:emailuser}}\" a minus que un adresse de e-mail valide es specificate in le [[Special:Preferences|preferentias de tu conto]] e que tu non ha essite blocate pro le uso de illo.
+Le adresse del proxy blocate es \$6.
+Per favor include tote le detalios hic supra in omne questiones que tu pone.",
 	'globalblocking-blocked-nopassreset' => 'Tu non pote reinitialisar le contrasignos de usatores proque tu ha essite blocate globalmente.',
 	'globalblocking-logpage' => 'Registro de blocadas global',
 	'globalblocking-logpagetext' => 'Isto es un registro de blocadas global que ha essite facite e removite in iste wiki.
