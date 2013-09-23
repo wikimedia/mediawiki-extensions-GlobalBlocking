@@ -74,7 +74,10 @@ class GlobalBlocking {
 			$blockExpiry = $wgLang->formatExpiry( $block->gb_expiry );
 			$display_wiki = self::getWikiName( $block->gb_by_wiki );
 			$blockingUser = self::maybeLinkUserpage( $block->gb_by_wiki, $block->gb_by );
-			return $result = array( 'globalblocking-ipblocked',
+			// Allow site customization of blocked message.
+			$blockedIpMsg = 'globalblocking-ipblocked';
+			wfRunHooks( 'GlobalBlockingBlockedIpMsg', &$blockedIpMsg );
+			return $result = array( $blockedIpMsg,
 				$blockingUser, $display_wiki, $block->gb_reason, $blockTimestamp, $blockExpiry, $ip );
 		}
 
@@ -92,8 +95,11 @@ class GlobalBlocking {
 					$blockExpiry = $wgLang->formatExpiry( $block->gb_expiry );
 					$display_wiki = self::getWikiName( $block->gb_by_wiki );
 					$blockingUser = self::maybeLinkUserpage( $block->gb_by_wiki, $block->gb_by );
+					// Allow site customization of blocked message.
+					$blockedIpXffMsg = 'globalblocking-ipblocked-xff';
+					wfRunHooks( 'GlobalBlockingBlockedIpXffMsg', &$blockedIpXffMsg );
 					return $result = array(
-						'globalblocking-ipblocked-xff',
+						$blockedIpXffMsg,
 						$blockingUser,
 						$display_wiki,
 						$block->gb_reason,
