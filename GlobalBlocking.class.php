@@ -76,7 +76,7 @@ class GlobalBlocking {
 			$blockingUser = self::maybeLinkUserpage( $block->gb_by_wiki, $block->gb_by );
 			// Allow site customization of blocked message.
 			$blockedIpMsg = 'globalblocking-ipblocked';
-			wfRunHooks( 'GlobalBlockingBlockedIpMsg', &$blockedIpMsg );
+			wfRunHooks( 'GlobalBlockingBlockedIpMsg', array( &$blockedIpMsg ) );
 			return $result = array( $blockedIpMsg,
 				$blockingUser, $display_wiki, $block->gb_reason, $blockTimestamp, $blockExpiry, $ip );
 		}
