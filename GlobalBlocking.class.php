@@ -97,7 +97,7 @@ class GlobalBlocking {
 					$blockingUser = self::maybeLinkUserpage( $block->gb_by_wiki, $block->gb_by );
 					// Allow site customization of blocked message.
 					$blockedIpXffMsg = 'globalblocking-ipblocked-xff';
-					wfRunHooks( 'GlobalBlockingBlockedIpXffMsg', &$blockedIpXffMsg );
+					wfRunHooks( 'GlobalBlockingBlockedIpXffMsg', array( &$blockedIpXffMsg ) );
 					return $result = array(
 						$blockedIpXffMsg,
 						$blockingUser,
