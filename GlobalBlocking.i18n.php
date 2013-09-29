@@ -4405,7 +4405,7 @@ O motivo achegado é ''\$3''.
 
 Pode poñerse en contacto con \$1 para conversar acerca do bloqueo.
 Non pode facer uso da ferramenta \"{{int:emailuser}}\" a menos que especificase un enderezo de correo electrónico válido nas [[Special:Preferences|preferencias da súa conta]] e o seu uso non fose bloqueado.
-O enderezo proxy bloqueado foi \$6.
+O enderezo proxy bloqueado é \$6.
 Por favor, inclúa todos os datos anteriores en calquera consulta que faga.",
 	'globalblocking-blocked-nopassreset' => 'Non pode restablecer o contrasinal do usuario porque vostede está bloqueado globalmente.',
 	'globalblocking-logpage' => 'Rexistro de bloqueos globais',
@@ -11356,6 +11356,17 @@ så den lokala statusen av globala blockeringar kan inte ändras.',
 [[Special:GlobalBlockList|Återvänd till den globala blockeringslistan]].',
 	'globalblocking-whitelist-errors' => 'Din ändring i den lokala statusen av en global blockering lyckades inte på grund av följande {{PLURAL:$1|anledning|anledningar}}:',
 	'globalblocking-whitelist-intro' => 'Du kan använda det här formuläret till att redigera den lokala statusen för en global blockering. Om en global blockering är avslagen på den här wikin, kommer användarna av de påverkade IP-adresserna kunna redigera normalt. [[Special:GlobalBlockList|Klicka här]] för att gå tillbaka till den globala blockeringslistan.',
+	'globalblocking-ipblocked' => "'''Din IP-adress har spärrats på alla wikier.'''
+
+Blocket gjordes av \$1 (\$2).
+Det angivna skälet är ''\$3''.
+* Blockeringen startar: \$4
+* Blockeringen slutar: \$5
+
+Du kan kontakta \$1 för att diskutera blockeringen.
+Du kan inte använda funktionen \"{{int:emailuser}}\" om inte en giltig emailadress angetts i dina [[Special:Preferences|kontoinställningar]] och om du inte har blockerats från att använda det.
+Din nuvarande IP-adress är \$6.
+Vänligen inkludera alla detaljer i alla förfrågningar som du gör.",
 	'globalblocking-blocked-nopassreset' => 'Du kan inte återställa den här användarens lösenord eftersom ditt konto är globalblockerat.',
 	'globalblocking-logpage' => 'Logg för globala blockeringar',
 	'globalblocking-logpagetext' => 'Detta är en logg över globala blockeringar som har lagts och tagits bort på den här wikin.
