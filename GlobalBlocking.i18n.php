@@ -6945,6 +6945,7 @@ Commodule notatio obstructionum subter datur.',
 /** Luxembourgish (Lëtzebuergesch)
  * @author Les Meloures
  * @author Robby
+ * @author Soued031
  */
 $messages['lb'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Erlaabt et]] IP-Adressen op [[Special:GlobalBlockList|méi Wikie mateneen ze spären]]',
@@ -6966,7 +6967,7 @@ $messages['lb'] = array(
 	'globalblocking-block-options' => 'Optiounen:',
 	'globalblocking-ipaddress' => 'IP-Adress:',
 	'globalblocking-ipbanononly' => 'Nëmmen anonym Benotzer spären',
-	'globalblocking-block-errors' => "D'Spär huet net fonctionnéiert, aus {{PLURAL:$1|dësem Grond|dëse Grënn}}:",
+	'globalblocking-block-errors' => "D'Spär huet net funktionéiert, aus {{PLURAL:$1|dësem Grond|dëse Grënn}}:",
 	'globalblocking-block-ipinvalid' => 'Dir hutt eng ongëlteg IP-Adress ($1) aginn.
 Denkt w.e.g. drun datt Dir och e Benotzernumm agi kënnt!',
 	'globalblocking-block-expiryinvalid' => "D'Dauer déi dir aginn hutt ($1) ass ongëlteg.",
@@ -7026,7 +7027,7 @@ dofir kann de lokale Status vu globale Spären net geännert ginn.',
 	'globalblocking-whitelist-successsub' => 'De lokale Status gouf geännert',
 	'globalblocking-whitelist-nochange' => "Dir hutt de lokale Status vun dëser Spär net geännert.
 [[Special:GlobalBlockList|Zréck op d'Lëscht vun de globale Spären]].",
-	'globalblocking-whitelist-errors' => 'Är Ännerung vum lokale Status vun enger globaler Spär huet aus {{PLURAL:$1|dësem Grond|dëse Grënn}} net fonctionéiert:',
+	'globalblocking-whitelist-errors' => 'Är Ännerung vum lokale Status vun enger globaler Spär huet aus {{PLURAL:$1|dësem Grond|dëse Grënn}} net funktionéiert:',
 	'globalblocking-whitelist-intro' => "Dir kënnt dëse Formulaire benotze fir de lokal Status vun enger globaler Spär z'änneren.
 Wann eng global Spär op dëser Wiki opgehuewe gëtt, kënne Benotzer déi déi betraffen IP-Adresse benotzen normal Ännerungen maachen.
 [[Special:GlobalBlockList|Zréck op d'Lëscht vun de globale Spären]].",
@@ -7039,7 +7040,7 @@ De Grond deen ugi gouf ass ''\$3''.
 * Enn vun der Spär: \$5
 
 Dir kënnt Iech un de(n) \$1 adresséieren, fir iwwer d'Spär ze diskutéieren.
-Dir kënnt d'Fonctioun \"{{int:emailuser}}\" net benotzen, bis eng valabel E-Mail-Adress an Ären [[Special:Preferences|Astellungen]] ugi gouf an net fir Iech gespaart gouf.
+Dir kënnt d'Funktioun \"{{int:emailuser}}\" net benotzen, bis eng valabel E-Mail-Adress an Ären [[Special:Preferences|Astellungen]] ugi gouf an net fir Iech gespaart gouf.
 Är aktuell IP-Adress ass \$6.
 Gitt w.e.g. alle Detailer déi Dir hei driwwer fannt an Ären Ufroen un.",
 	'globalblocking-ipblocked-xff' => "'''Een oder méi Proxy-Serveren déi Dir benotzt ass global gespaart.'''
@@ -7051,7 +7052,7 @@ De Grond deen ugi gouf ass ''\$3''.
 * Enn vun der Spär: \$5
 
 Dir kënnt Iech un de(n) \$1 adresséieren, fir iwwer d'Spär ze diskutéieren.
-Dir kënnt d'Fonctioun *{{int:emailuser}}\" net benotzen, bis eng valabel E-Mail-Adress an Ären [[Special:Preferences|Astellungen]] ugi gouf an net fir Iech gespaart gouf.
+Dir kënnt d'Funktioun *{{int:emailuser}}\" net benotzen, bis eng valabel E-Mail-Adress an Ären [[Special:Preferences|Astellungen]] ugi gouf an net fir Iech gespaart gouf.
 Déi blockéiert Proxy-Adress war \$6.
 Gitt w.e.g. alle Detailer déi Dir hei driwwer fannt an Ären Ufroen un.",
 	'globalblocking-blocked-nopassreset' => 'Dir kënnt engem Benotzer säi Paswuert net zrécksetze well Dir global gespaart sidd.',
@@ -9283,9 +9284,9 @@ $messages['ps'] = array(
 	'globalblocking-block-reason' => 'سبب:',
 	'globalblocking-block-otherreason' => 'بل/اضافي سبب:',
 	'globalblocking-block-reasonotherlist' => 'بل سبب',
-	'globalblocking-block-reason-dropdown' => '* د بنديز ټولګړي سببونه
-** په ويکي ګانو کې اپلاتې
-** په ويکي ګانو کې ناوړه چارې
+	'globalblocking-block-reason-dropdown' => '* د بنديز ټولگړي سببونه
+** په ويکي گانو کې اپلاتې
+** په ويکي گانو کې ناوړه چارې
 ** ورانکاري',
 	'globalblocking-block-edit-dropdown' => 'د بنديز سببونه سمول',
 	'globalblocking-block-expiry' => 'د پای نېټه:',
@@ -9299,7 +9300,7 @@ $messages['ps'] = array(
 	'globalblocking-modify-submit' => 'دا نړېوال بنديز بدلول',
 	'globalblocking-block-successsub' => 'نړېوال بنديز بريالی شو',
 	'globalblocking-modify-successsub' => 'د نړېوال بنديز بدلون بريالی شو',
-	'globalblocking-list' => 'د نړېوال بنديز لګېدلو آي پي پتو لړليک',
+	'globalblocking-list' => 'د نړېوال بنديز لگېدلو آي پي پتو لړليک',
 	'globalblocking-search-legend' => 'د يوه نړېوال بنديز پلټل',
 	'globalblocking-search-ip' => 'IP پته:',
 	'globalblocking-search-submit' => 'د بنديزونو لپاره پلټل',
@@ -9327,16 +9328,14 @@ $messages['ps'] = array(
 	'globalblocking-whitelist-submit' => 'سيمه ايز دريځ بدلول',
 	'globalblocking-whitelist-successsub' => 'سيمه ايز دريځ په برياليتوب بدل شو',
 	'globalblocking-logpage' => 'د نړېوال بنديز يادښت',
-	'globalblocking-block2-logentry' => 'نړېوال بنديز لګېدلي [[$1]] ($2)',
+	'globalblocking-block2-logentry' => 'نړېوال بنديز لگېدلي [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'پای نېټه $1',
-	'globalblocklist' => 'د نړېوال بنديز لګېدلو آي پي پتو لړليک',
+	'globalblocklist' => 'د نړېوال بنديز لگېدلو آي پي پتو لړليک',
 	'globalblock' => 'په يوې آی پي پتې نړېواله بنديز لګول',
 	'globalblockstatus' => 'د نړېوالو بنديزونو سيمه ايز دريځ',
 	'removeglobalblock' => 'يو نړيوال بنديز غورځول',
-	'right-globalblock' => 'نړېوال بنديز لګول',
-	'action-globalblock' => 'نړېوال بنديزونه لګول',
-	'right-globalunblock' => 'نړېوال بنديزونه غورځول',
-	'action-globalunblock' => 'نړېوال بنديزونه غورځول',
+	'right-globalblock' => 'نړېوال بنديز لګول', # Fuzzy
+	'action-globalblock' => 'نړېوال بنديزونه لګول', # Fuzzy
 );
 
 /** Portuguese (português)
