@@ -12682,7 +12682,7 @@ Lý do là ''$3''.
 * Thời hạn cấm: $5
 
 Bạn có thể liên lạc với $1 để thảo luận về vụ cấm này.
-Bạn chỉ có thể sử dụng tíng năng “{{int:emailuser}}” sau khi khai báo chỉ thư điện tử hợp lệ trong [[Special:Preferences|tùy chọn tài khoản]] nếu bạn chưa cấm sử dụng tính năng này.
+Bạn chỉ có thể sử dụng tính năng “{{int:emailuser}}” sau khi khai báo chỉ thư điện tử hợp lệ trong [[Special:Preferences|tùy chọn tài khoản]] nếu bạn chưa cấm sử dụng tính năng này.
 Địa chỉ proxy bị cấm là $6.
 Xin vui lòng kèm theo các chi tiết ở trên khi bạn có bất cứ đề yêu cầu nào về vụ cấm này.",
 	'globalblocking-blocked-nopassreset' => 'Bạn không thể tái tạo mật khẩu vì bạn đã bị cấm trên toàn hệ thống.',
