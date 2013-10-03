@@ -9280,7 +9280,7 @@ $messages['pnb'] = array(
  * @author Ahmed-Najib-Biabani-Ibrahimkhel
  */
 $messages['ps'] = array(
-	'globalblocking-block' => 'په يوې آی پي پتې نړېواله بنديز لګول',
+	'globalblocking-block' => 'په يوې آی پي پتې نړېواله بنديز لگول',
 	'globalblocking-block-reason' => 'سبب:',
 	'globalblocking-block-otherreason' => 'بل/اضافي سبب:',
 	'globalblocking-block-reasonotherlist' => 'بل سبب',
@@ -9292,11 +9292,11 @@ $messages['ps'] = array(
 	'globalblocking-block-expiry' => 'د پای نېټه:',
 	'globalblocking-block-expiry-other' => 'د پای بل وخت',
 	'globalblocking-block-expiry-otherfield' => 'بل وخت:',
-	'globalblocking-block-legend' => 'په يوې آي پي پتې نړېوال بنديز لګول',
+	'globalblocking-block-legend' => 'په يوې آي پي پتې نړېوال بنديز لگول',
 	'globalblocking-block-options' => 'خوښنې:',
 	'globalblocking-ipaddress' => 'IP پته:',
-	'globalblocking-ipbanononly' => 'يواځې په ورکنومو کارنانو بنديز لګول',
-	'globalblocking-block-submit' => 'په دې آي پي پتې نړېوال بنديز لګول',
+	'globalblocking-ipbanononly' => 'يواځې په ورکنومو کارنانو بنديز لگول',
+	'globalblocking-block-submit' => 'په دې آي پي پتې نړېوال بنديز لگول',
 	'globalblocking-modify-submit' => 'دا نړېوال بنديز بدلول',
 	'globalblocking-block-successsub' => 'نړېوال بنديز بريالی شو',
 	'globalblocking-modify-successsub' => 'د نړېوال بنديز بدلون بريالی شو',
@@ -9310,7 +9310,7 @@ $messages['ps'] = array(
 	'globalblocking-list-whitelist' => 'سيمه ايز دريځ',
 	'globalblocking-list-modify' => 'بدلول',
 	'globalblocking-list-noresults' => 'په غوښتلې آي پي پتې بنديز نه دی.',
-	'globalblocking-goto-block' => 'په يوې آی پي پتې نړېواله بنديز لګول',
+	'globalblocking-goto-block' => 'په يوې آی پي پتې نړېواله بنديز لگول',
 	'globalblocking-goto-unblock' => 'يو نړيوال بنديز غورځول',
 	'globalblocking-return' => 'د نړېوالو بنديزونو لړليک ته ورګرځېدل.',
 	'globalblocking-notblocked' => 'د ($1) آی پي پته چې مو ورکړې په نړېواله توگه بنديز شوې نه ده.',
@@ -9331,11 +9331,11 @@ $messages['ps'] = array(
 	'globalblocking-block2-logentry' => 'نړېوال بنديز لگېدلي [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'پای نېټه $1',
 	'globalblocklist' => 'د نړېوال بنديز لگېدلو آي پي پتو لړليک',
-	'globalblock' => 'په يوې آی پي پتې نړېواله بنديز لګول',
+	'globalblock' => 'په يوې آی پي پتې نړېواله بنديز لگول',
 	'globalblockstatus' => 'د نړېوالو بنديزونو سيمه ايز دريځ',
 	'removeglobalblock' => 'يو نړيوال بنديز غورځول',
-	'right-globalblock' => 'نړېوال بنديز لګول', # Fuzzy
-	'action-globalblock' => 'نړېوال بنديزونه لګول', # Fuzzy
+	'right-globalblock' => 'نړېوال بنديز لگول او ليرې کول',
+	'action-globalblock' => 'نړېوال بنديزونه لگول او ليرې کول',
 );
 
 /** Portuguese (português)
