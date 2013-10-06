@@ -2431,6 +2431,7 @@ Noder nad oes modd defnyddio enw defnyddiwr os gwelwch yn dda!",
 );
 
 /** Danish (dansk)
+ * @author Christian List
  * @author Fnielsen
  * @author Hylle
  * @author Jan Friberg
@@ -2566,10 +2567,8 @@ Blokeringsloggen vises nedenfor som reference:',
 	'globalblock' => 'Bloker en IP-adresse globalt',
 	'globalblockstatus' => 'Lokal status for globale blokeringer',
 	'removeglobalblock' => 'Ophæv en global blokering',
-	'right-globalblock' => 'Blokere brugere globalt',
-	'action-globalblock' => 'foretage globale blokeringer',
-	'right-globalunblock' => 'Ophæve globale blokeringer',
-	'action-globalunblock' => 'fjerne globale blokeringer',
+	'right-globalblock' => 'Tilføje og fjerne globale blokeringer',
+	'action-globalblock' => 'tilføje og fjerne globale blokeringer',
 	'right-globalblock-whitelist' => 'Ophæve globale blokeringer lokalt',
 	'action-globalblock-whitelist' => 'deaktivere globale blokeringer lokalt',
 	'right-globalblock-exempt' => 'Omgå globale blokeringer',
@@ -13122,6 +13121,7 @@ $1',
  * @author Horacewai2
  * @author Justincheng12345
  * @author Liangent
+ * @author Liuxinyu970226
  * @author Mark85296341
  * @author Oapbtommy
  * @author Shinjiman
@@ -13258,10 +13258,8 @@ $1',
 	'globalblock' => '全域封鎖一個 IP 位址',
 	'globalblockstatus' => '全域封鎖的本地狀態',
 	'removeglobalblock' => '移除一個全域封鎖',
-	'right-globalblock' => '進行全域封鎖',
-	'action-globalblock' => '進行全域封鎖',
-	'right-globalunblock' => '移除全域封鎖',
-	'action-globalunblock' => '移除全域封鎖',
+	'right-globalblock' => '進行及解禁全域封鎖',
+	'action-globalblock' => '進行及解禁全域封鎖',
 	'right-globalblock-whitelist' => '在本地停用全域封鎖',
 	'action-globalblock-whitelist' => '在本地停用全域封鎖',
 	'right-globalblock-exempt' => '繞過全域封鎖',
