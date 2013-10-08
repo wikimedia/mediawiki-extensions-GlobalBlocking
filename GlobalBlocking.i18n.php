@@ -462,8 +462,7 @@ Die blokkeerlogboek word hieronder weergegee:',
 	'globalblock' => "Versper 'n IP adres globaal",
 	'globalblockstatus' => 'Lokale status van globale blokkades',
 	'removeglobalblock' => "Verwyder 'n globale blokkade",
-	'right-globalblock' => 'Rig globale versperrings op',
-	'right-globalunblock' => 'Verwyder globale versperrings',
+	'right-globalblock' => 'Rig globale versperrings op', # Fuzzy
 	'right-globalblock-whitelist' => 'Skakel globale versperrings lokaal af',
 	'right-globalblock-exempt' => 'Omseil globale blokkades',
 );
@@ -613,10 +612,8 @@ O rechistro de bloqueyos se proporciona contino como referencia:',
 	'globalblock' => 'Bloqueyar una adreza IP globalment',
 	'globalblockstatus' => 'Estau local de bloqueyos globals',
 	'removeglobalblock' => 'Sacar un bloqueyo global',
-	'right-globalblock' => 'Fer bloqueyos globals',
-	'action-globalblock' => 'Fer bloqueyos globals',
-	'right-globalunblock' => 'Sacar bloqueyos globals',
-	'action-globalunblock' => 'Eliminar os bloqueyos globals',
+	'right-globalblock' => 'Fer bloqueyos globals', # Fuzzy
+	'action-globalblock' => 'Fer bloqueyos globals', # Fuzzy
 	'right-globalblock-whitelist' => 'Desactivar localment os bloqueyos globals',
 	'action-globalblock-whitelist' => 'Desactivar localment os bloqueyos globals',
 	'right-globalblock-exempt' => 'Eludir bloqueyos globals',
@@ -733,10 +730,8 @@ $messages['ar'] = array(
 	'globalblock' => 'منع عام لعنوان أيبي',
 	'globalblockstatus' => 'الحالة المحلية للمنع العام',
 	'removeglobalblock' => 'إزالة منع عام',
-	'right-globalblock' => 'عمل عمليات منع عامة',
-	'action-globalblock' => 'عمل عمليات المنع العامة',
-	'right-globalunblock' => 'إزالة عمليات المنع العامة',
-	'action-globalunblock' => 'إزالة عمليات المنع العامة',
+	'right-globalblock' => 'عمل عمليات منع عامة', # Fuzzy
+	'action-globalblock' => 'عمل عمليات المنع العامة', # Fuzzy
 	'right-globalblock-whitelist' => 'تعطيل عمليات المنع العامة محليا',
 	'action-globalblock-whitelist' => 'تعطيل عمليات المنع العامة محليا',
 	'right-globalblock-exempt' => 'تجاوز عمليات المنع العامة',
@@ -847,8 +842,7 @@ $messages['arz'] = array(
 	'globalblock' => 'منع عام لعنوان أى بي',
 	'globalblockstatus' => 'الحالة المحلية للمنع العام',
 	'removeglobalblock' => 'شيل منع عام',
-	'right-globalblock' => 'اعمل منع عام',
-	'right-globalunblock' => 'شيل المنع العام',
+	'right-globalblock' => 'اعمل منع عام', # Fuzzy
 	'right-globalblock-whitelist' => 'عطل المنع العام على المستوى المحلي',
 );
 
@@ -973,10 +967,8 @@ $messages['as'] = array(
 	'globalblock' => 'এটা আইপি ঠিকনা গোলকীয়ভাৱে বাৰণ কৰক',
 	'globalblockstatus' => 'গ্লোবাল বাধাৰ স্থানীয় অৱস্থা',
 	'removeglobalblock' => 'এটা গোলকীয় প্ৰতিবন্ধক আঁতৰাওক',
-	'right-globalblock' => 'গোলকীয় প্ৰতিবন্ধক সৃষ্টি কৰক',
-	'action-globalblock' => 'গোলকীয় প্ৰতিবন্ধক সৃষ্টি কৰক',
-	'right-globalunblock' => 'গোলকীয় প্ৰতিবন্ধক আঁতৰাওক',
-	'action-globalunblock' => 'গোলকীয় বাধা আতৰাওক',
+	'right-globalblock' => 'গোলকীয় প্ৰতিবন্ধক সৃষ্টি কৰক', # Fuzzy
+	'action-globalblock' => 'গোলকীয় প্ৰতিবন্ধক সৃষ্টি কৰক', # Fuzzy
 	'right-globalblock-whitelist' => 'স্থানীয়ভাৱে গোলকীয় প্ৰতিবন্ধক নিষ্ক্ৰিয় কৰক',
 	'action-globalblock-whitelist' => 'স্থানীয়ভাৱে গোলকীয় প্ৰতিবন্ধক নিষ্ক্ৰিয় কৰক',
 	'right-globalblock-exempt' => 'গোলকীয় প্ৰতিবন্ধক বাইপাছ কৰক',
@@ -1282,10 +1274,8 @@ $messages['ba'] = array(
 	'globalblock' => 'IP адресты дөйөм бикләү',
 	'globalblockstatus' => 'Дөйөм биктәрҙең урындағы торошо',
 	'removeglobalblock' => 'Дөйөм бикте алырға',
-	'right-globalblock' => 'Дөйөм бикләү',
-	'action-globalblock' => 'Дөйөм бикләү',
-	'right-globalunblock' => 'Дөйөм биктәрҙе алыу',
-	'action-globalunblock' => 'Дөйөм биктәрҙе алыу',
+	'right-globalblock' => 'Дөйөм бикләү', # Fuzzy
+	'action-globalblock' => 'Дөйөм бикләү', # Fuzzy
 	'right-globalblock-whitelist' => 'Дөйөм биктәрҙе урында һүндереү',
 	'action-globalblock-whitelist' => 'Дөйөм биктәрҙе урында һүндереү',
 	'right-globalblock-exempt' => 'Дөйөм биктәрҙе урап үтеү',
@@ -1422,8 +1412,7 @@ An talaan nin kubkob pinaghaya sa ibaba bilang reperensiya:',
 	'globalblockstatus' => 'Lokal na kamugtakan kan pankinaban na mga kubkob',
 	'removeglobalblock' => 'Tangkason an sarong pankinaban na kubkob',
 	'right-globalblock' => 'Maghimo asin magtangkas nin pankinaban na mga kubkob',
-	'action-globalblock' => 'maghimo nin pankinaban na mga kubkob',
-	'action-globalunblock' => 'tangkason an pankinaban na mga kubkob',
+	'action-globalblock' => 'maghimo nin pankinaban na mga kubkob', # Fuzzy
 	'right-globalblock-whitelist' => 'Dae pagpaganahon an pankinaban na mga kubkob sa lokal',
 	'action-globalblock-whitelist' => 'dae pagpaganahon an pankinaban na mga kubkob sa lokal',
 	'right-globalblock-exempt' => 'Salambawan an pankinaban na mga kubkob',
@@ -1694,9 +1683,8 @@ $1',
 	'globalblock' => 'Глобално блокиране на IP адрес',
 	'globalblockstatus' => 'Локално състояние на глобалните блокирания',
 	'removeglobalblock' => 'Премахване на глобално блокиране',
-	'right-globalblock' => 'Създаване на глобални блокирания',
-	'action-globalblock' => 'създаване на глобални блокирания',
-	'right-globalunblock' => 'Премахване на глобални блокирания',
+	'right-globalblock' => 'Създаване на глобални блокирания', # Fuzzy
+	'action-globalblock' => 'създаване на глобални блокирания', # Fuzzy
 	'right-globalblock-whitelist' => 'Локално спиране на глобалните блокирания',
 	'right-globalblock-exempt' => 'Пренебрегване на глобалните блокирания',
 );
@@ -1791,10 +1779,8 @@ $messages['bn'] = array(
 	'globalblock' => 'একটি আইপি ঠিকানাকে গ্লেবালি বাধা প্রদান করুন',
 	'globalblockstatus' => 'গ্লোবাল বাধা স্থানীয় অবস্থা',
 	'removeglobalblock' => 'একটি গ্লোবাল বাধা তুলে নাও',
-	'right-globalblock' => 'গ্লোবাল বাধা তৈরি করো',
-	'action-globalblock' => 'গ্লোবাল বাধা তৈরি করো',
-	'right-globalunblock' => 'গ্লোবাল বাধা তুলে নাও',
-	'action-globalunblock' => 'গ্লোবাল বাধা অপসারণ',
+	'right-globalblock' => 'গ্লোবাল বাধা তৈরি করো', # Fuzzy
+	'action-globalblock' => 'গ্লোবাল বাধা তৈরি করো', # Fuzzy
 	'right-globalblock-whitelist' => 'স্থানীয়ভাবে গ্লোবাল বাধা নিষ্ক্রিয় করো',
 	'action-globalblock-whitelist' => 'স্থানীয়ভাবে গ্লোবাল বাধা নিষ্ক্রিয় করো',
 	'right-globalblock-exempt' => 'গ্লোবাল বাধা বাইপাস করো',
@@ -1912,10 +1898,8 @@ A-is emañ marilh ar stankadennoù :",
 	'globalblock' => "Stankañ ur chomlec'h IP en un doare hollek",
 	'globalblockstatus' => "Statud lec'hel ar stankadennoù hollek",
 	'removeglobalblock' => 'Lemel ur stankadur hollek',
-	'right-globalblock' => 'Stankañ implijerien en un doare hollek',
-	'action-globalblock' => 'Ober stankadennoù hollek',
-	'right-globalunblock' => 'Lemel ar stankadennoù hollek',
-	'action-globalunblock' => 'Lemel ar stankadennoù hollek',
+	'right-globalblock' => 'Stankañ implijerien en un doare hollek', # Fuzzy
+	'action-globalblock' => 'Ober stankadennoù hollek', # Fuzzy
 	'right-globalblock-whitelist' => "Diweredekaat en un doare lec'hel ar stankadennoù hollek",
 	'action-globalblock-whitelist' => "Diweredekaat en un doare lec'hel ar stankadennoù hollek",
 	'right-globalblock-exempt' => "Mont dreist d'ar stankadennoù hollek",
@@ -2029,8 +2013,7 @@ Zapisnik blokiranja je naveden ispod kao referenca:',
 	'globalblock' => 'Globalno blokiranje IP adrese',
 	'globalblockstatus' => 'Lokalni status globalnih blokada',
 	'removeglobalblock' => 'Ukloni globalnu blokadu',
-	'right-globalblock' => 'Pravljenje globalnih blokada',
-	'right-globalunblock' => 'Uklanjanje globalnih blokada',
+	'right-globalblock' => 'Pravljenje globalnih blokada', # Fuzzy
 	'right-globalblock-whitelist' => 'Onemogućavanje globalnih blokada na lokalnom nivou',
 	'right-globalblock-exempt' => 'Zaobilaženje globalnih blokada',
 );
@@ -2160,8 +2143,7 @@ Per més detalls, a continuació es mostra el registre de bloquejos:',
 	'globalblock' => 'Bloqueja una adreça IP globalment',
 	'globalblockstatus' => 'Estat local dels bloquejos globals',
 	'removeglobalblock' => 'Canceŀla el bloqueig global',
-	'right-globalblock' => 'Fer blocatges globals',
-	'right-globalunblock' => 'Canceŀlar bloquejos globals',
+	'right-globalblock' => 'Fer blocatges globals', # Fuzzy
 	'right-globalblock-whitelist' => 'Desactivar a nivell local els blocatges globals',
 	'right-globalblock-exempt' => 'Eludir els blocatges globals',
 );
@@ -2931,10 +2913,8 @@ Logê bloki qe referansi cor de mocnayiyo',
 	'globalblock' => 'Yew adresê IPyî wîkîyê hemî de blok bike',
 	'globalblockstatus' => 'Statuyê lokaliyê blokanê hemî',
 	'removeglobalblock' => 'Yew global blok wedarne',
-	'right-globalblock' => 'Global bloqe bıke',
-	'action-globalblock' => 'Global bloqe bıke',
-	'right-globalunblock' => 'Blokanê globalî wedarne',
-	'action-globalunblock' => 'Blokanê globalî wedarne',
+	'right-globalblock' => 'Global bloqe bıke', # Fuzzy
+	'action-globalblock' => 'Global bloqe bıke', # Fuzzy
 	'right-globalblock-whitelist' => 'Lokal wîkî de blokanê globalî biqefilne',
 	'action-globalblock-whitelist' => 'Lokal blokanê globalî biqefilne',
 	'right-globalblock-exempt' => 'Global blokî bypass bike',
@@ -3060,10 +3040,8 @@ Protokol blokěrowanjow jo dołojce pódał slědujuce ako referencu:',
 	'globalblock' => 'IP-adresu globalnje blokěrowaś',
 	'globalblockstatus' => 'Lokalny status globalnych blokěrowanjow',
 	'removeglobalblock' => 'Globalne blokěrowanje wótpóraś',
-	'right-globalblock' => 'Globalne blokěrowanja napóraś',
-	'action-globalblock' => 'globalne blokěrowanja napóraś',
-	'right-globalunblock' => 'Globalne blokěrowanja wótpóraś',
-	'action-globalunblock' => 'globalne blokěrowanja wótpóraś',
+	'right-globalblock' => 'Globalne blokěrowanja napóraś', # Fuzzy
+	'action-globalblock' => 'globalne blokěrowanja napóraś', # Fuzzy
 	'right-globalblock-whitelist' => 'Globalne blokěrowanja lokalnje wótpóraś',
 	'action-globalblock-whitelist' => 'globalne blokěrowanja lokalnje wótpóraś',
 	'right-globalblock-exempt' => 'Globalne blokěrowanja wobejś',
@@ -3193,10 +3171,8 @@ $messages['el'] = array(
 	'globalblock' => 'Καθολική φραγή μιας διεύθυνσης IP',
 	'globalblockstatus' => 'Τοπική κατάσταση καθολικών φραγών',
 	'removeglobalblock' => 'Αφαίρεση μιας καθολικής φραγής',
-	'right-globalblock' => 'Δημιουργία καθολικών φραγών',
-	'action-globalblock' => 'Δημιουργία καθολικών φραγών',
-	'right-globalunblock' => 'Αφαίρεση καθολικών φραγών',
-	'action-globalunblock' => 'Κατάργηση καθολικών φραγών',
+	'right-globalblock' => 'Δημιουργία καθολικών φραγών', # Fuzzy
+	'action-globalblock' => 'Δημιουργία καθολικών φραγών', # Fuzzy
 	'right-globalblock-whitelist' => 'Απενεργοποίηση καθολικών φραγών τοπικά',
 	'action-globalblock-whitelist' => 'απενεργοποίηση καθολικών φραγών τοπικά',
 	'right-globalblock-exempt' => 'Παράκαμψη καθολικών φραγών',
@@ -3324,10 +3300,8 @@ Jen la protokolo pri forbaroj sube por via referenco:',
 	'globalblock' => 'Ĝenerale forbari IP-adreson',
 	'globalblockstatus' => 'Loka statuso de ĝeneralaj forbaroj',
 	'removeglobalblock' => 'Forigi ĝeneralan forbaron',
-	'right-globalblock' => 'Fari ĝeneralajn forbarojn',
-	'action-globalblock' => 'fari ĝeneralajn forbarojn',
-	'right-globalunblock' => 'Forigi ĝeneralajn forbarojn',
-	'action-globalunblock' => 'forigi ĝeneralajn forbarojn',
+	'right-globalblock' => 'Fari ĝeneralajn forbarojn', # Fuzzy
+	'action-globalblock' => 'fari ĝeneralajn forbarojn', # Fuzzy
 	'right-globalblock-whitelist' => 'Malŝalti ĝeneralajn forbarojn loke',
 	'action-globalblock-whitelist' => 'malŝalti ĝeneralajn forbarojn loke',
 	'right-globalblock-exempt' => 'Preterigi ĝeneralajn forbarojn',
@@ -3466,10 +3440,8 @@ El registro de bloqueos se proporciona a continuación como referencia:',
 	'globalblock' => 'Bloquear una dirección IP globalmente',
 	'globalblockstatus' => 'Estatus local de bloqueos globales',
 	'removeglobalblock' => 'Quitar un bloqueo global',
-	'right-globalblock' => 'Hacer bloqueos globales',
-	'action-globalblock' => 'hacer bloques mundiales',
-	'right-globalunblock' => 'Quitar un bloqueo global',
-	'action-globalunblock' => 'eliminar bloqueos globales',
+	'right-globalblock' => 'Hacer bloqueos globales', # Fuzzy
+	'action-globalblock' => 'hacer bloques mundiales', # Fuzzy
 	'right-globalblock-whitelist' => 'Desactivar bloqueos globales localmente',
 	'action-globalblock-whitelist' => 'deshabilitar localmente bloqueos globales',
 	'right-globalblock-exempt' => 'Eludir bloqueos globales',
@@ -3777,8 +3749,7 @@ $messages['fa'] = array(
 	'globalblockstatus' => 'وضعیت محلی قطع‌ دسترسی‌های سراسری',
 	'removeglobalblock' => 'حذف یک قطع دسترسی سراسری',
 	'right-globalblock' => 'ایجاد و حذف بستن‌های سراسری',
-	'action-globalblock' => 'ایجاد قطع دسترسی‌های سراسری',
-	'action-globalunblock' => 'حذف قطع دسترسی‌های سراسری',
+	'action-globalblock' => 'ایجاد قطع دسترسی‌های سراسری', # Fuzzy
 	'right-globalblock-whitelist' => 'غیر فعال کردن قطع دسترسی‌های سراسری به طور محلی',
 	'action-globalblock-whitelist' => 'غیر فعال کردن قطع دسترسی‌های سراسری به‌صورت محلی',
 	'right-globalblock-exempt' => 'گذرگاه قطع دسترسی‌های سراسری',
@@ -3914,10 +3885,8 @@ Alla on ote estolokista.',
 	'globalblock' => 'Estä IP-osoite järjestelmänlaajuisesti',
 	'globalblockstatus' => 'Järjestelmänlaajuisten estojen paikallinen tila',
 	'removeglobalblock' => 'Poista järjestelmänlaajuinen esto',
-	'right-globalblock' => 'Estää järjestelmänlaajuisesti',
-	'action-globalblock' => 'estää järjestelmänlaajuisesti',
-	'right-globalunblock' => 'Poistaa järjestelmänlaajuisia estoja',
-	'action-globalunblock' => 'poistaa järjestelmänlaajuisia estoja',
+	'right-globalblock' => 'Estää järjestelmänlaajuisesti', # Fuzzy
+	'action-globalblock' => 'estää järjestelmänlaajuisesti', # Fuzzy
 	'right-globalblock-whitelist' => 'Poistaa käytöstä järjestelmänlaajuisia estoja paikallisesti',
 	'action-globalblock-whitelist' => 'poistaa käytöstä järjestelmänlaajuisia estoja paikallisesti',
 	'right-globalblock-exempt' => 'Ohittaa järjestelmänlaajuiset estot',
@@ -4257,10 +4226,8 @@ Lo jornal des blocâjos est disponiblo ce-desot :',
 	'globalblock' => 'Blocar dens l’ensemblo una adrèce IP',
 	'globalblockstatus' => 'Statuts locals des blocâjos globâls',
 	'removeglobalblock' => 'Enlevar un blocâjo globâl',
-	'right-globalblock' => 'Blocar des usanciérs dens l’ensemblo',
-	'action-globalblock' => 'fâre des blocâjos globâls',
-	'right-globalunblock' => 'Enlevar des usanciérs blocâs dens l’ensemblo',
-	'action-globalunblock' => 'enlevar des blocâjos globâls',
+	'right-globalblock' => 'Blocar des usanciérs dens l’ensemblo', # Fuzzy
+	'action-globalblock' => 'fâre des blocâjos globâls', # Fuzzy
 	'right-globalblock-whitelist' => 'Dèsactivar localament los blocâjos globâls',
 	'action-globalblock-whitelist' => 'dèsactivar localament los blocâjos globâls',
 	'right-globalblock-exempt' => 'Passar per-dessus los blocâjos globâls',
@@ -4568,10 +4535,8 @@ Do chunnt e Uuszug us em Benutzersperr-Logbuech:',
 	'globalblock' => 'E IP-Adräss wältwyt sperre',
 	'globalblockstatus' => 'Lokaler Status vu dr wältwyte Sperri',
 	'removeglobalblock' => 'Wältwyti Sperri ufhebe',
-	'right-globalblock' => 'Wältwyti Sperrine yyrichte',
-	'action-globalblock' => 'wältwyti Sperrine yyzrichte',
-	'right-globalunblock' => 'Wältwyti Sperrine ufhebe',
-	'action-globalunblock' => 'wältwyti Sperrine ufzhebe',
+	'right-globalblock' => 'Wältwyti Sperrine yyrichte', # Fuzzy
+	'action-globalblock' => 'wältwyti Sperrine yyzrichte', # Fuzzy
 	'right-globalblock-whitelist' => 'Wältwyti Sperrine lokal abschalte',
 	'action-globalblock-whitelist' => 'wältwyti Sperrine lokal abzschalte',
 	'right-globalblock-exempt' => 'Wältwyti Sperrine umgoh',
@@ -4699,10 +4664,8 @@ $messages['gu'] = array(
 	'globalblock' => 'IP ને વૈશ્વિક રીતે પ્રતિબંધીત કરો',
 	'globalblockstatus' => 'વૈશ્વીક પ્રતિબંધોની સ્થાનીય સ્થિતિ',
 	'removeglobalblock' => 'વૈશ્વીક પ્રતિબંધ હટાવો',
-	'right-globalblock' => 'વૈશ્વીક પ્રતિબંધો બનાવો',
-	'action-globalblock' => 'વૈશ્વીક પ્રતિબંધો બનાવો',
-	'right-globalunblock' => 'વૈશ્વીક પ્રતિબંધ હટાવો',
-	'action-globalunblock' => 'વૈશ્વીક પ્રતિબંધ હટાવો',
+	'right-globalblock' => 'વૈશ્વીક પ્રતિબંધો બનાવો', # Fuzzy
+	'action-globalblock' => 'વૈશ્વીક પ્રતિબંધો બનાવો', # Fuzzy
 	'right-globalblock-whitelist' => 'વૈશ્વીક પ્રતિબંધને સ્થાનીય સ્તરે હટાવો',
 	'action-globalblock-whitelist' => 'વૈશ્વીક પ્રતિબંધને સ્થાનીય સ્તરે નિષ્ક્રીય કરો',
 	'right-globalblock-exempt' => 'વૈશ્વીક પ્રતિબંધો દરગુજર કરો',
@@ -4973,8 +4936,7 @@ $messages['hi'] = array(
 	'globalblock' => 'एक आइपी एड्रेसको ग्लोबल ब्लॉक करें',
 	'globalblockstatus' => 'वैश्विक अवरोध के स्थानीय स्थिति',
 	'removeglobalblock' => 'एक वैश्विक अवरोध हटाएँ',
-	'right-globalblock' => 'वैश्विक ब्लॉक तैयार करें',
-	'right-globalunblock' => 'वैश्विक ब्लॉक हटा दें',
+	'right-globalblock' => 'वैश्विक ब्लॉक तैयार करें', # Fuzzy
 	'right-globalblock-whitelist' => 'वैश्विक ब्लॉक स्थानिक स्तरपर रद्द करें',
 	'right-globalblock-exempt' => 'बाईपास वैश्विक ब्लॉक',
 );
@@ -5103,8 +5065,7 @@ Evidencija blokiranja navedena je niže kao napomena:',
 	'globalblock' => 'Globalno blokiraj IP adresu',
 	'globalblockstatus' => 'Mjesni status globalnih blokiranja',
 	'removeglobalblock' => 'Ukloni globalno blokiranje',
-	'right-globalblock' => 'Mogućnost globalnog blokiranja',
-	'right-globalunblock' => 'Uklanjanje globalnog blokiranja',
+	'right-globalblock' => 'Mogućnost globalnog blokiranja', # Fuzzy
 	'right-globalblock-whitelist' => 'Mjesno uklanjanje globalnog blokiranja',
 	'right-globalblock-exempt' => 'Zaobilaženje globalnih blokiranja',
 );
@@ -5228,10 +5189,8 @@ Protokol blokowanjow podawa so deleka jako referencu:',
 	'globalblock' => 'IP-adresu globalnje blokować',
 	'globalblockstatus' => 'Lokalny status globalnych blokowanjow',
 	'removeglobalblock' => 'Globalne blokowanje wotstronić',
-	'right-globalblock' => 'Globalne blokowanja činić',
-	'action-globalblock' => 'globalne blokowanja činić',
-	'right-globalunblock' => 'Globalne blokowanja wotstronić',
-	'action-globalunblock' => 'globalne blokowanja wotstronić',
+	'right-globalblock' => 'Globalne blokowanja činić', # Fuzzy
+	'action-globalblock' => 'globalne blokowanja činić', # Fuzzy
 	'right-globalblock-whitelist' => 'Globalne blokowanja lokalnje znjemóžnić',
 	'action-globalblock-whitelist' => 'globalne blokowanja lokalnje znjemóžnić',
 	'right-globalblock-exempt' => 'Globalne blokowanja wobeńć',
@@ -5297,8 +5256,7 @@ Tanpri note ke ou pa kapab antre yon non itilizatè!',
 	'globalblocking-dewhitelist-logentry' => 're-mete blokaj global sou [[$1]] lokalman',
 	'globalblocklist' => 'Lis Adrès IP bloke globalman yo',
 	'globalblock' => 'Bloke yon adrès IP globalman',
-	'right-globalblock' => 'Fè blokaj global',
-	'right-globalunblock' => 'Retire blokaj global yo',
+	'right-globalblock' => 'Fè blokaj global', # Fuzzy
 	'right-globalblock-whitelist' => 'Dezame blokaj global yo lokalman',
 );
 
@@ -5426,10 +5384,8 @@ A blokkolási napló alább látható tájékoztatásul:',
 	'globalblock' => 'IP-cím globális blokkolása',
 	'globalblockstatus' => 'Globális blokkok helyi állapota',
 	'removeglobalblock' => 'Globális blokk eltávolítása',
-	'right-globalblock' => 'globális blokkok készítése',
-	'action-globalblock' => 'globális blokkok készítése',
-	'right-globalunblock' => 'globális blokkok eltávolítása',
-	'action-globalunblock' => 'globális blokkok eltávolítása',
+	'right-globalblock' => 'globális blokkok készítése', # Fuzzy
+	'action-globalblock' => 'globális blokkok készítése', # Fuzzy
 	'right-globalblock-whitelist' => 'globális blokkok kikapcsolása helyileg',
 	'action-globalblock-whitelist' => 'globális blokkok kikapcsolása helyileg',
 	'right-globalblock-exempt' => 'globális blokkok figyelmen kívül hagyása',
@@ -5686,10 +5642,8 @@ Log pemblokiran disediakan di bawah ini sebagai rujukan:',
 	'globalblock' => 'Memblokir suatu alamat IP secara global',
 	'globalblockstatus' => 'Status pemblokiran global di wiki lokal',
 	'removeglobalblock' => 'Menghapuskan pemblokiran global',
-	'right-globalblock' => 'Melakukan pemblokiran global',
-	'action-globalblock' => 'lakukan pemblokiran global',
-	'right-globalunblock' => 'Menghapuskan pemblokiran global',
-	'action-globalunblock' => 'hapus pemblokiran global',
+	'right-globalblock' => 'Melakukan pemblokiran global', # Fuzzy
+	'action-globalblock' => 'lakukan pemblokiran global', # Fuzzy
 	'right-globalblock-whitelist' => 'Menonaktifkan suatu pemblokiran global di wiki lokal',
 	'action-globalblock-whitelist' => 'nonaktifkan pemblokiran global di wiki lokal',
 	'right-globalblock-exempt' => 'Tidak dikenakan pemblokiran global',
@@ -5982,10 +5936,8 @@ Síðasta færsla vistfangsins úr bönnunarskrá er sýnd hér fyrir neðan til
 	'globalblock' => 'Banna vistfang altækt',
 	'globalblockstatus' => 'Svæðisbundin staða altækra banna',
 	'removeglobalblock' => 'Fjarlægja altækt bann',
-	'right-globalblock' => 'Búa til altækt bann',
-	'action-globalblock' => 'Búa til altækt bann',
-	'right-globalunblock' => 'Fjarlægja altæk bönn',
-	'action-globalunblock' => 'Fjarlægja altæk bönn',
+	'right-globalblock' => 'Búa til altækt bann', # Fuzzy
+	'action-globalblock' => 'Búa til altækt bann', # Fuzzy
 	'right-globalblock-whitelist' => 'Óvirkja altæk bönn staðbundið',
 	'action-globalblock-whitelist' => 'Óvirkja altæk bönn staðbundið',
 	'right-globalblock-exempt' => 'Hunsa altæk bönn',
@@ -6381,10 +6333,8 @@ Log pamblokiran sumadhiya nèng ngisor kanggo rujukan:',
 	'globalblock' => 'Mblokir alamat IP sacara global',
 	'globalblockstatus' => 'Status lokal saka pamblokiran global',
 	'removeglobalblock' => 'Jabel pamblokiran global',
-	'right-globalblock' => 'Nggawé pamblokiran global',
-	'action-globalblock' => 'gawé blokiran global',
-	'right-globalunblock' => 'Ilangana pamblokiran global',
-	'action-globalunblock' => 'singkiraké blokiran global',
+	'right-globalblock' => 'Nggawé pamblokiran global', # Fuzzy
+	'action-globalblock' => 'gawé blokiran global', # Fuzzy
 	'right-globalblock-whitelist' => 'Jabel blokade global sacara lokal',
 	'action-globalblock-whitelist' => 'patèni blokiran global sacara lokal',
 	'right-globalblock-exempt' => 'Liwati blokiran global',
@@ -6529,10 +6479,8 @@ $1',
 	'globalblock' => 'IP მისამართის გლობალური ბლოკირება',
 	'globalblockstatus' => 'გლობალური ბლოკირების ლოკალური სტატუსი',
 	'removeglobalblock' => 'გლობალური ბლოკირების მოხსნა',
-	'right-globalblock' => 'გლობალური ბლოკირების გაკეთება',
-	'action-globalblock' => 'გლობალური ბლოკირებების გაკეთება',
-	'right-globalunblock' => 'გლობალური ბლოკირების მოხსნა',
-	'action-globalunblock' => 'გლობალური ბლოკირებების მოხსნა',
+	'right-globalblock' => 'გლობალური ბლოკირების გაკეთება', # Fuzzy
+	'action-globalblock' => 'გლობალური ბლოკირებების გაკეთება', # Fuzzy
 	'right-globalblock-whitelist' => 'გლობალური ბლოკირების ლოკალური გამორთვა',
 	'action-globalblock-whitelist' => 'გლობალური ბლოკირების ლოკალური გამორთვა',
 	'right-globalblock-exempt' => 'გლობალური ბლოკირების გვერდის ავლა',
@@ -6609,7 +6557,6 @@ $messages['km'] = array(
 	'globalblocking-unblock-logentry' => 'ដកចេញ​ការរាំងខ្ទប់​សកល​នៅលើ [[$1]]',
 	'globalblock' => 'រាំងខ្ទប់​ជា​សកល​ចំពោះ​អាសយដ្ឋាន IP',
 	'removeglobalblock' => 'ដកចេញ​ការរាំងខ្ទប់​សកល',
-	'right-globalunblock' => 'ដកចេញ​ការរាំងខ្ទប់​សកល',
 );
 
 /** Kannada (ಕನ್ನಡ)
@@ -6906,10 +6853,8 @@ Et {{int:blocklogpage}} es hee dronger opjeföhrt, do kanns De nohkike, wat wohr
 	'globalblock' => 'Don en IP-Address en alle Wikis sperre',
 	'globalblockstatus' => 'Der Zohstand hee em Wiki fun de IP-Address-Sperre en alle Wikis',
 	'removeglobalblock' => 'En Sperr för en IP-Address en alle Wikis ophevve',
-	'right-globalblock' => 'En Sperr för en IP-Address en alle Wikis enreschte',
-	'action-globalblock' => 'Jemeinsamme Sperre för alle Wikis enreschte',
-	'right-globalunblock' => 'En Sperr fun alle Wiki ophevve',
-	'action-globalunblock' => 'Jemeinsamme Sperre fun alle Wiki ophevve',
+	'right-globalblock' => 'En Sperr för en IP-Address en alle Wikis enreschte', # Fuzzy
+	'action-globalblock' => 'Jemeinsamme Sperre för alle Wikis enreschte', # Fuzzy
 	'right-globalblock-whitelist' => 'En Sperr för en IP-Address en alle Wikis ophevve, ävver nur för hee dat Wiki',
 	'action-globalblock-whitelist' => 'Jemeinsamme Sperre fun alle Wikis en enem einzel Wiki widder ophevve',
 	'right-globalblock-exempt' => 'Jemeinsam Sperre ömjonn',
@@ -7213,10 +7158,8 @@ Alle globale blokkades stoan in de [[Special:GlobalBlockList|liest met globale b
 	'globalblock' => "'n IP-adres globaal zitte",
 	'globalblockstatus' => 'Lokaal status ven globaal bloks',
 	'removeglobalblock' => 'Globaal blok wisse',
-	'right-globalblock' => 'Globaal bloks instelle',
-	'action-globalblock' => 'maak wikiwiej bloks',
-	'right-globalunblock' => 'Globaal bloks wisse',
-	'action-globalunblock' => 'wös wikiwiej bloks',
+	'right-globalblock' => 'Globaal bloks instelle', # Fuzzy
+	'action-globalblock' => 'maak wikiwiej bloks', # Fuzzy
 	'right-globalblock-whitelist' => 'Globaal bloks lokaal negere',
 	'action-globalblock-whitelist' => 'negeer wikiwiej bloks',
 	'right-globalblock-exempt' => 'Loup globaal bloks óm',
@@ -7316,7 +7259,7 @@ Lūdzu, ievadiet derīgu IP adresi.',
 	'globalblocking-logpage' => 'Globālais bloķēšanas žurnāls',
 	'globalblocklist' => 'Globāli bloķēto IP adrešu saraksts',
 	'globalblock' => 'Globāli bloķēt IP adresi',
-	'right-globalblock' => 'Veikt lietotāju globālu bloķēšanu',
+	'right-globalblock' => 'Veikt lietotāju globālu bloķēšanu', # Fuzzy
 );
 
 /** Malagasy (Malagasy)
@@ -7792,8 +7735,7 @@ $messages['mr'] = array(
 	'globalblock' => 'आयपी अंकपत्त्याला वैश्विक पातळीवर ब्लॉक करा',
 	'globalblockstatus' => 'वैश्विक रोधाची स्थानिक स्थिती',
 	'removeglobalblock' => 'वैश्विक रोध हटवा',
-	'right-globalblock' => 'वैश्विक ब्लॉक तयार करा',
-	'right-globalunblock' => 'वैश्विक ब्लॉक काढून टाका',
+	'right-globalblock' => 'वैश्विक ब्लॉक तयार करा', # Fuzzy
 	'right-globalblock-whitelist' => 'वैश्विक ब्लॉक स्थानिक पातळीवर रद्द करा',
 	'right-globalblock-exempt' => 'वैश्विक रोधास बगल द्या',
 );
@@ -8046,10 +7988,8 @@ Sabiex tara l-blokki globali attivi kollha, żur il-[[Special:GlobalBlockList|li
 	'globalblock' => 'Imblokka globalment indirizz IP',
 	'globalblockstatus' => 'Stat lokali tal-blokki globali',
 	'removeglobalblock' => 'Neħħi blokk globali',
-	'right-globalblock' => 'Jagħmel blokk globali',
-	'action-globalblock' => 'tagħmel blokki globali',
-	'right-globalunblock' => 'Ineħħi blokki globali',
-	'action-globalunblock' => 'tneħħi blokki globali',
+	'right-globalblock' => 'Jagħmel blokk globali', # Fuzzy
+	'action-globalblock' => 'tagħmel blokki globali', # Fuzzy
 	'right-globalblock-whitelist' => 'Jiddiżattiva blokki globali lokalment',
 	'action-globalblock-whitelist' => 'tiddiżattiva blokki globali lokalment',
 	'right-globalblock-exempt' => 'Jaqbeż blokki globali',
@@ -8195,10 +8135,8 @@ Blokkeringsloggen vises under som referanse:',
 	'globalblock' => 'Blokker en IP-adresse globalt',
 	'globalblockstatus' => 'Lokal status for globale blokkeringer',
 	'removeglobalblock' => 'Fjern en global blokkering',
-	'right-globalblock' => 'Blokkere IP-er globalt',
-	'action-globalblock' => 'utfør globale blokkeringer',
-	'right-globalunblock' => 'Fjern globale blokkeringer',
-	'action-globalunblock' => 'fjern globale blokkeringer',
+	'right-globalblock' => 'Blokkere IP-er globalt', # Fuzzy
+	'action-globalblock' => 'utfør globale blokkeringer', # Fuzzy
 	'right-globalblock-whitelist' => 'Slå av globale blokkeringer lokalt',
 	'action-globalblock-whitelist' => 'deaktiver globale blokkeringer lokalt',
 	'right-globalblock-exempt' => 'Gå utenom globale blokkeringer',
@@ -8300,8 +8238,7 @@ För en List mit all aktive globale Sperren kiek na de [[Special:GlobalBlockList
 	'globalblock' => 'En IP-Adress global sperren',
 	'globalblockstatus' => 'Lokalen Status vun de globale Sperr',
 	'removeglobalblock' => 'Globale Sperr opheven',
-	'right-globalblock' => 'Globale Sperren maken',
-	'right-globalunblock' => 'Globale Sperren opheven',
+	'right-globalblock' => 'Globale Sperren maken', # Fuzzy
 	'right-globalblock-whitelist' => 'Globale Sperren lokal afschalten',
 );
 
@@ -8605,8 +8542,7 @@ For å visa alle aktive globale blokkeringar, sjå den [[Special:GlobalBlockList
 	'globalblock' => 'Blokker ei IP-adressa globalt',
 	'globalblockstatus' => 'Lokal status for globale blokkeringar',
 	'removeglobalblock' => 'Fjern ei global blokkering',
-	'right-globalblock' => 'Gjennomføra globale blokkeringar',
-	'right-globalunblock' => 'Fjerna globale blokkeringar',
+	'right-globalblock' => 'Gjennomføra globale blokkeringar', # Fuzzy
 	'right-globalblock-whitelist' => 'Slå av globale blokkeringar lokalt',
 );
 
@@ -8846,10 +8782,8 @@ $messages['or'] = array(
 	'globalblock' => 'ଏହି IP ଠିକଣାଟି ଜଗତଯାକ ଉଇକିରେ ଅଟକାଇ ଦେବେ',
 	'globalblockstatus' => 'ଜଗତ ବାସନ୍ଦର ଆଞ୍ଚଳିକ ସ୍ଥିତି',
 	'removeglobalblock' => 'ଏକ ଜଗତ ଯାକର ଅଟକକୁ ହଟାଇଦେବେ',
-	'right-globalblock' => 'ଜଗତ ଯାକ ବାସନ୍ଦ କରିବେ',
-	'action-globalblock' => 'ଜାଗତିକ ବାସନ୍ଦ ତିଆରି କରିବେ',
-	'right-globalunblock' => 'ଏକ ଜଗତ ଯାକର ବାସନ୍ଦକୁ ହଟାଇଦେବେ',
-	'action-globalunblock' => 'ଜାଗତିକ ବାସନ୍ଦ ହଟାଇବେ',
+	'right-globalblock' => 'ଜଗତ ଯାକ ବାସନ୍ଦ କରିବେ', # Fuzzy
+	'action-globalblock' => 'ଜାଗତିକ ବାସନ୍ଦ ତିଆରି କରିବେ', # Fuzzy
 	'right-globalblock-whitelist' => 'ଜଗତ ବାସନ୍ଦକୁ ଆଞ୍ଚଳିକ ଭାବରେ ଅଚଳ କରିବେ',
 	'action-globalblock-whitelist' => 'ଜାଗତିକ ବାସନ୍ଦକୁ ଆଞ୍ଚଳିକ ଭାବରେ ଅଚଳ କରିବେ',
 	'right-globalblock-exempt' => 'ଜଗତ ଯାକ ବାସନ୍ଦକୁ ଅଲଗା ପଥଗାମୀ କରିବେ',
@@ -9026,8 +8960,7 @@ Poniżej znajduje się rejestr blokad:',
 	'globalblockstatus' => 'Lokalny status globalnych blokad',
 	'removeglobalblock' => 'Usuwanie globalnej blokady',
 	'right-globalblock' => 'Zakładanie i zdejmowanie globalnych blokad',
-	'action-globalblock' => 'zakładanie globalnych blokad',
-	'action-globalunblock' => 'zdejmowanie globalnych blokad',
+	'action-globalblock' => 'zakładanie globalnych blokad', # Fuzzy
 	'right-globalblock-whitelist' => 'Lokalne odblokowywanie globalnych blokad',
 	'action-globalblock-whitelist' => 'lokalne odblokowywanie globalnych blokad',
 	'right-globalblock-exempt' => 'Ignorowanie globalnych blokad',
@@ -9155,10 +9088,8 @@ Për vëdde tùit ij blocagi globaj ativ, a peul vëdde la [[Special:GlobalBlock
 	'globalblock' => "Blòca globalment n'adrëssa IP",
 	'globalblockstatus' => 'Statù local dij blocagi globaj',
 	'removeglobalblock' => 'Gavé un blocagi global',
-	'right-globalblock' => 'Fé dij blocagi globaj',
-	'action-globalblock' => 'fé dij blocagi globaj',
-	'right-globalunblock' => 'Gavé dij blocagi globaj',
-	'action-globalunblock' => 'gavé dij blocagi globaj',
+	'right-globalblock' => 'Fé dij blocagi globaj', # Fuzzy
+	'action-globalblock' => 'fé dij blocagi globaj', # Fuzzy
 	'right-globalblock-whitelist' => 'Disabilité dij blocagi globaj localment',
 	'action-globalblock-whitelist' => 'disabilité dij blocagi globaj localment',
 	'right-globalblock-exempt' => 'Passé dzora ai blocagi globaj',
@@ -9269,8 +9200,7 @@ $messages['pnb'] = array(
 	'globalblock' => 'گلوبلی اس آئی پی  پتے نوں روکو',
 	'globalblockstatus' => 'جگت روکاں دا لوکل سٹیٹس',
 	'removeglobalblock' => 'گلوبل تالا ہٹاؤ',
-	'right-globalblock' => 'گلوبل روکاں لاؤ',
-	'right-globalunblock' => 'گلوبل روکاں ہٹاؤ',
+	'right-globalblock' => 'گلوبل روکاں لاؤ', # Fuzzy
 	'right-globalblock-whitelist' => 'جگت روک نوں لوکلی نکما کرو۔',
 	'right-globalblock-exempt' => 'گلوبل روکاں نون نان تکو',
 );
@@ -9701,10 +9631,8 @@ Jurnalul blocărilor este disponibil mai jos:',
 	'globalblock' => 'Blochează global o adresă IP',
 	'globalblockstatus' => 'Statutul local al blocărilor globale',
 	'removeglobalblock' => 'Elimină o blocare globală',
-	'right-globalblock' => 'Efectuează blocări globale',
-	'action-globalblock' => 'efectuați blocări globale',
-	'right-globalunblock' => 'Elimină blocări globale',
-	'action-globalunblock' => 'eliminați blocări globale',
+	'right-globalblock' => 'Efectuează blocări globale', # Fuzzy
+	'action-globalblock' => 'efectuați blocări globale', # Fuzzy
 	'right-globalblock-whitelist' => 'Dezactivează local blocările globale',
 	'action-globalblock-whitelist' => 'dezactivați local blocări globale',
 	'right-globalblock-exempt' => 'Ocolește blocările globale',
@@ -10100,10 +10028,8 @@ $messages['rue'] = array(
 	'globalblock' => 'Заблоковати IP адресу ґлобално',
 	'globalblockstatus' => 'Локалный статус ґлобалного блокованя',
 	'removeglobalblock' => 'Зняти ґлобалне блокованя',
-	'right-globalblock' => 'Ґлобалне блокованя',
-	'action-globalblock' => 'ґлобално блоковати',
-	'right-globalunblock' => 'Знятя ґлобалных блоковань',
-	'action-globalunblock' => 'зняти ґлобалны блокованя',
+	'right-globalblock' => 'Ґлобалне блокованя', # Fuzzy
+	'action-globalblock' => 'ґлобално блоковати', # Fuzzy
 	'right-globalblock-whitelist' => 'Дефінованя вынятків з ґлобалного блокованя',
 	'action-globalblock-whitelist' => 'дефіновати выняткы з ґловалного блокованя',
 	'right-globalblock-exempt' => 'Обходжаня ґлобалных блоковань',
@@ -10229,10 +10155,8 @@ $messages['sa'] = array(
 	'globalblock' => 'एकः ऐपिसङ्केतसः वैश्विकस्तरे अवरुद्ध्यताम्',
 	'globalblockstatus' => 'वैश्विकावरोधस्य स्थानीयस्थितिः',
 	'removeglobalblock' => 'वैश्विकावरोधः अपनीयताम्',
-	'right-globalblock' => 'वैश्विकावरोधाः सज्जीक्रियन्ताम्',
-	'action-globalblock' => 'वैश्विकावरोधाः सज्जीक्रियन्ताम्',
-	'right-globalunblock' => 'वैश्विकावरोधाः अपनीयन्ताम्',
-	'action-globalunblock' => 'वैश्विकावरोधाः अपनीयन्ताम्',
+	'right-globalblock' => 'वैश्विकावरोधाः सज्जीक्रियन्ताम्', # Fuzzy
+	'action-globalblock' => 'वैश्विकावरोधाः सज्जीक्रियन्ताम्', # Fuzzy
 	'right-globalblock-whitelist' => 'वैश्विकावरोधाः स्थानीयस्तरे निष्क्रियाः क्रियन्ताम्',
 	'action-globalblock-whitelist' => 'वैश्विकावरोधाः स्थानीयस्तरे निष्क्रियाः क्रियन्ताम्',
 	'right-globalblock-exempt' => 'वैश्विकावरोधः निवार्यताम्',
@@ -10345,8 +10269,7 @@ $messages['sah'] = array(
 	'globalblock' => 'IP-ны бары бырайыактарга бобуу',
 	'globalblockstatus' => 'Бырайыактарга барыларыгар бобуу олохтоох (локал) туруга',
 	'removeglobalblock' => 'Бырайыактарга барытыгар бобуллууну уһул',
-	'right-globalblock' => 'Бырайыактарга барыларыгар дьайар бобууну туруоруу',
-	'right-globalunblock' => 'бобууну устуу',
+	'right-globalblock' => 'Бырайыактарга барыларыгар дьайар бобууну туруоруу', # Fuzzy
 	'right-globalblock-whitelist' => 'бырайыактарга барытыгар дьайар бобуулары араарыы',
 	'right-globalblock-exempt' => 'Үрдүк таһымҥа бобууну тумнуу',
 );
@@ -10537,10 +10460,8 @@ $messages['si'] = array(
 	'globalblock' => 'IP ලිපිනයක් ගෝලීයව වාරණය කරන්න',
 	'globalblockstatus' => 'ගෝලීය වාරණවල ප්‍රාදේශිය තත්වය',
 	'removeglobalblock' => 'ගෝලීය වාරණයක් ඉවත් කරන්න',
-	'right-globalblock' => 'ගෝලීය වාරණ තනන්න',
-	'action-globalblock' => 'ගෝලීය වාරණ සිදු කරන්න',
-	'right-globalunblock' => 'ගෝලීය වාරණ ඉවත් කරන්න',
-	'action-globalunblock' => 'ගෝලීය වාරණ ඉවත් කරන්න',
+	'right-globalblock' => 'ගෝලීය වාරණ තනන්න', # Fuzzy
+	'action-globalblock' => 'ගෝලීය වාරණ සිදු කරන්න', # Fuzzy
 	'right-globalblock-whitelist' => 'ගෝලීය වාරණයන් ප්‍රාදේශීයව අහෝසි කරන්න',
 	'action-globalblock-whitelist' => 'ගෝලීය වාරණයන් ප්‍රාදේශීයව අහෝසි කරන්න',
 	'right-globalblock-exempt' => 'ගෝලීය වාරණ මගහරින්න',
@@ -10664,10 +10585,8 @@ Dolu je pre informáciu záznam blokovaní:',
 	'globalblock' => 'Globálne zablokovať IP adresu',
 	'globalblockstatus' => 'Lokálny stav globálnych blokovaní',
 	'removeglobalblock' => 'Odstrániť globálne blokovanie',
-	'right-globalblock' => 'Robiť globálne blokovania',
-	'action-globalblock' => 'globálne blokovať',
-	'right-globalunblock' => 'Odstraňovať globálne blokovania',
-	'action-globalunblock' => 'rušiť globálne blokovania',
+	'right-globalblock' => 'Robiť globálne blokovania', # Fuzzy
+	'action-globalblock' => 'globálne blokovať', # Fuzzy
 	'right-globalblock-whitelist' => 'Lokálne vypnúť globálne blokovania',
 	'action-globalblock-whitelist' => 'definovať výnimky z globálnych blokovaní',
 	'right-globalblock-exempt' => 'Obchádzať globálne blokovania',
@@ -10940,10 +10859,8 @@ Regjistri i bllokimit është poshtë për referncë:',
 	'globalblock' => 'Bllokoni globalisht një adresë IP',
 	'globalblockstatus' => 'Statusi lokal i bllokimeve globale',
 	'removeglobalblock' => 'Hiq një bllokim global',
-	'right-globalblock' => 'Bëni bllokime globale',
-	'action-globalblock' => 'bë bllokim të përgjithshëm',
-	'right-globalunblock' => 'Hiqni bllokime globale',
-	'action-globalunblock' => 'largo bllokimet e përgjithshme',
+	'right-globalblock' => 'Bëni bllokime globale', # Fuzzy
+	'action-globalblock' => 'bë bllokim të përgjithshëm', # Fuzzy
 	'right-globalblock-whitelist' => 'Çaktivizoni bllokimet globale në nivel lokal',
 	'action-globalblock-whitelist' => 'pamundëso lokalisht bllokimet e përgjithshme',
 	'right-globalblock-exempt' => 'Anashkaloni bllokimet globale',
@@ -11060,10 +10977,8 @@ $messages['sr-ec'] = array(
 	'globalblock' => 'Глобално блокирајте ИП адресу',
 	'globalblockstatus' => 'Локално стање глобалних блокада',
 	'removeglobalblock' => 'Уклони глобални блок',
-	'right-globalblock' => 'Постави глобалне блокове',
-	'action-globalblock' => 'постављање глобалних блокирања',
-	'right-globalunblock' => 'Уклони глобалне блокове',
-	'action-globalunblock' => 'Брисање глобалних блокова',
+	'right-globalblock' => 'Постави глобалне блокове', # Fuzzy
+	'action-globalblock' => 'постављање глобалних блокирања', # Fuzzy
 	'right-globalblock-whitelist' => 'Онемогући глобалне блокове локално',
 	'action-globalblock-whitelist' => 'локално онемогућавање глобалних блокова',
 	'right-globalblock-exempt' => 'заобилажење глобалних блокада',
@@ -11178,10 +11093,8 @@ Ispod je priložena istorija blokiranja:',
 	'globalblock' => 'Globalno blokirajte IP adresu',
 	'globalblockstatus' => 'Lokalni status globalnih blokova',
 	'removeglobalblock' => 'Ukloni globalni blok',
-	'right-globalblock' => 'Postavi globalne blokove',
-	'action-globalblock' => 'postavljanje globalnih blokiranja',
-	'right-globalunblock' => 'Ukloni globalne blokove',
-	'action-globalunblock' => 'Brisanje globalnih blokova',
+	'right-globalblock' => 'Postavi globalne blokove', # Fuzzy
+	'action-globalblock' => 'postavljanje globalnih blokiranja', # Fuzzy
 	'right-globalblock-whitelist' => 'Onemogući globalne blokove lokalno',
 	'action-globalblock-whitelist' => 'lokalno onemogućavanje globalnih blokova',
 	'right-globalblock-exempt' => 'zaobilaženje globalnih blokada',
@@ -11514,10 +11427,8 @@ $messages['ta'] = array(
 	'globalblock' => 'உலகளவில் ஒரு IP முகவரியை தடைசெய்',
 	'globalblockstatus' => 'உலகளாவிய தடையின் உள்நிலைமை',
 	'removeglobalblock' => 'ஒரு உலகளாவிய தடையை நீக்கு',
-	'right-globalblock' => 'உலகளாவிய தடையை உருவாக்கு',
-	'action-globalblock' => 'உலகளாவிய தடையை உருவாக்கு',
-	'right-globalunblock' => 'உலகளாவிய தடைகளை நீக்கு',
-	'action-globalunblock' => 'உலகளாவிய தடையை நீக்கு',
+	'right-globalblock' => 'உலகளாவிய தடையை உருவாக்கு', # Fuzzy
+	'action-globalblock' => 'உலகளாவிய தடையை உருவாக்கு', # Fuzzy
 	'right-globalblock-whitelist' => 'உள்ளமைவில் உலகளாவிய தடைகளை செயல்நீக்கவும்',
 	'action-globalblock-whitelist' => 'உள்ளமைவில் உலகளாவிய தடைகளை செயல்நீக்கவும்',
 	'right-globalblock-exempt' => 'உலகளாவிய தடையை மீறு',
@@ -11619,8 +11530,7 @@ $messages['te'] = array(
 	'globalblock' => 'సర్వత్రా ఈ ఐపీ చిరునామాను నిరోధించు',
 	'globalblockstatus' => 'సార్వత్రిక నిరోధాల స్థానిక స్థితి',
 	'removeglobalblock' => 'ఒక సార్వత్రిక నిరోధాన్ని తొలగించు',
-	'right-globalblock' => 'సార్వత్రిక నిరోధాల్ని చేయడం',
-	'right-globalunblock' => 'సార్వత్రిక నిరోధాల్ని తొలగించడం',
+	'right-globalblock' => 'సార్వత్రిక నిరోధాల్ని చేయడం', # Fuzzy
 	'right-globalblock-whitelist' => 'సార్వత్రిక నిరోధాల్ని స్థానికంగా అచేతనం చేయగలగడం',
 	'right-globalblock-exempt' => 'సార్వత్రిక నిరోధాలని తప్పించగలడం',
 );
@@ -11700,8 +11610,7 @@ $messages['tg-cyrl'] = array(
 	'globalblock' => 'Ба сурати саросарӣ қатъ кардани нишонаи IP',
 	'globalblockstatus' => 'Вазъияти маҳаллии қатъи дастрасии саросарӣ',
 	'removeglobalblock' => 'Пок кардани қатъи дастрасӣ',
-	'right-globalblock' => 'Эҷоди қатъи дастрасиҳои саросарӣ',
-	'right-globalunblock' => 'Ҳазфи қатъи дастрасиҳои саросарӣ',
+	'right-globalblock' => 'Эҷоди қатъи дастрасиҳои саросарӣ', # Fuzzy
 	'right-globalblock-whitelist' => 'Ғайри фаъол кардани қатъи дастрасиҳои саросарӣ ба таври маҳаллӣ',
 );
 
@@ -11767,8 +11676,7 @@ Lutfan dar jod dored, ki şumo nametavoned jak nomi korbariro vorid kuned!",
 	'globalblock' => "Ba surati sarosarī qat' kardani nişonai IP",
 	'globalblockstatus' => "Vaz'ijati mahalliji qat'i dastrasiji sarosarī",
 	'removeglobalblock' => "Pok kardani qat'i dastrasī",
-	'right-globalblock' => "Eçodi qat'i dastrasihoi sarosarī",
-	'right-globalunblock' => "Hazfi qat'i dastrasihoi sarosarī",
+	'right-globalblock' => "Eçodi qat'i dastrasihoi sarosarī", # Fuzzy
 	'right-globalblock-whitelist' => "Ƣajri fa'ol kardani qat'i dastrasihoi sarosarī ba tavri mahallī",
 );
 
@@ -11901,14 +11809,14 @@ Blokirleme gündeligi salgylanmak üçin aşakda berilýär:',
 	'globalblock' => 'IP adresini global blokirle',
 	'globalblockstatus' => 'Global blokirlemeleriň ýerli statusy',
 	'removeglobalblock' => 'Global blokirlemäni aýyr',
-	'right-globalblock' => 'Global blokirleme ediň',
-	'right-globalunblock' => 'Global blokirlemeleri aýyr',
+	'right-globalblock' => 'Global blokirleme ediň', # Fuzzy
 	'right-globalblock-whitelist' => 'Global blokirlemeleri ýerli tertipde ýap',
 	'right-globalblock-exempt' => 'Global blokirlemelerden aýlanyp geç',
 );
 
 /** Tagalog (Tagalog)
  * @author AnakngAraw
+ * @author Sky Harbor
  */
 $messages['tl'] = array(
 	'globalblocking-desc' => '[[Special:GlobalBlock|Nagpapahintulot]] na [[Special:GlobalBlockList|mahadlangan/maharang sa kahabaan ng maraming mga wiki]] ang mga adres ng IP',
@@ -11954,7 +11862,7 @@ May ilang mga pagharang na tinatakan bilang hinadlangan sa iisang pook (lokal) l
 	'globalblocking-list-ipinvalid' => 'Hindi tanggap ang hinanap mong ($1) adres ng IP.
 Pakipasok ang isang naaangkop na adres ng IP.',
 	'globalblocking-search-errors' => 'Hindi matagumapay ang iyong paghahanap, dahil sa sumusunod na {{PLURAL:$1|dahilan|mga dahilan}}:',
-	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') pandaigdigang hinarang/hinadlangan si [[Special:Contributions/\$4|\$4]] ''(\$5)''",
+	'globalblocking-list-blockitem' => "\$1: Pandaigdigang hinarang ni <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') si [[Special:Contributions/\$4|\$4]] ''(\$5)''",
 	'globalblocking-list-expiry' => 'katapusan $1',
 	'globalblocking-list-anononly' => 'hindi nagpapakilala lamang',
 	'globalblocking-list-unblock' => 'tanggalin',
@@ -12012,7 +11920,7 @@ Paki isama ang lahat ng mga detalyeng nasa itaas sa anumang mga pagtatanong na g
 	'globalblocking-logpagetext' => 'Isa itong talaan ng mga pandaigdigang pagharang na isinagawa at tinanggal mula sa wiking ito.
 Dapat tandaan na maaaring gawin ang pandaigdigang mga paghadlang at alisin mula sa iba pang mga wiki, at maaaring makaapekto sa wiking ito ang ganitong mga pandaigdigang pagharang.
 Para matanaw ang lahat ng mga masigla o gumaganang pandaigdigang mga paghadlang, maaari mong tingnan ang [[Special:GlobalBlockList|talaan ng mga pandaigdigang pagharang]].',
-	'globalblocking-block-logentry' => 'Pandaigdigang hinarang/hinadlangan ang [[$1]] na may panahon o oras ng pagtatapos na $2',
+	'globalblocking-block-logentry' => 'Pandaigdigang hinarang si [[$1]] na may oras ng paglipas na $2',
 	'globalblocking-block2-logentry' => 'pandaigdigang hinadlangan si [[$1]] ($2)',
 	'globalblocking-unblock-logentry' => 'tinanggal ang pandaigdigang pagharang sa/kay [[$1]]',
 	'globalblocking-whitelist-logentry' => 'hindi pinagana/pinaandar sa katutubo o lokal na pook ang pandaigdigang pagharang o paghadlang sa/kay [[$1]]',
@@ -12027,10 +11935,8 @@ Ibinigay sa ibaba ang talaan ng paghadlang upang masangguni:',
 	'globalblock' => 'Pandaigdigang harangin/hadlangan ang isang adres ng IP',
 	'globalblockstatus' => 'Katutubo/lokal na kalagayan ng mga paghadlang/pagharang na pandaigdigan',
 	'removeglobalblock' => 'Tanggalin ang isang pandaigdigang paghahadlang',
-	'right-globalblock' => 'Gumawa ng pandaigdigang mga pagharang',
-	'action-globalblock' => 'gumawa ng pandaigdigang mga pagharang',
-	'right-globalunblock' => 'Tanggalin ang mga pandaigdigang paghahadlang',
-	'action-globalunblock' => 'tanggalin ang pandaigdigang mga pagharang',
+	'right-globalblock' => 'Gumawa ng pandaigdigang mga pagharang', # Fuzzy
+	'action-globalblock' => 'gumawa ng pandaigdigang mga pagharang', # Fuzzy
 	'right-globalblock-whitelist' => 'Pampook (lokal) lamang na hindi paganahin/huwag paandarin ang mga pandaigdigang pagharang',
 	'action-globalblock-whitelist' => 'pampook na huwag paganahin ang pandaigdigang mga pagharang',
 	'right-globalblock-exempt' => 'Laktawan ang mga pagharang na pandaigdigan',
@@ -12156,8 +12062,7 @@ Engelleme günlüğü referans için aşağıda verilmiştir:',
 	'globalblock' => 'Bir IP adresini küresel olarak engelle',
 	'globalblockstatus' => 'Küresel engellemelerin yerel durumları',
 	'removeglobalblock' => 'Küresel bir engelleme kaldırıldı',
-	'right-globalblock' => 'Küresel engellemeler yap',
-	'right-globalunblock' => 'Küresel engellemeleri kaldır',
+	'right-globalblock' => 'Küresel engellemeler yap', # Fuzzy
 	'right-globalblock-whitelist' => 'Küresel engellemeleri yerel olarak devre dışı bırak',
 	'right-globalblock-exempt' => 'Küresel engellemeleri atla',
 );
@@ -12403,7 +12308,6 @@ $messages['ur'] = array(
 	'globalblocking-whitelist-submit' => 'مقامی مقام تبدیل کریں',
 	'globalblocking-logentry-noexpiry' => 'کوئی ختم ہونے کا سیٹ',
 	'globalblock' => 'عالمی سطح پر ایک آئی پی ایڈریس بلاک',
-	'action-globalunblock' => 'عالمی بلاکس حذف کریں',
 	'right-globalblock-whitelist' => 'عالمی بلاکس کے مقامی غیر فعال کریں',
 	'action-globalblock-whitelist' => 'عالمی بلاکس کے مقامی غیر فعال کریں',
 	'right-globalblock-exempt' => 'عالمی بلاکس کو چھوڑنے والے',
@@ -12538,10 +12442,8 @@ El registro dei blochi se pol védarlo qua de soto par comodità:',
 	'globalblock' => 'Bloca globalmente un indirisso IP',
 	'globalblockstatus' => 'Stato locale de blochi globali',
 	'removeglobalblock' => 'Cava un bloco globale',
-	'right-globalblock' => 'Bloca dei utenti globalmente',
-	'action-globalblock' => 'efetuar blochi globałi',
-	'right-globalunblock' => 'Cava blochi globali',
-	'action-globalunblock' => 'cavar blochi globałi',
+	'right-globalblock' => 'Bloca dei utenti globalmente', # Fuzzy
+	'action-globalblock' => 'efetuar blochi globałi', # Fuzzy
 	'right-globalblock-whitelist' => 'Disabilita localmente blochi globali',
 	'action-globalblock-whitelist' => 'dixabiłitare blochi globałi localmente',
 	'right-globalblock-exempt' => 'Scavalca blochi globali',
@@ -12792,8 +12694,7 @@ Kanol tuvön blokamis valöpik lonöfol valik in [[Special:GlobalBlockList|lised
 	'globalblock' => 'blokön ladeti-IP valöpo',
 	'globalblockstatus' => 'Stad topik blokamas valöpik',
 	'removeglobalblock' => 'Moükön blokami valöpik',
-	'right-globalblock' => 'Dunön blokamis valöpik',
-	'right-globalunblock' => 'Moükön blokamis valöpik',
+	'right-globalblock' => 'Dunön blokamis valöpik', # Fuzzy
 	'right-globalblock-whitelist' => 'Sädunön blokamis valöpik topiko',
 );
 
@@ -12957,8 +12858,7 @@ $1',
 	'globalblock' => '全域封鎖一個IP地址',
 	'globalblockstatus' => '全域封鎖嘅本地狀態',
 	'removeglobalblock' => '拎走一個全域封鎖',
-	'right-globalblock' => '整一個全域封鎖',
-	'right-globalunblock' => '拎走全域封鎖',
+	'right-globalblock' => '整一個全域封鎖', # Fuzzy
 	'right-globalblock-whitelist' => '響本地停用全域封鎖',
 );
 
