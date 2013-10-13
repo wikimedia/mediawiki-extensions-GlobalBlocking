@@ -2374,6 +2374,7 @@ $messages['cy'] = array(
 	'globalblocking-block-errors' => 'Roedd eich bloc yn aflwyddiannus, oherwydd y {{PLURAL:$1|rheswm|rhesymau}} canlynol:',
 	'globalblocking-block-ipinvalid' => "Mae'r cyfeiriad IP ($1) a nodwyd gennych yn annilys.
 Noder nad oes modd defnyddio enw defnyddiwr os gwelwch yn dda!",
+	'globalblocking-block-expiryinvalid' => "Nid yw'r amser dod i ben ($1) a roddwyd yn ddilys.",
 	'globalblocking-block-submit' => "Blocio'r cyfeiriad IP hwn yn fyd-eang",
 	'globalblocking-modify-submit' => "Addasu'r bloc byd-eang hwn",
 	'globalblocking-block-success' => "Mae cyfeiriad IP $1 wedi'i flocio'n llwyddiannus ar bob prosiect.",
@@ -2410,6 +2411,7 @@ Noder nad oes modd defnyddio enw defnyddiwr os gwelwch yn dda!",
 	'globalblocking-whitelist-status' => 'Statws lleol:',
 	'globalblocking-whitelist-submit' => 'Newid y statws lleol',
 	'globalblocking-logpage' => 'Lòg blocio cydwici',
+	'globalblocking-block-logentry' => 'wedi rhwystro [[$1]] yn fyd-eang, gan ddod i ben am $2',
 );
 
 /** Danish (dansk)
@@ -6987,10 +6989,10 @@ Dir kënnt Iech un de(n) \$1 adresséieren, fir iwwer d'Spär ze diskutéieren.
 Dir kënnt d'Funktioun \"{{int:emailuser}}\" net benotzen, bis eng valabel E-Mail-Adress an Ären [[Special:Preferences|Astellungen]] ugi gouf an net fir Iech gespaart gouf.
 Är aktuell IP-Adress ass \$6.
 Gitt w.e.g. alle Detailer déi Dir hei driwwer fannt an Ären Ufroen un.",
-	'globalblocking-ipblocked-xff' => "'''Een oder méi Proxy-Serveren déi Dir benotzt ass global gespaart.'''
+	'globalblocking-ipblocked-xff' => "'''Een oder méi Proxy-Serveren déi Dir benotzt ass oder si global gespaart.'''
 
 D'Spär gouf vum \$1 (\$2) gemaach.
-De Grond deen ugi gouf ass ''\$3''.
+De Grond deen ugi gouf, ass ''\$3''.
 
 * Ufank vun der Spär: \$4
 * Enn vun der Spär: \$5
@@ -6998,7 +7000,7 @@ De Grond deen ugi gouf ass ''\$3''.
 Dir kënnt Iech un de(n) \$1 adresséieren, fir iwwer d'Spär ze diskutéieren.
 Dir kënnt d'Funktioun *{{int:emailuser}}\" net benotzen, bis eng valabel E-Mail-Adress an Ären [[Special:Preferences|Astellungen]] ugi gouf an net fir Iech gespaart gouf.
 Déi blockéiert Proxy-Adress war \$6.
-Gitt w.e.g. alle Detailer déi Dir hei driwwer fannt an Ären Ufroen un.",
+Gitt w.e.g. all Detailer déi Dir hei driwwer fannt an Ären Ufroen un.",
 	'globalblocking-blocked-nopassreset' => 'Dir kënnt engem Benotzer säi Paswuert net zrécksetze well Dir global gespaart sidd.',
 	'globalblocking-logpage' => 'Lëscht vun de globale Spären',
 	'globalblocking-logpagetext' => "Dëst ass eng Lëscht vun de globale Spären déi op dëser Wiki gemaach an opgehuewe goufen.
