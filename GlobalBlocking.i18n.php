@@ -3672,7 +3672,7 @@ $messages['fa'] = array(
 	'globalblocking-list-whitelisted' => 'توسط $1: $2 به طور محلی غیر فعال شد',
 	'globalblocking-list-whitelist' => 'وضعیت محلی',
 	'globalblocking-list-modify' => 'تغییر',
-	'globalblocking-list-noresults' => 'آی‌پی درخواست شده مسدود نمی‌باشد.',
+	'globalblocking-list-noresults' => 'آی‌پی درخواست شده مسدود نیست.',
 	'globalblocking-goto-block' => 'قطع دسترسی سراسری یک نشانی آی‌پی',
 	'globalblocking-goto-unblock' => 'حذف یک قطع دسترسی سراسری',
 	'globalblocking-goto-status' => 'تغییر وضعیت محلی یک قطع دسترسی سراسری',
@@ -6590,9 +6590,9 @@ $messages['ko'] = array(
 	'globalblocking-block-otherreason' => '다른 이유/추가적인 이유:',
 	'globalblocking-block-reasonotherlist' => '다른 이유',
 	'globalblocking-block-reason-dropdown' => '* 일반적인 차단 이유
-** 여러 위키에서의 광고/스팸 행위
+** 여러 위키에서의 스팸
 ** 여러 위키에서의 부정 행위
-** 문서 훼손',
+** 훼손 행위',
 	'globalblocking-block-edit-dropdown' => '차단 이유 편집',
 	'globalblocking-block-expiry' => '기한:',
 	'globalblocking-block-expiry-other' => '다른 기간',
@@ -7166,6 +7166,23 @@ Alle globale blokkades stoan in de [[Special:GlobalBlockList|liest met globale b
 	'action-globalblock-whitelist' => 'negeer wikiwiej bloks',
 	'right-globalblock-exempt' => 'Loup globaal bloks óm',
 	'action-globalblock-exempt' => 'loup wikiwiej bloks óm',
+);
+
+/** لوری (لوری)
+ * @author Mogoeilor
+ */
+$messages['lrc'] = array(
+	'globalblocking-block-reason' => 'دليل:',
+	'globalblocking-block-reasonotherlist' => 'دليل هنی',
+	'globalblocking-block-expiry' => 'تموم بين:',
+	'globalblocking-block-expiry-other' => 'وخت تموم بيئن هنی',
+	'globalblocking-block-expiry-otherfield' => 'وخت هنی:',
+	'globalblocking-block-options' => 'گزينه يا هنی:',
+	'globalblocking-ipaddress' => 'نشونه آ پی:',
+	'globalblocking-list-unblock' => 'ؤرداشتن',
+	'globalblocking-list-whitelist' => 'شلك ولاتی',
+	'globalblocking-list-modify' => 'آلشت كردن',
+	'globalblocking-unblock-reason' => 'دليل:',
 );
 
 /** Lithuanian (lietuvių)
