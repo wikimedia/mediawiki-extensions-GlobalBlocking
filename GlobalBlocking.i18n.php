@@ -6577,6 +6577,7 @@ $messages['kn'] = array(
  * @author Albamhandae
  * @author Devunt
  * @author Ficell
+ * @author Hym411
  * @author Klutzy
  * @author Kwj2772
  * @author 아라
@@ -6592,7 +6593,7 @@ $messages['ko'] = array(
 	'globalblocking-block-reason-dropdown' => '* 일반적인 차단 이유
 ** 여러 위키에서의 스팸
 ** 여러 위키에서의 부정 행위
-** 훼손 행위',
+** 문서 훼손 행위',
 	'globalblocking-block-edit-dropdown' => '차단 이유 편집',
 	'globalblocking-block-expiry' => '기한:',
 	'globalblocking-block-expiry-other' => '다른 기간',
