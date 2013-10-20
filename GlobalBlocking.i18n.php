@@ -2186,6 +2186,19 @@ $messages['ce'] = array(
 	'globalblocking-whitelist-intro' => 'Хьан йиш ю лело хӀара форма глобальни блокана хийцамаш бан.
 ХӀокху вики чохь глобальни блокдӀаяккхахь цхьа долу IP-адрес лелош болу декъашхошна таро хир ю тамехь тадарш дан.
 [[Special:GlobalBlockList|ЮхагӀо глобальни блоктохаран списке хьажа]].',
+	'globalblocking-ipblocked' => "'''Хьан IP-адрес хӀокху вики чохь блоктоьхна ду.'' '
+
+Блоктоьхна оцу \$1  (\$2).
+Блоктохаран бахьна ''\$3''.
+
+ * Блоктоьхна хан: \$4 
+ * Блоктохар чекхдолу: \$5 
+
+Блоктохарах лаьцна хатта йиш ю \$1.
+\"{{int:emailuser}}\" функцена блоктоьхна яцахь а кхин [[Special:Preferences|гӀирс нисбечу электрони адрес язъен елахь]] а хьан йиш ю иза лело.
+Хьан карара IP-адрес  \$6 .
+
+Дехар до, язде дерриг лакхахь гайтина болу хаам хьан блоктохарх лаьцна долу дехара чохь.",
 	'globalblocking-logpage' => 'Глобальни блоктоьхарш болу тептар',
 	'globalblocking-logpagetext' => 'ХӀара ду хӀокху вики чохь глобальни блоктохаршан а блокдӀаяккхаршан а тептар.
 Массо глобальни  блоктохарше хьажа  [[Special:GlobalBlockList|кхузахь]].',
@@ -2450,7 +2463,7 @@ $messages['da'] = array(
 Bemærk venligst, at du ikke kan indtaste et brugernavn!',
 	'globalblocking-block-expiryinvalid' => 'Den udløbstid, du valgte ($1) er ugyldigt',
 	'globalblocking-block-submit' => 'Blokér denne ip-adresse globalt',
-	'globalblocking-modify-submit' => 'Ændr denne globale blokering',
+	'globalblocking-modify-submit' => 'Ændre denne globale blokering',
 	'globalblocking-block-success' => 'IP-adressen $1 er blevet blokeret på alle projekter.',
 	'globalblocking-modify-success' => 'Den globale blokering på $1 er blevet ændret',
 	'globalblocking-block-successsub' => 'Global blokering lykkedes',
@@ -2474,7 +2487,7 @@ Skriv en gyldig IP-adresse.',
 	'globalblocking-list-unblock' => 'fjern',
 	'globalblocking-list-whitelisted' => 'slået fra lokalt af $1: $2',
 	'globalblocking-list-whitelist' => 'lokal status',
-	'globalblocking-list-modify' => 'Ændr',
+	'globalblocking-list-modify' => 'ændre',
 	'globalblocking-list-noresults' => 'Den efterspurgte IP-adresse er ikke blokeret.',
 	'globalblocking-goto-block' => 'Globalt blokeret en IP-adresse',
 	'globalblocking-goto-unblock' => 'Ophæv en global blokering',
@@ -2495,11 +2508,11 @@ Bemærk venligst, at du ikke kan indtaste et brugernavn!',
 	'globalblocking-whitelist' => 'Lokal status for global blokering',
 	'globalblocking-whitelist-notapplied' => 'Global blokeringer bruges ikke på denne wiki,
 så den lokale status for global blokering ikke kan ændres.',
-	'globalblocking-whitelist-legend' => 'Ændr lokal status',
+	'globalblocking-whitelist-legend' => 'Ændre lokal status',
 	'globalblocking-whitelist-reason' => 'Begrundelse:',
 	'globalblocking-whitelist-status' => 'Lokal status:',
 	'globalblocking-whitelist-statuslabel' => 'Ophæv global blokering på {{SITENAME}}',
-	'globalblocking-whitelist-submit' => 'Ændr lokal status',
+	'globalblocking-whitelist-submit' => 'Ændre lokal status',
 	'globalblocking-whitelist-whitelisted' => "Du har fjernet den globale blokering #$2 af IP-adressen '''$1''' på {{SITENAME}}.",
 	'globalblocking-whitelist-dewhitelisted' => "Du har fjernet den globale blokering #$2 af IP-adressen '''$1''' på {{SITENAME}}.",
 	'globalblocking-whitelist-successsub' => 'Lokal status er blevet ændret',
