@@ -77,7 +77,7 @@ $specialPageAliases['bs'] = array(
 /** Chechen (нохчийн) */
 $specialPageAliases['ce'] = array(
 	'GlobalBlock' => array( 'Глобальни_блоктохар' ),
-	'GlobalBlockList' => array( 'Глобальни_блоктохаршан_могӀам' ),
+	'GlobalBlockList' => array( 'Глобальни_блоктохарийн_могӀам' ),
 	'RemoveGlobalBlock' => array( 'Глобальни_блокдӀаяккхар' ),
 );
 

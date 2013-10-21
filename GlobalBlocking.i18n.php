@@ -2207,6 +2207,12 @@ $messages['ce'] = array(
 	'globalblocking-logentry-expiry' => 'чекхйолу $1',
 	'globalblocklist' => 'Глобальни блоктоьхна IP-адресин могӀам',
 	'globalblockstatus' => 'ХӀоттайелчаьрца долу хьал, глобальни блоктохарна',
+	'right-globalblock' => 'Глобальни блоктохар а блокдӀаяккхар а',
+	'action-globalblock' => 'глобальни блоктохар а блокдӀаяккхар а',
+	'right-globalblock-whitelist' => 'глобальни блоктохарш цхьанхьа дӀаяхар',
+	'action-globalblock-whitelist' => 'глобальни блоктохарш цхьанхьа дӀаяхар',
+	'right-globalblock-exempt' => 'глобальни блоктохаршан чекхбовлар',
+	'action-globalblock-exempt' => 'глобальни блоктохаршан чекхбовлар',
 );
 
 /** Sorani Kurdish (کوردی)
@@ -2520,18 +2526,18 @@ så den lokale status for global blokering ikke kan ændres.',
 [[Special:GlobalBlockList|Vende tilbage til den globale blokeringsliste]].',
 	'globalblocking-whitelist-errors' => 'Din ændring af den lokale status af en global blokering lykkedes ikke, med følgende {{PLURAL:$1|årsag|årsager}}:',
 	'globalblocking-whitelist-intro' => 'Du kan bruge denne formular, til at ophæve en global blokering lokalt. Hvis blokeringen bliver ophævet, kan den globalt blokerede bruger redigere sider normalt. Se også [[Special:GlobalBlockList|loggen for globale blokeringer]].',
-	'globalblocking-ipblocked' => "''' Din IP-adresse er blokeret på alle wiki'er.'' '
+	'globalblocking-ipblocked' => "'''Din IP-adresse er blokeret på alle wiki'er.'''
 
 Blokeringen blev lavet af \$1 ( \$2 ).
 Begrundelsen er ''\$3''.
 
-* Start af blok: \$4
-* udløbet af blok: \$5
+* Start for blokeringen: \$4
+* udløbet af blokeringen: \$5
 
 Du kan kontakte \$1 at diskutere blokeringen.
-Du kan ikke bruge funktionen \"{{int:emailuser}}\", medmindre en gyldig e-mail-adresse er blevet angivet i deres [[Special:Preferences|account preferences]] og du er ikke blevet blokeret fra at bruge den.
+Du kan ikke bruge funktionen \"{{int:emailuser}}\", medmindre en gyldig e-mailadresse er blevet angivet i dine[[Special:Preferences|brugerindstillinger]] og du ikke er blevet blokeret fra at bruge den.
 Din aktuelle IP-adresse er \$6 .
-Medtag alle ovenfor detaljer i enhver henvendelse du gør.",
+Medtag alle ovenstående detaljer i enhver henvendelse du laver.",
 	'globalblocking-ipblocked-xff' => "'''En eller flere proxyservere, der blev brugt til din anmodning, er blokeret globalt'''
 
 Blokeringen blev udført af \$1 (\$2).
@@ -3765,8 +3771,8 @@ $messages['fa'] = array(
 	'removeglobalblock' => 'حذف یک قطع دسترسی سراسری',
 	'right-globalblock' => 'ایجاد و حذف بستن‌های سراسری',
 	'action-globalblock' => 'ایجاد قطع دسترسی‌های سراسری', # Fuzzy
-	'right-globalblock-whitelist' => 'غیر فعال کردن قطع دسترسی‌های سراسری به طور محلی',
-	'action-globalblock-whitelist' => 'غیر فعال کردن قطع دسترسی‌های سراسری به‌صورت محلی',
+	'right-globalblock-whitelist' => 'غیرفعال‌کردن قطع دسترسی‌های سراسری به طور محلی',
+	'action-globalblock-whitelist' => 'غیرفعال‌کردن قطع دسترسی‌های سراسری به‌صورت محلی',
 	'right-globalblock-exempt' => 'گذرگاه قطع دسترسی‌های سراسری',
 	'action-globalblock-exempt' => 'کنارگذاشتن قطع دسترسی‌های سراسری',
 );
@@ -9101,6 +9107,18 @@ A peul contaté \$1 për discute dël blocagi.
 A peul pa dovré la funsion \"{{int:emailuser}}\" gavà che n'adrëssa ëd pòsta eletrònica bon-a a sia specificà ant ij [[Special:Preferences|sò gust]] e che a sia pa stàit blocà dal dovrela.
 Soa adrëssa IP corenta a l'é \$6.
 Për piasì ch'a anserissa tuti ij detaj precedent an tuta arcesta ch'a fasa.",
+	'globalblocking-ipblocked-xff' => "'''Un o pi dij servent anonimisà dovrà da soa arcesta a son blocà ëd fasson global'''
+
+Ël blocagi a l'é stàit fàit da $1 ($2).
+La rason ësmonùa a l'é ''$3''.
+
+* Inissi dël blocagi: $4
+* Scadensa dël blocagi: $5
+
+A peul contaté $1 për dëscute dël blocagi.
+A peul nen dovré la fonsionalità «{{int:emailuser}}» gavà ch'ai sia n'adrëssa ëd pòsta eletrònica vàlida spessificà ant ij sò [[Special:Preferences|gust]] e chiel a sia nen ëstàit blocà dal dovrela.
+L'adrëssa ëd l'anonimisator blocà a l'é $6.
+Për piasì, ch'a ancluda tuti ij detaj sì-dzora an tute j'arceste ch'a farà.",
 	'globalblocking-blocked-nopassreset' => "A peule pa torna amposté la ciav d'utent përchè a l'é blocà daspërtut.",
 	'globalblocking-logpage' => 'Registr dij blocagi globaj',
 	'globalblocking-logpagetext' => "Cost-sì a l'é un registr dij blocagi globaj che a son ëstàit fàit e gavà dzora a sta wiki-sì.
@@ -9121,8 +9139,8 @@ Për vëdde tùit ij blocagi globaj ativ, a peul vëdde la [[Special:GlobalBlock
 	'globalblock' => "Blòca globalment n'adrëssa IP",
 	'globalblockstatus' => 'Statù local dij blocagi globaj',
 	'removeglobalblock' => 'Gavé un blocagi global',
-	'right-globalblock' => 'Fé dij blocagi globaj', # Fuzzy
-	'action-globalblock' => 'fé dij blocagi globaj', # Fuzzy
+	'right-globalblock' => 'Buté e gavé ij blocagi globaj',
+	'action-globalblock' => 'fé e eliminé dij blocagi globaj',
 	'right-globalblock-whitelist' => 'Disabilité dij blocagi globaj localment',
 	'action-globalblock-whitelist' => 'disabilité dij blocagi globaj localment',
 	'right-globalblock-exempt' => 'Passé dzora ai blocagi globaj',
