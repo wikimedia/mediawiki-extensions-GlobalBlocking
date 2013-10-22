@@ -3661,9 +3661,9 @@ $messages['fa'] = array(
 	'globalblocking-ipaddress' => 'نشانی آی‌پی:',
 	'globalblocking-ipbanononly' => 'فقط بستن کاربران گمنام',
 	'globalblocking-block-errors' => 'قطع دسترسی شما به این {{PLURAL:$1|دلیل|دلایل}} ناموفق بود:',
-	'globalblocking-block-ipinvalid' => 'نشانی آی‌پی که وارد کردید ($1) غیر مجاز است.
+	'globalblocking-block-ipinvalid' => 'نشانی آی‌پی که وارد کردید ($1) نامجاز است.
 توجه داشته باشید که شما نمی‌توانید یک نام کاربری را وارد کنید!',
-	'globalblocking-block-expiryinvalid' => 'زمان خاتمه‌ای که وارد کردید ($1) غیر مجاز است.',
+	'globalblocking-block-expiryinvalid' => 'زمان خاتمه‌ای که وارد کردید ($1) نامجاز است.',
 	'globalblocking-block-submit' => 'قطع دسترسی سراسری این نشانی آی‌پی',
 	'globalblocking-modify-submit' => 'اصلاح این بستن سراسری',
 	'globalblocking-block-success' => 'دسترسی نشانی آی‌پی $1 با موفقیت در تمام پروژه‌ها قطع شد.',
@@ -3681,7 +3681,7 @@ $messages['fa'] = array(
 	'globalblocking-search-legend' => 'جستجو برای یک قطع دسترسی سراسری',
 	'globalblocking-search-ip' => 'نشانی آی‌پی:',
 	'globalblocking-search-submit' => 'جستجوی قطع دسترسی‌ها',
-	'globalblocking-list-ipinvalid' => 'نشانی آی‌پی که شما جستجو کردید ($1) غیر مجاز است.
+	'globalblocking-list-ipinvalid' => 'نشانی آی‌پی که شما جستجو کردید ($1) نامجاز است.
 لطفاً یک نشانی آی‌پی مجاز وارد کنید.',
 	'globalblocking-search-errors' => 'جستجوی شما به {{PLURAL:$1|دلیل|دلایل}} روبرو ناموفق بود:',
 	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') دسترسی [[Special:Contributions/\$4|\$4]] ''(\$5)'' را به طور سراسری بست",
@@ -3698,7 +3698,7 @@ $messages['fa'] = array(
 	'globalblocking-return' => 'بازگشت به فهرست قطع دسترسی‌های سراسری',
 	'globalblocking-notblocked' => 'دسترسی نشانی آی‌پی که وارد کردید ($1) به طور سراسری بسته نیست.',
 	'globalblocking-unblock' => 'حذف یک قطع دسترسی سراسری',
-	'globalblocking-unblock-ipinvalid' => 'نشانی آی‌پی که وارد کردید ($1) غیر مجاز است.
+	'globalblocking-unblock-ipinvalid' => 'نشانی آی‌پی که وارد کردید ($1) نامجاز است.
 لطفاً توجه داشته باشید که نمی‌تواند یک نام کاربری را وارد کنید.',
 	'globalblocking-unblock-legend' => 'حذف یک قطع دسترسی سراسری',
 	'globalblocking-unblock-submit' => 'حذف قطع دسترسی سراسری',
