@@ -2547,7 +2547,7 @@ Begrundelsen var ''\$3''.
 * Blokeringen udløber: \$5
 
 Du kan kontakte \$1 for at diskutere blokeringen.
-Du kan ikke bruge \"{{int:emailuser}}\"-funktionen, medmindre du har angivet en gyldig e-mail-adresse i dine [[Special:Preferences|kontoindstillinger]], og du ikke er blevet blokeret fra at bruge den.
+Du kan ikke bruge \"{{int:emailuser}}\"-funktionen, medmindre du har angivet en gyldig e-mailadresse i dine [[Special:Preferences|kontoindstillinger]], og du ikke er blevet blokeret fra at bruge den.
 Den blokerede proxyadresse var \$6.
 Vær venlig at inkludere alle detaljerne ovenfor i enhver henvendelse, du måtte foretage.",
 	'globalblocking-blocked-nopassreset' => 'Du kan ikke nulstille brugeradgangskoder, fordi du er blokeret globalt.',
