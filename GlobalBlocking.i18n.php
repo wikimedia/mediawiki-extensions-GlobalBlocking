@@ -2173,6 +2173,7 @@ $messages['ce'] = array(
 	'globalblocking-list-whitelist' => 'локальни хьал',
 	'globalblocking-list-noresults' => 'И адрес блоктоьхна дац.',
 	'globalblocking-goto-status' => 'Хийца хьал глобальни блоетохаран',
+	'globalblocking-notblocked' => 'Ахьа яздина IP-адрес ($1) глобальни блоктоьхна дац.',
 	'globalblocking-unblock-reason' => 'Бахьан:',
 	'globalblocking-unblock-intro' => 'Хьан йиш ю лело хӀара форма глобальни блок дӀайокхуш.',
 	'globalblocking-whitelist' => 'Глобальни блоктохаран локальни хьал',
@@ -3709,7 +3710,7 @@ $messages['fa'] = array(
 	'globalblocking-unblock-subtitle' => 'حذف قطع دسترسی سراسری',
 	'globalblocking-unblock-intro' => 'شما می‌توانید این فرم را برای حذف یک قطع دسترسی سراسری استفاده کنید.',
 	'globalblocking-whitelist' => 'وضعیت محلی قطع دسترسی‌های سراسری',
-	'globalblocking-whitelist-notapplied' => 'بستن‌های سراسری در این ویکی اعمال نشده است،
+	'globalblocking-whitelist-notapplied' => 'بستن‌های سراسری در این ویکی اعمال نشده‌است،
 بنابراین وضعیت محلی بستن‌های سراسری را نمی‌توان تغییر داد.',
 	'globalblocking-whitelist-legend' => 'تغییر وضعیت محلی',
 	'globalblocking-whitelist-reason' => 'دلیل:',
