@@ -11233,6 +11233,7 @@ $messages['su'] = array(
  * @author GameOn
  * @author Jon Harald Søby
  * @author Jopparn
+ * @author Lokal Profil
  * @author M.M.S.
  * @author Per
  * @author Rotsee
@@ -11330,6 +11331,18 @@ Du kan kontakta \$1 för att diskutera blockeringen.
 Du kan inte använda funktionen \"{{int:emailuser}}\" om inte en giltig emailadress angetts i dina [[Special:Preferences|kontoinställningar]] och om du inte har blockerats från att använda det.
 Din nuvarande IP-adress är \$6.
 Vänligen inkludera alla detaljer i alla förfrågningar som du gör.",
+	'globalblocking-ipblocked-xff' => "'''En eller fler proxyservrar som används av din begäran är globalt blockerade'''
+
+Blockeringen gjordes av \$1 (\$2).
+Den angivna anledningen är ''\$3''.
+
+* Blockeringens start: \$4
+* Blockeringen löper ut: \$5
+
+Du kan kontakta \$1 för att diskutera blockeringen.
+Du kan inte använda \"{{int:emailuser}}\"-funktionen om inte en giltig e-postadress är angiven i dina [[Special:Preferences|kontoinställningar]] och om du inte har blockerats från att använda den.
+Den blockerade proxyadressen var \$6.
+Vänligen inkludera alla detaljer i eventuella förfrågningar du gör.",
 	'globalblocking-blocked-nopassreset' => 'Du kan inte återställa den här användarens lösenord eftersom ditt konto är globalblockerat.',
 	'globalblocking-logpage' => 'Logg för globala blockeringar',
 	'globalblocking-logpagetext' => 'Detta är en logg över globala blockeringar som har lagts och tagits bort på den här wikin.
