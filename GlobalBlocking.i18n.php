@@ -3343,6 +3343,7 @@ Jen la protokolo pri forbaroj sube por via referenco:',
 /** Spanish (español)
  * @author Aleator
  * @author Armando-Martin
+ * @author Benfutbol10
  * @author Crazymadlover
  * @author Dferg
  * @author Fitoschido
@@ -3452,6 +3453,18 @@ Usted puede ponerse en contacto con \$1 para discutir el bloqueo.
 No podrá utilizar la función \"{{int:emailuser}}\" si no ha especificado una dirección de correo electrónico válida en [[Special:Preferences|sus preferencias]] y no haya sido bloqueado para su uso.
 Su dirección IP actual es \$6.
 Por favor incluya todos los detalles anteriores en las consultas que realice.",
+	'globalblocking-ipblocked-xff' => "'''Uno o más servidores proxy usados por tu petición se encuentran bloqueados globalmente'''
+
+El bloqueo fue hecho por \$1 (\$2).
+La razón dada es ''\$3''.
+
+* Inicio del bloqueo: \$4
+* Expiración del bloqueo: \$5
+
+Puedes conectar a \$1 para discutir el bloqueo.
+No puedes usar la función de \"{{int:emailuser}}\" hasta que no especifiques una dirección de correo electrónico válida en las [[Special:Preferences|preferencias de tu cuenta]] y no hayas sido bloqueado para su uso.
+La dirección del proxy bloqueado fue \$6.
+Por favor incluye todos los detalles mostrados arriba en las consultas que realices.",
 	'globalblocking-blocked-nopassreset' => 'No puede solicitar recordatorios de claves de usuario porque usted está bloqueado globalmente.',
 	'globalblocking-logpage' => 'Registro de bloqueos globales',
 	'globalblocking-logpagetext' => 'Esta es una lista de bloqueos globales que se han hecho y retirado en este wiki.
@@ -3472,8 +3485,8 @@ El registro de bloqueos se proporciona a continuación como referencia:',
 	'globalblock' => 'Bloquear una dirección IP globalmente',
 	'globalblockstatus' => 'Estatus local de bloqueos globales',
 	'removeglobalblock' => 'Quitar un bloqueo global',
-	'right-globalblock' => 'Hacer bloqueos globales', # Fuzzy
-	'action-globalblock' => 'hacer bloques mundiales', # Fuzzy
+	'right-globalblock' => 'Hacer y remover bloqueos globales',
+	'action-globalblock' => 'hacer y remover bloqueos globales',
 	'right-globalblock-whitelist' => 'Desactivar bloqueos globales localmente',
 	'action-globalblock-whitelist' => 'deshabilitar localmente bloqueos globales',
 	'right-globalblock-exempt' => 'Eludir bloqueos globales',
@@ -3781,7 +3794,7 @@ $messages['fa'] = array(
 	'globalblockstatus' => 'وضعیت محلی قطع‌ دسترسی‌های سراسری',
 	'removeglobalblock' => 'حذف یک قطع دسترسی سراسری',
 	'right-globalblock' => 'ایجاد و حذف بستن‌های سراسری',
-	'action-globalblock' => 'ایجاد قطع دسترسی‌های سراسری', # Fuzzy
+	'action-globalblock' => 'ایجاد و حذف قطع دسترسی‌های سراسری',
 	'right-globalblock-whitelist' => 'غیرفعال‌کردن قطع دسترسی‌های سراسری به طور محلی',
 	'action-globalblock-whitelist' => 'غیرفعال‌کردن قطع دسترسی‌های سراسری به‌صورت محلی',
 	'right-globalblock-exempt' => 'گذرگاه قطع دسترسی‌های سراسری',
