@@ -2442,6 +2442,8 @@ Noder nad oes modd defnyddio enw defnyddiwr os gwelwch yn dda!",
 	'globalblocking-logpage' => 'Lòg blocio cydwici',
 	'globalblocking-block-logentry' => 'wedi rhwystro [[$1]] yn fyd-eang, gan ddod i ben am $2',
 	'globalblocking-logentry-expiry' => 'yn dod i ben am $1',
+	'globalblocklist' => 'Rhestr cyfeiriadau IP sydd wedi eu blocio ar bob wici',
+	'globalblockstatus' => 'Statws lleol y blociau cyd-wici',
 );
 
 /** Danish (dansk)
