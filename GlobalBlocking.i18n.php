@@ -2059,8 +2059,8 @@ Recordau que no podeu introduir un nom d'usuari!",
 	'globalblocking-block-alreadyblocked' => "L'adreça IP $1 ja està bloquejada globalment.
 Podeu veure el bloqueig a la [[Special:GlobalBlockList|llista de bloquejos globals]],
 o modificar els paràmetres del bloqueig reenviant aquest formulari.",
-	'globalblocking-block-bigrange' => 'El rang que heu especificat ($1) és massa gros per bloquejar-lo.
-Podeu bloquejar, com a màxim, 65,536 addreces (rangs /16)',
+	'globalblocking-block-bigrange' => 'El rang que heu especificat ($1) és massa gros per blocar-lo.
+Podeu blocar, com a màxim, 65.536 adreces (rangs /16)',
 	'globalblocking-list-intro' => 'Aquesta és una llista de tots els bloquejos globals que actualment estan en vigor.
 Alguns bloquejos estan marcats com a desactivats localment: això vol dir que estan activats a altres llocs web però que un administrador local ha decidit desactivar en aquest wiki.',
 	'globalblocking-list' => 'Llista de les adreces IP bloquejades globalment',
@@ -10960,6 +10960,7 @@ Regjistri i bllokimit është poshtë për referncë:',
 
 /** Serbian (Cyrillic script) (српски (ћирилица)‎)
  * @author FriedrickMILBarbarossa
+ * @author Milicevic01
  * @author Rancher
  * @author Sasa Stefanovic
  * @author Јованвб
@@ -11052,7 +11053,7 @@ $messages['sr-ec'] = array(
 Ако је глобална блокада онемогућена на овом викију, корисници на тој ИП адреси ће моћи да уређују нормално.
 [[Special:GlobalBlockList|Назад на списак глобалних блокада]].',
 	'globalblocking-blocked-nopassreset' => 'Не можете да промените лозинку корисника јер сте глобално блокирани.',
-	'globalblocking-logpage' => 'Дневник глобалних блокирања',
+	'globalblocking-logpage' => 'Историја глобалних блокирања',
 	'globalblocking-block-logentry' => '{{GENDER:|је глобално блокирао|је глобално блокирала|је глобално блокирао}} [[$1]] с роком истицања од $2',
 	'globalblocking-block2-logentry' => 'глобално блокиран [[$1]] ($2)',
 	'globalblocking-unblock-logentry' => 'уклонио глобални блок за [[$1]]',
@@ -11079,6 +11080,7 @@ $messages['sr-ec'] = array(
 /** Serbian (Latin script) (srpski (latinica)‎)
  * @author FriedrickMILBarbarossa
  * @author Michaello
+ * @author Milicevic01
  * @author Жељко Тодоровић
  * @author Михајло Анђелковић
  */
@@ -11168,7 +11170,7 @@ pa zato lokalni status globalnih blokada ne može da se menja.',
 Ako je globalna blokada onemogućena na ovom vikiju, korisnici na toj IP adresi će moći da uređuju normalno.
 [[Special:GlobalBlockList|Nazad na spisak globalnih blokada]].',
 	'globalblocking-blocked-nopassreset' => 'Ne možete da promenite lozinku korisnika jer ste globalno blokirani.',
-	'globalblocking-logpage' => 'Dnevnik globalnih blokiranja',
+	'globalblocking-logpage' => 'Istorija globalnih blokiranja',
 	'globalblocking-block-logentry' => 'globalno blokirao [[$1]] sa vremenom isticanja od $2',
 	'globalblocking-block2-logentry' => 'globalno blokiran [[$1]] ($2)',
 	'globalblocking-unblock-logentry' => 'uklonio globalni blok za [[$1]]',
