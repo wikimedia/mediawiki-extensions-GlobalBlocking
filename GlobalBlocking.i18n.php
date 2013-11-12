@@ -2827,6 +2827,7 @@ Bitte geben Sie alle oben stehenden Einzelheiten in Ihren Anfragen an.",
 /** Zazaki (Zazaki)
  * @author Aspar
  * @author Erdemaslancan
+ * @author Gorizon
  * @author Mirzali
  * @author Xoser
  */
@@ -2941,8 +2942,8 @@ Tüm aktif küresel engellemeri görmek için, [[Special:GlobalBlockList|kürese
 	'globalblocking-logentry-expiry' => 'qediyeno $1',
 	'globalblocking-logentry-noexpiry' => 'eyarê qediyayîşî nika nironiyo',
 	'globalblocking-loglink' => 'IP-adresa globali $1 kilit biyo ([[{{#Special:GlobalBlockList}}/$1|detayan]]).',
-	'globalblocking-showlog' => 'Ena adresê IPyi verni de bloke biyo.
-Logê bloki qe referansi cor de mocnayiyo',
+	'globalblocking-showlog' => 'Ena adresê IPyi verni de bloke biya.
+Qeydé  bloki re referansi cor de mocneyayo:',
 	'globalblocklist' => 'Liteyê IPyî ke wîkîyê hemî de blok biyê',
 	'globalblock' => 'Yew adresê IPyî wîkîyê hemî de blok bike',
 	'globalblockstatus' => 'Statuyê lokaliyê blokanê hemî',
@@ -4279,6 +4280,14 @@ Lo jornal des blocâjos est disponiblo ce-desot :',
 	'action-globalblock-whitelist' => 'dèsactivar localament los blocâjos globâls',
 	'right-globalblock-exempt' => 'Passar per-dessus los blocâjos globâls',
 	'action-globalblock-exempt' => 'passar per-dessus los blocâjos globâls',
+);
+
+/** Northern Frisian (Nordfriisk)
+ * @author Murma174
+ */
+$messages['frr'] = array(
+	'globalblocking-list' => 'Globaal speret IP-adresen',
+	'globalblockstatus' => 'Lokaal tustant faan globaal speren',
 );
 
 /** Friulian (furlan)
@@ -11053,7 +11062,7 @@ $messages['sr-ec'] = array(
 Ако је глобална блокада онемогућена на овом викију, корисници на тој ИП адреси ће моћи да уређују нормално.
 [[Special:GlobalBlockList|Назад на списак глобалних блокада]].',
 	'globalblocking-blocked-nopassreset' => 'Не можете да промените лозинку корисника јер сте глобално блокирани.',
-	'globalblocking-logpage' => 'Историја глобалних блокирања',
+	'globalblocking-logpage' => 'Дневник глобалних блокирања',
 	'globalblocking-block-logentry' => '{{GENDER:|је глобално блокирао|је глобално блокирала|је глобално блокирао}} [[$1]] с роком истицања од $2',
 	'globalblocking-block2-logentry' => 'глобално блокиран [[$1]] ($2)',
 	'globalblocking-unblock-logentry' => 'уклонио глобални блок за [[$1]]',
@@ -11170,7 +11179,7 @@ pa zato lokalni status globalnih blokada ne može da se menja.',
 Ako je globalna blokada onemogućena na ovom vikiju, korisnici na toj IP adresi će moći da uređuju normalno.
 [[Special:GlobalBlockList|Nazad na spisak globalnih blokada]].',
 	'globalblocking-blocked-nopassreset' => 'Ne možete da promenite lozinku korisnika jer ste globalno blokirani.',
-	'globalblocking-logpage' => 'Istorija globalnih blokiranja',
+	'globalblocking-logpage' => 'Dnevnik globalnih blokiranja',
 	'globalblocking-block-logentry' => 'globalno blokirao [[$1]] sa vremenom isticanja od $2',
 	'globalblocking-block2-logentry' => 'globalno blokiran [[$1]] ($2)',
 	'globalblocking-unblock-logentry' => 'uklonio globalni blok za [[$1]]',
