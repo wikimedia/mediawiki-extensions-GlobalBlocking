@@ -215,16 +215,15 @@ class SpecialGlobalBlock extends SpecialPage {
 		} else {
 			$fields['globalblocking-block-expiry'] = $this->buildExpirySelector(
 				'wpExpiry',
-				'mw-globalblock-expiry-selector',
+				'mw-globalblocking-block-expiry-selector',
 				$this->mExpirySelection,
 				$dropdown->inContentLanguage()->plain()
 			);
-			$fields['globalblocking-block-expiry-otherfield'] =
+			$fields['globalblocking-block-expiry-selector-other'] =
 				Xml::input(
 					'wpExpiryOther',
 					45,
-					$this->mExpiry == $this->mExpirySelection ? '' : $this->mExpiry,
-					array( 'id' => 'mw-globalblock-expiry-selector-other' )
+					$this->mExpiry == $this->mExpirySelection ? '' : $this->mExpiry
 				);
 		}
 
