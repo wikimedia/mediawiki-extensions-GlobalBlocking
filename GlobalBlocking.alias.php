@@ -267,10 +267,10 @@ $specialPageAliases['ka'] = array(
 
 /** Korean (한국어) */
 $specialPageAliases['ko'] = array(
-	'GlobalBlock' => array( '전체차단' ),
-	'GlobalBlockList' => array( '전체차단목록' ),
-	'RemoveGlobalBlock' => array( '전체차단취소', '전체차단해제' ),
-	'GlobalBlockStatus' => array( '전체차단허용목록', '전체차단화이트리스트', '전체차단비활성화' ),
+	'GlobalBlock' => array( '전역차단' ),
+	'GlobalBlockList' => array( '전역차단목록' ),
+	'RemoveGlobalBlock' => array( '전역차단취소', '전역차단해제' ),
+	'GlobalBlockStatus' => array( '전역차단허용목록', '전역차단화이트리스트', '전역차단비활성화' ),
 );
 
 /** Colognian (Ripoarisch) */

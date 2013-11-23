@@ -6673,11 +6673,11 @@ $messages['ko'] = array(
 아무리 많아도, 65,536개의 주소 (/16 광역) 이상을 차단할 수 없습니다.',
 	'globalblocking-list-intro' => '현재 유효한 전역 차단의 목록입니다. 전역 차단은 로컬의 관리자의 권한으로 무효화 할 수 있습니다. 단 로컬에서 무효화하더라도 다른 위키에서는 차단 상태가 지속됩니다.',
 	'globalblocking-list' => '모든 위키에서 차단된 IP 목록',
-	'globalblocking-search-legend' => '전역 차단 찾기',
+	'globalblocking-search-legend' => '전역 차단 검색',
 	'globalblocking-search-ip' => 'IP 주소:',
-	'globalblocking-search-submit' => '차단 찾기',
-	'globalblocking-list-ipinvalid' => '입력한 IP 주소 ($1)가 잘못되었습니다.
-할바른 IP 주소를 입력해주세요.',
+	'globalblocking-search-submit' => '차단 검색',
+	'globalblocking-list-ipinvalid' => '검색한 IP 주소($1)가 잘못되었습니다.
+올바른 IP 주소를 입력하세요.',
 	'globalblocking-search-errors' => '검색에 실패했습니다. {{PLURAL:$1|이유}}는 다음과 같습니다:',
 	'globalblocking-list-blockitem' => '$1: <span class="plainlinks">\'\'\'$2\'\'\'</span> ($3) 이(가) [[Special:Contributions/$4|$4]] 을(를) 전역 차단하였습니다. ($5)',
 	'globalblocking-list-expiry' => '기한 $1',
