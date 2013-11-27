@@ -7234,10 +7234,13 @@ $messages['lrc'] = array(
 	'globalblocking-block-expiry-selector-other' => 'وخت هنی:',
 	'globalblocking-block-options' => 'گزينه يا هنی:',
 	'globalblocking-ipaddress' => 'نشونه آ پی:',
+	'globalblocking-search-ip' => 'نشونه آ پی:',
 	'globalblocking-list-unblock' => 'ؤرداشتن',
 	'globalblocking-list-whitelist' => 'شلك ولاتی',
 	'globalblocking-list-modify' => 'آلشت كردن',
 	'globalblocking-unblock-reason' => 'دليل:',
+	'globalblocking-whitelist-reason' => 'دليل:',
+	'globalblocking-whitelist-status' => 'شلك ولاتی',
 );
 
 /** Lithuanian (lietuvių)
