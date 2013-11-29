@@ -2020,6 +2020,7 @@ Zapisnik blokiranja je naveden ispod kao referenca:',
 
 /** Catalan (català)
  * @author Aleator
+ * @author Papapep
  * @author Paucabot
  * @author SMP
  * @author Solde
@@ -2052,7 +2053,7 @@ Recordau que no podeu introduir un nom d'usuari!",
 	'globalblocking-block-expiryinvalid' => 'La caducitat introduïda ($1) no és vàlida.',
 	'globalblocking-block-submit' => 'Bloqueja aquesta adreça IP globalment',
 	'globalblocking-modify-submit' => 'Modifica aquest bloqueig global',
-	'globalblocking-block-success' => "L'adreça IP $1 ha estat blocada a tots els projectes de forma satisfactòria.",
+	'globalblocking-block-success' => "S'ha blocat de forma satisfactòria l'adreça IP $1 a tots els projectes.",
 	'globalblocking-modify-success' => "El bloqueig global de $1 s'ha modificat correctament.",
 	'globalblocking-block-successsub' => 'Bloqueig global amb èxit',
 	'globalblocking-modify-successsub' => 'Bloqueig global modificat amb èxit',
@@ -2090,7 +2091,7 @@ Recordau que no podeu introduir un nom d'usuari!",
 	'globalblocking-unblock-submit' => 'Canceŀla un bloqueig global',
 	'globalblocking-unblock-reason' => 'Motiu:',
 	'globalblocking-unblock-unblocked' => "Heu eliminat el bloqueig global #$2 a l'adreça IP '''$1'''",
-	'globalblocking-unblock-errors' => 'La vostra eliminació de bloqueig global ha estat infructuosa, {{PLURAL:$1|pel següent motiu|pels següents motius}}:',
+	'globalblocking-unblock-errors' => "No s'ha pogut eliminar el bloqueig global, {{PLURAL:$1|pel següent motiu|pels següents motius}}:",
 	'globalblocking-unblock-successsub' => "S'ha canceŀlat correctament el bloqueig global",
 	'globalblocking-unblock-subtitle' => "S'està canceŀlant el bloqueig global",
 	'globalblocking-unblock-intro' => 'Podeu usar aquest formulari per a eliminar un bloqueig global.',
@@ -2107,7 +2108,7 @@ així que l'estat local dels bloquejos globals no pot ser modificat.",
 	'globalblocking-whitelist-successsub' => 'Estat local canviat satisfactòriament',
 	'globalblocking-whitelist-nochange' => "No heu fet cap canvi a l'estat local d'aquest bloqueig.
 [[Special:GlobalBlockList|Retorna a la llista de bloqueigs globals]].",
-	'globalblocking-whitelist-errors' => "El vostre canvi local de l'estat del bloqueig global ha estat infructuós {{PLURAL:$1|pel següent motiu|pels següents motius}}:",
+	'globalblocking-whitelist-errors' => "No s'ha pogut fer el canvi local de l'estat del bloqueig global {{PLURAL:$1|pel següent motiu|pels següents motius}}:",
 	'globalblocking-whitelist-intro' => "Podeu fer servir aquest formulari per a editar l'estat local d'un bloqueig global.
 Si un bloqueig global està desactivat en aquest wiki, els usuaris de l'adreça IP afectada podran editar normalment.
 [[Special:GlobalBlockList|Retorna a la llista de bloqueigs globals]].",
@@ -2137,8 +2138,8 @@ Per a veure tots els bloquejos globals actius, vegeu la [[Special:GlobalBlockLis
 	'globalblocking-logentry-expiry' => 'Venç el $1',
 	'globalblocking-logentry-noexpiry' => "No s'ha especificat la caducitat",
 	'globalblocking-loglink' => "L'adreça IP $1 està bloquejada globalment ([[{{#Special:GlobalBlockList}}/$1|detalls]]).",
-	'globalblocking-showlog' => 'Aquesta adreça IP ha estat prèviament bloquejada.
-Per més detalls, a continuació es mostra el registre de bloquejos:',
+	'globalblocking-showlog' => "Aquesta adreça IP s'ha blocat anteriorment.
+Per més detalls, a continuació es mostra el registre de bloquejos:",
 	'globalblocklist' => 'Llista de les adreces IP bloquejades globalment',
 	'globalblock' => 'Bloqueja una adreça IP globalment',
 	'globalblockstatus' => 'Estat local dels bloquejos globals',
@@ -2828,6 +2829,7 @@ Bitte geben Sie alle oben stehenden Einzelheiten in Ihren Anfragen an.",
  * @author Aspar
  * @author Erdemaslancan
  * @author Gorizon
+ * @author Marmase
  * @author Mirzali
  * @author Xoser
  */
@@ -2948,8 +2950,8 @@ Qeydé  bloki re referansi cor de mocneyayo:',
 	'globalblock' => 'Yew adresê IPyî wîkîyê hemî de blok bike',
 	'globalblockstatus' => 'Statuyê lokaliyê blokanê hemî',
 	'removeglobalblock' => 'Yew global blok wedarne',
-	'right-globalblock' => 'Global bloqe bıke', # Fuzzy
-	'action-globalblock' => 'Global bloqe bıke', # Fuzzy
+	'right-globalblock' => 'Global bloqey bıke u hewad',
+	'action-globalblock' => 'Global bloqan bık u hewad',
 	'right-globalblock-whitelist' => 'Lokal wîkî de blokanê globalî biqefilne',
 	'action-globalblock-whitelist' => 'Lokal blokanê globalî biqefilne',
 	'right-globalblock-exempt' => 'Global blokî bypass bike',
@@ -7235,6 +7237,7 @@ $messages['lrc'] = array(
 	'globalblocking-block-options' => 'گزينه يا هنی:',
 	'globalblocking-ipaddress' => 'نشونه آ پی:',
 	'globalblocking-search-ip' => 'نشونه آ پی:',
+	'globalblocking-list-anononly' => 'ناشناس فقط',
 	'globalblocking-list-unblock' => 'ؤرداشتن',
 	'globalblocking-list-whitelist' => 'شلك ولاتی',
 	'globalblocking-list-modify' => 'آلشت كردن',
