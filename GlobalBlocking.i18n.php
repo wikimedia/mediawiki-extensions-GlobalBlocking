@@ -4762,6 +4762,7 @@ $messages['haw'] = array(
 /** Hebrew (עברית)
  * @author Agbad
  * @author Amire80
+ * @author Guycn2
  * @author Rotemliss
  * @author YaronSh
  * @author Yonidebest
@@ -4787,7 +4788,7 @@ $messages['he'] = array(
 	'globalblocking-block-legend' => 'חסימה גלובלית של כתובת IP',
 	'globalblocking-block-options' => 'אפשרויות:',
 	'globalblocking-ipaddress' => 'כתובת IP:',
-	'globalblocking-ipbanononly' => 'לחסום משתמשים אלמוניים בלבד',
+	'globalblocking-ipbanononly' => 'חסימת משתמשים אנונימיים בלבד',
 	'globalblocking-block-errors' => 'החסימה נכשלה בגלל {{PLURAL:$1|הסיבה הבאה|הסיבות הבאות}}:',
 	'globalblocking-block-ipinvalid' => 'כתובת ה־IP שהקלדתם ($1) אינה תקינה.
 שימו לב שאין באפשרותכם להכניס שם משתמש!',
@@ -4814,7 +4815,7 @@ $messages['he'] = array(
 	'globalblocking-list-expiry' => 'פקיעת החסימה: $1',
 	'globalblocking-list-anononly' => 'משתמשים אנונימיים בלבד',
 	'globalblocking-list-unblock' => 'הסרה',
-	'globalblocking-list-whitelisted' => 'בוטל באופן מקומי על ידי $1: $2',
+	'globalblocking-list-whitelisted' => 'בוטל באופן מקומי על־ידי $1: $2',
 	'globalblocking-list-whitelist' => 'מצב מקומי',
 	'globalblocking-list-modify' => 'שינוי',
 	'globalblocking-list-noresults' => 'כתובת ה־IP המבוקשת אינה חסומה.',
@@ -7638,7 +7639,7 @@ $messages['ml'] = array(
 	'globalblocking-whitelist-dewhitelisted' => "'''$1''' എന്ന ഐ.പി. വിലാസത്തിന്റെ #$2 എന്ന ആഗോളതടയൽ {{SITENAME}} സം‌രംഭത്തിൽ വിജയകരമായി പ്രവർത്തനയോഗ്യമാക്കിയിരിക്കുന്നു.",
 	'globalblocking-whitelist-successsub' => 'പ്രാദേശിക സ്ഥിതി വിജയകരമായി മാറ്റിയിരിക്കുന്നു',
 	'globalblocking-whitelist-nochange' => 'ഈ തടയലിന്റെ പ്രാദേശിക സ്ഥിതിയിൽ താങ്കൾ മാറ്റമൊന്നും വരുത്തിയില്ല.
-[[Special:GlobalBlockList|ആഗോള തടയൽ പട്ടികയിലേയ്ക്ക് തിരിച്ചു പോവുക]]',
+[[Special:GlobalBlockList|ആഗോള തടയൽ പട്ടികയിലേയ്ക്ക് മടങ്ങുക]]',
 	'globalblocking-whitelist-errors' => 'ആഗോള തടയലിന്റെ പ്രാദേശിക സ്ഥിതിയിൽ താങ്കൾ വരുത്തിയ മാറ്റം ഇനി കൊടുത്തിരിക്കുന്ന {{PLURAL:$1|കാരണത്താൽ|കാരണങ്ങളാൽ}} വിജയകരമായില്ല:',
 	'globalblocking-whitelist-intro' => 'ആഗോള തടയലിന്റെ പ്രാദേശിക സ്ഥിതിയിൽ തിരുത്തലുകൾ വരുത്താൻ താങ്കൾക്ക് ഈ ഫോം ഉപയോഗിക്കാവുന്നതാണ്.
 ഒരു ആഗോള തടയൽ ഈ വിക്കിയിൽ നിർജീവമാക്കപ്പെട്ടിട്ടുണ്ടെങ്കിൽ, പ്രസ്തുത ഐ.പി. വിലാസത്തിലെ ഉപയോക്താക്കൾക്ക് സാധാരണപോലെ തിരുത്താൻ കഴിയുന്നതാണ്.
