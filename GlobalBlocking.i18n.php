@@ -2930,6 +2930,18 @@ Sebebê bloqi ''\$3''.
 Şıma nêşenê se \"{{int:emailuser}}\" ra cırê e-posta bırışê, [[Special:Preferences|tercihan dê hesabi ra]] ra bloqe kerdışê xo bıvine.
 Ip adresiy aşımaya newki \$6.
 Reca kem mesaco ke şıma de bırışê cori rınd buwanê hewna mesacê xo marê bırışê.",
+	'globalblocking-ipblocked-xff' => "'''Adresê IP da şıma wikiya pêron dı bloqe biyo.'''
+
+Bloqe kerden \$1 (\$2).
+Sebebê bloqi ''\$3''.
+
+* Bloqe dest pêkin: \$4
+* Bloqe qedyin: \$5
+
+Şıma şenê \$1 ya qandê sebebê bloqe kerdış irtibat kewê.
+Şıma nêşenê se \"{{int:emailuser}}\" ra cırê e-posta bırışê, [[Special:Preferences|tercihan dê hesabi ra]] ra bloqe kerdışê xo bıvine.
+Ip adresiy aşımaya newki \$6.
+Reca kem mesaco ke şıma de bırışê cori rınd buwanê hewna mesacê xo marê bırışê.",
 	'globalblocking-blocked-nopassreset' => 'şıma bı global blok biyê u no sebeb ra şıma nêeşkeni şifreya karberi sıfır keri.',
 	'globalblocking-logpage' => 'rocaneyê blokeyê globali',
 	'globalblocking-logpagetext' => 'Bu, bu vikide yapılan ve kaldırılan küresel engellemelerin günlüğüdür.
