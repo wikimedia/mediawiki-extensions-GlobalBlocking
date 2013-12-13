@@ -3643,6 +3643,7 @@ Allpool on toodud blokeerimislogi:',
  * @author An13sa
  * @author Joxemai
  * @author Kobazulo
+ * @author Xabier Armendaritz
  */
 $messages['eu'] = array(
 	'globalblocking-block-reason' => 'Arrazoia:',
@@ -3666,6 +3667,7 @@ $messages['eu'] = array(
 	'globalblocking-unblock-successsub' => 'Blokeo globala ongi kendu da',
 	'globalblocking-unblock-subtitle' => 'Blokeo globala kentzen',
 	'globalblocking-whitelist-reason' => 'Arrazoia:',
+	'globalblocking-loglink' => '$1 IP helbidea proiektu guztietarako blokeatuta dago ([[{{#Special:GlobalBlockList}}/$1|ikus xehetasun guztiak]]).',
 );
 
 /** Persian (فارسی)
