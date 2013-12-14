@@ -9641,6 +9641,13 @@ Hark'ay hallch'ataqa kaypim rikunki willasunaykipaq:",
 	'globalblockstatus' => "Sapsi hark'asqakunap kayllapi kachkaynin",
 );
 
+/** Romansh (rumantsch)
+ * @author Kazu89
+ */
+$messages['rm'] = array(
+	'globalblocking-logpage' => 'Protocol da bloccadas globalas',
+);
+
 /** Romanian (română)
  * @author Cin
  * @author Firilacroco
