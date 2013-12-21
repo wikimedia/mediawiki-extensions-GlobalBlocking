@@ -6552,8 +6552,8 @@ $1',
 	'globalblock' => 'IP მისამართის გლობალური ბლოკირება',
 	'globalblockstatus' => 'გლობალური ბლოკირების ლოკალური სტატუსი',
 	'removeglobalblock' => 'გლობალური ბლოკირების მოხსნა',
-	'right-globalblock' => 'გლობალური ბლოკირების გაკეთება', # Fuzzy
-	'action-globalblock' => 'გლობალური ბლოკირებების გაკეთება', # Fuzzy
+	'right-globalblock' => 'გლობალური ბლოკის დადება და მოხსნა',
+	'action-globalblock' => 'გლობალური ბლოკის დადება და მოხსნა',
 	'right-globalblock-whitelist' => 'გლობალური ბლოკირების ლოკალური გამორთვა',
 	'action-globalblock-whitelist' => 'გლობალური ბლოკირების ლოკალური გამორთვა',
 	'right-globalblock-exempt' => 'გლობალური ბლოკირების გვერდის ავლა',
