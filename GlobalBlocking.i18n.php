@@ -3089,8 +3089,8 @@ Protokol blokěrowanjow jo dołojce pódał slědujuce ako referencu:',
 	'globalblock' => 'IP-adresu globalnje blokěrowaś',
 	'globalblockstatus' => 'Lokalny status globalnych blokěrowanjow',
 	'removeglobalblock' => 'Globalne blokěrowanje wótpóraś',
-	'right-globalblock' => 'Globalne blokěrowanja napóraś', # Fuzzy
-	'action-globalblock' => 'globalne blokěrowanja napóraś', # Fuzzy
+	'right-globalblock' => 'Globalne blokěrowanja pśewjasć a wótpóraś',
+	'action-globalblock' => 'globalne blokěrowanja pśewjasć a wótpóraś',
 	'right-globalblock-whitelist' => 'Globalne blokěrowanja lokalnje wótpóraś',
 	'action-globalblock-whitelist' => 'globalne blokěrowanja lokalnje wótpóraś',
 	'right-globalblock-exempt' => 'Globalne blokěrowanja wobejś',
@@ -5262,8 +5262,8 @@ Protokol blokowanjow podawa so deleka jako referencu:',
 	'globalblock' => 'IP-adresu globalnje blokować',
 	'globalblockstatus' => 'Lokalny status globalnych blokowanjow',
 	'removeglobalblock' => 'Globalne blokowanje wotstronić',
-	'right-globalblock' => 'Globalne blokowanja činić', # Fuzzy
-	'action-globalblock' => 'globalne blokowanja činić', # Fuzzy
+	'right-globalblock' => 'Globalne blokowanja přewjesć a wotstronić',
+	'action-globalblock' => 'globalne blokowanja přewjesć a wotstronić',
 	'right-globalblock-whitelist' => 'Globalne blokowanja lokalnje znjemóžnić',
 	'action-globalblock-whitelist' => 'globalne blokowanja lokalnje znjemóžnić',
 	'right-globalblock-exempt' => 'Globalne blokowanja wobeńć',
