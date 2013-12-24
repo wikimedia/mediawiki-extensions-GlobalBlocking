@@ -272,6 +272,10 @@ class SpecialGlobalBlock extends SpecialPage {
 		// Show loglist of previous blocks
 		if ( $this->mAddress ) {
 			$title = Title::makeTitleSafe( NS_USER, $this->mAddress );
+
+			if ( !$title ) {
+				return;
+			}
 			LogEventsList::showLogExtract(
 				$out,
 				'gblblock',
