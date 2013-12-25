@@ -2206,6 +2206,7 @@ $messages['ce'] = array(
 Массо глобальни  блоктохарше хьажа  [[Special:GlobalBlockList|кхузахь]].',
 	'globalblocking-block-logentry' => 'глобальни блоктоьхна [[$1]] $2 ханна',
 	'globalblocking-block2-logentry' => 'глобальни блоктоьхна [[$1]] ($2)',
+	'globalblocking-modify-logentry' => 'хийцина глобальни блоктохар [[$1]] ($2)',
 	'globalblocking-logentry-expiry' => 'чекхйолу $1',
 	'globalblocklist' => 'Глобальни блоктоьхна IP-адресин могӀам',
 	'globalblockstatus' => 'ХӀоттайелчаьрца долу хьал, глобальни блоктохарна',
