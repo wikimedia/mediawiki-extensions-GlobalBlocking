@@ -112,7 +112,7 @@ class SpecialRemoveGlobalBlock extends SpecialPage {
 		$form .= Xml::openElement( 'fieldset' ) . Xml::element( 'legend', null, $this->msg( 'globalblocking-unblock-legend' )->text() );
 		$form .= Xml::openElement( 'form', array( 'method' => 'post', 'action' => $wgScript, 'name' => 'globalblock-unblock' ) );
 
-		$form .= Html::hidden( 'title', $this->getTitle()->getPrefixedText() );
+		$form .= Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() );
 		$form .= Html::hidden( 'action', 'unblock' );
 
 		$fields = array();
