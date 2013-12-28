@@ -3072,6 +3072,18 @@ Móžoš se z \$1 do zwiska stajiś, aby blokěrowanje diskutěrował.
 Njamóžoš funkciju \"{{int:emailuser}}\" wužywaś, snaźkuli płaśiwa e-mailowa adresa jo se w swójich [[Special:Preferences|kontowych nastajenjach]] pódała a njejsy blokěrowany ju wužywaś.
 Twója aktualna IP-adresa jo \$6.
 Pšosym zapśimjej wšykne górjejce naspomnjete drobnostki do napšašowanjow, kótarež cyniš.",
+	'globalblocking-ipblocked-xff' => "'''Jaden proksy-serwer abo někotare proksy-serwery, kótarež wužywaju se wót twójogo napšašowanja wužiwaja, su globalnje blokěrowane.'''
+
+Blokěrowanje jo se wót \$1 (\$2) pśewjadło.
+Pódana pśicyna jo ''\$3''.
+
+* Zachopjeńk blokěrowanja: \$4
+* Kóńc blokěrowanja: \$5
+
+Móžoš se z \$1 do zwiska stajiś, aby blokěrowanje diskutěrował.
+Njamóžoš funkciju \"{{int:emailuser}}\" wužywaś, snaźkuli płaśiwa e-mailowa adresa jo se w swójich [[Special:Preferences|kontowych nastajenjach]] pódała a njejsy blokěrowany ju wužywaś.
+Twója aktualna IP-adresa jo \$6.
+Pšosym zapśimjej wšykne górjejce naspomnjete drobnostki do napšašowanjow, kótarež cyniš.",
 	'globalblocking-blocked-nopassreset' => 'Njamóžoš gronidła wužywarja slědk wzaś, dokulaž sy globalnje blokěrowany.',
 	'globalblocking-logpage' => 'Protokol globalnych blokěrowanjow',
 	'globalblocking-logpagetext' => 'To jo protokol globalnych blokěrowanjow, kótarež su se cynili a wótpórali na toś tom wikiju.
@@ -5236,6 +5248,18 @@ Jeli je globalne blokowanje na tutym wikiju znjemóžnjene, móža wužiwarjo z 
 	'globalblocking-ipblocked' => "'''Twoja IP-adresa je so na wšěch wikijach zablokowała.'''
 
 Blokowanje je \$1 (\$2) přewjedł.
+Podata přičina je ''\$3''.
+
+* Spočatk blokowanja: \$4
+* Kónc blokowanja: \$5
+
+Móžeš so z \$1 do zwiska stajić, zo by blokowanje diskutował.
+Njemóžeš funkciju \"{{int:emailuser}}\" wužiwać, chibazo płaćiwa e-mejlowa adresa je w swojich [[Special:Preferences|kontowych nastajenjach]] podata a njejsy zablokowany ju wužiwać.
+Twoja aktualna IP-adresa je \$6.
+Prošu zapřijmi wšě horjeka mjenowane podrobnosće do naprašowanjow, kotrež činiš.",
+	'globalblocking-ipblocked-xff' => "'''Jedyn proksy-serwer abo wjacore proksy-serwery, kotrež so wot twojeho naprašowanja wužiwaja, su globalnje zablokowane.'''
+
+Blokowanje je so wot \$1 (\$2) přewjedło.
 Podata přičina je ''\$3''.
 
 * Spočatk blokowanja: \$4
