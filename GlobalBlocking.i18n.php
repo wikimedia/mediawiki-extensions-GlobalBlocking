@@ -2112,9 +2112,9 @@ així que l'estat local dels bloquejos globals no pot ser modificat.",
 	'globalblocking-whitelist-intro' => "Podeu fer servir aquest formulari per a editar l'estat local d'un bloqueig global.
 Si un bloqueig global està desactivat en aquest wiki, els usuaris de l'adreça IP afectada podran editar normalment.
 [[Special:GlobalBlockList|Retorna a la llista de bloqueigs globals]].",
-	'globalblocking-ipblocked' => "'''La vostra adreça IP ha estat blocada en tots els wikis.'''
+	'globalblocking-ipblocked' => "'''S'ha blocat la vostra adreça IP en tots els wikis.'''
 
-El bloqueig ha estat fet per \$1 (\$2).
+El bloqueig l'ha fet \$1 (\$2).
 El motiu donat és ''\$3''.
 
 * Inici del bloqueig: \$4
