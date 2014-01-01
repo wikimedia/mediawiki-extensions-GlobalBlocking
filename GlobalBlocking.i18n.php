@@ -6987,6 +6987,15 @@ Commodule notatio obstructionum subter datur.',
 	'globalblockstatus' => 'Status localis obstructionum globalium',
 );
 
+/** Ladino (Ladino)
+ * @author Menachem.Moreira
+ */
+$messages['lad'] = array(
+	'globalblocking-block-reason' => 'Razon:',
+	'globalblocking-unblock-reason' => 'Razon:',
+	'globalblocking-whitelist-reason' => 'Razon:',
+);
+
 /** Luxembourgish (Lëtzebuergesch)
  * @author Les Meloures
  * @author Robby
