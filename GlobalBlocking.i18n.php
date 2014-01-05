@@ -6328,6 +6328,7 @@ $messages['ja'] = array(
 );
 
 /** Javanese (Basa Jawa)
+ * @author Bennylin
  * @author Meursault2004
  * @author NoiX180
  * @author Pras
@@ -6340,6 +6341,10 @@ $messages['jv'] = array(
 	'globalblocking-block-reason' => 'Alesan:',
 	'globalblocking-block-otherreason' => 'Alesan liya/tambahan:',
 	'globalblocking-block-reasonotherlist' => 'Alesan liya',
+	'globalblocking-block-reason-dropdown' => '* Alasan pemblokiran umum
+** Spam crosswiki
+** Penyalahgunaan crosswiki
+** Vandalisme',
 	'globalblocking-block-edit-dropdown' => 'Sunting alesan blokir',
 	'globalblocking-block-expiry' => 'Kadaluwarsa:',
 	'globalblocking-block-expiry-other' => 'Wektu kadaluwarsa liya',
@@ -6433,8 +6438,8 @@ Log pamblokiran sumadhiya nèng ngisor kanggo rujukan:',
 	'globalblock' => 'Mblokir alamat IP sacara global',
 	'globalblockstatus' => 'Status lokal saka pamblokiran global',
 	'removeglobalblock' => 'Jabel pamblokiran global',
-	'right-globalblock' => 'Nggawé pamblokiran global', # Fuzzy
-	'action-globalblock' => 'gawé blokiran global', # Fuzzy
+	'right-globalblock' => 'Nggawé lang mbusak pamblokiran global',
+	'action-globalblock' => 'gawé lan busak blokiran global',
 	'right-globalblock-whitelist' => 'Jabel blokade global sacara lokal',
 	'action-globalblock-whitelist' => 'patèni blokiran global sacara lokal',
 	'right-globalblock-exempt' => 'Liwati blokiran global',
