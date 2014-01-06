@@ -2427,6 +2427,7 @@ Nodwch gyfeiriad IP dilys os gwelwch yn dda.",
 	'globalblocking-list-modify' => 'addasu',
 	'globalblocking-list-noresults' => "Nid yw cyfeiriad IP yr ymholiad wedi'i rwystro.",
 	'globalblocking-goto-block' => 'Blocio cyfeiriad IP yn fyd-eang',
+	'globalblocking-goto-unblock' => "Dod â'r bloc cyd-wici i ben",
 	'globalblocking-unblock' => 'Dod â bloc cyd-wici i ben',
 	'globalblocking-unblock-ipinvalid' => "Mae'r cyfeiriad IP ($1) a nodwyd gennych yn annilys.
 Noder nad oes modd defnyddio enw defnyddiwr os gwelwch yn dda!",
