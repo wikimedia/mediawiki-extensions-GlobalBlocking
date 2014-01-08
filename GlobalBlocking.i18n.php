@@ -9963,7 +9963,7 @@ $messages['ru'] = array(
 	'globalblocking-ipaddress' => 'IP-адрес:',
 	'globalblocking-ipbanononly' => 'Блокировать только анонимных участников',
 	'globalblocking-block-errors' => 'Блокировка неудачна. {{PLURAL:$1|1=Причина|Причины}}:
-$1', # Fuzzy
+$1',
 	'globalblocking-block-ipinvalid' => 'Введённый вами IP-адрес ($1) ошибочен.
 Пожалуйста, обратите внимание, вы не можете вводить имя участника!',
 	'globalblocking-block-expiryinvalid' => 'Введённый срок окончания ($1) ошибочен.',
@@ -9987,7 +9987,7 @@ $1', # Fuzzy
 	'globalblocking-list-ipinvalid' => 'Вы ищете ошибочный IP-адрес ($1).
 Пожалуйста введите корректный IP-адрес.',
 	'globalblocking-search-errors' => 'Ваш поиск не был успешен. {{PLURAL:$1|1=Причина|Причины}}:
-$1', # Fuzzy
+$1',
 	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') глобально заблокировал [[Special:Contributions/\$4|\$4]] ''(\$5)''",
 	'globalblocking-list-expiry' => 'истекает $1',
 	'globalblocking-list-anononly' => 'только анонимов',
@@ -10008,7 +10008,7 @@ $1', # Fuzzy
 	'globalblocking-unblock-submit' => 'Снять глобальную блокировку',
 	'globalblocking-unblock-reason' => 'Причина:',
 	'globalblocking-unblock-unblocked' => "Вы успешно сняли глобальную блокировку #$2 с IP-адреса '''$1'''",
-	'globalblocking-unblock-errors' => 'Попытка снять глобальную блокировку не удалась. {{PLURAL:$1|1=Причина|Причины}}:', # Fuzzy
+	'globalblocking-unblock-errors' => 'Попытка снять глобальную блокировку не удалась. {{PLURAL:$1|1=Причина|Причины}}:',
 	'globalblocking-unblock-successsub' => 'Глобальная блокировка успешно снята',
 	'globalblocking-unblock-subtitle' => 'Снятие глобальной блокировки',
 	'globalblocking-unblock-intro' => 'Вы можете использовать эту форму для снятия глобальной блокировки.',
@@ -10025,7 +10025,7 @@ $1', # Fuzzy
 	'globalblocking-whitelist-successsub' => 'Локальное состояние успешно измененно',
 	'globalblocking-whitelist-nochange' => 'Вы не произвели изменений локального состояния этой блокировки.
 [[Special:GlobalBlockList|Вернуться к списку глобальных блокировок]].',
-	'globalblocking-whitelist-errors' => 'Попытка изменить локальное состояние глобальной блокировки не удалась. {{PLURAL:$1|1=Причина|Причины}}:', # Fuzzy
+	'globalblocking-whitelist-errors' => 'Попытка изменить локальное состояние глобальной блокировки не удалась. {{PLURAL:$1|1=Причина|Причины}}:',
 	'globalblocking-whitelist-intro' => 'Вы можете использовать эту форму для изменения локального состояния глобальной блокировки.
 Если глобальная блокировка будет выключена в этой вики, участники с соответствующими IP-адресами смогут нормально редактировать страницы.
 [[Special:GlobalBlockList|Вернуться к списку глобальных блокировок]].',
