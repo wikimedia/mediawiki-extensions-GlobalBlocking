@@ -170,6 +170,11 @@ class GlobalBlocking {
 				$conds[] = $dbr->makeList( self::getRangeCondition( $ip ), LIST_AND );
 			}
 		}
+
+		if ( !$conds ) {
+			// No valid IPs provided so don't even make the query. Bug 59705
+			return array();
+		}
 		$conds = array( $dbr->makeList( $conds, LIST_OR ) );
 
 		if ( !$anon ) {
