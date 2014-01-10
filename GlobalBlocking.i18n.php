@@ -2161,6 +2161,7 @@ $messages['ce'] = array(
 	'globalblocking-block-edit-dropdown' => 'Бахьанин список нисяр',
 	'globalblocking-block-expiry' => 'Хан чекхйолу:',
 	'globalblocking-block-expiry-selector-other' => 'Кхин хан:',
+	'globalblocking-block-options' => 'Параметраш:',
 	'globalblocking-modify-success' => 'Глобальни блоктохар $1 кхиамца хийцина',
 	'globalblocking-modify-successsub' => 'Глобальни блоктохар кхиамца хийцина',
 	'globalblocking-block-alreadyblocked' => 'IP-адрес $1 хӀийнцале глобально блоктоьхна ду.
