@@ -6999,6 +6999,11 @@ Commodule notatio obstructionum subter datur.',
  */
 $messages['lad'] = array(
 	'globalblocking-block-reason' => 'Razon:',
+	'globalblocking-block-otherreason' => 'Otra razon/razon adisiyonal:',
+	'globalblocking-block-reasonotherlist' => 'Otra razon',
+	'globalblocking-block-options' => 'Opsyones:',
+	'globalblocking-ipaddress' => 'Adreso de IP:',
+	'globalblocking-search-ip' => 'Adreso de IP:',
 	'globalblocking-unblock-reason' => 'Razon:',
 	'globalblocking-whitelist-reason' => 'Razon:',
 );
