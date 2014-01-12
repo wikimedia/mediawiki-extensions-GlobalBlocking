@@ -1,15 +1,16 @@
 <?php
 class ApiGlobalBlock extends ApiBase {
 	public function execute() {
+		if ( !$this->getUser()->isAllowed( 'globalblock' ) ) {
+			// Check permissions
+			$this->dieUsageMsg( array( 'badaccess-groups' ) );
+		}
+
 		$this->requireOnlyOneParameter( $this->extractRequestParams(), 'expiry', 'unblock' );
 		$result = $this->getResult();
 		$block = GlobalBlocking::getGlobalBlockingBlock( $this->getParameter( 'target' ), true );
 
 		if ( $this->getParameter( 'expiry' ) ) {
-			if ( !$this->getUser()->isAllowed( 'globalblock' ) ) {
-				$this->dieUsageMsg( array( 'badaccess-groups' ) );
-			}
-
 			$options = array();
 
 			if ( $this->getParameter( 'anononly' ) ) {
@@ -48,10 +49,6 @@ class ApiGlobalBlock extends ApiBase {
 				$result->addValue( 'globalblock', 'expiry', $displayExpiry );
 			}
 		} elseif ( $this->getParameter( 'unblock' ) ) {
-			if ( !$this->getUser()->isAllowed( 'globalunblock' ) ) {
-				$this->dieUsageMsg( array( 'badaccess-groups' ) );
-			}
-
 			GlobalBlocking::getGlobalBlockingMaster()->delete(
 				'globalblocks',
 				array( 'gb_id' => $block->gb_id ),
