@@ -194,10 +194,10 @@ class SpecialGlobalBlock extends SpecialPage {
 		);
 
 		// How long to block them for
-		$dropdown = wfMessage( 'globalblocking-expiry-options' );
+		$dropdown = $this->msg( 'globalblocking-expiry-options' );
 		if ( $dropdown->isDisabled() ) {
 			// 'globalblocking-expiry-options' is empty, try the message from core
-			$dropdown = wfMessage( 'ipboptions' );
+			$dropdown = $this->msg( 'ipboptions' );
 			if ( $dropdown->isDisabled() ) {
 				// 'ipboptions' is empty too. Do not show a dropdown
 				// Do not assume that 'ipboptions' exists forever, therefore check too
