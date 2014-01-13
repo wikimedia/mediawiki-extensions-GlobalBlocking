@@ -6996,11 +6996,12 @@ Commodule notatio obstructionum subter datur.',
 
 /** Ladino (Ladino)
  * @author Menachem.Moreira
+ * @author Universal Life
  */
 $messages['lad'] = array(
 	'globalblocking-block-reason' => 'Razon:',
 	'globalblocking-block-otherreason' => 'Otra razon/razon adisiyonal:',
-	'globalblocking-block-reasonotherlist' => 'Otra razon',
+	'globalblocking-block-reasonotherlist' => 'Otra razón',
 	'globalblocking-block-options' => 'Opsyones:',
 	'globalblocking-ipaddress' => 'Adreso de IP:',
 	'globalblocking-search-ip' => 'Adreso de IP:',
