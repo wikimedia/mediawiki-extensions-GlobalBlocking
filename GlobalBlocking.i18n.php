@@ -7290,6 +7290,7 @@ Alle globale blokkades stoan in de [[Special:GlobalBlockList|liest met globale b
 );
 
 /** لوری (لوری)
+ * @author Bonevarluri
  * @author Mogoeilor
  */
 $messages['lrc'] = array(
@@ -7308,6 +7309,9 @@ $messages['lrc'] = array(
 	'globalblocking-unblock-reason' => 'دليل:',
 	'globalblocking-whitelist-reason' => 'دليل:',
 	'globalblocking-whitelist-status' => 'شلك ولاتی',
+	'globalblocking-logpage' => 'قلف جهونی پهرستنومه',
+	'globalblocking-showlog' => 'نشونی ای آی پی دماتر قلف بیه.
+قلف ای پهرستنومه وا سرچشمه هاری دروس بیه:',
 );
 
 /** Lithuanian (lietuvių)
@@ -11073,7 +11077,7 @@ $messages['sr-ec'] = array(
 	'globalblocking-block-options' => 'Поставке:',
 	'globalblocking-ipaddress' => 'ИП адреса:',
 	'globalblocking-ipbanononly' => 'Блокирај само анонимне кориснике',
-	'globalblocking-block-errors' => 'Блок није успешан због {{PLURAL:$1|1=следеђег разлога|следећих разлога}}:', # Fuzzy
+	'globalblocking-block-errors' => 'Блок није успешан због {{PLURAL:$1|следеђег разлога|следећих разлога}}:',
 	'globalblocking-block-ipinvalid' => 'ИП адреса ($1) коју сте унели није добра.
 Запамтите да не можете унети корисничко име!',
 	'globalblocking-block-expiryinvalid' => 'Време истека блока које сте унели ($1) није исправно.',
@@ -11096,7 +11100,7 @@ $messages['sr-ec'] = array(
 	'globalblocking-search-submit' => 'Претражите блокове',
 	'globalblocking-list-ipinvalid' => 'ИП адреса коју тражите ($1) није исправна.
 Молимо Вас унесите исправну ИП адресу.',
-	'globalblocking-search-errors' => 'Ваша претрага није успешна због {{PLURAL:$1|1=следећег разлога|следећих разлога}}:', # Fuzzy
+	'globalblocking-search-errors' => 'Ваша претрага није успешна због {{PLURAL:$1|следећег разлога|следећих разлога}}:',
 	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') глобално блокирао [[Special:Contributions/\$4|\$4]] ''(\$5)''",
 	'globalblocking-list-expiry' => 'истиче $1',
 	'globalblocking-list-anononly' => 'само анонимне',
@@ -11117,7 +11121,7 @@ $messages['sr-ec'] = array(
 	'globalblocking-unblock-submit' => 'Уклоните глобални блок',
 	'globalblocking-unblock-reason' => 'Разлог:',
 	'globalblocking-unblock-unblocked' => "Успешно сте уклонили глобалну блокаду #$2 за ИП адресу '''$1'''.",
-	'globalblocking-unblock-errors' => 'Не можете да уклоните глобалну блокаду због {{PLURAL:$1|1=следећег разлога|следећих разлога}}:', # Fuzzy
+	'globalblocking-unblock-errors' => 'Не можете да уклоните глобалну блокаду због {{PLURAL:$1|следећег разлога|следећих разлога}}:',
 	'globalblocking-unblock-successsub' => 'Глобални блок успешно уклоњен',
 	'globalblocking-unblock-subtitle' => 'Уклањање глобалног блока',
 	'globalblocking-unblock-intro' => 'Можете користити ову форму да уклоните глобални блок.',
@@ -11134,7 +11138,7 @@ $messages['sr-ec'] = array(
 	'globalblocking-whitelist-successsub' => 'Локални статус је успешно промењен',
 	'globalblocking-whitelist-nochange' => 'Нисте направили измену у локалном статусу ове блокаде.
 [[Special:GlobalBlockList|Назад на списак глобалних блокада]].',
-	'globalblocking-whitelist-errors' => 'Не можете да промените локално стање глобалне блокаде због {{PLURAL:$1|1=следећег разлога|следећих разлога}}:', # Fuzzy
+	'globalblocking-whitelist-errors' => 'Не можете да промените локално стање глобалне блокаде због {{PLURAL:$1|следећег разлога|следећих разлога}}:',
 	'globalblocking-whitelist-intro' => 'Можете да користите овај образац да мењате локални статус неке глобалне блокаде.
 Ако је глобална блокада онемогућена на овом викију, корисници на тој ИП адреси ће моћи да уређују нормално.
 [[Special:GlobalBlockList|Назад на списак глобалних блокада]].',
@@ -11190,7 +11194,7 @@ $messages['sr-el'] = array(
 	'globalblocking-block-options' => 'Opcije:',
 	'globalblocking-ipaddress' => 'IP adresa:',
 	'globalblocking-ipbanononly' => 'Blokiraj samo anonimne korisnike',
-	'globalblocking-block-errors' => 'Blok nije uspešan zbog {{PLURAL:$1|1=sledeđeg razloga|sledećih razloga}}:', # Fuzzy
+	'globalblocking-block-errors' => 'Blok nije uspešan zbog {{PLURAL:$1|sledeđeg razloga|sledećih razloga}}:',
 	'globalblocking-block-ipinvalid' => 'IP adresa ($1) koju ste uneli nije dobra.
 Zapamtite da ne možete uneti korisničko ime!',
 	'globalblocking-block-expiryinvalid' => 'Vreme isteka bloka koje ste uneli ($1) nije ispravno.',
@@ -11213,7 +11217,7 @@ Neke blokade su označene kao lokalno onemogućene: to znači da one važe za dr
 	'globalblocking-search-submit' => 'Pretražite blokove',
 	'globalblocking-list-ipinvalid' => 'IP adresa koju tražite ($1) nije ispravna.
 Molimo Vas unesite ispravnu IP adresu.',
-	'globalblocking-search-errors' => 'Vaša pretraga nije uspešna zbog {{PLURAL:$1|1=sledećeg razloga|sledećih razloga}}:', # Fuzzy
+	'globalblocking-search-errors' => 'Vaša pretraga nije uspešna zbog {{PLURAL:$1|sledećeg razloga|sledećih razloga}}:',
 	'globalblocking-list-blockitem' => "\$1: <span class=\"plainlinks\">'''\$2'''</span> (''\$3'') globalno blokirao [[Special:Contributions/\$4|\$4]] ''(\$5)''",
 	'globalblocking-list-expiry' => 'ističe $1',
 	'globalblocking-list-anononly' => 'samo anonimne',
@@ -11234,7 +11238,7 @@ Zapamtite da ne možete unositi korisnička imena!',
 	'globalblocking-unblock-submit' => 'Uklonite globalni blok',
 	'globalblocking-unblock-reason' => 'Razlog:',
 	'globalblocking-unblock-unblocked' => "Uspešno ste uklonili globalni blok #$2 za IP adresu '''$1'''.",
-	'globalblocking-unblock-errors' => 'Ne možete ukloniti globalni blok za tu IP adresu zbog {{PLURAL:$1|1=sledećeg razloga|sledećih razloga}}:', # Fuzzy
+	'globalblocking-unblock-errors' => 'Ne možete ukloniti globalni blok za tu IP adresu zbog {{PLURAL:$1|sledećeg razloga|sledećih razloga}}:',
 	'globalblocking-unblock-successsub' => 'Globalni blok uspešno uklonjen',
 	'globalblocking-unblock-subtitle' => 'Uklanjanje globalnog bloka',
 	'globalblocking-unblock-intro' => 'Možete koristiti ovu formu da uklonite globalni blok.',
@@ -11251,7 +11255,7 @@ pa zato lokalni status globalnih blokada ne može da se menja.',
 	'globalblocking-whitelist-successsub' => 'Lokalni status je uspešno promenjen',
 	'globalblocking-whitelist-nochange' => 'Niste napravili izmenu u lokalnom statusu ove blokade.
 [[Special:GlobalBlockList|Nazad na spisak globalnih blokada]].',
-	'globalblocking-whitelist-errors' => 'Ne možete da promenite lokalno stanje globalne blokade zbog {{PLURAL:$1|1=sledećeg razloga|sledećih razloga}}:', # Fuzzy
+	'globalblocking-whitelist-errors' => 'Ne možete da promenite lokalno stanje globalne blokade zbog {{PLURAL:$1|sledećeg razloga|sledećih razloga}}:',
 	'globalblocking-whitelist-intro' => 'Možete da koristite ovaj obrazac da menjate lokalni status neke globalne blokade.
 Ako je globalna blokada onemogućena na ovom vikiju, korisnici na toj IP adresi će moći da uređuju normalno.
 [[Special:GlobalBlockList|Nazad na spisak globalnih blokada]].',
