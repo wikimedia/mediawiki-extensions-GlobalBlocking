@@ -3554,7 +3554,7 @@ $messages['et'] = array(
 	'globalblocking-block-options' => 'Sätted:',
 	'globalblocking-ipaddress' => 'IP-aadress:',
 	'globalblocking-ipbanononly' => 'Blokeeri ainult anonüümseid kasutajaid',
-	'globalblocking-block-errors' => 'Blokeerimine ei õnnestunud {{PLURAL:$1|järgneval põhjusel|järgnevatel põhjustel}}:',
+	'globalblocking-block-errors' => 'Blokeerimine ei õnnestunud {{PLURAL:$1|järgmisel põhjusel|järgmistel põhjustel}}:',
 	'globalblocking-block-ipinvalid' => 'Sisestatud IP aadress $1 on vigane.
 Pane tähele, et kasutajanime ei saa sisestada.',
 	'globalblocking-block-expiryinvalid' => 'Sisestatud aegumistähtaeg ($1) on vigane.',
@@ -3595,7 +3595,7 @@ Pane tähele, et kasutajanime ei saa sisestada!',
 	'globalblocking-unblock-submit' => 'Eemalda globaalne blokeering',
 	'globalblocking-unblock-reason' => 'Põhjus:',
 	'globalblocking-unblock-unblocked' => "Globaalne blokeering #$2 on IP-aadressilt '''$1''' edukalt eemaldatud",
-	'globalblocking-unblock-errors' => 'Globaalse blokeeringu eemaldamine oli {{PLURAL:$1|järgneval põhjusel|järgnevatel põhjustel}} edutu:',
+	'globalblocking-unblock-errors' => 'Globaalse blokeeringu eemaldamine ei õnnestunud {{PLURAL:$1|järgmisel põhjusel|järgmistel põhjustel}}:',
 	'globalblocking-unblock-successsub' => 'Globaalne blokeering edukalt eemaldatud',
 	'globalblocking-unblock-subtitle' => 'Globaalse blokeeringu eemaldamine',
 	'globalblocking-unblock-intro' => 'Seda vormi kasutades saab globaalse blokeeringu eemaldada.',
@@ -3612,7 +3612,7 @@ seega ei saa globaalsete blokeeringute kohalikku olekut muuta.',
 	'globalblocking-whitelist-successsub' => 'Kohalik olek edukalt muudetud',
 	'globalblocking-whitelist-nochange' => 'Selle blokeeringu kohalikku olektud ei muudetud.
 [[Special:GlobalBlockList|Naase globaalsete blokeeringute nimekirja]].',
-	'globalblocking-whitelist-errors' => 'Globaalse blokeeringu kohaliku oleku muutmine ebaõnnestus {{PLURAL:$1|järgneval põhjusel|järgnevatel põhjustel}}:',
+	'globalblocking-whitelist-errors' => 'Globaalse blokeeringu kohaliku oleku muutmine ebaõnnestus {{PLURAL:$1|järgmisel põhjusel|järgmistel põhjustel}}:',
 	'globalblocking-whitelist-intro' => 'Seda vormi saab kasutada globaalse blokeeringu kohaliku oleku muutmiseks.
 Kui globaalne blokeering on selles vikis välja lülitatud, saavad kasutajad selle IP-aadressi alt tavapäraselt toimetada.
 [[Special:GlobalBlockList|Naase globaalsete blokeeringute nimekirja]].',
@@ -3628,6 +3628,18 @@ Et blokeeringuga seonduvat arutada, saad ühendust võta kasutajaga \$1.
 Funktsiooni \"{{int:emailuser}}\" saad kasutada vaid siis, kui sinu [[Special:Preferences|konto eelistustes]] on määratud sobiv e-posti aadressi ja kui sul pole keelatud seda kasutada.
 Praegu on sinu IP-aadress \$6.
 Palun lisa kõigi võimalike järelepärimiste juurde ülaltoodud üksikasjad.",
+	'globalblocking-ipblocked-xff' => "'''Vähemalt üks sinu päringus kasutatud proksiserveritest on globaalselt blokeeritud.'''
+
+Blokeerija: \$1 (\$2).
+Põhjus: ''\$3''.
+
+* Blokeerimisaeg: \$4
+* Blokeeringu aegumistähtaeg: \$5
+
+Saad võtta ühendust kasutajaga \$1, et blokeeringut arutada.
+Sa ei saa kasutada funktsiooni \"{{int:emailuser}}\", kui sinu [[Special:Preferences|konto eelistustes]] pole määratud sobivat e-posti aadressi või kui selle kasutamine on sinu jaoks blokeeritud.
+Blokeeritud proksi aadress oli \$6.
+Palun lisa ülaltoodud üksikasjad kõigile päringutele, mida teed.",
 	'globalblocking-blocked-nopassreset' => 'Sa ei saa kasutaja salasõna lähtestada, sest oled globaalselt blokeeritud.',
 	'globalblocking-logpage' => 'Globaalne blokeerimislogi',
 	'globalblocking-logpagetext' => 'Siin logis on selles vikis üles seatud ja eemaldatud globaalsed blokeeringud.
