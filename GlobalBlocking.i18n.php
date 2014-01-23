@@ -1898,8 +1898,8 @@ A-is emañ marilh ar stankadennoù :",
 	'globalblock' => "Stankañ ur chomlec'h IP en un doare hollek",
 	'globalblockstatus' => "Statud lec'hel ar stankadennoù hollek",
 	'removeglobalblock' => 'Lemel ur stankadur hollek',
-	'right-globalblock' => 'Stankañ implijerien en un doare hollek', # Fuzzy
-	'action-globalblock' => 'Ober stankadennoù hollek', # Fuzzy
+	'right-globalblock' => 'Stankañ pe distankañ implijerien en un doare hollek',
+	'action-globalblock' => 'Ober ha dizober stankadennoù hollek',
 	'right-globalblock-whitelist' => "Diweredekaat en un doare lec'hel ar stankadennoù hollek",
 	'action-globalblock-whitelist' => "Diweredekaat en un doare lec'hel ar stankadennoù hollek",
 	'right-globalblock-exempt' => "Mont dreist d'ar stankadennoù hollek",
