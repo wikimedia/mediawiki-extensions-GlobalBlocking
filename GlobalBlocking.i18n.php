@@ -7313,6 +7313,7 @@ $messages['lrc'] = array(
 	'globalblocking-block-expiry-selector-other' => 'وخت هنی:',
 	'globalblocking-block-options' => 'گزينه يا هنی:',
 	'globalblocking-ipaddress' => 'نشونه آ پی:',
+	'globalblocking-block-success' => 'نشونی آی پی $1 د کل پروجه یا وه خوئی قلف بیه.',
 	'globalblocking-search-ip' => 'نشونه آ پی:',
 	'globalblocking-list-anononly' => 'ناشناس فقط',
 	'globalblocking-list-unblock' => 'ؤرداشتن',
