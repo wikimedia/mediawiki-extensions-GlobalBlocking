@@ -854,7 +854,7 @@ $messages['as'] = array(
 	'globalblocking-desc' => 'আই পি ঠিকনাসমূহ [[Special:GlobalBlockList|একাধিক ৱিকিত বাধা দিয়াত]] [[Special:GlobalBlock|অনুমতি দিয়ে]]',
 	'globalblocking-block' => 'এটা আই পি ঠিকনা গোলকীয়ভাৱে বাৰণ কৰক',
 	'globalblocking-modify-intro' => 'আপুনি এই প্ৰপত্ৰ ব্যৱহাৰ কৰি এই গোলকীয় বাৰণৰ ছেটিং সলাব পাৰে।',
-	'globalblocking-block-intro' => 'আপুনি এই পৃষ্ঠা ব্যৱহাৰি কৰি সকলো ৱিকিতে এটা আই পি ঠিকনা বাৰণ কৰিব পাৰিব।',
+	'globalblocking-block-intro' => 'আপুনি এই পৃষ্ঠা ব্যৱহাৰ কৰি সকলো ৱিকিতে এটা আই পি ঠিকনা বাৰণ কৰিব পাৰিব।',
 	'globalblocking-block-reason' => 'কাৰণ:',
 	'globalblocking-block-otherreason' => 'অন্য/অতিৰিক্ত কাৰণ:',
 	'globalblocking-block-reasonotherlist' => 'অন্য কাৰণ',
@@ -2154,6 +2154,7 @@ Per més detalls, a continuació es mostra el registre de bloquejos:",
  * @author Умар
  */
 $messages['ce'] = array(
+	'globalblocking-desc' => '[[Special:GlobalBlock|Таро хуьлуьйту]] [[Special:GlobalBlockList|массийтта Википедешан]] чохь IP-адресашан блоктоха',
 	'globalblocking-modify-intro' => 'Ахьа лело мега хӀара форма глобальни блоктохаран параметраш хийца.',
 	'globalblocking-block-reason' => 'Бахьан:',
 	'globalblocking-block-otherreason' => 'Кхин бахьна/тӀетохар:',
@@ -7326,6 +7327,7 @@ $messages['lrc'] = array(
 	'globalblocking-logpage' => 'قلف جهونی پهرستنومه',
 	'globalblocking-showlog' => 'نشونی ای آی پی دماتر قلف بیه.
 قلف ای پهرستنومه وا سرچشمه هاری دروس بیه:',
+	'globalblocklist' => 'نوم گه نشونی یا آپی یی که د جهون قلف بینه',
 );
 
 /** Lithuanian (lietuvių)
