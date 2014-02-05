@@ -7316,6 +7316,7 @@ $messages['lrc'] = array(
 	'globalblocking-block-options' => 'گزينه يا هنی:',
 	'globalblocking-ipaddress' => 'نشونه آ پی:',
 	'globalblocking-block-success' => 'نشونی آی پی $1 د کل پروجه یا وه خوئی قلف بیه.',
+	'globalblocking-search-legend' => 'پی جوری سی قلف جهونی',
 	'globalblocking-search-ip' => 'نشونه آ پی:',
 	'globalblocking-list-anononly' => 'ناشناس فقط',
 	'globalblocking-list-unblock' => 'ؤرداشتن',
