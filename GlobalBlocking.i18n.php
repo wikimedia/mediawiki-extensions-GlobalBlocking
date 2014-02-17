@@ -9151,7 +9151,7 @@ Poniżej znajduje się rejestr blokad:',
 	'globalblockstatus' => 'Lokalny status globalnych blokad',
 	'removeglobalblock' => 'Usuwanie globalnej blokady',
 	'right-globalblock' => 'Zakładanie i zdejmowanie globalnych blokad',
-	'action-globalblock' => 'zakładanie globalnych blokad', # Fuzzy
+	'action-globalblock' => 'zakładanie i zdejmowanie globalnych blokad',
 	'right-globalblock-whitelist' => 'Lokalne odblokowywanie globalnych blokad',
 	'action-globalblock-whitelist' => 'lokalne odblokowywanie globalnych blokad',
 	'right-globalblock-exempt' => 'Ignorowanie globalnych blokad',
