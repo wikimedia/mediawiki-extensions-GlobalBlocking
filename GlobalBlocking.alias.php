@@ -401,6 +401,12 @@ $specialPageAliases['pt-br'] = array(
 	'GlobalBlock' => array( 'Bloquear_globalmente' ),
 );
 
+/** Quechua (Runa Simi) */
+$specialPageAliases['qu'] = array(
+	'GlobalBlock' => array( 'SapsiHarkay' ),
+	'GlobalBlockList' => array( 'SapsiHarkasqakuna' ),
+);
+
 /** Romanian (română) */
 $specialPageAliases['ro'] = array(
 	'GlobalBlock' => array( 'Blocare_globală' ),
@@ -505,8 +511,8 @@ $specialPageAliases['yue'] = array(
 $specialPageAliases['zh-hans'] = array(
 	'GlobalBlock' => array( '全域封禁' ),
 	'GlobalBlockList' => array( '全域封禁列表' ),
-	'RemoveGlobalBlock' => array( '解除全域封禁' ),
-	'GlobalBlockStatus' => array( '全域封禁白名单' ),
+	'RemoveGlobalBlock' => array( '全域解禁', '移除全域封禁' ),
+	'GlobalBlockStatus' => array( '全域封禁白名单', '全域封禁状态', '禁用全域封禁' ),
 );
 
 /** Traditional Chinese (中文（繁體）‎) */
