@@ -4975,6 +4975,7 @@ $messages['he'] = array(
  * @author Ansumang
  * @author Kaustubh
  * @author Shyam123.ckp
+ * @author Siddhartha Ghai
  */
 $messages['hi'] = array(
 	'globalblocking-desc' => 'आइपी एड्रेस को [[Special:GlobalBlockList|एक से ज्यादा विकियोंपर ब्लॉक]] करने की [[Special:GlobalBlock|अनुमति]] देता हैं।',
@@ -4993,7 +4994,7 @@ $messages['hi'] = array(
 	'globalblocking-block-expiry-other' => 'अन्य समाप्ती समय',
 	'globalblocking-block-expiry-selector-other' => 'अन्य समय:',
 	'globalblocking-block-legend' => 'एक सदस्य को ग्लोबली ब्लॉक करें', # Fuzzy
-	'globalblocking-block-options' => 'विकल्प', # Fuzzy
+	'globalblocking-block-options' => 'विकल्प:',
 	'globalblocking-ipaddress' => 'आईपी पता:',
 	'globalblocking-ipbanononly' => 'केवल अनाम सदस्यों पे प्रतिबंध लगाएँ',
 	'globalblocking-block-errors' => 'ब्लॉक अयशस्वी हुआ, कारण:', # Fuzzy
