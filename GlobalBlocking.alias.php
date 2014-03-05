@@ -451,6 +451,7 @@ $specialPageAliases['sv'] = array(
 	'GlobalBlock' => array( 'Global_blockering' ),
 	'GlobalBlockList' => array( 'Global_blockeringslista' ),
 	'RemoveGlobalBlock' => array( 'Global_avblockering' ),
+	'GlobalBlockStatus' => array( 'Vitlista_för_globala_blockeringar' ),
 );
 
 /** Tagalog (Tagalog) */

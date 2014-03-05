@@ -2904,7 +2904,7 @@ ya zi şıma eşkêni no form anciya bışawe u eyarê blokeya mewcudi bıvurni.
 tayi blokeyi bı battal nişan biyê: manayê ına, blokebiyayişi keyepelê binan de zi beni,',
 	'globalblocking-list' => 'listeya IPadresan a ke bı globali cıresayişê inan vındariyo.',
 	'globalblocking-search-legend' => 'bıgêr yew blokeya globali',
-	'globalblocking-search-ip' => "Adresa IP'i:",
+	'globalblocking-search-ip' => 'Adresa IPy:',
 	'globalblocking-search-submit' => 'blokan bıgêr',
 	'globalblocking-list-ipinvalid' => 'IP adresa ke şıma geyrenê cı ($1) nêvêrena.
 Kerem kerên, pê jû IP-adresa vêrdiye cı kewên.',
