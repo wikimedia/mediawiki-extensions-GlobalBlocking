@@ -95,7 +95,11 @@ class ApiGlobalBlock extends ApiBase {
 	public function getParamDescription() {
 		return array(
 			'target' => 'The target IP.',
-			'expiry' => 'If specified, will block or reblock the user. Determines how long the block will last for, e.g. \'5 months\' or \'2 weeks\'. If set to \'infinite\' or \'indefinite\' the block will never expire.',
+			'expiry' => array(
+				'If specified, will block or reblock the user.',
+				"Determines how long the block will last for, e.g. '5 months' or '2 weeks'.",
+				"If set to 'infinite' or 'indefinite' the block will never expire."
+			),
 			'unblock' => 'If specified, will unblock the user.',
 			'reason' => 'The reason for blocking/unblocking.',
 			'anononly' => 'Specify this if the block should only affect logged-out users.',
