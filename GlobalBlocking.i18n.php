@@ -42,12 +42,13 @@ Please note that you cannot enter a user name!',
 	'globalblocking-modify-success' => 'The global block on $1 has been successfully modified',
 	'globalblocking-block-successsub' => 'Global block successful',
 	'globalblocking-modify-successsub' => 'Global block modified successfully',
+	'globalblocking-local-failed' => 'Blocking the IP address locally failed as the given IP address already is blocked on this wiki',
 	'globalblocking-block-alreadyblocked' => 'The IP address $1 is already blocked globally.
 You can view the existing block on the [[Special:GlobalBlockList|list of global blocks]],
 or modify the settings of the existing block by re-submitting this form.',
 	'globalblocking-block-bigrange' => 'The range you specified ($1) is too big to block.
 You may block, at most, 65,536 addresses (/16 ranges)',
-
+	'globalblocking-also-local' => 'Also block the given IP address locally on this wiki',
 	'globalblocking-list-intro' => 'This is a list of all global blocks which are currently in effect.
 Some blocks are marked as locally disabled: this means that they apply on other sites, but a local administrator has decided to disable them on this wiki.',
 	'globalblocking-list' => 'List of globally blocked IP addresses',
@@ -225,6 +226,7 @@ See also:
 
 See also:
 * {{msg-mw|Globalblocking-modify-success}} - main message',
+	'globalblocking-local-failed' => 'Shown if blocking an IP address locally failed.',
 	'globalblocking-block-alreadyblocked' => 'Used as error message. Parameters:
 * $1 - IP address',
 	'globalblocking-block-bigrange' => 'Used as error message.
@@ -235,6 +237,7 @@ But if the specified IP range crosses a /16 boundary, this error occurs.
 
 Parameters:
 * $1 - the IP range (contains the start and end IP addresses)',
+	'globalblocking-also-local' => 'Form label for a checkbox asking to also block the IP on the local wiki.',
 	'globalblocking-list-intro' => 'Appears on top of [[Special:Globalblocklist]] (part of [[mw:Extension:GlobalBlocking|Extension:GlobalBlocking]], which is not installed on translatewiki.net; example: [[wikipedia:Special:Globalblocklist]]).',
 	'globalblocking-search-ip' => '{{Identical|IP address}}',
 	'globalblocking-list-ipinvalid' => 'Used as error message in Special:GlobalBlockList. Parameters:
