@@ -2,7 +2,7 @@
 
 class SpecialGlobalBlock extends SpecialPage {
 	public $mAddress, $mReason, $mExpiry, $mAnonOnly, $mModifyForm, $mExpirySelection,
-		$mReasonList, $mModify;
+		$mReasonList, $mModify, $mAlsoLocal;
 
 	function __construct() {
 		parent::__construct( 'GlobalBlock', 'globalblock' );
@@ -110,6 +110,7 @@ class SpecialGlobalBlock extends SpecialPage {
 			$this->mExpiry = $request->getText( 'wpExpiryOther' );
 		}
 		$this->mAnonOnly = $request->getBool( 'wpAnonOnly' );
+		$this->mAlsoLocal = $request->getBool( 'wpAlsoLocal' );
 		$this->mModify = $request->getBool( 'wpModify' );
 		$this->mModifyForm = $request->getCheck( 'modify' );
 	}
@@ -134,10 +135,38 @@ class SpecialGlobalBlock extends SpecialPage {
 			$reasonstr = $this->mReason;
 		}
 
-		$errors = GlobalBlocking::block( $this->mAddress, $reasonstr, $this->mExpiry, $options );
+		$errors = GlobalBlocking::block(
+			$this->mAddress,
+			$reasonstr,
+			$this->mExpiry,
+			$options
+		);
 
 		if ( count( $errors ) ) {
 			return $errors;
+		}
+
+		// Add a local block if the user asked for that
+		if ( $this->getUser()->isAllowed( 'block' ) && $this->mAlsoLocal ) {
+			$block = new Block();
+			$block->setTarget( $this->mAddress );
+			$block->setBlocker( $this->getUser() );
+			$block->mReason = $reasonstr;
+			$block->mExpiry = SpecialBlock::parseExpiryInput( $this->mExpiry );
+			$blockSuccess = $block->insert();
+
+			if( $blockSuccess ) {
+				$log = new LogPage( 'block' );
+				$log_id = $log->addEntry(
+					'block',
+					Title::makeTitle( NS_USER, $this->mAddress ),
+					$reasonstr,
+					array( $this->mExpiry ),
+					$this->getUser()
+				);
+
+				$log->addRelations( 'ipb_id', array( $blockSuccess['id'] ), $log_id );
+			}
 		}
 
 		if ( $this->mModify ) {
@@ -156,6 +185,10 @@ class SpecialGlobalBlock extends SpecialPage {
 			$this->msg( 'globalblocking-return' )->escaped()
 		);
 		$out->addHTML( $link );
+
+		if ( isset( $blockSuccess ) && !$blockSuccess ) {
+			$out->addWikiMsg( 'globalblocking-local-failed' );
+		}
 
 		return array();
 	}
@@ -250,6 +283,18 @@ class SpecialGlobalBlock extends SpecialPage {
 			'mw-globalblock-anon-only',
 			$this->mAnonOnly
 		);
+
+		if ( $this->getUser()->isAllowed( 'block' ) ) {
+			// Also block the given IP locally
+			$fields['globalblocking-block-options'] .=
+				Xml::element( 'br' ) .
+				Xml::checkLabel(
+					$this->msg( 'globalblocking-also-local' )->text(),
+					'wpAlsoLocal',
+					'mw-globalblock-local',
+					$this->mAlsoLocal
+				);
+		}
 
 		// Build a form.
 		$submitMsg = $this->mModifyForm
