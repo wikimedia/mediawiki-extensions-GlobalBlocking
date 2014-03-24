@@ -9476,6 +9476,7 @@ $messages['ps'] = array(
  * @author GKnedo
  * @author Giro720
  * @author Hamilton Abreu
+ * @author Imperadeiro98
  * @author João Sousa
  * @author Lijealso
  * @author Luckas
@@ -9589,7 +9590,7 @@ Para sua referência, é apresentado abaixo o registo de bloqueios:',
 	'globalblock' => 'Bloquear um endereço IP globalmente',
 	'globalblockstatus' => 'Estado local de bloqueios globais',
 	'removeglobalblock' => 'Remover um bloqueio global',
-	'right-globalblock' => 'Fazer bloqueios globais', # Fuzzy
+	'right-globalblock' => 'Criar e remover bloqueios globais',
 	'right-globalblock-whitelist' => 'Desativar bloqueios globais localmente',
 	'right-globalblock-exempt' => 'Contornar bloqueios globais',
 );
