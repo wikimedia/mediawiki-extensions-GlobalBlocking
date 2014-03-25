@@ -2670,10 +2670,12 @@ Beachte, dass du keinen Benutzernamen eingeben darfst!',
 	'globalblocking-modify-success' => 'Die globale Sperre an $1 wurde erfolgreich geändert',
 	'globalblocking-block-successsub' => 'Erfolgreich global gesperrt',
 	'globalblocking-modify-successsub' => 'Globale Sperre erfolgreich geändert',
+	'globalblocking-local-failed' => 'Das lokale Sperren der IP-Adresse ist fehlgeschlagen, da die angegebene IP-Adresse bereits auf diesem Wiki gesperrt ist.',
 	'globalblocking-block-alreadyblocked' => 'Die IP-Adresse $1 wurde schon global gesperrt.
 Du kannst die bestehende Sperre in der [[Special:GlobalBlockList|globalen Sperrliste]] einsehen oder die Einstellungen der Sperre über dieses Formular ändern.',
 	'globalblocking-block-bigrange' => 'Der Adressbereich, den du angegeben hast ($1), ist zu groß zum Sperren.
 Du kannst höchstens 65.536 IPs sperren (/16-Adressbereiche).',
+	'globalblocking-also-local' => 'Auch die angegebene IP-Adresse lokal auf diesem Wiki sperren',
 	'globalblocking-list-intro' => 'Dies ist eine Liste aller gültigen globalen Sperren.
 Die Markierung von Sperren als lokal deaktiviert bedeutet, dass die Sperren auf anderen Projekten gültig sind, aber ein lokaler Administrator entschieden hat, sie für dieses Wiki zu deaktivieren.',
 	'globalblocking-list' => 'Liste global gesperrter IP-Adressen',
@@ -4135,10 +4137,12 @@ Veuillez noter que vous ne pouvez pas inscrire un nom d’utilisateur !',
 	'globalblocking-modify-success' => 'Le blocage global de $1 a été modifié avec succès',
 	'globalblocking-block-successsub' => 'Blocage global réussi',
 	'globalblocking-modify-successsub' => 'Blocage global modifié avec succès',
+	'globalblocking-local-failed' => 'Le blocage local de l’adresse IP a échoué car l’adresse IP fournie est déjà bloquée sur ce wiki',
 	'globalblocking-block-alreadyblocked' => 'L’adresse IP $1 est déjà bloquée globalement.
 Vous pouvez afficher les blocages existants sur la [[Special:GlobalBlockList|liste des blocages globaux]]
 ou reconfigurer ce blocage en soumettant de nouveau ce formulaire.',
 	'globalblocking-block-bigrange' => 'La plage que vous avez spécifiée ($1) est trop grande pour être bloquée. Vous ne pouvez pas bloquer plus de 65&nbsp;536 adresses.',
+	'globalblocking-also-local' => 'Bloquer également localement sur ce wiki l’adresse IP fournie',
 	'globalblocking-list-intro' => 'Voici la liste de tous les blocages globaux actifs. Quelques plages sont marquées comme localement désactivées : ceci signifie qu’elles sont appliquées sur d’autres sites, mais qu’un administrateur local a décidé de les désactiver sur ce wiki.',
 	'globalblocking-list' => 'Liste des adresses IP bloquées globalement',
 	'globalblocking-search-legend' => 'Rechercher un blocage global',
@@ -4873,10 +4877,12 @@ $messages['he'] = array(
 	'globalblocking-modify-success' => 'החסימה הגלובלית של $1 שונתה בהצלחה',
 	'globalblocking-block-successsub' => 'החסימה הגלובלית הושלמה בהצלחה',
 	'globalblocking-modify-successsub' => 'החסימה הגלובלית שונתה בהצלחה',
+	'globalblocking-local-failed' => 'חסימה של כתובת IP באופן מקומי נכשלה כי כתובת ה־IP הזאת כבר חסומה בוויקי הזה',
 	'globalblocking-block-alreadyblocked' => 'כתובת ה־IP $1 כבר נחסמה באופן גלובלי.
 באפשרותכם לצפות בחסימה הקיימת ב[[Special:GlobalBlockList|רשימת החסימות הגלובליות]],
 או לשנות את הגדרות החסימה הקיימת באמצעות שליחה מחדש של הטופס.',
 	'globalblocking-block-bigrange' => 'הטווח שציינתם ($1) גדול מדי לחסימה. באפשרותכם לחסום לכל היותר 65,536 כתובות (טווחים מסוג /16)',
+	'globalblocking-also-local' => 'לחסום גם את כתובת ה־IP שניתנה מקומית בוויקי הזה',
 	'globalblocking-list-intro' => 'זוהי רשימה של כל החסימות הגלובליות הקיימות כרגע. חלק מהחסימות מסומנות כחסימות מוגבלות באופן מקומי: פירוש הדבר שהן תקפות באתרים אחרים, אך אחד ממפעילי המערכת המקומיים החליט לבטלן באתר זה.',
 	'globalblocking-list' => 'רשימת כתובות IP שנחסמו גלובלית',
 	'globalblocking-search-legend' => 'חיפוש חסימה גלובלית',
@@ -6128,8 +6134,10 @@ $messages['it'] = array(
 	'globalblocking-modify-success' => 'Il blocco globale di $1 è stato modificato',
 	'globalblocking-block-successsub' => 'Blocco globale eseguito con successo',
 	'globalblocking-modify-successsub' => 'Modifica del blocco globale riuscita',
+	'globalblocking-local-failed' => "Il blocco locale dell'indirizzo IP non è riuscito poiché è già bloccato su questo wiki",
 	'globalblocking-block-alreadyblocked' => "L'indirizzo IP $1 è già bloccato globalmente. È possibile consultare il blocco attivo nell'[[Special:GlobalBlockList|elenco dei blocchi globali]] o modificare le impostazioni del blocco esistente ricompilando questo modulo.",
 	'globalblocking-block-bigrange' => 'La classe che hai indicato ($1) è troppo ampia per essere bloccata. È possibile bloccare, al massimo, 65.536 indirizzi (classe /16)',
+	'globalblocking-also-local' => "Blocca l'indirizzo IP anche localmente su questo wiki",
 	'globalblocking-list-intro' => 'Di seguito sono elencati tutti i blocchi globali che sono attualmente attivi. Alcuni blocchi sono segnati come disattivati localmente: ciò significa che questi sono attivi su altri siti, ma un amministratore locale ha deciso di disattivarli su quella wiki.',
 	'globalblocking-list' => 'Elenco degli indirizzi IP bloccati globalmente',
 	'globalblocking-search-legend' => 'Ricerca un blocco globale',
@@ -7563,11 +7571,13 @@ $messages['mk'] = array(
 	'globalblocking-modify-success' => 'Глобалниот блок на $1 е успешно изменет.',
 	'globalblocking-block-successsub' => 'Глобалното блокирање е успешно',
 	'globalblocking-modify-successsub' => 'Глобалниот блок е успешно изменет.',
+	'globalblocking-local-failed' => 'Локалното блокирање на IP-адреса бидејќи дадената адреса е веќе блокирана на ова вики',
 	'globalblocking-block-alreadyblocked' => 'IP-адресата $1 е веќе глобално блокирана.
 Можете да го погледате постоечкиот блок на [[Special:GlobalBlockList|списокот на глобални блокови]],
 или пак да ги измените нагодувањата на постоечкиот блок со тоа што ќе го повторно ќе го поднесете овој образец.',
 	'globalblocking-block-bigrange' => 'Назначениот опсег ($1) е преголем за блокирање.
 Можете да блокирате највеќе до 65 536 адреси (/16 регистри)',
+	'globalblocking-also-local' => 'Исто така блокирај ја дадената IP-адреса локално на ова вики',
 	'globalblocking-list-intro' => 'Ова е список на сите моментални глобални блокови во дејство.
 Некои блокови се означени како локално оневозможени: ова значи дека тие важат за други страници, но локалниот администратор решил да ги оневозможи на ова вики.',
 	'globalblocking-list' => 'Список на глобално блокирани IP-адреси',
@@ -9037,6 +9047,7 @@ $messages['pfl'] = array(
  * @author Derbeth
  * @author Lampak
  * @author Leinad
+ * @author Matik7
  * @author Nux
  * @author Sp5uhe
  * @author WTM
@@ -9068,11 +9079,13 @@ Zwróć uwagę na to, że nie możesz wprowadzić nazwy użytkownika!',
 	'globalblocking-modify-success' => 'Globalna blokada dla $1 została zmieniona',
 	'globalblocking-block-successsub' => 'Globalna blokada założona',
 	'globalblocking-modify-successsub' => 'Blokada globalna została zmieniona',
+	'globalblocking-local-failed' => 'Lokalne zablokowanie adresu IP nie powiodło się, ponieważ podane IP zostało już zablokowane na tej wiki',
 	'globalblocking-block-alreadyblocked' => 'Adres IP $1 jest obecnie zablokowany globalnie.
 Możesz przejrzeć aktualnie obowiązujące blokady w [[Special:GlobalBlockList|spisie globalnych blokad]]
 lub zmienić ustawienia istniejącej blokady poprzez zapisanie tego formularza.',
 	'globalblocking-block-bigrange' => 'Podany przez Ciebie zakres ($1) jest za duży by mógł zostać zablokowany.
 Możesz zablokować nie więcej niż 65536 adresów (maska 16 bitów)',
+	'globalblocking-also-local' => 'Zablokuj także dany adres IP lokalnie na tej wiki',
 	'globalblocking-list-intro' => 'Poniżej znajduje się lista wszystkich obecnie nałożone globalnych blokad.
 Niektóre blokady zostały oznaczone jako odblokowane lokalnie – oznacza to, że jeden z lokalnych administratorów zdecydował się zdjąć blokadę na tej wiki, ale wciąż obowiązuje ona na innych projektach.',
 	'globalblocking-list' => 'Spis globalnie zablokowanych adresów IP',
@@ -10033,11 +10046,13 @@ $1',
 	'globalblocking-modify-success' => 'Глобальная блокировка $1 успешно изменена',
 	'globalblocking-block-successsub' => 'Глобальная блокировка выполнена успешно',
 	'globalblocking-modify-successsub' => 'Глобальная блокировка успешно изменена',
+	'globalblocking-local-failed' => 'Блокирование IP-адрес локально не удалось, так как данный IP-адрес уже заблокирован в этой вики',
 	'globalblocking-block-alreadyblocked' => 'IP-адрес $1 уже был заблокирован глобально.
 Вы можете просмотреть существующие блокировки в [[Special:GlobalBlockList|списке глобальных блокировок]]
 или изменить параметры существующей блокировки, повторно отправив эту форму.',
 	'globalblocking-block-bigrange' => 'Указанный вами диапазон ($1) слишком велик для блокировки.
 Вы можете заблокировать максимум 65 536 адресов (/16 область)',
+	'globalblocking-also-local' => 'Также блокировать локально данный IP-адрес в этой вики',
 	'globalblocking-list-intro' => 'Это список всех действующих глобальных блокировок.
 Некоторые блокировки отмечены как выключенные локально, это означает, что они действуют на других сайтах, но локальный администратор решил отключить её в этой вики.',
 	'globalblocking-list' => 'Список глобально заблокированных IP-адресов',
