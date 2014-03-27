@@ -2,7 +2,8 @@
     "@metadata": {
         "authors": [
             "AnakngAraw",
-            "Sky Harbor"
+            "Sky Harbor",
+            "Jojit fb"
         ]
     },
     "globalblocking-desc": "[[Special:GlobalBlock|Nagpapahintulot]] na [[Special:GlobalBlockList|mahadlangan/maharang sa kahabaan ng maraming mga wiki]] ang mga adres ng IP",
@@ -39,7 +40,7 @@
     "globalblocking-search-submit": "Maghanap ng mga pagharang/paghadlang",
     "globalblocking-list-ipinvalid": "Hindi tanggap ang hinanap mong ($1) adres ng IP.\nPakipasok ang isang naaangkop na adres ng IP.",
     "globalblocking-search-errors": "Hindi matagumapay ang iyong paghahanap, dahil sa sumusunod na {{PLURAL:$1|dahilan|mga dahilan}}:",
-    "globalblocking-list-blockitem": "$1: Pandaigdigang hinarang ni <span class=\"plainlinks\">'''$2'''</span> (''$3'') si [[Special:Contributions/$4|$4]] ''($5)''",
+    "globalblocking-list-blockitem": "$1: Pandaigdigang hinarang ni \u003Cspan class=\"plainlinks\"\u003E'''$2'''\u003C/span\u003E (''$3'') si [[Special:Contributions/$4|$4]] ''($5)''",
     "globalblocking-list-expiry": "katapusan $1",
     "globalblocking-list-anononly": "hindi nagpapakilala lamang",
     "globalblocking-list-unblock": "tanggalin",
@@ -76,7 +77,7 @@
     "globalblocking-whitelist-errors": "Hindi matagumpay ang pagbabagong ginawa mo sa katutubong kalagayan ng isang pandaigdigang pagharang, dahil sa sumusunod na {{PLURAL:$1|dahilan|mga dahilan}}:",
     "globalblocking-whitelist-intro": "Magagamit mo ang pormularyong ito para magbago ng katutubong kalagayan ng isang pandaigdigang pagharang.\nKapag hindi pinagana ang isang pandaigdigang paghadlang sa wiking ito, maaaring mamatnugot sa karaniwang paraan ang mga tatagamit na nasa loob ng apektadong adres ng IP.\n[[Special:GlobalBlockList|Bumalik sa talaan ng mga pandaigdigang pagharang]]",
     "globalblocking-ipblocked": "''' Ang iyong tirahang IP ay hinadlangan sa lahat ng mga wiki.'''\n\nAng pagharang ay ginawa ni $1 ($2).\nAng ibinigay na dahilan ay ''$3''.\n\n* Simula ng harang: $4\n* Pagtatapos ng harang: $5\n\nMaaari kang makipag-ugnayan kay $1 upang talakayin ang paghadlang.\nHindi mo maaaring gamitin ang tampok na \"{{int:emailuser}}\" maliban na lamang kung ang isang katanggap-tanggap na e-liham ay tinukoy sa iyong [[Special:Preferences|mga kanaisang pang-akawnt]] at hindi ka naharang mula sa paggamit niyon.\nAng pangkasalukuyang tirahan mo ng IP ay ang $6\nPaki isama ang lahat ng mga detalyeng nasa itaas sa anumang mga pagtatanong na gagawin mo.",
-    "globalblocking-blocked-nopassreset": "Hindi mo maaaring itakdang muli ang hudyat ng tagagamit dahil pandaigdigan kang hinarang.",
+    "globalblocking-blocked-nopassreset": "Hindi mo maaaring itakdang muli ang password dahil pandaigdigan (globally) kang hinarang.",
     "globalblocking-logpage": "Talaan ng pandaigdigang pagharang/paghadlang",
     "globalblocking-logpagetext": "Isa itong talaan ng mga pandaigdigang pagharang na isinagawa at tinanggal mula sa wiking ito.\nDapat tandaan na maaaring gawin ang pandaigdigang mga paghadlang at alisin mula sa iba pang mga wiki, at maaaring makaapekto sa wiking ito ang ganitong mga pandaigdigang pagharang.\nPara matanaw ang lahat ng mga masigla o gumaganang pandaigdigang mga paghadlang, maaari mong tingnan ang [[Special:GlobalBlockList|talaan ng mga pandaigdigang pagharang]].",
     "globalblocking-block-logentry": "Pandaigdigang hinarang si [[$1]] na may oras ng paglipas na $2",

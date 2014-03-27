@@ -49,7 +49,7 @@
     "globalblocking-search-submit": "Sperren suchen",
     "globalblocking-list-ipinvalid": "Du hast eine ungültige IP-Adresse ($1) eingegeben.\nBitte gib eine gültige IP-Adresse ein.",
     "globalblocking-search-errors": "Die Suche war nicht erfolgreich. {{PLURAL:$1|Grund|Gründe}}:",
-    "globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> (auf ''$3'') sperrte [[Special:Contributions/$4|$4]] global ''($5)''",
+    "globalblocking-list-blockitem": "$1: \u003Cspan class=\"plainlinks\"\u003E'''$2'''\u003C/span\u003E (auf ''$3'') sperrte [[Special:Contributions/$4|$4]] global ''($5)''",
     "globalblocking-list-expiry": "Sperrdauer $1",
     "globalblocking-list-anononly": "nur Anonyme",
     "globalblocking-list-unblock": "entsperren",

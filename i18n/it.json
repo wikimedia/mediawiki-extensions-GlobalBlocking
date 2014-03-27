@@ -46,7 +46,7 @@
     "globalblocking-search-submit": "Ricerca blocchi",
     "globalblocking-list-ipinvalid": "L'indirizzo IP che hai cercato ($1) non è valido. Inserisci un indirizzo IP valido.",
     "globalblocking-search-errors": "La tua ricerca non ha prodotto risultati per {{PLURAL:$1|il seguente motivo|i seguenti motivi}}:",
-    "globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> (''$3'') ha bloccato globalmente [[Special:Contributions/$4|$4]] ''($5)''",
+    "globalblocking-list-blockitem": "$1: \u003Cspan class=\"plainlinks\"\u003E'''$2'''\u003C/span\u003E (''$3'') ha bloccato globalmente [[Special:Contributions/$4|$4]] ''($5)''",
     "globalblocking-list-expiry": "scadenza del blocco $1",
     "globalblocking-list-anononly": "solo anonimi",
     "globalblocking-list-unblock": "rimuovi",

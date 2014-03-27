@@ -47,7 +47,7 @@
     "globalblocking-search-submit": "חיפוש חסימות",
     "globalblocking-list-ipinvalid": "כתובת ה־IP שהקלדתם ($1) אינה תקינה.\nאנא הקלידו כתובת IP תקינה.",
     "globalblocking-search-errors": "החיפוש נכשל בגלל {{PLURAL:$1|הסיבה הבאה|הסיבות הבאות}}:",
-    "globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> (''$3'') חסם באופן גלובלי את [[Special:Contributions/$4|$4]] ''($5)''",
+    "globalblocking-list-blockitem": "$1: \u003Cspan class=\"plainlinks\"\u003E'''$2'''\u003C/span\u003E (''$3'') חסם באופן גלובלי את [[Special:Contributions/$4|$4]] ''($5)''",
     "globalblocking-list-expiry": "פקיעת החסימה: $1",
     "globalblocking-list-anononly": "משתמשים אנונימיים בלבד",
     "globalblocking-list-unblock": "הסרה",
