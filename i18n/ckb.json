@@ -1,0 +1,16 @@
+{
+    "@metadata": {
+        "authors": [
+            "Calak"
+        ]
+    },
+    "globalblocking-block-reason": "هۆکار:",
+    "globalblocking-block-reasonotherlist": "ھۆکاری تر",
+    "globalblocking-block-expiry-selector-other": "کاتی تر:",
+    "globalblocking-ipaddress": "ناونیشانی ئایپی:",
+    "globalblocking-search-ip": "ناونیشانی ئایپی:",
+    "globalblocking-unblock-reason": "هۆکار:",
+    "globalblocking-whitelist-reason": "هۆکار:",
+    "right-globalblock": "دروستکردن و لابردنی بەربەستنە جیھانییەکان",
+    "right-globalblock-whitelist": "ناچالاککردنی خۆماڵیی بەربەستنە سەرانسەرییەکان"
+}

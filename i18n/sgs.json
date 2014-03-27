@@ -1,0 +1,9 @@
+{
+    "@metadata": {
+        "authors": [
+            "Hugo.arg"
+        ]
+    },
+    "globalblocking-list": "Gluobalē ožblokoutu IP adresū sārošos",
+    "globalblocking-list-expiry": "beng galiuotė $1"
+}

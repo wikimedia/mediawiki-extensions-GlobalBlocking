@@ -1,0 +1,26 @@
+{
+    "@metadata": {
+        "authors": [
+            "Cekli829",
+            "Vago",
+            "Vugar 1981"
+        ]
+    },
+    "globalblocking-block-reason": "Səbəb:",
+    "globalblocking-block-otherreason": "Digər/əlavə səbəb:",
+    "globalblocking-block-reasonotherlist": "Digər səbəb",
+    "globalblocking-block-edit-dropdown": "Bloklama səbəblərini redaktə et",
+    "globalblocking-block-expiry": "Bitmə müddəti:",
+    "globalblocking-block-expiry-selector-other": "Başqa vaxt:",
+    "globalblocking-block-options": "Nizamlamalar:",
+    "globalblocking-ipaddress": "IP ünvanı:",
+    "globalblocking-search-ip": "IP ünvanı:",
+    "globalblocking-list-unblock": "çıxar",
+    "globalblocking-list-whitelist": "lokal status",
+    "globalblocking-list-modify": "dəyişmək",
+    "globalblocking-unblock-reason": "Səbəb:",
+    "globalblocking-whitelist-reason": "Səbəb:",
+    "globalblocking-whitelist-status": "Lokal status:",
+    "globalblocking-whitelist-submit": "Lokal statusu dəyiş",
+    "globalblocking-logpage": "Qlobal blok gündəliyi"
+}

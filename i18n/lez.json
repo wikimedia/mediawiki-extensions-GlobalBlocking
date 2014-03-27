@@ -1,0 +1,11 @@
+{
+    "@metadata": {
+        "authors": [
+            "Migraghvi"
+        ]
+    },
+    "globalblocking-block-expiry-selector-other": "Муькуь вахт:",
+    "globalblocking-list-modify": "дегишун",
+    "globalblocking-unblock-reason": "Себеб:",
+    "globalblocking-whitelist-reason": "Себеб:"
+}

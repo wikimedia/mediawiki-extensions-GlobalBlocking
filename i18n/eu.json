@@ -1,0 +1,32 @@
+{
+    "@metadata": {
+        "authors": [
+            "An13sa",
+            "Joxemai",
+            "Kobazulo",
+            "Xabier Armendaritz"
+        ]
+    },
+    "globalblocking-block-reason": "Arrazoia:",
+    "globalblocking-block-reasonotherlist": "Beste arrazoi bat",
+    "globalblocking-block-expiry": "Iraungipena:",
+    "globalblocking-block-options": "Aukerak:",
+    "globalblocking-ipaddress": "IP helbidea:",
+    "globalblocking-block-successsub": "Blokeo globala egina",
+    "globalblocking-modify-successsub": "Blokeo globala behar bezala aldatua",
+    "globalblocking-search-legend": "Blokeo global bat bilatu",
+    "globalblocking-search-ip": "IP helbidea:",
+    "globalblocking-search-submit": "Blokeoak bilatu",
+    "globalblocking-list-anononly": "anonimoak bakarrik",
+    "globalblocking-list-unblock": "kendu",
+    "globalblocking-list-modify": "aldatu",
+    "globalblocking-goto-unblock": "Blokeo global bat kendu",
+    "globalblocking-unblock": "Blokeo global bat kendu",
+    "globalblocking-unblock-legend": "Blokeo global bat kendu",
+    "globalblocking-unblock-submit": "Blokeo globala kendu",
+    "globalblocking-unblock-reason": "Arrazoia:",
+    "globalblocking-unblock-successsub": "Blokeo globala ongi kendu da",
+    "globalblocking-unblock-subtitle": "Blokeo globala kentzen",
+    "globalblocking-whitelist-reason": "Arrazoia:",
+    "globalblocking-loglink": "$1 IP helbidea proiektu guztietarako blokeatuta dago ([[{{#Special:GlobalBlockList}}/$1|ikus xehetasun guztiak]])."
+}

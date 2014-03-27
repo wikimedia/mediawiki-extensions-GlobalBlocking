@@ -25,6 +25,7 @@ $wgExtensionCredits['other'][] = array(
 	'url'            => 'https://www.mediawiki.org/wiki/Extension:GlobalBlocking',
 );
 
+$wgMessagesDirs['GlobalBlocking'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['GlobalBlocking'] = "$dir/GlobalBlocking.i18n.php";
 $wgExtensionMessagesFiles['GlobalBlockingAlias'] = "$dir/GlobalBlocking.alias.php";
 
