@@ -45,7 +45,7 @@
     "globalblocking-search-submit": "차단 검색",
     "globalblocking-list-ipinvalid": "검색한 IP 주소($1)가 잘못되었습니다.\n올바른 IP 주소를 입력하세요.",
     "globalblocking-search-errors": "검색에 실패했습니다. {{PLURAL:$1|이유}}는 다음과 같습니다:",
-    "globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> ($3) 사용자가 [[Special:Contributions/$4|$4]] 을(를) 전역 차단하였습니다. ($5)",
+    "globalblocking-list-blockitem": "$1: \u003Cspan class=\"plainlinks\"\u003E'''$2'''\u003C/span\u003E ($3) 사용자가 [[Special:Contributions/$4|$4]] 을(를) 전역 차단하였습니다. ($5)",
     "globalblocking-list-expiry": "기한 $1",
     "globalblocking-list-anononly": "익명 사용자만",
     "globalblocking-list-unblock": "차단 해제",

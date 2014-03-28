@@ -42,7 +42,7 @@
     "globalblocking-search-submit": "Pretražite blokove",
     "globalblocking-list-ipinvalid": "IP adresa koju tražite ($1) nije ispravna.\nMolimo Vas unesite ispravnu IP adresu.",
     "globalblocking-search-errors": "Vaša pretraga nije uspešna zbog {{PLURAL:$1|sledećeg razloga|sledećih razloga}}:",
-    "globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> (''$3'') globalno blokirao [[Special:Contributions/$4|$4]] ''($5)''",
+    "globalblocking-list-blockitem": "$1: \u003Cspan class=\"plainlinks\"\u003E'''$2'''\u003C/span\u003E (''$3'') globalno blokirao [[Special:Contributions/$4|$4]] ''($5)''",
     "globalblocking-list-expiry": "ističe $1",
     "globalblocking-list-anononly": "samo anonimne",
     "globalblocking-list-unblock": "deblokiraj",

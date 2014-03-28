@@ -48,7 +48,7 @@
     "globalblocking-search-submit": "جستجوی قطع دسترسی‌ها",
     "globalblocking-list-ipinvalid": "نشانی آی‌پی که شما جستجو کردید ($1) نامجاز است.\nلطفاً یک نشانی آی‌پی مجاز وارد کنید.",
     "globalblocking-search-errors": "جستجوی شما به {{PLURAL:$1|دلیل|دلایل}} روبرو ناموفق بود:",
-    "globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> (''$3'') دسترسی [[Special:Contributions/$4|$4]] ''($5)'' را به طور سراسری بست",
+    "globalblocking-list-blockitem": "$1: \u003Cspan class=\"plainlinks\"\u003E'''$2'''\u003C/span\u003E (''$3'') دسترسی [[Special:Contributions/$4|$4]] ''($5)'' را به طور سراسری بست",
     "globalblocking-list-expiry": "خاتمه $1",
     "globalblocking-list-anononly": "فقط کاربران گمنام",
     "globalblocking-list-unblock": "حذف",

@@ -39,7 +39,7 @@
     "globalblocking-search-submit": "Chwilio am flociau",
     "globalblocking-list-ipinvalid": "Mae'r cyfeiriad IP roeddech wedi chwilio amdano ($1) yn annilys.\nNodwch gyfeiriad IP dilys os gwelwch yn dda.",
     "globalblocking-search-errors": "Roedd eich chwiliad yn aflwyddiannus, am y {{PLURAL:$1|rheswm|rhesymau}} canlynol:",
-    "globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> (''$3'') blociwyd yn fyd-eang [[Special:Contributions/$4|$4]] ''($5)''",
+    "globalblocking-list-blockitem": "$1: \u003Cspan class=\"plainlinks\"\u003E'''$2'''\u003C/span\u003E (''$3'') blociwyd yn fyd-eang [[Special:Contributions/$4|$4]] ''($5)''",
     "globalblocking-list-expiry": "yn dod i ben am $1",
     "globalblocking-list-anononly": "anhysbys yn unig",
     "globalblocking-list-unblock": "tynnu",

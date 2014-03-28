@@ -21,7 +21,7 @@
     "globalblocking-list": "Глобальни блоктоьхна IP-адресин могӀам",
     "globalblocking-search-legend": "Глобальни блоктохарш лахар",
     "globalblocking-search-submit": "Лаха блоктоьхарш",
-    "globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> (''$3'') глобальни блоктоьхна [[Special:Contributions/$4|$4]] ''($5)''",
+    "globalblocking-list-blockitem": "$1: \u003Cspan class=\"plainlinks\"\u003E'''$2'''\u003C/span\u003E (''$3'') глобальни блоктоьхна [[Special:Contributions/$4|$4]] ''($5)''",
     "globalblocking-list-expiry": "чекхйолу $1",
     "globalblocking-list-anononly": "цӀе хьулйина декъашхойн бен",
     "globalblocking-list-whitelist": "локальни хьал",

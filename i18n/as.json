@@ -39,7 +39,7 @@
     "globalblocking-search-submit": "প্ৰতিবন্ধক অনুসন্ধান কৰক",
     "globalblocking-list-ipinvalid": "আপুনি সন্ধান কৰা আইপি ঠিকনাটো ($1) অবৈধ।\nঅনুগ্ৰহ কৰি এটা বৈধ আইপি ঠিকনা লিখক।",
     "globalblocking-search-errors": "এই {{PLURAL:$1|কাৰণত|কাৰণসমূহৰ বাবে}}আপোনাৰ সন্ধান অসফল হৈছে:",
-    "globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> (''$3'') গোলকীয়ভাৱে বাৰণ কৰা\n[[Special:Contributions/$4|$4]] ''($5)''",
+    "globalblocking-list-blockitem": "$1: \u003Cspan class=\"plainlinks\"\u003E'''$2'''\u003C/span\u003E (''$3'') গোলকীয়ভাৱে বাৰণ কৰা\n[[Special:Contributions/$4|$4]] ''($5)''",
     "globalblocking-list-expiry": "ম্যাদ উকলিব $1",
     "globalblocking-list-anononly": "কেৱল বেনামী",
     "globalblocking-list-unblock": "অপসাৰণ",
