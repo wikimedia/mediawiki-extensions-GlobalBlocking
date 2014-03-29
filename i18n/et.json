@@ -43,7 +43,7 @@
     "globalblocking-search-submit": "Otsi blokeeringuid",
     "globalblocking-list-ipinvalid": "Otsitud IP-aadress $1 on vigane.\nPalun sisesta õige IP-aadress.",
     "globalblocking-search-errors": "Su otsing oli {{PLURAL:$1|järgmisel põhjusel|järgmistel põhjustel}} edutu:",
-    "globalblocking-list-blockitem": "$1: \u003Cspan class=\"plainlinks\"\u003E'''$2'''\u003C/span\u003E (''$3'') blokeeris globaalselt kasutaja [[Special:Contributions/$4|$4]] ''($5)''",
+    "globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> (''$3'') blokeeris globaalselt kasutaja [[Special:Contributions/$4|$4]] ''($5)''",
     "globalblocking-list-expiry": "tähtaeg $1",
     "globalblocking-list-anononly": "ainult nimetuna",
     "globalblocking-list-unblock": "eemalda",

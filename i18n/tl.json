@@ -40,7 +40,7 @@
     "globalblocking-search-submit": "Maghanap ng mga pagharang/paghadlang",
     "globalblocking-list-ipinvalid": "Hindi tanggap ang hinanap mong ($1) adres ng IP.\nPakipasok ang isang naaangkop na adres ng IP.",
     "globalblocking-search-errors": "Hindi matagumapay ang iyong paghahanap, dahil sa sumusunod na {{PLURAL:$1|dahilan|mga dahilan}}:",
-    "globalblocking-list-blockitem": "$1: Pandaigdigang hinarang ni \u003Cspan class=\"plainlinks\"\u003E'''$2'''\u003C/span\u003E (''$3'') si [[Special:Contributions/$4|$4]] ''($5)''",
+    "globalblocking-list-blockitem": "$1: Pandaigdigang hinarang ni <span class=\"plainlinks\">'''$2'''</span> (''$3'') si [[Special:Contributions/$4|$4]] ''($5)''",
     "globalblocking-list-expiry": "katapusan $1",
     "globalblocking-list-anononly": "hindi nagpapakilala lamang",
     "globalblocking-list-unblock": "tanggalin",
