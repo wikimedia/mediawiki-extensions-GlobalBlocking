@@ -41,7 +41,7 @@
     "globalblocking-local-failed": "Das lokale Sperren der IP-Adresse ist fehlgeschlagen, da die angegebene IP-Adresse bereits auf diesem Wiki gesperrt ist.",
     "globalblocking-block-alreadyblocked": "Die IP-Adresse $1 wurde schon global gesperrt.\nDu kannst die bestehende Sperre in der [[Special:GlobalBlockList|globalen Sperrliste]] einsehen oder die Einstellungen der Sperre über dieses Formular ändern.",
     "globalblocking-block-bigrange": "Der Adressbereich, den du angegeben hast ($1), ist zu groß zum Sperren.\nDu kannst höchstens 65.536 IPs sperren (/16-Adressbereiche).",
-    "globalblocking-also-local": "Auch die angegebene IP-Adresse lokal auf diesem Wiki sperren",
+    "globalblocking-also-local": "Die IP-Adresse auch lokal auf diesem Wiki sperren",
     "globalblocking-list-intro": "Dies ist eine Liste aller gültigen globalen Sperren.\nDie Markierung von Sperren als lokal deaktiviert bedeutet, dass die Sperren auf anderen Projekten gültig sind, aber ein lokaler Administrator entschieden hat, sie für dieses Wiki zu deaktivieren.",
     "globalblocking-list": "Liste global gesperrter IP-Adressen",
     "globalblocking-search-legend": "Globale Sperre suchen",
