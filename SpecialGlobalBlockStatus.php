@@ -154,9 +154,9 @@ class SpecialGlobalBlockStatus extends SpecialPage {
 
 		$form = '';
 		$form .= Xml::openElement( 'fieldset' ) . Xml::element( 'legend', null, $this->msg( 'globalblocking-whitelist-legend' )->text() );
-		$form .= Xml::openElement( 'form', array( 'method' => 'post', 'action' => $this->getTitle()->getFullURL(), 'name' => 'globalblock-whitelist' ) );
+		$form .= Xml::openElement( 'form', array( 'method' => 'post', 'action' => $this->getPageTitle()->getFullURL(), 'name' => 'globalblock-whitelist' ) );
 
-		$form .= Html::hidden( 'title', $this->getTitle()->getPrefixedText() );
+		$form .= Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() );
 		$form .= Html::hidden( 'action', 'whitelist' );
 
 		$fields = array();
