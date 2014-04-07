@@ -153,6 +153,7 @@ class SpecialGlobalBlock extends SpecialPage {
 			$block->setBlocker( $this->getUser() );
 			$block->mReason = $reasonstr;
 			$block->mExpiry = SpecialBlock::parseExpiryInput( $this->mExpiry );
+			$block->isHardblock( !$this->mAnonOnly );
 			$blockSuccess = $block->insert();
 
 			if( $blockSuccess ) {
