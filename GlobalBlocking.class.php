@@ -364,11 +364,6 @@ class GlobalBlocking {
 			$errors[] = array( 'globalblocking-block-expiryinvalid', $expiry );
 		}
 
-		$existingBlock = GlobalBlocking::getGlobalBlockId( $ip );
-		if ( !$modify && $existingBlock ) {
-			$errors[] = array( 'globalblocking-block-alreadyblocked', $ip );
-		}
-
 		// Check for too-big ranges.
 		list( $range_start, $range_end ) = IP::parseRange( $ip );
 
@@ -380,6 +375,11 @@ class GlobalBlocking {
 		// Normalise the range
 		if ( $range_start != $range_end ) {
 			$ip = IP::sanitizeRange( $ip );
+		}
+
+		$existingBlock = GlobalBlocking::getGlobalBlockId( $ip );
+		if ( !$modify && $existingBlock ) {
+			$errors[] = array( 'globalblocking-block-alreadyblocked', $ip );
 		}
 
 		if ( count( $errors ) > 0 ) {
