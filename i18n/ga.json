@@ -1,12 +1,12 @@
 {
-    "@metadata": {
-        "authors": [
-            "පසිඳු කාවින්ද"
-        ]
-    },
-    "globalblocking-block-reason": "Fáth:",
-    "globalblocking-block-expiry": "Am éaga:",
-    "globalblocking-block-options": "Roghanna:",
-    "globalblocking-unblock-reason": "Fáth:",
-    "globalblocking-whitelist-reason": "Fáth:"
+	"@metadata": {
+		"authors": [
+			"පසිඳු කාවින්ද"
+		]
+	},
+	"globalblocking-block-reason": "Fáth:",
+	"globalblocking-block-expiry": "Am éaga:",
+	"globalblocking-block-options": "Roghanna:",
+	"globalblocking-unblock-reason": "Fáth:",
+	"globalblocking-whitelist-reason": "Fáth:"
 }

@@ -1,10 +1,10 @@
 {
-    "@metadata": {
-        "authors": [
-            "Тест"
-        ]
-    },
-    "globalblocking-block-reason": "Прычына:",
-    "globalblocking-unblock-reason": "Прычына:",
-    "globalblocking-whitelist-reason": "Прычына:"
+	"@metadata": {
+		"authors": [
+			"Тест"
+		]
+	},
+	"globalblocking-block-reason": "Прычына:",
+	"globalblocking-unblock-reason": "Прычына:",
+	"globalblocking-whitelist-reason": "Прычына:"
 }

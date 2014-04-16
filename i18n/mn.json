@@ -1,13 +1,13 @@
 {
-    "@metadata": {
-        "authors": [
-            "Chinneeb"
-        ]
-    },
-    "globalblocking-block-reason": "Шалтгаан:",
-    "globalblocking-block-otherreason": "Өөр/нэмэлт шалтгаан:",
-    "globalblocking-block-reasonotherlist": "Өөр шалтгаан",
-    "globalblocking-block-expiry-selector-other": "Өөр хугацаа:",
-    "globalblocking-unblock-reason": "Шалтгаан:",
-    "globalblocking-whitelist-reason": "Шалтгаан:"
+	"@metadata": {
+		"authors": [
+			"Chinneeb"
+		]
+	},
+	"globalblocking-block-reason": "Шалтгаан:",
+	"globalblocking-block-otherreason": "Өөр/нэмэлт шалтгаан:",
+	"globalblocking-block-reasonotherlist": "Өөр шалтгаан",
+	"globalblocking-block-expiry-selector-other": "Өөр хугацаа:",
+	"globalblocking-unblock-reason": "Шалтгаан:",
+	"globalblocking-whitelist-reason": "Шалтгаан:"
 }

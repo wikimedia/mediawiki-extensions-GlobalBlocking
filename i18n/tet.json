@@ -1,11 +1,11 @@
 {
-    "@metadata": {
-        "authors": [
-            "MF-Warburg"
-        ]
-    },
-    "globalblocking-block-expiry-selector-other": "Tempu seluk:",
-    "globalblocking-search-ip": "Diresaun IP:",
-    "globalblocking-list-anononly": "ema anónimu de'it",
-    "globalblocking-unblock-reason": "Motivu:"
+	"@metadata": {
+		"authors": [
+			"MF-Warburg"
+		]
+	},
+	"globalblocking-block-expiry-selector-other": "Tempu seluk:",
+	"globalblocking-search-ip": "Diresaun IP:",
+	"globalblocking-list-anononly": "ema anónimu de'it",
+	"globalblocking-unblock-reason": "Motivu:"
 }

@@ -1,22 +1,22 @@
 {
-    "@metadata": {
-        "authors": [
-            "334a",
-            "Basharh"
-        ]
-    },
-    "globalblocking-block-reason": "ܥܠܬܐ:",
-    "globalblocking-block-otherreason": "ܥܠܬܐ ܐܚܪܬܐ/ܢܩܝܦܬܐ:",
-    "globalblocking-block-reasonotherlist": "ܥܠܬܐ ܐܚܪܬܐ",
-    "globalblocking-block-expiry-selector-other": "ܥܕܢܐ ܐܚܪܢܐ:",
-    "globalblocking-block-options": "ܓܒܝܬ̈ܐ",
-    "globalblocking-list": "ܡܟܬܒܘܬܐ ܕܡܘ̈ܢܥܐ ܕܐܝܦܝ (IP) ܚܪ̈ܝܡܐ ܓܘܢܐܝܬ",
-    "globalblocking-list-anononly": "ܠܐ ܝܕ̈ܝܥܐ ܒܠܚܘܕ",
-    "globalblocking-list-unblock": "ܠܚܝ",
-    "globalblocking-list-whitelist": "ܐܝܟܢܝܘܬܐ ܕܘܟܬܢܝܬܐ",
-    "globalblocking-unblock-reason": "ܥܠܬܐ:",
-    "globalblocking-whitelist": "ܐܝܟܢܝܘܬܐ ܕܘܟܬܢܝܬܐ ܕܚܪܡܐ ܓܘܢܝܐ",
-    "globalblocking-whitelist-reason": "ܥܠܬܐ:",
-    "globalblocking-logpage": "ܣܓܠܐ ܓܘܢܝܐ ܕܚܪܡܐ",
-    "globalblocklist": "ܡܟܬܒܘܬܐ ܕܡܘ̈ܢܥܐ ܕܐܝܦܝ (IP) ܚܪ̈ܝܡܐ ܓܘܢܐܝܬ"
+	"@metadata": {
+		"authors": [
+			"334a",
+			"Basharh"
+		]
+	},
+	"globalblocking-block-reason": "ܥܠܬܐ:",
+	"globalblocking-block-otherreason": "ܥܠܬܐ ܐܚܪܬܐ/ܢܩܝܦܬܐ:",
+	"globalblocking-block-reasonotherlist": "ܥܠܬܐ ܐܚܪܬܐ",
+	"globalblocking-block-expiry-selector-other": "ܥܕܢܐ ܐܚܪܢܐ:",
+	"globalblocking-block-options": "ܓܒܝܬ̈ܐ",
+	"globalblocking-list": "ܡܟܬܒܘܬܐ ܕܡܘ̈ܢܥܐ ܕܐܝܦܝ (IP) ܚܪ̈ܝܡܐ ܓܘܢܐܝܬ",
+	"globalblocking-list-anononly": "ܠܐ ܝܕ̈ܝܥܐ ܒܠܚܘܕ",
+	"globalblocking-list-unblock": "ܠܚܝ",
+	"globalblocking-list-whitelist": "ܐܝܟܢܝܘܬܐ ܕܘܟܬܢܝܬܐ",
+	"globalblocking-unblock-reason": "ܥܠܬܐ:",
+	"globalblocking-whitelist": "ܐܝܟܢܝܘܬܐ ܕܘܟܬܢܝܬܐ ܕܚܪܡܐ ܓܘܢܝܐ",
+	"globalblocking-whitelist-reason": "ܥܠܬܐ:",
+	"globalblocking-logpage": "ܣܓܠܐ ܓܘܢܝܐ ܕܚܪܡܐ",
+	"globalblocklist": "ܡܟܬܒܘܬܐ ܕܡܘ̈ܢܥܐ ܕܐܝܦܝ (IP) ܚܪ̈ܝܡܐ ܓܘܢܐܝܬ"
 }

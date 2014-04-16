@@ -1,9 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "Sborsody"
-        ]
-    },
-    "globalblocking-block-reason": "Чылдагаан:",
-    "globalblocking-unblock-reason": "Чылдагаан:"
+	"@metadata": {
+		"authors": [
+			"Sborsody"
+		]
+	},
+	"globalblocking-block-reason": "Чылдагаан:",
+	"globalblocking-unblock-reason": "Чылдагаан:"
 }

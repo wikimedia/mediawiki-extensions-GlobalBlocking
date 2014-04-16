@@ -1,9 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "Geoleplubo"
-        ]
-    },
-    "globalblocking-list": "Lisse des adrèches IP blotchées globalemint",
-    "globalblocklist": "Lisse des adrèches IP blotchées globalemint"
+	"@metadata": {
+		"authors": [
+			"Geoleplubo"
+		]
+	},
+	"globalblocking-list": "Lisse des adrèches IP blotchées globalemint",
+	"globalblocklist": "Lisse des adrèches IP blotchées globalemint"
 }

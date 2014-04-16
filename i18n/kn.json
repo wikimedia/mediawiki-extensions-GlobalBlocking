@@ -1,13 +1,13 @@
 {
-    "@metadata": {
-        "authors": [
-            "Nayvik"
-        ]
-    },
-    "globalblocking-block-reason": "ಕಾರಣ:",
-    "globalblocking-block-otherreason": "ಇತರ/ಹೆಚ್ಚುವರಿ ಕಾರಣ:",
-    "globalblocking-block-reasonotherlist": "ಇತರ ಕಾರಣ",
-    "globalblocking-block-expiry-selector-other": "ಇತರ ಸಮಯ:",
-    "globalblocking-unblock-reason": "ಕಾರಣ:",
-    "globalblocking-whitelist-reason": "ಕಾರಣ:"
+	"@metadata": {
+		"authors": [
+			"Nayvik"
+		]
+	},
+	"globalblocking-block-reason": "ಕಾರಣ:",
+	"globalblocking-block-otherreason": "ಇತರ/ಹೆಚ್ಚುವರಿ ಕಾರಣ:",
+	"globalblocking-block-reasonotherlist": "ಇತರ ಕಾರಣ",
+	"globalblocking-block-expiry-selector-other": "ಇತರ ಸಮಯ:",
+	"globalblocking-unblock-reason": "ಕಾರಣ:",
+	"globalblocking-whitelist-reason": "ಕಾರಣ:"
 }

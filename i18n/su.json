@@ -1,9 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "Irwangatot"
-        ]
-    },
-    "globalblocking-unblock-reason": "Alesan:",
-    "globalblocking-whitelist-reason": "Alesan:"
+	"@metadata": {
+		"authors": [
+			"Irwangatot"
+		]
+	},
+	"globalblocking-unblock-reason": "Alesan:",
+	"globalblocking-whitelist-reason": "Alesan:"
 }

@@ -1,31 +1,31 @@
 {
-    "@metadata": {
-        "authors": [
-            "Geimeris",
-            "GreenZeb",
-            "Papuass"
-        ]
-    },
-    "globalblocking-block": "Globāli bloķēt IP adresi",
-    "globalblocking-block-reason": "Iemesls:",
-    "globalblocking-block-otherreason": "Cits/papildu iemesls:",
-    "globalblocking-block-reasonotherlist": "Cits iemesls",
-    "globalblocking-block-reason-dropdown": "* Biezākie bloķēšanas iemesli\n** Spamošana vairākos viki\n** Noteikumu neievērošana vairākos viki\n** Vandālisms",
-    "globalblocking-block-expiry-selector-other": "Cits laiks:",
-    "globalblocking-block-legend": "Bloķēt IP adresi globāli",
-    "globalblocking-ipaddress": "IP adrese:",
-    "globalblocking-ipbanononly": "Bloķēt tikai anonīmos lietotājus",
-    "globalblocking-list": "Globāli bloķēto IP adrešu saraksts",
-    "globalblocking-search-ip": "IP adrese:",
-    "globalblocking-list-ipinvalid": "IP adrese, ko tu ievadīji ($1), ir nederīga.\nLūdzu, ievadiet derīgu IP adresi.",
-    "globalblocking-list-whitelist": "lokālais statuss",
-    "globalblocking-unblock-reason": "Iemesls:",
-    "globalblocking-whitelist-legend": "Mainīt lokālo statusu",
-    "globalblocking-whitelist-reason": "Iemesls:",
-    "globalblocking-whitelist-status": "Lokālais statuss:",
-    "globalblocking-whitelist-submit": "Mainīt lokālo statusu",
-    "globalblocking-logpage": "Globālais bloķēšanas žurnāls",
-    "globalblocklist": "Globāli bloķēto IP adrešu saraksts",
-    "globalblock": "Globāli bloķēt IP adresi",
-    "right-globalblock": "Veikt lietotāju globālu bloķēšanu"
+	"@metadata": {
+		"authors": [
+			"Geimeris",
+			"GreenZeb",
+			"Papuass"
+		]
+	},
+	"globalblocking-block": "Globāli bloķēt IP adresi",
+	"globalblocking-block-reason": "Iemesls:",
+	"globalblocking-block-otherreason": "Cits/papildu iemesls:",
+	"globalblocking-block-reasonotherlist": "Cits iemesls",
+	"globalblocking-block-reason-dropdown": "* Biezākie bloķēšanas iemesli\n** Spamošana vairākos viki\n** Noteikumu neievērošana vairākos viki\n** Vandālisms",
+	"globalblocking-block-expiry-selector-other": "Cits laiks:",
+	"globalblocking-block-legend": "Bloķēt IP adresi globāli",
+	"globalblocking-ipaddress": "IP adrese:",
+	"globalblocking-ipbanononly": "Bloķēt tikai anonīmos lietotājus",
+	"globalblocking-list": "Globāli bloķēto IP adrešu saraksts",
+	"globalblocking-search-ip": "IP adrese:",
+	"globalblocking-list-ipinvalid": "IP adrese, ko tu ievadīji ($1), ir nederīga.\nLūdzu, ievadiet derīgu IP adresi.",
+	"globalblocking-list-whitelist": "lokālais statuss",
+	"globalblocking-unblock-reason": "Iemesls:",
+	"globalblocking-whitelist-legend": "Mainīt lokālo statusu",
+	"globalblocking-whitelist-reason": "Iemesls:",
+	"globalblocking-whitelist-status": "Lokālais statuss:",
+	"globalblocking-whitelist-submit": "Mainīt lokālo statusu",
+	"globalblocking-logpage": "Globālais bloķēšanas žurnāls",
+	"globalblocklist": "Globāli bloķēto IP adrešu saraksts",
+	"globalblock": "Globāli bloķēt IP adresi",
+	"right-globalblock": "Veikt lietotāju globālu bloķēšanu"
 }

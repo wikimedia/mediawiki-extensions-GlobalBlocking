@@ -1,10 +1,10 @@
 {
-    "@metadata": {
-        "authors": [
-            "UV"
-        ]
-    },
-    "globalblocking-whitelist": "Status localis obstructionum globalium",
-    "globalblocking-showlog": "Hic locus IP antea obstructus est.\nCommodule notatio obstructionum subter datur.",
-    "globalblockstatus": "Status localis obstructionum globalium"
+	"@metadata": {
+		"authors": [
+			"UV"
+		]
+	},
+	"globalblocking-whitelist": "Status localis obstructionum globalium",
+	"globalblocking-showlog": "Hic locus IP antea obstructus est.\nCommodule notatio obstructionum subter datur.",
+	"globalblockstatus": "Status localis obstructionum globalium"
 }
