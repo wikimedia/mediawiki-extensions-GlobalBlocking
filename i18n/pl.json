@@ -76,7 +76,7 @@
 	"globalblocking-whitelist-legend": "Zmień lokalny status",
 	"globalblocking-whitelist-reason": "Powód",
 	"globalblocking-whitelist-status": "Lokalny status:",
-	"globalblocking-whitelist-statuslabel": "Znieś tę globalną blokadę na {{GRAMMAR:MS.lp|{{SITENAME}}}}",
+	"globalblocking-whitelist-statuslabel": "Znieś tę globalną blokadę w {{GRAMMAR:MS.lp|{{SITENAME}}}}",
 	"globalblocking-whitelist-submit": "Zmień lokalny status",
 	"globalblocking-whitelist-whitelisted": "Wyłączyłeś na {{GRAMMAR:MS.lp|{{SITENAME}}}} stosowanie globalnej blokady $2 dla adresu IP '''$1'''.",
 	"globalblocking-whitelist-dewhitelisted": "Uruchomiłeś ponownie na {{GRAMMAR:MS.lp|{{SITENAME}}}} globalną blokadę $2 dla adresu IP '''$1'''.",
