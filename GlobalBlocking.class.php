@@ -77,6 +77,10 @@ class GlobalBlocking {
 			// Allow site customization of blocked message.
 			$blockedIpMsg = 'globalblocking-ipblocked';
 			wfRunHooks( 'GlobalBlockingBlockedIpMsg', array( &$blockedIpMsg ) );
+			ApiBase::$messageMap[$blockedIpMsg] = array(
+				'code' => $blockedIpMsg,
+				'info' => 'You have been globally blocked from editing',
+			);
 			return $result = array( $blockedIpMsg,
 				$blockingUser, $display_wiki, $block->gb_reason, $blockTimestamp, $blockExpiry, $ip );
 		}
@@ -98,6 +102,10 @@ class GlobalBlocking {
 					// Allow site customization of blocked message.
 					$blockedIpXffMsg = 'globalblocking-ipblocked-xff';
 					wfRunHooks( 'GlobalBlockingBlockedIpXffMsg', array( &$blockedIpXffMsg ) );
+					ApiBase::$messageMap[$blockedIpXffMsg] = array(
+						'code' => $blockedIpXffMsg,
+						'info' => 'One or more proxy servers used by your request has been globally blocked',
+					);
 					return $result = array(
 						$blockedIpXffMsg,
 						$blockingUser,
