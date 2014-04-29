@@ -12,7 +12,8 @@
 			"Oapbtommy",
 			"Shinjiman",
 			"Shirayuki",
-			"Waihorace"
+			"Waihorace",
+			"Cwlin0416"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|容許]]IP位址可以[[Special:GlobalBlockList|於多個維基中封鎖]]",
@@ -106,7 +107,7 @@
 	"globalblock": "全域封鎖一個 IP 位址",
 	"globalblockstatus": "全域封鎖的本地狀態",
 	"removeglobalblock": "移除一個全域封鎖",
-	"right-globalblock": "進行及解禁全域封鎖",
+	"right-globalblock": "進行及取消全域封鎖",
 	"action-globalblock": "進行及解禁全域封鎖",
 	"right-globalblock-whitelist": "在本地停用全域封鎖",
 	"action-globalblock-whitelist": "在本地停用全域封鎖",
