@@ -1,13 +1,22 @@
 {
 	"@metadata": {
 		"authors": [
-			"Nayvik"
+			"Nayvik",
+			"VASANTH S.N."
 		]
 	},
 	"globalblocking-block-reason": "ಕಾರಣ:",
 	"globalblocking-block-otherreason": "ಇತರ/ಹೆಚ್ಚುವರಿ ಕಾರಣ:",
 	"globalblocking-block-reasonotherlist": "ಇತರ ಕಾರಣ",
+	"globalblocking-block-expiry": "ಮುಕ್ತಾಯ:",
 	"globalblocking-block-expiry-selector-other": "ಇತರ ಸಮಯ:",
+	"globalblocking-block-options": "ಆಯ್ಕೆಗಳು:",
+	"globalblocking-list-unblock": "ತೆಗೆ",
+	"globalblocking-list-modify": "ಪರಿಷ್ಕರಿಸು",
+	"globalblocking-list-noresults": "ಕೋರಿದ IP ವಿಳಾಸ ಅಥವ ಬಳಕೆದಾರ ಹೆಸರು ತಡೆಹಿಡಿಯಲಾಗಿಲ್ಲ.",
 	"globalblocking-unblock-reason": "ಕಾರಣ:",
-	"globalblocking-whitelist-reason": "ಕಾರಣ:"
+	"globalblocking-whitelist-reason": "ಕಾರಣ:",
+	"globalblocking-whitelist-submit": "ಪ್ರಾದೇಶಿಕ ಸ್ಥಿತಿಯನ್ನು ಬದಲಾಯಿಸಿ",
+	"globalblocking-whitelist-successsub": "ಪ್ರಾದೇಶಿಕ ಸ್ಥಿತಿಯನ್ನು ಯಶಸ್ವಿಯಾಗಿ ಬದಲಾಯಿಸಲಾಗಿದೆ",
+	"globalblocking-logpage": "ಜಾಗತಿಕ ತಡೆಹಿಡಿಯಲ್ಪಟ್ಟ ದಾಖಲೆ"
 }
