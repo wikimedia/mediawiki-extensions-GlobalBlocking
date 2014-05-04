@@ -96,12 +96,12 @@
 	"globalblocking-showlog": "Ena adresê IPyi verni de bloke biya.\nQeydé  bloki re referansi cor de mocneyayo:",
 	"globalblocklist": "Liteyê IPyî ke wîkîyê hemî de blok biyê",
 	"globalblock": "Yew adresê IPyî wîkîyê hemî de blok bike",
-	"globalblockstatus": "Statuyê lokaliyê blokanê hemî",
+	"globalblockstatus": "Global bloqeyê lokal weziyetan",
 	"removeglobalblock": "Yew global blok wedarne",
 	"right-globalblock": "Global bloqey bıke u hewad",
 	"action-globalblock": "Global bloqan bık u hewad",
-	"right-globalblock-whitelist": "Lokal wîkî de blokanê globalî biqefilne",
-	"action-globalblock-whitelist": "Lokal blokanê globalî biqefilne",
+	"right-globalblock-whitelist": "Global bloqeyan lokal de dewre ra vec",
+	"action-globalblock-whitelist": "Lokal blokanê globali dewre ra vec",
 	"right-globalblock-exempt": "Global blokî bypass bike",
 	"action-globalblock-exempt": "Global blokî bypass bike"
 }
