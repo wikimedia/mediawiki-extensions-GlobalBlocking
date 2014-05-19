@@ -42,7 +42,7 @@
 	"globalblocking-modify-successsub": "Järjestelmänlaajuista estoa muutettu onnistuneesti",
 	"globalblocking-block-alreadyblocked": "IP-osoite $1 on jo estetty järjestelmänlaajuisesti.\nVoit tarkastella estoa [[Special:GlobalBlockList|järjestelmänlaajuisten estojen luettelosta]]\ntai muokata nykyisen eston asetuksia lähettämällä tämän lomakkeen uudelleen.",
 	"globalblocking-block-bigrange": "Antamasi osoiteavaruus $1 on liian suuri.\nVoit estää korkeintaan 65&nbsp;536 osoitetta kerralla (/16-avaruus)",
-	"globalblocking-list-intro": "Tämä luettelo sisältää kaikki järjestelmänlaajuiset estot, jotka ovat tällä hetkellä voimassa.\n\nJotkut estoista on voitu merkitä paikallisesti poistetuiksi: tämä tarkoittaa, että esto on voimassa muilla sivustoilla, mutta paikallinen ylläpitäjä on päättänyt poistaa eston vaikutuksen tässä wikissä.",
+	"globalblocking-list-intro": "Tämä luettelo sisältää kaikki järjestelmänlaajuiset estot (global blocks), jotka ovat tällä hetkellä voimassa.\n\nJotkut estoista on voitu merkitä paikallisesti poistetuiksi: tämä tarkoittaa, että esto on voimassa muualla, mutta paikallinen ylläpitäjä on päättänyt poistaa eston vaikutuksen tässä wikissä.",
 	"globalblocking-list": "Järjestelmänlaajuisesti estetyt IP-osoitteet",
 	"globalblocking-search-legend": "Etsi järjestelmänlaajuisia estoja",
 	"globalblocking-search-ip": "IP-osoite",
