@@ -85,6 +85,7 @@
 	"globalblocking-logentry-expiry": "Used as a flag. Parameters:\n* $1 - expiry time and date\n{{Identical|Expire}}",
 	"globalblocking-loglink": "Shown at [[Special:IPBlocklist]] when the GlobalBlocking extension is enabled (not on translatewiki).\n* $1 is the requested IP address",
 	"globalblocking-showlog": "See also:\n* {{msg-mw|Blocklog-showlog}}",
+	"globalblocking-contribs-notice": "Displayed on [[Special:Contributions]] for currently globally blocked IP addresses. Parameters:\n* $1 - (Optional) the IP address\nSee also:\n* {{msg-mw|Sp-contributions-blocked-notice}}\n* {{msg-mw|Sp-contributions-blocked-notice-anon}}",
 	"globalblocklist": "{{doc-special|GlobalBlockList}}",
 	"globalblock": "{{doc-special|GlobalBlock}}\n{{Identical|Globally block IP address}}",
 	"globalblockstatus": "{{doc-special|GlobalBlockStatus}}",

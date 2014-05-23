@@ -542,4 +542,31 @@ class GlobalBlocking {
 		$linkItems = count( $links ) ? wfMessage( 'parentheses', $wgLang->pipeList( $links ) )->text() : '';
 		return $linkItems;
 	}
+
+	/**
+	 * Show global block notice on Special:Contributions.
+	 * @param $id int user id
+	 * @param $user User
+	 * @param $sp SpecialPage
+	 */
+	static function onSpecialContributionsBeforeMainOutput( $id, User $user, SpecialPage $sp ) {
+		if ( !$user->isAnon() ) {
+			return true;
+		}
+
+		$rangeCondition = self::getRangeCondition( $user->getName() );
+		$out = $sp->getOutput();
+		$pager = new GlobalBlockListPager( null, $rangeCondition );
+		$pager->setLimit( 1 ); // show at most one entry
+		$body = $pager->getBody();
+
+		if ( $body != '' ) {
+			$attribs = array( 'class' => 'mw-warning-with-logexcerpt' );
+			$out->addHTML( Html::rawElement( 'div', $attribs,
+				$sp->msg( 'globalblocking-contribs-notice', $user->getName() )->parse() .
+				Html::rawElement( 'ul', array(), $body ) ) );
+		}
+
+		return true;
+	}
 }

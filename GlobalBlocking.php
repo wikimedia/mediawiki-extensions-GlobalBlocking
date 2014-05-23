@@ -33,10 +33,12 @@ $wgHooks['getUserPermissionsErrorsExpensive'][] = 'GlobalBlocking::getUserPermis
 $wgHooks['UserIsBlockedGlobally'][] = 'GlobalBlocking::isBlockedGlobally';
 $wgHooks['SpecialPasswordResetOnSubmit'][] = 'GlobalBlocking::onSpecialPasswordResetOnSubmit';
 $wgHooks['OtherBlockLogLink'][] = 'GlobalBlocking::getBlockLogLink';
+$wgHooks['SpecialContributionsBeforeMainOutput'][] = 'GlobalBlocking::onSpecialContributionsBeforeMainOutput';
 
 $wgAutoloadClasses['SpecialGlobalBlock'] = "$dir/SpecialGlobalBlock.php";
 $wgSpecialPages['GlobalBlock'] = 'SpecialGlobalBlock';
 $wgAutoloadClasses['SpecialGlobalBlockList'] = "$dir/SpecialGlobalBlockList.php";
+$wgAutoloadClasses['GlobalBlockListPager'] = "$dir/SpecialGlobalBlockList.php";
 $wgSpecialPages['GlobalBlockList'] = 'SpecialGlobalBlockList';
 $wgAutoloadClasses['SpecialGlobalBlockStatus'] = "$dir/SpecialGlobalBlockStatus.php";
 $wgSpecialPages['GlobalBlockStatus'] = 'SpecialGlobalBlockStatus';
