@@ -154,6 +154,7 @@ class SpecialGlobalBlock extends SpecialPage {
 			$block->mReason = $reasonstr;
 			$block->mExpiry = SpecialBlock::parseExpiryInput( $this->mExpiry );
 			$block->isHardblock( !$this->mAnonOnly );
+			$block->prevents( 'createaccount', !$this->mAnonOnly );
 			$blockSuccess = $block->insert();
 
 			if( $blockSuccess ) {
