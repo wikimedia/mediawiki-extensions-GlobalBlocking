@@ -97,6 +97,7 @@
 	"globalblocking-logentry-expiry": "עם זמן פקיעה של $1",
 	"globalblocking-logentry-noexpiry": "ללא זמן פקיעה",
 	"globalblocking-loglink": "כתובת ה־IP שמספרה $1 חסומה באופן גלובלי ([[{{#Special:GlobalBlockList}}/$1|פרטים נוספים]]).",
+	"globalblocking-contribs-notice": "כתובת ה־IP הזאת חסומה גלובלית.\nלהלן העיול ביומן החסימות הגלובליות להתייחסות:",
 	"globalblocking-showlog": "כתובת IP זו נחסמה בעבר.\nיומן החסימות מוצג להלן:",
 	"globalblocklist": "רשימת כתובות IP החסומות באופן גלובלי",
 	"globalblock": "חסימת כתובת IP באופן גלובלי",
