@@ -11,7 +11,8 @@
 			"Malafaya",
 			"SandroHc",
 			"Waldir",
-			"555"
+			"555",
+			"Vitorvicentevalente"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permite]] que endereços IP sejam [[Special:GlobalBlockList|bloqueados em várias wikis]]",
@@ -96,6 +97,7 @@
 	"globalblocking-logentry-expiry": "expira em $1",
 	"globalblocking-logentry-noexpiry": "nenhum prazo especificado",
 	"globalblocking-loglink": "O endereço IP $1 está bloqueado globalmente ([[{{#Special:GlobalBlockList}}/$1|detalhes completos]]).",
+	"globalblocking-contribs-notice": "Este endereço de IP está bloqueado globalmente.\nO registo de bloqueio é fornecido abaixo para referência:",
 	"globalblocking-showlog": "Este endereço IP já foi bloqueado anteriormente.\nPara sua referência, é apresentado abaixo o registo de bloqueios:",
 	"globalblocklist": "Lista de endereços IP bloqueados globalmente",
 	"globalblock": "Bloquear um endereço IP globalmente",

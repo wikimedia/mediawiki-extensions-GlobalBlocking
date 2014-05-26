@@ -9,7 +9,8 @@
 			"Matik7",
 			"Nux",
 			"Sp5uhe",
-			"WTM"
+			"WTM",
+			"Peter Bowman"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Umożliwia]] równoczesne [[Special:GlobalBlockList|blokowanie]] adresów IP na wielu wiki",
@@ -97,6 +98,7 @@
 	"globalblocking-logentry-expiry": "wygasa $1",
 	"globalblocking-logentry-noexpiry": "wygaśnięcie nie ustalone",
 	"globalblocking-loglink": "Adres IP $1 jest zablokowany globalnie ([[{{#Special:GlobalBlockList}}/$1|pełny opis]]).",
+	"globalblocking-contribs-notice": "Ten adres IP jest obecnie globalnie zablokowany.\nWpis rejestru blokad globalnych jest pokazany poniżej.",
 	"globalblocking-showlog": "Ten adres IP był wcześniej blokowany.\nPoniżej znajduje się rejestr blokad:",
 	"globalblocklist": "Spis globalnie zablokowanych adresów IP",
 	"globalblock": "Zablokuj globalnie adres IP",

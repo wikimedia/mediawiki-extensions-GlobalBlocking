@@ -96,6 +96,7 @@
 	"globalblocking-logentry-expiry": "scade il $1",
 	"globalblocking-logentry-noexpiry": "nessuna scadenza impostata",
 	"globalblocking-loglink": "L'indirizzo IP $1 è bloccato a livello globale ([[{{#Special:GlobalBlockList}}/$1|vedi dettagli]]).",
+	"globalblocking-contribs-notice": "Questo indirizzo IP è attualmente bloccato globalmente.\nL'ultimo elemento del registro dei blocchi globali è riportato di seguito per informazione:",
 	"globalblocking-showlog": "Questo indirizzo IP è stato bloccato in precedenza.\nIl registro dei blocchi è riportato di seguito per informazione:",
 	"globalblocklist": "Elenco degli indirizzi IP bloccati globalmente",
 	"globalblock": "Blocca globalmente un indirizzo IP",

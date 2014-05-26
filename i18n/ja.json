@@ -9,7 +9,8 @@
 			"Schu",
 			"Shirayuki",
 			"Whym",
-			"青子守歌"
+			"青子守歌",
+			"Rxy"
 		]
 	},
 	"globalblocking-desc": "IPアドレスを[[Special:GlobalBlockList|複数のウィキで横断的に]][[Special:GlobalBlock|ブロックする]]",
@@ -96,6 +97,7 @@
 	"globalblocking-logentry-expiry": "有効期限: $1",
 	"globalblocking-logentry-noexpiry": "期限設定なし",
 	"globalblocking-loglink": "IP アドレス $1 はグローバルブロックされています ([[{{#Special:GlobalBlockList}}/$1|全詳細]])。",
+	"globalblocking-contribs-notice": "このIPアドレスは現在グローバルブロックされています。\n参考のためにグローバルブロック記録項目を以下に表示します:",
 	"globalblocking-showlog": "この IP アドレスは以前にブロックされたことがあります。\n参考のため、ブロック記録を以下に示します:",
 	"globalblocklist": "グローバルブロックされたIPアドレス一覧",
 	"globalblock": "IPアドレスをグローバルブロック",
