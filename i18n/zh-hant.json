@@ -102,6 +102,7 @@
 	"globalblocking-logentry-expiry": "過期 $1",
 	"globalblocking-logentry-noexpiry": "未設定過期",
 	"globalblocking-loglink": "IP 位址 $1 被全域封鎖（[[{{#Special:GlobalBlockList}}/$1|詳細資訊]]）。",
+	"globalblocking-contribs-notice": "此 IP位址已被全域封鎖。以下為全域封鎖日誌記錄以供參考：",
 	"globalblocking-showlog": "這個 IP 位址已經被封鎖。\n封鎖記錄提供如下，供參考：",
 	"globalblocklist": "全域封鎖 IP 位址名單",
 	"globalblock": "全域封鎖一個 IP 位址",
