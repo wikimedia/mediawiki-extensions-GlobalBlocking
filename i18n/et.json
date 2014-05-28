@@ -93,6 +93,7 @@
 	"globalblocking-logentry-expiry": "aegumistähtaeg $1",
 	"globalblocking-logentry-noexpiry": "aegumistähtajata",
 	"globalblocking-loglink": "IP-aadress $1 on globaalselt blokeeritud ([[{{#Special:GlobalBlockList}}/$1|üksikasjad]]).",
+	"globalblocking-contribs-notice": "See IP-aadress on praegu globaalselt blokeeritud.\nAllpool on toodud globaalsete blokeeringute logi sissekanne:",
 	"globalblocking-showlog": "See IP-aadress on varem blokeeritud.\nAllpool on toodud blokeerimislogi:",
 	"globalblocklist": "Globaalselt blokeeritud IP-aadresside loend",
 	"globalblock": "Blokeeri IP-aadress globaalselt",
