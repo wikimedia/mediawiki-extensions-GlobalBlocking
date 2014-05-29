@@ -91,6 +91,7 @@
 	"globalblocking-logentry-expiry": "bis $1",
 	"globalblocking-logentry-noexpiry": "keen Enn vun der Spär festgeluecht",
 	"globalblocking-loglink": "D'IP-Adress $1 ass global gespaart ([[{{#Special:GlobalBlockList}}/$1|fir all Detailer]]).",
+	"globalblocking-contribs-notice": "Dës IP-Adress ass elo global gespaart.\nD'Entrée am Logbuch vun de globale Späre steet als Referenz hei drënner:",
 	"globalblocking-showlog": "Dës IP-Adress gouf virdru gespaart.\nD'Lëscht vun de Späre steet hei ënnendrënner.",
 	"globalblocklist": "Lëscht vun de global gespaarten IP-Adressen",
 	"globalblock": "Eng IP-Adress global spären",
