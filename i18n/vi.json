@@ -92,6 +92,7 @@
 	"globalblocking-logentry-expiry": "hết hạn $1",
 	"globalblocking-logentry-noexpiry": "vô hạn",
 	"globalblocking-loglink": "Địa chỉ IP $1 đã bị cấm trên toàn hệ thống ([[{{#Special:GlobalBlockList}}/$1|chi tiết đầy đủ]]).",
+	"globalblocking-contribs-notice": "Địa chỉ IP này đang bị cấm toàn cục. Hãy tham khảo nhật trình cấm toàn cục bên dưới:",
 	"globalblocking-showlog": "Địa chỉ IP này đã bị cấm trước đây.\nHãy tham khảo nhật trình cấm ở dưới:",
 	"globalblocklist": "Danh sách các địa chỉ IP bị cấm trên toàn hệ thống",
 	"globalblock": "Cấm một địa chỉ IP trên toàn hệ thống",
