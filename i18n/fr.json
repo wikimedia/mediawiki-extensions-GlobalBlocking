@@ -102,6 +102,7 @@
 	"globalblocking-logentry-expiry": "expire le $1",
 	"globalblocking-logentry-noexpiry": "date d’expiration non spécifiée",
 	"globalblocking-loglink": "L’adresse IP $1 est bloquée globalement ([[{{#Special:GlobalBlockList}}/$1|détails]]).",
+	"globalblocking-contribs-notice": "L’adresse IP est actuellement bloquée de manière globale.\nL’entrée de journal du blocage global est fournie ci-dessous à titre d’information :",
 	"globalblocking-showlog": "Cette adresse IP a été bloquée antérieurement.\nLe journal des blocages est disponible ci-dessous :",
 	"globalblocklist": "Liste des adresses IP bloquées globalement",
 	"globalblock": "Bloquer globalement une adresse IP",
