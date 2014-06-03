@@ -7,7 +7,8 @@
 			"KPu3uC B Poccuu",
 			"Kaganer",
 			"Okras",
-			"Александр Сигачёв"
+			"Александр Сигачёв",
+			"NBS"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Разрешает]] блокировку IP-адресов [[Special:GlobalBlockList|на нескольких вики]]",
@@ -102,7 +103,7 @@
 	"globalblock": "Глобальная блокировка IP-адреса",
 	"globalblockstatus": "Локальные состояния глобальных блокировок",
 	"removeglobalblock": "Снять глобальную блокировку",
-	"right-globalblock": "Наложение и снятие глобальных блокировок",
+	"right-globalblock": "наложение и снятие глобальных блокировок",
 	"action-globalblock": "наложение и снятие глобальных блокировок",
 	"right-globalblock-whitelist": "локальное отключение глобальных блокировок",
 	"action-globalblock-whitelist": "локальное отключение глобальных блокировок",

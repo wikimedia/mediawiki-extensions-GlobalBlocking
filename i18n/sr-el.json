@@ -89,6 +89,7 @@
 	"globalblocking-logentry-expiry": "ističe $1",
 	"globalblocking-logentry-noexpiry": "nije naznačen rok isteka",
 	"globalblocking-loglink": "IP adresa $1 je globalno blokirana ([[{{#Special:GlobalBlockList}}/$1|svi detalji]]).",
+	"globalblocking-contribs-notice": "Ova IP adresa je trenutno globlno blokirana.\nIzveštaj o blokiranju možete pogledati ispod:",
 	"globalblocking-showlog": "Ova IP adresa je bila ranije blokirana.\nIspod je priložena istorija blokiranja:",
 	"globalblocklist": "Spisak globalno blokiranih IP adresa",
 	"globalblock": "Globalno blokirajte IP adresu",
