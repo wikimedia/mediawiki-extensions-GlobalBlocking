@@ -7,7 +7,8 @@
 			"SPQRobin",
 			"Siebrand",
 			"User555",
-			"Southparkfan"
+			"Southparkfan",
+			"JurgenNL"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Maakt het mogelijk]] IP-adressen [[Special:GlobalBlockList|in meerdere wiki's tegelijk]] te blokkeren",
@@ -96,6 +97,7 @@
 	"globalblocking-logentry-expiry": "vervalt op $1",
 	"globalblocking-logentry-noexpiry": "geen vervaldatum ingesteld",
 	"globalblocking-loglink": "Het IP-adres is globaal geblokkeerd ([[{{#Special:GlobalBlockList}}/$1|volledige details]])",
+	"globalblocking-contribs-notice": "Dit IP-adres is globaal geblokkeerd. \nDe laatste regel uit het globale blokkeerlogboek wordt hieronder ter referentie weergegeven:",
 	"globalblocking-showlog": "Dit IP-adres is eerder geblokkeerd geweest.\nHet blokkeerlogboek wordt hieronder weergegeven:",
 	"globalblocklist": "Lijst van globaal geblokkeerde IP-adressen",
 	"globalblock": "Een IP-adres globaal blokkeren",
