@@ -90,6 +90,7 @@
 	"globalblocking-logentry-expiry": "agpaso $1",
 	"globalblocking-logentry-noexpiry": "awan ti agpaso nga agasmang",
 	"globalblocking-loglink": "Ti IP a pagtaengan $1 ket naserraan iti sangalubongan ([[{{#Special:GlobalBlockList}}/$1|dagiti amin a salaysay]]).",
+	"globalblocking-contribs-notice": "Daytoy nga IP a pagtaengan ket agdama a global a naserraan.\nTi naikabil a listaan ti global a serra ket naited dita baba para iti reperensia:",
 	"globalblocking-showlog": "Daytoy nga IP a pagtaengan ket naserraan idin.\nTi listaan ti serra ket naikabil dita baba tapno mausar a reperensia:",
 	"globalblocklist": "Listaan dagiti naserraan nga IP a pagtaengan iti sangalubongan",
 	"globalblock": "Sangalubongan a seraan ti IP a pagtaengan",
