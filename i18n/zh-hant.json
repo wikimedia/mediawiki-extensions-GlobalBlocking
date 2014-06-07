@@ -56,7 +56,7 @@
 	"globalblocking-list-expiry": "於$1到期",
 	"globalblocking-list-anononly": "只限匿名",
 	"globalblocking-list-unblock": "移除",
-	"globalblocking-list-whitelisted": "由 $1 於本地封鎖：$2",
+	"globalblocking-list-whitelisted": "由 $1 於本地停用：$2",
 	"globalblocking-list-whitelist": "本地狀態",
 	"globalblocking-list-modify": "修改",
 	"globalblocking-list-noresults": "請求的 IP 位址沒有被封鎖。",
