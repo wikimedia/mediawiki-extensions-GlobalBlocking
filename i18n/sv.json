@@ -101,6 +101,7 @@
 	"globalblocking-logentry-expiry": "varaktighet $1",
 	"globalblocking-logentry-noexpiry": "ingen utgångstid satt",
 	"globalblocking-loglink": "IP-adressen $1 är blockerad globalt ([[{{#Special:GlobalBlockList}}/$1|detaljer]]).",
+	"globalblocking-contribs-notice": "Denna IP-adress är för närvarande globalt blockerad.\nDen posten i den globala blockeringsloggen visas nedan som referens:",
 	"globalblocking-showlog": "Denna IP-adress har tidigare blivit blockerad.\nBlockeringsloggen visas nedan som referens:",
 	"globalblocklist": "Lista över globalt blockerade IP-adresser",
 	"globalblock": "Blockera en IP-adress globalt",
