@@ -27,7 +27,7 @@
 	"globalblocking-block-options": "설정:",
 	"globalblocking-ipaddress": "IP 주소:",
 	"globalblocking-ipbanononly": "익명 사용자만 차단",
-	"globalblocking-block-errors": "다음 {{PLURAL:$1|이유}}로 인해 차단하는 데 실패하였습니다:",
+	"globalblocking-block-errors": "다음 {{PLURAL:$1|이유}}로 인해 차단하는 데 실패했습니다:",
 	"globalblocking-block-ipinvalid": "입력한 IP 주소 ($1) 가 잘못되었습니다.\n계정 이름을 입력할 수 없다는 것을 참고하시기 바랍니다!",
 	"globalblocking-block-expiryinvalid": "입력한 기한($1)이 잘못되었습니다.",
 	"globalblocking-block-submit": "이 IP 주소를 전역 차단",
