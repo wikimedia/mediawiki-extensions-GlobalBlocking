@@ -81,7 +81,7 @@
 	"globalblocking-whitelist-logentry": "a dezactivat o blocare globală pentru [[$1]] local",
 	"globalblocking-dewhitelist-logentry": "a reactivat blocarea globală pentru [[$1]] local",
 	"globalblocking-modify-logentry": "a modificat blocarea globală pentru [[$1]] ($2)",
-	"globalblocking-logentry-expiry": "expiră la $1",
+	"globalblocking-logentry-expiry": "expiră pe $1",
 	"globalblocking-logentry-noexpiry": "nicio dată de expirare setată",
 	"globalblocking-loglink": "Adresa IP $1 este blocată global ([[{{#Special:GlobalBlockList}}/$1|detalii complete]]).",
 	"globalblocking-showlog": "Această adresă IP a fost blocată anterior.\nJurnalul blocărilor este disponibil mai jos:",
