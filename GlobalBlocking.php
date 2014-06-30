@@ -103,9 +103,14 @@ $wgGlobalBlockingBlockXFF = true;
 $wgHooks['LoadExtensionSchemaUpdates'][] = function( $updater ) {
 	$base = __DIR__;
 	switch ( $updater->getDB()->getType() ) {
+		case 'sqlite':
 		case 'mysql':
 			$updater->addExtensionTable( 'globalblocks', "$base/globalblocking.sql" );
 			$updater->addExtensionTable( 'global_block_whitelist', "$base/localdb_patches/setup-global_block_whitelist.sql" );
+			break;
+
+		default:
+			// ERROR
 			break;
 	}
 	return true;
