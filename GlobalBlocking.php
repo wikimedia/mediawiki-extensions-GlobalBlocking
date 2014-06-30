@@ -95,3 +95,18 @@ $wgApplyGlobalBlocks = true;
  * Whether to block a request if an IP in the XFF is blocked
  */
 $wgGlobalBlockingBlockXFF = true;
+
+/**
+ * @param $updater DatabaseUpdater
+ * @return bool
+ */
+$wgHooks['LoadExtensionSchemaUpdates'][] = function( $updater ) {
+	$base = __DIR__;
+	switch ( $updater->getDB()->getType() ) {
+		case 'mysql':
+			$updater->addExtensionTable( 'globalblocks', "$base/globalblocking.sql" );
+			$updater->addExtensionTable( 'global_block_whitelist', "$base/localdb_patches/setup-global_block_whitelist.sql" );
+			break;
+	}
+	return true;
+};
