@@ -85,6 +85,13 @@ $wgAvailableRights[] = 'globalblock-exempt';
 $wgGlobalBlockingDatabase = 'globalblocking';
 
 /**
+ * Override $wgGlobalBlockingDatabase for Wikimedia Jenkins.
+ */
+if( isset( $wgWikimediaJenkinsCI ) && $wgWikimediaJenkinsCI ) {
+	$wgGlobalBlockingDatabase = $wgDBname;
+}
+
+/**
  * Whether to respect global blocks on this wiki. This is used so that
  * global blocks can be set one one wiki, but not actually applied there
  * (i.e. so people can contest them on that wiki.
