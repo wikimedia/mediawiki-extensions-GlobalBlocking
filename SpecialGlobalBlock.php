@@ -15,7 +15,7 @@ class SpecialGlobalBlock extends SpecialPage {
 
 		$out = $this->getOutput();
 		$out->setPageTitle( $this->msg( 'globalblocking-block' ) );
-		$out->setSubtitle( GlobalBlocking::buildSubtitleLinks( 'GlobalBlock' ) );
+		$out->setSubtitle( GlobalBlocking::buildSubtitleLinks( $this ) );
 		$out->setRobotPolicy( "noindex,nofollow" );
 		$out->setArticleRelated( false );
 		$out->enableClientCache( false );
@@ -139,6 +139,7 @@ class SpecialGlobalBlock extends SpecialPage {
 			$this->mAddress,
 			$reasonstr,
 			$this->mExpiry,
+			$this->getUser(),
 			$options
 		);
 

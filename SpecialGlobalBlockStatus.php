@@ -14,7 +14,7 @@ class SpecialGlobalBlockStatus extends SpecialPage {
 
 		$out = $this->getOutput();
 		$out->setPageTitle( $this->msg( 'globalblocking-whitelist' ) );
-		$out->setSubtitle( GlobalBlocking::buildSubtitleLinks( 'GlobalBlockStatus' ) );
+		$out->setSubtitle( GlobalBlocking::buildSubtitleLinks( $this ) );
 		$out->setRobotPolicy( "noindex,nofollow" );
 		$out->setArticleRelated( false );
 		$out->enableClientCache( false );

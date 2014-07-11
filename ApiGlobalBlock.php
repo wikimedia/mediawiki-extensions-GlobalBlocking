@@ -25,6 +25,7 @@ class ApiGlobalBlock extends ApiBase {
 				$this->getParameter( 'target' ),
 				$this->getParameter( 'reason' ),
 				$this->getParameter( 'expiry' ),
+				$this->getUser(),
 				$options
 			);
 

@@ -15,7 +15,7 @@ class SpecialRemoveGlobalBlock extends SpecialPage {
 		$out = $this->getOutput();
 
 		$out->setPageTitle( $this->msg( 'globalblocking-unblock' ) );
-		$out->setSubtitle( GlobalBlocking::buildSubtitleLinks( 'RemoveGlobalBlock' ) );
+		$out->setSubtitle( GlobalBlocking::buildSubtitleLinks( $this ) );
 		$out->setRobotPolicy( "noindex,nofollow" );
 		$out->setArticleRelated( false );
 		$out->enableClientCache( false );
