@@ -33,7 +33,7 @@ class SpecialRemoveGlobalBlock extends FormSpecialPage {
 		}
 
 		$out = $this->getOutput();
-		$dbw = GlobalBlocking::getGlobalBlockingMaster();
+		$dbw = GlobalBlocking::getGlobalBlockingDatabase( DB_MASTER );
 		$dbw->delete( 'globalblocks', array( 'gb_id' => $id ), __METHOD__ );
 
 		$page = new LogPage( 'gblblock' );

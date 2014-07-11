@@ -106,7 +106,7 @@ class SpecialGlobalBlockStatus extends SpecialPage {
 
 		$out = $this->getOutput();
 		if ( $new_status == true ) {
-			$gdbr = GlobalBlocking::getGlobalBlockingSlave();
+			$gdbr = GlobalBlocking::getGlobalBlockingDatabase( DB_SLAVE );
 
 			// Find the expiry of the block. This is important so that we can store it in the
 			// global_block_whitelist table, which allows us to purge it when the block has expired.

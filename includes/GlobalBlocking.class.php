@@ -93,7 +93,7 @@ class GlobalBlocking {
 	 * @return object The block
 	 */
 	static function getGlobalBlockingBlock( $ip, $anon ) {
-		$dbr = GlobalBlocking::getGlobalBlockingSlave();
+		$dbr = GlobalBlocking::getGlobalBlockingDatabase( DB_SLAVE );
 
 		$conds = self::getRangeCondition( $ip );
 
@@ -112,7 +112,7 @@ class GlobalBlocking {
 	 * @return array a SQL condition
 	 */
 	static function getRangeCondition( $ip ) {
-		$dbr = GlobalBlocking::getGlobalBlockingSlave();
+		$dbr = GlobalBlocking::getGlobalBlockingDatabase( DB_SLAVE );
 
 		$hex_ip = IP::toHex( $ip );
 		$ip_pattern = substr( $hex_ip, 0, 4 ) . '%'; // Don't bother checking blocks out of this /16.
@@ -134,7 +134,7 @@ class GlobalBlocking {
 	 * @return Array of applicable blocks
 	 */
 	static function checkIpsForBlock( $ips, $anon ) {
-		$dbr = GlobalBlocking::getGlobalBlockingSlave();
+		$dbr = GlobalBlocking::getGlobalBlockingDatabase( DB_SLAVE );
 		$conds = array();
 		foreach ( $ips as $ip ) {
 			if ( IP::isValid( $ip ) ) {
@@ -186,19 +186,12 @@ class GlobalBlocking {
 	}
 
 	/**
+	 * @param int $dbtype either DB_SLAVE or DB_MASTER
 	 * @return DatabaseBase
 	 */
-	static function getGlobalBlockingMaster() {
+	static function getGlobalBlockingDatabase( $dbtype ) {
 		global $wgGlobalBlockingDatabase;
-		return wfGetDB( DB_MASTER, 'globalblocking', $wgGlobalBlockingDatabase );
-	}
-
-	/**
-	 * @return DatabaseBase
-	 */
-	static function getGlobalBlockingSlave() {
-		global $wgGlobalBlockingDatabase;
-		return wfGetDB( DB_SLAVE, 'globalblocking', $wgGlobalBlockingDatabase );
+		return wfGetDB( $dbtype, 'globalblocking', $wgGlobalBlockingDatabase );
 	}
 
 	/**
@@ -207,12 +200,7 @@ class GlobalBlocking {
 	 * @return int
 	 */
 	static function getGlobalBlockId( $ip, $dbtype = DB_SLAVE ) {
-		if ( $dbtype === DB_MASTER ) {
-			$db = GlobalBlocking::getGlobalBlockingMaster();
-		} else {
-			$db = GlobalBlocking::getGlobalBlockingSlave();
-		}
-
+		$db = self::getGlobalBlockingDatabase( $dbtype );
 
 		if ( !( $row = $db->selectRow( 'globalblocks', 'gb_id', array( 'gb_address' => $ip ), __METHOD__ ) ) ) {
 			return 0;
@@ -225,7 +213,7 @@ class GlobalBlocking {
 		// This is expensive. It involves opening a connection to a new master,
 		// and doing a write query. We should only do it when a connection to the master
 		// is already open (currently, when a global block is made).
-		$dbw = GlobalBlocking::getGlobalBlockingMaster();
+		$dbw = GlobalBlocking::getGlobalBlockingDatabase( DB_MASTER );
 
 		// Stand-alone transaction.
 		$dbw->begin();
@@ -348,7 +336,7 @@ class GlobalBlocking {
 		}
 
 		// We're a-ok.
-		$dbw = GlobalBlocking::getGlobalBlockingMaster();
+		$dbw = GlobalBlocking::getGlobalBlockingDatabase( DB_MASTER );
 
 		// Delete the old block, if applicable
 

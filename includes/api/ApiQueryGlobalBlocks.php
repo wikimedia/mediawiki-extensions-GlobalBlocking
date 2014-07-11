@@ -197,7 +197,7 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 	}
 
 	protected function getDB() {
-		return GlobalBlocking::getGlobalBlockingSlave();
+		return GlobalBlocking::getGlobalBlockingDatabase( DB_SLAVE );
 	}
 
 	/**

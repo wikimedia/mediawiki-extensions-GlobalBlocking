@@ -42,7 +42,7 @@ class SpecialGlobalBlock extends SpecialPage {
 		}
 
 		if ( $this->mModifyForm ) {
-			$dbr = GlobalBlocking::getGlobalBlockingSlave();
+			$dbr = GlobalBlocking::getGlobalBlockingDatabase( DB_SLAVE );
 			$block = $dbr->selectRow(
 				'globalblocks',
 				'*',
