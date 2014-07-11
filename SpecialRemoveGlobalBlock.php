@@ -1,17 +1,12 @@
 <?php
 
-class SpecialRemoveGlobalBlock extends SpecialPage {
-	public $mAddress, $mReason;
-
+class SpecialRemoveGlobalBlock extends FormSpecialPage {
 	function __construct() {
 		parent::__construct( 'RemoveGlobalBlock', 'globalblock' );
 	}
 
 	function execute( $par ) {
-		$this->setHeaders();
-
-		$this->loadParameters();
-
+		parent::execute( $par );
 		$out = $this->getOutput();
 
 		$out->setPageTitle( $this->msg( 'globalblocking-unblock' ) );
@@ -19,57 +14,11 @@ class SpecialRemoveGlobalBlock extends SpecialPage {
 		$out->setRobotPolicy( "noindex,nofollow" );
 		$out->setArticleRelated( false );
 		$out->enableClientCache( false );
-
-		if ( !$this->userCanExecute( $this->getUser() ) ) {
-			$this->displayRestrictionError();
-			return;
-		}
-
-		$errors = '';
-
-		$request = $this->getRequest();
-		if ( $request->wasPosted() && $this->getUser()->matchEditToken( $request->getVal( 'wpEditToken' ) ) ) {
-			// They want to submit. Let's have a look.
-			$errors = $this->trySubmit();
-			if ( !$errors ) {
-				// Success!
-				return;
-			}
-		}
-
-		$out->addWikiMsg( 'globalblocking-unblock-intro' );
-
-		if ( is_array( $errors ) && count( $errors ) > 0 ) {
-			$errorstr = '';
-
-			foreach ( $errors as $error ) {
-				if ( is_array( $error ) ) {
-					$msg = array_shift( $error );
-				} else {
-					$msg = $error;
-					$error = array();
-				}
-				$errorstr .= Xml::tags( 'li', null, $this->msg( $msg, $error )->parse() );
-			}
-
-			$errorstr = Xml::tags( 'ul', array( 'class' => 'error' ), $errorstr );
-			$errorstr = $this->msg( 'globalblocking-unblock-errors' )->numParams( count( $errors ) )->parseAsBlock() . $errorstr;
-			$errorstr = Xml::tags( 'div', array( 'class' => 'error' ), $errorstr );
-			$out->addHTML( $errorstr );
-		}
-
-		$this->form();
 	}
 
-	function loadParameters() {
-		$this->mUnblockIP = trim( $this->getRequest()->getText( 'address' ) );
-		$this->mReason = $this->getRequest()->getText( 'wpReason' );
-		$this->mEditToken = $this->getRequest()->getText( 'wpEditToken' );
-	}
-
-	function trySubmit() {
+	function onSubmit( array $data ) {
 		$errors = array();
-		$ip = $this->mUnblockIP;
+		$ip = $data['ipaddress'];
 		if ( !IP::isIPAddress( $ip ) && strlen( $ip ) ) {
 			$errors[] = array( 'globalblocking-unblock-ipinvalid', $ip );
 			$ip = '';
@@ -88,7 +37,7 @@ class SpecialRemoveGlobalBlock extends SpecialPage {
 		$dbw->delete( 'globalblocks', array( 'gb_id' => $id ), __METHOD__ );
 
 		$page = new LogPage( 'gblblock' );
-		$page->addEntry( 'gunblock', Title::makeTitleSafe( NS_USER, $ip ), $this->mReason );
+		$page->addEntry( 'gunblock', Title::makeTitleSafe( NS_USER, $ip ), $data['reason'] );
 
 		$successmsg = $this->msg( 'globalblocking-unblock-unblocked', $ip, $id )->parseAsBlock();
 		$out->addHTML( $successmsg );
@@ -101,32 +50,33 @@ class SpecialRemoveGlobalBlock extends SpecialPage {
 
 		$out->setSubtitle( $this->msg( 'globalblocking-unblock-successsub' ) );
 
-		return array();
+		return true;
 	}
 
-	function form() {
-		global $wgScript;
+	protected function alterForm( HTMLForm $form ) {
+		$form->setWrapperLegendMsg( 'globalblocking-unblock-legend' );
+		$form->setSubmitTextMsg( 'globalblocking-unblock-submit' );
+		$form->setPreText( $this->msg( 'globalblocking-unblock-intro' )->parse() );
+	}
 
-		$form = '';
-
-		$form .= Xml::openElement( 'fieldset' ) . Xml::element( 'legend', null, $this->msg( 'globalblocking-unblock-legend' )->text() );
-		$form .= Xml::openElement( 'form', array( 'method' => 'post', 'action' => $wgScript, 'name' => 'globalblock-unblock' ) );
-
-		$form .= Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() );
-		$form .= Html::hidden( 'action', 'unblock' );
-
-		$fields = array();
-
-		$fields['globalblocking-ipaddress'] = Xml::input( 'address', 45, $this->mUnblockIP );
-		$fields['globalblocking-unblock-reason'] = Xml::input( 'wpReason', 45, $this->mReason );
-
-		$form .= Xml::buildForm( $fields, 'globalblocking-unblock-submit' );
-
-		$form .= Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() );
-
-		$form .= Xml::closeElement( 'form' );
-		$form .= Xml::closeElement( 'fieldset' );
-
-		$this->getOutput()->addHTML( $form );
+	protected function getFormFields() {
+		return array(
+			'ipaddress' => array(
+				'name' => 'address',
+				'type' => 'text',
+				'id' => 'mw-globalblocking-ipaddress',
+				'label-message' => 'globalblocking-ipaddress',
+				'default' => trim( $this->getRequest()->getText( 'address' ) ),
+				'size' => 45,
+			),
+			'reason' => array(
+				'name' => 'wpReason',
+				'type' => 'text',
+				'id' => 'mw-globalblocking-unblock-reason',
+				'label-message' => 'globalblocking-unblock-reason',
+				'default' => $this->getRequest()->getText( 'wpReason' ),
+				'size' => 45
+			),
+		);
 	}
 }
