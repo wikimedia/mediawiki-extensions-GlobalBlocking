@@ -145,8 +145,7 @@ class GlobalBlocking {
 	/**
 	 * Get a database range condition for an IP address
 	 * @param string $ip The IP address
-	 * @param boolean $anon Get anon blocks only
-	 * @return string a SQL condition
+	 * @return array a SQL condition
 	 */
 	static function getRangeCondition( $ip ) {
 		$dbr = GlobalBlocking::getGlobalBlockingSlave();
