@@ -239,13 +239,19 @@ class GlobalBlocking {
 	}
 
 	/**
-	 * @param $ip string
+	 * @param string $ip
+	 * @param int $dbtype either DB_SLAVE or DB_MASTER
 	 * @return int
 	 */
-	static function getGlobalBlockId( $ip ) {
-		$dbr = GlobalBlocking::getGlobalBlockingSlave();
+	static function getGlobalBlockId( $ip, $dbtype = DB_SLAVE ) {
+		if ( $dbtype === DB_MASTER ) {
+			$db = GlobalBlocking::getGlobalBlockingMaster();
+		} else {
+			$db = GlobalBlocking::getGlobalBlockingSlave();
+		}
 
-		if ( !( $row = $dbr->selectRow( 'globalblocks', 'gb_id', array( 'gb_address' => $ip ), __METHOD__ ) ) ) {
+
+		if ( !( $row = $db->selectRow( 'globalblocks', 'gb_id', array( 'gb_address' => $ip ), __METHOD__ ) ) ) {
 			return 0;
 		}
 
@@ -385,7 +391,8 @@ class GlobalBlocking {
 			$ip = IP::sanitizeRange( $ip );
 		}
 
-		$existingBlock = GlobalBlocking::getGlobalBlockId( $ip );
+		// Check for an existing block in the master database
+		$existingBlock = GlobalBlocking::getGlobalBlockId( $ip, DB_MASTER );
 		if ( !$modify && $existingBlock ) {
 			$errors[] = array( 'globalblocking-block-alreadyblocked', $ip );
 		}
@@ -413,7 +420,11 @@ class GlobalBlocking {
 		$row['gb_expiry'] = $dbw->encodeExpiry( $expiry, $dbw );
 		list( $row['gb_range_start'], $row['gb_range_end'] ) = array( $range_start, $range_end );
 
-		$dbw->insert( 'globalblocks', $row, __METHOD__ );
+		$dbw->insert( 'globalblocks', $row, __METHOD__, array( 'IGNORE' ) );
+		if ( !$dbw->affectedRows() ) {
+			// Race condition, the IP is already blocked (bug 67815)
+			return array( array( 'globalblocking-block-alreadyblocked', $ip ) );
+		}
 
 		return array();
 	}
