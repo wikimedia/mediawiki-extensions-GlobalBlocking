@@ -34,6 +34,7 @@ $wgHooks['UserIsBlockedGlobally'][] = 'GlobalBlocking::isBlockedGlobally';
 $wgHooks['SpecialPasswordResetOnSubmit'][] = 'GlobalBlocking::onSpecialPasswordResetOnSubmit';
 $wgHooks['OtherBlockLogLink'][] = 'GlobalBlocking::getBlockLogLink';
 $wgHooks['SpecialContributionsBeforeMainOutput'][] = 'GlobalBlocking::onSpecialContributionsBeforeMainOutput';
+$wgHooks['UserMergeAccountFields'][] = 'GlobalBlocking::onUserMergeAccountFields';
 
 $wgAutoloadClasses['SpecialGlobalBlock'] = "$dir/SpecialGlobalBlock.php";
 $wgSpecialPages['GlobalBlock'] = 'SpecialGlobalBlock';

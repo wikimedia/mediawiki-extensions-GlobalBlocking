@@ -587,4 +587,10 @@ class GlobalBlocking {
 
 		return true;
 	}
+
+	static function onUserMergeAccountFields( array &$updateFields ) {
+		$updateFields[] = array( 'global_block_whitelist', 'gbw_by', 'gbw_by_text' );
+
+		return true;
+	}
 }
