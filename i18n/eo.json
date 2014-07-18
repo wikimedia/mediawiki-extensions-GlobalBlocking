@@ -93,7 +93,7 @@
 	"globalblockstatus": "Loka statuso de ĝeneralaj forbaroj",
 	"removeglobalblock": "Forigi ĝeneralan forbaron",
 	"right-globalblock": "Fari ĝeneralajn forbarojn",
-	"action-globalblock": "fari ĝeneralajn forbarojn",
+	"action-globalblock": "fari kaj forigi ĝeneralajn forbarojn",
 	"right-globalblock-whitelist": "Malŝalti ĝeneralajn forbarojn ĉi-loke",
 	"action-globalblock-whitelist": "malŝalti ĝeneralajn forbarojn ĉi-loke",
 	"right-globalblock-exempt": "Preterigi ĝeneralajn forbarojn",

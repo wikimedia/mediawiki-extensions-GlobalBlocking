@@ -91,6 +91,7 @@
 	"globalblocking-logentry-expiry": "caduca'l $1",
 	"globalblocking-logentry-noexpiry": "nun se conseñó la caducidá",
 	"globalblocking-loglink": "La direición IP $1 ta bloquiada globalmente ([[{{#Special:GlobalBlockList}}/$1|más detalles]]).",
+	"globalblocking-contribs-notice": "Esta IP anguaño ta bloquiada globalmente. La entrada del rexistru de bloqueos globales s'ufre abaxo pa referencia:",
 	"globalblocking-showlog": "Esta direición IP yá se bloquió previamente.\nEl rexistru de bloqueos s'ufre darréu pa referencia:",
 	"globalblocklist": "Llista de direiciones IP bloquiaes globalmente",
 	"globalblock": "Bloquiar globalmente una direición IP",
