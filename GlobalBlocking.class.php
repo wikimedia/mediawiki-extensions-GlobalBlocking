@@ -349,14 +349,14 @@ class GlobalBlocking {
 	}
 
 	/**
-	 * @param $address string
-	 * @param $reason string
-	 * @param $expiry string|bool
-	 * @param $options array
+	 * @param string $address
+	 * @param string $reason
+	 * @param string|bool $expiry
+	 * @param User $blocker
+	 * @param array $options
 	 * @return array
 	 */
-	static function insertBlock( $address, $reason, $expiry, $options = array() ) {
-		global $wgUser;
+	static function insertBlock( $address, $reason, $expiry, $blocker, $options = array() ) {
 		$errors = array();
 
 		## Purge expired blocks.
@@ -411,7 +411,7 @@ class GlobalBlocking {
 
 		$row = array();
 		$row['gb_address'] = $ip;
-		$row['gb_by'] = $wgUser->getName();
+		$row['gb_by'] = $blocker->getName();
 		$row['gb_by_wiki'] = wfWikiId();
 		$row['gb_reason'] = $reason;
 		$row['gb_timestamp'] = $dbw->timestamp( wfTimestampNow() );
@@ -429,17 +429,18 @@ class GlobalBlocking {
 	}
 
 	/**
-	 * @param $address string
-	 * @param $reason string
-	 * @param $expiry string
-	 * @param $options array
+	 * @param string $address
+	 * @param string $reason
+	 * @param string $expiry
+	 * @param User $blocker
+	 * @param array $options
 	 * @return array
 	 */
-	static function block( $address, $reason, $expiry, $options = array() ) {
+	static function block( $address, $reason, $expiry, $blocker, $options = array() ) {
 		global $wgContLang;
 
 		$expiry = SpecialBlock::parseExpiryInput( $expiry );
-		$errors = self::insertBlock( $address, $reason, $expiry, $options );
+		$errors = self::insertBlock( $address, $reason, $expiry, $blocker, $options );
 
 		if ( count( $errors ) > 0 ) {
 			return $errors;
@@ -520,44 +521,43 @@ class GlobalBlocking {
 
 	/**
 	 * Build links to other global blocking special pages, shown in the subtitle
-	 * @param string $pagetype The calling special page name
+	 * @param SpecialPage $sp SpecialPage instance for context
 	 * @return string links to special pages
 	 */
-	static function buildSubtitleLinks( $pagetype ) {
-		global $wgUser, $wgLang;
-
+	static function buildSubtitleLinks( SpecialPage $sp ) {
 		// Add a few useful links
 		$links = array();
+		$pagetype = $sp->getName();
 
 		// Don't show a link to a special page on the special page itself.
 		// Show the links only if the user has sufficient rights
 		if ( $pagetype != 'GlobalBlockList' ) {
 			$title = SpecialPage::getTitleFor( 'GlobalBlockList' );
-			$links[] = Linker::linkKnown( $title, wfMessage( 'globalblocklist' )->escaped() );
+			$links[] = Linker::linkKnown( $title, $sp->msg( 'globalblocklist' )->escaped() );
 		}
-		$canBlock = $wgUser->isAllowed( 'globalblock' );
+		$canBlock = $sp->getUser()->isAllowed( 'globalblock' );
 		if ( $pagetype != 'GlobalBlock' && $canBlock ) {
 			$title = SpecialPage::getTitleFor( 'GlobalBlock' );
-			$links[] = Linker::linkKnown( $title, wfMessage( 'globalblocking-goto-block' )->escaped() );
+			$links[] = Linker::linkKnown( $title, $sp->msg( 'globalblocking-goto-block' )->escaped() );
 		}
 		if ( $pagetype != 'RemoveGlobalBlock' && $canBlock ) {
 			$title = SpecialPage::getTitleFor( 'RemoveGlobalBlock' );
-			$links[] = Linker::linkKnown( $title, wfMessage( 'globalblocking-goto-unblock' )->escaped() );
+			$links[] = Linker::linkKnown( $title, $sp->msg( 'globalblocking-goto-unblock' )->escaped() );
 		}
-		if ( $pagetype != 'GlobalBlockStatus' && $wgUser->isAllowed( 'globalblock-whitelist' ) ) {
+		if ( $pagetype != 'GlobalBlockStatus' && $sp->getUser()->isAllowed( 'globalblock-whitelist' ) ) {
 			$title = SpecialPage::getTitleFor( 'GlobalBlockStatus' );
-			$links[] = Linker::linkKnown( $title, wfMessage( 'globalblocking-goto-status' )->escaped() );
+			$links[] = Linker::linkKnown( $title, $sp->msg( 'globalblocking-goto-status' )->escaped() );
 		}
-		if ( $pagetype == 'GlobalBlock' && $wgUser->isAllowed( 'editinterface' ) ) {
+		if ( $pagetype == 'GlobalBlock' && $sp->getUser()->isAllowed( 'editinterface' ) ) {
 			$title = Title::makeTitle( NS_MEDIAWIKI, 'Globalblocking-block-reason-dropdown' );
 			$links[] = Linker::linkKnown(
 				$title,
-				wfMessage( 'globalblocking-block-edit-dropdown' )->escaped(),
+				$sp->msg( 'globalblocking-block-edit-dropdown' )->escaped(),
 				array(),
 				array( 'action' => 'edit' )
 			);
 		}
-		$linkItems = count( $links ) ? wfMessage( 'parentheses', $wgLang->pipeList( $links ) )->text() : '';
+		$linkItems = count( $links ) ? $sp->msg( 'parentheses', $sp->getLanguage()->pipeList( $links ) )->text() : '';
 		return $linkItems;
 	}
 

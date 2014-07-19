@@ -14,7 +14,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 		$this->loadParameters( $ip );
 
 		$out->setPageTitle( $this->msg( 'globalblocking-list' ) );
-		$out->setSubtitle( GlobalBlocking::buildSubtitleLinks( 'GlobalBlockList' ) );
+		$out->setSubtitle( GlobalBlocking::buildSubtitleLinks( $this ) );
 		$out->setRobotPolicy( "noindex,nofollow" );
 		$out->setArticleRelated( false );
 		$out->enableClientCache( false );
