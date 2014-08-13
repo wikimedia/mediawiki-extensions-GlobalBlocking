@@ -28,7 +28,7 @@
 	"globalblocking-block-submit": "Dës IP-Adress global spären",
 	"globalblocking-modify-submit": "Dës global Spär änneren",
 	"globalblocking-block-success": "D'IP-Adress $1 gouf op alle Wikimedia-Projete gespaart.",
-	"globalblocking-modify-success": "D'global Spär vun $1 gouf geännert",
+	"globalblocking-modify-success": "D'global Spär vu(n) $1 gouf geännert",
 	"globalblocking-block-successsub": "Global gespaart",
 	"globalblocking-modify-successsub": "Déi global Spär gouf geännert",
 	"globalblocking-block-alreadyblocked": "D'IP-Adress $1 ass scho global gespaart.\nDir kënnt d'Spären op der [[Special:GlobalBlockList|Lëscht vun de globale Späre]] kucken,\noder d'Astellunge vun de Spären mat dësem Formulaire änneren.",
