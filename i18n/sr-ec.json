@@ -85,7 +85,7 @@
 	"globalblocking-block-logentry": "{{GENDER:|је глобално блокирао|је глобално блокирала|је глобално блокирао}} [[$1]] с роком истицања од $2",
 	"globalblocking-block2-logentry": "глобално блокиран [[$1]] ($2)",
 	"globalblocking-unblock-logentry": "уклонио глобални блок за [[$1]]",
-	"globalblocking-whitelist-logentry": "локално онемогућен глобални блок над [[$1]]",
+	"globalblocking-whitelist-logentry": "је локално онемогућио глобални блок над [[$1]]",
 	"globalblocking-dewhitelist-logentry": "локално је враћен глобални блок над [[$1]]",
 	"globalblocking-modify-logentry": "глобални блок је промењен над [[$1]] ($2)",
 	"globalblocking-logentry-expiry": "истиче $1",
