@@ -17,11 +17,12 @@
 			"Xiaomingyan",
 			"Yfdyh000",
 			"乌拉跨氪",
-			"Mywood"
+			"Mywood",
+			"Impersonator 1"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|允许]][[Special:GlobalBlockList|在多个wiki中封禁]]IP地址",
-	"globalblocking-block": "全局封禁IP地址",
+	"globalblocking-block": "全域封禁IP地址",
 	"globalblocking-modify-intro": "您可以使用本表单改变全域封锁的设置。",
 	"globalblocking-block-intro": "您可以用这个页面去封锁全部wiki中的一个IP地址。",
 	"globalblocking-block-reason": "原因：",

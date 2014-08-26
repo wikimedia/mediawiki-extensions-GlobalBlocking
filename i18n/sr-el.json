@@ -84,7 +84,7 @@
 	"globalblocking-block2-logentry": "globalno blokiran [[$1]] ($2)",
 	"globalblocking-unblock-logentry": "uklonio globalni blok za [[$1]]",
 	"globalblocking-whitelist-logentry": "je lokalno onemogućio globalni blok nad [[$1]]",
-	"globalblocking-dewhitelist-logentry": "lokalno je vraćen globalni blok nad [[$1]]",
+	"globalblocking-dewhitelist-logentry": "je lokalno vratio globalni blok nad [[$1]]",
 	"globalblocking-modify-logentry": "globalni blok je promenjen nad [[$1]] ($2)",
 	"globalblocking-logentry-expiry": "ističe $1",
 	"globalblocking-logentry-noexpiry": "nije naznačen rok isteka",
