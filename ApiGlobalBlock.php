@@ -124,32 +124,6 @@ class ApiGlobalBlock extends ApiBase {
 		);
 	}
 
-	public function getResultProperties() {
-		return array(
-			'' => array(
-				'user' => array(
-					ApiBase::PARAM_TYPE => 'string'
-				),
-				'blocked' => array(
-					ApiBase::PARAM_TYPE => 'boolean',
-					ApiBase::PROP_NULLABLE => true
-				),
-				'unblocked' => array(
-					ApiBase::PARAM_TYPE => 'boolean',
-					ApiBase::PROP_NULLABLE => true
-				),
-				'expiry' => array(
-					ApiBase::PARAM_TYPE => 'string',
-					ApiBase::PROP_NULLABLE => true
-				),
-				'anononly' => array(
-					ApiBase::PARAM_TYPE => 'boolean',
-					ApiBase::PROP_NULLABLE => True
-				)
-			)
-		);
-	}
-
 	public function mustBePosted() {
 		return true;
 	}
