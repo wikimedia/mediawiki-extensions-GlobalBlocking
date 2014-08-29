@@ -108,12 +108,6 @@ class ApiGlobalBlock extends ApiBase {
 		);
 	}
 
-	public function getPossibleErrors() {
-		return array_merge( parent::getPossibleErrors(), array(
-			array( 'badaccess-groups' )
-		) );
-	}
-
 	public function getDescription() {
 		return "Globally block or unblock a user.";
 	}
