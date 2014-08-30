@@ -518,8 +518,8 @@ $specialPageAliases['zh-hans'] = array(
 
 /** Traditional Chinese (中文（繁體）‎) */
 $specialPageAliases['zh-hant'] = array(
-	'GlobalBlock' => array( '全域封禁' ),
-	'GlobalBlockList' => array( '全域封禁列表' ),
-	'RemoveGlobalBlock' => array( '解除全域封禁' ),
-	'GlobalBlockStatus' => array( '全域封禁白名單' ),
+	'GlobalBlock' => array( '全域封鎖' ),
+	'GlobalBlockList' => array( '全域封鎖清單' ),
+	'RemoveGlobalBlock' => array( '解除全域封鎖' ),
+	'GlobalBlockStatus' => array( '全域封鎖白名單', '全域封鎖狀態', '停用全域封鎖' ),
 );
