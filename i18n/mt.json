@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chrisportelli"
+			"Chrisportelli",
+			"Leli Forte"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Tħalli]] li indirizzi IP jiġu [[Special:GlobalBlockList|mblukkati fuq aktar minn wiki waħda]]",
@@ -29,6 +30,7 @@
 	"globalblocking-modify-success": "Il-blokk globali fuq $1 ġie modifikat",
 	"globalblocking-block-successsub": "Il-blokk globali sar b'suċċess",
 	"globalblocking-modify-successsub": "L-immodifikar tal-blokk globali rnexxiet",
+	"globalblocking-local-failed": "L-imblukkar lokali tal-indirizz tal-IP ma rnexxiex għax l-indirizz tal-IP li ngħata diġà mblokkat fuq dan il-wiki.",
 	"globalblocking-block-alreadyblocked": "L-indirizz IP $1 huwa diġà mblukkat globalment. Tista' tara l-blokk eżistenti fuq il-[[Special:GlobalBlockList|lista ta' blokki globali]], jew immodifika l-konfigurazzjoni tal-blokk eżistenti billi terġa' tibgħat din il-formola.",
 	"globalblocking-block-bigrange": "Il-klassi li indikajt ($1) huwa wisq kbir sabiex timblokka. Tista' timblokka massimu ta' 65,536 indirizz (klassi /16)",
 	"globalblocking-list-intro": "Din hija lista tal-blokki globali kollha li huma attivi. Xi blokki huma mmarkati bħala diżattivati lokalment: dna ifisser li dawn japplikaw għal siti oħra, però amministratur lokali ddeċieda li jiddiżattivahom fuq din il-wiki.",
