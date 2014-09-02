@@ -44,7 +44,7 @@
 	"globalblocking-search-submit": "Претражите блокове",
 	"globalblocking-list-ipinvalid": "ИП адреса коју тражите ($1) није исправна.\nМолимо Вас унесите исправну ИП адресу.",
 	"globalblocking-search-errors": "Ваша претрага није успешна због {{PLURAL:$1|следећег разлога|следећих разлога}}:",
-	"globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> (''$3'') глобално блокирао [[Special:Contributions/$4|$4]] ''($5)''",
+	"globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> (''$3'') је глобално блокирао [[Special:Contribs/$4|$4]] ''($5)''",
 	"globalblocking-list-expiry": "истиче $1",
 	"globalblocking-list-anononly": "само анонимне",
 	"globalblocking-list-unblock": "уклони",
