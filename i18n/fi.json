@@ -12,7 +12,8 @@
 			"Pxos",
 			"Silvonen",
 			"Str4nd",
-			"Tarmo"
+			"Tarmo",
+			"Stryn"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Mahdollistaa]] IP-osoitteiden [[Special:GlobalBlockList|estämisen useasta wikistä kerralla]].",
@@ -40,8 +41,10 @@
 	"globalblocking-modify-success": "Järjestelmänlaajuista estoa kohteessa $1 on muutettu onnistuneesti",
 	"globalblocking-block-successsub": "Järjestelmänlaajuinen esto onnistui",
 	"globalblocking-modify-successsub": "Järjestelmänlaajuista estoa muutettu onnistuneesti",
+	"globalblocking-local-failed": "IP-osoitteen estäminen paikallisesti epäonnistui, koska määritetty IP-osoite on jo estetty tässä wikissä.",
 	"globalblocking-block-alreadyblocked": "IP-osoite $1 on jo estetty järjestelmänlaajuisesti.\nVoit tarkastella estoa [[Special:GlobalBlockList|järjestelmänlaajuisten estojen luettelosta]]\ntai muokata nykyisen eston asetuksia lähettämällä tämän lomakkeen uudelleen.",
 	"globalblocking-block-bigrange": "Antamasi osoiteavaruus $1 on liian suuri.\nVoit estää korkeintaan 65&nbsp;536 osoitetta kerralla (/16-avaruus)",
+	"globalblocking-also-local": "Estä määritetty IP-osoite myös paikallisesti tässä wikissä",
 	"globalblocking-list-intro": "Tämä luettelo sisältää kaikki järjestelmänlaajuiset estot (global blocks), jotka ovat tällä hetkellä voimassa.\n\nJotkut estoista on voitu merkitä paikallisesti poistetuiksi: tämä tarkoittaa, että esto on voimassa muualla, mutta paikallinen ylläpitäjä on päättänyt poistaa eston vaikutuksen tässä wikissä.",
 	"globalblocking-list": "Järjestelmänlaajuisesti estetyt IP-osoitteet",
 	"globalblocking-search-legend": "Etsi järjestelmänlaajuisia estoja",
@@ -98,6 +101,7 @@
 	"globalblocking-logentry-expiry": "vanhentuu $1",
 	"globalblocking-logentry-noexpiry": "vanhentumisaikaa ei asetettu",
 	"globalblocking-loglink": "IP-osoite $1 on estetty järjestelmänlaajuisesti ([[{{#Special:GlobalBlockList}}/$1|tiedot]]).",
+	"globalblocking-contribs-notice": "Tämä IP-osoite on tällä hetkellä estettynä järjestelmänlaajuisesti.\nJärjestelmänlaajuinen estoloki näkyy alla:",
 	"globalblocking-showlog": "Tämä IP-osoite on ollut estettynä.\nAlla on ote estolokista.",
 	"globalblocklist": "Järjestelmänlaajuisesti estetyt IP-osoitteet",
 	"globalblock": "Estä IP-osoite järjestelmänlaajuisesti",

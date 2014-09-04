@@ -3,7 +3,8 @@
 		"authors": [
 			"Bellayet",
 			"Nasir8891",
-			"Wikitanvir"
+			"Wikitanvir",
+			"Aftab1995"
 		]
 	},
 	"globalblocking-block": "একটি আইপি ঠিকানাকে গ্লেবালি বাধা প্রদান করুন",
@@ -85,8 +86,8 @@
 	"globalblock": "একটি আইপি ঠিকানাকে গ্লেবালি বাধা প্রদান করুন",
 	"globalblockstatus": "গ্লোবাল বাধা স্থানীয় অবস্থা",
 	"removeglobalblock": "একটি গ্লোবাল বাধা তুলে নাও",
-	"right-globalblock": "গ্লোবাল বাধা তৈরি করো",
-	"action-globalblock": "গ্লোবাল বাধা তৈরি করো",
+	"right-globalblock": "গ্লোবাল বাধা তৈরি বা বাতিল করো",
+	"action-globalblock": "গ্লোবাল বাধা তৈরি বা বাতিল করো",
 	"right-globalblock-whitelist": "স্থানীয়ভাবে গ্লোবাল বাধা নিষ্ক্রিয় করো",
 	"action-globalblock-whitelist": "স্থানীয়ভাবে গ্লোবাল বাধা নিষ্ক্রিয় করো",
 	"right-globalblock-exempt": "গ্লোবাল বাধা বাইপাস করো",
