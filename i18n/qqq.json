@@ -22,7 +22,8 @@
 			"Umherirrender",
 			"Urhixidur",
 			"Yekrats",
-			"Тест"
+			"Тест",
+			"Liuxinyu970226"
 		]
 	},
 	"globalblocking-desc": "{{desc|name=Global Blocking|url=http://www.mediawiki.org/wiki/Extension:GlobalBlocking}}",
@@ -53,7 +54,7 @@
 	"globalblocking-list-ipinvalid": "Used as error message in Special:GlobalBlockList. Parameters:\n* $1 - IP address",
 	"globalblocking-search-errors": "Unused at this time.\n\nParameters:\n* $1 - number of reasons\nSee also:\n* {{msg-mw|Globalblocking-block-errors}}",
 	"globalblocking-list-blockitem": "Parameters:\n* $1 - a timestamp (time and date, localized)\n* $2 - the blocking user\n* $3 - the source wiki for the blocking user\n* $4 - the blocked user\n* $5 - the list of block options",
-	"globalblocking-list-expiry": "Unused at this time. Parameters:\n* $1 - ...\n{{Identicai|Expiry}}",
+	"globalblocking-list-expiry": "Unused at this time. Parameters:\n* $1 - ...\n{{Identical|Expiry}}",
 	"globalblocking-list-anononly": "{{Identical|Anon only}}",
 	"globalblocking-list-unblock": "{{Identical|Remove}}",
 	"globalblocking-list-whitelisted": "Used as a block option in Special:GlobalBlockList. Parameters:\n* $1 - username\n* $2 - reason",
