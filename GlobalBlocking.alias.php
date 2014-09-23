@@ -482,7 +482,7 @@ $specialPageAliases['uk'] = array(
 	'RemoveGlobalBlock' => array( 'Глобальне_розблокування' ),
 );
 
-/** vèneto (vèneto) */
+/** Venetian (vèneto) */
 $specialPageAliases['vec'] = array(
 	'GlobalBlock' => array( 'BlocoGlobal' ),
 );
