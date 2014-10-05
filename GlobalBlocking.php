@@ -16,7 +16,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
  * @author Andrew Garrett <andrew@epstone.net>
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
-$dir = dirname( __FILE__ );
+$dir = __DIR__;
 $wgExtensionCredits['other'][] = array(
 	'path'           => __FILE__,
 	'name'           => 'GlobalBlocking',
@@ -36,21 +36,21 @@ $wgHooks['OtherBlockLogLink'][] = 'GlobalBlocking::getBlockLogLink';
 $wgHooks['SpecialContributionsBeforeMainOutput'][] = 'GlobalBlocking::onSpecialContributionsBeforeMainOutput';
 $wgHooks['UserMergeAccountFields'][] = 'GlobalBlocking::onUserMergeAccountFields';
 
-$wgAutoloadClasses['SpecialGlobalBlock'] = "$dir/SpecialGlobalBlock.php";
+$wgAutoloadClasses['SpecialGlobalBlock'] = "$dir/includes/specials/SpecialGlobalBlock.php";
 $wgSpecialPages['GlobalBlock'] = 'SpecialGlobalBlock';
-$wgAutoloadClasses['SpecialGlobalBlockList'] = "$dir/SpecialGlobalBlockList.php";
-$wgAutoloadClasses['GlobalBlockListPager'] = "$dir/SpecialGlobalBlockList.php";
+$wgAutoloadClasses['SpecialGlobalBlockList'] = "$dir/includes/specials/SpecialGlobalBlockList.php";
+$wgAutoloadClasses['GlobalBlockListPager'] = "$dir/includes/specials/SpecialGlobalBlockList.php";
 $wgSpecialPages['GlobalBlockList'] = 'SpecialGlobalBlockList';
-$wgAutoloadClasses['SpecialGlobalBlockStatus'] = "$dir/SpecialGlobalBlockStatus.php";
+$wgAutoloadClasses['SpecialGlobalBlockStatus'] = "$dir/includes/specials/SpecialGlobalBlockStatus.php";
 $wgSpecialPages['GlobalBlockStatus'] = 'SpecialGlobalBlockStatus';
-$wgAutoloadClasses['SpecialRemoveGlobalBlock'] = "$dir/SpecialRemoveGlobalBlock.php";
+$wgAutoloadClasses['SpecialRemoveGlobalBlock'] = "$dir/includes/specials/SpecialRemoveGlobalBlock.php";
 $wgSpecialPages['RemoveGlobalBlock'] = 'SpecialRemoveGlobalBlock';
-$wgAutoloadClasses['ApiQueryGlobalBlocks'] = "$dir/ApiQueryGlobalBlocks.php";
+$wgAutoloadClasses['ApiQueryGlobalBlocks'] = "$dir/includes/api/ApiQueryGlobalBlocks.php";
 $wgAPIListModules['globalblocks'] = 'ApiQueryGlobalBlocks';
-$wgAutoloadClasses['ApiGlobalBlock'] = "$dir/ApiGlobalBlock.php";
+$wgAutoloadClasses['ApiGlobalBlock'] = "$dir/includes/api/ApiGlobalBlock.php";
 $wgAPIModules['globalblock'] = 'ApiGlobalBlock';
 
-$wgAutoloadClasses['GlobalBlocking'] = "$dir/GlobalBlocking.class.php";
+$wgAutoloadClasses['GlobalBlocking'] = "$dir/includes/GlobalBlocking.class.php";
 
 $wgSpecialPageGroups['GlobalBlock'] = 'users';
 $wgSpecialPageGroups['GlobalBlockList'] = 'users';
