@@ -29,12 +29,13 @@ $wgMessagesDirs['GlobalBlocking'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['GlobalBlocking'] = "$dir/GlobalBlocking.i18n.php";
 $wgExtensionMessagesFiles['GlobalBlockingAlias'] = "$dir/GlobalBlocking.alias.php";
 
-$wgHooks['getUserPermissionsErrorsExpensive'][] = 'GlobalBlocking::getUserPermissionsErrors';
-$wgHooks['UserIsBlockedGlobally'][] = 'GlobalBlocking::isBlockedGlobally';
-$wgHooks['SpecialPasswordResetOnSubmit'][] = 'GlobalBlocking::onSpecialPasswordResetOnSubmit';
-$wgHooks['OtherBlockLogLink'][] = 'GlobalBlocking::getBlockLogLink';
-$wgHooks['SpecialContributionsBeforeMainOutput'][] = 'GlobalBlocking::onSpecialContributionsBeforeMainOutput';
-$wgHooks['UserMergeAccountFields'][] = 'GlobalBlocking::onUserMergeAccountFields';
+$wgHooks['getUserPermissionsErrorsExpensive'][] = 'GlobalBlockingHooks::onGetUserPermissionsErrorsExpensive';
+$wgHooks['UserIsBlockedGlobally'][] = 'GlobalBlockingHooks::onUserIsBlockedGlobally';
+$wgHooks['SpecialPasswordResetOnSubmit'][] = 'GlobalBlockingHooks::onSpecialPasswordResetOnSubmit';
+$wgHooks['OtherBlockLogLink'][] = 'GlobalBlockingHooks::onOtherBlockLogLink';
+$wgHooks['SpecialContributionsBeforeMainOutput'][] = 'GlobalBlockingHooks::onSpecialContributionsBeforeMainOutput';
+$wgHooks['UserMergeAccountFields'][] = 'GlobalBlockingHooks::onUserMergeAccountFields';
+$wgHooks['LoadExtensionSchemaUpdates'][] = 'GlobalBlockingHooks::onLoadExtensionSchemaUpdates';
 
 $wgAutoloadClasses['SpecialGlobalBlock'] = "$dir/includes/specials/SpecialGlobalBlock.php";
 $wgSpecialPages['GlobalBlock'] = 'SpecialGlobalBlock';
@@ -51,6 +52,7 @@ $wgAutoloadClasses['ApiGlobalBlock'] = "$dir/includes/api/ApiGlobalBlock.php";
 $wgAPIModules['globalblock'] = 'ApiGlobalBlock';
 
 $wgAutoloadClasses['GlobalBlocking'] = "$dir/includes/GlobalBlocking.class.php";
+$wgAutoloadClasses['GlobalBlockingHooks'] = "$dir/includes/GlobalBlockingHooks.php";
 
 $wgSpecialPageGroups['GlobalBlock'] = 'users';
 $wgSpecialPageGroups['GlobalBlockList'] = 'users';
@@ -103,23 +105,3 @@ $wgApplyGlobalBlocks = true;
  * Whether to block a request if an IP in the XFF is blocked
  */
 $wgGlobalBlockingBlockXFF = true;
-
-/**
- * @param $updater DatabaseUpdater
- * @return bool
- */
-$wgHooks['LoadExtensionSchemaUpdates'][] = function( $updater ) {
-	$base = __DIR__;
-	switch ( $updater->getDB()->getType() ) {
-		case 'sqlite':
-		case 'mysql':
-			$updater->addExtensionTable( 'globalblocks', "$base/globalblocking.sql" );
-			$updater->addExtensionTable( 'global_block_whitelist', "$base/localdb_patches/setup-global_block_whitelist.sql" );
-			break;
-
-		default:
-			// ERROR
-			break;
-	}
-	return true;
-};

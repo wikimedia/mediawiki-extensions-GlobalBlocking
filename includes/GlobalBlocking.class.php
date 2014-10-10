@@ -1,47 +1,11 @@
 <?php
 
+/**
+ * Static utility class of the GlobalBlocking extension.
+ *
+ * @license GNU GPL v2+
+ */
 class GlobalBlocking {
-	/**
-	 * @param $title Title
-	 * @param $user User
-	 * @param $action string
-	 * @param $result mixed
-	 * @return Boolean
-	 */
-	static function getUserPermissionsErrors( &$title, &$user, $action, &$result ) {
-		global $wgApplyGlobalBlocks, $wgRequest;
-		if ( $action == 'read' || !$wgApplyGlobalBlocks ) {
-			return true;
-		}
-		if ( $user->isAllowed( 'ipblock-exempt' ) ||
-			$user->isAllowed( 'globalblock-exempt' )
-		) {
-			// User is exempt from IP blocks.
-			return true;
-		}
-		$ip = $wgRequest->getIP();
-		$blockError = self::getUserBlockErrors( $user, $ip );
-		if ( !empty( $blockError ) ) {
-			$result = array( $blockError );
-			return false;
-		}
-		return true;
-	}
-
-	/**
-	 * @param $user User
-	 * @param $ip string
-	 * @param $blocked bool
-	 * @return Boolean
-	 */
-	static function isBlockedGlobally( &$user, $ip, &$blocked ) {
-		$blockError = self::getUserBlockErrors( $user, $ip );
-		if ( $blockError ) {
-			$blocked = true;
-			return false;
-		}
-		return true;
-	}
 
 	/**
 	 * @param $user User
@@ -478,48 +442,6 @@ class GlobalBlocking {
 	}
 
 	/**
-	 * @param $users
-	 * @param $data
-	 * @param $error
-	 * @return bool
-	 */
-	static function onSpecialPasswordResetOnSubmit( &$users, $data, &$error ) {
-		global $wgUser, $wgRequest;
-
-		if ( GlobalBlocking::getUserBlockErrors( $wgUser, $wgRequest->getIP() ) ) {
-			$error = wfMessage( 'globalblocking-blocked-nopassreset' )->text();
-			return false;
-		}
-		return true;
-	}
-
-	/**
-	 * Creates a link to the global block log
-	 * @param array $msg Message with a link to the global block log
-	 * @param string $ip The IP address to be checked
-	 * @return boolean true
-	 */
-	static function getBlockLogLink( &$msg, $ip ) {
-		// Fast return if it is a username. IP addresses can be blocked only.
-		if ( !IP::isIPAddress( $ip ) ) {
-			return true;
-		}
-
-		$block = self::getGlobalBlockingBlock( $ip, true );
-		if ( !$block ) {
-			// Fast return if not globally blocked
-			return true;
-		}
-
-		$msg[] = Html::rawElement(
-			'span',
-			array( 'class' => 'mw-globalblock-loglink plainlinks' ),
-			wfMessage( 'globalblocking-loglink', $ip )->parse()
-		);
-		return true;
-	}
-
-	/**
 	 * Build links to other global blocking special pages, shown in the subtitle
 	 * @param SpecialPage $sp SpecialPage instance for context
 	 * @return string links to special pages
@@ -559,38 +481,5 @@ class GlobalBlocking {
 		}
 		$linkItems = count( $links ) ? $sp->msg( 'parentheses', $sp->getLanguage()->pipeList( $links ) )->text() : '';
 		return $linkItems;
-	}
-
-	/**
-	 * Show global block notice on Special:Contributions.
-	 * @param $id int user id
-	 * @param $user User
-	 * @param $sp SpecialPage
-	 */
-	static function onSpecialContributionsBeforeMainOutput( $id, User $user, SpecialPage $sp ) {
-		if ( !$user->isAnon() ) {
-			return true;
-		}
-
-		$rangeCondition = self::getRangeCondition( $user->getName() );
-		$out = $sp->getOutput();
-		$pager = new GlobalBlockListPager( null, $rangeCondition );
-		$pager->setLimit( 1 ); // show at most one entry
-		$body = $pager->getBody();
-
-		if ( $body != '' ) {
-			$attribs = array( 'class' => 'mw-warning-with-logexcerpt' );
-			$out->addHTML( Html::rawElement( 'div', $attribs,
-				$sp->msg( 'globalblocking-contribs-notice', $user->getName() )->parse() .
-				Html::rawElement( 'ul', array(), $body ) ) );
-		}
-
-		return true;
-	}
-
-	static function onUserMergeAccountFields( array &$updateFields ) {
-		$updateFields[] = array( 'global_block_whitelist', 'gbw_by', 'gbw_by_text' );
-
-		return true;
 	}
 }
