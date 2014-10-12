@@ -36,7 +36,7 @@ class GlobalBlocking {
 
 			$blockTimestamp = $wgLang->timeanddate( wfTimestamp( TS_MW, $block->gb_timestamp ), true );
 			$blockExpiry = $wgLang->formatExpiry( $block->gb_expiry );
-			$display_wiki = self::getWikiName( $block->gb_by_wiki );
+			$display_wiki = WikiMap::getWikiName( $block->gb_by_wiki );
 			$blockingUser = self::maybeLinkUserpage( $block->gb_by_wiki, $block->gb_by );
 			// Allow site customization of blocked message.
 			$blockedIpMsg = 'globalblocking-ipblocked';
@@ -61,7 +61,7 @@ class GlobalBlocking {
 						true
 					);
 					$blockExpiry = $wgLang->formatExpiry( $block->gb_expiry );
-					$display_wiki = self::getWikiName( $block->gb_by_wiki );
+					$display_wiki = WikiMap::getWikiName( $block->gb_by_wiki );
 					$blockingUser = self::maybeLinkUserpage( $block->gb_by_wiki, $block->gb_by );
 					// Allow site customization of blocked message.
 					$blockedIpXffMsg = 'globalblocking-ipblocked-xff';
@@ -277,23 +277,6 @@ class GlobalBlocking {
 	 */
 	static function getWhitelistInfoByIP( $block_ip ) {
 		return self::getWhitelistInfo( null, $block_ip );
-	}
-
-	/**
-	 * @param $wiki_id int
-	 * @return String
-	 */
-	static function getWikiName( $wiki_id ) {
-		if ( class_exists( 'WikiMap' ) ) {
-			// We can give more info than just the wiki id!
-			$wiki = WikiMap::getWiki( $wiki_id );
-
-			if ( $wiki ) {
-				return $wiki->getDisplayName();
-			}
-		}
-
-		return $wiki_id;
 	}
 
 	/**

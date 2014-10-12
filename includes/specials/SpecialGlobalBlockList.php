@@ -189,7 +189,7 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 		}
 
 		## Userpage link / Info on originating wiki
-		$display_wiki = GlobalBlocking::getWikiName( $row->gb_by_wiki );
+		$display_wiki = WikiMap::getWikiName( $row->gb_by_wiki );
 		$user_display = GlobalBlocking::maybeLinkUserpage( $row->gb_by_wiki, $row->gb_by );
 		$infoItems = count( $info ) ?
 			$this->msg( 'parentheses', $this->getLanguage()->pipeList( $info ) )->text() :
