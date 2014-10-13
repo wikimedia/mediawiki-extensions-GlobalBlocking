@@ -92,7 +92,7 @@
 	"globalblocking-ipblocked-xff": "'''您使用的一個或多個代理伺服器己被所有 Wiki 封鎖'''\n\n封鎖的動作由 $1 ($2) 所執行。\n原因為 ''$3''。\n\n* 封鎖開始日期：$4\n* 封鎖結束日期：$5\n\n您可以聯絡 $1 討論有關封鎖的問題。\n除非您於[[Special:Preferences|偏好設定]]中設定了一個有效的電子郵件地址且您未被禁止使用該功能，否則您將無法使用 \"{{int:emailuser}}\"。\n您目前的 IP 位址為 $6。\n請於任何詢問中附上以上詳細資訊。",
 	"globalblocking-blocked-nopassreset": "您己被全域封鎖，無法修改使用者密碼。",
 	"globalblocking-logpage": "全域封鎖日誌",
-	"globalblocking-logpagetext": "此日誌包含了此 Wiki中新增與移除的全域封鎖。\n要特別說明，全域封鎖可由其他 Wiki 新增與移除，其他 Wiki 對全域封鎖的設定會影響此 Wiki。\n要檢視所有使用中的全域封鎖，您可檢視 [[Special:GlobalBlockList|全域封鎖清單]]。",
+	"globalblocking-logpagetext": "此日誌包含了此 Wiki 中新增與移除的全域封鎖。\n要特別說明，全域封鎖可由其他 Wiki 新增與移除，其他 Wiki 對全域封鎖的設定會影響此 Wiki。\n要檢視所有使用中的全域封鎖，您可檢視 [[Special:GlobalBlockList|全域封鎖清單]]。",
 	"globalblocking-block-logentry": "已全域封鎖 [[$1]]，到期日為 $2",
 	"globalblocking-block2-logentry": "已全域封鎖 [[$1]] ($2)",
 	"globalblocking-unblock-logentry": "已移除了 [[$1]] 的全域封鎖",
