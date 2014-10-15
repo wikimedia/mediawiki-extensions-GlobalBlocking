@@ -20,8 +20,10 @@
 	"globalblocking-list-whitelist": "شلك ولاتی",
 	"globalblocking-list-modify": "آلشت كردن",
 	"globalblocking-unblock-reason": "دليل:",
+	"globalblocking-whitelist-legend": "آلشت دئن حال و بال ولات نشینی",
 	"globalblocking-whitelist-reason": "دليل:",
 	"globalblocking-whitelist-status": "شلك ولاتی",
+	"globalblocking-whitelist-submit": "آلشت دئن حال و بال ولات نشینی",
 	"globalblocking-logpage": "قلف جهونی پهرستنومه",
 	"globalblocking-showlog": "نشونی ای آی پی دماتر قلف بیه.\nقلف ای پهرستنومه وا سرچشمه هاری دروس بیه:",
 	"globalblocklist": "نوم گه نشونی یا آپی یی که د جهون قلف بینه"
