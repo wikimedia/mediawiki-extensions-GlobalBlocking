@@ -114,9 +114,9 @@
 	"globalblockstatus": "全域封锁的本地状态",
 	"removeglobalblock": "移除全域封禁",
 	"right-globalblock": "进行或解封全域封锁",
-	"action-globalblock": "进行或解除全域封锁",
+	"action-globalblock": "进行或解除全域封禁",
 	"right-globalblock-whitelist": "在本地停用全域封禁",
 	"action-globalblock-whitelist": "本地停用全域封禁",
 	"right-globalblock-exempt": "绕过全域封锁",
-	"action-globalblock-exempt": "绕过全域封锁"
+	"action-globalblock-exempt": "绕过全域封禁"
 }
