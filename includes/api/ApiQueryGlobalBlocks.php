@@ -161,7 +161,9 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 					'newer',
 					'older'
 				),
-				ApiBase :: PARAM_DFLT => 'older'
+				ApiBase :: PARAM_DFLT => 'older',
+				/** @todo Once support for MediaWiki < 1.25 is dropped, just use ApiBase::PARAM_HELP_MSG directly */
+				constant( 'ApiBase::PARAM_HELP_MSG' ) ?: '' => 'api-help-param-direction',
 			),
 			'ids' => array(
 				ApiBase :: PARAM_TYPE => 'integer',
@@ -198,6 +200,9 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 		return GlobalBlocking::getGlobalBlockingSlave();
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getParamDescription() {
 		return array(
 			'start' => 'The timestamp to start enumerating from',
@@ -212,17 +217,31 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getDescription() {
 		return 'List all globally blocked IP addresses.';
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getExamples() {
 		return array( 'api.php?action=query&list=globalblocks',
 			'api.php?action=query&list=globalblocks&bgip=217.121.114.116'
 		);
 	}
 
-	public function getVersion() {
-		return __CLASS__ . ': $Id$';
+	/**
+	 * @see ApiBase::getExamplesMessages()
+	 */
+	protected function getExamplesMessages() {
+		return array(
+			'action=query&list=globalblocks'
+				=> 'apihelp-query+globalblocks-example-1',
+			'action=query&list=globalblocks&bgip=192.0.2.18'
+				=> 'apihelp-query+globalblocks-example-2',
+		);
 	}
 }

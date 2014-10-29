@@ -93,6 +93,9 @@ class ApiGlobalBlock extends ApiBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getParamDescription() {
 		return array(
 			'target' => 'The target IP.',
@@ -108,13 +111,29 @@ class ApiGlobalBlock extends ApiBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getDescription() {
 		return "Globally block or unblock a user.";
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getExamples() {
 		return array(
 			'api.php?action=globalblock&target=127.0.0.1&expiry=indefinite&reason=Cross-wiki%20abuse&token=123ABC',
+		);
+	}
+
+	/**
+	 * @see ApiBase::getExamplesMessages()
+	 */
+	protected function getExamplesMessages() {
+		return array(
+			'action=globalblock&target=192.0.2.1&expiry=indefinite&reason=Cross-wiki%20abuse&token=123ABC'
+				=> 'apihelp-globalblock-example-1',
 		);
 	}
 
