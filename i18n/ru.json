@@ -8,7 +8,8 @@
 			"Kaganer",
 			"Okras",
 			"Александр Сигачёв",
-			"NBS"
+			"NBS",
+			"Камалист"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Разрешает]] блокировку IP-адресов [[Special:GlobalBlockList|на нескольких вики]]",
@@ -108,5 +109,8 @@
 	"right-globalblock-whitelist": "локальное отключение глобальных блокировок",
 	"action-globalblock-whitelist": "локальное отключение глобальных блокировок",
 	"right-globalblock-exempt": "обход глобальных блокировок",
-	"action-globalblock-exempt": "обход глобальных блокировок"
+	"action-globalblock-exempt": "обход глобальных блокировок",
+	"apihelp-globalblock-description": "Глобально заблокировать или разблокировать участника.",
+	"apihelp-globalblock-param-target": "Целевой IP-адрес",
+	"apihelp-globalblock-param-reason": "Причина блокировки/разблокировки"
 }

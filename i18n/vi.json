@@ -3,7 +3,8 @@
 		"authors": [
 			"Cheers!",
 			"Minh Nguyen",
-			"Vinhtantran"
+			"Vinhtantran",
+			"Max20091"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Cho phép]] [[Special:GlobalBlockList|cấm địa chỉ IP trên nhiều wiki]]",
@@ -103,5 +104,8 @@
 	"right-globalblock-whitelist": "Tắt tác vụ cấm toàn cục tại địa phương",
 	"action-globalblock-whitelist": "tắt tác vụ cấm toàn cục tại địa phương",
 	"right-globalblock-exempt": "Bỏ qua vụ cấm toàn cục",
-	"action-globalblock-exempt": "bỏ qua vụ cấm toàn cục"
+	"action-globalblock-exempt": "bỏ qua vụ cấm toàn cục",
+	"apihelp-globalblock-param-target": "Địa chỉ IP mục tiêu.",
+	"apihelp-globalblock-example-1": "Block 192.0.2.1 vô thời hạn với lý do \"Cross-wiki abuse\"",
+	"apihelp-query+globalblocks-description": "Danh sách các địa chỉ IP bị cấm trên toàn hệ thống."
 }
