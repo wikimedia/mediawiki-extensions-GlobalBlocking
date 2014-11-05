@@ -110,5 +110,7 @@
 	"action-globalblock-whitelist": "lokalne odblokowywanie globalnych blokad",
 	"right-globalblock-exempt": "Ignorowanie globalnych blokad",
 	"action-globalblock-exempt": "ignorowanie globalnych blokad",
-	"apihelp-globalblock-description": "Zablokuj lub odblokuj użytkownika globalnie."
+	"apihelp-globalblock-description": "Zablokuj lub odblokuj użytkownika globalnie.",
+	"apihelp-globalblock-param-target": "Docelowy adres IP.",
+	"apihelp-query+globalblocks-description": "Spis globalnie zablokowanych adresów IP."
 }
