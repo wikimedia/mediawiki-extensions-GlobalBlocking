@@ -6,7 +6,9 @@
 		]
 	},
 	"globalblocking-block-reason": "دليل:",
+	"globalblocking-block-otherreason": "هنی/دلیل اضافی:",
 	"globalblocking-block-reasonotherlist": "دليل هنی",
+	"globalblocking-block-edit-dropdown": "ویرایشت دلیلیا نهاگرتن",
 	"globalblocking-block-expiry": "تموم بين:",
 	"globalblocking-block-expiry-other": "وخت تموم بيئن هنی",
 	"globalblocking-block-expiry-selector-other": "وخت هنی:",
