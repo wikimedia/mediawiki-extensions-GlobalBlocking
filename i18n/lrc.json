@@ -30,5 +30,6 @@
 	"globalblocking-whitelist-submit": "آلشت دئن حال و بال ولات نشینی",
 	"globalblocking-logpage": "قلف جهونی پهرستنومه",
 	"globalblocking-showlog": "نشونی ای آی پی دماتر قلف بیه.\nقلف ای پهرستنومه وا سرچشمه هاری دروس بیه:",
-	"globalblocklist": "نوم گه نشونی یا آپی یی که د جهون قلف بینه"
+	"globalblocklist": "نوم گه نشونی یا آپی یی که د جهون قلف بینه",
+	"apihelp-globalblock-param-target": "تیرنشون آی پی حاستنی."
 }
