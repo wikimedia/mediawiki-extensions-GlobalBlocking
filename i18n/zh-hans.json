@@ -125,6 +125,9 @@
 	"apihelp-globalblock-param-reason": "封禁/解封原因。",
 	"apihelp-globalblock-example-1": "无限期封禁192.0.2.1，原因“跨wiki滥用”",
 	"apihelp-query+globalblocks-description": "列出所有全域封禁的IP地址。",
+	"apihelp-query+globalblocks-param-start": "枚举的起始时间戳。",
+	"apihelp-query+globalblocks-param-end": "枚举的结束时间戳。",
 	"apihelp-query+globalblocks-param-prop": "要获得的属性。",
-	"apihelp-query+globalblocks-example-1": "列出所有全域封禁"
+	"apihelp-query+globalblocks-example-1": "列出所有全域封禁",
+	"apihelp-query+globalblocks-example-2": "列出对IP地址192.0.2.18做出的全域封禁"
 }
