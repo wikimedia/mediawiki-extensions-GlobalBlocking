@@ -24,7 +24,7 @@
 	"globalblocking-block-options": "Налады:",
 	"globalblocking-ipaddress": "IP-адрас:",
 	"globalblocking-ipbanononly": "Блякаваць толькі ананімаў",
-	"globalblocking-block-errors": "Блякаваньне не адбылося па {{PLURAL:$1|1=наступнай прычыне|наступных прычынах}}:",
+	"globalblocking-block-errors": "Блякаваньне не адбылося з {{PLURAL:$1|1=наступнай прычыны|наступных прычынаў}}:",
 	"globalblocking-block-ipinvalid": "Уведзены Вамі ІР-адрас ($1) — няслушны.\nКалі ласка, зьвярніце ўвагу, што Вы ня можаце ўводзіць імя ўдзельніка!",
 	"globalblocking-block-expiryinvalid": "Уведзены Вамі тэрмін блякаваньня ($1) — няслушны.",
 	"globalblocking-block-submit": "Заблякаваць гэты ІР-адрас глябальна",
