@@ -38,15 +38,26 @@ class GlobalBlocking {
 			$blockExpiry = $wgLang->formatExpiry( $block->gb_expiry );
 			$display_wiki = WikiMap::getWikiName( $block->gb_by_wiki );
 			$blockingUser = self::maybeLinkUserpage( $block->gb_by_wiki, $block->gb_by );
+			if ( IP::isValid( $block->gb_address ) ) {
+				$errorMsg = 'globalblocking-ipblocked';
+				$hookName = 'GlobalBlockingBlockedIpMsg';
+				$apiErrorInfo = 'You have been globally blocked from editing';
+			} elseif ( IP::isValidBlock( $block->gb_address ) ) {
+				$errorMsg = 'globalblocking-ipblocked-range';
+				$hookName = 'GlobalBlockingBlockedIpRangeMsg';
+				$apiErrorInfo = 'Your IP is in a range that has been globally blocked from editing';
+			} else {
+				throw new MWException( "This should not happen. IP globally blocked is not valid and is not a valid range?" );
+			}
+
 			// Allow site customization of blocked message.
-			$blockedIpMsg = 'globalblocking-ipblocked';
-			Hooks::run( 'GlobalBlockingBlockedIpMsg', array( &$blockedIpMsg ) );
-			ApiBase::$messageMap[$blockedIpMsg] = array(
-				'code' => $blockedIpMsg,
-				'info' => 'You have been globally blocked from editing',
+			Hooks::run( $hookName, array( &$errorMsg ) );
+			ApiBase::$messageMap[$errorMsg] = array(
+				'code' => $errorMsg,
+				'info' => $apiErrorInfo,
 			);
-			return $result = array( $blockedIpMsg,
-				$blockingUser, $display_wiki, $block->gb_reason, $blockTimestamp, $blockExpiry, $ip );
+			return $result = array( $errorMsg, $blockingUser, $display_wiki, $block->gb_reason,
+				$blockTimestamp, $blockExpiry, $ip, $block->gb_address );
 		}
 
 		if ( $wgGlobalBlockingBlockXFF ) {
