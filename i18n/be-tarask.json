@@ -41,7 +41,7 @@
 	"globalblocking-search-ip": "IP-адрас:",
 	"globalblocking-search-submit": "Пошук блякаваньняў",
 	"globalblocking-list-ipinvalid": "Няслушны ІР-адрас ($1), які Вы шукаеце.\nКалі ласка, увядзіце слушны ІР-адрас.",
-	"globalblocking-search-errors": "Ваш пошук быў няўдалым па {{PLURAL:$1|1=наступнай прычыне|наступных прычынах}}:",
+	"globalblocking-search-errors": "Ваш пошук быў няўдалым з {{PLURAL:$1|1=наступнай прычыны|наступных прычынаў}}:",
 	"globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> (''$3'') глябальна заблякаваў [[Special:Contributions/$4|$4]] ''($5)''",
 	"globalblocking-list-expiry": "канчаецца $1",
 	"globalblocking-list-anononly": "толькі ананімаў",
