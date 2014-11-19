@@ -61,7 +61,7 @@
 	"globalblocking-unblock-submit": "Разблякаваць глябальна",
 	"globalblocking-unblock-reason": "Прычына:",
 	"globalblocking-unblock-unblocked": "Вы пасьпяхова глябальна разблякавалі IP-адрас '''$1''' (#$2)",
-	"globalblocking-unblock-errors": "Спроба глябальнага разблякаваньня не атрымалася па {{PLURAL:$1|1=наступнай прычыне|наступных прычынах}}:",
+	"globalblocking-unblock-errors": "Спроба глябальнага разблякаваньня не атрымалася з {{PLURAL:$1|1=наступнай прычыны|наступных прычынаў}}:",
 	"globalblocking-unblock-successsub": "Глябальнае разблякаваньне пасьпяховае",
 	"globalblocking-unblock-subtitle": "Зьняцьце глябальнага блякаваньня",
 	"globalblocking-unblock-intro": "Вы можаце карыстацца гэтай формай для глябальнага разблякаваньня.",
