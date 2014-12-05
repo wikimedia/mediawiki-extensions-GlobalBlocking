@@ -12,7 +12,8 @@
 			"Sahim",
 			"Wayiran",
 			"ZxxZxxZ",
-			"Calak"
+			"Calak",
+			"Mehran"
 		]
 	},
 	"globalblocking-desc": "قطع دسترسی نشانی‌های اینترنتی [[Special:GlobalBlockList|در چندین ویکی]] را [[Special:GlobalBlock|ممکن می‌سازد]]",
@@ -112,5 +113,8 @@
 	"right-globalblock-whitelist": "غیرفعال‌کردن قطع دسترسی‌های سراسری به طور محلی",
 	"action-globalblock-whitelist": "غیرفعال‌کردن قطع دسترسی‌های سراسری به‌صورت محلی",
 	"right-globalblock-exempt": "گذرگاه قطع دسترسی‌های سراسری",
-	"action-globalblock-exempt": "کنارگذاشتن قطع دسترسی‌های سراسری"
+	"action-globalblock-exempt": "کنارگذاشتن قطع دسترسی‌های سراسری",
+	"apihelp-globalblock-description": "بستن یا باز کردن یک حساب به صورت سراسری.",
+	"apihelp-globalblock-param-target": "آدرس آی‌پی مقصد.",
+	"apihelp-query+globalblocks-example-1": "فهرست همه بندایش‌های سراسری"
 }
