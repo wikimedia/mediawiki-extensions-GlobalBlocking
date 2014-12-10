@@ -110,5 +110,7 @@
 	"right-globalblock-whitelist": "Globale Sperren lokal aufheben",
 	"action-globalblock-whitelist": "globale Sperren lokal aufzuheben",
 	"right-globalblock-exempt": "Globale Sperren umgehen",
-	"action-globalblock-exempt": "globale Sperren zu umgehen"
+	"action-globalblock-exempt": "globale Sperren zu umgehen",
+	"apihelp-globalblock-param-target": "Die Ziel-IP-Adresse.",
+	"apihelp-query+globalblocks-example-1": "Alle globale Sperren auflisten"
 }

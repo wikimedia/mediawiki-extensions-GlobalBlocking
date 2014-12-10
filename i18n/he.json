@@ -108,5 +108,6 @@
 	"right-globalblock-whitelist": "ביטול חסימות גלובליות באופן מקומי",
 	"action-globalblock-whitelist": "לכבות חסימות גלובליות באופן מקומי",
 	"right-globalblock-exempt": "עקיפת חסימות גלובליות",
-	"action-globalblock-exempt": "לעקוף חסימות גלובליות"
+	"action-globalblock-exempt": "לעקוף חסימות גלובליות",
+	"apihelp-query+globalblocks-example-1": "רשימת כל החסימות הגלובליות"
 }
