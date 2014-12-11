@@ -113,5 +113,7 @@
 	"right-globalblock-whitelist": "本地停用全域封鎖",
 	"action-globalblock-whitelist": "本地停用全域封鎖",
 	"right-globalblock-exempt": "忽略全域封鎖",
-	"action-globalblock-exempt": "忽略全域封鎖"
+	"action-globalblock-exempt": "忽略全域封鎖",
+	"apihelp-globalblock-param-target": "目標 IP 位址。",
+	"apihelp-query+globalblocks-example-1": "所有全域封鎖清單"
 }
