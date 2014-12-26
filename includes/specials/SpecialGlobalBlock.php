@@ -95,7 +95,10 @@ class SpecialGlobalBlock extends SpecialPage {
 		return $errorstr;
 	}
 
-	function loadParameters( $par ) {
+	/**
+	 * @param string $par
+	 */
+	private function loadParameters( $par ) {
 		$request = $this->getRequest();
 
 		$this->mAddress = trim( $request->getText( 'wpAddress' ) );
@@ -111,7 +114,11 @@ class SpecialGlobalBlock extends SpecialPage {
 		}
 		$this->mAnonOnly = $request->getBool( 'wpAnonOnly' );
 		$this->mAlsoLocal = $request->getBool( 'wpAlsoLocal' );
-		$this->mModify = $request->getBool( 'wpModify' );
+
+		$this->mModify = $request->getBool( 'wpModify' )
+			&& $this->mAddress
+			&& GlobalBlocking::getGlobalBlockId( $this->mAddress );
+
 		$this->mModifyForm = $request->getCheck( 'modify' );
 	}
 
