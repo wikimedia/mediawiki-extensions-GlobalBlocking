@@ -6,7 +6,8 @@
 			"KlaudiuMihaila",
 			"Mihai",
 			"Minisarm",
-			"Stelistcristi"
+			"Stelistcristi",
+			"Gikü"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permite]] ca adresele IP să fie [[Special:GlobalBlockList|blocate pe mai multe wikiuri]]",
@@ -68,7 +69,7 @@
 	"globalblocking-whitelist-legend": "Schimbă statut local",
 	"globalblocking-whitelist-reason": "Motiv:",
 	"globalblocking-whitelist-status": "Statut local:",
-	"globalblocking-whitelist-statuslabel": "Dezactivează această blocare gloablă pe {{SITENAME}}",
+	"globalblocking-whitelist-statuslabel": "Dezactivează această blocare globală pe {{SITENAME}}",
 	"globalblocking-whitelist-submit": "Schimbă statut local",
 	"globalblocking-whitelist-whitelisted": "Blocarea #$2 a adresei IP '''$1''' la {{SITENAME}} a fost dezactivată cu succes.",
 	"globalblocking-whitelist-dewhitelisted": "Blocarea #$2 a adresei IP '''$1''' la {{SITENAME}} a fost reactivată cu succes.",

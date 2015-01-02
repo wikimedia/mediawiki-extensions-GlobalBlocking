@@ -7,7 +7,8 @@
 			"AwamerT",
 			"Loya",
 			"Meno25",
-			"OsamaK"
+			"OsamaK",
+			"Abanima"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|يسمح]] بمنع عناوين الأيبي [[Special:GlobalBlockList|عبر ويكيات متعددة]]",
@@ -35,8 +36,10 @@
 	"globalblocking-modify-success": "المنع العام على $1 تم تعديله بنجاح",
 	"globalblocking-block-successsub": "نجح المنع العام",
 	"globalblocking-modify-successsub": "المنع العام تم تعديله بنجاح",
+	"globalblocking-local-failed": "لم ينجح منع عنوان IP محلياً لأن هذا العنوان ممنوع حالياً على هذا الويكي.",
 	"globalblocking-block-alreadyblocked": "عنوان الأيبي $1 ممنوع منعا عاما بالفعل.\nيمكنك رؤية المنع الموجود في [[Special:GlobalBlockList|قائمة عمليات المنع العامة]]،\nأو تعديل إعدادات المنع الموجود عن طريق إعادة تنفيذ هذه الاستمارة.",
 	"globalblocking-block-bigrange": "النطاق الذي حددته ($1) كبير جدا للمنع. يمكنك منع، كحد أقصى، 65,536 عنوان (نطاقات /16)",
+	"globalblocking-also-local": "امنع أيضاً عنوان IP محلياً على هذا الويكي",
 	"globalblocking-list-intro": "هذه قائمة بكل عمليات المنع العامة الحالية. بعض عمليات المنع معلمة كمعطلة محليا: هذا يعني أنها تنطبق على المواقع الأخرى، لكن إداريا محليا قرر تعطيلها في هذا الويكي.",
 	"globalblocking-list": "قائمة عناوين الأيبي الممنوعة منعا عاما",
 	"globalblocking-search-legend": "بحث عن منع عام",
@@ -94,6 +97,7 @@
 	"globalblocking-logentry-expiry": "ينتهي في $1",
 	"globalblocking-logentry-noexpiry": "لا انتهاء مضبوط",
 	"globalblocking-loglink": "عنوان الأيبي $1 ممنوع منعا عاما ([[{{#Special:GlobalBlockList}}/$1|تفاصيل كاملة]]).",
+	"globalblocking-contribs-notice": "هذا العنوان IP ممنوع منعاً شاملاً حالياً.\nمدخلة سجل المنع الشامل معروضة فيما يلي لاستشارتها:",
 	"globalblocking-showlog": "عنوان الأيبي هذا تم منعه مسبقا.\nسجل المنع معروض بالأسفل كمرجع:",
 	"globalblocklist": "قائمة عناوين الأيبي الممنوعة منعا عاما",
 	"globalblock": "منع عام لعنوان أيبي",
@@ -104,5 +108,13 @@
 	"right-globalblock-whitelist": "تعطيل عمليات المنع العامة محليا",
 	"action-globalblock-whitelist": "تعطيل عمليات المنع العامة محليا",
 	"right-globalblock-exempt": "تجاوز عمليات المنع العامة",
-	"action-globalblock-exempt": "تجاوز عمليات المنع العامة"
+	"action-globalblock-exempt": "تجاوز عمليات المنع العامة",
+	"apihelp-globalblock-description": "امنع مستخدماً منعاً شاملاً أو ارفع المنع الشامل عنه.",
+	"apihelp-globalblock-param-target": "عنوان IP المستهدف.",
+	"apihelp-globalblock-param-expiry": "في حال التحديد سيتم منع المستخدم أو إعادة منعه. يحدد مدة استمرار المنع، مثلاً «أسبوعين» أو «5 أشهر». في حال تعيين قيمة «لانهائي» أو «غير محدد» لن تنتهي مدة المنع أبداً.",
+	"apihelp-globalblock-param-unblock": "في حال التحديد سيتم رفع المنع عن المستخدم.",
+	"apihelp-globalblock-param-reason": "سبب المنع/رفع المنع.",
+	"apihelp-globalblock-param-anononly": "لا تحدد هذا الخيار إلا إذا وجب أن يشمل المنع المستخدمين غير مسجلي الدخول.",
+	"apihelp-globalblock-example-1": "امنع 192.0.2.1 لمدة غير محددة بسبب «سوء المعاملة على ويكيات متعددة»",
+	"apihelp-query+globalblocks-description": "اسرد جميع عناوين IP الممنوعة منعاً شاملاً."
 }
