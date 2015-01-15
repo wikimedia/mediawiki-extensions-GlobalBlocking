@@ -24,7 +24,7 @@
 	"globalblocking-block-legend": "adresa IP'yi bı global bloke bıker",
 	"globalblocking-block-options": "Weçinegi:",
 	"globalblocking-ipaddress": "Adresa IP'i:",
-	"globalblocking-ipbanononly": "Anonim karbera tenya bloqe ke",
+	"globalblocking-ipbanononly": "Karberanê anoniman tenya bloke ke",
 	"globalblocking-block-errors": "blokekerdış nêbı, semedê no {{PLURAL:$1|sebeb ra|sebeban ra}}:",
 	"globalblocking-block-ipinvalid": "IP addresa ke şıma pê keweni cı ($1) nemeqbulo.\nxo vir ra mekerê ke şıma nêeşkeni pê nameyê yew karberi cıkewi!",
 	"globalblocking-block-expiryinvalid": "Girdiğiniz bitiş ($1) geçersiz.",
