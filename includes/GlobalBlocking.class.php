@@ -235,7 +235,7 @@ class GlobalBlocking {
 	 * @param $id null|int
 	 * @param $address null|string
 	 * @return array|bool
-	 * @throws MWException
+	 * @throws Exception
 	 */
 	static function getWhitelistInfo( $id = null, $address = null ) {
 		if ( $id != null ) {
@@ -244,7 +244,7 @@ class GlobalBlocking {
 			$conds = array( 'gbw_address' => $address );
 		} else {
 			//WTF?
-			throw new MWException( "Neither Block IP nor Block ID given for retrieving whitelist status" );
+			throw new Exception( "Neither Block IP nor Block ID given for retrieving whitelist status" );
 		}
 
 		$dbr = wfGetDB( DB_SLAVE );
