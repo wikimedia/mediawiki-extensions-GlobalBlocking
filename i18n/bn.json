@@ -61,7 +61,7 @@
 	"globalblocking-unblock-successsub": "বৈশ্বিক বাধা সফলভাবে তুলে নেওয়া হয়েছে।",
 	"globalblocking-unblock-subtitle": "বৈশ্বিক বাধা তুলে নেওয়া হয়েছে",
 	"globalblocking-unblock-intro": "গ্লোবাল বাধা তুলে নিতে আপনি নিচের ফর্মটি ব্যবহার করতে পারেন।",
-	"globalblocking-whitelist": "গ্লোবাল বাধা স্থানীয় অবস্থা",
+	"globalblocking-whitelist": "বৈশ্বিক বাধাদানের স্থানীয় অবস্থা",
 	"globalblocking-whitelist-notapplied": "এই উইকির ক্ষেত্রে গ্লোবাল ব্লক প্রযোজ্য নয়,\nতাই গ্লোবাল ব্লকের স্থানীয় অবস্থা পরিবর্তন সম্ভব না।",
 	"globalblocking-whitelist-legend": "স্থানীয় অবস্থা পরিবর্তন",
 	"globalblocking-whitelist-reason": "কারণ:",
@@ -93,6 +93,6 @@
 	"action-globalblock": "বৈশ্বিক বাধা তৈরি বা বাতিল করো",
 	"right-globalblock-whitelist": "স্থানীয়ভাবে বৈশ্বিক বাধাদান নিষ্ক্রিয় করো",
 	"action-globalblock-whitelist": "স্থানীয়ভাবে বৈশ্বিক বাধাদান নিষ্ক্রিয় করো",
-	"right-globalblock-exempt": "গ্লোবাল বাধা বাইপাস করো",
+	"right-globalblock-exempt": "বৈশ্বিক বাধা বাইপাস করো",
 	"action-globalblock-exempt": "বৈশ্বিক বাধা বাইপাস করো"
 }
