@@ -98,5 +98,7 @@
 	"right-globalblock-whitelist": "Disabbilete le blocche globale localmende",
 	"action-globalblock-whitelist": "disabbilete le blocche globbale localmende",
 	"right-globalblock-exempt": "Zumbe le blocche globale",
-	"action-globalblock-exempt": "zumbe le blocche globbale"
+	"action-globalblock-exempt": "zumbe le blocche globbale",
+	"apihelp-query+globalblocks-param-prop": "Quale probbietà da pigghià.",
+	"apihelp-query+globalblocks-example-1": "Elenghe de tutte le blocche globbale"
 }
