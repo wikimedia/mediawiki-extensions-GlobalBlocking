@@ -39,6 +39,13 @@ $specialPageAliases['as'] = array(
 	'GlobalBlockList' => array( 'গোলকীয়_অৱৰোধ_তালিকা' ),
 );
 
+/** Avaric (авар) */
+$specialPageAliases['av'] = array(
+	'GlobalBlock' => array( 'Глобальная_блокировка' ),
+	'GlobalBlockList' => array( 'Список_глобальных_блокировок', 'Глобальные_блокировки' ),
+	'RemoveGlobalBlock' => array( 'Глобальная_разблокировка' ),
+);
+
 /** Bashkir (башҡортса) */
 $specialPageAliases['ba'] = array(
 	'GlobalBlock' => array( 'GlobalBlock' ),
