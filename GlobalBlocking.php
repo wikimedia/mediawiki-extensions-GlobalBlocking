@@ -23,6 +23,7 @@ $wgExtensionCredits['other'][] = array(
 	'author'         => 'Andrew Garrett',
 	'descriptionmsg' => 'globalblocking-desc',
 	'url'            => 'https://www.mediawiki.org/wiki/Extension:GlobalBlocking',
+	'license-name'   => 'GPL-2.0+',
 );
 
 $wgMessagesDirs['GlobalBlocking'] = __DIR__ . '/i18n';
