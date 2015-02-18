@@ -17,7 +17,8 @@
 			"Sanbec",
 			"Translationista",
 			"Vivaelcelta",
-			"Macofe"
+			"Macofe",
+			"Kroji"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permite]] bloquear direcciones IP [[Special:GlobalBlockList|simultáneamente en varios wikis]]",
@@ -92,7 +93,7 @@
 	"globalblocking-whitelist-nochange": "Usted no hizo ningún cambio al estado local de este bloqueo.\n[[Special:GlobalBlockList|Volver a la lista de bloqueos globales]].",
 	"globalblocking-whitelist-errors": "Su cambio al estatus local de un bloqueo global no tuvo éxito, a causa de {{PLURAL:$1|la siguiente razón|las siguientes razones}}:",
 	"globalblocking-whitelist-intro": "Puedes usar este formulario para editar el estatus local de un bloqueo global.\nSi un bloqueo global está desactivado en esta wiki, los usuarios de la dirección IP afectada podrán editar normalmente.\n[[Special:GlobalBlockList|Volver a la lista de bloqueos globales]].",
-	"globalblocking-ipblocked": "'''Tu dirección IP fue bloqueada en todos los wikis.'''\n\n$1 ($2) realizó el bloqueo.\nEl motivo aducido es ''$3''.\n\n* Fecha de inicio del bloqueo: $4 \n* Fecha de finalización del bloqueo: $5 \n\nPuedes ponerte en contacto con $1 para discutir el bloqueo.\nNo podrás utilizar la función «{{int:emailuser}}» si no especificaste una dirección de correo electrónico válida en [[Special:Preferences|tus preferencias]] y si han bloqueado el uso de la herramienta.\nTu dirección IP actual es $6.\nIncluye todos los detalles anteriores en las consultas que realices.",
+	"globalblocking-ipblocked": "'''Tu dirección IP ha sido bloqueada en todos los wikis.'''\n\n$1 ($2) realizó el bloqueo.\nEl motivo aducido es ''$3''.\n\n* Fecha de inicio del bloqueo: $4 \n* Fecha de finalización del bloqueo: $5 \n\nPuedes ponerte en contacto con $1 para discutir el bloqueo.\nNo podrás utilizar la función «{{int:emailuser}}» si no especificaste una dirección de correo electrónico válida en [[Special:Preferences|tus preferencias]], o si te han prohibido el uso de la herramienta.\nTu dirección IP actual es $6.\nIncluye todos los detalles anteriores en cualquier consulta que realices sobre el tema.",
 	"globalblocking-ipblocked-xff": "'''Uno o más servidores proxy usados por tu petición se encuentran bloqueados globalmente'''\n\nEl bloqueo fue hecho por $1 ($2).\nLa razón dada es ''$3''.\n\n* Inicio del bloqueo: $4\n* Expiración del bloqueo: $5\n\nPuedes conectar a $1 para discutir el bloqueo.\nNo puedes usar la función de \"{{int:emailuser}}\" hasta que no especifiques una dirección de correo electrónico válida en las [[Special:Preferences|preferencias de tu cuenta]] y no hayas sido bloqueado para su uso.\nLa dirección del proxy bloqueado fue $6.\nPor favor incluye todos los detalles mostrados arriba en las consultas que realices.",
 	"globalblocking-blocked-nopassreset": "No puede solicitar recordatorios de claves de usuario porque usted está bloqueado globalmente.",
 	"globalblocking-logpage": "Registro de bloqueos globales",
