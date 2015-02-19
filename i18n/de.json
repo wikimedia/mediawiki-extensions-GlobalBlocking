@@ -114,6 +114,7 @@
 	"apihelp-globalblock-description": "Sperrt einen Benutzer global oder gibt ihn wieder frei.",
 	"apihelp-globalblock-param-target": "Die Ziel-IP-Adresse.",
 	"apihelp-globalblock-param-unblock": "Falls angegeben, wird der Benutzer freigegeben.",
+	"apihelp-globalblock-param-reason": "Der Grund für das Sperren/Entsperren.",
 	"apihelp-query+globalblocks-description": "Alle global gesperrten IP-Adressen auflisten.",
 	"apihelp-query+globalblocks-example-1": "Alle globale Sperren auflisten"
 }
