@@ -14,7 +14,8 @@
 			"Verdy p",
 			"Wyz",
 			"Zetud",
-			"0x010C"
+			"0x010C",
+			"Nicolapps"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permet]] de bloquer des adresses IP [[Special:GlobalBlockList|à travers plusieurs wikis]]",
@@ -116,6 +117,8 @@
 	"right-globalblock-exempt": "Passer outre les blocages globaux",
 	"action-globalblock-exempt": "passer outre les blocages globaux",
 	"apihelp-globalblock-param-target": "L'adresse IP cible.",
+	"apihelp-globalblock-param-unblock": "Si spécifié, débloquera l'utilisateur.",
+	"apihelp-globalblock-param-reason": "La raison du blocage/déblocage.",
 	"apihelp-query+globalblocks-description": "Liste toutes les adresses IP bloquées globalement.",
 	"apihelp-query+globalblocks-param-start": "L’horodatage auquel démarrer l’énumération.",
 	"apihelp-query+globalblocks-param-end": "L’horodatage auquel terminer l’énumération."
