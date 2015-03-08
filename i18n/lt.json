@@ -43,7 +43,7 @@
 	"globalblocking-unblock-legend": "Pašalinti pasaulini blokavimą",
 	"globalblocking-unblock-submit": "Pašalinti pasaulini blokavimą",
 	"globalblocking-unblock-reason": "Priežastis:",
-	"globalblocking-unblock-unblocked": "Jūs sėkmingai pašalinote pasaulini blokavimą # $2  IP adresui '''$1'''",
+	"globalblocking-unblock-unblocked": "Jūs sėkmingai panaikinote globalų blokavimą # $2  IP adresui '''$1'''",
 	"globalblocking-unblock-errors": "Jūsų šalinimas pasaulinio blokavimo buvo nesėkmingas dėl sekančių {{PLURAL:$1|priežasties|priežasčių}}",
 	"globalblocking-unblock-successsub": "Pasaulinis blokavimas sėkmingai pašalintas",
 	"globalblocking-unblock-subtitle": "Šalinamas pasaulinis blokavimas",
