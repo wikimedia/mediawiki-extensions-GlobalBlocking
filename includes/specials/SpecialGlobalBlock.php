@@ -162,16 +162,27 @@ class SpecialGlobalBlock extends SpecialPage {
 			$block->mReason = $reasonstr;
 			$block->mExpiry = SpecialBlock::parseExpiryInput( $this->mExpiry );
 			$block->isHardblock( !$this->mAnonOnly );
-			$block->prevents( 'createaccount', !$this->mAnonOnly );
+			$block->prevents( 'createaccount', true );
+			$block->prevents( 'editownusertalk', !$this->getConfig()->get('BlockAllowsUTEdit') );
+
 			$blockSuccess = $block->insert();
 
-			if( $blockSuccess ) {
+			if ( $blockSuccess ) {
 				$log = new LogPage( 'block' );
+				$flags = array();
+
+				if ( $this->mAnonOnly ) {
+					$flags[] = 'anononly';
+				}
+				$flags[] = 'nocreate';
+
+				$logParams = implode( ',', $flags );
+
 				$log_id = $log->addEntry(
 					'block',
 					Title::makeTitle( NS_USER, $this->mAddress ),
 					$reasonstr,
-					array( $this->mExpiry ),
+					array( $this->mExpiry, $logParams ),
 					$this->getUser()
 				);
 
