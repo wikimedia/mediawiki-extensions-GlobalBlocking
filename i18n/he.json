@@ -109,5 +109,7 @@
 	"action-globalblock-whitelist": "לכבות חסימות גלובליות באופן מקומי",
 	"right-globalblock-exempt": "עקיפת חסימות גלובליות",
 	"action-globalblock-exempt": "לעקוף חסימות גלובליות",
-	"apihelp-query+globalblocks-example-1": "רשימת כל החסימות הגלובליות"
+	"apihelp-query+globalblocks-param-prop": "אילו מאפיינים להחזיר.",
+	"apihelp-query+globalblocks-example-1": "רשימת כל החסימות הגלובליות",
+	"apihelp-query+globalblocks-example-2": "רשימת חסימות גלובלית של כתובת IP של 192.0.2.18"
 }
