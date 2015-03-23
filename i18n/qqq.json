@@ -26,7 +26,7 @@
 			"Liuxinyu970226"
 		]
 	},
-	"globalblocking-desc": "{{desc|name=Global Blocking|url=http://www.mediawiki.org/wiki/Extension:GlobalBlocking}}",
+	"globalblocking-desc": "{{desc|name=Global Blocking|url=https://www.mediawiki.org/wiki/Extension:GlobalBlocking}}",
 	"globalblocking-block": "{{Identical|Globally block IP address}}",
 	"globalblocking-expiry-options": "{{notranslate}}",
 	"globalblocking-block-reason": "{{Identical|Reason}}",
