@@ -78,6 +78,7 @@
 	"globalblocking-whitelist-nochange": "Niste napravili izmenu u lokalnom statusu ove blokade.\n[[Special:GlobalBlockList|Nazad na spisak globalnih blokada]].",
 	"globalblocking-whitelist-errors": "Ne možete da promenite lokalno stanje globalne blokade zbog {{PLURAL:$1|sledećeg razloga|sledećih razloga}}:",
 	"globalblocking-whitelist-intro": "Možete da koristite ovaj obrazac da menjate lokalni status neke globalne blokade.\nAko je globalna blokada onemogućena na ovom vikiju, korisnici na toj IP adresi će moći da uređuju normalno.\n[[Special:GlobalBlockList|Nazad na spisak globalnih blokada]].",
+	"globalblocking-ipblocked": "'''Vaša IP adresa je blokirana na svim vikijim.'''\n\nBlokirao vas je $1 ($2).\nRazlog: ''$3''.\n\n* Početak blokade: $4\n* Kraj blokade: $5\n\nMožete se obratiti $1 da razjasnite zašto ste blokirani.\nFunkcija „{{int:emailuser}}“ vam je dostupna samo ako ste naveli valjanu e-adresu u [[Special:Preferences|podešavanjima]] i nije vam onemogućeno korišćenje iste.\nVaša trenutna IP adresa je $6. \nZa svaki eventualni zahtev obavezno navedite podatke iznad.",
 	"globalblocking-blocked-nopassreset": "Ne možete da promenite lozinku korisnika jer ste globalno blokirani.",
 	"globalblocking-logpage": "Dnevnik globalnih blokiranja",
 	"globalblocking-block-logentry": "globalno blokirao [[$1]] sa vremenom isticanja od $2",
