@@ -58,6 +58,14 @@ $specialPageAliases['be-tarask'] = array(
 	'GlobalBlockList' => array( 'Сьпіс_глябальных_блякаваньняў' ),
 );
 
+/** Western Balochi (بلوچی رخشانی) */
+$specialPageAliases['bgn'] = array(
+	'GlobalBlock' => array( 'سراسرین_بستین' ),
+	'GlobalBlockList' => array( 'سراسرین_بسته_بوته_ئانی_لیست' ),
+	'RemoveGlobalBlock' => array( 'سراسری_ئی_پاچ_کورتین' ),
+	'GlobalBlockStatus' => array( 'سراسرین_بستن_ئی_سپیت_لیست' ),
+);
+
 /** Banjar (Bahasa Banjar) */
 $specialPageAliases['bjn'] = array(
 	'GlobalBlock' => array( 'Pamblukiran_global' ),
