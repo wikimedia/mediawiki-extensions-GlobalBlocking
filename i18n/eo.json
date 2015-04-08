@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Yekrats"
+			"Yekrats",
+			"Tlustulimu"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permesas]] IP-adreso esti [[Special:GlobalBlockList|forbarita trans multaj vikioj]].",
@@ -74,7 +75,7 @@
 	"globalblocking-whitelist-nochange": "Vi faris neniun ŝanĝon al la loka statuso de ĉi tiu forbaro.\n[[Special:GlobalBlockList|Reiri al la listo de ĝeneralaj forbaroj]].",
 	"globalblocking-whitelist-errors": "Via ŝanĝo al la loka statuso de ĝenerala forbaro malsukcesis, pro la {{PLURAL:$1|jena kialo|jenaj kialoj}}:",
 	"globalblocking-whitelist-intro": "Vi povas uzi ĉi tiun paĝon por redakti la lokan statuson de ĝenerala forbaro.\nSe ĝenerala forbaro estas malŝaltita en ĉi tiu vikio, uzantoj de tiu IP-adreso eblos redakti norme.\n[[Special:GlobalBlockList|Reiri al la listo de ĝeneralaj forbaroj]].",
-	"globalblocking-ipblocked": "'''Via IP-adreso estis forbarita en ĉiuj vikioj.'''\n\nLa forbaro estis farita de $1 ($2).\nLa kialo estis ''$3''.\n\n* Komenco de forbaro: $4\n* Fino de forbaro: $5\n\nVi povas kontakti uzanton $1 por diskuti la forbaron.\nVi nur povas uzi la funkcion \"{{int:emailuser}}\" se valida retpoŝtadreso estas donita en viaj [[Special:Preferences|kontaj preferoj]] kaj vi ne estis forbarita de uzante ĝin.\nVia nuna IP-adreso estas $6.\nBonvolu inkluzivi ĉiom da la suprajn detalojn en iu ajn demandoj.",
+	"globalblocking-ipblocked": "'''Via IP-adreso estis forbarita en ĉiuj vikioj.'''\n\nLa forbaro estis farita de $1 ($2).\nLa kialo estis ''$3''.\n\n* Komenco de forbaro: $4\n* Fino de forbaro: $5\n\nVi povas kontakti uzanton $1 por diskuti la forbaron.\nVi nur povas uzi la funkcion \"{{int:emailuser}}\" se valida retpoŝtadreso estas donita en viaj [[Special:Preferences|kontaj preferoj]] kaj vi ne estis forbarita uzi ĝin.\nVia nuna IP-adreso estas $6.\nBonvolu inkluzivi ĉiujn suprajn detalojn en iuj ajn demandoj.",
 	"globalblocking-blocked-nopassreset": "Vi ne povas restarigi pasvortojn de aliaj uzantoj, cxar vi estas forbarita ĝenerale.",
 	"globalblocking-logpage": "Protokolo de ĝeneralaj forbaroj",
 	"globalblocking-logpagetext": "Jen protokolo de ĝeneralaj forbaroj kiuj estis faritaj kaj forigitaj en ĉi tiu vikio.\nEstas notinda ke ĝeneralaj forbaroj povas esti faritaj kaj forigitaj en aliaj vikioj, kaj ĉi tiuj forbaroj povas efiki ĉi tiun vikion.\nVidi ĉiujn aktivajn ĝeneralajn forbarojn, vi povas vidi la [[Special:GlobalBlockList|liston de ĝeneralaj forbaroj]].",
