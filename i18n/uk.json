@@ -11,7 +11,8 @@
 			"Prima klasy4na",
 			"RLuts",
 			"Sodmy",
-			"Ата"
+			"Ата",
+			"Piramidion"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Дозволяє]] блокування IP-адрес [[Special:GlobalBlockList|на кількох вікі]]",
@@ -106,9 +107,9 @@
 	"globalblock": "Глобальне блокування IP-адреси",
 	"globalblockstatus": "Локальний стан глобальних блокувань",
 	"removeglobalblock": "Зняти глобальне блокування",
-	"right-globalblock": "Накладання і вилучення глобальних блокувань",
+	"right-globalblock": "накладання та зняття глобальних блокувань",
 	"action-globalblock": "накласти і вилучити глобальні блокування",
-	"right-globalblock-whitelist": "Локальне відключення глобального блокування",
+	"right-globalblock-whitelist": "локальне відключення глобального блокування",
 	"action-globalblock-whitelist": "локальне відключення глобального блокування",
 	"right-globalblock-exempt": "Обхід глобальних блокувань",
 	"action-globalblock-exempt": "обхід глобального блокування"
