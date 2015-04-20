@@ -2,7 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"Prevert",
-			"Toliño"
+			"Toliño",
+			"Banjo",
+			"Elisardojm"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permite]] que os enderezos IP sexan [[Special:GlobalBlockList|bloqueados en múltiples wikis]]",
@@ -30,8 +32,10 @@
 	"globalblocking-modify-success": "O bloqueo global que $1 tiña foi modificado con éxito",
 	"globalblocking-block-successsub": "O bloqueo global realizouse correctamente",
 	"globalblocking-modify-successsub": "O bloqueo global foi modificado con éxito",
+	"globalblocking-local-failed": "Fallou o bloqueo local da dirección IP debido a que a dirección proporcionada xa está bloqueada nesta wiki.",
 	"globalblocking-block-alreadyblocked": "O enderezo IP \"$1\" xa está globalmente bloqueado.\nPode ollar os bloqueos vixentes na [[Special:GlobalBlockList|lista de bloqueos globais]]\nou modificar as características do bloqueo existente volvendo enviar este formulario.",
 	"globalblocking-block-bigrange": "O rango especificado ($1) é demasiado grande para bloquealo. Pode bloquear, como máximo, 65.536 enderezos (/16 rangos)",
+	"globalblocking-also-local": "Bloquear tamén a dirección IP dada nesta wiki",
 	"globalblocking-list-intro": "Esta é unha lista de todos os bloqueos globais vixentes.\nAlgúns bloqueos están marcados como deshabilitados localmente: isto significa que se aplican noutros sitios, pero que un administrador local decidiu retirar o bloqueo neste wiki.",
 	"globalblocking-list": "Lista dos bloqueos globais a enderezos IP",
 	"globalblocking-search-legend": "Procurar bloqueos globais",
@@ -89,6 +93,7 @@
 	"globalblocking-logentry-expiry": "caduca o $1",
 	"globalblocking-logentry-noexpiry": "non hai fixada ningunha caducidade",
 	"globalblocking-loglink": "O enderezo IP $1 está bloqueado globalmente ([[{{#Special:GlobalBlockList}}/$1|máis detalles]]).",
+	"globalblocking-contribs-notice": "Este enderezo IP actualmente está bloqueado globalmente.\nVelaquí está a última entrada do rexistro de bloqueos, por se quere consultala:",
 	"globalblocking-showlog": "Este enderezo IP foi bloqueado previamente.\nVelaquí está o rexistro de bloqueos, por se quere consultalo:",
 	"globalblocklist": "Lista dos bloqueos globais a enderezos IP",
 	"globalblock": "Bloquear globalmente un enderezo IP",
@@ -99,5 +104,15 @@
 	"right-globalblock-whitelist": "Deshabilitar bloqueos globais localmente",
 	"action-globalblock-whitelist": "deshabilitar bloqueos globais localmente",
 	"right-globalblock-exempt": "Saltar bloqueos globais",
-	"action-globalblock-exempt": "saltar bloqueos globais"
+	"action-globalblock-exempt": "saltar bloqueos globais",
+	"apihelp-globalblock-description": "Bloquear ou desbloquear globalmente a un usuario.",
+	"apihelp-globalblock-param-target": "Enderezo IP obxectivo.",
+	"apihelp-globalblock-param-unblock": "Se está indicado, desbloqueará ó usuario.",
+	"apihelp-globalblock-param-reason": "Razón para bloquear/desbloquear.",
+	"apihelp-globalblock-example-1": "Bloquear 192.0.2.1 de forma indefinida coa razón \"Vandalismo Cross-wiki\"",
+	"apihelp-query+globalblocks-description": "Listar tódolos enderezos IP bloqueados globalmente.",
+	"apihelp-query+globalblocks-param-start": "Selo de tempo para comezar a enumeración.",
+	"apihelp-query+globalblocks-param-end": "Selo de tempo para rematar a enumeración.",
+	"apihelp-query+globalblocks-param-prop": "Que propiedades obter.",
+	"apihelp-query+globalblocks-example-1": "Listar tódolos bloqueos globais"
 }
