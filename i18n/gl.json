@@ -109,10 +109,13 @@
 	"apihelp-globalblock-param-target": "Enderezo IP obxectivo.",
 	"apihelp-globalblock-param-unblock": "Se está indicado, desbloqueará ó usuario.",
 	"apihelp-globalblock-param-reason": "Razón para bloquear/desbloquear.",
+	"apihelp-globalblock-param-anononly": "Especifique se o bloque debería afectar só a usuarios non conectados.",
 	"apihelp-globalblock-example-1": "Bloquear 192.0.2.1 de forma indefinida coa razón \"Vandalismo Cross-wiki\"",
 	"apihelp-query+globalblocks-description": "Listar tódolos enderezos IP bloqueados globalmente.",
 	"apihelp-query+globalblocks-param-start": "Selo de tempo para comezar a enumeración.",
 	"apihelp-query+globalblocks-param-end": "Selo de tempo para rematar a enumeración.",
+	"apihelp-query+globalblocks-param-limit": "Máximo número de bloqueos a listar.",
 	"apihelp-query+globalblocks-param-prop": "Que propiedades obter.",
-	"apihelp-query+globalblocks-example-1": "Listar tódolos bloqueos globais"
+	"apihelp-query+globalblocks-example-1": "Listar tódolos bloqueos globais",
+	"apihelp-query+globalblocks-example-2": "Lista os bloqueos globais aplicados á dirección IP 192.0.2.18"
 }
