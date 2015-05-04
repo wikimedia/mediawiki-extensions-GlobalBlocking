@@ -83,7 +83,7 @@
 	"globalblocking-blocked-nopassreset": "თქვენ არ შეგიძლიათ მომხმარებლის პაროლის შეცვლა, რადგან თქვენი ანგარიში გლობალურად ბლოკირებულია.",
 	"globalblocking-logpage": "გლობალური ბლოკირების ჟურნალი",
 	"globalblocking-logpagetext": "ეს არის ამ ვიკიში განხორციელებული გლობალური დაბლოკვების ნუსხა,\nგასათვალისწინებელია, რომ გლობალური ბლოკი შესაძლოა არ იყო დაყენებული ამ ვიკიში - თუმცა ისინი თქვენ ვიკისაც ეხებიან.\nყველა ბლოკის სანახავად იხილეთ [[Special:GlobalBlockList|სია]].",
-	"globalblocking-block-logentry": "გლობალურად დაბლოკილია [[$1]]; ვადა გასდის $2",
+	"globalblocking-block-logentry": "გლობალურად დაიბლოკა [[$1]] ბლოკირების ვადაა $2",
 	"globalblocking-block2-logentry": "გლობალურად დაბლოკილია [[$1]] ($2)",
 	"globalblocking-unblock-logentry": "მოხსნილია გლობალური ბლოკირება [[$1]]-ზე",
 	"globalblocking-whitelist-logentry": "ლოკალურად გათიშულია ბლოკი [[$1]]",
