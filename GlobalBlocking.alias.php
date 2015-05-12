@@ -25,7 +25,7 @@ $specialPageAliases['ar'] = array(
 	'GlobalBlockStatus' => array( 'قائمة_المنع_العام_البيضاء', 'حالة_المنع_العام', 'تعطيل_المنع_العام' ),
 );
 
-/** Egyptian Spoken Arabic (مصرى) */
+/** Egyptian Arabic (مصرى) */
 $specialPageAliases['arz'] = array(
 	'GlobalBlock' => array( 'بلوك_عام' ),
 	'GlobalBlockList' => array( 'ليستة_بلوك_عامه' ),
@@ -164,7 +164,7 @@ $specialPageAliases['fr'] = array(
 	'RemoveGlobalBlock' => array( 'Déblocage_global', 'DéblocageGlobal' ),
 );
 
-/** Franco-Provençal (arpetan) */
+/** Arpitan (arpetan) */
 $specialPageAliases['frp'] = array(
 	'GlobalBlock' => array( 'Blocâjo_globâl', 'BlocâjoGlobâl' ),
 	'GlobalBlockList' => array( 'Lista_des_blocâjos_globâls', 'ListaDesBlocâjosGlobâls' ),
