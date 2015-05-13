@@ -180,7 +180,7 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 				$reblockTitle,
 				$msg,
 				array(),
-				array( 'wpAddress' => $row->gb_address, 'modify' => 1 )
+				array( 'wpAddress' => $row->gb_address )
 			);
 		}
 

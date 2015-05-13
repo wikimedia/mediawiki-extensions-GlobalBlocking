@@ -1,10 +1,19 @@
 <?php
 
-class SpecialGlobalBlock extends SpecialPage {
-	public $mAddress, $mReason, $mExpiry, $mAnonOnly, $mModifyForm, $mExpirySelection,
-		$mReasonList, $mModify, $mAlsoLocal;
+class SpecialGlobalBlock extends FormSpecialPage {
+	/**
+	 * @see SpecialGlobalBlock::setParameter()
+	 * @var string
+	 */
+	protected $address;
 
-	function __construct() {
+	/**
+	 * Whether there is an existing block on the target
+	 * @var bool
+	 */
+	private $modifyForm = false;
+
+	public function __construct() {
 		parent::__construct( 'GlobalBlock', 'globalblock' );
 	}
 
@@ -12,344 +21,160 @@ class SpecialGlobalBlock extends SpecialPage {
 		return true;
 	}
 
-	function execute( $par ) {
-		$this->setHeaders();
-
-		$this->loadParameters( $par );
-
+	public function execute( $par ) {
+		parent::execute( $par );
 		$out = $this->getOutput();
 		$out->setPageTitle( $this->msg( 'globalblocking-block' ) );
 		$out->setSubtitle( GlobalBlocking::buildSubtitleLinks( $this ) );
-		$out->setRobotPolicy( "noindex,nofollow" );
-		$out->setArticleRelated( false );
-		$out->enableClientCache( false );
-
-		if ( !$this->userCanExecute( $this->getUser() ) ) {
-			$this->displayRestrictionError();
-			return;
-		}
-
-		$this->checkReadOnly();
-
-		$errors = '';
-
-		$request = $this->getRequest();
-		if ( $request->wasPosted() && $this->getUser()->matchEditToken( $request->getVal( 'wpEditToken' ) ) ) {
-			// They want to submit. Let's have a look.
-			$errors = $this->trySubmit();
-			if ( !$errors ) {
-				// Success!
-				return;
-			}
-		}
-
-		if ( GlobalBlocking::getGlobalBlockId( $this->mAddress ) ) {
-			$this->mModifyForm = true;
-		}
-
-		if ( $this->mModifyForm ) {
-			$dbr = GlobalBlocking::getGlobalBlockingDatabase( DB_SLAVE );
-			$block = $dbr->selectRow(
-				'globalblocks',
-				'*',
-				array( 'gb_address' => $this->mAddress ),
-				__METHOD__
-			);
-			if ( $block ) {
-				if ( $block->gb_expiry == 'infinity' ) {
-					$this->mExpirySelection = 'indefinite';
-				} else {
-					$this->mExpiry = wfTimestamp( TS_ISO_8601, $block->gb_expiry );
-				}
-				$this->mAnonOnly = $block->gb_anon_only;
-				$this->mReason = $block->gb_reason;
-			}
-		}
-
-		$errorstr = null;
-
-		if ( is_array( $errors ) && count( $errors ) > 0 ) {
-			$errorstr = $this->formatErrors( $errors );
-		}
-
-		$this->form( $errorstr );
-	}
-
-	function formatErrors( $errors ) {
-		$errorstr = '';
-		foreach ( $errors as $error ) {
-			if ( is_array( $error ) ) {
-				$msg = array_shift( $error );
-			} else {
-				$msg = $error;
-				$error = array();
-			}
-			$errorstr .= Xml::tags( 'li', null, $this->msg( $msg, $error )->parse() );
-
-			// Special case
-			if ( $msg == 'globalblocking-block-alreadyblocked' ) {
-				$this->mModifyForm = true;
-			}
-		}
-
-		$errorstr = Xml::tags( 'ul', null, $errorstr );
-		$header = $this->msg( 'globalblocking-block-errors' )->numParams( count( $errors ) )->parseAsBlock();
-		$errorstr = "$header\n$errorstr";
-
-		$errorstr = Xml::tags( 'div', array( 'class' => 'error' ), $errorstr );
-
-		return $errorstr;
 	}
 
 	/**
+	 * Set subpage parameter or 'wpAddress' as $this->address
 	 * @param string $par
 	 */
-	private function loadParameters( $par ) {
-		$request = $this->getRequest();
-
-		$this->mAddress = trim( $request->getText( 'wpAddress' ) );
-		if ( !$this->mAddress ) {
-			$this->mAddress = $par;
+	protected function setParameter( $par ) {
+		if ( $par && !$this->getRequest()->wasPosted() ) {
+			// GET request to Special:GlobalBlock/127.0.0.1
+			$address = $par;
+		} else {
+			$address = trim( $this->getRequest()->getText( 'wpAddress' ) );
 		}
 
-		$this->mReason = $request->getText( 'wpReason' );
-		$this->mReasonList = $request->getText( 'wpBlockReasonList' );
-		$this->mExpiry = $this->mExpirySelection = $request->getText( 'wpExpiry' );
-		if ( $this->mExpiry == 'other' ) {
-			$this->mExpiry = $request->getText( 'wpExpiryOther' );
+		if ( IP::isValidBlock( $address ) ) {
+			$this->address = IP::sanitizeRange( $address );
+		} else {
+			// This catches invalid IPs too but we'll reject them at form submission.
+			$this->address = IP::sanitizeIP( $address );
 		}
-		$this->mAnonOnly = $request->getBool( 'wpAnonOnly' );
-		$this->mAlsoLocal = $request->getBool( 'wpAlsoLocal' );
-
-		$this->mModify = $request->getBool( 'wpModify' )
-			&& $this->mAddress
-			&& GlobalBlocking::getGlobalBlockId( $this->mAddress );
-
-		$this->mModifyForm = $request->getCheck( 'modify' );
 	}
 
-	function trySubmit() {
-		$options = array();
-
-		if ( $this->mAnonOnly ) {
-			$options[] = 'anon-only';
-		}
-		if ( $this->mModify ) {
-			$options[] = 'modify';
-		}
-
-		$out = $this->getOutput();
-		$reasonstr = $this->mReasonList;
-		if ( $reasonstr != 'other' && $this->mReason != '' ) {
-			// Entry from drop down menu + additional comment
-			$reasonstr .= $this->msg( 'colon-separator' )->inContentLanguage()->text() .
-				$this->mReason;
-		} elseif ( $reasonstr == 'other' ) {
-			$reasonstr = $this->mReason;
-		}
-
-		$errors = GlobalBlocking::block(
-			$this->mAddress,
-			$reasonstr,
-			$this->mExpiry,
-			$this->getUser(),
-			$options
-		);
-
-		if ( count( $errors ) ) {
-			return $errors;
-		}
-
-		// Add a local block if the user asked for that
-		if ( $this->getUser()->isAllowed( 'block' ) && $this->mAlsoLocal ) {
-			$block = new Block();
-			$block->setTarget( $this->mAddress );
-			$block->setBlocker( $this->getUser() );
-			$block->mReason = $reasonstr;
-			$block->mExpiry = SpecialBlock::parseExpiryInput( $this->mExpiry );
-			$block->isHardblock( !$this->mAnonOnly );
-			$block->prevents( 'createaccount', true );
-			$block->prevents( 'editownusertalk', true ); // Consistent with the global block.
-
-			$blockSuccess = $block->insert();
-
-			if ( $blockSuccess ) {
-				$flags = array(); // keep the flag order consistent with SpecialBlock
-				if ( $this->mAnonOnly ) {
-					$flags[] = 'anononly';
-				}
-				$flags[] = 'nocreate';
-				if ( $this->getConfig()->get('BlockAllowsUTEdit') ) { // for consistency with core
-					$flags[] = 'nousertalk';
-				}
-
-				$logParams = array();
-				$logParams['5::duration'] = $this->mExpiry;
-				$logParams['6::flags'] = implode( ',', $flags );
-
-				$log = new ManualLogEntry( 'block', 'block' );
-				$log->setTarget( Title::makeTitle( NS_USER, $this->mAddress ) );
-				$log->setComment( $reasonstr );
-				$log->setPerformer( $this->getUser() );
-				$log->setParameters( $logParams );
-				$log->setRelations( array( 'ipb_id' => array( $blockSuccess['id'] ) ) );
-				$logId = $log->insert();
-				$log->publish( $logId );
-			}
-		}
-
-		if ( $this->mModify ) {
-			$textMessage = 'globalblocking-modify-success';
-			$subMessage = 'globalblocking-modify-successsub';
-		} else {
-			$textMessage = 'globalblocking-block-success';
-			$subMessage = 'globalblocking-block-successsub';
-		}
-
-		$out->addWikitext( $this->msg( $textMessage, $this->mAddress )->text() );
-		$out->setSubtitle( $this->msg( $subMessage ) );
-
-		$link = Linker::link(
-			SpecialPage::getTitleFor( 'GlobalBlockList' ),
-			$this->msg( 'globalblocking-return' )->escaped()
-		);
-		$out->addHTML( $link );
-
-		if ( isset( $blockSuccess ) && !$blockSuccess ) {
-			$out->addWikiMsg( 'globalblocking-local-failed' );
-		}
-
-		return array();
-	}
-
-	function form( $error ) {
-		$form = '';
-		$out = $this->getOutput();
-
-		// Introduction
-		if ( $this->mModifyForm ) {
-			$out->addWikiMsg( 'globalblocking-modify-intro' );
-		} else {
-			$out->addWikiMsg( 'globalblocking-block-intro' );
-		}
-
-		// Add errors
-		$out->addHTML( $error );
-
-		$form .= Xml::fieldset( $this->msg( 'globalblocking-block-legend' )->text() );
-		$form .= Xml::openElement(
-			'form',
-			array(
-				'method' => 'post',
-				'action' => $this->getFullTitle()->getLocalURL(),
-				'name' => 'uluser',
-				'id' => 'mw-globalblock-form' )
-		);
-		$fields = array();
-
-		// Who to block
-		$fields['globalblocking-ipaddress'] = Xml::input(
-			'wpAddress',
-			45,
-			$this->mAddress,
-			array( 'id' => 'mw-globalblock-address' )
-		);
-
-		// How long to block them for
-		$dropdown = $this->msg( 'globalblocking-expiry-options' );
-		if ( $dropdown->isDisabled() ) {
-			// 'globalblocking-expiry-options' is empty, try the message from core
-			$dropdown = $this->msg( 'ipboptions' );
-			if ( $dropdown->isDisabled() ) {
-				// 'ipboptions' is empty too. Do not show a dropdown
-				// Do not assume that 'ipboptions' exists forever, therefore check too
-				$dropdown = false;
-			}
-		}
-
-		if ( $dropdown === false ) {
-			$fields['globalblocking-block-expiry'] = Xml::input(
-				'wpExpiry',
-				45,
-				$this->mExpiry,
-				array( 'id' => 'mw-globalblock-expiry' )
-			);
-		} else {
-			$fields['globalblocking-block-expiry'] = $this->buildExpirySelector(
-				'wpExpiry',
-				'mw-globalblocking-block-expiry-selector',
-				$this->mExpirySelection,
-				$dropdown->inContentLanguage()->plain()
-			);
-			$fields['globalblocking-block-expiry-selector-other'] =
-				Xml::input(
-					'wpExpiryOther',
-					45,
-					$this->mExpiry == $this->mExpirySelection ? '' : $this->mExpiry
+	/**
+	 * If there is an existing block for the target specified, change
+	 * the form to a modify form and load that block's settings so that
+	 * we can show it in the default form fields.
+	 *
+	 * @return array
+	 */
+	protected function loadExistingBlock() {
+		$blockOptions = array();
+		if ( $this->address ) {
+			$dbr = GlobalBlocking::getGlobalBlockingDatabase( DB_SLAVE );
+			$block = $dbr->selectRow( 'globalblocks',
+					array( 'gb_anon_only', 'gb_reason', 'gb_expiry' ),
+					array(
+						'gb_address' => $this->address,
+						'gb_expiry >' . $dbr->addQuotes( $dbr->timestamp( wfTimestampNow() ) ),
+					),
+					__METHOD__
 				);
+			if ( $block ) {
+				$this->modifyForm = true;
+
+				$blockOptions['anononly'] = $block->gb_anon_only;
+				$blockOptions['reason'] = $block->gb_reason;
+				$blockOptions['expiry'] = ( $block->gb_expiry === 'infinity' )
+					? 'indefinite'
+					: wfTimestamp( TS_ISO_8601, $block->gb_expiry );
+			}
 		}
 
-		// Why to block them
-		$fields['globalblocking-block-reason'] = Xml::listDropDown(
-			'wpBlockReasonList',
-			$this->msg( 'globalblocking-block-reason-dropdown' )->inContentLanguage()->text(),
-			$this->msg( 'globalblocking-block-reasonotherlist' )->inContentLanguage()->text(),
-			$this->mReasonList,
-			'mw-globalblock-reasonlist'
+		return $blockOptions;
+	}
+
+	/**
+	 * @return array
+	 */
+	protected function getFormFields() {
+		$getExpiry = self::buildExpirySelector();
+		$fields = array(
+			'Address' => array(
+				'type' => 'text',
+				'label-message' => 'globalblocking-ipaddress',
+				'id' => 'mw-globalblock-address',
+				'required' => true,
+				'autofocus' => true,
+				'default' => $this->address,
+			),
+			'Expiry' => array(
+				'type' => count( $getExpiry ) ? 'selectorother' : 'text',
+				'label-message' => 'globalblocking-block-expiry',
+				'id' => 'mw-globalblocking-block-expiry-selector',
+				'required' => true,
+				'options' => $getExpiry,
+				'other' => $this->msg( 'globalblocking-block-expiry-selector-other' )->text(),
+			),
+			'Reason' => array(
+				'type' => 'selectandother',
+				'maxlength' => 255,
+				'label-message' => 'globalblocking-block-reason',
+				'id' => 'mw-globalblock-reason',
+				'options-message' => 'globalblocking-block-reason-dropdown',
+			),
+			'AnonOnly' => array(
+				'type' => 'check',
+				'label-message' => 'globalblocking-ipbanononly',
+				'id' => 'mw-globalblock-anon-only',
+			),
+			'Modify' => array(
+				'type' => 'hidden',
+				'default' => '',
+			),
+			'Previous' => array(
+				'type' => 'hidden',
+				'default' => $this->address,
+			),
 		);
 
-		$fields['globalblocking-block-otherreason'] = Xml::input(
-			'wpReason',
-			45,
-			$this->mReason,
-			array( 'id' => 'mw-globalblock-reason' )
-		);
-
-		// Block all users, or just anonymous ones
-		$fields['globalblocking-block-options'] = Xml::checkLabel(
-			$this->msg( 'globalblocking-ipbanononly' )->text(),
-			'wpAnonOnly',
-			'mw-globalblock-anon-only',
-			$this->mAnonOnly
-		);
+		// Modify form defaults if there is an existing block
+		$blockOptions = $this->loadExistingBlock();
+		if ( $this->modifyForm ) {
+			$fields['Expiry']['default'] = $blockOptions['expiry'];
+			$fields['Reason']['default'] = $blockOptions['reason'];
+			$fields['AnonOnly']['default'] = $blockOptions['anononly'];
+			if ( $this->getRequest()->getVal( 'Previous' ) !== $this->address ) {
+				// Let the user know about it and re-submit to modify
+				$fields['Modify']['default'] = 1;
+			}
+		}
 
 		if ( $this->getUser()->isAllowed( 'block' ) ) {
-			// Also block the given IP locally
-			$fields['globalblocking-block-options'] .=
-				Xml::element( 'br' ) .
-				Xml::checkLabel(
-					$this->msg( 'globalblocking-also-local' )->text(),
-					'wpAlsoLocal',
-					'mw-globalblock-local',
-					$this->mAlsoLocal
-				);
+			$fields['AlsoLocal'] = array(
+				'type' => 'check',
+				'label-message' => 'globalblocking-also-local',
+				'id' => 'mw-globalblock-local',
+			);
 		}
 
-		// Build a form.
-		$submitMsg = $this->mModifyForm
-			? 'globalblocking-modify-submit' : 'globalblocking-block-submit';
-		$form .= Xml::buildForm( $fields, $submitMsg );
+		return $fields;
+	}
 
-		$form .= Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() );
-		if ( $this->mModifyForm ) {
-			$form .= Html::hidden( 'wpModify', 1 );
+	/**
+	* @param HTMLForm $form
+	*/
+	protected function alterForm( HTMLForm $form ) {
+		$form->addPreText( $this->msg( 'globalblocking-block-intro' )->parseAsBlock() );
+
+		if ( $this->modifyForm && !$this->getRequest()->wasPosted() ) {
+			// For GET requests with target field prefilled, tell the user that it's already blocked
+			// (For POST requests, this will be shown to the user as an actual error in HTMLForm)
+			$msg = $this->msg( 'globalblocking-block-alreadyblocked', $this->address )->parseAsBlock();
+			$form->addHeaderText( Html::rawElement( 'div', array( 'class' => 'error' ), $msg ) );
 		}
 
-		$form .= Xml::closeElement( 'form' );
-		$form .= Xml::closeElement( 'fieldset' );
+		$submitMsg = $this->modifyForm ? 'globalblocking-modify-submit' : 'globalblocking-block-submit';
+		$form->setSubmitTextMsg( $submitMsg );
+		$form->setSubmitDestructive();
+		$form->setWrapperLegendMsg( 'globalblocking-block-legend' );
+	}
 
-		# @todo FIXME: make this actually use HTMLForm, instead of just its JavaScript
-		$out->addModules( 'mediawiki.htmlform' );
-
-		$out->addHTML( $form );
-
-		// Show loglist of previous blocks
-		if ( $this->mAddress ) {
-			$title = Title::makeTitleSafe( NS_USER, $this->mAddress );
-
-			if ( !$title ) {
-				return;
-			}
+	/**
+	 * Show log of previous global blocks below the form
+	 * @return string
+	 */
+	protected function postText() {
+		$out = '';
+		$title = Title::makeTitleSafe( NS_USER, $this->address );
+		if ( $title ) {
 			LogEventsList::showLogExtract(
 				$out,
 				'gblblock',
@@ -362,47 +187,132 @@ class SpecialGlobalBlock extends SpecialPage {
 				)
 			);
 		}
+		return $out;
 	}
 
-	function buildExpirySelector( $name, $id = null, $selected = null, $expiryOptions = null ) {
-		$selector = '';
+	/**
+	 * @param array $data
+	 * @return bool|array True for success, array on errors
+	 */
+	function onSubmit( array $data ) {
+		$options = array();
+		$user = $this->getUser();
 
-		if ( $id == null ) {
-			$id = $name;
+		if ( $data['AnonOnly'] ) {
+			$options[] = 'anon-only';
 		}
 
-		if ( $selected == null ) {
-			$selected = 'other';
+		if ( $this->modifyForm && $data['Modify']
+			// Make sure that the block being modified is for the intended target
+			// (i.e., not from a previous submission)
+			&& $data['Previous'] === $data['Address']
+		) {
+			$options[] = 'modify';
 		}
 
-		$attribs = array(
-			'id' => $id,
-			'name' => $name,
-			'class' => 'mw-htmlform-select-or-other'
-		); # @todo FIXME: make this actually use HTMLForm
-
-		$selector .= Xml::openElement( 'select', $attribs );
-
-		foreach ( explode( ',', $expiryOptions ) as $option ) {
-			if ( strpos( $option, ":" ) === false ) {
-				$option = "$option:$option";
-			}
-			list( $show, $value ) = explode( ":", $option );
-
-			$show = htmlspecialchars( $show );
-			$value = htmlspecialchars( $value );
-			$selector .= Xml::option( $show, $value, $value == $selected );
-		}
-
-		$selector .= Xml::option(
-			$this->msg( 'globalblocking-block-expiry-other' )->text(),
-			'other',
-			'other' == $selected
+		// This handles validation too...
+		$errors = GlobalBlocking::block(
+			$data['Address'],
+			$data['Reason'][0],
+			$data['Expiry'],
+			$user,
+			$options
 		);
 
-		$selector .= Xml::closeElement( 'select' );
+		if ( count( $errors ) ) {
+			// Show the error message(s) to the user if an error occured.
+			return $errors;
+		}
 
-		return $selector;
+		// Add a local block if the user asked for that
+		if ( $user->isAllowed( 'block' ) && $data['AlsoLocal'] ) {
+			// @todo Use the new Block constructor
+			$block = new Block();
+			$block->setTarget( $this->address );
+			$block->setBlocker( $user );
+			$block->mReason = $data['Reason'][0];
+			$block->mExpiry = SpecialBlock::parseExpiryInput( $data['Expiry'] );
+			$block->isHardblock( !$data['AnonOnly'] );
+			$block->prevents( 'createaccount', true );
+			$block->prevents( 'editownusertalk', true ); // Consistent with the global block.
+
+			$blockSuccess = $block->insert();
+
+			if ( $blockSuccess ) {
+				// Keep the flag order consistent with SpecialBlock
+				$flags = array();
+				if ( $data['AnonOnly'] ) {
+					$flags[] = 'anononly';
+				}
+				$flags[] = 'nocreate';
+				if ( $this->getConfig()->get( 'BlockAllowsUTEdit' ) ) {
+					// Add this flag only if config is true for consistency with core
+					$flags[] = 'nousertalk';
+				}
+
+				$logParams = array();
+				$logParams['5::duration'] = $data['Expiry'];
+				$logParams['6::flags'] = implode( ',', $flags );
+
+				$log = new ManualLogEntry( 'block', 'block' );
+				$log->setTarget( Title::makeTitle( NS_USER, $this->address ) );
+				$log->setComment( $data['Reason'][0] );
+				$log->setPerformer( $user );
+				$log->setParameters( $logParams );
+				$log->setRelations( array( 'ipb_id' => array( $blockSuccess['id'] ) ) );
+				$logId = $log->insert();
+				$log->publish( $logId );
+			} else {
+				$this->getOutput()->addWikiMsg( 'globalblocking-local-failed' );
+			}
+		}
+
+		return true;
+	}
+
+	public function onSuccess() {
+		$successMsg = $this->modifyForm ?
+			'globalblocking-modify-success' : 'globalblocking-block-success';
+		$this->getOutput()->addWikiMsg( $successMsg, $this->address );
+
+		$link = Linker::linkKnown(
+			SpecialPage::getTitleFor( 'GlobalBlockList' ),
+			$this->msg( 'globalblocking-return' )->escaped()
+		);
+		$this->getOutput()->addHTML( $link );
+	}
+
+	/**
+	 * Get an array of suggested block durations. Retrieved from
+	 * 'globalblocking-expiry-options' and if it's disabled (default),
+	 * retrieve it from SpecialBlock's 'ipboptions' message.
+	 *
+	 * @return array Expiry options, empty if messages are disabled.
+	 * @see SpecialBlock::getSuggestedDurations()
+	 */
+	protected function buildExpirySelector() {
+		$msg = $this->msg( 'globalblocking-expiry-options' )->inContentLanguage();
+		if ( $msg->isDisabled() ) {
+			$msg = $this->msg( 'ipboptions' )->inContentLanguage();
+			if ( $msg->isDisabled() ) {
+				// Do not assume that 'ipboptions' exists forever.
+				$msg = false;
+			}
+		}
+
+		$options = array();
+		if ( $msg !== false ) {
+			$msg = $msg->text();
+			foreach ( explode( ',', $msg ) as $option ) {
+				if ( strpos( $option, ':' ) === false ) {
+					$option = "$option:$option";
+				}
+
+				list( $show, $value ) = explode( ':', $option );
+				$options[$show] = $value;
+			}
+		}
+		return $options;
 	}
 
 	protected function getGroupName() {
