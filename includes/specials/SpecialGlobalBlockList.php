@@ -79,15 +79,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 				$conds = array( 'gb_address' => $ip );
 			} else {
 				// They searched for an IP. Match any range covering that IP
-				$hex_ip = IP::toHex( $ip );
-				$ip_pattern = substr( $hex_ip, 0, 4 ) . '%'; // Don't bother checking blocks out of this /16.
-
-				$dbr = wfGetDB( DB_SLAVE );
-
-				$conds = array( 'gb_range_end>=' . $dbr->addQuotes( $hex_ip ), // This block in the given range.
-					'gb_range_start<=' . $dbr->addQuotes( $hex_ip ),
-					'gb_range_start like ' . $dbr->addQuotes( $ip_pattern ),
-					'gb_expiry>' . $dbr->addQuotes( $dbr->timestamp( wfTimestampNow() ) ) );
+				$conds = GlobalBlocking::getRangeCondition( $ip );
 			}
 		}
 
