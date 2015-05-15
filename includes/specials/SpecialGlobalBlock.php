@@ -385,4 +385,8 @@ class SpecialGlobalBlock extends SpecialPage {
 
 		return $selector;
 	}
+
+	protected function getGroupName() {
+		return 'users';
+	}
 }

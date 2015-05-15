@@ -180,4 +180,8 @@ class SpecialGlobalBlockStatus extends SpecialPage {
 
 		$out->addHTML( $form );
 	}
+
+	protected function getGroupName() {
+		return 'users';
+	}
 }

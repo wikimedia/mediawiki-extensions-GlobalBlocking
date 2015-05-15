@@ -56,11 +56,6 @@ $wgAutoloadClasses['ApiGlobalBlock'] = __DIR__ . '/includes/api/ApiGlobalBlock.p
 $wgAutoloadClasses['GlobalBlocking'] = __DIR__ . '/includes/GlobalBlocking.class.php';
 $wgAutoloadClasses['GlobalBlockingHooks'] = __DIR__ . '/includes/GlobalBlockingHooks.php';
 
-$wgSpecialPageGroups['GlobalBlock'] = 'users';
-$wgSpecialPageGroups['GlobalBlockList'] = 'users';
-$wgSpecialPageGroups['GlobalBlockStatus'] = 'users';
-$wgSpecialPageGroups['RemoveGlobalBlock'] = 'users';
-
 ## Add global block log
 $wgLogTypes[] = 'gblblock';
 $wgLogNames['gblblock'] = 'globalblocking-logpage';

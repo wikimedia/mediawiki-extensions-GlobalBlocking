@@ -111,6 +111,10 @@ class SpecialGlobalBlockList extends SpecialPage {
 			? ( IP::isIPAddress( $ip ) ? IP::sanitizeRange( $ip ) : $ip)
 			: '';
 	}
+
+	protected function getGroupName() {
+		return 'users';
+	}
 }
 
 // Shamelessly stolen from SpecialIpblocklist.php
