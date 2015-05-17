@@ -15,7 +15,8 @@
 			"Wyz",
 			"Zetud",
 			"0x010C",
-			"Nicolapps"
+			"Nicolapps",
+			"Wladek92"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permet]] de bloquer des adresses IP [[Special:GlobalBlockList|à travers plusieurs wikis]]",
@@ -116,10 +117,15 @@
 	"action-globalblock-whitelist": "désactiver localement les blocages globaux",
 	"right-globalblock-exempt": "Passer outre les blocages globaux",
 	"action-globalblock-exempt": "passer outre les blocages globaux",
+	"apihelp-globalblock-description": "Bloque ou débloque totalement un utilisateur.",
 	"apihelp-globalblock-param-target": "L'adresse IP cible.",
 	"apihelp-globalblock-param-unblock": "Si spécifié, débloquera l'utilisateur.",
 	"apihelp-globalblock-param-reason": "La raison du blocage/déblocage.",
+	"apihelp-globalblock-example-1": "Bloque 192.0.2.1 indéfiniment avec la raison \"utilisation abusive inter-wiki\"",
 	"apihelp-query+globalblocks-description": "Liste toutes les adresses IP bloquées globalement.",
 	"apihelp-query+globalblocks-param-start": "L’horodatage auquel démarrer l’énumération.",
-	"apihelp-query+globalblocks-param-end": "L’horodatage auquel terminer l’énumération."
+	"apihelp-query+globalblocks-param-end": "L’horodatage auquel terminer l’énumération.",
+	"apihelp-query+globalblocks-param-ids": "Blocks d'identificateurs à lister, séparés par des barres verticales.",
+	"apihelp-query+globalblocks-param-addresses": "Liste d'adresses IP à rechercher, séparées par des barres verticales",
+	"apihelp-query+globalblocks-param-prop": "Quelles propriétés obtenir."
 }

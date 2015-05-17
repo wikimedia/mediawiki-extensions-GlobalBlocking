@@ -5,6 +5,9 @@
 			"Robin0van0der0vliet"
 		]
 	},
+	"globalblocking-block-reason": "Reden:",
 	"globalblocking-block-expiry-selector-other": "In oare tiid:",
-	"globalblocking-block-options": "Opsjes:"
+	"globalblocking-block-options": "Opsjes:",
+	"globalblocking-unblock-reason": "Reden:",
+	"globalblocking-whitelist-reason": "Reden:"
 }
