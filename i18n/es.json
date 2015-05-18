@@ -18,7 +18,8 @@
 			"Translationista",
 			"Vivaelcelta",
 			"Macofe",
-			"Kroji"
+			"Kroji",
+			"Ryo567"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permite]] bloquear direcciones IP [[Special:GlobalBlockList|simultáneamente en varios wikis]]",
@@ -118,5 +119,12 @@
 	"right-globalblock-whitelist": "Desactivar bloqueos globales localmente",
 	"action-globalblock-whitelist": "deshabilitar localmente bloqueos globales",
 	"right-globalblock-exempt": "Eludir bloqueos globales",
-	"action-globalblock-exempt": "eludir bloqueos globales"
+	"action-globalblock-exempt": "eludir bloqueos globales",
+	"apihelp-globalblock-param-target": "La dirección IP de destino.",
+	"apihelp-globalblock-param-unblock": "Si se especifica, se desbloqueará al usuario.",
+	"apihelp-globalblock-param-reason": "El motivo para bloquear/desbloquear.",
+	"apihelp-globalblock-example-1": "Bloquear 192.0.2.1 indefinidamente con el motivo \"Abuso entre wikis\"",
+	"apihelp-query+globalblocks-description": "Listar todas las direcciones IP bloqueadas globalmente.",
+	"apihelp-query+globalblocks-param-limit": "La cantidad máxima de bloqueos que listar.",
+	"apihelp-query+globalblocks-example-1": "Listar todos los bloqueos globales"
 }
