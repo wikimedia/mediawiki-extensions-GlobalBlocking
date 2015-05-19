@@ -7,7 +7,8 @@
 			"Darth Kule",
 			"Gianfranco",
 			"Melos",
-			"Nemo bis"
+			"Nemo bis",
+			"Ricordisamoa"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permette]] di [[Special:GlobalBlockList|bloccare su più wiki]] indirizzi IP",
@@ -107,5 +108,7 @@
 	"right-globalblock-whitelist": "Disattiva blocchi globali localmente",
 	"action-globalblock-whitelist": "disattivare blocchi globali localmente",
 	"right-globalblock-exempt": "Bypassa i blocchi globali",
-	"action-globalblock-exempt": "bypassare i blocchi globali"
+	"action-globalblock-exempt": "bypassare i blocchi globali",
+	"apihelp-query+globalblocks-example-1": "Elenca tutti i blocchi globali",
+	"apihelp-query+globalblocks-example-2": "Elenca i blocchi globali che si applicano all'indirizzo IP 192.0.2.18"
 }

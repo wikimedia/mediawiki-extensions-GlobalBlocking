@@ -120,11 +120,16 @@
 	"action-globalblock-whitelist": "deshabilitar localmente bloqueos globales",
 	"right-globalblock-exempt": "Eludir bloqueos globales",
 	"action-globalblock-exempt": "eludir bloqueos globales",
+	"apihelp-globalblock-description": "Bloquear o desbloquear globalmente a un usuario.",
 	"apihelp-globalblock-param-target": "La dirección IP de destino.",
 	"apihelp-globalblock-param-unblock": "Si se especifica, se desbloqueará al usuario.",
 	"apihelp-globalblock-param-reason": "El motivo para bloquear/desbloquear.",
 	"apihelp-globalblock-example-1": "Bloquear 192.0.2.1 indefinidamente con el motivo \"Abuso entre wikis\"",
 	"apihelp-query+globalblocks-description": "Listar todas las direcciones IP bloqueadas globalmente.",
+	"apihelp-query+globalblocks-param-start": "El sello de tiempo para comenzar la enumeración",
+	"apihelp-query+globalblocks-param-end": "El sello de tiempo para detener la enumeración",
 	"apihelp-query+globalblocks-param-limit": "La cantidad máxima de bloqueos que listar.",
-	"apihelp-query+globalblocks-example-1": "Listar todos los bloqueos globales"
+	"apihelp-query+globalblocks-param-prop": "Qué propiedades se obtendrán.",
+	"apihelp-query+globalblocks-example-1": "Listar todos los bloqueos globales",
+	"apihelp-query+globalblocks-example-2": "Lista de bloqueos globales aplicados a la dirección IP 192.0.2.18"
 }
