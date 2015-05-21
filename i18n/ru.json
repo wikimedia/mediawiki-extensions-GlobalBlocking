@@ -112,5 +112,8 @@
 	"action-globalblock-exempt": "обход глобальных блокировок",
 	"apihelp-globalblock-description": "Глобально заблокировать или разблокировать участника.",
 	"apihelp-globalblock-param-target": "Целевой IP-адрес",
-	"apihelp-globalblock-param-reason": "Причина блокировки/разблокировки"
+	"apihelp-globalblock-param-reason": "Причина блокировки/разблокировки",
+	"apihelp-query+globalblocks-param-prop": "Какие свойства необходимо получить.",
+	"apihelp-query+globalblocks-example-1": "Перечислить все глобальные блокировки",
+	"apihelp-query+globalblocks-example-2": "Перечислить все глобальные блокировки, относящиеся к IP-адресу 192.0.2.18"
 }
