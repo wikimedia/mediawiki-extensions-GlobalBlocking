@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"NehalDaveND"
+		]
+	},
+	"globalblocking-block-reason": "कारण:",
+	"globalblocking-block-otherreason": "अरु/थप कारणहरु :",
+	"globalblocking-block-reasonotherlist": "अरु कारण",
+	"globalblocking-block-options": "विकल्पहरू:",
+	"globalblocking-list-unblock": "हटाउने",
+	"globalblocking-list-modify": "सच्याउने",
+	"globalblocking-unblock-reason": "कारण:",
+	"globalblocking-whitelist-reason": "कारण:"
+}
