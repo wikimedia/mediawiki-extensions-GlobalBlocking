@@ -121,6 +121,7 @@
 	"apihelp-globalblock-param-anononly": "Вкажіть це, якщо блокування повинно вплинути лише на користувачів, що не ввійшли до системи.",
 	"apihelp-globalblock-example-1": "Заблокувати 192.0.2.1 безстроково з причиною «Cross-wiki abuse»",
 	"apihelp-query+globalblocks-description": "Список глобально заблокованих IP-адрес.",
+	"apihelp-query+globalblocks-param-start": "Часова мітка початку переліку.",
 	"apihelp-query+globalblocks-param-end": "Часова мітка закінчення переліку.",
 	"apihelp-query+globalblocks-param-ids": "Розділений вертикальною рискою список ідентифікаторів блокувань для перелічення.",
 	"apihelp-query+globalblocks-param-addresses": "Розділений вертикальною рискою список IP-адрес для пошуку.",
