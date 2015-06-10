@@ -121,7 +121,7 @@
 	"action-globalblock-exempt": "绕过全域封禁",
 	"apihelp-globalblock-description": "全域封禁或解封一位用户。",
 	"apihelp-globalblock-param-target": "目标IP地址。",
-	"apihelp-globalblock-param-expiry": "如果指定，将封禁或重新封禁该用户。指定封禁将持续多久，例如“5个月”或者“2周”。如果设置为“无限”或者“不确定”，该封禁将不会过期。",
+	"apihelp-globalblock-param-expiry": "如果指定，将封禁或重新封禁该用户。指定封禁将持续多久，例如“5 months”或者“2 weeks”。如果设置为“infinite”或者“indefinite”，该封禁将不会过期。",
 	"apihelp-globalblock-param-unblock": "如果指定，将解封用户。",
 	"apihelp-globalblock-param-reason": "封禁/解封原因。",
 	"apihelp-globalblock-param-anononly": "如果封禁应该只影响未登录用户，指定此项。",

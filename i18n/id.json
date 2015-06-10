@@ -96,7 +96,7 @@
 	"globalblocking-showlog": "Alamat IP ini telah diblokir sebelumnya.\nLog pemblokiran disediakan di bawah ini sebagai rujukan:",
 	"globalblocklist": "Daftar alamat IP yang diblokir secara global",
 	"globalblock": "Memblokir suatu alamat IP secara global",
-	"globalblockstatus": "Status pemblokiran global di wiki lokal",
+	"globalblockstatus": "Daftar putih pemblokiran global",
 	"removeglobalblock": "Menghapuskan pemblokiran global",
 	"right-globalblock": "Melakukan pemblokiran global",
 	"action-globalblock": "lakukan pemblokiran global",
