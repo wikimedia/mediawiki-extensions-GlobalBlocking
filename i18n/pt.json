@@ -70,7 +70,6 @@
 	"globalblocking-unblock-unblocked": "Removeu o bloqueio global #$2 sobre o endereço IP '''$1''' com sucesso",
 	"globalblocking-unblock-errors": "Não foi possível remover este bloqueio global, {{PLURAL:$1|pelo seguinte motivo|pelos seguintes motivos}}:",
 	"globalblocking-unblock-successsub": "Bloqueio global removido com sucesso",
-	"globalblocking-unblock-subtitle": "Removendo bloqueio global",
 	"globalblocking-unblock-intro": "Pode usar este formulário para eliminar um bloqueio global.",
 	"globalblocking-whitelist": "Estado local de bloqueios globais",
 	"globalblocking-whitelist-notapplied": "Bloqueios globais não são aplicados nesta wiki,\nlogo o estado local de bloqueios globais não pode ser modificado.",

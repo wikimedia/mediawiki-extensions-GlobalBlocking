@@ -63,7 +63,6 @@
 	"globalblocking-unblock-unblocked": "Dir hutt d'global Spär #$2 vun der IP-Adress '''$1''' opgehuewen",
 	"globalblocking-unblock-errors": "Dir kënnt d'global Spär fir déi IP-Adress net ophiewen, aus {{PLURAL:$1|dësem Grond|dëse Grënn}}:",
 	"globalblocking-unblock-successsub": "Global Spär ass opgehuewen",
-	"globalblocking-unblock-subtitle": "Global Spär gëtt opgehuewen",
 	"globalblocking-unblock-intro": "Dir kënnt dëse Formulaire benotze fir eng global Spär opzehiewen.",
 	"globalblocking-whitelist": "Lokale Statut vun e globale Spären",
 	"globalblocking-whitelist-notapplied": "Global Späre sinn op dëser Wiki net aktivéiert,\ndofir kann de lokale Status vu globale Spären net geännert ginn.",

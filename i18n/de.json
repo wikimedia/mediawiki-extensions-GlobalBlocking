@@ -70,7 +70,6 @@
 	"globalblocking-unblock-unblocked": "Die hast erfolgreich die IP-Adresse '''$1''' (Sperr-ID $2) entsperrt",
 	"globalblocking-unblock-errors": "Die Aufhebung der globalen Sperre war nicht erfolgreich. {{PLURAL:$1|Grund|Gründe}}:",
 	"globalblocking-unblock-successsub": "Erfolgreich global entsperrt",
-	"globalblocking-unblock-subtitle": "Globale Sperre entfernen",
 	"globalblocking-unblock-intro": "Mit diesem Formular kannst du eine globale Sperre aufheben.",
 	"globalblocking-whitelist": "Lokaler Status einer globalen Sperre",
 	"globalblocking-whitelist-notapplied": "Globale Sperren sind in diesem Wiki nicht aktiviert.\nDeshalb kann der lokale Status von globalen Sperren nicht geändert werden.",
