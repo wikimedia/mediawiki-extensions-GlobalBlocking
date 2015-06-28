@@ -11,7 +11,8 @@
 			"Whym",
 			"青子守歌",
 			"Rxy",
-			"W.CC"
+			"W.CC",
+			"Sujiniku"
 		]
 	},
 	"globalblocking-desc": "IPアドレスを[[Special:GlobalBlockList|複数のウィキで横断的に]][[Special:GlobalBlock|ブロックする]]",
@@ -69,7 +70,6 @@
 	"globalblocking-unblock-unblocked": "IPアドレス '''$1''' に対するグローバルブロック #$2 を解除しました。",
 	"globalblocking-unblock-errors": "以下の{{PLURAL:$1|理由}}により、グローバルブロックを解除できませんでした:",
 	"globalblocking-unblock-successsub": "グローバルブロックの解除に成功",
-	"globalblocking-unblock-subtitle": "グローバルブロックを解除中",
 	"globalblocking-unblock-intro": "このフォームを使用してグローバルブロックを解除できます。",
 	"globalblocking-whitelist": "グローバルブロックのローカル状態",
 	"globalblocking-whitelist-notapplied": "このウィキではグローバルブロックは適用されず、よってグローバルブロックのローカル状態を変更できません。",
@@ -80,10 +80,8 @@
 	"globalblocking-whitelist-submit": "ローカル状態を変更",
 	"globalblocking-whitelist-whitelisted": "{{SITENAME}}でのIPアドレス '''$1''' のグローバルブロック #$2 を解除しました。",
 	"globalblocking-whitelist-dewhitelisted": "{{SITENAME}}でのIPアドレス '''$1''' のグローバルブロック #$2 を再有効化しました。",
-	"globalblocking-whitelist-successsub": "ローカル状態を変更しました。",
-	"globalblocking-whitelist-nochange": "このブロックのローカル状態の変更点はありません。\n[[Special:GlobalBlockList|グローバルブロックの一覧に戻る]]。",
-	"globalblocking-whitelist-errors": "以下の{{PLURAL:$1|理由}}により、グローバルブロックのローカル状態を変更できませんでした:",
-	"globalblocking-whitelist-intro": "このフォームを使用してグローバルブロックのローカル状態を変更できます。\nもしグローバルブロックがこのウィキで無効になっている場合は、該当IPアドレスは通常の編集ができるようになります。\n[[Special:GlobalBlockList|グローバルブロックの一覧に戻る]]。",
+	"globalblocking-whitelist-nochange": "このブロックのローカル状態の変更点はありません。",
+	"globalblocking-whitelist-intro": "このフォームを使用してグローバルブロックのローカル状態を変更できます。\nもしグローバルブロックがこのウィキで無効になっている場合は、該当IPアドレスは通常の編集ができるようになります。",
 	"globalblocking-ipblocked": "'''あなたのIPアドレスはすべてのウィキでブロックされました。'''\n\nブロックをしたのは $1 ($2) です。\n理由は ''$3'' とされています。\n\n* ブロックの開始: $4\n* ブロックの終了: $5\n\nこのブロックについて議論するために $1 に連絡してもかまいません。\n「{{int:emailuser}}」の機能を使うには、[[Special:Preferences|アカウントの設定]]で有効なメールアドレスを指定し、その使用がブロックされていない必要があります。\nあなたの現在のIPアドレスは $6 です。\n問い合わせをする際には、上記の事項すべてを含めてください。",
 	"globalblocking-ipblocked-xff": "'''あなたのリクエストで使用している1つ以上のプロキシサーバーがグローバルにブロックされました。'''\n\nブロックをしたのは $1 ($2) です。\n理由は ''$3'' とされています。\n\n* ブロックの開始: $4\n* ブロックの終了: $5\n\nこのブロックについて議論するために $1 に連絡してもかまいません。\n「{{int:emailuser}}」の機能を使うには、[[Special:Preferences|アカウントの設定]]で有効なメールアドレスを指定し、その使用がブロックされていない必要があります。\nブロックされたプロキシのアドレスは $6 です。\n問い合わせをする際には、上記の事項すべてを含めてください。",
 	"globalblocking-blocked-nopassreset": "あなたはグローバルブロックを受けているため、利用者パスワードを再設定できません。",
