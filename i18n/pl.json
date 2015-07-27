@@ -10,7 +10,8 @@
 			"Nux",
 			"Sp5uhe",
 			"WTM",
-			"Peter Bowman"
+			"Peter Bowman",
+			"Matma Rex"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Umożliwia]] równoczesne [[Special:GlobalBlockList|blokowanie]] adresów IP na wielu wiki",
@@ -22,7 +23,7 @@
 	"globalblocking-block-reasonotherlist": "Inny powód",
 	"globalblocking-block-reason-dropdown": "* Najczęstsze powody blokad** Spamowanie w wielu projektach** Nadużycia w wielu projektach** Wandalizm",
 	"globalblocking-block-edit-dropdown": "Edytuj listę przyczyn blokady",
-	"globalblocking-block-expiry": "Upływa",
+	"globalblocking-block-expiry": "Czas trwania:",
 	"globalblocking-block-expiry-other": "Inny czas blokady",
 	"globalblocking-block-expiry-selector-other": "Inny czas blokady",
 	"globalblocking-block-legend": "Zablokuj globalnie adres IP",
