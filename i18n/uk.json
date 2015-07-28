@@ -122,7 +122,7 @@
 	"apihelp-query+globalblocks-param-end": "Часова мітка закінчення переліку.",
 	"apihelp-query+globalblocks-param-ids": "Розділений вертикальною рискою список ідентифікаторів блокувань для перелічення.",
 	"apihelp-query+globalblocks-param-addresses": "Розділений вертикальною рискою список IP-адрес для пошуку.",
-	"apihelp-query+globalblocks-param-ip": "Отримати всі блокування що стосуються цієї IP-адреси або CIDR-діапазону, включно з блокуваннями діапазонів. Не може бути використано разом з $1users. CIDR-діапазони ширші, ніж /16 не приймаються.",
+	"apihelp-query+globalblocks-param-ip": "Отримати всі блокування, що стосуються цієї IP-адреси або CIDR-діапазону, включно з блокуваннями діапазонів. Не може бути використано разом з $1users. CIDR-діапазони, ширші, ніж /16, не приймаються.",
 	"apihelp-query+globalblocks-param-limit": "Максимальне число блокувань для переліку.",
 	"apihelp-query+globalblocks-param-prop": "Які властивості отримати.",
 	"apihelp-query+globalblocks-example-1": "Перелічити всі глобальні блокування.",
