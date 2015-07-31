@@ -163,18 +163,17 @@ class SpecialGlobalBlock extends SpecialPage {
 			$block->mExpiry = SpecialBlock::parseExpiryInput( $this->mExpiry );
 			$block->isHardblock( !$this->mAnonOnly );
 			$block->prevents( 'createaccount', true );
-			$block->prevents( 'editownusertalk', !$this->getConfig()->get('BlockAllowsUTEdit') );
+			$block->prevents( 'editownusertalk', true ); // Consistent with the global block.
 
 			$blockSuccess = $block->insert();
 
 			if ( $blockSuccess ) {
 				$log = new LogPage( 'block' );
-				$flags = array();
+				$flags = array( 'nocreate', 'nousertalk' );
 
 				if ( $this->mAnonOnly ) {
 					$flags[] = 'anononly';
 				}
-				$flags[] = 'nocreate';
 
 				$logParams = implode( ',', $flags );
 
