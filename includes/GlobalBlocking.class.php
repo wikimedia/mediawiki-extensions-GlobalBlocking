@@ -40,7 +40,7 @@ class GlobalBlocking {
 			$blockingUser = self::maybeLinkUserpage( $block->gb_by_wiki, $block->gb_by );
 			// Allow site customization of blocked message.
 			$blockedIpMsg = 'globalblocking-ipblocked';
-			wfRunHooks( 'GlobalBlockingBlockedIpMsg', array( &$blockedIpMsg ) );
+			Hooks::run( 'GlobalBlockingBlockedIpMsg', array( &$blockedIpMsg ) );
 			ApiBase::$messageMap[$blockedIpMsg] = array(
 				'code' => $blockedIpMsg,
 				'info' => 'You have been globally blocked from editing',
@@ -65,7 +65,7 @@ class GlobalBlocking {
 					$blockingUser = self::maybeLinkUserpage( $block->gb_by_wiki, $block->gb_by );
 					// Allow site customization of blocked message.
 					$blockedIpXffMsg = 'globalblocking-ipblocked-xff';
-					wfRunHooks( 'GlobalBlockingBlockedIpXffMsg', array( &$blockedIpXffMsg ) );
+					Hooks::run( 'GlobalBlockingBlockedIpXffMsg', array( &$blockedIpXffMsg ) );
 					ApiBase::$messageMap[$blockedIpXffMsg] = array(
 						'code' => $blockedIpXffMsg,
 						'info' => 'One or more proxy servers used by your request has been globally blocked',
