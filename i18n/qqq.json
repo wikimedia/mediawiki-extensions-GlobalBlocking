@@ -48,7 +48,7 @@
 	"globalblocking-ipbanononly": "Label for checkbox to block anonymous users only.",
 	"globalblocking-block-errors": "The first line of the error message shown on [[Special:GlobalBlock]] (see [[mw:Extension:GlobalBlocking]]) if the block has been unsuccessful.\n\nAfter this message, a list of specific errors is shown (see {{msg-mw|Globalblocking-block-bigrange}}, {{msg-mw|Globalblocking-block-expiryinvalid}} etc.).\n\nParameters:\n* $1 – the ''number'' of errors (not the errors themselves)\nSee also:\n* {{msg-mw|Globalblocking-search-errors}}",
 	"globalblocking-block-ipinvalid": "{{Identical|The IP address ($1) ...}}",
-	"globalblocking-block-expiryinvalid": "Used as error message. Parameters:\n* $1 - timestamp of expiry",
+	"globalblocking-block-expiryinvalid": "Used as error message on Special:GlobalBlock if expiry time entered was invalid.",
 	"globalblocking-block-submit": "Used as submit button text on Special:GlobalBlock form.\n\nSee also:\n* {{msg-mw|globalblocking-modify-submit}}\n* {{msg-mw|ipbsubmit}}",
 	"globalblocking-modify-submit": "Used as submit button text on Special:GlobalBlock form when modifying an existing global block.\n\nSee also:\n* {{msg-mw|globalblocking-block-submit}}\n* {{msg-mw|ipb-change-block}}",
 	"globalblocking-block-success": "Used in [[Special:GlobalBlock]]. Parameters:\n* $1 - IP address\nSee also:\n* {{msg-mw|Globalblocking-block-successsub}} - sub message",

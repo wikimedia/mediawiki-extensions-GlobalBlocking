@@ -23,7 +23,7 @@
 	"globalblocking-ipbanononly": "Block anonymous users only",
 	"globalblocking-block-errors": "Your block was unsuccessful, for the following {{PLURAL:$1|reason|reasons}}:",
 	"globalblocking-block-ipinvalid": "The IP address ($1) you entered is invalid.\nPlease note that you cannot enter a user name!",
-	"globalblocking-block-expiryinvalid": "The expiry you entered ($1) is invalid.",
+	"globalblocking-block-expiryinvalid": "The expiry you entered is invalid.",
 	"globalblocking-block-submit": "Block this IP address globally",
 	"globalblocking-modify-submit": "Modify this global block",
 	"globalblocking-block-success": "The IP address $1 has been successfully blocked on all projects.",

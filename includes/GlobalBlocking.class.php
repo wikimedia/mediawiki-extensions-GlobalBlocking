@@ -309,7 +309,7 @@ class GlobalBlocking {
 		}
 
 		if ( false === $expiry ) {
-			$errors[] = array( 'globalblocking-block-expiryinvalid', $expiry );
+			$errors[] = array( 'globalblocking-block-expiryinvalid' );
 		}
 
 		// Check for too-big ranges.
