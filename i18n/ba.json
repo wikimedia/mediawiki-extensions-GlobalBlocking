@@ -4,7 +4,8 @@
 			"Assele",
 			"Haqmar",
 			"Рустам Нурыев",
-			"ҒатаУлла"
+			"ҒатаУлла",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "IP адрестарҙы [[Special:GlobalBlockList|бер нисә викила дөйөм бикләү]] [[Special:GlobalBlock|мөмкинлеге бирә]]",
@@ -23,7 +24,7 @@
 	"globalblocking-block-options": "Көйләүҙәр:",
 	"globalblocking-block-errors": "Һеҙҙең бикләүегеҙ түбәндәге {{PLURAL:$1|1=сәбәп|сәбәптәр}} арҡаһында уңышһыҙ тамамланды:",
 	"globalblocking-block-ipinvalid": "Һеҙ кереткән IP адрес ($1) дөрөҫ түгел.\nЗинһар, ҡатнашыусы исемен керетә алмауығыҙҙы иғтибарға алығыҙ!",
-	"globalblocking-block-expiryinvalid": "Һеҙ кереткән тамамланыу ваҡыты ($1) дөрөҫ түгел.",
+	"globalblocking-block-expiryinvalid": "Һеҙ кереткән тамамланыу ваҡыты дөрөҫ түгел.",
 	"globalblocking-block-submit": "Был IP адресты дөйөм бикләргә",
 	"globalblocking-modify-submit": "Был дөйөм бикләүҙе үҙгәртергә",
 	"globalblocking-block-success": "$1 IP адресы бөтә проекттарҙа ла уңышлы бикләнде.",
@@ -60,7 +61,6 @@
 	"globalblocking-unblock-unblocked": "Һеҙ '''$1''' IP адресынан №$2 дөйөм бикте уңышлы алдығыҙ.",
 	"globalblocking-unblock-errors": "Һеҙҙең бикте алыуығыҙ түбәндәге {{PLURAL:$1|1=сәбәп|сәбәптәр}} арҡаһында уңышһыҙ тамамланды:",
 	"globalblocking-unblock-successsub": "Дөйөм бик уңышлы кире алынды",
-	"globalblocking-unblock-subtitle": "Дөйөм бикте алыу",
 	"globalblocking-unblock-intro": "Дөйөм бикте алыу өсөн ошо форманы ҡуллана алаһығыҙ.",
 	"globalblocking-whitelist": "Дөйөм биктәрҙең урындағы торошо",
 	"globalblocking-whitelist-notapplied": "Был викила дөйөм биктәр ҡулланылмай,\nшуға күрә дөйөм биктәрҙең урындағы торошо үҙгәртелә алмай.",
@@ -71,9 +71,7 @@
 	"globalblocking-whitelist-submit": "Урындағы торошто үҙгәртергә",
 	"globalblocking-whitelist-whitelisted": "Һеҙ {{SITENAME}} проектында '''$1''' IP адресының №$2 дөйөм биген уңышлы һүндерҙегеҙ.",
 	"globalblocking-whitelist-dewhitelisted": "Һеҙ {{SITENAME}} проектында '''$1''' IP адресының №$2 дөйөм биген уңышлы тергеҙҙегеҙ.",
-	"globalblocking-whitelist-successsub": "Урындағы торош уңышлы үҙгәртелде",
 	"globalblocking-whitelist-nochange": "Һеҙ был биктең урындағы торошон үҙгәртмәнегеҙ.\n[[Special:GlobalBlockList|Дөйөм бикләүҙәр исемлегенә кире ҡайтырға]].",
-	"globalblocking-whitelist-errors": "Һеҙҙең биктең урындағы торошон үҙәртеүегеҙ түбәндәге {{PLURAL:$1|1=сәбәп|сәбәптәр}} арҡаһында уңышһыҙ тамамланды:",
 	"globalblocking-whitelist-intro": "Дөйөм бикләүҙең урындағы торошон үҙгәртеү өсөн ошо форманы ҡуллана алаһығыҙ.\nӘгәр был викила дөйөм бикләү һүндерелгән булһа, ул IP адреслы ҡатнашыусылар биттәрҙе ғәҙәттәгесә үҙгәртә аласаҡ.\n[[Special:GlobalBlockList|Дөйөм бикләүҙәр исемлегенә кире ҡайтырға]].",
 	"globalblocking-blocked-nopassreset": "Һеҙ ҡатнашыусыларҙың серһүҙен үҙгәртә алмайһығыҙ, сөнки дөйөм бикләнгәнһегеҙ.",
 	"globalblocking-logpage": "Дөйөм бикләүҙәр яҙмалары журналы",

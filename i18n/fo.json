@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"EileenSanda"
+			"EileenSanda",
+			"Macofe"
 		]
 	},
 	"globalblocking-block": "Sperra eina IP adressu globalt",
@@ -21,7 +22,7 @@
 	"globalblocking-ipbanononly": "Sperra bert dulnevndir brúkarar",
 	"globalblocking-block-errors": "Tín sperring miseydnaðist, orsakað av fylgjandi {{PLURAL:$1|orsøk|orsøkum}}:",
 	"globalblocking-block-ipinvalid": "IP adressan ($1) sum tú tastaði inn er ógyldug.\nVinarliga legg til merkis at tú kanst ikki inntasta eitt brúkaranavn!",
-	"globalblocking-block-expiryinvalid": "Tann tíðin sum tú hevur skrivað ($1) at ganga út er ógyldug.",
+	"globalblocking-block-expiryinvalid": "Tann tíðin sum tú hevur skrivað at ganga út er ógyldug.",
 	"globalblocking-block-submit": "Sperra hesa IP adressuna globalt",
 	"globalblocking-modify-submit": "Broyt hesa globalu sperring",
 	"globalblocking-block-success": "IP adressan $1 er blivin sperrað við hepni á øllum verkætlanum.",

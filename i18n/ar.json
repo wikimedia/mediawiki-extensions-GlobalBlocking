@@ -8,7 +8,8 @@
 			"Loya",
 			"Meno25",
 			"OsamaK",
-			"Abanima"
+			"Abanima",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|يسمح]] بمنع عناوين الأيبي [[Special:GlobalBlockList|عبر ويكيات متعددة]]",
@@ -29,7 +30,7 @@
 	"globalblocking-ipbanononly": "امنع المستخدمين المجهولين فقط",
 	"globalblocking-block-errors": "منعك كان غير ناجح، {{PLURAL:$1|للسبب التالي|للأسباب التالية}}:",
 	"globalblocking-block-ipinvalid": "عنوان الأيبي ($1) الذي أدخلته غير صحيح.\nمن فضلك لاحظ أنه لا يمكنك إدخال اسم مستخدم!",
-	"globalblocking-block-expiryinvalid": "تاريخ الانتهاء الذي أدخلته ($1) غير صحيح.",
+	"globalblocking-block-expiryinvalid": "تاريخ الانتهاء الذي أدخلته غير صحيح.",
 	"globalblocking-block-submit": "منع عنوان الأيبي هذا منعا عاما",
 	"globalblocking-modify-submit": "تعديل هذا المنع العام",
 	"globalblocking-block-success": "عنوان الأيبي $1 تم منعه بنجاح في كل المشاريع.",
@@ -68,7 +69,6 @@
 	"globalblocking-unblock-unblocked": "أنت أزلت بنجاح المنع العام #$2 على عنوان الأيبي '''$1'''",
 	"globalblocking-unblock-errors": "إزالتك للمنع العام لم تكن ناجحة، {{PLURAL:$1|للسبب التالي|لأسباب التالية}}:",
 	"globalblocking-unblock-successsub": "المنع العام تمت إزالته بنجاح",
-	"globalblocking-unblock-subtitle": "إزالة المنع العام",
 	"globalblocking-unblock-intro": "يمكنك استخدام هذه الاستمارة لإزالة منع عام.",
 	"globalblocking-whitelist": "الحالة المحلية لعمليات المنع العامة",
 	"globalblocking-whitelist-notapplied": "عمليات المنع العامة لا يتم تطبيقها في هذه الويكي،\nلذا فالحالة المحلية لعمليات المنع العامة لا يمكن تعديلها.",
@@ -79,9 +79,7 @@
 	"globalblocking-whitelist-submit": "تغيير الحالة المحلية",
 	"globalblocking-whitelist-whitelisted": "لقد عطلت بنجاح المنع العام #$2 على عنوان الأيبي '''$1''' في {{SITENAME}}.",
 	"globalblocking-whitelist-dewhitelisted": "أنت أعدت تفعيل بنجاح المنع العام #$2 على عنوان الأيبي '''$1''' في {{SITENAME}}.",
-	"globalblocking-whitelist-successsub": "الحالة المحلية تم تغييرها بنجاح",
 	"globalblocking-whitelist-nochange": "أنت لم تقم بأي تغيير للحالة المحلية لهذا المنع.\n[[Special:GlobalBlockList|رجوع إلى قائمة المنع العامة]].",
-	"globalblocking-whitelist-errors": "تغييرك للحالة المحلية للمنع العام لم يكن ناجحا، {{PLURAL:$1|للسبب التالي|للأسباب التالية}}:",
 	"globalblocking-whitelist-intro": "يمكنك استخدام هذه الاستمارة لتعديل الحالة المحلية لمنع عام. لو أن منعا عاما تم تعطيله في هذا الويكي، المستخدمون على عنوان الأيبي المتأثر سيمكنهم التعديل بشكل طبيعي.\n[[Special:GlobalBlockList|رجوع إلى قائمة المنع العامة]].",
 	"globalblocking-ipblocked": "'''عنوان بروتوكول الخاص بك قد تم منعه على كل الويكيات.'''\n\nتم فرض المنع من قبل $1 ($2).\nالسبب المعطى هو ''$3''.\n\n*بداية المنع: $4\n*نهاية المنع: $5 \n\nيمكنك التحدث مع $1 لمناقشة المنع.\nلا يمكنك استخدام خاصية \"{{int:emailuser}}\" إلا إذا قمت بتوفير بريد الإلكتروني في [[Special:Preferences|تفضيلات حسابك]] ولم يتم منعك من استخدامه.\nعنوان بروتوكول الإنترنت الخاص بك هو $6.\nالرجاء إدارج كل التفاصيل المذكورة أعلاه في أي إستفسار تقوم به.",
 	"globalblocking-ipblocked-xff": "'''لقد تم منع خادم وكيل أو أكثر ممن إستخدموا في طلبك على المستوى العام'''\n\n\nتم فرض المنع من قبل $1 ($2).\nالسبب المعطى هو ''$3''.\n\n*بداية المنع: $4\n*نهاية المنع: $5 \n\nيمكنك التحدث مع $1 لمناقشة المنع.\nلا يمكنك استخدام خاصية \"{{int:emailuser}}\" إلا إذا قمت بتوفير بريد الإلكتروني في [[Special:Preferences|تفضيلات حسابك]] ولم يتم منعك من استخدامه.\nعنوان الخادم الوكيل الممنوع هو $6.\nالرجاء إدارج كل التفاصيل المذكورة أعلاه في أي إستفسار تقوم به.",

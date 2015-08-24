@@ -3,7 +3,8 @@
 		"authors": [
 			"Veeven",
 			"వైజాసత్య",
-			"Kiranmayee"
+			"Kiranmayee",
+			"Macofe"
 		]
 	},
 	"globalblocking-block": "ఒక ఐపీ చిరునామాని సార్వత్రికంగా నిరోధించు",
@@ -22,7 +23,7 @@
 	"globalblocking-ipbanononly": "అజ్ఞాత వాడుకరులను మాత్రమే నిరోధించండి",
 	"globalblocking-block-errors": "మీ నిరోధం విఫలమైంది, ఈ క్రింది {{PLURAL:$1|కారణం|కారణాల}} వల్ల:",
 	"globalblocking-block-ipinvalid": "మీరు ఇచ్చిన ఐపీ చిరునామా ($1) చెల్లదు.\nమీరు వాడుకరి పేరుని ఇవ్వకూడదని గమనించండి!",
-	"globalblocking-block-expiryinvalid": "మీరు ఇచ్చిన కాలపరిమితి ($1) చెల్లదు.",
+	"globalblocking-block-expiryinvalid": "మీరు ఇచ్చిన కాలపరిమితి చెల్లదు.",
 	"globalblocking-block-submit": "ఈ ఐపీ చిరునామాని సార్వత్రికంగా నిరోధించు",
 	"globalblocking-modify-submit": "ఈ సార్వత్రిక నిరోధాన్ని మార్చండి",
 	"globalblocking-block-success": "ఐపీ చిరునామా $1 ని అన్ని ప్రాజెక్టులలోనూ జయప్రదంగా నిరోధించాం.",
@@ -57,7 +58,6 @@
 	"globalblocking-unblock-unblocked": "మీరు '''$1''' ఐపీ చిరునామాపై ఉన్న సార్వత్రిక నిరోధం #$2ని విజయవంతంగా తొలగించారు",
 	"globalblocking-unblock-errors": "మీ సార్వత్రిక నిరోధపు ఎత్తివేత విఫలమైంది, ఈ క్రింది {{PLURAL:$1|కారణం|కారణాల}} వల్ల:",
 	"globalblocking-unblock-successsub": "సార్వత్రిక నిరోధాన్ని జయప్రదంగా తొలగించారు",
-	"globalblocking-unblock-subtitle": "సార్వత్రిక నిరోధపు తొలగింపు",
 	"globalblocking-unblock-intro": "సార్వత్రిక నిరోధాలని తొలగించడానికి మీరు ఈ ఫారాన్ని ఉపయోగించవచ్చు.",
 	"globalblocking-whitelist": "సార్వత్రిక నిరోధాల యొక్క స్థానిక స్థితి",
 	"globalblocking-whitelist-notapplied": "ఈ వికీలో సార్వత్రిక నిరోధాలు వర్తించవు,\nకాబట్టి సార్వత్రిక నిరోధాల యొక్క స్థానిక స్థితిని మార్చలేరు.",
@@ -68,9 +68,7 @@
 	"globalblocking-whitelist-submit": "స్థానిక స్థితిని మార్చండి",
 	"globalblocking-whitelist-whitelisted": "'''$1''' అన్న ఐపీ చిరునామాపై సార్వత్రిక నిరోధం #$2ని {{SITENAME}}లో మీరు విజయవంతంగా అచేతనం చేసారు.",
 	"globalblocking-whitelist-dewhitelisted": "'''$1''' అన్న ఐపీ చిరునామాపై సార్వత్రిక నిరోధం #$2ని {{SITENAME}}లో మీరు విజయవంతంగా పునఃచేతనం చేసారు.",
-	"globalblocking-whitelist-successsub": "స్థానిక స్థితిని విజయవంతంగా మార్చాం",
 	"globalblocking-whitelist-nochange": "ఈ నిరోధపు స్థానిక స్థితికి మీరు మార్పులేమీ చెయ్యలేదు.\n[[Special:GlobalBlockList|తిరిగి సార్వత్రిక నిరోధాల జాబితాకి]].",
-	"globalblocking-whitelist-errors": "సార్వత్రిక నిరోధపు స్థానిక స్థితికి మీరు చేసిన మార్పు విఫలమైంది, ఈ క్రింది {{PLURAL:$1|కారణం|కారణాల}} వల్ల:",
 	"globalblocking-blocked-nopassreset": "మీరు వాడుకరి సంకేతపదాన్ని అమర్చలేరు ఎందుకంటే మిమ్మల్ని సార్వత్రికంగా నిరోధించారు.",
 	"globalblocking-logpage": "సార్వత్రిక నిరోధాల చిట్టా",
 	"globalblocking-block-logentry": "[[$1]]ని $2 కాలపరిమితితో సార్వత్రికంగా నిరోధించారు",

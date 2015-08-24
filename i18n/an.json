@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Juanpabl"
+			"Juanpabl",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permite]] bloqueyar adrezas IP [[Special:GlobalBlockList|de vez en quantos wikis]]",
@@ -22,7 +23,7 @@
 	"globalblocking-ipbanononly": "Bloqueyar solament os usuarios anonimos",
 	"globalblocking-block-errors": "O suyo bloqueyo falló por {{PLURAL:$1|a siguient razón|as siguients razons}}:",
 	"globalblocking-block-ipinvalid": "L'adreza IP ($1) que introdució no ye valida. Por favor, pare en cuenta cuenta que no puetzintroducir un nombre d'usuario.",
-	"globalblocking-block-expiryinvalid": "A circumducción que introdució ($1) ye invalida.",
+	"globalblocking-block-expiryinvalid": "A circumducción que introdució ye invalida.",
 	"globalblocking-block-submit": "Bloqueyar ista adreza IP globalment",
 	"globalblocking-modify-submit": "Modificar este bloqueyo global",
 	"globalblocking-block-success": "l'adreza IP $1 ha estau bloqueyada con exito en totz os prochectos.",
@@ -59,7 +60,6 @@
 	"globalblocking-unblock-unblocked": "Ha sacau con exito o bloqueyo global #$2 en l'adreza IP '''$1'''",
 	"globalblocking-unblock-errors": "A eliminación d'o bloqueyo global no s'ha puesto fer, por as siguients {{PLURAL:$1|razón|razones}}:",
 	"globalblocking-unblock-successsub": "Se sacó o bloqueyo global correctament",
-	"globalblocking-unblock-subtitle": "Sacando bloqueyo global",
 	"globalblocking-unblock-intro": "Puet usar iste formulario ta sacar un bloqueyo global.",
 	"globalblocking-whitelist": "Estau local de bloqueyos globals",
 	"globalblocking-whitelist-notapplied": "Os bloqueos globals no son aplicaus en iste wiki,\nalavez o status de bloqueos globals no pueden estar modificaus.",
@@ -70,9 +70,7 @@
 	"globalblocking-whitelist-submit": "Cambiar estaus local",
 	"globalblocking-whitelist-whitelisted": "Has desactivau correctament o bloqueyo global #$2 de l'adreza IP '''$1''' en {{SITENAME}}.",
 	"globalblocking-whitelist-dewhitelisted": "Has reactivau correctament o bloqueyo global #$2 de l'adreza IP '''$1''' en {{SITENAME}}.",
-	"globalblocking-whitelist-successsub": "Se cambió o status local con exito",
 	"globalblocking-whitelist-nochange": "No ha feito garra cambeo a o estau local d'este bloqueyo.\n[[Special:GlobalBlockList|Tornar a la lista de bloqueyos globals]].",
-	"globalblocking-whitelist-errors": "A modificación d'o bloqueyo global no s'ha puesto fer, por as siguients {{PLURAL:$1|razón|razones}}:",
 	"globalblocking-whitelist-intro": "Puet usar iste formulario ta editar o estau local d'un bloqueyo global.\nSi un bloqueyo global ye desactivau en ista wiki, os usuarios de l'adreza IP afectada podrán editar normalment.\n[[Special:GlobalBlockList|Tornar a la lista de bloqueyos globals]].",
 	"globalblocking-blocked-nopassreset": "No puede demandar recordatorios de claves d'usuario porque vusté ye bloqueyau globalment.",
 	"globalblocking-logpage": "Rechistro de bloqueyos globals",

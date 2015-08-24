@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Bishnu Saikia",
-			"Gitartha.bordoloi"
+			"Gitartha.bordoloi",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "আই পি ঠিকনাসমূহ [[Special:GlobalBlockList|একাধিক ৱিকিত বাধা দিয়াত]] [[Special:GlobalBlock|অনুমতি দিয়ে]]",
@@ -23,7 +24,7 @@
 	"globalblocking-ipbanononly": "কেৱল বেনামী ব্যৱহাৰকাৰীক বাৰণ কৰক",
 	"globalblocking-block-errors": "এই {{PLURAL:$1|কাৰণৰ|কাৰণসমূহৰ}} বাবে আপোনাৰ প্ৰতিবন্ধক অসফল হৈছে:",
 	"globalblocking-block-ipinvalid": "আপুনি দিয়া আই পি ঠিকনাটো ($1) অবৈধ।\nঅনুগ্ৰহ কৰি মন কৰক যে আপুনি সদস্যনাম লিখিব নোৱাৰে!",
-	"globalblocking-block-expiryinvalid": "আপুনি লিখা ম্যাদ উকলাৰ সময় ($1) অবৈধ।",
+	"globalblocking-block-expiryinvalid": "আপুনি লিখা ম্যাদ উকলাৰ সময় অবৈধ।",
 	"globalblocking-block-submit": "এই আই পি ঠিকনাক গোলকীয়াভাৱে বাৰণ কৰক",
 	"globalblocking-modify-submit": "এই গোলকীয় বাধা পৰিৱৰ্তন কৰক",
 	"globalblocking-block-success": "আই পি ঠিকনা $1ক সকলো প্ৰকল্পতে সফলতাৰে বাধা দিয়া হৈছে।",

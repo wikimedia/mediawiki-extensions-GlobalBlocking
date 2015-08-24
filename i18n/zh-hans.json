@@ -18,7 +18,8 @@
 			"Yfdyh000",
 			"乌拉跨氪",
 			"Mywood",
-			"Impersonator 1"
+			"Impersonator 1",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|允许]][[Special:GlobalBlockList|在多个wiki中封禁]]IP地址",
@@ -39,7 +40,7 @@
 	"globalblocking-ipbanononly": "仅阻止匿名用户",
 	"globalblocking-block-errors": "该封锁不成功，因为如下{{PLURAL:$1|原因}}：",
 	"globalblocking-block-ipinvalid": "您所输入的IP地址 （$1） 是无效的。\n请留意的是您不可以输入一个用户名！",
-	"globalblocking-block-expiryinvalid": "你输入的终止时间（$1）无效。",
+	"globalblocking-block-expiryinvalid": "你输入的终止时间无效。",
 	"globalblocking-block-submit": "全域封禁该IP地址",
 	"globalblocking-modify-submit": "修改该全域封禁",
 	"globalblocking-block-success": "该IP地址 $1 已经在所有的项目中成功地封锁。",

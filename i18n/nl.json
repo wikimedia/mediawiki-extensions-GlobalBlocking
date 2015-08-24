@@ -8,7 +8,8 @@
 			"Siebrand",
 			"User555",
 			"Southparkfan",
-			"JurgenNL"
+			"JurgenNL",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Maakt het mogelijk]] IP-adressen [[Special:GlobalBlockList|in meerdere wiki's tegelijk]] te blokkeren",
@@ -29,7 +30,7 @@
 	"globalblocking-ipbanononly": "Alleen anonieme gebruikers blokkeren",
 	"globalblocking-block-errors": "De blokkade is niet ingesteld om de volgende {{PLURAL:$1|reden|redenen}}:",
 	"globalblocking-block-ipinvalid": "Het IP-adres ($1) dat u hebt opgegeven is onjuist.\nLet op: u kunt geen gebruikersnaam opgeven!",
-	"globalblocking-block-expiryinvalid": "De vervaldatum/tijd die u hebt opgegeven is ongeldig ($1).",
+	"globalblocking-block-expiryinvalid": "De vervaldatum/tijd die u hebt opgegeven is ongeldig.",
 	"globalblocking-block-submit": "Dit IP-adres globaal blokkeren",
 	"globalblocking-modify-submit": "Deze globale blokkade wijzigen",
 	"globalblocking-block-success": "Het IP-adres $1 is op alle projecten geblokkeerd.",
@@ -68,7 +69,6 @@
 	"globalblocking-unblock-unblocked": "U hebt de globale blokkade met nummer $2 voor het IP-adres '''$1''' verwijderd",
 	"globalblocking-unblock-errors": "De globale blokkade is niet verwijderd om de volgende {{PLURAL:$1|reden|redenen}}:",
 	"globalblocking-unblock-successsub": "De globale blokkade is verwijderd",
-	"globalblocking-unblock-subtitle": "Globale blokkade aan het verwijderen",
 	"globalblocking-unblock-intro": "U kunt dit formulier gebruik om een globale blokkade op te heffen.",
 	"globalblocking-whitelist": "Lokale status van globale blokkades",
 	"globalblocking-whitelist-notapplied": "Globale blokkades worden niet toegepast op deze wiki, dus de lokale status van globale blokkades kan niet gewijzigd worden.",
@@ -79,9 +79,7 @@
 	"globalblocking-whitelist-submit": "Lokale status wijzigen",
 	"globalblocking-whitelist-whitelisted": "U hebt de globale blokkade #$2 met het IP-adres '''$1''' op {{SITENAME}} opgeheven.",
 	"globalblocking-whitelist-dewhitelisted": "U hebt de globale blokkade #$2 met het IP-adres '''$1''' op {{SITENAME}} opnieuw actief gemaakt.",
-	"globalblocking-whitelist-successsub": "De lokale status is gewijzigd",
 	"globalblocking-whitelist-nochange": "U hebt de lokale status van deze blokkade niet gewijzigd.\n[[Special:GlobalBlockList|Terugkeren naar de lijst met globale blokkades]].",
-	"globalblocking-whitelist-errors": "U kon de lokale status van de globale blokkade niet wijzigen om de volgende {{PLURAL:$1|reden|redenen}}:",
 	"globalblocking-whitelist-intro": "U kunt dit formulier gebruiken om de lokale status van een globale blokkade te wijzigen.\nAls een globale blokkade op deze wiki is opgeheven, kunnen gebruikers vanaf het IP-adres gewoon bewerkingen uitvoeren.\n[[Special:GlobalBlockList|Terugkeren naar de lijst met globale blokkades]].",
 	"globalblocking-ipblocked": "'''Uw IP-adres is geblokkeerd op alle wiki's.'''\n\nDe blokkade is uitgevoerd door $1 ($2).\nDe reden hiervoor is ''$3''.\n\n* Start blokkade: $4\n* Blokkade vervalt op: $5\n\nU kunt contact op nemen met $1 om de blokkade te bespreken.\nU kunt de functie \"{{int:emailuser}}\" niet gebruiken tenzij er een geldig e-mailadres in uw [[Special:Preferences|voorkeuren]] is ingevuld en uw e-mailfuncties niet geblokkeerd zijn.\nUw huidige IP-adres is $6.\nVermeld de bovenstaande gegevens wanneer u hierop reageert.",
 	"globalblocking-ipblocked-xff": "'''Een of meer proxyservers die u gebruikt zijn geblokkeerd op alle wiki's.'''\n\nDe blokkade is ingesteld door $1 ($2).\nDe reden hiervoor is ''$3''.\n\n* Start blokkade: $4\n* Blokkade vervalt op: $5\n\nU kunt contact op nemen met $1 om de blokkade te bespreken.\nU kunt de functie \"{{int:emailuser}}\" niet gebruiken tenzij er een geldig e-mailadres in uw [[Special:Preferences|voorkeuren]] is ingevuld en uw e-mailfuncties niet geblokkeerd zijn.\nUw huidige IP-adres is $6.\nVermeld de bovenstaande gegevens wanneer u hierop reageert.",

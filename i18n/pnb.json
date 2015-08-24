@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Khalid Mahmood"
+			"Khalid Mahmood",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Allows]] آئی پی پتے [[Special:GlobalBlockList|blocked across multiple wikis]] تے۔",
@@ -20,7 +21,7 @@
 	"globalblocking-block-options": "چنوتیاں:",
 	"globalblocking-block-errors": "تسی روک نئیں سکے، {{PLURAL:$1|اس وجہ توں|ایناں وجاں توں}}:",
 	"globalblocking-block-ipinvalid": "جیڑا IP ($1) تسی لکھیا اے اوہ غلط اے۔\nاے گل یاد رکھو تسی ورتن ناں نئیں لکھ سکدے!",
-	"globalblocking-block-expiryinvalid": "جیڑا انت ویلا تسی لکھیا اے ($1) اوہ غلط اے۔",
+	"globalblocking-block-expiryinvalid": "جیڑا انت ویلا تسی لکھیا اے اوہ غلط اے۔",
 	"globalblocking-block-submit": "IP پتے نوں گلوبلی روکو",
 	"globalblocking-modify-submit": "گلوبل روک نوں تبدیل کرو",
 	"globalblocking-block-success": "اے IP پتہ $1 سارے ویونتاں تے روکیا ہویا اے۔",
@@ -57,7 +58,6 @@
 	"globalblocking-unblock-unblocked": "تساں کامیابی نال گلوبل روک #$2 آئی پی پتے '''$1''' توں ہٹا دتی اے۔",
 	"globalblocking-unblock-errors": "تواڈا گلوبل روک نئیں چل سکی تھلے دتیاں گیاں {{PLURAL:$1|وجہ|وجہاں}}: توں:",
 	"globalblocking-unblock-successsub": "جگت روک ہٹادتی گئی",
-	"globalblocking-unblock-subtitle": "جگت روک ہٹا ریاں واں",
 	"globalblocking-unblock-intro": "تسی اے فارم جگت روک نوں ہٹان لئی ورت سکدے او۔",
 	"globalblocking-whitelist": "جگت روکاں دا لوکل سٹیٹس",
 	"globalblocking-whitelist-notapplied": "جگت روکاں ایس وکی تے نئیں چلدیاں،\nایس لئی جگت روکاں دا لوکل سٹیٹس نوں بدلیا نئیں جاسکدا۔",
@@ -68,9 +68,7 @@
 	"globalblocking-whitelist-submit": "لوکل حالت بدلو",
 	"globalblocking-whitelist-whitelisted": "تساں کامیابی نال گلوبل روک #$2 آئی پی پتے '''$1''' توں {{سائٹناں}} تے ہٹا دتی اے۔",
 	"globalblocking-whitelist-dewhitelisted": "تساں کامیابی نال جگت روک #$2 آئی پی پتے '''$1''' {{ساغٹناں}} توں ہٹا دتی اے۔",
-	"globalblocking-whitelist-successsub": "لوکل سٹیٹس کامیابی نال بدل دتا گیا اے۔",
 	"globalblocking-whitelist-nochange": "تساں ایس روک دے لوکل سٹیٹس تے کوئی تبدیلی نئیں کیتی۔\n[[Special:GlobalBlockList|جگت روک لسٹ ول واپسی]]۔",
-	"globalblocking-whitelist-errors": "تواڈی جگت روک لوکل سٹیٹس دی کامیاب نئیں، تھلے دتیاں گیاں {{PLURAL:$1|وجہ|وجہاں}} توں:",
 	"globalblocking-whitelist-intro": "تسیں ایس فارم نوں اک جگت روک لوکل سٹیٹس نوں بدلن لئی ورت سکدے او۔\nاگر اک جگت روک ایس وکی تے کم نئیں کردی، ورتن والے متاثرہ آئی پی پتے اینوں تبدیل کرن گے۔\n[[Special:GlobalBlockList|جگت روک لسٹ ول چلو]]",
 	"globalblocking-blocked-nopassreset": "تسیں اک ورتن والے دی کنجی نئیں بدل سکدے کیوں جے تساں تے جگت روک اے۔",
 	"globalblocking-logpage": "جگت روک لاگ",

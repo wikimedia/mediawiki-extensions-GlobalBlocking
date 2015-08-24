@@ -13,7 +13,8 @@
 			"Wayiran",
 			"ZxxZxxZ",
 			"Calak",
-			"Mehran"
+			"Mehran",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "قطع دسترسی نشانی‌های اینترنتی [[Special:GlobalBlockList|در چندین ویکی]] را [[Special:GlobalBlock|ممکن می‌سازد]]",
@@ -34,7 +35,7 @@
 	"globalblocking-ipbanononly": "فقط بستن کاربران گمنام",
 	"globalblocking-block-errors": "قطع دسترسی شما به این {{PLURAL:$1|دلیل|دلایل}} ناموفق بود:",
 	"globalblocking-block-ipinvalid": "نشانی آی‌پی که وارد کردید ($1) نامجاز است.\nتوجه داشته باشید که شما نمی‌توانید یک نام کاربری را وارد کنید!",
-	"globalblocking-block-expiryinvalid": "زمان خاتمه‌ای که وارد کردید ($1) نامجاز است.",
+	"globalblocking-block-expiryinvalid": "زمان خاتمه‌ای که وارد کردید نامجاز است.",
 	"globalblocking-block-submit": "قطع دسترسی سراسری این نشانی آی‌پی",
 	"globalblocking-modify-submit": "اصلاح این بستن سراسری",
 	"globalblocking-block-success": "دسترسی نشانی آی‌پی $1 با موفقیت در تمام پروژه‌ها قطع شد.",

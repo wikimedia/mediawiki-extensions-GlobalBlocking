@@ -14,7 +14,8 @@
 			"Shirayuki",
 			"Waihorace",
 			"Cwlin0416",
-			"Zhxy 519"
+			"Zhxy 519",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|允許]] 封鎖 [[Special:GlobalBlockList|於多個 Wiki 中]] 的 IP 位址",
@@ -35,7 +36,7 @@
 	"globalblocking-ipbanononly": "僅封鎖匿名使用者",
 	"globalblocking-block-errors": "您的封鎖失敗，{{PLURAL:$1|原因|原因}}如下：",
 	"globalblocking-block-ipinvalid": "您所輸入的 IP 位址 ($1) 無效。\n請注意，您不可輸入使用者名稱！",
-	"globalblocking-block-expiryinvalid": "您所輸入的到期日 ($1) 無效。",
+	"globalblocking-block-expiryinvalid": "您所輸入的到期日 無效。",
 	"globalblocking-block-submit": "全域封鎖這個 IP 位址",
 	"globalblocking-modify-submit": "修改此全域封鎖",
 	"globalblocking-block-success": "己成功於所有專案封鎖 IP 位址 $1。",

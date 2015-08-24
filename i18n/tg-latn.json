@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liangent"
+			"Liangent",
+			"Macofe"
 		]
 	},
 	"globalblocking-block": "Bastani jak nişonai IP ba surati sarosarī",
@@ -13,7 +14,7 @@
 	"globalblocking-block-options": "Ixtijorot:",
 	"globalblocking-block-errors": "Bastani dastrasiji az tarafi şumo nomuvaffaq şud, az rūi {{PLURAL:$1|sababi|sabahoi}} zerin:",
 	"globalblocking-block-ipinvalid": "Nişonai IP ($1) şumo vorid namuda nomū'tabar ast.\nLutfan dar xotir nigoh dored, ki şumo nametavoned jak nomi korbariro vorid kuned!",
-	"globalblocking-block-expiryinvalid": "Sanai e'tiboroti şumo voridnamud ($1) nomū'tabar ast.",
+	"globalblocking-block-expiryinvalid": "Sanai e'tiboroti şumo voridnamud nomū'tabar ast.",
 	"globalblocking-block-submit": "Bastani in nişonai IP ba surati sarosarī",
 	"globalblocking-block-success": "Nişonai IP $1 bo muvaffaqijat dar hamai loihaho basta şud.",
 	"globalblocking-block-successsub": "Bastani dastrasī ba surati sarosarī muvaffaq şud",
@@ -41,7 +42,6 @@
 	"globalblocking-unblock-unblocked": "Şumo bo muvaffaqijat bastai sarosariji #$2 az rūi nişonai IP '''$1''' pok karded",
 	"globalblocking-unblock-errors": "Pokkuniji bastai sarosariji şumo nomuvaffaq şud, az {{PLURAL:$1|sababi|sababhoi}} zerin:",
 	"globalblocking-unblock-successsub": "Bastai sarosarī bo muvaffaqijat pok şud",
-	"globalblocking-unblock-subtitle": "Dar holi pok kardani basta sarosarī",
 	"globalblocking-unblock-intro": "Şumo metavoned baroi pok kardani bastai sarosarī az in form istifoda bared.",
 	"globalblocking-whitelist": "Vaz'ijati mahalliji bastahoi sarosarī",
 	"globalblocking-whitelist-legend": "Taƣjiri vaz'ijati mahallī",
@@ -49,7 +49,6 @@
 	"globalblocking-whitelist-status": "Vaz'ijati mahallī:",
 	"globalblocking-whitelist-statuslabel": "Ƣajrifa'ol kardani in bastai sarosarī dar {{SITENAME}}",
 	"globalblocking-whitelist-submit": "Taƣjiri vaz'ijati mahallī",
-	"globalblocking-whitelist-successsub": "Vaz'ijati mahallī bo muvaffaqijat taƣjir joft",
 	"globalblocking-whitelist-nochange": "Şumo jagon taƣjire ba vaz'ijati mahalli in qat'i dastrasī vorid nakarded.\n[[Special:GlobalBlockList|Bargarded ba fehristi qat'i dastrasiji sarosarī]].",
 	"globalblocking-logpage": "Guzorişi bastai sarosarī",
 	"globalblocking-unblock-logentry": "qat'i dastrasiji sarosarī dar [[$1]] pok şud",

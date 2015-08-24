@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kolega2357"
+			"Kolega2357",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Omogućuje]] [[Special:GlobalBlockList|globalno blokiranje]] IP adresa na više wikija",
@@ -22,7 +23,7 @@
 	"globalblocking-ipbanononly": "Blokiraj samo anonimne korisnike",
 	"globalblocking-block-errors": "Blok nije uspešan zbog {{PLURAL:$1|sledeđeg razloga|sledećih razloga}}:",
 	"globalblocking-block-ipinvalid": "IP adresa ($1) koju ste uneli nije dobra.\nZapamtite da ne možete uneti korisničko ime!",
-	"globalblocking-block-expiryinvalid": "Vreme isteka bloka koje ste uneli ($1) nije ispravno.",
+	"globalblocking-block-expiryinvalid": "Vreme isteka bloka koje ste uneli nije ispravno.",
 	"globalblocking-block-submit": "Blokirajte ovu IP adresu globalno",
 	"globalblocking-modify-submit": "Promeni ovaj globalni blok",
 	"globalblocking-block-success": "IP adresa $1 je uspešno blokirana na svim Wikimedijinim projektima.",
@@ -59,7 +60,6 @@
 	"globalblocking-unblock-unblocked": "Uspešno ste uklonili globalnu blokadu #$2 za IP adresu '''$1'''.",
 	"globalblocking-unblock-errors": "Ne možete da uklonite globalnu blokadu zbog {{PLURAL:$1|sledećeg razloga|sledećih razloga}}:",
 	"globalblocking-unblock-successsub": "Globalni blok uspešno uklonjen",
-	"globalblocking-unblock-subtitle": "Uklanjanje globalnog bloka",
 	"globalblocking-unblock-intro": "Možete koristiti ovu formu da uklonite globalni blok.",
 	"globalblocking-whitelist": "Lokalni status globalnih blokiranja",
 	"globalblocking-whitelist-notapplied": "Ovaj wiki ne primenjuje globalne blokade,\npa zato lokalni status globalnih blokada ne može da se menja.",
@@ -70,9 +70,7 @@
 	"globalblocking-whitelist-submit": "Promeni lokalni status",
 	"globalblocking-whitelist-whitelisted": "Uspešno ste onemogućili globalni blok #$2 za IP adresu '''$1''' na sajtu {{SITENAME}}.",
 	"globalblocking-whitelist-dewhitelisted": "Uspešno ste ponovo omogućili globalni blok #$2 za IP adresu '''$1''' na sajtu {{SITENAME}}.",
-	"globalblocking-whitelist-successsub": "Lokalni status je uspešno promenjen",
 	"globalblocking-whitelist-nochange": "Niste napravili izmene u lokalnom statusu ovog bloka.\n[[Special:GlobalBlockList|Vratite se na spisak globalnih blokiranja]].",
-	"globalblocking-whitelist-errors": "Vaša izmena lokalnog statusa globalnog bloka nije bila uspešna, zbog {{PLURAL:$1|sledećeg razlog|sledećih razloga|sledećih razloga}}:",
 	"globalblocking-whitelist-intro": "Možete koristiti ovaj formular za izmenu lokalnog statusa globalnog bloka.\nAko je globalni blok onemogućen na ovom wikiju, korisnici na datoj IP adresi moći će da uređuju normalno.\n[[Special:GlobalBlockList|Vratite se na spisak globalnih blokiranja]].",
 	"globalblocking-blocked-nopassreset": "Ne možete da promenite lozinku korisnika jer ste globalno blokirani.",
 	"globalblocking-logpage": "Evidencija globalnog blokiranja",

@@ -4,7 +4,8 @@
 			"Lovekhmer",
 			"Thearith",
 			"គីមស៊្រុន",
-			"វ័ណថារិទ្ធ"
+			"វ័ណថារិទ្ធ",
+			"Macofe"
 		]
 	},
 	"globalblocking-block": "រាំងខ្ទប់​អាសយដ្ឋាន IP ជា​សកល",
@@ -24,7 +25,7 @@
 	"globalblocking-ipbanononly": "រាំងខ្ទប់​តែ​អ្នកប្រើប្រាស់​អនាមិក",
 	"globalblocking-block-errors": "ការរាំងខ្ទប់​របស់​អ្នក មិន​បាន​ជោគជ័យ​ទេ, សម្រាប់ {{PLURAL:$1|ហេតុផល|ហេតុផល}}​ដូចតទៅ:",
 	"globalblocking-block-ipinvalid": "អាសយដ្ឋាន IP ($1) ដែល​អ្នក​បាន​បញ្ចូល​មិន​ត្រឹមត្រូវ​ទេ​។\n\nសូម​ចំណាំ​ថា អ្នក​មិន​អាច​បញ្ចូល​ឈ្មោះរបស់អ្នកប្រើប្រាស់​បាន​ទេ!",
-	"globalblocking-block-expiryinvalid": "រយៈពេល​ផុតកំណត់​ដែល​អ្នក​បាន​បញ្ចូល ($1) មិន​ត្រឹមត្រូវ​ទេ​។",
+	"globalblocking-block-expiryinvalid": "រយៈពេល​ផុតកំណត់​ដែល​អ្នក​បាន​បញ្ចូល មិន​ត្រឹមត្រូវ​ទេ​។",
 	"globalblocking-block-submit": "រាំងខ្ទប់​អាសយដ្ឋាន IP ជា​សកល",
 	"globalblocking-modify-submit": "កែប្រែការរាំងខ្ទប់ជាសាកលនេះ",
 	"globalblocking-block-success": "អាសយដ្ឋាន IP $1 ត្រូវ​បាន​រាំងខ្ទប់​លើ​គ្រប់​គម្រោង​ទាំងអស់ ដោយជោគជ័យ​ហើយ​។",
@@ -52,13 +53,11 @@
 	"globalblocking-unblock-reason": "មូលហេតុ៖",
 	"globalblocking-unblock-unblocked": "អ្នក​បាន​ដកចេញ​ការរាំងខ្ទប់​សកល ដោយជោគជ័យ #$2 នៅលើ​អាសយដ្ឋាន IP '''$1'''",
 	"globalblocking-unblock-successsub": "ដកចេញ​ការរាំងខ្ទប់​សកល ដោយជោគជ័យ",
-	"globalblocking-unblock-subtitle": "ដកចេញ​ការរាំងខ្ទប់​សកល",
 	"globalblocking-unblock-intro": "អ្នក​បាន​ប្រើប្រាស់​ទម្រង់​នេះ ដើម្បី​ដកចេញ​ការរាំងខ្ទប់​សកល​។",
 	"globalblocking-whitelist-legend": "ប្ដូរ​ស្ថានភាព​មូលដ្ឋាន",
 	"globalblocking-whitelist-reason": "មូលហេតុ៖",
 	"globalblocking-whitelist-status": "ស្ថានភាព​មូលដ្ឋាន:",
 	"globalblocking-whitelist-submit": "ប្ដូរ​ស្ថានភាព​មូលដ្ឋាន",
-	"globalblocking-whitelist-successsub": "បាន​ប្ដូរ​ស្ថានភាព​មូលដ្ឋាន ដោយ​ជោគជ័យ",
 	"globalblocking-logpage": "កំណត់ហេតុនៃការហាមឃាត់ជាសាកល",
 	"globalblocking-unblock-logentry": "ដកចេញ​ការរាំងខ្ទប់​សកល​នៅលើ [[$1]]",
 	"globalblock": "រាំងខ្ទប់​ជា​សកល​ចំពោះ​អាសយដ្ឋាន IP",

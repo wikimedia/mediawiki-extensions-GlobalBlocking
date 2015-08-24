@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Shinjiman"
+			"Shinjiman",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|容許]]IP地址可以[[Special:GlobalBlockList|響多個wiki度封鎖]]",
@@ -15,7 +16,7 @@
 	"globalblocking-block-options": "選項",
 	"globalblocking-block-errors": "個封鎖唔成功，因為:\n$1",
 	"globalblocking-block-ipinvalid": "你所輸入嘅IP地址 ($1) 係無效嘅。\n請留意嘅係你唔可以輸入一個用戶名！",
-	"globalblocking-block-expiryinvalid": "你所輸入嘅到期 ($1) 係無效嘅。",
+	"globalblocking-block-expiryinvalid": "你所輸入嘅到期 係無效嘅。",
 	"globalblocking-block-submit": "全域封鎖呢個IP地址",
 	"globalblocking-block-success": "個IP地址 $1 已經響所有Wikimedia計劃度成功噉封鎖咗。\n你亦都可以睇吓個[[Special:GlobalBlockList|全域封鎖一覽]]。",
 	"globalblocking-block-successsub": "全域封鎖成功",
@@ -47,7 +48,6 @@
 	"globalblocking-unblock-unblocked": "你己經成功噉拎走咗響IP地址 '''$1''' 嘅全域封鎖 #$2",
 	"globalblocking-unblock-errors": "你唔可以拎走嗰個IP地址嘅全域封鎖，因為:\n$1",
 	"globalblocking-unblock-successsub": "全域封鎖已經成功噉拎走咗",
-	"globalblocking-unblock-subtitle": "拎走全域封鎖",
 	"globalblocking-unblock-intro": "你可以用呢個表去拎走一個全域封鎖。",
 	"globalblocking-whitelist": "全域封鎖嘅本地狀態",
 	"globalblocking-whitelist-legend": "改本地狀態",
@@ -57,9 +57,7 @@
 	"globalblocking-whitelist-submit": "改本地狀態",
 	"globalblocking-whitelist-whitelisted": "你已經成功噉響{{SITENAME}}嘅IP地址 '''$1''' 度停用咗全域封鎖 #$2。",
 	"globalblocking-whitelist-dewhitelisted": "你已經成功噉響{{SITENAME}}嘅IP地址 '''$1''' 度再次啟用咗全域封鎖 #$2。",
-	"globalblocking-whitelist-successsub": "本地狀態已經成功噉改咗",
 	"globalblocking-whitelist-nochange": "你未對呢個封鎖嘅本地狀態改過嘢。\n[[Special:GlobalBlockList|返去全域封鎖一覽]]。",
-	"globalblocking-whitelist-errors": "基於下面嘅{{PLURAL:$1|原因|原因}}，你改過嘅全域封鎖本地狀態唔成功：",
 	"globalblocking-whitelist-intro": "你可以用呢個表去改全域封鎖嘅本地狀態。\n如果一個全域封鎖響呢個wiki度停用咗，受影響嘅 IP 地址可以正常噉編輯。\n[[Special:GlobalBlockList|返去全域封鎖一覽]]。",
 	"globalblocking-logpage": "全域封鎖日誌",
 	"globalblocking-logpagetext": "呢個係響呢個wiki度，整過同拎走過嘅全域封鎖日誌。\n要留意嘅係全域封鎖可以響其它嘅wiki度整同拎走。\n要睇活躍嘅全域封鎖，你可以去睇個[[Special:GlobalBlockList|全域封鎖一覽]]。",

@@ -4,7 +4,8 @@
 			"Aelske",
 			"Benopat",
 			"Ooswesthoesbes",
-			"Pahles"
+			"Pahles",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Maak 't meugelijk]] IP-addresse [[Special:GlobalBlockList|in meerdere wiki's tegeliek]] te blokkere",
@@ -25,7 +26,7 @@
 	"globalblocking-ipbanononly": "Blokkeer allein anoniem gebroekers",
 	"globalblocking-block-errors": "De blókkaasj is neet ingesteldj om de volgendje {{PLURAL:$1|reeje|reeje}}:",
 	"globalblocking-block-ipinvalid": "'t IP-adres ($1) det se höbs opgegaeve is neet zjuus.\nLèt óp: de kins geine gebroekersnaam opgaeve!",
-	"globalblocking-block-expiryinvalid": "De verlouppdatum/tied daese höbs opgegaeve is óngèljig ($1).",
+	"globalblocking-block-expiryinvalid": "De verlouppdatum/tied daese höbs opgegaeve is óngèljig.",
 	"globalblocking-block-submit": "Dit IP-adres globaal blokkere",
 	"globalblocking-modify-submit": "Anger dees wikiwiej spiekering",
 	"globalblocking-block-success": "'t IP-adres $1 is op alle projekte geblokkeerd",
@@ -62,7 +63,6 @@
 	"globalblocking-unblock-unblocked": "De höbs 'ne globaal blok mit nummer $2 veur t IP-adres '''$1''' gewis",
 	"globalblocking-unblock-errors": "De globaale blok is neet gewis om de volgende {{PLURAL:$1|reden|redene}}:",
 	"globalblocking-unblock-successsub": "De globale blok is gewis",
-	"globalblocking-unblock-subtitle": "Globale blok aan t wisse",
 	"globalblocking-unblock-intro": "De kins dit formeleer gebroeke om 'ne globaale blok op te heffe.",
 	"globalblocking-whitelist": "Lokale status van globale bloks",
 	"globalblocking-whitelist-notapplied": "Globaal bloks waere neet toegepas op deze wiki, dus de lokale status van globaal bloks kan neet verangerdj waere.",
@@ -73,9 +73,7 @@
 	"globalblocking-whitelist-submit": "Lokaal status angere",
 	"globalblocking-whitelist-whitelisted": "De höbs de globale blokkaasj #$2 mit 't IP-adres '''$1''' op {{SITENAME}} eweggedoon.",
 	"globalblocking-whitelist-dewhitelisted": "De höbs de globale blokkade #$2 met t IP-adres '''$1''' op {{SITENAME}} opnuuj actief gemaat.",
-	"globalblocking-whitelist-successsub": "De lokaal status is anges",
 	"globalblocking-whitelist-nochange": "De höbs de lokaal status ven deze blok neet angerd.\n[[Special:GlobalBlockList|Trökkere nao de lies met globale blokkades]].",
-	"globalblocking-whitelist-errors": "De kos de lokale status van de globale blokkade neet wiezige om de volgende {{PLURAL:$1|rede|redene}}:",
 	"globalblocking-whitelist-intro": "De kins dit formulier gebroeke om de lokale status van 'n globale blokkade te wiezige.\nAls een globale blokkade op deze wiki is opgeheve, kunne gebroekers vanaaf  t IP-adres geeuon bewerkinge oetvoere.\n[[Special:GlobalBlockList|Trökkere nao de lies met globale blokkades]].",
 	"globalblocking-ipblocked": "'''Dien IP-adres is geblokkeerdj op alle wiki's.'''\n\nDe blokkaasj is oetgeveurdj door $1 ($2).\nDe raeje hieveur is ''$3''.\n\n* Start blokkaasj: $4\n* Blokkaasj vervèltj op: $5\n\nDe kuns contak opnömme mit $1 óm de blokkaasj te bespraeke.\nDe kins de functie \"{{int:emailuser}}\" neet gebroeke behauve es t'r e gèljig e-mailadres in dien [[Special:Preferences|veurkäöre]] is ingevöldj en dien e-mailfuncties neet geblokkeerdj zeen.\nDien hujig IP-adres is $6.\nVermeldj de baovestaondke gegaeves es se hie óp reageers.",
 	"globalblocking-blocked-nopassreset": "Doe kins 't wachwaord neet resette ómdesse wikiwied geblok bös gewaore.",

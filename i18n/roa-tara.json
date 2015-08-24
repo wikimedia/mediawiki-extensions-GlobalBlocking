@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Joetaras"
+			"Joetaras",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permette]] a le indirizze IP de essere [[Special:GlobalBlockList|bloccate attraverse le diverse Uicchi]]",
@@ -22,7 +23,7 @@
 	"globalblocking-ipbanononly": "Bluècche sulamende le utinde anonime",
 	"globalblocking-block-errors": "'U blocche tune non g'à riuscite, {{PLURAL:$1|pe stu|pe le seguende}} mutive:",
 	"globalblocking-block-ipinvalid": "L'indirizze IP ($1) ca tu è mise non g'è valide.<br />\nPe piacere vide ca tu non ge puè mettere 'nu nome utende!",
-	"globalblocking-block-expiryinvalid": "'A scadenze ca tu è mise ($1) non g'è valide.",
+	"globalblocking-block-expiryinvalid": "'A scadenze ca tu è mise non g'è valide.",
 	"globalblocking-block-submit": "Bluecche globalmende st'indirizze IP",
 	"globalblocking-modify-submit": "Cange stu blocche globale",
 	"globalblocking-block-success": "L'indirizze IP $1 ha state bloccate cu successe sus a tutte le pruggette.",

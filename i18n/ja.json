@@ -12,7 +12,9 @@
 			"青子守歌",
 			"Rxy",
 			"W.CC",
-			"Sujiniku"
+			"Sujiniku",
+			"Azeha",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "IPアドレスを[[Special:GlobalBlockList|複数のウィキで横断的に]][[Special:GlobalBlock|ブロックする]]",
@@ -33,7 +35,7 @@
 	"globalblocking-ipbanononly": "匿名利用者のみブロック",
 	"globalblocking-block-errors": "以下の{{PLURAL:$1|理由}}により、ブロックできませんでした:",
 	"globalblocking-block-ipinvalid": "入力したIPアドレス ($1) は無効です。\n利用者名は入力できないことにご注意ください!",
-	"globalblocking-block-expiryinvalid": "入力した期限 ($1) に誤りがあります。",
+	"globalblocking-block-expiryinvalid": "入力した期限 に誤りがあります。",
 	"globalblocking-block-submit": "このIPアドレスをグローバルブロック",
 	"globalblocking-modify-submit": "このグローバルブロックを修正",
 	"globalblocking-block-success": "IPアドレス $1 を全プロジェクトでブロックしました。",

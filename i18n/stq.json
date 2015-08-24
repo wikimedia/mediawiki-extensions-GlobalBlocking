@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Pyt"
+			"Pyt",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Speert]] IP-Adressen ap [[Special:GlobalBlockList|aal Wikis]]",
@@ -15,7 +16,7 @@
 	"globalblocking-block-options": "Optione:",
 	"globalblocking-block-errors": "Ju Speere hied naan Ärfoulch. {{PLURAL:$1|Gruund|Gruunde}}:",
 	"globalblocking-block-ipinvalid": "Du hääst ne uungultige IP-Adresse ($1) ienroat.\nBeoachtje, dät du naan Benutsernoome ienreeke doarst!",
-	"globalblocking-block-expiryinvalid": "Ju Speerduur ($1) is uungultich.",
+	"globalblocking-block-expiryinvalid": "Ju Speerduur is uungultich.",
 	"globalblocking-block-submit": "Disse IP-Adresse globoal speere",
 	"globalblocking-block-success": "Ju IP-Adresse $1 wuud mäd Ärfoulch ap aal Projekte speerd.",
 	"globalblocking-block-successsub": "Mäd Ärfoulch globoal speerd",
@@ -48,7 +49,6 @@
 	"globalblocking-unblock-unblocked": "Du hääst mäd Ärfoulch ju IP-Adresse '''$1''' (Speer-ID $2) äntspeerd",
 	"globalblocking-unblock-errors": "Ju Aphieuwenge fon ju globoale Speere hied naan Ärfoulch. {{PLURAL:$1|Gruund|Gruunde}}:",
 	"globalblocking-unblock-successsub": "Mäd Ärfoulch globoal äntspeerd",
-	"globalblocking-unblock-subtitle": "Globoale Speere wächhoald",
 	"globalblocking-unblock-intro": "Mäd dit Formular koast du ne globoale Speere aphieuwje.",
 	"globalblocking-whitelist": "Lokoalen Stoatus fon ne globoale Speere",
 	"globalblocking-whitelist-legend": "Lokoalen Stoatus beoarbaidje",

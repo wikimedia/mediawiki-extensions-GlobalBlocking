@@ -5,7 +5,8 @@
 			"Gmelfi",
 			"Melos",
 			"Santu",
-			"Pippinu"
+			"Pippinu",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Pirmetti]] di [[Special:GlobalBlockList|bluccari supra a chiossai wiki]] nnirizzi IP",
@@ -19,7 +20,7 @@
 	"globalblocking-block-options": "Opzioni:",
 	"globalblocking-block-errors": "Lu bloccu non fu fattu pi {{PLURAL:$1|stu mutivu|sti mutivi}}:",
 	"globalblocking-block-ipinvalid": "Lu nnirizzu IP ($1) ca nziristi nun è vàlidu. Teni accura ô fattu ca non po nziriri nu nomu utenti!",
-	"globalblocking-block-expiryinvalid": "La scadenza ca nziristi ($1) non vali.",
+	"globalblocking-block-expiryinvalid": "La scadenza ca nziristi non vali.",
 	"globalblocking-block-submit": "Blocca stu nnirizzu IP glubbalmenti",
 	"globalblocking-block-success": "Lu nnirizzu IP $1 vinni bluccatu cu successu supra a tutti li pruggetti.",
 	"globalblocking-block-successsub": "Bloccu glubbali fattu cu successu",
@@ -52,7 +53,6 @@
 	"globalblocking-unblock-unblocked": "Vinni scancillatu cu successu lu bloccu glubbali #$2 pupra a lu nnirizzu IP '''$1'''",
 	"globalblocking-unblock-errors": "La scancillazzioni dû bloccu glubbali c'addumannasti non fi fatta pi {{PLURAL:$1|stu mutivu|sti  mutivi}}:",
 	"globalblocking-unblock-successsub": "Bloccu glubbali scancillatu cu successu",
-	"globalblocking-unblock-subtitle": "Scancillazzioni bloccu glubbali",
 	"globalblocking-whitelist-reason": "Mutivu:",
 	"globalblocking-logentry-expiry": "scari $1",
 	"globalblockstatus": "Statu lucali di blocca glubbali",

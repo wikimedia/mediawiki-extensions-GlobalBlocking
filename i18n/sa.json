@@ -3,7 +3,8 @@
 		"authors": [
 			"Ansumang",
 			"Shubha",
-			"NehalDaveND"
+			"NehalDaveND",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "ऐपि सङ्केतस्य [[Special:GlobalBlockList|विभिन्नेषु विकीषु अवरोधं]] कर्तुं [[Special:GlobalBlock|अनुमतिः]] दीयते ।",
@@ -24,7 +25,7 @@
 	"globalblocking-ipbanononly": "अनामकसदस्यमात्रम् अवरुद्ध्यताम्",
 	"globalblocking-block-errors": "भवतः अवरोधः असफलः यतः {{PLURAL:$1|कारणम्|कारणानि}}:",
 	"globalblocking-block-ipinvalid": "भवता लिखितः एपि सङ्केतः ($1) अमान्यः ।\nयोजकनाम लेखितुं न शक्यते इति कृपया ज्ञायताम् !",
-	"globalblocking-block-expiryinvalid": "भवता दत्तः समाप्तिसमयः ($1) अमान्यः ।",
+	"globalblocking-block-expiryinvalid": "भवता दत्तः समाप्तिसमयः अमान्यः ।",
 	"globalblocking-block-submit": "वैश्विकस्तरे एपि सङ्केतः अवरुद्ध्यताम्",
 	"globalblocking-modify-submit": "अस्य वैश्विकाभिलेखस्य परिवर्तनं क्रियताम्",
 	"globalblocking-block-success": "सर्वासु विकीषु $1 एपि सङ्केतः यशस्वितया अवरुद्धः ।",
@@ -61,7 +62,6 @@
 	"globalblocking-unblock-unblocked": "'''$1''' एपि सङ्केतस्य वैश्विकावरोधः #$2 भवता यशस्वितया निष्कासितः",
 	"globalblocking-unblock-errors": "भवता कृतः वैश्विकावरोधनिष्कासनम् असफलं यतः {{PLURAL:$1|कारणम्|कारणानि}}:",
 	"globalblocking-unblock-successsub": "वैश्विकावरोधः यशस्वितया अपनीतः",
-	"globalblocking-unblock-subtitle": "वैश्विकावरोधस्य अपनयनम्",
 	"globalblocking-unblock-intro": "वैश्विकावरोधस्य निष्कासनाय अस्य प्रपत्रस्य उपयोगं कर्तुम् अर्हति ।",
 	"globalblocking-whitelist": "वैश्विकावरोधस्य स्थानीयस्थितिः",
 	"globalblocking-whitelist-notapplied": "अस्यां वीक्यां वैश्विकावरोधाः न आन्वितः, \nअतः वैश्विकावरोधानां स्थानीयस्थितिः परिष्कर्तुम् अशक्या ।",
@@ -72,9 +72,7 @@
 	"globalblocking-whitelist-submit": "स्थानीयस्थितिः परिवर्त्यताम्",
 	"globalblocking-whitelist-whitelisted": "'''$1''' एपि सङ्केतस्य {{SITENAME}}इत्यस्मिन् विद्यमानः वैश्विकावरोधः #$2 भवता यशस्वितया निष्क्रियः कृतः ।",
 	"globalblocking-whitelist-dewhitelisted": "'''$1''' एपि सङ्केतस्य {{SITENAME}} इत्यस्मिन् विद्यमानः वैश्विकावरोधः #$2 भवता यशस्वितया पुनः सक्रियः कृतः ।",
-	"globalblocking-whitelist-successsub": "स्थानीयस्थितिः परिवर्तितः अस्ति",
 	"globalblocking-whitelist-nochange": "अस्य अवरोधस्य स्थानीयस्थितेः न किमपि परिवर्तनं भवता कृतं । [[Special:GlobalBlockList|वैश्विकावरोधावलिं प्रति प्रत्यागम्यताम्]]",
-	"globalblocking-whitelist-errors": "भवता कृतं वैश्विकावरोधस्य स्थानीयस्थितेः परिवर्तनम् असफलं यतः {{PLURAL:$1|कारणम्|कारणानि}}:",
 	"globalblocking-whitelist-intro": "वैश्विकावरोधस्य स्थानीयस्थितेः सम्पादनाय इदं प्रपत्रम् उपयोक्तुम् अर्हति ।\nअस्यां वीक्यां वैश्विकावरोधः यदि निष्क्रियः कृतः, परिणत-ऐ पि-सङ्केतयुक्ताः योजकाः सामान्यरीत्या सम्पादयितुम् अर्हन्ति ।\n[[Special:GlobalBlockList|वैश्विकावरोधावलीं प्रति निरवर्तनम्]]",
 	"globalblocking-ipblocked": "'''भवतः ऐ पि सङ्केतः सर्वासु वीकीषु अवरुद्धः अस्ति ।'''\nअवरोधः $1 ($2) इत्यनेन कृतः ।\nदत्तं कारणम् एवमस्ति ''$3''।\n\n* अवरोधस्य आरम्भः: $4\n* अवरोधस्य अन्त्यम्: $5\n\nअवरोधविषये चर्चयितुं भवान् $1 इत्यनेन मेलितुम् अर्हति ।\nभवता \"{{int:emailuser}}\" इत्येतत् उपयोक्तुं न शक्यते यदि मान्यः वि-पत्रसङ्केतः [[Special:Preferences|लेखस्य आद्यता]] इत्यस्मिन् निर्दिष्टः न स्यात्, भवान् तस्य उपयोगाय अवरुद्धः नास्ति ।\nसम्प्रति भवतः ऐ पि सङ्केतः $6 ।\nकृपया एतानि सर्वाणि विवरणानि प्रश्नावसरे दीयन्ताम् ।",
 	"globalblocking-blocked-nopassreset": "योजकस्य कूटशब्दः भवता पुनर्निर्णेतुं न शक्यते यतः भवान् वैश्विकावरुद्धः अस्ति ।",

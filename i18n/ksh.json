@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Purodha"
+			"Purodha",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Älaup]] <i lang=\"en\">IP</i>-Addräße ze [[Special:GlobalBlockList|sperre övver ettlijje Wikis]].",
@@ -22,7 +23,7 @@
 	"globalblocking-ipbanononly": "Blohß de Nahmelose schpärre",
 	"globalblocking-block-errors": "Dat Sperre hät nit jeklapp.\n{{PLURAL:$1|Der Jrond:|De Jrönd:|Woröm, wesse mer nit.}}",
 	"globalblocking-block-ipinvalid": "Do häs en kapodde <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"Internet Protocol\">IP</i>-Adräß ($1) aanjejovve.\nDängk draan, dat De kein Nahme fun Metmaacher he aanjävve kanns.",
-	"globalblocking-block-expiryinvalid": "De Door ($1) es Kappes.",
+	"globalblocking-block-expiryinvalid": "De Door es Kappes.",
 	"globalblocking-block-submit": "Don hee di IP Address in alle Wikis sperre",
 	"globalblocking-modify-submit": "Donn hee di Sperr en alle Wikis ändere",
 	"globalblocking-block-success": "Di IP adress „$1“ eß jetz en alle Wikis jesperrt.",

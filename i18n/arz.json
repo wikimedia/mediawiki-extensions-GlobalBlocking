@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Meno25",
-			"Ramsis II"
+			"Ramsis II",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock| بيسمح]] بمنع عناوين الاى بى [[Special:GlobalBlockList|على اكتر من ويكي]]",
@@ -16,7 +17,7 @@
 	"globalblocking-block-options": "اختيارات:",
 	"globalblocking-block-errors": "المنع اللى عملته مانفعش، علشان {{PLURAL:$1|السبب دا|الاسباب دي}}:",
 	"globalblocking-block-ipinvalid": "عنوان الأيبى ($1) اللى دخلته مش صحيح.\nلو سمحت تاخد بالك انه ماينفعش تدخل  اسم يوزر!",
-	"globalblocking-block-expiryinvalid": "تاريخ الانتهاء ($1) اللى دخلته مش صحيح.",
+	"globalblocking-block-expiryinvalid": "تاريخ الانتهاء اللى دخلته مش صحيح.",
 	"globalblocking-block-submit": "امنع عنوان الاى بى دا منع عام",
 	"globalblocking-block-success": "عنوان الاى بى $1 اتمنع بنجاح فى كل المشاريع",
 	"globalblocking-block-successsub": "المنع العام ناجح",
@@ -48,7 +49,6 @@
 	"globalblocking-unblock-unblocked": "إنتا شيلت بنجاح المنع العام #$2 على عنوان الأيبى '''$1'''",
 	"globalblocking-unblock-errors": "شيلانك للمنع العام كان مش ناجح، علشان {{PLURAL:$1|السبب دا|الاسباب دي}}:",
 	"globalblocking-unblock-successsub": "المنع العام اتشال بنجاح.",
-	"globalblocking-unblock-subtitle": "شيل المنع العام",
 	"globalblocking-unblock-intro": "ممكن تستعمل الاستمارة دى علشان تشيل منع عام.",
 	"globalblocking-whitelist": "الحالة المحلية لعمليات المنع العامة",
 	"globalblocking-whitelist-legend": "غير الحالة المحلية",
@@ -58,9 +58,7 @@
 	"globalblocking-whitelist-submit": "غير الحالة المحلية.",
 	"globalblocking-whitelist-whitelisted": "إنتا عطلت بنجاح المنع العام #$2 على عنوان الأيبى '''$1''' فى {{SITENAME}}.",
 	"globalblocking-whitelist-dewhitelisted": "انت فعلت تانى بنجاح المنع العام #$2 على عنوان الاى بى  '''$1''' فى {{SITENAME}}.",
-	"globalblocking-whitelist-successsub": "الحالة المحلية اتغيرت ببنجاح",
 	"globalblocking-whitelist-nochange": "انت ما عملتش اى تغيير فى للحالة المحلية للمنع دا.\n[[Special:GlobalBlockList|ارجع للستة المنع العام]].",
-	"globalblocking-whitelist-errors": "التغيير اللى عملته للحالة المحلية للمنع العام ما نجحش،علشان{{PLURAL:$1|السبب دا|الاسباب دي}}:",
 	"globalblocking-whitelist-intro": "ممكن تستعمل الاستمارة دى علشان تعدل الحالة المحلية للمنع العام.لو  فى منع عام متعطل على الويكى دا ،اليوزرز على عنوان الاى بى المتاثر ح يقدرو يعملو تعديل بشكل طبيعى.\n[[Special:GlobalBlockList|الرجوع للستة المنع العامة]].",
 	"globalblocking-logpage": "سجل المنع العام",
 	"globalblocking-logpagetext": "دا سجل بعمليات المنع العام اللى اتعملت و اتشالت فى الويكى دا.\nلازم تاخد بالك ان عمليات المنع العام ممكن تتعمل و تتشال على الويكيهات التانية، و ان عمليات المنع العام دى ممكن تاثر على الويكى دا.\nعلشان تشوف  كل عمليات المنع العام النشيطة، بص على [[Special:GlobalBlockList|لستة المنع العام]].",

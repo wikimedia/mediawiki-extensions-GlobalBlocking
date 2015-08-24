@@ -4,7 +4,8 @@
 			"Cheers!",
 			"Minh Nguyen",
 			"Vinhtantran",
-			"Max20091"
+			"Max20091",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Cho phép]] [[Special:GlobalBlockList|cấm địa chỉ IP trên nhiều wiki]]",
@@ -25,7 +26,7 @@
 	"globalblocking-ipbanononly": "Chỉ cấm người dùng vô danh",
 	"globalblocking-block-errors": "Cấm không thành công vì {{PLURAL:$1||các}} lý do sau:",
 	"globalblocking-block-ipinvalid": "Bạn đã nhập địa chỉ IP ($1) không hợp lệ.\nXin chú ý rằng không thể nhập một tên người dùng!",
-	"globalblocking-block-expiryinvalid": "Thời hạn bạn nhập ($1) không hợp lệ.",
+	"globalblocking-block-expiryinvalid": "Thời hạn bạn nhập không hợp lệ.",
 	"globalblocking-block-submit": "Cấm địa chỉ IP này trên toàn hệ thống",
 	"globalblocking-modify-submit": "Sửa đổi tác vụ cấm toàn cục",
 	"globalblocking-block-success": "Đã cấm thành công địa chỉ IP $1 trên tất cả các dự án.",

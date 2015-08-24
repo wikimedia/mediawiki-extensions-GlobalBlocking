@@ -4,7 +4,8 @@
 			"Ansumang",
 			"Kaustubh",
 			"Shyam123.ckp",
-			"Siddhartha Ghai"
+			"Siddhartha Ghai",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "आइपी एड्रेस को [[Special:GlobalBlockList|एक से ज्यादा विकियोंपर ब्लॉक]] करने की [[Special:GlobalBlock|अनुमति]] देता हैं।",
@@ -25,7 +26,7 @@
 	"globalblocking-ipbanononly": "केवल अनाम सदस्यों पे प्रतिबंध लगाएँ",
 	"globalblocking-block-errors": "ब्लॉक अयशस्वी हुआ, कारण:",
 	"globalblocking-block-ipinvalid": "आपने दिया हुआ आईपी एड्रेस ($1) अवैध हैं।\nकृपया ध्यान दें आप सदस्यनाम नहीं दे सकतें!",
-	"globalblocking-block-expiryinvalid": "आपने दिया हुआ समाप्ती समय ($1) अवैध हैं।",
+	"globalblocking-block-expiryinvalid": "आपने दिया हुआ समाप्ती समय अवैध हैं।",
 	"globalblocking-block-submit": "इस आईपी को ग्लोबली ब्लॉक करें",
 	"globalblocking-modify-submit": "इस वैश्विक अवरोध को संशोधित करें",
 	"globalblocking-block-success": "$1 इस आयपी एड्रेसको सभी विकिंयोंपर ब्लॉक कर दिया गया हैं।\nआप शायद [[Special:GlobalBlockList|वैश्विक ब्लॉक सूची]] देखना चाहते हैं।",
@@ -60,7 +61,6 @@
 	"globalblocking-unblock-unblocked": "आपने '''$1''' इस आइपी एड्रेस पर होने वाला ग्लोबल ब्लॉक #$2 हटा दिया हैं",
 	"globalblocking-unblock-errors": "वैश्विक अवरुद्ध त्रुटियों खोल देना",
 	"globalblocking-unblock-successsub": "ग्लोबल ब्लॉक हटा दिया गया हैं",
-	"globalblocking-unblock-subtitle": "वैश्विक अवरोध हटा रहे हैं",
 	"globalblocking-unblock-intro": "आप इस प्रपत्र की उपयोग वैश्विक अवरोध को निकालने मे कर सकते हैं ।",
 	"globalblocking-whitelist": "वैश्विक अवरोध के स्थानीय स्थिति",
 	"globalblocking-whitelist-legend": "स्थानिक स्थिती बदलें",
@@ -70,7 +70,6 @@
 	"globalblocking-whitelist-submit": "स्थानिक स्थिती बदलें",
 	"globalblocking-whitelist-whitelisted": "आपने '''$1''' इस एड्रेसपर दिया हुआ वैश्विक ब्लॉक #$2, {{SITENAME}} पर रद्द कर दिया हैं।",
 	"globalblocking-whitelist-dewhitelisted": "आपने '''$1''' इस आइपी एड्रेसपर दिया हुआ वैश्विक ब्लॉक #$2, {{SITENAME}} पर फिरसे दिया हैं।",
-	"globalblocking-whitelist-successsub": "स्थानिक स्थिती बदल दी गई हैं",
 	"globalblocking-blocked-nopassreset": "आप सदस्य के पासवर्ड रीसेट नहीं कर सकते क्यूंकी आप ग्लोबली ब्लॉक्ड है ।",
 	"globalblocking-logpage": "ग्लोबल ब्लॉक सूची",
 	"globalblocking-block-logentry": "[[$1]] को ग्लोबली ब्लॉक किया समाप्ति समय $2",

@@ -12,7 +12,8 @@
 			"SandroHc",
 			"Waldir",
 			"555",
-			"Vitorvicentevalente"
+			"Vitorvicentevalente",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permite]] que endereços IP sejam [[Special:GlobalBlockList|bloqueados em várias wikis]]",
@@ -33,7 +34,7 @@
 	"globalblocking-ipbanononly": "Bloquear apenas utilizadores anónimos",
 	"globalblocking-block-errors": "O bloqueio não teve sucesso {{PLURAL:$1|pelo seguinte motivo|pelos seguintes motivos}}:",
 	"globalblocking-block-ipinvalid": "O endereço IP ($1) que introduziu é inválido.\nPor favor, note que não pode introduzir um nome de utilizador!",
-	"globalblocking-block-expiryinvalid": "A expiração que introduziu ($1) é inválida.",
+	"globalblocking-block-expiryinvalid": "A expiração que introduziu é inválida.",
 	"globalblocking-block-submit": "Bloquear este endereço IP globalmente",
 	"globalblocking-modify-submit": "Modificar este bloqueio global",
 	"globalblocking-block-success": "O endereço IP $1 foi bloqueado em todos os projetos.",

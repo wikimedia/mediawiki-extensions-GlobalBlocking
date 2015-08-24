@@ -5,7 +5,8 @@
 			"Thameera123",
 			"තඹරු විජේසේකර",
 			"නන්දිමිතුරු",
-			"පසිඳු කාවින්ද"
+			"පසිඳු කාවින්ද",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "IP ලිපිනය [[Special:GlobalBlockList|විකියන් කිහිපයකදී අවහිර කිරීමට]] [[Special:GlobalBlock|ඉඩදෙයි]]",
@@ -26,7 +27,7 @@
 	"globalblocking-ipbanononly": "නිර්නාමික පරිශීලකයන් පමණක් වාරණය කරන්න",
 	"globalblocking-block-errors": "පහත සඳහන් {{PLURAL:$1|හේතුව|හේතූන්}} නිසා වාරණය අසාර්ථක විය:",
 	"globalblocking-block-ipinvalid": "ඔබ ඇතුළත් කළ IP ලිපිනය ($1) සදොස්ය.\nඔබට පරිශීලක නමක් ඇතුළත් කළ නොහැකි බව සළකන්න!",
-	"globalblocking-block-expiryinvalid": "ඔබ ඇතුල් කළ කල් ඉකුතුව ($1) සදොස්ය.",
+	"globalblocking-block-expiryinvalid": "ඔබ ඇතුල් කළ කල් ඉකුතුව සදොස්ය.",
 	"globalblocking-block-submit": "මෙම IP ලිපිනය ගෝලීයව වාරණය කරන්න",
 	"globalblocking-modify-submit": "මෙම ගෝලීය වාරණය වෙනස් කරන්න",
 	"globalblocking-block-success": "$1 IP ලිපිනය සියළුම ව්‍යාපෘතීන්හිදී සාර්ථකව වාරණය කෙරිනි.",
@@ -63,7 +64,6 @@
 	"globalblocking-unblock-unblocked": "'''$1''' IP ලිපිනයේ #$2 ගෝලීය වාරණය සාර්ථකව ඉවත් කරන ලදී",
 	"globalblocking-unblock-errors": "පහත සඳහන් {{PLURAL:$1|හේතුව|හේතූන්}} නිසා ගෝලීය වාරණය ඉවත් කිරීම අසාර්ථක විය:",
 	"globalblocking-unblock-successsub": "ගෝලීය වාරණය සාර්ථකව ඉවත්කරන ලදී",
-	"globalblocking-unblock-subtitle": "ගෝලීය වාරණය ඉවත් කරමින්",
 	"globalblocking-unblock-intro": "මෙමෙ පෝරමය ඔබට ගෝලීය වාරණයක් ඉවත් කිරීම සඳහා භාවිතා කළ හැකිය.",
 	"globalblocking-whitelist": "ගෝලීය වාරණවල පෙදෙසි තත්වය",
 	"globalblocking-whitelist-notapplied": "ගෝලීය වාරණ මෙම විකියට අදාළ නැත,\nඑබැවින් මෙහි ගෝලීය වාරණවල පෙදෙසි තත්වය වෙනස් කළ නොහැක.",
@@ -74,9 +74,7 @@
 	"globalblocking-whitelist-submit": "පෙදෙසි තත්වය වෙනස් කරන්න",
 	"globalblocking-whitelist-whitelisted": "{{SITENAME}} හි '''$1''' IP ලිපිනයේ #$2 ගෝලීය වාරණය සාර්ථකව ඉවත් කරන ලදී",
 	"globalblocking-whitelist-dewhitelisted": "{{SITENAME}} හි '''$1''' IP ලිපිනයේ #$2 ගෝලීය වාරණය සාර්ථකව නැවත සක්‍රීීය කරන ලදී",
-	"globalblocking-whitelist-successsub": "පෙදෙසි තත්වය සාර්ථකව වෙනස් විය",
 	"globalblocking-whitelist-nochange": "ඔබ මේ වාරණයේ පෙදෙසි තත්වයට වෙනසක් සිදුකර නැත.\n[[Special:GlobalBlockList|ගෝලීය වාරණ ලයිස්තුවට ආපසු යන්න]].",
-	"globalblocking-whitelist-errors": "පහත සඳහන් {{PLURAL:$1|හේතුව|හේතූන්}} නිසා ඔබේ ගෝලීය වාරණයක ප්‍රාදේශීය තත්වය වෙනස් කෙරුම අසාර්ථක විය:",
 	"globalblocking-whitelist-intro": "ගෝලීය වාරණයක ප්‍රාදේශිය තත්වය වෙනස් කෙරුමට ඔබට මෙම ෆෝරමය භාවිතා කළ හැක.\nගෝලීය වාරණයක් මෙම විකියේදී අක්‍රීය නම්, අදාළ වාරණය බලපාන IP ලිපිනයෙන් එන පරිශීලකයන්ට සාමාන්‍ය ලෙස සංස්කරණ කටයුතු කළ හැකි වනු ඇත.\n[[Special:GlobalBlockList|ගෝලීය වාරණ ලයිස්තුවට ආපසු යන්න]].",
 	"globalblocking-blocked-nopassreset": "ඔබ ගෝලීයව වාරණිත බැවින් පරිශීලක මුරපද වෙනස් කළ නොහැක.",
 	"globalblocking-logpage": "ගෝලීය වාරණ ලොගය",

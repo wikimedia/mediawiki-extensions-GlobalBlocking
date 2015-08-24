@@ -3,7 +3,8 @@
 		"authors": [
 			"Jnanaranjan Sahu",
 			"Odisha1",
-			"Psubhashish"
+			"Psubhashish",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlockList|ବହୁ ଉଇକିରେ ଅଟକାଯିବାକୁ]] IP ଠିକଣାମାନଙ୍କୁ [[Special:GlobalBlock|ସଚଳ କରାଇବେ]]",
@@ -24,7 +25,7 @@
 	"globalblocking-ipbanononly": "କେବଳ ବେନାମି ସଭ୍ୟଙ୍କୁ ଅଟକାଇଦିଅନ୍ତୁ",
 	"globalblocking-block-errors": "ତଳଲିଖିତ {{PLURAL:$1|ଗୋଟିଏ କାରଣ|ଗୋଟି କାରଣ}} ନିମନ୍ତେ  ଆପଣଙ୍କ ଦେଇ କରାଯାଇଥିବା ଅଟକ ବିଫଳ ହେଲା:",
 	"globalblocking-block-ipinvalid": "ଆପଣ ଦେଇଥିବା IP ଠିକଣାଟି ($1) ଭୁଲ ଅଟେ ।\nଜାଣିରଖନ୍ତୁ ଯେ ଆପଣ ଏକ ଇଉଜର ନାମ ଦେଇପାରିବେ ନାହିଁ !",
-	"globalblocking-block-expiryinvalid": "ଆପଣ ଦେଇଥିବା ମିଆଦଟି ($1) କାମ କରୁନାହିଁ।",
+	"globalblocking-block-expiryinvalid": "ଆପଣ ଦେଇଥିବା ମିଆଦଟି କାମ କରୁନାହିଁ।",
 	"globalblocking-block-submit": "ଏକ IP ଠିକଣାକୁ ଜଗତ ସାରା ଅଟକାଇ ଦେବେ",
 	"globalblocking-modify-submit": "ଜଗତ ଯାକ ଅଟକକୁ ବଦଳାଇବେ",
 	"globalblocking-block-success": "ଏହି IP ଠିକଣା ($1 )ଟି ସଫଳ ଭାବରେ ସବୁ ପ୍ରକଳ୍ପରେ ଅଟକାଇଦିଆଗଲା ।",
@@ -61,7 +62,6 @@
 	"globalblocking-unblock-unblocked": "'''$1''' IP ଠିକଣା ଉପରେ ଲାଗିଥିବା ଜଗତ ବାସନ୍ଦ #$2କୁ ଆପଣ ସଫଳ ଭାବେ ଉଠାଇ ଦେଲେ",
 	"globalblocking-unblock-errors": "ତଳଲିଖିତ {{PLURAL:$1|ଗୋଟିଏ କାରଣ|ଗୋଟି କାରଣ}} ନିମନ୍ତେ  ଆପଣଙ୍କର ଜଗତ ବାସନ୍ଦ ହଟାଇବା ବିଫଳ ହେଲା:",
 	"globalblocking-unblock-successsub": "ଜଗତ ବାସନ୍ଦ ସଫଳ ଭାବେ ହଟାଇଦିଆଗଲା",
-	"globalblocking-unblock-subtitle": "ଜଗତ ବାସନ୍ଦ ହଟାଉଛୁଁ",
 	"globalblocking-unblock-intro": "ଆପଣ ଏକ ଜଗତ ବାସନ୍ଦ ଉଠାଇବେ ନିମନ୍ତେ ଏହି ଫର୍ମର ବ୍ୟବହାର କରିପାରିବେ ।",
 	"globalblocking-whitelist": "ଜଗତ ବାସନ୍ଦର ଆଞ୍ଚଳିକ ସ୍ଥିତି",
 	"globalblocking-whitelist-notapplied": "ଏହି ଉଇକି ପାଇଁ ଜଗତ ବାସନ୍ଦ ଲାଗୁ ହେବ ନାହିଁ,\nତେଣୁ ଜଗତ ବାସନ୍ଦର ଆଞ୍ଚଳିକ ସ୍ଥିତି ବଦଳାଯାଇପାରିବ ନାହିଁ ।",
@@ -72,9 +72,7 @@
 	"globalblocking-whitelist-submit": "ଆଞ୍ଚଳିକ ସ୍ଥିତି ବଦଳାଇବେ",
 	"globalblocking-whitelist-whitelisted": "'''$1''' IP ଠିକଣା ଉପରେ ଲାଗିଥିବା {{SITENAME}}ର ଜଗତ ବାସନ୍ଦ #$2କୁ ଆପଣ ସଫଳ ଭାବେ ଅଚଳ କରିଦେଲେ ।",
 	"globalblocking-whitelist-dewhitelisted": "'''$1''' IP ଠିକଣା ଉପରେ ଲାଗିଥିବା {{SITENAME}}ର ଜଗତ ବାସନ୍ଦ #$2କୁ ଆପଣ ସଫଳ ଭାବେ ଆଉଥରେ ସଚଳ କରିଦେଲେ ।",
-	"globalblocking-whitelist-successsub": "ଆଞ୍ଚଳିକ ସ୍ଥିତି ସଫଳ ଭାବେ ବଦଳାଇ ଦେଲେ",
 	"globalblocking-whitelist-nochange": "ଏହି ବାସନ୍ଦରେ ଆପଣ ଆଞ୍ଚଳିକ ସ୍ଥିତିରେ କିଛି ବି ବଦଳାଇଲେ ନାହିଁ ।\n[[Special:GlobalBlockList|ଜଗତ ବାସନ୍ଦ ତାଳିକାକୁ ଫେରିଯିବେ]] ।",
-	"globalblocking-whitelist-errors": "ତଳଲିଖିତ {{PLURAL:$1|ଗୋଟିଏ କାରଣ|ଗୋଟି କାରଣ}} ନିମନ୍ତେ  ଆପଣଙ୍କର ଜଗତ ବାସନ୍ଦର ଆଞ୍ଚଳିକ ସ୍ଥିତି ବଦଳାଇବା ବିଫଳ ହେଲା:",
 	"globalblocking-whitelist-intro": "ଆପଣ ଏହି ଫର୍ମଟି ଜଗତ ବାସନ୍ଦର ଆଞ୍ଚଳିକ ଅବସ୍ଥା ବଦଳାଇବାକୁ ବ୍ୟବହାର କରିପାରିବେ ।\nଯଦି ଏହି ଉଇକିରେ ଜଗତ ବାସନ୍ଦଟି ଅଚଳ ହୋଇଥାଏ ତେବେ ପ୍ରଭାବିତ IP  ଠିକଣାର ସଭ୍ୟଗଣ ଏହାକୁ ସାଧାରଣ ଭାବରେ ସମ୍ପାଦନ କରିପାରିବେ ।\n[[Special:GlobalBlockList|ଜଗତ ବାସନ୍ଦ ତାଲିକାକୁ ଫେରିବା]] ।",
 	"globalblocking-ipblocked": "'''ଆପଣଙ୍କ IP ଠିକଣାଟିକୁ ସମସ୍ତ ଉଇକିରେ ଅଟକ ରଖାଯାଇଛି ।'''\n\nଅଟକଟି $1 ($2)ଙ୍କଦ୍ଵାରା କରାଯାଇଛି ।\nଦର୍ଶଯାଇଥିବା କରଣଟି ହେଉଛି '''$3''' ।\n\n* ଅଟକ ଆରମ୍ଭ: $4\n* ଅଟକ ଶେଷ: $5\n\nଆପଣ ଏହି ଅଟକ ବିଷୟରେ ଅଲୋଚନା କରିବା ପାଇଁ $1 ସହ ଯୋଗାଯୋଗ କରିପାରନ୍ତି ।\nଆପଣଙ୍କ [[Special:Preferences|account preferences]]ରେ ଏକ ବୈଧ ଇ-ମେଲ ଠିକଣା ନ ଦେବା ଯାଏଁ ଆପଣ \"{{int:emailuser}}\" ବିଶେଷତା ବ୍ୟବହାର କରି ପାରିବେ ନାହିଁ ଏବଂ ଆପଣଙ୍କୁ ଏହାକୁ ବ୍ୟବହାର କରିବା ପାଇଁ ଅଟକ ରଖା ଯାଇନାହିଁ ।\nଆପଣଙ୍କ ବର୍ତମାନର IP ଠିକଣା ହେଉଛି $6 ।\nଦୟାକରି ଆପଣଙ୍କର କିଛି ପଚାରିବାର ଥିଲେ ଉପର ତଥ୍ୟଗୁଡିକୁ ଦେଇ ପଚାରନ୍ତୁ ।",
 	"globalblocking-blocked-nopassreset": "ଆପଣଙ୍କୁ ଜଗତଯାକ ବାସନ୍ଦ କରାଯାଇଥିବାରୁ ଆପଣ ନିଜର ସଭ୍ୟ ପାସବାର୍ଡ଼ ବଦଳାଇପାରିବେ ନାହିଁ ।",

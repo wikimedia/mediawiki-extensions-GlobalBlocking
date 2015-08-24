@@ -29,7 +29,7 @@
 	"globalblocking-ipbanononly": "חסימת משתמשים אנונימיים בלבד",
 	"globalblocking-block-errors": "החסימה נכשלה בגלל {{PLURAL:$1|הסיבה הבאה|הסיבות הבאות}}:",
 	"globalblocking-block-ipinvalid": "כתובת ה־IP שהזנת ($1) אינה תקינה.\nנא לשים לב שאין באפשרותך להזין שם משתמש!",
-	"globalblocking-block-expiryinvalid": "זמן פקיעת החסימה שהזנת ($1) אינו תקין.",
+	"globalblocking-block-expiryinvalid": "זמן הפקיעה שהזנת אינו תקין.",
 	"globalblocking-block-submit": "חסימה גלובלית של כתובת ה־IP הזאת",
 	"globalblocking-modify-submit": "שינוי חסימה גלובלית זו",
 	"globalblocking-block-success": "כתובת ה־IP $1 נחסמה בהצלחה בכל אתרי הוויקי.",

@@ -7,7 +7,8 @@
 			"Mahitgar",
 			"Rahuldeshmukh101",
 			"V.narsikar",
-			"संतोष दहिवळ"
+			"संतोष दहिवळ",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "आइपी अंकपत्त्याला [[Special:GlobalBlockList|अनेक विकिंवर ब्लॉक]] करण्याची [[Special:GlobalBlock|परवानगी]] देतो.",
@@ -28,7 +29,7 @@
 	"globalblocking-ipbanononly": "केवळ अनामिक सदस्यांना प्रतिबंधीत करा",
 	"globalblocking-block-errors": "ब्लॉक अयशस्वी झालेला आहे, {{PLURAL:$1|कारण|कारण}}:",
 	"globalblocking-block-ipinvalid": "तुम्ही दिलेला आयपी अंकपत्ता ($1) अयोग्य आहे.\nकृपया नोंद घ्या की तुम्ही सदस्य नाव देऊ शकत नाही!",
-	"globalblocking-block-expiryinvalid": "तुम्ही दिलेली समाप्तीची वेळ ($1) अयोग्य आहे.",
+	"globalblocking-block-expiryinvalid": "तुम्ही दिलेली समाप्तीची वेळ अयोग्य आहे.",
 	"globalblocking-block-submit": "ह्या आयपी अंकपत्त्याला वैश्विक पातळीवर ब्लॉक करा",
 	"globalblocking-modify-submit": "हा वैश्विक रोध बदलवा",
 	"globalblocking-block-success": "$1 या आयपी अंकपत्त्याला सर्व विकिंवर यशस्वीरित्या अवरोधित करण्यात आलेले आहे.",
@@ -65,7 +66,6 @@
 	"globalblocking-unblock-unblocked": "तुम्ही आयपी अंकपत्ता '''$1''' वर असणारा वैश्विक ब्लॉक #$2 यशस्वीरित्या काढलेला आहे",
 	"globalblocking-unblock-errors": "आपले या आयपी अंकपत्त्यावरील वैश्विक रोध काढणे अयशस्वी झाले आहे,{{PLURAL:$1|कारण|कारणे}}:",
 	"globalblocking-unblock-successsub": "वैश्विक ब्लॉक काढलेला आहे",
-	"globalblocking-unblock-subtitle": "वैश्विक ब्लॉक काढत आहे",
 	"globalblocking-unblock-intro": "तुम्ही ह्या पानाचा वापर वैश्विक ब्लॉक काढण्या साठी करू शकता",
 	"globalblocking-whitelist": "वैश्विक ब्लॉकची स्थानिक स्थिति",
 	"globalblocking-whitelist-notapplied": "वैश्विक रोधांचे या विकिवर प्रयोजन  नाही,त्यामुळे वैश्विक रोधांची स्थानिक स्थिती अनुरूपित करता येऊ शकत नाही.",
@@ -76,9 +76,7 @@
 	"globalblocking-whitelist-submit": "स्थानिक स्थिती बदला",
 	"globalblocking-whitelist-whitelisted": "तुम्ही '''$1''' या अंकपत्त्याचा वैश्विक ब्लॉक #$2 {{SITENAME}} वर रद्द केलेला आहे.",
 	"globalblocking-whitelist-dewhitelisted": "तुम्ही '''$1''' या अंकपत्त्याचा वैश्विक ब्लॉक #$2 {{SITENAME}} वर पुन्हा दिलेला आहे.",
-	"globalblocking-whitelist-successsub": "स्थानिक स्थिती बदलली",
 	"globalblocking-whitelist-nochange": "वैश्विक रोधाच्या स्थानिक स्थितीत आपण काहीच बदल केला नाही.\n[[Special:GlobalBlockList|वैश्विक रोधांच्या यादीकडे परत]].",
-	"globalblocking-whitelist-errors": "वैश्विक रोधाच्या स्थानिक स्थितीत आपण केलेला बदल अयशस्वी होता.त्याची {{PLURAL:$1|कारण|कारणे}} पुढीलप्रमाणे:",
 	"globalblocking-whitelist-intro": "आपण हे आवेदनपत्र वैश्विक रोधाची स्थानिक स्थिती संपादण्यास वापरू शकता.जर या विकिवर वैश्विक रोध वगळण्यात आला असेल तर बाधित अंकपत्त्याचा वापरकर्ता सामान्यपणे संपादने करू शकेल.\n[[Special:GlobalBlockList|वैश्विक रोधांच्या यादीकडे परत]].",
 	"globalblocking-blocked-nopassreset": "आपण सदस्याचा परवलीचा शब्द पुनर्स्थापित करू शकत नाही कारण आपणांवर वैश्विक रोध आहे.",
 	"globalblocking-logpage": "वैश्विक ब्लॉक सूची",

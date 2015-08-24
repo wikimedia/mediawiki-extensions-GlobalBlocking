@@ -8,7 +8,8 @@
 			"Gianfranco",
 			"Melos",
 			"Nemo bis",
-			"Ricordisamoa"
+			"Ricordisamoa",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permette]] di [[Special:GlobalBlockList|bloccare su più wiki]] indirizzi IP",
@@ -29,7 +30,7 @@
 	"globalblocking-ipbanononly": "Blocca solo utenti anonimi",
 	"globalblocking-block-errors": "Il blocco non è stato eseguito per {{PLURAL:$1|il seguente motivo|i seguenti motivi}}:",
 	"globalblocking-block-ipinvalid": "L'indirizzo IP ($1) che hai inserito non è valido. Fai attenzione al fatto che non puoi inserire un nome utente!",
-	"globalblocking-block-expiryinvalid": "La scadenza che hai inserito ($1) non è valida.",
+	"globalblocking-block-expiryinvalid": "La scadenza che hai inserito non è valida.",
 	"globalblocking-block-submit": "Blocca questo indirizzo IP globalmente",
 	"globalblocking-modify-submit": "Modifica questo blocco globale",
 	"globalblocking-block-success": "L'indirizzo IP $1 è stato bloccato con successo su tutti i progetti.",
@@ -68,7 +69,6 @@
 	"globalblocking-unblock-unblocked": "È stato rimosso con successo il blocco globale #$2 sull'indirizzo IP '''$1'''",
 	"globalblocking-unblock-errors": "La rimozione del blocco globale che hai richiesto non è stata eseguita per {{PLURAL:$1|il seguente motivo|i seguenti motivi}}:",
 	"globalblocking-unblock-successsub": "Blocco globale rimosso con successo",
-	"globalblocking-unblock-subtitle": "Rimozione blocco globale",
 	"globalblocking-unblock-intro": "È possibile usare questo modulo per rimuovere un blocco globale.",
 	"globalblocking-whitelist": "Stato locale dei blocchi globali",
 	"globalblocking-whitelist-notapplied": "I blocchi globali non sono attivi su questo sito wiki.\nNon è possibile modificare lo stato locale dei blocchi globali.",
@@ -79,9 +79,7 @@
 	"globalblocking-whitelist-submit": "Cambia stato locale",
 	"globalblocking-whitelist-whitelisted": "Hai disattivato con successo il blocco globale #$2 sull'indirizzo IP '''$1''' su {{SITENAME}}.",
 	"globalblocking-whitelist-dewhitelisted": "Hai riabilitato con successo il blocco globale #$2 sull'indirizzo IP '''$1''' su {{SITENAME}}.",
-	"globalblocking-whitelist-successsub": "Stato locale cambiato con successo",
 	"globalblocking-whitelist-nochange": "Non hai effettuato cambiamenti allo stato locale di questo blocco. [[Special:GlobalBlockList|Torna all'elenco dei blocchi globali]].",
-	"globalblocking-whitelist-errors": "Il tuo cambiamento allo stato locale di un blocco globale non è stato effettuato per {{PLURAL:$1|il seguente motivo|i seguenti motivi}}:",
 	"globalblocking-whitelist-intro": "È possibile usare questo modulo per modificare lo stato locale di un blocco globale. Se un blocco globale è disattivato su questa wiki, gli utenti che utilizzano l'indirizzo IP colpito saranno in grado di editare normalmente.\n[[Special:GlobalBlockList|Fai clic qui]] per tornare all'elenco dei blocchi globali.",
 	"globalblocking-ipblocked": "'''Il tuo indirizzo IP è stato bloccato su tutte le wiki.'''\n\nIl blocco è stato imposto da $1 ($2).\nLa motivazione del blocco è la seguente: ''$3''.\n\n* Inizio del blocco: $4\n* Scadenza del blocco: $5\n\nSe lo si desidera, è possibile contattare $1 per discutere del blocco.\nSi noti che la funzione \"{{int:emailuser}}\" non è attiva se non è stato registrato un indirizzo e-mail valido nelle proprie [[Special:Preferences|preferenze]] o se l'utilizzo di tale funzione è stato bloccato.\n\nL'indirizzo IP attuale è $6.\nSi prega di specificare tutti i dettagli precedenti in qualsiasi richiesta di chiarimenti.",
 	"globalblocking-ipblocked-xff": "'''Uno o più server proxy usato nella tua richiesta è stato bloccato su tutte le wiki.'''\n\nIl blocco è stato imposto da $1 ($2).\nLa motivazione del blocco è la seguente: ''$3''.\n\n* Inizio del blocco: $4\n* Scadenza del blocco: $5\n\nSe lo si desidera, è possibile contattare $1 per discutere del blocco.\nSi noti che la funzione \"{{int:emailuser}}\" non è attiva se non è stato registrato un indirizzo email valido nelle proprie [[Special:Preferences|preferenze]] o se l'utilizzo di tale funzione è stato bloccato.\n\nL'indirizzo del proxy bloccato è $6.\nSi prega di specificare tutti i dettagli precedenti in qualsiasi richiesta di chiarimenti.",

@@ -7,7 +7,8 @@
 			"Sasa Stefanovic",
 			"Јованвб",
 			"Жељко Тодоровић",
-			"Михајло Анђелковић"
+			"Михајло Анђелковић",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Омогућује]] [[Special:GlobalBlockList|глобално блокирање]] ИП адреса на више викија",
@@ -28,7 +29,7 @@
 	"globalblocking-ipbanononly": "Блокирај само анонимне кориснике",
 	"globalblocking-block-errors": "Блок није успешан због {{PLURAL:$1|следеђег разлога|следећих разлога}}:",
 	"globalblocking-block-ipinvalid": "ИП адреса ($1) коју сте унели није добра.\nЗапамтите да не можете унети корисничко име!",
-	"globalblocking-block-expiryinvalid": "Време истека блока које сте унели ($1) није исправно.",
+	"globalblocking-block-expiryinvalid": "Време истека блока које сте унели није исправно.",
 	"globalblocking-block-submit": "Блокирајте ову ИП адресу глобално",
 	"globalblocking-modify-submit": "Промени овај глобални блок",
 	"globalblocking-block-success": "Ип адреса $1 је успешно блокирана на свим Викимедијиним пројектима.",

@@ -4,7 +4,8 @@
 			"Bennylin",
 			"Meursault2004",
 			"NoiX180",
-			"Pras"
+			"Pras",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Marengaké]] alamat-alamat IP [[Special:GlobalBlockList|diblokir sacara lintas wiki]]",
@@ -25,7 +26,7 @@
 	"globalblocking-ipbanononly": "Blokir panganggo ora dikenal thok",
 	"globalblocking-block-errors": "Pamblokiran ora kasil, amarga {{PLURAL:$1|alesan|alesan-alesan}} iki:",
 	"globalblocking-block-ipinvalid": "AlamatIP sing dilebokaké ($1) iku ora absah.\nTulung digatèkaké yèn panjenengan ora bisa nglebokaké jeneng panganggo!",
-	"globalblocking-block-expiryinvalid": "Wektu kadaluwarsa sing dilebokaké ($1) ora absah.",
+	"globalblocking-block-expiryinvalid": "Wektu kadaluwarsa sing dilebokaké ora absah.",
 	"globalblocking-block-submit": "Blokir alamat IP iki sacara global",
 	"globalblocking-modify-submit": "Owah blokiran global iki",
 	"globalblocking-block-success": "Alamat IP $1 suksès diblokir saka kabèh proyèk.",
@@ -62,7 +63,6 @@
 	"globalblocking-unblock-unblocked": "Panjenengan sacara suksès njabel blokade global #$2 ing alamat IP '''$1'''",
 	"globalblocking-unblock-errors": "Panjenengan gagal njabel blokade global, kanthi {{PLURAL:$1|alesan|alesan}}:",
 	"globalblocking-unblock-successsub": "Blokade global bisa dijabel",
-	"globalblocking-unblock-subtitle": "Njabel blokade global",
 	"globalblocking-unblock-intro": "Sampéyan bisa nganggo pormulir iki kanggo nyingkiraké blokiran global.",
 	"globalblocking-whitelist": "Status lokal saka pamblokiran global",
 	"globalblocking-whitelist-notapplied": "Blokiran global ora sumadhiya nèng wiki iki,\ndadiné status lokal saka blokiran global ora bisa diowah-owah.",
@@ -73,9 +73,7 @@
 	"globalblocking-whitelist-submit": "Ngganti status lokal",
 	"globalblocking-whitelist-whitelisted": "Panjenengan sacara suksès njabel blokade global #$2 ing alamat IP '''$1''' ing {{SITENAME}}.",
 	"globalblocking-whitelist-dewhitelisted": "Panjenengan sacara suksès blokade global #$2 ing alamat IP '''$1''' ing {{SITENAME}}.",
-	"globalblocking-whitelist-successsub": "Status lokal kasil diganti",
 	"globalblocking-whitelist-nochange": "Panjenengan ora ngowahi status lokal pamblokiran iki.\n[[Special:GlobalBlockList|Bali menyang dhaptar pamblokiran global]].",
-	"globalblocking-whitelist-errors": "Pangowahan marang status lokal saka pamblokiran global ora kasil; amarga {{PLURAL:$1|alesan|alesan-alesan}} iki:",
 	"globalblocking-whitelist-intro": "Panjenengan bisa migunakaké formulir iki kanggo nyunting status lokal saka sawijining pamblokiran global.\nYèn pamblokiran dinon-aktifaké ing wiki iki, panganggo-panganggo kanthi alamat IP kasebut bakal bisa nyunting kaya adaté.\n[[Special:GlobalBlockList|Bali menyang dhaptar pamblokiran global]].",
 	"globalblocking-blocked-nopassreset": "Sampéyan ora bisa ngganti tembung sandhi amarga Sampéyan diblokir global.",
 	"globalblocking-logpage": "Log pamblokiran global",

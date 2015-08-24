@@ -12,7 +12,8 @@
 			"RLuts",
 			"Sodmy",
 			"Ата",
-			"Piramidion"
+			"Piramidion",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Дозволяє]] блокування IP-адрес [[Special:GlobalBlockList|на кількох вікі]]",
@@ -33,7 +34,7 @@
 	"globalblocking-ipbanononly": "Блокувати тільки анонімних користувачів",
 	"globalblocking-block-errors": "Спроба блокування не вдалася через {{PLURAL:$1|1=наступну причину|наступні причини}}:",
 	"globalblocking-block-ipinvalid": "Уведена вами IP-адреса ($1) неправильна.\nЗверніть увагу, що ви не можете вводити ім'я користувача!",
-	"globalblocking-block-expiryinvalid": "Уведений час завершення ($1) неправильний.",
+	"globalblocking-block-expiryinvalid": "Уведений час завершення неправильний.",
 	"globalblocking-block-submit": "Заблокувати цю IP-адресу глобально",
 	"globalblocking-modify-submit": "Змінити це глобальне блокування",
 	"globalblocking-block-success": "IP-адреса $1 була успішно заблокована в усіх проектах.",

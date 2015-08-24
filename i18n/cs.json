@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Li-sung",
-			"Mormegil"
+			"Mormegil",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Umožňuje]] blokovat IP adresy [[Special:GlobalBlockList|na více wiki současně]]",
@@ -23,7 +24,7 @@
 	"globalblocking-ipbanononly": "Zablokovat pouze anonymní uživatele",
 	"globalblocking-block-errors": "Blokování se {{PLURAL:$1|z následujícího důvodu|z následujících důvodů}} nezdařilo:",
 	"globalblocking-block-ipinvalid": "Vámi zadaná IP adresa ($1) je neplatná.\nUvědomte si, že nemůžete zadat uživatelské jméno!",
-	"globalblocking-block-expiryinvalid": "Vámi zadaný čas vypršení ($1) je neplatný.",
+	"globalblocking-block-expiryinvalid": "Vámi zadaný čas vypršení je neplatný.",
 	"globalblocking-block-submit": "Globálně zablokovat tuto IP adresu",
 	"globalblocking-modify-submit": "Změnit toto globální zablokování",
 	"globalblocking-block-success": "IP adresa $1 byla na všech projektech úspěšně zablokována.",

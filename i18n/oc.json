@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Cedric31"
+			"Cedric31",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permet]] lo blocatge de las adreças IP [[Special:GlobalBlockList|a travèrs maites wikis]]",
@@ -20,7 +21,7 @@
 	"globalblocking-block-options": "Opcions :",
 	"globalblocking-block-errors": "Lo blocatge a fracassat {{PLURAL:$1|pel motiu seguent|pels motius seguents}} :",
 	"globalblocking-block-ipinvalid": "L’adreça IP ($1) qu'avètz picada es incorrècta.\nNotatz que podètz pas inscriure un nom d’utilizaire !",
-	"globalblocking-block-expiryinvalid": "L’expiracion qu'avètz picada ($1) es incorrècta.",
+	"globalblocking-block-expiryinvalid": "L’expiracion qu'avètz picada es incorrècta.",
 	"globalblocking-block-submit": "Blocar globalament aquesta adreça IP",
 	"globalblocking-modify-submit": "Modificar aqueste blocatge global",
 	"globalblocking-block-success": "L’adreça IP $1 es estada blocada amb succès sus l’ensemble dels projèctes.",
@@ -57,7 +58,6 @@
 	"globalblocking-unblock-unblocked": "Avètz capitat de levar lo blocatge global n° $2 correspondent a l’adreça IP '''$1'''",
 	"globalblocking-unblock-errors": "Podètz pas levar un blocatge global per aquesta adreça IP {{PLURAL:$1|pel motiu seguent|pels motius seguents}} :\n$1",
 	"globalblocking-unblock-successsub": "Blocatge global levat amb succès",
-	"globalblocking-unblock-subtitle": "Supression del blocatge global",
 	"globalblocking-unblock-intro": "Podètz utilizar aqueste formulari per levar un blocatge global.",
 	"globalblocking-whitelist": "Estatut local dels blocatges globals",
 	"globalblocking-whitelist-notapplied": "Los blocatges globals son pas aplicats a aqueste wiki,\nd'aquel fach l'estatut local del blocatge global pòt pas èsser modificat.",
@@ -68,9 +68,7 @@
 	"globalblocking-whitelist-submit": "Cambiar l'estatut local",
 	"globalblocking-whitelist-whitelisted": "Avètz desactivat amb succès lo blocatge global n° $2 sus l'adreça IP '''$1''' sus {{SITENAME}}.",
 	"globalblocking-whitelist-dewhitelisted": "Avètz reactivat amb succès lo blocatge global n° $2 sus l'adreça IP '''$1''' sus {{SITENAME}}.",
-	"globalblocking-whitelist-successsub": "Estatut local cambiat amb succès",
 	"globalblocking-whitelist-nochange": "Avètz pas modificat l'estatut local d'aqueste blocatge.\n[[Special:GlobalBlockList|Tornar a la lista globala dels blocatges]].",
-	"globalblocking-whitelist-errors": "Vòstra modificacion de l'estatut local d’un blocage global a pas capitat {{PLURAL:$1|pel motiu seguent|pels motius seguents}} :",
 	"globalblocking-whitelist-intro": "Podètz utilizar aqueste formulari per modificar l'estatut local d’un blocatge global. Se un blocatge global es desactivat sus aqueste wiki, los utilizaires concernits per l’adreça IP poiràn editar normalament. [[Special:GlobalBlockList|Clicatz aicí]] per tornar a la lista globala.",
 	"globalblocking-blocked-nopassreset": "Podètz pas tornar inicializar los senhals d’utilizaire perque sètz blocat(ada) globalament.",
 	"globalblocking-logpage": "Jornal dels blocatges globals",

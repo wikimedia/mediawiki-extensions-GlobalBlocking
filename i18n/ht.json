@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Boukman",
-			"Jvm"
+			"Jvm",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Pemèt]] adrès IP yo [[Special:GlobalBlockList|bloke atravè plizyè wiki]]",
@@ -16,7 +17,7 @@
 	"globalblocking-block-options": "Opsyon yo:",
 	"globalblocking-block-errors": "Blokaj sa pa reyisi pou {{PLURAL:$1|rezon sa|rezon sa yo}}:",
 	"globalblocking-block-ipinvalid": "Adrès IP sa ($1) ou te antre a pa bon.\nTanpri note ke ou pa kapab antre yon non itlizatè!",
-	"globalblocking-block-expiryinvalid": "Expirasyon ($1) ou te antre a pa bon.",
+	"globalblocking-block-expiryinvalid": "Expirasyon ou te antre a pa bon.",
 	"globalblocking-block-submit": "Bloke adrès IP sa globalman",
 	"globalblocking-block-success": "Adrès IP $1 byen bloke nan tout pwojè yo.",
 	"globalblocking-block-successsub": "Blokaj global reyisi",
@@ -47,7 +48,6 @@
 	"globalblocking-whitelist-submit": "Chanje estati lokal",
 	"globalblocking-whitelist-whitelisted": "Ou reyisi retire blokaj global #$2 pou adrès IP '''$1''' nan {{SITENAME}}.",
 	"globalblocking-whitelist-dewhitelisted": "Ou te reyisi remèt blokaj global #$2 sou adrès IP '''$1''' nan {{SITENAME}}.",
-	"globalblocking-whitelist-successsub": "Estati lokal te reyisi chanje",
 	"globalblocking-logpage": "Jounal blokaj global",
 	"globalblocking-block-logentry": "te bloke globalman [[$1]] avèk yon tan ekspirasyon $2",
 	"globalblocking-unblock-logentry": "retire blokaj global la sou [[$1]]",

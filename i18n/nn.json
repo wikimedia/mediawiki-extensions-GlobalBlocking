@@ -6,7 +6,8 @@
 			"Jon Harald Søby",
 			"Jorunn",
 			"Nghtwlkr",
-			"Njardarlogar"
+			"Njardarlogar",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Gjer det råd]] å blokkera IP-adresser [[Special:GlobalBlockList|krosswiki]]",
@@ -23,7 +24,7 @@
 	"globalblocking-block-options": "Alternativ:",
 	"globalblocking-block-errors": "Blokkeringa gjekk ikkje gjennom grunna {{PLURAL:$1|den følgjande årsaka|dei følgjande årsakene}}:",
 	"globalblocking-block-ipinvalid": "IP-adressa du skreiv inn ($1) er ugyldig.\nMerk at du ikkje kan skrive inn brukarnamn.",
-	"globalblocking-block-expiryinvalid": "Varigheita du skreiv inn ($1) er ikkje gyldig.",
+	"globalblocking-block-expiryinvalid": "Varigheita du skreiv inn er ikkje gyldig.",
 	"globalblocking-block-submit": "Blokker denne IP-adressa krosswiki",
 	"globalblocking-modify-submit": "Endra denne globale blokkeringa",
 	"globalblocking-block-success": "IP-adressa $1 har vorte blokkert på alle Wikimedia-prosjekta.",
@@ -59,7 +60,6 @@
 	"globalblocking-unblock-unblocked": "Du har fjerna den globale blokkeringa #$2 på IP-adressa '''$1'''",
 	"globalblocking-unblock-errors": "Du lukkast ikkje å fjerna den globale blokkeringa grunna {{PLURAL:$1|den følgjande årsaka|dei følgjande årsakene}}:",
 	"globalblocking-unblock-successsub": "Global blokkering fjerna",
-	"globalblocking-unblock-subtitle": "Fjernar global blokkering",
 	"globalblocking-unblock-intro": "Du kan nytta dette skjemaet for å fjerna ei global blokkering.",
 	"globalblocking-whitelist": "Lokal status for globale blokkeringar",
 	"globalblocking-whitelist-notapplied": "Globale blokkeringar gjeld ikkje på denne wikien, og med di vil ikkje den lokale stoda til globale blokkeringar kunna verta endra her.",
@@ -70,9 +70,7 @@
 	"globalblocking-whitelist-submit": "Endra lokal status",
 	"globalblocking-whitelist-whitelisted": "Du har slegi av den globale blokkeringa #$2 på IP-adressa '''$1''' på {{SITENAME}}.",
 	"globalblocking-whitelist-dewhitelisted": "Du har slegi på att den globale blokkeringa #$2 på IP-adressa '''$1''' på {{SITENAME}}.",
-	"globalblocking-whitelist-successsub": "Lokal status endra",
 	"globalblocking-whitelist-nochange": "Du endra ikkje den lokale statusen til denne blokkeringa.\n[[Special:GlobalBlockList|Attende til den globale blokkeringslista]].",
-	"globalblocking-whitelist-errors": "Freistnaden din på å endra den lokale statusen til den globale blokkeringa gjekk ikkje grunna {{PLURAL:$1|denne årsaka|dei følgjande årsakene}}:",
 	"globalblocking-whitelist-intro": "Du kan nytta dette skjemaet for å endra den lokale statusen til ei global blokkering. Om ei global blokkering er slegi av på denne wikien, kan brukarar på den påverka IP-adressa vera i stand til å endra sider normalt.\n[[Special:GlobalBlockList|Attende til den globale blokkeringslista]].",
 	"globalblocking-logpage": "Global blokkeringslogg",
 	"globalblocking-logpagetext": "Dette er ein logg over globale blokkeringar som har vortne gjennomførte eller fjerna på denne wikien.\nDet bør merkast at globale blokkeringar òg kan både verta til og påfølgjande fjerna på andre wikiar, og at desse kan påverka denne wikien.\nFor å visa alle aktive globale blokkeringar, sjå den [[Special:GlobalBlockList|globale blokkeringslista]].",

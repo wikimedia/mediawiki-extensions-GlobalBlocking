@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Lloffiwr",
-			"Pwyll"
+			"Pwyll",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "Yn [[Special:GlobalBlock|galluogi]] cyfeiriadau IP i gael eu [[Special:GlobalBlockList|blocio ar sawl wici gwahanol]]",
@@ -23,7 +24,7 @@
 	"globalblocking-ipbanononly": "Blocio defnyddwyr anhysbys yn unig",
 	"globalblocking-block-errors": "Roedd eich bloc yn aflwyddiannus, oherwydd y {{PLURAL:$1|rheswm|rhesymau}} canlynol:",
 	"globalblocking-block-ipinvalid": "Mae'r cyfeiriad IP ($1) a nodwyd gennych yn annilys.\nNoder nad oes modd defnyddio enw defnyddiwr os gwelwch yn dda!",
-	"globalblocking-block-expiryinvalid": "Nid yw'r amser dod i ben ($1) a roddwyd yn ddilys.",
+	"globalblocking-block-expiryinvalid": "Nid yw'r amser dod i ben a roddwyd yn ddilys.",
 	"globalblocking-block-submit": "Blocio'r cyfeiriad IP hwn yn fyd-eang",
 	"globalblocking-modify-submit": "Addasu'r bloc byd-eang hwn",
 	"globalblocking-block-success": "Mae cyfeiriad IP $1 wedi'i flocio'n llwyddiannus ar bob prosiect.",
@@ -55,7 +56,6 @@
 	"globalblocking-unblock-submit": "Deuer â'r bloc cyd-wici i ben",
 	"globalblocking-unblock-reason": "Rheswm:",
 	"globalblocking-unblock-successsub": "Daethpwyd â'r bloc cyd-wici i ben",
-	"globalblocking-unblock-subtitle": "Dod â'r bloc cyd-wici i ben",
 	"globalblocking-unblock-intro": "Gallwch ddefnyddio'r ffurflen hon i ddod â bloc cyd-wici i ben.",
 	"globalblocking-whitelist": "Statws lleol y blociau cyd-wici",
 	"globalblocking-whitelist-notapplied": "Nid yw blociau cyd-wici yn weithredol ar y wici hwn, felly nid yw newid statws lleol rhyw floc cyd-wici yn berthnasol i'r wici hwn.",

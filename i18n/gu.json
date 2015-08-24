@@ -4,7 +4,8 @@
 			"Ashok modhvadia",
 			"Dsvyas",
 			"KartikMistry",
-			"Sushant savla"
+			"Sushant savla",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Allows]] IP ઍડ્રેસને [[Special:GlobalBlockList|વિવિધ વિકિ પરપ્રતિબંધીત કરવા]]ઉપયોગિ છે.",
@@ -25,7 +26,7 @@
 	"globalblocking-ipbanononly": "માત્ર અજ્ઞાત સભ્ય છુપાવો",
 	"globalblocking-block-errors": "તમારા દ્વારા લગાવેલ પ્રતિબંધ નીચેના {{PLURAL:$1|કારણ|કારણો}}ને લીધે અસફળ રહ્યો:",
 	"globalblocking-block-ipinvalid": "તમે દાખલ કરેલ IP સરનામું ($1) અયોગ્ય છે.\nમહેરબાની કરીને નોંધ લો કે તમે સભ્યનામ દાખલ કરી શકશો નહી!",
-	"globalblocking-block-expiryinvalid": "તમે  જણાવેલ કાલાતીત સીમા  ($1) અમાન્ય છે",
+	"globalblocking-block-expiryinvalid": "તમે  જણાવેલ કાલાતીત સીમા અમાન્ય છે",
 	"globalblocking-block-submit": "IP એડ્રેસ પર વૈશ્વીક પ્રતિબંધ મૂકો",
 	"globalblocking-modify-submit": "આ વૈશ્વીક સમૂહને બદલો",
 	"globalblocking-block-success": "IP એડ્રેસ $1 પર બધી પરિયોજનાઓ ઉપર પ્રતિબંધ મુકાયો",

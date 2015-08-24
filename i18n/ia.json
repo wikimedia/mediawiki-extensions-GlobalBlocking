@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"McDutchie"
+			"McDutchie",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permitte]] que adresses IP sia [[Special:GlobalBlockList|blocate trans plure wikis]]",
@@ -22,7 +23,7 @@
 	"globalblocking-ipbanononly": "Blocar solmente usatores anonyme",
 	"globalblocking-block-errors": "Tu blocada non ha succedite, pro le sequente {{PLURAL:$1|motivo|motivos}}:",
 	"globalblocking-block-ipinvalid": "Le adresse IP ($1) que tu entrava es invalide.\nPer favor nota que tu non pote entrar un nomine de usator!",
-	"globalblocking-block-expiryinvalid": "Le expiraton que tu entrava ($1) es invalide.",
+	"globalblocking-block-expiryinvalid": "Le expiraton que tu entrava es invalide.",
 	"globalblocking-block-submit": "Blocar globalmente iste adresse IP",
 	"globalblocking-modify-submit": "Modificar iste blocada global",
 	"globalblocking-block-success": "Le adresse IP $1 ha essite blocate con successo in tote le projectos.",
@@ -59,7 +60,6 @@
 	"globalblocking-unblock-unblocked": "Tu ha removite con successo le blocada global #$2 del adresse IP '''$1'''",
 	"globalblocking-unblock-errors": "Le remotion del blocada global non ha succedite, pro le sequente {{PLURAL:$1|motivo|motivos}}:",
 	"globalblocking-unblock-successsub": "Blocada global removite con successo",
-	"globalblocking-unblock-subtitle": "Remotion de blocada global",
 	"globalblocking-unblock-intro": "Tu pote usar iste formulario pro remover un blocada global.",
 	"globalblocking-whitelist": "Stato local de blocadas global",
 	"globalblocking-whitelist-notapplied": "Le blocadas global non es applicate in iste wiki,\ndunque le stato local del blocadas global non pote esser modificate.",
@@ -70,9 +70,7 @@
 	"globalblocking-whitelist-submit": "Cambiar stato local",
 	"globalblocking-whitelist-whitelisted": "Tu ha disactivate con successo le blocada global #$2 del adresse IP '''$1''' in {{SITENAME}}.",
 	"globalblocking-whitelist-dewhitelisted": "Tu ha reactivate con successo le blocada global #$2 del adresse IP '''$1''' in {{SITENAME}}.",
-	"globalblocking-whitelist-successsub": "Stato local cambiate con successo",
 	"globalblocking-whitelist-nochange": "Tu non ha cambiate le stato local de iste blocada.\n[[Special:GlobalBlockList|Retornar al lista de blocadas global]].",
-	"globalblocking-whitelist-errors": "Le cambio del stato local de un blocada global non ha succedite, pro le sequente {{PLURAL:$1|motivo|motivos}}:",
 	"globalblocking-whitelist-intro": "Tu pote usar iste formulario pro modificar le stato local de un blocada global. Si un blocada global es disactivate in iste wiki, le usatores que se connecte a partir del adresse IP in question potera facer modificationes normalmente. [[Special:GlobalBlockList|Clicca hic]] pro returnar al lista de blocadas global.",
 	"globalblocking-ipblocked": "'''Tu adresse IP ha essite blocate in tote le wikis.'''\n\nLe blocada esseva instituite per $1 ($2).\nLe motivo specificate es ''$3''.\n\n* Initio del blocada: $4\n* Expiration del blocada: $5\n\nTu pote contactar $1 pro discuter le blocada.\nPro usar le function \"{{int:emailuser}}\" tu debe haber specificate un adresse de e-mail valide in le [[Special:Preferences|preferentias de tu conto]] e tu non ha essite blocate pro le uso de illo.\nTu adresse IP actual es $6.\nPer favor include tote le detalios hic supra in omne questiones que tu pone.",
 	"globalblocking-ipblocked-xff": "'''Un o plus servitores proxy usate per tu requesta ha essite blogate globalmente.'''\n\nLe blocada esseva instituite per $1 ($2).\nLe motivo specificate es ''$3''.\n\n* Initio del blocada: $4\n* Expiration del blocada: $5\n\nTu pote contactar $1 pro discuter le blocada.\nTu non pote usar le function \"{{int:emailuser}}\" a minus que un adresse de e-mail valide es specificate in le [[Special:Preferences|preferentias de tu conto]] e que tu non ha essite blocate pro le uso de illo.\nLe adresse del proxy blocate es $6.\nPer favor include tote le detalios hic supra in omne questiones que tu pone.",

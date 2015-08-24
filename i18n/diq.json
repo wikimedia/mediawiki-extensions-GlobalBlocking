@@ -6,7 +6,8 @@
 			"Gorizon",
 			"Marmase",
 			"Mirzali",
-			"Xoser"
+			"Xoser",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "Adresanê IP yer [[Special:GlobalBlockList|zafın wikiyan heta wedaryayışi rê]] [[Special:GlobalBlock|icazet dano]]",
@@ -27,7 +28,7 @@
 	"globalblocking-ipbanononly": "Karberanê anoniman tenya bloke ke",
 	"globalblocking-block-errors": "blokekerdış nêbı, semedê no {{PLURAL:$1|sebeb ra|sebeban ra}}:",
 	"globalblocking-block-ipinvalid": "IP addresa ke şıma pê keweni cı ($1) nemeqbulo.\nxo vir ra mekerê ke şıma nêeşkeni pê nameyê yew karberi cıkewi!",
-	"globalblocking-block-expiryinvalid": "Girdiğiniz bitiş ($1) geçersiz.",
+	"globalblocking-block-expiryinvalid": "Girdiğiniz bitiş geçersiz.",
 	"globalblocking-block-submit": "na IPadres bı global bloke bıker",
 	"globalblocking-modify-submit": "na blokeyê globali wedar",
 	"globalblocking-block-success": "IPadresa $1'i heme projeyan de bı serkewte bloke bi.",
@@ -64,7 +65,6 @@
 	"globalblocking-unblock-unblocked": "#$2 blokeya globali ya ke IPadresa '''$1'''i de ya şıma bı serkewte wedarna/da wera",
 	"globalblocking-unblock-errors": "wedarıtışê şıma yo blokeya globali serkewte nêbı, seba no {{PLURAL:$1|sebeb ra|sebeban ra}}:",
 	"globalblocking-unblock-successsub": "blokeya globali bı serkewte wedariya/wera diya",
-	"globalblocking-unblock-subtitle": "blokeya globali wedariyena/wera diyena",
 	"globalblocking-unblock-intro": "Şıma şenê seba wedardena yew kılitkerdışê kurewi nê formi bıgurenê.",
 	"globalblocking-whitelist": "Weziyetê lokalanê blokanê globalan",
 	"globalblocking-whitelist-notapplied": "blokê globali na wiki de tetbiq nıbeni,\nmo sebeb ra weziyeto mehelli yê blokeyê globalan nêvuriyeno.",
@@ -75,9 +75,7 @@
 	"globalblocking-whitelist-submit": "weziyeto mehelli bıvurn",
 	"globalblocking-whitelist-whitelisted": "şıma keyepelê {{SITENAME}}i de blokeya IPaddresa '''$1'''i ya globali #$2 bı serkewte battal verda.",
 	"globalblocking-whitelist-dewhitelisted": "şıma keyepelê {{SITENAME}}i de blokeya IPaddresa '''$1'''i ya globali #$2 bı serkewte reyna eşt faaliyet.",
-	"globalblocking-whitelist-successsub": "weziyeto mehelli bı serkewte vuriya",
 	"globalblocking-whitelist-nochange": "şıma weziyetê mehelli yo na blokeyi re çı vurnayiş nêkerd.\n[[Special:GlobalBlockList|agêrê listeya blokeyi ya globali]].",
-	"globalblocking-whitelist-errors": "vurnayişo ke şıma weziyetê mehelli yo blokeya globali re kerdo serkewte nêbı, semedê no {{PLURAL:$1|sebeb ra|sebeban ra}}:",
 	"globalblocking-whitelist-intro": "Küresel bir engellemenin yerel durumunu değiştirmek için bu formu kullanabilirsiniz.\nEğer bir küresel engelleme bu vikide devre dışı bırakılmış ise, etkilenen IP adresindeki kullanıcılar normal olarak değişiklik yapabilecektir.\n[[Special:GlobalBlockList|Küresel engelleme listesine geri dönün]].",
 	"globalblocking-ipblocked": "'''Adresê IP da şıma wikiya pêron dı bloqe biyo.'''\n\nBloqe kerden $1 ($2).\nSebebê bloqi ''$3''.\n\n* Bloqe dest pêkin: $4\n* Bloqe qedyin: $5\n\nŞıma şenê $1 ya qandê sebebê bloqe kerdış irtibat kewê.\nŞıma nêşenê se \"{{int:emailuser}}\" ra cırê e-posta bırışê, [[Special:Preferences|tercihan dê hesabi ra]] ra bloqe kerdışê xo bıvine.\nIp adresiy aşımaya newki $6.\nReca kem mesaco ke şıma de bırışê cori rınd buwanê hewna mesacê xo marê bırışê.",
 	"globalblocking-ipblocked-xff": "'''Adresê IP da şıma wikiya pêron dı bloqe biyo.'''\n\nBloqe kerden $1 ($2).\nSebebê bloqi ''$3''.\n\n* Bloqe dest pêkin: $4\n* Bloqe qedyin: $5\n\nŞıma şenê $1 ya qandê sebebê bloqe kerdış irtibat kewê.\nŞıma nêşenê se \"{{int:emailuser}}\" ra cırê e-posta bırışê, [[Special:Preferences|tercihan dê hesabi ra]] ra bloqe kerdışê xo bıvine.\nIp adresiy aşımaya newki $6.\nReca kem mesaco ke şıma de bırışê cori rınd buwanê hewna mesacê xo marê bırışê.",

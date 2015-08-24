@@ -5,7 +5,8 @@
 			"Jaan513",
 			"Ker",
 			"Pikne",
-			"WikedKentaur"
+			"WikedKentaur",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Lubab]] IP-aadresse [[Special:GlobalBlockList|korraga mitmetes vikides blokeerida]].",
@@ -26,7 +27,7 @@
 	"globalblocking-ipbanononly": "Blokeeri ainult anonüümseid kasutajaid",
 	"globalblocking-block-errors": "Blokeerimine ei õnnestunud {{PLURAL:$1|järgmisel põhjusel|järgmistel põhjustel}}:",
 	"globalblocking-block-ipinvalid": "Sisestatud IP aadress $1 on vigane.\nPane tähele, et kasutajanime ei saa sisestada.",
-	"globalblocking-block-expiryinvalid": "Sisestatud aegumistähtaeg ($1) on vigane.",
+	"globalblocking-block-expiryinvalid": "Sisestatud aegumistähtaeg on vigane.",
 	"globalblocking-block-submit": "Blokeeri see IP-aadress globaalselt",
 	"globalblocking-modify-submit": "Muuda seda globaalset blokeeringut",
 	"globalblocking-block-success": "IP-aadress $1 on edukalt blokeeritud kõigis projektides.",

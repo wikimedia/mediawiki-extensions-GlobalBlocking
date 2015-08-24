@@ -9,7 +9,8 @@
 			"Okras",
 			"Александр Сигачёв",
 			"NBS",
-			"Камалист"
+			"Камалист",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Разрешает]] блокировку IP-адресов [[Special:GlobalBlockList|на нескольких вики]]",
@@ -30,7 +31,7 @@
 	"globalblocking-ipbanononly": "Блокировать только анонимных участников",
 	"globalblocking-block-errors": "Блокировка неудачна. {{PLURAL:$1|1=Причина|Причины}}:\n$1",
 	"globalblocking-block-ipinvalid": "Введённый вами IP-адрес ($1) ошибочен.\nПожалуйста, обратите внимание, вы не можете вводить имя участника!",
-	"globalblocking-block-expiryinvalid": "Введённый срок окончания ($1) ошибочен.",
+	"globalblocking-block-expiryinvalid": "Введённый срок окончания ошибочен.",
 	"globalblocking-block-submit": "Заблокировать этот IP-адрес глобально",
 	"globalblocking-modify-submit": "Изменить эту глобальную блокировку",
 	"globalblocking-block-success": "IP-адрес $1 был успешно заблокирован во всех проектах.",

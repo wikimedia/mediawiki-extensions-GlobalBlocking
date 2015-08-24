@@ -5,7 +5,8 @@
 			"Nasir8891",
 			"Wikitanvir",
 			"Aftab1995",
-			"Aftabuzzaman"
+			"Aftabuzzaman",
+			"Macofe"
 		]
 	},
 	"globalblocking-block": "একটি আইপি ঠিকানাকে গ্লেবালি বাধা প্রদান করুন",
@@ -25,7 +26,7 @@
 	"globalblocking-ipbanononly": "কেবল বেনামী ব্যবহারকারীদের বাধা দেওয়া হোক",
 	"globalblocking-block-errors": "আপনার ব্লক ব্যর্থ হয়েছে, নিচের {{PLURAL:$1|কারণে|কারণসমূহের জন্য}}:",
 	"globalblocking-block-ipinvalid": "আপনার লেখা আইপি ঠিকানা ($1) সঠিক নয়। \nঅনুগ্রহ করে লক্ষ্য করুন আপনি কোনো নির্দিষ্ট ব্যবহারকারীর নাম লিখতে পারবেন না!",
-	"globalblocking-block-expiryinvalid": "মেয়াদ উত্তীর্ণের যে সময় ($1) আপনি প্রবেশ করিয়েছেন তা গ্রহণযোগ্য নয়।",
+	"globalblocking-block-expiryinvalid": "মেয়াদ উত্তীর্ণের যে সময় আপনি প্রবেশ করিয়েছেন তা গ্রহণযোগ্য নয়।",
 	"globalblocking-block-submit": "এই আইপি ঠিকানাকে গ্লোবালি বাধাদান করো",
 	"globalblocking-modify-submit": "এই বৈশ্বিক বাধাটি পরিবর্তন করুন",
 	"globalblocking-block-success": "$1 আইপি ঠিকানাটি সফলভাবে সকল উইকি প্রকল্পে বাধা দেয়া হয়েছে।",
@@ -59,7 +60,6 @@
 	"globalblocking-unblock-unblocked": "আপনি সফলভাবে '''$1''' আইপি ঠিকানাগুলো থেকে বৈশ্বিক বাধাদান #$2 অপসারণ করেছেন।",
 	"globalblocking-unblock-errors": "গ্লোবাল ব্লক অপসারণ সফল হয়নি, {{PLURAL:$1|কারণে|কারণগুলোর জন্য}}:",
 	"globalblocking-unblock-successsub": "বৈশ্বিক বাধা সফলভাবে তুলে নেওয়া হয়েছে।",
-	"globalblocking-unblock-subtitle": "বৈশ্বিক বাধা তুলে নেওয়া হয়েছে",
 	"globalblocking-unblock-intro": "গ্লোবাল বাধা তুলে নিতে আপনি নিচের ফর্মটি ব্যবহার করতে পারেন।",
 	"globalblocking-whitelist": "বৈশ্বিক বাধাদানের স্থানীয় অবস্থা",
 	"globalblocking-whitelist-notapplied": "এই উইকির ক্ষেত্রে গ্লোবাল ব্লক প্রযোজ্য নয়,\nতাই গ্লোবাল ব্লকের স্থানীয় অবস্থা পরিবর্তন সম্ভব না।",
@@ -70,9 +70,7 @@
 	"globalblocking-whitelist-submit": "স্থানীয় অবস্থা পরিবর্তন",
 	"globalblocking-whitelist-whitelisted": "আপনি {{SITENAME}}তে সফলভাবে '''$1''' আইপি ঠিকানার জন্য #$2 বৈশ্বিক বাধাদান অপসারন করেছেন।",
 	"globalblocking-whitelist-dewhitelisted": "আপনি {{SITENAME}}তে সফলভাবে '''$1''' আইপি ঠিকানার জন্য #$2 গ্লোবাল ব্লক পুনরায় সক্রিয় করেছেন।",
-	"globalblocking-whitelist-successsub": "স্থানীয় অবস্থা সফলভাবে পরিবর্তিত হয়েছে",
 	"globalblocking-whitelist-nochange": "এই ব্লকের স্থানীয় অবস্থার কোনো পরিবর্তন হয়নি।\n[[Special:GlobalBlockList|গ্লোবাল ব্লেকর তালিকায় ফিরে যান]]।",
-	"globalblocking-whitelist-errors": "বৈশ্বিক ব্লক অপসারণ সফল হয়নি, এই {{PLURAL:$1|কারণে|কারণগুলোর জন্য}}:",
 	"globalblocking-blocked-nopassreset": "আপনি পাসওয়ার্ড পরিবর্তন করতে পারবেন না, কারণ আপনাকে গ্লোবালি বাধা দেয়া হয়েছে।",
 	"globalblocking-logpage": "বৈশ্বিক বাধাদান লগ",
 	"globalblocking-block-logentry": "[[$1]] গ্লোবালি ব্লক করা হয়েছে, মেয়াদ উত্তীর্ণএর সময় $2",

@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Als-Chlämens",
-			"Als-Holder"
+			"Als-Holder",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Sperrt]] IP-Adrässe uf [[Special:GlobalBlockList|allene Wiki]]",
@@ -23,7 +24,7 @@
 	"globalblocking-ipbanononly": "Nume anonymi Benutzer sperre",
 	"globalblocking-block-errors": "D Sperri isch nit erfolgryych gsi. {{PLURAL:$1|Grund|Grind}}:",
 	"globalblocking-block-ipinvalid": "Du hesch e uugiltigi IP-Adräss ($1) yygee.\nObacht, Du chasch kei Benutzername yygee!",
-	"globalblocking-block-expiryinvalid": "D Sperrduur ($1) isch uugiltig.",
+	"globalblocking-block-expiryinvalid": "D Sperrduur isch uugiltig.",
 	"globalblocking-block-submit": "Die IP-Adräss wältwyt sperre",
 	"globalblocking-modify-submit": "Die wältwyt Sperri ändere",
 	"globalblocking-block-success": "D IP-Adräss $1 isch mit Erfolg uf allene Projäkt gsperrt wore.",
@@ -60,7 +61,6 @@
 	"globalblocking-unblock-unblocked": "Du hesch IP-Adräss '''$1''' (Sperr-ID $2) mit Erfolg entsperrt",
 	"globalblocking-unblock-errors": "D Ufhebig vu dr wältwyte Sperri isch nit erfolgryych gsi. {{PLURAL:$1|Grund|Grind}}:",
 	"globalblocking-unblock-successsub": "Mit Erfolg wältwyt entsperrt",
-	"globalblocking-unblock-subtitle": "Wältwyti Sperri useneh",
 	"globalblocking-unblock-intro": "Mit däm Formular chasch e wältwyti Sperri ufhebe.",
 	"globalblocking-whitelist": "Lokaler Status vun ere wältwyte Sperri",
 	"globalblocking-whitelist-notapplied": "Wältwyti Sperrine wäre in däm Wiki nit aagwändet, wäge däm cha dr lokal Status vu dr wältwyte Sperri nit gänderet wäre.",
@@ -71,9 +71,7 @@
 	"globalblocking-whitelist-submit": "Dr lokal Status ändere",
 	"globalblocking-whitelist-whitelisted": "Du hesch erfolgryych di wältwyt Sperri #$2 vu dr IP-Adräss '''$1''' uf {{SITENAME}} ufghobe.",
 	"globalblocking-whitelist-dewhitelisted": "Du hesch erfolgryych di wältwyt Sperri #$2 vu dr IP-Adräss '''$1''' uf {{SITENAME}} wider yygschalte.",
-	"globalblocking-whitelist-successsub": "Lokaler Status erfolgrych gänderet",
 	"globalblocking-whitelist-nochange": "Du hesch dr lokal Status vu dr Sperri nit gänderet.\n[[Special:GlobalBlockList|Zruck zue dr Lischt vu dr wältwyte Sperrine]]",
-	"globalblocking-whitelist-errors": "Dyyni Änderig vum lokale Status vun ere wältwyte Sperri isch nit erfolgryych gsi. {{PLURAL:$1|Grund|Grind}}:",
 	"globalblocking-whitelist-intro": "Du chasch mit däm Formular dr lokal Status vun ere wältwyte Sperri ändere. Wänn e wältwyti Sperri in däm Wiki deaktiviert woren isch, chenne Syte iber die IP-Adräss normal bearbeitet wäre. [[Special:GlobalBlockList|Druck do]], zum uf d Lischt vu dr wältwyte Sperrine zruckzgoh.",
 	"globalblocking-ipblocked": "'''Dyy IP-Adräss isch uf allne Wiki gsperrt.'''\n\nD Sperrig isch durgfiert wore dur $1 ($2).\nDr Grund, wu aagee woren isch, isch ''$3''.\n\n* Aafang vu dr Sperri: $4\n* Ablauf vu dr Sperri: $5\n\nDu chasch di an $1 wände go d Sperri dischpetiere.\nDu chasch d Funktion „{{int:emailuser}}“ nit nutze, bis e giltigi E-Mail-Adräss in dyyne [[Special:Preferences|Yystellige]] aagee woren isch un Du nit dra ghinderet wirsch, die Funktion z bruche.Dy aktuäll IP-Adräss isch $6.\nBitte gib alli Detail, wu obe aagee sin, in Dyne Aafrogen aa.",
 	"globalblocking-blocked-nopassreset": "Du chasch s Passwort vum Benutzer nit zrucksetze, wel Du wältwyt gsperrt bisch.",

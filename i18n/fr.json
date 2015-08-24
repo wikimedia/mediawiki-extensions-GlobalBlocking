@@ -16,7 +16,8 @@
 			"Zetud",
 			"0x010C",
 			"Nicolapps",
-			"Wladek92"
+			"Wladek92",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permet]] de bloquer des adresses IP [[Special:GlobalBlockList|à travers plusieurs wikis]]",
@@ -37,7 +38,7 @@
 	"globalblocking-ipbanononly": "Bloquer uniquement les utilisateurs anonymes",
 	"globalblocking-block-errors": "Le blocage a échoué pour {{PLURAL:$1|la raison suivante|les raisons suivantes}} :",
 	"globalblocking-block-ipinvalid": "L’adresse IP ($1) que vous avez entrée est incorrecte.\nVeuillez noter que vous ne pouvez pas inscrire un nom d’utilisateur !",
-	"globalblocking-block-expiryinvalid": "La durée d’expiration que vous avez entrée ($1) est incorrecte.",
+	"globalblocking-block-expiryinvalid": "La durée d’expiration que vous avez entrée est incorrecte.",
 	"globalblocking-block-submit": "Bloquer globalement cette adresse IP",
 	"globalblocking-modify-submit": "Modifier ce blocage global",
 	"globalblocking-block-success": "L’adresse IP $1 a été bloquée sur l’ensemble des projets.",

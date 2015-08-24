@@ -3,7 +3,8 @@
 		"authors": [
 			"Arnobarnard",
 			"Naudefj",
-			"පසිඳු කාවින්ද"
+			"පසිඳු කාවින්ද",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Maak dit moontlik]] om IP-adresse [[Special:GlobalBlockList|oor veelvoudige wiki's]] te versper",
@@ -24,7 +25,7 @@
 	"globalblocking-ipbanononly": "Blok anonieme gebruikers slegs",
 	"globalblocking-block-errors": "Die versperring was nie suksesvol nie, as gevolg van die volgende {{PLURAL:$1|rede|redes}}:",
 	"globalblocking-block-ipinvalid": "Die IP adres ($1) wat U ingevoer het is ongeldig.\nLet asseblief dat U nie 'n gebruikersnaam kan invoer nie!",
-	"globalblocking-block-expiryinvalid": "Die verstryking ($1) wat U ingevoer het is ongeldig.",
+	"globalblocking-block-expiryinvalid": "Die verstryking wat U ingevoer het is ongeldig.",
 	"globalblocking-block-submit": "Versper hierdie IP adres globaal",
 	"globalblocking-modify-submit": "Wysig hierdie globale blokkade",
 	"globalblocking-block-success": "Die IP adres $1 is op alle Wikimedia projekte geblokkeer.",
@@ -61,7 +62,6 @@
 	"globalblocking-unblock-unblocked": "U het suksesvol die globale versperring #$2 op die IP adres '''$1''' verwyder",
 	"globalblocking-unblock-errors": "Die globale versperring is nie verwyder as gevolg van die volgende {{PLURAL:$1|rede|redes}}:",
 	"globalblocking-unblock-successsub": "Globale versperring suksesvol verwyder",
-	"globalblocking-unblock-subtitle": "Verwyder globale versperring",
 	"globalblocking-unblock-intro": "U kan hierdie vorm gebruik om 'n globale blokkade te verwyder.",
 	"globalblocking-whitelist": "Lokale status van globale blokkades",
 	"globalblocking-whitelist-notapplied": "Globale blokkades word nie op hierdie wiki toegepas nie,\ndus kan die lokale status van globale blokkades nie gewysig word nie.",
@@ -72,9 +72,7 @@
 	"globalblocking-whitelist-submit": "Wysig lokale status",
 	"globalblocking-whitelist-whitelisted": "U het suksesvol die globale versperring #$2 op die IP adres '''$1''' op {{SITENAME}} afgeskakel.",
 	"globalblocking-whitelist-dewhitelisted": "U het suksesvol die globale versperring #$2 op die IP adres '''$1''' op {{SITENAME}} heraangeskakel.",
-	"globalblocking-whitelist-successsub": "Lokale status suksesvol gewysig",
 	"globalblocking-whitelist-nochange": "U het nie die lokale status van hierdie blokkade gewysig nie.\n[[Special:GlobalBlockList|Keer terug na die lys van globale blokkades]].",
-	"globalblocking-whitelist-errors": "U kon nie die lokale status van die globale blokkade wysig nie om die volgende {{PLURAL:$1|rede|redes}}:",
 	"globalblocking-whitelist-intro": "U kan die vorm gebruik om die lokale status van 'n globale blokkade te wysig.\nAs 'n globale blokkade op hierdie wiki opgehef is, kan gebruikers vanaf die IP-adres gewone wysigings deurvoer.\n[[Special:GlobalBlockList|Keer terug na die lys van globale blokkades]].",
 	"globalblocking-blocked-nopassreset": "U kan nie wagwoorde van gebruikers herstel nie omdat u globaal geblokkeer word.",
 	"globalblocking-logpage": "Globale versperring boekstaaf",

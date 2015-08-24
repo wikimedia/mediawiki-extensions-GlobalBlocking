@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Geopoet"
+			"Geopoet",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Tinutugutan]] An IP na mga estada na [[Special:GlobalBlockList|pinagkubkob sa pag-iribahan nin kadaklang mga wikis]]",
@@ -22,7 +23,7 @@
 	"globalblocking-ipbanononly": "Kubkubon an dae bistadong paragamit sana",
 	"globalblocking-block-errors": "An saimong pagkubkob bakong matrayumpo, nin huli sa minasunod na {{PLURAL:$1|rason|mga rason}}:",
 	"globalblocking-block-ipinvalid": "An estada kan IP na ($1) na saimong pinagkaag imbalido.\nPakitandae tabi na ika da makaka-entrada nin pangaran kan sarong paragamit!",
-	"globalblocking-block-expiryinvalid": "An kapasohan na saimong pinag-entrada ($1) imbalido.",
+	"globalblocking-block-expiryinvalid": "An kapasohan na saimong pinag-entrada imbalido.",
 	"globalblocking-block-submit": "Pankinabanon na kubkubon ining IP na estada",
 	"globalblocking-modify-submit": "Hirahon ining pankinabanong kubkob",
 	"globalblocking-block-success": "An estada kan IP na $1 matrayumpong pinagkubkob sa gabos na mga proyekto.",

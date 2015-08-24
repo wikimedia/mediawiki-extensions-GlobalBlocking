@@ -5,7 +5,8 @@
 			"Homonihilis",
 			"Joseph",
 			"Runningfridgesrule",
-			"Suelnur"
+			"Suelnur",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "IP addreslerinin [[Special:GlobalBlockList|çoklu vikiler boyunca engellenmesine]] [[Special:GlobalBlock|izin verir]]",
@@ -26,7 +27,7 @@
 	"globalblocking-ipbanononly": "Yalnızca anonim kullanıcıları engelle",
 	"globalblocking-block-errors": "Engelleme başarısız, şu {{PLURAL:$1|sebepten|sebeplerden}} dolayı:",
 	"globalblocking-block-ipinvalid": "Girdiğiniz IP addresi ($1) geçersiz.\nLütfen bir kullanıcı adı giremeyeceğinizi unutmayın!",
-	"globalblocking-block-expiryinvalid": "Girdiğiniz bitiş ($1) geçersiz.",
+	"globalblocking-block-expiryinvalid": "Girdiğiniz bitiş geçersiz.",
 	"globalblocking-block-submit": "Bu IP adresini küresel olarak engelle",
 	"globalblocking-modify-submit": "Bu küresel engellemeyi değiştir",
 	"globalblocking-block-success": "$1 IP adresi bütün projelerde başarıyla engellendi.",
@@ -63,7 +64,6 @@
 	"globalblocking-unblock-unblocked": "'''$1''' IP adresindeki #$2 küresel engellemesini başarıyla kaldırdınız",
 	"globalblocking-unblock-errors": "Küresel engelleme kaldırmanız başarısız, şu {{PLURAL:$1|sebepten|sebeplerden}} dolayı:",
 	"globalblocking-unblock-successsub": "Küresel engelleme başarıyla kaldırıldı",
-	"globalblocking-unblock-subtitle": "Küresel engelleme kaldırılıyor",
 	"globalblocking-unblock-intro": "Bu formu küresel bir engellemeyi kaldırmak için kullanabilirsiniz.",
 	"globalblocking-whitelist": "Küresel engellemelerin yerel durumları",
 	"globalblocking-whitelist-notapplied": "Küresel engellemeler bu vikide uygulanmıyor,\nbu yüzden küresel engellemelerin yerel durumu değiştirilemez.",
@@ -74,9 +74,7 @@
 	"globalblocking-whitelist-submit": "Yerel durumu değiştir",
 	"globalblocking-whitelist-whitelisted": "{{SITENAME}} sitesinde '''$1''' IP addresli #$2 küresel engellemesini başarıyla devre dışı bıraktınız.",
 	"globalblocking-whitelist-dewhitelisted": "{{SITENAME}} sitesinde '''$1''' IP addresli #$2 küresel engellemesini başarıyla tekrar devreye soktunuz.",
-	"globalblocking-whitelist-successsub": "Yerel durum başarıyla değiştirildi",
 	"globalblocking-whitelist-nochange": "Bu engellemenin yerel durumuna hiçbir değişiklik yapmadınız.\n[[Special:GlobalBlockList|Küresel engelleme listesine geri dönün]].",
-	"globalblocking-whitelist-errors": "Küresel engellemenin yerel durumuna yaptığınız değişiklik başarısız oldu, şu {{PLURAL:$1|sebepten|sebeplerden}} dolayı:",
 	"globalblocking-whitelist-intro": "Küresel bir engellemenin yerel durumunu değiştirmek için bu formu kullanabilirsiniz.\nEğer bir küresel engelleme bu vikide devre dışı bırakılmış ise, etkilenen IP adresindeki kullanıcılar normal olarak değişiklik yapabilecektir.\n[[Special:GlobalBlockList|Küresel engelleme listesine geri dönün]].",
 	"globalblocking-blocked-nopassreset": "Küresel olarak engellenmiş olduğunuz için kullanıcının şifresini sıfırlayamazsınız.",
 	"globalblocking-logpage": "Küresel engelleme günlüğü",

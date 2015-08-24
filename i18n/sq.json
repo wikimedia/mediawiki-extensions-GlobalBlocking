@@ -3,7 +3,8 @@
 		"authors": [
 			"FatosMorina",
 			"Mikullovci11",
-			"Olsi"
+			"Olsi",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Lejon]] adresat IP të jenë [[Special:GlobalBlockList|të bllokuara në shumë wiki]]",
@@ -24,7 +25,7 @@
 	"globalblocking-ipbanononly": "Blloko vetëm përdoruesin anonim",
 	"globalblocking-block-errors": "Bllokimi juaj ishte i pasuksesshëm, për {{PLURAL:$1|arsyen|arsyet}} e mëposhtme:",
 	"globalblocking-block-ipinvalid": "Adresa IP ($1) që shkruat është e pavlefshme.\nJu lutemi vini re se ju nuk mund të shkruani një emër përdoruesi!",
-	"globalblocking-block-expiryinvalid": "Afati që dhatë ($1) është i pavlefshëm.",
+	"globalblocking-block-expiryinvalid": "Afati që dhatë është i pavlefshëm.",
 	"globalblocking-block-submit": "Bllokojeni këtë adresë IP globalisht",
 	"globalblocking-modify-submit": "Modifikoni këtë bllokim global",
 	"globalblocking-block-success": "Adresa IP $1 është bllokuar me sukses në të gjitha projektet.",
@@ -61,7 +62,6 @@
 	"globalblocking-unblock-unblocked": "Ju keni hequr me sukses bllokimin global #$2 tek adresa IP '''$1'''",
 	"globalblocking-unblock-errors": "Heqja e bllokimit global ishte e pasuksesshme, për {{PLURAL:$1|arsyen|arsyet}} e mëposhtme:",
 	"globalblocking-unblock-successsub": "Bllokimi global u hoq me sukses",
-	"globalblocking-unblock-subtitle": "Grise bllokimin global",
 	"globalblocking-unblock-intro": "Ju mund të përdorni këtë formular për të hequr një bllokim global.",
 	"globalblocking-whitelist": "Statusi lokal i bllokimeve globale",
 	"globalblocking-whitelist-notapplied": "Bllokimet globale nuk janë të aplikuara në këtë wiki,\nkështu që statusi i bllokimeve globale nuk mund të modifikohet.",
@@ -72,9 +72,7 @@
 	"globalblocking-whitelist-submit": "Ndrysho statusin lokal",
 	"globalblocking-whitelist-whitelisted": "Ju keni çaktivizuar me sukses bllokimin global #$2 tek adresa IP '''$1''' në {{SITENAME}}.",
 	"globalblocking-whitelist-dewhitelisted": "Ju keni ri-aktivizuar me sukses bllokimin global #$2 tek adresa IP '''$1''' në {{SITENAME}}.",
-	"globalblocking-whitelist-successsub": "Statusi lokal u ndryshua me sukses",
 	"globalblocking-whitelist-nochange": "Ju nuk bëtë ndonjë ndryshim tek statusi lokal i këtij bllokimi.\n[[Special:GlobalBlockList|Kthehuni tek lista e bllokimve globale]].",
-	"globalblocking-whitelist-errors": "Ndryshimi juaj tek statusi lokal i bllokimit global ishte i pasuksesshëm, për {{PLURAL:$1|arsyen|arsyet}} e mëposhtme:",
 	"globalblocking-whitelist-intro": "Ju mund të përdorni këtë formular për të redaktuar statusin lokal të një bllokimi global.\nNëse një bllokim global është i çaktivizuar në këtë wiki, përdoruesit e adresës IP do të jenë në gjendje të redaktojnë normalisht.\n[[Special:GlobalBlockList|Kthehuni tek lsita e bllokimeve globale]].",
 	"globalblocking-ipblocked": "'''IP adresa juaj është bllokuar në të gjitha wikit.'''\n\nBllokimi ishte bërë nga $1 ($2).\nArsyeja është ''$3''.\n\n* Fillimi i bllokimit: $4\n* Skadimi i bllokimit: $5\n\nJu mund të kontaktoni $1 për ta diskutuar bllokimin.\nJu nuk mund ta përdorni veçorinë \"{{int:emailuser}}\" derisa një e-mail adresë e vlefshme të jetë cekur në [[Special:Preferenca|Preferencat e llogarisë ]] dhe ju nuk jeni bllokuar nga përdorimi i saj. \nYou cannot use the \"{{int:emailuser}}\" feature unless a valid e-mail address is specified in your [[Special:Preferences|account preferences]] and you have not been blocked from using it.\nYour current IP address is $6.\nPlease include all above details in any queries you make.",
 	"globalblocking-blocked-nopassreset": "Ju nuk mund të rivendosni fjalëkalimet e përdoresve sepse jeni i bllokuar globalisht.",

@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Borichèt",
-			"Dragonòt"
+			"Dragonòt",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|A përmët]] che dj'adrësse IP a sio [[Special:GlobalBlockList|blocà su vàire wiki]]",
@@ -23,7 +24,7 @@
 	"globalblocking-ipbanononly": "Blòca mach j'utent anònim",
 	"globalblocking-block-errors": "Sò blocagi a l'é pa andàit bin, për {{PLURAL:$1|la rason|le rason}} sì-sota:",
 	"globalblocking-block-ipinvalid": "L'adrëssa IP ($1) ch'a l'ha butà a l'é pa bon-a.\nPër piasì, ch'a nòta ch'a peul pa anserì un nòm utent!",
-	"globalblocking-block-expiryinvalid": "La durà ch'a l'has anserì ($1) a va nen bin.",
+	"globalblocking-block-expiryinvalid": "La durà ch'a l'has anserì a va nen bin.",
 	"globalblocking-block-submit": "Blòca st'adrëssa IP-sì globalment.",
 	"globalblocking-modify-submit": "Modifiché sto blocagi global",
 	"globalblocking-block-success": "L'adrëssa IP $1 a l'é stàita blocà da bin dzora tùit ij proget.",
@@ -62,7 +63,6 @@
 	"globalblocking-unblock-unblocked": "A l'ha gavà da bin ël blocagi global $2 për l'adrëssa IP '''$1'''",
 	"globalblocking-unblock-errors": "Sò scancelament dël blocagi global a l'ha falì, për {{PLURAL:$1|la rason|le rason}} sì-sota:",
 	"globalblocking-unblock-successsub": "Blocagi global gavà da bin",
-	"globalblocking-unblock-subtitle": "Gavé ël blocagi global",
 	"globalblocking-unblock-intro": "A peul dovré cost formolari-sì për gavé un blocagi global.",
 	"globalblocking-whitelist": "Stat local dij blocagi globaj",
 	"globalblocking-whitelist-notapplied": "Ij blocagi globaj a son pa aplicà an costa wiki-sì,\nparèj lë stat local dij blocagi globaj a peul pa esse modificà.",
@@ -73,9 +73,7 @@
 	"globalblocking-whitelist-submit": "Cangia stat local",
 	"globalblocking-whitelist-whitelisted": "A l'ha disabilità da bin ël blocagi global  #$2 dl'adrëssa IP '''$1''' dzora a {{SITENAME}}.",
 	"globalblocking-whitelist-dewhitelisted": "A l'ha ativà torna da bin ël blocagi global nùmer $2 dl'adrëssa IP '''$1''' dzora a {{SITENAME}}.",
-	"globalblocking-whitelist-successsub": "Stat local cangià da bin",
 	"globalblocking-whitelist-nochange": "A l'has pa fàit gnun cangiament a lë stat local ëd cost blocagi.\n[[Special:GlobalBlockList|Artorné a la lista dij blocagi globaj]].",
-	"globalblocking-whitelist-errors": "Sò cangiament a lë statù local d'un blocagi global a l'ha pa marcià, për {{PLURAL:$1|la rason|le rason}} sì-sota:",
 	"globalblocking-whitelist-intro": "A peul dovré cost formolari për modifiché lë statù local d'un blocagi global.\nSe un blocagi global a l'é disabilità dzora a sta wiki-sì, j'utent con l'adrëssa IP colpìa a podran modifiché normalment.\n[[Special:GlobalBlockList|Artorné a la lista dij blocagi globaj]].",
 	"globalblocking-ipblocked": "'''Soa adrëssa IP a l'é stàita blocà dzora tute le wiki.'''\n\nËl blocagi a l'é stàit fàit da $1 ($2).\nLa rason ësmonùa a l'é ''$3''.\n\n* Inissi dël blocagi: $4\n* Fin dël blocagi: $5\n\nA peul contaté $1 për discute dël blocagi.\nA peul pa dovré la funsion \"{{int:emailuser}}\" gavà che n'adrëssa ëd pòsta eletrònica bon-a a sia specificà ant ij [[Special:Preferences|sò gust]] e che a sia pa stàit blocà dal dovrela.\nSoa adrëssa IP corenta a l'é $6.\nPër piasì ch'a anserissa tuti ij detaj precedent an tuta arcesta ch'a fasa.",
 	"globalblocking-ipblocked-xff": "'''Un o pi dij servent anonimisà dovrà da soa arcesta a son blocà ëd fasson global'''\n\nËl blocagi a l'é stàit fàit da $1 ($2).\nLa rason ësmonùa a l'é ''$3''.\n\n* Inissi dël blocagi: $4\n* Scadensa dël blocagi: $5\n\nA peul contaté $1 për dëscute dël blocagi.\nA peul nen dovré la fonsionalità «{{int:emailuser}}» gavà ch'ai sia n'adrëssa ëd pòsta eletrònica vàlida spessificà ant ij sò [[Special:Preferences|gust]] e chiel a sia nen ëstàit blocà dal dovrela.\nL'adrëssa ëd l'anonimisator blocà a l'é $6.\nPër piasì, ch'a ancluda tuti ij detaj sì-dzora an tute j'arceste ch'a farà.",

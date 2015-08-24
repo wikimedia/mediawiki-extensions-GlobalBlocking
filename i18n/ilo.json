@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Lam-ang"
+			"Lam-ang",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Agpalubos]] kadagiti IP a pagtaengan a [[Special:GlobalBlockList|maserraan kadagiti amin a wiki]]",
@@ -22,7 +23,7 @@
 	"globalblocking-ipbanononly": "Serraan dagiti di am-ammo nga agar-aramat laeng",
 	"globalblocking-block-errors": "Napaay ti panagserram, para iti sumaganad a {{PLURAL:$1|rason|rasrason}}:",
 	"globalblocking-block-ipinvalid": "Ti IP a pagtaengan ($1) nga inkabilmo ket imbalido.\nPangngaasi a lagipem a saanka a makaikabil ti nagan ti agar-aramat!",
-	"globalblocking-block-expiryinvalid": "Ti panagpaso nga inkabilmo ($1) ket imbalido.",
+	"globalblocking-block-expiryinvalid": "Ti panagpaso nga inkabilmo ket imbalido.",
 	"globalblocking-block-submit": "Serraan daytoy nga IP a pagtaengan iti sangalubongan",
 	"globalblocking-modify-submit": "Baliwam daytoy sangalubongan a serra",
 	"globalblocking-block-success": "Ti IP a pagtaengan $1 ket nagballigi a naseraan kadagiti amin a gandat.",
@@ -61,7 +62,6 @@
 	"globalblocking-unblock-unblocked": "Nagballigika iti panag-ikkat ti sangalubongan a serra #$2 idiay IP a pagtaengan '''$1'''",
 	"globalblocking-unblock-errors": "Napaay ti panagikkatmo ti sangalubongan a serra, kadagiti sumaganad a {{PLURAL:$1|rason|rasrason}}:",
 	"globalblocking-unblock-successsub": "Balligi ti panagikkat ti sangalubongan a serra",
-	"globalblocking-unblock-subtitle": "Ikikkaten ti sangalubongan a serra",
 	"globalblocking-unblock-intro": "Mausarmo daytoy a kinabuklan ti panagikkat ti sangalubongan a serra.",
 	"globalblocking-whitelist": "Lokal a kasasaad iti sangalubongan a serra",
 	"globalblocking-whitelist-notapplied": "Ti sangalubongan a serra ket saan a naikabil ditoy a wiki,\nket ti lokal a kasaad iti sangalubongan a serra ket saan a mabaliwan.",
@@ -72,9 +72,7 @@
 	"globalblocking-whitelist-submit": "Sukatan ti lokal a kasasaad",
 	"globalblocking-whitelist-whitelisted": "Balligi ti panagbaldadom ti sangalubongan a serra #$2 idiay IP a pagtaengan '''$1''' idiay {{SITENAME}}.",
 	"globalblocking-whitelist-dewhitelisted": "Balligi ti panagisublim ti sangalubongan a serra #$2 idiay IP a pagtaengan '''$1''' idiay {{SITENAME}}.",
-	"globalblocking-whitelist-successsub": "Balligi ti panagsukat ti lokal a kasasaad",
 	"globalblocking-whitelist-nochange": "Awan ti sinukatan iti lokal a kasasaad iti daytoy a serra.\n[[Special:GlobalBlockList|Agsubli idiay listaan ti sangalubongan a serra]].",
-	"globalblocking-whitelist-errors": "Napaay ti panagikkatmo iti lokal a kasasaad ti sangalubongan a serra, kadagiti sumaganad a {{PLURAL:$1|rason|rasrason}}:",
 	"globalblocking-whitelist-intro": "Mausarmo daytoy a kinabuklan ti panagurnos ti lokal a kasasaad iti sangalubongan a serra.\nNo nabaldado ti sangalubongan a serra iti daytoy a wiki, dagiti agar-aramat iti naarigan nga IP a pagtaengan ket mabalinda ti kadawyan nga agurnos.\n[[Special:GlobalBlockList|Agsubli idiay listaan ti sangalubongan a serra]].",
 	"globalblocking-ipblocked": "'''Ti IP a pagtaengam ket naserraan kadagiti amin a wiki.'''\n\nTi serra ket inaramid babaen ni $1 ($2).\nTi rason a naited ket ''$3''.\n\n* Rugi ti serra: $4\n* Kalpasan ti serra: $5\n\nMabalinmo a kontaken ni $1 tapno makisao iti daytoy a serra.\nSaanmo a mabalin nga usaren ti \"{{int:emailuser}}\" a langa no awan ti umisu nga esurat a pagtaengan a nainaganan idiay  [[Special:Preferences|kakaykayatan ti pakabilangam]] ken saanka a naseraan ti panagusarmo.\nTi agdama nga IP a pagtaengam ket $6.\nPangngaasi nga iramanmo dagiti salaysay dita ngato para kadagiti amin a salusodmo.",
 	"globalblocking-ipblocked-xff": "'''Maysa wenno ad-adu pay kadagiti pannakbagi a server nga inusar babaen ti kiddawmo ket sangalubongan a naserraan'''\n\nTiserra ket inramid idi babaen ni $1 ($2).\nTi rason a naited ket ''$3''.\n\n* Rugi ti serra: $4\n* Kalpasan ti serra: $5\n\nMabalinmo a kontaken ni $1 tapno makisao iti daytoy a serra.\nSaanmo a mabalin nga usaren ti \"{{int:emailuser}}\" a langa malaksid no adda ti umiso nga esurat a pagtaengan ti nainaganan kadagiti [[Special:Preferences|kakaykayatn ti pakabilangam]] ken saanka pay a naseraan manipud ti panagusar iti daytoy.\nTi naserraan a pannakbagi a pagtaengan idi ket $6.\nPangngaasi nga iramanmo dagiti salaysay dita ngato para kadagiti amin a salusodmo.",

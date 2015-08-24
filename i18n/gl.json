@@ -4,7 +4,8 @@
 			"Prevert",
 			"Toliño",
 			"Banjo",
-			"Elisardojm"
+			"Elisardojm",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permite]] que os enderezos IP sexan [[Special:GlobalBlockList|bloqueados en múltiples wikis]]",
@@ -25,7 +26,7 @@
 	"globalblocking-ipbanononly": "Bloquear só os usuarios anónimos",
 	"globalblocking-block-errors": "O seu bloqueo non puido levarse a cabo {{PLURAL:$1|pola seguinte razón|polas seguintes razóns}}:",
 	"globalblocking-block-ipinvalid": "O enderezo IP ($1) que tecleou é inválido.\nPor favor, decátese de que non pode teclear un nome de usuario!",
-	"globalblocking-block-expiryinvalid": "O período de caducidade que tecleou ($1) é inválido.",
+	"globalblocking-block-expiryinvalid": "O período de caducidade que tecleou é inválido.",
 	"globalblocking-block-submit": "Bloquear este enderezo IP globalmente",
 	"globalblocking-modify-submit": "Modificar este bloqueo global",
 	"globalblocking-block-success": "O enderezo IP $1 foi bloqueado con éxito en todos os proxectos.",

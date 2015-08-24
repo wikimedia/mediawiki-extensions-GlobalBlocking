@@ -3,7 +3,8 @@
 		"authors": [
 			"Event",
 			"Laaknor",
-			"Nghtwlkr"
+			"Nghtwlkr",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Gjør det mulig]] å blokkere IP-adresser på [[Special:GlobalBlockList|alle wikier]]",
@@ -24,7 +25,7 @@
 	"globalblocking-ipbanononly": "Blokker bare anonyme brukere",
 	"globalblocking-block-errors": "Blokkeringen mislyktes fordi:<!--{{PLURAL:$1}}-->",
 	"globalblocking-block-ipinvalid": "IP-adressen du skrev inn ($1) er ugyldig.\nMerk at du ikke kan skrive inn brukernavn.",
-	"globalblocking-block-expiryinvalid": "Varigheten du skrev inn ($1) er ugyldig.",
+	"globalblocking-block-expiryinvalid": "Varigheten du skrev inn er ugyldig.",
 	"globalblocking-block-submit": "Blokker denne IP-adressen globalt",
 	"globalblocking-modify-submit": "Endre denne globale blokkering",
 	"globalblocking-block-success": "IP-adressen $1 har blitt blokkert på alle prosjekter.",
@@ -61,7 +62,6 @@
 	"globalblocking-unblock-unblocked": "Du har fjernet den globale blokkeringen (#$2) på IP-adressen '''$1'''",
 	"globalblocking-unblock-errors": "Du kan ikke fjerne en global blokkering på den IP-adressen fordi:<!--{{PLURAL:$1}}-->",
 	"globalblocking-unblock-successsub": "Global blokkering fjernet",
-	"globalblocking-unblock-subtitle": "Fjerner global blokkering",
 	"globalblocking-unblock-intro": "Du kan bruke dette skjemaet for å fjerne en global blokkering.",
 	"globalblocking-whitelist": "Lokal status for globale blokkeringer",
 	"globalblocking-whitelist-notapplied": "Globale blokkeringer gjelder ikke på denne wikien,\nså den lokale statusen for globale blokkeringer kan ikke endres her.",
@@ -72,9 +72,7 @@
 	"globalblocking-whitelist-submit": "Endre lokal status",
 	"globalblocking-whitelist-whitelisted": "Du har slått av global blokkering nr. $2 på IP-adressen '''$1''' på {{SITENAME}}.",
 	"globalblocking-whitelist-dewhitelisted": "Du har slått på igjen global blokkering nr. $2 på IP-adressen '''$1''' på {{SITENAME}}.",
-	"globalblocking-whitelist-successsub": "Lokal status endret",
 	"globalblocking-whitelist-nochange": "Du endret ikke denne blokkeringens lokale status. [[Special:GlobalBlockList|Tilbake til den globale blokkeringslista.]]",
-	"globalblocking-whitelist-errors": "Endringen i lokal status lyktes ikke fordi:<!--{{PLURAL:$1}}-->",
 	"globalblocking-whitelist-intro": "Du kan bruke dette skjemaet til å redigere en global blokkerings lokale status. Om en global blokkering er slått av på denne wikien, vil brukerne av de påvirkede IP-adressene kunne redigere normalt. [[Special:GlobalBlockList|Tilbake til den globale blokkeringslista.]]",
 	"globalblocking-ipblocked": "'''Din IP-adresse har blitt blokkert på alle wikier.'''\n\nBlokkeringen ble utført av $1 ($2).\nBegrunnelsen var ''$3''.\n\n* Blokkeringsstart: $4\n* Blokkeringsutløp: $5\n\nDu kan ta kontakt med $1 for å diskutere saken.\nDu kan ikke bruker \"{{int:emailuser}}\"-mekanismen med mindre en gyldig e-post-adresse er angitt i dine [[Special:Preferences|konto-innstillinger]] og du ikke har blitt blokkert fra å bruke den.\nDin nåværende IP-adresse er $6.\nVennligst ta med alle detaljene over i enhver henvendelse du gjør.",
 	"globalblocking-blocked-nopassreset": "Du kan ikke nullstille brukerpassord fordi du er blokkert globalt.",

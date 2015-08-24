@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Michawiki"
+			"Michawiki",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Zmóžnja]] IP-adresy [[Special:GlobalBlockList|přez wjacore wikije blokować]]",
@@ -22,7 +23,7 @@
 	"globalblocking-ipbanononly": "Jenož anonymnych wužiwarjow blokować",
 	"globalblocking-block-errors": "Twoje blokowanje je ze {{PLURAL:$1|slědowaceje přičiny|slědowaceju přičinow|slědowacych přičinow|slědowacych přičinow}} njewuspěšne było:",
 	"globalblocking-block-ipinvalid": "IP-adresa ($1), kotruž sy zapodał, je njepłaćiwa.\nProšu dźiwaj na to, zo njesměš wužiwarske mjeno zapodać!",
-	"globalblocking-block-expiryinvalid": "Čas spadnjenja, kotryž sy zapodał ($1), je njepłaćiwy.",
+	"globalblocking-block-expiryinvalid": "Čas spadnjenja, kotryž sy zapodał, je njepłaćiwy.",
 	"globalblocking-block-submit": "Tutu IP-adresu globalnje blokować",
 	"globalblocking-modify-submit": "Tute globalne blokowanje změnić",
 	"globalblocking-block-success": "IP-adresa $1 bu wuspěšnje we wšěch projektach blokowana.",
@@ -59,7 +60,6 @@
 	"globalblocking-unblock-unblocked": "Sy globalne blokowanje #$2 za IP-adresu '''$1''' wuspěšnje wotstronił",
 	"globalblocking-unblock-errors": "Wotstronjenje globalneho blokowanja bě ze {{PLURAL:$1|slědowaceje přičiny|slědowaceju přičinow|slědowacych přičinow|slědowacych přičinow}} njewuspěšne:",
 	"globalblocking-unblock-successsub": "Globalne blokowanje wuspěšnje wotstronjene",
-	"globalblocking-unblock-subtitle": "Globalne blokowanje so wotstronja",
 	"globalblocking-unblock-intro": "Móžeš tutón formular wužiwać, zo by globalne blokowanje wotstronił.",
 	"globalblocking-whitelist": "Lokalny status globalnych blokowanjow",
 	"globalblocking-whitelist-notapplied": "Globalne blokowanja so na tutón wiki njenałožuja,\ntohodla lokalny status globalnych blokowanjow njeda so změnić.",
@@ -70,9 +70,7 @@
 	"globalblocking-whitelist-submit": "Lokalny status změnić",
 	"globalblocking-whitelist-whitelisted": "Sy globalne blokowanje #$2 za IP-adresu '''$1''' na {{GRAMMAR:lokatiw|{{SITENAME}}}} wuspěšnje znjemóžnił.",
 	"globalblocking-whitelist-dewhitelisted": "Sy globalne blokowanje #$2 za IP-adresu '''$1''' na {{GRAMMAR:lokatiw|{{SITENAME}}}} zaso zmóžnił.",
-	"globalblocking-whitelist-successsub": "Lokalny status wuspěšnje změnjeny",
 	"globalblocking-whitelist-nochange": "Njejsy lokalny status tutoho blokowanja změnił.\n[[Special:GlobalBlockList|Wróćo k lisćinje globalnych blokowanjow]].",
-	"globalblocking-whitelist-errors": "Twoje změnjenje lokalneho statusa globalneho blokowanja bě ze {{PLURAL:$1|slědowaceje přičiny|slědowaceju přičinow|slědowacych přičinow|slědowacych přičinow}} njewuspěšne:",
 	"globalblocking-whitelist-intro": "Móžeš tutón formular wužiwać, zo by lokalny status globalneho blokowanja wobdźěłał.\nJeli je globalne blokowanje na tutym wikiju znjemóžnjene, móža wužiwarjo z wotpowědnej IP-adresu normalnje wobdźěłać.\n[[Special:GlobalBlockList|Wróćo k lisćinje globalnych blokowanjow]].",
 	"globalblocking-ipblocked": "'''Twoja IP-adresa je so na wšěch wikijach zablokowała.'''\n\nBlokowanje je $1 ($2) přewjedł.\nPodata přičina je ''$3''.\n\n* Spočatk blokowanja: $4\n* Kónc blokowanja: $5\n\nMóžeš so z $1 do zwiska stajić, zo by blokowanje diskutował.\nNjemóžeš funkciju \"{{int:emailuser}}\" wužiwać, chibazo płaćiwa e-mejlowa adresa je w swojich [[Special:Preferences|kontowych nastajenjach]] podata a njejsy zablokowany ju wužiwać.\nTwoja aktualna IP-adresa je $6.\nProšu zapřijmi wšě horjeka mjenowane podrobnosće do naprašowanjow, kotrež činiš.",
 	"globalblocking-ipblocked-xff": "'''Jedyn proksy-serwer abo wjacore proksy-serwery, kotrež so wot twojeho naprašowanja wužiwaja, su globalnje zablokowane.'''\n\nBlokowanje je so wot $1 ($2) přewjedło.\nPodata přičina je ''$3''.\n\n* Spočatk blokowanja: $4\n* Kónc blokowanja: $5\n\nMóžeš so z $1 do zwiska stajić, zo by blokowanje diskutował.\nNjemóžeš funkciju \"{{int:emailuser}}\" wužiwać, chibazo płaćiwa e-mejlowa adresa je w swojich [[Special:Preferences|kontowych nastajenjach]] podata a njejsy zablokowany ju wužiwać.\nTwoja aktualna IP-adresa je $6.\nProšu zapřijmi wšě horjeka mjenowane podrobnosće do naprašowanjow, kotrež činiš.",

@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Joachim Mos",
-			"Slomox"
+			"Slomox",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Sperrt]] IP-Adressen op [[Special:GlobalBlockList|all Wikis]]",
@@ -18,7 +19,7 @@
 	"globalblocking-ipaddress": "IP-Adress:",
 	"globalblocking-block-errors": "De Sperr hett nich klappt. Dat harr {{PLURAL:$1|dissen Grund|disse Grünn}}:",
 	"globalblocking-block-ipinvalid": "Du hest en ungüllige IP-Adress ($1) ingeven.\nDenk dor an, dat du keen Brukernaam ingeven kannst!",
-	"globalblocking-block-expiryinvalid": "De Sperrduur ($1) is ungüllig.",
+	"globalblocking-block-expiryinvalid": "De Sperrduur is ungüllig.",
 	"globalblocking-block-submit": "Disse IP-Adress global sperren",
 	"globalblocking-modify-submit": "Disse globale Sperr ännern",
 	"globalblocking-block-success": "De IP-Adress $1 is op all Projekten sperrt.",
@@ -54,7 +55,6 @@
 	"globalblocking-unblock-unblocked": "Du hest de globale Sperr #$2 vun de IP-Adress '''$1''' ophoven",
 	"globalblocking-unblock-errors": "De globale Sperr is nich ophoven worrn. Dat harr {{PLURAL:$1|dissen Grund|disse Grünn}}:",
 	"globalblocking-unblock-successsub": "Globale Sperr ophoven",
-	"globalblocking-unblock-subtitle": "Globale Sperr opheven",
 	"globalblocking-unblock-intro": "Mit dit Formular kannst du en globale Sperr wedder opheven.",
 	"globalblocking-whitelist": "Lokalen Status vun en globale Sperr",
 	"globalblocking-whitelist-notapplied": "Globale Sperren gellt op dit Wiki nich,\nde lokale Status vun globale Sperren kann also ok nich ännert warrn.",
@@ -65,9 +65,7 @@
 	"globalblocking-whitelist-submit": "Lokalen Status ännern",
 	"globalblocking-whitelist-whitelisted": "Du hest de globale Sperr #$2 vun de IP-Adress '''$1''' op {{SITENAME}} ophoven.",
 	"globalblocking-whitelist-dewhitelisted": "Du hest de globale Sperr #$2 vun de IP-Adress '''$1''' op {{SITENAME}} wedder inschalt.",
-	"globalblocking-whitelist-successsub": "Lokalen Status ännert",
 	"globalblocking-whitelist-nochange": "Du hest den lokalen Status vun de Sperr nich ännert.\n[[Special:GlobalBlockList|Trüch na de List vun globale Sperren]]",
-	"globalblocking-whitelist-errors": "Dien Ännern vun’n lokalen Status vun en globale Sperr hett nich klappt. {{PLURAL:$1|Grund|Grünn}}:",
 	"globalblocking-whitelist-intro": "Mit dit Formular kannst du den lokalen Status vun en globale Sperr ännern.\nWenn en globale Sperr in dat Wiki utstellt worrn is, köönt Brukers över de bedrapen IP-Adress normal Sieden ännern.\n[[Special:GlobalBlockList|Trüch na de List mit de globalen Sperren]].",
 	"globalblocking-logpage": "Global Sperrlogbook",
 	"globalblocking-logpagetext": "Dit is dat Logbook mit de globalen Sperren, de in dit Wiki instellt oder utstellt worrn sünd.\nGlobale Sperren köönt ok in en anner Wiki instellt und utstellt warrn, un de Sperren dor warkt sik ok op dit Wiki ut.\nFör en List mit all aktive globale Sperren kiek na de [[Special:GlobalBlockList|globale Sperrlist]].",

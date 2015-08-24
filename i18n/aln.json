@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mdupont"
+			"Mdupont",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Lejon]] IP adresat që do të [[Special:GlobalBlockList|bllokuar të gjithë të shumta wikis]]",
@@ -20,7 +21,7 @@
 	"globalblocking-block-options": "Mundësitë e zgjedhjes:",
 	"globalblocking-block-errors": "blloku juaj ka qenë i pasuksesshëm, për këto {{PLURAL:$1|arsye|arsye}}:",
 	"globalblocking-block-ipinvalid": "Adresa IP ($1) keni hyrë është i pavlefshëm. Ju lutem vini re se ju nuk mund të hyjë në një emër përdoruesi!",
-	"globalblocking-block-expiryinvalid": "Skadimit të hyrë ($1) është e pavlefshme.",
+	"globalblocking-block-expiryinvalid": "Skadimit të hyrë është e pavlefshme.",
 	"globalblocking-block-submit": "Blloko këtë adresë IP globalisht",
 	"globalblocking-modify-submit": "Modifiko këtë bllok globale",
 	"globalblocking-block-success": "IP adresa $1 u bllokua me sukses në të gjitha projektet.",

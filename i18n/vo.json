@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Malafaya",
-			"Smeira"
+			"Smeira",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Dälon]] ladetis-IP ad [[Special:GlobalBlockList|pablokön in vüks mödik]]",
@@ -16,7 +17,7 @@
 	"globalblocking-block-options": "Välots:",
 	"globalblocking-block-errors": "Blokam olik no eplöpon, sekü {{PLURAL:$1|kod|kods}} sököl:",
 	"globalblocking-block-ipinvalid": "Ladet-IP fa ol pepenöl no lonöfon. Demolös, das no dalol penön gebananemi is!",
-	"globalblocking-block-expiryinvalid": "Dul fa ol pepenöl ($1) no lonöfon.",
+	"globalblocking-block-expiryinvalid": "Dul fa ol pepenöl no lonöfon.",
 	"globalblocking-block-submit": "Blokön ladeti-IP at valöpo",
 	"globalblocking-block-success": "Ladet-IP: $1 peblokon benosekiko pro proyegs valik.",
 	"globalblocking-block-successsub": "Blokam valöpik benosekik",
@@ -47,7 +48,6 @@
 	"globalblocking-unblock-unblocked": "Emoükol benosekiko blokami valöpik: #$2 ladeta-IP: '''$1'''",
 	"globalblocking-unblock-errors": "Moükam olik blokama valöpik no eplöpon, sekü {{PLURAL:$1|kod|kods}} fovik:",
 	"globalblocking-unblock-successsub": "Blokam valöpik pemoükon benosekiko",
-	"globalblocking-unblock-subtitle": "Moükön blokami valöpik",
 	"globalblocking-unblock-intro": "Kanol gebön fometi at ad moükön blokami valöpik.",
 	"globalblocking-whitelist": "Stad topik blokamas valöpik",
 	"globalblocking-whitelist-legend": "Votükön stadi topik",
@@ -57,9 +57,7 @@
 	"globalblocking-whitelist-submit": "Votükön stadi topik",
 	"globalblocking-whitelist-whitelisted": "Esädunol benosekiko blokami valöpik: #$2 ladeta-IP: '''$1''' in {{SITENAME}}.",
 	"globalblocking-whitelist-dewhitelisted": "Edönudunol benosekiko blokami valöpik: #$2 ladeta-IP: '''$1''' in {{SITENAME}}.",
-	"globalblocking-whitelist-successsub": "Stad topik pevotükon benosekiko",
 	"globalblocking-whitelist-nochange": "No evotükol stadi topik blokama at.\n[[Special:GlobalBlockList|Gegolön lü lised blokamas valöpik]].",
-	"globalblocking-whitelist-errors": "Votükam olik stada topik blokama valöpik no eplöpon, sekü {{PLURAL:$1|kod|kods}} sököl:",
 	"globalblocking-whitelist-intro": "Kanol gebön fometi at ad votükön stadi topik blokama valöpik.\nIf blokam valöpik pesädunon in vük at, gebans ladetas-IP teföl okanons redakön nensäkädiko.\n[[Special:GlobalBlockList|Geikön lü lised blokamas valöpik]].",
 	"globalblocking-logpage": "Jenotalised blokamas valöpik",
 	"globalblocking-logpagetext": "Atos binon jenotalised blokamas valöpik, kels peledunons e/u pemoükons in vük at.\nDemolös, das blokams valöpik kanons paledunön e pamoükön in vüks votik, e das blokams valöpik at kanons tefön vüki at.\nKanol tuvön blokamis valöpik lonöfol valik in [[Special:GlobalBlockList|lised blokamas valöpik]].",

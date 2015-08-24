@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Gazeb"
+			"Gazeb",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Доволює]] блоковати IP адресы [[Special:GlobalBlockList|на веце вікі сучасно]]",
@@ -22,7 +23,7 @@
 	"globalblocking-ipbanononly": "Заблоковати лем анонімных хоснователїв",
 	"globalblocking-block-errors": "Спроба наставити ґлобалне блокованя ся не подарила про  {{PLURAL:$1|наступну причіну|наступны причіны}}:",
 	"globalblocking-block-ipinvalid": "Вами зазначена IP адреса ($1) не є платна.\nУсвідомте собі, же не можете задати імя хоснователя!",
-	"globalblocking-block-expiryinvalid": "Уведеный час експірації  ($1) неправилный.",
+	"globalblocking-block-expiryinvalid": "Уведеный час експірації неправилный.",
 	"globalblocking-block-submit": "Ґлобално блоковати IP адресу",
 	"globalblocking-modify-submit": "Змінити тото ґлобалне блокованя",
 	"globalblocking-block-success": "IP адреса $1 была на вшыткых проєктах успішно заблокована.",
@@ -59,7 +60,6 @@
 	"globalblocking-unblock-unblocked": "Успішно сьте зняли ґлобалне блокованя #$2 з IP адресы '''$1'''",
 	"globalblocking-unblock-errors": "Спроба зняти ґлобалне блокованя ся не подарила. {{PLURAL:$1|Причіна|Причіны}}:",
 	"globalblocking-unblock-successsub": "Ґлобалне блокованя успішно зняте",
-	"globalblocking-unblock-subtitle": "Знятя ґлобалного блокованя",
 	"globalblocking-unblock-intro": "Тым формуларём можете зняти ґлобалне блокованя.",
 	"globalblocking-whitelist": "Локалный статус ґлобалного блокованя",
 	"globalblocking-whitelist-notapplied": "На тій вікі ся не аплікує ґлобалне блокованя, также ся не дасть мінити їх локалне наставлїня.",
@@ -70,9 +70,7 @@
 	"globalblocking-whitelist-submit": "Змінити локалный статус",
 	"globalblocking-whitelist-whitelisted": "Успішно сьте зняли ґлобалне блокованя #$2 з IP адресы '''$1'''",
 	"globalblocking-whitelist-dewhitelisted": "Успішно сьте на {{grammar:6sg|{{SITENAME}}}} зрушыли выняток з ґлобалного блокованя #$2 IP адресы '''$1'''.",
-	"globalblocking-whitelist-successsub": "Локалный статус быв успішно зміненый",
 	"globalblocking-whitelist-nochange": "На статусі того блокованя сьте ніч не змінилу. [[Special:GlobalBlockList|Навернутя на список ґлобалных блоковань.]]",
-	"globalblocking-whitelist-errors": "Z {{PLURAL:$1|наступной причіны|наступных причін}} ся не подарило змінити локалный статус ґлобалного блокованя:",
 	"globalblocking-whitelist-intro": "За помочі того формуларя можете змінити локалный статус ґлобалного блокованя.\nКідь буде ґлобалне блокованя на тій вікі зрушене, хоснователї будуть мочі на одповідній IP адресї нормално едітовати.\n[[Special:GlobalBlockList|Навернутя на список ґлобалных блоковань]].",
 	"globalblocking-ipblocked": "'''Ваша IP адреса была заблокована на вшыткых вікі.'''\n\nЗаблокованя учінив $1 ($2).\nУведженов прічінов было ''$3''.\n\n* Початок блокованя: $4\n* Заблокованя кінчіть: $5\n\nКідь хочете заблокованя передіскутовати, можете ся споїти з хоснователём $1.\nТямте, же не можете хосновати функцію „{{int:emailuser}}“, кідь у своїм [[Special:Preferences|наставлїню]] не мате правилну імейлову адресу або кідь вам тота можливость была заказана.\nВаша сучасна IP адреса є $6.\nУ вшыткых вопросах на адміністратора пиште вшыткы горї зображены інформації.",
 	"globalblocking-blocked-nopassreset": "Не можете жадати о посланя нового гесла, бо сьте ґлобално {{GENDER:|блокованый|блокована|блокованый}}.",

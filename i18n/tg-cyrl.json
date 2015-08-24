@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ibrahim"
+			"Ibrahim",
+			"Macofe"
 		]
 	},
 	"globalblocking-block": "Бастани як нишонаи IP ба сурати саросарӣ",
@@ -14,7 +15,7 @@
 	"globalblocking-block-options": "Ихтиёрот:",
 	"globalblocking-block-errors": "Бастани дастрасии аз тарафи шумо номуваффақ шуд, аз рӯи {{PLURAL:$1|сабаби|сабаҳои}} зерин:",
 	"globalblocking-block-ipinvalid": "Нишонаи IP ($1) шумо ворид намуда номӯътабар аст.\nЛутфан дар хотир нигоҳ доред, ки шумо наметавонед як номи корбариро ворид кунед!",
-	"globalblocking-block-expiryinvalid": "Санаи эътибороти шумо вориднамуд ($1) номӯътабар аст.",
+	"globalblocking-block-expiryinvalid": "Санаи эътибороти шумо вориднамуд номӯътабар аст.",
 	"globalblocking-block-submit": "Бастани ин нишонаи IP ба сурати саросарӣ",
 	"globalblocking-block-success": "Нишонаи IP $1 бо муваффақият дар ҳамаи лоиҳаҳо баста шуд.",
 	"globalblocking-block-successsub": "Бастани дастрасӣ ба сурати саросарӣ муваффақ шуд",
@@ -43,7 +44,6 @@
 	"globalblocking-unblock-unblocked": "Шумо бо муваффақият бастаи саросарии #$2 аз рӯи нишонаи IP '''$1''' пок кардед",
 	"globalblocking-unblock-errors": "Поккунии бастаи саросарии шумо номуваффақ шуд, аз {{PLURAL:$1|сабаби|сабабҳои}} зерин:",
 	"globalblocking-unblock-successsub": "Бастаи саросарӣ бо муваффақият пок шуд",
-	"globalblocking-unblock-subtitle": "Дар ҳоли пок кардани баста саросарӣ",
 	"globalblocking-unblock-intro": "Шумо метавонед барои пок кардани бастаи саросарӣ аз ин форм истифода баред.",
 	"globalblocking-whitelist": "Вазъияти маҳаллии бастаҳои саросарӣ",
 	"globalblocking-whitelist-legend": "Тағйири вазъияти маҳаллӣ",
@@ -51,7 +51,6 @@
 	"globalblocking-whitelist-status": "Вазъияти маҳаллӣ:",
 	"globalblocking-whitelist-statuslabel": "Ғайрифаъол кардани ин бастаи саросарӣ дар {{SITENAME}}",
 	"globalblocking-whitelist-submit": "Тағйири вазъияти маҳаллӣ",
-	"globalblocking-whitelist-successsub": "Вазъияти маҳаллӣ бо муваффақият тағйир ёфт",
 	"globalblocking-whitelist-nochange": "Шумо ягон тағйире ба вазъияти маҳалли ин қатъи дастрасӣ ворид накардед.\n[[Special:GlobalBlockList|Баргардед ба феҳристи қатъи дастрасии саросарӣ]].",
 	"globalblocking-logpage": "Гузориши бастаи саросарӣ",
 	"globalblocking-unblock-logentry": "қатъи дастрасии саросарӣ дар [[$1]] пок шуд",

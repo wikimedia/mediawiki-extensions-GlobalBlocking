@@ -4,7 +4,8 @@
 			"Dbc334",
 			"Eleassar",
 			"Irena Plahuta",
-			"Smihael"
+			"Smihael",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Omogoča]] blokado IP-naslovov [[Special:GlobalBlockList|preko več wikijev]]",
@@ -25,7 +26,7 @@
 	"globalblocking-ipbanononly": "Blokiraj samo brezimne uporabnike",
 	"globalblocking-block-errors": "Vaša blokada je bila neuspešna zaradi {{PLURAL:$1|naslednjega razloga|naslednjih razlogov}}:",
 	"globalblocking-block-ipinvalid": "Vnesen IP-naslov ($1) ni veljaven.\nProsimo, upoštevajte, da ne morete vnesti uporabniškega imena!",
-	"globalblocking-block-expiryinvalid": "Vnesen datum poteka ($1) je neveljaven.",
+	"globalblocking-block-expiryinvalid": "Vnesen datum poteka je neveljaven.",
 	"globalblocking-block-submit": "Blokiraj ta IP-naslov globalno",
 	"globalblocking-modify-submit": "Spremenite to globalno blokado",
 	"globalblocking-block-success": "IP-naslov $1 je bil uspešno blokiran na vseh projektih.",

@@ -12,7 +12,8 @@
 			"M.M.S.",
 			"Per",
 			"Rotsee",
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Tillåter]] IP-adresser att bli [[Special:GlobalBlockList|blockerade tvärs över mångfaldiga wikier]]",
@@ -33,7 +34,7 @@
 	"globalblocking-ipbanononly": "Blockera endast oinloggade användare",
 	"globalblocking-block-errors": "Blockeringen misslyckades på grund av följande {{PLURAL:$1|anledning|anledningar}}:",
 	"globalblocking-block-ipinvalid": "IP-adressen du skrev in ($1) är ogiltig.\nNotera att du inte kan skriva in användarnamn.",
-	"globalblocking-block-expiryinvalid": "Varigheten du skrev in ($1) är ogiltig.",
+	"globalblocking-block-expiryinvalid": "Varigheten du skrev in är ogiltig.",
 	"globalblocking-block-submit": "Blockera denna IP-adress globalt",
 	"globalblocking-modify-submit": "Modifiera denna globala blockering",
 	"globalblocking-block-success": "IP-adressen $1 har blivit blockerad på alla projekt.",

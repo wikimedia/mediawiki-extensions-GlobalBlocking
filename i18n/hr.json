@@ -4,7 +4,8 @@
 			"CERminator",
 			"Dalibor Bosits",
 			"Ex13",
-			"SpeedyGonsales"
+			"SpeedyGonsales",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Omogućuje]] blokiranje IP adresa [[Special:GlobalBlockList|na svim wikijima]]",
@@ -23,7 +24,7 @@
 	"globalblocking-block-options": "Mogućnosti:",
 	"globalblocking-block-errors": "Vaše blokiranje je neuspješno, iz {{PLURAL:$1|sljedećeg razloga|sljedećih razloga}}:",
 	"globalblocking-block-ipinvalid": "IP adresa ($1) koju ste upisali je neispravna.\nUzmite u obzir da ne možete upisati suradničko ime!",
-	"globalblocking-block-expiryinvalid": "Vremenski rok koji ste upisali ($1) je neispravan.",
+	"globalblocking-block-expiryinvalid": "Vremenski rok koji ste upisali je neispravan.",
 	"globalblocking-block-submit": "Blokiraj ovu IP adresu globalno",
 	"globalblocking-modify-submit": "Izmijeni ovo globalno blokiranje",
 	"globalblocking-block-success": "IP adresa $1 je uspješno blokirana na svim projektima.",
@@ -60,7 +61,6 @@
 	"globalblocking-unblock-unblocked": "Uspješno ste uklonili globalno blokiranje #$2 za IP adresu '''$1'''",
 	"globalblocking-unblock-errors": "Vaše uklanjanje globalnog blokiranja je neuspješno, iz {{PLURAL:$1|sljedećeg razloga|sljedećih razloga}}:",
 	"globalblocking-unblock-successsub": "Globalno blokiranje uspješno uklonjeno",
-	"globalblocking-unblock-subtitle": "Uklanjanje globalnog blokiranja",
 	"globalblocking-unblock-intro": "Ovu stranicu možete koristiti za uklanjanje globalnog blokiranja.",
 	"globalblocking-whitelist": "Mjesni status globalnih blokiranja",
 	"globalblocking-whitelist-notapplied": "Globalna blokiranja se ne primjenjuju na ovom wikiju, pa se lokalni status globalnih blokiranja ne može mijenjati.",
@@ -71,9 +71,7 @@
 	"globalblocking-whitelist-submit": "Promijeni mjesni status",
 	"globalblocking-whitelist-whitelisted": "Uspješno ste onemogućili globalno blokiranje #$2 za IP adresu '''$1''' na {{SITENAME}}",
 	"globalblocking-whitelist-dewhitelisted": "Uspješno ste omogućili globalno blokiranje #$2 za IP adresu '''$1''' na {{SITENAME}}",
-	"globalblocking-whitelist-successsub": "Mjesni status uspješno promijenjen",
 	"globalblocking-whitelist-nochange": "Niste napravili promjene za mjesni status ovog blokiranja.\n[[Special:GlobalBlockList|Vrati se na popis globalno blokiranih adresa]].",
-	"globalblocking-whitelist-errors": "Vaša promjena mjesnog statusa za globalno blokiranje je neuspješna, iz {{PLURAL:$1|sljedećeg razloga|sljedećih razloga}}:",
 	"globalblocking-whitelist-intro": "Možete koristiti ovu stranicu za uređivanje mjesnog statusa globalnog blokiranja.\nAko je globalno blokiranje onemogućeno na ovom wikiju, suradnici s tom IP adresom će moći normalno uređivati.\n[[Special:GlobalBlockList|Vrati se na popis globalno blokiranih adresa]].",
 	"globalblocking-blocked-nopassreset": "Ne možete resetirati lozinke suradnika jer ste blokirani globalno.",
 	"globalblocking-logpage": "Evidencija globalnog blokiranja",

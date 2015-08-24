@@ -5,7 +5,8 @@
 			"Dj",
 			"Dorgan",
 			"Glanthor Reviol",
-			"TK-999"
+			"TK-999",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Lehetővé teszi]] IP-címek [[Special:GlobalBlockList|blokkolását]] egyszerre több wikiben",
@@ -26,7 +27,7 @@
 	"globalblocking-ipbanononly": "Csak anonim felhasználók blokkolása",
 	"globalblocking-block-errors": "A blokkolás nem sikerült, az alábbi {{PLURAL:$1|ok|okok}} miatt:",
 	"globalblocking-block-ipinvalid": "Az általad megadott IP-cím ($1) érvénytelen.\nNem adhatsz meg felhasználói nevet!",
-	"globalblocking-block-expiryinvalid": "A megadott lejárati idő ($1) érvénytelen.",
+	"globalblocking-block-expiryinvalid": "A megadott lejárati idő érvénytelen.",
 	"globalblocking-block-submit": "IP-cím blokkolása globálisan",
 	"globalblocking-modify-submit": "Globális blokk módosítása",
 	"globalblocking-block-success": "Az „$1” IP-cím sikeresen blokkolva lett az összes projekten.",
@@ -63,7 +64,6 @@
 	"globalblocking-unblock-unblocked": "Sikeresen eltávolítottad a(z) $2 azonosítójú globális blokkot a(z) '''$1''' IP-címről",
 	"globalblocking-unblock-errors": "A globális blokk eltávolítása sikertelen az alábbi {{PLURAL:$1|ok|okok}} miatt:",
 	"globalblocking-unblock-successsub": "Globális blokk sikeresen eltávolítva",
-	"globalblocking-unblock-subtitle": "Globális blokk eltávolítása",
 	"globalblocking-unblock-intro": "Az űrlap használatával eltávolíthatsz egy globális blokkot.",
 	"globalblocking-whitelist": "Globális blokkok helyi állapota",
 	"globalblocking-whitelist-notapplied": "A globális blokkok nem érvényesek ezen a wikin,\nígy a helyi állapotuk nem módosítható.",
@@ -74,9 +74,7 @@
 	"globalblocking-whitelist-submit": "Helyi állapot megváltoztatása",
 	"globalblocking-whitelist-whitelisted": "Sikeresen kikapcsoltad a(z) '''$1''' IP-címre vonatkozó $2 azonosítójú blokkot a(z) {{SITENAME}} wikin.",
 	"globalblocking-whitelist-dewhitelisted": "Sikeresen engedélyezted a(z) '''$1''' IP-címre vonatkozó $2 azonosítójú blokkot a(z) {{SITENAME}} wikin.",
-	"globalblocking-whitelist-successsub": "Helyi állapot sikeresen megváltoztatva",
 	"globalblocking-whitelist-nochange": "Nem változtattad meg a blokk helyi állapotát.\n[[Special:GlobalBlockList|Visszatérés a globális blokkok listájához]].",
-	"globalblocking-whitelist-errors": "Nem sikerült megváltoztatnod a blokk helyi állapotát az alábbi {{PLURAL:$1|ok|okok}} miatt:",
 	"globalblocking-whitelist-intro": "Az alábbi űrlap használatával megváltoztathatod egy globális blokk helyi állapotát.\nHa egy globális blokk fel van oldva ezen a wikin, az IP-címet használó szerkesztők újra képesek lesznek szerkeszteni a wikit.\n[[Special:GlobalBlockList|Visszatérés a globális blokkok listájához]].",
 	"globalblocking-ipblocked": "'''Az IP-címedet az összes wikin blokkolták.'''\n\nA blokkot $1 hozta létre ($2).\nA megadott indoklás: ''$3''.\n\n* A blokk kezdete: $4\n* A blokk vége: $5\n\nKapcsolatba léphetsz $1 felhasználóval a blokk megbeszéléséhez.\nAz \"{{int:emailuser}}\" funkciót csak akkor használhatod, ha megadtál egy érvényes e-mail címet a [[Special:Preferences|beállításaidban]] és nem tiltottak el a használatától.\nA jelenlegi IP-címed $6.\nKérlek, az összes kapcsolódó kérdésedhez csatold a fenti részleteket.",
 	"globalblocking-blocked-nopassreset": "Nem kérhetsz új jelszót, mert globálisan blokkolva vagy.",

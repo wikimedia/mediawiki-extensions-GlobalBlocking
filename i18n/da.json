@@ -9,7 +9,8 @@
 			"Peter Alberti",
 			"Sarrus",
 			"Steenth",
-			"Tjernobyl"
+			"Tjernobyl",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Tillader]] at IP-adresser bliver [[Special:GlobalBlockList|blokeret på tværs af talrige wikier]]",
@@ -30,7 +31,7 @@
 	"globalblocking-ipbanononly": "Kun anonyme brugere spærres",
 	"globalblocking-block-errors": "Din blokering lykkedes ikke af følgende {{PLURAL:$1|årsag|årsager}}:",
 	"globalblocking-block-ipinvalid": "IP-adressen, du indtastede ($1), er ugyldig.\nBemærk venligst, at du ikke kan indtaste et brugernavn!",
-	"globalblocking-block-expiryinvalid": "Den udløbstid, du valgte ($1) er ugyldigt",
+	"globalblocking-block-expiryinvalid": "Den udløbstid, du valgte er ugyldigt",
 	"globalblocking-block-submit": "Blokér denne ip-adresse globalt",
 	"globalblocking-modify-submit": "Redigér denne globale blokering",
 	"globalblocking-block-success": "IP-adressen $1 er blevet blokeret på alle projekter.",
@@ -67,7 +68,6 @@
 	"globalblocking-unblock-unblocked": "Du har fjernet den globale blokering #$2 til IP-adressen '''$1'''",
 	"globalblocking-unblock-errors": "Din fjernelse af den globale blokering lykkedes ikke med følgende {{PLURAL:$1|årsag|årsager}}:",
 	"globalblocking-unblock-successsub": "Global blokeringen fjernet",
-	"globalblocking-unblock-subtitle": "Ophæver global blokering",
 	"globalblocking-unblock-intro": "Du kan bruge denne form til at fjerne en global blokering.",
 	"globalblocking-whitelist": "Lokal status for global blokering",
 	"globalblocking-whitelist-notapplied": "Global blokeringer bruges ikke på denne wiki,\nså den lokale status for global blokering ikke kan ændres.",
@@ -78,9 +78,7 @@
 	"globalblocking-whitelist-submit": "Ændr lokal status",
 	"globalblocking-whitelist-whitelisted": "Du har fjernet den globale blokering #$2 af IP-adressen '''$1''' på {{SITENAME}}.",
 	"globalblocking-whitelist-dewhitelisted": "Du har fjernet den globale blokering #$2 af IP-adressen '''$1''' på {{SITENAME}}.",
-	"globalblocking-whitelist-successsub": "Lokal status er blevet ændret",
 	"globalblocking-whitelist-nochange": "Du har ikke foretaget nogen ændring lokale status for denne blokering.\n[[Special:GlobalBlockList|Vende tilbage til den globale blokeringsliste]].",
-	"globalblocking-whitelist-errors": "Din ændring af den lokale status af en global blokering lykkedes ikke, med følgende {{PLURAL:$1|årsag|årsager}}:",
 	"globalblocking-whitelist-intro": "Du kan bruge denne formular, til at ophæve en global blokering lokalt. Hvis blokeringen bliver ophævet, kan den globalt blokerede bruger redigere sider normalt. Se også [[Special:GlobalBlockList|loggen for globale blokeringer]].",
 	"globalblocking-ipblocked": "'''Din IP-adresse er blokeret på alle wiki'er.'''\n\nBlokeringen blev lavet af $1 ( $2 ).\nBegrundelsen er ''$3''.\n\n* Start for blokeringen: $4\n* udløbet af blokeringen: $5\n\nDu kan kontakte $1 at diskutere blokeringen.\nDu kan ikke bruge funktionen \"{{int:emailuser}}\", medmindre en gyldig e-mailadresse er blevet angivet i dine[[Special:Preferences|brugerindstillinger]] og du ikke er blevet blokeret fra at bruge den.\nDin aktuelle IP-adresse er $6 .\nMedtag alle ovenstående detaljer i enhver henvendelse du laver.",
 	"globalblocking-ipblocked-xff": "'''En eller flere proxyservere, der blev brugt til din anmodning, er blokeret globalt'''\n\nBlokeringen blev udført af $1 ($2).\nBegrundelsen var ''$3''.\n\n* Blokeringen startede: $4\n* Blokeringen udløber: $5\n\nDu kan kontakte $1 for at diskutere blokeringen.\nDu kan ikke bruge \"{{int:emailuser}}\"-funktionen, medmindre du har angivet en gyldig e-mailadresse i dine [[Special:Preferences|kontoindstillinger]], og du ikke er blevet blokeret fra at bruge den.\nDen blokerede proxyadresse var $6.\nVær venlig at inkludere alle detaljerne ovenfor i enhver henvendelse, du måtte foretage.",

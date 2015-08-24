@@ -5,7 +5,8 @@
 			"Michaello",
 			"Milicevic01",
 			"Жељко Тодоровић",
-			"Михајло Анђелковић"
+			"Михајло Анђелковић",
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Omogućuje]] [[Special:GlobalBlockList|globalno blokiranje]] IP adresa na više vikija",
@@ -26,7 +27,7 @@
 	"globalblocking-ipbanononly": "Blokiraj samo anonimne korisnike",
 	"globalblocking-block-errors": "Blok nije uspešan zbog {{PLURAL:$1|sledeđeg razloga|sledećih razloga}}:",
 	"globalblocking-block-ipinvalid": "IP adresa ($1) koju ste uneli nije dobra.\nZapamtite da ne možete uneti korisničko ime!",
-	"globalblocking-block-expiryinvalid": "Vreme isteka bloka koje ste uneli ($1) nije ispravno.",
+	"globalblocking-block-expiryinvalid": "Vreme isteka bloka koje ste uneli nije ispravno.",
 	"globalblocking-block-submit": "Blokirajte ovu IP adresu globalno",
 	"globalblocking-modify-submit": "Promeni ovaj globalni blok",
 	"globalblocking-block-success": "Ip adresa $1 je uspešno blokirana na svim Vikimedijinim projektima.",
