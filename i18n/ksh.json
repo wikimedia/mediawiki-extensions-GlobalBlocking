@@ -62,7 +62,7 @@
 	"globalblocking-unblock-unblocked": "Do häß de Sperr en alle Wikis met de Nommer #$2, fun de IP-Adress '''$1''', opjehovve.",
 	"globalblocking-unblock-errors": "De Sperr en alle Wikis upzehävve hät nit jeflupp.\n{{PLURAL:$1|Der Jrond|De Jrönde sin}}:",
 	"globalblocking-unblock-successsub": "De Sperr en alle Wikis es opjehovve",
-	"globalblocking-unblock-intro": "Hee kanns De en Sperr för alle Wikis ophävve.",
+	"globalblocking-unblock-intro": "Heh kanns De en Spärr för alle Wikis ophävve.",
 	"globalblocking-whitelist": "Dä Zohschtand heh em Wikki fun de Schpärre för alle Wikis",
 	"globalblocking-whitelist-notapplied": "De Schpärre för alle Wikkis wähde heh en däm Wikki nit opjenumme,\ndröm künne mer der Zoschtand fun dänne Schpärre för heh em Wikki och nit änndere, blohß för anderswoh.",
 	"globalblocking-whitelist-legend": "Der Zohschtand heh em Wikki änndere",
