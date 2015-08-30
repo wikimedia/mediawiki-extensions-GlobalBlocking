@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Shinjiman",
-			"Macofe"
+			"Macofe",
+			"Wong128hk"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|容許]]IP地址可以[[Special:GlobalBlockList|響多個wiki度封鎖]]",
@@ -16,7 +17,7 @@
 	"globalblocking-block-options": "選項",
 	"globalblocking-block-errors": "個封鎖唔成功，因為:\n$1",
 	"globalblocking-block-ipinvalid": "你所輸入嘅IP地址 ($1) 係無效嘅。\n請留意嘅係你唔可以輸入一個用戶名！",
-	"globalblocking-block-expiryinvalid": "你所輸入嘅到期 係無效嘅。",
+	"globalblocking-block-expiryinvalid": "你入嗰個期限無效。",
 	"globalblocking-block-submit": "全域封鎖呢個IP地址",
 	"globalblocking-block-success": "個IP地址 $1 已經響所有Wikimedia計劃度成功噉封鎖咗。\n你亦都可以睇吓個[[Special:GlobalBlockList|全域封鎖一覽]]。",
 	"globalblocking-block-successsub": "全域封鎖成功",

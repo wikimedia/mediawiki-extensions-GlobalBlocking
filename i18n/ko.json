@@ -97,7 +97,7 @@
 	"globalblocking-logentry-noexpiry": "기한이 정해지지 않음",
 	"globalblocking-loglink": "IP 주소 $1은 모든 위키에서 차단되었습니다. ([[{{#Special:GlobalBlockList}}/$1|자세한 정보]])",
 	"globalblocking-contribs-notice": "이 IP 주소는 현재 전역 차단되어 있습니다.\n전역 차단 기록은 다음과 같습니다:",
-	"globalblocking-showlog": "이 IP 주소는 이전에 차단된 적이 있습니다.\n아래의 차단 기록을 참고하십시오:",
+	"globalblocking-showlog": "이 IP 주소는 이전에 차단된 적이 있습니다.\n아래의 차단 기록을 참조하십시오:",
 	"globalblocklist": "모든 위키에서 차단된 IP 목록",
 	"globalblock": "IP 주소를 전역 차단",
 	"globalblockstatus": "전역 차단의 로컬 상태",
