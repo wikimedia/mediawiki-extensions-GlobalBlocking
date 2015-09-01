@@ -4,7 +4,8 @@
 			"Arnobarnard",
 			"Naudefj",
 			"පසිඳු කාවින්ද",
-			"Macofe"
+			"Macofe",
+			"Fwolff"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Maak dit moontlik]] om IP-adresse [[Special:GlobalBlockList|oor veelvoudige wiki's]] te versper",
@@ -75,7 +76,7 @@
 	"globalblocking-whitelist-nochange": "U het nie die lokale status van hierdie blokkade gewysig nie.\n[[Special:GlobalBlockList|Keer terug na die lys van globale blokkades]].",
 	"globalblocking-whitelist-intro": "U kan die vorm gebruik om die lokale status van 'n globale blokkade te wysig.\nAs 'n globale blokkade op hierdie wiki opgehef is, kan gebruikers vanaf die IP-adres gewone wysigings deurvoer.\n[[Special:GlobalBlockList|Keer terug na die lys van globale blokkades]].",
 	"globalblocking-blocked-nopassreset": "U kan nie wagwoorde van gebruikers herstel nie omdat u globaal geblokkeer word.",
-	"globalblocking-logpage": "Globale versperring boekstaaf",
+	"globalblocking-logpage": "Logboek van globale blokkering",
 	"globalblocking-logpagetext": "Die logboek bevat blokkades wat op hierdie wiki geskep of verwyder is.\nGlobale blokkades kan ook op ander wiki's geskep of verwyder word, en invloed hê op hierdie wiki.\nAlle globale blokkades is opgeteken in die [[Special:GlobalBlockList|lys van globale blokkades]].",
 	"globalblocking-block-logentry": "[[$1]] is globaal versper met 'n verstryktyd van $2",
 	"globalblocking-block2-logentry": "het [[$1]] globaal geblokkeer ($2)",
