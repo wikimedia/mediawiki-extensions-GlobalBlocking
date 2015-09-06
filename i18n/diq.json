@@ -28,7 +28,7 @@
 	"globalblocking-ipbanononly": "Karberanê anoniman tenya bloke ke",
 	"globalblocking-block-errors": "blokekerdış nêbı, semedê no {{PLURAL:$1|sebeb ra|sebeban ra}}:",
 	"globalblocking-block-ipinvalid": "IP addresa ke şıma pê keweni cı ($1) nemeqbulo.\nxo vir ra mekerê ke şıma nêeşkeni pê nameyê yew karberi cıkewi!",
-	"globalblocking-block-expiryinvalid": "Girdiğiniz bitiş geçersiz.",
+	"globalblocking-block-expiryinvalid": "Qediyayışo ke şıma kewnê cı nêvêreno.",
 	"globalblocking-block-submit": "na IPadres bı global bloke bıker",
 	"globalblocking-modify-submit": "na blokeyê globali wedar",
 	"globalblocking-block-success": "IPadresa $1'i heme projeyan de bı serkewte bloke bi.",
