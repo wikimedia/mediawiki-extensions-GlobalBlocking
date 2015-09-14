@@ -168,24 +168,27 @@ class SpecialGlobalBlock extends SpecialPage {
 			$blockSuccess = $block->insert();
 
 			if ( $blockSuccess ) {
-				$log = new LogPage( 'block' );
-				$flags = array( 'nocreate', 'nousertalk' );
-
+				$flags = array(); // keep the flag order consistent with SpecialBlock
 				if ( $this->mAnonOnly ) {
 					$flags[] = 'anononly';
 				}
+				$flags[] = 'nocreate';
+				if ( $this->getConfig()->get('BlockAllowsUTEdit') ) { // for consistency with core
+					$flags[] = 'nousertalk';
+				}
 
-				$logParams = implode( ',', $flags );
+				$logParams = array();
+				$logParams['5::duration'] = $this->mExpiry;
+				$logParams['6::flags'] = implode( ',', $flags );
 
-				$log_id = $log->addEntry(
-					'block',
-					Title::makeTitle( NS_USER, $this->mAddress ),
-					$reasonstr,
-					array( $this->mExpiry, $logParams ),
-					$this->getUser()
-				);
-
-				$log->addRelations( 'ipb_id', array( $blockSuccess['id'] ), $log_id );
+				$log = new ManualLogEntry( 'block', 'block' );
+				$log->setTarget( Title::makeTitle( NS_USER, $this->mAddress ) );
+				$log->setComment( $reasonstr );
+				$log->setPerformer( $this->getUser() );
+				$log->setParameters( $logParams );
+				$log->setRelations( array( 'ipb_id' => array( $blockSuccess['id'] ) ) );
+				$logId = $log->insert();
+				$log->publish( $logId );
 			}
 		}
 
