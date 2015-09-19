@@ -6,7 +6,8 @@
 			"Melos",
 			"Santu",
 			"Pippinu",
-			"Macofe"
+			"Macofe",
+			"Sarvaturi"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Pirmetti]] di [[Special:GlobalBlockList|bluccari supra a chiossai wiki]] nnirizzi IP",
@@ -24,7 +25,7 @@
 	"globalblocking-block-submit": "Blocca stu nnirizzu IP glubbalmenti",
 	"globalblocking-block-success": "Lu nnirizzu IP $1 vinni bluccatu cu successu supra a tutti li pruggetti.",
 	"globalblocking-block-successsub": "Bloccu glubbali fattu cu successu",
-	"globalblocking-block-alreadyblocked": "Lu nnirizzu IP $1 già hâ statu bluccatu glubbalmenti.\nPoi taliari lu bloccu attivu ntâ [[Special:GlobalBlockList|lista dê blocchi glubbali]], o puru canciari i mpustazzioni di ddu bloccu cumpilannu n'autra vota stu mòdulu.",
+	"globalblocking-block-alreadyblocked": "Lu nnirizzu IP $1 già fu bluccatu glubbalmenti.\nPoi taliari lu bloccu attivu ntâ [[Special:GlobalBlockList|lista dê blocchi glubbali]], o puru canciari li mpustazzioni di ddu bloccu cumpilannu n'àutra vota stu mòdulu.",
 	"globalblocking-block-bigrange": "La classi ca nnicasti ($1) è troppu granni pi èssiri bluccata. È pussìbbili bluccari, ô cchiossai, 65.536 nnirizzi (classi /16)",
 	"globalblocking-list-intro": "Ccà di sècutu c'è la lista di tutti li blocchi ca sunnu ora attivi. Ci sunnu tanti blocchi signaliati comu disattivati lucalmenti: chistu voli diri ca chissi sunnu attivi supra a àutri siti, ma n'amministraturi lucali dicidìu di disattivàrili supra a ddà wiki.",
 	"globalblocking-list": "Lista di li nnirizzi IP bluccati glubbalmenti",
