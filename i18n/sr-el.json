@@ -97,7 +97,7 @@
 	"removeglobalblock": "Ukloni globalni blok",
 	"right-globalblock": "postavljanje i uklanjanje globalnih blokada",
 	"action-globalblock": "postavljanje i uklanjanje globalnih blokiranja",
-	"right-globalblock-whitelist": "onemogući globalne blokove lokalno",
+	"right-globalblock-whitelist": "onemogućavanje globalnih blokova lokalno",
 	"action-globalblock-whitelist": "lokalno onemogućavanje globalnih blokova",
 	"right-globalblock-exempt": "zaobilaženje globalnih blokada",
 	"action-globalblock-exempt": "zaobilaženje globalnih blokova"
