@@ -25,6 +25,8 @@ class SpecialGlobalBlock extends SpecialPage {
 			return;
 		}
 
+		$this->checkReadOnly();
+
 		$errors = '';
 
 		$request = $this->getRequest();
