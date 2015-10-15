@@ -46,7 +46,6 @@
 	"globalblocking-unblock-unblocked": "Jūs sėkmingai panaikinote globalų blokavimą # $2  IP adresui '''$1'''",
 	"globalblocking-unblock-errors": "Jūsų šalinimas pasaulinio blokavimo buvo nesėkmingas dėl sekančių {{PLURAL:$1|priežasties|priežasčių}}",
 	"globalblocking-unblock-successsub": "Pasaulinis blokavimas sėkmingai pašalintas",
-	"globalblocking-unblock-subtitle": "Šalinamas pasaulinis blokavimas",
 	"globalblocking-unblock-intro": "Šią formą galite naudoti norėdami pašalinti pasaulini blokavimą.",
 	"globalblocking-whitelist-legend": "Pakeisti vietos statusą",
 	"globalblocking-whitelist-reason": "Priežastis:",
