@@ -88,8 +88,8 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 				if ( $range < 16 ) {
 					$this->dieUsage( 'CIDR ranges broader than /16 are not accepted', 'cidrtoobroad' );
 				}
-				$lower = wfBaseConvert( $ip, 10, 16, 8, false );
-				$upper = wfBaseConvert( $ip + pow( 2, 32 - $range ) - 1, 10, 16, 8, false );
+				$lower = Wikimedia\base_convert( $ip, 10, 16, 8, false );
+				$upper = Wikimedia\base_convert( $ip + pow( 2, 32 - $range ) - 1, 10, 16, 8, false );
 			} else {
 				$lower = $upper = IP::toHex( $params['ip'] );
 			}
