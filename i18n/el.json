@@ -10,7 +10,8 @@
 			"Omnipaedista",
 			"ZaDiak",
 			"Απεργός",
-			"Macofe"
+			"Macofe",
+			"Protnet"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Επιτρέπει]] διευθύνσεις IP να [[Special:GlobalBlockList|φραγούν σε πολλαπλά wikis]]",
@@ -45,7 +46,7 @@
 	"globalblocking-search-legend": "Αναζήτηση για μια καθολική φραγή",
 	"globalblocking-search-ip": "διεύθυνση IP:",
 	"globalblocking-search-submit": "Αναζήτηση για φραγές",
-	"globalblocking-list-ipinvalid": "Η διεύθυνση IP για την οποία αναζητήσατε ($1) είναι άκυρη.<br />\nΠαρακαλώ εισάγετε μια έγκυρη διεύθυνση IP.",
+	"globalblocking-list-ipinvalid": "Η διεύθυνση IP την οποία αναζητήσατε ($1) δεν είναι έγκυρη.\nΠαρακαλούμε εισαγάγετε μια έγκυρη διεύθυνση IP.",
 	"globalblocking-search-errors": "Η αναζήτηση σας ήταν ανεπιτυχής, για {{PLURAL:$1|τον ακόλουθο λόγο|τους ακόλουθους λόγους}}:",
 	"globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">Ο/Η '''$2'''</span> (''$3'') έφραξε καθολικά τον/την [[Special:Contributions/$4|$4]] ''($5)''",
 	"globalblocking-list-expiry": "λήξη $1",
