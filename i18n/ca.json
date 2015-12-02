@@ -8,7 +8,8 @@
 			"Solde",
 			"Toniher",
 			"Vriullop",
-			"Macofe"
+			"Macofe",
+			"Jaumeortola"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permet]] [[Special:GlobalBlockList|bloquejar]] les adreces IP de diversos wikis",
@@ -54,14 +55,14 @@
 	"globalblocking-list-modify": "modifica",
 	"globalblocking-list-noresults": "La adreça IP demanada no està bloquejada.",
 	"globalblocking-goto-block": "Bloqueja globalment una adreça IP",
-	"globalblocking-goto-unblock": "Canceŀla un bloqueig global",
+	"globalblocking-goto-unblock": "Cancel·la un bloqueig global",
 	"globalblocking-goto-status": "Canvi de l'estat local d'un blocatge global",
 	"globalblocking-return": "Torna a la llista de bloquejos globals",
 	"globalblocking-notblocked": "L'adreça IP que heu introduït ($1) no està bloquejada globalment.",
-	"globalblocking-unblock": "Canceŀla un bloqueig global",
+	"globalblocking-unblock": "Cancel·la un bloqueig global",
 	"globalblocking-unblock-ipinvalid": "L'adreça IP ($1) introduïda no és vàlida.\nRecordau que no podeu introduir un nom d'usuari!",
-	"globalblocking-unblock-legend": "Canceŀla un bloqueig global",
-	"globalblocking-unblock-submit": "Canceŀla un bloqueig global",
+	"globalblocking-unblock-legend": "Cancel·la un bloqueig global",
+	"globalblocking-unblock-submit": "Cancel·la un bloqueig global",
 	"globalblocking-unblock-reason": "Motiu:",
 	"globalblocking-unblock-unblocked": "Heu eliminat el bloqueig global #$2 a l'adreça IP '''$1'''",
 	"globalblocking-unblock-errors": "No s'ha pogut eliminar el bloqueig global, {{PLURAL:$1|pel següent motiu|pels següents motius}}:",
@@ -95,7 +96,7 @@
 	"globalblocklist": "Llista de les adreces IP bloquejades globalment",
 	"globalblock": "Bloqueja una adreça IP globalment",
 	"globalblockstatus": "Estat local dels bloquejos globals",
-	"removeglobalblock": "Canceŀla el bloqueig global",
+	"removeglobalblock": "Cancel·la el bloqueig global",
 	"right-globalblock": "Fer blocatges globals",
 	"right-globalblock-whitelist": "Desactivar a nivell local els blocatges globals",
 	"right-globalblock-exempt": "Eludir els blocatges globals"
