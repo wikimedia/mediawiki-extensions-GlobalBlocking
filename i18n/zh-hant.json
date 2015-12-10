@@ -15,7 +15,8 @@
 			"Waihorace",
 			"Cwlin0416",
 			"Zhxy 519",
-			"Macofe"
+			"Macofe",
+			"LNDDYL"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|允許]] 封鎖 [[Special:GlobalBlockList|於多個 Wiki 中]] 的 IP 位址",
@@ -78,11 +79,11 @@
 	"globalblocking-unblock-intro": "您可以使用此表格移除一個全域封鎖。",
 	"globalblocking-whitelist": "全域封鎖的本地狀態",
 	"globalblocking-whitelist-notapplied": "全域封鎖無法套用至本 Wiki，\n因此無法修改全域封鎖的本地狀態。",
-	"globalblocking-whitelist-legend": "更改本地狀態",
+	"globalblocking-whitelist-legend": "變更本地狀態",
 	"globalblocking-whitelist-reason": "原因：",
 	"globalblocking-whitelist-status": "本地狀態：",
 	"globalblocking-whitelist-statuslabel": "停用在 {{SITENAME}} 上的全域封鎖",
-	"globalblocking-whitelist-submit": "更改本地狀態",
+	"globalblocking-whitelist-submit": "變更本地狀態",
 	"globalblocking-whitelist-whitelisted": "您已經成功停用在 {{SITENAME}} 的 IP 位址 '''$1''' 中的全域封鎖 #$2。",
 	"globalblocking-whitelist-dewhitelisted": "您已經成功重新開啟在 {{SITENAME}} 的 IP 位址 '''$1''' 中的全域封鎖 #$2。",
 	"globalblocking-whitelist-nochange": "您未對此封鎖中的本地狀態做變更。",
