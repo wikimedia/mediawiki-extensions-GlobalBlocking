@@ -220,16 +220,18 @@ class GlobalBlocking {
 		return $row->gb_id;
 	}
 
+	/**
+	 * Purge stale block rows.
+	 *
+	 * This is expensive. It involves opening a connection to a new master,
+	 * and doing a write query. We should only do it when a connection to the master
+	 * is already open (currently, when a global block is made).
+	 *
+	 * @throws DBUnexpectedError
+	 */
 	static function purgeExpired() {
-		// This is expensive. It involves opening a connection to a new master,
-		// and doing a write query. We should only do it when a connection to the master
-		// is already open (currently, when a global block is made).
 		$dbw = GlobalBlocking::getGlobalBlockingDatabase( DB_MASTER );
-
-		// Stand-alone transaction.
-		$dbw->begin();
 		$dbw->delete( 'globalblocks', array( 'gb_expiry<' . $dbw->addQuotes( $dbw->timestamp() ) ), __METHOD__ );
-		$dbw->commit();
 
 		// Purge the global_block_whitelist table.
 		// We can't be perfect about this without an expensive check on the master
@@ -237,9 +239,7 @@ class GlobalBlocking {
 		// the expiry of global blocks in the global_block_whitelist table.
 		// That way, most blocks will fall out of the table naturally when they expire.
 		$dbw = wfGetDB( DB_MASTER );
-		$dbw->begin();
 		$dbw->delete( 'global_block_whitelist', array( 'gbw_expiry<' . $dbw->addQuotes( $dbw->timestamp() ) ), __METHOD__ );
-		$dbw->commit();
 	}
 
 	/**
