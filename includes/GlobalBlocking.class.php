@@ -10,7 +10,8 @@ class GlobalBlocking {
 	/**
 	 * @param $user User
 	 * @param $ip string
-	 * @return Array: empty or a message key with parameters
+	 * @return array: empty or a message key with parameters
+	 * @throws MWException
 	 */
 	static function getUserBlockErrors( $user, $ip ) {
 		global $wgLang, $wgRequest, $wgGlobalBlockingBlockXFF;
@@ -140,9 +141,9 @@ class GlobalBlocking {
 
 	/**
 	 * Check an array of IPs for a block on any
-	 * @param Array $ips The Array of IP addresses to be checked
+	 * @param array $ips The Array of IP addresses to be checked
 	 * @param boolean $anon Get anon blocks only
-	 * @return Array of applicable blocks
+	 * @return array of applicable blocks
 	 */
 	static function checkIpsForBlock( $ips, $anon ) {
 		$dbr = GlobalBlocking::getGlobalBlockingDatabase( DB_SLAVE );
@@ -182,9 +183,9 @@ class GlobalBlocking {
 	 * From a list of XFF ips, and list of blocks that apply, choose the block that will
 	 * be shown to the end user. Using the first block in the array for now.
 	 *
-	 * @param Array $ips The Array of IP addresses to be checked
-	 * @param Array $blocks The Array of blocks (db rows)
-	 * @return Array ($ip, $block) the chosen ip and block
+	 * @param array $ips The Array of IP addresses to be checked
+	 * @param array $blocks The Array of blocks (db rows)
+	 * @return array|null ($ip, $block) the chosen ip and block
 	 */
 	private static function getAppliedBlock( $ips, $blocks ) {
 		$block = array_shift( $blocks );
@@ -194,6 +195,8 @@ class GlobalBlocking {
 				return array( $ip, $block );
 			}
 		}
+
+		return null;
 	}
 
 	/**
