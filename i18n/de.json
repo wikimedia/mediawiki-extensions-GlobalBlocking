@@ -114,6 +114,8 @@
 	"apihelp-globalblock-param-unblock": "Falls angegeben, wird der Benutzer freigegeben.",
 	"apihelp-globalblock-param-reason": "Der Grund für das Sperren/Entsperren.",
 	"apihelp-query+globalblocks-description": "Alle global gesperrten IP-Adressen auflisten.",
+	"apihelp-query+globalblocks-param-start": "Der Zeitstempel, bei dem die Aufzählung beginnen soll.",
+	"apihelp-query+globalblocks-param-end": "Der Zeitstempel, bei dem die Aufzählung beendet werden soll.",
 	"apihelp-query+globalblocks-param-limit": "Die maximale Anzahl der aufzulistenden Sperren.",
 	"apihelp-query+globalblocks-example-1": "Alle globale Sperren auflisten",
 	"apihelp-query+globalblocks-example-2": "Listet globale Sperren der IP-Adresse 192.0.2.18 auf"
