@@ -83,6 +83,7 @@
 	"globalblocking-logentry-expiry": "expiră pe $1",
 	"globalblocking-logentry-noexpiry": "nicio dată de expirare setată",
 	"globalblocking-loglink": "Adresa IP $1 este blocată global ([[{{#Special:GlobalBlockList}}/$1|detalii complete]]).",
+	"globalblocking-contribs-notice": "Această adresă IP este momentan blocată global.\nÎnregistrarea din jurnalul blocărilor globale este indicată mai jos pentru informare:",
 	"globalblocking-showlog": "Această adresă IP a fost blocată anterior.\nJurnalul blocărilor este disponibil mai jos:",
 	"globalblocklist": "Listă de adrese IP blocate global",
 	"globalblock": "Blochează global o adresă IP",
