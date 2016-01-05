@@ -14,7 +14,8 @@
 			"ZxxZxxZ",
 			"Calak",
 			"Mehran",
-			"Macofe"
+			"Macofe",
+			"Hosseinblue"
 		]
 	},
 	"globalblocking-desc": "قطع دسترسی نشانی‌های اینترنتی [[Special:GlobalBlockList|در چندین ویکی]] را [[Special:GlobalBlock|ممکن می‌سازد]]",
@@ -59,7 +60,7 @@
 	"globalblocking-list-unblock": "حذف",
 	"globalblocking-list-whitelisted": "توسط $1: $2 به طور محلی غیر فعال شد",
 	"globalblocking-list-whitelist": "وضعیت محلی",
-	"globalblocking-list-modify": "تغییر",
+	"globalblocking-list-modify": "گؤەڕانن/تغییر",
 	"globalblocking-list-noresults": "آی‌پی درخواست شده مسدود نیست.",
 	"globalblocking-goto-block": "قطع دسترسی سراسری یک نشانی آی‌پی",
 	"globalblocking-goto-unblock": "حذف یک قطع دسترسی سراسری",
