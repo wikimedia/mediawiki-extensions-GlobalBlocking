@@ -8,6 +8,10 @@ class SpecialGlobalBlock extends SpecialPage {
 		parent::__construct( 'GlobalBlock', 'globalblock' );
 	}
 
+	public function doesWrites() {
+		return true;
+	}
+
 	function execute( $par ) {
 		$this->setHeaders();
 
