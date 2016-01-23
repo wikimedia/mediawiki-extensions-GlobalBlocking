@@ -33,7 +33,7 @@
 	"globalblocking-list-noresults": "په غوښتلې آي پي پتې بنديز نه دی.",
 	"globalblocking-goto-block": "په يوې آی پي پتې نړېواله بنديز لگول",
 	"globalblocking-goto-unblock": "يو نړيوال بنديز غورځول",
-	"globalblocking-return": "د نړېوالو بنديزونو لړليک ته ورګرځېدل.",
+	"globalblocking-return": "د نړېوالو بنديزونو لړليک ته ورستنېدل.",
 	"globalblocking-notblocked": "د ($1) آی پي پته چې مو ورکړې په نړېواله توگه بنديز شوې نه ده.",
 	"globalblocking-unblock": "يو نړيوال بنديز غورځول",
 	"globalblocking-unblock-legend": "يو نړيوال بنديز غورځول",

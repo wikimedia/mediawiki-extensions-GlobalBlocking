@@ -18,7 +18,8 @@
 			"Nicolapps",
 			"Wladek92",
 			"Macofe",
-			"Orlodrim"
+			"Orlodrim",
+			"Diti"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permet]] de bloquer des adresses IP [[Special:GlobalBlockList|à travers plusieurs wikis]]",
@@ -88,7 +89,7 @@
 	"globalblocking-whitelist-submit": "Changer le statut local",
 	"globalblocking-whitelist-whitelisted": "Vous avez désactivé avec succès le blocage global n° $2 de l’adresse IP '''$1''' sur {{SITENAME}}.",
 	"globalblocking-whitelist-dewhitelisted": "Vous avez réactivé avec succès le blocage global n° $2 de l’adresse IP '''$1''' sur {{SITENAME}}.",
-	"globalblocking-whitelist-nochange": "Vous n’avez pas modifié le status local de ce blocage.",
+	"globalblocking-whitelist-nochange": "Vous n’avez pas modifié le statut local de ce blocage.",
 	"globalblocking-whitelist-intro": "Vous pouvez utiliser ce formulaire pour modifier l’état local d’un blocage global.\nSi un blocage global est désactivé sur ce wiki, les utilisateurs des adresses IP affectées pourront modifier normalement.",
 	"globalblocking-ipblocked": "'''Votre adresse IP a été bloquée sur tous les wikis.'''\n\nLe blocage a été fait par $1 ($2).\nLe motif donné est ''$3''. \n\n* Début du blocage : $4\n* Expiration du blocage : $5\n\nVous pouvez contacter $1 pour discuter du blocage.\nVous ne pouvez pas utiliser la fonctionnalité « {{int:emailuser}} » à moins d’avoir spécifié une adresse de courriel valide dans vos [[Special:Preferences|préférences de compte]] et de n’avoir pas bloqué son utilisation.\nVotre adresse IP actuelle est $6.\nVeuillez inclure tous les détails ci-dessus dans toutes les demandes que vous ferez.",
 	"globalblocking-ipblocked-range": "'''Votre adresse IP fait partie d’une plage d’adresses bloquée sur tous les wikis.'''\n\nLe blocage a été fait par $1 ($2).\nLe motif donné est ''$3''. \n\n* Début du blocage : $4\n* Expiration du blocage : $5\n\nVous pouvez contacter $1 pour discuter du blocage.\nVous ne pouvez pas utiliser la fonctionnalité « {{int:emailuser}} » à moins d’avoir spécifié une adresse de courriel valide dans vos [[Special:Preferences|préférences de compte]] et de n’avoir pas bloqué son utilisation.\nVotre adresse IP actuelle est $6 et la plage bloquée est $7.\nVeuillez inclure tous les détails ci-dessus dans toutes les demandes que vous ferez.",
