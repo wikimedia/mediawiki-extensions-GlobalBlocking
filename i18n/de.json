@@ -120,6 +120,7 @@
 	"apihelp-query+globalblocks-param-start": "Der Zeitstempel, bei dem die Aufzählung beginnen soll.",
 	"apihelp-query+globalblocks-param-end": "Der Zeitstempel, bei dem die Aufzählung beendet werden soll.",
 	"apihelp-query+globalblocks-param-ids": "Durch Verkettungszeichen getrennte Liste von Sperren-IDs, die aufgelistet werden sollen.",
+	"apihelp-query+globalblocks-param-addresses": "Mit | getrennte Liste der zu suchenden IP-Adressen.",
 	"apihelp-query+globalblocks-param-ip": "Hole alle Sperren, die auf diese IP-Adresse oder diesen CIDR-Bereich angewendet wurden, einschließlich Bereichssperren. Darf nicht zusammen mit $1users verwendet werden. CIDR-Breiche größer als /16 werden nicht zugelassen.",
 	"apihelp-query+globalblocks-param-limit": "Die maximale Anzahl der aufzulistenden Sperren.",
 	"apihelp-query+globalblocks-param-prop": "Welche Eigenschaften abgerufen werden sollen.",
