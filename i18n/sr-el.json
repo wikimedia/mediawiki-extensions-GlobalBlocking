@@ -81,6 +81,7 @@
 	"globalblocking-ipblocked-xff": "'''Jedan ili više posredničkih (proksi) servera koje koristite su blokirani na svim vikijim.'''\n\nBlokirao vas je $1 ($2).\nRazlog: ''$3''.\n\n* Početak blokade: $4\n* Kraj blokade: $5\n\nMožete se obratiti $1 da razjasnite zašto ste blokirani.\nFunkcija „{{int:emailuser}}“ vam je dostupna samo ako ste naveli valjanu e-adresu u [[Special:Preferences|podešavanjima]] i nije vam onemogućeno korišćenje iste.\nAdresa blokiranog posrednika je $6. \nZa svaki eventualni zahtev obavezno navedite podatke iznad.",
 	"globalblocking-blocked-nopassreset": "Ne možete da promenite lozinku korisnika jer ste globalno blokirani.",
 	"globalblocking-logpage": "Dnevnik globalnih blokiranja",
+	"globalblocking-logpagetext": "Ovo je dnevnik globalnih blokiranja koji su načinjeni i uklonjeni na ovom vikiju.\nTreba imati na umu da se globalna blokiranja mogu načiniti i na drugim vikijima i mogu imati uticaj na ovaj viki.\nDa vidite sve aktuelna globalna blokiranja pogledajte [[Special:GlobalBlockList|spisak globalnih blokiranja]].",
 	"globalblocking-block-logentry": "globalno blokirao [[$1]] sa vremenom isticanja od $2",
 	"globalblocking-block2-logentry": "globalno blokiran [[$1]] ($2)",
 	"globalblocking-unblock-logentry": "uklonio globalni blok za [[$1]]",
