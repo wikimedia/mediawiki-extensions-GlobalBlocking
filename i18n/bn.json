@@ -57,7 +57,7 @@
 	"globalblocking-unblock-legend": "একটি বৈশ্বিক বাধা তুলে নাও",
 	"globalblocking-unblock-submit": "বৈশ্বিক বাধা তুলে নাও",
 	"globalblocking-unblock-reason": "কারণ:",
-	"globalblocking-unblock-unblocked": "আপনি সফলভাবে '''$1''' আইপি ঠিকানাগুলো থেকে বৈশ্বিক বাধাদান #$2 অপসারণ করেছেন।",
+	"globalblocking-unblock-unblocked": "আপনি '''$1''' আইপি ঠিকানাগুলো থেকে বৈশ্বিক বাধাদান #$2 অপসারণ করেছেন।",
 	"globalblocking-unblock-errors": "বৈশ্বিক বাধা অপসারণ সফল হয়নি, এই {{PLURAL:$1|কারণে|কারণগুলোর জন্য}}:",
 	"globalblocking-unblock-successsub": "বৈশ্বিক বাধা সফলভাবে তুলে নেওয়া হয়েছে।",
 	"globalblocking-unblock-intro": "বৈশ্বিক বাধা তুলে নিতে আপনি নিচের ফর্মটি ব্যবহার করতে পারেন।",
