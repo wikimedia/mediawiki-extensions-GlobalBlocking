@@ -9,7 +9,8 @@
 			"Meno25",
 			"OsamaK",
 			"Abanima",
-			"Macofe"
+			"Macofe",
+			"Maroen1990"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|يسمح]] بمنع عناوين الأيبي [[Special:GlobalBlockList|عبر ويكيات متعددة]]",
@@ -36,7 +37,7 @@
 	"globalblocking-block-success": "عنوان الأيبي $1 تم منعه بنجاح في كل المشاريع.",
 	"globalblocking-modify-success": "المنع العام على $1 تم تعديله بنجاح",
 	"globalblocking-block-successsub": "نجح المنع العام",
-	"globalblocking-modify-successsub": "المنع العام تم تعديله بنجاح",
+	"globalblocking-modify-successsub": "المنع العام تم تعديله .",
 	"globalblocking-local-failed": "لم ينجح منع عنوان IP محلياً لأن هذا العنوان ممنوع حالياً على هذا الويكي.",
 	"globalblocking-block-alreadyblocked": "عنوان الأيبي $1 ممنوع منعا عاما بالفعل.\nيمكنك رؤية المنع الموجود في [[Special:GlobalBlockList|قائمة عمليات المنع العامة]]،\nأو تعديل إعدادات المنع الموجود عن طريق إعادة تنفيذ هذه الاستمارة.",
 	"globalblocking-block-bigrange": "النطاق الذي حددته ($1) كبير جدا للمنع. يمكنك منع، كحد أقصى، 65,536 عنوان (نطاقات /16)",
@@ -68,7 +69,7 @@
 	"globalblocking-unblock-reason": "السبب:",
 	"globalblocking-unblock-unblocked": "أنت أزلت بنجاح المنع العام #$2 على عنوان الأيبي '''$1'''",
 	"globalblocking-unblock-errors": "إزالتك للمنع العام لم تكن ناجحة، {{PLURAL:$1|للسبب التالي|لأسباب التالية}}:",
-	"globalblocking-unblock-successsub": "المنع العام تمت إزالته بنجاح",
+	"globalblocking-unblock-successsub": "المنع العام تمت إزالته",
 	"globalblocking-unblock-intro": "يمكنك استخدام هذه الاستمارة لإزالة منع عام.",
 	"globalblocking-whitelist": "الحالة المحلية لعمليات المنع العامة",
 	"globalblocking-whitelist-notapplied": "عمليات المنع العامة لا يتم تطبيقها في هذه الويكي،\nلذا فالحالة المحلية لعمليات المنع العامة لا يمكن تعديلها.",
