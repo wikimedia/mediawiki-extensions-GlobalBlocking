@@ -70,7 +70,7 @@
 	"globalblocking-unblock-legend": "Remover um bloqueio global",
 	"globalblocking-unblock-submit": "Remover bloqueio global",
 	"globalblocking-unblock-reason": "Motivo:",
-	"globalblocking-unblock-unblocked": "Removeu o bloqueio global #$2 no endereço IP '''$1'''.",
+	"globalblocking-unblock-unblocked": "Removeu o bloqueio global #$2 do endereço IP '''$1'''.",
 	"globalblocking-unblock-errors": "Não foi possível remover este bloqueio global, {{PLURAL:$1|pelo seguinte motivo|pelos seguintes motivos}}:",
 	"globalblocking-unblock-successsub": "Bloqueio global removido.",
 	"globalblocking-unblock-intro": "Pode usar este formulário para eliminar um bloqueio global.",
