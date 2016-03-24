@@ -107,7 +107,7 @@
 	"apihelp-globalblock-param-anononly": "Indica se il blocco dovrebbe riguardare solo gli utenti che non hanno effettuato l'accesso.",
 	"apihelp-query+globalblocks-description": "Elenca tutti gli indirizzi IP bloccati globalmente",
 	"apihelp-query+globalblocks-param-start": "Il timestamp da cui iniziare il conteggio.",
-	"apihelp-query+globalblocks-param-end": "Il timestamp al quale terminare il conteggio.",
+	"apihelp-query+globalblocks-param-end": "Il timestamp al quale interrompere il conteggio.",
 	"apihelp-query+globalblocks-param-limit": "Il numero massimo di blocchi da elencare.",
 	"apihelp-query+globalblocks-param-prop": "Quali proprietà ottenere.",
 	"apihelp-query+globalblocks-example-1": "Elenca tutti i blocchi globali",
