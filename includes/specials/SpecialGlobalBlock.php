@@ -212,7 +212,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 
 		// This handles validation too...
 		$errors = GlobalBlocking::block(
-			$data['Address'],
+			$this->address, // $this->address is sanitized; $data['Address'] isn't
 			$data['Reason'][0],
 			$data['Expiry'],
 			$user,
