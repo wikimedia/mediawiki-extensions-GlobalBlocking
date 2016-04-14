@@ -15,6 +15,6 @@
 	"globalblocking-whitelist-status": "Җирле халәт:",
 	"globalblocking-whitelist-statuslabel": "Әлеге гомум чикләүне {{grammar:genitive|{{SITENAME}}}} проектында сүндерү",
 	"globalblocking-whitelist-submit": "Җирле халәтне үзгәртү",
-	"globalblocking-whitelist-whitelisted": "{{grammar:genitive|{{SITENAME}}}} проектында IP-юлламасы '''$1''' кулланучы исеме  #$2 булган кулланучының гомум чикләүләрен сүндерү уңышлы үтте.",
-	"globalblocking-whitelist-dewhitelisted": "{{grammar:genitive|{{SITENAME}}}} проектында IP-юлламасы - '''$1''' кулланучы исеме - #$2 булган кулланучының гомум чикләүләрен яңадан билгеләү уңышлы үтте."
+	"globalblocking-whitelist-whitelisted": "Сез {{SITENAME}} проектында '''$1''' IP адресының №$2 гомуми тыелудан азат иттегез.",
+	"globalblocking-whitelist-dewhitelisted": "Сез {{SITENAME}} проектында '''$1''' IP адресының №$2 гомуми тыелуын кабат кайтардыгыз."
 }
