@@ -59,12 +59,13 @@ class GlobalBlockingHooks {
 	 * @param User $user
 	 * @param string $ip
 	 * @param bool $blocked
+	 * @param Block|null $block
 	 *
 	 * @return bool
 	 */
-	static public function onUserIsBlockedGlobally( User &$user, $ip, &$blocked ) {
-		$blockError = GlobalBlocking::getUserBlockErrors( $user, $ip );
-		if ( $blockError ) {
+	static public function onUserIsBlockedGlobally( User &$user, $ip, &$blocked, &$block ) {
+		$block = GlobalBlocking::getUserBlock( $user, $ip );
+		if ( $block !== null ) {
 			$blocked = true;
 			return false;
 		}
