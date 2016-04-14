@@ -65,6 +65,13 @@ $wgLogActions['gblblock/gunblock'] = 'globalblocking-unblock-logentry';
 $wgLogActions['gblblock/whitelist'] = 'globalblocking-whitelist-logentry';
 $wgLogActions['gblblock/dwhitelist'] = 'globalblocking-dewhitelist-logentry'; // Stupid logging table doesn't like >16 chars
 $wgLogActions['gblblock/modify'] = 'globalblocking-modify-logentry';
+$wgActionFilteredLogs['gblblock'] = array(
+	'gblock' => array( 'gblock', 'gblock2' ),
+	'gunblock' => array( 'gunblock' ),
+	'modify' => array( 'modify' ),
+	'whitelist' => array( 'whitelist' ),
+	'dwhitelist' => array( 'dwhitelist' )
+);
 
 ## Permissions
 $wgGroupPermissions['steward']['globalblock'] = true;
