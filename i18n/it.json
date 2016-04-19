@@ -111,5 +111,11 @@
 	"apihelp-query+globalblocks-param-limit": "Il numero massimo di blocchi da elencare.",
 	"apihelp-query+globalblocks-param-prop": "Quali proprietà ottenere.",
 	"apihelp-query+globalblocks-example-1": "Elenca tutti i blocchi globali",
-	"apihelp-query+globalblocks-example-2": "Elenca i blocchi globali che si applicano all'indirizzo IP 192.0.2.18"
+	"apihelp-query+globalblocks-example-2": "Elenca i blocchi globali che si applicano all'indirizzo IP 192.0.2.18",
+	"log-action-filter-gblblock": "Tipo di blocco globale:",
+	"log-action-filter-gblblock-gblock": "Blocco globale",
+	"log-action-filter-gblblock-gunblock": "Sblocco globale",
+	"log-action-filter-gblblock-modify": "Modifica blocco globale",
+	"log-action-filter-gblblock-whitelist": "Aggiunta nella lista bianca blocco globale",
+	"log-action-filter-gblblock-dwhitelist": "Rimozione dalla lista bianca blocco globale"
 }

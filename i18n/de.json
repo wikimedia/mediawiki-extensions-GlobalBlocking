@@ -118,5 +118,11 @@
 	"apihelp-query+globalblocks-param-limit": "Die maximale Anzahl der aufzulistenden Sperren.",
 	"apihelp-query+globalblocks-param-prop": "Zurückzugebende Eigenschaften",
 	"apihelp-query+globalblocks-example-1": "Alle globale Sperren auflisten",
-	"apihelp-query+globalblocks-example-2": "Listet globale Sperren der IP-Adresse 192.0.2.18 auf"
+	"apihelp-query+globalblocks-example-2": "Listet globale Sperren der IP-Adresse 192.0.2.18 auf",
+	"log-action-filter-gblblock": "Typ der globalen Sperre:",
+	"log-action-filter-gblblock-gblock": "Globale Sperre",
+	"log-action-filter-gblblock-gunblock": "Globale Freigabe",
+	"log-action-filter-gblblock-modify": "Veränderung der globalen Sperre",
+	"log-action-filter-gblblock-whitelist": "Hinzufügung zur weißen Liste für globale Sperren",
+	"log-action-filter-gblblock-dwhitelist": "Entfernung von der weißen Liste für globale Sperren"
 }
