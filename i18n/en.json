@@ -109,5 +109,11 @@
 	"apihelp-query+globalblocks-param-limit": "The maximum amount of blocks to list.",
 	"apihelp-query+globalblocks-param-prop": "Which properties to get.",
 	"apihelp-query+globalblocks-example-1": "List all global blocks",
-	"apihelp-query+globalblocks-example-2": "List global blocks applying to IP address 192.0.2.18"
+	"apihelp-query+globalblocks-example-2": "List global blocks applying to IP address 192.0.2.18",
+	"log-action-filter-gblblock": "Type of global block:",
+	"log-action-filter-gblblock-gblock": "Global block",
+	"log-action-filter-gblblock-gunblock": "Global unblock",
+	"log-action-filter-gblblock-modify": "Global block modification",
+	"log-action-filter-gblblock-whitelist": "Global block whitelist addition",
+	"log-action-filter-gblblock-dwhitelist": "Global block whitelist removal"
 }
