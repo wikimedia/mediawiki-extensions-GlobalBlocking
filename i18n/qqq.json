@@ -48,6 +48,7 @@
 	"globalblocking-block-success": "Used in [[Special:GlobalBlock]]. Parameters:\n* $1 - IP address\n\nSee also: {{msg-mw|globalblocking-modify-success}}",
 	"globalblocking-modify-success": "Used in [[Special:GlobalBlock]]. Parameters:\n* $1 - IP address\n\nSee also: {{msg-mw|globalblocking-block-success}}",
 	"globalblocking-local-failed": "Shown if blocking an IP address locally failed.",
+	"globalblocking-block-failure": "Error message shown when an IP address or IP range could not be blocked globally. $1 is the target IP address or IP range.",
 	"globalblocking-block-alreadyblocked": "Used as error message. Parameters:\n* $1 - IP address",
 	"globalblocking-block-bigrange": "Used as error message.\n\nThe user specify the IP address range by the start and end IP addresses.\n\nBut if the specified IP address range crosses a /16 boundary, this error occurs.\n\nParameters:\n* $1 - the IP address range (contains the start and end IP addresses)",
 	"globalblocking-also-local": "Form label for a checkbox asking to also block the IP on the local wiki.",

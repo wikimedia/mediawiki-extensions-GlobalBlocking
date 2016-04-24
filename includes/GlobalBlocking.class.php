@@ -220,7 +220,7 @@ class GlobalBlocking {
 			return 0;
 		}
 
-		return $row->gb_id;
+		return (int)$row->gb_id;
 	}
 
 	/**
@@ -352,26 +352,27 @@ class GlobalBlocking {
 		// We're a-ok.
 		$dbw = GlobalBlocking::getGlobalBlockingDatabase( DB_MASTER );
 
-		// Delete the old block, if applicable
+		$row = array(
+			'gb_address' => $ip,
+			'gb_by' => $blocker->getName(),
+			'gb_by_wiki' => wfWikiId(),
+			'gb_reason' => $reason,
+			'gb_timestamp' => $dbw->timestamp( wfTimestampNow() ),
+			'gb_anon_only' => $anonOnly,
+			'gb_expiry' => $dbw->encodeExpiry( $expiry ),
+			'gb_range_start' => $range_start,
+			'gb_range_end' => $range_end,
+		);
 
 		if ( $modify ) {
-			$dbw->delete( 'globalblocks', array( 'gb_id' => $existingBlock ), __METHOD__ );
+			$dbw->update( 'globalblocks', $row, array( 'gb_id' => $existingBlock ), __METHOD__ );
+		} else {
+			$dbw->insert( 'globalblocks', $row, __METHOD__, array( 'IGNORE' ) );
 		}
 
-		$row = array();
-		$row['gb_address'] = $ip;
-		$row['gb_by'] = $blocker->getName();
-		$row['gb_by_wiki'] = wfWikiId();
-		$row['gb_reason'] = $reason;
-		$row['gb_timestamp'] = $dbw->timestamp( wfTimestampNow() );
-		$row['gb_anon_only'] = $anonOnly;
-		$row['gb_expiry'] = $dbw->encodeExpiry( $expiry, $dbw );
-		list( $row['gb_range_start'], $row['gb_range_end'] ) = array( $range_start, $range_end );
-
-		$dbw->insert( 'globalblocks', $row, __METHOD__, array( 'IGNORE' ) );
 		if ( !$dbw->affectedRows() ) {
-			// Race condition, the IP is already blocked (bug 67815)
-			return array( array( 'globalblocking-block-alreadyblocked', $ip ) );
+			// Race condition?
+			return array( array( 'globalblocking-block-failure', $ip ) );
 		}
 
 		return array();
