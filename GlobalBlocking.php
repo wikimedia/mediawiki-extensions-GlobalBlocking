@@ -52,6 +52,7 @@ $wgAutoloadClasses['SpecialGlobalBlockStatus'] = __DIR__ . '/includes/specials/S
 $wgAutoloadClasses['SpecialRemoveGlobalBlock'] = __DIR__ . '/includes/specials/SpecialRemoveGlobalBlock.php';
 $wgAutoloadClasses['ApiQueryGlobalBlocks'] = __DIR__ . '/includes/api/ApiQueryGlobalBlocks.php';
 $wgAutoloadClasses['ApiGlobalBlock'] = __DIR__ . '/includes/api/ApiGlobalBlock.php';
+$wgAutoloadClasses['GlobalBlock'] = __DIR__ . '/includes/GlobalBlock.php';
 $wgAutoloadClasses['GlobalBlocking'] = __DIR__ . '/includes/GlobalBlocking.class.php';
 $wgAutoloadClasses['GlobalBlockingHooks'] = __DIR__ . '/includes/GlobalBlockingHooks.php';
 

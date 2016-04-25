@@ -6,14 +6,41 @@
  * @license GNU GPL v2+
  */
 class GlobalBlocking {
+	/**
+	 * @param $user User
+	 * @param $ip string
+	 * @return Block|null
+	 * @throws MWException
+	 */
+	static function getUserBlock( $user, $ip ) {
+		$details = static::getUserBlockDetails( $user, $ip );
+		if ( !empty( $details['error'] ) ) {
+			$block = new GlobalBlock( $details['block'], $details['error'] );
+			$block->setTarget( $ip );
+			return $block;
+		}
+
+		return null;
+	}
 
 	/**
 	 * @param $user User
 	 * @param $ip string
-	 * @return array: empty or a message key with parameters
+	 * @return array empty or a message key with parameters
 	 * @throws MWException
 	 */
 	static function getUserBlockErrors( $user, $ip ) {
+		$details = static::getUserBlockDetails( $user, $ip );
+		return $details['error'];
+	}
+
+	/**
+	 * @param $user User
+	 * @param $ip string
+	 * @return array ['block' => DB row, 'error' => empty or a message key with parameters]
+	 * @throws MWException
+	 */
+	static function getUserBlockDetails( $user, $ip ) {
 		global $wgLang, $wgRequest, $wgGlobalBlockingBlockXFF;
 		static $result = null;
 
@@ -24,7 +51,7 @@ class GlobalBlocking {
 
 		if ( $user->isAllowed( 'ipblock-exempt' ) || $user->isAllowed( 'globalblock-exempt' ) ) {
 			// User is exempt from IP blocks.
-			return $result = array();
+			return $result = array( 'block' => null, 'error' => array() );
 		}
 
 		$block = self::getGlobalBlockingBlock( $ip, $user->isAnon() );
@@ -32,7 +59,7 @@ class GlobalBlocking {
 			// Check for local whitelisting
 			if ( GlobalBlocking::getWhitelistInfo( $block->gb_id ) ) {
 				// Block has been whitelisted.
-				return $result = array();
+				return $result = array( 'block' => null, 'error' => array() );
 			}
 
 			$blockTimestamp = $wgLang->timeanddate( wfTimestamp( TS_MW, $block->gb_timestamp ), true );
@@ -57,8 +84,19 @@ class GlobalBlocking {
 				'code' => $errorMsg,
 				'info' => $apiErrorInfo,
 			);
-			return $result = array( $errorMsg, $blockingUser, $display_wiki, $block->gb_reason,
-				$blockTimestamp, $blockExpiry, $ip, $block->gb_address );
+			return $result = array(
+				'block' => $block,
+				'error' => array(
+					$errorMsg,
+					$blockingUser,
+					$display_wiki,
+					$block->gb_reason,
+					$blockTimestamp,
+					$blockExpiry,
+					$ip,
+					$block->gb_address
+				),
+			);
 		}
 
 		if ( $wgGlobalBlockingBlockXFF ) {
@@ -83,19 +121,22 @@ class GlobalBlocking {
 						'info' => 'One or more proxy servers used by your request has been globally blocked',
 					);
 					return $result = array(
-						$blockedIpXffMsg,
-						$blockingUser,
-						$display_wiki,
-						$block->gb_reason,
-						$blockTimestamp,
-						$blockExpiry,
-						$blockIP
+						'block' => $block,
+						'error' => array(
+							$blockedIpXffMsg,
+							$blockingUser,
+							$display_wiki,
+							$block->gb_reason,
+							$blockTimestamp,
+							$blockExpiry,
+							$blockIP
+						),
 					);
 				}
 			}
 		}
 
-		return $result = array();
+		return $result = array( 'block' => null, 'error' => array() );
 	}
 
 	/**
