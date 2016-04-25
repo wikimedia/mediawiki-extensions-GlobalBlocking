@@ -29,6 +29,7 @@
 	"globalblocking-block-success": "כתובת ה־IP $1 נחסמה בכל אתרי הוויקי.",
 	"globalblocking-modify-success": "החסימה הגלובלית של $1 שונתה.",
 	"globalblocking-local-failed": "חסימה של כתובת IP באופן מקומי נכשלה כי כתובת ה־IP הזאת כבר חסומה בוויקי הזה",
+	"globalblocking-block-failure": "אירעה שגיאה בעת ניסיון לחסום גלובלית את $1. נא לנסות שוב.",
 	"globalblocking-block-alreadyblocked": "כתובת ה־IP&rlm; $1 כבר נחסמה באופן גלובלי.\nבאפשרותך לצפות בחסימה הקיימת ב[[Special:GlobalBlockList|רשימת החסימות הגלובליות]],\nאו לשנות את הגדרות החסימה הקיימת באמצעות שליחה מחדש של הטופס.",
 	"globalblocking-block-bigrange": "הטווח שציינת ($1) גדול מדי לחסימה.\nבאפשרותך לחסום לכל היותר 65,536 כתובות (טווחים מסוג /16).",
 	"globalblocking-also-local": "לחסום גם את כתובת ה־IP שניתנה מקומית בוויקי הזה",
