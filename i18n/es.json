@@ -41,6 +41,7 @@
 	"globalblocking-block-success": "La dirección IP $1 ha sido bloqueada en todos los proyectos.",
 	"globalblocking-modify-success": "El bloqueo global en $1 ha sido modificado.",
 	"globalblocking-local-failed": "Falló el bloqueo local de la dirección IP debido a que la dirección proporcionada ya está bloqueada en este wiki",
+	"globalblocking-block-failure": "Ocurrió un error al intentar bloquear globalmente a $1. Inténtalo de nuevo.",
 	"globalblocking-block-alreadyblocked": "La dirección IP $1 ya está bloqueada globalmente.\nPuede ver el bloqueo existente en la [[Special:GlobalBlockList|lista de bloqueos globales]], o modificar las configuraciones del bloqueo existente reeenviando este formulario.",
 	"globalblocking-block-bigrange": "El rango que especificaste ($1) es demasiado grande para ser bloqueado.\nPuedes bloquear, a lo sumo, 65.536 direcciones (un rango de /16)",
 	"globalblocking-also-local": "Bloquear también la dirección IP dada en este wiki",

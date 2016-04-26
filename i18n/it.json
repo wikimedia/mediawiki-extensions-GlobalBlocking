@@ -30,6 +30,7 @@
 	"globalblocking-block-success": "L'indirizzo IP $1 è stato bloccato su tutti i progetti.",
 	"globalblocking-modify-success": "Il blocco globale su $1 è stato modificato.",
 	"globalblocking-local-failed": "Il blocco locale dell'indirizzo IP non è riuscito poiché è già bloccato su questo wiki",
+	"globalblocking-block-failure": "Si è verificato un errore durante il tentativo di blocco globale di $1. Riprova.",
 	"globalblocking-block-alreadyblocked": "L'indirizzo IP $1 è già bloccato globalmente. È possibile consultare il blocco attivo nell'[[Special:GlobalBlockList|elenco dei blocchi globali]] o modificare le impostazioni del blocco esistente ricompilando questo modulo.",
 	"globalblocking-block-bigrange": "La classe che hai indicato ($1) è troppo ampia per essere bloccata. È possibile bloccare, al massimo, 65.536 indirizzi (classe /16)",
 	"globalblocking-also-local": "Blocca l'indirizzo IP anche localmente su questo wiki",
