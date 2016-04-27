@@ -100,6 +100,7 @@
 	"apihelp-globalblock-param-unblock": "If specified, will unblock the user.",
 	"apihelp-globalblock-param-reason": "The reason for blocking/unblocking.",
 	"apihelp-globalblock-param-anononly": "Specify this if the block should only affect logged-out users.",
+	"apihelp-globalblock-param-modify": "Specify this if the existing block on the target should be modified",
 	"apihelp-globalblock-example-1": "Block 192.0.2.1 indefinitely with reason \"Cross-wiki abuse\"",
 	"apihelp-query+globalblocks-description": "List all globally blocked IP addresses.",
 	"apihelp-query+globalblocks-param-start": "The timestamp to start enumerating from.",

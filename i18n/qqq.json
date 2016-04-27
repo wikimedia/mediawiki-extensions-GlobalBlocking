@@ -125,6 +125,7 @@
 	"apihelp-globalblock-param-unblock": "{{doc-apihelp-param|globalblock|unblock}}",
 	"apihelp-globalblock-param-reason": "{{doc-apihelp-param|globalblock|reason}}",
 	"apihelp-globalblock-param-anononly": "{{doc-apihelp-param|globalblock|anononly}}",
+	"apihelp-globalblock-param-modify": "{{doc-apihelp-param|globalblock|modify}}",
 	"apihelp-globalblock-example-1": "{{doc-apihelp-example|globalblock}}",
 	"apihelp-query+globalblocks-description": "{{doc-apihelp-description|query+globalblocks}}",
 	"apihelp-query+globalblocks-param-start": "{{doc-apihelp-param|query+globalblocks|start}}",

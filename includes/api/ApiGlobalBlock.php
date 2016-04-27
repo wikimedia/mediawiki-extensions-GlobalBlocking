@@ -17,7 +17,7 @@ class ApiGlobalBlock extends ApiBase {
 				$options[] = 'anon-only';
 			}
 
-			if ( $block ) { // TODO: Maybe we should get some sort of confirmation from the client before modifying an existing block...
+			if ( $block && $this->getParameter( 'modify' ) ) {
 				$options[] = 'modify';
 			}
 
@@ -84,6 +84,9 @@ class ApiGlobalBlock extends ApiBase {
 				ApiBase::PARAM_REQUIRED => true
 			),
 			'anononly' => array(
+				ApiBase::PARAM_TYPE => 'boolean'
+			),
+			'modify' => array(
 				ApiBase::PARAM_TYPE => 'boolean'
 			),
 			'token' => array(
