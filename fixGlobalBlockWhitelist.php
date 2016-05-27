@@ -40,6 +40,11 @@ class FixGlobalBlockWhitelist extends Maintenance {
 			$whitelistEntries[ $row->gbw_id ] = $row->gbw_address;
 		}
 
+		if ( !$whitelistEntries ) {
+			$this->output( "No whitelist entries.\n" );
+			return;
+		}
+
 		$whitelistedIPs = array_values( $whitelistEntries );
 
 		$gdbr = GlobalBlocking::getGlobalBlockingDatabase( DB_SLAVE );
