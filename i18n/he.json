@@ -117,10 +117,10 @@
 	"apihelp-query+globalblocks-param-prop": "אילו מאפיינים להחזיר.",
 	"apihelp-query+globalblocks-example-1": "רשימת כל החסימות הגלובליות",
 	"apihelp-query+globalblocks-example-2": "רשימת חסימות גלובלית של כתובת IP של 192.0.2.18",
-	"log-action-filter-gblblock": "סוג החסימה הגלובלית:",
-	"log-action-filter-gblblock-gblock": "חסימה גלובלית",
-	"log-action-filter-gblblock-gunblock": "הסרת חסימה גלובלית",
-	"log-action-filter-gblblock-modify": "שינוי חסימה גלובלית",
-	"log-action-filter-gblblock-whitelist": "הוספה לרשימה הלבנה של חסימה גלובלית",
-	"log-action-filter-gblblock-dwhitelist": "הסרה מהרשימה הלבנה של חסימה גלובלית"
+	"log-action-filter-gblblock": "סוג החסימות הגלובליות:",
+	"log-action-filter-gblblock-gblock": "חסימות גלובליות",
+	"log-action-filter-gblblock-gunblock": "שחרורים של חסימות גלובליות",
+	"log-action-filter-gblblock-modify": "שינויים של חסימות גלובליות",
+	"log-action-filter-gblblock-whitelist": "הוספות של חסימות גלובליות לרשימה הלבנה",
+	"log-action-filter-gblblock-dwhitelist": "הסרות של חסימות גלובליות מהרשימה הלבנה"
 }
