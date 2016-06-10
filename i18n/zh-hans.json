@@ -19,7 +19,8 @@
 			"乌拉跨氪",
 			"Mywood",
 			"Impersonator 1",
-			"Macofe"
+			"Macofe",
+			"飞舞回堂前"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|允许]][[Special:GlobalBlockList|在多个wiki中封禁]]IP地址",
@@ -85,7 +86,7 @@
 	"globalblocking-whitelist-nochange": "您没有对这个封禁的本地状态做出更改。",
 	"globalblocking-whitelist-intro": "您可以使用这个表单来更改全域封禁的本地状态。\n如果一个全域封锁在此wiki停用，受影响的IP地址可以正常地编辑。",
 	"globalblocking-ipblocked": "'''您的IP地址已被在所有维基项目上封禁。'''\n\n执行封禁的管理员为$1（$2）。\n封禁原因为“$3”。\n\n* 开始时间：$4\n* 到期时间：$5\n\n您可以联系$1申诉该封禁。\n只有当您已在[[Special:Preferences|系统设置]]确认了电子邮件地址且未被禁止使用“{{int:emailuser}}”功能时，才能发送电子邮件联系管理员。\n您当前的IP地址为$6。\n请您在申诉内容中说明以上所有信息。",
-	"globalblocking-ipblocked-range": "'''您的IP地址位于在所有wiki上被封禁的地址段中。'''\n\n封禁由$1（$2）进行。\n原因为“$3”。\n\n* 开始时间：$4\n* 到期时间：$5\n\n您可以联络$1以讨论此封禁。\n只有当您已在[[Special:Preferences|系统设置]]确认了电子邮件地址且未被禁止使用“{{int:emailuser}}”功能时，才能发送电子邮件联系管理员。\n您当前的IP地址为$6，被封禁的地址段为$7。\n请您在申诉内容中说明以上所有信息。",
+	"globalblocking-ipblocked-range": "'''您的IP地址位于在所有wiki上被封禁的地址段中。'''\n\n封禁由$1（$2）进行。给出的原因为“$3”。\n\n* 封禁开始时间：$4\n* 封禁到期时间：$5\n\n您可以联络$1以讨论此封禁。只有当您已在[[Special:Preferences|系统设置]]确认了电子邮件地址且未被禁止使用“{{int:emailuser}}”功能时，才能发送电子邮件联系管理员。您当前的IP地址为$6，被封禁的地址段为$7。请您在申诉内容中说明以上所有信息。",
 	"globalblocking-ipblocked-xff": "'''您要使用的一个或更多的代理服务器已被全域封禁'''\n\n封禁由$1 ($2)执行。\n给出的原因是''$3''。\n\n* 封禁开始时间：$4\n* 封禁结束时间：$5\n\n您可以与$1联系以讨论此次封禁。\n您不能使用“{{int:emailuser}}”功能，除非在您的[[Special:Preferences|帐户参数设置]]中设定了一个有效的电子邮件地址，并且此次封禁未禁用该功能。\n您当前的代理地址是 $6。\n请在提出任何异议时提供上述所有信息。",
 	"globalblocking-blocked-nopassreset": "您无法修改用户密码，因为您正被全域封锁。",
 	"globalblocking-logpage": "全域封禁日志",
