@@ -97,7 +97,7 @@
 	"right-globalblock": "יצירה והסרה של חסימות גלובליות",
 	"action-globalblock": "ליצור ולהסיר חסימות גלובליות",
 	"right-globalblock-whitelist": "ביטול חסימות גלובליות באופן מקומי",
-	"action-globalblock-whitelist": "לכבות חסימות גלובליות באופן מקומי",
+	"action-globalblock-whitelist": "לבטל חסימות גלובליות באופן מקומי",
 	"right-globalblock-exempt": "עקיפת חסימות גלובליות",
 	"action-globalblock-exempt": "לעקוף חסימות גלובליות",
 	"apihelp-globalblock-description": "חסימה גלובלית או שחרור גלובלי של משתמש.",
