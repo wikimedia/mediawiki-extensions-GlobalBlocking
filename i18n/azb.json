@@ -6,12 +6,9 @@
 		]
 	},
 	"globalblocking-block-reason": "ندن:",
-	"globalblocking-block-otherreason": "آیری/آرتیق دلیل:",
-	"globalblocking-block-reasonotherlist": "آیری دلیل‌لر",
 	"globalblocking-block-edit-dropdown": "باغلاما سبب‌لرینی دییشدیر ائت",
 	"globalblocking-block-expiry": "بیتمه مدتی:",
 	"globalblocking-block-expiry-selector-other": "باشقا واخت",
-	"globalblocking-block-options": "سئچیم‌لر",
 	"globalblocking-ipaddress": "آی‌پی آدرسی:",
 	"globalblocking-search-ip": "آی‌پی آدرسی:",
 	"globalblocking-list-unblock": "سیل",
@@ -22,6 +19,7 @@
 	"globalblocking-whitelist-reason": "ندن:",
 	"globalblocking-whitelist-status": "یئرلی وضعیت",
 	"globalblocking-whitelist-submit": "یئرلی وضعیتی دییشدیر",
-	"globalblocking-logpage": "سراسری باغلانما سیاهه سی",
-	"globalblocking-logentry-expiry": "$1-ده قۇرتولور"
+	"globalblocking-logpage": "باشاباش باغلانما ژورنالی",
+	"globalblocking-logentry-expiry": "$1-ده قۇرتولور",
+	"log-action-filter-gblblock": "باشاباش باغلانما نوعو："
 }
