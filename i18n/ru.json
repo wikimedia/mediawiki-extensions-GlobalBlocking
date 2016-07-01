@@ -13,9 +13,9 @@
 			"Macofe"
 		]
 	},
-	"globalblocking-desc": "[[Special:GlobalBlock|Разрешает]] блокировку IP-адресов [[Special:GlobalBlockList|на нескольких вики]]",
+	"globalblocking-desc": "[[Special:GlobalBlock|Разрешает]] блокировку IP-адресов [[Special:GlobalBlockList|в нескольких вики]]",
 	"globalblocking-block": "Глобальная блокировка IP-адреса",
-	"globalblocking-block-intro": "Вы можете использовать эту страницу чтобы заблокировать IP-адрес на всех вики.",
+	"globalblocking-block-intro": "Вы можете использовать эту страницу, чтобы заблокировать IP-адрес во всех вики.",
 	"globalblocking-block-reason": "Причина:",
 	"globalblocking-block-reason-dropdown": "* Стандартные причины блокировки\n** Межвики спам\n** Межвики злоупотребления\n** Вандализм",
 	"globalblocking-block-edit-dropdown": "Править список причин",
