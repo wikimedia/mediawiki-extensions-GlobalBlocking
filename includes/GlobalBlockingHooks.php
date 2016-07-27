@@ -7,6 +7,18 @@
  */
 class GlobalBlockingHooks {
 	/**
+	 * Extension registration callback
+	 */
+	public static function onRegistration() {
+		global $wgWikimediaJenkinsCI, $wgGlobalBlockingDatabase, $wgDBname;
+
+		// Override $wgGlobalBlockingDatabase for Wikimedia Jenkins.
+		if ( isset( $wgWikimediaJenkinsCI ) && $wgWikimediaJenkinsCI ) {
+			$wgGlobalBlockingDatabase = $wgDBname;
+		}
+	}
+
+	/**
 	 * @param DatabaseUpdater $updater
 	 *
 	 * @return bool
