@@ -94,40 +94,6 @@ class ApiGlobalBlock extends ApiBase {
 	}
 
 	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getParamDescription() {
-		return array(
-			'target' => 'The target IP.',
-			'expiry' => array(
-				'If specified, will block or reblock the user.',
-				"Determines how long the block will last for, e.g. '5 months' or '2 weeks'.",
-				"If set to 'infinite' or 'indefinite' the block will never expire."
-			),
-			'unblock' => 'If specified, will unblock the user.',
-			'reason' => 'The reason for blocking/unblocking.',
-			'anononly' => 'Specify this if the block should only affect logged-out users.',
-			'token' => 'Your edit token.'
-		);
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getDescription() {
-		return "Globally block or unblock a user.";
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getExamples() {
-		return array(
-			'api.php?action=globalblock&target=127.0.0.1&expiry=indefinite&reason=Cross-wiki%20abuse&token=123ABC',
-		);
-	}
-
-	/**
 	 * @see ApiBase::getExamplesMessages()
 	 */
 	protected function getExamplesMessages() {

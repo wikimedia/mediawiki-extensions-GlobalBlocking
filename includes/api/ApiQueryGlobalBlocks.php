@@ -162,8 +162,7 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 					'older'
 				),
 				ApiBase :: PARAM_DFLT => 'older',
-				/** @todo Once support for MediaWiki < 1.25 is dropped, just use ApiBase::PARAM_HELP_MSG directly */
-				constant( 'ApiBase::PARAM_HELP_MSG' ) ?: '' => 'api-help-param-direction',
+				ApiBase::PARAM_HELP_MSG => 'api-help-param-direction',
 			),
 			'ids' => array(
 				ApiBase :: PARAM_TYPE => 'integer',
@@ -198,39 +197,6 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 
 	protected function getDB() {
 		return GlobalBlocking::getGlobalBlockingDatabase( DB_SLAVE );
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getParamDescription() {
-		return array(
-			'start' => 'The timestamp to start enumerating from',
-			'end' => 'The timestamp to stop enumerating at',
-			'dir' => 'The direction in which to enumerate',
-			'ids' => 'Pipe-separated list of block IDs to list (optional)',
-			'addresses' => 'Pipe-separated list of addresses to search for (optional)',
-			'ip' => array( 'Get all blocks applying to this IP or CIDR range, including range blocks.',
-				'Cannot be used together with bkusers. CIDR ranges broader than /16 are not accepted.' ),
-			'limit' => 'The maximum amount of blocks to list',
-			'prop' => 'Which properties to get',
-		);
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getDescription() {
-		return 'List all globally blocked IP addresses.';
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getExamples() {
-		return array( 'api.php?action=query&list=globalblocks',
-			'api.php?action=query&list=globalblocks&bgip=217.121.114.116'
-		);
 	}
 
 	/**
