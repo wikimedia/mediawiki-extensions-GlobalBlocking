@@ -17,7 +17,7 @@
 	"globalblocking-block": "منع عام لعنوان أيبي",
 	"globalblocking-block-intro": "أنت يمكنك استخدام هذه الصفحة لمنع عنوان أيبي في كل الويكيات.",
 	"globalblocking-block-reason": "السبب:",
-	"globalblocking-block-reason-dropdown": "* الأسباب العامة للمنع\n **تعارضات الويكي غير المرغوب فيه\n ** وجود التعارضات\n ** التخريب",
+	"globalblocking-block-reason-dropdown": "* الأسباب الشائعة للمنع\n ** السبام عبر الويكيات\n ** الإساءة عبر الويكيات\n ** التخريب",
 	"globalblocking-block-edit-dropdown": "عدل أسباب المنع",
 	"globalblocking-block-expiry": "الانتهاء:",
 	"globalblocking-block-expiry-selector-other": "وقت آخر:",
