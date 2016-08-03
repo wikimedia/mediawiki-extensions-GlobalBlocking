@@ -56,7 +56,7 @@
 	"globalblocking-unblock-reason": "Прычына:",
 	"globalblocking-unblock-unblocked": "Вы пасьпяхова глябальна разблякавалі IP-адрас '''$1''' (#$2)",
 	"globalblocking-unblock-errors": "Спроба глябальнага разблякаваньня не атрымалася з {{PLURAL:$1|1=наступнай прычыны|наступных прычынаў}}:",
-	"globalblocking-unblock-successsub": "Глябальнае разблякаваньне пасьпяховае",
+	"globalblocking-unblock-successsub": "Глябальнае блякаваньне зьнятае.",
 	"globalblocking-unblock-intro": "Вы можаце карыстацца гэтай формай для глябальнага разблякаваньня.",
 	"globalblocking-whitelist": "Лякальны статус глябальных блякаваньняў",
 	"globalblocking-whitelist-notapplied": "Глябальныя блякаваньні ня дзейнічаюць у {{GRAMMAR:месны|{{SITENAME}}}},\nтаму лякальны статус глябальнага блякаваньня ня можа быць зьменены.",
