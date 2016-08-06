@@ -14,6 +14,11 @@
 			"globalblock-whitelist": true
 		}
 	},
+	"GrantPermissions": {
+		"basic": {
+			"globalblock-exempt": true
+		}
+	},
 	"AvailableRights": [
 		"globalblock",
 		"globalblock-whitelist",
