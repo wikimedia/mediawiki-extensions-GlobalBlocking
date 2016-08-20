@@ -77,7 +77,7 @@
 	"globalblocking-unblock-legend": "Used as legend for the fieldset around the input form of Special:GlobalUnblock.\n\nSee also:\n* {{msg-mw|globalblocking-block-legend}}",
 	"globalblocking-unblock-submit": "Used as submit button text on Special:GlobalUnblock form.\n\nSee also:\n* {{msg-mw|globalblocking-block-submit}}\n* {{msg-mw|ipusubmit}}",
 	"globalblocking-unblock-reason": "{{Identical|Reason}}",
-	"globalblocking-unblock-unblocked": "Used as success message in [[Special:RemoveGlobalBlock]]. Parameters:\n* $1 - IP address\n* $2 - global block ID",
+	"globalblocking-unblock-unblocked": "Used as success message in [[Special:GlobalUnblock]]. Parameters:\n* $1 - IP address\n* $2 - global block ID",
 	"globalblocking-unblock-errors": "Used in Special:GlobalBlockList and Special:RemoveGlobalBlock.\n\nThis message is followed by list of error messages.\n\nParameters:\n* $1 - number of errors",
 	"globalblocking-unblock-successsub": "Used on Special:RemoveGlobalBlock",
 	"globalblocking-unblock-intro": "Used as an introductory text on Special:GlobalUnblock form.\n\nSee also:\n* {{msg-mw|globalblocking-block-intro}}",
