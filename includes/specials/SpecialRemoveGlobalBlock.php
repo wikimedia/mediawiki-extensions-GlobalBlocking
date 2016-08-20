@@ -1,56 +1,58 @@
 <?php
 
 class SpecialRemoveGlobalBlock extends FormSpecialPage {
-	function __construct() {
+	/** @var string */
+	private $ip;
+
+	/** @var int */
+	private $id;
+
+	public function __construct() {
 		parent::__construct( 'RemoveGlobalBlock', 'globalblock' );
 	}
 
-	function execute( $par ) {
+	public function execute( $par ) {
 		parent::execute( $par );
-		$out = $this->getOutput();
 
+		$out = $this->getOutput();
 		$out->setPageTitle( $this->msg( 'globalblocking-unblock' ) );
 		$out->setSubtitle( GlobalBlocking::buildSubtitleLinks( $this ) );
-		$out->setRobotPolicy( "noindex,nofollow" );
-		$out->setArticleRelated( false );
 		$out->enableClientCache( false );
 	}
 
-	function onSubmit( array $data ) {
-		$errors = array();
-		$ip = $data['ipaddress'];
-		if ( !IP::isIPAddress( $ip ) && strlen( $ip ) ) {
-			$errors[] = array( 'globalblocking-unblock-ipinvalid', $ip );
-			$ip = '';
+	/**
+	 * @param array $data
+	 * @return Status
+	 */
+	public function onSubmit( array $data ) {
+		$this->ip = trim( $data['ipaddress'] );
+
+		if ( !IP::isIPAddress( $this->ip ) ) {
+			return Status::newFatal( $this->msg( 'globalblocking-unblock-ipinvalid', $this->ip ) );
 		}
 
-		if ( ( $id = GlobalBlocking::getGlobalBlockId( $ip ) ) == 0 ) {
-			$errors[] = array( 'globalblocking-notblocked', $ip );
+		$this->id = GlobalBlocking::getGlobalBlockId( $this->ip );
+		if ( $this->id === 0 ) {
+			return Status::newFatal( $this->msg( 'globalblocking-notblocked', $this->ip ) );
 		}
 
-		if ( count( $errors ) > 0 ) {
-			return $errors;
-		}
-
-		$out = $this->getOutput();
 		$dbw = GlobalBlocking::getGlobalBlockingDatabase( DB_MASTER );
-		$dbw->delete( 'globalblocks', array( 'gb_id' => $id ), __METHOD__ );
+		$dbw->delete( 'globalblocks', array( 'gb_id' => $this->id ), __METHOD__ );
 
 		$page = new LogPage( 'gblblock' );
-		$page->addEntry( 'gunblock', Title::makeTitleSafe( NS_USER, $ip ), $data['reason'] );
+		$page->addEntry( 'gunblock', Title::makeTitleSafe( NS_USER, $this->ip ), $data['reason'] );
 
-		$successmsg = $this->msg( 'globalblocking-unblock-unblocked', $ip, $id )->parseAsBlock();
-		$out->addHTML( $successmsg );
+		return Status::newGood();
+	}
 
+	public function onSuccess() {
+		$msg = $this->msg( 'globalblocking-unblock-unblocked', $this->ip, $this->id )->parseAsBlock();
 		$link = Linker::linkKnown(
 			SpecialPage::getTitleFor( 'GlobalBlockList' ),
 			$this->msg( 'globalblocking-return' )->escaped()
 		);
-		$out->addHTML( $link );
 
-		$out->setSubtitle( $this->msg( 'globalblocking-unblock-successsub' ) );
-
-		return true;
+		$this->getOutput()->addHTML( $msg . $link );
 	}
 
 	protected function alterForm( HTMLForm $form ) {
@@ -66,16 +68,14 @@ class SpecialRemoveGlobalBlock extends FormSpecialPage {
 				'type' => 'text',
 				'id' => 'mw-globalblocking-ipaddress',
 				'label-message' => 'globalblocking-ipaddress',
-				'default' => trim( $this->getRequest()->getText( 'address' ) ),
-				'size' => 45,
+				'required' => true,
+				'default' => $this->par,
 			),
 			'reason' => array(
 				'name' => 'wpReason',
 				'type' => 'text',
 				'id' => 'mw-globalblocking-unblock-reason',
 				'label-message' => 'globalblocking-unblock-reason',
-				'default' => $this->getRequest()->getText( 'wpReason' ),
-				'size' => 45
 			),
 		);
 	}

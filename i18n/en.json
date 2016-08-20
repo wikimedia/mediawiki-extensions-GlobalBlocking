@@ -54,7 +54,6 @@
 	"globalblocking-unblock-reason": "Reason:",
 	"globalblocking-unblock-unblocked": "You have removed the global block #$2 on the IP address '''$1'''.",
 	"globalblocking-unblock-errors": "Your removal of the global block failed for the following {{PLURAL:$1|reason|reasons}}:",
-	"globalblocking-unblock-successsub": "Global block removed.",
 	"globalblocking-unblock-intro": "You can use this form to remove a global block.",
 	"globalblocking-whitelist": "Local status of global blocks",
 	"globalblocking-whitelist-notapplied": "Global blocks are not applied at this wiki,\nso the local status of global blocks cannot be modified.",
