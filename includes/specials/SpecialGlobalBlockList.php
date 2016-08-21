@@ -10,6 +10,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 	function execute( $par ) {
 		$out = $this->getOutput();
 		$this->setHeaders();
+		$this->outputHeader( 'globalblocking-list-intro' );
 		$ip = isset( $par ) ? $par : $this->getRequest()->getText( 'ip' );
 		$this->loadParameters( $ip );
 
@@ -19,59 +20,50 @@ class SpecialGlobalBlockList extends SpecialPage {
 		$out->setArticleRelated( false );
 		$out->enableClientCache( false );
 
+		$this->showForm();
+
+		// Validate search target. If it is invalid, no need to build the pager.
+		if ( $this->mSearchIP && !IP::isIPAddress( $this->mSearchIP ) ) {
+			$out->wrapWikiMsg(
+				"<div class='error'>\n$1\n</div>",
+				array( 'globalblocking-list-ipinvalid', $this->mSearchIP )
+			);
+			return;
+		}
+
 		$this->showList();
 	}
 
+	protected function showForm() {
+		$fields = array(
+			'ip' => array(
+				'type' => 'text',
+				'name' => 'ip',
+				'id' => 'mw-globalblocking-search-ip',
+				'label-message' => 'globalblocking-search-ip',
+				'default' => $this->mSearchIP,
+			)
+		);
+		$context = new DerivativeContext( $this->getContext() );
+		$context->setTitle( $this->getPageTitle() ); // remove subpage
+
+		$form = HTMLForm::factory( 'table', $fields, $context );
+		$form->setMethod( 'get' )
+			->setName( 'globalblocklist-search' )
+			->setSubmitTextMsg( 'globalblocking-search-submit' )
+			->setWrapperLegendMsg( 'globalblocking-search-legend' )
+			->prepareForm()
+			->displayForm( false );
+	}
+
 	function showList() {
-		global $wgScript;
-		$errors = array();
-
-		// Validate search IP
-		$ip = $this->mSearchIP;
-		if ( !IP::isIPAddress( $ip ) && strlen( $ip ) ) {
-			$errors[] = array( 'globalblocking-list-ipinvalid', $ip );
-			$ip = '';
-		}
-
 		$out = $this->getOutput();
-		$out->addWikiMsg( 'globalblocking-list-intro' );
-
-		// Build the search form
-		$searchForm = '';
-		$searchForm .= Xml::openElement( 'fieldset' ) .
-			Xml::element( 'legend', null, $this->msg( 'globalblocking-search-legend' )->text() );
-		$searchForm .= Xml::openElement( 'form', array( 'method' => 'get', 'action' => $wgScript, 'name' => 'globalblocklist-search' ) );
-		$searchForm .= Html::hidden( 'title', SpecialPage::getTitleFor( 'GlobalBlockList' )->getPrefixedText() );
-
-		if ( is_array( $errors ) && count( $errors ) > 0 ) {
-			$errorstr = '';
-
-			foreach ( $errors as $error ) {
-				if ( is_array( $error ) ) {
-					$msg = array_shift( $error );
-				} else {
-					$msg = $error;
-					$error = array();
-				}
-
-				$errorstr .= Xml::tags( 'li', null, $this->msg( $msg, $error )->parse() );
-			}
-
-			$out->addWikiMsg( 'globalblocking-unblock-errors', count( $errors ) );
-			$out->addHTML( Xml::tags( 'ul', array( 'class' => 'error' ), $errorstr ) );
-		}
-
-		$fields = array();
-		$fields['globalblocking-search-ip'] = Xml::input( 'ip', 45, $ip );
-		$searchForm .= Xml::buildForm( $fields, 'globalblocking-search-submit' );
-
-		$searchForm .= Xml::closeElement( 'form' ) . Xml::closeElement( 'fieldset' );
-		$out->addHTML( $searchForm );
 
 		// Build a list of blocks.
 		$conds = array();
+		$ip = $this->mSearchIP;
 
-		if ( strlen( $ip ) ) {
+		if ( $ip ) {
 			list ( $range_start, $range_end ) = IP::parseRange( $ip );
 
 			if ( $range_start != $range_end ) {
