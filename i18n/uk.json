@@ -112,6 +112,7 @@
 	"apihelp-globalblock-param-unblock": "Якщо вказано, буде розблоковано користувача.",
 	"apihelp-globalblock-param-reason": "Причина блокування/розблокування.",
 	"apihelp-globalblock-param-anononly": "Вкажіть це, якщо блокування повинно вплинути лише на користувачів, що не ввійшли до системи.",
+	"apihelp-globalblock-param-modify": "Вкажіть це, якщо наявний блок на цільовій сторінці треба змінити",
 	"apihelp-globalblock-example-1": "Заблокувати 192.0.2.1 безстроково з причиною «Cross-wiki abuse»",
 	"apihelp-query+globalblocks-description": "Список глобально заблокованих IP-адрес.",
 	"apihelp-query+globalblocks-param-start": "Часова мітка початку переліку.",

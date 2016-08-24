@@ -109,6 +109,7 @@
 	"apihelp-globalblock-param-expiry": "Wird, wenn angegeben, Benutzer sperren oder erneut sperren. Bestimmt wie lange die Sperre dauert. Zum Beispiel \"5 Moante\" oder \"2 Wochen\". Falls auf \"unendlich\" oder \"unbestimmt\" gesetzt, wird die Sperre niemals aufgehoben.",
 	"apihelp-globalblock-param-unblock": "Falls angegeben, wird der Benutzer freigegeben.",
 	"apihelp-globalblock-param-reason": "Der Grund für das Sperren/Entsperren.",
+	"apihelp-globalblock-param-modify": "Gib dies an, falls die vorhandene Sperre des Ziels verändert werden soll.",
 	"apihelp-globalblock-example-1": "Sperre 192.0.2.1 auf unbestimmte Zeit mit dem Grund \"Quer-Wiki - Missbrauch\"",
 	"apihelp-query+globalblocks-description": "Alle global gesperrten IP-Adressen auflisten.",
 	"apihelp-query+globalblocks-param-start": "Der Zeitstempel, bei dem die Aufzählung beginnen soll.",

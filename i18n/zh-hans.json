@@ -118,6 +118,7 @@
 	"apihelp-globalblock-param-unblock": "如果指定，将解封用户。",
 	"apihelp-globalblock-param-reason": "封禁/解封原因。",
 	"apihelp-globalblock-param-anononly": "如果封禁应该只影响未登录用户，指定此项。",
+	"apihelp-globalblock-param-modify": "在现有目标封禁应被修改时指定它",
 	"apihelp-globalblock-example-1": "无限期封禁192.0.2.1，原因“Cross-wiki abuse”",
 	"apihelp-query+globalblocks-description": "列出所有全域封禁的IP地址。",
 	"apihelp-query+globalblocks-param-start": "枚举的起始时间戳。",

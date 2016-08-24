@@ -95,6 +95,7 @@
 	"action-globalblock-whitelist": "global Späre lokal ausschalten",
 	"right-globalblock-exempt": "Global Spären ëmgoen",
 	"action-globalblock-exempt": "global Spären ëmgoen",
+	"apihelp-globalblock-param-modify": "Gitt dëst un, wann d'Spär (wann et esou eng gëtt) vum Zil geännert gi soll.",
 	"apihelp-query+globalblocks-description": "All global gespaarten IP-Adressen opzielen.",
 	"log-action-filter-gblblock": "Typ vun der globaler Spär:",
 	"log-action-filter-gblblock-gblock": "Global Spär",

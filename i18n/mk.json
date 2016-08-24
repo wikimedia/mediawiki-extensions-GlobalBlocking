@@ -101,6 +101,7 @@
 	"apihelp-globalblock-param-unblock": "Ако е укажано, корисникот ќе биде одблокиран.",
 	"apihelp-globalblock-param-reason": "Причина за блокирање/одблокирање.",
 	"apihelp-globalblock-param-anononly": "Укажете го ова ако сакате блокот да важи само за одјавени корисници.",
+	"apihelp-globalblock-param-modify": "Укажете го ова ако треба да се измени постоечки блок врз целта",
 	"apihelp-globalblock-example-1": "Блокирај го 192.0.2.1 бесконечно со причината „злоупотреба на повеќе викија“",
 	"apihelp-query+globalblocks-description": "Испиши ги сите глобално блокирани IP-адреси.",
 	"apihelp-query+globalblocks-param-start": "Од кој датум и време да почне набројувањето.",

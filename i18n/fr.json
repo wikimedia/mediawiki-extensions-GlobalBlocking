@@ -117,6 +117,7 @@
 	"apihelp-globalblock-param-unblock": "Si spécifié, débloquera l'utilisateur.",
 	"apihelp-globalblock-param-reason": "La raison du blocage/déblocage.",
 	"apihelp-globalblock-param-anononly": "Spécifier cela si le blocage ne doit affecter que les utilisateurs déconnectés.",
+	"apihelp-globalblock-param-modify": "À spécifier si le bloc existant dans la cible doit être modifié",
 	"apihelp-globalblock-example-1": "Bloque 192.0.2.1 indéfiniment avec la raison \"utilisation abusive inter-wiki\"",
 	"apihelp-query+globalblocks-description": "Liste toutes les adresses IP bloquées globalement.",
 	"apihelp-query+globalblocks-param-start": "L’horodatage auquel démarrer l’énumération.",

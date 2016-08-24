@@ -26,6 +26,7 @@
 	"globalblocking-block-success": "Đã cấm địa chỉ IP $1 trên tất cả các dự án.",
 	"globalblocking-modify-success": "Đã sửa đổi tác vụ cấm $1 toàn hệ thống.",
 	"globalblocking-local-failed": "Thất bại khi cấm địa chỉ IP tại địa phương vì địa chỉ IP này đã được cấm trên wiki này",
+	"globalblocking-block-failure": "Đã xuất hiện lỗi khi cấm $1 toàn cục. Xin hãy thử lại sau.",
 	"globalblocking-block-alreadyblocked": "Địa chỉ IP $1 đã bị cấm trên toàn hệ thống.\nBạn có thể xem những IP đang bị cấm tại [[Special:GlobalBlockList|danh sách các tác vụ cấm trên toàn hệ thống]], hoặc sửa đổi các thuộc tính của tác vụ cấm bằng cách lưu lại biểu mẫu này.",
 	"globalblocking-block-bigrange": "Tầm địa chỉ mà bạn chỉ định ($1) quá lớn nên không thể cấm. Bạn chỉ có thể cấm nhiều nhất là 65.536 địa chỉ (tầm vực /16)",
 	"globalblocking-also-local": "Cũng cấm địa chỉ IP một cách địa phương trên wiki này",
@@ -99,5 +100,11 @@
 	"apihelp-globalblock-param-target": "Địa chỉ IP mục tiêu.",
 	"apihelp-globalblock-example-1": "Cấm 192.0.2.1 vô thời hạn với lý do “Phá hoại ở nhiều wiki”",
 	"apihelp-query+globalblocks-description": "Liệt kê các địa chỉ IP bị cấm toàn cục.",
-	"apihelp-query+globalblocks-example-1": "Liệt kê tất cả các tác vụ cấm toàn cục"
+	"apihelp-query+globalblocks-example-1": "Liệt kê tất cả các tác vụ cấm toàn cục",
+	"log-action-filter-gblblock": "Kiểu cấm toàn cục:",
+	"log-action-filter-gblblock-gblock": "Cấm toàn cục",
+	"log-action-filter-gblblock-gunblock": "Bỏ cấm toàn cục",
+	"log-action-filter-gblblock-modify": "Thay đổi tác vụ cấm toàn cục",
+	"log-action-filter-gblblock-whitelist": "Bổ sung vào danh sách trắng cấm toàn cục",
+	"log-action-filter-gblblock-dwhitelist": "Loại bỏ khỏi danh sách trắng cấm toàn cục"
 }
