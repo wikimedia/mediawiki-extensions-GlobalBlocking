@@ -106,6 +106,7 @@
 	"apihelp-globalblock-param-target": "차단할 IP 주소",
 	"apihelp-globalblock-param-reason": "차단/차단 해제 사유",
 	"apihelp-globalblock-param-anononly": "로그아웃 사용자에게만 영향을 미치도록 합니다.",
+	"apihelp-globalblock-param-modify": "기존의 대상 블록을 수정해야 한다면 이것을 지정하세요",
 	"apihelp-globalblock-example-1": "192.0.2.1 IP를 \"여러 위키에서의 문제 행동\"으로 무기한 차단",
 	"apihelp-query+globalblocks-description": "모든 위키에서 차단된 IP 목록을 보여줍니다.",
 	"apihelp-query+globalblocks-param-start": "나열을 시작할 타임스탬프",
