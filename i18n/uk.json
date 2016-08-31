@@ -94,7 +94,7 @@
 	"globalblocking-logentry-expiry": "закінчується $1",
 	"globalblocking-logentry-noexpiry": "не встановлено термін дії",
 	"globalblocking-loglink": "IP-адреса $1 заблокована глобально ([[{{#Special:GlobalBlockList}}/$1|детальніше]]).",
-	"globalblocking-contribs-notice": "Доступ з цієї IP-адреси зараз глобально заблокований.\nДалі наведено запис з журналу глобальний блокувань:",
+	"globalblocking-contribs-notice": "Цю IP-адресу зараз глобально заблоковано.\nДалі наведено запис з журналу глобальних блокувань:",
 	"globalblocking-showlog": "Ця IP-адреса вже була заблокована раніше.\nДля довідки нижче наведений журнал блокувань:",
 	"globalblocklist": "Список глобально заблокованих IP-адрес",
 	"globalblock": "Глобальне блокування IP-адреси",
