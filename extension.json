@@ -59,12 +59,14 @@
 	"LogHeaders": {
 		"gblblock": "globalblocking-logpagetext"
 	},
+	"LogActionsHandlers": {
+		"gblblock/whitelist": "GlobalBlockWhitelistLogFormatter",
+		"gblblock/dwhitelist": "GlobalBlockWhitelistLogFormatter"
+	},
 	"LogActions": {
 		"gblblock/gblock": "globalblocking-block-logentry",
 		"gblblock/gblock2": "globalblocking-block2-logentry",
 		"gblblock/gunblock": "globalblocking-unblock-logentry",
-		"gblblock/whitelist": "globalblocking-whitelist-logentry",
-		"gblblock/dwhitelist": "globalblocking-dewhitelist-logentry",
 		"gblblock/modify": "globalblocking-modify-logentry"
 	},
 	"APIModules": {
@@ -91,7 +93,8 @@
 		"ApiGlobalBlock": "includes/api/ApiGlobalBlock.php",
 		"GlobalBlock": "includes/GlobalBlock.php",
 		"GlobalBlocking": "includes/GlobalBlocking.class.php",
-		"GlobalBlockingHooks": "includes/GlobalBlockingHooks.php"
+		"GlobalBlockingHooks": "includes/GlobalBlockingHooks.php",
+		"GlobalBlockWhitelistLogFormatter": "includes/GlobalBlockWhitelistLogFormatter.php"
 	},
 	"Hooks": {
 		"getUserPermissionsErrorsExpensive": "GlobalBlockingHooks::onGetUserPermissionsErrorsExpensive",

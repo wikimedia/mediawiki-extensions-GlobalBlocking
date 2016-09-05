@@ -74,8 +74,9 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 	public function onSubmit( array $data ) {
 		$ip = $this->mAddress;
 
+		$id = GlobalBlocking::getGlobalBlockId( $ip );
 		// Is it blocked?
-		if ( !( $id = GlobalBlocking::getGlobalBlockId( $ip ) ) ) {
+		if ( !$id ) {
 			return array( array( 'globalblocking-notblocked', $ip ) );
 		}
 
@@ -85,7 +86,6 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 		}
 
 		$dbw = wfGetDB( DB_MASTER );
-		$log = new LogPage( 'gblblock' );
 		if ( $this->mWhitelistStatus == true ) {
 			// Add to whitelist
 
@@ -104,17 +104,31 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 			);
 			$dbw->replace( 'global_block_whitelist', array( 'gbw_id' ), $row, __METHOD__ );
 
-			$log->addEntry( 'whitelist', Title::makeTitleSafe( NS_USER, $ip ), $data['Reason'] );
+			$this->addLogEntry( 'whitelist', $ip, $data['Reason'] );
 			$successMsg = 'globalblocking-whitelist-whitelisted';
 		} else {
 			// Remove from whitelist
 			$dbw->delete( 'global_block_whitelist', array( 'gbw_id' => $id ), __METHOD__ );
 
-			$log->addEntry( 'dwhitelist', Title::makeTitleSafe( NS_USER, $ip ), $data['Reason'] );
+			$this->addLogEntry( 'dwhitelist', $ip, $data['Reason'] );
 			$successMsg = 'globalblocking-whitelist-dewhitelisted';
 		}
 
 		return $this->showSuccess( $ip, $id, $successMsg );
+	}
+
+	/**
+	 * @param string $action either 'whitelist' or 'dwhitelist'
+	 * @param string $target Target IP
+	 * @param string $reason
+	 */
+	protected function addLogEntry( $action, $target, $reason ) {
+		$logEntry = new ManualLogEntry( 'gblblock', $action );
+		$logEntry->setTarget( Title::makeTitleSafe( NS_USER, $target ) );
+		$logEntry->setComment( $reason );
+		$logEntry->setPerformer( $this->getUser() );
+		$logId = $logEntry->insert();
+		$logEntry->publish( $logId );
 	}
 
 	/**
