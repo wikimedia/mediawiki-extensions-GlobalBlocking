@@ -20,7 +20,8 @@
 			"Macofe",
 			"Kroji",
 			"Ryo567",
-			"Matiia"
+			"Matiia",
+			"Indiralena"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permite]] bloquear direcciones IP [[Special:GlobalBlockList|simultáneamente en varios wikis]]",
@@ -71,8 +72,6 @@
 	"globalblocking-unblock-submit": "Quitar bloqueo global",
 	"globalblocking-unblock-reason": "Motivo:",
 	"globalblocking-unblock-unblocked": "Has quitado el bloqueo global #$2 en la dirección IP '''$1'''.",
-	"globalblocking-unblock-errors": "La eliminación del bloqueo global falló, por {{PLURAL:$1|la siguiente razón|las siguientes razones}}:",
-	"globalblocking-unblock-successsub": "Se quitó el bloqueo global.",
 	"globalblocking-unblock-intro": "Puedes usar este formulario para quitar un bloqueo global.",
 	"globalblocking-whitelist": "Estado local de bloqueos globales",
 	"globalblocking-whitelist-notapplied": "Los bloqueos globales no se aplican en este wiki,\nasí que el estado local de los bloqueos globales no pueden modificarse.",
@@ -94,8 +93,8 @@
 	"globalblocking-block-logentry": "bloqueó globalmente a [[$1]] con un tiempo de caducidad de $2",
 	"globalblocking-block2-logentry": "bloqueó globalmente a [[$1]] ($2)",
 	"globalblocking-unblock-logentry": "desactivó el bloqueo global en [[$1]]",
-	"globalblocking-whitelist-logentry": "desactivó el bloqueo global en [[$1]] localmente",
-	"globalblocking-dewhitelist-logentry": "reactivó localmente el bloqueo global en [[$1]]",
+	"globalblocking-logentry-whitelist": "$1 {{GENDER:$2|desactivó}} el bloqueo global de $3 localmente",
+	"globalblocking-logentry-dewhitelist": "$1 {{GENDER:$2|reactivó}} el bloque global de $3 localmente",
 	"globalblocking-modify-logentry": "modificó el bloqueo global en [[$1]] ($2)",
 	"globalblocking-logentry-expiry": "caduca el $1",
 	"globalblocking-logentry-noexpiry": "sin fecha de caducidad",
