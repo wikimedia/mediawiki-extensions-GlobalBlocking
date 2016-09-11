@@ -56,6 +56,7 @@
 	"globalblocking-goto-unblock": "Globale Sperre aufheben",
 	"globalblocking-goto-status": "Lokalen Status für eine globale Sperre ändern",
 	"globalblocking-return": "Zurück zur Liste der globalen Sperren",
+	"globalblocking-add-block": "Eine weitere globale Sperre hinzufügen",
 	"globalblocking-notblocked": "Die eingegebene IP-Adresse ($1) ist nicht global gesperrt.",
 	"globalblocking-unblock": "Globale Sperre aufheben",
 	"globalblocking-unblock-ipinvalid": "Du hast eine ungültige IP-Adresse ($1) eingegeben.\nBeachte, dass du keinen Benutzernamen eingeben darfst!",
