@@ -25,7 +25,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 		if ( $this->target && !IP::isIPAddress( $this->target ) ) {
 			$out->wrapWikiMsg(
 				"<div class='error'>\n$1\n</div>",
-				array( 'globalblocking-list-ipinvalid', $this->target )
+				[ 'globalblocking-list-ipinvalid', $this->target ]
 			);
 			return;
 		}
@@ -47,15 +47,15 @@ class SpecialGlobalBlockList extends SpecialPage {
 	}
 
 	protected function showForm() {
-		$fields = array(
-			'ip' => array(
+		$fields = [
+			'ip' => [
 				'type' => 'text',
 				'name' => 'ip',
 				'id' => 'mw-globalblocking-search-ip',
 				'label-message' => 'globalblocking-search-ip',
 				'default' => $this->target,
-			)
-		);
+			]
+		];
 		$context = new DerivativeContext( $this->getContext() );
 		$context->setTitle( $this->getPageTitle() ); // remove subpage
 
@@ -72,7 +72,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 		$out = $this->getOutput();
 
 		// Build a list of blocks.
-		$conds = array();
+		$conds = [];
 		$ip = $this->target;
 
 		if ( $ip ) {
@@ -83,7 +83,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 				$conds = GlobalBlocking::getRangeCondition( $ip );
 			} else {
 				// They searched for a range. Match that exact range only
-				$conds = array( 'gb_address' => $ip );
+				$conds = [ 'gb_address' => $ip ];
 			}
 		}
 
@@ -92,13 +92,13 @@ class SpecialGlobalBlockList extends SpecialPage {
 		if ( $body != '' ) {
 			$out->addHTML(
 				$pager->getNavigationBar() .
-				Html::rawElement( 'ul', array(), $body ) .
+				Html::rawElement( 'ul', [], $body ) .
 				$pager->getNavigationBar()
 			);
 		} else {
 			$out->wrapWikiMsg(
 				"<div class='mw-globalblocking-noresults'>\n$1</div>\n",
-				array( 'globalblocking-list-noresults' )
+				[ 'globalblocking-list-noresults' ]
 			);
 		}
 	}
@@ -107,7 +107,6 @@ class SpecialGlobalBlockList extends SpecialPage {
 		return 'users';
 	}
 }
-
 
 class GlobalBlockListPager extends ReverseChronologicalPager {
 	/** @var array */
@@ -123,7 +122,7 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 		global $wgApplyGlobalBlocks;
 
 		$lang = $this->getLanguage();
-		$options = array();
+		$options = [];
 
 		$expiry = $lang->formatExpiry( $row->gb_expiry, TS_MW );
 		if ( $expiry == 'infinity' ) {
@@ -150,15 +149,15 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 		}
 
 		// Do afterthoughts (comment, links for admins)
-		$info = array();
+		$info = [];
 		$user = $this->getUser();
 		$canBlock = $user->isAllowed( 'globalblock' );
 		if ( $canBlock ) {
 			$info[] = Linker::linkKnown(
 				SpecialPage::getTitleFor( 'RemoveGlobalBlock' ),
 				$this->msg( 'globalblocking-list-unblock' )->parse(),
-				array(),
-				array( 'address' => $row->gb_address )
+				[],
+				[ 'address' => $row->gb_address ]
 			);
 		}
 
@@ -166,8 +165,8 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 			$info[] = Linker::link(
 				SpecialPage::getTitleFor( 'GlobalBlockStatus' ),
 				$this->msg( 'globalblocking-list-whitelist' )->parse(),
-				array(),
-				array( 'address' => $row->gb_address )
+				[],
+				[ 'address' => $row->gb_address ]
 			);
 		}
 
@@ -175,8 +174,8 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 			$info[] = Linker::linkKnown(
 				SpecialPage::getTitleFor( 'GlobalBlock' ),
 				$this->msg( 'globalblocking-list-modify' )->parse(),
-				array(),
-				array( 'wpAddress' => $row->gb_address )
+				[],
+				[ 'wpAddress' => $row->gb_address ]
 			);
 		}
 
@@ -190,7 +189,7 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 			: '';
 
 		// Put it all together.
-		return Html::rawElement( 'li', array(),
+		return Html::rawElement( 'li', [],
 			$this->msg( 'globalblocking-list-blockitem',
 				$timestamp,
 				$userDisplay,
@@ -204,11 +203,11 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 	}
 
 	public function getQueryInfo() {
-		return array(
+		return [
 			'tables' => 'globalblocks',
 			'fields' => '*',
 			'conds' => $this->queryConds,
-		);
+		];
 	}
 
 	public function getIndexField() {

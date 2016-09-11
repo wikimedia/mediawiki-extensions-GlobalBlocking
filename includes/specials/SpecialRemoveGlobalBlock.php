@@ -37,7 +37,7 @@ class SpecialRemoveGlobalBlock extends FormSpecialPage {
 		}
 
 		$dbw = GlobalBlocking::getGlobalBlockingDatabase( DB_MASTER );
-		$dbw->delete( 'globalblocks', array( 'gb_id' => $this->id ), __METHOD__ );
+		$dbw->delete( 'globalblocks', [ 'gb_id' => $this->id ], __METHOD__ );
 
 		$page = new LogPage( 'gblblock' );
 		$page->addEntry( 'gunblock', Title::makeTitleSafe( NS_USER, $this->ip ), $data['reason'] );
@@ -62,22 +62,22 @@ class SpecialRemoveGlobalBlock extends FormSpecialPage {
 	}
 
 	protected function getFormFields() {
-		return array(
-			'ipaddress' => array(
+		return [
+			'ipaddress' => [
 				'name' => 'address',
 				'type' => 'text',
 				'id' => 'mw-globalblocking-ipaddress',
 				'label-message' => 'globalblocking-ipaddress',
 				'required' => true,
 				'default' => $this->par,
-			),
-			'reason' => array(
+			],
+			'reason' => [
 				'name' => 'wpReason',
 				'type' => 'text',
 				'id' => 'mw-globalblocking-unblock-reason',
 				'label-message' => 'globalblocking-unblock-reason',
-			),
-		);
+			],
+		];
 	}
 
 	protected function getGroupName() {
