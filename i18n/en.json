@@ -46,6 +46,7 @@
 	"globalblocking-goto-unblock": "Remove a global block",
 	"globalblocking-goto-status": "Change local status for a global block",
 	"globalblocking-return": "Return to the list of global blocks",
+	"globalblocking-add-block": "Add another global block",
 	"globalblocking-notblocked": "The IP address ($1) you entered is not globally blocked.",
 	"globalblocking-unblock": "Remove a global block",
 	"globalblocking-unblock-ipinvalid": "The IP address ($1) you entered is invalid.\nPlease note that you cannot enter a user name!",

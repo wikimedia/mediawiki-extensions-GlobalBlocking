@@ -276,8 +276,8 @@ class SpecialGlobalBlock extends FormSpecialPage {
 		$this->getOutput()->addWikiMsg( $successMsg, $this->address );
 
 		$link = Linker::linkKnown(
-			SpecialPage::getTitleFor( 'GlobalBlockList' ),
-			$this->msg( 'globalblocking-return' )->escaped()
+			$this->getPageTitle(),
+			$this->msg( 'globalblocking-add-block' )->escaped()
 		);
 		$this->getOutput()->addHTML( $link );
 	}
