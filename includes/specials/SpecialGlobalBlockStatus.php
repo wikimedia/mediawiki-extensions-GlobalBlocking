@@ -51,24 +51,24 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 	}
 
 	protected function getFormFields() {
-		return array(
-			'address' => array(
+		return [
+			'address' => [
 				'name' => 'address',
 				'type' => 'text',
 				'id' => 'mw-globalblocking-ipaddress',
 				'label-message' => 'globalblocking-ipaddress',
 				'default' => $this->mAddress,
-			),
-			'Reason' => array(
+			],
+			'Reason' => [
 				'type' => 'text',
 				'label-message' => 'globalblocking-whitelist-reason'
-			),
-			'WhitelistStatus' => array(
+			],
+			'WhitelistStatus' => [
 				'type' => 'check',
 				'label-message' => 'globalblocking-whitelist-statuslabel',
 				'default' => $this->mCurrentStatus
-			)
-		);
+			]
+		];
 	}
 
 	public function onSubmit( array $data ) {
@@ -77,12 +77,12 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 		$id = GlobalBlocking::getGlobalBlockId( $ip );
 		// Is it blocked?
 		if ( !$id ) {
-			return array( array( 'globalblocking-notblocked', $ip ) );
+			return [ [ 'globalblocking-notblocked', $ip ] ];
 		}
 
 		// Local status wasn't changed.
 		if ( $this->mCurrentStatus == $this->mWhitelistStatus ) {
-			return array( 'globalblocking-whitelist-nochange' );
+			return [ 'globalblocking-whitelist-nochange' ];
 		}
 
 		$dbw = wfGetDB( DB_MASTER );
@@ -92,23 +92,23 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 			// Find the expiry of the block. This is important so that we can store it in the
 			// global_block_whitelist table, which allows us to purge it when the block has expired.
 			$gdbr = GlobalBlocking::getGlobalBlockingDatabase( DB_SLAVE );
-			$expiry = $gdbr->selectField( 'globalblocks', 'gb_expiry', array( 'gb_id' => $id ), __METHOD__ );
+			$expiry = $gdbr->selectField( 'globalblocks', 'gb_expiry', [ 'gb_id' => $id ], __METHOD__ );
 
-			$row = array(
+			$row = [
 				'gbw_by' => $this->getUser()->getId(),
 				'gbw_by_text' => $this->getUser()->getName(),
 				'gbw_reason' => trim( $data['Reason'] ),
 				'gbw_address' => $ip,
 				'gbw_expiry' => $expiry,
 				'gbw_id' => $id
-			);
-			$dbw->replace( 'global_block_whitelist', array( 'gbw_id' ), $row, __METHOD__ );
+			];
+			$dbw->replace( 'global_block_whitelist', [ 'gbw_id' ], $row, __METHOD__ );
 
 			$this->addLogEntry( 'whitelist', $ip, $data['Reason'] );
 			$successMsg = 'globalblocking-whitelist-whitelisted';
 		} else {
 			// Remove from whitelist
-			$dbw->delete( 'global_block_whitelist', array( 'gbw_id' => $id ), __METHOD__ );
+			$dbw->delete( 'global_block_whitelist', [ 'gbw_id' => $id ], __METHOD__ );
 
 			$this->addLogEntry( 'dwhitelist', $ip, $data['Reason'] );
 			$successMsg = 'globalblocking-whitelist-dewhitelisted';

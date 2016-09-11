@@ -48,17 +48,17 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 		$fld_range = isset( $prop['range'] );
 
 		$result = $this->getResult();
-		$data = array();
+		$data = [];
 
 		$this->addTables( 'globalblocks' );
 		if ( $fld_id ) {
 			$this->addFields( 'gb_id' );
 		}
 		if ( $fld_address ) {
-			$this->addFields( array( 'gb_address', 'gb_anon_only' ) );
+			$this->addFields( [ 'gb_address', 'gb_anon_only' ] );
 		}
 		if ( $fld_by ) {
-			$this->addFields( array( 'gb_by', 'gb_by_wiki' ) );
+			$this->addFields( [ 'gb_by', 'gb_by_wiki' ] );
 		}
 		if ( $fld_timestamp ) {
 			$this->addFields( 'gb_timestamp' );
@@ -70,7 +70,7 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 			$this->addFields( 'gb_reason' );
 		}
 		if ( $fld_range ) {
-			$this->addFields( array( 'gb_range_start', 'gb_range_end' ) );
+			$this->addFields( [ 'gb_range_start', 'gb_range_end' ] );
 		}
 
 		$this->addOption( 'LIMIT', $params['limit'] + 1 );
@@ -94,11 +94,11 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 				$lower = $upper = IP::toHex( $params['ip'] );
 			}
 			$prefix = substr( $lower, 0, 4 );
-			$this->addWhere( array(
+			$this->addWhere( [
 					"gb_range_start LIKE '$prefix%'",
 					"gb_range_start <= '$lower'",
 					"gb_range_end >= '$upper'"
-				)
+				]
 			);
 		}
 
@@ -111,7 +111,7 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 				$this->setContinueEnumParameter( 'start', wfTimestamp( TS_ISO_8601, $row->gb_timestamp ) );
 				break;
 			}
-			$block = array();
+			$block = [];
 			if ( $fld_id ) {
 				$block['id'] = $row->gb_id;
 			}
@@ -149,39 +149,39 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 	}
 
 	public function getAllowedParams() {
-		return array(
-			'start' => array(
+		return [
+			'start' => [
 				ApiBase :: PARAM_TYPE => 'timestamp'
-			),
-			'end' => array(
+			],
+			'end' => [
 				ApiBase :: PARAM_TYPE => 'timestamp',
-			),
-			'dir' => array(
-				ApiBase :: PARAM_TYPE => array(
+			],
+			'dir' => [
+				ApiBase :: PARAM_TYPE => [
 					'newer',
 					'older'
-				),
+				],
 				ApiBase :: PARAM_DFLT => 'older',
 				ApiBase::PARAM_HELP_MSG => 'api-help-param-direction',
-			),
-			'ids' => array(
+			],
+			'ids' => [
 				ApiBase :: PARAM_TYPE => 'integer',
 				ApiBase :: PARAM_ISMULTI => true
-			),
-			'addresses' => array(
+			],
+			'addresses' => [
 				ApiBase :: PARAM_ISMULTI => true
-			),
+			],
 			'ip' => null,
-			'limit' => array(
+			'limit' => [
 				ApiBase :: PARAM_DFLT => 10,
 				ApiBase :: PARAM_TYPE => 'limit',
 				ApiBase :: PARAM_MIN => 1,
 				ApiBase :: PARAM_MAX => ApiBase :: LIMIT_BIG1,
 				ApiBase :: PARAM_MAX2 => ApiBase :: LIMIT_BIG2
-			),
-			'prop' => array(
+			],
+			'prop' => [
 				ApiBase :: PARAM_DFLT => 'id|address|by|timestamp|expiry|reason',
-				ApiBase :: PARAM_TYPE => array(
+				ApiBase :: PARAM_TYPE => [
 					'id',
 					'address',
 					'by',
@@ -189,10 +189,10 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 					'expiry',
 					'reason',
 					'range',
-				),
+				],
 				ApiBase :: PARAM_ISMULTI => true
-			)
-		);
+			]
+		];
 	}
 
 	protected function getDB() {
@@ -203,11 +203,11 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 	 * @see ApiBase::getExamplesMessages()
 	 */
 	protected function getExamplesMessages() {
-		return array(
+		return [
 			'action=query&list=globalblocks'
 				=> 'apihelp-query+globalblocks-example-1',
 			'action=query&list=globalblocks&bgip=192.0.2.18'
 				=> 'apihelp-query+globalblocks-example-2',
-		);
+		];
 	}
 }

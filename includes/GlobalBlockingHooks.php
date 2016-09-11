@@ -23,13 +23,19 @@ class GlobalBlockingHooks {
 	 *
 	 * @return bool
 	 */
-	static public function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ) {
+	public static function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ) {
 		$base = __DIR__ . '/..';
 		switch ( $updater->getDB()->getType() ) {
 			case 'sqlite':
 			case 'mysql':
-				$updater->addExtensionTable( 'globalblocks', "$base/globalblocking.sql" );
-				$updater->addExtensionTable( 'global_block_whitelist', "$base/localdb_patches/setup-global_block_whitelist.sql" );
+				$updater->addExtensionTable(
+					'globalblocks',
+					"$base/globalblocking.sql"
+				);
+				$updater->addExtensionTable(
+					'global_block_whitelist',
+					"$base/localdb_patches/setup-global_block_whitelist.sql"
+				);
 				break;
 
 			default:
@@ -47,7 +53,9 @@ class GlobalBlockingHooks {
 	 *
 	 * @return bool
 	 */
-	static public function onGetUserPermissionsErrorsExpensive( Title &$title, User &$user, $action, &$result ) {
+	public static function onGetUserPermissionsErrorsExpensive(
+		Title &$title, User &$user, $action, &$result
+	) {
 		global $wgApplyGlobalBlocks, $wgRequest;
 		if ( $action == 'read' || !$wgApplyGlobalBlocks ) {
 			return true;
@@ -61,7 +69,7 @@ class GlobalBlockingHooks {
 		$ip = $wgRequest->getIP();
 		$blockError = GlobalBlocking::getUserBlockErrors( $user, $ip );
 		if ( !empty( $blockError ) ) {
-			$result = array( $blockError );
+			$result = [ $blockError ];
 			return false;
 		}
 		return true;
@@ -75,7 +83,7 @@ class GlobalBlockingHooks {
 	 *
 	 * @return bool
 	 */
-	static public function onUserIsBlockedGlobally( User &$user, $ip, &$blocked, &$block ) {
+	public static function onUserIsBlockedGlobally( User &$user, $ip, &$blocked, &$block ) {
 		$block = GlobalBlocking::getUserBlock( $user, $ip );
 		if ( $block !== null ) {
 			$blocked = true;
@@ -91,7 +99,7 @@ class GlobalBlockingHooks {
 	 *
 	 * @return bool
 	 */
-	static public function onSpecialPasswordResetOnSubmit( &$users, $data, &$error ) {
+	public static function onSpecialPasswordResetOnSubmit( &$users, $data, &$error ) {
 		global $wgUser, $wgRequest;
 
 		if ( GlobalBlocking::getUserBlockErrors( $wgUser, $wgRequest->getIP() ) ) {
@@ -108,7 +116,7 @@ class GlobalBlockingHooks {
 	 *
 	 * @return bool true
 	 */
-	static public function onOtherBlockLogLink( &$msg, $ip ) {
+	public static function onOtherBlockLogLink( &$msg, $ip ) {
 		// Fast return if it is a username. IP addresses can be blocked only.
 		if ( !IP::isIPAddress( $ip ) ) {
 			return true;
@@ -122,7 +130,7 @@ class GlobalBlockingHooks {
 
 		$msg[] = Html::rawElement(
 			'span',
-			array( 'class' => 'mw-globalblock-loglink plainlinks' ),
+			[ 'class' => 'mw-globalblock-loglink plainlinks' ],
 			wfMessage( 'globalblocking-loglink', $ip )->parse()
 		);
 		return true;
@@ -136,7 +144,9 @@ class GlobalBlockingHooks {
 	 *
 	 * @return bool
 	 */
-	static public function onSpecialContributionsBeforeMainOutput( $userId, User $user, SpecialPage $sp ) {
+	public static function onSpecialContributionsBeforeMainOutput(
+		$userId, User $user, SpecialPage $sp
+	) {
 		if ( !$user->isAnon() ) {
 			return true;
 		}
@@ -150,9 +160,9 @@ class GlobalBlockingHooks {
 			$out = $sp->getOutput();
 			$out->addHTML(
 				Html::rawElement( 'div',
-					array( 'class' => 'mw-warning-with-logexcerpt' ),
+					[ 'class' => 'mw-warning-with-logexcerpt' ],
 					$sp->msg( 'globalblocking-contribs-notice', $user->getName() )->parse() .
-					Html::rawElement( 'ul', array(), $body )
+					Html::rawElement( 'ul', [], $body )
 				)
 			);
 		}
@@ -165,8 +175,8 @@ class GlobalBlockingHooks {
 	 *
 	 * @return bool
 	 */
-	static public function onUserMergeAccountFields( array &$updateFields ) {
-		$updateFields[] = array( 'global_block_whitelist', 'gbw_by', 'gbw_by_text' );
+	public static function onUserMergeAccountFields( array &$updateFields ) {
+		$updateFields[] = [ 'global_block_whitelist', 'gbw_by', 'gbw_by_text' ];
 
 		return true;
 	}

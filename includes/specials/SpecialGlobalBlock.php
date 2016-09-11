@@ -56,15 +56,15 @@ class SpecialGlobalBlock extends FormSpecialPage {
 	 * @return array
 	 */
 	protected function loadExistingBlock() {
-		$blockOptions = array();
+		$blockOptions = [];
 		if ( $this->address ) {
 			$dbr = GlobalBlocking::getGlobalBlockingDatabase( DB_SLAVE );
 			$block = $dbr->selectRow( 'globalblocks',
-					array( 'gb_anon_only', 'gb_reason', 'gb_expiry' ),
-					array(
+					[ 'gb_anon_only', 'gb_reason', 'gb_expiry' ],
+					[
 						'gb_address' => $this->address,
 						'gb_expiry >' . $dbr->addQuotes( $dbr->timestamp( wfTimestampNow() ) ),
-					),
+					],
 					__METHOD__
 				);
 			if ( $block ) {
@@ -86,44 +86,44 @@ class SpecialGlobalBlock extends FormSpecialPage {
 	 */
 	protected function getFormFields() {
 		$getExpiry = self::buildExpirySelector();
-		$fields = array(
-			'Address' => array(
+		$fields = [
+			'Address' => [
 				'type' => 'text',
 				'label-message' => 'globalblocking-ipaddress',
 				'id' => 'mw-globalblock-address',
 				'required' => true,
 				'autofocus' => true,
 				'default' => $this->address,
-			),
-			'Expiry' => array(
+			],
+			'Expiry' => [
 				'type' => count( $getExpiry ) ? 'selectorother' : 'text',
 				'label-message' => 'globalblocking-block-expiry',
 				'id' => 'mw-globalblocking-block-expiry-selector',
 				'required' => true,
 				'options' => $getExpiry,
 				'other' => $this->msg( 'globalblocking-block-expiry-selector-other' )->text(),
-			),
-			'Reason' => array(
+			],
+			'Reason' => [
 				'type' => 'selectandother',
 				'maxlength' => 255,
 				'label-message' => 'globalblocking-block-reason',
 				'id' => 'mw-globalblock-reason',
 				'options-message' => 'globalblocking-block-reason-dropdown',
-			),
-			'AnonOnly' => array(
+			],
+			'AnonOnly' => [
 				'type' => 'check',
 				'label-message' => 'globalblocking-ipbanononly',
 				'id' => 'mw-globalblock-anon-only',
-			),
-			'Modify' => array(
+			],
+			'Modify' => [
 				'type' => 'hidden',
 				'default' => '',
-			),
-			'Previous' => array(
+			],
+			'Previous' => [
 				'type' => 'hidden',
 				'default' => $this->address,
-			),
-		);
+			],
+		];
 
 		// Modify form defaults if there is an existing block
 		$blockOptions = $this->loadExistingBlock();
@@ -138,11 +138,11 @@ class SpecialGlobalBlock extends FormSpecialPage {
 		}
 
 		if ( $this->getUser()->isAllowed( 'block' ) ) {
-			$fields['AlsoLocal'] = array(
+			$fields['AlsoLocal'] = [
 				'type' => 'check',
 				'label-message' => 'globalblocking-also-local',
 				'id' => 'mw-globalblock-local',
-			);
+			];
 		}
 
 		return $fields;
@@ -158,7 +158,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 			// For GET requests with target field prefilled, tell the user that it's already blocked
 			// (For POST requests, this will be shown to the user as an actual error in HTMLForm)
 			$msg = $this->msg( 'globalblocking-block-alreadyblocked', $this->address )->parseAsBlock();
-			$form->addHeaderText( Html::rawElement( 'div', array( 'class' => 'error' ), $msg ) );
+			$form->addHeaderText( Html::rawElement( 'div', [ 'class' => 'error' ], $msg ) );
 		}
 
 		$submitMsg = $this->modifyForm ? 'globalblocking-modify-submit' : 'globalblocking-block-submit';
@@ -180,11 +180,11 @@ class SpecialGlobalBlock extends FormSpecialPage {
 				'gblblock',
 				$title->getPrefixedText(),
 				'',
-				array(
+				[
 					'lim' => 10,
 					'msgKey' => 'globalblocking-showlog',
 					'showIfEmpty' => false
-				)
+				]
 			);
 		}
 		return $out;
@@ -195,7 +195,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 	 * @return bool|array True for success, array on errors
 	 */
 	function onSubmit( array $data ) {
-		$options = array();
+		$options = [];
 		$user = $this->getUser();
 
 		if ( $data['AnonOnly'] ) {
@@ -240,7 +240,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 
 			if ( $blockSuccess ) {
 				// Keep the flag order consistent with SpecialBlock
-				$flags = array();
+				$flags = [];
 				if ( $data['AnonOnly'] ) {
 					$flags[] = 'anononly';
 				}
@@ -250,7 +250,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 					$flags[] = 'nousertalk';
 				}
 
-				$logParams = array();
+				$logParams = [];
 				$logParams['5::duration'] = $data['Expiry'];
 				$logParams['6::flags'] = implode( ',', $flags );
 
@@ -259,7 +259,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 				$log->setComment( $data['Reason'][0] );
 				$log->setPerformer( $user );
 				$log->setParameters( $logParams );
-				$log->setRelations( array( 'ipb_id' => array( $blockSuccess['id'] ) ) );
+				$log->setRelations( [ 'ipb_id' => [ $blockSuccess['id'] ] ] );
 				$logId = $log->insert();
 				$log->publish( $logId );
 			} else {
@@ -300,7 +300,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 			}
 		}
 
-		$options = array();
+		$options = [];
 		if ( $msg !== false ) {
 			$msg = $msg->text();
 			foreach ( explode( ',', $msg ) as $option ) {

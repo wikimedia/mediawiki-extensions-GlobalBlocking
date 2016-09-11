@@ -4,7 +4,7 @@ $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../..';
 }
-require_once( "$IP/maintenance/Maintenance.php" );
+require_once ( "$IP/maintenance/Maintenance.php" );
 
 /**
  * If there is a whitelisted IP address or range with a corresponding global block
@@ -30,12 +30,12 @@ class FixGlobalBlockWhitelist extends Maintenance {
 		$db = $this->getDB( DB_SLAVE );
 		$res = $db->select(
 			'global_block_whitelist',
-			array( 'gbw_id', 'gbw_address' ),
-			array(),
+			[ 'gbw_id', 'gbw_address' ],
+			[],
 			__METHOD__
 		);
 
-		$whitelistEntries = array();
+		$whitelistEntries = [];
 		foreach ( $res as $row ) {
 			$whitelistEntries[ $row->gbw_id ] = $row->gbw_address;
 		}
@@ -50,17 +50,17 @@ class FixGlobalBlockWhitelist extends Maintenance {
 		$gdbr = GlobalBlocking::getGlobalBlockingDatabase( DB_SLAVE );
 		$gblocks = $gdbr->select(
 			'globalblocks',
-			array( 'gb_id', 'gb_address' ),
-			array( 'gb_address' => $whitelistedIPs ),
+			[ 'gb_id', 'gb_address' ],
+			[ 'gb_address' => $whitelistedIPs ],
 			__METHOD__
 		);
 
-		$gblockEntries = array();
+		$gblockEntries = [];
 		foreach ( $gblocks as $gblock ) {
 			$gblockEntries[ $gblock->gb_id ] = $gblock->gb_address;
 		}
 
-		$broken = array();
+		$broken = [];
 		foreach ( $gblockEntries as $gblockId => $gblockAddress ) {
 			$whitelistId = array_search( $gblockAddress, $whitelistEntries );
 			if ( $whitelistId !== false && $whitelistId !== $gblockId ) {
@@ -90,8 +90,8 @@ class FixGlobalBlockWhitelist extends Maintenance {
 				$count++;
 				$this->getDB( DB_MASTER )->update(
 					'global_block_whitelist',
-					array( 'gbw_id' => $newId ),
-					array( 'gbw_address' => $address ),
+					[ 'gbw_id' => $newId ],
+					[ 'gbw_address' => $address ],
 					__METHOD__
 				);
 				$this->output( " Fixed {$address}: id changed to $newId\n" );
@@ -113,7 +113,7 @@ class FixGlobalBlockWhitelist extends Maintenance {
 			if ( !$this->dryRun ) {
 				$this->getDB( DB_MASTER )->delete(
 					'global_block_whitelist',
-					array( 'gbw_address' => $nonExistent ),
+					[ 'gbw_address' => $nonExistent ],
 					__METHOD__
 				);
 				$this->output( "Finished deleting whitelist entries with no corresponding global blocks.\n" );

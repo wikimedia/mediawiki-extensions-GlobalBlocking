@@ -3,7 +3,7 @@ class ApiGlobalBlock extends ApiBase {
 	public function execute() {
 		if ( !$this->getUser()->isAllowed( 'globalblock' ) ) {
 			// Check permissions
-			$this->dieUsageMsg( array( 'badaccess-groups' ) );
+			$this->dieUsageMsg( [ 'badaccess-groups' ] );
 		}
 
 		$this->requireOnlyOneParameter( $this->extractRequestParams(), 'expiry', 'unblock' );
@@ -11,7 +11,7 @@ class ApiGlobalBlock extends ApiBase {
 		$block = GlobalBlocking::getGlobalBlockingBlock( $this->getParameter( 'target' ), true );
 
 		if ( $this->getParameter( 'expiry' ) ) {
-			$options = array();
+			$options = [];
 
 			if ( $this->getParameter( 'anononly' ) ) {
 				$options[] = 'anon-only';
@@ -31,7 +31,14 @@ class ApiGlobalBlock extends ApiBase {
 
 			if ( count( $errors ) ) {
 				foreach ( $errors as &$error ) {
-					$error = array( 'code' => $error[0], 'message' => str_replace( "\n", " ", call_user_func_array( array( $this, 'msg' ), $error )->text() ) );
+					$error = [
+						'code' => $error[0],
+						'message' => str_replace(
+							"\n",
+							" ",
+							call_user_func_array( [ $this, 'msg' ], $error )->text()
+						)
+					];
 				}
 				$result->setIndexedTagName( $errors, 'error' );
 				$result->addValue( 'error', 'globalblock', $errors );
@@ -52,7 +59,7 @@ class ApiGlobalBlock extends ApiBase {
 		} elseif ( $this->getParameter( 'unblock' ) ) {
 			GlobalBlocking::getGlobalBlockingDatabase( DB_MASTER )->delete(
 				'globalblocks',
-				array( 'gb_id' => $block->gb_id ),
+				[ 'gb_id' => $block->gb_id ],
 				__METHOD__
 			);
 
@@ -68,42 +75,42 @@ class ApiGlobalBlock extends ApiBase {
 	}
 
 	public function getAllowedParams() {
-		return array(
-			'target' => array(
+		return [
+			'target' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true
-			),
-			'expiry' => array(
+			],
+			'expiry' => [
 				ApiBase::PARAM_TYPE => 'string'
-			),
-			'unblock' => array(
+			],
+			'unblock' => [
 				ApiBase::PARAM_TYPE => 'boolean'
-			),
-			'reason' => array(
+			],
+			'reason' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true
-			),
-			'anononly' => array(
+			],
+			'anononly' => [
 				ApiBase::PARAM_TYPE => 'boolean'
-			),
-			'modify' => array(
+			],
+			'modify' => [
 				ApiBase::PARAM_TYPE => 'boolean'
-			),
-			'token' => array(
+			],
+			'token' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true
-			)
-		);
+			]
+		];
 	}
 
 	/**
 	 * @see ApiBase::getExamplesMessages()
 	 */
 	protected function getExamplesMessages() {
-		return array(
+		return [
 			'action=globalblock&target=192.0.2.1&expiry=indefinite&reason=Cross-wiki%20abuse&token=123ABC'
 				=> 'apihelp-globalblock-example-1',
-		);
+		];
 	}
 
 	public function mustBePosted() {
