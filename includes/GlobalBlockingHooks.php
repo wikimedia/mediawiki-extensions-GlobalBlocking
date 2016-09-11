@@ -142,16 +142,19 @@ class GlobalBlockingHooks {
 		}
 
 		$rangeCondition = GlobalBlocking::getRangeCondition( $user->getName() );
-		$out = $sp->getOutput();
-		$pager = new GlobalBlockListPager( null, $rangeCondition );
+		$pager = new GlobalBlockListPager( $sp->getContext(), $rangeCondition );
 		$pager->setLimit( 1 ); // show at most one entry
 		$body = $pager->getBody();
 
 		if ( $body != '' ) {
-			$attribs = array( 'class' => 'mw-warning-with-logexcerpt' );
-			$out->addHTML( Html::rawElement( 'div', $attribs,
-				$sp->msg( 'globalblocking-contribs-notice', $user->getName() )->parse() .
-				Html::rawElement( 'ul', array(), $body ) ) );
+			$out = $sp->getOutput();
+			$out->addHTML(
+				Html::rawElement( 'div',
+					array( 'class' => 'mw-warning-with-logexcerpt' ),
+					$sp->msg( 'globalblocking-contribs-notice', $user->getName() )->parse() .
+					Html::rawElement( 'ul', array(), $body )
+				)
+			);
 		}
 
 		return true;
