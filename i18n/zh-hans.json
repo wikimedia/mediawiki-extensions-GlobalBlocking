@@ -64,6 +64,7 @@
 	"globalblocking-goto-unblock": "移除全域封禁",
 	"globalblocking-goto-status": "修改全域封锁的本地状态",
 	"globalblocking-return": "回到全域封锁名单",
+	"globalblocking-add-block": "添加其他全域封禁",
 	"globalblocking-notblocked": "您所输入的 IP 地址 （$1） 并无全域封锁。",
 	"globalblocking-unblock": "移除全域封禁",
 	"globalblocking-unblock-ipinvalid": "您所输入的IP地址 （$1） 是无效的。\n请留意的是您不可以输入一个用户名！",

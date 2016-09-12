@@ -52,6 +52,7 @@
 	"globalblocking-goto-unblock": "הסרת חסימה גלובלית",
 	"globalblocking-goto-status": "שינוי המצב המקומי של חסימה גלובלית",
 	"globalblocking-return": "חזרה לרשימת החסימות הגלובליות",
+	"globalblocking-add-block": "הוספת חסימה גלובלית נוספת",
 	"globalblocking-notblocked": "כתובת ה־IP שהזנת ($1) אינה חסומה באופן גלובלי.",
 	"globalblocking-unblock": "הסרת חסימה גלובלית",
 	"globalblocking-unblock-ipinvalid": "כתובת ה־IP שהזנת ($1) אינה תקינה.\nנא לשים לב שאין באפשרותך להזין שם משתמש!",

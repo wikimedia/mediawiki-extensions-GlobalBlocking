@@ -53,6 +53,7 @@
 	"globalblocking-goto-unblock": "Rimuovi un blocco globale",
 	"globalblocking-goto-status": "Cambia stato locale di un blocco globale",
 	"globalblocking-return": "Torna all'elenco dei blocchi globali",
+	"globalblocking-add-block": "Aggiungi un altro blocco globale",
 	"globalblocking-notblocked": "L'indirizzo IP ($1) che hai inserito non è bloccato globalmente.",
 	"globalblocking-unblock": "Rimuovi un blocco globale",
 	"globalblocking-unblock-ipinvalid": "L'indirizzo IP ($1) che hai inserito non è valido. Fai attenzione al fatto che non puoi inserire un nome utente!",

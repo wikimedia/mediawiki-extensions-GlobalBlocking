@@ -56,6 +56,7 @@
 	"globalblocking-goto-unblock": "Ta bort en global blockering",
 	"globalblocking-goto-status": "Ändra lokal status för en global blockering",
 	"globalblocking-return": "Tillbaka till listan över globala blockeringar",
+	"globalblocking-add-block": "Lägg till en annan global blockering",
 	"globalblocking-notblocked": "IP-adressen du angav ($1) är inte globalt blockerad.",
 	"globalblocking-unblock": "Ta bort en global blockering",
 	"globalblocking-unblock-ipinvalid": "IP-adressen du skrev in ($1) är ogiltig.\nNotera att du inte kan skriva in användarnamn!",
