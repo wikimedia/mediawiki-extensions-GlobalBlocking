@@ -6,7 +6,8 @@
 			"Shanmugamp7",
 			"TRYPPN",
 			"மதனாஹரன்",
-			"AntanO"
+			"AntanO",
+			"Rakeshonwiki"
 		]
 	},
 	"globalblocking-block": "உலகளவில் ஒரு IP முகவரியை தடைசெய்",
@@ -43,6 +44,7 @@
 	"globalblocking-goto-unblock": "ஒரு உலகளாவிய தடையை நீக்கு",
 	"globalblocking-goto-status": "ஒரு உலகளாவிய தடையின் உள்ளமைவு நிலைமையை மாற்று",
 	"globalblocking-return": "உலகளாவிய தடையின் பட்டியலுக்கு திரும்பு",
+	"globalblocking-add-block": "மற்றொரு பொது பகுதியை உருவாக்கு",
 	"globalblocking-notblocked": "நீங்கள் உள்ளிட்ட இணைய விதிமுறை முகவரி ($1) உலகளவில் தடுக்கப்படவில்லை.",
 	"globalblocking-unblock": "ஒரு உலகளாவிய தடையை நீக்கு",
 	"globalblocking-unblock-ipinvalid": "நீங்கள் உள்ளிட்ட இணைய விதிமுறை முகவரி ($1) தவறானது.\nதயவு செய்து நீங்கள் ஒரு பயனர் பெயரை உள்ளிட முடியாது என்பதை நினைவில் கொள்ளவும்!",
@@ -50,8 +52,6 @@
 	"globalblocking-unblock-submit": "உலகளாவிய தடையை நீக்கு",
 	"globalblocking-unblock-reason": "காரணம்:",
 	"globalblocking-unblock-unblocked": "நீங்கள் வெற்றிகரமாக உலகளாவிய தடை #$2 வை IP முகவரி '''$1''' ல் நீக்கிவிட்டீர்கள்.",
-	"globalblocking-unblock-errors": "உங்கள் தடை நீக்கல் தோல்வியடைந்தது, பின்வரும் {{PLURAL:$1| காரணம்|காரணங்கள்}}:",
-	"globalblocking-unblock-successsub": "உலகளாவிய தடை வெற்றிகரமாக நீக்கப்பட்டது.",
 	"globalblocking-unblock-intro": "நீங்கள் இந்த படிவத்தை ஒரு உலகளாவிய தடையை நீக்க பயன்படுத்தலாம்.",
 	"globalblocking-whitelist": "உலகளாவிய தடையின் உள்ளமை நிலை",
 	"globalblocking-whitelist-notapplied": "உலகளாவிய தடுப்புகள் இந்த விக்கியில் பயன்படுத்தப்படவில்லை.\nஎனவே உலகளாவிய தடுப்புகளின் உள் நிலையை திருத்த முடியாது.",
