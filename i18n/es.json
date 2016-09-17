@@ -119,7 +119,7 @@
 	"apihelp-globalblock-param-reason": "El motivo para bloquear/desbloquear.",
 	"apihelp-globalblock-param-anononly": "Especificar si el bloqueo debería afectar solo a los usuarios sin sesión iniciada.",
 	"apihelp-globalblock-example-1": "Bloquear 192.0.2.1 indefinidamente con el motivo \"Abuso sobre varios wikis\"",
-	"apihelp-query+globalblocks-description": "Listar todas las direcciones IP bloqueadas globalmente.",
+	"apihelp-query+globalblocks-description": "Enumerar todas las direcciones IP bloqueadas globalmente.",
 	"apihelp-query+globalblocks-param-start": "El sello de tiempo para comenzar la enumeración",
 	"apihelp-query+globalblocks-param-end": "El sello de tiempo para detener la enumeración",
 	"apihelp-query+globalblocks-param-ids": "Lista separada por barras de identificadores de bloqueos que listar.",

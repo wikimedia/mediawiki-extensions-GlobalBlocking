@@ -58,6 +58,7 @@
 	"globalblocking-goto-unblock": "Зняти глобальне блокування",
 	"globalblocking-goto-status": "Змінити локальний стан глобального блокування",
 	"globalblocking-return": "Повернутися до списку глобальних блокувань",
+	"globalblocking-add-block": "Додати ще одне глобальне блокування",
 	"globalblocking-notblocked": "IP-адреса, яку ви ввели ($1) не є глобально заблокованою.",
 	"globalblocking-unblock": "Зняти глобальне блокування",
 	"globalblocking-unblock-ipinvalid": "IP-адреса, яку ви ввели ($1) є помилковою.\nБудь ласка, зверніть увагу, що ви не можете вводити ім'я користувача!",
