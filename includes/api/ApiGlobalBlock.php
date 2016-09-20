@@ -124,8 +124,4 @@ class ApiGlobalBlock extends ApiBase {
 	public function needsToken() {
 		return 'csrf';
 	}
-
-	public function getTokenSalt() {
-		return '';
-	}
 }
