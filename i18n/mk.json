@@ -47,6 +47,7 @@
 	"globalblocking-goto-unblock": "Отстрани глобален блок",
 	"globalblocking-goto-status": "Промена на месен статус на глобален блок",
 	"globalblocking-return": "Назад кон списокот на глобални блокови",
+	"globalblocking-add-block": "Додај друг глобален блок",
 	"globalblocking-notblocked": "IP-адресата ($1) која ја внесовте не е глобално блокирана.",
 	"globalblocking-unblock": "Отстрани глобален блок",
 	"globalblocking-unblock-ipinvalid": "IP-адресата ($1) која ја внесовте е неважечка.\nИмајте предвид дека не можете да внесувате кориснички имиња!",
