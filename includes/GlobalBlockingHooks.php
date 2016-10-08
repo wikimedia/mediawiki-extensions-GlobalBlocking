@@ -147,11 +147,12 @@ class GlobalBlockingHooks {
 	public static function onSpecialContributionsBeforeMainOutput(
 		$userId, User $user, SpecialPage $sp
 	) {
-		if ( !$user->isAnon() ) {
+		$name = $user->getName();
+		if ( !IP::isValid( $name ) ) {
 			return true;
 		}
 
-		$rangeCondition = GlobalBlocking::getRangeCondition( $user->getName() );
+		$rangeCondition = GlobalBlocking::getRangeCondition( $name );
 		$pager = new GlobalBlockListPager( $sp->getContext(), $rangeCondition );
 		$pager->setLimit( 1 ); // show at most one entry
 		$body = $pager->getBody();
@@ -161,7 +162,7 @@ class GlobalBlockingHooks {
 			$out->addHTML(
 				Html::rawElement( 'div',
 					[ 'class' => 'mw-warning-with-logexcerpt' ],
-					$sp->msg( 'globalblocking-contribs-notice', $user->getName() )->parse() .
+					$sp->msg( 'globalblocking-contribs-notice', $name )->parse() .
 					Html::rawElement( 'ul', [], $body )
 				)
 			);
