@@ -95,9 +95,9 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 			}
 			$prefix = substr( $lower, 0, 4 );
 			$this->addWhere( [
-					"gb_range_start LIKE '$prefix%'",
-					"gb_range_start <= '$lower'",
-					"gb_range_end >= '$upper'"
+					'gb_range_start ' . $dbr->buildLike( $prefix, $dbr->anyString() ),
+					'gb_range_start <= ' . $dbr->addQuotes( $lower ),
+					'gb_range_end >= ' . $dbr->addQuotes( $upper )
 				]
 			);
 		}

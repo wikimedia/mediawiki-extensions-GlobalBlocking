@@ -169,13 +169,16 @@ class GlobalBlocking {
 	static function getRangeCondition( $ip ) {
 		$dbr = GlobalBlocking::getGlobalBlockingDatabase( DB_SLAVE );
 
-		$hex_ip = IP::toHex( $ip );
-		$ip_pattern = substr( $hex_ip, 0, 4 ) . '%'; // Don't bother checking blocks out of this /16.
+		$hexIp = IP::toHex( $ip );
+		// Don't bother checking blocks out of this /16.
+		// @todo Make the range limit configurable
+		$ipPattern = substr( $hexIp, 0, 4 );
 
+		$quotedHex = $dbr->addQuotes( $hexIp );
 		$cond = [
-			'gb_range_start like ' . $dbr->addQuotes( $ip_pattern ),
-			'gb_range_start <= ' . $dbr->addQuotes( $hex_ip ),
-			'gb_range_end >= ' . $dbr->addQuotes( $hex_ip ), // This block in the given range.
+			'gb_range_start ' . $dbr->buildLike( $ipPattern, $dbr->anyString() ),
+			'gb_range_start <= ' . $quotedHex,
+			'gb_range_end >= ' . $quotedHex, // This block in the given range.
 			// @todo expiry shouldn't be in this function
 			'gb_expiry > ' . $dbr->addQuotes( $dbr->timestamp( wfTimestampNow() ) )
 		];
