@@ -94,6 +94,7 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 				$lower = $upper = IP::toHex( $params['ip'] );
 			}
 			$prefix = substr( $lower, 0, 4 );
+			$dbr = GlobalBlocking::getGlobalBlockingDatabase( DB_SLAVE );
 			$this->addWhere( [
 					'gb_range_start ' . $dbr->buildLike( $prefix, $dbr->anyString() ),
 					'gb_range_start <= ' . $dbr->addQuotes( $lower ),
