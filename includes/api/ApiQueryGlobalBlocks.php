@@ -95,28 +95,41 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 			$this->addWhereFld( 'gb_address', $addresses );
 		}
 		if ( isset( $params['ip'] ) ) {
-			if ( !IP::isIPAddress( $params['ip'] ) ) {
-				$this->dieUsage( 'IP parameter is not valid', 'param_ip' );
-			}
-			list( $ip, $range ) = IP::parseCIDR( $params['ip'] );
-			if ( $ip && $range ) {
-				# We got a CIDR range
-				if ( $range < 16 ) {
-					$this->dieUsage( 'CIDR ranges broader than /16 are not accepted', 'cidrtoobroad' );
-				}
-				$lower = Wikimedia\base_convert( $ip, 10, 16, 8, false );
-				$upper = Wikimedia\base_convert( $ip + pow( 2, 32 - $range ) - 1, 10, 16, 8, false );
+			if ( IP::isIPv4( $params['ip'] ) ) {
+				$type = 'IPv4';
+				$cidrLimit = 16; // @todo Make this configurable
+				$prefixLen = 0;
+			} elseif ( IP::isIPv6( $params['ip'] ) ) {
+				$type = 'IPv6';
+				$cidrLimit = 16; // @todo Make this configurable
+				$prefixLen = 3; // IP::toHex output is prefixed with "v6-"
 			} else {
-				$lower = $upper = IP::toHex( $params['ip'] );
+				$this->dieWithError( 'apierror-badip', 'param_ip' );
 			}
-			$prefix = substr( $lower, 0, 4 );
+
+			# Check range validity, if it's a CIDR
+			list( $ip, $range ) = IP::parseCIDR( $params['ip'] );
+			if ( $ip !== false && $range !== false && $range < $cidrLimit ) {
+				$this->dieWithError( [ 'apierror-cidrtoobroad', $type, $cidrLimit ] );
+			}
+
+			# Let IP::parseRange handle calculating $upper, instead of duplicating the logic here.
+			list( $lower, $upper ) = IP::parseRange( $params['ip'] );
+
+			# Extract the common prefix to any rangeblock affecting this IP/CIDR
+			$prefix = substr( $lower, 0, $prefixLen + floor( $cidrLimit / 4 ) );
+
+			# Fairly hard to make a malicious SQL statement out of hex characters,
+			# but it is good practice to add quotes
 			$dbr = $this->getDB();
+			$lower = $dbr->addQuotes( $lower );
+			$upper = $dbr->addQuotes( $upper );
+
 			$this->addWhere( [
-					'gb_range_start ' . $dbr->buildLike( $prefix, $dbr->anyString() ),
-					'gb_range_start <= ' . $dbr->addQuotes( $lower ),
-					'gb_range_end >= ' . $dbr->addQuotes( $upper )
-				]
-			);
+				'gb_range_start' . $dbr->buildLike( $prefix, $dbr->anyString() ),
+				'gb_range_start <= ' . $lower,
+				'gb_range_end >= ' . $upper,
+			] );
 		}
 
 		$res = $this->select( __METHOD__ );

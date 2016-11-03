@@ -1,9 +1,13 @@
 <?php
 class ApiGlobalBlock extends ApiBase {
 	public function execute() {
-		if ( !$this->getUser()->isAllowed( 'globalblock' ) ) {
-			// Check permissions
-			$this->dieUsageMsg( [ 'badaccess-groups' ] );
+		if ( is_callable( [ $this, 'checkUserRightsAny' ] ) ) {
+			$this->checkUserRightsAny( 'globalblock' );
+		} else {
+			if ( !$this->getUser()->isAllowed( 'globalblock' ) ) {
+				// Check permissions
+				$this->dieUsageMsg( [ 'badaccess-groups' ] );
+			}
 		}
 
 		$this->requireOnlyOneParameter( $this->extractRequestParams(), 'expiry', 'unblock' );
