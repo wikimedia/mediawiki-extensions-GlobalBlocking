@@ -106,15 +106,9 @@
 		"LoadExtensionSchemaUpdates": "GlobalBlockingHooks::onLoadExtensionSchemaUpdates"
 	},
 	"config": {
-		"GlobalBlockingDatabase": {
-			"value": "globalblocking"
-		},
-		"ApplyGlobalBlocks": {
-			"value": true
-		},
-		"GlobalBlockingBlockXFF": {
-			"value": true
-		}
+		"GlobalBlockingDatabase": "globalblocking",
+		"ApplyGlobalBlocks": true,
+		"GlobalBlockingBlockXFF": true
 	},
-	"manifest_version": 2
+	"manifest_version": 1
 }
