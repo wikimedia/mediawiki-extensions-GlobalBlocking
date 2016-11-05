@@ -31,6 +31,11 @@
  */
 class ApiQueryGlobalBlocks extends ApiQueryBase {
 
+	/**
+	 * @var Database
+	 */
+	private $globalBlockingDb;
+
 	public function __construct( $query, $moduleName ) {
 		parent :: __construct( $query, $moduleName, 'bg' );
 	}
@@ -94,7 +99,7 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 				$lower = $upper = IP::toHex( $params['ip'] );
 			}
 			$prefix = substr( $lower, 0, 4 );
-			$dbr = GlobalBlocking::getGlobalBlockingDatabase( DB_SLAVE );
+			$dbr = $this->getDB();
 			$this->addWhere( [
 					'gb_range_start ' . $dbr->buildLike( $prefix, $dbr->anyString() ),
 					'gb_range_start <= ' . $dbr->addQuotes( $lower ),
@@ -197,7 +202,10 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 	}
 
 	protected function getDB() {
-		return GlobalBlocking::getGlobalBlockingDatabase( DB_SLAVE );
+		if ( $this->globalBlockingDb === null ) {
+			$this->globalBlockingDb = GlobalBlocking::getGlobalBlockingDatabase( DB_SLAVE );
+		}
+		return $this->globalBlockingDb;
 	}
 
 	/**
