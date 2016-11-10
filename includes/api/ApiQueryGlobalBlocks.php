@@ -42,6 +42,7 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 
 	public function execute() {
 		$params = $this->extractRequestParams();
+		$this->requireMaxOneParameter( $params, 'addresses', 'ip' );
 
 		$prop = array_flip( $params['prop'] );
 		$fld_id = isset( $prop['id'] );
@@ -84,9 +85,19 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 			$this->addWhereFld( 'gb_id', $params['ids'] );
 		}
 		if ( isset( $params['addresses'] ) ) {
-			$this->addWhereFld( 'gb_address', $params['addresses'] );
+			$addresses = [];
+			foreach ( (array)$params['addresses'] as $address ) {
+				if ( !IP::isIPAddress( $address ) ) {
+					$this->dieUsage( "IP address {$address} is not valid", 'param_addresses' );
+				}
+				$addresses[] = $address;
+			}
+			$this->addWhereFld( 'gb_address', $addresses );
 		}
 		if ( isset( $params['ip'] ) ) {
+			if ( !IP::isIPAddress( $params['ip'] ) ) {
+				$this->dieUsage( 'IP parameter is not valid', 'param_ip' );
+			}
 			list( $ip, $range ) = IP::parseCIDR( $params['ip'] );
 			if ( $ip && $range ) {
 				# We got a CIDR range
