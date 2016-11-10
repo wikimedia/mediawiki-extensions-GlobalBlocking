@@ -124,7 +124,7 @@
 	"apihelp-query+globalblocks-param-end": "枚举的结束时间戳。",
 	"apihelp-query+globalblocks-param-ids": "要列举的以逗号分隔的封禁ID列表。",
 	"apihelp-query+globalblocks-param-addresses": "要搜索的以逗号分隔的IP地址列表。",
-	"apihelp-query+globalblocks-param-ip": "获取应用到此IP地址或者CIDR范围的所有封禁，包括范围封禁。无法与$1users一同使用。CIDR范围不得超过/16。",
+	"apihelp-query+globalblocks-param-ip": "获取应用到此IP地址或者CIDR范围的所有封禁，包括范围封禁。不能与$1addresses一起使用。CIDR范围不允许超过/16。",
 	"apihelp-query+globalblocks-param-limit": "要列出封禁的最大数量。",
 	"apihelp-query+globalblocks-param-prop": "要获得的属性。",
 	"apihelp-query+globalblocks-example-1": "列出所有全域封禁",
