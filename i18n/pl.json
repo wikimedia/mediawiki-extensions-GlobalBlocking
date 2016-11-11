@@ -117,7 +117,7 @@
 	"apihelp-query+globalblocks-param-end": "Znacznik czasu, na którym zakończyć wyliczanie.",
 	"apihelp-query+globalblocks-param-ids": "Lista identyfikatorów blokad, które wyświetlić, oddzielana znakami pionowej kreski.",
 	"apihelp-query+globalblocks-param-addresses": "Lista adresów IP oddzielanych pionowymi kreskami, które wyszukać.",
-	"apihelp-query+globalblocks-param-ip": "Pobierz listę wszystkich blokad zastosowanych dla tego adresu IP lub zakresu CIDR, zawierającą także odpowiadające blokady zakresów. Nie może być używany równocześnie z $1users. Zakresy CIDR szersze niż /16 nie są akceptowane.",
+	"apihelp-query+globalblocks-param-ip": "Pobierz listę wszystkich blokad zastosowanych dla tego adresu IP lub zakresu CIDR, zawierającą także odpowiadające blokady zakresów. Nie może być używany równocześnie z $1addresses. Zakresy CIDR szersze niż /16 nie są akceptowane.",
 	"apihelp-query+globalblocks-param-limit": "Maksymalna liczba blokad do wylistowania.",
 	"apihelp-query+globalblocks-param-prop": "Jakie właściwości uzyskać.",
 	"apihelp-query+globalblocks-example-1": "Lista wszystkich globalnych blokad",
