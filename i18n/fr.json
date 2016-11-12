@@ -123,7 +123,7 @@
 	"apihelp-query+globalblocks-param-end": "L’horodatage auquel terminer l’énumération.",
 	"apihelp-query+globalblocks-param-ids": "Blocks d'identificateurs à lister, séparés par des barres verticales.",
 	"apihelp-query+globalblocks-param-addresses": "Liste d'adresses IP à rechercher, séparées par des barres verticales",
-	"apihelp-query+globalblocks-param-ip": "Obtenir tous les blocages s’appliquant à cette adresse IP ou à cette plage de CIDR, y compris les blocages de plage. Impossible à utiliser avec $1users. Les plages CIDR plus grandes que /16 ne sont pas acceptées.",
+	"apihelp-query+globalblocks-param-ip": "Obtenir tous les blocages s’appliquant à cette adresse IP ou à cette plage de CIDR, y compris les blocages de plage. Impossible à utiliser avec $1addresses. Les plages CIDR plus grandes que /16 ne sont pas acceptées.",
 	"apihelp-query+globalblocks-param-limit": "Le nombre maximal de blocages à lister.",
 	"apihelp-query+globalblocks-param-prop": "Quelles propriétés obtenir.",
 	"apihelp-query+globalblocks-example-1": "Lister tous les blocages globaux",
