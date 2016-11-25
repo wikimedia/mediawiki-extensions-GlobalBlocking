@@ -128,6 +128,6 @@
 	"log-action-filter-gblblock-gblock": "Bloqueio global",
 	"log-action-filter-gblblock-gunblock": "Desbloqueio global",
 	"log-action-filter-gblblock-modify": "Modificação de bloqueio global",
-	"log-action-filter-gblblock-whitelist": "Adição do bloqueio global à lista branca",
+	"log-action-filter-gblblock-whitelist": "Adição de bloqueio global à lista branca",
 	"log-action-filter-gblblock-dwhitelist": "Remoção do bloqueio global, da lista branca"
 }
