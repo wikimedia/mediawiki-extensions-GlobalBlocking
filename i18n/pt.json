@@ -87,7 +87,7 @@
 	"globalblocking-logpagetext": "Este é um registo de bloqueios globais que foram feitos e removidos nesta wiki.\nDeve ser notado que bloqueios globais podem também ser feitos e removidos noutras wikis e que esses bloqueios poderão afetar esta wiki.\nPara ver todos os bloqueios globais, consulte a [[Special:GlobalBlockList|lista de bloqueios globais]].",
 	"globalblocking-block-logentry": "bloqueou globalmente [[$1]] com um tempo de expiração de $2",
 	"globalblocking-block2-logentry": "bloqueou globalmente [[$1]] ($2)",
-	"globalblocking-unblock-logentry": "removeu bloqueio global de [[$1]]",
+	"globalblocking-unblock-logentry": "removeu o bloqueio global de [[$1]]",
 	"globalblocking-logentry-whitelist": "$1 {{GENDER:$2|desativou localmente}} o bloqueio global de $3",
 	"globalblocking-logentry-dewhitelist": "$1 {{GENDER:$2|reativou localmente}} o bloqueio global de $3",
 	"globalblocking-modify-logentry": "modificou o bloqueio global sobre [[$1]] ($2)",
