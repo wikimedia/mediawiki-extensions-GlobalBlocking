@@ -492,9 +492,9 @@ $specialPageAliases['tt-cyrl'] = array(
 
 /** Ukrainian (українська) */
 $specialPageAliases['uk'] = array(
-	'GlobalBlock' => array( 'Глобальне_блокування' ),
-	'GlobalBlockList' => array( 'Перелік_глобальних_блокувань' ),
-	'RemoveGlobalBlock' => array( 'Глобальне_розблокування' ),
+	'GlobalBlock' => array( 'Глобальне_блокування', 'Глобальная_блокировка' ),
+	'GlobalBlockList' => array( 'Перелік_глобальних_блокувань', 'Список_глобальных_блокировок', 'Глобальные_блокировки' ),
+	'RemoveGlobalBlock' => array( 'Глобальне_розблокування', 'Глобальная_разблокировка' ),
 );
 
 /** Venetian (vèneto) */
