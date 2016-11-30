@@ -74,6 +74,14 @@ $specialPageAliases['bjn'] = array(
 	'GlobalBlockStatus' => array( 'Daptar_putih_pamblukiran_global' ),
 );
 
+/** Bengali (বাংলা) */
+$specialPageAliases['bn'] = array(
+	'GlobalBlock' => array( 'বৈশ্বিক_বাধাদান', 'বৈশ্বিক_বাধা' ),
+	'GlobalBlockList' => array( 'বৈশ্বিক_বাধাদানের_তালিকা', 'বৈশ্বিক_বাধার_তালিকা' ),
+	'RemoveGlobalBlock' => array( 'বৈশ্বিক_বাধাদান_অপসারণ', 'বৈশ্বিক_বাধা_অপসারণ', 'বৈশ্বিক_বাধা_তোলা' ),
+	'GlobalBlockStatus' => array( 'বৈশ্বিক_বাধাদানের_সাদাতালিকা', 'বৈশ্বিক_বাধার_অবস্থা', 'বৈশ্বিক_বাধাদানের_অবস্থা', 'বৈশ্বিক_বাধা_নিষ্ক্রিয়করণ' ),
+);
+
 /** Breton (brezhoneg) */
 $specialPageAliases['br'] = array(
 	'GlobalBlock' => array( 'StankadennHollek' ),
