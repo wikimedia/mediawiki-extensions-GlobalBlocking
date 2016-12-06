@@ -82,10 +82,13 @@ class GlobalBlocking {
 
 			// Allow site customization of blocked message.
 			Hooks::run( $hookName, [ &$errorMsg ] );
-			ApiBase::$messageMap[$errorMsg] = [
-				'code' => $errorMsg,
-				'info' => $apiErrorInfo,
-			];
+			if ( !method_exists( [ 'ApiBase', 'dieWithError' ] ) ) {
+				// No longer needed/possible in MW 1.29
+				ApiBase::$messageMap[$errorMsg] = [
+					'code' => $errorMsg,
+					'info' => $apiErrorInfo,
+				];
+			}
 			return $result = [
 				'block' => $block,
 				'error' => [
@@ -118,10 +121,13 @@ class GlobalBlocking {
 					// Allow site customization of blocked message.
 					$blockedIpXffMsg = 'globalblocking-ipblocked-xff';
 					Hooks::run( 'GlobalBlockingBlockedIpXffMsg', [ &$blockedIpXffMsg ] );
-					ApiBase::$messageMap[$blockedIpXffMsg] = [
-						'code' => $blockedIpXffMsg,
-						'info' => 'One or more proxy servers used by your request has been globally blocked',
-					];
+					if ( !method_exists( [ 'ApiBase', 'dieWithError' ] ) ) {
+						// No longer needed/possible in MW 1.29
+						ApiBase::$messageMap[$blockedIpXffMsg] = [
+							'code' => $blockedIpXffMsg,
+							'info' => 'One or more proxy servers used by your request has been globally blocked',
+						];
+					}
 					return $result = [
 						'block' => $block,
 						'error' => [
