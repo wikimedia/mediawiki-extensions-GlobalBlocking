@@ -82,7 +82,7 @@ class GlobalBlocking {
 
 			// Allow site customization of blocked message.
 			Hooks::run( $hookName, [ &$errorMsg ] );
-			if ( !method_exists( [ 'ApiBase', 'dieWithError' ] ) ) {
+			if ( !method_exists( 'ApiBase', 'dieWithError' ) ) {
 				// No longer needed/possible in MW 1.29
 				ApiBase::$messageMap[$errorMsg] = [
 					'code' => $errorMsg,
@@ -121,7 +121,7 @@ class GlobalBlocking {
 					// Allow site customization of blocked message.
 					$blockedIpXffMsg = 'globalblocking-ipblocked-xff';
 					Hooks::run( 'GlobalBlockingBlockedIpXffMsg', [ &$blockedIpXffMsg ] );
-					if ( !method_exists( [ 'ApiBase', 'dieWithError' ] ) ) {
+					if ( !method_exists( 'ApiBase', 'dieWithError' ) ) {
 						// No longer needed/possible in MW 1.29
 						ApiBase::$messageMap[$blockedIpXffMsg] = [
 							'code' => $blockedIpXffMsg,
