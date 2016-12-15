@@ -2,10 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Fluence",
-			"Teòtlalili"
+			"Teòtlalili",
+			"Akapochtli"
 		]
 	},
 	"globalblocking-search-ip": "IP:",
 	"globalblocking-list-anononly": "zan ahtōcā",
-	"globalblocking-unblock-reason": "Tlèka:"
+	"globalblocking-unblock-reason": "Ipampa:"
 }
