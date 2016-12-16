@@ -66,9 +66,12 @@
 	"globalblocking-ipblocked-range": "'''আপনার আইপি ঠিকানা একটি পরিসীমার মধ্যে আছে যা সব উইকিতে অবরুদ্ধ করা হয়েছে।'''\n\nএই বাধাটি প্রদান করেছেন $1 ($2)।\nপ্রদত্ত কারণ হচ্ছে ''$3''।\n\n* বাধা শুরুর তারিখ: $4\n* বাধা শেষ হওয়ার তারিখ: $5\n\nবাধাদান সম্পর্কে আলোচনা করতে আপনি $1-এর সাথে যোগাযোগ করতে পারেন।\nআপনি \"{{int:emailuser}}\" বৈশিষ্ট্যটি ব্যবহার করতে পারবেন না যদি না আপনার [[Special:Preferences|অ্যাকাউন্টের পছন্দসমূহে]] একটি বৈধ ইমেইল ঠিকানা নির্দিষ্ট না করা হয়ে থাকে এবং আপনাকে এটি ব্যবহার করা থেকে অবরুদ্ধ করা না হয়ে থাকে।\n\nআপনার বর্তমান আইপি ঠিকানা হচ্ছে $6, এবং অবরুদ্ধ পরিসীমা হচ্ছে $7।\nআপনি আপনার যেকোন জিজ্ঞাসাতে উপরোক্ত সব বিবরণ অন্তর্ভুক্ত করুন।",
 	"globalblocking-blocked-nopassreset": "আপনি পাসওয়ার্ড পরিবর্তন করতে পারবেন না, কারণ আপনাকে বৈশ্বিকভাবে বাধা দেয়া হয়েছে।",
 	"globalblocking-logpage": "বৈশ্বিক বাধাদান লগ",
+	"globalblocking-logpagetext": "এটি বৈশ্বিক বাধাদানের একটি লগ যা এই উইকিতে তৈরি এবং সরানো হয়েছে। এটা লক্ষনীয় যে,\nবৈশ্বিক বাধাদান অন্যান্য উইকিতে তৈরি ও সরানো যেতে পারে, এবং সেই সব বৈশ্বিক বাধাদান এই উইকিতে প্রভাব ফেলতে পারে।\nসব সক্রিয় বৈশ্বিক বাধা দেখতে, আপনি [[Special:GlobalBlockList|বৈশ্বিক বাধাদানের তালিকা]] দেখতে পারেন।",
 	"globalblocking-block-logentry": "[[$1]] বৈশ্বিকভাবে বাধা দেয়া হয়েছে, মেয়াদ উত্তীর্ণএর সময় $2",
 	"globalblocking-block2-logentry": "[[$1]] বৈশ্বিকভাবে বাধাপ্রাপ্ত ($2)",
 	"globalblocking-unblock-logentry": "[[$1]]-এ বৈশ্বিক বাধাদান অপসারণ করা হয়েছে",
+	"globalblocking-logentry-whitelist": "$1 স্থানীয়ভাবে $3-এ বৈশ্বিক বাধাটি {{GENDER:$2|নিষ্ক্রিয় করেছেন}}",
+	"globalblocking-logentry-dewhitelist": "$1 স্থানীয়ভাবে $3-এ বৈশ্বিক বাধাটি {{GENDER:$2|পুনঃসক্রিয় করেছেন}}",
 	"globalblocking-modify-logentry": "[[$1]]-এ বৈশ্বিক বাধাদান সম্পাদনা করা হয়েছে ($2)",
 	"globalblocking-logentry-expiry": "মেয়াদ উত্তীর্ণের সময় $1",
 	"globalblocking-logentry-noexpiry": "কোনো মেয়াদ উত্তীর্ণের সময় ঠিক করা হয়নি",
@@ -84,5 +87,11 @@
 	"right-globalblock-whitelist": "স্থানীয়ভাবে বৈশ্বিক বাধাদান নিষ্ক্রিয় করো",
 	"action-globalblock-whitelist": "স্থানীয়ভাবে বৈশ্বিক বাধাদান নিষ্ক্রিয় করো",
 	"right-globalblock-exempt": "বৈশ্বিক বাধা বাইপাস করো",
-	"action-globalblock-exempt": "বৈশ্বিক বাধা বাইপাস করো"
+	"action-globalblock-exempt": "বৈশ্বিক বাধা বাইপাস করো",
+	"log-action-filter-gblblock": "বৈশ্বিক বাধার ধরন:",
+	"log-action-filter-gblblock-gblock": "বৈশ্বিক বাধা",
+	"log-action-filter-gblblock-gunblock": "বৈশ্বিক বাধা অপসারণ",
+	"log-action-filter-gblblock-modify": "বৈশ্বিক বাধা সম্পাদন",
+	"log-action-filter-gblblock-whitelist": "বৈশ্বিক বাধার সাদাতালিকায় যোগ",
+	"log-action-filter-gblblock-dwhitelist": "বৈশ্বিক বাধার সাদাতালিকা থেকে অপসারণ"
 }
