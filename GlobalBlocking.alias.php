@@ -104,6 +104,14 @@ $specialPageAliases['ce'] = array(
 	'RemoveGlobalBlock' => array( 'Глобальни_блокдӀаяккхар' ),
 );
 
+/** Czech (čeština) */
+$specialPageAliases['cs'] = array(
+	'GlobalBlock' => array( 'Globální_blokování' ),
+	'GlobalBlockList' => array( 'Seznam_globálních_blokování' ),
+	'RemoveGlobalBlock' => array( 'Globální_odblokování' ),
+	'GlobalBlockStatus' => array( 'Výjimky_z_globálních_blokování' ),
+);
+
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'GlobalBlock' => array( 'Globale_Sperre' ),
