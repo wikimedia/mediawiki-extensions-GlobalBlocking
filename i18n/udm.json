@@ -6,7 +6,7 @@
 		]
 	},
 	"globalblocking-block-reason": "Мугез:",
-	"globalblocking-block-expiry": "Йылпумъяськиз пыр:",
+	"globalblocking-block-expiry": "Йылпумъяськоз:",
 	"globalblocking-search-ip": "IP-адрес:",
 	"globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> (''$3'') заблокировать глобально [[Special:Contributions/$4|$4]] ''($5)''",
 	"globalblocking-list-anononly": "аноним гинэ",
