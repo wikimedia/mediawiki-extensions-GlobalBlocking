@@ -21,7 +21,7 @@
 	"globalblocking-block-expiryinvalid": "Gildislokin sem þú tilgreindir eru ógild.",
 	"globalblocking-block-submit": "Banna þetta vistfang altækt",
 	"globalblocking-modify-submit": "Breyta þessu altæku banni",
-	"globalblocking-block-success": "Tókst að banna vistfangið $1 öllum verkefnum.",
+	"globalblocking-block-success": "Bannaði vistfangið $1 á öllum verkefnum.",
 	"globalblocking-modify-success": "Tókst að breyta altæka banninu $1",
 	"globalblocking-block-alreadyblocked": "Vistfangið $1 er þegar bannað altækt.\nÞú getur skoðað það bann sem fyrir er á [[Special:GlobalBlockList|lista yfir altæk bönn]],\neða breytt stillingum bannsins með því að endursenda þetta eyðublað.",
 	"globalblocking-block-bigrange": "Fjöldabannið sem þú tilgreindir ($1) er of stórt til að banna.\nÞú mátt banna, í mestalagi, 65.536 vistföng (/16 raðir)",
