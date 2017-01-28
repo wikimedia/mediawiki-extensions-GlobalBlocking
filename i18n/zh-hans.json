@@ -30,7 +30,7 @@
 	"globalblocking-block-reason-dropdown": "* 一般封禁原因\n** 跨维基破坏\n** 跨维基滥用\n** 破坏",
 	"globalblocking-block-edit-dropdown": "编辑封禁原因",
 	"globalblocking-block-expiry": "终止时间：",
-	"globalblocking-block-expiry-selector-other": "其它时间:",
+	"globalblocking-block-expiry-selector-other": "其它时间：",
 	"globalblocking-block-legend": "全域封禁一个IP地址",
 	"globalblocking-ipaddress": "IP地址：",
 	"globalblocking-ipbanononly": "仅阻止匿名用户",
