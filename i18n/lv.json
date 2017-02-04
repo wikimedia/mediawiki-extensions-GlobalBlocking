@@ -3,13 +3,12 @@
 		"authors": [
 			"Geimeris",
 			"GreenZeb",
-			"Papuass"
+			"Papuass",
+			"Silraks"
 		]
 	},
 	"globalblocking-block": "Globāli bloķēt IP adresi",
 	"globalblocking-block-reason": "Iemesls:",
-	"globalblocking-block-otherreason": "Cits/papildu iemesls:",
-	"globalblocking-block-reasonotherlist": "Cits iemesls",
 	"globalblocking-block-reason-dropdown": "* Biezākie bloķēšanas iemesli\n** Spamošana vairākos viki\n** Noteikumu neievērošana vairākos viki\n** Vandālisms",
 	"globalblocking-block-expiry-selector-other": "Cits laiks:",
 	"globalblocking-block-legend": "Bloķēt IP adresi globāli",
@@ -27,5 +26,7 @@
 	"globalblocking-logpage": "Globālais bloķēšanas žurnāls",
 	"globalblocklist": "Globāli bloķēto IP adrešu saraksts",
 	"globalblock": "Globāli bloķēt IP adresi",
-	"right-globalblock": "Veikt lietotāju globālu bloķēšanu"
+	"right-globalblock": "Veikt lietotāju globālu bloķēšanu",
+	"right-globalblock-whitelist": "Lokāli atspējot globālo bloķēšanu",
+	"action-globalblock-whitelist": "lokāli atspējot globālo bloķēšanu"
 }
