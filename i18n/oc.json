@@ -78,5 +78,6 @@
 	"removeglobalblock": "Suprimir un blocatge global",
 	"right-globalblock": "Posicionar e suprimir los blocatges globals",
 	"right-globalblock-whitelist": "Desactivar localament los blocatges globals",
-	"right-globalblock-exempt": "Passar otra los blocatges globals"
+	"right-globalblock-exempt": "Passar otra los blocatges globals",
+	"apihelp-query+globalblocks-param-prop": "Quinas proprietats obténer."
 }
