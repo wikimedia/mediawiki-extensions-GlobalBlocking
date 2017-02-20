@@ -61,7 +61,7 @@
 	"globalblocking-whitelist-dewhitelisted": "Avètz reactivat lo blocatge global n° $2 sus l'adreça IP '''$1''' sus {{SITENAME}}.",
 	"globalblocking-whitelist-nochange": "Avètz pas modificat l'estatut local d'aqueste blocatge.",
 	"globalblocking-whitelist-intro": "Podètz utilizar aqueste formulari per modificar l'estatut local d’un blocatge global. Se un blocatge global es desactivat sus aqueste wiki, los utilizaires concernits per l’adreça IP poiràn editar normalament. [[Special:GlobalBlockList|Clicatz aicí]] per tornar a la lista globala.",
-	"globalblocking-blocked-nopassreset": "Podètz pas tornar inicializar los senhals d’utilizaire perque sètz blocat(ada) globalament.",
+	"globalblocking-blocked-nopassreset": "Podètz pas reïnicializar los senhals d’utilizaire perque sètz blocat(ada) globalament.",
 	"globalblocking-logpage": "Jornal dels blocatges globals",
 	"globalblocking-logpagetext": "Vaquí un jornal dels blocatges globals que son estats faits e revocats sus aqueste wiki.\nDeuriá èsser relevat que los blocatges globals pòdon èsser faits o anullats sus d’autres wikis, e que losdits blocatges globals son de natura a interferir sus aqueste wiki.\nPer visionar totes los blocatges globals actius, podètz visitar la [[Special:GlobalBlockList|lista dels blocatges globals]].",
 	"globalblocking-block-logentry": "[[$1]] blocat globalament amb una durada d’expiracion de $2",
