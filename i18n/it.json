@@ -19,7 +19,7 @@
 	"globalblocking-block-reason-dropdown": "* Motivi di blocco comune\n** Spam crosswiki\n** Abuso crosswiki\n** Vandalismo",
 	"globalblocking-block-edit-dropdown": "Modifica i motivi per il blocco",
 	"globalblocking-block-expiry": "Scadenza:",
-	"globalblocking-block-expiry-selector-other": "Durata non in elenco:",
+	"globalblocking-block-expiry-selector-other": "Altra durata:",
 	"globalblocking-block-legend": "Blocca globalmente un indirizzo IP",
 	"globalblocking-ipaddress": "Indirizzo IP:",
 	"globalblocking-ipbanononly": "Blocca solo utenti anonimi",
