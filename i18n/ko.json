@@ -11,7 +11,8 @@
 			"아라",
 			"Revi",
 			"Macofe",
-			"Ykhwong"
+			"Ykhwong",
+			"Jerrykim306"
 		]
 	},
 	"globalblocking-desc": "IP 주소를 [[Special:GlobalBlockList|다수의 위키]]에서 [[Special:GlobalBlock|차단]]할 수 있습니다",
@@ -109,5 +110,6 @@
 	"apihelp-query+globalblocks-param-start": "나열을 시작할 타임스탬프",
 	"apihelp-query+globalblocks-param-end": "나열을 끝낼 타임스탬프",
 	"apihelp-query+globalblocks-param-ids": "나열할 차단 ID, 파이프로 분리",
-	"apihelp-query+globalblocks-param-addresses": "검색할 IP 주소, 파이프로 분리"
+	"apihelp-query+globalblocks-param-addresses": "검색할 IP 주소, 파이프로 분리",
+	"apihelp-query+globalblocks-example-1": "모든 전역 차단 목록"
 }
