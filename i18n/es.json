@@ -21,14 +21,15 @@
 			"Kroji",
 			"Ryo567",
 			"Matiia",
-			"Indiralena"
+			"Indiralena",
+			"AlvaroMolina"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permite]] bloquear direcciones IP [[Special:GlobalBlockList|simultáneamente en varios wikis]]",
 	"globalblocking-block": "Bloquear globalmente una dirección IP",
 	"globalblocking-block-intro": "Puedes usar esta página para bloquear una dirección IP en todos los wikis.",
 	"globalblocking-block-reason": "Motivo:",
-	"globalblocking-block-reason-dropdown": "* Motivos comunes de bloqueo\n** Spam sobre varios wikis\n** Abusos sobre varios wikis\n** Vandalismo",
+	"globalblocking-block-reason-dropdown": "* Motivos comunes de bloqueo\n** Spam en varias wikis\n** Abusos en varias wikis\n** Vandalismo",
 	"globalblocking-block-edit-dropdown": "Editar motivos de bloqueo",
 	"globalblocking-block-expiry": "Caducidad:",
 	"globalblocking-block-expiry-selector-other": "Otro tiempo:",
