@@ -48,7 +48,7 @@
 	"globalblocking-unblock-legend": "Levar un blocatge global",
 	"globalblocking-unblock-submit": "Levar lo blocatge global",
 	"globalblocking-unblock-reason": "Motiu :",
-	"globalblocking-unblock-unblocked": "Avètz capitat de levar lo blocatge global n° $2 correspondent a l’adreça IP '''$1'''",
+	"globalblocking-unblock-unblocked": "Avètz suprimit lo blocatge global n° $2 sus l’adreça IP '''$1'''.",
 	"globalblocking-unblock-intro": "Podètz utilizar aqueste formulari per levar un blocatge global.",
 	"globalblocking-whitelist": "Estatut local dels blocatges globals",
 	"globalblocking-whitelist-notapplied": "Los blocatges globals son pas aplicats a aqueste wiki,\nd'aquel fait l'estatut local del blocatge global pòt pas èsser modificat.",
