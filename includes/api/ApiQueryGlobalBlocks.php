@@ -32,7 +32,7 @@
 class ApiQueryGlobalBlocks extends ApiQueryBase {
 
 	/**
-	 * @var Database
+	 * @var IDatabase
 	 */
 	private $globalBlockingDb;
 
