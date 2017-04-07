@@ -254,11 +254,14 @@ class GlobalBlocking {
 
 	/**
 	 * @param int $dbtype either DB_SLAVE or DB_MASTER
-	 * @return DatabaseBase
+	 * @return \Wikimedia\Rdbms\IDatabase
 	 */
 	static function getGlobalBlockingDatabase( $dbtype ) {
 		global $wgGlobalBlockingDatabase;
-		return wfGetDB( $dbtype, 'globalblocking', $wgGlobalBlockingDatabase );
+
+		$lb = wfGetLB( $wgGlobalBlockingDatabase );
+
+		return $lb->getConnectionRef( $dbtype, 'globalblocking', $wgGlobalBlockingDatabase );
 	}
 
 	/**
