@@ -103,7 +103,8 @@
 		"OtherBlockLogLink": "GlobalBlockingHooks::onOtherBlockLogLink",
 		"SpecialContributionsBeforeMainOutput": "GlobalBlockingHooks::onSpecialContributionsBeforeMainOutput",
 		"UserMergeAccountFields": "GlobalBlockingHooks::onUserMergeAccountFields",
-		"LoadExtensionSchemaUpdates": "GlobalBlockingHooks::onLoadExtensionSchemaUpdates"
+		"LoadExtensionSchemaUpdates": "GlobalBlockingHooks::onLoadExtensionSchemaUpdates",
+		"GetLogTypesOnUser": "GlobalBlockingHooks::onGetLogTypesOnUser"
 	},
 	"config": {
 		"GlobalBlockingDatabase": {
