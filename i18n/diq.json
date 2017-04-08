@@ -8,7 +8,8 @@
 			"Mirzali",
 			"Xoser",
 			"Macofe",
-			"Kumkumuk"
+			"Kumkumuk",
+			"Gırd"
 		]
 	},
 	"globalblocking-desc": "Adresanê IP yer [[Special:GlobalBlockList|zafın wikiyan heta wedaryayışi rê]] [[Special:GlobalBlock|icazet dano]]",
@@ -82,7 +83,7 @@
 	"globalblocking-loglink": "IP-adresa globali $1 kilit biyo ([[{{#Special:GlobalBlockList}}/$1|detayan]]).",
 	"globalblocking-showlog": "Ena adresê IPyi verni de bloke biya.\nQeydé  bloki re referansi cor de mocneyayo:",
 	"globalblocklist": "Listey IP'yan de global bloqe bıyayan",
-	"globalblock": "Yew adresê IPyî wîkîyê hemî de blok bike",
+	"globalblock": "Yew adresê IPy global bloke ke",
 	"globalblockstatus": "Weziyetê lokalanê blokanê globalan",
 	"removeglobalblock": "Yew global blok wedarne",
 	"right-globalblock": "Global bloqey bıke u hewad",
