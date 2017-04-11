@@ -74,7 +74,7 @@
 	"globalblocking-unblock-submit": "移除全域封锁",
 	"globalblocking-unblock-reason": "原因：",
 	"globalblocking-unblock-unblocked": "您己经移除了在IP地址'''$1'''上的全域封禁#$2。",
-	"globalblocking-unblock-intro": "你可以使用该表格移除全域封禁。",
+	"globalblocking-unblock-intro": "您可以使用该表格移除全域封禁。",
 	"globalblocking-whitelist": "全域封锁的本地状态",
 	"globalblocking-whitelist-notapplied": "全域封锁不适用于本维基，\n所以本地全域封锁状态没有被修改。",
 	"globalblocking-whitelist-legend": "更改本地状态",
