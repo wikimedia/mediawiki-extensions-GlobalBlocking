@@ -26,7 +26,7 @@
 	"globalblocking-block-alreadyblocked": "Ti adres ti IP ti $1 ket global metten a naserraan.\nMakitam ti addaan a serra iti [[Special:GlobalBlockList|listaan dagiti global a serra]],\nwenno baliwam ti kasasaad ti addaan a serra babaen ti panangited iti daytoy a porma.",
 	"globalblocking-block-bigrange": "Ti sakup a nainaganam ($1) ket dakkel unay a maserraan.\nMabalinmo a serraan, iti kaaduuan, dagiti 65, 536 nga adres (/16 a saksakup).",
 	"globalblocking-also-local": "Lokal pay a serraan ti naited nga adres ti IP iti daytoy a wiki",
-	"globalblocking-list-intro": "Daytoy ket listaan kadagiti amin a sangalubongan a serra nga agdama a banag.\nAdda dagiti serra a namarkaan a kas lokal a nabaldado: kayat na a sawen daytoy a naikabil da kadagit sabali a pagsaadan, ngem ti lokal nga administrador ket ipatona a nabaldado iti daytoy a wiki.",
+	"globalblocking-list-intro": "Daytoy ket listaan dagiti amin a global a serra nga agdama a mabangan.\nAdda dagiti serra a namarkaan a kas lokal a nabaldado: ti kayatna a sawen daytoy ket maipakatda kadagiti sabali a sitio, ngem ti lokal nga administrador ket inkeddengna a nabaldado iti daytoy a wiki.",
 	"globalblocking-list": "Listaan dagiti global a naserraan nga adres ti IP",
 	"globalblocking-search-legend": "Agbiruk iti sangalubongan a serra",
 	"globalblocking-search-ip": "Adres ti IP:",
