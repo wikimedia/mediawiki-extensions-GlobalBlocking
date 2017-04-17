@@ -11,7 +11,8 @@
 			"JurgenNL",
 			"Macofe",
 			"Sjoerddebruin",
-			"Mainframe98"
+			"Mainframe98",
+			"Trijnstel"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Maakt het mogelijk]] IP-adressen [[Special:GlobalBlockList|in meerdere wiki's tegelijk]] te blokkeren",
@@ -81,6 +82,8 @@
 	"globalblocking-block-logentry": "heeft [[$1]] globaal geblokkeerd met een vervaltijd van $2",
 	"globalblocking-block2-logentry": "heeft [[$1]] globaal geblokkeerd ($2)",
 	"globalblocking-unblock-logentry": "heeft de globale blokkade voor [[$1]] verwijderd",
+	"globalblocking-logentry-whitelist": "$1 heeft de globale blokkade van $3 lokaal {{GENDER:$2|opgeheven}}",
+	"globalblocking-logentry-dewhitelist": "$1 heeft de globale blokkade van $3 lokaal opnieuw {{GENDER:$2|ingesteld}}",
 	"globalblocking-modify-logentry": "heeft de globale blokkade voor [[$1]] aangepast ($2)",
 	"globalblocking-logentry-expiry": "vervalt op $1",
 	"globalblocking-logentry-noexpiry": "geen vervaldatum ingesteld",
@@ -96,5 +99,11 @@
 	"right-globalblock-whitelist": "Globale blokkades lokaal negeren",
 	"action-globalblock-whitelist": "globale blokkades lokaal te negeren",
 	"right-globalblock-exempt": "Globale blokkades omzeilen",
-	"action-globalblock-exempt": "globale blokkades te omzeilen"
+	"action-globalblock-exempt": "globale blokkades te omzeilen",
+	"log-action-filter-gblblock": "Soort globale blokkade:",
+	"log-action-filter-gblblock-gblock": "Globale blokkade",
+	"log-action-filter-gblblock-gunblock": "Opheffing van globale blokkade",
+	"log-action-filter-gblblock-modify": "Aanpassing van globale blokkade",
+	"log-action-filter-gblblock-whitelist": "Toevoeging aan witte lijst van globale blokkade",
+	"log-action-filter-gblblock-dwhitelist": "Verwijdering van witte lijst van globale blokkade"
 }
