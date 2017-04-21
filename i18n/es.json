@@ -97,7 +97,7 @@
 	"globalblocking-unblock-logentry": "desactivó el bloqueo global en [[$1]]",
 	"globalblocking-logentry-whitelist": "$1 {{GENDER:$2|desactivó}} el bloqueo global de $3 localmente",
 	"globalblocking-logentry-dewhitelist": "$1 {{GENDER:$2|reactivó}} el bloqueo global de $3 localmente",
-	"globalblocking-modify-logentry": "modificó el bloqueo global en [[$1]] ($2)",
+	"globalblocking-modify-logentry": "modificó el bloqueo global de [[$1]] ($2)",
 	"globalblocking-logentry-expiry": "caduca el $1",
 	"globalblocking-logentry-noexpiry": "sin fecha de caducidad",
 	"globalblocking-loglink": "La dirección IP $1 está bloqueada globalmente ([[{{#Special:GlobalBlockList}}/$1|detalles]]).",
