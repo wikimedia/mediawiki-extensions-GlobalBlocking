@@ -7,7 +7,8 @@
 			"Runningfridgesrule",
 			"Suelnur",
 			"Macofe",
-			"Rapsar"
+			"Rapsar",
+			"Vito Genovese"
 		]
 	},
 	"globalblocking-desc": "IP addreslerinin [[Special:GlobalBlockList|çoklu vikiler boyunca engellenmesine]] [[Special:GlobalBlock|izin verir]]",
@@ -77,7 +78,7 @@
 	"globalblocking-logentry-expiry": "$1 tarihinde bitiyor",
 	"globalblocking-logentry-noexpiry": "bitiş tarihi ayarlanmadı",
 	"globalblocking-loglink": "IP adresi $1 küresel olarak engellenmiş ([[{{#Special:GlobalBlockList}}/$1|tüm ayrıntılar]]).",
-	"globalblocking-contribs-notice": "Bu Ip adresi küresel olarak engellenmiştir.\nKüresel engel kaydı aşağıda belirtilmektedir:",
+	"globalblocking-contribs-notice": "Bu Ip adresi şu anda küresel olarak engellidir.\nKüresel engel günlüğü, başvuru amacıyla aşağıda verilmiştir:",
 	"globalblocking-showlog": "Bu IP adresi daha önce engellenmiş.\nEngelleme günlüğü referans için aşağıda verilmiştir:",
 	"globalblocklist": "Küresel olarak engellenmiş IP adresleri listesi",
 	"globalblock": "Bir IP adresini küresel olarak engelle",
