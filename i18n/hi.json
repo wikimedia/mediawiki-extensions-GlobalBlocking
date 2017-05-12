@@ -17,7 +17,7 @@
 	"globalblocking-block-edit-dropdown": "सम्पादन अवरोधी कारण",
 	"globalblocking-block-expiry": "अवरुद्ध-ब्लॉक समाप्ति वैश्विक",
 	"globalblocking-block-expiry-selector-other": "अन्य समय:",
-	"globalblocking-block-legend": "एक सदस्य को ग्लोबली ब्लॉक करें",
+	"globalblocking-block-legend": "आईपी सदस्य को वैश्विक रूप से अवरोधित करें",
 	"globalblocking-ipaddress": "आईपी पता:",
 	"globalblocking-ipbanononly": "केवल अनाम सदस्यों पे प्रतिबंध लगाएँ",
 	"globalblocking-block-ipinvalid": "आपने दिया हुआ आईपी एड्रेस ($1) अवैध हैं।\nकृपया ध्यान दें आप सदस्यनाम नहीं दे सकतें!",
