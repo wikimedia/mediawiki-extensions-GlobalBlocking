@@ -37,7 +37,7 @@
 	"globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> (''$3'') sacara global mblokir [[Special:Contributions/$4|$4]] ''($5)''",
 	"globalblocking-list-expiry": "kadaluwarsa $1",
 	"globalblocking-list-anononly": "anon-waé",
-	"globalblocking-list-unblock": "batal blokir",
+	"globalblocking-list-unblock": "busak",
 	"globalblocking-list-whitelisted": "dijabel sacara lokal déning $1: $2",
 	"globalblocking-list-whitelist": "status lokal",
 	"globalblocking-list-modify": "owah",
