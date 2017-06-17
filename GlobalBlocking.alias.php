@@ -5,552 +5,551 @@
  * @file
  * @ingroup Extensions
  */
-// @codingStandardsIgnoreFile
 
-$specialPageAliases = array();
+$specialPageAliases = [];
 
 /** English (English) */
-$specialPageAliases['en'] = array(
-	'GlobalBlock' => array( 'GlobalBlock' ),
-	'GlobalBlockList' => array( 'GlobalBlockList' ),
-	'RemoveGlobalBlock' => array( 'GlobalUnblock', 'RemoveGlobalBlock' ),
-	'GlobalBlockStatus' => array( 'GlobalBlockWhitelist', 'GlobalBlockStatus', 'DisableGlobalBlock' ),
-);
+$specialPageAliases['en'] = [
+	'GlobalBlock' => [ 'GlobalBlock' ],
+	'GlobalBlockList' => [ 'GlobalBlockList' ],
+	'RemoveGlobalBlock' => [ 'GlobalUnblock', 'RemoveGlobalBlock' ],
+	'GlobalBlockStatus' => [ 'GlobalBlockWhitelist', 'GlobalBlockStatus', 'DisableGlobalBlock' ],
+];
 
 /** Arabic (العربية) */
-$specialPageAliases['ar'] = array(
-	'GlobalBlock' => array( 'منع_عام' ),
-	'GlobalBlockList' => array( 'قائمة_منع_عامة' ),
-	'RemoveGlobalBlock' => array( 'رفع_منع_عام', 'إزالة_منع_عام' ),
-	'GlobalBlockStatus' => array( 'قائمة_المنع_العام_البيضاء', 'حالة_المنع_العام', 'تعطيل_المنع_العام' ),
-);
+$specialPageAliases['ar'] = [
+	'GlobalBlock' => [ 'منع_عام' ],
+	'GlobalBlockList' => [ 'قائمة_منع_عامة' ],
+	'RemoveGlobalBlock' => [ 'رفع_منع_عام', 'إزالة_منع_عام' ],
+	'GlobalBlockStatus' => [ 'قائمة_المنع_العام_البيضاء', 'حالة_المنع_العام', 'تعطيل_المنع_العام' ],
+];
 
 /** Egyptian Arabic (مصرى) */
-$specialPageAliases['arz'] = array(
-	'GlobalBlock' => array( 'بلوك_عام' ),
-	'GlobalBlockList' => array( 'ليستة_بلوك_عامه' ),
-	'RemoveGlobalBlock' => array( 'شيل_بلوك_عام' ),
-	'GlobalBlockStatus' => array( 'ليستة_البلوك_العام_البيضا', 'حالة_البلوك_العام', 'تعطيل_البلوك_العام' ),
-);
+$specialPageAliases['arz'] = [
+	'GlobalBlock' => [ 'بلوك_عام' ],
+	'GlobalBlockList' => [ 'ليستة_بلوك_عامه' ],
+	'RemoveGlobalBlock' => [ 'شيل_بلوك_عام' ],
+	'GlobalBlockStatus' => [ 'ليستة_البلوك_العام_البيضا', 'حالة_البلوك_العام', 'تعطيل_البلوك_العام' ],
+];
 
 /** Assamese (অসমীয়া) */
-$specialPageAliases['as'] = array(
-	'GlobalBlock' => array( 'গোলকীয়_অৱৰোধ' ),
-	'GlobalBlockList' => array( 'গোলকীয়_অৱৰোধ_তালিকা' ),
-);
+$specialPageAliases['as'] = [
+	'GlobalBlock' => [ 'গোলকীয়_অৱৰোধ' ],
+	'GlobalBlockList' => [ 'গোলকীয়_অৱৰোধ_তালিকা' ],
+];
 
 /** Avaric (авар) */
-$specialPageAliases['av'] = array(
-	'GlobalBlock' => array( 'Глобальная_блокировка' ),
-	'GlobalBlockList' => array( 'Список_глобальных_блокировок', 'Глобальные_блокировки' ),
-	'RemoveGlobalBlock' => array( 'Глобальная_разблокировка' ),
-);
+$specialPageAliases['av'] = [
+	'GlobalBlock' => [ 'Глобальная_блокировка' ],
+	'GlobalBlockList' => [ 'Список_глобальных_блокировок', 'Глобальные_блокировки' ],
+	'RemoveGlobalBlock' => [ 'Глобальная_разблокировка' ],
+];
 
 /** Bashkir (башҡортса) */
-$specialPageAliases['ba'] = array(
-	'GlobalBlock' => array( 'GlobalBlock' ),
-	'GlobalBlockList' => array( 'GlobalBlockList' ),
-);
+$specialPageAliases['ba'] = [
+	'GlobalBlock' => [ 'GlobalBlock' ],
+	'GlobalBlockList' => [ 'GlobalBlockList' ],
+];
 
 /** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎) */
-$specialPageAliases['be-tarask'] = array(
-	'GlobalBlock' => array( 'Глябальнае_блякаваньне' ),
-	'GlobalBlockList' => array( 'Сьпіс_глябальных_блякаваньняў' ),
-);
+$specialPageAliases['be-tarask'] = [
+	'GlobalBlock' => [ 'Глябальнае_блякаваньне' ],
+	'GlobalBlockList' => [ 'Сьпіс_глябальных_блякаваньняў' ],
+];
 
 /** Western Balochi (بلوچی رخشانی) */
-$specialPageAliases['bgn'] = array(
-	'GlobalBlock' => array( 'سراسرین_بستین' ),
-	'GlobalBlockList' => array( 'سراسرین_بسته_بوته_ئانی_لیست' ),
-	'RemoveGlobalBlock' => array( 'سراسری_ئی_پاچ_کورتین' ),
-	'GlobalBlockStatus' => array( 'سراسرین_بستن_ئی_سپیت_لیست' ),
-);
+$specialPageAliases['bgn'] = [
+	'GlobalBlock' => [ 'سراسرین_بستین' ],
+	'GlobalBlockList' => [ 'سراسرین_بسته_بوته_ئانی_لیست' ],
+	'RemoveGlobalBlock' => [ 'سراسری_ئی_پاچ_کورتین' ],
+	'GlobalBlockStatus' => [ 'سراسرین_بستن_ئی_سپیت_لیست' ],
+];
 
 /** Banjar (Bahasa Banjar) */
-$specialPageAliases['bjn'] = array(
-	'GlobalBlock' => array( 'Pamblukiran_global' ),
-	'GlobalBlockList' => array( 'Daptar_pamblukiran_global' ),
-	'RemoveGlobalBlock' => array( 'Walangakan_pamblukiran_global' ),
-	'GlobalBlockStatus' => array( 'Daptar_putih_pamblukiran_global' ),
-);
+$specialPageAliases['bjn'] = [
+	'GlobalBlock' => [ 'Pamblukiran_global' ],
+	'GlobalBlockList' => [ 'Daptar_pamblukiran_global' ],
+	'RemoveGlobalBlock' => [ 'Walangakan_pamblukiran_global' ],
+	'GlobalBlockStatus' => [ 'Daptar_putih_pamblukiran_global' ],
+];
 
 /** Bengali (বাংলা) */
-$specialPageAliases['bn'] = array(
-	'GlobalBlock' => array( 'বৈশ্বিক_বাধাদান', 'বৈশ্বিক_বাধা' ),
-	'GlobalBlockList' => array( 'বৈশ্বিক_বাধাদানের_তালিকা', 'বৈশ্বিক_বাধার_তালিকা' ),
-	'RemoveGlobalBlock' => array( 'বৈশ্বিক_বাধাদান_অপসারণ', 'বৈশ্বিক_বাধা_অপসারণ', 'বৈশ্বিক_বাধা_তোলা' ),
-	'GlobalBlockStatus' => array( 'বৈশ্বিক_বাধাদানের_সাদাতালিকা', 'বৈশ্বিক_বাধার_অবস্থা', 'বৈশ্বিক_বাধাদানের_অবস্থা', 'বৈশ্বিক_বাধা_নিষ্ক্রিয়করণ' ),
-);
+$specialPageAliases['bn'] = [
+	'GlobalBlock' => [ 'বৈশ্বিক_বাধাদান', 'বৈশ্বিক_বাধা' ],
+	'GlobalBlockList' => [ 'বৈশ্বিক_বাধাদানের_তালিকা', 'বৈশ্বিক_বাধার_তালিকা' ],
+	'RemoveGlobalBlock' => [ 'বৈশ্বিক_বাধাদান_অপসারণ', 'বৈশ্বিক_বাধা_অপসারণ', 'বৈশ্বিক_বাধা_তোলা' ],
+	'GlobalBlockStatus' => [ 'বৈশ্বিক_বাধাদানের_সাদাতালিকা', 'বৈশ্বিক_বাধার_অবস্থা', 'বৈশ্বিক_বাধাদানের_অবস্থা', 'বৈশ্বিক_বাধা_নিষ্ক্রিয়করণ' ],
+];
 
 /** Breton (brezhoneg) */
-$specialPageAliases['br'] = array(
-	'GlobalBlock' => array( 'StankadennHollek' ),
-	'GlobalBlockList' => array( 'RollStankadennoùHollek' ),
-	'RemoveGlobalBlock' => array( 'DistankadennHollek' ),
-);
+$specialPageAliases['br'] = [
+	'GlobalBlock' => [ 'StankadennHollek' ],
+	'GlobalBlockList' => [ 'RollStankadennoùHollek' ],
+	'RemoveGlobalBlock' => [ 'DistankadennHollek' ],
+];
 
 /** Bosnian (bosanski) */
-$specialPageAliases['bs'] = array(
-	'GlobalBlock' => array( 'GlobalnoBlokiranje' ),
-	'GlobalBlockList' => array( 'ListaGlobalnogBlokiranja' ),
-	'RemoveGlobalBlock' => array( 'GlobalnoDeblokiranje', 'UklanjanjeGlobalnogBlokiranja' ),
-	'GlobalBlockStatus' => array( 'GlobalniDopusteniSpisak' ),
-);
+$specialPageAliases['bs'] = [
+	'GlobalBlock' => [ 'GlobalnoBlokiranje' ],
+	'GlobalBlockList' => [ 'ListaGlobalnogBlokiranja' ],
+	'RemoveGlobalBlock' => [ 'GlobalnoDeblokiranje', 'UklanjanjeGlobalnogBlokiranja' ],
+	'GlobalBlockStatus' => [ 'GlobalniDopusteniSpisak' ],
+];
 
 /** Chechen (нохчийн) */
-$specialPageAliases['ce'] = array(
-	'GlobalBlock' => array( 'Глобальни_блоктохар' ),
-	'GlobalBlockList' => array( 'Глобальни_блоктохарийн_могӀам' ),
-	'RemoveGlobalBlock' => array( 'Глобальни_блокдӀаяккхар' ),
-);
+$specialPageAliases['ce'] = [
+	'GlobalBlock' => [ 'Глобальни_блоктохар' ],
+	'GlobalBlockList' => [ 'Глобальни_блоктохарийн_могӀам' ],
+	'RemoveGlobalBlock' => [ 'Глобальни_блокдӀаяккхар' ],
+];
 
 /** Czech (čeština) */
-$specialPageAliases['cs'] = array(
-	'GlobalBlock' => array( 'Globální_blokování' ),
-	'GlobalBlockList' => array( 'Seznam_globálních_blokování' ),
-	'RemoveGlobalBlock' => array( 'Globální_odblokování' ),
-	'GlobalBlockStatus' => array( 'Výjimky_z_globálních_blokování' ),
-);
+$specialPageAliases['cs'] = [
+	'GlobalBlock' => [ 'Globální_blokování' ],
+	'GlobalBlockList' => [ 'Seznam_globálních_blokování' ],
+	'RemoveGlobalBlock' => [ 'Globální_odblokování' ],
+	'GlobalBlockStatus' => [ 'Výjimky_z_globálních_blokování' ],
+];
 
 /** German (Deutsch) */
-$specialPageAliases['de'] = array(
-	'GlobalBlock' => array( 'Globale_Sperre' ),
-	'GlobalBlockList' => array( 'Liste_globaler_Sperren' ),
-	'RemoveGlobalBlock' => array( 'Globale_Sperre_aufheben' ),
-	'GlobalBlockStatus' => array( 'Ausnahme_von_globaler_Sperre' ),
-);
+$specialPageAliases['de'] = [
+	'GlobalBlock' => [ 'Globale_Sperre' ],
+	'GlobalBlockList' => [ 'Liste_globaler_Sperren' ],
+	'RemoveGlobalBlock' => [ 'Globale_Sperre_aufheben' ],
+	'GlobalBlockStatus' => [ 'Ausnahme_von_globaler_Sperre' ],
+];
 
 /** Zazaki (Zazaki) */
-$specialPageAliases['diq'] = array(
-	'GlobalBlock' => array( 'GlobalBloqe' ),
-	'GlobalBlockList' => array( 'GlobalBloqeListe' ),
-	'RemoveGlobalBlock' => array( 'GlobalBloqebERDIŞ' ),
-	'GlobalBlockStatus' => array( 'GlobalBloqeListeyoPak' ),
-);
+$specialPageAliases['diq'] = [
+	'GlobalBlock' => [ 'GlobalBloqe' ],
+	'GlobalBlockList' => [ 'GlobalBloqeListe' ],
+	'RemoveGlobalBlock' => [ 'GlobalBloqebERDIŞ' ],
+	'GlobalBlockStatus' => [ 'GlobalBloqeListeyoPak' ],
+];
 
 /** Lower Sorbian (dolnoserbski) */
-$specialPageAliases['dsb'] = array(
-	'GlobalBlock' => array( 'Globalne_blokěrowanje' ),
-	'GlobalBlockList' => array( 'Lisćina_globalnych_blokěrowanjow' ),
-	'RemoveGlobalBlock' => array( 'Globalne_blokěrowanje_wótpóraś' ),
-	'GlobalBlockStatus' => array( 'Wuwześa_z_globalnego_blokěrowanja' ),
-);
+$specialPageAliases['dsb'] = [
+	'GlobalBlock' => [ 'Globalne_blokěrowanje' ],
+	'GlobalBlockList' => [ 'Lisćina_globalnych_blokěrowanjow' ],
+	'RemoveGlobalBlock' => [ 'Globalne_blokěrowanje_wótpóraś' ],
+	'GlobalBlockStatus' => [ 'Wuwześa_z_globalnego_blokěrowanja' ],
+];
 
 /** Esperanto (Esperanto) */
-$specialPageAliases['eo'] = array(
-	'GlobalBlock' => array( 'Ĉiea_forbaro' ),
-	'GlobalBlockList' => array( 'Ĉiea_forbarlisto' ),
-	'RemoveGlobalBlock' => array( 'Ĉiea_malforbaro' ),
-);
+$specialPageAliases['eo'] = [
+	'GlobalBlock' => [ 'Ĉiea_forbaro' ],
+	'GlobalBlockList' => [ 'Ĉiea_forbarlisto' ],
+	'RemoveGlobalBlock' => [ 'Ĉiea_malforbaro' ],
+];
 
 /** Spanish (español) */
-$specialPageAliases['es'] = array(
-	'GlobalBlock' => array( 'BloquearGlobal', 'Bloquear_global', 'Bloqueo_global' ),
-	'GlobalBlockList' => array( 'Lista_de_bloqueos_globales', 'Lista_bloqueos_globales' ),
-	'RemoveGlobalBlock' => array( 'DesbloquearGlobal', 'Desbloquear_global' ),
-	'GlobalBlockStatus' => array( 'Lista_blanca_de_bloqueos_globales', 'Lista_blanca_bloqueos_globales' ),
-);
+$specialPageAliases['es'] = [
+	'GlobalBlock' => [ 'BloquearGlobal', 'Bloquear_global', 'Bloqueo_global' ],
+	'GlobalBlockList' => [ 'Lista_de_bloqueos_globales', 'Lista_bloqueos_globales' ],
+	'RemoveGlobalBlock' => [ 'DesbloquearGlobal', 'Desbloquear_global' ],
+	'GlobalBlockStatus' => [ 'Lista_blanca_de_bloqueos_globales', 'Lista_blanca_bloqueos_globales' ],
+];
 
 /** Estonian (eesti) */
-$specialPageAliases['et'] = array(
-	'GlobalBlock' => array( 'Globaalselt_blokeerimine' ),
-	'GlobalBlockList' => array( 'Globaalne_blokeerimisloend' ),
-	'RemoveGlobalBlock' => array( 'Globaalse_blokeeringu_eemaldamine' ),
-	'GlobalBlockStatus' => array( 'Globaalsete_blokeeringute_valge_nimekiri' ),
-);
+$specialPageAliases['et'] = [
+	'GlobalBlock' => [ 'Globaalselt_blokeerimine' ],
+	'GlobalBlockList' => [ 'Globaalne_blokeerimisloend' ],
+	'RemoveGlobalBlock' => [ 'Globaalse_blokeeringu_eemaldamine' ],
+	'GlobalBlockStatus' => [ 'Globaalsete_blokeeringute_valge_nimekiri' ],
+];
 
 /** Persian (فارسی) */
-$specialPageAliases['fa'] = array(
-	'GlobalBlock' => array( 'بستن_سراسری' ),
-	'GlobalBlockList' => array( 'فهرست_بستن_سراسری' ),
-	'RemoveGlobalBlock' => array( 'بازکردن_سراسری' ),
-	'GlobalBlockStatus' => array( 'فهرست_سفید_بستن_سراسری' ),
-);
+$specialPageAliases['fa'] = [
+	'GlobalBlock' => [ 'بستن_سراسری' ],
+	'GlobalBlockList' => [ 'فهرست_بستن_سراسری' ],
+	'RemoveGlobalBlock' => [ 'بازکردن_سراسری' ],
+	'GlobalBlockStatus' => [ 'فهرست_سفید_بستن_سراسری' ],
+];
 
 /** Finnish (suomi) */
-$specialPageAliases['fi'] = array(
-	'GlobalBlock' => array( 'Globaaliesto' ),
-	'GlobalBlockList' => array( 'Globaaliestojen_lista' ),
-	'RemoveGlobalBlock' => array( 'Poista_globaaliesto' ),
-);
+$specialPageAliases['fi'] = [
+	'GlobalBlock' => [ 'Globaaliesto' ],
+	'GlobalBlockList' => [ 'Globaaliestojen_lista' ],
+	'RemoveGlobalBlock' => [ 'Poista_globaaliesto' ],
+];
 
 /** French (français) */
-$specialPageAliases['fr'] = array(
-	'GlobalBlock' => array( 'Blocage_global', 'BlocageGlobal' ),
-	'RemoveGlobalBlock' => array( 'Déblocage_global', 'DéblocageGlobal' ),
-);
+$specialPageAliases['fr'] = [
+	'GlobalBlock' => [ 'Blocage_global', 'BlocageGlobal' ],
+	'RemoveGlobalBlock' => [ 'Déblocage_global', 'DéblocageGlobal' ],
+];
 
 /** Arpitan (arpetan) */
-$specialPageAliases['frp'] = array(
-	'GlobalBlock' => array( 'Blocâjo_globâl', 'BlocâjoGlobâl' ),
-	'GlobalBlockList' => array( 'Lista_des_blocâjos_globâls', 'ListaDesBlocâjosGlobâls' ),
-	'RemoveGlobalBlock' => array( 'Dèblocâjo_globâl', 'DèblocâjoGlobâl' ),
-	'GlobalBlockStatus' => array( 'Lista_blanche_des_blocâjos_globâls', 'ListaBlancheDesBlocâjosGlobâls' ),
-);
+$specialPageAliases['frp'] = [
+	'GlobalBlock' => [ 'Blocâjo_globâl', 'BlocâjoGlobâl' ],
+	'GlobalBlockList' => [ 'Lista_des_blocâjos_globâls', 'ListaDesBlocâjosGlobâls' ],
+	'RemoveGlobalBlock' => [ 'Dèblocâjo_globâl', 'DèblocâjoGlobâl' ],
+	'GlobalBlockStatus' => [ 'Lista_blanche_des_blocâjos_globâls', 'ListaBlancheDesBlocâjosGlobâls' ],
+];
 
 /** Galician (galego) */
-$specialPageAliases['gl'] = array(
-	'GlobalBlock' => array( 'Bloqueo_global' ),
-	'GlobalBlockList' => array( 'Lista_de_bloqueos_globais' ),
-	'RemoveGlobalBlock' => array( 'Desbloqueo_global' ),
-	'GlobalBlockStatus' => array( 'Lista_branca_de_bloqueos_globais' ),
-);
+$specialPageAliases['gl'] = [
+	'GlobalBlock' => [ 'Bloqueo_global' ],
+	'GlobalBlockList' => [ 'Lista_de_bloqueos_globais' ],
+	'RemoveGlobalBlock' => [ 'Desbloqueo_global' ],
+	'GlobalBlockStatus' => [ 'Lista_branca_de_bloqueos_globais' ],
+];
 
 /** Swiss German (Alemannisch) */
-$specialPageAliases['gsw'] = array(
-	'GlobalBlock' => array( 'Wältwyti_Sperri' ),
-	'GlobalBlockList' => array( 'Lischt_vu_wältwyte_Sperrine' ),
-	'RemoveGlobalBlock' => array( 'Wältwyti_Sperri_uffhebe' ),
-	'GlobalBlockStatus' => array( 'Uusnahme_vun_ere_wältwyte_Sperri' ),
-);
+$specialPageAliases['gsw'] = [
+	'GlobalBlock' => [ 'Wältwyti_Sperri' ],
+	'GlobalBlockList' => [ 'Lischt_vu_wältwyte_Sperrine' ],
+	'RemoveGlobalBlock' => [ 'Wältwyti_Sperri_uffhebe' ],
+	'GlobalBlockStatus' => [ 'Uusnahme_vun_ere_wältwyte_Sperri' ],
+];
 
 /** Gujarati (ગુજરાતી) */
-$specialPageAliases['gu'] = array(
-	'GlobalBlock' => array( 'વૈશ્વિકપ્રતિબંધ' ),
-	'GlobalBlockList' => array( 'વૈશ્વિકપ્રતિબંધયાદી' ),
-);
+$specialPageAliases['gu'] = [
+	'GlobalBlock' => [ 'વૈશ્વિકપ્રતિબંધ' ],
+	'GlobalBlockList' => [ 'વૈશ્વિકપ્રતિબંધયાદી' ],
+];
 
 /** Hebrew (עברית) */
-$specialPageAliases['he'] = array(
-	'GlobalBlock' => array( 'חסימה_גלובלית' ),
-	'GlobalBlockList' => array( 'רשימת_חסומים_גלובליים' ),
-	'RemoveGlobalBlock' => array( 'שחרור_חסימה_גלובלית', 'הסרת_חסימה_גלובלית' ),
-	'GlobalBlockStatus' => array( 'רשימה_לבנה_לחסימה_גלובלית', 'מצב_חסימה_גלובלית', 'ביטול_חסימה_גלובלית' ),
-);
+$specialPageAliases['he'] = [
+	'GlobalBlock' => [ 'חסימה_גלובלית' ],
+	'GlobalBlockList' => [ 'רשימת_חסומים_גלובליים' ],
+	'RemoveGlobalBlock' => [ 'שחרור_חסימה_גלובלית', 'הסרת_חסימה_גלובלית' ],
+	'GlobalBlockStatus' => [ 'רשימה_לבנה_לחסימה_גלובלית', 'מצב_חסימה_גלובלית', 'ביטול_חסימה_גלובלית' ],
+];
 
 /** Hindi (हिन्दी) */
-$specialPageAliases['hi'] = array(
-	'GlobalBlock' => array( 'वैश्विक_अवरोध', 'वैश्विक_अवरोधन' ),
-	'GlobalBlockList' => array( 'वैश्विक_अवरोध_सूची' ),
-	'RemoveGlobalBlock' => array( 'वैश्विक_अवरोध_हटाएँ', 'वैश्विक_अवरोध_हटायें' ),
-	'GlobalBlockStatus' => array( 'वैश्विक_अवरोध_स्थानीय_स्थिति' ),
-);
+$specialPageAliases['hi'] = [
+	'GlobalBlock' => [ 'वैश्विक_अवरोध', 'वैश्विक_अवरोधन' ],
+	'GlobalBlockList' => [ 'वैश्विक_अवरोध_सूची' ],
+	'RemoveGlobalBlock' => [ 'वैश्विक_अवरोध_हटाएँ', 'वैश्विक_अवरोध_हटायें' ],
+	'GlobalBlockStatus' => [ 'वैश्विक_अवरोध_स्थानीय_स्थिति' ],
+];
 
 /** Croatian (hrvatski) */
-$specialPageAliases['hr'] = array(
-	'GlobalBlock' => array( 'Globalno_blokiraj' ),
-	'GlobalBlockList' => array( 'Globalno_blokirane_adrese' ),
-	'RemoveGlobalBlock' => array( 'Ukloni_globalno_blokiranje', 'Globalno_odblokiraj' ),
-	'GlobalBlockStatus' => array( 'Status_globalnog_blokiranja' ),
-);
+$specialPageAliases['hr'] = [
+	'GlobalBlock' => [ 'Globalno_blokiraj' ],
+	'GlobalBlockList' => [ 'Globalno_blokirane_adrese' ],
+	'RemoveGlobalBlock' => [ 'Ukloni_globalno_blokiranje', 'Globalno_odblokiraj' ],
+	'GlobalBlockStatus' => [ 'Status_globalnog_blokiranja' ],
+];
 
 /** Upper Sorbian (hornjoserbsce) */
-$specialPageAliases['hsb'] = array(
-	'GlobalBlock' => array( 'Globalne_blokowanje' ),
-	'GlobalBlockList' => array( 'Lisćina_globalnych_blokowanjow' ),
-	'RemoveGlobalBlock' => array( 'Globalne_blokowanje_wotstronić' ),
-	'GlobalBlockStatus' => array( 'Wuwzaća_z_globalneho_blokowanja' ),
-);
+$specialPageAliases['hsb'] = [
+	'GlobalBlock' => [ 'Globalne_blokowanje' ],
+	'GlobalBlockList' => [ 'Lisćina_globalnych_blokowanjow' ],
+	'RemoveGlobalBlock' => [ 'Globalne_blokowanje_wotstronić' ],
+	'GlobalBlockStatus' => [ 'Wuwzaća_z_globalneho_blokowanja' ],
+];
 
 /** Haitian (Kreyòl ayisyen) */
-$specialPageAliases['ht'] = array(
-	'GlobalBlock' => array( 'BlokajGlobal' ),
-	'GlobalBlockList' => array( 'LisBlokajGlobal' ),
-	'RemoveGlobalBlock' => array( 'DeblokajGlobal', 'RetireBlokajGlobal' ),
-	'GlobalBlockStatus' => array( 'LisPèmètBlokajGlobal', 'EstatiBlokajGlobal', 'DeaktiveBlokajGlobal' ),
-);
+$specialPageAliases['ht'] = [
+	'GlobalBlock' => [ 'BlokajGlobal' ],
+	'GlobalBlockList' => [ 'LisBlokajGlobal' ],
+	'RemoveGlobalBlock' => [ 'DeblokajGlobal', 'RetireBlokajGlobal' ],
+	'GlobalBlockStatus' => [ 'LisPèmètBlokajGlobal', 'EstatiBlokajGlobal', 'DeaktiveBlokajGlobal' ],
+];
 
 /** Hungarian (magyar) */
-$specialPageAliases['hu'] = array(
-	'GlobalBlock' => array( 'Globális_blokkolás' ),
-	'GlobalBlockList' => array( 'Globális_blokkok_listája' ),
-	'RemoveGlobalBlock' => array( 'Globális_feloldás' ),
-);
+$specialPageAliases['hu'] = [
+	'GlobalBlock' => [ 'Globális_blokkolás' ],
+	'GlobalBlockList' => [ 'Globális_blokkok_listája' ],
+	'RemoveGlobalBlock' => [ 'Globális_feloldás' ],
+];
 
 /** Interlingua (interlingua) */
-$specialPageAliases['ia'] = array(
-	'GlobalBlock' => array( 'Blocada_global' ),
-	'GlobalBlockList' => array( 'Lista_de_blocadas_global' ),
-	'RemoveGlobalBlock' => array( 'Disblocada_global', 'Remover_blocada_global' ),
-	'GlobalBlockStatus' => array( 'Lista_blanc_de_blocadas_global', 'Stato_de_blocadas_global', 'Disactivar_blocada_global' ),
-);
+$specialPageAliases['ia'] = [
+	'GlobalBlock' => [ 'Blocada_global' ],
+	'GlobalBlockList' => [ 'Lista_de_blocadas_global' ],
+	'RemoveGlobalBlock' => [ 'Disblocada_global', 'Remover_blocada_global' ],
+	'GlobalBlockStatus' => [ 'Lista_blanc_de_blocadas_global', 'Stato_de_blocadas_global', 'Disactivar_blocada_global' ],
+];
 
 /** Indonesian (Bahasa Indonesia) */
-$specialPageAliases['id'] = array(
-	'GlobalBlock' => array( 'Pemblokiran_global', 'PemblokiranGlobal' ),
-	'GlobalBlockList' => array( 'Daftar_pemblokiran_global', 'DaftarPemblokiranGlobal' ),
-	'RemoveGlobalBlock' => array( 'Batalkan_pemblokiran_global', 'BatalkanPemblokiranGlobal' ),
-	'GlobalBlockStatus' => array( 'Daftar_putih_pemblokiran_global', 'DaftarPutihPemblokiranGlobal' ),
-);
+$specialPageAliases['id'] = [
+	'GlobalBlock' => [ 'Pemblokiran_global', 'PemblokiranGlobal' ],
+	'GlobalBlockList' => [ 'Daftar_pemblokiran_global', 'DaftarPemblokiranGlobal' ],
+	'RemoveGlobalBlock' => [ 'Batalkan_pemblokiran_global', 'BatalkanPemblokiranGlobal' ],
+	'GlobalBlockStatus' => [ 'Daftar_putih_pemblokiran_global', 'DaftarPutihPemblokiranGlobal' ],
+];
 
 /** Italian (italiano) */
-$specialPageAliases['it'] = array(
-	'GlobalBlock' => array( 'BloccoGlobale' ),
-	'GlobalBlockList' => array( 'ElencoBlocchiGlobali', 'ListaBlocchiGlobali' ),
-	'RemoveGlobalBlock' => array( 'SbloccoGlobale' ),
-	'GlobalBlockStatus' => array( 'StatoLocaleBloccoGlobale', 'DisabilitaBloccoGlobale', 'ListaBiancaBloccoGlobale' ),
-);
+$specialPageAliases['it'] = [
+	'GlobalBlock' => [ 'BloccoGlobale' ],
+	'GlobalBlockList' => [ 'ElencoBlocchiGlobali', 'ListaBlocchiGlobali' ],
+	'RemoveGlobalBlock' => [ 'SbloccoGlobale' ],
+	'GlobalBlockStatus' => [ 'StatoLocaleBloccoGlobale', 'DisabilitaBloccoGlobale', 'ListaBiancaBloccoGlobale' ],
+];
 
 /** Japanese (日本語) */
-$specialPageAliases['ja'] = array(
-	'GlobalBlock' => array( 'グローバルブロック', 'グローバル・ブロック' ),
-	'GlobalBlockList' => array( 'グローバルブロック一覧', 'グローバル・ブロック一覧' ),
-	'RemoveGlobalBlock' => array( 'グローバルブロック解除', 'グローバル・ブロック解除' ),
-	'GlobalBlockStatus' => array( 'グローバルブロックホワイトリスト', 'グローバルブロック状態', 'グローバルブロック無効' ),
-);
+$specialPageAliases['ja'] = [
+	'GlobalBlock' => [ 'グローバルブロック', 'グローバル・ブロック' ],
+	'GlobalBlockList' => [ 'グローバルブロック一覧', 'グローバル・ブロック一覧' ],
+	'RemoveGlobalBlock' => [ 'グローバルブロック解除', 'グローバル・ブロック解除' ],
+	'GlobalBlockStatus' => [ 'グローバルブロックホワイトリスト', 'グローバルブロック状態', 'グローバルブロック無効' ],
+];
 
 /** Georgian (ქართული) */
-$specialPageAliases['ka'] = array(
-	'GlobalBlock' => array( 'გლობალური_დაბლოკვა' ),
-	'GlobalBlockList' => array( 'გლობალური_ბლოკირებების_სია' ),
-	'RemoveGlobalBlock' => array( 'გლობალური_ბლოკის_მოხსნა' ),
-);
+$specialPageAliases['ka'] = [
+	'GlobalBlock' => [ 'გლობალური_დაბლოკვა' ],
+	'GlobalBlockList' => [ 'გლობალური_ბლოკირებების_სია' ],
+	'RemoveGlobalBlock' => [ 'გლობალური_ბლოკის_მოხსნა' ],
+];
 
 /** Korean (한국어) */
-$specialPageAliases['ko'] = array(
-	'GlobalBlock' => array( '전역차단' ),
-	'GlobalBlockList' => array( '전역차단목록' ),
-	'RemoveGlobalBlock' => array( '전역차단취소', '전역차단해제' ),
-	'GlobalBlockStatus' => array( '전역차단허용목록', '전역차단화이트리스트', '전역차단비활성화' ),
-);
+$specialPageAliases['ko'] = [
+	'GlobalBlock' => [ '전역차단' ],
+	'GlobalBlockList' => [ '전역차단목록' ],
+	'RemoveGlobalBlock' => [ '전역차단취소', '전역차단해제' ],
+	'GlobalBlockStatus' => [ '전역차단허용목록', '전역차단화이트리스트', '전역차단비활성화' ],
+];
 
 /** Colognian (Ripoarisch) */
-$specialPageAliases['ksh'] = array(
-	'GlobalBlock' => array( 'Jemeinsam_Sperre' ),
-	'GlobalBlockList' => array( 'Leß_met_jemeinsam_Sperre' ),
-	'RemoveGlobalBlock' => array( 'Jemeinsam_Sperre_ophävve', 'Jemeinsam_Sperre_ophevve' ),
-	'GlobalBlockStatus' => array( 'Ußnahme_vun_de_jemeinsam_Sperre' ),
-);
+$specialPageAliases['ksh'] = [
+	'GlobalBlock' => [ 'Jemeinsam_Sperre' ],
+	'GlobalBlockList' => [ 'Leß_met_jemeinsam_Sperre' ],
+	'RemoveGlobalBlock' => [ 'Jemeinsam_Sperre_ophävve', 'Jemeinsam_Sperre_ophevve' ],
+	'GlobalBlockStatus' => [ 'Ußnahme_vun_de_jemeinsam_Sperre' ],
+];
 
 /** Cornish (kernowek) */
-$specialPageAliases['kw'] = array(
-	'GlobalBlock' => array( 'DifenOllvysel' ),
-);
+$specialPageAliases['kw'] = [
+	'GlobalBlock' => [ 'DifenOllvysel' ],
+];
 
 /** Ladino (Ladino) */
-$specialPageAliases['lad'] = array(
-	'GlobalBlock' => array( 'BloqueoGlobbal' ),
-	'GlobalBlockList' => array( 'Lista_de_bloqueos_globbales' ),
-	'RemoveGlobalBlock' => array( 'DesbloquearGlobal' ),
-	'GlobalBlockStatus' => array( 'Lista_blanca_de_bloqueos_globbales' ),
-);
+$specialPageAliases['lad'] = [
+	'GlobalBlock' => [ 'BloqueoGlobbal' ],
+	'GlobalBlockList' => [ 'Lista_de_bloqueos_globbales' ],
+	'RemoveGlobalBlock' => [ 'DesbloquearGlobal' ],
+	'GlobalBlockStatus' => [ 'Lista_blanca_de_bloqueos_globbales' ],
+];
 
 /** Luxembourgish (Lëtzebuergesch) */
-$specialPageAliases['lb'] = array(
-	'GlobalBlock' => array( 'Global_Spären' ),
-	'GlobalBlockList' => array( 'Lëscht_vun_de_globale_Spären' ),
-	'RemoveGlobalBlock' => array( 'Global_Spär_ophiewen' ),
-	'GlobalBlockStatus' => array( 'Ausnahm_vun_der_globaler_Spär' ),
-);
+$specialPageAliases['lb'] = [
+	'GlobalBlock' => [ 'Global_Spären' ],
+	'GlobalBlockList' => [ 'Lëscht_vun_de_globale_Spären' ],
+	'RemoveGlobalBlock' => [ 'Global_Spär_ophiewen' ],
+	'GlobalBlockStatus' => [ 'Ausnahm_vun_der_globaler_Spär' ],
+];
 
 /** Macedonian (македонски) */
-$specialPageAliases['mk'] = array(
-	'GlobalBlock' => array( 'ГлобалноБлокирање' ),
-	'GlobalBlockList' => array( 'СписокНаГлобалниБлокирања' ),
-	'RemoveGlobalBlock' => array( 'ГлобалниДеблокирања', 'БришиГлобаленБлок' ),
-	'GlobalBlockStatus' => array( 'СтатусНаГлобаленБлок', 'ОневозможиГлобаленБлок' ),
-);
+$specialPageAliases['mk'] = [
+	'GlobalBlock' => [ 'ГлобалноБлокирање' ],
+	'GlobalBlockList' => [ 'СписокНаГлобалниБлокирања' ],
+	'RemoveGlobalBlock' => [ 'ГлобалниДеблокирања', 'БришиГлобаленБлок' ],
+	'GlobalBlockStatus' => [ 'СтатусНаГлобаленБлок', 'ОневозможиГлобаленБлок' ],
+];
 
 /** Malayalam (മലയാളം) */
-$specialPageAliases['ml'] = array(
-	'GlobalBlock' => array( 'ആഗോളതടയൽ' ),
-	'GlobalBlockList' => array( 'ആഗോളതടയൽപട്ടിക' ),
-	'RemoveGlobalBlock' => array( 'ആഗോളതടയൽനീക്കുക' ),
-	'GlobalBlockStatus' => array( 'ആഗോളതടയൽശുദ്ധപട്ടിക', 'ആഗോളതടയൽസ്ഥിതി', 'ആഗോളതടയൽപട്ടികനിർജീവമാക്കുക' ),
-);
+$specialPageAliases['ml'] = [
+	'GlobalBlock' => [ 'ആഗോളതടയൽ' ],
+	'GlobalBlockList' => [ 'ആഗോളതടയൽപട്ടിക' ],
+	'RemoveGlobalBlock' => [ 'ആഗോളതടയൽനീക്കുക' ],
+	'GlobalBlockStatus' => [ 'ആഗോളതടയൽശുദ്ധപട്ടിക', 'ആഗോളതടയൽസ്ഥിതി', 'ആഗോളതടയൽപട്ടികനിർജീവമാക്കുക' ],
+];
 
 /** Marathi (मराठी) */
-$specialPageAliases['mr'] = array(
-	'GlobalBlock' => array( 'वैश्विकब्लॉक' ),
-	'GlobalBlockList' => array( 'वैश्विकब्लॉकयादी' ),
-	'RemoveGlobalBlock' => array( 'वैश्विकअनब्लॉक' ),
-	'GlobalBlockStatus' => array( 'वैश्विकब्लॉकश्वेतपत्र' ),
-);
+$specialPageAliases['mr'] = [
+	'GlobalBlock' => [ 'वैश्विकब्लॉक' ],
+	'GlobalBlockList' => [ 'वैश्विकब्लॉकयादी' ],
+	'RemoveGlobalBlock' => [ 'वैश्विकअनब्लॉक' ],
+	'GlobalBlockStatus' => [ 'वैश्विकब्लॉकश्वेतपत्र' ],
+];
 
 /** Malay (Bahasa Melayu) */
-$specialPageAliases['ms'] = array(
-	'GlobalBlock' => array( 'Sekatan_sejagat' ),
-	'GlobalBlockList' => array( 'Senarai_sekatan_sejagat' ),
-	'RemoveGlobalBlock' => array( 'Batal_sekatan_sejagat' ),
-	'GlobalBlockStatus' => array( 'Senarai_putih_sekatan_sejagat' ),
-);
+$specialPageAliases['ms'] = [
+	'GlobalBlock' => [ 'Sekatan_sejagat' ],
+	'GlobalBlockList' => [ 'Senarai_sekatan_sejagat' ],
+	'RemoveGlobalBlock' => [ 'Batal_sekatan_sejagat' ],
+	'GlobalBlockStatus' => [ 'Senarai_putih_sekatan_sejagat' ],
+];
 
 /** Maltese (Malti) */
-$specialPageAliases['mt'] = array(
-	'GlobalBlock' => array( 'BlokkGlobali' ),
-	'GlobalBlockList' => array( 'ListaBlokkGlobali' ),
-);
+$specialPageAliases['mt'] = [
+	'GlobalBlock' => [ 'BlokkGlobali' ],
+	'GlobalBlockList' => [ 'ListaBlokkGlobali' ],
+];
 
 /** Norwegian Bokmål (norsk bokmål) */
-$specialPageAliases['nb'] = array(
-	'GlobalBlock' => array( 'Blokker_globalt', 'Global_blokkering' ),
-	'GlobalBlockList' => array( 'Global_blokkeringsliste' ),
-	'RemoveGlobalBlock' => array( 'Avblokker_globalt', 'Global_avblokkering' ),
-	'GlobalBlockStatus' => array( 'Hviteliste_for_global_blokkering' ),
-);
+$specialPageAliases['nb'] = [
+	'GlobalBlock' => [ 'Blokker_globalt', 'Global_blokkering' ],
+	'GlobalBlockList' => [ 'Global_blokkeringsliste' ],
+	'RemoveGlobalBlock' => [ 'Avblokker_globalt', 'Global_avblokkering' ],
+	'GlobalBlockStatus' => [ 'Hviteliste_for_global_blokkering' ],
+];
 
 /** Low Saxon (Netherlands) (Nedersaksies) */
-$specialPageAliases['nds-nl'] = array(
-	'GlobalBlock' => array( 'Globaal_blokkeren' ),
-	'GlobalBlockList' => array( 'Globale_blokkeerlieste' ),
-	'RemoveGlobalBlock' => array( 'Globaal_deblokkeren' ),
-	'GlobalBlockStatus' => array( 'Witte_lieste_blokkeringen' ),
-);
+$specialPageAliases['nds-nl'] = [
+	'GlobalBlock' => [ 'Globaal_blokkeren' ],
+	'GlobalBlockList' => [ 'Globale_blokkeerlieste' ],
+	'RemoveGlobalBlock' => [ 'Globaal_deblokkeren' ],
+	'GlobalBlockStatus' => [ 'Witte_lieste_blokkeringen' ],
+];
 
 /** Dutch (Nederlands) */
-$specialPageAliases['nl'] = array(
-	'GlobalBlock' => array( 'GlobaalBlokkeren' ),
-	'GlobalBlockList' => array( 'GlobaleBlokkadelijst', 'GlobaleBlokkeerlijst' ),
-	'RemoveGlobalBlock' => array( 'GlobaalDeblokkeren', 'GlobaleBlokkadeVerwijderen' ),
-	'GlobalBlockStatus' => array( 'WitteLijstGlobaleBlokkades', 'GlobaleBlokkadestatus' ),
-);
+$specialPageAliases['nl'] = [
+	'GlobalBlock' => [ 'GlobaalBlokkeren' ],
+	'GlobalBlockList' => [ 'GlobaleBlokkadelijst', 'GlobaleBlokkeerlijst' ],
+	'RemoveGlobalBlock' => [ 'GlobaalDeblokkeren', 'GlobaleBlokkadeVerwijderen' ],
+	'GlobalBlockStatus' => [ 'WitteLijstGlobaleBlokkades', 'GlobaleBlokkadestatus' ],
+];
 
 /** Norwegian Nynorsk (norsk nynorsk) */
-$specialPageAliases['nn'] = array(
-	'GlobalBlockList' => array( 'Global_blokkeringsliste' ),
-);
+$specialPageAliases['nn'] = [
+	'GlobalBlockList' => [ 'Global_blokkeringsliste' ],
+];
 
 /** Occitan (occitan) */
-$specialPageAliases['oc'] = array(
-	'GlobalBlock' => array( 'Blocatge_global', 'BlocatgeGlobal' ),
-	'RemoveGlobalBlock' => array( 'Desblocatge_global', 'DesblocatgeGlobal' ),
-);
+$specialPageAliases['oc'] = [
+	'GlobalBlock' => [ 'Blocatge_global', 'BlocatgeGlobal' ],
+	'RemoveGlobalBlock' => [ 'Desblocatge_global', 'DesblocatgeGlobal' ],
+];
 
 /** Polish (polski) */
-$specialPageAliases['pl'] = array(
-	'GlobalBlock' => array( 'Zablokuj_globalnie' ),
-	'GlobalBlockList' => array( 'Spis_globalnie_zablokowanych_adresów_IP' ),
-	'RemoveGlobalBlock' => array( 'Odblokuj_globalnie' ),
-	'GlobalBlockStatus' => array( 'Lokalny_status_globalnych_blokad' ),
-);
+$specialPageAliases['pl'] = [
+	'GlobalBlock' => [ 'Zablokuj_globalnie' ],
+	'GlobalBlockList' => [ 'Spis_globalnie_zablokowanych_adresów_IP' ],
+	'RemoveGlobalBlock' => [ 'Odblokuj_globalnie' ],
+	'GlobalBlockStatus' => [ 'Lokalny_status_globalnych_blokad' ],
+];
 
 /** Pashto (پښتو) */
-$specialPageAliases['ps'] = array(
-	'GlobalBlock' => array( 'نړېوال_بنديزونه' ),
-);
+$specialPageAliases['ps'] = [
+	'GlobalBlock' => [ 'نړېوال_بنديزونه' ],
+];
 
 /** Portuguese (português) */
-$specialPageAliases['pt'] = array(
-	'GlobalBlock' => array( 'Bloqueio_global' ),
-	'GlobalBlockList' => array( 'Lista_de_bloqueios_globais' ),
-	'RemoveGlobalBlock' => array( 'Desbloqueio_global', 'Remover_bloqueio_global' ),
-	'GlobalBlockStatus' => array( 'Lista_branca_de_bloqueios_globais' ),
-);
+$specialPageAliases['pt'] = [
+	'GlobalBlock' => [ 'Bloqueio_global' ],
+	'GlobalBlockList' => [ 'Lista_de_bloqueios_globais' ],
+	'RemoveGlobalBlock' => [ 'Desbloqueio_global', 'Remover_bloqueio_global' ],
+	'GlobalBlockStatus' => [ 'Lista_branca_de_bloqueios_globais' ],
+];
 
 /** Brazilian Portuguese (português do Brasil) */
-$specialPageAliases['pt-br'] = array(
-	'GlobalBlock' => array( 'Bloquear_globalmente' ),
-);
+$specialPageAliases['pt-br'] = [
+	'GlobalBlock' => [ 'Bloquear_globalmente' ],
+];
 
 /** Quechua (Runa Simi) */
-$specialPageAliases['qu'] = array(
-	'GlobalBlock' => array( 'SapsiHarkay' ),
-	'GlobalBlockList' => array( 'SapsiHarkasqakuna' ),
-);
+$specialPageAliases['qu'] = [
+	'GlobalBlock' => [ 'SapsiHarkay' ],
+	'GlobalBlockList' => [ 'SapsiHarkasqakuna' ],
+];
 
 /** Romanian (română) */
-$specialPageAliases['ro'] = array(
-	'GlobalBlock' => array( 'Blocare_globală' ),
-	'GlobalBlockList' => array( 'Lista_de_blocări_globale' ),
-	'RemoveGlobalBlock' => array( 'Deblocare_globală', 'Elimină_blocarea_globală' ),
-	'GlobalBlockStatus' => array( 'Lista_albă_de_blocări_globale', 'Stare_blocare_globală', 'Dezactivare_blocare_globală' ),
-);
+$specialPageAliases['ro'] = [
+	'GlobalBlock' => [ 'Blocare_globală' ],
+	'GlobalBlockList' => [ 'Lista_de_blocări_globale' ],
+	'RemoveGlobalBlock' => [ 'Deblocare_globală', 'Elimină_blocarea_globală' ],
+	'GlobalBlockStatus' => [ 'Lista_albă_de_blocări_globale', 'Stare_blocare_globală', 'Dezactivare_blocare_globală' ],
+];
 
 /** Russian (русский) */
-$specialPageAliases['ru'] = array(
-	'GlobalBlock' => array( 'Глобальная_блокировка' ),
-	'GlobalBlockList' => array( 'Список_глобальных_блокировок', 'Глобальные_блокировки' ),
-	'RemoveGlobalBlock' => array( 'Глобальная_разблокировка' ),
-);
+$specialPageAliases['ru'] = [
+	'GlobalBlock' => [ 'Глобальная_блокировка' ],
+	'GlobalBlockList' => [ 'Список_глобальных_блокировок', 'Глобальные_блокировки' ],
+	'RemoveGlobalBlock' => [ 'Глобальная_разблокировка' ],
+];
 
 /** Sanskrit (संस्कृतम्) */
-$specialPageAliases['sa'] = array(
-	'GlobalBlock' => array( 'वैश्विकप्रतिबन्ध' ),
-	'GlobalBlockList' => array( 'वैश्विकप्रतिबन्धसूची' ),
-	'RemoveGlobalBlock' => array( 'वैश्विकअप्रतिबन्ध' ),
-	'GlobalBlockStatus' => array( 'वैश्विकअप्रतिबन्धसूची' ),
-);
+$specialPageAliases['sa'] = [
+	'GlobalBlock' => [ 'वैश्विकप्रतिबन्ध' ],
+	'GlobalBlockList' => [ 'वैश्विकप्रतिबन्धसूची' ],
+	'RemoveGlobalBlock' => [ 'वैश्विकअप्रतिबन्ध' ],
+	'GlobalBlockStatus' => [ 'वैश्विकअप्रतिबन्धसूची' ],
+];
 
 /** Sicilian (sicilianu) */
-$specialPageAliases['scn'] = array(
-	'GlobalBlock' => array( 'BloccoGlobale' ),
-	'GlobalBlockList' => array( 'ElencoBlocchiGlobali', 'ListaBlocchiGlobali' ),
-	'RemoveGlobalBlock' => array( 'SbloccoGlobale' ),
-	'GlobalBlockStatus' => array( 'StatoLocaleBloccoGlobale', 'DisabilitaBloccoGlobale', 'ListaBiancaBloccoGlobale' ),
-);
+$specialPageAliases['scn'] = [
+	'GlobalBlock' => [ 'BloccoGlobale' ],
+	'GlobalBlockList' => [ 'ElencoBlocchiGlobali', 'ListaBlocchiGlobali' ],
+	'RemoveGlobalBlock' => [ 'SbloccoGlobale' ],
+	'GlobalBlockStatus' => [ 'StatoLocaleBloccoGlobale', 'DisabilitaBloccoGlobale', 'ListaBiancaBloccoGlobale' ],
+];
 
 /** Slovak (slovenčina) */
-$specialPageAliases['sk'] = array(
-	'GlobalBlock' => array( 'GlobálneBlokovanie' ),
-	'GlobalBlockList' => array( 'ZoznamGlobálnehoBlokovania' ),
-	'RemoveGlobalBlock' => array( 'GlobálneOdblokovanie' ),
-	'GlobalBlockStatus' => array( 'BielaListinaGlobálnehoBlokovania' ),
-);
+$specialPageAliases['sk'] = [
+	'GlobalBlock' => [ 'GlobálneBlokovanie' ],
+	'GlobalBlockList' => [ 'ZoznamGlobálnehoBlokovania' ],
+	'RemoveGlobalBlock' => [ 'GlobálneOdblokovanie' ],
+	'GlobalBlockStatus' => [ 'BielaListinaGlobálnehoBlokovania' ],
+];
 
 /** Swedish (svenska) */
-$specialPageAliases['sv'] = array(
-	'GlobalBlock' => array( 'Global_blockering' ),
-	'GlobalBlockList' => array( 'Global_blockeringslista' ),
-	'RemoveGlobalBlock' => array( 'Global_avblockering' ),
-	'GlobalBlockStatus' => array( 'Vitlista_för_globala_blockeringar' ),
-);
+$specialPageAliases['sv'] = [
+	'GlobalBlock' => [ 'Global_blockering' ],
+	'GlobalBlockList' => [ 'Global_blockeringslista' ],
+	'RemoveGlobalBlock' => [ 'Global_avblockering' ],
+	'GlobalBlockStatus' => [ 'Vitlista_för_globala_blockeringar' ],
+];
 
 /** Tagalog (Tagalog) */
-$specialPageAliases['tl'] = array(
-	'GlobalBlock' => array( 'Pandaigdigang_paghadlang' ),
-	'GlobalBlockList' => array( 'Talaan_ng_pandaigdigang_paghadlang' ),
-	'RemoveGlobalBlock' => array( 'Pandaigdigang_hindi_paghadlang', 'Tanggalin_ang_pandaigdigang_paghadlang' ),
-	'GlobalBlockStatus' => array( 'Puting_talaan_ng_pandaigdigang_paghadlang', 'Kalagayan_ng_pandaigdigang_paghadlang', 'Huwag_paganahin_ang_pandaigdigang_paghadlang' ),
-);
+$specialPageAliases['tl'] = [
+	'GlobalBlock' => [ 'Pandaigdigang_paghadlang' ],
+	'GlobalBlockList' => [ 'Talaan_ng_pandaigdigang_paghadlang' ],
+	'RemoveGlobalBlock' => [ 'Pandaigdigang_hindi_paghadlang', 'Tanggalin_ang_pandaigdigang_paghadlang' ],
+	'GlobalBlockStatus' => [ 'Puting_talaan_ng_pandaigdigang_paghadlang', 'Kalagayan_ng_pandaigdigang_paghadlang', 'Huwag_paganahin_ang_pandaigdigang_paghadlang' ],
+];
 
 /** Turkish (Türkçe) */
-$specialPageAliases['tr'] = array(
-	'GlobalBlock' => array( 'KüreselEngel' ),
-	'GlobalBlockList' => array( 'KüreselEngelListesi' ),
-	'RemoveGlobalBlock' => array( 'KüreselEngelKaldırma' ),
-	'GlobalBlockStatus' => array( 'KüreselEngelBeyazListesi', 'KüreselEngelDurumu' ),
-);
+$specialPageAliases['tr'] = [
+	'GlobalBlock' => [ 'KüreselEngel' ],
+	'GlobalBlockList' => [ 'KüreselEngelListesi' ],
+	'RemoveGlobalBlock' => [ 'KüreselEngelKaldırma' ],
+	'GlobalBlockStatus' => [ 'KüreselEngelBeyazListesi', 'KüreselEngelDurumu' ],
+];
 
 /** Tatar (Cyrillic script) (татарча) */
-$specialPageAliases['tt-cyrl'] = array(
-	'GlobalBlock' => array( 'Глобаль_тыю' ),
-);
+$specialPageAliases['tt-cyrl'] = [
+	'GlobalBlock' => [ 'Глобаль_тыю' ],
+];
 
 /** Ukrainian (українська) */
-$specialPageAliases['uk'] = array(
-	'GlobalBlock' => array( 'Глобальне_блокування', 'Глобальная_блокировка' ),
-	'GlobalBlockList' => array( 'Перелік_глобальних_блокувань', 'Список_глобальных_блокировок', 'Глобальные_блокировки' ),
-	'RemoveGlobalBlock' => array( 'Глобальне_розблокування', 'Глобальная_разблокировка' ),
-);
+$specialPageAliases['uk'] = [
+	'GlobalBlock' => [ 'Глобальне_блокування', 'Глобальная_блокировка' ],
+	'GlobalBlockList' => [ 'Перелік_глобальних_блокувань', 'Список_глобальных_блокировок', 'Глобальные_блокировки' ],
+	'RemoveGlobalBlock' => [ 'Глобальне_розблокування', 'Глобальная_разблокировка' ],
+];
 
 /** Venetian (vèneto) */
-$specialPageAliases['vec'] = array(
-	'GlobalBlock' => array( 'BlocoGlobal' ),
-);
+$specialPageAliases['vec'] = [
+	'GlobalBlock' => [ 'BlocoGlobal' ],
+];
 
 /** Vietnamese (Tiếng Việt) */
-$specialPageAliases['vi'] = array(
-	'GlobalBlock' => array( 'Cấm_toàn_cục' ),
-	'GlobalBlockList' => array( 'Danh_sách_cấm_toàn_cục' ),
-	'RemoveGlobalBlock' => array( 'Bỏ_cấm_toàn_cục' ),
-	'GlobalBlockStatus' => array( 'Danh_sách_miễn_cấm_toàn_cục' ),
-);
+$specialPageAliases['vi'] = [
+	'GlobalBlock' => [ 'Cấm_toàn_cục' ],
+	'GlobalBlockList' => [ 'Danh_sách_cấm_toàn_cục' ],
+	'RemoveGlobalBlock' => [ 'Bỏ_cấm_toàn_cục' ],
+	'GlobalBlockStatus' => [ 'Danh_sách_miễn_cấm_toàn_cục' ],
+];
 
 /** Yiddish (ייִדיש) */
-$specialPageAliases['yi'] = array(
-	'GlobalBlock' => array( 'גלאבאלער_בלאק' ),
-);
+$specialPageAliases['yi'] = [
+	'GlobalBlock' => [ 'גלאבאלער_בלאק' ],
+];
 
 /** Cantonese (粵語) */
-$specialPageAliases['yue'] = array(
-	'GlobalBlock' => array( '全域查封' ),
-	'GlobalBlockList' => array( '全域封禁一覽' ),
-	'RemoveGlobalBlock' => array( '全域解封' ),
-	'GlobalBlockStatus' => array( '全域封禁白名單' ),
-);
+$specialPageAliases['yue'] = [
+	'GlobalBlock' => [ '全域查封' ],
+	'GlobalBlockList' => [ '全域封禁一覽' ],
+	'RemoveGlobalBlock' => [ '全域解封' ],
+	'GlobalBlockStatus' => [ '全域封禁白名單' ],
+];
 
 /** Simplified Chinese (中文（简体）‎) */
-$specialPageAliases['zh-hans'] = array(
-	'GlobalBlock' => array( '全域封禁' ),
-	'GlobalBlockList' => array( '全域封禁列表' ),
-	'RemoveGlobalBlock' => array( '全域解禁', '移除全域封禁' ),
-	'GlobalBlockStatus' => array( '全域封禁白名单', '全域封禁状态', '禁用全域封禁' ),
-);
+$specialPageAliases['zh-hans'] = [
+	'GlobalBlock' => [ '全域封禁' ],
+	'GlobalBlockList' => [ '全域封禁列表' ],
+	'RemoveGlobalBlock' => [ '全域解禁', '移除全域封禁' ],
+	'GlobalBlockStatus' => [ '全域封禁白名单', '全域封禁状态', '禁用全域封禁' ],
+];
 
 /** Traditional Chinese (中文（繁體）‎) */
-$specialPageAliases['zh-hant'] = array(
-	'GlobalBlock' => array( '全域封鎖' ),
-	'GlobalBlockList' => array( '全域封鎖清單' ),
-	'RemoveGlobalBlock' => array( '解除全域封鎖' ),
-	'GlobalBlockStatus' => array( '全域封鎖白名單', '全域封鎖狀態', '停用全域封鎖' ),
-);
+$specialPageAliases['zh-hant'] = [
+	'GlobalBlock' => [ '全域封鎖' ],
+	'GlobalBlockList' => [ '全域封鎖清單' ],
+	'RemoveGlobalBlock' => [ '解除全域封鎖' ],
+	'GlobalBlockStatus' => [ '全域封鎖白名單', '全域封鎖狀態', '停用全域封鎖' ],
+];
