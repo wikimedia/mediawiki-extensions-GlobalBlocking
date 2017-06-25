@@ -34,7 +34,7 @@
 	"globalblocking-expiry-options": "{{notranslate}}",
 	"globalblocking-block-intro": "{{Doc-specialpagesummary|globalblock}}Used as an introductory text on Special:GlobalBlock form.\n\nSee also:\n* {{msg-mw|globalblocking-modify-intro}}",
 	"globalblocking-block-reason": "{{Identical|Reason}}",
-	"globalblocking-block-reason-dropdown": "The choices that appear in the drop-down box, for the Global Blocking extension.\nThe top star is the unclicked list. The double-starred items are the reasons in the list.\nFor more information about Global Blocking, see http://www.mediawiki.org/wiki/Global_Blocking",
+	"globalblocking-block-reason-dropdown": "The choices that appear in the drop-down box, for the Global Blocking extension.\nThe top star is the unclicked list. The double-starred items are the reasons in the list.\nFor more information about Global Blocking, see https://www.mediawiki.org/wiki/Global_Blocking",
 	"globalblocking-block-edit-dropdown": "Shown beneath the global block form on the right side. It is a link to {{msg-mw|globalblocking-block-reason-dropdown|notext=1}}.\n\nSee also:\n* {{msg-mw|ipb-edit-dropdown}}",
 	"globalblocking-block-expiry": "After the colon, the user can enter a timestamp on which the block automatically ends or a time period like \"1 hour\", \"2 days\", \"1 year\" etc. But in English only because the time period is parsed by the underlying OS, not by MediaWiki.\n{{Identical|Expiry}}",
 	"globalblocking-block-expiry-selector-other": "{{Identical|Other time}}",
