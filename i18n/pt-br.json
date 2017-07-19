@@ -75,7 +75,7 @@
 	"globalblocking-whitelist-dewhitelisted": "Você reativou com o bloqueio global #$2 sobre o endereço IP '''$1''' em {{SITENAME}}.",
 	"globalblocking-whitelist-nochange": "Você não fez qualquer alteração ao estado local deste bloqueio.",
 	"globalblocking-whitelist-intro": "Você pode usar este formulário para editar o estado local de um bloqueio global.\nSe um bloqueio global está desativado nesta wiki, os usuários nos endereços IP afetados poderão editar normalmente.",
-	"globalblocking-ipblocked": "'''Seu endereço IP foi bloqueado em todas as wikis.'''\n\nO bloqueio foi feito por $1 ($2).\nO motivo dado é ''$3''.\n\n* Início do bloqueio: $4\n* Fim do bloqueio: $5\n\nVocê pode contactar $1 para discutir o bloqueio.\nVocê não pode usar o recurso \"{{int:emailuser}}\" a menos que um endereço de e-mail  válido seja especificado nas [[Special:Preferences|preferências de sua conta]] e você não esteja impedido de usá-lo.\nSeu endereço IP atual é $6.\nPor favor, inclua todos os detalhes acima em quaisquer perguntas que você fizer.",
+	"globalblocking-ipblocked": "'''Seu endereço IP foi bloqueado em todas as wikis.'''\n\nO bloqueio foi feito por $1 ($2).\nO motivo dado é ''$3''.\n\n* Início do bloqueio: $4\n* Fim do bloqueio: $5\n\nVocê pode contactar $1 para discutir o bloqueio.\nVocê não pode usar o recurso \"{{int:emailuser}}\" a menos que um endereço de e-mail válido seja especificado nas [[Special:Preferences|preferências de sua conta]] e você não esteja impedido de usá-lo.\nSeu endereço IP atual é $6.\nPor favor, inclua todos os detalhes acima em quaisquer perguntas que você fizer.",
 	"globalblocking-ipblocked-xff": "'''Um ou mais servidores proxy usados por seu pedido estão bloqueados globalmente'''\n\nO bloqueio foi feito por $1 ($2).\nO motivo apresentado é ''$3''.\n\n* Início do bloqueio: $4\n* Fim do bloqueio: $5\n\nVocê pode contactar $1 para discutir o bloqueio.\nVocê não pode usar o recurso \"{{int:emailuser}}\" a menos que um endereço de e-mail válido seja especificado nas suas [[Special:Preferences|preferências de conta]] e você não esteja impedido de usá-lo.\nO endereço proxy bloqueado foi $6.\nPor favor, inclua todos os detalhes acima em quaisquer perguntas que você fizer.",
 	"globalblocking-blocked-nopassreset": "Você não pode repor palavras-chave de utilizadores porque você está bloqueado globalmente.",
 	"globalblocking-logpage": "Registro de bloqueios globais",
@@ -117,5 +117,7 @@
 	"apihelp-query+globalblocks-param-limit": "A quantidade máxima de bloqueios para listar.",
 	"apihelp-query+globalblocks-param-prop": "Que propriedades obter.",
 	"apihelp-query+globalblocks-example-1": "Listar todos os bloqueios globais",
-	"apihelp-query+globalblocks-example-2": "Listar bloqueios globais aplicados ao endereço IP 192.0.2.18"
+	"apihelp-query+globalblocks-example-2": "Listar bloqueios globais aplicados ao endereço IP 192.0.2.18",
+	"log-action-filter-gblblock-gblock": "Bloqueio global",
+	"log-action-filter-gblblock-gunblock": "Desbloqueio global"
 }
