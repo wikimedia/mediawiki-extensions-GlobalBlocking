@@ -94,7 +94,7 @@
 	"globalblockstatus": "Estado local de bloqueios globais",
 	"removeglobalblock": "Remover um bloqueio global",
 	"right-globalblock": "Executar e remover bloqueios globais",
-	"action-globalblock": "Executar e remover bloqueios globais",
+	"action-globalblock": "executar e remover bloqueios globais",
 	"right-globalblock-whitelist": "Desativar bloqueios globais localmente",
 	"action-globalblock-whitelist": "desativar bloqueios globais localmente",
 	"right-globalblock-exempt": "Contornar bloqueios globais",
@@ -118,6 +118,7 @@
 	"apihelp-query+globalblocks-param-prop": "Que propriedades obter.",
 	"apihelp-query+globalblocks-example-1": "Listar todos os bloqueios globais",
 	"apihelp-query+globalblocks-example-2": "Listar bloqueios globais aplicados ao endereço IP 192.0.2.18",
+	"log-action-filter-gblblock": "Tipo de bloco global:",
 	"log-action-filter-gblblock-gblock": "Bloqueio global",
 	"log-action-filter-gblblock-gunblock": "Desbloqueio global"
 }
