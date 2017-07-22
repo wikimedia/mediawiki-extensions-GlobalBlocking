@@ -56,6 +56,7 @@
 	"globalblocking-goto-unblock": "Remover um bloqueio global",
 	"globalblocking-goto-status": "Alterar estado local de um bloqueio global",
 	"globalblocking-return": "Voltar à lista de bloqueios globais",
+	"globalblocking-add-block": "Adicionar outro bloqueio global",
 	"globalblocking-notblocked": "O endereço IP ($1) introduzido não está bloqueado globalmente.",
 	"globalblocking-unblock": "Remover um bloqueio global",
 	"globalblocking-unblock-ipinvalid": "O endereço IP ($1) que introduziu é inválido.\nPor favor, note que não pode introduzir um nome de usuário!",
@@ -120,5 +121,6 @@
 	"apihelp-query+globalblocks-example-2": "Listar bloqueios globais aplicados ao endereço IP 192.0.2.18",
 	"log-action-filter-gblblock": "Tipo de bloco global:",
 	"log-action-filter-gblblock-gblock": "Bloqueio global",
-	"log-action-filter-gblblock-gunblock": "Desbloqueio global"
+	"log-action-filter-gblblock-gunblock": "Desbloqueio global",
+	"log-action-filter-gblblock-modify": "Modificação do bloqueio global"
 }
