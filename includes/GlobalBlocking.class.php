@@ -57,7 +57,7 @@ class GlobalBlocking {
 		$block = self::getGlobalBlockingBlock( $ip, $user->isAnon() );
 		if ( $block ) {
 			// Check for local whitelisting
-			if ( GlobalBlocking::getWhitelistInfo( $block->gb_id ) ) {
+			if ( self::getWhitelistInfo( $block->gb_id ) ) {
 				// Block has been whitelisted.
 				return $result = [ 'block' => null, 'error' => [] ];
 			}
@@ -154,7 +154,7 @@ class GlobalBlocking {
 	 * @return object The block
 	 */
 	static function getGlobalBlockingBlock( $ip, $anon ) {
-		$dbr = GlobalBlocking::getGlobalBlockingDatabase( DB_SLAVE );
+		$dbr = self::getGlobalBlockingDatabase( DB_SLAVE );
 
 		$conds = self::getRangeCondition( $ip );
 
@@ -173,7 +173,7 @@ class GlobalBlocking {
 	 * @return array a SQL condition
 	 */
 	static function getRangeCondition( $ip ) {
-		$dbr = GlobalBlocking::getGlobalBlockingDatabase( DB_SLAVE );
+		$dbr = self::getGlobalBlockingDatabase( DB_SLAVE );
 
 		$hexIp = IP::toHex( $ip );
 		// Don't bother checking blocks out of this /16.
@@ -199,7 +199,7 @@ class GlobalBlocking {
 	 * @return array of applicable blocks
 	 */
 	static function checkIpsForBlock( $ips, $anon ) {
-		$dbr = GlobalBlocking::getGlobalBlockingDatabase( DB_SLAVE );
+		$dbr = self::getGlobalBlockingDatabase( DB_SLAVE );
 		$conds = [];
 		foreach ( $ips as $ip ) {
 			if ( IP::isValid( $ip ) ) {
@@ -224,7 +224,7 @@ class GlobalBlocking {
 		}
 
 		foreach ( $results as $block ) {
-			if ( !GlobalBlocking::getWhitelistInfo( $block->gb_id ) ) {
+			if ( !self::getWhitelistInfo( $block->gb_id ) ) {
 				$blocks[] = $block;
 			}
 		}
@@ -291,7 +291,7 @@ class GlobalBlocking {
 	 * @throws DBUnexpectedError
 	 */
 	static function purgeExpired() {
-		$dbw = GlobalBlocking::getGlobalBlockingDatabase( DB_MASTER );
+		$dbw = self::getGlobalBlockingDatabase( DB_MASTER );
 		$dbw->delete(
 			'globalblocks',
 			[ 'gb_expiry<' . $dbw->addQuotes( $dbw->timestamp() ) ],
@@ -381,7 +381,7 @@ class GlobalBlocking {
 		$errors = [];
 
 		## Purge expired blocks.
-		GlobalBlocking::purgeExpired();
+		self::purgeExpired();
 
 		## Validate input
 		$ip = IP::sanitizeIP( $address );
@@ -412,7 +412,7 @@ class GlobalBlocking {
 		}
 
 		// Check for an existing block in the master database
-		$existingBlock = GlobalBlocking::getGlobalBlockId( $ip, DB_MASTER );
+		$existingBlock = self::getGlobalBlockId( $ip, DB_MASTER );
 		if ( !$modify && $existingBlock ) {
 			$errors[] = [ 'globalblocking-block-alreadyblocked', $ip ];
 		}
@@ -422,7 +422,7 @@ class GlobalBlocking {
 		}
 
 		// We're a-ok.
-		$dbw = GlobalBlocking::getGlobalBlockingDatabase( DB_MASTER );
+		$dbw = self::getGlobalBlockingDatabase( DB_MASTER );
 
 		$row = [
 			'gb_address' => $ip,

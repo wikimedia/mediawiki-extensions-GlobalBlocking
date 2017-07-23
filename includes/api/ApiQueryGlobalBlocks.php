@@ -37,7 +37,7 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 	private $globalBlockingDb;
 
 	public function __construct( $query, $moduleName ) {
-		parent :: __construct( $query, $moduleName, 'bg' );
+		parent::__construct( $query, $moduleName, 'bg' );
 	}
 
 	public function execute() {
@@ -181,37 +181,37 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 	public function getAllowedParams() {
 		return [
 			'start' => [
-				ApiBase :: PARAM_TYPE => 'timestamp'
+				ApiBase::PARAM_TYPE => 'timestamp'
 			],
 			'end' => [
-				ApiBase :: PARAM_TYPE => 'timestamp',
+				ApiBase::PARAM_TYPE => 'timestamp',
 			],
 			'dir' => [
-				ApiBase :: PARAM_TYPE => [
+				ApiBase::PARAM_TYPE => [
 					'newer',
 					'older'
 				],
-				ApiBase :: PARAM_DFLT => 'older',
+				ApiBase::PARAM_DFLT => 'older',
 				ApiBase::PARAM_HELP_MSG => 'api-help-param-direction',
 			],
 			'ids' => [
-				ApiBase :: PARAM_TYPE => 'integer',
-				ApiBase :: PARAM_ISMULTI => true
+				ApiBase::PARAM_TYPE => 'integer',
+				ApiBase::PARAM_ISMULTI => true
 			],
 			'addresses' => [
-				ApiBase :: PARAM_ISMULTI => true
+				ApiBase::PARAM_ISMULTI => true
 			],
 			'ip' => null,
 			'limit' => [
-				ApiBase :: PARAM_DFLT => 10,
-				ApiBase :: PARAM_TYPE => 'limit',
-				ApiBase :: PARAM_MIN => 1,
-				ApiBase :: PARAM_MAX => ApiBase :: LIMIT_BIG1,
-				ApiBase :: PARAM_MAX2 => ApiBase :: LIMIT_BIG2
+				ApiBase::PARAM_DFLT => 10,
+				ApiBase::PARAM_TYPE => 'limit',
+				ApiBase::PARAM_MIN => 1,
+				ApiBase::PARAM_MAX => ApiBase::LIMIT_BIG1,
+				ApiBase::PARAM_MAX2 => ApiBase::LIMIT_BIG2
 			],
 			'prop' => [
-				ApiBase :: PARAM_DFLT => 'id|address|by|timestamp|expiry|reason',
-				ApiBase :: PARAM_TYPE => [
+				ApiBase::PARAM_DFLT => 'id|address|by|timestamp|expiry|reason',
+				ApiBase::PARAM_TYPE => [
 					'id',
 					'address',
 					'by',
@@ -220,7 +220,7 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 					'reason',
 					'range',
 				],
-				ApiBase :: PARAM_ISMULTI => true
+				ApiBase::PARAM_ISMULTI => true
 			]
 		];
 	}
