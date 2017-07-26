@@ -8,7 +8,8 @@
 			"Kurniasan",
 			"Pizza1016",
 			"Macofe",
-			"Mbrt"
+			"Mbrt",
+			"Jeluang Terluang"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Membolehkan]] sekatan alamat IP di [[Special:GlobalBlockList|pelbagai wiki]] sekaligus",
@@ -69,7 +70,7 @@
 	"globalblocking-whitelist-nochange": "Anda tidak melakukan apa-apa perubahan pada status tempatan bagi sekatan ini.\n[[Special:GlobalBlockList|Kembali ke senarai sekatan sejagat]].",
 	"globalblocking-whitelist-intro": "Gunakan borang ini untuk mengubah status tempatan bagi suatu sekatan sejagat.\nJika suatu sekatan sejagat dimatikan di wiki ini, pengguna alamat IP yang berkenaan boleh menyunting seperti biasa.\n[[Special:GlobalBlockList|Kembali ke senarai sekatan sejagat]].",
 	"globalblocking-ipblocked": "'''Alamat IP anda telah disekat di semua wiki.'''\n\nSekatan ini dibuat oleh $1 ($2).\nSebab yang dinyatakan ialah ''$3''.\n\n* Sekatan bermula: $4\n* Sekatan tamat: $5\n\nAnda boleh menghubungi $1 untuk membincangkan sekatan ini.\nAnda tidak boleh menggunakan ciri \"{{int:emailuser}}\" melainkan jika alamat e-mel yang sah dinyatakan dalam [[Special:Preferences|keutamaan akaun]] anda, dan anda belum disekat daripada menggunakannya.\nAlamat IP anda sekarang ialah $6.\nSila sertakan semua butiran di atas dalam sebarang pertanyaan yang anda lakukan.",
-	"globalblocking-ipblocked-xff": "'''Sekurang-kurangnya satu pelayan proksi yang digunakan oleh pemohonan anda telah disekat di peringkat sejagat'''\n\nSekatan tersebut telah dilakukan oleh $1 ($2).\nSebab yang diberikan adalah: ''$3''.\n\n* Sekatan bermula: $4\n* Sekatan tamat: $5\n\nAnda boleh menghubungi $1 untuk membincangkan sekatan ini.\nAnda tidak boleh menggunakan ciri \"{{int:emailuser}}\" melainkan alamat e-mel yang sah dinyatakan di dalam [[Special:Preferences|keutamaan akaun]] anda dan anda belum disekat daripada menggunakannya.\nAlamat proksi yang disekat itu ialah $6.\nSila sertakan semua keterangan di atas dalam sebarang pertanyaan.",
+	"globalblocking-ipblocked-xff": "'''Sekurang-kurangnya satu pelayan proksi yang digunakan oleh pemohonan anda telah disekat di peringkat sejagat'''\n\nSekatan tersebut telah dilakukan oleh $1 ($2).\nSebab yang diberikan ialah: ''$3''.\n\n* Sekatan bermula: $4\n* Sekatan tamat: $5\n\nAnda boleh menghubungi $1 untuk membincangkan sekatan ini.\nAnda tidak boleh menggunakan ciri \"{{int:emailuser}}\" melainkan alamat e-mel yang sah dinyatakan dalam [[Special:Preferences|keutamaan akaun]] anda dan anda belum disekat daripada menggunakannya.\nAlamat proksi yang disekat itu ialah $6.\nSila sertakan semua keterangan di atas dalam sebarang pertanyaan.",
 	"globalblocking-blocked-nopassreset": "Anda tidak boleh mengeset semula kata laluan pengguna kerana anda telah disekat di semua wiki.",
 	"globalblocking-logpage": "Log sekatan sejagat",
 	"globalblocking-logpagetext": "Yang berikut ialah log sekatan sejagat yang telah dikenakan dan dibatalkan di wiki ini. Sila ambil perhatian bahawa sekatan sejagat boleh dikenakan dan dibatalkan di wiki-wiki lain, justeru berkuatkuasa di wiki ini juga. Anda juga boleh melihat [[Special:GlobalBlockList|senarai semakan sejagat yang sedang berkuatkuasa]].",
