@@ -7,8 +7,8 @@
  */
 class GlobalBlocking {
 	/**
-	 * @param $user User
-	 * @param $ip string
+	 * @param User $user
+	 * @param string $ip
 	 * @return Block|null
 	 * @throws MWException
 	 */
@@ -24,8 +24,8 @@ class GlobalBlocking {
 	}
 
 	/**
-	 * @param $user User
-	 * @param $ip string
+	 * @param User $user
+	 * @param string $ip
 	 * @return array empty or a message key with parameters
 	 * @throws MWException
 	 */
@@ -35,8 +35,8 @@ class GlobalBlocking {
 	}
 
 	/**
-	 * @param $user User
-	 * @param $ip string
+	 * @param User $user
+	 * @param string $ip
 	 * @return array ['block' => DB row, 'error' => empty or a message key with parameters]
 	 * @throws MWException
 	 */
@@ -150,7 +150,7 @@ class GlobalBlocking {
 	/**
 	 * Get a block
 	 * @param string $ip The IP address to be checked
-	 * @param boolean $anon Get anon blocks only
+	 * @param bool $anon Get anon blocks only
 	 * @return object The block
 	 */
 	static function getGlobalBlockingBlock( $ip, $anon ) {
@@ -195,7 +195,7 @@ class GlobalBlocking {
 	/**
 	 * Check an array of IPs for a block on any
 	 * @param array $ips The Array of IP addresses to be checked
-	 * @param boolean $anon Get anon blocks only
+	 * @param bool $anon Get anon blocks only
 	 * @return array of applicable blocks
 	 */
 	static function checkIpsForBlock( $ips, $anon ) {
@@ -313,8 +313,8 @@ class GlobalBlocking {
 	}
 
 	/**
-	 * @param $id null|int
-	 * @param $address null|string
+	 * @param null|int $id
+	 * @param null|string $address
 	 * @return array|bool
 	 * @throws Exception
 	 */
@@ -346,7 +346,7 @@ class GlobalBlocking {
 	}
 
 	/**
-	 * @param $block_ip string
+	 * @param string $block_ip
 	 * @return array|bool
 	 */
 	static function getWhitelistInfoByIP( $block_ip ) {
@@ -354,8 +354,8 @@ class GlobalBlocking {
 	}
 
 	/**
-	 * @param $wiki_id
-	 * @param $user string
+	 * @param string $wiki_id
+	 * @param string $user
 	 * @return string
 	 */
 	static function maybeLinkUserpage( $wiki_id, $user ) {

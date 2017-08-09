@@ -18,7 +18,7 @@ class GlobalBlock extends Block {
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * @inheritDoc
 	 */
 	public function getPermissionsError( IContextSource $context ) {
 		return $this->error;

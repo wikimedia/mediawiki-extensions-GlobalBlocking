@@ -46,10 +46,10 @@ class GlobalBlockingHooks {
 	}
 
 	/**
-	 * @param Title $title
-	 * @param User $user
+	 * @param Title &$title
+	 * @param User &$user
 	 * @param string $action
-	 * @param mixed $result
+	 * @param mixed &$result
 	 *
 	 * @return bool
 	 */
@@ -76,10 +76,10 @@ class GlobalBlockingHooks {
 	}
 
 	/**
-	 * @param User $user
+	 * @param User &$user
 	 * @param string $ip
-	 * @param bool $blocked
-	 * @param Block|null $block
+	 * @param bool &$blocked
+	 * @param Block|null &$block
 	 *
 	 * @return bool
 	 */
@@ -93,9 +93,9 @@ class GlobalBlockingHooks {
 	}
 
 	/**
-	 * @param $users
-	 * @param $data
-	 * @param $error
+	 * @param array &$users
+	 * @param array $data
+	 * @param string &$error
 	 *
 	 * @return bool
 	 */
@@ -111,7 +111,7 @@ class GlobalBlockingHooks {
 
 	/**
 	 * Creates a link to the global block log
-	 * @param array $msg Message with a link to the global block log
+	 * @param array &$msg Message with a link to the global block log
 	 * @param string $ip The IP address to be checked
 	 *
 	 * @return bool true
@@ -172,7 +172,7 @@ class GlobalBlockingHooks {
 	}
 
 	/**
-	 * @param array $updateFields
+	 * @param array &$updateFields
 	 *
 	 * @return bool
 	 */
@@ -184,7 +184,7 @@ class GlobalBlockingHooks {
 
 	/**
 	 * So users can just type in a username for target and it'll work
-	 * @param array $types
+	 * @param array &$types
 	 * @return bool
 	 */
 	public static function onGetLogTypesOnUser( array &$types ) {
