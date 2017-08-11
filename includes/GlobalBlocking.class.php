@@ -110,7 +110,7 @@ class GlobalBlocking {
 				$xffIps = array_map( 'trim', explode( ',', $xffIps ) );
 				$blocks = self::checkIpsForBlock( $xffIps, $user->isAnon() );
 				if ( count( $blocks ) > 0 ) {
-					list ( $blockIP, $block ) = self::getAppliedBlock( $xffIps, $blocks );
+					list( $blockIP, $block ) = self::getAppliedBlock( $xffIps, $blocks );
 					$blockTimestamp = $wgLang->timeanddate(
 						wfTimestamp( TS_MW, $block->gb_timestamp ),
 						true

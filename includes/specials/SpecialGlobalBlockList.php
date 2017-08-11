@@ -76,7 +76,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 		$ip = $this->target;
 
 		if ( $ip ) {
-			list ( $rangeStart, $rangeEnd ) = IP::parseRange( $ip );
+			list( $rangeStart, $rangeEnd ) = IP::parseRange( $ip );
 
 			if ( $rangeStart === $rangeEnd ) {
 				// They searched for an IP. Match any range covering that IP
