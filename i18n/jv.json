@@ -45,7 +45,7 @@
 	"globalblocking-goto-block": "Blokir alamat IP sacara global",
 	"globalblocking-goto-unblock": "Busak blokiran global",
 	"globalblocking-goto-status": "Owahi status lokal kanggo sawijining pamblokiran global",
-	"globalblocking-return": "Bali nyang pratélan blokir global",
+	"globalblocking-return": "Bali menyang pratélan blokir global",
 	"globalblocking-notblocked": "Alamat IP ($1) sing panjenengan lebokaké ora diblokir sacara global.",
 	"globalblocking-unblock": "Busak blokiran global",
 	"globalblocking-unblock-ipinvalid": "AlamatIP sing dilebokaké ($1) iku ora absah.\nTulung digatèkaké yèn panjenengan ora bisa nglebokaké jeneng panganggo!",
