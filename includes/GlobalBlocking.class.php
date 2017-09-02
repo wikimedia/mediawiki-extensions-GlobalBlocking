@@ -154,7 +154,7 @@ class GlobalBlocking {
 	 * @return object The block
 	 */
 	static function getGlobalBlockingBlock( $ip, $anon ) {
-		$dbr = self::getGlobalBlockingDatabase( DB_SLAVE );
+		$dbr = self::getGlobalBlockingDatabase( DB_REPLICA );
 
 		$conds = self::getRangeCondition( $ip );
 
@@ -173,7 +173,7 @@ class GlobalBlocking {
 	 * @return array a SQL condition
 	 */
 	static function getRangeCondition( $ip ) {
-		$dbr = self::getGlobalBlockingDatabase( DB_SLAVE );
+		$dbr = self::getGlobalBlockingDatabase( DB_REPLICA );
 
 		$hexIp = IP::toHex( $ip );
 		// Don't bother checking blocks out of this /16.
@@ -199,7 +199,7 @@ class GlobalBlocking {
 	 * @return array of applicable blocks
 	 */
 	static function checkIpsForBlock( $ips, $anon ) {
-		$dbr = self::getGlobalBlockingDatabase( DB_SLAVE );
+		$dbr = self::getGlobalBlockingDatabase( DB_REPLICA );
 		$conds = [];
 		foreach ( $ips as $ip ) {
 			if ( IP::isValid( $ip ) ) {
@@ -253,7 +253,7 @@ class GlobalBlocking {
 	}
 
 	/**
-	 * @param int $dbtype either DB_SLAVE or DB_MASTER
+	 * @param int $dbtype either DB_REPLICA or DB_MASTER
 	 * @return \Wikimedia\Rdbms\IDatabase
 	 */
 	static function getGlobalBlockingDatabase( $dbtype ) {
@@ -266,10 +266,10 @@ class GlobalBlocking {
 
 	/**
 	 * @param string $ip
-	 * @param int $dbtype either DB_SLAVE or DB_MASTER
+	 * @param int $dbtype either DB_REPLICA or DB_MASTER
 	 * @return int
 	 */
-	static function getGlobalBlockId( $ip, $dbtype = DB_SLAVE ) {
+	static function getGlobalBlockId( $ip, $dbtype = DB_REPLICA ) {
 		$db = self::getGlobalBlockingDatabase( $dbtype );
 
 		$row = $db->selectRow( 'globalblocks', 'gb_id', [ 'gb_address' => $ip ], __METHOD__ );
@@ -328,7 +328,7 @@ class GlobalBlocking {
 			throw new Exception( "Neither Block IP nor Block ID given for retrieving whitelist status" );
 		}
 
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$row = $dbr->selectRow(
 			'global_block_whitelist',
 			[ 'gbw_by', 'gbw_reason' ],

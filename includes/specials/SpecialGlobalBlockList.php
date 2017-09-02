@@ -115,7 +115,7 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 	public function __construct( IContextSource $context, array $conds ) {
 		parent::__construct( $context );
 		$this->queryConds = $conds;
-		$this->mDb = GlobalBlocking::getGlobalBlockingDatabase( DB_SLAVE );
+		$this->mDb = GlobalBlocking::getGlobalBlockingDatabase( DB_REPLICA );
 	}
 
 	public function formatRow( $row ) {

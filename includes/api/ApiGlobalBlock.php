@@ -53,7 +53,7 @@ class ApiGlobalBlock extends ApiBase {
 				if ( $block->gb_anon_only ) {
 					$result->addValue( 'globalblock', 'anononly', '' );
 				}
-				if ( $block->gb_expiry == wfGetDB( DB_SLAVE )->getInfinity() ) {
+				if ( $block->gb_expiry == wfGetDB( DB_REPLICA )->getInfinity() ) {
 					$displayExpiry = 'infinite';
 				} else {
 					$displayExpiry = wfTimestamp( TS_ISO_8601, $block->gb_expiry );

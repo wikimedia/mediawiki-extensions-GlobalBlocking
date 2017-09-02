@@ -58,7 +58,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 	protected function loadExistingBlock() {
 		$blockOptions = [];
 		if ( $this->address ) {
-			$dbr = GlobalBlocking::getGlobalBlockingDatabase( DB_SLAVE );
+			$dbr = GlobalBlocking::getGlobalBlockingDatabase( DB_REPLICA );
 			$block = $dbr->selectRow( 'globalblocks',
 					[ 'gb_anon_only', 'gb_reason', 'gb_expiry' ],
 					[

@@ -27,7 +27,7 @@ class FixGlobalBlockWhitelist extends Maintenance {
 	public function execute() {
 		$this->dryRun = $this->getOption( 'dry-run', false ) !== false;
 
-		$db = $this->getDB( DB_SLAVE );
+		$db = $this->getDB( DB_REPLICA );
 		$res = $db->select(
 			'global_block_whitelist',
 			[ 'gbw_id', 'gbw_address' ],
@@ -47,7 +47,7 @@ class FixGlobalBlockWhitelist extends Maintenance {
 
 		$whitelistedIPs = array_values( $whitelistEntries );
 
-		$gdbr = GlobalBlocking::getGlobalBlockingDatabase( DB_SLAVE );
+		$gdbr = GlobalBlocking::getGlobalBlockingDatabase( DB_REPLICA );
 		$gblocks = $gdbr->select(
 			'globalblocks',
 			[ 'gb_id', 'gb_address' ],
