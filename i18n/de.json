@@ -104,6 +104,7 @@
 	"right-globalblock-exempt": "Globale Sperren umgehen",
 	"action-globalblock-exempt": "globale Sperren zu umgehen",
 	"apihelp-globalblock-description": "Sperrt einen Benutzer global oder gibt ihn wieder frei.",
+	"apihelp-globalblock-summary": "Sperrt global einen Benutzer oder gibt ihn frei.",
 	"apihelp-globalblock-param-target": "Die Ziel-IP-Adresse.",
 	"apihelp-globalblock-param-expiry": "Wird, wenn angegeben, Benutzer sperren oder erneut sperren. Bestimmt wie lange die Sperre dauert. Zum Beispiel \"5 Moante\" oder \"2 Wochen\". Falls auf \"unendlich\" oder \"unbestimmt\" gesetzt, wird die Sperre niemals aufgehoben.",
 	"apihelp-globalblock-param-unblock": "Falls angegeben, wird der Benutzer freigegeben.",
