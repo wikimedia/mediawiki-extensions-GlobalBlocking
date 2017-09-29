@@ -148,22 +148,36 @@ class GlobalBlockingHooks {
 		$userId, User $user, SpecialPage $sp
 	) {
 		$name = $user->getName();
-		if ( !IP::isValid( $name ) ) {
+		if ( !IP::isIPAddress( $name ) ) {
 			return true;
 		}
 
-		$rangeCondition = GlobalBlocking::getRangeCondition( $name );
-		$pager = new GlobalBlockListPager( $sp->getContext(), $rangeCondition );
-		$pager->setLimit( 1 ); // show at most one entry
-		$body = $pager->getBody();
+		// Obtain the first and the last IP of a range if IP is a range
+		list( $startIP, $endIP ) = IP::parseRange( $name );
+		substr( $startIP, 0, 4 );
+		substr( $endIP, 0, 4 );
+		$startname = IP::formatHex( $startIP );
+		$endname = IP::formatHex( $endIP );
 
-		if ( $body != '' ) {
+		// Get results from the first ip of a range
+		$rangeConditionstart = GlobalBlocking::getRangeCondition( $startname );
+		$pagerstart = new GlobalBlockListPager( $sp->getContext(), $rangeConditionstart );
+		$pagerstart->setLimit( 1 ); // show at most one entry
+		$bodystart = $pagerstart->getBody();
+
+		// Get results from the last ip of a range
+		$rangeConditionend = GlobalBlocking::getRangeCondition( $endname );
+		$pagerend = new GlobalBlockListPager( $sp->getContext(), $rangeConditionend );
+		$pagerend->setLimit( 1 ); // show at most one entry
+		$bodyend = $pagerend->getBody();
+
+		if ( $bodystart != '' && $bodyend != '' ) {
 			$out = $sp->getOutput();
 			$out->addHTML(
 				Html::rawElement( 'div',
 					[ 'class' => 'mw-warning-with-logexcerpt' ],
 					$sp->msg( 'globalblocking-contribs-notice', $name )->parse() .
-					Html::rawElement( 'ul', [], $body )
+					Html::rawElement( 'ul', [], $bodystart )
 				)
 			);
 		}
