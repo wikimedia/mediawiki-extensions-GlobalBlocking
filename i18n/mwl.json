@@ -4,5 +4,7 @@
 			"MokaAkashiyaPT"
 		]
 	},
-	"globalblocklist": "Andereços IP bloquiados globalmente"
+	"globalblocking-whitelist": "Stado lhocal de bloqueios globales",
+	"globalblocklist": "Andereços IP bloquiados globalmente",
+	"globalblockstatus": "Stado lhocal de bloqueios globales"
 }
