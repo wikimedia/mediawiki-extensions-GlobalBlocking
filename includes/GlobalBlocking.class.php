@@ -5,6 +5,9 @@
  *
  * @license GNU GPL v2+
  */
+
+use MediaWiki\MediaWikiServices;
+
 class GlobalBlocking {
 	/**
 	 * @param User $user
@@ -259,7 +262,8 @@ class GlobalBlocking {
 	static function getGlobalBlockingDatabase( $dbtype ) {
 		global $wgGlobalBlockingDatabase;
 
-		$lb = wfGetLB( $wgGlobalBlockingDatabase );
+		$factory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+		$lb = $factory->getMainLB( $wgGlobalBlockingDatabase );
 
 		return $lb->getConnectionRef( $dbtype, 'globalblocking', $wgGlobalBlockingDatabase );
 	}
