@@ -512,6 +512,14 @@ $specialPageAliases['uk'] = [
 	'RemoveGlobalBlock' => [ 'Глобальне_розблокування', 'Глобальная_разблокировка' ],
 ];
 
+/** Urdu (اردو) */
+$specialPageAliases['ur'] = [
+	'GlobalBlock' => [ 'عالمی_پابندی' ],
+	'GlobalBlockList' => [ 'عالمی_پابندی_کی_فہرست' ],
+	'RemoveGlobalBlock' => [ 'عالمی_پابندی_ہٹائیں', 'عالمی_پابندی_ختم' ],
+	'GlobalBlockStatus' => [ 'عالمی_پابندی_کی_صورتحال', 'عالمی_پابندی_کی_سفید_فہرست', 'عالمی_پابندی_غیر_فعال' ],
+];
+
 /** Venetian (vèneto) */
 $specialPageAliases['vec'] = [
 	'GlobalBlock' => [ 'BlocoGlobal' ],
