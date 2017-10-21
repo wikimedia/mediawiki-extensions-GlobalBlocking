@@ -149,8 +149,8 @@ class SpecialGlobalBlock extends FormSpecialPage {
 	}
 
 	/**
-	* @param HTMLForm $form
-	*/
+	 * @param HTMLForm $form
+	 */
 	protected function alterForm( HTMLForm $form ) {
 		$form->addPreText( $this->msg( 'globalblocking-block-intro' )->parseAsBlock() );
 
