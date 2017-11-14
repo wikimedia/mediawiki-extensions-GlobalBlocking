@@ -76,7 +76,7 @@
 	"globalblocking-unblock-logentry": "uklonio globalno blokiranje za [[$1]]",
 	"globalblocking-logentry-whitelist": "$1 lokalno je {{GENDER:$2|onemogućio|onemogućila}} globalno blokiranje $3",
 	"globalblocking-logentry-dewhitelist": "$1 lokalno je ponovo {{GENDER:$2|omogućio|omogućila}} globalno blokiranje $3",
-	"globalblocking-modify-logentry": "izmijeni globalno blokiranje na [[$1]] ($2)",
+	"globalblocking-modify-logentry": "izmijenjeno globalno blokiranje na [[$1]] ($2)",
 	"globalblocking-logentry-expiry": "blokada istječe $1",
 	"globalblocking-logentry-noexpiry": "istek nije postavljen",
 	"globalblocking-loglink": "IP adresa $1 je blokirana globalno ([[{{#Special:GlobalBlockList}}/$1|svi detalji]]).",
