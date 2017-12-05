@@ -2,12 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Snakesteuben",
-			"Robin0van0der0vliet"
+			"Robin0van0der0vliet",
+			"Robin van der Vliet"
 		]
 	},
 	"globalblocking-block-reason": "Reden:",
 	"globalblocking-block-expiry-selector-other": "In oare tiid:",
-	"globalblocking-block-options": "Opsjes:",
 	"globalblocking-unblock-reason": "Reden:",
 	"globalblocking-whitelist-reason": "Reden:"
 }

@@ -5,7 +5,6 @@
 		]
 	},
 	"globalblocking-block-reason": "कारण:",
-	"globalblocking-block-otherreason": "अउर/दुसर कारण:",
 	"globalblocklist": "ग्लोबल ब्लॉक होनेवाले आइपी एड्रेसकी सूची",
 	"globalblock": "एक आइपी एड्रेसको ग्लोबल ब्लॉक करें",
 	"globalblockstatus": "वैश्विक अवरोध के स्थानीय स्थिति",

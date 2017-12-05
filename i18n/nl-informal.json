@@ -5,9 +5,7 @@
 			"Macofe"
 		]
 	},
-	"globalblocking-modify-intro": "Je kunt dit formulier gebruiken om de instellingen van een globale blokkade te wijzigen.",
 	"globalblocking-block-intro": "Je kunt deze pagina gebruiken om een IP-adres op alle wiki's te blokkeren.",
-	"globalblocking-block-errors": "Je blokkade is niet ingesteld om de volgende {{PLURAL:$1|reden|redenen}}:",
 	"globalblocking-block-ipinvalid": "Het IP-adres ($1) dat je hebt opgegeven is onjuist.\nLet op: je kunt geen gebruikersnaam opgeven!",
 	"globalblocking-block-expiryinvalid": "De vervaldatum/tijd die je hebt opgegeven is ongeldig.",
 	"globalblocking-block-alreadyblocked": "Het IP-adres $1 is al globaal geblokkeerd.\nJe kunt de bestaande blokkade bekijken in de [[Special:GlobalBlockList|lijst met globale blokkades]] of de instellingen van de bestaande blokkade aanpassen door de gegevens uit dit formulier opnieuw op te slaan.",
@@ -17,7 +15,6 @@
 	"globalblocking-notblocked": "Het IP-adres ($1) dat je hebt opgegeven is niet globaal geblokkeerd.",
 	"globalblocking-unblock-ipinvalid": "Het IP-adres ($1) dat je hebt opgegeven is onjuist.\nLet op: je kunt geen gebruikersnaam opgeven!",
 	"globalblocking-unblock-unblocked": "Je hebt de globale blokkade met nummer $2 voor het IP-adres '''$1''' verwijderd",
-	"globalblocking-unblock-errors": "De globale blokkade die je hebt opgegeven is niet verwijderd om de volgende {{PLURAL:$1|reden|redenen}}:",
 	"globalblocking-unblock-intro": "Je kunt dit formulier gebruik om een globale blokkade op te heffen.",
 	"globalblocking-whitelist-whitelisted": "Je hebt de globale blokkade #$2 met het IP-adres '''$1''' op {{SITENAME}} opgeheven.",
 	"globalblocking-whitelist-dewhitelisted": "Je hebt de globale blokkade #$2 met het IP-adres '''$1''' op {{SITENAME}} opnieuw actief gemaakt.",

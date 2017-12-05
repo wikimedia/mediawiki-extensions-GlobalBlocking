@@ -5,13 +5,9 @@
 		]
 	},
 	"globalblocking-block-reason": "Себебі:",
-	"globalblocking-block-otherreason": "Басқа/қосымша себебі:",
-	"globalblocking-block-reasonotherlist": "Басқа себеп",
 	"globalblocking-block-edit-dropdown": "Бұғаттау себептерін өңдеу",
 	"globalblocking-block-expiry": "Мерзімі бітпек:",
-	"globalblocking-block-expiry-other": "Басқа мерзімі бітетін уақыт",
 	"globalblocking-block-expiry-selector-other": "Басқа уақыт:",
-	"globalblocking-block-options": "Баптаулар:",
 	"globalblocking-ipaddress": "IP мекенжайы:",
 	"globalblocking-ipbanononly": "Тек аноним қатысушыларды бұғаттау",
 	"globalblocking-search-ip": "IP мекенжайы:",

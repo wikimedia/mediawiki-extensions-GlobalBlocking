@@ -9,8 +9,6 @@
 	"globalblocking-block-logentry": "nanao sakana ankapobe tamin'i [[$1]] ary ny daty itsaharany dia $2",
 	"globalblocking-block2-logentry": "nanao sakana ankapobe tamin'i [[$1]] ($2)",
 	"globalblocking-unblock-logentry": "nanala ny sakana ankapobe an'i [[$1]]",
-	"globalblocking-whitelist-logentry": "nanala ny sakana ankapoben'i [[$1]] teto an-toerana",
-	"globalblocking-dewhitelist-logentry": "namerina ny sakana ankapoben'i [[$1]] teto an-toerana",
 	"globalblocking-modify-logentry": "nanova ny sakana ankapoben'i [[$1]] ($2)",
 	"globalblocking-logentry-expiry": "mitsahatra amin'ny $1",
 	"globalblocking-logentry-noexpiry": "tsy nametraka daty itsaharana",

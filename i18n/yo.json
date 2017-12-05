@@ -5,11 +5,8 @@
 		]
 	},
 	"globalblocking-block-reason": "Ìdíẹ̀:",
-	"globalblocking-block-reasonotherlist": "Ìdíẹ̀ míràn:",
 	"globalblocking-block-edit-dropdown": "Àtúnṣe àwọn ìdí ìdínà",
 	"globalblocking-block-expiry-selector-other": "Àsìkò míràn:",
-	"globalblocking-block-options": "Àwọn àṣàyàn:",
-	"globalblocking-block-errors": "Ìdínà yín jẹ́ aláìyọrísírere, fún {{PLURAL:$1|ìdí yìí|àwọn ìdí wọ̀nyí}}:",
 	"globalblocking-search-ip": "Àdírẹ́ẹ̀sì IP:",
 	"globalblocking-search-submit": "Ṣàwárí fún àwọn ìdínà",
 	"globalblocking-list-anononly": "aláìlórúkọ nìkan",

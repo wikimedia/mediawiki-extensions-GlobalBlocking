@@ -6,11 +6,8 @@
 		]
 	},
 	"globalblocking-block-reason": "Sababu:",
-	"globalblocking-block-otherreason": "Sababu nyingine:",
-	"globalblocking-block-reasonotherlist": "Sababu nyingine",
 	"globalblocking-block-expiry": "Itakwisha:",
 	"globalblocking-block-expiry-selector-other": "Kipindi kingine:",
-	"globalblocking-block-options": "Chaguo:",
 	"globalblocking-ipaddress": "Anwani ya IP:",
 	"globalblocking-search-ip": "Anwani ya IP:",
 	"globalblocking-list-unblock": "ondoa",

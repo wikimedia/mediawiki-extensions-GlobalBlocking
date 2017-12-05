@@ -7,12 +7,9 @@
 		]
 	},
 	"globalblocking-block-reason": "Səbəb:",
-	"globalblocking-block-otherreason": "Digər/əlavə səbəb:",
-	"globalblocking-block-reasonotherlist": "Digər səbəb",
 	"globalblocking-block-edit-dropdown": "Bloklama səbəblərini redaktə et",
 	"globalblocking-block-expiry": "Bitmə müddəti:",
 	"globalblocking-block-expiry-selector-other": "Başqa vaxt:",
-	"globalblocking-block-options": "Nizamlamalar:",
 	"globalblocking-ipaddress": "IP ünvanı:",
 	"globalblocking-search-ip": "IP ünvanı:",
 	"globalblocking-list-unblock": "çıxar",
