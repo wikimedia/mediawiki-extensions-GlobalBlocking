@@ -86,7 +86,7 @@
 	"AutoloadClasses": {
 		"SpecialGlobalBlock": "includes/specials/SpecialGlobalBlock.php",
 		"SpecialGlobalBlockList": "includes/specials/SpecialGlobalBlockList.php",
-		"GlobalBlockListPager": "includes/specials/SpecialGlobalBlockList.php",
+		"GlobalBlockListPager": "includes/specials/GlobalBlockListPager.php",
 		"SpecialGlobalBlockStatus": "includes/specials/SpecialGlobalBlockStatus.php",
 		"SpecialRemoveGlobalBlock": "includes/specials/SpecialRemoveGlobalBlock.php",
 		"ApiQueryGlobalBlocks": "includes/api/ApiQueryGlobalBlocks.php",
