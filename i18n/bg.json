@@ -6,7 +6,8 @@
 			"Stanqo",
 			"Turin",
 			"Macofe",
-			"ShockD"
+			"ShockD",
+			"StanProg"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Позволява]] IP-адреси да се [[Special:GlobalBlockList|блокират едновременно в множество уикита]]",
@@ -89,6 +90,6 @@
 	"log-action-filter-gblblock-gblock": "Глобално блокиране",
 	"log-action-filter-gblblock-gunblock": "Глобално отблокиране",
 	"log-action-filter-gblblock-modify": "Промяна на глобалното блокиране",
-	"log-action-filter-gblblock-whitelist": "Добавка към белия списък на глобалните блокирания",
+	"log-action-filter-gblblock-whitelist": "Добавяне към белия списък на глобалните блокирания",
 	"log-action-filter-gblblock-dwhitelist": "Премахване от белия списък на глобалните блокирания"
 }
