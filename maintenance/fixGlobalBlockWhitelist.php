@@ -22,6 +22,8 @@ class FixGlobalBlockWhitelist extends Maintenance {
 		$this->addOption( 'delete', 'Delete whitelist entries with no corresponding global block' );
 		$this->addOption( 'dry-run', 'Run the script without any modifications' );
 		$this->setBatchSize( 20 );
+
+		$this->requireExtension( 'GlobalBlocking' );
 	}
 
 	public function execute() {
