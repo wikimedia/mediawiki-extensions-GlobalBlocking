@@ -15,7 +15,8 @@
 			"Vitorvicentevalente",
 			"Macofe",
 			"Jkb8",
-			"Diniscoelho"
+			"Diniscoelho",
+			"Athena in Wonderland"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permite]] que endereços IP sejam [[Special:GlobalBlockList|bloqueados em várias wikis]]",
@@ -40,7 +41,7 @@
 	"globalblocking-block-alreadyblocked": "O endereço IP $1 já está bloqueado globalmente.\nPode ver o bloqueio existente na [[Special:GlobalBlockList|lista de bloqueios globais]],\nou modificar as definições do bloqueio existente se reenviar este formulário.",
 	"globalblocking-block-bigrange": "O intervalo especificado ($1) é demasiado grande para ser bloqueado.\nPode bloquear, no máximo, 65.536 endereços (intervalos /16)",
 	"globalblocking-also-local": "Bloquear também localmente nesta wiki o endereço IP indicado",
-	"globalblocking-list-intro": "Esta é uma lista de todos os bloqueios globais em efeito.\nAlguns estão marcados como desativados localmente: isto significa que se aplicam a outros sites, mas um administrador local decidiu desativá-los nesta wiki.",
+	"globalblocking-list-intro": "Esta é uma lista de todos os bloqueios globais em efeito.\nAlguns estão marcados como desativados localmente: isto significa que se aplicam a outros sítios, mas um administrador local decidiu desativá-los nesta wiki.",
 	"globalblocking-list": "Endereços IP bloqueados globalmente",
 	"globalblocking-search-legend": "Pesquisar bloqueio global",
 	"globalblocking-search-ip": "Endereço IP:",
