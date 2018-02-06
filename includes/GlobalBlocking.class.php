@@ -54,7 +54,8 @@ class GlobalBlocking {
 
 		if ( $user->isAllowed( 'ipblock-exempt' ) || $user->isAllowed( 'globalblock-exempt' ) ) {
 			// User is exempt from IP blocks.
-			return $result = [ 'block' => null, 'error' => [] ];
+			$result = [ 'block' => null, 'error' => [] ];
+			return $result;
 		}
 
 		$block = self::getGlobalBlockingBlock( $ip, $user->isAnon() );
@@ -62,7 +63,8 @@ class GlobalBlocking {
 			// Check for local whitelisting
 			if ( self::getWhitelistInfo( $block->gb_id ) ) {
 				// Block has been whitelisted.
-				return $result = [ 'block' => null, 'error' => [] ];
+				$result = [ 'block' => null, 'error' => [] ];
+				return $result;
 			}
 
 			$blockTimestamp = $wgLang->timeanddate( wfTimestamp( TS_MW, $block->gb_timestamp ), true );
@@ -85,7 +87,7 @@ class GlobalBlocking {
 
 			// Allow site customization of blocked message.
 			Hooks::run( $hookName, [ &$errorMsg ] );
-			return $result = [
+			$result = [
 				'block' => $block,
 				'error' => [
 					$errorMsg,
@@ -98,6 +100,7 @@ class GlobalBlocking {
 					$block->gb_address
 				],
 			];
+			return $result;
 		}
 
 		if ( $wgGlobalBlockingBlockXFF ) {
@@ -117,7 +120,7 @@ class GlobalBlocking {
 					// Allow site customization of blocked message.
 					$blockedIpXffMsg = 'globalblocking-ipblocked-xff';
 					Hooks::run( 'GlobalBlockingBlockedIpXffMsg', [ &$blockedIpXffMsg ] );
-					return $result = [
+					$result = [
 						'block' => $block,
 						'error' => [
 							$blockedIpXffMsg,
@@ -129,11 +132,13 @@ class GlobalBlocking {
 							$blockIP
 						],
 					];
+					return $result;
 				}
 			}
 		}
 
-		return $result = [ 'block' => null, 'error' => [] ];
+		$result = [ 'block' => null, 'error' => [] ];
+		return $result;
 	}
 
 	/**
