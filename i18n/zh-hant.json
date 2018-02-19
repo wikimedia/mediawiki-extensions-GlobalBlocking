@@ -17,7 +17,8 @@
 			"Zhxy 519",
 			"Macofe",
 			"LNDDYL",
-			"Arthur2e5"
+			"Arthur2e5",
+			"Hello903hello"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|允許]] 封鎖 [[Special:GlobalBlockList|於多個 Wiki 中]] 的 IP 位址",
@@ -47,7 +48,7 @@
 	"globalblocking-search-ip": "IP 位址：",
 	"globalblocking-search-submit": "搜尋封鎖",
 	"globalblocking-list-ipinvalid": "您搜尋的 IP 位址 ($1) 無效。\n請輸入一個有效的 IP 位址。",
-	"globalblocking-search-errors": "您的搜尋失敗，{{PLURAL:$1|原因|原因}}如下：",
+	"globalblocking-search-errors": "您的搜尋失敗，{{PLURAL:$1|原因}}如下：",
 	"globalblocking-list-blockitem": "$1：<span class=\"plainlinks\">'''$2'''</span> (''$3'') 己全域封鎖 [[Special:Contributions/$4|$4]] ''($5)''",
 	"globalblocking-list-expiry": "於 $1 到期",
 	"globalblocking-list-anononly": "僅限匿名使用者",
@@ -66,7 +67,7 @@
 	"globalblocking-unblock-legend": "移除一個全域封鎖",
 	"globalblocking-unblock-submit": "移除全域封鎖",
 	"globalblocking-unblock-reason": "原因：",
-	"globalblocking-unblock-unblocked": "您已經成功移除 IP 位址 '''$1''' 中的全域封鎖 #$2。",
+	"globalblocking-unblock-unblocked": "您已經移除IP位址 '''$1''' 中的全域封鎖 #$2。",
 	"globalblocking-unblock-intro": "您可以使用此表格移除一個全域封鎖。",
 	"globalblocking-whitelist": "全域封鎖的本地狀態",
 	"globalblocking-whitelist-notapplied": "全域封鎖無法套用至本 Wiki，\n因此無法修改全域封鎖的本地狀態。",
@@ -75,8 +76,8 @@
 	"globalblocking-whitelist-status": "本地狀態：",
 	"globalblocking-whitelist-statuslabel": "停用在 {{SITENAME}} 上的全域封鎖",
 	"globalblocking-whitelist-submit": "變更本地狀態",
-	"globalblocking-whitelist-whitelisted": "您已經成功停用在 {{SITENAME}} 的 IP 位址 '''$1''' 中的全域封鎖 #$2。",
-	"globalblocking-whitelist-dewhitelisted": "您已經成功重新開啟在 {{SITENAME}} 的 IP 位址 '''$1''' 中的全域封鎖 #$2。",
+	"globalblocking-whitelist-whitelisted": "您已經停用在 {{SITENAME}} 的IP位址 '''$1''' 中的全域封鎖 #$2。",
+	"globalblocking-whitelist-dewhitelisted": "您已經重新開啟在 {{SITENAME}} 的IP位址 '''$1''' 中的全域封鎖 #$2。",
 	"globalblocking-whitelist-nochange": "您未對此封鎖中的本地狀態做變更。",
 	"globalblocking-whitelist-intro": "您可以使用此表單編輯全域封鎖的本地狀態。\n若全域封鎖己於此 Wiki 停用，使用該 IP 位置的使用者將可正常進行編輯。",
 	"globalblocking-ipblocked": "'''您的 IP 位址己被所有 Wiki 封鎖。'''\n\n封鎖的動作由 $1 ($2) 所執行。\n原因為 ''$3''。\n\n* 封鎖開始日期：$4\n* 封鎖結束日期：$5\n\n您可以聯絡 $1 討論有關封鎖的問題。\n除非您於 [[Special:Preferences|偏好設定]] 中設定了一個有效的電子郵件地址且您未被禁止使用該功能，否則您將無法使用 \"{{int:emailuser}}\"。\n您目前的 IP 位址為 $6。\n請於任何詢問中附上以上詳細資訊。",
