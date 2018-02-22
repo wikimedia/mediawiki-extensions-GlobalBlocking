@@ -3,7 +3,8 @@
 		"authors": [
 			"S.Örvarr.S",
 			"Snævar",
-			"Macofe"
+			"Macofe",
+			"Sveinn í Felli"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Leyfir]] bönnun á vistföngum [[Special:GlobalBlockList|yfir mörg wiki verkefni]]",
@@ -22,7 +23,7 @@
 	"globalblocking-block-submit": "Banna þetta vistfang altækt",
 	"globalblocking-modify-submit": "Breyta þessu altæku banni",
 	"globalblocking-block-success": "Bannaði vistfangið $1 á öllum verkefnum.",
-	"globalblocking-modify-success": "Tókst að breyta altæka banninu $1",
+	"globalblocking-modify-success": "Tókst að breyta altæka banninu á $1.",
 	"globalblocking-block-alreadyblocked": "Vistfangið $1 er þegar bannað altækt.\nÞú getur skoðað það bann sem fyrir er á [[Special:GlobalBlockList|lista yfir altæk bönn]],\neða breytt stillingum bannsins með því að endursenda þetta eyðublað.",
 	"globalblocking-block-bigrange": "Fjöldabannið sem þú tilgreindir ($1) er of stórt til að banna.\nÞú mátt banna, í mestalagi, 65.536 vistföng (/16 raðir)",
 	"globalblocking-list-intro": "Hér er listi yfir öll altæk bönn sem eru enn virk\nÞau bönn sem eru merkt sem óvirk svæðisbundið eiga við aðrar wiki síður en möppudýr á þessari síðu hefur ákveðið að afvirkja bannið á þessum wiki.",
@@ -31,7 +32,7 @@
 	"globalblocking-search-ip": "Vistfang:",
 	"globalblocking-search-submit": "Leita að bönnum",
 	"globalblocking-list-ipinvalid": "Vistfangið sem þú leitaðir að ($1) er ógilt.\nVinsamlegast sláðu inn gilt vistfang.",
-	"globalblocking-search-errors": "Leitin þín mistókst, vegna eftirfarandi {{PLURAL:$1|ástæðu|ástæðna}}:",
+	"globalblocking-search-errors": "Leitin þín mistókst, af eftirfarandi {{PLURAL:$1|ástæðu|ástæðum}}:",
 	"globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> (''$3'') bannaði altækt [[Special:Contributions/$4|$4]] ''($5)''",
 	"globalblocking-list-expiry": "rennur út $1",
 	"globalblocking-list-anononly": "nafnlausir eingöngu",
@@ -50,7 +51,7 @@
 	"globalblocking-unblock-legend": "Fjarlægja altækt bann",
 	"globalblocking-unblock-submit": "Fjarlægja altækt bann",
 	"globalblocking-unblock-reason": "Ástæða:",
-	"globalblocking-unblock-unblocked": "Þér hefur tekist að fjarlægja altæka bannið #$2 á vistfanginu '''$1'''",
+	"globalblocking-unblock-unblocked": "Þér hefur tekist að fjarlægja altæka bannið #$2 á IP-vistfanginu '''$1'''",
 	"globalblocking-unblock-intro": "Þú getur notað þetta eyðublað til að fjarlægja altækt bann.",
 	"globalblocking-whitelist": "Svæðisbundin staða altækra banna",
 	"globalblocking-whitelist-notapplied": "Altæk bönn eru óstudd á þessum wiki,\nsvo ekki er hægt að breyta staðbundinni stöðu altækra banna.",
