@@ -69,6 +69,7 @@
 	"globalblocking-whitelist-nochange": "Selle blokeeringu kohalikku olekut ei muudetud.",
 	"globalblocking-whitelist-intro": "Seda vormi saab kasutada globaalse blokeeringu kohaliku oleku muutmiseks.\nKui globaalne blokeering on selles vikis keelatud, saavad kasutajad selle IP-aadressi alt tavapäraselt toimetada.",
 	"globalblocking-ipblocked": "'''Sinu IP-aadress on kõigis vikides blokeeritud.'''\n\nBlokeerija: $1 ($2).\nPõhjus: ''$3''.\n\n* Blokeeringu algusaeg: $4\n* Blokeeringu aegumistähtaeg: $5\n\nEt blokeeringuga seonduvat arutada, saad ühendust võta kasutajaga $1.\nFunktsiooni \"{{int:emailuser}}\" saad kasutada vaid siis, kui sinu [[Special:Preferences|konto eelistustes]] on määratud sobiv e-posti aadressi ja kui sul pole keelatud seda kasutada.\nPraegu on sinu IP-aadress $6.\nPalun lisa kõigi võimalike järelepärimiste juurde ülaltoodud üksikasjad.",
+	"globalblocking-ipblocked-range": "'''Sinu IP-aadress on vahemikus, mis on kõigis vikides blokeeritud.'''\n\nBlokeerija: $1 ($2).\nPõhjus: ''$3''.\n\n* Blokeeringu algusaeg: $4\n* Blokeeringu aegumistähtaeg: $5\n\nEt blokeeringuga seonduvat arutada, saad ühendust võta kasutajaga $1.\nFunktsiooni \"{{int:emailuser}}\" saad kasutada vaid siis, kui sinu [[Special:Preferences|konto eelistustes]] on määratud sobiv e-posti aadressi ja kui sul pole keelatud seda kasutada.\nPraegu on sinu IP-aadress $6 ja blokeeritud vahemik on $7.\nPalun lisa kõigi võimalike järelepärimiste juurde ülaltoodud üksikasjad.",
 	"globalblocking-ipblocked-xff": "'''Vähemalt üks sinu päringus kasutatud proksiserveritest on globaalselt blokeeritud.'''\n\nBlokeerija: $1 ($2).\nPõhjus: ''$3''.\n\n* Blokeerimisaeg: $4\n* Blokeeringu aegumistähtaeg: $5\n\nSaad võtta ühendust kasutajaga $1, et blokeeringut arutada.\nSa ei saa kasutada funktsiooni \"{{int:emailuser}}\", kui sinu [[Special:Preferences|konto eelistustes]] pole määratud sobivat e-posti aadressi või kui selle kasutamine on sinu jaoks blokeeritud.\nBlokeeritud proksi aadress oli $6.\nPalun lisa ülaltoodud üksikasjad kõigile päringutele, mida teed.",
 	"globalblocking-blocked-nopassreset": "Sa ei saa kasutaja salasõna lähtestada, sest oled globaalselt blokeeritud.",
 	"globalblocking-logpage": "Globaalne blokeerimislogi",
@@ -76,6 +77,8 @@
 	"globalblocking-block-logentry": "blokeeris globaalselt kasutaja [[$1]] aegumistähtajaga $2",
 	"globalblocking-block2-logentry": "blokeeris globaalselt kasutaja [[$1]] ($2)",
 	"globalblocking-unblock-logentry": "eemaldas IP-aadressi [[$1]] globaalse blokeeringu",
+	"globalblocking-logentry-whitelist": "$1 {{GENDER:$2|tühistas}} kohalikus vikis blokeeritava $3 globaalse blokeeringu",
+	"globalblocking-logentry-dewhitelist": "$1 {{GENDER:$2|ennistas}} kohalikus vikis blokeeritava $3 globaalse blokeeringu",
 	"globalblocking-modify-logentry": "muutis kasutaja [[$1]] globaalset blokeeringut ($2)",
 	"globalblocking-logentry-expiry": "aegumistähtaeg $1",
 	"globalblocking-logentry-noexpiry": "aegumistähtajata",
@@ -91,5 +94,11 @@
 	"right-globalblock-whitelist": "Kohalikus vikis globaalseid blokeeringuid välja lülitada",
 	"action-globalblock-whitelist": "kohalikus vikis globaalseid blokeeringuid välja lülitada",
 	"right-globalblock-exempt": "Mööduda globaalsetest blokeeringutest",
-	"action-globalblock-exempt": "globaalsetest blokeeringutest mööduda"
+	"action-globalblock-exempt": "globaalsetest blokeeringutest mööduda",
+	"log-action-filter-gblblock": "Globaalse blokeeringu tüüp:",
+	"log-action-filter-gblblock-gblock": "Globaalne blokeerimine",
+	"log-action-filter-gblblock-gunblock": "Globaalse blokeeringu tühistamine",
+	"log-action-filter-gblblock-modify": "Globaalse blokeeringu muutmine",
+	"log-action-filter-gblblock-whitelist": "Globaalse blokeeringu lisamine valgesse nimekirja",
+	"log-action-filter-gblblock-dwhitelist": "Globaalse blokeeringu eemaldamine valgest nimekirjast"
 }
