@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Malafaya"
+			"Malafaya",
+			"Joao Xavier"
 		]
 	},
 	"globalblocking-block-expiry-selector-other": "Altra tempo:",
@@ -9,5 +10,6 @@
 	"globalblocking-list-anononly": "nur anonima",
 	"globalblocking-list-unblock": "forigar",
 	"globalblocking-unblock-reason": "Motivo:",
-	"globalblocking-whitelist-reason": "Motivo:"
+	"globalblocking-whitelist-reason": "Motivo:",
+	"globalblocking-logpage": "'Log' pri globala blokuzado"
 }
