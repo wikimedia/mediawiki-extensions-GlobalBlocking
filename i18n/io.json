@@ -7,6 +7,7 @@
 	},
 	"globalblocking-block-expiry-selector-other": "Altra tempo:",
 	"globalblocking-search-ip": "IP-adreso:",
+	"globalblocking-search-errors": "Vua serchado faliis pro la sequanta {{PLURAL:$1|motivo|motivi}}:",
 	"globalblocking-list-anononly": "nur anonima",
 	"globalblocking-list-unblock": "forigar",
 	"globalblocking-unblock-reason": "Motivo:",
