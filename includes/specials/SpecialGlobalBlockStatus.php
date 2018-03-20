@@ -161,4 +161,8 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 	protected function getGroupName() {
 		return 'users';
 	}
+
+	protected function getDisplayFormat() {
+		return 'ooui';
+	}
 }
