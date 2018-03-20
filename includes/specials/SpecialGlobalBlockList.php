@@ -59,7 +59,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 		$context = new DerivativeContext( $this->getContext() );
 		$context->setTitle( $this->getPageTitle() ); // remove subpage
 
-		$form = HTMLForm::factory( 'table', $fields, $context );
+		$form = HTMLForm::factory( 'ooui', $fields, $context );
 		$form->setMethod( 'get' )
 			->setName( 'globalblocklist-search' )
 			->setSubmitTextMsg( 'globalblocking-search-submit' )
