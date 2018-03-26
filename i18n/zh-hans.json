@@ -57,7 +57,7 @@
 	"globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> （''$3''） 全域封锁了 [[Special:Contributions/$4|$4]] ''（$5）''",
 	"globalblocking-list-expiry": "终止于$1",
 	"globalblocking-list-anononly": "仅匿名用户",
-	"globalblocking-list-unblock": "解除封锁",
+	"globalblocking-list-unblock": "移除",
 	"globalblocking-list-whitelisted": "由$1于本地停用：$2",
 	"globalblocking-list-whitelist": "本地状态",
 	"globalblocking-list-modify": "修改",

@@ -12,7 +12,8 @@
 			"Raimond Spekking",
 			"Umherirrender",
 			"Predatorix",
-			"Inkowik"
+			"Inkowik",
+			"ToBeFree"
 		]
 	},
 	"globalblocking-desc": "Ermöglicht das [[Special:GlobalBlock|Sperren]] von IP-Adressen auf [[Special:GlobalBlockList|allen Wikis]]",
@@ -112,6 +113,7 @@
 	"apihelp-globalblock-param-modify": "Gib dies an, falls die vorhandene Sperre des Ziels verändert werden soll.",
 	"apihelp-globalblock-example-1": "Sperre 192.0.2.1 auf unbestimmte Zeit mit dem Grund \"Quer-Wiki - Missbrauch\"",
 	"apihelp-query+globalblocks-description": "Alle global gesperrten IP-Adressen auflisten.",
+	"apihelp-query+globalblocks-summary": "Alle global gesperrten IP-Adressen auflisten.",
 	"apihelp-query+globalblocks-param-start": "Der Zeitstempel, bei dem die Aufzählung beginnen soll.",
 	"apihelp-query+globalblocks-param-end": "Der Zeitstempel, bei dem die Aufzählung beendet werden soll.",
 	"apihelp-query+globalblocks-param-ids": "Durch Verkettungszeichen getrennte Liste von Sperren-IDs, die aufgelistet werden sollen.",
