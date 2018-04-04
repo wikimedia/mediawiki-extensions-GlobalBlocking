@@ -23,6 +23,8 @@
  * http://www.gnu.org/copyleft/gpl.html
  */
 
+use Wikimedia\Rdbms\IDatabase;
+
 /**
  * Query module to enumerate all available pages.
  *

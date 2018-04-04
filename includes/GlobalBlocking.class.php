@@ -7,6 +7,7 @@
  */
 
 use MediaWiki\MediaWikiServices;
+use Wikimedia\Rdbms\DBUnexpectedError;
 
 class GlobalBlocking {
 	/**
