@@ -45,6 +45,8 @@
 	"globalblocking-block2-logentry": "глобальни блоктоьхна [[$1]] ($2)",
 	"globalblocking-modify-logentry": "хийцина глобальни блоктохар [[$1]] ($2)",
 	"globalblocking-logentry-expiry": "чекхйолу $1",
+	"globalblocking-loglink": "IP-адрес $1 глобалан блоктоьхна ду ([[{{#Special:GlobalBlockList}}/$1|мадарра]]).",
+	"globalblocking-contribs-notice": "ХӀара IP-адрес хӀинца блоктоьхна ду.\nЛахахь гойту глобалан блоктохарийн тептар чура тӀаьххьара дӀаяздар:",
 	"globalblocklist": "Глобальни блоктоьхна IP-адресийн могӀам",
 	"globalblockstatus": "ХӀоттайелчаьрца долу хьал, глобальни блоктохарна",
 	"right-globalblock": "Глобальни блоктохар а, блокдӀаяккхар а",
