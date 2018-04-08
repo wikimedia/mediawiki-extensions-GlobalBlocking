@@ -13,7 +13,8 @@
 			"Peter Bowman",
 			"Matma Rex",
 			"Macofe",
-			"Woytecr"
+			"Woytecr",
+			"Railfail536"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Umożliwia]] równoczesne [[Special:GlobalBlockList|blokowanie]] adresów IP na wielu wiki",
@@ -105,6 +106,7 @@
 	"right-globalblock-exempt": "Ignorowanie globalnych blokad",
 	"action-globalblock-exempt": "ignorowanie globalnych blokad",
 	"apihelp-globalblock-description": "Zablokuj lub odblokuj użytkownika globalnie.",
+	"apihelp-globalblock-summary": "Zablokuj lub odblokuj użytkownika globalnie.",
 	"apihelp-globalblock-param-target": "Docelowy adres IP.",
 	"apihelp-globalblock-param-expiry": "Jeżeli określone, zablokuje lub zablokuje ponownie użytkownika. Określa, jak długo blokada będzie trwała, np. \"5 months\" lub \"2 weeks\". Jeżeli ustawisz na \"infinite\" lub \"indefinite\", blokada nigdy nie wygaśnie.",
 	"apihelp-globalblock-param-unblock": "Jeżeli określony, odblokuje użytkownika.",
@@ -113,6 +115,7 @@
 	"apihelp-globalblock-param-modify": "Określ go, jeżeli mają zostać wprowadzone zmiany w istniejącej blokadzie na ten sam cel.",
 	"apihelp-globalblock-example-1": "Zablokuj na zawsze 192.0.2.1 z powodem \"Cross-wiki abuse\"",
 	"apihelp-query+globalblocks-description": "Spis globalnie zablokowanych adresów IP.",
+	"apihelp-query+globalblocks-summary": "Lista wszystkich globalnie zablokowanych adresów IP.",
 	"apihelp-query+globalblocks-param-start": "Znacznik czasu, od którego zacząć wyliczanie.",
 	"apihelp-query+globalblocks-param-end": "Znacznik czasu, na którym zakończyć wyliczanie.",
 	"apihelp-query+globalblocks-param-ids": "Lista identyfikatorów blokad, które wyświetlić, oddzielana znakami pionowej kreski.",
