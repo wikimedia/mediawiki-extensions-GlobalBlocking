@@ -83,4 +83,8 @@ class SpecialRemoveGlobalBlock extends FormSpecialPage {
 	protected function getGroupName() {
 		return 'users';
 	}
+
+	protected function getDisplayFormat() {
+		return 'ooui';
+	}
 }
