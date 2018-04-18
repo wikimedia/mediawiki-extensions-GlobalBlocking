@@ -20,7 +20,13 @@
 	"GrantPermissions": {
 		"basic": {
 			"globalblock-exempt": true
+		},
+		"globalblock": {
+			"globalblock": true
 		}
+	},
+	"GrantPermissionGroups": {
+		"globalblock": "administration"
 	},
 	"AvailableRights": [
 		"globalblock",

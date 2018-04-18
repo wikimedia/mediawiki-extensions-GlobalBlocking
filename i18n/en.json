@@ -118,5 +118,6 @@
 	"log-action-filter-gblblock-gunblock": "Global unblock",
 	"log-action-filter-gblblock-modify": "Global block modification",
 	"log-action-filter-gblblock-whitelist": "Global block whitelist addition",
-	"log-action-filter-gblblock-dwhitelist": "Global block whitelist removal"
+	"log-action-filter-gblblock-dwhitelist": "Global block whitelist removal",
+	"grant-globalblock": "Globally block or unblock an IP address"
 }

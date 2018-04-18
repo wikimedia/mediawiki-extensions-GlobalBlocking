@@ -143,5 +143,6 @@
 	"log-action-filter-gblblock-gunblock": "{{doc-log-action-filter-action|gblblock|gunblock}}",
 	"log-action-filter-gblblock-modify": "{{doc-log-action-filter-action|gblblock|modify}}",
 	"log-action-filter-gblblock-whitelist": "{{doc-log-action-filter-action|gblblock|whitelist}}",
-	"log-action-filter-gblblock-dwhitelist": "{{doc-log-action-filter-action|gblblock|dwhitelist}}"
+	"log-action-filter-gblblock-dwhitelist": "{{doc-log-action-filter-action|gblblock|dwhitelist}}",
+	"grant-globalblock": "Name for grant \"globalblock\".\n{{Related|Grant}}"
 }
