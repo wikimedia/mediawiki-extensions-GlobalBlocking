@@ -128,5 +128,6 @@
 	"log-action-filter-gblblock-gunblock": "Globale Freigabe",
 	"log-action-filter-gblblock-modify": "Veränderung der globalen Sperre",
 	"log-action-filter-gblblock-whitelist": "Hinzufügung zur weißen Liste für globale Sperren",
-	"log-action-filter-gblblock-dwhitelist": "Entfernung von der weißen Liste für globale Sperren"
+	"log-action-filter-gblblock-dwhitelist": "Entfernung von der weißen Liste für globale Sperren",
+	"grant-globalblock": "Global eine IP-Adresse sperren oder freigeben"
 }

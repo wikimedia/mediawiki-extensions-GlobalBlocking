@@ -135,5 +135,6 @@
 	"log-action-filter-gblblock-gunblock": "Déblocage global",
 	"log-action-filter-gblblock-modify": "Modification du blocage global",
 	"log-action-filter-gblblock-whitelist": "Ajout à la liste blanche du blocage global",
-	"log-action-filter-gblblock-dwhitelist": "Suppression de la liste blanche du blocage global"
+	"log-action-filter-gblblock-dwhitelist": "Suppression de la liste blanche du blocage global",
+	"grant-globalblock": "Bloquer ou débloquer globalement une adresse IP"
 }

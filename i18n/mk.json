@@ -119,5 +119,6 @@
 	"log-action-filter-gblblock-gunblock": "Глобално одблокирање",
 	"log-action-filter-gblblock-modify": "Измена на глобален блок",
 	"log-action-filter-gblblock-whitelist": "Додавање на белиот список за глобално блокирање",
-	"log-action-filter-gblblock-dwhitelist": "Отстранување од белиот список за глобално блокирање"
+	"log-action-filter-gblblock-dwhitelist": "Отстранување од белиот список за глобално блокирање",
+	"grant-globalblock": "Глобално блокирајте или одблокирајте IP-адреса"
 }

@@ -124,5 +124,6 @@
 	"log-action-filter-gblblock-gunblock": "שחרורים של חסימות גלובליות",
 	"log-action-filter-gblblock-modify": "שינויים של חסימות גלובליות",
 	"log-action-filter-gblblock-whitelist": "הוספות של חסימות גלובליות לרשימה הלבנה",
-	"log-action-filter-gblblock-dwhitelist": "הסרות של חסימות גלובליות מהרשימה הלבנה"
+	"log-action-filter-gblblock-dwhitelist": "הסרות של חסימות גלובליות מהרשימה הלבנה",
+	"grant-globalblock": "חסימה או שחרור חסימה של כתובות IP באופן גלובלי"
 }

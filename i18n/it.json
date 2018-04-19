@@ -119,5 +119,6 @@
 	"log-action-filter-gblblock-gunblock": "Sblocco globale",
 	"log-action-filter-gblblock-modify": "Modifica blocco globale",
 	"log-action-filter-gblblock-whitelist": "Aggiunta nella lista bianca blocco globale",
-	"log-action-filter-gblblock-dwhitelist": "Rimozione dalla lista bianca blocco globale"
+	"log-action-filter-gblblock-dwhitelist": "Rimozione dalla lista bianca blocco globale",
+	"grant-globalblock": "Bloccare o sbloccare un indirizzo IP globalmente"
 }
