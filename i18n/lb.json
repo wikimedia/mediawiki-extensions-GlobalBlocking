@@ -99,5 +99,6 @@
 	"log-action-filter-gblblock": "Typ vun der globaler Spär:",
 	"log-action-filter-gblblock-gblock": "Global Spär",
 	"log-action-filter-gblblock-gunblock": "Global entspären",
-	"log-action-filter-gblblock-modify": "Ännerung vun der globaler Spär"
+	"log-action-filter-gblblock-modify": "Ännerung vun der globaler Spär",
+	"grant-globalblock": "Eng Ip-Adress global spären oder d'Spär dofir ophiewen"
 }

@@ -138,5 +138,6 @@
 	"log-action-filter-gblblock-gunblock": "全域解封",
 	"log-action-filter-gblblock-modify": "全域封禁修改",
 	"log-action-filter-gblblock-whitelist": "全域封禁白名单添加",
-	"log-action-filter-gblblock-dwhitelist": "全域封禁白名单移除"
+	"log-action-filter-gblblock-dwhitelist": "全域封禁白名单移除",
+	"grant-globalblock": "全域封禁或解封IP地址"
 }
