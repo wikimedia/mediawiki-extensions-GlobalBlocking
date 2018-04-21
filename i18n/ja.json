@@ -110,5 +110,6 @@
 	"apihelp-globalblock-param-unblock": "指定したユーザーのブロックを解除。",
 	"apihelp-globalblock-param-reason": "ブロック/ブロック解除理由。",
 	"apihelp-query+globalblocks-example-1": "グローバルブロックの一覧",
-	"apihelp-query+globalblocks-example-2": "IPアドレス 192.0.2.18 に適用されたグローバルブロックの一覧"
+	"apihelp-query+globalblocks-example-2": "IPアドレス 192.0.2.18 に適用されたグローバルブロックの一覧",
+	"grant-globalblock": "IPアドレスのグローバルブロックと解除"
 }
