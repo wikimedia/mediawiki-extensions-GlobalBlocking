@@ -18,7 +18,8 @@
 			"Macofe",
 			"LNDDYL",
 			"Arthur2e5",
-			"Hello903hello"
+			"Hello903hello",
+			"Mutolisp"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|允許]] 封鎖 [[Special:GlobalBlockList|於多個 Wiki 中]] 的 IP 位址",
@@ -106,5 +107,6 @@
 	"right-globalblock-exempt": "忽略全域封鎖",
 	"action-globalblock-exempt": "忽略全域封鎖",
 	"apihelp-globalblock-param-target": "目標 IP 位址。",
-	"apihelp-query+globalblocks-example-1": "所有全域封鎖清單"
+	"apihelp-query+globalblocks-example-1": "所有全域封鎖清單",
+	"grant-globalblock": "全域封鎖或是解除封鎖一個 IP 位址"
 }
