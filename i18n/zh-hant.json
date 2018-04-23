@@ -108,5 +108,11 @@
 	"action-globalblock-exempt": "忽略全域封鎖",
 	"apihelp-globalblock-param-target": "目標 IP 位址。",
 	"apihelp-query+globalblocks-example-1": "所有全域封鎖清單",
+	"log-action-filter-gblblock": "全域封禁類型：",
+	"log-action-filter-gblblock-gblock": "全域封禁",
+	"log-action-filter-gblblock-gunblock": "全域解封",
+	"log-action-filter-gblblock-modify": "全域封禁修訂",
+	"log-action-filter-gblblock-whitelist": "全域封禁白名單新增",
+	"log-action-filter-gblblock-dwhitelist": "全域封禁白名單移除",
 	"grant-globalblock": "全域封鎖或是解除封鎖一個 IP 位址"
 }

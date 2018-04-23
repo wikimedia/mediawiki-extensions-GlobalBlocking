@@ -13,7 +13,8 @@
 			"He7d3r",
 			"Araceletorres",
 			"Macofe",
-			"Felipe L. Ewald"
+			"Felipe L. Ewald",
+			"Eduardo Addad de Oliveira"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permite]] que endereços IP sejam [[Special:GlobalBlockList|bloqueados através de múltiplos wikis]]",
@@ -129,5 +130,6 @@
 	"log-action-filter-gblblock-gunblock": "Desbloqueio global",
 	"log-action-filter-gblblock-modify": "Modificação do bloqueio global",
 	"log-action-filter-gblblock-whitelist": "Adição de bloqueio global à lista branca",
-	"log-action-filter-gblblock-dwhitelist": "Remoção do bloqueio global da lista branca"
+	"log-action-filter-gblblock-dwhitelist": "Remoção do bloqueio global da lista branca",
+	"grant-globalblock": "Bloquear ou desbloquear globalmente um endereço IP"
 }
