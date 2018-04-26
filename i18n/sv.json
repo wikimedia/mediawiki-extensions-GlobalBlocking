@@ -121,5 +121,6 @@
 	"apihelp-query+globalblocks-example-2": "Lista globala blockeringar som gäller för IP-adress 192.0.2.18",
 	"log-action-filter-gblblock": "Typ av global blockering:",
 	"log-action-filter-gblblock-gblock": "Global blockering",
-	"log-action-filter-gblblock-gunblock": "Borttagning av global blockering"
+	"log-action-filter-gblblock-gunblock": "Borttagning av global blockering",
+	"grant-globalblock": "Blockera eller upphäv blockering globalt för en IP-adress"
 }
