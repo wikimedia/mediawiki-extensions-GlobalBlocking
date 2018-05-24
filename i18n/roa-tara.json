@@ -118,5 +118,6 @@
 	"log-action-filter-gblblock-gunblock": "Sblocche globbale",
 	"log-action-filter-gblblock-modify": "Cangiamende d'u blocche globbale",
 	"log-action-filter-gblblock-whitelist": "Sckaffate jndr'à l'elenghe vianghe de le blocche globbale",
-	"log-action-filter-gblblock-dwhitelist": "Luate da l'elenghe vianghe de le blocche globbale"
+	"log-action-filter-gblblock-dwhitelist": "Luate da l'elenghe vianghe de le blocche globbale",
+	"grant-globalblock": "Bluècche o sbluècche 'n'indirizze IP globbalmende"
 }
