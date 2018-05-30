@@ -14,7 +14,8 @@
 			"Zpizza",
 			"Mailman",
 			"Mouse21",
-			"Putnik"
+			"Putnik",
+			"Movses"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Разрешает]] блокировку IP-адресов [[Special:GlobalBlockList|в нескольких вики]]",
@@ -130,5 +131,6 @@
 	"log-action-filter-gblblock-gunblock": "Глобальная разблокировка",
 	"log-action-filter-gblblock-modify": "Изменение глобальной блокировки",
 	"log-action-filter-gblblock-whitelist": "Добавление глобального блока в белый список",
-	"log-action-filter-gblblock-dwhitelist": "Удаление глобального блока в белый список"
+	"log-action-filter-gblblock-dwhitelist": "Удаление глобального блока в белый список",
+	"grant-globalblock": "Глобально заблокировать или разблокировать IP-адрес."
 }
