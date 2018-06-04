@@ -119,5 +119,6 @@
 	"log-action-filter-gblblock-gunblock": "Desbloquéu global",
 	"log-action-filter-gblblock-modify": "Cambiu del bloquéu global",
 	"log-action-filter-gblblock-whitelist": "Amestar a la llista blanca de bloqueos globales",
-	"log-action-filter-gblblock-dwhitelist": "Desaniciar de la llista blanca de bloqueos globales"
+	"log-action-filter-gblblock-dwhitelist": "Desaniciar de la llista blanca de bloqueos globales",
+	"grant-globalblock": "Bloquiar o desbloquiar de mou global una direición IP"
 }
