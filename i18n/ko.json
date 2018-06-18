@@ -104,6 +104,8 @@
 	"apihelp-globalblock-description": "사용자를 전역 차단하거나 해제함",
 	"apihelp-globalblock-summary": "사용자를 전역 차단하거나 해제합니다.",
 	"apihelp-globalblock-param-target": "차단할 IP 주소",
+	"apihelp-globalblock-param-expiry": "지정하면 사용자를 차단하거나 다시 차단합니다. 차단이 얼만큼 오랫동안 지속될지를 결정합니다. (예: \"5 months\" 또는 \"2 weeks\") \"infinite\" 또는 \"indefinite\"으로 설정하면 무기한으로 차단합니다.",
+	"apihelp-globalblock-param-unblock": "지정하면 사용자의 차단을 해제합니다.",
 	"apihelp-globalblock-param-reason": "차단/차단 해제 사유",
 	"apihelp-globalblock-param-anononly": "로그아웃 사용자에게만 영향을 미치도록 합니다.",
 	"apihelp-globalblock-param-modify": "기존의 대상 블록을 수정해야 한다면 이것을 지정하세요",
