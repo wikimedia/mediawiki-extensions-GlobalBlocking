@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"පසිඳු කාවින්ද",
-			"Muhammad Shuaib"
+			"Muhammad Shuaib",
+			"BukhariSaeed"
 		]
 	},
 	"globalblocking-block-reason": "وجہ:",
@@ -42,5 +43,6 @@
 	"right-globalblock-whitelist": "عالمی بلاکس کے مقامی غیر فعال کریں",
 	"action-globalblock-whitelist": "عالمی بلاکس کے مقامی غیر فعال کریں",
 	"right-globalblock-exempt": "عالمی بلاکس کو چھوڑنے والے",
-	"action-globalblock-exempt": "عالمی بلاکس کو چھوڑنے والے"
+	"action-globalblock-exempt": "عالمی بلاکس کو چھوڑنے والے",
+	"grant-globalblock": "عالمی طور پر آئی پی پتے پر پابندی لگائیں یا اس سے پابندی ہٹائیں"
 }
