@@ -4,12 +4,14 @@
 			"Veeven",
 			"వైజాసత్య",
 			"Kiranmayee",
-			"Macofe"
+			"Macofe",
+			"Chaduvari"
 		]
 	},
 	"globalblocking-block": "ఒక ఐపీ చిరునామాని సార్వత్రికంగా నిరోధించు",
 	"globalblocking-block-intro": "ఈ పేజీని ఉపయోగించి మీరు అన్ని వికీలలోనూ ఒక IP చిరునామాని నిరోధించగలరు.",
 	"globalblocking-block-reason": "కారణం:",
+	"globalblocking-block-reason-dropdown": "* సాధారణ నిరోధ కారణాలు\n** Crosswiki స్పామింగు\n** Crosswiki దుశ్చర్య\n** దుశ్చర్య",
 	"globalblocking-block-edit-dropdown": "నిరోధపు కారణాలను మార్చండి",
 	"globalblocking-block-expiry": "కాలపరిమితి:",
 	"globalblocking-block-expiry-selector-other": "ఇతర సమయం:",
@@ -76,5 +78,6 @@
 	"removeglobalblock": "ఒక సార్వత్రిక నిరోధాన్ని తొలగించు",
 	"right-globalblock": "సార్వత్రిక నిరోధాల్ని చేయడం",
 	"right-globalblock-whitelist": "సార్వత్రిక నిరోధాల్ని స్థానికంగా అచేతనం చేయగలగడం",
-	"right-globalblock-exempt": "సార్వత్రిక నిరోధాలని తప్పించగలడం"
+	"right-globalblock-exempt": "సార్వత్రిక నిరోధాలని తప్పించగలడం",
+	"apihelp-globalblock-example-1": "\"Cross-wiki abuse\" కారణంగా 192.0.2.1 ను అనంతంగా నిరోధించు"
 }
