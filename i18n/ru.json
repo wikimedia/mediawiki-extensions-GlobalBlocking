@@ -15,7 +15,8 @@
 			"Mailman",
 			"Mouse21",
 			"Putnik",
-			"Movses"
+			"Movses",
+			"Vlad5250"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Разрешает]] блокировку IP-адресов [[Special:GlobalBlockList|в нескольких вики]]",
@@ -100,7 +101,7 @@
 	"globalblock": "Глобальная блокировка IP-адреса",
 	"globalblockstatus": "Локальные состояния глобальных блокировок",
 	"removeglobalblock": "Снять глобальную блокировку",
-	"right-globalblock": "установка глобальных ограничений на редактирование для IP-адресов",
+	"right-globalblock": "установка и снятие глобальных блокировок",
 	"action-globalblock": "установку глобальных ограничений на редактирование",
 	"right-globalblock-whitelist": "локальное отключение глобальных блокировок",
 	"action-globalblock-whitelist": "локальное отключение глобальных блокировок",
