@@ -121,5 +121,6 @@
 	"log-action-filter-gblblock-gunblock": "Desbloqueo global",
 	"log-action-filter-gblblock-modify": "Modificación do bloqueo global",
 	"log-action-filter-gblblock-whitelist": "Engadir á lista branca de bloqueo global",
-	"log-action-filter-gblblock-dwhitelist": "Eliminar da lista branca de bloqueo global"
+	"log-action-filter-gblblock-dwhitelist": "Eliminar da lista branca de bloqueo global",
+	"grant-globalblock": "Bloquear ou desbloquear globalmente un enderezo IP"
 }

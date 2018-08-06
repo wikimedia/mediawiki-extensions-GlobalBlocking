@@ -116,6 +116,7 @@
 	"apihelp-query+globalblocks-param-end": "나열을 끝낼 타임스탬프",
 	"apihelp-query+globalblocks-param-ids": "나열할 차단 ID, 파이프로 분리",
 	"apihelp-query+globalblocks-param-addresses": "검색할 IP 주소, 파이프로 분리",
+	"apihelp-query+globalblocks-param-prop": "가져올 속성입니다.",
 	"apihelp-query+globalblocks-example-1": "모든 전역 차단 나열",
 	"grant-globalblock": "IP 주소 전역 차단 또는 차단 해제"
 }

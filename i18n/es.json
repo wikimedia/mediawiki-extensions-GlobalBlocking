@@ -22,7 +22,8 @@
 			"Ryo567",
 			"Matiia",
 			"Indiralena",
-			"AlvaroMolina"
+			"AlvaroMolina",
+			"Jelou"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permite]] bloquear direcciones IP [[Special:GlobalBlockList|simultáneamente en varios wikis]]",
@@ -32,7 +33,7 @@
 	"globalblocking-block-reason-dropdown": "* Motivos comunes de bloqueo\n** Spam en varias wikis\n** Abusos en varias wikis\n** Vandalismo",
 	"globalblocking-block-edit-dropdown": "Editar motivos de bloqueo",
 	"globalblocking-block-expiry": "Caducidad:",
-	"globalblocking-block-expiry-selector-other": "Otro tiempo:",
+	"globalblocking-block-expiry-selector-other": "En otro momento:",
 	"globalblocking-block-legend": "Bloquear una dirección IP globalmente",
 	"globalblocking-ipaddress": "Dirección IP:",
 	"globalblocking-ipbanononly": "Bloquear solo los usuarios anónimos",
