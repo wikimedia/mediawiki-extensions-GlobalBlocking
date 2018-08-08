@@ -92,9 +92,9 @@
 	"globalblockstatus": "Локално стање глобалних блокада",
 	"removeglobalblock": "Уклони глобални блок",
 	"right-globalblock": "постављање и уклањање глобалних блокада",
-	"action-globalblock": "постављање и уклањање глобалних блокирања",
+	"action-globalblock": "постављате и уклањате глобална блокирања",
 	"right-globalblock-whitelist": "онемогућавање глобалних блокова локално",
-	"action-globalblock-whitelist": "локално онемогућавање глобалних блокова",
+	"action-globalblock-whitelist": "локално онемогућите глобална блокирања",
 	"right-globalblock-exempt": "заобилажење глобалних блокада",
-	"action-globalblock-exempt": "заобилажење глобалних блокова"
+	"action-globalblock-exempt": "заобилазите глобално блокирање"
 }
