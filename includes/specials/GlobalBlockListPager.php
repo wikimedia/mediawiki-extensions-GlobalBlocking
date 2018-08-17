@@ -97,7 +97,7 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 	public function getQueryInfo() {
 		return [
 			'tables' => 'globalblocks',
-			'fields' => '*',
+			'fields' => GlobalBlocking::selectFields(),
 			'conds' => $this->queryConds,
 		];
 	}
