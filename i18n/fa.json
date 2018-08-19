@@ -111,6 +111,7 @@
 	"apihelp-query+globalblocks-summary": "فهرست نشانی‌های اینترنتی که دسترسی‌شان به طور سراسری قطع شده‌است",
 	"apihelp-query+globalblocks-param-start": "برچسب زمانی برای آغاز شمارش از.",
 	"apihelp-query+globalblocks-param-end": "برچسب زمانی برای پایان شمارش در.",
+	"apihelp-query+globalblocks-param-limit": "حداکثر تعداد بستن‌هایی که نمایش داده شود.",
 	"apihelp-query+globalblocks-param-prop": "خصوصیتی که باید گرفته شود.",
 	"apihelp-query+globalblocks-example-1": "فهرست همه بندایش‌های سراسری",
 	"log-action-filter-gblblock": "نوع بستن سراسری:",
