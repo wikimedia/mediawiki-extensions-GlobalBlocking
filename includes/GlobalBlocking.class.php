@@ -158,7 +158,7 @@ class GlobalBlocking {
 		}
 
 		// Get the block
-		$block = $dbr->selectRow( 'globalblocks', '*', $conds, __METHOD__ );
+		$block = $dbr->selectRow( 'globalblocks', self::selectFields(), $conds, __METHOD__ );
 		return $block;
 	}
 
@@ -213,7 +213,7 @@ class GlobalBlocking {
 		}
 
 		$blocks = [];
-		$results = $dbr->select( 'globalblocks', '*', $conds, __METHOD__ );
+		$results = $dbr->select( 'globalblocks', self::selectFields(), $conds, __METHOD__ );
 		if ( !$results ) {
 			return [];
 		}
@@ -537,5 +537,10 @@ class GlobalBlocking {
 			? $sp->msg( 'parentheses', $sp->getLanguage()->pipeList( $links ) )->text()
 			: '';
 		return $linkItems;
+	}
+
+	public static function selectFields() {
+		return [ 'gb_id', 'gb_address', 'gb_by', 'gb_by_wiki', 'gb_reason', 'gb_timestamp',
+			'gb_anon_only', 'gb_expiry', 'gb_range_start', 'gb_range_end' ];
 	}
 }
