@@ -88,7 +88,7 @@
 	"globalblocking-block2-logentry": "zablokował globalnie [[$1]] ($2)",
 	"globalblocking-unblock-logentry": "zdjął globalną blokadę z [[$1]]",
 	"globalblocking-logentry-whitelist": "$1 {{GENDER:$2|wyłączył|wyłączyła}} lokalnie blokadę globalną na $3",
-	"globalblocking-logentry-dewhitelist": "$1 Ponownie {{GENDER:$2|włączył|włączyła}} stosowanie lokalnie blokady globalnej na $3",
+	"globalblocking-logentry-dewhitelist": "$1 ponownie {{GENDER:$2|włączył|włączyła}} stosowanie lokalnie blokady globalnej na $3",
 	"globalblocking-modify-logentry": "zmienił blokadę globalną dla [[$1]] ($2)",
 	"globalblocking-logentry-expiry": "wygasa $1",
 	"globalblocking-logentry-noexpiry": "wygaśnięcie nie ustalone",
