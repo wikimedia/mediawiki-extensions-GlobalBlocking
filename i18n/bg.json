@@ -7,7 +7,8 @@
 			"Turin",
 			"Macofe",
 			"ShockD",
-			"StanProg"
+			"StanProg",
+			"Vlad5250"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Позволява]] IP-адреси да се [[Special:GlobalBlockList|блокират едновременно в множество уикита]]",
@@ -82,7 +83,7 @@
 	"globalblock": "Глобално блокиране на IP адрес",
 	"globalblockstatus": "Локално състояние на глобалните блокирания",
 	"removeglobalblock": "Премахване на глобално блокиране",
-	"right-globalblock": "Създаване на глобални блокирания",
+	"right-globalblock": "Създаване и премахване на глобални блокирания",
 	"action-globalblock": "създаване и премахване на глобални блокирания",
 	"right-globalblock-whitelist": "Локално спиране на глобалните блокирания",
 	"right-globalblock-exempt": "Пренебрегване на глобалните блокирания",
