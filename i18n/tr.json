@@ -68,7 +68,7 @@
 	"globalblocking-whitelist-dewhitelisted": "{{SITENAME}} sitesinde '''$1''' IP addresli #$2 küresel engellemesini başarıyla tekrar devreye soktunuz.",
 	"globalblocking-whitelist-nochange": "Bu engellemenin yerel durumuna hiçbir değişiklik yapmadınız.\n[[Special:GlobalBlockList|Küresel engelleme listesine geri dönün]].",
 	"globalblocking-whitelist-intro": "Küresel bir engellemenin yerel durumunu değiştirmek için bu formu kullanabilirsiniz.\nEğer bir küresel engelleme bu vikide devre dışı bırakılmış ise, etkilenen IP adresindeki kullanıcılar normal olarak değişiklik yapabilecektir.\n[[Special:GlobalBlockList|Küresel engelleme listesine geri dönün]].",
-	"globalblocking-blocked-nopassreset": "Küresel olarak engellenmiş olduğunuz için kullanıcının şifresini sıfırlayamazsınız.",
+	"globalblocking-blocked-nopassreset": "Küresel olarak engellenmiş olduğunuz için kullanıcının parolasını sıfırlayamazsınız.",
 	"globalblocking-logpage": "Küresel engelleme günlüğü",
 	"globalblocking-logpagetext": "Bu, bu vikide yapılan ve kaldırılan küresel engellemelerin günlüğüdür.\nKüresel engellemelerin diğer vikilerde yapılıp kaldırılabileceğini, ve bu küresel engellemelerin bu vikiyi etkileyebileceğini unutmayın.\nTüm aktif küresel engellemeri görmek için, [[Special:GlobalBlockList|küresel engelleme listesine]] bakabilirsiniz.",
 	"globalblocking-block-logentry": "[[$1]], $2 bitiş zamanı ile küresel olarak engellendi",
