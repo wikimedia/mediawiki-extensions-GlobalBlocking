@@ -93,5 +93,5 @@
 	"log-action-filter-gblblock-modify": "Промяна на глобалното блокиране",
 	"log-action-filter-gblblock-whitelist": "Добавяне към белия списък на глобалните блокирания",
 	"log-action-filter-gblblock-dwhitelist": "Премахване от белия списък на глобалните блокирания",
-	"grant-globalblock": "Глобално блокиране или отблокиране на IP-адреса"
+	"grant-globalblock": "Глобално блокиране или отблокиране на IP адрес"
 }
