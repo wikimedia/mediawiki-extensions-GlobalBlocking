@@ -53,7 +53,7 @@
 	"globalblocking-unblock-submit": "Busak blokiran global",
 	"globalblocking-unblock-reason": "Alesan:",
 	"globalblocking-unblock-unblocked": "Panjenengan sacara suksès njabel blokade global #$2 ing alamat IP '''$1'''",
-	"globalblocking-unblock-intro": "Sampéyan bisa nganggo pormulir iki kanggo nyingkiraké blokiran global.",
+	"globalblocking-unblock-intro": "Panjenengan bisa nganggo pormulir iki kanggo nyingkiraké blokiran global.",
 	"globalblocking-whitelist": "Status lokal saka pamblokiran global",
 	"globalblocking-whitelist-notapplied": "Blokiran global ora sumadhiya nèng wiki iki,\ndadiné status lokal saka blokiran global ora bisa diowah-owah.",
 	"globalblocking-whitelist-legend": "Ganti status lokal",
