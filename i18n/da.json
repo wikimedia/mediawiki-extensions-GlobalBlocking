@@ -10,7 +10,8 @@
 			"Sarrus",
 			"Steenth",
 			"Tjernobyl",
-			"Macofe"
+			"Macofe",
+			"Saederup92"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Tillader]] at IP-adresser bliver [[Special:GlobalBlockList|blokeret på tværs af talrige wikier]]",
@@ -51,13 +52,14 @@
 	"globalblocking-goto-unblock": "Ophæv en global blokering",
 	"globalblocking-goto-status": "Ændre lokale status for en global blokering",
 	"globalblocking-return": "Tilbage til listen over globale blokkeringer",
+	"globalblocking-add-block": "Tilføj en anden globak blokering",
 	"globalblocking-notblocked": "IP-adressen du angav ($1) blokeres ikke globalt.",
 	"globalblocking-unblock": "Ophæv en global blokering",
 	"globalblocking-unblock-ipinvalid": "IP-adressen, du indtastede ($1), er ugyldig.\nBemærk venligst, at du ikke kan indtaste et brugernavn!",
 	"globalblocking-unblock-legend": "Ophæv en global blokering",
 	"globalblocking-unblock-submit": "Ophæv global blokering",
 	"globalblocking-unblock-reason": "Begrundelse:",
-	"globalblocking-unblock-unblocked": "Du har fjernet den globale blokering #$2 til IP-adressen '''$1'''",
+	"globalblocking-unblock-unblocked": "Du har fjernet den globale blokering #$2 på IP-adressen '''$1'''.",
 	"globalblocking-unblock-intro": "Du kan bruge denne form til at fjerne en global blokering.",
 	"globalblocking-whitelist": "Lokal status for global blokering",
 	"globalblocking-whitelist-notapplied": "Global blokeringer bruges ikke på denne wiki,\nså den lokale status for global blokering ikke kan ændres.",
@@ -92,5 +94,7 @@
 	"right-globalblock-whitelist": "Ophæve globale blokeringer lokalt",
 	"action-globalblock-whitelist": "deaktivere globale blokeringer lokalt",
 	"right-globalblock-exempt": "Omgå globale blokeringer",
-	"action-globalblock-exempt": "omgå globale blokeringer"
+	"action-globalblock-exempt": "omgå globale blokeringer",
+	"log-action-filter-gblblock-gblock": "Global blokering",
+	"log-action-filter-gblblock-gunblock": "Global afblokering"
 }
