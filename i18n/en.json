@@ -113,6 +113,7 @@
 	"apihelp-query+globalblocks-param-prop": "Which properties to get.",
 	"apihelp-query+globalblocks-example-1": "List all global blocks",
 	"apihelp-query+globalblocks-example-2": "List global blocks applying to IP address 192.0.2.18",
+	"globalblocking-apierror-badip": "IP address $1 is not valid",
 	"log-action-filter-gblblock": "Type of global block:",
 	"log-action-filter-gblblock-gblock": "Global block",
 	"log-action-filter-gblblock-gunblock": "Global unblock",

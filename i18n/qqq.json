@@ -138,6 +138,7 @@
 	"apihelp-query+globalblocks-param-prop": "{{doc-apihelp-param|query+globalblocks|prop}}",
 	"apihelp-query+globalblocks-example-1": "{{doc-apihelp-example|query+globalblocks}}",
 	"apihelp-query+globalblocks-example-2": "{{doc-apihelp-example|query+globalblocks}}",
+	"globalblocking-apierror-badip": "{{doc-apierror}}\nParameters:\n* $1 - IP address that is not valid",
 	"log-action-filter-gblblock": "{{doc-log-action-filter-type|gblblock}}\n{{Related|Log-action-filter}}",
 	"log-action-filter-gblblock-gblock": "{{doc-log-action-filter-action|gblblock|gblock}}",
 	"log-action-filter-gblblock-gunblock": "{{doc-log-action-filter-action|gblblock|gunblock}}",

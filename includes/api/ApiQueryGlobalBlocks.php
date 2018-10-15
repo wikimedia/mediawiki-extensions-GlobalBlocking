@@ -90,7 +90,10 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 			$addresses = [];
 			foreach ( (array)$params['addresses'] as $address ) {
 				if ( !IP::isIPAddress( $address ) ) {
-					$this->dieUsage( "IP address {$address} is not valid", 'param_addresses' );
+					$this->dieWithError(
+						[ 'globalblocking-apierror-badip', wfEscapeWikiText( $address ) ],
+						'param_addresses'
+					);
 				}
 				$addresses[] = $address;
 			}
