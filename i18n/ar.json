@@ -123,6 +123,7 @@
 	"apihelp-query+globalblocks-param-prop": "أي الخصائص تريد الحصول عليها.",
 	"apihelp-query+globalblocks-example-1": "ادرج جميع عمليات المنع العالمية",
 	"apihelp-query+globalblocks-example-2": "ادرج جميع عمليات المنع العالمية التي تنطبق على عنوان الآيبي 192.0.2.18",
+	"globalblocking-apierror-badip": "عنوان الآيبي $1 غير صالح",
 	"log-action-filter-gblblock": "نوع المنع العالمي:",
 	"log-action-filter-gblblock-gblock": "منع عالمي",
 	"log-action-filter-gblblock-gunblock": "رفع المنع العالمي",

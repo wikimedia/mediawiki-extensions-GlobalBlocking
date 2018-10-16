@@ -123,6 +123,7 @@
 	"apihelp-query+globalblocks-param-prop": "Zurückzugebende Eigenschaften",
 	"apihelp-query+globalblocks-example-1": "Alle globale Sperren auflisten",
 	"apihelp-query+globalblocks-example-2": "Listet globale Sperren der IP-Adresse 192.0.2.18 auf",
+	"globalblocking-apierror-badip": "Die IP-Adresse $1 ist ungültig",
 	"log-action-filter-gblblock": "Typ der globalen Sperre:",
 	"log-action-filter-gblblock-gblock": "Globale Sperre",
 	"log-action-filter-gblblock-gunblock": "Globale Freigabe",

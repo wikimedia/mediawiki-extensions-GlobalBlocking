@@ -113,6 +113,7 @@
 	"apihelp-query+globalblocks-param-prop": "Quale probbietà da pigghià.",
 	"apihelp-query+globalblocks-example-1": "Elenghe de tutte le blocche globbale",
 	"apihelp-query+globalblocks-example-2": "Elenghe de le blocche globbale applecate a l'indirizze IP 192.0.2.18",
+	"globalblocking-apierror-badip": "Indirizze IP $1 non g'è valide",
 	"log-action-filter-gblblock": "Tipe de blocche globbale:",
 	"log-action-filter-gblblock-gblock": "Blocche globbale",
 	"log-action-filter-gblblock-gunblock": "Sblocche globbale",

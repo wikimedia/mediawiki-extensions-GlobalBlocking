@@ -118,5 +118,6 @@
 	"apihelp-query+globalblocks-param-addresses": "검색할 IP 주소, 파이프로 분리",
 	"apihelp-query+globalblocks-param-prop": "가져올 속성입니다.",
 	"apihelp-query+globalblocks-example-1": "모든 전역 차단 나열",
+	"globalblocking-apierror-badip": "$1 IP 주소는 유효하지 않습니다",
 	"grant-globalblock": "IP 주소 전역 차단 또는 차단 해제"
 }

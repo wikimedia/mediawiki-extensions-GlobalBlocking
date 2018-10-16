@@ -127,6 +127,7 @@
 	"apihelp-query+globalblocks-param-prop": "Какие свойства необходимо получить.",
 	"apihelp-query+globalblocks-example-1": "Перечислить все глобальные блокировки",
 	"apihelp-query+globalblocks-example-2": "Перечислить все глобальные блокировки, относящиеся к IP-адресу 192.0.2.18",
+	"globalblocking-apierror-badip": "IP-адрес $1 недействителен",
 	"log-action-filter-gblblock": "Тип глобального блока:",
 	"log-action-filter-gblblock-gblock": "Глобальная блокировка",
 	"log-action-filter-gblblock-gunblock": "Глобальная разблокировка",

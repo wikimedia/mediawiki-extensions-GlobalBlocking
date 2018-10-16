@@ -23,7 +23,7 @@
 			"Kly"
 		]
 	},
-	"globalblocking-desc": "[[Special:GlobalBlock|允許]] 封鎖 [[Special:GlobalBlockList|於多個 Wiki 中]] 的 IP 位址",
+	"globalblocking-desc": "[[Special:GlobalBlock|允許]]封鎖[[Special:GlobalBlockList|於多個 Wiki 中]]的 IP 位址",
 	"globalblocking-block": "全域封鎖一個 IP 位址",
 	"globalblocking-block-intro": "您可以使用此頁面封鎖於所有 Wiki 中的 IP 位址。",
 	"globalblocking-block-reason": "原因：",
@@ -131,6 +131,7 @@
 	"apihelp-query+globalblocks-param-prop": "要取得的屬性。",
 	"apihelp-query+globalblocks-example-1": "所有全域封鎖清單",
 	"apihelp-query+globalblocks-example-2": "列出套用在 IP 位址 192.0.2.18 的全域封鎖",
+	"globalblocking-apierror-badip": "IP 位址 $1 無效",
 	"log-action-filter-gblblock": "全域封禁類型：",
 	"log-action-filter-gblblock-gblock": "全域封禁",
 	"log-action-filter-gblblock-gunblock": "全域解封",
