@@ -114,6 +114,7 @@
 	"apihelp-query+globalblocks-param-prop": "Кои својства да се дадат.",
 	"apihelp-query+globalblocks-example-1": "Список на сите глобални блокови",
 	"apihelp-query+globalblocks-example-2": "Испиши ги глобалните блокови што се однесуват на IP-адресата 192.0.2.18",
+	"globalblocking-apierror-badip": "IP-адресата $1 е неважечка",
 	"log-action-filter-gblblock": "Тип на глобален блок:",
 	"log-action-filter-gblblock-gblock": "Глобален блок",
 	"log-action-filter-gblblock-gunblock": "Глобално одблокирање",
