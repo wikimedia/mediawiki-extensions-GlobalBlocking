@@ -194,7 +194,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 	 * @param array $data
 	 * @return bool|array True for success, array on errors
 	 */
-	function onSubmit( array $data ) {
+	public function onSubmit( array $data ) {
 		$options = [];
 		$user = $this->getUser();
 

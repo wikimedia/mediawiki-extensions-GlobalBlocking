@@ -3,14 +3,14 @@
 class SpecialGlobalBlockStatus extends FormSpecialPage {
 	private $mAddress, $mCurrentStatus, $mWhitelistStatus;
 
-	function __construct() {
+	public function __construct() {
 		parent::__construct( 'GlobalBlockStatus', 'globalblock-whitelist' );
 	}
 
 	/**
 	 * @param string $par not used currently
 	 */
-	function execute( $par ) {
+	public function execute( $par ) {
 		global $wgApplyGlobalBlocks;
 		$this->setHeaders();
 		$this->checkExecutePermissions( $this->getUser() );

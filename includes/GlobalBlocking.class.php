@@ -16,7 +16,7 @@ class GlobalBlocking {
 	 * @return Block|null
 	 * @throws MWException
 	 */
-	static function getUserBlock( $user, $ip ) {
+	public static function getUserBlock( $user, $ip ) {
 		$details = static::getUserBlockDetails( $user, $ip );
 		if ( !empty( $details['error'] ) ) {
 			$block = new GlobalBlock( $details['block'], $details['error'] );
@@ -33,7 +33,7 @@ class GlobalBlocking {
 	 * @return array empty or a message key with parameters
 	 * @throws MWException
 	 */
-	static function getUserBlockErrors( $user, $ip ) {
+	public static function getUserBlockErrors( $user, $ip ) {
 		$details = static::getUserBlockDetails( $user, $ip );
 		return $details['error'];
 	}
@@ -44,7 +44,7 @@ class GlobalBlocking {
 	 * @return array ['block' => DB row, 'error' => empty or a message key with parameters]
 	 * @throws MWException
 	 */
-	static function getUserBlockDetails( $user, $ip ) {
+	private static function getUserBlockDetails( $user, $ip ) {
 		global $wgLang, $wgRequest, $wgGlobalBlockingBlockXFF;
 		static $result = null;
 
@@ -148,7 +148,7 @@ class GlobalBlocking {
 	 * @param bool $anon Get anon blocks only
 	 * @return object The block
 	 */
-	static function getGlobalBlockingBlock( $ip, $anon ) {
+	public static function getGlobalBlockingBlock( $ip, $anon ) {
 		$dbr = self::getGlobalBlockingDatabase( DB_REPLICA );
 
 		$conds = self::getRangeCondition( $ip );
@@ -167,7 +167,7 @@ class GlobalBlocking {
 	 * @param string $ip The IP address
 	 * @return array a SQL condition
 	 */
-	static function getRangeCondition( $ip ) {
+	public static function getRangeCondition( $ip ) {
 		$dbr = self::getGlobalBlockingDatabase( DB_REPLICA );
 
 		$hexIp = IP::toHex( $ip );
@@ -193,7 +193,7 @@ class GlobalBlocking {
 	 * @param bool $anon Get anon blocks only
 	 * @return array of applicable blocks
 	 */
-	static function checkIpsForBlock( $ips, $anon ) {
+	private static function checkIpsForBlock( $ips, $anon ) {
 		$dbr = self::getGlobalBlockingDatabase( DB_REPLICA );
 		$conds = [];
 		foreach ( $ips as $ip ) {
@@ -251,7 +251,7 @@ class GlobalBlocking {
 	 * @param int $dbtype either DB_REPLICA or DB_MASTER
 	 * @return \Wikimedia\Rdbms\IDatabase
 	 */
-	static function getGlobalBlockingDatabase( $dbtype ) {
+	public static function getGlobalBlockingDatabase( $dbtype ) {
 		global $wgGlobalBlockingDatabase;
 
 		$factory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
@@ -265,7 +265,7 @@ class GlobalBlocking {
 	 * @param int $dbtype either DB_REPLICA or DB_MASTER
 	 * @return int
 	 */
-	static function getGlobalBlockId( $ip, $dbtype = DB_REPLICA ) {
+	public static function getGlobalBlockId( $ip, $dbtype = DB_REPLICA ) {
 		$db = self::getGlobalBlockingDatabase( $dbtype );
 
 		$row = $db->selectRow( 'globalblocks', 'gb_id', [ 'gb_address' => $ip ], __METHOD__ );
@@ -286,7 +286,7 @@ class GlobalBlocking {
 	 *
 	 * @throws DBUnexpectedError
 	 */
-	static function purgeExpired() {
+	public static function purgeExpired() {
 		$dbw = self::getGlobalBlockingDatabase( DB_MASTER );
 		$dbw->delete(
 			'globalblocks',
@@ -314,7 +314,7 @@ class GlobalBlocking {
 	 * @return array|bool
 	 * @throws Exception
 	 */
-	static function getWhitelistInfo( $id = null, $address = null ) {
+	public static function getWhitelistInfo( $id = null, $address = null ) {
 		if ( $id != null ) {
 			$conds = [ 'gbw_id' => $id ];
 		} elseif ( $address != null ) {
@@ -345,7 +345,7 @@ class GlobalBlocking {
 	 * @param string $block_ip
 	 * @return array|bool
 	 */
-	static function getWhitelistInfoByIP( $block_ip ) {
+	public static function getWhitelistInfoByIP( $block_ip ) {
 		return self::getWhitelistInfo( null, $block_ip );
 	}
 
@@ -354,7 +354,7 @@ class GlobalBlocking {
 	 * @param string $user
 	 * @return string
 	 */
-	static function maybeLinkUserpage( $wiki_id, $user ) {
+	public static function maybeLinkUserpage( $wiki_id, $user ) {
 		if ( class_exists( 'WikiMap' ) ) {
 			$wiki = WikiMap::getWiki( $wiki_id );
 
@@ -373,7 +373,7 @@ class GlobalBlocking {
 	 * @param array $options
 	 * @return array
 	 */
-	static function insertBlock( $address, $reason, $expiry, $blocker, $options = [] ) {
+	public static function insertBlock( $address, $reason, $expiry, $blocker, $options = [] ) {
 		$errors = [];
 
 		## Purge expired blocks.
@@ -454,7 +454,7 @@ class GlobalBlocking {
 	 * @param array $options
 	 * @return array
 	 */
-	static function block( $address, $reason, $expiry, $blocker, $options = [] ) {
+	public static function block( $address, $reason, $expiry, $blocker, $options = [] ) {
 		global $wgContLang;
 
 		$expiry = SpecialBlock::parseExpiryInput( $expiry );
@@ -500,7 +500,7 @@ class GlobalBlocking {
 	 * @param SpecialPage $sp SpecialPage instance for context
 	 * @return string links to special pages
 	 */
-	static function buildSubtitleLinks( SpecialPage $sp ) {
+	public static function buildSubtitleLinks( SpecialPage $sp ) {
 		// Add a few useful links
 		$links = [];
 		$pagetype = $sp->getName();
