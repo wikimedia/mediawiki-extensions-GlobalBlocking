@@ -100,5 +100,6 @@
 	"log-action-filter-gblblock-gunblock": "Globaalse blokeeringu tühistamine",
 	"log-action-filter-gblblock-modify": "Globaalse blokeeringu muutmine",
 	"log-action-filter-gblblock-whitelist": "Globaalse blokeeringu lisamine valgesse nimekirja",
-	"log-action-filter-gblblock-dwhitelist": "Globaalse blokeeringu eemaldamine valgest nimekirjast"
+	"log-action-filter-gblblock-dwhitelist": "Globaalse blokeeringu eemaldamine valgest nimekirjast",
+	"grant-globalblock": "IP-aadressi globaalne blokeerimine või sellise blokeeringu eemaldamine"
 }
