@@ -15,14 +15,3 @@ CREATE UNIQUE INDEX /*i*/gb_address ON /*_*/globalblocks (gb_address, gb_anon_on
 CREATE INDEX /*i*/gb_range ON /*_*/globalblocks (gb_range_start, gb_range_end);
 CREATE INDEX /*i*/gb_timestamp ON /*_*/globalblocks (gb_timestamp);
 CREATE INDEX /*i*/gb_expiry ON /*_*/globalblocks (gb_expiry);
-
-CREATE TABLE /*_*/global_block_whitelist (
-	gbw_id int(11) NOT NULL PRIMARY KEY, -- Key to gb_id in globalblocks database.
-	gbw_address varbinary(255) NOT NULL,
-	gbw_by int(11) NOT NULL, -- Key to user_id
-	gbw_by_text varbinary(255) NOT NULL,
-	gbw_reason varbinary(767) NOT NULL,
-	gbw_expiry binary(14) NOT NULL
-) /*$wgDBTableOptions*/;
-
-CREATE INDEX /*i*/gbw_by ON  /*_*/global_block_whitelist (gbw_by);

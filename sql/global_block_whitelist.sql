@@ -1,6 +1,3 @@
--- Patch to create local table for whitelisted global blocks
--- Andrew Garrett, April 2008
-
 CREATE TABLE /*_*/global_block_whitelist (
 	gbw_id int(11) NOT NULL PRIMARY KEY, -- Key to gb_id in globalblocks database.
 	gbw_address varbinary(255) NOT NULL,

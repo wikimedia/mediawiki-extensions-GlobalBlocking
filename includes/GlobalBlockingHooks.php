@@ -33,26 +33,26 @@ class GlobalBlockingHooks {
 			case 'mysql':
 				$updater->addExtensionTable(
 					'globalblocks',
-					"$base/globalblocking.sql"
+					"$base/sql/globalblocks.sql"
 				);
 				$updater->modifyExtensionField(
 					'globalblocks',
 					'gb_reason',
-					"$base/localdb_patches/patch-globalblocks-reason-length.sql"
+					"$base/sql/patch-globalblocks-reason-length.sql"
 				);
 				$updater->addExtensionTable(
 					'global_block_whitelist',
-					"$base/localdb_patches/setup-global_block_whitelist.sql"
+					"$base/sql/global_block_whitelist.sql"
 				);
 				$updater->modifyExtensionField(
 					'global_block_whitelist',
 					'gbw_reason',
-					"$base/localdb_patches/patch-global_block_whitelist-reason-length.sql"
+					"$base/sql/patch-global_block_whitelist-reason-length.sql"
 				);
 				$updater->modifyExtensionField(
 					'global_block_whitelist',
 					'gbw_by_text',
-					"$base/localdb_patches/patch-global_block_whitelist-use-varbinary.sql"
+					"$base/sql/patch-global_block_whitelist-use-varbinary.sql"
 				);
 				break;
 
