@@ -125,6 +125,7 @@
 	"apihelp-query+globalblocks-param-prop": "Jakie właściwości uzyskać.",
 	"apihelp-query+globalblocks-example-1": "Lista wszystkich globalnych blokad",
 	"apihelp-query+globalblocks-example-2": "Lista globalnych blokad mających zastosowanie dla adresu IP 192.0.2.18",
+	"globalblocking-apierror-badip": "Adres IP $1 jest nieprawidłowy",
 	"log-action-filter-gblblock": "Typ globalnej blokady:",
 	"log-action-filter-gblblock-gblock": "Blokada globalna",
 	"log-action-filter-gblblock-gunblock": "Globalne odblokowanie",
