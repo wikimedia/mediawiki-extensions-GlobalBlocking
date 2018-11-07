@@ -103,7 +103,7 @@ class GlobalBlockingHooks {
 		global $wgUser, $wgRequest;
 
 		if ( GlobalBlocking::getUserBlockErrors( $wgUser, $wgRequest->getIP() ) ) {
-			$error = wfMessage( 'globalblocking-blocked-nopassreset' )->text();
+			$error = 'globalblocking-blocked-nopassreset';
 			return false;
 		}
 		return true;
