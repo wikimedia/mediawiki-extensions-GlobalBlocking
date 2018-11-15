@@ -20,7 +20,8 @@
 			"Arthur2e5",
 			"Hello903hello",
 			"Mutolisp",
-			"Kly"
+			"Kly",
+			"A2093064"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|允許]]封鎖[[Special:GlobalBlockList|於多個 Wiki 中]]的 IP 位址",
@@ -98,7 +99,7 @@
 	"globalblocking-modify-logentry": "己修改 [[$1]] ($2) 的全域封鎖",
 	"globalblocking-logentry-expiry": "到期日 $1",
 	"globalblocking-logentry-noexpiry": "未設定到期日",
-	"globalblocking-loglink": "己全域封鎖 IP 位址 $1 ([[{{#Special:GlobalBlockList}}/$1|完整詳細資料]])。",
+	"globalblocking-loglink": "己全域封鎖 IP 位址 $1（[[{{#Special:GlobalBlockList}}/$1|完整詳細資料]]）。",
 	"globalblocking-contribs-notice": "此 IP 位址目前已被全域封鎖。\n以下為全域封鎖日誌記錄以供參考：",
 	"globalblocking-showlog": "此 IP 位址已被封鎖。\n以下為全域封鎖日誌記錄以供參考：",
 	"globalblocklist": "全域封鎖 IP 位址清單",

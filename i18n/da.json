@@ -30,7 +30,7 @@
 	"globalblocking-block-submit": "Blokér denne ip-adresse globalt",
 	"globalblocking-modify-submit": "Redigér denne globale blokering",
 	"globalblocking-block-success": "IP-adressen $1 er blevet blokeret på alle projekter.",
-	"globalblocking-modify-success": "Den globale blokering på $1 er blevet ændret",
+	"globalblocking-modify-success": "Den globale blokering på $1 er blevet ændret.",
 	"globalblocking-block-alreadyblocked": "IP-adressen $1 er allerede blokeret globalt.\nDu kan få vist eksisterende blokeringer på [[Special:GlobalBlockList|listen af globale blokeringer]], eller ændre indstillingerne for den eksisterende blok ved at accepterer denne form.",
 	"globalblocking-block-bigrange": "Intervallet, du angav, ($1) er for stort, til at det kan blokeres.\nDu kan højst blokere 65.536 adresser (/16-intervaller)",
 	"globalblocking-list-intro": "Dette er en liste over alle globale blokeringer, som for øjeblikket i er aktive.\nNogle blokeringer er markeret som lokalt deaktiveret: Dette betyder, at de finder anvendelse på andre websteder, men en lokal administrator har besluttet at deaktivere dem på denne wiki.",
