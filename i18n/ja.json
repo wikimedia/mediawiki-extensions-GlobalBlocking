@@ -111,5 +111,12 @@
 	"apihelp-globalblock-param-reason": "ブロック/ブロック解除理由。",
 	"apihelp-query+globalblocks-example-1": "グローバルブロックの一覧",
 	"apihelp-query+globalblocks-example-2": "IPアドレス 192.0.2.18 に適用されたグローバルブロックの一覧",
+	"globalblocking-apierror-badip": "IP アドレス $1 は有効ではありません",
+	"log-action-filter-gblblock": "グローバルブロックの種類:",
+	"log-action-filter-gblblock-gblock": "グローバルブロック",
+	"log-action-filter-gblblock-gunblock": "グローバルブロックの解除",
+	"log-action-filter-gblblock-modify": "グローバルブロックの変更",
+	"log-action-filter-gblblock-whitelist": "グローバルブロックのホワイトリストへの追加",
+	"log-action-filter-gblblock-dwhitelist": "グローバルブロックのホワイトリストからの除去",
 	"grant-globalblock": "IPアドレスのグローバルブロックと解除"
 }
