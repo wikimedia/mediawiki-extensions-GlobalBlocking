@@ -88,5 +88,6 @@
 	"right-globalblock-whitelist": "ആഗോള തടയലിനെ പ്രാദേശികമായി നിർവീര്യമാക്കുക",
 	"action-globalblock-whitelist": "ആഗോള തടയലുകൾ പ്രാദേശികമായി സജ്ജമല്ലാതാക്കുക",
 	"right-globalblock-exempt": "ആഗോള തടയലുകളെ പാർശ്വവത്കരിച്ചു പോവുക",
-	"action-globalblock-exempt": "ആഗോള തടയലുകൾ പാർശ്വവത്കരിച്ചു പോവുക"
+	"action-globalblock-exempt": "ആഗോള തടയലുകൾ പാർശ്വവത്കരിച്ചു പോവുക",
+	"grant-globalblock": "ഒരു ഐ.പി. വിലാസം ആഗോളമായി തടയുകയോ തടയൽ ഒഴിവാക്കുകയോ ചെയ്യുക"
 }
