@@ -7,7 +7,8 @@
 			"Жељко Тодоровић",
 			"Михајло Анђелковић",
 			"Macofe",
-			"Сербијана"
+			"Сербијана",
+			"Zoranzoki21"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Omogućuje]] [[Special:GlobalBlockList|globalno blokiranje]] IP adresa na više vikija",
@@ -91,5 +92,11 @@
 	"right-globalblock-whitelist": "onemogućavanje globalnih blokova lokalno",
 	"action-globalblock-whitelist": "lokalno onemogućavanje globalnih blokova",
 	"right-globalblock-exempt": "zaobilaženje globalnih blokada",
-	"action-globalblock-exempt": "zaobilaženje globalnih blokova"
+	"action-globalblock-exempt": "zaobilaženje globalnih blokova",
+	"log-action-filter-gblblock": "Tip globalnog blokiranja:",
+	"log-action-filter-gblblock-gblock": "Globalno blokiranje",
+	"log-action-filter-gblblock-gunblock": "Globalno deblokiranje",
+	"log-action-filter-gblblock-modify": "Promena globalne blokade",
+	"log-action-filter-gblblock-whitelist": "Dodavanje bele liste globalnog blokiranja",
+	"log-action-filter-gblblock-dwhitelist": "Uklanjanje bele liste globalnog blokiranja"
 }
