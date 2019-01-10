@@ -7,7 +7,8 @@
 			"Glanthor Reviol",
 			"TK-999",
 			"Macofe",
-			"Tacsipacsi"
+			"Tacsipacsi",
+			"Bencemac"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Lehetővé teszi]] IP-címek [[Special:GlobalBlockList|blokkolását]] egyszerre több wikiben",
@@ -99,6 +100,7 @@
 	"right-globalblock-exempt": "globális blokkok figyelmen kívül hagyása",
 	"action-globalblock-exempt": "globális blokkok figyelmen kívül hagyása",
 	"apihelp-globalblock-description": "Egy felhasználó blokkolása vagy blokkjának feloldása globálisan.",
+	"apihelp-globalblock-summary": "Egy felhasználó globális blokkolása vagy blokkjának feloldása.",
 	"apihelp-globalblock-param-target": "A cél-IP-cím.",
 	"apihelp-globalblock-param-expiry": "Ha meg van adva, blokkolja vagy újra blokkolja a felhasználót. A blokk hosszát adja meg (angolul), pl. „5 months” (5 hónap) vagy „2 weeks” (2 hét). Ha „infinite” (végtelen) vagy „indefinite” (meghatározatlan), a blokk nem fog automatikusan lejárni.",
 	"apihelp-globalblock-param-unblock": "Ha meg van adva, eltávolítja a blokkot.",
@@ -107,6 +109,7 @@
 	"apihelp-globalblock-param-modify": "Add meg ezt a paraméter, ha a célfelhasználó létező blokkját módosítani szeretnéd",
 	"apihelp-globalblock-example-1": "192.0.2.1 blokkolása meghatározatlan időre „Cross-wiki abuse” indokkal.",
 	"apihelp-query+globalblocks-description": "Az összes globálisan blokkolt IP-cím listázása.",
+	"apihelp-query+globalblocks-summary": "Az összes globálisan blokkolt IP-cím listázása.",
 	"apihelp-query+globalblocks-param-start": "A listázás kezdő időbélyege.",
 	"apihelp-query+globalblocks-param-end": "A lista végét jelentő időbélyeg.",
 	"apihelp-query+globalblocks-param-ids": "A listázandó blokkazonosítók függőleges vonallal elválasztott listája.",
@@ -116,10 +119,12 @@
 	"apihelp-query+globalblocks-param-prop": "A lekérendő tulajdonságok.",
 	"apihelp-query+globalblocks-example-1": "Az összes globális blokk listázása",
 	"apihelp-query+globalblocks-example-2": "Az összes, a 192.0.2.18 IP-címre vonatkozó blokk listázása",
+	"globalblocking-apierror-badip": "A(z) „$1” IP-cím érvénytelen",
 	"log-action-filter-gblblock": "Globális blokk típusa:",
 	"log-action-filter-gblblock-gblock": "Globális blokk",
 	"log-action-filter-gblblock-gunblock": "Globális blokk eltávolítása",
 	"log-action-filter-gblblock-modify": "Globális blokk módosítása",
 	"log-action-filter-gblblock-whitelist": "Hozzáadás a globális blokkok fehérlistájához",
-	"log-action-filter-gblblock-dwhitelist": "Eltávolítás a globális blokkok fehérlistájáról"
+	"log-action-filter-gblblock-dwhitelist": "Eltávolítás a globális blokkok fehérlistájáról",
+	"grant-globalblock": "IP-cím globális blokkolása vagy blokkjának feloldása"
 }
