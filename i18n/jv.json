@@ -71,6 +71,7 @@
 	"globalblocking-block-logentry": "diblokir sacara global [[$1]] mawa wektu kadaluwarsa $2",
 	"globalblocking-block2-logentry": "Diblokir global [[$1]] ($2)",
 	"globalblocking-unblock-logentry": "jabelen blokade global ing [[$1]]",
+	"globalblocking-logentry-whitelist": "$1 {{GENDER:$2|njabut}} blokiran global ing $3 kalawan lokal",
 	"globalblocking-modify-logentry": "ngowah blokiran global nèng [[$1]] ($2)",
 	"globalblocking-logentry-expiry": "kedaluwarsa $1",
 	"globalblocking-logentry-noexpiry": "wates kedaluwarsa ora ana",

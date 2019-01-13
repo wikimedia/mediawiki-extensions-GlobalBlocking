@@ -125,10 +125,12 @@
 	"apihelp-query+globalblocks-param-prop": "Які властивості отримати.",
 	"apihelp-query+globalblocks-example-1": "Перелічити всі глобальні блокування.",
 	"apihelp-query+globalblocks-example-2": "Перелічити глобальні блокування, що стосуються IP-адреси 192.0.2.18",
+	"globalblocking-apierror-badip": "IP-адреса $1 — недійсна",
 	"log-action-filter-gblblock": "Тип глобального блокування:",
 	"log-action-filter-gblblock-gblock": "Глобальне блокування",
 	"log-action-filter-gblblock-gunblock": "Глобальне розблокування",
 	"log-action-filter-gblblock-modify": "Зміна глобального блокування",
 	"log-action-filter-gblblock-whitelist": "Доповнення глобального білого списку блокувань",
-	"log-action-filter-gblblock-dwhitelist": "Вилучення з глобального білого списку блокувань"
+	"log-action-filter-gblblock-dwhitelist": "Вилучення з глобального білого списку блокувань",
+	"grant-globalblock": "Глобально заблокувати чи розблокувати IP-адресу"
 }
