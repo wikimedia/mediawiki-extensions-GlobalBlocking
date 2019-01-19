@@ -98,5 +98,6 @@
 	"log-action-filter-gblblock-gunblock": "Globalno deblokiranje",
 	"log-action-filter-gblblock-modify": "Promena globalne blokade",
 	"log-action-filter-gblblock-whitelist": "Dodavanje bele liste globalnog blokiranja",
-	"log-action-filter-gblblock-dwhitelist": "Uklanjanje bele liste globalnog blokiranja"
+	"log-action-filter-gblblock-dwhitelist": "Uklanjanje bele liste globalnog blokiranja",
+	"grant-globalblock": "Globalno blokiranje ili deblokiranje IP adrese"
 }

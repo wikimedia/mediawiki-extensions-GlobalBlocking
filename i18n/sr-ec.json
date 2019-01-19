@@ -103,5 +103,6 @@
 	"log-action-filter-gblblock-gunblock": "Глобално деблокирање",
 	"log-action-filter-gblblock-modify": "Измена глобалне блокаде",
 	"log-action-filter-gblblock-whitelist": "Додавање беле листе глобалног блокирања",
-	"log-action-filter-gblblock-dwhitelist": "Уклањање беле листе глобалног блокирања"
+	"log-action-filter-gblblock-dwhitelist": "Уклањање беле листе глобалног блокирања",
+	"grant-globalblock": "Глобално блокирање или деблокирање ИП адресе"
 }
