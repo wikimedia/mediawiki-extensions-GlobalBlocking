@@ -34,6 +34,7 @@
 	"globalblocking-block-success": "IP 주소 $1이 모든 프로젝트에서 차단되었습니다.",
 	"globalblocking-modify-success": "$1 계정에 대한 광역 차단 설정이 바뀌었습니다.",
 	"globalblocking-local-failed": "주어진 IP 주소는 이미 이 위키에서 차단되어 있어서 로컬로 차단하지 못했습니다.",
+	"globalblocking-block-failure": "$1의 전역 차단을 시도하는 동안 오류가 발생했습니다. 다시 시도해 주십시오.",
 	"globalblocking-block-alreadyblocked": "IP 주소 $1은(는) 이미 전역 차단되었습니다.\n[[Special:GlobalBlockList|전역 차단된 사용자의 목록]]에서 현재 차단된 IP를 보거나,\n이 양식을 사용하여 이미 차단된 IP의 차단 설정을 바꿀 수 있습니다.",
 	"globalblocking-block-bigrange": "입력한 범위 ($1)는 차단하기에 너무 넓습니다.\n아무리 많아도, 65,536개의 주소 (/16 광역) 이상을 차단할 수 없습니다.",
 	"globalblocking-also-local": "또한 이 위키에서 주어진 IP 주소를 로컬로 차단하기",

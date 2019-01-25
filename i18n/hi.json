@@ -6,7 +6,8 @@
 			"Shyam123.ckp",
 			"Siddhartha Ghai",
 			"Macofe",
-			"Sfic"
+			"Sfic",
+			"Prong$31"
 		]
 	},
 	"globalblocking-desc": "आइपी एड्रेस को [[Special:GlobalBlockList|एक से ज्यादा विकियोंपर ब्लॉक]] करने की [[Special:GlobalBlock|अनुमति]] देता हैं।",
@@ -26,6 +27,7 @@
 	"globalblocking-modify-submit": "इस वैश्विक अवरोध को संशोधित करें",
 	"globalblocking-block-success": "$1 इस आयपी एड्रेसको सभी विकिंयोंपर ब्लॉक कर दिया गया हैं।\nआप शायद [[Special:GlobalBlockList|वैश्विक ब्लॉक सूची]] देखना चाहते हैं।",
 	"globalblocking-modify-success": "वैश्विक अवरोध $1 पे सफलता पुर्बक संशोधित किया गया",
+	"globalblocking-block-failure": "$1 पर वैश्विक अवरोध लगाते समय त्रुटि हुई! पुनः प्रयास करें",
 	"globalblocking-block-alreadyblocked": "$1 इस आइपी एड्रेसको पहलेसे ब्लॉक किया हुआ हैं। आप अस्तित्वमें होनेवाले ब्लॉक [[Special:GlobalBlockList|वैश्विक ब्लॉक सूचीमें]] देख सकतें हैं।",
 	"globalblocking-list": "ग्लोबल ब्लॉक किये हुए आईपी एड्रेसोंकी सूची",
 	"globalblocking-search-legend": "ग्लोबल ब्लॉक खोजें",
