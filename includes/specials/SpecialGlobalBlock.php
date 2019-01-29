@@ -220,7 +220,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 		);
 
 		if ( count( $errors ) ) {
-			// Show the error message(s) to the user if an error occured.
+			// Show the error message(s) to the user if an error occurred.
 			return $errors;
 		}
 
