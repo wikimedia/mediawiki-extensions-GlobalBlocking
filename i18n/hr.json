@@ -7,7 +7,8 @@
 			"SpeedyGonsales",
 			"Macofe",
 			"MaGa",
-			"Bugoslav"
+			"Bugoslav",
+			"Vlad5250"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Omogućuje]] blokiranje IP adresa [[Special:GlobalBlockList|na svim wikijima]]",
@@ -88,7 +89,7 @@
 	"right-globalblock": "Mogućnost globalnog blokiranja",
 	"right-globalblock-whitelist": "Mjesno uklanjanje globalnog blokiranja",
 	"action-globalblock-whitelist": "onemogućavanje globalnih blokada na lokalnoj razini",
-	"right-globalblock-exempt": "zaobilaženje globalnih blokada",
+	"right-globalblock-exempt": "Zaobilaženje globalnih blokada",
 	"action-globalblock-exempt": "zaobilaženje globalnih blokada",
 	"apihelp-globalblock-description": "Globalno blokiraj ili odblokiraj suradnika.",
 	"apihelp-globalblock-summary": "Globalno blokirajte ili odblokirajte suradnika.",
