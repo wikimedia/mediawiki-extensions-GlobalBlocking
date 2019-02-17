@@ -59,7 +59,7 @@
 	"globalblocking-whitelist-legend": "Ganti status lokal",
 	"globalblocking-whitelist-reason": "Alesan:",
 	"globalblocking-whitelist-status": "Status lokal:",
-	"globalblocking-whitelist-statuslabel": "Batalna pamblokiran global iki ing {{SITENAME}}",
+	"globalblocking-whitelist-statuslabel": "Patèni blokiran global iki ing {{SITENAME}}",
 	"globalblocking-whitelist-submit": "Ngganti status lokal",
 	"globalblocking-whitelist-whitelisted": "Panjenengan sacara suksès njabel blokade global #$2 ing alamat IP '''$1''' ing {{SITENAME}}.",
 	"globalblocking-whitelist-dewhitelisted": "Panjenengan sacara suksès blokade global #$2 ing alamat IP '''$1''' ing {{SITENAME}}.",
@@ -86,5 +86,6 @@
 	"right-globalblock-whitelist": "Jabel blokade global sacara lokal",
 	"action-globalblock-whitelist": "patèni blokiran global sacara lokal",
 	"right-globalblock-exempt": "Liwati blokiran global",
-	"action-globalblock-exempt": "liwati blokiran global"
+	"action-globalblock-exempt": "liwati blokiran global",
+	"log-action-filter-gblblock-gblock": "Blokiran global"
 }
