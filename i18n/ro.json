@@ -29,6 +29,7 @@
 	"globalblocking-modify-submit": "Modifică această blocare globală",
 	"globalblocking-block-success": "Adresa IP $1 a fost blocată cu succes în toate proiectele.",
 	"globalblocking-modify-success": "Blocarea globală a lui $1 a fost modificată cu succes.",
+	"globalblocking-list-intro": "Aceasta este o listă a tuturor blocărilor globale care sunt în prezent în vigoare. Unele blocări sunt marcate ca fiind dezactivate local: aceasta înseamnă că se aplică pe alte site-uri, dar un administrator local a decis să le dezactiveze pe acest wiki.",
 	"globalblocking-list": "Listă de adrese IP blocate global",
 	"globalblocking-search-legend": "Caută blocare globală",
 	"globalblocking-search-ip": "Adresă IP:",
