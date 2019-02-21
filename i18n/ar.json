@@ -103,7 +103,7 @@
 	"action-globalblock-whitelist": "تعطيل عمليات المنع العامة محليا",
 	"right-globalblock-exempt": "تجاوز عمليات المنع العامة",
 	"action-globalblock-exempt": "تجاوز عمليات المنع العامة",
-	"apihelp-globalblock-description": "امنع مستخدماً منعاً شاملاً أو ارفع المنع الشامل عنه.",
+	"apihelp-globalblock-description": "امنع مستخدما منعا عالميا أو ارفع المنع العالمي عنه.",
 	"apihelp-globalblock-summary": "منع أو رفع منع مستخدم عالميا.",
 	"apihelp-globalblock-param-target": "عنوان IP المستهدف.",
 	"apihelp-globalblock-param-expiry": "في حال التحديد سيتم منع المستخدم أو إعادة منعه. يحدد مدة استمرار المنع، مثلاً «أسبوعين» أو «5 أشهر». في حال تعيين قيمة «لانهائي» أو «غير محدد» لن تنتهي مدة المنع أبداً.",
