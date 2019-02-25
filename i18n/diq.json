@@ -41,7 +41,7 @@
 	"globalblocking-list-blockitem": "karberê $1: <span class=\"plainlinks\">'''$2'''</span> (''$3''), [[Special:Contributions/$4|$4]]'i bı global bloke bı ''($5)''",
 	"globalblocking-list-expiry": "qediyayiş $1",
 	"globalblocking-list-anononly": "têna anonim",
-	"globalblocking-list-unblock": "werad/wedar",
+	"globalblocking-list-unblock": "wedare",
 	"globalblocking-list-whitelisted": "hetê $1'i ra bı mehelli pasif bı: $2",
 	"globalblocking-list-whitelist": "weziyeto mehelli",
 	"globalblocking-list-modify": "bıvurne",

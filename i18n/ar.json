@@ -130,5 +130,5 @@
 	"log-action-filter-gblblock-modify": "تعديل المنع العالمي",
 	"log-action-filter-gblblock-whitelist": "إضافة قائمة منع بيضاء عالمية",
 	"log-action-filter-gblblock-dwhitelist": "إزالة قائمة منع بيضاء عالمية",
-	"grant-globalblock": "منع أو إلغاء منع عنوان آيبي عالميا"
+	"grant-globalblock": "منع أو إلغاء منع عنوان أيبي عالميا"
 }

@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Kolega2357",
-			"Macofe"
+			"Macofe",
+			"Vlad5250"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Omogućuje]] [[Special:GlobalBlockList|globalno blokiranje]] IP adresa na više wikija",
@@ -77,7 +78,7 @@
 	"globalblock": "Globalno blokirajte IP adresu",
 	"globalblockstatus": "Lokalni status globalnih blokiranja",
 	"removeglobalblock": "Ukloni globalni blok",
-	"right-globalblock": "Onemogući globalne blokove lokalno",
+	"right-globalblock": "Postavljanje i uklanjanje globalnih blokova",
 	"action-globalblock": "postavljanje globalnih blokiranja",
 	"right-globalblock-whitelist": "Onemogući globalne blokove lokalno",
 	"action-globalblock-whitelist": "lokalno onemogućavanje globalnih blokova",
