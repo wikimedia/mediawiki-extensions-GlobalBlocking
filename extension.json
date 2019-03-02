@@ -101,7 +101,7 @@
 		"ApiQueryGlobalBlocks": "includes/api/ApiQueryGlobalBlocks.php",
 		"ApiGlobalBlock": "includes/api/ApiGlobalBlock.php",
 		"GlobalBlock": "includes/GlobalBlock.php",
-		"GlobalBlocking": "includes/GlobalBlocking.class.php",
+		"GlobalBlocking": "includes/GlobalBlocking.php",
 		"GlobalBlockingHooks": "includes/GlobalBlockingHooks.php",
 		"GlobalBlockWhitelistLogFormatter": "includes/GlobalBlockWhitelistLogFormatter.php"
 	},
