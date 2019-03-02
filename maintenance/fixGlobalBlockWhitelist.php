@@ -126,5 +126,5 @@ class FixGlobalBlockWhitelist extends Maintenance {
 	}
 }
 
-$maintClass = 'FixGlobalBlockWhitelist';
+$maintClass = FixGlobalBlockWhitelist::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

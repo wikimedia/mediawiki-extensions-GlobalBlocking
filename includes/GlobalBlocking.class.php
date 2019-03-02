@@ -355,7 +355,7 @@ class GlobalBlocking {
 	 * @return string
 	 */
 	public static function maybeLinkUserpage( $wiki_id, $user ) {
-		if ( class_exists( 'WikiMap' ) ) {
+		if ( class_exists( WikiMap::class ) ) {
 			$wiki = WikiMap::getWiki( $wiki_id );
 
 			if ( $wiki ) {
