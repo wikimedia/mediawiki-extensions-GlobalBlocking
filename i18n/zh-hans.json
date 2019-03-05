@@ -22,7 +22,8 @@
 			"Macofe",
 			"飞舞回堂前",
 			"Arthur2e5",
-			"Wmr"
+			"Wmr",
+			"Zazzzz"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|允许]][[Special:GlobalBlockList|在多个wiki中封禁]]IP地址",
@@ -133,6 +134,7 @@
 	"apihelp-query+globalblocks-param-prop": "要获得的属性。",
 	"apihelp-query+globalblocks-example-1": "列出所有全域封禁",
 	"apihelp-query+globalblocks-example-2": "列出对IP地址192.0.2.18做出的全域封禁",
+	"globalblocking-apierror-badip": "IP地址 $1 无效",
 	"log-action-filter-gblblock": "全域封禁的类型：",
 	"log-action-filter-gblblock-gblock": "全域封禁",
 	"log-action-filter-gblblock-gunblock": "全域解封",
