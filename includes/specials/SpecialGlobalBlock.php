@@ -233,8 +233,8 @@ class SpecialGlobalBlock extends FormSpecialPage {
 			$block->mReason = $data['Reason'][0];
 			$block->mExpiry = SpecialBlock::parseExpiryInput( $data['Expiry'] );
 			$block->isHardblock( !$data['AnonOnly'] );
-			$block->prevents( 'createaccount', true );
-			$block->prevents( 'editownusertalk', true ); // Consistent with the global block.
+			$block->isCreateAccountBlocked( true );
+			$block->isUsertalkEditAllowed( false ); // Consistent with the global block.
 
 			$blockSuccess = $block->insert();
 
