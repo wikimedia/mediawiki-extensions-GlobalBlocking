@@ -76,7 +76,7 @@ class GlobalBlocking {
 				$errorMsg = 'globalblocking-ipblocked';
 				$hookName = 'GlobalBlockingBlockedIpMsg';
 				$apiErrorInfo = 'You have been globally blocked from editing';
-			} elseif ( IP::isValidBlock( $block->gb_address ) ) {
+			} elseif ( IP::isValidRange( $block->gb_address ) ) {
 				$errorMsg = 'globalblocking-ipblocked-range';
 				$hookName = 'GlobalBlockingBlockedIpRangeMsg';
 				$apiErrorInfo = 'Your IP is in a range that has been globally blocked from editing';

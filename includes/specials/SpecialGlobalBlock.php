@@ -40,7 +40,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 			$address = trim( $this->getRequest()->getText( 'wpAddress' ) );
 		}
 
-		if ( IP::isValidBlock( $address ) ) {
+		if ( IP::isValidRange( $address ) ) {
 			$this->address = IP::sanitizeRange( $address );
 		} else {
 			// This catches invalid IPs too but we'll reject them at form submission.
