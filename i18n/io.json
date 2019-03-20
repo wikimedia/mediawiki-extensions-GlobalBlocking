@@ -10,12 +10,18 @@
 	"globalblocking-list-intro": "Yen listo pri omna globala blokusi nune aktiva.\nKelka blokusi indikesis quale 'sen efekto' lokale: to signifikas ke l'uzero blokusesas en altra wiki, tamen lokala administrero decidis desblokusar li en ica wiki.",
 	"globalblocking-search-ip": "IP-adreso:",
 	"globalblocking-search-errors": "Vua serchado faliis pro la sequanta {{PLURAL:$1|motivo|motivi}}:",
+	"globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> (''$3'') globale blokusis [[Special:Contributions/$4|$4]] ''($5)''",
 	"globalblocking-list-anononly": "nur anonima",
 	"globalblocking-list-unblock": "forigar",
+	"globalblocking-list-whitelist": "lokala stando",
 	"globalblocking-list-noresults": "La demandita IP-adreso ne blokusesis.",
 	"globalblocking-unblock-reason": "Motivo:",
+	"globalblocking-whitelist": "Lokala stando di globala blokusi",
 	"globalblocking-whitelist-notapplied": "Globala blokusado ne efektigas en ica Wiki,\ndo la lokala stando di la globala blokusi ne povas modifikesar.",
 	"globalblocking-whitelist-reason": "Motivo:",
+	"globalblocking-whitelist-status": "Lokala stando:",
+	"globalblocking-whitelist-nochange": "Vu modifikis nulo pri la lokala stando di ca blokuso.",
 	"globalblocking-logpage": "'Log' pri globala blokusado",
-	"globalblocking-logpagetext": "Yen listo pri globala blokusi qui facesis e removesis de ica wiki.\nRegardez ke globala blokusi povas facesar en e removesar de altra wiki, e ica globala blokusi povas afektar ica wiki.\nPor vidar omna globala blokusi aktiva, vu mustas vidar la [[Special:GlobalBlockList|listo pri globala blokusi]]."
+	"globalblocking-logpagetext": "Yen listo pri globala blokusi qui facesis e removesis de ica wiki.\nRegardez ke globala blokusi povas facesar en e removesar de altra wiki, e ica globala blokusi povas afektar ica wiki.\nPor vidar omna globala blokusi aktiva, vu mustas vidar la [[Special:GlobalBlockList|listo pri globala blokusi]].",
+	"globalblockstatus": "Lokala stando di globala blokusi"
 }
