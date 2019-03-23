@@ -4,7 +4,8 @@
 			"Ans",
 			"Horus",
 			"Octahedron80",
-			"Passawuth"
+			"Passawuth",
+			"Geonuch"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|อนุญาต]]ให้คุณสามารถบล็อกผู้ใช้ที่เป็น ไอพี [[Special:GlobalBlockList|ในหลาย ๆ วิกิ]]ในครั้งเดียวได้",
@@ -15,5 +16,6 @@
 	"globalblocking-ipaddress": "ที่อยู่ไอพี:",
 	"globalblocking-block-submit": "บล็อกที่อยู่ไอพีนี้ทั่วโลก",
 	"globalblocking-search-ip": "หมายเลขไอพี:",
-	"globalblocking-unblock-reason": "เหตุผล:"
+	"globalblocking-unblock-reason": "เหตุผล:",
+	"globalblocking-logpage": "ปูมการบล็อกทั่วโลก"
 }
