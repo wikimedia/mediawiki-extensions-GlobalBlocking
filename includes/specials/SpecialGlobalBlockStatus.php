@@ -158,6 +158,10 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 		return true;
 	}
 
+	public function doesWrites() {
+		return true;
+	}
+
 	protected function getGroupName() {
 		return 'users';
 	}
