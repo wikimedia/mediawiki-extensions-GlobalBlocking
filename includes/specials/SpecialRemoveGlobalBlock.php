@@ -80,6 +80,10 @@ class SpecialRemoveGlobalBlock extends FormSpecialPage {
 		];
 	}
 
+	public function doesWrites() {
+		return true;
+	}
+
 	protected function getGroupName() {
 		return 'users';
 	}
