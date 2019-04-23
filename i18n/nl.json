@@ -110,10 +110,12 @@
 	"apihelp-query+globalblocks-param-limit": "Het maximum aantal blokkades om te tonen.",
 	"apihelp-query+globalblocks-example-1": "Toon alle globale blokkades",
 	"apihelp-query+globalblocks-example-2": "Toon globale blokkades die van toepassing op het IP-adres 192.0.2.18",
+	"globalblocking-apierror-badip": "IP-adres $1 is ongeldig.",
 	"log-action-filter-gblblock": "Soort globale blokkade:",
 	"log-action-filter-gblblock-gblock": "Globale blokkade",
 	"log-action-filter-gblblock-gunblock": "Opheffing van globale blokkade",
 	"log-action-filter-gblblock-modify": "Aanpassing van globale blokkade",
 	"log-action-filter-gblblock-whitelist": "Toevoeging aan witte lijst van globale blokkade",
-	"log-action-filter-gblblock-dwhitelist": "Verwijdering van witte lijst van globale blokkade"
+	"log-action-filter-gblblock-dwhitelist": "Verwijdering van witte lijst van globale blokkade",
+	"grant-globalblock": "Een IP-adres globaal (de)blokkeren"
 }
