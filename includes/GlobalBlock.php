@@ -1,6 +1,8 @@
 <?php
 
-class GlobalBlock extends Block {
+use MediaWiki\Block\DatabaseBlock;
+
+class GlobalBlock extends DatabaseBlock {
 	/**
 	 * @var array
 	 */
@@ -25,8 +27,8 @@ class GlobalBlock extends Block {
 	}
 
 	/**
-	 * Block requires that the blocker exist or be an interwiki username, so do
-	 * some validation to figure out what we need to use (T182344)
+	 * DatabaseBlock requires that the blocker exist or be an interwiki username,
+	 * so do some validation to figure out what we need to use (T182344)
 	 *
 	 * @param stdClass $block DB row from globalblocks table
 	 */

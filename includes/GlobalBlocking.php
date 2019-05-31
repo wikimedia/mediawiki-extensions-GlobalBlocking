@@ -6,6 +6,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Block\DatabaseBlock;
 use MediaWiki\MediaWikiServices;
 use Wikimedia\Rdbms\DBUnexpectedError;
 
@@ -13,7 +14,7 @@ class GlobalBlocking {
 	/**
 	 * @param User $user
 	 * @param string $ip
-	 * @return Block|null
+	 * @return DatabaseBlock|null
 	 * @throws MWException
 	 */
 	public static function getUserBlock( $user, $ip ) {
@@ -453,8 +454,6 @@ class GlobalBlocking {
 	 * @return array
 	 */
 	public static function block( $address, $reason, $expiry, $blocker, $options = [] ) {
-		global $wgContLang;
-
 		$expiry = SpecialBlock::parseExpiryInput( $expiry );
 		$errors = self::insertBlock( $address, $reason, $expiry, $blocker, $options );
 
@@ -474,7 +473,8 @@ class GlobalBlocking {
 		}
 
 		if ( $expiry != 'infinity' ) {
-			$displayExpiry = $wgContLang->timeanddate( $expiry );
+			$contLang = MediaWikiServices::getInstance()->getContentLanguage();
+			$displayExpiry = $contLang->timeanddate( $expiry );
 			$flags[] = wfMessage( 'globalblocking-logentry-expiry', $displayExpiry )
 				->inContentLanguage()->text();
 		} else {

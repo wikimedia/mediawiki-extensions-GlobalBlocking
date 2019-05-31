@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Block\DatabaseBlock;
+
 class SpecialGlobalBlock extends FormSpecialPage {
 	/**
 	 * @see SpecialGlobalBlock::setParameter()
@@ -226,8 +228,8 @@ class SpecialGlobalBlock extends FormSpecialPage {
 
 		// Add a local block if the user asked for that
 		if ( $user->isAllowed( 'block' ) && $data['AlsoLocal'] ) {
-			// @todo Use the new Block constructor
-			$block = new Block();
+			// @todo Use the constructor
+			$block = new DatabaseBlock();
 			$block->setTarget( $this->address );
 			$block->setBlocker( $user );
 			$block->mReason = $data['Reason'][0];

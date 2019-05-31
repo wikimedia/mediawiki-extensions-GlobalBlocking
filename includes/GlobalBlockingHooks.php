@@ -5,6 +5,9 @@
  *
  * @license GPL-2.0-or-later
  */
+
+use MediaWiki\Block\DatabaseBlock;
+
 class GlobalBlockingHooks {
 	/**
 	 * Extension registration callback
@@ -79,7 +82,7 @@ class GlobalBlockingHooks {
 	 * @param User &$user
 	 * @param string $ip
 	 * @param bool &$blocked
-	 * @param Block|null &$block
+	 * @param DatabaseBlock|null &$block
 	 *
 	 * @return bool
 	 */
