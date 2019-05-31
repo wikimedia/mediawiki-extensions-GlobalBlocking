@@ -476,6 +476,22 @@ $specialPageAliases['sk'] = [
 	'GlobalBlockStatus' => [ 'BielaListinaGlobálnehoBlokovania' ],
 ];
 
+/** Serbian Cyrillic (српски (ћирилица)) */
+$specialPageAliases['sr-ec'] = [
+	'GlobalBlock' => [ 'БлокирајГлобално' ],
+	'GlobalBlockList' => [ 'СписакГлобалнихБлокада' ],
+	'RemoveGlobalBlock' => [ 'УклониГлобалнуБлокаду' ],
+	'GlobalBlockStatus' => [ 'СтањеГлобалнеБлокаде' ],
+];
+
+/** Serbian Latin (srpski (latinica)) */
+$specialPageAliases['sr-el'] = [
+	'GlobalBlock' => [ 'BlokirajGlobalno' ],
+	'GlobalBlockList' => [ 'SpisakGlobalnihBlokada' ],
+	'RemoveGlobalBlock' => [ 'UkloniGlobalnuBlokadu' ],
+	'GlobalBlockStatus' => [ 'StanjeGlobalneBlokade' ],
+];
+
 /** Swedish (svenska) */
 $specialPageAliases['sv'] = [
 	'GlobalBlock' => [ 'Global_blockering' ],
