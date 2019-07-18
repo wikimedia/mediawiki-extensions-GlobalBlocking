@@ -3,7 +3,8 @@
 		"authors": [
 			"Cekli829",
 			"Vago",
-			"Vugar 1981"
+			"Vugar 1981",
+			"Neriman2003"
 		]
 	},
 	"globalblocking-block-reason": "Səbəb:",
@@ -19,5 +20,6 @@
 	"globalblocking-whitelist-reason": "Səbəb:",
 	"globalblocking-whitelist-status": "Lokal status:",
 	"globalblocking-whitelist-submit": "Lokal statusu dəyiş",
-	"globalblocking-logpage": "Qlobal blok gündəliyi"
+	"globalblocking-logpage": "Qlobal blok gündəliyi",
+	"globalblocking-contribs-notice": "Bu IP ünvan qlobal bloklanıb. Qlobal blok qeydlərinin ən sonuncusu aşağıda göstərilmişdir:"
 }
