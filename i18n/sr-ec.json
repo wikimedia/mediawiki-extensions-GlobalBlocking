@@ -85,7 +85,7 @@
 	"globalblocking-logentry-expiry": "истиче $1",
 	"globalblocking-logentry-noexpiry": "није назначен рок истека",
 	"globalblocking-loglink": "IP адреса $1 је блокирана глобално ([[{{#Special:GlobalBlockList}}/$1|сви детаљи]]).",
-	"globalblocking-contribs-notice": "Ова IP адреса је тренутно глоблно блокирана.\nУнос у евиденцији глобалног блокирања је наведен испод као референца:",
+	"globalblocking-contribs-notice": "Ова IP адреса је тренутно глобално блокирана.\nУнос у евиденцији глобалног блокирања је наведен испод као референца:",
 	"globalblocking-showlog": "Ова IP адреса је раније била блокирана.\nДневник блокирања је наведен испод као референца:",
 	"globalblocklist": "Списак глобално блокираних IP адреса",
 	"globalblock": "Глобално блокирајте IP адресу",
