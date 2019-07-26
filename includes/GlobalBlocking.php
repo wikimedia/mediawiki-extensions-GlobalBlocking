@@ -76,11 +76,9 @@ class GlobalBlocking {
 			if ( IP::isValid( $block->gb_address ) ) {
 				$errorMsg = 'globalblocking-ipblocked';
 				$hookName = 'GlobalBlockingBlockedIpMsg';
-				$apiErrorInfo = 'You have been globally blocked from editing';
 			} elseif ( IP::isValidRange( $block->gb_address ) ) {
 				$errorMsg = 'globalblocking-ipblocked-range';
 				$hookName = 'GlobalBlockingBlockedIpRangeMsg';
-				$apiErrorInfo = 'Your IP is in a range that has been globally blocked from editing';
 			} else {
 				throw new MWException(
 					"This should not happen. IP globally blocked is not valid and is not a valid range?"
@@ -158,9 +156,7 @@ class GlobalBlocking {
 			$conds['gb_anon_only'] = 0;
 		}
 
-		// Get the block
-		$block = $dbr->selectRow( 'globalblocks', self::selectFields(), $conds, __METHOD__ );
-		return $block;
+		return $dbr->selectRow( 'globalblocks', self::selectFields(), $conds, __METHOD__ );
 	}
 
 	/**
@@ -177,15 +173,13 @@ class GlobalBlocking {
 		$ipPattern = substr( $hexIp, 0, 4 );
 
 		$quotedHex = $dbr->addQuotes( $hexIp );
-		$cond = [
+		return [
 			'gb_range_start ' . $dbr->buildLike( $ipPattern, $dbr->anyString() ),
 			'gb_range_start <= ' . $quotedHex,
 			'gb_range_end >= ' . $quotedHex, // This block in the given range.
 			// @todo expiry shouldn't be in this function
 			'gb_expiry > ' . $dbr->addQuotes( $dbr->timestamp( wfTimestampNow() ) )
 		];
-
-		return $cond;
 	}
 
 	/**
