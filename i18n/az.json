@@ -5,7 +5,8 @@
 			"Vago",
 			"Vugar 1981",
 			"Neriman2003",
-			"Toghrul Rahimli"
+			"Toghrul Rahimli",
+			"Hüseynzadə"
 		]
 	},
 	"globalblocking-block-reason": "Səbəb:",
@@ -22,5 +23,5 @@
 	"globalblocking-whitelist-status": "Lokal status:",
 	"globalblocking-whitelist-submit": "Lokal statusu dəyiş",
 	"globalblocking-logpage": "Qlobal blok gündəliyi",
-	"globalblocking-contribs-notice": "Bu IP ünvanı hazırda qlobal bloklanmışdır. \nQlobal blok qeydləri istinad məqsədilə aşağıda göstərilmişdir:"
+	"globalblocking-contribs-notice": "Bu IP ünvanı hazırda qlobal səviyyədə bloklanmışdır. \nQlobal blok qeydləri istinad məqsədilə aşağıda göstərilmişdir:"
 }
