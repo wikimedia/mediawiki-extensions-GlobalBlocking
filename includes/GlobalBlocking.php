@@ -8,8 +8,12 @@
 
 use MediaWiki\MediaWikiServices;
 use Wikimedia\Rdbms\DBUnexpectedError;
+use Wikimedia\Rdbms\IResultWrapper;
 
 class GlobalBlocking {
+	const TYPE_IP = 2;
+	const TYPE_RANGE = 3;
+
 	/**
 	 * @param User $user
 	 * @param string $ip
@@ -142,6 +146,63 @@ class GlobalBlocking {
 		return $result;
 	}
 
+	public static function getTargetType( $target ) {
+		if ( IP::isValid( $target ) ) {
+			return self::TYPE_IP;
+		} elseif ( IP::isValidRange( $target ) ) {
+			return self::TYPE_RANGE;
+		}
+	}
+
+	/**
+	 * Choose the most specific block from some combination of user, IP and IP range
+	 * blocks. Decreasing order of specificity: IP > narrower IP range > wider IP
+	 * range. A range that encompasses one IP address is ranked equally to a singe IP.
+	 *
+	 * Note that DatabaseBlock::chooseBlocks chooses blocks in a different way.
+	 *
+	 * This is based on DatabaseBlock::chooseMostSpecificBlock
+	 *
+	 * @param IResultWrapper $blocks These should not include autoblocks or ID blocks
+	 * @return object|null The block with the most specific target
+	 */
+	protected static function chooseMostSpecificBlock( $blocks ) {
+		if ( $blocks->numRows() === 1 ) {
+			return $blocks->current();
+		}
+
+		# This result could contain a block on the user, a block on the IP, and a russian-doll
+		# set of rangeblocks.  We want to choose the most specific one, so keep a leader board.
+		$bestBlock = null;
+
+		# Lower will be better
+		$bestBlockScore = 100;
+		foreach ( $blocks as $block ) {
+			$target = $block->gb_address;
+			$type = self::getTargetType( $target );
+			if ( $type == self::TYPE_RANGE ) {
+				# This is the number of bits that are allowed to vary in the block, give
+				# or take some floating point errors
+				$max = IP::isIPv6( $target ) ? 128 : 32;
+				list( $network, $bits ) = IP::parseCIDR( $target );
+				$size = $max - $bits;
+
+				# Rank a range block covering a single IP equally with a single-IP block
+				$score = self::TYPE_RANGE - 1 + ( $size / $max );
+
+			} else {
+				$score = $type;
+			}
+
+			if ( $score < $bestBlockScore ) {
+				$bestBlockScore = $score;
+				$bestBlock = $block;
+			}
+		}
+
+		return $bestBlock;
+	}
+
 	/**
 	 * Get a block
 	 * @param string $ip The IP address to be checked
@@ -158,8 +219,8 @@ class GlobalBlocking {
 		}
 
 		// Get the block
-		$block = $dbr->selectRow( 'globalblocks', self::selectFields(), $conds, __METHOD__ );
-		return $block;
+		$blocks = $dbr->select( 'globalblocks', self::selectFields(), $conds, __METHOD__ );
+		return self::chooseMostSpecificBlock( $blocks );
 	}
 
 	/**
