@@ -45,7 +45,7 @@
 	"globalblocking-search-legend": "グローバルブロックの検索",
 	"globalblocking-search-ip": "IPアドレス:",
 	"globalblocking-search-submit": "ブロックを検索",
-	"globalblocking-list-ipinvalid": "あなたが検索したIPアドレス ($1) には誤りがあります。\n再度有効なIPアドレスを入力してください。",
+	"globalblocking-list-ipinvalid": "あなたが検索したIPアドレス ($1) には誤りがあります。\n有効なIPアドレスを入力してください。",
 	"globalblocking-search-errors": "以下の{{PLURAL:$1|理由}}により、検索できませんでした:",
 	"globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> (''$3'') が [[Special:Contributions/$4|$4]] を全プロジェクトでブロック ''($5)''",
 	"globalblocking-list-expiry": "満了 $1",
