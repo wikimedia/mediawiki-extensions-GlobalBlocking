@@ -11,6 +11,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 	public function execute( $par ) {
 		$this->setHeaders();
 		$this->outputHeader( 'globalblocking-list-intro' );
+		$this->addHelpLink( 'Extension:GlobalBlocking' );
 
 		$out = $this->getOutput();
 		$out->setPageTitle( $this->msg( 'globalblocking-list' ) );

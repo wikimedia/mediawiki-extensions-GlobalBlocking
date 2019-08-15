@@ -13,6 +13,7 @@ class SpecialRemoveGlobalBlock extends FormSpecialPage {
 
 	public function execute( $par ) {
 		parent::execute( $par );
+		$this->addHelpLink( 'Extension:GlobalBlocking' );
 
 		$out = $this->getOutput();
 		$out->setPageTitle( $this->msg( 'globalblocking-unblock' ) );

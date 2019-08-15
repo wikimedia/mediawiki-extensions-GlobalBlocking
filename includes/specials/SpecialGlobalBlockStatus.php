@@ -13,6 +13,7 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 	public function execute( $par ) {
 		global $wgApplyGlobalBlocks;
 		$this->setHeaders();
+		$this->addHelpLink( 'Extension:GlobalBlocking' );
 		$this->checkExecutePermissions( $this->getUser() );
 
 		$out = $this->getOutput();
