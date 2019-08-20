@@ -116,6 +116,7 @@
 	"apihelp-query+globalblocks-param-prop": "Hvilke egenskaper som skal hentes.",
 	"apihelp-query+globalblocks-example-1": "List opp alle globale blokkeringer",
 	"apihelp-query+globalblocks-example-2": "Lister opp globale blokkeringer av IP-adressa 192.0.2.18",
+	"globalblocking-apierror-badip": "IP-adressa $1 er ugyldig",
 	"log-action-filter-gblblock": "Type global blokkering:",
 	"log-action-filter-gblblock-gblock": "Global blokkering",
 	"log-action-filter-gblblock-gunblock": "Global avblokkering",
