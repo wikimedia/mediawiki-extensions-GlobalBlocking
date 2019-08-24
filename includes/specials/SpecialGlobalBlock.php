@@ -108,7 +108,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 			],
 			'Reason' => [
 				'type' => 'selectandother',
-				'maxlength' => 255,
+				'maxlength' => CommentStore::COMMENT_CHARACTER_LIMIT,
 				'label-message' => 'globalblocking-block-reason',
 				'id' => 'mw-globalblock-reason',
 				'options-message' => 'globalblocking-block-reason-dropdown',
