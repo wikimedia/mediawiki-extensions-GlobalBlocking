@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"Andrew Garrett"
+		]
+	},
+	"apihelp-globalblock-description": "Globally block or unblock a user.",
+	"apihelp-globalblock-summary": "Globally block or unblock a user.",
+	"apihelp-globalblock-param-target": "The target IP address.",
+	"apihelp-globalblock-param-expiry": "If specified, will block or reblock the user. Determines how long the block will last for, e.g. \"5 months\" or \"2 weeks\". If set to \"infinite\" or \"indefinite\" the block will never expire.",
+	"apihelp-globalblock-param-unblock": "If specified, will unblock the user.",
+	"apihelp-globalblock-param-reason": "The reason for blocking/unblocking.",
+	"apihelp-globalblock-param-anononly": "Specify this if the block should only affect logged-out users.",
+	"apihelp-globalblock-param-modify": "Specify this if the existing block on the target should be modified",
+	"apihelp-globalblock-example-1": "Block 192.0.2.1 indefinitely with reason \"Cross-wiki abuse\"",
+	"apihelp-query+globalblocks-description": "List all globally blocked IP addresses.",
+	"apihelp-query+globalblocks-summary": "List all globally blocked IP addresses.",
+	"apihelp-query+globalblocks-param-start": "The timestamp to start enumerating from.",
+	"apihelp-query+globalblocks-param-end": "The timestamp to stop enumerating at.",
+	"apihelp-query+globalblocks-param-ids": "Pipe-separated list of block IDs to list.",
+	"apihelp-query+globalblocks-param-addresses": "Pipe-separated list of IP addresses to search for.",
+	"apihelp-query+globalblocks-param-ip": "Get all blocks applying to this IP address or CIDR range, including range blocks. Cannot be used together with $1addresses. CIDR ranges broader than /16 are not accepted.",
+	"apihelp-query+globalblocks-param-limit": "The maximum amount of blocks to list.",
+	"apihelp-query+globalblocks-param-prop": "Which properties to get.",
+	"apihelp-query+globalblocks-example-1": "List all global blocks",
+	"apihelp-query+globalblocks-example-2": "List global blocks applying to IP address 192.0.2.18"
+}
