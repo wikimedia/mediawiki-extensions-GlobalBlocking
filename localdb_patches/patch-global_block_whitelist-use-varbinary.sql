@@ -1,0 +1,1 @@
+ALTER TABLE /*_*/global_block_whitelist MODIFY gbw_by_text varbinary(255) NOT NULL;
