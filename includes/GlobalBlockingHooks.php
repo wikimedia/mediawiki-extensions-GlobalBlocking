@@ -35,9 +35,19 @@ class GlobalBlockingHooks {
 					'globalblocks',
 					"$base/globalblocking.sql"
 				);
+				$updater->modifyExtensionField(
+					'globalblocks',
+					'gb_reason',
+					"$base/localdb_patches/patch-globalblocks-reason-length.sql"
+				);
 				$updater->addExtensionTable(
 					'global_block_whitelist',
 					"$base/localdb_patches/setup-global_block_whitelist.sql"
+				);
+				$updater->modifyExtensionField(
+					'global_block_whitelist',
+					'gbw_reason',
+					"$base/localdb_patches/patch-global-block-whitelist-reason-length.sql"
 				);
 				break;
 

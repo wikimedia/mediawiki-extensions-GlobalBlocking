@@ -3,7 +3,7 @@ CREATE TABLE /*_*/globalblocks (
 	gb_address varchar(255) NOT NULL,
 	gb_by varchar(255) NOT NULL,
 	gb_by_wiki varbinary(255) NOT NULL,
-	gb_reason TINYBLOB NOT NULL,
+	gb_reason varbinary(767) NOT NULL,
 	gb_timestamp binary(14) NOT NULL,
 	gb_anon_only bool NOT NULL default 0,
 	gb_expiry varbinary(14) NOT NULL default '',
@@ -21,7 +21,7 @@ CREATE TABLE /*_*/global_block_whitelist (
 	gbw_address varbinary(255) NOT NULL,
 	gbw_by int(11) NOT NULL, -- Key to user_id
 	gbw_by_text varchar(255) NOT NULL,
-	gbw_reason varchar(255) NOT NULL,
+	gbw_reason varbinary(767) NOT NULL,
 	gbw_expiry binary(14) NOT NULL
 ) /*$wgDBTableOptions*/;
 

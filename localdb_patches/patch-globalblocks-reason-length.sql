@@ -1,0 +1,1 @@
+ALTER TABLE /*_*/globalblocks MODIFY gb_reason varbinary(767) NOT NULL;
