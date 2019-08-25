@@ -47,7 +47,7 @@ class GlobalBlockingHooks {
 				$updater->modifyExtensionField(
 					'global_block_whitelist',
 					'gbw_reason',
-					"$base/localdb_patches/patch-global-block-whitelist-reason-length.sql"
+					"$base/localdb_patches/patch-global_block_whitelist-reason-length.sql"
 				);
 				$updater->modifyExtensionField(
 					'global_block_whitelist',
