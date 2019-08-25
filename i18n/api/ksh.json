@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Purodha"
+		]
+	},
+	"apihelp-globalblock-description": "Donn ene Metmaacher jemeinsamm en alle Wikis schpärre udder wider freijävve.",
+	"apihelp-globalblock-param-target": "Däm Zihl sing <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"Internet Protocol\">IP</i>-Adräß.",
+	"apihelp-globalblock-param-expiry": "Wann aanjejovve, schpächt dä Metmaacher neu, udder schpächd en wider. Beschtemmp, wi lang di Späh jonn sull, för e Beijschpel „<code lang=\"en\" xml:lang=\"en\" dir=\"ltr\">5 months</code>“ (fönnef Mohnd) „<code lang=\"en\" xml:lang=\"en\" dir=\"ltr\">2 weeks</code>“ (zwai Woche). Wam_mer „<code lang=\"en\" xml:lang=\"en\" dir=\"ltr\">infinite</code>“ udder „<code lang=\"en\" xml:lang=\"en\" dir=\"ltr\">indefinite</code>“ aanjitt, hürt di Spähr nih op.",
+	"apihelp-globalblock-param-unblock": "Wann aanjejovve, nemmp de Spähr fö dä Metmaacher fott.",
+	"apihelp-globalblock-param-reason": "Der Jrond för e Schpärre udder Freijävve.",
+	"apihelp-globalblock-param-anononly": "Jiff aan, ov dä Schpär blohß de ußjeloggt Metmaacher bträffe sull.",
+	"apihelp-globalblock-example-1": "Schpärr 192.0.2.1 för ihwesch mem Jrond „Kappottmaacherei en divärse Wikkis“",
+	"apihelp-query+globalblocks-description": "Donn alle övverall jeschpächte <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"Internet Protocol\">IP</i>-Adräße opleßte.",
+	"apihelp-query+globalblocks-param-start": "Et Dattom un de Zigg vun woh aff opjezallt wähde sull.",
+	"apihelp-query+globalblocks-param-end": "Et Dattom un de Zigg bes woh hen opjezallt wähde sull.",
+	"apihelp-query+globalblocks-param-ip": "Holld alle Schpärre för heh di <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"Internet Protocol\">IP</i>-Adräß udder heh dä <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"Classless Inter-Domain Routing\">CIDR</i>-Berätt, och Schpärre vun Berätte. Kam_mer nit zesamme met „<code lang=\"en\" xml:lang=\"en\" dir=\"ltr\">$1users</code>“ bruche. <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"Classless Inter-Domain Routing\">CIDR</i>-Berätte vun mieh wi <code dir=\"ltr\">/16</code> Bits wähde nit aanjenumme.",
+	"apihelp-query+globalblocks-param-limit": "De hühßde Aanzahl Spärre zom opleste.",
+	"apihelp-query+globalblocks-param-prop": "Wat för en Eijeschaffte holle.",
+	"apihelp-query+globalblocks-example-1": "Donn alle övverall-Schpärre opleßte.",
+	"apihelp-query+globalblocks-example-2": "Donn alle övverall-Schpärre för di <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"Internet Protocol\">IP</i>-Adräß 192.0.2.18 opleßte."
+}

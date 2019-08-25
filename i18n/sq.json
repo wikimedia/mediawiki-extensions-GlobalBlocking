@@ -87,8 +87,5 @@
 	"right-globalblock-whitelist": "Çaktivizoni bllokimet globale në nivel lokal",
 	"action-globalblock-whitelist": "pamundëso lokalisht bllokimet e përgjithshme",
 	"right-globalblock-exempt": "Anashkaloni bllokimet globale",
-	"action-globalblock-exempt": "tejkalo bllokimet e përgjithshme",
-	"apihelp-globalblock-description": "Bllokon përgjithësisht një përdorues ose e zhbllokon atë.",
-	"apihelp-globalblock-param-reason": "Arsyeja për bllokim/zhbllokim.",
-	"apihelp-query+globalblocks-description": "Listo të gjithë adresat IP të bllokuara."
+	"action-globalblock-exempt": "tejkalo bllokimet e përgjithshme"
 }

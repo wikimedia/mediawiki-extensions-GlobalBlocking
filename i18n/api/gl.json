@@ -1,0 +1,28 @@
+{
+	"@metadata": {
+		"authors": [
+			"Banjo",
+			"Elisardojm"
+		]
+	},
+	"apihelp-globalblock-description": "Bloquear ou desbloquear globalmente a un usuario.",
+	"apihelp-globalblock-summary": "Bloquear ou desbloquear globalmente a un usuario.",
+	"apihelp-globalblock-param-target": "Enderezo IP obxectivo.",
+	"apihelp-globalblock-param-expiry": "Se se especifica, bloqueará ou rebloquará ó usuario. Determina a duración do bloqueo, p. ex. \"5 meses\" ou \"2 semanas\". Se se indica \"infinito\" ou \"indefinido\" o bloqueo non expirará.",
+	"apihelp-globalblock-param-unblock": "Se está indicado, desbloqueará ó usuario.",
+	"apihelp-globalblock-param-reason": "Razón para bloquear/desbloquear.",
+	"apihelp-globalblock-param-anononly": "Especifique se o bloque debería afectar só a usuarios non conectados.",
+	"apihelp-globalblock-param-modify": "Indica se o bloque existente no obxectivo debe ser modificado",
+	"apihelp-globalblock-example-1": "Bloquear 192.0.2.1 de forma indefinida coa razón \"Vandalismo Cross-wiki\"",
+	"apihelp-query+globalblocks-description": "Listar tódolos enderezos IP bloqueados globalmente.",
+	"apihelp-query+globalblocks-summary": "Listar tódolos enderezos IP bloqueados globalmente.",
+	"apihelp-query+globalblocks-param-start": "Selo de tempo para comezar a enumeración.",
+	"apihelp-query+globalblocks-param-end": "Selo de tempo para rematar a enumeración.",
+	"apihelp-query+globalblocks-param-ids": "Lista de identificadores de bloque para listar, separados por barras verticais (|).",
+	"apihelp-query+globalblocks-param-addresses": "Lista de direccións IP para procurar, separadas por barras verticais (|).",
+	"apihelp-query+globalblocks-param-ip": "Obter todos os bloques aplicables a esta dirección IP ou a este rango CIDR, incluíndo bloques de rangos.\nNon pode usarse xunto con $1addresses. Os rangos CIDR maiores que /16 non se aceptan.",
+	"apihelp-query+globalblocks-param-limit": "Máximo número de bloqueos a listar.",
+	"apihelp-query+globalblocks-param-prop": "Que propiedades obter.",
+	"apihelp-query+globalblocks-example-1": "Listar tódolos bloqueos globais",
+	"apihelp-query+globalblocks-example-2": "Lista os bloqueos globais aplicados á dirección IP 192.0.2.18"
+}

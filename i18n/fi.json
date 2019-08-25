@@ -103,7 +103,6 @@
 	"action-globalblock-whitelist": "poistaa käytöstä järjestelmänlaajuisia estoja paikallisesti",
 	"right-globalblock-exempt": "Ohittaa järjestelmänlaajuiset estot",
 	"action-globalblock-exempt": "ohittaa järjestelmänlaajuisia estoja",
-	"apihelp-globalblock-example-1": "Estä 192.0.2.1 ikuisesti syyllä ”Cross-wiki abuse”",
 	"log-action-filter-gblblock": "Globaalin eston tyyppi:",
 	"log-action-filter-gblblock-gblock": "Järjestelmänlaajuinen esto"
 }

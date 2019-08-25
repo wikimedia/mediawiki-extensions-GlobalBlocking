@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vlad5250"
+		]
+	},
+	"apihelp-globalblock-description": "Globalno blokirajte ili odblokirajte korisnika.",
+	"apihelp-globalblock-summary": "Globalno blokirajte ili odblokirajte korisnika.",
+	"apihelp-globalblock-param-target": "Ciljna IP adresa.",
+	"apihelp-globalblock-param-expiry": "Ako je navedeno, korisnik će biti blokiran ili preblokiran. Određuje koliko dugo će blok trajati (npr. \"5 mjeseci\" ili \"2 tjedna\"). Ako je dano \"beskonačno\" ili \"neodređeno\", onda će blok trajati vječno.",
+	"apihelp-globalblock-param-unblock": "Ako je navedeno, korisnik će biti deblokiran.",
+	"apihelp-globalblock-param-reason": "Razlog blokiranja/deblokiranja.",
+	"apihelp-globalblock-param-anononly": "Označite ovo ako želite da se blok primjenjuje samo na odjavljene korisnike.",
+	"apihelp-globalblock-param-modify": "Označite ovo ako trebate izmijeniti postojeći blok na meti",
+	"apihelp-globalblock-example-1": "Blokiraj 192.0.2.1 beskonačno uz razlog \"zlouporabe više wikija\"",
+	"apihelp-query+globalblocks-description": "Ispiši sve globalno blokirane IP adrese.",
+	"apihelp-query+globalblocks-summary": "Ispiši sve globalno blokirane IP adrese.",
+	"apihelp-query+globalblocks-param-start": "Od kojeg datuma i vremena počinje brojanje.",
+	"apihelp-query+globalblocks-param-end": "Na koji datum i vrijeme zaustaviti brojanje.",
+	"apihelp-query+globalblocks-param-ids": "Popis blokova što treba se ispisati. Odvojite ih uspravnom linijom.",
+	"apihelp-query+globalblocks-param-addresses": "Popis blokova što treba se pretražiti. Odvojite ih uspravnom linijom.",
+	"apihelp-query+globalblocks-param-ip": "Daj sve blokove što se odnose na ovu IP adresu ili CIDR opseg, zaključno s opsežnim. Ne može se koristiti zajedno s $1addresses. Nisu prihvaćeni CIDR opsezi širi od /16.",
+	"apihelp-query+globalblocks-param-limit": "Najviše blokova u ispisu.",
+	"apihelp-query+globalblocks-param-prop": "Koja svojstva dati.",
+	"apihelp-query+globalblocks-example-1": "Popis svih globalnih blokova",
+	"apihelp-query+globalblocks-example-2": "Ispiši globalne blokove što se odnose IP adresi 192.0.2.18"
+}

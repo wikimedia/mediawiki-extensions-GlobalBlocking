@@ -1,0 +1,28 @@
+{
+	"@metadata": {
+		"authors": [
+			"Araceletorres",
+			"Felipe L. Ewald"
+		]
+	},
+	"apihelp-globalblock-description": "Bloquear ou desbloquear globalmente um usuário.",
+	"apihelp-globalblock-summary": "Bloquear ou desbloquear globalmente um usuário.",
+	"apihelp-globalblock-param-target": "O endereço IP de destino.",
+	"apihelp-globalblock-param-expiry": "Se especificado, bloqueará e rebloqueará o usuário. Determina a duração do bloqueio, por exemplo, \"5 meses\" ou \"2 semanas\". Se configurado como \"infinito\" ou \" indefinido\" o bloqueio nunca expirará.",
+	"apihelp-globalblock-param-unblock": "Se especificado, desbloqueará o usuário.",
+	"apihelp-globalblock-param-reason": "O motivo para bloquear/desbloquear.",
+	"apihelp-globalblock-param-anononly": "Especificar se o bloqueio só deveria afetar usuários desconectados.",
+	"apihelp-globalblock-param-modify": "Especifique isso se o bloco existente no alvo deve ser modificado",
+	"apihelp-globalblock-example-1": "Bloquear 192.0.2.1 indefinidamente pelo motivo \"Cross-wiki abuse\"",
+	"apihelp-query+globalblocks-description": "Listar todos os endereços IP bloqueados globalmente.",
+	"apihelp-query+globalblocks-summary": "Listar todos os endereços IP bloqueados globalmente.",
+	"apihelp-query+globalblocks-param-start": "O timestamp para começar a enumeração.",
+	"apihelp-query+globalblocks-param-end": "O timestamp para parar a enumeração.",
+	"apihelp-query+globalblocks-param-ids": "Lista de IDs de bloqueios para listar, separados por barras verticais.",
+	"apihelp-query+globalblocks-param-addresses": "Lista de endereços IP para buscar, separados por barras verticais.",
+	"apihelp-query+globalblocks-param-ip": "Obter todos os blocos que se aplicam a este endereço IP ou intervalo CIDR, incluindo intervalos de blocos. Não pode ser utilizado em conjunto com $1addresses. Os intervalos CIDR maiores que /16 não são aceitos.",
+	"apihelp-query+globalblocks-param-limit": "A quantidade máxima de bloqueios para listar.",
+	"apihelp-query+globalblocks-param-prop": "Que propriedades obter.",
+	"apihelp-query+globalblocks-example-1": "Listar todos os bloqueios globais",
+	"apihelp-query+globalblocks-example-2": "Listar bloqueios globais aplicados ao endereço IP 192.0.2.18"
+}

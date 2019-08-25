@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jon Harald Søby"
+		]
+	},
+	"apihelp-globalblock-description": "Blokker eller avblokker en bruker globalt.",
+	"apihelp-globalblock-summary": "Blokker eller avblokker en bruker globalt.",
+	"apihelp-globalblock-param-target": "Mål-IP-adressa.",
+	"apihelp-globalblock-param-expiry": "Om denne er angitt vil brukeren bli blokkert (igjen?). Bestemmer hvor lenge blokkeringen vil vare, f.eks. «5 months» eller «2 weeks». Om den er satt til «infinite» eller «indefinite» vil blokkeringen aldri løpe ut.",
+	"apihelp-globalblock-param-unblock": "Om denne er angitt vil brukeren bli avblokkert.",
+	"apihelp-globalblock-param-reason": "Årsak for blokkering/avblokkering.",
+	"apihelp-globalblock-param-anononly": "Spesifiser denne om blokkeringen kun skal gjelde uinnloggede brukere.",
+	"apihelp-globalblock-param-modify": "Spesifiser denne om den eksisterende blokkeringen av målet skal endres",
+	"apihelp-globalblock-example-1": "Blokker 192.0.2.1 på ubestemt tid med årsak «Cross-wiki abuse»",
+	"apihelp-query+globalblocks-description": "List opp alle globalt blokkerte IP-adresser.",
+	"apihelp-query+globalblocks-summary": "List opp alle globalt blokkerte IP-adresser.",
+	"apihelp-query+globalblocks-param-start": "Tidsstempelet det skal nummereres fra.",
+	"apihelp-query+globalblocks-param-end": "Tidsstempelet det skal stoppes å nummereres på.",
+	"apihelp-query+globalblocks-param-ids": "Vertikalstrek-atskilt liste over blokkerings-ID-er som skal listes.",
+	"apihelp-query+globalblocks-param-addresses": "Vertikalstrek-atskilt liste over IP-adresser det skal søkes på.",
+	"apihelp-query+globalblocks-param-ip": "Få alle blokkeringer som gjelder denne IP-adressa eller CIDR-området, inkludert områdeblokkeringer. Kan ikke brukes sammen med $1addresses. CIDR-områder større enn /16 godkjennes ikke.",
+	"apihelp-query+globalblocks-param-limit": "Maksimalt antall blokkeringer som skal listes.",
+	"apihelp-query+globalblocks-param-prop": "Hvilke egenskaper som skal hentes.",
+	"apihelp-query+globalblocks-example-1": "List opp alle globale blokkeringer",
+	"apihelp-query+globalblocks-example-2": "Lister opp globale blokkeringer av IP-adressa 192.0.2.18"
+}

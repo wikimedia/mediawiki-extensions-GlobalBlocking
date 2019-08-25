@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lorestani",
+			"Mogoeilor"
+		]
+	},
+	"apihelp-globalblock-description": "نهاگری یا آزاد هیشتن یه گل کاریار.",
+	"apihelp-globalblock-param-target": "تیرنشوݩ آی پی هاستنی.",
+	"apihelp-globalblock-param-unblock": "ار تیار بیه،واس ای کاریار آزاد با.",
+	"apihelp-globalblock-param-reason": "دلیل نهاگری/آزاد هیشتن.",
+	"apihelp-query+globalblocks-description": "نوم گه نشونی یا آپی یی که سرتاسری قلف بینه.",
+	"apihelp-query+globalblocks-param-limit": "انازه بیشترونه نهاگریا سی نومجا",
+	"apihelp-query+globalblocks-example-1": "نومجا همه نهاگریا سرتاسری"
+}

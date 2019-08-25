@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mainframe98"
+		]
+	},
+	"apihelp-globalblock-description": "Een gebruiker globaal blokkeren of deblokkeren.",
+	"apihelp-globalblock-summary": "Een gebruiker globaal blokkeren of deblokkeren.",
+	"apihelp-globalblock-param-target": "Het doel IP-adres.",
+	"apihelp-query+globalblocks-description": "Toon alle globaal geblokkeerde IP-adressen",
+	"apihelp-query+globalblocks-summary": "Toon alle globaal geblokkeerde IP-adressen",
+	"apihelp-query+globalblocks-param-limit": "Het maximum aantal blokkades om te tonen.",
+	"apihelp-query+globalblocks-example-1": "Toon alle globale blokkades",
+	"apihelp-query+globalblocks-example-2": "Toon globale blokkades die van toepassing op het IP-adres 192.0.2.18"
+}

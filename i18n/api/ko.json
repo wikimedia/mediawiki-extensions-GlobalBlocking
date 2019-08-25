@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Revi",
+			"Ykhwong"
+		]
+	},
+	"apihelp-globalblock-description": "사용자를 전역 차단하거나 해제함",
+	"apihelp-globalblock-summary": "사용자를 전역 차단하거나 해제합니다.",
+	"apihelp-globalblock-param-target": "차단할 IP 주소",
+	"apihelp-globalblock-param-expiry": "지정하면 사용자를 차단하거나 다시 차단합니다. 차단이 얼만큼 오랫동안 지속될지를 결정합니다. (예: \"5 months\" 또는 \"2 weeks\") \"infinite\" 또는 \"indefinite\"으로 설정하면 무기한으로 차단합니다.",
+	"apihelp-globalblock-param-unblock": "지정하면 사용자의 차단을 해제합니다.",
+	"apihelp-globalblock-param-reason": "차단/차단 해제 사유",
+	"apihelp-globalblock-param-anononly": "로그아웃 사용자에게만 영향을 미치도록 합니다.",
+	"apihelp-globalblock-param-modify": "기존의 대상 블록을 수정해야 한다면 이것을 지정하세요",
+	"apihelp-globalblock-example-1": "192.0.2.1 IP를 \"여러 위키에서의 문제 행동\"으로 무기한 차단",
+	"apihelp-query+globalblocks-description": "모든 위키에서 차단된 IP 주소를 나열합니다.",
+	"apihelp-query+globalblocks-summary": "모든 위키에서 차단된 IP 주소를 나열합니다.",
+	"apihelp-query+globalblocks-param-start": "나열을 시작할 타임스탬프",
+	"apihelp-query+globalblocks-param-end": "나열을 끝낼 타임스탬프",
+	"apihelp-query+globalblocks-param-ids": "나열할 차단 ID, 파이프로 분리",
+	"apihelp-query+globalblocks-param-addresses": "검색할 IP 주소, 파이프로 분리",
+	"apihelp-query+globalblocks-param-prop": "가져올 속성입니다.",
+	"apihelp-query+globalblocks-example-1": "모든 전역 차단 나열"
+}

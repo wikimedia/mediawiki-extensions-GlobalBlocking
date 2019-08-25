@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"Abanima",
+			"Meno25",
+			"ديفيد"
+		]
+	},
+	"apihelp-globalblock-description": "امنع مستخدما منعا عالميا أو ارفع المنع العالمي عنه.",
+	"apihelp-globalblock-summary": "منع أو رفع منع مستخدم عالميا.",
+	"apihelp-globalblock-param-target": "عنوان IP المستهدف.",
+	"apihelp-globalblock-param-expiry": "في حال التحديد سيتم منع المستخدم أو إعادة منعه. يحدد مدة استمرار المنع، مثلاً «أسبوعين» أو «5 أشهر». في حال تعيين قيمة «لانهائي» أو «غير محدد» لن تنتهي مدة المنع أبداً.",
+	"apihelp-globalblock-param-unblock": "في حال التحديد سيتم رفع المنع عن المستخدم.",
+	"apihelp-globalblock-param-reason": "سبب المنع/رفع المنع.",
+	"apihelp-globalblock-param-anononly": "لا تحدد هذا الخيار إلا إذا وجب أن يشمل المنع المستخدمين غير مسجلي الدخول.",
+	"apihelp-globalblock-param-modify": "حدد هذا إذا كان يجب تعديل المنع الموجود على الهدف",
+	"apihelp-globalblock-example-1": "امنع 192.0.2.1 لمدة غير محددة بسبب «سوء المعاملة على ويكيات متعددة»",
+	"apihelp-query+globalblocks-description": "اسرد جميع عناوين IP الممنوعة منعاً شاملاً.",
+	"apihelp-query+globalblocks-summary": "سرد كافة عناوين الآيبي الممنوعة عالميا.",
+	"apihelp-query+globalblocks-param-start": "الطابع الزمني لبدء العد منه.",
+	"apihelp-query+globalblocks-param-end": "الطابع الزمني لوقف التعداد فيه.",
+	"apihelp-query+globalblocks-param-ids": "قائمة مفصولة بأنبوب بمعرفات المنع للإدراج.",
+	"apihelp-query+globalblocks-param-addresses": "قائمة مفصولة بعناوين الآيبي للبحث عنها.",
+	"apihelp-query+globalblocks-param-ip": "احصل على كل المنع الذي ينطبق على عنوان الآيبي أو نطاق CIDR، بما في ذلك منع النطاق، لا يمكن استخدامها مع $1addresses، لا يتم قبول CIDR أوسع من/16.",
+	"apihelp-query+globalblocks-param-limit": "الحد الأقصى لعدد مرات المنع للإدراج.",
+	"apihelp-query+globalblocks-param-prop": "أي الخصائص تريد الحصول عليها.",
+	"apihelp-query+globalblocks-example-1": "ادرج جميع عمليات المنع العالمية",
+	"apihelp-query+globalblocks-example-2": "ادرج جميع عمليات المنع العالمية التي تنطبق على عنوان الآيبي 192.0.2.18"
+}

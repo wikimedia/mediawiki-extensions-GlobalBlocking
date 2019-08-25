@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"פוילישער"
+		]
+	},
+	"apihelp-globalblock-param-target": "דער ציל IP אדרעס.",
+	"apihelp-query+globalblocks-description": "ליסטע פון אלע גלאבאל בלאקירטע IP אדרעסן."
+}

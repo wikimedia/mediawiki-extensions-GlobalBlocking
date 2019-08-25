@@ -1,0 +1,28 @@
+{
+	"@metadata": {
+		"authors": [
+			"Fitoschido",
+			"Macofe",
+			"MarcoAurelio",
+			"Ryo567"
+		]
+	},
+	"apihelp-globalblock-description": "Bloquear o desbloquear globalmente a un usuario.",
+	"apihelp-globalblock-param-target": "La dirección IP de destino.",
+	"apihelp-globalblock-param-expiry": "Si se especifica, bloqueará o rebloqueará al usuario. Determina cuánto va a durar el bloque. Por ejemplo, \"5 months\" o \"2 weeks\". Si se establece a \"infinite\" or \"indefinite\" el bloqueo no tendrá fecha de caducidad.",
+	"apihelp-globalblock-param-unblock": "Si se especifica, se desbloqueará al usuario.",
+	"apihelp-globalblock-param-reason": "El motivo para bloquear/desbloquear.",
+	"apihelp-globalblock-param-anononly": "Especificar si el bloqueo debería afectar solo a los usuarios sin sesión iniciada.",
+	"apihelp-globalblock-param-modify": "Especifica esto si el bloqueo existente sobre el objetivo debería ser modificado",
+	"apihelp-globalblock-example-1": "Bloquear 192.0.2.1 indefinidamente con el motivo \"Abuso sobre varios wikis\"",
+	"apihelp-query+globalblocks-description": "Enumerar todas las direcciones IP bloqueadas globalmente.",
+	"apihelp-query+globalblocks-param-start": "El sello de tiempo para comenzar la enumeración",
+	"apihelp-query+globalblocks-param-end": "El sello de tiempo para detener la enumeración",
+	"apihelp-query+globalblocks-param-ids": "Lista separada por barras de identificadores de bloqueos que listar.",
+	"apihelp-query+globalblocks-param-addresses": "Lista separada por barras de direcciones IP que buscar.",
+	"apihelp-query+globalblocks-param-ip": "Obtener todos los bloqueos aplicados a esta dirección IP o rango CIDR de IPs, incluyendo bloqueos de rango. No puede ser usado junto con $1addresses. Los rangos de IP CIDR cuya amplitud sea superior a /16 no se aceptan.",
+	"apihelp-query+globalblocks-param-limit": "La cantidad máxima de bloqueos que listar.",
+	"apihelp-query+globalblocks-param-prop": "Qué propiedades se obtendrán.",
+	"apihelp-query+globalblocks-example-1": "Listar todos los bloqueos globales",
+	"apihelp-query+globalblocks-example-2": "Lista de bloqueos globales aplicados a la dirección IP 192.0.2.18"
+}

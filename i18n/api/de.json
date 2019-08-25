@@ -1,0 +1,30 @@
+{
+	"@metadata": {
+		"authors": [
+			"Inkowik",
+			"Metalhead64",
+			"Predatorix",
+			"ToBeFree"
+		]
+	},
+	"apihelp-globalblock-description": "Sperrt einen Benutzer global oder gibt ihn wieder frei.",
+	"apihelp-globalblock-summary": "Sperrt global einen Benutzer oder gibt ihn frei.",
+	"apihelp-globalblock-param-target": "Die Ziel-IP-Adresse.",
+	"apihelp-globalblock-param-expiry": "Wird, wenn angegeben, Benutzer sperren oder erneut sperren. Bestimmt wie lange die Sperre dauert. Zum Beispiel \"5 Moante\" oder \"2 Wochen\". Falls auf \"unendlich\" oder \"unbestimmt\" gesetzt, wird die Sperre niemals aufgehoben.",
+	"apihelp-globalblock-param-unblock": "Falls angegeben, wird der Benutzer freigegeben.",
+	"apihelp-globalblock-param-reason": "Der Grund für das Sperren/Entsperren.",
+	"apihelp-globalblock-param-anononly": "Gib dies an, falls die Sperre nur abgemeldete Benutzer betreffen soll.",
+	"apihelp-globalblock-param-modify": "Gib dies an, falls die vorhandene Sperre des Ziels verändert werden soll.",
+	"apihelp-globalblock-example-1": "Sperre 192.0.2.1 auf unbestimmte Zeit mit dem Grund \"Quer-Wiki - Missbrauch\"",
+	"apihelp-query+globalblocks-description": "Alle global gesperrten IP-Adressen auflisten.",
+	"apihelp-query+globalblocks-summary": "Alle global gesperrten IP-Adressen auflisten.",
+	"apihelp-query+globalblocks-param-start": "Der Zeitstempel, bei dem die Aufzählung beginnen soll.",
+	"apihelp-query+globalblocks-param-end": "Der Zeitstempel, bei dem die Aufzählung beendet werden soll.",
+	"apihelp-query+globalblocks-param-ids": "Durch Verkettungszeichen getrennte Liste von Sperren-IDs, die aufgelistet werden sollen.",
+	"apihelp-query+globalblocks-param-addresses": "Mit | getrennte Liste der zu suchenden IP-Adressen.",
+	"apihelp-query+globalblocks-param-ip": "Ruft alle Sperren dieser IP-Adresse oder dieses CIDR-Bereiches ab, inklusive Bereichssperren. Kann nicht zusammen mit $1addresses verwendet werden. CIDR-Bereiche größer als /16 werden nicht akzeptiert.",
+	"apihelp-query+globalblocks-param-limit": "Die maximale Anzahl der aufzulistenden Sperren.",
+	"apihelp-query+globalblocks-param-prop": "Zurückzugebende Eigenschaften",
+	"apihelp-query+globalblocks-example-1": "Alle globale Sperren auflisten",
+	"apihelp-query+globalblocks-example-2": "Listet globale Sperren der IP-Adresse 192.0.2.18 auf"
+}

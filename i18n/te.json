@@ -78,6 +78,5 @@
 	"removeglobalblock": "ఒక సార్వత్రిక నిరోధాన్ని తొలగించు",
 	"right-globalblock": "సార్వత్రిక నిరోధాల్ని చేయడం",
 	"right-globalblock-whitelist": "సార్వత్రిక నిరోధాల్ని స్థానికంగా అచేతనం చేయగలగడం",
-	"right-globalblock-exempt": "సార్వత్రిక నిరోధాలని తప్పించగలడం",
-	"apihelp-globalblock-example-1": "\"Cross-wiki abuse\" కారణంగా 192.0.2.1 ను అనంతంగా నిరోధించు"
+	"right-globalblock-exempt": "సార్వత్రిక నిరోధాలని తప్పించగలడం"
 }

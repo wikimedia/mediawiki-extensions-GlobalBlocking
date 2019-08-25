@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Max20091",
+			"Minh Nguyen"
+		]
+	},
+	"apihelp-globalblock-param-target": "Địa chỉ IP mục tiêu.",
+	"apihelp-globalblock-example-1": "Cấm 192.0.2.1 vô thời hạn với lý do “Phá hoại ở nhiều wiki”",
+	"apihelp-query+globalblocks-description": "Liệt kê các địa chỉ IP bị cấm toàn cục.",
+	"apihelp-query+globalblocks-example-1": "Liệt kê tất cả các tác vụ cấm toàn cục"
+}

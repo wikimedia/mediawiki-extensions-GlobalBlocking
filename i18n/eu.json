@@ -25,6 +25,5 @@
 	"globalblocking-whitelist-reason": "Arrazoia:",
 	"globalblocking-block-logentry": "administratzaileak [[$1]] blokeatu du globalki. Iraupena: $2",
 	"globalblocking-loglink": "$1 IP helbidea proiektu guztietarako blokeatuta dago ([[{{#Special:GlobalBlockList}}/$1|ikus xehetasun guztiak]]).",
-	"globalblocklist": "Globalki blokeatutako IP helbideen zerrenda",
-	"apihelp-query+globalblocks-description": "Globalki blokeatutako IP helbide guztien zerrenda."
+	"globalblocklist": "Globalki blokeatutako IP helbideen zerrenda"
 }

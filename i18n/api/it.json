@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Beta16",
+			"Ricordisamoa"
+		]
+	},
+	"apihelp-globalblock-description": "Blocca o sblocca globalmente un utente.",
+	"apihelp-globalblock-summary": "Blocca o sblocca globalmente un utente.",
+	"apihelp-globalblock-param-target": "L'indirizzo IP di destinazione.",
+	"apihelp-globalblock-param-unblock": "Se specificato, sarà sbloccato l'utente.",
+	"apihelp-globalblock-param-reason": "Il motivo del blocco/sblocco.",
+	"apihelp-globalblock-param-anononly": "Indica se il blocco dovrebbe riguardare solo gli utenti che non hanno effettuato l'accesso.",
+	"apihelp-query+globalblocks-description": "Elenca tutti gli indirizzi IP bloccati globalmente",
+	"apihelp-query+globalblocks-summary": "Elenca tutti gli indirizzi IP bloccati globalmente",
+	"apihelp-query+globalblocks-param-start": "Il timestamp da cui iniziare l'elenco.",
+	"apihelp-query+globalblocks-param-end": "Il timestamp al quale interrompere l'elenco.",
+	"apihelp-query+globalblocks-param-limit": "Il numero massimo di blocchi da elencare.",
+	"apihelp-query+globalblocks-param-prop": "Quali proprietà ottenere.",
+	"apihelp-query+globalblocks-example-1": "Elenca tutti i blocchi globali",
+	"apihelp-query+globalblocks-example-2": "Elenca i blocchi globali che si applicano all'indirizzo IP 192.0.2.18"
+}

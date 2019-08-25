@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"Amire80",
+			"Guycn2",
+			"ערן"
+		]
+	},
+	"apihelp-globalblock-description": "חסימה גלובלית או שחרור גלובלי של משתמש.",
+	"apihelp-globalblock-summary": "חסימה גלובלית או שחרור חסימה גלובלית של משתמש.",
+	"apihelp-globalblock-param-target": "כתובת ה־IP היעד.",
+	"apihelp-globalblock-param-expiry": "אם זה מצוין, זה יחסום או יבטל את החסימה של המשתמש. זה מגדיר למשך כמה זמן החסימה תימשך, למשל \"5 months\" או \"2 weeks\". אם מוגדר \"infinite\" או \"indefinite\", החסימה לעולם לא תפוג.",
+	"apihelp-globalblock-param-unblock": "אם זה מצוין, המשתמש ישוחרר.",
+	"apihelp-globalblock-param-reason": "הסיבה לחסימה או לשחרור.",
+	"apihelp-globalblock-param-anononly": "יש לציין את זה אם החסימה צריכה להשפיע רק על משתמשים שלא נכנסו לחשבון.",
+	"apihelp-globalblock-param-modify": "יש להגדיר את זה אם חסימה קיימת ביעד צריכה להשתנות",
+	"apihelp-globalblock-example-1": "לחסום את 192.0.2.1 לצמיתות עם הסיבה \"Cross-wiki abuse\"",
+	"apihelp-query+globalblocks-description": "רשימה של כל כתובות ה־IP שחסומות גלובלית.",
+	"apihelp-query+globalblocks-summary": "רשימה של כתובות ה־IP שחסומות גלובלית.",
+	"apihelp-query+globalblocks-param-start": "חותם־הזמן שהמנייה תתחיל ממנו.",
+	"apihelp-query+globalblocks-param-end": "חותם־הזמן שהמנייה תסתיים בו.",
+	"apihelp-query+globalblocks-param-ids": "רשימה מופרדת במקלות של מזהי חסימה לרשום.",
+	"apihelp-query+globalblocks-param-addresses": "רשימה מופרדת במקלות של כתובות IP לחפש.",
+	"apihelp-query+globalblocks-param-ip": "קבלת כל החסימות שחלות על כתובת ה־IP הזאת או על טווח ה־CIDR הזה, כולל חסימות טווח. לא ניתן להשתמש בזה יחד עם $1addresses. טווחי CIDR רחבים יותר מ־/16 אינם מתקבלים.",
+	"apihelp-query+globalblocks-param-limit": "המספר המרבי של חסימות ברשימה.",
+	"apihelp-query+globalblocks-param-prop": "אילו מאפיינים להחזיר.",
+	"apihelp-query+globalblocks-example-1": "רשימת כל החסימות הגלובליות",
+	"apihelp-query+globalblocks-example-2": "רשימת חסימות גלובלית של כתובת IP של 192.0.2.18"
+}

@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Dr Lotus Black"
+		]
+	},
+	"apihelp-globalblock-param-target": "ပစ်မှတ် အိုင်ပီလိပ်စာ",
+	"apihelp-globalblock-param-reason": "ပိတ်ပင်မှု/မပိတ်ပင်မှုအတွက် အကြောင်းပြချက်",
+	"apihelp-query+globalblocks-description": "အိုင်ပီလိပ်စာများကို ဂလိုဘယ်အားဖြင့် ပိတ်ပင်ထားသော စာရင်းများအားလုံး",
+	"apihelp-query+globalblocks-summary": "အိုင်ပီလိပ်စာများကို ဂလိုဘယ်အားဖြင့် ပိတ်ပင်ထားသော စာရင်းများအားလုံး",
+	"apihelp-query+globalblocks-example-1": "ဂလိုဘယ် ပိတ်ပင်တားဆီးမှုများအားလုံး စာရင်း"
+}

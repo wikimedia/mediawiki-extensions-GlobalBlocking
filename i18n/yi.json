@@ -49,7 +49,5 @@
 	"removeglobalblock": "אויפהייבן גלאבאלן בלאק",
 	"right-globalblock": "אײַנריכטן און אַראָפנעמען גלאבאָלע בלאקן",
 	"right-globalblock-exempt": "ארומגיין גלאבאלע בלאקן",
-	"action-globalblock-exempt": "ארומגיין גלאבאלע בלאקן",
-	"apihelp-globalblock-param-target": "דער ציל IP אדרעס.",
-	"apihelp-query+globalblocks-description": "ליסטע פון אלע גלאבאל בלאקירטע IP אדרעסן."
+	"action-globalblock-exempt": "ארומגיין גלאבאלע בלאקן"
 }

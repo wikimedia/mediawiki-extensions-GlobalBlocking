@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"Base",
+			"Piramidion",
+			"Ата"
+		]
+	},
+	"apihelp-globalblock-description": "Глобально заблокувати чи розблокувати користувача.",
+	"apihelp-globalblock-summary": "Глобально заблокувати чи розблокувати користувача.",
+	"apihelp-globalblock-param-target": "Цільова IP-адреса.",
+	"apihelp-globalblock-param-expiry": "Якщо вказано, буде заблоковано або переблоковано користувача. Визначає скільки блокування триватиме, наприклад, «5 months» або «2 weeks». Якщо встановлено «infinite» або «indefinite» блокування ніколи не завершиться.",
+	"apihelp-globalblock-param-unblock": "Якщо вказано, буде розблоковано користувача.",
+	"apihelp-globalblock-param-reason": "Причина блокування/розблокування.",
+	"apihelp-globalblock-param-anononly": "Вкажіть це, якщо блокування повинно вплинути лише на користувачів, що не ввійшли до системи.",
+	"apihelp-globalblock-param-modify": "Вкажіть це, якщо наявний блок на цільовій сторінці треба змінити",
+	"apihelp-globalblock-example-1": "Заблокувати 192.0.2.1 безстроково з причиною «Cross-wiki abuse»",
+	"apihelp-query+globalblocks-description": "Список глобально заблокованих IP-адрес.",
+	"apihelp-query+globalblocks-summary": "Список глобально заблокованих IP-адрес.",
+	"apihelp-query+globalblocks-param-start": "Часова мітка початку переліку.",
+	"apihelp-query+globalblocks-param-end": "Часова мітка закінчення переліку.",
+	"apihelp-query+globalblocks-param-ids": "Розділений вертикальною рискою список ідентифікаторів блокувань для перелічення.",
+	"apihelp-query+globalblocks-param-addresses": "Розділений вертикальною рискою список IP-адрес для пошуку.",
+	"apihelp-query+globalblocks-param-ip": "Отримати всі блокування, що стосуються цієї IP-адреси або CIDR-діапазону, включно з блокуваннями діапазонів. Не може бути використано разом з $1addresses. CIDR-діапазони, ширші, ніж /16, не приймаються.",
+	"apihelp-query+globalblocks-param-limit": "Максимальне число блокувань для переліку.",
+	"apihelp-query+globalblocks-param-prop": "Які властивості отримати.",
+	"apihelp-query+globalblocks-example-1": "Перелічити всі глобальні блокування.",
+	"apihelp-query+globalblocks-example-2": "Перелічити глобальні блокування, що стосуються IP-адреси 192.0.2.18"
+}

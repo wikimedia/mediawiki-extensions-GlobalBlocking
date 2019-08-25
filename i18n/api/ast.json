@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"Xuacu"
+		]
+	},
+	"apihelp-globalblock-description": "Bloquiar o desbloquiar a un usuariu globalmente.",
+	"apihelp-globalblock-summary": "Bloquiar o desbloquiar a un usuariu globalmente.",
+	"apihelp-globalblock-param-target": "La direición IP de destín.",
+	"apihelp-globalblock-param-expiry": "Si s'especifica, bloquiará o re-bloquiará al usuariu. Determina'l tiempu que durará'l bloquéu, p.ex. «5 meses» o «2 selmanes». Si se pon como «infinitu» o «indefiníu» el bloquéu nunca caducará.",
+	"apihelp-globalblock-param-unblock": "Si s'especifica, desbloquiará al usuariu.",
+	"apihelp-globalblock-param-reason": "El motivu pa bloquiar/desbloquiar.",
+	"apihelp-globalblock-param-anononly": "Especifica esto si'l bloquéu tien d'afeutar sólo a usuarios ensin sesión aniciada.",
+	"apihelp-globalblock-param-modify": "Indica esto si tien de cambiase'l bloquéu existiente nel destín",
+	"apihelp-globalblock-example-1": "Bloquiar a 192.0.2.1 indefinidamente col motivu «Abusu en delles wikis»",
+	"apihelp-query+globalblocks-description": "Llista de toles direiciones IP bloquiaes globalmente.",
+	"apihelp-query+globalblocks-summary": "Llista de toles direiciones IP bloquiaes globalmente.",
+	"apihelp-query+globalblocks-param-start": "La marca horaria dende la que principiar la enumeración.",
+	"apihelp-query+globalblocks-param-end": "La marca horaria na que finar la enumeración.",
+	"apihelp-query+globalblocks-param-ids": "Llista d'IDs bloquiaes separaes con barres verticales pa facer la llista.",
+	"apihelp-query+globalblocks-param-addresses": "Llista de direiciones IP separaes con barres verticales que buscar.",
+	"apihelp-query+globalblocks-param-ip": "Recibir tolos bloqueos que s'apliquen a esta direición IP o rangu CIDR, incluyendo bloqueos al rangu. Nun pue usase xunto con $1addresses. Nun s'aceuten los rangos CIDR mayores de /16.",
+	"apihelp-query+globalblocks-param-limit": "El máximu númberu de bloqueos na llista.",
+	"apihelp-query+globalblocks-param-prop": "Qué propiedaes algamar.",
+	"apihelp-query+globalblocks-example-1": "Llista de tolos bloqueos globales",
+	"apihelp-query+globalblocks-example-2": "Llista de los bloqueos globales que s'apliquen a la direición IP 192.0.2.18"
+}

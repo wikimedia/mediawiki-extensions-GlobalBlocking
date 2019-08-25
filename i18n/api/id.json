@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Rachmat04"
+		]
+	},
+	"apihelp-globalblock-description": "Blokir atau buka pemblokiran global seorang pengguna.",
+	"apihelp-globalblock-summary": "Blokir atau buka pemblokiran global seorang pengguna.",
+	"apihelp-globalblock-param-target": "Alamat IP tujuan.",
+	"apihelp-globalblock-param-expiry": "Jika diberikan, pengguna akan diblokir atau diblokir ulang. Tentukan berapa lama pemblokiran akan berakhir, contohnya \"5 bulan\" atau \"2 minggu\". Jika diatur ke \"tidak terbatas\", pemblokiran tidak akan berakhir.",
+	"apihelp-globalblock-param-unblock": "Jika diberikan, akan membuka pemblokiran pengguna tersebut.",
+	"apihelp-globalblock-param-reason": "Alasan pemblokiran/buka pemblokiran.",
+	"apihelp-globalblock-param-anononly": "Tentukan apakah pemblokiran hanya mempengaruhi pengguna keluar log.",
+	"apihelp-globalblock-param-modify": "Tentukan apakah target pemblokiran yang telah ada harus diubah",
+	"apihelp-globalblock-example-1": "Blokir 192.0.2.1 tanpa batasan dengan alasan \"penyalahgunaan lintas wiki\"",
+	"apihelp-query+globalblocks-description": "Daftar alamat IP yang diblokir secara global.",
+	"apihelp-query+globalblocks-summary": "Daftar alamat IP yang diblokir secara global.",
+	"apihelp-query+globalblocks-param-start": "Stempel waktu untuk mulai menghitung.",
+	"apihelp-query+globalblocks-param-end": "Stempel waktu untuk mengakhiri hitungan."
+}

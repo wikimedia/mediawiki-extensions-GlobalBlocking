@@ -88,10 +88,5 @@
 	"right-globalblock-whitelist": "გლობალური ბლოკირების ლოკალური გამორთვა",
 	"action-globalblock-whitelist": "გლობალური ბლოკირების ლოკალური გამორთვა",
 	"right-globalblock-exempt": "გლობალური ბლოკირების გვერდის ავლა",
-	"action-globalblock-exempt": "გლობალური ბლოკირების გვერდის ავლა",
-	"apihelp-globalblock-description": "მომხმარებლის გლობალურად დაბლოკვა ან განბლოკვა.",
-	"apihelp-globalblock-param-target": "სამიზნე IP-მისამართი.",
-	"apihelp-globalblock-param-reason": "დაბლოკვის/განბლოკვის მიზეზი.",
-	"apihelp-query+globalblocks-description": "გლობალურად დაბლოკილი ყველა IP-მისამართის სია.",
-	"apihelp-query+globalblocks-example-1": "ყველა გლობალური ბლოკის სია"
+	"action-globalblock-exempt": "გლობალური ბლოკირების გვერდის ავლა"
 }

@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hamilton Abreu"
+		]
+	},
+	"apihelp-globalblock-description": "Bloquear ou desbloquear globalmente um utilizador.",
+	"apihelp-globalblock-summary": "Bloquear ou desbloquear globalmente um utilizador.",
+	"apihelp-globalblock-param-target": "O endereço IP alvo.",
+	"apihelp-globalblock-param-expiry": "Se especificado, irá bloquear ou voltar a bloquear o utilizador. Determina a duração do bloqueio, por exemplo, \"5 meses\" ou \"2 semanas\". Se forem definidos os valores \"infinite\" ou \"indefinite\" o bloqueio nunca expirará.",
+	"apihelp-globalblock-param-unblock": "Se especificado, irá desbloquear o utilizador.",
+	"apihelp-globalblock-param-reason": "O motivo do bloqueio ou desbloqueio.",
+	"apihelp-globalblock-param-anononly": "Especificar isto se o bloqueio só deve afetar utilizadores que não tenham uma sessão iniciada.",
+	"apihelp-globalblock-param-modify": "Especificar isto se o bloqueio existente sobre o alvo deve ser modificado.",
+	"apihelp-globalblock-example-1": "Bloquear 192.0.2.1 indefinidamente com o motivo \"Cross-wiki abuse\"",
+	"apihelp-query+globalblocks-description": "Listar todos os endereços IP bloqueados globalmente.",
+	"apihelp-query+globalblocks-summary": "Listar todos os endereços IP bloqueados globalmente.",
+	"apihelp-query+globalblocks-param-start": "A data e hora a partir da qual será começada a enumeração.",
+	"apihelp-query+globalblocks-param-end": "A data e hora na qual será terminada a enumeração.",
+	"apihelp-query+globalblocks-param-ids": "Uma lista dos identificadores de bloqueios a serem listados, separados por barras verticais.",
+	"apihelp-query+globalblocks-param-addresses": "Uma lista dos endereços IP a serem procurados, separados por barras verticais.",
+	"apihelp-query+globalblocks-param-ip": "Obter todos os bloqueios aplicáveis a este endereço IP ou intervalo CIDR, incluindo bloqueios de intervalos. Não pode ser usado em conjunto com $1addresses. Não são aceites intervalos CIDR maiores do que /16.",
+	"apihelp-query+globalblocks-param-limit": "O número máximo de bloqueios a serem listados.",
+	"apihelp-query+globalblocks-param-prop": "As propriedades a serem obtidas:",
+	"apihelp-query+globalblocks-example-1": "Listar todos os bloqueios globais",
+	"apihelp-query+globalblocks-example-2": "Listar os bloqueios globais do endereço IP 192.0.2.18"
+}

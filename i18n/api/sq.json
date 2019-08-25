@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ammartivari",
+			"Kosovastar"
+		]
+	},
+	"apihelp-globalblock-description": "Bllokon përgjithësisht një përdorues ose e zhbllokon atë.",
+	"apihelp-globalblock-param-reason": "Arsyeja për bllokim/zhbllokim.",
+	"apihelp-query+globalblocks-description": "Listo të gjithë adresat IP të bllokuara."
+}

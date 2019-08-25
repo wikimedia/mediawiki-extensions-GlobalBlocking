@@ -1,0 +1,30 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mouse21",
+			"Okras",
+			"Putnik",
+			"Камалист"
+		]
+	},
+	"apihelp-globalblock-description": "Глобально заблокировать или разблокировать участника.",
+	"apihelp-globalblock-summary": "Глобально заблокировать или разблокировать участника.",
+	"apihelp-globalblock-param-target": "Целевой IP-адрес",
+	"apihelp-globalblock-param-expiry": "Если указано, заблокирует или разблокирует пользователя. Определяет, как долго будет продолжаться блок, например. «5 месяцев» или «2 недели». Если установлено значение «бесконечный» или «неопределенный», блок никогда не истечет.",
+	"apihelp-globalblock-param-unblock": "Если указано, разблокирует пользователя.",
+	"apihelp-globalblock-param-reason": "Причина блокировки/разблокировки",
+	"apihelp-globalblock-param-anononly": "Указывайте это, если блок должен влиять только на отключенных пользователей.",
+	"apihelp-globalblock-param-modify": "Укажите это, если необходимо изменить существующий блок на целевом объекте",
+	"apihelp-globalblock-example-1": "Блок 192.0.2.1 неопределенно с разумом «Перекрестное вики-злоупотребление»",
+	"apihelp-query+globalblocks-description": "Перечислить все глобально заблокированных IP-адреса.",
+	"apihelp-query+globalblocks-summary": "Список всех IP-адресов, заблокированных глобально.",
+	"apihelp-query+globalblocks-param-start": "Временная метка, с которой начать перечисление.",
+	"apihelp-query+globalblocks-param-end": "Временная метка, на которой закончить перечисление.",
+	"apihelp-query+globalblocks-param-ids": "Список идентификаторов блоков, разделенных трубами, в список.",
+	"apihelp-query+globalblocks-param-addresses": "Список IP-адресов для поиска, разделённых вертикальной чертой.",
+	"apihelp-query+globalblocks-param-ip": "Получить все блокировки, применённые к этому IP-адресу или диапазону CIDR, включая блокировки диапазонов.\nНе может быть использовано одновременно с $1addresses. Диапазоны CIDR шире /16 не поддерживаются.",
+	"apihelp-query+globalblocks-param-limit": "Максимальное количество блоков для списка.",
+	"apihelp-query+globalblocks-param-prop": "Какие свойства необходимо получить.",
+	"apihelp-query+globalblocks-example-1": "Перечислить все глобальные блокировки",
+	"apihelp-query+globalblocks-example-2": "Перечислить все глобальные блокировки, относящиеся к IP-адресу 192.0.2.18"
+}

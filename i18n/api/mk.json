@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bjankuloski06"
+		]
+	},
+	"apihelp-globalblock-description": "Глобално блокирајте или одблокирајте корисник.",
+	"apihelp-globalblock-summary": "Глобално блокирајте или одблокирајте корисник.",
+	"apihelp-globalblock-param-target": "Целната IP-адреса.",
+	"apihelp-globalblock-param-expiry": "Ако е укажано, корисникот ќе се блокира или преблокира. Одредува колку време ќе трае блокот (на пр. „5 месеци“ или „2 недели“). Ако се зададе „бесконечно“ или „неодредено“, тогаш блокот ќе трае засекогаш.",
+	"apihelp-globalblock-param-unblock": "Ако е укажано, корисникот ќе биде одблокиран.",
+	"apihelp-globalblock-param-reason": "Причина за блокирање/одблокирање.",
+	"apihelp-globalblock-param-anononly": "Укажете го ова ако сакате блокот да важи само за одјавени корисници.",
+	"apihelp-globalblock-param-modify": "Укажете го ова ако треба да се измени постоечки блок врз целта",
+	"apihelp-globalblock-example-1": "Блокирај го 192.0.2.1 бесконечно со причината „злоупотреба на повеќе викија“",
+	"apihelp-query+globalblocks-description": "Испиши ги сите глобално блокирани IP-адреси.",
+	"apihelp-query+globalblocks-summary": "Испиши ги сите глобално блокирани IP-адреси.",
+	"apihelp-query+globalblocks-param-start": "Од кој датум и време да почне набројувањето.",
+	"apihelp-query+globalblocks-param-end": "На кој датум и време да запре набројувањето.",
+	"apihelp-query+globalblocks-param-ids": "Список на блокови што треба да се испишат. Одделете ги со исправена црта.",
+	"apihelp-query+globalblocks-param-addresses": "Список на IP-адреси што треба да се пребараат. Одделете ги со исправена црта.",
+	"apihelp-query+globalblocks-param-ip": "Дај ги сите блокови што се однесуваат на оваа IP-адреса или CIDR-опсег, заклучно со опсежните. Не може да се користи заедно со $1addresses. Не се прифаќаат CIDR-опсези пошироки од /16.",
+	"apihelp-query+globalblocks-param-limit": "Највеќе блокови во исписот.",
+	"apihelp-query+globalblocks-param-prop": "Кои својства да се дадат.",
+	"apihelp-query+globalblocks-example-1": "Список на сите глобални блокови",
+	"apihelp-query+globalblocks-example-2": "Испиши ги глобалните блокови што се однесуват на IP-адресата 192.0.2.18"
+}

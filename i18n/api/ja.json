@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Shirayuki",
+			"W.CC"
+		]
+	},
+	"apihelp-globalblock-description": "利用者のグローバルロックまたはロック解除。",
+	"apihelp-globalblock-param-target": "対象となるIPアドレス。",
+	"apihelp-globalblock-param-unblock": "指定した場合、利用者のブロックを解除します。",
+	"apihelp-globalblock-param-reason": "ブロック/ブロック解除理由。",
+	"apihelp-query+globalblocks-example-1": "グローバルブロックの一覧",
+	"apihelp-query+globalblocks-example-2": "IPアドレス 192.0.2.18 に適用されたグローバルブロックの一覧"
+}

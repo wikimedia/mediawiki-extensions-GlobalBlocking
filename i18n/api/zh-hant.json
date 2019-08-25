@@ -1,0 +1,28 @@
+{
+	"@metadata": {
+		"authors": [
+			"Cwlin0416",
+			"Kly"
+		]
+	},
+	"apihelp-globalblock-description": "全域封鎖或解封一名使用者。",
+	"apihelp-globalblock-summary": "全域封鎖或解封一名使用者。",
+	"apihelp-globalblock-param-target": "目標 IP 位址。",
+	"apihelp-globalblock-param-expiry": "若指定將會封鎖或重新封鎖使用者。確認要封鎖的時間長度，例如：「5 months」（5 個月）或「2 weeks」（2 週）。如果設定成「infinite」或「indefinite」則為無期限封鎖。",
+	"apihelp-globalblock-param-unblock": "若指定將解封使用者。",
+	"apihelp-globalblock-param-reason": "封鎖/解封的原因。",
+	"apihelp-globalblock-param-anononly": "若封鎖僅對未登入的使用者有效，請指定此。",
+	"apihelp-globalblock-param-modify": "若應對在目標的現有封鎖做出修改，請指定此。",
+	"apihelp-globalblock-example-1": "無限期封鎖 192.0.2.1，原因「跨 wiki 濫用」",
+	"apihelp-query+globalblocks-description": "列出所有全域封鎖 IP 位址。",
+	"apihelp-query+globalblocks-summary": "列出所有全域封鎖 IP 位址。",
+	"apihelp-query+globalblocks-param-start": "起始列舉的時間戳記。",
+	"apihelp-query+globalblocks-param-end": "結束列舉的時間戳記。",
+	"apihelp-query+globalblocks-param-ids": "要列出的以豎線符號做分隔的封鎖 ID 清單。",
+	"apihelp-query+globalblocks-param-addresses": "要搜尋的以豎線符號做分隔的 IP 位址清單。",
+	"apihelp-query+globalblocks-param-ip": "取得套用在此 IP 位址或 CIDR 範圍的所有封鎖（包含範圍封鎖）。不可與 $1addresses 一起使用。CIDR 範圍不可超過 /16 子遮罩。",
+	"apihelp-query+globalblocks-param-limit": "要列出封鎖的最大數量。",
+	"apihelp-query+globalblocks-param-prop": "要取得的屬性。",
+	"apihelp-query+globalblocks-example-1": "所有全域封鎖清單",
+	"apihelp-query+globalblocks-example-2": "列出套用在 IP 位址 192.0.2.18 的全域封鎖"
+}
