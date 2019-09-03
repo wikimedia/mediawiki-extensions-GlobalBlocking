@@ -7,7 +7,8 @@
 			"Wizardist",
 			"Zedlik",
 			"Macofe",
-			"Renessaince"
+			"Renessaince",
+			"Vlad5250"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Дазваляе]] блякаваньне IP-адрасоў у [[Special:GlobalBlockList|некалькіх вікі]]",
@@ -79,6 +80,7 @@
 	"globalblocking-logentry-expiry": "канчаецца $1",
 	"globalblocking-logentry-noexpiry": "сканчэньне ня ўстаноўленае",
 	"globalblocking-loglink": "IP-адрас заблякаваны глябальна ([[{{#Special:GlobalBlockList}}/$1|ўсе падрабязнасьці]]).",
+	"globalblocking-contribs-notice": "Гэты IP-адрас у дадзены момант заблякаваны глябальна.\nАпошні запіс з журнала глябальных блякаваньняў пададзены ніжэй для даведкі:",
 	"globalblocking-showlog": "Гэты IP-адрас быў заблякаваны раней.\nНіжэй пададзены журнал блякаваньняў для даведкі:",
 	"globalblocklist": "Сьпіс глябальна заблякаваных IP-адрасоў",
 	"globalblock": "Глябальнае блякаваньне ІР-адрасу",
@@ -89,5 +91,7 @@
 	"right-globalblock-whitelist": "лякальнае адключэньне глябальных блякаваньняў",
 	"action-globalblock-whitelist": "адключэньне глябальных блякаваньняў лякальна",
 	"right-globalblock-exempt": "ігнараваньне глябальных блякаваньняў",
-	"action-globalblock-exempt": "ігнараваньне глябальных блякаваньняў"
+	"action-globalblock-exempt": "ігнараваньне глябальных блякаваньняў",
+	"log-action-filter-gblblock-gblock": "Глябальнае блякаваньне",
+	"log-action-filter-gblblock-gunblock": "Глябальнае разблякаваньне"
 }

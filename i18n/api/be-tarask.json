@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vlad5250"
+		]
+	},
+	"apihelp-query+globalblocks-description": "Сьпіс глябальна заблякаваных ІР-адрасоў.",
+	"apihelp-query+globalblocks-summary": "Сьпіс глябальна заблякаваных ІР-адрасоў.",
+	"apihelp-query+globalblocks-param-start": "Адзнака часу, зь якой пачынаць пералік.",
+	"apihelp-query+globalblocks-param-end": "Адзнака часу, на якой спыніць пералік.",
+	"apihelp-query+globalblocks-param-prop": "Якія ўласьцівасьці атрымаць."
+}
