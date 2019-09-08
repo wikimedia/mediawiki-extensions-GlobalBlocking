@@ -496,31 +496,35 @@ class GlobalBlocking {
 		// Add a few useful links
 		$links = [];
 		$pagetype = $sp->getName();
+		$linkRenderer = $sp->getLinkRenderer();
 
 		// Don't show a link to a special page on the special page itself.
 		// Show the links only if the user has sufficient rights
 		if ( $pagetype != 'GlobalBlockList' ) {
 			$title = SpecialPage::getTitleFor( 'GlobalBlockList' );
-			$links[] = Linker::linkKnown( $title, $sp->msg( 'globalblocklist' )->escaped() );
+			$links[] = $linkRenderer->makeKnownLink( $title, $sp->msg( 'globalblocklist' )->text() );
 		}
 		$canBlock = $sp->getUser()->isAllowed( 'globalblock' );
 		if ( $pagetype != 'GlobalBlock' && $canBlock ) {
 			$title = SpecialPage::getTitleFor( 'GlobalBlock' );
-			$links[] = Linker::linkKnown( $title, $sp->msg( 'globalblocking-goto-block' )->escaped() );
+			$links[] = $linkRenderer->makeKnownLink(
+				$title, $sp->msg( 'globalblocking-goto-block' )->text() );
 		}
 		if ( $pagetype != 'RemoveGlobalBlock' && $canBlock ) {
 			$title = SpecialPage::getTitleFor( 'RemoveGlobalBlock' );
-			$links[] = Linker::linkKnown( $title, $sp->msg( 'globalblocking-goto-unblock' )->escaped() );
+			$links[] = $linkRenderer->makeKnownLink(
+				$title, $sp->msg( 'globalblocking-goto-unblock' )->text() );
 		}
 		if ( $pagetype != 'GlobalBlockStatus' && $sp->getUser()->isAllowed( 'globalblock-whitelist' ) ) {
 			$title = SpecialPage::getTitleFor( 'GlobalBlockStatus' );
-			$links[] = Linker::linkKnown( $title, $sp->msg( 'globalblocking-goto-status' )->escaped() );
+			$links[] = $linkRenderer->makeKnownLink(
+				$title, $sp->msg( 'globalblocking-goto-status' )->text() );
 		}
 		if ( $pagetype == 'GlobalBlock' && $sp->getUser()->isAllowed( 'editinterface' ) ) {
 			$title = Title::makeTitle( NS_MEDIAWIKI, 'Globalblocking-block-reason-dropdown' );
-			$links[] = Linker::linkKnown(
+			$links[] = $linkRenderer->makeKnownLink(
 				$title,
-				$sp->msg( 'globalblocking-block-edit-dropdown' )->escaped(),
+				$sp->msg( 'globalblocking-block-edit-dropdown' )->text(),
 				[],
 				[ 'action' => 'edit' ]
 			);

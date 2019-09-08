@@ -1,18 +1,18 @@
 <?php
 
+use MediaWiki\Linker\LinkRenderer;
+
 class GlobalBlockListPager extends ReverseChronologicalPager {
 	/** @var array */
 	private $queryConds;
 
-	public function __construct( IContextSource $context, array $conds ) {
-		parent::__construct( $context );
+	public function __construct( IContextSource $context, array $conds, LinkRenderer $linkRenderer ) {
+		parent::__construct( $context, $linkRenderer );
 		$this->queryConds = $conds;
 		$this->mDb = GlobalBlocking::getGlobalBlockingDatabase( DB_REPLICA );
 	}
 
 	public function formatRow( $row ) {
-		global $wgApplyGlobalBlocks;
-
 		$lang = $this->getLanguage();
 		$options = [];
 
@@ -45,27 +45,28 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 		$user = $this->getUser();
 		$canBlock = $user->isAllowed( 'globalblock' );
 		if ( $canBlock ) {
-			$info[] = Linker::linkKnown(
+			$info[] = $this->getLinkRenderer()->makeKnownLink(
 				SpecialPage::getTitleFor( 'RemoveGlobalBlock' ),
-				$this->msg( 'globalblocking-list-unblock' )->parse(),
+				new HtmlArmor( $this->msg( 'globalblocking-list-unblock' )->parse() ),
 				[],
 				[ 'address' => $row->gb_address ]
 			);
 		}
 
-		if ( $wgApplyGlobalBlocks && $user->isAllowed( 'globalblock-whitelist' ) ) {
-			$info[] = Linker::link(
+		if ( $this->getConfig()->get( 'ApplyGlobalBlocks' )
+				&& $user->isAllowed( 'globalblock-whitelist' ) ) {
+			$info[] = $this->getLinkRenderer()->makeKnownLink(
 				SpecialPage::getTitleFor( 'GlobalBlockStatus' ),
-				$this->msg( 'globalblocking-list-whitelist' )->parse(),
+				new HtmlArmor( $this->msg( 'globalblocking-list-whitelist' )->parse() ),
 				[],
 				[ 'address' => $row->gb_address ]
 			);
 		}
 
 		if ( $canBlock ) {
-			$info[] = Linker::linkKnown(
+			$info[] = $this->getLinkRenderer()->makeKnownLink(
 				SpecialPage::getTitleFor( 'GlobalBlock' ),
-				$this->msg( 'globalblocking-list-modify' )->parse(),
+				new HtmlArmor( $this->msg( 'globalblocking-list-modify' )->parse() ),
 				[],
 				[ 'wpAddress' => $row->gb_address ]
 			);

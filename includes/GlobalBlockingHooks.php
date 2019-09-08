@@ -179,13 +179,15 @@ class GlobalBlockingHooks {
 
 		// Get results from the first ip of a range
 		$rangeConditionstart = GlobalBlocking::getRangeCondition( $startname );
-		$pagerstart = new GlobalBlockListPager( $sp->getContext(), $rangeConditionstart );
+		$pagerstart = new GlobalBlockListPager(
+			$sp->getContext(), $rangeConditionstart, $sp->getLinkRenderer() );
 		$pagerstart->setLimit( 1 ); // show at most one entry
 		$bodystart = $pagerstart->getBody();
 
 		// Get results from the last ip of a range
 		$rangeConditionend = GlobalBlocking::getRangeCondition( $endname );
-		$pagerend = new GlobalBlockListPager( $sp->getContext(), $rangeConditionend );
+		$pagerend = new GlobalBlockListPager(
+			$sp->getContext(), $rangeConditionend, $sp->getLinkRenderer() );
 		$pagerend->setLimit( 1 ); // show at most one entry
 		$bodyend = $pagerend->getBody();
 

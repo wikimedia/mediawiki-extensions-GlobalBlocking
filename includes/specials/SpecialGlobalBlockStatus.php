@@ -11,7 +11,6 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 	 * @param string $par not used currently
 	 */
 	public function execute( $par ) {
-		global $wgApplyGlobalBlocks;
 		$this->setHeaders();
 		$this->addHelpLink( 'Extension:GlobalBlocking' );
 		$this->checkExecutePermissions( $this->getUser() );
@@ -21,7 +20,7 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 		$out->setPageTitle( $this->msg( 'globalblocking-whitelist' ) );
 		$out->setSubtitle( GlobalBlocking::buildSubtitleLinks( $this ) );
 
-		if ( !$wgApplyGlobalBlocks ) {
+		if ( !$this->getConfig()->get( 'ApplyGlobalBlocks' ) ) {
 			$out->addWikiMsg( 'globalblocking-whitelist-notapplied' );
 			return;
 		}
@@ -148,9 +147,9 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 	 * @return bool
 	 */
 	protected function showSuccess( $ip, $id, $successMsg ) {
-		$link = Linker::linkKnown(
+		$link = $this->getLinkRenderer()->makeKnownLink(
 			SpecialPage::getTitleFor( 'GlobalBlockList' ),
-			$this->msg( 'globalblocking-return' )->escaped()
+			$this->msg( 'globalblocking-return' )->text()
 		);
 		$out = $this->getOutput();
 		$out->setSubtitle( GlobalBlocking::buildSubtitleLinks( $this ) );

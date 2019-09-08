@@ -88,7 +88,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 			}
 		}
 
-		$pager = new GlobalBlockListPager( $this->getContext(), $conds );
+		$pager = new GlobalBlockListPager( $this->getContext(), $conds, $this->getLinkRenderer() );
 		$body = $pager->getBody();
 		if ( $body != '' ) {
 			$out->addHTML(
