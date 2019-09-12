@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Vlad5250"
+			"Vlad5250",
+			"StanProg"
 		]
 	},
 	"apihelp-globalblock-description": "Глобално блокирайте или отблокирайте потребител.",
@@ -10,9 +11,9 @@
 	"apihelp-globalblock-param-reason": "Причина за блокиране/отблокиране.",
 	"apihelp-query+globalblocks-description": "Изписване на всички глобално блокирани IP-адреси.",
 	"apihelp-query+globalblocks-summary": "Изписване на всички глобално блокирани IP-адреси.",
-	"apihelp-query+globalblocks-param-start": "Времева отметка, от която да започва изчислението.",
-	"apihelp-query+globalblocks-param-end": "Времева отметка, при която да спира изчислението.",
+	"apihelp-query+globalblocks-param-start": "Времева отметка, от която да започва изброяването.",
+	"apihelp-query+globalblocks-param-end": "Времева отметка, при която да спира изброяването.",
 	"apihelp-query+globalblocks-param-limit": "Максимален брой блокирания в списъка.",
-	"apihelp-query+globalblocks-param-prop": "Какви свойства трябва да се получат.",
+	"apihelp-query+globalblocks-param-prop": "Кои свойства да бъдат върнати.",
 	"apihelp-query+globalblocks-example-1": "Списък на всички глобални блокирания"
 }

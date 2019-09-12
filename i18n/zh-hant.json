@@ -92,7 +92,7 @@
 	"globalblocking-logpage": "全域封鎖日誌",
 	"globalblocking-logpagetext": "此日誌包含了此 Wiki 中新增與移除的全域封鎖。要特別說明，全域封鎖可由其他 Wiki 新增與移除，其他 Wiki 對全域封鎖的設定會影響此 Wiki。要檢視所有使用中的全域封鎖，您可檢視[[Special:GlobalBlockList|全域封鎖清單]]。",
 	"globalblocking-block-logentry": "已全域封鎖 [[$1]]，到期日為 $2",
-	"globalblocking-block2-logentry": "已全域封鎖 [[$1]] ($2)",
+	"globalblocking-block2-logentry": "已全域封鎖[[$1]]（$2）",
 	"globalblocking-unblock-logentry": "已移除了 [[$1]] 的全域封鎖",
 	"globalblocking-logentry-whitelist": "$1 在本地的 $3 {{GENDER:$2|已停用}}全域封鎖",
 	"globalblocking-logentry-dewhitelist": "$1 在本地的 $3 {{GENDER:$2|已重新啟用}}全域封鎖",
