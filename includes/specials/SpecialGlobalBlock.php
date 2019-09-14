@@ -278,9 +278,9 @@ class SpecialGlobalBlock extends FormSpecialPage {
 			'globalblocking-modify-success' : 'globalblocking-block-success';
 		$this->getOutput()->addWikiMsg( $successMsg, $this->address );
 
-		$link = Linker::linkKnown(
+		$link = $this->getLinkRenderer()->makeKnownLink(
 			$this->getPageTitle(),
-			$this->msg( 'globalblocking-add-block' )->escaped()
+			$this->msg( 'globalblocking-add-block' )->text()
 		);
 		$this->getOutput()->addHTML( $link );
 	}

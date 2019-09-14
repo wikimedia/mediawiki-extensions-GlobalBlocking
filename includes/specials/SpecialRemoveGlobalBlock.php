@@ -48,9 +48,9 @@ class SpecialRemoveGlobalBlock extends FormSpecialPage {
 
 	public function onSuccess() {
 		$msg = $this->msg( 'globalblocking-unblock-unblocked', $this->ip, $this->id )->parseAsBlock();
-		$link = Linker::linkKnown(
+		$link = $this->getLinkRenderer()->makeKnownLink(
 			SpecialPage::getTitleFor( 'GlobalBlockList' ),
-			$this->msg( 'globalblocking-return' )->escaped()
+			$this->msg( 'globalblocking-return' )->text()
 		);
 
 		$this->getOutput()->addHTML( $msg . $link );
