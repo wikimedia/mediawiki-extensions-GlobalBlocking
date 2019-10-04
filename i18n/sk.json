@@ -3,7 +3,8 @@
 		"authors": [
 			"Helix84",
 			"Teslaton",
-			"Macofe"
+			"Macofe",
+			"Vlad5250"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Umožňuje]] zablokovať IP adresy [[Special:GlobalBlockList|na viacerých wiki]]",
@@ -21,8 +22,8 @@
 	"globalblocking-block-expiryinvalid": "Čas vypršania, ktorý ste zadali je neplatný.",
 	"globalblocking-block-submit": "Globálne zablokovať túto IP adresu",
 	"globalblocking-modify-submit": "Zmeniť toto globálne blokovanie",
-	"globalblocking-block-success": "IP adresa $1 bola úspešne zablokovaná na všetkých projektoch.",
-	"globalblocking-modify-success": "Globálne blokovanie $1 bolo úspešne zmenené",
+	"globalblocking-block-success": "IP adresa $1 bola zablokovaná na všetkých projektoch.",
+	"globalblocking-modify-success": "Globálne blokovanie $1 bolo zmenené.",
 	"globalblocking-block-alreadyblocked": "IP adresa $1 je už globálne zablokovaná.\nExistujúce blokovanie si môžete pozrieť v [[Special:GlobalBlockList|Zozname globálnych blokovaní]] alebo môžete zmeniť voľby existujúceho blokovania tým, že znova odošlete tento formulár.",
 	"globalblocking-block-bigrange": "Rozsah, ktorý ste uviedli ($1) nemožno zablokovať, pretože je príliš veľký. Najviac môžete zablokovať 65&nbsp;536 adries (CIDR zápis: /16).",
 	"globalblocking-list-intro": "Toto je zoznam všetkých globálnych blokovaní, ktoré sú momentálne účinné. Niektoré blokovania sú označené ako lokálne vypnuté: To znamená, že sú účinné na ostatných stránkach, ale lokálny správca sa rozhodol ich vypnúť na tejto wiki.",
@@ -84,5 +85,7 @@
 	"right-globalblock-whitelist": "Lokálne vypnúť globálne blokovania",
 	"action-globalblock-whitelist": "definovať výnimky z globálnych blokovaní",
 	"right-globalblock-exempt": "Obchádzať globálne blokovania",
-	"action-globalblock-exempt": "obchádzať globálne blokovania"
+	"action-globalblock-exempt": "obchádzať globálne blokovania",
+	"log-action-filter-gblblock-gblock": "Globálne blokovanie",
+	"log-action-filter-gblblock-gunblock": "Globálne odblokovanie"
 }
