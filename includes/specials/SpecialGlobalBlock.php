@@ -233,8 +233,8 @@ class SpecialGlobalBlock extends FormSpecialPage {
 			$block = new DatabaseBlock();
 			$block->setTarget( $this->address );
 			$block->setBlocker( $user );
-			$block->mReason = $data['Reason'][0];
-			$block->mExpiry = SpecialBlock::parseExpiryInput( $data['Expiry'] );
+			$block->setReason( $data['Reason'][0] );
+			$block->setExpiry( SpecialBlock::parseExpiryInput( $data['Expiry'] ) );
 			$block->isHardblock( !$data['AnonOnly'] );
 			$block->isCreateAccountBlocked( true );
 			$block->isUsertalkEditAllowed( false ); // Consistent with the global block.
