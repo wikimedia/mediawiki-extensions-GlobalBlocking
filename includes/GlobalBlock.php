@@ -11,9 +11,10 @@ class GlobalBlock extends DatabaseBlock {
 	/**
 	 * @param stdClass $block
 	 * @param array $error
+	 * @param array $options
 	 */
-	public function __construct( stdClass $block, array $error ) {
-		parent::__construct();
+	public function __construct( stdClass $block, array $error, $options ) {
+		parent::__construct( $options );
 
 		$this->error = $error;
 		$this->setGlobalBlocker( $block );

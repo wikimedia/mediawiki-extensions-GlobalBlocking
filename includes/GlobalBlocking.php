@@ -19,9 +19,20 @@ class GlobalBlocking {
 	 */
 	public static function getUserBlock( $user, $ip ) {
 		$details = static::getUserBlockDetails( $user, $ip );
+
 		if ( !empty( $details['error'] ) ) {
-			$block = new GlobalBlock( $details['block'], $details['error'] );
-			$block->setTarget( $ip );
+			$row = $details['block'];
+			$block = new GlobalBlock(
+				$row,
+				$details['error'],
+				[
+					'address' => $row->gb_address,
+					'reason' => $row->gb_reason,
+					'timestamp' => $row->gb_timestamp,
+					'anonOnly' => $row->gb_anon_only,
+					'expiry' => $row->gb_expiry,
+				]
+			);
 			return $block;
 		}
 
