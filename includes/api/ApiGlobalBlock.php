@@ -40,18 +40,22 @@ class ApiGlobalBlock extends ApiBase {
 				$result->setIndexedTagName( $errors, 'error' );
 				$result->addValue( 'error', 'globalblock', $errors );
 			} else {
-				$result->addValue( 'globalblock', 'user', $this->getParameter( 'target' ) );
-				$result->addValue( 'globalblock', 'blocked', '' );
 				$block = GlobalBlocking::getGlobalBlockingBlock( $this->getParameter( 'target' ), true );
-				if ( $block->gb_anon_only ) {
-					$result->addValue( 'globalblock', 'anononly', '' );
-				}
-				if ( $block->gb_expiry == wfGetDB( DB_REPLICA )->getInfinity() ) {
-					$displayExpiry = 'infinite';
+				if ( $block ) {
+					$result->addValue( 'globalblock', 'user', $this->getParameter( 'target' ) );
+					$result->addValue( 'globalblock', 'blocked', '' );
+					if ( $block->gb_anon_only ) {
+						$result->addValue( 'globalblock', 'anononly', '' );
+					}
+					if ( $block->gb_expiry == wfGetDB( DB_REPLICA )->getInfinity() ) {
+						$displayExpiry = 'infinite';
+					} else {
+						$displayExpiry = wfTimestamp( TS_ISO_8601, $block->gb_expiry );
+					}
+					$result->addValue( 'globalblock', 'expiry', $displayExpiry );
 				} else {
-					$displayExpiry = wfTimestamp( TS_ISO_8601, $block->gb_expiry );
+					throw new Exception( 'Block was inserted but could not be retrieved.' );
 				}
-				$result->addValue( 'globalblock', 'expiry', $displayExpiry );
 			}
 		} elseif ( $this->getParameter( 'unblock' ) ) {
 			GlobalBlocking::getGlobalBlockingDatabase( DB_MASTER )->delete(

@@ -145,7 +145,7 @@ class GlobalBlocking {
 	 * Get a block
 	 * @param string $ip The IP address to be checked
 	 * @param bool $anon Get anon blocks only
-	 * @return object The block
+	 * @return object|false The block, or false if none is found
 	 */
 	public static function getGlobalBlockingBlock( $ip, $anon ) {
 		$dbr = self::getGlobalBlockingDatabase( DB_REPLICA );
