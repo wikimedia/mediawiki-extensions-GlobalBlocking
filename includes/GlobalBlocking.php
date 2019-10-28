@@ -161,22 +161,22 @@ class GlobalBlocking {
 
 	/**
 	 * Get a database range condition for an IP address
-	 * @param string $ip The IP address
+	 * @param string $ip The IP address or range
 	 * @return array a SQL condition
 	 */
 	public static function getRangeCondition( $ip ) {
 		$dbr = self::getGlobalBlockingDatabase( DB_REPLICA );
 
-		$hexIp = IP::toHex( $ip );
+		list( $start, $end ) = IP::parseRange( $ip );
+
 		// Don't bother checking blocks out of this /16.
 		// @todo Make the range limit configurable
-		$ipPattern = substr( $hexIp, 0, 4 );
+		$ipPattern = substr( $start, 0, 4 );
 
-		$quotedHex = $dbr->addQuotes( $hexIp );
 		return [
 			'gb_range_start ' . $dbr->buildLike( $ipPattern, $dbr->anyString() ),
-			'gb_range_start <= ' . $quotedHex,
-			'gb_range_end >= ' . $quotedHex, // This block in the given range.
+			'gb_range_start <= ' . $dbr->addQuotes( $start ),
+			'gb_range_end >= ' . $dbr->addQuotes( $end ),
 			// @todo expiry shouldn't be in this function
 			'gb_expiry > ' . $dbr->addQuotes( $dbr->timestamp( wfTimestampNow() ) )
 		];
