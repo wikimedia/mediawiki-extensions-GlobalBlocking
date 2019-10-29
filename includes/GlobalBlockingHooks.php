@@ -195,7 +195,7 @@ class GlobalBlockingHooks {
 			$out = $sp->getOutput();
 			$out->addHTML(
 				Html::rawElement( 'div',
-					[ 'class' => 'mw-warning-with-logexcerpt' ],
+					[ 'class' => [ 'warningbox', 'mw-warning-with-logexcerpt' ] ],
 					$sp->msg( 'globalblocking-contribs-notice', $name )->parse() .
 					Html::rawElement( 'ul', [], $bodystart )
 				)
