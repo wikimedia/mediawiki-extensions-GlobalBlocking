@@ -364,7 +364,7 @@ class GlobalBlocking {
 	 * @param string|bool $expiry
 	 * @param User $blocker
 	 * @param array $options
-	 * @return array
+	 * @return array[]
 	 */
 	public static function insertBlock( $address, $reason, $expiry, $blocker, $options = [] ) {
 		$errors = [];
@@ -445,7 +445,7 @@ class GlobalBlocking {
 	 * @param string $expiry
 	 * @param User $blocker
 	 * @param array $options
-	 * @return array
+	 * @return array[]
 	 */
 	public static function block( $address, $reason, $expiry, $blocker, $options = [] ) {
 		$expiry = SpecialBlock::parseExpiryInput( $expiry );
