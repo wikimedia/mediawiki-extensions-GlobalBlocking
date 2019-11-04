@@ -4,7 +4,7 @@
 			"Servien"
 		]
 	},
-	"globalblocking-whitelist": "Lokale staotus van globale blokkeringen",
-	"globalblocklist": "Lieste van globaal eblokkeerden IP-adressen",
-	"globalblockstatus": "Lokale staotus van globale blokkeringen"
+	"globalblocking-whitelist": "Lokale status van globale blokkades",
+	"globalblocklist": "Lyste van globaal blokkeerde IP-adressen",
+	"globalblockstatus": "Lokale status van globale blokkades"
 }
