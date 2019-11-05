@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ильнар"
+			"Ильнар",
+			"Ерней"
 		]
 	},
-	"globalblocking-list": "Гомум чикләнгән IP-юлламалар исемлеге",
+	"globalblocking-list": "Гомумчикләнгән IP адреслары исемлеге",
 	"globalblocking-search-legend": "Гомум чикләүне эзләү",
 	"globalblocking-search-ip": "IP юлламасы:",
 	"globalblocking-search-submit": "Чикләүләрне эзләү",
