@@ -1,13 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Hamilton Abreu"
+			"Hamilton Abreu",
+			"Luan"
 		]
 	},
 	"apihelp-globalblock-description": "Bloquear ou desbloquear globalmente um utilizador.",
 	"apihelp-globalblock-summary": "Bloquear ou desbloquear globalmente um utilizador.",
 	"apihelp-globalblock-param-target": "O endereço IP alvo.",
-	"apihelp-globalblock-param-expiry": "Se especificado, irá bloquear ou voltar a bloquear o utilizador. Determina a duração do bloqueio, por exemplo, \"5 meses\" ou \"2 semanas\". Se forem definidos os valores \"infinite\" ou \"indefinite\" o bloqueio nunca expirará.",
+	"apihelp-globalblock-param-expiry": "Se especificado, irá bloquear ou voltar a bloquear a conta. Determina a duração do bloqueio, por exemplo, \"5 meses\" ou \"2 semanas\". Se configurado como \"infinito\" ou \" indefinido\" o bloqueio nunca expirará.",
 	"apihelp-globalblock-param-unblock": "Se especificado, irá desbloquear o utilizador.",
 	"apihelp-globalblock-param-reason": "O motivo do bloqueio ou desbloqueio.",
 	"apihelp-globalblock-param-anononly": "Especificar isto se o bloqueio só deve afetar utilizadores que não tenham uma sessão iniciada.",
