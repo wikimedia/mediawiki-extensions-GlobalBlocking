@@ -94,6 +94,7 @@
 	"action-globalblock-whitelist": "desactivar llocalmente bloqueos globales",
 	"right-globalblock-exempt": "Saltar los bloqueos globales",
 	"action-globalblock-exempt": "saltar los bloqueos globales",
+	"globalblocking-apierror-badip": "La dirección IP $1 nun ye válida",
 	"log-action-filter-gblblock": "Tipu de bloquéu global:",
 	"log-action-filter-gblblock-gblock": "Bloquéu global",
 	"log-action-filter-gblblock-gunblock": "Desbloquéu global",
