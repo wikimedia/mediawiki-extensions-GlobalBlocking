@@ -10,6 +10,7 @@
 	"apihelp-query+globalblocks-description": "Toon alle globaal geblokkeerde IP-adressen",
 	"apihelp-query+globalblocks-summary": "Toon alle globaal geblokkeerde IP-adressen",
 	"apihelp-query+globalblocks-param-limit": "Het maximum aantal blokkades om te tonen.",
+	"apihelp-query+globalblocks-param-prop": "Welke eigenschappen op te vragen.",
 	"apihelp-query+globalblocks-example-1": "Toon alle globale blokkades",
 	"apihelp-query+globalblocks-example-2": "Toon globale blokkades die van toepassing op het IP-adres 192.0.2.18"
 }
