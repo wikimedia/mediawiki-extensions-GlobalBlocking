@@ -124,9 +124,12 @@ class GlobalBlockingHooks {
 	 * @return bool
 	 */
 	public static function onSpecialPasswordResetOnSubmit( &$users, $data, &$error ) {
-		global $wgUser, $wgRequest;
+		$requestContext = RequestContext::getMain();
 
-		if ( GlobalBlocking::getUserBlockErrors( $wgUser, $wgRequest->getIP() ) ) {
+		if ( GlobalBlocking::getUserBlockErrors(
+			$requestContext->getUser(),
+			$requestContext->getRequest()->getIP()
+		) ) {
 			$error = 'globalblocking-blocked-nopassreset';
 			return false;
 		}
