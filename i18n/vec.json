@@ -3,7 +3,8 @@
 		"authors": [
 			"Candalua",
 			"GatoSelvadego",
-			"Macofe"
+			"Macofe",
+			"Conky77"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Consentir]] el bloco de un indirisso IP su [[Special:GlobalBlockList|tante wiki]]",
@@ -81,7 +82,7 @@
 	"globalblockstatus": "Stato locale de blochi globali",
 	"removeglobalblock": "Cava un bloco globale",
 	"right-globalblock": "Bloca dei utenti globalmente",
-	"action-globalblock": "efetuar blochi globałi",
+	"action-globalblock": "efetuar o rimovere blochi globaƚi",
 	"right-globalblock-whitelist": "Disabilita localmente blochi globali",
 	"action-globalblock-whitelist": "dixabiłitare blochi globałi localmente",
 	"right-globalblock-exempt": "Scavalca blochi globali",
