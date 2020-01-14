@@ -61,7 +61,7 @@ class GlobalBlocking {
 		static $result = null;
 
 		// Instance cache
-		if ( !is_null( $result ) ) {
+		if ( $result !== null ) {
 			return $result;
 		}
 
