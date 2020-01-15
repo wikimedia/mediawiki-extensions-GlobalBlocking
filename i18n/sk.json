@@ -4,7 +4,8 @@
 			"Helix84",
 			"Teslaton",
 			"Macofe",
-			"Vlad5250"
+			"Vlad5250",
+			"Luky001"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Umožňuje]] zablokovať IP adresy [[Special:GlobalBlockList|na viacerých wiki]]",
@@ -81,7 +82,7 @@
 	"globalblockstatus": "Lokálny stav globálnych blokovaní",
 	"removeglobalblock": "Odstrániť globálne blokovanie",
 	"right-globalblock": "Robiť globálne blokovania",
-	"action-globalblock": "globálne blokovať",
+	"action-globalblock": "globálne blokovať a odblokovať",
 	"right-globalblock-whitelist": "Lokálne vypnúť globálne blokovania",
 	"action-globalblock-whitelist": "definovať výnimky z globálnych blokovaní",
 	"right-globalblock-exempt": "Obchádzať globálne blokovania",
