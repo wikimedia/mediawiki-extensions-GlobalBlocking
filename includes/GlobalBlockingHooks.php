@@ -37,6 +37,11 @@ class GlobalBlockingHooks {
 				);
 				$updater->modifyExtensionField(
 					'globalblocks',
+					'gb_range_start',
+					"$base/sql/patch-range-extend.sql"
+				);
+				$updater->modifyExtensionField(
+					'globalblocks',
 					'gb_reason',
 					"$base/sql/patch-globalblocks-reason-length.sql"
 				);
