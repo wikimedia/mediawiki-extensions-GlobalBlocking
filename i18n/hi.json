@@ -7,7 +7,8 @@
 			"Siddhartha Ghai",
 			"Macofe",
 			"Sfic",
-			"Prong$31"
+			"Prong$31",
+			"आलोक"
 		]
 	},
 	"globalblocking-desc": "आइपी एड्रेस को [[Special:GlobalBlockList|एक से ज्यादा विकियोंपर ब्लॉक]] करने की [[Special:GlobalBlock|अनुमति]] देता हैं।",
@@ -40,7 +41,7 @@
 	"globalblocking-list-anononly": "सिर्फ-अनामक",
 	"globalblocking-list-unblock": "अनब्लॉक",
 	"globalblocking-list-whitelisted": "$1 ने स्थानिक स्तरपर रद्द किया: $2",
-	"globalblocking-list-whitelist": "स्थानिक स्थिती",
+	"globalblocking-list-whitelist": "स्थानीय स्थिति",
 	"globalblocking-list-modify": "संशोधित करें",
 	"globalblocking-list-noresults": "अनुरोध किया गया आईपि पता अवरोध नहीं है ।",
 	"globalblocking-goto-block": "ग्लोबली एक आईपी पते को अवरोध करें",
@@ -56,9 +57,9 @@
 	"globalblocking-unblock-unblocked": "आपने '''$1''' इस आइपी एड्रेस पर होने वाला ग्लोबल ब्लॉक #$2 हटा दिया हैं",
 	"globalblocking-unblock-intro": "आप इस प्रपत्र की उपयोग वैश्विक अवरोध को निकालने मे कर सकते हैं ।",
 	"globalblocking-whitelist": "वैश्विक अवरोध के स्थानीय स्थिति",
-	"globalblocking-whitelist-legend": "स्थानिक स्थिती बदलें",
+	"globalblocking-whitelist-legend": "स्थानीय स्थिति बदलें",
 	"globalblocking-whitelist-reason": "कारण:",
-	"globalblocking-whitelist-status": "स्थानिक स्थिती:",
+	"globalblocking-whitelist-status": "स्थानीय स्थिति :-",
 	"globalblocking-whitelist-statuslabel": "{{SITENAME}} पर से यह वैश्विक ब्लॉक हटायें",
 	"globalblocking-whitelist-submit": "स्थानिक स्थिती बदलें",
 	"globalblocking-whitelist-whitelisted": "आपने '''$1''' इस एड्रेसपर दिया हुआ वैश्विक ब्लॉक #$2, {{SITENAME}} पर रद्द कर दिया हैं।",
