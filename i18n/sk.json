@@ -81,7 +81,7 @@
 	"globalblock": "Globálne zablokovať IP adresu",
 	"globalblockstatus": "Lokálny stav globálnych blokovaní",
 	"removeglobalblock": "Odstrániť globálne blokovanie",
-	"right-globalblock": "Robiť globálne blokovania",
+	"right-globalblock": "Vytváranie a odstraňovanie globálnych blokovaní",
 	"action-globalblock": "globálne blokovať a odblokovať",
 	"right-globalblock-whitelist": "Lokálne vypnúť globálne blokovania",
 	"action-globalblock-whitelist": "definovať výnimky z globálnych blokovaní",
