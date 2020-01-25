@@ -492,7 +492,8 @@ class GlobalBlocking {
 		$page->addEntry( $logAction,
 			Title::makeTitleSafe( NS_USER, $address ),
 			$reason,
-			[ $info, $address ]
+			[ $info, $address ],
+			$blocker
 		);
 
 		return [];
