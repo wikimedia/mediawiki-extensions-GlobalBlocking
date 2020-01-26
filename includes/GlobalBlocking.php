@@ -8,6 +8,7 @@
 
 use MediaWiki\Block\DatabaseBlock;
 use MediaWiki\MediaWikiServices;
+use Wikimedia\IPUtils;
 use Wikimedia\Rdbms\DBUnexpectedError;
 
 class GlobalBlocking {
@@ -84,10 +85,10 @@ class GlobalBlocking {
 			$blockExpiry = $wgLang->formatExpiry( $block->gb_expiry );
 			$display_wiki = WikiMap::getWikiName( $block->gb_by_wiki );
 			$blockingUser = self::maybeLinkUserpage( $block->gb_by_wiki, $block->gb_by );
-			if ( IP::isValid( $block->gb_address ) ) {
+			if ( IPUtils::isValid( $block->gb_address ) ) {
 				$errorMsg = 'globalblocking-ipblocked';
 				$hookName = 'GlobalBlockingBlockedIpMsg';
-			} elseif ( IP::isValidRange( $block->gb_address ) ) {
+			} elseif ( IPUtils::isValidRange( $block->gb_address ) ) {
 				$errorMsg = 'globalblocking-ipblocked-range';
 				$hookName = 'GlobalBlockingBlockedIpRangeMsg';
 			} else {
@@ -178,7 +179,7 @@ class GlobalBlocking {
 	public static function getRangeCondition( $ip ) {
 		$dbr = self::getGlobalBlockingDatabase( DB_REPLICA );
 
-		list( $start, $end ) = IP::parseRange( $ip );
+		list( $start, $end ) = IPUtils::parseRange( $ip );
 
 		// Don't bother checking blocks out of this /16.
 		// @todo Make the range limit configurable
@@ -203,7 +204,7 @@ class GlobalBlocking {
 		$dbr = self::getGlobalBlockingDatabase( DB_REPLICA );
 		$conds = [];
 		foreach ( $ips as $ip ) {
-			if ( IP::isValid( $ip ) ) {
+			if ( IPUtils::isValid( $ip ) ) {
 				$conds[] = $dbr->makeList( self::getRangeCondition( $ip ), LIST_AND );
 			}
 		}
@@ -244,7 +245,7 @@ class GlobalBlocking {
 	private static function getAppliedBlock( $ips, $blocks ) {
 		$block = array_shift( $blocks );
 		foreach ( $ips as $ip ) {
-			$ipHex = IP::toHex( $ip );
+			$ipHex = IPUtils::toHex( $ip );
 			if ( $block->gb_range_start <= $ipHex && $block->gb_range_end >= $ipHex ) {
 				return [ $ip, $block ];
 			}
@@ -384,12 +385,12 @@ class GlobalBlocking {
 		self::purgeExpired();
 
 		## Validate input
-		$ip = IP::sanitizeIP( $address );
+		$ip = IPUtils::sanitizeIP( $address );
 
 		$anonOnly = in_array( 'anon-only', $options );
 		$modify = in_array( 'modify', $options );
 
-		if ( !IP::isIPAddress( $ip ) ) {
+		if ( !IPUtils::isIPAddress( $ip ) ) {
 			// Invalid IP address.
 			$errors[] = [ 'globalblocking-block-ipinvalid', $ip ];
 		}
@@ -399,7 +400,7 @@ class GlobalBlocking {
 		}
 
 		// Check for too-big ranges.
-		list( $range_start, $range_end ) = IP::parseRange( $ip );
+		list( $range_start, $range_end ) = IPUtils::parseRange( $ip );
 
 		if ( substr( $range_start, 0, 4 ) != substr( $range_end, 0, 4 ) ) {
 			// Range crosses a /16 boundary.
@@ -408,7 +409,7 @@ class GlobalBlocking {
 
 		// Normalise the range
 		if ( $range_start != $range_end ) {
-			$ip = IP::sanitizeRange( $ip );
+			$ip = IPUtils::sanitizeRange( $ip );
 		}
 
 		// Check for an existing block in the master database

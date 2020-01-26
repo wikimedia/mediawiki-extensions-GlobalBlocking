@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Block\DatabaseBlock;
+use Wikimedia\IPUtils;
 
 class SpecialGlobalBlock extends FormSpecialPage {
 	/**
@@ -43,11 +44,11 @@ class SpecialGlobalBlock extends FormSpecialPage {
 			$address = trim( $this->getRequest()->getText( 'wpAddress' ) );
 		}
 
-		if ( IP::isValidRange( $address ) ) {
-			$this->address = IP::sanitizeRange( $address );
+		if ( IPUtils::isValidRange( $address ) ) {
+			$this->address = IPUtils::sanitizeRange( $address );
 		} else {
 			// This catches invalid IPs too but we'll reject them at form submission.
-			$this->address = IP::sanitizeIP( $address );
+			$this->address = IPUtils::sanitizeIP( $address );
 		}
 	}
 

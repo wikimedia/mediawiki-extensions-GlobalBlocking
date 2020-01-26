@@ -1,5 +1,7 @@
 <?php
 
+use Wikimedia\IPUtils;
+
 class SpecialRemoveGlobalBlock extends FormSpecialPage {
 	/** @var string */
 	private $ip;
@@ -28,7 +30,7 @@ class SpecialRemoveGlobalBlock extends FormSpecialPage {
 	public function onSubmit( array $data ) {
 		$this->ip = trim( $data['ipaddress'] );
 
-		if ( !IP::isIPAddress( $this->ip ) ) {
+		if ( !IPUtils::isIPAddress( $this->ip ) ) {
 			return Status::newFatal( $this->msg( 'globalblocking-unblock-ipinvalid', $this->ip ) );
 		}
 

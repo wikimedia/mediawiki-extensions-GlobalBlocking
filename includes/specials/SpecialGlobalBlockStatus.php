@@ -1,5 +1,7 @@
 <?php
 
+use Wikimedia\IPUtils;
+
 class SpecialGlobalBlockStatus extends FormSpecialPage {
 	private $mAddress, $mCurrentStatus, $mWhitelistStatus;
 
@@ -31,7 +33,7 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 	private function loadParameters() {
 		$request = $this->getRequest();
 		$ip = trim( $request->getText( 'address' ) );
-		$this->mAddress = ( $ip !== '' || $request->wasPosted() ) ? IP::sanitizeRange( $ip ) : '';
+		$this->mAddress = ( $ip !== '' || $request->wasPosted() ) ? IPUtils::sanitizeRange( $ip ) : '';
 		$this->mWhitelistStatus = $request->getCheck( 'wpWhitelistStatus' );
 		$id = GlobalBlocking::getGlobalBlockId( $ip );
 

@@ -7,6 +7,7 @@
  */
 
 use MediaWiki\Block\DatabaseBlock;
+use Wikimedia\IPUtils;
 
 class GlobalBlockingHooks {
 	/**
@@ -141,7 +142,7 @@ class GlobalBlockingHooks {
 	 */
 	public static function onOtherBlockLogLink( &$msg, $ip ) {
 		// Fast return if it is a username. IP addresses can be blocked only.
-		if ( !IP::isIPAddress( $ip ) ) {
+		if ( !IPUtils::isIPAddress( $ip ) ) {
 			return true;
 		}
 
@@ -171,16 +172,16 @@ class GlobalBlockingHooks {
 		$userId, User $user, SpecialPage $sp
 	) {
 		$name = $user->getName();
-		if ( !IP::isIPAddress( $name ) ) {
+		if ( !IPUtils::isIPAddress( $name ) ) {
 			return true;
 		}
 
 		// Obtain the first and the last IP of a range if IP is a range
-		list( $startIP, $endIP ) = IP::parseRange( $name );
+		list( $startIP, $endIP ) = IPUtils::parseRange( $name );
 		substr( $startIP, 0, 4 );
 		substr( $endIP, 0, 4 );
-		$startname = IP::formatHex( $startIP );
-		$endname = IP::formatHex( $endIP );
+		$startname = IPUtils::formatHex( $startIP );
+		$endname = IPUtils::formatHex( $endIP );
 
 		// Get results from the first ip of a range
 		$rangeConditionstart = GlobalBlocking::getRangeCondition( $startname );
