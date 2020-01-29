@@ -111,6 +111,7 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 				$prefixLen = 3; // IPUtils::toHex output is prefixed with "v6-"
 			} else {
 				$this->dieWithError( 'apierror-badip', 'param_ip' );
+				throw new LogicException();
 			}
 
 			# Check range validity, if it's a CIDR
@@ -123,7 +124,7 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 			list( $lower, $upper ) = IPUtils::parseRange( $params['ip'] );
 
 			# Extract the common prefix to any rangeblock affecting this IP/CIDR
-			$prefix = substr( $lower, 0, $prefixLen + floor( $cidrLimit / 4 ) );
+			$prefix = substr( $lower, 0, $prefixLen + $cidrLimit / 4 );
 
 			# Fairly hard to make a malicious SQL statement out of hex characters,
 			# but it is good practice to add quotes
