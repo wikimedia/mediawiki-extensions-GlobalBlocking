@@ -4,7 +4,8 @@
 			"Yekrats",
 			"Tlustulimu",
 			"Macofe",
-			"Gamliel Fishkin"
+			"Gamliel Fishkin",
+			"Robin van der Vliet"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permesas]] IP-adreso esti [[Special:GlobalBlockList|forbarita trans multaj vikioj]].",
@@ -18,7 +19,7 @@
 	"globalblocking-block-legend": "Forbari IP-adreson ĝenerale",
 	"globalblocking-ipaddress": "IP-adreso:",
 	"globalblocking-ipbanononly": "Forbari nur anonimulojn",
-	"globalblocking-block-ipinvalid": "La IP-adreso ($1) kiun vi enigis estas malvalida.\nBonvolu noti ke vi ne povas enigi salutnomo!",
+	"globalblocking-block-ipinvalid": "La IP-adreso ($1) kiun vi enigis estas nevalida.\nBonvolu noti ke vi ne povas enigi uzantnomo!",
 	"globalblocking-block-expiryinvalid": "La findaton kiun vi enigis estas malvalida.",
 	"globalblocking-block-submit": "Forbari ĉi tiun IP-adreson ĝenerale",
 	"globalblocking-modify-submit": "Modifi ĉi tiun ĝeneralan forbaron",
