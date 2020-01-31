@@ -64,7 +64,9 @@ class ApiGlobalBlock extends ApiBase {
 			$logPage->addEntry(
 				'gunblock',
 				Title::makeTitleSafe( NS_USER, $block->gb_address ),
-				$this->getParameter( 'reason' )
+				$this->getParameter( 'reason' ),
+				[],
+				$this->getUser()
 			);
 			$result->addValue( 'globalblock', 'user', $this->getParameter( 'target' ) );
 			$result->addValue( 'globalblock', 'unblocked', '' );

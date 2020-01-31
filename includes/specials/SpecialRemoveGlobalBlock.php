@@ -43,7 +43,13 @@ class SpecialRemoveGlobalBlock extends FormSpecialPage {
 		$dbw->delete( 'globalblocks', [ 'gb_id' => $this->id ], __METHOD__ );
 
 		$page = new LogPage( 'gblblock' );
-		$page->addEntry( 'gunblock', Title::makeTitleSafe( NS_USER, $this->ip ), $data['reason'] );
+		$page->addEntry(
+			'gunblock',
+			Title::makeTitleSafe( NS_USER, $this->ip ),
+			$data['reason'],
+			[],
+			$this->getUser()
+		);
 
 		return Status::newGood();
 	}
