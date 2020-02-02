@@ -147,6 +147,11 @@ class SpecialGlobalBlock extends FormSpecialPage {
 				'label-message' => 'globalblocking-also-local',
 				'id' => 'mw-globalblock-local',
 			];
+			$fields['AlsoLocalTalk'] = [
+				'type' => 'check',
+				'label-message' => 'globalblocking-also-local-talk',
+				'id' => 'mw-globalblock-local-talk',
+			];
 		}
 
 		return $fields;
@@ -238,7 +243,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 			$block->setExpiry( SpecialBlock::parseExpiryInput( $data['Expiry'] ) );
 			$block->isHardblock( !$data['AnonOnly'] );
 			$block->isCreateAccountBlocked( true );
-			$block->isUsertalkEditAllowed( false ); // Consistent with the global block.
+			$block->isUsertalkEditAllowed( !$data['AlsoLocalTalk'] );
 
 			$blockSuccess = $block->insert();
 
@@ -249,8 +254,12 @@ class SpecialGlobalBlock extends FormSpecialPage {
 					$flags[] = 'anononly';
 				}
 				$flags[] = 'nocreate';
-				if ( $this->getConfig()->get( 'BlockAllowsUTEdit' ) ) {
+				if (
 					// Add this flag only if config is true for consistency with core
+					$this->getConfig()->get( 'BlockAllowsUTEdit' ) &&
+					// Only if the block really blocks talk page
+					$data['AlsoLocalTalk']
+				) {
 					$flags[] = 'nousertalk';
 				}
 
