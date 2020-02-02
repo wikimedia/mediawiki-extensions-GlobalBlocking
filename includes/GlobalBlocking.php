@@ -43,7 +43,7 @@ class GlobalBlocking {
 	/**
 	 * @param User $user
 	 * @param string $ip
-	 * @return array empty or a message key with parameters
+	 * @return array empty or message objects
 	 * @throws MWException
 	 */
 	public static function getUserBlockErrors( $user, $ip ) {
@@ -54,7 +54,7 @@ class GlobalBlocking {
 	/**
 	 * @param User $user
 	 * @param string $ip
-	 * @return array ['block' => DB row, 'error' => empty or a message key with parameters]
+	 * @return array ['block' => DB row, 'error' => empty or message objects]
 	 * @throws MWException
 	 */
 	private static function getUserBlockDetails( $user, $ip ) {
@@ -102,14 +102,16 @@ class GlobalBlocking {
 			$result = [
 				'block' => $block,
 				'error' => [
-					$errorMsg,
-					$blockingUser,
-					$display_wiki,
-					$block->gb_reason,
-					$blockTimestamp,
-					$blockExpiry,
-					$ip,
-					$block->gb_address
+					wfMessage(
+						$errorMsg,
+						$blockingUser,
+						$display_wiki,
+						$block->gb_reason,
+						$blockTimestamp,
+						$blockExpiry,
+						$ip,
+						$block->gb_address
+					)
 				],
 			];
 			return $result;
@@ -135,13 +137,15 @@ class GlobalBlocking {
 					$result = [
 						'block' => $block,
 						'error' => [
-							$blockedIpXffMsg,
-							$blockingUser,
-							$display_wiki,
-							$block->gb_reason,
-							$blockTimestamp,
-							$blockExpiry,
-							$blockIP
+							wfMessage(
+								$blockedIpXffMsg,
+								$blockingUser,
+								$display_wiki,
+								$block->gb_reason,
+								$blockTimestamp,
+								$blockExpiry,
+								$blockIP
+							)
 						],
 					];
 					return $result;
