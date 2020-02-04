@@ -3,7 +3,8 @@
 		"authors": [
 			"Li-sung",
 			"Mormegil",
-			"Macofe"
+			"Macofe",
+			"Matěj Suchánek"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Umožňuje]] blokovat IP adresy [[Special:GlobalBlockList|na více wiki současně]]",
@@ -21,8 +22,8 @@
 	"globalblocking-block-expiryinvalid": "Vámi zadaný čas vypršení je neplatný.",
 	"globalblocking-block-submit": "Globálně zablokovat tuto IP adresu",
 	"globalblocking-modify-submit": "Změnit toto globální zablokování",
-	"globalblocking-block-success": "IP adresa $1 byla na všech projektech úspěšně zablokována.",
-	"globalblocking-modify-success": "Globální zablokování $1 bylo úspěšně změněno.",
+	"globalblocking-block-success": "IP adresa $1 byla na všech projektech zablokována.",
+	"globalblocking-modify-success": "Globální zablokování $1 bylo změněno.",
 	"globalblocking-local-failed": "Lokální zablokování této IP adresy se nezdařilo, protože zadaná IP adresa již je na této wiki zablokována",
 	"globalblocking-block-alreadyblocked": "IP adresa $1 již je globálně zablokována.\nExistující zablokování si můžete prohlédnout na [[Special:GlobalBlockList|seznamu globálních bloků]], nastavení stávajícího bloku můžete změnit opětovným odesláním tohoto formuláře.",
 	"globalblocking-block-bigrange": "Nelze zablokovat vámi uvedený rozsah ($1), protože je příliš velký. Můžete zablokovat maximálně 65&nbsp;535 adres (rozsah /16).",
@@ -68,7 +69,7 @@
 	"globalblocking-ipblocked": "'''Vaší IP adrese byla na všech wiki zablokována možnost editace.'''\n\nZablokování provedl $1 ($2).\nUdaným důvodem bylo ''$3''.\n\n* Začátek blokování: $4\n* Zablokování vyprší: $5\n\nPokud chcete zablokování prodiskutovat, můžete kontaktovat uživatele $1.\nUvědomte si, že nemůžete použít nabídku „{{int:emailuser}}“, jestliže ve svém [[Special:Preferences|nastavení]] nemáte uvedenu platnou e-mailovou adresu nebo pokud vám byla tato možnost zakázána.\nVaše současná IP adresa je $6.\nVe všech dotazech na správce uvádějte všechny výše zobrazené informace.",
 	"globalblocking-ipblocked-range": "'''Vaše IP adresa spadá do rozsahu, který byl zablokován na všech wiki.'''\n\nZablokování provedl $1 ($2).\nUdaným důvodem bylo ''$3''.\n\n* Začátek blokování: $4\n* Zablokování vyprší: $5\n\nPokud chcete zablokování prodiskutovat, můžete kontaktovat uživatele $1.\nUvědomte si, že nemůžete použít funkci „{{int:emailuser}}“, jestliže nemáte ve svém [[Special:Preferences|nastavení]] uvedenu platnou e-mailovou adresu nebo pokud vám byla tato možnost zakázána.\nVaše současná IP adresa je $6 a zablokovaný rozsah je $7.\nVýše uvedené údaje uvádějte ve všech dotazech.",
 	"globalblocking-ipblocked-xff": "'''Jeden nebo více proxy serverů, které váš požadavek použivá, bylo globálně zablokováno.'''\n\nZablokování provedl $1 ($2).\nUdaným důvodem bylo ''$3''.\n\n* Začátek blokování: $4\n* Zablokování vyprší: $5\n\nPokud chcete zablokování prodiskutovat, můžete kontaktovat uživatele $1.\nUvědomte si, že nemůžete použít nabídku „{{int:emailuser}}“, jestliže ve svém [[Special:Preferences|nastavení]] nemáte uvedenu platnou e-mailovou adresu nebo pokud vám byla tato možnost zakázána.\nVaše současná IP adresa je $6.\nVe všech dotazech na správce uvádějte všechny výše zobrazené informace.",
-	"globalblocking-blocked-nopassreset": "Nemůžete žádat o zaslání nového hesla, protože jste globálně {{GENDER:|zablokován|zablokována|zablokován}}.",
+	"globalblocking-blocked-nopassreset": "Nemůžete žádat o zaslání nového hesla, protože vaše IP adresa je globálně zablokovaná.",
 	"globalblocking-logpage": "Kniha globálních zablokování",
 	"globalblocking-logpagetext": "Toto je kniha globální blokování a jejich uvolnění provedených na této wiki.\nGlobální blokování lze provést i na jiných wiki a i ty ovlivňují blokování na této wiki.\nVšechny aktivní globální blokování naleznete na [[Special:GlobalBlockList|seznamu globálně blokovaných IP adres]].",
 	"globalblocking-block-logentry": "globálně blokuje [[$1]] s časem vypršení $2",
