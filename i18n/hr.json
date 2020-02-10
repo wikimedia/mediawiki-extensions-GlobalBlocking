@@ -8,7 +8,8 @@
 			"Macofe",
 			"MaGa",
 			"Bugoslav",
-			"Vlad5250"
+			"Vlad5250",
+			"Neptune, the Mystic"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Omogućuje]] blokiranje IP adresa [[Special:GlobalBlockList|na svim wikijima]]",
@@ -69,7 +70,7 @@
 	"globalblocking-whitelist-dewhitelisted": "Uspješno ste omogućili globalno blokiranje #$2 za IP adresu '''$1''' na {{SITENAME}}",
 	"globalblocking-whitelist-nochange": "Niste napravili promjene za mjesni status ovog blokiranja.\n[[Special:GlobalBlockList|Vrati se na popis globalno blokiranih adresa]].",
 	"globalblocking-whitelist-intro": "Možete koristiti ovu stranicu za uređivanje mjesnog statusa globalnog blokiranja.\nAko je globalno blokiranje onemogućeno na ovom wikiju, suradnici s tom IP adresom će moći normalno uređivati.\n[[Special:GlobalBlockList|Vrati se na popis globalno blokiranih adresa]].",
-	"globalblocking-blocked-nopassreset": "Ne možete resetirati lozinke suradnika jer ste blokirani globalno.",
+	"globalblocking-blocked-nopassreset": "Ne možete resetirati zaporke suradnika jer je Vaša IP adresa globalno blokirana.",
 	"globalblocking-logpage": "Evidencija globalnog blokiranja",
 	"globalblocking-logpagetext": "Ovo je evidencija globalnih blokiranja koja su napravljena ili uklonjena na ovom wikiju.\nGlobalno blokiranje može biti napravljeno i uklonjeno na drugim wikijima, i ova globalna blokiranja mogu imati utjecaj na ovom wikiju.\nZa popis svih aktivnih globalnih blokiranja, pogledajte [[Special:GlobalBlockList|popis globalnih blokiranja]].",
 	"globalblocking-block-logentry": "globalno blokirao [[$1]] s istekom vremena od $2",

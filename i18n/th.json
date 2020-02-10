@@ -15,7 +15,9 @@
 	"globalblocking-block-expiry-selector-other": "เวลาอื่น:",
 	"globalblocking-ipaddress": "ที่อยู่ไอพี:",
 	"globalblocking-block-submit": "บล็อกที่อยู่ไอพีนี้ทั่วโลก",
+	"globalblocking-list": "รายการของเลขที่อยู่ไอพีที่ถูกบล็อกทั่วโลก",
 	"globalblocking-search-ip": "หมายเลขไอพี:",
 	"globalblocking-unblock-reason": "เหตุผล:",
-	"globalblocking-logpage": "ปูมการบล็อกทั่วโลก"
+	"globalblocking-logpage": "ปูมการบล็อกทั่วโลก",
+	"globalblocklist": "รายการของเลขที่อยู่ไอพีที่ถูกบล็อกทั่วโลก"
 }
