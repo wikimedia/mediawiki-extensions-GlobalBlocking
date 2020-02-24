@@ -34,7 +34,7 @@
 	"globalblocking-search-legend": "No enger globaler Spär sichen",
 	"globalblocking-search-ip": "IP-Adress:",
 	"globalblocking-search-submit": "Späre sichen",
-	"globalblocking-list-ipinvalid": "D'IP-Adress no där Dir Gesicht hutt ($1) ass net korrekt.\nGitt wg. eng korrekt IP-Adress an.",
+	"globalblocking-list-ipinvalid": "D'IP-Adress no där Dir Gesicht hutt ($1) ass net korrekt.\nGitt wgl. eng korrekt IP-Adress an.",
 	"globalblocking-search-errors": "Beim Siche gouf, aus {{PLURAL:$1|dësem Grond|dëse Grënn}} näischt fonnt:",
 	"globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> (vu(n) ''$3'') huet [[Special:Contributions/$4|$4]] global gespaart ''($5)''",
 	"globalblocking-list-expiry": "Dauer vun der Spär $1",
