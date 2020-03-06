@@ -9,7 +9,8 @@
 			"Xoser",
 			"Macofe",
 			"Kumkumuk",
-			"Gırd"
+			"Gırd",
+			"1917 Ekim Devrimi"
 		]
 	},
 	"globalblocking-desc": "Adresanê IP yer [[Special:GlobalBlockList|zafın wikiyan heta wedaryayışi rê]] [[Special:GlobalBlock|icazet dano]]",
@@ -50,6 +51,7 @@
 	"globalblocking-goto-unblock": "yew blokê globali wedar/werad",
 	"globalblocking-goto-status": "qey yew blokeya globali weziyeto mehelli bıvurn",
 	"globalblocking-return": "agêr listeya blokeyi ya globali",
+	"globalblocking-add-block": "Yewna bloqeyê globali cı kerê",
 	"globalblocking-notblocked": "IP adresa ke şıma pê keweni cı ($1) bı global blokebiyaye niya.",
 	"globalblocking-unblock": "yew blokê globali wedar/werad",
 	"globalblocking-unblock-ipinvalid": "IP adresa ke şıma pê keweni cı ($1) nemeqbulo.\nxo vir ra mekerê ke şıma nêeşkeni pê nameyê yew karberi cıkewi!",
@@ -67,7 +69,7 @@
 	"globalblocking-whitelist-submit": "weziyeto mehelli bıvurn",
 	"globalblocking-whitelist-whitelisted": "şıma keyepelê {{SITENAME}}i de blokeya IPaddresa '''$1'''i ya globali #$2 bı serkewte battal verda.",
 	"globalblocking-whitelist-dewhitelisted": "şıma keyepelê {{SITENAME}}i de blokeya IPaddresa '''$1'''i ya globali #$2 bı serkewte reyna eşt faaliyet.",
-	"globalblocking-whitelist-nochange": "şıma weziyetê mehelli yo na blokeyi re çı vurnayiş nêkerd.\n[[Special:GlobalBlockList|agey rê listay bloqeyi ya globali]].",
+	"globalblocking-whitelist-nochange": "şıma weziyetê mehelli yo na blokeyi re çı vurnayiş nêkerd.",
 	"globalblocking-whitelist-intro": "Küresel bir engellemenin yerel durumunu değiştirmek için bu formu kullanabilirsiniz.\nEğer bir küresel engelleme bu vikide devre dışı bırakılmış ise, etkilenen IP adresindeki kullanıcılar normal olarak değişiklik yapabilecektir.\n[[Special:GlobalBlockList|Küresel engelleme listesine geri dönün]].",
 	"globalblocking-ipblocked": "'''Adresê IP da şıma wikiya pêron dı bloqe biyo.'''\n\nBloqe kerden $1 ($2).\nSebebê bloqi ''$3''.\n\n* Bloqe dest pêkin: $4\n* Bloqe qedyin: $5\n\nŞıma şenê $1 ya qandê sebebê bloqe kerdış irtibat kewê.\nŞıma nêşenê se \"{{int:emailuser}}\" ra cırê e-posta bırışê, [[Special:Preferences|tercihan dê hesabi ra]] ra bloqe kerdışê xo bıvine.\nIp adresiy aşımaya newki $6.\nReca kem mesaco ke şıma de bırışê cori rınd buwanê hewna mesacê xo marê bırışê.",
 	"globalblocking-ipblocked-xff": "'''Adresê IP da şıma wikiya pêron dı bloqe biyo.'''\n\nBloqe kerden $1 ($2).\nSebebê bloqi ''$3''.\n\n* Bloqe dest pêkin: $4\n* Bloqe qedyin: $5\n\nŞıma şenê $1 ya qandê sebebê bloqe kerdış irtibat kewê.\nŞıma nêşenê se \"{{int:emailuser}}\" ra cırê e-posta bırışê, [[Special:Preferences|tercihan dê hesabi ra]] ra bloqe kerdışê xo bıvine.\nIp adresiy aşımaya newki $6.\nReca kem mesaco ke şıma de bırışê cori rınd buwanê hewna mesacê xo marê bırışê.",
