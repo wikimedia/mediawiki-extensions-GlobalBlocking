@@ -78,7 +78,7 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 		$displayWiki = WikiMap::getWikiName( $row->gb_by_wiki );
 		$userDisplay = GlobalBlocking::maybeLinkUserpage( $row->gb_by_wiki, $row->gb_by );
 		$infoItems = count( $info )
-			? $this->msg( 'parentheses', $lang->pipeList( $info ) )->text()
+			? $this->msg( 'parentheses' )->rawParams( $lang->pipeList( $info ) )->escaped()
 			: '';
 
 		// Put it all together.
