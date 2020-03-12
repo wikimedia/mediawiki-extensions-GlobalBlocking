@@ -162,9 +162,9 @@ class GlobalBlocking {
 	}
 
 	public static function getTargetType( $target ) {
-		if ( IP::isValid( $target ) ) {
+		if ( IPUtils::isValid( $target ) ) {
 			return self::TYPE_IP;
-		} elseif ( IP::isValidRange( $target ) ) {
+		} elseif ( IPUtils::isValidRange( $target ) ) {
 			return self::TYPE_RANGE;
 		}
 	}
@@ -198,8 +198,8 @@ class GlobalBlocking {
 			if ( $type == self::TYPE_RANGE ) {
 				# This is the number of bits that are allowed to vary in the block, give
 				# or take some floating point errors
-				$max = IP::isIPv6( $target ) ? 128 : 32;
-				list( $network, $bits ) = IP::parseCIDR( $target );
+				$max = IPUtils::isIPv6( $target ) ? 128 : 32;
+				list( $network, $bits ) = IPUtils::parseCIDR( $target );
 				$size = $max - $bits;
 
 				# Rank a range block covering a single IP equally with a single-IP block
