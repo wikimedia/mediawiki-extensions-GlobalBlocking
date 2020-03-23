@@ -34,6 +34,7 @@
 	"globalblocking-block-alreadyblocked": "$1 IP adresi zaten küresel olarak engelli.\nMevcut engellemeyi [[Special:GlobalBlockList|küresel engelleme listesinde]] görebilirsiniz,\nya da bu formu tekrar göndererek mevcut engellemenin ayarlarını değiştirebilirsiniz.",
 	"globalblocking-block-bigrange": "Belirttiğiniz aralık ($1) engellemek için çok büyük.\nEn fazla 65.536 adresi (/16 aralık) engelleyebilirsiniz",
 	"globalblocking-also-local": "Ayrıca, bu wiki'de yerel olarak verilen IP adresini de engelle",
+	"globalblocking-also-local-talk": "Kullanıcının kendi tartıma sayfalarını yerel olarak düzenlemesini engelle",
 	"globalblocking-list-intro": "Bu liste şu anda etkin olan tüm küresel engellemelerin listesidir.\nBazı engellemeler yerel olarak devre dışı işaretlenmiş: bu şu demektir, engelleme diğer sitelerde etkilidir, fakat bir yerel yönetici onları bu vikide devre dışı bırakmaya karar vermiştir.",
 	"globalblocking-list": "Küresel olarak erişimi durdurulmuş IP adresleri listesi",
 	"globalblocking-search-legend": "Bir küresel engelleme ara",

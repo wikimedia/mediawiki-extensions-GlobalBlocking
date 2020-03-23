@@ -6,7 +6,8 @@
 			"Vugar 1981",
 			"Neriman2003",
 			"Toghrul Rahimli",
-			"Hüseynzadə"
+			"Hüseynzadə",
+			"Verman1"
 		]
 	},
 	"globalblocking-block-reason": "Səbəb:",
@@ -14,6 +15,7 @@
 	"globalblocking-block-expiry": "Bitmə müddəti:",
 	"globalblocking-block-expiry-selector-other": "Başqa vaxt:",
 	"globalblocking-ipaddress": "IP ünvanı:",
+	"globalblocking-also-local-talk": "Lokal olaraq istifadəçini öz müzakirə səhifəsini redaktə etməsini blokla",
 	"globalblocking-search-ip": "IP ünvanı:",
 	"globalblocking-list-unblock": "çıxar",
 	"globalblocking-list-whitelist": "lokal status",

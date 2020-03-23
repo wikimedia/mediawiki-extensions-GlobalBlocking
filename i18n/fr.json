@@ -44,6 +44,7 @@
 	"globalblocking-block-alreadyblocked": "L’adresse IP $1 est déjà bloquée globalement.\nVous pouvez afficher les blocages existants sur la [[Special:GlobalBlockList|liste des blocages globaux]]\nou reconfigurer ce blocage en soumettant de nouveau ce formulaire.",
 	"globalblocking-block-bigrange": "La plage que vous avez spécifiée ($1) est trop grande pour être bloquée. Vous ne pouvez pas bloquer plus de 65&nbsp;536 adresses.",
 	"globalblocking-also-local": "Bloquer également localement sur ce wiki l’adresse IP fournie",
+	"globalblocking-also-local-talk": "Empêcher l’utilisateur de modifier localement sa propre page de discussion",
 	"globalblocking-list-intro": "Voici la liste de tous les blocages globaux actifs. Quelques plages sont marquées comme localement désactivées : ceci signifie qu’elles sont appliquées sur d’autres sites, mais qu’un administrateur local a décidé de les désactiver sur ce wiki.",
 	"globalblocking-list": "Liste des adresses IP bloquées globalement",
 	"globalblocking-search-legend": "Rechercher un blocage global",
