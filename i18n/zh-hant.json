@@ -22,7 +22,8 @@
 			"Mutolisp",
 			"Kly",
 			"A2093064",
-			"Xiplus"
+			"Xiplus",
+			"铁桶"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|允許]]封鎖[[Special:GlobalBlockList|於多個 Wiki 中]]的 IP 位址",
@@ -31,7 +32,7 @@
 	"globalblocking-block-reason": "原因：",
 	"globalblocking-block-reason-dropdown": "* 常見封鎖原因\n** 跨 Wiki 發佈垃圾訊息\n** 跨 Wiki 濫用\n** 破壞資料",
 	"globalblocking-block-edit-dropdown": "編輯查封原因",
-	"globalblocking-block-expiry": "封鎖到期日：",
+	"globalblocking-block-expiry": "到期時間：",
 	"globalblocking-block-expiry-selector-other": "其他時間：",
 	"globalblocking-block-legend": "全域封鎖 IP 位址",
 	"globalblocking-ipaddress": "IP 位址：",
