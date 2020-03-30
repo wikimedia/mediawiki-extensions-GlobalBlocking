@@ -9,7 +9,8 @@
 			"Melos",
 			"Nemo bis",
 			"Ricordisamoa",
-			"Macofe"
+			"Macofe",
+			"Sakretsu"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permette]] di [[Special:GlobalBlockList|bloccare su più wiki]] indirizzi IP",
@@ -34,6 +35,7 @@
 	"globalblocking-block-alreadyblocked": "L'indirizzo IP $1 è già bloccato globalmente. È possibile consultare il blocco attivo nell'[[Special:GlobalBlockList|elenco dei blocchi globali]] o modificare le impostazioni del blocco esistente ricompilando questo modulo.",
 	"globalblocking-block-bigrange": "La classe che hai indicato ($1) è troppo ampia per essere bloccata. È possibile bloccare, al massimo, 65.536 indirizzi (classe /16)",
 	"globalblocking-also-local": "Blocca l'indirizzo IP anche localmente su questo wiki",
+	"globalblocking-also-local-talk": "Impedisci all'utente di modificare la propria pagina di discussione localmente",
 	"globalblocking-list-intro": "Di seguito sono elencati tutti i blocchi globali che sono attualmente attivi. Alcuni blocchi sono segnati come disattivati localmente: ciò significa che questi sono attivi su altri siti, ma un amministratore locale ha deciso di disattivarli su quella wiki.",
 	"globalblocking-list": "Elenco degli indirizzi IP bloccati globalmente",
 	"globalblocking-search-legend": "Ricerca un blocco globale",
