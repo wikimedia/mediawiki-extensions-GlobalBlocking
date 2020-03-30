@@ -14,7 +14,8 @@
 			"Rotsee",
 			"WikiPhoenix",
 			"Macofe",
-			"Psl85"
+			"Psl85",
+			"Technic2"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Tillåter]] IP-adresser att bli [[Special:GlobalBlockList|blockerade tvärs över mångfaldiga wikier]]",
@@ -35,7 +36,7 @@
 	"globalblocking-block-success": "IP-adressen $1 har blivit blockerad på alla projekt.",
 	"globalblocking-modify-success": "Den globala blockeringen på $1 har lyckats ändras",
 	"globalblocking-local-failed": "Blockering av IP-adressen lokalt misslyckades eftersom den angivna IP-adressen redan är blockerad på denna wiki",
-	"globalblocking-block-failure": "Ett fel uppstod under global blockering av $<span class=\"notranslate\">1</span> . Försök igen.",
+	"globalblocking-block-failure": "Ett fel uppstod under global blockering av $1. Försök igen.",
 	"globalblocking-block-alreadyblocked": "IP-adressen $1 är redan blockerad globalt.\nDu kan visa den existerande blockeringen på [[Special:GlobalBlockList|listan över globala blockeringar]],\neller ändra inställningarna för den liggande blockeringen genom att igen använda detta formulär.",
 	"globalblocking-block-bigrange": "IP-området du angav ($1) är för stort att blockeras. Du kan blockera högst 65&nbsp;536 adresser (/16-områden)",
 	"globalblocking-also-local": "Blockera även den angivna IP-adressen lokalt på denna wiki",
@@ -81,7 +82,7 @@
 	"globalblocking-ipblocked": "'''Din IP-adress har spärrats på alla wikier.'''\n\nBlocket gjordes av $1 ($2).\nDet angivna skälet är ''$3''.\n* Blockeringen startar: $4\n* Blockeringen slutar: $5\n\nDu kan kontakta $1 för att diskutera blockeringen.\nDu kan inte använda funktionen \"{{int:emailuser}}\" om inte en giltig emailadress angetts i dina [[Special:Preferences|kontoinställningar]] och om du inte har blockerats från att använda det.\nDin nuvarande IP-adress är $6.\nVänligen inkludera alla detaljer i alla förfrågningar som du gör.",
 	"globalblocking-ipblocked-range": "'''Din IP-adress är i ett intervall som har spärrats på alla wikier.'''\n\nBlocket gjordes av $1 ($2).\nDen angivna anledningen är: ''$3''.\n* Blockeringen startar: $4\n* Blockeringen slutar: $5\n\nDu kan kontakta $1 för att diskutera blockeringen.\nDu kan inte använda funktionen \"{{int:emailuser}}\" om inte en giltig e-postadress angetts i dina [[Special:Preferences|kontoinställningar]] och om du inte har blockerats från att använda det.\nDin nuvarande IP-adress är $6, och intervallet som har blockerats är $7.\nVänligen inkludera alla detaljer i alla förfrågningar som du gör.",
 	"globalblocking-ipblocked-xff": "'''En eller fler proxyservrar som används av din begäran är globalt blockerade'''\n\nBlockeringen gjordes av $1 ($2).\nDen angivna anledningen är ''$3''.\n\n* Blockeringens start: $4\n* Blockeringen löper ut: $5\n\nDu kan kontakta $1 för att diskutera blockeringen.\nDu kan inte använda \"{{int:emailuser}}\"-funktionen om inte en giltig e-postadress är angiven i dina [[Special:Preferences|kontoinställningar]] och om du inte har blockerats från att använda den.\nDen blockerade proxyadressen var $6.\nVänligen inkludera alla detaljer i eventuella förfrågningar du gör.",
-	"globalblocking-blocked-nopassreset": "Du kan inte återställa den här användarens lösenord eftersom ditt konto är globalblockerat.",
+	"globalblocking-blocked-nopassreset": "Du kan inte återställa den här användarens lösenord eftersom din IP-adress är globalblockerad.",
 	"globalblocking-logpage": "Logg för globala blockeringar",
 	"globalblocking-logpagetext": "Detta är en logg över globala blockeringar som har lagts och tagits bort på den här wikin.\nDet bör noteras att globala blockeringar kan läggas och tas bort på andra wikier, och att dessa globala blockeringar kan påverka den här wikin.\nFör att se alla aktiva globala blockeringar, kan du se den [[Special:GlobalBlockList|globala blockeringslistan]].",
 	"globalblocking-block-logentry": "blockerade [[$1]] globalt med en varighet på $2",
