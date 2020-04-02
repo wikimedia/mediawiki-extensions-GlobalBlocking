@@ -10,7 +10,8 @@
 			"Macofe",
 			"Kumkumuk",
 			"Gırd",
-			"1917 Ekim Devrimi"
+			"1917 Ekim Devrimi",
+			"Orbot707"
 		]
 	},
 	"globalblocking-desc": "Adresanê IP yer [[Special:GlobalBlockList|zafın wikiyan heta wedaryayışi rê]] [[Special:GlobalBlock|icazet dano]]",
@@ -94,5 +95,11 @@
 	"action-globalblock-whitelist": "blokeyanê globalan be ca ra dewre ra vece",
 	"right-globalblock-exempt": "Global blokî bypass bike",
 	"action-globalblock-exempt": "Global blokî bypass bike",
-	"log-action-filter-gblblock-gblock": "Kılikerdışo global"
+	"globalblocking-apierror-badip": "$1 adresa IP ravêrdi niya",
+	"log-action-filter-gblblock": "Tewrê bloqey globali :",
+	"log-action-filter-gblblock-gblock": "Kılikerdışo global",
+	"log-action-filter-gblblock-gunblock": "Bloqey globali wedarıtış",
+	"log-action-filter-gblblock-modify": "Vurnayışê bloqey globali",
+	"log-action-filter-gblblock-whitelist": "Bloqey globali lista pakan miyan kerdış",
+	"log-action-filter-gblblock-dwhitelist": "Bloqey globali lista pakan ra wedarıtış"
 }
