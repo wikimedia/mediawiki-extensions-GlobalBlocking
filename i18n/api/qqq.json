@@ -49,5 +49,7 @@
 	"apihelp-query+globalblocks-param-limit": "{{doc-apihelp-param|query+globalblocks|limit}}",
 	"apihelp-query+globalblocks-param-prop": "{{doc-apihelp-param|query+globalblocks|prop}}",
 	"apihelp-query+globalblocks-example-1": "{{doc-apihelp-example|query+globalblocks}}",
-	"apihelp-query+globalblocks-example-2": "{{doc-apihelp-example|query+globalblocks}}"
+	"apihelp-query+globalblocks-example-2": "{{doc-apihelp-example|query+globalblocks}}",
+	"apihelp-globalblock-param-alsolocal": "{{doc-apihelp-param|globalblock|alsolocal}}",
+	"apihelp-globalblock-param-localblockstalk": "{{doc-apihelp-param|globalblock|localblockstalk}}"
 }

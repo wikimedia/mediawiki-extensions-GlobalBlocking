@@ -26,6 +26,23 @@ class ApiGlobalBlock extends ApiBase {
 				$options
 			);
 
+			if ( $this->getParameter( 'alsolocal' ) && count( $errors ) === 0 ) {
+				SpecialBlock::processForm( [
+					'Target' => $this->getParameter( 'target' ),
+					'Reason' => [ $this->getParameter( 'reason' ) ],
+					'Expiry' => $this->getParameter( 'expiry' ),
+					'HardBlock' => !$this->getParameter( 'anononly' ),
+					'CreateAccount' => true,
+					'AutoBlock' => true,
+					'DisableEmail' => true,
+					'DisableUTEdit' => $this->getParameter( 'localblockstalk' ),
+					'Reblock' => true,
+					'Confirm' => true,
+					'Watch' => false
+				], $this->getContext() );
+				$result->addValue( 'globalblock', 'blockedlocally', true );
+			}
+
 			if ( count( $errors ) ) {
 				foreach ( $errors as &$error ) {
 					$error = [
@@ -93,6 +110,12 @@ class ApiGlobalBlock extends ApiBase {
 				ApiBase::PARAM_TYPE => 'boolean'
 			],
 			'modify' => [
+				ApiBase::PARAM_TYPE => 'boolean'
+			],
+			'alsolocal' => [
+				ApiBase::PARAM_TYPE => 'boolean'
+			],
+			'localblockstalk' => [
 				ApiBase::PARAM_TYPE => 'boolean'
 			],
 			'token' => [
