@@ -44,7 +44,7 @@
 	"globalblocking-list-ipinvalid": "L'indirizzo IP che hai cercato ($1) non è valido. Inserisci un indirizzo IP valido.",
 	"globalblocking-search-errors": "La tua ricerca non ha prodotto risultati per {{PLURAL:$1|il seguente motivo|i seguenti motivi}}:",
 	"globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> (''$3'') ha bloccato globalmente [[Special:Contributions/$4|$4]] ''($5)''",
-	"globalblocking-list-expiry": "scadenza del blocco $1",
+	"globalblocking-list-expiry": "scade il $1",
 	"globalblocking-list-anononly": "solo anonimi",
 	"globalblocking-list-unblock": "rimuovi",
 	"globalblocking-list-whitelisted": "disattivato localmente da $1: $2",
