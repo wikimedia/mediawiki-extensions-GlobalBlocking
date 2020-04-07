@@ -2,10 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"Cheers!",
-			"Minh Nguyen",
-			"Vinhtantran",
+			"Macofe",
 			"Max20091",
-			"Macofe"
+			"Minh Nguyen",
+			"Vinhtantran"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Cho phép]] [[Special:GlobalBlockList|cấm địa chỉ IP trên nhiều wiki]]",

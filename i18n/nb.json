@@ -2,10 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"Event",
+			"Jon Harald Søby",
 			"Laaknor",
-			"Nghtwlkr",
 			"Macofe",
-			"Jon Harald Søby"
+			"Nghtwlkr"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Gjør det mulig]] å blokkere IP-adresser på [[Special:GlobalBlockList|alle wikier]]",

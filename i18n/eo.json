@@ -1,11 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Yekrats",
-			"Tlustulimu",
-			"Macofe",
 			"Gamliel Fishkin",
-			"Robin van der Vliet"
+			"Macofe",
+			"Robin van der Vliet",
+			"Tlustulimu",
+			"Yekrats"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permesas]] IP-adreso esti [[Special:GlobalBlockList|forbarita trans multaj vikioj]].",

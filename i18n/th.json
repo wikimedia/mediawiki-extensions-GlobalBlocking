@@ -1,12 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"Aefgh39622",
 			"Ans",
+			"Geonuch",
 			"Horus",
 			"Octahedron80",
-			"Passawuth",
-			"Geonuch",
-			"Aefgh39622"
+			"Passawuth"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|อนุญาต]]ให้คุณสามารถบล็อกผู้ใช้ที่เป็น ไอพี [[Special:GlobalBlockList|ในหลาย ๆ วิกิ]]ในครั้งเดียวได้",

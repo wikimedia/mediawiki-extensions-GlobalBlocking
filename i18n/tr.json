@@ -1,15 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
+			"BaRaN6161 TURK",
 			"Emperyan",
 			"Homonihilis",
 			"Joseph",
-			"Runningfridgesrule",
-			"Suelnur",
 			"Macofe",
 			"Rapsar",
-			"Vito Genovese",
-			"BaRaN6161 TURK"
+			"Runningfridgesrule",
+			"Suelnur",
+			"Vito Genovese"
 		]
 	},
 	"globalblocking-desc": "IP addreslerinin [[Special:GlobalBlockList|çoklu vikiler boyunca engellenmesine]] [[Special:GlobalBlock|izin verir]]",

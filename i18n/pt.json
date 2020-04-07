@@ -1,23 +1,23 @@
 {
 	"@metadata": {
 		"authors": [
+			"Athena in Wonderland",
+			"Diniscoelho",
 			"GKnedo",
 			"Giro720",
 			"Hamilton Abreu",
 			"Imperadeiro98",
+			"Jkb8",
 			"João Sousa",
 			"Lijealso",
 			"Luckas",
+			"Macofe",
 			"Malafaya",
 			"SandroHc",
-			"Waldir",
-			"555",
 			"Vitorvicentevalente",
-			"Macofe",
-			"Jkb8",
-			"Diniscoelho",
-			"Athena in Wonderland",
-			"Waldyrious"
+			"Waldir",
+			"Waldyrious",
+			555
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permite]] que endereços IP sejam [[Special:GlobalBlockList|bloqueados em várias wikis]]",

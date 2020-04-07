@@ -1,11 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Prevert",
-			"Toliño",
 			"Banjo",
 			"Elisardojm",
-			"Macofe"
+			"Macofe",
+			"Prevert",
+			"Toliño"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permite]] que os enderezos IP sexan [[Special:GlobalBlockList|bloqueados en múltiples wikis]]",

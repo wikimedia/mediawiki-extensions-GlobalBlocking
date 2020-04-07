@@ -1,11 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"DannyS712",
 			"Fitoschido",
 			"Macofe",
 			"MarcoAurelio",
-			"Ryo567",
-			"DannyS712"
+			"Ryo567"
 		]
 	},
 	"apihelp-globalblock-description": "Bloquear o desbloquear globalmente a un usuario.",

@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
+			"Brazal.dang",
 			"Geopoet",
-			"Macofe",
-			"Brazal.dang"
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Tinutugutan]] An IP na mga estada na [[Special:GlobalBlockList|pinagkubkob sa pag-iribahan nin kadaklang mga wikis]]",

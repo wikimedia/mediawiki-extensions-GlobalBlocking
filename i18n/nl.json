@@ -3,17 +3,17 @@
 		"authors": [
 			"AvatarTeam",
 			"HanV",
+			"JurgenNL",
+			"Macofe",
+			"Mainframe98",
+			"Mar(c)",
 			"Romaine",
 			"SPQRobin",
 			"Siebrand",
-			"User555",
-			"Southparkfan",
-			"JurgenNL",
-			"Macofe",
 			"Sjoerddebruin",
-			"Mainframe98",
+			"Southparkfan",
 			"Trijnstel",
-			"Mar(c)"
+			"User555"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Maakt het mogelijk]] IP-adressen [[Special:GlobalBlockList|in meerdere wiki's tegelijk]] te blokkeren",

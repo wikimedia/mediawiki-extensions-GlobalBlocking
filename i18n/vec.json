@@ -2,9 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"Candalua",
+			"Conky77",
 			"GatoSelvadego",
-			"Macofe",
-			"Conky77"
+			"Macofe"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Consentir]] el bloco de un indirisso IP su [[Special:GlobalBlockList|tante wiki]]",

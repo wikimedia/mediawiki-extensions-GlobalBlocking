@@ -1,15 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
+			"Bugoslav",
 			"CERminator",
 			"Dalibor Bosits",
 			"Ex13",
-			"SpeedyGonsales",
-			"Macofe",
 			"MaGa",
-			"Bugoslav",
-			"Vlad5250",
-			"Neptune, the Mystic"
+			"Macofe",
+			"Neptune, the Mystic",
+			"SpeedyGonsales",
+			"Vlad5250"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Omogućuje]] blokiranje IP adresa [[Special:GlobalBlockList|na svim wikijima]]",

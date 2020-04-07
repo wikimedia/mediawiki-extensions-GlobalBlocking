@@ -10,12 +10,12 @@
 			"Jopparn",
 			"Lokal Profil",
 			"M.M.S.",
-			"Per",
-			"Rotsee",
-			"WikiPhoenix",
 			"Macofe",
+			"Per",
 			"Psl85",
-			"Technic2"
+			"Rotsee",
+			"Technic2",
+			"WikiPhoenix"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Tillåter]] IP-adresser att bli [[Special:GlobalBlockList|blockerade tvärs över mångfaldiga wikier]]",

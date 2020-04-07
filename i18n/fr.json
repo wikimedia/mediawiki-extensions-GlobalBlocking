@@ -1,10 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
+			"0x010C",
 			"Crochet.david",
+			"Diti",
 			"Gomoko",
 			"Grondin",
 			"IAlex",
+			"Macofe",
+			"Nicolapps",
+			"Orlodrim",
 			"Peter17",
 			"PieRRoMaN",
 			"Seb35",
@@ -12,14 +17,9 @@
 			"Toto Azéro",
 			"Urhixidur",
 			"Verdy p",
-			"Wyz",
-			"Zetud",
-			"0x010C",
-			"Nicolapps",
 			"Wladek92",
-			"Macofe",
-			"Orlodrim",
-			"Diti"
+			"Wyz",
+			"Zetud"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permet]] de bloquer des adresses IP [[Special:GlobalBlockList|à travers plusieurs wikis]]",

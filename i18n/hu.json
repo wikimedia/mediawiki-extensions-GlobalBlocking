@@ -1,14 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
+			"Bencemac",
 			"Dani",
 			"Dj",
 			"Dorgan",
 			"Glanthor Reviol",
-			"TK-999",
 			"Macofe",
-			"Tacsipacsi",
-			"Bencemac"
+			"TK-999",
+			"Tacsipacsi"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Lehetővé teszi]] IP-címek [[Special:GlobalBlockList|blokkolását]] egyszerre több wikiben",

@@ -2,8 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Esbardu",
-			"Xuacu",
-			"Macofe"
+			"Macofe",
+			"Xuacu"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permite]] [[Special:GlobalBlockList|bloquiar en múltiples wikis]] direicciones IP",

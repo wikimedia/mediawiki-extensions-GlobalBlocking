@@ -1,5 +1,7 @@
 {
-	"@metadata": [],
+	"@metadata": {
+		"authors": []
+	},
 	"globalblocking-block-reason": "Dalili:",
 	"globalblocking-unblock-reason": "Dalili:",
 	"globalblocking-whitelist-reason": "Dalili:"

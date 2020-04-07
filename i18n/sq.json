@@ -1,12 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"FatosMorina",
-			"Mikullovci11",
-			"Olsi",
-			"Macofe",
 			"Ammartivari",
-			"Kosovastar"
+			"FatosMorina",
+			"Kosovastar",
+			"Macofe",
+			"Mikullovci11",
+			"Olsi"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Lejon]] adresat IP të jenë [[Special:GlobalBlockList|të bllokuara në shumë wiki]]",

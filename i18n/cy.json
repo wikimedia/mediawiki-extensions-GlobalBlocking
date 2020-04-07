@@ -2,8 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Lloffiwr",
-			"Pwyll",
-			"Macofe"
+			"Macofe",
+			"Pwyll"
 		]
 	},
 	"globalblocking-desc": "Yn [[Special:GlobalBlock|galluogi]] cyfeiriadau IP i gael eu [[Special:GlobalBlockList|blocio ar sawl wici gwahanol]]",

@@ -2,9 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"Li-sung",
-			"Mormegil",
 			"Macofe",
-			"Matěj Suchánek"
+			"Matěj Suchánek",
+			"Mormegil"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Umožňuje]] blokovat IP adresy [[Special:GlobalBlockList|na více wiki současně]]",

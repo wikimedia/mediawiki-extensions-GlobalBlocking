@@ -1,18 +1,18 @@
 {
 	"@metadata": {
 		"authors": [
+			"Acamicamacaraca",
+			"BadDog",
 			"FriedrickMILBarbarossa",
+			"Macofe",
 			"Milicevic01",
 			"Rancher",
 			"Sasa Stefanovic",
+			"Zoranzoki21",
 			"Јованвб",
 			"Жељко Тодоровић",
 			"Михајло Анђелковић",
-			"Macofe",
-			"Сербијана",
-			"Acamicamacaraca",
-			"Zoranzoki21",
-			"BadDog"
+			"Сербијана"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Дозвољава]] [[Special:GlobalBlockList|глобално блокирање]] IP адреса на више викија",

@@ -2,14 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"DCLXVI",
-			"Spiritia",
-			"Stanqo",
-			"Turin",
 			"Macofe",
 			"ShockD",
+			"Spiritia",
 			"StanProg",
-			"Vlad5250",
-			"Ted Masters"
+			"Stanqo",
+			"Ted Masters",
+			"Turin",
+			"Vlad5250"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Позволява]] IP-адреси да се [[Special:GlobalBlockList|блокират едновременно в множество уикита]]",

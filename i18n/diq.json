@@ -1,17 +1,17 @@
 {
 	"@metadata": {
 		"authors": [
+			"1917 Ekim Devrimi",
 			"Aspar",
 			"Erdemaslancan",
 			"Gorizon",
+			"Gırd",
+			"Kumkumuk",
+			"Macofe",
 			"Marmase",
 			"Mirzali",
-			"Xoser",
-			"Macofe",
-			"Kumkumuk",
-			"Gırd",
-			"1917 Ekim Devrimi",
-			"Orbot707"
+			"Orbot707",
+			"Xoser"
 		]
 	},
 	"globalblocking-desc": "Adresanê IP yer [[Special:GlobalBlockList|zafın wikiyan heta wedaryayışi rê]] [[Special:GlobalBlock|icazet dano]]",

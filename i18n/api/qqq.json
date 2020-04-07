@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"A2093064",
 			"Crt",
 			"Darth Kule",
 			"EugeneZelenko",
@@ -8,8 +9,11 @@
 			"Fryed-peach",
 			"Glaisher",
 			"Jon Harald Søby",
+			"Legoktm",
+			"Liuxinyu970226",
 			"Lloffiwr",
 			"Meno25",
+			"Metalhead64",
 			"Mormegil",
 			"Nemo bis",
 			"Nike",
@@ -23,11 +27,7 @@
 			"Umherirrender",
 			"Urhixidur",
 			"Yekrats",
-			"Тест",
-			"Liuxinyu970226",
-			"Legoktm",
-			"Metalhead64",
-			"A2093064"
+			"Тест"
 		]
 	},
 	"apihelp-globalblock-description": "{{doc-apihelp-description|globalblock}}",

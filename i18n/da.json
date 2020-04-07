@@ -2,18 +2,18 @@
 	"@metadata": {
 		"authors": [
 			"Christian List",
+			"Dipsacus fullonum",
 			"Fnielsen",
 			"Hylle",
 			"Jan Friberg",
+			"Macofe",
 			"Masz",
 			"Peter Alberti",
+			"Psl85",
+			"Saederup92",
 			"Sarrus",
 			"Steenth",
-			"Tjernobyl",
-			"Macofe",
-			"Saederup92",
-			"Psl85",
-			"Dipsacus fullonum"
+			"Tjernobyl"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Tillader]] at IP-adresser bliver [[Special:GlobalBlockList|blokeret på tværs af talrige wikier]]",

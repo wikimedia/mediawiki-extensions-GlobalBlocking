@@ -2,20 +2,20 @@
 	"@metadata": {
 		"authors": [
 			"Bersam",
+			"Calak",
 			"Ebraminio",
+			"Hosseinblue",
 			"Huji",
 			"Ladsgroup",
 			"Leyth",
+			"Macofe",
 			"Mardetanha",
+			"Mehran",
 			"Mjbmr",
 			"Reza1615",
 			"Sahim",
 			"Wayiran",
-			"ZxxZxxZ",
-			"Calak",
-			"Mehran",
-			"Macofe",
-			"Hosseinblue"
+			"ZxxZxxZ"
 		]
 	},
 	"globalblocking-desc": "قطع دسترسی نشانی‌های اینترنتی [[Special:GlobalBlockList|در چندین ویکی]] را [[Special:GlobalBlock|ممکن می‌سازد]]",

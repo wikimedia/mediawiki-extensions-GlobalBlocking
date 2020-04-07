@@ -2,8 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Joachim Mos",
-			"Slomox",
-			"Macofe"
+			"Macofe",
+			"Slomox"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Sperrt]] IP-Adressen op [[Special:GlobalBlockList|all Wikis]]",

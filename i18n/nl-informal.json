@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Siebrand",
-			"Macofe"
+			"Macofe",
+			"Siebrand"
 		]
 	},
 	"globalblocking-block-intro": "Je kunt deze pagina gebruiken om een IP-adres op alle wiki's te blokkeren.",

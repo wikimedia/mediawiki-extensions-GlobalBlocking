@@ -3,12 +3,12 @@
 		"authors": [
 			"EugeneZelenko",
 			"Jim-by",
-			"Red Winged Duck",
-			"Wizardist",
-			"Zedlik",
 			"Macofe",
+			"Red Winged Duck",
 			"Renessaince",
-			"Vlad5250"
+			"Vlad5250",
+			"Wizardist",
+			"Zedlik"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Дазваляе]] блякаваньне IP-адрасоў у [[Special:GlobalBlockList|некалькіх вікі]]",

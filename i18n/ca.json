@@ -2,15 +2,15 @@
 	"@metadata": {
 		"authors": [
 			"Aleator",
+			"Jaumeortola",
+			"Macofe",
 			"Papapep",
 			"Paucabot",
 			"SMP",
 			"Solde",
+			"Ssola",
 			"Toniher",
-			"Vriullop",
-			"Macofe",
-			"Jaumeortola",
-			"Ssola"
+			"Vriullop"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permet]] [[Special:GlobalBlockList|blocar]] les adreces IP de diversos wikis",

@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Vlad5250",
-			"StanProg"
+			"StanProg",
+			"Vlad5250"
 		]
 	},
 	"apihelp-globalblock-description": "Глобално блокирайте или отблокирайте потребител.",

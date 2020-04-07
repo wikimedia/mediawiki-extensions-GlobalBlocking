@@ -1,20 +1,20 @@
 {
 	"@metadata": {
 		"authors": [
+			"Araceletorres",
 			"Brunoy Anastasiya Seryozhenko",
 			"Cainamarques",
+			"Eduardo Addad de Oliveira",
 			"Eduardo.mps",
+			"Felipe L. Ewald",
+			"He7d3r",
 			"Helder.wiki",
 			"Heldergeovane",
 			"Luckas",
 			"Luckas Blade",
-			"Rafael Vargas",
-			"Sir Lestaty de Lioncourt",
-			"He7d3r",
-			"Araceletorres",
 			"Macofe",
-			"Felipe L. Ewald",
-			"Eduardo Addad de Oliveira"
+			"Rafael Vargas",
+			"Sir Lestaty de Lioncourt"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permite]] que endereços IP sejam [[Special:GlobalBlockList|bloqueados através de múltiplos wikis]]",

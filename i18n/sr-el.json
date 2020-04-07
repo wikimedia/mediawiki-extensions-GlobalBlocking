@@ -2,13 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"FriedrickMILBarbarossa",
+			"Macofe",
 			"Michaello",
 			"Milicevic01",
+			"Zoranzoki21",
 			"Жељко Тодоровић",
 			"Михајло Анђелковић",
-			"Macofe",
-			"Сербијана",
-			"Zoranzoki21"
+			"Сербијана"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Omogućuje]] [[Special:GlobalBlockList|globalno blokiranje]] IP adresa na više vikija",

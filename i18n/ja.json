@@ -2,20 +2,20 @@
 	"@metadata": {
 		"authors": [
 			"Aotake",
+			"Azeha",
 			"Fievarsty",
 			"Fryed-peach",
 			"Hosiryuhosi",
+			"Macofe",
 			"Muttley",
+			"Otokoume",
+			"Rxy",
 			"Schu",
 			"Shirayuki",
-			"Whym",
-			"青子守歌",
-			"Rxy",
-			"W.CC",
 			"Sujiniku",
-			"Azeha",
-			"Macofe",
-			"Otokoume"
+			"W.CC",
+			"Whym",
+			"青子守歌"
 		]
 	},
 	"globalblocking-desc": "IPアドレスを[[Special:GlobalBlockList|複数のウィキで横断的に]][[Special:GlobalBlock|ブロックする]]",

@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
+			"Macofe",
 			"Praveenp",
-			"Shijualex",
-			"Macofe"
+			"Shijualex"
 		]
 	},
 	"globalblocking-desc": "ഐ.പി. വിലാസങ്ങളെ [[Special:GlobalBlockList|വിവിധ വിക്കികളിൽ തടയാൻ]] [[Special:GlobalBlock|അനുവദിക്കുന്നു]]",

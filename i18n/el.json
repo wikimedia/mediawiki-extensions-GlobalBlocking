@@ -7,11 +7,11 @@
 			"Dead3y3",
 			"Geraki",
 			"Glavkos",
-			"Omnipaedista",
-			"ZaDiak",
-			"Απεργός",
 			"Macofe",
-			"Protnet"
+			"Omnipaedista",
+			"Protnet",
+			"ZaDiak",
+			"Απεργός"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Επιτρέπει]] διευθύνσεις IP να [[Special:GlobalBlockList|φραγούν σε πολλαπλά wikis]]",

@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
+			"Macofe",
 			"Meno25",
-			"Ramsis II",
-			"Macofe"
+			"Ramsis II"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock| بيسمح]] بمنع عناوين الاى بى [[Special:GlobalBlockList|على اكتر من ويكي]]",

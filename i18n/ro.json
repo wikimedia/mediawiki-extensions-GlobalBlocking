@@ -1,16 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
+			"Andrei Stroe",
 			"Cin",
 			"Firilacroco",
+			"Gikü",
 			"KlaudiuMihaila",
+			"Macofe",
 			"Mihai",
 			"Minisarm",
 			"Stelistcristi",
-			"Gikü",
-			"Macofe",
-			"WebSourceContentRO",
-			"Andrei Stroe"
+			"WebSourceContentRO"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permite]] ca adresele IP să fie [[Special:GlobalBlockList|blocate pe mai multe wikiuri]]",

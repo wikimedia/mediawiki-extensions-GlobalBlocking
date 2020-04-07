@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mdupont",
-			"Macofe"
+			"Macofe",
+			"Mdupont"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Lejon]] IP adresat që do të [[Special:GlobalBlockList|bllokuar të gjithë të shumta wikis]]",

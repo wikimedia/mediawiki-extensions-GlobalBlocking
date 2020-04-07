@@ -2,10 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"Helix84",
-			"Teslaton",
+			"Luky001",
 			"Macofe",
-			"Vlad5250",
-			"Luky001"
+			"Teslaton",
+			"Vlad5250"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Umožňuje]] zablokovať IP adresy [[Special:GlobalBlockList|na viacerých wiki]]",
