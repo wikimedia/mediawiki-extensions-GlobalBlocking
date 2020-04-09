@@ -18,7 +18,7 @@
 			"WikiPhoenix"
 		]
 	},
-	"globalblocking-desc": "[[Special:GlobalBlock|Tillåter]] IP-adresser att bli [[Special:GlobalBlockList|blockerade tvärs över mångfaldiga wikier]]",
+	"globalblocking-desc": "[[Special:GlobalBlock|Gör det möjligt]] att blockera IP-adresser [[Special:GlobalBlockList|över flera wikier]]",
 	"globalblocking-block": "Blockerar en IP-adress globalt",
 	"globalblocking-block-intro": "Du kan använda denna sida för att blockera en IP-adress på alla wikier.",
 	"globalblocking-block-reason": "Anledning:",
@@ -40,6 +40,7 @@
 	"globalblocking-block-alreadyblocked": "IP-adressen $1 är redan blockerad globalt.\nDu kan visa den existerande blockeringen på [[Special:GlobalBlockList|listan över globala blockeringar]],\neller ändra inställningarna för den liggande blockeringen genom att igen använda detta formulär.",
 	"globalblocking-block-bigrange": "IP-området du angav ($1) är för stort att blockeras. Du kan blockera högst 65&nbsp;536 adresser (/16-områden)",
 	"globalblocking-also-local": "Blockera även den angivna IP-adressen lokalt på denna wiki",
+	"globalblocking-also-local-talk": "Blockera användare från att redigera sina egna diskussionssidor lokalt",
 	"globalblocking-list-intro": "Det här är en lista över nuvarande globala blockeringar. Vissa blockeringar är lokalt avslagna: det här betyder att den gäller på andra sajter, men att en lokal administratör har bestämt sig för att stänga av blockeringen på sin wiki.",
 	"globalblocking-list": "Lista över globalt blockerade IP-adresser",
 	"globalblocking-search-legend": "Sök efter en global blockering",
