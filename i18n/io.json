@@ -14,7 +14,7 @@
 	"globalblocking-search-errors": "Vua serchado faliis pro la sequanta {{PLURAL:$1|motivo|motivi}}:",
 	"globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> (''$3'') globale blokusis [[Special:Contributions/$4|$4]] ''($5)''",
 	"globalblocking-list-anononly": "nur anonima",
-	"globalblocking-list-unblock": "forigar",
+	"globalblocking-list-unblock": "removar",
 	"globalblocking-list-whitelist": "lokala stando",
 	"globalblocking-list-noresults": "La demandita IP-adreso ne blokusesis.",
 	"globalblocking-unblock-reason": "Motivo:",
