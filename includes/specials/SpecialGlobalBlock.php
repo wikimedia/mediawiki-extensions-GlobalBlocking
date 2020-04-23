@@ -151,6 +151,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 				'type' => 'check',
 				'label-message' => 'globalblocking-also-local-talk',
 				'id' => 'mw-globalblock-local-talk',
+				'hide-if' => [ '!==', 'wpAlsoLocal', '1' ],
 			];
 		}
 
