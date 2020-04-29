@@ -69,9 +69,9 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 		if ( $fld_by ) {
 			$this->addFields( [ 'gb_by', 'gb_by_wiki' ] );
 		}
-		if ( $fld_timestamp ) {
-			$this->addFields( 'gb_timestamp' );
-		}
+
+		$this->addFields( 'gb_timestamp' );
+
 		if ( $fld_expiry ) {
 			$this->addFields( 'gb_expiry' );
 		}
