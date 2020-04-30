@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Araceletorres",
-			"Felipe L. Ewald"
+			"Felipe L. Ewald",
+			"Jhonnatanricardo"
 		]
 	},
 	"apihelp-globalblock-description": "Bloquear ou desbloquear globalmente um usuário.",
@@ -24,5 +25,7 @@
 	"apihelp-query+globalblocks-param-limit": "A quantidade máxima de bloqueios para listar.",
 	"apihelp-query+globalblocks-param-prop": "Que propriedades obter.",
 	"apihelp-query+globalblocks-example-1": "Listar todos os bloqueios globais",
-	"apihelp-query+globalblocks-example-2": "Listar bloqueios globais aplicados ao endereço IP 192.0.2.18"
+	"apihelp-query+globalblocks-example-2": "Listar bloqueios globais aplicados ao endereço IP 192.0.2.18",
+	"apihelp-globalblock-param-alsolocal": "Bloquear o IP localmente também",
+	"apihelp-globalblock-param-localblockstalk": "Revogar acesso local da página de discussão"
 }

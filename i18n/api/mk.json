@@ -23,5 +23,7 @@
 	"apihelp-query+globalblocks-param-limit": "Највеќе блокови во исписот.",
 	"apihelp-query+globalblocks-param-prop": "Кои својства да се дадат.",
 	"apihelp-query+globalblocks-example-1": "Список на сите глобални блокови",
-	"apihelp-query+globalblocks-example-2": "Испиши ги глобалните блокови што се однесуват на IP-адресата 192.0.2.18"
+	"apihelp-query+globalblocks-example-2": "Испиши ги глобалните блокови што се однесуват на IP-адресата 192.0.2.18",
+	"apihelp-globalblock-param-alsolocal": "Воедно блокирај ја IP-адресата и месно",
+	"apihelp-globalblock-param-localblockstalk": "Месно отстрани пристап до разговорната страница"
 }

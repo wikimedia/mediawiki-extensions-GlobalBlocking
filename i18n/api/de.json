@@ -26,5 +26,7 @@
 	"apihelp-query+globalblocks-param-limit": "Die maximale Anzahl der aufzulistenden Sperren.",
 	"apihelp-query+globalblocks-param-prop": "Zurückzugebende Eigenschaften",
 	"apihelp-query+globalblocks-example-1": "Alle globale Sperren auflisten",
-	"apihelp-query+globalblocks-example-2": "Listet globale Sperren der IP-Adresse 192.0.2.18 auf"
+	"apihelp-query+globalblocks-example-2": "Listet globale Sperren der IP-Adresse 192.0.2.18 auf",
+	"apihelp-globalblock-param-alsolocal": "Sperre die IP-Adresse auch lokal",
+	"apihelp-globalblock-param-localblockstalk": "Lokalen Zugang zur Diskussionsseite aufheben"
 }

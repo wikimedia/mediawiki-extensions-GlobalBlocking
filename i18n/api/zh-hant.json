@@ -24,5 +24,7 @@
 	"apihelp-query+globalblocks-param-limit": "要列出封鎖的最大數量。",
 	"apihelp-query+globalblocks-param-prop": "要取得的屬性。",
 	"apihelp-query+globalblocks-example-1": "所有全域封鎖清單",
-	"apihelp-query+globalblocks-example-2": "列出套用在 IP 位址 192.0.2.18 的全域封鎖"
+	"apihelp-query+globalblocks-example-2": "列出套用在 IP 位址 192.0.2.18 的全域封鎖",
+	"apihelp-globalblock-param-alsolocal": "在本地端也封鎖 IP",
+	"apihelp-globalblock-param-localblockstalk": "撤銷在本地端存取討論頁"
 }
