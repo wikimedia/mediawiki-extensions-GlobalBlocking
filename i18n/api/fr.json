@@ -27,5 +27,7 @@
 	"apihelp-query+globalblocks-param-limit": "Le nombre maximal de blocages à lister.",
 	"apihelp-query+globalblocks-param-prop": "Quelles propriétés obtenir.",
 	"apihelp-query+globalblocks-example-1": "Lister tous les blocages globaux",
-	"apihelp-query+globalblocks-example-2": "Lister les blocages globaux s’appliquant à l’adresse IP 192.0.2.18"
+	"apihelp-query+globalblocks-example-2": "Lister les blocages globaux s’appliquant à l’adresse IP 192.0.2.18",
+	"apihelp-globalblock-param-alsolocal": "Bloquer aussi l’adresse IP localement",
+	"apihelp-globalblock-param-localblockstalk": "Révoquer localement l’accès à la page de discussion"
 }

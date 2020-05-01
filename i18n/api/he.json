@@ -25,5 +25,7 @@
 	"apihelp-query+globalblocks-param-limit": "המספר המרבי של חסימות ברשימה.",
 	"apihelp-query+globalblocks-param-prop": "אילו מאפיינים להחזיר.",
 	"apihelp-query+globalblocks-example-1": "רשימת כל החסימות הגלובליות",
-	"apihelp-query+globalblocks-example-2": "רשימת חסימות גלובלית של כתובת IP של 192.0.2.18"
+	"apihelp-query+globalblocks-example-2": "רשימת חסימות גלובלית של כתובת IP של 192.0.2.18",
+	"apihelp-globalblock-param-alsolocal": "לחסום את כתובת ה־IP גם מקומית",
+	"apihelp-globalblock-param-localblockstalk": "לשלול גישה לדפי שיחה מקומית"
 }

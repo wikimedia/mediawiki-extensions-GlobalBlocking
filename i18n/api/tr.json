@@ -23,5 +23,7 @@
 	"apihelp-query+globalblocks-param-limit": "Listelenecek maksimum blok sayısı.",
 	"apihelp-query+globalblocks-param-prop": "Hangi özelliklere sahip olunur.",
 	"apihelp-query+globalblocks-example-1": "Tüm küresel blokları listele",
-	"apihelp-query+globalblocks-example-2": "192.0.2.18 IP adresine uygulanan genel blokları listele"
+	"apihelp-query+globalblocks-example-2": "192.0.2.18 IP adresine uygulanan genel blokları listele",
+	"apihelp-globalblock-param-alsolocal": "IP'yi yerel olarak da engelleyin",
+	"apihelp-globalblock-param-localblockstalk": "Tartışma sayfası erişimini yerel olarak iptal et"
 }
