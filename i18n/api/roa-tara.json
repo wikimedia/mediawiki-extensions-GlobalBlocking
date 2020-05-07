@@ -23,5 +23,7 @@
 	"apihelp-query+globalblocks-param-limit": "'U numere massime de blocche jndr'à l'elenghe.",
 	"apihelp-query+globalblocks-param-prop": "Quale probbietà da pigghià.",
 	"apihelp-query+globalblocks-example-1": "Elenghe de tutte le blocche globbale",
-	"apihelp-query+globalblocks-example-2": "Elenghe de le blocche globbale applecate a l'indirizze IP 192.0.2.18"
+	"apihelp-query+globalblocks-example-2": "Elenghe de le blocche globbale applecate a l'indirizze IP 192.0.2.18",
+	"apihelp-globalblock-param-alsolocal": "Blocche l'IP pure localmende",
+	"apihelp-globalblock-param-localblockstalk": "Lìve l'accesse localmende a 'a probbia pàgene de le 'ngazzaminde"
 }
