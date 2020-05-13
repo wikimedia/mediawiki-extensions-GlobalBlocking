@@ -40,6 +40,7 @@
 	"globalblocking-block-alreadyblocked": "Adres IP $1 jest obecnie zablokowany globalnie.\nMożesz przejrzeć aktualnie obowiązujące blokady w [[Special:GlobalBlockList|spisie globalnych blokad]]\nlub zmienić ustawienia istniejącej blokady poprzez zapisanie tego formularza.",
 	"globalblocking-block-bigrange": "Podany przez Ciebie zakres ($1) jest za duży by mógł zostać zablokowany.\nMożesz zablokować nie więcej niż 65536 adresów (maska 16 bitów)",
 	"globalblocking-also-local": "Zablokuj także dany adres IP lokalnie na tej wiki",
+	"globalblocking-also-local-talk": "Zablokuj lokalnie edytowanie przez tego użytkownika swojej strony dyskusji",
 	"globalblocking-list-intro": "Poniżej znajduje się lista wszystkich obecnie nałożone globalnych blokad.\nNiektóre blokady zostały oznaczone jako odblokowane lokalnie – oznacza to, że jeden z lokalnych administratorów zdecydował się zdjąć blokadę na tej wiki, ale wciąż obowiązuje ona na innych projektach.",
 	"globalblocking-list": "Spis globalnie zablokowanych adresów IP",
 	"globalblocking-search-legend": "Szukaj globalnej blokady",
