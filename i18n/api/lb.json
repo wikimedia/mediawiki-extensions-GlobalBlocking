@@ -7,5 +7,6 @@
 	"apihelp-globalblock-summary": "E Benotzer global spären oder d'Spär global ophiewen.",
 	"apihelp-globalblock-param-modify": "Gitt dëst un, wann d'Spär (wann et esou eng gëtt) vum Zil geännert gi soll.",
 	"apihelp-query+globalblocks-description": "All global gespaarten IP-Adressen opzielen.",
-	"apihelp-query+globalblocks-summary": "All global gespaarten IP-Adressen opzielen."
+	"apihelp-query+globalblocks-summary": "All global gespaarten IP-Adressen opzielen.",
+	"apihelp-globalblock-param-alsolocal": "IP och lokal spären"
 }
