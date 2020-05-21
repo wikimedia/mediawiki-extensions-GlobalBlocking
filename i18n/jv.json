@@ -4,6 +4,7 @@
 			"Bennylin",
 			"Macofe",
 			"Meursault2004",
+			"N219",
 			"NoiX180",
 			"Pras"
 		]
@@ -27,7 +28,7 @@
 	"globalblocking-modify-success": "Blokiran global nèng $1 sukses diowah",
 	"globalblocking-block-alreadyblocked": "Alamat IP $1 wis diblokir sacara global.\nPanjenengan bisa mirsani blokade sing ana ing [[Special:GlobalBlockList|dhaptar blokade global]],\nutawa owahi status pamblokiran sing ana kanthi ngirimaké manèh formulir iki.",
 	"globalblocking-block-bigrange": "Rentang sing panjenengan lebokaké ($1) kekamban kanggo diblokir.\nPanjenengan bisa mblokir, paling akèh, 65.536 alamat (/16 rentang)",
-	"globalblocking-list-intro": "Iki dhaptar kabèh pamblokiran global sing ana.\nSawetara pamblokiran ditandhani minangka ora-aktif sacara lokal: iki tegesé pambokiran iki aktif ing situs liya, nanging pangurus lokal mutusaké mbukak blokade ing wiki lokal kasebut.",
+	"globalblocking-list-intro": "Iki pratélan kabèh pamblokiran global sing ana.\nSawetara pamblokiran ditandhani minangka ora-aktif sacara lokal: iki tegesé pamblokiran iki aktif ing situs liya, nanging panata lokal mutusaké kanggo matèni pamblokiran ing kéné.",
 	"globalblocking-list": "Daftar alamat-alamat IP sing diblokir sacara global",
 	"globalblocking-search-legend": "Nggolèki blokade global",
 	"globalblocking-search-ip": "Alamat IP:",
