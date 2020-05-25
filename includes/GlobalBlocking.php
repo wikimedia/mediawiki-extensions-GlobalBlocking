@@ -462,7 +462,7 @@ class GlobalBlocking {
 			$errors[] = [ 'globalblocking-block-ipinvalid', $ip ];
 		}
 
-		if ( false === $expiry ) {
+		if ( $expiry === false ) {
 			$errors[] = [ 'globalblocking-block-expiryinvalid' ];
 		}
 
