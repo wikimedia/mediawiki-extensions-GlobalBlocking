@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Bennylin",
+			"Diki Ananta",
 			"Macofe",
 			"Meursault2004",
 			"N219",
@@ -19,8 +20,8 @@
 	"globalblocking-block-expiry-selector-other": "Wektu liya:",
 	"globalblocking-block-legend": "Blokir global sawiji alamat IP",
 	"globalblocking-ipaddress": "Alamat IP:",
-	"globalblocking-ipbanononly": "Blokir panganggo ora dikenal thok",
-	"globalblocking-block-ipinvalid": "AlamatIP sing dilebokaké ($1) iku ora absah.\nTulung digatèkaké yèn panjenengan ora bisa nglebokaké jeneng panganggo!",
+	"globalblocking-ipbanononly": "Blokir naraguna ora dikenal thok",
+	"globalblocking-block-ipinvalid": "Alamat IP sing dilebokaké ($1) iku ora absah.\nTulung digatèkaké yèn panjenengan ora bisa nglebokaké jeneng naraguna!",
 	"globalblocking-block-expiryinvalid": "Wektu kadaluwarsa sing dilebokaké ora absah.",
 	"globalblocking-block-submit": "Blokir alamat IP iki sacara global",
 	"globalblocking-modify-submit": "Owah blokiran global iki",
@@ -49,7 +50,7 @@
 	"globalblocking-return": "Bali menyang pratélan blokir global",
 	"globalblocking-notblocked": "Alamat IP ($1) sing panjenengan lebokaké ora diblokir sacara global.",
 	"globalblocking-unblock": "Busak blokiran global",
-	"globalblocking-unblock-ipinvalid": "AlamatIP sing dilebokaké ($1) iku ora absah.\nTulung digatèkaké yèn panjenengan ora bisa nglebokaké jeneng panganggo!",
+	"globalblocking-unblock-ipinvalid": "Alamat IP sing dilebokaké ($1) iku ora absah.\nTulung digatèkaké yèn panjenengan ora bisa nglebokaké jeneng naraguna!",
 	"globalblocking-unblock-legend": "Busak blokiran global",
 	"globalblocking-unblock-submit": "Busak blokiran global",
 	"globalblocking-unblock-reason": "Alesan:",
