@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"Kkairri",
 			"Shirayuki",
 			"W.CC"
 		]
 	},
 	"apihelp-globalblock-description": "利用者のグローバルロックまたはロック解除。",
+	"apihelp-globalblock-summary": "利用者をグローバルでブロックまたはブロック解除する。",
 	"apihelp-globalblock-param-target": "対象となるIPアドレス。",
 	"apihelp-globalblock-param-unblock": "指定した場合、利用者のブロックを解除します。",
 	"apihelp-globalblock-param-reason": "ブロック/ブロック解除理由。",
