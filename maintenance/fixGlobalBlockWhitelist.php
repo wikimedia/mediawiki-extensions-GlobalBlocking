@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
@@ -85,6 +87,7 @@ class FixGlobalBlockWhitelist extends Maintenance {
 
 	protected function fixBrokenWhitelist( array $brokenEntries ) {
 		$count = 0;
+		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
 		foreach ( $brokenEntries as $newId => $address ) {
 			if ( $this->dryRun ) {
 				$this->output( " Whitelist broken {$address}: current gb_id is $newId\n" );
@@ -98,7 +101,7 @@ class FixGlobalBlockWhitelist extends Maintenance {
 				);
 				$this->output( " Fixed {$address}: id changed to $newId\n" );
 				if ( $count === $this->mBatchSize ) {
-					wfWaitForSlaves();
+					$lbFactory->waitForReplication();
 					$count = 0;
 				}
 			}
