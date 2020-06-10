@@ -127,32 +127,35 @@ class GlobalBlocking {
 				$xffIps = array_map( 'trim', explode( ',', $xffIps ) );
 				$blocks = self::checkIpsForBlock( $xffIps, $user->isAnon() );
 				if ( count( $blocks ) > 0 ) {
-					list( $blockIP, $block ) = self::getAppliedBlock( $xffIps, $blocks );
-					$blockTimestamp = $wgLang->timeanddate(
-						wfTimestamp( TS_MW, $block->gb_timestamp ),
-						true
-					);
-					$blockExpiry = $wgLang->formatExpiry( $block->gb_expiry );
-					$display_wiki = WikiMap::getWikiName( $block->gb_by_wiki );
-					$blockingUser = self::maybeLinkUserpage( $block->gb_by_wiki, $block->gb_by );
-					// Allow site customization of blocked message.
-					$blockedIpXffMsg = 'globalblocking-ipblocked-xff';
-					Hooks::run( 'GlobalBlockingBlockedIpXffMsg', [ &$blockedIpXffMsg ] );
-					$result = [
-						'block' => $block,
-						'error' => [
-							wfMessage(
-								$blockedIpXffMsg,
-								$blockingUser,
-								$display_wiki,
-								$block->gb_reason,
-								$blockTimestamp,
-								$blockExpiry,
-								$blockIP
-							)
-						],
-					];
-					return $result;
+					$appliedBlock = self::getAppliedBlock( $xffIps, $blocks );
+					if ( $appliedBlock !== null ) {
+						list( $blockIP, $block ) = $appliedBlock;
+						$blockTimestamp = $wgLang->timeanddate(
+							wfTimestamp( TS_MW, $block->gb_timestamp ),
+							true
+						);
+						$blockExpiry = $wgLang->formatExpiry( $block->gb_expiry );
+						$display_wiki = WikiMap::getWikiName( $block->gb_by_wiki );
+						$blockingUser = self::maybeLinkUserpage( $block->gb_by_wiki, $block->gb_by );
+						// Allow site customization of blocked message.
+						$blockedIpXffMsg = 'globalblocking-ipblocked-xff';
+						Hooks::run( 'GlobalBlockingBlockedIpXffMsg', [ &$blockedIpXffMsg ] );
+						$result = [
+							'block' => $block,
+							'error' => [
+								wfMessage(
+									$blockedIpXffMsg,
+									$blockingUser,
+									$display_wiki,
+									$block->gb_reason,
+									$blockTimestamp,
+									$blockExpiry,
+									$blockIP
+								)
+							],
+						];
+						return $result;
+					}
 				}
 			}
 		}
