@@ -47,7 +47,7 @@ class GlobalBlocking {
 	/**
 	 * @param User $user
 	 * @param string $ip
-	 * @return array empty or message objects
+	 * @return Message[] empty or message objects
 	 * @throws MWException
 	 */
 	public static function getUserBlockErrors( $user, $ip ) {
@@ -59,6 +59,7 @@ class GlobalBlocking {
 	 * @param User $user
 	 * @param string $ip
 	 * @return array ['block' => DB row, 'error' => empty or message objects]
+	 * @phan-return array{block:stdClass|null,error:Message[]}
 	 * @throws MWException
 	 */
 	private static function getUserBlockDetails( $user, $ip ) {
@@ -182,7 +183,7 @@ class GlobalBlocking {
 	 * This is based on DatabaseBlock::chooseMostSpecificBlock
 	 *
 	 * @param IResultWrapper $blocks These should not include autoblocks or ID blocks
-	 * @return object|null The block with the most specific target
+	 * @return stdClass|null The block with the most specific target
 	 */
 	protected static function chooseMostSpecificBlock( $blocks ) {
 		if ( $blocks->numRows() === 1 ) {
@@ -225,7 +226,7 @@ class GlobalBlocking {
 	 * Get a block
 	 * @param string $ip The IP address to be checked
 	 * @param bool $anon Get anon blocks only
-	 * @return object|false The block, or false if none is found
+	 * @return stdClass|false The block, or false if none is found
 	 */
 	public static function getGlobalBlockingBlock( $ip, $anon ) {
 		$dbr = self::getGlobalBlockingDatabase( DB_REPLICA );
@@ -244,7 +245,7 @@ class GlobalBlocking {
 	/**
 	 * Get a database range condition for an IP address
 	 * @param string $ip The IP address or range
-	 * @return array a SQL condition
+	 * @return string[] a SQL condition
 	 */
 	public static function getRangeCondition( $ip ) {
 		$dbr = self::getGlobalBlockingDatabase( DB_REPLICA );
@@ -266,9 +267,9 @@ class GlobalBlocking {
 
 	/**
 	 * Check an array of IPs for a block on any
-	 * @param array $ips The Array of IP addresses to be checked
+	 * @param string[] $ips The Array of IP addresses to be checked
 	 * @param bool $anon Get anon blocks only
-	 * @return array of applicable blocks
+	 * @return stdClass[] Array of applicable blocks
 	 */
 	private static function checkIpsForBlock( $ips, $anon ) {
 		$dbr = self::getGlobalBlockingDatabase( DB_REPLICA );
@@ -308,9 +309,10 @@ class GlobalBlocking {
 	 * From a list of XFF ips, and list of blocks that apply, choose the block that will
 	 * be shown to the end user. Using the first block in the array for now.
 	 *
-	 * @param array $ips The Array of IP addresses to be checked
-	 * @param array $blocks The Array of blocks (db rows)
+	 * @param string[] $ips The Array of IP addresses to be checked
+	 * @param stdClass[] $blocks The Array of blocks (db rows)
 	 * @return array|null ($ip, $block) the chosen ip and block
+	 * @phan-return array{string,stdClass}|null
 	 */
 	private static function getAppliedBlock( $ips, $blocks ) {
 		$block = array_shift( $blocks );
@@ -388,7 +390,8 @@ class GlobalBlocking {
 	/**
 	 * @param null|int $id
 	 * @param null|string $address
-	 * @return array|bool
+	 * @return array|false
+	 * @phan-return array{user:int,reason:string}|false
 	 * @throws Exception
 	 */
 	public static function getWhitelistInfo( $id = null, $address = null ) {
@@ -421,6 +424,7 @@ class GlobalBlocking {
 	/**
 	 * @param string $block_ip
 	 * @return array|bool
+	 * @phan-return array{user:int,reason:string}|false
 	 */
 	public static function getWhitelistInfoByIP( $block_ip ) {
 		return self::getWhitelistInfo( null, $block_ip );
@@ -446,7 +450,7 @@ class GlobalBlocking {
 	 * @param string|bool $expiry
 	 * @param User $blocker
 	 * @param array $options
-	 * @return array[]
+	 * @return array[] Empty on success, array to create message objects on failure
 	 */
 	public static function insertBlock( $address, $reason, $expiry, $blocker, $options = [] ) {
 		$errors = [];
@@ -527,7 +531,7 @@ class GlobalBlocking {
 	 * @param string $expiry
 	 * @param User $blocker
 	 * @param array $options
-	 * @return array[]
+	 * @return array[] Empty on success, array to create message objects on failure
 	 */
 	public static function block( $address, $reason, $expiry, $blocker, $options = [] ) {
 		$expiry = SpecialBlock::parseExpiryInput( $expiry );
