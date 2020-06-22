@@ -4,7 +4,8 @@
 			"Li-sung",
 			"Macofe",
 			"Matěj Suchánek",
-			"Mormegil"
+			"Mormegil",
+			"Patriccck"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Umožňuje]] blokovat IP adresy [[Special:GlobalBlockList|na více wiki současně]]",
@@ -17,7 +18,7 @@
 	"globalblocking-block-expiry-selector-other": "Jiný čas vypršení:",
 	"globalblocking-block-legend": "Globálně zablokovat IP adresu",
 	"globalblocking-ipaddress": "IP adresa:",
-	"globalblocking-ipbanononly": "Zablokovat pouze anonymní uživatele",
+	"globalblocking-ipbanononly": "Zablokovat pouze neregistrované uživatele",
 	"globalblocking-block-ipinvalid": "Vámi zadaná IP adresa ($1) je neplatná.\nUvědomte si, že nemůžete zadat uživatelské jméno!",
 	"globalblocking-block-expiryinvalid": "Vámi zadaný čas vypršení je neplatný.",
 	"globalblocking-block-submit": "Globálně zablokovat tuto IP adresu",
