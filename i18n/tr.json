@@ -44,7 +44,7 @@
 	"globalblocking-search-errors": "Aramanız şu {{PLURAL:$1|sebep|sebep}} nedeniyle başarısız oldu:",
 	"globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> (''$3''), [[Special:Contributions/$4|$4]] kullanıcısını küresel olarak engelledi ''($5)''",
 	"globalblocking-list-expiry": "bitiş $1",
-	"globalblocking-list-anononly": "sadece anonim",
+	"globalblocking-list-anononly": "yalnızca anonim",
 	"globalblocking-list-unblock": "kaldır",
 	"globalblocking-list-whitelisted": "$1 tarafından yerel olarak etkisizleştirildi: $2",
 	"globalblocking-list-whitelist": "yerel durum",
