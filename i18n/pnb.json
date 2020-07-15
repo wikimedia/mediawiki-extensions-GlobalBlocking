@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"BaRaN6161 TURK",
 			"Khalid Mahmood",
 			"Macofe"
 		]
@@ -56,7 +57,7 @@
 	"globalblocking-whitelist-status": "لوکل حالت:",
 	"globalblocking-whitelist-statuslabel": "{{SITENAME}} دے اتے گلوبل روک بند کرو",
 	"globalblocking-whitelist-submit": "لوکل حالت بدلو",
-	"globalblocking-whitelist-whitelisted": "تساں کامیابی نال گلوبل روک #$2 آئی پی پتے '''$1''' توں {{سائٹناں}} تے ہٹا دتی اے۔",
+	"globalblocking-whitelist-whitelisted": "تساں کامیابی نال گلوبل روک #$2 آئی پی پتے '''$1''' توں {{SITENAME}} تے ہٹا دتی اے۔",
 	"globalblocking-whitelist-dewhitelisted": "تساں کامیابی نال جگت روک #$2 آئی پی پتے '''$1''' {{ساغٹناں}} توں ہٹا دتی اے۔",
 	"globalblocking-whitelist-nochange": "تساں ایس روک دے لوکل سٹیٹس تے کوئی تبدیلی نئیں کیتی۔\n[[Special:GlobalBlockList|جگت روک لسٹ ول واپسی]]۔",
 	"globalblocking-whitelist-intro": "تسیں ایس فارم نوں اک جگت روک لوکل سٹیٹس نوں بدلن لئی ورت سکدے او۔\nاگر اک جگت روک ایس وکی تے کم نئیں کردی، ورتن والے متاثرہ آئی پی پتے اینوں تبدیل کرن گے۔\n[[Special:GlobalBlockList|جگت روک لسٹ ول چلو]]",
