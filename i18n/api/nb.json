@@ -23,5 +23,6 @@
 	"apihelp-query+globalblocks-param-limit": "Maksimalt antall blokkeringer som skal listes.",
 	"apihelp-query+globalblocks-param-prop": "Hvilke egenskaper som skal hentes.",
 	"apihelp-query+globalblocks-example-1": "List opp alle globale blokkeringer",
-	"apihelp-query+globalblocks-example-2": "Lister opp globale blokkeringer av IP-adressa 192.0.2.18"
+	"apihelp-query+globalblocks-example-2": "Lister opp globale blokkeringer av IP-adressa 192.0.2.18",
+	"apihelp-globalblock-param-alsolocal": "Blokker IP-en lokalt også"
 }
