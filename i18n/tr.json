@@ -9,6 +9,7 @@
 			"Rapsar",
 			"Runningfridgesrule",
 			"Suelnur",
+			"Uncitoyen",
 			"Vito Genovese"
 		]
 	},
@@ -76,7 +77,7 @@
 	"globalblocking-whitelist-intro": "Genel bir bloğun yerel durumunu düzenlemek için bu formu kullanabilirsiniz.\nBu wikide genel engelleme devre dışı bırakılırsa, etkilenen IP adresindeki kullanıcılar normal şekilde düzenleyebilir.",
 	"globalblocking-ipblocked": "'''IP adresiniz tüm wikilerde engellendi.'''\n\nEngel yapan: $1 ($2).\nVerilen sebep: ''$3''.\n\n* Engel başlangıcı: $4\n* Engel bitişi: $5\n\nBloğu tartışmak için $1 ile iletişime geçebilirsiniz.\n[[Special:Preferences|Hesap tercihlerinde]] geçerli bir e-posta adresi belirtilmedikçe ve bu adresi kullanmanız engellenmediği sürece \"{{int:emailuser}}\" özelliğini kullanamazsınız.\nMevcut IP adresiniz $6.\nLütfen yukarıdaki tüm ayrıntıları, yaptığınız sorgulara ekleyin.",
 	"globalblocking-ipblocked-range": "'''IP adresiniz tüm wikilerde engellenen bir aralıkta.'''\n\nEngeli yapan: $1 ($2).\nVerilen sebep: ''$3''.\n\n* Engel başlangıcı: $4\n* Engel bitişi: $5\n\nBloğu tartışmak için $1 ile iletişime geçebilirsiniz.\n[[Special:Preferences|hesap tercihlerinde]] geçerli bir e-posta adresi belirtilmedikçe ve bu adresi kullanmanız engellenmediği sürece \"{{int:emailuser}}\" özelliğini kullanamazsınız.\nMevcut IP adresiniz $6 ve engellenen aralık $7.\nLütfen yukarıdaki tüm ayrıntıları, yaptığınız sorgulara ekleyin.",
-	"globalblocking-ipblocked-xff": "'''İsteğiniz tarafından kullanılan bir veya daha fazla proxy sunucusu küresel olarak engellendi'''\n\nEngelleyen kişi $1 ($2).\nVerilen sebep ''$3''.\n\n* Engel başlangıcı: $4\n* Engel bitişi: $5\n\nBloğu tartışmak için $1 ile iletişime geçebilirsiniz.\n[[Special:Preferences|Hesap tercihlerinde]] geçerli bir e-posta adresi belirtilmedikçe ve bu adresi kullanmanız engellenmediği sürece \"{{int:emailuser}}\" özelliğini kullanamazsınız.\nEngellenen proxy adresi $6 idi.\nLütfen yukarıdaki tüm ayrıntıları, yaptığınız sorgulara ekleyin.",
+	"globalblocking-ipblocked-xff": "'''Sizin kullanmakta olduğunuz bir veya daha fazla proxy sunucusu küresel olarak engellendi'''\n\nEngelleyen kişi $1 ($2).\nVerilen sebep ''$3''.\n\n* Engel başlangıcı: $4\n* Engel bitişi: $5\n\nEngeli tartışmak için $1 ile iletişime geçebilirsiniz.\n[[Special:Preferences|Hesap tercihlerinde]] geçerli bir e-posta adresi belirtilmedikçe ve bu adresi kullanmanız engellenmediği sürece \"{{int:emailuser}}\" özelliğini kullanamazsınız.\nEngellenen proxy adresi $6 idi.\nLütfen yukarıdaki tüm ayrıntıları, yaptığınız sorgulara ekleyin.",
 	"globalblocking-blocked-nopassreset": "IP adresiniz küresel olarak engellendiği için kullanıcının parolarınızı sıfırlayamazsınız.",
 	"globalblocking-logpage": "Küresel engelleme günlüğü",
 	"globalblocking-logpagetext": "Bu, bu vikide yapılan ve kaldırılan küresel engellemelerin günlüğüdür.\nKüresel engellemelerin diğer vikilerde yapılıp kaldırılabileceğini, ve bu küresel engellemelerin bu vikiyi etkileyebileceğini unutmayın.\nTüm aktif küresel engellemeri görmek için, [[Special:GlobalBlockList|küresel engelleme listesine]] bakabilirsiniz.",
