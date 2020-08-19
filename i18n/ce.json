@@ -54,5 +54,6 @@
 	"right-globalblock-whitelist": "глобалан блоктохарш цхьанхьа дӀаяхар",
 	"action-globalblock-whitelist": "глобалан блоктохарш цхьанхьа дӀаяхар",
 	"right-globalblock-exempt": "глобалан блоктохарийн чекхбовлар",
-	"action-globalblock-exempt": "глобалан блоктохарийн чекхбовлар"
+	"action-globalblock-exempt": "глобалан блоктохарийн чекхбовлар",
+	"grant-globalblock": "Глобалан блоктоха я блокдӀаяккха IP-адрес тӀера."
 }
