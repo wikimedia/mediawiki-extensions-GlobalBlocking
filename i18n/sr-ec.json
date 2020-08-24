@@ -98,7 +98,7 @@
 	"right-globalblock-exempt": "заобилажење глобалних блокада",
 	"action-globalblock-exempt": "заобилазите глобално блокирање",
 	"globalblocking-apierror-badip": "IP адреса $1 није важећа",
-	"log-action-filter-gblblock": "Тип глобалног блокирања:",
+	"log-action-filter-gblblock": "Врста глобалног блокирања:",
 	"log-action-filter-gblblock-gblock": "Глобално блокирање",
 	"log-action-filter-gblblock-gunblock": "Глобално деблокирање",
 	"log-action-filter-gblblock-modify": "Измена глобалне блокаде",
