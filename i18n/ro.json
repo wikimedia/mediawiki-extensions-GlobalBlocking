@@ -9,6 +9,7 @@
 			"Macofe",
 			"Mihai",
 			"Minisarm",
+			"NGC 54",
 			"Stelistcristi",
 			"WebSourceContentRO"
 		]
@@ -37,7 +38,7 @@
 	"globalblocking-search-submit": "Caută blocări",
 	"globalblocking-list-ipinvalid": "Adresa IP pe care o căutați ($1) este nevalidă.\nIntroduceți o adresă IP validă.",
 	"globalblocking-search-errors": "Căutarea dumneavoastră nu a reușit din {{PLURAL:$1|următorul motiv|următoarele motive}}:",
-	"globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> (''$3'') a blocat global [[Special:Contributions/$4|$4]] ''($5)''",
+	"globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> (''$3'') a blocat global adresa IP [[Special:Contributions/$4|$4]] ''($5)''",
 	"globalblocking-list-expiry": "expiră $1",
 	"globalblocking-list-anononly": "doar anonimi",
 	"globalblocking-list-unblock": "elimină",
@@ -67,9 +68,11 @@
 	"globalblocking-whitelist-whitelisted": "Ați dezactivat blocarea globală #$2 a adresei IP '''$1''' la {{SITENAME}}.",
 	"globalblocking-whitelist-dewhitelisted": "Ați reactivat blocarea globală #$2 a adresei IP '''$1''' la {{SITENAME}}.",
 	"globalblocking-ipblocked": "'''Adresa dumneavoastră de IP a fost blocată pe toate wiki-urile.'''\n\nBlocarea a fost efectuată de $1 ($2).\nMotivul dat este ''$3''.\n\n* Începutul blocării: $4\n* Sfârșitul blocării: $5\n\nPuteți contacta utilizatorul $1 pentru a discuta blocarea.\nNu puteți utiliza caracteristica \"{{int:emailuser}}\" dacă nu este specificată o adresă de e-mail validă în [[Special:Preferences|preferințele contului]] și nu ați fost împiedicat(ă) să o utilizați.\nAdresa IP actuală este $6.\nIncludeți toate detaliile de mai sus în orice interogare pe care o faceți.",
-	"globalblocking-blocked-nopassreset": "Nu puteți reseta parolele utilizatorului deoarece sunteți blocat la nivel global.",
+	"globalblocking-ipblocked-range": "'''Adresa dumneavoastră de IP se află într-o gamă care fost blocată pe toate wiki-urile.'''\n\nBlocarea a fost efectuată de $1 ($2).\nMotivul dat este ''$3''.\n\n* Începutul blocării: $4\n* Sfârșitul blocării: $5\n\nPuteți contacta utilizatorul $1 pentru a discuta blocarea.\nNu puteți utiliza caracteristica \"{{int:emailuser}}\" dacă nu este specificată o adresă de e-mail validă în [[Special:Preferences|preferințele contului]] și nu ați fost împiedicat(ă) să o utilizați.\nAdresa IP actuală a dvs. este $6, iar gama blocată este $7.\nIncludeți toate detaliile de mai sus în orice interogare pe care o faceți.",
+	"globalblocking-ipblocked-xff": "'''Unul sau mai multe proxy-uri de server utilizate de dvs. la cererea voastră sunt blocate global.'''\n\nBlocarea a fost efectuată de $1 ($2).\nMotivul dat este ''$3''.\n\n* Începutul blocării: $4\n* Sfârșitul blocării: $5\n\nPuteți contacta utilizatorul $1 pentru a discuta blocarea.\nNu puteți utiliza caracteristica \"{{int:emailuser}}\" dacă nu este specificată o adresă de e-mail validă în [[Special:Preferences|preferințele contului]] și nu ați fost împiedicat(ă) să o utilizați.\nAdresa proxy-ului blocat a fost $6.\nIncludeți toate detaliile de mai sus în orice interogare pe care o faceți.",
+	"globalblocking-blocked-nopassreset": "Nu puteți reseta parolele utilizatorului deoarece adresa IP a dvs. este blocată la nivel global.",
 	"globalblocking-logpage": "Jurnal blocări globale",
-	"globalblocking-block-logentry": "a blocat global [[$1]] cu un timp de expirare de $2",
+	"globalblocking-block-logentry": "a blocat global adresa IP [[$1]] cu un termen de expirare de $2",
 	"globalblocking-block2-logentry": "blocat global pe [[$1]] ($2)",
 	"globalblocking-unblock-logentry": "eliminat blocare globală pentru [[$1]]",
 	"globalblocking-modify-logentry": "a modificat blocarea globală pentru [[$1]] ($2)",
@@ -87,5 +90,10 @@
 	"right-globalblock-whitelist": "Dezactivează local blocările globale",
 	"action-globalblock-whitelist": "dezactivați local blocări globale",
 	"right-globalblock-exempt": "Ocolește blocările globale",
-	"action-globalblock-exempt": "treceți peste blocările globale"
+	"action-globalblock-exempt": "treceți peste blocările globale",
+	"globalblocking-apierror-badip": "Adresa IP $1 nu este validă",
+	"log-action-filter-gblblock": "Tipul blocării globale:",
+	"log-action-filter-gblblock-gblock": "Blocare globală",
+	"log-action-filter-gblblock-gunblock": "Deblocare globală",
+	"log-action-filter-gblblock-modify": "Modificare a blocării globale"
 }
