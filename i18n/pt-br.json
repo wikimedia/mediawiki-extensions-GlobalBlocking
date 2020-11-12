@@ -14,7 +14,8 @@
 			"Luckas Blade",
 			"Macofe",
 			"Rafael Vargas",
-			"Sir Lestaty de Lioncourt"
+			"Sir Lestaty de Lioncourt",
+			"Stanglavine"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permite]] que endereços IP sejam [[Special:GlobalBlockList|bloqueados através de múltiplos wikis]]",
@@ -40,7 +41,7 @@
 	"globalblocking-block-bigrange": "O intervalo especificado ($1) é grande demais para ser bloqueado.\nPode bloquear, no máximo, 65.536 endereços (intervalos /16).",
 	"globalblocking-also-local": "Bloquear também o endereço IP fornecido localmente nesta wiki",
 	"globalblocking-also-local-talk": "Bloquear que o usuário edite sua própria página de discussão localmente",
-	"globalblocking-list-intro": "Isto é uma lista de todos os bloqueios globais que estão atualmente em efeito.\nAlguns bloqueios está marcados como desativados localmente: isto significa que se aplicam a outros sítios, mas um administrador local decidiu desativá-los neste wiki.",
+	"globalblocking-list-intro": "Isto é uma lista de todos os bloqueios globais que estão atualmente em efeito.\nAlguns bloqueios estão marcados como desativados localmente: isto significa que se aplicam a outros sítios, mas um administrador local decidiu desativá-los neste wiki.",
 	"globalblocking-list": "Lista de endereços IP bloqueados globalmente",
 	"globalblocking-search-legend": "Pesquisar por um bloqueio global",
 	"globalblocking-search-ip": "Endereço IP:",
