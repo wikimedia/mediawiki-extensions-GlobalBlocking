@@ -29,13 +29,21 @@ class GlobalBlockingHooks {
 	 */
 	public static function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ) {
 		$base = __DIR__ . '/..';
-		switch ( $updater->getDB()->getType() ) {
+		$type = $updater->getDB()->getType();
+
+		$updater->addExtensionTable(
+			'globalblocks',
+			"$base/sql/$type/tables-generated-globalblocks.sql"
+		);
+
+		$updater->addExtensionTable(
+			'global_block_whitelist',
+			"$base/sql/$type/tables-generated-global_block_whitelist.sql"
+		);
+
+		switch ( $type ) {
 			case 'sqlite':
 			case 'mysql':
-				$updater->addExtensionTable(
-					'globalblocks',
-					"$base/sql/globalblocks.sql"
-				);
 				$updater->modifyExtensionField(
 					'globalblocks',
 					'gb_range_start',
@@ -46,10 +54,7 @@ class GlobalBlockingHooks {
 					'gb_reason',
 					"$base/sql/patch-globalblocks-reason-length.sql"
 				);
-				$updater->addExtensionTable(
-					'global_block_whitelist',
-					"$base/sql/global_block_whitelist.sql"
-				);
+
 				$updater->modifyExtensionField(
 					'global_block_whitelist',
 					'gbw_reason',
@@ -60,10 +65,6 @@ class GlobalBlockingHooks {
 					'gbw_by_text',
 					"$base/sql/patch-global_block_whitelist-use-varbinary.sql"
 				);
-				break;
-
-			default:
-				// ERROR
 				break;
 		}
 		return true;
