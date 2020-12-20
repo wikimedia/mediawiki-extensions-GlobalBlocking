@@ -423,7 +423,7 @@ class GlobalBlocking {
 
 	/**
 	 * @param string $block_ip
-	 * @return array|bool
+	 * @return array|false
 	 * @phan-return array{user:int,reason:string}|false
 	 */
 	public static function getWhitelistInfoByIP( $block_ip ) {
@@ -447,7 +447,7 @@ class GlobalBlocking {
 	/**
 	 * @param string $address
 	 * @param string $reason
-	 * @param string|bool $expiry
+	 * @param string|false $expiry
 	 * @param User $blocker
 	 * @param array $options
 	 * @return array[] Empty on success, array to create message objects on failure

@@ -17,6 +17,7 @@ require_once "$IP/maintenance/Maintenance.php";
  */
 class FixGlobalBlockWhitelist extends Maintenance {
 
+	/** @var bool */
 	protected $dryRun = false;
 
 	public function __construct() {

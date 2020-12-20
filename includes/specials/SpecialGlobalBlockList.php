@@ -3,7 +3,7 @@
 use Wikimedia\IPUtils;
 
 class SpecialGlobalBlockList extends SpecialPage {
-	/** @var string */
+	/** @var string|null */
 	protected $target;
 
 	public function __construct() {

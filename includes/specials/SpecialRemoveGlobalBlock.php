@@ -3,10 +3,10 @@
 use Wikimedia\IPUtils;
 
 class SpecialRemoveGlobalBlock extends FormSpecialPage {
-	/** @var string */
+	/** @var string|null */
 	private $ip;
 
-	/** @var int */
+	/** @var int|null */
 	private $id;
 
 	public function __construct() {

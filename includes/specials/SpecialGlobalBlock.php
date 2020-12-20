@@ -6,7 +6,7 @@ use Wikimedia\IPUtils;
 class SpecialGlobalBlock extends FormSpecialPage {
 	/**
 	 * @see SpecialGlobalBlock::setParameter()
-	 * @var string
+	 * @var string|null
 	 */
 	protected $address;
 
@@ -202,7 +202,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 
 	/**
 	 * @param array $data
-	 * @return bool|array True for success, array on errors
+	 * @return true|array True for success, array on errors
 	 */
 	public function onSubmit( array $data ) {
 		$options = [];

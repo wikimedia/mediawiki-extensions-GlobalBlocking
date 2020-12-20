@@ -3,7 +3,12 @@
 use Wikimedia\IPUtils;
 
 class SpecialGlobalBlockStatus extends FormSpecialPage {
-	private $mAddress, $mCurrentStatus, $mWhitelistStatus;
+	/** @var string|null */
+	private $mAddress;
+	/** @var bool|null */
+	private $mCurrentStatus;
+	/** @var bool|null */
+	private $mWhitelistStatus;
 
 	public function __construct() {
 		parent::__construct( 'GlobalBlockStatus', 'globalblock-whitelist' );
@@ -144,7 +149,7 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 	 * @param string $ip
 	 * @param int $id
 	 * @param string $successMsg
-	 * @return bool
+	 * @return true
 	 */
 	protected function showSuccess( $ip, $id, $successMsg ) {
 		$link = $this->getLinkRenderer()->makeKnownLink(
