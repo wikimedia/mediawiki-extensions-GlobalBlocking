@@ -215,7 +215,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 	 */
 	public function onSubmit( array $data ) {
 		$options = [];
-		$user = $this->getUser();
+		$performer = $this->getUser();
 
 		if ( $data['AnonOnly'] ) {
 			$options[] = 'anon-only';
@@ -234,7 +234,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 			$this->address, // $this->address is sanitized; $data['Address'] isn't
 			$data['Reason'][0],
 			$data['Expiry'],
-			$user,
+			$performer,
 			$options
 		);
 
@@ -244,10 +244,10 @@ class SpecialGlobalBlock extends FormSpecialPage {
 		}
 
 		// Add a local block if the user asked for that
-		if ( $user->isAllowed( 'block' ) && $data['AlsoLocal'] ) {
+		if ( $performer->isAllowed( 'block' ) && $data['AlsoLocal'] ) {
 			$status = $this->blockUserFactory->newBlockUser(
 				$this->address,
-				$user,
+				$performer,
 				$data['Expiry'],
 				$data['Reason'][0],
 				[
