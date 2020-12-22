@@ -1,14 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"1917 Ekim Devrimi"
+			"1917 Ekim Devrimi",
+			"Mirzali"
 		]
 	},
 	"apihelp-globalblock-description": "Nr karberi global bloqe bıkerê ya zi wedarnê",
 	"apihelp-globalblock-summary": "Nr karberi global bloqe bıkerê ya zi wedarnê",
 	"apihelp-globalblock-param-target": "Hedef adresê IP",
 	"apihelp-globalblock-param-reason": "Sebebê bloqeyi ronayışi/wedardışi",
-	"apihelp-query+globalblocks-description": "listey adresanê IP ke bı globali de bloqe biye",
+	"apihelp-query+globalblocks-description": "Adresanê IPyê ke global bloke biyê, pêrıne liste kerê",
 	"apihelp-query+globalblocks-summary": "listey adresanê IP ke bı globali de bloqe biye",
 	"apihelp-query+globalblocks-param-start": "Mora zemani nımre kerdışmra start ke",
 	"apihelp-query+globalblocks-param-end": "Mora zemani  nımre kedışi vındarn",
