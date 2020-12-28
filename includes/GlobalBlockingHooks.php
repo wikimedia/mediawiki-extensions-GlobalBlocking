@@ -7,9 +7,38 @@
  */
 
 use MediaWiki\Block\DatabaseBlock;
+use MediaWiki\Hook\GetLogTypesOnUserHook;
+use MediaWiki\Hook\OtherBlockLogLinkHook;
+use MediaWiki\Hook\SpecialContributionsBeforeMainOutputHook;
+use MediaWiki\Permissions\Hook\GetUserPermissionsErrorsExpensiveHook;
+use MediaWiki\Permissions\PermissionManager;
+use MediaWiki\User\Hook\SpecialPasswordResetOnSubmitHook;
+use MediaWiki\User\Hook\UserIsBlockedGloballyHook;
 use Wikimedia\IPUtils;
 
-class GlobalBlockingHooks {
+class GlobalBlockingHooks implements
+	GetUserPermissionsErrorsExpensiveHook,
+	UserIsBlockedGloballyHook,
+	SpecialPasswordResetOnSubmitHook,
+	OtherBlockLogLinkHook,
+	SpecialContributionsBeforeMainOutputHook,
+	GetLogTypesOnUserHook
+{
+	/** @var PermissionManager */
+	private $permissionManager;
+
+	/** @var Config */
+	private $config;
+
+	/**
+	 * @param PermissionManager $permissionManager
+	 * @param Config $mainConfig
+	 */
+	public function __construct( PermissionManager $permissionManager, Config $mainConfig ) {
+		$this->permissionManager = $permissionManager;
+		$this->config = $mainConfig;
+	}
+
 	/**
 	 * Extension registration callback
 	 */
@@ -23,8 +52,8 @@ class GlobalBlockingHooks {
 	}
 
 	/**
+	 * This is static since LoadExtensionSchemaUpdates does not allow service dependencies
 	 * @param DatabaseUpdater $updater
-	 *
 	 * @return bool
 	 */
 	public static function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ) {
@@ -78,19 +107,19 @@ class GlobalBlockingHooks {
 	 *
 	 * @return bool
 	 */
-	public static function onGetUserPermissionsErrorsExpensive(
-		Title $title, User $user, $action, &$result
+	public function onGetUserPermissionsErrorsExpensive(
+		$title, $user, $action, &$result
 	) {
-		global $wgApplyGlobalBlocks, $wgRequest;
-		if ( $action === 'read' || !$wgApplyGlobalBlocks ) {
+		global $wgRequest;
+		if ( $action === 'read' || !$this->config->get( 'ApplyGlobalBlocks' ) ) {
 			return true;
 		}
-		if ( $user->isAllowed( 'ipblock-exempt' ) ||
-			$user->isAllowed( 'globalblock-exempt' )
-		) {
+
+		if ( $this->permissionManager->userHasAnyRight( $user, 'ipblock-exempt', 'globalblock-exempt' ) ) {
 			// User is exempt from IP blocks.
 			return true;
 		}
+
 		$ip = $wgRequest->getIP();
 		$blockError = GlobalBlocking::getUserBlockErrors( $user, $ip );
 		if ( !empty( $blockError ) ) {
@@ -108,7 +137,7 @@ class GlobalBlockingHooks {
 	 *
 	 * @return bool
 	 */
-	public static function onUserIsBlockedGlobally( User $user, $ip, &$blocked, &$block ) {
+	public function onUserIsBlockedGlobally( $user, $ip, &$blocked, &$block ) {
 		$block = GlobalBlocking::getUserBlock( $user, $ip );
 		if ( $block !== null ) {
 			$blocked = true;
@@ -124,7 +153,7 @@ class GlobalBlockingHooks {
 	 *
 	 * @return bool
 	 */
-	public static function onSpecialPasswordResetOnSubmit( &$users, $data, &$error ) {
+	public function onSpecialPasswordResetOnSubmit( &$users, $data, &$error ) {
 		$requestContext = RequestContext::getMain();
 
 		if ( GlobalBlocking::getUserBlockErrors(
@@ -144,7 +173,7 @@ class GlobalBlockingHooks {
 	 *
 	 * @return bool true
 	 */
-	public static function onOtherBlockLogLink( &$msg, $ip ) {
+	public function onOtherBlockLogLink( &$msg, $ip ) {
 		// Fast return if it is a username. IP addresses can be blocked only.
 		if ( !IPUtils::isIPAddress( $ip ) ) {
 			return true;
@@ -172,8 +201,8 @@ class GlobalBlockingHooks {
 	 *
 	 * @return bool
 	 */
-	public static function onSpecialContributionsBeforeMainOutput(
-		$userId, User $user, SpecialPage $sp
+	public function onSpecialContributionsBeforeMainOutput(
+		$userId, $user, $sp
 	) {
 		$name = $user->getName();
 		if ( !IPUtils::isIPAddress( $name ) ) {
@@ -216,7 +245,7 @@ class GlobalBlockingHooks {
 	 * @param array &$types
 	 * @return bool
 	 */
-	public static function onGetLogTypesOnUser( array &$types ) {
+	public function onGetLogTypesOnUser( &$types ) {
 		$types[] = 'gblblock';
 
 		return true;

@@ -8,6 +8,7 @@
 
 use MediaWiki\Block\DatabaseBlock;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
+use MediaWiki\Extension\GlobalBlocking\Hook\GlobalBlockingHookRunner;
 use MediaWiki\MediaWikiServices;
 use Wikimedia\IPUtils;
 use Wikimedia\Rdbms\DBUnexpectedError;
@@ -78,6 +79,8 @@ class GlobalBlocking {
 			return $result;
 		}
 
+		$hookRunner = GlobalBlockingHookRunner::getRunner();
+
 		$block = self::getGlobalBlockingBlock( $ip, $user->isAnon() );
 		if ( $block ) {
 			// Check for local whitelisting
@@ -91,20 +94,19 @@ class GlobalBlocking {
 			$blockExpiry = $wgLang->formatExpiry( $block->gb_expiry );
 			$display_wiki = WikiMap::getWikiName( $block->gb_by_wiki );
 			$blockingUser = self::maybeLinkUserpage( $block->gb_by_wiki, $block->gb_by );
+
+			// Allow site customization of blocked message.
 			if ( IPUtils::isValid( $block->gb_address ) ) {
 				$errorMsg = 'globalblocking-ipblocked';
-				$hookName = 'GlobalBlockingBlockedIpMsg';
+				$hookRunner->onGlobalBlockingBlockedIpMsg( $errorMsg );
 			} elseif ( IPUtils::isValidRange( $block->gb_address ) ) {
 				$errorMsg = 'globalblocking-ipblocked-range';
-				$hookName = 'GlobalBlockingBlockedIpRangeMsg';
+				$hookRunner->onGlobalBlockingBlockedIpRangeMsg( $errorMsg );
 			} else {
 				throw new MWException(
 					"This should not happen. IP globally blocked is not valid and is not a valid range?"
 				);
 			}
-
-			// Allow site customization of blocked message.
-			Hooks::run( $hookName, [ &$errorMsg ] );
 
 			$services = MediaWikiServices::getInstance();
 			$language = $services->getContentLanguage()->getCode();
@@ -147,7 +149,7 @@ class GlobalBlocking {
 						$blockingUser = self::maybeLinkUserpage( $block->gb_by_wiki, $block->gb_by );
 						// Allow site customization of blocked message.
 						$blockedIpXffMsg = 'globalblocking-ipblocked-xff';
-						Hooks::run( 'GlobalBlockingBlockedIpXffMsg', [ &$blockedIpXffMsg ] );
+						$hookRunner->onGlobalBlockingBlockedIpXffMsg( $blockedIpXffMsg );
 						$result = [
 							'block' => $block,
 							'error' => [

@@ -120,14 +120,23 @@
 		"GlobalBlockWhitelistLogFormatter": "includes/GlobalBlockWhitelistLogFormatter.php"
 	},
 	"Hooks": {
-		"getUserPermissionsErrorsExpensive": "GlobalBlockingHooks::onGetUserPermissionsErrorsExpensive",
-		"UserIsBlockedGlobally": "GlobalBlockingHooks::onUserIsBlockedGlobally",
-		"SpecialPasswordResetOnSubmit": "GlobalBlockingHooks::onSpecialPasswordResetOnSubmit",
-		"OtherBlockLogLink": "GlobalBlockingHooks::onOtherBlockLogLink",
-		"SpecialContributionsBeforeMainOutput": "GlobalBlockingHooks::onSpecialContributionsBeforeMainOutput",
+		"getUserPermissionsErrorsExpensive": "main",
+		"UserIsBlockedGlobally": "main",
+		"SpecialPasswordResetOnSubmit": "main",
+		"OtherBlockLogLink": "main",
+		"SpecialContributionsBeforeMainOutput": "main",
 		"UserMergeAccountFields": "GlobalBlockingHooks::onUserMergeAccountFields",
 		"LoadExtensionSchemaUpdates": "GlobalBlockingHooks::onLoadExtensionSchemaUpdates",
-		"GetLogTypesOnUser": "GlobalBlockingHooks::onGetLogTypesOnUser"
+		"GetLogTypesOnUser": "main"
+	},
+	"HookHandlers": {
+		"main": {
+			"class": "GlobalBlockingHooks",
+			"services": [
+				"PermissionManager",
+				"MainConfig"
+			]
+		}
 	},
 	"config": {
 		"GlobalBlockingDatabase": {
