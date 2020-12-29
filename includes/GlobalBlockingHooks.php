@@ -71,18 +71,18 @@ class GlobalBlockingHooks {
 	}
 
 	/**
-	 * @param Title &$title
-	 * @param User &$user
+	 * @param Title $title
+	 * @param User $user
 	 * @param string $action
 	 * @param mixed &$result
 	 *
 	 * @return bool
 	 */
 	public static function onGetUserPermissionsErrorsExpensive(
-		Title &$title, User &$user, $action, &$result
+		Title $title, User $user, $action, &$result
 	) {
 		global $wgApplyGlobalBlocks, $wgRequest;
-		if ( $action == 'read' || !$wgApplyGlobalBlocks ) {
+		if ( $action === 'read' || !$wgApplyGlobalBlocks ) {
 			return true;
 		}
 		if ( $user->isAllowed( 'ipblock-exempt' ) ||
@@ -101,14 +101,14 @@ class GlobalBlockingHooks {
 	}
 
 	/**
-	 * @param User &$user
+	 * @param User $user
 	 * @param string $ip
 	 * @param bool &$blocked
 	 * @param DatabaseBlock|null &$block
 	 *
 	 * @return bool
 	 */
-	public static function onUserIsBlockedGlobally( User &$user, $ip, &$blocked, &$block ) {
+	public static function onUserIsBlockedGlobally( User $user, $ip, &$blocked, &$block ) {
 		$block = GlobalBlocking::getUserBlock( $user, $ip );
 		if ( $block !== null ) {
 			$blocked = true;
@@ -182,7 +182,7 @@ class GlobalBlockingHooks {
 
 		$block = GlobalBlocking::getGlobalBlockingBlock( $name, true );
 
-		if ( $block != null ) {
+		if ( $block !== null ) {
 			$conds = GlobalBlocking::getRangeCondition( $block->gb_address );
 			$pager = new GlobalBlockListPager( $sp->getContext(), $conds, $sp->getLinkRenderer() );
 			$body = $pager->formatRow( $block );
