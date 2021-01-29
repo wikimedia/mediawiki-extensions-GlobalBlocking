@@ -486,6 +486,8 @@ class GlobalBlocking {
 			$ip = IPUtils::sanitizeRange( $ip );
 		}
 
+		'@phan-var string $ip';
+
 		// Check for an existing block in the master database
 		$existingBlock = self::getGlobalBlockId( $ip, DB_MASTER );
 		if ( !$modify && $existingBlock ) {
