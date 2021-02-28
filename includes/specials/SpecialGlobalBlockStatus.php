@@ -43,7 +43,7 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 		$id = GlobalBlocking::getGlobalBlockId( $ip );
 
 		if ( $this->mAddress ) {
-			$this->mCurrentStatus = ( GlobalBlocking::getWhitelistInfo( $id, $this->mAddress ) !== false );
+			$this->mCurrentStatus = ( GlobalBlocking::getLocalWhitelistInfo( $id, $this->mAddress ) !== false );
 			if ( !$request->wasPosted() ) {
 				$this->mWhitelistStatus = $this->mCurrentStatus;
 			}
@@ -112,7 +112,7 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 				'gbw_expiry' => $expiry,
 				'gbw_id' => $id
 			];
-			if ( GlobalBlocking::getWhitelistInfoByIP( $this->mAddress ) !== false ) {
+			if ( GlobalBlocking::getLocalWhitelistInfoByIP( $this->mAddress ) !== false ) {
 				// Check if there is already an entry with the same ip (and another id)
 				$dbw->delete( 'global_block_whitelist', [ 'gbw_address' => $ip ], __METHOD__ );
 			}

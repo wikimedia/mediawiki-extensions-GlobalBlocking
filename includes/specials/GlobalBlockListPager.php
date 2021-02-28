@@ -29,7 +29,7 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 		}
 
 		// Check for whitelisting.
-		$wlinfo = GlobalBlocking::getWhitelistInfo( $row->gb_id );
+		$wlinfo = GlobalBlocking::getLocalWhitelistInfo( $row->gb_id );
 		if ( $wlinfo ) {
 			$options[] = $this->msg(
 				'globalblocking-list-whitelisted',

@@ -80,7 +80,7 @@ class GlobalBlocking {
 		$block = self::getGlobalBlockingBlock( $ip, $user->isAnon() );
 		if ( $block ) {
 			// Check for local whitelisting
-			if ( self::getWhitelistInfo( $block->gb_id ) ) {
+			if ( self::getLocalWhitelistInfo( $block->gb_id ) ) {
 				// Block has been whitelisted.
 				$result = [ 'block' => null, 'error' => [] ];
 				return $result;
@@ -297,7 +297,7 @@ class GlobalBlocking {
 		}
 
 		foreach ( $results as $block ) {
-			if ( !self::getWhitelistInfo( $block->gb_id ) ) {
+			if ( !self::getLocalWhitelistInfo( $block->gb_id ) ) {
 				$blocks[] = $block;
 			}
 		}
@@ -394,7 +394,7 @@ class GlobalBlocking {
 	 * @phan-return array{user:int,reason:string}|false
 	 * @throws Exception
 	 */
-	public static function getWhitelistInfo( $id = null, $address = null ) {
+	public static function getLocalWhitelistInfo( $id = null, $address = null ) {
 		if ( $id != null ) {
 			$conds = [ 'gbw_id' => $id ];
 		} elseif ( $address != null ) {
@@ -426,8 +426,8 @@ class GlobalBlocking {
 	 * @return array|false
 	 * @phan-return array{user:int,reason:string}|false
 	 */
-	public static function getWhitelistInfoByIP( $block_ip ) {
-		return self::getWhitelistInfo( null, $block_ip );
+	public static function getLocalWhitelistInfoByIP( $block_ip ) {
+		return self::getLocalWhitelistInfo( null, $block_ip );
 	}
 
 	/**
