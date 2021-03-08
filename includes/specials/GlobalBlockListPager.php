@@ -14,6 +14,7 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 
 	public function formatRow( $row ) {
 		$lang = $this->getLanguage();
+		$user = $this->getUser();
 		$options = [];
 
 		$expiry = $lang->formatExpiry( $row->gb_expiry, TS_MW );
@@ -22,8 +23,8 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 		} else {
 			$options[] = $this->msg(
 				'expiringblock',
-				$lang->date( $expiry ),
-				$lang->time( $expiry )
+				$lang->userDate( $expiry, $user ),
+				$lang->userTime( $expiry, $user )
 			)->parse();
 		}
 
@@ -42,7 +43,6 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 
 		// Do afterthoughts (comment, links for admins)
 		$info = [];
-		$user = $this->getUser();
 		$canBlock = $user->isAllowed( 'globalblock' );
 		if ( $canBlock ) {
 			$info[] = $this->getLinkRenderer()->makeKnownLink(
@@ -73,7 +73,7 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 		}
 
 		$timestamp = $row->gb_timestamp;
-		$timestamp = $lang->timeanddate( wfTimestamp( TS_MW, $timestamp ), true );
+		$timestamp = $lang->userTimeAndDate( wfTimestamp( TS_MW, $timestamp ), $user );
 		// Userpage link / Info on originating wiki
 		$displayWiki = WikiMap::getWikiName( $row->gb_by_wiki );
 		$userDisplay = GlobalBlocking::maybeLinkUserpage( $row->gb_by_wiki, $row->gb_by );
