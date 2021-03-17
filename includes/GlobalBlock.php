@@ -34,12 +34,12 @@ class GlobalBlock extends DatabaseBlock {
 	 * @param stdClass $block DB row from globalblocks table
 	 */
 	public function setGlobalBlocker( stdClass $block ) {
+		$user = User::newFromName( $block->gb_by );
 		// If the block was inserted from this wiki, then we know the blocker exists
 		if ( $block->gb_by_wiki === wfWikiID() ) {
-			$this->setBlocker( $block->gb_by );
+			$this->setBlocker( $user );
 			return;
 		}
-		$user = User::newFromName( $block->gb_by );
 		// If the blocker is the same user on the foreign wiki and the current wiki
 		// then we can use the username
 		$lookup = CentralIdLookup::factory();
@@ -51,6 +51,6 @@ class GlobalBlock extends DatabaseBlock {
 		}
 
 		// They don't exist locally, so we need to use an interwiki username
-		$this->setBlocker( "{$block->gb_by_wiki}>{$block->gb_by}" );
+		$this->setBlocker( User::newFromName( "{$block->gb_by_wiki}>{$block->gb_by}", false ) );
 	}
 }
