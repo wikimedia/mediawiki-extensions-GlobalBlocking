@@ -1,13 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
+			"J budissin",
 			"Macofe",
 			"Michawiki"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Zmóžnja]] IP-adresy [[Special:GlobalBlockList|přez wjacore wikije blokować]]",
 	"globalblocking-block": "IP-adresu globalnje blokować",
-	"globalblocking-block-intro": "Móžeš tutu stronu wužiwać, zo by Ip-adresu na wšěch wikijach blokował.",
+	"globalblocking-block-intro": "Móžeš tutu stronu wužiwać, zo by wěstu IP-adresu na wšěch wikijach {{GENDER:|blokował|blokowała|blokował(a)}}.",
 	"globalblocking-block-reason": "Přičina:",
 	"globalblocking-block-reason-dropdown": "* Zwučene přičiny blokowanja\n** Spamowanje crosswiki\n** Znjewužiwanje crosswiki\n** Wandalizm",
 	"globalblocking-block-edit-dropdown": "Přičiny blokowanja wobdźěłać",
