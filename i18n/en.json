@@ -42,6 +42,8 @@
 	"globalblocking-list-whitelisted": "locally disabled by $1: $2",
 	"globalblocking-list-whitelist": "local status",
 	"globalblocking-list-modify": "modify",
+	"globalblocking-expiringblock": "expires on $1 at $2",
+	"globalblocking-infiniteblock": "infinite",
 	"globalblocking-list-noresults": "The requested IP address is not blocked.",
 	"globalblocking-goto-block": "Globally block an IP address",
 	"globalblocking-goto-unblock": "Remove a global block",

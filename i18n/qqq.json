@@ -69,6 +69,8 @@
 	"globalblocking-list-whitelisted": "Used as a block option in Special:GlobalBlockList. Parameters:\n* $1 - username\n* $2 - reason",
 	"globalblocking-list-whitelist": "{{Identical|Local status}}",
 	"globalblocking-list-modify": "{{Identical|Modify}}",
+	"globalblocking-expiringblock": "Parameters:\n* $1 - a date\n* $2 - a time\nSee also:\n* {{msg-mw|globalblocking-infiniteblock}}",
+	"globalblocking-infiniteblock": "Part of the log entry of user block in [[Special:GlobalBlockList]].\n\nSee also:\n* {{msg-mw|globalblocking-expiringblock}}\n\nCan be identical to {{msg-mw|infiniteblock}}\n\n{{Identical|Infinite}}",
 	"globalblocking-list-noresults": "Shown on Special:GlobalBlockList when no global blocks are found. Shown when the target is specified or if there are no global blocks.\n\nSee also:\n* {{msg-mw|ipblocklist-no-results}}",
 	"globalblocking-goto-block": "Navigation link to Special:GlobalBlock.\n{{Identical|Globally block IP address}}\n\nSee also:\n* {{msg-mw|globalblocking-goto-status}}\n* {{msg-mw|globalblocking-goto-unblock}}",
 	"globalblocking-goto-unblock": "Navigation link to Special:GlobalUnblock. Shown below the title of Special:GlobalBlock, Special:GlobalBlockList and Special:GlobalBlockStatus.\n\nSee also:\n* {{msg-mw|globalblocking-goto-block}}\n* {{msg-mw|globalblocking-goto-status}}",

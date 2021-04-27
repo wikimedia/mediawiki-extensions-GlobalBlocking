@@ -19,10 +19,10 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 
 		$expiry = $lang->formatExpiry( $row->gb_expiry, TS_MW );
 		if ( $expiry == 'infinity' ) {
-			$options[] = $this->msg( 'infiniteblock' )->parse();
+			$options[] = $this->msg( 'globalblocking-infiniteblock' )->parse();
 		} else {
 			$options[] = $this->msg(
-				'expiringblock',
+				'globalblocking-expiringblock',
 				$lang->userDate( $expiry, $user ),
 				$lang->userTime( $expiry, $user )
 			)->parse();
