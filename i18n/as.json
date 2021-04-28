@@ -39,6 +39,7 @@
 	"globalblocking-list-whitelisted": "$1ৰ দ্বাৰা স্থানীয়ভাৱে নিষ্ক্ৰিয়: $2",
 	"globalblocking-list-whitelist": "স্থানীয় অৱস্থা",
 	"globalblocking-list-modify": "পৰিবৰ্তন",
+	"globalblocking-expiringblock": "$1 তাৰিখৰ $2 সময়ত ম্যাদ উকলিব",
 	"globalblocking-list-noresults": "অনুৰোধ কৰা আই পি ঠিকনাটো বাৰণ কৰা হোৱা নাই।",
 	"globalblocking-goto-block": "এটা আই পি ঠিকনা গোলকীয়ভাৱে বাৰণ কৰক",
 	"globalblocking-goto-unblock": "এটা গোলকীয় বাধা আঁতৰাওক",

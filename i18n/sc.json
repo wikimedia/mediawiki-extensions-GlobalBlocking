@@ -5,5 +5,6 @@
 		]
 	},
 	"globalblocking-search-ip": "Indiritzu IP:",
+	"globalblocking-expiringblock": "scadit su $1 a is $2",
 	"globalblocking-unblock-reason": "Motivu:"
 }

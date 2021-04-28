@@ -48,6 +48,7 @@
 	"globalblocking-list-whitelisted": "בוטל באופן מקומי על־ידי $1: $2",
 	"globalblocking-list-whitelist": "מצב מקומי",
 	"globalblocking-list-modify": "שינוי",
+	"globalblocking-expiringblock": "החסימה פוקעת ב־$2, $1",
 	"globalblocking-list-noresults": "כתובת ה־IP המבוקשת אינה חסומה.",
 	"globalblocking-goto-block": "חסימה גלובלית של כתובת IP",
 	"globalblocking-goto-unblock": "הסרת חסימה גלובלית",

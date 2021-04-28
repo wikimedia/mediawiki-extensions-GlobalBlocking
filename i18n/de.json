@@ -53,6 +53,8 @@
 	"globalblocking-list-whitelisted": "lokal abgeschaltet von $1: $2",
 	"globalblocking-list-whitelist": "lokaler Status",
 	"globalblocking-list-modify": "ändern",
+	"globalblocking-expiringblock": "endet am $1 um $2 Uhr",
+	"globalblocking-infiniteblock": "unbeschränkt",
 	"globalblocking-list-noresults": "Die genannte IP-Adresse ist nicht gesperrt.",
 	"globalblocking-goto-block": "IP-Adresse global sperren",
 	"globalblocking-goto-unblock": "Globale Sperre aufheben",

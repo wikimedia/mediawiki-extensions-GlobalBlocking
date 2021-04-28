@@ -42,6 +42,7 @@
 	"globalblocking-list-whitelisted": "ლოკალურად გათიშა $1: $2",
 	"globalblocking-list-whitelist": "ლოკალური სტატუსი",
 	"globalblocking-list-modify": "შეცვლა",
+	"globalblocking-expiringblock": "ვადის გასვლის დრო $1 $2",
 	"globalblocking-list-noresults": "მოთხოვნილი IP მისამართი არ არის დაბლოკილი.",
 	"globalblocking-goto-block": "IP მისამართის გლობალურად დაბლოკვა",
 	"globalblocking-goto-unblock": "გლობალური ბლოკირების წაშლა",

@@ -40,6 +40,7 @@
 	"globalblocking-list-whitelisted": "ถูกปิดใช้งานในท้องถิ่นโดย $1: $2",
 	"globalblocking-list-whitelist": "สถานะท้องถิ่น",
 	"globalblocking-list-modify": "แก้ไข",
+	"globalblocking-expiringblock": "หมดอายุ $1 เวลา $2",
 	"globalblocking-list-noresults": "ที่อยู่ไอพีที่ร้องขอไม่ได้ถูกบล็อก",
 	"globalblocking-goto-block": "บล็อกที่อยู่ไอพีทั่วโลก",
 	"globalblocking-goto-unblock": "เอาการบล็อกทั่วโลกออก",

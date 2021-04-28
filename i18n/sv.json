@@ -55,6 +55,7 @@
 	"globalblocking-list-whitelisted": "lokalt avslagen av $1: $2",
 	"globalblocking-list-whitelist": "lokal status",
 	"globalblocking-list-modify": "modifiera",
+	"globalblocking-expiringblock": "upphör den $1 kl $2",
 	"globalblocking-list-noresults": "Den efterfrågade IP-adressen är inte blockerad.",
 	"globalblocking-goto-block": "Blockera en IP-adress globalt",
 	"globalblocking-goto-unblock": "Ta bort en global blockering",

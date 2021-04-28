@@ -37,6 +37,7 @@
 	"globalblocking-list-whitelisted": "disattivatu lucalmenti di $1: $2",
 	"globalblocking-list-whitelist": "statu lucali",
 	"globalblocking-list-modify": "cancia",
+	"globalblocking-expiringblock": "scadi lu $1 ê $2",
 	"globalblocking-goto-block": "Blocca glubbalmenti nu nnirizzu IP",
 	"globalblocking-goto-unblock": "Scancella nu bloccu glubbali",
 	"globalblocking-goto-status": "Cancia statu lucali di nu bloccu glubbali",

@@ -49,6 +49,7 @@
 	"globalblocking-list-whitelisted": "локално {{GENDER:$1|онемогућио|онемогућила|онемогућио}} $1: $2",
 	"globalblocking-list-whitelist": "локални статус",
 	"globalblocking-list-modify": "измени",
+	"globalblocking-expiringblock": "истиче $1 у $2",
 	"globalblocking-list-noresults": "Тражена IP адреса није блокирана.",
 	"globalblocking-goto-block": "Блокирај IP адресу глобално",
 	"globalblocking-goto-unblock": "Уклони глобални блок",

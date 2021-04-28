@@ -64,6 +64,7 @@
 	"globalblocking-list-whitelisted": "由 $1 設定本地停用：$2",
 	"globalblocking-list-whitelist": "本地狀態",
 	"globalblocking-list-modify": "修改",
+	"globalblocking-expiringblock": "$1 $2 到期",
 	"globalblocking-list-noresults": "請求的 IP 位址尚未被封鎖。",
 	"globalblocking-goto-block": "全域封鎖一個 IP 位址",
 	"globalblocking-goto-unblock": "移除全域封鎖",

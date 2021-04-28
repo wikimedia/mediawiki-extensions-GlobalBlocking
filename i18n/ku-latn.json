@@ -9,6 +9,7 @@
 	"globalblocking-block-expiry-selector-other": "Demeka din:",
 	"globalblocking-block-submit": "Vê IP'yê li her cihî asteng bike",
 	"globalblocking-search-ip": "Adresê IP'ê:",
+	"globalblocking-expiringblock": "di $2, $1 de xilas dibe",
 	"globalblocking-unblock-reason": "Sedem:",
 	"globalblocking-whitelist-reason": "Sedem:"
 }

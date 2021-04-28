@@ -39,6 +39,7 @@
 	"globalblocking-list-whitelisted": "lokalnje znjemóžnjeny wot $1: $2",
 	"globalblocking-list-whitelist": "lokalny status",
 	"globalblocking-list-modify": "změnić",
+	"globalblocking-expiringblock": "spadnje $1 $2",
 	"globalblocking-list-noresults": "Požadana IP-adresa njeje zablokowany.",
 	"globalblocking-goto-block": "IP-adresu globalnje blokować",
 	"globalblocking-goto-unblock": "Globalne blokowanje wotstronić",

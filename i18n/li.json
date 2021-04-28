@@ -41,6 +41,7 @@
 	"globalblocking-list-whitelisted": "lokaal genegeerd door $1: $2",
 	"globalblocking-list-whitelist": "lokaal status",
 	"globalblocking-list-modify": "anger",
+	"globalblocking-expiringblock": "verlöp op $1 óm $2",
 	"globalblocking-list-noresults": "De aangevraoge IP is neet geblok.",
 	"globalblocking-goto-block": "IP-adres globaal blokkere",
 	"globalblocking-goto-unblock": "Globaal bloks wisse",

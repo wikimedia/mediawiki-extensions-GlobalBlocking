@@ -41,6 +41,7 @@
 	"globalblocking-list-whitelisted": "lokálne vypol $1: $2",
 	"globalblocking-list-whitelist": "lokálny stav",
 	"globalblocking-list-modify": "zmeniť",
+	"globalblocking-expiringblock": "vyprší $1 $2",
 	"globalblocking-list-noresults": "Požadovaná IP adresa nie je zablokovaná.",
 	"globalblocking-goto-block": "Globálne zablokovať IP adresu",
 	"globalblocking-goto-unblock": "Odstrániť globálne blokovanie",

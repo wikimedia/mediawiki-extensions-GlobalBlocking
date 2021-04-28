@@ -36,6 +36,7 @@
 	"globalblocking-list-whitelisted": "$1 tarapyndan ýerli tertipde ýapyldy: $2",
 	"globalblocking-list-whitelist": "ýerli status",
 	"globalblocking-list-modify": "üýtget",
+	"globalblocking-expiringblock": "$2, $1 senesinde gutarýar",
 	"globalblocking-list-noresults": "Talap edilýän IP adresi blokirlenmedik.",
 	"globalblocking-goto-block": "IP adresini global blokirle",
 	"globalblocking-goto-unblock": "Global blokirlemäni aýyr",

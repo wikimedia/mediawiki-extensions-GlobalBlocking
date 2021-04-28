@@ -38,6 +38,7 @@
 	"globalblocking-list-whitelisted": "$1 نے لوکلی بند کیتا: $2",
 	"globalblocking-list-whitelist": "لوکل حالت",
 	"globalblocking-list-modify": "تبدیل کرو",
+	"globalblocking-expiringblock": "$1 نوں $2 بجے ایکسپائری مک رئی اے۔",
 	"globalblocking-list-noresults": "پچھیا گیا IP پتے نوں نئیں روکیا گیا۔",
 	"globalblocking-goto-block": "گلوبلی اس IP پتے نوں روکو",
 	"globalblocking-goto-unblock": "گلوبل روک ہٹاؤ",

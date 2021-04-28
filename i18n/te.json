@@ -38,6 +38,7 @@
 	"globalblocking-list-whitelisted": "$1 స్థానికంగా అచేతనం చేసారు: $2",
 	"globalblocking-list-whitelist": "స్థానిక స్థితి",
 	"globalblocking-list-modify": "మార్చు",
+	"globalblocking-expiringblock": "$1 నాడు $2కి కాలం చెల్లుతుంది",
 	"globalblocking-list-noresults": "అభ్యర్థించిన ఐపీ చిరునామాపై నిరోధం లేదు.",
 	"globalblocking-goto-block": "ఒక ఐపీ చిరునామాని సార్వత్రికంగా నిరోధించు",
 	"globalblocking-goto-unblock": "ఒక సార్వత్రిక నిరోధాన్ని తొలగించు",

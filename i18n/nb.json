@@ -45,6 +45,7 @@
 	"globalblocking-list-whitelisted": "slått av lokalt av $1: $2",
 	"globalblocking-list-whitelist": "lokal status",
 	"globalblocking-list-modify": "endre",
+	"globalblocking-expiringblock": "løper ut $1 kl. $2",
 	"globalblocking-list-noresults": "Den etterspurte IP-adressen er ikke blokkert.",
 	"globalblocking-goto-block": "Blokker in IP-adresse globalt",
 	"globalblocking-goto-unblock": "Fjern en global blokkering",

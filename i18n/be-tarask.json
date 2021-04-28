@@ -44,6 +44,7 @@
 	"globalblocking-list-whitelisted": "лякальна адключыў $1: $2",
 	"globalblocking-list-whitelist": "лякальны статус",
 	"globalblocking-list-modify": "зьмяніць",
+	"globalblocking-expiringblock": "канчаецца $1 $2",
 	"globalblocking-list-noresults": "Запытаны IP-адрас не заблякаваны.",
 	"globalblocking-goto-block": "Заблякаваць ІР-адрас глябальна",
 	"globalblocking-goto-unblock": "Разблякаваць глябальна",

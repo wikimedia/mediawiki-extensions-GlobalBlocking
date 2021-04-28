@@ -9,6 +9,7 @@
 	"globalblocking-search-legend": "Гомум чикләүне эзләү",
 	"globalblocking-search-ip": "IP юлламасы:",
 	"globalblocking-search-submit": "Чикләүләрне эзләү",
+	"globalblocking-expiringblock": "$1 $2 тәмамлана",
 	"globalblocking-whitelist": "Гомум чикләүләрнең җирле халәте",
 	"globalblocking-whitelist-notapplied": "Әлеге викида гомум чикләүләр кулланылмый,\nшуңа күрә гомум чикләүләрнең җирле халәтләрен үзгәртү мөмкин түгел.",
 	"globalblocking-whitelist-legend": "Җирле халәтне үзгәртү",

@@ -11,6 +11,7 @@
 	"globalblocking-ipaddress": "Anwani ya IP:",
 	"globalblocking-search-ip": "Anwani ya IP:",
 	"globalblocking-list-unblock": "ondoa",
+	"globalblocking-expiringblock": "inakwisha tarehe $1 saa $2",
 	"globalblocking-unblock-reason": "Sababu:",
 	"globalblocking-whitelist-reason": "Sababu:"
 }

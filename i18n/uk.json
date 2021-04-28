@@ -54,6 +54,7 @@
 	"globalblocking-list-whitelisted": "локально відключив $1: $2",
 	"globalblocking-list-whitelist": "локальний стан",
 	"globalblocking-list-modify": "змінити",
+	"globalblocking-expiringblock": "закінчиться $1 $2",
 	"globalblocking-list-noresults": "Зазначена IP-адреса не заблокована.",
 	"globalblocking-goto-block": "Заблокувати IP-адресу глобально",
 	"globalblocking-goto-unblock": "Зняти глобальне блокування",

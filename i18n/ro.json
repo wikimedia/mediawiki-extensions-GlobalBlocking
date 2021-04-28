@@ -45,6 +45,7 @@
 	"globalblocking-list-whitelisted": "dezactivat local de $1: $2",
 	"globalblocking-list-whitelist": "statut local",
 	"globalblocking-list-modify": "modifică",
+	"globalblocking-expiringblock": "expiră în $1 la $2",
 	"globalblocking-list-noresults": "Adresa IP solicitată nu este blocată.",
 	"globalblocking-goto-block": "Blochează global o adresă IP",
 	"globalblocking-goto-unblock": "Elimină o blocare globală",

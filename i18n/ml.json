@@ -41,6 +41,7 @@
 	"globalblocking-list-whitelisted": "$1 ഇതിനെ പ്രാദേശികമായി നിർവീര്യമാക്കിയിക്കുന്നു: $2",
 	"globalblocking-list-whitelist": "പ്രാദേശിക സ്ഥിതി",
 	"globalblocking-list-modify": "പുനർനിശ്ചയിക്കുക",
+	"globalblocking-expiringblock": "കാലാവധി തീരുന്നത് - $1 $2",
 	"globalblocking-list-noresults": "ആവശ്യപ്പെട്ട ഐ.പി. വിലാസത്തെ തടഞ്ഞിട്ടില്ല.",
 	"globalblocking-goto-block": "ഐ.പി. വിലാസത്തെ ആഗോളം തടയുക",
 	"globalblocking-goto-unblock": "ആഗോള തടയൽ നീക്കുക",

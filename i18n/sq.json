@@ -42,6 +42,7 @@
 	"globalblocking-list-whitelisted": "çaktivizuar në nivel lokal nga $1: $2",
 	"globalblocking-list-whitelist": "statusi lokal",
 	"globalblocking-list-modify": "modifiko",
+	"globalblocking-expiringblock": "skadon më $1 në $2",
 	"globalblocking-list-noresults": "Adresa IP e kërkuar nuk është e bllokuar.",
 	"globalblocking-goto-block": "Bllokoni globalisht një adresë IP",
 	"globalblocking-goto-unblock": "Grisni një bllokimin global",

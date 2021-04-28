@@ -40,6 +40,7 @@
 	"globalblocking-list-whitelisted": "$1 इत्यनेन स्थानीयावरोधः कृतः: $2",
 	"globalblocking-list-whitelist": "स्थानीयस्थितिः",
 	"globalblocking-list-modify": "परिष्क्रियताम्",
+	"globalblocking-expiringblock": "$1 इत्यस्य $2समये समाप्तिः भवति ।",
 	"globalblocking-list-noresults": "प्रार्थितः एपि सङ्केतः न अवरुद्धः ।",
 	"globalblocking-goto-block": "एकस्य ऐपिसङ्केतस्य वैश्विकस्तरे अवरुद्ध्यताम्",
 	"globalblocking-goto-unblock": "वैश्विकावरोधः अपनीयताम्",

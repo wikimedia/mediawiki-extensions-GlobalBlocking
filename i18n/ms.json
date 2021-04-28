@@ -45,6 +45,7 @@
 	"globalblocking-list-whitelisted": "dimatikan di wiki tempatan oleh $1: $2",
 	"globalblocking-list-whitelist": "status tempatan",
 	"globalblocking-list-modify": "ubahsuai",
+	"globalblocking-expiringblock": "sehingga $1, $2",
 	"globalblocking-list-noresults": "Alamat IP yang diminta tidak disekat.",
 	"globalblocking-goto-block": "Sekat alamat IP di semua wiki",
 	"globalblocking-goto-unblock": "Batalkan sekatan sejagat",

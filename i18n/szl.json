@@ -4,5 +4,6 @@
 			"Uostofchuodnego"
 		]
 	},
+	"globalblocking-expiringblock": "!!FUZZY!!wygaso $1",
 	"globalblocklist": "Spis globalnie zablokowanych adres IP"
 }

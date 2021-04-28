@@ -11,6 +11,7 @@
 	"globalblocking-ipaddress": "IP ئادرېس:",
 	"globalblocking-search-ip": "IP ئادرېس:",
 	"globalblocking-list-unblock": "چىقىرىۋەت",
+	"globalblocking-expiringblock": "$1 $2 ۋاقتى توشىدۇ",
 	"globalblocking-unblock-reason": "سەۋەب:",
 	"globalblocking-whitelist-reason": "سەۋەب:",
 	"globalblocking-logentry-expiry": "$1 ۋاقتى توشىدۇ"

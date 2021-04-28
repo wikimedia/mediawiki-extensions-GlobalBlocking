@@ -34,6 +34,7 @@
 	"globalblocking-list-whitelisted": "sligið frá lokalt av $1: $2",
 	"globalblocking-list-whitelist": "lokalur status",
 	"globalblocking-list-modify": "broyt",
+	"globalblocking-expiringblock": "gongur út $1kl. $2",
 	"globalblocking-list-noresults": "Umbidnað IP adressan er ikki sperrað.",
 	"globalblocking-goto-block": "Sperra eina IP adressu globalt",
 	"globalblocking-goto-unblock": "Tak burtur globala sperring",

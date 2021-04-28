@@ -32,6 +32,7 @@
 	"globalblocking-list-whitelisted": "وه شکل ولاتی وه دس $1 ناکشتگر بیه:$2",
 	"globalblocking-list-whitelist": "شلك ولاتی",
 	"globalblocking-list-modify": "آلشت كردن",
+	"globalblocking-expiringblock": "د $1 ساعت $2 تموم موئه",
 	"globalblocking-list-noresults": "تیرنشون آی پی حاسته بیه نهاگری نبیه.",
 	"globalblocking-goto-block": "نهاگری سرتاسری یه گل تیرنشون آی پی",
 	"globalblocking-goto-unblock": "ؤرداشتن یه گل نهاگرتن سرتاسری",

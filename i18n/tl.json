@@ -40,6 +40,7 @@
 	"globalblocking-list-whitelisted": "hindi pinaandar na pangmalawakan (pampook lamang) ni $1: $2",
 	"globalblocking-list-whitelist": "katutubong kalagayan",
 	"globalblocking-list-modify": "baguhin",
+	"globalblocking-expiringblock": "magtatapos sa $1 sa ganap na $2",
 	"globalblocking-list-noresults": "Hindi hinaharangan ang hiniling na adres ng IP.",
 	"globalblocking-goto-block": "Pandaigdigang hadlangan/harangin ang isang adres ng IP",
 	"globalblocking-goto-unblock": "Tanggalin ang isang paghahadlang na pandaigdigan",

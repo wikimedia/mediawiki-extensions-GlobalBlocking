@@ -43,6 +43,7 @@
 	"globalblocking-list-whitelisted": "desactiváu llocalmente por $1: $2",
 	"globalblocking-list-whitelist": "estatus llocal",
 	"globalblocking-list-modify": "camudar",
+	"globalblocking-expiringblock": "caduca'l $1 a les $2",
 	"globalblocking-list-noresults": "La direición IP nun ta bloquiada.",
 	"globalblocking-goto-block": "Bloquiar globalmente una direición IP",
 	"globalblocking-goto-unblock": "Desaniciar un bloquéu global",

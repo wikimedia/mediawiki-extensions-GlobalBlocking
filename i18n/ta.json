@@ -39,6 +39,7 @@
 	"globalblocking-list-whitelisted": "உள்ளமைவாக தடுக்கப்பட்டுள்ளது $1: $2 ஆல்",
 	"globalblocking-list-whitelist": "உள் நிலைமை",
 	"globalblocking-list-modify": "திருத்தம் செய்",
+	"globalblocking-expiringblock": "$1-தேதியில், $2-மணிக்கு இது காலாவதியாகிறது",
 	"globalblocking-list-noresults": "கோரிய IP  முகவரி தடை செய்யப்படவில்லை",
 	"globalblocking-goto-block": "உலகளவில் ஒரு IP முகவரியை தடைசெய்",
 	"globalblocking-goto-unblock": "ஒரு உலகளாவிய தடையை நீக்கு",

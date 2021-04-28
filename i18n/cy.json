@@ -39,6 +39,7 @@
 	"globalblocking-list-whitelisted": "analluogwyd yn lleol gan $1, $2",
 	"globalblocking-list-whitelist": "statws lleol",
 	"globalblocking-list-modify": "addasu",
+	"globalblocking-expiringblock": "yn dod i ben ar $1 am $2",
 	"globalblocking-list-noresults": "Nid yw cyfeiriad IP yr ymholiad wedi'i rwystro.",
 	"globalblocking-goto-block": "Blocio cyfeiriad IP yn fyd-eang",
 	"globalblocking-goto-unblock": "Dod â'r bloc cyd-wici i ben",

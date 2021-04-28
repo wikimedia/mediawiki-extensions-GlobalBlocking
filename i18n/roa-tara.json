@@ -42,6 +42,7 @@
 	"globalblocking-list-whitelisted": "localmende disabbiletate da $1: $2",
 	"globalblocking-list-whitelist": "state locale",
 	"globalblocking-list-modify": "cange",
+	"globalblocking-expiringblock": "more 'u $1 a le $2",
 	"globalblocking-list-noresults": "L'indirizze IP richieste non g'è bloccate.",
 	"globalblocking-goto-block": "Bluecche globalmende 'n'indirizze IP",
 	"globalblocking-goto-unblock": "Live 'nu blocche globale",

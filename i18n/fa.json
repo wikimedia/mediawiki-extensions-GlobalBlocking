@@ -54,6 +54,7 @@
 	"globalblocking-list-whitelisted": "توسط $1: $2 به طور محلی غیرفعال شد",
 	"globalblocking-list-whitelist": "وضعیت محلی",
 	"globalblocking-list-modify": "تغییر",
+	"globalblocking-expiringblock": "در $1 ساعت $2 به پایان می‌رسد",
 	"globalblocking-list-noresults": "آی‌پی درخواست شده مسدود نیست.",
 	"globalblocking-goto-block": "قطع دسترسی سراسری یک نشانی آی‌پی",
 	"globalblocking-goto-unblock": "حذف یک قطع دسترسی سراسری",

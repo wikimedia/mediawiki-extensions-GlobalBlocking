@@ -110,7 +110,7 @@
 	"globalblocking-modify-logentry": "Used as a log entry. Parameters:\n* $1 - a link to a user page of the form User:Name\n* $2 - a reason for the action\nSee also:\n* {{msg-mw|Globalblocking-block2-logentry}}",
 	"globalblocking-logentry-expiry": "Used as a flag. Parameters:\n* $1 - expiry time and date\n{{Identical|Expire}}",
 	"globalblocking-logentry-noexpiry": "Used as a flag on global block log when the expiry is not set.\n\nSee also:\n* {{msg-mw|expiry}}",
-	"globalblocking-loglink": "Shown at [[Special:IPBlocklist]] when the GlobalBlocking extension is enabled (not on translatewiki).\n* $1 is the requested IP address",
+	"globalblocking-loglink": "Shown at [[Special:BlockList]] when the GlobalBlocking extension is enabled (not on translatewiki).\n* $1 is the requested IP address",
 	"globalblocking-contribs-notice": "Displayed on [[Special:Contributions]] for currently globally blocked IP addresses. Parameters:\n* $1 - (Optional) the IP address\nSee also:\n* {{msg-mw|Sp-contributions-blocked-notice}}\n* {{msg-mw|Sp-contributions-blocked-notice-anon}}",
 	"globalblocking-showlog": "See also:\n* {{msg-mw|Blocklog-showlog}}",
 	"globalblocklist": "{{doc-special|GlobalBlockList}}",

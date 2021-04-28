@@ -29,6 +29,7 @@
 	"globalblocking-list-unblock": "pašalinti",
 	"globalblocking-list-whitelist": "vietinis statusas",
 	"globalblocking-list-modify": "pakeisti",
+	"globalblocking-expiringblock": "baigia galioti $1 $2",
 	"globalblocking-list-noresults": "Prašomas IP adresas nėra užblokuotas.",
 	"globalblocking-goto-block": "Visuotinai blokuoti IP adresą",
 	"globalblocking-goto-unblock": "Pašalinti pasaulini blokavimą",

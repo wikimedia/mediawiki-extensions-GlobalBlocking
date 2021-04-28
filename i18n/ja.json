@@ -55,6 +55,7 @@
 	"globalblocking-list-whitelisted": "$1 によりローカルで無効化: $2",
 	"globalblocking-list-whitelist": "ローカル状態",
 	"globalblocking-list-modify": "改変",
+	"globalblocking-expiringblock": "$1$2に解除",
 	"globalblocking-list-noresults": "指定された IP アドレスはブロックされていません。",
 	"globalblocking-goto-block": "IPアドレスをグローバルブロック",
 	"globalblocking-goto-unblock": "グローバルブロックを解除",

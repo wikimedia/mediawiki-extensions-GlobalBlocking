@@ -51,6 +51,7 @@
 	"globalblocking-list-whitelisted": "hetê $1'i ra bı mehelli pasif bı: $2",
 	"globalblocking-list-whitelist": "weziyeto mehelli",
 	"globalblocking-list-modify": "bıvurne",
+	"globalblocking-expiringblock": "$1, $2 de qediyeno",
 	"globalblocking-list-noresults": "IPadres bloke nêbı",
 	"globalblocking-goto-block": "yew IPadres bı global bloke bıker",
 	"globalblocking-goto-unblock": "yew blokê globali wedar/werad",

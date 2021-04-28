@@ -8,5 +8,6 @@
 	"globalblocking-search-ip": "IP-διεύθυνσις:",
 	"globalblocking-list-unblock": "ἀφαιρεῖν",
 	"globalblocking-list-modify": "τροποποιεῖν",
+	"globalblocking-expiringblock": "λῆξαν ἔσεται ἐν $1 ἐν $2",
 	"globalblocking-unblock-reason": "Αἰτία:"
 }

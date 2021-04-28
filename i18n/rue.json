@@ -38,6 +38,7 @@
 	"globalblocking-list-whitelisted": "локално знеплатнив $1: $2",
 	"globalblocking-list-whitelist": "локалный статус",
 	"globalblocking-list-modify": "змінити",
+	"globalblocking-expiringblock": "до $1, $2",
 	"globalblocking-list-noresults": "Зазначена IP-адреса не є блокована.",
 	"globalblocking-goto-block": "Заблоковати IP адресу ґлобално",
 	"globalblocking-goto-unblock": "Зняти ґлобалне блокованя",

@@ -5,5 +5,6 @@
 		]
 	},
 	"globalblocking-list": "Vėsoutėnā ožgintū IP adresū sārašos",
-	"globalblocking-list-expiry": "beng galiuotė $1"
+	"globalblocking-list-expiry": "beng galiuotė $1",
+	"globalblocking-expiringblock": "beng vēktė $1 $2"
 }

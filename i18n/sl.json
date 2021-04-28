@@ -43,6 +43,7 @@
 	"globalblocking-list-whitelisted": "lokalno onemogočil(-a) $1: $2",
 	"globalblocking-list-whitelist": "lokalno stanje",
 	"globalblocking-list-modify": "spremeni",
+	"globalblocking-expiringblock": "preteče $1 ob $2",
 	"globalblocking-list-noresults": "Zahtevan IP-naslov ni blokiran.",
 	"globalblocking-goto-block": "Globalno blokiraj IP-naslov",
 	"globalblocking-goto-unblock": "Odstrani globalno blokado",

@@ -52,6 +52,7 @@
 	"globalblocking-list-whitelisted": "dinon-aktifkan di wiki lokal oleh $1: $2",
 	"globalblocking-list-whitelist": "status lokal",
 	"globalblocking-list-modify": "ubah",
+	"globalblocking-expiringblock": "kedaluwarsa pada $1 $2",
 	"globalblocking-list-noresults": "Alamat IP yang diminta tidak sedang diblokir.",
 	"globalblocking-goto-block": "Memblokir alamat IP secara global",
 	"globalblocking-goto-unblock": "Menghapuskan pemblokiran global",

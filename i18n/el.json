@@ -47,6 +47,7 @@
 	"globalblocking-list-whitelisted": "τοπικά απενεργοποιημένη από τον/την $1: $2",
 	"globalblocking-list-whitelist": "τοπική κατάσταση",
 	"globalblocking-list-modify": "τροποποίηση",
+	"globalblocking-expiringblock": "λήγει στις $1 στις $2",
 	"globalblocking-list-noresults": "Η ζητούμενη διεύθυνση IP δεν είναι φραγμένη.",
 	"globalblocking-goto-block": "Καθολική φραγή μιας διεύθυνσης IP",
 	"globalblocking-goto-unblock": "Αφαίρεση μιας καθολικής φραγής",

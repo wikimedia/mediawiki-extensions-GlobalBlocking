@@ -38,6 +38,7 @@
 	"globalblocking-list-whitelisted": "desactivau localment por $1: $2",
 	"globalblocking-list-whitelist": "estau local",
 	"globalblocking-list-modify": "modificar",
+	"globalblocking-expiringblock": "circumduz o $1 a las $2",
 	"globalblocking-list-noresults": "l'adreza IP solicitada no ye bloqueyada.",
 	"globalblocking-goto-block": "Bloqueyar globalment una adreza IP",
 	"globalblocking-goto-unblock": "Sacar un bloqueyo global",

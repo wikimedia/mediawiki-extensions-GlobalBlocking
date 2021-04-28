@@ -39,6 +39,7 @@
 	"globalblocking-list-whitelisted": "dèsactivâ localament per $1 : $2",
 	"globalblocking-list-whitelist": "statut local",
 	"globalblocking-list-modify": "changiér",
+	"globalblocking-expiringblock": "èxpire lo $1 a $2",
 	"globalblocking-list-noresults": "L’adrèce IP demandâ est pas blocâ.",
 	"globalblocking-goto-block": "Blocar dens l’ensemblo una adrèce IP",
 	"globalblocking-goto-unblock": "Enlevar un blocâjo globâl",

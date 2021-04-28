@@ -41,6 +41,7 @@
 	"globalblocking-list-whitelisted": "lokaal afgeskakel deur $1: $2",
 	"globalblocking-list-whitelist": "lokale status",
 	"globalblocking-list-modify": "wysig",
+	"globalblocking-expiringblock": "verval op $1 om $2",
 	"globalblocking-list-noresults": "Die opgegewe IP-adres is nie geblokkeer nie.",
 	"globalblocking-goto-block": "Blokkeer 'n IP-adres globaal",
 	"globalblocking-goto-unblock": "Skrap 'n globale blokkade",

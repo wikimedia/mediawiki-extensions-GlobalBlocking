@@ -36,6 +36,7 @@
 	"globalblocking-list-whitelisted": "$1 миэстэтигэр араарбыт: $2",
 	"globalblocking-list-whitelist": "маннааҕы турук (статус)",
 	"globalblocking-list-modify": "тупсарарга",
+	"globalblocking-expiringblock": "болдьоҕо: $1 $2",
 	"globalblocking-list-noresults": "Көрдөбүлгэ ыйыллыбыт аадырыс хааччахтамматах.",
 	"globalblocking-goto-block": "IP-ны бары бырайыактарга боп",
 	"globalblocking-goto-unblock": "Бобууну суох гын",

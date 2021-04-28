@@ -40,6 +40,7 @@
 	"globalblocking-list-whitelisted": "diżattivat lokalment minn $1: $2",
 	"globalblocking-list-whitelist": "stat lokali",
 	"globalblocking-list-modify": "immodifika",
+	"globalblocking-expiringblock": "jiskadi sa $1 fil-$2",
 	"globalblocking-list-noresults": "L-indirizz IP rikjest mhuwiex imblukkat.",
 	"globalblocking-goto-block": "Imblokka indirizz IP globalment",
 	"globalblocking-goto-unblock": "Neħħi blokk globali",

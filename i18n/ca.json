@@ -46,6 +46,7 @@
 	"globalblocking-list-whitelisted": "desactivat localment per $1: $2",
 	"globalblocking-list-whitelist": "estat local",
 	"globalblocking-list-modify": "modifica",
+	"globalblocking-expiringblock": "venç el $1 a $2",
 	"globalblocking-list-noresults": "La adreça IP demanada no està blocada.",
 	"globalblocking-goto-block": "Bloca globalment una adreça IP",
 	"globalblocking-goto-unblock": "Cancel·la un blocatge global",

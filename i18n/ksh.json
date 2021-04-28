@@ -41,6 +41,7 @@
 	"globalblocking-list-whitelisted": "heh em Wikki opjehovve fum $1: $2",
 	"globalblocking-list-whitelist": "dä Zohschtand heh em Wikki",
 	"globalblocking-list-modify": "ändere",
+	"globalblocking-expiringblock": "bes aam $1 öm $2 Uhr",
 	"globalblocking-list-noresults": "De jewönschte <i lang=\"en\">IP</i>-Addräß es jespert.",
 	"globalblocking-goto-block": "En IP-Address för alle Wikis sperre",
 	"globalblocking-goto-unblock": "En Sperr för alle Wikis ophävve",

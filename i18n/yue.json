@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Hello903hello",
 			"Macofe",
 			"Shinjiman",
 			"Wong128hk"
@@ -30,8 +31,9 @@
 	"globalblocking-list-expiry": "於$1到期",
 	"globalblocking-list-anononly": "限匿名",
 	"globalblocking-list-unblock": "解封",
-	"globalblocking-list-whitelisted": "由$1於本地封鎖: $2",
+	"globalblocking-list-whitelisted": "由$1設定本地解封：$2",
 	"globalblocking-list-whitelist": "本地狀態",
+	"globalblocking-expiringblock": "$1 $2 期滿",
 	"globalblocking-goto-block": "全域封鎖一個 IP 地址",
 	"globalblocking-goto-unblock": "拎走一個全域封鎖",
 	"globalblocking-goto-status": "改一個全域封鎖嘅本地狀態",

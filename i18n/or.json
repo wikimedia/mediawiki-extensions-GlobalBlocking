@@ -40,6 +40,7 @@
 	"globalblocking-list-whitelisted": " $1ଙ୍କ ଦେଇ ସ୍ଥାନୀୟ ଭାବେ ଅଚଳ କରାଯାଇଅଛି: $2",
 	"globalblocking-list-whitelist": "ସ୍ଥାନୀୟ ସ୍ଥିତି",
 	"globalblocking-list-modify": "ରୂପାନ୍ତର କରିବେ",
+	"globalblocking-expiringblock": "$1 ତାରିଖ $2ବେଳେ ମିଆଦ ପୁରିବ",
 	"globalblocking-list-noresults": "ଅନୁରୋଧ କରାଯାଇଥିବା IP ଠିକଣାଟି ଅଟକାଗଲା ନାହିଁ ।",
 	"globalblocking-goto-block": "ଏକ IP ଠିକଣାଟିକୁ ଜଗତଯାକ ଉଇକିରେ ଅଟକାଇ ଦେବେ",
 	"globalblocking-goto-unblock": "ଏକ ଜଗତ ସାରାର ଅଟକକୁ ହଟାଇଦେବେ",

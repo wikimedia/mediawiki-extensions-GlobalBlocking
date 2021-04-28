@@ -43,6 +43,7 @@
 	"globalblocking-list-whitelisted": "$1 ने स्थानिक स्तरपर रद्द किया: $2",
 	"globalblocking-list-whitelist": "स्थानीय स्थिति",
 	"globalblocking-list-modify": "संशोधित करें",
+	"globalblocking-expiringblock": "$1 को $2 बजे मियाद खत्म होती है",
 	"globalblocking-list-noresults": "अनुरोध किया गया आईपि पता अवरोध नहीं है ।",
 	"globalblocking-goto-block": "ग्लोबली एक आईपी पते को अवरोध करें",
 	"globalblocking-goto-unblock": "एक वैश्विक अवरोध हटाएँ",

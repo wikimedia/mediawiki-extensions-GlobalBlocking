@@ -45,6 +45,7 @@
 	"globalblocking-list-whitelisted": "deshabilitado localmente por $1: $2",
 	"globalblocking-list-whitelist": "estado local",
 	"globalblocking-list-modify": "modificar",
+	"globalblocking-expiringblock": "remata o $1 ás $2",
 	"globalblocking-list-noresults": "O enderezo IP solicitado non está bloqueado.",
 	"globalblocking-goto-block": "Bloquear globalmente un enderezo IP",
 	"globalblocking-goto-unblock": "Retirar un bloqueo global",

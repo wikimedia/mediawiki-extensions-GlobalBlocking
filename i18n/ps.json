@@ -24,6 +24,7 @@
 	"globalblocking-list-unblock": "غورځول",
 	"globalblocking-list-whitelist": "سيمه ايز دريځ",
 	"globalblocking-list-modify": "بدلول",
+	"globalblocking-expiringblock": "په $1 نېټه، $2 بجو پای ته رسېږي",
 	"globalblocking-list-noresults": "په غوښتلې آي پي پتې بنديز نه دی.",
 	"globalblocking-goto-block": "په يوې آی پي پتې نړېواله بنديز لگول",
 	"globalblocking-goto-unblock": "يو نړيوال بنديز غورځول",

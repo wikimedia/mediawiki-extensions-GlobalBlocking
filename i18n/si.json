@@ -42,6 +42,7 @@
 	"globalblocking-list-whitelisted": "පෙදෙසිව අක්‍රීය කළේ $1: $2",
 	"globalblocking-list-whitelist": "ස්ථානික තත්ත්වය",
 	"globalblocking-list-modify": "වෙනස් කරන්න",
+	"globalblocking-expiringblock": "$1 දිනදී $2 වේලාවේදී  කල් ඉකුත්වේ",
 	"globalblocking-list-noresults": "ඉල්ලුම් කළ IP ලිපිනය වාරණය කර නැත",
 	"globalblocking-goto-block": "IP ලිපිනයක් ගෝලීයව වාරණය කරන්න",
 	"globalblocking-goto-unblock": "ගෝලීය වාරණයක් ඉවත් කරන්න",

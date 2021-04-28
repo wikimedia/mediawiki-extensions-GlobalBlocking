@@ -40,6 +40,7 @@
 	"globalblocking-list-whitelisted": "lokal a nabaldado babaen ti $1 : $2",
 	"globalblocking-list-whitelist": "lokal a kasasaad",
 	"globalblocking-list-modify": "baliwan",
+	"globalblocking-expiringblock": "agpaso intono $1, $2",
 	"globalblocking-list-noresults": "Ti kiniddaw nga adres ti IP ket saan a naserraan",
 	"globalblocking-goto-block": "Global a serraan ti maysa nga adres ti IP",
 	"globalblocking-goto-unblock": "Ikkaten ti maysa a sangalubongan a serra",

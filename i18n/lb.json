@@ -44,6 +44,7 @@
 	"globalblocking-list-whitelisted": "lokal ausgeschalt vum $1: $2",
 	"globalblocking-list-whitelist": "lokale Status",
 	"globalblocking-list-modify": "änneren",
+	"globalblocking-expiringblock": "bis den $1 ëm $2",
 	"globalblocking-list-noresults": "Déi gefroten IP-Adress ass net gespaart",
 	"globalblocking-goto-block": "Eng IP-Adress global spären",
 	"globalblocking-goto-unblock": "Eng global Spär ophiewen",

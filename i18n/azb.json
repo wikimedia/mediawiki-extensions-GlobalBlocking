@@ -14,6 +14,7 @@
 	"globalblocking-list-unblock": "سیل",
 	"globalblocking-list-whitelist": "یئرلی وضعیت",
 	"globalblocking-list-modify": "دییشمک",
+	"globalblocking-expiringblock": "سون تاریخ $1 ساعت $2",
 	"globalblocking-unblock-reason": "ندن:",
 	"globalblocking-whitelist-legend": "یئرلی وضعیتی دییشدیر",
 	"globalblocking-whitelist-reason": "ندن:",

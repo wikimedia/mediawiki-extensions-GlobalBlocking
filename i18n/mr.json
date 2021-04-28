@@ -44,6 +44,7 @@
 	"globalblocking-list-whitelisted": "$1 ने स्थानिक पातळीवर रद्द केले: $2",
 	"globalblocking-list-whitelist": "स्थानिक स्थिती",
 	"globalblocking-list-modify": "बदला",
+	"globalblocking-expiringblock": "समाप्ति $1 $2",
 	"globalblocking-list-noresults": "विनंती केलेला अंकपत्ता अथवा सदस्यनाव प्रतिबंधीत केलेले नाही.",
 	"globalblocking-goto-block": "(आयपी ) अंकपत्ता वैश्विक पातळीवर ब्लॉक करा",
 	"globalblocking-goto-unblock": "एक वैश्विक ब्लॉक काढा",

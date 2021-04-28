@@ -5,6 +5,7 @@
 		]
 	},
 	"globalblocking-block-reason": "Kaaran:",
+	"globalblocking-expiringblock": "khalaas hoe hai $1 at $2",
 	"globalblocking-unblock-reason": "Kaaran:",
 	"globalblocking-whitelist-reason": "Kaaran:"
 }

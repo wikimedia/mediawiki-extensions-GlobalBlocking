@@ -41,6 +41,7 @@
 	"globalblocking-list-whitelisted": "$1 тарафынан урында һүндерелгән: $2",
 	"globalblocking-list-whitelist": "урындағы торошо",
 	"globalblocking-list-modify": "үҙгәртергә",
+	"globalblocking-expiringblock": "$1 $2 тамамлана",
 	"globalblocking-list-noresults": "Һоратылған IP адрес бикләнмәгән.",
 	"globalblocking-goto-block": "IP адресты дөйөм бикләргә",
 	"globalblocking-goto-unblock": "Дөйөм бикте алырға",

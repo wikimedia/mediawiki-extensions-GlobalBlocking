@@ -40,6 +40,7 @@
 	"globalblocking-list-whitelisted": "$1 স্থানীয়ভাবে নিস্ক্রিয় করেছেন: $2",
 	"globalblocking-list-whitelist": "স্থানীয় অবস্থা",
 	"globalblocking-list-modify": "পরিবর্তন",
+	"globalblocking-expiringblock": "$1 তারিখের $2 এ মেয়াদোত্তীর্ণ হবে",
 	"globalblocking-list-noresults": "অনুরোধকৃত আইপি ঠিকানাটি অবরুদ্ধ নয়।",
 	"globalblocking-goto-block": "একটি আইপি ঠিকানাকে বৈশ্বিকভাবে বাধা প্রদান করুন",
 	"globalblocking-goto-unblock": "একটি বৈশ্বিক বাধা তুলে নাও",

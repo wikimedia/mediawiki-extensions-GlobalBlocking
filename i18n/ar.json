@@ -51,6 +51,7 @@
 	"globalblocking-list-whitelisted": "تم تعطيله محليا بواسطة $1: $2",
 	"globalblocking-list-whitelist": "الحالة المحلية",
 	"globalblocking-list-modify": "تعديل",
+	"globalblocking-expiringblock": "ينتهي في يوم $1 عند الساعة $2",
 	"globalblocking-list-noresults": "عنوان الأيبي المطلوب ليس ممنوعا.",
 	"globalblocking-goto-block": "منع عام لعنوان أيبي",
 	"globalblocking-goto-unblock": "إزالة منع عام",

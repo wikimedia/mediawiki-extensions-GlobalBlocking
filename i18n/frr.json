@@ -6,6 +6,7 @@
 	},
 	"globalblocking-list": "List faan globaal speret IP-adresen",
 	"globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> (''$3'') hää globaal speret [[Special:Contributions/$4|$4]] ''($5)''",
+	"globalblocking-expiringblock": "lääpt di $1 am a klook $2 uf",
 	"globalblocking-block-logentry": "hää [[$1]] globaal speret för di tidjrüm $2",
 	"globalblocking-block2-logentry": "hää globaal speret [[$1]] ($2)",
 	"globalblocking-contribs-notice": "Detdiar IP-adres as tu tidj globaal speret.\nDiar fulagt di logbuk-iindrach för globaal speren:",

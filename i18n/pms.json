@@ -41,6 +41,7 @@
 	"globalblocking-list-whitelisted": "disabilità localment da $1: $2",
 	"globalblocking-list-whitelist": "stat local",
 	"globalblocking-list-modify": "modìfica",
+	"globalblocking-expiringblock": "a finiss ël $1 a $2",
 	"globalblocking-list-noresults": "L'adrëssa IP ciamà a l'é pa blocà",
 	"globalblocking-goto-block": "Blòca globalment n'adrëssa IP",
 	"globalblocking-goto-unblock": "Gavé un blocagi global",

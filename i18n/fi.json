@@ -54,6 +54,7 @@
 	"globalblocking-list-whitelisted": "paikallisesti eston on poistanut käyttäjä $1: $2",
 	"globalblocking-list-whitelist": "paikallinen tila",
 	"globalblocking-list-modify": "muuta",
+	"globalblocking-expiringblock": "vanhentuu $1 kello $2",
 	"globalblocking-list-noresults": "Pyydettyä IP-osoitetta ei ole estetty.",
 	"globalblocking-goto-block": "Estä IP-osoite järjestelmänlaajuisesti",
 	"globalblocking-goto-unblock": "Poista järjestelmänlaajuinen esto",

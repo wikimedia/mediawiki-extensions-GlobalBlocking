@@ -17,6 +17,7 @@
 	"globalblocking-list-whitelisted": "dinon-aktifkan di wiki lokal dek $1: $2",
 	"globalblocking-list-whitelist": "statuih lokal",
 	"globalblocking-list-modify": "ubah",
+	"globalblocking-expiringblock": "habih pado $1 di $2",
 	"globalblocking-list-noresults": "Alamaik IP nan dimintak indak sadang disakek.",
 	"globalblocking-goto-block": "Manyakek alamaik IP sacaro global",
 	"globalblocking-goto-unblock": "Hapuih sakek global",

@@ -32,6 +32,7 @@
 	"globalblocking-list-whitelisted": "lokoal ouskalted fon $1: $2",
 	"globalblocking-list-whitelist": "lokoalen Stoatus",
 	"globalblocking-list-modify": "annerje",
+	"globalblocking-expiringblock": "eendet an dän $1 uum $2 Uure",
 	"globalblocking-goto-block": "IP-Adresse globoal speere",
 	"globalblocking-goto-unblock": "Globoale Speere aphieuwje",
 	"globalblocking-goto-status": "Lokoalen Stoatus foar ne globoale Speere annerje",

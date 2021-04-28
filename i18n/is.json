@@ -40,6 +40,7 @@
 	"globalblocking-list-whitelisted": "Óvirkt svæðisbundið af $1: $2",
 	"globalblocking-list-whitelist": "Svæðisbundin staða",
 	"globalblocking-list-modify": "breyta",
+	"globalblocking-expiringblock": "rennur út  $1 $2",
 	"globalblocking-list-noresults": "Umbeðið vistfang er ekki í bannað.",
 	"globalblocking-goto-block": "Banna vistfang altækt",
 	"globalblocking-goto-unblock": "Fjarlægja altækt bann",

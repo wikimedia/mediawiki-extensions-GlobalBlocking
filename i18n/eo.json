@@ -41,6 +41,7 @@
 	"globalblocking-list-whitelisted": "ĉi-loke malebligita de $1: $2",
 	"globalblocking-list-whitelist": "loka statuso",
 	"globalblocking-list-modify": "modifi",
+	"globalblocking-expiringblock": "senvalidiĝas je $1 $2",
 	"globalblocking-list-noresults": "La petita IP-adreso ne estas forbarita.",
 	"globalblocking-goto-block": "Ĝenerale forbari IP-adreson",
 	"globalblocking-goto-unblock": "Forigi ĝeneralan forbaron",

@@ -39,6 +39,7 @@
 	"globalblocking-list-whitelisted": "lokal abgschalte vu $1: $2",
 	"globalblocking-list-whitelist": "lokale Status",
 	"globalblocking-list-modify": "ändere",
+	"globalblocking-expiringblock": "hert uf am $1 am $2",
 	"globalblocking-list-noresults": "Di gfrogt IP-Adräss isch nit gsperrt.",
 	"globalblocking-goto-block": "IP-Adräss wältwyt sperre",
 	"globalblocking-goto-unblock": "Wältwyti Sperri ufhebe",

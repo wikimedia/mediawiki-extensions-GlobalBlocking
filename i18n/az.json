@@ -20,6 +20,7 @@
 	"globalblocking-list-unblock": "çıxar",
 	"globalblocking-list-whitelist": "lokal status",
 	"globalblocking-list-modify": "dəyişmək",
+	"globalblocking-expiringblock": "son tarix $1 saat $2",
 	"globalblocking-unblock-reason": "Səbəb:",
 	"globalblocking-whitelist-reason": "Səbəb:",
 	"globalblocking-whitelist-status": "Lokal status:",

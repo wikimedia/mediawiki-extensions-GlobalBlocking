@@ -47,6 +47,7 @@
 	"globalblocking-list-whitelisted": "helyben feloldotta $1: $2",
 	"globalblocking-list-whitelist": "helyi állapot",
 	"globalblocking-list-modify": "módosítás",
+	"globalblocking-expiringblock": "lejárat: $1 $2",
 	"globalblocking-list-noresults": "A kért IP-cím nincs blokkolva.",
 	"globalblocking-goto-block": "IP-cím globális blokkolása",
 	"globalblocking-goto-unblock": "Globális blokk eltávolítása",

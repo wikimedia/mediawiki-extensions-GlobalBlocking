@@ -48,6 +48,7 @@
 	"globalblocking-list-whitelisted": "локално изключен от $1: $2",
 	"globalblocking-list-whitelist": "локален статут",
 	"globalblocking-list-modify": "промяна",
+	"globalblocking-expiringblock": "изтича на $1 в $2",
 	"globalblocking-list-noresults": "Заявеният IP-адрес не е блокиран.",
 	"globalblocking-goto-block": "Глобално блокиране на IP-адрес",
 	"globalblocking-goto-unblock": "Премахване на глобално блокиране",

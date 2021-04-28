@@ -63,6 +63,7 @@
 	"globalblocking-list-whitelisted": "由$1于本地停用：$2",
 	"globalblocking-list-whitelist": "本地状态",
 	"globalblocking-list-modify": "修改",
+	"globalblocking-expiringblock": "终止于$1 $2",
 	"globalblocking-list-noresults": "请求的IP地址没有被封锁。",
 	"globalblocking-goto-block": "全域封禁一个IP地址",
 	"globalblocking-goto-unblock": "移除全域封禁",

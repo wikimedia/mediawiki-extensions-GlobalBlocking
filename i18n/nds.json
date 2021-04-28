@@ -36,6 +36,7 @@
 	"globalblocking-list-whitelisted": "lokal utstellt vun $1: $2",
 	"globalblocking-list-whitelist": "lokalen Status",
 	"globalblocking-list-modify": "ännern",
+	"globalblocking-expiringblock": "löppt $1 $2 af",
 	"globalblocking-goto-block": "IP-Adress global sperren",
 	"globalblocking-goto-unblock": "Globale Sperr opheven",
 	"globalblocking-goto-status": "Lokalen Status för en globale Sperr ännern",

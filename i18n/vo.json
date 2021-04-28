@@ -31,6 +31,7 @@
 	"globalblocking-list-unblock": "moükön",
 	"globalblocking-list-whitelisted": "penemögükon topiko fa geban: $1: $2",
 	"globalblocking-list-whitelist": "stad topik",
+	"globalblocking-expiringblock": "dulon jü $1 düp $2",
 	"globalblocking-goto-block": "Blokön ladeti-IP valöpo",
 	"globalblocking-goto-unblock": "Moükön blokami valöpik",
 	"globalblocking-goto-status": "Votükön stadi topik blokama valöpik",

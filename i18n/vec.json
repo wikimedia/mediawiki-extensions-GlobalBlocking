@@ -41,6 +41,7 @@
 	"globalblocking-list-whitelisted": "localmente disabilità da $1: $2",
 	"globalblocking-list-whitelist": "stato local",
 	"globalblocking-list-modify": "canbia",
+	"globalblocking-expiringblock": "scade el $1 a le $2",
 	"globalblocking-list-noresults": "L'indirisso IP richiesto no'l xe mia blocà.",
 	"globalblocking-goto-block": "Bloca globalmente un indirisso IP",
 	"globalblocking-goto-unblock": "Cava un bloco global",

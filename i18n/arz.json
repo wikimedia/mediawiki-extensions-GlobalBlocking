@@ -32,6 +32,7 @@
 	"globalblocking-list-unblock": "شيل",
 	"globalblocking-list-whitelisted": "اتعطل  محلى بواسطة $1: $2",
 	"globalblocking-list-whitelist": "الحالة المحلية",
+	"globalblocking-expiringblock": "بيخلص يوم $1 الساعه $2",
 	"globalblocking-goto-block": "منع عام لعنوان أيبي",
 	"globalblocking-goto-unblock": "شيل منع عام",
 	"globalblocking-goto-status": "تغيير الحالة المحلية لمنع عام",
