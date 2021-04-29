@@ -54,6 +54,7 @@
 	"globalblocking-list-whitelist": "로컬 상태",
 	"globalblocking-list-modify": "차단 설정 바꾸기",
 	"globalblocking-expiringblock": "$1 $2에 해제",
+	"globalblocking-infiniteblock": "무기한",
 	"globalblocking-list-noresults": "입력한 IP 주소는 차단되지 않았습니다.",
 	"globalblocking-goto-block": "IP를 전역 차단하기",
 	"globalblocking-goto-unblock": "전역 차단 해제",

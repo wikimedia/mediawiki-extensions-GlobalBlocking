@@ -3,6 +3,7 @@
 		"authors": [
 			"Brazal.dang",
 			"Geopoet",
+			"Kunokuno",
 			"Macofe"
 		]
 	},
@@ -40,6 +41,7 @@
 	"globalblocking-list-whitelist": "lokal na kamugtakan",
 	"globalblocking-list-modify": "hirahon",
 	"globalblocking-expiringblock": "mapaso sa $1 sa oras na $2",
+	"globalblocking-infiniteblock": "daing kasagkudan",
 	"globalblocking-list-noresults": "An pinaghahagad na estada kan IP dae tabi pinagkubkob.",
 	"globalblocking-goto-block": "Pankinabanong kinubkob an estada kan IP",
 	"globalblocking-goto-unblock": "Tangkason an sarong pankinaban na kubkob",

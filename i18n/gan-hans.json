@@ -2,5 +2,5 @@
 	"@metadata": {
 		"authors": []
 	},
-	"globalblocking-expiringblock": "!!FUZZY!!$1 $2到期"
+	"globalblocking-expiringblock": "$1 $2到期"
 }

@@ -1,6 +1,9 @@
 {
 	"@metadata": {
-		"authors": []
+		"authors": [
+			"فیروز"
+		]
 	},
-	"globalblocking-expiringblock": "$1 دله، ساعت $2 دِرِس وونه"
+	"globalblocking-expiringblock": "$1 دله، ساعت $2 دِرِس وونه",
+	"globalblocking-infiniteblock": "بی‌نهایت"
 }

@@ -44,6 +44,7 @@
 	"globalblocking-list-whitelist": "месен статус",
 	"globalblocking-list-modify": "измени",
 	"globalblocking-expiringblock": "истекува на $1 во $2 ч.",
+	"globalblocking-infiniteblock": "бесконечно",
 	"globalblocking-list-noresults": "Бараната IP-адреса не е блокирана.",
 	"globalblocking-goto-block": "Блокирај IP-адреса глобално",
 	"globalblocking-goto-unblock": "Отстрани глобален блок",
