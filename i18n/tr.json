@@ -52,6 +52,7 @@
 	"globalblocking-list-whitelist": "yerel durum",
 	"globalblocking-list-modify": "değiştir",
 	"globalblocking-expiringblock": "$1 $2 tarihinde doluyor",
+	"globalblocking-infiniteblock": "süresiz",
 	"globalblocking-list-noresults": "İstenen IP adresi engellenmedi.",
 	"globalblocking-goto-block": "Bir IP adresini küresel olarak engelle",
 	"globalblocking-goto-unblock": "Küresel bir engellemeyi kaldır",
