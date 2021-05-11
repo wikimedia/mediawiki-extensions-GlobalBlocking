@@ -1,6 +1,9 @@
 {
 	"@metadata": {
-		"authors": []
+		"authors": [
+			"Narazeni"
+		]
 	},
-	"globalblocking-expiringblock": "ვადის გასვლის დრო $1 $2"
+	"globalblocking-expiringblock": "ვადის გასვლის დრო $1 $2",
+	"globalblocking-infiniteblock": "უგუთანჯუ"
 }
