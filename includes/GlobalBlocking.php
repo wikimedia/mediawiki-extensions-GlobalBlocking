@@ -327,7 +327,7 @@ class GlobalBlocking {
 	}
 
 	/**
-	 * @param int $dbtype either DB_REPLICA or DB_MASTER
+	 * @param int $dbtype either DB_REPLICA or DB_PRIMARY
 	 * @return \Wikimedia\Rdbms\IDatabase
 	 */
 	public static function getGlobalBlockingDatabase( $dbtype ) {
@@ -341,7 +341,7 @@ class GlobalBlocking {
 
 	/**
 	 * @param string $ip
-	 * @param int $dbtype either DB_REPLICA or DB_MASTER
+	 * @param int $dbtype either DB_REPLICA or DB_PRIMARY
 	 * @return int
 	 */
 	public static function getGlobalBlockId( $ip, $dbtype = DB_REPLICA ) {
@@ -359,14 +359,14 @@ class GlobalBlocking {
 	/**
 	 * Purge stale block rows.
 	 *
-	 * This is expensive. It involves opening a connection to a new master,
-	 * and doing a write query. We should only do it when a connection to the master
+	 * This is expensive. It involves opening a connection to a new primary database,
+	 * and doing a write query. We should only do it when a connection to the primary database
 	 * is already open (currently, when a global block is made).
 	 *
 	 * @throws DBUnexpectedError
 	 */
 	public static function purgeExpired() {
-		$dbw = self::getGlobalBlockingDatabase( DB_MASTER );
+		$dbw = self::getGlobalBlockingDatabase( DB_PRIMARY );
 		$dbw->delete(
 			'globalblocks',
 			[ 'gb_expiry<' . $dbw->addQuotes( $dbw->timestamp() ) ],
@@ -374,11 +374,11 @@ class GlobalBlocking {
 		);
 
 		// Purge the global_block_whitelist table.
-		// We can't be perfect about this without an expensive check on the master
+		// We can't be perfect about this without an expensive check on the primary database
 		// for every single global block. However, we can be clever about it and store
 		// the expiry of global blocks in the global_block_whitelist table.
 		// That way, most blocks will fall out of the table naturally when they expire.
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$dbw->delete(
 			'global_block_whitelist',
 			[ 'gbw_expiry<' . $dbw->addQuotes( $dbw->timestamp() )
@@ -488,8 +488,8 @@ class GlobalBlocking {
 
 		'@phan-var string $ip';
 
-		// Check for an existing block in the master database
-		$existingBlock = self::getGlobalBlockId( $ip, DB_MASTER );
+		// Check for an existing block in the primary database database
+		$existingBlock = self::getGlobalBlockId( $ip, DB_PRIMARY );
 		if ( !$modify && $existingBlock ) {
 			$errors[] = [ 'globalblocking-block-alreadyblocked', $ip ];
 		}
@@ -499,7 +499,7 @@ class GlobalBlocking {
 		}
 
 		// We're a-ok.
-		$dbw = self::getGlobalBlockingDatabase( DB_MASTER );
+		$dbw = self::getGlobalBlockingDatabase( DB_PRIMARY );
 
 		$row = [
 			'gb_address' => $ip,

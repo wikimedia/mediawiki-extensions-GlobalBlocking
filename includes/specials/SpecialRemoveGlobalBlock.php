@@ -39,7 +39,7 @@ class SpecialRemoveGlobalBlock extends FormSpecialPage {
 			return Status::newFatal( $this->msg( 'globalblocking-notblocked', $this->ip ) );
 		}
 
-		$dbw = GlobalBlocking::getGlobalBlockingDatabase( DB_MASTER );
+		$dbw = GlobalBlocking::getGlobalBlockingDatabase( DB_PRIMARY );
 		$dbw->delete( 'globalblocks', [ 'gb_id' => $this->id ], __METHOD__ );
 
 		$page = new LogPage( 'gblblock' );

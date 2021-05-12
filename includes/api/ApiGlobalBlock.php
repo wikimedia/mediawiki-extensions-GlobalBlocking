@@ -71,7 +71,7 @@ class ApiGlobalBlock extends ApiBase {
 				$result->addValue( 'globalblock', 'expiry', $displayExpiry );
 			}
 		} elseif ( $this->getParameter( 'unblock' ) ) {
-			GlobalBlocking::getGlobalBlockingDatabase( DB_MASTER )->delete(
+			GlobalBlocking::getGlobalBlockingDatabase( DB_PRIMARY )->delete(
 				'globalblocks',
 				[ 'gb_id' => $block->gb_id ],
 				__METHOD__

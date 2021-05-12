@@ -94,7 +94,7 @@ class FixGlobalBlockWhitelist extends Maintenance {
 				$this->output( " Whitelist broken {$address}: current gb_id is $newId\n" );
 			} else {
 				$count++;
-				$this->getDB( DB_MASTER )->update(
+				$this->getDB( DB_PRIMARY )->update(
 					'global_block_whitelist',
 					[ 'gbw_id' => $newId ],
 					[ 'gbw_address' => $address ],
@@ -117,7 +117,7 @@ class FixGlobalBlockWhitelist extends Maintenance {
 				. implode( "\n", $nonExistent ) . "\n"
 			);
 			if ( !$this->dryRun ) {
-				$this->getDB( DB_MASTER )->delete(
+				$this->getDB( DB_PRIMARY )->delete(
 					'global_block_whitelist',
 					[ 'gbw_address' => $nonExistent ],
 					__METHOD__
