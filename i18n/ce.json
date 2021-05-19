@@ -52,8 +52,8 @@
 	"globalblockstatus": "ХӀоттайелчаьрца долу хьал, глобалан блоктохарна",
 	"right-globalblock": "Глобалан блоктохар а, блокдӀаяккхар а",
 	"action-globalblock": "глобалан блоктохар а, блокдӀаяккхар а",
-	"right-globalblock-whitelist": "глобалан блоктохарш цхьанхьа дӀаяхар",
-	"action-globalblock-whitelist": "глобалан блоктохарш цхьанхьа дӀаяхар",
+	"right-globalblock-whitelist": "Глобалан блоктохарш локалан дӀайахар",
+	"action-globalblock-whitelist": "глобалан блоктохарш цхьанхьа дӀайахар",
 	"right-globalblock-exempt": "глобалан блоктохарийн чекхбовлар",
 	"action-globalblock-exempt": "глобалан блоктохарийн чекхбовлар",
 	"grant-globalblock": "Глобалан блоктоха йа блокдӀайаккха IP-адрес тӀера."
