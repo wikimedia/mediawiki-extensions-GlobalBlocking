@@ -53,6 +53,7 @@
 	"globalblocking-list-whitelist": "lokale status",
 	"globalblocking-list-modify": "wijzigen",
 	"globalblocking-expiringblock": "vervalt op $1 om $2",
+	"globalblocking-infiniteblock": "onbeperkt",
 	"globalblocking-list-noresults": "Het opgegeven IP-adres is niet geblokkeerd.",
 	"globalblocking-goto-block": "IP-adres globaal blokkeren",
 	"globalblocking-goto-unblock": "Globale blokkades verwijderen",

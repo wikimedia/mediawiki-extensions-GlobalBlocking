@@ -8,7 +8,7 @@
 			"Smihael"
 		]
 	},
-	"globalblocking-desc": "[[Special:GlobalBlock|Omogoča]] blokado IP-naslovov [[Special:GlobalBlockList|preko več wikijev]]",
+	"globalblocking-desc": "[[Special:GlobalBlock|Omogoča]] blokado IP-naslovov [[Special:GlobalBlockList|na več vikijih]]",
 	"globalblocking-block": "Globalno blokiraj IP-naslov",
 	"globalblocking-block-intro": "To stran lahko uporabite za blokado IP-naslova na vseh wikijih.",
 	"globalblocking-block-reason": "Razlog:",
