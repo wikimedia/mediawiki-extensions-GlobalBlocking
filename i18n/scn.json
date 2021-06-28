@@ -18,6 +18,7 @@
 	"globalblocking-block-expiry": "Scadenza:",
 	"globalblocking-block-expiry-selector-other": "Durata non ntâ lista:",
 	"globalblocking-block-legend": "Blocca nu nnirizzu IP glubbalmenti",
+	"globalblocking-ipaddress": "Nnirizzu IP:",
 	"globalblocking-block-ipinvalid": "Lu nnirizzu IP ($1) ca nziristi nun è vàlidu.\nTeni accura ô fattu ca non po nziriri nu nomu utenti!",
 	"globalblocking-block-expiryinvalid": "La scadenza ca nziristi non vali.",
 	"globalblocking-block-submit": "Blocca stu nnirizzu IP glubbalmenti",
