@@ -9,7 +9,7 @@
 	"globalblocking-block-expiry-selector-other": "Altra tempo:",
 	"globalblocking-block-alreadyblocked": "Ca IP-adreso $1 ja esas blokusata omnaloke.\nVu povas lektar pri la blokuso en la [[Special:GlobalBlockList|listo pri globala blokusi]],\no modifikar l'ajusti en l'existanta blokuso, tra nova sendo di ca pagino.",
 	"globalblocking-also-local-talk": "Impedar ke uzero editez lua lokala diskuto-pagino",
-	"globalblocking-list-intro": "Yen listo pri omna globala blokusi nune aktiva.\nKelka blokusi indikesis quale 'sen efekto' lokale: to signifikas ke l'uzero blokusesas en altra wiki, tamen lokala administrero decidis desblokusar li en ica wiki.",
+	"globalblocking-list-intro": "Yen listo pri omna globala blokusi nun aktiva.\nKelka blokusi indikesis quale 'sen efekto' lokale: to signifikas ke l'uzero blokusesas en altra wiki, tamen lokala administrero decidis desblokusar li en ica wiki.",
 	"globalblocking-list": "Listo pri IP-adresi globale blokusata",
 	"globalblocking-search-ip": "IP-adreso:",
 	"globalblocking-search-errors": "Vua serchado faliis pro la sequanta {{PLURAL:$1|motivo|motivi}}:",
