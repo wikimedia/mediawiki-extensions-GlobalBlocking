@@ -7,6 +7,7 @@
 			"Crt",
 			"Jaakonam",
 			"Linnea",
+			"MITO",
 			"Macofe",
 			"Nedergard",
 			"Nike",
@@ -55,6 +56,7 @@
 	"globalblocking-list-whitelist": "paikallinen tila",
 	"globalblocking-list-modify": "muuta",
 	"globalblocking-expiringblock": "vanhentuu $1 kello $2",
+	"globalblocking-infiniteblock": "ikuinen",
 	"globalblocking-list-noresults": "Pyydettyä IP-osoitetta ei ole estetty.",
 	"globalblocking-goto-block": "Estä IP-osoite järjestelmänlaajuisesti",
 	"globalblocking-goto-unblock": "Poista järjestelmänlaajuinen esto",
@@ -104,6 +106,9 @@
 	"action-globalblock-whitelist": "poistaa käytöstä järjestelmänlaajuisia estoja paikallisesti",
 	"right-globalblock-exempt": "Ohittaa järjestelmänlaajuiset estot",
 	"action-globalblock-exempt": "ohittaa järjestelmänlaajuisia estoja",
+	"globalblocking-apierror-badip": "IP-osoite $1 on virheellinen",
 	"log-action-filter-gblblock": "Globaalin eston tyyppi:",
-	"log-action-filter-gblblock-gblock": "Järjestelmänlaajuinen esto"
+	"log-action-filter-gblblock-gblock": "Järjestelmänlaajuinen esto",
+	"log-action-filter-gblblock-gunblock": "Järjestelmänlaajuisen eston poistaminen",
+	"log-action-filter-gblblock-modify": "Järjestelmänlaajuisen eston muokkaaminen"
 }
