@@ -7,7 +7,7 @@
 	"type": "other",
 	"callback": "GlobalBlockingHooks::onRegistration",
 	"requires": {
-		"MediaWiki": ">= 1.36.0"
+		"MediaWiki": ">= 1.37.0"
 	},
 	"GroupPermissions": {
 		"steward": {

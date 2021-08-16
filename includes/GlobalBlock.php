@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Block\DatabaseBlock;
+use MediaWiki\MediaWikiServices;
 
 class GlobalBlock extends DatabaseBlock {
 	/**
@@ -42,7 +43,9 @@ class GlobalBlock extends DatabaseBlock {
 		}
 		// If the blocker is the same user on the foreign wiki and the current wiki
 		// then we can use the username
-		$lookup = CentralIdLookup::factory();
+		$lookup = MediaWikiServices::getInstance()
+			->getCentralIdLookupFactory()
+			->getLookup();
 		if ( $user->getId() && $lookup->isAttached( $user )
 			&& $lookup->isAttached( $user, $block->gb_by_wiki )
 		) {
