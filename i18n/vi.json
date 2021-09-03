@@ -45,7 +45,7 @@
 	"globalblocking-list-whitelisted": "bị tắt cục bộ bởi $1: $2",
 	"globalblocking-list-whitelist": "trạng thái cục bộ",
 	"globalblocking-list-modify": "thay đổi",
-	"globalblocking-expiringblock": "hết hạn vào ngày $1 lúc $2",
+	"globalblocking-expiringblock": "hết hạn vào $1 lúc $2",
 	"globalblocking-infiniteblock": "vô hạn",
 	"globalblocking-list-noresults": "Địa chỉ IP được yêu cầu không bị cấm.",
 	"globalblocking-goto-block": "Cấm địa chỉ IP toàn cục",
