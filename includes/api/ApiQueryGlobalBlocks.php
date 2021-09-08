@@ -111,7 +111,6 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 				$prefixLen = 3; // IPUtils::toHex output is prefixed with "v6-"
 			} else {
 				$this->dieWithError( 'apierror-badip', 'param_ip' );
-				throw new LogicException();
 			}
 
 			# Check range validity, if it's a CIDR
