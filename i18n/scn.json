@@ -35,7 +35,7 @@
 	"globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> (''$3'') bluccau glubbalmenti [[Special:Contributions/$4|$4]] ''($5)''",
 	"globalblocking-list-expiry": "finuta dû bloccu $1",
 	"globalblocking-list-anononly": "Sulu anònimi",
-	"globalblocking-list-unblock": "rimovi",
+	"globalblocking-list-unblock": "leva",
 	"globalblocking-list-whitelisted": "disattivatu lucalmenti di $1: $2",
 	"globalblocking-list-whitelist": "statu lucali",
 	"globalblocking-list-modify": "cancia",
