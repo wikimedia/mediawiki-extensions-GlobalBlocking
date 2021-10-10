@@ -93,6 +93,9 @@
 	"ExtensionMessagesFiles": {
 		"GlobalBlockingAlias": "GlobalBlocking.alias.php"
 	},
+	"AutoloadNamespaces": {
+		"MediaWiki\\Extension\\GlobalBlocking\\": "includes/"
+	},
 	"AutoloadClasses": {
 		"SpecialGlobalBlock": "includes/specials/SpecialGlobalBlock.php",
 		"SpecialGlobalBlockList": "includes/specials/SpecialGlobalBlockList.php",
@@ -125,7 +128,14 @@
 		},
 		"GlobalBlockingBlockXFF": {
 			"value": true
+		},
+		"GlobalBlockRemoteReasonUrl": {
+			"description": "Full path to api.php to use to expand templates in block reasons",
+			"value": null
 		}
 	},
+	"ServiceWiringFiles": [
+		"includes/ServiceWiring.php"
+	],
 	"manifest_version": 2
 }
