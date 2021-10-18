@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ayaibrahim",
 			"Lokal Profil",
 			"Psl85",
 			"WikiPhoenix"
@@ -26,5 +27,6 @@
 	"apihelp-query+globalblocks-param-prop": "Vilka egenskaper att hämta.",
 	"apihelp-query+globalblocks-example-1": "Lista alla globala blockerinar",
 	"apihelp-query+globalblocks-example-2": "Lista globala blockeringar som gäller för IP-adress 192.0.2.18",
-	"apihelp-globalblock-param-alsolocal": "Blockera även IP-adressen lokalt"
+	"apihelp-globalblock-param-alsolocal": "Blockera även IP-adressen lokalt",
+	"apihelp-globalblock-param-localblockstalk": "Återkalla åtkomst till samtalssidan lokalt"
 }

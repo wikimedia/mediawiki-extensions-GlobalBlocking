@@ -59,7 +59,6 @@
 	"globalblocking-list-whitelist": "estado local",
 	"globalblocking-list-modify": "modificar",
 	"globalblocking-expiringblock": "expira em $1 às $2",
-	"globalblocking-infiniteblock": "infinita\ninfinito",
 	"globalblocking-list-noresults": "O endereço IP solicitado não está bloqueado.",
 	"globalblocking-goto-block": "Bloquear globalmente um endereço IP",
 	"globalblocking-goto-unblock": "Remover um bloqueio global",
