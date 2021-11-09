@@ -1,6 +1,10 @@
 {
 	"@metadata": {
-		"authors": []
+		"authors": [
+			"Salvemm el lombard"
+		]
 	},
-	"globalblocking-expiringblock": "el finiss el $1 a $2"
+	"globalblocking-expiringblock": "el finiss el $1 a $2",
+	"globalblocklist": "Lista di adress IP blocad in tut i canton",
+	"globalblockstatus": "Stat local di bloch globai"
 }
