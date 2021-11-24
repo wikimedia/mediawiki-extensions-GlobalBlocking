@@ -65,5 +65,6 @@
 	"globalblockstatus": "全域封鎖嘅本地狀態",
 	"removeglobalblock": "拎走一個全域封鎖",
 	"right-globalblock": "整一個全域封鎖",
-	"right-globalblock-whitelist": "響本地停用全域封鎖"
+	"right-globalblock-whitelist": "響本地停用全域封鎖",
+	"log-action-filter-gblblock": "全域封鎖類型："
 }
