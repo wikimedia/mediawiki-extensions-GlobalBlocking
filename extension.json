@@ -34,7 +34,12 @@
 		"globalblock-exempt"
 	],
 	"SpecialPages": {
-		"GlobalBlock": "SpecialGlobalBlock",
+		"GlobalBlock": {
+			"class": "SpecialGlobalBlock",
+			"services": [
+				"BlockUserFactory"
+			]
+		},
 		"GlobalBlockList": "SpecialGlobalBlockList",
 		"GlobalBlockStatus": "SpecialGlobalBlockStatus",
 		"RemoveGlobalBlock": "SpecialRemoveGlobalBlock"
@@ -79,7 +84,12 @@
 		"gblblock/modify": "globalblocking-modify-logentry"
 	},
 	"APIModules": {
-		"globalblock": "ApiGlobalBlock"
+		"globalblock": {
+			"class": "ApiGlobalBlock",
+			"services": [
+				"BlockUserFactory"
+			]
+		}
 	},
 	"APIListModules": {
 		"globalblocks": "ApiQueryGlobalBlocks"

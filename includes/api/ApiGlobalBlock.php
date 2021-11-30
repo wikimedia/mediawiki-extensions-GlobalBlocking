@@ -1,5 +1,26 @@
 <?php
+
+use MediaWiki\Block\BlockUserFactory;
+
 class ApiGlobalBlock extends ApiBase {
+	/** @var BlockUserFactory */
+	private $blockUserFactory;
+
+	/**
+	 * @param ApiMain $mainModule
+	 * @param string $moduleName
+	 * @param BlockUserFactory $blockUserFactory
+	 */
+	public function __construct(
+		ApiMain $mainModule,
+		$moduleName,
+		BlockUserFactory $blockUserFactory
+	) {
+		parent::__construct( $mainModule, $moduleName );
+
+		$this->blockUserFactory = $blockUserFactory;
+	}
+
 	public function execute() {
 		$this->checkUserRightsAny( 'globalblock' );
 
@@ -27,19 +48,19 @@ class ApiGlobalBlock extends ApiBase {
 			);
 
 			if ( $this->getParameter( 'alsolocal' ) && count( $errors ) === 0 ) {
-				SpecialBlock::processForm( [
-					'Target' => $this->getParameter( 'target' ),
-					'Reason' => [ $this->getParameter( 'reason' ) ],
-					'Expiry' => $this->getParameter( 'expiry' ),
-					'HardBlock' => !$this->getParameter( 'anononly' ),
-					'CreateAccount' => true,
-					'AutoBlock' => true,
-					'DisableEmail' => true,
-					'DisableUTEdit' => $this->getParameter( 'localblockstalk' ),
-					'Reblock' => true,
-					'Confirm' => true,
-					'Watch' => false
-				], $this->getContext() );
+				$this->blockUserFactory->newBlockUser(
+					$this->getParameter( 'target' ),
+					$this->getUser(),
+					$this->getParameter( 'expiry' ),
+					$this->getParameter( 'reason' ),
+					[
+						'isCreateAccountBlocked' => true,
+						'isEmailBlocked' => true,
+						'isUserTalkEditBlocked' => $this->getParameter( 'localblockstalk' ),
+						'isHardBlock' => !$this->getParameter( 'anononly' ),
+						'isAutoblocking' => true,
+					]
+				)->placeBlock( $this->getParameter( 'modify' ) );
 				$result->addValue( 'globalblock', 'blockedlocally', true );
 			}
 

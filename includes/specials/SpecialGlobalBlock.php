@@ -1,6 +1,6 @@
 <?php
 
-use MediaWiki\Block\DatabaseBlock;
+use MediaWiki\Block\BlockUserFactory;
 use Wikimedia\IPUtils;
 
 class SpecialGlobalBlock extends FormSpecialPage {
@@ -16,8 +16,17 @@ class SpecialGlobalBlock extends FormSpecialPage {
 	 */
 	private $modifyForm = false;
 
-	public function __construct() {
+	/** @var BlockUserFactory */
+	private $blockUserFactory;
+
+	/**
+	 * @param BlockUserFactory $blockUserFactory
+	 */
+	public function __construct(
+		BlockUserFactory $blockUserFactory
+	) {
 		parent::__construct( 'GlobalBlock', 'globalblock' );
+		$this->blockUserFactory = $blockUserFactory;
 	}
 
 	public function doesWrites() {
@@ -236,47 +245,21 @@ class SpecialGlobalBlock extends FormSpecialPage {
 
 		// Add a local block if the user asked for that
 		if ( $user->isAllowed( 'block' ) && $data['AlsoLocal'] ) {
-			// @todo Use the constructor
-			$block = new DatabaseBlock();
-			$block->setTarget( $this->address );
-			$block->setBlocker( $user );
-			$block->setReason( $data['Reason'][0] );
-			$block->setExpiry( SpecialBlock::parseExpiryInput( $data['Expiry'] ) );
-			$block->isHardblock( !$data['AnonOnly'] );
-			$block->isCreateAccountBlocked( true );
-			$block->isUsertalkEditAllowed( !$data['AlsoLocalTalk'] );
+			$status = $this->blockUserFactory->newBlockUser(
+				$this->address,
+				$user,
+				$data['Expiry'],
+				$data['Reason'][0],
+				[
+					'isCreateAccountBlocked' => true,
+					'isEmailBlocked' => true,
+					'isUserTalkEditBlocked' => $data['AlsoLocalTalk'],
+					'isHardBlock' => !$data['AnonOnly'],
+					'isAutoblocking' => true,
+				]
+			)->placeBlock( $data['Modify'] );
 
-			$blockSuccess = $block->insert();
-
-			if ( $blockSuccess ) {
-				// Keep the flag order consistent with SpecialBlock
-				$flags = [];
-				if ( $data['AnonOnly'] ) {
-					$flags[] = 'anononly';
-				}
-				$flags[] = 'nocreate';
-				if (
-					// Add this flag only if config is true for consistency with core
-					$this->getConfig()->get( 'BlockAllowsUTEdit' ) &&
-					// Only if the block really blocks talk page
-					$data['AlsoLocalTalk']
-				) {
-					$flags[] = 'nousertalk';
-				}
-
-				$logParams = [];
-				$logParams['5::duration'] = $data['Expiry'];
-				$logParams['6::flags'] = implode( ',', $flags );
-
-				$log = new ManualLogEntry( 'block', 'block' );
-				$log->setTarget( Title::makeTitle( NS_USER, $this->address ) );
-				$log->setComment( $data['Reason'][0] );
-				$log->setPerformer( $user );
-				$log->setParameters( $logParams );
-				$log->setRelations( [ 'ipb_id' => [ $blockSuccess['id'] ] ] );
-				$logId = $log->insert();
-				$log->publish( $logId );
-			} else {
+			if ( !$status->isOK() ) {
 				$this->getOutput()->addWikiMsg( 'globalblocking-local-failed' );
 			}
 		}
