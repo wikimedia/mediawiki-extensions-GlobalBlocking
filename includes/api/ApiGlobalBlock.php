@@ -83,13 +83,8 @@ class ApiGlobalBlock extends ApiBase {
 				if ( $this->getParameter( 'anononly' ) ) {
 					$result->addValue( 'globalblock', 'anononly', '' );
 				}
-				$expiry = SpecialBlock::parseExpiryInput( $this->getParameter( 'expiry' ) );
-				if ( $expiry == wfGetDB( DB_REPLICA )->getInfinity() ) {
-					$displayExpiry = 'infinite';
-				} else {
-					$displayExpiry = wfTimestamp( TS_ISO_8601, $expiry );
-				}
-				$result->addValue( 'globalblock', 'expiry', $displayExpiry );
+				$expiry = ApiResult::formatExpiry( $this->getParameter( 'expiry' ), 'infinite' );
+				$result->addValue( 'globalblock', 'expiry', $expiry );
 			}
 		} elseif ( $this->getParameter( 'unblock' ) ) {
 			GlobalBlocking::getGlobalBlockingDatabase( DB_PRIMARY )->delete(
@@ -118,7 +113,7 @@ class ApiGlobalBlock extends ApiBase {
 				ApiBase::PARAM_REQUIRED => true
 			],
 			'expiry' => [
-				ApiBase::PARAM_TYPE => 'string'
+				ApiBase::PARAM_TYPE => 'expiry'
 			],
 			'unblock' => [
 				ApiBase::PARAM_TYPE => 'boolean'
