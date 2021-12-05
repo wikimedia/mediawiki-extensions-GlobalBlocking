@@ -7,6 +7,7 @@
  */
 
 use MediaWiki\Block\DatabaseBlock;
+use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\MediaWikiServices;
 use Wikimedia\IPUtils;
 use Wikimedia\Rdbms\DBUnexpectedError;
@@ -104,6 +105,10 @@ class GlobalBlocking {
 
 			// Allow site customization of blocked message.
 			Hooks::run( $hookName, [ &$errorMsg ] );
+
+			$services = MediaWikiServices::getInstance();
+			$language = $services->getContentLanguage()->getCode();
+
 			$result = [
 				'block' => $block,
 				'error' => [
@@ -111,7 +116,9 @@ class GlobalBlocking {
 						$errorMsg,
 						$blockingUser,
 						$display_wiki,
-						$block->gb_reason,
+						GlobalBlockingServices::wrap( $services )
+							->getReasonFormatter()
+							->format( $block->gb_reason, $language ),
 						$blockTimestamp,
 						$blockExpiry,
 						$ip,
