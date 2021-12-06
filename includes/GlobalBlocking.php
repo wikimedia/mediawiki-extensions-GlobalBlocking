@@ -6,6 +6,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Block\BlockUser;
 use MediaWiki\Block\DatabaseBlock;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Extension\GlobalBlocking\Hook\GlobalBlockingHookRunner;
@@ -545,7 +546,7 @@ class GlobalBlocking {
 	 * @return array[] Empty on success, array to create message objects on failure
 	 */
 	public static function block( $address, $reason, $expiry, $blocker, $options = [] ) {
-		$expiry = SpecialBlock::parseExpiryInput( $expiry );
+		$expiry = BlockUser::parseExpiryInput( $expiry );
 		$errors = self::insertBlock( $address, $reason, $expiry, $blocker, $options );
 
 		if ( count( $errors ) > 0 ) {
@@ -580,6 +581,52 @@ class GlobalBlocking {
 			$reason,
 			[ $info, $address ],
 			$blocker
+		);
+
+		return [];
+	}
+
+	/**
+	 * @param string $address
+	 * @param string $reason
+	 * @param User $performer
+	 * @return array errors as a message data array, or empty if there are no errors
+	 */
+	public static function unblock( string $address, string $reason, User $performer ): array {
+		$errors = [];
+
+		$ip = IPUtils::sanitizeIP( $address );
+
+		if ( !$ip || !IPUtils::isIPAddress( $ip ) ) {
+			$errors[] = [ 'globalblocking-unblock-ipinvalid', $ip ];
+			return $errors;
+		}
+
+		[ $rangeStart, $rangeEnd ] = IPUtils::parseRange( $ip );
+
+		if ( $rangeStart !== $rangeEnd ) {
+			$ip = IPUtils::sanitizeRange( $ip );
+		}
+
+		$id = self::getGlobalBlockId( $ip, DB_PRIMARY );
+		if ( $id === 0 ) {
+			$errors[] = [ 'globalblocking-notblocked', $ip ];
+			return $errors;
+		}
+
+		self::getGlobalBlockingDatabase( DB_PRIMARY )->delete(
+			'globalblocks',
+			[ 'gb_id' => $id ],
+			__METHOD__
+		);
+
+		$page = new LogPage( 'gblblock' );
+		$page->addEntry(
+			'gunblock',
+			Title::makeTitleSafe( NS_USER, $ip ),
+			$reason,
+			[],
+			$performer
 		);
 
 		return [];

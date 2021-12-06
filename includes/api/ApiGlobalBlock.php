@@ -64,14 +64,14 @@ class ApiGlobalBlock extends ApiBase {
 				$result->addValue( 'globalblock', 'blockedlocally', true );
 			}
 
-			if ( count( $errors ) ) {
+			if ( count( $errors ) > 0 ) {
 				foreach ( $errors as &$error ) {
 					$error = [
 						'code' => $error[0],
 						'message' => str_replace(
 							"\n",
 							" ",
-							call_user_func_array( [ $this, 'msg' ], $error )->text()
+							$this->msg( ...$error )->text()
 						)
 					];
 				}
@@ -87,22 +87,30 @@ class ApiGlobalBlock extends ApiBase {
 				$result->addValue( 'globalblock', 'expiry', $expiry );
 			}
 		} elseif ( $this->getParameter( 'unblock' ) ) {
-			GlobalBlocking::getGlobalBlockingDatabase( DB_PRIMARY )->delete(
-				'globalblocks',
-				[ 'gb_id' => $block->gb_id ],
-				__METHOD__
-			);
-
-			$logPage = new LogPage( 'gblblock' );
-			$logPage->addEntry(
-				'gunblock',
-				Title::makeTitleSafe( NS_USER, $block->gb_address ),
+			$errors = GlobalBlocking::unblock(
+				$this->getParameter( 'target' ),
 				$this->getParameter( 'reason' ),
-				[],
 				$this->getUser()
 			);
-			$result->addValue( 'globalblock', 'user', $this->getParameter( 'target' ) );
-			$result->addValue( 'globalblock', 'unblocked', '' );
+
+			if ( count( $errors ) > 0 ) {
+				foreach ( $errors as &$error ) {
+					$error = [
+						'code' => $error[0],
+						'message' => str_replace(
+							"\n",
+							" ",
+							$this->msg( ...$error )->text()
+						)
+					];
+				}
+				$result->setIndexedTagName( $errors, 'error' );
+				$result->addValue( 'error', 'globalblock', $errors );
+			} else {
+				$result->addValue( 'globalblock', 'user', $this->getParameter( 'target' ) );
+				$result->addValue( 'globalblock', 'unblocked', '' );
+			}
+
 		}
 	}
 
