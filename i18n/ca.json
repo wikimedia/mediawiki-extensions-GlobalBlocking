@@ -10,7 +10,9 @@
 			"Solde",
 			"Ssola",
 			"Toniher",
-			"Vriullop"
+			"Vriullop",
+			"Jmarchn",
+			"Skurz0"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permet]] [[Special:GlobalBlockList|blocar]] les adreces IP de diversos wikis",
@@ -28,7 +30,7 @@
 	"globalblocking-block-expiryinvalid": "La caducitat introduïda no és vàlida.",
 	"globalblocking-block-submit": "Bloca aquesta adreça IP globalment",
 	"globalblocking-modify-submit": "Modifica aquest blocatge global",
-	"globalblocking-block-success": "S'ha blocat de forma satisfactòria l'adreça IP $1 a tots els projectes.",
+	"globalblocking-block-success": "S'ha blocat l'adreça IP $1 en tots els projectes.",
 	"globalblocking-modify-success": "El blocatge global de $1 s'ha modificat.",
 	"globalblocking-block-alreadyblocked": "L'adreça IP $1 ja està blocada globalment.\nPodeu veure el blocatge a la [[Special:GlobalBlockList|llista de blocatges globals]],\no modificar els paràmetres del blocatge reenviant aquest formulari.",
 	"globalblocking-block-bigrange": "El rang que heu especificat ($1) és massa gros per blocar-lo.\nPodeu blocar, com a màxim, 65.536 adreces (rangs /16)",
@@ -71,7 +73,7 @@
 	"globalblocking-whitelist-nochange": "No heu fet cap canvi a l'estat local d'aquest blocatge.",
 	"globalblocking-whitelist-intro": "Podeu fer servir aquest formulari per a editar l'estat local d'un blocatge global.\nSi un blocatge global està desactivat en aquest wiki, els usuaris de l'adreça IP afectada podran editar normalment.",
 	"globalblocking-ipblocked": "'''S'ha blocat la vostra adreça IP en tots els wikis.'''\n\nEl blocatge l'ha fet $1 ($2).\nEl motiu donat és ''$3''.\n\n* Inici del blocatge: $4\n* Caducitat del blocatge: $5\n\nPodeu contactar amb $1 per discutir el blocatge.\nNo podeu utilitzar la funció \"{{int:emailuser}}\" si no heu especificat una adreça de correu vàlida en les [[Special:Preferences|preferències del vostre compte]] o si teniu blocat el seu ús.\nLa vostra adreça IP actual és $6.\nUs demanem que afegiu tota la informació de més amunt en qualsevol consulta que feu al respecte.",
-	"globalblocking-blocked-nopassreset": "No podeu reinicialitzar les contrasenyes d'usuari perquè estau blocat globalment.",
+	"globalblocking-blocked-nopassreset": "No podeu reinicialitzar les contrasenyes d'usuari perquè la vostra adreça IP està globalment blocada.",
 	"globalblocking-logpage": "Registre de blocatges globals",
 	"globalblocking-logpagetext": "Això és un registre dels blocatges globals que s'han fet o s'han eliminat en aquest wiki.\nCal notar que els blocatges globals es poden aplicar i eliminar des d'altres wikis, i aquests blocatges globals poden afectar aquest wiki.\nPer a veure tots els blocatges globals actius, vegeu la [[Special:GlobalBlockList|llista de blocatges globals]].",
 	"globalblocking-block-logentry": "[[$1]] blocat globalment amb una data d'expiració de $2",

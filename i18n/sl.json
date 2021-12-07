@@ -8,7 +8,7 @@
 			"Smihael"
 		]
 	},
-	"globalblocking-desc": "[[Special:GlobalBlock|Omogoča]] blokado IP-naslovov [[Special:GlobalBlockList|preko več wikijev]]",
+	"globalblocking-desc": "[[Special:GlobalBlock|Omogoča]] blokado IP-naslovov [[Special:GlobalBlockList|na več vikijih]]",
 	"globalblocking-block": "Globalno blokiraj IP-naslov",
 	"globalblocking-block-intro": "To stran lahko uporabite za blokado IP-naslova na vseh wikijih.",
 	"globalblocking-block-reason": "Razlog:",
@@ -90,5 +90,11 @@
 	"right-globalblock-whitelist": "Onemogočanje globalnih blokad na lokalni ravni",
 	"action-globalblock-whitelist": "onemogočanje globalnih blokad na lokalni ravni",
 	"right-globalblock-exempt": "Izmikanje globalnim blokadam",
-	"action-globalblock-exempt": "izmikanje globalnim blokadam"
+	"action-globalblock-exempt": "izmikanje globalnim blokadam",
+	"log-action-filter-gblblock": "Vrsta globalne blokade:",
+	"log-action-filter-gblblock-gblock": "Globalno blokiranje",
+	"log-action-filter-gblblock-gunblock": "Globalno odblokiranje",
+	"log-action-filter-gblblock-modify": "Sprememba globalne blokade",
+	"log-action-filter-gblblock-whitelist": "Dodajanje na beli seznam globalnega blokiranja",
+	"log-action-filter-gblblock-dwhitelist": "Odstranitev belega seznama globalnih blokad"
 }

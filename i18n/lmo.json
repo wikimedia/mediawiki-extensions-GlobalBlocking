@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Salvemm el lombard"
+		]
+	},
+	"globalblocklist": "Lista di adress IP blocad in tut i canton",
+	"globalblockstatus": "Stat local di bloch globai"
+}

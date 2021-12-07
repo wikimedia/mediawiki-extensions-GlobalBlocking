@@ -49,7 +49,7 @@
 	"globalblocking-goto-unblock": "Eng global Spär ophiewen",
 	"globalblocking-goto-status": "Lokale Status vun enger globaler Spär änneren",
 	"globalblocking-return": "Zréck op d'Lëscht vun de globale Spären",
-	"globalblocking-add-block": "Nach eng global Spär dobäisetzen",
+	"globalblocking-add-block": "Nach eng global Spär derbäisetzen",
 	"globalblocking-notblocked": "Déi IP-Adress ($1) déi Dir aginn hutt ass net global gespaart.",
 	"globalblocking-unblock": "Eng global Spär ophiewen",
 	"globalblocking-unblock-ipinvalid": "Dir hutt eng ongëlteg IP-Adress ($1) aginn.\nDenkt wgl. drun datt Dir och e Benotzernumm agi kënnt!",
