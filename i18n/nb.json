@@ -30,6 +30,7 @@
 	"globalblocking-block-alreadyblocked": "IP-adressen $1 er blokkert globalt fra før.\nDu kan se eksisterende blokkeringer på [[Special:GlobalBlockList|listen over globale blokkeringer]],\neller redigere innstillingene av den eksisterende blokkeringen ved å lagre dette skjemaet på nytt.",
 	"globalblocking-block-bigrange": "IP-området du oppga ($1) er for stort til å blokkeres. Du kan blokkere maks 65&nbsp;536 adresser (/16-områder)",
 	"globalblocking-also-local": "Blokker også den gitte IP-adressa lokalt på denne wikien",
+	"globalblocking-also-local-talk": "Blokker bruker fra å redigere sin egen diskusjonsside lokalt",
 	"globalblocking-list-intro": "Dette er en liste over nåværende globale blokkeringer. Noen blokkeringer er slått av lokalt; dette betyr at den gjelder andre steder, men at en lokal administrator har bestemt seg for å slå av blokkeringen på sin wiki.",
 	"globalblocking-list": "Liste over globalt blokkerte IP-adresser",
 	"globalblocking-search-legend": "Søk etter en global blokkering",

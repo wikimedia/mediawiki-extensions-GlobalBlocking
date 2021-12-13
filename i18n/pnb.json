@@ -2,7 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"Khalid Mahmood",
-			"Macofe"
+			"Macofe",
+			"Abbas dhothar",
+			"BaRaN6161 TURK"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Allows]] آئی پی پتے [[Special:GlobalBlockList|blocked across multiple wikis]] تے۔",
@@ -28,7 +30,7 @@
 	"globalblocking-search-ip": "آئی پی پتہ:",
 	"globalblocking-search-submit": "روکاں نوں کھوجو",
 	"globalblocking-list-ipinvalid": "جیڑا IP پتہ ($1) تسی کھوجیا اے اوہ غلط اے۔\nمہربانی کر کے ٹھیک IP پتہ لکھو۔",
-	"globalblocking-search-errors": "تواڈی کھوج نقام رئی، {{PLURAL:$1|اس وجہ توں|ایناں وجاں توں}}:",
+	"globalblocking-search-errors": "تواڈی کھوج ناکام رہی، {{PLURAL:$1|اس وجہ توں|اینہاں وجہاں توں}}:",
 	"globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> (''$3'') جگت روکے [[Special:Contributions/$4|$4]] ''($5)''",
 	"globalblocking-list-expiry": "انت $1",
 	"globalblocking-list-anononly": "صرف گمنام",
@@ -56,7 +58,7 @@
 	"globalblocking-whitelist-status": "لوکل حالت:",
 	"globalblocking-whitelist-statuslabel": "{{SITENAME}} دے اتے گلوبل روک بند کرو",
 	"globalblocking-whitelist-submit": "لوکل حالت بدلو",
-	"globalblocking-whitelist-whitelisted": "تساں کامیابی نال گلوبل روک #$2 آئی پی پتے '''$1''' توں {{سائٹناں}} تے ہٹا دتی اے۔",
+	"globalblocking-whitelist-whitelisted": "تساں کامیابی نال گلوبل روک #$2 آئی پی پتے '''$1''' توں {{SITENAME}} تے ہٹا دتی اے۔",
 	"globalblocking-whitelist-dewhitelisted": "تساں کامیابی نال جگت روک #$2 آئی پی پتے '''$1''' {{ساغٹناں}} توں ہٹا دتی اے۔",
 	"globalblocking-whitelist-nochange": "تساں ایس روک دے لوکل سٹیٹس تے کوئی تبدیلی نئیں کیتی۔\n[[Special:GlobalBlockList|جگت روک لسٹ ول واپسی]]۔",
 	"globalblocking-whitelist-intro": "تسیں ایس فارم نوں اک جگت روک لوکل سٹیٹس نوں بدلن لئی ورت سکدے او۔\nاگر اک جگت روک ایس وکی تے کم نئیں کردی، ورتن والے متاثرہ آئی پی پتے اینوں تبدیل کرن گے۔\n[[Special:GlobalBlockList|جگت روک لسٹ ول چلو]]",

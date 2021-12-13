@@ -5,7 +5,8 @@
 			"Garas",
 			"Homo",
 			"Matasg",
-			"Vogone"
+			"Vogone",
+			"Tomasdd"
 		]
 	},
 	"globalblocking-block": "Visuotinai blokuoti IP adresą",
@@ -38,7 +39,7 @@
 	"globalblocking-unblock-legend": "Pašalinti pasaulini blokavimą",
 	"globalblocking-unblock-submit": "Pašalinti pasaulini blokavimą",
 	"globalblocking-unblock-reason": "Priežastis:",
-	"globalblocking-unblock-unblocked": "Jūs sėkmingai panaikinote globalų blokavimą # $2  IP adresui '''$1'''",
+	"globalblocking-unblock-unblocked": "Jūs panaikinote globalų blokavimą # $2  IP adresui '''$1'''",
 	"globalblocking-unblock-intro": "Šią formą galite naudoti norėdami pašalinti pasaulini blokavimą.",
 	"globalblocking-whitelist-legend": "Pakeisti vietos statusą",
 	"globalblocking-whitelist-reason": "Priežastis:",

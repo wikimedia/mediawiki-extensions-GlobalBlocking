@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"1917 Ekim Devrimi",
+			"Mirzali"
+		]
+	},
+	"apihelp-globalblock-description": "Nr karberi global bloqe bıkerê ya zi wedarnê",
+	"apihelp-globalblock-summary": "Nr karberi global bloqe bıkerê ya zi wedarnê",
+	"apihelp-globalblock-param-target": "Hedef adresê IP",
+	"apihelp-globalblock-param-reason": "Sebebê bloqeyi ronayışi/wedardışi",
+	"apihelp-query+globalblocks-description": "Adresanê IPyê ke global bloke biyê, pêrıne liste kerê",
+	"apihelp-query+globalblocks-summary": "listey adresanê IP ke bı globali de bloqe biye",
+	"apihelp-query+globalblocks-param-start": "Mora zemani nımre kerdışmra start ke",
+	"apihelp-query+globalblocks-param-end": "Mora zemani  nımre kedışi vındarn",
+	"apihelp-query+globalblocks-param-limit": "Azami miktarê bloqeyi liste ke",
+	"apihelp-query+globalblocks-param-prop": "Kamci xısusiyeta ke gê no",
+	"apihelp-query+globalblocks-example-1": "Bloqeyanê globalan pêronan lista ke",
+	"apihelp-query+globalblocks-example-2": "Be adresê IP'a 192.0.2.18 IP ra tetbiq bıyaye bloqeyanê globalan lista ke",
+	"apihelp-globalblock-param-alsolocal": "IP mehalli zi bloqe bıkerê",
+	"apihelp-globalblock-param-localblockstalk": "Resayışê pela werênayışi mehalli ibtal bıkerê"
+}

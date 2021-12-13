@@ -30,6 +30,7 @@
 	"globalblocking-block-alreadyblocked": "Địa chỉ IP $1 đã bị cấm trên toàn hệ thống.\nBạn có thể xem những IP đang bị cấm tại [[Special:GlobalBlockList|danh sách các tác vụ cấm trên toàn hệ thống]], hoặc sửa đổi các thuộc tính của tác vụ cấm bằng cách lưu lại biểu mẫu này.",
 	"globalblocking-block-bigrange": "Tầm địa chỉ mà bạn chỉ định ($1) quá lớn nên không thể cấm. Bạn chỉ có thể cấm nhiều nhất là 65.536 địa chỉ (tầm vực /16)",
 	"globalblocking-also-local": "Cũng cấm địa chỉ IP một cách địa phương trên wiki này",
+	"globalblocking-also-local-talk": "Cấm thành viên không được sửa đổi trang thảo luận của chính họ tại wiki này",
 	"globalblocking-list-intro": "Đây là danh sách tất cả các tác vụ cấm trên toàn hệ thống đang có hiệu lực.\nMột số tác vụ cấm được đánh dấu là tắt cục bộ: điều đó có nghĩa là người dùng vẫn bị cấm tại các website khác, nhưng một bảo quản viên tại đây đã quyết định bỏ cấm tại wiki này.",
 	"globalblocking-list": "Danh sách các địa chỉ IP bị cấm trên toàn hệ thống",
 	"globalblocking-search-legend": "Tìm một lần cấm toàn cục",
@@ -72,7 +73,7 @@
 	"globalblocking-ipblocked": "'''Địa chỉ IP của bạn đã bị cấm tại tất cả các wiki.'''\n\nNgười cấm là $1 ($2).\nLý do được đưa ra là ''$3''.\n\n* Lúc bắt đầu cấm: $4\n* Thời hạn cấm: $5\n\nBạn có thể liên lạc với $1 để thảo luận về vụ cấm này.\nBạn chỉ có thể sử dụng tíng năng “{{int:emailuser}}” sau khi đặt địa chỉ thư điện tử hợp lệ trong [[Special:Preferences|tùy chọn tài khoản]] nếu chưa cấm sử dụng tính năng này.\nĐịa chỉ IP hiện tại của bạn là $6.\nXin vui lòng bao gồm các chi tiết ở trên khi nào hỏi về vụ cấm này.",
 	"globalblocking-ipblocked-range": "'''Địa chỉ IP của bạn đã bị cấm tại tất cả các wiki.'''\n\nNgười cấm là $1 ($2).\nLý do được đưa ra là ''$3''.\n\n* Lúc bắt đầu cấm: $4\n* Thời hạn cấm: $5\n\nBạn có thể liên lạc với $1 để thảo luận về vụ cấm này.\nBạn chỉ có thể sử dụng tíng năng “{{int:emailuser}}” sau khi đặt địa chỉ thư điện tử hợp lệ trong [[Special:Preferences|tùy chọn tài khoản]] nếu chưa cấm sử dụng tính năng này.\nĐịa chỉ IP hiện tại của bạn là $6, và dãy IP bị cấm là $7.\nXin vui lòng bao gồm các chi tiết ở trên khi nào hỏi về vụ cấm này.",
 	"globalblocking-ipblocked-xff": "'''Yêu cầu của bạn sử dụng một hay nhiều máy chủ proxy đã bị cấm tại tất cả các wiki.'''\n\nNgười cấm là $1 ($2).\nLý do là ''$3''.\n\n* Lúc bắt đầu cấm: $4\n* Thời hạn cấm: $5\n\nBạn có thể liên lạc với $1 để thảo luận về vụ cấm này.\nBạn chỉ có thể sử dụng tính năng “{{int:emailuser}}” sau khi khai báo chỉ thư điện tử hợp lệ trong [[Special:Preferences|tùy chọn tài khoản]] nếu bạn chưa cấm sử dụng tính năng này.\nĐịa chỉ proxy bị cấm là $6.\nXin vui lòng kèm theo các chi tiết ở trên khi bạn có bất cứ đề yêu cầu nào về vụ cấm này.",
-	"globalblocking-blocked-nopassreset": "Bạn không thể tái tạo mật khẩu vì bạn đã bị cấm trên toàn hệ thống.",
+	"globalblocking-blocked-nopassreset": "Bạn không thể tái tạo mật khẩu vì địa chỉ IP của bạn đã bị cấm trên toàn hệ thống.",
 	"globalblocking-logpage": "Nhật trình cấm trên toàn hệ thống",
 	"globalblocking-logpagetext": "Đây là danh sách các tác vụ cấm toàn cục được thực hiện hoặc lùi lại tại wiki này. Lưu ý rằng có thể thực hiện và lùi các tác vụ cấm tại wiki khác, nhưng các tác vụ cấm đó cũng có hiệu lực tại đây.\n\nXem [[Special:GlobalBlockList|tất cả các tác vụ cấm toàn cục]].",
 	"globalblocking-block-logentry": "đã cấm [[$1]] trên toàn hệ thống với thời gian hết hạn của $2",
@@ -96,10 +97,12 @@
 	"action-globalblock-whitelist": "tắt tác vụ cấm toàn cục tại địa phương",
 	"right-globalblock-exempt": "Bỏ qua vụ cấm toàn cục",
 	"action-globalblock-exempt": "bỏ qua vụ cấm toàn cục",
+	"globalblocking-apierror-badip": "Địa chỉ IP $1 không hợp lệ",
 	"log-action-filter-gblblock": "Kiểu cấm toàn cục:",
 	"log-action-filter-gblblock-gblock": "Cấm toàn cục",
 	"log-action-filter-gblblock-gunblock": "Bỏ cấm toàn cục",
 	"log-action-filter-gblblock-modify": "Thay đổi tác vụ cấm toàn cục",
 	"log-action-filter-gblblock-whitelist": "Bổ sung vào danh sách trắng cấm toàn cục",
-	"log-action-filter-gblblock-dwhitelist": "Loại bỏ khỏi danh sách trắng cấm toàn cục"
+	"log-action-filter-gblblock-dwhitelist": "Loại bỏ khỏi danh sách trắng cấm toàn cục",
+	"grant-globalblock": "Cấm hoặc bỏ cấm toàn hệ thống một địa chỉ IP"
 }

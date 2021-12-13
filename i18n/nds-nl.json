@@ -5,6 +5,7 @@
 		]
 	},
 	"globalblocking-whitelist": "Lokale status van globale blokkades",
+	"globalblocking-ipblocked-range": "'''Juw IP-adres sit in en bereik dat up alle wikis blokkeerd is.'''\n\nDisse blokkade is uutvoord döär $1 ($2).\nDe upgeaven readen is ''$3''.\n\n* Anvang blokkade: $4\n* Ende blokkade: $5\n\nJy künnet kontakt upneamen mid $1 üm de blokkade te bepråten.\nJy künnet de funkty \"{{int:emailuser}}\" neet gebruken behalven as der en geldig netpostadres in juw [[Special:Preferences|instellingen]] invüld is en as juw netpostfunktys neet blokkeerd bint.\nEt IP-adres wat jy nu gebruket is $6 en et blokkeerde bereik is $7.\nVermeld de gegeavens dee hyrboaven ståt as jy hyrup reageret.",
 	"globalblocklist": "Lyste van globaal blokkeerde IP-adressen",
 	"globalblockstatus": "Lokale status van globale blokkades"
 }

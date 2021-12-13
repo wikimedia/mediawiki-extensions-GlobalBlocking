@@ -1,29 +1,30 @@
 {
 	"@metadata": {
 		"authors": [
-			"BaRaN6161 TURK"
+			"BaRaN6161 TURK",
+			"MuratTheTurkish"
 		]
 	},
 	"apihelp-globalblock-description": "Bir kullanıcıyı genel olarak engelleyin veya engelini kaldırın.",
-	"apihelp-globalblock-summary": "Bir kullanıcıyı genel olarak engelleyin veya engelini kaldırın.",
+	"apihelp-globalblock-summary": "Bir kullanıcıyı küresel olarak engelleyin veya engelini kaldırın.",
 	"apihelp-globalblock-param-target": "Hedef IP adresi.",
-	"apihelp-globalblock-param-expiry": "Belirtilirse kullanıcıyı engeller veya yeniden engeller. Bloğun ne kadar süreceğini belirler; ör. \"5 ay\" veya \"2 hafta\". \"Sonsuz\" veya \"belirsiz\" olarak ayarlanırsa, blok asla sona ermez",
+	"apihelp-globalblock-param-expiry": "Belirtilirse kullanıcıyı engeller veya yeniden engeller. Bloğun ne kadar süreceğini belirler; ör. \"5 months\" veya \"2 weeks\". \"infinite\" veya \"indefinite\" olarak ayarlanırsa, engel asla sona ermez",
 	"apihelp-globalblock-param-unblock": "Belirtilirse, kullanıcının engellemesini kaldırır.",
 	"apihelp-globalblock-param-reason": "Engelleme/engellemeyi kaldırma nedeni.",
-	"apihelp-globalblock-param-anononly": "Bloğun yalnızca oturumu kapatmış kullanıcıları etkilemesi gerekiyorsa bunu belirtin.",
-	"apihelp-globalblock-param-modify": "Hedefteki mevcut blokun değiştirilmesi gerekiyorsa bunu belirtin",
-	"apihelp-globalblock-example-1": "192.0.2.1'i \"Viki kötüye kullanımı\" gerekçesiyle süresiz olarak engelleyin",
+	"apihelp-globalblock-param-anononly": "Engelin yalnızca oturumu kapatmış kullanıcıları etkilemesi gerekiyorsa bunu belirtin.",
+	"apihelp-globalblock-param-modify": "Hedefteki mevcut engelin değiştirilmesi gerekiyorsa bunu belirtin",
+	"apihelp-globalblock-example-1": "192.0.2.1'i \"Cross-wiki abuse\" gerekçesiyle süresiz olarak engelleyin",
 	"apihelp-query+globalblocks-description": "Küresel olarak engellenen tüm IP adreslerini listeleyin.",
 	"apihelp-query+globalblocks-summary": "Küresel olarak engellenen tüm IP adreslerini listeleyin.",
 	"apihelp-query+globalblocks-param-start": "Numaralandırmaya başlamak için zaman damgası.",
 	"apihelp-query+globalblocks-param-end": "Numaralandırmayı durdurmak için zaman damgası.",
 	"apihelp-query+globalblocks-param-ids": "Listelenecek blok kimliğinin boru ile ayrılmış listesi.",
 	"apihelp-query+globalblocks-param-addresses": "Aranacak IP adreslerinin kanalla ayrılmış listesi.",
-	"apihelp-query+globalblocks-param-ip": "Aralık blokları dahil, bu IP adresine veya CIDR aralığına uygulanan tüm blokları alın. $1addresses ile birlikte kullanılamaz. /16'dan daha büyük CIDR aralıkları kabul edilmez.",
-	"apihelp-query+globalblocks-param-limit": "Listelenecek maksimum blok sayısı.",
+	"apihelp-query+globalblocks-param-ip": "Aralık engelleri dahil, bu IP adresine veya CIDR aralığına uygulanan tüm engelleri alın. $1addresses ile birlikte kullanılamaz. /16'dan daha büyük CIDR aralıkları kabul edilmez.",
+	"apihelp-query+globalblocks-param-limit": "Listelenecek maksimum engel sayısı.",
 	"apihelp-query+globalblocks-param-prop": "Hangi özelliklere sahip olunur.",
-	"apihelp-query+globalblocks-example-1": "Tüm küresel blokları listele",
-	"apihelp-query+globalblocks-example-2": "192.0.2.18 IP adresine uygulanan genel blokları listele",
+	"apihelp-query+globalblocks-example-1": "Tüm küresel engelleri listeleyin",
+	"apihelp-query+globalblocks-example-2": "192.0.2.18 IP adresine uygulanan küresel engellerini listeleyin",
 	"apihelp-globalblock-param-alsolocal": "IP'yi yerel olarak da engelleyin",
 	"apihelp-globalblock-param-localblockstalk": "Tartışma sayfası erişimini yerel olarak iptal et"
 }

@@ -3,7 +3,8 @@
 		"authors": [
 			"Macofe",
 			"Shinjiman",
-			"Wong128hk"
+			"Wong128hk",
+			"Hello903hello"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|容許]]IP地址可以[[Special:GlobalBlockList|響多個wiki度封鎖]]",
@@ -30,7 +31,7 @@
 	"globalblocking-list-expiry": "於$1到期",
 	"globalblocking-list-anononly": "限匿名",
 	"globalblocking-list-unblock": "解封",
-	"globalblocking-list-whitelisted": "由$1於本地封鎖: $2",
+	"globalblocking-list-whitelisted": "由$1設定本地解封：$2",
 	"globalblocking-list-whitelist": "本地狀態",
 	"globalblocking-goto-block": "全域封鎖一個 IP 地址",
 	"globalblocking-goto-unblock": "拎走一個全域封鎖",
@@ -63,5 +64,6 @@
 	"globalblockstatus": "全域封鎖嘅本地狀態",
 	"removeglobalblock": "拎走一個全域封鎖",
 	"right-globalblock": "整一個全域封鎖",
-	"right-globalblock-whitelist": "響本地停用全域封鎖"
+	"right-globalblock-whitelist": "響本地停用全域封鎖",
+	"log-action-filter-gblblock": "全域封鎖類型："
 }
