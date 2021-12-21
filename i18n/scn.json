@@ -53,6 +53,7 @@
 	"globalblocking-unblock-unblocked": "Vinni scancillatu cu successu lu bloccu glubbali #$2 pupra a lu nnirizzu IP '''$1'''",
 	"globalblocking-whitelist-legend": "Cancia lu statu lucali",
 	"globalblocking-whitelist-reason": "Mutivu:",
+	"globalblocking-whitelist-status": "Statu lucali:",
 	"globalblocking-whitelist-submit": "Cancia lu statu lucali",
 	"globalblocking-logentry-expiry": "scadi lu $1",
 	"globalblocklist": "Elencu dê nnirizzi IP bluccati glubbalmenti",
