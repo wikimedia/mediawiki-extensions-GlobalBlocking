@@ -513,7 +513,7 @@ class GlobalBlocking {
 		$row = [
 			'gb_address' => $ip,
 			'gb_by' => $blocker->getName(),
-			'gb_by_wiki' => wfWikiId(),
+			'gb_by_wiki' => WikiMap::getCurrentWikiId(),
 			'gb_reason' => $reason,
 			'gb_timestamp' => $dbw->timestamp( wfTimestampNow() ),
 			'gb_anon_only' => $anonOnly,

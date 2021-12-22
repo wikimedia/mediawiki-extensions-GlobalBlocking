@@ -37,7 +37,7 @@ class GlobalBlock extends DatabaseBlock {
 	public function setGlobalBlocker( stdClass $block ) {
 		$user = User::newFromName( $block->gb_by );
 		// If the block was inserted from this wiki, then we know the blocker exists
-		if ( $block->gb_by_wiki === wfWikiID() ) {
+		if ( $block->gb_by_wiki === WikiMap::getCurrentWikiId() ) {
 			$this->setBlocker( $user );
 			return;
 		}
