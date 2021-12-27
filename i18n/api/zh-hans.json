@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Liuxinyu970226",
-			"Yfdyh000"
+			"Yfdyh000",
+			"Stang"
 		]
 	},
 	"apihelp-globalblock-description": "全域封禁或解封一位用户。",
@@ -24,5 +25,7 @@
 	"apihelp-query+globalblocks-param-limit": "要列出封禁的最大数量。",
 	"apihelp-query+globalblocks-param-prop": "要获得的属性。",
 	"apihelp-query+globalblocks-example-1": "列出所有全域封禁",
-	"apihelp-query+globalblocks-example-2": "列出对IP地址192.0.2.18做出的全域封禁"
+	"apihelp-query+globalblocks-example-2": "列出对IP地址192.0.2.18做出的全域封禁",
+	"apihelp-globalblock-param-alsolocal": "在本地也封禁此IP地址",
+	"apihelp-globalblock-param-localblockstalk": "在本地阻止编辑讨论页"
 }
