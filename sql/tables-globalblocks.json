@@ -35,7 +35,7 @@
 			{
 				"name": "gb_anon_only",
 				"type": "integer",
-				"options": { "length": 1, "notnull": true, "default": 0 }
+				"options": { "notnull": true, "default": 0 }
 			},
 			{
 				"name": "gb_expiry",
