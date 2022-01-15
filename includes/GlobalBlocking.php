@@ -460,67 +460,47 @@ class GlobalBlocking {
 	 * @param string|false $expiry
 	 * @param User $blocker
 	 * @param array $options
-	 * @return array[] Empty on success, array to create message objects on failure
+	 * @return array Empty on success, array to create message objects on failure
 	 */
 	public static function insertBlock( $address, $reason, $expiry, $blocker, $options = [] ) {
-		$errors = [];
-
 		## Purge expired blocks.
 		self::purgeExpired();
 
-		## Validate input
-		$ip = IPUtils::sanitizeIP( $address );
+		if ( $expiry === false ) {
+			return [ [ 'globalblocking-block-expiryinvalid' ] ];
+		}
 
-		$anonOnly = in_array( 'anon-only', $options );
+		$status = self::validateInput( $address );
+
+		if ( !$status->isOK() ) {
+			return [ $status->getMessage() ];
+		}
+
+		$data = $status->getValue();
+
 		$modify = in_array( 'modify', $options );
 
-		if ( !IPUtils::isIPAddress( $ip ) ) {
-			// Invalid IP address.
-			$errors[] = [ 'globalblocking-block-ipinvalid', $ip ];
-		}
-
-		if ( $expiry === false ) {
-			$errors[] = [ 'globalblocking-block-expiryinvalid' ];
-		}
-
-		// Check for too-big ranges.
-		list( $range_start, $range_end ) = IPUtils::parseRange( $ip );
-
-		if ( substr( $range_start, 0, 4 ) != substr( $range_end, 0, 4 ) ) {
-			// Range crosses a /16 boundary.
-			$errors[] = [ 'globalblocking-block-bigrange', $ip ];
-		}
-
-		// Normalise the range
-		if ( $range_start != $range_end ) {
-			$ip = IPUtils::sanitizeRange( $ip );
-		}
-
-		'@phan-var string $ip';
-
 		// Check for an existing block in the primary database database
-		$existingBlock = self::getGlobalBlockId( $ip, DB_PRIMARY );
+		$existingBlock = self::getGlobalBlockId( $data[ 'ip' ], DB_PRIMARY );
 		if ( !$modify && $existingBlock ) {
-			$errors[] = [ 'globalblocking-block-alreadyblocked', $ip ];
-		}
-
-		if ( count( $errors ) > 0 ) {
-			return $errors;
+			return [ [ 'globalblocking-block-alreadyblocked', $data[ 'ip' ] ] ];
 		}
 
 		// We're a-ok.
 		$dbw = self::getGlobalBlockingDatabase( DB_PRIMARY );
 
+		$anonOnly = in_array( 'anon-only', $options );
+
 		$row = [
-			'gb_address' => $ip,
+			'gb_address' => $data[ 'ip' ],
 			'gb_by' => $blocker->getName(),
 			'gb_by_wiki' => WikiMap::getCurrentWikiId(),
 			'gb_reason' => $reason,
 			'gb_timestamp' => $dbw->timestamp( wfTimestampNow() ),
 			'gb_anon_only' => $anonOnly,
 			'gb_expiry' => $dbw->encodeExpiry( $expiry ),
-			'gb_range_start' => $range_start,
-			'gb_range_end' => $range_end,
+			'gb_range_start' => $data[ 'rangeStart' ],
+			'gb_range_end' => $data[ 'rangeEnd' ],
 		];
 
 		if ( $modify ) {
@@ -531,7 +511,7 @@ class GlobalBlocking {
 
 		if ( !$dbw->affectedRows() ) {
 			// Race condition?
-			return [ [ 'globalblocking-block-failure', $ip ] ];
+			return [ [ 'globalblocking-block-failure', $data[ 'ip' ] ] ];
 		}
 
 		return [];
@@ -593,25 +573,17 @@ class GlobalBlocking {
 	 * @return array errors as a message data array, or empty if there are no errors
 	 */
 	public static function unblock( string $address, string $reason, User $performer ): array {
-		$errors = [];
+		$status = self::validateInput( $address );
 
-		$ip = IPUtils::sanitizeIP( $address );
-
-		if ( !$ip || !IPUtils::isIPAddress( $ip ) ) {
-			$errors[] = [ 'globalblocking-unblock-ipinvalid', $ip ];
-			return $errors;
+		if ( !$status->isOK() ) {
+			return [ $status->getMessage() ];
 		}
 
-		[ $rangeStart, $rangeEnd ] = IPUtils::parseRange( $ip );
+		$data = $status->getValue();
 
-		if ( $rangeStart !== $rangeEnd ) {
-			$ip = IPUtils::sanitizeRange( $ip );
-		}
-
-		$id = self::getGlobalBlockId( $ip, DB_PRIMARY );
+		$id = self::getGlobalBlockId( $data[ 'ip' ], DB_PRIMARY );
 		if ( $id === 0 ) {
-			$errors[] = [ 'globalblocking-notblocked', $ip ];
-			return $errors;
+			return [ [ 'globalblocking-notblocked', $data[ 'ip' ] ] ];
 		}
 
 		self::getGlobalBlockingDatabase( DB_PRIMARY )->delete(
@@ -623,7 +595,7 @@ class GlobalBlocking {
 		$page = new LogPage( 'gblblock' );
 		$page->addEntry(
 			'gunblock',
-			Title::makeTitleSafe( NS_USER, $ip ),
+			Title::makeTitleSafe( NS_USER, $data[ 'ip' ] ),
 			$reason,
 			[],
 			$performer
@@ -678,6 +650,42 @@ class GlobalBlocking {
 			? $sp->msg( 'parentheses', $sp->getLanguage()->pipeList( $links ) )->text()
 			: '';
 		return $linkItems;
+	}
+
+	/**
+	 * Handles validation and range limits of the IP addresses the user has provided
+	 * @param string $address
+	 * @return Status Fatal if errors, Good if no errors
+	 */
+	private static function validateInput( string $address ): Status {
+		## Validate input
+		$ip = IPUtils::sanitizeIP( $address );
+
+		if ( !$ip || !IPUtils::isIPAddress( $ip ) ) {
+			return Status::newFatal( 'globalblocking-block-ipinvalid', $ip );
+		}
+
+		if ( IPUtils::isValidRange( $ip ) ) {
+			[ $prefix, $range ] = explode( '/', $ip, 2 );
+			$limit = MediaWikiServices::getInstance()->getMainConfig()->get( 'GlobalBlockingCIDRLimit' );
+			$ipVersion = IPUtils::isIPv4( $prefix ) ? 'IPv4' : 'IPv6';
+			if ( (int)$range < $limit[ $ipVersion ] ) {
+				return Status::newFatal( 'globalblocking-bigrange', $ip, $ipVersion,
+					$limit[ $ipVersion ] );
+			}
+		}
+
+		$data = [];
+
+		[ $data[ 'rangeStart' ], $data[ 'rangeEnd' ] ] = IPUtils::parseRange( $ip );
+
+		if ( $data[ 'rangeStart' ] !== $data[ 'rangeEnd' ] ) {
+			$data[ 'ip' ] = IPUtils::sanitizeRange( $ip );
+		} else {
+			$data[ 'ip' ] = $ip;
+		}
+
+		return Status::newGood( $data );
 	}
 
 	public static function selectFields() {
