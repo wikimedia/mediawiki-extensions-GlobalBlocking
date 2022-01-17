@@ -67,7 +67,7 @@
 	"globalblocking-unblock-legend": "Global entsperren",
 	"globalblocking-unblock-submit": "Global entsperren",
 	"globalblocking-unblock-reason": "Grund:",
-	"globalblocking-unblock-unblocked": "Die hast erfolgreich die IP-Adresse '''$1''' (Sperr-ID $2) entsperrt",
+	"globalblocking-unblock-unblocked": "Du hast die globale Sperre für die IP-Adresse '''$1''' aufgehoben.",
 	"globalblocking-unblock-intro": "Mit diesem Formular kannst du eine globale Sperre aufheben.",
 	"globalblocking-whitelist": "Lokaler Status einer globalen Sperre",
 	"globalblocking-whitelist-notapplied": "Globale Sperren sind in diesem Wiki nicht aktiviert.\nDeshalb kann der lokale Status von globalen Sperren nicht geändert werden.",

@@ -62,7 +62,7 @@
 	"globalblocking-unblock-legend": "הסרת חסימה גלובלית",
 	"globalblocking-unblock-submit": "הסרת חסימה גלובלית",
 	"globalblocking-unblock-reason": "סיבה:",
-	"globalblocking-unblock-unblocked": "החסימה הגלובלית #$2 של כתובת ה־IP‏ '''$1''' הוסרה בהצלחה",
+	"globalblocking-unblock-unblocked": "הסרת את החסימה הגלובלית של כתובת ה־IP‏ '''$1'''.",
 	"globalblocking-unblock-intro": "ניתן להיעזר בטופס זה כדי להסיר חסימה גלובלית.",
 	"globalblocking-whitelist": "המצב המקומי של החסימות הגלובליות",
 	"globalblocking-whitelist-notapplied": "חסימות גלובליות אינן פעילות באתר זה,\nלכן לא ניתן לשנות את המצב המקומי שלהן.",
