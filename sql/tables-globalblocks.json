@@ -18,6 +18,11 @@
 				"options": { "length": 255, "notnull": true }
 			},
 			{
+				"name": "gb_by_central_id",
+				"type": "integer",
+				"options": { "notnull": false, "unsigned": true, "default": null }
+			},
+			{
 				"name": "gb_by_wiki",
 				"type": "binary",
 				"options": { "length": 255, "notnull": true }

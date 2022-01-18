@@ -6,6 +6,7 @@ CREATE TABLE globalblocks (
   gb_id SERIAL NOT NULL,
   gb_address VARCHAR(255) NOT NULL,
   gb_by VARCHAR(255) NOT NULL,
+  gb_by_central_id INT DEFAULT NULL,
   gb_by_wiki TEXT NOT NULL,
   gb_reason TEXT NOT NULL,
   gb_timestamp VARCHAR(14) NOT NULL,

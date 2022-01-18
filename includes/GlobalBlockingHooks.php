@@ -96,6 +96,12 @@ class GlobalBlockingHooks implements
 				);
 				break;
 		}
+		$updater->addExtensionField(
+			'globalblocks',
+			'gb_by_central_id',
+			"$base/sql/$type/patch-add-gb_by_central_id.sql"
+		);
+
 		return true;
 	}
 

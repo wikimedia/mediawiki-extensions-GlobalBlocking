@@ -6,6 +6,7 @@ CREATE TABLE /*_*/globalblocks (
   gb_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
   gb_address VARCHAR(255) NOT NULL,
   gb_by VARCHAR(255) NOT NULL,
+  gb_by_central_id INTEGER UNSIGNED DEFAULT NULL,
   gb_by_wiki BLOB NOT NULL,
   gb_reason BLOB NOT NULL,
   gb_timestamp VARCHAR(14) NOT NULL,
