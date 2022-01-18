@@ -64,7 +64,7 @@
 	"globalblocking-unblock-legend": "Rimuovi un blocco globale",
 	"globalblocking-unblock-submit": "Rimuovi blocco globale",
 	"globalblocking-unblock-reason": "Motivo:",
-	"globalblocking-unblock-unblocked": "Hai rimosso il blocco globale #$2 sull'indirizzo IP '''$1'''.",
+	"globalblocking-unblock-unblocked": "Hai rimosso il blocco globale sull'indirizzo IP '''$1'''.",
 	"globalblocking-unblock-intro": "È possibile usare questo modulo per rimuovere un blocco globale.",
 	"globalblocking-whitelist": "Stato locale dei blocchi globali",
 	"globalblocking-whitelist-notapplied": "I blocchi globali non sono attivi su questo sito wiki.\nNon è possibile modificare lo stato locale dei blocchi globali.",

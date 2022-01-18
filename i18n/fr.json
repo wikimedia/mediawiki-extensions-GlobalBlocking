@@ -73,7 +73,7 @@
 	"globalblocking-unblock-legend": "Enlever un blocage global",
 	"globalblocking-unblock-submit": "Enlever le blocage global",
 	"globalblocking-unblock-reason": "Motif :",
-	"globalblocking-unblock-unblocked": "Vous avez supprimé le blocage global n° $2 sur l’adresse IP '''$1'''.",
+	"globalblocking-unblock-unblocked": "Vous avez supprimé le blocage global de l’adresse IP '''$1'''.",
 	"globalblocking-unblock-intro": "Vous pouvez utiliser ce formulaire pour retirer un blocage global.",
 	"globalblocking-whitelist": "Statut local des blocages globaux",
 	"globalblocking-whitelist-notapplied": "Les blocages globaux ne sont pas appliqués à ce wiki,\nde ce fait le statut local du blocage global ne peut être modifié.",
