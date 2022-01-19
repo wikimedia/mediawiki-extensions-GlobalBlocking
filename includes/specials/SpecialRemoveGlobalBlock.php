@@ -1,13 +1,24 @@
 <?php
 
+use MediaWiki\Block\BlockUtils;
+use MediaWiki\User\UserIdentity;
 use Wikimedia\IPUtils;
 
 class SpecialRemoveGlobalBlock extends FormSpecialPage {
 	/** @var string|null */
 	private $ip;
 
-	public function __construct() {
+	/** @var BlockUtils */
+	private $blockUtils;
+
+	/**
+	 * @param BlockUtils $blockUtils
+	 */
+	public function __construct(
+		BlockUtils $blockUtils
+	) {
 		parent::__construct( 'RemoveGlobalBlock', 'globalblock' );
+		$this->blockUtils = $blockUtils;
 	}
 
 	public function execute( $par ) {
@@ -18,6 +29,12 @@ class SpecialRemoveGlobalBlock extends FormSpecialPage {
 		$out->setPageTitle( $this->msg( 'globalblocking-unblock' ) );
 		$out->setSubtitle( GlobalBlocking::buildSubtitleLinks( $this ) );
 		$out->enableClientCache( false );
+
+		[ $target ] = $this->blockUtils->parseBlockTarget( $par );
+
+		if ( $target instanceof UserIdentity ) {
+			$this->getSkin()->setRelevantUser( $target );
+		}
 	}
 
 	/**

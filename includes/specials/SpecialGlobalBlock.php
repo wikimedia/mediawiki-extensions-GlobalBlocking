@@ -1,6 +1,8 @@
 <?php
 
 use MediaWiki\Block\BlockUserFactory;
+use MediaWiki\Block\BlockUtils;
+use MediaWiki\User\UserIdentity;
 use Wikimedia\IPUtils;
 
 class SpecialGlobalBlock extends FormSpecialPage {
@@ -19,14 +21,20 @@ class SpecialGlobalBlock extends FormSpecialPage {
 	/** @var BlockUserFactory */
 	private $blockUserFactory;
 
+	/** @var BlockUtils */
+	private $blockUtils;
+
 	/**
 	 * @param BlockUserFactory $blockUserFactory
+	 * @param BlockUtils $blockUtils
 	 */
 	public function __construct(
-		BlockUserFactory $blockUserFactory
+		BlockUserFactory $blockUserFactory,
+		BlockUtils $blockUtils
 	) {
 		parent::__construct( 'GlobalBlock', 'globalblock' );
 		$this->blockUserFactory = $blockUserFactory;
+		$this->blockUtils = $blockUtils;
 	}
 
 	public function doesWrites() {
@@ -58,6 +66,12 @@ class SpecialGlobalBlock extends FormSpecialPage {
 		} else {
 			// This catches invalid IPs too but we'll reject them at form submission.
 			$this->address = IPUtils::sanitizeIP( $address );
+		}
+
+		[ $target ] = $this->blockUtils->parseBlockTarget( $this->address );
+
+		if ( $target instanceof UserIdentity ) {
+			$this->getSkin()->setRelevantUser( $target );
 		}
 	}
 
