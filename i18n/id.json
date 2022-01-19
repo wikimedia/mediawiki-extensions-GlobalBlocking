@@ -13,7 +13,8 @@
 			"Mbrt",
 			"Rachmat04",
 			"Rex",
-			"Sumbukompor"
+			"Sumbukompor",
+			"Daud I.F. Argana"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Memblokir]] alamat IP [[Special:GlobalBlockList|di banyak wiki sekaligus]]",
@@ -38,6 +39,7 @@
 	"globalblocking-block-alreadyblocked": "Alamat IP $1 telah diblokir secara global.\nAnda dapat melihat status pemblokiran tersebut di [[Special:GlobalBlockList|daftar pemblokiran global]],\natau ubah status pemblokiran dengan mengirimkan kembali formulir ini.",
 	"globalblocking-block-bigrange": "Rentang yang Anda masukkan ($1) terlalu besar untuk diblokir.\nAnda dapat memblokir maksimum 65.536 alamat (/16 rentang)",
 	"globalblocking-also-local": "Juga blokir alamat IP tersebut secara lokal di wiki ini",
+	"globalblocking-also-local-talk": "Blokir pengguna dari menyunting halaman pembicaraan lokal mereka",
 	"globalblocking-list-intro": "Ini adalah daftar seluruh pemblokiran global yang efektif pada saat ini.\nBeberapa pemblokiran ditandai sebagai non-aktif pada wiki lokal: ini artinya pemblokiran ini aktif pada situs-situs lain, tapi Pengurus di wiki lokal telah memutuskan untuk menon-aktifkannya di wiki ini.",
 	"globalblocking-list": "Daftar pemblokiran global alamat IP",
 	"globalblocking-search-legend": "Pencarian pemblokiran global",
@@ -53,6 +55,7 @@
 	"globalblocking-list-whitelist": "status lokal",
 	"globalblocking-list-modify": "ubah",
 	"globalblocking-expiringblock": "kedaluwarsa pada $1 $2",
+	"globalblocking-infiniteblock": "tak terbatas",
 	"globalblocking-list-noresults": "Alamat IP yang diminta tidak sedang diblokir.",
 	"globalblocking-goto-block": "Memblokir alamat IP secara global",
 	"globalblocking-goto-unblock": "Menghapuskan pemblokiran global",
@@ -104,5 +107,13 @@
 	"right-globalblock-whitelist": "Menonaktifkan suatu pemblokiran global di wiki lokal",
 	"action-globalblock-whitelist": "nonaktifkan pemblokiran global di wiki lokal",
 	"right-globalblock-exempt": "Tidak dikenakan pemblokiran global",
-	"action-globalblock-exempt": "lewati pemblokiran global"
+	"action-globalblock-exempt": "lewati pemblokiran global",
+	"globalblocking-apierror-badip": "Alamat IP $1 tidak sah",
+	"log-action-filter-gblblock": "Tipe blokir global:",
+	"log-action-filter-gblblock-gblock": "Pemblokiran global",
+	"log-action-filter-gblblock-gunblock": "Pencabutan blokir global",
+	"log-action-filter-gblblock-modify": "Pengubahan blokir global",
+	"log-action-filter-gblblock-whitelist": "Penambahan ke daftar putih pemblokiran global",
+	"log-action-filter-gblblock-dwhitelist": "Penghapusan dari daftar putih pemblokiran global",
+	"grant-globalblock": "Memblokir atau mencabut blokir alamat IP secara global"
 }
