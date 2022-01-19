@@ -15,9 +15,10 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 	}
 
 	/**
-	 * @param string $par not used currently
+	 * @param string $par Parameters of the URL, probably the IP being actioned
 	 */
 	public function execute( $par ) {
+		$this->loadParameters( $par );
 		$this->setHeaders();
 		$this->addHelpLink( 'Extension:GlobalBlocking' );
 		$this->checkExecutePermissions( $this->getUser() );
@@ -31,13 +32,18 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 			$out->addWikiMsg( 'globalblocking-whitelist-notapplied' );
 			return;
 		}
-		$this->loadParameters();
 		$this->getForm()->show();
 	}
 
-	private function loadParameters() {
+	/**
+	 * @param string|null $par Parameter from the URL, may be null or a string (probably an IP)
+	 * that was inserted
+	 * @return void
+	 * @throws Exception
+	 */
+	private function loadParameters( ?string $par ) {
 		$request = $this->getRequest();
-		$ip = trim( $request->getText( 'address' ) );
+		$ip = trim( $request->getText( 'address', $par ) );
 		$this->mAddress = ( $ip !== '' || $request->wasPosted() ) ? IPUtils::sanitizeRange( $ip ) : '';
 		$this->mWhitelistStatus = $request->getCheck( 'wpWhitelistStatus' );
 		$id = GlobalBlocking::getGlobalBlockId( $ip );
