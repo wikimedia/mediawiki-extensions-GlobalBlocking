@@ -9,6 +9,7 @@
 			"MuratTheTurkish",
 			"Rapsar",
 			"Runningfridgesrule",
+			"SaldırganSincap",
 			"Suelnur",
 			"Uncitoyen",
 			"Vito Genovese"
@@ -65,7 +66,7 @@
 	"globalblocking-unblock-legend": "Küresel bir engellemeyi kaldır",
 	"globalblocking-unblock-submit": "Küresel engellemeyi kaldır",
 	"globalblocking-unblock-reason": "Sebep:",
-	"globalblocking-unblock-unblocked": "'''$1''' IP adresindeki #$2 numaralı küresel engeli kaldırdınız.",
+	"globalblocking-unblock-unblocked": "'''$1''' IP adresindeki küresel engeli kaldırdınız.",
 	"globalblocking-unblock-intro": "Bu formu küresel bir engellemeyi kaldırmak için kullanabilirsiniz.",
 	"globalblocking-whitelist": "Küresel engellemelerin yerel durumları",
 	"globalblocking-whitelist-notapplied": "Küresel engellemeler bu vikide uygulanmıyor,\nbu yüzden küresel engellemelerin yerel durumu değiştirilemez.",
