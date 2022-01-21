@@ -523,7 +523,7 @@ class GlobalBlocking {
 			'gb_range_end' => $range_end,
 		];
 
-		if ( $modify ) {
+		if ( $modify && $existingBlock ) {
 			$dbw->update( 'globalblocks', $row, [ 'gb_id' => $existingBlock ], __METHOD__ );
 		} else {
 			$dbw->insert( 'globalblocks', $row, __METHOD__, [ 'IGNORE' ] );
