@@ -41,7 +41,12 @@
 				"BlockUtils"
 			]
 		},
-		"GlobalBlockList": "SpecialGlobalBlockList",
+		"GlobalBlockList": {
+			"class": "SpecialGlobalBlockList",
+			"services": [
+				"BlockUtils"
+			]
+		},
 		"GlobalBlockStatus": {
 			"class": "SpecialGlobalBlockStatus",
 			"services": [
