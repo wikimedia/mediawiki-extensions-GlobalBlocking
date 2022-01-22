@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Block\BlockUtils;
+use MediaWiki\User\UserIdentity;
 use Wikimedia\IPUtils;
 
 class SpecialGlobalBlockStatus extends FormSpecialPage {
@@ -10,8 +12,17 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 	/** @var bool|null */
 	private $mWhitelistStatus;
 
-	public function __construct() {
+	/** @var BlockUtils */
+	private $blockUtils;
+
+	/**
+	 * @param BlockUtils $blockUtils
+	 */
+	public function __construct(
+		BlockUtils $blockUtils
+	) {
 		parent::__construct( 'GlobalBlockStatus', 'globalblock-whitelist' );
+		$this->blockUtils = $blockUtils;
 	}
 
 	/**
@@ -33,6 +44,12 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 			return;
 		}
 		$this->getForm()->show();
+
+		[ $target ] = $this->blockUtils->parseBlockTarget( $this->mAddress );
+
+		if ( $target instanceof UserIdentity ) {
+			$this->getSkin()->setRelevantUser( $target );
+		}
 	}
 
 	/**

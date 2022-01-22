@@ -37,12 +37,23 @@
 		"GlobalBlock": {
 			"class": "SpecialGlobalBlock",
 			"services": [
-				"BlockUserFactory"
+				"BlockUserFactory",
+				"BlockUtils"
 			]
 		},
 		"GlobalBlockList": "SpecialGlobalBlockList",
-		"GlobalBlockStatus": "SpecialGlobalBlockStatus",
-		"RemoveGlobalBlock": "SpecialRemoveGlobalBlock"
+		"GlobalBlockStatus": {
+			"class": "SpecialGlobalBlockStatus",
+			"services": [
+				"BlockUtils"
+			]
+		},
+		"RemoveGlobalBlock": {
+			"class": "SpecialRemoveGlobalBlock",
+			"services": [
+				"BlockUtils"
+			]
+		}
 	},
 	"LogTypes": [
 		"gblblock"
