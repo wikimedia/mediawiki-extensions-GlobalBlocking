@@ -6,7 +6,7 @@
 				"name": "gbw_id",
 				"comment": "Key to gb_id in globalblocks database",
 				"type": "integer",
-				"options": { "length": 11, "notnull": true }
+				"options": { "notnull": true }
 			},
 			{
 				"name": "gbw_address",
@@ -17,7 +17,7 @@
 				"name": "gbw_by",
 				"comment": "Key to user_id",
 				"type": "integer",
-				"options": { "length": 11, "notnull": true }
+				"options": { "notnull": true }
 			},
 			{
 				"name": "gbw_by_text",
