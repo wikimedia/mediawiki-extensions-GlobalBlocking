@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Alp Er Tunqa",
-			"Amir a57"
+			"Amir a57",
+			"Bir morty"
 		]
 	},
 	"globalblocking-block-reason": "ندن:",
@@ -14,7 +15,9 @@
 	"globalblocking-list-unblock": "سیل",
 	"globalblocking-list-whitelist": "یئرلی وضعیت",
 	"globalblocking-list-modify": "دییشمک",
+	"globalblocking-list-tempblocks": "مووقت بلوکلاری گیزله",
 	"globalblocking-expiringblock": "سون تاریخ $1 ساعت $2",
+	"globalblocking-list-noresults": "ایشلتدیگینیز پارامترلر ایله هئچ بیر نتیجه تاپیلمادی.",
 	"globalblocking-unblock-reason": "ندن:",
 	"globalblocking-whitelist-legend": "یئرلی وضعیتی دییشدیر",
 	"globalblocking-whitelist-reason": "ندن:",

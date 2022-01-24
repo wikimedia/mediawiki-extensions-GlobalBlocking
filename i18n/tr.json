@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"BaRaN6161 TURK",
+			"Can",
 			"Emperyan",
 			"Homonihilis",
 			"Joseph",
@@ -52,9 +53,12 @@
 	"globalblocking-list-whitelisted": "$1 tarafından yerel olarak devre dışı bırakıldı: $2",
 	"globalblocking-list-whitelist": "yerel durum",
 	"globalblocking-list-modify": "değiştir",
+	"globalblocking-list-tempblocks": "Geçici engellemeleri gizle",
+	"globalblocking-list-indefblocks": "Belirsiz engelleri gizle",
+	"globalblocking-list-addressblocks": "Tek IP engellemelerini gizle",
 	"globalblocking-expiringblock": "$1 $2 tarihinde doluyor",
 	"globalblocking-infiniteblock": "süresiz",
-	"globalblocking-list-noresults": "İstenen IP adresi engellenmedi.",
+	"globalblocking-list-noresults": "Sağlanan parametrelerle ilgili hiçbir sonuç bulunamadı.",
 	"globalblocking-goto-block": "Bir IP adresini küresel olarak engelle",
 	"globalblocking-goto-unblock": "Küresel bir engellemeyi kaldır",
 	"globalblocking-goto-status": "Küresel bir engelleme için yerel durumu değiştir",
