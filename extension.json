@@ -143,7 +143,8 @@
 		"SpecialContributionsBeforeMainOutput": "main",
 		"UserMergeAccountFields": "GlobalBlockingHooks::onUserMergeAccountFields",
 		"LoadExtensionSchemaUpdates": "GlobalBlockingHooks::onLoadExtensionSchemaUpdates",
-		"GetLogTypesOnUser": "main"
+		"GetLogTypesOnUser": "main",
+		"ContributionsToolLinks": "main"
 	},
 	"HookHandlers": {
 		"main": {
