@@ -27,7 +27,7 @@ use Wikimedia\IPUtils;
 use Wikimedia\Rdbms\IDatabase;
 
 /**
- * Query module to enumerate all available pages.
+ * Query module to enumerate all global blocks.
  *
  * @ingroup API
  * @ingroup Extensions
