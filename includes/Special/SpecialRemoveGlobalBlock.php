@@ -34,7 +34,7 @@ class SpecialRemoveGlobalBlock extends FormSpecialPage {
 		$out = $this->getOutput();
 		$out->setPageTitle( $this->msg( 'globalblocking-unblock' ) );
 		$out->setSubtitle( GlobalBlocking::buildSubtitleLinks( $this ) );
-		$out->enableClientCache( false );
+		$out->disableClientCache();
 
 		[ $target ] = $this->blockUtils->parseBlockTarget( $par );
 

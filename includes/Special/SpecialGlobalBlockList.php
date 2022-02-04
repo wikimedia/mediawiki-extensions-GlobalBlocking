@@ -42,7 +42,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 		$out->setPageTitle( $this->msg( 'globalblocking-list' ) );
 		$out->setSubtitle( GlobalBlocking::buildSubtitleLinks( $this ) );
 		$out->setArticleRelated( false );
-		$out->enableClientCache( false );
+		$out->disableClientCache();
 
 		$this->loadParameters( $par );
 		$this->showForm();
