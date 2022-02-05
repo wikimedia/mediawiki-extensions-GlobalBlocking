@@ -167,6 +167,13 @@
 		"GlobalBlockRemoteReasonUrl": {
 			"description": "Full path to api.php to use to expand templates in block reasons",
 			"value": null
+		},
+		"GlobalBlockingCIDRLimit": {
+			"description": "Maximum CIDR range when globally blocking an IP range.",
+			"value": {
+				"IPv4": 16,
+				"IPv6": 19
+			}
 		}
 	},
 	"ServiceWiringFiles": [
