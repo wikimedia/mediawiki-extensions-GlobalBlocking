@@ -7,6 +7,7 @@
  */
 
 use MediaWiki\Block\DatabaseBlock;
+use MediaWiki\Hook\ContributionsToolLinksHook;
 use MediaWiki\Hook\GetLogTypesOnUserHook;
 use MediaWiki\Hook\OtherBlockLogLinkHook;
 use MediaWiki\Hook\SpecialContributionsBeforeMainOutputHook;
@@ -22,7 +23,8 @@ class GlobalBlockingHooks implements
 	SpecialPasswordResetOnSubmitHook,
 	OtherBlockLogLinkHook,
 	SpecialContributionsBeforeMainOutputHook,
-	GetLogTypesOnUserHook
+	GetLogTypesOnUserHook,
+	ContributionsToolLinksHook
 {
 	/** @var PermissionManager */
 	private $permissionManager;
@@ -233,6 +235,52 @@ class GlobalBlockingHooks implements
 		}
 
 		return true;
+	}
+
+	/**
+	 * Adds a link on Special:Contributions to Special:GlobalBlock for privileged users.
+	 * @param int $id User ID
+	 * @param Title $title User page title
+	 * @param array &$tools Tool links
+	 * @param SpecialPage $sp Special page
+	 * @return bool|void
+	 * @throws MWException
+	 */
+	public function onContributionsToolLinks(
+		$id, $title, &$tools, $sp
+	) {
+		$user = $sp->getUser();
+		$linkRenderer = $sp->getLinkRenderer();
+		$ip = $title->getText();
+
+		if ( IPUtils::isIPAddress( $ip ) ) {
+			if ( IPUtils::isValidRange( $ip ) ) {
+				$target = IPUtils::sanitizeRange( $ip );
+			} else {
+				$target = IPUtils::sanitizeIP( $ip );
+			}
+			if ( $target === null ) {
+				throw new LogicException( 'IPUtils::sanitizeIP returned null for a valid IP' );
+			}
+			if ( $this->permissionManager->userHasRight( $user, 'globalblock' ) ) {
+				if ( GlobalBlocking::getGlobalBlockId( $ip ) === 0 ) {
+					$tools['globalblock'] = $linkRenderer->makeKnownLink(
+						SpecialPage::getTitleFor( 'GlobalBlock', $target ),
+						$sp->msg( 'globalblocking-contribs-block' )->text()
+					);
+				} else {
+					$tools['globalblock'] = $linkRenderer->makeKnownLink(
+						SpecialPage::getTitleFor( 'GlobalBlock', $target ),
+						$sp->msg( 'globalblocking-contribs-modify' )->text()
+					);
+
+					$tools['globalunblock'] = $linkRenderer->makeKnownLink(
+						SpecialPage::getTitleFor( 'GlobalUnblock', $target ),
+						$sp->msg( 'globalblocking-contribs-remove' )->text()
+					);
+				}
+			}
+		}
 	}
 
 	/**
