@@ -10,7 +10,7 @@
 	"apihelp-globalblock-param-expiry": "If specified, will block or reblock the user. Determines how long the block will last for, e.g. \"5 months\" or \"2 weeks\". If set to \"infinite\" or \"indefinite\" the block will never expire.",
 	"apihelp-globalblock-param-unblock": "If specified, will unblock the user.",
 	"apihelp-globalblock-param-reason": "The reason for blocking/unblocking.",
-	"apihelp-globalblock-param-anononly": "Specify this if the block should only affect logged-out users.",
+	"apihelp-globalblock-param-anononly": "Specify this if the block should only affect logged-out users globally.",
 	"apihelp-globalblock-param-modify": "Specify this if the existing block on the target should be modified",
 	"apihelp-globalblock-example-1": "Block 192.0.2.1 indefinitely with reason \"Cross-wiki abuse\"",
 	"apihelp-query+globalblocks-description": "List all globally blocked IP addresses.",
@@ -25,5 +25,6 @@
 	"apihelp-query+globalblocks-example-1": "List all global blocks",
 	"apihelp-query+globalblocks-example-2": "List global blocks applying to IP address 192.0.2.18",
 	"apihelp-globalblock-param-alsolocal": "Block the IP locally as well",
-	"apihelp-globalblock-param-localblockstalk": "Revoke talk page access locally"
+	"apihelp-globalblock-param-localblockstalk": "Revoke talk page access locally",
+	"apihelp-globalblock-param-localanononly": "Specify this if the block should only affect logged-out users locally."
 }

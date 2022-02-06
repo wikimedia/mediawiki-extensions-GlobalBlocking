@@ -176,6 +176,13 @@ class SpecialGlobalBlock extends FormSpecialPage {
 				'id' => 'mw-globalblock-local-talk',
 				'hide-if' => [ '!==', 'AlsoLocal', '1' ],
 			];
+			$fields['AlsoLocalSoft'] = [
+				'type' => 'check',
+				'label-message' => 'globalblocking-also-local-soft',
+				'id' => 'mw-globalblock-local-soft',
+				'hide-if' => [ '!==', 'AlsoLocal', '1' ],
+				'default' => true,
+			];
 		}
 
 		return $fields;
@@ -268,7 +275,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 					'isCreateAccountBlocked' => true,
 					'isEmailBlocked' => true,
 					'isUserTalkEditBlocked' => $data['AlsoLocalTalk'],
-					'isHardBlock' => !$data['AnonOnly'],
+					'isHardBlock' => !$data['AlsoLocalSoft'],
 					'isAutoblocking' => true,
 				]
 			)->placeBlock( $data['Modify'] );
