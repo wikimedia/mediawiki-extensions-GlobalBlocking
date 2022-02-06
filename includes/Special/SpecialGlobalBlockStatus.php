@@ -1,7 +1,16 @@
 <?php
 
+namespace MediaWiki\Extension\GlobalBlocking\Special;
+
+use Exception;
+use FormSpecialPage;
+use GlobalBlocking;
+use HTMLForm;
+use ManualLogEntry;
 use MediaWiki\Block\BlockUtils;
 use MediaWiki\User\UserIdentity;
+use SpecialPage;
+use Title;
 use Wikimedia\IPUtils;
 
 class SpecialGlobalBlockStatus extends FormSpecialPage {

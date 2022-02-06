@@ -1,7 +1,14 @@
 <?php
 
+namespace MediaWiki\Extension\GlobalBlocking\Special;
+
+use DerivativeContext;
+use GlobalBlocking;
+use Html;
+use HTMLForm;
 use MediaWiki\Block\BlockUtils;
 use MediaWiki\Block\DatabaseBlock;
+use SpecialPage;
 use Wikimedia\IPUtils;
 
 class SpecialGlobalBlockList extends SpecialPage {

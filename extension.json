@@ -35,26 +35,26 @@
 	],
 	"SpecialPages": {
 		"GlobalBlock": {
-			"class": "SpecialGlobalBlock",
+			"class": "MediaWiki\\Extension\\GlobalBlocking\\Special\\SpecialGlobalBlock",
 			"services": [
 				"BlockUserFactory",
 				"BlockUtils"
 			]
 		},
 		"GlobalBlockList": {
-			"class": "SpecialGlobalBlockList",
+			"class": "MediaWiki\\Extension\\GlobalBlocking\\Special\\SpecialGlobalBlockList",
 			"services": [
 				"BlockUtils"
 			]
 		},
 		"GlobalBlockStatus": {
-			"class": "SpecialGlobalBlockStatus",
+			"class": "MediaWiki\\Extension\\GlobalBlocking\\Special\\SpecialGlobalBlockStatus",
 			"services": [
 				"BlockUtils"
 			]
 		},
 		"RemoveGlobalBlock": {
-			"class": "SpecialRemoveGlobalBlock",
+			"class": "MediaWiki\\Extension\\GlobalBlocking\\Special\\SpecialRemoveGlobalBlock",
 			"services": [
 				"BlockUtils"
 			]
@@ -123,11 +123,6 @@
 		"MediaWiki\\Extension\\GlobalBlocking\\": "includes/"
 	},
 	"AutoloadClasses": {
-		"SpecialGlobalBlock": "includes/specials/SpecialGlobalBlock.php",
-		"SpecialGlobalBlockList": "includes/specials/SpecialGlobalBlockList.php",
-		"GlobalBlockListPager": "includes/specials/GlobalBlockListPager.php",
-		"SpecialGlobalBlockStatus": "includes/specials/SpecialGlobalBlockStatus.php",
-		"SpecialRemoveGlobalBlock": "includes/specials/SpecialRemoveGlobalBlock.php",
 		"ApiQueryGlobalBlocks": "includes/api/ApiQueryGlobalBlocks.php",
 		"ApiGlobalBlock": "includes/api/ApiGlobalBlock.php",
 		"GlobalBlock": "includes/GlobalBlock.php",

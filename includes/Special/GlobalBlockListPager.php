@@ -1,6 +1,17 @@
 <?php
 
+namespace MediaWiki\Extension\GlobalBlocking\Special;
+
+use GlobalBlocking;
+use Html;
+use HtmlArmor;
+use IContextSource;
+use Linker;
 use MediaWiki\Linker\LinkRenderer;
+use ReverseChronologicalPager;
+use SpecialPage;
+use User;
+use WikiMap;
 
 class GlobalBlockListPager extends ReverseChronologicalPager {
 	/** @var array */
