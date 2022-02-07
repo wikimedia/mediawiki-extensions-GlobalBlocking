@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"GuoPC",
 			"Liuxinyu970226",
 			"Stang",
 			"Yfdyh000"
@@ -12,7 +13,7 @@
 	"apihelp-globalblock-param-expiry": "如果指定，将封禁或重新封禁该用户。指定封禁将持续多久，例如“5 months”或者“2 weeks”。如果设置为“infinite”或者“indefinite”，该封禁将不会过期。",
 	"apihelp-globalblock-param-unblock": "如果指定，将解封用户。",
 	"apihelp-globalblock-param-reason": "封禁/解封原因。",
-	"apihelp-globalblock-param-anononly": "如果封禁应该只影响未登录用户，指定此项。",
+	"apihelp-globalblock-param-anononly": "如果封禁应该只影响全域已退出登录用户，指定此项。",
 	"apihelp-globalblock-param-modify": "在现有目标封禁应被修改时指定它",
 	"apihelp-globalblock-example-1": "无限期封禁192.0.2.1，原因“Cross-wiki abuse”",
 	"apihelp-query+globalblocks-description": "列出所有全域封禁的IP地址。",
@@ -27,5 +28,6 @@
 	"apihelp-query+globalblocks-example-1": "列出所有全域封禁",
 	"apihelp-query+globalblocks-example-2": "列出对IP地址192.0.2.18做出的全域封禁",
 	"apihelp-globalblock-param-alsolocal": "在本地也封禁此IP地址",
-	"apihelp-globalblock-param-localblockstalk": "在本地阻止编辑讨论页"
+	"apihelp-globalblock-param-localblockstalk": "在本地阻止编辑讨论页",
+	"apihelp-globalblock-param-localanononly": "如果封禁应该只影响已退出登录用户，指定此项。"
 }

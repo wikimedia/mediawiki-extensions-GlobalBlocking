@@ -34,7 +34,6 @@
 	"globalblocking-return": "Бозгашта ба феҳристи бастаҳои саросарӣ",
 	"globalblocking-notblocked": "Нишонаи IP ($1) шумо ворид карда саросарӣ баста нашудааст.",
 	"globalblocking-unblock": "Пок кардани бастаи саросарӣ",
-	"globalblocking-unblock-ipinvalid": "Нишоани IP ($1) ворид намуда номӯътабар аст.\nЛутфан дар ёд доред, ки шумо наметавонед як номи корбариро ворид кунед!",
 	"globalblocking-unblock-legend": "Пок кардани бастаи саросарӣ",
 	"globalblocking-unblock-submit": "Пок кардани бастаи саросарӣ",
 	"globalblocking-unblock-reason": "Сабаб:",

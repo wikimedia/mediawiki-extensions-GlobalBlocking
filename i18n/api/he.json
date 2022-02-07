@@ -12,7 +12,7 @@
 	"apihelp-globalblock-param-expiry": "אם זה מצוין, זה יחסום או יבטל את החסימה של המשתמש. זה מגדיר למשך כמה זמן החסימה תימשך, למשל \"5 months\" או \"2 weeks\". אם מוגדר \"infinite\" או \"indefinite\", החסימה לעולם לא תפוג.",
 	"apihelp-globalblock-param-unblock": "אם זה מצוין, המשתמש ישוחרר.",
 	"apihelp-globalblock-param-reason": "הסיבה לחסימה או לשחרור.",
-	"apihelp-globalblock-param-anononly": "יש לציין את זה אם החסימה צריכה להשפיע רק על משתמשים שלא נכנסו לחשבון.",
+	"apihelp-globalblock-param-anononly": "יש לציין את זה אם החסימה צריכה להשפיע גלובלית רק על משתמשים שלא נכנסו לחשבון.",
 	"apihelp-globalblock-param-modify": "יש להגדיר את זה אם חסימה קיימת ביעד צריכה להשתנות",
 	"apihelp-globalblock-example-1": "לחסום את 192.0.2.1 לצמיתות עם הסיבה \"Cross-wiki abuse\"",
 	"apihelp-query+globalblocks-description": "רשימה של כל כתובות ה־IP שחסומות גלובלית.",
@@ -27,5 +27,6 @@
 	"apihelp-query+globalblocks-example-1": "רשימת כל החסימות הגלובליות",
 	"apihelp-query+globalblocks-example-2": "רשימת חסימות גלובלית של כתובת IP של 192.0.2.18",
 	"apihelp-globalblock-param-alsolocal": "לחסום את כתובת ה־IP גם מקומית",
-	"apihelp-globalblock-param-localblockstalk": "לשלול גישה לדפי שיחה מקומית"
+	"apihelp-globalblock-param-localblockstalk": "לשלול גישה לדפי שיחה מקומית",
+	"apihelp-globalblock-param-localanononly": "יש לציין את זה אם החסימה צריכה להשפיע מקומית רק על משתמשים שלא נכנסו לחשבון."
 }

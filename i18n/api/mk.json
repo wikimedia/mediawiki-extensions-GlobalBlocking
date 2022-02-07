@@ -10,7 +10,7 @@
 	"apihelp-globalblock-param-expiry": "Ако е укажано, корисникот ќе се блокира или преблокира. Одредува колку време ќе трае блокот (на пр. „5 месеци“ или „2 недели“). Ако се зададе „бесконечно“ или „неодредено“, тогаш блокот ќе трае засекогаш.",
 	"apihelp-globalblock-param-unblock": "Ако е укажано, корисникот ќе биде одблокиран.",
 	"apihelp-globalblock-param-reason": "Причина за блокирање/одблокирање.",
-	"apihelp-globalblock-param-anononly": "Укажете го ова ако сакате блокот да важи само за одјавени корисници.",
+	"apihelp-globalblock-param-anononly": "Укажете го ова ако сакате блокот да важи само за одјавени корисници глобално.",
 	"apihelp-globalblock-param-modify": "Укажете го ова ако треба да се измени постоечки блок врз целта",
 	"apihelp-globalblock-example-1": "Блокирај го 192.0.2.1 бесконечно со причината „злоупотреба на повеќе викија“",
 	"apihelp-query+globalblocks-description": "Испиши ги сите глобално блокирани IP-адреси.",
@@ -25,5 +25,6 @@
 	"apihelp-query+globalblocks-example-1": "Список на сите глобални блокови",
 	"apihelp-query+globalblocks-example-2": "Испиши ги глобалните блокови што се однесуват на IP-адресата 192.0.2.18",
 	"apihelp-globalblock-param-alsolocal": "Воедно блокирај ја IP-адресата и месно",
-	"apihelp-globalblock-param-localblockstalk": "Месно отстрани пристап до разговорната страница"
+	"apihelp-globalblock-param-localblockstalk": "Месно отстрани пристап до разговорната страница",
+	"apihelp-globalblock-param-localanononly": "Укажете го ова ако сакате блокот да важи само за одјавени корисници месно."
 }

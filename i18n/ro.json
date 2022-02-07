@@ -53,7 +53,6 @@
 	"globalblocking-return": "Înapoi la lista blocărilor globale",
 	"globalblocking-notblocked": "Adresa IP introdusă ($1) nu este blocată global.",
 	"globalblocking-unblock": "Elimină o blocare globală",
-	"globalblocking-unblock-ipinvalid": "Adresa IP introdusă ($1) este invalidă.\nAtenție, nu poate fi introdus un nume de utilizator!",
 	"globalblocking-unblock-legend": "Elimină o blocare globală",
 	"globalblocking-unblock-submit": "Elimină blocare globală",
 	"globalblocking-unblock-reason": "Motiv:",

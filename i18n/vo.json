@@ -38,7 +38,6 @@
 	"globalblocking-return": "Geikön lü lised blokamas valöpik",
 	"globalblocking-notblocked": "Ladet-IP fa ol pepenöl ($1) no peblokon valöpo.",
 	"globalblocking-unblock": "Moükön blokami valöpik",
-	"globalblocking-unblock-ipinvalid": "Ladet-IP fa ol pepenöl ($1) no lonöfon.\nDemolös, das no dalon penön gebananemi!",
 	"globalblocking-unblock-legend": "Moükön blokami valöpik",
 	"globalblocking-unblock-submit": "Moükön blokami valöpik",
 	"globalblocking-unblock-reason": "Kod:",

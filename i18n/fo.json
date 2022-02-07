@@ -22,7 +22,6 @@
 	"globalblocking-block-success": "IP adressan $1 er blivin sperrað við hepni á øllum verkætlanum.",
 	"globalblocking-modify-success": "Globala sperringin á $1 er blivin broytt.",
 	"globalblocking-block-alreadyblocked": "IP adressan $1 er longu sperrað globalt.\nTú kanst síggja verandi sperring á [[Special:GlobalBlockList|lista við globalum sperringum]],\nella broyta innstillingarnar á verandi sperring við at senda henda formularin enn einaferð.",
-	"globalblocking-block-bigrange": "Røðin sum tú skrivaði ($1) er ov stórt til sperring.\nTú kanst í mesta lagi sperra 65.536 adressur (/16 intervallir)",
 	"globalblocking-search-ip": "IP adressa:",
 	"globalblocking-search-submit": "Leita eftir sperringum",
 	"globalblocking-list-ipinvalid": "IP adressan, sum tú leitaði eftir ($1) er ógildug.\nVinarliga skriva eina gylduga IP adressu.",

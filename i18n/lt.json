@@ -36,7 +36,6 @@
 	"globalblocking-return": "Grįžti į pasaulinių blokavimų sąrašą",
 	"globalblocking-notblocked": "IP adresas ( $1 ), kurį įvedėte nėra globaliau užblokuotas.",
 	"globalblocking-unblock": "Pašalinti pasaulini blokavimą",
-	"globalblocking-unblock-ipinvalid": "IP adresas ( $1 ) kuri įrašėte negalimas.\nAtkreipkite dėmesį, kad negalima įvesti vartotojo vardo!",
 	"globalblocking-unblock-legend": "Pašalinti pasaulini blokavimą",
 	"globalblocking-unblock-submit": "Pašalinti pasaulini blokavimą",
 	"globalblocking-unblock-reason": "Priežastis:",

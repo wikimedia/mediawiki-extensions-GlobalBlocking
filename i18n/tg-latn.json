@@ -31,7 +31,6 @@
 	"globalblocking-return": "Bozgaşta ba fehristi bastahoi sarosarī",
 	"globalblocking-notblocked": "Nişonai IP ($1) şumo vorid karda sarosarī basta naşudaast.",
 	"globalblocking-unblock": "Pok kardani bastai sarosarī",
-	"globalblocking-unblock-ipinvalid": "Nişoani IP ($1) vorid namuda nomū'tabar ast.\nLutfan dar jod dored, ki şumo nametavoned jak nomi korbariro vorid kuned!",
 	"globalblocking-unblock-legend": "Pok kardani bastai sarosarī",
 	"globalblocking-unblock-submit": "Pok kardani bastai sarosarī",
 	"globalblocking-unblock-reason": "Sabab:",

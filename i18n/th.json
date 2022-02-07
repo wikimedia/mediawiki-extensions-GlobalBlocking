@@ -48,7 +48,6 @@
 	"globalblocking-return": "กลับไปยังรายการการบล็อกทั่วโลก",
 	"globalblocking-notblocked": "ที่อยู่ไอพี ($1) ที่คุณใส่ไม่ได้ถูกบล็อกทั่วโลก",
 	"globalblocking-unblock": "เอาการบล็อกทั่วโลกออก",
-	"globalblocking-unblock-ipinvalid": "ที่อยู่ไอพี ($1) ที่คุณใส่ไม่ถูกต้อง\nโปรดทราบว่าคุณไม่สามารถใส่ชื่อผู้ใช้ได้!",
 	"globalblocking-unblock-legend": "เอาการบล็อกทั่วโลกออก",
 	"globalblocking-unblock-submit": "เอาการบล็อกทั่วโลกออก",
 	"globalblocking-unblock-reason": "เหตุผล:",

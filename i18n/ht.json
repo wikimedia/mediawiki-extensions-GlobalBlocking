@@ -30,7 +30,6 @@
 	"globalblocking-list-unblock": "Debloke",
 	"globalblocking-list-whitelisted": "Te deaktive lokalman pa $1: $2",
 	"globalblocking-list-whitelist": "estati lokal",
-	"globalblocking-unblock-ipinvalid": "Adrès IP ($1) ou te antre a pa bon.\nTanpri note ke ou pa kapab antre yon non itilizatè!",
 	"globalblocking-unblock-legend": "Retire yon blokaj global",
 	"globalblocking-unblock-submit": "Retire blokaj global",
 	"globalblocking-unblock-reason": "Rezon:",

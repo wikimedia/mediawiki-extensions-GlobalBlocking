@@ -42,7 +42,6 @@
 	"globalblocking-add-block": "အခြားဂလိုဘယ်ပိတ်ပင်မှု ပေါင်းထည့်ရန်",
 	"globalblocking-notblocked": "သင်ရိုက်ထည့်သော အိုင်ပီလိပ်စာ ($1) ကို ဂလိုဘယ်အားဖြင့် မပိတ်ပင်ထားပါ။",
 	"globalblocking-unblock": "ဂလိုဘယ် ပိတ်ပင်တားဆီးမှုတစ်ခုကို ဖယ်ရှားရန်",
-	"globalblocking-unblock-ipinvalid": "သင် ရိုက်ထည့်သော အိုင်ပီလိပ်စာ ($1) သည် မဆီလျော်ပါ။ အသုံးပြုသူအမည်ကို ရိုက်ထည့်၍ မရကြောင်းကို သတိပြုပါ။",
 	"globalblocking-unblock-legend": "ဂလိုဘယ် ပိတ်ပင်တားဆီးမှုတစ်ခုကို ဖယ်ရှားရန်",
 	"globalblocking-unblock-submit": "ဂလိုဘယ် ပိတ်ပင်တားဆီးမှုကို ဖယ်ရှားရန်",
 	"globalblocking-unblock-reason": "အကြောင်းပြချက်:",

@@ -48,7 +48,6 @@
 	"globalblocking-add-block": "மற்றொரு பொது பகுதியை உருவாக்கு",
 	"globalblocking-notblocked": "நீங்கள் உள்ளிட்ட இணைய விதிமுறை முகவரி ($1) உலகளவில் தடுக்கப்படவில்லை.",
 	"globalblocking-unblock": "ஒரு உலகளாவிய தடையை நீக்கு",
-	"globalblocking-unblock-ipinvalid": "நீங்கள் உள்ளிட்ட இணைய விதிமுறை முகவரி ($1) தவறானது.\nதயவு செய்து நீங்கள் ஒரு பயனர் பெயரை உள்ளிட முடியாது என்பதை நினைவில் கொள்ளவும்!",
 	"globalblocking-unblock-legend": "உலகளாவிய தடையை நீக்கு",
 	"globalblocking-unblock-submit": "உலகளாவிய தடையை நீக்கு",
 	"globalblocking-unblock-reason": "காரணம்:",

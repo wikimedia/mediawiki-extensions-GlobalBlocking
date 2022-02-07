@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Cwlin0416",
-			"Kly"
+			"Kly",
+			"列维劳德"
 		]
 	},
 	"apihelp-globalblock-description": "全域封鎖或解封一名使用者。",
@@ -11,7 +12,7 @@
 	"apihelp-globalblock-param-expiry": "若指定將會封鎖或重新封鎖使用者。確認要封鎖的時間長度，例如：「5 months」（5 個月）或「2 weeks」（2 週）。如果設定成「infinite」或「indefinite」則為無期限封鎖。",
 	"apihelp-globalblock-param-unblock": "若指定將解封使用者。",
 	"apihelp-globalblock-param-reason": "封鎖/解封的原因。",
-	"apihelp-globalblock-param-anononly": "若封鎖僅對未登入的使用者有效，請指定此。",
+	"apihelp-globalblock-param-anononly": "若封鎖僅對全域未登入的使用者有效，請指定此。",
 	"apihelp-globalblock-param-modify": "若應對在目標的現有封鎖做出修改，請指定此。",
 	"apihelp-globalblock-example-1": "無限期封鎖 192.0.2.1，原因「跨 wiki 濫用」",
 	"apihelp-query+globalblocks-description": "列出所有全域封鎖 IP 位址。",
@@ -26,5 +27,6 @@
 	"apihelp-query+globalblocks-example-1": "所有全域封鎖清單",
 	"apihelp-query+globalblocks-example-2": "列出套用在 IP 位址 192.0.2.18 的全域封鎖",
 	"apihelp-globalblock-param-alsolocal": "在本地端也封鎖 IP",
-	"apihelp-globalblock-param-localblockstalk": "撤銷在本地端存取討論頁"
+	"apihelp-globalblock-param-localblockstalk": "撤銷在本地端存取討論頁",
+	"apihelp-globalblock-param-localanononly": "若封鎖僅對已登出的使用者有效，請指定此。"
 }

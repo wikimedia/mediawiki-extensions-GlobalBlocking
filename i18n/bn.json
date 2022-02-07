@@ -49,7 +49,6 @@
 	"globalblocking-add-block": "আরেকটি বৈশ্বিক বাধা যোগ করুন",
 	"globalblocking-notblocked": "আপনি যে আইপি ঠিকানাটি লিখেছেন ($1) সেটি বৈশ্বিকভাবে বাধাপ্রাপ্ত নয়।",
 	"globalblocking-unblock": "একটি বৈশ্বিক বাধা তুলে নাও",
-	"globalblocking-unblock-ipinvalid": "আপনার লেখা আইপি ঠিকানা $1 সঠিক নয়। \nঅনুগ্রহ করে লক্ষ্য করুন আপনি কোনো নির্দিষ্ট ব্যবহারকারী না, লিখতে পারবেন না!",
 	"globalblocking-unblock-legend": "একটি বৈশ্বিক বাধা তুলে নাও",
 	"globalblocking-unblock-submit": "বৈশ্বিক বাধা তুলে নাও",
 	"globalblocking-unblock-reason": "কারণ:",

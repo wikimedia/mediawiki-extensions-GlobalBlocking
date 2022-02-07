@@ -51,7 +51,6 @@
 	"globalblocking-return": "वैश्विक अवरोध के तालिका में बापिस जाएँ",
 	"globalblocking-notblocked": "आईपि पता ($1) जो आप निवेश किए ग्लोबली अवरोध नहीं है ।",
 	"globalblocking-unblock": "एक वैश्विक अवरोध निकाले",
-	"globalblocking-unblock-ipinvalid": "आपने दिया हुआ आईपी एड्रेस ($1) अवैध हैं।\nकृपया ध्यान दें आप सदस्यनाम नहीं दे सकतें!",
 	"globalblocking-unblock-legend": "ग्लोबल ब्लॉक हटायें",
 	"globalblocking-unblock-submit": "ग्लोबल ब्लॉक हटायें",
 	"globalblocking-unblock-reason": "कारण:",
