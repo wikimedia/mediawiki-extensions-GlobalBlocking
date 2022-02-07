@@ -486,6 +486,8 @@ class GlobalBlocking {
 			return [ [ 'globalblocking-block-alreadyblocked', $data[ 'ip' ] ] ];
 		}
 
+		$lookup = MediaWikiServices::getInstance()->getCentralIdLookup();
+
 		// We're a-ok.
 		$dbw = self::getGlobalBlockingDatabase( DB_PRIMARY );
 
@@ -494,6 +496,7 @@ class GlobalBlocking {
 		$row = [
 			'gb_address' => $data[ 'ip' ],
 			'gb_by' => $blocker->getName(),
+			'gb_by_central_id' => $lookup->centralIdFromLocalUser( $blocker ),
 			'gb_by_wiki' => WikiMap::getCurrentWikiId(),
 			'gb_reason' => $reason,
 			'gb_timestamp' => $dbw->timestamp( wfTimestampNow() ),
