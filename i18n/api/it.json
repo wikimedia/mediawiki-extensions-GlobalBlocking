@@ -11,7 +11,7 @@
 	"apihelp-globalblock-param-target": "L'indirizzo IP di destinazione.",
 	"apihelp-globalblock-param-unblock": "Se specificato, sarà sbloccato l'utente.",
 	"apihelp-globalblock-param-reason": "Il motivo del blocco/sblocco.",
-	"apihelp-globalblock-param-anononly": "Indica se il blocco dovrebbe riguardare solo gli utenti che non hanno effettuato l'accesso.",
+	"apihelp-globalblock-param-anononly": "Indica se questo blocco dovrebbe riguardare solo gli utenti che non hanno effettuato l'accesso globale.",
 	"apihelp-query+globalblocks-description": "Elenca tutti gli indirizzi IP bloccati globalmente",
 	"apihelp-query+globalblocks-summary": "Elenca tutti gli indirizzi IP bloccati globalmente",
 	"apihelp-query+globalblocks-param-start": "Il timestamp da cui iniziare l'elenco.",
