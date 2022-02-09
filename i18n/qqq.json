@@ -54,7 +54,7 @@
 	"globalblocking-block-alreadyblocked": "Used as error message. Parameters:\n* $1 - IP address",
 	"globalblocking-block-bigrange": "Used as error message.\n\nThe user specify the IP address range by the start and end IP addresses.\n\nBut if the specified IP address range crosses a /16 boundary, this error occurs.\n\nParameters:\n* $1 - the IP address range (contains the start and end IP addresses)",
 	"globalblocking-also-local": "Form label for a checkbox asking to also block the IP on the local wiki.",
-	"globalblocking-also-local-talk": "Form label for a checkbox asking if the blocker wants to block talk page also locally",
+	"globalblocking-also-local-talk": "Form label for a checkbox asking if the blocker wants to block talk page also locally.",
 	"globalblocking-list-intro": "Appears on top of [[Special:Globalblocklist]] (part of [[mw:Extension:GlobalBlocking|Extension:GlobalBlocking]], which is not installed on translatewiki.net; example: [[wikipedia:Special:Globalblocklist]]).",
 	"globalblocking-list": "Title of Special:GlobalBlockList",
 	"globalblocking-search-legend": "Used as legend of the fieldset around the input form of Special:GlobalBlockList\n\nSee also:\n* {{msg-mw|ipblocklist-legend}}\n *{{msg-mw|globalblocking-block-legend}}",
