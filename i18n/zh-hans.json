@@ -52,6 +52,7 @@
 	"globalblocking-local-failed": "本地封禁IP地址失败，因为指定的IP地址已经在此wiki被封禁",
 	"globalblocking-block-failure": "当试图全域封禁$1时出错。请重试。",
 	"globalblocking-block-alreadyblocked": "该IP地址 $1 已经被全域封锁。\n您可以在[[Special:GlobalBlockList|全域封锁名单]]中参看现时的封锁，或通过修改重新提交此表单设置现有封锁。",
+	"globalblocking-bigrange": "您指定的范围（$1）超出了限制。\n$2 限制是 /$3 范围。",
 	"globalblocking-also-local": "另外在此wiki本地封禁指定IP地址",
 	"globalblocking-also-local-talk": "禁止用户在本地编辑他们自己的讨论页",
 	"globalblocking-also-local-soft": "仅本地封禁匿名用户",
