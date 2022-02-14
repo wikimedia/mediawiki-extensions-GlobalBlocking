@@ -7,6 +7,7 @@
  */
 
 use MediaWiki\Block\DatabaseBlock;
+use MediaWiki\Extension\GlobalBlocking\Maintenance\PopulateCentralId;
 use MediaWiki\Extension\GlobalBlocking\Special\GlobalBlockListPager;
 use MediaWiki\Hook\ContributionsToolLinksHook;
 use MediaWiki\Hook\GetLogTypesOnUserHook;
@@ -104,6 +105,7 @@ class GlobalBlockingHooks implements
 			'gb_by_central_id',
 			"$base/sql/$type/patch-add-gb_by_central_id.sql"
 		);
+		$updater->addPostDatabaseUpdateMaintenance( PopulateCentralId::class );
 
 		return true;
 	}
