@@ -29,7 +29,8 @@
 			"Zazzzz",
 			"乌拉跨氪",
 			"铁桶",
-			"飞舞回堂前"
+			"飞舞回堂前",
+			"魔琴"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|允许]][[Special:GlobalBlockList|在多个wiki中封禁]]IP地址",
@@ -42,7 +43,7 @@
 	"globalblocking-block-expiry-selector-other": "其它时间：",
 	"globalblocking-block-legend": "全域封禁一个IP地址",
 	"globalblocking-ipaddress": "IP地址：",
-	"globalblocking-ipbanononly": "全球范围内仅阻止匿名用户",
+	"globalblocking-ipbanononly": "仅阻止匿名用户",
 	"globalblocking-block-ipinvalid": "您输入的IP地址（$1）无效。请注意，您不能输入一个用户名！",
 	"globalblocking-block-expiryinvalid": "您输入的终止时间无效。",
 	"globalblocking-block-submit": "全域封禁该IP地址",
@@ -113,8 +114,8 @@
 	"globalblocking-loglink": "IP地址 $1 被全域封禁（[[{{#Special:GlobalBlockList}}/$1|详细信息]]）。",
 	"globalblocking-contribs-notice": "此IP地址现时被全域封禁。\n最近的全域封禁日志在下面提供以便参考：",
 	"globalblocking-showlog": "这个IP地址已经被封锁。\n封锁记录提供如下，供参考：",
-	"globalblocking-contribs-block": "全球性禁止这个IP",
-	"globalblocking-contribs-modify": "修改该全域封禁",
+	"globalblocking-contribs-block": "全域封禁此 IP",
+	"globalblocking-contribs-modify": "修改全域封禁",
 	"globalblocking-contribs-remove": "移除全域封禁",
 	"globalblocklist": "全域封禁的IP地址列表",
 	"globalblock": "全域封禁IP地址",

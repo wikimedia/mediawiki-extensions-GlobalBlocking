@@ -43,6 +43,7 @@
 	"globalblocking-list-whitelisted": "lokálně zneplatněno uživatelem $1: $2",
 	"globalblocking-list-whitelist": "lokální stav",
 	"globalblocking-list-modify": "změnit",
+	"globalblocking-list-rangeblocks": "Skrýt blokování rozsahů",
 	"globalblocking-expiringblock": "do $1, $2",
 	"globalblocking-list-noresults": "Uvedená IP adresa není zablokována.",
 	"globalblocking-goto-block": "Globálně zablokovat IP adresu",

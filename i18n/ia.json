@@ -15,7 +15,7 @@
 	"globalblocking-block-expiry-selector-other": "Altere duration:",
 	"globalblocking-block-legend": "Blocar un adresse IP globalmente",
 	"globalblocking-ipaddress": "Adresse IP:",
-	"globalblocking-ipbanononly": "Blocar solmente usatores anonyme",
+	"globalblocking-ipbanononly": "Blocar globalmente solo usatores anonyme",
 	"globalblocking-block-ipinvalid": "Le adresse IP ($1) que tu entrava es invalide.\nPer favor nota que tu non pote entrar un nomine de usator!",
 	"globalblocking-block-expiryinvalid": "Le expiraton que tu entrava es invalide.",
 	"globalblocking-block-submit": "Blocar globalmente iste adresse IP",
