@@ -8,6 +8,7 @@
 			"YaronSh",
 			"Yonidebest",
 			"אור שפירא",
+			"לואיקה",
 			"ערן"
 		]
 	},
@@ -100,7 +101,7 @@
 	"globalblocking-contribs-modify": "לשנות את החסימה הגלובלית",
 	"globalblocking-contribs-remove": "להסיר את החסימה הגלובלית",
 	"globalblocklist": "רשימת כתובות IP החסומות באופן גלובלי",
-	"globalblock": "חסימת כתובת IP באופן גלובלי",
+	"globalblock": "חסימה גלובלית של כתובת IP",
 	"globalblockstatus": "המצב המקומי של החסימות הגלובליות",
 	"removeglobalblock": "הסרת חסימה גלובלית",
 	"right-globalblock": "יצירה והסרה של חסימות גלובליות",
