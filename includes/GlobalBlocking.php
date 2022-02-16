@@ -373,15 +373,26 @@ class GlobalBlocking {
 	 * and doing a write query. We should only do it when a connection to the primary database
 	 * is already open (currently, when a global block is made).
 	 *
+	 * @param int $limit
 	 * @throws DBUnexpectedError
 	 */
-	public static function purgeExpired() {
-		$dbw = self::getGlobalBlockingDatabase( DB_PRIMARY );
-		$dbw->delete(
+	public static function purgeExpired( $limit = 1000 ) {
+		$globaldbw = self::getGlobalBlockingDatabase( DB_PRIMARY );
+		$deleteIds = $globaldbw->selectFieldValues(
 			'globalblocks',
-			[ 'gb_expiry<' . $dbw->addQuotes( $dbw->timestamp() ) ],
-			__METHOD__
+			'gb_id',
+			[ 'gb_expiry <= ' . $globaldbw->addQuotes( $globaldbw->timestamp() ) ],
+			__METHOD__,
+			[ 'LIMIT' => $limit ]
 		);
+		if ( $deleteIds !== [] ) {
+			$deleteIds = array_map( 'intval', $deleteIds );
+			$globaldbw->delete(
+				'globalblocks',
+				[ 'gb_id' => $deleteIds ],
+				__METHOD__
+			);
+		}
 
 		// Purge the global_block_whitelist table.
 		// We can't be perfect about this without an expensive check on the primary database
@@ -389,12 +400,21 @@ class GlobalBlocking {
 		// the expiry of global blocks in the global_block_whitelist table.
 		// That way, most blocks will fall out of the table naturally when they expire.
 		$dbw = wfGetDB( DB_PRIMARY );
-		$dbw->delete(
+		$deleteWhitelistIds = $dbw->selectFieldValues(
 			'global_block_whitelist',
-			[ 'gbw_expiry<' . $dbw->addQuotes( $dbw->timestamp() )
-			],
-			__METHOD__
+			'gbw_id',
+			[ 'gbw_expiry <= ' . $dbw->addQuotes( $dbw->timestamp() ) ],
+			__METHOD__,
+			[ 'LIMIT' => $limit ]
 		);
+		if ( $deleteWhitelistIds !== [] ) {
+			$deleteWhitelistIds = array_map( 'intval', $deleteWhitelistIds );
+			$dbw->delete(
+				'global_block_whitelist',
+				[ 'gbw_id' => $deleteWhitelistIds ],
+				__METHOD__
+			);
+		}
 	}
 
 	/**
