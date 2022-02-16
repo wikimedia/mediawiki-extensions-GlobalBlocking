@@ -8,7 +8,8 @@
 			"YaronSh",
 			"Yonidebest",
 			"אור שפירא",
-			"ערן"
+			"ערן",
+			"לואיקה"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|אפשרות]] ל[[Special:GlobalBlockList|חסימה גלובלית בין אתרי הוויקי]] של כתובות IP",
@@ -93,7 +94,7 @@
 	"globalblocking-contribs-notice": "כתובת ה־IP הזאת חסומה באופן גלובלי.\nלהלן הרשומה ביומן החסימות הגלובליות להתייחסות:",
 	"globalblocking-showlog": "כתובת IP זו נחסמה בעבר.\nיומן החסימות מוצג להלן:",
 	"globalblocklist": "רשימת כתובות IP החסומות באופן גלובלי",
-	"globalblock": "חסימת כתובת IP באופן גלובלי",
+	"globalblock": "חסימה גלובלית של כתובת IP",
 	"globalblockstatus": "המצב המקומי של החסימות הגלובליות",
 	"removeglobalblock": "הסרת חסימה גלובלית",
 	"right-globalblock": "יצירה והסרה של חסימות גלובליות",
