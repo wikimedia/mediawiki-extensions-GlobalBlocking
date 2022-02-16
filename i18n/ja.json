@@ -17,6 +17,7 @@
 			"Sujiniku",
 			"W.CC",
 			"Whym",
+			"Yamagata Yusuke",
 			"つぶあん派",
 			"青子守歌"
 		]
@@ -72,7 +73,7 @@
 	"globalblocking-unblock-legend": "グローバルブロックを解除",
 	"globalblocking-unblock-submit": "グローバルブロックを解除",
 	"globalblocking-unblock-reason": "理由:",
-	"globalblocking-unblock-unblocked": "IPアドレス '''$1''' に対するグローバルブロック #$2 を解除しました。",
+	"globalblocking-unblock-unblocked": "IPアドレス '''$1''' に対するグローバルブロックを解除しました。",
 	"globalblocking-unblock-intro": "このフォームを使用してグローバルブロックを解除できます。",
 	"globalblocking-whitelist": "グローバルブロックのローカル状態",
 	"globalblocking-whitelist-notapplied": "このウィキではグローバルブロックは適用されず、よってグローバルブロックのローカル状態を変更できません。",
