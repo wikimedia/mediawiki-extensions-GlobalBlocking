@@ -26,7 +26,7 @@
 	"globalblocking-block-expiry-selector-other": "Anden tid:",
 	"globalblocking-block-legend": "Bloker en IP-adresse globalt",
 	"globalblocking-ipaddress": "IP-adresse:",
-	"globalblocking-ipbanononly": "Kun anonyme brugere spærres",
+	"globalblocking-ipbanononly": "Bloker kun anonyme brugere globalt",
 	"globalblocking-block-ipinvalid": "IP-adressen, du indtastede ($1), er ugyldig.\nBemærk venligst, at du ikke kan indtaste et brugernavn!",
 	"globalblocking-block-expiryinvalid": "Den udløbstid, du valgte er ugyldigt",
 	"globalblocking-block-submit": "Blokér denne ip-adresse globalt",
