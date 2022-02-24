@@ -13,7 +13,7 @@
 	"globalblocking-list-ipinvalid": "Het IP-adres waar je naar zocht is onjuist ($1).\nVoer een correct IP-adres in.",
 	"globalblocking-search-errors": "Je zoekopdracht kende {{PLURAL:$1|het volgende probleem|de volgende problemen}}:",
 	"globalblocking-notblocked": "Het IP-adres ($1) dat je hebt opgegeven is niet globaal geblokkeerd.",
-	"globalblocking-unblock-unblocked": "Je hebt de globale blokkade met nummer $2 voor het IP-adres '''$1''' verwijderd.",
+	"globalblocking-unblock-unblocked": "Je hebt de globale blokkade van het IP-adres '''$1''' verwijderd.",
 	"globalblocking-unblock-intro": "Je kunt dit formulier gebruik om een globale blokkade op te heffen.",
 	"globalblocking-whitelist-whitelisted": "Je hebt de globale blokkade #$2 met het IP-adres '''$1''' op {{SITENAME}} opgeheven.",
 	"globalblocking-whitelist-dewhitelisted": "Je hebt de globale blokkade #$2 met het IP-adres '''$1''' op {{SITENAME}} opnieuw actief gemaakt.",
