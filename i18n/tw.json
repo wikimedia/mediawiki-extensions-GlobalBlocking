@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Jemima2019"
+			"Jemima2019",
+			"Robertjamal12"
 		]
 	},
 	"globalblocking-list-tempblocks": "fa aboɔ a yɛn nhia no sie",
-	"globalblocking-list-addressblocks": "fa IP boɔ baako no sie"
+	"globalblocking-list-addressblocks": "Hide single IP blocks"
 }

@@ -19,7 +19,7 @@
 	"globalblocking-block-expiry-selector-other": "Muu aeg:",
 	"globalblocking-block-legend": "Blokeeri IP-aadress globaalselt",
 	"globalblocking-ipaddress": "IP-aadress:",
-	"globalblocking-ipbanononly": "Blokeeri ainult anonüümseid kasutajaid",
+	"globalblocking-ipbanononly": "Blokeeri globaalselt ainult anonüümsed kasutajad",
 	"globalblocking-block-ipinvalid": "Sisestatud IP aadress $1 on vigane.\nPane tähele, et kasutajanime ei saa sisestada.",
 	"globalblocking-block-expiryinvalid": "Sisestatud aegumistähtaeg on vigane.",
 	"globalblocking-block-submit": "Blokeeri see IP-aadress globaalselt",
