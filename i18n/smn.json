@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Seipinne"
+		]
+	},
+	"globalblocking-block-reason": "Suijâ:",
+	"globalblocking-unblock-reason": "Suijâ:",
+	"globalblocking-whitelist-reason": "Suijâ:",
+	"globalblocking-block-logentry": "eestij globaallávt kevttee [[$1]]. Iästu pištem $2"
+}
