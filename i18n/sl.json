@@ -18,7 +18,7 @@
 	"globalblocking-block-expiry-selector-other": "Drugačen čas:",
 	"globalblocking-block-legend": "Blokiraj IP-naslov globalno",
 	"globalblocking-ipaddress": "IP-naslov:",
-	"globalblocking-ipbanononly": "Blokiraj samo anonimne uporabnike",
+	"globalblocking-ipbanononly": "Globalno blokiraj samo anonimne uporabnike",
 	"globalblocking-block-ipinvalid": "Vnesen IP-naslov ($1) ni veljaven.\nProsimo, upoštevajte, da ne morete vnesti uporabniškega imena!",
 	"globalblocking-block-expiryinvalid": "Vnesen datum poteka je neveljaven.",
 	"globalblocking-block-submit": "Blokiraj ta IP-naslov globalno",
