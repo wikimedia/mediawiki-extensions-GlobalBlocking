@@ -120,7 +120,8 @@
 		"GlobalBlockingAlias": "GlobalBlocking.alias.php"
 	},
 	"AutoloadNamespaces": {
-		"MediaWiki\\Extension\\GlobalBlocking\\": "includes/"
+		"MediaWiki\\Extension\\GlobalBlocking\\": "includes/",
+		"MediaWiki\\Extension\\GlobalBlocking\\Maintenance\\": "maintenance/"
 	},
 	"AutoloadClasses": {
 		"ApiQueryGlobalBlocks": "includes/api/ApiQueryGlobalBlocks.php",
