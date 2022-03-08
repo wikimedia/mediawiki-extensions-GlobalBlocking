@@ -39,8 +39,8 @@
 			},
 			{
 				"name": "gb_anon_only",
-				"type": "integer",
-				"options": { "notnull": true, "default": 0 }
+				"type": "mwtinyint",
+				"options": { "length": 1, "notnull": true, "default": 0 }
 			},
 			{
 				"name": "gb_expiry",
