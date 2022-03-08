@@ -93,7 +93,7 @@
 	"globalblocking-logentry-expiry": "bis $1",
 	"globalblocking-logentry-noexpiry": "kein Sperrende festgelegt",
 	"globalblocking-loglink": "Die IP-Adresse $1 ist global gesperrt ([[{{#Special:GlobalBlockList}}/$1|Details]]).",
-	"globalblocking-contribs-notice": "Diese IP-Adresse ist derzeit global gesperrt.\nEs folgt ein Auszug des Logbuchs für globale Sperren:",
+	"globalblocking-contribs-notice": "Diese IP-Adresse ist derzeit global gesperrt.\nEs folgt der aktuelle Eintrag aus dem globalen Sperr-Logbuch:",
 	"globalblocking-showlog": "Diese IP-Adresse war früher gesperrt.\nEs folgt ein Auszug aus dem Benutzersperr-Logbuch:",
 	"globalblocklist": "Liste global gesperrter IP-Adressen",
 	"globalblock": "IP-Adresse global sperren",
