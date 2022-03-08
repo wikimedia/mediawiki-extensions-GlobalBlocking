@@ -10,7 +10,7 @@ CREATE TABLE /*_*/globalblocks (
   gb_by_wiki BLOB NOT NULL,
   gb_reason BLOB NOT NULL,
   gb_timestamp VARCHAR(14) NOT NULL,
-  gb_anon_only INTEGER DEFAULT 0 NOT NULL,
+  gb_anon_only SMALLINT DEFAULT 0 NOT NULL,
   gb_expiry BLOB DEFAULT '' NOT NULL,
   gb_range_start BLOB NOT NULL,
   gb_range_end BLOB NOT NULL
