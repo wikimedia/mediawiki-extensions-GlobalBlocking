@@ -6,6 +6,7 @@ if ( $IP === false ) {
 }
 require_once "$IP/maintenance/Maintenance.php";
 
+use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
 use MediaWiki\MediaWikiServices;
 
 /**

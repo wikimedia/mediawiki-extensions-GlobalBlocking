@@ -9,8 +9,8 @@ if ( $IP === false ) {
 require_once "$IP/maintenance/Maintenance.php";
 
 use CentralIdLookup;
-use GlobalBlocking;
 use LoggedUpdateMaintenance;
+use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
 use MediaWiki\MediaWikiServices;
 use WikiMap;
 

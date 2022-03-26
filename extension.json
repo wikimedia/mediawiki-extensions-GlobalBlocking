@@ -5,7 +5,7 @@
 	"descriptionmsg": "globalblocking-desc",
 	"license-name": "GPL-2.0-or-later",
 	"type": "other",
-	"callback": "GlobalBlockingHooks::onRegistration",
+	"callback": "MediaWiki\\Extension\\GlobalBlocking\\GlobalBlockingHooks::onRegistration",
 	"requires": {
 		"MediaWiki": ">= 1.38.0"
 	},
@@ -90,8 +90,8 @@
 		"gblblock": "globalblocking-logpagetext"
 	},
 	"LogActionsHandlers": {
-		"gblblock/whitelist": "GlobalBlockWhitelistLogFormatter",
-		"gblblock/dwhitelist": "GlobalBlockWhitelistLogFormatter"
+		"gblblock/whitelist": "MediaWiki\\Extension\\GlobalBlocking\\GlobalBlockWhitelistLogFormatter",
+		"gblblock/dwhitelist": "MediaWiki\\Extension\\GlobalBlocking\\GlobalBlockWhitelistLogFormatter"
 	},
 	"LogActions": {
 		"gblblock/gblock": "globalblocking-block-logentry",
@@ -101,14 +101,14 @@
 	},
 	"APIModules": {
 		"globalblock": {
-			"class": "ApiGlobalBlock",
+			"class": "MediaWiki\\Extension\\GlobalBlocking\\Api\\ApiGlobalBlock",
 			"services": [
 				"BlockUserFactory"
 			]
 		}
 	},
 	"APIListModules": {
-		"globalblocks": "ApiQueryGlobalBlocks"
+		"globalblocks": "MediaWiki\\Extension\\GlobalBlocking\\Api\\ApiQueryGlobalBlocks"
 	},
 	"MessagesDirs": {
 		"GlobalBlocking": [
@@ -123,28 +123,20 @@
 		"MediaWiki\\Extension\\GlobalBlocking\\": "includes/",
 		"MediaWiki\\Extension\\GlobalBlocking\\Maintenance\\": "maintenance/"
 	},
-	"AutoloadClasses": {
-		"ApiQueryGlobalBlocks": "includes/api/ApiQueryGlobalBlocks.php",
-		"ApiGlobalBlock": "includes/api/ApiGlobalBlock.php",
-		"GlobalBlock": "includes/GlobalBlock.php",
-		"GlobalBlocking": "includes/GlobalBlocking.php",
-		"GlobalBlockingHooks": "includes/GlobalBlockingHooks.php",
-		"GlobalBlockWhitelistLogFormatter": "includes/GlobalBlockWhitelistLogFormatter.php"
-	},
 	"Hooks": {
 		"getUserPermissionsErrorsExpensive": "main",
 		"UserIsBlockedGlobally": "main",
 		"SpecialPasswordResetOnSubmit": "main",
 		"OtherBlockLogLink": "main",
 		"SpecialContributionsBeforeMainOutput": "main",
-		"UserMergeAccountFields": "GlobalBlockingHooks::onUserMergeAccountFields",
-		"LoadExtensionSchemaUpdates": "GlobalBlockingHooks::onLoadExtensionSchemaUpdates",
+		"UserMergeAccountFields": "MediaWiki\\Extension\\GlobalBlocking\\GlobalBlockingHooks::onUserMergeAccountFields",
+		"LoadExtensionSchemaUpdates": "MediaWiki\\Extension\\GlobalBlocking\\GlobalBlockingHooks::onLoadExtensionSchemaUpdates",
 		"GetLogTypesOnUser": "main",
 		"ContributionsToolLinks": "main"
 	},
 	"HookHandlers": {
 		"main": {
-			"class": "GlobalBlockingHooks",
+			"class": "MediaWiki\\Extension\\GlobalBlocking\\GlobalBlockingHooks",
 			"services": [
 				"PermissionManager",
 				"MainConfig"

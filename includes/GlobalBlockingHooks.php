@@ -1,11 +1,11 @@
 <?php
 
-/**
- * MediaWiki hook handlers for the GlobalBlocking extension
- *
- * @license GPL-2.0-or-later
- */
+namespace MediaWiki\Extension\GlobalBlocking;
 
+use Config;
+use DatabaseUpdater;
+use Html;
+use LogicException;
 use MediaWiki\Block\DatabaseBlock;
 use MediaWiki\Extension\GlobalBlocking\Maintenance\PopulateCentralId;
 use MediaWiki\Extension\GlobalBlocking\Special\GlobalBlockListPager;
@@ -17,8 +17,18 @@ use MediaWiki\Permissions\Hook\GetUserPermissionsErrorsExpensiveHook;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\User\Hook\SpecialPasswordResetOnSubmitHook;
 use MediaWiki\User\Hook\UserIsBlockedGloballyHook;
+use MWException;
+use RequestContext;
+use SpecialPage;
+use Title;
+use User;
 use Wikimedia\IPUtils;
 
+/**
+ * MediaWiki hook handlers for the GlobalBlocking extension
+ *
+ * @license GPL-2.0-or-later
+ */
 class GlobalBlockingHooks implements
 	GetUserPermissionsErrorsExpensiveHook,
 	UserIsBlockedGloballyHook,

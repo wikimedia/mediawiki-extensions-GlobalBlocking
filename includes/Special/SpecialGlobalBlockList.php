@@ -3,11 +3,11 @@
 namespace MediaWiki\Extension\GlobalBlocking\Special;
 
 use DerivativeContext;
-use GlobalBlocking;
 use Html;
 use HTMLForm;
 use MediaWiki\Block\BlockUtils;
 use MediaWiki\Block\DatabaseBlock;
+use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
 use SpecialPage;
 use Wikimedia\IPUtils;
 

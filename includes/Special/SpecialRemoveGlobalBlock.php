@@ -3,9 +3,9 @@
 namespace MediaWiki\Extension\GlobalBlocking\Special;
 
 use FormSpecialPage;
-use GlobalBlocking;
 use HTMLForm;
 use MediaWiki\Block\BlockUtils;
+use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
 use MediaWiki\User\UserIdentity;
 use SpecialPage;
 use Wikimedia\IPUtils;
