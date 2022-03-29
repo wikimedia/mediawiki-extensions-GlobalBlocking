@@ -1,6 +1,12 @@
 <?php
 
+namespace MediaWiki\Extension\GlobalBlocking\Api;
+
+use ApiBase;
+use ApiMain;
+use ApiResult;
 use MediaWiki\Block\BlockUserFactory;
+use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
 
 class ApiGlobalBlock extends ApiBase {
 	/** @var BlockUserFactory */

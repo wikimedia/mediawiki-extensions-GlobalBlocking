@@ -2,11 +2,11 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Special;
 
-use GlobalBlocking;
 use Html;
 use HtmlArmor;
 use IContextSource;
 use Linker;
+use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
 use MediaWiki\Linker\LinkRenderer;
 use ReverseChronologicalPager;
 use SpecialPage;

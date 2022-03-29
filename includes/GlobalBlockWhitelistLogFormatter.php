@@ -1,4 +1,10 @@
 <?php
+
+namespace MediaWiki\Extension\GlobalBlocking;
+
+use LogFormatter;
+use UnexpectedValueException;
+
 /**
  * Log formatter for gblblock whitelist entries
  */

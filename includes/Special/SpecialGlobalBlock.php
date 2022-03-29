@@ -4,12 +4,12 @@ namespace MediaWiki\Extension\GlobalBlocking\Special;
 
 use CommentStore;
 use FormSpecialPage;
-use GlobalBlocking;
 use Html;
 use HTMLForm;
 use LogEventsList;
 use MediaWiki\Block\BlockUserFactory;
 use MediaWiki\Block\BlockUtils;
+use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
 use MediaWiki\User\UserIdentity;
 use Title;
 use Wikimedia\IPUtils;

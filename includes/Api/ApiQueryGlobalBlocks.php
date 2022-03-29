@@ -23,6 +23,12 @@
  * http://www.gnu.org/copyleft/gpl.html
  */
 
+namespace MediaWiki\Extension\GlobalBlocking\Api;
+
+use ApiBase;
+use ApiQueryBase;
+use ApiResult;
+use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
 use Wikimedia\IPUtils;
 use Wikimedia\Rdbms\IDatabase;
 

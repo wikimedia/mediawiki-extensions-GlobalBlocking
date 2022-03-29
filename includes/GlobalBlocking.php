@@ -1,20 +1,30 @@
 <?php
 
+namespace MediaWiki\Extension\GlobalBlocking;
+
+use Exception;
+use LogPage;
+use MediaWiki\Block\BlockUser;
+use MediaWiki\Block\DatabaseBlock;
+use MediaWiki\Extension\GlobalBlocking\Hook\GlobalBlockingHookRunner;
+use MediaWiki\MediaWikiServices;
+use Message;
+use MWException;
+use SpecialPage;
+use Status;
+use stdClass;
+use Title;
+use User;
+use WikiMap;
+use Wikimedia\IPUtils;
+use Wikimedia\Rdbms\DBUnexpectedError;
+use Wikimedia\Rdbms\IResultWrapper;
+
 /**
  * Static utility class of the GlobalBlocking extension.
  *
  * @license GPL-2.0-or-later
  */
-
-use MediaWiki\Block\BlockUser;
-use MediaWiki\Block\DatabaseBlock;
-use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
-use MediaWiki\Extension\GlobalBlocking\Hook\GlobalBlockingHookRunner;
-use MediaWiki\MediaWikiServices;
-use Wikimedia\IPUtils;
-use Wikimedia\Rdbms\DBUnexpectedError;
-use Wikimedia\Rdbms\IResultWrapper;
-
 class GlobalBlocking {
 	private const TYPE_IP = 2;
 	private const TYPE_RANGE = 3;

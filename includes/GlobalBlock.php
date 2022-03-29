@@ -1,7 +1,13 @@
 <?php
 
+namespace MediaWiki\Extension\GlobalBlocking;
+
+use IContextSource;
 use MediaWiki\Block\DatabaseBlock;
 use MediaWiki\MediaWikiServices;
+use stdClass;
+use User;
+use WikiMap;
 
 class GlobalBlock extends DatabaseBlock {
 	/**

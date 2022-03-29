@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
 use MediaWiki\MediaWikiServices;
 
 $IP = getenv( 'MW_INSTALL_PATH' );
