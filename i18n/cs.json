@@ -93,5 +93,6 @@
 	"right-globalblock-whitelist": "Definování výjimek z globálního zablokování",
 	"action-globalblock-whitelist": "definovat výjimky z globálního zablokování",
 	"right-globalblock-exempt": "Obcházení globálního blokování",
-	"action-globalblock-exempt": "obcházet globální blokování"
+	"action-globalblock-exempt": "obcházet globální blokování",
+	"grant-globalblock": "Globálně blokovat a odblokovávat uživatele"
 }
