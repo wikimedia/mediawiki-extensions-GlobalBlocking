@@ -7,6 +7,7 @@ use ApiMain;
 use ApiResult;
 use MediaWiki\Block\BlockUserFactory;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
+use Wikimedia\ParamValidator\ParamValidator;
 
 class ApiGlobalBlock extends ApiBase {
 	/** @var BlockUserFactory */
@@ -123,37 +124,37 @@ class ApiGlobalBlock extends ApiBase {
 	public function getAllowedParams() {
 		return [
 			'target' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => true
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => true
 			],
 			'expiry' => [
-				ApiBase::PARAM_TYPE => 'expiry'
+				ParamValidator::PARAM_TYPE => 'expiry'
 			],
 			'unblock' => [
-				ApiBase::PARAM_TYPE => 'boolean'
+				ParamValidator::PARAM_TYPE => 'boolean'
 			],
 			'reason' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => true
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => true
 			],
 			'anononly' => [
-				ApiBase::PARAM_TYPE => 'boolean'
+				ParamValidator::PARAM_TYPE => 'boolean'
 			],
 			'modify' => [
-				ApiBase::PARAM_TYPE => 'boolean'
+				ParamValidator::PARAM_TYPE => 'boolean'
 			],
 			'alsolocal' => [
-				ApiBase::PARAM_TYPE => 'boolean'
+				ParamValidator::PARAM_TYPE => 'boolean'
 			],
 			'localblockstalk' => [
-				ApiBase::PARAM_TYPE => 'boolean'
+				ParamValidator::PARAM_TYPE => 'boolean'
 			],
 			'localanononly' => [
-				ApiBase::PARAM_TYPE => 'boolean'
+				ParamValidator::PARAM_TYPE => 'boolean'
 			],
 			'token' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => true
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => true
 			]
 		];
 	}

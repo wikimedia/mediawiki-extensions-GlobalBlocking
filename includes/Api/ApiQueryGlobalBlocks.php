@@ -30,6 +30,7 @@ use ApiQueryBase;
 use ApiResult;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
 use Wikimedia\IPUtils;
+use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\ParamValidator\TypeDef\IntegerDef;
 use Wikimedia\Rdbms\IDatabase;
 
@@ -194,37 +195,37 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 	public function getAllowedParams() {
 		return [
 			'start' => [
-				ApiBase::PARAM_TYPE => 'timestamp'
+				ParamValidator::PARAM_TYPE => 'timestamp'
 			],
 			'end' => [
-				ApiBase::PARAM_TYPE => 'timestamp',
+				ParamValidator::PARAM_TYPE => 'timestamp',
 			],
 			'dir' => [
-				ApiBase::PARAM_TYPE => [
+				ParamValidator::PARAM_TYPE => [
 					'newer',
 					'older'
 				],
-				ApiBase::PARAM_DFLT => 'older',
+				ParamValidator::PARAM_DEFAULT => 'older',
 				ApiBase::PARAM_HELP_MSG => 'api-help-param-direction',
 			],
 			'ids' => [
-				ApiBase::PARAM_TYPE => 'integer',
-				ApiBase::PARAM_ISMULTI => true
+				ParamValidator::PARAM_TYPE => 'integer',
+				ParamValidator::PARAM_ISMULTI => true
 			],
 			'addresses' => [
-				ApiBase::PARAM_ISMULTI => true
+				ParamValidator::PARAM_ISMULTI => true
 			],
 			'ip' => null,
 			'limit' => [
-				ApiBase::PARAM_DFLT => 10,
-				ApiBase::PARAM_TYPE => 'limit',
+				ParamValidator::PARAM_DEFAULT => 10,
+				ParamValidator::PARAM_TYPE => 'limit',
 				IntegerDef::PARAM_MIN => 1,
 				IntegerDef::PARAM_MAX => ApiBase::LIMIT_BIG1,
 				IntegerDef::PARAM_MAX2 => ApiBase::LIMIT_BIG2
 			],
 			'prop' => [
-				ApiBase::PARAM_DFLT => 'id|address|by|timestamp|expiry|reason',
-				ApiBase::PARAM_TYPE => [
+				ParamValidator::PARAM_DEFAULT => 'id|address|by|timestamp|expiry|reason',
+				ParamValidator::PARAM_TYPE => [
 					'id',
 					'address',
 					'by',
@@ -233,7 +234,7 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 					'reason',
 					'range',
 				],
-				ApiBase::PARAM_ISMULTI => true
+				ParamValidator::PARAM_ISMULTI => true
 			]
 		];
 	}
