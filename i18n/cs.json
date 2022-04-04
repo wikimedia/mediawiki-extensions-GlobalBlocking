@@ -5,7 +5,8 @@
 			"Macofe",
 			"Matěj Suchánek",
 			"Mormegil",
-			"Patriccck"
+			"Patriccck",
+			"Patrik L."
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Umožňuje]] blokovat IP adresy [[Special:GlobalBlockList|na více wiki současně]]",
@@ -91,5 +92,6 @@
 	"right-globalblock-whitelist": "Definování výjimek z globálního zablokování",
 	"action-globalblock-whitelist": "definovat výjimky z globálního zablokování",
 	"right-globalblock-exempt": "Obcházení globálního blokování",
-	"action-globalblock-exempt": "obcházet globální blokování"
+	"action-globalblock-exempt": "obcházet globální blokování",
+	"grant-globalblock": "Globálně blokovat a odblokovávat uživatele"
 }
