@@ -80,7 +80,7 @@
 	"globalblocking-ipblocked-range": "'''Adresê IP da şıma wikiya pêron dı mabênê bloqey dera.'''\n\nBloqe kerden $1 ($2).\nSebebê bloqi ''$3''.\n\n* Bloqe dest pêkin: $4\n* Bloqe qedyin: $5\n\nŞıma şenê $1 ya qandê sebebê bloqe kerdış irtibat kewê.\nŞıma nêşenê se \"{{int:emailuser}}\" ra cırê e-posta bırışê, [[Special:Preferences|tercihan dê hesabi ra]] ra bloqe kerdışê xo bıvine.\nIp adresiy aşımaya newki $6.\nReca kem mesaco ke şıma de bırışê cori rınd buwanê hewna mesacê xo marê bırışê. $7",
 	"globalblocking-ipblocked-xff": "'''Adresê IP da şıma wikiya pêron dı bloqe biyo.'''\n\nBloqe kerden $1 ($2).\nSebebê bloqi ''$3''.\n\n* Bloqe dest pêkin: $4\n* Bloqe qedyin: $5\n\nŞıma şenê $1 ya qandê sebebê bloqe kerdış irtibat kewê.\nŞıma nêşenê se \"{{int:emailuser}}\" ra cırê e-posta bırışê, [[Special:Preferences|tercihan dê hesabi ra]] ra bloqe kerdışê xo bıvine.\nIp adresiy aşımaya newki $6.\nReca kem mesaco ke şıma de bırışê cori rınd buwanê hewna mesacê xo marê bırışê.",
 	"globalblocking-blocked-nopassreset": "Şıma be global bloqe biyê u no sebeb ra şıma nêeşkeni parolay karberi reset kerê.",
-	"globalblocking-logpage": "rocaneyê blokeyê globali",
+	"globalblocking-logpage": "Qeydê kılitkerdışê globali",
 	"globalblocking-logpagetext": "Bu, bu vikide yapılan ve kaldırılan küresel engellemelerin günlüğüdür.\nKüresel engellemelerin diğer vikilerde yapılıp kaldırılabileceğini, ve bu küresel engellemelerin bu vikiyi etkileyebileceğini unutmayın.\nTüm aktif küresel engellemeri görmek için, [[Special:GlobalBlockList|küresel engelleme listesine]] bakabilirsiniz.",
 	"globalblocking-block-logentry": "[[$1]], pê qediyayişê xewtê $2'i bı global bloke bı",
 	"globalblocking-block2-logentry": "bı global bloke bı [[$1]] ($2)",
