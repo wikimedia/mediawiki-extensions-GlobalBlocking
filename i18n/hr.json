@@ -9,7 +9,8 @@
 			"Macofe",
 			"Neptune, the Mystic",
 			"SpeedyGonsales",
-			"Vlad5250"
+			"Vlad5250",
+			"Ponor"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Omogućuje]] blokiranje IP adresa [[Special:GlobalBlockList|na svim wikijima]]",
@@ -75,7 +76,7 @@
 	"globalblocking-logpagetext": "Ovo je evidencija globalnih blokiranja koja su napravljena ili uklonjena na ovom wikiju.\nGlobalno blokiranje može biti napravljeno i uklonjeno na drugim wikijima, i ova globalna blokiranja mogu imati utjecaj na ovom wikiju.\nZa popis svih aktivnih globalnih blokiranja, pogledajte [[Special:GlobalBlockList|popis globalnih blokiranja]].",
 	"globalblocking-block-logentry": "globalno blokirao [[$1]] s istekom vremena od $2",
 	"globalblocking-block2-logentry": "globalno blokirao [[$1]] ($2)",
-	"globalblocking-unblock-logentry": "uklonio globalno blokiranje za [[$1]]",
+	"globalblocking-unblock-logentry": "uklanja globalno blokiranje za [[$1]]",
 	"globalblocking-logentry-whitelist": "$1 lokalno je {{GENDER:$2|onemogućio|onemogućila}} globalno blokiranje $3",
 	"globalblocking-logentry-dewhitelist": "$1 lokalno je ponovo {{GENDER:$2|omogućio|omogućila}} globalno blokiranje $3",
 	"globalblocking-modify-logentry": "izmijenjeno globalno blokiranje na [[$1]] ($2)",
