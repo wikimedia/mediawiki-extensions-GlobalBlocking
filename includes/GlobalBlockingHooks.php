@@ -87,17 +87,12 @@ class GlobalBlockingHooks implements
 		switch ( $type ) {
 			case 'sqlite':
 			case 'mysql':
-				$updater->modifyExtensionField(
-					'globalblocks',
-					'gb_range_start',
-					"$base/sql/patch-range-extend.sql"
-				);
+				// 1.34
 				$updater->modifyExtensionField(
 					'globalblocks',
 					'gb_reason',
 					"$base/sql/patch-globalblocks-reason-length.sql"
 				);
-
 				$updater->modifyExtensionField(
 					'global_block_whitelist',
 					'gbw_reason',
@@ -110,12 +105,19 @@ class GlobalBlockingHooks implements
 				);
 				break;
 		}
+
+		// 1.38
 		$updater->addExtensionField(
 			'globalblocks',
 			'gb_by_central_id',
 			"$base/sql/$type/patch-add-gb_by_central_id.sql"
 		);
 		$updater->addPostDatabaseUpdateMaintenance( PopulateCentralId::class );
+		$updater->modifyExtensionField(
+			'globalblocks',
+			'gb_anon_only',
+			"$base/sql/$type/patch-globalblocks-gb_anon_only.sql"
+		);
 
 		return true;
 	}
