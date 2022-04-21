@@ -15,7 +15,8 @@
 			"Priviet",
 			"Revi",
 			"Ykhwong",
-			"아라"
+			"아라",
+			"Bluehill"
 		]
 	},
 	"globalblocking-desc": "IP 주소를 [[Special:GlobalBlockList|다수의 위키]]에서 [[Special:GlobalBlock|차단]]할 수 있습니다",
@@ -39,6 +40,7 @@
 	"globalblocking-block-failure": "$1의 전역 차단을 시도하는 동안 오류가 발생했습니다. 다시 시도해 주십시오.",
 	"globalblocking-block-alreadyblocked": "IP 주소 $1은(는) 이미 전역 차단되었습니다.\n[[Special:GlobalBlockList|전역 차단된 사용자의 목록]]에서 현재 차단된 IP를 보거나,\n이 양식을 사용하여 이미 차단된 IP의 차단 설정을 바꿀 수 있습니다.",
 	"globalblocking-also-local": "또한 이 위키에서 주어진 IP 주소를 로컬로 차단하기",
+	"globalblocking-also-local-talk": "사용자가 로컬에서 자신의 토론 문서를 편집하지 못하도록 차단",
 	"globalblocking-also-local-soft": "익명 사용자만 로컬 차단",
 	"globalblocking-list-intro": "현재 유효한 모든 전역 차단의 목록입니다.\n전역 차단은 로컬의 관리자의 권한으로 무효화할 수 있습니다. 단 로컬에서 무효화하더라도 다른 위키에서는 차단 상태가 지속됩니다.",
 	"globalblocking-list": "모든 위키에서 차단된 IP 목록",
@@ -54,6 +56,10 @@
 	"globalblocking-list-whitelisted": "$1에 의해 로컬에서 해제됨: $2",
 	"globalblocking-list-whitelist": "로컬 상태",
 	"globalblocking-list-modify": "차단 설정 바꾸기",
+	"globalblocking-list-tempblocks": "기한이 정해진 차단을 숨기기",
+	"globalblocking-list-indefblocks": "무기한 차단 숨기기",
+	"globalblocking-list-addressblocks": "단일 IP 차단을 숨기기",
+	"globalblocking-list-rangeblocks": "대역 차단을 숨기기",
 	"globalblocking-expiringblock": "$1 $2에 해제",
 	"globalblocking-infiniteblock": "무기한",
 	"globalblocking-list-noresults": "제공된 매개 변수에 대한 결과를 찾을 수 없습니다.",
@@ -95,6 +101,9 @@
 	"globalblocking-loglink": "IP 주소 $1은 모든 위키에서 차단되었습니다. ([[{{#Special:GlobalBlockList}}/$1|자세한 정보]])",
 	"globalblocking-contribs-notice": "이 IP 주소는 현재 전역 차단되어 있습니다.\n전역 차단 기록은 다음과 같습니다:",
 	"globalblocking-showlog": "이 IP 주소는 이전에 차단된 적이 있습니다.\n아래의 차단 기록을 참조하십시오:",
+	"globalblocking-contribs-block": "이 IP를 전역 차단",
+	"globalblocking-contribs-modify": "전역 차단 설정 바꾸기",
+	"globalblocking-contribs-remove": "전역 차단 해제",
 	"globalblocklist": "모든 위키에서 차단된 IP 목록",
 	"globalblock": "IP 주소를 전역 차단",
 	"globalblockstatus": "전역 차단의 로컬 상태",
@@ -106,5 +115,9 @@
 	"right-globalblock-exempt": "전역 차단을 우회",
 	"action-globalblock-exempt": "전역 차단을 우회할",
 	"globalblocking-apierror-badip": "$1 IP 주소는 유효하지 않습니다",
+	"log-action-filter-gblblock": "전역 차단의 유형:",
+	"log-action-filter-gblblock-gblock": "전역 차단",
+	"log-action-filter-gblblock-gunblock": "전역 차단 해제",
+	"log-action-filter-gblblock-modify": "전역 차단 변경",
 	"grant-globalblock": "IP 주소 전역 차단 또는 차단 해제"
 }

@@ -25,7 +25,8 @@
 			"Ryo567",
 			"Sanbec",
 			"Translationista",
-			"Vivaelcelta"
+			"Vivaelcelta",
+			"DiegoAmbrocio"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permite]] bloquear direcciones IP [[Special:GlobalBlockList|simultáneamente en varios wikis]]",
@@ -64,9 +65,12 @@
 	"globalblocking-list-whitelisted": "desactivado localmente por $1: $2",
 	"globalblocking-list-whitelist": "estado local",
 	"globalblocking-list-modify": "modificar",
+	"globalblocking-list-tempblocks": "Ocultar bloques temporales",
+	"globalblocking-list-indefblocks": "Ocultar bloques indefinidos",
+	"globalblocking-list-rangeblocks": "Ocultar bloques de alcance",
 	"globalblocking-expiringblock": "expira el $1 a las $2",
 	"globalblocking-infiniteblock": "para siempre",
-	"globalblocking-list-noresults": "La dirección IP solicitada no está bloqueada.",
+	"globalblocking-list-noresults": "No se han encontrado resultados con los parámetros proporcionados.",
 	"globalblocking-goto-block": "Bloquear globalmente una dirección IP",
 	"globalblocking-goto-unblock": "Quitar un bloqueo global",
 	"globalblocking-goto-status": "Cambiar el estado local de un bloqueo global",
@@ -107,6 +111,8 @@
 	"globalblocking-loglink": "La dirección IP $1 está bloqueada globalmente ([[{{#Special:GlobalBlockList}}/$1|detalles]]).",
 	"globalblocking-contribs-notice": "Esta dirección IP se bloqueó globalmente.\nComo referencia, se proporciona la entrada del registro correspondiente:",
 	"globalblocking-showlog": "Esta dirección IP ha sido bloqueada previamente.\nEl registro de bloqueos se proporciona a continuación como referencia:",
+	"globalblocking-contribs-block": "bloquear globalmente esta IP",
+	"globalblocking-contribs-modify": "modificar el bloque global",
 	"globalblocklist": "Lista de direcciones IP bloqueadas globalmente",
 	"globalblock": "Bloquear una dirección IP globalmente",
 	"globalblockstatus": "Estatus local de bloqueos globales",
