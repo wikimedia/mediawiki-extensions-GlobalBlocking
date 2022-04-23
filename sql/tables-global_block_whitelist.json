@@ -31,14 +31,19 @@
 			},
 			{
 				"name": "gbw_expiry",
-				"type": "binary",
-				"options": { "length": 14, "notnull": true }
+				"type": "mwtimestamp",
+				"options": {
+					"notnull": true,
+					"CustomSchemaOptions": {
+						"allowInfinite": true
+					}
+				}
 			}
 		],
 		"indexes": [
 			{
 				"name": "gbw_by",
-				"columns": [ "gbw_by", "gbw_by" ],
+				"columns": [ "gbw_by" ],
 				"unique": false
 			}
 		],

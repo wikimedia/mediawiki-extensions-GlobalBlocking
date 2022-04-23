@@ -1,0 +1,174 @@
+{
+	"comment": "Use fixed binary for timestamp and use mediawiki timestamp type",
+	"before": {
+		"name": "globalblocks",
+		"columns": [
+			{
+				"name": "gb_id",
+				"type": "integer",
+				"options": { "notnull": true, "unsigned": true, "autoincrement": true }
+			},
+			{
+				"name": "gb_address",
+				"type": "string",
+				"options": { "length": 255, "notnull": true }
+			},
+			{
+				"name": "gb_by",
+				"type": "string",
+				"options": { "length": 255, "notnull": true }
+			},
+			{
+				"name": "gb_by_central_id",
+				"type": "integer",
+				"options": { "notnull": false, "unsigned": true, "default": null }
+			},
+			{
+				"name": "gb_by_wiki",
+				"type": "binary",
+				"options": { "length": 255, "notnull": true }
+			},
+			{
+				"name": "gb_reason",
+				"type": "binary",
+				"options": { "length": 767, "notnull": true }
+			},
+			{
+				"name": "gb_timestamp",
+				"type": "string",
+				"options": { "length": 14, "notnull": true }
+			},
+			{
+				"name": "gb_anon_only",
+				"type": "mwtinyint",
+				"options": { "length": 1, "notnull": true, "default": 0 }
+			},
+			{
+				"name": "gb_expiry",
+				"type": "binary",
+				"options": { "default": "", "length": 14, "notnull": true }
+			},
+			{
+				"name": "gb_range_start",
+				"type": "binary",
+				"options": { "length": 35, "notnull": true }
+			},
+			{
+				"name": "gb_range_end",
+				"type": "binary",
+				"options": { "length": 35, "notnull": true }
+			}
+		],
+		"indexes": [
+			{
+				"name": "gb_address",
+				"columns": [ "gb_address", "gb_anon_only" ],
+				"unique": true
+			},
+			{
+				"name": "gb_range",
+				"columns": [ "gb_range_start", "gb_range_end" ],
+				"unique": false
+			},
+			{
+				"name": "gb_timestamp",
+				"columns": [ "gb_timestamp" ],
+				"unique": false
+			},
+			{
+				"name": "gb_expiry",
+				"columns": [ "gb_expiry" ],
+				"unique": false
+			}
+		],
+		"pk": [ "gb_id" ]
+	},
+	"after": {
+		"name": "globalblocks",
+		"columns": [
+			{
+				"name": "gb_id",
+				"type": "integer",
+				"options": { "notnull": true, "unsigned": true, "autoincrement": true }
+			},
+			{
+				"name": "gb_address",
+				"type": "string",
+				"options": { "length": 255, "notnull": true }
+			},
+			{
+				"name": "gb_by",
+				"type": "string",
+				"options": { "length": 255, "notnull": true }
+			},
+			{
+				"name": "gb_by_central_id",
+				"type": "integer",
+				"options": { "notnull": false, "unsigned": true, "default": null }
+			},
+			{
+				"name": "gb_by_wiki",
+				"type": "binary",
+				"options": { "length": 255, "notnull": true }
+			},
+			{
+				"name": "gb_reason",
+				"type": "binary",
+				"options": { "length": 767, "notnull": true }
+			},
+			{
+				"name": "gb_timestamp",
+				"type": "mwtimestamp",
+				"options": { "notnull": true }
+			},
+			{
+				"name": "gb_anon_only",
+				"type": "mwtinyint",
+				"options": { "length": 1, "notnull": true, "default": 0 }
+			},
+			{
+				"name": "gb_expiry",
+				"type": "mwtimestamp",
+				"options": {
+					"notnull": true,
+					"CustomSchemaOptions": {
+						"allowInfinite": true
+					}
+				}
+			},
+			{
+				"name": "gb_range_start",
+				"type": "binary",
+				"options": { "length": 35, "notnull": true }
+			},
+			{
+				"name": "gb_range_end",
+				"type": "binary",
+				"options": { "length": 35, "notnull": true }
+			}
+		],
+		"indexes": [
+			{
+				"name": "gb_address",
+				"columns": [ "gb_address", "gb_anon_only" ],
+				"unique": true
+			},
+			{
+				"name": "gb_range",
+				"columns": [ "gb_range_start", "gb_range_end" ],
+				"unique": false
+			},
+			{
+				"name": "gb_timestamp",
+				"columns": [ "gb_timestamp" ],
+				"unique": false
+			},
+			{
+				"name": "gb_expiry",
+				"columns": [ "gb_expiry" ],
+				"unique": false
+			}
+		],
+		"pk": [ "gb_id" ]
+	}
+}

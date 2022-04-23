@@ -119,6 +119,20 @@ class GlobalBlockingHooks implements
 			"$base/sql/$type/patch-globalblocks-gb_anon_only.sql"
 		);
 
+		// 1.39
+		$updater->modifyExtensionField(
+			'globalblocks',
+			'gb_expiry',
+			"$base/sql/$type/patch-globalblocks-timestamps.sql"
+		);
+		if ( $type === 'postgres' ) {
+			$updater->modifyExtensionField(
+				'global_block_whitelist',
+				'gbw_expiry',
+				"$base/sql/$type/patch-global_block_whitelist-timestamps.sql"
+			);
+		}
+
 		return true;
 	}
 
