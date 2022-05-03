@@ -34,8 +34,8 @@
 			},
 			{
 				"name": "gb_timestamp",
-				"type": "string",
-				"options": { "length": 14, "notnull": true }
+				"type": "mwtimestamp",
+				"options": { "notnull": true }
 			},
 			{
 				"name": "gb_anon_only",
@@ -44,8 +44,13 @@
 			},
 			{
 				"name": "gb_expiry",
-				"type": "binary",
-				"options": { "default": "", "length": 14, "notnull": true }
+				"type": "mwtimestamp",
+				"options": {
+					"notnull": true,
+					"CustomSchemaOptions": {
+						"allowInfinite": true
+					}
+				}
 			},
 			{
 				"name": "gb_range_start",

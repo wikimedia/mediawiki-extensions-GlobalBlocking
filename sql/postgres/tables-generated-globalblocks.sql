@@ -9,9 +9,9 @@ CREATE TABLE globalblocks (
   gb_by_central_id INT DEFAULT NULL,
   gb_by_wiki TEXT NOT NULL,
   gb_reason TEXT NOT NULL,
-  gb_timestamp VARCHAR(14) NOT NULL,
+  gb_timestamp TIMESTAMPTZ NOT NULL,
   gb_anon_only SMALLINT DEFAULT 0 NOT NULL,
-  gb_expiry TEXT DEFAULT '' NOT NULL,
+  gb_expiry TIMESTAMPTZ NOT NULL,
   gb_range_start TEXT NOT NULL,
   gb_range_end TEXT NOT NULL,
   PRIMARY KEY(gb_id)

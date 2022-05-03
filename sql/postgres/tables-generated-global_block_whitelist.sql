@@ -8,7 +8,7 @@ CREATE TABLE global_block_whitelist (
   gbw_by INT NOT NULL,
   gbw_by_text TEXT NOT NULL,
   gbw_reason TEXT NOT NULL,
-  gbw_expiry TEXT NOT NULL,
+  gbw_expiry TIMESTAMPTZ NOT NULL,
   PRIMARY KEY(gbw_id)
 );
 
