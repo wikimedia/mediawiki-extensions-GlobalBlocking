@@ -19,7 +19,7 @@
 	"globalblocking-block-intro": "şıma pê no peleşkêni yew IPadres heme wikiyan de bloke bıker.",
 	"globalblocking-block-reason": "Sebeb:",
 	"globalblocking-block-reason-dropdown": "* Sebebanê blok kerdışi\n** Crosswiki spam kerdış\n** Crosswiki xeripnayış\n** Vandalizm kerdış",
-	"globalblocking-block-edit-dropdown": "Sebebê blokî bivurne",
+	"globalblocking-block-edit-dropdown": "Sebebanê kılitkerdışi bıvurne",
 	"globalblocking-block-expiry": "Qedyayış:",
 	"globalblocking-block-expiry-selector-other": "Wexto bin:",
 	"globalblocking-block-legend": "adresa IP'yi bı global bloke bıker",
