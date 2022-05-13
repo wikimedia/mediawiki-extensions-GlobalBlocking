@@ -23,7 +23,7 @@
 	"globalblocking-block-legend": "חסימה גלובלית של כתובת IP",
 	"globalblocking-ipaddress": "כתובת IP:",
 	"globalblocking-ipbanononly": "לחסום גלובלית רק משתמשים אלמוניים",
-	"globalblocking-block-ipinvalid": "כתובת ה־IP שהזנת ($1) אינה תקינה.\nנא לשים לב שלא ניתן להזין שם משתמש!",
+	"globalblocking-block-ipinvalid": "כתובת ה־IP שהזנת ($1) אינה תקינה.\nנא לשים לב לכך שלא ניתן להזין שם משתמש!",
 	"globalblocking-block-expiryinvalid": "זמן הפקיעה שהזנת אינו תקין.",
 	"globalblocking-block-submit": "חסימה גלובלית של כתובת ה־IP הזאת",
 	"globalblocking-modify-submit": "שינוי החסימה הגלובלית הזאת",
