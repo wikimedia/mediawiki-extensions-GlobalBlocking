@@ -16,7 +16,7 @@
 	"globalblocking-block-legend": "Block an IP address globally",
 	"globalblocking-ipaddress": "IP address:",
 	"globalblocking-ipbanononly": "Globally block anonymous users only",
-	"globalblocking-block-ipinvalid": "The IP address ($1) you entered is invalid.\nPlease note that you cannot enter a user name!",
+	"globalblocking-block-ipinvalid": "The IP address ($1) you entered is invalid.\nPlease note that you cannot enter a username!",
 	"globalblocking-block-expiryinvalid": "The expiration you entered is invalid.",
 	"globalblocking-block-submit": "Block this IP address globally",
 	"globalblocking-modify-submit": "Modify this global block",
