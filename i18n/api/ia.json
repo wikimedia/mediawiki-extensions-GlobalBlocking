@@ -25,5 +25,6 @@
 	"apihelp-query+globalblocks-example-1": "Listar tote le blocadas global",
 	"apihelp-query+globalblocks-example-2": "Listar blocadas global que se applica al adresse IP 192.0.2.18",
 	"apihelp-globalblock-param-alsolocal": "Blocar le adresse IP localmente tamben",
-	"apihelp-globalblock-param-localblockstalk": "Revocar localmente le accesso al pagina de discussion"
+	"apihelp-globalblock-param-localblockstalk": "Revocar localmente le accesso al pagina de discussion",
+	"apihelp-globalblock-param-localanononly": "Specifica isto si le blocada debe localmente affectar solo le usatores sin session aperte."
 }
