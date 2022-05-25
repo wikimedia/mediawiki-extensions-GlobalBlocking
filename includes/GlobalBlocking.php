@@ -90,6 +90,14 @@ class GlobalBlocking {
 			return $result;
 		}
 
+		$ranges = MediaWikiServices::getInstance()->getMainConfig()->get( 'GlobalBlockingAllowedRanges' );
+		foreach ( $ranges as $range ) {
+			if ( IPUtils::isInRange( $ip, $range ) ) {
+				$result = [ 'block' => null, 'error' => [] ];
+				return $result;
+			}
+		}
+
 		$hookRunner = GlobalBlockingHookRunner::getRunner();
 
 		$block = self::getGlobalBlockingBlock( $ip, $user->isAnon() );
