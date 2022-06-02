@@ -37,7 +37,7 @@
 	"globalblocking-list-expiry": "মেয়াদ উত্তীর্ণের সময় $1",
 	"globalblocking-list-anononly": "শুধুমাত্র বেনামীগণ",
 	"globalblocking-list-unblock": "অপসারণ",
-	"globalblocking-list-whitelisted": "$1 স্থানীয়ভাবে নিস্ক্রিয় করেছেন: $2",
+	"globalblocking-list-whitelisted": "$1 স্থানীয়ভাবে নিষ্ক্রিয় করেছেন: $2",
 	"globalblocking-list-whitelist": "স্থানীয় অবস্থা",
 	"globalblocking-list-modify": "পরিবর্তন",
 	"globalblocking-expiringblock": "$1 তারিখের $2 এ মেয়াদোত্তীর্ণ হবে",
