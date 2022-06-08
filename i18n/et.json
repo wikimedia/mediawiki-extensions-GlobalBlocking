@@ -45,6 +45,7 @@
 	"globalblocking-list-whitelist": "kohalik olek",
 	"globalblocking-list-modify": "muuda",
 	"globalblocking-expiringblock": "aegumistähtaeg $1, $2",
+	"globalblocking-infiniteblock": "tähtajatu",
 	"globalblocking-list-noresults": "Nimetatud IP-aadress pole blokeeritud.",
 	"globalblocking-goto-block": "Blokeeri IP-aadress globaalselt",
 	"globalblocking-goto-unblock": "Eemalda globaalne blokeering",
