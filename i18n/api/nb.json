@@ -25,5 +25,6 @@
 	"apihelp-query+globalblocks-example-1": "List opp alle globale blokkeringer",
 	"apihelp-query+globalblocks-example-2": "Lister opp globale blokkeringer av IP-adressa 192.0.2.18",
 	"apihelp-globalblock-param-alsolocal": "Blokker IP-en lokalt også",
-	"apihelp-globalblock-param-localblockstalk": "Tilbakekall diskusjonssidetilgang lokalt"
+	"apihelp-globalblock-param-localblockstalk": "Tilbakekall diskusjonssidetilgang lokalt",
+	"apihelp-globalblock-param-localanononly": "Angi om denne blokkeringen kun skal gjelde utloggede brukere lokalt."
 }
