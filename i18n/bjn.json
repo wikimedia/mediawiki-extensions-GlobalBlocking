@@ -1,6 +1,9 @@
 {
 	"@metadata": {
-		"authors": []
+		"authors": [
+			"Ezagren"
+		]
 	},
-	"globalblocking-expiringblock": "kadaluwarsa pada $1, $2"
+	"globalblocking-expiringblock": "kadaluwarsa pada $1, $2",
+	"globalblocking-logentry-noexpiry": "salawasnya"
 }
