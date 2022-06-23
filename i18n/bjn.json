@@ -1,6 +1,10 @@
 {
 	"@metadata": {
-		"authors": []
+		"authors": [
+			"Ezagren"
+		]
 	},
-	"globalblocking-expiringblock": "kadaluwarsa pada $1, $2"
+	"globalblocking-expiringblock": "kadaluwarsa pada $1, $2",
+	"globalblocking-blocked-nopassreset": "Pian kada kawa mangganti kada sunduk pamakai maraga alamat IP Pian parhatan diblukir sacara glubal.",
+	"globalblocking-logentry-noexpiry": "salawasnya"
 }
