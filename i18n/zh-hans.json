@@ -30,7 +30,9 @@
 			"乌拉跨氪",
 			"铁桶",
 			"飞舞回堂前",
-			"魔琴"
+			"魔琴",
+			"SunAfterRain",
+			"Xiplus"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|允许]][[Special:GlobalBlockList|在多个wiki中封禁]]IP地址",
@@ -71,9 +73,12 @@
 	"globalblocking-list-whitelisted": "由$1于本地停用：$2",
 	"globalblocking-list-whitelist": "本地状态",
 	"globalblocking-list-modify": "修改",
+	"globalblocking-list-tempblocks": "隐藏临时封禁",
+	"globalblocking-list-indefblocks": "隐藏无限期封禁",
+	"globalblocking-list-addressblocks": "隐藏单个IP封禁",
 	"globalblocking-expiringblock": "终止于$1 $2",
 	"globalblocking-infiniteblock": "无限期",
-	"globalblocking-list-noresults": "请求的IP地址没有被封锁。",
+	"globalblocking-list-noresults": "使用给定的参数未找到任何结果。",
 	"globalblocking-goto-block": "全域封禁一个IP地址",
 	"globalblocking-goto-unblock": "移除全域封禁",
 	"globalblocking-goto-status": "修改全域封锁的本地状态",
@@ -103,7 +108,7 @@
 	"globalblocking-blocked-nopassreset": "您无法重置用户密码，因为您的IP地址已被全域封锁。",
 	"globalblocking-logpage": "全域封禁日志",
 	"globalblocking-logpagetext": "这个是在这个wiki中的全域封锁日志。要留意的是全域封锁可以在其它的wiki中被创建和移除并且会影响到这个wiki。要查看活跃的全域封锁，您可以去参阅[[Special:GlobalBlockList|全域封锁名单]]。",
-	"globalblocking-block-logentry": "全域封禁[[$1]]，终止时间为$2",
+	"globalblocking-block-logentry": "已全域封禁[[$1]]，到期时间为$2",
 	"globalblocking-block2-logentry": "已全域封禁[[$1]]（$2）",
 	"globalblocking-unblock-logentry": "移除[[$1]]的全域封禁",
 	"globalblocking-logentry-whitelist": "$1在$3本地{{GENDER:$2|禁用}}了全域封禁",
