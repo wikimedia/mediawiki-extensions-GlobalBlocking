@@ -28,7 +28,11 @@
 			"Grace03",
 			"Shizhao",
 			"Ericliu1912",
-			"GuoPC"
+			"GuoPC",
+			"ShuyanW",
+			"SunAfterRain",
+			"Xiplus",
+			"魔琴"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|允许]][[Special:GlobalBlockList|在多个wiki中封禁]]IP地址",
@@ -99,7 +103,7 @@
 	"globalblocking-blocked-nopassreset": "您无法重置用户密码，因为您的IP地址已被全域封锁。",
 	"globalblocking-logpage": "全域封禁日志",
 	"globalblocking-logpagetext": "这个是在这个wiki中的全域封锁日志。要留意的是全域封锁可以在其它的wiki中被创建和移除并且会影响到这个wiki。要查看活跃的全域封锁，您可以去参阅[[Special:GlobalBlockList|全域封锁名单]]。",
-	"globalblocking-block-logentry": "全域封禁[[$1]]，终止时间为$2",
+	"globalblocking-block-logentry": "已全域封禁[[$1]]，到期时间为$2",
 	"globalblocking-block2-logentry": "已全域封禁[[$1]]（$2）",
 	"globalblocking-unblock-logentry": "移除[[$1]]的全域封禁",
 	"globalblocking-logentry-whitelist": "$1在$3本地{{GENDER:$2|禁用}}了全域封禁",
