@@ -84,6 +84,9 @@ class GlobalBlocking {
 			return $result;
 		}
 
+		$statsdFactory = MediaWikiServices::getInstance()->getStatsdDataFactory();
+		$statsdFactory->increment( 'global_blocking.get_user_block' );
+
 		if ( $user->isAllowed( 'ipblock-exempt' ) || $user->isAllowed( 'globalblock-exempt' ) ) {
 			// User is exempt from IP blocks.
 			$result = [ 'block' => null, 'error' => [] ];
@@ -97,6 +100,8 @@ class GlobalBlocking {
 				return $result;
 			}
 		}
+
+		$statsdFactory->increment( 'global_blocking.get_user_block_db_query' );
 
 		$hookRunner = GlobalBlockingHookRunner::getRunner();
 
