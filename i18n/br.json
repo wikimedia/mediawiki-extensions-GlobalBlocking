@@ -4,6 +4,7 @@
 			"Fohanno",
 			"Fulup",
 			"Gwendal",
+			"Huñvreüs",
 			"Macofe",
 			"Y-M D"
 		]
@@ -84,5 +85,6 @@
 	"right-globalblock-whitelist": "Diweredekaat en un doare lec'hel ar stankadennoù hollek",
 	"action-globalblock-whitelist": "Diweredekaat en un doare lec'hel ar stankadennoù hollek",
 	"right-globalblock-exempt": "Mont dreist d'ar stankadennoù hollek",
-	"action-globalblock-exempt": "Mont dreist d'ar stankadennoù hollek"
+	"action-globalblock-exempt": "Mont dreist d'ar stankadennoù hollek",
+	"log-action-filter-gblblock": "Seurt stankadenn hollek :"
 }
