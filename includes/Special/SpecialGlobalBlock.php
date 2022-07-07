@@ -220,7 +220,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 	 * Show log of previous global blocks below the form
 	 * @return string
 	 */
-	protected function postText() {
+	protected function postHtml() {
 		$out = '';
 		$title = Title::makeTitleSafe( NS_USER, $this->address );
 		if ( $title ) {
