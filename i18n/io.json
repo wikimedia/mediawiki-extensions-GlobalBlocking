@@ -17,6 +17,7 @@
 	"globalblocking-list-anononly": "nur anonima",
 	"globalblocking-list-unblock": "removar",
 	"globalblocking-list-whitelist": "lokala stando",
+	"globalblocking-list-modify": "modifikez",
 	"globalblocking-expiringblock": "finas ye $2 kloki, en $1",
 	"globalblocking-list-noresults": "La demandita IP-adreso ne blokusesis.",
 	"globalblocking-notblocked": "La IP-adreso ($1) quon vu informis ne esas blokusata omnaloke.",
