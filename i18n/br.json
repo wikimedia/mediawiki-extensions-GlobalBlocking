@@ -5,7 +5,8 @@
 			"Fulup",
 			"Gwendal",
 			"Macofe",
-			"Y-M D"
+			"Y-M D",
+			"Huñvreüs"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Posupl]] eo stankañ ar chomlec'hioù IP [[Special:GlobalBlockList|dre wikioù disheñvel]]",
@@ -86,5 +87,6 @@
 	"right-globalblock-whitelist": "Diweredekaat en un doare lec'hel ar stankadennoù hollek",
 	"action-globalblock-whitelist": "Diweredekaat en un doare lec'hel ar stankadennoù hollek",
 	"right-globalblock-exempt": "Mont dreist d'ar stankadennoù hollek",
-	"action-globalblock-exempt": "Mont dreist d'ar stankadennoù hollek"
+	"action-globalblock-exempt": "Mont dreist d'ar stankadennoù hollek",
+	"log-action-filter-gblblock": "Seurt stankadenn hollek :"
 }
