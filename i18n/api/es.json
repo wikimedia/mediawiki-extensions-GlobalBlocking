@@ -15,7 +15,7 @@
 	"apihelp-globalblock-param-expiry": "Si se especifica, bloqueará o rebloqueará al usuario. Determina cuánto va a durar el bloque. Por ejemplo, \"5 months\" o \"2 weeks\". Si se establece a \"infinite\" or \"indefinite\" el bloqueo no tendrá fecha de caducidad.",
 	"apihelp-globalblock-param-unblock": "Si se especifica, se desbloqueará al usuario.",
 	"apihelp-globalblock-param-reason": "El motivo para bloquear/desbloquear.",
-	"apihelp-globalblock-param-anononly": "Especificar si el bloqueo debería afectar solo a los usuarios sin sesión iniciada.",
+	"apihelp-globalblock-param-anononly": "Especificar si el bloqueo global debería afectar solo a los usuarios no registrados o sin sesión iniciada.",
 	"apihelp-globalblock-param-modify": "Especifica esto si el bloqueo existente sobre el objetivo debería ser modificado",
 	"apihelp-globalblock-example-1": "Bloquear 192.0.2.1 indefinidamente con el motivo \"Abuso sobre varios wikis\"",
 	"apihelp-query+globalblocks-description": "Enumerar todas las direcciones IP bloqueadas globalmente.",
@@ -29,6 +29,7 @@
 	"apihelp-query+globalblocks-param-prop": "Qué propiedades se obtendrán.",
 	"apihelp-query+globalblocks-example-1": "Listar todos los bloqueos globales",
 	"apihelp-query+globalblocks-example-2": "Lista de bloqueos globales aplicados a la dirección IP 192.0.2.18",
-	"apihelp-globalblock-param-alsolocal": "Bloquee la IP localmente también",
-	"apihelp-globalblock-param-localblockstalk": "Revocar el acceso a la página de discusión localmente"
+	"apihelp-globalblock-param-alsolocal": "Bloquear la IP también de forma local",
+	"apihelp-globalblock-param-localblockstalk": "Revocar el acceso a la página de discusión localmente",
+	"apihelp-globalblock-param-localanononly": "Especificar si el bloqueo local solo ha de afectar a usuarios no registrados o sin la sesión iniciada."
 }
