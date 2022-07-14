@@ -7,5 +7,6 @@
 	"globalblocking-ipaddress": "IP-addrõs:",
 	"globalblocking-search-ip": "IP-addrõs:",
 	"globalblocking-list-unblock": "jaukkâd",
+	"globalblocking-list-modify": "muuʹtt",
 	"globalblocking-apierror-badip": "IP-addrõs $1 lij vââǥǥlaž"
 }
