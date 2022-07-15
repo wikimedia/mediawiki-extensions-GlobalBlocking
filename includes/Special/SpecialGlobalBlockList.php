@@ -65,7 +65,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 	 */
 	protected function loadParameters( $par ) {
 		$request = $this->getRequest();
-		$ip = trim( $request->getText( 'ip', $par ) );
+		$ip = trim( $request->getText( 'ip', $par ?? '' ) );
 		if ( $ip !== '' ) {
 			$ip = IPUtils::isIPAddress( $ip )
 				? IPUtils::sanitizeRange( $ip )
