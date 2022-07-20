@@ -6,5 +6,10 @@
 	},
 	"globalblocking-expiringblock": "kadaluwarsa pada $1, $2",
 	"globalblocking-blocked-nopassreset": "Pian kada kawa mangganti kada sunduk pamakai maraga alamat IP Pian parhatan diblukir sacara glubal.",
-	"globalblocking-logentry-noexpiry": "salawasnya"
+	"globalblocking-logpage": "Log pamblukiran global",
+	"globalblocking-logpagetext": "Ini log pamblukiran global nang diulah wan dihapusakan di wiki ini.\nSabagai catatan, pamblukiran global kawa diulah wan dihapusakan di wiki lain nang pacangan jua mamangaruhi wiki ini.\nGasan manampaiakan sabarataan pamblukiran global nang nyala wayah ini, Pian kawa manjanaki [[Special:GlobalBlockList|daptar pamblukiran global]].",
+	"globalblocking-logentry-noexpiry": "salawasnya",
+	"log-action-filter-gblblock-gblock": "Pamblukiran global",
+	"log-action-filter-gblblock-whitelist": "Panambahan ka daptar putih pamblukiran global",
+	"log-action-filter-gblblock-dwhitelist": "Pahapusan matan daptar putih pamblukiran global"
 }
