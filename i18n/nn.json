@@ -7,7 +7,8 @@
 			"Jorunn",
 			"Macofe",
 			"Nghtwlkr",
-			"Njardarlogar"
+			"Njardarlogar",
+			"Ranveig"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Gjer det råd]] å blokkera IP-adresser [[Special:GlobalBlockList|krosswiki]]",
@@ -26,7 +27,7 @@
 	"globalblocking-block-alreadyblocked": "IP-adressa $1 er allereie blokkert globalt.\nDu kan sjå blokkeringa på [[Special:GlobalBlockList|lista over globale blokkeringar]],\neller endra innstillingane hennar gjennom å senda inn dette skjemaet på nytt.",
 	"globalblocking-block-bigrange": "IP-området du oppgav ($1) er for stor til å verta blokkert.\nDu kan blokkera høgst 65&nbsp;536 adresser (/16-område)",
 	"globalblocking-list-intro": "Dett er ei lista over noverande globale blokkeringar.\nNokre blokkeringar er slegne av lokalt; dette tyder at blokkeringa gjeld andre stader, men at ein lokal administrator har bestemt seg for å slå av blokkeringa på sin wiki.",
-	"globalblocking-list": "Liste over krosswikiblokkertet IP-adresser",
+	"globalblocking-list": "Liste over krosswikiblokkerte IP-adresser",
 	"globalblocking-search-legend": "Søk etter ei krosswikiblokkering",
 	"globalblocking-search-ip": "IP-adresse:",
 	"globalblocking-search-submit": "Søk etter blokkeringar",
