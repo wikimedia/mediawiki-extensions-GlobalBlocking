@@ -2,12 +2,27 @@
 	"@metadata": {
 		"authors": [
 			"Artsiom91",
+			"Vlad5250",
 			"Тест"
 		]
 	},
 	"globalblocking-block-reason": "Прычына:",
+	"globalblocking-block-edit-dropdown": "Правіць прычыны блока",
+	"globalblocking-block-expiry": "Згасае:",
+	"globalblocking-block-expiry-selector-other": "Іншы час:",
+	"globalblocking-ipaddress": "IP-адрас:",
 	"globalblocking-list": "Спіс глабальна заблакаваных IP-адрасоў",
+	"globalblocking-search-ip": "IP-адрас:",
+	"globalblocking-list-anononly": "толькі ананімныя",
+	"globalblocking-list-unblock": "выдаліць",
+	"globalblocking-list-whitelist": "лакальны статус",
+	"globalblocking-list-modify": "змяніць",
+	"globalblocking-list-tempblocks": "Схаваць часавыя блакіроўкі",
+	"globalblocking-list-indefblocks": "Схаваць бестэрміновыя блакаванні",
+	"globalblocking-list-addressblocks": "Схаваць блакаванні асобных IP",
+	"globalblocking-list-rangeblocks": "Схаваць блакіроўкі дыяпазонаў",
 	"globalblocking-expiringblock": "канчаецца $1 $2",
+	"globalblocking-infiniteblock": "бясконца",
 	"globalblocking-unblock-reason": "Прычына:",
 	"globalblocking-whitelist": "Лакальны статус глабальных блакіровак",
 	"globalblocking-whitelist-reason": "Прычына:",
