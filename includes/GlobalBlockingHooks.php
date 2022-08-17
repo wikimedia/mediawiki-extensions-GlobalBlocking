@@ -304,7 +304,7 @@ class GlobalBlockingHooks implements
 					);
 
 					$tools['globalunblock'] = $linkRenderer->makeKnownLink(
-						SpecialPage::getTitleFor( 'GlobalUnblock', $target ),
+						SpecialPage::getTitleFor( 'RemoveGlobalBlock', $target ),
 						$sp->msg( 'globalblocking-contribs-remove' )->text()
 					);
 				}
