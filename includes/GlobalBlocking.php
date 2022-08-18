@@ -551,8 +551,10 @@ class GlobalBlocking {
 
 		if ( $modify && $existingBlock ) {
 			$dbw->update( 'globalblocks', $row, [ 'gb_id' => $existingBlock ], __METHOD__ );
+			$blockId = $existingBlock;
 		} else {
 			$dbw->insert( 'globalblocks', $row, __METHOD__, [ 'IGNORE' ] );
+			$blockId = $dbw->insertId();
 		}
 
 		if ( !$dbw->affectedRows() ) {
@@ -560,7 +562,9 @@ class GlobalBlocking {
 			return StatusValue::newFatal( 'globalblocking-block-failure', $data[ 'ip' ] );
 		}
 
-		return StatusValue::newGood( [] );
+		return StatusValue::newGood( [
+			'id' => $blockId,
+		] );
 	}
 
 	/**
@@ -574,6 +578,7 @@ class GlobalBlocking {
 	public static function block( $address, $reason, $expiry, $blocker, $options = [] ): StatusValue {
 		$expiry = BlockUser::parseExpiryInput( $expiry );
 		$status = self::insertBlock( $address, $reason, $expiry, $blocker, $options );
+		$blockId = $status->getValue()['id'];
 
 		if ( !$status->isOK() ) {
 			return $status;
@@ -602,12 +607,13 @@ class GlobalBlocking {
 		$info = implode( ', ', $flags );
 
 		$page = new LogPage( 'gblblock' );
-		$page->addEntry( $logAction,
+		$logId = $page->addEntry( $logAction,
 			Title::makeTitleSafe( NS_USER, $address ),
 			$reason,
 			[ $info, $address ],
 			$blocker
 		);
+		$page->addRelations( 'gb_id', [ $blockId ], $logId );
 
 		return StatusValue::newGood();
 	}
@@ -639,13 +645,14 @@ class GlobalBlocking {
 		);
 
 		$page = new LogPage( 'gblblock' );
-		$page->addEntry(
+		$logId = $page->addEntry(
 			'gunblock',
 			Title::makeTitleSafe( NS_USER, $data[ 'ip' ] ),
 			$reason,
 			[],
 			$performer
 		);
+		$page->addRelations( 'gb_id', [ $id ], $logId );
 
 		return StatusValue::newGood();
 	}
