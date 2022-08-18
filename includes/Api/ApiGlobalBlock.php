@@ -7,6 +7,8 @@ use ApiMain;
 use ApiResult;
 use MediaWiki\Block\BlockUserFactory;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
+use Status;
+use StatusValue;
 use Wikimedia\ParamValidator\ParamValidator;
 
 class ApiGlobalBlock extends ApiBase {
@@ -46,7 +48,7 @@ class ApiGlobalBlock extends ApiBase {
 				$options[] = 'modify';
 			}
 
-			$errors = GlobalBlocking::block(
+			$status = GlobalBlocking::block(
 				$this->getParameter( 'target' ),
 				$this->getParameter( 'reason' ),
 				$this->getParameter( 'expiry' ),
@@ -54,7 +56,7 @@ class ApiGlobalBlock extends ApiBase {
 				$options
 			);
 
-			if ( $this->getParameter( 'alsolocal' ) && count( $errors ) === 0 ) {
+			if ( $this->getParameter( 'alsolocal' ) && $status->isOK() ) {
 				$this->blockUserFactory->newBlockUser(
 					$this->getParameter( 'target' ),
 					$this->getUser(),
@@ -71,19 +73,8 @@ class ApiGlobalBlock extends ApiBase {
 				$result->addValue( 'globalblock', 'blockedlocally', true );
 			}
 
-			if ( count( $errors ) > 0 ) {
-				foreach ( $errors as &$error ) {
-					$error = [
-						'code' => $error[0],
-						'message' => str_replace(
-							"\n",
-							" ",
-							$this->msg( ...$error )->text()
-						)
-					];
-				}
-				$result->setIndexedTagName( $errors, 'error' );
-				$result->addValue( 'error', 'globalblock', $errors );
+			if ( !$status->isOK() ) {
+				$this->addLegacyErrorsFromStatus( $status, $result );
 			} else {
 				$result->addValue( 'globalblock', 'user', $this->getParameter( 'target' ) );
 				$result->addValue( 'globalblock', 'blocked', '' );
@@ -94,31 +85,44 @@ class ApiGlobalBlock extends ApiBase {
 				$result->addValue( 'globalblock', 'expiry', $expiry );
 			}
 		} elseif ( $this->getParameter( 'unblock' ) ) {
-			$errors = GlobalBlocking::unblock(
+			$status = GlobalBlocking::unblock(
 				$this->getParameter( 'target' ),
 				$this->getParameter( 'reason' ),
 				$this->getUser()
 			);
 
-			if ( count( $errors ) > 0 ) {
-				foreach ( $errors as &$error ) {
-					$error = [
-						'code' => $error[0],
-						'message' => str_replace(
-							"\n",
-							" ",
-							$this->msg( ...$error )->text()
-						)
-					];
-				}
-				$result->setIndexedTagName( $errors, 'error' );
-				$result->addValue( 'error', 'globalblock', $errors );
+			if ( !$status->isOK() ) {
+				$this->addLegacyErrorsFromStatus( $status, $result );
 			} else {
 				$result->addValue( 'globalblock', 'user', $this->getParameter( 'target' ) );
 				$result->addValue( 'globalblock', 'unblocked', '' );
 			}
 
 		}
+	}
+
+	/**
+	 * @param StatusValue $status
+	 * @param ApiResult $result
+	 * @return void
+	 */
+	private function addLegacyErrorsFromStatus( StatusValue $status, ApiResult $result ) {
+		// Convert a StatusValue to the legacy format used by the API.
+		// TODO deprecate and replace with ApiErrorFormatter::addMessagesFromStatus()
+		$legacyErrors = [];
+		$errors = Status::wrap( $status )->getErrorsArray();
+		foreach ( $errors as $error ) {
+			$legacyErrors[] = [
+				'code' => $error[0],
+				'message' => str_replace(
+					"\n",
+					" ",
+					$this->msg( ...$error )->text()
+				)
+			];
+		}
+		$result->setIndexedTagName( $legacyErrors, 'error' );
+		$result->addValue( 'error', 'globalblock', $legacyErrors );
 	}
 
 	public function getAllowedParams() {

@@ -11,7 +11,7 @@ use MediaWiki\MediaWikiServices;
 use Message;
 use MWException;
 use SpecialPage;
-use Status;
+use StatusValue;
 use stdClass;
 use Title;
 use User;
@@ -503,20 +503,20 @@ class GlobalBlocking {
 	 * @param string|false $expiry
 	 * @param User $blocker
 	 * @param array $options
-	 * @return array Empty on success, array to create message objects on failure
+	 * @return StatusValue
 	 */
 	public static function insertBlock( $address, $reason, $expiry, $blocker, $options = [] ) {
 		## Purge expired blocks.
 		self::purgeExpired();
 
 		if ( $expiry === false ) {
-			return [ [ 'globalblocking-block-expiryinvalid' ] ];
+			return StatusValue::newFatal( 'globalblocking-block-expiryinvalid' );
 		}
 
 		$status = self::validateInput( $address );
 
 		if ( !$status->isOK() ) {
-			return [ $status->getMessage() ];
+			return $status;
 		}
 
 		$data = $status->getValue();
@@ -526,7 +526,7 @@ class GlobalBlocking {
 		// Check for an existing block in the primary database database
 		$existingBlock = self::getGlobalBlockId( $data[ 'ip' ], DB_PRIMARY );
 		if ( !$modify && $existingBlock ) {
-			return [ [ 'globalblocking-block-alreadyblocked', $data[ 'ip' ] ] ];
+			return StatusValue::newFatal( 'globalblocking-block-alreadyblocked', $data[ 'ip' ] );
 		}
 
 		$lookup = MediaWikiServices::getInstance()->getCentralIdLookup();
@@ -557,10 +557,10 @@ class GlobalBlocking {
 
 		if ( !$dbw->affectedRows() ) {
 			// Race condition?
-			return [ [ 'globalblocking-block-failure', $data[ 'ip' ] ] ];
+			return StatusValue::newFatal( 'globalblocking-block-failure', $data[ 'ip' ] );
 		}
 
-		return [];
+		return StatusValue::newGood( [] );
 	}
 
 	/**
@@ -569,14 +569,14 @@ class GlobalBlocking {
 	 * @param string $expiry
 	 * @param User $blocker
 	 * @param array $options
-	 * @return array[] Empty on success, array to create message objects on failure
+	 * @return StatusValue An empty or fatal status
 	 */
-	public static function block( $address, $reason, $expiry, $blocker, $options = [] ) {
+	public static function block( $address, $reason, $expiry, $blocker, $options = [] ): StatusValue {
 		$expiry = BlockUser::parseExpiryInput( $expiry );
-		$errors = self::insertBlock( $address, $reason, $expiry, $blocker, $options );
+		$status = self::insertBlock( $address, $reason, $expiry, $blocker, $options );
 
-		if ( count( $errors ) > 0 ) {
-			return $errors;
+		if ( !$status->isOK() ) {
+			return $status;
 		}
 
 		$anonOnly = in_array( 'anon-only', $options );
@@ -609,27 +609,27 @@ class GlobalBlocking {
 			$blocker
 		);
 
-		return [];
+		return StatusValue::newGood();
 	}
 
 	/**
 	 * @param string $address
 	 * @param string $reason
 	 * @param User $performer
-	 * @return array errors as a message data array, or empty if there are no errors
+	 * @return StatusValue An empty or fatal status
 	 */
-	public static function unblock( string $address, string $reason, User $performer ): array {
+	public static function unblock( string $address, string $reason, User $performer ): StatusValue {
 		$status = self::validateInput( $address );
 
 		if ( !$status->isOK() ) {
-			return [ $status->getMessage() ];
+			return $status;
 		}
 
 		$data = $status->getValue();
 
 		$id = self::getGlobalBlockId( $data[ 'ip' ], DB_PRIMARY );
 		if ( $id === 0 ) {
-			return [ [ 'globalblocking-notblocked', $data[ 'ip' ] ] ];
+			return StatusValue::newFatal( 'globalblocking-notblocked', $data[ 'ip' ] );
 		}
 
 		self::getGlobalBlockingDatabase( DB_PRIMARY )->delete(
@@ -647,7 +647,7 @@ class GlobalBlocking {
 			$performer
 		);
 
-		return [];
+		return StatusValue::newGood();
 	}
 
 	/**
@@ -701,14 +701,14 @@ class GlobalBlocking {
 	/**
 	 * Handles validation and range limits of the IP addresses the user has provided
 	 * @param string $address
-	 * @return Status Fatal if errors, Good if no errors
+	 * @return StatusValue Fatal if errors, Good if no errors
 	 */
-	private static function validateInput( string $address ): Status {
+	private static function validateInput( string $address ): StatusValue {
 		## Validate input
 		$ip = IPUtils::sanitizeIP( $address );
 
 		if ( !$ip || !IPUtils::isIPAddress( $ip ) ) {
-			return Status::newFatal( 'globalblocking-block-ipinvalid', $ip );
+			return StatusValue::newFatal( 'globalblocking-block-ipinvalid', $ip );
 		}
 
 		if ( IPUtils::isValidRange( $ip ) ) {
@@ -716,7 +716,7 @@ class GlobalBlocking {
 			$limit = MediaWikiServices::getInstance()->getMainConfig()->get( 'GlobalBlockingCIDRLimit' );
 			$ipVersion = IPUtils::isIPv4( $prefix ) ? 'IPv4' : 'IPv6';
 			if ( (int)$range < $limit[ $ipVersion ] ) {
-				return Status::newFatal( 'globalblocking-bigrange', $ip, $ipVersion,
+				return StatusValue::newFatal( 'globalblocking-bigrange', $ip, $ipVersion,
 					$limit[ $ipVersion ] );
 			}
 		}
@@ -731,7 +731,7 @@ class GlobalBlocking {
 			$data[ 'ip' ] = $ip;
 		}
 
-		return Status::newGood( $data );
+		return StatusValue::newGood( $data );
 	}
 
 	public static function selectFields() {

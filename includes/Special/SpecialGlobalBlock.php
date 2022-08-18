@@ -11,6 +11,7 @@ use MediaWiki\Block\BlockUserFactory;
 use MediaWiki\Block\BlockUtils;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
 use MediaWiki\User\UserIdentity;
+use Status;
 use Title;
 use Wikimedia\IPUtils;
 
@@ -239,10 +240,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 		return $out;
 	}
 
-	/**
-	 * @param array $data
-	 * @return true|array True for success, array on errors
-	 */
+	/** @inheritDoc */
 	public function onSubmit( array $data ) {
 		$options = [];
 		$performer = $this->getUser();
@@ -260,7 +258,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 		}
 
 		// This handles validation too...
-		$errors = GlobalBlocking::block(
+		$globalBlockStatus = GlobalBlocking::block(
 			$this->address, // $this->address is sanitized; $data['Address'] isn't
 			$data['Reason'][0],
 			$data['Expiry'],
@@ -268,14 +266,14 @@ class SpecialGlobalBlock extends FormSpecialPage {
 			$options
 		);
 
-		if ( count( $errors ) ) {
+		if ( !$globalBlockStatus->isOK() ) {
 			// Show the error message(s) to the user if an error occurred.
-			return $errors;
+			return Status::wrap( $globalBlockStatus );
 		}
 
 		// Add a local block if the user asked for that
 		if ( $performer->isAllowed( 'block' ) && $data['AlsoLocal'] ) {
-			$status = $this->blockUserFactory->newBlockUser(
+			$localBlockStatus = $this->blockUserFactory->newBlockUser(
 				$this->address,
 				$performer,
 				$data['Expiry'],
@@ -289,12 +287,12 @@ class SpecialGlobalBlock extends FormSpecialPage {
 				]
 			)->placeBlock( $data['Modify'] );
 
-			if ( !$status->isOK() ) {
+			if ( !$localBlockStatus->isOK() ) {
 				$this->getOutput()->addWikiMsg( 'globalblocking-local-failed' );
 			}
 		}
 
-		return true;
+		return Status::newGood();
 	}
 
 	public function onSuccess() {
