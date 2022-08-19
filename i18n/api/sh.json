@@ -10,7 +10,7 @@
 	"apihelp-globalblock-param-expiry": "Ako je navedeno, korisnik će biti blokiran ili preblokiran. Određuje koliko dugo će blok trajati (npr. \"5 mjeseci\" ili \"2 tjedna\"). Ako je dano \"beskonačno\" ili \"neodređeno\", onda će blok trajati vječno.",
 	"apihelp-globalblock-param-unblock": "Ako je navedeno, korisnik će biti deblokiran.",
 	"apihelp-globalblock-param-reason": "Razlog blokiranja/deblokiranja.",
-	"apihelp-globalblock-param-anononly": "Označite ovo ako želite da se blok primjenjuje samo na odjavljene korisnike.",
+	"apihelp-globalblock-param-anononly": "Označite ovo ako želite da se blok primjenjuje samo na odjavljene korisnike globalno.",
 	"apihelp-globalblock-param-modify": "Označite ovo ako trebate izmijeniti postojeći blok na meti",
 	"apihelp-globalblock-example-1": "Blokiraj 192.0.2.1 beskonačno uz razlog \"zlouporabe više wikija\"",
 	"apihelp-query+globalblocks-description": "Ispiši sve globalno blokirane IP adrese.",
@@ -23,5 +23,8 @@
 	"apihelp-query+globalblocks-param-limit": "Najviše blokova u ispisu.",
 	"apihelp-query+globalblocks-param-prop": "Koja svojstva dati.",
 	"apihelp-query+globalblocks-example-1": "Popis svih globalnih blokova",
-	"apihelp-query+globalblocks-example-2": "Ispiši globalne blokove što se odnose IP adresi 192.0.2.18"
+	"apihelp-query+globalblocks-example-2": "Ispiši globalne blokove što se odnose IP adresi 192.0.2.18",
+	"apihelp-globalblock-param-alsolocal": "Ujedno blokiraj lokalno i IP adresu",
+	"apihelp-globalblock-param-localblockstalk": "Opozovi pristup stranici za razgovor lokalno",
+	"apihelp-globalblock-param-localanononly": "Označite ovo ako želite da se blok primjenjuje samo na odjavljene korisnike lokalno."
 }
