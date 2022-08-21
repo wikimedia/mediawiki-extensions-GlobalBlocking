@@ -8,6 +8,7 @@ use MediaWiki\Block\BlockUtils;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
 use MediaWiki\User\UserIdentity;
 use SpecialPage;
+use Status;
 use Wikimedia\IPUtils;
 
 class SpecialRemoveGlobalBlock extends FormSpecialPage {
@@ -43,15 +44,12 @@ class SpecialRemoveGlobalBlock extends FormSpecialPage {
 		}
 	}
 
-	/**
-	 * @param array $data
-	 * @return array|bool
-	 */
+	/** @inheritDoc */
 	public function onSubmit( array $data ) {
-		$errors = GlobalBlocking::unblock( $data['ipaddress'], $data['reason'], $this->getUser() );
+		$status = GlobalBlocking::unblock( $data['ipaddress'], $data['reason'], $this->getUser() );
 
-		if ( count( $errors ) > 0 ) {
-			return $errors;
+		if ( !$status->isOK() ) {
+			return Status::wrap( $status );
 		}
 
 		$this->ip = IPUtils::sanitizeIP( $data[ 'ipaddress' ] );
@@ -62,7 +60,7 @@ class SpecialRemoveGlobalBlock extends FormSpecialPage {
 			$this->ip = IPUtils::sanitizeRange( $this->ip );
 		}
 
-		return true;
+		return Status::newGood();
 	}
 
 	public function onSuccess() {
