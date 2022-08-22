@@ -9,7 +9,12 @@ use stdClass;
 use User;
 use WikiMap;
 
+// FIXME breaks most methods of DatabaseBlock, some if them in dangerous ways.
+//   Should subclass AbstractBlock instead.
 class GlobalBlock extends DatabaseBlock {
+	/** @var int */
+	private $id;
+
 	/**
 	 * @var array
 	 */
@@ -23,8 +28,14 @@ class GlobalBlock extends DatabaseBlock {
 	public function __construct( stdClass $block, array $error, $options ) {
 		parent::__construct( $options );
 
+		$this->id = $block->gb_id;
 		$this->error = $error;
 		$this->setGlobalBlocker( $block );
+	}
+
+	/** @inheritDoc */
+	public function getId( $wikiId = self::LOCAL ): ?int {
+		return $this->id;
 	}
 
 	/**
