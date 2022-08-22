@@ -64,7 +64,7 @@ class ApiGlobalBlock extends ApiBase {
 					$this->getParameter( 'reason' ),
 					[
 						'isCreateAccountBlocked' => true,
-						'isEmailBlocked' => true,
+						'isEmailBlocked' => $this->getParameter( 'localblocksemail' ),
 						'isUserTalkEditBlocked' => $this->getParameter( 'localblockstalk' ),
 						'isHardBlock' => !$this->getParameter( 'localanononly' ),
 						'isAutoblocking' => true,
@@ -151,6 +151,9 @@ class ApiGlobalBlock extends ApiBase {
 				ParamValidator::PARAM_TYPE => 'boolean'
 			],
 			'localblockstalk' => [
+				ParamValidator::PARAM_TYPE => 'boolean'
+			],
+			'localblocksemail' => [
 				ParamValidator::PARAM_TYPE => 'boolean'
 			],
 			'localanononly' => [

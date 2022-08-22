@@ -52,5 +52,6 @@
 	"apihelp-query+globalblocks-example-2": "{{doc-apihelp-example|query+globalblocks}}",
 	"apihelp-globalblock-param-alsolocal": "{{doc-apihelp-param|globalblock|alsolocal}}",
 	"apihelp-globalblock-param-localblockstalk": "{{doc-apihelp-param|globalblock|localblockstalk}}",
+	"apihelp-globalblock-param-localblocksemail": "{{doc-apihelp-param|globalblock|localblocksemail}}",
 	"apihelp-globalblock-param-localanononly": "{{doc-apihelp-param|globalblock|localanononly}}"
 }
