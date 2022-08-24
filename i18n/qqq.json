@@ -56,7 +56,6 @@
 	"globalblocking-also-local": "Form label for a checkbox asking to also block the IP on the local wiki.",
 	"globalblocking-also-local-talk": "Form label for a checkbox asking if the blocker wants to block talk page also locally.",
 	"globalblocking-also-local-email": "Form label for a checkbox asking if the blocker wants to block email also locally.",
-
 	"globalblocking-also-local-soft": "Label for checkbox asking if the blocker wants to locally block anonymous users only.",
 	"globalblocking-list-intro": "Appears on top of [[Special:Globalblocklist]] (part of [[mw:Extension:GlobalBlocking|Extension:GlobalBlocking]], which is not installed on translatewiki.net; example: [[wikipedia:Special:Globalblocklist]]).",
 	"globalblocking-list": "Title of Special:GlobalBlockList",

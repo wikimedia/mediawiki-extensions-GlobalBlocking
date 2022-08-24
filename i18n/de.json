@@ -39,6 +39,7 @@
 	"globalblocking-bigrange": "Der von dir angegebene Bereich ($1) überschreitet die Grenzen.\nDie $2-Grenze ist ein Bereich von /$3.",
 	"globalblocking-also-local": "Die IP-Adresse auch lokal auf diesem Wiki sperren",
 	"globalblocking-also-local-talk": "Sperre die lokale Bearbeitung von Benutzerdiskussionsseiten",
+	"globalblocking-also-local-email": "Benutzer am lokalen Versenden von E-Mails hindern",
 	"globalblocking-also-local-soft": "Anonyme Benutzer nur lokal sperren",
 	"globalblocking-list-intro": "Dies ist eine Liste aller gültigen globalen Sperren.\nDie Markierung von Sperren als lokal deaktiviert bedeutet, dass die Sperren auf anderen Projekten gültig sind, aber ein lokaler Administrator entschieden hat, sie für dieses Wiki zu deaktivieren.",
 	"globalblocking-list": "Liste global gesperrter IP-Adressen",
