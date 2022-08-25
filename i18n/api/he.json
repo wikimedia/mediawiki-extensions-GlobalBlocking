@@ -28,5 +28,6 @@
 	"apihelp-query+globalblocks-example-2": "רשימת חסימות גלובלית של כתובת IP של 192.0.2.18",
 	"apihelp-globalblock-param-alsolocal": "לחסום את כתובת ה־IP גם מקומית",
 	"apihelp-globalblock-param-localblockstalk": "לשלול גישה לדפי שיחה מקומית",
+	"apihelp-globalblock-param-localblocksemail": "לשלול גישה מקומית לדואר אלקטרוני",
 	"apihelp-globalblock-param-localanononly": "יש לציין את זה אם החסימה צריכה להשפיע מקומית רק על משתמשים שלא נכנסו לחשבון."
 }

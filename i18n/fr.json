@@ -45,6 +45,7 @@
 	"globalblocking-bigrange": "La taille de plage que vous avez indiquée ($1) est hors limites.\nLa limite pour $2 est une taille /$3.",
 	"globalblocking-also-local": "Bloquer également localement sur ce wiki l’adresse IP fournie",
 	"globalblocking-also-local-talk": "Empêcher l’utilisateur de modifier localement sa propre page de discussion",
+	"globalblocking-also-local-email": "Bloquer localement l’envoi de courriel par l’utilisateur",
 	"globalblocking-also-local-soft": "Ne bloquer localement que les utilisateurs anonymes",
 	"globalblocking-list-intro": "Voici la liste de tous les blocages globaux actifs. Quelques plages sont marquées comme localement désactivées : ceci signifie qu’elles sont appliquées sur d’autres sites, mais qu’un administrateur local a décidé de les désactiver sur ce wiki.",
 	"globalblocking-list": "Liste des adresses IP bloquées globalement",

@@ -26,5 +26,6 @@
 	"apihelp-query+globalblocks-example-2": "Испиши ги глобалните блокови што се однесуват на IP-адресата 192.0.2.18",
 	"apihelp-globalblock-param-alsolocal": "Воедно блокирај ја IP-адресата и месно",
 	"apihelp-globalblock-param-localblockstalk": "Месно отстрани пристап до разговорната страница",
+	"apihelp-globalblock-param-localblocksemail": "Отповикај месен пристап до е-пошта",
 	"apihelp-globalblock-param-localanononly": "Укажете го ова ако сакате блокот да важи само за одјавени корисници месно."
 }

@@ -53,6 +53,7 @@
 	"globalblocking-bigrange": "您指定的範圍 ($1) 超出了限制。\n$2 限制是 /$3 範圍。",
 	"globalblocking-also-local": "同樣於此 Wiki 本地封鎖指定的 IP 位址",
 	"globalblocking-also-local-talk": "封鎖使用者編輯自己的本地討論頁",
+	"globalblocking-also-local-email": "封鎖使用者從本地端發送電子郵件",
 	"globalblocking-also-local-soft": "僅本地封鎖匿名使用者",
 	"globalblocking-list-intro": "此為所有目前有效的全域封鎖清單。有部份封鎖己被標記在本地停用：代表該封鎖僅適用於其他網站，本地管理員決定在此wiki停用該封鎖。",
 	"globalblocking-list": "全域封鎖IP位址清單",

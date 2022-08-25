@@ -28,6 +28,7 @@
 	"globalblocking-bigrange": "Le intervallo specificate ($1) excede le limites.\nLe limite $2 es un intervallo /$3.",
 	"globalblocking-also-local": "Blocar tamben localmente sur iste wiki le adresse IP fornite",
 	"globalblocking-also-local-talk": "Blocar le usator contra modificar localmente le proprie pagina de discussion",
+	"globalblocking-also-local-email": "Blocar localmente le invio de e-mail per le usator",
 	"globalblocking-also-local-soft": "Blocar localmente solo usatores anonyme",
 	"globalblocking-list-intro": "Isto es un lista de tote le blocadas global actualmente in effecto. Alcun blocadas es marcate como localmente disactivate: isto significa que illos es applicabile in altere sitos, sed un administrator local ha decidite a disactivar los in iste wiki.",
 	"globalblocking-list": "Lista de adresses IP blocate globalmente",
