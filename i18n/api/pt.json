@@ -27,5 +27,6 @@
 	"apihelp-query+globalblocks-example-2": "Listar os bloqueios globais do endereço IP 192.0.2.18",
 	"apihelp-globalblock-param-alsolocal": "Bloquear também o IP localmente",
 	"apihelp-globalblock-param-localblockstalk": "Revogar o acesso à página de discussão localmente",
+	"apihelp-globalblock-param-localblocksemail": "Revogar localmente o acesso ao correio",
 	"apihelp-globalblock-param-localanononly": "Especificar isto se o bloqueio só deve afetar utilizadores que não tenham nenhuma sessão iniciada localmente."
 }
