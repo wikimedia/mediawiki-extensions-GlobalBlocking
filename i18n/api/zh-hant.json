@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Cwlin0416",
-			"Kly"
+			"Kly",
+			"列维劳德"
 		]
 	},
 	"apihelp-globalblock-description": "全域封鎖或解封一名使用者。",
@@ -26,5 +27,5 @@
 	"apihelp-query+globalblocks-example-1": "所有全域封鎖清單",
 	"apihelp-query+globalblocks-example-2": "列出套用在 IP 位址 192.0.2.18 的全域封鎖",
 	"apihelp-globalblock-param-alsolocal": "在本地端也封鎖 IP",
-	"apihelp-globalblock-param-localblockstalk": "撤銷在本地端存取討論頁"
+	"apihelp-globalblock-param-localblockstalk": "撤銷在本地端討論頁存取權限"
 }
