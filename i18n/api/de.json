@@ -29,5 +29,6 @@
 	"apihelp-query+globalblocks-example-1": "Alle globale Sperren auflisten",
 	"apihelp-query+globalblocks-example-2": "Listet globale Sperren der IP-Adresse 192.0.2.18 auf",
 	"apihelp-globalblock-param-alsolocal": "Sperre die IP-Adresse auch lokal",
-	"apihelp-globalblock-param-localblockstalk": "Lokalen Zugang zur Diskussionsseite aufheben"
+	"apihelp-globalblock-param-localblockstalk": "Lokalen Zugang zur Diskussionsseite aufheben",
+	"apihelp-globalblock-param-localanononly": "Gib dies an, falls die Sperre nur lokal abgemeldete Benutzer betreffen soll."
 }
