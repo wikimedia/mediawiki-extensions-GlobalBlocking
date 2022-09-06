@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"NehalDaveND"
+			"NehalDaveND",
+			"बडा काजी"
 		]
 	},
 	"globalblocking-block-reason": "कारण:",
@@ -9,5 +10,6 @@
 	"globalblocking-list-modify": "सच्याउने",
 	"globalblocking-expiringblock": "$1 को दिन  $2 मा सकिनेछ",
 	"globalblocking-unblock-reason": "कारण:",
-	"globalblocking-whitelist-reason": "कारण:"
+	"globalblocking-whitelist-reason": "कारण:",
+	"log-action-filter-gblblock-modify": "विश्वव्यापी निषेध परिमार्जन"
 }

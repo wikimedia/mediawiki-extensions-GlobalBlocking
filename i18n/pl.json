@@ -15,7 +15,9 @@
 			"Railfail536",
 			"Sp5uhe",
 			"WTM",
-			"Woytecr"
+			"Woytecr",
+			"Jdx",
+			"Msz2001"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Umożliwia]] równoczesne [[Special:GlobalBlockList|blokowanie]] adresów IP na wielu wiki",
@@ -56,6 +58,7 @@
 	"globalblocking-list-whitelist": "status lokalny",
 	"globalblocking-list-modify": "zmień",
 	"globalblocking-expiringblock": "wygasa $1 o $2",
+	"globalblocking-infiniteblock": "na czas nieokreślony",
 	"globalblocking-list-noresults": "Podany adres IP nie jest zablokowany.",
 	"globalblocking-goto-block": "Globalnie zablokuj adres IP",
 	"globalblocking-goto-unblock": "Zdejmij globalną blokadę",
