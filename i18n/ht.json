@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Boukman",
 			"Jvm",
 			"Macofe"
@@ -19,12 +20,12 @@
 	"globalblocking-block-success": "Adrès IP $1 byen bloke nan tout pwojè yo.",
 	"globalblocking-block-alreadyblocked": "Adrès IP $1 deja bloke globalman.\nOu ka wè blokaj ki deja ekziste a nan [[Special:GlobalBlockList|lis blokaj global yo]], oubyen voye fomilè sa ankò pou modifye paramèt blokaj la.",
 	"globalblocking-list": "Lis adrès IP ki bloke globalman yo",
-	"globalblocking-search-legend": "Chache pou yon blokaj global",
+	"globalblocking-search-legend": "Chèche pou yon blokaj global",
 	"globalblocking-search-ip": "Adrès IP:",
-	"globalblocking-search-submit": "Chache pou blokaj yo",
-	"globalblocking-list-ipinvalid": "Adrès IP ou t ap chache pou ($1) pa bon.\nTanpri antre yon adrès IP ki bon.",
+	"globalblocking-search-submit": "Chèche pou blokaj yo",
+	"globalblocking-list-ipinvalid": "Adrès IP ki ou t ap chèche ($1) pa bon.\nTanpri antre yon adrès IP ki bon.",
 	"globalblocking-search-errors": "Rechèch ou a pa t reyisi pou rezon {{PLURAL:$1|sa|sa yo}}:",
-	"globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> (''$3'') bloke globalman '''[[Special:Contributions/$4|$4]]''' ''($5)''",
+	"globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> (''$3'') bloke globalman [[Special:Contributions/$4|$4]] ''($5)''",
 	"globalblocking-list-expiry": "expirasyon $1",
 	"globalblocking-list-anononly": "Anonim sèlman",
 	"globalblocking-list-unblock": "Debloke",
