@@ -1,12 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"NehalDaveND"
+			"NehalDaveND",
+			"बडा काजी"
 		]
 	},
 	"globalblocking-block-reason": "कारण:",
 	"globalblocking-list-unblock": "हटाउने",
 	"globalblocking-list-modify": "सच्याउने",
 	"globalblocking-unblock-reason": "कारण:",
-	"globalblocking-whitelist-reason": "कारण:"
+	"globalblocking-whitelist-reason": "कारण:",
+	"log-action-filter-gblblock-modify": "विश्वव्यापी निषेध परिमार्जन"
 }
