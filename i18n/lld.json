@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Starladin"
+			"Starladin",
+			"S4b1nuz E.656"
 		]
 	},
-	"globalblocklist": "Lista dles misciuns IP blocades globalmënter"
+	"globalblocklist": "Lista dles misciuns IP blocades globalmënter",
+	"globalblockstatus": "Stat local de blocades globales"
 }
