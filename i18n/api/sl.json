@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eleassar"
+		]
+	},
+	"apihelp-globalblock-param-reason": "Razlog za blokiranje/odblokiranje."
+}
