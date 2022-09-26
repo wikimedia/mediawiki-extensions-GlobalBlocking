@@ -73,4 +73,16 @@ class GlobalBlock extends DatabaseBlock {
 		// They don't exist locally, so we need to use an interwiki username
 		$this->setBlocker( User::newFromName( "{$block->gb_by_wiki}>{$block->gb_by}", false ) );
 	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function appliesToRight( $right ) {
+		$res = parent::appliesToRight( $right );
+		switch ( $right ) {
+			case 'upload':
+				return true;
+		}
+		return $res;
+	}
 }
