@@ -5,7 +5,6 @@ namespace MediaWiki\Extension\GlobalBlocking;
 use Exception;
 use LogPage;
 use MediaWiki\Block\BlockUser;
-use MediaWiki\Block\DatabaseBlock;
 use MediaWiki\Extension\GlobalBlocking\Hook\GlobalBlockingHookRunner;
 use MediaWiki\MediaWikiServices;
 use Message;
@@ -32,7 +31,7 @@ class GlobalBlocking {
 	/**
 	 * @param User $user
 	 * @param string $ip
-	 * @return DatabaseBlock|null
+	 * @return GlobalBlock|null
 	 * @throws MWException
 	 */
 	public static function getUserBlock( $user, $ip ) {
