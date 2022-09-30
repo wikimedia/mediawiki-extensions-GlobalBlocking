@@ -17,6 +17,9 @@ class GlobalBlock extends AbstractBlock {
 	/** @var array */
 	protected $error;
 
+	/** @var bool */
+	protected $xff;
+
 	/** @var UserIdentity|null */
 	private $blocker;
 
@@ -36,6 +39,7 @@ class GlobalBlock extends AbstractBlock {
 
 		$this->id = $block->gb_id;
 		$this->error = $error;
+		$this->xff = (bool)$options['xff'];
 		$this->setGlobalBlocker( $block );
 	}
 
@@ -78,6 +82,10 @@ class GlobalBlock extends AbstractBlock {
 	 */
 	public function getPermissionsError( IContextSource $context ) {
 		return $this->error;
+	}
+
+	public function getXff() {
+		return $this->xff;
 	}
 
 	/**
