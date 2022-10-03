@@ -85,4 +85,11 @@ class GlobalBlock extends DatabaseBlock {
 		}
 		return $res;
 	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function appliesToPasswordReset() {
+		return true;
+	}
 }
