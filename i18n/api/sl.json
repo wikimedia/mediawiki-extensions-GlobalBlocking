@@ -4,5 +4,17 @@
 			"Eleassar"
 		]
 	},
-	"apihelp-globalblock-param-reason": "Razlog za blokiranje/odblokiranje."
+	"apihelp-globalblock-description": "Globalno blokirajte ali odblokirajte uporabnika.",
+	"apihelp-globalblock-summary": "Globalno blokirajte ali odblokirajte uporabnika.",
+	"apihelp-globalblock-param-target": "Ciljni IP-naslov.",
+	"apihelp-globalblock-param-expiry": "Če je določeno, bo uporabnik blokiran ali odblokiran. Določa, kako dolgo naj blokiranje traja (npr. »5 mesecev« ali »2 tedna«). Če je nastavljeno na »neskončno« ali »neomejeno«, se blokiranje ne bo nikoli izteklo.",
+	"apihelp-globalblock-param-unblock": "Če je določeno, bo uporabnik odblokiran.",
+	"apihelp-globalblock-param-reason": "Razlog za blokiranje/odblokiranje.",
+	"apihelp-globalblock-param-anononly": "Določite, ali naj to blokiranje velja samo za globalno neprijavljene uporabnike.",
+	"apihelp-globalblock-param-modify": "Določite, ali naj se spremeni obstoječe blokiranje cilja",
+	"apihelp-globalblock-example-1": "Blokiranje 192.0.2.1 neomejeno z razlogom »Cross-wiki abuse« (zloraba v več vikijih)",
+	"apihelp-globalblock-param-alsolocal": "Blokiraj IP tudi lokalno",
+	"apihelp-globalblock-param-localblockstalk": "Lokalno odvzemi dostop do pogovornih strani",
+	"apihelp-globalblock-param-localblocksemail": "Lokalno prepreči dostop do e-pošte",
+	"apihelp-globalblock-param-localanononly": "Določite, ali naj to blokiranje velja samo za lokalno neprijavljene uporabnike."
 }
