@@ -5,8 +5,8 @@ namespace MediaWiki\Extension\GlobalBlocking\Special;
 use DerivativeContext;
 use Html;
 use HTMLForm;
+use MediaWiki\Block\AbstractBlock;
 use MediaWiki\Block\BlockUtils;
-use MediaWiki\Block\DatabaseBlock;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
 use SpecialPage;
 use Wikimedia\IPUtils;
@@ -119,10 +119,10 @@ class SpecialGlobalBlockList extends SpecialPage {
 			[ $target, $type ] = $this->blockUtils->parseBlockTarget( $this->target );
 
 			switch ( $type ) {
-				case DatabaseBlock::TYPE_IP:
+				case AbstractBlock::TYPE_IP:
 					$conds = GlobalBlocking::getRangeCondition( $target );
 					break;
-				case DatabaseBlock::TYPE_RANGE:
+				case AbstractBlock::TYPE_RANGE:
 					$conds = [ 'gb_address' => $target ];
 					break;
 			}
