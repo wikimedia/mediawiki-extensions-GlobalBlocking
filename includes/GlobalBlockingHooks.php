@@ -6,7 +6,7 @@ use Config;
 use DatabaseUpdater;
 use Html;
 use LogicException;
-use MediaWiki\Block\DatabaseBlock;
+use MediaWiki\Block\AbstractBlock;
 use MediaWiki\Extension\GlobalBlocking\Maintenance\PopulateCentralId;
 use MediaWiki\Extension\GlobalBlocking\Special\GlobalBlockListPager;
 use MediaWiki\Hook\ContributionsToolLinksHook;
@@ -167,7 +167,7 @@ class GlobalBlockingHooks implements
 	 * @param User $user
 	 * @param string $ip
 	 * @param bool &$blocked
-	 * @param DatabaseBlock|null &$block
+	 * @param AbstractBlock|null &$block
 	 *
 	 * @return bool
 	 */
