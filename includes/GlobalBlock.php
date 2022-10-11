@@ -117,4 +117,11 @@ class GlobalBlock extends AbstractBlock {
 		}
 		return $res;
 	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function appliesToPasswordReset() {
+		return true;
+	}
 }
