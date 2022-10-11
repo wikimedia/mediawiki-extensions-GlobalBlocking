@@ -90,7 +90,7 @@
 	"action-globalblock": "ustvarjanje in odstranjevanje globalnih blokiranj",
 	"right-globalblock-whitelist": "Onemogočanje globalnih blokiranj na lokalni ravni",
 	"action-globalblock-whitelist": "onemogočanje globalnih blokiranj na lokalni ravni",
-	"right-globalblock-exempt": "Izogib globalnemu blokiranju",
+	"right-globalblock-exempt": "Izognitev globalnemu blokiranju",
 	"action-globalblock-exempt": "izognitev globalnemu blokiranju",
 	"log-action-filter-gblblock": "Vrsta globalnega blokiranja:",
 	"log-action-filter-gblblock-gblock": "Globalno blokiranje",
