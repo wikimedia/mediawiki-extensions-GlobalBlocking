@@ -232,7 +232,11 @@ class GlobalBlockingHooks implements
 			$out->addHTML(
 				Html::warningBox(
 					$sp->msg( 'globalblocking-contribs-notice', $name )->parseAsBlock() .
-					Html::rawElement( 'ul', [], $body ),
+					Html::rawElement(
+						'ul',
+						[ 'class' => 'mw-logevent-loglines' ],
+						$body
+					),
 					'mw-warning-with-logexcerpt'
 				)
 			);
