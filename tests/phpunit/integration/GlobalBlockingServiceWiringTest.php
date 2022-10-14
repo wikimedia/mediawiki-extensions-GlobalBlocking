@@ -18,7 +18,10 @@
  * @file
  */
 
+namespace MediaWiki\Extension\GlobalBlocking\Test\Integration;
+
 use MediaWiki\MediaWikiServices;
+use MediaWikiIntegrationTestCase;
 
 /**
  * @author Taavi "Majavah" Väänänen <hi@taavi.wtf>
