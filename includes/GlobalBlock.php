@@ -114,6 +114,8 @@ class GlobalBlock extends AbstractBlock {
 		switch ( $right ) {
 			case 'upload':
 				return true;
+			case 'createaccount':
+				return true;
 		}
 		return $res;
 	}
@@ -122,6 +124,13 @@ class GlobalBlock extends AbstractBlock {
 	 * @inheritDoc
 	 */
 	public function appliesToPasswordReset() {
+		return true;
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function isCreateAccountBlocked( $x = null ): bool {
 		return true;
 	}
 }
