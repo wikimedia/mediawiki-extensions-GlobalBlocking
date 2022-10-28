@@ -123,6 +123,9 @@
 		"MediaWiki\\Extension\\GlobalBlocking\\": "includes/",
 		"MediaWiki\\Extension\\GlobalBlocking\\Maintenance\\": "maintenance/"
 	},
+	"TestAutoloadNamespaces": {
+		"MediaWiki\\Extension\\GlobalBlocking\\Test\\Integration\\": "tests/phpunit/integration"
+	},
 	"Hooks": {
 		"getUserPermissionsErrorsExpensive": "main",
 		"UserIsBlockedGlobally": "main",

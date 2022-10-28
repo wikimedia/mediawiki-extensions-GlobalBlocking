@@ -18,10 +18,16 @@
  * @file
  */
 
+namespace MediaWiki\Extension\GlobalBlocking\Test\Integration;
+
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockReasonFormatter;
 use MediaWiki\Http\HttpRequestFactory;
+use MediaWikiIntegrationTestCase;
+use MWHttpRequest;
 use Psr\Log\LoggerInterface;
+use Status;
+use WANObjectCache;
 use Wikimedia\TestingAccessWrapper;
 
 /**
