@@ -7,6 +7,7 @@ use DatabaseUpdater;
 use Html;
 use LogicException;
 use MediaWiki\Block\AbstractBlock;
+use MediaWiki\Extension\GlobalBlocking\Hook\GlobalBlockingHookRunner;
 use MediaWiki\Extension\GlobalBlocking\Maintenance\PopulateCentralId;
 use MediaWiki\Extension\GlobalBlocking\Special\GlobalBlockListPager;
 use MediaWiki\Hook\ContributionsToolLinksHook;
@@ -44,6 +45,9 @@ class GlobalBlockingHooks implements
 	/** @var Config */
 	private $config;
 
+	/** @var GlobalBlockingHookRunner */
+	private $hookRunner;
+
 	/**
 	 * @param PermissionManager $permissionManager
 	 * @param Config $mainConfig
@@ -51,6 +55,7 @@ class GlobalBlockingHooks implements
 	public function __construct( PermissionManager $permissionManager, Config $mainConfig ) {
 		$this->permissionManager = $permissionManager;
 		$this->config = $mainConfig;
+		$this->hookRunner = GlobalBlockingHookRunner::getRunner();
 	}
 
 	/**
@@ -195,6 +200,26 @@ class GlobalBlockingHooks implements
 			$requestContext->getRequest()->getIP()
 		) ) {
 			$error = 'globalblocking-blocked-nopassreset';
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * @param array $block
+	 * @param array &$key
+	 *
+	 * @return bool
+	 */
+	public function onGetBlockErrorMessageKey( $block, &$key ) {
+		if ( $block instanceof GlobalBlock ) {
+			if ( $block->getXff() ) {
+				$key = 'globalblocking-blockedtext-xff';
+			} elseif ( IPUtils::isValid( $block->getTargetName() ) ) {
+				$key = 'globalblocking-blockedtext-ip';
+			} elseif ( IPUtils::isValidRange( $block->getTargetName() ) ) {
+				$key = 'globalblocking-blockedtext-range';
+			}
 			return false;
 		}
 		return true;

@@ -48,6 +48,7 @@ class GlobalBlocking {
 					'timestamp' => $row->gb_timestamp,
 					'anonOnly' => $row->gb_anon_only,
 					'expiry' => $row->gb_expiry,
+					'xff' => $details['xff'] ?? false,
 				]
 			);
 			return $block;
@@ -186,6 +187,7 @@ class GlobalBlocking {
 									$blockIP
 								)
 							],
+							'xff' => true,
 						];
 						return $result;
 					}

@@ -134,6 +134,7 @@
 		"SpecialContributionsBeforeMainOutput": "main",
 		"UserMergeAccountFields": "MediaWiki\\Extension\\GlobalBlocking\\GlobalBlockingHooks::onUserMergeAccountFields",
 		"LoadExtensionSchemaUpdates": "MediaWiki\\Extension\\GlobalBlocking\\GlobalBlockingHooks::onLoadExtensionSchemaUpdates",
+		"GetBlockErrorMessageKey": "main",
 		"GetLogTypesOnUser": "main",
 		"ContributionsToolLinks": "main"
 	},
