@@ -35,6 +35,7 @@
 	"globalblocking-block-alreadyblocked": "L'indirizzo IP $1 è già bloccato globalmente. È possibile consultare il blocco attivo nell'[[Special:GlobalBlockList|elenco dei blocchi globali]] o modificare le impostazioni del blocco esistente ricompilando questo modulo.",
 	"globalblocking-also-local": "Blocca l'indirizzo IP anche localmente su questo wiki",
 	"globalblocking-also-local-talk": "Impedisci all'utente di modificare la propria pagina di discussione localmente",
+	"globalblocking-also-local-email": "Impedisci all'utente di inviare email da questo wiki",
 	"globalblocking-also-local-soft": "Blocca localmente solo utenti anonimi",
 	"globalblocking-list-intro": "Di seguito sono elencati tutti i blocchi globali che sono attualmente attivi. Alcuni blocchi sono segnati come disattivati localmente: ciò significa che questi sono attivi su altri siti, ma un amministratore locale ha deciso di disattivarli su quella wiki.",
 	"globalblocking-list": "Elenco degli indirizzi IP bloccati globalmente",
