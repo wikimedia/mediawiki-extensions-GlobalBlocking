@@ -25,5 +25,7 @@
 	"apihelp-query+globalblocks-param-limit": "الحد الأقصى لعدد مرات المنع للإدراج.",
 	"apihelp-query+globalblocks-param-prop": "أي الخصائص تريد الحصول عليها.",
 	"apihelp-query+globalblocks-example-1": "ادرج جميع عمليات المنع العالمية",
-	"apihelp-query+globalblocks-example-2": "ادرج جميع عمليات المنع العالمية التي تنطبق على عنوان الآيبي 192.0.2.18"
+	"apihelp-query+globalblocks-example-2": "ادرج جميع عمليات المنع العالمية التي تنطبق على عنوان الآيبي 192.0.2.18",
+	"apihelp-globalblock-param-alsolocal": "منع عنوان IP محليًا أيضًا",
+	"apihelp-globalblock-param-localblockstalk": "إبطال الوصول إلى صفحة الحديث محليًا"
 }
