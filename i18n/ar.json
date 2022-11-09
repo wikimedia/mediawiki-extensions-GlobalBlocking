@@ -62,7 +62,7 @@
 	"globalblocking-unblock-legend": "إزالة منع عام",
 	"globalblocking-unblock-submit": "إزالة المنع العام",
 	"globalblocking-unblock-reason": "السبب:",
-	"globalblocking-unblock-unblocked": "لقد أزلت بنجاح المنع العام #$2 من عنوان الأيبي '''$1'''",
+	"globalblocking-unblock-unblocked": "لقد أزلت بنجاح المنع العام من عنوان الأيبي '''$1'''.",
 	"globalblocking-unblock-intro": "يمكنك استخدام هذه الاستمارة لإزالة منع عام.",
 	"globalblocking-whitelist": "الحالة المحلية لعمليات المنع العامة",
 	"globalblocking-whitelist-notapplied": "عمليات المنع العامة لا يتم تطبيقها في هذه الويكي،\nلذا فالحالة المحلية لعمليات المنع العامة لا يمكن تعديلها.",
