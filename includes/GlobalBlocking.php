@@ -84,7 +84,8 @@ class GlobalBlocking {
 			return $result;
 		}
 
-		$statsdFactory = MediaWikiServices::getInstance()->getStatsdDataFactory();
+		$services = MediaWikiServices::getInstance();
+		$statsdFactory = $services->getStatsdDataFactory();
 		$statsdFactory->increment( 'global_blocking.get_user_block' );
 
 		if ( $user->isAllowed( 'ipblock-exempt' ) || $user->isAllowed( 'globalblock-exempt' ) ) {
@@ -93,11 +94,14 @@ class GlobalBlocking {
 			return $result;
 		}
 
-		$ranges = MediaWikiServices::getInstance()->getMainConfig()->get( 'GlobalBlockingAllowedRanges' );
-		foreach ( $ranges as $range ) {
-			if ( IPUtils::isInRange( $ip, $range ) ) {
-				$result = [ 'block' => null, 'error' => [] ];
-				return $result;
+		if ( $ip !== null ) {
+			$ranges = $services->getMainConfig()->get( 'GlobalBlockingAllowedRanges' );
+			foreach ( $ranges as $range ) {
+				if ( IPUtils::isInRange( $ip, $range ) ) {
+					$result = [ 'block' => null, 'error' => [] ];
+
+					return $result;
+				}
 			}
 		}
 
