@@ -258,11 +258,15 @@ class GlobalBlocking {
 
 	/**
 	 * Get a block
-	 * @param string $ip The IP address to be checked
+	 * @param string|null $ip The IP address to be checked
 	 * @param bool $anon Get anon blocks only
 	 * @return stdClass|false The block, or false if none is found
 	 */
 	public static function getGlobalBlockingBlock( $ip, $anon ) {
+		if ( $ip === null ) {
+			return false;
+		}
+
 		$dbr = self::getGlobalBlockingDatabase( DB_REPLICA );
 
 		$conds = self::getRangeCondition( $ip );
