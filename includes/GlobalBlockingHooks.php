@@ -7,6 +7,7 @@ use DatabaseUpdater;
 use Html;
 use LogicException;
 use MediaWiki\Block\AbstractBlock;
+use MediaWiki\Block\CompositeBlock;
 use MediaWiki\Extension\GlobalBlocking\Hook\GlobalBlockingHookRunner;
 use MediaWiki\Extension\GlobalBlocking\Maintenance\PopulateCentralId;
 use MediaWiki\Extension\GlobalBlocking\Special\GlobalBlockListPager;
@@ -18,6 +19,7 @@ use MediaWiki\Permissions\Hook\GetUserPermissionsErrorsExpensiveHook;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\User\Hook\SpecialPasswordResetOnSubmitHook;
 use MediaWiki\User\Hook\UserIsBlockedGloballyHook;
+use Message;
 use MWException;
 use RequestContext;
 use SpecialPage;
@@ -165,6 +167,47 @@ class GlobalBlockingHooks implements
 			$result = [ $blockError ];
 			return false;
 		}
+		return true;
+	}
+
+	/**
+	 * Add a global block. If there are any existing blocks, add
+	 * the global block into a CompositeBlock.
+	 *
+	 * @param User $user
+	 * @param string|null $ip
+	 * @param AbstractBlock|null &$block
+	 * @return bool
+	 */
+	public function onGetUserBlock( $user, $ip, &$block ) {
+		if ( !$this->config->get( 'ApplyGlobalBlocks' ) ) {
+			return true;
+		}
+
+		if ( $this->permissionManager->userHasAnyRight( $user, 'ipblock-exempt', 'globalblock-exempt' ) ) {
+			return true;
+		}
+
+		$globalBlock = GlobalBlocking::getUserBlock( $user, $ip );
+		if ( !$globalBlock ) {
+			return true;
+		}
+
+		if ( !$block ) {
+			$block = $globalBlock;
+			return true;
+		}
+
+		// User is locally blocked and globally blocked. We need a CompositeBlock.
+		$allBlocks = $block instanceof CompositeBlock ?
+			$block->getOriginalBlocks() :
+			[ $block ];
+		$allBlocks[] = $globalBlock;
+		$block = new CompositeBlock( [
+			'address' => $ip,
+			'reason' => new Message( 'blockedtext-composite-reason' ),
+			'originalBlocks' => $allBlocks,
+		] );
 		return true;
 	}
 
