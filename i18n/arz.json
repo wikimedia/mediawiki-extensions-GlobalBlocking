@@ -41,7 +41,7 @@
 	"globalblocking-unblock-legend": "شيل منع العام",
 	"globalblocking-unblock-submit": "شيل المنع العام",
 	"globalblocking-unblock-reason": "السبب:",
-	"globalblocking-unblock-unblocked": "إنتا شيلت بنجاح المنع العام #$2 على عنوان الأيبى '''$1'''",
+	"globalblocking-unblock-unblocked": "لقد أزلت بنجاح المنع العام من عنوان الأيبي '''$1'''.",
 	"globalblocking-unblock-intro": "ممكن تستعمل الاستمارة دى علشان تشيل منع عام.",
 	"globalblocking-whitelist": "الحالة المحلية لعمليات المنع العامة",
 	"globalblocking-whitelist-legend": "غير الحالة المحلية",
