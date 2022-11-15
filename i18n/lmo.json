@@ -9,6 +9,7 @@
 	"globalblocking-search-submit": "Cerca i bloch",
 	"globalblocking-expiringblock": "el finiss el $1 a $2",
 	"globalblocking-whitelist-intro": "Te podet drovà quell modol chì per cambià el stat local d'on bloch global.\nSe on bloch global l'è smorzad in su 'stoo wiki chì, i utent in su l'IP blocad globalment i podarann fà normalment di modifeghe.",
+	"globalblocking-logpage": "Register di bloch globai",
 	"globalblocklist": "Lista di adress IP blocad in tut i canton",
 	"globalblockstatus": "Stat local di bloch globai"
 }
