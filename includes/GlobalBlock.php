@@ -2,7 +2,6 @@
 
 namespace MediaWiki\Extension\GlobalBlocking;
 
-use IContextSource;
 use MediaWiki\Block\AbstractBlock;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\User\UserIdentity;
@@ -75,13 +74,6 @@ class GlobalBlock extends AbstractBlock {
 	/** @inheritDoc */
 	public function getId( $wikiId = self::LOCAL ): ?int {
 		return $this->id;
-	}
-
-	/**
-	 * @inheritDoc
-	 */
-	public function getPermissionsError( IContextSource $context ) {
-		return $this->error;
 	}
 
 	public function getXff() {
