@@ -127,7 +127,6 @@
 		"MediaWiki\\Extension\\GlobalBlocking\\Test\\Integration\\": "tests/phpunit/integration"
 	},
 	"Hooks": {
-		"getUserPermissionsErrorsExpensive": "main",
 		"GetUserBlock": "main",
 		"UserIsBlockedGlobally": "main",
 		"SpecialPasswordResetOnSubmit": "main",

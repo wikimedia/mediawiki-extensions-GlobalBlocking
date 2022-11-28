@@ -15,7 +15,6 @@ use MediaWiki\Hook\ContributionsToolLinksHook;
 use MediaWiki\Hook\GetLogTypesOnUserHook;
 use MediaWiki\Hook\OtherBlockLogLinkHook;
 use MediaWiki\Hook\SpecialContributionsBeforeMainOutputHook;
-use MediaWiki\Permissions\Hook\GetUserPermissionsErrorsExpensiveHook;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\User\Hook\SpecialPasswordResetOnSubmitHook;
 use MediaWiki\User\Hook\UserIsBlockedGloballyHook;
@@ -33,7 +32,6 @@ use Wikimedia\IPUtils;
  * @license GPL-2.0-or-later
  */
 class GlobalBlockingHooks implements
-	GetUserPermissionsErrorsExpensiveHook,
 	UserIsBlockedGloballyHook,
 	SpecialPasswordResetOnSubmitHook,
 	OtherBlockLogLinkHook,
@@ -137,36 +135,6 @@ class GlobalBlockingHooks implements
 			);
 		}
 
-		return true;
-	}
-
-	/**
-	 * @param Title $title
-	 * @param User $user
-	 * @param string $action
-	 * @param mixed &$result
-	 *
-	 * @return bool
-	 */
-	public function onGetUserPermissionsErrorsExpensive(
-		$title, $user, $action, &$result
-	) {
-		global $wgRequest;
-		if ( $action === 'read' || !$this->config->get( 'ApplyGlobalBlocks' ) ) {
-			return true;
-		}
-
-		if ( $this->permissionManager->userHasAnyRight( $user, 'ipblock-exempt', 'globalblock-exempt' ) ) {
-			// User is exempt from IP blocks.
-			return true;
-		}
-
-		$ip = $wgRequest->getIP();
-		$blockError = GlobalBlocking::getUserBlockErrors( $user, $ip );
-		if ( !empty( $blockError ) ) {
-			$result = [ $blockError ];
-			return false;
-		}
 		return true;
 	}
 
