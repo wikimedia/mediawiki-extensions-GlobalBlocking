@@ -587,12 +587,12 @@ class GlobalBlocking {
 	public static function block( $address, $reason, $expiry, $blocker, $options = [] ): StatusValue {
 		$expiry = BlockUser::parseExpiryInput( $expiry );
 		$status = self::insertBlock( $address, $reason, $expiry, $blocker, $options );
-		$blockId = $status->getValue()['id'];
 
 		if ( !$status->isOK() ) {
 			return $status;
 		}
 
+		$blockId = $status->getValue()['id'];
 		$anonOnly = in_array( 'anon-only', $options );
 		$modify = in_array( 'modify', $options );
 
