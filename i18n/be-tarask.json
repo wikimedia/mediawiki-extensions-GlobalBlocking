@@ -81,6 +81,8 @@
 	"globalblocking-loglink": "IP-адрас заблякаваны глябальна ([[{{#Special:GlobalBlockList}}/$1|ўсе падрабязнасьці]]).",
 	"globalblocking-contribs-notice": "Гэты IP-адрас у дадзены момант заблякаваны глябальна.\nАпошні запіс з журнала глябальных блякаваньняў пададзены ніжэй для даведкі:",
 	"globalblocking-showlog": "Гэты IP-адрас быў заблякаваны раней.\nНіжэй для даведкі пададзены журнал блякаваньняў:",
+	"globalblocking-contribs-modify": "зьмяніць глябальнае блякаваньне",
+	"globalblocking-contribs-remove": "зьняць глябальнае блякаваньне",
 	"globalblocklist": "Сьпіс глябальна заблякаваных IP-адрасоў",
 	"globalblock": "Глябальнае блякаваньне ІР-адрасу",
 	"globalblockstatus": "Лякальны статус глябальных блякаваньняў",
@@ -91,6 +93,7 @@
 	"action-globalblock-whitelist": "адключэньне глябальных блякаваньняў лякальна",
 	"right-globalblock-exempt": "ігнараваньне глябальных блякаваньняў",
 	"action-globalblock-exempt": "ігнараваньне глябальных блякаваньняў",
+	"log-action-filter-gblblock": "Тып глябальнага блякаваньня:",
 	"log-action-filter-gblblock-gblock": "Глябальнае блякаваньне",
 	"log-action-filter-gblblock-gunblock": "Глябальнае разблякаваньне"
 }
