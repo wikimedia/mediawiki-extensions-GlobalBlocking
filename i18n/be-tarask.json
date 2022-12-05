@@ -92,6 +92,7 @@
 	"action-globalblock-whitelist": "адключэньне глябальных блякаваньняў лякальна",
 	"right-globalblock-exempt": "ігнараваньне глябальных блякаваньняў",
 	"action-globalblock-exempt": "ігнараваньне глябальных блякаваньняў",
+	"log-action-filter-gblblock": "Тып глябальнага блякаваньня:",
 	"log-action-filter-gblblock-gblock": "Глябальнае блякаваньне",
 	"log-action-filter-gblblock-gunblock": "Глябальнае разблякаваньне"
 }
