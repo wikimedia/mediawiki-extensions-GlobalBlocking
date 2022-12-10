@@ -7,6 +7,7 @@ use Html;
 use HTMLForm;
 use MediaWiki\Block\AbstractBlock;
 use MediaWiki\Block\BlockUtils;
+use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
 use SpecialPage;
 use Wikimedia\IPUtils;
@@ -21,12 +22,17 @@ class SpecialGlobalBlockList extends SpecialPage {
 	/** @var BlockUtils */
 	private $blockUtils;
 
+	/** @var CommentFormatter */
+	private $commentFormatter;
+
 	public function __construct(
-		BlockUtils $blockUtils
+		BlockUtils $blockUtils,
+		CommentFormatter $commentFormatter
 	) {
 		parent::__construct( 'GlobalBlockList' );
 
 		$this->blockUtils = $blockUtils;
+		$this->commentFormatter = $commentFormatter;
 	}
 
 	/**
@@ -151,7 +157,12 @@ class SpecialGlobalBlockList extends SpecialPage {
 			$conds[] = "gb_expiry != " . $dbr->addQuotes( $dbr->getInfinity() );
 		}
 
-		$pager = new GlobalBlockListPager( $this->getContext(), $conds, $this->getLinkRenderer() );
+		$pager = new GlobalBlockListPager(
+			$this->getContext(),
+			$conds,
+			$this->getLinkRenderer(),
+			$this->commentFormatter
+		);
 		$body = $pager->getBody();
 		if ( $body != '' ) {
 			$out->addHTML(

@@ -8,6 +8,7 @@ use Html;
 use LogicException;
 use MediaWiki\Block\AbstractBlock;
 use MediaWiki\Block\CompositeBlock;
+use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Extension\GlobalBlocking\Hook\GlobalBlockingHookRunner;
 use MediaWiki\Extension\GlobalBlocking\Maintenance\PopulateCentralId;
 use MediaWiki\Extension\GlobalBlocking\Special\GlobalBlockListPager;
@@ -45,16 +46,25 @@ class GlobalBlockingHooks implements
 	/** @var Config */
 	private $config;
 
+	/** @var CommentFormatter */
+	private $commentFormatter;
+
 	/** @var GlobalBlockingHookRunner */
 	private $hookRunner;
 
 	/**
 	 * @param PermissionManager $permissionManager
 	 * @param Config $mainConfig
+	 * @param CommentFormatter $commentFormatter
 	 */
-	public function __construct( PermissionManager $permissionManager, Config $mainConfig ) {
+	public function __construct(
+		PermissionManager $permissionManager,
+		Config $mainConfig,
+		CommentFormatter $commentFormatter
+	) {
 		$this->permissionManager = $permissionManager;
 		$this->config = $mainConfig;
+		$this->commentFormatter = $commentFormatter;
 		$this->hookRunner = GlobalBlockingHookRunner::getRunner();
 	}
 
@@ -283,7 +293,12 @@ class GlobalBlockingHooks implements
 
 		if ( $block !== null ) {
 			$conds = GlobalBlocking::getRangeCondition( $block->gb_address );
-			$pager = new GlobalBlockListPager( $sp->getContext(), $conds, $sp->getLinkRenderer() );
+			$pager = new GlobalBlockListPager(
+				$sp->getContext(),
+				$conds,
+				$sp->getLinkRenderer(),
+				$this->commentFormatter
+			);
 			$body = $pager->formatRow( $block );
 
 			$out = $sp->getOutput();
