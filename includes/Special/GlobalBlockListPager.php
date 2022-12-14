@@ -5,7 +5,7 @@ namespace MediaWiki\Extension\GlobalBlocking\Special;
 use Html;
 use HtmlArmor;
 use IContextSource;
-use Linker;
+use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
 use MediaWiki\Linker\LinkRenderer;
 use ReverseChronologicalPager;
@@ -17,10 +17,19 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 	/** @var array */
 	private $queryConds;
 
-	public function __construct( IContextSource $context, array $conds, LinkRenderer $linkRenderer ) {
+	/** @var CommentFormatter */
+	private $commentFormatter;
+
+	public function __construct(
+		IContextSource $context,
+		array $conds,
+		LinkRenderer $linkRenderer,
+		CommentFormatter $commentFormatter
+	) {
 		parent::__construct( $context, $linkRenderer );
 		$this->queryConds = $conds;
 		$this->mDb = GlobalBlocking::getGlobalBlockingDatabase( DB_REPLICA );
+		$this->commentFormatter = $commentFormatter;
 	}
 
 	public function formatRow( $row ) {
@@ -101,7 +110,7 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 				$row->gb_address,
 				$lang->commaList( $options )
 			)->parse() . ' ' .
-				Linker::commentBlock( $row->gb_reason ) . ' ' .
+				$this->commentFormatter->formatBlock( $row->gb_reason ) . ' ' .
 				$infoItems
 		);
 	}
