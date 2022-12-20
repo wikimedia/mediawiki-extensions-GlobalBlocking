@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Banjo",
-			"Elisardojm"
+			"Elisardojm",
+			"Toliño"
 		]
 	},
 	"apihelp-globalblock-description": "Bloquear ou desbloquear globalmente a un usuario.",
@@ -20,9 +21,9 @@
 	"apihelp-query+globalblocks-param-end": "Selo de tempo para rematar a enumeración.",
 	"apihelp-query+globalblocks-param-ids": "Lista de identificadores de bloque para listar, separados por barras verticais (|).",
 	"apihelp-query+globalblocks-param-addresses": "Lista de direccións IP para procurar, separadas por barras verticais (|).",
-	"apihelp-query+globalblocks-param-ip": "Obter todos os bloques aplicables a esta dirección IP ou a este rango CIDR, incluíndo bloques de rangos.\nNon pode usarse xunto con $1addresses. Os rangos CIDR maiores que /16 non se aceptan.",
+	"apihelp-query+globalblocks-param-ip": "Obter todos os bloques aplicables a este enderezo IP ou a este rango CIDR, incluíndo bloqueos de rangos.\nNon pode usarse xunto con $1addresses. Os rangos CIDR maiores que /16 non se aceptan.",
 	"apihelp-query+globalblocks-param-limit": "Máximo número de bloqueos a listar.",
 	"apihelp-query+globalblocks-param-prop": "Que propiedades obter.",
 	"apihelp-query+globalblocks-example-1": "Listar tódolos bloqueos globais",
-	"apihelp-query+globalblocks-example-2": "Lista os bloqueos globais aplicados á dirección IP 192.0.2.18"
+	"apihelp-query+globalblocks-example-2": "Listar os bloqueos globais aplicados ao enderezo IP 192.0.2.18"
 }
