@@ -27,7 +27,8 @@
 			"Zhxy 519",
 			"列维劳德",
 			"铁桶",
-			"SunAfterRain"
+			"SunAfterRain",
+			"捍粵者"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|允許]]封鎖[[Special:GlobalBlockList|於多個 Wiki 中]]的 IP 位址",
@@ -74,7 +75,7 @@
 	"globalblocking-list-rangeblocks": "隱藏範圍封鎖",
 	"globalblocking-expiringblock": "$1 $2 到期",
 	"globalblocking-infiniteblock": "無限期",
-	"globalblocking-list-noresults": "使用給定的參數未找到任何結果。",
+	"globalblocking-list-noresults": "未找到任何指定參數的結果。",
 	"globalblocking-goto-block": "全域封鎖一個 IP 位址",
 	"globalblocking-goto-unblock": "移除全域封鎖",
 	"globalblocking-goto-status": "修改全域封鎖的本地狀態",
