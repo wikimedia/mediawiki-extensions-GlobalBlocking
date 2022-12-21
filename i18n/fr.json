@@ -88,7 +88,7 @@
 	"globalblocking-whitelist-statuslabel": "Désactiver ce blocage global sur {{SITENAME}}",
 	"globalblocking-whitelist-submit": "Changer le statut local",
 	"globalblocking-whitelist-whitelisted": "Vous avez désactivé le blocage global n° $2 de l’adresse IP '''$1''' sur {{SITENAME}}.",
-	"globalblocking-whitelist-dewhitelisted": "Vous avez réactivé le blocage global n° $2 de l’adresse IP '''$1''' sur {{SITENAME}}.",
+	"globalblocking-whitelist-dewhitelisted": "Vous avez réactivé le blocage global nº $2 de l’adresse IP '''$1''' sur {{SITENAME}}.",
 	"globalblocking-whitelist-nochange": "Vous n’avez pas modifié le statut local de ce blocage.",
 	"globalblocking-whitelist-intro": "Vous pouvez utiliser ce formulaire pour modifier l’état local d’un blocage global.\nSi un blocage global est désactivé sur ce wiki, les utilisateurs des adresses IP affectées pourront modifier normalement.",
 	"globalblocking-blockedtext-ip": "'''Votre adresse IP a été bloquée sur tous les wikis.'''\n\nLe blocage a été fait par $1.\nLe motif donné est '''$2'''. \n\n* Début du blocage : $8\n* Expiration du blocage : $6\n\nVous pouvez contacter $1 pour discuter du blocage.\nVous ne pouvez pas utiliser la fonctionnalité « {{int:emailuser}} » à moins d’avoir spécifié une adresse de courriel valide dans vos [[Special:Preferences|préférences de compte]] et que vous n’ayez pas été bloqué pour son utilisation.\nVotre adresse IP actuelle est $3.\nVeuillez inclure tous les détails ci-dessus dans toutes les demandes que vous ferez.",
