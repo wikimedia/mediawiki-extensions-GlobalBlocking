@@ -209,13 +209,13 @@ class SpecialGlobalBlock extends FormSpecialPage {
 	 * @param HTMLForm $form
 	 */
 	protected function alterForm( HTMLForm $form ) {
-		$form->addPreText( $this->msg( 'globalblocking-block-intro' )->parseAsBlock() );
+		$form->addPreHtml( $this->msg( 'globalblocking-block-intro' )->parseAsBlock() );
 
 		if ( $this->modifyForm && !$this->getRequest()->wasPosted() ) {
 			// For GET requests with target field prefilled, tell the user that it's already blocked
 			// (For POST requests, this will be shown to the user as an actual error in HTMLForm)
 			$msg = $this->msg( 'globalblocking-block-alreadyblocked', $this->address )->parseAsBlock();
-			$form->addHeaderText( Html::rawElement( 'div', [ 'class' => 'error' ], $msg ) );
+			$form->addHeaderHtml( Html::rawElement( 'div', [ 'class' => 'error' ], $msg ) );
 		}
 
 		$submitMsg = $this->modifyForm ? 'globalblocking-modify-submit' : 'globalblocking-block-submit';

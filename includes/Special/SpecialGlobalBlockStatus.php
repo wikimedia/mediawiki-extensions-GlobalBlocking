@@ -85,7 +85,7 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 	}
 
 	protected function alterForm( HTMLForm $form ) {
-		$form->setPreText( $this->msg( 'globalblocking-whitelist-intro' )->parse() );
+		$form->setPreHtml( $this->msg( 'globalblocking-whitelist-intro' )->parse() );
 		$form->setWrapperLegendMsg( 'globalblocking-whitelist-legend' );
 		$form->setSubmitTextMsg( 'globalblocking-whitelist-submit' );
 	}
