@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Special;
 
+use CentralIdLookup;
 use DerivativeContext;
 use HTMLForm;
 use MediaWiki\Block\AbstractBlock;
@@ -25,14 +26,24 @@ class SpecialGlobalBlockList extends SpecialPage {
 	/** @var CommentFormatter */
 	private $commentFormatter;
 
+	/** @var CentralIdLookup */
+	private $lookup;
+
+	/**
+	 * @param BlockUtils $blockUtils
+	 * @param CommentFormatter $commentFormatter
+	 * @param CentralIdLookup $lookup
+	 */
 	public function __construct(
 		BlockUtils $blockUtils,
-		CommentFormatter $commentFormatter
+		CommentFormatter $commentFormatter,
+		CentralIdLookup $lookup
 	) {
 		parent::__construct( 'GlobalBlockList' );
 
 		$this->blockUtils = $blockUtils;
 		$this->commentFormatter = $commentFormatter;
+		$this->lookup = $lookup;
 	}
 
 	/**
@@ -161,7 +172,8 @@ class SpecialGlobalBlockList extends SpecialPage {
 			$this->getContext(),
 			$conds,
 			$this->getLinkRenderer(),
-			$this->commentFormatter
+			$this->commentFormatter,
+			$this->lookup
 		);
 		$body = $pager->getBody();
 		if ( $body != '' ) {

@@ -47,7 +47,8 @@
 			"class": "MediaWiki\\Extension\\GlobalBlocking\\Special\\SpecialGlobalBlockList",
 			"services": [
 				"BlockUtils",
-				"CommentFormatter"
+				"CommentFormatter",
+				"CentralIdLookup"
 			]
 		},
 		"GlobalBlockStatus": {
@@ -111,7 +112,12 @@
 		}
 	},
 	"APIListModules": {
-		"globalblocks": "MediaWiki\\Extension\\GlobalBlocking\\Api\\ApiQueryGlobalBlocks"
+		"globalblocks": {
+			"class": "MediaWiki\\Extension\\GlobalBlocking\\Api\\ApiQueryGlobalBlocks",
+			"services": [
+				"CentralIdLookup"
+			]
+		}
 	},
 	"MessagesDirs": {
 		"GlobalBlocking": [
@@ -144,7 +150,8 @@
 			"services": [
 				"PermissionManager",
 				"MainConfig",
-				"CommentFormatter"
+				"CommentFormatter",
+				"CentralIdLookup"
 			]
 		},
 		"usermerge": {

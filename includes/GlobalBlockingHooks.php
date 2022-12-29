@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\GlobalBlocking;
 
+use CentralIdLookup;
 use LogicException;
 use MediaWiki\Block\AbstractBlock;
 use MediaWiki\Block\Block;
@@ -50,19 +51,25 @@ class GlobalBlockingHooks implements
 	/** @var CommentFormatter */
 	private $commentFormatter;
 
+	/** @var CentralIdLookup */
+	private $lookup;
+
 	/**
 	 * @param PermissionManager $permissionManager
 	 * @param Config $mainConfig
 	 * @param CommentFormatter $commentFormatter
+	 * @param CentralIdLookup $lookup
 	 */
 	public function __construct(
 		PermissionManager $permissionManager,
 		Config $mainConfig,
-		CommentFormatter $commentFormatter
+		CommentFormatter $commentFormatter,
+		CentralIdLookup $lookup
 	) {
 		$this->permissionManager = $permissionManager;
 		$this->config = $mainConfig;
 		$this->commentFormatter = $commentFormatter;
+		$this->lookup = $lookup;
 	}
 
 	/**
@@ -216,7 +223,8 @@ class GlobalBlockingHooks implements
 				$sp->getContext(),
 				$conds,
 				$sp->getLinkRenderer(),
-				$this->commentFormatter
+				$this->commentFormatter,
+				$this->lookup
 			);
 			$body = $pager->formatRow( $block );
 

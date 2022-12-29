@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Test\Integration;
 
+use CentralIdLookup;
 use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Config\Config;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlock;
@@ -17,7 +18,8 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 		return new GlobalBlockingHooks(
 			$this->createMock( PermissionManager::class ),
 			$this->createMock( Config::class ),
-			$this->createMock( CommentFormatter::class )
+			$this->createMock( CommentFormatter::class ),
+			$this->createMock( CentralIdLookup::class )
 		);
 	}
 
