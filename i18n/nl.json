@@ -14,7 +14,9 @@
 			"Southparkfan",
 			"Trijnstel",
 			"User555",
-			"McDutchie"
+			"McDutchie",
+			"Nickthijssen1994",
+			"Nieuwsgierige Gebruiker"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Maakt het mogelijk]] IP-adressen [[Special:GlobalBlockList|in meerdere wiki's tegelijk]] te blokkeren",
@@ -22,7 +24,7 @@
 	"globalblocking-block-intro": "U kunt deze pagina gebruiken om een IP-adres op alle wiki's te blokkeren.",
 	"globalblocking-block-reason": "Reden:",
 	"globalblocking-block-reason-dropdown": "* Veel voorkomende blokkaderedenen\n** Spammen in meerdere wiki's\n** Misbruik maken van meerdere wiki's\n** Vandalisme",
-	"globalblocking-block-edit-dropdown": "Lijst van redenen bewerken",
+	"globalblocking-block-edit-dropdown": "Redenen voor blokkeren bewerken",
 	"globalblocking-block-expiry": "Vervalt:",
 	"globalblocking-block-expiry-selector-other": "Andere tijd:",
 	"globalblocking-block-legend": "Een IP-adres globaal blokkeren",
