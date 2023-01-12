@@ -6,6 +6,8 @@
 		]
 	},
 	"globalblocking-block-reason": "Suijâ:",
+	"globalblocking-ipaddress": "IP-čujottâs:",
+	"globalblocking-search-ip": "IP-čujottâs:",
 	"globalblocking-list-unblock": "siho",
 	"globalblocking-unblock-reason": "Suijâ:",
 	"globalblocking-whitelist-reason": "Suijâ:",
