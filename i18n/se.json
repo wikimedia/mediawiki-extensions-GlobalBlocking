@@ -4,5 +4,7 @@
 			"Yupik"
 		]
 	},
+	"globalblocking-ipaddress": "IP-čujuhus:",
+	"globalblocking-search-ip": "IP-čujuhus:",
 	"globalblocking-list-unblock": "sihko"
 }
