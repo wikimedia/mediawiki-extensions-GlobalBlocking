@@ -4,6 +4,8 @@
 			"Yupik"
 		]
 	},
+	"globalblocking-ipaddress": "IP-čujuhus:",
+	"globalblocking-search-ip": "IP-čujuhus:",
 	"globalblocking-list-unblock": "sihko",
 	"globalblocking-expiringblock": "boarásnuvvá $1 $2"
 }
