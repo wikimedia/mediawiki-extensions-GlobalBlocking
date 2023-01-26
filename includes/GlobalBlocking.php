@@ -30,7 +30,7 @@ class GlobalBlocking {
 
 	/**
 	 * @param User $user
-	 * @param string $ip
+	 * @param string|null $ip
 	 * @return GlobalBlock|null
 	 * @throws MWException
 	 */
@@ -70,7 +70,7 @@ class GlobalBlocking {
 
 	/**
 	 * @param User $user
-	 * @param string $ip
+	 * @param string|null $ip
 	 * @return array ['block' => DB row, 'error' => empty or message objects]
 	 * @phan-return array{block:stdClass|null,error:Message[]}
 	 * @throws MWException
