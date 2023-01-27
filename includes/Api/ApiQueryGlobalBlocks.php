@@ -90,8 +90,10 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 			$this->addFields( [ 'gb_range_start', 'gb_range_end' ] );
 		}
 
+		$dbr = $this->getDB();
 		$this->addOption( 'LIMIT', $params['limit'] + 1 );
 		$this->addWhereRange( 'gb_timestamp', $params['dir'], $params['start'], $params['end'] );
+		$this->addWhere( 'gb_expiry > ' . $dbr->addQuotes( $dbr->timestamp() ) );
 		if ( isset( $params['ids'] ) ) {
 			$this->addWhereFld( 'gb_id', $params['ids'] );
 		}
@@ -135,7 +137,6 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 
 			# Fairly hard to make a malicious SQL statement out of hex characters,
 			# but it is good practice to add quotes
-			$dbr = $this->getDB();
 			$lower = $dbr->addQuotes( $lower );
 			$upper = $dbr->addQuotes( $upper );
 
