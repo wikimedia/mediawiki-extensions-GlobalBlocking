@@ -3,7 +3,8 @@
 		"authors": [
 			"Lloffiwr",
 			"Macofe",
-			"Pwyll"
+			"Pwyll",
+			"Afalau"
 		]
 	},
 	"globalblocking-desc": "Yn [[Special:GlobalBlock|galluogi]] cyfeiriadau IP i gael eu [[Special:GlobalBlockList|blocio ar sawl wici gwahanol]]",
@@ -55,7 +56,7 @@
 	"globalblocking-whitelist-statuslabel": "Analluogi'r bloc cyd-wici ar {{SITENAME}}",
 	"globalblocking-whitelist-submit": "Newid y statws lleol",
 	"globalblocking-logpage": "Lòg blocio cydwici",
-	"globalblocking-block-logentry": "wedi rhwystro [[$1]] yn fyd-eang, gan ddod i ben am $2",
+	"globalblocking-block-logentry": "wedi blocio [[$1]] yn gydwici, gan ddod i ben am $2",
 	"globalblocking-logentry-expiry": "yn dod i ben am $1",
 	"globalblocklist": "Rhestr cyfeiriadau IP sydd wedi eu blocio ar bob wici",
 	"globalblockstatus": "Statws lleol y blociau cyd-wici"
