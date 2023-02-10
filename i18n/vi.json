@@ -13,7 +13,7 @@
 	"globalblocking-block": "Cấm một địa chỉ IP trên toàn hệ thống",
 	"globalblocking-block-intro": "Bạn có thể sử dụng trang này để cấm một địa chỉ IP trên tất cả các wiki.",
 	"globalblocking-block-reason": "Lý do:",
-	"globalblocking-block-reason-dropdown": "* Lý do cấm thường gặp\n** Spam liêm wiki\n** Lạm dụng liên wiki\n** Phá hoại",
+	"globalblocking-block-reason-dropdown": "* Lý do cấm thường gặp\n** Spam liên wiki\n** Lạm dụng liên wiki\n** Phá hoại",
 	"globalblocking-block-edit-dropdown": "Sửa đổi các lý do cấm",
 	"globalblocking-block-expiry": "Thời hạn cấm:",
 	"globalblocking-block-expiry-selector-other": "Thời hạn khác:",
