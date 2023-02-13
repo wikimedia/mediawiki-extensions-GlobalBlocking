@@ -82,6 +82,8 @@
 	"globalblocking-block-logentry": "je глобално {{GENDER:|блокирао|блокирала|блокирао/-ла}} [[$1]] у трајању од $2",
 	"globalblocking-block2-logentry": "је глобално блокирао/-ла [[$1]] ($2)",
 	"globalblocking-unblock-logentry": "уклонио глобални блок за [[$1]]",
+	"globalblocking-logentry-whitelist": "$1 је {{GENDER:$2|онемогућио|онемогућила}} глобални блок $3 локално",
+	"globalblocking-logentry-dewhitelist": "$1 је {{GENDER:$2|омогућио|омогућила}} глобални блок $3 локално",
 	"globalblocking-modify-logentry": "глобални блок је промењен над [[$1]] ($2)",
 	"globalblocking-logentry-expiry": "истиче $1",
 	"globalblocking-logentry-noexpiry": "није назначен рок истека",
@@ -105,5 +107,5 @@
 	"log-action-filter-gblblock-modify": "Измена глобалне блокаде",
 	"log-action-filter-gblblock-whitelist": "Додавање беле листе глобалног блокирања",
 	"log-action-filter-gblblock-dwhitelist": "Уклањање беле листе глобалног блокирања",
-	"grant-globalblock": "Глобално блокирање или деблокирање IP адресе"
+	"grant-globalblock": "глобално блокирање или деблокирање IP адресе"
 }
