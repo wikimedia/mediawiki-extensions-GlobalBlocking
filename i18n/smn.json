@@ -9,6 +9,7 @@
 	"globalblocking-ipaddress": "IP-čujottâs:",
 	"globalblocking-search-ip": "IP-čujottâs:",
 	"globalblocking-list-unblock": "siho",
+	"globalblocking-infiniteblock": "avalâš",
 	"globalblocking-unblock-reason": "Suijâ:",
 	"globalblocking-whitelist-reason": "Suijâ:",
 	"globalblocking-block-logentry": "eestij globaallávt kevttee [[$1]]. Iästu pištem $2"
