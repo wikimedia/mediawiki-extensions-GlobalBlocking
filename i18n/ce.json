@@ -7,7 +7,7 @@
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Таро хуьлуьйту]] [[Special:GlobalBlockList|массийтта Википедешан]] чохь IP-адресашан блоктоха",
 	"globalblocking-block-reason": "Бахьана:",
-	"globalblocking-block-edit-dropdown": "Бахьанин могӀам нисбар",
+	"globalblocking-block-edit-dropdown": "Бахьанийн могӀам нисбар",
 	"globalblocking-block-expiry": "Хан чекхйолу:",
 	"globalblocking-block-expiry-selector-other": "Кхин хан:",
 	"globalblocking-modify-success": "Глобалан блоктохар $1 кхиамца хийцина",
