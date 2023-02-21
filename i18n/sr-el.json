@@ -44,7 +44,12 @@
 	"globalblocking-list-whitelisted": "lokalno {{GENDER:$1|onemogućio|onemogućila|onemogućio}} $1: $2",
 	"globalblocking-list-whitelist": "lokalni status",
 	"globalblocking-list-modify": "izmeni",
+	"globalblocking-list-tempblocks": "Sakrij privremene blokade",
+	"globalblocking-list-indefblocks": "Sakrij trajne blokade",
+	"globalblocking-list-addressblocks": "Sakrij blokade pojedinačnih IP adresa",
+	"globalblocking-list-rangeblocks": "Sakrij blokade opsega",
 	"globalblocking-expiringblock": "ističe $1 u $2",
+	"globalblocking-infiniteblock": "trajno",
 	"globalblocking-list-noresults": "Nisu pronađeni rezultati sa pruženim parametrima.",
 	"globalblocking-goto-block": "Blokiraj IP adresu globalno",
 	"globalblocking-goto-unblock": "Ukloni globalni blok",
@@ -77,6 +82,8 @@
 	"globalblocking-block-logentry": "je globalno {{GENDER:|blokirao|blokirala|blokirao/-la}} [[$1]] u trajanju od $2",
 	"globalblocking-block2-logentry": "je globalno blokirao/-la [[$1]] ($2)",
 	"globalblocking-unblock-logentry": "uklonio globalni blok za [[$1]]",
+	"globalblocking-logentry-whitelist": "$1 je {{GENDER:$2|onemogućio|onemogućila}} globalni blok $3 lokalno",
+	"globalblocking-logentry-dewhitelist": "$1 je {{GENDER:$2|omogućio|omogućila}} globalni blok $3 lokalno",
 	"globalblocking-modify-logentry": "globalni blok je promenjen nad [[$1]] ($2)",
 	"globalblocking-logentry-expiry": "ističe $1",
 	"globalblocking-logentry-noexpiry": "nije naznačen rok isteka",
@@ -100,5 +107,5 @@
 	"log-action-filter-gblblock-modify": "Izmena globalne blokade",
 	"log-action-filter-gblblock-whitelist": "Dodavanje bele liste globalnog blokiranja",
 	"log-action-filter-gblblock-dwhitelist": "Uklanjanje bele liste globalnog blokiranja",
-	"grant-globalblock": "Globalno blokiranje ili deblokiranje IP adrese"
+	"grant-globalblock": "globalno blokiranje ili deblokiranje IP adrese"
 }
