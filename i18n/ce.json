@@ -10,6 +10,8 @@
 	"globalblocking-block-edit-dropdown": "Бахьанийн могӀам нисбар",
 	"globalblocking-block-expiry": "Хан чекхйолу:",
 	"globalblocking-block-expiry-selector-other": "Кхин хан:",
+	"globalblocking-block-submit": "Блоктоха хӀокху IP-адресан глобалан",
+	"globalblocking-modify-submit": "Хийцам бе хӀокху глобалан блоктохарна",
 	"globalblocking-modify-success": "Глобалан блоктохар $1 кхиамца хийцина",
 	"globalblocking-block-alreadyblocked": "IP-адрес $1 хӀийнцале глобалан блоктоьхна ду.\nХьан йиш йу дулуш долу блоктохаршка хьажа [[Special:GlobalBlockList|глобалан блоктохарши могӀам]]\nйа йолуш йолу блоктохаран параметраш хийца, йуха хӀара форма дӀайахьийтина.",
 	"globalblocking-list-intro": "ХӀара бу блоктоьхна болу декъашхойн могӀам.",
