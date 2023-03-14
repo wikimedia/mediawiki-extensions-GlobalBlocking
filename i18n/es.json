@@ -52,6 +52,7 @@
 	"globalblocking-bigrange": "El intervalo de direcciones IP que tratas de bloquear ($1) excede del máximo permitido.\nEl intervalo máximo que se permite para las direcciones $2 es /$3.",
 	"globalblocking-also-local": "Bloquear también la dirección IP dada en esta wiki",
 	"globalblocking-also-local-talk": "Impedir que el usuario pueda editar su propia página de discusión localmente",
+	"globalblocking-also-local-email": "Bloquear al usuario para que tampoco pueda enviar correos electrónicos de forma local",
 	"globalblocking-also-local-soft": "Bloquear localmente solo a usuarios anónimos",
 	"globalblocking-list-intro": "Esta es una lista de todos los bloqueos globales que actualmente están en efecto.\nAlgunos bloqueos están marcados como desactivados localmente: esto significa que se aplican en otros sitios, y que un administrador local ha decidido desactivarlos en esta wiki.",
 	"globalblocking-list": "Lista de direcciones IP bloqueadas globalmente",
