@@ -123,5 +123,7 @@
 	"log-action-filter-gblblock-modify": "グローバルブロックの変更",
 	"log-action-filter-gblblock-whitelist": "グローバルブロックのホワイトリストへの追加",
 	"log-action-filter-gblblock-dwhitelist": "グローバルブロックのホワイトリストからの除去",
-	"grant-globalblock": "IPアドレスのグローバルブロックと解除"
+	"grant-globalblock": "IPアドレスのグローバルブロックと解除",
+	"globalblocking-blockedtext-all-wikis": "あなたの IP アドレスはすべてのウィキでブロックされています。",
+	"globalblocking-blockedtext-blocker-admin": "$1に連絡してブロックについて話し合うことができます。"
 }

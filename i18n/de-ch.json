@@ -1,9 +1,0 @@
-{
-	"@metadata": {
-		"authors": [
-			"Geitost"
-		]
-	},
-	"globalblocking-ipblocked": "'''Deine IP-Adresse wurde auf allen Wikis gesperrt.'''\n\nDie Sperrung wurde durchgeführt durch $1 ($2).\nDer angegebene Grund ist ''$3''.\n\n* Beginn der Sperre: $4\n* Ablauf der Sperre: $5\n\nDu kannst dich an $1 wenden, um über die Sperre zu diskutieren.\nDu kannst die Funktion «{{int:emailuser}}» nicht benutzen, bis eine gültige E-Mail-Adresse in deinen [[Special:Preferences|Einstellungen]] angegeben wurde und solange diese Funktion bei dir nicht gesperrt wurde.\nDeine aktuelle IP-Adresse ist $6.\nBitte gib alle oben angegebenen Details in deinen Anfragen an.",
-	"globalblocking-ipblocked-xff": "'''Ein oder mehrere Proxyserver, die für deine Anfrage verwendet werden, ist oder sind global gesperrt.'''\n\nDie Sperrung wurde durchgeführt von  $1 ($2).\nDie angegebene Begründung ist: ''$3''.\n\n* Beginn der Sperre: $4\n* Auslauf der Sperre: $5\n\nDu kannst $1 kontaktieren, um die Sperre zu diskutieren.\nDu kannst die Funktion «{{int:emailuser}}» nicht nutzen, bis eine gültige E-Mail-Adresse in deinen [[Special:Preferences|Einstellungen]] hinterlegt und solange dir die Verwendung dieser Funktion nicht verweigert wurde.\nDie gesperrte Proxy-Adresse war $6.\nBitte gib alle oben stehenden Einzelheiten in deinen Anfragen an."
-}

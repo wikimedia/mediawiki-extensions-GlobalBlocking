@@ -4,7 +4,8 @@
 			"Les Meloures",
 			"Macofe",
 			"Robby",
-			"Soued031"
+			"Soued031",
+			"Volvox"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Erlaabt et]] IP-Adressen op [[Special:GlobalBlockList|méi Wikie mateneen ze spären]]",
@@ -72,8 +73,12 @@
 	"globalblocking-whitelist-dewhitelisted": "Dir hutt d'global Spär #$2 vun der IP-Adress '''$1''' op {{SITENAME}} nees aktivéiert.",
 	"globalblocking-whitelist-nochange": "Dir hutt de lokale Status vun dëser Spär net geännert.",
 	"globalblocking-whitelist-intro": "Dir kënnt dëse Formulaire benotze fir de lokal Status vun enger globaler Spär z'änneren.\nWann eng global Spär op dëser Wiki opgehuewe gëtt, kënne Benotzer déi déi betraffen IP-Adresse benotzen normal Ännerungen maachen.",
-	"globalblocking-ipblocked": "'''Är IP-Adress gouf op alle Wikie gespaart.'''\n\nD'Spär gouf vum $1 ($2) gemaach.\nDe Grond deen ugi gouf ass ''$3''.\n\n* Ufank vun der Spär: $4\n* Enn vun der Spär: $5\n\nDir kënnt Iech un de(n) $1 adresséieren, fir iwwer d'Spär ze diskutéieren.\nDir kënnt d'Funktioun \"{{int:emailuser}}\" net benotzen, bis eng valabel E-Mail-Adress an Ären [[Special:Preferences|Astellungen]] ugi gouf an net fir Iech gespaart gouf.\nÄr aktuell IP-Adress ass $6.\nGitt wgl. alle Detailer déi Dir hei driwwer fannt an Ären Ufroen un.",
-	"globalblocking-ipblocked-xff": "'''Een oder méi Proxy-Serveren déi Dir benotzt ass oder si global gespaart.'''\n\nD'Spär gouf vum $1 ($2) gemaach.\nDe Grond deen ugi gouf, ass ''$3''.\n\n* Ufank vun der Spär: $4\n* Enn vun der Spär: $5\n\nDir kënnt Iech un de(n) $1 adresséieren, fir iwwer d'Spär ze diskutéieren.\nDir kënnt d'Funktioun *{{int:emailuser}}\" net benotzen, bis eng valabel E-Mail-Adress an Ären [[Special:Preferences|Astellungen]] ugi gouf an net fir Iech gespaart gouf.\nDéi blockéiert Proxy-Adress war $6.\nGitt wgl. all Detailer déi Dir hei driwwer fannt an Ären Ufroen un.",
+	"globalblocking-blockedtext-ip": "'''{{int:globalblocking-blockedtext-all-wikis}}'''\n\nD'Spär gouf vum $1 gemaach.\nDe Grond, deen ugi gouf, ass ''$2''.\n\n* Ufank vun der Spär: $8\n* Enn vun der Spär: $6\n\n{{int:globalblocking-blockedtext-blocker-admin|$1}}\n{{int:globalblocking-blockedtext-email-feature}}\nÄr aktuell IP-Adress ass $3.\n{{int:globalblocking-blockedtext-details-queries}}",
+	"globalblocking-blockedtext-range": "'''{{int:globalblocking-blockedtext-on-range}}'''\n\nD'Spär gouf vum $1 gemaach.\nDe Grond, deen ugi gouf, ass ''$2''.\n\n* Ufank vun der Spär: $8\n* Enn vun der Spär: $6\n\n\n{{int:globalblocking-blockedtext-blocker-admin|$1}}\n{{int:globalblocking-blockedtext-email-feature}}\nÄr aktuell IP-Adress ass $3. {{int:globalblocking-blockedtext-ip-range|$7}}\n{{int:globalblocking-blockedtext-details-queries}}",
+	"globalblocking-blockedtext-xff": "'''{{int:globalblocking-blockedtext-on-proxy}}'''\n\nD'Spär gouf vum $1 gemaach.\nDe Grond, deen ugi gouf, ass ''$2''.\n\n* Ufank vun der Spär: $8\n* Enn vun der Spär: $6\n\n{{int:globalblocking-blockedtext-blocker-admin|$1}}\n{{int:globalblocking-blockedtext-email-feature}}\n{{int:globalblocking-blockedtext-proxy|$7}}\n{{int:globalblocking-blockedtext-details-queries}}",
+	"globalblocking-ipblocked": "'''{{int:globalblocking-blockedtext-all-wikis}}'''\n\nD'Spär gouf vum $1 ($2) gemaach.\nDe Grond, deen ugi gouf, ass ''$3''.\n\n* Ufank vun der Spär: $4\n* Enn vun der Spär: $5\n\n{{int:globalblocking-blockedtext-blocker-admin|$1}}\n{{int:globalblocking-blockedtext-email-feature}}\nÄr aktuell IP-Adress ass $6.\n{{int:globalblocking-blockedtext-details-queries}}",
+	"globalblocking-ipblocked-range": "'''{{int:globalblocking-blockedtext-on-range}}'''\n\nD'Spär gouf vum $1 ($2) gemaach.\nDe Grond, deen ugi gouf, ass ''$3''.\n\n* Ufank vun der Spär: $4\n* Enn vun der Spär: $5\n\n{{int:globalblocking-blockedtext-blocker-admin|$1}}\n{{int:globalblocking-blockedtext-email-feature}}\nÄr aktuell IP-Adress ass $6. {{int:globalblocking-blockedtext-ip-range|$7}}\n{{int:globalblocking-blockedtext-details-queries}}",
+	"globalblocking-ipblocked-xff": "'''{{int:globalblocking-blockedtext-on-proxy}}'''\n\nD'Spär gouf vum $1 ($2) gemaach.\nDe Grond, deen ugi gouf, ass ''$3''.\n\n* Ufank vun der Spär: $4\n* Enn vun der Spär: $5\n\n{{int:globalblocking-blockedtext-blocker-admin|$1}}\n{{int:globalblocking-blockedtext-email-feature}}\n{{int:globalblocking-blockedtext-proxy|$7}} {{int:globalblocking-blockedtext-details-queries}}",
 	"globalblocking-blocked-nopassreset": "Dir kënnt  Benotzer-Passwierder net zrécksetze well Är IP-Adress global gespaart ass.",
 	"globalblocking-logpage": "Lëscht vun de globale Spären",
 	"globalblocking-logpagetext": "Dëst ass eng Lëscht vun de globale Spären déi op dëser Wiki gemaach an opgehuewe goufen.\nDir sollt wëssen datt global Spären op anere Wikie gemaach an opgehuewe kënne ginn an datt déi global Spären dës Wiki beaflosse kënnen.\nFir all aktiv global Spären ze gesinn, gitt wgl. op d'[[Special:GlobalBlockList|Lëscht vun de globale Spären]].",
@@ -103,5 +108,12 @@
 	"log-action-filter-gblblock-gblock": "Global Spär",
 	"log-action-filter-gblblock-gunblock": "Global entspären",
 	"log-action-filter-gblblock-modify": "Ännerung vun der globaler Spär",
-	"grant-globalblock": "Eng Ip-Adress global spären oder d'Spär dofir ophiewen"
+	"grant-globalblock": "Eng Ip-Adress global spären oder d'Spär dofir ophiewen",
+	"globalblocking-blockedtext-all-wikis": "Är IP-Adress gouf op all Wiki gespaart.",
+	"globalblocking-blockedtext-on-range": "Är IP-Adress läit an engem Beräich, deen op all Wiki gespaart gouf.",
+	"globalblocking-blockedtext-blocker-admin": "Dir kënnt de Benotzer $1 kontaktéiere fir d'Spär ze diskutéieren.",
+	"globalblocking-blockedtext-email-feature": "Dir kënnt d'Funktioun \"{{int:emailuser}}\" nëmme benotzen, wann Dir eng gülteg E-Mail-Adress an Äre [[Special:Preferences|Benotzerkontastellungen]] uginn hutt an dës Funktioun net fir Iech gespaart gouf.",
+	"globalblocking-blockedtext-ip-range": "De gespaarte Beräich ass $1.",
+	"globalblocking-blockedtext-proxy": "Déi gespaarte Proxyadress war $1.",
+	"globalblocking-blockedtext-details-queries": "Gitt wgl. bei all Ufro, déi Dir maacht, all d'Informatiounen uewe mat un."
 }
