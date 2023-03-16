@@ -114,6 +114,5 @@
 	"globalblocking-blockedtext-blocker-admin": "Dir kënnt de Benotzer $1 kontaktéiere fir d'Spär ze diskutéieren.",
 	"globalblocking-blockedtext-email-feature": "Dir kënnt d'Funktioun \"{{int:emailuser}}\" nëmme benotzen, wann Dir eng gülteg E-Mail-Adress an Äre [[Special:Preferences|Benotzerkontastellungen]] uginn hutt an dës Funktioun net fir Iech gespaart gouf.",
 	"globalblocking-blockedtext-ip-range": "De gespaarte Beräich ass $1.",
-	"globalblocking-blockedtext-proxy": "Déi gespaarte Proxyadress war $1.",
-	"globalblocking-blockedtext-details-queries": "Gitt wgl. bei all Ufro, déi Dir maacht, all d'Informatiounen uewe mat un."
+	"globalblocking-blockedtext-proxy": "Déi gespaarte Proxyadress war $1."
 }

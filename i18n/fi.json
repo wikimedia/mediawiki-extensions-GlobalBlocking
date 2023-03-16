@@ -14,6 +14,7 @@
 			"Nwme",
 			"Olli",
 			"Pxos",
+			"Pyscowicz",
 			"Silvonen",
 			"Str4nd",
 			"Stryn",
@@ -110,5 +111,6 @@
 	"log-action-filter-gblblock": "Globaalin eston tyyppi:",
 	"log-action-filter-gblblock-gblock": "Järjestelmänlaajuinen esto",
 	"log-action-filter-gblblock-gunblock": "Järjestelmänlaajuisen eston poistaminen",
-	"log-action-filter-gblblock-modify": "Järjestelmänlaajuisen eston muokkaaminen"
+	"log-action-filter-gblblock-modify": "Järjestelmänlaajuisen eston muokkaaminen",
+	"globalblocking-blockedtext-blocker-admin": "Voit ottaa yhteyttä käyttäjään $1 keskustellaksesi estosta."
 }

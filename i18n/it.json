@@ -33,6 +33,7 @@
 	"globalblocking-local-failed": "Il blocco locale dell'indirizzo IP non è riuscito poiché è già bloccato su questo wiki",
 	"globalblocking-block-failure": "Si è verificato un errore durante il tentativo di blocco globale di $1. Riprova.",
 	"globalblocking-block-alreadyblocked": "L'indirizzo IP $1 è già bloccato globalmente. È possibile consultare il blocco attivo nell'[[Special:GlobalBlockList|elenco dei blocchi globali]] o modificare le impostazioni del blocco esistente ricompilando questo modulo.",
+	"globalblocking-bigrange": "L'intervallo specificato ($1) supera i limiti.\nIl limite $2 è un intervallo di /$3 .",
 	"globalblocking-also-local": "Blocca l'indirizzo IP anche localmente su questo wiki",
 	"globalblocking-also-local-talk": "Impedisci all'utente di modificare la propria pagina di discussione localmente",
 	"globalblocking-also-local-email": "Impedisci all'utente di inviare email da questo wiki",
@@ -81,6 +82,7 @@
 	"globalblocking-whitelist-dewhitelisted": "Hai riabilitato il blocco globale #$2 sull'indirizzo IP '''$1''' su {{SITENAME}}.",
 	"globalblocking-whitelist-nochange": "Non hai effettuato modifiche allo stato locale di questo blocco.",
 	"globalblocking-whitelist-intro": "È possibile usare questo modulo per modificare lo stato locale di un blocco globale.\nSe un blocco globale è disattivato su questa wiki, gli utenti che utilizzano l'indirizzo IP colpito saranno in grado di effettuare modifiche normalmente.",
+	"globalblocking-blockedtext-ip": "'''{{int:globalblocking-blockedtext-all-wikis}}'''\n\nIl blocco è stato effettuato da $1.\nIl motivo fornito è ''$2''.\n\n* Inizio del blocco: $8\n* Scadenza del blocco: $6\n\n{{int:globalblocking-blockedtext-blocker-admin|$1}}\n{{int:globalblocking-blockedtext-email-feature}}\nIl tuo attuale indirizzo IP è $3.\n{{int:globalblocking-blockedtext-details-queries}}",
 	"globalblocking-blockedtext-range": "'''{{int:globalblocking-blockedtext-on-range}}'''\n\nIl blocco è stato effettuato da $1.\nIl motivo fornito è ''$2''.\n\n* Inizio del blocco: $8\n* Scadenza del blocco: $6\n\n{{int:globalblocking-blockedtext-blocker-admin|$1}}\n{{int:globalblocking-blockedtext-email-feature}}\nIl tuo attuale indirizzo IP è $3. {{int:globalblocking-blockedtext-ip-range|$7}}\n{{int:globalblocking-blockedtext-details-queries}}",
 	"globalblocking-blockedtext-xff": "'''{{int:globalblocking-blockedtext-on-proxy}}'''\n\nIl blocco è stato effettuato da $1.\nIl motivo fornito è ''$2''.\n\n* Inizio del blocco: $8\n* Scadenza del blocco: $6\n\n{{int:globalblocking-blockedtext-blocker-admin|$1}}\n{{int:globalblocking-blockedtext-email-feature}}\n{{int:globalblocking-blockedtext-proxy|$7}}\n{{int:globalblocking-blockedtext-details-queries}}",
 	"globalblocking-ipblocked": "'''{{int:globalblocking-blockedtext-all-wikis}}'''\n\nIl blocco è stato effettuato da $1 ($2).\nIl motivo fornito è ''$3''.\n\n* Inizio del blocco: $4\n* Scadenza del blocco: $5\n\n{{int:globalblocking-blockedtext-blocker-admin|$1}}\n{{int:globalblocking-blockedtext-email-feature}}\nIl tuo attuale indirizzo IP è $6.\n{{int:globalblocking-blockedtext-details-queries}}",
@@ -123,8 +125,9 @@
 	"grant-globalblock": "Bloccare o sbloccare un indirizzo IP globalmente",
 	"globalblocking-blockedtext-all-wikis": "Il tuo indirizzo IP è stato bloccato su tutti i wiki.",
 	"globalblocking-blockedtext-on-range": "Il tuo indirizzo IP è in un intervallo che è stato bloccato su tutti i wiki.",
+	"globalblocking-blockedtext-on-proxy": "Uno o più server proxy utilizzati dalla tua richiesta sono bloccati a livello globale",
 	"globalblocking-blockedtext-blocker-admin": "Puoi contattare $1 per discutere del blocco.",
+	"globalblocking-blockedtext-email-feature": "Non puoi utilizzare la funzione \"{{int:emailuser}}\" finché non hai specificato un indirizzo email valido nelle tue [[Special:Preferences|preferenze utente]] e non ti sia stato impedito di utilizzarla.",
 	"globalblocking-blockedtext-ip-range": "L'intervallo bloccato è $1 .",
-	"globalblocking-blockedtext-proxy": "L'indirizzo proxy bloccato è $1 .",
-	"globalblocking-blockedtext-details-queries": "Si prega di specificare tutti i dettagli qui inclusi nel compilare qualsiasi richiesta di chiarimenti."
+	"globalblocking-blockedtext-proxy": "L'indirizzo proxy bloccato è $1 ."
 }

@@ -128,6 +128,5 @@
 	"globalblocking-blockedtext-blocker-admin": "באפשרותך ליצור קשר עם $1 כדי לדון בחסימה.",
 	"globalblocking-blockedtext-email-feature": "אין לך אפשרות להשתמש בתכונה \"{{int:emailuser}}\" אלא אם כתובת דוא\"ל תקינה מצוינת ב[[Special:Preferences|העדפות החשבון]] שלך ולא נחסמת משימוש בה.",
 	"globalblocking-blockedtext-ip-range": "הטווח החסום הוא $1.",
-	"globalblocking-blockedtext-proxy": "כתובת השרת המתווך החסום הייתה $1.",
-	"globalblocking-blockedtext-details-queries": "יש לציין את כל הפרטים האלה בכל פנייה לבירור החסימה."
+	"globalblocking-blockedtext-proxy": "כתובת השרת המתווך החסום הייתה $1."
 }

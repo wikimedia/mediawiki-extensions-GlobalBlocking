@@ -121,6 +121,5 @@
 	"globalblocking-blockedtext-blocker-admin": "Можете контактирати $1 за више информација.",
 	"globalblocking-blockedtext-email-feature": "Не можете користити функцију „{{int:emailuser}}” ако нисте навели ваљану имејл адресу у вашим [[Special:Preferences|подешавањима]] и ако вам иста није блокирана.",
 	"globalblocking-blockedtext-ip-range": "Блокирани опсег је $1.",
-	"globalblocking-blockedtext-proxy": "Блокирана прокси адреса је $1.",
-	"globalblocking-blockedtext-details-queries": "Наведите све горње податке при захтеву за деблокаду."
+	"globalblocking-blockedtext-proxy": "Блокирана прокси адреса је $1."
 }

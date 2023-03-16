@@ -135,6 +135,5 @@
 	"globalblocking-blockedtext-blocker-admin": "Você pode contactar $1 para discutir o bloqueio.",
 	"globalblocking-blockedtext-email-feature": "Você não pode usar a ferramenta \"{{int:emailuser}}\" a não ser que um endereço de email válido seja especificado nas suas [[Special:Preferences|account preferences]] e você não tenha sido bloqueado de usar-lo.",
 	"globalblocking-blockedtext-ip-range": "A extensão do bloqueio é de $1.",
-	"globalblocking-blockedtext-proxy": "O endereço proxy bloqueado era $1.",
-	"globalblocking-blockedtext-details-queries": "Inclua todos os detalhes acima em quaisquer consultas que fizer, por favor."
+	"globalblocking-blockedtext-proxy": "O endereço proxy bloqueado era $1."
 }

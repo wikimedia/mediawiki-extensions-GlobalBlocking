@@ -127,12 +127,11 @@
 	"log-action-filter-gblblock-whitelist": "Hinzufügung zur weißen Liste für globale Sperren",
 	"log-action-filter-gblblock-dwhitelist": "Entfernung von der weißen Liste für globale Sperren",
 	"grant-globalblock": "Global eine IP-Adresse sperren oder freigeben",
-	"globalblocking-blockedtext-all-wikis": "Deine IP-Adresse wurde auf allen Wikis gesperrt.",
-	"globalblocking-blockedtext-on-range": "Deine IP-Adresse liegt in einem Bereich, der auf allen Wikis gesperrt wurde.",
-	"globalblocking-blockedtext-on-proxy": "Einer oder mehrere Proxy-Server, die von deiner Anfrage verwendet werden, sind global gesperrt",
+	"globalblocking-blockedtext-all-wikis": "Deine IP-Adresse wurde [[m:Special:MyLanguage/Global blocks|auf allen Wikis gesperrt]].",
+	"globalblocking-blockedtext-on-range": "Deine IP-Adresse liegt in einem Bereich, der auf [[m:Special:MyLanguage/Global blocks|allen Wikis der Wikimedia Foundation gesperrt]] wurde.",
+	"globalblocking-blockedtext-on-proxy": "Einer oder mehrere Proxy-Server, die von deiner Anfrage verwendet werden, sind [[m:Special:MyLanguage/Global blocks|global gesperrt]].",
 	"globalblocking-blockedtext-blocker-admin": "Du kannst dich an $1 wenden, um über die Sperre zu diskutieren.",
 	"globalblocking-blockedtext-email-feature": "Du kannst die Funktion „{{int:emailuser}}“ nur benutzen, wenn eine gültige E-Mail-Adresse in deinen [[Special:Preferences|Einstellungen]] angegeben wurde und diese Funktion bei dir nicht gesperrt wurde.",
 	"globalblocking-blockedtext-ip-range": "Der gesperrte Bereich ist $1.",
-	"globalblocking-blockedtext-proxy": "Die gesperrte Proxyadresse war $1.",
-	"globalblocking-blockedtext-details-queries": "Bitte gib alle oben angegebenen Details in deinen Anfragen an."
+	"globalblocking-blockedtext-proxy": "Die gesperrte Proxyadresse war $1."
 }
