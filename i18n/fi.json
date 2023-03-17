@@ -58,7 +58,7 @@
 	"globalblocking-list-modify": "muuta",
 	"globalblocking-expiringblock": "vanhentuu $1 kello $2",
 	"globalblocking-infiniteblock": "ikuinen",
-	"globalblocking-list-noresults": "Pyydettyä IP-osoitetta ei ole estetty.",
+	"globalblocking-list-noresults": "Annetuilla parametreilla ei löytynyt tuloksia.",
 	"globalblocking-goto-block": "Estä IP-osoite järjestelmänlaajuisesti",
 	"globalblocking-goto-unblock": "Poista järjestelmänlaajuinen esto",
 	"globalblocking-goto-status": "Vaihda järjestelmänlaajuisen eston paikallista tilaa",
@@ -82,8 +82,8 @@
 	"globalblocking-whitelist-dewhitelisted": "Olet uudelleenkytkenyt IP-osoitteen '''$1''' järjestelmänlaajuisen eston #$2 {{GRAMMAR:inessive|{{SITENAME}}}}.",
 	"globalblocking-whitelist-nochange": "Et tehnyt muutoksia tämän eston paikalliseen tilaan.",
 	"globalblocking-whitelist-intro": "Voit käyttää tätä lomaketta järjestelmänlaajuisen eston paikallisten vaikutusten muuttamiseen. \n\nJos järjestelmänlaajuinen esto poistetaan käytöstä tässä wikissä, käyttäjät joiden IP-osoitteisiin esto vaikuttaa voivat muokata normaalisti.",
-	"globalblocking-ipblocked": "'''IP-osoitteesi on estetty kaikissa wikeissä.'''\n\nEston on asettanut $1 ($2).\nSyy: ''$3''.\n\n* Eston alkamisaika: $4\n* Eston päättymisaika: $5\n\nVoit ottaa yhteyttä käyttäjään $1 keskustellaksesi estosta.\nEt pysty käyttämään toimintoa ”{{int:emailuser}}” ellet ole asettanut voimassa olevaa sähköpostiosoitetta [[Special:Preferences|asetuksissasi]] tai jos esto on asetettu koskemaan myös sähköpostin lähettämistä.\nIP-osoitteesi on $6.\nLiitä kaikki yllä olevat tiedot mahdollisiin kyselyihisi.",
-	"globalblocking-ipblocked-range": "'''IP-osoitteesi on estetty kaikissa wikeissä.'''\n\nEston on asettanut $1 ($2).\nSyy: ''$3''.\n\n* Eston alkamisaika: $4\n* Eston päättymisaika: $5\n\nVoit ottaa yhteyttä käyttäjään $1 keskustellaksesi estosta.\nEt pysty käyttämään toimintoa ”{{int:emailuser}}” ellet ole asettanut voimassa olevaa sähköpostiosoitetta [[Special:Preferences|asetuksissasi]] tai jos esto on asetettu koskemaan myös sähköpostin lähettämistä.\nNykyinen IP-osoitteesi on $6 ja estetty osoiteavaruus on $7.\nLiitä kaikki yllä olevat tiedot mahdollisiin kyselyihisi.",
+	"globalblocking-ipblocked": "'''{{int:globalblocking-blockedtext-all-wikis}}'''\n\nEston on asettanut $1 ($2).\n{{int:blockedtext-reason-comment|$3}}.\n\n* {{int:blockedtext-start-time|$4}}\n* {{int:blockedtext-expiration-time|$5}}\n\n{{int:globalblocking-blockedtext-blocker-admin|$1}}\n{{int:globalblocking-blockedtext-email-feature}}\n{{int:blockedtext-block-ip|$6}}\n{{int:blockedtext-include-details-queries}}",
+	"globalblocking-ipblocked-range": "'''{{int:globalblocking-blockedtext-on-range}}'''\n\nEston on asettanut $1 ($2).\n{{int:blockedtext-reason-comment|$3}}.\n\n* {{int:blockedtext-start-time|$4}}\n* {{int:blockedtext-expiration-time|$5}}\n\n{{int:globalblocking-blockedtext-blocker-admin|$1}}\n{{int:globalblocking-blockedtext-email-feature}}\n{{int:blockedtext-block-ip|$6}} {{int:globalblocking-blockedtext-ip-range|$7}}\n{{int:blockedtext-include-details-queries}}",
 	"globalblocking-blocked-nopassreset": "Et voi palauttaa käyttäjien salasanoja, koska IP-osoitteesi on estetty järjestelmänlaajuisesti.",
 	"globalblocking-logpage": "Järjestelmänlaajuisten estojen loki",
 	"globalblocking-logpagetext": "Tämä on loki tässä wikissä tehdyistä ja poistetuista järjestelmänlaajuisista estoista.\nJärjestelmänlaajuisia estoja voi tehdä ja poistaa myös muissa wikeissä, ja ne voivat vaikuttaa tähän wikiin.\nKaikki voimassa olevat järjestelmänlaajuiset estot ovat [[Special:GlobalBlockList|järjestelmänlaajuisten estojen listalla]].",
@@ -112,5 +112,8 @@
 	"log-action-filter-gblblock-gblock": "Järjestelmänlaajuinen esto",
 	"log-action-filter-gblblock-gunblock": "Järjestelmänlaajuisen eston poistaminen",
 	"log-action-filter-gblblock-modify": "Järjestelmänlaajuisen eston muokkaaminen",
-	"globalblocking-blockedtext-blocker-admin": "Voit ottaa yhteyttä käyttäjään $1 keskustellaksesi estosta."
+	"globalblocking-blockedtext-all-wikis": "IP-osoitteesi on estetty kaikissa wikeissä.",
+	"globalblocking-blockedtext-on-range": "IP-osoitteesi on alueella, joka on estetty kaikissa wikeissä.",
+	"globalblocking-blockedtext-blocker-admin": "Voit ottaa yhteyttä käyttäjään $1 keskustellaksesi estosta.",
+	"globalblocking-blockedtext-email-feature": "Et pysty käyttämään toimintoa ”{{int:emailuser}}” ellet ole asettanut voimassa olevaa sähköpostiosoitetta [[Special:Preferences|asetuksissasi]] tai jos esto on asetettu koskemaan myös sähköpostin lähettämistä."
 }
