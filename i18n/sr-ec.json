@@ -45,7 +45,7 @@
 	"globalblocking-list-expiry": "истиче $1",
 	"globalblocking-list-anononly": "само анонимне",
 	"globalblocking-list-unblock": "уклони",
-	"globalblocking-list-whitelisted": "локално {{GENDER:$1|онемогућио|онемогућила|онемогућио}} $1: $2",
+	"globalblocking-list-whitelisted": "локално онемогућио $1: $2",
 	"globalblocking-list-whitelist": "локални статус",
 	"globalblocking-list-modify": "измени",
 	"globalblocking-list-tempblocks": "Сакриј привремене блокаде",
