@@ -33,6 +33,7 @@
 	"globalblocking-local-failed": "Il blocco locale dell'indirizzo IP non è riuscito poiché è già bloccato su questo wiki",
 	"globalblocking-block-failure": "Si è verificato un errore durante il tentativo di blocco globale di $1. Riprova.",
 	"globalblocking-block-alreadyblocked": "L'indirizzo IP $1 è già bloccato globalmente. È possibile consultare il blocco attivo nell'[[Special:GlobalBlockList|elenco dei blocchi globali]] o modificare le impostazioni del blocco esistente ricompilando questo modulo.",
+	"globalblocking-bigrange": "L'intervallo specificato ($1) supera i limiti.\nIl limite $2 è un intervallo di /$3 .",
 	"globalblocking-also-local": "Blocca l'indirizzo IP anche localmente su questo wiki",
 	"globalblocking-also-local-talk": "Impedisci all'utente di modificare la propria pagina di discussione localmente",
 	"globalblocking-also-local-soft": "Blocca localmente solo utenti anonimi",

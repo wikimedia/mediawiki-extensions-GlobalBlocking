@@ -18,7 +18,8 @@
 			"Str4nd",
 			"Stryn",
 			"Tarmo",
-			"Valtlait"
+			"Valtlait",
+			"Pyscowicz"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Mahdollistaa]] IP-osoitteiden [[Special:GlobalBlockList|estämisen useasta wikistä kerralla]].",
@@ -57,7 +58,7 @@
 	"globalblocking-list-modify": "muuta",
 	"globalblocking-expiringblock": "vanhentuu $1 kello $2",
 	"globalblocking-infiniteblock": "ikuinen",
-	"globalblocking-list-noresults": "Pyydettyä IP-osoitetta ei ole estetty.",
+	"globalblocking-list-noresults": "Annetuilla parametreilla ei löytynyt tuloksia.",
 	"globalblocking-goto-block": "Estä IP-osoite järjestelmänlaajuisesti",
 	"globalblocking-goto-unblock": "Poista järjestelmänlaajuinen esto",
 	"globalblocking-goto-status": "Vaihda järjestelmänlaajuisen eston paikallista tilaa",
