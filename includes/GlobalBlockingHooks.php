@@ -153,12 +153,16 @@ class GlobalBlockingHooks implements
 	 * the global block into a CompositeBlock.
 	 *
 	 * @param User $user
-	 * @param string|null $ip
+	 * @param string|null $ip null unless we're checking the session user
 	 * @param AbstractBlock|null &$block
 	 * @return bool
 	 */
 	public function onGetUserBlock( $user, $ip, &$block ) {
 		if ( !$this->config->get( 'ApplyGlobalBlocks' ) ) {
+			return true;
+		}
+
+		if ( $ip === null && !IPUtils::isIPAddress( $user->getName() ) ) {
 			return true;
 		}
 
