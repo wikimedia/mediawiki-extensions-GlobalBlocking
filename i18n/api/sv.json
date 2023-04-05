@@ -13,7 +13,7 @@
 	"apihelp-globalblock-param-expiry": "Om angivet, blockeras eller återblockeras användaren. Avgör hur länge blockeringen pågår, t.ex. \"5 months\" eller \"2 weeks\". Om satt till \"infinite\" eller \"indefinite\" löper blockeringen aldrig ut.",
 	"apihelp-globalblock-param-unblock": "Om angivet, avblockeras användaren.",
 	"apihelp-globalblock-param-reason": "Motivationen för blockering/avblockering.",
-	"apihelp-globalblock-param-anononly": "Ange detta ifall blockeringen enbart ska påverka utloggade användare.",
+	"apihelp-globalblock-param-anononly": "Ange detta ifall blockeringen enbart ska påverka utloggade användare globalt.",
 	"apihelp-globalblock-param-modify": "Specificera denna om den existerande blockeringen av målet ska ändras",
 	"apihelp-globalblock-example-1": "Blockera 192.0.2.1 på obestämd tid med anledningen \"Cross-wiki abuse\"",
 	"apihelp-query+globalblocks-description": "Lista alla globalt blockerade IP-adresser",
@@ -28,5 +28,6 @@
 	"apihelp-query+globalblocks-example-1": "Lista alla globala blockerinar",
 	"apihelp-query+globalblocks-example-2": "Lista globala blockeringar som gäller för IP-adress 192.0.2.18",
 	"apihelp-globalblock-param-alsolocal": "Blockera även IP-adressen lokalt",
-	"apihelp-globalblock-param-localblockstalk": "Återkalla åtkomst till samtalssidan lokalt"
+	"apihelp-globalblock-param-localblockstalk": "Återkalla åtkomst till samtalssidan lokalt",
+	"apihelp-globalblock-param-localanononly": "Ange detta ifall blockeringen enbart ska påverka utloggade användare lokalt."
 }
