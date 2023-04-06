@@ -131,5 +131,12 @@
 	"log-action-filter-gblblock-modify": "Modification du blocage global",
 	"log-action-filter-gblblock-whitelist": "Ajout à la liste blanche du blocage global",
 	"log-action-filter-gblblock-dwhitelist": "Retrait de la liste blanche du blocage global",
-	"grant-globalblock": "Bloquer ou débloquer globalement une adresse IP"
+	"grant-globalblock": "Bloquer ou débloquer globalement une adresse IP",
+	"globalblocking-blockedtext-all-wikis": "Votre adresse IP a été bloquée sur tous les wikis.",
+	"globalblocking-blockedtext-on-range": "Votre adresse IP est dans une plage qui a été bloquée sur tous les wikis de la Fondation Wikimedia.",
+	"globalblocking-blockedtext-on-proxy": "Un ou plusieurs serveurs mandataires utilisés par votre requête sont globalement bloqués.",
+	"globalblocking-blockedtext-blocker-admin": "Vous pouvez contacter $1 pour discuter du blocage.",
+	"globalblocking-blockedtext-email-feature": "Vous ne pouvez pas utiliser la fonctionnalité « {{int:emailuser}} » à moins qu’une adresse de courriel valide ne soit spécifiée dans vos [[Special:Preferences|préférences de compte]] et que vous n’ayez pas été empêché de l’utiliser.",
+	"globalblocking-blockedtext-ip-range": "La plage bloquée est $1.",
+	"globalblocking-blockedtext-proxy": "L’adresse du mandataire bloqué était $1."
 }

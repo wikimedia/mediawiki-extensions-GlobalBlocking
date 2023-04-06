@@ -19,7 +19,8 @@
 			"Vlad5250",
 			"Zpizza",
 			"Александр Сигачёв",
-			"Камалист"
+			"Камалист",
+			"Renat"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Разрешает]] блокировку IP-адресов [[Special:GlobalBlockList|в нескольких вики]]",
@@ -122,5 +123,7 @@
 	"log-action-filter-gblblock-modify": "Изменение глобальной блокировки",
 	"log-action-filter-gblblock-whitelist": "Добавление глобального блока в белый список",
 	"log-action-filter-gblblock-dwhitelist": "Удаление глобального блока в белый список",
-	"grant-globalblock": "Глобально заблокировать или разблокировать IP-адрес."
+	"grant-globalblock": "Глобально заблокировать или разблокировать IP-адрес.",
+	"globalblocking-blockedtext-blocker-admin": "Вы можете связаться с $1, чтобы обсудить блокировку.",
+	"globalblocking-blockedtext-proxy": "Заблокированный прокси-адрес был $1."
 }

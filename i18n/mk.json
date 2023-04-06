@@ -115,5 +115,12 @@
 	"log-action-filter-gblblock-modify": "Измена на глобален блок",
 	"log-action-filter-gblblock-whitelist": "Додавање на белиот список за глобално блокирање",
 	"log-action-filter-gblblock-dwhitelist": "Отстранување од белиот список за глобално блокирање",
-	"grant-globalblock": "Глобално блокирајте или одблокирајте IP-адреса"
+	"grant-globalblock": "Глобално блокирајте или одблокирајте IP-адреса",
+	"globalblocking-blockedtext-all-wikis": "Вашата IP-адреса е блокирана на сите викија.",
+	"globalblocking-blockedtext-on-range": "Вашата IP-адреса се наоѓа во опсег блокиран на сите викија.",
+	"globalblocking-blockedtext-on-proxy": "Еден или повеќе застапнички опслужувачи кои ги користите се глобално блокирани",
+	"globalblocking-blockedtext-blocker-admin": "Можете да се обратите кај $1 за да поразговарате за блокот.",
+	"globalblocking-blockedtext-email-feature": "Не можете да ја користите можноста „{{int:emailuser}}“ ако немате внесено важечка е-поштенска адреса во [[Special:Preferences|нагодувањата на сметката]] и ако ви е забрането да ја употребувате.",
+	"globalblocking-blockedtext-ip-range": "Блокираниот опсег е $1.",
+	"globalblocking-blockedtext-proxy": "Блокираната застапничка адреса е $1."
 }

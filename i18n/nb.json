@@ -114,5 +114,6 @@
 	"log-action-filter-gblblock-modify": "Endring av global blokkering",
 	"log-action-filter-gblblock-whitelist": "Tillegg til hvitelista for global blokkering",
 	"log-action-filter-gblblock-dwhitelist": "Fjerning fra hvitelista for global blokkering",
-	"grant-globalblock": "Blokker eller avblokker ei IP-adresse globalt"
+	"grant-globalblock": "Blokker eller avblokker ei IP-adresse globalt",
+	"globalblocking-blockedtext-all-wikis": "IP-adressen din er blokkert på alle wikier."
 }

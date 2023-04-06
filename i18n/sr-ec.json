@@ -45,7 +45,7 @@
 	"globalblocking-list-expiry": "истиче $1",
 	"globalblocking-list-anononly": "само анонимне",
 	"globalblocking-list-unblock": "уклони",
-	"globalblocking-list-whitelisted": "локално {{GENDER:$1|онемогућио|онемогућила|онемогућио}} $1: $2",
+	"globalblocking-list-whitelisted": "локално онемогућио $1: $2",
 	"globalblocking-list-whitelist": "локални статус",
 	"globalblocking-list-modify": "измени",
 	"globalblocking-list-tempblocks": "Сакриј привремене блокаде",
@@ -111,5 +111,12 @@
 	"log-action-filter-gblblock-modify": "Измена глобалне блокаде",
 	"log-action-filter-gblblock-whitelist": "Додавање беле листе глобалног блокирања",
 	"log-action-filter-gblblock-dwhitelist": "Уклањање беле листе глобалног блокирања",
-	"grant-globalblock": "глобално блокирање или деблокирање IP адресе"
+	"grant-globalblock": "глобално блокирање или деблокирање IP адресе",
+	"globalblocking-blockedtext-all-wikis": "Ваша IP адреса је блокирана на свим викијима.",
+	"globalblocking-blockedtext-on-range": "Ваша IP адреса је у опсегу који је блокиран на свим викијима.",
+	"globalblocking-blockedtext-on-proxy": "Један или више прокси сервера које користите су глобално блокирани",
+	"globalblocking-blockedtext-blocker-admin": "Можете контактирати $1 за више информација.",
+	"globalblocking-blockedtext-email-feature": "Не можете користити функцију „{{int:emailuser}}” ако нисте навели ваљану имејл адресу у вашим [[Special:Preferences|подешавањима]] и ако вам иста није блокирана.",
+	"globalblocking-blockedtext-ip-range": "Блокирани опсег је $1.",
+	"globalblocking-blockedtext-proxy": "Блокирана прокси адреса је $1."
 }

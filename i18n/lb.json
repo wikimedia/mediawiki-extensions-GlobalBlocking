@@ -4,7 +4,8 @@
 			"Les Meloures",
 			"Macofe",
 			"Robby",
-			"Soued031"
+			"Soued031",
+			"Volvox"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Erlaabt et]] IP-Adressen op [[Special:GlobalBlockList|méi Wikie mateneen ze spären]]",
@@ -103,5 +104,11 @@
 	"log-action-filter-gblblock-gblock": "Global Spär",
 	"log-action-filter-gblblock-gunblock": "Global entspären",
 	"log-action-filter-gblblock-modify": "Ännerung vun der globaler Spär",
-	"grant-globalblock": "Eng Ip-Adress global spären oder d'Spär dofir ophiewen"
+	"grant-globalblock": "Eng Ip-Adress global spären oder d'Spär dofir ophiewen",
+	"globalblocking-blockedtext-all-wikis": "Är IP-Adress gouf op all Wiki gespaart.",
+	"globalblocking-blockedtext-on-range": "Är IP-Adress läit an engem Beräich, deen op all Wiki gespaart gouf.",
+	"globalblocking-blockedtext-blocker-admin": "Dir kënnt de Benotzer $1 kontaktéiere fir d'Spär ze diskutéieren.",
+	"globalblocking-blockedtext-email-feature": "Dir kënnt d'Funktioun \"{{int:emailuser}}\" nëmme benotzen, wann Dir eng gülteg E-Mail-Adress an Äre [[Special:Preferences|Benotzerkontastellungen]] uginn hutt an dës Funktioun net fir Iech gespaart gouf.",
+	"globalblocking-blockedtext-ip-range": "De gespaarte Beräich ass $1.",
+	"globalblocking-blockedtext-proxy": "Déi gespaarte Proxyadress war $1."
 }

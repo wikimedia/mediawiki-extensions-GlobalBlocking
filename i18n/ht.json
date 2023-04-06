@@ -48,5 +48,6 @@
 	"globalblocklist": "Lis Adrès IP bloke globalman yo",
 	"globalblock": "Bloke yon adrès IP globalman",
 	"right-globalblock": "Fè blokaj global",
-	"right-globalblock-whitelist": "Dezame blokaj global yo lokalman"
+	"right-globalblock-whitelist": "Dezame blokaj global yo lokalman",
+	"globalblocking-blockedtext-proxy": "Adrès proxy ki bloke a te $1."
 }

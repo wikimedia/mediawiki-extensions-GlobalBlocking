@@ -117,5 +117,12 @@
 	"log-action-filter-gblblock-modify": "Sprememba globalnega blokiranja",
 	"log-action-filter-gblblock-whitelist": "Dodajanje na beli seznam globalnega blokiranja",
 	"log-action-filter-gblblock-dwhitelist": "Odstranitev belega seznama globalnega blokiranja",
-	"grant-globalblock": "Globalno blokiranje ali odblokiranje IP-naslovov"
+	"grant-globalblock": "Globalno blokiranje ali odblokiranje IP-naslovov",
+	"globalblocking-blockedtext-all-wikis": "Vaš IP-naslov je blokiran v vseh vikijih.",
+	"globalblocking-blockedtext-on-range": "Vaš IP-naslov je v razponu, ki je blokiran v vseh vikijih.",
+	"globalblocking-blockedtext-on-proxy": "Eden ali več posredniških strežnikov, ki jih uporablja vaš zahtevek, je globalno blokiranih",
+	"globalblocking-blockedtext-blocker-admin": "Za pogovor o blokiranju se lahko obrnete na $1.",
+	"globalblocking-blockedtext-email-feature": "Možnosti »{{int:emailuser}}« ne morete uporabljati, razen če veljaven e-poštni naslov ni naveden v vaših [[Special:Preferences|nastavitvah računa]] in če vam uporaba ni bila blokirana.",
+	"globalblocking-blockedtext-ip-range": "Blokirani razpon je $1.",
+	"globalblocking-blockedtext-proxy": "Blokirani posredniški naslov je $1."
 }

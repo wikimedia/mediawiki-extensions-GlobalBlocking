@@ -105,5 +105,12 @@
 	"log-action-filter-gblblock-modify": "Globaalse blokeeringu muutmine",
 	"log-action-filter-gblblock-whitelist": "Globaalse blokeeringu lisamine valgesse nimekirja",
 	"log-action-filter-gblblock-dwhitelist": "Globaalse blokeeringu eemaldamine valgest nimekirjast",
-	"grant-globalblock": "IP-aadressi globaalne blokeerimine või sellise blokeeringu eemaldamine"
+	"grant-globalblock": "IP-aadressi globaalne blokeerimine või sellise blokeeringu eemaldamine",
+	"globalblocking-blockedtext-all-wikis": "Sinu IP-aadress on kõigis vikides blokeeritud.",
+	"globalblocking-blockedtext-on-range": "Sinu IP-aadress on vahemikus, mis on kõigis vikides blokeeritud.",
+	"globalblocking-blockedtext-on-proxy": "Vähemalt üks sinu päringus kasutatud proksiserveritest on globaalselt blokeeritud.",
+	"globalblocking-blockedtext-blocker-admin": "Et blokeeringut arutada, saad võtta ühendust kasutajaga $1.",
+	"globalblocking-blockedtext-email-feature": "Funktsiooni \"{{int:emailuser}}\" saad kasutada vaid siis, kui sinu [[Special:Preferences|konto eelistustes]] on määratud sobiv e-posti aadressi ja kui sul pole keelatud seda kasutada.",
+	"globalblocking-blockedtext-ip-range": "Blokeeritud vahemik on $1.",
+	"globalblocking-blockedtext-proxy": "Blokeeritud proksi aadress oli $1."
 }

@@ -9,7 +9,8 @@
 			"Yonidebest",
 			"אור שפירא",
 			"לואיקה",
-			"ערן"
+			"ערן",
+			"Dee"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|אפשרות]] ל[[Special:GlobalBlockList|חסימה גלובלית בין אתרי הוויקי]] של כתובות IP",
@@ -104,7 +105,7 @@
 	"globalblocking-contribs-block": "לחסום גלובלית את כתובת ה־IP הזאת",
 	"globalblocking-contribs-modify": "לשנות את החסימה הגלובלית",
 	"globalblocking-contribs-remove": "להסיר את החסימה הגלובלית",
-	"globalblocklist": "רשימת כתובות IP החסומות באופן גלובלי",
+	"globalblocklist": "רשימת כתובות IP חסומות גלובלית",
 	"globalblock": "חסימה גלובלית של כתובת IP",
 	"globalblockstatus": "המצב המקומי של החסימות הגלובליות",
 	"removeglobalblock": "הסרת חסימה גלובלית",
@@ -121,5 +122,12 @@
 	"log-action-filter-gblblock-modify": "שינויים של חסימות גלובליות",
 	"log-action-filter-gblblock-whitelist": "הוספות של חסימות גלובליות לרשימה הלבנה",
 	"log-action-filter-gblblock-dwhitelist": "הסרות של חסימות גלובליות מהרשימה הלבנה",
-	"grant-globalblock": "חסימה או שחרור חסימה של כתובות IP באופן גלובלי"
+	"grant-globalblock": "חסימה או שחרור חסימה של כתובות IP באופן גלובלי",
+	"globalblocking-blockedtext-all-wikis": "כתובת ה־IP שלך בכל אתרי הוויקי.",
+	"globalblocking-blockedtext-on-range": "כתובת ה־IP שלך נמצאת בטווח שנחסם בכל אתרי הוויקי.",
+	"globalblocking-blockedtext-on-proxy": "שרת מתווך (פרוקסי) אחד או יותר ששימש בבקשה שלך חסום גלובלית.",
+	"globalblocking-blockedtext-blocker-admin": "באפשרותך ליצור קשר עם $1 כדי לדון בחסימה.",
+	"globalblocking-blockedtext-email-feature": "אין לך אפשרות להשתמש בתכונה \"{{int:emailuser}}\" אלא אם כתובת דוא\"ל תקינה מצוינת ב[[Special:Preferences|העדפות החשבון]] שלך ולא נחסמת משימוש בה.",
+	"globalblocking-blockedtext-ip-range": "הטווח החסום הוא $1.",
+	"globalblocking-blockedtext-proxy": "כתובת השרת המתווך החסום הייתה $1."
 }

@@ -16,7 +16,8 @@
 			"Macofe",
 			"Rafael Vargas",
 			"Sir Lestaty de Lioncourt",
-			"Stanglavine"
+			"Stanglavine",
+			"Re demz"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permite]] que endereços IP sejam [[Special:GlobalBlockList|bloqueados através de múltiplos wikis]]",
@@ -124,5 +125,12 @@
 	"log-action-filter-gblblock-modify": "Modificação do bloqueio global",
 	"log-action-filter-gblblock-whitelist": "Adição de bloqueio global à lista branca",
 	"log-action-filter-gblblock-dwhitelist": "Remoção do bloqueio global da lista branca",
-	"grant-globalblock": "Bloquear ou desbloquear globalmente um endereço IP"
+	"grant-globalblock": "Bloquear ou desbloquear globalmente um endereço IP",
+	"globalblocking-blockedtext-all-wikis": "Seu endereço IP foi bloqueado em todas as wikis.",
+	"globalblocking-blockedtext-on-range": "Seu endereço IP está em uma faixa que foi bloqueada em todas as wikis.",
+	"globalblocking-blockedtext-on-proxy": "Um ou mais servidores proxy usados no seu pedido foram bloqueados globalmente.",
+	"globalblocking-blockedtext-blocker-admin": "Você pode contactar $1 para discutir o bloqueio.",
+	"globalblocking-blockedtext-email-feature": "Você não pode usar a ferramenta \"{{int:emailuser}}\" a não ser que um endereço de email válido seja especificado nas suas [[Special:Preferences|account preferences]] e você não tenha sido bloqueado de usar-lo.",
+	"globalblocking-blockedtext-ip-range": "A extensão do bloqueio é de $1.",
+	"globalblocking-blockedtext-proxy": "O endereço proxy bloqueado era $1."
 }

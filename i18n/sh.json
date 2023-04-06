@@ -115,5 +115,8 @@
 	"log-action-filter-gblblock-modify": "Promjena globalne blokade",
 	"log-action-filter-gblblock-whitelist": "Dodavanje na globalnu bijelu listu blokiranja",
 	"log-action-filter-gblblock-dwhitelist": "Uklanjanje s globalne bijele liste blokiranja",
-	"grant-globalblock": "Globalno blokirajte ili deblokirajte IP-adresu"
+	"grant-globalblock": "Globalno blokirajte ili deblokirajte IP-adresu",
+	"globalblocking-blockedtext-all-wikis": "Vaša IP-adresa je blokirana na svim vikijima.",
+	"globalblocking-blockedtext-on-range": "Vaša IP-adresa je u rasponu blokiran na svim vikijima.",
+	"globalblocking-blockedtext-on-proxy": "Jedan ili više proksi servera koje koristite su globalno blokirani"
 }
