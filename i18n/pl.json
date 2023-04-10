@@ -17,6 +17,7 @@
 			"Railfail536",
 			"Sp5uhe",
 			"WTM",
+			"WaldiSt",
 			"Woytecr"
 		]
 	},
@@ -126,5 +127,9 @@
 	"log-action-filter-gblblock-modify": "Zmiana blokady globalnej",
 	"log-action-filter-gblblock-whitelist": "Dodanie na białą listę blokady globalnej",
 	"log-action-filter-gblblock-dwhitelist": "Usunięcie z białej listy blokady globalnej",
-	"grant-globalblock": "Globalnie zablokuj lub odblokuj adres IP"
+	"grant-globalblock": "Globalnie zablokuj lub odblokuj adres IP",
+	"globalblocking-blockedtext-all-wikis": "Twój adres IP został zablokowany na wszystkich wiki.",
+	"globalblocking-blockedtext-on-proxy": "Co najmniej jeden serwer proxy używany przez Twoje żądanie jest globalnie zablokowany",
+	"globalblocking-blockedtext-ip-range": "Zablokowany zakres to $1 .",
+	"globalblocking-blockedtext-proxy": "Zablokowany adres proxy to $1."
 }
