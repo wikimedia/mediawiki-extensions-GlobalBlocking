@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"PROBUS"
+			"PROBUS",
+			"Amire80"
 		]
 	},
-	"globalblocking-blockedtext-all-wikis": "A fo IP aderɛse pɔgɛɛ la"
+	"globalblocking-blockedtext-all-wikis": "A fo IP aderɛse pɔgɛɛ la",
+	"globalblocking-blockedtext-proxy": "A sɛgre yeli nyɔgeraa wa la $1."
 }
