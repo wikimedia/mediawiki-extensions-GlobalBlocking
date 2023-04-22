@@ -7,11 +7,14 @@ use DatabaseUpdater;
 use Html;
 use LogicException;
 use MediaWiki\Block\AbstractBlock;
+use MediaWiki\Block\Block;
 use MediaWiki\Block\CompositeBlock;
+use MediaWiki\Block\Hook\GetUserBlockHook;
 use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Extension\GlobalBlocking\Maintenance\PopulateCentralId;
 use MediaWiki\Extension\GlobalBlocking\Special\GlobalBlockListPager;
 use MediaWiki\Hook\ContributionsToolLinksHook;
+use MediaWiki\Hook\GetBlockErrorMessageKeyHook;
 use MediaWiki\Hook\GetLogTypesOnUserHook;
 use MediaWiki\Hook\OtherBlockLogLinkHook;
 use MediaWiki\Hook\SpecialContributionsBeforeMainOutputHook;
@@ -32,8 +35,10 @@ use Wikimedia\IPUtils;
  * @license GPL-2.0-or-later
  */
 class GlobalBlockingHooks implements
+	GetUserBlockHook,
 	UserIsBlockedGloballyHook,
 	SpecialPasswordResetOnSubmitHook,
+	GetBlockErrorMessageKeyHook,
 	OtherBlockLogLinkHook,
 	SpecialContributionsBeforeMainOutputHook,
 	GetLogTypesOnUserHook,
@@ -226,12 +231,12 @@ class GlobalBlockingHooks implements
 	}
 
 	/**
-	 * @param array $block
-	 * @param array &$key
+	 * @param Block $block
+	 * @param string &$key
 	 *
 	 * @return bool
 	 */
-	public function onGetBlockErrorMessageKey( $block, &$key ) {
+	public function onGetBlockErrorMessageKey( Block $block, string &$key ) {
 		if ( $block instanceof GlobalBlock ) {
 			if ( $block->getXff() ) {
 				$key = 'globalblocking-blockedtext-xff';
