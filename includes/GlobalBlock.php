@@ -5,9 +5,9 @@ namespace MediaWiki\Extension\GlobalBlocking;
 use MediaWiki\Block\AbstractBlock;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\User\UserIdentity;
+use MediaWiki\WikiMap\WikiMap;
 use stdClass;
 use User;
-use WikiMap;
 
 class GlobalBlock extends AbstractBlock {
 	/** @var int */

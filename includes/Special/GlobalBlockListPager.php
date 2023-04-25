@@ -8,10 +8,10 @@ use IContextSource;
 use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
 use MediaWiki\Linker\LinkRenderer;
+use MediaWiki\WikiMap\WikiMap;
 use ReverseChronologicalPager;
 use SpecialPage;
 use User;
-use WikiMap;
 
 class GlobalBlockListPager extends ReverseChronologicalPager {
 	/** @var array */

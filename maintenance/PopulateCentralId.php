@@ -12,7 +12,7 @@ use CentralIdLookup;
 use LoggedUpdateMaintenance;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
 use MediaWiki\MediaWikiServices;
-use WikiMap;
+use MediaWiki\WikiMap\WikiMap;
 
 /**
  * Maintenance script for migrating the blocker from a username to a
