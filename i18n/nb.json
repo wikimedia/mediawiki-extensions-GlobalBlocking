@@ -115,5 +115,11 @@
 	"log-action-filter-gblblock-whitelist": "Tillegg til hvitelista for global blokkering",
 	"log-action-filter-gblblock-dwhitelist": "Fjerning fra hvitelista for global blokkering",
 	"grant-globalblock": "Blokker eller avblokker ei IP-adresse globalt",
-	"globalblocking-blockedtext-all-wikis": "IP-adressen din er blokkert på alle wikier."
+	"globalblocking-blockedtext-all-wikis": "IP-adressen din er blokkert på alle wikier.",
+	"globalblocking-blockedtext-on-range": "IP-adressen din er i et intervall som har blitt blokkert på alle wikier.",
+	"globalblocking-blockedtext-on-proxy": "Én eller flere proxytjenere som brukes i forespørselen din er globalt blokkert",
+	"globalblocking-blockedtext-blocker-admin": "Du kan kontakte $1 for å diskutere blokkeringen.",
+	"globalblocking-blockedtext-email-feature": "Du kan ikke bruke «{{int:emailuser}}»-funksjonen med mindre en gyldig e-postadresse er angitt i [[Special:Preferences|kontoinnstillingene]] dine, og du ikke er blokkert fra å bruke den.",
+	"globalblocking-blockedtext-ip-range": "Det blokkerte intervallet er $1.",
+	"globalblocking-blockedtext-proxy": "Den blokkerte proxyadressa var $1."
 }

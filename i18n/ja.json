@@ -125,5 +125,6 @@
 	"log-action-filter-gblblock-dwhitelist": "グローバルブロックのホワイトリストからの除去",
 	"grant-globalblock": "IPアドレスのグローバルブロックと解除",
 	"globalblocking-blockedtext-all-wikis": "あなたの IP アドレスはすべてのウィキでブロックされています。",
-	"globalblocking-blockedtext-blocker-admin": "$1に連絡してブロックについて話し合うことができます。"
+	"globalblocking-blockedtext-blocker-admin": "$1に連絡してブロックについて話し合うことができます。",
+	"globalblocking-blockedtext-ip-range": "ブロックされているIP範囲は $1 です。"
 }
