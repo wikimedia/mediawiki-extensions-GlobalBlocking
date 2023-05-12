@@ -80,7 +80,7 @@ class GlobalBlockReasonFormatter {
 			'GlobalBlocking',
 			'BlockReason',
 			$langCode,
-			sha1( $this->options->get( 'GlobalBlockRemoteReasonUrl' ) ),
+			sha1( $this->options->get( 'GlobalBlockRemoteReasonUrl' ) ?? 'local' ),
 			sha1( $wikitext )
 		);
 
