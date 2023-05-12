@@ -185,7 +185,7 @@ class GlobalBlockingHooks implements
 			[ $block ];
 		$allBlocks[] = $globalBlock;
 		$block = new CompositeBlock( [
-			'address' => $ip,
+			'address' => $ip ?? $user->getName(),
 			'reason' => new Message( 'blockedtext-composite-reason' ),
 			'originalBlocks' => $allBlocks,
 		] );
