@@ -12,7 +12,8 @@
 			"Meno25",
 			"Mido",
 			"OsamaK",
-			"ديفيد"
+			"ديفيد",
+			"Alshamiri1"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|يسمح]] بمنع عناوين الأيبي [[Special:GlobalBlockList|عبر ويكيات متعددة]]",
@@ -35,7 +36,11 @@
 	"globalblocking-local-failed": "لم ينجح منع عنوان IP محلياً لأن هذا العنوان ممنوع حالياً على هذا الويكي.",
 	"globalblocking-block-failure": "حدث خطأ أثناء محاولة منع $1 عالميا; حاول مرة اخرى.",
 	"globalblocking-block-alreadyblocked": "عنوان الأيبي $1 ممنوع منعا عاما بالفعل.\nيمكنك رؤية المنع الموجود في [[Special:GlobalBlockList|قائمة عمليات المنع العامة]]،\nأو تعديل إعدادات المنع الموجود عن طريق إعادة تنفيذ هذه الاستمارة.",
+	"globalblocking-bigrange": "النطاق الذي حددته ( $1 ) يتجاوز الحدود.! N! الحد $2 هو / $3 نطاق.",
 	"globalblocking-also-local": "امنع أيضاً عنوان IP محلياً على هذا الويكي",
+	"globalblocking-also-local-talk": "منع المستخدم من تحرير صفحة الحديث الخاصة به محليًا",
+	"globalblocking-also-local-email": "منع المستخدم من إرسال البريد الإلكتروني محليًا",
+	"globalblocking-also-local-soft": "محليا حظر المستخدمين المجهولين فقط",
 	"globalblocking-list-intro": "هذه قائمة بكل عمليات المنع العامة الحالية. بعض عمليات المنع معلمة كمعطلة محليا: هذا يعني أنها تنطبق على المواقع الأخرى، لكن إداريا محليا قرر تعطيلها في هذا الويكي.",
 	"globalblocking-list": "قائمة عناوين الأيبي الممنوعة منعا عاما",
 	"globalblocking-search-legend": "بحث عن منع عام",
@@ -50,7 +55,11 @@
 	"globalblocking-list-whitelisted": "تم تعطيله محليا بواسطة $1: $2",
 	"globalblocking-list-whitelist": "الحالة المحلية",
 	"globalblocking-list-modify": "تعديل",
+	"globalblocking-list-tempblocks": "أخف المنع المؤقت",
+	"globalblocking-list-indefblocks": "أخف عمليات المنع غير المحددة",
+	"globalblocking-list-addressblocks": "أخف منع عنوان أيبي واحد",
 	"globalblocking-expiringblock": "ينتهي في يوم $1 عند الساعة $2",
+	"globalblocking-infiniteblock": "لا نهائي",
 	"globalblocking-list-noresults": "عنوان الأيبي المطلوب ليس ممنوعا.",
 	"globalblocking-goto-block": "منع عام لعنوان أيبي",
 	"globalblocking-goto-unblock": "إزالة منع عام",
@@ -92,6 +101,9 @@
 	"globalblocking-loglink": "عنوان الأيبي $1 ممنوع منعا عاما ([[{{#Special:GlobalBlockList}}/$1|تفاصيل كاملة]]).",
 	"globalblocking-contribs-notice": "هذا العنوان IP ممنوع منعاً شاملاً حالياً.\nمدخلة سجل المنع الشامل معروضة فيما يلي لاستشارتها:",
 	"globalblocking-showlog": "عنوان الأيبي هذا تم منعه مسبقا.\nسجل المنع معروض بالأسفل كمرجع:",
+	"globalblocking-contribs-block": "حظر هذا IP عالميًا",
+	"globalblocking-contribs-modify": "تعديل المنع العام",
+	"globalblocking-contribs-remove": "إزالة منع عام",
 	"globalblocklist": "قائمة عناوين الأيبي الممنوعة منعا عاما",
 	"globalblock": "منع عام لعنوان أيبي",
 	"globalblockstatus": "الحالة المحلية للمنع العام",
@@ -109,5 +121,11 @@
 	"log-action-filter-gblblock-modify": "تعديل المنع العالمي",
 	"log-action-filter-gblblock-whitelist": "إضافة قائمة منع بيضاء عالمية",
 	"log-action-filter-gblblock-dwhitelist": "إزالة قائمة منع بيضاء عالمية",
-	"grant-globalblock": "منع أو إلغاء منع عنوان أيبي عالميا"
+	"grant-globalblock": "منع أو إلغاء منع عنوان أيبي عالميا",
+	"globalblocking-blockedtext-on-range": "عنوان IP الخاص بك موجود في نطاق تم حظره على جميع مواقع الويكي.",
+	"globalblocking-blockedtext-on-proxy": "تم حظر خادم وكيل واحد أو أكثر يستخدمه طلبك بشكل عام",
+	"globalblocking-blockedtext-blocker-admin": "يمكنك الاتصال بـ $1 لمناقشة الحظر.",
+	"globalblocking-blockedtext-email-feature": "لا يمكنك استخدام ميزة \"{{int: emailuser}}\" ما لم يتم تحديد عنوان بريد إلكتروني صالح في [[Special: Preferences | تفضيلات الحساب]] ولم يتم منعك من استخدامها.",
+	"globalblocking-blockedtext-ip-range": "النطاق المحظور هو $1 .",
+	"globalblocking-blockedtext-proxy": "كان عنوان الوكيل المحظور $1 ."
 }
