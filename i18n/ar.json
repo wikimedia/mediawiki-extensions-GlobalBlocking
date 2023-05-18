@@ -58,6 +58,7 @@
 	"globalblocking-list-tempblocks": "أخف المنع المؤقت",
 	"globalblocking-list-indefblocks": "أخف عمليات المنع غير المحددة",
 	"globalblocking-list-addressblocks": "أخف منع عنوان أيبي واحد",
+	"globalblocking-list-rangeblocks": "أخف منع النطاقات",
 	"globalblocking-expiringblock": "ينتهي في يوم $1 عند الساعة $2",
 	"globalblocking-infiniteblock": "لا نهائي",
 	"globalblocking-list-noresults": "عنوان الأيبي المطلوب ليس ممنوعا.",
