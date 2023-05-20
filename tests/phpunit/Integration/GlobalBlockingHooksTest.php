@@ -44,7 +44,7 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 		$this->assertSame( $expectedKey, $key );
 	}
 
-	public function provideOnGetBlockErrorMessageKey() {
+	public static function provideOnGetBlockErrorMessageKey() {
 		return [
 			'IP block' => [
 				'xff' => false,
