@@ -12,7 +12,8 @@
 			"Meno25",
 			"Mido",
 			"OsamaK",
-			"ديفيد"
+			"ديفيد",
+			"Alshamiri1"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|يسمح]] بمنع عناوين الأيبي [[Special:GlobalBlockList|عبر ويكيات متعددة]]",
@@ -37,6 +38,7 @@
 	"globalblocking-block-alreadyblocked": "عنوان الأيبي $1 ممنوع منعا عاما بالفعل.\nيمكنك رؤية المنع الموجود في [[Special:GlobalBlockList|قائمة عمليات المنع العامة]]،\nأو تعديل إعدادات المنع الموجود عن طريق إعادة تنفيذ هذه الاستمارة.",
 	"globalblocking-block-bigrange": "النطاق الذي حددته ($1) كبير جدا للمنع. يمكنك منع، كحد أقصى، 65,536 عنوان (نطاقات /16)",
 	"globalblocking-also-local": "امنع أيضاً عنوان IP محلياً على هذا الويكي",
+	"globalblocking-also-local-talk": "منع المستخدم من تحرير صفحة الحديث الخاصة به محليًا",
 	"globalblocking-list-intro": "هذه قائمة بكل عمليات المنع العامة الحالية. بعض عمليات المنع معلمة كمعطلة محليا: هذا يعني أنها تنطبق على المواقع الأخرى، لكن إداريا محليا قرر تعطيلها في هذا الويكي.",
 	"globalblocking-list": "قائمة عناوين الأيبي الممنوعة منعا عاما",
 	"globalblocking-search-legend": "بحث عن منع عام",
