@@ -1,6 +1,40 @@
 {
 	"@metadata": {
-		"authors": []
+		"authors": [
+			"Chinamoonroll"
+		]
 	},
-	"globalblocking-expiringblock": "kadaluwarsa ring $1 $2"
+	"globalblocking-desc": "[[Special:GlobalBlock|Ngalugra]] alamat IP [[Special:GlobalBlockList|ring lintas wiki acepokan]]",
+	"globalblocking-block": "Cadel global satunggil alamat IP",
+	"globalblocking-block-intro": "Ragané prasida nganggén kaca puniki antuk ngacadel satunggil alamat IP ring sajebag wiki.",
+	"globalblocking-block-reason": "Hawanan:",
+	"globalblocking-block-reason-dropdown": "* Hawanan pacadelan umum\n** Spam crosswiki\n** Panyalahwiguna crosswiki\n** Vandalisme",
+	"globalblocking-block-edit-dropdown": "Uah hawanan cadelan",
+	"globalblocking-block-expiry": "Kadaluwarsa:",
+	"globalblocking-block-expiry-selector-other": "Kala tiosan:",
+	"globalblocking-block-legend": "Cadel global satunggil alamat IP",
+	"globalblocking-ipaddress": "Alamat IP:",
+	"globalblocking-ipbanononly": "Wantah blokir-global anganggé anonim",
+	"globalblocking-block-expiryinvalid": "Kala kadaluwarsa nénten patut.",
+	"globalblocking-block-submit": "Cadel global alamat IP puniki",
+	"globalblocking-modify-submit": "Uah cadelan global puniki",
+	"globalblocking-block-success": "Alamat IP $1 sampun kacadel ring sajebag proyek.",
+	"globalblocking-modify-success": "Pacadelan global ring $1 sampun kauahin.",
+	"globalblocking-local-failed": "Ngacadel alamat IP sacara lokal sampun gagal krana alamat IP punika sampun kacadel ring wiki puniki.",
+	"globalblocking-block-failure": "Wénten galat rikala ngindayang antuk kacadel sacara global $1. Durus indayang malih.",
+	"globalblocking-search-legend": "Selehin antuk pacadelan global",
+	"globalblocking-search-ip": "Alamat IP:",
+	"globalblocking-search-submit": "Panyelehan pacadelan",
+	"globalblocking-list-expiry": "kadaluwarsa $1",
+	"globalblocking-list-anononly": "wantah anganggé anonim",
+	"globalblocking-list-unblock": "apus",
+	"globalblocking-list-whitelisted": "kamatiang ring wiki lokal olih $1: $2",
+	"globalblocking-list-whitelist": "status lokal",
+	"globalblocking-list-modify": "uah",
+	"globalblocking-list-tempblocks": "Engkebang cadelan sauntara",
+	"globalblocking-list-indefblocks": "Engkebang cadelan tan mawates",
+	"globalblocking-list-addressblocks": "Engkebang pacadelan IP tunggal",
+	"globalblocking-list-rangeblocks": "Engkebang pentang cadélan",
+	"globalblocking-expiringblock": "kadaluwarsa ring $1 $2",
+	"globalblocking-unblock-reason": "Hawanan:"
 }
