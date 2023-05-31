@@ -107,7 +107,7 @@ class GlobalBlocking {
 
 		$statsdFactory->increment( 'global_blocking.get_user_block_db_query' );
 
-		$hookRunner = GlobalBlockingHookRunner::getRunner();
+		$hookRunner = new GlobalBlockingHookRunner( $services->getHookContainer() );
 
 		$block = self::getGlobalBlockingBlock( $ip, $user->isAnon() );
 		if ( $block ) {

@@ -9,7 +9,6 @@ use LogicException;
 use MediaWiki\Block\AbstractBlock;
 use MediaWiki\Block\CompositeBlock;
 use MediaWiki\CommentFormatter\CommentFormatter;
-use MediaWiki\Extension\GlobalBlocking\Hook\GlobalBlockingHookRunner;
 use MediaWiki\Extension\GlobalBlocking\Maintenance\PopulateCentralId;
 use MediaWiki\Extension\GlobalBlocking\Special\GlobalBlockListPager;
 use MediaWiki\Hook\ContributionsToolLinksHook;
@@ -49,9 +48,6 @@ class GlobalBlockingHooks implements
 	/** @var CommentFormatter */
 	private $commentFormatter;
 
-	/** @var GlobalBlockingHookRunner */
-	private $hookRunner;
-
 	/**
 	 * @param PermissionManager $permissionManager
 	 * @param Config $mainConfig
@@ -65,7 +61,6 @@ class GlobalBlockingHooks implements
 		$this->permissionManager = $permissionManager;
 		$this->config = $mainConfig;
 		$this->commentFormatter = $commentFormatter;
-		$this->hookRunner = GlobalBlockingHookRunner::getRunner();
 	}
 
 	/**
