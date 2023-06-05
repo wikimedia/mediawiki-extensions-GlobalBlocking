@@ -19,7 +19,8 @@
 			"つぶあん派",
 			"MathXplore",
 			"MirukuPC",
-			"Yamagata Yusuke"
+			"Yamagata Yusuke",
+			"春春眠眠"
 		]
 	},
 	"globalblocking-desc": "IPアドレスを[[Special:GlobalBlockList|複数のウィキで横断的に]][[Special:GlobalBlock|ブロックする]]",
@@ -44,6 +45,7 @@
 	"globalblocking-block-alreadyblocked": "IPアドレス $1 は既にグローバルブロックされています。\n現在のブロックの状態は[[Special:GlobalBlockList|グローバルブロック一覧]]で確認できます。\nまた、このフォームから再投稿することで、ブロック設定を修正できます。",
 	"globalblocking-block-bigrange": "指定したレンジ ($1) が広すぎるためブロックできません。\nブロックできるアドレスの最大数は 65,536 (/16 レンジ) です。",
 	"globalblocking-also-local": "指定したIPアドレスをこのウィキでローカルでもブロックする",
+	"globalblocking-also-local-talk": "利用者によるローカルでの自分の会話ページの編集をブロックする",
 	"globalblocking-list-intro": "これは現在有効なすべてのグローバルブロックの一覧です。\n「ローカルで無効」の印が付いたブロックがいくつかあります。この印があるグローバルブロックは他のサイトでは有効ですが、このウィキではローカル管理者が無効とすることにしたことを意味します。",
 	"globalblocking-list": "グローバルブロックを受けているIPアドレス一覧",
 	"globalblocking-search-legend": "グローバルブロックの検索",
