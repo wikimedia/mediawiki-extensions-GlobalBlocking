@@ -22,7 +22,6 @@ use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\User\Hook\SpecialPasswordResetOnSubmitHook;
 use MediaWiki\User\Hook\UserIsBlockedGloballyHook;
 use Message;
-use MWException;
 use RequestContext;
 use SpecialPage;
 use Title;
@@ -325,7 +324,6 @@ class GlobalBlockingHooks implements
 	 * @param array &$tools Tool links
 	 * @param SpecialPage $sp Special page
 	 * @return bool|void
-	 * @throws MWException
 	 */
 	public function onContributionsToolLinks(
 		$id, $title, &$tools, $sp

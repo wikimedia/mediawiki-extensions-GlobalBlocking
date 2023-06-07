@@ -9,11 +9,11 @@ use MediaWiki\Extension\GlobalBlocking\Hook\GlobalBlockingHookRunner;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\WikiMap\WikiMap;
 use Message;
-use MWException;
 use SpecialPage;
 use StatusValue;
 use stdClass;
 use Title;
+use UnexpectedValueException;
 use User;
 use Wikimedia\IPUtils;
 use Wikimedia\Rdbms\DBUnexpectedError;
@@ -32,7 +32,6 @@ class GlobalBlocking {
 	 * @param User $user
 	 * @param string|null $ip
 	 * @return GlobalBlock|null
-	 * @throws MWException
 	 */
 	public static function getUserBlock( $user, $ip ) {
 		$details = static::getUserBlockDetails( $user, $ip );
@@ -61,7 +60,6 @@ class GlobalBlocking {
 	 * @param User $user
 	 * @param string $ip
 	 * @return Message[] empty or message objects
-	 * @throws MWException
 	 */
 	public static function getUserBlockErrors( $user, $ip ) {
 		$details = static::getUserBlockDetails( $user, $ip );
@@ -73,7 +71,6 @@ class GlobalBlocking {
 	 * @param string|null $ip
 	 * @return array ['block' => DB row, 'error' => empty or message objects]
 	 * @phan-return array{block:stdClass|null,error:Message[]}
-	 * @throws MWException
 	 */
 	private static function getUserBlockDetails( $user, $ip ) {
 		global $wgLang, $wgRequest, $wgGlobalBlockingBlockXFF;
@@ -131,7 +128,7 @@ class GlobalBlocking {
 				$errorMsg = 'globalblocking-ipblocked-range';
 				$hookRunner->onGlobalBlockingBlockedIpRangeMsg( $errorMsg );
 			} else {
-				throw new MWException(
+				throw new UnexpectedValueException(
 					"This should not happen. IP globally blocked is not valid and is not a valid range?"
 				);
 			}
