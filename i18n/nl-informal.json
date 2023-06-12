@@ -19,7 +19,6 @@
 	"globalblocking-whitelist-dewhitelisted": "Je hebt de globale blokkade #$2 met het IP-adres '''$1''' op {{SITENAME}} opnieuw actief gemaakt.",
 	"globalblocking-whitelist-nochange": "Je hebt de lokale status van deze blokkade niet gewijzigd.",
 	"globalblocking-whitelist-intro": "Met dit formulier kun je de lokale status van een globale blokkade wijzigen.\nAls een globale blokkade op deze wiki is opgeheven, kunnen gebruikers vanaf het IP-adres gewoon bewerkingen uitvoeren.",
-	"globalblocking-ipblocked": "'''Je IP-adres is geblokkeerd op alle wiki's.'''\n\nDe blokkade is uitgevoerd door $1 ($2).\nDe reden hiervoor is ''$3''.\n\n* Start blokkade: $4\n* Blokkade vervalt op: $5\n\nJe kunt contact op nemen met $1 om de blokkade te bespreken.\nJe kunt de functie \"{{int:emailuser}}\" niet gebruiken tenzij er een geldig e-mailadres in je [[Special:Preferences|voorkeuren]] is ingevuld en je e-mailfuncties niet geblokkeerd zijn.\nJe huidige IP-adres is $6.\nVermeld de bovenstaande gegevens wanneer je hierop reageert.",
 	"globalblocking-blocked-nopassreset": "Je kunt gebruikerswachtwoorden niet opnieuw instellen omdat jouw IP-adres globaal is geblokkeerd.",
 	"globalblocking-logpagetext": "Dit logboek bevat aangemaakte en verwijderde globale blokkades op deze wiki.\nGlobale blokkades kunnen ook op andere wiki's aangemaakt en verwijderd worden, en invloed hebben op deze wiki.\nAlle globale blokkades kan je bekijken in de [[Special:GlobalBlockList|lijst met globale blokkades]]."
 }
