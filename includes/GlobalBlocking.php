@@ -9,6 +9,7 @@ use MediaWiki\Extension\GlobalBlocking\Hook\GlobalBlockingHookRunner;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\WikiMap\WikiMap;
 use Message;
+use RequestContext;
 use SpecialPage;
 use StatusValue;
 use stdClass;
@@ -67,17 +68,17 @@ class GlobalBlocking {
 	}
 
 	/**
-	 * @param User $user
+	 * @param User $user Note this may not be the session user.
 	 * @param string|null $ip
 	 * @return array ['block' => DB row, 'error' => empty or message objects]
 	 * @phan-return array{block:stdClass|null,error:Message[]}
 	 */
 	private static function getUserBlockDetails( $user, $ip ) {
-		global $wgLang, $wgRequest, $wgGlobalBlockingBlockXFF;
-		static $result = null;
-
 		// Instance cache
-		if ( $result !== null ) {
+		static $cachedResults = [];
+		$result = &$cachedResults[$user->getName()];
+
+		if ( isset( $result ) ) {
 			return $result;
 		}
 
@@ -91,8 +92,18 @@ class GlobalBlocking {
 			return $result;
 		}
 
+		// We have callers from different code paths, better not assuming $ip is null
+		// for the non-session user.
+		$context = RequestContext::getMain();
+		$isSessionUser = $user->equals( $context->getUser() );
+		if ( $ip === null && !$isSessionUser && IPUtils::isIPAddress( $user->getName() ) ) {
+			// Populate the IP for checking blocks against non-session users.
+			$ip = $user->getName();
+		}
+
+		$config = $services->getMainConfig();
 		if ( $ip !== null ) {
-			$ranges = $services->getMainConfig()->get( 'GlobalBlockingAllowedRanges' );
+			$ranges = $config->get( 'GlobalBlockingAllowedRanges' );
 			foreach ( $ranges as $range ) {
 				if ( IPUtils::isInRange( $ip, $range ) ) {
 					$result = [ 'block' => null, 'error' => [] ];
@@ -106,6 +117,7 @@ class GlobalBlocking {
 
 		$hookRunner = new GlobalBlockingHookRunner( $services->getHookContainer() );
 
+		$lang = $context->getLanguage();
 		$block = self::getGlobalBlockingBlock( $ip, $user->isAnon() );
 		if ( $block ) {
 			// Check for local whitelisting
@@ -115,8 +127,8 @@ class GlobalBlocking {
 				return $result;
 			}
 
-			$blockTimestamp = $wgLang->timeanddate( wfTimestamp( TS_MW, $block->gb_timestamp ), true );
-			$blockExpiry = $wgLang->formatExpiry( $block->gb_expiry );
+			$blockTimestamp = $lang->timeanddate( wfTimestamp( TS_MW, $block->gb_timestamp ), true );
+			$blockExpiry = $lang->formatExpiry( $block->gb_expiry );
 			$display_wiki = WikiMap::getWikiName( $block->gb_by_wiki );
 			$blockingUser = self::maybeLinkUserpage( $block->gb_by_wiki, $block->gb_by );
 
@@ -156,8 +168,10 @@ class GlobalBlocking {
 			return $result;
 		}
 
-		if ( $wgGlobalBlockingBlockXFF ) {
-			$xffIps = $wgRequest->getHeader( 'X-Forwarded-For' );
+		$request = $context->getRequest();
+		// Checking non-session users are not applicable to the XFF block.
+		if ( $config->get( 'GlobalBlockingBlockXFF' ) && $isSessionUser ) {
+			$xffIps = $request->getHeader( 'X-Forwarded-For' );
 			if ( $xffIps ) {
 				$xffIps = array_map( 'trim', explode( ',', $xffIps ) );
 				$blocks = self::checkIpsForBlock( $xffIps, $user->isAnon() );
@@ -165,11 +179,11 @@ class GlobalBlocking {
 					$appliedBlock = self::getAppliedBlock( $xffIps, $blocks );
 					if ( $appliedBlock !== null ) {
 						list( $blockIP, $block ) = $appliedBlock;
-						$blockTimestamp = $wgLang->timeanddate(
+						$blockTimestamp = $lang->timeanddate(
 							wfTimestamp( TS_MW, $block->gb_timestamp ),
 							true
 						);
-						$blockExpiry = $wgLang->formatExpiry( $block->gb_expiry );
+						$blockExpiry = $lang->formatExpiry( $block->gb_expiry );
 						$display_wiki = WikiMap::getWikiName( $block->gb_by_wiki );
 						$blockingUser = self::maybeLinkUserpage( $block->gb_by_wiki, $block->gb_by );
 						// Allow site customization of blocked message.
