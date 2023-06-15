@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Yupik"
+			"Yupik",
+			"Kimberli Mäkäräinen (WMNO)"
 		]
 	},
 	"globalblocking-ipaddress": "IP-čujuhus:",
 	"globalblocking-search-ip": "IP-čujuhus:",
 	"globalblocking-list-unblock": "sihko",
+	"globalblocking-list-indefblocks": "Čiega bissovaš hehttemiid",
 	"globalblocking-expiringblock": "boarásnuvvá $1 $2"
 }
