@@ -4,7 +4,6 @@
 			"Andrew Garrett"
 		]
 	},
-	"apihelp-globalblock-description": "Globally block or unblock a user.",
 	"apihelp-globalblock-summary": "Globally block or unblock a user.",
 	"apihelp-globalblock-param-target": "The target IP address.",
 	"apihelp-globalblock-param-expiry": "If specified, will block or reblock the user. Determines how long the block will last for, e.g. \"5 months\" or \"2 weeks\". If set to \"infinite\" or \"indefinite\" the block will never expire.",
@@ -13,7 +12,6 @@
 	"apihelp-globalblock-param-anononly": "Specify this if the block should only affect logged-out users globally.",
 	"apihelp-globalblock-param-modify": "Specify this if the existing block on the target should be modified",
 	"apihelp-globalblock-example-1": "Block 192.0.2.1 indefinitely with reason \"Cross-wiki abuse\"",
-	"apihelp-query+globalblocks-description": "List all globally blocked IP addresses.",
 	"apihelp-query+globalblocks-summary": "List all globally blocked IP addresses.",
 	"apihelp-query+globalblocks-param-start": "The timestamp to start enumerating from.",
 	"apihelp-query+globalblocks-param-end": "The timestamp to stop enumerating at.",
