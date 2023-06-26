@@ -4,7 +4,6 @@
 			"Nokeoo"
 		]
 	},
-	"apihelp-globalblock-description": "Visuotinis naudotojo blokavimas ar atblokavimas.",
 	"apihelp-globalblock-summary": "Visuotinis naudotojo blokavimas ar atblokavimas.",
 	"apihelp-globalblock-param-target": "Tikslo IP adresas.",
 	"apihelp-globalblock-param-unblock": "Jei nurodyta, naudotojas bus atblokuotas.",
@@ -12,7 +11,6 @@
 	"apihelp-globalblock-param-anononly": "Nurodykite, jei blokavimas turėtų visuotinai paveikti tik atsijungusius naudotojus.",
 	"apihelp-globalblock-param-modify": "Nurodykite, jei reikia pakeisti esamą blokavimą",
 	"apihelp-globalblock-example-1": "Neribotam laikui blokuoti 192.0.2.1 su priežastimi „Piktnaudžiavimas įvairiuose viki“",
-	"apihelp-query+globalblocks-description": "Išvardyti visus globaliai užblokuotus IP adresus.",
 	"apihelp-query+globalblocks-summary": "Išvardyti visus globaliai užblokuotus IP adresus.",
 	"apihelp-query+globalblocks-param-start": "Laiko žymą nuo kurios pradėti.",
 	"apihelp-query+globalblocks-param-end": "Laiko žyma, kuria baigti.",

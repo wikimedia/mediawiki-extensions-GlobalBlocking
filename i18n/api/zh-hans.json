@@ -7,7 +7,6 @@
 			"Yfdyh000"
 		]
 	},
-	"apihelp-globalblock-description": "全域封禁或解封一位用户。",
 	"apihelp-globalblock-summary": "全域封禁或解封一位用户。",
 	"apihelp-globalblock-param-target": "目标IP地址。",
 	"apihelp-globalblock-param-expiry": "如果指定，将封禁或重新封禁该用户。指定封禁将持续多久，例如“5 months”或者“2 weeks”。如果设置为“infinite”或者“indefinite”，该封禁将不会过期。",
@@ -16,7 +15,6 @@
 	"apihelp-globalblock-param-anononly": "如果封禁应该只影响全域已退出登录用户，指定此项。",
 	"apihelp-globalblock-param-modify": "在现有目标封禁应被修改时指定它",
 	"apihelp-globalblock-example-1": "无限期封禁192.0.2.1，原因“Cross-wiki abuse”",
-	"apihelp-query+globalblocks-description": "列出所有全域封禁的IP地址。",
 	"apihelp-query+globalblocks-summary": "列出所有全域封禁的IP地址。",
 	"apihelp-query+globalblocks-param-start": "枚举的起始时间戳。",
 	"apihelp-query+globalblocks-param-end": "枚举的结束时间戳。",

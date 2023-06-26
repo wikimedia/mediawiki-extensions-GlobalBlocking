@@ -6,7 +6,6 @@
 			"列维劳德"
 		]
 	},
-	"apihelp-globalblock-description": "全域封鎖或解封一名使用者。",
 	"apihelp-globalblock-summary": "全域封鎖或解封一名使用者。",
 	"apihelp-globalblock-param-target": "目標 IP 位址。",
 	"apihelp-globalblock-param-expiry": "若指定將會封鎖或重新封鎖使用者。確認要封鎖的時間長度，例如：「5 months」（5 個月）或「2 weeks」（2 週）。如果設定成「infinite」或「indefinite」則為無期限封鎖。",
@@ -15,7 +14,6 @@
 	"apihelp-globalblock-param-anononly": "若封鎖僅對全域未登入的使用者有效，請指定此。",
 	"apihelp-globalblock-param-modify": "若應對在目標的現有封鎖做出修改，請指定此。",
 	"apihelp-globalblock-example-1": "無限期封鎖 192.0.2.1，原因「跨 wiki 濫用」",
-	"apihelp-query+globalblocks-description": "列出所有全域封鎖 IP 位址。",
 	"apihelp-query+globalblocks-summary": "列出所有全域封鎖 IP 位址。",
 	"apihelp-query+globalblocks-param-start": "起始列舉的時間戳記。",
 	"apihelp-query+globalblocks-param-end": "結束列舉的時間戳記。",

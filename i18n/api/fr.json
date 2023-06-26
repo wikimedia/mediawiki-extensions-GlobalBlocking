@@ -9,7 +9,6 @@
 			"Wladek92"
 		]
 	},
-	"apihelp-globalblock-description": "Bloque ou débloque totalement un utilisateur.",
 	"apihelp-globalblock-summary": "Bloquer ou débloquer globalement un utilisateur.",
 	"apihelp-globalblock-param-target": "L’adresse IP cible.",
 	"apihelp-globalblock-param-expiry": "Si spécifié, bloquera ou rebloquera l’utilisateur. Détermine quelle sera la durée du blocage, par ex. « 5 months » ou « 2 weeks ». Si mis à « infinite » ou « indefinite », le blocage n’expirera jamais.",
@@ -18,7 +17,6 @@
 	"apihelp-globalblock-param-anononly": "Spécifier cela si le blocage ne doit affecter que les utilisateurs déconnectés globalement.",
 	"apihelp-globalblock-param-modify": "Spécifier ceci si le blocage existant dans la cible doit être modifié.",
 	"apihelp-globalblock-example-1": "Bloque 192.0.2.1 indéfiniment avec la raison « utilisation abusive inter-wiki »",
-	"apihelp-query+globalblocks-description": "Liste toutes les adresses IP bloquées globalement.",
 	"apihelp-query+globalblocks-summary": "Affiche toutes les adresses IP bloquées globalement.",
 	"apihelp-query+globalblocks-param-start": "L’horodatage auquel démarrer l’énumération.",
 	"apihelp-query+globalblocks-param-end": "L’horodatage auquel terminer l’énumération.",

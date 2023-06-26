@@ -4,7 +4,6 @@
 			"Joetaras"
 		]
 	},
-	"apihelp-globalblock-description": "Blocche o sblocche globbalmende 'n'utende.",
 	"apihelp-globalblock-summary": "Blocche o sblocche globbalmende 'n'utende.",
 	"apihelp-globalblock-param-target": "'U 'ndirizze IP de destinazione.",
 	"apihelp-globalblock-param-expiry": "Ce specificate, blocche o blocche arrete l'utende. Determine quanne luènghe jè 'u blocche, p.s. \"5 mise\" o \"2 sumàne\". Ce 'mboste \"infinite\" o \"indefinite\" 'u blocche non ge scade maije.",
@@ -13,7 +12,6 @@
 	"apihelp-globalblock-param-anononly": "Specifiche quiste ce 'u blocche adda essere applicate sulamende sus a l'utinde ca onne assute.",
 	"apihelp-globalblock-param-modify": "Specifiche quiste ce 'u blocche esistende sus 'a destinazione adda essere cangiate",
 	"apihelp-globalblock-example-1": "Blocche 192.0.2.1 pe sembre cu stu mutive \"Abbuse Cross-uicchi\"",
-	"apihelp-query+globalblocks-description": "Elenghe de tutte le indirizze IP bloccate globbalmende.",
 	"apihelp-query+globalblocks-summary": "Elenghe de tutte le indirizze IP bloccate globbalmende.",
 	"apihelp-query+globalblocks-param-start": "Orarie da addò accumenze l'enumerazione.",
 	"apihelp-query+globalblocks-param-end": "Orarie da addò spicce l'enumerazione.",

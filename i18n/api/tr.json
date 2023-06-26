@@ -6,7 +6,6 @@
 			"SaldırganSincap"
 		]
 	},
-	"apihelp-globalblock-description": "Bir kullanıcıyı genel olarak engelleyin veya engelini kaldırın.",
 	"apihelp-globalblock-summary": "Bir kullanıcıyı küresel olarak engelleyin veya engelini kaldırın.",
 	"apihelp-globalblock-param-target": "Hedef IP adresi.",
 	"apihelp-globalblock-param-expiry": "Belirtilirse kullanıcıyı engeller veya yeniden engeller. Bloğun ne kadar süreceğini belirler; ör. \"5 months\" veya \"2 weeks\". \"infinite\" veya \"indefinite\" olarak ayarlanırsa, engel asla sona ermez",
@@ -15,7 +14,6 @@
 	"apihelp-globalblock-param-anononly": "Engellemenin yalnızca küresel olarak oturumu kapatan kullanıcıları etkilemesi gerekiyorsa bunu belirtin.",
 	"apihelp-globalblock-param-modify": "Hedefteki mevcut engelin değiştirilmesi gerekiyorsa bunu belirtin",
 	"apihelp-globalblock-example-1": "192.0.2.1'i \"Cross-wiki abuse\" gerekçesiyle süresiz olarak engelleyin",
-	"apihelp-query+globalblocks-description": "Küresel olarak engellenen tüm IP adreslerini listeleyin.",
 	"apihelp-query+globalblocks-summary": "Küresel olarak engellenen tüm IP adreslerini listeleyin.",
 	"apihelp-query+globalblocks-param-start": "Numaralandırmaya başlamak için zaman damgası.",
 	"apihelp-query+globalblocks-param-end": "Numaralandırmayı durdurmak için zaman damgası.",

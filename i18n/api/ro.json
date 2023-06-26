@@ -4,7 +4,6 @@
 			"NGC 54"
 		]
 	},
-	"apihelp-globalblock-description": "Blochează sau deblochează global un utilizator.",
 	"apihelp-globalblock-summary": "Blochează sau deblochează global un utilizator.",
 	"apihelp-globalblock-param-target": "Adresa IP țintă.",
 	"apihelp-globalblock-param-reason": "Motivul pentru blocare/deblocare."

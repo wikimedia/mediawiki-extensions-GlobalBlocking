@@ -4,7 +4,6 @@
 			"Jon Harald Søby"
 		]
 	},
-	"apihelp-globalblock-description": "Blokker eller avblokker en bruker globalt.",
 	"apihelp-globalblock-summary": "Blokker eller avblokker en bruker globalt.",
 	"apihelp-globalblock-param-target": "Mål-IP-adressa.",
 	"apihelp-globalblock-param-expiry": "Om denne er angitt vil brukeren bli blokkert (igjen?). Bestemmer hvor lenge blokkeringen vil vare, f.eks. «5 months» eller «2 weeks». Om den er satt til «infinite» eller «indefinite» vil blokkeringen aldri løpe ut.",
@@ -13,7 +12,6 @@
 	"apihelp-globalblock-param-anononly": "Spesifiser denne om blokkeringen kun skal gjelde uinnloggede brukere globalt.",
 	"apihelp-globalblock-param-modify": "Spesifiser denne om den eksisterende blokkeringen av målet skal endres",
 	"apihelp-globalblock-example-1": "Blokker 192.0.2.1 på ubestemt tid med årsak «Cross-wiki abuse»",
-	"apihelp-query+globalblocks-description": "List opp alle globalt blokkerte IP-adresser.",
 	"apihelp-query+globalblocks-summary": "List opp alle globalt blokkerte IP-adresser.",
 	"apihelp-query+globalblocks-param-start": "Tidsstempelet det skal nummereres fra.",
 	"apihelp-query+globalblocks-param-end": "Tidsstempelet det skal stoppes å nummereres på.",

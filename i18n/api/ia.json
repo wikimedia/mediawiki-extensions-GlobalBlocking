@@ -4,7 +4,6 @@
 			"McDutchie"
 		]
 	},
-	"apihelp-globalblock-description": "Blocar o disblocar globalmente un usator.",
 	"apihelp-globalblock-summary": "Blocar o disblocar globalmente un usator.",
 	"apihelp-globalblock-param-target": "Le adresse IP de destination.",
 	"apihelp-globalblock-param-expiry": "Si es specificate, bloca o re-bloca le usator. Determina le duration del blocada, p.ex. \"5 menses\" o \"2 spetimanas\". Si es mittite a \"infinite\" o \"indefinite\", le blocada non expirara jammais.",
@@ -13,7 +12,6 @@
 	"apihelp-globalblock-param-anononly": "Specifica isto si le blocada debe globalmente affectar solo le usatores sin session aperte.",
 	"apihelp-globalblock-param-modify": "Specifica isto si le blocada existente del destination debe esser modificate.",
 	"apihelp-globalblock-example-1": "Blocar 192.0.2.1 indefinitemente con motivo \"Abuso sur plure wikis\"",
-	"apihelp-query+globalblocks-description": "Listar tote le adresses IP blocate globalmente.",
 	"apihelp-query+globalblocks-summary": "Listar tote le adresses IP blocate globalmente.",
 	"apihelp-query+globalblocks-param-start": "Le data e hora al qual comenciar a enumerar.",
 	"apihelp-query+globalblocks-param-end": "Le data e hora al qual cessar de enumerar.",

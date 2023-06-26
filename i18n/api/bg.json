@@ -5,11 +5,9 @@
 			"Vlad5250"
 		]
 	},
-	"apihelp-globalblock-description": "Глобално блокирайте или отблокирайте потребител.",
 	"apihelp-globalblock-summary": "Глобално блокирайте или отблокирайте потребител.",
 	"apihelp-globalblock-param-unblock": "Ако е указано, потребителят ще бъде отблокиран.",
 	"apihelp-globalblock-param-reason": "Причина за блокиране/отблокиране.",
-	"apihelp-query+globalblocks-description": "Изписване на всички глобално блокирани IP-адреси.",
 	"apihelp-query+globalblocks-summary": "Изписване на всички глобално блокирани IP-адреси.",
 	"apihelp-query+globalblocks-param-start": "Времева отметка, от която да започва изброяването.",
 	"apihelp-query+globalblocks-param-end": "Времева отметка, при която да спира изброяването.",

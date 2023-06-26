@@ -9,7 +9,6 @@
 			"Ryo567"
 		]
 	},
-	"apihelp-globalblock-description": "Bloquear o desbloquear globalmente a un usuario.",
 	"apihelp-globalblock-summary": "Bloquear o desbloquear globalmente a un usuario.",
 	"apihelp-globalblock-param-target": "La dirección IP de destino.",
 	"apihelp-globalblock-param-expiry": "Si se especifica, bloqueará o rebloqueará al usuario. Determina cuánto va a durar el bloque. Por ejemplo, \"5 months\" o \"2 weeks\". Si se establece a \"infinite\" or \"indefinite\" el bloqueo no tendrá fecha de caducidad.",
@@ -18,7 +17,6 @@
 	"apihelp-globalblock-param-anononly": "Especificar si el bloqueo global debería afectar solo a los usuarios no registrados o sin sesión iniciada.",
 	"apihelp-globalblock-param-modify": "Especifica esto si el bloqueo existente sobre el objetivo debería ser modificado",
 	"apihelp-globalblock-example-1": "Bloquear 192.0.2.1 indefinidamente con el motivo \"Abuso sobre varios wikis\"",
-	"apihelp-query+globalblocks-description": "Enumerar todas las direcciones IP bloqueadas globalmente.",
 	"apihelp-query+globalblocks-summary": "Enumerar todas las direcciones IP bloqueadas globalmente.",
 	"apihelp-query+globalblocks-param-start": "El cronomarcador para comenzar la enumeración.",
 	"apihelp-query+globalblocks-param-end": "El sello de tiempo para detener la enumeración",

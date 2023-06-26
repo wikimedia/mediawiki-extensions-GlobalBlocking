@@ -6,7 +6,6 @@
 			"Toliño"
 		]
 	},
-	"apihelp-globalblock-description": "Bloquear ou desbloquear globalmente a un usuario.",
 	"apihelp-globalblock-summary": "Bloquear ou desbloquear globalmente a un usuario.",
 	"apihelp-globalblock-param-target": "Enderezo IP obxectivo.",
 	"apihelp-globalblock-param-expiry": "Se se especifica, bloqueará ou rebloquará ó usuario. Determina a duración do bloqueo, p. ex. \"5 meses\" ou \"2 semanas\". Se se indica \"infinito\" ou \"indefinido\" o bloqueo non expirará.",
@@ -15,7 +14,6 @@
 	"apihelp-globalblock-param-anononly": "Especifique se o bloque debería afectar só a usuarios non conectados.",
 	"apihelp-globalblock-param-modify": "Indica se o bloque existente no obxectivo debe ser modificado",
 	"apihelp-globalblock-example-1": "Bloquear 192.0.2.1 de forma indefinida coa razón \"Vandalismo Cross-wiki\"",
-	"apihelp-query+globalblocks-description": "Listar tódolos enderezos IP bloqueados globalmente.",
 	"apihelp-query+globalblocks-summary": "Listar tódolos enderezos IP bloqueados globalmente.",
 	"apihelp-query+globalblocks-param-start": "Selo de tempo para comezar a enumeración.",
 	"apihelp-query+globalblocks-param-end": "Selo de tempo para rematar a enumeración.",

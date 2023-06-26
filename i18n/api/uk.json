@@ -6,7 +6,6 @@
 			"Ата"
 		]
 	},
-	"apihelp-globalblock-description": "Глобально заблокувати чи розблокувати користувача.",
 	"apihelp-globalblock-summary": "Глобально заблокувати чи розблокувати користувача.",
 	"apihelp-globalblock-param-target": "Цільова IP-адреса.",
 	"apihelp-globalblock-param-expiry": "Якщо вказано, буде заблоковано або переблоковано користувача. Визначає скільки блокування триватиме, наприклад, «5 months» або «2 weeks». Якщо встановлено «infinite» або «indefinite» блокування ніколи не завершиться.",
@@ -15,7 +14,6 @@
 	"apihelp-globalblock-param-anononly": "Вкажіть це, якщо блокування повинно вплинути лише на користувачів, що глобально не ввійшли до системи.",
 	"apihelp-globalblock-param-modify": "Вкажіть це, якщо наявний блок на цільовій сторінці треба змінити",
 	"apihelp-globalblock-example-1": "Заблокувати 192.0.2.1 безстроково з причиною «Cross-wiki abuse»",
-	"apihelp-query+globalblocks-description": "Список глобально заблокованих IP-адрес.",
 	"apihelp-query+globalblocks-summary": "Список глобально заблокованих IP-адрес.",
 	"apihelp-query+globalblocks-param-start": "Часова мітка початку переліку.",
 	"apihelp-query+globalblocks-param-end": "Часова мітка закінчення переліку.",

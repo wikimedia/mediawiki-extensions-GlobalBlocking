@@ -4,7 +4,6 @@
 			"Eleassar"
 		]
 	},
-	"apihelp-globalblock-description": "Globalno blokirajte ali odblokirajte uporabnika.",
 	"apihelp-globalblock-summary": "Globalno blokirajte ali odblokirajte uporabnika.",
 	"apihelp-globalblock-param-target": "Ciljni IP-naslov.",
 	"apihelp-globalblock-param-expiry": "Če je določeno, bo uporabnik blokiran ali odblokiran. Določa, kako dolgo naj blokiranje traja (npr. »5 mesecev« ali »2 tedna«). Če je nastavljeno na »neskončno« ali »neomejeno«, se blokiranje ne bo nikoli izteklo.",
@@ -13,7 +12,6 @@
 	"apihelp-globalblock-param-anononly": "Določite, ali naj to blokiranje velja samo za globalno neprijavljene uporabnike.",
 	"apihelp-globalblock-param-modify": "Določite, ali naj se spremeni obstoječe blokiranje cilja",
 	"apihelp-globalblock-example-1": "Neomejeno blokiranje 192.0.2.1 z razlogom »Cross-wiki abuse« (navzkrižna zloraba vikijev)",
-	"apihelp-query+globalblocks-description": "Izpiše vse globalno blokirane IP-naslove.",
 	"apihelp-query+globalblocks-summary": "Navede vse globalno blokirane IP-naslove.",
 	"apihelp-query+globalblocks-param-start": "Časovni žig za začetek oštevilčevanja.",
 	"apihelp-query+globalblocks-param-end": "Časovni žig za konec oštevilčevanja.",

@@ -7,7 +7,6 @@
 			"Jhonnatanricardo"
 		]
 	},
-	"apihelp-globalblock-description": "Bloquear ou desbloquear globalmente um usuário.",
 	"apihelp-globalblock-summary": "Bloquear ou desbloquear globalmente um usuário.",
 	"apihelp-globalblock-param-target": "O endereço IP de destino.",
 	"apihelp-globalblock-param-expiry": "Se especificado, bloqueará e rebloqueará o usuário. Determina a duração do bloqueio, por exemplo, \"5 meses\" ou \"2 semanas\". Se configurado como \"infinito\" ou \" indefinido\" o bloqueio nunca expirará.",
@@ -16,7 +15,6 @@
 	"apihelp-globalblock-param-anononly": "Especificar isto se o bloqueio só deve afetar usuários que não tenham nenhuma entrada globalmente.",
 	"apihelp-globalblock-param-modify": "Especifique isso se o bloco existente no alvo deve ser modificado",
 	"apihelp-globalblock-example-1": "Bloquear 192.0.2.1 indefinidamente pelo motivo \"Cross-wiki abuse\"",
-	"apihelp-query+globalblocks-description": "Listar todos os endereços IP bloqueados globalmente.",
 	"apihelp-query+globalblocks-summary": "Listar todos os endereços IP bloqueados globalmente.",
 	"apihelp-query+globalblocks-param-start": "O timestamp para começar a enumeração.",
 	"apihelp-query+globalblocks-param-end": "O timestamp para parar a enumeração.",

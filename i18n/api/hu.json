@@ -5,7 +5,6 @@
 			"Tacsipacsi"
 		]
 	},
-	"apihelp-globalblock-description": "Egy felhasználó blokkolása vagy blokkjának feloldása globálisan.",
 	"apihelp-globalblock-summary": "Egy felhasználó globális blokkolása vagy blokkjának feloldása.",
 	"apihelp-globalblock-param-target": "A cél-IP-cím.",
 	"apihelp-globalblock-param-expiry": "Ha meg van adva, blokkolja vagy újra blokkolja a felhasználót. A blokk hosszát adja meg (angolul), pl. „5 months” (5 hónap) vagy „2 weeks” (2 hét). Ha „infinite” (végtelen) vagy „indefinite” (meghatározatlan), a blokk nem fog automatikusan lejárni.",
@@ -14,7 +13,6 @@
 	"apihelp-globalblock-param-anononly": "Add meg, ha a blokk csak a kijelentkezett felhasználókat érintse.",
 	"apihelp-globalblock-param-modify": "Add meg ezt a paraméter, ha a célfelhasználó létező blokkját módosítani szeretnéd",
 	"apihelp-globalblock-example-1": "192.0.2.1 blokkolása meghatározatlan időre „Cross-wiki abuse” indokkal.",
-	"apihelp-query+globalblocks-description": "Az összes globálisan blokkolt IP-cím listázása.",
 	"apihelp-query+globalblocks-summary": "Az összes globálisan blokkolt IP-cím listázása.",
 	"apihelp-query+globalblocks-param-start": "A listázás kezdő időbélyege.",
 	"apihelp-query+globalblocks-param-end": "A lista végét jelentő időbélyeg.",

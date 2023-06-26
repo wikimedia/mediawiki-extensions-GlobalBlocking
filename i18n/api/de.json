@@ -9,7 +9,6 @@
 			"Wnme"
 		]
 	},
-	"apihelp-globalblock-description": "Sperrt einen Benutzer global oder entsperrt ihn wieder.",
 	"apihelp-globalblock-summary": "Sperrt global einen Benutzer oder gibt ihn frei.",
 	"apihelp-globalblock-param-target": "Die Ziel-IP-Adresse.",
 	"apihelp-globalblock-param-expiry": "Wird, wenn angegeben, Benutzer sperren oder erneut sperren. Bestimmt, wie lange die Sperre dauert. Zum Beispiel \"5 Monate\" oder \"2 Wochen\". Falls auf \"unendlich\" oder \"unbestimmt\" gesetzt, wird die Sperre niemals aufgehoben.",
@@ -18,7 +17,6 @@
 	"apihelp-globalblock-param-anononly": "Gib dies an, falls die Sperre nur global abgemeldete Benutzer betreffen soll.",
 	"apihelp-globalblock-param-modify": "Gib dies an, falls die vorhandene Sperre des Ziels verändert werden soll.",
 	"apihelp-globalblock-example-1": "Sperre 192.0.2.1 auf unbestimmte Zeit mit dem Grund „Cross-Wiki-Vandalismus”",
-	"apihelp-query+globalblocks-description": "Alle global gesperrten IP-Adressen auflisten.",
 	"apihelp-query+globalblocks-summary": "Alle global gesperrten IP-Adressen auflisten.",
 	"apihelp-query+globalblocks-param-start": "Der Zeitstempel, bei dem die Aufzählung beginnen soll.",
 	"apihelp-query+globalblocks-param-end": "Der Zeitstempel, bei dem die Aufzählung beendet werden soll.",

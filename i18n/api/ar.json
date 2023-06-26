@@ -6,7 +6,6 @@
 			"ديفيد"
 		]
 	},
-	"apihelp-globalblock-description": "امنع مستخدما منعا عالميا أو ارفع المنع العالمي عنه.",
 	"apihelp-globalblock-summary": "منع أو رفع منع مستخدم عالميا.",
 	"apihelp-globalblock-param-target": "عنوان IP المستهدف.",
 	"apihelp-globalblock-param-expiry": "في حال التحديد سيتم منع المستخدم أو إعادة منعه. يحدد مدة استمرار المنع، مثلاً «أسبوعين» أو «5 أشهر». في حال تعيين قيمة «لانهائي» أو «غير محدد» لن تنتهي مدة المنع أبداً.",
@@ -15,7 +14,6 @@
 	"apihelp-globalblock-param-anononly": "حدد هذا إذا كان الحظر سيؤثر فقط على المستخدمين المسجلين عالميًا.",
 	"apihelp-globalblock-param-modify": "حدد هذا إذا كان يجب تعديل المنع الموجود على الهدف",
 	"apihelp-globalblock-example-1": "امنع 192.0.2.1 لمدة غير محددة بسبب «سوء المعاملة على ويكيات متعددة»",
-	"apihelp-query+globalblocks-description": "اسرد جميع عناوين IP الممنوعة منعاً شاملاً.",
 	"apihelp-query+globalblocks-summary": "سرد كافة عناوين الآيبي الممنوعة عالميا.",
 	"apihelp-query+globalblocks-param-start": "الطابع الزمني لبدء العد منه.",
 	"apihelp-query+globalblocks-param-end": "الطابع الزمني لوقف التعداد فيه.",

@@ -6,7 +6,6 @@
 			"ערן"
 		]
 	},
-	"apihelp-globalblock-description": "חסימה גלובלית או שחרור גלובלי של משתמש.",
 	"apihelp-globalblock-summary": "חסימה גלובלית או שחרור חסימה גלובלית של משתמש.",
 	"apihelp-globalblock-param-target": "כתובת ה־IP היעד.",
 	"apihelp-globalblock-param-expiry": "אם זה מצוין, זה יחסום או יבטל את החסימה של המשתמש. זה מגדיר למשך כמה זמן החסימה תימשך, למשל \"5 months\" או \"2 weeks\". אם מוגדר \"infinite\" או \"indefinite\", החסימה לעולם לא תפוג.",
@@ -15,7 +14,6 @@
 	"apihelp-globalblock-param-anononly": "יש לציין את זה אם החסימה צריכה להשפיע גלובלית רק על משתמשים שלא נכנסו לחשבון.",
 	"apihelp-globalblock-param-modify": "יש להגדיר את זה אם חסימה קיימת ביעד צריכה להשתנות",
 	"apihelp-globalblock-example-1": "לחסום את 192.0.2.1 לצמיתות עם הסיבה \"Cross-wiki abuse\"",
-	"apihelp-query+globalblocks-description": "רשימה של כל כתובות ה־IP שחסומות גלובלית.",
 	"apihelp-query+globalblocks-summary": "רשימה של כתובות ה־IP שחסומות גלובלית.",
 	"apihelp-query+globalblocks-param-start": "חותם־הזמן שהמנייה תתחיל ממנו.",
 	"apihelp-query+globalblocks-param-end": "חותם־הזמן שהמנייה תסתיים בו.",

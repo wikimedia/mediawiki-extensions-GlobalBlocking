@@ -7,7 +7,6 @@
 			"WikiPhoenix"
 		]
 	},
-	"apihelp-globalblock-description": "Blockera eller avblockera en användare globalt.",
 	"apihelp-globalblock-summary": "Blockera eller avblockera en användare globalt.",
 	"apihelp-globalblock-param-target": "Mål-IP-adressen.",
 	"apihelp-globalblock-param-expiry": "Om angivet, blockeras eller återblockeras användaren. Avgör hur länge blockeringen pågår, t.ex. \"5 months\" eller \"2 weeks\". Om satt till \"infinite\" eller \"indefinite\" löper blockeringen aldrig ut.",
@@ -16,7 +15,6 @@
 	"apihelp-globalblock-param-anononly": "Ange detta ifall blockeringen enbart ska påverka utloggade användare globalt.",
 	"apihelp-globalblock-param-modify": "Specificera denna om den existerande blockeringen av målet ska ändras",
 	"apihelp-globalblock-example-1": "Blockera 192.0.2.1 på obestämd tid med anledningen \"Cross-wiki abuse\"",
-	"apihelp-query+globalblocks-description": "Lista alla globalt blockerade IP-adresser",
 	"apihelp-query+globalblocks-summary": "Lista alla globalt blockerade IP-adresser",
 	"apihelp-query+globalblocks-param-start": "Tidsstämpel att börja räkna upp från.",
 	"apihelp-query+globalblocks-param-end": "Tidsstämpeln att sluta räkna upp vid.",

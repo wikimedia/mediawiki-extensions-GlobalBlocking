@@ -4,7 +4,6 @@
 			"Bugoslav"
 		]
 	},
-	"apihelp-globalblock-description": "Globalno blokiraj ili odblokiraj suradnika.",
 	"apihelp-globalblock-summary": "Globalno blokirajte ili odblokirajte suradnika.",
 	"apihelp-globalblock-param-target": "Ciljna IP adresa.",
 	"apihelp-globalblock-param-alsolocal": "Ujedno blokiraj lokalno i IP-adresu"

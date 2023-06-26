@@ -4,7 +4,6 @@
 			"Bjankuloski06"
 		]
 	},
-	"apihelp-globalblock-description": "Глобално блокирајте или одблокирајте корисник.",
 	"apihelp-globalblock-summary": "Глобално блокирајте или одблокирајте корисник.",
 	"apihelp-globalblock-param-target": "Целната IP-адреса.",
 	"apihelp-globalblock-param-expiry": "Ако е укажано, корисникот ќе се блокира или преблокира. Одредува колку време ќе трае блокот (на пр. „5 месеци“ или „2 недели“). Ако се зададе „бесконечно“ или „неодредено“, тогаш блокот ќе трае засекогаш.",
@@ -13,7 +12,6 @@
 	"apihelp-globalblock-param-anononly": "Укажете го ова ако сакате блокот да важи само за одјавени корисници глобално.",
 	"apihelp-globalblock-param-modify": "Укажете го ова ако треба да се измени постоечки блок врз целта",
 	"apihelp-globalblock-example-1": "Блокирај го 192.0.2.1 бесконечно со причината „злоупотреба на повеќе викија“",
-	"apihelp-query+globalblocks-description": "Испиши ги сите глобално блокирани IP-адреси.",
 	"apihelp-query+globalblocks-summary": "Испиши ги сите глобално блокирани IP-адреси.",
 	"apihelp-query+globalblocks-param-start": "Од кој датум и време да почне набројувањето.",
 	"apihelp-query+globalblocks-param-end": "На кој датум и време да запре набројувањето.",
