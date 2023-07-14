@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Piano1forte2"
+		]
+	},
+	"globalblocking-blockedtext-email-feature": "You cannot use the '{{int:emailuser}}' feature unless a valid email address is specified in your [[Special:Preferences|account preferences]] and you have not been blocked from using it."
+}
