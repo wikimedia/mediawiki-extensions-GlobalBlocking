@@ -1,10 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
-			"Hello903hello",
-			"Macofe",
-			"Shinjiman",
-			"Wong128hk"
+			"Winston Sung"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|容許]]IP地址可以[[Special:GlobalBlockList|響多個wiki度封鎖]]",

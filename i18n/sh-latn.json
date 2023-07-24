@@ -1,9 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kolega2357",
-			"Macofe",
-			"Vlad5250"
+			"Winston Sung"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Omogućuje]] [[Special:GlobalBlockList|globalno blokiranje]] IP-adresa na više vikija",

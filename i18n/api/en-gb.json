@@ -1,9 +1,0 @@
-{
-	"@metadata": {
-		"authors": [
-			"Piano1forte2"
-		]
-	},
-	"apihelp-globalblock-param-expiry": "If specified, will block or re-block the user. Determines how long the block will last for, e.g. '5 months' or '2 weeks'. If set to 'infinite' or 'indefinite' the block will never expire.",
-	"apihelp-globalblock-example-1": "Block 192.0.2.1 indefinitely with reason 'Cross-wiki abuse'"
-}
