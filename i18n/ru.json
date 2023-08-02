@@ -124,6 +124,7 @@
 	"log-action-filter-gblblock-whitelist": "Добавление глобального блока в белый список",
 	"log-action-filter-gblblock-dwhitelist": "Удаление глобального блока в белый список",
 	"grant-globalblock": "Глобально заблокировать или разблокировать IP-адрес.",
+	"globalblocking-blockedtext-on-range": "Ваш IP-адрес находится в диапазоне, заблокированном на всех вики.",
 	"globalblocking-blockedtext-blocker-admin": "Вы можете связаться с $1, чтобы обсудить блокировку.",
 	"globalblocking-blockedtext-proxy": "Заблокированный прокси-адрес был $1."
 }
