@@ -7,6 +7,7 @@
 	"globalblocking-block-reason": "Себеп:",
 	"globalblocking-block-reason-dropdown": "Бөгөттөөнүн кадимки себептери\n** Вики аралык жарнама жайылтуу\n** Вики аралык кыянаттык\n** Вандализм",
 	"globalblocking-block-success": "$1 IP дареги бардык долбоорлордо бөгөттөлгөн.",
+	"globalblocking-list-modify": "түзөтүү",
 	"globalblocking-unblock-reason": "Себеп:",
 	"globalblocking-whitelist-reason": "Себеп:",
 	"globalblocking-whitelist-status": "Жергиликтүү абалы:"
