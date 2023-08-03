@@ -389,7 +389,7 @@ class GlobalBlocking {
 		$factory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
 		$lb = $factory->getMainLB( $wgGlobalBlockingDatabase );
 
-		return $lb->getConnectionRef( $dbtype, 'globalblocking', $wgGlobalBlockingDatabase );
+		return $lb->getConnection( $dbtype, 'globalblocking', $wgGlobalBlockingDatabase );
 	}
 
 	/**

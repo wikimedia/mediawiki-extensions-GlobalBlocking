@@ -33,7 +33,7 @@ class GlobalBlock extends AbstractBlock {
 		$db = MediaWikiServices::getInstance()
 		->getDBLoadBalancerFactory()
 		->getMainLB( $this->getWikiId() )
-		->getConnectionRef( DB_REPLICA, [], $this->getWikiId() );
+		->getConnection( DB_REPLICA, [], $this->getWikiId() );
 		$this->setExpiry( $db->decodeExpiry( $options['expiry'] ) );
 
 		$this->id = $block->gb_id;
