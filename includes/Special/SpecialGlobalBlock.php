@@ -10,9 +10,9 @@ use LogEventsList;
 use MediaWiki\Block\BlockUserFactory;
 use MediaWiki\Block\BlockUtils;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
+use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentity;
 use Status;
-use Title;
 use Wikimedia\IPUtils;
 
 class SpecialGlobalBlock extends FormSpecialPage {
