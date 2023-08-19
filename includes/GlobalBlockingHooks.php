@@ -19,12 +19,12 @@ use MediaWiki\Hook\GetLogTypesOnUserHook;
 use MediaWiki\Hook\OtherBlockLogLinkHook;
 use MediaWiki\Hook\SpecialContributionsBeforeMainOutputHook;
 use MediaWiki\Permissions\PermissionManager;
+use MediaWiki\Title\Title;
 use MediaWiki\User\Hook\SpecialPasswordResetOnSubmitHook;
 use MediaWiki\User\Hook\UserIsBlockedGloballyHook;
 use Message;
 use RequestContext;
 use SpecialPage;
-use Title;
 use User;
 use Wikimedia\IPUtils;
 
