@@ -3,12 +3,13 @@
 		"authors": [
 			"Amire80",
 			"Irus",
-			"Wadorgurt"
+			"Wadorgurt",
+			"Kotwys"
 		]
 	},
 	"globalblocking-block-reason": "Мугез:",
 	"globalblocking-block-expiry": "Йылпумъяськоз:",
-	"globalblocking-search-ip": "IP-адрес:",
+	"globalblocking-search-ip": "IP интыпус:",
 	"globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> (''$3'') глобально блокировать кариз [[Special:Contributions/$4|$4]] викиавторез ''($5)''",
 	"globalblocking-list-anononly": "анонимъёс гинэ",
 	"globalblocking-expiringblock": "йылпумъяськоз $1 $2",
