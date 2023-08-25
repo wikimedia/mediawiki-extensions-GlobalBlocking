@@ -118,7 +118,7 @@ class GlobalBlocking {
 		$hookRunner = new GlobalBlockingHookRunner( $services->getHookContainer() );
 
 		$lang = $context->getLanguage();
-		$block = self::getGlobalBlockingBlock( $ip, $user->isAnon() );
+		$block = self::getGlobalBlockingBlock( $ip, !$user->isNamed() );
 		if ( $block ) {
 			// Check for local whitelisting
 			if ( self::getLocalWhitelistInfo( $block->gb_id ) ) {
