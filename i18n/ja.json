@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"1108-Kiju",
 			"Aotake",
 			"Azeha",
 			"Fievarsty",
@@ -114,7 +115,7 @@
 	"globalblock": "IPアドレスをグローバルブロック",
 	"globalblockstatus": "グローバルブロックのローカル状態",
 	"removeglobalblock": "グローバルブロックを解除",
-	"right-globalblock": "他利用者をグローバルブロックおよびブロック解除",
+	"right-globalblock": "IPアドレスをグローバルブロックおよびブロック解除",
 	"action-globalblock": "他利用者のグローバルブロックおよびブロック解除",
 	"right-globalblock-whitelist": "グローバルブロックをローカルで無効化",
 	"action-globalblock-whitelist": "グローバルブロックのローカルでの無効化",
