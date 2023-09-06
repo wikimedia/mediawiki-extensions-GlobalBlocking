@@ -20,7 +20,8 @@
 			"Yamagata Yusuke",
 			"つぶあん派",
 			"青子守歌",
-			"春春眠眠"
+			"春春眠眠",
+			"1108-Kiju"
 		]
 	},
 	"globalblocking-desc": "IPアドレスを[[Special:GlobalBlockList|複数のウィキで横断的に]][[Special:GlobalBlock|ブロックする]]",
@@ -113,7 +114,7 @@
 	"globalblock": "IPアドレスをグローバルブロック",
 	"globalblockstatus": "グローバルブロックのローカル状態",
 	"removeglobalblock": "グローバルブロックを解除",
-	"right-globalblock": "他利用者をグローバルブロックおよびブロック解除",
+	"right-globalblock": "IPアドレスをグローバルブロックおよびブロック解除",
 	"action-globalblock": "他利用者のグローバルブロックおよびブロック解除",
 	"right-globalblock-whitelist": "グローバルブロックをローカルで無効化",
 	"action-globalblock-whitelist": "グローバルブロックのローカルでの無効化",
