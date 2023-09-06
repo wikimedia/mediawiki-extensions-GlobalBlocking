@@ -174,7 +174,7 @@ class GlobalBlocking {
 			$xffIps = $request->getHeader( 'X-Forwarded-For' );
 			if ( $xffIps ) {
 				$xffIps = array_map( 'trim', explode( ',', $xffIps ) );
-				$blocks = self::checkIpsForBlock( $xffIps, $user->isAnon() );
+				$blocks = self::checkIpsForBlock( $xffIps, !$user->isNamed() );
 				if ( count( $blocks ) > 0 ) {
 					$appliedBlock = self::getAppliedBlock( $xffIps, $blocks );
 					if ( $appliedBlock !== null ) {
