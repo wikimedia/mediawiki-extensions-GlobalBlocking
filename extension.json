@@ -131,7 +131,7 @@
 		"OtherBlockLogLink": "main",
 		"SpecialContributionsBeforeMainOutput": "main",
 		"UserMergeAccountFields": "MediaWiki\\Extension\\GlobalBlocking\\GlobalBlockingHooks::onUserMergeAccountFields",
-		"LoadExtensionSchemaUpdates": "MediaWiki\\Extension\\GlobalBlocking\\GlobalBlockingHooks::onLoadExtensionSchemaUpdates",
+		"LoadExtensionSchemaUpdates": "schema",
 		"GetBlockErrorMessageKey": "main",
 		"GetLogTypesOnUser": "main",
 		"ContributionsToolLinks": "main"
@@ -144,6 +144,9 @@
 				"MainConfig",
 				"CommentFormatter"
 			]
+		},
+		"schema": {
+			"class": "MediaWiki\\Extension\\GlobalBlocking\\GlobalBlockingSchemaHooks"
 		}
 	},
 	"config": {
