@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"1917 Ekim Devrimi",
+			"Amire80",
 			"Mirzali"
 		]
 	},
@@ -10,7 +11,7 @@
 	"apihelp-globalblock-param-reason": "Sebebê bloqeyi ronayışi/wedardışi",
 	"apihelp-query+globalblocks-summary": "listey adresanê IP ke bı globali de bloqe biye",
 	"apihelp-query+globalblocks-param-start": "Mora zemani nımre kerdışmra start ke",
-	"apihelp-query+globalblocks-param-end": "Mora zemani  nımre kedışi vındarn",
+	"apihelp-query+globalblocks-param-end": "Mora zemani nımre kedışi vındarn",
 	"apihelp-query+globalblocks-param-limit": "Azami miktarê bloqeyi liste ke",
 	"apihelp-query+globalblocks-param-prop": "Kamci xısusiyeta ke gê no",
 	"apihelp-query+globalblocks-example-1": "Bloqeyanê globalan pêronan lista ke",
