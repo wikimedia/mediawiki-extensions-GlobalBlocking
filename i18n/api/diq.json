@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"1917 Ekim Devrimi",
-			"Mirzali"
+			"Mirzali",
+			"Amire80"
 		]
 	},
 	"apihelp-globalblock-description": "Nr karberi global bloqe bıkerê ya zi wedarnê",
@@ -12,7 +13,7 @@
 	"apihelp-query+globalblocks-description": "Adresanê IPyê ke global bloke biyê, pêrıne liste kerê",
 	"apihelp-query+globalblocks-summary": "listey adresanê IP ke bı globali de bloqe biye",
 	"apihelp-query+globalblocks-param-start": "Mora zemani nımre kerdışmra start ke",
-	"apihelp-query+globalblocks-param-end": "Mora zemani  nımre kedışi vındarn",
+	"apihelp-query+globalblocks-param-end": "Mora zemani nımre kedışi vındarn",
 	"apihelp-query+globalblocks-param-limit": "Azami miktarê bloqeyi liste ke",
 	"apihelp-query+globalblocks-param-prop": "Kamci xısusiyeta ke gê no",
 	"apihelp-query+globalblocks-example-1": "Bloqeyanê globalan pêronan lista ke",
