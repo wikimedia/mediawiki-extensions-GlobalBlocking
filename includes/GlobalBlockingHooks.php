@@ -110,9 +110,7 @@ class GlobalBlockingHooks implements
 		}
 
 		// User is locally blocked and globally blocked. We need a CompositeBlock.
-		$allBlocks = $block instanceof CompositeBlock ?
-			$block->getOriginalBlocks() :
-			[ $block ];
+		$allBlocks = $block->toArray();
 		$allBlocks[] = $globalBlock;
 		$block = new CompositeBlock( [
 			'address' => $ip ?? $user->getName(),
