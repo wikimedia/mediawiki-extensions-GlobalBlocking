@@ -700,7 +700,7 @@ class GlobalBlocking {
 			);
 		}
 		$linkItems = count( $links )
-			? $sp->msg( 'parentheses', $sp->getLanguage()->pipeList( $links ) )->text()
+			? $sp->msg( 'parentheses', $sp->getLanguage()->pipeList( $links ) )->escaped()
 			: '';
 		return $linkItems;
 	}
