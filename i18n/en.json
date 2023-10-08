@@ -85,7 +85,7 @@
 	"globalblocking-logpagetext": "This is a log of global blocks which have been made and removed on this wiki.\nIt should be noted that global blocks can be made and removed on other wikis, and that these global blocks may affect this wiki.\nTo view all active global blocks, you may view the [[Special:GlobalBlockList|global block list]].",
 	"globalblocking-block-logentry": "globally blocked [[$1]] with an expiration time of $2",
 	"globalblocking-block2-logentry": "globally blocked [[$1]] ($2)",
-	"globalblocking-unblock-logentry": "removed global block on [[$1]]",
+	"globalblocking-unblock-logentry": "removed the global block on [[$1]]",
 	"globalblocking-logentry-whitelist": "$1 {{GENDER:$2|disabled}} the global block on $3 locally",
 	"globalblocking-logentry-dewhitelist": "$1 {{GENDER:$2|re-enabled}} the global block on $3 locally",
 	"globalblocking-modify-logentry": "modified the global block on [[$1]] ($2)",
