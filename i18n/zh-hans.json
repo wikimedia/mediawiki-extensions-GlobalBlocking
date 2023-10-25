@@ -33,7 +33,8 @@
 			"乌拉跨氪",
 			"铁桶",
 			"飞舞回堂前",
-			"魔琴"
+			"魔琴",
+			"范"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|允许]][[Special:GlobalBlockList|在多个wiki中封禁]]IP地址",
@@ -77,6 +78,7 @@
 	"globalblocking-list-tempblocks": "隐藏临时封禁",
 	"globalblocking-list-indefblocks": "隐藏无限期封禁",
 	"globalblocking-list-addressblocks": "隐藏单个IP封禁",
+	"globalblocking-list-rangeblocks": "隐藏段封禁",
 	"globalblocking-expiringblock": "终止于$1 $2",
 	"globalblocking-infiniteblock": "无限期",
 	"globalblocking-list-noresults": "使用给定的参数未找到任何结果。",
