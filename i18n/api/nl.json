@@ -1,12 +1,18 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mainframe98"
+			"Mainframe98",
+			"McDutchie"
 		]
 	},
 	"apihelp-globalblock-description": "Een gebruiker globaal blokkeren of deblokkeren.",
 	"apihelp-globalblock-summary": "Een gebruiker globaal blokkeren of deblokkeren.",
 	"apihelp-globalblock-param-target": "Het doel IP-adres.",
+	"apihelp-globalblock-param-expiry": "Indien dit is opgegeven, wordt de gebruiker geblokkeerd of opnieuw geblokkeerd. Bepaalt hoe lang de blokkade zal duren, bv. “5 months” of “2 weeks”. Als dit wordt ingesteld op “infinite” of “indefinite” zal het blok nooit verlopen.",
+	"apihelp-globalblock-param-unblock": "Als dit is opgegeven wordt de blokkering van de gebruiker opgeheven.",
+	"apihelp-globalblock-param-reason": "De reden voor het blokkeren/deblokkeren.",
+	"apihelp-globalblock-param-anononly": "Geef dit op als de blokkering alleen globaal uitgelogde gebruikers moet betreffen.",
+	"apihelp-globalblock-param-modify": "Geef dit op als de bestaande blokkering van het doel moet worden gewijzigd.",
 	"apihelp-query+globalblocks-description": "Toon alle globaal geblokkeerde IP-adressen",
 	"apihelp-query+globalblocks-summary": "Toon alle globaal geblokkeerde IP-adressen",
 	"apihelp-query+globalblocks-param-limit": "Het maximum aantal blokkades om te tonen.",
