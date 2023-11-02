@@ -12,9 +12,19 @@
 	"apihelp-globalblock-param-reason": "De reden voor het blokkeren/deblokkeren.",
 	"apihelp-globalblock-param-anononly": "Geef dit op als de blokkering alleen globaal uitgelogde gebruikers moet betreffen.",
 	"apihelp-globalblock-param-modify": "Geef dit op als de bestaande blokkering van het doel moet worden gewijzigd.",
+	"apihelp-globalblock-example-1": "192.0.2.1 voor onbepaalde tijd blokkeren met als reden “Cross-wiki abuse”",
 	"apihelp-query+globalblocks-summary": "Toon alle globaal geblokkeerde IP-adressen",
+	"apihelp-query+globalblocks-param-start": "Het tijdstip waar de opsomming begint.",
+	"apihelp-query+globalblocks-param-end": "Het tijdstip waar de opsomming eindigt.",
+	"apihelp-query+globalblocks-param-ids": "Door sluistekens gescheiden lijst met blokkade-ID’s die moeten worden weergegeven.",
+	"apihelp-query+globalblocks-param-addresses": "Door sluistekens gescheiden lijst met IP-adressen waarnaar moet worden gezocht.",
+	"apihelp-query+globalblocks-param-ip": "Alle blokken ophalen die van toepassing zijn op dit IP-adres of CIDR-bereik, ook bereikblokken. Kan niet samen met $1addresses worden gebruikt. CIDR-bereiken die groter zijn dan /16 worden niet geaccepteerd.",
 	"apihelp-query+globalblocks-param-limit": "Het maximum aantal blokkades om te tonen.",
 	"apihelp-query+globalblocks-param-prop": "Welke eigenschappen op te vragen.",
 	"apihelp-query+globalblocks-example-1": "Toon alle globale blokkades",
-	"apihelp-query+globalblocks-example-2": "Toon globale blokkades die van toepassing op het IP-adres 192.0.2.18"
+	"apihelp-query+globalblocks-example-2": "Toon globale blokkades die van toepassing op het IP-adres 192.0.2.18",
+	"apihelp-globalblock-param-alsolocal": "Het IP-adres ook lokaal blokkeren",
+	"apihelp-globalblock-param-localblockstalk": "De toegang tot de overlegpagina lokaal intrekken",
+	"apihelp-globalblock-param-localblocksemail": "De toegang tot e-mail lokaal intrekken",
+	"apihelp-globalblock-param-localanononly": "Geef dit op als de blokkering alleen lokaal afgemelde gebruikers moet betreffen."
 }
