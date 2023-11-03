@@ -28,6 +28,9 @@
 	"GrantPermissionGroups": {
 		"globalblock": "administration"
 	},
+	"GrantRiskGroups": {
+		"globalblock": "vandalism"
+	},
 	"AvailableRights": [
 		"globalblock",
 		"globalblock-whitelist",
