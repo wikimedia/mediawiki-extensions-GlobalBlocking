@@ -242,7 +242,7 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 
 	protected function getDB() {
 		if ( $this->globalBlockingDb === null ) {
-			$this->globalBlockingDb = GlobalBlocking::getGlobalBlockingDatabase( DB_REPLICA );
+			$this->globalBlockingDb = GlobalBlocking::getReplicaGlobalBlockingDatabase();
 		}
 		return $this->globalBlockingDb;
 	}

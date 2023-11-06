@@ -116,7 +116,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 
 	protected function showList() {
 		$out = $this->getOutput();
-		$dbr = GlobalBlocking::getGlobalBlockingDatabase( DB_REPLICA );
+		$dbr = GlobalBlocking::getReplicaGlobalBlockingDatabase();
 
 		// Build a list of blocks.
 		$conds = [];

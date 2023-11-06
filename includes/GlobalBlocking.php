@@ -282,7 +282,7 @@ class GlobalBlocking {
 			return false;
 		}
 
-		$dbr = self::getGlobalBlockingDatabase( DB_REPLICA );
+		$dbr = self::getReplicaGlobalBlockingDatabase();
 
 		$conds = self::getRangeCondition( $ip );
 
@@ -301,7 +301,7 @@ class GlobalBlocking {
 	 * @return string[] a SQL condition
 	 */
 	public static function getRangeCondition( $ip ) {
-		$dbr = self::getGlobalBlockingDatabase( DB_REPLICA );
+		$dbr = self::getReplicaGlobalBlockingDatabase();
 
 		list( $start, $end ) = IPUtils::parseRange( $ip );
 
@@ -325,7 +325,7 @@ class GlobalBlocking {
 	 * @return stdClass[] Array of applicable blocks
 	 */
 	private static function checkIpsForBlock( $ips, $anon ) {
-		$dbr = self::getGlobalBlockingDatabase( DB_REPLICA );
+		$dbr = self::getReplicaGlobalBlockingDatabase();
 		$conds = [];
 		foreach ( $ips as $ip ) {
 			if ( IPUtils::isValid( $ip ) ) {
@@ -380,16 +380,33 @@ class GlobalBlocking {
 	}
 
 	/**
-	 * @param int $dbtype either DB_REPLICA or DB_PRIMARY
 	 * @return \Wikimedia\Rdbms\IDatabase
 	 */
+	public static function getPrimaryGlobalBlockingDatabase() {
+		return MediaWikiServices::getInstance()
+			->getDBLoadBalancerFactory()
+			->getPrimaryDatabase( 'virtual-globalblocking' );
+	}
+
+	/**
+	 * @return \Wikimedia\Rdbms\IReadableDatabase
+	 */
+	public static function getReplicaGlobalBlockingDatabase() {
+		return MediaWikiServices::getInstance()
+			->getDBLoadBalancerFactory()
+			->getReplicaDatabase( 'virtual-globalblocking' );
+	}
+
+	/**
+	 * @param int $dbtype either DB_REPLICA or DB_PRIMARY
+	 * @return \Wikimedia\Rdbms\IDatabase|\Wikimedia\Rdbms\IReadableDatabase
+	 */
 	public static function getGlobalBlockingDatabase( $dbtype ) {
-		global $wgGlobalBlockingDatabase;
-
-		$factory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
-		$lb = $factory->getMainLB( $wgGlobalBlockingDatabase );
-
-		return $lb->getConnection( $dbtype, 'globalblocking', $wgGlobalBlockingDatabase );
+		if ( $dbtype == DB_PRIMARY ) {
+			return self::getPrimaryGlobalBlockingDatabase();
+		} else {
+			return self::getReplicaGlobalBlockingDatabase();
+		}
 	}
 
 	/**
@@ -398,7 +415,11 @@ class GlobalBlocking {
 	 * @return int
 	 */
 	public static function getGlobalBlockId( $ip, $dbtype = DB_REPLICA ) {
-		$db = self::getGlobalBlockingDatabase( $dbtype );
+		if ( $dbtype == DB_PRIMARY ) {
+			$db = self::getPrimaryGlobalBlockingDatabase();
+		} else {
+			$db = self::getReplicaGlobalBlockingDatabase();
+		}
 
 		$row = $db->selectRow( 'globalblocks', 'gb_id', [ 'gb_address' => $ip ], __METHOD__ );
 
@@ -420,7 +441,7 @@ class GlobalBlocking {
 	 * @throws DBUnexpectedError
 	 */
 	public static function purgeExpired( $limit = 1000 ) {
-		$globaldbw = self::getGlobalBlockingDatabase( DB_PRIMARY );
+		$globaldbw = self::getPrimaryGlobalBlockingDatabase();
 		$deleteIds = $globaldbw->selectFieldValues(
 			'globalblocks',
 			'gb_id',
@@ -552,7 +573,7 @@ class GlobalBlocking {
 		$lookup = MediaWikiServices::getInstance()->getCentralIdLookup();
 
 		// We're a-ok.
-		$dbw = self::getGlobalBlockingDatabase( DB_PRIMARY );
+		$dbw = self::getPrimaryGlobalBlockingDatabase();
 
 		$anonOnly = in_array( 'anon-only', $options );
 
@@ -658,7 +679,7 @@ class GlobalBlocking {
 			return StatusValue::newFatal( 'globalblocking-notblocked', $data[ 'ip' ] );
 		}
 
-		self::getGlobalBlockingDatabase( DB_PRIMARY )->delete(
+		self::getPrimaryGlobalBlockingDatabase()->delete(
 			'globalblocks',
 			[ 'gb_id' => $id ],
 			__METHOD__

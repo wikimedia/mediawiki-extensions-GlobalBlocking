@@ -133,7 +133,7 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 
 			// Find the expiry of the block. This is important so that we can store it in the
 			// global_block_whitelist table, which allows us to purge it when the block has expired.
-			$gdbr = GlobalBlocking::getGlobalBlockingDatabase( DB_REPLICA );
+			$gdbr = GlobalBlocking::getReplicaGlobalBlockingDatabase();
 			$expiry = $gdbr->selectField( 'globalblocks', 'gb_expiry', [ 'gb_id' => $id ], __METHOD__ );
 
 			$row = [
