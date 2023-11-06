@@ -41,6 +41,7 @@
 	"globalblocking-block-alreadyblocked": "Het IP-adres $1 is al globaal geblokkeerd.\nU kunt de bestaande blokkade bekijken in de [[Special:GlobalBlockList|lijst met globale blokkades]] of de instellingen van de bestaande blokkade aanpassen door de gegevens uit dit formulier opnieuw op te slaan.",
 	"globalblocking-block-bigrange": "De range die u hebt opgegeven ($1) is te groot om te blokkeren. U mag ten hoogste 65.536 adressen blokkeren (/16-ranges)",
 	"globalblocking-also-local": "Blokkeer ook het opgegeven IP-adres lokaal op deze wiki",
+	"globalblocking-also-local-talk": "De gebruiker blokkeren voor het lokaal bewerken van de eigen overlegpagina",
 	"globalblocking-list-intro": "Dit is een lijst met alle globale blokkades die op het moment actief zijn.\nSommige blokkades zijn gemarkeerd als lokaal opgeheven.\nDit betekent dat ze op andere sites van toepassing zijn, maar dat een lokale beheerder heeft besloten dat de blokkade op deze wiki niet van toepassing is.",
 	"globalblocking-list": "Lijst met globaal geblokkeerde IP-adressen",
 	"globalblocking-search-legend": "Naar een globale blokkade zoeken",
