@@ -291,6 +291,17 @@ class GlobalBlockingHooks implements
 	}
 
 	/**
+	 * @param array &$updateFields
+	 *
+	 * @return bool
+	 */
+	public static function onUserMergeAccountFields( array &$updateFields ) {
+		$updateFields[] = [ 'global_block_whitelist', 'gbw_by', 'gbw_by_text' ];
+
+		return true;
+	}
+
+	/**
 	 * So users can just type in a username for target and it'll work
 	 * @param array &$types
 	 * @return bool

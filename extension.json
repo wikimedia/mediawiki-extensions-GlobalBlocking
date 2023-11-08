@@ -130,7 +130,7 @@
 		"SpecialPasswordResetOnSubmit": "main",
 		"OtherBlockLogLink": "main",
 		"SpecialContributionsBeforeMainOutput": "main",
-		"UserMergeAccountFields": "usermerge",
+		"UserMergeAccountFields": "MediaWiki\\Extension\\GlobalBlocking\\GlobalBlockingHooks::onUserMergeAccountFields",
 		"LoadExtensionSchemaUpdates": "schema",
 		"GetBlockErrorMessageKey": "main",
 		"GetLogTypesOnUser": "main",
@@ -144,9 +144,6 @@
 				"MainConfig",
 				"CommentFormatter"
 			]
-		},
-		"usermerge": {
-			"class": "MediaWiki\\Extension\\GlobalBlocking\\UserMergeHooks"
 		},
 		"schema": {
 			"class": "MediaWiki\\Extension\\GlobalBlocking\\GlobalBlockingSchemaHooks"
