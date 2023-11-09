@@ -30,7 +30,8 @@
 			"Yekrats",
 			"Тест",
 			"Justman10000",
-			"Verdy p"
+			"Verdy p",
+			"McDutchie"
 		]
 	},
 	"globalblocking-desc": "{{desc|name=Global Blocking|url=https://www.mediawiki.org/wiki/Extension:GlobalBlocking}}",
@@ -146,7 +147,7 @@
 	"grant-globalblock": "Name for grant \"globalblock\".\n{{Related|Grant}}",
 	"globalblocking-blockedtext-all-wikis": "Used as a component of a global block message.",
 	"globalblocking-blockedtext-on-range": "Used as a component of a global block message.\n\n'''FIXME:''' https://phabricator.wikimedia.org/T332619",
-	"globalblocking-blockedtext-on-proxy": "Used as a component of a global block message.\n\n'''FIXME:''' https://phabricator.wikimedia.org/T332619",
+	"globalblocking-blockedtext-on-proxy": "Used as a component of a global block message.",
 	"globalblocking-blockedtext-blocker-admin": "Used as component for a global block error message. Parameters:\n* $1 - the blocking sysop (with a link to their user page if they are a local user)",
 	"globalblocking-blockedtext-email-feature": "Used as component for a global block error message. Refers to {{msg-mw|Emailuser}}",
 	"globalblocking-blockedtext-ip-range": "Used as a component of a global block message. $1 - the blocked range.",
