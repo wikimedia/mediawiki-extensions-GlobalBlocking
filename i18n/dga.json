@@ -2,9 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"Amire80",
-			"PROBUS"
+			"PROBUS",
+			"Linus Konkor"
 		]
 	},
 	"globalblocking-blockedtext-all-wikis": "A fo IP aderɛse pɔgɛɛ la",
-	"globalblocking-blockedtext-proxy": "A sɛgre yeli nyɔgeraa wa la $1."
+	"globalblocking-blockedtext-proxy": "A begebo pogya aderɛse wa la $1."
 }
