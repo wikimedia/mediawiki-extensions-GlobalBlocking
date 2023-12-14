@@ -53,7 +53,7 @@ class FixGlobalBlockWhitelist extends Maintenance {
 
 		$whitelistedIPs = array_values( $whitelistEntries );
 
-		$gdbr = GlobalBlocking::getGlobalBlockingDatabase( DB_REPLICA );
+		$gdbr = GlobalBlocking::getReplicaGlobalBlockingDatabase();
 		$gblocks = $gdbr->select(
 			'globalblocks',
 			[ 'gb_id', 'gb_address' ],

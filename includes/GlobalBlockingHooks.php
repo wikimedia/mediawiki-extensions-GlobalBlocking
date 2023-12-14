@@ -66,18 +66,6 @@ class GlobalBlockingHooks implements
 	}
 
 	/**
-	 * Extension registration callback
-	 */
-	public static function onRegistration() {
-		global $wgGlobalBlockingDatabase, $wgDBname;
-
-		// Override $wgGlobalBlockingDatabase for Wikimedia Jenkins.
-		if ( defined( 'MW_QUIBBLE_CI' ) ) {
-			$wgGlobalBlockingDatabase = $wgDBname;
-		}
-	}
-
-	/**
 	 * Add a global block. If there are any existing blocks, add
 	 * the global block into a CompositeBlock.
 	 *

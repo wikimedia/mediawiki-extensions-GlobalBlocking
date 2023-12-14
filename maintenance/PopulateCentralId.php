@@ -36,12 +36,11 @@ class PopulateCentralId extends LoggedUpdateMaintenance {
 	 * @inheritDoc
 	 */
 	public function doDbUpdates() {
-		$dbr = GlobalBlocking::getGlobalBlockingDatabase( DB_REPLICA );
-		$dbw = GlobalBlocking::getGlobalBlockingDatabase( DB_PRIMARY );
+		$dbr = GlobalBlocking::getReplicaGlobalBlockingDatabase();
+		$dbw = GlobalBlocking::getPrimaryGlobalBlockingDatabase();
 		$services = MediaWikiServices::getInstance();
 		$lbFactory = $services->getDBLoadBalancerFactory();
 		$lookup = $services->getCentralIdLookup();
-		$domain = $services->getMainConfig()->get( 'GlobalBlockingDatabase' );
 		$wikiId = WikiMap::getCurrentWikiId();
 
 		$batchSize = $this->getBatchSize();
@@ -83,7 +82,7 @@ class PopulateCentralId extends LoggedUpdateMaintenance {
 			}
 
 			$count += $dbw->affectedRows();
-			$lbFactory->waitForReplication( [ 'domain' => $domain ] );
+			$lbFactory->waitForReplication();
 		}
 		$this->output( "Completed migration, updated $count row(s), migration failed for $failed row(s).\n" );
 

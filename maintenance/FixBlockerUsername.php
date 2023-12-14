@@ -28,10 +28,9 @@ class FixBlockerUsername extends Maintenance {
 	public function execute() {
 		$oldname = $this->getArg( 0 );
 		$newname = $this->getArg( 1 );
-		$dbw = GlobalBlocking::getGlobalBlockingDatabase( DB_PRIMARY );
+		$dbw = GlobalBlocking::getPrimaryGlobalBlockingDatabase();
 		$services = MediaWikiServices::getInstance();
 		$lbFactory = $services->getDBLoadBalancerFactory();
-		$domain = $services->getMainConfig()->get( 'GlobalBlockingDatabase' );
 
 		$lastBlock = $dbw->selectField( 'globalblocks', 'MAX(gb_id)', '', __METHOD__ );
 
@@ -49,7 +48,7 @@ class FixBlockerUsername extends Maintenance {
 				__METHOD__
 			);
 
-			$lbFactory->waitForReplication( [ 'domain' => $domain ] );
+			$lbFactory->waitForReplication();
 		}
 		$this->output( "Updated Blocks made by {$oldname}.\n" );
 	}

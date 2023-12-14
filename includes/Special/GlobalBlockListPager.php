@@ -27,7 +27,7 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 		CommentFormatter $commentFormatter
 	) {
 		// Set database before parent constructor to avoid setting it there with wfGetDB
-		$this->mDb = GlobalBlocking::getGlobalBlockingDatabase( DB_REPLICA );
+		$this->mDb = GlobalBlocking::getReplicaGlobalBlockingDatabase();
 		parent::__construct( $context, $linkRenderer );
 		$this->queryConds = $conds;
 		$this->commentFormatter = $commentFormatter;

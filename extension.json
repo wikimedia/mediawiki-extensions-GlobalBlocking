@@ -5,7 +5,6 @@
 	"descriptionmsg": "globalblocking-desc",
 	"license-name": "GPL-2.0-or-later",
 	"type": "other",
-	"callback": "MediaWiki\\Extension\\GlobalBlocking\\GlobalBlockingHooks::onRegistration",
 	"requires": {
 		"MediaWiki": ">= 1.41"
 	},
@@ -153,9 +152,6 @@
 		}
 	},
 	"config": {
-		"GlobalBlockingDatabase": {
-			"value": "globalblocking"
-		},
 		"ApplyGlobalBlocks": {
 			"value": true
 		},
@@ -180,6 +176,9 @@
 	},
 	"ServiceWiringFiles": [
 		"includes/ServiceWiring.php"
+	],
+	"DatabaseVirtualDomains": [
+		"virtual-globalblocking"
 	],
 	"manifest_version": 2
 }
