@@ -3,7 +3,8 @@
 		"authors": [
 			"Dr Lotus Black",
 			"Phosai",
-			"Teitei"
+			"Teitei",
+			"Ninjastrikers"
 		]
 	},
 	"globalblocking-block": "ဂလိုဘယ်အားဖြင့် ပိတ်ပင်ထားသော အိုင်ပီလိပ်စာ",
@@ -15,7 +16,7 @@
 	"globalblocking-block-expiry-selector-other": "အခြားအချိန်:",
 	"globalblocking-block-legend": "ဂလိုဘယ်အားဖြင့် အိုင်ပီလိပ်စာတစ်ခုကို ပိတ်ပင်ရန်",
 	"globalblocking-ipaddress": "အိုင်ပီလိပ်စာ:",
-	"globalblocking-ipbanononly": "အမည်မသိ အသုံးပြုသူများကိုသာ ပိတ်ပင်တားဆီးရန်",
+	"globalblocking-ipbanononly": "အမည်မသိ အသုံးပြုသူများကိုသာ တစ်ကမ္ဘာလုံးတွင် ပိတ်ပင်တားဆီးရန်",
 	"globalblocking-block-ipinvalid": "သင် ရိုက်ထည့်သော အိုင်ပီလိပ်စာ ($1) သည် မဆီလျော်ပါ။ အသုံးပြုသူအမည်ကို ရိုက်ထည့်၍ မရကြောင်းကို သတိပြုပါ။",
 	"globalblocking-block-expiryinvalid": "သင် ရိုက်ထည့်လိုက်သော သက်တမ်းကုန်လွန်ရက်မှာ မဆီလျော်ပါ။",
 	"globalblocking-block-submit": "ဂလိုဘယ်အားဖြင့် ဤအိုင်ပီလိပ်စာကို ပိတ်ပင်ရန်",
@@ -53,8 +54,8 @@
 	"globalblocking-whitelist-statuslabel": "{{SITENAME}}တွင် ဂလိုဘယ် ပိတ်ပင်တားဆီးခြင်းကို ပိတ်ထားရန်",
 	"globalblocking-whitelist-submit": "ဒေသတွင်းအခြေနေကို ပြောင်းလဲရန်",
 	"globalblocking-whitelist-intro": "ဂလိုဘယ် ပိတ်ပင်မှုများ၏ ဒေသတွင်းအခြေနေကို တည်းဖြတ်ရန် ဤဖောင်ပုံစံအား အသုံးပြုနိုင်သည်။ အကယ်၍ ဤဝီကီတွင် ဂလိုဘယ်ပိတ်ပင်မှုကို ပိတ်ထားပါက သက်ရောက်သော အိုင်ပီလိပ်စာပေါ်ရှိ အသုံးပြုသူများအနေဖြင့် ကိုယ်တိုင်တည်းဖြတ်နိုင်ပါလိမ့်မည်။",
-	"globalblocking-ipblocked": "'''သင်၏အိုင်ပီလိပ်စာကို ဝီကီအားလုံးတွင် ပိတ်ပင်ထားသည်။'''\n\nပိတ်ပင်တားဆီးမှုကို $1 ($2) က ပြုလုပ်ခဲ့သည်။\nပေးထားသောအကြောင်းပြချက်မှာ ''$3'' ဖြစ်သည်။\n\n* ပိတ်ပင်မှုစတင်ချိန်: $4\n* ပိတ်ပင်မှု ကုန်ဆုံးကာလ: $5\n\nပိတ်ပင်မှုအကြောင်းဆွေးနွေးရန် $1 ကိုဆက်သွယ်နိုင်သည်။\nသင်၏ [[Special:Preferences|အကောင့်ရွေးချယ်စရာများ]]တွင် မှန်ကန်သောအီးမေးလ်လိပ်စာကို ထည့်သွင်းထားပြီး ယင်းကိုအသုံးပြုသည့်အတွက် ပိတ်ပင်ထားခြင်းမဟုတ်ပါက \"{{int:emailuser}}\" ဝိသေသလက္ခဏာကို အသုံးမပြုနိုင်ပါ။\nသင်၏လက်ရှိအိုင်ပီလိပ်စာမှာ $6 ဖြစ်သည်။\nတောင်းဆိုမှုများလုပ်ဆောင်ပါက အပေါ်ရှိအသေးစိတ်များကို ပါဝင်အောင်လုပ်ပါ။",
-	"globalblocking-ipblocked-range": "'''သင်၏အိုင်ပီလိပ်စာသည် ဝီကီအားလုံးရှိ ပိတ်ပင်ထားသောအကွာအဝေးတွင် ရှိနေသည်။'''\n\nပိတ်ပင်တားဆီးမှုကို $1 ($2) က ပြုလုပ်ခဲ့သည်။\nပေးထားသောအကြောင်းပြချက်မှာ ''$3'' ဖြစ်သည်။\n\n* ပိတ်ပင်မှုစတင်ချိန်: $4\n* ပိတ်ပင်မှု ကုန်ဆုံးကာလ: $5\n\nပိတ်ပင်မှုအကြောင်းဆွေးနွေးရန် $1 ကိုဆက်သွယ်နိုင်သည်။\nသင်၏ [[Special:Preferences|အကောင့်ရွေးချယ်စရာများ]]တွင် မှန်ကန်သောအီးမေးလ်လိပ်စာကို ထည့်သွင်းထားပြီး ယင်းကိုအသုံးပြုသည့်အတွက် ပိတ်ပင်ထားခြင်းမဟုတ်ပါက \"{{int:emailuser}}\" ဝိသေသလက္ခဏာကို အသုံးမပြုနိုင်ပါ။\nသင်၏လက်ရှိအိုင်ပီလိပ်စာမှာ $6 ဖြစ်ပြီး ပိတ်ပင်မှုအကန့်မှာ $7 ဖြစ်သည်။ \nတောင်းဆိုမှုများလုပ်ဆောင်ပါက အပေါ်ရှိအသေးစိတ်များကို ပါဝင်အောင်လုပ်ပါ။",
+	"globalblocking-ipblocked": "'''{{int:globalblocking-blockedtext-all-wikis}}'''\n\nပိတ်ပင်တားဆီးမှုကို $1 ($2) က ပြုလုပ်ခဲ့သည်။\n{{int:blockedtext-reason-comment|$3}}။\n\n* {{int:blockedtext-start-time|$4}}\n* {{int:blockedtext-expiration-time|$5}}\n\n{{int:globalblocking-blockedtext-blocker-admin|$1}}\n{{int:globalblocking-blockedtext-email-feature}}\n{{int:blockedtext-block-ip|$6}}\n{{int:blockedtext-include-details-queries}}",
+	"globalblocking-ipblocked-range": "'''{{int:globalblocking-blockedtext-on-range}}'''\n\nပိတ်ပင်တားဆီးမှုကို $1 ($2) က ပြုလုပ်ခဲ့သည်။\n{{int:blockedtext-reason-comment|$3}}။\n\n* {{int:blockedtext-start-time|$4}}\n* {{int:blockedtext-expiration-time|$5}}\n\n{{int:globalblocking-blockedtext-blocker-admin|$1}}\n{{int:globalblocking-blockedtext-email-feature}}\n{{int:blockedtext-block-ip|$6}} {{int:globalblocking-blockedtext-ip-range|$7}}\n{{int:blockedtext-include-details-queries}}",
 	"globalblocking-blocked-nopassreset": "သင့်အိုင်ပီလိပ်စာကို ကမ္ဘာလုံးဆိုင်ရာ ပိတ်ပင်ထားသောကြောင့် အသုံးပြုသူ၏ စကားဝှက်ကို သင်ပြန်လည်မသတ်မှတ်နိုင်ပါ။",
 	"globalblocking-logpage": "ဂလိုဘယ် ပိတ်ပင်တားဆီးမှု မှတ်တမ်း",
 	"globalblocking-logpagetext": "ဤဝီကီတွင် လုပ်ဆောင်၊ ဖယ်ရှားခဲ့သော ဂလိုဘယ်ပိတ်ပင်မှုများ၏ မှတ်တမ်းဖြစ်သည်။ မှတ်သားရန်မှာ ဂလိုဘယ်ပိတ်ပင်မှုများကို အခြားဝီကီများမှလည်း လုပ်ဆောင်နိုင်ပြီး ဤဝီကီတွင် အကျိုးသက်ရောက်နိုင်ပါသည်။ သက်ဝင်လှုပ်ရှား ဂလိုဘယ်ပိတ်ပင်မှုများအားလုံးကို [[Special:GlobalBlockList|ဂလိုဘယ်ပိတ်ပင်မှုစာရင်း]]တွင် ကြည့်ရှုနိုင်ပါသည်။",
