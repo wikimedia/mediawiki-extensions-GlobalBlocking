@@ -3,7 +3,8 @@
 		"authors": [
 			"Dr Lotus Black",
 			"Phosai",
-			"Teitei"
+			"Teitei",
+			"Ninjastrikers"
 		]
 	},
 	"globalblocking-block": "ဂလိုဘယ်အားဖြင့် ပိတ်ပင်ထားသော အိုင်ပီလိပ်စာ",
@@ -15,7 +16,7 @@
 	"globalblocking-block-expiry-selector-other": "အခြားအချိန်:",
 	"globalblocking-block-legend": "ဂလိုဘယ်အားဖြင့် အိုင်ပီလိပ်စာတစ်ခုကို ပိတ်ပင်ရန်",
 	"globalblocking-ipaddress": "အိုင်ပီလိပ်စာ:",
-	"globalblocking-ipbanononly": "အမည်မသိ အသုံးပြုသူများကိုသာ ပိတ်ပင်တားဆီးရန်",
+	"globalblocking-ipbanononly": "အမည်မသိ အသုံးပြုသူများကိုသာ တစ်ကမ္ဘာလုံးတွင် ပိတ်ပင်တားဆီးရန်",
 	"globalblocking-block-ipinvalid": "သင် ရိုက်ထည့်သော အိုင်ပီလိပ်စာ ($1) သည် မဆီလျော်ပါ။ အသုံးပြုသူအမည်ကို ရိုက်ထည့်၍ မရကြောင်းကို သတိပြုပါ။",
 	"globalblocking-block-expiryinvalid": "သင် ရိုက်ထည့်လိုက်သော သက်တမ်းကုန်လွန်ရက်မှာ မဆီလျော်ပါ။",
 	"globalblocking-block-submit": "ဂလိုဘယ်အားဖြင့် ဤအိုင်ပီလိပ်စာကို ပိတ်ပင်ရန်",

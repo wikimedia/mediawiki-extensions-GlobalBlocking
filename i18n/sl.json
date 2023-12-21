@@ -45,7 +45,7 @@
 	"globalblocking-list-expiry": "preteče $1",
 	"globalblocking-list-anononly": "samo brezimneži",
 	"globalblocking-list-unblock": "odstrani",
-	"globalblocking-list-whitelisted": "lokalno onemogočil/a $1: $2",
+	"globalblocking-list-whitelisted": "lokalno onemogočil_a $1: $2",
 	"globalblocking-list-whitelist": "lokalno stanje",
 	"globalblocking-list-modify": "spremeni",
 	"globalblocking-list-tempblocks": "Skrij začasna blokiranja",
