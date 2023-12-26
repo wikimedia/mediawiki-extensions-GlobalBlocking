@@ -7,7 +7,8 @@
 			"Rakeshonwiki",
 			"Shanmugamp7",
 			"TRYPPN",
-			"மதனாஹரன்"
+			"மதனாஹரன்",
+			"Fahimrazick"
 		]
 	},
 	"globalblocking-block": "உலகளவில் ஒரு IP முகவரியை தடைசெய்",
@@ -25,7 +26,7 @@
 	"globalblocking-modify-submit": "இந்த உலகளாவிய தடையைத் திருத்து",
 	"globalblocking-block-success": "IPமுகவரி $1 அனைத்து திட்டங்களிலும் வெற்றிகரமாக தடுக்கப்பட்டது.",
 	"globalblocking-modify-success": "$1 ல் உலகலவிய தடை வெற்றிகரமாக திருத்தப்பட்டது.",
-	"globalblocking-block-alreadyblocked": "IP முகவரி $1 ஏற்கனவே உலகளவில் தடுக்கப்பட்டுள்ளது.\nஏற்கனவே உள்ள தடையை [[Special:GlobalBlockList|உலகளவிய தடைகளின் பட்டியல்]] மூலம் நீங்கள் பார்க்கலாம்.\nஅல்லது இந்த படிவத்தை மறு சமர்ப்பித்தல் மூலம் ஏற்கனவே உள்ள தடையின் அமைவுகளை திருத்தவும்.",
+	"globalblocking-block-alreadyblocked": "IP முகவரி $1 ஏற்கனவே உலகளவில் தடுக்கப்பட்டுள்ளது.\nநீர் ஏற்கனவே உள்ள தடையை [[Special:GlobalBlockList|உலகளாவிய தடைகளின் பட்டியலிற்]] பார்க்கலாம்,\nஅல்லது இப்படிவத்தை மீளச்சமர்ப்பித்து ஏற்கனவே உள்ள தடையின் அமைவுகளைத் திருத்தலாம்.",
 	"globalblocking-list": "உலகளவில் தடை செய்யப்பட்ட IP முகவரிகளின் பட்டியல்.",
 	"globalblocking-search-legend": "ஓர் உலகளாவிய தடையைத் தேடு",
 	"globalblocking-search-ip": "ஐ.பி. முகவரி:",
