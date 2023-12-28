@@ -8,7 +8,8 @@
 			"Nasir8891",
 			"Wikitanvir",
 			"আজিজ",
-			"আফতাবুজ্জামান"
+			"আফতাবুজ্জামান",
+			"Aishik Rehman"
 		]
 	},
 	"globalblocking-block": "একটি আইপি ঠিকানাকে বৈশ্বিকভাবে বাধা প্রদান করুন",
@@ -41,7 +42,7 @@
 	"globalblocking-list-whitelist": "স্থানীয় অবস্থা",
 	"globalblocking-list-modify": "পরিবর্তন",
 	"globalblocking-expiringblock": "$1 তারিখের $2 এ মেয়াদোত্তীর্ণ হবে",
-	"globalblocking-list-noresults": "প্রদত্ত পরামিতিগুলি দিয়ে কোন ফলাফল পাওয়া যায়নি।",
+	"globalblocking-list-noresults": "প্রদত্ত পরামিতিগুলি দিয়ে কোনো ফলাফল পাওয়া যায়নি।",
 	"globalblocking-goto-block": "একটি আইপি ঠিকানাকে বৈশ্বিকভাবে বাধা প্রদান করুন",
 	"globalblocking-goto-unblock": "একটি বৈশ্বিক বাধা তুলে নাও",
 	"globalblocking-goto-status": "বৈশ্বিক বাধার স্থানীয় অবস্থা পরিবর্তন করুন",
