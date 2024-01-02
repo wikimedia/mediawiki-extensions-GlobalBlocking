@@ -90,5 +90,6 @@
 	"removeglobalblock": "Cancel·la el blocatge global",
 	"right-globalblock": "Crear i eliminar blocatges globals",
 	"right-globalblock-whitelist": "Desactivar a nivell local els blocatges globals",
-	"right-globalblock-exempt": "Eludir els blocatges globals"
+	"right-globalblock-exempt": "Eludir els blocatges globals",
+	"globalblocking-blockedtext-proxy": "La adreça proxy blocada és $1."
 }
