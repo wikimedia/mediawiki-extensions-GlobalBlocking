@@ -2,13 +2,13 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Special;
 
-use FormSpecialPage;
 use HTMLForm;
 use MediaWiki\Block\BlockUtils;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
+use MediaWiki\SpecialPage\FormSpecialPage;
+use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\Status\Status;
 use MediaWiki\User\UserIdentity;
-use SpecialPage;
-use Status;
 use Wikimedia\IPUtils;
 
 class SpecialRemoveGlobalBlock extends FormSpecialPage {

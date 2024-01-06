@@ -3,13 +3,13 @@
 namespace MediaWiki\Extension\GlobalBlocking\Special;
 
 use DerivativeContext;
-use Html;
 use HTMLForm;
 use MediaWiki\Block\AbstractBlock;
 use MediaWiki\Block\BlockUtils;
 use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
-use SpecialPage;
+use MediaWiki\Html\Html;
+use MediaWiki\SpecialPage\SpecialPage;
 use Wikimedia\IPUtils;
 
 class SpecialGlobalBlockList extends SpecialPage {

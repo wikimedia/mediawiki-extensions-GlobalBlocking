@@ -2,17 +2,17 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Special;
 
-use CommentStore;
-use FormSpecialPage;
-use Html;
 use HTMLForm;
 use LogEventsList;
 use MediaWiki\Block\BlockUserFactory;
 use MediaWiki\Block\BlockUtils;
+use MediaWiki\CommentStore\CommentStore;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
+use MediaWiki\Html\Html;
+use MediaWiki\SpecialPage\FormSpecialPage;
+use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentity;
-use Status;
 use Wikimedia\IPUtils;
 
 class SpecialGlobalBlock extends FormSpecialPage {

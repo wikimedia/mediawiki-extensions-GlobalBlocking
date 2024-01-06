@@ -7,7 +7,7 @@ use ApiMain;
 use ApiResult;
 use MediaWiki\Block\BlockUserFactory;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
-use Status;
+use MediaWiki\Status\Status;
 use StatusValue;
 use Wikimedia\ParamValidator\ParamValidator;
 

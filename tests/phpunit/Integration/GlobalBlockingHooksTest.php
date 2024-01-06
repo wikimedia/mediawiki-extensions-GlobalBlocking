@@ -2,8 +2,8 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Test\Integration;
 
-use Config;
 use MediaWiki\CommentFormatter\CommentFormatter;
+use MediaWiki\Config\Config;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlock;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingHooks;
 use MediaWiki\Permissions\PermissionManager;

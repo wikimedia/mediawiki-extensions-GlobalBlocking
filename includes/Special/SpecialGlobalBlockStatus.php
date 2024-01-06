@@ -3,14 +3,14 @@
 namespace MediaWiki\Extension\GlobalBlocking\Special;
 
 use Exception;
-use FormSpecialPage;
 use HTMLForm;
 use ManualLogEntry;
 use MediaWiki\Block\BlockUtils;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
+use MediaWiki\SpecialPage\FormSpecialPage;
+use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentity;
-use SpecialPage;
 use Wikimedia\IPUtils;
 
 class SpecialGlobalBlockStatus extends FormSpecialPage {

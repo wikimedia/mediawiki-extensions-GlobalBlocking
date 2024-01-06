@@ -2,16 +2,16 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Special;
 
-use Html;
 use HtmlArmor;
 use IContextSource;
 use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
+use MediaWiki\Html\Html;
 use MediaWiki\Linker\LinkRenderer;
+use MediaWiki\Pager\ReverseChronologicalPager;
+use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\User\User;
 use MediaWiki\WikiMap\WikiMap;
-use ReverseChronologicalPager;
-use SpecialPage;
-use User;
 
 class GlobalBlockListPager extends ReverseChronologicalPager {
 	/** @var array */
