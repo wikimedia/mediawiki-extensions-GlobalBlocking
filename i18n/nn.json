@@ -70,6 +70,7 @@
 	"globalblocking-modify-logentry": "endra den globale blokkeringa av [[$1]] ($2)",
 	"globalblocking-logentry-expiry": "endar $1",
 	"globalblocking-logentry-noexpiry": "inga tidsavgrensing er sett",
+	"globalblocking-contribs-notice": "Denne IP-adressa er for tida blokkert globalt. Den siste oppføringa i den globale blokkeringsloggen er synt nedanfor:",
 	"globalblocklist": "Liste over globalt blokkerte IP-adresser",
 	"globalblock": "Blokker ei IP-adressa globalt",
 	"globalblockstatus": "Lokal status for globale blokkeringar",
