@@ -73,7 +73,7 @@
 	"globalblocking-blocked-nopassreset": "Nu puteți reseta parolele utilizatorului deoarece adresa IP a dvs. este blocată la nivel global.",
 	"globalblocking-logpage": "Jurnal blocări globale",
 	"globalblocking-block-logentry": "a blocat global adresa IP [[$1]] cu un termen de expirare de $2",
-	"globalblocking-block2-logentry": "blocat global pe [[$1]] ($2)",
+	"globalblocking-block2-logentry": "a blocat global adresa [[$1]] ($2)",
 	"globalblocking-unblock-logentry": "eliminat blocare globală pentru [[$1]]",
 	"globalblocking-modify-logentry": "a modificat blocarea globală pentru [[$1]] ($2)",
 	"globalblocking-logentry-expiry": "expiră pe $1",
