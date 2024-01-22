@@ -95,6 +95,7 @@
 	"globalblocking-block-logentry": "님이 [[$1]] 님을 모든 위키에서 $2 차단했습니다",
 	"globalblocking-block2-logentry": "님이 [[$1]]님을 모든 위키에서 차단했습니다 ($2)",
 	"globalblocking-unblock-logentry": "님이 [[$1]]의 전역 차단을 해제했습니다",
+	"globalblocking-logentry-whitelist": "$1님이 $3의 전역 차단을 로컬에서 {{GENDER:$2|비활성화했습니다}}",
 	"globalblocking-modify-logentry": "님이 [[$1]]에 대한 전역 차단 설정을 바꿨습니다 ($2)",
 	"globalblocking-logentry-expiry": "$1에 만료",
 	"globalblocking-logentry-noexpiry": "기한이 정해지지 않음",
@@ -119,5 +120,7 @@
 	"log-action-filter-gblblock-gblock": "전역 차단",
 	"log-action-filter-gblblock-gunblock": "전역 차단 해제",
 	"log-action-filter-gblblock-modify": "전역 차단 변경",
+	"log-action-filter-gblblock-whitelist": "전역 차단 화이트리스트 추가",
+	"log-action-filter-gblblock-dwhitelist": "전역 차단 화이트리스트 제거",
 	"grant-globalblock": "IP 주소 전역 차단 또는 차단 해제"
 }
