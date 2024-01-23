@@ -130,5 +130,12 @@
 	"log-action-filter-gblblock-modify": "Modificação de bloqueio global",
 	"log-action-filter-gblblock-whitelist": "Adição de bloqueio global à lista branca",
 	"log-action-filter-gblblock-dwhitelist": "Remoção do bloqueio global, da lista branca",
-	"grant-globalblock": "Bloquear ou desbloquear globalmente um endereço IP"
+	"grant-globalblock": "Bloquear ou desbloquear globalmente um endereço IP",
+	"globalblocking-blockedtext-all-wikis": "O seu endereço IP foi bloqueado em todas as wikis.",
+	"globalblocking-blockedtext-on-range": "O seu endereço IP está incluído numa gama que foi bloqueada em todas as wikis.",
+	"globalblocking-blockedtext-on-proxy": "Um ou mais dos servidores ''proxy'' usados pelo seu pedido está bloqueado globalmente.",
+	"globalblocking-blockedtext-blocker-admin": "Pode contactar $1 para discutir o bloqueio.",
+	"globalblocking-blockedtext-email-feature": "Não pode utilizar a funcionalidade \"{{int:emailuser}}\" a menos que tenha especificado um endereço de correio eletrónico válido nas suas [[Special:Preferences|preferências da conta]] e o bloqueio não impeça o seu uso.",
+	"globalblocking-blockedtext-ip-range": "A gama bloqueada é $1.",
+	"globalblocking-blockedtext-proxy": "O endereço ''proxy'' bloqueado era $1."
 }
