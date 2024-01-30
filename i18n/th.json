@@ -6,7 +6,8 @@
 			"Geonuch",
 			"Horus",
 			"Octahedron80",
-			"Passawuth"
+			"Passawuth",
+			"Ekminarin"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|อนุญาต]]ให้คุณสามารถบล็อกผู้ใช้ที่เป็น ไอพี [[Special:GlobalBlockList|ในหลาย ๆ วิกิ]]ในครั้งเดียวได้",
@@ -40,8 +41,13 @@
 	"globalblocking-list-whitelisted": "ถูกปิดใช้งานในท้องถิ่นโดย $1: $2",
 	"globalblocking-list-whitelist": "สถานะท้องถิ่น",
 	"globalblocking-list-modify": "แก้ไข",
+	"globalblocking-list-tempblocks": "ซ่อนการบล็อกชั่วคราว",
+	"globalblocking-list-indefblocks": "ซ่อนการบล็อกไม่มีกำหนด",
+	"globalblocking-list-addressblocks": "ซ่อนการบล็อกไอพีเดียว",
+	"globalblocking-list-rangeblocks": "ซ่อนการบล็อกช่วง",
 	"globalblocking-expiringblock": "หมดอายุ $1 เวลา $2",
-	"globalblocking-list-noresults": "ที่อยู่ไอพีที่ร้องขอไม่ได้ถูกบล็อก",
+	"globalblocking-infiniteblock": "ไม่มีกำหนด",
+	"globalblocking-list-noresults": "ไม่พบผลลัพธ์ตามพารามิเตอร์ที่ให้มา",
 	"globalblocking-goto-block": "บล็อกที่อยู่ไอพีทั่วโลก",
 	"globalblocking-goto-unblock": "เอาการบล็อกทั่วโลกออก",
 	"globalblocking-goto-status": "เปลี่ยนสถานะท้องถิ่นสำหรับการบล็อกทั่วโลก",
@@ -62,6 +68,7 @@
 	"globalblocking-whitelist-submit": "เปลี่ยนสถานะท้องถิ่น",
 	"globalblocking-whitelist-whitelisted": "คุณได้ปิดใช้งานการบล็อกทั่วโลก #$2 บนที่อยู่ IP '''$1''' บน {{SITENAME}} แล้ว",
 	"globalblocking-whitelist-dewhitelisted": "คุณได้เปิดใช้งานการบล็อกทั่วโลก #$2 บนที่อยู่ IP '''$1''' บน {{SITENAME}} ใหม่แล้ว",
+	"globalblocking-whitelist-nochange": "คุณไม่ได้เปลี่ยนแปลงสถานะท้องถิ่นของบล็อกนี้",
 	"globalblocking-ipblocked": "'''ที่อยู่ IP ของคุณได้ถูกบล็อกบนทุกวิกิ'''\n\nถูกบล็อกโดย $1 ($2)\nเหตุผลที่ระบุคือ ''$3''\n\n* เวลาเริ่มต้นของการบล็อก: $4\n* เวลาสิ้นสุดของการบล็อก: $5\n\nคุณสามารถติดต่อ $1 เพื่ออภิปรายเกี่ยวกับการบล็อกได้\nคุณไม่สามารถใช้คุณลักษณะ \"{{int:emailuser}}\" ได้นอกจากคุณจะระบุที่อยู่อีเมลที่ถูกต้องใน[[Special:Preferences|การตั้งค่าบัญชี]]ของคุณ และคุณไม่ได้ถูกบล็อกไม่ให้ใช้คุณลักษณะดังกล่าว\nที่อยู่ IP ปัจจุบันของคุณคือ $6\nโปรดรวมรายละเอียดด้านบนทั้งหมดในแบบสอบถามใด ๆ ที่คุณทำ",
 	"globalblocking-ipblocked-range": "'''ที่อยู่ IP ของคุณอยู่ในช่วงที่ถูกบล็อกบนทุกวิกิ'''\n\nถูกบล็อกโดย $1 ($2)\nเหตุผลที่ระบุคือ ''$3''\n\n* เวลาเริ่มต้นของการบล็อก: $4\n* เวลาสิ้นสุดของการบล็อก: $5\n\nคุณสามารถติดต่อ $1 เพื่ออภิปรายเกี่ยวกับการบล็อกได้\nคุณไม่สามารถใช้คุณลักษณะ \"{{int:emailuser}}\" ได้นอกจากคุณจะระบุที่อยู่อีเมลที่ถูกต้องใน[[Special:Preferences|การตั้งค่าบัญชี]]ของคุณ และคุณไม่ได้ถูกบล็อกไม่ให้ใช้คุณลักษณะดังกล่าว\nที่อยู่ IP ปัจจุบันของคุณคือ $6 และช่วงที่ถูกบล็อกคือ $7\nโปรดรวมรายละเอียดด้านบนทั้งหมดในแบบสอบถามใด ๆ ที่คุณทำ",
 	"globalblocking-ipblocked-xff": "'''เซิร์ฟเวอร์พร็อกซีอย่างน้อยหนึ่งเครื่องที่ใช้โดยคำขอของคุณถูกบล็อกทั่วโลก'''\n\nถูกบล็อกโดย $1 ($2)\nเหตุผลที่ระบุคือ ''$3''\n\n* เวลาเริ่มต้นของการบล็อก: $4\n* เวลาสิ้นสุดของการบล็อก: $5\n\nคุณสามารถติดต่อ $1 เพื่ออภิปรายเกี่ยวกับการบล็อกได้\nคุณไม่สามารถใช้คุณลักษณะ \"{{int:emailuser}}\" ได้นอกจากคุณจะระบุที่อยู่อีเมลที่ถูกต้องใน[[Special:Preferences|การตั้งค่าบัญชี]]ของคุณ และคุณไม่ได้ถูกบล็อกไม่ให้ใช้คุณลักษณะดังกล่าว\nที่อยู่พร็อกซีที่ถูกบล็อกคือ $6\nโปรดรวมรายละเอียดด้านบนทั้งหมดในแบบสอบถามใด ๆ ที่คุณทำ",
@@ -86,5 +93,9 @@
 	"right-globalblock-exempt": "เลี่ยงผ่านการบล็อกทั่วโลก",
 	"action-globalblock-exempt": "เลี่ยงผ่านการบล็อกทั่วโลก",
 	"globalblocking-apierror-badip": "ที่อยู่ IP $1 ไม่ถูกต้อง",
-	"log-action-filter-gblblock-gblock": "การบล็อกทั่วโลก"
+	"log-action-filter-gblblock-gblock": "การบล็อกทั่วโลก",
+	"globalblocking-blockedtext-all-wikis": "เลขที่อยู่ไอพีของคุณถูกบล็อกในทุกวิกิ",
+	"globalblocking-blockedtext-on-range": "เลขที่อยู่ไอพีของคุณอยู่ในช่วงที่ถูกบล็อกในทุกวิกิ",
+	"globalblocking-blockedtext-ip-range": "ช่วงที่ถูกบล็อกคือ $1",
+	"globalblocking-blockedtext-proxy": "ที่อยู่พร็อกซีที่ถูกบล็อกคือ $1"
 }
