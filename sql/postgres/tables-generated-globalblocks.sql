@@ -5,6 +5,7 @@
 CREATE TABLE globalblocks (
   gb_id SERIAL NOT NULL,
   gb_address VARCHAR(255) NOT NULL,
+  gb_target_central_id INT DEFAULT 0 NOT NULL,
   gb_by VARCHAR(255) NOT NULL,
   gb_by_central_id INT DEFAULT NULL,
   gb_by_wiki TEXT NOT NULL,
@@ -18,6 +19,8 @@ CREATE TABLE globalblocks (
 );
 
 CREATE UNIQUE INDEX gb_address ON globalblocks (gb_address, gb_anon_only);
+
+CREATE INDEX gb_target_central_id ON globalblocks (gb_target_central_id);
 
 CREATE INDEX gb_range ON globalblocks (gb_range_start, gb_range_end);
 

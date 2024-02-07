@@ -5,6 +5,7 @@
 CREATE TABLE /*_*/globalblocks (
   gb_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
   gb_address VARCHAR(255) NOT NULL,
+  gb_target_central_id INTEGER UNSIGNED DEFAULT 0 NOT NULL,
   gb_by VARCHAR(255) NOT NULL,
   gb_by_central_id INTEGER UNSIGNED DEFAULT NULL,
   gb_by_wiki BLOB NOT NULL,
@@ -17,6 +18,8 @@ CREATE TABLE /*_*/globalblocks (
 );
 
 CREATE UNIQUE INDEX gb_address ON /*_*/globalblocks (gb_address, gb_anon_only);
+
+CREATE INDEX gb_target_central_id ON /*_*/globalblocks (gb_target_central_id);
 
 CREATE INDEX gb_range ON /*_*/globalblocks (gb_range_start, gb_range_end);
 

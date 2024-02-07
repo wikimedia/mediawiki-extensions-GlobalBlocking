@@ -1,5 +1,55 @@
-[
-	{
+{
+	"before": {
+		"name": "global_block_whitelist",
+		"columns": [
+			{
+				"name": "gbw_id",
+				"comment": "Key to gb_id in globalblocks database",
+				"type": "integer",
+				"options": { "notnull": true }
+			},
+			{
+				"name": "gbw_address",
+				"type": "binary",
+				"options": { "length": 255, "notnull": true }
+			},
+			{
+				"name": "gbw_by",
+				"comment": "Key to user_id",
+				"type": "integer",
+				"options": { "notnull": true }
+			},
+			{
+				"name": "gbw_by_text",
+				"type": "binary",
+				"options": { "length": 255, "notnull": true }
+			},
+			{
+				"name": "gbw_reason",
+				"type": "binary",
+				"options": { "length": 767, "notnull": true }
+			},
+			{
+				"name": "gbw_expiry",
+				"type": "mwtimestamp",
+				"options": {
+					"notnull": true,
+					"CustomSchemaOptions": {
+						"allowInfinite": true
+					}
+				}
+			}
+		],
+		"indexes": [
+			{
+				"name": "gbw_by",
+				"columns": [ "gbw_by" ],
+				"unique": false
+			}
+		],
+		"pk": [ "gbw_id" ]
+	},
+	"after": {
 		"name": "global_block_whitelist",
 		"columns": [
 			{
@@ -54,4 +104,4 @@
 		],
 		"pk": [ "gbw_id" ]
 	}
-]
+}
