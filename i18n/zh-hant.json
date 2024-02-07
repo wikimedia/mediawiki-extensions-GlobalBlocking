@@ -29,7 +29,8 @@
 			"列维劳德",
 			"捍粵者",
 			"铁桶",
-			"H78c67c"
+			"H78c67c",
+			"Winston Sung"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|允許]]封鎖[[Special:GlobalBlockList|於多個 Wiki 中]]的 IP 位址",
@@ -135,12 +136,12 @@
 	"right-globalblock-exempt": "忽略全域封鎖",
 	"action-globalblock-exempt": "忽略全域封鎖",
 	"globalblocking-apierror-badip": "IP 位址 $1 無效",
-	"log-action-filter-gblblock": "全域封禁類型：",
-	"log-action-filter-gblblock-gblock": "全域封禁",
+	"log-action-filter-gblblock": "全域封鎖類型：",
+	"log-action-filter-gblblock-gblock": "全域封鎖",
 	"log-action-filter-gblblock-gunblock": "全域解封",
-	"log-action-filter-gblblock-modify": "全域封禁修訂",
-	"log-action-filter-gblblock-whitelist": "全域封禁白名單新增",
-	"log-action-filter-gblblock-dwhitelist": "全域封禁白名單移除",
+	"log-action-filter-gblblock-modify": "修改全域封鎖",
+	"log-action-filter-gblblock-whitelist": "加入全域封鎖白名單",
+	"log-action-filter-gblblock-dwhitelist": "移出全域封鎖白名單",
 	"grant-globalblock": "全域封鎖或是解除封鎖一個 IP 位址",
 	"globalblocking-blockedtext-all-wikis": "您的IP位址已在所有wiki上被封鎖。",
 	"globalblocking-blockedtext-on-range": "您的IP位址位於在所有wiki上被封鎖的位址段中。",
