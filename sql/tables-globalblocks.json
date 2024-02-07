@@ -20,12 +20,12 @@
 			{
 				"name": "gb_by",
 				"type": "string",
-				"options": { "length": 255, "notnull": true }
+				"options": { "length": 255, "notnull": true, "default": "" }
 			},
 			{
 				"name": "gb_by_central_id",
 				"type": "integer",
-				"options": { "notnull": false, "unsigned": true, "default": null }
+				"options": { "notnull": true, "unsigned": true }
 			},
 			{
 				"name": "gb_by_wiki",

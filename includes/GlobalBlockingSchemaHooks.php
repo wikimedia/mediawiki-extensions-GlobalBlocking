@@ -84,5 +84,10 @@ class GlobalBlockingSchemaHooks implements LoadExtensionSchemaUpdatesHook {
 			'gbw_target_central_id',
 			"$base/sql/$type/patch-add-gbw_target_central_id.sql"
 		);
+		$updater->modifyExtensionField(
+			'globalblocks',
+			'gb_by',
+			"$base/sql/$type/patch-modify-gb_by-default.sql"
+		);
 	}
 }
