@@ -448,48 +448,13 @@ class GlobalBlocking {
 	 * and doing a write query. We should only do it when a connection to the primary database
 	 * is already open (currently, when a global block is made).
 	 *
-	 * @param int $limit
 	 * @throws DBUnexpectedError
+	 * @deprecated Since 1.42. Use GlobalBlockingBlockPurger::purgeExpiredBlocks.
 	 */
-	public static function purgeExpired( $limit = 1000 ) {
-		$globaldbw = self::getPrimaryGlobalBlockingDatabase();
-		$deleteIds = $globaldbw->selectFieldValues(
-			'globalblocks',
-			'gb_id',
-			[ 'gb_expiry <= ' . $globaldbw->addQuotes( $globaldbw->timestamp() ) ],
-			__METHOD__,
-			[ 'LIMIT' => $limit ]
-		);
-		if ( $deleteIds !== [] ) {
-			$deleteIds = array_map( 'intval', $deleteIds );
-			$globaldbw->delete(
-				'globalblocks',
-				[ 'gb_id' => $deleteIds ],
-				__METHOD__
-			);
-		}
-
-		// Purge the global_block_whitelist table.
-		// We can't be perfect about this without an expensive check on the primary database
-		// for every single global block. However, we can be clever about it and store
-		// the expiry of global blocks in the global_block_whitelist table.
-		// That way, most blocks will fall out of the table naturally when they expire.
-		$dbw = wfGetDB( DB_PRIMARY );
-		$deleteWhitelistIds = $dbw->selectFieldValues(
-			'global_block_whitelist',
-			'gbw_id',
-			[ 'gbw_expiry <= ' . $dbw->addQuotes( $dbw->timestamp() ) ],
-			__METHOD__,
-			[ 'LIMIT' => $limit ]
-		);
-		if ( $deleteWhitelistIds !== [] ) {
-			$deleteWhitelistIds = array_map( 'intval', $deleteWhitelistIds );
-			$dbw->delete(
-				'global_block_whitelist',
-				[ 'gbw_id' => $deleteWhitelistIds ],
-				__METHOD__
-			);
-		}
+	public static function purgeExpired() {
+		GlobalBlockingServices::wrap( MediaWikiServices::getInstance() )
+			->getGlobalBlockingBlockPurger()
+			->purgeExpiredBlocks();
 	}
 
 	/**
