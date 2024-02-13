@@ -21,7 +21,7 @@
 namespace MediaWiki\Extension\GlobalBlocking\Test\Integration;
 
 use MediaWiki\Config\ServiceOptions;
-use MediaWiki\Extension\GlobalBlocking\GlobalBlockReasonFormatter;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockReasonFormatter;
 use MediaWiki\Http\HttpRequestFactory;
 use MediaWiki\Status\Status;
 use MediaWikiIntegrationTestCase;
@@ -32,12 +32,9 @@ use Wikimedia\TestingAccessWrapper;
 
 /**
  * @author Taavi "Majavah" Väänänen <hi@taavi.wtf>
- * @coversDefaultClass MediaWiki\Extension\GlobalBlocking\GlobalBlockReasonFormatter
+ * @covers MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockReasonFormatter
  */
 class GlobalBlockReasonFormatterTest extends MediaWikiIntegrationTestCase {
-	/**
-	 * @covers ::__construct
-	 */
 	public function testConstructor() {
 		$this->assertInstanceOf(
 			GlobalBlockReasonFormatter::class,
@@ -55,9 +52,6 @@ class GlobalBlockReasonFormatterTest extends MediaWikiIntegrationTestCase {
 		);
 	}
 
-	/**
-	 * @covers ::expandRemoteTemplates
-	 */
 	public function testExpandWithoutUrl() {
 		$formatter = TestingAccessWrapper::newFromObject(
 			new GlobalBlockReasonFormatter(
@@ -76,9 +70,6 @@ class GlobalBlockReasonFormatterTest extends MediaWikiIntegrationTestCase {
 		$this->assertEquals( 'foo {{bar}}', $formatter->expandRemoteTemplates( 'foo {{bar}}', 'en' ) );
 	}
 
-	/**
-	 * @covers ::expandRemoteTemplates
-	 */
 	public function testExpandHttpFailure() {
 		$httpRequest = $this->createMock( MWHttpRequest::class );
 		$httpRequest->expects( $this->once() )
@@ -114,9 +105,6 @@ class GlobalBlockReasonFormatterTest extends MediaWikiIntegrationTestCase {
 		$this->assertEquals( 'foo {{bar}}', $formatter->expandRemoteTemplates( 'foo {{bar}}', 'en' ) );
 	}
 
-	/**
-	 * @covers ::expandRemoteTemplates
-	 */
 	public function testExpandHttpWarning() {
 		$httpRequest = $this->createMock( MWHttpRequest::class );
 		$httpRequest->expects( $this->once() )
@@ -155,9 +143,6 @@ class GlobalBlockReasonFormatterTest extends MediaWikiIntegrationTestCase {
 		$this->assertEquals( 'foo baz', $formatter->expandRemoteTemplates( 'foo {{bar}}', 'en' ) );
 	}
 
-	/**
-	 * @covers ::expandRemoteTemplates
-	 */
 	public function testExpandInvalidJson() {
 		$httpRequest = $this->createMock( MWHttpRequest::class );
 		$httpRequest->expects( $this->once() )
@@ -196,9 +181,6 @@ class GlobalBlockReasonFormatterTest extends MediaWikiIntegrationTestCase {
 		$this->assertEquals( 'foo {{bar}}', $formatter->expandRemoteTemplates( 'foo {{bar}}', 'en' ) );
 	}
 
-	/**
-	 * @covers ::expandRemoteTemplates
-	 */
 	public function testExpandWorksFine() {
 		$httpRequest = $this->createMock( MWHttpRequest::class );
 		$httpRequest->expects( $this->once() )

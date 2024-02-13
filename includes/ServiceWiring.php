@@ -1,7 +1,8 @@
 <?php
 
 use MediaWiki\Config\ServiceOptions;
-use MediaWiki\Extension\GlobalBlocking\GlobalBlockReasonFormatter;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockReasonFormatter;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 
@@ -22,6 +23,11 @@ return [
 			$services->getHttpRequestFactory(),
 			LoggerFactory::getInstance( 'GlobalBlockReasonFormatter' )
 		);
+	},
+	'GlobalBlocking.GlobalBlockingConnectionProvider' => static function (
+		MediaWikiServices $services
+	): GlobalBlockingConnectionProvider {
+		return new GlobalBlockingConnectionProvider( $services->getConnectionProvider() );
 	},
 ];
 

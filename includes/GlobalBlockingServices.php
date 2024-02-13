@@ -20,6 +20,8 @@
 
 namespace MediaWiki\Extension\GlobalBlocking;
 
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockReasonFormatter;
 use MediaWiki\MediaWikiServices;
 
 /**
@@ -48,5 +50,9 @@ class GlobalBlockingServices {
 
 	public function getReasonFormatter(): GlobalBlockReasonFormatter {
 		return $this->serviceContainer->get( 'GlobalBlocking.GlobalBlockReasonFormatter' );
+	}
+
+	public function getGlobalBlockingConnectionProvider(): GlobalBlockingConnectionProvider {
+		return $this->serviceContainer->get( 'GlobalBlocking.GlobalBlockingConnectionProvider' );
 	}
 }

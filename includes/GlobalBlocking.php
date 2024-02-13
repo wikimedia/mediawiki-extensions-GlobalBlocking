@@ -388,25 +388,28 @@ class GlobalBlocking {
 	}
 
 	/**
+	 * @deprecated Since 1.42. Use GlobalBlockingConnectionProvider::getPrimaryGlobalBlockingDatabase.
 	 * @return \Wikimedia\Rdbms\IDatabase
 	 */
 	public static function getPrimaryGlobalBlockingDatabase() {
-		return MediaWikiServices::getInstance()
-			->getDBLoadBalancerFactory()
-			->getPrimaryDatabase( 'virtual-globalblocking' );
+		return GlobalBlockingServices::wrap( MediaWikiServices::getInstance() )
+			->getGlobalBlockingConnectionProvider()
+			->getPrimaryGlobalBlockingDatabase();
 	}
 
 	/**
+	 * @deprecated Since 1.42. Use GlobalBlockingConnectionProvider::getReplicaGlobalBlockingDatabase.
 	 * @return \Wikimedia\Rdbms\IReadableDatabase
 	 */
 	public static function getReplicaGlobalBlockingDatabase() {
-		return MediaWikiServices::getInstance()
-			->getDBLoadBalancerFactory()
-			->getReplicaDatabase( 'virtual-globalblocking' );
+		return GlobalBlockingServices::wrap( MediaWikiServices::getInstance() )
+			->getGlobalBlockingConnectionProvider()
+			->getReplicaGlobalBlockingDatabase();
 	}
 
 	/**
 	 * @param int $dbtype either DB_REPLICA or DB_PRIMARY
+	 * @deprecated Since 1.42. Use GlobalBlockingConnectionProvider to get a database connection.
 	 * @return \Wikimedia\Rdbms\IDatabase|\Wikimedia\Rdbms\IReadableDatabase
 	 */
 	public static function getGlobalBlockingDatabase( $dbtype ) {

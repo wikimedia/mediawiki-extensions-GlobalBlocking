@@ -18,7 +18,7 @@
  * @file
  */
 
-namespace MediaWiki\Extension\GlobalBlocking;
+namespace MediaWiki\Extension\GlobalBlocking\Services;
 
 use Exception;
 use FormatJson;
