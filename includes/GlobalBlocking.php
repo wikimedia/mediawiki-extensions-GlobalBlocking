@@ -463,41 +463,24 @@ class GlobalBlocking {
 	 * @return array|false
 	 * @phan-return array{user:int,reason:string}|false
 	 * @throws Exception
+	 * @deprecated Since 1.42. Use GlobalBlockLocalStatusLookup::getLocalWhitelistInfo.
 	 */
 	public static function getLocalWhitelistInfo( $id = null, $address = null ) {
-		if ( $id != null ) {
-			$conds = [ 'gbw_id' => $id ];
-		} elseif ( $address != null ) {
-			$conds = [ 'gbw_address' => $address ];
-		} else {
-			// WTF?
-			throw new Exception( "Neither Block IP nor Block ID given for retrieving whitelist status" );
-		}
-
-		$dbr = wfGetDB( DB_REPLICA );
-		$row = $dbr->selectRow(
-			'global_block_whitelist',
-			[ 'gbw_by', 'gbw_reason' ],
-			$conds,
-			__METHOD__
-		);
-
-		if ( $row == false ) {
-			// Not whitelisted.
-			return false;
-		} else {
-			// Block has been whitelisted
-			return [ 'user' => $row->gbw_by, 'reason' => $row->gbw_reason ];
-		}
+		return GlobalBlockingServices::wrap( MediaWikiServices::getInstance() )
+			->getGlobalBlockLocalStatusLookup()
+			->getLocalWhitelistInfo( $id, $address );
 	}
 
 	/**
 	 * @param string $block_ip
 	 * @return array|false
 	 * @phan-return array{user:int,reason:string}|false
+	 * @deprecated Since 1.42. Use GlobalBlockLocalStatusLookup::getLocalWhitelistInfoByIP.
 	 */
 	public static function getLocalWhitelistInfoByIP( $block_ip ) {
-		return self::getLocalWhitelistInfo( null, $block_ip );
+		return GlobalBlockingServices::wrap( MediaWikiServices::getInstance() )
+			->getGlobalBlockLocalStatusLookup()
+			->getLocalWhitelistInfoByIP( $block_ip );
 	}
 
 	/**
