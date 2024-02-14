@@ -20,11 +20,11 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Services;
 
-use Exception;
 use FormatJson;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Http\HttpRequestFactory;
 use Psr\Log\LoggerInterface;
+use RuntimeException;
 use WANObjectCache;
 
 /**
@@ -136,7 +136,7 @@ class GlobalBlockReasonFormatter {
 		if ( !$warningStatus->isGood() ) {
 			$this->logger->warning(
 				$warningStatus->getWikiText( false, false, 'en' ),
-				[ 'exception' => new Exception( __FUNCTION__ ) ]
+				[ 'exception' => new RuntimeException() ]
 			);
 		}
 
@@ -159,7 +159,7 @@ class GlobalBlockReasonFormatter {
 		} else {
 			$this->logger->error(
 				$warningStatus->getWikiText( false, false, 'en' ),
-				[ 'exception' => new Exception( __FUNCTION__ ) ]
+				[ 'exception' => new RuntimeException() ]
 			);
 		}
 
