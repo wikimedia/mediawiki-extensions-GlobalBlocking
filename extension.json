@@ -54,7 +54,8 @@
 		"GlobalBlockStatus": {
 			"class": "MediaWiki\\Extension\\GlobalBlocking\\Special\\SpecialGlobalBlockStatus",
 			"services": [
-				"BlockUtils"
+				"BlockUtils",
+				"ConnectionProvider"
 			]
 		},
 		"RemoveGlobalBlock": {
