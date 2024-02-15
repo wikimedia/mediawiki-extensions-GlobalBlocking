@@ -12,6 +12,7 @@ use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentity;
 use Wikimedia\IPUtils;
+use Wikimedia\Rdbms\IConnectionProvider;
 
 class SpecialGlobalBlockStatus extends FormSpecialPage {
 	/** @var string|null */
@@ -21,17 +22,19 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 	/** @var bool|null */
 	private $mWhitelistStatus;
 
-	/** @var BlockUtils */
-	private $blockUtils;
+	private BlockUtils $blockUtils;
+	private IConnectionProvider $dbProvider;
 
 	/**
 	 * @param BlockUtils $blockUtils
 	 */
 	public function __construct(
-		BlockUtils $blockUtils
+		BlockUtils $blockUtils,
+		IConnectionProvider $dbProvider
 	) {
 		parent::__construct( 'GlobalBlockStatus', 'globalblock-whitelist' );
 		$this->blockUtils = $blockUtils;
+		$this->dbProvider = $dbProvider;
 	}
 
 	/**
@@ -125,9 +128,9 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 			return [ 'globalblocking-whitelist-nochange' ];
 		}
 
-		$dbw = wfGetDB( DB_PRIMARY );
 		GlobalBlocking::purgeExpired();
 
+		$dbw = $this->dbProvider->getPrimaryDatabase();
 		if ( $this->mWhitelistStatus == true ) {
 			// Add to whitelist
 

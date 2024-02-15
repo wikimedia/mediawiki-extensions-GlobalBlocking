@@ -38,7 +38,8 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 		CommentFormatter $commentFormatter,
 		CentralIdLookup $lookup
 	) {
-		// Set database before parent constructor to avoid setting it there with wfGetDB
+		// Set database before parent constructor so that the DB that has the globalblocks table is used
+		// over the local database which may not be the same database.
 		$this->mDb = GlobalBlocking::getReplicaGlobalBlockingDatabase();
 		parent::__construct( $context, $linkRenderer );
 		$this->queryConds = $conds;
