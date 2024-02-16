@@ -4,6 +4,7 @@ use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingBlockPurger;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockReasonFormatter;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
@@ -44,6 +45,11 @@ return [
 			$services->getDBLoadBalancerFactory(),
 			$services->getReadOnlyMode()
 		);
+	},
+	'GlobalBlocking.GlobalBlockLocalStatusLookup' => static function (
+		MediaWikiServices $services
+	): GlobalBlockLocalStatusLookup {
+		return new GlobalBlockLocalStatusLookup( $services->getConnectionProvider() );
 	},
 ];
 
