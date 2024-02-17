@@ -56,7 +56,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 		$this->addHelpLink( 'Extension:GlobalBlocking' );
 
 		$out = $this->getOutput();
-		$out->setPageTitle( $this->msg( 'globalblocking-list' ) );
+		$out->setPageTitleMsg( $this->msg( 'globalblocking-list' ) );
 		$out->setSubtitle( GlobalBlocking::buildSubtitleLinks( $this ) );
 		$out->setArticleRelated( false );
 		$out->disableClientCache();

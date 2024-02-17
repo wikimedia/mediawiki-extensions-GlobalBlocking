@@ -33,7 +33,7 @@ class SpecialRemoveGlobalBlock extends FormSpecialPage {
 		$this->addHelpLink( 'Extension:GlobalBlocking' );
 
 		$out = $this->getOutput();
-		$out->setPageTitle( $this->msg( 'globalblocking-unblock' ) );
+		$out->setPageTitleMsg( $this->msg( 'globalblocking-unblock' ) );
 		$out->setSubtitle( GlobalBlocking::buildSubtitleLinks( $this ) );
 		$out->disableClientCache();
 

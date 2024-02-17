@@ -55,7 +55,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 		parent::execute( $par );
 		$this->addHelpLink( 'Extension:GlobalBlocking' );
 		$out = $this->getOutput();
-		$out->setPageTitle( $this->msg( 'globalblocking-block' ) );
+		$out->setPageTitleMsg( $this->msg( 'globalblocking-block' ) );
 		$out->setSubtitle( GlobalBlocking::buildSubtitleLinks( $this ) );
 	}
 

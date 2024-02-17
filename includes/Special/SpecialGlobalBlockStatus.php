@@ -48,7 +48,7 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 
 		$out = $this->getOutput();
 		$out->disableClientCache();
-		$out->setPageTitle( $this->msg( 'globalblocking-whitelist' ) );
+		$out->setPageTitleMsg( $this->msg( 'globalblocking-whitelist' ) );
 		$out->setSubtitle( GlobalBlocking::buildSubtitleLinks( $this ) );
 
 		if ( !$this->getConfig()->get( 'ApplyGlobalBlocks' ) ) {
