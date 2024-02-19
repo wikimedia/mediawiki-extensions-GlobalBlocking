@@ -3,8 +3,6 @@
 namespace MediaWiki\Extension\GlobalBlocking;
 
 use Exception;
-use LogPage;
-use MediaWiki\Block\BlockUser;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\SpecialPage\SpecialPage;
@@ -114,6 +112,7 @@ class GlobalBlocking {
 	 * @return \Wikimedia\Rdbms\IDatabase|\Wikimedia\Rdbms\IReadableDatabase
 	 */
 	public static function getGlobalBlockingDatabase( $dbtype ) {
+		wfDeprecated( __METHOD__, '1.42' );
 		if ( $dbtype == DB_PRIMARY ) {
 			return self::getPrimaryGlobalBlockingDatabase();
 		} else {
@@ -196,67 +195,13 @@ class GlobalBlocking {
 	 * @param User $blocker
 	 * @param array $options
 	 * @return StatusValue
+	 * @deprecated Since 1.42. Use GlobalBlockManager::block which will also create a log entry.
 	 */
 	public static function insertBlock( $address, $reason, $expiry, $blocker, $options = [] ) {
-		## Purge expired blocks.
-		self::purgeExpired();
-
-		if ( $expiry === false ) {
-			return StatusValue::newFatal( 'globalblocking-block-expiryinvalid' );
-		}
-
-		$status = self::validateInput( $address );
-
-		if ( !$status->isOK() ) {
-			return $status;
-		}
-
-		$data = $status->getValue();
-
-		$modify = in_array( 'modify', $options );
-
-		// Check for an existing block in the primary database database
-		$existingBlock = self::getGlobalBlockId( $data[ 'ip' ], DB_PRIMARY );
-		if ( !$modify && $existingBlock ) {
-			return StatusValue::newFatal( 'globalblocking-block-alreadyblocked', $data[ 'ip' ] );
-		}
-
-		$lookup = MediaWikiServices::getInstance()->getCentralIdLookup();
-
-		// We're a-ok.
-		$dbw = self::getPrimaryGlobalBlockingDatabase();
-
-		$anonOnly = in_array( 'anon-only', $options );
-
-		$row = [
-			'gb_address' => $data[ 'ip' ],
-			'gb_by' => $blocker->getName(),
-			'gb_by_central_id' => $lookup->centralIdFromLocalUser( $blocker ),
-			'gb_by_wiki' => WikiMap::getCurrentWikiId(),
-			'gb_reason' => $reason,
-			'gb_timestamp' => $dbw->timestamp( wfTimestampNow() ),
-			'gb_anon_only' => $anonOnly,
-			'gb_expiry' => $dbw->encodeExpiry( $expiry ),
-			'gb_range_start' => $data[ 'rangeStart' ],
-			'gb_range_end' => $data[ 'rangeEnd' ],
-		];
-
-		if ( $modify && $existingBlock ) {
-			$dbw->update( 'globalblocks', $row, [ 'gb_id' => $existingBlock ], __METHOD__ );
-			$blockId = $existingBlock;
-		} else {
-			$dbw->insert( 'globalblocks', $row, __METHOD__, [ 'IGNORE' ] );
-			$blockId = $dbw->insertId();
-		}
-
-		if ( !$dbw->affectedRows() ) {
-			// Race condition?
-			return StatusValue::newFatal( 'globalblocking-block-failure', $data[ 'ip' ] );
-		}
-
-		return StatusValue::newGood( [
-			'id' => $blockId,
-		] );
+		wfDeprecated( __METHOD__, '1.42' );
+		return GlobalBlockingServices::wrap( MediaWikiServices::getInstance() )
+			->getGlobalBlockManager()
+			->insertBlock( $address, $reason, $expiry, $blocker, $options );
 	}
 
 	/**
@@ -268,46 +213,9 @@ class GlobalBlocking {
 	 * @return StatusValue An empty or fatal status
 	 */
 	public static function block( $address, $reason, $expiry, $blocker, $options = [] ): StatusValue {
-		$expiry = BlockUser::parseExpiryInput( $expiry );
-		$status = self::insertBlock( $address, $reason, $expiry, $blocker, $options );
-
-		if ( !$status->isOK() ) {
-			return $status;
-		}
-
-		$blockId = $status->getValue()['id'];
-		$anonOnly = in_array( 'anon-only', $options );
-		$modify = in_array( 'modify', $options );
-
-		// Log it.
-		$logAction = $modify ? 'modify' : 'gblock2';
-		$flags = [];
-
-		if ( $anonOnly ) {
-			$flags[] = wfMessage( 'globalblocking-list-anononly' )->inContentLanguage()->text();
-		}
-
-		if ( $expiry != 'infinity' ) {
-			$contLang = MediaWikiServices::getInstance()->getContentLanguage();
-			$displayExpiry = $contLang->timeanddate( $expiry );
-			$flags[] = wfMessage( 'globalblocking-logentry-expiry', $displayExpiry )
-				->inContentLanguage()->text();
-		} else {
-			$flags[] = wfMessage( 'globalblocking-logentry-noexpiry' )->inContentLanguage()->text();
-		}
-
-		$info = implode( ', ', $flags );
-
-		$page = new LogPage( 'gblblock' );
-		$logId = $page->addEntry( $logAction,
-			Title::makeTitleSafe( NS_USER, $address ),
-			$reason,
-			[ $info, $address ],
-			$blocker
-		);
-		$page->addRelations( 'gb_id', [ $blockId ], $logId );
-
-		return StatusValue::newGood();
+		return GlobalBlockingServices::wrap( MediaWikiServices::getInstance() )
+			->getGlobalBlockManager()
+			->block( $address, $reason, $expiry, $blocker, $options );
 	}
 
 	/**
@@ -317,36 +225,9 @@ class GlobalBlocking {
 	 * @return StatusValue An empty or fatal status
 	 */
 	public static function unblock( string $address, string $reason, User $performer ): StatusValue {
-		$status = self::validateInput( $address );
-
-		if ( !$status->isOK() ) {
-			return $status;
-		}
-
-		$data = $status->getValue();
-
-		$id = self::getGlobalBlockId( $data[ 'ip' ], DB_PRIMARY );
-		if ( $id === 0 ) {
-			return StatusValue::newFatal( 'globalblocking-notblocked', $data[ 'ip' ] );
-		}
-
-		self::getPrimaryGlobalBlockingDatabase()->delete(
-			'globalblocks',
-			[ 'gb_id' => $id ],
-			__METHOD__
-		);
-
-		$page = new LogPage( 'gblblock' );
-		$logId = $page->addEntry(
-			'gunblock',
-			Title::makeTitleSafe( NS_USER, $data[ 'ip' ] ),
-			$reason,
-			[],
-			$performer
-		);
-		$page->addRelations( 'gb_id', [ $id ], $logId );
-
-		return StatusValue::newGood();
+		return GlobalBlockingServices::wrap( MediaWikiServices::getInstance() )
+			->getGlobalBlockManager()
+			->unblock( $address, $reason, $performer );
 	}
 
 	/**
@@ -397,42 +278,6 @@ class GlobalBlocking {
 				->escaped()
 			: '';
 		return $linkItems;
-	}
-
-	/**
-	 * Handles validation and range limits of the IP addresses the user has provided
-	 * @param string $address
-	 * @return StatusValue Fatal if errors, Good if no errors
-	 */
-	private static function validateInput( string $address ): StatusValue {
-		## Validate input
-		$ip = IPUtils::sanitizeIP( $address );
-
-		if ( !$ip || !IPUtils::isIPAddress( $ip ) ) {
-			return StatusValue::newFatal( 'globalblocking-block-ipinvalid', $ip );
-		}
-
-		if ( IPUtils::isValidRange( $ip ) ) {
-			[ $prefix, $range ] = explode( '/', $ip, 2 );
-			$limit = MediaWikiServices::getInstance()->getMainConfig()->get( 'GlobalBlockingCIDRLimit' );
-			$ipVersion = IPUtils::isIPv4( $prefix ) ? 'IPv4' : 'IPv6';
-			if ( (int)$range < $limit[ $ipVersion ] ) {
-				return StatusValue::newFatal( 'globalblocking-bigrange', $ip, $ipVersion,
-					$limit[ $ipVersion ] );
-			}
-		}
-
-		$data = [];
-
-		[ $data[ 'rangeStart' ], $data[ 'rangeEnd' ] ] = IPUtils::parseRange( $ip );
-
-		if ( $data[ 'rangeStart' ] !== $data[ 'rangeEnd' ] ) {
-			$data[ 'ip' ] = IPUtils::sanitizeRange( $ip );
-		} else {
-			$data[ 'ip' ] = $ip;
-		}
-
-		return StatusValue::newGood( $data );
 	}
 
 	/**
