@@ -34,7 +34,8 @@
 			"飞舞回堂前",
 			"魔琴",
 			"Evesiesta",
-			"范"
+			"范",
+			"Anterdc99"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|允许]][[Special:GlobalBlockList|在多个wiki中封禁]]IP地址",
@@ -60,6 +61,7 @@
 	"globalblocking-bigrange": "您指定的范围（$1）超出了限制。\n$2 限制是 /$3 范围。",
 	"globalblocking-also-local": "另外在此wiki本地封禁指定IP地址",
 	"globalblocking-also-local-talk": "禁止用户在本地编辑他们自己的讨论页",
+	"globalblocking-also-local-email": "封禁用户在本地发送电子邮件",
 	"globalblocking-also-local-soft": "仅本地封禁匿名用户",
 	"globalblocking-list-intro": "这是现行的所有全域封禁的列表。某些封禁被标记为本地停用：这是指它们应用于其他网站，但本地管理员已经决定在本wiki停用它们。",
 	"globalblocking-list": "全域封禁IP地址列表",
