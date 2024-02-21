@@ -19,7 +19,7 @@
 	"globalblocking-block-legend": "Banna vistfang altækt",
 	"globalblocking-ipaddress": "Vistfang:",
 	"globalblocking-ipbanononly": "Einungis banna altækt nafnlausa notendur",
-	"globalblocking-block-ipinvalid": "Vistfangið ($1) sem þú tilgreindir er ógilt.\nAthugaðu að þú getur ekki tilgreint notendanafn!",
+	"globalblocking-block-ipinvalid": "IP-staðfangið ($1) sem þú ritaðir er ógilt.\nVinsamlegast athugaðu að þú getur ekki ritað notandanafn!",
 	"globalblocking-block-expiryinvalid": "Fyrningin sem þú ritaðir er ógild.",
 	"globalblocking-block-submit": "Banna þetta vistfang altækt",
 	"globalblocking-modify-submit": "Breyta þessu altæku banni",
