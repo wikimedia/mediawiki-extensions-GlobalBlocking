@@ -9,7 +9,7 @@
 	"apihelp-globalblock-param-expiry": "Ce specificate, blocche o blocche arrete l'utende. Determine quanne luènghe jè 'u blocche, p.s. \"5 mise\" o \"2 sumàne\". Ce 'mboste \"infinite\" o \"indefinite\" 'u blocche non ge scade maije.",
 	"apihelp-globalblock-param-unblock": "Ce specificate, sblocche l'utende.",
 	"apihelp-globalblock-param-reason": "'U mutive pu blocche/sblocche.",
-	"apihelp-globalblock-param-anononly": "Specifiche quiste ce 'u blocche adda essere applicate sulamende sus a l'utinde ca onne assute.",
+	"apihelp-globalblock-param-anononly": "Specifiche quiste ce 'u blocche adda essere applicate sulamende sus a l'utinde ca onne assute globbalmende.",
 	"apihelp-globalblock-param-modify": "Specifiche quiste ce 'u blocche esistende sus 'a destinazione adda essere cangiate",
 	"apihelp-globalblock-example-1": "Blocche 192.0.2.1 pe sembre cu stu mutive \"Abbuse Cross-uicchi\"",
 	"apihelp-query+globalblocks-summary": "Elenghe de tutte le indirizze IP bloccate globbalmende.",
@@ -23,5 +23,7 @@
 	"apihelp-query+globalblocks-example-1": "Elenghe de tutte le blocche globbale",
 	"apihelp-query+globalblocks-example-2": "Elenghe de le blocche globbale applecate a l'indirizze IP 192.0.2.18",
 	"apihelp-globalblock-param-alsolocal": "Blocche l'IP pure localmende",
-	"apihelp-globalblock-param-localblockstalk": "Lìve l'accesse localmende a 'a probbia pàgene de le 'ngazzaminde"
+	"apihelp-globalblock-param-localblockstalk": "Lìve l'accesse localmende a 'a probbia pàgene de le 'ngazzaminde",
+	"apihelp-globalblock-param-localblocksemail": "Live l'accesse a l'email localmende",
+	"apihelp-globalblock-param-localanononly": "Specifiche quiste ce 'u blocche adda essere applicate sulamende sus a l'utinde ca onne assute localmende."
 }

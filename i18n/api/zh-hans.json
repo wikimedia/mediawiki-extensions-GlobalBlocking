@@ -4,7 +4,8 @@
 			"GuoPC",
 			"Liuxinyu970226",
 			"Stang",
-			"Yfdyh000"
+			"Yfdyh000",
+			"Anterdc99"
 		]
 	},
 	"apihelp-globalblock-summary": "全域封禁或解封一位用户。",
@@ -27,5 +28,6 @@
 	"apihelp-query+globalblocks-example-2": "列出对IP地址192.0.2.18做出的全域封禁",
 	"apihelp-globalblock-param-alsolocal": "在本地也封禁此IP地址",
 	"apihelp-globalblock-param-localblockstalk": "在本地阻止编辑讨论页",
+	"apihelp-globalblock-param-localblocksemail": "撤销本地电子邮件访问权限",
 	"apihelp-globalblock-param-localanononly": "如果封禁应该只影响已退出登录用户，指定此项。"
 }
