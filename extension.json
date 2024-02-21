@@ -194,6 +194,10 @@
 		"GlobalBlockingAllowedRanges": {
 			"description": "IP ranges that bypass checks and are always allowed",
 			"value": []
+		},
+		"GlobalBlockingAllowGlobalAccountBlocks": {
+			"description": "Whether to enable global blocks on accounts",
+			"value": true
 		}
 	},
 	"ServiceWiringFiles": [
