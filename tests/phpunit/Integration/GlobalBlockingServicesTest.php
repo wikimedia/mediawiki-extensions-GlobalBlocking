@@ -6,6 +6,7 @@ use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingBlockPurger;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusLookup;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockReasonFormatter;
 use MediaWiki\MediaWikiServices;
 use MediaWikiIntegrationTestCase;
@@ -32,6 +33,7 @@ class GlobalBlockingServicesTest extends MediaWikiIntegrationTestCase {
 			'::getGlobalBlockLocalStatusLookup' => [
 				'getGlobalBlockLocalStatusLookup', GlobalBlockLocalStatusLookup::class
 			],
+			'::getGlobalBlockLookup' => [ 'getGlobalBlockLookup', GlobalBlockLookup::class ],
 		];
 	}
 }
