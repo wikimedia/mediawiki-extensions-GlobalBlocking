@@ -4,6 +4,7 @@ use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingBlockPurger;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockManager;
@@ -68,7 +69,8 @@ return [
 			$services->getCentralIdLookup(),
 			$services->getContentLanguage(),
 			$globalBlockingServices->getReasonFormatter(),
-			$globalBlockingServices->getGlobalBlockLocalStatusLookup()
+			$globalBlockingServices->getGlobalBlockLocalStatusLookup(),
+			$globalBlockingServices->getGlobalBlockingLinkBuilder()
 		);
 	},
 	'GlobalBlocking.GlobalBlockManager' => static function (
@@ -86,6 +88,9 @@ return [
 			$services->getCentralIdLookup(),
 			$services->getContentLanguage()
 		);
+	},
+	'GlobalBlocking.GlobalBlockingLinkBuilder' => static function (): GlobalBlockingLinkBuilder {
+		return new GlobalBlockingLinkBuilder();
 	},
 ];
 

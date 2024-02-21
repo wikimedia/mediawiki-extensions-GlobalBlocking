@@ -6,9 +6,7 @@ use Exception;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\SpecialPage\SpecialPage;
-use MediaWiki\Title\Title;
 use MediaWiki\User\User;
-use MediaWiki\WikiMap\WikiMap;
 use Message;
 use StatusValue;
 use stdClass;
@@ -178,14 +176,12 @@ class GlobalBlocking {
 	 * @param string $wiki_id
 	 * @param string $user
 	 * @return string
+	 * @deprecated Since 1.42. Use GlobalBlockingLinkBuilder::maybeLinkUserpage.
 	 */
 	public static function maybeLinkUserpage( $wiki_id, $user ) {
-		$wiki = WikiMap::getWiki( $wiki_id );
-
-		if ( $wiki ) {
-			return "[" . $wiki->getFullUrl( "User:$user" ) . " $user]";
-		}
-		return $user;
+		return GlobalBlockingServices::wrap( MediaWikiServices::getInstance() )
+			->getGlobalBlockingLinkBuilder()
+			->maybeLinkUserpage( $wiki_id, $user );
 	}
 
 	/**
@@ -234,50 +230,12 @@ class GlobalBlocking {
 	 * Build links to other global blocking special pages, shown in the subtitle
 	 * @param SpecialPage $sp SpecialPage instance for context
 	 * @return string links to special pages
+	 * @deprecated Since 1.42. Use GlobalBlockingLinkBuilder::buildSubtitleLinks.
 	 */
 	public static function buildSubtitleLinks( SpecialPage $sp ) {
-		// Add a few useful links
-		$links = [];
-		$pagetype = $sp->getName();
-		$linkRenderer = $sp->getLinkRenderer();
-
-		// Don't show a link to a special page on the special page itself.
-		// Show the links only if the user has sufficient rights
-		if ( $pagetype != 'GlobalBlockList' ) {
-			$title = SpecialPage::getTitleFor( 'GlobalBlockList' );
-			$links[] = $linkRenderer->makeKnownLink( $title, $sp->msg( 'globalblocklist' )->text() );
-		}
-		$canBlock = $sp->getUser()->isAllowed( 'globalblock' );
-		if ( $pagetype != 'GlobalBlock' && $canBlock ) {
-			$title = SpecialPage::getTitleFor( 'GlobalBlock' );
-			$links[] = $linkRenderer->makeKnownLink(
-				$title, $sp->msg( 'globalblocking-goto-block' )->text() );
-		}
-		if ( $pagetype != 'RemoveGlobalBlock' && $canBlock ) {
-			$title = SpecialPage::getTitleFor( 'RemoveGlobalBlock' );
-			$links[] = $linkRenderer->makeKnownLink(
-				$title, $sp->msg( 'globalblocking-goto-unblock' )->text() );
-		}
-		if ( $pagetype != 'GlobalBlockStatus' && $sp->getUser()->isAllowed( 'globalblock-whitelist' ) ) {
-			$title = SpecialPage::getTitleFor( 'GlobalBlockStatus' );
-			$links[] = $linkRenderer->makeKnownLink(
-				$title, $sp->msg( 'globalblocking-goto-status' )->text() );
-		}
-		if ( $pagetype == 'GlobalBlock' && $sp->getUser()->isAllowed( 'editinterface' ) ) {
-			$title = Title::makeTitle( NS_MEDIAWIKI, 'Globalblocking-block-reason-dropdown' );
-			$links[] = $linkRenderer->makeKnownLink(
-				$title,
-				$sp->msg( 'globalblocking-block-edit-dropdown' )->text(),
-				[],
-				[ 'action' => 'edit' ]
-			);
-		}
-		$linkItems = count( $links )
-			? $sp->msg( 'parentheses' )
-				->rawParams( $sp->getLanguage()->pipeList( $links ) )
-				->escaped()
-			: '';
-		return $linkItems;
+		return GlobalBlockingServices::wrap( MediaWikiServices::getInstance() )
+			->getGlobalBlockingLinkBuilder()
+			->buildSubtitleLinks( $sp );
 	}
 
 	/**

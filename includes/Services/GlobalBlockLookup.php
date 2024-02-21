@@ -6,7 +6,6 @@ use Language;
 use Liuggio\StatsdClient\Factory\StatsdDataFactoryInterface;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlock;
-use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
 use MediaWiki\Extension\GlobalBlocking\Hook\GlobalBlockingHookRunner;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\User\CentralId\CentralIdLookup;
@@ -48,6 +47,7 @@ class GlobalBlockLookup {
 	private Language $contentLanguage;
 	private GlobalBlockReasonFormatter $globalBlockReasonFormatter;
 	private GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup;
+	private GlobalBlockingLinkBuilder $globalBlockingLinkBuilder;
 
 	private array $getUserBlockDetailsCache = [];
 
@@ -59,7 +59,8 @@ class GlobalBlockLookup {
 		CentralIdLookup $centralIdLookup,
 		Language $contentLanguage,
 		GlobalBlockReasonFormatter $globalBlockReasonFormatter,
-		GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup
+		GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup,
+		GlobalBlockingLinkBuilder $globalBlockingLinkBuilder
 	) {
 		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
 		$this->options = $options;
@@ -70,6 +71,7 @@ class GlobalBlockLookup {
 		$this->contentLanguage = $contentLanguage;
 		$this->globalBlockReasonFormatter = $globalBlockReasonFormatter;
 		$this->globalBlockLocalStatusLookup = $globalBlockLocalStatusLookup;
+		$this->globalBlockingLinkBuilder = $globalBlockingLinkBuilder;
 	}
 
 	/**
@@ -201,7 +203,7 @@ class GlobalBlockLookup {
 			$blockTimestamp = $lang->timeanddate( wfTimestamp( TS_MW, $block->gb_timestamp ), true );
 			$blockExpiry = $lang->formatExpiry( $block->gb_expiry );
 			$display_wiki = WikiMap::getWikiName( $block->gb_by_wiki );
-			$blockingUser = GlobalBlocking::maybeLinkUserpage(
+			$blockingUser = $this->globalBlockingLinkBuilder->maybeLinkUserpage(
 				$block->gb_by_wiki,
 				$this->centralIdLookup->nameFromCentralId( $block->gb_by_central_id ) ?? ''
 			);
@@ -254,7 +256,7 @@ class GlobalBlockLookup {
 						);
 						$blockExpiry = $lang->formatExpiry( $block->gb_expiry );
 						$display_wiki = WikiMap::getWikiName( $block->gb_by_wiki );
-						$blockingUser = GlobalBlocking::maybeLinkUserpage(
+						$blockingUser = $this->globalBlockingLinkBuilder->maybeLinkUserpage(
 							$block->gb_by_wiki,
 							$this->centralIdLookup->nameFromCentralId( $block->gb_by_central_id ) ?? ''
 						);
