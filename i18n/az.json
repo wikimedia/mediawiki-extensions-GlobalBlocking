@@ -7,7 +7,8 @@
 			"Toghrul Rahimli",
 			"Vago",
 			"Verman1",
-			"Vugar 1981"
+			"Vugar 1981",
+			"NMW03"
 		]
 	},
 	"globalblocking-block-reason": "Səbəb:",
@@ -26,5 +27,6 @@
 	"globalblocking-whitelist-status": "Lokal status:",
 	"globalblocking-whitelist-submit": "Lokal statusu dəyiş",
 	"globalblocking-logpage": "Qlobal blok gündəliyi",
-	"globalblocking-contribs-notice": "Bu IP ünvanı hazırda qlobal səviyyədə bloklanmışdır. \nQlobal blok qeydləri istinad məqsədilə aşağıda göstərilmişdir:"
+	"globalblocking-contribs-notice": "Bu IP ünvanı hazırda qlobal səviyyədə bloklanmışdır. \nQlobal blok qeydləri istinad məqsədilə aşağıda göstərilmişdir:",
+	"log-action-filter-gblblock": "Qlobal blok növü:"
 }
