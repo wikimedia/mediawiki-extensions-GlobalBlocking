@@ -86,14 +86,6 @@ class GlobalBlockingHooks implements
 			return true;
 		}
 
-		if ( $ip === null && !IPUtils::isIPAddress( $user->getName() ) ) {
-			return true;
-		}
-
-		if ( $this->permissionManager->userHasAnyRight( $user, 'ipblock-exempt', 'globalblock-exempt' ) ) {
-			return true;
-		}
-
 		$globalBlock = GlobalBlocking::getUserBlock( $user, $ip );
 		if ( !$globalBlock ) {
 			return true;
@@ -219,7 +211,7 @@ class GlobalBlockingHooks implements
 
 		$block = GlobalBlocking::getGlobalBlockingBlock( $name, true );
 
-		if ( $block !== null ) {
+		if ( $block ) {
 			$conds = GlobalBlocking::getRangeCondition( $block->gb_address );
 			$pager = new GlobalBlockListPager(
 				$sp->getContext(),

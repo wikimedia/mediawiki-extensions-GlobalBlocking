@@ -67,9 +67,19 @@ class GlobalBlocking {
 	 * @deprecated Since 1.42. Use GlobalBlockLookup::getGlobalBlockingBlock.
 	 */
 	public static function getGlobalBlockingBlock( $ip, $anon ) {
-		return GlobalBlockingServices::wrap( MediaWikiServices::getInstance() )
+		$flags = GlobalBlockLookup::SKIP_LOCAL_DISABLE_CHECK;
+		if ( !$anon ) {
+			$flags |= GlobalBlockLookup::SKIP_SOFT_IP_BLOCKS;
+		}
+		// Don't attempt to pass a central ID as this deprecated method does not support it,
+		// so pass 0 (which is the value to indicate no user-based blocks should be checked).
+		$result = GlobalBlockingServices::wrap( MediaWikiServices::getInstance() )
 			->getGlobalBlockLookup()
-			->getGlobalBlockingBlock( $ip, $anon );
+			->getGlobalBlockingBlock( $ip, 0, $flags );
+		if ( $result === null ) {
+			return false;
+		}
+		return $result;
 	}
 
 	/**

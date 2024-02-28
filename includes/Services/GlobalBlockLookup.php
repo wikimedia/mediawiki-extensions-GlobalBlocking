@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Services;
 
+use InvalidArgumentException;
 use Language;
 use Liuggio\StatsdClient\Factory\StatsdDataFactoryInterface;
 use MediaWiki\Config\ServiceOptions;
@@ -15,7 +16,6 @@ use MediaWiki\WikiMap\WikiMap;
 use Message;
 use RequestContext;
 use stdClass;
-use UnexpectedValueException;
 use Wikimedia\IPUtils;
 use Wikimedia\Rdbms\IExpression;
 use Wikimedia\Rdbms\IResultWrapper;
@@ -33,10 +33,21 @@ class GlobalBlockLookup {
 		'GlobalBlockingAllowedRanges',
 		'GlobalBlockingBlockXFF',
 		'GlobalBlockingCIDRLimit',
+		'GlobalBlockingAllowGlobalAccountBlocks',
 	];
 
+	private const TYPE_USER = 1;
 	private const TYPE_IP = 2;
 	private const TYPE_RANGE = 3;
+
+	/** @var int Flag to ignore blocks on IP addresses which are marked as anon-only. */
+	public const SKIP_SOFT_IP_BLOCKS = 1;
+	/** @var int Flag to ignore all blocks on IP addresses. */
+	public const SKIP_IP_BLOCKS = 2;
+	/** @var int Flag to skip checking if the blocks that affect a target are locally disabled. */
+	public const SKIP_LOCAL_DISABLE_CHECK = 4;
+	/** @var int Flag to skip the excluding of IP blocks in the GlobalBlockingAllowedRanges config. */
+	public const SKIP_ALLOWED_RANGES_CHECK = 8;
 
 	private ServiceOptions $options;
 	private GlobalBlockingConnectionProvider $globalBlockingConnectionProvider;
@@ -166,11 +177,6 @@ class GlobalBlockLookup {
 
 		$this->statsdFactory->increment( 'global_blocking.get_user_block' );
 
-		if ( $user->isAllowed( 'ipblock-exempt' ) || $user->isAllowed( 'globalblock-exempt' ) ) {
-			// User is exempt from IP blocks.
-			return $this->addToUserBlockDetailsCache( [ 'block' => null, 'error' => [] ], $user );
-		}
-
 		// We have callers from different code paths which may leave $ip as null when providing an
 		// IP address as the $user where the IP address is not the session user. In this case, populate
 		// the $ip argument with the IP provided in $user to get all the blocks that apply to the IP.
@@ -181,28 +187,27 @@ class GlobalBlockLookup {
 			$ip = $user->getName();
 		}
 
-		if ( $ip !== null ) {
-			$ranges = $this->options->get( 'GlobalBlockingAllowedRanges' );
-			foreach ( $ranges as $range ) {
-				if ( IPUtils::isInRange( $ip, $range ) ) {
-					return $this->addToUserBlockDetailsCache( [ 'block' => null, 'error' => [] ], $user );
-				}
-			}
+		$flags = 0;
+		if ( $user->isAllowedAny( 'ipblock-exempt', 'globalblock-exempt' ) ) {
+			// User is exempt from IP blocks.
+			$flags |= self::SKIP_IP_BLOCKS;
+		}
+		if ( $user->isNamed() ) {
+			// User is a named account, so skip anon-only (soft) IP blocks.
+			$flags |= self::SKIP_SOFT_IP_BLOCKS;
+		}
+
+		$centralId = 0;
+		if ( $this->options->get( 'GlobalBlockingAllowGlobalAccountBlocks' ) && $user->isRegistered() ) {
+			$centralId = $this->centralIdLookup->centralIdFromLocalUser( $user, CentralIdLookup::AUDIENCE_RAW );
 		}
 
 		$this->statsdFactory->increment( 'global_blocking.get_user_block_db_query' );
 
 		$lang = $context->getLanguage();
-		$block = $this->getGlobalBlockingBlock( $ip, !$user->isNamed() );
+		$block = $this->getGlobalBlockingBlock( $ip, $centralId, $flags );
 		if ( $block ) {
-			// The following code in this if block, except the returning of $block and the whitelist check, is
-			// deprecated since 1.42 (T358776).
-			// Check for local whitelisting
-			if ( $this->globalBlockLocalStatusLookup->getLocalWhitelistInfo( $block->gb_id ) ) {
-				// Block has been whitelisted.
-				return $this->addToUserBlockDetailsCache( [ 'block' => null, 'error' => [] ], $user );
-			}
-
+			// The following code in this if block, except the returning of $block, is deprecated since 1.42 (T358776).
 			$blockTimestamp = $lang->timeanddate( wfTimestamp( TS_MW, $block->gb_timestamp ), true );
 			$blockExpiry = $lang->formatExpiry( $block->gb_expiry );
 			$display_wiki = WikiMap::getWikiName( $block->gb_by_wiki );
@@ -221,27 +226,26 @@ class GlobalBlockLookup {
 				$errorMsg = 'globalblocking-ipblocked-range';
 				$this->hookRunner->onGlobalBlockingBlockedIpRangeMsg( $errorMsg );
 			} else {
-				throw new UnexpectedValueException(
-					"This should not happen. IP globally blocked is not valid and is not a valid range?"
+				$errorMsg = false;
+			}
+			$blockDetails = [
+				'block' => $block,
+				'error' => [],
+			];
+			if ( $errorMsg ) {
+				$blockDetails['error'][] = wfMessage(
+					$errorMsg,
+					$blockingUser,
+					$display_wiki,
+					$this->globalBlockReasonFormatter->format( $block->gb_reason, $this->contentLanguage->getCode() ),
+					$blockTimestamp,
+					$blockExpiry,
+					$ip,
+					$block->gb_address
 				);
 			}
 
-			return $this->addToUserBlockDetailsCache( [
-				'block' => $block,
-				'error' => [
-					wfMessage(
-						$errorMsg,
-						$blockingUser,
-						$display_wiki,
-						$this->globalBlockReasonFormatter
-							->format( $block->gb_reason, $this->contentLanguage->getCode() ),
-						$blockTimestamp,
-						$blockExpiry,
-						$ip,
-						$block->gb_address
-					)
-				],
-			], $user );
+			return $this->addToUserBlockDetailsCache( $blockDetails, $user );
 		}
 
 		$request = $context->getRequest();
@@ -250,8 +254,11 @@ class GlobalBlockLookup {
 			$xffIps = $request->getHeader( 'X-Forwarded-For' );
 			if ( $xffIps ) {
 				$xffIps = array_map( 'trim', explode( ',', $xffIps ) );
+				// Always skip the allowed ranges check when checking the XFF IPs as the value of this header
+				// is easy to spoof.
+				$xffFlags = $flags | self::SKIP_ALLOWED_RANGES_CHECK;
 				$appliedBlock = $this->getAppliedBlock(
-					$xffIps, $this->checkIpsForBlock( $xffIps, !$user->isNamed() )
+					$xffIps, $this->checkIpsForBlock( $xffIps, $xffFlags )
 				);
 				if ( $appliedBlock !== null ) {
 					// The following code in this if block, except the returning of $block, is deprecated since 1.42.
@@ -302,26 +309,26 @@ class GlobalBlockLookup {
 			return self::TYPE_IP;
 		} elseif ( IPUtils::isValidRange( $target ) ) {
 			return self::TYPE_RANGE;
+		} else {
+			return self::TYPE_USER;
 		}
 	}
 
 	/**
 	 * Choose the most specific block from some combination of user, IP and IP range
 	 * blocks. Decreasing order of specificity: IP > narrower IP range > wider IP
-	 * range. A range that encompasses one IP address is ranked equally to a singe IP.
+	 * range. A range that encompasses one IP address is ranked equally to a single IP.
 	 *
 	 * Note that DatabaseBlock::chooseBlocks chooses blocks in a different way.
 	 *
 	 * This is based on DatabaseBlock::chooseMostSpecificBlock
 	 *
 	 * @param IResultWrapper $blocks These should not include autoblocks or ID blocks
+	 * @param int $flags The $flags provided. This method only checks for BLOCK_FLAG_SKIP_LOCAL_DISABLE_CHECK,
+	 *   and callers are in charge of checking for other relevant flags.
 	 * @return stdClass|null The block with the most specific target
 	 */
-	private function chooseMostSpecificBlock( $blocks ) {
-		if ( $blocks->numRows() === 1 ) {
-			return $blocks->current();
-		}
-
+	private function chooseMostSpecificBlock( IResultWrapper $blocks, int $flags ): ?stdClass {
 		// This result could contain a block on the user, a block on the IP, and a russian-doll
 		// set of rangeblocks.  We want to choose the most specific one, so keep a leader board.
 		$bestBlock = null;
@@ -329,6 +336,13 @@ class GlobalBlockLookup {
 		// Lower will be better
 		$bestBlockScore = 100;
 		foreach ( $blocks as $block ) {
+			// Check for local whitelisting, unless the flag is set to skip the check.
+			if (
+				!( $flags & self::SKIP_LOCAL_DISABLE_CHECK ) &&
+				$this->globalBlockLocalStatusLookup->getLocalWhitelistInfo( $block->gb_id )
+			) {
+				continue;
+			}
 			$target = $block->gb_address;
 			$type = $this->getTargetType( $target );
 			if ( $type == self::TYPE_RANGE ) {
@@ -340,7 +354,6 @@ class GlobalBlockLookup {
 
 				// Rank a range block covering a single IP equally with a single-IP block
 				$score = self::TYPE_RANGE - 1 + ( $size / $max );
-
 			} else {
 				$score = $type;
 			}
@@ -355,36 +368,36 @@ class GlobalBlockLookup {
 	}
 
 	/**
-	 * Get the row from the `globalblocks` table that applies to the given IP address.
+	 * Get the most specific row from the `globalblocks` table that applies to the given IP address
+	 * or the central user.
 	 *
-	 * This does not check for the block being locally disabled or whether the current
-	 * session user is exempt from the block. As such it should not be used to determine
+	 * This does not check if the user is exempt from IP blocks. As such it should not be used to determine
 	 * if a block should be applied to a user. Use ::getUserBlock for that.
 	 *
-	 * @param string|null $ip The IP address to be checked
-	 * @param bool $anon If false, exclude blocks that are anon-only
+	 * @param string|null $ip The IP address used by the user. If null, then no IP blocks will be checked.
+	 * @param int $centralId The central ID of the user. 0 if the user is anonymous. Setting this as
+	 *   a boolean is soft deprecated and will be treated as 0.
+	 * @param int $flags Flags to control the behavior of the block lookup
 	 * @return stdClass|null The most specific row from the `globalblocks` table, or null if no row was found
 	 */
-	public function getGlobalBlockingBlock( ?string $ip, bool $anon ) {
-		if ( $ip === null ) {
+	public function getGlobalBlockingBlock( ?string $ip, int $centralId, int $flags = 0 ): ?stdClass {
+		$conds = $this->getGlobalBlockLookupConditions( $ip, $centralId, $flags );
+		if ( $conds === null ) {
+			// No conditions, so don't perform the query and assume the user is not targeted by any block
 			return null;
 		}
 
-		$queryBuilder = $this->globalBlockingConnectionProvider
+		$blocks = $this->globalBlockingConnectionProvider
 			->getReplicaGlobalBlockingDatabase()
 			->newSelectQueryBuilder()
 			->select( self::selectFields() )
 			->from( 'globalblocks' )
-			->caller( __METHOD__ );
+			->where( $conds )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 
-		$queryBuilder->where( $this->getRangeCondition( $ip ) );
-
-		if ( !$anon ) {
-			$queryBuilder->andWhere( [ 'gb_anon_only' => 0 ] );
-		}
-
-		// Get the most specific block for the global blocks that apply to the IP
-		return $this->chooseMostSpecificBlock( $queryBuilder->fetchResultSet() );
+		// Get the most specific block for the global blocks that apply to the user.
+		return $this->chooseMostSpecificBlock( $blocks, $flags );
 	}
 
 	/**
@@ -392,20 +405,92 @@ class GlobalBlockLookup {
 	 * `globalblocks` table that apply to the given IP address or range.
 	 *
 	 * @param string $ip The IP address or range
+	 * @deprecated Since 1.42. Use ::getGlobalBlockLookupConditions.
 	 * @return IExpression
 	 */
 	public function getRangeCondition( string $ip ): IExpression {
+		// This method does not return null if an IP is provided and the allowed ranges check is skipped.
+		// @phan-suppress-next-line PhanTypeMismatchReturnNullable
+		return $this->getGlobalBlockLookupConditions( $ip, 0, self::SKIP_ALLOWED_RANGES_CHECK );
+	}
+
+	/**
+	 * Get the SQL WHERE conditions that allow looking up all blocks from the `globalblocks` table.
+	 *
+	 * @param ?string $ip The IP address or range. If null, then no IP blocks will be checked.
+	 * @param int $centralId The central ID of the user. 0 if the user is anonymous and 0 will skip
+	 *   checking user specific blocks.
+	 * @param int $flags Flags which control what conditions are returned. Ignores the
+	 *   ::BLOCK_FLAG_SKIP_LOCAL_DISABLE_CHECK flag and callers are expected to check if the block is
+	 *   locally disabled if this is needed.
+	 * @return IExpression|null The conditions to be used in a SQL query to look up global blocks, or null if no valid
+	 *   conditions could be generated.
+	 */
+	public function getGlobalBlockLookupConditions( ?string $ip, int $centralId = 0, int $flags = 0 ): ?IExpression {
 		$dbr = $this->globalBlockingConnectionProvider->getReplicaGlobalBlockingDatabase();
+		$ipExpr = null;
+		$userExpr = null;
 
-		[ $start, $end ] = IPUtils::parseRange( $ip );
+		if ( $ip !== null && !IPUtils::isIPAddress( $ip ) ) {
+			// The provided IP is invalid, so throw.
+			throw new InvalidArgumentException(
+				"Invalid IP address or range provided to GlobalBlockLookup::getGlobalBlockLookupConditions."
+			);
+		}
 
-		$chunk = $this->getIpFragment( $start );
+		if ( $ip !== null && !( $flags & self::SKIP_ALLOWED_RANGES_CHECK ) ) {
+			$ranges = $this->options->get( 'GlobalBlockingAllowedRanges' );
+			foreach ( $ranges as $range ) {
+				if ( IPUtils::isInRange( $ip, $range ) ) {
+					// IP is in a range that is exempt from IP blocks, so treat the user as having
+					// global IP block exemption for this specific IP address
+					$flags |= self::SKIP_IP_BLOCKS;
+					break;
+				}
+			}
+		}
 
-		return $dbr->expr( 'gb_range_start', IExpression::LIKE, new LikeValue( $chunk, $dbr->anyString() ) )
-			->and( 'gb_range_start', '<=', $start )
-			->and( 'gb_range_end', '>=', $end )
-			// @todo expiry shouldn't be in this function
-			->and( 'gb_expiry', '>', $dbr->timestamp() );
+		if ( $ip !== null && !( $flags & self::SKIP_IP_BLOCKS ) ) {
+			// If we have been provided an IP address or range in $ip, then
+			// add conditions to the query to lookup blocks that apply to the IP address / range.
+			[ $start, $end ] = IPUtils::parseRange( $ip );
+			$chunk = $this->getIpFragment( $start );
+			$ipExpr = $dbr->expr( 'gb_range_start', IExpression::LIKE, new LikeValue( $chunk, $dbr->anyString() ) )
+				->and( 'gb_range_start', '<=', $start )
+				->and( 'gb_range_end', '>=', $end );
+
+			if ( $flags & self::SKIP_SOFT_IP_BLOCKS ) {
+				// If the flags say to skip soft IP blocks, then exclude blocks with gb_anon_only
+				// set to 1 (which should only be soft blocks on IP addresses or ranges).
+				$ipExpr = $ipExpr->and( 'gb_anon_only', '!=', 1 );
+			}
+		}
+
+		if ( $centralId !== 0 ) {
+			// If we have been provided a non-zero central ID, then also look for blocks that target the
+			// given central ID.
+			$userExpr = $dbr->expr( 'gb_target_central_id', '=', $centralId );
+		}
+
+		// Combine the IP conditions and user IExpressions
+		if ( $userExpr !== null && $ipExpr !== null ) {
+			// If we have conditions for both the IP and the user, then combine them with an OR
+			// to allow selecting blocks that apply to either the IP or the user.
+			$targetExpr = $userExpr->orExpr( $ipExpr );
+		} elseif ( $userExpr !== null ) {
+			// If we only have conditions for the user, then use that IExpression.
+			$targetExpr = $userExpr;
+		} elseif ( $ipExpr !== null ) {
+			// If we only have conditions for the IP, then use that IExpression.
+			$targetExpr = $ipExpr;
+		} else {
+			// No conditions, so don't perform the query otherwise we will select all blocks from the DB.
+			// In this case, we can assume the user or their IP is not affected by any global block.
+			return null;
+		}
+		// @todo expiry shouldn't be in this function
+		return $dbr->expr( 'gb_expiry', '>', $dbr->timestamp() )
+			->andExpr( $targetExpr );
 	}
 
 	/**
@@ -435,19 +520,23 @@ class GlobalBlockLookup {
 	 * check whether the given session user can be exempt from the block.
 	 *
 	 * @param string[] $ips The array of IP addresses to be checked
-	 * @param bool $anon Get anon blocks only
+	 * @param int $flags Flags which control what blocks are returned.
 	 * @return stdClass[] Array of applicable blocks as rows from the `globalblocks` table
 	 */
-	private function checkIpsForBlock( array $ips, bool $anon ): array {
-		$dbr = $this->globalBlockingConnectionProvider->getReplicaGlobalBlockingDatabase();
-		$queryBuilder = $dbr->newSelectQueryBuilder()
-			->select( self::selectFields() )
-			->from( 'globalblocks' );
+	private function checkIpsForBlock( array $ips, int $flags = 0 ): array {
+		if ( $flags & self::SKIP_IP_BLOCKS ) {
+			// If the flags say to skip IP blocks, then don't even make the query.
+			return [];
+		}
 
+		$dbr = $this->globalBlockingConnectionProvider->getReplicaGlobalBlockingDatabase();
 		$conds = [];
 		foreach ( $ips as $ip ) {
 			if ( IPUtils::isValid( $ip ) ) {
-				$conds[] = $this->getRangeCondition( $ip );
+				$ipConds = $this->getGlobalBlockLookupConditions( $ip, 0, $flags );
+				if ( $ipConds !== null ) {
+					$conds[] = $ipConds;
+				}
 			}
 		}
 
@@ -455,19 +544,19 @@ class GlobalBlockLookup {
 			// No valid IPs provided so don't even make the query. Bug 59705
 			return [];
 		}
-		$queryBuilder->where( new OrExpressionGroup( ...$conds ) );
-
-		if ( !$anon ) {
-			$queryBuilder->where( [ 'gb_anon_only' => 0 ] );
-		}
-
-		$blocks = [];
-		$results = $queryBuilder
+		$results = $dbr->newSelectQueryBuilder()
+			->select( self::selectFields() )
+			->from( 'globalblocks' )
+			->where( new OrExpressionGroup( ...$conds ) )
 			->caller( __METHOD__ )
 			->fetchResultSet();
 
+		$blocks = [];
 		foreach ( $results as $block ) {
-			if ( !$this->globalBlockLocalStatusLookup->getLocalWhitelistInfo( $block->gb_id ) ) {
+			if (
+				( $flags & self::SKIP_LOCAL_DISABLE_CHECK ) ||
+				!$this->globalBlockLocalStatusLookup->getLocalWhitelistInfo( $block->gb_id )
+			) {
 				$blocks[] = $block;
 			}
 		}
@@ -506,22 +595,38 @@ class GlobalBlockLookup {
 	 * If no global block targets this IP address specifically, then this method
 	 * returns 0.
 	 *
-	 * @param string $ip The specific target. This means that blocks on IP ranges that include this IP are
-	 *   not included. Use ::getGlobalBlockingBlock to include these blocks.
+	 * @param string $target The specific target which can be a username, IP address or range. The target being
+	 *   specific means that if you provide a single IP which is covered by a range block, the range block will
+	 *   not be returned. Use ::getGlobalBlockingBlock to include these blocks.
 	 * @param int $dbtype Either DB_REPLICA or DB_PRIMARY.
 	 * @return int
 	 */
-	public function getGlobalBlockId( string $ip, int $dbtype = DB_REPLICA ): int {
+	public function getGlobalBlockId( string $target, int $dbtype = DB_REPLICA ): int {
 		if ( $dbtype === DB_PRIMARY ) {
 			$db = $this->globalBlockingConnectionProvider->getPrimaryGlobalBlockingDatabase();
 		} else {
 			$db = $this->globalBlockingConnectionProvider->getReplicaGlobalBlockingDatabase();
 		}
 
-		return (int)$db->newSelectQueryBuilder()
+		$queryBuilder = $db->newSelectQueryBuilder()
 			->select( 'gb_id' )
-			->from( 'globalblocks' )
-			->where( [ 'gb_address' => $ip ] )
+			->from( 'globalblocks' );
+
+		if ( IPUtils::isIPAddress( $target ) ) {
+			$queryBuilder->where( [ 'gb_address' => $target ] );
+		} elseif ( $this->options->get( 'GlobalBlockingAllowGlobalAccountBlocks' ) ) {
+			$centralId = $this->centralIdLookup->centralIdFromName( $target, CentralIdLookup::AUDIENCE_RAW );
+			if ( !$centralId ) {
+				// If we are looking up a block by a central ID of a user, then the user must have a central ID
+				// for a block to apply to them.
+				return 0;
+			}
+			$queryBuilder->where( [ 'gb_target_central_id' => $centralId ] );
+		} else {
+			return 0;
+		}
+
+		return (int)$queryBuilder
 			->caller( __METHOD__ )
 			->fetchField();
 	}
@@ -531,7 +636,7 @@ class GlobalBlockLookup {
 	 */
 	public static function selectFields(): array {
 		return [
-			'gb_id', 'gb_address', 'gb_by', 'gb_by_central_id', 'gb_by_wiki', 'gb_reason',
+			'gb_id', 'gb_address', 'gb_target_central_id', 'gb_by', 'gb_by_central_id', 'gb_by_wiki', 'gb_reason',
 			'gb_timestamp', 'gb_anon_only', 'gb_expiry', 'gb_range_start', 'gb_range_end'
 		];
 	}

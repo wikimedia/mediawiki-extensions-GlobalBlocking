@@ -15,15 +15,7 @@ class GlobalBlockLookupTest extends MediaWikiUnitTestCase {
 
 	use MockServiceDependenciesTrait;
 
-	public function testGetGlobalBlockingBlockForNullIp() {
-		$objectUnderTest = $this->newServiceInstance( GlobalBlockLookup::class, [] );
-		$this->assertNull(
-			$objectUnderTest->getGlobalBlockingBlock( null, false ),
-			'::getGlobalBlockingBlock should return null for a null IP argument'
-		);
-	}
-
-	public function testgetUserBlockErrorsWhenNoBlockAndCacheMatch() {
+	public function testGetUserBlockErrorsWhenNoBlockAndCacheMatch() {
 		$mockMessage = $this->createMock( RawMessage::class );
 		$objectUnderTest = $this->getMockBuilder( GlobalBlockLookup::class )
 			->onlyMethods( [ 'getUserBlockDetailsCacheResult' ] )
