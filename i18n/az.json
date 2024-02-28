@@ -29,6 +29,7 @@
 	"globalblocking-ipblocked-xff": "'''{{int:globalblocking-blockedtext-on-proxy}}'''\n\nBlok $1 ($2) tərəfindən tətbiq olunub.\n{{int:blockedtext-reason-comment|$3}}.\n\n* {{int:blockedtext-start-time|$4}}\n* {{int:blockedtext-expiration-time|$5}}\n\n{{int:globalblocking-blockedtext-blocker-admin|$1}}\n{{int:globalblocking-blockedtext-email-feature}}\n{{int:globalblocking-blockedtext-proxy|$7}} {{int:blockedtext-include-details-queries}}",
 	"globalblocking-logpage": "Qlobal blok gündəliyi",
 	"globalblocking-contribs-notice": "Bu IP ünvanı hazırda qlobal səviyyədə bloklanmışdır. \nQlobal blok qeydləri istinad məqsədilə aşağıda göstərilmişdir:",
+	"log-action-filter-gblblock": "Qlobal blok növü:",
 	"globalblocking-blockedtext-on-proxy": "Sorğunuz tərəfindən istifadə edilən bir və ya bir neçə proksi server qlobal olaraq bloklanıb",
 	"globalblocking-blockedtext-blocker-admin": "Bloku müzakirə etmək üçün $1 ilə əlaqə saxlaya bilərsən.",
 	"globalblocking-blockedtext-proxy": "Bloklanan proksi ünvanı: $1"
