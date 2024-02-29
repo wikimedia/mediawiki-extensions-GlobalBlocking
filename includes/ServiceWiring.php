@@ -89,8 +89,15 @@ return [
 			$services->getContentLanguage()
 		);
 	},
-	'GlobalBlocking.GlobalBlockingLinkBuilder' => static function (): GlobalBlockingLinkBuilder {
-		return new GlobalBlockingLinkBuilder();
+	'GlobalBlocking.GlobalBlockingLinkBuilder' => static function (
+		MediaWikiServices $services
+	): GlobalBlockingLinkBuilder {
+		return new GlobalBlockingLinkBuilder(
+			new ServiceOptions(
+				GlobalBlockingLinkBuilder::CONSTRUCTOR_OPTIONS,
+				$services->getMainConfig()
+			)
+		);
 	},
 ];
 

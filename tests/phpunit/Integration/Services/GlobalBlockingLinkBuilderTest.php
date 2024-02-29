@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Test\Integration\Services;
 
-use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
+use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWikiIntegrationTestCase;
@@ -17,7 +17,8 @@ class GlobalBlockingLinkBuilderTest extends MediaWikiIntegrationTestCase {
 
 	/** @dataProvider provideMaybeLinkUserpage */
 	public function testMaybeLinkUserpage( $wikiID, $user, $expectedReturnValue ) {
-		$globalBlockingLinkBuilder = new GlobalBlockingLinkBuilder();
+		$globalBlockingLinkBuilder = GlobalBlockingServices::wrap( $this->getServiceContainer() )
+			->getGlobalBlockingLinkBuilder();
 		$this->assertSame(
 			$expectedReturnValue,
 			$globalBlockingLinkBuilder->maybeLinkUserpage( $wikiID, $user ),
@@ -58,7 +59,8 @@ class GlobalBlockingLinkBuilderTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testBuildSubtitleLinksWithNullAuthorityOnSpecialGlobalBlockList() {
-		$globalBlockingLinkBuilder = new GlobalBlockingLinkBuilder();
+		$globalBlockingLinkBuilder = GlobalBlockingServices::wrap( $this->getServiceContainer() )
+			->getGlobalBlockingLinkBuilder();
 
 		$this->assertSame(
 			'',
@@ -71,7 +73,8 @@ class GlobalBlockingLinkBuilderTest extends MediaWikiIntegrationTestCase {
 
 	public function testBuildSubtitleLinksWithGlobalBlockWhitelistRight() {
 		// Call the method under test
-		$globalBlockingLinkBuilder = new GlobalBlockingLinkBuilder();
+		$globalBlockingLinkBuilder = GlobalBlockingServices::wrap( $this->getServiceContainer() )
+			->getGlobalBlockingLinkBuilder();
 		$specialPage = $this->getMockSpecialPage(
 			'RemoveGlobalBlock',
 			$this->mockRegisteredAuthorityWithPermissions( [ 'globalblock-whitelist' ] )
@@ -97,7 +100,8 @@ class GlobalBlockingLinkBuilderTest extends MediaWikiIntegrationTestCase {
 
 	public function testBuildSubtitleLinksWithGlobalBlockAndGlobalBlockWhitelistRights() {
 		// Call the method under test
-		$globalBlockingLinkBuilder = new GlobalBlockingLinkBuilder();
+		$globalBlockingLinkBuilder = GlobalBlockingServices::wrap( $this->getServiceContainer() )
+			->getGlobalBlockingLinkBuilder();
 		$specialPage = $this->getMockSpecialPage(
 			'GlobalBlockStatus',
 			$this->mockRegisteredAuthorityWithPermissions( [ 'globalblock-whitelist', 'globalblock' ] )
@@ -123,7 +127,8 @@ class GlobalBlockingLinkBuilderTest extends MediaWikiIntegrationTestCase {
 
 	public function testBuildSubtitleLinksForUserWithGlobalBlockAndEditInterfaceRights() {
 		// Call the method under test
-		$globalBlockingLinkBuilder = new GlobalBlockingLinkBuilder();
+		$globalBlockingLinkBuilder = GlobalBlockingServices::wrap( $this->getServiceContainer() )
+			->getGlobalBlockingLinkBuilder();
 		$specialPage = $this->getMockSpecialPage(
 			'GlobalBlock',
 			$this->mockRegisteredAuthorityWithPermissions( [ 'editinterface', 'globalblock' ] )

@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Services;
 
+use MediaWiki\Config\ServiceOptions;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
@@ -13,6 +14,18 @@ use MediaWiki\WikiMap\WikiMap;
  * @since 1.42
  */
 class GlobalBlockingLinkBuilder {
+
+	public const CONSTRUCTOR_OPTIONS = [
+		'GlobalBlockingAllowGlobalAccountBlocks',
+	];
+
+	private ServiceOptions $options;
+
+	public function __construct( ServiceOptions $options ) {
+		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
+		$this->options = $options;
+	}
+
 	/**
 	 * Build links to other global blocking special pages. These are for use in the subtitle of
 	 * GlobalBlocking extension special pages.
@@ -35,8 +48,9 @@ class GlobalBlockingLinkBuilder {
 		$canBlock = $sp->getAuthority()->isAllowed( 'globalblock' );
 		if ( $pagetype !== 'GlobalBlock' && $canBlock ) {
 			$title = SpecialPage::getTitleFor( 'GlobalBlock' );
-			$links[] = $linkRenderer->makeKnownLink(
-				$title, $sp->msg( 'globalblocking-goto-block' )->text() );
+			$messageKey = $this->options->get( 'GlobalBlockingAllowGlobalAccountBlocks' ) ?
+				'globalblocking-goto-block-new' : 'globalblocking-goto-block';
+			$links[] = $linkRenderer->makeKnownLink( $title, $sp->msg( $messageKey )->text() );
 		}
 		if ( $pagetype !== 'RemoveGlobalBlock' && $canBlock ) {
 			$title = SpecialPage::getTitleFor( 'RemoveGlobalBlock' );
