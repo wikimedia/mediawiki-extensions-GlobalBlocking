@@ -4,8 +4,10 @@
 			"Andrew Garrett"
 		]
 	},
+	"globalblocking-apierror-badip": "IP address $1 is not valid",
+	"globalblocking-apierror-badtarget": "The username, IP address, or IP range provided ($1) is not valid",
 	"apihelp-globalblock-summary": "Globally block or unblock a user.",
-	"apihelp-globalblock-param-target": "The target IP address.",
+	"apihelp-globalblock-param-target": "The target IP address or username.",
 	"apihelp-globalblock-param-expiry": "If specified, will block or reblock the user. Determines how long the block will last for, e.g. \"5 months\" or \"2 weeks\". If set to \"infinite\" or \"indefinite\" the block will never expire.",
 	"apihelp-globalblock-param-unblock": "If specified, will unblock the user.",
 	"apihelp-globalblock-param-reason": "The reason for blocking/unblocking.",
@@ -22,7 +24,7 @@
 	"apihelp-query+globalblocks-param-prop": "Which properties to get.",
 	"apihelp-query+globalblocks-example-1": "List all global blocks",
 	"apihelp-query+globalblocks-example-2": "List global blocks applying to IP address 192.0.2.18",
-	"apihelp-globalblock-param-alsolocal": "Block the IP locally as well",
+	"apihelp-globalblock-param-alsolocal": "Block the user locally as well",
 	"apihelp-globalblock-param-localblockstalk": "Revoke talk page access locally",
 	"apihelp-globalblock-param-localblocksemail": "Revoke email access locally",
 	"apihelp-globalblock-param-localanononly": "Specify this if the block should only affect logged-out users locally."
