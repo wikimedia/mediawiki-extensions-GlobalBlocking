@@ -1,0 +1,26 @@
+[
+	{
+		"target": "",
+		"anonOnlyCheckboxShouldBeDisabled": false,
+		"alsoLocalSoftCheckboxShouldBeDisabled": false,
+		"msg": "No text in the target input"
+	},
+	{
+		"target": "1.2.3.4",
+		"anonOnlyCheckboxShouldBeDisabled": false,
+		"alsoLocalSoftCheckboxShouldBeDisabled": false,
+		"msg": "IP in the target input"
+	},
+	{
+		"target": "1.2.3.4/24",
+		"anonOnlyCheckboxShouldBeDisabled": false,
+		"alsoLocalSoftCheckboxShouldBeDisabled": false,
+		"msg": "IP range in the target input"
+	},
+	{
+		"target": "Test-globally-blocked",
+		"anonOnlyCheckboxShouldBeDisabled": true,
+		"alsoLocalSoftCheckboxShouldBeDisabled": true,
+		"msg": "Username in the target input"
+	}
+]
