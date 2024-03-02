@@ -12,7 +12,6 @@ use StatusValue;
 use stdClass;
 use Wikimedia\IPUtils;
 use Wikimedia\Rdbms\DBUnexpectedError;
-use Wikimedia\Rdbms\Expression;
 
 /**
  * Static utility class of the GlobalBlocking extension.
@@ -75,13 +74,25 @@ class GlobalBlocking {
 	/**
 	 * Get a database range condition for an IP address
 	 * @param string $ip The IP address or range
-	 * @return Expression[] a SQL condition
+	 * @return string[] a SQL condition
 	 * @deprecated Since 1.42. Use GlobalBlockLookup::getRangeCondition.
 	 */
 	public static function getRangeCondition( $ip ) {
-		return GlobalBlockingServices::wrap( MediaWikiServices::getInstance() )
-			->getGlobalBlockLookup()
-			->getRangeCondition( $ip );
+		$dbr = self::getReplicaGlobalBlockingDatabase();
+
+		list( $start, $end ) = IPUtils::parseRange( $ip );
+
+		// Don't bother checking blocks out of this /16.
+		// @todo Make the range limit configurable
+		$ipPattern = substr( $start, 0, 4 );
+
+		return [
+			// This is a deprecated function, do not replace this code with IDatabase::expr
+			'gb_range_start ' . $dbr->buildLike( $ipPattern, $dbr->anyString() ),
+			'gb_range_start <= ' . $dbr->addQuotes( $start ),
+			'gb_range_end >= ' . $dbr->addQuotes( $end ),
+			'gb_expiry > ' . $dbr->addQuotes( $dbr->timestamp( wfTimestampNow() ) )
+		];
 	}
 
 	/**
