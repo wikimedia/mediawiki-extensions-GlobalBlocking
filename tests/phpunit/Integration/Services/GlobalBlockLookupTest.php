@@ -22,6 +22,9 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 		// Set a fake time such that the expiry of all blocks is after this date (otherwise the lookup may
 		// not return the expired blocks and cause failures).
 		ConvertibleTimestamp::setFakeTime( '20240219050403' );
+		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
+		// to be the local provider.
+		$this->setMwGlobals( 'wgCentralIdLookupProvider', 'local' );
 	}
 
 	public function testGetUserBlockErrors() {
@@ -263,6 +266,9 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function addDBDataOnce() {
+		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
+		// to be the local provider.
+		$this->setMwGlobals( 'wgCentralIdLookupProvider', 'local' );
 		// We can add the DB data once for this class as the service should not modify, insert or delete rows from
 		// the database.
 		$testUser = $this->getTestSysop()->getUserIdentity();
