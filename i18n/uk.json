@@ -118,7 +118,6 @@
 	"action-globalblock-whitelist": "локальне відключення глобального блокування",
 	"right-globalblock-exempt": "Обхід глобальних блокувань",
 	"action-globalblock-exempt": "обхід глобального блокування",
-	"globalblocking-apierror-badip": "IP-адреса $1 — недійсна",
 	"log-action-filter-gblblock": "Тип глобального блокування:",
 	"log-action-filter-gblblock-gblock": "Глобальне блокування",
 	"log-action-filter-gblblock-gunblock": "Глобальне розблокування",

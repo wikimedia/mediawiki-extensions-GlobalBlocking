@@ -95,7 +95,6 @@
 	"action-globalblock-whitelist": "локално спиране на глобалните блокирания",
 	"right-globalblock-exempt": "Пренебрегване на глобалните блокирания",
 	"action-globalblock-exempt": "пренебрегване на глобалните блокирания",
-	"globalblocking-apierror-badip": "IP-адресът $1 е невалиден",
 	"log-action-filter-gblblock": "Вид глобално блокиране:",
 	"log-action-filter-gblblock-gblock": "Глобално блокиране",
 	"log-action-filter-gblblock-gunblock": "Глобално отблокиране",

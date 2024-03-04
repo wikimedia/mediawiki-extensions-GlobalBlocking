@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"BadDog",
+			"Milicevic01"
+		]
+	},
+	"globalblocking-apierror-badip": "IP адреса $1 није важећа",
+	"globalblocking-apierror-badtarget": "Корисничко име, IP адреса или опсег IP адреса наведен ($1) није ваљан",
+	"apihelp-globalblock-param-alsolocal": "Такође блокирај корисника и локално"
+}

@@ -95,7 +95,6 @@
 	"action-globalblock-whitelist": "স্থানীয়ভাবে বৈশ্বিক বাধাদান নিষ্ক্রিয় করো",
 	"right-globalblock-exempt": "বৈশ্বিক বাধা বাইপাস করো",
 	"action-globalblock-exempt": "বৈশ্বিক বাধা বাইপাস করো",
-	"globalblocking-apierror-badip": "আইপি ঠিকানা $1 বৈধ নয়",
 	"log-action-filter-gblblock": "বৈশ্বিক বাধার ধরন:",
 	"log-action-filter-gblblock-gblock": "বৈশ্বিক বাধা",
 	"log-action-filter-gblblock-gunblock": "বৈশ্বিক বাধা অপসারণ",

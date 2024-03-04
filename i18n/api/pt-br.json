@@ -7,6 +7,7 @@
 			"Jhonnatanricardo"
 		]
 	},
+	"globalblocking-apierror-badip": "O endereço IP $1 não é válido",
 	"apihelp-globalblock-summary": "Bloquear ou desbloquear globalmente um usuário.",
 	"apihelp-globalblock-param-target": "O endereço IP de destino.",
 	"apihelp-globalblock-param-expiry": "Se especificado, bloqueará e rebloqueará o usuário. Determina a duração do bloqueio, por exemplo, \"5 meses\" ou \"2 semanas\". Se configurado como \"infinito\" ou \" indefinido\" o bloqueio nunca expirará.",

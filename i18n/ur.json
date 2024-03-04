@@ -66,7 +66,6 @@
 	"action-globalblock-whitelist": "عالمی بلاکس کے مقامی غیر فعال کریں",
 	"right-globalblock-exempt": "عالمی بلاکس کو چھوڑنے والے",
 	"action-globalblock-exempt": "عالمی بلاکس کو چھوڑنے والے",
-	"globalblocking-apierror-badip": "آئی پی پتا $1 درست نہیں ہے",
 	"log-action-filter-gblblock": "عالمی پابندی کی نوعیت:",
 	"log-action-filter-gblblock-gblock": "عالمی پابندی",
 	"log-action-filter-gblblock-gunblock": "اختتام عالمی پابندی",

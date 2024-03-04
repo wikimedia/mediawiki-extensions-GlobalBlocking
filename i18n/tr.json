@@ -108,7 +108,6 @@
 	"action-globalblock-whitelist": "küresel engelleri yerel olarak devre dışı bırak",
 	"right-globalblock-exempt": "Küresel engellemeleri atla",
 	"action-globalblock-exempt": "küresel engellemeleri atla",
-	"globalblocking-apierror-badip": "$1 IP adresi geçerli değil",
 	"log-action-filter-gblblock": "Küresel engel türü:",
 	"log-action-filter-gblblock-gblock": "Küresel engelleme",
 	"log-action-filter-gblblock-gunblock": "Küresel engel kaldırma",

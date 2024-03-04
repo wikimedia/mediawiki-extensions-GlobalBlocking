@@ -102,7 +102,6 @@
 	"action-globalblock-whitelist": "blokeyanê globalan be ca ra dewre ra vece",
 	"right-globalblock-exempt": "Bloqeyanê globali peygoş ke",
 	"action-globalblock-exempt": "Bloqeyanê globali peygoş ke",
-	"globalblocking-apierror-badip": "$1 adresa IP ravêrdi niya",
 	"log-action-filter-gblblock": "Tewrê bloqey globali :",
 	"log-action-filter-gblblock-gblock": "Kılikerdışo global",
 	"log-action-filter-gblblock-gunblock": "Bloqey globali wedarıtış",

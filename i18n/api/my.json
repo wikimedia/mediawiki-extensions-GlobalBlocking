@@ -4,6 +4,7 @@
 			"Dr Lotus Black"
 		]
 	},
+	"globalblocking-apierror-badip": "အိုင်ပီလိပ်စာ $1 သည် အကျုံးမဝင်ပါ",
 	"apihelp-globalblock-param-target": "ပစ်မှတ် အိုင်ပီလိပ်စာ",
 	"apihelp-globalblock-param-reason": "ပိတ်ပင်မှု/မပိတ်ပင်မှုအတွက် အကြောင်းပြချက်",
 	"apihelp-query+globalblocks-summary": "အိုင်ပီလိပ်စာများကို ဂလိုဘယ်အားဖြင့် ပိတ်ပင်ထားသော စာရင်းများအားလုံး",

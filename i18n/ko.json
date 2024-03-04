@@ -115,7 +115,6 @@
 	"action-globalblock-whitelist": "로컬에서 전역 차단을 비활성화할",
 	"right-globalblock-exempt": "전역 차단을 우회",
 	"action-globalblock-exempt": "전역 차단을 우회할",
-	"globalblocking-apierror-badip": "$1 IP 주소는 유효하지 않습니다",
 	"log-action-filter-gblblock": "전역 차단의 유형:",
 	"log-action-filter-gblblock-gblock": "전역 차단",
 	"log-action-filter-gblblock-gunblock": "전역 차단 해제",

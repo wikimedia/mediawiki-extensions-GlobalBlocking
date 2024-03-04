@@ -116,7 +116,6 @@
 	"action-globalblock-whitelist": "локальное отключение глобальных блокировок",
 	"right-globalblock-exempt": "Обход глобальных блокировок",
 	"action-globalblock-exempt": "обход глобальных блокировок",
-	"globalblocking-apierror-badip": "IP-адрес $1 недействителен",
 	"log-action-filter-gblblock": "Тип глобального блока:",
 	"log-action-filter-gblblock-gblock": "Глобальная блокировка",
 	"log-action-filter-gblblock-gunblock": "Глобальная разблокировка",

@@ -112,7 +112,6 @@
 	"action-globalblock-whitelist": "tắt tác vụ cấm toàn cục tại địa phương",
 	"right-globalblock-exempt": "Bỏ qua vụ cấm toàn cục",
 	"action-globalblock-exempt": "bỏ qua vụ cấm toàn cục",
-	"globalblocking-apierror-badip": "Địa chỉ IP $1 không hợp lệ",
 	"log-action-filter-gblblock": "Kiểu cấm toàn cục:",
 	"log-action-filter-gblblock-gblock": "Cấm toàn cục",
 	"log-action-filter-gblblock-gunblock": "Bỏ cấm toàn cục",

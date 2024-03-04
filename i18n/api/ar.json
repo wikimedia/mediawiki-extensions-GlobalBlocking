@@ -6,6 +6,7 @@
 			"ديفيد"
 		]
 	},
+	"globalblocking-apierror-badip": "عنوان الآيبي $1 غير صالح",
 	"apihelp-globalblock-summary": "منع أو رفع منع مستخدم عالميا.",
 	"apihelp-globalblock-param-target": "عنوان IP المستهدف.",
 	"apihelp-globalblock-param-expiry": "في حال التحديد سيتم منع المستخدم أو إعادة منعه. يحدد مدة استمرار المنع، مثلاً «أسبوعين» أو «5 أشهر». في حال تعيين قيمة «لانهائي» أو «غير محدد» لن تنتهي مدة المنع أبداً.",

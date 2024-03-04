@@ -108,7 +108,6 @@
 	"action-globalblock-whitelist": "месно оневозможување на глобални блокови",
 	"right-globalblock-exempt": "Заобиколување глобални блокови",
 	"action-globalblock-exempt": "заобиколување на глобални блокови",
-	"globalblocking-apierror-badip": "IP-адресата $1 е неважечка",
 	"log-action-filter-gblblock": "Тип на глобален блок:",
 	"log-action-filter-gblblock-gblock": "Глобален блок",
 	"log-action-filter-gblblock-gunblock": "Глобално одблокирање",

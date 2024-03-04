@@ -124,7 +124,6 @@
 	"action-globalblock-whitelist": "désactiver localement des blocages globaux",
 	"right-globalblock-exempt": "Outrepasser les blocages globaux",
 	"action-globalblock-exempt": "outrepasser les blocages globaux",
-	"globalblocking-apierror-badip": "L'adresse IP $1 est non valide",
 	"log-action-filter-gblblock": "Type de blocage global :",
 	"log-action-filter-gblblock-gblock": "Blocage global",
 	"log-action-filter-gblblock-gunblock": "Déblocage global",

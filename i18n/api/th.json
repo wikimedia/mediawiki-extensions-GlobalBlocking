@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ekminarin"
+		]
+	},
+	"globalblocking-apierror-badip": "ที่อยู่ไอพี $1 ไม่ถูกต้อง"
+}

@@ -5,6 +5,7 @@
 			"Vlad5250"
 		]
 	},
+	"globalblocking-apierror-badip": "IP-адресът $1 е невалиден",
 	"apihelp-globalblock-summary": "Глобално блокирайте или отблокирайте потребител.",
 	"apihelp-globalblock-param-unblock": "Ако е указано, потребителят ще бъде отблокиран.",
 	"apihelp-globalblock-param-reason": "Причина за блокиране/отблокиране.",

@@ -6,6 +6,7 @@
 			"SaldırganSincap"
 		]
 	},
+	"globalblocking-apierror-badip": "$1 IP adresi geçerli değil",
 	"apihelp-globalblock-summary": "Bir kullanıcıyı küresel olarak engelleyin veya engelini kaldırın.",
 	"apihelp-globalblock-param-target": "Hedef IP adresi.",
 	"apihelp-globalblock-param-expiry": "Belirtilirse kullanıcıyı engeller veya yeniden engeller. Bloğun ne kadar süreceğini belirler; ör. \"5 months\" veya \"2 weeks\". \"infinite\" veya \"indefinite\" olarak ayarlanırsa, engel asla sona ermez",

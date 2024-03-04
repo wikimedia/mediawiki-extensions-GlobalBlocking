@@ -4,6 +4,7 @@
 			"Joetaras"
 		]
 	},
+	"globalblocking-apierror-badip": "Indirizze IP $1 non g'è valide",
 	"apihelp-globalblock-summary": "Blocche o sblocche globbalmende 'n'utende.",
 	"apihelp-globalblock-param-target": "'U 'ndirizze IP de destinazione.",
 	"apihelp-globalblock-param-expiry": "Ce specificate, blocche o blocche arrete l'utende. Determine quanne luènghe jè 'u blocche, p.s. \"5 mise\" o \"2 sumàne\". Ce 'mboste \"infinite\" o \"indefinite\" 'u blocche non ge scade maije.",

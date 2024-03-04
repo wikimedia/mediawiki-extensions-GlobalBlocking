@@ -6,6 +6,7 @@
 			"Ата"
 		]
 	},
+	"globalblocking-apierror-badip": "IP-адреса $1 — недійсна",
 	"apihelp-globalblock-summary": "Глобально заблокувати чи розблокувати користувача.",
 	"apihelp-globalblock-param-target": "Цільова IP-адреса.",
 	"apihelp-globalblock-param-expiry": "Якщо вказано, буде заблоковано або переблоковано користувача. Визначає скільки блокування триватиме, наприклад, «5 months» або «2 weeks». Якщо встановлено «infinite» або «indefinite» блокування ніколи не завершиться.",

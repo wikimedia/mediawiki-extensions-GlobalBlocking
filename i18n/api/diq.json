@@ -3,9 +3,11 @@
 		"authors": [
 			"1917 Ekim Devrimi",
 			"Amire80",
-			"Mirzali"
+			"Mirzali",
+			"Orbot707"
 		]
 	},
+	"globalblocking-apierror-badip": "$1 adresa IP ravêrdi niya",
 	"apihelp-globalblock-summary": "Nr karberi global bloqe bıkerê ya zi wedarnê",
 	"apihelp-globalblock-param-target": "Hedef adresê IP",
 	"apihelp-globalblock-param-reason": "Sebebê bloqeyi ronayışi/wedardışi",

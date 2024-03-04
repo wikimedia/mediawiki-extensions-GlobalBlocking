@@ -121,7 +121,6 @@
 	"action-globalblock-whitelist": "globale blokkades lokaal te negeren",
 	"right-globalblock-exempt": "Globale blokkades omzeilen",
 	"action-globalblock-exempt": "globale blokkades te omzeilen",
-	"globalblocking-apierror-badip": "IP-adres $1 is ongeldig.",
 	"log-action-filter-gblblock": "Soort globale blokkade:",
 	"log-action-filter-gblblock-gblock": "Globale blokkade",
 	"log-action-filter-gblblock-gunblock": "Opheffing van globale blokkade",

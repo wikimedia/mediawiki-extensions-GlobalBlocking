@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Saederup92"
+		]
+	},
+	"globalblocking-apierror-badip": "IP-adressen $1 er ikke gyldig"
+}

@@ -6,6 +6,7 @@
 			"Sakretsu"
 		]
 	},
+	"globalblocking-apierror-badip": "L'indirizzo IP $1 non è valido",
 	"apihelp-globalblock-summary": "Blocca o sblocca globalmente un utente.",
 	"apihelp-globalblock-param-target": "L'indirizzo IP di destinazione.",
 	"apihelp-globalblock-param-unblock": "Se specificato, sarà sbloccato l'utente.",

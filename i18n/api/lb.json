@@ -1,13 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby"
+			"Robby",
+			"Volvox"
 		]
 	},
+	"globalblocking-apierror-badtarget": "De Benotzernumm, d'IP-Adress oder den IP-Adressberäich, deen ugi gouf, ($1) ass net gülteg",
 	"apihelp-globalblock-summary": "E Benotzer global spären oder d'Spär global ophiewen.",
+	"apihelp-globalblock-param-target": "D'Zil-IP-Adress oder de Benotzernumm.",
 	"apihelp-globalblock-param-anononly": "Spezifizéiert ob d'Spär sech nëmmen op ausgeloggt Benotzer global applizéiere soll.",
 	"apihelp-globalblock-param-modify": "Gitt dëst un, wann d'Spär (wann et esou eng gëtt) vum Zil geännert gi soll.",
 	"apihelp-query+globalblocks-summary": "All global gespaarten IP-Adressen opzielen.",
-	"apihelp-globalblock-param-alsolocal": "IP och lokal spären",
+	"apihelp-globalblock-param-alsolocal": "De Benotzer och lokal spären",
 	"apihelp-globalblock-param-localanononly": "Spezifizéiert ob d'Spär sech nëmmen op ausgeloggt Benotzer lokal applizéiere soll."
 }

@@ -123,7 +123,6 @@
 	"action-globalblock-whitelist": "グローバルブロックのローカルでの無効化",
 	"right-globalblock-exempt": "グローバルブロックを回避",
 	"action-globalblock-exempt": "グローバルブロックの回避",
-	"globalblocking-apierror-badip": "IP アドレス $1 は有効ではありません",
 	"log-action-filter-gblblock": "グローバルブロックの種類:",
 	"log-action-filter-gblblock-gblock": "グローバルブロック",
 	"log-action-filter-gblblock-gunblock": "グローバルブロックの解除",

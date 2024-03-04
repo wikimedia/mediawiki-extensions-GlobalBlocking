@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Muhammad Shuaib"
+		]
+	},
+	"globalblocking-apierror-badip": "آئی پی پتا $1 درست نہیں ہے"
+}

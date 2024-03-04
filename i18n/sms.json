@@ -10,6 +10,5 @@
 	"globalblocking-list-unblock": "jaukkâd",
 	"globalblocking-list-modify": "muuʹtt",
 	"globalblocking-unblock-reason": "Mäinn:",
-	"globalblocking-whitelist-reason": "Mäinn:",
-	"globalblocking-apierror-badip": "IP-addrõs $1 lij vââǥǥlaž"
+	"globalblocking-whitelist-reason": "Mäinn:"
 }

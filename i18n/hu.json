@@ -98,7 +98,6 @@
 	"action-globalblock-whitelist": "globális blokkok kikapcsolása helyileg",
 	"right-globalblock-exempt": "globális blokkok figyelmen kívül hagyása",
 	"action-globalblock-exempt": "globális blokkok figyelmen kívül hagyása",
-	"globalblocking-apierror-badip": "A(z) „$1” IP-cím érvénytelen",
 	"log-action-filter-gblblock": "Globális blokk típusa:",
 	"log-action-filter-gblblock-gblock": "Globális blokk",
 	"log-action-filter-gblblock-gunblock": "Globális blokk eltávolítása",

@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"H78c67c",
 			"Winston Sung"
 		]
 	},
@@ -15,7 +16,7 @@
 	"globalblocking-block-expiryinvalid": "你入嗰個期限無效。",
 	"globalblocking-block-submit": "全域封鎖呢個IP地址",
 	"globalblocking-block-success": "個IP地址 $1 已經響所有Wikimedia計劃度成功噉封鎖咗。\n你亦都可以睇吓個[[Special:GlobalBlockList|全域封鎖一覽]]。",
-	"globalblocking-block-alreadyblocked": "個IP地址 $1 已經全域封鎖緊。你可以響[[Special:GlobalBlockList|全域封鎖一覽]]度睇吓現時嘅封鎖。",
+	"globalblocking-block-alreadyblocked": "$1 已經全域封鎖緊。你可以喺[[Special:GlobalBlockList|全域封鎖一覽]]度睇吓現時嘅封鎖，或者重新提交呢份表格嚟改現有嘅封鎖設定。",
 	"globalblocking-list-intro": "呢個係全部現時生效緊嘅全域封鎖。\n一啲嘅封鎖標明咗響本地停用：即係呢個封鎖響其它wiki度應用咗，但係本地管理員決定咗響呢個wiki度停用佢哋。",
 	"globalblocking-list": "全域封鎖IP地址一覽",
 	"globalblocking-search-legend": "搵一個全域封鎖",

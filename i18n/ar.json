@@ -119,7 +119,6 @@
 	"action-globalblock-whitelist": "تعطيل عمليات المنع العامة محليا",
 	"right-globalblock-exempt": "تجاوز عمليات المنع العامة",
 	"action-globalblock-exempt": "تجاوز عمليات المنع العامة",
-	"globalblocking-apierror-badip": "عنوان الآيبي $1 غير صالح",
 	"log-action-filter-gblblock": "نوع المنع العالمي:",
 	"log-action-filter-gblblock-gblock": "منع عالمي",
 	"log-action-filter-gblblock-gunblock": "رفع المنع العالمي",

@@ -115,7 +115,6 @@
 	"action-globalblock-whitelist": "nonaktifkan pemblokiran global di wiki lokal",
 	"right-globalblock-exempt": "Tidak dikenakan pemblokiran global",
 	"action-globalblock-exempt": "lewati pemblokiran global",
-	"globalblocking-apierror-badip": "Alamat IP $1 tidak sah",
 	"log-action-filter-gblblock": "Tipe blokir global:",
 	"log-action-filter-gblblock-gblock": "Pemblokiran global",
 	"log-action-filter-gblblock-gunblock": "Pencabutan blokir global",

@@ -5,6 +5,7 @@
 			"Ykhwong"
 		]
 	},
+	"globalblocking-apierror-badip": "$1 IP 주소는 유효하지 않습니다",
 	"apihelp-globalblock-summary": "사용자를 전역 차단하거나 해제합니다.",
 	"apihelp-globalblock-param-target": "차단할 IP 주소",
 	"apihelp-globalblock-param-expiry": "지정하면 사용자를 차단하거나 다시 차단합니다. 차단이 얼만큼 오랫동안 지속될지를 결정합니다. (예: \"5 months\" 또는 \"2 weeks\") \"infinite\" 또는 \"indefinite\"으로 설정하면 무기한으로 차단합니다.",

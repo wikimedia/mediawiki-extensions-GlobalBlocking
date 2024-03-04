@@ -4,6 +4,7 @@
 			"Nokeoo"
 		]
 	},
+	"globalblocking-apierror-badip": "IP adresas $1 netinkamas",
 	"apihelp-globalblock-summary": "Visuotinis naudotojo blokavimas ar atblokavimas.",
 	"apihelp-globalblock-param-target": "Tikslo IP adresas.",
 	"apihelp-globalblock-param-unblock": "Jei nurodyta, naudotojas bus atblokuotas.",

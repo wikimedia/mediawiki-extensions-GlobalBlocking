@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Saurmandal"
+		]
+	},
+	"globalblocking-apierror-badip": "IP पता $1 अमान्य है"
+}

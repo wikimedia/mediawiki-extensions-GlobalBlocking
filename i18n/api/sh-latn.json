@@ -4,6 +4,7 @@
 			"Winston Sung"
 		]
 	},
+	"globalblocking-apierror-badip": "IP-adresa $1 nije važeća",
 	"apihelp-globalblock-summary": "Globalno blokirajte ili odblokirajte korisnika.",
 	"apihelp-globalblock-param-target": "Ciljna IP-adresa.",
 	"apihelp-globalblock-param-expiry": "Ako je navedeno, korisnik će biti blokiran ili preblokiran. Određuje koliko dugo će blok trajati (npr. \"5 mjeseci\" ili \"2 tjedna\"). Ako je dano \"beskonačno\" ili \"neodređeno\", onda će blok trajati vječno.",

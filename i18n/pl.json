@@ -120,7 +120,6 @@
 	"action-globalblock-whitelist": "lokalne odblokowywanie globalnych blokad",
 	"right-globalblock-exempt": "Ignorowanie globalnych blokad",
 	"action-globalblock-exempt": "ignorowanie globalnych blokad",
-	"globalblocking-apierror-badip": "Adres IP $1 jest nieprawidłowy",
 	"log-action-filter-gblblock": "Typ globalnej blokady:",
 	"log-action-filter-gblblock-gblock": "Blokada globalna",
 	"log-action-filter-gblblock-gunblock": "Globalne odblokowanie",

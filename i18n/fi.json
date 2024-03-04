@@ -107,7 +107,6 @@
 	"action-globalblock-whitelist": "poistaa käytöstä järjestelmänlaajuisia estoja paikallisesti",
 	"right-globalblock-exempt": "Ohittaa järjestelmänlaajuiset estot",
 	"action-globalblock-exempt": "ohittaa järjestelmänlaajuisia estoja",
-	"globalblocking-apierror-badip": "IP-osoite $1 on virheellinen",
 	"log-action-filter-gblblock": "Globaalin eston tyyppi:",
 	"log-action-filter-gblblock-gblock": "Järjestelmänlaajuinen esto",
 	"log-action-filter-gblblock-gunblock": "Järjestelmänlaajuisen eston poistaminen",

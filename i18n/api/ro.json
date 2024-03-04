@@ -4,6 +4,7 @@
 			"NGC 54"
 		]
 	},
+	"globalblocking-apierror-badip": "Adresa IP $1 nu este validă",
 	"apihelp-globalblock-summary": "Blochează sau deblochează global un utilizator.",
 	"apihelp-globalblock-param-target": "Adresa IP țintă.",
 	"apihelp-globalblock-param-reason": "Motivul pentru blocare/deblocare."

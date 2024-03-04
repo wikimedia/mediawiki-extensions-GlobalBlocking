@@ -7,6 +7,7 @@
 			"WikiPhoenix"
 		]
 	},
+	"globalblocking-apierror-badip": "IP-adressen $1 är inte giltig",
 	"apihelp-globalblock-summary": "Blockera eller avblockera en användare globalt.",
 	"apihelp-globalblock-param-target": "Mål-IP-adressen.",
 	"apihelp-globalblock-param-expiry": "Om angivet, blockeras eller återblockeras användaren. Avgör hur länge blockeringen pågår, t.ex. \"5 months\" eller \"2 weeks\". Om satt till \"infinite\" eller \"indefinite\" löper blockeringen aldrig ut.",

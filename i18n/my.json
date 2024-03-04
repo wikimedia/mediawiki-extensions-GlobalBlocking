@@ -71,7 +71,6 @@
 	"right-globalblock-whitelist": "ဒေသတွင်းအားဖြင့် ဂလိုဘယ်ပိတ်ပင်မှုကို ပိတ်ထားမည်",
 	"right-globalblock-exempt": "ဂလိုဘယ်ပိတ်ပင်မှုများကို ကျော်လွှားရန်",
 	"action-globalblock-exempt": "ဂလိုဘယ်ပိတ်ပင်မှုများကို ကျော်လွှားရန်",
-	"globalblocking-apierror-badip": "အိုင်ပီလိပ်စာ $1 သည် အကျုံးမဝင်ပါ",
 	"log-action-filter-gblblock": "ဂလိုဘယ် ပိတ်ပင်တားဆီးမှု အမျိုးအစား:",
 	"log-action-filter-gblblock-gblock": "ဂလိုဘယ် ပိတ်ပင်တားဆီးမှု",
 	"log-action-filter-gblblock-gunblock": "ဂလိုဘယ် မပိတ်ပင်တားဆီးမှု",

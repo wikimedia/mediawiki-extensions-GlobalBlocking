@@ -112,7 +112,6 @@
 	"action-globalblock-whitelist": "išjungti visuotinius blokavimus lokaliai",
 	"right-globalblock-exempt": "Apeiti visuotinius blokavimus",
 	"action-globalblock-exempt": "apeiti visuotinius blokavimus",
-	"globalblocking-apierror-badip": "IP adresas $1 netinkamas",
 	"log-action-filter-gblblock": "Visuotinio bloko tipas:",
 	"log-action-filter-gblblock-gblock": "Visuotinis blokavimas",
 	"log-action-filter-gblblock-gunblock": "Visuotinis atblokavimas",

@@ -102,7 +102,6 @@
 	"action-globalblock-whitelist": "deaktivere globale blokeringer lokalt",
 	"right-globalblock-exempt": "Omgå globale blokeringer",
 	"action-globalblock-exempt": "omgå globale blokeringer",
-	"globalblocking-apierror-badip": "IP-adressen $1 er ikke gyldig",
 	"log-action-filter-gblblock-gblock": "Global blokering",
 	"log-action-filter-gblblock-gunblock": "Global afblokering"
 }

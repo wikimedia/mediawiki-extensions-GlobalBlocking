@@ -4,6 +4,7 @@
 			"Xuacu"
 		]
 	},
+	"globalblocking-apierror-badip": "La dirección IP $1 nun ye válida",
 	"apihelp-globalblock-summary": "Bloquiar o desbloquiar a un usuariu globalmente.",
 	"apihelp-globalblock-param-target": "La direición IP de destín.",
 	"apihelp-globalblock-param-expiry": "Si s'especifica, bloquiará o re-bloquiará al usuariu. Determina'l tiempu que durará'l bloquéu, p.ex. «5 meses» o «2 selmanes». Si se pon como «infinitu» o «indefiníu» el bloquéu nunca caducará.",

@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Adriendelucca",
 			"Fohanno",
 			"Fulup",
 			"Gwendal",
@@ -24,7 +25,7 @@
 	"globalblocking-block-expiryinvalid": "Direizh eo an termen lakaet.",
 	"globalblocking-block-submit": "Stankañ ar chomlec'h IP-mañ en un doare hollek",
 	"globalblocking-modify-submit": "Kemmañ ar stankadenn hollek-mañ",
-	"globalblocking-block-success": "Stanket eo bet ar chomlec'h IP $1 war an holl raktresoù.",
+	"globalblocking-block-success": "Stanket eo bet $1 war an holl wikioù.",
 	"globalblocking-modify-success": "Kemmet eo bet ar stankadenn hollek evit $1",
 	"globalblocking-block-alreadyblocked": "Ar chomlec'h IP $1 a zo stanket en un doare hollek dija.\nGallout a rit diskwel ar stankadennoù e [[Special:GlobalBlockList|listenn ar stankadennoù hollek]],\npe kemm ar c'hefluniadur eus ar stankadennoù hag a zo, dre kinnig en-dro ar furmskrid.",
 	"globalblocking-list-intro": "Setu aze roll ar stankadennoù hollek oberiat.\nLod anezho zo merket evel diweredekaet e lec'hioù zo : ar pezh a dalvez e vezont lakaet da dalvezout war lec'hiennoù all, hag ur merour lec'hel en deus dibabet diweredekaat anezho er wiki-mañ.",
@@ -41,6 +42,7 @@
 	"globalblocking-list-whitelisted": "diweredekaet en un doare lec'hel gant $1 : $2",
 	"globalblocking-list-whitelist": "statud lec'hel",
 	"globalblocking-list-modify": "kemmañ",
+	"globalblocking-list-userblocks": "Kuzhat ar stankadennoù kontoù",
 	"globalblocking-expiringblock": "a zeu d'e dermen d'an $1 da $2",
 	"globalblocking-list-noresults": "N’ez eus bet kavet disoc’h ebet gant an arventennoù pourvezet.",
 	"globalblocking-goto-block": "Stankañ ur chomlec'h IP en un doare hollek",
@@ -85,6 +87,7 @@
 	"right-globalblock-whitelist": "Diweredekaat en un doare lec'hel ar stankadennoù hollek",
 	"action-globalblock-whitelist": "Diweredekaat en un doare lec'hel ar stankadennoù hollek",
 	"right-globalblock-exempt": "Mont dreist d'ar stankadennoù hollek",
-	"action-globalblock-exempt": "Mont dreist d'ar stankadennoù hollek",
-	"log-action-filter-gblblock": "Seurt stankadenn hollek :"
+	"action-globalblock-exempt": "mont dreist d'ar stankadennoù IP hollek",
+	"log-action-filter-gblblock": "Seurt stankadenn hollek :",
+	"globalblocking-blockedtext-username": "$1 eo hoc'h anv implijer."
 }

@@ -99,7 +99,6 @@
 	"action-globalblock-whitelist": "ปิดใช้งานการบล็อกข้ามโครงการในท้องถิ่น",
 	"right-globalblock-exempt": "เลี่ยงผ่านการบล็อกข้ามโครงการ",
 	"action-globalblock-exempt": "เลี่ยงผ่านการบล็อกข้ามโครงการ",
-	"globalblocking-apierror-badip": "ที่อยู่ไอพี $1 ไม่ถูกต้อง",
 	"log-action-filter-gblblock": "ประเภทของบล็อกข้ามโครงการ:",
 	"log-action-filter-gblblock-gblock": "บล็อกข้ามโครงการ",
 	"log-action-filter-gblblock-gunblock": "ปลดบล็อกข้ามโครงการ",

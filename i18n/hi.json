@@ -110,7 +110,6 @@
 	"action-globalblock-whitelist": "ग्लोबल अवरोध लोकल रूप से सक्षम करने",
 	"right-globalblock-exempt": "ग्लोबल अवरोध के आर-पार जाएँ",
 	"action-globalblock-exempt": "ग्लोबल अवरोध के आर-पार जाने",
-	"globalblocking-apierror-badip": "IP पता $1 अमान्य है",
 	"log-action-filter-gblblock": "ग्लोबल अवरोध का प्रकार:",
 	"log-action-filter-gblblock-gblock": "ग्लोबल अवरोध",
 	"log-action-filter-gblblock-gunblock": "ग्लोबल अवरोध को हटाना",

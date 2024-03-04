@@ -94,7 +94,6 @@
 	"action-globalblock-whitelist": "disabbilete le blocche globbale localmende",
 	"right-globalblock-exempt": "Zumbe le blocche globale",
 	"action-globalblock-exempt": "zumbe le blocche globbale",
-	"globalblocking-apierror-badip": "Indirizze IP $1 non g'è valide",
 	"log-action-filter-gblblock": "Tipe de blocche globbale:",
 	"log-action-filter-gblblock-gblock": "Blocche globbale",
 	"log-action-filter-gblblock-gunblock": "Sblocche globbale",

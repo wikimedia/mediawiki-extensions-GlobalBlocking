@@ -5,6 +5,7 @@
 			"McDutchie"
 		]
 	},
+	"globalblocking-apierror-badip": "IP-adres $1 is ongeldig.",
 	"apihelp-globalblock-summary": "Een gebruiker globaal blokkeren of deblokkeren.",
 	"apihelp-globalblock-param-target": "Het doel IP-adres.",
 	"apihelp-globalblock-param-expiry": "Indien dit is opgegeven, wordt de gebruiker geblokkeerd of opnieuw geblokkeerd. Bepaalt hoe lang de blokkade zal duren, bv. “5 months” of “2 weeks”. Als dit wordt ingesteld op “infinite” of “indefinite” zal het blok nooit verlopen.",

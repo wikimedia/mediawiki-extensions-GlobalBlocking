@@ -9,6 +9,7 @@
 			"Ryo567"
 		]
 	},
+	"globalblocking-apierror-badip": "La dirección IP $1 no es válida",
 	"apihelp-globalblock-summary": "Bloquear o desbloquear globalmente a un usuario.",
 	"apihelp-globalblock-param-target": "La dirección IP de destino.",
 	"apihelp-globalblock-param-expiry": "Si se especifica, bloqueará o rebloqueará al usuario. Determina cuánto va a durar el bloque. Por ejemplo, \"5 months\" o \"2 weeks\". Si se establece a \"infinite\" or \"indefinite\" el bloqueo no tendrá fecha de caducidad.",

@@ -121,7 +121,6 @@
 	"action-globalblock-whitelist": "Inaktivera globala blockeringar lokalt",
 	"right-globalblock-exempt": "Gå förbi globala blockeringar",
 	"action-globalblock-exempt": "Gå runt globala blockeringar",
-	"globalblocking-apierror-badip": "IP-adressen $1 är inte giltig",
 	"log-action-filter-gblblock": "Typ av global blockering:",
 	"log-action-filter-gblblock-gblock": "Global blockering",
 	"log-action-filter-gblblock-gunblock": "Borttagning av global blockering",

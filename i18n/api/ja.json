@@ -6,6 +6,7 @@
 			"W.CC"
 		]
 	},
+	"globalblocking-apierror-badip": "IP アドレス $1 は有効ではありません",
 	"apihelp-globalblock-summary": "利用者をグローバルでブロックまたはブロック解除する。",
 	"apihelp-globalblock-param-target": "対象となるIPアドレス。",
 	"apihelp-globalblock-param-unblock": "指定した場合、利用者のブロックを解除します。",

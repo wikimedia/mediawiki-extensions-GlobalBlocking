@@ -135,7 +135,6 @@
 	"action-globalblock-whitelist": "本地停用全域封鎖",
 	"right-globalblock-exempt": "忽略全域封鎖",
 	"action-globalblock-exempt": "忽略全域封鎖",
-	"globalblocking-apierror-badip": "IP 位址 $1 無效",
 	"log-action-filter-gblblock": "全域封鎖類型：",
 	"log-action-filter-gblblock-gblock": "全域封鎖",
 	"log-action-filter-gblblock-gunblock": "全域解封",

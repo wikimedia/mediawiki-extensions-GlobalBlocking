@@ -8,6 +8,7 @@
 			"Woytecr"
 		]
 	},
+	"globalblocking-apierror-badip": "Adres IP $1 jest nieprawidłowy",
 	"apihelp-globalblock-summary": "Zablokuj lub odblokuj użytkownika globalnie.",
 	"apihelp-globalblock-param-target": "Docelowy adres IP.",
 	"apihelp-globalblock-param-expiry": "Jeżeli określone, zablokuje lub zablokuje ponownie użytkownika. Określa, jak długo blokada będzie trwała, np. \"5 months\" lub \"2 weeks\". Jeżeli ustawisz na \"infinite\" lub \"indefinite\", blokada nigdy nie wygaśnie.",

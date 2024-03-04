@@ -115,7 +115,6 @@
 	"action-globalblock-whitelist": "disattivare blocchi globali localmente",
 	"right-globalblock-exempt": "Bypassa i blocchi globali",
 	"action-globalblock-exempt": "bypassare i blocchi globali",
-	"globalblocking-apierror-badip": "L'indirizzo IP $1 non è valido",
 	"log-action-filter-gblblock": "Tipo di blocco globale:",
 	"log-action-filter-gblblock-gblock": "Blocco globale",
 	"log-action-filter-gblblock-gunblock": "Sblocco globale",

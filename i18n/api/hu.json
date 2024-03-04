@@ -5,6 +5,7 @@
 			"Tacsipacsi"
 		]
 	},
+	"globalblocking-apierror-badip": "A(z) „$1” IP-cím érvénytelen",
 	"apihelp-globalblock-summary": "Egy felhasználó globális blokkolása vagy blokkjának feloldása.",
 	"apihelp-globalblock-param-target": "A cél-IP-cím.",
 	"apihelp-globalblock-param-expiry": "Ha meg van adva, blokkolja vagy újra blokkolja a felhasználót. A blokk hosszát adja meg (angolul), pl. „5 months” (5 hónap) vagy „2 weeks” (2 hét). Ha „infinite” (végtelen) vagy „indefinite” (meghatározatlan), a blokk nem fog automatikusan lejárni.",

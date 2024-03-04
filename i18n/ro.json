@@ -91,7 +91,6 @@
 	"action-globalblock-whitelist": "dezactivați local blocări globale",
 	"right-globalblock-exempt": "Ocolește blocările globale",
 	"action-globalblock-exempt": "treceți peste blocările globale",
-	"globalblocking-apierror-badip": "Adresa IP $1 nu este validă",
 	"log-action-filter-gblblock": "Tipul blocării globale:",
 	"log-action-filter-gblblock-gblock": "Blocare globală",
 	"log-action-filter-gblblock-gunblock": "Deblocare globală",

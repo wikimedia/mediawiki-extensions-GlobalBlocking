@@ -106,7 +106,6 @@
 	"action-globalblock-whitelist": "lokalno onemogućavanje globalnih blokada",
 	"right-globalblock-exempt": "Zaobilaženje globalnih blokada",
 	"action-globalblock-exempt": "zaobilaženje globalnih blokada",
-	"globalblocking-apierror-badip": "IP-adresa $1 nije važeća",
 	"log-action-filter-gblblock": "Vrsta globalnog blokiranja:",
 	"log-action-filter-gblblock-gblock": "Globalno blokiranje",
 	"log-action-filter-gblblock-gunblock": "Globalno deblokiranje",
