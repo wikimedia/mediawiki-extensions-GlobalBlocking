@@ -17,8 +17,6 @@ use RequestContext;
 use stdClass;
 use UnexpectedValueException;
 use Wikimedia\IPUtils;
-use Wikimedia\Rdbms\AndExpressionGroup;
-use Wikimedia\Rdbms\Expression;
 use Wikimedia\Rdbms\IExpression;
 use Wikimedia\Rdbms\IResultWrapper;
 use Wikimedia\Rdbms\LikeValue;
@@ -387,9 +385,9 @@ class GlobalBlockLookup {
 	 * `globalblocks` table that apply to the given IP address or range.
 	 *
 	 * @param string $ip The IP address or range
-	 * @return Expression[] multiple SQL WHERE conditions
+	 * @return IExpression
 	 */
-	public function getRangeCondition( string $ip ): array {
+	public function getRangeCondition( string $ip ): IExpression {
 		$dbr = $this->globalBlockingConnectionProvider->getReplicaGlobalBlockingDatabase();
 
 		list( $start, $end ) = IPUtils::parseRange( $ip );
@@ -398,13 +396,11 @@ class GlobalBlockLookup {
 		// @todo Make the range limit configurable
 		$ipPattern = substr( $start, 0, 4 );
 
-		return [
-			$dbr->expr( 'gb_range_start', IExpression::LIKE, new LikeValue( $ipPattern, $dbr->anyString() ) ),
-			$dbr->expr( 'gb_range_start', '<=', $start ),
-			$dbr->expr( 'gb_range_end', '>=', $end ),
+		return $dbr->expr( 'gb_range_start', IExpression::LIKE, new LikeValue( $ipPattern, $dbr->anyString() ) )
+			->and( 'gb_range_start', '<=', $start )
+			->and( 'gb_range_end', '>=', $end )
 			// @todo expiry shouldn't be in this function
-			$dbr->expr( 'gb_expiry', '>', $dbr->timestamp() ),
-		];
+			->and( 'gb_expiry', '>', $dbr->timestamp() );
 	}
 
 	/**
@@ -427,7 +423,7 @@ class GlobalBlockLookup {
 		$conds = [];
 		foreach ( $ips as $ip ) {
 			if ( IPUtils::isValid( $ip ) ) {
-				$conds[] = new AndExpressionGroup( ...self::getRangeCondition( $ip ) );
+				$conds[] = $this->getRangeCondition( $ip );
 			}
 		}
 
