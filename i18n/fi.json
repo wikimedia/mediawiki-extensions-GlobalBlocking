@@ -114,5 +114,6 @@
 	"globalblocking-blockedtext-all-wikis": "IP-osoitteesi on estetty kaikissa wikeissä.",
 	"globalblocking-blockedtext-on-range": "IP-osoitteesi on alueella, joka on estetty kaikissa wikeissä.",
 	"globalblocking-blockedtext-blocker-admin": "Voit ottaa yhteyttä käyttäjään $1 keskustellaksesi estosta.",
-	"globalblocking-blockedtext-email-feature": "Et pysty käyttämään toimintoa ”{{int:emailuser}}” ellet ole asettanut voimassa olevaa sähköpostiosoitetta [[Special:Preferences|asetuksissasi]] tai jos esto on asetettu koskemaan myös sähköpostin lähettämistä."
+	"globalblocking-blockedtext-email-feature": "Et pysty käyttämään toimintoa ”{{int:emailuser}}” ellet ole asettanut voimassa olevaa sähköpostiosoitetta [[Special:Preferences|asetuksissasi]] tai jos esto on asetettu koskemaan myös sähköpostin lähettämistä.",
+	"globalblocking-blockedtext-username": "Käyttäjänimesi on $1."
 }
