@@ -2,8 +2,13 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Test\Integration;
 
+use CentralAuthTestUser;
+use LogFormatter;
 use LogFormatterTestCase;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
+use MediaWiki\WikiMap\WikiMap;
+use TestUserRegistry;
 use UnexpectedValueException;
 
 /**
@@ -149,5 +154,120 @@ class GlobalBlockLogFormatterTest extends LogFormatterTestCase {
 			],
 			[ 'text' => '', 'api' => [] ]
 		);
+	}
+
+	/** @dataProvider provideLogDatabaseRowsForHiddenUser */
+	public function testLogDatabaseRowsForHiddenUser( $logViewerHasSuppress ) {
+		$targetUser = $this->getMutableTestUser()->getUser();
+		$blockingUser = $this->getTestUser( [ 'sysop', 'suppress' ] )->getUser();
+		if ( $logViewerHasSuppress ) {
+			$logViewAuthority = $this->mockRegisteredAuthorityWithPermissions( [ 'hideuser' ] );
+		} else {
+			$logViewAuthority = $this->mockRegisteredAuthorityWithoutPermissions( [ 'hideuser' ] );
+		}
+		$blockStatus = $this->getServiceContainer()->getBlockUserFactory()
+			->newBlockUser(
+				$targetUser, $blockingUser, 'infinity',
+				'block to hide the test user', [ 'isHideUser' => true ]
+			)->placeBlock();
+		$this->assertStatusGood( $blockStatus );
+
+		if ( $logViewerHasSuppress ) {
+			$expectedName = $targetUser->getName();
+		} else {
+			$expectedName = wfMessage( 'rev-deleted-user' )->text();
+		}
+
+		// Don't use doTestLogFormatter() since it overrides every service that
+		// accesses the database and prevents correct loading of the block.
+		$row = $this->expandDatabaseRow(
+			[
+				'type' => 'gblblock', 'action' => 'gblock', 'user_text' => 'Sysop',
+				'title' => $targetUser->getName(), 'namespace' => NS_USER,
+				'params' => [ '5::expiry' => 'infinite', '6::flags' => [] ],
+			],
+			false
+		);
+		$formatter = LogFormatter::newFromRow( $row );
+		$formatter->context->setAuthority( $logViewAuthority );
+		$this->assertEquals(
+			"Sysop globally blocked $expectedName with an expiration time of infinite",
+			trim( strip_tags( $formatter->getActionText() ) ),
+			'Action text is equal to expected text'
+		);
+	}
+
+	public static function provideLogDatabaseRowsForHiddenUser() {
+		return [
+			'User does not have suppress group' => [ false ],
+			'User has suppress group' => [ true ]
+		];
+	}
+
+	/** @dataProvider provideLogDatabaseRowsForCentrallyHiddenUser */
+	public function testLogDatabaseRowsForCentrallyHiddenUser(
+		$centralUserExists,
+		$logViewerHasSuppress,
+		$shouldShowName
+	) {
+		$this->markTestSkippedIfExtensionNotLoaded( 'CentralAuth' );
+		if ( $logViewerHasSuppress ) {
+			$logViewAuthority = $this->mockRegisteredAuthorityWithPermissions( [ 'centralauth-suppress' ] );
+		} else {
+			$logViewAuthority = $this->mockRegisteredAuthorityWithoutPermissions( [ 'centralauth-suppress' ] );
+		}
+		// We need a new username for each test to avoid conflicts with other data providers.
+		$targetUsername = 'GloballyHiddenUser' . TestUserRegistry::getNextId();
+		if ( $centralUserExists ) {
+			$targetUser = new CentralAuthTestUser(
+				$targetUsername, 'GUP@ssword',
+				[
+					'gu_id' => '3003',
+					'gu_hidden_level' => CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED,
+				],
+				[ [ WikiMap::getCurrentWikiId(), 'primary' ] ],
+				false
+			);
+			$targetUser->save( $this->getDb() );
+		}
+
+		if ( $shouldShowName ) {
+			$expectedName = $targetUsername;
+		} else {
+			$expectedName = wfMessage( 'rev-deleted-user' )->text();
+		}
+
+		// Don't use doTestLogFormatter() since it overrides every service that
+		// accesses the database and prevents correct loading of the block.
+		$row = $this->expandDatabaseRow(
+			[
+				'type' => 'gblblock', 'action' => 'gblock', 'user_text' => 'Sysop',
+				'title' => $targetUsername, 'namespace' => NS_USER,
+				'params' => [ '5::expiry' => 'infinite', '6::flags' => [] ],
+			],
+			false
+		);
+		$formatter = LogFormatter::newFromRow( $row );
+		$formatter->context->setAuthority( $logViewAuthority );
+		$this->assertEquals(
+			"Sysop globally blocked $expectedName with an expiration time of infinite",
+			trim( strip_tags( $formatter->getActionText() ) ),
+			'Action text is equal to expected text'
+		);
+	}
+
+	public static function provideLogDatabaseRowsForCentrallyHiddenUser() {
+		return [
+			'Central user does not exist' => [
+				// Does a CentralAuth user exist with the username of the target
+				false,
+				// Does the log viewer have the steward group
+				true,
+				// Should the username be shown to the log viewer
+				true,
+			],
+			'User does not have steward group' => [ true, false, false ],
+			'User has steward group' => [ true, true, true ]
+		];
 	}
 }

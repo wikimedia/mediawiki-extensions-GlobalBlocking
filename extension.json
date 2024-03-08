@@ -99,6 +99,7 @@
 		"gblblock/*": {
 			"class": "MediaWiki\\Extension\\GlobalBlocking\\GlobalBlockLogFormatter",
 			"services": [
+				"UserFactory",
 				"UserIdentityLookup"
 			]
 		}
