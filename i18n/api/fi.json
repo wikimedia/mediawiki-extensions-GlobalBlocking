@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"MITO",
+			"Pyscowicz",
 			"Valtlai",
 			"Valtlait"
 		]
@@ -10,6 +11,6 @@
 	"apihelp-globalblock-example-1": "Estä 192.0.2.1 ikuisesti syyllä ”Cross-wiki abuse”",
 	"apihelp-query+globalblocks-example-1": "Luettelo kaikista järjestelmänlaajuisista estoista",
 	"apihelp-query+globalblocks-example-2": "Luettelo kaikista järjestelmänlaajuisista estoista koskien IP-osoitetta 192.0.2.18",
-	"apihelp-globalblock-param-alsolocal": "Estä IP-osoite myös paikallisesti",
+	"apihelp-globalblock-param-alsolocal": "Estä käyttäjä myös paikallisesti",
 	"apihelp-globalblock-param-localblockstalk": "Poista keskustelusivun muokkausoikeus paikallisesti"
 }
