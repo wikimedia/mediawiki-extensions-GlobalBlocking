@@ -40,7 +40,11 @@
 			"class": "MediaWiki\\Extension\\GlobalBlocking\\Special\\SpecialGlobalBlock",
 			"services": [
 				"BlockUserFactory",
-				"BlockUtils"
+				"BlockUtils",
+				"GlobalBlocking.GlobalBlockingConnectionProvider",
+				"GlobalBlocking.GlobalBlockManager",
+				"CentralIdLookup",
+				"UserNameUtils"
 			]
 		},
 		"GlobalBlockList": {

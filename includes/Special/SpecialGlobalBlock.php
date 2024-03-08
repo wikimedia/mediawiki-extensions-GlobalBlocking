@@ -8,11 +8,15 @@ use MediaWiki\Block\BlockUserFactory;
 use MediaWiki\Block\BlockUtils;
 use MediaWiki\CommentStore\CommentStore;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockManager;
 use MediaWiki\Html\Html;
 use MediaWiki\SpecialPage\FormSpecialPage;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
+use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\UserIdentity;
+use MediaWiki\User\UserNameUtils;
 use Wikimedia\IPUtils;
 
 class SpecialGlobalBlock extends FormSpecialPage {
@@ -20,31 +24,43 @@ class SpecialGlobalBlock extends FormSpecialPage {
 	 * @see SpecialGlobalBlock::setParameter()
 	 * @var string|null
 	 */
-	protected $address;
+	protected ?string $target;
 
 	/**
-	 * Whether there is an existing block on the target
-	 * @var bool
+	 * @var bool Whether there is an existing block on the target
 	 */
-	private $modifyForm = false;
+	private bool $modifyForm = false;
 
-	/** @var BlockUserFactory */
-	private $blockUserFactory;
-
-	/** @var BlockUtils */
-	private $blockUtils;
+	private BlockUserFactory $blockUserFactory;
+	private BlockUtils $blockUtils;
+	private GlobalBlockingConnectionProvider $globalBlockingConnectionProvider;
+	private GlobalBlockManager $globalBlockManager;
+	private CentralIdLookup $centralIdLookup;
+	private UserNameUtils $userNameUtils;
 
 	/**
 	 * @param BlockUserFactory $blockUserFactory
 	 * @param BlockUtils $blockUtils
+	 * @param GlobalBlockingConnectionProvider $globalBlockingConnectionProvider
+	 * @param GlobalBlockManager $globalBlockManager
+	 * @param CentralIdLookup $centralIdLookup
+	 * @param UserNameUtils $userNameUtils
 	 */
 	public function __construct(
 		BlockUserFactory $blockUserFactory,
-		BlockUtils $blockUtils
+		BlockUtils $blockUtils,
+		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
+		GlobalBlockManager $globalBlockManager,
+		CentralIdLookup $centralIdLookup,
+		UserNameUtils $userNameUtils
 	) {
 		parent::__construct( 'GlobalBlock', 'globalblock' );
 		$this->blockUserFactory = $blockUserFactory;
 		$this->blockUtils = $blockUtils;
+		$this->globalBlockingConnectionProvider = $globalBlockingConnectionProvider;
+		$this->globalBlockManager = $globalBlockManager;
+		$this->centralIdLookup = $centralIdLookup;
+		$this->userNameUtils = $userNameUtils;
 	}
 
 	public function doesWrites() {
@@ -65,23 +81,30 @@ class SpecialGlobalBlock extends FormSpecialPage {
 	 */
 	protected function setParameter( $par ) {
 		if ( $par && !$this->getRequest()->wasPosted() ) {
-			// GET request to Special:GlobalBlock/127.0.0.1
-			$address = $par;
+			// GET request to Special:GlobalBlock/target where 'target' can be an IP, range, or username.
+			$target = $par;
 		} else {
-			$address = trim( $this->getRequest()->getText( 'wpAddress' ) );
+			$target = trim( $this->getRequest()->getText( 'wpAddress' ) );
 		}
 
-		if ( IPUtils::isValidRange( $address ) ) {
-			$this->address = IPUtils::sanitizeRange( $address );
+		if ( IPUtils::isValidRange( $target ) ) {
+			$this->target = IPUtils::sanitizeRange( $target );
+		} elseif ( IPUtils::isIPAddress( $target ) ) {
+			$this->target = IPUtils::sanitizeIP( $target );
 		} else {
-			// This catches invalid IPs too but we'll reject them at form submission.
-			$this->address = IPUtils::sanitizeIP( $address );
+			$normalisedTarget = $this->userNameUtils->getCanonical( $target );
+			if ( $normalisedTarget ) {
+				$this->target = $normalisedTarget;
+			} else {
+				// Allow invalid targets to be set, so that the user can be shown an error message.
+				$this->target = $target;
+			}
 		}
 
-		[ $target ] = $this->blockUtils->parseBlockTarget( $this->address );
+		[ $targetForSkin ] = $this->blockUtils->parseBlockTarget( $target );
 
-		if ( $target instanceof UserIdentity ) {
-			$this->getSkin()->setRelevantUser( $target );
+		if ( $targetForSkin instanceof UserIdentity ) {
+			$this->getSkin()->setRelevantUser( $targetForSkin );
 		}
 	}
 
@@ -92,18 +115,26 @@ class SpecialGlobalBlock extends FormSpecialPage {
 	 *
 	 * @return array
 	 */
-	protected function loadExistingBlock() {
+	protected function loadExistingBlock(): array {
 		$blockOptions = [];
-		if ( $this->address ) {
-			$dbr = GlobalBlocking::getReplicaGlobalBlockingDatabase();
-			$block = $dbr->selectRow( 'globalblocks',
-					[ 'gb_anon_only', 'gb_reason', 'gb_expiry' ],
-					[
-						'gb_address' => $this->address,
-						'gb_expiry >' . $dbr->addQuotes( $dbr->timestamp( wfTimestampNow() ) ),
-					],
-					__METHOD__
-				);
+		if ( $this->target ) {
+			$dbr = $this->globalBlockingConnectionProvider->getReplicaGlobalBlockingDatabase();
+			$queryBuilder = $dbr->newSelectQueryBuilder()
+				->select( [ 'gb_anon_only', 'gb_reason', 'gb_expiry' ] )
+				->from( 'globalblocks' );
+			if ( IPUtils::isIPAddress( $this->target ) ) {
+				$queryBuilder->where( [ 'gb_address' => $this->target ] );
+			} else {
+				$centralId = $this->centralIdLookup->centralIdFromName( $this->target );
+				if ( !$centralId ) {
+					return [];
+				}
+				$queryBuilder->where( [ 'gb_target_central_id' => $centralId ] );
+			}
+			$block = $queryBuilder
+				->andWhere( [ $dbr->expr( 'gb_expiry', '>', $dbr->timestamp() ) ] )
+				->caller( __METHOD__ )
+				->fetchRow();
 			if ( $block ) {
 				$this->modifyForm = true;
 
@@ -130,7 +161,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 				'id' => 'mw-globalblock-address',
 				'required' => true,
 				'autofocus' => true,
-				'default' => $this->address,
+				'default' => $this->target,
 			],
 			'Expiry' => [
 				'type' => count( $getExpiry ) ? 'selectorother' : 'text',
@@ -158,7 +189,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 			],
 			'Previous' => [
 				'type' => 'hidden',
-				'default' => $this->address,
+				'default' => $this->target,
 			],
 		];
 
@@ -168,7 +199,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 			$fields['Expiry']['default'] = $blockOptions['expiry'];
 			$fields['Reason']['default'] = $blockOptions['reason'];
 			$fields['AnonOnly']['default'] = $blockOptions['anononly'];
-			if ( $this->getRequest()->getVal( 'Previous' ) !== $this->address ) {
+			if ( $this->getRequest()->getVal( 'Previous' ) !== $this->target ) {
 				// Let the user know about it and re-submit to modify
 				$fields['Modify']['default'] = 1;
 			}
@@ -214,7 +245,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 		if ( $this->modifyForm && !$this->getRequest()->wasPosted() ) {
 			// For GET requests with target field prefilled, tell the user that it's already blocked
 			// (For POST requests, this will be shown to the user as an actual error in HTMLForm)
-			$msg = $this->msg( 'globalblocking-block-alreadyblocked', $this->address )->parseAsBlock();
+			$msg = $this->msg( 'globalblocking-block-alreadyblocked', $this->target )->parseAsBlock();
 			$form->addHeaderHtml( Html::rawElement( 'div', [ 'class' => 'error' ], $msg ) );
 		}
 
@@ -230,7 +261,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 	 */
 	protected function postHtml() {
 		$out = '';
-		$title = Title::makeTitleSafe( NS_USER, $this->address );
+		$title = Title::makeTitleSafe( NS_USER, $this->target );
 		if ( $title ) {
 			LogEventsList::showLogExtract(
 				$out,
@@ -265,8 +296,8 @@ class SpecialGlobalBlock extends FormSpecialPage {
 		}
 
 		// This handles validation too...
-		$globalBlockStatus = GlobalBlocking::block(
-			$this->address, // $this->address is sanitized; $data['Address'] isn't
+		$globalBlockStatus = $this->globalBlockManager->block(
+			$this->target, // $this->target is sanitized; $data['Address'] isn't
 			$data['Reason'][0],
 			$data['Expiry'],
 			$performer,
@@ -281,7 +312,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 		// Add a local block if the user asked for that
 		if ( $performer->isAllowed( 'block' ) && $data['AlsoLocal'] ) {
 			$localBlockStatus = $this->blockUserFactory->newBlockUser(
-				$this->address,
+				$this->target,
 				$performer,
 				$data['Expiry'],
 				$data['Reason'][0],
@@ -305,7 +336,10 @@ class SpecialGlobalBlock extends FormSpecialPage {
 	public function onSuccess() {
 		$successMsg = $this->modifyForm ?
 			'globalblocking-modify-success' : 'globalblocking-block-success';
-		$this->getOutput()->addWikiMsg( $successMsg, $this->address );
+		// The username must be escaped here, as it's user input and could contain wikitext.
+		$this->getOutput()->addHTML(
+			$this->msg( $successMsg )->plaintextParams( $this->target )->parseAsBlock()
+		);
 
 		$link = $this->getLinkRenderer()->makeKnownLink(
 			$this->getPageTitle(),
