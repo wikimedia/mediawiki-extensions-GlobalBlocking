@@ -96,11 +96,12 @@
 		"gblblock": "globalblocking-logpagetext"
 	},
 	"LogActionsHandlers": {
-		"gblblock/whitelist": "MediaWiki\\Extension\\GlobalBlocking\\GlobalBlockLogFormatter",
-		"gblblock/dwhitelist": "MediaWiki\\Extension\\GlobalBlocking\\GlobalBlockLogFormatter",
-		"gblblock/gblock": "MediaWiki\\Extension\\GlobalBlocking\\GlobalBlockLogFormatter",
-		"gblblock/gblock2": "MediaWiki\\Extension\\GlobalBlocking\\GlobalBlockLogFormatter",
-		"gblblock/modify": "MediaWiki\\Extension\\GlobalBlocking\\GlobalBlockLogFormatter"
+		"gblblock/*": {
+			"class": "MediaWiki\\Extension\\GlobalBlocking\\GlobalBlockLogFormatter",
+			"services": [
+				"UserIdentityLookup"
+			]
+		}
 	},
 	"LogActions": {
 		"gblblock/gunblock": "globalblocking-unblock-logentry"

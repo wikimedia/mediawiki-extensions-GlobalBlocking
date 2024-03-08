@@ -2,7 +2,6 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Services;
 
-use LogPage;
 use ManualLogEntry;
 use MediaWiki\Block\BlockUser;
 use MediaWiki\Config\ServiceOptions;
@@ -219,15 +218,13 @@ class GlobalBlockManager {
 			->caller( __METHOD__ )
 			->execute();
 
-		$page = new LogPage( 'gblblock' );
-		$logId = $page->addEntry(
-			'gunblock',
-			Title::makeTitleSafe( NS_USER, $data[ 'ip' ] ),
-			$reason,
-			[],
-			$performer
-		);
-		$page->addRelations( 'gb_id', [ $id ], $logId );
+		$logEntry = new ManualLogEntry( 'gblblock', 'gunblock' );
+		$logEntry->setPerformer( $performer );
+		$logEntry->setTarget( Title::makeTitleSafe( NS_USER, $data['ip'] ) );
+		$logEntry->setComment( $reason );
+		$logEntry->setRelations( [ 'gb_id' => $id ] );
+		$logId = $logEntry->insert();
+		$logEntry->publish( $logId );
 
 		return StatusValue::newGood();
 	}
