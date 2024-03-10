@@ -247,7 +247,7 @@ class GlobalBlockLookup {
 				if ( count( $blocks ) > 0 ) {
 					$appliedBlock = $this->getAppliedBlock( $xffIps, $blocks );
 					if ( $appliedBlock !== null ) {
-						list( $blockIP, $block ) = $appliedBlock;
+						[ $blockIP, $block ] = $appliedBlock;
 						$blockTimestamp = $lang->timeanddate(
 							wfTimestamp( TS_MW, $block->gb_timestamp ),
 							true
@@ -390,7 +390,7 @@ class GlobalBlockLookup {
 	public function getRangeCondition( string $ip ): IExpression {
 		$dbr = $this->globalBlockingConnectionProvider->getReplicaGlobalBlockingDatabase();
 
-		list( $start, $end ) = IPUtils::parseRange( $ip );
+		[ $start, $end ] = IPUtils::parseRange( $ip );
 
 		// Don't bother checking blocks out of this /16.
 		// @todo Make the range limit configurable

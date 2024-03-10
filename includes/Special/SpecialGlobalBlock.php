@@ -340,7 +340,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 					$option = "$option:$option";
 				}
 
-				list( $show, $value ) = explode( ':', $option );
+				[ $show, $value ] = explode( ':', $option );
 				$options[$show] = $value;
 			}
 		}

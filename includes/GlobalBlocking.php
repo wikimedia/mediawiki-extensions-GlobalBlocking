@@ -80,7 +80,7 @@ class GlobalBlocking {
 	public static function getRangeCondition( $ip ) {
 		$dbr = self::getReplicaGlobalBlockingDatabase();
 
-		list( $start, $end ) = IPUtils::parseRange( $ip );
+		[ $start, $end ] = IPUtils::parseRange( $ip );
 
 		// Don't bother checking blocks out of this /16.
 		// @todo Make the range limit configurable
