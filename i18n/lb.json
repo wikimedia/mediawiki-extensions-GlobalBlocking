@@ -4,7 +4,8 @@
 			"Les Meloures",
 			"Macofe",
 			"Robby",
-			"Soued031"
+			"Soued031",
+			"Volvox"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Erlaabt et]] IP-Adressen op [[Special:GlobalBlockList|méi Wikie mateneen ze spären]]",
@@ -74,7 +75,7 @@
 	"globalblocking-whitelist-intro": "Dir kënnt dëse Formulaire benotze fir de lokal Status vun enger globaler Spär z'änneren.\nWann eng global Spär op dëser Wiki opgehuewe gëtt, kënne Benotzer déi déi betraffen IP-Adresse benotzen normal Ännerungen maachen.",
 	"globalblocking-ipblocked": "'''Är IP-Adress gouf op alle Wikie gespaart.'''\n\nD'Spär gouf vum $1 ($2) gemaach.\nDe Grond deen ugi gouf ass ''$3''.\n\n* Ufank vun der Spär: $4\n* Enn vun der Spär: $5\n\nDir kënnt Iech un de(n) $1 adresséieren, fir iwwer d'Spär ze diskutéieren.\nDir kënnt d'Funktioun \"{{int:emailuser}}\" net benotzen, bis eng valabel E-Mail-Adress an Ären [[Special:Preferences|Astellungen]] ugi gouf an net fir Iech gespaart gouf.\nÄr aktuell IP-Adress ass $6.\nGitt wgl. alle Detailer déi Dir hei driwwer fannt an Ären Ufroen un.",
 	"globalblocking-ipblocked-xff": "'''Een oder méi Proxy-Serveren déi Dir benotzt ass oder si global gespaart.'''\n\nD'Spär gouf vum $1 ($2) gemaach.\nDe Grond deen ugi gouf, ass ''$3''.\n\n* Ufank vun der Spär: $4\n* Enn vun der Spär: $5\n\nDir kënnt Iech un de(n) $1 adresséieren, fir iwwer d'Spär ze diskutéieren.\nDir kënnt d'Funktioun *{{int:emailuser}}\" net benotzen, bis eng valabel E-Mail-Adress an Ären [[Special:Preferences|Astellungen]] ugi gouf an net fir Iech gespaart gouf.\nDéi blockéiert Proxy-Adress war $6.\nGitt wgl. all Detailer déi Dir hei driwwer fannt an Ären Ufroen un.",
-	"globalblocking-blocked-nopassreset": "Dir kënnt  Benotzer-Passwierder net zrécksetze well Är IP-Adress global gespaart ass.",
+	"globalblocking-blocked-nopassreset": "Dir kënnt keng Benotzerpasswierder zrécksetzen, well Är IP-Adress global gespaart ass.",
 	"globalblocking-logpage": "Lëscht vun de globale Spären",
 	"globalblocking-logpagetext": "Dëst ass eng Lëscht vun de globale Spären déi op dëser Wiki gemaach an opgehuewe goufen.\nDir sollt wëssen datt global Spären op anere Wikie gemaach an opgehuewe kënne ginn an datt déi global Spären dës Wiki beaflosse kënnen.\nFir all aktiv global Spären ze gesinn, gitt wgl. op d'[[Special:GlobalBlockList|Lëscht vun de globale Spären]].",
 	"globalblocking-block-logentry": "[[$1]] gouf global gespaart fir $2",
