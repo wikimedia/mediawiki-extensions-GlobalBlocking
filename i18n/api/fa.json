@@ -2,12 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Beginneruser",
+			"Jeeputer",
 			"Ladsgroup",
 			"Mehran"
 		]
 	},
+	"globalblocking-apierror-badtarget": "نام کاربری، نشانی آی‌پی یا بازهٔ آی‌پی ارائه‌شده ($1) معتبر نیست",
 	"apihelp-globalblock-summary": "بستن یا باز کردن یک کاربر به‌طور سراسری.",
-	"apihelp-globalblock-param-target": "آدرس آی‌پی مقصد.",
+	"apihelp-globalblock-param-target": "نشانی آی‌پی یا نام کاربری هدف.",
 	"apihelp-globalblock-param-unblock": "اگر مشخص شود، کاربر باز خواهد شد.",
 	"apihelp-globalblock-param-reason": "دلیل برای بازکردن/بستن.",
 	"apihelp-query+globalblocks-summary": "فهرست نشانی‌های اینترنتی که دسترسی‌شان به طور سراسری قطع شده‌است",
@@ -15,5 +17,6 @@
 	"apihelp-query+globalblocks-param-end": "برچسب زمانی برای پایان شمارش در.",
 	"apihelp-query+globalblocks-param-limit": "حداکثر تعداد بستن‌هایی که نمایش داده شود.",
 	"apihelp-query+globalblocks-param-prop": "خصوصیتی که باید گرفته شود.",
-	"apihelp-query+globalblocks-example-1": "فهرست همه بندایش‌های سراسری"
+	"apihelp-query+globalblocks-example-1": "فهرست همه بندایش‌های سراسری",
+	"apihelp-globalblock-param-alsolocal": "دسترسی کاربر به‌صورت محلی نیز بسته شود"
 }

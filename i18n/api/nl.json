@@ -2,12 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Mainframe98",
-			"McDutchie"
+			"McDutchie",
+			"Siebrand"
 		]
 	},
 	"globalblocking-apierror-badip": "IP-adres $1 is ongeldig.",
 	"apihelp-globalblock-summary": "Een gebruiker globaal blokkeren of deblokkeren.",
-	"apihelp-globalblock-param-target": "Het doel IP-adres.",
+	"apihelp-globalblock-param-target": "Het doel-IP-adres of de gebruikersnaam.",
 	"apihelp-globalblock-param-expiry": "Indien dit is opgegeven, wordt de gebruiker geblokkeerd of opnieuw geblokkeerd. Bepaalt hoe lang de blokkade zal duren, bv. “5 months” of “2 weeks”. Als dit wordt ingesteld op “infinite” of “indefinite” zal het blok nooit verlopen.",
 	"apihelp-globalblock-param-unblock": "Als dit is opgegeven wordt de blokkering van de gebruiker opgeheven.",
 	"apihelp-globalblock-param-reason": "De reden voor het blokkeren/deblokkeren.",
@@ -24,7 +25,7 @@
 	"apihelp-query+globalblocks-param-prop": "Welke eigenschappen op te vragen.",
 	"apihelp-query+globalblocks-example-1": "Toon alle globale blokkades",
 	"apihelp-query+globalblocks-example-2": "Toon globale blokkades die van toepassing op het IP-adres 192.0.2.18",
-	"apihelp-globalblock-param-alsolocal": "Het IP-adres ook lokaal blokkeren",
+	"apihelp-globalblock-param-alsolocal": "De gebruiker ook lokaal blokkeren",
 	"apihelp-globalblock-param-localblockstalk": "De toegang tot de overlegpagina lokaal intrekken",
 	"apihelp-globalblock-param-localblocksemail": "De toegang tot e-mail lokaal intrekken",
 	"apihelp-globalblock-param-localanononly": "Geef dit op als de blokkering alleen lokaal afgemelde gebruikers moet betreffen."
