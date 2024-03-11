@@ -265,6 +265,72 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 		];
 	}
 
+	public static function provideGetRangeConditions() {
+		// Modified copy of DatabaseBlockStoreTest::provideGetRangeCond
+		return [
+			'Single IPv4' => [
+				'1.2.3.4',
+				"(gb_range_start LIKE '0102%' ESCAPE '`'"
+				. " AND gb_range_start <= '" . IPUtils::toHex( '1.2.3.4' ) . "'"
+				. " AND gb_range_end >= '" . IPUtils::toHex( '1.2.3.4' ) . "'"
+				. " AND gb_expiry > '20240219050403')"
+			],
+			'IPv4 /31' => [
+				'1.2.3.4/31',
+				"(gb_range_start LIKE '0102%' ESCAPE '`'"
+				. " AND gb_range_start <= '" . IPUtils::toHex( '1.2.3.4' ) . "'"
+				. " AND gb_range_end >= '" . IPUtils::toHex( '1.2.3.5' ) . "'"
+				. " AND gb_expiry > '20240219050403')"
+			],
+			'IPv4 /24' => [
+				'1.2.3.4/24',
+				"(gb_range_start LIKE '0102%' ESCAPE '`'"
+				. " AND gb_range_start <= '" . IPUtils::toHex( '1.2.3.0' ) . "'"
+				. " AND gb_range_end >= '" . IPUtils::toHex( '1.2.3.255' ) . "'"
+				. " AND gb_expiry > '20240219050403')"
+			],
+			'IPv4 /14' => [
+				'1.2.3.4/14',
+				"(gb_range_start LIKE '01%' ESCAPE '`'"
+				. " AND gb_range_start <= '" . IPUtils::toHex( '1.0.0.0' ) . "'"
+				. " AND gb_range_end >= '" . IPUtils::toHex( '1.3.255.255' ) . "'"
+				. " AND gb_expiry > '20240219050403')",
+				10
+			],
+			'Single IPv6' => [
+				'2000:DEAD:BEEF:A:0:0:0:0',
+				"(gb_range_start LIKE 'v6-2000%' ESCAPE '`'"
+				. " AND gb_range_start <= '" . IPUtils::toHex( '2000:DEAD:BEEF:A:0:0:0:0' ) . "'"
+				. " AND gb_range_end >= '" . IPUtils::toHex( '2000:DEAD:BEEF:A:0:0:0:0' ) . "'"
+				. " AND gb_expiry > '20240219050403')"
+			],
+			'IPv6 /108' => [
+				'2000:DEAD:BEEF:A:0:0:0:0/108',
+				"(gb_range_start LIKE 'v6-2000%' ESCAPE '`'"
+				. " AND gb_range_start <= '" . IPUtils::toHex( '2000:DEAD:BEEF:A:0:0:0:0' ) . "'"
+				. " AND gb_range_end >= '" . IPUtils::toHex( '2000:DEAD:BEEF:A:0:0:000F:FFFF' ) . "'"
+				. " AND gb_expiry > '20240219050403')"
+			]
+		];
+	}
+
+	/** @dataProvider provideGetRangeConditions */
+	public function testGetRangeCondition( $ipOrRange, $expected, $ipV4Limit = 16, $ipV6Limit = 19 ) {
+		$this->setMwGlobals( 'wgGlobalBlockingCIDRLimit', [
+			'IPv4' => $ipV4Limit,
+			'IPv6' => $ipV6Limit,
+		] );
+		ConvertibleTimestamp::setFakeTime( '20240219050403' );
+		$this->assertSame(
+			$expected,
+			GlobalBlockingServices::wrap( $this->getServiceContainer() )
+				->getGlobalBlockLookup()
+				->getRangeCondition( $ipOrRange )
+				->toSql( $this->getDb() ),
+			'The IP range conditions returned by GlobalBlockLookup::getRangeCondition are not as expected.'
+		);
+	}
+
 	public function addDBDataOnce() {
 		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
 		// to be the local provider.

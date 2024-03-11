@@ -32,6 +32,7 @@ class GlobalBlockLookup {
 	public const CONSTRUCTOR_OPTIONS = [
 		'GlobalBlockingAllowedRanges',
 		'GlobalBlockingBlockXFF',
+		'GlobalBlockingCIDRLimit',
 	];
 
 	private const TYPE_IP = 2;
@@ -392,15 +393,32 @@ class GlobalBlockLookup {
 
 		[ $start, $end ] = IPUtils::parseRange( $ip );
 
-		// Don't bother checking blocks out of this /16.
-		// @todo Make the range limit configurable
-		$ipPattern = substr( $start, 0, 4 );
+		$chunk = $this->getIpFragment( $start );
 
-		return $dbr->expr( 'gb_range_start', IExpression::LIKE, new LikeValue( $ipPattern, $dbr->anyString() ) )
+		return $dbr->expr( 'gb_range_start', IExpression::LIKE, new LikeValue( $chunk, $dbr->anyString() ) )
 			->and( 'gb_range_start', '<=', $start )
 			->and( 'gb_range_end', '>=', $end )
 			// @todo expiry shouldn't be in this function
 			->and( 'gb_expiry', '>', $dbr->timestamp() );
+	}
+
+	/**
+	 * Get the component of an IP address which is certain to be the same between an IP
+	 * address and a range block containing that IP address.
+	 *
+	 * This mostly duplicates the logic in DatabaseStoreBlock::getIpFragment, but with the
+	 * CIDR limit config being the GlobalBlocking extension specific one.
+	 *
+	 * @param string $hex Hexadecimal IP representation
+	 * @return string
+	 */
+	private function getIpFragment( string $hex ): string {
+		$blockCIDRLimit = $this->options->get( 'GlobalBlockingCIDRLimit' );
+		if ( str_starts_with( $hex, 'v6-' ) ) {
+			return 'v6-' . substr( substr( $hex, 3 ), 0, (int)floor( $blockCIDRLimit['IPv6'] / 4 ) );
+		} else {
+			return substr( $hex, 0, (int)floor( $blockCIDRLimit['IPv4'] / 4 ) );
+		}
 	}
 
 	/**
