@@ -310,7 +310,16 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 				. " AND gb_range_start <= '" . IPUtils::toHex( '2000:DEAD:BEEF:A:0:0:0:0' ) . "'"
 				. " AND gb_range_end >= '" . IPUtils::toHex( '2000:DEAD:BEEF:A:0:0:000F:FFFF' ) . "'"
 				. " AND gb_expiry > '20240219050403')"
-			]
+			],
+			'IPv6 /108 with different limit' => [
+				'2000:DEAD:BEEF:A:0:0:0:0/108',
+				"(gb_range_start LIKE 'v6-200%' ESCAPE '`'"
+				. " AND gb_range_start <= '" . IPUtils::toHex( '2000:DEAD:BEEF:A:0:0:0:0' ) . "'"
+				. " AND gb_range_end >= '" . IPUtils::toHex( '2000:DEAD:BEEF:A:0:0:000F:FFFF' ) . "'"
+				. " AND gb_expiry > '20240219050403')",
+				16,
+				15
+			],
 		];
 	}
 
