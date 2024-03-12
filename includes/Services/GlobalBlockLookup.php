@@ -250,42 +250,40 @@ class GlobalBlockLookup {
 			$xffIps = $request->getHeader( 'X-Forwarded-For' );
 			if ( $xffIps ) {
 				$xffIps = array_map( 'trim', explode( ',', $xffIps ) );
-				$blocks = $this->checkIpsForBlock( $xffIps, !$user->isNamed() );
-				if ( count( $blocks ) > 0 ) {
-					$appliedBlock = $this->getAppliedBlock( $xffIps, $blocks );
-					if ( $appliedBlock !== null ) {
-						// The following code in this if block, except the returning of $block,
-						// is deprecated since 1.42.
-						[ $blockIP, $block ] = $appliedBlock;
-						$blockTimestamp = $lang->timeanddate(
-							wfTimestamp( TS_MW, $block->gb_timestamp ),
-							true
-						);
-						$blockExpiry = $lang->formatExpiry( $block->gb_expiry );
-						$display_wiki = WikiMap::getWikiName( $block->gb_by_wiki );
-						$blockingUser = $this->globalBlockingLinkBuilder->maybeLinkUserpage(
-							$block->gb_by_wiki,
-							$this->centralIdLookup->nameFromCentralId( $block->gb_by_central_id ) ?? ''
-						);
-						// Allow site customization of blocked message.
-						$blockedIpXffMsg = 'globalblocking-ipblocked-xff';
-						$this->hookRunner->onGlobalBlockingBlockedIpXffMsg( $blockedIpXffMsg );
-						return $this->addToUserBlockDetailsCache( [
-							'block' => $block,
-							'error' => [
-								wfMessage(
-									$blockedIpXffMsg,
-									$blockingUser,
-									$display_wiki,
-									$block->gb_reason,
-									$blockTimestamp,
-									$blockExpiry,
-									$blockIP
-								)
-							],
-							'xff' => true,
-						], $user );
-					}
+				$appliedBlock = $this->getAppliedBlock(
+					$xffIps, $this->checkIpsForBlock( $xffIps, !$user->isNamed() )
+				);
+				if ( $appliedBlock !== null ) {
+					// The following code in this if block, except the returning of $block, is deprecated since 1.42.
+					[ $blockIP, $block ] = $appliedBlock;
+					$blockTimestamp = $lang->timeanddate(
+						wfTimestamp( TS_MW, $block->gb_timestamp ),
+						true
+					);
+					$blockExpiry = $lang->formatExpiry( $block->gb_expiry );
+					$display_wiki = WikiMap::getWikiName( $block->gb_by_wiki );
+					$blockingUser = $this->globalBlockingLinkBuilder->maybeLinkUserpage(
+						$block->gb_by_wiki,
+						$this->centralIdLookup->nameFromCentralId( $block->gb_by_central_id ) ?? ''
+					);
+					// Allow site customization of blocked message.
+					$blockedIpXffMsg = 'globalblocking-ipblocked-xff';
+					$this->hookRunner->onGlobalBlockingBlockedIpXffMsg( $blockedIpXffMsg );
+					return $this->addToUserBlockDetailsCache( [
+						'block' => $block,
+						'error' => [
+							wfMessage(
+								$blockedIpXffMsg,
+								$blockingUser,
+								$display_wiki,
+								$block->gb_reason,
+								$blockTimestamp,
+								$blockExpiry,
+								$blockIP
+							)
+						],
+						'xff' => true,
+					], $user );
 				}
 			}
 		}
@@ -491,11 +489,12 @@ class GlobalBlockLookup {
 	 * @phan-return array{string,stdClass}|null
 	 */
 	private function getAppliedBlock( array $ips, array $blocks ): ?array {
-		$block = array_shift( $blocks );
-		foreach ( $ips as $ip ) {
-			$ipHex = IPUtils::toHex( $ip );
-			if ( $block->gb_range_start <= $ipHex && $block->gb_range_end >= $ipHex ) {
-				return [ $ip, $block ];
+		foreach ( $blocks as $block ) {
+			foreach ( $ips as $ip ) {
+				$ipHex = IPUtils::toHex( $ip );
+				if ( $block->gb_range_start <= $ipHex && $block->gb_range_end >= $ipHex ) {
+					return [ $ip, $block ];
+				}
 			}
 		}
 
