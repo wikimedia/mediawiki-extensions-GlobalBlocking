@@ -107,5 +107,6 @@
 	"globalblocking-blockedtext-blocker-admin": "বাধাদান সম্পর্কে আলোচনা করতে আপনি $1-এর সাথে যোগাযোগ করতে পারেন।",
 	"globalblocking-blockedtext-email-feature": "আপনি \"{{int:emailuser}}\" বৈশিষ্ট্যটি ব্যবহার করতে পারবেন না, যদি না আপনার [[Special:Preferences|অ্যাকাউন্টের পছন্দসমূহে]] একটি বৈধ ইমেইল ঠিকানা নির্দিষ্ট থাকে এবং আপনাকে এটি ব্যবহার করা থেকে অবরুদ্ধ না করা হয়ে থাকে।",
 	"globalblocking-blockedtext-ip-range": "অবরুদ্ধ পরিসীমাটি হচ্ছে $1।",
-	"globalblocking-blockedtext-proxy": "বাধা দেওয়া প্রক্সির ঠিকানা হলো $1।"
+	"globalblocking-blockedtext-proxy": "বাধা দেওয়া প্রক্সির ঠিকানা হলো $1।",
+	"globalblocking-blockedtext-username": "আপনার ব্যবহারকারী নাম হলো $1।"
 }
