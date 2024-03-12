@@ -5,10 +5,10 @@ namespace MediaWiki\Extension\GlobalBlocking\Special;
 use CentralIdLookup;
 use DerivativeContext;
 use HTMLForm;
-use MediaWiki\Block\AbstractBlock;
 use MediaWiki\Block\BlockUtils;
 use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\Html\Html;
 use MediaWiki\SpecialPage\SpecialPage;
 use Wikimedia\IPUtils;
@@ -29,21 +29,27 @@ class SpecialGlobalBlockList extends SpecialPage {
 	/** @var CentralIdLookup */
 	private $lookup;
 
+	/** @var GlobalBlockLookup */
+	private $globalBlockLookup;
+
 	/**
 	 * @param BlockUtils $blockUtils
 	 * @param CommentFormatter $commentFormatter
 	 * @param CentralIdLookup $lookup
+	 * @param GlobalBlockLookup $globalBlockLookup
 	 */
 	public function __construct(
 		BlockUtils $blockUtils,
 		CommentFormatter $commentFormatter,
-		CentralIdLookup $lookup
+		CentralIdLookup $lookup,
+		GlobalBlockLookup $globalBlockLookup
 	) {
 		parent::__construct( 'GlobalBlockList' );
 
 		$this->blockUtils = $blockUtils;
 		$this->commentFormatter = $commentFormatter;
 		$this->lookup = $lookup;
+		$this->globalBlockLookup = $globalBlockLookup;
 	}
 
 	/**
@@ -133,16 +139,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 		$conds = [];
 
 		if ( $this->target !== '' ) {
-			[ $target, $type ] = $this->blockUtils->parseBlockTarget( $this->target );
-
-			switch ( $type ) {
-				case AbstractBlock::TYPE_IP:
-					$conds = GlobalBlocking::getRangeCondition( $target );
-					break;
-				case AbstractBlock::TYPE_RANGE:
-					$conds = [ 'gb_address' => $target ];
-					break;
-			}
+			$conds[] = $this->globalBlockLookup->getRangeCondition( $this->target );
 		}
 
 		$hideIP = in_array( 'addressblocks', $this->options );

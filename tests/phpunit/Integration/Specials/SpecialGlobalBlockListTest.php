@@ -54,7 +54,7 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 			],
 			'narrower range' => [
 				'::1/20',
-				false
+				true
 			],
 			'wider range' => [
 				'::1/18',
