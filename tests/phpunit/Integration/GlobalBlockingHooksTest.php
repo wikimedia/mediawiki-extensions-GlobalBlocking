@@ -31,13 +31,13 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 	/**
 	 * @dataProvider provideOnGetBlockErrorMessageKey
 	 */
-	public function testOnGetBlockErrorMessageKey( $xff, $range, $expectedKey ) {
+	public function testOnGetBlockErrorMessageKey( $xff, $target, $expectedKey ) {
 		$key = 'blockedtext';
 		$block = $this->createMock( GlobalBlock::class );
 		$block->method( 'getXff' )
 			->willReturn( $xff );
 		$block->method( 'getTargetName' )
-			->willReturn( $range ? '1.2.3.4/24' : '1.2.3.4' );
+			->willReturn( $target );
 
 		$hooks = $this->getGlobalBlockingHooks();
 		$result = $hooks->onGetBlockErrorMessageKey( $block, $key );
@@ -50,18 +50,23 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 		return [
 			'IP block' => [
 				'xff' => false,
-				'range' => false,
+				'target' => '1.2.3.4',
 				'expectedKey' => 'globalblocking-blockedtext-ip',
 			],
 			'IP range block' => [
 				'xff' => false,
-				'range' => true,
+				'target' => '1.2.3.4/24',
 				'expectedKey' => 'globalblocking-blockedtext-range',
 			],
 			'XFF block' => [
 				'xff' => true,
-				'range' => false,
+				'target' => '1.2.3.4',
 				'expectedKey' => 'globalblocking-blockedtext-xff',
+			],
+			'Account block' => [
+				'xff' => false,
+				'target' => 'Test',
+				'expectedKey' => 'globalblocking-blockedtext-user',
 			],
 		];
 	}

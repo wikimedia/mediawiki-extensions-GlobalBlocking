@@ -25,10 +25,9 @@ class GlobalBlock extends AbstractBlock {
 
 	/**
 	 * @param stdClass $block
-	 * @param array $error
 	 * @param array $options
 	 */
-	public function __construct( stdClass $block, array $error, $options ) {
+	public function __construct( stdClass $block, $options ) {
 		parent::__construct( $options );
 
 		$db = MediaWikiServices::getInstance()
@@ -38,7 +37,6 @@ class GlobalBlock extends AbstractBlock {
 		$this->setExpiry( $db->decodeExpiry( $options['expiry'] ) );
 
 		$this->id = $block->gb_id;
-		$this->error = $error;
 		$this->xff = (bool)$options['xff'];
 		$this->setGlobalBlocker( $block );
 	}

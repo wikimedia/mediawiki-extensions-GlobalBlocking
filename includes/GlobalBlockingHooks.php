@@ -166,6 +166,8 @@ class GlobalBlockingHooks implements
 				$key = 'globalblocking-blockedtext-ip';
 			} elseif ( IPUtils::isValidRange( $block->getTargetName() ) ) {
 				$key = 'globalblocking-blockedtext-range';
+			} else {
+				$key = 'globalblocking-blockedtext-user';
 			}
 			return false;
 		}
