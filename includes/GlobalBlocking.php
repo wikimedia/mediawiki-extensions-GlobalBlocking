@@ -62,7 +62,7 @@ class GlobalBlocking {
 	/**
 	 * Get a block
 	 * @param string|null $ip The IP address to be checked
-	 * @param bool $anon Get anon blocks only
+	 * @param bool $anon Include anon-only blocks
 	 * @return stdClass|false The block, or false if none is found
 	 * @deprecated Since 1.42. Use GlobalBlockLookup::getGlobalBlockingBlock.
 	 */
