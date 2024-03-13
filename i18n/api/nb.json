@@ -5,8 +5,9 @@
 		]
 	},
 	"globalblocking-apierror-badip": "IP-adressa $1 er ugyldig",
+	"globalblocking-apierror-badtarget": "Brukernavnet, IP-adressen eller IP-intervallet som ble angitt ($1) er ikke gyldig",
 	"apihelp-globalblock-summary": "Blokker eller avblokker en bruker globalt.",
-	"apihelp-globalblock-param-target": "Mål-IP-adressa.",
+	"apihelp-globalblock-param-target": "Mål-IP-adressa eller -brukernavnet.",
 	"apihelp-globalblock-param-expiry": "Om denne er angitt vil brukeren bli blokkert (igjen?). Bestemmer hvor lenge blokkeringen vil vare, f.eks. «5 months» eller «2 weeks». Om den er satt til «infinite» eller «indefinite» vil blokkeringen aldri løpe ut.",
 	"apihelp-globalblock-param-unblock": "Om denne er angitt vil brukeren bli avblokkert.",
 	"apihelp-globalblock-param-reason": "Årsak for blokkering/avblokkering.",
@@ -23,7 +24,7 @@
 	"apihelp-query+globalblocks-param-prop": "Hvilke egenskaper som skal hentes.",
 	"apihelp-query+globalblocks-example-1": "List opp alle globale blokkeringer",
 	"apihelp-query+globalblocks-example-2": "Lister opp globale blokkeringer av IP-adressa 192.0.2.18",
-	"apihelp-globalblock-param-alsolocal": "Blokker IP-en lokalt også",
+	"apihelp-globalblock-param-alsolocal": "Blokker brukeren lokalt også",
 	"apihelp-globalblock-param-localblockstalk": "Tilbakekall diskusjonssidetilgang lokalt",
 	"apihelp-globalblock-param-localblocksemail": "Tilbakekall e-posttilgang lokalt",
 	"apihelp-globalblock-param-localanononly": "Angi om denne blokkeringen kun skal gjelde utloggede brukere lokalt."
