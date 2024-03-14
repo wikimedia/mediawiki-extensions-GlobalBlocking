@@ -54,7 +54,6 @@
 	"globalblocking-whitelist-reason": "Mutivu:",
 	"globalblocking-whitelist-status": "Statu lucali:",
 	"globalblocking-whitelist-submit": "Cancia lu statu lucali",
-	"globalblocking-logentry-expiry": "scadi lu $1",
 	"globalblocklist": "Elencu dê nnirizzi IP bluccati glubbalmenti",
 	"globalblockstatus": "Statu lucali di blocca glubbali",
 	"right-globalblock-exempt": "Bypassa li blocchi globali"

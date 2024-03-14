@@ -54,7 +54,6 @@
 	"globalblocking-whitelist-intro": "你可以用呢個表去改全域封鎖嘅本地狀態。\n如果一個全域封鎖響呢個wiki度停用咗，受影響嘅 IP 地址可以正常噉編輯。\n[[Special:GlobalBlockList|返去全域封鎖一覽]]。",
 	"globalblocking-logpage": "全域封鎖日誌",
 	"globalblocking-logpagetext": "呢個係響呢個wiki度，整過同拎走過嘅全域封鎖日誌。\n要留意嘅係全域封鎖可以響其它嘅wiki度整同拎走。\n要睇活躍嘅全域封鎖，你可以去睇個[[Special:GlobalBlockList|全域封鎖一覽]]。",
-	"globalblocking-block-logentry": "全域封鎖咗[[$1]]於 $2 到期",
 	"globalblocking-unblock-logentry": "拎走咗[[$1]]嘅全域封鎖",
 	"globalblocking-loglink": "IP地址 $1 全域封鎖咗（[[{{#Special:GlobalBlockList}}/$1|詳情]]）。",
 	"globalblocklist": "全域封鎖IP地址一覽",

@@ -42,8 +42,6 @@
 	"globalblocking-whitelist-statuslabel": "په {{SITENAME}} کې نړېوال بنديز ناچارنول",
 	"globalblocking-whitelist-submit": "سيمه ايز دريځ بدلول",
 	"globalblocking-logpage": "د نړېوال بنديز يادښت",
-	"globalblocking-block2-logentry": "نړېوال بنديز لگېدلي [[$1]] ($2)",
-	"globalblocking-logentry-expiry": "پای نېټه $1",
 	"globalblocklist": "د نړېوال بنديز لگېدلو آي پي پتو لړليک",
 	"globalblock": "په يوې آی پي پتې نړېواله بنديز لگول",
 	"globalblockstatus": "د نړېوالو بنديزونو سيمه ايز دريځ",

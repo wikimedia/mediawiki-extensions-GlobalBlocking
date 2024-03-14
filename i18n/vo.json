@@ -55,7 +55,6 @@
 	"globalblocking-whitelist-intro": "Kanol gebön fometi at ad votükön stadi topik blokama valöpik.\nIf blokam valöpik pesädunon in vük at, gebans ladetas-IP teföl okanons redakön nensäkädiko.\n[[Special:GlobalBlockList|Geikön lü lised blokamas valöpik]].",
 	"globalblocking-logpage": "Jenotalised blokamas valöpik",
 	"globalblocking-logpagetext": "Atos binon jenotalised blokamas valöpik, kels peledunons e/u pemoükons in vük at.\nDemolös, das blokams valöpik kanons paledunön e pamoükön in vüks votik, e das blokams valöpik at kanons tefön vüki at.\nKanol tuvön blokamis valöpik lonöfol valik in [[Special:GlobalBlockList|lised blokamas valöpik]].",
-	"globalblocking-block-logentry": "eblokon valöpo gebani: [[$1]], blokamadul: $2",
 	"globalblocking-unblock-logentry": "blokam valöpik pemoükon in [[$1]]",
 	"globalblocklist": "Lised ladetas-IP valöpo peblokölas",
 	"globalblock": "blokön ladeti-IP valöpo",

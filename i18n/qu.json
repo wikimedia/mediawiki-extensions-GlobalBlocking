@@ -11,7 +11,6 @@
 	"globalblocking-list": "Sapsita hark'asqa IP tiyaykuna",
 	"globalblocking-expiringblock": "$1 p'unchawpi $2 pachapi puchukanqa",
 	"globalblocking-whitelist": "Sapsi hark'asqakunap kayllapi kachkaynin",
-	"globalblocking-block2-logentry": "sapsilla hark'an [[$1]] sutiyuqta ($2)",
 	"globalblocking-loglink": "$1 sutiyuq IP tiyayqa tukuy wikikunapaqmi hark'asqa ([[{{#Special:GlobalBlockList}}/$1|tukuyta rikuy]]).",
 	"globalblocking-showlog": "Kay IP tiyayqa ñawpaqta hark'asqam.\nHark'ay hallch'ataqa kaypim rikunki willasunaykipaq:",
 	"globalblocklist": "Sapsita hark'asqa IP tiyaykuna",

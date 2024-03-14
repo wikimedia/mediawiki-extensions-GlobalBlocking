@@ -56,8 +56,6 @@
 	"globalblocking-whitelist-statuslabel": "Analluogi'r bloc cyd-wici ar {{SITENAME}}",
 	"globalblocking-whitelist-submit": "Newid y statws lleol",
 	"globalblocking-logpage": "Lòg blocio cydwici",
-	"globalblocking-block-logentry": "wedi blocio [[$1]] yn gydwici, gan ddod i ben am $2",
-	"globalblocking-logentry-expiry": "yn dod i ben am $1",
 	"globalblocklist": "Rhestr cyfeiriadau IP sydd wedi eu blocio ar bob wici",
 	"globalblockstatus": "Statws lleol y blociau cyd-wici"
 }

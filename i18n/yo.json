@@ -15,6 +15,5 @@
 	"globalblocking-expiringblock": "yíò parí ní ọjọ́ $1 ní ago $2",
 	"globalblocking-list-noresults": "Àdírẹ́sì IP tìtọrọ kó jẹ́ dídílọ́nà.",
 	"globalblocking-unblock-reason": "Ìdíẹ̀:",
-	"globalblocking-whitelist-reason": "Ìdíẹ̀:",
-	"globalblocking-logentry-expiry": "yíò parí ní $1"
+	"globalblocking-whitelist-reason": "Ìdíẹ̀:"
 }

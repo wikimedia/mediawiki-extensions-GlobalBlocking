@@ -32,8 +32,6 @@
 	"globalblocking-whitelist-intro": "Sanak dapek manggunoan formulir ko untuak manyuntiang statuih lokal dari sakek global.\nJikok sakek global dinon-aktipan di wiki ko, pangguno jo alamaik IP tasabuik akan dapek manyuntiang baliak sacaro normal.\n[[Special:GlobalBlockList|Baliak ka daftar sakek global]].",
 	"globalblocking-logpage": "Log sakek global",
 	"globalblocking-logpagetext": "Iko log sakek global nan dibuek dan dihapuih pado wiki ko.\nSabagai catatan, sakek global dapek dibuek dan dihapuih di wiki lain nan ka mampangaruahi wiki ko juo.\nUntuak manampilan kasaluruahan sakek global nan aktip kini ko, Sanak dapek mancaliak [[Special:GlobalBlockList|daftar sakek global]].",
-	"globalblocking-logentry-expiry": "sampai $1",
-	"globalblocking-logentry-noexpiry": "salamonyo",
 	"globalblocklist": "Daftar alamaik IP nan disakek sacaro global",
 	"globalblockstatus": "Statuih sakek global di wiki ko"
 }

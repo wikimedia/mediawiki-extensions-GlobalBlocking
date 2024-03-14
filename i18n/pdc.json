@@ -8,6 +8,5 @@
 	"globalblocking-block-expiry-selector-other": "Annere Zeit:",
 	"globalblocking-list-modify": "ennere",
 	"globalblocking-unblock-reason": "Grund:",
-	"globalblocking-whitelist-reason": "Grund:",
-	"globalblocking-logentry-expiry": "bis $1"
+	"globalblocking-whitelist-reason": "Grund:"
 }
