@@ -96,14 +96,14 @@
 		"gblblock": "globalblocking-logpagetext"
 	},
 	"LogActionsHandlers": {
-		"gblblock/whitelist": "MediaWiki\\Extension\\GlobalBlocking\\GlobalBlockWhitelistLogFormatter",
-		"gblblock/dwhitelist": "MediaWiki\\Extension\\GlobalBlocking\\GlobalBlockWhitelistLogFormatter"
+		"gblblock/whitelist": "MediaWiki\\Extension\\GlobalBlocking\\GlobalBlockLogFormatter",
+		"gblblock/dwhitelist": "MediaWiki\\Extension\\GlobalBlocking\\GlobalBlockLogFormatter",
+		"gblblock/gblock": "MediaWiki\\Extension\\GlobalBlocking\\GlobalBlockLogFormatter",
+		"gblblock/gblock2": "MediaWiki\\Extension\\GlobalBlocking\\GlobalBlockLogFormatter",
+		"gblblock/modify": "MediaWiki\\Extension\\GlobalBlocking\\GlobalBlockLogFormatter"
 	},
 	"LogActions": {
-		"gblblock/gblock": "globalblocking-block-logentry",
-		"gblblock/gblock2": "globalblocking-block2-logentry",
-		"gblblock/gunblock": "globalblocking-unblock-logentry",
-		"gblblock/modify": "globalblocking-modify-logentry"
+		"gblblock/gunblock": "globalblocking-unblock-logentry"
 	},
 	"APIModules": {
 		"globalblock": {

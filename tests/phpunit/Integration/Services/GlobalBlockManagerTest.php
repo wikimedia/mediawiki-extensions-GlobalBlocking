@@ -48,6 +48,24 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 		return $blockOptions;
 	}
 
+	private function assertThatLogWasAdded( $target, $action, $failMessage ) {
+		$this->assertSame(
+			1,
+			(int)$this->getDb()->newSelectQueryBuilder()
+				->select( 'COUNT(*)' )
+				->from( 'logging' )
+				->where( [
+					'log_type' => 'gblblock',
+					'log_action' => $action,
+					'log_namespace' => NS_USER,
+					'log_title' => $target,
+				] )
+				->caller( __METHOD__ )
+				->fetchField(),
+			$failMessage
+		);
+	}
+
 	/** @dataProvider provideBlock */
 	public function testBlock( array $data, string $expectedError ) {
 		// Prepare target for default block
@@ -87,6 +105,12 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 				$expectedAnon = '0';
 			}
 			$this->assertSame( $expectedAnon, $actual[ 'anon-only' ] );
+			// Assert that a log entry was added to the 'logging' table for the block
+			$this->assertThatLogWasAdded(
+				$data[ 'target' ],
+				in_array( 'modify', $data['options'] ) ? 'modify' : 'gblock',
+				'A logging entry for the global block was not found in the logging table.'
+			);
 		}
 	}
 

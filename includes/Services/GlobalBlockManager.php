@@ -2,8 +2,8 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Services;
 
-use Language;
 use LogPage;
+use ManualLogEntry;
 use MediaWiki\Block\BlockUser;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Title\Title;
@@ -29,15 +29,13 @@ class GlobalBlockManager {
 	private GlobalBlockLookup $globalBlockLookup;
 	private GlobalBlockingConnectionProvider $globalBlockingConnectionProvider;
 	private CentralIdLookup $centralIdLookup;
-	private Language $contentLanguage;
 
 	public function __construct(
 		ServiceOptions $options,
 		GlobalBlockingBlockPurger $globalBlockingBlockPurger,
 		GlobalBlockLookup $globalBlockLookup,
 		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
-		CentralIdLookup $centralIdLookup,
-		Language $contentLanguage
+		CentralIdLookup $centralIdLookup
 	) {
 		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
 		$this->options = $options;
@@ -45,7 +43,6 @@ class GlobalBlockManager {
 		$this->globalBlockLookup = $globalBlockLookup;
 		$this->globalBlockingConnectionProvider = $globalBlockingConnectionProvider;
 		$this->centralIdLookup = $centralIdLookup;
-		$this->contentLanguage = $contentLanguage;
 	}
 
 	/**
@@ -166,31 +163,27 @@ class GlobalBlockManager {
 		$modify = in_array( 'modify', $options );
 
 		// Log it.
-		$logAction = $modify ? 'modify' : 'gblock2';
+		$logAction = $modify ? 'modify' : 'gblock';
+
+		$logEntry = new ManualLogEntry( 'gblblock', $logAction );
+		$logEntry->setPerformer( $blocker );
+		$logEntry->setTarget( Title::makeTitleSafe( NS_USER, $address ) );
+		$logEntry->setComment( $reason );
+
 		$flags = [];
-
 		if ( $anonOnly ) {
-			$flags[] = wfMessage( 'globalblocking-list-anononly' )->inContentLanguage()->text();
+			$flags[] = 'anon-only';
 		}
 
-		if ( $expiry != 'infinity' ) {
-			$displayExpiry = $this->contentLanguage->timeanddate( $expiry );
-			$flags[] = wfMessage( 'globalblocking-logentry-expiry', $displayExpiry )
-				->inContentLanguage()->text();
-		} else {
-			$flags[] = wfMessage( 'globalblocking-logentry-noexpiry' )->inContentLanguage()->text();
-		}
-
-		$info = implode( ', ', $flags );
-
-		$page = new LogPage( 'gblblock' );
-		$logId = $page->addEntry( $logAction,
-			Title::makeTitleSafe( NS_USER, $address ),
-			$reason,
-			[ $info, $address ],
-			$blocker
-		);
-		$page->addRelations( 'gb_id', [ $blockId ], $logId );
+		// The 4th parameter is the target as plaintext used for GENDER support and is added by the log formatter.
+		$logEntry->setParameters( [
+			'5::expiry' => $expiry,
+			// List of flags which are then converted to a comma separated localised list by the log formatter
+			'6::flags' => $flags,
+		] );
+		$logEntry->setRelations( [ 'gb_id' => $blockId ] );
+		$logId = $logEntry->insert();
+		$logEntry->publish( $logId );
 
 		return StatusValue::newGood();
 	}
