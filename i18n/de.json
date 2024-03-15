@@ -115,7 +115,7 @@
 	"globalblocking-logentry-block-old-format": "$1 {{GENDER:$2|sperrte}} {{GENDER:$4|$3}} global ($5)",
 	"globalblocking-logentry-block": "$1 {{GENDER:$2|sperrte}} {{GENDER:$4|$3}} für die Dauer von $5 global $6",
 	"globalblocking-logentry-modify-old-format": "$1 {{GENDER:$2|änderte}} die globalen Sperrparameter für {{GENDER:$4|$3}} ($5)",
-	"globalblocking-logentry-modify": "$1 {{GENDER:$2|änderte}} die globale Sperrparameter für {{GENDER:$4|$3}} mit einer Sperrdauer von $5 $6",
+	"globalblocking-logentry-modify": "$1 {{GENDER:$2|änderte}} die globalen Sperrparameter für {{GENDER:$4|$3}} mit einer Sperrdauer von $5 $6",
 	"globalblocking-logentry-whitelist": "$1 {{GENDER:$2|deaktivierte}} lokal die globale Sperre für {{GENDER:$4|$3}}",
 	"globalblocking-logentry-dewhitelist": "$1 {{GENDER:$2|reaktivierte}} lokal die globale Sperre für {{GENDER:$4|$3}}",
 	"globalblocking-block-flag-anon-only": "nur anonyme Benutzer",
