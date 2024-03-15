@@ -209,6 +209,12 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 		} else {
 			$actual = $this->getGlobalBlock( $data[ 'target' ] );
 			$this->assertArrayEquals( [], $actual );
+			// Assert that a log entry was added to the 'logging' table for the unblock
+			$this->assertThatLogWasAdded(
+				$data[ 'target' ],
+				'gunblock',
+				'A logging entry for the unblock was not found in the logging table.'
+			);
 		}
 	}
 

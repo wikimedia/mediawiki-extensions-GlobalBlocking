@@ -5,14 +5,13 @@ namespace MediaWiki\Extension\GlobalBlocking;
 use LogEntry;
 use LogFormatter;
 use MediaWiki\Linker\Linker;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Message\Message;
 use MediaWiki\User\UserIdentityLookup;
 use MediaWiki\User\UserIdentityValue;
 use UnexpectedValueException;
 
 /**
- * Log formatter for gblblock/* entries (except gunblock).
+ * Log formatter for gblblock/* entries
  */
 class GlobalBlockLogFormatter extends LogFormatter {
 
@@ -20,11 +19,11 @@ class GlobalBlockLogFormatter extends LogFormatter {
 
 	/**
 	 * @param LogEntry $entry
+	 * @param UserIdentityLookup $userIdentityLookup
 	 */
-	public function __construct( LogEntry $entry ) {
+	public function __construct( LogEntry $entry, UserIdentityLookup $userIdentityLookup ) {
 		parent::__construct( $entry );
-		// TODO: Use dependency injection once gunblock is using this formatter.
-		$this->userIdentityLookup = MediaWikiServices::getInstance()->getUserIdentityLookup();
+		$this->userIdentityLookup = $userIdentityLookup;
 	}
 
 	protected function getMessageKey(): string {
@@ -34,6 +33,8 @@ class GlobalBlockLogFormatter extends LogFormatter {
 			$key = 'globalblocking-logentry-whitelist';
 		} elseif ( $subtype === 'dwhitelist' ) {
 			$key = 'globalblocking-logentry-dewhitelist';
+		} elseif ( $subtype === 'gunblock' ) {
+			$key = 'globalblocking-logentry-unblock';
 		} elseif ( $subtype === 'gblock' ) {
 			// The 'gblock' subtype is used by both legacy and non-legacy log entries. However, the order of the
 			// parameters between the legacy and non-legacy format is the same and as such we can use the same i18n

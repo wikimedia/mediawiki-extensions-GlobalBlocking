@@ -4,6 +4,7 @@ namespace MediaWiki\Extension\GlobalBlocking\Test\Integration;
 
 use LogFormatterTestCase;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
+use UnexpectedValueException;
 
 /**
  * @covers \MediaWiki\Extension\GlobalBlocking\GlobalBlockLogFormatter
@@ -32,6 +33,26 @@ class GlobalBlockLogFormatterTest extends LogFormatterTestCase {
 				],
 				'extra' => [
 					'text' => 'Sysop re-enabled the global block on 1.2.3.4/20 locally',
+					'api' => [],
+				],
+			],
+			'Global unblock on IP range' => [
+				'row' => [
+					'type' => 'gblblock', 'action' => 'gunblock', 'user_text' => 'Sysop',
+					'title' => '1.2.3.4/24', 'namespace' => NS_USER, 'params' => [],
+				],
+				'extra' => [
+					'text' => 'Sysop removed the global block on 1.2.3.4/24',
+					'api' => [],
+				],
+			],
+			'Global unblock on user' => [
+				'row' => [
+					'type' => 'gblblock', 'action' => 'gunblock', 'user_text' => 'Sysop',
+					'title' => 'Test-globally-unblocked', 'namespace' => NS_USER, 'params' => [],
+				],
+				'extra' => [
+					'text' => 'Sysop removed the global block on Test-globally-unblocked',
 					'api' => [],
 				],
 			],
@@ -113,5 +134,20 @@ class GlobalBlockLogFormatterTest extends LogFormatterTestCase {
 	 */
 	public function testLogDatabaseRows( $row, $extra ) {
 		$this->doTestLogFormatter( $row, $extra );
+	}
+
+	/**
+	 * Checks that an exception is thrown by the log formatter if a unknown action/log subtype is provided.
+	 */
+	public function testExceptionOnUnrecognisedLogSubtype() {
+		$this->expectException( UnexpectedValueException::class );
+		$this->doTestLogFormatter(
+			[
+				'type' => 'gblblock', 'action' => 'test', 'user_text' => 'Sysop',
+				'title' => 'Test-globally-blocked', 'namespace' => NS_USER,
+				'params' => [ '5::expiry' => '20250403020100', '6::flags' => [] ],
+			],
+			[ 'text' => '', 'api' => [] ]
+		);
 	}
 }
