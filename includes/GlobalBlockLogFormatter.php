@@ -2,27 +2,36 @@
 
 namespace MediaWiki\Extension\GlobalBlocking;
 
+use ExtensionRegistry;
 use LogEntry;
 use LogFormatter;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Html\Html;
 use MediaWiki\Linker\Linker;
 use MediaWiki\Message\Message;
+use MediaWiki\User\UserFactory;
+use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserIdentityLookup;
 use MediaWiki\User\UserIdentityValue;
 use UnexpectedValueException;
+use Wikimedia\IPUtils;
 
 /**
  * Log formatter for gblblock/* entries
  */
 class GlobalBlockLogFormatter extends LogFormatter {
 
+	private UserFactory $userFactory;
 	private UserIdentityLookup $userIdentityLookup;
 
 	/**
 	 * @param LogEntry $entry
+	 * @param UserFactory $userFactory
 	 * @param UserIdentityLookup $userIdentityLookup
 	 */
-	public function __construct( LogEntry $entry, UserIdentityLookup $userIdentityLookup ) {
+	public function __construct( LogEntry $entry, UserFactory $userFactory, UserIdentityLookup $userIdentityLookup ) {
 		parent::__construct( $entry );
+		$this->userFactory = $userFactory;
 		$this->userIdentityLookup = $userIdentityLookup;
 	}
 
@@ -113,10 +122,57 @@ class GlobalBlockLogFormatter extends LogFormatter {
 		$userText = $this->entry->getTarget()->getText();
 		$targetUserIdentity = $this->userIdentityLookup->getUserIdentityByName( $userText )
 			?? UserIdentityValue::newAnonymous( $userText );
+		$canViewTarget = $this->checkAuthorityCanSeeUser( $targetUserIdentity );
 
-		$params[2] = Message::rawParam( $this->makeUserLink( $targetUserIdentity, Linker::TOOL_LINKS_NOBLOCK ) );
-		$params[3] = $userText;
+		if ( !$canViewTarget ) {
+			// If the current authority cannot view the target of the block, then replace the user link with a message
+			// indicating that the target of the block is hidden.
+			$params[2] = Message::rawParam( Html::element(
+				'span',
+				[ 'class' => 'history-deleted' ],
+				$this->msg( 'rev-deleted-user' )->text()
+			) );
+			$params[3] = '';
+		} else {
+			// Overwrite the third parameter (index 2) with a user link to provide a talk page link and link the
+			// contributions page for IP addresses.
+			$params[2] = Message::rawParam( $this->makeUserLink( $targetUserIdentity, Linker::TOOL_LINKS_NOBLOCK ) );
+			$params[3] = $userText;
+		}
 
 		return $params;
+	}
+
+	/**
+	 * Returns whether the current authority can see the target of the block.
+	 *
+	 * @param UserIdentity $userIdentity The object returned by ::getUserIdentityForTarget
+	 * @return bool
+	 */
+	private function checkAuthorityCanSeeUser( UserIdentity $userIdentity ): bool {
+		if ( IPUtils::isIPAddress( $userIdentity->getName() ) ) {
+			// IP addresses cannot be hidden, so the authority will always be able to see them.
+			return true;
+		}
+
+		// Assume that the authority has the rights to see the user by default.
+		$canViewTarget = true;
+		$authority = $this->context->getAuthority();
+
+		// If the user exists locally, then we can check if the user is hidden locally.
+		if ( $userIdentity->isRegistered() ) {
+			$user = $this->userFactory->newFromUserIdentity( $userIdentity );
+			$canViewTarget = !( $user->isHidden() && !$authority->isAllowed( 'hideuser' ) );
+		}
+
+		// If CentralAuth is loaded, then we can check if the central user is hidden.
+		// This is necessary if the user does not exist on this wiki but their global
+		// account is hidden.
+		if ( $canViewTarget && ExtensionRegistry::getInstance()->isLoaded( 'CentralAuth' ) ) {
+			$centralUser = CentralAuthUser::getInstance( $userIdentity );
+			$canViewTarget = !( $centralUser->isHidden() && !$authority->isAllowed( 'centralauth-suppress' ) );
+		}
+
+		return $canViewTarget;
 	}
 }
