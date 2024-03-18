@@ -4,8 +4,11 @@ namespace MediaWiki\Extension\GlobalBlocking\Test\Integration\Services;
 
 use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
+use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
+use Wikimedia\IPUtils;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
 
 /**
@@ -17,26 +20,36 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 
 	public function setUp(): void {
 		ConvertibleTimestamp::setFakeTime( '2021-03-02T22:00:00Z' );
+		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
+		// to be the local provider.
+		$this->setMwGlobals( 'wgCentralIdLookupProvider', 'local' );
 	}
 
 	/**
-	 * @param string $address
+	 * @param string $target
 	 * @return array
 	 */
-	private function getGlobalBlock( string $address ) {
+	private function getGlobalBlock( string $target ) {
 		$blockOptions = [];
 		$dbr = GlobalBlockingServices::wrap( $this->getServiceContainer() )
 			->getGlobalBlockingConnectionProvider()
 			->getReplicaGlobalBlockingDatabase();
-		$block = $dbr->newSelectQueryBuilder()
+		$queryBuilder = $dbr->newSelectQueryBuilder()
 			->select( [ 'gb_anon_only', 'gb_reason', 'gb_expiry' ] )
 			->from( 'globalblocks' )
 			->where( [
-				'gb_address' => $address,
+				'gb_address' => $target,
 				$dbr->expr( 'gb_expiry', '>', $dbr->timestamp() ),
 			] )
-			->caller( __METHOD__ )
-			->fetchRow();
+			->caller( __METHOD__ );
+		if ( !IPUtils::isIPAddress( $target ) ) {
+			// Used to assert that the central ID column is set correctly.
+			$queryBuilder->where( [
+				'gb_target_central_id' => $this->getServiceContainer()
+					->getCentralIdLookup()->centralIdFromName( $target )
+			] );
+		}
+		$block = $queryBuilder->fetchRow();
 		if ( $block ) {
 			$blockOptions['anon-only'] = $block->gb_anon_only;
 			$blockOptions['reason'] = $block->gb_reason;
@@ -58,7 +71,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'log_type' => 'gblblock',
 					'log_action' => $action,
 					'log_namespace' => NS_USER,
-					'log_title' => $target,
+					'log_title' => Title::makeTitleSafe( NS_USER, $target )->getDBkey(),
 				] )
 				->caller( __METHOD__ )
 				->fetchField(),
@@ -66,8 +79,36 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 		);
 	}
 
+	public function testBlockOnRaceCondition() {
+		// Mock GlobalBlockLookup::getGlobalBlockId to return no block ID even if though one exists
+		// to simulate a race condition.
+		$globalBlockLookup = $this->createMock( GlobalBlockLookup::class );
+		$globalBlockLookup->method( 'getGlobalBlockId' )
+			->willReturn( 0 );
+		// Make the mock GlobalBlockLookup the service instance for the test
+		$this->setService( 'GlobalBlocking.GlobalBlockLookup', $globalBlockLookup );
+		// Call ::block to create the first block. The second call will test the race condition handling.
+		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )
+			->getGlobalBlockManager();
+		$globalBlockManager->block(
+			'1.2.3.4',
+			'Test block',
+			'infinity',
+			$this->getMutableTestUser( 'steward' )->getUser()
+		);
+		// Call ::block again with the same arguments to test the race condition handling.
+		$errors = $globalBlockManager->block(
+			'1.2.3.4',
+			'Test block',
+			'infinity',
+			$this->getMutableTestUser( 'steward' )->getUser()
+		);
+		$this->assertStatusError( 'globalblocking-block-failure', $errors );
+	}
+
 	/** @dataProvider provideBlock */
-	public function testBlock( array $data, string $expectedError ) {
+	public function testBlock( array $data, string $expectedError, bool $globalAccountBlocksEnabled ) {
+		$this->setMwGlobals( 'wgGlobalBlockingAllowGlobalAccountBlocks', $globalAccountBlocksEnabled );
 		// Prepare target for default block
 		$target = '1.2.3.6';
 
@@ -124,6 +165,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'options' => [ 'anon-only' ],
 				],
 				'expectedError' => '',
+				'globalAccountBlocksEnabled' => true,
 			],
 			'good range' => [
 				'data' => [
@@ -133,6 +175,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'options' => [ 'anon-only' ],
 				],
 				'expectedError' => '',
+				'globalAccountBlocksEnabled' => true,
 			],
 			'good modify' => [
 				'data' => [
@@ -142,15 +185,27 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'options' => [ 'anon-only', 'modify' ],
 				],
 				'expectedError' => '',
+				'globalAccountBlocksEnabled' => true,
 			],
 			'bad target' => [
 				'data' => [
 					'target' => 'Test User',
 					'reason' => 'Test block',
 					'expiry' => 'infinity',
-					'options' => [ 'anon-only' ],
+					'options' => [],
 				],
 				'expectedError' => 'globalblocking-block-ipinvalid',
+				'globalAccountBlocksEnabled' => false,
+			],
+			'no such user target' => [
+				'data' => [
+					'target' => 'Nonexistent User',
+					'reason' => 'Test block',
+					'expiry' => 'infinity',
+					'options' => [ 'anon-only' ],
+				],
+				'expectedError' => 'globalblocking-block-target-invalid',
+				'globalAccountBlocksEnabled' => true,
 			],
 			'bad expiry' => [
 				'data' => [
@@ -160,6 +215,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'options' => [ 'anon-only' ],
 				],
 				'expectedError' => 'globalblocking-block-expiryinvalid',
+				'globalAccountBlocksEnabled' => true,
 			],
 			'bad range' => [
 				'data' => [
@@ -169,6 +225,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'options' => [ 'anon-only' ],
 				],
 				'expectedError' => 'globalblocking-bigrange',
+				'globalAccountBlocksEnabled' => true,
 			],
 			'no modify' => [
 				'data' => [
@@ -178,12 +235,73 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'options' => [ 'anon-only' ],
 				],
 				'expectedError' => 'globalblocking-block-alreadyblocked',
+				'globalAccountBlocksEnabled' => true,
+			],
+		];
+	}
+
+	/** @dataProvider provideBlockForExistingUser */
+	public function testBlockForExistingUser( array $data, string $expectedError ) {
+		$this->setMwGlobals( 'wgGlobalBlockingAllowGlobalAccountBlocks', true );
+		$testUser = $this->getTestUser()->getUser();
+		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )
+			->getGlobalBlockManager();
+		$errors = $globalBlockManager->block(
+			$testUser->getName(),
+			$data['reason'],
+			$data['expiry'],
+			$this->getMutableTestUser( 'steward' )->getUser(),
+			$data['options']
+		);
+		if ( $expectedError !== '' ) {
+			$this->assertStatusMessage( $expectedError, $errors );
+		} else {
+			$actual = $this->getGlobalBlock( $testUser->getName() );
+			$this->assertSame( $data['reason'], $actual['reason'] );
+			$this->assertSame( $data['expiry'], $actual['expiry'] );
+			$this->assertSame( 0, (int)$actual['anon-only'] );
+			// Assert that a log entry was added to the 'logging' table for the block
+			$this->assertThatLogWasAdded(
+				$testUser->getName(), 'gblock',
+				'A logging entry for the global block was not found in the logging table.'
+			);
+		}
+	}
+
+	public static function provideBlockForExistingUser() {
+		return [
+			'good' => [
+				'data' => [
+					'reason' => 'Test block',
+					'expiry' => 'infinity',
+					'options' => [],
+				],
+				'expectedError' => '',
+			],
+			'Attempted to block account with anon-only set' => [
+				'data' => [
+					'reason' => 'Test block1234',
+					'expiry' => 'infinity',
+					'options' => [ 'anon-only' ],
+				],
+				'expectedError' => 'globalblocking-block-anononly-on-account',
+				'globalAccountBlocksEnabled' => true,
+			],
+			'bad expiry' => [
+				'data' => [
+					'reason' => 'Test block',
+					'expiry' => '2021-03-06T25:00:00Z',
+					'options' => [ 'anon-only' ],
+				],
+				'expectedError' => 'globalblocking-block-expiryinvalid',
+				'globalAccountBlocksEnabled' => true,
 			],
 		];
 	}
 
 	/** @dataProvider provideUnblock */
-	public function testUnblock( array $data, string $expectedError ) {
+	public function testUnblock( array $data, string $expectedError, bool $globalAccountBlocksEnabled ) {
+		$this->setMwGlobals( 'wgGlobalBlockingAllowGlobalAccountBlocks', $globalAccountBlocksEnabled );
 		// Prepare target
 		$target = '1.2.3.4';
 
@@ -226,6 +344,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'reason' => 'Test unblock',
 				],
 				'expectedError' => '',
+				'globalAccountBlocksEnabled' => true,
 			],
 			'bad target' => [
 				'data' => [
@@ -233,6 +352,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'reason' => 'Test unblock',
 				],
 				'expectedError' => 'globalblocking-block-ipinvalid',
+				'globalAccountBlocksEnabled' => false,
 			],
 			'not blocked' => [
 				'data' => [
@@ -240,6 +360,15 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'reason' => 'Test unblock',
 				],
 				'expectedError' => 'globalblocking-notblocked',
+				'globalAccountBlocksEnabled' => false,
+			],
+			'not blocked when account blocks enabled' => [
+				'data' => [
+					'target' => '1.2.3.5',
+					'reason' => 'Test unblock',
+				],
+				'expectedError' => 'globalblocking-notblocked-new',
+				'globalAccountBlocksEnabled' => true,
 			],
 		];
 	}

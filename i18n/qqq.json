@@ -55,6 +55,7 @@
 	"globalblocking-block-ipinvalid": "{{Identical|The IP address ($1) ...}}",
 	"globalblocking-block-target-invalid": "Used as error message on Special:GlobalBlock if the target entered was invalid.\nSee also: {{msg-mw|globalblocking-block-ipinvalid}}",
 	"globalblocking-block-expiryinvalid": "Used as error message on Special:GlobalBlock if expiry time entered was invalid.",
+	"globalblocking-block-anononly-on-account": "Used as error message on Special:GlobalBlock if the blocker tries to globally block an account when they have specified anon-only.",
 	"globalblocking-block-submit": "Used as submit button text on Special:GlobalBlock form.\n\nSee also:\n* {{msg-mw|globalblocking-modify-submit}}\n* {{msg-mw|ipbsubmit}}\n* {{msg-mw|globalblocking-block-submit-new}}",
 	"globalblocking-block-submit-new": "Used as submit button text on Special:GlobalBlock form when global blocks on accounts are enabled.\n\nSee also:\n* {{msg-mw|globalblocking-modify-submit}}\n* {{msg-mw|ipbsubmit}}\n* {{msg-mw|globalblocking-block-submit}}",
 	"globalblocking-modify-submit": "Used as submit button text on Special:GlobalBlock form when modifying an existing global block.\n\nSee also:\n* {{msg-mw|globalblocking-block-submit}}\n* {{msg-mw|ipb-change-block}}",

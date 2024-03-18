@@ -218,6 +218,7 @@ class GlobalBlocking {
 	 * @param User $blocker
 	 * @param array $options
 	 * @return StatusValue An empty or fatal status
+	 * @deprecated Since 1.42. Use GlobalBlockManager::block.
 	 */
 	public static function block( $address, $reason, $expiry, $blocker, $options = [] ): StatusValue {
 		return GlobalBlockingServices::wrap( MediaWikiServices::getInstance() )
@@ -230,6 +231,7 @@ class GlobalBlocking {
 	 * @param string $reason
 	 * @param User $performer
 	 * @return StatusValue An empty or fatal status
+	 * @deprecated Since 1.42. Use GlobalBlockManager::unblock.
 	 */
 	public static function unblock( string $address, string $reason, User $performer ): StatusValue {
 		return GlobalBlockingServices::wrap( MediaWikiServices::getInstance() )

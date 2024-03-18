@@ -85,7 +85,8 @@ return [
 			$globalBlockingServices->getGlobalBlockingBlockPurger(),
 			$globalBlockingServices->getGlobalBlockLookup(),
 			$globalBlockingServices->getGlobalBlockingConnectionProvider(),
-			$services->getCentralIdLookup()
+			$services->getCentralIdLookup(),
+			$services->getUserFactory()
 		);
 	},
 	'GlobalBlocking.GlobalBlockingLinkBuilder' => static function (
