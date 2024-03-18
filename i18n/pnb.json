@@ -65,7 +65,6 @@
 	"globalblocking-blocked-nopassreset": "تسیں اک ورتن والے دی کنجی نئیں بدل سکدے کیوں جے تساں تے جگت روک اے۔",
 	"globalblocking-logpage": "جگت روک لاگ",
 	"globalblocking-logpagetext": "ایہ جگت روکاں دی لاگ اے جیہڑی بنائی گئی اے تے ایس وکی توں ہٹا دتی گئی اے۔\nاے گل یاد رکھن والی اے جے جگت روکاں بنایاں جا سکدیاں نیں تے دوجے وکیاں تے ہٹائیاں جاسکدیاں نیں، تے ایہ جگت روکاں  ایس وکی تے وی اثر پاندیاں نیں۔\nسارے چلدے جگت روکاں نوں ویکھن لئی تسیں ویکھو [[Special:GlobalBlockList|جگت روک لسٹ]]",
-	"globalblocking-unblock-logentry": "جگت روک [[$1]] توں ہٹادتی گئی۔",
 	"globalblocking-loglink": "آئی پی پتہ $1 تے جگت روک اے ([[{{#Special:GlobalBlockList}}/$1|پوری گل]])",
 	"globalblocking-showlog": "آئی پی پتہ پہلے وی روکیا گیا اے۔\nروک لاگ تھلے اتے پتے لئی دتی گئی اے:",
 	"globalblocklist": "جگت روک آئی پی پتیاں دی لسٹ",

@@ -67,7 +67,6 @@
 	"globalblocking-blocked-nopassreset": "U kan nie wagwoorde van gebruikers herstel nie omdat u globaal geblokkeer word.",
 	"globalblocking-logpage": "Logboek van globale blokkering",
 	"globalblocking-logpagetext": "Die logboek bevat blokkades wat op hierdie wiki geskep of verwyder is.\nGlobale blokkades kan ook op ander wiki's geskep of verwyder word, en invloed hê op hierdie wiki.\nAlle globale blokkades is opgeteken in die [[Special:GlobalBlockList|lys van globale blokkades]].",
-	"globalblocking-unblock-logentry": "verwyder globale versperring op [[$1]]",
 	"globalblocking-loglink": "Die IP-adres is globaal geblokkeer ([[{{#Special:GlobalBlockList}}/$1|volledige details]]).",
 	"globalblocking-showlog": "Die IP-adres was vantevore geblokkeer gewees.\nDie blokkeerlogboek word hieronder weergegee:",
 	"globalblocklist": "Lys van globaal geblokkeerde IP-adresse",

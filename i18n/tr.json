@@ -87,7 +87,6 @@
 	"globalblocking-blocked-nopassreset": "IP adresiniz küresel olarak engellendiği için kullanıcının parolarınızı sıfırlayamazsınız.",
 	"globalblocking-logpage": "Küresel engelleme günlüğü",
 	"globalblocking-logpagetext": "Bu vikide yapılan ve kaldırılan küresel engellemelerin günlüğüdür.\nKüresel engellemelerin diğer vikilerde yapılıp kaldırılabileceğini, ve bu küresel engellemelerin bu vikiyi etkileyebileceğini unutmayın.\nTüm aktif küresel engellemeri görmek için, [[Special:GlobalBlockList|küresel engelleme listesine]] bakabilirsiniz.",
-	"globalblocking-unblock-logentry": "[[$1]] için küresel engelleme kaldırıldı",
 	"globalblocking-logentry-whitelist": "$1, küresel engeli yerel olarak $3 {{GENDER:$2|devre dışı bıraktı}}",
 	"globalblocking-logentry-dewhitelist": "$1, küresel engeli yerel olarak $3 {{GENDER:$2|yeniden etkinleştirdi}}",
 	"globalblocking-loglink": "$1 IP adresi küresel olarak engellendi ([[{{#Special:GlobalBlockList}}/$1|tüm ayrıntılar]]).",

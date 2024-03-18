@@ -70,7 +70,6 @@
 	"globalblocking-blocked-nopassreset": "Ne c'hellit ket adderaouekaat gerioù-tremen implijerien peogwir eo stanket ho chomlec’h IP en un doare hollek.",
 	"globalblocking-logpage": "Marilh ar stankadennoù hollek",
 	"globalblocking-logpagetext": "Setu aze marilh ar stankadennoù hollek zo bet lakaet e plas ha lamet kuit er wiki-mañ.\nNotit mat e c'hall ar stankadennoù hollek bezañ lakaet e plas pe dilamet war wikioù all, hag e c'hall ar stankadennoù hollek-se degas strafuilh war ar wiki-mañ.\nEvit gwelet an holl stankadennoù oberiant evit ar poent e c'hallit mont da sellet ouzh [[Special:GlobalBlockList|roll ar stankadennoù hollek]].",
-	"globalblocking-unblock-logentry": "en deus tennet stankadenn hollek [[$1]]",
 	"globalblocking-loglink": "Stanket eo ar c'homlec'h IP $1 en un doare hollek ([[{{#Special:GlobalBlockList}}/$1|muioc'h a ditouroù]]).",
 	"globalblocking-showlog": "Stanket eo bet an implijer-mañ c'hoazh.\nA-is emañ marilh ar stankadennoù :",
 	"globalblocklist": "Roll ar chomlec'hioù IP stanket en un doare hollek",

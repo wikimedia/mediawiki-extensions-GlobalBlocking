@@ -73,7 +73,6 @@
 	"globalblocking-blocked-nopassreset": "Anda tidak boleh mengeset semula kata laluan pengguna kerana anda telah disekat di semua wiki.",
 	"globalblocking-logpage": "Log sekatan sejagat",
 	"globalblocking-logpagetext": "Yang berikut ialah log sekatan sejagat yang telah dikenakan dan dibatalkan di wiki ini. Sila ambil perhatian bahawa sekatan sejagat boleh dikenakan dan dibatalkan di wiki-wiki lain, justeru berkuatkuasa di wiki ini juga. Anda juga boleh melihat [[Special:GlobalBlockList|senarai semakan sejagat yang sedang berkuatkuasa]].",
-	"globalblocking-unblock-logentry": "membatalkan sekatan sejagat terhadap [[$1]]",
 	"globalblocking-logentry-dewhitelist": "$1 {{GENDER:$2|kembali diaktifkan}} sekat global $3 di local",
 	"globalblocking-loglink": "Alamat IP $1 telah disekat di semua wiki ([[{{#Special:GlobalBlockList}}/$1|butiran penuh]]).",
 	"globalblocking-showlog": "Alamat IP ini pernah disekat sebelum ini. Log sekatan disediakan di bawah sebagai rujukan:",

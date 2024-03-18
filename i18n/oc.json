@@ -63,7 +63,6 @@
 	"globalblocking-blocked-nopassreset": "Podètz pas reïnicializar los senhals d’utilizaire perque sètz blocat(ada) globalament.",
 	"globalblocking-logpage": "Jornal dels blocatges globals",
 	"globalblocking-logpagetext": "Vaquí un jornal dels blocatges globals que son estats faits e revocats sus aqueste wiki.\nDeuriá èsser relevat que los blocatges globals pòdon èsser faits o anullats sus d’autres wikis, e que losdits blocatges globals son de natura a interferir sus aqueste wiki.\nPer visionar totes los blocatges globals actius, podètz visitar la [[Special:GlobalBlockList|lista dels blocatges globals]].",
-	"globalblocking-unblock-logentry": "blocatge global levat sus [[$1]]",
 	"globalblocking-loglink": "L'adreça IP $1 es blocada globalament ([[{{#Special:GlobalBlockList}}/$1|detalhs]]).",
 	"globalblocking-showlog": "Aquesta adreça IP es estada blocada anteriorament.\nLo jornal dels blocatges es disponible çaijós :",
 	"globalblocklist": "Lista de las adreças IP blocadas globalament",

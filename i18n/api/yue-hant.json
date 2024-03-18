@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"H78c67c"
+		]
+	},
+	"globalblocking-apierror-badtarget": "提供咗嘅用戶名、IP地址或IP段（$1）無效。"
+}

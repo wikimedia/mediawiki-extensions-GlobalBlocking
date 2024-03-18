@@ -64,7 +64,6 @@
 	"globalblocking-blocked-nopassreset": "No puede demandar recordatorios de claves d'usuario porque vusté ye bloqueyau globalment.",
 	"globalblocking-logpage": "Rechistro de bloqueyos globals",
 	"globalblocking-logpagetext": "Ista ye una lista de bloqueyos globals que s'han feito y retirau en iste wiki.\nCal sinyalar que os bloqueyos globals se pueden fer y sacar en atros wikis, y que istos bloqueyos globals pueden afectar a iste wiki.\nTa veyer totz os bloqueyos globals activos, puede veyer [[Special:GlobalBlockList|lista de bloqueyos globals]].",
-	"globalblocking-unblock-logentry": "ha desactivau o bloqueyo global en [[$1]]",
 	"globalblocking-loglink": "L'adreza IP $1 ye bloqueyada globalment ([[{{#Special:GlobalBlockList}}/$1|detalles]]).",
 	"globalblocking-showlog": "Ista adreza IP ha estau bloquiada previament.\nO rechistro de bloqueyos se proporciona contino como referencia:",
 	"globalblocklist": "Lista d'adrezas IP bloqueyadas globalment",

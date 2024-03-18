@@ -82,7 +82,6 @@
 	"globalblocking-blocked-nopassreset": "Ne možete resetovati lozinke korisnika jer je Vaša IP-adresa globalno blokirana.",
 	"globalblocking-logpage": "Dnevnik globalnog blokiranja",
 	"globalblocking-logpagetext": "Ovo je dnevnik globalnih blokada napravljenih i uklonjenih na ovom vikiju.\nTreba imati na umu da se globalne blokade mogu napraviti i ukloniti i na drugim vikijima i mogu imati utjecaj na ovaj viki.\nZa prikaz svih aktivnih globalnih blokada, možete pogledati [[Special:GlobalBlockList|spisak globalnih blokada]].",
-	"globalblocking-unblock-logentry": "uklanja globalnu blokadu za [[$1]]",
 	"globalblocking-logentry-whitelist": "$1 lokalno {{GENDER:$2|je onemogućio|je onemogućila}} globalnu blokadu $3",
 	"globalblocking-logentry-dewhitelist": "$1 lokalno {{GENDER:$2|je povratio|je povratila}} globalnu blokadu $3",
 	"globalblocking-loglink": "IP-adresa $1 je globalno blokirana ([[{{#Special:GlobalBlockList}}/$1|svi detalji]]).",

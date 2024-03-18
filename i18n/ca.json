@@ -76,7 +76,6 @@
 	"globalblocking-blocked-nopassreset": "No podeu reinicialitzar les contrasenyes d'usuari perquè la vostra adreça IP està globalment blocada.",
 	"globalblocking-logpage": "Registre de blocatges globals",
 	"globalblocking-logpagetext": "Això és un registre dels blocatges globals que s'han fet o s'han eliminat en aquest wiki.\nCal notar que els blocatges globals es poden aplicar i eliminar des d'altres wikis, i aquests blocatges globals poden afectar aquest wiki.\nPer a veure tots els blocatges globals actius, vegeu la [[Special:GlobalBlockList|llista de blocatges globals]].",
-	"globalblocking-unblock-logentry": "S'ha cancel·lat el blocatge global de [[$1]]",
 	"globalblocking-loglink": "L'adreça IP $1 està blocada globalment ([[{{#Special:GlobalBlockList}}/$1|detalls]]).",
 	"globalblocking-showlog": "Aquesta adreça IP s'ha blocat anteriorment.\nPer més detalls, a continuació es mostra el registre de blocatges:",
 	"globalblocklist": "Llista de les adreces IP blocades globalment",

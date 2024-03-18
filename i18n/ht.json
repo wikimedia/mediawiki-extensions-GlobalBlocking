@@ -43,7 +43,6 @@
 	"globalblocking-whitelist-whitelisted": "Ou dezaktive blokaj global #$2 pou adrès IP '''$1''' nan {{SITENAME}}.",
 	"globalblocking-whitelist-dewhitelisted": "Ou te reyisi remèt blokaj global #$2 sou adrès IP '''$1''' nan {{SITENAME}}.",
 	"globalblocking-logpage": "Jounal blokaj global",
-	"globalblocking-unblock-logentry": "retire blokaj global la sou [[$1]]",
 	"globalblocklist": "Lis Adrès IP bloke globalman yo",
 	"globalblock": "Bloke yon adrès IP globalman",
 	"right-globalblock": "Fè blokaj global",

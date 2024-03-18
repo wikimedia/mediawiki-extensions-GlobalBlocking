@@ -81,7 +81,6 @@
 	"globalblocking-blocked-nopassreset": "Sa ei saa kasutaja parooli lähtestada, sest sinu IP-aadress on globaalselt blokeeritud.",
 	"globalblocking-logpage": "Globaalne blokeerimislogi",
 	"globalblocking-logpagetext": "Siin logis on selles vikis üles seatud ja eemaldatud globaalsed blokeeringud.\nTuleks arvesse võtta, et globaalseid blokeeringuid saab teistes vikides üles seada ja eemaldada ning et need globaalsed blokeeringud võivad puudutada ka seda vikit.\nKõigi jõus olevate blokeeringute nägemiseks võid vaadata [[Special:GlobalBlockList|globaalsete blokeeringute nimekirja]].",
-	"globalblocking-unblock-logentry": "eemaldas IP-aadressi [[$1]] globaalse blokeeringu",
 	"globalblocking-logentry-whitelist": "$1 {{GENDER:$2|tühistas}} kohalikus vikis blokeeritava $3 globaalse blokeeringu",
 	"globalblocking-logentry-dewhitelist": "$1 {{GENDER:$2|ennistas}} kohalikus vikis blokeeritava $3 globaalse blokeeringu",
 	"globalblocking-loglink": "IP-aadress $1 on globaalselt blokeeritud ([[{{#Special:GlobalBlockList}}/$1|üksikasjad]]).",

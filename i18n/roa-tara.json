@@ -73,7 +73,6 @@
 	"globalblocking-blocked-nopassreset": "Non ge puè azzerà 'a password de l'utende purcé è state bloccate globalmende.",
 	"globalblocking-logpage": "Archivije de le blocche globale",
 	"globalblocking-logpagetext": "Quiste è 'n'archivije de le blocche globale ca onne state fatte o luate da sus a sta Uicchi.<br />\nS'avesse notà ca le blocche globale ponne essere fatte e luate pure sus a otre Uicchi, e 'u stesse onne effette sus a sta Uicchi.<br />\nPe vedè tutte le blocche globale attive, tu puè vedè l'[[Special:GlobalBlockList|elenghe de le blocche globale]].",
-	"globalblocking-unblock-logentry": "blocche globale luate sus a [[$1]]",
 	"globalblocking-logentry-whitelist": "$1 ave {{GENDER:$2|disabbilitate}} 'u blocche globbale sus a $3 localmende",
 	"globalblocking-logentry-dewhitelist": "$1 ave {{GENDER:$2|riabbilitate}} 'u blocche globbale sus a $3 localmende",
 	"globalblocking-loglink": "L'indirizze IP $1 ha state bloccate globalmende ([[{{#Special:GlobalBlockList}}/$1|dettaglie comblete]]).",

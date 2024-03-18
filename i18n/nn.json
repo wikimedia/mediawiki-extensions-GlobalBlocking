@@ -64,7 +64,6 @@
 	"globalblocking-whitelist-intro": "Du kan nytta dette skjemaet for å endra den lokale statusen til ei global blokkering. Om ei global blokkering er slegi av på denne wikien, kan brukarar på den påverka IP-adressa vera i stand til å endra sider normalt.\n[[Special:GlobalBlockList|Attende til den globale blokkeringslista]].",
 	"globalblocking-logpage": "Global blokkeringslogg",
 	"globalblocking-logpagetext": "Dette er ein logg over globale blokkeringar som har vortne gjennomførte eller fjerna på denne wikien.\nDet bør merkast at globale blokkeringar òg kan både verta til og påfølgjande fjerna på andre wikiar, og at desse kan påverka denne wikien.\nFor å visa alle aktive globale blokkeringar, sjå den [[Special:GlobalBlockList|globale blokkeringslista]].",
-	"globalblocking-unblock-logentry": "fjerna global blokkering på [[$1]]",
 	"globalblocking-contribs-notice": "Denne IP-adressa er for tida blokkert globalt. Den siste oppføringa i den globale blokkeringsloggen er synt nedanfor:",
 	"globalblocklist": "Liste over globalt blokkerte IP-adresser",
 	"globalblock": "Blokker ei IP-adressa globalt",

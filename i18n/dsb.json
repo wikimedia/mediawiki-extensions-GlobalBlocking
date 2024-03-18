@@ -66,7 +66,6 @@
 	"globalblocking-blocked-nopassreset": "Njamóžoš gronidła wužywarja slědk wzaś, dokulaž sy globalnje blokěrowany.",
 	"globalblocking-logpage": "Protokol globalnych blokěrowanjow",
 	"globalblocking-logpagetext": "To jo protokol globalnych blokěrowanjow, kótarež su se cynili a wótpórali na toś tom wikiju.\nTy by měł źiwaś na to, až globalne blokěrowanja daju se cyniś a wótpóraś na drugich wikijach a až toś te globalne blokěrowanja mógu wobwliwowaś toś ten wiki.\nAby se woglědał wšykne aktiwne globalne blokěrowanja, móžoš se woglědaś [[Special:GlobalBlockList|lisćinu globalnych blokěrowanjow]].",
-	"globalblocking-unblock-logentry": "jo globalne blokěrowanje za [[$1]] wótpórał",
 	"globalblocking-loglink": "IP-adresa $1 jo globalnje zablokěrowana ([[{{#Special:GlobalBlockList}}/$1|drobnostki]]).",
 	"globalblocking-showlog": "Toś ta IP-adresa jo se pjerwjej zablokěrowała.\nProtokol blokěrowanjow jo dołojce pódał slědujuce ako referencu:",
 	"globalblocklist": "Lisćina globalnje blokěrowanych IP-adresow",

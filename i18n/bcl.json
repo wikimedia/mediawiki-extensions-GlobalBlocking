@@ -69,7 +69,6 @@
 	"globalblocking-blocked-nopassreset": "Ika dae makakapagbago kan mga pasa-taramon kan paragamit nin huli ta ika pankinaban na pinagkubkob.",
 	"globalblocking-logpage": "Talaan nin pankinaban na kubkob",
 	"globalblocking-logpagetext": "Ini sarong talaan nin pankinaban na mga kubkob na pinaghihimo asin pinagtatangkas sa wiki na ini.\nIni dapat na pakantandae na an pankinaban na kubkob mapupuwedeng mahihimo asin matatangkas sa ibang mga wikis, asin ta ining mga pankinaban na kubkob makaka-apekto kaining wiki.\nTanganing tanawon an gabos na aktibong pankinaban na mga kubkob, ika mapuwedeng makatanaw sa [[Special:GlobalBlockList|listahan kan pankinaban na kubkob]].",
-	"globalblocking-unblock-logentry": "pinagtangkas an pankinaban na kubkob ki [[$1]]",
 	"globalblocking-loglink": "An estada kan IP na $1 pankinaban na pinagkubkob ([[{{#Special:GlobalBlockList}}/$1|kabilogan na mga detalye]]).",
 	"globalblocking-showlog": "Ining estada kan IP dati nang pinagkubkob.\nAn talaan nin kubkob pinaghaya sa ibaba bilang reperensiya:",
 	"globalblocklist": "Listahan kan pankinabanong pinagkubkob na mga estada kan IP",

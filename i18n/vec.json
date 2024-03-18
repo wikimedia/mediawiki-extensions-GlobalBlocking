@@ -69,7 +69,6 @@
 	"globalblocking-blocked-nopassreset": "No te podi resetar le password dei utenti, parché a te sì blocà globalmente.",
 	"globalblocking-logpage": "Registro dei blochi globali",
 	"globalblocking-logpagetext": "De sèvito xe elencà i blochi globali che xe stà messi o cavà su sta wiki. I blochi globali i pol vegner fati su altre wiki e sti blochi globali i pol èssar validi anca su sta wiki.\nPar védar tuti i blochi globali ativi, varda l'[[Special:GlobalBlockList|elenco dei blochi globali]].",
-	"globalblocking-unblock-logentry": "cavà el bloco global su [[$1]]",
 	"globalblocking-loglink": "L'indirisso IP el xe blocà globalmente ([[{{#Special:GlobalBlockList}}/$1|tuti i detagli]]).",
 	"globalblocking-showlog": "Sto indirisso IP i lo gavéa zà blocà tenpo fa.\nEl registro dei blochi se pol védarlo qua de soto par comodità:",
 	"globalblocklist": "Lista dei indirissi IP blocà globalmente",

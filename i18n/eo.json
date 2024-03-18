@@ -69,7 +69,6 @@
 	"globalblocking-blocked-nopassreset": "Vi ne povas restarigi pasvortojn de aliaj uzantoj, cxar vi estas forbarita ĝenerale.",
 	"globalblocking-logpage": "Protokolo de ĝeneralaj forbaroj",
 	"globalblocking-logpagetext": "Jen protokolo de ĝeneralaj forbaroj kiuj estis faritaj kaj forigitaj en ĉi tiu vikio.\nEstas notinda ke ĝeneralaj forbaroj povas esti faritaj kaj forigitaj en aliaj vikioj, kaj ĉi tiuj forbaroj povas efiki ĉi tiun vikion.\nVidi ĉiujn aktivajn ĝeneralajn forbarojn, vi povas vidi la [[Special:GlobalBlockList|liston de ĝeneralaj forbaroj]].",
-	"globalblocking-unblock-logentry": "forigis ĝeneralajn forbarojn por [[$1]]",
 	"globalblocking-loglink": "La IP-adreso $1 estas forbarita ĝenerale ([[{{#Special:GlobalBlockList}}/$1|plenaj detaloj]]).",
 	"globalblocking-showlog": "Ĉi tiu IP-adreso estis antaŭe forbarita.\nJen la protokolo pri forbaroj sube por via referenco:",
 	"globalblocklist": "Listo de ĝenerale forbaritaj IP-adresoj",

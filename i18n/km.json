@@ -50,7 +50,6 @@
 	"globalblocking-whitelist-status": "ស្ថានភាព​មូលដ្ឋាន:",
 	"globalblocking-whitelist-submit": "ប្ដូរ​ស្ថានភាព​មូលដ្ឋាន",
 	"globalblocking-logpage": "កំណត់ហេតុនៃការហាមឃាត់ជាសាកល",
-	"globalblocking-unblock-logentry": "ដកចេញ​ការរាំងខ្ទប់​សកល​នៅលើ [[$1]]",
 	"globalblock": "រាំងខ្ទប់​ជា​សកល​ចំពោះ​អាសយដ្ឋាន IP",
 	"removeglobalblock": "ដកចេញ​ការរាំងខ្ទប់​សកល"
 }

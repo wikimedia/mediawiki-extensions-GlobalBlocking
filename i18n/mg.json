@@ -7,7 +7,6 @@
 	"globalblocking-expiringblock": "tapitra amin'ny $1 amin'ny $2",
 	"globalblocking-logpage": "Laogim-panakanana maneran-tontolo",
 	"globalblocking-logpagetext": "Ity ny laogy momba ny sakana maneran-tsehatra natao ary nesorina tamin'ity wiki ity.\nTokony fantarina eny amin'ny wiki hafa mahazo esorina ny sakana ankapobe, ary mety mikasika an'ity wiki ity ny sakana ankapobe.\nRaha te-hijery ny sakana ankapobe miasa, azonao jerena ny [[Special:GlobalBlockList|lisitry ny sakana ankapobe]].",
-	"globalblocking-unblock-logentry": "nanala ny sakana ankapobe an'i [[$1]]",
 	"globalblocking-loglink": "Voasakana amin'ny ankapobeny ny adiresy IP $1 ([[{{#Special:GlobalBlockList}}/$1|hijery ny antsipirihany]]).",
 	"globalblocking-showlog": "Efa voasakana ity adiresy IP ity taloha.\nEo ambany ny laogim-panakanana.",
 	"globalblocklist": "Lisitry ny adiresy IP voasakana amin'ny ankapobe"

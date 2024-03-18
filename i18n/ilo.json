@@ -68,7 +68,6 @@
 	"globalblocking-blocked-nopassreset": "Saanmo a maipasubli ti kontrasenias ti agar-aramat ngamin ket naserraan iti sangalubongan.",
 	"globalblocking-logpage": "Listaan ti sangalubongan a serra",
 	"globalblocking-logpagetext": "Daytoy ket listaan dagiti sangalubongan a serra a naaramid ken naikkat ditoy a wiki.\nLaglagipen a ti sangalubongan a serra ket maaramid ken maikkat kadagiti sabali a wiki, ken dagitoy a sangalubongan a serra ket tignayenna daytoy a wiki.\nTi agkita kadagiti amin nga agdama a serra, kitaen ti [[Special:GlobalBlockList|listaan ti sangalubongan a serra]].",
-	"globalblocking-unblock-logentry": "ikkaten ti sangalubongan a serra idiay [[$1]]",
 	"globalblocking-loglink": "Ti adres ti IP ti $1 ket global a naserraan ([[{{#Special:GlobalBlockList}}/$1|dagiti amin a salaysay]]).",
 	"globalblocking-contribs-notice": "Daytoy nga adres ti IP ket agdama a global a naserraan.\nTi naikabil a listaan ti global a serra ket naited dita baba para iti reperensia:",
 	"globalblocking-showlog": "Daytoy nga adres ti IP ket dati a naserraan.\nTi listaan ti serra ket naikabil dita baba tapno mausar a reperensia:",

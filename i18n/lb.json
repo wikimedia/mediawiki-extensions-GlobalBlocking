@@ -97,7 +97,6 @@
 	"globalblocking-blocked-nopassreset-user": "Dir kënnt keng Benotzerpasswierder zrécksetzen, well Äre Kont global gespaart ass.",
 	"globalblocking-logpage": "Lëscht vun de globale Spären",
 	"globalblocking-logpagetext": "Dëst ass eng Lëscht vun de globale Spären déi op dëser Wiki gemaach an opgehuewe goufen.\nDir sollt wëssen datt global Spären op anere Wikie gemaach an opgehuewe kënne ginn an datt déi global Spären dës Wiki beaflosse kënnen.\nFir all aktiv global Spären ze gesinn, gitt wgl. op d'[[Special:GlobalBlockList|Lëscht vun de globale Spären]].",
-	"globalblocking-unblock-logentry": "global Spär vum [[$1]] opgehuewen",
 	"globalblocking-loglink": "De Benotzer $1 ass global gespaart ([[{{#Special:GlobalBlockList}}/$1|fir all d'Detailer]]).",
 	"globalblocking-contribs-notice": "Dëse Benotzer ass momentan global gespaart.\nD'Entrée am Logbuch vun de globale Späre steet als Referenz hei drënner:",
 	"globalblocking-showlog": "Dëse Benotzer gouf schonn eng Kéier gespaart.\nD'Logbuch vun de Späre steet als Referenz hei drënner:",

@@ -69,7 +69,6 @@
 	"globalblocking-blocked-nopassreset": "A peule pa torna amposté la ciav d'utent përchè a l'é blocà daspërtut.",
 	"globalblocking-logpage": "Registr dij blocagi globaj",
 	"globalblocking-logpagetext": "Cost-sì a l'é un registr dij blocagi globaj che a son ëstàit fàit e gavà dzora a sta wiki-sì.\nAs podrìa notesse che blocagi globaj a peulo esse fàit e gavà dzora a d'àutre wiki, e che sti blocagi globaj a peulo colpì sta wiki-sì.\nPër vëdde tùit ij blocagi globaj ativ, a peul vëdde la [[Special:GlobalBlockList|lista dij blocagi globaj]].",
-	"globalblocking-unblock-logentry": "a l'ha gavà ël blocagi global ëd [[$1]]",
 	"globalblocking-loglink": "L'adrëssa IP $1 a l'é blocà globalment ([[{{#Special:GlobalBlockList}}/$1|detaj complet]]).",
 	"globalblocking-showlog": "L'adrëssa IP a l'é stàita blocà prima.\nËl registr dij blocagi a l'é smonù sì-sota për arferiment:",
 	"globalblocklist": "Lista dj'adrësse IP blocà globalment",

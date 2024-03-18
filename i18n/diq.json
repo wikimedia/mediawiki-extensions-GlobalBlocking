@@ -81,7 +81,6 @@
 	"globalblocking-blocked-nopassreset": "Şıma be global bloqe biyê u no sebeb ra şıma nêeşkeni parolay karberi reset kerê.",
 	"globalblocking-logpage": "Qeydê kılitkerdışê globali",
 	"globalblocking-logpagetext": "Bu, bu vikide yapılan ve kaldırılan küresel engellemelerin günlüğüdür.\nKüresel engellemelerin diğer vikilerde yapılıp kaldırılabileceğini, ve bu küresel engellemelerin bu vikiyi etkileyebileceğini unutmayın.\nTüm aktif küresel engellemeri görmek için, [[Special:GlobalBlockList|küresel engelleme listesine]] bakabilirsiniz.",
-	"globalblocking-unblock-logentry": "qey [[$1]]'i blokeya global wedariya / wera diya",
 	"globalblocking-logentry-whitelist": "$1, bloqeyo lokal $3 {{GENDER:$2|dewre ra veto }}",
 	"globalblocking-logentry-dewhitelist": "$1, lokal bloqey gorey lokali $3 {{GENDER:$2|reyna kerdo aktiv }}",
 	"globalblocking-loglink": "Adresê eposta $1 globali dê bloqe biyo ([[{{#Special:GlobalBlockList}}/$1|detaya bıvênê ]]).",

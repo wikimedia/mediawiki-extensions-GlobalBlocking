@@ -47,7 +47,6 @@
 	"globalblocking-whitelist-submit": "Тағйири вазъияти маҳаллӣ",
 	"globalblocking-whitelist-nochange": "Шумо ягон тағйире ба вазъияти маҳалли ин қатъи дастрасӣ ворид накардед.\n[[Special:GlobalBlockList|Баргардед ба феҳристи қатъи дастрасии саросарӣ]].",
 	"globalblocking-logpage": "Гузориши бастаи саросарӣ",
-	"globalblocking-unblock-logentry": "қатъи дастрасии саросарӣ дар [[$1]] пок шуд",
 	"globalblocklist": "Феҳристи нишонаҳои IP саросарӣ қатъ кардашуда",
 	"globalblock": "Ба сурати саросарӣ қатъ кардани нишонаи IP",
 	"globalblockstatus": "Вазъияти маҳаллии қатъи дастрасии саросарӣ",

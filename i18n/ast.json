@@ -73,7 +73,6 @@
 	"globalblocking-blocked-nopassreset": "Nun pues reaniciar les contraseñes del usuariu porque la to direición IP ta bloquiada de mou global.",
 	"globalblocking-logpage": "Rexistru de bloqueos globales",
 	"globalblocking-logpagetext": "Esti ye un rexistru de bloqueos globales que s'efeutuaron o desaniciaron nesta wiki. Has recordar que los bloqueos globales puen efeutuase y desaniciase n'otres wikis, y qu'esos bloqueos globales puen afeutar a esta wiki. Pa ver tolos bloqueos globales activos, pues ver la [[Special:GlobalBlockList|llista de bloqueos globales]].",
-	"globalblocking-unblock-logentry": "eliminó'l bloquéu global de [[$1]]",
 	"globalblocking-logentry-whitelist": "$1 {{GENDER:$2|desactivó}} de mou llocal el bloquéu global de $3",
 	"globalblocking-logentry-dewhitelist": "$1 {{GENDER:$2|reactivó}} de mou llocal el bloquéu global de $3",
 	"globalblocking-loglink": "La direición IP $1 ta bloquiada globalmente ([[{{#Special:GlobalBlockList}}/$1|más detalles]]).",

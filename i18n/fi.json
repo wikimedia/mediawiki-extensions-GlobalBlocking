@@ -87,7 +87,6 @@
 	"globalblocking-blocked-nopassreset": "Et voi palauttaa käyttäjien salasanoja, koska IP-osoitteesi on estetty järjestelmänlaajuisesti.",
 	"globalblocking-logpage": "Järjestelmänlaajuisten estojen loki",
 	"globalblocking-logpagetext": "Tämä on loki tässä wikissä tehdyistä ja poistetuista järjestelmänlaajuisista estoista.\nJärjestelmänlaajuisia estoja voi tehdä ja poistaa myös muissa wikeissä, ja ne voivat vaikuttaa tähän wikiin.\nKaikki voimassa olevat järjestelmänlaajuiset estot ovat [[Special:GlobalBlockList|järjestelmänlaajuisten estojen listalla]].",
-	"globalblocking-unblock-logentry": "poisti IP-osoitteen [[$1]] järjestelmänlaajuisen eston",
 	"globalblocking-loglink": "IP-osoite $1 on estetty järjestelmänlaajuisesti ([[{{#Special:GlobalBlockList}}/$1|tiedot]]).",
 	"globalblocking-contribs-notice": "Tämä IP-osoite on tällä hetkellä estettynä järjestelmänlaajuisesti.\nJärjestelmänlaajuinen estoloki näkyy alla:",
 	"globalblocking-showlog": "Tämä IP-osoite on ollut estettynä.\nAlla on ote estolokista.",

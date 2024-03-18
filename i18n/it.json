@@ -101,7 +101,6 @@
 	"globalblocking-blocked-nopassreset": "Non è possibile reimpostare la password dell'utente perché il tuo indirizzo IP è bloccato a livello globale.",
 	"globalblocking-logpage": "Blocchi globali",
 	"globalblocking-logpagetext": "Di seguito sono elencati i blocchi globali che sono stati effettuati e rimossi su questa wiki. I blocchi globali possono essere effettuati su altre wiki e questi blocchi globali possono essere validi anche su questa wiki.\nPer visualizzare tutti i blocchi globali attivi si veda l'[[Special:GlobalBlockList|elenco dei blocchi globali]].",
-	"globalblocking-unblock-logentry": "ha rimosso il blocco globale su [[$1]]",
 	"globalblocking-logentry-block-old-format": "$1 {{GENDER:$2|ha bloccato globalmente}} {{GENDER:$4|$3}} ($5)",
 	"globalblocking-logentry-block": "$1 {{GENDER:$2|ha bloccato globalmente}} {{GENDER:$4|$3}} con una scadenza di $5 $6",
 	"globalblocking-logentry-modify-old-format": "$1 {{GENDER:$2|la modificato}} le impostazioni del blocco globale per {{GENDER:$4|$3}} ($5)",

@@ -67,7 +67,6 @@
 	"globalblocking-blocked-nopassreset": "Hindi mo maaaring itakdang muli ang password dahil pandaigdigan (globally) kang hinarang.",
 	"globalblocking-logpage": "Talaan ng pandaigdigang pagharang/paghadlang",
 	"globalblocking-logpagetext": "Isa itong talaan ng mga pandaigdigang pagharang na isinagawa at tinanggal mula sa wiking ito.\nDapat tandaan na maaaring gawin ang pandaigdigang mga paghadlang at alisin mula sa iba pang mga wiki, at maaaring makaapekto sa wiking ito ang ganitong mga pandaigdigang pagharang.\nPara matanaw ang lahat ng mga masigla o gumaganang pandaigdigang mga paghadlang, maaari mong tingnan ang [[Special:GlobalBlockList|talaan ng mga pandaigdigang pagharang]].",
-	"globalblocking-unblock-logentry": "tinanggal ang pandaigdigang pagharang sa/kay [[$1]]",
 	"globalblocking-loglink": "Ang adres ng IP na $1 ay pandaigdigang hinadlangang ([[{{#Special:GlobalBlockList}}/$1|buong mga detalye]]).",
 	"globalblocking-showlog": "Dati nang naharang ang adres ng IP na ito.\nIbinigay sa ibaba ang talaan ng paghadlang upang masangguni:",
 	"globalblocklist": "Talaan ng mga adres ng IP na may pandaigdigang paghadlang/pagharang",

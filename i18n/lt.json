@@ -88,7 +88,6 @@
 	"globalblocking-blocked-nopassreset": "Negalite iš naujo nustatyti naudotojų slaptažodžių, nes jūsų IP adresas visuotinai užblokuotas.",
 	"globalblocking-logpage": "Visuotinio blokavimo sąrašas",
 	"globalblocking-logpagetext": "Tai yra visuotinių blokavimųų, kurie buvo sukurti ir pašalinti šioje viki, žurnalas.\nReikėtų pažymėti, kad visuotinius blokavimus galima sukurti ir pašalinti kituose viki ir kad šie visuotiniai blokavimai gali turėti įtakos šiam viki.\nSiekiant peržiūrėti visus aktyvius visuotinius blokavimus, žiūrėkite [[Special:GlobalBlockList|visuotinį blokavimų sąrašą]].",
-	"globalblocking-unblock-logentry": "pašalintas visuotinis blokavimas [[$1]]",
 	"globalblocking-logentry-whitelist": "$1 vietoje {{GENDER:$2|išjungė}} visuotinį blokavimą $3",
 	"globalblocking-logentry-dewhitelist": "$1 vietoje {{GENDER:$2|vėl įjungė}} visuotinį blokavimą $3",
 	"globalblocking-loglink": "Šis visuotinis IP adresas $1 visuotinai užblokuotas ([[{{#Special:GlobalBlockList}}/$1|visa informacija]]).",

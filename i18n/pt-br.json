@@ -97,7 +97,6 @@
 	"globalblocking-blocked-nopassreset": "Você não pode redefinir as senhas do usuário porque seu endereço IP está bloqueado globalmente.",
 	"globalblocking-logpage": "Registro de bloqueios globais",
 	"globalblocking-logpagetext": "Isto é um registro de bloqueios globais que foram feitos e removidos neste wiki.\nDeve ser notado que bloqueios globais podem ser feitos e removidos em outros wikis, e que estes bloqueios globais podem afetar este wiki.\nPara ver todos os bloqueios globais, poderá consultar a [[Special:GlobalBlockList|lista de bloqueios globais]].",
-	"globalblocking-unblock-logentry": "removido bloqueio global de [[$1]]",
 	"globalblocking-logentry-whitelist": "$1 {{GENDER: $2|desativou}} o bloqueio global em $3 localmente",
 	"globalblocking-logentry-dewhitelist": "$1 {{GENDER: $2|reativou}} o bloqueio global em $3 localmente",
 	"globalblocking-loglink": "O endereço IP $1 está bloqueado globalmente ([[{{#Special:GlobalBlockList}}/$1|detalhes]]).",

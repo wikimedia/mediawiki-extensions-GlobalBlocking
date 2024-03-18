@@ -66,7 +66,6 @@
 	"globalblocking-blocked-nopassreset": "Du chasch s Passwort vum Benutzer nit zrucksetze, wel Du wältwyt gsperrt bisch.",
 	"globalblocking-logpage": "Wältwyt Sperrlogbuech",
 	"globalblocking-logpagetext": "Des isch s Logbuech vu dr wältwyte Sperrine, wu in däm Wiki yygrichtet oder ufghobe wore sin.\nWältwyti Sperrine chenne in eme andere Wiki yygrichtet un ufghobe wäre, dodemit chenne au d Sperrine in däm Wiki troffe wäre.\nGo ne Lischt vu allene aktive wältwyte Sperrine aaluege, lueg uf dr [[Special:GlobalBlockList|wältwyte Sperrlischt]].",
-	"globalblocking-unblock-logentry": "het d Sperri vu [[$1]] wältwyt ufghobe",
 	"globalblocking-loglink": "D IP-Adräss $1 isch wältwyt gsperrt ([[{{#Special:GlobalBlockList}}/$1|Details]]).",
 	"globalblocking-showlog": "Die IP-Adräss isch fiejer gsperrt gsi.\nDo chunnt e Uuszug us em Benutzersperr-Logbuech:",
 	"globalblocklist": "Lischt vu wältwyt gsperrte IP-Adrässe",

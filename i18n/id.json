@@ -91,7 +91,6 @@
 	"globalblocking-blocked-nopassreset": "Anda tidak dapat mengganti kata sandi pengguna karena alamat IP Anda sedang diblokir secara global.",
 	"globalblocking-logpage": "Log pemblokiran global",
 	"globalblocking-logpagetext": "Ini adalah log pemblokiran global yang dibuat dan dihapuskan di wiki ini.\nSebagai catatan, pemblokiran global dapat dibuat dan dihapuskan di wiki lain yang akan juga mempengaruhi wiki ini.\nUntuk menampilkan seluruh pemblokiran global yang aktif saat ini, Anda dapat melihat [[Special:GlobalBlockList|daftar pemblokiran global]].",
-	"globalblocking-unblock-logentry": "menghapuskan pemblokiran global atas [[$1]]",
 	"globalblocking-logentry-whitelist": "$1 {{GENDER:$2|menonaktifkan}} pemblokiran global di $3 secara lokal",
 	"globalblocking-logentry-dewhitelist": "$1 {{GENDER:$2|diaktifkan kembali}} global blokir $3 di lokal",
 	"globalblocking-loglink": "Alamat IP $1 diblokir secara global ([[{{#Special:GlobalBlockList}}/$1|detail lengkap]]).",

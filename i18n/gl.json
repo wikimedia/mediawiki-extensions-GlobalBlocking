@@ -75,7 +75,6 @@
 	"globalblocking-blocked-nopassreset": "Non pode restablecer o contrasinal do usuario porque vostede está bloqueado globalmente.",
 	"globalblocking-logpage": "Rexistro de bloqueos globais",
 	"globalblocking-logpagetext": "Este é un rexistro dos bloqueos globais que foron feitos e retirados neste wiki.\nDéase de conta de que os bloqueos globais poden ser feitos e retirados noutros wikis e este bloqueos poden afectar a este.\nPara ver todos os bloqueos globais activos, pode ollar a [[Special:GlobalBlockList|lista dos bloqueos globais]].",
-	"globalblocking-unblock-logentry": "retirado o bloqueo global en [[$1]]",
 	"globalblocking-logentry-whitelist": "$1 {{GENDER:$2|desactivou}} o bloqueo global de $3 localmente",
 	"globalblocking-logentry-dewhitelist": "$1 {{GENDER:$2|reactivou}} o bloqueo global de $3 localmente",
 	"globalblocking-loglink": "O enderezo IP $1 está bloqueado globalmente ([[{{#Special:GlobalBlockList}}/$1|máis detalles]]).",

@@ -55,7 +55,6 @@
 	"globalblocking-whitelist-whitelisted": "شما د خوئی نهاگری جهونی #$2  نه د تیرنشون آی پی '''$1''' د  {{SITENAME}} ؤرداشتیته.",
 	"globalblocking-whitelist-dewhitelisted": "شما د خوئی نهاگری جهونی #$2  نه د تیرنشون آی پی '''$1''' د  {{SITENAME}} ؤرداشتیته.",
 	"globalblocking-logpage": "قلف جهونی پهرستنومه",
-	"globalblocking-unblock-logentry": "نهاگری سرتاسری د [[$1]] ؤرداشته بیه",
 	"globalblocking-loglink": "تیرنشون آی پی $1 وه شکل جهونی نهاگری بیه([[{{#Special:GlobalBlockList}}/$1|full details]]).",
 	"globalblocking-showlog": "نشونی ای آی پی دماتر قلف بیه.\nقلف ای پهرستنومه وا سرچشمه هاری دروس بیه:",
 	"globalblocklist": "نوم گه نشونی یا آپی یی که د جهون قلف بینه",

@@ -95,7 +95,6 @@
 	"globalblocking-blocked-nopassreset": "لا يمكنك إعادة ضبط كلمات سر المستخدم لأنك ممنوع منعا عاما.",
 	"globalblocking-logpage": "سجل المنع العام",
 	"globalblocking-logpagetext": "هذا سجل بعمليات المنع العامة التي تم عملها وإزالتها على هذا الويكي.\nينبغي ملاحظة أن عمليات المنع العامة يمكن عملها وإزالتها على الويكيات الأخرى، وأن عمليات المنع العامة هذه ربما تؤثر على هذا الويكي.\nلرؤية كل عمليات المنع العامة النشطة، يمكنك رؤية [[Special:GlobalBlockList|قائمة المنع العامة]].",
-	"globalblocking-unblock-logentry": "أزال المنع العام على [[$1]]",
 	"globalblocking-logentry-whitelist": "$1 {{GENDER:$2|تم تعطيل}} المنع العالمي في $3 محليا",
 	"globalblocking-logentry-dewhitelist": "$1 {{GENDER:$2|تمت إعادة تفعيل}} المنع العالمي في $3 محليا",
 	"globalblocking-loglink": "عنوان الأيبي $1 ممنوع منعا عاما ([[{{#Special:GlobalBlockList}}/$1|تفاصيل كاملة]]).",

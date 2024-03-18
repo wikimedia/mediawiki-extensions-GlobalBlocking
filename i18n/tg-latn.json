@@ -44,7 +44,6 @@
 	"globalblocking-whitelist-submit": "Taƣjiri vaz'ijati mahallī",
 	"globalblocking-whitelist-nochange": "Şumo jagon taƣjire ba vaz'ijati mahalli in qat'i dastrasī vorid nakarded.\n[[Special:GlobalBlockList|Bargarded ba fehristi qat'i dastrasiji sarosarī]].",
 	"globalblocking-logpage": "Guzorişi bastai sarosarī",
-	"globalblocking-unblock-logentry": "qat'i dastrasiji sarosarī dar [[$1]] pok şud",
 	"globalblocklist": "Fehristi nişonahoi IP sarosarī qat' kardaşuda",
 	"globalblock": "Ba surati sarosarī qat' kardani nişonai IP",
 	"globalblockstatus": "Vaz'ijati mahalliji qat'i dastrasiji sarosarī",

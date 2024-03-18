@@ -77,7 +77,6 @@
 	"globalblocking-blocked-nopassreset": "Nem kérhetsz új jelszót, mert az IP-címed globálisan blokkolva van.",
 	"globalblocking-logpage": "Globális blokkolási napló",
 	"globalblocking-logpagetext": "Ez azon globális blokkok naplója, amelyet ezen a wikin készítettek és távolítottak el.\nGlobális blokkokat más wikiken is készíthetnek és távolíthatnak el, ezek hatással lehetnek erre a wikire is.\nAz összes aktív blokk listáját a [[Special:GlobalBlockList|globális blokkok listáján]] találod meg.",
-	"globalblocking-unblock-logentry": "eltávolította [[$1]] globális blokkját",
 	"globalblocking-logentry-whitelist": "$1 {{GENDER:$2|letiltotta}} $3 globális blokkját helyileg",
 	"globalblocking-logentry-dewhitelist": "$1 {{GENDER:$2|újra engedélyezte}} $3 globális blokkját helyileg",
 	"globalblocking-loglink": "A(z) $1 IP-cím globálisan blokkolva van ([[{{#Special:GlobalBlockList}}/$1|részletek]]).",

@@ -4,5 +4,6 @@
 			"Muhammad Shuaib"
 		]
 	},
-	"globalblocking-apierror-badip": "آئی پی پتا $1 درست نہیں ہے"
+	"globalblocking-apierror-badip": "آئی پی پتا $1 درست نہیں ہے",
+	"apihelp-globalblock-summary": "عالمی سطح پر صارف پر پابندی عائد کرتا یا پابندی ختم کرتا ہے۔"
 }

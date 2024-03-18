@@ -86,7 +86,6 @@
 	"globalblocking-blocked-nopassreset": "आप सदस्य के पासवर्ड्स का अनुरोध नहीं कर सकते क्योंकि आपका IP पता ग्लोबल रूप से अवरोधित है।",
 	"globalblocking-logpage": "ग्लोबल अवरोध लॉग",
 	"globalblocking-logpagetext": "यह उन सभी ग्लोबल अवरोधों की सूची है जिन्हें इस विकि पर जोड़ा और यहाँ से हटाया गया है।\nयह ध्यान रखें कि अवरोध दूसरे विकियों पर भी जोड़े और हटाए जा सकते हैं, और उन अवरोधों का असर इस विकि पर पड़ सकता है।\nसभी सक्रिय ग्लोबल अवरोध देखने के लिए [[Special:GlobalBlockList|ग्लोबल अवरोधों की सूची]] देखें।",
-	"globalblocking-unblock-logentry": "[[$1]] से ग्लोबल अवरोध हटाया गया",
 	"globalblocking-logentry-whitelist": "$1 ने लोकल रूप से $3 पर ग्लोबल अवरोध {{GENDER:$2|अक्षम किया}}",
 	"globalblocking-logentry-dewhitelist": "$1 ने लोकल रूप से $3 पर ग्लोबल अवरोध {{GENDER:$2|दोबारा सक्षम किया}}",
 	"globalblocking-loglink": "IP पता $1 ग्लोबल रूप से अवरोध है ([[{{#Special:GlobalBlockList}}/$1|पूर्ण जानकारी]])।",

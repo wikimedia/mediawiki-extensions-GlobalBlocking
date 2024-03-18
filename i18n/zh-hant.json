@@ -111,7 +111,6 @@
 	"globalblocking-blocked-nopassreset": "您的 IP 位址己被全域封鎖，無法修改使用者密碼。",
 	"globalblocking-logpage": "全域封鎖日誌",
 	"globalblocking-logpagetext": "此日誌包含了此 Wiki 中新增與移除的全域封鎖。要特別說明，全域封鎖可由其他 Wiki 新增與移除，其他 Wiki 對全域封鎖的設定會影響此 Wiki。要檢視所有使用中的全域封鎖，您可檢視[[Special:GlobalBlockList|全域封鎖清單]]。",
-	"globalblocking-unblock-logentry": "已移除了 [[$1]] 的全域封鎖",
 	"globalblocking-logentry-whitelist": "$1 在本地的 $3 {{GENDER:$2|已停用}}全域封鎖",
 	"globalblocking-logentry-dewhitelist": "$1 在本地的 $3 {{GENDER:$2|已重新啟用}}全域封鎖",
 	"globalblocking-loglink": "已全域封鎖 IP 位址 $1（[[{{#Special:GlobalBlockList}}/$1|完整詳細資料]]）。",

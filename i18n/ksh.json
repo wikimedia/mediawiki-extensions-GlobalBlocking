@@ -69,7 +69,6 @@
 	"globalblocking-blocked-nopassreset": "Do kanns andere Metmaachere ier Paßwoot nit retuur säze, Do bes en alle Wikis jesperrt.",
 	"globalblocking-logpage": "Logbohch fum <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"Internet Protocol\">IP</i>-Adräß en alle Wikkis schpärre",
 	"globalblocking-logpagetext": "Dat es et Logbohch met alle Schpärre, di op alle Wikkis op eimohl jemaat ov opjehovve woode sen.\nMer moß sesch em klore sen, dat di Schpärre op ander Wikkis jemaat woode sin künne.\nDobei donn se ävver och för heh dat Wikki wirke.\nÖm der all de jrad jötijje Schpärre för all de Wikkis op eijmohl aanzeloohre, jangk noh de [[Special:GlobalBlockList|{{int:Globalblocking-list}}]].",
-	"globalblocking-unblock-logentry": "hät en alle Wikis [[$1]] widder freijejovve",
 	"globalblocking-loglink": "Di <i lang=\"en\">IP</i>-Addräß es en alle Wikis jespert ([[{{#Special:GlobalBlockList}}/$1|All Eijnzelheijte]])",
 	"globalblocking-contribs-notice": "Heh di <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"Internet Protocol\">IP</i>-Adräß es em Momang en alle Wikis jechpächt.\nHeh sin de zopaß Endrähsch em Logbohch:",
 	"globalblocking-showlog": "Di <i lang=\"en\">IP</i>-Addräß es ald ens jespert jewääse.\nEt {{int:blocklogpage}} es hee dronger opjeföhrt, do kanns De nohkike, wat wohr:",

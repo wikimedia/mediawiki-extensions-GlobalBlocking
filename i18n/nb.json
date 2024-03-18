@@ -86,7 +86,6 @@
 	"globalblocking-blocked-nopassreset": "Du kan ikke nullstille brukerpassord fordi IP-adressa di er blokkert globalt.",
 	"globalblocking-logpage": "Global blokkeringslogg",
 	"globalblocking-logpagetext": "Dette er en logg over globale blokkeringer som har blitt gjort eller fjernet på denne wikien.\nDet burde merkes at globale blokkeringer goså kan foretas på andre wikier, og at disse vil ha utslag på denne wikien.\nFor å vise alle aktive globale blokkeringer, se den [[Special:GlobalBlockList|globale blokkeringslisten]].",
-	"globalblocking-unblock-logentry": "fjernet global blokkering på [[$1]]",
 	"globalblocking-logentry-whitelist": "$1 {{GENDER:$2|slo av}} den globale blokkeringen av $3 lokalt",
 	"globalblocking-logentry-dewhitelist": "$1 {{GENDER:$2|slo på igjen}} den globale blokkeringen av $3 lokalt",
 	"globalblocking-loglink": "IP-adressen $1 er blokkert globalt ([[{{#Special:GlobalBlockList}}/$1|detaljer]]).",

@@ -65,7 +65,6 @@
 	"globalblocking-blocked-nopassreset": "Vos pouede pas tornar inicialisar los contresegnos d’usanciér perce que vos éte blocâ dens l’ensemblo.",
 	"globalblocking-logpage": "Jornal des blocâjos globâls",
 	"globalblocking-logpagetext": "Vê-que lo jornal des blocâjos globâls qu’ont étâ fêts et pués enlevâs sur ceti vouiqui.\nNotâd que los blocâjos globâls pôvont étre fêts et pués enlevâs sur d’ôtros vouiquis, et que celos blocâjos globâls pôvont afèctar ceti vouiqui.\nPor vêre tôs los blocâjos globâls actifs, vos pouede visitar la [[Special:GlobalBlockList|lista des blocâjos globâls]].",
-	"globalblocking-unblock-logentry": "at enlevâ lo blocâjo globâl de [[$1]]",
 	"globalblocking-loglink": "L’adrèce IP $1 est blocâ dens l’ensemblo ([[{{#Special:GlobalBlockList}}/$1|dètalys]]).",
 	"globalblocking-showlog": "Ceta adrèce IP at étâ blocâ dês devant.\nLo jornal des blocâjos est disponiblo ce-desot :",
 	"globalblocklist": "Lista a les adrèces IP blocâs dens l’ensemblo",

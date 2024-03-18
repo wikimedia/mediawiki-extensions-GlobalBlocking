@@ -70,7 +70,6 @@
 	"globalblocking-blocked-nopassreset": "Panjenengan ora bisa nyetèl ulang tembung sandi amarga alamat IP panjenengan diblokir sacara global.",
 	"globalblocking-logpage": "Log blokir global",
 	"globalblocking-logpagetext": "Iki log pamblokiran global sing digawé lan dibusak ing situs iki.\nPerlu diweruhi yèn pamblokiran global disa digawé lan dibusak ing wiki liya sing bisa karasa uga ing wiki iki.\nKanggo mirsani kabèh pamblokiran global sing aktif wektu iki, pirsani ing[[Special:GlobalBlockList|dhaptar pamblokiran global]] iki.",
-	"globalblocking-unblock-logentry": "jabelen blokade global ing [[$1]]",
 	"globalblocking-logentry-whitelist": "$1 {{GENDER:$2|njabut}} blokiran global ing $3 kalawan lokal",
 	"globalblocking-loglink": "Alamat IP $1 diblokir global ([[{{#Special:GlobalBlockList}}/$1|rerincèn jangkepé]]).",
 	"globalblocking-showlog": "Alamat IP iki wis tau diblokir sakdurungé.\nLog pamblokiran sumadhiya nèng ngisor kanggo rujukan:",

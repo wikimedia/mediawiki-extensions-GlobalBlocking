@@ -68,7 +68,6 @@
 	"globalblocking-blocked-nopassreset": "Nemôžete nastaviť nové heslo používateľovi, pretože vaša IP adresa je globálne zablokovaná.",
 	"globalblocking-logpage": "Záznam globálnych blokovaní",
 	"globalblocking-logpagetext": "Toto je záznam globálnych blokovaní, ktoré boli vytvorené a zrušené na tejto wiki.\nMali by ste pamätať na to, že globálne blokovania je možné vytvoriť a odstrániť na iných wiki a tieto globálne blokovania môžu ovplyvniť túto wiki.\nVšetky aktívne blokovania si môžete pozrieť na [[Special:GlobalBlockList|zozname globálnych blokovaní]].",
-	"globalblocking-unblock-logentry": "odstránil globálne blokovanie [[$1]]",
 	"globalblocking-loglink": "IP adresa $1 je globálne zablokovaná ([[{{#Special:GlobalBlockList}}/$1|podrobnosti]]).",
 	"globalblocking-showlog": "IP adresa bola v minulosti zablokovaná.\nDolu je pre informáciu záznam blokovaní:",
 	"globalblocklist": "Zoznam globálne zablokovaných IP adries",

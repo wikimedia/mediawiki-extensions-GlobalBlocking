@@ -62,7 +62,6 @@
 	"globalblocking-blocked-nopassreset": "Ulanyjynyň parolyny başky ýagdaýa getirip bilmeýärsiňiz, sebäbi siz global blokirlenilgi.",
 	"globalblocking-logpage": "Global blokirleme gündeligi",
 	"globalblocking-logpagetext": "Bu gündelik şu wikide goýulan we ondan aýrylan global blokirlemeleri görkezýär.\nGlobal blokirlemeler başga wikilerde goýlup we aýrylyp bilinýändir, şol blokirlemeler bolsa şu wikä-de täsirini ýetirip bilýändir.\nÄhli işjeň global blokirlemeleri görmek üçin, [[Special:GlobalBlockList|global blokirleme sanawyna]] seredip bilersiňiz.",
-	"globalblocking-unblock-logentry": "[[$1]] üçin global blokirleme aýyryldy",
 	"globalblocking-loglink": "$1 IP adresi global blokirlendi ([[{{#Special:GlobalBlockList}}/$1|ähli jikme-jikler]]).",
 	"globalblocking-showlog": "Bu IP adresi ozaldan blokirlenipdir.\nBlokirleme gündeligi salgylanmak üçin aşakda berilýär:",
 	"globalblocklist": "Global blokirlenen IP adresleriniň sanawy",
