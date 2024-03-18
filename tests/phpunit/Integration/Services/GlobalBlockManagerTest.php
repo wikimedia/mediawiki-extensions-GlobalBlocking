@@ -80,8 +80,8 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testBlockOnRaceCondition() {
-		// Mock GlobalBlockLookup::getGlobalBlockId to return no block ID even if though one exists
-		// to simulate a race condition.
+		// Mock GlobalBlockLookup::getGlobalBlockId to return no block ID even if one exists.
+		// This simulates a race condition, on attempting to block an already-blocked target.
 		$globalBlockLookup = $this->createMock( GlobalBlockLookup::class );
 		$globalBlockLookup->method( 'getGlobalBlockId' )
 			->willReturn( 0 );
