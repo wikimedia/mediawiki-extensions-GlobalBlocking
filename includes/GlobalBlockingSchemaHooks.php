@@ -27,25 +27,6 @@ class GlobalBlockingSchemaHooks implements LoadExtensionSchemaUpdatesHook {
 			"$base/sql/$type/tables-generated-global_block_whitelist.sql"
 		);
 
-		if ( $type === 'mysql' ) {
-			// 1.34
-			$updater->modifyExtensionField(
-				'globalblocks',
-				'gb_reason',
-				"$base/sql/$type/patch-globalblocks-reason-length.sql"
-			);
-			$updater->modifyExtensionField(
-				'global_block_whitelist',
-				'gbw_reason',
-				"$base/sql/$type/patch-global_block_whitelist-reason-length.sql"
-			);
-			$updater->modifyExtensionField(
-				'global_block_whitelist',
-				'gbw_by_text',
-				"$base/sql/$type/patch-global_block_whitelist-use-varbinary.sql"
-			);
-		}
-
 		// 1.38
 		$updater->addExtensionField(
 			'globalblocks',

@@ -1,1 +1,0 @@
-ALTER TABLE /*_*/global_block_whitelist MODIFY gbw_reason varbinary(767) NOT NULL;
