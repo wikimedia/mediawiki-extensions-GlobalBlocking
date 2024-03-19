@@ -10,7 +10,7 @@ use MediaWikiIntegrationTestCase;
  * @covers \MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusLookup
  * @group Database
  */
-class GlobalBlockingLocalStatusLookupTest extends MediaWikiIntegrationTestCase {
+class GlobalBlockLocalStatusLookupTest extends MediaWikiIntegrationTestCase {
 	public function testGetLocalWhitelistInfoThrowsExceptionOnInvalidArguments() {
 		// Call the method under test and verify that an exception is thrown when null is provided
 		// for both arguments.

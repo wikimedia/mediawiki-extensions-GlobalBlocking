@@ -24,12 +24,14 @@ class GlobalBlockLocalStatusLookup {
 	 *
 	 * @param int|null $id Block ID
 	 * @param null|string $address The target of the block (only used if $id is null).
+	 * @param string|false $wikiId The wiki where the where the whitelist info should be looked up.
+	 *   Use false for the local wiki.
 	 * @return array|false false if the block is not locally disabled, otherwise an array containing the
 	 *   user ID of the user who disabled the block and the reason for the block being disabled.
 	 * @phan-return array{user:int,reason:string}|false
 	 */
-	public function getLocalWhitelistInfo( ?int $id = null, ?string $address = null ) {
-		$queryBuilder = $this->dbProvider->getReplicaDatabase()
+	public function getLocalWhitelistInfo( ?int $id = null, ?string $address = null, $wikiId = false ) {
+		$queryBuilder = $this->dbProvider->getReplicaDatabase( $wikiId )
 			->newSelectQueryBuilder()
 			->select( [ 'gbw_by', 'gbw_reason' ] )
 			->from( 'global_block_whitelist' );
@@ -61,11 +63,13 @@ class GlobalBlockLocalStatusLookup {
 	 * Returns whether a global block on the given IP address has been locally disabled.
 	 *
 	 * @param string $block_ip
+	 * @param string|false $wikiId The wiki where the where the whitelist info should be looked up.
+	 *    Use false for the local wiki.
 	 * @return array|false false if the block is not locally disabled, otherwise an array containing the
 	 *    user ID of the user who disabled the block and the reason for the block being disabled.
 	 * @phan-return array{user:int,reason:string}|false
 	 */
-	public function getLocalWhitelistInfoByIP( string $block_ip ) {
-		return $this->getLocalWhitelistInfo( null, $block_ip );
+	public function getLocalWhitelistInfoByIP( string $block_ip, $wikiId = false ) {
+		return $this->getLocalWhitelistInfo( null, $block_ip, $wikiId );
 	}
 }
