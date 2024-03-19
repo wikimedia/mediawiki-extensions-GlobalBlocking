@@ -4,37 +4,33 @@ namespace MediaWiki\Extension\GlobalBlocking\Special;
 
 use Exception;
 use HTMLForm;
-use ManualLogEntry;
 use MediaWiki\Block\BlockUtils;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusManager;
 use MediaWiki\SpecialPage\FormSpecialPage;
 use MediaWiki\SpecialPage\SpecialPage;
-use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentity;
 use Wikimedia\IPUtils;
-use Wikimedia\Rdbms\IConnectionProvider;
 
 class SpecialGlobalBlockStatus extends FormSpecialPage {
-	/** @var string|null */
-	private $mAddress;
-	/** @var bool|null */
-	private $mCurrentStatus;
-	/** @var bool|null */
-	private $mWhitelistStatus;
+	private ?string $mAddress;
+	private ?bool $mCurrentStatus;
+	private ?bool $mWhitelistStatus;
 
 	private BlockUtils $blockUtils;
-	private IConnectionProvider $dbProvider;
+	private GlobalBlockLocalStatusManager $globalBlockLocalStatusManager;
 
 	/**
 	 * @param BlockUtils $blockUtils
+	 * @param GlobalBlockLocalStatusManager $globalBlockLocalStatusManager
 	 */
 	public function __construct(
 		BlockUtils $blockUtils,
-		IConnectionProvider $dbProvider
+		GlobalBlockLocalStatusManager $globalBlockLocalStatusManager
 	) {
 		parent::__construct( 'GlobalBlockStatus', 'globalblock-whitelist' );
 		$this->blockUtils = $blockUtils;
-		$this->dbProvider = $dbProvider;
+		$this->globalBlockLocalStatusManager = $globalBlockLocalStatusManager;
 	}
 
 	/**
@@ -115,86 +111,40 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 	}
 
 	public function onSubmit( array $data ) {
-		$ip = $this->mAddress;
-
-		$id = GlobalBlocking::getGlobalBlockId( $ip );
-		// Is it blocked?
-		if ( !$id ) {
-			return [ [ 'globalblocking-notblocked', $ip ] ];
-		}
-
-		// Local status wasn't changed.
-		if ( $this->mCurrentStatus == $this->mWhitelistStatus ) {
-			return [ 'globalblocking-whitelist-nochange' ];
-		}
-
-		GlobalBlocking::purgeExpired();
-
-		$dbw = $this->dbProvider->getPrimaryDatabase();
-		if ( $this->mWhitelistStatus == true ) {
-			// Add to whitelist
-
-			// Find the expiry of the block. This is important so that we can store it in the
-			// global_block_whitelist table, which allows us to purge it when the block has expired.
-			$gdbr = GlobalBlocking::getReplicaGlobalBlockingDatabase();
-			$expiry = $gdbr->selectField( 'globalblocks', 'gb_expiry', [ 'gb_id' => $id ], __METHOD__ );
-
-			$row = [
-				'gbw_by' => $this->getUser()->getId(),
-				'gbw_by_text' => $this->getUser()->getName(),
-				'gbw_reason' => trim( $data['Reason'] ),
-				'gbw_address' => $ip,
-				'gbw_expiry' => $expiry,
-				'gbw_id' => $id
-			];
-			if ( GlobalBlocking::getLocalWhitelistInfoByIP( $this->mAddress ) !== false ) {
-				// Check if there is already an entry with the same ip (and another id)
-				$dbw->delete( 'global_block_whitelist', [ 'gbw_address' => $ip ], __METHOD__ );
-			}
-			$dbw->replace( 'global_block_whitelist', 'gbw_id', $row, __METHOD__ );
-
-			$this->addLogEntry( 'whitelist', $ip, $data['Reason'] );
+		if ( $this->mWhitelistStatus ) {
+			// Locally disable the block
+			$status = $this->globalBlockLocalStatusManager
+				->locallyDisableBlock( $this->mAddress, $data['Reason'], $this->getUser() );
 			$successMsg = 'globalblocking-whitelist-whitelisted';
 		} else {
-			// Remove from whitelist
-			$dbw->delete( 'global_block_whitelist', [ 'gbw_id' => $id ], __METHOD__ );
-
-			$this->addLogEntry( 'dwhitelist', $ip, $data['Reason'] );
+			// Locally re-enable the block
+			$status = $this->globalBlockLocalStatusManager
+				->locallyEnableBlock( $this->mAddress, $data['Reason'], $this->getUser() );
 			$successMsg = 'globalblocking-whitelist-dewhitelisted';
 		}
 
-		return $this->showSuccess( $ip, $id, $successMsg );
+		if ( !$status->isGood() ) {
+			return $status;
+		}
+
+		return $this->showSuccess( $this->mAddress, $status->getValue()['id'], $successMsg );
 	}
 
 	/**
-	 * @param string $action either 'whitelist' or 'dwhitelist'
-	 * @param string $target Target IP
-	 * @param string $reason
-	 */
-	protected function addLogEntry( $action, $target, $reason ) {
-		$logEntry = new ManualLogEntry( 'gblblock', $action );
-		$logEntry->setTarget( Title::makeTitleSafe( NS_USER, $target ) );
-		$logEntry->setComment( $reason );
-		$logEntry->setPerformer( $this->getUser() );
-		$logId = $logEntry->insert();
-		$logEntry->publish( $logId );
-	}
-
-	/**
-	 * @param string $ip
-	 * @param int $id
-	 * @param string $successMsg
+	 * Show a message indicating that the change in the local status of the global block was successful.
+	 *
+	 * @param string $target The target of the global block that had it's local status modified
+	 * @param int $id The ID of the global block that had it's local status modified (same as the ID in gbw_id).
+	 * @param string $successMsg The message key used as the success message.
 	 * @return true
 	 */
-	protected function showSuccess( $ip, $id, $successMsg ) {
-		$link = $this->getLinkRenderer()->makeKnownLink(
+	protected function showSuccess( string $target, int $id, string $successMsg ): bool {
+		$out = $this->getOutput();
+		$out->addWikiMsg( $successMsg, $target, $id );
+		$out->addHTML( $this->getLinkRenderer()->makeKnownLink(
 			SpecialPage::getTitleFor( 'GlobalBlockList' ),
 			$this->msg( 'globalblocking-return' )->text()
-		);
-		$out = $this->getOutput();
-		$out->setSubtitle( GlobalBlocking::buildSubtitleLinks( $this ) );
-		$out->addWikiMsg( $successMsg, $ip, $id );
-		$out->addHTML( $link );
+		) );
 		return true;
 	}
 
