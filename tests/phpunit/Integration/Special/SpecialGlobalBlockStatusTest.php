@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Test\Integration\Special;
 
+use ErrorPageError;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Request\FauxRequest;
@@ -35,11 +36,23 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 		$this->newSpecialPage()->execute( '127.0.0.1/24' );
 	}
 
-	public function testLocallyDisableBlock() {
+	/** @dataProvider provideGlobalBlockTargetTypes */
+	public function testLocallyDisableBlock( $targetType ) {
+		// Generate the target based on the provided target type.
+		switch ( $targetType ) {
+			case 'ip':
+				$target = '1.2.3.4';
+				break;
+			case 'user':
+				$target = $this->getTestUser()->getUser()->getName();
+				break;
+			default:
+				$this->fail( 'Unrecognised target type' );
+		}
 		// Perform a block on an IP to be able to locally disable.
 		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
 		$blockStatus = $globalBlockingServices->getGlobalBlockManager()
-			->block( '1.2.3.4', 'test', 'infinite', $this->getTestUser( [ 'steward' ] )->getUser() );
+			->block( $target, 'test', 'infinite', $this->getTestUser( [ 'steward' ] )->getUser() );
 		$this->assertStatusGood( $blockStatus );
 		$globalBlockId = $blockStatus->getValue()['id'];
 
@@ -47,7 +60,7 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 		$performer = $this->getTestSysop()->getUser();
 		$request = new FauxRequest(
 			[
-				'address' => '1.2.3.4',
+				'address' => $target,
 				'wpReason' => '',
 				'wpWhitelistStatus' => 1,
 				'wpEditToken' => $performer->getEditToken(),
@@ -55,12 +68,7 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 			true
 		);
 
-		[ $html ] = $this->executeSpecialPage(
-			'1.2.3.4',
-			$request,
-			'qqx',
-			$performer
-		);
+		[ $html ] = $this->executeSpecialPage( $target, $request, 'qqx', $performer );
 
 		$this->assertNotFalse(
 			$globalBlockingServices->getGlobalBlockLocalStatusLookup()->getLocalWhitelistInfo( $globalBlockId ),
@@ -68,6 +76,13 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 		);
 
 		$this->assertStringContainsString( 'globalblocking-return', $html, 'The success message was not present' );
+	}
+
+	public static function provideGlobalBlockTargetTypes() {
+		return [
+			'Single IP address' => [ 'ip' ],
+			'Username' => [ 'user' ],
+		];
 	}
 
 	public function testLocallyEnableBlock() {
@@ -111,5 +126,41 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 			'Block should be locally enabled after using the special page'
 		);
 		$this->assertStringContainsString( 'globalblocking-return', $html, 'The success message was not present' );
+	}
+
+	public function testDisabledIfApplyGlobalBlocksIsFalse() {
+		$this->setMwGlobals( 'wgApplyGlobalBlocks', false );
+		$this->expectException( ErrorPageError::class );
+		$this->expectExceptionMessage( wfMessage( 'globalblocking-whitelist-notapplied' )->text() );
+		RequestContext::getMain()->setUser( $this->getTestSysop()->getUser() );
+		$this->newSpecialPage()->execute( '' );
+	}
+
+	public function testLocallyDisableBlockForInvalidUsername() {
+		$performer = $this->getTestSysop()->getUser();
+
+		// Simulate the user using Special:GlobalBlockStatus to locally enable the block
+		$request = new FauxRequest(
+			[
+				// The username # is invalid.
+				'address' => '#',
+				'wpReason' => 'local disable',
+				'wpWhitelistStatus' => 1,
+				'wpEditToken' => $performer->getEditToken(),
+			],
+			true
+		);
+
+		[ $html ] = $this->executeSpecialPage(
+			'',
+			$request,
+			'qqx',
+			$performer
+		);
+
+		$this->assertStringContainsString(
+			'globalblocking-notblocked-new', $html,
+			'The incorrect error message for the form was used.'
+		);
 	}
 }

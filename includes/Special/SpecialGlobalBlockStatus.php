@@ -2,62 +2,66 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Special;
 
+use ErrorPageError;
 use Exception;
 use HTMLForm;
 use MediaWiki\Block\BlockUtils;
-use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusManager;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\SpecialPage\FormSpecialPage;
 use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
+use MediaWiki\User\UserNameUtils;
 use Wikimedia\IPUtils;
 
 class SpecialGlobalBlockStatus extends FormSpecialPage {
-	private ?string $mAddress;
+	private ?string $mTarget;
 	private ?bool $mCurrentStatus;
 	private ?bool $mWhitelistStatus;
 
 	private BlockUtils $blockUtils;
+	private UserNameUtils $userNameUtils;
+	private GlobalBlockLookup $globalBlockLookup;
 	private GlobalBlockLocalStatusManager $globalBlockLocalStatusManager;
+	private GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup;
+	private GlobalBlockingLinkBuilder $globalBlockingLinkBuilder;
 
 	/**
 	 * @param BlockUtils $blockUtils
+	 * @param UserNameUtils $userNameUtils
+	 * @param GlobalBlockLookup $globalBlockLookup
 	 * @param GlobalBlockLocalStatusManager $globalBlockLocalStatusManager
+	 * @param GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup
+	 * @param GlobalBlockingLinkBuilder $globalBlockingLinkBuilder
 	 */
 	public function __construct(
 		BlockUtils $blockUtils,
-		GlobalBlockLocalStatusManager $globalBlockLocalStatusManager
+		UserNameUtils $userNameUtils,
+		GlobalBlockLookup $globalBlockLookup,
+		GlobalBlockLocalStatusManager $globalBlockLocalStatusManager,
+		GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup,
+		GlobalBlockingLinkBuilder $globalBlockingLinkBuilder
 	) {
 		parent::__construct( 'GlobalBlockStatus', 'globalblock-whitelist' );
 		$this->blockUtils = $blockUtils;
+		$this->userNameUtils = $userNameUtils;
+		$this->globalBlockLookup = $globalBlockLookup;
 		$this->globalBlockLocalStatusManager = $globalBlockLocalStatusManager;
+		$this->globalBlockLocalStatusLookup = $globalBlockLocalStatusLookup;
+		$this->globalBlockingLinkBuilder = $globalBlockingLinkBuilder;
 	}
 
-	/**
-	 * @param string $par Parameters of the URL, probably the IP being actioned
-	 */
+	/** @inheritDoc */
 	public function execute( $par ) {
-		$this->loadParameters( $par );
-		$this->setHeaders();
 		$this->addHelpLink( 'Extension:GlobalBlocking' );
-		$this->checkExecutePermissions( $this->getUser() );
-
 		$out = $this->getOutput();
 		$out->disableClientCache();
-		$out->setPageTitleMsg( $this->msg( 'globalblocking-whitelist' ) );
-		$out->setSubtitle( GlobalBlocking::buildSubtitleLinks( $this ) );
+		$out->setSubtitle( $this->globalBlockingLinkBuilder->buildSubtitleLinks( $this ) );
 
-		if ( !$this->getConfig()->get( 'ApplyGlobalBlocks' ) ) {
-			$out->addWikiMsg( 'globalblocking-whitelist-notapplied' );
-			return;
-		}
-		$this->getForm()->show();
-
-		[ $target ] = $this->blockUtils->parseBlockTarget( $this->mAddress );
-
-		if ( $target instanceof UserIdentity ) {
-			$this->getSkin()->setRelevantUser( $target );
-		}
+		parent::execute( $par );
 	}
 
 	/**
@@ -66,21 +70,44 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 	 * @return void
 	 * @throws Exception
 	 */
-	private function loadParameters( ?string $par ) {
+	protected function setParameter( $par ) {
 		$request = $this->getRequest();
-		$ip = trim( $request->getText( 'address', $par ?? '' ) );
-		$this->mAddress = ( $ip !== '' || $request->wasPosted() ) ? IPUtils::sanitizeRange( $ip ) : '';
-		$this->mWhitelistStatus = $request->getCheck( 'wpWhitelistStatus' );
-		$id = GlobalBlocking::getGlobalBlockId( $this->mAddress );
 
-		if ( $this->mAddress ) {
-			$this->mCurrentStatus = ( GlobalBlocking::getLocalWhitelistInfo( $id, $this->mAddress ) !== false );
-			if ( !$request->wasPosted() ) {
-				$this->mWhitelistStatus = $this->mCurrentStatus;
-			}
-		} else {
+		// Parse the target from the request or URL.
+		$target = trim( $request->getText( 'address', $par ?? '' ) );
+		if ( !$target ) {
+			// If no target was provided, show the form with an empty target and the disable checkbox checked (as this
+			// is the most common action).
+			$this->mTarget = $target;
 			$this->mCurrentStatus = true;
+			$this->mWhitelistStatus = false;
+			return;
 		}
+
+		// If the target is an IP address, sanitize it before assigning it as the target.
+		if ( IPUtils::isValidRange( $target ) ) {
+			$this->mTarget = IPUtils::sanitizeRange( $target );
+		} elseif ( IPUtils::isIPAddress( $target ) ) {
+			$this->mTarget = IPUtils::sanitizeIP( $target );
+		} else {
+			$normalisedTarget = $this->userNameUtils->getCanonical( $target );
+			if ( $normalisedTarget ) {
+				$this->mTarget = $normalisedTarget;
+			} else {
+				// Allow invalid targets to be set, so that the user can be shown an error message.
+				$this->mTarget = $target;
+			}
+		}
+
+		// Set the relevant user for the skin and assign it before the form is rendered to HTML.
+		[ $targetForSkin ] = $this->blockUtils->parseBlockTarget( $target );
+		if ( $targetForSkin instanceof UserIdentity ) {
+			$this->getSkin()->setRelevantUser( $targetForSkin );
+		}
+
+		$this->mCurrentStatus = (bool)$this->globalBlockLocalStatusLookup
+			->getLocalWhitelistInfo( $this->globalBlockLookup->getGlobalBlockId( $this->mTarget ) );
+		$this->mWhitelistStatus = $request->getCheck( 'wpWhitelistStatus' );
 	}
 
 	protected function alterForm( HTMLForm $form ) {
@@ -90,13 +117,15 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 	}
 
 	protected function getFormFields() {
+		$accountBlocksEnabled = $this->getConfig()->get( 'GlobalBlockingAllowGlobalAccountBlocks' );
 		return [
 			'address' => [
 				'name' => 'address',
 				'type' => 'text',
-				'id' => 'mw-globalblocking-ipaddress',
-				'label-message' => 'globalblocking-ipaddress',
-				'default' => $this->mAddress,
+				'id' => 'mw-globalblocking-ipaddress mw-globalblocking-target',
+				'label-message' => $accountBlocksEnabled ? 'globalblocking-target' : 'globalblocking-ipaddress',
+				'default' => $this->mTarget,
+				'required' => true,
 			],
 			'Reason' => [
 				'type' => 'text',
@@ -114,12 +143,12 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 		if ( $this->mWhitelistStatus ) {
 			// Locally disable the block
 			$status = $this->globalBlockLocalStatusManager
-				->locallyDisableBlock( $this->mAddress, $data['Reason'], $this->getUser() );
+				->locallyDisableBlock( $this->mTarget, $data['Reason'], $this->getUser() );
 			$successMsg = 'globalblocking-whitelist-whitelisted';
 		} else {
 			// Locally re-enable the block
 			$status = $this->globalBlockLocalStatusManager
-				->locallyEnableBlock( $this->mAddress, $data['Reason'], $this->getUser() );
+				->locallyEnableBlock( $this->mTarget, $data['Reason'], $this->getUser() );
 			$successMsg = 'globalblocking-whitelist-dewhitelisted';
 		}
 
@@ -127,7 +156,7 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 			return $status;
 		}
 
-		return $this->showSuccess( $this->mAddress, $status->getValue()['id'], $successMsg );
+		return $this->showSuccess( $this->mTarget, $status->getValue()['id'], $successMsg );
 	}
 
 	/**
@@ -158,5 +187,17 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 
 	protected function getDisplayFormat() {
 		return 'ooui';
+	}
+
+	public function getDescription() {
+		return $this->msg( 'globalblocking-whitelist' );
+	}
+
+	protected function checkExecutePermissions( User $user ) {
+		parent::checkExecutePermissions( $user );
+		// If wgApplyGlobalBlocks is false, the user should not be able to access this special page.
+		if ( !$this->getConfig()->get( 'ApplyGlobalBlocks' ) ) {
+			throw new ErrorPageError( $this->getDescription(), 'globalblocking-whitelist-notapplied' );
+		}
 	}
 }

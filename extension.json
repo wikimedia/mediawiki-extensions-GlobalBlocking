@@ -60,7 +60,11 @@
 			"class": "MediaWiki\\Extension\\GlobalBlocking\\Special\\SpecialGlobalBlockStatus",
 			"services": [
 				"BlockUtils",
-				"GlobalBlocking.GlobalBlockLocalStatusManager"
+				"UserNameUtils",
+				"GlobalBlocking.GlobalBlockLookup",
+				"GlobalBlocking.GlobalBlockLocalStatusManager",
+				"GlobalBlocking.GlobalBlockLocalStatusLookup",
+				"GlobalBlocking.GlobalBlockingLinkBuilder"
 			]
 		},
 		"RemoveGlobalBlock": {
