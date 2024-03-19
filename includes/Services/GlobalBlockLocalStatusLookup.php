@@ -3,6 +3,8 @@
 namespace MediaWiki\Extension\GlobalBlocking\Services;
 
 use InvalidArgumentException;
+use MediaWiki\User\CentralId\CentralIdLookup;
+use Wikimedia\IPUtils;
 use Wikimedia\Rdbms\IConnectionProvider;
 
 /**
@@ -13,36 +15,53 @@ use Wikimedia\Rdbms\IConnectionProvider;
 class GlobalBlockLocalStatusLookup {
 
 	private IConnectionProvider $dbProvider;
+	private CentralIdLookup $centralIdLookup;
 
-	public function __construct( IConnectionProvider $dbProvider ) {
+	public function __construct(
+		IConnectionProvider $dbProvider,
+		CentralIdLookup $centralIdLookup
+	) {
 		$this->dbProvider = $dbProvider;
+		$this->centralIdLookup = $centralIdLookup;
 	}
 
 	/**
 	 * Returns whether the given global block ID or block on a specific target has been
 	 * locally disabled.
 	 *
-	 * @param int|null $id The ID of the global block.
-	 * @param null|string $address The target of the block (only used if $id is null).
+	 * @param int|null $id Block ID
+	 * @param null|string $target The target of the block (only used if $id is null). Can be an IP, range, or username.
 	 * @param string|false $wikiId The wiki where the where the whitelist info should be looked up.
 	 *   Use false for the local wiki.
 	 * @return array|false false if the block is not locally disabled, otherwise an array containing the
 	 *   user ID of the user who disabled the block and the reason for the block being disabled.
 	 * @phan-return array{user:int,reason:string}|false
 	 */
-	public function getLocalWhitelistInfo( ?int $id = null, ?string $address = null, $wikiId = false ) {
+	public function getLocalWhitelistInfo( ?int $id = null, ?string $target = null, $wikiId = false ) {
 		$queryBuilder = $this->dbProvider->getReplicaDatabase( $wikiId )
 			->newSelectQueryBuilder()
 			->select( [ 'gbw_by', 'gbw_reason' ] )
 			->from( 'global_block_whitelist' );
 		if ( $id !== null ) {
 			$queryBuilder->where( [ 'gbw_id' => $id ] );
-		} elseif ( $address !== null ) {
-			$queryBuilder->where( [ 'gbw_address' => $address ] );
+		} elseif ( $target !== null ) {
+			if ( IPUtils::isIPAddress( $target ) ) {
+				$queryBuilder->where( [ 'gbw_address' => $target ] );
+			} else {
+				$centralIdForTarget = $this->centralIdLookup->centralIdFromName(
+					$target, CentralIdLookup::AUDIENCE_RAW
+				);
+				if ( !$centralIdForTarget ) {
+					// If the target does not have a central ID, we cannot look up by username. In this case we can
+					// assume that there is no global block and therefore it cannot have a local status.
+					return false;
+				}
+				$queryBuilder->where( [ 'gbw_target_central_id' => $centralIdForTarget ] );
+			}
 		} else {
 			// WTF?
 			throw new InvalidArgumentException(
-				'Neither Block IP nor Block ID given for retrieving whitelist status'
+				'Both $target and $id are null when attempting to retrieve whitelist status'
 			);
 		}
 

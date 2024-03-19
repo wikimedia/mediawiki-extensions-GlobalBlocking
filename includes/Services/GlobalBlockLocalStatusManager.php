@@ -3,31 +3,44 @@
 namespace MediaWiki\Extension\GlobalBlocking\Services;
 
 use ManualLogEntry;
+use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Title\Title;
+use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\UserIdentity;
 use StatusValue;
 use Wikimedia\Rdbms\IConnectionProvider;
 
 class GlobalBlockLocalStatusManager {
 
+	public const CONSTRUCTOR_OPTIONS = [
+		'GlobalBlockingAllowGlobalAccountBlocks',
+	];
+
+	private ServiceOptions $options;
 	private GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup;
 	private GlobalBlockLookup $globalBlockLookup;
 	private GlobalBlockingBlockPurger $globalBlockingBlockPurger;
 	private GlobalBlockingConnectionProvider $globalBlockingConnectionProvider;
 	private IConnectionProvider $localDbProvider;
+	private CentralIdLookup $centralIdLookup;
 
 	public function __construct(
+		ServiceOptions $options,
 		GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup,
 		GlobalBlockLookup $globalBlockLookup,
 		GlobalBlockingBlockPurger $globalBlockingBlockPurger,
 		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
-		IConnectionProvider $localDbProvider
+		IConnectionProvider $localDbProvider,
+		CentralIdLookup $centralIdLookup
 	) {
+		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
+		$this->options = $options;
 		$this->globalBlockLocalStatusLookup = $globalBlockLocalStatusLookup;
 		$this->globalBlockLookup = $globalBlockLookup;
 		$this->globalBlockingBlockPurger = $globalBlockingBlockPurger;
 		$this->globalBlockingConnectionProvider = $globalBlockingConnectionProvider;
 		$this->localDbProvider = $localDbProvider;
+		$this->centralIdLookup = $centralIdLookup;
 	}
 
 	/**
@@ -50,7 +63,9 @@ class GlobalBlockLocalStatusManager {
 		// Check that a block exists on the given $target.
 		$globalBlockId = $this->globalBlockLookup->getGlobalBlockId( $target );
 		if ( !$globalBlockId ) {
-			return StatusValue::newFatal( 'globalblocking-notblocked', $target );
+			$errorMessageKey = $this->options->get( 'GlobalBlockingAllowGlobalAccountBlocks' ) ?
+				'globalblocking-notblocked-new' : 'globalblocking-notblocked';
+			return StatusValue::newFatal( $errorMessageKey, $target );
 		}
 
 		// Assert that the block is not already locally disabled.
@@ -76,6 +91,8 @@ class GlobalBlockLocalStatusManager {
 				'gbw_by_text' => $performer->getName(),
 				'gbw_reason' => trim( $reason ),
 				'gbw_address' => $target,
+				'gbw_target_central_id' => $this->centralIdLookup
+					->centralIdFromName( $target, CentralIdLookup::AUDIENCE_RAW ),
 				'gbw_expiry' => $expiry,
 				'gbw_id' => $globalBlockId
 			] )
@@ -100,7 +117,9 @@ class GlobalBlockLocalStatusManager {
 		// Only allow locally re-enabling a global block if the global block exists.
 		$globalBlockId = $this->globalBlockLookup->getGlobalBlockId( $target );
 		if ( !$globalBlockId ) {
-			return StatusValue::newFatal( 'globalblocking-notblocked', $target );
+			$errorMessageKey = $this->options->get( 'GlobalBlockingAllowGlobalAccountBlocks' ) ?
+				'globalblocking-notblocked-new' : 'globalblocking-notblocked';
+			return StatusValue::newFatal( $errorMessageKey, $target );
 		}
 
 		// Assert that the block is locally disabled.

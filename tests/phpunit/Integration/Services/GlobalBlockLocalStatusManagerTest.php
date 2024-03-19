@@ -5,12 +5,21 @@ namespace MediaWiki\Extension\GlobalBlocking\Test\Integration\Services;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
+use Wikimedia\Timestamp\ConvertibleTimestamp;
 
 /**
  * @covers \MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusManager
  * @group Database
  */
 class GlobalBlockLocalStatusManagerTest extends MediaWikiIntegrationTestCase {
+
+	public function setUp(): void {
+		ConvertibleTimestamp::setFakeTime( '2021-03-02T22:00:00Z' );
+		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
+		// to be the local provider.
+		$this->setMwGlobals( 'wgCentralIdLookupProvider', 'local' );
+	}
+
 	public function testLocallyDisableBlock() {
 		// Call the method under test
 		$performer = $this->getTestSysop()->getUser();
@@ -52,7 +61,7 @@ class GlobalBlockLocalStatusManagerTest extends MediaWikiIntegrationTestCase {
 			->locallyDisableBlock( '1.2.3.4', 'test', $this->getTestSysop()->getUser() );
 		$this->assertStatusNotOK( $status, 'The returned status should be fatal.' );
 		$this->assertStatusMessage(
-			'globalblocking-notblocked', $status,
+			'globalblocking-notblocked-new', $status,
 			'The returned status did not indicate that no block existed.'
 		);
 	}
@@ -71,10 +80,29 @@ class GlobalBlockLocalStatusManagerTest extends MediaWikiIntegrationTestCase {
 		);
 	}
 
+	public function testLocallyDisableBlockForUser() {
+		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
+		$target = $this->getTestUser()->getUser();
+		$globalBlockingServices->getGlobalBlockManager()
+			->block( $target, 'test', 'infinite', $this->getTestSysop()->getUser() );
+		$status = $globalBlockingServices->getGlobalBlockLocalStatusManager()
+			->locallyDisableBlock( $target, 'test', $this->getTestSysop()->getUser() );
+		$this->assertStatusGood( $status, 'The returned status should be good.' );
+		$this->assertSame(
+			$this->getServiceContainer()->getCentralIdLookup()->centralIdFromName( $target->getName() ),
+			(int)$this->getDb()->newSelectQueryBuilder()
+				->select( 'gbw_target_central_id' )
+				->from( 'global_block_whitelist' )
+				->fetchField(),
+			'The global_block_whitelist table did not save the correct central ID.'
+		);
+	}
+
 	public function testLocallyEnableBlock() {
+		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
 		// Disable the block on 127.0.0.1 so that we can re-enable it
 		$testSysop = $this->getTestSysop()->getUser();
-		GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockLocalStatusManager()
+		$globalBlockingServices->getGlobalBlockLocalStatusManager()
 			->locallyDisableBlock( '127.0.0.1', 'test', $testSysop );
 		$this->assertSame(
 			1,
@@ -86,7 +114,7 @@ class GlobalBlockLocalStatusManagerTest extends MediaWikiIntegrationTestCase {
 		);
 		// Call the method under test to re-enable the block.
 		$performer = $this->getTestSysop()->getUser();
-		$status = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockLocalStatusManager()
+		$status = $globalBlockingServices->getGlobalBlockLocalStatusManager()
 			->locallyEnableBlock( '127.0.0.1', 'test', $performer );
 		$this->assertStatusGood( $status, 'The returned status should be good.' );
 		// Verify that the global_block_whitelist table has no rows.
@@ -110,7 +138,7 @@ class GlobalBlockLocalStatusManagerTest extends MediaWikiIntegrationTestCase {
 			->locallyEnableBlock( '1.2.3.4', 'test', $this->getTestSysop()->getUser() );
 		$this->assertStatusNotOK( $status, 'The returned status should be fatal.' );
 		$this->assertStatusMessage(
-			'globalblocking-notblocked', $status,
+			'globalblocking-notblocked-new', $status,
 			'The returned status did not indicate that no block existed.'
 		);
 	}

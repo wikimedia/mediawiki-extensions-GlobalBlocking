@@ -53,18 +53,26 @@ return [
 	'GlobalBlocking.GlobalBlockLocalStatusLookup' => static function (
 		MediaWikiServices $services
 	): GlobalBlockLocalStatusLookup {
-		return new GlobalBlockLocalStatusLookup( $services->getConnectionProvider() );
+		return new GlobalBlockLocalStatusLookup(
+			$services->getConnectionProvider(),
+			$services->getCentralIdLookup()
+		);
 	},
 	'GlobalBlocking.GlobalBlockLocalStatusManager' => static function (
 		MediaWikiServices $services
 	): GlobalBlockLocalStatusManager {
 		$globalBlockingServices = GlobalBlockingServices::wrap( $services );
 		return new GlobalBlockLocalStatusManager(
+			new ServiceOptions(
+				GlobalBlockLocalStatusManager::CONSTRUCTOR_OPTIONS,
+				$services->getMainConfig()
+			),
 			$globalBlockingServices->getGlobalBlockLocalStatusLookup(),
 			$globalBlockingServices->getGlobalBlockLookup(),
 			$globalBlockingServices->getGlobalBlockingBlockPurger(),
 			$globalBlockingServices->getGlobalBlockingConnectionProvider(),
-			$services->getConnectionProvider()
+			$services->getConnectionProvider(),
+			$services->getCentralIdLookup()
 		);
 	},
 	'GlobalBlocking.GlobalBlockLookup' => static function (
