@@ -195,7 +195,7 @@ class GlobalBlockManager {
 		$logId = $logEntry->insert();
 		$logEntry->publish( $logId );
 
-		return StatusValue::newGood();
+		return $status;
 	}
 
 	/**
