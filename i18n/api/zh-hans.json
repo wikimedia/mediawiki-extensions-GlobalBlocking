@@ -10,6 +10,7 @@
 		]
 	},
 	"globalblocking-apierror-badip": "IP地址 $1 无效",
+	"globalblocking-apierror-badtarget": "提供的用户名、IP地址或IP范围（$1）无效",
 	"apihelp-globalblock-summary": "全域封禁或解封一位用户。",
 	"apihelp-globalblock-param-target": "目标IP地址或用户名。",
 	"apihelp-globalblock-param-expiry": "如果指定，将封禁或重新封禁该用户。指定封禁将持续多久，例如“5 months”或者“2 weeks”。如果设置为“infinite”或者“indefinite”，该封禁将不会过期。",
