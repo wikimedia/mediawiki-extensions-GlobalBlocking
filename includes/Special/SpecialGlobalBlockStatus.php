@@ -75,7 +75,7 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 		$ip = trim( $request->getText( 'address', $par ?? '' ) );
 		$this->mAddress = ( $ip !== '' || $request->wasPosted() ) ? IPUtils::sanitizeRange( $ip ) : '';
 		$this->mWhitelistStatus = $request->getCheck( 'wpWhitelistStatus' );
-		$id = GlobalBlocking::getGlobalBlockId( $ip );
+		$id = GlobalBlocking::getGlobalBlockId( $this->mAddress );
 
 		if ( $this->mAddress ) {
 			$this->mCurrentStatus = ( GlobalBlocking::getLocalWhitelistInfo( $id, $this->mAddress ) !== false );
