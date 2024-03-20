@@ -133,8 +133,8 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 	/**
 	 * Show a message indicating that the change in the local status of the global block was successful.
 	 *
-	 * @param string $target The target of the global block that had it's local status modified
-	 * @param int $id The ID of the global block that had it's local status modified (same as the ID in gbw_id).
+	 * @param string $target The target of the global block that had its local status modified
+	 * @param int $id The ID of the global block that had its local status modified (same as the ID in gbw_id).
 	 * @param string $successMsg The message key used as the success message.
 	 * @return true
 	 */
