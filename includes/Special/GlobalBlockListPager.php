@@ -3,26 +3,22 @@
 namespace MediaWiki\Extension\GlobalBlocking\Special;
 
 use CentralIdLookup;
-use HtmlArmor;
 use IContextSource;
 use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
 use MediaWiki\Html\Html;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Pager\ReverseChronologicalPager;
-use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\User\User;
 use MediaWiki\WikiMap\WikiMap;
 
 class GlobalBlockListPager extends ReverseChronologicalPager {
-	/** @var array */
-	private $queryConds;
+	private array $queryConds;
 
-	/** @var CommentFormatter */
-	private $commentFormatter;
-
-	/** @var CentralIdLookup */
-	private $lookup;
+	private CommentFormatter $commentFormatter;
+	private CentralIdLookup $lookup;
+	private GlobalBlockingLinkBuilder $globalBlockingLinkBuilder;
 
 	/**
 	 * @param IContextSource $context
@@ -30,13 +26,15 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 	 * @param LinkRenderer $linkRenderer
 	 * @param CommentFormatter $commentFormatter
 	 * @param CentralIdLookup $lookup
+	 * @param GlobalBlockingLinkBuilder $globalBlockingLinkBuilder
 	 */
 	public function __construct(
 		IContextSource $context,
 		array $conds,
 		LinkRenderer $linkRenderer,
 		CommentFormatter $commentFormatter,
-		CentralIdLookup $lookup
+		CentralIdLookup $lookup,
+		GlobalBlockingLinkBuilder $globalBlockingLinkBuilder
 	) {
 		// Set database before parent constructor so that the DB that has the globalblocks table is used
 		// over the local database which may not be the same database.
@@ -45,6 +43,7 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 		$this->queryConds = $conds;
 		$this->commentFormatter = $commentFormatter;
 		$this->lookup = $lookup;
+		$this->globalBlockingLinkBuilder = $globalBlockingLinkBuilder;
 	}
 
 	public function formatRow( $row ) {
@@ -77,36 +76,6 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 		}
 
 		// Do afterthoughts (comment, links for admins)
-		$info = [];
-		$canBlock = $user->isAllowed( 'globalblock' );
-		if ( $canBlock ) {
-			$info[] = $this->getLinkRenderer()->makeKnownLink(
-				SpecialPage::getTitleFor( 'RemoveGlobalBlock' ),
-				new HtmlArmor( $this->msg( 'globalblocking-list-unblock' )->parse() ),
-				[],
-				[ 'address' => $row->gb_address ]
-			);
-		}
-
-		if ( $this->getConfig()->get( 'ApplyGlobalBlocks' )
-				&& $user->isAllowed( 'globalblock-whitelist' ) ) {
-			$info[] = $this->getLinkRenderer()->makeKnownLink(
-				SpecialPage::getTitleFor( 'GlobalBlockStatus' ),
-				new HtmlArmor( $this->msg( 'globalblocking-list-whitelist' )->parse() ),
-				[],
-				[ 'address' => $row->gb_address ]
-			);
-		}
-
-		if ( $canBlock ) {
-			$info[] = $this->getLinkRenderer()->makeKnownLink(
-				SpecialPage::getTitleFor( 'GlobalBlock' ),
-				new HtmlArmor( $this->msg( 'globalblocking-list-modify' )->parse() ),
-				[],
-				[ 'wpAddress' => $row->gb_address ]
-			);
-		}
-
 		$timestamp = $row->gb_timestamp;
 		$timestamp = $lang->userTimeAndDate( wfTimestamp( TS_MW, $timestamp ), $user );
 		// Userpage link / Info on originating wiki
@@ -115,9 +84,7 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 			$row->gb_by_wiki,
 			$this->lookup->nameFromCentralId( $row->gb_by_central_id ) ?? ''
 		);
-		$infoItems = count( $info )
-			? $this->msg( 'parentheses' )->rawParams( $lang->pipeList( $info ) )->escaped()
-			: '';
+		$infoItems = $this->globalBlockingLinkBuilder->getActionLinks( $user, $row->gb_address );
 
 		// Put it all together.
 		return Html::rawElement( 'li', [],

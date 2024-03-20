@@ -22,6 +22,7 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 			$services->getCommentFormatter(),
 			$services->getCentralIdLookup(),
 			GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockLookup(),
+			GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockingLinkBuilder()
 		);
 	}
 

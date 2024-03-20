@@ -45,8 +45,6 @@ class GlobalBlockingLinkBuilderTest extends MediaWikiIntegrationTestCase {
 		$mockSpecialPage = $this->createMock( SpecialPage::class );
 		$mockSpecialPage->method( 'getName' )
 			->willReturn( $specialPageName );
-		$mockSpecialPage->method( 'getLinkRenderer' )
-			->willReturn( $this->getServiceContainer()->getLinkRenderer() );
 		$mockSpecialPage->method( 'getAuthority' )
 			->willReturn( $mockAuthority );
 		$mockSpecialPage->method( 'getLanguage' )
@@ -139,6 +137,78 @@ class GlobalBlockingLinkBuilderTest extends MediaWikiIntegrationTestCase {
 			'(globalblocking-block-edit-dropdown)',
 			$actualSubtitleLinks,
 			'Expected ::buildSubtitleLinks to return a link to Special:GlobalBlock to modify the dropdown options'
+		);
+	}
+
+	public function testGetActionLinksWithNoPermissions() {
+		$globalBlockingLinkBuilder = GlobalBlockingServices::wrap( $this->getServiceContainer() )
+			->getGlobalBlockingLinkBuilder();
+		$this->assertSame(
+			'',
+			$globalBlockingLinkBuilder->getActionLinks(
+				$this->mockRegisteredNullAuthority(),
+				'Testing'
+			),
+			'::getActionLinks should return an empty string when the authority has no permissions'
+		);
+	}
+
+	public function testGetActionLinksForSysop() {
+		// Set the language as qqx so that we can look for message keys in the HTML output we are testing
+		$this->setUserLang( 'qqx' );
+		// Call the method under test
+		$globalBlockingLinkBuilder = GlobalBlockingServices::wrap( $this->getServiceContainer() )
+			->getGlobalBlockingLinkBuilder();
+		$actualActionLinks = $globalBlockingLinkBuilder->getActionLinks(
+			$this->mockRegisteredAuthorityWithPermissions( [ 'globalblock-whitelist' ] ),
+			'Testing'
+		);
+		// Perform assertions to verify that the expected action links are present in the returned HTML
+		$this->assertStringContainsString(
+			'(globalblocking-list-whitelist)',
+			$actualActionLinks,
+			'Expected ::getActionLinks to return a link to Special:GlobalBlockStatus'
+		);
+		$this->assertStringNotContainsString(
+			'(globalblocking-list-modify)',
+			$actualActionLinks,
+			'Expected ::getActionLinks to not return a link to Special:GlobalBlock, because the user does not ' .
+			'have the authority to modify a global block.'
+		);
+		$this->assertStringNotContainsString(
+			'(globalblocking-list-unblock)',
+			$actualActionLinks,
+			'Expected ::getActionLinks to not return a link to Special:RemoveGlobalBlock, because the user ' .
+			'does not have the authority to remove a global block.'
+		);
+	}
+
+	public function testGetActionLinksForSteward() {
+		// Set the language as qqx so that we can look for message keys in the HTML output we are testing
+		$this->setUserLang( 'qqx' );
+		// Call the method under test
+		$globalBlockingLinkBuilder = GlobalBlockingServices::wrap( $this->getServiceContainer() )
+			->getGlobalBlockingLinkBuilder();
+		$actualActionLinks = $globalBlockingLinkBuilder->getActionLinks(
+			$this->mockRegisteredAuthorityWithPermissions( [ 'globalblock' ] ),
+			'Testing'
+		);
+		// Perform assertions to verify that the expected action links are present in the returned HTML
+		$this->assertStringNotContainsString(
+			'(globalblocking-list-whitelist)',
+			$actualActionLinks,
+			'Expected ::getActionLinks to not return a link to Special:GlobalBlockStatus as the authority ' .
+			'not have the right to use that special page.'
+		);
+		$this->assertStringContainsString(
+			'(globalblocking-list-modify)',
+			$actualActionLinks,
+			'Expected ::getActionLinks to return a link to Special:GlobalBlock'
+		);
+		$this->assertStringContainsString(
+			'(globalblocking-list-unblock)',
+			$actualActionLinks,
+			'Expected ::getActionLinks to return a link to Special:RemoveGlobalBlock'
 		);
 	}
 }

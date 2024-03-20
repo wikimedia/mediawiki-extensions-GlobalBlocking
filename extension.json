@@ -53,7 +53,8 @@
 				"BlockUtils",
 				"CommentFormatter",
 				"CentralIdLookup",
-				"GlobalBlocking.GlobalBlockLookup"
+				"GlobalBlocking.GlobalBlockLookup",
+				"GlobalBlocking.GlobalBlockingLinkBuilder"
 			]
 		},
 		"GlobalBlockStatus": {
@@ -163,7 +164,8 @@
 				"PermissionManager",
 				"MainConfig",
 				"CommentFormatter",
-				"CentralIdLookup"
+				"CentralIdLookup",
+				"GlobalBlocking.GlobalBlockingLinkBuilder"
 			]
 		},
 		"usermerge": {
