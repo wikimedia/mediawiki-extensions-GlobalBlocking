@@ -6,6 +6,7 @@ use ExtensionRegistry;
 use LogEntry;
 use LogFormatter;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
 use MediaWiki\Html\Html;
 use MediaWiki\Linker\Linker;
 use MediaWiki\Message\Message;
@@ -23,16 +24,24 @@ class GlobalBlockLogFormatter extends LogFormatter {
 
 	private UserFactory $userFactory;
 	private UserIdentityLookup $userIdentityLookup;
+	private GlobalBlockingLinkBuilder $globalBlockingLinkBuilder;
 
 	/**
 	 * @param LogEntry $entry
 	 * @param UserFactory $userFactory
 	 * @param UserIdentityLookup $userIdentityLookup
+	 * @param GlobalBlockingLinkBuilder $globalBlockingLinkBuilder
 	 */
-	public function __construct( LogEntry $entry, UserFactory $userFactory, UserIdentityLookup $userIdentityLookup ) {
+	public function __construct(
+		LogEntry $entry,
+		UserFactory $userFactory,
+		UserIdentityLookup $userIdentityLookup,
+		GlobalBlockingLinkBuilder $globalBlockingLinkBuilder
+	) {
 		parent::__construct( $entry );
 		$this->userFactory = $userFactory;
 		$this->userIdentityLookup = $userIdentityLookup;
+		$this->globalBlockingLinkBuilder = $globalBlockingLinkBuilder;
 	}
 
 	protected function getMessageKey(): string {
@@ -119,9 +128,7 @@ class GlobalBlockLogFormatter extends LogFormatter {
 			}
 		}
 
-		$userText = $this->entry->getTarget()->getText();
-		$targetUserIdentity = $this->userIdentityLookup->getUserIdentityByName( $userText )
-			?? UserIdentityValue::newAnonymous( $userText );
+		$targetUserIdentity = $this->getUserIdentityForTarget();
 		$canViewTarget = $this->checkAuthorityCanSeeUser( $targetUserIdentity );
 
 		if ( !$canViewTarget ) {
@@ -137,10 +144,39 @@ class GlobalBlockLogFormatter extends LogFormatter {
 			// Overwrite the third parameter (index 2) with a user link to provide a talk page link and link the
 			// contributions page for IP addresses.
 			$params[2] = Message::rawParam( $this->makeUserLink( $targetUserIdentity, Linker::TOOL_LINKS_NOBLOCK ) );
-			$params[3] = $userText;
+			$params[3] = $targetUserIdentity->getName();
 		}
 
 		return $params;
+	}
+
+	/**
+	 * Adds the action links for global block log entries which depend on what rights that the
+	 * user has. This is the same as the action links used on Special:GlobalBlockList entries.
+	 *
+	 * @return string
+	 */
+	public function getActionLinks(): string {
+		$targetUserIdentity = $this->getUserIdentityForTarget();
+		if ( !$this->checkAuthorityCanSeeUser( $targetUserIdentity ) ) {
+			// Don't show the action links if the current authority cannot view the target of the block.
+			return '';
+		}
+		// Get the action links for the log entry which are the same as those used on Special:GlobalBlockList.
+		return $this->globalBlockingLinkBuilder->getActionLinks(
+			$this->context->getAuthority(), $targetUserIdentity->getName()
+		);
+	}
+
+	/**
+	 * Get the UserIdentity object for the target of the block referenced in the current log entry.
+	 *
+	 * @return UserIdentity This can be a IP address, range, or username (which exists or does not exist).
+	 */
+	private function getUserIdentityForTarget(): UserIdentity {
+		$userText = $this->entry->getTarget()->getText();
+		return $this->userIdentityLookup->getUserIdentityByName( $userText )
+			?? UserIdentityValue::newAnonymous( $userText );
 	}
 
 	/**
