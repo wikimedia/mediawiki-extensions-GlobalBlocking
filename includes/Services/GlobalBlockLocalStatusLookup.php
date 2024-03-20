@@ -22,7 +22,7 @@ class GlobalBlockLocalStatusLookup {
 	 * Returns whether the given global block ID or block on a specific target has been
 	 * locally disabled.
 	 *
-	 * @param int|null $id Block ID
+	 * @param int|null $id The ID of the global block.
 	 * @param null|string $address The target of the block (only used if $id is null).
 	 * @param string|false $wikiId The wiki where the where the whitelist info should be looked up.
 	 *   Use false for the local wiki.
@@ -35,9 +35,9 @@ class GlobalBlockLocalStatusLookup {
 			->newSelectQueryBuilder()
 			->select( [ 'gbw_by', 'gbw_reason' ] )
 			->from( 'global_block_whitelist' );
-		if ( $id != null ) {
+		if ( $id !== null ) {
 			$queryBuilder->where( [ 'gbw_id' => $id ] );
-		} elseif ( $address != null ) {
+		} elseif ( $address !== null ) {
 			$queryBuilder->where( [ 'gbw_address' => $address ] );
 		} else {
 			// WTF?
@@ -68,8 +68,10 @@ class GlobalBlockLocalStatusLookup {
 	 * @return array|false false if the block is not locally disabled, otherwise an array containing the
 	 *    user ID of the user who disabled the block and the reason for the block being disabled.
 	 * @phan-return array{user:int,reason:string}|false
+	 * @deprecated since 1.42. Use ::getLocalWhitelistInfo.
 	 */
 	public function getLocalWhitelistInfoByIP( string $block_ip, $wikiId = false ) {
+		wfDeprecated( __METHOD__, '1.42' );
 		return $this->getLocalWhitelistInfo( null, $block_ip, $wikiId );
 	}
 }
