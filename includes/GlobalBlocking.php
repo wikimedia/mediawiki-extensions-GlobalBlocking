@@ -152,6 +152,7 @@ class GlobalBlocking {
 	 * @deprecated Since 1.42. Use GlobalBlockingBlockPurger::purgeExpiredBlocks.
 	 */
 	public static function purgeExpired() {
+		wfDeprecated( __METHOD__, '1.42' );
 		GlobalBlockingServices::wrap( MediaWikiServices::getInstance() )
 			->getGlobalBlockingBlockPurger()
 			->purgeExpiredBlocks();
@@ -178,6 +179,7 @@ class GlobalBlocking {
 	 * @deprecated Since 1.42. Use GlobalBlockLocalStatusLookup::getLocalWhitelistInfoByIP.
 	 */
 	public static function getLocalWhitelistInfoByIP( $block_ip ) {
+		wfDeprecated( __METHOD__, '1.42' );
 		return GlobalBlockingServices::wrap( MediaWikiServices::getInstance() )
 			->getGlobalBlockLocalStatusLookup()
 			->getLocalWhitelistInfoByIP( $block_ip );

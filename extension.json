@@ -60,7 +60,7 @@
 			"class": "MediaWiki\\Extension\\GlobalBlocking\\Special\\SpecialGlobalBlockStatus",
 			"services": [
 				"BlockUtils",
-				"ConnectionProvider"
+				"GlobalBlocking.GlobalBlockLocalStatusManager"
 			]
 		},
 		"RemoveGlobalBlock": {
