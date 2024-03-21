@@ -16,6 +16,8 @@
 	"globalblocking-block-expiry": "Bitmə müddəti:",
 	"globalblocking-block-expiry-selector-other": "Başqa vaxt:",
 	"globalblocking-ipaddress": "IP ünvanı:",
+	"globalblocking-block-success": "'''$1''' bütün vikilərdə bloklanıb.",
+	"globalblocking-modify-success": "'''$1''' üzrə qlobal blok dəyişdirildi.",
 	"globalblocking-also-local-talk": "Lokal olaraq istifadəçini öz müzakirə səhifəsini redaktə etməsini blokla",
 	"globalblocking-search-ip": "IP ünvanı:",
 	"globalblocking-list-unblock": "çıxar",
