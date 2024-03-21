@@ -176,7 +176,7 @@ class GlobalBlocking {
 	 * @param string $block_ip
 	 * @return array|false
 	 * @phan-return array{user:int,reason:string}|false
-	 * @deprecated Since 1.42. Use GlobalBlockLocalStatusLookup::getLocalWhitelistInfoByIP.
+	 * @deprecated Since 1.42. Use GlobalBlockLocalStatusLookup::getLocalWhitelistInfo.
 	 */
 	public static function getLocalWhitelistInfoByIP( $block_ip ) {
 		wfDeprecated( __METHOD__, '1.42' );

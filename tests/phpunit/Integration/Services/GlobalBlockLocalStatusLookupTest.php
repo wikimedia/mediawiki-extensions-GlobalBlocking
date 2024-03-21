@@ -21,17 +21,6 @@ class GlobalBlockLocalStatusLookupTest extends MediaWikiIntegrationTestCase {
 			->getLocalWhitelistInfo();
 	}
 
-	public function testGetLocalWhitelistInfoByIP() {
-		// Tests that ::getLocalWhitelistInfoByIP will do the same as ::getLocalWhitelistInfo.
-		$this->assertSame(
-			[ 'user' => 123, 'reason' => 'Test reason' ],
-			GlobalBlockingServices::wrap( $this->getServiceContainer() )
-				->getGlobalBlockLocalStatusLookup()
-				->getLocalWhitelistInfoByIP( '127.0.0.1' ),
-			'::getLocalWhitelistInfoByIP did not return the expected result.'
-		);
-	}
-
 	/** @dataProvider provideGetLocalWhitelistInfo */
 	public function testGetLocalWhitelistInfo( $id, $address, $expectedResult ) {
 		// Tests ::getLocalWhitelistInfo for a variety of arguments. If updating the
