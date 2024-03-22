@@ -1,5 +1,8 @@
 <?php
 
+namespace MediaWiki\Extension\GlobalBlocking\Maintenance;
+
+use Maintenance;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
 use MediaWiki\MediaWikiServices;
 
