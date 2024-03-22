@@ -57,6 +57,14 @@ class FixGlobalBlockWhitelistTest extends MaintenanceBaseTestCase {
 		// Run the maintenance script
 		$this->maintenance->setOption( 'dry-run', $dryRun );
 		$this->maintenance->execute();
+		$this->assertSame(
+			$dryRun ? 0 : 1,
+			(int)$this->getDb()->newSelectQueryBuilder()
+				->select( 'COUNT(*)' )
+				->from( 'global_block_whitelist' )
+				->where( [ 'gbw_id' => 1 ] )
+				->fetchField()
+		);
 		$this->expectOutputString( $expectedOutputString );
 	}
 
@@ -96,6 +104,14 @@ class FixGlobalBlockWhitelistTest extends MaintenanceBaseTestCase {
 		$this->maintenance->setOption( 'dry-run', $dryRun );
 		$this->maintenance->setOption( 'delete', 1 );
 		$this->maintenance->execute();
+		$this->assertSame(
+			$dryRun ? 1 : 0,
+			(int)$this->getDb()->newSelectQueryBuilder()
+				->select( 'COUNT(*)' )
+				->from( 'global_block_whitelist' )
+				->where( [ 'gbw_address' => '1.2.3.4' ] )
+				->fetchField()
+		);
 		$this->expectOutputString( $expectedOutputString );
 	}
 
@@ -126,6 +142,14 @@ class FixGlobalBlockWhitelistTest extends MaintenanceBaseTestCase {
 		// Run the maintenance script with the delete option
 		$this->maintenance->setOption( 'delete', 1 );
 		$this->maintenance->execute();
+		$this->assertSame(
+			1,
+			(int)$this->getDb()->newSelectQueryBuilder()
+				->select( 'COUNT(*)' )
+				->from( 'global_block_whitelist' )
+				->where( [ 'gbw_address' => '127.0.0.1' ] )
+				->fetchField()
+		);
 		$this->expectOutputString(
 			"No broken whitelist entries.\n" .
 			"All whitelist entries have corresponding global blocks.\n"
