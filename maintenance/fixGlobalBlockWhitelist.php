@@ -137,14 +137,83 @@ class FixGlobalBlockWhitelist extends Maintenance {
 		$this->output( "Found $brokenCount broken whitelist entries which can be fixed.\n" );
 		$count = 0;
 		$lbFactory = $this->getServiceContainer()->getDBLoadBalancerFactory();
+		$localDbr = $this->getReplicaDB();
 		$localDbw = $this->getPrimaryDB();
 
 		foreach ( $brokenEntries as $newId => $address ) {
+			if ( !$this->dryRun && $count === $this->mBatchSize ) {
+				// Wait for replication if we have processed a batch of entries
+				// and this is not a dry run.
+				$lbFactory->waitForReplication();
+				$count = 0;
+			}
+			$count++;
+
+			// Check if there is already a whitelist entry using the id we want to use.
+			$entryAlreadyExists = (bool)$localDbr->newSelectQueryBuilder()
+				->select( '1' )
+				->from( 'global_block_whitelist' )
+				->where( [ 'gbw_id' => $newId ] )
+				->fetchField();
+			if ( $entryAlreadyExists ) {
+				if ( $this->dryRun ) {
+					$this->output( " Would delete broken entries for $address: id $newId already is whitelisted.\n" );
+					continue;
+				}
+				// If a whitelist entry already exists with the gbw_id we want to use, then we cannot update this
+				// broken whitelist entry and should instead delete it.
+				$localDbw->newDeleteQueryBuilder()
+					->deleteFrom( 'global_block_whitelist' )
+					->where( [
+						'gbw_address' => $address,
+						// Only delete the broken entries and not the unbroken entry.
+						$localDbw->expr( 'gbw_id', '!=', $newId )
+					] )
+					->caller( __METHOD__ )
+					->execute();
+				$this->output( " Deleted broken entries for $address: id $newId already is whitelisted.\n" );
+				continue;
+			}
+
+			// Delete any duplicate whitelist entries with the same address, keeping the one with the highest
+			// gbw_id as this should be the most recent entry.
+			$brokenEntriesForThisAddress = $localDbr->newSelectQueryBuilder()
+				->select( 'gbw_id' )
+				->from( 'global_block_whitelist' )
+				->where( [ 'gbw_address' => $address ] )
+				->caller( __METHOD__ )
+				->fetchFieldValues();
+			if ( count( $brokenEntriesForThisAddress ) > 1 ) {
+				// If there are multiple broken entries for this address, then delete all but the one with the highest
+				// gbw_id as this will likely be the most relevant entry (as it was for the most recent global block
+				// on this target).
+				$maxIdForThisAddress = max( $brokenEntriesForThisAddress );
+				if ( $this->dryRun ) {
+					$this->output(
+						" Would delete all whitelist entries for $address except the entry with gbw_id as " .
+						"$maxIdForThisAddress: only one row can be updated to use id $newId\n."
+					);
+				} else {
+					$localDbw->newDeleteQueryBuilder()
+						->deleteFrom( 'global_block_whitelist' )
+						->where( [
+							'gbw_address' => $address,
+							$localDbw->expr( 'gbw_id', '!=', $maxIdForThisAddress )
+						] )
+						->caller( __METHOD__ )
+						->execute();
+					$this->output(
+						" Deleted all whitelist entries for $address except the entry with gbw_id as " .
+						"$maxIdForThisAddress: only one row can be updated to use id $newId\n."
+					);
+				}
+			}
+
+			// Update the one remaining broken whitelist entry to use the correct id.
 			if ( $this->dryRun ) {
 				$this->output( " Whitelist broken $address: current gb_id is $newId\n" );
 				continue;
 			}
-			$count++;
 			$localDbw->newUpdateQueryBuilder()
 				->update( 'global_block_whitelist' )
 				->set( [ 'gbw_id' => $newId ] )
@@ -152,10 +221,6 @@ class FixGlobalBlockWhitelist extends Maintenance {
 				->caller( __METHOD__ )
 				->execute();
 			$this->output( " Fixed $address: id changed to $newId\n" );
-			if ( $count === $this->mBatchSize ) {
-				$lbFactory->waitForReplication();
-				$count = 0;
-			}
 		}
 		$this->output( "Finished processing broken whitelist entries.\n" );
 	}
