@@ -31,7 +31,7 @@ class FixGlobalBlockWhitelistTest extends MaintenanceBaseTestCase {
 		$this->assertStatusGood( $disableStatus );
 		// Run the maintenance script
 		$this->maintenance->execute();
-		$this->expectOutputString( "No broken whitelist entries.\n" );
+		$this->expectOutputString( "No broken whitelist entries which can be fixed.\n" );
 	}
 
 	/** @dataProvider provideExecuteWhenBrokenWhitelistRows */
@@ -72,13 +72,13 @@ class FixGlobalBlockWhitelistTest extends MaintenanceBaseTestCase {
 		return [
 			'Not a dry run' => [
 				false,
-				"Found 1 broken whitelist entries.\n" .
+				"Found 1 broken whitelist entries which can be fixed.\n" .
 				" Fixed 127.0.0.1: id changed to 1\n" .
 				"Finished processing broken whitelist entries.\n"
 			],
 			'Dry run' => [
 				true,
-				"Found 1 broken whitelist entries.\n" .
+				"Found 1 broken whitelist entries which can be fixed.\n" .
 				" Whitelist broken 127.0.0.1: current gb_id is 1\n" .
 				"Finished processing broken whitelist entries.\n"
 			],
@@ -119,14 +119,14 @@ class FixGlobalBlockWhitelistTest extends MaintenanceBaseTestCase {
 		return [
 			'Not a dry run' => [
 				false,
-				"No broken whitelist entries.\n" .
+				"No broken whitelist entries which can be fixed.\n" .
 				"Found 1 whitelist entries with no corresponding global blocks:\n" .
 				"1.2.3.4\n" .
 				"Finished deleting whitelist entries with no corresponding global blocks.\n"
 			],
 			'Dry run' => [
 				true,
-				"No broken whitelist entries.\n" .
+				"No broken whitelist entries which can be fixed.\n" .
 				"Found 1 whitelist entries with no corresponding global blocks:\n" .
 				"1.2.3.4\n"
 			],
@@ -151,7 +151,7 @@ class FixGlobalBlockWhitelistTest extends MaintenanceBaseTestCase {
 				->fetchField()
 		);
 		$this->expectOutputString(
-			"No broken whitelist entries.\n" .
+			"No broken whitelist entries which can be fixed.\n" .
 			"All whitelist entries have corresponding global blocks.\n"
 		);
 	}
