@@ -161,7 +161,9 @@ class GlobalBlockLogFormatterTest extends LogFormatterTestCase {
 		$targetUser = $this->getMutableTestUser()->getUser();
 		$blockingUser = $this->getTestUser( [ 'sysop', 'suppress' ] )->getUser();
 		if ( $logViewerHasSuppress ) {
-			$logViewAuthority = $this->mockRegisteredAuthorityWithPermissions( [ 'hideuser' ] );
+			$logViewAuthority = $this->mockRegisteredAuthorityWithPermissions(
+				[ 'hideuser', 'globalblock-whitelist' ]
+			);
 		} else {
 			$logViewAuthority = $this->mockRegisteredAuthorityWithoutPermissions( [ 'hideuser' ] );
 		}
@@ -195,6 +197,19 @@ class GlobalBlockLogFormatterTest extends LogFormatterTestCase {
 			trim( strip_tags( $formatter->getActionText() ) ),
 			'Action text is equal to expected text'
 		);
+		if ( $logViewerHasSuppress ) {
+			$this->assertNotSame(
+				'',
+				$formatter->getActionLinks(),
+				'Action links should not be empty if the user is not hidden'
+			);
+		} else {
+			$this->assertSame(
+				'',
+				$formatter->getActionLinks(),
+				'Action links should be empty if the user is hidden'
+			);
+		}
 	}
 
 	public static function provideLogDatabaseRowsForHiddenUser() {
@@ -212,7 +227,9 @@ class GlobalBlockLogFormatterTest extends LogFormatterTestCase {
 	) {
 		$this->markTestSkippedIfExtensionNotLoaded( 'CentralAuth' );
 		if ( $logViewerHasSuppress ) {
-			$logViewAuthority = $this->mockRegisteredAuthorityWithPermissions( [ 'centralauth-suppress' ] );
+			$logViewAuthority = $this->mockRegisteredAuthorityWithPermissions( [
+				'centralauth-suppress', 'globalblock-whitelist'
+			] );
 		} else {
 			$logViewAuthority = $this->mockRegisteredAuthorityWithoutPermissions( [ 'centralauth-suppress' ] );
 		}
@@ -254,6 +271,19 @@ class GlobalBlockLogFormatterTest extends LogFormatterTestCase {
 			trim( strip_tags( $formatter->getActionText() ) ),
 			'Action text is equal to expected text'
 		);
+		if ( $shouldShowName ) {
+			$this->assertNotSame(
+				'',
+				$formatter->getActionLinks(),
+				'Action links should not be empty if the user is not hidden'
+			);
+		} else {
+			$this->assertSame(
+				'',
+				$formatter->getActionLinks(),
+				'Action links should be empty if the user is hidden'
+			);
+		}
 	}
 
 	public static function provideLogDatabaseRowsForCentrallyHiddenUser() {

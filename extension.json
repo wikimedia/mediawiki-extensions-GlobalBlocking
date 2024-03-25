@@ -109,7 +109,8 @@
 			"class": "MediaWiki\\Extension\\GlobalBlocking\\GlobalBlockLogFormatter",
 			"services": [
 				"UserFactory",
-				"UserIdentityLookup"
+				"UserIdentityLookup",
+				"GlobalBlocking.GlobalBlockingLinkBuilder"
 			]
 		}
 	},
