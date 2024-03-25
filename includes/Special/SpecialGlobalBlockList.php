@@ -8,26 +8,20 @@ use HTMLForm;
 use MediaWiki\Block\BlockUtils;
 use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\Html\Html;
 use MediaWiki\SpecialPage\SpecialPage;
 use Wikimedia\IPUtils;
 
 class SpecialGlobalBlockList extends SpecialPage {
-	/** @var string|null */
-	protected $target;
+	protected ?string $target;
+	protected array $options;
 
-	/** @var array */
-	protected $options;
-
-	/** @var BlockUtils */
-	private $blockUtils;
-
-	/** @var CommentFormatter */
-	private $commentFormatter;
-
-	/** @var CentralIdLookup */
-	private $lookup;
+	private BlockUtils $blockUtils;
+	private CommentFormatter $commentFormatter;
+	private CentralIdLookup $lookup;
+	private GlobalBlockingLinkBuilder $globalBlockingLinkBuilder;
 
 	/** @var GlobalBlockLookup */
 	private $globalBlockLookup;
@@ -37,12 +31,14 @@ class SpecialGlobalBlockList extends SpecialPage {
 	 * @param CommentFormatter $commentFormatter
 	 * @param CentralIdLookup $lookup
 	 * @param GlobalBlockLookup $globalBlockLookup
+	 * @param GlobalBlockingLinkBuilder $globalBlockingLinkBuilder
 	 */
 	public function __construct(
 		BlockUtils $blockUtils,
 		CommentFormatter $commentFormatter,
 		CentralIdLookup $lookup,
-		GlobalBlockLookup $globalBlockLookup
+		GlobalBlockLookup $globalBlockLookup,
+		GlobalBlockingLinkBuilder $globalBlockingLinkBuilder
 	) {
 		parent::__construct( 'GlobalBlockList' );
 
@@ -50,6 +46,7 @@ class SpecialGlobalBlockList extends SpecialPage {
 		$this->commentFormatter = $commentFormatter;
 		$this->lookup = $lookup;
 		$this->globalBlockLookup = $globalBlockLookup;
+		$this->globalBlockingLinkBuilder = $globalBlockingLinkBuilder;
 	}
 
 	/**
@@ -170,7 +167,8 @@ class SpecialGlobalBlockList extends SpecialPage {
 			$conds,
 			$this->getLinkRenderer(),
 			$this->commentFormatter,
-			$this->lookup
+			$this->lookup,
+			$this->globalBlockingLinkBuilder
 		);
 		$body = $pager->getBody();
 		if ( $body != '' ) {

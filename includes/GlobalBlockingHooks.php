@@ -10,6 +10,7 @@ use MediaWiki\Block\CompositeBlock;
 use MediaWiki\Block\Hook\GetUserBlockHook;
 use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Config\Config;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
 use MediaWiki\Extension\GlobalBlocking\Special\GlobalBlockListPager;
 use MediaWiki\Hook\ContributionsToolLinksHook;
 use MediaWiki\Hook\GetBlockErrorMessageKeyHook;
@@ -42,34 +43,31 @@ class GlobalBlockingHooks implements
 	GetLogTypesOnUserHook,
 	ContributionsToolLinksHook
 {
-	/** @var PermissionManager */
-	private $permissionManager;
-
-	/** @var Config */
-	private $config;
-
-	/** @var CommentFormatter */
-	private $commentFormatter;
-
-	/** @var CentralIdLookup */
-	private $lookup;
+	private PermissionManager $permissionManager;
+	private Config $config;
+	private CommentFormatter $commentFormatter;
+	private CentralIdLookup $lookup;
+	private GlobalBlockingLinkBuilder $globalBlockLinkBuilder;
 
 	/**
 	 * @param PermissionManager $permissionManager
 	 * @param Config $mainConfig
 	 * @param CommentFormatter $commentFormatter
 	 * @param CentralIdLookup $lookup
+	 * @param GlobalBlockingLinkBuilder $globalBlockLinkBuilder
 	 */
 	public function __construct(
 		PermissionManager $permissionManager,
 		Config $mainConfig,
 		CommentFormatter $commentFormatter,
-		CentralIdLookup $lookup
+		CentralIdLookup $lookup,
+		GlobalBlockingLinkBuilder $globalBlockLinkBuilder
 	) {
 		$this->permissionManager = $permissionManager;
 		$this->config = $mainConfig;
 		$this->commentFormatter = $commentFormatter;
 		$this->lookup = $lookup;
+		$this->globalBlockLinkBuilder = $globalBlockLinkBuilder;
 	}
 
 	/**
@@ -218,7 +216,8 @@ class GlobalBlockingHooks implements
 				$conds,
 				$sp->getLinkRenderer(),
 				$this->commentFormatter,
-				$this->lookup
+				$this->lookup,
+				$this->globalBlockLinkBuilder
 			);
 			$body = $pager->formatRow( $block );
 

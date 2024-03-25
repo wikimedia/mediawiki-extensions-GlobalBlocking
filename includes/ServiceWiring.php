@@ -117,7 +117,10 @@ return [
 			new ServiceOptions(
 				GlobalBlockingLinkBuilder::CONSTRUCTOR_OPTIONS,
 				$services->getMainConfig()
-			)
+			),
+			$services->getLinkRenderer(),
+			RequestContext::getMain(),
+			RequestContext::getMain()->getLanguage()
 		);
 	},
 ];
