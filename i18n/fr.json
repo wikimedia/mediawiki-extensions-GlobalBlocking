@@ -41,7 +41,7 @@
 	"globalblocking-block-expiryinvalid": "La durée d’expiration que vous avez entrée est incorrecte.",
 	"globalblocking-block-submit": "Bloquer globalement cette adresse IP",
 	"globalblocking-modify-submit": "Modifier ce blocage global",
-	"globalblocking-block-success": "$1 a été bloqué sur l’ensemble des wikis.",
+	"globalblocking-block-success": "'''$1''' a été bloqué sur tous les wikis.",
 	"globalblocking-modify-success": "Le blocage global de $1 a été modifié.",
 	"globalblocking-local-failed": "Le blocage local de l’adresse IP a échoué car l’adresse IP fournie est déjà bloquée sur ce wiki.",
 	"globalblocking-block-failure": "Une erreur s’est produite lors de la tentative de blocage global de $1. Veuillez essayer à nouveau.",

@@ -51,6 +51,7 @@
 	"globalblocking-ipbanononly": "仅阻止匿名用户",
 	"globalblocking-block-ipinvalid": "您输入的IP地址（$1）无效。请注意，您不能输入一个用户名！",
 	"globalblocking-block-expiryinvalid": "您输入的终止时间无效。",
+	"globalblocking-block-anononly-on-account": "您不能在封禁用户时仅封禁匿名用户。",
 	"globalblocking-block-submit": "全域封禁该IP地址",
 	"globalblocking-modify-submit": "修改该全域封禁",
 	"globalblocking-block-success": "'''$1'''已在所有wiki上被封禁。",
