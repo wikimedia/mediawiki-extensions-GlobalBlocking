@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Beginneruser",
+			"Ebraminio",
 			"Jeeputer",
 			"Ladsgroup",
 			"Mehran"
@@ -12,7 +13,7 @@
 	"apihelp-globalblock-param-target": "نشانی آی‌پی یا نام کاربری هدف.",
 	"apihelp-globalblock-param-unblock": "اگر مشخص شود، کاربر باز خواهد شد.",
 	"apihelp-globalblock-param-reason": "دلیل برای بازکردن/بستن.",
-	"apihelp-query+globalblocks-summary": "فهرست نشانی‌های اینترنتی که دسترسی‌شان به طور سراسری قطع شده‌است",
+	"apihelp-query+globalblocks-summary": "فهرست نشانی‌های اینترنتی که دسترسی‌شان به طور سراسری قطع شده است",
 	"apihelp-query+globalblocks-param-start": "برچسب زمانی برای آغاز شمارش از.",
 	"apihelp-query+globalblocks-param-end": "برچسب زمانی برای پایان شمارش در.",
 	"apihelp-query+globalblocks-param-limit": "حداکثر تعداد بستن‌هایی که نمایش داده شود.",
