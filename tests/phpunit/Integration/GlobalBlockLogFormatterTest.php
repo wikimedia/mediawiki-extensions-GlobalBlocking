@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\GlobalBlocking\Test\Integration;
 use CentralAuthTestUser;
 use LogFormatter;
 use LogFormatterTestCase;
+use LogPage;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWiki\WikiMap\WikiMap;
@@ -154,6 +155,75 @@ class GlobalBlockLogFormatterTest extends LogFormatterTestCase {
 			],
 			[ 'text' => '', 'api' => [] ]
 		);
+	}
+
+	/** @dataProvider provideLogDatabaseRowsForHiddenAction */
+	public function testLogDatabaseRowsForHiddenAction(
+		$logViewerHasHideUser,
+		$actionIsHidden,
+		$audience,
+		$shouldShowAction
+	) {
+		$targetUser = $this->getMutableTestUser()->getUser();
+		if ( $logViewerHasHideUser ) {
+			$logViewAuthority = $this->mockRegisteredAuthorityWithPermissions( [
+				'viewsuppressed', 'globalblock-whitelist'
+			] );
+		} else {
+			$logViewAuthority = $this->mockRegisteredAuthorityWithoutPermissions( [
+				'suppressrevision', 'viewsuppressed'
+			] );
+		}
+
+		// Don't use doTestLogFormatter() since it overrides every service that
+		// accesses the database and prevents correct loading of the block.
+		$row = $this->expandDatabaseRow(
+			[
+				'type' => 'gblblock', 'action' => 'gblock', 'user_text' => 'Sysop',
+				'title' => $targetUser->getName(), 'namespace' => NS_USER,
+				'params' => [ '5::expiry' => 'infinite', '6::flags' => [] ],
+				'deleted' => $actionIsHidden ? LogPage::DELETED_ACTION | LogPage::DELETED_RESTRICTED : 0,
+			],
+			false
+		);
+		$formatter = LogFormatter::newFromRow( $row );
+		$formatter->context->setAuthority( $logViewAuthority );
+		$formatter->setAudience( $audience );
+		if ( $shouldShowAction ) {
+			$expectedName = $targetUser->getName();
+			$this->assertEquals(
+				"Sysop globally blocked $expectedName with an expiration time of infinite",
+				trim( strip_tags( $formatter->getActionText() ) ),
+				'Action text is equal to expected text.'
+			);
+			$this->assertNotSame(
+				'',
+				$formatter->getActionLinks(),
+				'Action links should not be empty if the user is not hidden.'
+			);
+		} else {
+			$this->assertSame(
+				'Sysop (log details removed)',
+				trim( strip_tags( $formatter->getActionText() ) ),
+				'Action text should be hidden because the action text was deleted.'
+			);
+			$this->assertSame(
+				'',
+				$formatter->getActionLinks(),
+				'Action links should be empty if the action text was deleted.'
+			);
+		}
+	}
+
+	public static function provideLogDatabaseRowsForHiddenAction() {
+		return [
+			'User has hideuser, log is deleted, audience is public' => [ true, true, LogFormatter::FOR_PUBLIC, false ],
+			'User has hideuser, log is deleted, audience is for this user' => [
+				true, true, LogFormatter::FOR_THIS_USER, true,
+			],
+			'User has hideuser, log is not deleted' => [ true, false, LogFormatter::FOR_THIS_USER, true ],
+			'User does not have hideuser, log is deleted' => [ false, true, LogFormatter::FOR_THIS_USER, false ],
+		];
 	}
 
 	/** @dataProvider provideLogDatabaseRowsForHiddenUser */

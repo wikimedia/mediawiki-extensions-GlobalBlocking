@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\GlobalBlocking;
 use ExtensionRegistry;
 use LogEntry;
 use LogFormatter;
+use LogPage;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
 use MediaWiki\Html\Html;
@@ -158,7 +159,10 @@ class GlobalBlockLogFormatter extends LogFormatter {
 	 */
 	public function getActionLinks(): string {
 		$targetUserIdentity = $this->getUserIdentityForTarget();
-		if ( !$this->checkAuthorityCanSeeUser( $targetUserIdentity ) ) {
+		if (
+			!$this->checkAuthorityCanSeeUser( $targetUserIdentity ) ||
+			!$this->canView( LogPage::DELETED_ACTION )
+		) {
 			// Don't show the action links if the current authority cannot view the target of the block.
 			return '';
 		}
