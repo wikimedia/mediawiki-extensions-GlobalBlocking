@@ -125,5 +125,6 @@
 	"log-action-filter-gblblock-modify": "Зміна глобального блокування",
 	"log-action-filter-gblblock-whitelist": "Доповнення глобального білого списку блокувань",
 	"log-action-filter-gblblock-dwhitelist": "Вилучення з глобального білого списку блокувань",
-	"grant-globalblock": "Глобально заблокувати чи розблокувати IP-адресу"
+	"grant-globalblock": "Глобально заблокувати чи розблокувати IP-адресу",
+	"globalblocking-blockedtext-ip-range": "Заблокований діапазон — $1."
 }
