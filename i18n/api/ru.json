@@ -11,7 +11,7 @@
 	},
 	"globalblocking-apierror-badip": "IP-адрес $1 недействителен",
 	"apihelp-globalblock-summary": "Глобально заблокировать или разблокировать участника.",
-	"apihelp-globalblock-param-target": "Целевой IP-адрес",
+	"apihelp-globalblock-param-target": "Целевой IP-адрес или имя участника.",
 	"apihelp-globalblock-param-expiry": "Если указано, заблокирует или разблокирует пользователя. Определяет, как долго будет продолжаться блок, например. «5 месяцев» или «2 недели». Если установлено значение «бесконечный» или «неопределенный», блок никогда не истечет.",
 	"apihelp-globalblock-param-unblock": "Если указано, разблокирует пользователя.",
 	"apihelp-globalblock-param-reason": "Причина блокировки/разблокировки",
