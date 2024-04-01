@@ -21,7 +21,8 @@
 			"つぶあん派",
 			"青子守歌",
 			"春春眠眠",
-			"1108-Kiju"
+			"1108-Kiju",
+			"LaMagiaaa"
 		]
 	},
 	"globalblocking-desc": "IPアドレスを[[Special:GlobalBlockList|複数のウィキで横断的に]][[Special:GlobalBlock|ブロックする]]",
@@ -44,6 +45,7 @@
 	"globalblocking-local-failed": "指定したIPアドレスはこのウィキですでにブロックされているため、ローカルにブロックすることはできません。",
 	"globalblocking-block-failure": "$1 のブロック中にエラーが発生しました。もう一度お試しください。",
 	"globalblocking-block-alreadyblocked": "IPアドレス $1 は既にグローバルブロックされています。\n現在のブロックの状態は[[Special:GlobalBlockList|グローバルブロック一覧]]で確認できます。\nまた、このフォームから再投稿することで、ブロック設定を修正できます。",
+	"globalblocking-bigrange": "指定した範囲 ($1) は制限を超えています。\n$2の制限は/$3範囲までです。",
 	"globalblocking-also-local": "指定したIPアドレスをこのウィキでローカルでもブロックする",
 	"globalblocking-also-local-talk": "利用者によるローカルでの自分の会話ページの編集をブロックする",
 	"globalblocking-also-local-email": "利用者によるローカルでのメール送信をブロックする",
@@ -73,6 +75,7 @@
 	"globalblocking-goto-unblock": "グローバルブロックを解除",
 	"globalblocking-goto-status": "グローバルブロックのローカル状態を変更",
 	"globalblocking-return": "グローバルブロック一覧へ戻る",
+	"globalblocking-add-block": "別のグローバルブロックを追加する",
 	"globalblocking-notblocked": "入力したIPアドレス ($1) はグローバルブロックを受けていません。",
 	"globalblocking-unblock": "グローバルブロックを解除",
 	"globalblocking-unblock-legend": "グローバルブロックを解除",
