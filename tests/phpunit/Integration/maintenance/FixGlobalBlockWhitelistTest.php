@@ -85,6 +85,131 @@ class FixGlobalBlockWhitelistTest extends MaintenanceBaseTestCase {
 		];
 	}
 
+	/** @dataProvider provideExecuteForMultipleBrokenWhitelistRowsForSameTarget */
+	public function testExecuteForMultipleBrokenWhitelistRowsForSameTarget( $dryRun, $expectedOutputString ) {
+		// Tests that the maintenance script can handle multiple broken whitelist entries for the same target
+		// by deleting all but one of the entries and fixing the remaining entry.
+		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
+		// Create a whitelist entry for the global block which will be broken
+		$disableStatus = $globalBlockingServices->getGlobalBlockLocalStatusManager()
+			->locallyDisableBlock( '127.0.0.1', 'Test disable', $this->getTestUser()->getUser() );
+		$this->assertStatusGood( $disableStatus );
+		// Update the whitelist entry to have a different global block id to simulate a broken whitelist entry
+		$this->getDb()->newUpdateQueryBuilder()
+			->set( [ 'gbw_id' => 1234 ] )
+			->table( 'global_block_whitelist' )
+			->where( [ 'gbw_id' => 1 ] )
+			->execute();
+		// Call ::testExecuteWhenBrokenWhitelistRows which will add another broken entry and then
+		// perform the assertions.
+		$this->testExecuteWhenBrokenWhitelistRows( $dryRun, $expectedOutputString );
+	}
+
+	public static function provideExecuteForMultipleBrokenWhitelistRowsForSameTarget() {
+		return [
+			'Not a dry run' => [
+				false,
+				"Found 1 broken whitelist entries which can be fixed.\n" .
+				" Deleted all whitelist entries for 127.0.0.1 except the entry with gbw_id as " .
+				"1234: only one row can be updated to use id 1\n." .
+				" Fixed 127.0.0.1: id changed to 1\n" .
+				"Finished processing broken whitelist entries.\n"
+			],
+			'Dry run' => [
+				true,
+				"Found 1 broken whitelist entries which can be fixed.\n" .
+				" Would delete all whitelist entries for 127.0.0.1 except the entry with gbw_id as " .
+				"1234: only one row can be updated to use id 1\n." .
+				" Whitelist broken 127.0.0.1: current gb_id is 1\n" .
+				"Finished processing broken whitelist entries.\n"
+			],
+		];
+	}
+
+	public function testExecuteForMultipleBrokenWhitelistRows() {
+		// Tests the maintenance script processing multiple broken whitelist entries for different targets, to cover
+		// the code which waits for replication between batches.
+		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
+		// Create another global block
+		$blockStatus = $globalBlockingServices->getGlobalBlockManager()
+			->block( '127.0.0.2', 'Test block', 'infinite', $this->getTestUser()->getUser() );
+		$this->assertStatusGood( $blockStatus );
+		// Create a broken whitelist entry for the global block on 127.0.0.2
+		$disableStatus = $globalBlockingServices->getGlobalBlockLocalStatusManager()
+			->locallyDisableBlock( '127.0.0.2', 'Test disable', $this->getTestUser()->getUser() );
+		$this->assertStatusGood( $disableStatus );
+		$this->getDb()->newUpdateQueryBuilder()
+			->set( [ 'gbw_id' => 12345 ] )
+			->table( 'global_block_whitelist' )
+			->where( [ 'gbw_id' => $blockStatus->getValue()['id'] ] )
+			->execute();
+		// Call ::testExecuteWhenBrokenWhitelistRows which will add another broken entry and then
+		// perform the assertions.
+		$this->testExecuteWhenBrokenWhitelistRows(
+			false,
+			"Found 2 broken whitelist entries which can be fixed.\n" .
+			" Fixed 127.0.0.1: id changed to 1\n" .
+			" Fixed 127.0.0.2: id changed to 2\n" .
+			"Finished processing broken whitelist entries.\n"
+		);
+	}
+
+	/** @dataProvider provideExecuteWhenUnbrokenWhitelistRowExists */
+	public function testExecuteWhenUnbrokenWhitelistRowExists( $dryRun, $expectedOutputString ) {
+		// Tests that the maintenance script can handle a deleting the broken whitelist entries if a whitelist entry
+		// already exists which is not broken for that target.
+		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
+		// Create a whitelist entry for the global block which will be broken
+		$disableStatus = $globalBlockingServices->getGlobalBlockLocalStatusManager()
+			->locallyDisableBlock( '127.0.0.1', 'Test disable', $this->getTestUser()->getUser() );
+		$this->assertStatusGood( $disableStatus );
+		// Update the whitelist entry to have a different global block id to simulate a broken whitelist entry
+		$this->getDb()->newUpdateQueryBuilder()
+			->set( [ 'gbw_id' => 1234 ] )
+			->table( 'global_block_whitelist' )
+			->where( [ 'gbw_id' => 1 ] )
+			->execute();
+		// Create a whitelist entry which is not broken
+		$disableStatus = $globalBlockingServices->getGlobalBlockLocalStatusManager()
+			->locallyDisableBlock( '127.0.0.1', 'Test disable', $this->getTestUser()->getUser() );
+		$this->assertStatusGood( $disableStatus );
+		// Set the batch size to 1 to test the code that waits for replication.
+		// A copy of the maintenance property is used because IDEs flag the access
+		// to the protected method as an error.
+		/** @var TestingAccessWrapper $maintenance */
+		$maintenance = $this->maintenance;
+		$maintenance->setBatchSize( 1 );
+		$this->maintenance = $maintenance;
+		// Run the maintenance script
+		$this->maintenance->setOption( 'dry-run', $dryRun );
+		$this->maintenance->execute();
+		$this->assertSame(
+			$dryRun ? 2 : 1,
+			(int)$this->getDb()->newSelectQueryBuilder()
+				->select( 'COUNT(*)' )
+				->from( 'global_block_whitelist' )
+				->fetchField()
+		);
+		$this->expectOutputString( $expectedOutputString );
+	}
+
+	public static function provideExecuteWhenUnbrokenWhitelistRowExists() {
+		return [
+			'Not a dry run' => [
+				false,
+				"Found 1 broken whitelist entries which can be fixed.\n" .
+				" Deleted broken entries for 127.0.0.1: id 1 already is whitelisted.\n" .
+				"Finished processing broken whitelist entries.\n"
+			],
+			'Dry run' => [
+				true,
+				"Found 1 broken whitelist entries which can be fixed.\n" .
+				" Would delete broken entries for 127.0.0.1: id 1 already is whitelisted.\n" .
+				"Finished processing broken whitelist entries.\n"
+			],
+		];
+	}
+
 	/** @dataProvider provideExecuteWhenDeleteOptionProvided */
 	public function testExecuteWhenDeleteOptionProvided( $dryRun, $expectedOutputString ) {
 		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
