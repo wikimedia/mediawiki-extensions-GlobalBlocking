@@ -37,13 +37,14 @@ class FixGlobalBlockWhitelist extends Maintenance {
 
 		// First check if there are any rows in global_block_whitelist. If there are no rows, then exit now as there is
 		// nothing for this script to do.
-		$rowCount = $localDbr->newSelectQueryBuilder()
-			->select( 'COUNT(*)' )
+		$rowsExist = $localDbr->newSelectQueryBuilder()
+			->select( 'gbw_id' )
 			->from( 'global_block_whitelist' )
 			->caller( __METHOD__ )
-			->fetchField();
+			->limit( 1 )
+			->fetchRowCount();
 
-		if ( !$rowCount ) {
+		if ( !$rowsExist ) {
 			$this->output( "No whitelist entries.\n" );
 			return;
 		}
