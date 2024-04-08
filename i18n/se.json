@@ -8,6 +8,7 @@
 	"globalblocking-ipaddress": "IP-čujuhus:",
 	"globalblocking-search-ip": "IP-čujuhus:",
 	"globalblocking-list-unblock": "sihko",
+	"globalblocking-list-tempblocks": "Čiega gaskaboddosaš hehttemiid",
 	"globalblocking-list-indefblocks": "Čiega bissovaš hehttemiid",
-	"globalblocking-expiringblock": "boarásnuvvá $1 $2"
+	"globalblocking-expiringblock": "boarásnuvvá $1 dii. $2"
 }
