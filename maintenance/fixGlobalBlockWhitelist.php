@@ -78,10 +78,10 @@ class FixGlobalBlockWhitelist extends Maintenance {
 			}
 
 			// Find the associated global block rows for the whitelist entries in this batch.
-			$globalBlockingConnectionProvider = GlobalBlockingServices::wrap( $this->getServiceContainer() )
+			$globalBlockingDbr = GlobalBlockingServices::wrap( $this->getServiceContainer() )
 				->getGlobalBlockingConnectionProvider()
 				->getReplicaGlobalBlockingDatabase();
-			$gblocks = $globalBlockingConnectionProvider->newSelectQueryBuilder()
+			$gblocks = $globalBlockingDbr->newSelectQueryBuilder()
 				->select( [ 'gb_id', 'gb_address' ] )
 				->from( 'globalblocks' )
 				->where( [ 'gb_address' => $whitelistedIPs ] )
@@ -210,14 +210,28 @@ class FixGlobalBlockWhitelist extends Maintenance {
 				}
 			}
 
-			// Update the one remaining broken whitelist entry to use the correct id.
+			// Update the one remaining broken whitelist entry to use the correct id, and also to match the expiry
+			// and target central ID of the associated global block.
 			if ( $this->dryRun ) {
 				$this->output( " Whitelist broken $address: current gb_id is $newId\n" );
 				continue;
 			}
+			$globalBlockingDbr = GlobalBlockingServices::wrap( $this->getServiceContainer() )
+				->getGlobalBlockingConnectionProvider()
+				->getReplicaGlobalBlockingDatabase();
+			$associatedGlobalBlockEntry = $globalBlockingDbr->newSelectQueryBuilder()
+				->select( [ 'gb_expiry', 'gb_target_central_id' ] )
+				->from( 'globalblocks' )
+				->where( [ 'gb_id' => $newId ] )
+				->caller( __METHOD__ )
+				->fetchRow();
 			$localDbw->newUpdateQueryBuilder()
 				->update( 'global_block_whitelist' )
-				->set( [ 'gbw_id' => $newId ] )
+				->set( [
+					'gbw_id' => $newId,
+					'gbw_expiry' => $associatedGlobalBlockEntry->gb_expiry,
+					'gbw_target_central_id' => $associatedGlobalBlockEntry->gb_target_central_id
+				] )
 				->where( [ 'gbw_address' => $address ] )
 				->caller( __METHOD__ )
 				->execute();
