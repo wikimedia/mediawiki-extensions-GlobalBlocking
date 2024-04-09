@@ -99,6 +99,7 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 
 	/** @dataProvider provideGetUserBlock */
 	public function testGetUserBlockForNamedUser( $ip, $expectedGlobalBlockId, ?User $user = null ) {
+		$this->overrideConfigValue( 'GlobalBlockingAllowGlobalAccountBlocks', true );
 		$actualGlobalBlockObject = GlobalBlockingServices::wrap( $this->getServiceContainer() )
 			->getGlobalBlockLookup()
 			->getUserBlock( $user ?? $this->getTestUser()->getUser(), $ip );
@@ -335,6 +336,7 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testGetGlobalBlockIdForGloballyBlockedAccount() {
+		$this->overrideConfigValue( 'GlobalBlockingAllowGlobalAccountBlocks', true );
 		$this->testGetGlobalBlockId( $this->getGloballyBlockedTestUser()->getName(), DB_REPLICA, 5 );
 	}
 

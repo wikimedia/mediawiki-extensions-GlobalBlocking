@@ -48,6 +48,7 @@ class SpecialGlobalBlockTest extends FormSpecialPageTestCase {
 	}
 
 	public function testLoadExistingBlockWithExistingBlock() {
+		$this->overrideConfigValue( 'GlobalBlockingAllowGlobalAccountBlocks', true );
 		// Perform a block on 127.0.0.1 so that we can test the loadExistingBlock method returning
 		// data on an existing block.
 		$testTarget = $this->getTestUser()->getUser();
