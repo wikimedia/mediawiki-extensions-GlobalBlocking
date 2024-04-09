@@ -214,7 +214,7 @@
 		},
 		"GlobalBlockingAllowGlobalAccountBlocks": {
 			"description": "Whether to enable global blocks on accounts",
-			"value": true
+			"value": false
 		}
 	},
 	"ServiceWiringFiles": [

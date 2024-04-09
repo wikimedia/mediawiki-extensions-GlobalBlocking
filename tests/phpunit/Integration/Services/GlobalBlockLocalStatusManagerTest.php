@@ -57,6 +57,7 @@ class GlobalBlockLocalStatusManagerTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testLocallyDisableBlockOnNonexistentBlock() {
+		$this->overrideConfigValue( 'GlobalBlockingAllowGlobalAccountBlocks', true );
 		$status = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockLocalStatusManager()
 			->locallyDisableBlock( '1.2.3.4', 'test', $this->getTestSysop()->getUser() );
 		$this->assertStatusNotOK( $status, 'The returned status should be fatal.' );
@@ -81,6 +82,7 @@ class GlobalBlockLocalStatusManagerTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testLocallyDisableBlockForUser() {
+		$this->overrideConfigValue( 'GlobalBlockingAllowGlobalAccountBlocks', true );
 		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
 		$target = $this->getTestUser()->getUser();
 		$globalBlockingServices->getGlobalBlockManager()
@@ -134,6 +136,7 @@ class GlobalBlockLocalStatusManagerTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testLocallyEnableBlockOnNonexistentBlock() {
+		$this->overrideConfigValue( 'GlobalBlockingAllowGlobalAccountBlocks', true );
 		$status = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockLocalStatusManager()
 			->locallyEnableBlock( '1.2.3.4', 'test', $this->getTestSysop()->getUser() );
 		$this->assertStatusNotOK( $status, 'The returned status should be fatal.' );
