@@ -6,5 +6,7 @@
 	},
 	"globalblocking-list": "عالمي طور تي بندش وڌل آئپي پتن جي فھرست",
 	"globalblocking-ipblocked-range": "'''{{int:globalblocking-blockedtext-on-range}}'''\n\nھي بندش $1 ($2) پاران وڌي وئي.\n{{int:blockedtext-reason-comment|$3}}.\n\n* {{int:blockedtext-start-time|$4}}\n* {{int:blockedtext-expiration-time|$5}}\n\n{{int:globalblocking-blockedtext-blocker-admin|$1}}\n{{int:globalblocking-blockedtext-email-feature}}\n{{int:blockedtext-block-ip|$6}} {{int:globalblocking-blockedtext-ip-range|$7}}\n{{int:blockedtext-include-details-queries}}",
-	"globalblocklist": "عالمي طور تي بندش وڌل آئپي پتن جي فھرست"
+	"globalblocklist": "عالمي طور تي بندش وڌل آئپي پتن جي فھرست",
+	"right-globalblock-whitelist": "مقامي طور تي عالمي بندشن کي غير فعال ڪريو",
+	"action-globalblock-whitelist": "مقامي طور تي عالمي بندشن کي غير فعال ڪريو"
 }
