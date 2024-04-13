@@ -496,104 +496,102 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 		// Insert a range block and single IP block for the test.
 		$this->getDb()->newInsertQueryBuilder()
 			->insertInto( 'globalblocks' )
-			->rows( [
-				[
-					'gb_id' => 1,
-					'gb_address' => '127.0.0.1',
-					'gb_target_central_id' => 0,
-					'gb_by' => $testUser->getName(),
-					'gb_by_central_id' => $this->getServiceContainer()
-						->getCentralIdLookup()
-						->centralIdFromLocalUser( $testUser ),
-					'gb_by_wiki' => WikiMap::getCurrentWikiId(),
-					'gb_reason' => 'test',
-					'gb_timestamp' => $this->getDb()->timestamp( '20230405060708' ),
-					'gb_anon_only' => 1,
-					'gb_expiry' => $this->getDb()->encodeExpiry( '20240405060708' ),
-					'gb_range_start' => IPUtils::toHex( '127.0.0.1' ),
-					'gb_range_end' => IPUtils::toHex( '127.0.0.1' ),
-				],
-				[
-					'gb_id' => 2,
-					'gb_address' => '127.0.0.0/24',
-					'gb_target_central_id' => 0,
-					'gb_by' => $testUser->getName(),
-					'gb_by_central_id' => $this->getServiceContainer()
-						->getCentralIdLookup()
-						->centralIdFromLocalUser( $testUser ),
-					'gb_by_wiki' => WikiMap::getCurrentWikiId(),
-					'gb_reason' => 'test',
-					'gb_timestamp' => $this->getDb()->timestamp( '20220405060708' ),
-					'gb_anon_only' => 0,
-					'gb_expiry' => $this->getDb()->encodeExpiry( '20250405060708' ),
-					'gb_range_start' => IPUtils::toHex( '127.0.0.0' ),
-					'gb_range_end' => IPUtils::toHex( '127.0.0.255' ),
-				],
-				[
-					'gb_id' => 3,
-					'gb_address' => '77.8.9.10',
-					'gb_target_central_id' => 0,
-					'gb_by' => $testUser->getName(),
-					'gb_by_central_id' => $this->getServiceContainer()
-						->getCentralIdLookup()
-						->centralIdFromLocalUser( $testUser ),
-					'gb_by_wiki' => WikiMap::getCurrentWikiId(),
-					'gb_reason' => 'test',
-					'gb_timestamp' => $this->getDb()->timestamp( '20080405060708' ),
-					'gb_anon_only' => 0,
-					'gb_expiry' => $this->getDb()->encodeExpiry( '20240405060708' ),
-					'gb_range_start' => IPUtils::toHex( '77.8.9.10' ),
-					'gb_range_end' => IPUtils::toHex( '77.8.9.10' ),
-				],
-				[
-					'gb_id' => 4,
-					'gb_address' => '88.8.9.0/24',
-					'gb_target_central_id' => 0,
-					'gb_by' => $testUser->getName(),
-					'gb_by_central_id' => $this->getServiceContainer()
-						->getCentralIdLookup()
-						->centralIdFromLocalUser( $testUser ),
-					'gb_by_wiki' => WikiMap::getCurrentWikiId(),
-					'gb_reason' => 'test',
-					'gb_timestamp' => $this->getDb()->timestamp( '20080405060708' ),
-					'gb_anon_only' => 0,
-					'gb_expiry' => $this->getDb()->encodeExpiry( '20240405060708' ),
-					'gb_range_start' => IPUtils::toHex( '88.8.9.0' ),
-					'gb_range_end' => IPUtils::toHex( '88.8.9.255' ),
-				],
-				[
-					'gb_id' => 5,
-					'gb_address' => $testBlockedUser->getName(),
-					'gb_target_central_id' => $this->getServiceContainer()
-						->getCentralIdLookup()
-						->centralIdFromLocalUser( $testBlockedUser ),
-					'gb_by' => $testUser->getName(),
-					'gb_by_central_id' => $this->getServiceContainer()
-						->getCentralIdLookup()
-						->centralIdFromLocalUser( $testUser ),
-					'gb_by_wiki' => WikiMap::getCurrentWikiId(),
-					'gb_reason' => 'test',
-					'gb_timestamp' => $this->getDb()->timestamp( '20080405060708' ),
-					'gb_anon_only' => 0,
-					'gb_expiry' => $this->getDb()->encodeExpiry( '20240405060708' ),
-					'gb_range_start' => '',
-					'gb_range_end' => '',
-				],
+			->row( [
+				'gb_id' => 1,
+				'gb_address' => '127.0.0.1',
+				'gb_target_central_id' => 0,
+				'gb_by' => $testUser->getName(),
+				'gb_by_central_id' => $this->getServiceContainer()
+					->getCentralIdLookup()
+					->centralIdFromLocalUser( $testUser ),
+				'gb_by_wiki' => WikiMap::getCurrentWikiId(),
+				'gb_reason' => 'test',
+				'gb_timestamp' => $this->getDb()->timestamp( '20230405060708' ),
+				'gb_anon_only' => 1,
+				'gb_expiry' => $this->getDb()->encodeExpiry( '20240405060708' ),
+				'gb_range_start' => IPUtils::toHex( '127.0.0.1' ),
+				'gb_range_end' => IPUtils::toHex( '127.0.0.1' ),
 			] )
+			->row( [
+				'gb_id' => 2,
+				'gb_address' => '127.0.0.0/24',
+				'gb_target_central_id' => 0,
+				'gb_by' => $testUser->getName(),
+				'gb_by_central_id' => $this->getServiceContainer()
+					->getCentralIdLookup()
+					->centralIdFromLocalUser( $testUser ),
+				'gb_by_wiki' => WikiMap::getCurrentWikiId(),
+				'gb_reason' => 'test',
+				'gb_timestamp' => $this->getDb()->timestamp( '20220405060708' ),
+				'gb_anon_only' => 0,
+				'gb_expiry' => $this->getDb()->encodeExpiry( '20250405060708' ),
+				'gb_range_start' => IPUtils::toHex( '127.0.0.0' ),
+				'gb_range_end' => IPUtils::toHex( '127.0.0.255' ),
+			] )
+			->row( [
+				'gb_id' => 3,
+				'gb_address' => '77.8.9.10',
+				'gb_target_central_id' => 0,
+				'gb_by' => $testUser->getName(),
+				'gb_by_central_id' => $this->getServiceContainer()
+					->getCentralIdLookup()
+					->centralIdFromLocalUser( $testUser ),
+				'gb_by_wiki' => WikiMap::getCurrentWikiId(),
+				'gb_reason' => 'test',
+				'gb_timestamp' => $this->getDb()->timestamp( '20080405060708' ),
+				'gb_anon_only' => 0,
+				'gb_expiry' => $this->getDb()->encodeExpiry( '20240405060708' ),
+				'gb_range_start' => IPUtils::toHex( '77.8.9.10' ),
+				'gb_range_end' => IPUtils::toHex( '77.8.9.10' ),
+			] )
+			->row( [
+				'gb_id' => 4,
+				'gb_address' => '88.8.9.0/24',
+				'gb_target_central_id' => 0,
+				'gb_by' => $testUser->getName(),
+				'gb_by_central_id' => $this->getServiceContainer()
+					->getCentralIdLookup()
+					->centralIdFromLocalUser( $testUser ),
+				'gb_by_wiki' => WikiMap::getCurrentWikiId(),
+				'gb_reason' => 'test',
+				'gb_timestamp' => $this->getDb()->timestamp( '20080405060708' ),
+				'gb_anon_only' => 0,
+				'gb_expiry' => $this->getDb()->encodeExpiry( '20240405060708' ),
+				'gb_range_start' => IPUtils::toHex( '88.8.9.0' ),
+				'gb_range_end' => IPUtils::toHex( '88.8.9.255' ),
+			] )
+			->row( [
+				'gb_id' => 5,
+				'gb_address' => $testBlockedUser->getName(),
+				'gb_target_central_id' => $this->getServiceContainer()
+					->getCentralIdLookup()
+					->centralIdFromLocalUser( $testBlockedUser ),
+				'gb_by' => $testUser->getName(),
+				'gb_by_central_id' => $this->getServiceContainer()
+					->getCentralIdLookup()
+					->centralIdFromLocalUser( $testUser ),
+				'gb_by_wiki' => WikiMap::getCurrentWikiId(),
+				'gb_reason' => 'test',
+				'gb_timestamp' => $this->getDb()->timestamp( '20080405060708' ),
+				'gb_anon_only' => 0,
+				'gb_expiry' => $this->getDb()->encodeExpiry( '20240405060708' ),
+				'gb_range_start' => '',
+				'gb_range_end' => '',
+			] )
+			->caller( __METHOD__ )
 			->execute();
 		// Insert a whitelist entry for the range block
 		$this->getDb()->newInsertQueryBuilder()
 			->insertInto( 'global_block_whitelist' )
-			->rows( [
-				[
-					'gbw_by' => $testUser->getId(),
-					'gbw_by_text' => $testUser->getName(),
-					'gbw_reason' => 'test-override',
-					'gbw_address' => '127.0.0.0/24',
-					'gbw_expiry' => $this->getDb()->encodeExpiry( '20250405060708' ),
-					'gbw_id' => 2,
-				],
+			->row( [
+				'gbw_by' => $testUser->getId(),
+				'gbw_by_text' => $testUser->getName(),
+				'gbw_reason' => 'test-override',
+				'gbw_address' => '127.0.0.0/24',
+				'gbw_expiry' => $this->getDb()->encodeExpiry( '20250405060708' ),
+				'gbw_id' => 2,
 			] )
+			->caller( __METHOD__ )
 			->execute();
 	}
 }

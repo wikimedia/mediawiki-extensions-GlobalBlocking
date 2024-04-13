@@ -97,54 +97,52 @@ class GlobalBlockingBlockPurgerTest extends MediaWikiIntegrationTestCase {
 		// Insert a range block and single IP block for the test.
 		$this->getDb()->newInsertQueryBuilder()
 			->insertInto( 'globalblocks' )
-			->rows( [
-				[
-					'gb_address' => '127.0.0.1',
-					'gb_by' => $testUser->getName(),
-					'gb_by_central_id' => $this->getServiceContainer()
-						->getCentralIdLookup()
-						->centralIdFromLocalUser( $testUser ),
-					'gb_by_wiki' => WikiMap::getCurrentWikiId(),
-					'gb_reason' => 'test',
-					'gb_timestamp' => $this->getDb()->timestamp( '20230405060708' ),
-					'gb_anon_only' => 0,
-					'gb_expiry' => $this->getDb()->encodeExpiry( '20240405060708' ),
-					'gb_range_start' => IPUtils::toHex( '127.0.0.1' ),
-					'gb_range_end' => IPUtils::toHex( '127.0.0.1' ),
-				],
-				[
-					'gb_address' => '127.0.0.0/24',
-					'gb_by' => $testUser->getName(),
-					'gb_by_central_id' => $this->getServiceContainer()
-						->getCentralIdLookup()
-						->centralIdFromLocalUser( $testUser ),
-					'gb_by_wiki' => WikiMap::getCurrentWikiId(),
-					'gb_reason' => 'test',
-					'gb_timestamp' => $this->getDb()->timestamp( '20220405060708' ),
-					'gb_anon_only' => 0,
-					'gb_expiry' => $this->getDb()->encodeExpiry( '20250405060708' ),
-					'gb_range_start' => IPUtils::toHex( '127.0.0.0' ),
-					'gb_range_end' => IPUtils::toHex( '127.0.0.255' ),
-				],
+			->row( [
+				'gb_address' => '127.0.0.1',
+				'gb_by' => $testUser->getName(),
+				'gb_by_central_id' => $this->getServiceContainer()
+					->getCentralIdLookup()
+					->centralIdFromLocalUser( $testUser ),
+				'gb_by_wiki' => WikiMap::getCurrentWikiId(),
+				'gb_reason' => 'test',
+				'gb_timestamp' => $this->getDb()->timestamp( '20230405060708' ),
+				'gb_anon_only' => 0,
+				'gb_expiry' => $this->getDb()->encodeExpiry( '20240405060708' ),
+				'gb_range_start' => IPUtils::toHex( '127.0.0.1' ),
+				'gb_range_end' => IPUtils::toHex( '127.0.0.1' ),
 			] )
+			->row( [
+				'gb_address' => '127.0.0.0/24',
+				'gb_by' => $testUser->getName(),
+				'gb_by_central_id' => $this->getServiceContainer()
+					->getCentralIdLookup()
+					->centralIdFromLocalUser( $testUser ),
+				'gb_by_wiki' => WikiMap::getCurrentWikiId(),
+				'gb_reason' => 'test',
+				'gb_timestamp' => $this->getDb()->timestamp( '20220405060708' ),
+				'gb_anon_only' => 0,
+				'gb_expiry' => $this->getDb()->encodeExpiry( '20250405060708' ),
+				'gb_range_start' => IPUtils::toHex( '127.0.0.0' ),
+				'gb_range_end' => IPUtils::toHex( '127.0.0.255' ),
+			] )
+			->caller( __METHOD__ )
 			->execute();
 		// Insert a whitelist entry for the range block
 		$this->getDb()->newInsertQueryBuilder()
 			->insertInto( 'global_block_whitelist' )
-			->rows( [
-				[
-					'gbw_by' => $testUser->getId(),
-					'gbw_by_text' => $testUser->getName(),
-					'gbw_reason' => 'test-override',
-					'gbw_address' => '127.0.0.0/24',
-					'gbw_expiry' => $this->getDb()->encodeExpiry( '20250405060708' ),
-					'gbw_id' => $this->newSelectQueryBuilder()
-						->select( 'gb_id' )
-						->from( 'globalblocks' )
-						->where( [ 'gb_address' => '127.0.0.0/24' ] )
-						->fetchField(),
-				],
+			->row( [
+				'gbw_by' => $testUser->getId(),
+				'gbw_by_text' => $testUser->getName(),
+				'gbw_reason' => 'test-override',
+				'gbw_address' => '127.0.0.0/24',
+				'gbw_expiry' => $this->getDb()->encodeExpiry( '20250405060708' ),
+				'gbw_id' => $this->newSelectQueryBuilder()
+					->select( 'gb_id' )
+					->from( 'globalblocks' )
+					->where( [ 'gb_address' => '127.0.0.0/24' ] )
+					->fetchField(),
 			] )
+			->caller( __METHOD__ )
 			->execute();
 	}
 }

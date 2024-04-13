@@ -83,27 +83,26 @@ class GlobalBlockLocalStatusLookupTest extends MediaWikiIntegrationTestCase {
 		// between tests in this class.
 		$this->getDb()->newInsertQueryBuilder()
 			->insertInto( 'global_block_whitelist' )
-			->rows( [
-				[
-					'gbw_by' => 123,
-					'gbw_by_text' => 'Test user',
-					'gbw_reason' => 'Test reason',
-					'gbw_address' => '127.0.0.1',
-					'gbw_target_central_id' => 0,
-					'gbw_expiry' => $this->getDb()->getInfinity(),
-					'gbw_id' => 1234,
-				],
-				[
-					'gbw_by' => 123,
-					'gbw_by_text' => 'Test user',
-					'gbw_reason' => 'Test reason2',
-					'gbw_address' => $testTarget->getName(),
-					'gbw_target_central_id' => $this->getServiceContainer()
-						->getCentralIdLookup()->centralIdFromName( $testTarget->getName() ),
-					'gbw_expiry' => $this->getDb()->timestamp( '20240405030201' ),
-					'gbw_id' => 123,
-				],
+			->row( [
+				'gbw_by' => 123,
+				'gbw_by_text' => 'Test user',
+				'gbw_reason' => 'Test reason',
+				'gbw_address' => '127.0.0.1',
+				'gbw_target_central_id' => 0,
+				'gbw_expiry' => $this->getDb()->getInfinity(),
+				'gbw_id' => 1234,
 			] )
+			->row( [
+				'gbw_by' => 123,
+				'gbw_by_text' => 'Test user',
+				'gbw_reason' => 'Test reason2',
+				'gbw_address' => $testTarget->getName(),
+				'gbw_target_central_id' => $this->getServiceContainer()
+					->getCentralIdLookup()->centralIdFromName( $testTarget->getName() ),
+				'gbw_expiry' => $this->getDb()->timestamp( '20240405030201' ),
+				'gbw_id' => 123,
+			] )
+			->caller( __METHOD__ )
 			->execute();
 	}
 }
