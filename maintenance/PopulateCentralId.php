@@ -73,12 +73,12 @@ class PopulateCentralId extends LoggedUpdateMaintenance {
 					$failed++;
 					continue;
 				}
-				$dbw->update(
-					'globalblocks',
-					[ 'gb_by_central_id' => $centralId ],
-					[ 'gb_id' => $row->gb_id ],
-					__METHOD__
-				);
+				$dbw->newUpdateQueryBuilder()
+					->update( 'globalblocks' )
+					->set( [ 'gb_by_central_id' => $centralId ] )
+					->where( [ 'gb_id' => $row->gb_id ] )
+					->caller( __METHOD__ )
+					->execute();
 			}
 
 			$count += $dbw->affectedRows();

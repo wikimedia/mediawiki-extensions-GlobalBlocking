@@ -38,15 +38,16 @@ class FixBlockerUsername extends Maintenance {
 			$max = $min + $this->getBatchSize();
 			$this->output( "Now processing global blocks with id between {$min} and {$max}...\n" );
 
-			$dbw->update(
-				'globalblocks',
-				[ 'gb_by' => $newname ],
-				[
+			$dbw->newUpdateQueryBuilder()
+				->update( 'globalblocks' )
+				->set( [ 'gb_by' => $newname ] )
+				->where( [
 					'gb_by' => $oldname,
-					'gb_id BETWEEN ' . $min . ' AND ' . $max
-				],
-				__METHOD__
-			);
+					$dbw->expr( 'gb_id', '>=', $min ),
+					$dbw->expr( 'gb_id', '<=', $max ),
+				] )
+				->caller( __METHOD__ )
+				->execute();
 
 			$lbFactory->waitForReplication();
 		}
