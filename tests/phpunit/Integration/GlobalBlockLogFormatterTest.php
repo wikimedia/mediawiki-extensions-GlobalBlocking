@@ -132,6 +132,43 @@ class GlobalBlockLogFormatterTest extends LogFormatterTestCase {
 					'api' => [ 'expiration 22:05, 28 February 2024', '1.2.3.4' ],
 				],
 			],
+			'Legacy log entry with title as Special:Contributions (pre-2010 logs)' => [
+				'row' => [
+					'type' => 'gblblock', 'action' => 'gblock', 'user_text' => 'Sysop',
+					'title' => 'Contributions/1.2.3.4', 'namespace' => NS_SPECIAL,
+					'params' => [ '31hours' ],
+				],
+				'extra' => [
+					'legacy' => true,
+					'text' => 'Sysop globally blocked 1.2.3.4 with an expiration time of 31hours',
+					'api' => [ '31hours' ],
+				],
+			],
+			'Legacy log entry with title as Special:Contributions and anonymous only flag (pre-2010 logs)' => [
+				'row' => [
+					'type' => 'gblblock', 'action' => 'gblock', 'user_text' => 'Sysop',
+					'title' => 'Contributions/1.2.3.4', 'namespace' => NS_SPECIAL,
+					'params' => [ '31hours', 'anonymous only' ],
+				],
+				'extra' => [
+					'legacy' => true,
+					'text' => 'Sysop globally blocked 1.2.3.4 with an expiration time of 31hours (anonymous only)',
+					'api' => [ '31hours', 'anonymous only' ],
+				],
+			],
+			'Legacy log entry with title as Special:Contributions and anon-only flag (pre-2010 logs)' => [
+				'row' => [
+					'type' => 'gblblock', 'action' => 'gblock', 'user_text' => 'Sysop',
+					'title' => 'Contributions/1.2.3.4', 'namespace' => NS_SPECIAL,
+					'params' => [ '31hours', 'anon-only' ],
+				],
+				'extra' => [
+					'legacy' => true,
+					'text' => 'Sysop globally blocked 1.2.3.4 with an expiration time of 31hours ' .
+						'(anonymous users only)',
+					'api' => [ '31hours', 'anon-only' ],
+				],
+			],
 		];
 	}
 

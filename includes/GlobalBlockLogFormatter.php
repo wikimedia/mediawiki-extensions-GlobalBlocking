@@ -100,12 +100,21 @@ class GlobalBlockLogFormatter extends LogFormatter {
 		if ( $this->entry->isLegacy() ) {
 			if ( in_array( $this->entry->getSubtype(), [ 'gblock2', 'modify', 'gblock' ] ) ) {
 				// If the entry parameters are in the legacy format and the log subtype has parameters defined,
-				// then we need to move the fourth parameter to the fifth to make way for GENDER support message
-				// parameter.
-				$params[4] = $params[3];
+				// then we need to increase the index of the parameters by one to allow space for the GENDER parameter
+				// for the target.
+				array_splice( $params, 3, 0, '' );
 				if ( $this->entry->getSubtype() === 'gblock' ) {
-					// No flags exist for the legacy format for the 'gblock' subtype.
-					$params[5] = '';
+					if ( !array_key_exists( 5, $params ) ) {
+						// No flags may exist for the legacy format for the 'gblock' subtype.
+						$params[5] = '';
+					} elseif ( $params[5] === 'anon-only' ) {
+						// Convert the anon-only flag into a localised message.
+						$params[5] = $this->msg( 'globalblocking-block-flag-anon-only' )->text();
+					}
+					if ( $params[5] !== '' ) {
+						// Wrap the flags in parentheses.
+						$params[5] = $this->msg( 'parentheses', $params[5] )->text();
+					}
 				}
 			}
 		} elseif ( in_array( $this->entry->getSubtype(), [ 'gblock', 'modify' ] ) ) {
@@ -178,7 +187,15 @@ class GlobalBlockLogFormatter extends LogFormatter {
 	 * @return UserIdentity This can be a IP address, range, or username (which exists or does not exist).
 	 */
 	private function getUserIdentityForTarget(): UserIdentity {
-		$userText = $this->entry->getTarget()->getText();
+		$targetTitle = $this->entry->getTarget();
+		$userText = $targetTitle->getText();
+		if ( $targetTitle->getNamespace() === NS_SPECIAL ) {
+			// Some very old log entries (pre-2010) have the title as the Special:Contributions page for the target.
+			// In this case, the target text is the subpage of the Special:Contributions page (T362700).
+			// We also cannot use Title::getSubpageText here because the NS_SPECIAL namespace does not have subpages
+			// by default and so we need to manually extract the subpage text using similar code to ::getSubpageText.
+			$userText = substr( $userText, strrpos( $userText, '/' ) + 1 );
+		}
 		return $this->userIdentityLookup->getUserIdentityByName( $userText )
 			?? UserIdentityValue::newAnonymous( $userText );
 	}
