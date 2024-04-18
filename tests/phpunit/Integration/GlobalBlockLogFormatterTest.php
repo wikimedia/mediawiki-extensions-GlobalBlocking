@@ -169,6 +169,19 @@ class GlobalBlockLogFormatterTest extends LogFormatterTestCase {
 					'api' => [ '31hours', 'anon-only' ],
 				],
 			],
+			'Legacy log entry with title as Special:Contributions for IP range (pre-2010 logs)' => [
+				'row' => [
+					'type' => 'gblblock', 'action' => 'gblock', 'user_text' => 'Sysop',
+					'title' => 'Contributions/1.2.3.0/24', 'namespace' => NS_SPECIAL,
+					'params' => [ '31hours', 'anon-only' ],
+				],
+				'extra' => [
+					'legacy' => true,
+					'text' => 'Sysop globally blocked 1.2.3.0/24 with an expiration time of 31hours ' .
+						'(anonymous users only)',
+					'api' => [ '31hours', 'anon-only' ],
+				],
+			],
 		];
 	}
 

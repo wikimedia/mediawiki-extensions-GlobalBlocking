@@ -193,8 +193,8 @@ class GlobalBlockLogFormatter extends LogFormatter {
 			// Some very old log entries (pre-2010) have the title as the Special:Contributions page for the target.
 			// In this case, the target text is the subpage of the Special:Contributions page (T362700).
 			// We also cannot use Title::getSubpageText here because the NS_SPECIAL namespace does not have subpages
-			// by default and so we need to manually extract the subpage text using similar code to ::getSubpageText.
-			$userText = substr( $userText, strrpos( $userText, '/' ) + 1 );
+			// by default.
+			$userText = substr( $userText, strlen( 'Contributions/' ) );
 		}
 		return $this->userIdentityLookup->getUserIdentityByName( $userText )
 			?? UserIdentityValue::newAnonymous( $userText );
