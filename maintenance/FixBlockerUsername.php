@@ -32,7 +32,11 @@ class FixBlockerUsername extends Maintenance {
 		$services = MediaWikiServices::getInstance();
 		$lbFactory = $services->getDBLoadBalancerFactory();
 
-		$lastBlock = $dbw->selectField( 'globalblocks', 'MAX(gb_id)', '', __METHOD__ );
+		$lastBlock = $dbw->newSelectQueryBuilder()
+			->select( 'MAX(gb_id)' )
+			->from( 'globalblocks' )
+			->caller( __METHOD__ )
+			->fetchField();
 
 		for ( $min = 0; $min <= $lastBlock; $min += $this->getBatchSize() ) {
 			$max = $min + $this->getBatchSize();

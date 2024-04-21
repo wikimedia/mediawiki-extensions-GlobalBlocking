@@ -46,7 +46,11 @@ class PopulateCentralId extends LoggedUpdateMaintenance {
 		$batchSize = $this->getBatchSize();
 		$count = 0;
 		$failed = 0;
-		$lastBlock = $dbr->selectField( 'globalblocks', 'MAX(gb_id)', '', __METHOD__ );
+		$lastBlock = $dbr->newSelectQueryBuilder()
+			->select( 'MAX(gb_id)' )
+			->from( 'globalblocks' )
+			->caller( __METHOD__ )
+			->fetchField();
 		if ( !$lastBlock ) {
 			$this->output( "The globalblocks table seems to be empty.\n" );
 			return true;
@@ -56,17 +60,17 @@ class PopulateCentralId extends LoggedUpdateMaintenance {
 			$max = $min + $batchSize;
 			$this->output( "Now processing global blocks with id between {$min} and {$max}...\n" );
 
-			$res = $dbr->select(
-				'globalblocks',
-				[ 'gb_id', 'gb_by' ],
-				[
+			$res = $dbr->newSelectQueryBuilder()
+				->select( [ 'gb_id', 'gb_by' ] )
+				->from( 'globalblocks' )
+				->where( [
 					'gb_by_central_id' => null,
 					"gb_by_wiki" => $wikiId,
 					$dbr->expr( 'gb_id', '>=', $min ),
 					$dbr->expr( 'gb_id', '<=', $max ),
-				],
-				__METHOD__
-			);
+				] )
+				->caller( __METHOD__ )
+				->fetchResultSet();
 
 			foreach ( $res as $row ) {
 				$centralId = $lookup->centralIdFromName( $row->gb_by, CentralIdLookup::AUDIENCE_RAW );
