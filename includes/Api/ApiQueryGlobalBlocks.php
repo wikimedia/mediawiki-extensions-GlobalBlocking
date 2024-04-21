@@ -35,6 +35,8 @@ use Wikimedia\IPUtils;
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\ParamValidator\TypeDef\IntegerDef;
 use Wikimedia\Rdbms\IDatabase;
+use Wikimedia\Rdbms\IExpression;
+use Wikimedia\Rdbms\LikeValue;
 
 /**
  * Query module to enumerate all global blocks.
@@ -110,7 +112,7 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 		$dbr = $this->getDB();
 		$this->addOption( 'LIMIT', $params['limit'] + 1 );
 		$this->addWhereRange( 'gb_timestamp', $params['dir'], $params['start'], $params['end'] );
-		$this->addWhere( 'gb_expiry > ' . $dbr->addQuotes( $dbr->timestamp() ) );
+		$this->addWhere( $dbr->expr( 'gb_expiry', '>', $dbr->timestamp() ) );
 		if ( isset( $params['ids'] ) ) {
 			$this->addWhereFld( 'gb_id', $params['ids'] );
 		}
@@ -152,15 +154,10 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 			# Extract the common prefix to any rangeblock affecting this IP/CIDR
 			$prefix = substr( $lower, 0, $prefixLen + $cidrLimit / 4 );
 
-			# Fairly hard to make a malicious SQL statement out of hex characters,
-			# but it is good practice to add quotes
-			$lower = $dbr->addQuotes( $lower );
-			$upper = $dbr->addQuotes( $upper );
-
 			$this->addWhere( [
-				'gb_range_start' . $dbr->buildLike( $prefix, $dbr->anyString() ),
-				'gb_range_start <= ' . $lower,
-				'gb_range_end >= ' . $upper,
+				$dbr->expr( 'gb_range_start', IExpression::LIKE, new LikeValue( $prefix, $dbr->anyString() ) ),
+				$dbr->expr( 'gb_range_start', '<=', $lower ),
+				$dbr->expr( 'gb_range_end', '>=', $upper ),
 			] );
 		}
 

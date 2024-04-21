@@ -157,9 +157,9 @@ class SpecialGlobalBlockList extends SpecialPage {
 			$this->noResults();
 			return;
 		} elseif ( $hideTemp ) {
-			$conds[] = "gb_expiry = " . $dbr->addQuotes( $dbr->getInfinity() );
+			$conds['gb_expiry'] = $dbr->getInfinity();
 		} elseif ( $hideIndef ) {
-			$conds[] = "gb_expiry != " . $dbr->addQuotes( $dbr->getInfinity() );
+			$conds[] = $dbr->expr( 'gb_expiry', '!=', $dbr->getInfinity() );
 		}
 
 		$pager = new GlobalBlockListPager(

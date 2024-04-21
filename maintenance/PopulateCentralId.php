@@ -62,7 +62,8 @@ class PopulateCentralId extends LoggedUpdateMaintenance {
 				[
 					'gb_by_central_id' => null,
 					"gb_by_wiki" => $wikiId,
-					"gb_id BETWEEN $min AND $max"
+					$dbr->expr( 'gb_id', '>=', $min ),
+					$dbr->expr( 'gb_id', '<=', $max ),
 				],
 				__METHOD__
 			);
