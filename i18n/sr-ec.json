@@ -100,7 +100,7 @@
 	"globalblocking-logentry-block-old-format": "$1 је {{GENDER:$2|глобално блокирао|глобално блокирала}} {{GENDER:$4|корисника|корисницу}} $3 ($5)",
 	"globalblocking-logentry-block": "$1 је {{GENDER:$2|глобално блокирао|глобално блокирала}} {{GENDER:$4|корисника|корисницу}} $3 у трајању од $5 $6",
 	"globalblocking-logentry-modify-old-format": "$1 је {{GENDER:$2|променио|променила}} глобални блок {{GENDER:$4|$3}} ($5)",
-	"globalblocking-logentry-modify": "$1 је {{GENDER:$2|променио|променила}} подешавања глобалног блока  {{GENDER:$4|$3}} у трајању до $5 $6",
+	"globalblocking-logentry-modify": "$1 је {{GENDER:$2|променио|променила}} подешавања глобалног блока  {{GENDER:$4|$3}} у трајању од $5 $6",
 	"globalblocking-logentry-unblock": "$1 је {{GENDER:$2|уклонио|уклонила}} глобални блок {{GENDER:$4|$3}}",
 	"globalblocking-logentry-whitelist": "$1 је {{GENDER:$2|онемогућио|онемогућила}} глобални блок {{GENDER:$4|$3}} локално",
 	"globalblocking-logentry-dewhitelist": "$1 је {{GENDER:$2|омогућио|омогућила}} глобални блок {{GENDER:$4|$3}} локално",
