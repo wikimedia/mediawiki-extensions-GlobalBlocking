@@ -25,7 +25,7 @@
 			"Камалист"
 		]
 	},
-	"globalblocking-desc": "[[Special:GlobalBlock|Разрешает]] блокировку IP-адресов [[Special:GlobalBlockList|в нескольких вики]]",
+	"globalblocking-desc": "[[Special:GlobalBlock|Разрешает]] блокировку учётных записей, IP-адресов и их диапазонов [[Special:GlobalBlockList|в нескольких вики]]",
 	"globalblocking-block": "Глобальная блокировка IP-адреса",
 	"globalblocking-block-intro": "Вы можете использовать эту страницу, чтобы заблокировать IP-адрес во всех вики.",
 	"globalblocking-block-reason": "Причина:",
