@@ -22,7 +22,8 @@
 			"Yamagata Yusuke",
 			"つぶあん派",
 			"春春眠眠",
-			"青子守歌"
+			"青子守歌",
+			"Waki285"
 		]
 	},
 	"globalblocking-desc": "アカウント、IPアドレスおよびIP範囲を[[Special:GlobalBlockList|複数のウィキで横断的に]][[Special:GlobalBlock|ブロックする]]",
@@ -31,7 +32,7 @@
 	"globalblocking-block-intro": "このページで全ウィキでの IP アドレスをブロックできます。",
 	"globalblocking-block-intro-new": "このページで全ウィキでの利用者またはIPアドレスをブロックできます。",
 	"globalblocking-block-reason": "理由:",
-	"globalblocking-block-reason-dropdown": "*共通ブロックの理由\n**ウィキ間のスパム\n**ウィキ間での不正利用\n**荒らし",
+	"globalblocking-block-reason-dropdown": "*よくあるブロック理由\n**クロスウィキスパム\n**クロスウィキ不正利用\n**荒らし",
 	"globalblocking-block-edit-dropdown": "ブロック理由を編集",
 	"globalblocking-block-expiry": "有効期限:",
 	"globalblocking-block-expiry-selector-other": "期間 (その他のとき)",
@@ -128,7 +129,7 @@
 	"globalblocking-loglink": "利用者 $1 はグローバルブロックされています ([[{{#Special:GlobalBlockList}}/$1|全詳細]])。",
 	"globalblocking-contribs-notice": "この利用者は現在グローバルブロックされています。\n参考のためにグローバルブロック記録項目を以下に表示します:",
 	"globalblocking-showlog": "この利用者は以前にブロックされたことがあります。\n参考のため、ブロック記録を以下に示します:",
-	"globalblocking-contribs-block": "グローバルロック",
+	"globalblocking-contribs-block": "グローバルブロック",
 	"globalblocking-contribs-modify": "このグローバルブロックを修正",
 	"globalblocking-contribs-remove": "グローバルブロックを解除",
 	"globalblocklist": "グローバルブロックされたIPアドレス一覧",

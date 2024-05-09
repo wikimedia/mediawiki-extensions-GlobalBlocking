@@ -6,7 +6,8 @@
 			"Plaga med",
 			"Vlad5250",
 			"Zmickli",
-			"Тест"
+			"Тест",
+			"Chadyka"
 		]
 	},
 	"globalblocking-block": "Глабальна заблакіраваць IP-адрас",
@@ -47,5 +48,6 @@
 	"globalblocking-blockedtext-on-range": "Ваш IP-адрас у дыяпазоне, які быў заблакаваны на ўсіх вікі.",
 	"globalblocking-blockedtext-blocker-admin": "Вы можаце звярнуцца да ўдзельніка $1, каб абмеркаваць блакаванне.",
 	"globalblocking-blockedtext-email-feature": "Вы ня можаце карыстацца функцыяй «{{int:emailuser}}», калі ў вашым [[Special:Preferences|налады ўліковага запісу]] не азначаны слушны адрас электроннай пошты і вам не заблакавалі карыстанне ім.",
-	"globalblocking-blockedtext-ip-range": "Заблакаваны дыяпазон — $1."
+	"globalblocking-blockedtext-ip-range": "Заблакаваны дыяпазон — $1.",
+	"globalblocking-blockedtext-proxy": "Адрасам заблакаванага проксі-сервера быў $6."
 }

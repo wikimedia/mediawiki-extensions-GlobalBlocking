@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Kwisha",
-			"Stephenwanjau"
+			"Stephenwanjau",
+			"Amire80"
 		]
 	},
 	"globalblocking-block-reason": "Sababu:",
@@ -13,5 +14,6 @@
 	"globalblocking-list-unblock": "ondoa",
 	"globalblocking-expiringblock": "inakwisha tarehe $1 saa $2",
 	"globalblocking-unblock-reason": "Sababu:",
-	"globalblocking-whitelist-reason": "Sababu:"
+	"globalblocking-whitelist-reason": "Sababu:",
+	"globalblocking-blockedtext-proxy": "Anwani ya proksi iliyozuiwa ilikuwa $1."
 }
