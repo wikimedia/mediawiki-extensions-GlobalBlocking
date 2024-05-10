@@ -10,9 +10,9 @@ use MediaWiki\Extension\UserMerge\Hooks\AccountFieldsHook;
  *
  * @license GPL-2.0-or-later
  */
-class UserMergeHooks implements
-	AccountFieldsHook
-{
+
+// @phan-suppress-next-line PhanUndeclaredInterface
+class UserMergeHooks implements AccountFieldsHook {
 	/**
 	 * @param array &$updateFields
 	 */
