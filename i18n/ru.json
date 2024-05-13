@@ -111,6 +111,8 @@
 	"globalblocking-loglink": "IP-адрес $1 заблокирован глобально ([[{{#Special:GlobalBlockList}}/$1|подробнее]]).",
 	"globalblocking-contribs-notice": "Этот IP-адрес в данный момент глобально заблокирован.\nНиже приведена последняя запись из журнала глобальных блокировок:",
 	"globalblocking-showlog": "Этот IP-адрес уже был заблокирован ранее.\nНиже для справки приведён журнал блокировок:",
+	"globalblocking-contribs-modify": "изменить параметры глобальной блокировки",
+	"globalblocking-contribs-remove": "снять глобальную блокировку",
 	"globalblocklist": "Список заблокированных глобально IP-адресов",
 	"globalblock": "Глобальная блокировка IP-адреса",
 	"globalblockstatus": "Локальные состояния глобальных блокировок",
