@@ -22,14 +22,15 @@
 			"青子守歌",
 			"春春眠眠",
 			"1108-Kiju",
-			"LaMagiaaa"
+			"LaMagiaaa",
+			"Waki285"
 		]
 	},
 	"globalblocking-desc": "IPアドレスを[[Special:GlobalBlockList|複数のウィキで横断的に]][[Special:GlobalBlock|ブロックする]]",
 	"globalblocking-block": "IPアドレスをグローバルブロック",
 	"globalblocking-block-intro": "このページで全ウィキでの IP アドレスをブロックできます。",
 	"globalblocking-block-reason": "理由:",
-	"globalblocking-block-reason-dropdown": "*共通ブロックの理由\n**ウィキ間のスパム\n**ウィキ間での不正利用\n**荒らし",
+	"globalblocking-block-reason-dropdown": "*よくあるブロック理由\n**クロスウィキスパム\n**クロスウィキ不正利用\n**荒らし",
 	"globalblocking-block-edit-dropdown": "ブロック理由を編集",
 	"globalblocking-block-expiry": "有効期限:",
 	"globalblocking-block-expiry-selector-other": "期間 (その他のとき)",
