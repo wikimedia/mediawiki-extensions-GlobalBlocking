@@ -8,7 +8,7 @@
 	},
 	"globalblocking-apierror-badip": "IP-адреса $1 — недійсна",
 	"apihelp-globalblock-summary": "Глобально заблокувати чи розблокувати користувача.",
-	"apihelp-globalblock-param-target": "Цільова IP-адреса.",
+	"apihelp-globalblock-param-target": "Цільова IP-адреса або ім'я користувача.",
 	"apihelp-globalblock-param-expiry": "Якщо вказано, буде заблоковано або переблоковано користувача. Визначає скільки блокування триватиме, наприклад, «5 months» або «2 weeks». Якщо встановлено «infinite» або «indefinite» блокування ніколи не завершиться.",
 	"apihelp-globalblock-param-unblock": "Якщо вказано, буде розблоковано користувача.",
 	"apihelp-globalblock-param-reason": "Причина блокування/розблокування.",
@@ -25,7 +25,7 @@
 	"apihelp-query+globalblocks-param-prop": "Які властивості отримати.",
 	"apihelp-query+globalblocks-example-1": "Перелічити всі глобальні блокування.",
 	"apihelp-query+globalblocks-example-2": "Перелічити глобальні блокування, що стосуються IP-адреси 192.0.2.18",
-	"apihelp-globalblock-param-alsolocal": "Заблокувати IP і локально теж",
+	"apihelp-globalblock-param-alsolocal": "Заблокувати користувача і локально теж",
 	"apihelp-globalblock-param-localblockstalk": "Відібрати локальний доступ до сторінок обговорення",
 	"apihelp-globalblock-param-localanononly": "Вкажіть це, якщо блокування повинно вплинути лише на користувачів, що локально не ввійшли до системи."
 }
