@@ -7,6 +7,7 @@
 		]
 	},
 	"globalblocking-apierror-badip": "IP-adres $1 is ongeldig.",
+	"globalblocking-apierror-badtarget": "De opgegeven gebruikersnaam of het opgegeven IP-adres of -bereik ($1) is niet geldig",
 	"apihelp-globalblock-summary": "Een gebruiker globaal blokkeren of deblokkeren.",
 	"apihelp-globalblock-param-target": "Het doel-IP-adres of de gebruikersnaam.",
 	"apihelp-globalblock-param-expiry": "Indien dit is opgegeven, wordt de gebruiker geblokkeerd of opnieuw geblokkeerd. Bepaalt hoe lang de blokkade zal duren, bv. “5 months” of “2 weeks”. Als dit wordt ingesteld op “infinite” of “indefinite” zal het blok nooit verlopen.",
