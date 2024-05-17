@@ -46,7 +46,7 @@
 	"globalblocking-local-failed": "Het lokaal blokkeren van het IP-adres is mislukt omdat het opgegeven IP-adres al geblokkeerd is op deze wiki",
 	"globalblocking-local-failed-new": "Het lokaal blokkeren van de gebruiker is mislukt omdat de betreffende gebruiker al is geblokkeerd op deze wiki.",
 	"globalblocking-block-failure": "Er trad een fout op tijdens het globaal blokkeren van $1. Probeer het opnieuw.",
-	"globalblocking-block-alreadyblocked": "$1 is al globaal geblokkeerd.\nU kunt de bestaande blokkade bekijken in de [[Special:GlobalBlockList|lijst met globale blokkades]],\nof de instellingen van het bestaande blokkade wijzigen door dit formulier opnieuw in te dienen.",
+	"globalblocking-block-alreadyblocked": "$1 is al globaal geblokkeerd.\nU kunt de bestaande blokkade bekijken in de [[Special:GlobalBlockList|lijst met globale blokkades]],\nof de instellingen van de bestaande blokkade wijzigen door dit formulier opnieuw in te dienen.",
 	"globalblocking-bigrange": "Het door u opgegeven bereik ($1) is te groot.\nDe limiet voor $2 is een bereik van /$3.",
 	"globalblocking-also-local": "Blokkeer ook het opgegeven IP-adres lokaal op deze wiki",
 	"globalblocking-also-local-new": "De opgegeven gebruiker ook lokaal op deze wiki blokkeren",
