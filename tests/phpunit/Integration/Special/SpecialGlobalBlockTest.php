@@ -89,4 +89,160 @@ class SpecialGlobalBlockTest extends FormSpecialPageTestCase {
 			'Non-existent user' => [ 'Non-existent test user1234' ],
 		];
 	}
+
+	private function getUserForSuccess( array $additionalGroups = [] ) {
+		return $this->getMutableTestUser( array_merge( [ 'steward' ], $additionalGroups ) )->getUser();
+	}
+
+	public function testViewSpecialPageWithoutSysop() {
+		// Execute the special page.
+		[ $html ] = $this->executeSpecialPage( '', new FauxRequest(), null, $this->getUserForSuccess() );
+		// Verify that the form fields are present.
+		$this->assertStringContainsString( '(globalblocking-ipaddress', $html );
+		$this->assertStringContainsString( '(globalblocking-block-expiry', $html );
+		$this->assertStringContainsString( '(globalblocking-block-reason', $html );
+		$this->assertStringContainsString( '(globalblocking-ipbanononly', $html );
+		$this->assertStringContainsString( '(globalblocking-block-submit', $html );
+		// The also local checkboxes should not be present unless the user has the 'block' right on the local wiki
+		$this->assertStringNotContainsString( '(globalblocking-also-local', $html );
+		// Verify that the description is present
+		$this->assertStringContainsString( '(globalblocking-block-intro', $html );
+		// Verify the form title is present
+		$this->assertStringContainsString( '(globalblocking-block-legend', $html );
+	}
+
+	public function testViewSpecialPageWithSysop() {
+		// Execute the special page.
+		[ $html ] = $this->executeSpecialPage( '', new FauxRequest(), null, $this->getUserForSuccess( [ 'sysop' ] ) );
+		// Verify that the form fields are present.
+		$this->assertStringContainsString( '(globalblocking-ipaddress', $html );
+		$this->assertStringContainsString( '(globalblocking-block-expiry', $html );
+		$this->assertStringContainsString( '(globalblocking-block-reason', $html );
+		$this->assertStringContainsString( '(globalblocking-ipbanononly', $html );
+		$this->assertStringContainsString( '(globalblocking-block-submit', $html );
+		// The also local checkboxes should be present as the user has 'block' right on the local wiki
+		$this->assertStringContainsString( '(globalblocking-also-local', $html );
+		$this->assertStringContainsString( '(globalblocking-also-local-talk', $html );
+		$this->assertStringContainsString( '(globalblocking-also-local-email', $html );
+		$this->assertStringContainsString( '(globalblocking-also-local-soft', $html );
+		// Verify that the description is present
+		$this->assertStringContainsString( '(globalblocking-block-intro', $html );
+		// Verify the form title is present
+		$this->assertStringContainsString( '(globalblocking-block-legend', $html );
+	}
+
+	public function testViewSpecialPageForAlreadyGloballyBlockedIP() {
+		// Perform a block on an IP
+		GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager()->block(
+			'1.2.3.4', 'global-block-test-reason', 'infinite', $this->getUserForSuccess()
+		);
+		// Execute the special page.
+		[ $html ] = $this->executeSpecialPage( '1.2.3.4', new FauxRequest(), null, $this->getUserForSuccess() );
+		// Verify that the already blocked banner is shown
+		$this->assertStringContainsString( '(globalblocking-block-alreadyblocked', $html );
+		// Verify that the extract of the global blocking logs is shown
+		$this->assertStringContainsString( 'gblblock/gblock', $html );
+		// Verify that the reason field is pre-filled with the reason used for the existing block
+		$this->assertStringContainsString( 'global-block-test-reason', $html );
+	}
+
+	public function testSubmitWithNonExistentUser() {
+		// Set-up the valid request and get a test user which has the necessary rights.
+		$testPerformer = $this->getUserForSuccess();
+		RequestContext::getMain()->setUser( $testPerformer );
+		$fauxRequest = new FauxRequest(
+			[
+				// Test with a single target user, with both notices being added.
+				'wpAddress' => 'Non-existent-test-user-1', 'wpExpiry' => '1 day',
+				'wpReason' => 'other', 'wpReason-other' => 'Test reason',
+				'wpEditToken' => $testPerformer->getEditToken(),
+			],
+			true,
+			RequestContext::getMain()->getRequest()->getSession()
+		);
+		// Assign the fake valid request to the main request context, as well as updating the session user
+		// so that the CSRF token is a valid token for the request user.
+		RequestContext::getMain()->setRequest( $fauxRequest );
+		RequestContext::getMain()->getRequest()->getSession()->setUser( $testPerformer );
+		// Execute the special page.
+		[ $html ] = $this->executeSpecialPage( '', $fauxRequest, null, $this->getUserForSuccess() );
+		// Verify that the form does not submit and displays an error about the target
+		$this->assertStringContainsString( '(globalblocking-block-target-invalid', $html );
+		$this->assertStringNotContainsString( '(globalblocking-block-success', $html );
+		// Double check that no block was performed.
+		$this->assertSame(
+			0,
+			GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockLookup()
+				->getGlobalBlockId( 'Non-existent-test-user-1' ),
+			'No block should have been performed as the target of the block did not exist.'
+		);
+	}
+
+	public function testSubmitForIPTarget() {
+		// Set-up the valid request and get a test user which has the necessary rights.
+		$testPerformer = $this->getUserForSuccess();
+		RequestContext::getMain()->setUser( $testPerformer );
+		$fauxRequest = new FauxRequest(
+			[
+				// Test with a single target user, with both notices being added.
+				'wpAddress' => '1.2.3.4', 'wpExpiry' => '1 day',
+				'wpReason' => 'other', 'wpReason-other' => 'Test reason',
+				'wpAnonOnly' => 1, 'wpEditToken' => $testPerformer->getEditToken(),
+			],
+			true,
+			RequestContext::getMain()->getRequest()->getSession()
+		);
+		// Assign the fake valid request to the main request context, as well as updating the session user
+		// so that the CSRF token is a valid token for the request user.
+		RequestContext::getMain()->setRequest( $fauxRequest );
+		RequestContext::getMain()->getRequest()->getSession()->setUser( $testPerformer );
+		// Execute the special page.
+		[ $html ] = $this->executeSpecialPage( '1.2.3.4', $fauxRequest, null, $this->getUserForSuccess() );
+		// Verify that the form does submits successfully and displays the messages added by ::onSuccess
+		$this->assertStringContainsString( '(globalblocking-block-success', $html );
+		$this->assertStringContainsString( '(globalblocking-add-block', $html );
+		// Double check that the block was actually performed
+		$this->assertSame(
+			1,
+			GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockLookup()
+				->getGlobalBlockId( '1.2.3.4' ),
+			'A block on 1.2.3.4 should have been applied as the form was successfully submitted.'
+		);
+	}
+
+	public function testSubmitForUserTargetWhenLocalBlockSpecified() {
+		// Set-up the valid request and get a test user which has the necessary rights.
+		$testPerformer = $this->getUserForSuccess();
+		RequestContext::getMain()->setUser( $testPerformer );
+		$testTarget = $this->getTestUser()->getUser();
+		$fauxRequest = new FauxRequest(
+			[
+				// Test with a single target user, with both notices being added.
+				'wpAddress' => $testTarget->getName(), 'wpExpiry' => 'indefinite',
+				'wpReason' => 'other', 'wpReason-other' => 'Test reason for account block',
+				'wpAlsoLocal' => 1, 'wpEditToken' => $testPerformer->getEditToken(),
+			],
+			true,
+			RequestContext::getMain()->getRequest()->getSession()
+		);
+		// Assign the fake valid request to the main request context, as well as updating the session user
+		// so that the CSRF token is a valid token for the request user.
+		RequestContext::getMain()->setRequest( $fauxRequest );
+		RequestContext::getMain()->getRequest()->getSession()->setUser( $testPerformer );
+		// Execute the special page.
+		[ $html ] = $this->executeSpecialPage( '1.2.3.4', $fauxRequest, null, $this->getUserForSuccess( [ 'sysop' ] ) );
+		// Verify that the form does submits successfully and displays the messages added by ::onSuccess
+		$this->assertStringContainsString( '(globalblocking-block-success', $html );
+		$this->assertStringContainsString( '(globalblocking-add-block', $html );
+		// Double check that the global and local block was actually performed
+		$this->assertSame(
+			1,
+			GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockLookup()
+				->getGlobalBlockId( $testTarget->getName() ),
+			'A block on 1.2.3.4 should have been applied as the form was successfully submitted.'
+		);
+		$this->assertNotNull(
+			$this->getServiceContainer()->getDatabaseBlockStore()->newFromTarget( $testTarget )
+		);
+	}
 }
