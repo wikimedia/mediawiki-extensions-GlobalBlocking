@@ -31,7 +31,7 @@
 	"globalblocking-search-ip": "Nnirizzu IP:",
 	"globalblocking-search-submit": "Circata di blocchi",
 	"globalblocking-list-ipinvalid": "Lu nnirizzu IP ca circasti ($1) non vali. Nzirisci nu nnirizzu IP ca vali.",
-	"globalblocking-search-errors": "La tò circata non desi nuddu risurtatu pi {{PLURAL:$1|stu mutivu|sti mutivi}}:",
+	"globalblocking-search-errors": "La tò circata non desi nuḍḍu risurtatu pi {{PLURAL:$1|stu mutivu|sti mutivi}}:",
 	"globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> (''$3'') bluccau glubbalmenti [[Special:Contributions/$4|$4]] ''($5)''",
 	"globalblocking-list-expiry": "finuta dû bloccu $1",
 	"globalblocking-list-anononly": "Sulu anònimi",
