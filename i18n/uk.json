@@ -126,5 +126,11 @@
 	"log-action-filter-gblblock-whitelist": "Доповнення глобального білого списку блокувань",
 	"log-action-filter-gblblock-dwhitelist": "Вилучення з глобального білого списку блокувань",
 	"grant-globalblock": "Глобально заблокувати чи розблокувати IP-адресу",
-	"globalblocking-blockedtext-ip-range": "Заблокований діапазон — $1."
+	"globalblocking-blockedtext-all-wikis": "Вашу IP-адресу заблоковано у всіх вікі.",
+	"globalblocking-blockedtext-on-range": "Ваша IP-адреса входить до діапазону, який було заблоковано у всіх вікі.",
+	"globalblocking-blockedtext-on-proxy": "Один або більше проксі-серверів, використаних вашим запитом, є глобально заблокованими",
+	"globalblocking-blockedtext-blocker-admin": "Щоб обговорити блокування, можете зв'язатися з $1.",
+	"globalblocking-blockedtext-email-feature": "Ви не зможете скористатися функцією «{{int:emailuser}}», якщо у [[Special:Preferences|ваших налаштуваннях]] не вказано дійсної електронної адреси або якщо на вас накладене блокування з забороною писати листи.",
+	"globalblocking-blockedtext-ip-range": "Заблокований діапазон — $1.",
+	"globalblocking-blockedtext-proxy": "Заблокована проксі-адреса — $1."
 }
