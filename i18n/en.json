@@ -25,7 +25,7 @@
 	"globalblocking-block-ipinvalid": "The IP address ($1) you entered is invalid.\nPlease note that you cannot enter a username!",
 	"globalblocking-block-target-invalid": "The username, IP address, or IP range ($1) you entered is invalid.",
 	"globalblocking-block-expiryinvalid": "The expiration you entered is invalid.",
-	"globalblocking-block-anononly-on-account": "You cannot block anonymous users only when blocking a user.",
+	"globalblocking-block-anononly-on-account": "Blocks on accounts cannot only apply to anonymous users.",
 	"globalblocking-block-submit": "Block this IP address globally",
 	"globalblocking-block-submit-new": "Block this user globally",
 	"globalblocking-modify-submit": "Modify this global block",
