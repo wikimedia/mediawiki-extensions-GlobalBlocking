@@ -1,6 +1,6 @@
 <?php
 
-namespace MediaWiki\Extension\GlobalBlocking\Test\Integration;
+namespace MediaWiki\Extension\GlobalBlocking\Test\Unit;
 
 use CentralIdLookup;
 use MediaWiki\CommentFormatter\CommentFormatter;
@@ -9,12 +9,14 @@ use MediaWiki\Extension\GlobalBlocking\GlobalBlock;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingHooks;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
 use MediaWiki\Permissions\PermissionManager;
-use MediaWikiIntegrationTestCase;
+use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\User\User;
+use MediaWikiUnitTestCase;
 
 /**
  * @covers \MediaWiki\Extension\GlobalBlocking\GlobalBlockingHooks
  */
-class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
+class GlobalBlockingHooksTest extends MediaWikiUnitTestCase {
 	private function getGlobalBlockingHooks(): GlobalBlockingHooks {
 		return new GlobalBlockingHooks(
 			$this->createMock( PermissionManager::class ),
@@ -71,5 +73,18 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 				'expectedKey' => 'globalblocking-blockedtext-user',
 			],
 		];
+	}
+
+	public function testOnSpecialContributionsBeforeMainOutputForNonIP() {
+		$hooks = $this->getGlobalBlockingHooks();
+		// Create a mock user that is not an IP
+		$mockUser = $this->createMock( User::class );
+		$mockUser->method( 'getName' )
+			->willReturn( 'Test' );
+		// Test that the hook does nothing for non-IP users. Because this is a unit test, it should throw
+		// on the access to the database if this test fails.
+		$this->assertTrue( $hooks->onSpecialContributionsBeforeMainOutput(
+			1, $mockUser, $this->createMock( SpecialPage::class )
+		) );
 	}
 }
