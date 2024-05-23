@@ -17,17 +17,17 @@ class SpecialRemoveGlobalBlockTest extends FormSpecialPageTestCase {
 	}
 
 	private function getUserForSuccess() {
-		$user = $this->getTestUser( [ 'steward' ] )->getUser();
-		return $user;
+		return $this->getTestUser( [ 'steward' ] )->getUser();
 	}
 
 	public function testViewPageBeforeSubmission() {
+		$this->overrideConfigValue( 'GlobalBlockingAllowGlobalAccountBlocks', true );
 		// Need to get the full HTML to be able to check that the subtitle links are present
 		[ $html ] = $this->executeSpecialPage(
 			'', new FauxRequest(), null, $this->getUserForSuccess(), true
 		);
 		// Check that the form fields exist
-		$this->assertStringContainsString( '(globalblocking-ipaddress', $html );
+		$this->assertStringContainsString( '(globalblocking-target', $html );
 		$this->assertStringContainsString( '(globalblocking-unblock-reason', $html );
 		$this->assertStringContainsString( '(globalblocking-unblock-submit', $html );
 		// Verify that the form title and description are present
@@ -44,7 +44,7 @@ class SpecialRemoveGlobalBlockTest extends FormSpecialPageTestCase {
 		$testPerformer = $this->getUserForSuccess();
 		RequestContext::getMain()->setUser( $testPerformer );
 		$fauxRequest = new FauxRequest(
-			[ 'ipaddress' => '1.2.3.4', 'wpReason' => 'testing', 'wpEditToken' => $testPerformer->getEditToken() ],
+			[ 'target' => '1.2.3.4', 'wpReason' => 'testing', 'wpEditToken' => $testPerformer->getEditToken() ],
 			true,
 			RequestContext::getMain()->getRequest()->getSession()
 		);
@@ -68,7 +68,7 @@ class SpecialRemoveGlobalBlockTest extends FormSpecialPageTestCase {
 			->block( $target, 'Test block', '1 day', $this->getUserForSuccess() );
 		// Set-up the valid request.
 		$fauxRequest = new FauxRequest(
-			[ 'ipaddress' => $target, 'wpReason' => 'testing', 'wpEditToken' => $testPerformer->getEditToken() ],
+			[ 'target' => $target, 'wpReason' => 'testing', 'wpEditToken' => $testPerformer->getEditToken() ],
 			true,
 			RequestContext::getMain()->getRequest()->getSession()
 		);
@@ -89,5 +89,12 @@ class SpecialRemoveGlobalBlockTest extends FormSpecialPageTestCase {
 			'IP address' => [ '1.2.3.5' ],
 			'IP range' => [ '1.2.3.0/24' ],
 		];
+	}
+
+	public function testSuccessfulSubmissionOfFormForAccountTarget() {
+		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
+		// to be the local provider.
+		$this->setMwGlobals( 'wgCentralIdLookupProvider', 'local' );
+		$this->testSuccessfulSubmissionOfForm( $this->getMutableTestUser()->getUser()->getName() );
 	}
 }

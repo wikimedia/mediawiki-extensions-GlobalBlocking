@@ -71,7 +71,10 @@
 		"RemoveGlobalBlock": {
 			"class": "MediaWiki\\Extension\\GlobalBlocking\\Special\\SpecialRemoveGlobalBlock",
 			"services": [
-				"BlockUtils"
+				"BlockUtils",
+				"UserNameUtils",
+				"GlobalBlocking.GlobalBlockManager",
+				"GlobalBlocking.GlobalBlockingLinkBuilder"
 			]
 		}
 	},
