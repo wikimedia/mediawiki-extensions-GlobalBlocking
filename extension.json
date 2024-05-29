@@ -43,6 +43,7 @@
 				"BlockUtils",
 				"GlobalBlocking.GlobalBlockingConnectionProvider",
 				"GlobalBlocking.GlobalBlockManager",
+				"GlobalBlocking.GlobalBlockingLinkBuilder",
 				"CentralIdLookup",
 				"UserNameUtils"
 			]
@@ -141,6 +142,43 @@
 	},
 	"ExtensionMessagesFiles": {
 		"GlobalBlockingAlias": "GlobalBlocking.alias.php"
+	},
+	"ResourceModules": {
+		"ext.globalBlocking": {
+			"localBasePath": "modules/ext.globalBlocking",
+			"remoteExtPath": "GlobalBlocking/modules/ext.globalBlocking",
+			"packageFiles": [
+				"dispatcher.js",
+				"special.globalBlock.js"
+			],
+			"dependencies": [
+				"oojs-ui-core",
+				"oojs-ui-widgets",
+				"mediawiki.util",
+				"mediawiki.widgets",
+				"mediawiki.widgets.UserInputWidget",
+				"mediawiki.htmlform"
+			]
+		}
+	},
+	"QUnitTestModule": {
+		"localBasePath": "",
+		"remoteExtPath": "GlobalBlocking",
+		"packageFiles": [
+			"tests/qunit/index.js",
+			"tests/qunit/ext.globalBlocking/special.globalBlock.test.js",
+			"tests/qunit/ext.globalBlocking/cases/checkboxDisabledState.json",
+			"modules/ext.globalBlocking/special.globalBlock.js"
+		],
+		"dependencies": [
+			"mediawiki.qunit-testrunner",
+			"mediawiki.base",
+			"mediawiki.router",
+			"mediawiki.widgets",
+			"mediawiki.widgets.UserInputWidget",
+			"ext.globalBlocking",
+			"sinonjs"
+		]
 	},
 	"AutoloadNamespaces": {
 		"MediaWiki\\Extension\\GlobalBlocking\\": "includes/",

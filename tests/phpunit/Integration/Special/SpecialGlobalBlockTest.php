@@ -95,6 +95,8 @@ class SpecialGlobalBlockTest extends FormSpecialPageTestCase {
 	}
 
 	public function testViewSpecialPageWithoutSysop() {
+		// Test with account blocks disabled. Another test will cover the case where they are enabled.
+		$this->overrideConfigValue( 'GlobalBlockingAllowGlobalAccountBlocks', false );
 		// Execute the special page.
 		[ $html ] = $this->executeSpecialPage( '', new FauxRequest(), null, $this->getUserForSuccess() );
 		// Verify that the form fields are present.
@@ -115,7 +117,7 @@ class SpecialGlobalBlockTest extends FormSpecialPageTestCase {
 		// Execute the special page.
 		[ $html ] = $this->executeSpecialPage( '', new FauxRequest(), null, $this->getUserForSuccess( [ 'sysop' ] ) );
 		// Verify that the form fields are present.
-		$this->assertStringContainsString( '(globalblocking-ipaddress', $html );
+		$this->assertStringContainsString( '(globalblocking-target', $html );
 		$this->assertStringContainsString( '(globalblocking-block-expiry', $html );
 		$this->assertStringContainsString( '(globalblocking-block-reason', $html );
 		$this->assertStringContainsString( '(globalblocking-ipbanononly', $html );
