@@ -9,6 +9,8 @@ use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Permissions\Authority;
 use MediaWiki\Tests\Api\ApiTestCase;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
+use TestUser;
+use Wikimedia\IPUtils;
 use Wikimedia\TestingAccessWrapper;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
 
@@ -20,6 +22,13 @@ use Wikimedia\Timestamp\ConvertibleTimestamp;
 class ApiGlobalBlockTest extends ApiTestCase {
 
 	use MockAuthorityTrait;
+
+	protected function setUp(): void {
+		parent::setUp();
+		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
+		// to be the local provider.
+		$this->setMwGlobals( 'wgCentralIdLookupProvider', 'local' );
+	}
 
 	private function getAuthorityForSuccess(): Authority {
 		return $this->getTestUser( [ 'steward' ] )->getAuthority();
@@ -39,7 +48,16 @@ class ApiGlobalBlockTest extends ApiTestCase {
 		];
 	}
 
-	/** @dataProvider provideIPBlockTargets */
+	public static function provideUserBlockTargets() {
+		return [
+			'User target' => [ 'GlobalBlockingTestTarget' ],
+		];
+	}
+
+	/**
+	 * @dataProvider provideIPBlockTargets
+	 * @dataProvider provideUserBlockTargets
+	 */
 	public function testExecuteForBlockWithExistingBlockButNotSetToModify( $target ) {
 		// Block the target
 		GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager()->block(
@@ -98,7 +116,42 @@ class ApiGlobalBlockTest extends ApiTestCase {
 		);
 	}
 
-	/** @dataProvider provideIPBlockTargets */
+	/**
+	 * @dataProvider provideIPBlockTargets
+	 * @dataProvider provideUserBlockTargets
+	 */
+	public function testExecuteForBlockWithLocalBlockButHasExistingLocalBlock( $target ) {
+		// Fix the time to ensure that the provided expiry is always in the future.
+		ConvertibleTimestamp::setFakeTime( '20200305060708' );
+		$this->getServiceContainer()->getBlockUserFactory()->newBlockUser(
+			$target, $this->getTestUser( [ 'steward', 'sysop' ] )->getAuthority(), '20200405060708', 'test block'
+		)->placeBlock();
+		// Call the API to block the target
+		[ $result ] = $this->doApiRequestWithToken(
+			[
+				'action' => 'globalblock', 'target' => $target, 'reason' => 'test',
+				'expiry' => '20200505060708', 'alsolocal' => '1', 'localblocksemail' => '1',
+				'localblockstalk' => '1',
+			],
+			// The user needs to have the sysop and steward groups to locally block while performing a global block.
+			null, $this->getTestUser( [ 'steward', 'sysop' ] )->getAuthority()
+		);
+		// Verify that the API response indicates that the target was already blocked.
+		$this->assertArrayHasKey( 'error', $result );
+		$this->assertArrayHasKey( 'globalblock', $result['error'] );
+		$this->assertCount( 1, $result['error']['globalblock'] );
+		$this->assertArrayHasKey( 'code', $result['error']['globalblock'][0] );
+		$this->assertSame(
+			'ipb_already_blocked',
+			$result['error']['globalblock'][0]['code'],
+			'The error code was not as expected.'
+		);
+	}
+
+	/**
+	 * @dataProvider provideIPBlockTargets
+	 * @dataProvider provideUserBlockTargets
+	 */
 	public function testExecuteForBlockWithLocalBlock( $target ) {
 		// Fix the time to ensure that the provided expiry is always in the future.
 		ConvertibleTimestamp::setFakeTime( '20200305060708' );
@@ -107,7 +160,7 @@ class ApiGlobalBlockTest extends ApiTestCase {
 			[
 				'action' => 'globalblock', 'target' => $target, 'reason' => 'test',
 				'expiry' => '20200505060708', 'alsolocal' => '1', 'localblocksemail' => '1',
-				'localblockstalk' => '1', 'localanononly' => '1'
+				'localblockstalk' => '1', 'localanononly' => IPUtils::isIPAddress( $target ) ? '1' : '',
 			],
 			// The user needs to have the sysop and steward groups to locally block while performing a global block.
 			null, $this->getTestUser( [ 'steward', 'sysop' ] )->getAuthority()
@@ -135,7 +188,10 @@ class ApiGlobalBlockTest extends ApiTestCase {
 		$this->assertNotNull( $actualLocalBlock, 'A local block should have been performed' );
 	}
 
-	/** @dataProvider provideIPBlockTargets */
+	/**
+	 * @dataProvider provideIPBlockTargets
+	 * @dataProvider provideUserBlockTargets
+	 */
 	public function testExecuteForUnblockWhenUserNotBlocked( $target ) {
 		// Call the API to unblock the target
 		[ $result ] = $this->doApiRequestWithToken(
@@ -154,7 +210,10 @@ class ApiGlobalBlockTest extends ApiTestCase {
 		);
 	}
 
-	/** @dataProvider provideIPBlockTargets */
+	/**
+	 * @dataProvider provideIPBlockTargets
+	 * @dataProvider provideUserBlockTargets
+	 */
 	public function testExecuteForUnblock( $target ) {
 		// Block the target
 		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
@@ -179,10 +238,14 @@ class ApiGlobalBlockTest extends ApiTestCase {
 	public function testGetExamplesMessages() {
 		// Test that all the items in ::getExamplesMessages have keys which is a string and values which are valid
 		// message keys.
+		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
 		$apiGlobalBlockModule = new ApiGlobalBlock(
 			new ApiMain( $this->apiContext, true ),
 			'globalblock',
-			$this->getServiceContainer()->getBlockUserFactory()
+			$this->getServiceContainer()->getBlockUserFactory(),
+			$globalBlockingServices->getGlobalBlockLookup(),
+			$globalBlockingServices->getGlobalBlockManager(),
+			$this->getServiceContainer()->getCentralIdLookup()
 		);
 		$apiGlobalBlockModule = TestingAccessWrapper::newFromObject( $apiGlobalBlockModule );
 		$examplesMessages = $apiGlobalBlockModule->getExamplesMessages();
@@ -196,5 +259,9 @@ class ApiGlobalBlockTest extends ApiTestCase {
 				"The message key $messageKey does not exist."
 			);
 		}
+	}
+
+	public function addDBData() {
+		new TestUser( 'GlobalBlockingTestTarget' );
 	}
 }

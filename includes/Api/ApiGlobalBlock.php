@@ -6,28 +6,43 @@ use ApiBase;
 use ApiMain;
 use ApiResult;
 use MediaWiki\Block\BlockUserFactory;
-use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockManager;
+use MediaWiki\ParamValidator\TypeDef\UserDef;
 use MediaWiki\Status\Status;
+use MediaWiki\User\CentralId\CentralIdLookup;
 use StatusValue;
+use Wikimedia\IPUtils;
 use Wikimedia\ParamValidator\ParamValidator;
 
 class ApiGlobalBlock extends ApiBase {
-	/** @var BlockUserFactory */
-	private $blockUserFactory;
+	private BlockUserFactory $blockUserFactory;
+	private GlobalBlockLookup $globalBlockLookup;
+	private GlobalBlockManager $globalBlockManager;
+	private CentralIdLookup $centralIdLookup;
 
 	/**
 	 * @param ApiMain $mainModule
 	 * @param string $moduleName
 	 * @param BlockUserFactory $blockUserFactory
+	 * @param GlobalBlockLookup $globalBlockLookup
+	 * @param GlobalBlockManager $globalBlockManager
+	 * @param CentralIdLookup $centralIdLookup
 	 */
 	public function __construct(
 		ApiMain $mainModule,
 		$moduleName,
-		BlockUserFactory $blockUserFactory
+		BlockUserFactory $blockUserFactory,
+		GlobalBlockLookup $globalBlockLookup,
+		GlobalBlockManager $globalBlockManager,
+		CentralIdLookup $centralIdLookup
 	) {
 		parent::__construct( $mainModule, $moduleName );
 
 		$this->blockUserFactory = $blockUserFactory;
+		$this->globalBlockLookup = $globalBlockLookup;
+		$this->globalBlockManager = $globalBlockManager;
+		$this->centralIdLookup = $centralIdLookup;
 	}
 
 	public function execute() {
@@ -35,7 +50,7 @@ class ApiGlobalBlock extends ApiBase {
 
 		$this->requireOnlyOneParameter( $this->extractRequestParams(), 'expiry', 'unblock' );
 		$result = $this->getResult();
-		$block = GlobalBlocking::getGlobalBlockingBlock( $this->getParameter( 'target' ), true );
+		$target = $this->getParameter( 'target' );
 
 		if ( $this->getParameter( 'expiry' ) ) {
 			$options = [];
@@ -44,11 +59,22 @@ class ApiGlobalBlock extends ApiBase {
 				$options[] = 'anon-only';
 			}
 
-			if ( $block && $this->getParameter( 'modify' ) ) {
+			$ip = null;
+			$centralId = 0;
+			if ( IPUtils::isIPAddress( $target ) ) {
+				$ip = IPUtils::sanitizeIP( $target );
+			} else {
+				$centralId = $this->centralIdLookup->centralIdFromName( $target );
+			}
+			$existingBlock = $this->globalBlockLookup->getGlobalBlockingBlock(
+				$ip, $centralId,
+				GlobalBlockLookup::SKIP_ALLOWED_RANGES_CHECK | GlobalBlockLookup::SKIP_LOCAL_DISABLE_CHECK
+			);
+			if ( $existingBlock && $this->getParameter( 'modify' ) ) {
 				$options[] = 'modify';
 			}
 
-			$status = GlobalBlocking::block(
+			$status = $this->globalBlockManager->block(
 				$this->getParameter( 'target' ),
 				$this->getParameter( 'reason' ),
 				$this->getParameter( 'expiry' ),
@@ -57,7 +83,7 @@ class ApiGlobalBlock extends ApiBase {
 			);
 
 			if ( $this->getParameter( 'alsolocal' ) && $status->isOK() ) {
-				$this->blockUserFactory->newBlockUser(
+				$localBlockStatus = $this->blockUserFactory->newBlockUser(
 					$this->getParameter( 'target' ),
 					$this->getUser(),
 					$this->getParameter( 'expiry' ),
@@ -70,7 +96,11 @@ class ApiGlobalBlock extends ApiBase {
 						'isAutoblocking' => true,
 					]
 				)->placeBlock( $this->getParameter( 'modify' ) );
-				$result->addValue( 'globalblock', 'blockedlocally', true );
+				if ( !$localBlockStatus->isOK() ) {
+					$this->addLegacyErrorsFromStatus( $localBlockStatus, $result );
+				} else {
+					$result->addValue( 'globalblock', 'blockedlocally', true );
+				}
 			}
 
 			if ( !$status->isOK() ) {
@@ -85,7 +115,7 @@ class ApiGlobalBlock extends ApiBase {
 				$result->addValue( 'globalblock', 'expiry', $expiry );
 			}
 		} elseif ( $this->getParameter( 'unblock' ) ) {
-			$status = GlobalBlocking::unblock(
+			$status = $this->globalBlockManager->unblock(
 				$this->getParameter( 'target' ),
 				$this->getParameter( 'reason' ),
 				$this->getUser()
@@ -131,10 +161,16 @@ class ApiGlobalBlock extends ApiBase {
 	}
 
 	public function getAllowedParams() {
+		$allowedUserTypes = [ 'ip', 'cidr' ];
+		$globalAccountBlocksEnabled = $this->getConfig()->get( 'GlobalBlockingAllowGlobalAccountBlocks' );
+		if ( $globalAccountBlocksEnabled ) {
+			$allowedUserTypes = array_merge( $allowedUserTypes, [ 'name', 'temp' ] );
+		}
 		return [
 			'target' => [
-				ParamValidator::PARAM_TYPE => 'string',
-				ParamValidator::PARAM_REQUIRED => true
+				ParamValidator::PARAM_TYPE => 'user',
+				ParamValidator::PARAM_REQUIRED => true,
+				UserDef::PARAM_ALLOWED_USER_TYPES => $allowedUserTypes,
 			],
 			'expiry' => [
 				ParamValidator::PARAM_TYPE => 'expiry'
