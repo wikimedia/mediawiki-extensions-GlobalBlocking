@@ -226,6 +226,7 @@ class GlobalBlocking {
 	 * @deprecated Since 1.42. Use GlobalBlockManager::block.
 	 */
 	public static function block( $address, $reason, $expiry, $blocker, $options = [] ): StatusValue {
+		wfDeprecated( __METHOD__, '1.42' );
 		return GlobalBlockingServices::wrap( MediaWikiServices::getInstance() )
 			->getGlobalBlockManager()
 			->block( $address, $reason, $expiry, $blocker, $options );

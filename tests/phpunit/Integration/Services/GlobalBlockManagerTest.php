@@ -309,7 +309,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 		$options = [ 'anon-only' ];
 
 		// To ensure there is a placed block so that we can attempt to unblock
-		GlobalBlocking::block(
+		GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager()->block(
 			$target,
 			'Block for testing unblock',
 			'infinity',
