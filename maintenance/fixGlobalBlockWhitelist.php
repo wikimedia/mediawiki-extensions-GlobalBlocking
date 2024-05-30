@@ -155,6 +155,7 @@ class FixGlobalBlockWhitelist extends Maintenance {
 				->select( '1' )
 				->from( 'global_block_whitelist' )
 				->where( [ 'gbw_id' => $newId ] )
+				->caller( __METHOD__ )
 				->fetchField();
 			if ( $entryAlreadyExists ) {
 				if ( $this->dryRun ) {
