@@ -6,7 +6,8 @@
 			"Liuxinyu970226",
 			"Stang",
 			"Yfdyh000",
-			"Zazzzz"
+			"Zazzzz",
+			"LittlePaw365"
 		]
 	},
 	"globalblocking-apierror-badip": "IP地址 $1 无效",
@@ -21,7 +22,7 @@
 	"apihelp-globalblock-example-1": "无限期封禁192.0.2.1，原因“Cross-wiki abuse”",
 	"apihelp-query+globalblocks-summary": "列出所有全域封禁的IP地址。",
 	"apihelp-query+globalblocks-param-start": "枚举的起始时间戳。",
-	"apihelp-query+globalblocks-param-end": "枚举的结束时间戳。",
+	"apihelp-query+globalblocks-param-end": "停止枚举的时间戳。",
 	"apihelp-query+globalblocks-param-ids": "要列举的以逗号分隔的封禁ID列表。",
 	"apihelp-query+globalblocks-param-addresses": "要搜索的以逗号分隔的IP地址列表。",
 	"apihelp-query+globalblocks-param-ip": "获取应用到此IP地址或者CIDR范围的所有封禁，包括范围封禁。不能与$1addresses一起使用。CIDR范围不允许超过/16。",
