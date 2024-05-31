@@ -54,7 +54,9 @@
 				"CommentFormatter",
 				"CentralIdLookup",
 				"GlobalBlocking.GlobalBlockLookup",
-				"GlobalBlocking.GlobalBlockingLinkBuilder"
+				"GlobalBlocking.GlobalBlockingLinkBuilder",
+				"GlobalBlocking.GlobalBlockingConnectionProvider",
+				"GlobalBlocking.GlobalBlockLocalStatusLookup"
 			]
 		},
 		"GlobalBlockStatus": {
@@ -170,7 +172,9 @@
 				"CommentFormatter",
 				"CentralIdLookup",
 				"GlobalBlocking.GlobalBlockingLinkBuilder",
-				"GlobalBlocking.GlobalBlockLookup"
+				"GlobalBlocking.GlobalBlockLookup",
+				"GlobalBlocking.GlobalBlockingConnectionProvider",
+				"GlobalBlocking.GlobalBlockLocalStatusLookup"
 			]
 		},
 		"usermerge": {

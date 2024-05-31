@@ -17,12 +17,15 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 	 */
 	protected function newSpecialPage() {
 		$services = $this->getServiceContainer();
+		$globalBlockingServices = GlobalBlockingServices::wrap( $services );
 		return new SpecialGlobalBlockList(
 			$services->getBlockUtils(),
 			$services->getCommentFormatter(),
 			$services->getCentralIdLookup(),
-			GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockLookup(),
-			GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockingLinkBuilder()
+			$globalBlockingServices->getGlobalBlockLookup(),
+			$globalBlockingServices->getGlobalBlockingLinkBuilder(),
+			$globalBlockingServices->getGlobalBlockingConnectionProvider(),
+			$globalBlockingServices->getGlobalBlockLocalStatusLookup()
 		);
 	}
 

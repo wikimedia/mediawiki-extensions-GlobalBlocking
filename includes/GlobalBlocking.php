@@ -167,6 +167,7 @@ class GlobalBlocking {
 	 * @deprecated Since 1.42. Use GlobalBlockLocalStatusLookup::getLocalWhitelistInfo.
 	 */
 	public static function getLocalWhitelistInfo( $id = null, $address = null ) {
+		wfDeprecated( __METHOD__, '1.42' );
 		return GlobalBlockingServices::wrap( MediaWikiServices::getInstance() )
 			->getGlobalBlockLocalStatusLookup()
 			->getLocalWhitelistInfo( $id, $address );
@@ -192,6 +193,7 @@ class GlobalBlocking {
 	 * @deprecated Since 1.42. Use GlobalBlockingLinkBuilder::maybeLinkUserpage.
 	 */
 	public static function maybeLinkUserpage( $wiki_id, $user ) {
+		wfDeprecated( __METHOD__, '1.42' );
 		return GlobalBlockingServices::wrap( MediaWikiServices::getInstance() )
 			->getGlobalBlockingLinkBuilder()
 			->maybeLinkUserpage( $wiki_id, $user );
@@ -257,6 +259,7 @@ class GlobalBlocking {
 	 * @deprecated Since 1.42. Use GlobalBlockLookup::selectFields instead.
 	 */
 	public static function selectFields() {
+		wfDeprecated( __METHOD__, '1.42' );
 		return GlobalBlockLookup::selectFields();
 	}
 }

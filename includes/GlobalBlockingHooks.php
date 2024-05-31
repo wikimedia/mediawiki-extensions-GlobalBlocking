@@ -10,7 +10,9 @@ use MediaWiki\Block\CompositeBlock;
 use MediaWiki\Block\Hook\GetUserBlockHook;
 use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Config\Config;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\Extension\GlobalBlocking\Special\GlobalBlockListPager;
 use MediaWiki\Hook\ContributionsToolLinksHook;
@@ -50,6 +52,8 @@ class GlobalBlockingHooks implements
 	private CentralIdLookup $lookup;
 	private GlobalBlockingLinkBuilder $globalBlockLinkBuilder;
 	private GlobalBlockLookup $globalBlockLookup;
+	private GlobalBlockingConnectionProvider $globalBlockingConnectionProvider;
+	private GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup;
 
 	/**
 	 * @param PermissionManager $permissionManager
@@ -58,6 +62,8 @@ class GlobalBlockingHooks implements
 	 * @param CentralIdLookup $lookup
 	 * @param GlobalBlockingLinkBuilder $globalBlockLinkBuilder
 	 * @param GlobalBlockLookup $globalBlockLookup
+	 * @param GlobalBlockingConnectionProvider $globalBlockingConnectionProvider
+	 * @param GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup
 	 */
 	public function __construct(
 		PermissionManager $permissionManager,
@@ -65,7 +71,9 @@ class GlobalBlockingHooks implements
 		CommentFormatter $commentFormatter,
 		CentralIdLookup $lookup,
 		GlobalBlockingLinkBuilder $globalBlockLinkBuilder,
-		GlobalBlockLookup $globalBlockLookup
+		GlobalBlockLookup $globalBlockLookup,
+		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
+		GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup
 	) {
 		$this->permissionManager = $permissionManager;
 		$this->config = $mainConfig;
@@ -73,6 +81,8 @@ class GlobalBlockingHooks implements
 		$this->lookup = $lookup;
 		$this->globalBlockLinkBuilder = $globalBlockLinkBuilder;
 		$this->globalBlockLookup = $globalBlockLookup;
+		$this->globalBlockingConnectionProvider = $globalBlockingConnectionProvider;
+		$this->globalBlockLocalStatusLookup = $globalBlockLocalStatusLookup;
 	}
 
 	/**
@@ -225,7 +235,9 @@ class GlobalBlockingHooks implements
 				$sp->getLinkRenderer(),
 				$this->commentFormatter,
 				$this->lookup,
-				$this->globalBlockLinkBuilder
+				$this->globalBlockLinkBuilder,
+				$this->globalBlockingConnectionProvider,
+				$this->globalBlockLocalStatusLookup
 			);
 			$body = $pager->formatRow( $block );
 
