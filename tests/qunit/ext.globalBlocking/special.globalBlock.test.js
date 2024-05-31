@@ -30,6 +30,15 @@ function setUpDocumentForTest() {
 		'{"_":"OO.ui.CheckboxInputWidget","name":"wpAnonOnly","value":"1","inputId":"ooui-php-4","required":false}'
 	);
 	node.appendChild( $anonOnlyCheckbox[ 0 ] );
+	// Add the local block checkbox to the DOM.
+	const $localBlockCheckbox = new OO.ui.CheckboxInputWidget( {
+		id: 'mw-globalblock-local'
+	} ).$element;
+	$localBlockCheckbox.attr(
+		'data-ooui',
+		'{"_":"OO.ui.CheckboxInputWidget","name":"wpAlsoLocal","value":"1","inputId":"ooui-php-7","required":false}'
+	);
+	node.appendChild( $localBlockCheckbox[ 0 ] );
 	// Add the local block soft block checkbox to the DOM.
 	const $localSoftCheckbox = new OO.ui.CheckboxInputWidget( {
 		id: 'mw-globalblock-local-soft'
