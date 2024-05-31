@@ -23,7 +23,7 @@
 	"globalblocking-block-ipinvalid": "Le adresse IP ($1) que tu entrava es invalide.\nPer favor nota que tu non pote entrar un nomine de usator!",
 	"globalblocking-block-target-invalid": "Le nomine de usator, adresse IP o intervallo IP que tu ha inserite ($1) non es valide.",
 	"globalblocking-block-expiryinvalid": "Le expiraton que tu entrava es invalide.",
-	"globalblocking-block-anononly-on-account": "Non es possibile blocar unicamente le usatores anonyme quando se bloca un usator.",
+	"globalblocking-block-anononly-on-account": "Le blocage de contos non pote esser limitate a usatores anonyme.",
 	"globalblocking-block-submit": "Blocar globalmente iste adresse IP",
 	"globalblocking-block-submit-new": "Blocar globalmente iste usator",
 	"globalblocking-modify-submit": "Modificar iste blocada global",

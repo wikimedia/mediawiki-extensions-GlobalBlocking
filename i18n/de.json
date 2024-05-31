@@ -37,7 +37,7 @@
 	"globalblocking-block-ipinvalid": "Du hast eine ungültige IP-Adresse ($1) eingegeben.\nBeachte, dass du keinen Benutzernamen eingeben darfst!",
 	"globalblocking-block-target-invalid": "Der von dir eingegebene Benutzername, die IP-Adresse oder der IP-Bereich ($1) ist ungültig.",
 	"globalblocking-block-expiryinvalid": "Die eingegebene Sperrdauer ist ungültig.",
-	"globalblocking-block-anononly-on-account": "Du kannst anonyme Benutzer nicht sperren, nur wenn du einen Benutzer sperrst.",
+	"globalblocking-block-anononly-on-account": "Sperrungen von Accounts können sich nicht nur auf anonyme Nutzer beziehen.",
 	"globalblocking-block-submit": "IP-Adresse global sperren",
 	"globalblocking-block-submit-new": "Diesen Benutzer global sperren",
 	"globalblocking-modify-submit": "Globale Sperre ändern",
