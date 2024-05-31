@@ -11,6 +11,7 @@ use MediaWiki\Block\Hook\GetUserBlockHook;
 use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Config\Config;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\Extension\GlobalBlocking\Special\GlobalBlockListPager;
 use MediaWiki\Hook\ContributionsToolLinksHook;
 use MediaWiki\Hook\GetBlockErrorMessageKeyHook;
@@ -48,6 +49,7 @@ class GlobalBlockingHooks implements
 	private CommentFormatter $commentFormatter;
 	private CentralIdLookup $lookup;
 	private GlobalBlockingLinkBuilder $globalBlockLinkBuilder;
+	private GlobalBlockLookup $globalBlockLookup;
 
 	/**
 	 * @param PermissionManager $permissionManager
@@ -55,19 +57,22 @@ class GlobalBlockingHooks implements
 	 * @param CommentFormatter $commentFormatter
 	 * @param CentralIdLookup $lookup
 	 * @param GlobalBlockingLinkBuilder $globalBlockLinkBuilder
+	 * @param GlobalBlockLookup $globalBlockLookup
 	 */
 	public function __construct(
 		PermissionManager $permissionManager,
 		Config $mainConfig,
 		CommentFormatter $commentFormatter,
 		CentralIdLookup $lookup,
-		GlobalBlockingLinkBuilder $globalBlockLinkBuilder
+		GlobalBlockingLinkBuilder $globalBlockLinkBuilder,
+		GlobalBlockLookup $globalBlockLookup
 	) {
 		$this->permissionManager = $permissionManager;
 		$this->config = $mainConfig;
 		$this->commentFormatter = $commentFormatter;
 		$this->lookup = $lookup;
 		$this->globalBlockLinkBuilder = $globalBlockLinkBuilder;
+		$this->globalBlockLookup = $globalBlockLookup;
 	}
 
 	/**
@@ -199,21 +204,24 @@ class GlobalBlockingHooks implements
 	 *
 	 * @return bool
 	 */
-	public function onSpecialContributionsBeforeMainOutput(
-		$userId, $user, $sp
-	) {
+	public function onSpecialContributionsBeforeMainOutput( $userId, $user, $sp ) {
 		$name = $user->getName();
-		if ( !IPUtils::isIPAddress( $name ) ) {
-			return true;
-		}
 
-		$block = GlobalBlocking::getGlobalBlockingBlock( $name, true );
+		if ( IPUtils::isIPAddress( $name ) ) {
+			$ip = $name;
+			$centralId = 0;
+		} else {
+			$ip = null;
+			$centralId = $this->lookup->centralIdFromName( $name );
+		}
+		$block = $this->globalBlockLookup->getGlobalBlockingBlock( $ip, $centralId );
 
 		if ( $block ) {
-			$conds = GlobalBlocking::getRangeCondition( $block->gb_address );
 			$pager = new GlobalBlockListPager(
 				$sp->getContext(),
-				$conds,
+				// Unused as we're not actually querying the database using the GlobalBlockListPager
+				// because the query was made in GlobalBlockLookup::getGlobalBlockingBlock.
+				[],
 				$sp->getLinkRenderer(),
 				$this->commentFormatter,
 				$this->lookup,
