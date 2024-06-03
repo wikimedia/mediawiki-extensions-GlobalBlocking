@@ -31,7 +31,7 @@
 	"globalblocking-block-ipinvalid": "כתובת ה־IP שהזנת ($1) אינה תקינה.\nנא לשים לב לכך שלא ניתן להזין שם משתמש!",
 	"globalblocking-block-target-invalid": "הזנת ערך בלתי־תקין עבור שם המשתמש, כתובת ה־IP או טווח ה־IP‏ ($1).",
 	"globalblocking-block-expiryinvalid": "זמן הפקיעה שהזנת אינו תקין.",
-	"globalblocking-block-anononly-on-account": "לא ניתן לחסום רק משתמשים אלמוניים בעת חסימת משתמש.",
+	"globalblocking-block-anononly-on-account": "חסימות בחשבונות לא יכולות לחול רק על משתמשים אלמוניים.",
 	"globalblocking-block-submit": "חסימה גלובלית של כתובת ה־IP הזאת",
 	"globalblocking-block-submit-new": "לחסום את המשתמש הזה גלובלית",
 	"globalblocking-modify-submit": "שינוי החסימה הגלובלית הזאת",

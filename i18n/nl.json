@@ -37,7 +37,7 @@
 	"globalblocking-block-ipinvalid": "Het IP-adres ($1) dat u hebt opgegeven is onjuist.\nLet op: u kunt geen gebruikersnaam opgeven!",
 	"globalblocking-block-target-invalid": "De ingevoerde gebruikersnaam of het ingevoerde IP-adres of -bereik ($1) is niet geldig.",
 	"globalblocking-block-expiryinvalid": "De vervaldatum/tijd die u hebt opgegeven is ongeldig.",
-	"globalblocking-block-anononly-on-account": "Het is niet mogelijk het blokkeren te beperken tot anonieme gebruikers wanneer u een gebruiker blokkeert.",
+	"globalblocking-block-anononly-on-account": "Het blokkeren van accounts kan niet uitsluitend van toepassing zijn op anonieme gebruikers.",
 	"globalblocking-block-submit": "Dit IP-adres globaal blokkeren",
 	"globalblocking-block-submit-new": "Deze gebruiker globaal blokkeren",
 	"globalblocking-modify-submit": "Deze globale blokkade wijzigen",

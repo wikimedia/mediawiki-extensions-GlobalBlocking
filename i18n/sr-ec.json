@@ -33,6 +33,7 @@
 	"globalblocking-block-ipinvalid": "IP адреса ($1) коју сте унели није важећа.\nИмајте на уму да се овде не уноси корисничко име.",
 	"globalblocking-block-target-invalid": "Корисничко име, IP адреса или опсег IP адреса ($1) који сте навели није ваљан.",
 	"globalblocking-block-expiryinvalid": "Време истека блока које сте унели није исправно.",
+	"globalblocking-block-anononly-on-account": "Блокирање налога не може се применити само на анонимне кориснике.",
 	"globalblocking-block-submit": "Блокирај ову IP адресу глобално",
 	"globalblocking-block-submit-new": "Блокирај овог корисника глобално",
 	"globalblocking-modify-submit": "Промени овај глобални блок",
