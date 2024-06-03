@@ -12,7 +12,7 @@ module.exports = function () {
 		return OO.ui.infuse( $el );
 	}
 
-	var blockTargetWidget, anonOnlyWidget, alsoLocalSoftWidget;
+	var blockTargetWidget, anonOnlyWidget, alsoLocalSoftWidget, localBlockWidget;
 
 	function preserveSelectedStateOnDisable( widget ) {
 		var widgetWasSelected;
@@ -55,13 +55,18 @@ module.exports = function () {
 	if ( blockTargetWidget ) {
 		// Always present if blockTargetWidget is present
 		anonOnlyWidget = OO.ui.infuse( $( '#mw-globalblock-anon-only' ) );
-		alsoLocalSoftWidget = OO.ui.infuse( $( '#mw-globalblock-local-soft' ) );
 
 		blockTargetWidget.on( 'change', updateBlockOptions );
 
 		// When disabling checkboxes, preserve their selected state in case they are re-enabled
 		preserveSelectedStateOnDisable( anonOnlyWidget );
-		preserveSelectedStateOnDisable( alsoLocalSoftWidget );
+
+		localBlockWidget = infuseIfExists( $( '#mw-globalblock-local' ) );
+		if ( localBlockWidget ) {
+			alsoLocalSoftWidget = OO.ui.infuse( $( '#mw-globalblock-local-soft' ) );
+			localBlockWidget.on( 'change', updateBlockOptions );
+			preserveSelectedStateOnDisable( alsoLocalSoftWidget );
+		}
 
 		updateBlockOptions();
 	}
