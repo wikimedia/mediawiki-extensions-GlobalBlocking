@@ -30,7 +30,7 @@
 	"globalblocking-ipbanononly": "Blocca globalmente solo utenti anonimi",
 	"globalblocking-block-ipinvalid": "L'indirizzo IP ($1) che hai inserito non è valido. Fai attenzione al fatto che non puoi inserire un nome utente!",
 	"globalblocking-block-expiryinvalid": "La scadenza che hai inserito non è valida.",
-	"globalblocking-block-anononly-on-account": "Non puoi bloccare gli utenti anonimi solo quando blocchi un utente.",
+	"globalblocking-block-anononly-on-account": "I blocchi sulle utenze non possono essere applicati solo agli utenti anonimi.",
 	"globalblocking-block-submit": "Blocca questo indirizzo IP globalmente",
 	"globalblocking-block-submit-new": "Blocca questo utente a livello globale",
 	"globalblocking-modify-submit": "Modifica questo blocco globale",
