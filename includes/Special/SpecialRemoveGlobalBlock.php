@@ -4,28 +4,40 @@ namespace MediaWiki\Extension\GlobalBlocking\Special;
 
 use HTMLForm;
 use MediaWiki\Block\BlockUtils;
-use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockManager;
 use MediaWiki\SpecialPage\FormSpecialPage;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Status\Status;
 use MediaWiki\User\UserIdentity;
+use MediaWiki\User\UserNameUtils;
 use Wikimedia\IPUtils;
 
 class SpecialRemoveGlobalBlock extends FormSpecialPage {
-	/** @var string|null */
-	private $ip;
+	private string $target;
 
-	/** @var BlockUtils */
-	private $blockUtils;
+	private BlockUtils $blockUtils;
+	private UserNameUtils $userNameUtils;
+	private GlobalBlockManager $globalBlockManager;
+	private GlobalBlockingLinkBuilder $globalBlockingLinkBuilder;
 
 	/**
 	 * @param BlockUtils $blockUtils
+	 * @param UserNameUtils $userNameUtils
+	 * @param GlobalBlockManager $globalBlockManager
+	 * @param GlobalBlockingLinkBuilder $globalBlockingLinkBuilder
 	 */
 	public function __construct(
-		BlockUtils $blockUtils
+		BlockUtils $blockUtils,
+		UserNameUtils $userNameUtils,
+		GlobalBlockManager $globalBlockManager,
+		GlobalBlockingLinkBuilder $globalBlockingLinkBuilder
 	) {
 		parent::__construct( 'RemoveGlobalBlock', 'globalblock' );
 		$this->blockUtils = $blockUtils;
+		$this->userNameUtils = $userNameUtils;
+		$this->globalBlockManager = $globalBlockManager;
+		$this->globalBlockingLinkBuilder = $globalBlockingLinkBuilder;
 	}
 
 	public function execute( $par ) {
@@ -34,7 +46,7 @@ class SpecialRemoveGlobalBlock extends FormSpecialPage {
 
 		$out = $this->getOutput();
 		$out->setPageTitleMsg( $this->msg( 'globalblocking-unblock' ) );
-		$out->setSubtitle( GlobalBlocking::buildSubtitleLinks( $this ) );
+		$out->setSubtitle( $this->globalBlockingLinkBuilder->buildSubtitleLinks( $this ) );
 		$out->disableClientCache();
 
 		[ $target ] = $this->blockUtils->parseBlockTarget( $par );
@@ -44,27 +56,30 @@ class SpecialRemoveGlobalBlock extends FormSpecialPage {
 		}
 	}
 
+	protected function setParameter( $par ) {
+		parent::setParameter( $par );
+
+		// 'address' is a old name for the 'target' field, which is retained for B/C
+		$request = $this->getRequest();
+		$target = trim( $request->getText( 'target', $request->getText( 'address', $par ?? '' ) ) );
+		if ( IPUtils::isValidRange( $target ) ) {
+			$target = IPUtils::sanitizeRange( $target );
+		} elseif ( IPUtils::isValid( $target ) ) {
+			$target = IPUtils::sanitizeIP( $target );
+		} else {
+			$target = $this->userNameUtils->getCanonical( $target ) ?: $target;
+		}
+		'@phan-var string $target';
+		$this->target = $target;
+	}
+
 	/** @inheritDoc */
 	public function onSubmit( array $data ) {
-		$status = GlobalBlocking::unblock( $data['ipaddress'], $data['reason'], $this->getUser() );
-
-		if ( !$status->isOK() ) {
-			return Status::wrap( $status );
-		}
-
-		$this->ip = IPUtils::sanitizeIP( $data[ 'ipaddress' ] );
-
-		[ $rangeStart, $rangeEnd ] = IPUtils::parseRange( $this->ip );
-
-		if ( $rangeStart !== $rangeEnd ) {
-			$this->ip = IPUtils::sanitizeRange( $this->ip );
-		}
-
-		return Status::newGood();
+		return Status::wrap( $this->globalBlockManager->unblock( $this->target, $data['reason'], $this->getUser() ) );
 	}
 
 	public function onSuccess() {
-		$msg = $this->msg( 'globalblocking-unblock-unblocked', $this->ip )->parseAsBlock();
+		$msg = $this->msg( 'globalblocking-unblock-unblocked', $this->target )->parseAsBlock();
 		$link = $this->getLinkRenderer()->makeKnownLink(
 			SpecialPage::getTitleFor( 'GlobalBlockList' ),
 			$this->msg( 'globalblocking-return' )->text()
@@ -80,14 +95,17 @@ class SpecialRemoveGlobalBlock extends FormSpecialPage {
 	}
 
 	protected function getFormFields() {
+		$accountBlocksEnabled = $this->getConfig()->get( 'GlobalBlockingAllowGlobalAccountBlocks' );
 		return [
-			'ipaddress' => [
-				'name' => 'address',
-				'type' => 'text',
-				'id' => 'mw-globalblocking-ipaddress',
-				'label-message' => 'globalblocking-ipaddress',
+			'target' => [
+				'name' => 'target',
+				'type' => $accountBlocksEnabled ? 'user' : 'text',
+				'ipallowed' => true,
+				'iprange' => true,
+				'id' => 'mw-globalblocking-target',
+				'label-message' => $accountBlocksEnabled ? 'globalblocking-target' : 'globalblocking-ipaddress',
 				'required' => true,
-				'default' => $this->par,
+				'default' => $this->target,
 			],
 			'reason' => [
 				'name' => 'wpReason',
