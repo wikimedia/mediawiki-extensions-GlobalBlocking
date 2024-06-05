@@ -44,7 +44,7 @@ class SpecialRemoveGlobalBlockTest extends FormSpecialPageTestCase {
 		$testPerformer = $this->getUserForSuccess();
 		RequestContext::getMain()->setUser( $testPerformer );
 		$fauxRequest = new FauxRequest(
-			[ 'target' => '1.2.3.4', 'wpReason' => 'testing', 'wpEditToken' => $testPerformer->getEditToken() ],
+			[ 'wpReason' => 'testing', 'wpEditToken' => $testPerformer->getEditToken() ],
 			true,
 			RequestContext::getMain()->getRequest()->getSession()
 		);
@@ -77,7 +77,7 @@ class SpecialRemoveGlobalBlockTest extends FormSpecialPageTestCase {
 		RequestContext::getMain()->setRequest( $fauxRequest );
 		RequestContext::getMain()->getRequest()->getSession()->setUser( $testPerformer );
 		// Execute the special page.
-		[ $html ] = $this->executeSpecialPage( $target, $fauxRequest, null, $this->getUserForSuccess() );
+		[ $html ] = $this->executeSpecialPage( '', $fauxRequest, null, $this->getUserForSuccess() );
 		// Verify that the 'globalblocking-unblock-unblocked' success message is present.
 		$this->assertStringContainsString( "(globalblocking-unblock-unblocked: $target", $html );
 		// Verify that the 'globalblocking-return' link is present.
