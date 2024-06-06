@@ -7,7 +7,8 @@
 			"Vlad5250",
 			"Zmickli",
 			"Тест",
-			"Chadyka"
+			"Chadyka",
+			"Mechanizatar"
 		]
 	},
 	"globalblocking-block": "Глабальна заблакіраваць IP-адрас",
@@ -40,7 +41,7 @@
 	"globalblocking-ipblocked-xff": "'''{{int:globalblocking-blockedtext-on-proxy}}'''\n\nБлакаванне было зроблена ўдзельнікам $1 ($2).\n{{int:blockedtext-reason-comment|$3}}.\n\n* {{int:blockedtext-start-time|$4}}\n* {{int:blockedtext-expiration-time|$5}}\n\n{{int:globalblocking-blockedtext-blocker-admin|$1}}\n{{int:globalblocking-blockedtext-email-feature}}\n{{int:globalblocking-blockedtext-proxy|$7}} {{int:blockedtext-include-details-queries}}",
 	"globalblocking-logpage": "Журнал глабальных блакаванняў",
 	"globalblocking-logpagetext": "Гта журнал глабальных блакаванняў, усталяваных і знятых у гэтым вікіпраецке. Варта адзначыць, што блакаванні могуць быць усталяваны ў іншых вікіпраектах, але дзейнічаць таксама і ў дадзеным вікіпраекце. Для прагляду ўсіх актуальных глабальных блакаванняў глядзіце [[Special:GlobalBlockList|адпаведны спіс]].",
-	"globalblocking-contribs-notice": "Гэты ўдзельік у цяперашні момант глабальна заблакаваны. Ніжэй прыведзены апошні запіс з журнала глабальных блакаванняў:",
+	"globalblocking-contribs-notice": "Гэты ўдзельнік у цяперашні момант глабальна заблакаваны. Ніжэй прыведзены апошні запіс з журнала глабальных блакаванняў:",
 	"globalblocklist": "Спіс глабальна заблакаваных IP-адрасоў",
 	"globalblockstatus": "Лакальны статус глабальных блакіровак",
 	"grant-globalblock": "Глабальна заблакіраваць ці разблакіраваць удзельніка",

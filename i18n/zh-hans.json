@@ -37,7 +37,8 @@
 			"飞舞回堂前",
 			"魔琴",
 			"沈澄心",
-			"LittlePaw365"
+			"LittlePaw365",
+			"列维劳德"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|允许]][[Special:GlobalBlockList|在多个wiki中封禁]]账号、IP地址和IP段",
@@ -114,7 +115,7 @@
 	"globalblocking-unblock-unblocked": "您已经移除了对用户'''$1'''的全域封禁。",
 	"globalblocking-unblock-intro": "您可以使用该表格移除全域封禁。",
 	"globalblocking-whitelist": "全域封锁的本地状态",
-	"globalblocking-whitelist-notapplied": "全域封锁不适用于本维基，\n所以本地全域封锁状态没有被修改。",
+	"globalblocking-whitelist-notapplied": "全域封锁不适用于此wiki，因此无法修改全域封锁的本地状态。",
 	"globalblocking-whitelist-legend": "更改本地状态",
 	"globalblocking-whitelist-reason": "原因：",
 	"globalblocking-whitelist-status": "本地状态：",
