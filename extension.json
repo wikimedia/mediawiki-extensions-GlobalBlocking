@@ -125,7 +125,10 @@
 		"globalblock": {
 			"class": "MediaWiki\\Extension\\GlobalBlocking\\Api\\ApiGlobalBlock",
 			"services": [
-				"BlockUserFactory"
+				"BlockUserFactory",
+				"GlobalBlocking.GlobalBlockLookup",
+				"GlobalBlocking.GlobalBlockManager",
+				"CentralIdLookup"
 			]
 		}
 	},
