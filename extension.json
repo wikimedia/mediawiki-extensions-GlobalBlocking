@@ -211,7 +211,6 @@
 		"main": {
 			"class": "MediaWiki\\Extension\\GlobalBlocking\\GlobalBlockingHooks",
 			"services": [
-				"PermissionManager",
 				"MainConfig",
 				"CommentFormatter",
 				"CentralIdLookup",

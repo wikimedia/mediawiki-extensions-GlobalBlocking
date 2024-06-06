@@ -22,7 +22,6 @@ use MediaWiki\Hook\OtherBlockLogLinkHook;
 use MediaWiki\Hook\SpecialContributionsBeforeMainOutputHook;
 use MediaWiki\Html\Html;
 use MediaWiki\Message\Message;
-use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use MediaWiki\User\CentralId\CentralIdLookup;
@@ -46,7 +45,6 @@ class GlobalBlockingHooks implements
 	GetLogTypesOnUserHook,
 	ContributionsToolLinksHook
 {
-	private PermissionManager $permissionManager;
 	private Config $config;
 	private CommentFormatter $commentFormatter;
 	private CentralIdLookup $lookup;
@@ -56,7 +54,6 @@ class GlobalBlockingHooks implements
 	private GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup;
 
 	/**
-	 * @param PermissionManager $permissionManager
 	 * @param Config $mainConfig
 	 * @param CommentFormatter $commentFormatter
 	 * @param CentralIdLookup $lookup
@@ -66,7 +63,6 @@ class GlobalBlockingHooks implements
 	 * @param GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup
 	 */
 	public function __construct(
-		PermissionManager $permissionManager,
 		Config $mainConfig,
 		CommentFormatter $commentFormatter,
 		CentralIdLookup $lookup,
@@ -75,7 +71,6 @@ class GlobalBlockingHooks implements
 		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
 		GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup
 	) {
-		$this->permissionManager = $permissionManager;
 		$this->config = $mainConfig;
 		$this->commentFormatter = $commentFormatter;
 		$this->lookup = $lookup;
@@ -147,7 +142,7 @@ class GlobalBlockingHooks implements
 	public function onSpecialPasswordResetOnSubmit( &$users, $data, &$error ) {
 		$requestContext = RequestContext::getMain();
 
-		if ( GlobalBlocking::getUserBlockErrors(
+		if ( GlobalBlocking::getUserBlock(
 			$requestContext->getUser(),
 			$requestContext->getRequest()->getIP()
 		) ) {
@@ -269,7 +264,7 @@ class GlobalBlockingHooks implements
 	public function onContributionsToolLinks(
 		$id, $title, &$tools, $sp
 	) {
-		$user = $sp->getUser();
+		$authority = $sp->getAuthority();
 		$linkRenderer = $sp->getLinkRenderer();
 		$ip = $title->getText();
 
@@ -282,8 +277,8 @@ class GlobalBlockingHooks implements
 			if ( $target === null ) {
 				throw new LogicException( 'IPUtils::sanitizeIP returned null for a valid IP' );
 			}
-			if ( $this->permissionManager->userHasRight( $user, 'globalblock' ) ) {
-				if ( GlobalBlocking::getGlobalBlockId( $ip ) === 0 ) {
+			if ( $authority->isAllowed( 'globalblock' ) ) {
+				if ( GlobalBlocking::getGlobalBlockId( $target ) === 0 ) {
 					$tools['globalblock'] = $linkRenderer->makeKnownLink(
 						SpecialPage::getTitleFor( 'GlobalBlock', $target ),
 						$sp->msg( 'globalblocking-contribs-block' )->text()

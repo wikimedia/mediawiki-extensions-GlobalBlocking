@@ -2,26 +2,27 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Test\Unit;
 
+use MediaWiki\Block\AbstractBlock;
 use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Config\Config;
+use MediaWiki\Config\HashConfig;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlock;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingHooks;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
-use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\User\CentralId\CentralIdLookup;
+use MediaWiki\User\User;
 use MediaWikiUnitTestCase;
 
 /**
  * @covers \MediaWiki\Extension\GlobalBlocking\GlobalBlockingHooks
  */
 class GlobalBlockingHooksTest extends MediaWikiUnitTestCase {
-	private function getGlobalBlockingHooks(): GlobalBlockingHooks {
+	private function getGlobalBlockingHooks( $overrides = [] ): GlobalBlockingHooks {
 		return new GlobalBlockingHooks(
-			$this->createMock( PermissionManager::class ),
-			$this->createMock( Config::class ),
+			$overrides['config'] ?? $this->createMock( Config::class ),
 			$this->createMock( CommentFormatter::class ),
 			$this->createMock( CentralIdLookup::class ),
 			$this->createMock( GlobalBlockingLinkBuilder::class ),
@@ -77,5 +78,32 @@ class GlobalBlockingHooksTest extends MediaWikiUnitTestCase {
 				'expectedKey' => 'globalblocking-blockedtext-user',
 			],
 		];
+	}
+
+	public function testOnGetBlockErrorMessageKeyForNonGlobalBlock() {
+		// Call the method under test with a non-GlobalBlock object to ensure it does nothing other than return true.
+		$key = 'blockedtext';
+		$block = $this->createMock( AbstractBlock::class );
+		$this->assertTrue( $this->getGlobalBlockingHooks()->onGetBlockErrorMessageKey( $block, $key ) );
+		$this->assertSame( 'blockedtext', $key );
+	}
+
+	public function testOnGetLogTypesOnUser() {
+		$types = [];
+		$this->assertTrue( $this->getGlobalBlockingHooks()->onGetLogTypesOnUser( $types ) );
+		$this->assertContains( 'gblblock', $types, 'The gblblock log type should be added.' );
+	}
+
+	public function testOnGetUserBlockWhenGlobalBlocksDisabled() {
+		// Define the config as disabling global blocks, which should cause ::onUserGetBlock to return early.
+		$hooks = $this->getGlobalBlockingHooks( [ 'config' => new HashConfig( [ 'ApplyGlobalBlocks' => false ] ) ] );
+		// Call the method under test. The test verifies that no lookups occur because this is not a database test
+		// and trying to interact with the database will cause an exception (thus causing the test to fail).
+		$block = null;
+		$this->assertTrue(
+			$hooks->onGetUserBlock( $this->createMock( User::class ), '1.2.3.4', $block ),
+			'::onGetUserBlock should always return true.'
+		);
+		$this->assertNull( $block, 'The block should not be modified if global blocks are disabled.' );
 	}
 }
