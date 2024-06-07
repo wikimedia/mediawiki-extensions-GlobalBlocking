@@ -213,7 +213,8 @@
 				"MainConfig",
 				"CommentFormatter",
 				"CentralIdLookup",
-				"GlobalBlocking.GlobalBlockingLinkBuilder"
+				"GlobalBlocking.GlobalBlockingLinkBuilder",
+				"GlobalBlocking.GlobalBlockLookup"
 			]
 		},
 		"usermerge": {
