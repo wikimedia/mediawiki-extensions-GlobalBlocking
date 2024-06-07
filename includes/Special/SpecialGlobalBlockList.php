@@ -8,7 +8,9 @@ use HTMLForm;
 use MediaWiki\Block\BlockUtils;
 use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\Html\Html;
 use MediaWiki\SpecialPage\SpecialPage;
@@ -22,9 +24,9 @@ class SpecialGlobalBlockList extends SpecialPage {
 	private CommentFormatter $commentFormatter;
 	private CentralIdLookup $lookup;
 	private GlobalBlockingLinkBuilder $globalBlockingLinkBuilder;
-
-	/** @var GlobalBlockLookup */
-	private $globalBlockLookup;
+	private GlobalBlockLookup $globalBlockLookup;
+	private GlobalBlockingConnectionProvider $globalBlockingConnectionProvider;
+	private GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup;
 
 	/**
 	 * @param BlockUtils $blockUtils
@@ -32,13 +34,17 @@ class SpecialGlobalBlockList extends SpecialPage {
 	 * @param CentralIdLookup $lookup
 	 * @param GlobalBlockLookup $globalBlockLookup
 	 * @param GlobalBlockingLinkBuilder $globalBlockingLinkBuilder
+	 * @param GlobalBlockingConnectionProvider $globalBlockingConnectionProvider
+	 * @param GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup
 	 */
 	public function __construct(
 		BlockUtils $blockUtils,
 		CommentFormatter $commentFormatter,
 		CentralIdLookup $lookup,
 		GlobalBlockLookup $globalBlockLookup,
-		GlobalBlockingLinkBuilder $globalBlockingLinkBuilder
+		GlobalBlockingLinkBuilder $globalBlockingLinkBuilder,
+		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
+		GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup
 	) {
 		parent::__construct( 'GlobalBlockList' );
 
@@ -47,6 +53,8 @@ class SpecialGlobalBlockList extends SpecialPage {
 		$this->lookup = $lookup;
 		$this->globalBlockLookup = $globalBlockLookup;
 		$this->globalBlockingLinkBuilder = $globalBlockingLinkBuilder;
+		$this->globalBlockingConnectionProvider = $globalBlockingConnectionProvider;
+		$this->globalBlockLocalStatusLookup = $globalBlockLocalStatusLookup;
 	}
 
 	/**
@@ -168,7 +176,9 @@ class SpecialGlobalBlockList extends SpecialPage {
 			$this->getLinkRenderer(),
 			$this->commentFormatter,
 			$this->lookup,
-			$this->globalBlockingLinkBuilder
+			$this->globalBlockingLinkBuilder,
+			$this->globalBlockingConnectionProvider,
+			$this->globalBlockLocalStatusLookup
 		);
 		$body = $pager->getBody();
 		if ( $body != '' ) {

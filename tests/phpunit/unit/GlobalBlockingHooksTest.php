@@ -7,7 +7,9 @@ use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Config\Config;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlock;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingHooks;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWikiUnitTestCase;
@@ -23,7 +25,9 @@ class GlobalBlockingHooksTest extends MediaWikiUnitTestCase {
 			$this->createMock( CommentFormatter::class ),
 			$this->createMock( CentralIdLookup::class ),
 			$this->createMock( GlobalBlockingLinkBuilder::class ),
-			$this->createMock( GlobalBlockLookup::class )
+			$this->createMock( GlobalBlockLookup::class ),
+			$this->createMock( GlobalBlockingConnectionProvider::class ),
+			$this->createMock( GlobalBlockLocalStatusLookup::class )
 		);
 	}
 
