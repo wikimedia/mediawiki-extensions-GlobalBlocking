@@ -2,13 +2,15 @@
 
 namespace MediaWiki\Extension\GlobalBlocking;
 
-use LogicException;
+use ExtensionRegistry;
 use MediaWiki\Block\AbstractBlock;
 use MediaWiki\Block\Block;
 use MediaWiki\Block\CompositeBlock;
 use MediaWiki\Block\Hook\GetUserBlockHook;
 use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Config\Config;
+use MediaWiki\Context\RequestContext;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusLookup;
@@ -21,11 +23,14 @@ use MediaWiki\Hook\OtherBlockLogLinkHook;
 use MediaWiki\Hook\SpecialContributionsBeforeMainOutputHook;
 use MediaWiki\Html\Html;
 use MediaWiki\Message\Message;
+use MediaWiki\Permissions\Authority;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\Hook\UserIsBlockedGloballyHook;
 use MediaWiki\User\User;
+use MediaWiki\User\UserFactory;
+use MediaWiki\User\UserNameUtils;
 use Wikimedia\IPUtils;
 
 /**
@@ -49,6 +54,8 @@ class GlobalBlockingHooks implements
 	private GlobalBlockLookup $globalBlockLookup;
 	private GlobalBlockingConnectionProvider $globalBlockingConnectionProvider;
 	private GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup;
+	private UserNameUtils $userNameUtils;
+	private UserFactory $userFactory;
 
 	/**
 	 * @param Config $mainConfig
@@ -58,6 +65,8 @@ class GlobalBlockingHooks implements
 	 * @param GlobalBlockLookup $globalBlockLookup
 	 * @param GlobalBlockingConnectionProvider $globalBlockingConnectionProvider
 	 * @param GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup
+	 * @param UserNameUtils $userNameUtils
+	 * @param UserFactory $userFactory
 	 */
 	public function __construct(
 		Config $mainConfig,
@@ -66,7 +75,9 @@ class GlobalBlockingHooks implements
 		GlobalBlockingLinkBuilder $globalBlockLinkBuilder,
 		GlobalBlockLookup $globalBlockLookup,
 		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
-		GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup
+		GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup,
+		UserNameUtils $userNameUtils,
+		UserFactory $userFactory
 	) {
 		$this->config = $mainConfig;
 		$this->commentFormatter = $commentFormatter;
@@ -75,6 +86,8 @@ class GlobalBlockingHooks implements
 		$this->globalBlockLookup = $globalBlockLookup;
 		$this->globalBlockingConnectionProvider = $globalBlockingConnectionProvider;
 		$this->globalBlockLocalStatusLookup = $globalBlockLocalStatusLookup;
+		$this->userNameUtils = $userNameUtils;
+		$this->userFactory = $userFactory;
 	}
 
 	/**
@@ -91,7 +104,7 @@ class GlobalBlockingHooks implements
 			return true;
 		}
 
-		$globalBlock = GlobalBlocking::getUserBlock( $user, $ip );
+		$globalBlock = $this->globalBlockLookup->getUserBlock( $user, $ip );
 		if ( !$globalBlock ) {
 			return true;
 		}
@@ -121,7 +134,7 @@ class GlobalBlockingHooks implements
 	 * @return bool
 	 */
 	public function onUserIsBlockedGlobally( $user, $ip, &$blocked, &$block ) {
-		$block = GlobalBlocking::getUserBlock( $user, $ip );
+		$block = $this->globalBlockLookup->getUserBlock( $user, $ip );
 		if ( $block !== null ) {
 			$blocked = true;
 			return false;
@@ -152,29 +165,77 @@ class GlobalBlockingHooks implements
 	}
 
 	/**
+	 * Returns whether the current authority can see the given user.
+	 *
+	 * @param string $username The username to check
+	 * @param Authority $authority The authority to check against
+	 * @return bool
+	 */
+	private function checkAuthorityCanSeeUser( string $username, Authority $authority ): bool {
+		$user = $this->userFactory->newFromName( $username );
+		if ( !$user ) {
+			// If the user is not valid, then it cannot be hidden so return true.
+			return true;
+		}
+
+		// Assume that the authority has the rights to see the user by default.
+		$canViewTarget = true;
+
+		// If the user exists locally, then we can check if the user is hidden locally.
+		if ( $user->isRegistered() ) {
+			$canViewTarget = !( $user->isHidden() && !$authority->isAllowed( 'hideuser' ) );
+		}
+
+		// If CentralAuth is loaded, then we can check if the central user is hidden.
+		// This is necessary if the user does not exist on this wiki but their global
+		// account is hidden.
+		if ( $canViewTarget && ExtensionRegistry::getInstance()->isLoaded( 'CentralAuth' ) ) {
+			$centralUser = CentralAuthUser::getInstance( $user );
+			$canViewTarget = !( $centralUser->isHidden() && !$authority->isAllowed( 'centralauth-suppress' ) );
+		}
+
+		return $canViewTarget;
+	}
+
+	/**
 	 * Creates a link to the global block log
 	 * @param array &$msg Message with a link to the global block log
-	 * @param string $ip The IP address to be checked
+	 * @param string $target The username or IP address to be checked
 	 *
 	 * @return bool true
 	 */
-	public function onOtherBlockLogLink( &$msg, $ip ) {
-		// Fast return if it is a username. IP addresses can be blocked only.
-		if ( !IPUtils::isIPAddress( $ip ) ) {
+	public function onOtherBlockLogLink( &$msg, $target ) {
+		$authority = RequestContext::getMain()->getAuthority();
+		// If the target is a username, then we need the central ID for this user to do the lookup.
+		$centralId = 0;
+		$ip = null;
+		if ( IPUtils::isIPAddress( $target ) ) {
+			$ip = $target;
+		} elseif ( !$this->config->get( 'GlobalBlockingAllowGlobalAccountBlocks' ) ) {
+			// If global account blocks are disabled, we can ignore checking for global blocks on accounts here.
 			return true;
+		} elseif ( !$this->checkAuthorityCanSeeUser( $target, $authority ) ) {
+			// If the current user cannot see the target, then we should not show the global block link even if
+			// a global block exists for this user.
+			return true;
+		} else {
+			$centralId = $this->lookup->centralIdFromName( $target, $authority );
 		}
 
-		$block = GlobalBlocking::getGlobalBlockingBlock( $ip, true );
-		if ( !$block ) {
-			// Fast return if not globally blocked
-			return true;
-		}
-
-		$msg[] = Html::rawElement(
-			'span',
-			[ 'class' => 'mw-globalblock-loglink plainlinks' ],
-			wfMessage( 'globalblocking-loglink', $ip )->parse()
+		// Check to see if the target is globally blocked, skipping the local disable check as we're only interested
+		// if a global block exists for this target (as opposed to whether it actually is applied for this user).
+		$block = $this->globalBlockLookup->getGlobalBlockingBlock(
+			$ip, $centralId, GlobalBlockLookup::SKIP_LOCAL_DISABLE_CHECK
 		);
+		if ( $block ) {
+			// If the target is globally blocked, then add a link to the global block list for this target.
+			$msg[] = Html::rawElement(
+				'span',
+				[ 'class' => 'mw-globalblock-loglink plainlinks' ],
+				wfMessage( 'globalblocking-loglink', $target )->parse()
+			);
+		}
+
 		return true;
 	}
 
@@ -192,9 +253,15 @@ class GlobalBlockingHooks implements
 		if ( IPUtils::isIPAddress( $name ) ) {
 			$ip = $name;
 			$centralId = 0;
+		} elseif ( !$this->config->get( 'GlobalBlockingAllowGlobalAccountBlocks' ) ) {
+			// If global account blocks are disabled, we can ignore checking for global blocks on accounts here.
+			return true;
+		} elseif ( !$this->checkAuthorityCanSeeUser( $name, $sp->getAuthority() ) ) {
+			// If the current user cannot see the target, then we should not show the global block log entry.
+			return true;
 		} else {
 			$ip = null;
-			$centralId = $this->lookup->centralIdFromName( $name );
+			$centralId = $this->lookup->centralIdFromName( $name, $sp->getAuthority() );
 		}
 		$block = $this->globalBlockLookup->getGlobalBlockingBlock( $ip, $centralId );
 
@@ -232,46 +299,61 @@ class GlobalBlockingHooks implements
 
 	/**
 	 * Adds a link on Special:Contributions to Special:GlobalBlock for privileged users.
+	 *
 	 * @param int $id User ID
 	 * @param Title $title User page title
 	 * @param array &$tools Tool links
-	 * @param SpecialPage $sp Special page
+	 * @param SpecialPage $specialPage SpecialPage instance for context and services.
 	 * @return bool|void
 	 */
-	public function onContributionsToolLinks(
-		$id, $title, &$tools, $sp
-	) {
-		$authority = $sp->getAuthority();
-		$linkRenderer = $sp->getLinkRenderer();
-		$ip = $title->getText();
+	public function onContributionsToolLinks( $id, Title $title, array &$tools, SpecialPage $specialPage ) {
+		if ( !$specialPage->getAuthority()->isAllowed( 'globalblock' ) ) {
+			// Return early if the user does not have the globalblock right as there will be no relevant tool links
+			// to add to the contributions page.
+			return;
+		}
 
-		if ( IPUtils::isIPAddress( $ip ) ) {
-			if ( IPUtils::isValidRange( $ip ) ) {
-				$target = IPUtils::sanitizeRange( $ip );
-			} else {
-				$target = IPUtils::sanitizeIP( $ip );
-			}
-			if ( $target === null ) {
-				throw new LogicException( 'IPUtils::sanitizeIP returned null for a valid IP' );
-			}
-			if ( $authority->isAllowed( 'globalblock' ) ) {
-				if ( GlobalBlocking::getGlobalBlockId( $target ) === 0 ) {
-					$tools['globalblock'] = $linkRenderer->makeKnownLink(
-						SpecialPage::getTitleFor( 'GlobalBlock', $target ),
-						$sp->msg( 'globalblocking-contribs-block' )->text()
-					);
-				} else {
-					$tools['globalblock'] = $linkRenderer->makeKnownLink(
-						SpecialPage::getTitleFor( 'GlobalBlock', $target ),
-						$sp->msg( 'globalblocking-contribs-modify' )->text()
-					);
+		// Normalise the target to ensure that the call to GlobalBlockLookup::getGlobalBlockId
+		// works as intended (as it expects a normalised target).
+		$target = $title->getText();
+		if ( IPUtils::isValidRange( $target ) ) {
+			$target = IPUtils::sanitizeRange( $target );
+		} elseif ( IPUtils::isIPAddress( $target ) ) {
+			$target = IPUtils::sanitizeIP( $target );
+		} elseif ( !$this->config->get( 'GlobalBlockingAllowGlobalAccountBlocks' ) ) {
+			// If global account blocks are disabled, we should not add links to the relevant special pages as they
+			// will not support global blocks on accounts.
+			return;
+		} elseif ( !$this->checkAuthorityCanSeeUser( $target, $specialPage->getAuthority() ) ) {
+			// If the current user cannot see the target, then we should not show any contribution tool links
+			// to avoid leaking that a user exists with this username and whether this hidden user is globally
+			// blocked.
+			return;
+		} else {
+			$target = $this->userNameUtils->getCanonical( $target );
+		}
 
-					$tools['globalunblock'] = $linkRenderer->makeKnownLink(
-						SpecialPage::getTitleFor( 'RemoveGlobalBlock', $target ),
-						$sp->msg( 'globalblocking-contribs-remove' )->text()
-					);
-				}
-			}
+		if ( !$target ) {
+			// If the target is invalid, then we will have no links to show and should return early.
+			return;
+		}
+
+		$linkRenderer = $specialPage->getLinkRenderer();
+		if ( $this->globalBlockLookup->getGlobalBlockId( $target ) === 0 ) {
+			$tools['globalblock'] = $linkRenderer->makeKnownLink(
+				SpecialPage::getTitleFor( 'GlobalBlock', $target ),
+				$specialPage->msg( 'globalblocking-contribs-block' )->text()
+			);
+		} else {
+			$tools['globalblock'] = $linkRenderer->makeKnownLink(
+				SpecialPage::getTitleFor( 'GlobalBlock', $target ),
+				$specialPage->msg( 'globalblocking-contribs-modify' )->text()
+			);
+
+			$tools['globalunblock'] = $linkRenderer->makeKnownLink(
+				SpecialPage::getTitleFor( 'RemoveGlobalBlock', $target ),
+				$specialPage->msg( 'globalblocking-contribs-remove' )->text()
+			);
 		}
 	}
 

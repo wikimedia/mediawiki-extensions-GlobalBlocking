@@ -8,6 +8,7 @@ use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlock;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingHooks;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
+use MediaWiki\MainConfigNames;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWiki\Title\Title;
@@ -24,6 +25,7 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 	use MockAuthorityTrait;
 
 	private static UserIdentity $testGloballyBlockedUser;
+	private static UserIdentity $hiddenUser;
 	private static UserIdentity $unblockedUser;
 
 	protected function setUp(): void {
@@ -42,7 +44,9 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 			$globalBlockingServices->getGlobalBlockingLinkBuilder(),
 			$globalBlockingServices->getGlobalBlockLookup(),
 			$globalBlockingServices->getGlobalBlockingConnectionProvider(),
-			$globalBlockingServices->getGlobalBlockLocalStatusLookup()
+			$globalBlockingServices->getGlobalBlockLocalStatusLookup(),
+			$this->getServiceContainer()->getUserNameUtils(),
+			$this->getServiceContainer()->getUserFactory()
 		);
 	}
 
@@ -93,10 +97,37 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 		);
 	}
 
+	public function testOnSpecialContributionsBeforeMainOutputForGloballyBlockedUserWhenGlobalAccountBlocksDisabled() {
+		$this->overrideConfigValue( 'GlobalBlockingAllowGlobalAccountBlocks', false );
+		$this->testOnSpecialContributionsBeforeMainOutput(
+			self::$testGloballyBlockedUser->getName(), false, null
+		);
+	}
+
 	public function testOnSpecialContributionsBeforeMainOutputForNotBlockedUser() {
 		$this->testOnSpecialContributionsBeforeMainOutput(
 			self::$unblockedUser, false, null
 		);
+	}
+
+	/** @dataProvider provideUserHasSuppressRight */
+	public function testOnSpecialContributionsBeforeMainOutputForHiddenUser( $userHasHideUser ) {
+		if ( $userHasHideUser ) {
+			$authority = $this->mockRegisteredUltimateAuthority();
+		} else {
+			$authority = $this->mockRegisteredAuthorityWithoutPermissions( [ 'hideuser' ] );
+		}
+		RequestContext::getMain()->setAuthority( $authority );
+		$this->testOnSpecialContributionsBeforeMainOutput(
+			self::$hiddenUser->getName(), $userHasHideUser, self::$hiddenUser->getName()
+		);
+	}
+
+	public static function provideUserHasSuppressRight() {
+		return [
+			'User has hideuser right' => [ true ],
+			'User does not have hideuser right' => [ false ],
+		];
 	}
 
 	public static function provideUserAndIPCombinations() {
@@ -173,7 +204,33 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 			'Target is 1.2.3.4' => [ '1.2.3.4', true ],
 			'Target is 1.2.3.5'	=> [ '1.2.3.5', true ],
 			'Target is 127.0.0.2' => [ '127.0.0.2', false ],
+			'Target is a non-existent user' => [ 'Non-existent-test-user-1234', false ],
+			'Target is an invalid username' => [ ':', false ],
 		];
+	}
+
+	public function testOnOtherBlockLogLinkForGloballyBlockedUser() {
+		$this->testOnOtherBlockLogLink( self::$testGloballyBlockedUser->getName(), true );
+	}
+
+	public function testOnOtherBlockLogLinkForGloballyBlockedUserWhenGlobalAccountBlocksAreDisabled() {
+		$this->overrideConfigValue( 'GlobalBlockingAllowGlobalAccountBlocks', false );
+		$this->testOnOtherBlockLogLink( self::$testGloballyBlockedUser->getName(), false );
+	}
+
+	public function testOnOtherBlockLogLinkForNotBlockedUser() {
+		$this->testOnOtherBlockLogLink( self::$unblockedUser->getName(), false );
+	}
+
+	/** @dataProvider provideUserHasSuppressRight */
+	public function testOnOtherBlockLogLinkForHiddenUser( $userHasHideUser ) {
+		if ( $userHasHideUser ) {
+			$authority = $this->mockRegisteredUltimateAuthority();
+		} else {
+			$authority = $this->mockRegisteredAuthorityWithoutPermissions( [ 'hideuser' ] );
+		}
+		RequestContext::getMain()->setAuthority( $authority );
+		$this->testOnOtherBlockLogLink( self::$hiddenUser->getName(), $userHasHideUser );
 	}
 
 	/** @dataProvider provideOnContributionsToolLinks */
@@ -186,8 +243,8 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 		$tools = [];
 		$specialPage = new SpecialPage();
 		$specialPage->setContext( RequestContext::getMain() );
-		$targetId = $this->getServiceContainer()->getUserFactory()
-			->newFromName( $target, UserFactory::RIGOR_NONE )->getId();
+		$userObject = $this->getServiceContainer()->getUserFactory()->newFromName( $target, UserFactory::RIGOR_NONE );
+		$targetId = $userObject !== null ? $userObject->getId() : 0;
 		$this->getGlobalBlockingHooks()->onContributionsToolLinks(
 			$targetId, Title::newFromText( $target, NS_USER ), $tools, $specialPage
 		);
@@ -224,6 +281,43 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 			],
 			'Target is 1.2.3.4 and user does not have globalblock right' => [ '1.2.3.4', [], [] ],
 		];
+	}
+
+	public function testOnContributionsToolLinksForTooLongUsername() {
+		// Make an example username invalid by setting the maximum length for usernames to 10 characters.
+		// This should cover all situations where the username is invalid.
+		$this->overrideConfigValue( MainConfigNames::MaxNameChars, '10' );
+		$this->testOnContributionsToolLinks( 'TooLongUsername', [ 'globalblock' ], [] );
+	}
+
+	public function testOnContributionsToolLinksForGloballyBlockedUser() {
+		$this->testOnContributionsToolLinks(
+			self::$testGloballyBlockedUser->getName(), [ 'globalblock' ],
+			[ '(globalblocking-contribs-modify', '(globalblocking-contribs-remove' ]
+		);
+	}
+
+	public function testOnContributionsToolLinksForGloballyBlockedUserWhenGlobalAccountBlocksDisabled() {
+		$this->overrideConfigValue( 'GlobalBlockingAllowGlobalAccountBlocks', false );
+		$this->testOnContributionsToolLinks( self::$testGloballyBlockedUser->getName(), [ 'globalblock' ], [] );
+	}
+
+	public function testOnContributionsToolLinksForNotBlockedUser() {
+		$this->testOnContributionsToolLinks(
+			self::$unblockedUser->getName(), [ 'globalblock' ], [ '(globalblocking-contribs-block' ]
+		);
+	}
+
+	/** @dataProvider provideUserHasSuppressRight */
+	public function testOnContributionsToolLinksForHiddenUser( $userHasHideUser ) {
+		if ( $userHasHideUser ) {
+			$userRights = [ 'hideuser', 'globalblock' ];
+			$expectedLinkTexts = [ '(globalblocking-contribs-modify', '(globalblocking-contribs-remove' ];
+		} else {
+			$userRights = [ 'globalblock' ];
+			$expectedLinkTexts = [];
+		}
+		$this->testOnContributionsToolLinks( self::$hiddenUser->getName(), $userRights, $expectedLinkTexts );
 	}
 
 	public function testOnGetUserBlockWhenNoMatchingBlockFound() {
@@ -293,12 +387,28 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager();
 		$testPerformer = $this->getTestUser( [ 'steward' ] )->getUser();
 		$testGloballyBlockedUser = $this->getMutableTestUser()->getUserIdentity();
-		$globalBlockManager->block( '1.2.3.4', 'Test reason', 'infinity', $testPerformer );
-		$globalBlockManager->block( '1.2.3.4/24', 'Test reason2', '1 month', $testPerformer );
-		$globalBlockManager->block(
-			$testGloballyBlockedUser->getName(), 'Test reason3', '3 days', $testPerformer
+		$hiddenUser = $this->getMutableTestUser()->getUserIdentity();
+		$this->assertStatusGood(
+			$globalBlockManager->block( '1.2.3.4', 'Test reason', 'infinity', $testPerformer )
 		);
+		$this->assertStatusGood(
+			$globalBlockManager->block( '1.2.3.4/24', 'Test reason2', '1 month', $testPerformer )
+		);
+		$this->assertStatusGood( $globalBlockManager->block(
+			$testGloballyBlockedUser->getName(), 'Test reason3', '3 days', $testPerformer
+		) );
+		$this->assertStatusGood( $globalBlockManager->block(
+			$hiddenUser->getName(), 'Test reason4', '1 week', $testPerformer
+		) );
+		// Block the "hidden user" with 'hideuser' set to actually perform the hiding.
+		$blockStatus = $this->getServiceContainer()->getBlockUserFactory()
+			->newBlockUser(
+				$hiddenUser, $this->getTestUser( [ 'sysop', 'suppress' ] )->getUser(),
+				'infinity', 'block to hide the test user', [ 'isHideUser' => true ]
+			)->placeBlockUnsafe();
+		$this->assertStatusGood( $blockStatus );
 		self::$testGloballyBlockedUser = $testGloballyBlockedUser;
+		self::$hiddenUser = $hiddenUser;
 		self::$unblockedUser = $this->getMutableTestUser()->getUserIdentity();
 	}
 }

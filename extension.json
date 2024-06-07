@@ -216,7 +216,9 @@
 				"GlobalBlocking.GlobalBlockingLinkBuilder",
 				"GlobalBlocking.GlobalBlockLookup",
 				"GlobalBlocking.GlobalBlockingConnectionProvider",
-				"GlobalBlocking.GlobalBlockLocalStatusLookup"
+				"GlobalBlocking.GlobalBlockLocalStatusLookup",
+				"UserNameUtils",
+				"UserFactory"
 			]
 		},
 		"usermerge": {
