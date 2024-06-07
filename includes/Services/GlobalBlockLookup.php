@@ -130,6 +130,7 @@ class GlobalBlockLookup {
 	 *    a human readable error message.
 	 */
 	public function getUserBlockErrors( User $user, ?string $ip ): array {
+		wfDeprecated( __METHOD__, '1.42' );
 		$details = $this->getUserBlockDetails( $user, $ip );
 		return $details['error'];
 	}
