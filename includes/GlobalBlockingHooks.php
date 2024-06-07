@@ -9,7 +9,6 @@ use MediaWiki\Block\CompositeBlock;
 use MediaWiki\Block\Hook\GetUserBlockHook;
 use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Config\Config;
-use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusLookup;
@@ -25,7 +24,6 @@ use MediaWiki\Message\Message;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use MediaWiki\User\CentralId\CentralIdLookup;
-use MediaWiki\User\Hook\SpecialPasswordResetOnSubmitHook;
 use MediaWiki\User\Hook\UserIsBlockedGloballyHook;
 use MediaWiki\User\User;
 use Wikimedia\IPUtils;
@@ -38,7 +36,6 @@ use Wikimedia\IPUtils;
 class GlobalBlockingHooks implements
 	GetUserBlockHook,
 	UserIsBlockedGloballyHook,
-	SpecialPasswordResetOnSubmitHook,
 	GetBlockErrorMessageKeyHook,
 	OtherBlockLogLinkHook,
 	SpecialContributionsBeforeMainOutputHook,
@@ -127,26 +124,6 @@ class GlobalBlockingHooks implements
 		$block = GlobalBlocking::getUserBlock( $user, $ip );
 		if ( $block !== null ) {
 			$blocked = true;
-			return false;
-		}
-		return true;
-	}
-
-	/**
-	 * @param array &$users
-	 * @param array $data
-	 * @param string &$error
-	 *
-	 * @return bool
-	 */
-	public function onSpecialPasswordResetOnSubmit( &$users, $data, &$error ) {
-		$requestContext = RequestContext::getMain();
-
-		if ( GlobalBlocking::getUserBlock(
-			$requestContext->getUser(),
-			$requestContext->getRequest()->getIP()
-		) ) {
-			$error = 'globalblocking-blocked-nopassreset';
 			return false;
 		}
 		return true;

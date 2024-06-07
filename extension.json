@@ -198,7 +198,6 @@
 	"Hooks": {
 		"GetUserBlock": "main",
 		"UserIsBlockedGlobally": "main",
-		"SpecialPasswordResetOnSubmit": "main",
 		"OtherBlockLogLink": "main",
 		"SpecialContributionsBeforeMainOutput": "main",
 		"UserMergeAccountFields": "usermerge",

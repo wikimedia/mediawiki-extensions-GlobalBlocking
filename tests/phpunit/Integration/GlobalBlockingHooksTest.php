@@ -151,44 +151,6 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 		$this->testOnUserIsBlockedGlobally( self::$unblockedUser->getName(), null, null );
 	}
 
-	/** @dataProvider provideUserAndIPCombinations */
-	public function testOnSpecialPasswordResetOnSubmit( $user, $ip, $expectedBlockTarget ) {
-		// Set the user and IP to those provided in the test data
-		if ( $ip !== null ) {
-			RequestContext::getMain()->getRequest()->setIP( $ip );
-		}
-		RequestContext::getMain()->setUser(
-			$this->getServiceContainer()->getUserFactory()->newFromName( $user, UserFactory::RIGOR_NONE )
-		);
-		// Call the method under test
-		$users = [];
-		$error = '';
-		$hookReturnValue = $this->getGlobalBlockingHooks()->onSpecialPasswordResetOnSubmit( $users, [], $error );
-		if ( $expectedBlockTarget !== null ) {
-			$this->assertFalse( $hookReturnValue, 'The hook should return false if the user is blocked.' );
-			$this->assertSame(
-				'globalblocking-blocked-nopassreset', $error, 'The error message key was not set as expected.'
-			);
-		} else {
-			$this->assertTrue( $hookReturnValue, 'The hook should return true if the user is not blocked.' );
-			$this->assertSame( '', $error, 'The error message key should be empty if the user is not blocked.' );
-		}
-	}
-
-	public function testOnSpecialPasswordResetOnSubmitForGloballyBlockedUser() {
-		$this->testOnSpecialPasswordResetOnSubmit(
-			self::$testGloballyBlockedUser->getName(), '127.0.0.2', self::$testGloballyBlockedUser->getName()
-		);
-	}
-
-	public function testOnSpecialPasswordResetOnSubmitButBlockedViaIP() {
-		$this->testOnSpecialPasswordResetOnSubmit( self::$unblockedUser->getName(), '1.2.3.6', '1.2.3.0/24' );
-	}
-
-	public function testOnSpecialPasswordResetOnSubmitForNotBlockedUser() {
-		$this->testOnSpecialPasswordResetOnSubmit( self::$unblockedUser->getName(), null, null );
-	}
-
 	/** @dataProvider provideOnOtherBlockLogLink */
 	public function testOnOtherBlockLogLink( $target, $shouldDisplayMessage ) {
 		$this->setUserLang( 'qqx' );
