@@ -89,6 +89,7 @@ class GlobalBlocking {
 	 * @deprecated Since 1.42. Use GlobalBlockLookup::getRangeCondition.
 	 */
 	public static function getRangeCondition( $ip ) {
+		wfDeprecated( __METHOD__, '1.42' );
 		$conds = GlobalBlockingServices::wrap( MediaWikiServices::getInstance() )
 			->getGlobalBlockLookup()
 			->getRangeCondition( $ip );
