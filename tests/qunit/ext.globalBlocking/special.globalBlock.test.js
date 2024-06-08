@@ -53,7 +53,7 @@ function setUpDocumentForTest() {
 	return $( node );
 }
 
-QUnit.test( 'Test anon-only checkbox visibility for a variety of targets', function ( assert ) {
+QUnit.test( 'Test anon-only checkbox visibility for a variety of targets', ( assert ) => {
 	// Set the HTML that is added by Special:GlobalBlock.
 	const $node = setUpDocumentForTest();
 
@@ -65,7 +65,7 @@ QUnit.test( 'Test anon-only checkbox visibility for a variety of targets', funct
 	const anonOnlyWidget = OO.ui.infuse( $( '#mw-globalblock-anon-only', $node ) );
 	const alsoLocalSoftWidget = OO.ui.infuse( $( '#mw-globalblock-local-soft', $node ) );
 	const targetWidget = OO.ui.infuse( $( '#mw-globalblock-target', $node ) );
-	cases.forEach( function ( caseItem ) {
+	cases.forEach( ( caseItem ) => {
 		targetWidget.setValue( caseItem.target );
 		assert.strictEqual(
 			caseItem.anonOnlyCheckboxShouldBeDisabled,
