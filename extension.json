@@ -138,7 +138,9 @@
 		"globalblocks": {
 			"class": "MediaWiki\\Extension\\GlobalBlocking\\Api\\ApiQueryGlobalBlocks",
 			"services": [
-				"CentralIdLookup"
+				"CentralIdLookup",
+				"GlobalBlocking.GlobalBlockLookup",
+				"GlobalBlocking.GlobalBlockingConnectionProvider"
 			]
 		}
 	},
