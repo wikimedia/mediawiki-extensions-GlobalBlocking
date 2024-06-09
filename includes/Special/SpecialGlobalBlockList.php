@@ -2,18 +2,18 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Special;
 
-use CentralIdLookup;
-use DerivativeContext;
-use HTMLForm;
 use MediaWiki\Block\BlockUtils;
 use MediaWiki\CommentFormatter\CommentFormatter;
+use MediaWiki\Context\DerivativeContext;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\Html\Html;
+use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\User\CentralId\CentralIdLookup;
 use Wikimedia\IPUtils;
 
 class SpecialGlobalBlockList extends SpecialPage {

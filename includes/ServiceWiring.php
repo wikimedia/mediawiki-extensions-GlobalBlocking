@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingBlockPurger;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;

@@ -2,9 +2,8 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Special;
 
-use CentralIdLookup;
-use IContextSource;
 use MediaWiki\CommentFormatter\CommentFormatter;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusLookup;
@@ -12,6 +11,7 @@ use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\Html\Html;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Pager\ReverseChronologicalPager;
+use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\User;
 use MediaWiki\WikiMap\WikiMap;
 
