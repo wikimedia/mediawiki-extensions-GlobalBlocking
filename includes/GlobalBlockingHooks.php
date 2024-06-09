@@ -2,7 +2,6 @@
 
 namespace MediaWiki\Extension\GlobalBlocking;
 
-use CentralIdLookup;
 use LogicException;
 use MediaWiki\Block\AbstractBlock;
 use MediaWiki\Block\Block;
@@ -10,6 +9,7 @@ use MediaWiki\Block\CompositeBlock;
 use MediaWiki\Block\Hook\GetUserBlockHook;
 use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Config\Config;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusLookup;
@@ -21,14 +21,14 @@ use MediaWiki\Hook\GetLogTypesOnUserHook;
 use MediaWiki\Hook\OtherBlockLogLinkHook;
 use MediaWiki\Hook\SpecialContributionsBeforeMainOutputHook;
 use MediaWiki\Html\Html;
+use MediaWiki\Message\Message;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
+use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\Hook\SpecialPasswordResetOnSubmitHook;
 use MediaWiki\User\Hook\UserIsBlockedGloballyHook;
 use MediaWiki\User\User;
-use Message;
-use RequestContext;
 use Wikimedia\IPUtils;
 
 /**

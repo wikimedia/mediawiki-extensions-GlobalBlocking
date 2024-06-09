@@ -2,7 +2,6 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Test\Unit;
 
-use CentralIdLookup;
 use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Config\Config;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlock;
@@ -12,6 +11,7 @@ use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\Permissions\PermissionManager;
+use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWikiUnitTestCase;
 
 /**

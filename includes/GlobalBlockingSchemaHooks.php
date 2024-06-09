@@ -2,8 +2,8 @@
 
 namespace MediaWiki\Extension\GlobalBlocking;
 
-use DatabaseUpdater;
 use MediaWiki\Extension\GlobalBlocking\Maintenance\PopulateCentralId;
+use MediaWiki\Installer\DatabaseUpdater;
 use MediaWiki\Installer\Hook\LoadExtensionSchemaUpdatesHook;
 
 class GlobalBlockingSchemaHooks implements LoadExtensionSchemaUpdatesHook {

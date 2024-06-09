@@ -2,9 +2,9 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Test\Integration\Specials;
 
-use FauxRequest;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Extension\GlobalBlocking\Special\SpecialGlobalBlockList;
+use MediaWiki\Request\FauxRequest;
 use SpecialPageTestBase;
 
 /**

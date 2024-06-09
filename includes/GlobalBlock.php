@@ -2,9 +2,9 @@
 
 namespace MediaWiki\Extension\GlobalBlocking;
 
-use CentralIdLookup;
 use MediaWiki\Block\AbstractBlock;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\WikiMap\WikiMap;

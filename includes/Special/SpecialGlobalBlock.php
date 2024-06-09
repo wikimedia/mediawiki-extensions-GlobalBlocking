@@ -2,7 +2,6 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Special;
 
-use HTMLForm;
 use LogEventsList;
 use MediaWiki\Block\BlockUserFactory;
 use MediaWiki\Block\BlockUtils;
@@ -11,6 +10,7 @@ use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockManager;
 use MediaWiki\Html\Html;
+use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\SpecialPage\FormSpecialPage;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
