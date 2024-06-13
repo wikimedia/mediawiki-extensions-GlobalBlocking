@@ -131,8 +131,6 @@
 	"globalblocking-ipblocked": "'''{{int:globalblocking-blockedtext-all-wikis}}'''\n\n封禁执行者是$1（$2）。{{int:blockedtext-reason-comment|$3}}。\n\n* {{int:blockedtext-start-time|$4}}\n* {{int:blockedtext-expiration-time|$5}}\n\n{{int:globalblocking-blockedtext-blocker-admin|$1}}{{int:globalblocking-blockedtext-email-feature}}{{int:blockedtext-block-ip|$6}}{{int:blockedtext-include-details-queries}}",
 	"globalblocking-ipblocked-range": "'''{{int:globalblocking-blockedtext-on-range}}'''\n\n封禁执行者是$1（$2）。{{int:blockedtext-reason-comment|$3}}。\n\n* {{int:blockedtext-start-time|$4}}\n* {{int:blockedtext-expiration-time|$5}}\n\n{{int:globalblocking-blockedtext-blocker-admin|$1}}{{int:globalblocking-blockedtext-email-feature}}{{int:blockedtext-block-ip|$6}}{{int:globalblocking-blockedtext-ip-range|$7}}{{int:blockedtext-include-details-queries}}",
 	"globalblocking-ipblocked-xff": "'''{{int:globalblocking-blockedtext-on-proxy}}'''\n\n封禁执行者是$1（$2）。{{int:blockedtext-reason-comment|$3}}。\n\n* {{int:blockedtext-start-time|$4}}\n* {{int:blockedtext-expiration-time|$5}}\n\n{{int:globalblocking-blockedtext-blocker-admin|$1}}{{int:globalblocking-blockedtext-email-feature}}{{int:globalblocking-blockedtext-proxy|$7}}{{int:blockedtext-include-details-queries}}",
-	"globalblocking-blocked-nopassreset": "您无法重置用户密码，因为您的IP地址已被全域封禁。",
-	"globalblocking-blocked-nopassreset-user": "您无法重置用户密码，因为您的账号已被全域封禁。",
 	"globalblocking-logpage": "全域封禁日志",
 	"globalblocking-logpagetext": "这个是在这个wiki中的全域封锁日志。要留意的是全域封锁可以在其它的wiki中被创建和移除并且会影响到这个wiki。要查看活跃的全域封锁，您可以去参阅[[Special:GlobalBlockList|全域封锁名单]]。",
 	"globalblocking-logentry-block-old-format": "$1{{GENDER:$2|全域封禁了}}{{GENDER:$4|$3}}（$5）",

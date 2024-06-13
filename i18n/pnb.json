@@ -62,7 +62,6 @@
 	"globalblocking-whitelist-dewhitelisted": "تساں کامیابی نال جگت روک #$2 آئی پی پتے '''$1''' {{ساغٹناں}} توں ہٹا دتی اے۔",
 	"globalblocking-whitelist-nochange": "تساں ایس روک دے لوکل سٹیٹس تے کوئی تبدیلی نئیں کیتی۔\n[[Special:GlobalBlockList|جگت روک لسٹ ول واپسی]]۔",
 	"globalblocking-whitelist-intro": "تسیں ایس فارم نوں اک جگت روک لوکل سٹیٹس نوں بدلن لئی ورت سکدے او۔\nاگر اک جگت روک ایس وکی تے کم نئیں کردی، ورتن والے متاثرہ آئی پی پتے اینوں تبدیل کرن گے۔\n[[Special:GlobalBlockList|جگت روک لسٹ ول چلو]]",
-	"globalblocking-blocked-nopassreset": "تسیں اک ورتن والے دی کنجی نئیں بدل سکدے کیوں جے تساں تے جگت روک اے۔",
 	"globalblocking-logpage": "جگت روک لاگ",
 	"globalblocking-logpagetext": "ایہ جگت روکاں دی لاگ اے جیہڑی بنائی گئی اے تے ایس وکی توں ہٹا دتی گئی اے۔\nاے گل یاد رکھن والی اے جے جگت روکاں بنایاں جا سکدیاں نیں تے دوجے وکیاں تے ہٹائیاں جاسکدیاں نیں، تے ایہ جگت روکاں  ایس وکی تے وی اثر پاندیاں نیں۔\nسارے چلدے جگت روکاں نوں ویکھن لئی تسیں ویکھو [[Special:GlobalBlockList|جگت روک لسٹ]]",
 	"globalblocking-loglink": "آئی پی پتہ $1 تے جگت روک اے ([[{{#Special:GlobalBlockList}}/$1|پوری گل]])",

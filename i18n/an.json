@@ -61,7 +61,6 @@
 	"globalblocking-whitelist-dewhitelisted": "Has reactivau correctament o bloqueyo global #$2 de l'adreza IP '''$1''' en {{SITENAME}}.",
 	"globalblocking-whitelist-nochange": "No ha feito garra cambeo a o estau local d'este bloqueyo.\n[[Special:GlobalBlockList|Tornar a la lista de bloqueyos globals]].",
 	"globalblocking-whitelist-intro": "Puet usar iste formulario ta editar o estau local d'un bloqueyo global.\nSi un bloqueyo global ye desactivau en ista wiki, os usuarios de l'adreza IP afectada podrán editar normalment.\n[[Special:GlobalBlockList|Tornar a la lista de bloqueyos globals]].",
-	"globalblocking-blocked-nopassreset": "No puede demandar recordatorios de claves d'usuario porque vusté ye bloqueyau globalment.",
 	"globalblocking-logpage": "Rechistro de bloqueyos globals",
 	"globalblocking-logpagetext": "Ista ye una lista de bloqueyos globals que s'han feito y retirau en iste wiki.\nCal sinyalar que os bloqueyos globals se pueden fer y sacar en atros wikis, y que istos bloqueyos globals pueden afectar a iste wiki.\nTa veyer totz os bloqueyos globals activos, puede veyer [[Special:GlobalBlockList|lista de bloqueyos globals]].",
 	"globalblocking-loglink": "L'adreza IP $1 ye bloqueyada globalment ([[{{#Special:GlobalBlockList}}/$1|detalles]]).",

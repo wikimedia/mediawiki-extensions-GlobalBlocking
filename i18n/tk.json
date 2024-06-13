@@ -59,7 +59,6 @@
 	"globalblocking-whitelist-dewhitelisted": "{{SITENAME}} saýtynda '''$1''' IP adresli #$2 global blokirlemesini şowly gaýtadan açdyňyz.",
 	"globalblocking-whitelist-nochange": "Bu blokirlemäni ýerli statusyny him hili üýtgetmediňiz.\n[[Special:GlobalBlockList|Global blokirleme sanawyna gaýdyp baryň]].",
 	"globalblocking-whitelist-intro": "Global blokirlemäniň ýerli statusyny üýtgetmek üçin bu formdan peýdalanyp bilersiňiz.\neger global blokirleme bu wikide ýapylyp goýlan bolsa, degişli IP adresindäki ulanyjylar adatça redaktirläp bilýärler.\n[[Special:GlobalBlockList|Global blokirleme sanawyna gaýdyp baryň]].",
-	"globalblocking-blocked-nopassreset": "Ulanyjynyň parolyny başky ýagdaýa getirip bilmeýärsiňiz, sebäbi siz global blokirlenilgi.",
 	"globalblocking-logpage": "Global blokirleme gündeligi",
 	"globalblocking-logpagetext": "Bu gündelik şu wikide goýulan we ondan aýrylan global blokirlemeleri görkezýär.\nGlobal blokirlemeler başga wikilerde goýlup we aýrylyp bilinýändir, şol blokirlemeler bolsa şu wikä-de täsirini ýetirip bilýändir.\nÄhli işjeň global blokirlemeleri görmek üçin, [[Special:GlobalBlockList|global blokirleme sanawyna]] seredip bilersiňiz.",
 	"globalblocking-loglink": "$1 IP adresi global blokirlendi ([[{{#Special:GlobalBlockList}}/$1|ähli jikme-jikler]]).",

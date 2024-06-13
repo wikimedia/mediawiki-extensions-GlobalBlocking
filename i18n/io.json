@@ -27,7 +27,6 @@
 	"globalblocking-whitelist-reason": "Motivo:",
 	"globalblocking-whitelist-status": "Lokala stando:",
 	"globalblocking-whitelist-nochange": "Vu modifikis nulo pri la lokala stando di ca blokuso.",
-	"globalblocking-blocked-nopassreset": "Vu ne povas modifikar l'uzero-pasovorto, nam vua IP-adreso blokusesis omnaloke.",
 	"globalblocking-logpage": "'Log' pri globala blokusado",
 	"globalblocking-logpagetext": "Yen listo pri globala blokusi qui facesis e removesis de ica wiki.\nRegardez ke globala blokusi povas facesar en e removesar de altra wiki, e ica globala blokusi povas afektar ica wiki.\nPor vidar omna globala blokusi aktiva, vu mustas vidar la [[Special:GlobalBlockList|listo pri globala blokusi]].",
 	"globalblocking-loglink": "La IP-adreso $1 blokusesis omnaloke ([[{{#Special:GlobalBlockList}}/$1|plusa detali]]).",

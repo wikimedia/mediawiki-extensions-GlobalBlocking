@@ -62,7 +62,6 @@
 	"globalblocking-whitelist-dewhitelisted": "Vos éd rèactivâ avouéc reusséta lo blocâjo globâl n° $2 sur l’adrèce IP '''$1''' dessus {{SITENAME}}.",
 	"globalblocking-whitelist-nochange": "Vos éd pas changiê lo statut local de ceti blocâjo.\n[[Special:GlobalBlockList|Tornar a la lista des blocâjos globâls]].",
 	"globalblocking-whitelist-intro": "Vos pouede utilisar ceti formulèro por changiér lo statut local d’un blocâjo globâl.\nS’un blocâjo globâl est dèsactivâ sur ceti vouiqui, los usanciérs a les adrèces IP afèctâs porront changiér normalament.\n[[Special:GlobalBlockList|Tornar a la lista des blocâjos globâls]].",
-	"globalblocking-blocked-nopassreset": "Vos pouede pas tornar inicialisar los contresegnos d’usanciér perce que vos éte blocâ dens l’ensemblo.",
 	"globalblocking-logpage": "Jornal des blocâjos globâls",
 	"globalblocking-logpagetext": "Vê-que lo jornal des blocâjos globâls qu’ont étâ fêts et pués enlevâs sur ceti vouiqui.\nNotâd que los blocâjos globâls pôvont étre fêts et pués enlevâs sur d’ôtros vouiquis, et que celos blocâjos globâls pôvont afèctar ceti vouiqui.\nPor vêre tôs los blocâjos globâls actifs, vos pouede visitar la [[Special:GlobalBlockList|lista des blocâjos globâls]].",
 	"globalblocking-loglink": "L’adrèce IP $1 est blocâ dens l’ensemblo ([[{{#Special:GlobalBlockList}}/$1|dètalys]]).",

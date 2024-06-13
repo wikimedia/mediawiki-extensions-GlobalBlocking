@@ -63,7 +63,6 @@
 	"globalblocking-whitelist-dewhitelisted": "Uspješno se ponovno omogućili globalnu blokadu #$2 IP adrese '''$1''' na {{SITENAME}}.",
 	"globalblocking-whitelist-nochange": "Niste napravili izmjene lokalnog statusa ove blokade.\n[[Special:GlobalBlockList|Povratak na spisak globalnih blokada]].",
 	"globalblocking-whitelist-intro": "Možete koristiti ovaj obrazac za uređivanje lokalnog statusa globalne blokade.\nAko je globalna blokada onemogućena na ovoj wiki, korisnici na blokiranoj IP adresi će biti u mogućnosti na normalno uređuju.\n[[Special:GlobalBlockList|Povratak na spisak globalnih blokada]].",
-	"globalblocking-blocked-nopassreset": "Ne možete poništiti korisničku šifru jer ste globalno blokirani.",
 	"globalblocking-logpage": "Zapisnik globalnih blokada",
 	"globalblocking-logpagetext": "Ovo je zapisnik globalnih blokada koji su napravljene i uklonjene na ovoj wiki.\nTreba obratiti pažnju da se globalne blokade mogu napraviti i ukloniti na drugim wikijima i da te globalne blokade utjecati na ovu wiki.\nDa bi ste pregledali aktivne globalne blokade, kliknite na [[Special:GlobalBlockList|spisak globalnih blokada]].",
 	"globalblocking-loglink": "Korisnik $1 blokiran je globalno ([[{{#Special:GlobalBlockList}}/$1|detalji]]).",

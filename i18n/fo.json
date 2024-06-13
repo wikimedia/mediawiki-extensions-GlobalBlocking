@@ -46,7 +46,6 @@
 	"globalblocking-whitelist-statuslabel": "Tak burtur globala sperring á {{SITENAME}}",
 	"globalblocking-whitelist-submit": "Broyt lokala støðu",
 	"globalblocking-whitelist-whitelisted": "Tað eydnaðist tær at taka burtur globala sperring #$2 á IP adressuni '''$1''' á {{SITENAME}}.",
-	"globalblocking-blocked-nopassreset": "Tú kanst ikki nullstilla loyniorð hjá brúkarum, tí tú ert sperrað/ur globalt.",
 	"globalblocking-logpage": "Globalut sperringsloggur",
 	"globalblocking-loglink": "IP adressan $1 er sperrað globalt ([[{{#Special:GlobalBlockList}}/$1|sí fullfíggjaða kunning]]).",
 	"globalblocking-showlog": "Henda IP adressan er áður blivin sperrað.\nSperringarloggurin er her niðanfyri fyri ávísing:",

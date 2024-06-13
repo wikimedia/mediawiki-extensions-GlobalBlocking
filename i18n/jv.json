@@ -67,7 +67,6 @@
 	"globalblocking-whitelist-dewhitelisted": "Panjenengan sacara suksès blokade global #$2 ing alamat IP '''$1''' ing {{SITENAME}}.",
 	"globalblocking-whitelist-nochange": "Panjenengan ora ngowahi status lokal pamblokiran iki.\n[[Special:GlobalBlockList|Bali menyang dhaptar pamblokiran global]].",
 	"globalblocking-whitelist-intro": "Panjenengan bisa migunakaké formulir iki kanggo nyunting status lokal saka sawijining pamblokiran global.\nYèn pamblokiran dinon-aktifaké ing wiki iki, panganggo-panganggo kanthi alamat IP kasebut bakal bisa nyunting kaya adaté.\n[[Special:GlobalBlockList|Bali menyang dhaptar pamblokiran global]].",
-	"globalblocking-blocked-nopassreset": "Panjenengan ora bisa nyetèl ulang tembung sandi amarga alamat IP panjenengan diblokir sacara global.",
 	"globalblocking-logpage": "Log blokir global",
 	"globalblocking-logpagetext": "Iki log pamblokiran global sing digawé lan dibusak ing situs iki.\nPerlu diweruhi yèn pamblokiran global disa digawé lan dibusak ing wiki liya sing bisa karasa uga ing wiki iki.\nKanggo mirsani kabèh pamblokiran global sing aktif wektu iki, pirsani ing[[Special:GlobalBlockList|dhaptar pamblokiran global]] iki.",
 	"globalblocking-logentry-whitelist": "$1 {{GENDER:$2|njabut}} blokiran global ing $3 kalawan lokal",

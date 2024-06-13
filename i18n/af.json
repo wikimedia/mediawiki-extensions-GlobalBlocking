@@ -64,7 +64,6 @@
 	"globalblocking-whitelist-dewhitelisted": "U het suksesvol die globale versperring #$2 op die IP adres '''$1''' op {{SITENAME}} heraangeskakel.",
 	"globalblocking-whitelist-nochange": "U het nie die lokale status van hierdie blokkade gewysig nie.\n[[Special:GlobalBlockList|Keer terug na die lys van globale blokkades]].",
 	"globalblocking-whitelist-intro": "U kan die vorm gebruik om die lokale status van 'n globale blokkade te wysig.\nAs 'n globale blokkade op hierdie wiki opgehef is, kan gebruikers vanaf die IP-adres gewone wysigings deurvoer.\n[[Special:GlobalBlockList|Keer terug na die lys van globale blokkades]].",
-	"globalblocking-blocked-nopassreset": "U kan nie wagwoorde van gebruikers herstel nie omdat u globaal geblokkeer word.",
 	"globalblocking-logpage": "Logboek van globale blokkering",
 	"globalblocking-logpagetext": "Die logboek bevat blokkades wat op hierdie wiki geskep of verwyder is.\nGlobale blokkades kan ook op ander wiki's geskep of verwyder word, en invloed hê op hierdie wiki.\nAlle globale blokkades is opgeteken in die [[Special:GlobalBlockList|lys van globale blokkades]].",
 	"globalblocking-loglink": "Die IP-adres is globaal geblokkeer ([[{{#Special:GlobalBlockList}}/$1|volledige details]]).",
