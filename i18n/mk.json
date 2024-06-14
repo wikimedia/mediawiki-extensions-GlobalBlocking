@@ -24,7 +24,7 @@
 	"globalblocking-block-ipinvalid": "IP-адресата ($1) која ја внесовте не е важечка.\nНапомена: не може да се внесува корисничко име!",
 	"globalblocking-block-target-invalid": "Внесовте неважечко корисничко име, IP-адреса или IP-опсег ($1).",
 	"globalblocking-block-expiryinvalid": "Рокот на истекување кој го внесовте не е важечки.",
-	"globalblocking-block-anononly-on-account": "Не можете да блокирате само анонимни корисници кога блокирате корисник.",
+	"globalblocking-block-anononly-on-account": "Блоковите на сметките не можат да важат само за анонимни корисници.",
 	"globalblocking-block-submit": "Глобално блокирање на оваа IP-адреса",
 	"globalblocking-block-submit-new": "Блокирај го корисников глобално",
 	"globalblocking-modify-submit": "Измени го овој глобален блок",
