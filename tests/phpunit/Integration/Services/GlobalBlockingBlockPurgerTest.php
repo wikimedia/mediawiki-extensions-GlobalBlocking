@@ -99,7 +99,6 @@ class GlobalBlockingBlockPurgerTest extends MediaWikiIntegrationTestCase {
 			->insertInto( 'globalblocks' )
 			->row( [
 				'gb_address' => '127.0.0.1',
-				'gb_by' => $testUser->getName(),
 				'gb_by_central_id' => $this->getServiceContainer()
 					->getCentralIdLookup()
 					->centralIdFromLocalUser( $testUser ),
@@ -113,7 +112,6 @@ class GlobalBlockingBlockPurgerTest extends MediaWikiIntegrationTestCase {
 			] )
 			->row( [
 				'gb_address' => '127.0.0.0/24',
-				'gb_by' => $testUser->getName(),
 				'gb_by_central_id' => $this->getServiceContainer()
 					->getCentralIdLookup()
 					->centralIdFromLocalUser( $testUser ),

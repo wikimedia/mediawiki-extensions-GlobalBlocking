@@ -500,7 +500,6 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 				'gb_id' => 1,
 				'gb_address' => '127.0.0.1',
 				'gb_target_central_id' => 0,
-				'gb_by' => $testUser->getName(),
 				'gb_by_central_id' => $this->getServiceContainer()
 					->getCentralIdLookup()
 					->centralIdFromLocalUser( $testUser ),
@@ -516,7 +515,6 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 				'gb_id' => 2,
 				'gb_address' => '127.0.0.0/24',
 				'gb_target_central_id' => 0,
-				'gb_by' => $testUser->getName(),
 				'gb_by_central_id' => $this->getServiceContainer()
 					->getCentralIdLookup()
 					->centralIdFromLocalUser( $testUser ),
@@ -532,7 +530,6 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 				'gb_id' => 3,
 				'gb_address' => '77.8.9.10',
 				'gb_target_central_id' => 0,
-				'gb_by' => $testUser->getName(),
 				'gb_by_central_id' => $this->getServiceContainer()
 					->getCentralIdLookup()
 					->centralIdFromLocalUser( $testUser ),
@@ -548,7 +545,6 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 				'gb_id' => 4,
 				'gb_address' => '88.8.9.0/24',
 				'gb_target_central_id' => 0,
-				'gb_by' => $testUser->getName(),
 				'gb_by_central_id' => $this->getServiceContainer()
 					->getCentralIdLookup()
 					->centralIdFromLocalUser( $testUser ),
@@ -566,7 +562,6 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 				'gb_target_central_id' => $this->getServiceContainer()
 					->getCentralIdLookup()
 					->centralIdFromLocalUser( $testBlockedUser ),
-				'gb_by' => $testUser->getName(),
 				'gb_by_central_id' => $this->getServiceContainer()
 					->getCentralIdLookup()
 					->centralIdFromLocalUser( $testUser ),
