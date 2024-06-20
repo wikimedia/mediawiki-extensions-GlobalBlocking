@@ -34,12 +34,13 @@
 			"Xiplus",
 			"Yekrats",
 			"Тест",
-			"Ата"
+			"Ата",
+			"Jack who built the house"
 		]
 	},
 	"globalblocking-desc": "{{desc|name=Global Blocking|url=https://www.mediawiki.org/wiki/Extension:GlobalBlocking}}",
-	"globalblocking-block": "{{Identical|Globally block IP address}}",
-	"globalblocking-block-new": "Title of Special:GlobalBlock used when global blocks on accounts are enabled.\n\nSee also:\n* {{msg-mw|globalblocking-block}}",
+	"globalblocking-block": "{{doc-special|GlobalBlock}}\n\nThis title is used when global blocks on accounts are disabled.\n\nSee also:\n* {{msg-mw|globalblocking-block-new}}\n* {{msg-mw|globalblocking-unblock}}\n\n{{Identical|Globally block IP address}}",
+	"globalblocking-block-new": "{{doc-special|GlobalBlock}}\n\nThis title is used when global blocks on accounts are enabled.\n\nSee also:\n* {{msg-mw|globalblocking-block}}\n* {{msg-mw|globalblocking-unblock}}",
 	"globalblocking-expiry-options": "{{notranslate}}",
 	"globalblocking-block-intro": "{{Doc-specialpagesummary|globalblock}}Used as an introductory text on Special:GlobalBlock form.\n\nSee also:\n* {{msg-mw|globalblocking-modify-intro}}\n* {{msg-mw|globalblocking-block-intro-new}}",
 	"globalblocking-block-intro-new": "{{Doc-specialpagesummary|globalblock}}Used as an introductory text on Special:GlobalBlock form when global blocks on accounts are enabled.\n\nSee also:\n* {{msg-mw|globalblocking-modify-intro}}\n* {{msg-mw|globalblocking-block-intro}}",
@@ -105,7 +106,7 @@
 	"globalblocking-add-block": "Link to Special:GlobalBlock. Shown on Special:GlobalBlock below the success message: {{msg-mw|globalblocking-block-success}}.",
 	"globalblocking-notblocked": "Used as error message in Special:GlobalBlockStatus and Special:RemoveGlobalBlock. Parameters:\n* $1 - IP address\n\nSee also:\n* {{msg-mw|globalblocking-notblocked-new}}",
 	"globalblocking-notblocked-new": "Used as error message in Special:GlobalBlockStatus and Special:RemoveGlobalBlock when global blocks on accounts are enabled. Parameters:\n* $1 - Username, IP address or IP range\n\nSee also:\n* {{msg-mw|globalblocking-notblocked}}",
-	"globalblocking-unblock": "Title of Special:GlobalUnblock\n\nSee also:\n*{{msg-mw|globalblocking-block}}",
+	"globalblocking-unblock": "{{doc-special|GlobalUnblock}}\n\nSee also:\n* {{msg-mw|globalblocking-block}}\n* {{msg-mw|globalblocking-block-new}}",
 	"globalblocking-unblock-legend": "Used as legend for the fieldset around the input form of Special:GlobalUnblock.\n\nSee also:\n* {{msg-mw|globalblocking-block-legend}}",
 	"globalblocking-unblock-submit": "Used as submit button text on Special:GlobalUnblock form.\n\nSee also:\n* {{msg-mw|globalblocking-block-submit}}\n* {{msg-mw|ipusubmit}}",
 	"globalblocking-unblock-reason": "{{Identical|Reason}}",
