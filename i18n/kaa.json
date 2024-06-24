@@ -9,5 +9,6 @@
 	"globalblocking-search-submit": "Bloklawlardı izlew",
 	"globalblocking-list-anononly": "tek ǵana anonimli",
 	"globalblocking-list-whitelist": "jergilikli statusı",
-	"globalblocking-expiringblock": "óz kúshin joytıw waqtı: $1 $2"
+	"globalblocking-expiringblock": "óz kúshin joytıw waqtı: $1 $2",
+	"globalblocking-logpage": "Globallıq bloklaw jurnalı"
 }
