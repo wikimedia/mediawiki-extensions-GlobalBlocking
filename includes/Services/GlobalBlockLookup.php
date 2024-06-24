@@ -636,7 +636,7 @@ class GlobalBlockLookup {
 	 */
 	public static function selectFields(): array {
 		return [
-			'gb_id', 'gb_address', 'gb_target_central_id', 'gb_by', 'gb_by_central_id', 'gb_by_wiki', 'gb_reason',
+			'gb_id', 'gb_address', 'gb_target_central_id', 'gb_by_central_id', 'gb_by_wiki', 'gb_reason',
 			'gb_timestamp', 'gb_anon_only', 'gb_expiry', 'gb_range_start', 'gb_range_end'
 		];
 	}

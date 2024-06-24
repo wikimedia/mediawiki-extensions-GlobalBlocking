@@ -99,7 +99,6 @@ class GlobalBlockManager {
 		$row = [
 			'gb_address' => $data['target'],
 			'gb_target_central_id' => $data['centralId'],
-			'gb_by' => $blocker->getName(),
 			'gb_by_central_id' => $this->centralIdLookup->centralIdFromLocalUser( $blocker ),
 			'gb_by_wiki' => WikiMap::getCurrentWikiId(),
 			'gb_reason' => $reason,
