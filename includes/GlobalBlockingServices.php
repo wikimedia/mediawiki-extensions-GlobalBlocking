@@ -23,6 +23,7 @@ namespace MediaWiki\Extension\GlobalBlocking;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingBlockPurger;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingUserVisibilityLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusManager;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
@@ -84,5 +85,9 @@ class GlobalBlockingServices {
 
 	public function getGlobalBlockingLinkBuilder(): GlobalBlockingLinkBuilder {
 		return $this->serviceContainer->get( 'GlobalBlocking.GlobalBlockingLinkBuilder' );
+	}
+
+	public function getGlobalBlockingUserVisibilityLookup(): GlobalBlockingUserVisibilityLookup {
+		return $this->serviceContainer->get( 'GlobalBlocking.GlobalBlockingUserVisibilityLookup' );
 	}
 }

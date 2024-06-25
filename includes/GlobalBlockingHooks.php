@@ -2,7 +2,6 @@
 
 namespace MediaWiki\Extension\GlobalBlocking;
 
-use ExtensionRegistry;
 use MediaWiki\Block\AbstractBlock;
 use MediaWiki\Block\Block;
 use MediaWiki\Block\CompositeBlock;
@@ -10,9 +9,9 @@ use MediaWiki\Block\Hook\GetUserBlockHook;
 use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\RequestContext;
-use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingUserVisibilityLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\Extension\GlobalBlocking\Special\GlobalBlockListPager;
@@ -23,13 +22,11 @@ use MediaWiki\Hook\OtherBlockLogLinkHook;
 use MediaWiki\Hook\SpecialContributionsBeforeMainOutputHook;
 use MediaWiki\Html\Html;
 use MediaWiki\Message\Message;
-use MediaWiki\Permissions\Authority;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\Hook\UserIsBlockedGloballyHook;
 use MediaWiki\User\User;
-use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserNameUtils;
 use Wikimedia\IPUtils;
 
@@ -55,7 +52,7 @@ class GlobalBlockingHooks implements
 	private GlobalBlockingConnectionProvider $globalBlockingConnectionProvider;
 	private GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup;
 	private UserNameUtils $userNameUtils;
-	private UserFactory $userFactory;
+	private GlobalBlockingUserVisibilityLookup $globalBlockingUserVisibilityLookup;
 
 	/**
 	 * @param Config $mainConfig
@@ -66,7 +63,7 @@ class GlobalBlockingHooks implements
 	 * @param GlobalBlockingConnectionProvider $globalBlockingConnectionProvider
 	 * @param GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup
 	 * @param UserNameUtils $userNameUtils
-	 * @param UserFactory $userFactory
+	 * @param GlobalBlockingUserVisibilityLookup $globalBlockingUserVisibilityLookup
 	 */
 	public function __construct(
 		Config $mainConfig,
@@ -77,7 +74,7 @@ class GlobalBlockingHooks implements
 		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
 		GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup,
 		UserNameUtils $userNameUtils,
-		UserFactory $userFactory
+		GlobalBlockingUserVisibilityLookup $globalBlockingUserVisibilityLookup
 	) {
 		$this->config = $mainConfig;
 		$this->commentFormatter = $commentFormatter;
@@ -87,7 +84,7 @@ class GlobalBlockingHooks implements
 		$this->globalBlockingConnectionProvider = $globalBlockingConnectionProvider;
 		$this->globalBlockLocalStatusLookup = $globalBlockLocalStatusLookup;
 		$this->userNameUtils = $userNameUtils;
-		$this->userFactory = $userFactory;
+		$this->globalBlockingUserVisibilityLookup = $globalBlockingUserVisibilityLookup;
 	}
 
 	/**
@@ -165,39 +162,6 @@ class GlobalBlockingHooks implements
 	}
 
 	/**
-	 * Returns whether the current authority can see the given user.
-	 *
-	 * @param string $username The username to check
-	 * @param Authority $authority The authority to check against
-	 * @return bool
-	 */
-	private function checkAuthorityCanSeeUser( string $username, Authority $authority ): bool {
-		$user = $this->userFactory->newFromName( $username );
-		if ( !$user ) {
-			// If the user is not valid, then it cannot be hidden so return true.
-			return true;
-		}
-
-		// Assume that the authority has the rights to see the user by default.
-		$canViewTarget = true;
-
-		// If the user exists locally, then we can check if the user is hidden locally.
-		if ( $user->isRegistered() ) {
-			$canViewTarget = !( $user->isHidden() && !$authority->isAllowed( 'hideuser' ) );
-		}
-
-		// If CentralAuth is loaded, then we can check if the central user is hidden.
-		// This is necessary if the user does not exist on this wiki but their global
-		// account is hidden.
-		if ( $canViewTarget && ExtensionRegistry::getInstance()->isLoaded( 'CentralAuth' ) ) {
-			$centralUser = CentralAuthUser::getInstance( $user );
-			$canViewTarget = !( $centralUser->isHidden() && !$authority->isAllowed( 'centralauth-suppress' ) );
-		}
-
-		return $canViewTarget;
-	}
-
-	/**
 	 * Creates a link to the global block log
 	 * @param array &$msg Message with a link to the global block log
 	 * @param string $target The username or IP address to be checked
@@ -214,7 +178,7 @@ class GlobalBlockingHooks implements
 		} elseif ( !$this->config->get( 'GlobalBlockingAllowGlobalAccountBlocks' ) ) {
 			// If global account blocks are disabled, we can ignore checking for global blocks on accounts here.
 			return true;
-		} elseif ( !$this->checkAuthorityCanSeeUser( $target, $authority ) ) {
+		} elseif ( !$this->globalBlockingUserVisibilityLookup->checkAuthorityCanSeeUser( $target, $authority ) ) {
 			// If the current user cannot see the target, then we should not show the global block link even if
 			// a global block exists for this user.
 			return true;
@@ -256,7 +220,9 @@ class GlobalBlockingHooks implements
 		} elseif ( !$this->config->get( 'GlobalBlockingAllowGlobalAccountBlocks' ) ) {
 			// If global account blocks are disabled, we can ignore checking for global blocks on accounts here.
 			return true;
-		} elseif ( !$this->checkAuthorityCanSeeUser( $name, $sp->getAuthority() ) ) {
+		} elseif ( !$this->globalBlockingUserVisibilityLookup->checkAuthorityCanSeeUser(
+			$name, $sp->getAuthority()
+		) ) {
 			// If the current user cannot see the target, then we should not show the global block log entry.
 			return true;
 		} else {
@@ -324,7 +290,9 @@ class GlobalBlockingHooks implements
 			// If global account blocks are disabled, we should not add links to the relevant special pages as they
 			// will not support global blocks on accounts.
 			return;
-		} elseif ( !$this->checkAuthorityCanSeeUser( $target, $specialPage->getAuthority() ) ) {
+		} elseif ( !$this->globalBlockingUserVisibilityLookup->checkAuthorityCanSeeUser(
+			$target, $specialPage->getAuthority()
+		) ) {
 			// If the current user cannot see the target, then we should not show any contribution tool links
 			// to avoid leaking that a user exists with this username and whether this hidden user is globally
 			// blocked.

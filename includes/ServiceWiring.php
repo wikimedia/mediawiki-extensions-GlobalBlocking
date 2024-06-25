@@ -6,6 +6,7 @@ use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingBlockPurger;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingUserVisibilityLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusManager;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
@@ -123,6 +124,11 @@ return [
 			RequestContext::getMain(),
 			RequestContext::getMain()->getLanguage()
 		);
+	},
+	'GlobalBlocking.GlobalBlockingUserVisibilityLookup' => static function (
+		MediaWikiServices $services
+	): GlobalBlockingUserVisibilityLookup {
+		return new GlobalBlockingUserVisibilityLookup( $services->getUserFactory() );
 	},
 ];
 

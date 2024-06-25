@@ -114,9 +114,9 @@
 		"gblblock/*": {
 			"class": "MediaWiki\\Extension\\GlobalBlocking\\GlobalBlockLogFormatter",
 			"services": [
-				"UserFactory",
 				"UserIdentityLookup",
-				"GlobalBlocking.GlobalBlockingLinkBuilder"
+				"GlobalBlocking.GlobalBlockingLinkBuilder",
+				"GlobalBlocking.GlobalBlockingUserVisibilityLookup"
 			]
 		}
 	},
@@ -218,7 +218,7 @@
 				"GlobalBlocking.GlobalBlockingConnectionProvider",
 				"GlobalBlocking.GlobalBlockLocalStatusLookup",
 				"UserNameUtils",
-				"UserFactory"
+				"GlobalBlocking.GlobalBlockingUserVisibilityLookup"
 			]
 		},
 		"usermerge": {

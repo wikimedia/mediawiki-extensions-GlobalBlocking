@@ -2,47 +2,44 @@
 
 namespace MediaWiki\Extension\GlobalBlocking;
 
-use ExtensionRegistry;
 use LogEntry;
 use LogFormatter;
 use LogPage;
-use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingUserVisibilityLookup;
 use MediaWiki\Html\Html;
 use MediaWiki\Linker\Linker;
 use MediaWiki\Message\Message;
-use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserIdentityLookup;
 use MediaWiki\User\UserIdentityValue;
 use UnexpectedValueException;
-use Wikimedia\IPUtils;
 
 /**
  * Log formatter for gblblock/* entries
  */
 class GlobalBlockLogFormatter extends LogFormatter {
 
-	private UserFactory $userFactory;
 	private UserIdentityLookup $userIdentityLookup;
 	private GlobalBlockingLinkBuilder $globalBlockingLinkBuilder;
+	private GlobalBlockingUserVisibilityLookup $globalBlockingUserVisibilityLookup;
 
 	/**
 	 * @param LogEntry $entry
-	 * @param UserFactory $userFactory
 	 * @param UserIdentityLookup $userIdentityLookup
 	 * @param GlobalBlockingLinkBuilder $globalBlockingLinkBuilder
+	 * @param GlobalBlockingUserVisibilityLookup $globalBlockingUserVisibilityLookup
 	 */
 	public function __construct(
 		LogEntry $entry,
-		UserFactory $userFactory,
 		UserIdentityLookup $userIdentityLookup,
-		GlobalBlockingLinkBuilder $globalBlockingLinkBuilder
+		GlobalBlockingLinkBuilder $globalBlockingLinkBuilder,
+		GlobalBlockingUserVisibilityLookup $globalBlockingUserVisibilityLookup
 	) {
 		parent::__construct( $entry );
-		$this->userFactory = $userFactory;
 		$this->userIdentityLookup = $userIdentityLookup;
 		$this->globalBlockingLinkBuilder = $globalBlockingLinkBuilder;
+		$this->globalBlockingUserVisibilityLookup = $globalBlockingUserVisibilityLookup;
 	}
 
 	protected function getMessageKey(): string {
@@ -139,7 +136,9 @@ class GlobalBlockLogFormatter extends LogFormatter {
 		}
 
 		$targetUserIdentity = $this->getUserIdentityForTarget();
-		$canViewTarget = $this->checkAuthorityCanSeeUser( $targetUserIdentity );
+		$canViewTarget = $this->globalBlockingUserVisibilityLookup->checkAuthorityCanSeeUser(
+			$targetUserIdentity->getName(), $this->context->getAuthority()
+		);
 
 		if ( !$canViewTarget ) {
 			// If the current authority cannot view the target of the block, then replace the user link with a message
@@ -169,7 +168,9 @@ class GlobalBlockLogFormatter extends LogFormatter {
 	public function getActionLinks(): string {
 		$targetUserIdentity = $this->getUserIdentityForTarget();
 		if (
-			!$this->checkAuthorityCanSeeUser( $targetUserIdentity ) ||
+			!$this->globalBlockingUserVisibilityLookup->checkAuthorityCanSeeUser(
+				$targetUserIdentity->getName(), $this->context->getAuthority()
+			) ||
 			!$this->canView( LogPage::DELETED_ACTION )
 		) {
 			// Don't show the action links if the current authority cannot view the target of the block.
@@ -198,38 +199,5 @@ class GlobalBlockLogFormatter extends LogFormatter {
 		}
 		return $this->userIdentityLookup->getUserIdentityByName( $userText )
 			?? UserIdentityValue::newAnonymous( $userText );
-	}
-
-	/**
-	 * Returns whether the current authority can see the target of the block.
-	 *
-	 * @param UserIdentity $userIdentity The object returned by ::getUserIdentityForTarget
-	 * @return bool
-	 */
-	private function checkAuthorityCanSeeUser( UserIdentity $userIdentity ): bool {
-		if ( IPUtils::isIPAddress( $userIdentity->getName() ) ) {
-			// IP addresses cannot be hidden, so the authority will always be able to see them.
-			return true;
-		}
-
-		// Assume that the authority has the rights to see the user by default.
-		$canViewTarget = true;
-		$authority = $this->context->getAuthority();
-
-		// If the user exists locally, then we can check if the user is hidden locally.
-		if ( $userIdentity->isRegistered() ) {
-			$user = $this->userFactory->newFromUserIdentity( $userIdentity );
-			$canViewTarget = !( $user->isHidden() && !$authority->isAllowed( 'hideuser' ) );
-		}
-
-		// If CentralAuth is loaded, then we can check if the central user is hidden.
-		// This is necessary if the user does not exist on this wiki but their global
-		// account is hidden.
-		if ( $canViewTarget && ExtensionRegistry::getInstance()->isLoaded( 'CentralAuth' ) ) {
-			$centralUser = CentralAuthUser::getInstance( $userIdentity );
-			$canViewTarget = !( $centralUser->isHidden() && !$authority->isAllowed( 'centralauth-suppress' ) );
-		}
-
-		return $canViewTarget;
 	}
 }
