@@ -59,7 +59,7 @@
 	"globalblocking-list-ipinvalid": "あなたが検索したIPアドレス ($1) には誤りがあります。\n有効なIPアドレスを入力してください。",
 	"globalblocking-search-errors": "以下の{{PLURAL:$1|理由}}により、検索できませんでした:",
 	"globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> (''$3'') が [[Special:Contributions/$4|$4]] を全プロジェクトでブロック ''($5)''",
-	"globalblocking-list-expiry": "満了 $1",
+	"globalblocking-list-expiry": "有効期限: $1",
 	"globalblocking-list-anononly": "匿名利用者のみ",
 	"globalblocking-list-unblock": "解除",
 	"globalblocking-list-whitelisted": "$1 によりローカルで無効化: $2",
