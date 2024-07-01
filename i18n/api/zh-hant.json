@@ -7,8 +7,9 @@
 		]
 	},
 	"globalblocking-apierror-badip": "IP 位址 $1 無效",
+	"globalblocking-apierror-badtarget": "提供的使用者名稱、IP 位址、或 IP 範圍無效（$1）",
 	"apihelp-globalblock-summary": "全域封鎖或解封一名使用者。",
-	"apihelp-globalblock-param-target": "目標 IP 位址。",
+	"apihelp-globalblock-param-target": "目標 IP 位址或使用者名稱。",
 	"apihelp-globalblock-param-expiry": "若指定將會封鎖或重新封鎖使用者。確認要封鎖的時間長度，例如：「5 months」（5 個月）或「2 weeks」（2 週）。如果設定成「infinite」或「indefinite」則為無期限封鎖。",
 	"apihelp-globalblock-param-unblock": "若指定將解封使用者。",
 	"apihelp-globalblock-param-reason": "封鎖/解封的原因。",
@@ -25,7 +26,7 @@
 	"apihelp-query+globalblocks-param-prop": "要取得的屬性。",
 	"apihelp-query+globalblocks-example-1": "所有全域封鎖清單",
 	"apihelp-query+globalblocks-example-2": "列出套用在 IP 位址 192.0.2.18 的全域封鎖",
-	"apihelp-globalblock-param-alsolocal": "在本地端也封鎖 IP",
+	"apihelp-globalblock-param-alsolocal": "在本地端也封鎖該名使用者",
 	"apihelp-globalblock-param-localblockstalk": "撤銷在本地端討論頁存取權限",
 	"apihelp-globalblock-param-localblocksemail": "撤銷在本地端電子郵件存取權限",
 	"apihelp-globalblock-param-localanononly": "若封鎖僅對已登出的使用者有效，請指定此。"
