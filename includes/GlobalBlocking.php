@@ -68,6 +68,7 @@ class GlobalBlocking {
 	 * @deprecated Since 1.42. Use GlobalBlockLookup::getGlobalBlockingBlock.
 	 */
 	public static function getGlobalBlockingBlock( $ip, $anon ) {
+		wfDeprecated( __METHOD__, '1.42' );
 		$flags = GlobalBlockLookup::SKIP_LOCAL_DISABLE_CHECK;
 		if ( !$anon ) {
 			$flags |= GlobalBlockLookup::SKIP_SOFT_IP_BLOCKS;
@@ -138,6 +139,7 @@ class GlobalBlocking {
 	 * @deprecated Since 1.42. Use GlobalBlockLookup::getGlobalBlockId.
 	 */
 	public static function getGlobalBlockId( $ip, $dbtype = DB_REPLICA ) {
+		wfDeprecated( __METHOD__, '1.42' );
 		return GlobalBlockingServices::wrap( MediaWikiServices::getInstance() )
 			->getGlobalBlockLookup()
 			->getGlobalBlockId( $ip, $dbtype );
