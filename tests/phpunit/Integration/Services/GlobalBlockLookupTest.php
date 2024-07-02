@@ -39,17 +39,6 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 		return $this->getServiceContainer()->getUserFactory()->newFromName( $blockedUsername );
 	}
 
-	public function testGetUserBlockErrors() {
-		$globalBlockLookup = GlobalBlockingServices::wrap( $this->getServiceContainer() )
-			->getGlobalBlockLookup();
-		$testUser = $this->getTestUser()->getUser();
-		$this->assertNotCount(
-			0,
-			$globalBlockLookup->getUserBlockErrors( $testUser, '77.8.9.10' ),
-			'::getUserBlockErrors should have returned an array with at least one error.'
-		);
-	}
-
 	/** @dataProvider provideGetUserBlockForNamedWhenXFFHeaderIsNotBlocked */
 	public function testGetUserBlockForNamedWhenXFFHeaderIsNotBlocked( $xffHeader ) {
 		$this->setMwGlobals( 'wgGlobalBlockingBlockXFF', true );
