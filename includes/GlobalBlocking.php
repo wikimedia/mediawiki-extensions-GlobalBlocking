@@ -42,6 +42,7 @@ class GlobalBlocking {
 	 * @deprecated Since 1.42. Use GlobalBlockLookup::getUserBlockErrors.
 	 */
 	public static function getUserBlockErrors( $user, $ip ) {
+		wfDeprecated( __METHOD__, '1.42' );
 		return GlobalBlockingServices::wrap( MediaWikiServices::getInstance() )
 			->getGlobalBlockLookup()
 			->getUserBlockErrors( $user, $ip );
