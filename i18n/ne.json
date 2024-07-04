@@ -2,14 +2,24 @@
 	"@metadata": {
 		"authors": [
 			"NehalDaveND",
-			"बडा काजी"
+			"बडा काजी",
+			"पर्वत सुबेदी"
 		]
 	},
 	"globalblocking-block-reason": "कारण:",
+	"globalblocking-ipaddress": "आइपी ठेगाना",
+	"globalblocking-search-ip": "आइपी ठेगाना",
 	"globalblocking-list-unblock": "हटाउने",
 	"globalblocking-list-modify": "सच्याउने",
 	"globalblocking-expiringblock": "$1 को दिन  $2 मा सकिनेछ",
+	"globalblocking-goto-status": "विश्वव्यापी अवरोधको लागि स्थानीय स्थिति परिवर्तन गर्नुहोस्",
 	"globalblocking-unblock-reason": "कारण:",
+	"globalblocking-whitelist": "विश्वव्यापी अवरोधहरूको स्थानीय स्थिति",
+	"globalblocking-whitelist-legend": "स्थानीय स्थिति परिवर्तन गर्नुहोस्",
 	"globalblocking-whitelist-reason": "कारण:",
+	"globalblocking-whitelist-statuslabel": "{{SITENAME}}मा यो विश्वव्यापी अवरोध असक्षम गर्नुहोस्",
+	"globalblocking-whitelist-submit": "स्थानीय स्थिति परिवर्तन गर्नुहोस्",
+	"globalblocking-whitelist-intro": "तपाईले विश्वव्यापी अवरोधको स्थानीय स्थिति सम्पादन गर्न यो फारम प्रयोग गर्न सक्नुहुन्छ। यदि यस विकिमा विश्वव्यापी खण्ड अक्षम पारिएको छ भने, प्रभावित प्रयोगकर्ताहरूले सामान्य रूपमा सम्पादन गर्न सक्षम हुनेछन्।",
+	"globalblockstatus": "विश्वव्यापी अवरोधहरूको स्थानीय स्थिति",
 	"log-action-filter-gblblock-modify": "विश्वव्यापी निषेध परिमार्जन"
 }
