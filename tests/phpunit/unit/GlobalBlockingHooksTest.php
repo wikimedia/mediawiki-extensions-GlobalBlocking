@@ -10,11 +10,11 @@ use MediaWiki\Extension\GlobalBlocking\GlobalBlock;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingHooks;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingUserVisibilityLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\User;
-use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserNameUtils;
 use MediaWikiUnitTestCase;
 
@@ -32,7 +32,7 @@ class GlobalBlockingHooksTest extends MediaWikiUnitTestCase {
 			$this->createMock( GlobalBlockingConnectionProvider::class ),
 			$this->createMock( GlobalBlockLocalStatusLookup::class ),
 			$this->createMock( UserNameUtils::class ),
-			$this->createMock( UserFactory::class )
+			$this->createMock( GlobalBlockingUserVisibilityLookup::class )
 		);
 	}
 
