@@ -10,6 +10,7 @@ use SpecialPageTestBase;
 /**
  * @group Database
  * @covers \MediaWiki\Extension\GlobalBlocking\Special\SpecialGlobalBlockList
+ * @covers \MediaWiki\Extension\GlobalBlocking\Special\GlobalBlockListPager
  */
 class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 
