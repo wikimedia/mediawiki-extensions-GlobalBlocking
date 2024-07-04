@@ -203,7 +203,11 @@ class SpecialGlobalBlockList extends SpecialPage {
 		);
 	}
 
-	protected function getGroupName() {
+	/**
+	 * @codeCoverageIgnore
+	 * @return string
+	 */
+	protected function getGroupName(): string {
 		return 'users';
 	}
 }
