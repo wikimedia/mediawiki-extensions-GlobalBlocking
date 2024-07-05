@@ -29,14 +29,14 @@ use ApiBase;
 use ApiQuery;
 use ApiQueryBase;
 use ApiResult;
-use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\User\CentralId\CentralIdLookup;
 use Wikimedia\IPUtils;
 use Wikimedia\ParamValidator\ParamValidator;
+use Wikimedia\ParamValidator\TypeDef\EnumDef;
 use Wikimedia\ParamValidator\TypeDef\IntegerDef;
-use Wikimedia\Rdbms\IDatabase;
-use Wikimedia\Rdbms\IExpression;
-use Wikimedia\Rdbms\LikeValue;
+use Wikimedia\Rdbms\IReadableDatabase;
 
 /**
  * Query module to enumerate all global blocks.
@@ -45,137 +45,164 @@ use Wikimedia\Rdbms\LikeValue;
  * @ingroup Extensions
  */
 class ApiQueryGlobalBlocks extends ApiQueryBase {
+	private IReadableDatabase $globalBlockingDb;
 
-	/**
-	 * @var IDatabase
-	 */
-	private $globalBlockingDb;
-
-	/**
-	 * @var CentralIdLookup
-	 */
-	private $lookup;
+	private CentralIdLookup $lookup;
+	private GlobalBlockLookup $globalBlockLookup;
 
 	/**
 	 * @param ApiQuery $query
 	 * @param string $moduleName
 	 * @param CentralIdLookup $lookup
+	 * @param GlobalBlockLookup $globalBlockLookup
+	 * @param GlobalBlockingConnectionProvider $globalBlockingConnectionProvider
 	 */
 	public function __construct(
 		ApiQuery $query,
 		$moduleName,
-		CentralIdLookup $lookup
+		CentralIdLookup $lookup,
+		GlobalBlockLookup $globalBlockLookup,
+		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider
 	) {
 		parent::__construct( $query, $moduleName, 'bg' );
 		$this->lookup = $lookup;
+		$this->globalBlockLookup = $globalBlockLookup;
+		$this->globalBlockingDb = $globalBlockingConnectionProvider->getReplicaGlobalBlockingDatabase();
 	}
 
 	public function execute() {
 		$params = $this->extractRequestParams();
-		$this->requireMaxOneParameter( $params, 'addresses', 'ip' );
+		$this->requireMaxOneParameter( $params, 'addresses', 'targets', 'ip' );
 
 		$prop = array_flip( $params['prop'] );
 		$fld_id = isset( $prop['id'] );
-		$fld_address = isset( $prop['address'] );
+		$fld_target = isset( $prop['target'] );
 		$fld_by = isset( $prop['by'] );
 		$fld_timestamp = isset( $prop['timestamp'] );
 		$fld_expiry = isset( $prop['expiry'] );
 		$fld_reason = isset( $prop['reason'] );
 		$fld_range = isset( $prop['range'] );
 
-		$result = $this->getResult();
-		$data = [];
+		// Treat the deprecated 'address' prop as 'target', unless 'target' is also set
+		$targetPropName = 'target';
+		if ( isset( $prop['address'] ) && !isset( $prop['target'] ) ) {
+			$fld_target = true;
+			$targetPropName = 'address';
+		}
 
 		$this->addTables( 'globalblocks' );
-		if ( $fld_id ) {
-			$this->addFields( 'gb_id' );
-		}
-		if ( $fld_address ) {
-			$this->addFields( [ 'gb_address', 'gb_anon_only' ] );
-		}
-		if ( $fld_by ) {
-			$this->addFields( [ 'gb_by_central_id', 'gb_by_wiki' ] );
-		}
 
+		// Add the fields dependent on whether a given prop was requested
+		$this->addFieldsIf( 'gb_id', $fld_id );
+		$this->addFieldsIf( [ 'gb_address', 'gb_anon_only' ], $fld_target );
+		$this->addFieldsIf( [ 'gb_by_central_id', 'gb_by_wiki' ], $fld_by );
+		$this->addFieldsIf( 'gb_expiry', $fld_expiry );
+		$this->addFieldsIf( 'gb_reason', $fld_reason );
+		$this->addFieldsIf( [ 'gb_range_start', 'gb_range_end' ], $fld_range );
+
+		// The timestamp is always needed in case we need to return a continue value.
 		$this->addFields( 'gb_timestamp' );
 
-		if ( $fld_expiry ) {
-			$this->addFields( 'gb_expiry' );
-		}
-		if ( $fld_reason ) {
-			$this->addFields( 'gb_reason' );
-		}
-		if ( $fld_range ) {
-			$this->addFields( [ 'gb_range_start', 'gb_range_end' ] );
+		// Treat the deprecated 'addresses' parameter as 'targets', unless 'targets' is also set
+		if ( isset( $params['addresses'] ) && !isset( $params['targets'] ) ) {
+			$params['targets'] = $params['addresses'];
 		}
 
 		$dbr = $this->getDB();
 		$this->addOption( 'LIMIT', $params['limit'] + 1 );
 		$this->addWhereRange( 'gb_timestamp', $params['dir'], $params['start'], $params['end'] );
-		$this->addWhere( $dbr->expr( 'gb_expiry', '>', $dbr->timestamp() ) );
 		if ( isset( $params['ids'] ) ) {
 			$this->addWhereFld( 'gb_id', $params['ids'] );
 		}
-		if ( isset( $params['addresses'] ) ) {
-			$addresses = [];
-			foreach ( (array)$params['addresses'] as $address ) {
-				if ( !IPUtils::isIPAddress( $address ) ) {
+		if ( isset( $params['targets'] ) ) {
+			$ipTargets = [];
+			$centralIds = [];
+			foreach ( (array)$params['targets'] as $target ) {
+				if ( IPUtils::isIPAddress( $target ) ) {
+					// If the target is an IP, add it to the list of IP targets.
+					$ipTargets[] = $target;
+				} elseif ( !$this->getConfig()->get( 'GlobalBlockingAllowGlobalAccountBlocks' ) ) {
+					// If the target is not an IP, and global account blocks are not allowed then return an
+					// error indicating that the target is not a valid IP.
 					$this->dieWithError(
-						[ 'globalblocking-apierror-badip', wfEscapeWikiText( $address ) ],
-						'param_addresses'
+						[ 'globalblocking-apierror-badip', wfEscapeWikiText( $target ) ], 'invalidip'
 					);
+				} else {
+					// If the target is not an IP, and global account blocks are allowed, then look up the
+					// central ID for the target and add it to the list of central IDs.
+					$centralId = $this->lookup->centralIdFromName( $target );
+					if ( !$centralId ) {
+						$this->dieWithError(
+							[ 'globalblocking-apierror-badtarget', wfEscapeWikiText( $target ) ], 'nosuchuser'
+						);
+					}
+					$centralIds[] = $centralId;
 				}
-				$addresses[] = $address;
 			}
-			$this->addWhereFld( 'gb_address', $addresses );
+
+			// Combine the list of central IDs and IP targets into a single WHERE clause such that all blocks affecting
+			// any of the targets are selected.
+			if ( count( $centralIds ) && count( $ipTargets ) ) {
+				$this->addWhere(
+					$this->getDB()
+						->expr( 'gb_target_central_id', '=', $centralIds )
+						->or( 'gb_address', '=', $ipTargets )
+				);
+			} elseif ( count( $centralIds ) ) {
+				$this->addWhereFld( 'gb_target_central_id', $centralIds );
+			} elseif ( count( $ipTargets ) ) {
+				$this->addWhereFld( 'gb_address', $ipTargets );
+			}
 		}
 		if ( isset( $params['ip'] ) ) {
-			if ( IPUtils::isIPv4( $params['ip'] ) ) {
-				$type = 'IPv4';
-				$cidrLimit = 16; // @todo Make this configurable
-				$prefixLen = 0;
-			} elseif ( IPUtils::isIPv6( $params['ip'] ) ) {
-				$type = 'IPv6';
-				$cidrLimit = 16; // @todo Make this configurable
-				$prefixLen = 3; // IPUtils::toHex output is prefixed with "v6-"
-			} else {
-				$this->dieWithError( 'apierror-badip', 'param_ip' );
+			// Validate that the IP parameter is an IP or IP range
+			if ( !IPUtils::isIPAddress( $params['ip'] ) ) {
+				$this->dieWithError( 'apierror-badip', 'invalidip' );
 			}
 
-			# Check range validity, if it's a CIDR
+			// Check range validity, if it's a CIDR
 			[ $ip, $range ] = IPUtils::parseCIDR( $params['ip'] );
-			if ( $ip !== false && $range !== false && $range < $cidrLimit ) {
-				$this->dieWithError( [ 'apierror-cidrtoobroad', $type, $cidrLimit ] );
+			$cidrLimits = $this->getConfig()->get( 'GlobalBlockingCIDRLimit' );
+			$ipVersion = IPUtils::isIPv4( $ip ) ? 'IPv4' : 'IPv6';
+			if ( $ip !== false && $range !== false && $range < $cidrLimits[ $ipVersion ] ) {
+				$this->dieWithError( [ 'apierror-cidrtoobroad', $ipVersion, $cidrLimits[ $ipVersion ] ] );
 			}
 
-			# Let IPUtils::parseRange handle calculating $upper, instead of duplicating the logic here.
-			[ $lower, $upper ] = IPUtils::parseRange( $params['ip'] );
-
-			# Extract the common prefix to any rangeblock affecting this IP/CIDR
-			$prefix = substr( $lower, 0, $prefixLen + $cidrLimit / 4 );
-
-			$this->addWhere( [
-				$dbr->expr( 'gb_range_start', IExpression::LIKE, new LikeValue( $prefix, $dbr->anyString() ) ),
-				$dbr->expr( 'gb_range_start', '<=', $lower ),
-				$dbr->expr( 'gb_range_end', '>=', $upper ),
-			] );
+			// Attempt to get an IExpression of conditions for the IP, and die if none were returned.
+			// ::getGlobalBlockLookupConditions does not return null unless 'ip' is an invalid IP. We have checked
+			// above that the IP is valid, so we can safely suppress the Phan warning here.
+			// @phan-suppress-next-line PhanTypeMismatchArgumentNullable
+			$this->addWhere( $this->globalBlockLookup->getGlobalBlockLookupConditions(
+				$params['ip'], 0,
+				GlobalBlockLookup::SKIP_LOCAL_DISABLE_CHECK | GlobalBlockLookup::SKIP_ALLOWED_RANGES_CHECK
+			) );
+		} else {
+			// We need to exclude expired blocks to avoid them appearing in the list of active global blocks.
+			// When the bgip parameter is set, we do not need to specify this as it is added by
+			// ::getGlobalBlockLookupConditions (so this statement is skipped in this case).
+			$this->addWhere( $dbr->expr( 'gb_expiry', '>', $dbr->timestamp() ) );
 		}
 
 		$res = $this->select( __METHOD__ );
 
+		$data = [];
 		$count = 0;
 		foreach ( $res as $row ) {
 			if ( ++$count > $params['limit'] ) {
-				// We've had enough
+				// We've reached the limit requested by the user, which means that there is at least one more row to
+				// be returned in a subsequent request. We set the continue parameter to the timestamp of the row
+				// that was not displayed to allow the user to continue where they left off.
 				$this->setContinueEnumParameter( 'start', wfTimestamp( TS_ISO_8601, $row->gb_timestamp ) );
 				break;
 			}
+
+			// Construct the array of data about this database row to return to the user.
 			$block = [];
 			if ( $fld_id ) {
 				$block['id'] = $row->gb_id;
 			}
-			if ( $fld_address ) {
-				$block['address'] = $row->gb_address;
+			if ( $fld_target ) {
+				$block[$targetPropName] = $row->gb_address;
 				if ( $row->gb_anon_only ) {
 					$block['anononly'] = '';
 				}
@@ -193,12 +220,14 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 			if ( $fld_reason ) {
 				$block['reason'] = $row->gb_reason;
 			}
-			if ( $fld_range ) {
-				$block['rangestart'] = IPUtils::hexToQuad( $row->gb_range_start );
-				$block['rangeend'] = IPUtils::hexToQuad( $row->gb_range_end );
+			if ( $fld_range && $row->gb_range_start ) {
+				$block['rangestart'] = IPUtils::formatHex( $row->gb_range_start );
+				$block['rangeend'] = IPUtils::formatHex( $row->gb_range_end );
 			}
 			$data[] = $block;
 		}
+
+		$result = $this->getResult();
 		$result->setIndexedTagName( $data, 'block' );
 		$result->addValue( 'query', $this->getModuleName(), $data );
 	}
@@ -210,7 +239,7 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 	public function getAllowedParams() {
 		return [
 			'start' => [
-				ParamValidator::PARAM_TYPE => 'timestamp'
+				ParamValidator::PARAM_TYPE => 'timestamp',
 			],
 			'end' => [
 				ParamValidator::PARAM_TYPE => 'timestamp',
@@ -225,10 +254,14 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 			],
 			'ids' => [
 				ParamValidator::PARAM_TYPE => 'integer',
-				ParamValidator::PARAM_ISMULTI => true
+				ParamValidator::PARAM_ISMULTI => true,
 			],
 			'addresses' => [
-				ParamValidator::PARAM_ISMULTI => true
+				ParamValidator::PARAM_ISMULTI => true,
+				ParamValidator::PARAM_DEPRECATED => true,
+			],
+			'targets' => [
+				ParamValidator::PARAM_ISMULTI => true,
 			],
 			'ip' => null,
 			'limit' => [
@@ -236,28 +269,28 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 				ParamValidator::PARAM_TYPE => 'limit',
 				IntegerDef::PARAM_MIN => 1,
 				IntegerDef::PARAM_MAX => ApiBase::LIMIT_BIG1,
-				IntegerDef::PARAM_MAX2 => ApiBase::LIMIT_BIG2
+				IntegerDef::PARAM_MAX2 => ApiBase::LIMIT_BIG2,
 			],
 			'prop' => [
-				ParamValidator::PARAM_DEFAULT => 'id|address|by|timestamp|expiry|reason',
+				ParamValidator::PARAM_DEFAULT => 'id|target|by|timestamp|expiry|reason',
 				ParamValidator::PARAM_TYPE => [
 					'id',
 					'address',
+					'target',
 					'by',
 					'timestamp',
 					'expiry',
 					'reason',
 					'range',
 				],
-				ParamValidator::PARAM_ISMULTI => true
+				ParamValidator::PARAM_ISMULTI => true,
+				ApiBase::PARAM_HELP_MSG_PER_VALUE => [],
+				EnumDef::PARAM_DEPRECATED_VALUES => [ 'address' => true ],
 			]
 		];
 	}
 
 	protected function getDB() {
-		if ( $this->globalBlockingDb === null ) {
-			$this->globalBlockingDb = GlobalBlocking::getReplicaGlobalBlockingDatabase();
-		}
 		return $this->globalBlockingDb;
 	}
 

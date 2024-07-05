@@ -23,6 +23,7 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 	use MockAuthorityTrait;
 
 	private static UserIdentity $testPerformer;
+	private static UserIdentity $testTarget;
 
 	protected function setUp(): void {
 		parent::setUp();
@@ -33,11 +34,31 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 		$this->setMwGlobals( 'wgCentralIdLookupProvider', 'local' );
 	}
 
-	public function testExecuteProvidingBothAddressesAndIP() {
+	/** @dataProvider provideExecuteProvidingIncompatibleParameters */
+	public function testExecuteProvidingIncompatibleParameters( $params ) {
+		// Validate the API errors out when incompatible parameters are provided.
 		$this->expectApiErrorCode( 'invalidparammix' );
 		$this->doApiRequest(
-			[ 'action' => 'query', 'list' => 'globalblocks', 'bgip' => '1.2.3.4/24', 'bgaddresses' => '1.2.3.4' ]
+			array_merge(
+				[ 'action' => 'query', 'list' => 'globalblocks' ],
+				// Add the $params to the request with a mock value for each parameter.
+				array_map(
+					static function () {
+						return 'test';
+					},
+					array_flip( $params )
+				)
+			)
 		);
+	}
+
+	public static function provideExecuteProvidingIncompatibleParameters() {
+		return [
+			'ip and addresses parameters' => [ [ 'bgip', 'bgaddresses' ] ],
+			'ip and targets parameters' => [ [ 'bgip', 'bgtargets' ] ],
+			'targets and addresses parameters' => [ [ 'bgtargets', 'bgaddresses' ] ],
+			'targets, ip, and addresses parameters' => [ [ 'bgtargets', 'bgip', 'bgaddresses' ] ],
+		];
 	}
 
 	/** @dataProvider provideExecuteWithIPParamProvided */
@@ -84,7 +105,7 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 	}
 
 	public function testExecuteWithInvalidIPParam() {
-		$this->expectApiErrorCode( 'param_ip' );
+		$this->expectApiErrorCode( 'invalidip' );
 		$this->doApiRequest( [
 			'action' => 'query', 'list' => 'globalblocks', 'bgip' => 'invalid',
 		] );
@@ -97,9 +118,12 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 		] );
 	}
 
-	public function testExecuteForIPParamWhenBlockHasAlreadyExpired() {
+	/** @dataProvider provideExecuteForBlockThatHasExpired */
+	public function testExecuteForBlockThatHasExpired( $paramName, $paramValue ) {
+		// Validate that expired global blocks are not returned by testing no global blocks are returned when using the
+		// $paramName and $paramValue to filter for just the expired block.
 		[ $result ] = $this->doApiRequest( [
-			'action' => 'query', 'list' => 'globalblocks', 'bgip' => '8.9.7.6'
+			'action' => 'query', 'list' => 'globalblocks', $paramName => $paramValue,
 		] );
 		$this->assertArrayHasKey( 'query', $result );
 		$this->assertArrayHasKey( 'globalblocks', $result['query'] );
@@ -110,17 +134,26 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 		);
 	}
 
+	public static function provideExecuteForBlockThatHasExpired() {
+		return [
+			'With IP param' => [ 'bgip', '8.9.7.6' ],
+			'With IDs param' => [ 'bgids', '6' ],
+			'With targets param' => [ 'bgtargets', '8.9.7.6' ],
+		];
+	}
+
 	public function testExecuteWithIdsParamWhereIdIsForRangeBlockWithAllProps() {
+		// Validates the format of an example global block entry with all properties.
 		[ $result ] = $this->doApiRequest( [
 			'action' => 'query', 'list' => 'globalblocks', 'bgids' => '1',
-			'bgprop' => 'id|address|by|timestamp|expiry|reason|range',
+			'bgprop' => 'id|target|by|timestamp|expiry|reason|range',
 		] );
 		$this->assertArrayHasKey( 'query', $result );
 		$this->assertArrayHasKey( 'globalblocks', $result['query'] );
 		$this->assertCount( 1, $result['query']['globalblocks'] );
 		$this->assertArrayEquals(
 			[
-				'id' => 1, 'address' => '127.0.0.0/24',
+				'id' => 1, 'target' => '127.0.0.0/24',
 				'by' => static::$testPerformer->getName(), 'bywiki' => WikiMap::getCurrentWikiId(),
 				'timestamp' => wfTimestamp( TS_ISO_8601, '20230205060708' ),
 				'expiry' => wfTimestamp( TS_ISO_8601, '20250405060708' ),
@@ -131,10 +164,58 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 		);
 	}
 
-	/** @dataProvider provideExecuteWithAddressesParam */
-	public function testExecuteWithAddressesParam( $addresses, $limit, $expectedBlockIds ) {
+	/** @dataProvider provideExecuteWithRangeProp */
+	public function testExecuteWithRangeProp( $id, $expectedArrayItem ) {
+		// Validate that the 'range' prop works for both blocks on IPv4 and IPv6 addresses/ranges.
 		[ $result ] = $this->doApiRequest( [
-			'action' => 'query', 'list' => 'globalblocks', 'bgaddresses' => $addresses, 'bglimit' => $limit,
+			'action' => 'query', 'list' => 'globalblocks', 'bgids' => $id,
+			'bgprop' => 'id|target|range',
+		] );
+		$this->assertArrayHasKey( 'query', $result );
+		$this->assertArrayHasKey( 'globalblocks', $result['query'] );
+		$this->assertCount( 1, $result['query']['globalblocks'] );
+		$this->assertArrayEquals(
+			$expectedArrayItem,
+			$result['query']['globalblocks'][0],
+			false, true, 'The returned global block entry was not as expected.'
+		);
+	}
+
+	public static function provideExecuteWithRangeProp() {
+		return [
+			'IPV4' => [
+				'1',
+				[ 'id' => 1, 'target' => '127.0.0.0/24', 'rangeend' => '127.0.0.255', 'rangestart' => '127.0.0.0' ],
+			],
+			'IPv6' => [
+				'3',
+				[
+					'id' => 3, 'target' => '2000:ABCD:ABCD:A:0:0:0:0/108',
+					'rangeend' => '2000:ABCD:ABCD:A:0:0:F:FFFF', 'rangestart' => '2000:ABCD:ABCD:A:0:0:0:0',
+				],
+			],
+		];
+	}
+
+	public function testExecuteWithDeprecatedAddressProp() {
+		[ $result ] = $this->doApiRequest( [
+			'action' => 'query', 'list' => 'globalblocks', 'bgids' => '1',
+			'bgprop' => 'address',
+		] );
+		$this->assertArrayHasKey( 'query', $result );
+		$this->assertArrayHasKey( 'globalblocks', $result['query'] );
+		$this->assertCount( 1, $result['query']['globalblocks'] );
+		$this->assertArrayEquals(
+			[ 'address' => '127.0.0.0/24' ],
+			$result['query']['globalblocks'][0],
+			false, true, 'The returned global block entry was not as expected.'
+		);
+	}
+
+	/** @dataProvider provideExecuteWithTargetsParam */
+	public function testExecuteWithTargetsParam( $targets, $limit, $expectedBlockIds ) {
+		[ $result ] = $this->doApiRequest( [
+			'action' => 'query', 'list' => 'globalblocks', 'bgtargets' => $targets, 'bglimit' => $limit,
 			'bgprop' => 'id',
 		] );
 		$this->assertArrayHasKey( 'query', $result );
@@ -154,10 +235,10 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 		}
 	}
 
-	public static function provideExecuteWithAddressesParam() {
+	public static function provideExecuteWithTargetsParam() {
 		return [
 			'One IP and one IPv4 range, limit 2' => [
-				// The IP addresses / ranges to use as the 'bgaddresses' parameter.
+				// The IP addresses / ranges to use as the 'bgtargets' parameter.
 				'127.0.0.1|127.0.0.0/24',
 				// The limit to use as the 'bglimit' parameter.
 				2,
@@ -170,35 +251,39 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 		];
 	}
 
-	public function testExecuteWithInvalidAddressesParam() {
-		$this->expectApiErrorCode( 'param_addresses' );
+	public function testExecuteWithTargetsParamForBlockedUsernameAndIP() {
+		$this->testExecuteWithTargetsParam( static::$testTarget->getName() . '|127.0.0.1', 2, [ '7', '4' ] );
+	}
+
+	public function testExecuteWithTargetsParamForBlockedUsername() {
+		$this->testExecuteWithTargetsParam( static::$testTarget->getName(), 2, [ '7' ] );
+	}
+
+	public function testExecuteWithTargetsParamWithNonExistingUsername() {
+		$this->expectApiErrorCode( 'nosuchuser' );
+		$this->testExecuteWithTargetsParam( 'NonExistingUsername', 1, [] );
+	}
+
+	public function testExecuteWithInvalidAddressesParamWhenGlobalAccountBlocksDisabled() {
+		$this->overrideConfigValue( 'GlobalBlockingAllowGlobalAccountBlocks', false );
+		$this->expectApiErrorCode( 'invalidip' );
 		$this->doApiRequest( [
 			'action' => 'query', 'list' => 'globalblocks', 'bgaddresses' => 'invalid',
 		] );
 	}
 
-	public function testExecuteForAddressesParamWhenBlockHasAlreadyExpired() {
-		[ $result ] = $this->doApiRequest( [
-			'action' => 'query', 'list' => 'globalblocks', 'bgaddresses' => '8.9.7.6'
-		] );
-		$this->assertArrayHasKey( 'query', $result );
-		$this->assertArrayHasKey( 'globalblocks', $result['query'] );
-		$this->assertCount(
-			0,
-			$result['query']['globalblocks'],
-			'No global blocks should have been returned as the block on the specified IP has already expired.'
-		);
-	}
-
 	public function testGetExamplesMessages() {
 		// Test that all the items in ::getExamplesMessages have keys which is a string and values which are valid
 		// message keys.
+		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
 		$main = new ApiMain( $this->apiContext, true );
 		/** @var ApiQuery $query */
 		$query = $main->getModuleManager()->getModule( 'query' );
 		$apiQueryGlobalBlocksModule = new ApiQueryGlobalBlocks(
 			$query, 'globalblock',
-			$this->getServiceContainer()->getCentralIdLookup()
+			$this->getServiceContainer()->getCentralIdLookup(),
+			$globalBlockingServices->getGlobalBlockLookup(),
+			$globalBlockingServices->getGlobalBlockingConnectionProvider()
 		);
 		$apiQueryGlobalBlocksModule = TestingAccessWrapper::newFromObject( $apiQueryGlobalBlocksModule );
 		$examplesMessages = $apiQueryGlobalBlocksModule->getExamplesMessages();
@@ -241,7 +326,14 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 		// Insert a IP block that should not be displayed in the results ever because it is expired
 		ConvertibleTimestamp::setFakeTime( '20230105060712' );
 		$globalBlockManager->block( '8.9.7.6', 'test4', '20230203060708', $testPerformer );
+		// Insert a global block on a username target
+		ConvertibleTimestamp::setFakeTime( '20230205060713' );
+		$testUser = $this->getMutableTestUser()->getUserIdentity();
+		$globalBlockManager->block( $testUser->getName(), 'test5', '20240705060708', $testPerformer );
 		// Store the $testPerformer for later use
 		static::$testPerformer = $testPerformer;
+		static::$testTarget = $testUser;
+		// Reset the fake time before returning to avoid issues. It will be set to a fake time again in ::setUp.
+		ConvertibleTimestamp::setFakeTime( false );
 	}
 }
