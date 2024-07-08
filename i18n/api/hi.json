@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"AnupamM",
 			"Saurmandal"
 		]
 	},
-	"globalblocking-apierror-badip": "IP पता $1 अमान्य है"
+	"globalblocking-apierror-badip": "IP पता $1 अमान्य है",
+	"apihelp-query+globalblocks-paramvalue-prop-target": "वैश्विक ब्लॉक के लक्ष्य को जोड़ता है।",
+	"apihelp-query+globalblocks-paramvalue-prop-reason": "वैश्विक ब्लॉक के लिए दिए गए कारण को जोड़ता है।"
 }
