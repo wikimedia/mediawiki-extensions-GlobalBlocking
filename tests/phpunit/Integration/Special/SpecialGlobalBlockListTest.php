@@ -15,6 +15,14 @@ use SpecialPageTestBase;
 class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 
 	private static array $blockedTargets;
+	private static string $globallyBlockedUser;
+
+	protected function setUp(): void {
+		parent::setUp();
+		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
+		// to be the local provider.
+		$this->setMwGlobals( 'wgCentralIdLookupProvider', 'local' );
+	}
 
 	/**
 	 * @inheritDoc
@@ -23,13 +31,15 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 		$services = $this->getServiceContainer();
 		$globalBlockingServices = GlobalBlockingServices::wrap( $services );
 		return new SpecialGlobalBlockList(
-			$services->getBlockUtils(),
+			$services->getUserNameUtils(),
 			$services->getCommentFormatter(),
 			$services->getCentralIdLookup(),
 			$globalBlockingServices->getGlobalBlockLookup(),
 			$globalBlockingServices->getGlobalBlockingLinkBuilder(),
 			$globalBlockingServices->getGlobalBlockingConnectionProvider(),
-			$globalBlockingServices->getGlobalBlockLocalStatusLookup()
+			$globalBlockingServices->getGlobalBlockLocalStatusLookup(),
+			$services->getUserIdentityLookup(),
+			$globalBlockingServices->getGlobalBlockingUserVisibilityLookup()
 		);
 	}
 
@@ -46,23 +56,18 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 		$this->assertStringContainsString( '(globalblocking-search-legend', $html );
 		// Verify that the special title and description are correct
 		$this->assertStringContainsString( '(globalblocking-list', $html );
-		$this->assertStringContainsString( '(globalblocking-list-intro', $html );
+		$this->assertStringContainsString( '(globalblocklist-summary', $html );
 		// Verify that a list of all active global blocks is shown (even though the form has not been submitted)
 		foreach ( self::$blockedTargets as $target ) {
 			$this->assertStringContainsString( $target, $html );
 		}
 	}
 
-	/**
-	 * @dataProvider provideIPParam
-	 */
-	public function testIpParam( string $ip, $expectedTarget ) {
-		[ $html ] = $this->executeSpecialPage(
-			'',
-			new FauxRequest( [
-				'ip' => $ip,
-			] )
-		);
+	/** @dataProvider provideTargetParam */
+	public function testTargetParam( string $target, $expectedTarget ) {
+		// Override the CIDR limits to allow IPv6 /18 ranges in the test.
+		$this->overrideConfigValue( 'GlobalBlockingCIDRLimit', [ 'IPv4' => 16, 'IPv6' => 17 ] );
+		[ $html ] = $this->executeSpecialPage( '', new FauxRequest( [ 'target' => $target ] ) );
 		if ( $expectedTarget ) {
 			$this->assertStringContainsString(
 				$expectedTarget, $html, 'The expected block target was not shown in the page'
@@ -74,7 +79,7 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 		}
 	}
 
-	public function provideIPParam() {
+	public function provideTargetParam() {
 		return [
 			'single IPv4' => [ '1.2.3.4', '1.2.3.4' ],
 			'exact IPv4 range' => [ '1.2.3.4/24', '1.2.3.0/24' ],
@@ -86,15 +91,44 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 		];
 	}
 
-	public function testUsernameAsSubpage() {
+	public function testTargetParamWithGloballyBlockedUser() {
+		$this->testTargetParam( self::$globallyBlockedUser, self::$globallyBlockedUser );
+	}
+
+	public function testTargetParamWithNonExistentUser() {
+		[ $html ] = $this->executeSpecialPage( '', new FauxRequest( [ 'target' => 'NonExistentTestUser1234' ] ) );
+		$this->assertStringContainsString(
+			'(nosuchusershort', $html, 'The expected block target was not shown in the page'
+		);
+	}
+
+	public function testIPParam() {
+		// Load the page with the B/C 'ip' param for an IP that is not globally blocked and verify that the page
+		// displays no results.
+		[ $html ] = $this->executeSpecialPage( '', new FauxRequest( [ 'ip' => '7.6.5.4' ] ) );
+		$this->assertStringContainsString(
+			'globalblocking-list-noresults', $html, 'Results shown when no results were expected'
+		);
+	}
+
+	public function testUsernameAsSubpageWhenGlobalAccountBlocksDisabled() {
+		$this->overrideConfigValue( 'GlobalBlockingAllowGlobalAccountBlocks', false );
 		[ $html ] = $this->executeSpecialPage( 'test-user' );
 		$this->assertStringContainsString(
-			'globalblocking-list-ipinvalid', $html, 'The form did not display the correct error for a username target'
+			'badipaddress', $html, 'The form did not display the correct error for a username target'
 		);
 	}
 
 	/** @dataProvider provideViewPageWithOptionsSelected */
-	public function testViewPageWithOptionsSelected( $selectedOptions, $expectedTargets ) {
+	public function testViewPageWithOptionsSelected(
+		$selectedOptions, $expectedTargets, $accountIsAnExpectedTargets
+	) {
+		// Add the globally blocked account to the $expectedTargets array if $accountIsAnExpectedTargets is true.
+		// This is required because we do not have access to the globally blocked account name in the data provider,
+		// but do once this test runs.
+		if ( $accountIsAnExpectedTargets ) {
+			$expectedTargets[] = self::$globallyBlockedUser;
+		}
 		// Load the special page with the selected options.
 		[ $html ] = $this->executeSpecialPage( '', new FauxRequest( [ 'wpOptions' => $selectedOptions ] ) );
 		// Verify that the expected targets are not there.
@@ -116,16 +150,28 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 
 	public function provideViewPageWithOptionsSelected() {
 		return [
-			'Hide IP blocks' => [ [ 'addressblocks' ], [ '1.2.3.0/24', '0:0:0:0:0:0:0:0/19' ] ],
-			'Hide range blocks' => [ [ 'rangeblocks' ], [ '1.2.3.4' ] ],
-			'Hide IP and range blocks' => [ [ 'addressblocks', 'rangeblocks' ], [] ],
-			'Hide temporary blocks' => [ [ 'tempblocks' ], [ '1.2.3.4', '0:0:0:0:0:0:0:0/19' ] ],
-			'Hide indefinite blocks' => [ [ 'indefblocks' ], [ '1.2.3.0/24' ] ],
-			'Hide temporary and indefinite blocks' => [ [ 'tempblocks', 'indefblocks' ], [] ],
+			'Hide IP blocks' => [
+				// The value of the wgOptions parameter
+				[ 'addressblocks' ],
+				// The targets that should appear in the special page once submitting the form.
+				[ '1.2.3.0/24', '0:0:0:0:0:0:0:0/19' ],
+				// Whether the globally blocked account should also be a target that appears in the special page.
+				true
+			],
+			'Hide range blocks' => [ [ 'rangeblocks' ], [ '1.2.3.4' ], true ],
+			'Hide user blocks' => [ [ 'userblocks' ], [ '1.2.3.4', '1.2.3.0/24', '0:0:0:0:0:0:0:0/19' ], false ],
+			'Hide IP and range blocks' => [ [ 'addressblocks', 'rangeblocks' ], [], true ],
+			'Hide user, IP, and range blocks' => [ [ 'addressblocks', 'rangeblocks', 'userblocks' ], [], false ],
+			'Hide temporary blocks' => [ [ 'tempblocks' ], [ '1.2.3.4', '0:0:0:0:0:0:0:0/19' ], true ],
+			'Hide indefinite blocks' => [ [ 'indefblocks' ], [ '1.2.3.0/24' ], false ],
+			'Hide temporary and indefinite blocks' => [ [ 'tempblocks', 'indefblocks' ], [], false ],
 		];
 	}
 
 	public function addDBDataOnce() {
+		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
+		// to be the local provider.
+		$this->setMwGlobals( 'wgCentralIdLookupProvider', 'local' );
 		// Create some testing globalblocks database rows for IPs and IP ranges for use in the above tests. These
 		// should not be modified by any code in SpecialGlobalBlockList, so this can be added once per-class.
 		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager();
@@ -139,6 +185,12 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 		$this->assertStatusGood(
 			$globalBlockManager->block( '0:0:0:0:0:0:0:0/19', 'Test reason3', 'infinite', $testPerformer )
 		);
-		self::$blockedTargets = [ '1.2.3.4', '1.2.3.0/24', '0:0:0:0:0:0:0:0/19' ];
+		// Globally block a username to test handling global account blocks
+		$globallyBlockedUser = $this->getMutableTestUser()->getUserIdentity()->getName();
+		$this->assertStatusGood(
+			$globalBlockManager->block( $globallyBlockedUser, 'Test reason4', 'infinite', $testPerformer )
+		);
+		self::$blockedTargets = [ '1.2.3.4', '1.2.3.0/24', '0:0:0:0:0:0:0:0/19', $globallyBlockedUser ];
+		self::$globallyBlockedUser = $globallyBlockedUser;
 	}
 }

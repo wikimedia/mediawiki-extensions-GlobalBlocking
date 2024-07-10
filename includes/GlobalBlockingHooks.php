@@ -27,6 +27,7 @@ use MediaWiki\Title\Title;
 use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\Hook\UserIsBlockedGloballyHook;
 use MediaWiki\User\User;
+use MediaWiki\User\UserIdentityLookup;
 use MediaWiki\User\UserNameUtils;
 use Wikimedia\IPUtils;
 
@@ -53,6 +54,7 @@ class GlobalBlockingHooks implements
 	private GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup;
 	private UserNameUtils $userNameUtils;
 	private GlobalBlockingUserVisibilityLookup $globalBlockingUserVisibilityLookup;
+	private UserIdentityLookup $userIdentityLookup;
 
 	/**
 	 * @param Config $mainConfig
@@ -64,6 +66,7 @@ class GlobalBlockingHooks implements
 	 * @param GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup
 	 * @param UserNameUtils $userNameUtils
 	 * @param GlobalBlockingUserVisibilityLookup $globalBlockingUserVisibilityLookup
+	 * @param UserIdentityLookup $userIdentityLookup
 	 */
 	public function __construct(
 		Config $mainConfig,
@@ -74,7 +77,8 @@ class GlobalBlockingHooks implements
 		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
 		GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup,
 		UserNameUtils $userNameUtils,
-		GlobalBlockingUserVisibilityLookup $globalBlockingUserVisibilityLookup
+		GlobalBlockingUserVisibilityLookup $globalBlockingUserVisibilityLookup,
+		UserIdentityLookup $userIdentityLookup
 	) {
 		$this->config = $mainConfig;
 		$this->commentFormatter = $commentFormatter;
@@ -85,6 +89,7 @@ class GlobalBlockingHooks implements
 		$this->globalBlockLocalStatusLookup = $globalBlockLocalStatusLookup;
 		$this->userNameUtils = $userNameUtils;
 		$this->globalBlockingUserVisibilityLookup = $globalBlockingUserVisibilityLookup;
+		$this->userIdentityLookup = $userIdentityLookup;
 	}
 
 	/**
@@ -242,7 +247,9 @@ class GlobalBlockingHooks implements
 				$this->lookup,
 				$this->globalBlockLinkBuilder,
 				$this->globalBlockingConnectionProvider,
-				$this->globalBlockLocalStatusLookup
+				$this->globalBlockLocalStatusLookup,
+				$this->userIdentityLookup,
+				$this->globalBlockingUserVisibilityLookup
 			);
 			$body = $pager->formatRow( $block );
 

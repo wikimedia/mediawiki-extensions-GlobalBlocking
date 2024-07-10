@@ -51,13 +51,15 @@
 		"GlobalBlockList": {
 			"class": "MediaWiki\\Extension\\GlobalBlocking\\Special\\SpecialGlobalBlockList",
 			"services": [
-				"BlockUtils",
+				"UserNameUtils",
 				"CommentFormatter",
 				"CentralIdLookup",
 				"GlobalBlocking.GlobalBlockLookup",
 				"GlobalBlocking.GlobalBlockingLinkBuilder",
 				"GlobalBlocking.GlobalBlockingConnectionProvider",
-				"GlobalBlocking.GlobalBlockLocalStatusLookup"
+				"GlobalBlocking.GlobalBlockLocalStatusLookup",
+				"UserIdentityLookup",
+				"GlobalBlocking.GlobalBlockingUserVisibilityLookup"
 			]
 		},
 		"GlobalBlockStatus": {
@@ -220,7 +222,8 @@
 				"GlobalBlocking.GlobalBlockingConnectionProvider",
 				"GlobalBlocking.GlobalBlockLocalStatusLookup",
 				"UserNameUtils",
-				"GlobalBlocking.GlobalBlockingUserVisibilityLookup"
+				"GlobalBlocking.GlobalBlockingUserVisibilityLookup",
+				"UserIdentityLookup"
 			]
 		},
 		"usermerge": {
