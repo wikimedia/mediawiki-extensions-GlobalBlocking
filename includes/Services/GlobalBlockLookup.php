@@ -20,7 +20,6 @@ use Wikimedia\IPUtils;
 use Wikimedia\Rdbms\IExpression;
 use Wikimedia\Rdbms\IResultWrapper;
 use Wikimedia\Rdbms\LikeValue;
-use Wikimedia\Rdbms\OrExpressionGroup;
 
 /**
  * Allows looking up global blocks in the globalblocks table.
@@ -548,7 +547,7 @@ class GlobalBlockLookup {
 		$results = $dbr->newSelectQueryBuilder()
 			->select( self::selectFields() )
 			->from( 'globalblocks' )
-			->where( new OrExpressionGroup( ...$conds ) )
+			->where( $dbr->orExpr( $conds ) )
 			->caller( __METHOD__ )
 			->fetchResultSet();
 
