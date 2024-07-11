@@ -44,10 +44,11 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 	}
 
 	public function testViewPageBeforeSubmission() {
+		$this->overrideConfigValue( 'GlobalBlockingAllowGlobalAccountBlocks', true );
 		// Need to get the full HTML to be able to check that the subtitle links are present
 		[ $html ] = $this->executeSpecialPage( '', null, null, null, true );
 		// Check that the form fields exist
-		$this->assertStringContainsString( '(globalblocking-search-ip', $html );
+		$this->assertStringContainsString( '(globalblocking-search-target', $html );
 		$this->assertStringContainsString( '(globalblocking-list-tempblocks', $html );
 		$this->assertStringContainsString( '(globalblocking-list-indefblocks', $html );
 		$this->assertStringContainsString( '(globalblocking-list-addressblocks', $html );

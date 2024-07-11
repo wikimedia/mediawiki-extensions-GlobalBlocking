@@ -126,7 +126,7 @@ class SpecialGlobalBlockList extends FormSpecialPage {
 				'iprangelimits' => $this->getConfig()->get( 'GlobalBlockingCIDRLimit' ),
 				'name' => 'target',
 				'id' => 'mw-globalblocking-search-ip',
-				'label-message' => 'globalblocking-search-ip',
+				'label-message' => $accountBlocksEnabled ? 'globalblocking-search-target' : 'globalblocking-search-ip',
 				'default' => $this->target,
 			],
 			'Options' => [
