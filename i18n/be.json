@@ -29,8 +29,6 @@
 	"globalblocking-list-indefblocks": "Схаваць бестэрміновыя блакаванні",
 	"globalblocking-list-addressblocks": "Схаваць блакаванні асобных IP",
 	"globalblocking-list-rangeblocks": "Схаваць блакіроўкі дыяпазонаў",
-	"globalblocking-expiringblock": "канчаецца $1 $2",
-	"globalblocking-infiniteblock": "бясконца",
 	"globalblocking-unblock-reason": "Прычына:",
 	"globalblocking-whitelist": "Лакальны статус глабальных блакіровак",
 	"globalblocking-whitelist-reason": "Прычына:",

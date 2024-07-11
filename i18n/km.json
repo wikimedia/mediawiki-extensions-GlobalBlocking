@@ -34,7 +34,6 @@
 	"globalblocking-list-whitelisted": "បាន​បិទ​ជា​មូលដ្ឋាន​ដោយ $1: $2",
 	"globalblocking-list-whitelist": "ស្ថានភាព​មូលដ្ឋាន",
 	"globalblocking-list-modify": "កែសំរួល",
-	"globalblocking-expiringblock": "ផុតកំណត់ នៅថ្ងៃ $1 ម៉ោង $2",
 	"globalblocking-goto-block": "រាំងខ្ទប់​អាសយដ្ឋាន​ជា​សកល",
 	"globalblocking-goto-unblock": "ដកចេញ​ការរាំងខ្ទប់​សកល",
 	"globalblocking-return": "ត្រឡប់​ទៅកាន់​បញ្ជី​នៃ​ការរាំងខ្ទប់​សកល",

@@ -27,7 +27,6 @@
 	"globalblocking-list-unblock": "пок кардан",
 	"globalblocking-list-whitelisted": "маҳаллӣ ғайрифаъол карда шудааст аз тарафи $1: $2",
 	"globalblocking-list-whitelist": "вазъияти маҳаллӣ",
-	"globalblocking-expiringblock": "дар $1 соати $2 ба поён мерасад",
 	"globalblocking-goto-block": "Саросарӣ бастани як нишонаи IP",
 	"globalblocking-goto-unblock": "Пок кардани бастаи саросарӣ",
 	"globalblocking-goto-status": "Тағйири вазъияти маҳаллӣ ба як бастаи саросарӣ",

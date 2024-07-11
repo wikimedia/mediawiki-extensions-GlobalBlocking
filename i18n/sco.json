@@ -5,6 +5,5 @@
 		]
 	},
 	"globalblocking-local-failed": "Blockin the IP address locallie failed aes the gien IP address is awreadie blockit oan this wiki",
-	"globalblocking-also-local": "Block the gien IP address locallie oan this wiki ava",
-	"globalblocking-expiringblock": "dies oan $1 at $2"
+	"globalblocking-also-local": "Block the gien IP address locallie oan this wiki ava"
 }

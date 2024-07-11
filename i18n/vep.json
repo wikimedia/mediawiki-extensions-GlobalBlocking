@@ -11,7 +11,6 @@
 	"globalblocking-search-ip": "IP-adres:",
 	"globalblocking-list-unblock": "Heitta blokiruind",
 	"globalblocking-list-modify": "modificiruida",
-	"globalblocking-expiringblock": "lopiše $1 $2",
 	"globalblocking-list-noresults": "Ectud IP-adres ei ole blokiruidud.",
 	"globalblocking-goto-block": "Blokiruida IP-adres kogonaz",
 	"globalblocking-goto-unblock": "Heitta kogonaz blokiruind",

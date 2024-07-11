@@ -25,7 +25,6 @@
 	"globalblocking-search-submit": "Chèche pou blokaj yo",
 	"globalblocking-list-ipinvalid": "Adrès IP ki ou t ap chèche ($1) pa bon.\nTanpri antre yon adrès IP ki bon.",
 	"globalblocking-search-errors": "Rechèch ou a pa t reyisi pou rezon {{PLURAL:$1|sa|sa yo}}:",
-	"globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> (''$3'') bloke globalman [[Special:Contributions/$4|$4]] ''($5)''",
 	"globalblocking-list-expiry": "expirasyon $1",
 	"globalblocking-list-anononly": "Anonim sèlman",
 	"globalblocking-list-unblock": "Debloke",

@@ -36,7 +36,6 @@
 	"globalblocking-list-indefblocks": "Engkebang cadelan tan mawates",
 	"globalblocking-list-addressblocks": "Engkebang pacadelan IP tunggal",
 	"globalblocking-list-rangeblocks": "Engkebang pentang cadélan",
-	"globalblocking-expiringblock": "kadaluwarsa ring $1 $2",
 	"globalblocking-unblock-reason": "Hawanan:",
 	"globalblocking-blockedtext-on-range": "Alamat IP Ragané magenah ring pentang sané sampun kacadel ring sajebag wiki."
 }

@@ -5,8 +5,6 @@
 		]
 	},
 	"globalblocking-list": "List faan globaal speret IP-adresen",
-	"globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> (''$3'') hää globaal speret [[Special:Contributions/$4|$4]] ''($5)''",
-	"globalblocking-expiringblock": "lääpt di $1 am a klook $2 uf",
 	"globalblocking-contribs-notice": "Detdiar IP-adres as tu tidj globaal speret.\nDiar fulagt di logbuk-iindrach för globaal speren:",
 	"globalblocklist": "Globaal speret IP-adresen",
 	"globalblockstatus": "Lokaal tustant faan globaal speren"

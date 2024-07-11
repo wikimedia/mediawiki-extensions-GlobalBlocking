@@ -8,6 +8,5 @@
 	},
 	"globalblocking-search-ip": "IP:",
 	"globalblocking-list-anononly": "zan ahtocaitl",
-	"globalblocking-expiringblock": "tlami ipan $1 ipan $2",
 	"globalblocking-unblock-reason": "Ipampa:"
 }

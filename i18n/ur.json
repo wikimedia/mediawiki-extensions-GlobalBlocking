@@ -34,8 +34,6 @@
 	"globalblocking-list-indefblocks": "لامحدود پابندیاں چھپائیں",
 	"globalblocking-list-addressblocks": "تنہا آئی پی پابندیوں کو چھپائیں",
 	"globalblocking-list-rangeblocks": "رینج پابندیاں چھپائیں",
-	"globalblocking-expiringblock": "مورخہ $1 بوقت $2 بجے اختتام پزیر ہوگی",
-	"globalblocking-infiniteblock": "لا محدود",
 	"globalblocking-goto-block": "عالمی سطح پر ایک آئی پی ایڈریس بلاک",
 	"globalblocking-goto-unblock": "ایک عالمی بلاک حذف کریں",
 	"globalblocking-goto-status": "ایک عالمی بلاک مقامی کیفیت تبدیل کریں",

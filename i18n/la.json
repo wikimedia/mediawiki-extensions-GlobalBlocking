@@ -4,7 +4,6 @@
 			"UV"
 		]
 	},
-	"globalblocking-expiringblock": "exit $2, $1",
 	"globalblocking-whitelist": "Status localis obstructionum globalium",
 	"globalblocking-showlog": "Hic locus IP antea obstructus est.\nCommodule notatio obstructionum subter datur.",
 	"globalblockstatus": "Status localis obstructionum globalium"

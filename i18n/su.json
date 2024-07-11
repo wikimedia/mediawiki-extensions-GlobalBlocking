@@ -4,7 +4,6 @@
 			"Irwangatot"
 		]
 	},
-	"globalblocking-expiringblock": "kadaluwarsa $1 jam $2",
 	"globalblocking-unblock-reason": "Alesan:",
 	"globalblocking-whitelist-reason": "Alesan:"
 }

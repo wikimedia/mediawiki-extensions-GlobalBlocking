@@ -6,7 +6,6 @@
 	},
 	"globalblocking-block-reason": "Шалтгаан:",
 	"globalblocking-block-expiry-selector-other": "Өөр хугацаа:",
-	"globalblocking-expiringblock": "$1-ний $2-д хугацаа нь дуусна",
 	"globalblocking-unblock-reason": "Шалтгаан:",
 	"globalblocking-whitelist-reason": "Шалтгаан:"
 }

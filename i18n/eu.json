@@ -17,7 +17,6 @@
 	"globalblocking-list-anononly": "anonimoak bakarrik",
 	"globalblocking-list-unblock": "kendu",
 	"globalblocking-list-modify": "aldatu",
-	"globalblocking-expiringblock": "blokeoaldiaren bukaera: $1, $2",
 	"globalblocking-goto-unblock": "Blokeo global bat kendu",
 	"globalblocking-unblock": "Blokeo global bat kendu",
 	"globalblocking-unblock-legend": "Blokeo global bat kendu",

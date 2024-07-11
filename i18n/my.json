@@ -35,7 +35,6 @@
 	"globalblocking-list-unblock": "ဖယ်ရှားရန်",
 	"globalblocking-list-whitelist": "ဒေသတွင်း အခြေနေ",
 	"globalblocking-list-modify": "ပြုပြင်မွမ်းမံရန်",
-	"globalblocking-expiringblock": "$1 ရက် $2 အချိန်တွင် သက်တမ်းကုန်မည်",
 	"globalblocking-list-noresults": "ထည့်သွင်းထားသည့် ပါရာမီများနှင့်ပတ်သက်၍ ရှာဖွေတွေ့ရှိထားသော ရလဒ်မရှိပါ။",
 	"globalblocking-goto-block": "ဂလိုဘယ်အားဖြင့် ပိတ်ပင်ထားသော အိုင်ပီလိပ်စာ",
 	"globalblocking-goto-unblock": "ဂလိုဘယ် ပိတ်ပင်တားဆီးမှုတစ်ခုကို ဖယ်ရှားရန်",

@@ -18,7 +18,6 @@
 	"globalblocking-search-ip": "IP adrese:",
 	"globalblocking-list-ipinvalid": "IP adrese, ko tu ievadīji ($1), ir nederīga.\nLūdzu, ievadiet derīgu IP adresi.",
 	"globalblocking-list-whitelist": "lokālais statuss",
-	"globalblocking-expiringblock": "beidzas $1 $2",
 	"globalblocking-unblock-reason": "Iemesls:",
 	"globalblocking-whitelist-legend": "Mainīt lokālo statusu",
 	"globalblocking-whitelist-reason": "Iemesls:",

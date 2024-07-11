@@ -4,11 +4,10 @@
 			"Salvemm el lombard"
 		]
 	},
-	"globalblocking-list-intro": "Questa chì a l'è ona lista de tucc i bloch globai ativ adess.\nOn quai bloch l'è marcad Come smorzad localmentː quest el signifega che l'è aplicad ai alter sit, ma on aministrador local l'ha decidud de smorzàll in su 'sto wiki chì.",
+	"globalblocklist-summary": "Questa chì a l'è ona lista de tucc i bloch globai ativ adess.\nOn quai bloch l'è marcad Come smorzad localmentː quest el signifega che l'è aplicad ai alter sit, ma on aministrador local l'ha decidud de smorzàll in su 'sto wiki chì.",
 	"globalblocking-search-legend": "Cerca on bloch global",
 	"globalblocking-search-submit": "Cerca i bloch",
 	"globalblocking-list-tempblocks": "Scond i bloch temporani",
-	"globalblocking-expiringblock": "el finiss el $1 a $2",
 	"globalblocking-whitelist-intro": "Te podet drovà quell modol chì per cambià el stat local d'on bloch global.\nSe on bloch global l'è smorzad in su 'stoo wiki chì, i utent in su l'IP blocad globalment i podarann fà normalment di modifeghe.",
 	"globalblocking-logpage": "Register di bloch globai",
 	"globalblocklist": "Lista di adress IP blocad in tut i canton",
