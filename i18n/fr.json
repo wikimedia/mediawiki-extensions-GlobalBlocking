@@ -110,6 +110,7 @@
 	"globalblocking-logpagetext": "Voici un journal des blocages globaux qui ont été faits et retirés sur ce wiki.\nNotez que les blocages globaux peuvent être faits ou annulés sur d’autres wikis, et que ces blocages globaux sont de nature à interférer sur ce wiki.\nPour visionner tous les blocages globaux actifs, vous pouvez visiter la [[Special:GlobalBlockList|liste des blocages globaux]].",
 	"globalblocking-logentry-whitelist": "$1{{GENDER:$2|}} a désactivé localement le blocage global sur $3",
 	"globalblocking-logentry-dewhitelist": "$1{{GENDER:$2|}} a de nouveau autorisé localement le blocage global sur $3",
+	"globalblocking-block-flag-anon-only": "utilisateurs anonymes seulement",
 	"globalblocking-loglink": "L’utilisateur $1 est bloqué globalement ([[{{#Special:GlobalBlockList}}/$1|détails]]).",
 	"globalblocking-contribs-notice": "Cet utilisateur est actuellement bloqué de manière globale.\nL’entrée de journal du blocage global est fournie ci-dessous à titre d’information :",
 	"globalblocking-showlog": "Cet utilisateur a été bloqué antérieurement.\nLe journal des blocages est disponible ci-dessous :",
