@@ -236,7 +236,7 @@ class GlobalBlockLogFormatterTest extends LogFormatterTestCase {
 			],
 			false
 		);
-		$formatter = LogFormatter::newFromRow( $row );
+		$formatter = $this->getServiceContainer()->getLogFormatterFactory()->newFromRow( $row );
 		$formatter->context->setAuthority( $logViewAuthority );
 		$formatter->setAudience( $audience );
 		if ( $shouldShowAction ) {
@@ -310,7 +310,7 @@ class GlobalBlockLogFormatterTest extends LogFormatterTestCase {
 			],
 			false
 		);
-		$formatter = LogFormatter::newFromRow( $row );
+		$formatter = $this->getServiceContainer()->getLogFormatterFactory()->newFromRow( $row );
 		$formatter->context->setAuthority( $logViewAuthority );
 		$this->assertEquals(
 			"Sysop globally blocked $expectedName with an expiration time of infinite",
@@ -384,7 +384,7 @@ class GlobalBlockLogFormatterTest extends LogFormatterTestCase {
 			],
 			false
 		);
-		$formatter = LogFormatter::newFromRow( $row );
+		$formatter = $this->getServiceContainer()->getLogFormatterFactory()->newFromRow( $row );
 		$formatter->context->setAuthority( $logViewAuthority );
 		$this->assertEquals(
 			"Sysop globally blocked $expectedName with an expiration time of infinite",
