@@ -57,6 +57,7 @@
 	"globalblocking-list-ipinvalid": "כתובת ה־IP שחיפשת ($1) אינה תקינה.\nנא להזין כתובת IP תקינה.",
 	"globalblocking-list-target-invalid": "המשתמש שחיפשת ($1) אינו תקין.\nנא להזין כתובת IP תקינה.",
 	"globalblocking-search-errors": "החיפוש נכשל בגלל {{PLURAL:$1|הסיבה הבאה|הסיבות הבאות}}:",
+	"globalblocking-list-item": "$1: <span class=\"plainlinks\"><strong>$3</strong></span> <i>$4</i> {{GENDER:$2|חסם|חסמה}} גלובלית את {{GENDER:$5|$6}} עם זמן פקיעה של $7 $8 $9 $10",
 	"globalblocking-list-expiry": "פקיעת החסימה: $1",
 	"globalblocking-list-anononly": "משתמשים אנונימיים בלבד",
 	"globalblocking-list-unblock": "הסרה",
