@@ -33,19 +33,27 @@ class GlobalBlockingSchemaHooks implements LoadExtensionSchemaUpdatesHook {
 			'gb_by_central_id',
 			"$base/sql/$type/patch-add-gb_by_central_id.sql"
 		);
-		$updater->addPostDatabaseUpdateMaintenance( PopulateCentralId::class );
-		$updater->modifyExtensionField(
-			'globalblocks',
-			'gb_anon_only',
-			"$base/sql/$type/patch-globalblocks-gb_anon_only.sql"
-		);
+		$updater->addExtensionUpdateOnVirtualDomain( [
+			'virtual-globalblocking',
+			'runMaintenance',
+			PopulateCentralId::class
+		] );
+		if ( $updater->fieldExists( 'globalblocks', 'gb_by' ) ) {
+			$updater->modifyExtensionField(
+				'globalblocks',
+				'gb_anon_only',
+				"$base/sql/$type/patch-globalblocks-gb_anon_only.sql"
+			);
+		}
 
 		// 1.39
-		$updater->modifyExtensionField(
-			'globalblocks',
-			'gb_expiry',
-			"$base/sql/$type/patch-globalblocks-timestamps.sql"
-		);
+		if ( $updater->fieldExists( 'globalblocks', 'gb_by' ) ) {
+			$updater->modifyExtensionField(
+				'globalblocks',
+				'gb_expiry',
+				"$base/sql/$type/patch-globalblocks-timestamps.sql"
+			);
+		}
 		if ( $type === 'postgres' ) {
 			$updater->modifyExtensionField(
 				'global_block_whitelist',
@@ -65,10 +73,19 @@ class GlobalBlockingSchemaHooks implements LoadExtensionSchemaUpdatesHook {
 			'gbw_target_central_id',
 			"$base/sql/$type/patch-add-gbw_target_central_id.sql"
 		);
-		$updater->modifyExtensionField(
+		if ( $updater->fieldExists( 'globalblocks', 'gb_by' ) ) {
+			$updater->modifyExtensionField(
+				'globalblocks',
+				'gb_by',
+				"$base/sql/$type/patch-modify-gb_by-default.sql"
+			);
+		}
+
+		// 1.43
+		$updater->dropExtensionField(
 			'globalblocks',
 			'gb_by',
-			"$base/sql/$type/patch-modify-gb_by-default.sql"
+			"$base/sql/$type/patch-globalblocks-drop-gb_by.sql"
 		);
 	}
 }

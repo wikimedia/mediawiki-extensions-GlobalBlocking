@@ -9,7 +9,6 @@ if ( $IP === false ) {
 require_once "$IP/maintenance/Maintenance.php";
 
 use LoggedUpdateMaintenance;
-use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\WikiMap\WikiMap;
@@ -36,8 +35,7 @@ class PopulateCentralId extends LoggedUpdateMaintenance {
 	 * @inheritDoc
 	 */
 	public function doDbUpdates() {
-		$dbr = GlobalBlocking::getReplicaGlobalBlockingDatabase();
-		$dbw = GlobalBlocking::getPrimaryGlobalBlockingDatabase();
+		$dbw = $this->getDB( DB_PRIMARY );
 		$services = MediaWikiServices::getInstance();
 		$lbFactory = $services->getDBLoadBalancerFactory();
 		$lookup = $services->getCentralIdLookup();
@@ -46,7 +44,7 @@ class PopulateCentralId extends LoggedUpdateMaintenance {
 		$batchSize = $this->getBatchSize();
 		$count = 0;
 		$failed = 0;
-		$lastBlock = $dbr->newSelectQueryBuilder()
+		$lastBlock = $dbw->newSelectQueryBuilder()
 			->select( 'MAX(gb_id)' )
 			->from( 'globalblocks' )
 			->caller( __METHOD__ )
@@ -60,14 +58,14 @@ class PopulateCentralId extends LoggedUpdateMaintenance {
 			$max = $min + $batchSize;
 			$this->output( "Now processing global blocks with id between {$min} and {$max}...\n" );
 
-			$res = $dbr->newSelectQueryBuilder()
+			$res = $dbw->newSelectQueryBuilder()
 				->select( [ 'gb_id', 'gb_by' ] )
 				->from( 'globalblocks' )
 				->where( [
 					'gb_by_central_id' => null,
 					"gb_by_wiki" => $wikiId,
-					$dbr->expr( 'gb_id', '>=', $min ),
-					$dbr->expr( 'gb_id', '<=', $max ),
+					$dbw->expr( 'gb_id', '>=', $min ),
+					$dbw->expr( 'gb_id', '<=', $max ),
 				] )
 				->caller( __METHOD__ )
 				->fetchResultSet();
