@@ -22,7 +22,6 @@ class GlobalBlockManager {
 
 	public const CONSTRUCTOR_OPTIONS = [
 		'GlobalBlockingCIDRLimit',
-		'GlobalBlockingAllowGlobalAccountBlocks',
 	];
 
 	private ServiceOptions $options;
@@ -218,12 +217,7 @@ class GlobalBlockManager {
 
 		$id = $this->globalBlockLookup->getGlobalBlockId( $data[ 'target' ], DB_PRIMARY );
 		if ( $id === 0 ) {
-			if ( $this->options->get( 'GlobalBlockingAllowGlobalAccountBlocks' ) ) {
-				$errorMessageKey = 'globalblocking-notblocked-new';
-			} else {
-				$errorMessageKey = 'globalblocking-notblocked';
-			}
-			return StatusValue::newFatal( $errorMessageKey, $data['target'] );
+			return StatusValue::newFatal( 'globalblocking-notblocked-new', $data['target'] );
 		}
 
 		$this->globalBlockingConnectionProvider->getPrimaryGlobalBlockingDatabase()
@@ -254,25 +248,21 @@ class GlobalBlockManager {
 	 */
 	private function validateInput( string $target, UserIdentity $performer ): StatusValue {
 		if ( !IPUtils::isIPAddress( $target ) ) {
-			if ( $this->options->get( 'GlobalBlockingAllowGlobalAccountBlocks' ) ) {
-				$centralIdForTarget = $this->centralIdLookup->centralIdFromName(
-					$target,
-					$this->userFactory->newFromUserIdentity( $performer )
-				);
-				if ( $centralIdForTarget === 0 ) {
-					return StatusValue::newFatal( 'globalblocking-block-target-invalid', $target );
-				}
-				return StatusValue::newGood( [
-					'target' => $target,
-					'centralId' => $centralIdForTarget,
-					// 'rangeStart' and 'rangeEnd' have to be strings and not null
-					// due to the type of the DB columns.
-					'rangeStart' => '',
-					'rangeEnd' => '',
-				] );
-			} else {
-				return StatusValue::newFatal( 'globalblocking-block-ipinvalid', $target );
+			$centralIdForTarget = $this->centralIdLookup->centralIdFromName(
+				$target,
+				$this->userFactory->newFromUserIdentity( $performer )
+			);
+			if ( $centralIdForTarget === 0 ) {
+				return StatusValue::newFatal( 'globalblocking-block-target-invalid', $target );
 			}
+			return StatusValue::newGood( [
+				'target' => $target,
+				'centralId' => $centralIdForTarget,
+				// 'rangeStart' and 'rangeEnd' have to be strings and not null
+				// due to the type of the DB columns.
+				'rangeStart' => '',
+				'rangeEnd' => '',
+			] );
 		}
 
 		// Begin validation only performed if the target is an IP address or range.

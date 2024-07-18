@@ -21,7 +21,6 @@ class SpecialRemoveGlobalBlockTest extends FormSpecialPageTestCase {
 	}
 
 	public function testViewPageBeforeSubmission() {
-		$this->overrideConfigValue( 'GlobalBlockingAllowGlobalAccountBlocks', true );
 		// Need to get the full HTML to be able to check that the subtitle links are present
 		[ $html ] = $this->executeSpecialPage(
 			'', new FauxRequest(), null, $this->getUserForSuccess(), true
@@ -54,7 +53,6 @@ class SpecialRemoveGlobalBlockTest extends FormSpecialPageTestCase {
 		RequestContext::getMain()->getRequest()->getSession()->setUser( $testPerformer );
 		// Execute the special page.
 		[ $html ] = $this->executeSpecialPage( '1.2.3.4', $fauxRequest, null, $this->getUserForSuccess() );
-		// Verify that the 'globalblocking-notblocked' error message is present.
 		$this->assertStringContainsString( '(globalblocking-notblocked', $html );
 	}
 

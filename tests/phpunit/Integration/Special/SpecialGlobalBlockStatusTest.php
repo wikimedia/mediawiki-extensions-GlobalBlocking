@@ -44,7 +44,6 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 				$target = '1.2.3.4';
 				break;
 			case 'user':
-				$this->overrideConfigValue( 'GlobalBlockingAllowGlobalAccountBlocks', true );
 				$target = $this->getTestUser()->getUser()->getName();
 				break;
 			default:
@@ -138,7 +137,6 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 	}
 
 	public function testLocallyDisableBlockForInvalidUsername() {
-		$this->overrideConfigValue( 'GlobalBlockingAllowGlobalAccountBlocks', true );
 		$performer = $this->getTestSysop()->getUser();
 
 		// Simulate the user using Special:GlobalBlockStatus to locally enable the block

@@ -21,7 +21,6 @@ use MessageLocalizer;
 class GlobalBlockingLinkBuilder {
 
 	public const CONSTRUCTOR_OPTIONS = [
-		'GlobalBlockingAllowGlobalAccountBlocks',
 		'ApplyGlobalBlocks',
 	];
 
@@ -64,9 +63,9 @@ class GlobalBlockingLinkBuilder {
 		$canBlock = $sp->getAuthority()->isAllowed( 'globalblock' );
 		if ( $pagetype !== 'GlobalBlock' && $canBlock ) {
 			$title = SpecialPage::getTitleFor( 'GlobalBlock' );
-			$messageKey = $this->options->get( 'GlobalBlockingAllowGlobalAccountBlocks' ) ?
-				'globalblocking-goto-block-new' : 'globalblocking-goto-block';
-			$links[] = $this->linkRenderer->makeKnownLink( $title, $sp->msg( $messageKey )->text() );
+			$links[] = $this->linkRenderer->makeKnownLink(
+				$title, $sp->msg( 'globalblocking-goto-block-new' )->text()
+			);
 		}
 		if ( $pagetype !== 'RemoveGlobalBlock' && $canBlock ) {
 			$title = SpecialPage::getTitleFor( 'RemoveGlobalBlock' );

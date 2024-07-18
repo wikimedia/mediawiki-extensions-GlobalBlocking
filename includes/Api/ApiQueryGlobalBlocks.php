@@ -121,15 +121,9 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 				if ( IPUtils::isIPAddress( $target ) ) {
 					// If the target is an IP, add it to the list of IP targets.
 					$ipTargets[] = $target;
-				} elseif ( !$this->getConfig()->get( 'GlobalBlockingAllowGlobalAccountBlocks' ) ) {
-					// If the target is not an IP, and global account blocks are not allowed then return an
-					// error indicating that the target is not a valid IP.
-					$this->dieWithError(
-						[ 'globalblocking-apierror-badip', wfEscapeWikiText( $target ) ], 'invalidip'
-					);
 				} else {
-					// If the target is not an IP, and global account blocks are allowed, then look up the
-					// central ID for the target and add it to the list of central IDs.
+					// If the target is not an IP, then look up the central ID for the target and add it
+					// to the list of central IDs.
 					$centralId = $this->lookup->centralIdFromName( $target );
 					if ( !$centralId ) {
 						$this->dieWithError(

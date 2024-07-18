@@ -181,9 +181,6 @@ class GlobalBlockingHooks implements
 		$ip = null;
 		if ( IPUtils::isIPAddress( $target ) ) {
 			$ip = $target;
-		} elseif ( !$this->config->get( 'GlobalBlockingAllowGlobalAccountBlocks' ) ) {
-			// If global account blocks are disabled, we can ignore checking for global blocks on accounts here.
-			return true;
 		} elseif ( !$this->globalBlockingUserVisibilityLookup->checkAuthorityCanSeeUser( $target, $authority ) ) {
 			// If the current user cannot see the target, then we should not show the global block link even if
 			// a global block exists for this user.
@@ -223,9 +220,6 @@ class GlobalBlockingHooks implements
 		if ( IPUtils::isIPAddress( $name ) ) {
 			$ip = $name;
 			$centralId = 0;
-		} elseif ( !$this->config->get( 'GlobalBlockingAllowGlobalAccountBlocks' ) ) {
-			// If global account blocks are disabled, we can ignore checking for global blocks on accounts here.
-			return true;
 		} elseif ( !$this->globalBlockingUserVisibilityLookup->checkAuthorityCanSeeUser(
 			$name, $sp->getAuthority()
 		) ) {
@@ -330,10 +324,6 @@ class GlobalBlockingHooks implements
 			$target = IPUtils::sanitizeRange( $target );
 		} elseif ( IPUtils::isIPAddress( $target ) ) {
 			$target = IPUtils::sanitizeIP( $target );
-		} elseif ( !$this->config->get( 'GlobalBlockingAllowGlobalAccountBlocks' ) ) {
-			// If global account blocks are disabled, we should not add links to the relevant special pages as they
-			// will not support global blocks on accounts.
-			return;
 		} elseif ( !$this->globalBlockingUserVisibilityLookup->checkAuthorityCanSeeUser(
 			$target, $specialPage->getAuthority()
 		) ) {

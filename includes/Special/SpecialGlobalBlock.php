@@ -158,14 +158,13 @@ class SpecialGlobalBlock extends FormSpecialPage {
 	 */
 	protected function getFormFields() {
 		$getExpiry = self::buildExpirySelector();
-		$accountBlocksEnabled = $this->getConfig()->get( 'GlobalBlockingAllowGlobalAccountBlocks' );
 		$targetIsAnAccount = $this->target && !IPUtils::isIPAddress( $this->target );
 		$fields = [
 			'Address' => [
 				'type' => 'user',
 				'ipallowed' => true,
 				'iprange' => true,
-				'label-message' => $accountBlocksEnabled ? 'globalblocking-target' : 'globalblocking-ipaddress',
+				'label-message' => 'globalblocking-target',
 				'id' => 'mw-globalblock-target',
 				'required' => true,
 				'autofocus' => true,
@@ -216,8 +215,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 		if ( $this->getUser()->isAllowed( 'block' ) ) {
 			$fields['AlsoLocal'] = [
 				'type' => 'check',
-				'label-message' => $accountBlocksEnabled ?
-					'globalblocking-also-local-new' : 'globalblocking-also-local',
+				'label-message' => 'globalblocking-also-local-new',
 				'id' => 'mw-globalblock-local',
 			];
 			$fields['AlsoLocalTalk'] = [
@@ -238,7 +236,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 				'label-message' => 'globalblocking-also-local-soft',
 				'id' => 'mw-globalblock-local-soft',
 				'hide-if' => [ '!==', 'AlsoLocal', '1' ],
-				'default' => !( $accountBlocksEnabled && $targetIsAnAccount ),
+				'default' => !$targetIsAnAccount,
 			];
 		}
 
@@ -249,16 +247,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 	 * @param HTMLForm $form
 	 */
 	protected function alterForm( HTMLForm $form ) {
-		if ( $this->getConfig()->get( 'GlobalBlockingAllowGlobalAccountBlocks' ) ) {
-			$introMessageKey = 'globalblocking-block-intro-new';
-			$legendMessageKey = 'globalblocking-block-legend-new';
-			$submitMsg = $this->modifyForm ? 'globalblocking-modify-submit' : 'globalblocking-block-submit-new';
-		} else {
-			$introMessageKey = 'globalblocking-block-intro';
-			$legendMessageKey = 'globalblocking-block-legend';
-			$submitMsg = $this->modifyForm ? 'globalblocking-modify-submit' : 'globalblocking-block-submit';
-		}
-		$form->addPreHtml( $this->msg( $introMessageKey )->parseAsBlock() );
+		$form->addPreHtml( $this->msg( 'globalblocking-block-intro-new' )->parseAsBlock() );
 
 		if ( $this->modifyForm && !$this->getRequest()->wasPosted() ) {
 			// For GET requests with target field prefilled, tell the user that it's already blocked
@@ -267,9 +256,11 @@ class SpecialGlobalBlock extends FormSpecialPage {
 			$form->addHeaderHtml( Html::rawElement( 'div', [ 'class' => 'error' ], $msg ) );
 		}
 
-		$form->setSubmitTextMsg( $submitMsg );
+		$form->setSubmitTextMsg(
+			$this->modifyForm ? 'globalblocking-modify-submit' : 'globalblocking-block-submit-new'
+		);
 		$form->setSubmitDestructive();
-		$form->setWrapperLegendMsg( $legendMessageKey );
+		$form->setWrapperLegendMsg( 'globalblocking-block-legend-new' );
 	}
 
 	/**
@@ -407,11 +398,6 @@ class SpecialGlobalBlock extends FormSpecialPage {
 	}
 
 	public function getDescription() {
-		if ( $this->getConfig()->get( 'GlobalBlockingAllowGlobalAccountBlocks' ) ) {
-			$messageKey = 'globalblocking-block-new';
-		} else {
-			$messageKey = 'globalblocking-block';
-		}
-		return $this->msg( $messageKey );
+		return $this->msg( 'globalblocking-block-new' );
 	}
 }

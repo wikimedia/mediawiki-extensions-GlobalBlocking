@@ -88,7 +88,6 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 
 	/** @dataProvider provideGetUserBlock */
 	public function testGetUserBlockForNamedUser( $ip, $expectedGlobalBlockId, ?User $user = null ) {
-		$this->overrideConfigValue( 'GlobalBlockingAllowGlobalAccountBlocks', true );
 		$actualGlobalBlockObject = GlobalBlockingServices::wrap( $this->getServiceContainer() )
 			->getGlobalBlockLookup()
 			->getUserBlock( $user ?? $this->getTestUser()->getUser(), $ip );
@@ -215,17 +214,6 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 		];
 	}
 
-	public function testGetUserBlockOnNoBlockForGloballyBlockedUserWhenGlobalUserBlocksAreDisabled() {
-		$this->setMwGlobals( 'wgGlobalBlockingAllowGlobalAccountBlocks', false );
-
-		$this->testGetUserBlockOnNoBlock(
-			$this->getGloballyBlockedTestUser(),
-			null,
-			'No matching global block row should have been found by ::getUserBlock for an account ' .
-			'which is globally blocked when global user blocks are disabled.'
-		);
-	}
-
 	/** @dataProvider provideGetGlobalBlockingBlockWhenNoRowsFound */
 	public function testGetGlobalBlockingBlockWhenNoRowsFound( $ip, $flags ) {
 		$this->assertNull(
@@ -325,13 +313,7 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testGetGlobalBlockIdForGloballyBlockedAccount() {
-		$this->overrideConfigValue( 'GlobalBlockingAllowGlobalAccountBlocks', true );
 		$this->testGetGlobalBlockId( $this->getGloballyBlockedTestUser()->getName(), DB_REPLICA, 5 );
-	}
-
-	public function testGetGlobalBlockIdForGloballyBlockedAccountWhenGlobalAccountBlocksAreDisabled() {
-		$this->setMwGlobals( 'wgGlobalBlockingAllowGlobalAccountBlocks', false );
-		$this->testGetGlobalBlockId( $this->getGloballyBlockedTestUser()->getName(), DB_REPLICA, 0 );
 	}
 
 	public static function provideGetGlobalBlockLookupConditions() {

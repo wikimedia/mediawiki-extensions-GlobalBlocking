@@ -161,16 +161,11 @@ class ApiGlobalBlock extends ApiBase {
 	}
 
 	public function getAllowedParams() {
-		$allowedUserTypes = [ 'ip', 'cidr' ];
-		$globalAccountBlocksEnabled = $this->getConfig()->get( 'GlobalBlockingAllowGlobalAccountBlocks' );
-		if ( $globalAccountBlocksEnabled ) {
-			$allowedUserTypes = array_merge( $allowedUserTypes, [ 'name', 'temp' ] );
-		}
 		return [
 			'target' => [
 				ParamValidator::PARAM_TYPE => 'user',
 				ParamValidator::PARAM_REQUIRED => true,
-				UserDef::PARAM_ALLOWED_USER_TYPES => $allowedUserTypes,
+				UserDef::PARAM_ALLOWED_USER_TYPES => [ 'ip', 'cidr', 'name', 'temp' ],
 			],
 			'expiry' => [
 				ParamValidator::PARAM_TYPE => 'expiry'
