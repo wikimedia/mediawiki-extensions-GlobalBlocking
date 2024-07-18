@@ -121,7 +121,7 @@
 	"globalblocking-logpage": "グローバルブロック記録",
 	"globalblocking-logpagetext": "以下はこのウィキで実施および解除されたグローバルブロックの記録です。グローバルブロックは他のウィキでも実施したり解除したりすることができ、その結果がこのウィキにも及びます。現在有効なグローバルブロックの一覧は[[Special:GlobalBlockList]]を参照してください。",
 	"globalblocking-logentry-block-old-format": "$1 が {{GENDER:$4|$3}} を{{GENDER:$2|グローバルブロックしました}} ($5)",
-	"globalblocking-logentry-block": "$1 が {{GENDER:$4|$3}} を{{GENDER:$2|グローバルブロックしました}} (有効期限 $5、$6)",
+	"globalblocking-logentry-block": "$1 が {{GENDER:$4|$3}} を$5{{GENDER:$2|グローバルブロックしました}} $6",
 	"globalblocking-logentry-modify-old-format": "$1 が {{GENDER:$4|$3}} のグローバルブロック設定を{{GENDER:$2|変更しました}} ($5)",
 	"globalblocking-logentry-modify": "$1 が {{GENDER:$4|$3}} のグローバルブロックの期限を $5 までに{{GENDER:$2|変更しました}} $6",
 	"globalblocking-logentry-unblock": "$1 が {{GENDER:$4|$3}} の{{GENDER:$2|グローバルブロックを解除しました}}",
