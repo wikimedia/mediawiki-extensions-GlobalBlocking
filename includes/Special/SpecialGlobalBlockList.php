@@ -18,7 +18,7 @@ use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\UserIdentityLookup;
 use MediaWiki\User\UserNameUtils;
 use Wikimedia\IPUtils;
-use Wikimedia\Rdbms\IReadableDatabase;
+use Wikimedia\Rdbms\RawSQLExpression;
 
 class SpecialGlobalBlockList extends FormSpecialPage {
 	protected string $target;
@@ -181,10 +181,10 @@ class SpecialGlobalBlockList extends FormSpecialPage {
 			$this->queryValid = false;
 		}
 		if ( $hideIP ) {
-			$conds[] = $dbr->makeList( [
-				'gb_range_end > gb_range_start',
+			$conds[] = $dbr->orExpr( [
+				new RawSQLExpression( 'gb_range_end > gb_range_start' ),
 				$dbr->expr( 'gb_target_central_id', '!=', 0 ),
-			], IReadableDatabase::LIST_OR );
+			] );
 		}
 		if ( $hideRange ) {
 			$conds[] = 'gb_range_end = gb_range_start';
