@@ -29,6 +29,7 @@ use MediaWiki\User\Hook\UserIsBlockedGloballyHook;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentityLookup;
 use MediaWiki\User\UserNameUtils;
+use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\IPUtils;
 
 /**
@@ -254,20 +255,62 @@ class GlobalBlockingHooks implements
 			$body = $pager->formatRow( $block );
 
 			$out = $sp->getOutput();
-			$out->addHTML(
-				Html::warningBox(
-					$sp->msg( 'globalblocking-contribs-notice', $name )->parseAsBlock() .
-					Html::rawElement(
-						'ul',
-						[ 'class' => 'mw-logevent-loglines' ],
-						$body
-					),
-					'mw-warning-with-logexcerpt'
-				)
+			// Add the active global block to a warning box that is displayed at the top of Special:Contributions.
+			$blockNoticeHtml = $sp->msg( 'globalblocking-contribs-notice', $name )->parseAsBlock();
+			$blockNoticeHtml .= Html::rawElement(
+				'ul',
+				[ 'class' => 'mw-logevent-loglines' ],
+				$body
 			);
+
+			// Add a 'View full logs' link that goes to the global block log on the central wiki, or the local wiki
+			// if no central wiki is defined.
+			$logUrlAdded = false;
+			$globalBlockingCentralWiki = $sp->getConfig()->get( 'GlobalBlockingCentralWiki' );
+			if ( $globalBlockingCentralWiki !== false ) {
+				$centralWikiLogUrl = $this->getCentralGlobalBlockingLogsUrl( $globalBlockingCentralWiki );
+				if ( $centralWikiLogUrl !== false ) {
+					// Filter the logs to just Global Blocking logs where the blocked user is the target.
+					$centralWikiLogUrl = wfAppendQuery(
+						$centralWikiLogUrl,
+						[ 'type' => 'gblblock', 'page' => $block->gb_address ]
+					);
+
+					$blockNoticeHtml .= $sp->getLinkRenderer()->makeExternalLink(
+						$centralWikiLogUrl,
+						$sp->msg( 'log-fulllog' )->text(),
+						$sp->getFullTitle()
+					);
+					$logUrlAdded = true;
+				}
+			}
+
+			if ( !$logUrlAdded ) {
+				// If no central log page could be linked, then link to the local log page instead. This link filters
+				// for Global Blocking related logs where the blocked user is the target.
+				$blockNoticeHtml .= $sp->getLinkRenderer()->makeKnownLink(
+					SpecialPage::getTitleFor( 'Log' ),
+					$sp->msg( 'log-fulllog' )->text(),
+					[],
+					[ 'type' => 'gblblock', 'page' => $block->gb_address ]
+				);
+			}
+
+			$out->addHTML( Html::warningBox( $blockNoticeHtml, 'mw-warning-with-logexcerpt' ) );
 		}
 
 		return true;
+	}
+
+	/**
+	 * Gets a Special:Log link for the central wiki so that the 'View full logs' link goes to a logs
+	 * page that is likely to contain the relevant logs.
+	 *
+	 * @param string $globalBlockingCentralWiki The wiki ID of the central wiki
+	 * @return string|false
+	 */
+	protected function getCentralGlobalBlockingLogsUrl( string $globalBlockingCentralWiki ) {
+		return WikiMap::getForeignURL( $globalBlockingCentralWiki, 'Special:Log' );
 	}
 
 	/**
