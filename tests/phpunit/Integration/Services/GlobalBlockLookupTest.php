@@ -120,7 +120,7 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 			'The GlobalBlock object returned by ::getUserBlock does not have the expected target.'
 		);
 		$this->assertSame(
-			$rowFromTheDb['gb_timestamp'],
+			ConvertibleTimestamp::convert( TS_MW, $rowFromTheDb['gb_timestamp'] ),
 			$actualGlobalBlockObject->getTimestamp(),
 			'The GlobalBlock object returned by ::getUserBlock does not have the expected timestamp.'
 		);
@@ -344,50 +344,46 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 				0,
 				// The $flags argument
 				0,
-				"(gb_expiry > '20240219050403'"
-				. " AND (gb_range_start LIKE '0102%' ESCAPE '`'"
+				// The expected WHERE conditions, but excluding the first part that is the gb_expiry check.
+				// This is added by the test as the expiry value is different between DB types and we cannot
+				// check the type of the DB here.
+				" AND (gb_range_start LIKE '0102%' ESCAPE '`'"
 				. " AND gb_range_start <= '" . IPUtils::toHex( '1.2.3.4' ) . "'"
 				. " AND gb_range_end >= '" . IPUtils::toHex( '1.2.3.4' ) . "'))",
 			],
 			'IPv4 /31' => [
 				'1.2.3.4/31', 0, 0,
-				"(gb_expiry > '20240219050403'"
-				. " AND (gb_range_start LIKE '0102%' ESCAPE '`'"
+				" AND (gb_range_start LIKE '0102%' ESCAPE '`'"
 				. " AND gb_range_start <= '" . IPUtils::toHex( '1.2.3.4' ) . "'"
 				. " AND gb_range_end >= '" . IPUtils::toHex( '1.2.3.5' ) . "'))",
 			],
 			'IPv4 /24' => [
 				'1.2.3.4/24', 0, 0,
-				"(gb_expiry > '20240219050403'"
-				. " AND (gb_range_start LIKE '0102%' ESCAPE '`'"
+				" AND (gb_range_start LIKE '0102%' ESCAPE '`'"
 				. " AND gb_range_start <= '" . IPUtils::toHex( '1.2.3.0' ) . "'"
 				. " AND gb_range_end >= '" . IPUtils::toHex( '1.2.3.255' ) . "'))",
 			],
 			'IPv4 /14' => [
 				'1.2.3.4/14', 0, 0,
-				"(gb_expiry > '20240219050403'"
-				. " AND (gb_range_start LIKE '01%' ESCAPE '`'"
+				" AND (gb_range_start LIKE '01%' ESCAPE '`'"
 				. " AND gb_range_start <= '" . IPUtils::toHex( '1.0.0.0' ) . "'"
 				. " AND gb_range_end >= '" . IPUtils::toHex( '1.3.255.255' ) . "'))",
 				10
 			],
 			'Single IPv6' => [
 				'2000:DEAD:BEEF:A:0:0:0:0', 0, 0,
-				"(gb_expiry > '20240219050403'"
-				. " AND (gb_range_start LIKE 'v6-2000%' ESCAPE '`'"
+				" AND (gb_range_start LIKE 'v6-2000%' ESCAPE '`'"
 				. " AND gb_range_start <= '" . IPUtils::toHex( '2000:DEAD:BEEF:A:0:0:0:0' ) . "'"
 				. " AND gb_range_end >= '" . IPUtils::toHex( '2000:DEAD:BEEF:A:0:0:0:0' ) . "'))",
 			],
 			'IPv6 /108' => [
 				'2000:DEAD:BEEF:A:0:0:0:0/108', 0, 0,
-				"(gb_expiry > '20240219050403'"
-				. " AND (gb_range_start LIKE 'v6-2000%' ESCAPE '`'"
+				" AND (gb_range_start LIKE 'v6-2000%' ESCAPE '`'"
 				. " AND gb_range_start <= '" . IPUtils::toHex( '2000:DEAD:BEEF:A:0:0:0:0' ) . "'"
 				. " AND gb_range_end >= '" . IPUtils::toHex( '2000:DEAD:BEEF:A:0:0:000F:FFFF' ) . "'))"
 			],
 			'IPv6 /108 with different limit' => [
 				'2000:DEAD:BEEF:A:0:0:0:0/108', 0, 0,
-				"(gb_expiry > '20240219050403'" .
 				" AND (gb_range_start LIKE 'v6-20%' ESCAPE '`'"
 				. " AND gb_range_start <= '" . IPUtils::toHex( '2000:DEAD:BEEF:A:0:0:0:0' ) . "'"
 				. " AND gb_range_end >= '" . IPUtils::toHex( '2000:DEAD:BEEF:A:0:0:000F:FFFF' ) . "'))",
@@ -396,8 +392,7 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 			],
 			'IPv4 with anon only' => [
 				'1.2.3.4', 0, GlobalBlockLookup::SKIP_SOFT_IP_BLOCKS,
-				"(gb_expiry > '20240219050403'"
-				. " AND (gb_range_start LIKE '0102%' ESCAPE '`'"
+				" AND (gb_range_start LIKE '0102%' ESCAPE '`'"
 				. " AND gb_range_start <= '" . IPUtils::toHex( '1.2.3.4' ) . "'"
 				. " AND gb_range_end >= '" . IPUtils::toHex( '1.2.3.4' ) . "'"
 				. " AND gb_anon_only != 1))",
@@ -415,7 +410,7 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 		] );
 		ConvertibleTimestamp::setFakeTime( '20240219050403' );
 		$this->assertSame(
-			$expected,
+			"(gb_expiry > '" . $this->getDb()->timestamp( '20240219050403' ) . "'" . $expected,
 			GlobalBlockingServices::wrap( $this->getServiceContainer() )
 				->getGlobalBlockLookup()
 				->getGlobalBlockLookupConditions( $ipOrRange, $centralId, $flags )
@@ -433,8 +428,7 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 			'1.2.3.4',
 			$centralId,
 			0,
-			"(gb_expiry > '20240219050403'"
-			. " AND (gb_target_central_id = " . $centralId .
+			" AND (gb_target_central_id = " . $centralId .
 			" OR (gb_range_start LIKE '0102%' ESCAPE '`'"
 			. " AND gb_range_start <= '" . IPUtils::toHex( '1.2.3.4' ) . "'"
 			. " AND gb_range_end >= '" . IPUtils::toHex( '1.2.3.4' ) . "')))",
