@@ -72,5 +72,18 @@
 	"action-globalblock-whitelist": "глобалан блоктохарш цхьанхьа дӀайахар",
 	"right-globalblock-exempt": "глобалан блоктохарийн чекхбовлар",
 	"action-globalblock-exempt": "глобалан блоктохарийн чекхбовлар",
-	"grant-globalblock": "Глобалан блоктоха йа блокдӀайаккха IP-адрес тӀера."
+	"log-action-filter-gblblock-gunblock": "Глобалан блокдӀайаккхар",
+	"log-action-filter-gblblock-modify": "Глобалан блоктохар хийца",
+	"log-action-filter-gblblock-whitelist": "КӀайн могӀаме глобалан блок тӀетохар",
+	"log-action-filter-gblblock-dwhitelist": "КӀайн могӀамера глобалан блок дӀайаккхар",
+	"grant-globalblock": "Глобалан блоктоха йа блокдӀайаккха декъашхочун тӀера.",
+	"globalblocking-blockedtext-all-wikis": "Хьан IP-адрес блоктоьхна ду массо а вики чохь.",
+	"globalblocking-blockedtext-on-range": "Хьан IP-адрес массо вики тӀехь блоктоьхначу диапазонехь ду.",
+	"globalblocking-blockedtext-on-proxy": "Хьан дехарехь лелош йолу цхьаъ йа масех прокси-сервераш глобалан блоктоьхна.",
+	"globalblocking-blockedtext-on-user": "Хьан аккаунт блоктоьхна йу массо а вики чохь.",
+	"globalblocking-blockedtext-blocker-admin": "$1 зӀене вала(йала) йиш йу хьан, блоктохар йийцаре йан.",
+	"globalblocking-blockedtext-email-feature": "Хьан йиш йац \"{{int:emailuser}}\" функци лело, нагахь санна хьан [[Special:Preferences|долара нисдаран гӀирс]] тӀехь билгалдаьккхина нийса электронан поштан адрес дацахь а, хьуна иза лелор блоктоьхна дацахь а.",
+	"globalblocking-blockedtext-ip-range": "Блоктоьхна диапазон — $1.",
+	"globalblocking-blockedtext-proxy": "Блоктоьхна прокси-адрес $1 дара.",
+	"globalblocking-blockedtext-username": "Хьан аккаунтан цӀе — $1."
 }
