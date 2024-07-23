@@ -323,12 +323,6 @@ class GlobalBlockingHooks implements
 	 * @return bool|void
 	 */
 	public function onContributionsToolLinks( $id, Title $title, array &$tools, SpecialPage $specialPage ) {
-		if ( !$specialPage->getAuthority()->isAllowed( 'globalblock' ) ) {
-			// Return early if the user does not have the globalblock right as there will be no relevant tool links
-			// to add to the contributions page.
-			return;
-		}
-
 		// Normalise the target to ensure that the call to GlobalBlockLookup::getGlobalBlockId
 		// works as intended (as it expects a normalised target).
 		$target = $title->getText();
@@ -357,20 +351,49 @@ class GlobalBlockingHooks implements
 		}
 
 		$linkRenderer = $specialPage->getLinkRenderer();
-		if ( $this->globalBlockLookup->getGlobalBlockId( $target ) === 0 ) {
-			$tools['globalblock'] = $linkRenderer->makeKnownLink(
-				SpecialPage::getTitleFor( 'GlobalBlock', $target ),
-				$specialPage->msg( 'globalblocking-contribs-block' )->text()
-			);
-		} else {
-			$tools['globalblock'] = $linkRenderer->makeKnownLink(
-				SpecialPage::getTitleFor( 'GlobalBlock', $target ),
-				$specialPage->msg( 'globalblocking-contribs-modify' )->text()
-			);
+		if ( $specialPage->getAuthority()->isAllowed( 'globalblock' ) ) {
+			if ( $this->globalBlockLookup->getGlobalBlockId( $target ) === 0 ) {
+				$tools['globalblock'] = $linkRenderer->makeKnownLink(
+					SpecialPage::getTitleFor( 'GlobalBlock', $target ),
+					$specialPage->msg( 'globalblocking-contribs-block' )->text()
+				);
+			} else {
+				$tools['globalblock'] = $linkRenderer->makeKnownLink(
+					SpecialPage::getTitleFor( 'GlobalBlock', $target ),
+					$specialPage->msg( 'globalblocking-contribs-modify' )->text()
+				);
 
-			$tools['globalunblock'] = $linkRenderer->makeKnownLink(
-				SpecialPage::getTitleFor( 'RemoveGlobalBlock', $target ),
-				$specialPage->msg( 'globalblocking-contribs-remove' )->text()
+				$tools['globalunblock'] = $linkRenderer->makeKnownLink(
+					SpecialPage::getTitleFor( 'RemoveGlobalBlock', $target ),
+					$specialPage->msg( 'globalblocking-contribs-remove' )->text()
+				);
+			}
+		}
+
+		$globalBlockingCentralWiki = $specialPage->getConfig()->get( 'GlobalBlockingCentralWiki' );
+		if ( $globalBlockingCentralWiki !== false ) {
+			$centralWikiLogUrl = $this->getCentralGlobalBlockingLogsUrl( $globalBlockingCentralWiki );
+			if ( $centralWikiLogUrl !== false ) {
+				// Filter the logs to just global blocking related logs where the target is the relevant user for
+				// this Special:Contributions page.
+				$centralWikiLogUrl = wfAppendQuery( $centralWikiLogUrl, [ 'type' => 'gblblock', 'page' => $target ] );
+
+				$tools['globalblocklog'] = $linkRenderer->makeExternalLink(
+					$centralWikiLogUrl,
+					$specialPage->msg( 'globalblocking-contribs-log' )->text(),
+					$specialPage->getFullTitle()
+				);
+			}
+		}
+
+		if ( !array_key_exists( 'globalblocklog', $tools ) ) {
+			// If no central log page could be linked, then link to the local log page instead. This link filters for
+			// Global Blocking related logs and also for logs where the user is the target.
+			$tools['globalblocklog'] = $linkRenderer->makeKnownLink(
+				SpecialPage::getTitleFor( 'Log' ),
+				$specialPage->msg( 'globalblocking-contribs-log' )->text(),
+				[],
+				[ 'type' => 'gblblock', 'page' => $target ]
 			);
 		}
 	}

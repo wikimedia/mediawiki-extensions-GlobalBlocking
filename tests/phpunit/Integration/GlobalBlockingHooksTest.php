@@ -325,26 +325,35 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 				$this->assertTrue( $foundMatchingLink, 'An expected link text was not found in the tools array.' );
 			}
 		} else {
-			$this->assertCount( 0, $tools, 'No links should be added if the user does not have the required rights.' );
+			$this->assertCount( 0, $tools, 'No links should be added.' );
 		}
 	}
 
 	public static function provideOnContributionsToolLinks() {
 		return [
 			'Target is 1.2.3.4 and user has globalblock right' => [
-				'1.2.3.4', [ 'globalblock' ], [ '(globalblocking-contribs-modify', '(globalblocking-contribs-remove' ],
+				'1.2.3.4', [ 'globalblock' ],
+				[
+					'(globalblocking-contribs-modify', '(globalblocking-contribs-remove',
+					'(globalblocking-contribs-log',
+				],
 			],
 			'Target is 1.2.3.4/24 and user has globalblock right' => [
 				'1.2.3.4/24', [ 'globalblock' ],
-				[ '(globalblocking-contribs-modify', '(globalblocking-contribs-remove' ],
+				[
+					'(globalblocking-contribs-modify', '(globalblocking-contribs-remove',
+					'(globalblocking-contribs-log',
+				],
 			],
 			'Target is 1.2.3.5 and user has globalblock right' => [
-				'1.2.3.5', [ 'globalblock' ], [ '(globalblocking-contribs-block' ],
+				'1.2.3.5', [ 'globalblock' ], [ '(globalblocking-contribs-block', '(globalblocking-contribs-log' ],
 			],
 			'Target is 127.0.0.2 and user has globalblock right' => [
-				'127.0.0.2', [ 'globalblock' ], [ '(globalblocking-contribs-block' ],
+				'127.0.0.2', [ 'globalblock' ], [ '(globalblocking-contribs-block', '(globalblocking-contribs-log' ],
 			],
-			'Target is 1.2.3.4 and user does not have globalblock right' => [ '1.2.3.4', [], [] ],
+			'Target is 1.2.3.4 and user does not have globalblock right' => [
+				'1.2.3.4', [], [ '(globalblocking-contribs-log' ],
+			],
 		];
 	}
 
@@ -358,7 +367,7 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 	public function testOnContributionsToolLinksForGloballyBlockedUser() {
 		$this->testOnContributionsToolLinks(
 			self::$testGloballyBlockedUser->getName(), [ 'globalblock' ],
-			[ '(globalblocking-contribs-modify', '(globalblocking-contribs-remove' ]
+			[ '(globalblocking-contribs-modify', '(globalblocking-contribs-remove', '(globalblocking-contribs-log' ]
 		);
 	}
 
@@ -369,7 +378,8 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 
 	public function testOnContributionsToolLinksForNotBlockedUser() {
 		$this->testOnContributionsToolLinks(
-			self::$unblockedUser->getName(), [ 'globalblock' ], [ '(globalblocking-contribs-block' ]
+			self::$unblockedUser->getName(), [ 'globalblock' ],
+			[ '(globalblocking-contribs-block', '(globalblocking-contribs-log' ]
 		);
 	}
 
@@ -377,12 +387,65 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 	public function testOnContributionsToolLinksForHiddenUser( $userHasHideUser ) {
 		if ( $userHasHideUser ) {
 			$userRights = [ 'hideuser', 'globalblock' ];
-			$expectedLinkTexts = [ '(globalblocking-contribs-modify', '(globalblocking-contribs-remove' ];
+			$expectedLinkTexts = [
+				'(globalblocking-contribs-modify', '(globalblocking-contribs-remove', '(globalblocking-contribs-log',
+			];
 		} else {
 			$userRights = [ 'globalblock' ];
 			$expectedLinkTexts = [];
 		}
 		$this->testOnContributionsToolLinks( self::$hiddenUser->getName(), $userRights, $expectedLinkTexts );
+	}
+
+	public function testOnContributionsToolLinksWhenGlobalBlockingCentralWikiInvalid() {
+		// Define GlobalBlockingCentralWiki as a wiki that is not recognised, and verify the subtitle link still works.
+		$this->overrideConfigValue( 'GlobalBlockingCentralWiki', 'undefined-wiki' );
+		$this->testOnContributionsToolLinks(
+			self::$unblockedUser->getName(), [ 'globalblock' ],
+			[ '(globalblocking-contribs-block', '(globalblocking-contribs-log' ]
+		);
+	}
+
+	public function testOnContributionsToolLinksWhenGlobalBlockingCentralWikiValid() {
+		$this->overrideConfigValue( 'GlobalBlockingCentralWiki', 'mediawiki' );
+		$this->setUserLang( 'qqx' );
+		$specialPage = new SpecialPage();
+		RequestContext::getMain()->setTitle( Title::makeTitle( NS_SPECIAL, 'Contributions/1.2.3.4' ) );
+		$specialPage->setContext( RequestContext::getMain() );
+		$user = $this->getServiceContainer()->getUserFactory()->newFromName( '1.2.3.4', UserFactory::RIGOR_NONE );
+		// Get a partially mocked GlobalBlockingHooks, where only the ::getCentralGlobalBlockingLogsUrl method is
+		// mocked to return fake a URL to the central wiki.
+		$globalBlockingHooks = $this->getMockBuilder( GlobalBlockingHooks::class )
+			->setConstructorArgs( $this->getGlobalBlockingHooksConstructorArguments() )
+			->onlyMethods( [ 'getCentralGlobalBlockingLogsUrl' ] )
+			->getMock();
+		$globalBlockingHooks->method( 'getCentralGlobalBlockingLogsUrl' )
+			->willReturn( 'https://meta.wikimedia.org/wiki/Special:Log' );
+		// Call the method under test
+		$tools = [];
+		$globalBlockingHooks->onContributionsToolLinks(
+			0, Title::newFromText( $user->getName(), NS_USER ), $tools, $specialPage
+		);
+		// Assert that the tools contain a Global Blocking log link to the central wiki
+		$this->assertArrayHasKey(
+			'globalblocklog', $tools, 'The tools array should contain a second element.'
+		);
+		$this->assertStringContainsString(
+			'(globalblocking-contribs-log', $tools['globalblocklog'],
+			'The tools array should contain a link to the global block log.'
+		);
+		$this->assertStringContainsString(
+			'https://meta.wikimedia.org/wiki/Special:Log', $tools['globalblocklog'],
+			'The tools array should contain a link to the central wiki.'
+		);
+		$this->assertStringContainsString(
+			'type=gblblock', $tools['globalblocklog'],
+			'The logs link should be filtered to just global blocks.'
+		);
+		$this->assertStringContainsString(
+			'page=1.2.3.4', $tools['globalblocklog'],
+			'The logs link should be filtered to just the target user.'
+		);
 	}
 
 	public function testOnGetUserBlockWhenNoMatchingBlockFound() {
