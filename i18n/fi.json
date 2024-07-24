@@ -19,7 +19,8 @@
 			"Str4nd",
 			"Stryn",
 			"Tarmo",
-			"Valtlait"
+			"Valtlait",
+			"Samoasambia"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Mahdollistaa]] IP-osoitteiden [[Special:GlobalBlockList|estämisen useasta wikistä kerralla]].",
@@ -35,7 +36,7 @@
 	"globalblocking-ipbanononly": "Estä järjestelmänlaajuisesti vain kirjautumattomat käyttäjät",
 	"globalblocking-block-ipinvalid": "Antamasi IP-osoite ($1) ei kelpaa.\nHuomaa, että käyttäjänimeä ei voi syöttää tähän.",
 	"globalblocking-block-expiryinvalid": "Antamasi eston kesto oli virheellinen.",
-	"globalblocking-block-submit": "Estä IP-osoite järjestelmänlaajuisesti",
+	"globalblocking-block-submit": "Estä tämä IP-osoite järjestelmänlaajuisesti",
 	"globalblocking-modify-submit": "Muuta tätä järjestelmänlaajuista estoa",
 	"globalblocking-block-success": "IP-osoite $1 on estetty kaikissa projekteissa.",
 	"globalblocking-modify-success": "Järjestelmänlaajuista estoa kohteessa $1 on muutettu.",
@@ -56,6 +57,10 @@
 	"globalblocking-list-whitelisted": "paikallisesti eston on poistanut käyttäjä $1: $2",
 	"globalblocking-list-whitelist": "paikallinen tila",
 	"globalblocking-list-modify": "muuta",
+	"globalblocking-list-tempblocks": "Piilota väliaikaiset estot",
+	"globalblocking-list-indefblocks": "Piilota ikuiset estot",
+	"globalblocking-list-addressblocks": "Piilota yksittäiset IP-estot",
+	"globalblocking-list-rangeblocks": "Piilota avaruusestot",
 	"globalblocking-expiringblock": "vanhentuu $1 kello $2",
 	"globalblocking-infiniteblock": "ikuinen",
 	"globalblocking-list-noresults": "Annetuilla parametreilla ei löytynyt tuloksia.",
@@ -97,6 +102,8 @@
 	"globalblocking-contribs-notice": "Tämä IP-osoite on tällä hetkellä estettynä järjestelmänlaajuisesti.\nJärjestelmänlaajuinen estoloki näkyy alla:",
 	"globalblocking-showlog": "Tämä IP-osoite on ollut estettynä.\nAlla on ote estolokista.",
 	"globalblocking-contribs-block": "estä järjestelmänlaajuisesti tämä IP",
+	"globalblocking-contribs-modify": "muuta järjestelmänlaajuista estoa",
+	"globalblocking-contribs-remove": "poista järjestelmänlaajuinen esto",
 	"globalblocklist": "Järjestelmänlaajuisesti estetyt IP-osoitteet",
 	"globalblock": "Estä IP-osoite järjestelmänlaajuisesti",
 	"globalblockstatus": "Järjestelmänlaajuisten estojen paikallinen tila",
