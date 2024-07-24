@@ -121,6 +121,7 @@
 	"globalblocking-loglink": "Der Benutzer $1 ist global gesperrt ([[{{#Special:GlobalBlockList}}/$1|Details]]).",
 	"globalblocking-contribs-notice": "Der Benutzer ist derzeit global gesperrt.\nEs folgt der aktuelle Eintrag aus dem globalen Sperr-Logbuch:",
 	"globalblocking-showlog": "Der Benutzer war früher gesperrt.\nEs folgt ein Auszug aus dem Benutzersperr-Logbuch:",
+	"globalblocking-contribs-log": "globales Sperr-Logbuch",
 	"globalblocking-contribs-block": "globale Sperre",
 	"globalblocking-contribs-modify": "globale Sperre ändern",
 	"globalblocking-contribs-remove": "globale Sperre aufheben",

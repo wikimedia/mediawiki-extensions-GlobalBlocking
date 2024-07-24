@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"A2093064",
+			"Cookai1205",
 			"Crt",
 			"Darth Kule",
 			"Dreamy Jazz",
@@ -83,7 +84,7 @@
 	"globalblocking-list-ipinvalid": "Used as error message in Special:GlobalBlockList. Parameters:\n* $1 - IP address\n\nSee also:\n* {{msg-mw|globalblocking-list-target-invalid}}",
 	"globalblocking-list-target-invalid": "Used as error message in Special:GlobalBlockList if the target entered for the block is invalid. Parameters:\n* $1 - Username, IP address or IP range\n\nSee also:\n* {{msg-mw|globalblocking-list-ipinvalid}}",
 	"globalblocking-search-errors": "Unused at this time.\n\nParameters:\n* $1 - number of reasons",
-	"globalblocking-list-item": "Used to construct a line describing a global block in Special:GlobalBlockList. Parameters:\n* $1 - a timestamp (time and date, localized)\n* $2 - the blocking user username for GENDER support\n* $3 - the blocking user link\n* $4 - the source wiki for the blocking user\n* $5 - the target of the block for GENDER support\n* $6 - the blocked user link\n* $7 - the expiry for the block\n* $8 - the list of block options\n * $9 - the reason for the global block, which may be empty\n* $10 - Associated action links, which may be empty if the viewing user does not have the necessary permissions",
+	"globalblocking-list-item": "Used to construct a line describing a global block in Special:GlobalBlockList. Parameters:\n* $1 - a timestamp (time and date, localized)\n* $2 - the blocking user username for GENDER support\n* $3 - the blocking user link\n* $4 - the source wiki for the blocking user\n* $5 - the target of the block for GENDER support\n* $6 - the blocked user link\n* $7 - the expiry for the block\n* $8 - the list of block options\n* $9 - the reason for the global block, which may be empty\n* $10 - Associated action links, which may be empty if the viewing user does not have the necessary permissions",
 	"globalblocking-list-expiry": "Unused at this time. Parameters:\n* $1 - ...\n{{Identical|Expiry}}",
 	"globalblocking-list-anononly": "{{Identical|Anon only}}",
 	"globalblocking-list-unblock": "{{Identical|Remove}}",

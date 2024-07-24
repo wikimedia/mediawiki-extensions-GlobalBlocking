@@ -114,6 +114,7 @@
 	"globalblocking-loglink": "המשתמש $1 חסום באופן גלובלי ([[{{#Special:GlobalBlockList}}/$1|פרטים נוספים]]).",
 	"globalblocking-contribs-notice": "המשתמש הזה חסום באופן גלובלי.\nלהלן הרשומה ביומן החסימות הגלובליות לעיון:",
 	"globalblocking-showlog": "המשתמש הזה נחסם בעבר.\nיומן החסימות מוצג להלן לעיון:",
+	"globalblocking-contribs-log": "יומן חסימות גלובליות",
 	"globalblocking-contribs-block": "חסימה גלובלית",
 	"globalblocking-contribs-modify": "לשנות את החסימה הגלובלית",
 	"globalblocking-contribs-remove": "להסיר את החסימה הגלובלית",
