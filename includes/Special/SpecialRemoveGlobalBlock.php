@@ -95,15 +95,14 @@ class SpecialRemoveGlobalBlock extends FormSpecialPage {
 	}
 
 	protected function getFormFields() {
-		$accountBlocksEnabled = $this->getConfig()->get( 'GlobalBlockingAllowGlobalAccountBlocks' );
 		return [
 			'target' => [
 				'name' => 'target',
-				'type' => $accountBlocksEnabled ? 'user' : 'text',
+				'type' => 'user',
 				'ipallowed' => true,
 				'iprange' => true,
 				'id' => 'mw-globalblocking-target',
-				'label-message' => $accountBlocksEnabled ? 'globalblocking-target' : 'globalblocking-ipaddress',
+				'label-message' => 'globalblocking-target',
 				'required' => true,
 				'default' => $this->target,
 			],

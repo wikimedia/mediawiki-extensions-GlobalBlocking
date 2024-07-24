@@ -266,10 +266,6 @@
 			"description": "IP ranges that bypass checks and are always allowed",
 			"value": []
 		},
-		"GlobalBlockingAllowGlobalAccountBlocks": {
-			"description": "Whether to enable global blocks on accounts",
-			"value": true
-		},
 		"GlobalBlockingCentralWiki": {
 			"description": "The ID of the central wiki where global blocks are performed. Used to provide a link to the global block log which is likely to have entries, instead of the local log which is unlikely to contain entries. If the value is false, then the local log is used.",
 			"value": false

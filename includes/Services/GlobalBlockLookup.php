@@ -32,7 +32,6 @@ class GlobalBlockLookup {
 		'GlobalBlockingAllowedRanges',
 		'GlobalBlockingBlockXFF',
 		'GlobalBlockingCIDRLimit',
-		'GlobalBlockingAllowGlobalAccountBlocks',
 	];
 
 	private const TYPE_USER = 1;
@@ -198,7 +197,7 @@ class GlobalBlockLookup {
 		}
 
 		$centralId = 0;
-		if ( $this->options->get( 'GlobalBlockingAllowGlobalAccountBlocks' ) && $user->isRegistered() ) {
+		if ( $user->isRegistered() ) {
 			$centralId = $this->centralIdLookup->centralIdFromLocalUser( $user, CentralIdLookup::AUDIENCE_RAW );
 		}
 
@@ -614,7 +613,7 @@ class GlobalBlockLookup {
 
 		if ( IPUtils::isIPAddress( $target ) ) {
 			$queryBuilder->where( [ 'gb_address' => $target ] );
-		} elseif ( $this->options->get( 'GlobalBlockingAllowGlobalAccountBlocks' ) ) {
+		} else {
 			$centralId = $this->centralIdLookup->centralIdFromName( $target, CentralIdLookup::AUDIENCE_RAW );
 			if ( !$centralId ) {
 				// If we are looking up a block by a central ID of a user, then the user must have a central ID
@@ -622,8 +621,6 @@ class GlobalBlockLookup {
 				return 0;
 			}
 			$queryBuilder->where( [ 'gb_target_central_id' => $centralId ] );
-		} else {
-			return 0;
 		}
 
 		return (int)$queryBuilder

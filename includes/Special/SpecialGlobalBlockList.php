@@ -112,21 +112,17 @@ class SpecialGlobalBlockList extends FormSpecialPage {
 			'globalblocking-list-indefblocks' => 'indefblocks',
 			'globalblocking-list-addressblocks' => 'addressblocks',
 			'globalblocking-list-rangeblocks' => 'rangeblocks',
+			'globalblocking-list-userblocks' => 'userblocks',
 		];
-		$accountBlocksEnabled = $this->getConfig()->get( 'GlobalBlockingAllowGlobalAccountBlocks' );
-		if ( $accountBlocksEnabled ) {
-			$optionsMessages['globalblocking-list-userblocks'] = 'userblocks';
-		}
 		return [
 			'target' => [
-				// If global account blocks are not enabled, then
-				'type' => $accountBlocksEnabled ? 'user' : 'text',
+				'type' => 'user',
 				'ipallowed' => true,
 				'iprange' => true,
 				'iprangelimits' => $this->getConfig()->get( 'GlobalBlockingCIDRLimit' ),
 				'name' => 'target',
-				'id' => 'mw-globalblocking-search-ip',
-				'label-message' => $accountBlocksEnabled ? 'globalblocking-search-target' : 'globalblocking-search-ip',
+				'id' => 'mw-globalblocking-search-target',
+				'label-message' => 'globalblocking-search-target',
 				'default' => $this->target,
 			],
 			'Options' => [
@@ -155,12 +151,9 @@ class SpecialGlobalBlockList extends FormSpecialPage {
 			if ( IPUtils::isIPAddress( $this->target ) ) {
 				$ip = $this->target;
 				$centralId = 0;
-			} elseif ( $this->getConfig()->get( 'GlobalBlockingAllowGlobalAccountBlocks' ) ) {
+			} else {
 				$ip = null;
 				$centralId = $this->lookup->centralIdFromName( $this->target, $this->getAuthority() );
-			} else {
-				$this->queryValid = false;
-				return Status::newFatal( 'badipaddress' );
 			}
 			$targetExpr = $this->globalBlockLookup->getGlobalBlockLookupConditions(
 				$ip, $centralId, GlobalBlockLookup::SKIP_ALLOWED_RANGES_CHECK
@@ -258,11 +251,7 @@ class SpecialGlobalBlockList extends FormSpecialPage {
 	}
 
 	public function getDescription(): Message {
-		$messageKey = 'globalblocking-list';
-		if ( $this->getConfig()->get( 'GlobalBlockingAllowGlobalAccountBlocks' ) ) {
-			$messageKey .= '-new';
-		}
-		return $this->msg( $messageKey );
+		return $this->msg( 'globalblocking-list-new' );
 	}
 
 	public function requiresPost(): bool {

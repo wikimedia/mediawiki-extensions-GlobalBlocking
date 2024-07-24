@@ -162,13 +162,6 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 		);
 	}
 
-	public function testOnSpecialContributionsBeforeMainOutputForGloballyBlockedUserWhenGlobalAccountBlocksDisabled() {
-		$this->overrideConfigValue( 'GlobalBlockingAllowGlobalAccountBlocks', false );
-		$this->testOnSpecialContributionsBeforeMainOutput(
-			self::$testGloballyBlockedUser->getName(), false, null
-		);
-	}
-
 	public function testOnSpecialContributionsBeforeMainOutputForNotBlockedUser() {
 		$this->testOnSpecialContributionsBeforeMainOutput(
 			self::$unblockedUser, false, null
@@ -278,11 +271,6 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 		$this->testOnOtherBlockLogLink( self::$testGloballyBlockedUser->getName(), true );
 	}
 
-	public function testOnOtherBlockLogLinkForGloballyBlockedUserWhenGlobalAccountBlocksAreDisabled() {
-		$this->overrideConfigValue( 'GlobalBlockingAllowGlobalAccountBlocks', false );
-		$this->testOnOtherBlockLogLink( self::$testGloballyBlockedUser->getName(), false );
-	}
-
 	public function testOnOtherBlockLogLinkForNotBlockedUser() {
 		$this->testOnOtherBlockLogLink( self::$unblockedUser->getName(), false );
 	}
@@ -369,11 +357,6 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 			self::$testGloballyBlockedUser->getName(), [ 'globalblock' ],
 			[ '(globalblocking-contribs-modify', '(globalblocking-contribs-remove', '(globalblocking-contribs-log' ]
 		);
-	}
-
-	public function testOnContributionsToolLinksForGloballyBlockedUserWhenGlobalAccountBlocksDisabled() {
-		$this->overrideConfigValue( 'GlobalBlockingAllowGlobalAccountBlocks', false );
-		$this->testOnContributionsToolLinks( self::$testGloballyBlockedUser->getName(), [ 'globalblock' ], [] );
 	}
 
 	public function testOnContributionsToolLinksForNotBlockedUser() {

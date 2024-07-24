@@ -264,11 +264,10 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 		$this->testExecuteWithTargetsParam( 'NonExistingUsername', 1, [] );
 	}
 
-	public function testExecuteWithInvalidAddressesParamWhenGlobalAccountBlocksDisabled() {
-		$this->overrideConfigValue( 'GlobalBlockingAllowGlobalAccountBlocks', false );
-		$this->expectApiErrorCode( 'invalidip' );
+	public function testExecuteWithAddressesParamWithInvalidUser() {
+		$this->expectApiErrorCode( 'nosuchuser' );
 		$this->doApiRequest( [
-			'action' => 'query', 'list' => 'globalblocks', 'bgaddresses' => 'invalid',
+			'action' => 'query', 'list' => 'globalblocks', 'bgaddresses' => 'Template:Test#test',
 		] );
 	}
 

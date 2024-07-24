@@ -107,8 +107,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/** @dataProvider provideBlock */
-	public function testBlock( array $data, string $expectedError, bool $globalAccountBlocksEnabled ) {
-		$this->setMwGlobals( 'wgGlobalBlockingAllowGlobalAccountBlocks', $globalAccountBlocksEnabled );
+	public function testBlock( array $data, string $expectedError ) {
 		// Prepare target for default block
 		$target = '1.2.3.6';
 
@@ -165,7 +164,6 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'options' => [ 'anon-only' ],
 				],
 				'expectedError' => '',
-				'globalAccountBlocksEnabled' => true,
 			],
 			'good range' => [
 				'data' => [
@@ -175,7 +173,6 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'options' => [ 'anon-only' ],
 				],
 				'expectedError' => '',
-				'globalAccountBlocksEnabled' => true,
 			],
 			'good modify' => [
 				'data' => [
@@ -185,17 +182,15 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'options' => [ 'anon-only', 'modify' ],
 				],
 				'expectedError' => '',
-				'globalAccountBlocksEnabled' => true,
 			],
-			'bad target' => [
+			'Invalid username' => [
 				'data' => [
-					'target' => 'Test User',
+					'target' => 'Template:Test User#test',
 					'reason' => 'Test block',
 					'expiry' => 'infinity',
 					'options' => [],
 				],
-				'expectedError' => 'globalblocking-block-ipinvalid',
-				'globalAccountBlocksEnabled' => false,
+				'expectedError' => 'globalblocking-block-target-invalid',
 			],
 			'no such user target' => [
 				'data' => [
@@ -205,7 +200,6 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'options' => [ 'anon-only' ],
 				],
 				'expectedError' => 'globalblocking-block-target-invalid',
-				'globalAccountBlocksEnabled' => true,
 			],
 			'bad expiry' => [
 				'data' => [
@@ -215,7 +209,6 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'options' => [ 'anon-only' ],
 				],
 				'expectedError' => 'globalblocking-block-expiryinvalid',
-				'globalAccountBlocksEnabled' => true,
 			],
 			'bad range' => [
 				'data' => [
@@ -225,7 +218,6 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'options' => [ 'anon-only' ],
 				],
 				'expectedError' => 'globalblocking-bigrange',
-				'globalAccountBlocksEnabled' => true,
 			],
 			'no modify' => [
 				'data' => [
@@ -235,14 +227,12 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'options' => [ 'anon-only' ],
 				],
 				'expectedError' => 'globalblocking-block-alreadyblocked',
-				'globalAccountBlocksEnabled' => true,
 			],
 		];
 	}
 
 	/** @dataProvider provideBlockForExistingUser */
 	public function testBlockForExistingUser( array $data, string $expectedError ) {
-		$this->setMwGlobals( 'wgGlobalBlockingAllowGlobalAccountBlocks', true );
 		$testUser = $this->getTestUser()->getUser();
 		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )
 			->getGlobalBlockManager();
@@ -285,7 +275,6 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'options' => [ 'anon-only' ],
 				],
 				'expectedError' => 'globalblocking-block-anononly-on-account',
-				'globalAccountBlocksEnabled' => true,
 			],
 			'bad expiry' => [
 				'data' => [
@@ -294,14 +283,12 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'options' => [ 'anon-only' ],
 				],
 				'expectedError' => 'globalblocking-block-expiryinvalid',
-				'globalAccountBlocksEnabled' => true,
 			],
 		];
 	}
 
 	/** @dataProvider provideUnblock */
-	public function testUnblock( array $data, string $expectedError, bool $globalAccountBlocksEnabled ) {
-		$this->setMwGlobals( 'wgGlobalBlockingAllowGlobalAccountBlocks', $globalAccountBlocksEnabled );
+	public function testUnblock( array $data, string $expectedError ) {
 		// Prepare target
 		$target = '1.2.3.4';
 
@@ -344,31 +331,20 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'reason' => 'Test unblock',
 				],
 				'expectedError' => '',
-				'globalAccountBlocksEnabled' => true,
 			],
-			'bad target' => [
+			'Invalid username' => [
 				'data' => [
-					'target' => 'Test User',
+					'target' => 'Template:Test User#test',
 					'reason' => 'Test unblock',
 				],
-				'expectedError' => 'globalblocking-block-ipinvalid',
-				'globalAccountBlocksEnabled' => false,
+				'expectedError' => 'globalblocking-block-target-invalid',
 			],
 			'not blocked' => [
 				'data' => [
 					'target' => '1.2.3.5',
 					'reason' => 'Test unblock',
 				],
-				'expectedError' => 'globalblocking-notblocked',
-				'globalAccountBlocksEnabled' => false,
-			],
-			'not blocked when account blocks enabled' => [
-				'data' => [
-					'target' => '1.2.3.5',
-					'reason' => 'Test unblock',
-				],
 				'expectedError' => 'globalblocking-notblocked-new',
-				'globalAccountBlocksEnabled' => true,
 			],
 		];
 	}

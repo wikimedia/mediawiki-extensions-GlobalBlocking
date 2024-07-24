@@ -117,13 +117,12 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 	}
 
 	protected function getFormFields() {
-		$accountBlocksEnabled = $this->getConfig()->get( 'GlobalBlockingAllowGlobalAccountBlocks' );
 		return [
 			'address' => [
 				'name' => 'address',
 				'type' => 'text',
-				'id' => 'mw-globalblocking-ipaddress mw-globalblocking-target',
-				'label-message' => $accountBlocksEnabled ? 'globalblocking-target' : 'globalblocking-ipaddress',
+				'id' => 'mw-globalblocking-target',
+				'label-message' => 'globalblocking-target',
 				'default' => $this->mTarget,
 				'required' => true,
 			],

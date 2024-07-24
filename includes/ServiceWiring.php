@@ -65,10 +65,6 @@ return [
 	): GlobalBlockLocalStatusManager {
 		$globalBlockingServices = GlobalBlockingServices::wrap( $services );
 		return new GlobalBlockLocalStatusManager(
-			new ServiceOptions(
-				GlobalBlockLocalStatusManager::CONSTRUCTOR_OPTIONS,
-				$services->getMainConfig()
-			),
 			$globalBlockingServices->getGlobalBlockLocalStatusLookup(),
 			$globalBlockingServices->getGlobalBlockLookup(),
 			$globalBlockingServices->getGlobalBlockingBlockPurger(),

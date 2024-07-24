@@ -44,7 +44,6 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 	}
 
 	public function testViewPageBeforeSubmission() {
-		$this->overrideConfigValue( 'GlobalBlockingAllowGlobalAccountBlocks', true );
 		// Need to get the full HTML to be able to check that the subtitle links are present
 		[ $html ] = $this->executeSpecialPage( '', null, null, null, true );
 		// Check that the form fields exist
@@ -109,14 +108,6 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 		[ $html ] = $this->executeSpecialPage( '', new FauxRequest( [ 'ip' => '7.6.5.4' ] ) );
 		$this->assertStringContainsString(
 			'globalblocking-list-noresults', $html, 'Results shown when no results were expected'
-		);
-	}
-
-	public function testUsernameAsSubpageWhenGlobalAccountBlocksDisabled() {
-		$this->overrideConfigValue( 'GlobalBlockingAllowGlobalAccountBlocks', false );
-		[ $html ] = $this->executeSpecialPage( 'test-user' );
-		$this->assertStringContainsString(
-			'badipaddress', $html, 'The form did not display the correct error for a username target'
 		);
 	}
 
