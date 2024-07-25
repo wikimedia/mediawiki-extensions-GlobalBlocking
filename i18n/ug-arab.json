@@ -8,8 +8,6 @@
 	"globalblocking-block-edit-dropdown": "چەكلەش سەۋەبىنى تەھرىرلە",
 	"globalblocking-block-expiry": "مۇددىتى:",
 	"globalblocking-block-expiry-selector-other": "باشقا ۋاقىت:",
-	"globalblocking-ipaddress": "IP ئادرېس:",
-	"globalblocking-search-ip": "IP ئادرېس:",
 	"globalblocking-list-unblock": "چىقىرىۋەت",
 	"globalblocking-unblock-reason": "سەۋەب:",
 	"globalblocking-whitelist-reason": "سەۋەب:"

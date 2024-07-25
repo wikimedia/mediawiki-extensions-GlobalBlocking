@@ -7,8 +7,6 @@
 		]
 	},
 	"globalblocking-block-reason": "कारण:",
-	"globalblocking-ipaddress": "आइपी ठेगाना",
-	"globalblocking-search-ip": "आइपी ठेगाना",
 	"globalblocking-list-unblock": "हटाउने",
 	"globalblocking-list-modify": "सच्याउने",
 	"globalblocking-goto-status": "विश्वव्यापी अवरोधको लागि स्थानीय स्थिति परिवर्तन गर्नुहोस्",
