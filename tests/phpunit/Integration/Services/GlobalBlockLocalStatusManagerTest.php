@@ -61,7 +61,7 @@ class GlobalBlockLocalStatusManagerTest extends MediaWikiIntegrationTestCase {
 			->locallyDisableBlock( '1.2.3.4', 'test', $this->getTestSysop()->getUser() );
 		$this->assertStatusNotOK( $status, 'The returned status should be fatal.' );
 		$this->assertStatusMessage(
-			'globalblocking-notblocked-new', $status,
+			'globalblocking-notblocked', $status,
 			'The returned status did not indicate that no block existed.'
 		);
 	}
@@ -138,7 +138,7 @@ class GlobalBlockLocalStatusManagerTest extends MediaWikiIntegrationTestCase {
 			->locallyEnableBlock( '1.2.3.4', 'test', $this->getTestSysop()->getUser() );
 		$this->assertStatusNotOK( $status, 'The returned status should be fatal.' );
 		$this->assertStatusMessage(
-			'globalblocking-notblocked-new', $status,
+			'globalblocking-notblocked', $status,
 			'The returned status did not indicate that no block existed.'
 		);
 	}

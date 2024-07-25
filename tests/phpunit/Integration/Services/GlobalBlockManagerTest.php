@@ -344,7 +344,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'target' => '1.2.3.5',
 					'reason' => 'Test unblock',
 				],
-				'expectedError' => 'globalblocking-notblocked-new',
+				'expectedError' => 'globalblocking-notblocked',
 			],
 		];
 	}

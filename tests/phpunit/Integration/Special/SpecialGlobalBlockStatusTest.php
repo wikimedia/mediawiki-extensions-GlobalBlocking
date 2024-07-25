@@ -159,7 +159,7 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 		);
 
 		$this->assertStringContainsString(
-			'globalblocking-notblocked-new', $html,
+			'globalblocking-notblocked', $html,
 			'The incorrect error message for the form was used.'
 		);
 	}

@@ -142,13 +142,8 @@ class ApiGlobalBlock extends ApiBase {
 		$legacyErrors = [];
 		$errors = Status::wrap( $status )->getErrorsArray();
 		foreach ( $errors as $error ) {
-			$code = $error[0];
-			// Strip '-new' suffix in message keys from error codes
-			if ( str_ends_with( $code, '-new' ) ) {
-				$code = substr( $code, 0, -4 );
-			}
 			$legacyErrors[] = [
-				'code' => $code,
+				'code' => $error[0],
 				'message' => str_replace(
 					"\n",
 					" ",

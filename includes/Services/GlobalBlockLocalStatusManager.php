@@ -54,7 +54,7 @@ class GlobalBlockLocalStatusManager {
 		// Check that a block exists on the given $target.
 		$globalBlockId = $this->globalBlockLookup->getGlobalBlockId( $target );
 		if ( !$globalBlockId ) {
-			return StatusValue::newFatal( 'globalblocking-notblocked-new', $target );
+			return StatusValue::newFatal( 'globalblocking-notblocked', $target );
 		}
 
 		// Assert that the block is not already locally disabled.
@@ -106,7 +106,7 @@ class GlobalBlockLocalStatusManager {
 		// Only allow locally re-enabling a global block if the global block exists.
 		$globalBlockId = $this->globalBlockLookup->getGlobalBlockId( $target );
 		if ( !$globalBlockId ) {
-			return StatusValue::newFatal( 'globalblocking-notblocked-new', $target );
+			return StatusValue::newFatal( 'globalblocking-notblocked', $target );
 		}
 
 		// Assert that the block is locally disabled.
