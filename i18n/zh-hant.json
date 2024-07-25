@@ -127,7 +127,7 @@
 	"globalblocking-logpage": "全域封鎖日誌",
 	"globalblocking-logpagetext": "此日誌包含了此 Wiki 中新增與移除的全域封鎖。要特別說明，全域封鎖可由其他 Wiki 新增與移除，其他 Wiki 對全域封鎖的設定會影響此 Wiki。要檢視所有使用中的全域封鎖，您可檢視[[Special:GlobalBlockList|全域封鎖清單]]。",
 	"globalblocking-logentry-block-old-format": "$1{{GENDER:$2|全域封鎖了}}{{GENDER:$4|$3}}（$5）",
-	"globalblocking-logentry-block": "$1{{GENDER:$2|全域封鎖了}}{{GENDER:$4|$3}}，期限為$5$6",
+	"globalblocking-logentry-block": "$1{{GENDER:$2|全域封鎖了}}{{GENDER:$4|$3}}，到期時間為$5$6",
 	"globalblocking-logentry-modify-old-format": "$1{{GENDER:$2|更改了}}{{GENDER:$4|$3}}的全域封鎖設定（$5）",
 	"globalblocking-logentry-modify": "$1{{GENDER:$2|更改了}}{{GENDER:$4|$3}}的全域封鎖設定，期限為$5$6",
 	"globalblocking-logentry-unblock": "$1{{GENDER:$2|移除了}}{{GENDER:$4|$3}}的全域封鎖",
