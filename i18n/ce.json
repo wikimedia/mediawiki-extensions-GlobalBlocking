@@ -71,5 +71,9 @@
 	"action-globalblock-whitelist": "глобалан блоктохарш цхьанхьа дӀайахар",
 	"right-globalblock-exempt": "глобалан блоктохарийн чекхбовлар",
 	"action-globalblock-exempt": "глобалан блоктохарийн чекхбовлар",
+	"log-action-filter-gblblock-gunblock": "Глобалан блокдӀайаккхар",
+	"log-action-filter-gblblock-modify": "Глобалан блоктохар хийца",
+	"log-action-filter-gblblock-whitelist": "КӀайн могӀаме глобалан блок тӀетохар",
+	"log-action-filter-gblblock-dwhitelist": "КӀайн могӀамера глобалан блок дӀайаккхар",
 	"grant-globalblock": "Глобалан блоктоха йа блокдӀайаккха IP-адрес тӀера."
 }
