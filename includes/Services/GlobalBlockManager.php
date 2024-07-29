@@ -217,7 +217,7 @@ class GlobalBlockManager {
 
 		$id = $this->globalBlockLookup->getGlobalBlockId( $data[ 'target' ], DB_PRIMARY );
 		if ( $id === 0 ) {
-			return StatusValue::newFatal( 'globalblocking-notblocked-new', $data['target'] );
+			return StatusValue::newFatal( 'globalblocking-notblocked', $data['target'] );
 		}
 
 		$this->globalBlockingConnectionProvider->getPrimaryGlobalBlockingDatabase()

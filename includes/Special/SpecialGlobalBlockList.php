@@ -251,7 +251,7 @@ class SpecialGlobalBlockList extends FormSpecialPage {
 	}
 
 	public function getDescription(): Message {
-		return $this->msg( 'globalblocking-list-new' );
+		return $this->msg( 'globalblocking-list' );
 	}
 
 	public function requiresPost(): bool {
