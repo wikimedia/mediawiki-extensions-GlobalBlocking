@@ -12,6 +12,7 @@ CREATE TABLE globalblocks (
   gb_timestamp TIMESTAMPTZ NOT NULL,
   gb_anon_only SMALLINT DEFAULT 0 NOT NULL,
   gb_create_account SMALLINT DEFAULT 1 NOT NULL,
+  gb_enable_autoblock SMALLINT DEFAULT 0 NOT NULL,
   gb_expiry TIMESTAMPTZ NOT NULL,
   gb_range_start TEXT NOT NULL,
   gb_range_end TEXT NOT NULL,

@@ -85,5 +85,9 @@ class GlobalBlockingSchemaHooks implements LoadExtensionSchemaUpdatesHook {
 			'virtual-globalblocking', 'addField', 'globalblocks', 'gb_create_account',
 			"$base/sql/$type/patch-globalblocks-add-gb_create_account.sql", true,
 		] );
+		$updater->addExtensionUpdateOnVirtualDomain( [
+			'virtual-globalblocking', 'addField', 'globalblocks', 'gb_enable_autoblock',
+			"$base/sql/$type/patch-globalblocks-add-gb_enable_autoblock.sql", true,
+		] );
 	}
 }

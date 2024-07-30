@@ -12,6 +12,7 @@ CREATE TABLE /*_*/globalblocks (
   gb_timestamp BINARY(14) NOT NULL,
   gb_anon_only TINYINT(1) DEFAULT 0 NOT NULL,
   gb_create_account TINYINT(1) DEFAULT 1 NOT NULL,
+  gb_enable_autoblock TINYINT(1) DEFAULT 0 NOT NULL,
   gb_expiry VARBINARY(14) NOT NULL,
   gb_range_start VARBINARY(35) NOT NULL,
   gb_range_end VARBINARY(35) NOT NULL,
