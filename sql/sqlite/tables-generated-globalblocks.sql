@@ -11,6 +11,7 @@ CREATE TABLE /*_*/globalblocks (
   gb_reason BLOB NOT NULL,
   gb_timestamp BLOB NOT NULL,
   gb_anon_only SMALLINT DEFAULT 0 NOT NULL,
+  gb_create_account SMALLINT DEFAULT 1 NOT NULL,
   gb_expiry BLOB NOT NULL,
   gb_range_start BLOB NOT NULL,
   gb_range_end BLOB NOT NULL
