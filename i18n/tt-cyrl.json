@@ -5,6 +5,7 @@
 			"Ильнар"
 		]
 	},
+	"globalblocking-list": "Гомумчикләнгән IP адреслары исемлеге",
 	"globalblocking-search-legend": "Гомум чикләүне эзләү",
 	"globalblocking-search-submit": "Чикләүләрне эзләү",
 	"globalblocking-whitelist": "Гомум чикләүләрнең җирле халәте",

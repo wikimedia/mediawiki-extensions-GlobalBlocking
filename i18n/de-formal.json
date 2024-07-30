@@ -8,6 +8,7 @@
 			"Umherirrender"
 		]
 	},
+	"globalblocking-block-intro": "Auf dieser Seite können Sie IP-Adressen für alle Wikis sperren.",
 	"globalblocking-block-alreadyblocked": "Die IP-Adresse $1 wurde schon global gesperrt.\nSie können die bestehende Sperre in der [[Special:GlobalBlockList|globalen Sperrliste]] einsehen oder die Einstellungen der Sperre über dieses Formular ändern.",
 	"globalblocking-list-ipinvalid": "Sie haben eine ungültige IP-Adresse ($1) eingegeben.\nBitte geben Sie eine gültige IP-Adresse ein.",
 	"globalblocking-unblock-unblocked": "Sie haben erfolgreich die IP-Adresse '''$1''' (Sperr-ID $2) entsperrt",

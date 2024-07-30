@@ -6,12 +6,16 @@
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Lejon]] IP adresat që do të [[Special:GlobalBlockList|bllokuar të gjithë të shumta wikis]]",
+	"globalblocking-block": "Globalisht bllokojnë një adresë IP",
+	"globalblocking-block-intro": "Ju mund të përdorni këtë faqe për të bllokuar një adresë IP në të gjitha wikis.",
 	"globalblocking-block-reason": "Arsyeja:",
 	"globalblocking-block-reason-dropdown": "* Bllok arsye të përbashkëta spamming Crosswiki ** ** ** Crosswiki abuzimit vandalizëm",
 	"globalblocking-block-edit-dropdown": "bllok arsye Edit",
 	"globalblocking-block-expiry": "Skadimi:",
 	"globalblocking-block-expiry-selector-other": "kohë të tjera:",
+	"globalblocking-block-legend": "Blloku një adresë IP globalisht",
 	"globalblocking-block-expiryinvalid": "Skadimit të hyrë është e pavlefshme.",
+	"globalblocking-block-submit": "Blloko këtë adresë IP globalisht",
 	"globalblocking-modify-submit": "Modifiko këtë bllok globale",
 	"globalblocking-block-success": "IP adresa $1 u bllokua me sukses në të gjitha projektet.",
 	"globalblocking-modify-success": "Blloku globale për $1 u ndryshua me sukses"

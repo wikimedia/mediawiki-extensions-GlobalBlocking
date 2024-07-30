@@ -11,12 +11,14 @@
 			"Тест"
 		]
 	},
+	"globalblocking-block": "Глабальна заблакіраваць IP-адрас",
 	"globalblocking-block-reason": "Прычына:",
 	"globalblocking-block-edit-dropdown": "Правіць прычыны блока",
 	"globalblocking-block-expiry": "Згасае:",
 	"globalblocking-block-expiry-selector-other": "Іншы час:",
 	"globalblocking-ipbanononly": "Глабальна блакіраваць толькі ананімных удзельнікаў",
 	"globalblocking-block-failure": "Адбылася памылка пры спробе глабальна заблакіраваць $1. Калі ласка, паспрабуйце зноў.",
+	"globalblocking-list": "Спіс глабальна заблакаваных IP-адрасоў",
 	"globalblocking-list-anononly": "толькі ананімныя",
 	"globalblocking-list-unblock": "выдаліць",
 	"globalblocking-list-whitelist": "лакальны статус",

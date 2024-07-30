@@ -7,6 +7,7 @@
 	},
 	"globalblocking-block-reason": "ܥܠܬܐ:",
 	"globalblocking-block-expiry-selector-other": "ܥܕܢܐ ܐܚܪܢܐ:",
+	"globalblocking-list": "ܡܟܬܒܘܬܐ ܕܡܘ̈ܢܥܐ ܕܐܝܦܝ (IP) ܚܪ̈ܝܡܐ ܓܘܢܐܝܬ",
 	"globalblocking-list-anononly": "ܠܐ ܝܕ̈ܝܥܐ ܒܠܚܘܕ",
 	"globalblocking-list-unblock": "ܠܚܝ",
 	"globalblocking-list-whitelist": "ܐܝܟܢܝܘܬܐ ܕܘܟܬܢܝܬܐ",

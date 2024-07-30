@@ -10,6 +10,7 @@
 	"globalblocking-list-unblock": "Heitta blokiruind",
 	"globalblocking-list-modify": "modificiruida",
 	"globalblocking-list-noresults": "Ectud IP-adres ei ole blokiruidud.",
+	"globalblocking-goto-block": "Blokiruida IP-adres kogonaz",
 	"globalblocking-goto-unblock": "Heitta kogonaz blokiruind",
 	"globalblocking-unblock-legend": "Heitta kogonaz blokiruind",
 	"globalblocking-unblock-reason": "Sü:",

@@ -4,5 +4,6 @@
 			"John Reid"
 		]
 	},
-	"globalblocking-local-failed": "Blockin the IP address locallie failed aes the gien IP address is awreadie blockit oan this wiki"
+	"globalblocking-local-failed": "Blockin the IP address locallie failed aes the gien IP address is awreadie blockit oan this wiki",
+	"globalblocking-also-local": "Block the gien IP address locallie oan this wiki ava"
 }
