@@ -13,6 +13,7 @@ CREATE TABLE /*_*/globalblocks (
   gb_anon_only SMALLINT DEFAULT 0 NOT NULL,
   gb_create_account SMALLINT DEFAULT 1 NOT NULL,
   gb_enable_autoblock SMALLINT DEFAULT 0 NOT NULL,
+  gb_autoblock_parent_id INTEGER UNSIGNED DEFAULT NULL,
   gb_expiry BLOB NOT NULL,
   gb_range_start BLOB NOT NULL,
   gb_range_end BLOB NOT NULL
@@ -27,3 +28,5 @@ CREATE INDEX gb_range ON /*_*/globalblocks (gb_range_start, gb_range_end);
 CREATE INDEX gb_timestamp ON /*_*/globalblocks (gb_timestamp);
 
 CREATE INDEX gb_expiry ON /*_*/globalblocks (gb_expiry);
+
+CREATE INDEX gb_autoblock_parent_id ON /*_*/globalblocks (gb_autoblock_parent_id);

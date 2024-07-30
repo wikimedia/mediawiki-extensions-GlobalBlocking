@@ -13,6 +13,7 @@ CREATE TABLE /*_*/globalblocks (
   gb_anon_only TINYINT(1) DEFAULT 0 NOT NULL,
   gb_create_account TINYINT(1) DEFAULT 1 NOT NULL,
   gb_enable_autoblock TINYINT(1) DEFAULT 0 NOT NULL,
+  gb_autoblock_parent_id INT UNSIGNED DEFAULT NULL,
   gb_expiry VARBINARY(14) NOT NULL,
   gb_range_start VARBINARY(35) NOT NULL,
   gb_range_end VARBINARY(35) NOT NULL,
@@ -21,5 +22,6 @@ CREATE TABLE /*_*/globalblocks (
   INDEX gb_range (gb_range_start, gb_range_end),
   INDEX gb_timestamp (gb_timestamp),
   INDEX gb_expiry (gb_expiry),
+  INDEX gb_autoblock_parent_id (gb_autoblock_parent_id),
   PRIMARY KEY(gb_id)
 ) /*$wgDBTableOptions*/;
