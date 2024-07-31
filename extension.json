@@ -233,17 +233,6 @@
 			"class": "MediaWiki\\Extension\\GlobalBlocking\\GlobalBlockingSchemaHooks"
 		}
 	},
-	"DeprecatedHooks": {
-		"GlobalBlockingBlockedIpMsg": {
-			"deprecatedVersion": "1.42"
-		},
-		"GlobalBlockingBlockedIpRangeMsg": {
-			"deprecatedVersion": "1.42"
-		},
-		"GlobalBlockingBlockedIpXffMsg": {
-			"deprecatedVersion": "1.42"
-		}
-	},
 	"config": {
 		"ApplyGlobalBlocks": {
 			"value": true

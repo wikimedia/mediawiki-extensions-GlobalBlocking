@@ -84,7 +84,6 @@ return [
 			),
 			$globalBlockingServices->getGlobalBlockingConnectionProvider(),
 			$services->getStatsdDataFactory(),
-			$services->getHookContainer(),
 			$services->getCentralIdLookup(),
 			$services->getContentLanguage(),
 			$globalBlockingServices->getReasonFormatter(),
