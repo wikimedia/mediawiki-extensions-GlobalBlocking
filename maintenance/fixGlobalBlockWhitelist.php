@@ -137,7 +137,6 @@ class FixGlobalBlockWhitelist extends Maintenance {
 		// Start processing the broken whitelist entries that can be fixed.
 		$this->output( "Found $brokenCount broken whitelist entries which can be fixed.\n" );
 		$count = 0;
-		$lbFactory = $this->getServiceContainer()->getDBLoadBalancerFactory();
 		$localDbr = $this->getReplicaDB();
 		$localDbw = $this->getPrimaryDB();
 
@@ -145,7 +144,7 @@ class FixGlobalBlockWhitelist extends Maintenance {
 			if ( !$this->dryRun && $count === $this->mBatchSize ) {
 				// Wait for replication if we have processed a batch of entries
 				// and this is not a dry run.
-				$lbFactory->waitForReplication();
+				$this->waitForReplication();
 				$count = 0;
 			}
 			$count++;
