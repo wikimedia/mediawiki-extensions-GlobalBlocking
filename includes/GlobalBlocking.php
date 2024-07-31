@@ -5,7 +5,6 @@ namespace MediaWiki\Extension\GlobalBlocking;
 use Exception;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\MediaWikiServices;
-use MediaWiki\Message\Message;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\User\User;
 use StatusValue;
@@ -33,19 +32,6 @@ class GlobalBlocking {
 		return GlobalBlockingServices::wrap( MediaWikiServices::getInstance() )
 			->getGlobalBlockLookup()
 			->getUserBlock( $user, $ip );
-	}
-
-	/**
-	 * @param User $user
-	 * @param string $ip
-	 * @return Message[] empty or message objects
-	 * @deprecated Since 1.42. Use GlobalBlockLookup::getUserBlockErrors.
-	 */
-	public static function getUserBlockErrors( $user, $ip ) {
-		wfDeprecated( __METHOD__, '1.42' );
-		return GlobalBlockingServices::wrap( MediaWikiServices::getInstance() )
-			->getGlobalBlockLookup()
-			->getUserBlockErrors( $user, $ip );
 	}
 
 	/**
