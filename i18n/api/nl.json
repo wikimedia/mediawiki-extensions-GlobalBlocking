@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Mainframe98",
-			"McDutchie"
+			"McDutchie",
+			"Siebrand"
 		]
 	},
 	"apihelp-globalblock-summary": "Een gebruiker globaal blokkeren of deblokkeren.",
@@ -19,7 +20,7 @@
 	"apihelp-query+globalblocks-param-ids": "Door sluistekens gescheiden lijst met blokkade-ID’s die moeten worden weergegeven.",
 	"apihelp-query+globalblocks-param-addresses": "Door sluistekens gescheiden lijst met IP-adressen waarnaar moet worden gezocht.",
 	"apihelp-query+globalblocks-param-ip": "Alle blokken ophalen die van toepassing zijn op dit IP-adres of CIDR-bereik, ook bereikblokken. Kan niet samen met $1addresses worden gebruikt. CIDR-bereiken die groter zijn dan /16 worden niet geaccepteerd.",
-	"apihelp-query+globalblocks-param-limit": "Het maximum aantal blokkades om te tonen.",
+	"apihelp-query+globalblocks-param-limit": "Het maximum aantal blokkades om weer te geven.",
 	"apihelp-query+globalblocks-param-prop": "Welke eigenschappen op te vragen.",
 	"apihelp-query+globalblocks-example-1": "Toon alle globale blokkades",
 	"apihelp-query+globalblocks-example-2": "Toon globale blokkades die van toepassing op het IP-adres 192.0.2.18",

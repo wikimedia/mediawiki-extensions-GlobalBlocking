@@ -35,7 +35,8 @@
 			"No Sleep till Krupki",
 			"Dreamy Jazz",
 			"Ата",
-			"Jack who built the house"
+			"Jack who built the house",
+			"Cookai1205"
 		]
 	},
 	"globalblocking-desc": "{{desc|name=Global Blocking|url=https://www.mediawiki.org/wiki/Extension:GlobalBlocking}}",
@@ -53,7 +54,7 @@
 	"globalblocking-block-ipinvalid": "{{Identical|The IP address ($1) ...}}",
 	"globalblocking-block-expiryinvalid": "Used as error message on Special:GlobalBlock if expiry time entered was invalid.",
 	"globalblocking-block-submit": "Used as submit button text on Special:GlobalBlock form.\n\nSee also:\n* {{msg-mw|globalblocking-modify-submit}}\n* {{msg-mw|ipbsubmit}}\n* {{msg-mw|globalblocking-block-submit-new}}",
-	"globalblocking-modify-submit": "Used as submit button text on Special:GlobalBlock form when modifying an existing global block.\n\nSee also:\n* {{msg-mw|globalblocking-block-submit}}\n* {{msg-mw|ipb-change-block}}",
+	"globalblocking-modify-submit": "Used as submit button text on Special:GlobalBlock form when modifying an existing global block.\n\nSee also:\n* {{msg-mw|globalblocking-modify-submit}}\n* {{msg-mw|ipb-change-block}}",
 	"globalblocking-block-success": "Used in [[Special:GlobalBlock]]. Parameters:\n* $1 - IP address\n\nSee also: {{msg-mw|globalblocking-modify-success}}",
 	"globalblocking-modify-success": "Used in [[Special:GlobalBlock]] as a success message indicating that a global block was successfully modified. Parameters:\n* $1 - IP address, IP range, or username\n\nSee also: {{msg-mw|globalblocking-block-success}}",
 	"globalblocking-local-failed": "Shown if blocking an IP address locally failed.\n\nSee also:\n* {{msg-mw|globalblocking-local-failed-new}}",
@@ -91,7 +92,7 @@
 	"globalblocking-return": "Link to Special:GlobalBlockList. Shown on Special:GlobalWhiteList and Special:GlobalUnblock below the success message.\n\nSuccess messages:\n*{{msg-mw|globalblocking-block-success}}\n*{{msg-mw|globalblocking-modify-success}}\n*{{msg-mw|globalblocking-unblock-unblocked}}\n*{{msg-mw|globalblocking-whitelist-whitelisted}}\n*{{msg-mw|globalblocking-whitelist-dewhitelisted}}",
 	"globalblocking-add-block": "Link to Special:GlobalBlock. Shown on Special:GlobalBlock below the success message: {{msg-mw|globalblocking-block-success}}.",
 	"globalblocking-notblocked": "Used as error message in Special:GlobalBlockStatus and Special:RemoveGlobalBlock. Parameters:\n* $1 - IP address\n\nSee also:\n* {{msg-mw|globalblocking-notblocked-new}}",
-	"globalblocking-unblock": "{{doc-special|GlobalUnblock}}\n\nSee also:\n* {{msg-mw|globalblocking-block}}\n* {{msg-mw|globalblocking-block-new}}",
+	"globalblocking-unblock": "{{doc-special|GlobalUnblock}}\n\nSee also:\n* {{msg-mw|globalblocking-block}}\n* {{msg-mw|globalblocking-block}}",
 	"globalblocking-unblock-legend": "Used as legend for the fieldset around the input form of Special:GlobalUnblock.\n\nSee also:\n* {{msg-mw|globalblocking-block-legend}}",
 	"globalblocking-unblock-submit": "Used as submit button text on Special:GlobalUnblock form.\n\nSee also:\n* {{msg-mw|globalblocking-block-submit}}\n* {{msg-mw|ipusubmit}}",
 	"globalblocking-unblock-reason": "{{Identical|Reason}}",

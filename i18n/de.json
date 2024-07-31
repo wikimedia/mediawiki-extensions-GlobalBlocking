@@ -15,7 +15,10 @@
 			"Purodha",
 			"Raimond Spekking",
 			"ToBeFree",
-			"Umherirrender"
+			"Umherirrender",
+			"Johannnes89",
+			"Pppery",
+			"TomatoCake"
 		]
 	},
 	"globalblocking-desc": "Ermöglicht das [[Special:GlobalBlock|Sperren]] von IP-Adressen auf [[Special:GlobalBlockList|allen Wikis]]",
@@ -128,7 +131,7 @@
 	"log-action-filter-gblblock-whitelist": "Hinzufügung zur weißen Liste für globale Sperren",
 	"log-action-filter-gblblock-dwhitelist": "Entfernung von der weißen Liste für globale Sperren",
 	"grant-globalblock": "Global eine IP-Adresse sperren oder freigeben",
-	"globalblocking-blockedtext-all-wikis": "Deine IP-Adresse wurde [[m:Special:MyLanguage/Global blocks|auf allen Wikis gesperrt]].",
+	"globalblocking-blockedtext-all-wikis": "Deine IP-Adresse wurde auf allen Wikis gesperrt.",
 	"globalblocking-blockedtext-on-range": "Deine IP-Adresse liegt in einem Bereich, der auf [[m:Special:MyLanguage/Global blocks|allen Wikis der Wikimedia Foundation gesperrt]] wurde.",
 	"globalblocking-blockedtext-on-proxy": "Einer oder mehrere Proxy-Server, die von deiner Anfrage verwendet werden, sind [[m:Special:MyLanguage/Global blocks|global gesperrt]].",
 	"globalblocking-blockedtext-blocker-admin": "Du kannst dich an $1 wenden, um über die Sperre zu diskutieren.",
