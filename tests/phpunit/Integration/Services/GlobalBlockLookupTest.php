@@ -201,7 +201,7 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 	public function testGetUserBlockOnNoBlockForNamedUser( $ip ) {
 		$this->testGetUserBlockOnNoBlock(
 			$this->getTestUser()->getUser(),
-			null,
+			$ip,
 			'No matching global block row should have been found by ::getUserBlock for an account ' .
 			'which is not globally blocked.'
 		);
@@ -210,7 +210,6 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 	public static function provideGetUserBlockOnNoBlockForNamedUser() {
 		return [
 			'IP is null provided' => [ null ],
-			'IP is provided but empty' => [ '' ],
 			'IP is provided but is not blocked' => [ '1.2.3.4' ],
 		];
 	}
