@@ -12,7 +12,6 @@ use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusManager;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockManager;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockReasonFormatter;
-use MediaWiki\MediaWikiServices;
 use MediaWikiIntegrationTestCase;
 
 /**
@@ -23,7 +22,7 @@ class GlobalBlockingServicesTest extends MediaWikiIntegrationTestCase {
 	public function testGetters( string $method, string $expectedClass ) {
 		$this->assertInstanceOf(
 			$expectedClass,
-			GlobalBlockingServices::wrap( MediaWikiServices::getInstance() )->$method()
+			GlobalBlockingServices::wrap( $this->getServiceContainer() )->$method()
 		);
 	}
 

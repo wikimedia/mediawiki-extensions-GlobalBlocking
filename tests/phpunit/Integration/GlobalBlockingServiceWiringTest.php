@@ -20,7 +20,6 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Test\Integration;
 
-use MediaWiki\MediaWikiServices;
 use MediaWikiIntegrationTestCase;
 
 /**
@@ -32,7 +31,7 @@ class GlobalBlockingServiceWiringTest extends MediaWikiIntegrationTestCase {
 	 * @dataProvider provideService
 	 */
 	public function testService( string $name ) {
-		MediaWikiServices::getInstance()->get( $name );
+		$this->getServiceContainer()->get( $name );
 		$this->addToAssertionCount( 1 );
 	}
 
