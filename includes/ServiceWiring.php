@@ -85,10 +85,7 @@ return [
 			$globalBlockingServices->getGlobalBlockingConnectionProvider(),
 			$services->getStatsdDataFactory(),
 			$services->getCentralIdLookup(),
-			$services->getContentLanguage(),
-			$globalBlockingServices->getReasonFormatter(),
-			$globalBlockingServices->getGlobalBlockLocalStatusLookup(),
-			$globalBlockingServices->getGlobalBlockingLinkBuilder()
+			$globalBlockingServices->getGlobalBlockLocalStatusLookup()
 		);
 	},
 	'GlobalBlocking.GlobalBlockManager' => static function (
