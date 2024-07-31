@@ -8,8 +8,6 @@ use Liuggio\StatsdClient\Factory\StatsdDataFactoryInterface;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlock;
-use MediaWiki\Extension\GlobalBlocking\Hook\GlobalBlockingHookRunner;
-use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Message\Message;
 use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\User;
@@ -50,7 +48,6 @@ class GlobalBlockLookup {
 	private ServiceOptions $options;
 	private GlobalBlockingConnectionProvider $globalBlockingConnectionProvider;
 	private StatsdDataFactoryInterface $statsdFactory;
-	private GlobalBlockingHookRunner $hookRunner;
 	private CentralIdLookup $centralIdLookup;
 	private Language $contentLanguage;
 	private GlobalBlockReasonFormatter $globalBlockReasonFormatter;
@@ -63,7 +60,6 @@ class GlobalBlockLookup {
 		ServiceOptions $options,
 		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
 		StatsdDataFactoryInterface $statsdFactory,
-		HookContainer $hookContainer,
 		CentralIdLookup $centralIdLookup,
 		Language $contentLanguage,
 		GlobalBlockReasonFormatter $globalBlockReasonFormatter,
@@ -74,7 +70,6 @@ class GlobalBlockLookup {
 		$this->options = $options;
 		$this->globalBlockingConnectionProvider = $globalBlockingConnectionProvider;
 		$this->statsdFactory = $statsdFactory;
-		$this->hookRunner = new GlobalBlockingHookRunner( $hookContainer );
 		$this->centralIdLookup = $centralIdLookup;
 		$this->contentLanguage = $contentLanguage;
 		$this->globalBlockReasonFormatter = $globalBlockReasonFormatter;
@@ -196,15 +191,11 @@ class GlobalBlockLookup {
 				$this->centralIdLookup->nameFromCentralId( $block->gb_by_central_id ) ?? ''
 			);
 
-			// The following Hooks are deprecated and the message it generates is not used anywhere.
-			// The hooks will be removed in the future through T358776.
 			// Allow site customization of blocked message.
 			if ( IPUtils::isValid( $block->gb_address ) ) {
 				$errorMsg = 'globalblocking-ipblocked';
-				$this->hookRunner->onGlobalBlockingBlockedIpMsg( $errorMsg );
 			} elseif ( IPUtils::isValidRange( $block->gb_address ) ) {
 				$errorMsg = 'globalblocking-ipblocked-range';
-				$this->hookRunner->onGlobalBlockingBlockedIpRangeMsg( $errorMsg );
 			} else {
 				$errorMsg = false;
 			}
@@ -255,7 +246,6 @@ class GlobalBlockLookup {
 					);
 					// Allow site customization of blocked message.
 					$blockedIpXffMsg = 'globalblocking-ipblocked-xff';
-					$this->hookRunner->onGlobalBlockingBlockedIpXffMsg( $blockedIpXffMsg );
 					return $this->addToUserBlockDetailsCache( [
 						'block' => $block,
 						'error' => [
