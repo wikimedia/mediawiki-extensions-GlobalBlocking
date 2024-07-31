@@ -4,6 +4,7 @@ namespace MediaWiki\Extension\GlobalBlocking\Test\Integration\Special;
 
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Tests\SpecialPage\FormSpecialPageTestCase;
 use Wikimedia\TestingAccessWrapper;
@@ -18,7 +19,7 @@ class SpecialGlobalBlockTest extends FormSpecialPageTestCase {
 		parent::setUp();
 		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
 		// to be the local provider.
-		$this->setMwGlobals( 'wgCentralIdLookupProvider', 'local' );
+		$this->overrideConfigValue( MainConfigNames::CentralIdLookupProvider, 'local' );
 	}
 
 	protected function newSpecialPage() {

@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\GlobalBlocking\Test\Integration\Special;
 use ErrorPageError;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Tests\SpecialPage\FormSpecialPageTestCase;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
@@ -22,7 +23,7 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 		parent::setUp();
 		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
 		// to be the local provider.
-		$this->setMwGlobals( 'wgCentralIdLookupProvider', 'local' );
+		$this->overrideConfigValue( MainConfigNames::CentralIdLookupProvider, 'local' );
 	}
 
 	protected function newSpecialPage() {
@@ -129,7 +130,7 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 	}
 
 	public function testDisabledIfApplyGlobalBlocksIsFalse() {
-		$this->setMwGlobals( 'wgApplyGlobalBlocks', false );
+		$this->overrideConfigValue( 'ApplyGlobalBlocks', false );
 		$this->expectException( ErrorPageError::class );
 		$this->expectExceptionMessage( wfMessage( 'globalblocking-whitelist-notapplied' )->text() );
 		RequestContext::getMain()->setUser( $this->getTestSysop()->getUser() );

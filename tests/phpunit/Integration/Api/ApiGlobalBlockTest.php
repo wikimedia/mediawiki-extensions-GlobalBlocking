@@ -6,6 +6,7 @@ use ApiMain;
 use ApiResult;
 use MediaWiki\Extension\GlobalBlocking\Api\ApiGlobalBlock;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Permissions\Authority;
 use MediaWiki\Tests\Api\ApiTestCase;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
@@ -27,7 +28,7 @@ class ApiGlobalBlockTest extends ApiTestCase {
 		parent::setUp();
 		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
 		// to be the local provider.
-		$this->setMwGlobals( 'wgCentralIdLookupProvider', 'local' );
+		$this->overrideConfigValue( MainConfigNames::CentralIdLookupProvider, 'local' );
 	}
 
 	private function getAuthorityForSuccess(): Authority {

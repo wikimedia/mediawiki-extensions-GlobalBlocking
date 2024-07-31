@@ -32,7 +32,7 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 		parent::setUp();
 		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
 		// to be the local provider.
-		$this->setMwGlobals( 'wgCentralIdLookupProvider', 'local' );
+		$this->overrideConfigValue( MainConfigNames::CentralIdLookupProvider, 'local' );
 	}
 
 	private function getGlobalBlockingHooksConstructorArguments(): array {
@@ -492,7 +492,7 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 	public function addDBDataOnce() {
 		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
 		// to be the local provider.
-		$this->setMwGlobals( 'wgCentralIdLookupProvider', 'local' );
+		$this->overrideConfigValue( MainConfigNames::CentralIdLookupProvider, 'local' );
 		// Create two test GlobalBlocks on an IP and IP range in the database for use in the above tests. These
 		// should not be modified by any code in GlobalBlockingHooks, so this can be added once per-class.
 		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager();

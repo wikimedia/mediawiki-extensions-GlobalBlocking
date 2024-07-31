@@ -4,6 +4,7 @@ namespace MediaWiki\Extension\GlobalBlocking\Test\Integration\Services;
 
 use InvalidArgumentException;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
+use MediaWiki\MainConfigNames;
 use MediaWikiIntegrationTestCase;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
 
@@ -18,7 +19,7 @@ class GlobalBlockLocalStatusLookupTest extends MediaWikiIntegrationTestCase {
 		ConvertibleTimestamp::setFakeTime( '20230405030201' );
 		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
 		// to be the local provider.
-		$this->setMwGlobals( 'wgCentralIdLookupProvider', 'local' );
+		$this->overrideConfigValue( MainConfigNames::CentralIdLookupProvider, 'local' );
 	}
 
 	public function testGetLocalWhitelistInfoThrowsExceptionOnInvalidArguments() {
@@ -77,7 +78,7 @@ class GlobalBlockLocalStatusLookupTest extends MediaWikiIntegrationTestCase {
 	public function addDBDataOnce() {
 		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
 		// to be the local provider.
-		$this->setMwGlobals( 'wgCentralIdLookupProvider', 'local' );
+		$this->overrideConfigValue( MainConfigNames::CentralIdLookupProvider, 'local' );
 		$testTarget = $this->getTestUser()->getUser();
 		// The tests should not modify the database, so we don't need to reset the tables
 		// between tests in this class.

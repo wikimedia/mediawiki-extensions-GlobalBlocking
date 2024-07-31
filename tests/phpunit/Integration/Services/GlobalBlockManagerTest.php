@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\GlobalBlocking\Test\Integration\Services;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
@@ -22,7 +23,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 		ConvertibleTimestamp::setFakeTime( '2021-03-02T22:00:00Z' );
 		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
 		// to be the local provider.
-		$this->setMwGlobals( 'wgCentralIdLookupProvider', 'local' );
+		$this->overrideConfigValue( MainConfigNames::CentralIdLookupProvider, 'local' );
 	}
 
 	/**

@@ -6,6 +6,7 @@ use ApiMain;
 use ApiQuery;
 use MediaWiki\Extension\GlobalBlocking\Api\ApiQueryGlobalBlocks;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Tests\Api\Query\ApiQueryTestBase;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWiki\User\UserIdentity;
@@ -31,7 +32,7 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 		ConvertibleTimestamp::setFakeTime( '20230205060708' );
 		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
 		// to be the local provider.
-		$this->setMwGlobals( 'wgCentralIdLookupProvider', 'local' );
+		$this->overrideConfigValue( MainConfigNames::CentralIdLookupProvider, 'local' );
 	}
 
 	/** @dataProvider provideExecuteProvidingIncompatibleParameters */
@@ -301,7 +302,7 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 	public function addDBDataOnce() {
 		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
 		// to be the local provider.
-		$this->setMwGlobals( 'wgCentralIdLookupProvider', 'local' );
+		$this->overrideConfigValue( MainConfigNames::CentralIdLookupProvider, 'local' );
 		// We can add the DB data once for this class as the service should not modify, insert or delete rows from
 		// the database.
 		$testPerformer = $this->getTestUser( [ 'sysop', 'steward' ] )->getUserIdentity();

@@ -6,6 +6,7 @@ use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\Extension\GlobalBlocking\Special\GlobalBlockListPager;
+use MediaWiki\MainConfigNames;
 use MediaWiki\User\UserIdentity;
 use MediaWikiIntegrationTestCase;
 
@@ -22,7 +23,7 @@ class GlobalBlockListPagerTest extends MediaWikiIntegrationTestCase {
 		parent::setUp();
 		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
 		// to be the local provider.
-		$this->setMwGlobals( 'wgCentralIdLookupProvider', 'local' );
+		$this->overrideConfigValue( MainConfigNames::CentralIdLookupProvider, 'local' );
 	}
 
 	private function getObjectUnderTest() {
@@ -130,7 +131,7 @@ class GlobalBlockListPagerTest extends MediaWikiIntegrationTestCase {
 	public function addDBDataOnce() {
 		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
 		// to be the local provider.
-		$this->setMwGlobals( 'wgCentralIdLookupProvider', 'local' );
+		$this->overrideConfigValue( MainConfigNames::CentralIdLookupProvider, 'local' );
 		// Create some testing globalblocks database rows for IPs, IP ranges, and accounts for use in the above tests.
 		// These should not be modified by any code in GlobalBlockListPager, so this can be added once per-class.
 		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );

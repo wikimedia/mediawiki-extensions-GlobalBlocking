@@ -4,6 +4,7 @@ namespace MediaWiki\Extension\GlobalBlocking\Test\Integration\Specials;
 
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Extension\GlobalBlocking\Special\SpecialGlobalBlockList;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
 use SpecialPageTestBase;
 
@@ -21,7 +22,7 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 		parent::setUp();
 		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
 		// to be the local provider.
-		$this->setMwGlobals( 'wgCentralIdLookupProvider', 'local' );
+		$this->overrideConfigValue( MainConfigNames::CentralIdLookupProvider, 'local' );
 	}
 
 	/**
@@ -163,7 +164,7 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 	public function addDBDataOnce() {
 		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
 		// to be the local provider.
-		$this->setMwGlobals( 'wgCentralIdLookupProvider', 'local' );
+		$this->overrideConfigValue( MainConfigNames::CentralIdLookupProvider, 'local' );
 		// Create some testing globalblocks database rows for IPs and IP ranges for use in the above tests. These
 		// should not be modified by any code in SpecialGlobalBlockList, so this can be added once per-class.
 		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager();

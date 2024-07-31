@@ -6,6 +6,7 @@ use InvalidArgumentException;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
+use MediaWiki\MainConfigNames;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentityValue;
 use MediaWiki\WikiMap\WikiMap;
@@ -25,7 +26,7 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 		ConvertibleTimestamp::setFakeTime( '20240219050403' );
 		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
 		// to be the local provider.
-		$this->setMwGlobals( 'wgCentralIdLookupProvider', 'local' );
+		$this->overrideConfigValue( MainConfigNames::CentralIdLookupProvider, 'local' );
 	}
 
 	private function getGloballyBlockedTestUser(): User {
@@ -41,7 +42,7 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 
 	/** @dataProvider provideGetUserBlockForNamedWhenXFFHeaderIsNotBlocked */
 	public function testGetUserBlockForNamedWhenXFFHeaderIsNotBlocked( $xffHeader ) {
-		$this->setMwGlobals( 'wgGlobalBlockingBlockXFF', true );
+		$this->overrideConfigValue( 'GlobalBlockingBlockXFF', true );
 		$testUser = $this->getTestUser()->getUser();
 		RequestContext::getMain()->setUser( $testUser );
 		RequestContext::getMain()->getRequest()->setHeader( 'X-Forwarded-For', $xffHeader );
@@ -61,7 +62,7 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 
 	/** @dataProvider provideGetUserBlockForNamedWhenXffBlocked */
 	public function testGetUserBlockForNamedWhenXffBlocked( $xffHeader, $expectedGlobalBlockId ) {
-		$this->setMwGlobals( 'wgGlobalBlockingBlockXFF', true );
+		$this->overrideConfigValue( 'GlobalBlockingBlockXFF', true );
 		$testUser = $this->getTestUser()->getUser();
 		RequestContext::getMain()->setUser( $testUser );
 		RequestContext::getMain()->getRequest()->setHeader( 'X-Forwarded-For', $xffHeader );
@@ -140,7 +141,7 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testGetUserBlockGlobalBlockingAllowedRanges() {
-		$this->setMwGlobals( 'wgGlobalBlockingAllowedRanges', [ '1.2.3.4/30', '5.6.7.8/24' ] );
+		$this->overrideConfigValue( 'GlobalBlockingAllowedRanges', [ '1.2.3.4/30', '5.6.7.8/24' ] );
 		$this->testGetUserBlockOnNoBlock(
 			UserIdentityValue::newAnonymous( '5.6.7.8' ), null,
 			'No matching global block row should have been found by ::getUserBlock because the IP is in ' .
@@ -386,7 +387,7 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 	public function testGetGlobalBlockLookupConditions(
 		$ipOrRange, $centralId, $flags, $expected, $ipV4Limit = 16, $ipV6Limit = 19
 	) {
-		$this->setMwGlobals( 'wgGlobalBlockingCIDRLimit', [
+		$this->overrideConfigValue( 'GlobalBlockingCIDRLimit', [
 			'IPv4' => $ipV4Limit,
 			'IPv6' => $ipV6Limit,
 		] );
@@ -453,7 +454,7 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 	public function addDBDataOnce() {
 		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
 		// to be the local provider.
-		$this->setMwGlobals( 'wgCentralIdLookupProvider', 'local' );
+		$this->overrideConfigValue( MainConfigNames::CentralIdLookupProvider, 'local' );
 		// We can add the DB data once for this class as the service should not modify, insert or delete rows from
 		// the database.
 		$testUser = $this->getTestSysop()->getUserIdentity();
