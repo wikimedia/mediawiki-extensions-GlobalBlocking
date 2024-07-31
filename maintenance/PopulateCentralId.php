@@ -36,7 +36,6 @@ class PopulateCentralId extends LoggedUpdateMaintenance {
 	public function doDbUpdates() {
 		$dbw = $this->getDB( DB_PRIMARY );
 		$services = $this->getServiceContainer();
-		$lbFactory = $services->getDBLoadBalancerFactory();
 		$lookup = $services->getCentralIdLookup();
 		$wikiId = WikiMap::getCurrentWikiId();
 
@@ -84,7 +83,7 @@ class PopulateCentralId extends LoggedUpdateMaintenance {
 			}
 
 			$count += $dbw->affectedRows();
-			$lbFactory->waitForReplication();
+			$this->waitForReplication();
 		}
 		$this->output( "Completed migration, updated $count row(s), migration failed for $failed row(s).\n" );
 
