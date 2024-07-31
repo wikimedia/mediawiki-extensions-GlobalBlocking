@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Karmwiki",
 			"Macofe",
 			"McDutchie"
 		]
@@ -23,7 +24,7 @@
 	"globalblocking-modify-submit": "Modificar iste blocada global",
 	"globalblocking-block-success": "'''$1''' ha essite blocate sur tote le wikis.",
 	"globalblocking-modify-success": "Le blocada global de '''$1''' ha essite modificate.",
-	"globalblocking-local-failed": "Le blocada local del adresse IP ha fallite perque le adresse IP fornite es jam blocate sur iste wiki.",
+	"globalblocking-local-failed": "Le blocada local del usator ha fallite perque le usator fornite es jam blocate sur iste wiki.",
 	"globalblocking-block-failure": "Un error ha occurrite durante le tentativa de blocar $1 globalmente. Per favor tenta lo de novo.",
 	"globalblocking-block-alreadyblocked": "$1 es ja blocate globalmente.\nTu pote vider le blocada existente in le [[Special:GlobalBlockList|lista de blocadas global]],\no modificar le parametros del blocada existente resubmittente iste formulario.",
 	"globalblocking-bigrange": "Le intervallo specificate ($1) excede le limites.\nLe limite $2 es un intervallo /$3.",
@@ -96,7 +97,7 @@
 	"globalblocking-contribs-block": "blocage global",
 	"globalblocking-contribs-modify": "modificar le blocada global",
 	"globalblocking-contribs-remove": "remover le blocada global",
-	"globalblocklist": "Lista de adresses IP blocate globalmente",
+	"globalblocklist": "Lista de usatores globalmente blocate",
 	"globalblock": "Blocar globalmente un adresse IP",
 	"globalblockstatus": "Stato local de blocadas global",
 	"removeglobalblock": "Remover un blocada global",
