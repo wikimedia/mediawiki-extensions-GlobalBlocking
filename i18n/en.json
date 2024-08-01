@@ -94,6 +94,7 @@
 	"globalblocking-logentry-whitelist": "$1 {{GENDER:$2|disabled}} the global block on {{GENDER:$4|$3}} locally",
 	"globalblocking-logentry-dewhitelist": "$1 {{GENDER:$2|re-enabled}} the global block on {{GENDER:$4|$3}} locally",
 	"globalblocking-block-flag-anon-only": "anonymous users only",
+	"globalblocking-block-flag-account-creation-disabled": "account creation disabled",
 	"globalblocking-loglink": "The user $1 is blocked globally ([[{{#Special:GlobalBlockList}}/$1|full details]]).",
 	"globalblocking-contribs-notice": "This user is currently globally blocked.\nThe global block log entry is provided below for reference:",
 	"globalblocking-showlog": "This user has been blocked previously.\nThe block log is provided below for reference:",
