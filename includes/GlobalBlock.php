@@ -5,23 +5,15 @@ namespace MediaWiki\Extension\GlobalBlocking;
 use MediaWiki\Block\AbstractBlock;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\User\CentralId\CentralIdLookup;
-use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
+use MediaWiki\User\UserIdentityValue;
 use MediaWiki\WikiMap\WikiMap;
 use stdClass;
 
 class GlobalBlock extends AbstractBlock {
-	/** @var int */
-	private $id;
-
-	/** @var array */
-	protected $error;
-
-	/** @var bool */
-	protected $xff;
-
-	/** @var UserIdentity|null */
-	private $blocker;
+	private int $id;
+	private bool $xff;
+	private ?UserIdentity $blocker;
 
 	/**
 	 * @param stdClass $block
@@ -30,10 +22,8 @@ class GlobalBlock extends AbstractBlock {
 	public function __construct( stdClass $block, $options ) {
 		parent::__construct( $options );
 
-		$db = MediaWikiServices::getInstance()
-			->getDBLoadBalancerFactory()
-			->getMainLB( $this->getWikiId() )
-			->getConnection( DB_REPLICA, [], $this->getWikiId() );
+		$db = MediaWikiServices::getInstance()->getConnectionProvider()
+			->getReplicaDatabase( $this->getWikiId() );
 		$this->setExpiry( $db->decodeExpiry( $options['expiry'] ) );
 
 		$this->id = $block->gb_id;
@@ -83,8 +73,8 @@ class GlobalBlock extends AbstractBlock {
 	 * @param stdClass $block DB row from globalblocks table
 	 */
 	public function setGlobalBlocker( stdClass $block ) {
-		$lookup = MediaWikiServices::getInstance()
-			->getCentralIdLookup();
+		$services = MediaWikiServices::getInstance();
+		$lookup = $services->getCentralIdLookup();
 
 		$user = $lookup->localUserFromCentralId( $block->gb_by_central_id, CentralIdLookup::AUDIENCE_RAW );
 
@@ -103,31 +93,19 @@ class GlobalBlock extends AbstractBlock {
 			return;
 		}
 
+		// They don't exist locally, so we need to use an interwiki username
 		$username = $lookup->nameFromCentralId( $block->gb_by_central_id, CentralIdLookup::AUDIENCE_RAW );
 
-		// They don't exist locally, so we need to use an interwiki username
-		$this->blocker = User::newFromName( "{$block->gb_by_wiki}>{$username}", false );
-	}
-
-	/**
-	 * @inheritDoc
-	 */
-	public function appliesToRight( $right ) {
-		$res = parent::appliesToRight( $right );
-		switch ( $right ) {
-			case 'upload':
-				return true;
-			case 'createaccount':
-				return true;
+		if ( $username !== null ) {
+			$this->blocker = $services->getUserFactory()->newFromUserIdentity( UserIdentityValue::newExternal(
+				$block->gb_by_wiki, $username
+			) );
+			return;
 		}
-		return $res;
-	}
 
-	/**
-	 * @inheritDoc
-	 */
-	public function appliesToPasswordReset() {
-		return true;
+		// If all else fails, then set the blocker as null. This shouldn't happen unless the central ID for the
+		// performer of the block is broken.
+		$this->blocker = null;
 	}
 
 	/**

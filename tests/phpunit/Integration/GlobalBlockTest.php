@@ -115,7 +115,7 @@ class GlobalBlockTest extends MediaWikiIntegrationTestCase {
 			'::getBlocker did not return an external username as expected'
 		);
 		$this->assertSame(
-			'Testingabc>' . self::$testPerformer->getName(),
+			'testingabc>' . self::$testPerformer->getName(),
 			$globalBlock->getBlocker()->getName(),
 			'::getBlocker did not return the expected UserIdentity'
 		);
@@ -124,6 +124,23 @@ class GlobalBlockTest extends MediaWikiIntegrationTestCase {
 			$globalBlock->getBlocker()->getId(),
 			'::getBlocker did not return the expected UserIdentity'
 		);
+	}
+
+	public function testGetBlockerWhenBlockerDoesNotExistCentrally() {
+		$this->setService( 'CentralIdLookup', function () {
+			// Mock that the CentralIdLookup cannot find the blocking user locally or globally.
+			$mock = $this->createMock( CentralIdLookup::class );
+			$mock->method( 'localUserFromCentralId' )->willReturn( null );
+			$mock->method( 'nameFromCentralId' )->willReturn( null );
+			return $mock;
+		} );
+		$row = $this->getGlobalBlockRowForTarget( '1.2.3.4', self::$globallyBlockedUser );
+		$globalBlock = $this->getGlobalBlockObject( $row );
+		$this->assertNull( $globalBlock->getBlocker(), '::getBlocker should return null if no user was found.' );
+		$this->assertSame(
+			'', $globalBlock->getByName(), '::getByName should return an empty string if no user was found.'
+		);
+		$this->assertSame( 0, $globalBlock->getBy(), '::getBy should return 0 if no user was found.' );
 	}
 
 	public function testGetId() {
