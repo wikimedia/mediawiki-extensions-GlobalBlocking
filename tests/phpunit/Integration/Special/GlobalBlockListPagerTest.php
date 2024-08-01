@@ -83,8 +83,7 @@ class GlobalBlockListPagerTest extends MediaWikiIntegrationTestCase {
 			],
 			'IPv4 range block' => [
 				'1.2.3.0/24',
-				// The "july" message is only used for the expiry, so if it is present then the expiry is there.
-				[ '(july', 'Test reason2' ],
+				[ '(july) 2136', 'Test reason2' ],
 				[ '(infiniteblock', 'Test reason1', 'Test reason3', '(globalblocking-list-whitelisted' ],
 			],
 			'IPv6 range block' => [
@@ -141,7 +140,7 @@ class GlobalBlockListPagerTest extends MediaWikiIntegrationTestCase {
 			$globalBlockManager->block( '1.2.3.4', 'Test reason1', 'infinity', $testPerformer, [ 'anon-only' ] )
 		);
 		$this->assertStatusGood(
-			$globalBlockManager->block( '1.2.3.4/24', 'Test reason2', '1 month', $testPerformer )
+			$globalBlockManager->block( '1.2.3.4/24', 'Test reason2', '2136-07-02', $testPerformer )
 		);
 		$this->assertStatusGood(
 			$globalBlockManager->block( '0:0:0:0:0:0:0:0/19', 'Test reason3', 'infinite', $testPerformer )
