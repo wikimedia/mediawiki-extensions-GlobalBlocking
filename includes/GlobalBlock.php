@@ -84,8 +84,7 @@ class GlobalBlock extends AbstractBlock {
 	 */
 	public function setGlobalBlocker( stdClass $block ) {
 		$lookup = MediaWikiServices::getInstance()
-			->getCentralIdLookupFactory()
-			->getLookup();
+			->getCentralIdLookup();
 
 		$user = $lookup->localUserFromCentralId( $block->gb_by_central_id, CentralIdLookup::AUDIENCE_RAW );
 
