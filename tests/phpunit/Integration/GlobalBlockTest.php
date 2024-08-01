@@ -46,7 +46,8 @@ class GlobalBlockTest extends MediaWikiIntegrationTestCase {
 			array_merge(
 				[
 					'address' => $row->gb_address, 'reason' => $row->gb_reason, 'timestamp' => $row->gb_timestamp,
-					'anonOnly' => $row->gb_anon_only, 'expiry' => $row->gb_expiry, 'xff' => false,
+					'anonOnly' => $row->gb_anon_only, 'expiry' => $row->gb_expiry,
+					'createAccount' => $row->gb_create_account, 'xff' => false,
 				],
 				$overriddenOptions
 			)
@@ -180,20 +181,45 @@ class GlobalBlockTest extends MediaWikiIntegrationTestCase {
 	public static function provideAppliesToRight() {
 		return [
 			'upload' => [ 'upload', true ],
-			'createaccount' => [ 'createaccount', true ],
-			'autocreateaccount' => [ 'autocreateaccount', true ],
 			'read' => [ 'read', false ],
 		];
 	}
 
-	public function testAppliesToPasswordReset() {
-		$globalBlock = $this->getGlobalBlockObject( $this->getGlobalBlockRowForTarget( '1.2.3.4', null ) );
-		$this->assertTrue( $globalBlock->appliesToPasswordReset() );
+	/** @dataProvider provideCreateAccountBlocked */
+	public function testAppliesToRightForAccountCreation( $accountCreationDisabled ) {
+		$row = $this->getGlobalBlockRowForTarget( '1.2.3.4', null );
+		// Override the value of gb_create_account for the test, as ::applyToPasswordReset should be the value of
+		// gb_create_account.
+		$row->gb_create_account = (int)$accountCreationDisabled;
+		$globalBlock = $this->getGlobalBlockObject( $row );
+		$this->assertSame( $accountCreationDisabled, $globalBlock->appliesToRight( 'createaccount' ) );
+		$this->assertSame( $accountCreationDisabled, $globalBlock->appliesToRight( 'autocreateaccount' ) );
 	}
 
-	public function testIsCreateAccountBlocked() {
-		$globalBlock = $this->getGlobalBlockObject( $this->getGlobalBlockRowForTarget( '1.2.3.4', null ) );
-		$this->assertTrue( $globalBlock->isCreateAccountBlocked() );
+	/** @dataProvider provideCreateAccountBlocked */
+	public function testAppliesToPasswordReset( $accountCreationDisabled ) {
+		$row = $this->getGlobalBlockRowForTarget( '1.2.3.4', null );
+		// Override the value of gb_create_account for the test, as ::applyToPasswordReset should be the value of
+		// gb_create_account.
+		$row->gb_create_account = (int)$accountCreationDisabled;
+		$globalBlock = $this->getGlobalBlockObject( $row );
+		$this->assertSame( $accountCreationDisabled, $globalBlock->appliesToPasswordReset() );
+	}
+
+	/** @dataProvider provideCreateAccountBlocked */
+	public function testIsCreateAccountBlocked( $accountCreationDisabled ) {
+		$row = $this->getGlobalBlockRowForTarget( '1.2.3.4', null );
+		// Override the value of gb_create_account for the test
+		$row->gb_create_account = (int)$accountCreationDisabled;
+		$globalBlock = $this->getGlobalBlockObject( $row );
+		$this->assertSame( $accountCreationDisabled, $globalBlock->isCreateAccountBlocked() );
+	}
+
+	public static function provideCreateAccountBlocked() {
+		return [
+			'Account creation is disabled' => [ true ],
+			'Account creation is not disabled' => [ false ],
+		];
 	}
 
 	public function addDBDataOnce() {

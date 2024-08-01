@@ -89,6 +89,7 @@ class GlobalBlockLookup {
 					'timestamp' => $row->gb_timestamp,
 					'anonOnly' => $row->gb_anon_only,
 					'expiry' => $row->gb_expiry,
+					'createAccount' => $row->gb_create_account,
 					'xff' => $details['xff'],
 				]
 			);
@@ -251,7 +252,13 @@ class GlobalBlockLookup {
 				$score = $type;
 			}
 
-			if ( $score < $bestBlockScore ) {
+			// Always prioritise blocks that deny account creation, and then order the blocks using a score generated
+			// based on the target type and for ranges how wide the range is.
+			if (
+				$bestBlock === null ||
+				$score < $bestBlockScore ||
+				( !$bestBlock->gb_create_account && $block->gb_create_account )
+			) {
 				$bestBlockScore = $score;
 				$bestBlock = $block;
 			}
@@ -461,7 +468,8 @@ class GlobalBlockLookup {
 	 * Using the result of ::checkIpsForBlock and the IPs provided to that method,
 	 * choose the block that will be shown to the end user.
 	 *
-	 * For the time being, this will be the first block that applies.
+	 * This is determined by choosing the first block that applies, giving priority to blocks
+	 * that disable account creation.
 	 *
 	 * @param string[] $ips The array of IP addresses to be checked
 	 * @param stdClass[] $blocks The array returned by ::checkIpsForBlock
@@ -469,16 +477,24 @@ class GlobalBlockLookup {
 	 *   If no block applies, then this method returns null.
 	 */
 	private function getAppliedBlock( array $ips, array $blocks ): ?stdClass {
+		$currentBlock = null;
 		foreach ( $blocks as $block ) {
 			foreach ( $ips as $ip ) {
 				$ipHex = IPUtils::toHex( $ip );
-				if ( $block->gb_range_start <= $ipHex && $block->gb_range_end >= $ipHex ) {
-					return $block;
+				if ( !( $block->gb_range_start <= $ipHex && $block->gb_range_end >= $ipHex ) ) {
+					continue;
+				}
+
+				if (
+					$currentBlock === null ||
+					( !$currentBlock->gb_create_account && $block->gb_create_account )
+				) {
+					$currentBlock = $block;
 				}
 			}
 		}
 
-		return null;
+		return $currentBlock;
 	}
 
 	/**
@@ -526,7 +542,7 @@ class GlobalBlockLookup {
 	public static function selectFields(): array {
 		return [
 			'gb_id', 'gb_address', 'gb_target_central_id', 'gb_by_central_id', 'gb_by_wiki', 'gb_reason',
-			'gb_timestamp', 'gb_anon_only', 'gb_expiry', 'gb_range_start', 'gb_range_end'
+			'gb_timestamp', 'gb_anon_only', 'gb_expiry', 'gb_range_start', 'gb_range_end', 'gb_create_account'
 		];
 	}
 }
