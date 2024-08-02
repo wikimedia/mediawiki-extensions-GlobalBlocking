@@ -80,6 +80,7 @@ class GlobalBlockManager {
 
 		$modify = in_array( 'modify', $options );
 		$anonOnly = in_array( 'anon-only', $options );
+		$allowAccountCreation = in_array( 'allow-account-creation', $options );
 
 		if ( $anonOnly && !IPUtils::isIPAddress( $target ) ) {
 			// Anon-only blocks on an account does not make any sense, so reject them.
@@ -103,6 +104,7 @@ class GlobalBlockManager {
 			'gb_reason' => $reason,
 			'gb_timestamp' => $dbw->timestamp( wfTimestampNow() ),
 			'gb_anon_only' => $anonOnly,
+			'gb_create_account' => !$allowAccountCreation,
 			'gb_expiry' => $dbw->encodeExpiry( $expiry ),
 			'gb_range_start' => $data['rangeStart'],
 			'gb_range_end' => $data['rangeEnd'],
@@ -154,6 +156,8 @@ class GlobalBlockManager {
 	 *   - 'anon-only': If set, only anonymous users will be affected by the block
 	 *   - 'modify': If set, the block will be modified if it already exists. If not set,
 	 *       the block will fail if it already exists.
+	 *   - 'allow-account-creation': If set, the block will allow account creation. Otherwise,
+	 *       the block will prevent account creation.
 	 * @return StatusValue A status object, with errors if the block failed.
 	 */
 	public function block(
@@ -169,6 +173,7 @@ class GlobalBlockManager {
 		$blockId = $status->getValue()['id'];
 		$anonOnly = in_array( 'anon-only', $options );
 		$modify = in_array( 'modify', $options );
+		$allowAccountCreation = in_array( 'allow-account-creation', $options );
 
 		// Log it.
 		$logAction = $modify ? 'modify' : 'gblock';
@@ -181,6 +186,9 @@ class GlobalBlockManager {
 		$flags = [];
 		if ( $anonOnly ) {
 			$flags[] = 'anon-only';
+		}
+		if ( $allowAccountCreation ) {
+			$flags[] = 'allow-account-creation';
 		}
 
 		// The 4th parameter is the target as plaintext used for GENDER support and is added by the log formatter.

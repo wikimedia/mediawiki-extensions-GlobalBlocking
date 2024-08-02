@@ -36,7 +36,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 			->getGlobalBlockingConnectionProvider()
 			->getReplicaGlobalBlockingDatabase();
 		$queryBuilder = $dbr->newSelectQueryBuilder()
-			->select( [ 'gb_anon_only', 'gb_reason', 'gb_expiry' ] )
+			->select( [ 'gb_anon_only', 'gb_reason', 'gb_expiry', 'gb_create_account' ] )
 			->from( 'globalblocks' )
 			->where( [
 				'gb_address' => $target,
@@ -53,6 +53,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 		$block = $queryBuilder->fetchRow();
 		if ( $block ) {
 			$blockOptions['anon-only'] = $block->gb_anon_only;
+			$blockOptions['create-account'] = $block->gb_create_account;
 			$blockOptions['reason'] = $block->gb_reason;
 			$blockOptions['expiry'] = ( $block->gb_expiry === 'infinity' )
 				? 'infinity'
@@ -146,6 +147,12 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 				$expectedAnon = '0';
 			}
 			$this->assertSame( $expectedAnon, $actual[ 'anon-only' ] );
+			if ( in_array( 'allow-account-creation', $data['options'] ) ) {
+				$expectedCreateAccount = '0';
+			} else {
+				$expectedCreateAccount = '1';
+			}
+			$this->assertSame( $expectedCreateAccount, $actual[ 'create-account' ] );
 			// Assert that a log entry was added to the 'logging' table for the block
 			$this->assertThatLogWasAdded(
 				$data[ 'target' ],
@@ -166,6 +173,15 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 				],
 				'expectedError' => '',
 			],
+			'good with account creation enabled' => [
+				'data' => [
+					'target' => '1.2.3.4',
+					'reason' => 'Test block',
+					'expiry' => 'infinity',
+					'options' => [ 'anon-only', 'allow-account-creation' ],
+				],
+				'expectedError' => '',
+			],
 			'good range' => [
 				'data' => [
 					'target' => '1.2.3.0/24',
@@ -181,6 +197,15 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'reason' => 'Test block1',
 					'expiry' => '2021-03-06T23:00:00Z',
 					'options' => [ 'anon-only', 'modify' ],
+				],
+				'expectedError' => '',
+			],
+			'good modify with account creation enabled' => [
+				'data' => [
+					'target' => '1.2.3.6',
+					'reason' => 'Test block1',
+					'expiry' => '2021-03-06T23:00:00Z',
+					'options' => [ 'anon-only', 'modify', 'allow-account-creation' ],
 				],
 				'expectedError' => '',
 			],
@@ -266,6 +291,14 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'reason' => 'Test block',
 					'expiry' => 'infinity',
 					'options' => [],
+				],
+				'expectedError' => '',
+			],
+			'good with account creation enabled' => [
+				'data' => [
+					'reason' => 'Test block',
+					'expiry' => 'infinity',
+					'options' => [ 'allow-account-creation' ],
 				],
 				'expectedError' => '',
 			],
