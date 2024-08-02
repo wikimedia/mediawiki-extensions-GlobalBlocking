@@ -38,6 +38,7 @@
 	"apihelp-globalblock-param-unblock": "{{doc-apihelp-param|globalblock|unblock}}",
 	"apihelp-globalblock-param-reason": "{{doc-apihelp-param|globalblock|reason}}",
 	"apihelp-globalblock-param-anononly": "{{doc-apihelp-param|globalblock|anononly}}",
+	"apihelp-globalblock-param-allow-account-creation": "{{doc-apihelp-param|globalblock|allow-account-creation}}",
 	"apihelp-globalblock-param-modify": "{{doc-apihelp-param|globalblock|modify}}",
 	"apihelp-globalblock-example-1": "{{doc-apihelp-example|globalblock}}",
 	"apihelp-query+globalblocks-summary": "{{doc-apihelp-summary|query+globalblocks}}",
@@ -62,5 +63,6 @@
 	"apihelp-globalblock-param-alsolocal": "{{doc-apihelp-param|globalblock|alsolocal}}",
 	"apihelp-globalblock-param-localblockstalk": "{{doc-apihelp-param|globalblock|localblockstalk}}",
 	"apihelp-globalblock-param-localblocksemail": "{{doc-apihelp-param|globalblock|localblocksemail}}",
-	"apihelp-globalblock-param-localanononly": "{{doc-apihelp-param|globalblock|localanononly}}"
+	"apihelp-globalblock-param-localanononly": "{{doc-apihelp-param|globalblock|localanononly}}",
+	"apihelp-globalblock-param-local-allow-account-creation": "{{doc-apihelp-param|globalblock|local-allow-account-creation}}"
 }

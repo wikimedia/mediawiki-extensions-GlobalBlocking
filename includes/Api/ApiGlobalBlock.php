@@ -59,6 +59,10 @@ class ApiGlobalBlock extends ApiBase {
 				$options[] = 'anon-only';
 			}
 
+			if ( $this->getParameter( 'allow-account-creation' ) ) {
+				$options[] = 'allow-account-creation';
+			}
+
 			$ip = null;
 			$centralId = 0;
 			if ( IPUtils::isIPAddress( $target ) ) {
@@ -89,7 +93,7 @@ class ApiGlobalBlock extends ApiBase {
 					$this->getParameter( 'expiry' ),
 					$this->getParameter( 'reason' ),
 					[
-						'isCreateAccountBlocked' => true,
+						'isCreateAccountBlocked' => !$this->getParameter( 'local-allow-account-creation' ),
 						'isEmailBlocked' => $this->getParameter( 'localblocksemail' ),
 						'isUserTalkEditBlocked' => $this->getParameter( 'localblockstalk' ),
 						'isHardBlock' => !$this->getParameter( 'localanononly' ),
@@ -110,6 +114,9 @@ class ApiGlobalBlock extends ApiBase {
 				$result->addValue( 'globalblock', 'blocked', '' );
 				if ( $this->getParameter( 'anononly' ) ) {
 					$result->addValue( 'globalblock', 'anononly', '' );
+				}
+				if ( $this->getParameter( 'allow-account-creation' ) ) {
+					$result->addValue( 'globalblock', 'allow-account-creation', '' );
 				}
 				$expiry = ApiResult::formatExpiry( $this->getParameter( 'expiry' ), 'infinite' );
 				$result->addValue( 'globalblock', 'expiry', $expiry );
@@ -175,6 +182,9 @@ class ApiGlobalBlock extends ApiBase {
 			'anononly' => [
 				ParamValidator::PARAM_TYPE => 'boolean'
 			],
+			'allow-account-creation' => [
+				ParamValidator::PARAM_TYPE => 'boolean',
+			],
 			'modify' => [
 				ParamValidator::PARAM_TYPE => 'boolean'
 			],
@@ -189,6 +199,9 @@ class ApiGlobalBlock extends ApiBase {
 			],
 			'localanononly' => [
 				ParamValidator::PARAM_TYPE => 'boolean'
+			],
+			'local-allow-account-creation' => [
+				ParamValidator::PARAM_TYPE => 'boolean',
 			],
 			'token' => [
 				ParamValidator::PARAM_TYPE => 'string',
