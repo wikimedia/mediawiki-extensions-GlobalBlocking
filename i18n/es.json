@@ -119,6 +119,7 @@
 	"globalblocking-loglink": "La dirección IP $1 está bloqueada globalmente ([[{{#Special:GlobalBlockList}}/$1|detalles]]).",
 	"globalblocking-contribs-notice": "Esta dirección IP se bloqueó globalmente.\nComo referencia, se proporciona la entrada del registro correspondiente:",
 	"globalblocking-showlog": "Esta dirección IP ha sido bloqueada previamente.\nEl registro de bloqueos se proporciona a continuación como referencia:",
+	"globalblocking-contribs-log": "registro de bloqueo global",
 	"globalblocking-contribs-block": "bloquear globalmente esta IP",
 	"globalblocking-contribs-modify": "modificar el bloque global",
 	"globalblocking-contribs-remove": "quitar el bloqueo global",
