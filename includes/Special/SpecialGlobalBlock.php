@@ -124,7 +124,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 		if ( $this->target ) {
 			$dbr = $this->globalBlockingConnectionProvider->getReplicaGlobalBlockingDatabase();
 			$queryBuilder = $dbr->newSelectQueryBuilder()
-				->select( [ 'gb_anon_only', 'gb_reason', 'gb_expiry' ] )
+				->select( [ 'gb_anon_only', 'gb_reason', 'gb_expiry', 'gb_create_account' ] )
 				->from( 'globalblocks' );
 			if ( IPUtils::isIPAddress( $this->target ) ) {
 				$queryBuilder->where( [ 'gb_address' => $this->target ] );
@@ -143,6 +143,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 				$this->modifyForm = true;
 
 				$blockOptions['anononly'] = $block->gb_anon_only;
+				$blockOptions['createAccount'] = $block->gb_create_account;
 				$blockOptions['reason'] = $block->gb_reason;
 				$blockOptions['expiry'] = ( $block->gb_expiry === 'infinity' )
 					? 'indefinite'
@@ -190,6 +191,12 @@ class SpecialGlobalBlock extends FormSpecialPage {
 				'label-message' => 'globalblocking-ipbanononly',
 				'id' => 'mw-globalblock-anon-only',
 			],
+			'CreateAccount' => [
+				'type' => 'check',
+				'id' => 'mw-globalblock-disable-account-creation',
+				'label-message' => 'globalblocking-block-disable-account-creation',
+				'default' => true,
+			],
 			'Modify' => [
 				'type' => 'hidden',
 				'default' => '',
@@ -206,6 +213,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 			$fields['Expiry']['default'] = $blockOptions['expiry'];
 			$fields['Reason']['default'] = $blockOptions['reason'];
 			$fields['AnonOnly']['default'] = $blockOptions['anononly'];
+			$fields['CreateAccount']['default'] = $blockOptions['createAccount'];
 			if ( $this->getRequest()->getVal( 'Previous' ) !== $this->target ) {
 				// Let the user know about it and re-submit to modify
 				$fields['Modify']['default'] = 1;
@@ -237,6 +245,14 @@ class SpecialGlobalBlock extends FormSpecialPage {
 				'id' => 'mw-globalblock-local-soft',
 				'hide-if' => [ '!==', 'AlsoLocal', '1' ],
 				'default' => !$targetIsAnAccount,
+			];
+
+			$fields['AlsoLocalAccountCreation'] = [
+				'type' => 'check',
+				'label-message' => 'globalblocking-also-local-disable-account-creation',
+				'id' => 'mw-globalblock-local-disable-account-creation',
+				'hide-if' => [ '!==', 'AlsoLocal', '1' ],
+				'default' => true,
 			];
 		}
 
@@ -295,6 +311,10 @@ class SpecialGlobalBlock extends FormSpecialPage {
 			$options[] = 'anon-only';
 		}
 
+		if ( !$data['CreateAccount'] ) {
+			$options[] = 'allow-account-creation';
+		}
+
 		if ( $this->modifyForm && $data['Modify']
 			// Make sure that the block being modified is for the intended target
 			// (i.e., not from a previous submission)
@@ -325,7 +345,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 				$data['Expiry'],
 				$data['Reason'][0],
 				[
-					'isCreateAccountBlocked' => true,
+					'isCreateAccountBlocked' => $data['AlsoLocalAccountCreation'],
 					'isEmailBlocked' => $data['AlsoLocalEmail'],
 					'isUserTalkEditBlocked' => $data['AlsoLocalTalk'],
 					'isHardBlock' => !$data['AlsoLocalSoft'],
