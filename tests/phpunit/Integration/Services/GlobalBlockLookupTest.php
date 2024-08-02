@@ -84,6 +84,9 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 		return [
 			'One XFF header IP is blocked' => [ '1.2.3.5, 77.8.9.10', 3 ],
 			'Two XFF header IPs are blocked but the first is anon only' => [ '127.0.0.1, 77.8.9.10', 3 ],
+			'Three XFF header IPs are blocked with one disabling account creation' => [
+				'127.0.0.1, 4.5.6.7, 77.8.9.10', 6
+			],
 		];
 	}
 
@@ -138,6 +141,12 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 		// Assert that the if the user is blocked, the block returned by ::getUserBlock will always
 		// be the one for the user, not the IP (as the user one has a higher priority over all IP blocks).
 		$this->testGetUserBlockForNamedUser( $ip, 5, $this->getGloballyBlockedTestUser() );
+	}
+
+	public function testGetUserBlockPrioritisesBlocksWithDisableAccountCreation() {
+		// Assert that if two blocks match, that ::getUserBlock chooses the block which disables account creation
+		// over the block which does not disable account creation.
+		$this->testGetUserBlockForNamedUser( '4.5.6.7', 6, $this->getGloballyBlockedTestUser() );
 	}
 
 	public function testGetUserBlockGlobalBlockingAllowedRanges() {
@@ -475,6 +484,7 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 				'gb_expiry' => $this->getDb()->encodeExpiry( '20240405060708' ),
 				'gb_range_start' => IPUtils::toHex( '127.0.0.1' ),
 				'gb_range_end' => IPUtils::toHex( '127.0.0.1' ),
+				'gb_create_account' => 0,
 			] )
 			->row( [
 				'gb_id' => 2,
@@ -490,6 +500,7 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 				'gb_expiry' => $this->getDb()->encodeExpiry( '20250405060708' ),
 				'gb_range_start' => IPUtils::toHex( '127.0.0.0' ),
 				'gb_range_end' => IPUtils::toHex( '127.0.0.255' ),
+				'gb_create_account' => 0,
 			] )
 			->row( [
 				'gb_id' => 3,
@@ -505,6 +516,7 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 				'gb_expiry' => $this->getDb()->encodeExpiry( '20240405060708' ),
 				'gb_range_start' => IPUtils::toHex( '77.8.9.10' ),
 				'gb_range_end' => IPUtils::toHex( '77.8.9.10' ),
+				'gb_create_account' => 0,
 			] )
 			->row( [
 				'gb_id' => 4,
@@ -520,6 +532,7 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 				'gb_expiry' => $this->getDb()->encodeExpiry( '20240405060708' ),
 				'gb_range_start' => IPUtils::toHex( '88.8.9.0' ),
 				'gb_range_end' => IPUtils::toHex( '88.8.9.255' ),
+				'gb_create_account' => 0,
 			] )
 			->row( [
 				'gb_id' => 5,
@@ -537,6 +550,23 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 				'gb_expiry' => $this->getDb()->encodeExpiry( '20240405060708' ),
 				'gb_range_start' => '',
 				'gb_range_end' => '',
+				'gb_create_account' => 0,
+			] )
+			->row( [
+				'gb_id' => 6,
+				'gb_address' => '4.5.6.0/24',
+				'gb_target_central_id' => 0,
+				'gb_by_central_id' => $this->getServiceContainer()
+					->getCentralIdLookup()
+					->centralIdFromLocalUser( $testUser ),
+				'gb_by_wiki' => WikiMap::getCurrentWikiId(),
+				'gb_reason' => 'test',
+				'gb_timestamp' => $this->getDb()->timestamp( '20080405060708' ),
+				'gb_anon_only' => 0,
+				'gb_expiry' => $this->getDb()->encodeExpiry( '20240406060708' ),
+				'gb_range_start' => IPUtils::toHex( '4.5.6.0' ),
+				'gb_range_end' => IPUtils::toHex( '4.5.6.255' ),
+				'gb_create_account' => 1,
 			] )
 			->caller( __METHOD__ )
 			->execute();

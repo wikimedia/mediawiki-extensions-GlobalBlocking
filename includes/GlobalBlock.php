@@ -28,6 +28,7 @@ class GlobalBlock extends AbstractBlock {
 
 		$this->id = $block->gb_id;
 		$this->xff = (bool)$options['xff'];
+		$this->isCreateAccountBlocked( (bool)$options['createAccount'] );
 		$this->setGlobalBlocker( $block );
 	}
 
@@ -106,12 +107,5 @@ class GlobalBlock extends AbstractBlock {
 		// If all else fails, then set the blocker as null. This shouldn't happen unless the central ID for the
 		// performer of the block is broken.
 		$this->blocker = null;
-	}
-
-	/**
-	 * @inheritDoc
-	 */
-	public function isCreateAccountBlocked( $x = null ): bool {
-		return true;
 	}
 }
