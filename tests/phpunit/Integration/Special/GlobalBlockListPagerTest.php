@@ -76,7 +76,8 @@ class GlobalBlockListPagerTest extends MediaWikiIntegrationTestCase {
 				// The expected strings that should be present in the output of ::formatRow
 				[
 					'(infiniteblock', '(globalblocking-list-whitelisted', 'Test local disable reason',
-					'(globalblocking-list-anononly', 'Test reason1',
+					'(globalblocking-list-anononly', '(globalblocking-block-flag-account-creation-disabled',
+					'Test reason1',
 				],
 				// Strings that are not expected to be present in the output of ::formatRow
 				[ 'Test reason2', 'Test reason3' ],
@@ -84,7 +85,10 @@ class GlobalBlockListPagerTest extends MediaWikiIntegrationTestCase {
 			'IPv4 range block' => [
 				'1.2.3.0/24',
 				[ '(july) 2136', 'Test reason2' ],
-				[ '(infiniteblock', 'Test reason1', 'Test reason3', '(globalblocking-list-whitelisted' ],
+				[
+					'(infiniteblock', 'Test reason1', 'Test reason3', '(globalblocking-list-whitelisted',
+					'(globalblocking-block-flag-account-creation-disabled',
+				],
 			],
 			'IPv6 range block' => [
 				'0:0:0:0:0:0:0:0/19', [ '(infiniteblock', 'Test reason3' ],
@@ -105,7 +109,7 @@ class GlobalBlockListPagerTest extends MediaWikiIntegrationTestCase {
 				)->placeBlock();
 			$this->assertStatusGood( $blockStatus );
 		}
-		$expectedStrings = [ 'Test reason4' ];
+		$expectedStrings = [ 'Test reason4', '(globalblocking-block-flag-account-creation-disabled' ];
 		$notExpectedStrings = [ 'Test reason1', 'Test reason2', 'Test reason3' ];
 		if ( $targetUserIsHidden ) {
 			// If the globally blocked user should be hidden from the current authority, then the username of the
@@ -139,9 +143,9 @@ class GlobalBlockListPagerTest extends MediaWikiIntegrationTestCase {
 		$this->assertStatusGood(
 			$globalBlockManager->block( '1.2.3.4', 'Test reason1', 'infinity', $testPerformer, [ 'anon-only' ] )
 		);
-		$this->assertStatusGood(
-			$globalBlockManager->block( '1.2.3.4/24', 'Test reason2', '2136-07-02', $testPerformer )
-		);
+		$this->assertStatusGood( $globalBlockManager->block(
+			'1.2.3.4/24', 'Test reason2', '2136-07-02', $testPerformer, [ 'allow-account-creation' ]
+		) );
 		$this->assertStatusGood(
 			$globalBlockManager->block( '0:0:0:0:0:0:0:0/19', 'Test reason3', 'infinite', $testPerformer )
 		);

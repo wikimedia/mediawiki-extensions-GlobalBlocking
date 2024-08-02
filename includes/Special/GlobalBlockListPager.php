@@ -86,6 +86,11 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 			$options[] = $this->msg( 'globalblocking-list-anononly' )->text();
 		}
 
+		// If the block is set to prevent account creation, then indicate this in the options list.
+		if ( $row->gb_create_account ) {
+			$options[] = $this->msg( 'globalblocking-block-flag-account-creation-disabled' )->text();
+		}
+
 		// Get the performer of the block, along with the wiki they performed the block. If a user page link
 		// can be generated, then it is added.
 		$performerUsername = $this->lookup->nameFromCentralId( $row->gb_by_central_id ) ?? '';
