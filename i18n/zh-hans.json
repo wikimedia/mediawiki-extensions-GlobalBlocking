@@ -129,6 +129,7 @@
 	"globalblocking-loglink": "用户 $1 被全域封禁（[[{{#Special:GlobalBlockList}}/$1|详细信息]]）。",
 	"globalblocking-contribs-notice": "此用户目前已被全域封禁。\n最近的全域封禁日志在下面提供以便参考：",
 	"globalblocking-showlog": "此用户先前已经被封禁。\n下面提供封禁日志以供参考：",
+	"globalblocking-contribs-log": "全域封禁日志",
 	"globalblocking-contribs-block": "全域封禁",
 	"globalblocking-contribs-modify": "修改全域封禁",
 	"globalblocking-contribs-remove": "移除全域封禁",

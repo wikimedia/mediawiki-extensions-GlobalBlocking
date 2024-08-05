@@ -102,6 +102,7 @@
 	"globalblocking-loglink": "کاربر $1 به صورت سراسری مسدود شده است ([[{{#Special:GlobalBlockList}}/$1|جزئیات کامل]]).",
 	"globalblocking-contribs-notice": "دسترسی این کاربر از پیش به‌صورت سراسری بسته شده است.\nمدخل سیاههٔ قطع دسترسی سراسری در زیر برای آمده است:",
 	"globalblocking-showlog": "دسترسی این کاربر قبلاً بسته شده است.\nسیاههٔ قطع دسترسی در زیر نمایش یافته است:",
+	"globalblocking-contribs-log": "سیاههٔ قطع دسترسی سراسری",
 	"globalblocking-contribs-block": "قطع دسترسی سراسری",
 	"globalblocking-contribs-modify": "اصلاح کردن بستن دسترسی سراسری",
 	"globalblocking-contribs-remove": "حذف بستن دسترسی سراسری",
