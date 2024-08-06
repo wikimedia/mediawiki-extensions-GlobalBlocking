@@ -75,6 +75,7 @@
 	"globalblocking-list-ipinvalid": "您搜索的IP地址（$1）无效。\n请输入一个有效的IP地址。",
 	"globalblocking-list-target-invalid": "您搜索的用户（$1）无效。\n请输入一个有效的IP地址或用户名。",
 	"globalblocking-search-errors": "您的搜索已失败，因为如下{{PLURAL:$1|原因}}：",
+	"globalblocking-list-item": "$1：<span class=\"plainlinks\"><strong>$3</strong></span> <i>$4</i> 全域{{GENDER:$2|封禁了}} {{GENDER:$5|$6}}，到期时间为$7 $8 $9 $10",
 	"globalblocking-list-expiry": "期限为$1",
 	"globalblocking-list-anononly": "仅匿名用户",
 	"globalblocking-list-unblock": "移除",

@@ -39,7 +39,7 @@
 	"globalblocking-modify-submit": "Globale Sperre ändern",
 	"globalblocking-block-success": "'''$1''' wurde auf allen Wikis gesperrt.",
 	"globalblocking-modify-success": "Die globale Sperre von '''$1''' wurde bearbeitet.",
-	"globalblocking-local-failed": "Das lokale Sperren des Benutzers ist fehlgeschlagen, da der angegebene Benutzer bereits auf diesem Wiki gesperrt ist.",
+	"globalblocking-local-failed": "Das lokale Sperren des Benutzers ist fehlgeschlagen, da der angegebene Benutzer auf diesem Wiki bereits gesperrt ist.",
 	"globalblocking-block-failure": "Beim Versuch, $1 global zu sperren, ist ein Fehler aufgetreten. Bitte erneut versuchen.",
 	"globalblocking-block-alreadyblocked": "Die IP-Adresse $1 wurde schon global gesperrt.\nDu kannst die bestehende Sperre in der [[Special:GlobalBlockList|globalen Sperrliste]] einsehen oder die Einstellungen der Sperre über dieses Formular ändern.",
 	"globalblocking-bigrange": "Der von dir angegebene Bereich ($1) überschreitet die Grenzen.\nDie $2-Grenze ist ein Bereich von /$3.",

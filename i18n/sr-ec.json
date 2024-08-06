@@ -97,6 +97,7 @@
 	"globalblocking-loglink": "Овај корисник $1 је блокиран глобално ([[{{#Special:GlobalBlockList}}/$1|сви детаљи]]).",
 	"globalblocking-contribs-notice": "Овај корисник је тренутно глобално блокиран.\nИспод је приказана последња ставка у дневнику блокирања:",
 	"globalblocking-showlog": "Овај корисник је раније био блокирана.\nДневник блокирања је наведен испод као референца:",
+	"globalblocking-contribs-log": "дневник глобалног блокирања",
 	"globalblocking-contribs-block": "глобално блокирај",
 	"globalblocklist": "Списак глобално блокираних корисника",
 	"globalblock": "Глобално блокирајте корисника",
