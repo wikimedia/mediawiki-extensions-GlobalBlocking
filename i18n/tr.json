@@ -13,7 +13,8 @@
 			"SaldırganSincap",
 			"Suelnur",
 			"Uncitoyen",
-			"Vito Genovese"
+			"Vito Genovese",
+			"LisafBia"
 		]
 	},
 	"globalblocking-desc": "IP addreslerinin [[Special:GlobalBlockList|çoklu vikiler boyunca engellenmesine]] [[Special:GlobalBlock|izin verir]]",
@@ -81,6 +82,8 @@
 	"globalblocking-whitelist-dewhitelisted": "{{SITENAME}} sitesindeki '''$1''' IP adresindeki #$2 numaralı küresel engelini yeniden etkinleştirdiniz.",
 	"globalblocking-whitelist-nochange": "Bu engelin yerel durumunda hiçbir değişiklik yapmadınız.",
 	"globalblocking-whitelist-intro": "Küresel bir engelin yerel durumunu düzenlemek için bu formu kullanabilirsiniz.\nBu vikide küresel engelleme devre dışı bırakılırsa, etkilenen IP adresindeki kullanıcılar normal şekilde düzenleyebilir.",
+	"globalblocking-blockedtext-ip": "'''{{int:globalblocking-blockedtext-all-wikis}}'''\n\n{{int:blockedtext-made-by|$1}}\n{{int:blockedtext-reason-comment|$2}}.\n\n* {{int:blockedtext-start-time|$8}}\n* {{int:blockedtext-expiration-time|$6}}\n\n{{int:globalblocking-blockedtext-blocker-admin|$1}}\n{{int:globalblocking-blockedtext-email-feature}}\n{{int:blockedtext-block-ip|$3}}\n{{int:blockedtext-include-details-queries}}",
+	"globalblocking-blockedtext-xff": "'''{{int:globalblocking-blockedtext-on-proxy}}'''\n\n{{int:blockedtext-made-by|$1}}\n{{int:blockedtext-reason-comment|$2}}.\n\n* {{int:blockedtext-start-time|$8}}\n* {{int:blockedtext-expiration-time|$6}}\n\n{{int:globalblocking-blockedtext-blocker-admin|$1}}\n{{int:globalblocking-blockedtext-email-feature}}\n{{int:globalblocking-blockedtext-proxy|$7}}\n{{int:blockedtext-include-details-queries}}",
 	"globalblocking-ipblocked": "'''{{int:globalblocking-blockedtext-all-wikis}}'''\n\nEngelleyen: $1 ($2).\n{{int:blockedtext-reason-comment|$3}}.\n\n* {{int:blockedtext-start-time|$4}}\n* {{int:blockedtext-expiration-time|$5}}\n\n{{int:globalblocking-blockedtext-blocker-admin|$1}}\n{{int:globalblocking-blockedtext-email-feature}}\n{{int:blockedtext-block-ip|$6}}\n{{int:blockedtext-include-details-queries}}",
 	"globalblocking-ipblocked-range": "'''{{int:globalblocking-blockedtext-on-range}}'''\n\nEngelleyen: $1 ($2).\n{{int:blockedtext-reason-comment|$3}}.\n\n* {{int:blockedtext-start-time|$4}}\n* {{int:blockedtext-expiration-time|$5}}\n\n{{int:globalblocking-blockedtext-blocker-admin|$1}}\n{{int:globalblocking-blockedtext-email-feature}}\n{{int:blockedtext-block-ip|$6}} {{int:globalblocking-blockedtext-ip-range|$7}}\n{{int:blockedtext-include-details-queries}}",
 	"globalblocking-ipblocked-xff": "'''{{int:globalblocking-blockedtext-on-proxy}}'''\n\nEngelleyen: $1 ($2).\n{{int:blockedtext-reason-comment|$3}}.\n\n* {{int:blockedtext-start-time|$4}}\n* {{int:blockedtext-expiration-time|$5}}\n\n{{int:globalblocking-blockedtext-blocker-admin|$1}}\n{{int:globalblocking-blockedtext-email-feature}}\n{{int:globalblocking-blockedtext-proxy|$7}} {{int:blockedtext-include-details-queries}}",

@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Giromin Cangiaxo"
+			"Giromin Cangiaxo",
+			"N. Longo"
 		]
 	},
 	"globalblocking-expiringblock": "o descazze o $1 a $2",
+	"globalblocking-blockedtext-ip": "'''{{int:globalblocking-blockedtext-all-wikis}}'''\n\n{{int:blockedtext-made-by|$1}}\n{{int:blockedtext-reason-comment|$2}}.\n\n* {{int:blockedtext-start-time|$8}}\n* {{int:blockedtext-expiration-time|$6}}\n\n{{int:globalblocking-blockedtext-blocker-admin|$1}}\n{{int:globalblocking-blockedtext-email-feature}}\n{{int:blockedtext-block-ip|$3}}\n{{int:blockedtext-include-details-queries}}",
+	"globalblocking-blockedtext-xff": "'''{{int:globalblocking-blockedtext-on-proxy}}'''\n\n{{int:blockedtext-made-by|$1}}\n{{int:blockedtext-reason-comment|$2}}.\n\n* {{int:blockedtext-start-time|$8}}\n* {{int:blockedtext-expiration-time|$6}}\n\n{{int:globalblocking-blockedtext-blocker-admin|$1}}\n{{int:globalblocking-blockedtext-email-feature}}\n{{int:globalblocking-blockedtext-proxy|$7}}\n{{int:blockedtext-include-details-queries}}",
 	"globalblocklist": "Lista di adressi IP blocæ globalmente"
 }
