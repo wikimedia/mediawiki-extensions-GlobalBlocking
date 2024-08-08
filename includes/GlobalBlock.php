@@ -26,7 +26,7 @@ class GlobalBlock extends AbstractBlock {
 			->getReplicaDatabase( $this->getWikiId() );
 		$this->setExpiry( $db->decodeExpiry( $options['expiry'] ) );
 
-		$this->id = $block->gb_id;
+		$this->id = intval( $block->gb_id );
 		$this->xff = (bool)$options['xff'];
 		$this->isCreateAccountBlocked( (bool)$options['createAccount'] );
 		$this->setGlobalBlocker( $block );
