@@ -67,6 +67,7 @@
 	"globalblocking-logentry-whitelist": "$1 {{GENDER:$2|njabut}} blokiran global ing $3 kalawan lokal",
 	"globalblocking-loglink": "Alamat IP $1 diblokir global ([[{{#Special:GlobalBlockList}}/$1|rerincèn jangkepé]]).",
 	"globalblocking-showlog": "Alamat IP iki wis tau diblokir sakdurungé.\nLog pamblokiran sumadhiya nèng ngisor kanggo rujukan:",
+	"globalblocking-contribs-log": "log penggakan global",
 	"globalblocklist": "Tuduhna daftar alamat-alamat IP sing diblokir sacara global",
 	"globalblock": "Mblokir alamat IP sacara global",
 	"globalblockstatus": "Status lokal saka pamblokiran global",
