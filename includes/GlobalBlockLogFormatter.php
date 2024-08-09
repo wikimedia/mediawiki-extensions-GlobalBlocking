@@ -108,10 +108,26 @@ class GlobalBlockLogFormatter extends LogFormatter {
 						// Convert the anon-only flag into a localised message.
 						$params[5] = $this->msg( 'globalblocking-block-flag-anon-only' )->text();
 					}
+					// Construct the block flags
+					$flags = [];
 					if ( $params[5] !== '' ) {
-						// Wrap the flags in parentheses.
-						$params[5] = $this->msg( 'parentheses', $params[5] )->text();
+						$flags[] = $params[5];
 					}
+					// All legacy global blocking logs disable account creation, so mark them as such.
+					$flags[] = $this->msg( 'globalblocking-block-flag-account-creation-disabled' )->text();
+					// Wrap the flags in parentheses.
+					$params[5] = $this->msg(
+						'parentheses',
+						$this->context->getLanguage()->commaList( $flags )
+					)->text();
+				} else {
+					$flags = [];
+					if ( $params[4] !== '' ) {
+						$flags[] = $params[4];
+					}
+					// All legacy global blocking logs disable account creation, so mark them as such.
+					$flags[] = $this->msg( 'globalblocking-block-flag-account-creation-disabled' )->text();
+					$params[4] = $this->context->getLanguage()->commaList( $flags );
 				}
 			}
 		} elseif ( in_array( $this->entry->getSubtype(), [ 'gblock', 'modify' ] ) ) {
@@ -123,6 +139,11 @@ class GlobalBlockLogFormatter extends LogFormatter {
 			$flags = [];
 			if ( in_array( 'anon-only', $params[5] ) ) {
 				$flags[] = $this->msg( 'globalblocking-block-flag-anon-only' )->text();
+			}
+			// We have to do an inverse check here, because before T17273 all blocks disabled account creation
+			// and as such the checking for the existence of a flag won't work for pre-MW 1.43 logs.
+			if ( !in_array( 'allow-account-creation', $params[5] ) ) {
+				$flags[] = $this->msg( 'globalblocking-block-flag-account-creation-disabled' )->text();
 			}
 			// Only display the flags if there are any set.
 			if ( count( $flags ) ) {
