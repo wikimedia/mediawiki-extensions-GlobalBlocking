@@ -8,14 +8,20 @@
 			"Vago",
 			"Verman1",
 			"Vugar 1981",
-			"NMW03"
+			"NMW03",
+			"Nemoralis"
 		]
 	},
 	"globalblocking-block-reason": "Səbəb:",
+	"globalblocking-block-reason-dropdown": "* Ümumi blok səbəbləri \n** Vikilərarası spam \n** Vikilərarası vandalizm",
 	"globalblocking-block-edit-dropdown": "Bloklama səbəblərini redaktə et",
 	"globalblocking-block-expiry": "Bitmə müddəti:",
 	"globalblocking-block-expiry-selector-other": "Başqa vaxt:",
 	"globalblocking-ipaddress": "IP ünvanı:",
+	"globalblocking-ipbanononly": "Qlobal olaraq yalnız anonim istifadəçiləri blokla",
+	"globalblocking-block-expiryinvalid": "Daxil etdiyiniz bitmə müddəti etibarsızdır.",
+	"globalblocking-modify-submit": "Bu qlobal bloku redaktə et",
+	"globalblocking-block-failure": "$1 istifadəçisini qlobal bloklamaq zamanı xəta baş verdi. Zəhmət olmasa bir daha cəhd edin.",
 	"globalblocking-also-local-talk": "Lokal olaraq istifadəçini öz müzakirə səhifəsini redaktə etməsini blokla",
 	"globalblocking-search-ip": "IP ünvanı:",
 	"globalblocking-list-unblock": "çıxar",

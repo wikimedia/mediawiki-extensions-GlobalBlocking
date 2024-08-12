@@ -20,7 +20,8 @@
 			"Tarmo",
 			"Valtlait",
 			"Pyscowicz",
-			"Samoasambia"
+			"Samoasambia",
+			"Jack Phoenix"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Mahdollistaa]] IP-osoitteiden [[Special:GlobalBlockList|estämisen useasta wikistä kerralla]].",
@@ -35,14 +36,17 @@
 	"globalblocking-ipaddress": "IP-osoite:",
 	"globalblocking-ipbanononly": "Estä järjestelmänlaajuisesti vain kirjautumattomat käyttäjät",
 	"globalblocking-block-ipinvalid": "Antamasi IP-osoite ($1) ei kelpaa.\nHuomaa, että käyttäjänimeä ei voi syöttää tähän.",
-	"globalblocking-block-expiryinvalid": "Antamasi eston kesto oli virheellinen.",
+	"globalblocking-block-expiryinvalid": "Antamasi eston kesto on virheellinen.",
 	"globalblocking-block-submit": "Estä IP-osoite järjestelmänlaajuisesti",
 	"globalblocking-modify-submit": "Muuta tätä järjestelmänlaajuista estoa",
 	"globalblocking-block-success": "IP-osoite $1 on estetty kaikissa projekteissa.",
 	"globalblocking-modify-success": "Järjestelmänlaajuista estoa kohteessa $1 on muutettu.",
 	"globalblocking-local-failed": "IP-osoitteen estäminen paikallisesti epäonnistui, koska määritetty IP-osoite on jo estetty tässä wikissä.",
+	"globalblocking-block-failure": "Virhe yritettäessä estää käyttäjää $1. Kokeile uudelleen.",
 	"globalblocking-block-alreadyblocked": "IP-osoite $1 on jo estetty järjestelmänlaajuisesti.\nVoit tarkastella estoa [[Special:GlobalBlockList|järjestelmänlaajuisten estojen luettelosta]]\ntai muokata nykyisen eston asetuksia lähettämällä tämän lomakkeen uudelleen.",
 	"globalblocking-also-local": "Estä määritetty IP-osoite myös paikallisesti tässä wikissä",
+	"globalblocking-also-local-talk": "Estä käyttäjää muokkamaasta omaa keskustelusivuaan paikallisesti",
+	"globalblocking-also-local-email": "Estä käyttäjää lähettämästä sähköpostia paikallisesti",
 	"globalblocking-list-intro": "Tämä luettelo sisältää kaikki järjestelmänlaajuiset estot (global blocks), jotka ovat tällä hetkellä voimassa.\n\nJotkut estoista on voitu merkitä paikallisesti poistetuiksi: tämä tarkoittaa, että esto on voimassa muualla, mutta paikallinen ylläpitäjä on päättänyt poistaa eston vaikutuksen tässä wikissä.",
 	"globalblocking-list": "Järjestelmänlaajuisesti estetyt IP-osoitteet",
 	"globalblocking-search-legend": "Etsi järjestelmänlaajuisia estoja",
