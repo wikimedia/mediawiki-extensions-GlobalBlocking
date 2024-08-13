@@ -116,7 +116,7 @@
 	"globalblocking-contribs-modify": "изменить параметры глобальной блокировки",
 	"globalblocking-contribs-remove": "снять глобальную блокировку",
 	"globalblocklist": "Список заблокированных глобально IP-адресов",
-	"globalblock": "Глобальная блокировка IP-адреса",
+	"globalblock": "Глобально заблокировать участника",
 	"globalblockstatus": "Локальные состояния глобальных блокировок",
 	"removeglobalblock": "Снять глобальную блокировку",
 	"right-globalblock": "Наложение и снятие глобальных блокировок",
