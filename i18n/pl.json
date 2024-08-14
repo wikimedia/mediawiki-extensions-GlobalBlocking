@@ -129,7 +129,10 @@
 	"log-action-filter-gblblock-dwhitelist": "Usunięcie z białej listy blokady globalnej",
 	"grant-globalblock": "Globalnie zablokuj lub odblokuj adres IP",
 	"globalblocking-blockedtext-all-wikis": "Twój adres IP został zablokowany na wszystkich wiki.",
+	"globalblocking-blockedtext-on-range": "Twój adres IP należy do zakresu, który został zablokowany na wszystkich wiki.",
 	"globalblocking-blockedtext-on-proxy": "Co najmniej jeden serwer proxy używany przez Twoje żądanie jest globalnie zablokowany",
+	"globalblocking-blockedtext-blocker-admin": "Możesz skontaktować się z $1 aby omówić blokadę.",
+	"globalblocking-blockedtext-email-feature": "Nie możesz korzystać z funkcji „{{int:emailuser}}”, dopóki w [[Special:Preferences|preferencjach konta]] nie określono prawidłowego adresu e-mail i nie zablokowano Ci możliwości korzystania z tej możliwości.",
 	"globalblocking-blockedtext-ip-range": "Zablokowany zakres to $1 .",
 	"globalblocking-blockedtext-proxy": "Zablokowany adres proxy to $1."
 }

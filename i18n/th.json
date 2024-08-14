@@ -82,6 +82,7 @@
 	"globalblocking-ipblocked-xff": "'''{{int:globalblocking-blockedtext-on-proxy}}'''\n\nถูกบล็อกโดย $1 ($2)\n{{int:blockedtext-reason-comment|$3}}\n\n* {{int:blockedtext-start-time|$4}}\n* {{int:blockedtext-expiration-time|$5}}\n\n{{int:globalblocking-blockedtext-blocker-admin|$1}}\n{{int:globalblocking-blockedtext-email-feature}}\n{{int:globalblocking-blockedtext-proxy|$7}} {{int:blockedtext-include-details-queries}}",
 	"globalblocking-blocked-nopassreset": "คุณไม่สามารถรีเซ็ตรหัสผ่านของผู้ใช้ได้เนื่องจากที่อยู่ไอพีของคุณถูกบล็อกข้ามโครงการ",
 	"globalblocking-logpage": "ปูมการบล็อกข้ามโครงการ",
+	"globalblocking-logpagetext": "นี่คือปูมของการบล็อกข้ามโครงการที่ถูกทำและถูกนำออกบนวิกินี้ โปรดทราบว่าการบล็อกข้ามโครงการสามารถทำและถูกนำออกได้บนวิกิอื่น และการบล็อกข้ามโครงการเหล่านี้อาจส่งผลกระทบต่อวิกินี้ หากต้องการดูการบล็อกข้ามโครงการที่ใช้งานอยู่ทั้งหมด คุณสามารถดู[[Special:GlobalBlockList|รายการบล็อกข้ามโครงการ]]ได้",
 	"globalblocking-block-logentry": "บล็อก [[$1]] ข้ามโครงการโดยมีเวลาหมดอายุ $2",
 	"globalblocking-block2-logentry": "บล็อก [[$1]] ข้ามโครงการ ($2)",
 	"globalblocking-unblock-logentry": "เอาการบล็อกข้ามโครงการออกบน [[$1]]",
