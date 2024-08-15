@@ -36,7 +36,9 @@
 			"Тест",
 			"Ата",
 			"Jack who built the house",
-			"Cookai1205"
+			"Cookai1205",
+			"Amire80",
+			"Woytecr"
 		]
 	},
 	"globalblocking-desc": "{{desc|name=Global Blocking|url=https://www.mediawiki.org/wiki/Extension:GlobalBlocking}}",
@@ -142,11 +144,11 @@
 	"globalblocking-logentry-unblock": "{{Logentry|[[m:Special:Log/gblblock]]}}\n* $4 - (optional) the username, IP range, or IP address which was unblocked (to be used with GENDER)",
 	"globalblocking-logentry-whitelist": "{{Logentry|[[m:Special:Log/gblblock]]}}\n* $4 - (optional) the username, IP range, or IP address who is the target of the block that was locally disabled (to be used with GENDER)",
 	"globalblocking-logentry-dewhitelist": "{{Logentry|[[m:Special:Log/gblblock]]}}\n* $4 - (optional) the username, IP range, or IP address who is the target of the block that was locally re-enabled (to be used with GENDER)",
-	"globalblocking-block-flag-anon-only": "Used as a block log flag in the log entry of a global block.\nSee also:\n* {{msg-mw|block-flag-anon-only}}",
+	"globalblocking-block-flag-anon-only": "Used as a block log flag in the log entry of a global block.\nSee also:\n* {{msg-mw|block-log-flags-anononly}}",
 	"globalblocking-loglink": "Shown at [[Special:BlockList]] when the GlobalBlocking extension is enabled (not on translatewiki).\n* $1 is the requested username, IP address, or IP range",
 	"globalblocking-contribs-notice": "Displayed on [[Special:Contributions]] for currently globally blocked accounts, IP addresses, and IP ranges. Parameters:\n* $1 - (Optional) the username, IP address, or IP range\nSee also:\n* {{msg-mw|Sp-contributions-blocked-notice}}\n* {{msg-mw|Sp-contributions-blocked-notice-anon}}",
 	"globalblocking-showlog": "See also:\n* {{msg-mw|Blocklog-showlog}}",
-	"globalblocking-contribs-block": "Used as link title in [[Special:Contributions]] and in [[Special:DeletedContributions]].\n\nSee also:\n* {{msg-mw|blocklink}}",
+	"globalblocking-contribs-block": "Used as link title in [[Special:Contributions]] and in [[Special:DeletedContributions]] leading to the block form.\n\nSee also:\n* {{msg-mw|blocklink}}",
 	"globalblocking-contribs-modify": "Used as link title in [[Special:Contributions]] and in [[Special:DeletedContributions]].\n\nSee also:\n* {{msg-mw|change-blocklink}}",
 	"globalblocking-contribs-remove": "Used as link title in [[Special:Contributions]] and in [[Special:DeletedContributions]].\n\nSee also:\n* {{msg-mw|unblocklink}}",
 	"globalblocklist": "{{doc-special|GlobalBlockList}}",
