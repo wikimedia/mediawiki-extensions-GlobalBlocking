@@ -90,7 +90,7 @@
 	"globalblocking-logpage": "Qlobal blok gündəliyi",
 	"globalblocking-logpagetext": "Bu, bu vikidə tətbiq edilmiş və açılmış qlobal blokların jurnalıdır.\nQeyd etmək lazımdır ki, qlobal bloklar digər vikilərdə tətbiq edilə bilə və açıla bilər və bu qlobal bloklar bu vikiyə təsir edə bilər.\nBütün aktiv qlobal bloklara baxmaq üçün [[Special:GlobalBlockList|qlobal blok siyahısına]] baxa bilərsiniz.",
 	"globalblocking-logentry-block-old-format": "$1 {{GENDER:$4|$3}} istifadəçisini {{GENDER:$2|qlobal blokladı}} ($5)",
-	"globalblocking-logentry-block": "$1 {{GENDER:$4|$3}} istifadəçisini {{GENDER:$2|qlobal blokladı}} $5 bitmə müddətinə qlobal blokladı $6",
+	"globalblocking-logentry-block": "$1 {{GENDER:$4|$3}} istifadəçisini $5 bitmə müddətinə {{GENDER:$2|qlobal blokladı}} $6",
 	"globalblocking-logentry-modify-old-format": "$1 {{GENDER:$4|$3}} üçün qlobal blok parametrlərini {{GENDER:$2|dəyişdirdi}} ($5)",
 	"globalblocking-logentry-modify": "$1 {{GENDER:$4|$3}} üçün $5 bitmə müddətinə olan qlobal blok parametrlərini {{GENDER:$2|dəyişdirdi}} ($6)",
 	"globalblocking-logentry-unblock": "$1 {{GENDER:$4|$3}} istifadəçisinin {{GENDER:$2|qlobal blokunu açdı}}",

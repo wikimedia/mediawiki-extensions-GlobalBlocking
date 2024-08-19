@@ -2,9 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"Ernác",
-			"Iltever"
+			"Iltever",
+			"Къарачайлы"
 		]
 	},
-	"globalblocklist": "Глобал халда блокланнган IP-адреслени списогу",
+	"globalblocklist": "Глобал халда блокланнган IP-адреслени тизмеси",
 	"globalblockstatus": "Глобал блоклауланы локал халлары"
 }
