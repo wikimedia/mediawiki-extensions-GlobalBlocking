@@ -59,7 +59,6 @@
 	"globalblocking-whitelist-dewhitelisted": "Znova ste zapli globálne blokovanie #$2 IP adresy '''$1''' na {{GRAMMAR:lokál|{{SITENAME}}}}.",
 	"globalblocking-whitelist-nochange": "Nevykonali ste žiadne zmeny lokálneho stavu tohto blokovania.",
 	"globalblocking-whitelist-intro": "Tento formulár slúži na úpravu lokálneho stavu globálneho blokovania. Ak vypnete globálne blokovanie pre túto wiki, používatelia z danej IP adresy budú môcť normálne vykonávať úpravy.",
-	"globalblocking-ipblocked": "'''Vaša IP adresa bola zablokovaná na všetkých wiki.'''\n\nZablokoval: $1 ($2).\nDôvod zablokovania: ''$3''.\n\n* Zablokované: $4\n* Blokovanie vyprší: $5\n\nAk chcete o zablokovaní diskutovať, môžete kontaktovať $1.\nFunkciu „{{int:emailuser}}“ môžete použiť len ak máte v [[Special:Preferences|nastaveniach]] uvedenú korektnú e-mailovú adresu a nemáte použitie funkcie zablokované.\nVaša aktuálna IP adresa je $6.\nV prípade otázok prosím uveďte všetky uvedené informácie.",
 	"globalblocking-logpage": "Záznam globálnych blokovaní",
 	"globalblocking-logpagetext": "Toto je záznam globálnych blokovaní, ktoré boli vytvorené a zrušené na tejto wiki.\nMali by ste pamätať na to, že globálne blokovania je možné vytvoriť a odstrániť na iných wiki a tieto globálne blokovania môžu ovplyvniť túto wiki.\nVšetky aktívne blokovania si môžete pozrieť na [[Special:GlobalBlockList|zozname globálnych blokovaní]].",
 	"globalblocking-loglink": "IP adresa $1 je globálne zablokovaná ([[{{#Special:GlobalBlockList}}/$1|podrobnosti]]).",
