@@ -94,7 +94,7 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 
 		// Add the fields dependent on whether a given prop was requested
 		$this->addFieldsIf( 'gb_id', $fld_id );
-		$this->addFieldsIf( [ 'gb_address', 'gb_anon_only' ], $fld_target );
+		$this->addFieldsIf( [ 'gb_address', 'gb_anon_only', 'gb_create_account' ], $fld_target );
 		$this->addFieldsIf( [ 'gb_by_central_id', 'gb_by_wiki' ], $fld_by );
 		$this->addFieldsIf( 'gb_expiry', $fld_expiry );
 		$this->addFieldsIf( 'gb_reason', $fld_reason );
@@ -201,9 +201,8 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 			}
 			if ( $fld_target ) {
 				$block[$targetPropName] = $row->gb_address;
-				if ( $row->gb_anon_only ) {
-					$block['anononly'] = '';
-				}
+				$block['anononly'] = (bool)$row->gb_anon_only;
+				$block['account-creation-disabled'] = (bool)$row->gb_create_account;
 			}
 			if ( $fld_by ) {
 				$block['by'] = $this->lookup->nameFromCentralId( $row->gb_by_central_id );

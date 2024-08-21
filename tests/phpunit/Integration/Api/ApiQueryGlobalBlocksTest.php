@@ -72,19 +72,23 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 		// Assert that the expected number of global blocks were returned and that they are the expected ones.
 		$this->assertSameSize( $expectedBlockTargets, $result['query']['globalblocks'] );
 		foreach ( $result['query']['globalblocks'] as $block ) {
+			$this->assertArrayEquals(
+				[ 'address', 'anononly', 'account-creation-disabled' ],
+				array_keys( $block ), false, false,
+				'The properties returned by the API were not as expected'
+			);
 			$this->assertContains(
 				$block['address'], array_keys( $expectedBlockTargets ),
 				'The API returned a block that was not expected.'
 			);
-			// Assert that only the address field was returned, as requested.
-			// The exception to this is if the block is anon-only, where an additional field is returned.
-			$expectedFields = [ 'address' ];
-			if ( $expectedBlockTargets[$block['address']] ) {
-				$expectedFields[] = 'anononly';
-			}
-			$this->assertArrayEquals(
-				$expectedFields, array_keys( $block ), false, false,
-				'The properties returned by the API were not as expected'
+			$this->assertSame(
+				$block['anononly'], $expectedBlockTargets[$block['address']]['anon-only'],
+				'Anon only flag is not the expected value'
+			);
+			$this->assertSame(
+				$block['account-creation-disabled'],
+				$expectedBlockTargets[$block['address']]['account-creation-disabled'],
+				'Anon only flag is not the expected value'
 			);
 		}
 	}
@@ -96,12 +100,22 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 				'127.0.0.1',
 				// The limit to use as the 'bglimit' parameter.
 				2,
-				// The expected block targets as keys and whether they are expected to be anon-only as values.
-				[ '127.0.0.1' => true, '127.0.0.0/24' => false ],
+				// The expected block targets as keys and what block flags should be set as keys
+				[
+					'127.0.0.1' => [ 'anon-only' => true, 'account-creation-disabled' => true ],
+					'127.0.0.0/24' => [ 'anon-only' => false, 'account-creation-disabled' => true ]
+				],
 			],
-			'Single IPv4, limit 1' => [ '127.0.0.1', 1, [ '127.0.0.1' => true ] ],
-			'IPv4 range, limit 1' => [ '127.0.0.0/25', 1, [ '127.0.0.0/24' => false ] ],
-			'IPv6 range, limit 2' => [ '2000:ABCD:ABCD:A:0:0:0:0/108', 2, [ '2000:ABCD:ABCD:A:0:0:0:0/108' => false ] ],
+			'Single IPv4, limit 1' => [
+				'127.0.0.1', 1, [ '127.0.0.1' => [ 'anon-only' => true, 'account-creation-disabled' => true ] ],
+			],
+			'IPv4 range, limit 1' => [
+				'127.0.0.0/25', 1, [ '127.0.0.0/24' => [ 'anon-only' => false, 'account-creation-disabled' => true ] ],
+			],
+			'IPv6 range, limit 2' => [
+				'2000:ABCD:ABCD:A:0:0:0:0/108', 2,
+				[ '2000:ABCD:ABCD:A:0:0:0:0/108' => [ 'anon-only' => false, 'account-creation-disabled' => false ] ],
+			],
 		];
 	}
 
@@ -159,6 +173,7 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 				'timestamp' => wfTimestamp( TS_ISO_8601, '20230205060708' ),
 				'expiry' => wfTimestamp( TS_ISO_8601, '20250405060708' ),
 				'reason' => 'test1', 'rangeend' => '127.0.0.255', 'rangestart' => '127.0.0.0',
+				'account-creation-disabled' => true, 'anononly' => false,
 			],
 			$result['query']['globalblocks'][0],
 			false, true, 'The returned global block entry was not as expected.'
@@ -186,13 +201,17 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 		return [
 			'IPV4' => [
 				'1',
-				[ 'id' => 1, 'target' => '127.0.0.0/24', 'rangeend' => '127.0.0.255', 'rangestart' => '127.0.0.0' ],
+				[
+					'id' => 1, 'target' => '127.0.0.0/24', 'rangeend' => '127.0.0.255', 'rangestart' => '127.0.0.0',
+					'account-creation-disabled' => true, 'anononly' => false,
+				],
 			],
 			'IPv6' => [
 				'3',
 				[
 					'id' => 3, 'target' => '2000:ABCD:ABCD:A:0:0:0:0/108',
 					'rangeend' => '2000:ABCD:ABCD:A:0:0:F:FFFF', 'rangestart' => '2000:ABCD:ABCD:A:0:0:0:0',
+					'account-creation-disabled' => false, 'anononly' => false,
 				],
 			],
 		];
@@ -207,7 +226,7 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 		$this->assertArrayHasKey( 'globalblocks', $result['query'] );
 		$this->assertCount( 1, $result['query']['globalblocks'] );
 		$this->assertArrayEquals(
-			[ 'address' => '127.0.0.0/24' ],
+			[ 'address' => '127.0.0.0/24', 'account-creation-disabled' => true, 'anononly' => false ],
 			$result['query']['globalblocks'][0],
 			false, true, 'The returned global block entry was not as expected.'
 		);
@@ -317,7 +336,10 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 		ConvertibleTimestamp::setFakeTime( '20230205060709' );
 		$globalBlockManager->block( '88.8.9.0/24', 'test2', '20240505060708', $testPerformer );
 		ConvertibleTimestamp::setFakeTime( '20230205060710' );
-		$globalBlockManager->block( '2000:ABCD:ABCD:A:0:0:0:0/108', 'testipv6', '20240505060708', $testPerformer );
+		$globalBlockManager->block(
+			'2000:ABCD:ABCD:A:0:0:0:0/108', 'testipv6', '20240505060708', $testPerformer,
+			[ 'allow-account-creation' ]
+		);
 		// Insert some single IP blocks
 		ConvertibleTimestamp::setFakeTime( '20230205060711' );
 		$globalBlockManager->block( '127.0.0.1', 'test3', '20240605060708', $testPerformer, [ 'anon-only' ] );
