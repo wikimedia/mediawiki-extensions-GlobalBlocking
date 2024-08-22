@@ -50,6 +50,7 @@
 	"globalblocking-list-whitelisted": "locally disabled by $1: $2",
 	"globalblocking-list-whitelist": "local status",
 	"globalblocking-list-modify": "modify",
+	"globalblocking-list-block": "block",
 	"globalblocking-list-tempblocks": "Hide temporary blocks",
 	"globalblocking-list-indefblocks": "Hide indefinite blocks",
 	"globalblocking-list-addressblocks": "Hide single IP blocks",
@@ -126,5 +127,6 @@
 	"globalblocking-blockedtext-email-feature": "You cannot use the \"{{int:emailuser}}\" feature unless a valid email address is specified in your [[Special:Preferences|account preferences]] and you have not been blocked from using it.",
 	"globalblocking-blockedtext-ip-range": "The blocked range is $1.",
 	"globalblocking-blockedtext-proxy": "The blocked proxy address was $1.",
-	"globalblocking-blockedtext-username": "Your username is $1."
+	"globalblocking-blockedtext-username": "Your username is $1.",
+	"globalblocking-centralauth-admin-info-globalblock": "Globally blocked:"
 }
