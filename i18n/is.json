@@ -69,6 +69,7 @@
 	"globalblocking-logpage": "Atburðaskrá altækrar hindrunar",
 	"globalblocking-logpagetext": "Þetta er atburðaskrá altækra hindrana sem hafa verið gerðar og fjarlægðar á þessum wiki.\nÞað skal tekið fram að hægt er að búa til og fjarlægja altækar hindranir á öðrum wiki og að þessar altæku hindranir kunna að hafa áhrif á þessum wiki.\nTil að skoða allar virkar altækar hindranir getur þú skoðað [[Special:GlobalBlockList|altæka hindrunarlistann]].",
 	"globalblocking-loglink": "IP-staðfangið $1 er hindrað altækt ([[{{#Special:GlobalBlockList}}/$1|allar upplýsingar]]).",
+	"globalblocking-contribs-notice": "Þessi notandi er eins og er altækt hindraður.\nSíðasta færsla hindrunaratburðaskráar er fyrir neðan til viðmiðunar:",
 	"globalblocking-showlog": "Þetta IP-staðfang hefur verið hindrað áður.\nHindrunaratburðaskráin er hér að neðan til viðmiðunar:",
 	"globalblocklist": "Listi yfir altækar hindranir IP-staðfanga",
 	"globalblock": "Altækt hindra IP-staðfang",

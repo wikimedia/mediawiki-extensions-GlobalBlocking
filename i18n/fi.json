@@ -136,7 +136,7 @@
 	"action-globalblock-whitelist": "poistaa käytöstä järjestelmänlaajuisia estoja paikallisesti",
 	"right-globalblock-exempt": "Ohittaa järjestelmänlaajuiset IP-estot",
 	"action-globalblock-exempt": "ohittaa järjestelmänlaajuisia IP-estoja",
-	"log-action-filter-gblblock": "Globaalin eston tyyppi:",
+	"log-action-filter-gblblock": "Järjestelmänlaajuisen eston tyyppi:",
 	"log-action-filter-gblblock-gblock": "Järjestelmänlaajuinen esto",
 	"log-action-filter-gblblock-gunblock": "Järjestelmänlaajuisen eston poistaminen",
 	"log-action-filter-gblblock-modify": "Järjestelmänlaajuisen eston muokkaaminen",
