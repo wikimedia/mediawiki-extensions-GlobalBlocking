@@ -107,12 +107,14 @@ return [
 	'GlobalBlocking.GlobalBlockingLinkBuilder' => static function (
 		MediaWikiServices $services
 	): GlobalBlockingLinkBuilder {
+		$globalBlockingServices = GlobalBlockingServices::wrap( $services );
 		return new GlobalBlockingLinkBuilder(
 			new ServiceOptions(
 				GlobalBlockingLinkBuilder::CONSTRUCTOR_OPTIONS,
 				$services->getMainConfig()
 			),
 			$services->getLinkRenderer(),
+			$globalBlockingServices->getGlobalBlockLookup(),
 			RequestContext::getMain(),
 			RequestContext::getMain()->getLanguage()
 		);

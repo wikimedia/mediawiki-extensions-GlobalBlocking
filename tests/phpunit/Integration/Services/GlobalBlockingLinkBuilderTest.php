@@ -2,9 +2,15 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Test\Integration\Services;
 
+use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
+use MediaWiki\Linker\LinkTarget;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
+use MediaWiki\Title\Title;
+use MediaWiki\User\UserIdentity;
 use MediaWikiIntegrationTestCase;
 
 /**
@@ -14,6 +20,16 @@ use MediaWikiIntegrationTestCase;
 class GlobalBlockingLinkBuilderTest extends MediaWikiIntegrationTestCase {
 
 	use MockAuthorityTrait;
+
+	private static UserIdentity $testGloballyBlockedUser;
+	private static UserIdentity $testUnblockedUser;
+
+	protected function setUp(): void {
+		parent::setUp();
+		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
+		// to be the local provider.
+		$this->overrideConfigValue( 'CentralIdLookupProvider', 'local' );
+	}
 
 	/** @dataProvider provideMaybeLinkUserpage */
 	public function testMaybeLinkUserpage( $wikiID, $user, $expectedReturnValue ) {
@@ -153,7 +169,10 @@ class GlobalBlockingLinkBuilderTest extends MediaWikiIntegrationTestCase {
 		);
 	}
 
-	public function testGetActionLinksForSysop() {
+	/** @dataProvider provideGetActionLinks */
+	public function testGetActionLinksForSysop(
+		callable $targetCallback, $shouldCheckBlockStatus, $shouldDisplayLocalDisableActionLink
+	) {
 		// Set the language as qqx so that we can look for message keys in the HTML output we are testing
 		$this->setUserLang( 'qqx' );
 		// Call the method under test
@@ -161,14 +180,23 @@ class GlobalBlockingLinkBuilderTest extends MediaWikiIntegrationTestCase {
 			->getGlobalBlockingLinkBuilder();
 		$actualActionLinks = $globalBlockingLinkBuilder->getActionLinks(
 			$this->mockRegisteredAuthorityWithPermissions( [ 'globalblock-whitelist' ] ),
-			'Testing'
+			$targetCallback()->getName(),
+			$shouldCheckBlockStatus
 		);
 		// Perform assertions to verify that the expected action links are present in the returned HTML
-		$this->assertStringContainsString(
-			'(globalblocking-list-whitelist)',
-			$actualActionLinks,
-			'Expected ::getActionLinks to return a link to Special:GlobalBlockStatus'
-		);
+		if ( $shouldDisplayLocalDisableActionLink ) {
+			$this->assertStringContainsString(
+				'(globalblocking-list-whitelist)',
+				$actualActionLinks,
+				'Expected ::getActionLinks to return a link to Special:GlobalBlockStatus'
+			);
+		} else {
+			$this->assertStringNotContainsString(
+				'(globalblocking-list-whitelist)',
+				$actualActionLinks,
+				'Expected ::getActionLinks to not have a link to Special:GlobalBlockStatus'
+			);
+		}
 		$this->assertStringNotContainsString(
 			'(globalblocking-list-modify)',
 			$actualActionLinks,
@@ -183,15 +211,31 @@ class GlobalBlockingLinkBuilderTest extends MediaWikiIntegrationTestCase {
 		);
 	}
 
-	public function testGetActionLinksForSteward() {
+	public static function provideGetActionLinks() {
+		return [
+			'User is not blocked' => [ fn () => self::$testUnblockedUser, true, false ],
+			'User is not blocked, but set to not check block status' => [
+				fn () => self::$testUnblockedUser, false, true,
+			],
+			'User is blocked' => [ fn () => self::$testGloballyBlockedUser, true, true ],
+		];
+	}
+
+	/** @dataProvider provideGetActionLinks */
+	public function testGetActionLinksForSteward(
+		callable $targetCallback, $shouldCheckBlockStatus, $shouldDisplayActionLinksForBlockedUser
+	) {
 		// Set the language as qqx so that we can look for message keys in the HTML output we are testing
 		$this->setUserLang( 'qqx' );
+		// Needed for the external link generation.
+		RequestContext::getMain()->setTitle( Title::makeTitle( NS_SPECIAL, 'GlobalBlockList' ) );
 		// Call the method under test
 		$globalBlockingLinkBuilder = GlobalBlockingServices::wrap( $this->getServiceContainer() )
 			->getGlobalBlockingLinkBuilder();
 		$actualActionLinks = $globalBlockingLinkBuilder->getActionLinks(
 			$this->mockRegisteredAuthorityWithPermissions( [ 'globalblock' ] ),
-			'Testing'
+			$targetCallback()->getName(),
+			$shouldCheckBlockStatus
 		);
 		// Perform assertions to verify that the expected action links are present in the returned HTML
 		$this->assertStringNotContainsString(
@@ -200,15 +244,118 @@ class GlobalBlockingLinkBuilderTest extends MediaWikiIntegrationTestCase {
 			'Expected ::getActionLinks to not return a link to Special:GlobalBlockStatus as the authority ' .
 			'not have the right to use that special page.'
 		);
+		if ( $shouldDisplayActionLinksForBlockedUser ) {
+			$this->assertStringContainsString(
+				'(globalblocking-list-modify)',
+				$actualActionLinks,
+				'Expected ::getActionLinks to return a modify block link'
+			);
+			$this->assertStringContainsString(
+				'(globalblocking-list-unblock)',
+				$actualActionLinks,
+				'Expected ::getActionLinks to return a link to Special:RemoveGlobalBlock'
+			);
+			$this->assertStringNotContainsString(
+				'(globalblocking-list-block)',
+				$actualActionLinks,
+				'Expected ::getActionLinks to not have a block link'
+			);
+		} else {
+			$this->assertStringNotContainsString(
+				'(globalblocking-list-modify)',
+				$actualActionLinks,
+				'Expected ::getActionLinks to not have a modify block link'
+			);
+			$this->assertStringNotContainsString(
+				'(globalblocking-list-unblock)',
+				$actualActionLinks,
+				'Expected ::getActionLinks to have no remove block link'
+			);
+			$this->assertStringContainsString(
+				'(globalblocking-list-block)',
+				$actualActionLinks,
+				'Expected ::getActionLinks to have a block link'
+			);
+		}
+	}
+
+	/** @dataProvider provideCentralWikiConfigValuesForLocalUrl */
+	public function testGetLinkToCentralWikiSpecialPageForLocalLink( $globalBlockingCentralWikiConfigValue ) {
+		$this->overrideConfigValue( 'GlobalBlockingCentralWiki', $globalBlockingCentralWikiConfigValue );
+		$this->setUserLang( 'qqx' );
+		// Call the method under test
+		$globalBlockingLinkBuilder = GlobalBlockingServices::wrap( $this->getServiceContainer() )
+			->getGlobalBlockingLinkBuilder();
+		$actualLinkHtml = $globalBlockingLinkBuilder->getLinkToCentralWikiSpecialPage(
+			'Log', 'test1234', $this->createMock( LinkTarget::class ),
+			[ 'page' => '1.2.3.4' ]
+		);
+		// Verify that the link HTML is as expected
 		$this->assertStringContainsString(
-			'(globalblocking-list-modify)',
-			$actualActionLinks,
-			'Expected ::getActionLinks to return a link to Special:GlobalBlock'
+			'test1234', $actualLinkHtml, 'The link text is missing'
 		);
 		$this->assertStringContainsString(
-			'(globalblocking-list-unblock)',
-			$actualActionLinks,
-			'Expected ::getActionLinks to return a link to Special:RemoveGlobalBlock'
+			'page=1.2.3.4', $actualLinkHtml,
+			'The logs link should be filtered to just the target user.'
 		);
+	}
+
+	public static function provideCentralWikiConfigValuesForLocalUrl() {
+		return [
+			'Invalid central wiki name' => [ 'undefined-wiki' ],
+			'Central wiki name is false' => [ false ],
+		];
+	}
+
+	public function testGetLinkToCentralWikiSpecialPageForExternalLink() {
+		$this->overrideConfigValue( 'GlobalBlockingCentralWiki', 'mediawiki' );
+		$this->setUserLang( 'qqx' );
+		// Get a partially mocked GlobalBlockingLinkBuilder, which mocks ::getForeignURL to return a URL
+		$objectUnderTest = $this->getMockBuilder( GlobalBlockingLinkBuilder::class )
+			->setConstructorArgs( [
+				new ServiceOptions(
+					GlobalBlockingLinkBuilder::CONSTRUCTOR_OPTIONS,
+					$this->getServiceContainer()->getMainConfig()
+				),
+				$this->getServiceContainer()->getLinkRenderer(),
+				GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockLookup(),
+				RequestContext::getMain(),
+				RequestContext::getMain()->getLanguage()
+			] )
+			->onlyMethods( [ 'getForeignURL' ] )
+			->getMock();
+		$objectUnderTest->method( 'getForeignURL' )
+			->willReturn( 'https://meta.wikimedia.org/wiki/Special:Log' );
+		// Call the method under test
+		$actualLinkHtml = $objectUnderTest->getLinkToCentralWikiSpecialPage(
+			'Log', 'test1234', Title::makeTitle( NS_SPECIAL, 'Contributions/1.2.3.4' ),
+			[ 'page' => '1.2.3.4' ]
+		);
+		// Verify that the link HTML is as expected
+		$this->assertStringContainsString(
+			'https://meta.wikimedia.org/wiki/Special:Log', $actualLinkHtml,
+			'The link should go to the central wiki.'
+		);
+		$this->assertStringContainsString(
+			'test1234', $actualLinkHtml, 'The link text is missing.'
+		);
+		$this->assertStringContainsString(
+			'page=1.2.3.4', $actualLinkHtml,
+			'The logs link should be filtered to just the target user.'
+		);
+	}
+
+	public function addDBDataOnce() {
+		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
+		// to be the local provider.
+		$this->overrideConfigValue( 'CentralIdLookupProvider', 'local' );
+		// Get a globally blocked user so that we can test with
+		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
+		$globallyBlockedTestUser = $this->getMutableTestUser()->getUserIdentity();
+		$globalBlockingServices->getGlobalBlockManager()->block(
+			$globallyBlockedTestUser, 'test', 'indefinite', $this->getTestUser( [ 'steward' ] )->getUser()
+		);
+		self::$testGloballyBlockedUser = $globallyBlockedTestUser;
+		self::$testUnblockedUser = $this->getMutableTestUser()->getUserIdentity();
 	}
 }
