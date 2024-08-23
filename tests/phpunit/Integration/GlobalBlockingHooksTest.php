@@ -176,6 +176,10 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 			$authority = $this->mockRegisteredAuthorityWithoutPermissions( [ 'hideuser' ] );
 		}
 		RequestContext::getMain()->setAuthority( $authority );
+		// Title needs to be set for GlobalBlockingLinkBuilder when the user can see the block notice
+		RequestContext::getMain()->setTitle(
+			Title::makeTitle( NS_SPECIAL, 'Contributions/' . self::$hiddenUser->getName() )
+		);
 		$this->testOnSpecialContributionsBeforeMainOutput(
 			self::$hiddenUser->getName(), $userHasHideUser, self::$hiddenUser->getName()
 		);

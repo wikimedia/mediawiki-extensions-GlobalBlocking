@@ -5,7 +5,9 @@ namespace MediaWiki\Extension\GlobalBlocking\Services;
 use HtmlArmor;
 use Language;
 use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Linker\LinkRenderer;
+use MediaWiki\Linker\LinkTarget;
 use MediaWiki\Permissions\Authority;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
@@ -22,22 +24,26 @@ class GlobalBlockingLinkBuilder {
 
 	public const CONSTRUCTOR_OPTIONS = [
 		'ApplyGlobalBlocks',
+		'GlobalBlockingCentralWiki',
 	];
 
 	private ServiceOptions $options;
 	private LinkRenderer $linkRenderer;
+	private GlobalBlockLookup $globalBlockLookup;
 	private MessageLocalizer $messageLocalizer;
 	private Language $language;
 
 	public function __construct(
 		ServiceOptions $options,
 		LinkRenderer $linkRenderer,
+		GlobalBlockLookup $globalBlockLookup,
 		MessageLocalizer $messageLocalizer,
 		Language $language
 	) {
 		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
 		$this->options = $options;
 		$this->linkRenderer = $linkRenderer;
+		$this->globalBlockLookup = $globalBlockLookup;
 		$this->messageLocalizer = $messageLocalizer;
 		$this->language = $language;
 	}
@@ -111,27 +117,93 @@ class GlobalBlockingLinkBuilder {
 	}
 
 	/**
+	 * Get a link for the central wiki for the given special page.
+	 * This is protected to allow mocking in tests.
+	 *
+	 * @param string $globalBlockingCentralWiki The wiki ID of the central wiki
+	 * @param string $specialPageName The localised name of the special page
+	 * @return string|false
+	 */
+	protected function getForeignURL( string $globalBlockingCentralWiki, string $specialPageName ) {
+		return WikiMap::getForeignURL( $globalBlockingCentralWiki, $specialPageName );
+	}
+
+	/**
+	 * Attempt to generate a link to the global blocking central wiki for the given special page.
+	 *
+	 * @param string $specialPageName The name of the special page, which will be localised
+	 * @return string|null The URL to the central wiki, or null if no URL could be generated
+	 */
+	private function getCentralUrl( string $specialPageName ): ?string {
+		$globalBlockingCentralWiki = $this->options->get( 'GlobalBlockingCentralWiki' );
+		if ( $globalBlockingCentralWiki === false ) {
+			return null;
+		}
+		$centralGlobalBlockingUrl = $this->getForeignURL(
+			$globalBlockingCentralWiki,
+			SpecialPage::getTitleFor( $specialPageName )
+		);
+		if ( $centralGlobalBlockingUrl === false ) {
+			return null;
+		}
+		return $centralGlobalBlockingUrl;
+	}
+
+	/**
+	 * Generate a link to a given special page name which where possible should be on the central wiki.
+	 *
+	 * @param string $specialPageName The name of the special page, which will be localised
+	 * @param string|HtmlArmor $linkText The display text for the link
+	 * @param LinkTarget $currentPage The current page, to be passed to LinkRenderer::makeExternalLink
+	 * @param array $queryParameters The query parameters for the link. optional.
+	 * @return string The HTML of the generated link
+	 */
+	public function getLinkToCentralWikiSpecialPage(
+		string $specialPageName, $linkText, LinkTarget $currentPage, array $queryParameters = []
+	): string {
+		$centralWikiLogUrl = $this->getCentralUrl( $specialPageName );
+		if ( $centralWikiLogUrl ) {
+			$centralWikiLogUrl = wfAppendQuery( $centralWikiLogUrl, $queryParameters );
+			return $this->linkRenderer->makeExternalLink( $centralWikiLogUrl, $linkText, $currentPage );
+		} else {
+			return $this->linkRenderer->makeKnownLink(
+				SpecialPage::getTitleFor( $specialPageName ), $linkText, [], $queryParameters
+			);
+		}
+	}
+
+	/**
 	 * Get action links to be displayed after the log entry or block list entry.
 	 *
 	 * @param Authority $authority The authority object for the user
 	 * @param string $target The target of the block for the given log entry / block list entry.
-	 *
+	 * @param bool $checkBlockStatus Whether to actually check if the given target is blocked.
+	 *   If false, then assume that the user is blocked. Used to avoid repeated lookups for block
+	 *   status on Special:Log.
 	 * @return string The action links to be displayed
 	 */
-	public function getActionLinks( Authority $authority, string $target ): string {
+	public function getActionLinks( Authority $authority, string $target, bool $checkBlockStatus = false ): string {
 		$links = [];
 		$canBlock = $authority->isAllowed( 'globalblock' );
+		if ( $checkBlockStatus ) {
+			$targetIsBlocked = $this->globalBlockLookup->getGlobalBlockId( $target );
+		} else {
+			$targetIsBlocked = true;
+		}
 
-		if ( $canBlock ) {
-			$links[] = $this->linkRenderer->makeKnownLink(
-				SpecialPage::getTitleFor( 'RemoveGlobalBlock' ),
+		if ( $canBlock && $targetIsBlocked ) {
+			$links[] = $this->getLinkToCentralWikiSpecialPage(
+				'RemoveGlobalBlock',
 				new HtmlArmor( $this->messageLocalizer->msg( 'globalblocking-list-unblock' )->parse() ),
-				[],
-				[ 'address' => $target ]
+				RequestContext::getMain()->getTitle(), [ 'address' => $target ]
 			);
 		}
 
-		if ( $this->options->get( 'ApplyGlobalBlocks' ) && $authority->isAllowed( 'globalblock-whitelist' ) ) {
+		if (
+			$this->options->get( 'ApplyGlobalBlocks' ) &&
+			$authority->isAllowed( 'globalblock-whitelist' ) &&
+			$targetIsBlocked
+		) {
 			$links[] = $this->linkRenderer->makeKnownLink(
 				SpecialPage::getTitleFor( 'GlobalBlockStatus' ),
 				new HtmlArmor( $this->messageLocalizer->msg( 'globalblocking-list-whitelist' )->parse() ),
@@ -141,11 +213,11 @@ class GlobalBlockingLinkBuilder {
 		}
 
 		if ( $canBlock ) {
-			$links[] = $this->linkRenderer->makeKnownLink(
-				SpecialPage::getTitleFor( 'GlobalBlock' ),
-				new HtmlArmor( $this->messageLocalizer->msg( 'globalblocking-list-modify' )->parse() ),
-				[],
-				[ 'wpAddress' => $target ]
+			$globalBlockLinkMessage = $targetIsBlocked ? 'globalblocking-list-modify' : 'globalblocking-list-block';
+			$links[] = $this->getLinkToCentralWikiSpecialPage(
+				'GlobalBlock',
+				new HtmlArmor( $this->messageLocalizer->msg( $globalBlockLinkMessage )->parse() ),
+				RequestContext::getMain()->getTitle(), [ 'wpAddress' => $target ]
 			);
 		}
 
