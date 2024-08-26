@@ -195,7 +195,9 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 			}
 
 			// Construct the array of data about this database row to return to the user.
-			$block = [];
+			$block = [
+				ApiResult::META_TYPE => 'assoc'
+			];
 			if ( $fld_id ) {
 				$block['id'] = $row->gb_id;
 			}
