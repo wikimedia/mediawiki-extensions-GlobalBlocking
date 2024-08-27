@@ -117,6 +117,7 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 		if ( isset( $params['targets'] ) ) {
 			$ipTargets = [];
 			$centralIds = [];
+			$nonExistingUsernameSeen = false;
 			foreach ( (array)$params['targets'] as $target ) {
 				if ( IPUtils::isIPAddress( $target ) ) {
 					// If the target is an IP, add it to the list of IP targets.
@@ -125,12 +126,11 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 					// If the target is not an IP, then look up the central ID for the target and add it
 					// to the list of central IDs.
 					$centralId = $this->lookup->centralIdFromName( $target );
-					if ( !$centralId ) {
-						$this->dieWithError(
-							[ 'globalblocking-apierror-badtarget', wfEscapeWikiText( $target ) ], 'nosuchuser'
-						);
+					if ( $centralId ) {
+						$centralIds[] = $centralId;
+					} else {
+						$nonExistingUsernameSeen = true;
 					}
-					$centralIds[] = $centralId;
 				}
 			}
 
@@ -146,6 +146,11 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 				$this->addWhereFld( 'gb_target_central_id', $centralIds );
 			} elseif ( count( $ipTargets ) ) {
 				$this->addWhereFld( 'gb_address', $ipTargets );
+			} elseif ( $nonExistingUsernameSeen && ( !isset( $params['ids'] ) || !count( $params['ids'] ) ) ) {
+				// If the targets parameter contained a non-existing username, no other valid targets
+				// were provided, and the `ids` filter is not set, then return no global blocks.
+				// Otherwise, all global blocks would be returned if a non-existing target was provided.
+				$this->addWhere( '1=0' );
 			}
 		}
 		if ( isset( $params['ip'] ) ) {

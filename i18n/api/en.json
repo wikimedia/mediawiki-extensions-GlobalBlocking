@@ -5,7 +5,6 @@
 		]
 	},
 	"globalblocking-apierror-badip": "IP address $1 is not valid",
-	"globalblocking-apierror-badtarget": "The username, IP address, or IP range provided ($1) is not valid",
 	"apihelp-globalblock-summary": "Globally block or unblock a user.",
 	"apihelp-globalblock-param-target": "The target IP address or username.",
 	"apihelp-globalblock-param-expiry": "If specified, will block or reblock the user. Determines how long the block will last for, e.g. \"5 months\" or \"2 weeks\". If set to \"infinite\" or \"indefinite\" the block will never expire.",
