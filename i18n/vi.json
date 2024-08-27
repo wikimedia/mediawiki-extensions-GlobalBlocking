@@ -7,6 +7,7 @@
 			"Macofe",
 			"Max20091",
 			"Minh Nguyen",
+			"NguyenHung",
 			"Tryvix1509",
 			"Vinhtantran"
 		]
@@ -77,11 +78,14 @@
 	"globalblocking-blockedtext-xff": "'''Yêu cầu của bạn sử dụng một hay nhiều máy chủ proxy đã bị cấm tại tất cả các wiki.'''\n\nNgười cấm là $1.\nLý do là ''$2''.\n\n* Lúc bắt đầu cấm: $8\n* Thời hạn cấm: $6\n\nBạn có thể liên lạc với $1 để thảo luận về vụ cấm này.\nBạn chỉ có thể sử dụng tính năng “{{int:emailuser}}” sau khi khai báo chỉ thư điện tử hợp lệ trong [[Special:Preferences|tùy chọn tài khoản]] nếu bạn chưa cấm sử dụng tính năng này.\nĐịa chỉ proxy bị cấm là $7.\nXin vui lòng kèm theo các chi tiết ở trên khi bạn có bất cứ đề yêu cầu nào về vụ cấm này.",
 	"globalblocking-logpage": "Nhật trình cấm trên toàn hệ thống",
 	"globalblocking-logpagetext": "Đây là danh sách các tác vụ cấm toàn cục được thực hiện hoặc lùi lại tại wiki này. Lưu ý rằng có thể thực hiện và lùi các tác vụ cấm tại wiki khác, nhưng các tác vụ cấm đó cũng có hiệu lực tại đây.\n\nXem [[Special:GlobalBlockList|tất cả các tác vụ cấm toàn cục]].",
+	"globalblocking-logentry-block-old-format": "$1 {{GENDER:$2|đã cấm}} {{GENDER:$4|$3}} trên toàn hệ thống ($5)",
+	"globalblocking-logentry-modify": "$1 {{GENDER:$2|đã thay đổi}} thiết lập cấm {{GENDER:$4|$3}} trên toàn hệ thống hết hạn $5 $6",
 	"globalblocking-logentry-whitelist": "$1 {{GENDER:$2}}đã tắt cục bộ tác vụ cấm $3 toàn hệ thống",
 	"globalblocking-logentry-dewhitelist": "$1 {{GENDER:$2}}đã bật lại cục bộ tác vụ cấm $3 toàn hệ thống",
 	"globalblocking-loglink": "Địa chỉ IP $1 đã bị cấm trên toàn hệ thống ([[{{#Special:GlobalBlockList}}/$1|chi tiết đầy đủ]]).",
-	"globalblocking-contribs-notice": "Địa chỉ IP này đang bị cấm toàn cục. Hãy tham khảo nhật trình cấm toàn cục bên dưới:",
+	"globalblocking-contribs-notice": "Thành viên này đang bị cấm toàn cục. Hãy tham khảo nhật trình cấm toàn cục bên dưới:",
 	"globalblocking-showlog": "Địa chỉ IP này đã bị cấm trước đây.\nHãy tham khảo nhật trình cấm ở dưới:",
+	"globalblocking-contribs-log": "nhật trình cấm toàn cục",
 	"globalblocking-contribs-block": "cấm toàn cục địa chỉ IP này",
 	"globalblocking-contribs-modify": "cấu hình lại tác vụ cấm toàn cục",
 	"globalblocking-contribs-remove": "bỏ cấm toàn cục",
