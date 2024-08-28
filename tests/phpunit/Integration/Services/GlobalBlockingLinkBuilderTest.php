@@ -3,6 +3,7 @@
 namespace MediaWiki\Extension\GlobalBlocking\Test\Integration\Services;
 
 use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Context\DerivativeContext;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
@@ -163,7 +164,8 @@ class GlobalBlockingLinkBuilderTest extends MediaWikiIntegrationTestCase {
 			'',
 			$globalBlockingLinkBuilder->getActionLinks(
 				$this->mockRegisteredNullAuthority(),
-				'Testing'
+				'Testing',
+				$this->newContext()
 			),
 			'::getActionLinks should return an empty string when the authority has no permissions'
 		);
@@ -181,6 +183,7 @@ class GlobalBlockingLinkBuilderTest extends MediaWikiIntegrationTestCase {
 		$actualActionLinks = $globalBlockingLinkBuilder->getActionLinks(
 			$this->mockRegisteredAuthorityWithPermissions( [ 'globalblock-whitelist' ] ),
 			$targetCallback()->getName(),
+			RequestContext::getMain(),
 			$shouldCheckBlockStatus
 		);
 		// Perform assertions to verify that the expected action links are present in the returned HTML
@@ -227,14 +230,16 @@ class GlobalBlockingLinkBuilderTest extends MediaWikiIntegrationTestCase {
 	) {
 		// Set the language as qqx so that we can look for message keys in the HTML output we are testing
 		$this->setUserLang( 'qqx' );
-		// Needed for the external link generation.
-		RequestContext::getMain()->setTitle( Title::makeTitle( NS_SPECIAL, 'GlobalBlockList' ) );
+		// We need to set the title for the provided $context, as it is used to generate external links
+		$context = new DerivativeContext( RequestContext::getMain() );
+		$context->setTitle( Title::makeTitle( NS_SPECIAL, 'GlobalBlockList' ) );
 		// Call the method under test
 		$globalBlockingLinkBuilder = GlobalBlockingServices::wrap( $this->getServiceContainer() )
 			->getGlobalBlockingLinkBuilder();
 		$actualActionLinks = $globalBlockingLinkBuilder->getActionLinks(
 			$this->mockRegisteredAuthorityWithPermissions( [ 'globalblock' ] ),
 			$targetCallback()->getName(),
+			$context,
 			$shouldCheckBlockStatus
 		);
 		// Perform assertions to verify that the expected action links are present in the returned HTML
@@ -318,9 +323,7 @@ class GlobalBlockingLinkBuilderTest extends MediaWikiIntegrationTestCase {
 					$this->getServiceContainer()->getMainConfig()
 				),
 				$this->getServiceContainer()->getLinkRenderer(),
-				GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockLookup(),
-				RequestContext::getMain(),
-				RequestContext::getMain()->getLanguage()
+				GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockLookup()
 			] )
 			->onlyMethods( [ 'getForeignURL' ] )
 			->getMock();

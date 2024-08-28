@@ -1,7 +1,6 @@
 <?php
 
 use MediaWiki\Config\ServiceOptions;
-use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingBlockPurger;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
@@ -114,9 +113,7 @@ return [
 				$services->getMainConfig()
 			),
 			$services->getLinkRenderer(),
-			$globalBlockingServices->getGlobalBlockLookup(),
-			RequestContext::getMain(),
-			RequestContext::getMain()->getLanguage()
+			$globalBlockingServices->getGlobalBlockLookup()
 		);
 	},
 	'GlobalBlocking.GlobalBlockingUserVisibilityLookup' => static function (

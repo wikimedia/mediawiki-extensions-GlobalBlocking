@@ -199,7 +199,7 @@ class GlobalBlockLogFormatter extends LogFormatter {
 		}
 		// Get the action links for the log entry which are the same as those used on Special:GlobalBlockList.
 		return $this->globalBlockingLinkBuilder->getActionLinks(
-			$this->context->getAuthority(), $targetUserIdentity->getName()
+			$this->context->getAuthority(), $targetUserIdentity->getName(), $this->context
 		);
 	}
 
