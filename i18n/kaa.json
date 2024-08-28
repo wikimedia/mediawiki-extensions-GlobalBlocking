@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ajiniyaz Nurniyazov"
+			"Ajiniyaz Nurniyazov",
+			"Amire80"
 		]
 	},
 	"globalblocking-ipaddress": "IP adres:",
@@ -12,5 +13,9 @@
 	"globalblocking-expiringblock": "óz kúshin joytıw waqtı: $1 $2",
 	"globalblocking-blockedtext-ip": "Siziń IP mánzilińiz barlıq Wikilerda bloklanǵan.'''\n\nBloklaw $1 tárepinen ámelge asırıldı.\nKórsetilgen sebep ''$2''.\n\n* Bloktıń baslanıwı : $8\n* Bloktıń ámel qılıw múddeti: $6 \n\nBloktı talqılaw ushın $1 menen baylanısıwıńız múmkin.\nEger [[Special:Preferences|akkaunt sazlamaları]]nda durıs elektron pochta adresi kórsetilmegen bolsa hám onnan paydalanıw sizge bloklanbaǵan bolsa, siz \"{{int:emailuser}}\" funkciyasınan paydalana almaysız. \nSiziń ámeldegi IP adresińiz $3.\nMárhámát, joqarıdaǵı barlıq maǵlıwmatlardı sorawıńızǵa tolıq kirgiziń.",
 	"globalblocking-blockedtext-range": "'''Siziń IP mánzilińiz barlıq Wikilarda bloklanǵan diapazonda.'''\n\nBloklaw $1 tárepinen ámelge asırıldı.\nKórsetilgen sebep ''$2''.\n\n* Bloktıń baslanıwı : $8\n* Bloktıń ámel qılıw múddeti: $6 \n\nBloktı talqılaw ushın $1 menen baylanısıwıńız múmkin.\nEger [[Special:Preferences|akkaunt sazlamaları]]nda durıs e-pochta adresi kórsetilmegen bolsa hám onnan paydalanıw sizge bloklanbaǵan bolsa, siz \"{{int:emailuser}}\" funksiyasınan paydalana almaysız. \nSiziń ámeldegi IP mánzilińiz $3, bloklanǵan diapazon bolsa $7.\nMárhámát, joqarıdaǵı barlıq maǵlıwmatlardı sorawıńızǵa tolıq kirgiziń.",
-	"globalblocking-logpage": "Globallıq bloklaw jurnalı"
+	"globalblocking-logpage": "Globallıq bloklaw jurnalı",
+	"globalblocking-blockedtext-on-range": "Siziń IP mánzilińiz barlıq Wikilarda bloklanǵan diapazonda.",
+	"globalblocking-blockedtext-blocker-admin": "Bloktı talqılaw ushın $1 menen baylanısıwıńız múmkin.",
+	"globalblocking-blockedtext-email-feature": "Eger [[Special:Preferences|akkaunt sazlamaları]]nda durıs e-pochta adresi kórsetilmegen bolsa hám onnan paydalanıw sizge bloklanbaǵan bolsa, siz \"{{int:emailuser}}\" funksiyasınan paydalana almaysız.",
+	"globalblocking-blockedtext-ip-range": "Bloklanǵan diapazon bolsa $7."
 }
