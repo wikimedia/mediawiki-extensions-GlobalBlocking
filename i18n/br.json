@@ -65,6 +65,7 @@
 	"globalblocking-logpage": "Marilh ar stankadennoù hollek",
 	"globalblocking-logpagetext": "Setu aze marilh ar stankadennoù hollek zo bet lakaet e plas ha lamet kuit er wiki-mañ.\nNotit mat e c'hall ar stankadennoù hollek bezañ lakaet e plas pe dilamet war wikioù all, hag e c'hall ar stankadennoù hollek-se degas strafuilh war ar wiki-mañ.\nEvit gwelet an holl stankadennoù oberiant evit ar poent e c'hallit mont da sellet ouzh [[Special:GlobalBlockList|roll ar stankadennoù hollek]].",
 	"globalblocking-loglink": "Stanket eo ar c'homlec'h IP $1 en un doare hollek ([[{{#Special:GlobalBlockList}}/$1|muioc'h a ditouroù]]).",
+	"globalblocking-contribs-notice": "Stanket eo an implijer-mañ en un doare hollek.\nDindan emañ merket moned diwezhañ marilh ar stankadennoù, d'ho kelaouiñ:",
 	"globalblocking-showlog": "Stanket eo bet an implijer-mañ c'hoazh.\nA-is emañ marilh ar stankadennoù :",
 	"globalblocklist": "Roll ar chomlec'hioù IP stanket en un doare hollek",
 	"globalblock": "Stankañ ur chomlec'h IP en un doare hollek",
