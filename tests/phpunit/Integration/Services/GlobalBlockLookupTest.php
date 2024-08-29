@@ -452,13 +452,6 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 			->getGlobalBlockLookupConditions( 'invalid-ip', 1, 0 );
 	}
 
-	public function testGetRangeConditionForInvalidIP() {
-		$this->expectException( InvalidArgumentException::class );
-		GlobalBlockingServices::wrap( $this->getServiceContainer() )
-			->getGlobalBlockLookup()
-			->getRangeCondition( 'invalid-ip' );
-	}
-
 	public function addDBDataOnce() {
 		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
 		// to be the local provider.

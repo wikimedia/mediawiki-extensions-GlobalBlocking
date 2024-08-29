@@ -2,7 +2,6 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Test\Integration\Services;
 
-use MediaWiki\Extension\GlobalBlocking\GlobalBlocking;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\MainConfigNames;
@@ -330,7 +329,8 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 		$options = [ 'anon-only' ];
 
 		// To ensure there is a placed block so that we can attempt to unblock
-		GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager()->block(
+		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
+		$globalBlockingServices->getGlobalBlockManager()->block(
 			$target,
 			'Block for testing unblock',
 			'infinity',
@@ -338,7 +338,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 			$options
 		);
 
-		$errors = GlobalBlocking::unblock(
+		$errors = $globalBlockingServices->getGlobalBlockManager()->unblock(
 			$data[ 'target' ],
 			$data[ 'reason' ],
 			$this->getMutableTestUser( 'steward' )->getUser()

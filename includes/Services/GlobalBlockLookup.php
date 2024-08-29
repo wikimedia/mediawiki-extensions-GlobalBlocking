@@ -309,6 +309,7 @@ class GlobalBlockLookup {
 	 * @return IExpression
 	 */
 	public function getRangeCondition( string $ip ): IExpression {
+		wfDeprecated( __METHOD__, '1.42' );
 		// This method does not return null if an IP is provided and the allowed ranges check is skipped.
 		// @phan-suppress-next-line PhanTypeMismatchReturnNullable
 		return $this->getGlobalBlockLookupConditions( $ip, 0, self::SKIP_ALLOWED_RANGES_CHECK );

@@ -89,6 +89,7 @@ class GlobalBlocking {
 	 * @return \Wikimedia\Rdbms\IDatabase
 	 */
 	public static function getPrimaryGlobalBlockingDatabase() {
+		wfDeprecated( __METHOD__, '1.42' );
 		return GlobalBlockingServices::wrap( MediaWikiServices::getInstance() )
 			->getGlobalBlockingConnectionProvider()
 			->getPrimaryGlobalBlockingDatabase();
@@ -99,6 +100,7 @@ class GlobalBlocking {
 	 * @return \Wikimedia\Rdbms\IReadableDatabase
 	 */
 	public static function getReplicaGlobalBlockingDatabase() {
+		wfDeprecated( __METHOD__, '1.42' );
 		return GlobalBlockingServices::wrap( MediaWikiServices::getInstance() )
 			->getGlobalBlockingConnectionProvider()
 			->getReplicaGlobalBlockingDatabase();
@@ -229,6 +231,7 @@ class GlobalBlocking {
 	 * @deprecated Since 1.42. Use GlobalBlockManager::unblock.
 	 */
 	public static function unblock( string $address, string $reason, User $performer ): StatusValue {
+		wfDeprecated( __METHOD__, '1.42' );
 		return GlobalBlockingServices::wrap( MediaWikiServices::getInstance() )
 			->getGlobalBlockManager()
 			->unblock( $address, $reason, $performer );
@@ -241,6 +244,7 @@ class GlobalBlocking {
 	 * @deprecated Since 1.42. Use GlobalBlockingLinkBuilder::buildSubtitleLinks.
 	 */
 	public static function buildSubtitleLinks( SpecialPage $sp ) {
+		wfDeprecated( __METHOD__, '1.42' );
 		return GlobalBlockingServices::wrap( MediaWikiServices::getInstance() )
 			->getGlobalBlockingLinkBuilder()
 			->buildSubtitleLinks( $sp );
