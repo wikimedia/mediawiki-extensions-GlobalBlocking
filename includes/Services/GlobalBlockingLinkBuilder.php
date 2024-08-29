@@ -3,16 +3,14 @@
 namespace MediaWiki\Extension\GlobalBlocking\Services;
 
 use HtmlArmor;
-use Language;
 use MediaWiki\Config\ServiceOptions;
-use MediaWiki\Context\RequestContext;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\Permissions\Authority;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
-use MessageLocalizer;
 
 /**
  * A service that builds links to other global blocking special pages and also
@@ -30,22 +28,16 @@ class GlobalBlockingLinkBuilder {
 	private ServiceOptions $options;
 	private LinkRenderer $linkRenderer;
 	private GlobalBlockLookup $globalBlockLookup;
-	private MessageLocalizer $messageLocalizer;
-	private Language $language;
 
 	public function __construct(
 		ServiceOptions $options,
 		LinkRenderer $linkRenderer,
-		GlobalBlockLookup $globalBlockLookup,
-		MessageLocalizer $messageLocalizer,
-		Language $language
+		GlobalBlockLookup $globalBlockLookup
 	) {
 		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
 		$this->options = $options;
 		$this->linkRenderer = $linkRenderer;
 		$this->globalBlockLookup = $globalBlockLookup;
-		$this->messageLocalizer = $messageLocalizer;
-		$this->language = $language;
 	}
 
 	/**
@@ -177,12 +169,16 @@ class GlobalBlockingLinkBuilder {
 	 *
 	 * @param Authority $authority The authority object for the user
 	 * @param string $target The target of the block for the given log entry / block list entry.
+	 * @param IContextSource $context The context to use to decide the language and format the
+	 *   action links.
 	 * @param bool $checkBlockStatus Whether to actually check if the given target is blocked.
 	 *   If false, then assume that the user is blocked. Used to avoid repeated lookups for block
 	 *   status on Special:Log.
 	 * @return string The action links to be displayed
 	 */
-	public function getActionLinks( Authority $authority, string $target, bool $checkBlockStatus = false ): string {
+	public function getActionLinks(
+		Authority $authority, string $target, IContextSource $context, bool $checkBlockStatus = false
+	): string {
 		$links = [];
 		$canBlock = $authority->isAllowed( 'globalblock' );
 		if ( $checkBlockStatus ) {
@@ -194,8 +190,8 @@ class GlobalBlockingLinkBuilder {
 		if ( $canBlock && $targetIsBlocked ) {
 			$links[] = $this->getLinkToCentralWikiSpecialPage(
 				'RemoveGlobalBlock',
-				new HtmlArmor( $this->messageLocalizer->msg( 'globalblocking-list-unblock' )->parse() ),
-				RequestContext::getMain()->getTitle(), [ 'address' => $target ]
+				new HtmlArmor( $context->msg( 'globalblocking-list-unblock' )->parse() ),
+				$context->getTitle(), [ 'address' => $target ]
 			);
 		}
 
@@ -206,7 +202,7 @@ class GlobalBlockingLinkBuilder {
 		) {
 			$links[] = $this->linkRenderer->makeKnownLink(
 				SpecialPage::getTitleFor( 'GlobalBlockStatus' ),
-				new HtmlArmor( $this->messageLocalizer->msg( 'globalblocking-list-whitelist' )->parse() ),
+				new HtmlArmor( $context->msg( 'globalblocking-list-whitelist' )->parse() ),
 				[],
 				[ 'address' => $target ]
 			);
@@ -216,14 +212,14 @@ class GlobalBlockingLinkBuilder {
 			$globalBlockLinkMessage = $targetIsBlocked ? 'globalblocking-list-modify' : 'globalblocking-list-block';
 			$links[] = $this->getLinkToCentralWikiSpecialPage(
 				'GlobalBlock',
-				new HtmlArmor( $this->messageLocalizer->msg( $globalBlockLinkMessage )->parse() ),
-				RequestContext::getMain()->getTitle(), [ 'wpAddress' => $target ]
+				new HtmlArmor( $context->msg( $globalBlockLinkMessage )->parse() ),
+				$context->getTitle(), [ 'wpAddress' => $target ]
 			);
 		}
 
 		if ( count( $links ) ) {
-			return $this->messageLocalizer->msg( 'parentheses' )
-				->rawParams( $this->language->pipeList( $links ) )
+			return $context->msg( 'parentheses' )
+				->rawParams( $context->getLanguage()->pipeList( $links ) )
 				->escaped();
 		}
 		return '';

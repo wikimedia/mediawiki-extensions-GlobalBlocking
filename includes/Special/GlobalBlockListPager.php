@@ -158,7 +158,9 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 			->params( $optionsAsText )
 			->rawParams(
 				$this->commentFormatter->formatBlock( $row->gb_reason ),
-				$this->globalBlockingLinkBuilder->getActionLinks( $this->getAuthority(), $row->gb_address )
+				$this->globalBlockingLinkBuilder->getActionLinks(
+					$this->getAuthority(), $row->gb_address, $this->getContext()
+				)
 			)
 			->parse();
 
