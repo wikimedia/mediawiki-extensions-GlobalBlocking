@@ -83,7 +83,7 @@
 	"globalblocking-logentry-whitelist": "$1 {{GENDER:$2}}đã tắt cục bộ tác vụ cấm $3 toàn hệ thống",
 	"globalblocking-logentry-dewhitelist": "$1 {{GENDER:$2}}đã bật lại cục bộ tác vụ cấm $3 toàn hệ thống",
 	"globalblocking-loglink": "Địa chỉ IP $1 đã bị cấm trên toàn hệ thống ([[{{#Special:GlobalBlockList}}/$1|chi tiết đầy đủ]]).",
-	"globalblocking-contribs-notice": "Thành viên này đang bị cấm toàn cục. Hãy tham khảo nhật trình cấm toàn cục bên dưới:",
+	"globalblocking-contribs-notice": "Người dùng này đang bị cấm toàn cục. Hãy tham khảo nhật trình cấm toàn cục bên dưới:",
 	"globalblocking-showlog": "Địa chỉ IP này đã bị cấm trước đây.\nHãy tham khảo nhật trình cấm ở dưới:",
 	"globalblocking-contribs-log": "nhật trình cấm toàn cục",
 	"globalblocking-contribs-block": "cấm toàn cục địa chỉ IP này",
