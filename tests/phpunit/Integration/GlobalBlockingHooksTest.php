@@ -60,6 +60,7 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 		$username, $shouldDisplayBlockBanner, $expectedBlockTarget
 	) {
 		$this->setUserLang( 'qqx' );
+		RequestContext::getMain()->setTitle( Title::makeTitle( NS_SPECIAL, 'Contributions/1.2.3.4' ) );
 		$specialPage = new SpecialPage();
 		$specialPage->setContext( RequestContext::getMain() );
 		$user = $this->getServiceContainer()->getUserFactory()->newFromName( $username, UserFactory::RIGOR_NONE );
@@ -104,56 +105,6 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 			'Special:Contributions for non-existent user' => [ 'Non-existent-test-user-1234', false, null ],
 			'Special:Contributions for invalid username' => [ ':', false, null ],
 		];
-	}
-
-	public function testOnSpecialContributionsBeforeMainOutputWhenGlobalBlockingCentralWikiInvalid() {
-		// Define GlobalBlockingCentralWiki as a wiki that is not recognised, and verify the block banner
-		// uses the local wiki log.
-		$this->overrideConfigValue( 'GlobalBlockingCentralWiki', 'undefined-wiki' );
-		$this->testOnSpecialContributionsBeforeMainOutput(
-			'1.2.3.4', true, '1.2.3.4'
-		);
-	}
-
-	public function testOnSpecialContributionsBeforeMainOutputWhenGlobalBlockingCentralWikiValid() {
-		$this->overrideConfigValue( 'GlobalBlockingCentralWiki', 'mediawiki' );
-		$this->setUserLang( 'qqx' );
-		$specialPage = new SpecialPage();
-		RequestContext::getMain()->setTitle( Title::makeTitle( NS_SPECIAL, 'Contributions/1.2.3.4' ) );
-		$specialPage->setContext( RequestContext::getMain() );
-		$user = $this->getServiceContainer()->getUserFactory()->newFromName( '1.2.3.4', UserFactory::RIGOR_NONE );
-		// Get a partially mocked GlobalBlockingHooks, where only the ::getCentralGlobalBlockingLogsUrl method is
-		// mocked to return fake a URL to the central wiki.
-		$globalBlockingHooks = $this->getMockBuilder( GlobalBlockingHooks::class )
-			->setConstructorArgs( $this->getGlobalBlockingHooksConstructorArguments() )
-			->onlyMethods( [ 'getCentralGlobalBlockingLogsUrl' ] )
-			->getMock();
-		$globalBlockingHooks->method( 'getCentralGlobalBlockingLogsUrl' )
-			->willReturn( 'https://meta.wikimedia.org/wiki/Special:Log' );
-		// Call the method under test
-		$globalBlockingHooks->onSpecialContributionsBeforeMainOutput( $user->getId(), $user, $specialPage );
-		// Assert that the HTML output in the OutputPage instance is as expected
-		$html = $specialPage->getOutput()->getHTML();
-		$this->assertStringContainsString(
-			'(globalblocking-contribs-notice', $html,
-			'Expected block banner to be displayed for IP on Special:Contributions'
-		);
-		$this->assertStringContainsString(
-			'(log-fulllog', $html,
-			'The block banner should contain a link to the global block log.'
-		);
-		$this->assertStringContainsString(
-			'type=gblblock', $html,
-			'The logs link should be filtered to just global blocks.'
-		);
-		$this->assertStringContainsString(
-			'page=1.2.3.4', $html,
-			'The logs link should be filtered to just the target user.'
-		);
-		$this->assertStringContainsString(
-			'https://meta.wikimedia.org/wiki/Special:Log', $html,
-			'The logs link should be the central URL.'
-		);
 	}
 
 	public function testOnSpecialContributionsBeforeMainOutputForGloballyBlockedUser() {
@@ -299,6 +250,7 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 		// Call the method under test
 		$tools = [];
 		$specialPage = new SpecialPage();
+		RequestContext::getMain()->setTitle( Title::makeTitle( NS_SPECIAL, 'Contributions/1.2.3.4' ) );
 		$specialPage->setContext( RequestContext::getMain() );
 		$userObject = $this->getServiceContainer()->getUserFactory()->newFromName( $target, UserFactory::RIGOR_NONE );
 		$targetId = $userObject !== null ? $userObject->getId() : 0;
@@ -382,57 +334,6 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 			$expectedLinkTexts = [];
 		}
 		$this->testOnContributionsToolLinks( self::$hiddenUser->getName(), $userRights, $expectedLinkTexts );
-	}
-
-	public function testOnContributionsToolLinksWhenGlobalBlockingCentralWikiInvalid() {
-		// Define GlobalBlockingCentralWiki as a wiki that is not recognised, and verify the subtitle link still works.
-		$this->overrideConfigValue( 'GlobalBlockingCentralWiki', 'undefined-wiki' );
-		$this->testOnContributionsToolLinks(
-			self::$unblockedUser->getName(), [ 'globalblock' ],
-			[ '(globalblocking-contribs-block', '(globalblocking-contribs-log' ]
-		);
-	}
-
-	public function testOnContributionsToolLinksWhenGlobalBlockingCentralWikiValid() {
-		$this->overrideConfigValue( 'GlobalBlockingCentralWiki', 'mediawiki' );
-		$this->setUserLang( 'qqx' );
-		$specialPage = new SpecialPage();
-		RequestContext::getMain()->setTitle( Title::makeTitle( NS_SPECIAL, 'Contributions/1.2.3.4' ) );
-		$specialPage->setContext( RequestContext::getMain() );
-		$user = $this->getServiceContainer()->getUserFactory()->newFromName( '1.2.3.4', UserFactory::RIGOR_NONE );
-		// Get a partially mocked GlobalBlockingHooks, where only the ::getCentralGlobalBlockingLogsUrl method is
-		// mocked to return fake a URL to the central wiki.
-		$globalBlockingHooks = $this->getMockBuilder( GlobalBlockingHooks::class )
-			->setConstructorArgs( $this->getGlobalBlockingHooksConstructorArguments() )
-			->onlyMethods( [ 'getCentralGlobalBlockingLogsUrl' ] )
-			->getMock();
-		$globalBlockingHooks->method( 'getCentralGlobalBlockingLogsUrl' )
-			->willReturn( 'https://meta.wikimedia.org/wiki/Special:Log' );
-		// Call the method under test
-		$tools = [];
-		$globalBlockingHooks->onContributionsToolLinks(
-			0, Title::newFromText( $user->getName(), NS_USER ), $tools, $specialPage
-		);
-		// Assert that the tools contain a Global Blocking log link to the central wiki
-		$this->assertArrayHasKey(
-			'globalblocklog', $tools, 'The tools array should contain a second element.'
-		);
-		$this->assertStringContainsString(
-			'(globalblocking-contribs-log', $tools['globalblocklog'],
-			'The tools array should contain a link to the global block log.'
-		);
-		$this->assertStringContainsString(
-			'https://meta.wikimedia.org/wiki/Special:Log', $tools['globalblocklog'],
-			'The tools array should contain a link to the central wiki.'
-		);
-		$this->assertStringContainsString(
-			'type=gblblock', $tools['globalblocklog'],
-			'The logs link should be filtered to just global blocks.'
-		);
-		$this->assertStringContainsString(
-			'page=1.2.3.4', $tools['globalblocklog'],
-			'The logs link should be filtered to just the target user.'
-		);
 	}
 
 	public function testOnGetUserBlockWhenNoMatchingBlockFound() {
