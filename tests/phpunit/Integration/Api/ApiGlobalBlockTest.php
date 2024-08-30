@@ -61,7 +61,8 @@ class ApiGlobalBlockTest extends ApiTestCase {
 	 */
 	public function testExecuteForBlockWithExistingBlockButNotSetToModify( $target ) {
 		// Block the target
-		GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager()->block(
+		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
+		$globalBlockingServices->getGlobalBlockManager()->block(
 			$target, 'test block', '1 day', $this->getAuthorityForSuccess()->getUser()
 		);
 		// Call the API to block the target
@@ -78,6 +79,21 @@ class ApiGlobalBlockTest extends ApiTestCase {
 			'globalblocking-block-alreadyblocked',
 			$result['error']['globalblock'][0]['code'],
 			'The error code was not as expected.'
+		);
+		if ( IPUtils::isIPAddress( $target ) ) {
+			$actualBlock = $globalBlockingServices->getGlobalBlockLookup()->getGlobalBlockingBlock( $target, 0 );
+		} else {
+			$actualBlock = $globalBlockingServices->getGlobalBlockLookup()
+				->getGlobalBlockingBlock(
+					null,
+					$this->getServiceContainer()->getCentralIdLookup()->centralIdFromName( $target )
+				);
+		}
+		$this->assertNotNull( $actualBlock );
+		$this->assertSame(
+			'1',
+			$actualBlock->gb_create_account,
+			'The block was not correctly updated by the API call.'
 		);
 	}
 
@@ -162,6 +178,7 @@ class ApiGlobalBlockTest extends ApiTestCase {
 				'action' => 'globalblock', 'target' => $target, 'reason' => 'test',
 				'expiry' => '20200505060708', 'alsolocal' => '1', 'localblocksemail' => '1',
 				'localblockstalk' => '1', 'localanononly' => IPUtils::isIPAddress( $target ) ? '1' : '',
+				'allow-account-creation' => 1, 'local-allow-account-creation' => 1
 			],
 			// The user needs to have the sysop and steward groups to locally block while performing a global block.
 			null, $this->getTestUser( [ 'steward', 'sysop' ] )->getAuthority()
@@ -172,21 +189,32 @@ class ApiGlobalBlockTest extends ApiTestCase {
 			[
 				'user' => $target, 'blocked' => '',
 				'expiry' => ApiResult::formatExpiry( '20200505060708' ),
-				'blockedlocally' => true,
+				'blockedlocally' => true, 'allow-account-creation' => '',
 			],
 			$result['globalblock'], false, true,
 			'The response was not as expected and suggests that the target was not successfully unblocked.'
 		);
 		// Verify that there is an active global block on the target
-		$this->assertNotSame(
-			0,
-			GlobalBlockingServices::wrap( $this->getServiceContainer() )
-				->getGlobalBlockLookup()
-				->getGlobalBlockId( $target )
+		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
+		if ( IPUtils::isIPAddress( $target ) ) {
+			$actualBlock = $globalBlockingServices->getGlobalBlockLookup()->getGlobalBlockingBlock( $target, 0 );
+		} else {
+			$actualBlock = $globalBlockingServices->getGlobalBlockLookup()
+				->getGlobalBlockingBlock(
+					null,
+					$this->getServiceContainer()->getCentralIdLookup()->centralIdFromName( $target )
+				);
+		}
+		$this->assertNotNull( $actualBlock );
+		$this->assertSame(
+			'0',
+			$actualBlock->gb_create_account,
+			'The block was not correctly updated by the API call.'
 		);
 		// Verify that there is an active local block on the target
 		$actualLocalBlock = $this->getServiceContainer()->getDatabaseBlockStore()->newFromTarget( $target );
 		$this->assertNotNull( $actualLocalBlock, 'A local block should have been performed' );
+		$this->assertFalse( $actualLocalBlock->isCreateAccountBlocked() );
 	}
 
 	/**
