@@ -14,6 +14,7 @@
 	"apihelp-globalblock-param-unblock": "אם זה מצוין, המשתמש ישוחרר.",
 	"apihelp-globalblock-param-reason": "הסיבה לחסימה או לשחרור.",
 	"apihelp-globalblock-param-anononly": "יש לציין את זה אם החסימה צריכה להשפיע גלובלית רק על משתמשים שלא נכנסו לחשבון.",
+	"apihelp-globalblock-param-allow-account-creation": "יש להגדיר את זה אם החסימה הגלובלית לא צריכה למנוע יצירת חשבון.",
 	"apihelp-globalblock-param-modify": "יש להגדיר את זה אם חסימה קיימת ביעד צריכה להשתנות",
 	"apihelp-globalblock-example-1": "לחסום את 192.0.2.1 לצמיתות עם הסיבה \"Cross-wiki abuse\"",
 	"apihelp-query+globalblocks-summary": "רשימה של כתובות ה־IP שחסומות גלובלית.",
@@ -38,5 +39,6 @@
 	"apihelp-globalblock-param-alsolocal": "לחסום את המשתמש גם מקומית",
 	"apihelp-globalblock-param-localblockstalk": "לשלול גישה לדפי שיחה מקומית",
 	"apihelp-globalblock-param-localblocksemail": "לשלול גישה מקומית לדואר אלקטרוני",
-	"apihelp-globalblock-param-localanononly": "יש לציין את זה אם החסימה צריכה להשפיע מקומית רק על משתמשים שלא נכנסו לחשבון."
+	"apihelp-globalblock-param-localanononly": "יש לציין את זה אם החסימה צריכה להשפיע מקומית רק על משתמשים שלא נכנסו לחשבון.",
+	"apihelp-globalblock-param-local-allow-account-creation": "יש להגדיר את זה אם החסימה המקומית לא צריכה למנוע יצירת חשבון."
 }

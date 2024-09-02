@@ -17,6 +17,7 @@
 	"apihelp-globalblock-param-unblock": "Falls angegeben, wird der Benutzer entsperrt.",
 	"apihelp-globalblock-param-reason": "Der Grund für das Sperren/Entsperren.",
 	"apihelp-globalblock-param-anononly": "Gib dies an, falls die Sperre nur global abgemeldete Benutzer betreffen soll.",
+	"apihelp-globalblock-param-allow-account-creation": "Gibt an, wenn die globale Sperre die Kontoerstellung nicht verhindern soll.",
 	"apihelp-globalblock-param-modify": "Gib dies an, falls die vorhandene Sperre des Ziels verändert werden soll.",
 	"apihelp-globalblock-example-1": "Sperre 192.0.2.1 auf unbestimmte Zeit mit dem Grund „Cross-Wiki-Vandalismus”",
 	"apihelp-query+globalblocks-summary": "Alle global gesperrten IP-Adressen auflisten.",
@@ -41,5 +42,6 @@
 	"apihelp-globalblock-param-alsolocal": "Sperre den Benutzer auch lokal",
 	"apihelp-globalblock-param-localblockstalk": "Lokalen Zugang zur Diskussionsseite aufheben",
 	"apihelp-globalblock-param-localblocksemail": "E-Mail-Zugang lokal sperren",
-	"apihelp-globalblock-param-localanononly": "Gib dies an, falls die Sperre nur lokal abgemeldete Benutzer betreffen soll."
+	"apihelp-globalblock-param-localanononly": "Gib dies an, falls die Sperre nur lokal abgemeldete Benutzer betreffen soll.",
+	"apihelp-globalblock-param-local-allow-account-creation": "Gibt an, wenn die lokale Sperre die Kontoerstellung nicht verhindern soll."
 }

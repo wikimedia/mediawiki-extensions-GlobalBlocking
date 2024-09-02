@@ -14,6 +14,7 @@
 	"apihelp-globalblock-param-unblock": "若指定將解封使用者。",
 	"apihelp-globalblock-param-reason": "封鎖/解封的原因。",
 	"apihelp-globalblock-param-anononly": "若封鎖僅對全域未登入的使用者有效，請指定此。",
+	"apihelp-globalblock-param-allow-account-creation": "如果不要讓全域封鎖阻止建立帳號，請指定此項目。",
 	"apihelp-globalblock-param-modify": "若應對在目標的現有封鎖做出修改，請指定此。",
 	"apihelp-globalblock-example-1": "無限期封鎖 192.0.2.1，原因「跨 wiki 濫用」",
 	"apihelp-query+globalblocks-summary": "列出所有全域封鎖 IP 位址。",
@@ -38,5 +39,6 @@
 	"apihelp-globalblock-param-alsolocal": "在本地端也封鎖該名使用者",
 	"apihelp-globalblock-param-localblockstalk": "撤銷在本地端討論頁存取權限",
 	"apihelp-globalblock-param-localblocksemail": "撤銷在本地端電子郵件存取權限",
-	"apihelp-globalblock-param-localanononly": "若封鎖僅對已登出的使用者有效，請指定此。"
+	"apihelp-globalblock-param-localanononly": "若封鎖僅對已登出的使用者有效，請指定此。",
+	"apihelp-globalblock-param-local-allow-account-creation": "如果不要讓本地端封鎖阻止建立帳號，請指定此項目。"
 }
