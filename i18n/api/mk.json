@@ -12,6 +12,7 @@
 	"apihelp-globalblock-param-unblock": "Ако е укажано, корисникот ќе биде одблокиран.",
 	"apihelp-globalblock-param-reason": "Причина за блокирање/одблокирање.",
 	"apihelp-globalblock-param-anononly": "Укажете го ова ако сакате блокот да важи само за одјавени корисници глобално.",
+	"apihelp-globalblock-param-allow-account-creation": "Укажете дали овој глобален блок да спречува создавање на сметки.",
 	"apihelp-globalblock-param-modify": "Укажете го ова ако треба да се измени постоечки блок врз целта",
 	"apihelp-globalblock-example-1": "Блокирај го 192.0.2.1 бесконечно со причината „злоупотреба на повеќе викија“",
 	"apihelp-query+globalblocks-summary": "Испиши ги сите глобално блокирани IP-адреси.",
@@ -36,5 +37,6 @@
 	"apihelp-globalblock-param-alsolocal": "Блокирај го корисникот и месно",
 	"apihelp-globalblock-param-localblockstalk": "Месно отстрани пристап до разговорната страница",
 	"apihelp-globalblock-param-localblocksemail": "Отповикај месен пристап до е-пошта",
-	"apihelp-globalblock-param-localanononly": "Укажете го ова ако сакате блокот да важи само за одјавени корисници месно."
+	"apihelp-globalblock-param-localanononly": "Укажете го ова ако сакате блокот да важи само за одјавени корисници месно.",
+	"apihelp-globalblock-param-local-allow-account-creation": "Укажете дали овој местен блок да спречува создавање на сметки."
 }
