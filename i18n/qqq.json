@@ -85,6 +85,7 @@
 	"globalblocking-list-whitelisted": "Used as a flag shown next to existing blocks on Special:GlobalBlockList. Indicates that the given block is locally disabled on the current wiki.\nParameters:\n* $1 - The username of the user who disabled the block\n* $2 - The reason provided for disabling the block",
 	"globalblocking-list-whitelist": "{{Identical|Local status}}",
 	"globalblocking-list-modify": "{{Identical|Modify}}",
+	"globalblocking-list-block": "Link text used in action links on Special:CentralAuth to allow a user to globally block a central user.\nIdentical to {{msg-mw|blocklink}}",
 	"globalblocking-list-tempblocks": "Used as the label for the multi-select checkbox in the form on [[Special:GlobalBlockList]]. When checked, this hides blocks which have non-indefinite expiry.\n\nSee also:\n*{{msg-mw|blocklist-tempblocks}}",
 	"globalblocking-list-indefblocks": "Used as the label for the multi-select checkbox in the form on [[Special:GlobalBlockList]]. When checked, this hides all blocks with an indefinite expiry.\n\nSee also:\n*{{msg-mw|blocklist-indefblocks}}",
 	"globalblocking-list-addressblocks": "Used as the label for the multi-select checkbox in the form on [[Special:GlobalBlockList]]. When checked, this hides all blocks where the target is a single IP address.\n\nSee also:\n*{{msg-mw|blocklist-addressblocks}}",
@@ -161,5 +162,6 @@
 	"globalblocking-blockedtext-email-feature": "Used as component for a global block error message. Refers to {{msg-mw|Emailuser}}",
 	"globalblocking-blockedtext-ip-range": "Used as a component of a global block message. $1 - the blocked range.",
 	"globalblocking-blockedtext-proxy": "Used as a component of a global block message. $1 - the blocked proxy address.",
-	"globalblocking-blockedtext-username": "Used as a component of a global block message. $1 - the blocked user."
+	"globalblocking-blockedtext-username": "Used as a component of a global block message. $1 - the blocked user.",
+	"globalblocking-centralauth-admin-info-globalblock": "Used as a label on Special:CentralAuth for the global account information field that displays if the user is globally blocked or not globally blocked."
 }

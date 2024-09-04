@@ -208,7 +208,8 @@
 		"LoadExtensionSchemaUpdates": "schema",
 		"GetBlockErrorMessageKey": "main",
 		"GetLogTypesOnUser": "main",
-		"ContributionsToolLinks": "main"
+		"ContributionsToolLinks": "main",
+		"CentralAuthInfoFields": "centralauth"
 	},
 	"HookHandlers": {
 		"main": {
@@ -228,6 +229,14 @@
 		},
 		"usermerge": {
 			"class": "MediaWiki\\Extension\\GlobalBlocking\\UserMergeHooks"
+		},
+		"centralauth": {
+			"class": "MediaWiki\\Extension\\GlobalBlocking\\CentralAuthHooks",
+			"services": [
+				"GlobalBlocking.GlobalBlockLookup",
+				"GlobalBlocking.GlobalBlockingLinkBuilder",
+				"LinkRenderer"
+			]
 		},
 		"schema": {
 			"class": "MediaWiki\\Extension\\GlobalBlocking\\GlobalBlockingSchemaHooks"
