@@ -64,6 +64,7 @@
 	"globalblocking-list-whitelisted": "lokal abgeschaltet von $1: $2",
 	"globalblocking-list-whitelist": "lokaler Status",
 	"globalblocking-list-modify": "ändern",
+	"globalblocking-list-block": "sperren",
 	"globalblocking-list-tempblocks": "Befristete Sperren ausblenden",
 	"globalblocking-list-indefblocks": "Unbefristete Sperren ausblenden",
 	"globalblocking-list-addressblocks": "Sperren einzelner IP-Adressen ausblenden",
@@ -136,5 +137,6 @@
 	"globalblocking-blockedtext-email-feature": "Du kannst die Funktion „{{int:emailuser}}“ nur benutzen, wenn eine gültige E-Mail-Adresse in deinen [[Special:Preferences|Einstellungen]] angegeben wurde und diese Funktion bei dir nicht gesperrt wurde.",
 	"globalblocking-blockedtext-ip-range": "Der gesperrte Bereich ist $1.",
 	"globalblocking-blockedtext-proxy": "Die gesperrte Proxyadresse war $1.",
-	"globalblocking-blockedtext-username": "Dein Benutzername ist $1 ."
+	"globalblocking-blockedtext-username": "Dein Benutzername ist $1 .",
+	"globalblocking-centralauth-admin-info-globalblock": "Global gesperrt:"
 }
