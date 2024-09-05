@@ -150,9 +150,10 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 			$optionsAsText = $this->msg( 'parentheses', $this->getLanguage()->commaList( $options ) )->text();
 		}
 
+		$blockTimestamp = $this->getLanguage()->userTimeAndDate( $row->gb_timestamp, $this->getUser() );
+
 		$msg = $this->msg( 'globalblocking-list-item' )
-			->dateTimeParams( $row->gb_timestamp )
-			->params( $performerUsername, $performerLink, $performerWiki, $targetName )
+			->params( $blockTimestamp, $performerUsername, $performerLink, $performerWiki, $targetName )
 			->rawParams( $targetUserLink )
 			->expiryParams( $row->gb_expiry )
 			->params( $optionsAsText )
