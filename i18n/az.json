@@ -55,6 +55,7 @@
 	"globalblocking-list-whitelisted": "lokal olaraq $1 tərəfindən söndürülüb: $2",
 	"globalblocking-list-whitelist": "lokal status",
 	"globalblocking-list-modify": "dəyişmək",
+	"globalblocking-list-block": "blokla",
 	"globalblocking-list-tempblocks": "Müvəqqəti blokları gizlə",
 	"globalblocking-list-indefblocks": "Müddətsiz blokları gizlə",
 	"globalblocking-list-addressblocks": "Tək IP bloklarını gizlə",
@@ -127,5 +128,6 @@
 	"globalblocking-blockedtext-email-feature": "[[Special:Preferences|Hesab nizamlamalarında]] etibarlı bir e-poçt ünvanı təyin etməmisinizsə və istifadə etməkdən bloklanmısınızsa \"{{int:emailuser}}\" funksiyasından istifadə edə bilməzsiniz.",
 	"globalblocking-blockedtext-ip-range": "Bloklanmış diapazon: $1.",
 	"globalblocking-blockedtext-proxy": "Bloklanan proksi ünvanı: $1",
-	"globalblocking-blockedtext-username": "İstifadəçi adınız: $1"
+	"globalblocking-blockedtext-username": "İstifadəçi adınız: $1",
+	"globalblocking-centralauth-admin-info-globalblock": "Qlobal bloklanıb:"
 }

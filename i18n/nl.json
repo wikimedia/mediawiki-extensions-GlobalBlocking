@@ -62,6 +62,7 @@
 	"globalblocking-list-whitelisted": "lokaal genegeerd door $1: $2",
 	"globalblocking-list-whitelist": "lokale status",
 	"globalblocking-list-modify": "wijzigen",
+	"globalblocking-list-block": "blokkeren",
 	"globalblocking-list-tempblocks": "Tijdelijke blokkades verbergen",
 	"globalblocking-list-indefblocks": "Verberg blokkades met een oneindige loopduur",
 	"globalblocking-list-addressblocks": "Blokkades van één IP-adres verbergen",
@@ -134,5 +135,6 @@
 	"globalblocking-blockedtext-email-feature": "U kunt de functie “{{int:emailuser}}” alleen gebruiken als er een geldig e-mailadres is opgegeven in uw [[Special:Preferences|accountvoorkeuren]] en het gebruik ervan niet voor u is geblokkeerd.",
 	"globalblocking-blockedtext-ip-range": "Het geblokkeerde bereik is $1.",
 	"globalblocking-blockedtext-proxy": "Het geblokkeerde proxy-adres was $1.",
-	"globalblocking-blockedtext-username": "Uw gebruikersnaam is $1."
+	"globalblocking-blockedtext-username": "Uw gebruikersnaam is $1.",
+	"globalblocking-centralauth-admin-info-globalblock": "Globaal geblokkeerd:"
 }

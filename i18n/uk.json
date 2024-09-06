@@ -62,6 +62,7 @@
 	"globalblocking-list-whitelisted": "локально відключив $1: $2",
 	"globalblocking-list-whitelist": "локальний стан",
 	"globalblocking-list-modify": "змінити",
+	"globalblocking-list-block": "заблокувати",
 	"globalblocking-list-tempblocks": "Сховати тимчасові блокування",
 	"globalblocking-list-indefblocks": "Сховати безстрокові блокування",
 	"globalblocking-list-addressblocks": "Приховати блокування окремих IP-адрес",
@@ -134,5 +135,6 @@
 	"globalblocking-blockedtext-email-feature": "Ви не зможете скористатися функцією «{{int:emailuser}}», якщо у [[Special:Preferences|ваших налаштуваннях]] не вказано дійсної електронної адреси або якщо на вас накладене блокування з забороною писати листи.",
 	"globalblocking-blockedtext-ip-range": "Заблокований діапазон — $1.",
 	"globalblocking-blockedtext-proxy": "Заблокована проксі-адреса — $1.",
-	"globalblocking-blockedtext-username": "Ваше ім'я користувача — $1."
+	"globalblocking-blockedtext-username": "Ваше ім'я користувача — $1.",
+	"globalblocking-centralauth-admin-info-globalblock": "Глобально заблоковано:"
 }

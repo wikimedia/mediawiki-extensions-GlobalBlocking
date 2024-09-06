@@ -56,6 +56,7 @@
 	"globalblocking-list-whitelisted": "בוטל באופן מקומי על־ידי $1: $2",
 	"globalblocking-list-whitelist": "מצב מקומי",
 	"globalblocking-list-modify": "שינוי",
+	"globalblocking-list-block": "חסימה",
 	"globalblocking-list-tempblocks": "הסתרת חסימות זמניות",
 	"globalblocking-list-indefblocks": "הסתרת חסימות בלתי־מוגבלות בזמן",
 	"globalblocking-list-addressblocks": "הסתרת חסימות של כתובות IP בודדות",
@@ -128,5 +129,6 @@
 	"globalblocking-blockedtext-email-feature": "אין לך אפשרות להשתמש בתכונה \"{{int:emailuser}}\" אלא אם כתובת דוא\"ל תקינה מצוינת ב[[Special:Preferences|העדפות החשבון]] שלך ולא נחסמת משימוש בה.",
 	"globalblocking-blockedtext-ip-range": "הטווח החסום הוא $1.",
 	"globalblocking-blockedtext-proxy": "כתובת השרת המתווך החסום הייתה $1.",
-	"globalblocking-blockedtext-username": "שם המשתמש שלך הוא $1."
+	"globalblocking-blockedtext-username": "שם המשתמש שלך הוא $1.",
+	"globalblocking-centralauth-admin-info-globalblock": "חשבון חסום גלובלית:"
 }
