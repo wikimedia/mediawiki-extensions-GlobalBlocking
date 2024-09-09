@@ -31,7 +31,6 @@
 		]
 	},
 	"globalblocking-apierror-badip": "{{doc-apierror}}\nParameters:\n* $1 - IP address or IP range that is not valid",
-	"globalblocking-apierror-badtarget": "{{doc-apierror}}\nParameters:\n* $1 - Username, IP address, or IP range that is not valid",
 	"apihelp-globalblock-summary": "{{doc-apihelp-summary|globalblock}}",
 	"apihelp-globalblock-param-target": "{{doc-apihelp-param|globalblock|target}}",
 	"apihelp-globalblock-param-expiry": "{{doc-apihelp-param|globalblock|expiry}}",

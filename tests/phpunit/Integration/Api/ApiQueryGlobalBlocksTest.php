@@ -280,15 +280,17 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 	}
 
 	public function testExecuteWithTargetsParamWithNonExistingUsername() {
-		$this->expectApiErrorCode( 'nosuchuser' );
 		$this->testExecuteWithTargetsParam( 'NonExistingUsername', 1, [] );
 	}
 
 	public function testExecuteWithAddressesParamWithInvalidUser() {
-		$this->expectApiErrorCode( 'nosuchuser' );
-		$this->doApiRequest( [
+		[ $result ] = $this->doApiRequest( [
 			'action' => 'query', 'list' => 'globalblocks', 'bgaddresses' => 'Template:Test#test',
 		] );
+		$this->assertArrayHasKey( 'query', $result );
+		$this->assertArrayHasKey( 'globalblocks', $result['query'] );
+		// Assert that no global blocks are found for an invalid username target.
+		$this->assertCount( 0, $result['query']['globalblocks'] );
 	}
 
 	public function testGetExamplesMessages() {
