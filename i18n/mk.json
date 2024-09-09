@@ -49,6 +49,7 @@
 	"globalblocking-list-whitelisted": "месно оневозможено од $1: $2",
 	"globalblocking-list-whitelist": "месен статус",
 	"globalblocking-list-modify": "измени",
+	"globalblocking-list-block": "блокирај",
 	"globalblocking-list-tempblocks": "Скриј привремени блокирања",
 	"globalblocking-list-indefblocks": "Скриј бесконечни блокови",
 	"globalblocking-list-addressblocks": "Скри блокирања на поединечни IP-адреси",
@@ -121,5 +122,6 @@
 	"globalblocking-blockedtext-email-feature": "Не можете да ја користите можноста „{{int:emailuser}}“ ако немате внесено важечка е-поштенска адреса во [[Special:Preferences|нагодувањата на сметката]] и ако ви е забрането да ја употребувате.",
 	"globalblocking-blockedtext-ip-range": "Блокираниот опсег е $1.",
 	"globalblocking-blockedtext-proxy": "Блокираната застапничка адреса е $1.",
-	"globalblocking-blockedtext-username": "Вашето корисничко име гласи $1."
+	"globalblocking-blockedtext-username": "Вашето корисничко име гласи $1.",
+	"globalblocking-centralauth-admin-info-globalblock": "Глобално блокиран:"
 }
