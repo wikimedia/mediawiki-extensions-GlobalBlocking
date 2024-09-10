@@ -7,7 +7,6 @@
 		]
 	},
 	"globalblocking-apierror-badip": "IP 位址 $1 無效",
-	"globalblocking-apierror-badtarget": "提供的使用者名稱、IP 位址、或 IP 範圍無效（$1）",
 	"apihelp-globalblock-summary": "全域封鎖或解封一名使用者。",
 	"apihelp-globalblock-param-target": "目標 IP 位址或使用者名稱。",
 	"apihelp-globalblock-param-expiry": "若指定將會封鎖或重新封鎖使用者。確認要封鎖的時間長度，例如：「5 months」（5 個月）或「2 weeks」（2 週）。如果設定成「infinite」或「indefinite」則為無期限封鎖。",

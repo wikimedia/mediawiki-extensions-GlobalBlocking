@@ -9,7 +9,6 @@
 			"Mehran"
 		]
 	},
-	"globalblocking-apierror-badtarget": "نام کاربری، نشانی آی‌پی یا بازهٔ آی‌پی ارائه‌شده ($1) معتبر نیست",
 	"apihelp-globalblock-summary": "بستن یا باز کردن یک کاربر به‌طور سراسری.",
 	"apihelp-globalblock-param-target": "نشانی آی‌پی یا نام کاربری هدف.",
 	"apihelp-globalblock-param-unblock": "اگر مشخص شود، کاربر باز خواهد شد.",

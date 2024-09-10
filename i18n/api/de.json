@@ -10,7 +10,6 @@
 		]
 	},
 	"globalblocking-apierror-badip": "Die IP-Adresse $1 ist ungültig",
-	"globalblocking-apierror-badtarget": "Der angegebene Benutzername, die IP-Adresse oder der angegebene IP-Bereich ($1) ist ungültig",
 	"apihelp-globalblock-summary": "Sperrt global einen Benutzer oder gibt ihn frei.",
 	"apihelp-globalblock-param-target": "Die Ziel-IP-Adresse oder der Benutzername.",
 	"apihelp-globalblock-param-expiry": "Wird, wenn angegeben, Benutzer sperren oder erneut sperren. Bestimmt, wie lange die Sperre dauert. Zum Beispiel \"5 Monate\" oder \"2 Wochen\". Falls auf \"unendlich\" oder \"unbestimmt\" gesetzt, wird die Sperre niemals aufgehoben.",

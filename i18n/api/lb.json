@@ -5,7 +5,6 @@
 			"Volvox"
 		]
 	},
-	"globalblocking-apierror-badtarget": "De Benotzernumm, d'IP-Adress oder den IP-Adressberäich, deen ugi gouf, ($1) ass net gülteg",
 	"apihelp-globalblock-summary": "E Benotzer global spären oder d'Spär global ophiewen.",
 	"apihelp-globalblock-param-target": "D'Zil-IP-Adress oder de Benotzernumm.",
 	"apihelp-globalblock-param-anononly": "Spezifizéiert ob d'Spär sech nëmmen op ausgeloggt Benotzer global applizéiere soll.",

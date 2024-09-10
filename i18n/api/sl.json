@@ -5,7 +5,6 @@
 		]
 	},
 	"globalblocking-apierror-badip": "IP-naslov $1 ni veljaven",
-	"globalblocking-apierror-badtarget": "Predloženo uporabniško ime, IP-naslov ali IP-razpon ($1) ni veljaven",
 	"apihelp-globalblock-summary": "Globalno blokirajte ali odblokirajte uporabnika.",
 	"apihelp-globalblock-param-target": "Ciljni IP-naslov ali uporabniško ime.",
 	"apihelp-globalblock-param-expiry": "Če je določeno, bo uporabnik blokiran ali odblokiran. Določa, kako dolgo naj blokiranje traja (npr. »5 mesecev« ali »2 tedna«). Če je nastavljeno na »neskončno« ali »neomejeno«, se blokiranje ne bo nikoli izteklo.",

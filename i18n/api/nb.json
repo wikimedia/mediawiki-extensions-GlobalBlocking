@@ -5,7 +5,6 @@
 		]
 	},
 	"globalblocking-apierror-badip": "IP-adressa $1 er ugyldig",
-	"globalblocking-apierror-badtarget": "Brukernavnet, IP-adressen eller IP-intervallet som ble angitt ($1) er ikke gyldig",
 	"apihelp-globalblock-summary": "Blokker eller avblokker en bruker globalt.",
 	"apihelp-globalblock-param-target": "Mål-IP-adressa eller -brukernavnet.",
 	"apihelp-globalblock-param-expiry": "Om denne er angitt vil brukeren bli blokkert (igjen?). Bestemmer hvor lenge blokkeringen vil vare, f.eks. «5 months» eller «2 weeks». Om den er satt til «infinite» eller «indefinite» vil blokkeringen aldri løpe ut.",
