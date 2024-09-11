@@ -113,7 +113,7 @@ class GlobalBlockingLinkBuilder {
 	 * This is protected to allow mocking in tests.
 	 *
 	 * @param string $globalBlockingCentralWiki The wiki ID of the central wiki
-	 * @param string $specialPageName The localised name of the special page
+	 * @param string $specialPageName The localised name of the special page (or in English as appropriate)
 	 * @return string|false
 	 */
 	protected function getForeignURL( string $globalBlockingCentralWiki, string $specialPageName ) {
@@ -133,7 +133,7 @@ class GlobalBlockingLinkBuilder {
 		}
 		$centralGlobalBlockingUrl = $this->getForeignURL(
 			$globalBlockingCentralWiki,
-			SpecialPage::getTitleFor( $specialPageName )
+			Title::makeName( NS_SPECIAL, $specialPageName, '', '', true )
 		);
 		if ( $centralGlobalBlockingUrl === false ) {
 			return null;

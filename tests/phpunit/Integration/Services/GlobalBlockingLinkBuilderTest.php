@@ -8,6 +8,7 @@ use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
 use MediaWiki\Linker\LinkTarget;
+use MediaWiki\MainConfigNames;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWiki\Title\Title;
@@ -312,8 +313,12 @@ class GlobalBlockingLinkBuilderTest extends MediaWikiIntegrationTestCase {
 		];
 	}
 
-	public function testGetLinkToCentralWikiSpecialPageForExternalLink() {
-		$this->overrideConfigValue( 'GlobalBlockingCentralWiki', 'mediawiki' );
+	/** @dataProvider provideContentLanguages */
+	public function testGetLinkToCentralWikiSpecialPageForExternalLink( $contentLanguage ) {
+		$this->overrideConfigValues( [
+			MainConfigNames::LanguageCode => $contentLanguage,
+			'GlobalBlockingCentralWiki' => 'mediawiki'
+		] );
 		$this->setUserLang( 'qqx' );
 		// Get a partially mocked GlobalBlockingLinkBuilder, which mocks ::getForeignURL to return a URL
 		$objectUnderTest = $this->getMockBuilder( GlobalBlockingLinkBuilder::class )
@@ -328,13 +333,15 @@ class GlobalBlockingLinkBuilderTest extends MediaWikiIntegrationTestCase {
 			->onlyMethods( [ 'getForeignURL' ] )
 			->getMock();
 		$objectUnderTest->method( 'getForeignURL' )
+			->with( 'mediawiki', 'Special:Log' )
 			->willReturn( 'https://meta.wikimedia.org/wiki/Special:Log' );
 		// Call the method under test
 		$actualLinkHtml = $objectUnderTest->getLinkToCentralWikiSpecialPage(
 			'Log', 'test1234', Title::makeTitle( NS_SPECIAL, 'Contributions/1.2.3.4' ),
 			[ 'page' => '1.2.3.4' ]
 		);
-		// Verify that the link HTML is as expected
+		// Verify that the link HTML is as expected, with the special name always in English (ignoring the content
+		// language of the wiki) (T374277).
 		$this->assertStringContainsString(
 			'https://meta.wikimedia.org/wiki/Special:Log', $actualLinkHtml,
 			'The link should go to the central wiki.'
@@ -346,6 +353,13 @@ class GlobalBlockingLinkBuilderTest extends MediaWikiIntegrationTestCase {
 			'page=1.2.3.4', $actualLinkHtml,
 			'The logs link should be filtered to just the target user.'
 		);
+	}
+
+	public static function provideContentLanguages() {
+		return [
+			'Content language as English' => [ 'en' ],
+			'Content language as Spanish' => [ 'es' ],
+		];
 	}
 
 	public function addDBDataOnce() {
