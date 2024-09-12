@@ -149,7 +149,7 @@
 	"log-action-filter-gblblock-dwhitelist": "Entfernung von der weißen Liste für globale Sperren",
 	"grant-globalblock": "Global einen Benutzer sperren oder entsperren",
 	"globalblocking-blockedtext-all-wikis": "Deine IP-Adresse wurde auf allen Wikis gesperrt.",
-	"globalblocking-blockedtext-on-range": "Deine IP-Adresse liegt in einem Bereich, der auf [[m:Special:MyLanguage/Global blocks|allen Wikis der Wikimedia Foundation gesperrt]] wurde.",
+	"globalblocking-blockedtext-on-range": "Deine IP-Adresse liegt in einem Bereich, der auf allen Wikis gesperrt wurde.",
 	"globalblocking-blockedtext-on-proxy": "Einer oder mehrere Proxy-Server, die von deiner Anfrage verwendet werden, sind [[m:Special:MyLanguage/Global blocks|global gesperrt]].",
 	"globalblocking-blockedtext-on-user": "Dein Konto wurde in allen Wikis gesperrt.",
 	"globalblocking-blockedtext-blocker-admin": "Du kannst dich an $1 wenden, um über die Sperre zu diskutieren.",

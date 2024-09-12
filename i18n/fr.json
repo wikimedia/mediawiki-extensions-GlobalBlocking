@@ -21,7 +21,10 @@
 			"Verdy p",
 			"Wladek92",
 			"Wyz",
-			"Zetud"
+			"Zetud",
+			"Alien333",
+			"Goombiis",
+			"Méthodes Bulebe Hangi"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permet]] aux comptes, aux adresses IP et aux plages d'adresses IP d’être [[Special:GlobalBlockList|bloqués à travers plusieurs wikis]]",
@@ -72,6 +75,7 @@
 	"globalblocking-list-indefblocks": "Masquer les blocages infinis",
 	"globalblocking-list-addressblocks": "Masquer les blocages d’adresses IP individuelles",
 	"globalblocking-list-rangeblocks": "Masquer les blocages d’intervalles",
+	"globalblocking-list-userblocks": "Masquer les blocages de compte",
 	"globalblocking-expiringblock": "expire le $1 à $2",
 	"globalblocking-infiniteblock": "infini",
 	"globalblocking-list-noresults": "Aucun résultat trouvé avec les paramètres fournis.",
