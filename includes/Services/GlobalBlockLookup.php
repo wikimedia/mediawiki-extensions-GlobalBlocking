@@ -332,11 +332,17 @@ class GlobalBlockLookup {
 		$ipExpr = null;
 		$userExpr = null;
 
-		if ( $ip !== null && !IPUtils::isIPAddress( $ip ) ) {
-			// The provided IP is invalid, so throw.
-			throw new InvalidArgumentException(
-				"Invalid IP address or range provided to GlobalBlockLookup::getGlobalBlockLookupConditions."
-			);
+		if ( $ip !== null ) {
+			$sanitisedIp = IPUtils::sanitizeIP( $ip );
+			if ( !IPUtils::isIPAddress( $ip ) || !$sanitisedIp ) {
+				// The provided IP is invalid, so throw.
+				throw new InvalidArgumentException(
+					"Invalid IP address or range provided to GlobalBlockLookup::getGlobalBlockLookupConditions."
+				);
+			}
+			// Use the sanitised version of the IP address, incase an IPv4 address is provided that has leading 0s.
+			// If leading 0s are present, then IPUtils::parseRange will fail to parse the range properly.
+			$ip = $sanitisedIp;
 		}
 
 		if ( $ip !== null && !( $flags & self::SKIP_ALLOWED_RANGES_CHECK ) ) {

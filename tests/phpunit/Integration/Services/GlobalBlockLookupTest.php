@@ -387,7 +387,13 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 				. " AND gb_range_start <= '" . IPUtils::toHex( '1.2.3.4' ) . "'"
 				. " AND gb_range_end >= '" . IPUtils::toHex( '1.2.3.4' ) . "'"
 				. " AND gb_anon_only != 1))",
-			]
+			],
+			'IPv4 that is not sanitised' => [
+				'88.8.9.00/24', 0, 0,
+				" AND (gb_range_start LIKE '5808%' ESCAPE '`'"
+				. " AND gb_range_start <= '" . IPUtils::toHex( '88.8.9.0' ) . "'"
+				. " AND gb_range_end >= '" . IPUtils::toHex( '88.8.9.255' ) . "'))",
+			],
 		];
 	}
 
@@ -445,11 +451,19 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 		];
 	}
 
-	public function testGetGlobalBlockLookupConditionsForInvalidIP() {
+	/** @dataProvider provideInvalidIPAddresses */
+	public function testGetGlobalBlockLookupConditionsForInvalidIP( $invalidIP ) {
 		$this->expectException( InvalidArgumentException::class );
 		GlobalBlockingServices::wrap( $this->getServiceContainer() )
 			->getGlobalBlockLookup()
-			->getGlobalBlockLookupConditions( 'invalid-ip', 1, 0 );
+			->getGlobalBlockLookupConditions( $invalidIP, 1, 0 );
+	}
+
+	public static function provideInvalidIPAddresses() {
+		return [
+			'Empty string' => [ '' ],
+			'String not in an IP format' => [ 'invalid-ip' ],
+		];
 	}
 
 	public function addDBDataOnce() {
