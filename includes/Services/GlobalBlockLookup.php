@@ -8,7 +8,9 @@ use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlock;
 use MediaWiki\User\CentralId\CentralIdLookup;
+use MediaWiki\User\TempUser\TempUserConfig;
 use MediaWiki\User\User;
+use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserIdentity;
 use stdClass;
 use Wikimedia\IPUtils;
@@ -47,6 +49,8 @@ class GlobalBlockLookup {
 	private StatsdDataFactoryInterface $statsdFactory;
 	private CentralIdLookup $centralIdLookup;
 	private GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup;
+	private TempUserConfig $tempUserConfig;
+	private UserFactory $userFactory;
 
 	private array $getUserBlockDetailsCache = [];
 
@@ -55,7 +59,9 @@ class GlobalBlockLookup {
 		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
 		StatsdDataFactoryInterface $statsdFactory,
 		CentralIdLookup $centralIdLookup,
-		GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup
+		GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup,
+		TempUserConfig $tempUserConfig,
+		UserFactory $userFactory
 	) {
 		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
 		$this->options = $options;
@@ -63,6 +69,8 @@ class GlobalBlockLookup {
 		$this->statsdFactory = $statsdFactory;
 		$this->centralIdLookup = $centralIdLookup;
 		$this->globalBlockLocalStatusLookup = $globalBlockLocalStatusLookup;
+		$this->tempUserConfig = $tempUserConfig;
+		$this->userFactory = $userFactory;
 	}
 
 	/**
@@ -173,10 +181,17 @@ class GlobalBlockLookup {
 			return $this->addToUserBlockDetailsCache( [ 'block' => $block, 'xff' => false ], $user );
 		}
 
-		$request = $context->getRequest();
-		// Checking non-session users are not applicable to the XFF block.
-		if ( $this->options->get( 'GlobalBlockingBlockXFF' ) && $isSessionUser ) {
-			$xffIps = $request->getHeader( 'X-Forwarded-For' );
+		// We should only check XFF blocks if we are checking blocks for the session user. The exception to this is
+		// that we should also check XFF blocks when the name is the temporary account placeholder, as this is used
+		// when a logged out user is making edit on a wiki with temporary accounts enabled (T353564).
+		if (
+			$this->options->get( 'GlobalBlockingBlockXFF' ) &&
+			(
+				$isSessionUser ||
+				( $this->tempUserConfig->isEnabled() && $this->userFactory->newTempPlaceholder()->equals( $user ) )
+			)
+		) {
+			$xffIps = $context->getRequest()->getHeader( 'X-Forwarded-For' );
 			if ( $xffIps ) {
 				$xffIps = array_map( 'trim', explode( ',', $xffIps ) );
 				// Always skip the allowed ranges check when checking the XFF IPs as the value of this header

@@ -84,7 +84,9 @@ return [
 			$globalBlockingServices->getGlobalBlockingConnectionProvider(),
 			$services->getStatsdDataFactory(),
 			$services->getCentralIdLookup(),
-			$globalBlockingServices->getGlobalBlockLocalStatusLookup()
+			$globalBlockingServices->getGlobalBlockLocalStatusLookup(),
+			$services->getTempUserConfig(),
+			$services->getUserFactory()
 		);
 	},
 	'GlobalBlocking.GlobalBlockManager' => static function (

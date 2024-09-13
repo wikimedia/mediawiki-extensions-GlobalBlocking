@@ -7,6 +7,7 @@ use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\MainConfigNames;
+use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentityValue;
 use MediaWiki\WikiMap\WikiMap;
@@ -19,6 +20,8 @@ use Wikimedia\Timestamp\ConvertibleTimestamp;
  * @group Database
  */
 class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
+
+	use TempUserTestTrait;
 
 	protected function setUp(): void {
 		// Set a fake time such that the expiry of all blocks is after this date (otherwise the lookup may
@@ -60,34 +63,78 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 		];
 	}
 
-	/** @dataProvider provideGetUserBlockForNamedWhenXffBlocked */
-	public function testGetUserBlockForNamedWhenXffBlocked( $xffHeader, $expectedGlobalBlockId ) {
+	private function commonTestGetUserBlockForXffBlock( $xffHeader, User $user, $expectedGlobalBlockId ) {
 		$this->overrideConfigValue( 'GlobalBlockingBlockXFF', true );
-		$testUser = $this->getTestUser()->getUser();
-		RequestContext::getMain()->setUser( $testUser );
 		RequestContext::getMain()->getRequest()->setHeader( 'X-Forwarded-For', $xffHeader );
 		$actualGlobalBlockObject = GlobalBlockingServices::wrap( $this->getServiceContainer() )
 			->getGlobalBlockLookup()
-			->getUserBlock( $testUser, '1.2.3.4' );
-		$this->assertNotNull(
-			$actualGlobalBlockObject,
-			'A matching global block row should have been found by ::getUserBlock.'
-		);
-		$this->assertSame(
-			$expectedGlobalBlockId,
-			$actualGlobalBlockObject->getId(),
-			'The GlobalBlock object returned was not for the expected row.'
-		);
+			->getUserBlock( $user, '1.2.3.4' );
+		if ( $expectedGlobalBlockId === null ) {
+			$this->assertNull(
+				$actualGlobalBlockObject,
+				'A matching global block row should not have been found by ::getUserBlock.'
+			);
+		} else {
+			$this->assertNotNull(
+				$actualGlobalBlockObject,
+				'A matching global block row should have been found by ::getUserBlock.'
+			);
+			$this->assertSame(
+				$expectedGlobalBlockId,
+				$actualGlobalBlockObject->getId(),
+				'The GlobalBlock object returned was not for the expected row.'
+			);
+		}
 	}
 
-	public static function provideGetUserBlockForNamedWhenXffBlocked() {
+	/**
+	 * @dataProvider provideBlockedXffHeaders
+	 * @dataProvider provideBlockedXffHeadersForNamedUsersOnly
+	 */
+	public function testGetUserBlockForNamedWhenXffBlocked( $xffHeader, $expectedGlobalBlockId ) {
+		$testUser = $this->getTestUser()->getUser();
+		RequestContext::getMain()->setUser( $testUser );
+		$this->commonTestGetUserBlockForXffBlock( $xffHeader, $testUser, $expectedGlobalBlockId );
+		$this->overrideConfigValue( 'GlobalBlockingBlockXFF', true );
+	}
+
+	public static function provideBlockedXffHeadersForNamedUsersOnly() {
 		return [
-			'One XFF header IP is blocked' => [ '1.2.3.5, 77.8.9.10', 3 ],
 			'Two XFF header IPs are blocked but the first is anon only' => [ '127.0.0.1, 77.8.9.10', 3 ],
 			'Three XFF header IPs are blocked with one disabling account creation' => [
 				'127.0.0.1, 4.5.6.7, 77.8.9.10', 6
 			],
 		];
+	}
+
+	public static function provideBlockedXffHeaders() {
+		return [
+			'One XFF header IP is blocked' => [ '1.2.3.5, 77.8.9.10', 3 ],
+		];
+	}
+
+	/** @dataProvider provideBlockedXffHeaders */
+	public function testGetUserBlockForTempPlaceholderWhenXffBlocked( $xffHeader, $expectedGlobalBlockId ) {
+		$this->enableAutoCreateTempUser();
+		$this->commonTestGetUserBlockForXffBlock(
+			$xffHeader, $this->getServiceContainer()->getUserFactory()->newTempPlaceholder(), $expectedGlobalBlockId
+		);
+	}
+
+	/** @dataProvider provideBlockedXffHeaders */
+	public function testGetUserBlockForTempPlaceholderWhenXffBlockedButTemporaryAccountsDisabled( $xffHeader ) {
+		$this->enableAutoCreateTempUser();
+		$tempUserPlaceholder = $this->getServiceContainer()->getUserFactory()->newTempPlaceholder();
+		$this->disableAutoCreateTempUser( [ 'known' => true ] );
+		$this->commonTestGetUserBlockForXffBlock( $xffHeader, $tempUserPlaceholder, null );
+	}
+
+	/**
+	 * @dataProvider provideBlockedXffHeaders
+	 * @dataProvider provideBlockedXffHeadersForNamedUsersOnly
+	 */
+	public function testGetUserBlockForNonSessionUserWhenXffBlocked( $xffHeader ) {
+		$this->commonTestGetUserBlockForXffBlock( $xffHeader, $this->getTestUser()->getUser(), null );
 	}
 
 	/** @dataProvider provideGetUserBlock */
