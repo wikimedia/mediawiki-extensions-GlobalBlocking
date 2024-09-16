@@ -22,6 +22,7 @@ use MediaWiki\Hook\OtherBlockLogLinkHook;
 use MediaWiki\Hook\SpecialContributionsBeforeMainOutputHook;
 use MediaWiki\Html\Html;
 use MediaWiki\Message\Message;
+use MediaWiki\SpecialPage\ContributionsSpecialPage;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use MediaWiki\User\CentralId\CentralIdLookup;
@@ -209,12 +210,16 @@ class GlobalBlockingHooks implements
 	 * Show global block notice on Special:Contributions.
 	 * @param int $userId
 	 * @param User $user
-	 * @param SpecialPage $sp
+	 * @param ContributionsSpecialPage $sp
 	 *
 	 * @return bool
 	 */
 	public function onSpecialContributionsBeforeMainOutput( $userId, $user, $sp ) {
 		$name = $user->getName();
+
+		if ( !$sp->shouldShowBlockLogExtract( $user ) ) {
+			return true;
+		}
 
 		if ( IPUtils::isIPAddress( $name ) ) {
 			$ip = $name;

@@ -9,6 +9,8 @@ use MediaWiki\Extension\GlobalBlocking\GlobalBlock;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingHooks;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\MainConfigNames;
+use MediaWiki\MediaWikiServices;
+use MediaWiki\SpecialPage\ContributionsSpecialPage;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWiki\Title\Title;
@@ -55,13 +57,42 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 		return new GlobalBlockingHooks( ...array_values( $this->getGlobalBlockingHooksConstructorArguments() ) );
 	}
 
+	private function getContributionsSpecialPage( $shouldShowBlockLogExtractMockValue ) {
+		return new class(
+			$this->getServiceContainer(), $shouldShowBlockLogExtractMockValue
+		) extends ContributionsSpecialPage {
+
+			private bool $shouldShowBlockLogExtractMockValue;
+
+			public function __construct( MediaWikiServices $services, bool $shouldShowBlockLogExtractMockValue ) {
+				parent::__construct(
+					$services->getPermissionManager(),
+					$services->getConnectionProvider(),
+					$services->getNamespaceInfo(),
+					$services->getUserNameUtils(),
+					$services->getUserNamePrefixSearch(),
+					$services->getUserOptionsLookup(),
+					$services->getUserFactory(),
+					$services->getUserIdentityLookup(),
+					$services->getDatabaseBlockStore(),
+					'contributions'
+				);
+				$this->shouldShowBlockLogExtractMockValue = $shouldShowBlockLogExtractMockValue;
+			}
+
+			public function shouldShowBlockLogExtract( UserIdentity $target ): bool {
+				return $this->shouldShowBlockLogExtractMockValue;
+			}
+		};
+	}
+
 	/** @dataProvider provideOnSpecialContributionsBeforeMainOutput */
 	public function testOnSpecialContributionsBeforeMainOutput(
-		$username, $shouldDisplayBlockBanner, $expectedBlockTarget
+		$username, $shouldShowBlockLogExtract, $shouldDisplayBlockBanner, $expectedBlockTarget
 	) {
 		$this->setUserLang( 'qqx' );
 		RequestContext::getMain()->setTitle( Title::makeTitle( NS_SPECIAL, 'Contributions/1.2.3.4' ) );
-		$specialPage = new SpecialPage();
+		$specialPage = $this->getContributionsSpecialPage( $shouldShowBlockLogExtract );
 		$specialPage->setContext( RequestContext::getMain() );
 		$user = $this->getServiceContainer()->getUserFactory()->newFromName( $username, UserFactory::RIGOR_NONE );
 		// Call the method under test
@@ -99,23 +130,24 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 
 	public static function provideOnSpecialContributionsBeforeMainOutput() {
 		return [
-			'Special:Contributions for 1.2.3.4' => [ '1.2.3.4', true, '1.2.3.4' ],
-			'Special:Contributions for 1.2.3.5'	=> [ '1.2.3.5', true, '1.2.3.0/24' ],
-			'Special:Contributions for 127.0.0.2' => [ '127.0.0.2', false, null ],
-			'Special:Contributions for non-existent user' => [ 'Non-existent-test-user-1234', false, null ],
-			'Special:Contributions for invalid username' => [ ':', false, null ],
+			'Special:Contributions for 1.2.3.4' => [ '1.2.3.4', true, true, '1.2.3.4' ],
+			'Special:Contributions for 1.2.3.5' => [ '1.2.3.5', true, true, '1.2.3.0/24' ],
+			'Special:Contributions for 127.0.0.2' => [ '127.0.0.2', true, false, null ],
+			'Special:Contributions for non-existent user' => [ 'Non-existent-test-user-1234', true, false, null ],
+			'Special:Contributions for invalid username' => [ ':', true, false, null ],
+			'Special:Contributions for 1.2.3.4 when block log extract hidden' => [ '1.2.3.4', false, false, null ],
 		];
 	}
 
 	public function testOnSpecialContributionsBeforeMainOutputForGloballyBlockedUser() {
 		$this->testOnSpecialContributionsBeforeMainOutput(
-			self::$testGloballyBlockedUser->getName(), true, self::$testGloballyBlockedUser->getName()
+			self::$testGloballyBlockedUser->getName(), true, true, self::$testGloballyBlockedUser->getName()
 		);
 	}
 
 	public function testOnSpecialContributionsBeforeMainOutputForNotBlockedUser() {
 		$this->testOnSpecialContributionsBeforeMainOutput(
-			self::$unblockedUser, false, null
+			self::$unblockedUser, true, false, null
 		);
 	}
 
@@ -132,7 +164,7 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 			Title::makeTitle( NS_SPECIAL, 'Contributions/' . self::$hiddenUser->getName() )
 		);
 		$this->testOnSpecialContributionsBeforeMainOutput(
-			self::$hiddenUser->getName(), $userHasHideUser, self::$hiddenUser->getName()
+			self::$hiddenUser->getName(), true, $userHasHideUser, self::$hiddenUser->getName()
 		);
 	}
 
