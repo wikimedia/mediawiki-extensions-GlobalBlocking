@@ -7,6 +7,7 @@
 			"Amire80",
 			"Bellayet",
 			"Macofe",
+			"MdsShakil",
 			"Nasir8891",
 			"Wikitanvir",
 			"আজিজ",
@@ -21,7 +22,9 @@
 	"globalblocking-block-expiry": "মেয়াদ উত্তীর্ণ:",
 	"globalblocking-block-expiry-selector-other": "অন্য সময়:",
 	"globalblocking-block-legend": "একটি আইপি ঠিকানাকে বৈশ্বিকভাবে বাধা প্রদান করে",
+	"globalblocking-target": "ব্যবহারকারী নাম, আইপি ঠিকানা, বা আইপি পরিসীমা:",
 	"globalblocking-ipbanononly": "শুধু বেনামী ব্যবহারকারীদের বৈশ্বিক বাধা দেয়া হোক",
+	"globalblocking-block-disable-account-creation": "বৈশ্বিকভাবে অ্যাকাউন্ট সৃষ্টিকরণ নিষ্ক্রিয় করুন",
 	"globalblocking-block-expiryinvalid": "মেয়াদ উত্তীর্ণের যে সময় আপনি প্রবেশ করিয়েছেন তা গ্রহণযোগ্য নয়।",
 	"globalblocking-block-submit": "এই আইপি ঠিকানাকে বৈশ্বিকভাবে বাধাদান করো",
 	"globalblocking-modify-submit": "এই বৈশ্বিক বাধাটি পরিবর্তন করুন",
@@ -102,5 +105,6 @@
 	"globalblocking-blockedtext-email-feature": "আপনি \"{{int:emailuser}}\" বৈশিষ্ট্যটি ব্যবহার করতে পারবেন না, যদি না আপনার [[Special:Preferences|অ্যাকাউন্টের পছন্দসমূহে]] একটি বৈধ ইমেইল ঠিকানা নির্দিষ্ট থাকে এবং আপনাকে এটি ব্যবহার করা থেকে অবরুদ্ধ না করা হয়ে থাকে।",
 	"globalblocking-blockedtext-ip-range": "অবরুদ্ধ পরিসীমাটি হচ্ছে $1।",
 	"globalblocking-blockedtext-proxy": "বাধা দেওয়া প্রক্সির ঠিকানা হলো $1।",
-	"globalblocking-blockedtext-username": "আপনার ব্যবহারকারী নাম হলো $1।"
+	"globalblocking-blockedtext-username": "আপনার ব্যবহারকারী নাম হলো $1।",
+	"globalblocking-centralauth-admin-info-globalblock": "বৈশ্বিকভাবে বাধাপ্রাপ্ত:"
 }
