@@ -4,7 +4,7 @@
 -- See https://www.mediawiki.org/wiki/Manual:Schema_changes
 CREATE TABLE /*_*/global_block_whitelist (
   gbw_id INTEGER NOT NULL,
-  gbw_address BLOB NOT NULL,
+  gbw_address BLOB DEFAULT '' NOT NULL,
   gbw_target_central_id INTEGER UNSIGNED DEFAULT 0 NOT NULL,
   gbw_by INTEGER NOT NULL,
   gbw_by_text BLOB NOT NULL,

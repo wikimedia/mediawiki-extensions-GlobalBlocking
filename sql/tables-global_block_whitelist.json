@@ -13,7 +13,7 @@
 				"name": "gbw_address",
 				"comment": "The target of the block which has been locally disabled. One of an IP address, IP range, or account.",
 				"type": "binary",
-				"options": { "length": 255, "notnull": true }
+				"options": { "length": 255, "notnull": true, "default": "" }
 			},
 			{
 				"name": "gbw_target_central_id",

@@ -93,5 +93,10 @@ class GlobalBlockingSchemaHooks implements LoadExtensionSchemaUpdatesHook {
 			'virtual-globalblocking', 'addField', 'globalblocks', 'gb_autoblock_parent_id',
 			"$base/sql/$type/patch-globalblocks-add-gb_autoblock_parent_id.sql", true,
 		] );
+		$updater->modifyExtensionField(
+			'global_block_whitelist',
+			'gbw_address',
+			"$base/sql/$type/patch-global_block_whitelist-default-gbw_address.sql"
+		);
 	}
 }
