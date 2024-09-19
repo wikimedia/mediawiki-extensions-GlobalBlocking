@@ -56,6 +56,7 @@ return [
 	): GlobalBlockLocalStatusLookup {
 		return new GlobalBlockLocalStatusLookup(
 			$services->getConnectionProvider(),
+			GlobalBlockingServices::wrap( $services )->getGlobalBlockingConnectionProvider(),
 			$services->getCentralIdLookup()
 		);
 	},

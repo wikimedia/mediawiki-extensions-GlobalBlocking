@@ -5,7 +5,9 @@ namespace MediaWiki\Extension\GlobalBlocking\Test\Integration\Services;
 use InvalidArgumentException;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\MainConfigNames;
+use MediaWiki\WikiMap\WikiMap;
 use MediaWikiIntegrationTestCase;
+use Wikimedia\IPUtils;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
 
 /**
@@ -68,9 +70,9 @@ class GlobalBlockLocalStatusLookupTest extends MediaWikiIntegrationTestCase {
 
 	public function testGetLocalWhitelistInfoForUser() {
 		$testUserName = $this->getDb()->newSelectQueryBuilder()
-			->select( 'gbw_address' )
-			->from( 'global_block_whitelist' )
-			->where( [ 'gbw_by' => 123 ] )
+			->select( 'gb_address' )
+			->from( 'globalblocks' )
+			->where( [ 'gb_id' => 123 ] )
 			->fetchField();
 		$this->testGetLocalWhitelistInfo( null, $testUserName, [ 'user' => 123, 'reason' => 'Test reason2' ] );
 	}
@@ -80,8 +82,44 @@ class GlobalBlockLocalStatusLookupTest extends MediaWikiIntegrationTestCase {
 		// to be the local provider.
 		$this->overrideConfigValue( MainConfigNames::CentralIdLookupProvider, 'local' );
 		$testTarget = $this->getTestUser()->getUser();
+		$testPerformer = $this->getTestUser( [ 'steward' ] )->getUser();
 		// The tests should not modify the database, so we don't need to reset the tables
 		// between tests in this class.
+		$this->getDb()->newInsertQueryBuilder()
+			->insertInto( 'globalblocks' )
+			->row( [
+				'gb_address' => '127.0.0.1',
+				'gb_target_central_id' => 0,
+				'gb_by_central_id' => $this->getServiceContainer()
+					->getCentralIdLookup()
+					->centralIdFromLocalUser( $testPerformer ),
+				'gb_by_wiki' => WikiMap::getCurrentWikiId(),
+				'gb_reason' => 'test',
+				'gb_timestamp' => $this->getDb()->timestamp( '20230405060708' ),
+				'gb_anon_only' => 0,
+				'gb_expiry' => $this->getDb()->getInfinity(),
+				'gb_range_start' => IPUtils::toHex( '127.0.0.1' ),
+				'gb_range_end' => IPUtils::toHex( '127.0.0.1' ),
+				'gb_id' => 1234,
+			] )
+			->row( [
+				'gb_address' => $testTarget->getName(),
+				'gb_target_central_id' => $this->getServiceContainer()
+					->getCentralIdLookup()->centralIdFromName( $testTarget->getName() ),
+				'gb_by_central_id' => $this->getServiceContainer()
+					->getCentralIdLookup()
+					->centralIdFromLocalUser( $testPerformer ),
+				'gb_by_wiki' => WikiMap::getCurrentWikiId(),
+				'gb_reason' => 'test',
+				'gb_timestamp' => $this->getDb()->timestamp( '20230405060708' ),
+				'gb_anon_only' => 0,
+				'gb_expiry' => $this->getDb()->timestamp( '20240405030201' ),
+				'gb_range_start' => '',
+				'gb_range_end' => '',
+				'gb_id' => 123,
+			] )
+			->caller( __METHOD__ )
+			->execute();
 		$this->getDb()->newInsertQueryBuilder()
 			->insertInto( 'global_block_whitelist' )
 			->row( [
