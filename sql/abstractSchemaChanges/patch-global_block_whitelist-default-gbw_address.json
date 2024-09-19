@@ -1,0 +1,126 @@
+{
+	"before": {
+		"name": "global_block_whitelist",
+		"comment": "A table which is on each local wiki, which when a row exists indicates that the associated global block is disabled on that local wiki.",
+		"columns": [
+			{
+				"name": "gbw_id",
+				"comment": "Key to gb_id in globalblocks database",
+				"type": "integer",
+				"options": { "notnull": true }
+			},
+			{
+				"name": "gbw_address",
+				"comment": "The target of the block which has been locally disabled. One of an IP address, IP range, or account.",
+				"type": "binary",
+				"options": { "length": 255, "notnull": true }
+			},
+			{
+				"name": "gbw_target_central_id",
+				"comment": "The central ID for the target of the block that has been locally disabled. 0 if the target is an IP address or IP range.",
+				"type": "integer",
+				"options": { "notnull": true, "unsigned": true, "default": 0 }
+			},
+			{
+				"name": "gbw_by",
+				"comment": "Key to user_id of the user who disabled the block locally.",
+				"type": "integer",
+				"options": { "notnull": true }
+			},
+			{
+				"name": "gbw_by_text",
+				"comment": "The username of the user who disabled the block locally.",
+				"type": "binary",
+				"options": { "length": 255, "notnull": true }
+			},
+			{
+				"name": "gbw_reason",
+				"comment": "The reason given for disabling the global block locally.",
+				"type": "binary",
+				"options": { "length": 767, "notnull": true }
+			},
+			{
+				"name": "gbw_expiry",
+				"comment": "The expiry timestamp for the global block. Blocks can have an infinite expiry.",
+				"type": "mwtimestamp",
+				"options": {
+					"notnull": true,
+					"CustomSchemaOptions": {
+						"allowInfinite": true
+					}
+				}
+			}
+		],
+		"indexes": [
+			{
+				"name": "gbw_by",
+				"comment": "Used to find all global blocks disabled by a given user, to allow user merging.",
+				"columns": [ "gbw_by" ],
+				"unique": false
+			}
+		],
+		"pk": [ "gbw_id" ]
+	},
+	"after": {
+		"name": "global_block_whitelist",
+		"comment": "A table which is on each local wiki, which when a row exists indicates that the associated global block is disabled on that local wiki.",
+		"columns": [
+			{
+				"name": "gbw_id",
+				"comment": "Key to gb_id in globalblocks database",
+				"type": "integer",
+				"options": { "notnull": true }
+			},
+			{
+				"name": "gbw_address",
+				"comment": "The target of the block which has been locally disabled. One of an IP address, IP range, or account.",
+				"type": "binary",
+				"options": { "length": 255, "notnull": true, "default": "" }
+			},
+			{
+				"name": "gbw_target_central_id",
+				"comment": "The central ID for the target of the block that has been locally disabled. 0 if the target is an IP address or IP range.",
+				"type": "integer",
+				"options": { "notnull": true, "unsigned": true, "default": 0 }
+			},
+			{
+				"name": "gbw_by",
+				"comment": "Key to user_id of the user who disabled the block locally.",
+				"type": "integer",
+				"options": { "notnull": true }
+			},
+			{
+				"name": "gbw_by_text",
+				"comment": "The username of the user who disabled the block locally.",
+				"type": "binary",
+				"options": { "length": 255, "notnull": true }
+			},
+			{
+				"name": "gbw_reason",
+				"comment": "The reason given for disabling the global block locally.",
+				"type": "binary",
+				"options": { "length": 767, "notnull": true }
+			},
+			{
+				"name": "gbw_expiry",
+				"comment": "The expiry timestamp for the global block. Blocks can have an infinite expiry.",
+				"type": "mwtimestamp",
+				"options": {
+					"notnull": true,
+					"CustomSchemaOptions": {
+						"allowInfinite": true
+					}
+				}
+			}
+		],
+		"indexes": [
+			{
+				"name": "gbw_by",
+				"comment": "Used to find all global blocks disabled by a given user, to allow user merging.",
+				"columns": [ "gbw_by" ],
+				"unique": false
+			}
+		],
+		"pk": [ "gbw_id" ]
+	}
+}
