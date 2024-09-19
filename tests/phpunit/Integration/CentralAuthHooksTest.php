@@ -41,6 +41,18 @@ class CentralAuthHooksTest extends MediaWikiIntegrationTestCase {
 		);
 	}
 
+	public function testOnCentralAuthInfoFieldsForUserWithoutPermissionsAndNotGloballyBlockedTarget() {
+		$context = new DerivativeContext( RequestContext::getMain() );
+		$context->setAuthority( $this->mockAnonNullAuthority() );
+		// Run the hook
+		$attribs = [];
+		$this->getCentralAuthHooks()->onCentralAuthInfoFields(
+			CentralAuthUser::getInstance( self::$testUnblockedUser ), $context, $attribs
+		);
+		// Verify nothing was added if the the target is not globally blocked and there are no action links.
+		$this->assertArrayEquals( [], $attribs );
+	}
+
 	/** @dataProvider provideOnCentralAuthInfoFields */
 	public function testOnCentralAuthInfoFields( callable $target, bool $shouldBeBlocked ) {
 		$context = new DerivativeContext( RequestContext::getMain() );
