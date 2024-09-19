@@ -539,7 +539,8 @@ class GlobalBlockLookup {
 
 		$queryBuilder = $db->newSelectQueryBuilder()
 			->select( 'gb_id' )
-			->from( 'globalblocks' );
+			->from( 'globalblocks' )
+			->where( $db->expr( 'gb_expiry', '>', $db->timestamp() ) );
 
 		if ( IPUtils::isIPAddress( $target ) ) {
 			$queryBuilder->where( [ 'gb_address' => $target ] );
