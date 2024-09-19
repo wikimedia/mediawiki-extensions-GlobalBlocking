@@ -10,7 +10,8 @@
 			"Wikitanvir",
 			"আজিজ",
 			"আফতাবুজ্জামান",
-			"Amire80"
+			"Amire80",
+			"MdsShakil"
 		]
 	},
 	"globalblocking-block": "একটি আইপি ঠিকানাকে বৈশ্বিকভাবে বাধা প্রদান করুন",
@@ -22,6 +23,7 @@
 	"globalblocking-block-expiry-selector-other": "অন্য সময়:",
 	"globalblocking-block-legend": "একটি আইপি ঠিকানাকে বৈশ্বিকভাবে বাধা প্রদান করে",
 	"globalblocking-ipaddress": "আইপি ঠিকানা:",
+	"globalblocking-target": "ব্যবহারকারী নাম, আইপি ঠিকানা, বা আইপি পরিসীমা:",
 	"globalblocking-ipbanononly": "শুধু বেনামী ব্যবহারকারীদের বৈশ্বিক বাধা দেয়া হোক",
 	"globalblocking-block-ipinvalid": "আপনার লেখা আইপি ঠিকানা ($1) সঠিক নয়। \nঅনুগ্রহ করে লক্ষ্য করুন আপনি কোনো নির্দিষ্ট ব্যবহারকারীর নাম লিখতে পারবেন না!",
 	"globalblocking-block-expiryinvalid": "মেয়াদ উত্তীর্ণের যে সময় আপনি প্রবেশ করিয়েছেন তা গ্রহণযোগ্য নয়।",

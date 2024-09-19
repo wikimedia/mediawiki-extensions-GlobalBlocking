@@ -116,7 +116,7 @@
 	"globalblocking-logpage": "Globales Sperr-Logbuch",
 	"globalblocking-logpagetext": "Dies ist das Logbuch der globalen Sperren, die in diesem Wiki eingerichtet oder aufgehoben wurden.\nGlobale Sperren können in einem anderen Wiki eingerichtet und aufgehoben werden, so dass die dortigen Sperren auch dieses Wiki betreffen können.\nFür eine Liste aller aktiven globalen Sperren siehe die [[Special:GlobalBlockList|globale Sperrliste]].",
 	"globalblocking-logentry-block-old-format": "$1 {{GENDER:$2|sperrte}} {{GENDER:$4|$3}} global ($5)",
-	"globalblocking-logentry-block": "$1 {{GENDER:$2|sperrte}} {{GENDER:$4|$3}} global für eine Dauer von $5 $6",
+	"globalblocking-logentry-block": "$1 {{GENDER:$2|sperrte}} {{GENDER:$4|$3}} global für $5 $6",
 	"globalblocking-logentry-modify-old-format": "$1 {{GENDER:$2|änderte}} die globalen Sperrparameter für {{GENDER:$4|$3}} ($5)",
 	"globalblocking-logentry-modify": "$1 {{GENDER:$2|änderte}} die globalen Sperrparameter für {{GENDER:$4|$3}} mit einer Sperrdauer von $5 $6",
 	"globalblocking-logentry-unblock": "$1 {{GENDER:$2|hat die globale Sperre}} von {{GENDER:$4|$3}} aufgehoben",
