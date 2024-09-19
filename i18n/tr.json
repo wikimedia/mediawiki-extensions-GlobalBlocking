@@ -100,5 +100,6 @@
 	"log-action-filter-gblblock-modify": "Küresel engel değişikliği",
 	"log-action-filter-gblblock-whitelist": "Küresel engel beyaz listeye ekleme",
 	"log-action-filter-gblblock-dwhitelist": "Küresel engel beyaz listesinin kaldırılması",
-	"grant-globalblock": "Bir IP adresini küresel olarak engelleyin veya engellemeyi kaldırın"
+	"grant-globalblock": "Bir IP adresini küresel olarak engelleyin veya engellemeyi kaldırın",
+	"globalblocking-centralauth-admin-info-globalblock": "Küresel engellenmiş:"
 }
