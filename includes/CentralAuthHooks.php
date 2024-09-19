@@ -61,6 +61,12 @@ class CentralAuthHooks implements CentralAuthInfoFieldsHook {
 			$data .= $this->messageLocalizer->msg( 'word-separator' )->escaped() .
 				$globalBlockActionLinks;
 		}
+
+		// If there's no blocks or actions, just don't display anything
+		if ( !$relevantGlobalBlockId && $globalBlockActionLinks === '' ) {
+			return;
+		}
+
 		$attribs['globalblock'] = [
 			'label' => 'globalblocking-centralauth-admin-info-globalblock',
 			'data' => $data,
