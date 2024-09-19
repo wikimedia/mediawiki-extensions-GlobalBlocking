@@ -362,9 +362,11 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 	public static function provideGetGlobalBlockId() {
 		return [
 			'No global block on given IP target' => [ '1.2.3.4', DB_REPLICA, 0 ],
-			'Global block on given IP target while reading from primary' => [ '127.0.0.1', DB_PRIMARY, 1 ],
-			'Global block on given IP range target' => [ '127.0.0.0/24', DB_REPLICA, 2 ],
+			'Temporary global block on given IP target while reading from primary' => [ '127.0.0.1', DB_PRIMARY, 1 ],
+			'Indefinite global block on given IP target' => [ '192.0.2.1', DB_REPLICA, 7 ],
+			'Temporary global block on given IP range target' => [ '127.0.0.0/24', DB_REPLICA, 2 ],
 			'No global block on an non-existing account' => [ 'Test-does-not-exist', DB_REPLICA, 0 ],
+			'No global block on an IP target with an expired block' => [ '192.0.2.2', DB_REPLICA, 0 ],
 		];
 	}
 
@@ -621,6 +623,38 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 				'gb_range_start' => IPUtils::toHex( '4.5.6.0' ),
 				'gb_range_end' => IPUtils::toHex( '4.5.6.255' ),
 				'gb_create_account' => 1,
+			] )
+			->row( [
+				'gb_id' => 7,
+				'gb_address' => '192.0.2.1',
+				'gb_target_central_id' => 0,
+				'gb_by_central_id' => $this->getServiceContainer()
+					->getCentralIdLookup()
+					->centralIdFromLocalUser( $testUser ),
+				'gb_by_wiki' => WikiMap::getCurrentWikiId(),
+				'gb_reason' => 'test',
+				'gb_timestamp' => $this->getDb()->timestamp( '20230405060708' ),
+				'gb_anon_only' => 1,
+				'gb_expiry' => 'infinity',
+				'gb_range_start' => IPUtils::toHex( '127.0.0.1' ),
+				'gb_range_end' => IPUtils::toHex( '127.0.0.1' ),
+				'gb_create_account' => 0,
+			] )
+			->row( [
+				'gb_id' => 8,
+				'gb_address' => '192.0.2.2',
+				'gb_target_central_id' => 0,
+				'gb_by_central_id' => $this->getServiceContainer()
+					->getCentralIdLookup()
+					->centralIdFromLocalUser( $testUser ),
+				'gb_by_wiki' => WikiMap::getCurrentWikiId(),
+				'gb_reason' => 'test',
+				'gb_timestamp' => $this->getDb()->timestamp( '20230405060708' ),
+				'gb_anon_only' => 1,
+				'gb_expiry' => $this->getDb()->encodeExpiry( '20220406060708' ),
+				'gb_range_start' => IPUtils::toHex( '127.0.0.1' ),
+				'gb_range_end' => IPUtils::toHex( '127.0.0.1' ),
+				'gb_create_account' => 0,
 			] )
 			->caller( __METHOD__ )
 			->execute();
