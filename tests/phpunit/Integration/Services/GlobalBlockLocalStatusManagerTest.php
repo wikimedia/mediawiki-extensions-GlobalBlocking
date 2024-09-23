@@ -38,7 +38,7 @@ class GlobalBlockLocalStatusManagerTest extends MediaWikiIntegrationTestCase {
 			[
 				'gbw_by' => (string)$performer->getId(),
 				'gbw_by_text' => $performer->getName(),
-				'gbw_address' => '127.0.0.1',
+				'gbw_address' => '',
 				'gbw_expiry' => 'infinity',
 				'gbw_target_central_id' => '0',
 				'gbw_id' => $this->getDb()->newSelectQueryBuilder()
@@ -84,18 +84,20 @@ class GlobalBlockLocalStatusManagerTest extends MediaWikiIntegrationTestCase {
 	public function testLocallyDisableBlockForUser() {
 		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
 		$target = $this->getTestUser()->getUser();
-		$globalBlockingServices->getGlobalBlockManager()
+		$globalBlockStatus = $globalBlockingServices->getGlobalBlockManager()
 			->block( $target, 'test', 'infinite', $this->getTestSysop()->getUser() );
+		$this->assertStatusGood( $globalBlockStatus );
+		$globalBlockId = $globalBlockStatus->getValue()['id'];
 		$status = $globalBlockingServices->getGlobalBlockLocalStatusManager()
 			->locallyDisableBlock( $target, 'test', $this->getTestSysop()->getUser() );
 		$this->assertStatusGood( $status, 'The returned status should be good.' );
-		$this->assertSame(
-			$this->getServiceContainer()->getCentralIdLookup()->centralIdFromName( $target->getName() ),
-			(int)$this->getDb()->newSelectQueryBuilder()
-				->select( 'gbw_target_central_id' )
+		$this->assertNotFalse(
+			$this->getDb()->newSelectQueryBuilder()
+				->select( '1' )
 				->from( 'global_block_whitelist' )
+				->where( [ 'gbw_id' => $globalBlockId ] )
 				->fetchField(),
-			'The global_block_whitelist table did not save the correct central ID.'
+			'The GlobalBlockLocalStatusManager did not disable the correct block.'
 		);
 	}
 

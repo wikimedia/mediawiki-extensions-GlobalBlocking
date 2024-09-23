@@ -79,9 +79,7 @@ class GlobalBlockLocalStatusManager {
 				'gbw_by' => $performer->getId(),
 				'gbw_by_text' => $performer->getName(),
 				'gbw_reason' => trim( $reason ),
-				'gbw_address' => $target,
-				'gbw_target_central_id' => $this->centralIdLookup
-					->centralIdFromName( $target, CentralIdLookup::AUDIENCE_RAW ),
+				'gbw_address' => '',
 				'gbw_expiry' => $expiry,
 				'gbw_id' => $globalBlockId
 			] )
