@@ -108,5 +108,6 @@
 	"log-action-filter-gblblock-modify": "전역 차단 변경",
 	"log-action-filter-gblblock-whitelist": "전역 차단 화이트리스트 추가",
 	"log-action-filter-gblblock-dwhitelist": "전역 차단 화이트리스트 제거",
-	"grant-globalblock": "IP 주소 전역 차단 또는 차단 해제"
+	"grant-globalblock": "IP 주소 전역 차단 또는 차단 해제",
+	"globalblocking-centralauth-admin-info-globalblock": "전역 차단 여부:"
 }
