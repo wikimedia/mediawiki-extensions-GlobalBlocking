@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingBlockPurger;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
@@ -129,8 +130,16 @@ return [
 		MediaWikiServices $services
 	): GlobalBlockingGlobalAutoblockExemptionListProvider {
 		return new GlobalBlockingGlobalAutoblockExemptionListProvider(
+			new ServiceOptions(
+				GlobalBlockingGlobalAutoblockExemptionListProvider::CONSTRUCTOR_OPTIONS,
+				$services->getMainConfig()
+			),
 			$services->getMessageFormatterFactory()->getTextFormatter( $services->getContentLanguage()->getCode() ),
-			$services->getMainWANObjectCache()
+			$services->getMainWANObjectCache(),
+			$services->getHttpRequestFactory(),
+			$services->getSiteLookup(),
+			$services->getFormatterFactory()->getStatusFormatter( RequestContext::getMain() ),
+			LoggerFactory::getInstance( 'GlobalBlocking' )
 		);
 	}
 ];
