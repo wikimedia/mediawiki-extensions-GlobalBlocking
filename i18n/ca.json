@@ -4,6 +4,7 @@
 			"Aleator",
 			"Jaumeortola",
 			"Jmarchn",
+			"Lluis Cat",
 			"Macofe",
 			"Papapep",
 			"Paucabot",
@@ -71,11 +72,11 @@
 	"globalblocking-loglink": "L'adreça IP $1 està blocada globalment ([[{{#Special:GlobalBlockList}}/$1|detalls]]).",
 	"globalblocking-showlog": "Aquesta adreça IP s'ha blocat anteriorment.\nPer més detalls, a continuació es mostra el registre de blocatges:",
 	"globalblocklist": "Llista de les adreces IP blocades globalment",
-	"globalblock": "Bloca una adreça IP globalment",
+	"globalblock": "Bloca un usuari globalment",
 	"globalblockstatus": "Estat local dels blocatges globals",
 	"removeglobalblock": "Cancel·la el blocatge global",
 	"right-globalblock": "Crear i eliminar blocatges globals",
 	"right-globalblock-whitelist": "Desactivar a nivell local els blocatges globals",
-	"right-globalblock-exempt": "Eludir els blocatges globals",
+	"right-globalblock-exempt": "Eludeix els blocatges d'IP globals",
 	"globalblocking-blockedtext-proxy": "La adreça proxy blocada és $1."
 }
