@@ -128,5 +128,6 @@
 	"globalblocking-blockedtext-ip-range": "The blocked range is $1.",
 	"globalblocking-blockedtext-proxy": "The blocked proxy address was $1.",
 	"globalblocking-blockedtext-username": "Your username is $1.",
-	"globalblocking-centralauth-admin-info-globalblock": "Globally blocked:"
+	"globalblocking-centralauth-admin-info-globalblock": "Globally blocked:",
+	"globalblocking-globalautoblock-exemptionlist": ""
 }

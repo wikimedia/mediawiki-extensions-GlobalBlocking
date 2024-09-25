@@ -163,5 +163,6 @@
 	"globalblocking-blockedtext-ip-range": "Used as a component of a global block message. $1 - the blocked range.",
 	"globalblocking-blockedtext-proxy": "Used as a component of a global block message. $1 - the blocked proxy address.",
 	"globalblocking-blockedtext-username": "Used as a component of a global block message. $1 - the blocked user.",
-	"globalblocking-centralauth-admin-info-globalblock": "Used as a label on Special:CentralAuth for the global account information field that displays if the user is globally blocked or not globally blocked."
+	"globalblocking-centralauth-admin-info-globalblock": "Used as a label on Special:CentralAuth for the global account information field that displays if the user is globally blocked or not globally blocked.",
+	"globalblocking-globalautoblock-exemptionlist": "{{notranslate}}"
 }
