@@ -2,6 +2,15 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Services;
 
+use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Http\HttpRequestFactory;
+use MediaWiki\Json\FormatJson;
+use MediaWiki\Site\MediaWikiSite;
+use MediaWiki\Site\SiteLookup;
+use MediaWiki\Status\StatusFormatter;
+use MediaWiki\Title\Title;
+use Psr\Log\LoggerInterface;
+use RuntimeException;
 use WANObjectCache;
 use Wikimedia\IPUtils;
 use Wikimedia\LightweightObjectStore\ExpirationAwareness;
@@ -16,15 +25,35 @@ use Wikimedia\Message\MessageValue;
 class GlobalBlockingGlobalAutoblockExemptionListProvider {
 	private const CACHE_VERSION = 0;
 
+	public const CONSTRUCTOR_OPTIONS = [
+		'GlobalBlockingCentralWiki',
+	];
+
+	private ServiceOptions $options;
 	private ITextFormatter $textFormatter;
 	private WANObjectCache $wanObjectCache;
+	private HttpRequestFactory $httpRequestFactory;
+	private SiteLookup $siteLookup;
+	private StatusFormatter $statusFormatter;
+	private LoggerInterface $logger;
 
 	public function __construct(
+		ServiceOptions $options,
 		ITextFormatter $textFormatter,
-		WANObjectCache $wanObjectCache
+		WANObjectCache $wanObjectCache,
+		HttpRequestFactory $httpRequestFactory,
+		SiteLookup $siteLookup,
+		StatusFormatter $statusFormatter,
+		LoggerInterface $logger
 	) {
+		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
+		$this->options = $options;
 		$this->textFormatter = $textFormatter;
 		$this->wanObjectCache = $wanObjectCache;
+		$this->httpRequestFactory = $httpRequestFactory;
+		$this->siteLookup = $siteLookup;
+		$this->statusFormatter = $statusFormatter;
+		$this->logger = $logger;
 	}
 
 	/**
@@ -52,7 +81,7 @@ class GlobalBlockingGlobalAutoblockExemptionListProvider {
 	 * @return array
 	 */
 	public function getExemptIPAddresses(): array {
-		return $this->wanObjectCache->getWithSetCallback(
+		$exemptIPsAndRanges = $this->wanObjectCache->getWithSetCallback(
 			$this->getCacheKey(),
 			ExpirationAwareness::TTL_HOUR,
 			function () {
@@ -60,6 +89,16 @@ class GlobalBlockingGlobalAutoblockExemptionListProvider {
 			},
 			[ 'version' => self::CACHE_VERSION, 'pcTTL' => ExpirationAwareness::TTL_PROC_SHORT ]
 		);
+		// If we failed to get the list of exempt IP addresses, then try using the local message.
+		// This isn't ideal, but is probably better than throwing an exception.
+		// Because the cached value is false, the next call to this method will try to fetch the
+		// IP addresses again from ::fetchExemptIPAddresses.
+		if ( $exemptIPsAndRanges === false ) {
+			return $this->parseIPAddressList( $this->textFormatter->format(
+				MessageValue::new( 'globalblocking-globalautoblock-exemptionlist' )
+			) );
+		}
+		return $exemptIPsAndRanges;
 	}
 
 	/**
@@ -74,7 +113,32 @@ class GlobalBlockingGlobalAutoblockExemptionListProvider {
 	private function getCacheKey(): string {
 		return $this->wanObjectCache->makeGlobalKey(
 			'GlobalBlocking',
-			'GlobalAutoBlockExemptList'
+			'GlobalAutoBlockExemptList',
+			$this->options->get( 'GlobalBlockingCentralWiki' )
+		);
+	}
+
+	/**
+	 * Get the URL used to get the content of the global autoblock exempt list on the central wiki.
+	 *
+	 * @return string|false
+	 */
+	private function getForeignAPIQueryUrl() {
+		$centralWiki = $this->options->get( 'GlobalBlockingCentralWiki' );
+		if ( !$centralWiki ) {
+			 return false;
+		}
+		$site = $this->siteLookup->getSite( $centralWiki );
+		if ( !( $site instanceof MediaWikiSite ) ) {
+			return false;
+		}
+		$exemptList = Title::makeName( NS_MEDIAWIKI, 'globalblocking-globalautoblock-exemptionlist', '', '', true );
+		return wfAppendQuery(
+			$site->getFileUrl( 'api.php' ),
+			[
+				'action' => 'query', 'prop' => 'revisions', 'rvslots' => 'main', 'rvprop' => 'content',
+				'formatversion' => 2, 'format' => 'json', 'titles' => $exemptList, 'rvlimit' => 1,
+			]
 		);
 	}
 
@@ -101,11 +165,53 @@ class GlobalBlockingGlobalAutoblockExemptionListProvider {
 	/**
 	 * Fetches an uncached list of IP addresses and/or ranges that are exempt from global autoblocks.
 	 *
-	 * @return array
+	 * @return array|false Array of IP addresses and/or ranges, or false on failure.
 	 */
-	private function fetchExemptIPAddresses(): array {
-		return $this->parseIPAddressList( $this->textFormatter->format(
-			MessageValue::new( 'globalblocking-globalautoblock-exemptionlist' )
-		) );
+	private function fetchExemptIPAddresses() {
+		// Attempt to get a URL for the central wiki, and if we can't get this URL then fallback to the exempt list on
+		// the local wiki.
+		$centralWikiUrl = $this->getForeignAPIQueryUrl();
+		if ( !$centralWikiUrl ) {
+			return $this->parseIPAddressList( $this->textFormatter->format(
+				MessageValue::new( 'globalblocking-globalautoblock-exemptionlist' )
+			) );
+		}
+
+		$req = $this->httpRequestFactory->create(
+			$centralWikiUrl,
+			[ 'userAgent' => $this->httpRequestFactory->getUserAgent() . ' GlobalAutoblockExemptionListProvider' ]
+		);
+
+		$status = $req->execute();
+
+		[ $errorStatus, $warningStatus ] = $status->splitByErrorType();
+		if ( !$warningStatus->isGood() ) {
+			[ $errorText, $context ] = $this->statusFormatter->getPsr3MessageAndContext( $warningStatus );
+			$this->logger->warning(
+				$errorText,
+				array_merge( $context, [ 'exception' => new RuntimeException() ] )
+			);
+		}
+
+		if ( $errorStatus->isGood() ) {
+			$json = $req->getContent();
+			$decoded = FormatJson::decode( $json, true );
+
+			if ( is_array( $decoded ) ) {
+				$exemptListPage = $decoded['query']['pages'][0] ?? null;
+				if ( $exemptListPage !== null ) {
+					// Parse the content in the most recent revision. If there are no revisions, then the message
+					// is empty which means that there are no IP addresses exempt from global autoblocks.
+					$exemptListContent = $exemptListPage['revisions'][0]['slots']['main']['content'] ?? '';
+					return $this->parseIPAddressList( $exemptListContent );
+				}
+			}
+		}
+
+		// If we could not fetch the exempt list from the central wiki, then return false so that a new attempt
+		// to fetch the IPs is made the next time this method is called.
+		[ $errorText, $context ] = $this->statusFormatter->getPsr3MessageAndContext( $errorStatus );
+		$this->logger->error( $errorText, array_merge( [ 'exception' => new RuntimeException() ], $context ) );
+		return false;
 	}
 }

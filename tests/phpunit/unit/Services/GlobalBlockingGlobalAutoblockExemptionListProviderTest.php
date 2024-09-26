@@ -2,8 +2,13 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Test\Unit\Services;
 
+use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingGlobalAutoblockExemptionListProvider;
+use MediaWiki\Http\HttpRequestFactory;
+use MediaWiki\Site\SiteLookup;
+use MediaWiki\Status\StatusFormatter;
 use MediaWikiUnitTestCase;
+use Psr\Log\LoggerInterface;
 use WANObjectCache;
 use Wikimedia\Message\ITextFormatter;
 
@@ -17,8 +22,13 @@ class GlobalBlockingGlobalAutoblockExemptionListProviderTest extends MediaWikiUn
 		$mockObject = $this->getMockBuilder( GlobalBlockingGlobalAutoblockExemptionListProvider::class )
 			->onlyMethods( [ 'getExemptIPAddresses' ] )
 			->setConstructorArgs( [
+				$this->createMock( ServiceOptions::class ),
 				$this->createMock( ITextFormatter::class ),
 				$this->createMock( WANObjectCache::class ),
+				$this->createMock( HttpRequestFactory::class ),
+				$this->createMock( SiteLookup::class ),
+				$this->createMock( StatusFormatter::class ),
+				$this->createMock( LoggerInterface::class ),
 			] )
 			->getMock();
 		$mockObject->method( 'getExemptIPAddresses' )
