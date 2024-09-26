@@ -12,7 +12,8 @@
 			"Solde",
 			"Ssola",
 			"Toniher",
-			"Vriullop"
+			"Vriullop",
+			"Lluis Cat"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permet]] [[Special:GlobalBlockList|blocar]] les adreces IP de diversos wikis",
@@ -84,6 +85,6 @@
 	"removeglobalblock": "Cancel·la el blocatge global",
 	"right-globalblock": "Crear i eliminar blocatges globals",
 	"right-globalblock-whitelist": "Desactivar a nivell local els blocatges globals",
-	"right-globalblock-exempt": "Eludir els blocatges globals",
+	"right-globalblock-exempt": "Eludeix els blocatges d'IP globals",
 	"globalblocking-blockedtext-proxy": "La adreça proxy blocada és $1."
 }
