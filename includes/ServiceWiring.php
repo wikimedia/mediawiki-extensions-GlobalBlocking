@@ -4,6 +4,7 @@ use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingBlockPurger;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingGlobalAutoblockExemptionListProvider;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingUserVisibilityLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusLookup;
@@ -124,6 +125,14 @@ return [
 	): GlobalBlockingUserVisibilityLookup {
 		return new GlobalBlockingUserVisibilityLookup( $services->getUserFactory() );
 	},
+	'GlobalBlocking.GlobalBlockingGlobalAutoblockExemptionListProvider' => static function (
+		MediaWikiServices $services
+	): GlobalBlockingGlobalAutoblockExemptionListProvider {
+		return new GlobalBlockingGlobalAutoblockExemptionListProvider(
+			$services->getMessageFormatterFactory()->getTextFormatter( $services->getContentLanguage()->getCode() ),
+			$services->getMainWANObjectCache()
+		);
+	}
 ];
 
 // @codeCoverageIgnoreEnd
