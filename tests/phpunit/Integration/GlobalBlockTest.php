@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Test\Integration;
 
+use MediaWiki\Block\Block;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlock;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\MainConfigNames;
@@ -42,12 +43,14 @@ class GlobalBlockTest extends MediaWikiIntegrationTestCase {
 
 	private function getGlobalBlockObject( stdClass $row, array $overriddenOptions = [] ) {
 		return new GlobalBlock(
-			$row,
 			array_merge(
 				[
-					'address' => $row->gb_address, 'reason' => $row->gb_reason, 'timestamp' => $row->gb_timestamp,
-					'anonOnly' => $row->gb_anon_only, 'expiry' => $row->gb_expiry,
+					'id' => $row->gb_id, 'address' => $row->gb_address, 'reason' => $row->gb_reason,
+					'byCentralId' => $row->gb_by_central_id, 'byWiki' => $row->gb_by_wiki,
+					'timestamp' => $row->gb_timestamp, 'anonOnly' => $row->gb_anon_only, 'expiry' => $row->gb_expiry,
 					'createAccount' => $row->gb_create_account, 'xff' => false,
+					'isAutoblock' => boolval( $row->gb_autoblock_parent_id ),
+					'enableAutoblock' => $row->gb_enable_autoblock,
 				],
 				$overriddenOptions
 			)
@@ -219,6 +222,38 @@ class GlobalBlockTest extends MediaWikiIntegrationTestCase {
 		return [
 			'Account creation is disabled' => [ true ],
 			'Account creation is not disabled' => [ false ],
+		];
+	}
+
+	/** @dataProvider provideIsAutoblocking */
+	public function testIsAutoblocking( $isAutoblocking ) {
+		$row = $this->getGlobalBlockRowForTarget( '6.7.8.9', self::$globallyBlockedUser );
+		// Override the value of gb_enable_autoblock for the test
+		$row->gb_enable_autoblock = (int)$isAutoblocking;
+		$globalBlock = $this->getGlobalBlockObject( $row );
+		$this->assertSame( $isAutoblocking, $globalBlock->isAutoblocking() );
+	}
+
+	public static function provideIsAutoblocking() {
+		return [
+			'Block is autoblocking' => [ true ],
+			'Block not is autoblocking' => [ false ],
+		];
+	}
+
+	/** @dataProvider provideGetType */
+	public function testGetType( $isAutoBlock ) {
+		$row = $this->getGlobalBlockRowForTarget( '1.2.3.4', null );
+		// Override the value of gb_autoblock_parent_id for the test
+		$row->gb_autoblock_parent_id = (int)$isAutoBlock;
+		$globalBlock = $this->getGlobalBlockObject( $row );
+		$this->assertSame( $isAutoBlock ? Block::TYPE_AUTO : Block::TYPE_IP, $globalBlock->getType() );
+	}
+
+	public static function provideGetType() {
+		return [
+			'Block is autoblocking' => [ true ],
+			'Block not is autoblocking' => [ false ],
 		];
 	}
 

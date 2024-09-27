@@ -90,8 +90,12 @@ class GlobalBlockLookup {
 		if ( $details['block'] ) {
 			$row = $details['block'];
 			return new GlobalBlock(
-				$row,
 				[
+					'id' => $row->gb_id,
+					'isAutoblock' => boolval( $row->gb_autoblock_parent_id ),
+					'enableAutoblock' => $row->gb_enable_autoblock,
+					'byCentralId' => $row->gb_by_central_id,
+					'byWiki' => $row->gb_by_wiki,
 					'address' => $row->gb_address,
 					'reason' => $row->gb_reason,
 					'timestamp' => $row->gb_timestamp,
@@ -565,7 +569,8 @@ class GlobalBlockLookup {
 	public static function selectFields(): array {
 		return [
 			'gb_id', 'gb_address', 'gb_target_central_id', 'gb_by_central_id', 'gb_by_wiki', 'gb_reason',
-			'gb_timestamp', 'gb_anon_only', 'gb_expiry', 'gb_range_start', 'gb_range_end', 'gb_create_account'
+			'gb_timestamp', 'gb_anon_only', 'gb_expiry', 'gb_range_start', 'gb_range_end', 'gb_create_account',
+			'gb_enable_autoblock', 'gb_autoblock_parent_id',
 		];
 	}
 }
