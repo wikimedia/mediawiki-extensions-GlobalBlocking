@@ -95,9 +95,9 @@
 		],
 		"indexes": [
 			{
-				"name": "gb_address",
-				"comment": "Used to find the block for a given target, such as on Special:GlobalBlockStatus or the API. The gb_anon_only column is included to allow callers to filter out blocks which are anon-only when searching by target. Also enforces that only one global block can be applied to a target.",
-				"columns": [ "gb_address", "gb_anon_only" ],
+				"name": "gb_address_autoblock_parent_id",
+				"comment": "Index used to lookup blocks for a given target. Used to enforce uniqueness, so gb_autoblock_parent_id needs to be included as you can have an autoblock and non-autoblock on the same IP.",
+				"columns": [ "gb_address", "gb_autoblock_parent_id" ],
 				"unique": true
 			},
 			{

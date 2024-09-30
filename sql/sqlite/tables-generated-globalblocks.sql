@@ -19,7 +19,9 @@ CREATE TABLE /*_*/globalblocks (
   gb_range_end BLOB NOT NULL
 );
 
-CREATE UNIQUE INDEX gb_address ON /*_*/globalblocks (gb_address, gb_anon_only);
+CREATE UNIQUE INDEX gb_address_autoblock_parent_id ON /*_*/globalblocks (
+  gb_address, gb_autoblock_parent_id
+);
 
 CREATE INDEX gb_target_central_id ON /*_*/globalblocks (gb_target_central_id);
 

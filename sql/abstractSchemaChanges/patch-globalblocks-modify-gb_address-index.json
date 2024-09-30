@@ -1,0 +1,270 @@
+{
+	"before": {
+		"name": "globalblocks",
+		"comment": "A central table to store global blocks which are currently active.",
+		"columns": [
+			{
+				"name": "gb_id",
+				"comment": "Primary key",
+				"type": "integer",
+				"options": { "notnull": true, "unsigned": true, "autoincrement": true }
+			},
+			{
+				"name": "gb_address",
+				"comment": "The target of the global block. An IP address, IP range, or account.",
+				"type": "string",
+				"options": { "length": 255, "notnull": true }
+			},
+			{
+				"name": "gb_target_central_id",
+				"comment": "The central ID for the target of the global block. 0 if the target is an IP address or IP range.",
+				"type": "integer",
+				"options": { "notnull": true, "unsigned": true, "default": 0 }
+			},
+			{
+				"name": "gb_by_central_id",
+				"comment": "The central ID for the performer of the global block. The central ID is the ID provided by the CentralIdLookup service.",
+				"type": "integer",
+				"options": { "notnull": true, "unsigned": true }
+			},
+			{
+				"name": "gb_by_wiki",
+				"comment": "The wiki where the block was performed, used to provide a link to the performer of the block on another wiki.",
+				"type": "binary",
+				"options": { "length": 255, "notnull": true }
+			},
+			{
+				"name": "gb_reason",
+				"comment": "The reason for the global block, provided by the performer of the block.",
+				"type": "binary",
+				"options": { "length": 767, "notnull": true }
+			},
+			{
+				"name": "gb_timestamp",
+				"comment": "The timestamp the block was applied.",
+				"type": "mwtimestamp",
+				"options": { "notnull": true }
+			},
+			{
+				"name": "gb_anon_only",
+				"comment": "Whether the global block only targets anon users. If 1, then the block only applies to anon users.",
+				"type": "mwtinyint",
+				"options": { "length": 1, "notnull": true, "default": 0 }
+			},
+			{
+				"name": "gb_create_account",
+				"comment": "Whether the global block prevents account creation.",
+				"type": "mwtinyint",
+				"options": { "notnull": true, "length": 1, "default": 1 }
+			},
+			{
+				"name": "gb_enable_autoblock",
+				"comment": "Whether the global block triggers global autoblocks.",
+				"type": "mwtinyint",
+				"options": { "notnull": true, "length": 1, "default": 0 }
+			},
+			{
+				"name": "gb_autoblock_parent_id",
+				"comment": "If null, then this is not an autoblock. If an integer, then this is an autoblock and the integer is the gb_id for the global block that caused this autoblock. This value is set for autoblocks to allow deleting the autoblock when the parent block is deleted.",
+				"type": "integer",
+				"options": { "notnull": false, "unsigned": true, "default": null }
+			},
+			{
+				"name": "gb_expiry",
+				"comment": "The expiry timestamp for the block. Blocks can have an infinite expiry.",
+				"type": "mwtimestamp",
+				"options": {
+					"notnull": true,
+					"CustomSchemaOptions": {
+						"allowInfinite": true
+					}
+				}
+			},
+			{
+				"name": "gb_range_start",
+				"comment": "The first IP address in hexadecimal form for the range of IPs that is targeted by this block. For a block that targets a single IP this will be the same as gb_address but in hexadecimal form.",
+				"type": "binary",
+				"options": { "length": 35, "notnull": true }
+			},
+			{
+				"name": "gb_range_end",
+				"comment": "The last IP address in hexadecimal form for the range of IPs that is targeted by this block. For a block that targets a single IP this will be the same as gb_address but in hexadecimal form.",
+				"type": "binary",
+				"options": { "length": 35, "notnull": true }
+			}
+		],
+		"indexes": [
+			{
+				"name": "gb_address",
+				"comment": "Used to find the block for a given target, such as on Special:GlobalBlockStatus or the API. The gb_anon_only column is included to allow callers to filter out blocks which are anon-only when searching by target. Also enforces that only one global block can be applied to a target.",
+				"columns": [ "gb_address", "gb_anon_only" ],
+				"unique": true
+			},
+			{
+				"name": "gb_target_central_id",
+				"comment": "Index used to lookup blocks for a given user (referenced by their central ID).",
+				"columns": [ "gb_target_central_id" ],
+				"unique": false
+			},
+			{
+				"name": "gb_range",
+				"comment": "Index used to find range blocks where the IP of the current user is inside the range.",
+				"columns": [ "gb_range_start", "gb_range_end" ],
+				"unique": false
+			},
+			{
+				"name": "gb_timestamp",
+				"comment": "Index used to filter for global blocks based on the timestamp they were applied.",
+				"columns": [ "gb_timestamp" ],
+				"unique": false
+			},
+			{
+				"name": "gb_expiry",
+				"comment": "Index used to find global blocks which have expired, and so should the row should be deleted from the table.",
+				"columns": [ "gb_expiry" ],
+				"unique": false
+			},
+			{
+				"name": "gb_autoblock_parent_id",
+				"comment": "Index for removing global autoblocks when their associated parent block is removed",
+				"columns": [ "gb_autoblock_parent_id" ],
+				"unique": false
+			}
+		],
+		"pk": [ "gb_id" ]
+	},
+	"after": {
+		"name": "globalblocks",
+		"comment": "A central table to store global blocks which are currently active.",
+		"columns": [
+			{
+				"name": "gb_id",
+				"comment": "Primary key",
+				"type": "integer",
+				"options": { "notnull": true, "unsigned": true, "autoincrement": true }
+			},
+			{
+				"name": "gb_address",
+				"comment": "The target of the global block. An IP address, IP range, or account.",
+				"type": "string",
+				"options": { "length": 255, "notnull": true }
+			},
+			{
+				"name": "gb_target_central_id",
+				"comment": "The central ID for the target of the global block. 0 if the target is an IP address or IP range.",
+				"type": "integer",
+				"options": { "notnull": true, "unsigned": true, "default": 0 }
+			},
+			{
+				"name": "gb_by_central_id",
+				"comment": "The central ID for the performer of the global block. The central ID is the ID provided by the CentralIdLookup service.",
+				"type": "integer",
+				"options": { "notnull": true, "unsigned": true }
+			},
+			{
+				"name": "gb_by_wiki",
+				"comment": "The wiki where the block was performed, used to provide a link to the performer of the block on another wiki.",
+				"type": "binary",
+				"options": { "length": 255, "notnull": true }
+			},
+			{
+				"name": "gb_reason",
+				"comment": "The reason for the global block, provided by the performer of the block.",
+				"type": "binary",
+				"options": { "length": 767, "notnull": true }
+			},
+			{
+				"name": "gb_timestamp",
+				"comment": "The timestamp the block was applied.",
+				"type": "mwtimestamp",
+				"options": { "notnull": true }
+			},
+			{
+				"name": "gb_anon_only",
+				"comment": "Whether the global block only targets anon users. If 1, then the block only applies to anon users.",
+				"type": "mwtinyint",
+				"options": { "length": 1, "notnull": true, "default": 0 }
+			},
+			{
+				"name": "gb_create_account",
+				"comment": "Whether the global block prevents account creation.",
+				"type": "mwtinyint",
+				"options": { "notnull": true, "length": 1, "default": 1 }
+			},
+			{
+				"name": "gb_enable_autoblock",
+				"comment": "Whether the global block triggers global autoblocks.",
+				"type": "mwtinyint",
+				"options": { "notnull": true, "length": 1, "default": 0 }
+			},
+			{
+				"name": "gb_autoblock_parent_id",
+				"comment": "If null, then this is not an autoblock. If an integer, then this is an autoblock and the integer is the gb_id for the global block that caused this autoblock. This value is set for autoblocks to allow deleting the autoblock when the parent block is deleted.",
+				"type": "integer",
+				"options": { "notnull": false, "unsigned": true, "default": null }
+			},
+			{
+				"name": "gb_expiry",
+				"comment": "The expiry timestamp for the block. Blocks can have an infinite expiry.",
+				"type": "mwtimestamp",
+				"options": {
+					"notnull": true,
+					"CustomSchemaOptions": {
+						"allowInfinite": true
+					}
+				}
+			},
+			{
+				"name": "gb_range_start",
+				"comment": "The first IP address in hexadecimal form for the range of IPs that is targeted by this block. For a block that targets a single IP this will be the same as gb_address but in hexadecimal form.",
+				"type": "binary",
+				"options": { "length": 35, "notnull": true }
+			},
+			{
+				"name": "gb_range_end",
+				"comment": "The last IP address in hexadecimal form for the range of IPs that is targeted by this block. For a block that targets a single IP this will be the same as gb_address but in hexadecimal form.",
+				"type": "binary",
+				"options": { "length": 35, "notnull": true }
+			}
+		],
+		"indexes": [
+			{
+				"name": "gb_address_autoblock_parent_id",
+				"comment": "Index used to lookup blocks for a given target. Used to enforce uniqueness, so gb_autoblock_parent_id needs to be included as you can have an autoblock and non-autoblock on the same IP.",
+				"columns": [ "gb_address", "gb_autoblock_parent_id" ],
+				"unique": true
+			},
+			{
+				"name": "gb_target_central_id",
+				"comment": "Index used to lookup blocks for a given user (referenced by their central ID).",
+				"columns": [ "gb_target_central_id" ],
+				"unique": false
+			},
+			{
+				"name": "gb_range",
+				"comment": "Index used to find range blocks where the IP of the current user is inside the range.",
+				"columns": [ "gb_range_start", "gb_range_end" ],
+				"unique": false
+			},
+			{
+				"name": "gb_timestamp",
+				"comment": "Index used to filter for global blocks based on the timestamp they were applied.",
+				"columns": [ "gb_timestamp" ],
+				"unique": false
+			},
+			{
+				"name": "gb_expiry",
+				"comment": "Index used to find global blocks which have expired, and so should the row should be deleted from the table.",
+				"columns": [ "gb_expiry" ],
+				"unique": false
+			},
+			{
+				"name": "gb_autoblock_parent_id",
+				"comment": "Index for removing global autoblocks when their associated parent block is removed",
+				"columns": [ "gb_autoblock_parent_id" ],
+				"unique": false
+			}
+		],
+		"pk": [ "gb_id" ]
+	}
+}
