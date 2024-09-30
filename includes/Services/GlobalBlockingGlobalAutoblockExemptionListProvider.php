@@ -179,7 +179,8 @@ class GlobalBlockingGlobalAutoblockExemptionListProvider {
 
 		$req = $this->httpRequestFactory->create(
 			$centralWikiUrl,
-			[ 'userAgent' => $this->httpRequestFactory->getUserAgent() . ' GlobalAutoblockExemptionListProvider' ]
+			[ 'userAgent' => $this->httpRequestFactory->getUserAgent() . ' GlobalAutoblockExemptionListProvider' ],
+			__METHOD__
 		);
 
 		$status = $req->execute();
