@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Kareyac",
 			"Mouse21",
 			"Okras",
 			"Putnik",
@@ -16,6 +17,7 @@
 	"apihelp-globalblock-param-unblock": "Если указано, разблокирует пользователя.",
 	"apihelp-globalblock-param-reason": "Причина блокировки/разблокировки",
 	"apihelp-globalblock-param-anononly": "Указывайте это, если блок должен влиять глобально только на всех отключённых пользователей.",
+	"apihelp-globalblock-param-allow-account-creation": "Укажите это, если глобальная блокировка не должна препятствовать созданию учетной записи.",
 	"apihelp-globalblock-param-modify": "Укажите это, если необходимо изменить существующий блок на целевом объекте",
 	"apihelp-globalblock-example-1": "Блок 192.0.2.1 неопределенно с разумом «Перекрестное вики-злоупотребление»",
 	"apihelp-query+globalblocks-summary": "Список всех IP-адресов, заблокированных глобально.",
@@ -28,5 +30,6 @@
 	"apihelp-query+globalblocks-param-prop": "Какие свойства необходимо получить.",
 	"apihelp-query+globalblocks-example-1": "Перечислить все глобальные блокировки",
 	"apihelp-query+globalblocks-example-2": "Перечислить все глобальные блокировки, относящиеся к IP-адресу 192.0.2.18",
-	"apihelp-globalblock-param-localanononly": "Указывайте это, если блок должен влиять локально только на отключённых пользователей."
+	"apihelp-globalblock-param-localanononly": "Указывайте это, если блок должен влиять локально только на отключённых пользователей.",
+	"apihelp-globalblock-param-local-allow-account-creation": "Укажите это, если локальная блокировка не должна препятствовать созданию учетной записи."
 }

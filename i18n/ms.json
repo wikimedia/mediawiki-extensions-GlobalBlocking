@@ -9,7 +9,8 @@
 			"Kurniasan",
 			"Macofe",
 			"Mbrt",
-			"Pizza1016"
+			"Pizza1016",
+			"Tofeiku"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Membolehkan]] sekatan alamat IP di [[Special:GlobalBlockList|pelbagai wiki]] sekaligus",
@@ -40,6 +41,7 @@
 	"globalblocking-list-whitelisted": "dimatikan di wiki tempatan oleh $1: $2",
 	"globalblocking-list-whitelist": "status tempatan",
 	"globalblocking-list-modify": "ubahsuai",
+	"globalblocking-list-block": "sekat",
 	"globalblocking-list-noresults": "Alamat IP yang diminta tidak disekat.",
 	"globalblocking-goto-block": "Sekat alamat IP di semua wiki",
 	"globalblocking-goto-unblock": "Batalkan sekatan sejagat",
@@ -77,5 +79,6 @@
 	"right-globalblock-whitelist": "Mematikan sekatan sejagat di wiki tempatan",
 	"action-globalblock-whitelist": "mematikan sekatan sejagat secara setempat",
 	"right-globalblock-exempt": "Mengatasi sekatan sejagat",
-	"action-globalblock-exempt": "memintas sekatan sejagat"
+	"action-globalblock-exempt": "memintas sekatan sejagat",
+	"globalblocking-centralauth-admin-info-globalblock": "Disekat sejagat:"
 }
