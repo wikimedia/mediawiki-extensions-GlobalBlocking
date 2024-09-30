@@ -20,7 +20,9 @@ CREATE TABLE globalblocks (
   PRIMARY KEY(gb_id)
 );
 
-CREATE UNIQUE INDEX gb_address ON globalblocks (gb_address, gb_anon_only);
+CREATE UNIQUE INDEX gb_address_autoblock_parent_id ON globalblocks (
+  gb_address, gb_autoblock_parent_id
+);
 
 CREATE INDEX gb_target_central_id ON globalblocks (gb_target_central_id);
 

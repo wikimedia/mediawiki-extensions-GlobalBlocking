@@ -108,6 +108,7 @@ class GlobalBlockManager {
 			'gb_expiry' => $dbw->encodeExpiry( $expiry ),
 			'gb_range_start' => $data['rangeStart'],
 			'gb_range_end' => $data['rangeEnd'],
+			'gb_autoblock_parent_id' => 0,
 		];
 
 		$blockId = 0;
