@@ -6,7 +6,8 @@
 	},
 	"globalblocking-apierror-badip": "IP address $1 is not valid",
 	"apihelp-globalblock-summary": "Globally block or unblock a user.",
-	"apihelp-globalblock-param-target": "The target IP address or username.",
+	"apihelp-globalblock-param-id": "ID of the global block to modify or unblock (obtained through <kbd>list=globalblocks</kbd>). Cannot be used together with <var>$1target</var>.",
+	"apihelp-globalblock-param-target": "The target IP address or username. Cannot be used together with <var>$1id</var>.",
 	"apihelp-globalblock-param-expiry": "If specified, will block or reblock the user. Determines how long the block will last for, e.g. \"5 months\" or \"2 weeks\". If set to \"infinite\" or \"indefinite\" the block will never expire.",
 	"apihelp-globalblock-param-unblock": "If specified, will unblock the user.",
 	"apihelp-globalblock-param-reason": "The reason for blocking/unblocking.",
@@ -33,9 +34,9 @@
 	"apihelp-query+globalblocks-paramvalue-prop-range": "Adds the range of IP addresses affected by the global block (not included if the block does not target IP addresses).",
 	"apihelp-query+globalblocks-example-1": "List all global blocks",
 	"apihelp-query+globalblocks-example-2": "List global blocks applying to IP address 192.0.2.18",
-	"apihelp-globalblock-param-alsolocal": "Block the user locally as well",
-	"apihelp-globalblock-param-localblockstalk": "Revoke talk page access locally",
-	"apihelp-globalblock-param-localblocksemail": "Revoke email access locally",
-	"apihelp-globalblock-param-localanononly": "Specify this if the block should only affect logged-out users locally.",
-	"apihelp-globalblock-param-local-allow-account-creation": "Specify this if the local block should not prevent account creation."
+	"apihelp-globalblock-param-alsolocal": "Block the user locally as well. Cannot be used together with <var>$1id</var>.",
+	"apihelp-globalblock-param-localblockstalk": "Revoke talk page access locally. Cannot be used together with <var>$1id</var>.",
+	"apihelp-globalblock-param-localblocksemail": "Revoke email access locally. Cannot be used together with <var>$1id</var>.",
+	"apihelp-globalblock-param-localanononly": "Specify this if the block should only affect logged-out users locally. Cannot be used together with <var>$1id</var>.",
+	"apihelp-globalblock-param-local-allow-account-creation": "Specify this if the local block should not prevent account creation. Cannot be used together with <var>$1id</var>."
 }

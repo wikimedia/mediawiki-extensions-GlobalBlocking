@@ -27,7 +27,7 @@ class SpecialRemoveGlobalBlockTest extends FormSpecialPageTestCase {
 			'', new FauxRequest(), null, $this->getUserForSuccess(), true
 		);
 		// Check that the form fields exist
-		$this->assertStringContainsString( '(globalblocking-target', $html );
+		$this->assertStringContainsString( '(globalblocking-target-with-block-ids', $html );
 		$this->assertStringContainsString( '(globalblocking-unblock-reason', $html );
 		$this->assertStringContainsString( '(globalblocking-unblock-submit', $html );
 		// Verify that the form title and description are present

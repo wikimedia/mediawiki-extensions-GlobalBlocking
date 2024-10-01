@@ -9,6 +9,7 @@ use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingUserVisibilityLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
+use MediaWiki\Extension\GlobalBlocking\Widget\HTMLUserTextFieldAllowingGlobalBlockIds;
 use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Message\Message;
@@ -116,13 +117,13 @@ class SpecialGlobalBlockList extends FormSpecialPage {
 		];
 		return [
 			'target' => [
-				'type' => 'user',
+				'class' => HTMLUserTextFieldAllowingGlobalBlockIds::class,
 				'ipallowed' => true,
 				'iprange' => true,
 				'iprangelimits' => $this->getConfig()->get( 'GlobalBlockingCIDRLimit' ),
 				'name' => 'target',
 				'id' => 'mw-globalblocking-search-target',
-				'label-message' => 'globalblocking-search-target',
+				'label-message' => 'globalblocking-target-with-block-ids',
 				'default' => $this->target,
 			],
 			'Options' => [
@@ -147,17 +148,23 @@ class SpecialGlobalBlockList extends FormSpecialPage {
 		// Build a list of blocks.
 		$conds = [];
 
+		$dbr = $this->globalBlockingConnectionProvider->getReplicaGlobalBlockingDatabase();
 		if ( $this->target !== '' ) {
-			if ( IPUtils::isIPAddress( $this->target ) ) {
-				$ip = $this->target;
-				$centralId = 0;
+			$globalBlockId = GlobalBlockLookup::isAGlobalBlockId( $this->target );
+			if ( $globalBlockId ) {
+				$targetExpr = $dbr->expr( 'gb_id', '=', $globalBlockId );
 			} else {
-				$ip = null;
-				$centralId = $this->lookup->centralIdFromName( $this->target, $this->getAuthority() );
+				if ( IPUtils::isIPAddress( $this->target ) ) {
+					$ip = $this->target;
+					$centralId = 0;
+				} else {
+					$ip = null;
+					$centralId = $this->lookup->centralIdFromName( $this->target, $this->getAuthority() );
+				}
+				$targetExpr = $this->globalBlockLookup->getGlobalBlockLookupConditions(
+					$ip, $centralId, GlobalBlockLookup::SKIP_ALLOWED_RANGES_CHECK
+				);
 			}
-			$targetExpr = $this->globalBlockLookup->getGlobalBlockLookupConditions(
-				$ip, $centralId, GlobalBlockLookup::SKIP_ALLOWED_RANGES_CHECK
-			);
 			if ( $targetExpr === null ) {
 				$this->queryValid = false;
 				return Status::newFatal( 'nosuchusershort', $this->target );
@@ -169,7 +176,6 @@ class SpecialGlobalBlockList extends FormSpecialPage {
 		$hideRange = in_array( 'rangeblocks', $this->options );
 		$hideUser = in_array( 'userblocks', $this->options );
 
-		$dbr = $this->globalBlockingConnectionProvider->getReplicaGlobalBlockingDatabase();
 		if ( $hideIP && $hideRange && $hideUser ) {
 			$this->queryValid = false;
 		}

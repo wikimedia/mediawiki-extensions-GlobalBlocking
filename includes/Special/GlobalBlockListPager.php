@@ -13,6 +13,7 @@ use MediaWiki\Html\Html;
 use MediaWiki\Linker\Linker;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Pager\ReverseChronologicalPager;
+use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentityLookup;
@@ -150,10 +151,16 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 			$optionsAsText = $this->msg( 'parentheses', $this->getLanguage()->commaList( $options ) )->text();
 		}
 
-		$blockTimestamp = $this->getLanguage()->userTimeAndDate( $row->gb_timestamp, $this->getUser() );
+		$blockTimestamp = $this->getLinkRenderer()->makeKnownLink(
+			SpecialPage::getTitleFor( 'GlobalBlockList' ),
+			$this->getLanguage()->userTimeAndDate( $row->gb_timestamp, $this->getUser() ),
+			[],
+			[ 'target' => "#{$row->gb_id}" ],
+		);
 
 		$msg = $this->msg( 'globalblocking-list-item' )
-			->params( $blockTimestamp, $performerUsername, $performerLink, $performerWiki, $targetName )
+			->rawParams( $blockTimestamp )
+			->params( $performerUsername, $performerLink, $performerWiki, $targetName )
 			->rawParams( $targetUserLink )
 			->expiryParams( $row->gb_expiry )
 			->params( $optionsAsText )

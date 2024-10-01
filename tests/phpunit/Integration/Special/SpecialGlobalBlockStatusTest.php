@@ -140,7 +140,7 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 	public function testLocallyDisableBlockForInvalidUsername() {
 		$performer = $this->getTestSysop()->getUser();
 
-		// Simulate the user using Special:GlobalBlockStatus to locally enable the block
+		// Simulate the user using Special:GlobalBlockStatus to locally disable the block
 		$request = new FauxRequest(
 			[
 				// The username # is invalid.
@@ -160,7 +160,29 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 		);
 
 		$this->assertStringContainsString(
-			'globalblocking-notblocked', $html,
+			'htmlform-user-not-valid', $html,
+			'The incorrect error message for the form was used.'
+		);
+	}
+
+	public function testLocallyDisableBlockForNotBlockedUser() {
+		$performer = $this->getTestSysop()->getUser();
+
+		// Simulate the user using Special:GlobalBlockStatus to attempt to locally disable a block which does not exist
+		$request = new FauxRequest(
+			[
+				'address' => '#1234',
+				'wpReason' => 'local disable',
+				'wpWhitelistStatus' => 1,
+				'wpEditToken' => $performer->getEditToken(),
+			],
+			true
+		);
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+
+		$this->assertStringContainsString(
+			'globalblocking-notblocked-id', $html,
 			'The incorrect error message for the form was used.'
 		);
 	}

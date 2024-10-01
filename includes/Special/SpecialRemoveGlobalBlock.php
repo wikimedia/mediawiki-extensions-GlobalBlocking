@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\GlobalBlocking\Special;
 use MediaWiki\Block\BlockUtils;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockManager;
+use MediaWiki\Extension\GlobalBlocking\Widget\HTMLUserTextFieldAllowingGlobalBlockIds;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\SpecialPage\FormSpecialPage;
 use MediaWiki\SpecialPage\SpecialPage;
@@ -98,11 +99,11 @@ class SpecialRemoveGlobalBlock extends FormSpecialPage {
 		return [
 			'target' => [
 				'name' => 'target',
-				'type' => 'user',
+				'class' => HTMLUserTextFieldAllowingGlobalBlockIds::class,
 				'ipallowed' => true,
 				'iprange' => true,
 				'id' => 'mw-globalblocking-target',
-				'label-message' => 'globalblocking-target',
+				'label-message' => 'globalblocking-target-with-block-ids',
 				'required' => true,
 				'default' => $this->target,
 			],

@@ -35,11 +35,19 @@ class ApiGlobalBlockTest extends ApiTestCase {
 		return $this->getTestUser( [ 'steward' ] )->getAuthority();
 	}
 
-	public function testExecuteMissingExpiryAndUnblock() {
-		$this->expectApiErrorCode( 'missingparam' );
-		$this->doApiRequestWithToken(
-			[ 'action' => 'globalblock', 'target' => '1.2.3.4' ], null, $this->getAuthorityForSuccess()
-		);
+	/** @dataProvider provideInvalidCombinationsOfParameters */
+	public function testInvalidCombinationsOfParameters( $parameters, $expectedErrorCode ) {
+		$this->expectApiErrorCode( $expectedErrorCode );
+		$this->doApiRequestWithToken( $parameters, null, $this->getAuthorityForSuccess() );
+	}
+
+	public static function provideInvalidCombinationsOfParameters() {
+		return [
+			'Missing both target and id' => [ [ 'action' => 'globalblock' ], 'missingparam' ],
+			'Missing both expiry and unblock' => [
+				[ 'action' => 'globalblock', 'target' => '1.2.3.4' ], 'missingparam',
+			],
+		];
 	}
 
 	public static function provideIPBlockTargets() {
@@ -217,6 +225,39 @@ class ApiGlobalBlockTest extends ApiTestCase {
 		$this->assertFalse( $actualLocalBlock->isCreateAccountBlocked() );
 	}
 
+	public function testExecuteForBlockModificationSpecifyingId() {
+		// Block a target
+		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
+		$globalBlockStatus = $globalBlockingServices->getGlobalBlockManager()->block(
+			'1.2.3.7', 'block to be modified', '1 day', $this->getAuthorityForSuccess()->getUser()
+		);
+		$this->assertStatusGood( $globalBlockStatus );
+		// Modify the global block using the global block ID
+		[ $result ] = $this->doApiRequestWithToken(
+			[
+				'action' => 'globalblock', 'id' => $globalBlockStatus->getValue()['id'],
+				'reason' => 'test', 'modify' => '1', 'anononly' => 1, 'expiry' => 'infinity',
+			],
+			null, $this->getAuthorityForSuccess()
+		);
+		// Assert that the response of the API is that the target has been unblocked.
+		$this->assertArrayHasKey( 'globalblock', $result );
+		$this->assertArrayEquals(
+			[
+				'user' => '#' . $globalBlockStatus->getValue()['id'], 'blocked' => '', 'anononly' => '',
+				'expiry' => 'infinite',
+			],
+			$result['globalblock'], false, true,
+			'The response was not as expected and suggests that the target was not successfully modified.'
+		);
+		// Assert that the block has been successfully modified
+		$this->newSelectQueryBuilder()
+			->select( [ 'gb_anon_only', 'gb_address' ] )
+			->from( 'globalblocks' )
+			->where( [ 'gb_id' => $globalBlockStatus->getValue()['id'] ] )
+			->assertRowValue( [ '1', '1.2.3.7' ] );
+	}
+
 	/**
 	 * @dataProvider provideIPBlockTargets
 	 * @dataProvider provideUserBlockTargets
@@ -264,6 +305,32 @@ class ApiGlobalBlockTest extends ApiTestCase {
 		$this->assertSame( 0, $globalBlockingServices->getGlobalBlockLookup()->getGlobalBlockId( $target ) );
 	}
 
+	public function testExecuteForUnblockSpecifyingId() {
+		// Block a target
+		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
+		$globalBlockStatus = $globalBlockingServices->getGlobalBlockManager()->block(
+			'1.2.3.7', 'block to be removed', '1 day', $this->getAuthorityForSuccess()->getUser()
+		);
+		$this->assertStatusGood( $globalBlockStatus );
+		// Unblock the target using the API specifying the ID for the global block
+		[ $result ] = $this->doApiRequestWithToken(
+			[
+				'action' => 'globalblock', 'id' => $globalBlockStatus->getValue()['id'],
+				'reason' => 'test', 'unblock' => '1',
+			],
+			null, $this->getAuthorityForSuccess()
+		);
+		// Assert that the response of the API is that the target has been unblocked.
+		$this->assertArrayHasKey( 'globalblock', $result );
+		$this->assertArrayEquals(
+			[ 'user' => '#' . $globalBlockStatus->getValue()['id'], 'unblocked' => '' ],
+			$result['globalblock'], false, true,
+			'The response was not as expected and suggests that the target was not successfully unblocked.'
+		);
+		// Assert that no block now exists for this target
+		$this->assertSame( 0, $globalBlockingServices->getGlobalBlockLookup()->getGlobalBlockId( '1.2.3.7' ) );
+	}
+
 	public function testGetExamplesMessages() {
 		// Test that all the items in ::getExamplesMessages have keys which is a string and values which are valid
 		// message keys.
@@ -272,9 +339,7 @@ class ApiGlobalBlockTest extends ApiTestCase {
 			new ApiMain( $this->apiContext, true ),
 			'globalblock',
 			$this->getServiceContainer()->getBlockUserFactory(),
-			$globalBlockingServices->getGlobalBlockLookup(),
-			$globalBlockingServices->getGlobalBlockManager(),
-			$this->getServiceContainer()->getCentralIdLookup()
+			$globalBlockingServices->getGlobalBlockManager()
 		);
 		$apiGlobalBlockModule = TestingAccessWrapper::newFromObject( $apiGlobalBlockModule );
 		$examplesMessages = $apiGlobalBlockModule->getExamplesMessages();

@@ -6,51 +6,46 @@ use ApiBase;
 use ApiMain;
 use ApiResult;
 use MediaWiki\Block\BlockUserFactory;
-use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockManager;
 use MediaWiki\ParamValidator\TypeDef\UserDef;
 use MediaWiki\Status\Status;
-use MediaWiki\User\CentralId\CentralIdLookup;
 use StatusValue;
-use Wikimedia\IPUtils;
 use Wikimedia\ParamValidator\ParamValidator;
 
 class ApiGlobalBlock extends ApiBase {
 	private BlockUserFactory $blockUserFactory;
-	private GlobalBlockLookup $globalBlockLookup;
 	private GlobalBlockManager $globalBlockManager;
-	private CentralIdLookup $centralIdLookup;
 
 	/**
 	 * @param ApiMain $mainModule
 	 * @param string $moduleName
 	 * @param BlockUserFactory $blockUserFactory
-	 * @param GlobalBlockLookup $globalBlockLookup
 	 * @param GlobalBlockManager $globalBlockManager
-	 * @param CentralIdLookup $centralIdLookup
 	 */
 	public function __construct(
 		ApiMain $mainModule,
 		$moduleName,
 		BlockUserFactory $blockUserFactory,
-		GlobalBlockLookup $globalBlockLookup,
-		GlobalBlockManager $globalBlockManager,
-		CentralIdLookup $centralIdLookup
+		GlobalBlockManager $globalBlockManager
 	) {
 		parent::__construct( $mainModule, $moduleName );
 
 		$this->blockUserFactory = $blockUserFactory;
-		$this->globalBlockLookup = $globalBlockLookup;
 		$this->globalBlockManager = $globalBlockManager;
-		$this->centralIdLookup = $centralIdLookup;
 	}
 
 	public function execute() {
 		$this->checkUserRightsAny( 'globalblock' );
 
-		$this->requireOnlyOneParameter( $this->extractRequestParams(), 'expiry', 'unblock' );
+		// Validate that the API request was not made with incompatible parameters.
+		$params = $this->extractRequestParams();
+		$this->requireOnlyOneParameter( $params, 'id', 'target' );
+		$this->requireOnlyOneParameter( $params, 'expiry', 'unblock' );
+		$this->requireMaxOneParameter( $params, 'id', 'alsolocal' );
+
+		$target = $this->getParameter( 'target' ) ?? '#' . $this->getParameter( 'id' );
+
 		$result = $this->getResult();
-		$target = $this->getParameter( 'target' );
 
 		if ( $this->getParameter( 'expiry' ) ) {
 			$options = [];
@@ -63,23 +58,12 @@ class ApiGlobalBlock extends ApiBase {
 				$options[] = 'allow-account-creation';
 			}
 
-			$ip = null;
-			$centralId = 0;
-			if ( IPUtils::isIPAddress( $target ) ) {
-				$ip = IPUtils::sanitizeIP( $target );
-			} else {
-				$centralId = $this->centralIdLookup->centralIdFromName( $target );
-			}
-			$existingBlock = $this->globalBlockLookup->getGlobalBlockingBlock(
-				$ip, $centralId,
-				GlobalBlockLookup::SKIP_ALLOWED_RANGES_CHECK | GlobalBlockLookup::SKIP_LOCAL_DISABLE_CHECK
-			);
-			if ( $existingBlock && $this->getParameter( 'modify' ) ) {
+			if ( $this->getParameter( 'modify' ) ) {
 				$options[] = 'modify';
 			}
 
 			$status = $this->globalBlockManager->block(
-				$this->getParameter( 'target' ),
+				$target,
 				$this->getParameter( 'reason' ),
 				$this->getParameter( 'expiry' ),
 				$this->getUser(),
@@ -110,7 +94,7 @@ class ApiGlobalBlock extends ApiBase {
 			if ( !$status->isOK() ) {
 				$this->addLegacyErrorsFromStatus( $status, $result );
 			} else {
-				$result->addValue( 'globalblock', 'user', $this->getParameter( 'target' ) );
+				$result->addValue( 'globalblock', 'user', $target );
 				$result->addValue( 'globalblock', 'blocked', '' );
 				if ( $this->getParameter( 'anononly' ) ) {
 					$result->addValue( 'globalblock', 'anononly', '' );
@@ -123,7 +107,7 @@ class ApiGlobalBlock extends ApiBase {
 			}
 		} elseif ( $this->getParameter( 'unblock' ) ) {
 			$status = $this->globalBlockManager->unblock(
-				$this->getParameter( 'target' ),
+				$target,
 				$this->getParameter( 'reason' ),
 				$this->getUser()
 			);
@@ -131,7 +115,7 @@ class ApiGlobalBlock extends ApiBase {
 			if ( !$status->isOK() ) {
 				$this->addLegacyErrorsFromStatus( $status, $result );
 			} else {
-				$result->addValue( 'globalblock', 'user', $this->getParameter( 'target' ) );
+				$result->addValue( 'globalblock', 'user', $target );
 				$result->addValue( 'globalblock', 'unblocked', '' );
 			}
 
@@ -164,9 +148,11 @@ class ApiGlobalBlock extends ApiBase {
 
 	public function getAllowedParams() {
 		return [
+			'id' => [
+				ParamValidator::PARAM_TYPE => 'integer',
+			],
 			'target' => [
 				ParamValidator::PARAM_TYPE => 'user',
-				ParamValidator::PARAM_REQUIRED => true,
 				UserDef::PARAM_ALLOWED_USER_TYPES => [ 'ip', 'cidr', 'name', 'temp' ],
 			],
 			'expiry' => [

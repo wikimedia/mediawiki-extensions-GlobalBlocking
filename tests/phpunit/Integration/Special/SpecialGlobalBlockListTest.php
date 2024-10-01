@@ -48,7 +48,7 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 		// Need to get the full HTML to be able to check that the subtitle links are present
 		[ $html ] = $this->executeSpecialPage( '', null, null, null, true );
 		// Check that the form fields exist
-		$this->assertStringContainsString( '(globalblocking-search-target', $html );
+		$this->assertStringContainsString( '(globalblocking-target-with-block-ids', $html );
 		$this->assertStringContainsString( '(globalblocking-list-tempblocks', $html );
 		$this->assertStringContainsString( '(globalblocking-list-indefblocks', $html );
 		$this->assertStringContainsString( '(globalblocking-list-addressblocks', $html );
@@ -89,7 +89,19 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 			'narrower IPv6 range' => [ '::1/20', '0:0:0:0:0:0:0:0/19' ],
 			'wider IPv6 range' => [ '::1/18', false ],
 			'unblocked IP' => [ '6.7.8.9', false ],
+			'non-existing global block ID' => [ '#123456789', false ],
 		];
+	}
+
+	public function testTargetParamForExistingGlobalBlockId() {
+		$this->testTargetParam(
+			'#' . $this->getDb()->newSelectQueryBuilder()
+					->select( 'gb_id' )
+					->from( 'globalblocks' )
+					->where( [ 'gb_address' => '1.2.3.4' ] )
+					->fetchField(),
+			'1.2.3.4'
+		);
 	}
 
 	public function testTargetParamWithGloballyBlockedUser() {
