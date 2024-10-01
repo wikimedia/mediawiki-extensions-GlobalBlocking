@@ -85,6 +85,7 @@
 	"globalblocking-logpagetext": "이 위키에서 이루어진 전역 차단 및 해제와 관련된 기록입니다.\n전역 차단은 다른 위키에서 이루어질 수 있으며 이 위키에 영향을 줄 수 있다는 것을 참고하세요.\n지금 활성화된 모든 [[Special:GlobalBlockList|전역 차단 목록]]을 볼 수 있습니다.",
 	"globalblocking-logentry-whitelist": "$1님이 $3의 전역 차단을 로컬에서 {{GENDER:$2|비활성화했습니다}}",
 	"globalblocking-block-flag-anon-only": "익명 사용자만",
+	"globalblocking-block-flag-account-creation-disabled": "계정 만들기 금지됨",
 	"globalblocking-loglink": "IP 주소 $1은 모든 위키에서 차단되었습니다. ([[{{#Special:GlobalBlockList}}/$1|자세한 정보]])",
 	"globalblocking-contribs-notice": "이 사용자는 현재 전역 차단되어 있습니다. 전역 차단 기록은 다음과 같습니다:",
 	"globalblocking-showlog": "이 IP 주소는 이전에 차단된 적이 있습니다.\n아래의 차단 기록을 참조하십시오:",
