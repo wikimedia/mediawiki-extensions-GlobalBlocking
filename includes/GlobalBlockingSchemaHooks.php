@@ -98,5 +98,9 @@ class GlobalBlockingSchemaHooks implements LoadExtensionSchemaUpdatesHook {
 			'gbw_address',
 			"$base/sql/$type/patch-global_block_whitelist-default-gbw_address.sql"
 		);
+		$updater->addExtensionUpdateOnVirtualDomain( [
+			'virtual-globalblocking', 'renameIndex', 'globalblocks', 'gb_address', 'gb_address_autoblock_parent_id',
+			false, "$base/sql/$type/patch-globalblocks-modify-gb_address-index.sql", true,
+		] );
 	}
 }
