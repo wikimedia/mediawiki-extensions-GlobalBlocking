@@ -56,9 +56,7 @@ class GlobalBlockLocalStatusManagerTest extends MediaWikiIntegrationTestCase {
 			[
 				'gbw_by' => (string)$performer->getId(),
 				'gbw_by_text' => $performer->getName(),
-				'gbw_address' => '',
 				'gbw_expiry' => 'infinity',
-				'gbw_target_central_id' => '0',
 				'gbw_id' => (string)$globalBlockIdCallback(),
 			],
 			(array)$row,

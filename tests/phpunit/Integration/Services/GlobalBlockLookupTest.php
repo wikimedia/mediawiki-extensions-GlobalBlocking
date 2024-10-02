@@ -681,7 +681,6 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 				'gbw_by' => $testUser->getId(),
 				'gbw_by_text' => $testUser->getName(),
 				'gbw_reason' => 'test-override',
-				'gbw_address' => '',
 				'gbw_expiry' => $this->getDb()->encodeExpiry( '20250405060708' ),
 				'gbw_id' => 2,
 			] )

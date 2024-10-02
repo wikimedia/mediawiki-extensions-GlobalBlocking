@@ -126,7 +126,6 @@ class GlobalBlockLocalStatusLookupTest extends MediaWikiIntegrationTestCase {
 				'gbw_by' => 123,
 				'gbw_by_text' => 'Test user',
 				'gbw_reason' => 'Test reason',
-				'gbw_address' => '',
 				'gbw_expiry' => $this->getDb()->getInfinity(),
 				'gbw_id' => 1234,
 			] )
@@ -134,7 +133,6 @@ class GlobalBlockLocalStatusLookupTest extends MediaWikiIntegrationTestCase {
 				'gbw_by' => 123,
 				'gbw_by_text' => 'Test user',
 				'gbw_reason' => 'Test reason2',
-				'gbw_address' => '',
 				'gbw_expiry' => $this->getDb()->timestamp( '20240405030201' ),
 				'gbw_id' => 123,
 			] )
