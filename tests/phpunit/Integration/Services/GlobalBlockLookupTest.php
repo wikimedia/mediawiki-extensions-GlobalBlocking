@@ -91,11 +91,21 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 	 * @dataProvider provideBlockedXffHeaders
 	 * @dataProvider provideBlockedXffHeadersForNamedUsersOnly
 	 */
+	public function testGetUserBlockForNamedAndExemptFromIPBlocks( $xffHeader ) {
+		$this->setGroupPermissions( 'block-exempt', 'globalblock-exempt', true );
+		$testUser = $this->getTestUser( [ 'block-exempt' ] )->getUser();
+		RequestContext::getMain()->setUser( $testUser );
+		$this->commonTestGetUserBlockForXffBlock( $xffHeader, $testUser, null );
+	}
+
+	/**
+	 * @dataProvider provideBlockedXffHeaders
+	 * @dataProvider provideBlockedXffHeadersForNamedUsersOnly
+	 */
 	public function testGetUserBlockForNamedWhenXffBlocked( $xffHeader, $expectedGlobalBlockId ) {
 		$testUser = $this->getTestUser()->getUser();
 		RequestContext::getMain()->setUser( $testUser );
 		$this->commonTestGetUserBlockForXffBlock( $xffHeader, $testUser, $expectedGlobalBlockId );
-		$this->overrideConfigValue( 'GlobalBlockingBlockXFF', true );
 	}
 
 	public static function provideBlockedXffHeadersForNamedUsersOnly() {
@@ -110,6 +120,8 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 	public static function provideBlockedXffHeaders() {
 		return [
 			'One XFF header IP is blocked' => [ '1.2.3.5, 77.8.9.10', 3 ],
+			'One XFF header is autoblocked' => [ '9.8.7.6', 10 ],
+			'One XFF header is blocked and another is autoblocked' => [ '9.8.7.6, 4.5.6.7', 6 ],
 		];
 	}
 
@@ -138,7 +150,7 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/** @dataProvider provideGetUserBlock */
-	public function testGetUserBlockForNamedUser( $ip, $expectedGlobalBlockId, ?User $user = null ) {
+	public function testGetUserBlock( $ip, $expectedGlobalBlockId, ?User $user = null ) {
 		$actualGlobalBlockObject = GlobalBlockingServices::wrap( $this->getServiceContainer() )
 			->getGlobalBlockLookup()
 			->getUserBlock( $user ?? $this->getTestUser()->getUser(), $ip );
@@ -187,13 +199,24 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 	public function testGetUserBlockForBlockOnNamedUser( $ip ) {
 		// Assert that the if the user is blocked, the block returned by ::getUserBlock will always
 		// be the one for the user, not the IP (as the user one has a higher priority over all IP blocks).
-		$this->testGetUserBlockForNamedUser( $ip, 5, $this->getGloballyBlockedTestUser() );
+		$this->testGetUserBlock( $ip, 5, $this->getGloballyBlockedTestUser() );
 	}
 
 	public function testGetUserBlockPrioritisesBlocksWithDisableAccountCreation() {
 		// Assert that if two blocks match, that ::getUserBlock chooses the block which disables account creation
 		// over the block which does not disable account creation.
-		$this->testGetUserBlockForNamedUser( '4.5.6.7', 6, $this->getGloballyBlockedTestUser() );
+		$this->testGetUserBlock( '4.5.6.7', 6, $this->getGloballyBlockedTestUser() );
+	}
+
+	public function testGetUserBlockForIPWithAutoblockAndManualIPBlock() {
+		$this->testGetUserBlock(
+			'192.0.2.1', 7,
+			$this->getServiceContainer()->getUserFactory()->newAnonymous( '192.0.2.1' )
+		);
+	}
+
+	public function testGetUserBlockForIPWithAutoblock() {
+		$this->testGetUserBlock( '9.8.7.6', 10, $this->getTestUser()->getUser() );
 	}
 
 	public function testGetUserBlockGlobalBlockingAllowedRanges() {
@@ -289,6 +312,9 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 				GlobalBlockLookup::SKIP_SOFT_IP_BLOCKS,
 			],
 			'No global block on the given range' => [ '1.2.3.4/20', GlobalBlockLookup::SKIP_SOFT_IP_BLOCKS ],
+			'Single IP target is subject to an autoblock but $flags set to ignore autoblocks' => [
+				'9.8.7.6', GlobalBlockLookup::SKIP_AUTOBLOCKS,
+			],
 		];
 	}
 
@@ -326,14 +352,16 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 				2,
 			],
 			'Single IP target is subject to two blocks' => [
-				'127.0.0.1', true, GlobalBlockLookup::SKIP_LOCAL_DISABLE_CHECK, 1,
+				'127.0.0.1', 0, GlobalBlockLookup::SKIP_LOCAL_DISABLE_CHECK, 1,
 			],
 			'Single IP target is subject to a range block' => [
-				'127.0.0.2', true, GlobalBlockLookup::SKIP_LOCAL_DISABLE_CHECK, 2,
+				'127.0.0.2', 0, GlobalBlockLookup::SKIP_LOCAL_DISABLE_CHECK, 2,
 			],
 			'Range target is subject to a range block' => [
-				'127.0.0.0/27', true, GlobalBlockLookup::SKIP_LOCAL_DISABLE_CHECK, 2,
+				'127.0.0.0/27', 0, GlobalBlockLookup::SKIP_LOCAL_DISABLE_CHECK, 2,
 			],
+			'Single IP target is subject to an autoblock' => [ '9.8.7.6', 0, 0, 10, ],
+			'Single IP target is subject to an autoblock and direct IP block' => [ '192.0.2.1', 0, 0, 7 ],
 		];
 	}
 
@@ -369,6 +397,8 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 			'No global block on an IP target with an expired block' => [ '192.0.2.2', DB_REPLICA, 0 ],
 			'Global block for target in global block ID format' => [ '#1', DB_REPLICA, 1 ],
 			'No global block for target in global block ID format' => [ '#154443', DB_REPLICA, 0 ],
+			'Autoblock excluded when querying IP that is autoblocked' => [ '9.8.7.6', DB_REPLICA, 0 ],
+			'Manual IP block chosen instead of autoblock' => [ '192.0.2.1', DB_REPLICA, 7 ],
 		];
 	}
 
@@ -444,6 +474,13 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 				" AND (gb_range_start LIKE '5808%' ESCAPE '`'"
 				. " AND gb_range_start <= '" . IPUtils::toHex( '88.8.9.0' ) . "'"
 				. " AND gb_range_end >= '" . IPUtils::toHex( '88.8.9.255' ) . "'))",
+			],
+			'IPv4 when excluding autoblocks' => [
+				'1.2.3.4', 0, GlobalBlockLookup::SKIP_AUTOBLOCKS,
+				" AND (gb_range_start LIKE '0102%' ESCAPE '`'"
+				. " AND gb_range_start <= '" . IPUtils::toHex( '1.2.3.4' ) . "'"
+				. " AND gb_range_end >= '" . IPUtils::toHex( '1.2.3.4' ) . "'"
+				. " AND gb_autoblock_parent_id = 0))",
 			],
 		];
 	}
@@ -557,6 +594,8 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 				'gb_range_start' => IPUtils::toHex( '127.0.0.1' ),
 				'gb_range_end' => IPUtils::toHex( '127.0.0.1' ),
 				'gb_create_account' => 0,
+				'gb_autoblock_parent_id' => 0,
+				'gb_enable_autoblock' => 0,
 			] )
 			->row( [
 				'gb_id' => 2,
@@ -573,6 +612,8 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 				'gb_range_start' => IPUtils::toHex( '127.0.0.0' ),
 				'gb_range_end' => IPUtils::toHex( '127.0.0.255' ),
 				'gb_create_account' => 0,
+				'gb_autoblock_parent_id' => 0,
+				'gb_enable_autoblock' => 0,
 			] )
 			->row( [
 				'gb_id' => 3,
@@ -589,6 +630,8 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 				'gb_range_start' => IPUtils::toHex( '77.8.9.10' ),
 				'gb_range_end' => IPUtils::toHex( '77.8.9.10' ),
 				'gb_create_account' => 0,
+				'gb_autoblock_parent_id' => 0,
+				'gb_enable_autoblock' => 0,
 			] )
 			->row( [
 				'gb_id' => 4,
@@ -605,6 +648,8 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 				'gb_range_start' => IPUtils::toHex( '88.8.9.0' ),
 				'gb_range_end' => IPUtils::toHex( '88.8.9.255' ),
 				'gb_create_account' => 0,
+				'gb_autoblock_parent_id' => 0,
+				'gb_enable_autoblock' => 0,
 			] )
 			->row( [
 				'gb_id' => 5,
@@ -623,6 +668,8 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 				'gb_range_start' => '',
 				'gb_range_end' => '',
 				'gb_create_account' => 0,
+				'gb_autoblock_parent_id' => 0,
+				'gb_enable_autoblock' => 1,
 			] )
 			->row( [
 				'gb_id' => 6,
@@ -639,6 +686,8 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 				'gb_range_start' => IPUtils::toHex( '4.5.6.0' ),
 				'gb_range_end' => IPUtils::toHex( '4.5.6.255' ),
 				'gb_create_account' => 1,
+				'gb_autoblock_parent_id' => 0,
+				'gb_enable_autoblock' => 0,
 			] )
 			->row( [
 				'gb_id' => 7,
@@ -652,9 +701,11 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 				'gb_timestamp' => $this->getDb()->timestamp( '20230405060708' ),
 				'gb_anon_only' => 1,
 				'gb_expiry' => 'infinity',
-				'gb_range_start' => IPUtils::toHex( '127.0.0.1' ),
-				'gb_range_end' => IPUtils::toHex( '127.0.0.1' ),
+				'gb_range_start' => IPUtils::toHex( '192.0.2.1' ),
+				'gb_range_end' => IPUtils::toHex( '192.0.2.1' ),
 				'gb_create_account' => 0,
+				'gb_autoblock_parent_id' => 0,
+				'gb_enable_autoblock' => 0,
 			] )
 			->row( [
 				'gb_id' => 8,
@@ -668,9 +719,47 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 				'gb_timestamp' => $this->getDb()->timestamp( '20230405060708' ),
 				'gb_anon_only' => 1,
 				'gb_expiry' => $this->getDb()->encodeExpiry( '20220406060708' ),
-				'gb_range_start' => IPUtils::toHex( '127.0.0.1' ),
-				'gb_range_end' => IPUtils::toHex( '127.0.0.1' ),
+				'gb_range_start' => IPUtils::toHex( '192.0.2.2' ),
+				'gb_range_end' => IPUtils::toHex( '192.0.2.2' ),
 				'gb_create_account' => 0,
+				'gb_autoblock_parent_id' => 0,
+				'gb_enable_autoblock' => 0,
+			] )
+			->row( [
+				'gb_id' => 9,
+				'gb_address' => '192.0.2.1',
+				'gb_target_central_id' => 0,
+				'gb_by_central_id' => $this->getServiceContainer()
+					->getCentralIdLookup()
+					->centralIdFromLocalUser( $testUser ),
+				'gb_by_wiki' => WikiMap::getCurrentWikiId(),
+				'gb_reason' => 'test',
+				'gb_timestamp' => $this->getDb()->timestamp( '20230405060708' ),
+				'gb_anon_only' => 1,
+				'gb_expiry' => $this->getDb()->encodeExpiry( '20240405060708' ),
+				'gb_range_start' => IPUtils::toHex( '192.0.2.1' ),
+				'gb_range_end' => IPUtils::toHex( '192.0.2.1' ),
+				'gb_create_account' => 0,
+				'gb_autoblock_parent_id' => 5,
+				'gb_enable_autoblock' => 0,
+			] )
+			->row( [
+				'gb_id' => 10,
+				'gb_address' => '9.8.7.6',
+				'gb_target_central_id' => 0,
+				'gb_by_central_id' => $this->getServiceContainer()
+					->getCentralIdLookup()
+					->centralIdFromLocalUser( $testUser ),
+				'gb_by_wiki' => WikiMap::getCurrentWikiId(),
+				'gb_reason' => 'test',
+				'gb_timestamp' => $this->getDb()->timestamp( '20230405060708' ),
+				'gb_anon_only' => 0,
+				'gb_expiry' => $this->getDb()->encodeExpiry( '20240405060708' ),
+				'gb_range_start' => IPUtils::toHex( '9.8.7.6' ),
+				'gb_range_end' => IPUtils::toHex( '9.8.7.6' ),
+				'gb_create_account' => 0,
+				'gb_autoblock_parent_id' => 5,
+				'gb_enable_autoblock' => 0,
 			] )
 			->caller( __METHOD__ )
 			->execute();

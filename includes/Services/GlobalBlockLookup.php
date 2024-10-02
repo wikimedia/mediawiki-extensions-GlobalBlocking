@@ -14,6 +14,7 @@ use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserIdentity;
 use stdClass;
 use Wikimedia\IPUtils;
+use Wikimedia\Rdbms\FakeResultWrapper;
 use Wikimedia\Rdbms\IExpression;
 use Wikimedia\Rdbms\IResultWrapper;
 use Wikimedia\Rdbms\LikeValue;
@@ -34,6 +35,7 @@ class GlobalBlockLookup {
 	private const TYPE_USER = 1;
 	private const TYPE_IP = 2;
 	private const TYPE_RANGE = 3;
+	private const TYPE_AUTOBLOCK = 4;
 
 	/** @var int Flag to ignore blocks on IP addresses which are marked as anon-only. */
 	public const SKIP_SOFT_IP_BLOCKS = 1;
@@ -43,6 +45,8 @@ class GlobalBlockLookup {
 	public const SKIP_LOCAL_DISABLE_CHECK = 4;
 	/** @var int Flag to skip the excluding of IP blocks in the GlobalBlockingAllowedRanges config. */
 	public const SKIP_ALLOWED_RANGES_CHECK = 8;
+	/** @var int Flag to ignore all autoblocks. Is implicitly set if ::SKIP_IP_BLOCKS is set. */
+	public const SKIP_AUTOBLOCKS = 16;
 
 	private ServiceOptions $options;
 	private GlobalBlockingConnectionProvider $globalBlockingConnectionProvider;
@@ -201,7 +205,7 @@ class GlobalBlockLookup {
 				// Always skip the allowed ranges check when checking the XFF IPs as the value of this header
 				// is easy to spoof.
 				$xffFlags = $flags | self::SKIP_ALLOWED_RANGES_CHECK;
-				$block = $this->getAppliedBlock( $xffIps, $this->checkIpsForBlock( $xffIps, $xffFlags ) );
+				$block = $this->chooseMostSpecificBlock( $this->checkIpsForBlock( $xffIps, $xffFlags ), $xffFlags );
 				if ( $block !== null ) {
 					return $this->addToUserBlockDetailsCache( [ 'block' => $block, 'xff' => true ], $user );
 				}
@@ -212,12 +216,17 @@ class GlobalBlockLookup {
 	}
 
 	/**
-	 * Returns the ::TYPE_* constant for the given target.
+	 * Returns the ::TYPE_* constant for the given block.
 	 *
-	 * @param string $target
+	 * @param stdClass $block
 	 * @return int
 	 */
-	private function getTargetType( string $target ) {
+	private function getTargetType( stdClass $block ): int {
+		if ( $block->gb_autoblock_parent_id ) {
+			return self::TYPE_AUTOBLOCK;
+		}
+
+		$target = $block->gb_address;
 		if ( IPUtils::isValid( $target ) ) {
 			return self::TYPE_IP;
 		} elseif ( IPUtils::isValidRange( $target ) ) {
@@ -257,7 +266,7 @@ class GlobalBlockLookup {
 				continue;
 			}
 			$target = $block->gb_address;
-			$type = $this->getTargetType( $target );
+			$type = $this->getTargetType( $block );
 			if ( $type == self::TYPE_RANGE ) {
 				// This is the number of bits that are allowed to vary in the block, give
 				// or take some floating point errors
@@ -271,13 +280,15 @@ class GlobalBlockLookup {
 				$score = $type;
 			}
 
-			// Always prioritise blocks that deny account creation, and then order the blocks using a score generated
-			// based on the target type and for ranges how wide the range is.
-			if (
-				$bestBlock === null ||
-				$score < $bestBlockScore ||
-				( !$bestBlock->gb_create_account && $block->gb_create_account )
-			) {
+			// Always prioritise blocks that deny account creation over all other blocks.
+			// This is done by adding the maximum possible score for a single block to the current block score
+			// (currently the score for an autoblock), such that blocks which don't disable account creation always
+			// have a higher score to those which disable account creation.
+			if ( !$block->gb_create_account ) {
+				$score += self::TYPE_AUTOBLOCK;
+			}
+
+			if ( $bestBlock === null || $score < $bestBlockScore ) {
 				$bestBlockScore = $score;
 				$bestBlock = $block;
 			}
@@ -390,6 +401,10 @@ class GlobalBlockLookup {
 				// set to 1 (which should only be soft blocks on IP addresses or ranges).
 				$ipExpr = $ipExpr->and( 'gb_anon_only', '!=', 1 );
 			}
+
+			if ( $flags & self::SKIP_AUTOBLOCKS ) {
+				$ipExpr = $ipExpr->and( 'gb_autoblock_parent_id', '=', 0 );
+			}
 		}
 
 		if ( $centralId !== 0 ) {
@@ -442,17 +457,17 @@ class GlobalBlockLookup {
 	 * Find all rows from the `globalblocks` table that target at least one of
 	 * the given IP addresses.
 	 *
-	 * This method filters out blocks that are locally disabled, but does not
-	 * check whether the given session user can be exempt from the block.
+	 * Does not filter out locally disabled blocks. You probably want to pass the
+	 * result to {@link self::chooseMostSpecificBlock}.
 	 *
 	 * @param string[] $ips The array of IP addresses to be checked
 	 * @param int $flags Flags which control what blocks are returned.
-	 * @return stdClass[] Array of applicable blocks as rows from the `globalblocks` table
+	 * @return IResultWrapper Applicable blocks as rows from the `globalblocks` table
 	 */
-	private function checkIpsForBlock( array $ips, int $flags = 0 ): array {
+	private function checkIpsForBlock( array $ips, int $flags = 0 ): IResultWrapper {
 		if ( $flags & self::SKIP_IP_BLOCKS ) {
 			// If the flags say to skip IP blocks, then don't even make the query.
-			return [];
+			return new FakeResultWrapper( [] );
 		}
 
 		$dbr = $this->globalBlockingConnectionProvider->getReplicaGlobalBlockingDatabase();
@@ -468,59 +483,14 @@ class GlobalBlockLookup {
 
 		if ( !$conds ) {
 			// No valid IPs provided so don't even make the query. Bug 59705
-			return [];
+			return new FakeResultWrapper( [] );
 		}
-		$results = $dbr->newSelectQueryBuilder()
+		return $dbr->newSelectQueryBuilder()
 			->select( self::selectFields() )
 			->from( 'globalblocks' )
 			->where( $dbr->orExpr( $conds ) )
 			->caller( __METHOD__ )
 			->fetchResultSet();
-
-		$blocks = [];
-		foreach ( $results as $block ) {
-			if (
-				( $flags & self::SKIP_LOCAL_DISABLE_CHECK ) ||
-				!$this->globalBlockLocalStatusLookup->getLocalWhitelistInfo( $block->gb_id )
-			) {
-				$blocks[] = $block;
-			}
-		}
-
-		return $blocks;
-	}
-
-	/**
-	 * Using the result of ::checkIpsForBlock and the IPs provided to that method,
-	 * choose the block that will be shown to the end user.
-	 *
-	 * This is determined by choosing the first block that applies, giving priority to blocks
-	 * that disable account creation.
-	 *
-	 * @param string[] $ips The array of IP addresses to be checked
-	 * @param stdClass[] $blocks The array returned by ::checkIpsForBlock
-	 * @return stdClass|null The block that is chosen for the end user.
-	 *   If no block applies, then this method returns null.
-	 */
-	private function getAppliedBlock( array $ips, array $blocks ): ?stdClass {
-		$currentBlock = null;
-		foreach ( $blocks as $block ) {
-			foreach ( $ips as $ip ) {
-				$ipHex = IPUtils::toHex( $ip );
-				if ( !( $block->gb_range_start <= $ipHex && $block->gb_range_end >= $ipHex ) ) {
-					continue;
-				}
-
-				if (
-					$currentBlock === null ||
-					( !$currentBlock->gb_create_account && $block->gb_create_account )
-				) {
-					$currentBlock = $block;
-				}
-			}
-		}
-
-		return $currentBlock;
 	}
 
 	/**
@@ -529,7 +499,8 @@ class GlobalBlockLookup {
 	 *
 	 * @param string $target The specific target which can be a username, IP address, range, or global block ID that
 	 *   may or may not exist. The target being specific means that if you provide a single IP which is covered by a
-	 *   range block, the range block will not be returned. Use ::getGlobalBlockingBlock to include these blocks.
+	 *   range block, the range block will not be returned. This also means that autoblocks cannot be queried by the
+	 *   IP that they target. Use ::getGlobalBlockingBlock to include these blocks.
 	 * @param int $dbtype Either DB_REPLICA or DB_PRIMARY.
 	 * @return int
 	 */
@@ -549,7 +520,7 @@ class GlobalBlockLookup {
 		if ( $globalBlockId ) {
 			$queryBuilder->where( [ 'gb_id' => $globalBlockId ] );
 		} elseif ( IPUtils::isIPAddress( $target ) ) {
-			$queryBuilder->where( [ 'gb_address' => $target ] );
+			$queryBuilder->where( [ 'gb_address' => $target, 'gb_autoblock_parent_id' => 0 ] );
 		} else {
 			$centralId = $this->centralIdLookup->centralIdFromName( $target, CentralIdLookup::AUDIENCE_RAW );
 			if ( !$centralId ) {
