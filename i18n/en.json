@@ -60,6 +60,7 @@
 	"globalblocking-return": "Return to the list of global blocks",
 	"globalblocking-add-block": "Add another global block",
 	"globalblocking-notblocked": "The user ($1) you entered is not globally blocked.",
+	"globalblocking-notblocked-id": "No global block exists with the ID $1.",
 	"globalblocking-unblock": "Remove a global block",
 	"globalblocking-unblock-legend": "Remove a global block",
 	"globalblocking-unblock-submit": "Remove global block",

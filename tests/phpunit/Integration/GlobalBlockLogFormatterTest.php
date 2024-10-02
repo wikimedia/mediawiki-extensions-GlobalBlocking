@@ -32,6 +32,16 @@ class GlobalBlockLogFormatterTest extends LogFormatterTestCase {
 					'api' => [],
 				],
 			],
+			'Local disable entry when specifying a block ID' => [
+				'row' => [
+					'type' => 'gblblock', 'action' => 'whitelist', 'user_text' => 'Sysop',
+					'title' => '#123', 'namespace' => NS_USER, 'params' => [],
+				],
+				'extra' => [
+					'text' => 'Sysop disabled the global block on #123 locally',
+					'api' => [],
+				],
+			],
 			'Local re-enable entry' => [
 				'row' => [
 					'type' => 'gblblock', 'action' => 'dwhitelist', 'user_text' => 'Sysop',

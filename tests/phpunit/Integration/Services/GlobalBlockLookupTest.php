@@ -367,6 +367,8 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 			'Temporary global block on given IP range target' => [ '127.0.0.0/24', DB_REPLICA, 2 ],
 			'No global block on an non-existing account' => [ 'Test-does-not-exist', DB_REPLICA, 0 ],
 			'No global block on an IP target with an expired block' => [ '192.0.2.2', DB_REPLICA, 0 ],
+			'Global block for target in global block ID format' => [ '#1', DB_REPLICA, 1 ],
+			'No global block for target in global block ID format' => [ '#154443', DB_REPLICA, 0 ],
 		];
 	}
 
@@ -512,6 +514,20 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 		return [
 			'Empty string' => [ '' ],
 			'String not in an IP format' => [ 'invalid-ip' ],
+		];
+	}
+
+	/** @dataProvider provideIsAGlobalBlockId */
+	public function testIsAGlobalBlockId( $target, $expectedReturnValue ) {
+		$this->assertSame( $expectedReturnValue, GlobalBlockLookup::isAGlobalBlockId( $target ) );
+	}
+
+	public static function provideIsAGlobalBlockId() {
+		return [
+			'Target is a username' => [ 'UserAbc', false ],
+			'Target is a single "#"' => [ '#', false ],
+			'Target is a hash sign followed by letters' => [ '#abc', false ],
+			'Target is a global block ID' => [ '#123', 123 ],
 		];
 	}
 

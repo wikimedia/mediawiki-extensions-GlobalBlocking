@@ -7,6 +7,7 @@ use LogFormatter;
 use LogPage;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingUserVisibilityLookup;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\Html\Html;
 use MediaWiki\Linker\Linker;
 use MediaWiki\Message\Message;
@@ -171,9 +172,17 @@ class GlobalBlockLogFormatter extends LogFormatter {
 			) );
 			$params[3] = '';
 		} else {
-			// Overwrite the third parameter (index 2) with a user link to provide a talk page link and link the
-			// contributions page for IP addresses.
-			$params[2] = Message::rawParam( $this->makeUserLink( $targetUserIdentity, Linker::TOOL_LINKS_NOBLOCK ) );
+			if ( GlobalBlockLookup::isAGlobalBlockId( $targetUserIdentity->getName() ) ) {
+				// Override the third-parameter to be the global block ID as plaintext, as no wikilink can be
+				// generated for an ID.
+				$params[2] = Message::plaintextParam( $targetUserIdentity->getName() );
+			} else {
+				// Overwrite the third parameter (index 2) with a user link to provide a talk page link and link the
+				// contributions page for IP addresses.
+				$params[2] = Message::rawParam(
+					$this->makeUserLink( $targetUserIdentity, Linker::TOOL_LINKS_NOBLOCK )
+				);
+			}
 			$params[3] = $targetUserIdentity->getName();
 		}
 

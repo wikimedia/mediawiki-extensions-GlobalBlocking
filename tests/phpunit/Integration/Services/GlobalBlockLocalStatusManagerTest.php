@@ -3,8 +3,11 @@
 namespace MediaWiki\Extension\GlobalBlocking\Test\Integration\Services;
 
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
+use MediaWiki\Linker\LinkTarget;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Title\Title;
+use MediaWiki\Title\TitleValue;
 use MediaWikiIntegrationTestCase;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
 
@@ -14,6 +17,8 @@ use Wikimedia\Timestamp\ConvertibleTimestamp;
  */
 class GlobalBlockLocalStatusManagerTest extends MediaWikiIntegrationTestCase {
 
+	private static int $globalBlockId;
+
 	public function setUp(): void {
 		ConvertibleTimestamp::setFakeTime( '2021-03-02T22:00:00Z' );
 		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
@@ -21,11 +26,24 @@ class GlobalBlockLocalStatusManagerTest extends MediaWikiIntegrationTestCase {
 		$this->overrideConfigValue( MainConfigNames::CentralIdLookupProvider, 'local' );
 	}
 
-	public function testLocallyDisableBlock() {
+	public static function provideValidTargets() {
+		return [
+			'Target specified via IP address' => [
+				fn () => '127.0.0.1', fn () => static::$globalBlockId,
+			],
+			'Target specified via global block ID' => [
+				fn () => '#' . static::$globalBlockId, fn () => static::$globalBlockId,
+			],
+		];
+	}
+
+	/** @dataProvider provideValidTargets */
+	public function testLocallyDisableBlock( $targetCallback, $globalBlockIdCallback ) {
+		$target = $targetCallback();
 		// Call the method under test
 		$performer = $this->getTestSysop()->getUser();
 		$status = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockLocalStatusManager()
-			->locallyDisableBlock( '127.0.0.1', 'test', $performer );
+			->locallyDisableBlock( $target, 'test', $performer );
 		$this->assertStatusGood( $status, 'The returned status should be good.' );
 		// Verify that the global_block_whitelist table has one row.
 		$row = $this->getDb()->newSelectQueryBuilder()
@@ -41,30 +59,33 @@ class GlobalBlockLocalStatusManagerTest extends MediaWikiIntegrationTestCase {
 				'gbw_address' => '',
 				'gbw_expiry' => 'infinity',
 				'gbw_target_central_id' => '0',
-				'gbw_id' => $this->getDb()->newSelectQueryBuilder()
-					->select( 'gb_id' )
-					->from( 'globalblocks' )
-					->where( [ 'gb_address' => '127.0.0.1' ] )
-					->fetchField(),
+				'gbw_id' => (string)$globalBlockIdCallback(),
 			],
 			(array)$row,
 			'The row in the global_block_whitelist table does not have the expected data.'
 		);
 		// Verify that the local disable caused the correct log entry
 		$this->assertThatLogWasAdded(
-			'127.0.0.1', 'whitelist',
+			$target, 'whitelist',
 			'Local disable log entry was not added even though the local disable was successful.'
 		);
 	}
 
-	public function testLocallyDisableBlockOnNonexistentBlock() {
+	/** @dataProvider provideNotBlockedTargets */
+	public function testLocallyDisableBlockOnNonexistentBlock( $target, $expectedErrorMessageKey ) {
 		$status = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockLocalStatusManager()
-			->locallyDisableBlock( '1.2.3.4', 'test', $this->getTestSysop()->getUser() );
+			->locallyDisableBlock( $target, 'test', $this->getTestSysop()->getUser() );
 		$this->assertStatusNotOK( $status, 'The returned status should be fatal.' );
 		$this->assertStatusMessage(
-			'globalblocking-notblocked', $status,
-			'The returned status did not indicate that no block existed.'
+			$expectedErrorMessageKey, $status, 'The returned status did not indicate that no block existed.'
 		);
+	}
+
+	public static function provideNotBlockedTargets() {
+		return [
+			'Unblocked IP address' => [ '1.2.3.4', 'globalblocking-notblocked' ],
+			'Global block ID which does not exist' => [ '#123456', 'globalblocking-notblocked-id' ],
+		];
 	}
 
 	public function testLocallyDisableBlockOnAlreadyDisabled() {
@@ -101,12 +122,14 @@ class GlobalBlockLocalStatusManagerTest extends MediaWikiIntegrationTestCase {
 		);
 	}
 
-	public function testLocallyEnableBlock() {
+	/** @dataProvider provideValidTargets */
+	public function testLocallyEnableBlock( $targetCallback ) {
+		$target = $targetCallback();
 		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
 		// Disable the block on 127.0.0.1 so that we can re-enable it
 		$testSysop = $this->getTestSysop()->getUser();
 		$globalBlockingServices->getGlobalBlockLocalStatusManager()
-			->locallyDisableBlock( '127.0.0.1', 'test', $testSysop );
+			->locallyDisableBlock( $target, 'test', $testSysop );
 		$this->assertSame(
 			1,
 			(int)$this->getDb()->newSelectQueryBuilder()
@@ -118,7 +141,7 @@ class GlobalBlockLocalStatusManagerTest extends MediaWikiIntegrationTestCase {
 		// Call the method under test to re-enable the block.
 		$performer = $this->getTestSysop()->getUser();
 		$status = $globalBlockingServices->getGlobalBlockLocalStatusManager()
-			->locallyEnableBlock( '127.0.0.1', 'test', $performer );
+			->locallyEnableBlock( $target, 'test', $performer );
 		$this->assertStatusGood( $status, 'The returned status should be good.' );
 		// Verify that the global_block_whitelist table has no rows.
 		$this->assertSame(
@@ -131,18 +154,18 @@ class GlobalBlockLocalStatusManagerTest extends MediaWikiIntegrationTestCase {
 		);
 		// Verify that the local enable caused the correct log entry
 		$this->assertThatLogWasAdded(
-			'127.0.0.1', 'dwhitelist',
+			$target, 'dwhitelist',
 			'Local enable log entry was not added even though the local enable was successful.'
 		);
 	}
 
-	public function testLocallyEnableBlockOnNonexistentBlock() {
+	/** @dataProvider provideNotBlockedTargets */
+	public function testLocallyEnableBlockOnNonexistentBlock( $target, $expectedErrorMessageKey ) {
 		$status = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockLocalStatusManager()
-			->locallyEnableBlock( '1.2.3.4', 'test', $this->getTestSysop()->getUser() );
+			->locallyEnableBlock( $target, 'test', $this->getTestSysop()->getUser() );
 		$this->assertStatusNotOK( $status, 'The returned status should be fatal.' );
 		$this->assertStatusMessage(
-			'globalblocking-notblocked', $status,
-			'The returned status did not indicate that no block existed.'
+			$expectedErrorMessageKey, $status, 'The returned status did not indicate that no block existed.'
 		);
 	}
 
@@ -157,6 +180,16 @@ class GlobalBlockLocalStatusManagerTest extends MediaWikiIntegrationTestCase {
 		);
 	}
 
+	private function getTargetForLogEntry( string $target ): LinkTarget {
+		// We need to use TitleValue::tryNew for block IDs, as the block ID contains a "#" character which
+		// causes the title to be rejected by Title::makeTitleSafe. In all other cases we can use Title::makeTitleSafe.
+		if ( GlobalBlockLookup::isAGlobalBlockId( $target ) ) {
+			return TitleValue::tryNew( NS_USER, $target );
+		} else {
+			return Title::makeTitleSafe( NS_USER, $target );
+		}
+	}
+
 	private function assertThatLogWasAdded( $target, $action, $failMessage ) {
 		$this->assertSame(
 			1,
@@ -165,7 +198,7 @@ class GlobalBlockLocalStatusManagerTest extends MediaWikiIntegrationTestCase {
 				->from( 'logging' )
 				->where( [
 					'log_type' => 'gblblock', 'log_action' => $action, 'log_namespace' => NS_USER,
-					'log_title' => Title::makeTitleSafe( NS_USER, $target )->getDBkey(),
+					'log_title' => $this->getTargetForLogEntry( $target )->getDBkey(),
 				] )
 				->caller( __METHOD__ )
 				->fetchField(),
@@ -176,7 +209,9 @@ class GlobalBlockLocalStatusManagerTest extends MediaWikiIntegrationTestCase {
 	public function addDBDataOnce() {
 		// Add a block to the database to test with
 		$performer = $this->getTestUser( [ 'steward', 'sysop' ] )->getUser();
-		GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager()
+		$globalBlockStatus = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager()
 			->block( '127.0.0.1', 'test', 'infinite', $performer );
+		$this->assertStatusGood( $globalBlockStatus );
+		self::$globalBlockId = $globalBlockStatus->getValue()['id'];
 	}
 }

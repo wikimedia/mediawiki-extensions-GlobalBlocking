@@ -5,7 +5,9 @@ namespace MediaWiki\Extension\GlobalBlocking\Services;
 use ManualLogEntry;
 use MediaWiki\Block\BlockUser;
 use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Linker\LinkTarget;
 use MediaWiki\Title\Title;
+use MediaWiki\Title\TitleValue;
 use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserIdentity;
@@ -82,15 +84,15 @@ class GlobalBlockManager {
 		$anonOnly = in_array( 'anon-only', $options );
 		$allowAccountCreation = in_array( 'allow-account-creation', $options );
 
-		if ( $anonOnly && !IPUtils::isIPAddress( $target ) ) {
+		if ( $anonOnly && !IPUtils::isIPAddress( $data['target'] ) ) {
 			// Anon-only blocks on an account does not make any sense, so reject them.
-			return StatusValue::newFatal( 'globalblocking-block-anononly-on-account', $target );
+			return StatusValue::newFatal( 'globalblocking-block-anononly-on-account', $data['targetForDisplay'] );
 		}
 
 		// Check for an existing block in the primary database database
 		$existingBlock = $this->globalBlockLookup->getGlobalBlockId( $data[ 'target' ], DB_PRIMARY );
 		if ( !$modify && $existingBlock ) {
-			return StatusValue::newFatal( 'globalblocking-block-alreadyblocked', $data[ 'target' ] );
+			return StatusValue::newFatal( 'globalblocking-block-alreadyblocked', $data['targetForDisplay'] );
 		}
 
 		// At this point, we have validated that a block can be inserted or updated.
@@ -136,7 +138,7 @@ class GlobalBlockManager {
 
 		if ( !$blockId ) {
 			// Race condition?
-			return StatusValue::newFatal( 'globalblocking-block-failure', $data[ 'target' ] );
+			return StatusValue::newFatal( 'globalblocking-block-failure', $data['targetForDisplay'] );
 		}
 
 		return StatusValue::newGood( [
@@ -147,7 +149,7 @@ class GlobalBlockManager {
 	/**
 	 * Block an IP address or range.
 	 *
-	 * @param string $target The IP address, IP range, or username to block
+	 * @param string $target The IP address, IP range, username, or block ID which is prefixed with "#".
 	 * @param string $reason The public reason to be shown in the global block log,
 	 *   on the global block list, and potentially to the blocked user when they try to edit.
 	 * @param string $expiry Any expiry that can be parsed by BlockUser::parseExpiryInput, including infinite.
@@ -181,7 +183,7 @@ class GlobalBlockManager {
 
 		$logEntry = new ManualLogEntry( 'gblblock', $logAction );
 		$logEntry->setPerformer( $blocker );
-		$logEntry->setTarget( Title::makeTitleSafe( NS_USER, $target ) );
+		$logEntry->setTarget( $this->getTargetForLogEntry( $target ) );
 		$logEntry->setComment( $reason );
 
 		$flags = [];
@@ -206,9 +208,26 @@ class GlobalBlockManager {
 	}
 
 	/**
+	 * Gets the target for the log entry for either a global unblock or global block.
+	 *
+	 * @param string $target The target provided by the user for the global block or unblock
+	 * @return LinkTarget The target to be used for the log entry
+	 */
+	private function getTargetForLogEntry( string $target ): LinkTarget {
+		// We need to use TitleValue::tryNew for block IDs, as the block ID contains a "#" character which
+		// causes the title to be rejected by Title::makeTitleSafe. In all other cases we can use Title::makeTitleSafe.
+		if ( GlobalBlockLookup::isAGlobalBlockId( $target ) ) {
+			return TitleValue::tryNew( NS_USER, $target );
+		} else {
+			return Title::makeTitleSafe( NS_USER, $target );
+		}
+	}
+
+	/**
 	 * Remove a global block from a given IP address or range.
 	 *
-	 * @param string $target The target of the block to be removed, which can be an IP address, IP range, or username.
+	 * @param string $target The target of the block to be removed, which can be an IP address, IP range, username, or
+	 *   block ID which is prefixed with "#".
 	 * @param string $reason The reason for removing the block which will be shown publicly in a log entry
 	 *   for the unblock.
 	 * @param UserIdentity $performer The user who is performing the unblock. The caller of this method is
@@ -226,7 +245,7 @@ class GlobalBlockManager {
 
 		$id = $this->globalBlockLookup->getGlobalBlockId( $data[ 'target' ], DB_PRIMARY );
 		if ( $id === 0 ) {
-			return StatusValue::newFatal( 'globalblocking-notblocked', $data['target'] );
+			return StatusValue::newFatal( 'globalblocking-notblocked', $data['targetForDisplay'] );
 		}
 
 		$this->globalBlockingConnectionProvider->getPrimaryGlobalBlockingDatabase()
@@ -238,7 +257,7 @@ class GlobalBlockManager {
 
 		$logEntry = new ManualLogEntry( 'gblblock', 'gunblock' );
 		$logEntry->setPerformer( $performer );
-		$logEntry->setTarget( Title::makeTitleSafe( NS_USER, $data['target'] ) );
+		$logEntry->setTarget( $this->getTargetForLogEntry( $data['targetForDisplay'] ) );
 		$logEntry->setComment( $reason );
 		$logEntry->setRelations( [ 'gb_id' => $id ] );
 		$logId = $logEntry->insert();
@@ -251,21 +270,42 @@ class GlobalBlockManager {
 	 * Validates that:
 	 * * If the target is an IP address range, it does not exceed range limits.
 	 * * If the target is a user, the username has a valid central ID.
+	 * * If the target is a block ID, the block ID is for an existing global block.
 	 *
-	 * @param string $target An IP address, IP range, or a username
+	 * @param string $target An IP address, IP range, a username, or global block ID
 	 * @return StatusValue Fatal if errors, Good if no errors
 	 */
 	private function validateInput( string $target, UserIdentity $performer ): StatusValue {
+		$targetForDisplay = $target;
+
+		if ( GlobalBlockLookup::isAGlobalBlockId( $target ) ) {
+			// If the $target is prefixed with "#" followed by digits, then this is a global block ID. Validate that
+			// this ID corresponds to an active global block, returning a fatal if not.
+			$targetForBlockId = $this->globalBlockingConnectionProvider->getPrimaryGlobalBlockingDatabase()
+				->newSelectQueryBuilder()
+				->select( 'gb_address' )
+				->from( 'globalblocks' )
+				->where( [ 'gb_id' => substr( $target, 1 ) ] )
+				->fetchField();
+
+			if ( !$targetForBlockId ) {
+				return StatusValue::newFatal( 'globalblocking-notblocked-id', $target );
+			}
+
+			$target = $targetForBlockId;
+		}
+
 		if ( !IPUtils::isIPAddress( $target ) ) {
 			$centralIdForTarget = $this->centralIdLookup->centralIdFromName(
 				$target,
 				$this->userFactory->newFromUserIdentity( $performer )
 			);
 			if ( $centralIdForTarget === 0 ) {
-				return StatusValue::newFatal( 'globalblocking-block-target-invalid', $target );
+				return StatusValue::newFatal( 'globalblocking-block-target-invalid', $targetForDisplay );
 			}
 			return StatusValue::newGood( [
 				'target' => $target,
+				'targetForDisplay' => $targetForDisplay,
 				'centralId' => $centralIdForTarget,
 				// 'rangeStart' and 'rangeEnd' have to be strings and not null
 				// due to the type of the DB columns.
@@ -283,14 +323,16 @@ class GlobalBlockManager {
 			$limit = $this->options->get( 'GlobalBlockingCIDRLimit' );
 			$ipVersion = IPUtils::isIPv4( $prefix ) ? 'IPv4' : 'IPv6';
 			if ( (int)$range < $limit[ $ipVersion ] ) {
-				return StatusValue::newFatal( 'globalblocking-bigrange', $target, $ipVersion, $limit[ $ipVersion ] );
+				return StatusValue::newFatal(
+					'globalblocking-bigrange', $targetForDisplay, $ipVersion, $limit[ $ipVersion ]
+				);
 			}
 		}
 
 		// The IP address target is valid, so return the sanitized target along with
 		// the start and the end of the range in hexadecimal (for a single IP address
 		// this is hexadecimal representation of the single IP address).
-		$data = [ 'centralId' => 0 ];
+		$data = [ 'centralId' => 0, 'targetForDisplay' => $targetForDisplay ];
 
 		[ $data[ 'rangeStart' ], $data[ 'rangeEnd' ] ] = IPUtils::parseRange( $target );
 

@@ -525,12 +525,11 @@ class GlobalBlockLookup {
 
 	/**
 	 * Given a specific target, find the ID for the global block that applies to it.
-	 * If no global block targets this IP address specifically, then this method
-	 * returns 0.
+	 * If no global block exists for this target, then this method returns 0.
 	 *
-	 * @param string $target The specific target which can be a username, IP address or range. The target being
-	 *   specific means that if you provide a single IP which is covered by a range block, the range block will
-	 *   not be returned. Use ::getGlobalBlockingBlock to include these blocks.
+	 * @param string $target The specific target which can be a username, IP address, range, or global block ID that
+	 *   may or may not exist. The target being specific means that if you provide a single IP which is covered by a
+	 *   range block, the range block will not be returned. Use ::getGlobalBlockingBlock to include these blocks.
 	 * @param int $dbtype Either DB_REPLICA or DB_PRIMARY.
 	 * @return int
 	 */
@@ -546,7 +545,10 @@ class GlobalBlockLookup {
 			->from( 'globalblocks' )
 			->where( $db->expr( 'gb_expiry', '>', $db->timestamp() ) );
 
-		if ( IPUtils::isIPAddress( $target ) ) {
+		$globalBlockId = self::isAGlobalBlockId( $target );
+		if ( $globalBlockId ) {
+			$queryBuilder->where( [ 'gb_id' => $globalBlockId ] );
+		} elseif ( IPUtils::isIPAddress( $target ) ) {
 			$queryBuilder->where( [ 'gb_address' => $target ] );
 		} else {
 			$centralId = $this->centralIdLookup->centralIdFromName( $target, CentralIdLookup::AUDIENCE_RAW );
@@ -561,6 +563,24 @@ class GlobalBlockLookup {
 		return (int)$queryBuilder
 			->caller( __METHOD__ )
 			->fetchField();
+	}
+
+	/**
+	 * Determines if a given string is in the format of a global block ID.
+	 *
+	 * This method does not validate that the global block ID actually exists. Use
+	 * {@link GlobalBlockLookup::getGlobalBlockId} for that.
+	 *
+	 * @param string $target The string to check
+	 * @return int|false False if the string is not in the format of a global block ID, or the ID of the global
+	 *   block if it is in the format of a global block ID.
+	 */
+	public static function isAGlobalBlockId( string $target ) {
+		$isTargetABlockId = preg_match( '/^#\d+$/', $target );
+		if ( $isTargetABlockId ) {
+			return intval( substr( $target, 1 ) );
+		}
+		return false;
 	}
 
 	/**
