@@ -3,6 +3,7 @@
 namespace MediaWiki\Extension\GlobalBlocking;
 
 use MediaWiki\Extension\GlobalBlocking\Maintenance\PopulateCentralId;
+use MediaWiki\Extension\GlobalBlocking\Maintenance\UpdateAutoBlockParentIdColumn;
 use MediaWiki\Installer\DatabaseUpdater;
 use MediaWiki\Installer\Hook\LoadExtensionSchemaUpdatesHook;
 
@@ -102,5 +103,6 @@ class GlobalBlockingSchemaHooks implements LoadExtensionSchemaUpdatesHook {
 			'virtual-globalblocking', 'renameIndex', 'globalblocks', 'gb_address', 'gb_address_autoblock_parent_id',
 			false, "$base/sql/$type/patch-globalblocks-modify-gb_address-index.sql", true,
 		] );
+		$updater->addPostDatabaseUpdateMaintenance( UpdateAutoBlockParentIdColumn::class );
 	}
 }
