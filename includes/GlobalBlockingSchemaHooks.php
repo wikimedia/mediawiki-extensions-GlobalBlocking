@@ -6,6 +6,8 @@ use MediaWiki\Extension\GlobalBlocking\Maintenance\PopulateCentralId;
 use MediaWiki\Extension\GlobalBlocking\Maintenance\UpdateAutoBlockParentIdColumn;
 use MediaWiki\Installer\DatabaseUpdater;
 use MediaWiki\Installer\Hook\LoadExtensionSchemaUpdatesHook;
+use MediaWiki\MediaWikiServices;
+use Wikimedia\Rdbms\IMaintainableDatabase;
 
 class GlobalBlockingSchemaHooks implements LoadExtensionSchemaUpdatesHook {
 
@@ -17,6 +19,10 @@ class GlobalBlockingSchemaHooks implements LoadExtensionSchemaUpdatesHook {
 	public function onLoadExtensionSchemaUpdates( $updater ) {
 		$base = __DIR__ . '/..';
 		$type = $updater->getDB()->getType();
+		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+		/** @var IMaintainableDatabase $virtualGlobalBlockingDb */
+		$virtualGlobalBlockingDb = $lbFactory->getPrimaryDatabase( 'virtual-globalblocking' );
+		'@phan-var IMaintainableDatabase $virtualGlobalBlockingDb';
 
 		$updater->addExtensionUpdateOnVirtualDomain( [
 			'virtual-globalblocking', 'addTable', 'globalblocks',
@@ -38,7 +44,7 @@ class GlobalBlockingSchemaHooks implements LoadExtensionSchemaUpdatesHook {
 			'runMaintenance',
 			PopulateCentralId::class
 		] );
-		if ( $updater->fieldExists( 'globalblocks', 'gb_by' ) ) {
+		if ( $virtualGlobalBlockingDb->fieldExists( 'globalblocks', 'gb_by', __METHOD__ ) ) {
 			$updater->addExtensionUpdateOnVirtualDomain( [
 				'virtual-globalblocking', 'modifyField', 'globalblocks', 'gb_anon_only',
 				"$base/sql/$type/patch-globalblocks-gb_anon_only.sql", true,
@@ -46,7 +52,7 @@ class GlobalBlockingSchemaHooks implements LoadExtensionSchemaUpdatesHook {
 		}
 
 		// 1.39
-		if ( $updater->fieldExists( 'globalblocks', 'gb_by' ) ) {
+		if ( $virtualGlobalBlockingDb->fieldExists( 'globalblocks', 'gb_by', __METHOD__ ) ) {
 			$updater->addExtensionUpdateOnVirtualDomain( [
 				'virtual-globalblocking', 'modifyField', 'globalblocks', 'gb_expiry',
 				"$base/sql/$type/patch-globalblocks-timestamps.sql", true,
@@ -70,7 +76,7 @@ class GlobalBlockingSchemaHooks implements LoadExtensionSchemaUpdatesHook {
 			'gbw_target_central_id',
 			"$base/sql/$type/patch-add-gbw_target_central_id.sql"
 		);
-		if ( $updater->fieldExists( 'globalblocks', 'gb_by' ) ) {
+		if ( $virtualGlobalBlockingDb->fieldExists( 'globalblocks', 'gb_by', __METHOD__ ) ) {
 			$updater->addExtensionUpdateOnVirtualDomain( [
 				'virtual-globalblocking', 'modifyField', 'globalblocks', 'gb_by',
 				"$base/sql/$type/patch-modify-gb_by-default.sql", true,
@@ -103,6 +109,19 @@ class GlobalBlockingSchemaHooks implements LoadExtensionSchemaUpdatesHook {
 			'virtual-globalblocking', 'renameIndex', 'globalblocks', 'gb_address', 'gb_address_autoblock_parent_id',
 			false, "$base/sql/$type/patch-globalblocks-modify-gb_address-index.sql", true,
 		] );
-		$updater->addPostDatabaseUpdateMaintenance( UpdateAutoBlockParentIdColumn::class );
+		// We can skip running the update script if the column is not nullable, as it means that it has been
+		// ran before or does not need to be run because there is no data to update.
+		$autoBlockParentIdFieldInfo = $virtualGlobalBlockingDb->fieldInfo( 'globalblocks', 'gb_autoblock_parent_id' );
+		if ( $autoBlockParentIdFieldInfo && $autoBlockParentIdFieldInfo->isNullable() ) {
+			$updater->addExtensionUpdateOnVirtualDomain( [
+				'virtual-globalblocking',
+				'runMaintenance',
+				UpdateAutoBlockParentIdColumn::class
+			] );
+		}
+		$updater->addExtensionUpdateOnVirtualDomain( [
+			'virtual-globalblocking', 'modifyField', 'globalblocks', 'gb_autoblock_parent_id',
+			"$base/sql/$type/patch-globalblocks-modify-gb_autoblock_parent_id-default.sql", true,
+		] );
 	}
 }

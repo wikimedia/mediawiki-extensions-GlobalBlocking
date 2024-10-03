@@ -65,9 +65,9 @@
 			},
 			{
 				"name": "gb_autoblock_parent_id",
-				"comment": "If null, then this is not an autoblock. If an integer, then this is an autoblock and the integer is the gb_id for the global block that caused this autoblock. This value is set for autoblocks to allow deleting the autoblock when the parent block is deleted.",
+				"comment": "If 0, then this is not an autoblock. If any other value, then this is an autoblock and the integer is the gb_id for the global block that caused this autoblock. This value is set for autoblocks to allow deleting the autoblock when the parent block is deleted.",
 				"type": "integer",
-				"options": { "notnull": false, "unsigned": true, "default": null }
+				"options": { "notnull": true, "unsigned": true, "default": 0 }
 			},
 			{
 				"name": "gb_expiry",
