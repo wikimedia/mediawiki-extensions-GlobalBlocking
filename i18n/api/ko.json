@@ -7,7 +7,7 @@
 	},
 	"globalblocking-apierror-badip": "$1 IP 주소는 유효하지 않습니다",
 	"apihelp-globalblock-summary": "사용자를 전역 차단하거나 해제합니다.",
-	"apihelp-globalblock-param-target": "차단할 IP 주소",
+	"apihelp-globalblock-param-target": "대상 IP 주소 또는 사용자 이름입니다.",
 	"apihelp-globalblock-param-expiry": "지정하면 사용자를 차단하거나 다시 차단합니다. 차단이 얼만큼 오랫동안 지속될지를 결정합니다. (예: \"5 months\" 또는 \"2 weeks\") \"infinite\" 또는 \"indefinite\"으로 설정하면 무기한으로 차단합니다.",
 	"apihelp-globalblock-param-unblock": "지정하면 사용자의 차단을 해제합니다.",
 	"apihelp-globalblock-param-reason": "차단/차단 해제 사유",
@@ -19,7 +19,12 @@
 	"apihelp-query+globalblocks-param-end": "나열을 끝낼 타임스탬프",
 	"apihelp-query+globalblocks-param-ids": "나열할 차단 ID, 파이프로 분리",
 	"apihelp-query+globalblocks-param-addresses": "검색할 IP 주소, 파이프로 분리",
+	"apihelp-query+globalblocks-param-limit": "나열한 최대 차단 수입니다.",
 	"apihelp-query+globalblocks-param-prop": "가져올 속성입니다.",
 	"apihelp-query+globalblocks-example-1": "모든 전역 차단 나열",
+	"apihelp-query+globalblocks-example-2": "IP 주소 192.0.2.18에 해당하는 전역 차단을 나열합니다",
+	"apihelp-globalblock-param-alsolocal": "로컬에서도 사용자를 차단합니다",
+	"apihelp-globalblock-param-localblockstalk": "로컬에서 토론 문서의 접근 권한을 박탈합니다",
+	"apihelp-globalblock-param-localblocksemail": "로컬에서 이메일 접근 권한을 박탈합니다",
 	"apihelp-globalblock-param-localanononly": "로그아웃한 사용자만 로컬로 영향을 미치도록 하려면 지정하십시오."
 }
