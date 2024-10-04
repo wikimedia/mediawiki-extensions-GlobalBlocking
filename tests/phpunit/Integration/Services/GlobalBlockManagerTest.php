@@ -37,7 +37,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 			->getGlobalBlockingConnectionProvider()
 			->getReplicaGlobalBlockingDatabase();
 		$queryBuilder = $dbr->newSelectQueryBuilder()
-			->select( [ 'gb_anon_only', 'gb_reason', 'gb_expiry', 'gb_create_account' ] )
+			->select( [ 'gb_anon_only', 'gb_reason', 'gb_expiry', 'gb_create_account', 'gb_enable_autoblock' ] )
 			->from( 'globalblocks' )
 			->where( [
 				'gb_address' => $target,
@@ -54,7 +54,8 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 		$block = $queryBuilder->fetchRow();
 		if ( $block ) {
 			$blockOptions['anon-only'] = $block->gb_anon_only;
-			$blockOptions['create-account'] = $block->gb_create_account;
+			$blockOptions['allow-account-creation'] = (string)intval( !$block->gb_create_account );
+			$blockOptions['enable-autoblock'] = $block->gb_enable_autoblock;
 			$blockOptions['reason'] = $block->gb_reason;
 			$blockOptions['expiry'] = ( $block->gb_expiry === 'infinity' )
 				? 'infinity'
@@ -119,6 +120,17 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 		$this->assertStatusError( 'globalblocking-block-failure', $errors );
 	}
 
+	private function assertGlobalBlockOptionApplied(
+		array $data, string $optionKey, $expectedValueWhenPresent, $expectedValueWhenNotPresent, array $actual
+	) {
+		if ( in_array( $optionKey, $data['options'] ) ) {
+			$expectedAnon = $expectedValueWhenPresent;
+		} else {
+			$expectedAnon = $expectedValueWhenNotPresent;
+		}
+		$this->assertSame( $expectedAnon, $actual[ $optionKey ] );
+	}
+
 	/** @dataProvider provideBlock */
 	public function testBlock( array $data, string $expectedError ) {
 		// Create a testing block on 1.2.3.6 so that we can test block modification.
@@ -145,18 +157,9 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 			$actual = $this->getGlobalBlock( $data[ 'target' ] );
 			$this->assertSame( $data[ 'reason' ], $actual[ 'reason' ] );
 			$this->assertSame( $data[ 'expiry' ], $actual[ 'expiry' ] );
-			if ( in_array( 'anon-only', $data[ 'options' ] ) ) {
-				$expectedAnon = '1';
-			} else {
-				$expectedAnon = '0';
-			}
-			$this->assertSame( $expectedAnon, $actual[ 'anon-only' ] );
-			if ( in_array( 'allow-account-creation', $data['options'] ) ) {
-				$expectedCreateAccount = '0';
-			} else {
-				$expectedCreateAccount = '1';
-			}
-			$this->assertSame( $expectedCreateAccount, $actual[ 'create-account' ] );
+			$this->assertGlobalBlockOptionApplied( $data, 'anon-only', '1', '0', $actual );
+			$this->assertGlobalBlockOptionApplied( $data, 'allow-account-creation', '1', '0', $actual );
+			$this->assertGlobalBlockOptionApplied( $data, 'enable-autoblock', '1', '0', $actual );
 			// Assert that a log entry was added to the 'logging' table for the block
 			$this->assertThatLogWasAdded(
 				$data[ 'target' ],
@@ -267,6 +270,15 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 				],
 				'expectedError' => 'globalblocking-block-alreadyblocked',
 			],
+			'Attempting to autoblock an IP address' => [
+				'data' => [
+					'target' => '1.2.3.6',
+					'reason' => 'Test block',
+					'expiry' => 'infinity',
+					'options' => [ 'enable-autoblock' ],
+				],
+				'expectedError' => 'globalblocking-block-enable-autoblock-on-ip',
+			],
 		];
 	}
 
@@ -289,6 +301,8 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 			$this->assertSame( $data['reason'], $actual['reason'] );
 			$this->assertSame( $data['expiry'], $actual['expiry'] );
 			$this->assertSame( 0, (int)$actual['anon-only'] );
+			$this->assertGlobalBlockOptionApplied( $data, 'allow-account-creation', '1', '0', $actual );
+			$this->assertGlobalBlockOptionApplied( $data, 'enable-autoblock', '1', '0', $actual );
 			// Assert that a log entry was added to the 'logging' table for the block
 			$this->assertThatLogWasAdded(
 				$testUser->getName(), 'gblock',
@@ -312,6 +326,14 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'reason' => 'Test block',
 					'expiry' => 'infinity',
 					'options' => [ 'allow-account-creation' ],
+				],
+				'expectedError' => '',
+			],
+			'good with autoblocking enabled' => [
+				'data' => [
+					'reason' => 'Test block',
+					'expiry' => 'infinity',
+					'options' => [ 'enable-autoblock' ],
 				],
 				'expectedError' => '',
 			],

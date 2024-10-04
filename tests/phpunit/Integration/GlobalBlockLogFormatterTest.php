@@ -84,6 +84,19 @@ class GlobalBlockLogFormatterTest extends LogFormatterTestCase {
 					'api' => [ 'expiry' => '20240504030201', 'flags' => [ 'anon-only' ] ],
 				],
 			],
+			'Global block on account with infinite expiry with account creation enabled and autoblocks enabled' => [
+				'row' => [
+					'type' => 'gblblock', 'action' => 'gblock', 'user_text' => 'Sysop',
+					'title' => 'Test-globally-blocked', 'namespace' => NS_USER,
+					'params' => [
+						'5::expiry' => 'infinite', '6::flags' => [ 'allow-account-creation', 'enable-autoblock' ],
+					],
+				],
+				'extra' => [
+					'text' => 'Sysop globally blocked Test-globally-blocked with an expiration time of infinite',
+					'api' => [ 'expiry' => 'infinite', 'flags' => [ 'allow-account-creation', 'enable-autoblock' ] ],
+				],
+			],
 			'Global block on account with infinite expiry with account creation enabled' => [
 				'row' => [
 					'type' => 'gblblock', 'action' => 'gblock', 'user_text' => 'Sysop',
@@ -91,7 +104,8 @@ class GlobalBlockLogFormatterTest extends LogFormatterTestCase {
 					'params' => [ '5::expiry' => 'infinite', '6::flags' => [ 'allow-account-creation' ] ],
 				],
 				'extra' => [
-					'text' => 'Sysop globally blocked Test-globally-blocked with an expiration time of infinite',
+					'text' => 'Sysop globally blocked Test-globally-blocked with an expiration time of infinite ' .
+						'(autoblock disabled)',
 					'api' => [ 'expiry' => 'infinite', 'flags' => [ 'allow-account-creation' ] ],
 				],
 			],
@@ -103,7 +117,7 @@ class GlobalBlockLogFormatterTest extends LogFormatterTestCase {
 				'extra' => [
 					'legacy' => true,
 					'text' => 'Sysop globally blocked 1.2.3.4/24 with an expiration time of 3 months ' .
-						'(account creation disabled)',
+						'(account creation disabled, autoblock disabled)',
 					'api' => [ '3 months' ],
 				],
 			],
@@ -116,7 +130,7 @@ class GlobalBlockLogFormatterTest extends LogFormatterTestCase {
 				'extra' => [
 					'legacy' => true,
 					'text' => 'Sysop globally blocked 1.2.3.4/24 (expiration 13:24, 27 February 2024, account ' .
-						'creation disabled)',
+						'creation disabled, autoblock disabled)',
 					'api' => [ 'expiration 13:24, 27 February 2024', '1.2.3.4/24' ],
 				],
 			],
@@ -128,7 +142,7 @@ class GlobalBlockLogFormatterTest extends LogFormatterTestCase {
 				],
 				'extra' => [
 					'text' => 'Sysop changed global block settings for Test-globally-blocked with an ' .
-						'expiration time of 02:01, 3 April 2025 (account creation disabled)',
+						'expiration time of 02:01, 3 April 2025 (account creation disabled, autoblock disabled)',
 					'api' => [ 'expiry' => '20250403020100', 'flags' => [] ],
 				],
 			],
@@ -140,8 +154,27 @@ class GlobalBlockLogFormatterTest extends LogFormatterTestCase {
 				],
 				'extra' => [
 					'text' => 'Sysop changed global block settings for Test-globally-blocked with an ' .
-						'expiration time of 02:01, 3 April 2025',
+						'expiration time of 02:01, 3 April 2025 (autoblock disabled)',
 					'api' => [ 'expiry' => '20250403020100', 'flags' => [ 'allow-account-creation' ] ],
+				],
+			],
+			'Modification of global block on account with temporary expiry with account creation enabled ' .
+				'and autoblocks enabled' => [
+				'row' => [
+					'type' => 'gblblock', 'action' => 'modify', 'user_text' => 'Sysop',
+					'title' => 'Test-globally-blocked', 'namespace' => NS_USER,
+					'params' => [
+						'5::expiry' => '20250403020100',
+						'6::flags' => [ 'allow-account-creation', 'enable-autoblock' ],
+					],
+				],
+				'extra' => [
+					'text' => 'Sysop changed global block settings for Test-globally-blocked with an ' .
+						'expiration time of 02:01, 3 April 2025',
+					'api' => [
+						'expiry' => '20250403020100',
+						'flags' => [ 'allow-account-creation', 'enable-autoblock' ],
+					],
 				],
 			],
 			'Legacy modification of global block on IP with temporary expiry' => [
@@ -153,7 +186,7 @@ class GlobalBlockLogFormatterTest extends LogFormatterTestCase {
 				'extra' => [
 					'legacy' => true,
 					'text' => 'Sysop changed global block settings for 1.2.3.4 (expiration 22:05, 28 February 2024, ' .
-						'account creation disabled)',
+						'account creation disabled, autoblock disabled)',
 					'api' => [ 'expiration 22:05, 28 February 2024', '1.2.3.4' ],
 				],
 			],
@@ -166,7 +199,7 @@ class GlobalBlockLogFormatterTest extends LogFormatterTestCase {
 				'extra' => [
 					'legacy' => true,
 					'text' => 'Sysop globally blocked 1.2.3.4 with an expiration time of 31hours (account creation ' .
-						'disabled)',
+						'disabled, autoblock disabled)',
 					'api' => [ '31hours' ],
 				],
 			],
@@ -179,7 +212,7 @@ class GlobalBlockLogFormatterTest extends LogFormatterTestCase {
 				'extra' => [
 					'legacy' => true,
 					'text' => 'Sysop globally blocked 1.2.3.4 with an expiration time of 31hours (anonymous only, ' .
-						'account creation disabled)',
+						'account creation disabled, autoblock disabled)',
 					'api' => [ '31hours', 'anonymous only' ],
 				],
 			],
@@ -192,7 +225,7 @@ class GlobalBlockLogFormatterTest extends LogFormatterTestCase {
 				'extra' => [
 					'legacy' => true,
 					'text' => 'Sysop globally blocked 1.2.3.4 with an expiration time of 31hours ' .
-						'(anonymous users only, account creation disabled)',
+						'(anonymous users only, account creation disabled, autoblock disabled)',
 					'api' => [ '31hours', 'anon-only' ],
 				],
 			],
@@ -205,7 +238,7 @@ class GlobalBlockLogFormatterTest extends LogFormatterTestCase {
 				'extra' => [
 					'legacy' => true,
 					'text' => 'Sysop globally blocked 1.2.3.0/24 with an expiration time of 31hours ' .
-						'(anonymous users only, account creation disabled)',
+						'(anonymous users only, account creation disabled, autoblock disabled)',
 					'api' => [ '31hours', 'anon-only' ],
 				],
 			],
@@ -269,7 +302,8 @@ class GlobalBlockLogFormatterTest extends LogFormatterTestCase {
 		if ( $shouldShowAction ) {
 			$expectedName = $targetUser->getName();
 			$this->assertEquals(
-				"Sysop globally blocked $expectedName with an expiration time of infinite (account creation disabled)",
+				"Sysop globally blocked $expectedName with an expiration time of infinite " .
+					'(account creation disabled, autoblock disabled)',
 				trim( strip_tags( $formatter->getActionText() ) ),
 				'Action text is equal to expected text.'
 			);
@@ -340,7 +374,8 @@ class GlobalBlockLogFormatterTest extends LogFormatterTestCase {
 		$formatter = $this->getServiceContainer()->getLogFormatterFactory()->newFromRow( $row );
 		$formatter->context->setAuthority( $logViewAuthority );
 		$this->assertEquals(
-			"Sysop globally blocked $expectedName with an expiration time of infinite (account creation disabled)",
+			"Sysop globally blocked $expectedName with an expiration time of infinite " .
+				'(account creation disabled, autoblock disabled)',
 			trim( strip_tags( $formatter->getActionText() ) ),
 			'Action text is equal to expected text'
 		);
@@ -415,7 +450,7 @@ class GlobalBlockLogFormatterTest extends LogFormatterTestCase {
 		$formatter->context->setAuthority( $logViewAuthority );
 		$this->assertEquals(
 			"Sysop globally blocked $expectedName with an expiration time of infinite " .
-			'(account creation disabled)',
+				'(account creation disabled, autoblock disabled)',
 			trim( strip_tags( $formatter->getActionText() ) ),
 			'Action text is equal to expected text'
 		);

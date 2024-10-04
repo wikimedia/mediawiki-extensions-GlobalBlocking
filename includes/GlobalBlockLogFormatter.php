@@ -15,6 +15,7 @@ use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserIdentityLookup;
 use MediaWiki\User\UserIdentityValue;
 use UnexpectedValueException;
+use Wikimedia\IPUtils;
 
 /**
  * Log formatter for gblblock/* entries
@@ -95,6 +96,7 @@ class GlobalBlockLogFormatter extends LogFormatter {
 	protected function getMessageParameters(): array {
 		$params = parent::getMessageParameters();
 
+		$targetUserIdentity = $this->getUserIdentityForTarget();
 		if ( $this->entry->isLegacy() ) {
 			if ( in_array( $this->entry->getSubtype(), [ 'gblock2', 'modify', 'gblock' ] ) ) {
 				// If the entry parameters are in the legacy format and the log subtype has parameters defined,
@@ -114,8 +116,10 @@ class GlobalBlockLogFormatter extends LogFormatter {
 					if ( $params[5] !== '' ) {
 						$flags[] = $params[5];
 					}
-					// All legacy global blocking logs disable account creation, so mark them as such.
+					// All legacy global blocking logs disable account creation and have autoblocks disabled,
+					// so mark them as such.
 					$flags[] = $this->msg( 'globalblocking-block-flag-account-creation-disabled' )->text();
+					$flags[] = $this->msg( 'globalblocking-block-flag-autoblock-disabled' )->text();
 					// Wrap the flags in parentheses.
 					$params[5] = $this->msg(
 						'parentheses',
@@ -126,8 +130,10 @@ class GlobalBlockLogFormatter extends LogFormatter {
 					if ( $params[4] !== '' ) {
 						$flags[] = $params[4];
 					}
-					// All legacy global blocking logs disable account creation, so mark them as such.
+					// All legacy global blocking logs disable account creation and have autoblocks disabled,
+					// so mark them as such.
 					$flags[] = $this->msg( 'globalblocking-block-flag-account-creation-disabled' )->text();
+					$flags[] = $this->msg( 'globalblocking-block-flag-autoblock-disabled' )->text();
 					$params[4] = $this->context->getLanguage()->commaList( $flags );
 				}
 			}
@@ -146,6 +152,15 @@ class GlobalBlockLogFormatter extends LogFormatter {
 			if ( !in_array( 'allow-account-creation', $params[5] ) ) {
 				$flags[] = $this->msg( 'globalblocking-block-flag-account-creation-disabled' )->text();
 			}
+			// We have to do an inverse check here, because before T374853 no flag was set to indicate if
+			// autoblocks were enabled. Also autoblocks cannot be enabled for IP blocks, so skip indicating this
+			// when the target is an IP or IP range.
+			if (
+				!in_array( 'enable-autoblock', $params[5] ) &&
+				!IPUtils::isIPAddress( $targetUserIdentity->getName() )
+			) {
+				$flags[] = $this->msg( 'globalblocking-block-flag-autoblock-disabled' )->text();
+			}
 			// Only display the flags if there are any set.
 			if ( count( $flags ) ) {
 				$params[5] = $this->msg(
@@ -157,7 +172,6 @@ class GlobalBlockLogFormatter extends LogFormatter {
 			}
 		}
 
-		$targetUserIdentity = $this->getUserIdentityForTarget();
 		$canViewTarget = $this->globalBlockingUserVisibilityLookup->checkAuthorityCanSeeUser(
 			$targetUserIdentity->getName(), $this->context->getAuthority()
 		);
