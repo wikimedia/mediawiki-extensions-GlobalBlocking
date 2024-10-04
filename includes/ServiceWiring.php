@@ -103,8 +103,10 @@ return [
 			$globalBlockingServices->getGlobalBlockingBlockPurger(),
 			$globalBlockingServices->getGlobalBlockLookup(),
 			$globalBlockingServices->getGlobalBlockingConnectionProvider(),
+			$globalBlockingServices->getGlobalAutoblockExemptionListProvider(),
 			$services->getCentralIdLookup(),
-			$services->getUserFactory()
+			$services->getUserFactory(),
+			LoggerFactory::getInstance( 'GlobalBlocking' )
 		);
 	},
 	'GlobalBlocking.GlobalBlockingLinkBuilder' => static function (

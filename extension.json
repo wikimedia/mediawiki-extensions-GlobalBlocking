@@ -270,6 +270,10 @@
 		"GlobalBlockingCentralWikiContentLanguage": {
 			"description": "The content language of the central wiki specified in $wgGlobalBlockingCentralWiki. Used to appropriately set the language for reason used for autoblocks. If unset, the content language of the wiki where the autoblock was triggered will be used.",
 			"value": false
+		},
+		"GlobalBlockingAutoblockExpiry": {
+			"description": "The maximum number of seconds that an autoblock can last. If the parent block expires before this maximum, the expiry will the expiry of the parent block. Default 86400 = 1 day.",
+			"value": "86400"
 		}
 	},
 	"ServiceWiringFiles": [

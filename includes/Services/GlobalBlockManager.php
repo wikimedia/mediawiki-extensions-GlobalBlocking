@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\GlobalBlocking\Services;
 use ManualLogEntry;
 use MediaWiki\Block\BlockUser;
 use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Language\RawMessage;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\Title\Title;
 use MediaWiki\Title\TitleValue;
@@ -12,6 +13,8 @@ use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\WikiMap\WikiMap;
+use Psr\Log\LoggerInterface;
+use RuntimeException;
 use StatusValue;
 use Wikimedia\IPUtils;
 
@@ -24,30 +27,37 @@ class GlobalBlockManager {
 
 	public const CONSTRUCTOR_OPTIONS = [
 		'GlobalBlockingCIDRLimit',
+		'GlobalBlockingAutoblockExpiry',
 	];
 
 	private ServiceOptions $options;
 	private GlobalBlockingBlockPurger $globalBlockingBlockPurger;
 	private GlobalBlockLookup $globalBlockLookup;
 	private GlobalBlockingConnectionProvider $globalBlockingConnectionProvider;
+	private GlobalBlockingGlobalAutoblockExemptionListProvider $globalAutoblockExemptionListProvider;
 	private CentralIdLookup $centralIdLookup;
 	private UserFactory $userFactory;
+	private LoggerInterface $logger;
 
 	public function __construct(
 		ServiceOptions $options,
 		GlobalBlockingBlockPurger $globalBlockingBlockPurger,
 		GlobalBlockLookup $globalBlockLookup,
 		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
+		GlobalBlockingGlobalAutoblockExemptionListProvider $globalAutoblockExemptionListProvider,
 		CentralIdLookup $centralIdLookup,
-		UserFactory $userFactory
+		UserFactory $userFactory,
+		LoggerInterface $logger
 	) {
 		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
 		$this->options = $options;
 		$this->globalBlockingBlockPurger = $globalBlockingBlockPurger;
 		$this->globalBlockLookup = $globalBlockLookup;
 		$this->globalBlockingConnectionProvider = $globalBlockingConnectionProvider;
+		$this->globalAutoblockExemptionListProvider = $globalAutoblockExemptionListProvider;
 		$this->centralIdLookup = $centralIdLookup;
 		$this->userFactory = $userFactory;
+		$this->logger = $logger;
 	}
 
 	/**
@@ -241,6 +251,131 @@ class GlobalBlockManager {
 		$logEntry->publish( $logId );
 
 		return $status;
+	}
+
+	/**
+	 * Globally autoblocks the given IP address with the provided $parentId as the parent global block.
+	 *
+	 * @param int $parentId The ID of the globalblocks row that is causing this autoblock
+	 * @param string $ip The IP address to be autoblocked
+	 * @return StatusValue
+	 */
+	public function autoblock( int $parentId, string $ip ): StatusValue {
+		$ip = IPUtils::sanitizeIP( $ip );
+
+		if ( !$ip || !IPUtils::isValid( $ip ) ) {
+			// We shouldn't encounter this error, and this is more of a sanity check. Therefore, we shouldn't need to
+			// translate this error message to save time for the translators.
+			return StatusValue::newFatal( new RawMessage( 'IP provided for autoblocking is invalid.' ) );
+		}
+
+		if ( $this->globalAutoblockExemptionListProvider->isExempt( $ip ) ) {
+			return StatusValue::newGood();
+		}
+
+		// We need to perform a primary lookup as the parent block may have just been inserted and we are now
+		// retroactively autoblocking.
+		$dbw = $this->globalBlockingConnectionProvider->getPrimaryGlobalBlockingDatabase();
+		$parentBlock = $dbw->newSelectQueryBuilder()
+			->select( GlobalBlockLookup::selectFields() )
+			->from( 'globalblocks' )
+			->where( [ 'gb_id' => $parentId ] )
+			->caller( __METHOD__ )
+			->fetchRow();
+
+		if ( $parentBlock === false ) {
+			// The block should exist, so return a fatal as this likely indicates a bug. Also create an error log
+			// to keep an eye on this.
+			$this->logger->error(
+				'Autoblock attempted on IP when parent block #{id} does not exist',
+				[ 'id' => $parentId, 'exception' => new RuntimeException ]
+			);
+			return StatusValue::newFatal( 'globalblocking-notblocked-id', $parentId );
+		}
+
+		// Return if the block does not cause autoblocks.
+		if ( !$parentBlock->gb_enable_autoblock ) {
+			return StatusValue::newGood();
+		}
+
+		// We need to perform the lookup on primary because in the case of multiple users being globally blocked at
+		// the same time, this method may be called too quickly for replication to occur.
+		$globalBlocksOnIP = $dbw->newSelectQueryBuilder()
+			->select( [ 'gb_autoblock_parent_id', 'gb_id', 'gb_expiry' ] )
+			->from( 'globalblocks' )
+			->where( [ 'gb_address' => $ip ] )
+			->caller( __METHOD__ )
+			->fetchResultSet();
+		$parentBlockExpiry = $dbw->decodeExpiry( $parentBlock->gb_expiry );
+		$timestamp = wfTimestampNow();
+
+		// If blocks exist on the the IP to be autoblocked, then don't make a new autoblock as it would be redundant.
+		if ( $globalBlocksOnIP->numRows() ) {
+			foreach ( $globalBlocksOnIP as $block ) {
+				if ( $block->gb_autoblock_parent_id ) {
+					// Update the expiration of autoblocks on this IP if our parent block expires after the autoblock.
+					// This is so that the autoblock is refreshed when a blocked user tries to use the IP again.
+					$autoblockExpiry = $dbw->decodeExpiry( $block->gb_expiry );
+
+					if ( $parentBlockExpiry !== 'infinity' && $parentBlockExpiry < $autoblockExpiry ) {
+						continue;
+					}
+
+					$dbw->newUpdateQueryBuilder()
+						->update( 'globalblocks' )
+						->set( [
+							'gb_timestamp' => $timestamp,
+							'gb_expiry' => $this->getAutoblockExpiry( $timestamp ),
+						] )
+						->where( [ 'gb_id' => $block->gb_id ] )
+						->caller( __METHOD__ )
+						->execute();
+				}
+			}
+			return StatusValue::newGood();
+		}
+
+		// We have performed all the necessary checks, and can insert a new autoblock to the globalblocks table
+		// for the IP, using the parameters from the parent block where appropriate.
+		return $this->insertBlockAfterChecks( [
+			'target' => $ip,
+			'targetForDisplay' => '',
+			'targetCentralId' => 0,
+			'rangeStart' => IPUtils::toHex( $ip ),
+			'rangeEnd' => IPUtils::toHex( $ip ),
+			'byCentralId' => $parentBlock->gb_by_central_id,
+			'byWiki' => $parentBlock->gb_by_wiki,
+			'reason' => $this->globalBlockLookup->getAutoblockReason( $parentBlock, false ),
+			'timestamp' => $timestamp,
+			'expiry' => $this->getAutoblockExpiry( $timestamp, $parentBlockExpiry ),
+			// Global autoblocks should target logged-in users, like local autoblocks do.
+			'anonOnly' => false,
+			'allowAccountCreation' => !$parentBlock->gb_create_account,
+			// Global autoblocks should not trigger new autoblocks
+			'enableAutoblock' => false,
+			'parentBlockId' => $parentBlock->gb_id,
+		] );
+	}
+
+	/**
+	 * Get the expiry timestamp for an global autoblock created at the given time.
+	 *
+	 * If the parent block expiry is specified, the return value will be earlier
+	 * than or equal to the parent block expiry.
+	 *
+	 * Modified copy of {@link DatabaseBlockStore::getAutoblockExpiry}.
+	 *
+	 * @param string $timestamp
+	 * @param string|null $parentExpiry
+	 * @return string
+	 */
+	private function getAutoblockExpiry( string $timestamp, ?string $parentExpiry = null ): string {
+		$maxDuration = $this->options->get( 'GlobalBlockingAutoblockExpiry' );
+		$expiry = wfTimestamp( TS_MW, (int)wfTimestamp( TS_UNIX, $timestamp ) + $maxDuration );
+		if ( $parentExpiry !== null && $parentExpiry !== 'infinity' ) {
+			$expiry = min( $parentExpiry, $expiry );
+		}
+		return $expiry;
 	}
 
 	/**

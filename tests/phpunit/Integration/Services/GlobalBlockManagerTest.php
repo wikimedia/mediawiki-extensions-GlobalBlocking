@@ -3,12 +3,15 @@
 namespace MediaWiki\Extension\GlobalBlocking\Test\Integration\Services;
 
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingGlobalAutoblockExemptionListProvider;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
+use MediaWiki\Language\RawMessage;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWiki\Title\Title;
 use MediaWiki\Title\TitleValue;
+use MediaWiki\WikiMap\WikiMap;
 use MediaWikiIntegrationTestCase;
 use Wikimedia\IPUtils;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
@@ -37,19 +40,21 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 			->getGlobalBlockingConnectionProvider()
 			->getReplicaGlobalBlockingDatabase();
 		$queryBuilder = $dbr->newSelectQueryBuilder()
-			->select( [ 'gb_anon_only', 'gb_reason', 'gb_expiry', 'gb_create_account', 'gb_enable_autoblock' ] )
+			->select( GlobalBlockLookup::selectFields() )
 			->from( 'globalblocks' )
-			->where( [
-				'gb_address' => $target,
-				$dbr->expr( 'gb_expiry', '>', $dbr->timestamp() ),
-			] )
+			->where( $dbr->expr( 'gb_expiry', '>', $dbr->timestamp() ) )
 			->caller( __METHOD__ );
-		if ( !IPUtils::isIPAddress( $target ) ) {
-			// Used to assert that the central ID column is set correctly.
-			$queryBuilder->where( [
+		if ( GlobalBlockLookup::isAGlobalBlockId( $target ) ) {
+			$queryBuilder->andWhere( [ 'gb_id' => GlobalBlockLookup::isAGlobalBlockId( $target ) ] );
+		} elseif ( !IPUtils::isIPAddress( $target ) ) {
+			$queryBuilder->andWhere( [
+				'gb_address' => $target,
+				// Used to assert that the central ID column is set correctly.
 				'gb_target_central_id' => $this->getServiceContainer()
 					->getCentralIdLookup()->centralIdFromName( $target )
 			] );
+		} else {
+			$queryBuilder->andWhere( [ 'gb_address' => $target ] );
 		}
 		$block = $queryBuilder->fetchRow();
 		if ( $block ) {
@@ -60,6 +65,9 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 			$blockOptions['expiry'] = ( $block->gb_expiry === 'infinity' )
 				? 'infinity'
 				: wfTimestamp( TS_ISO_8601, $block->gb_expiry );
+			$blockOptions['timestamp'] = wfTimestamp( TS_ISO_8601, $block->gb_timestamp );
+			$blockOptions['blocker'] = [ 'byCentralId' => $block->gb_by_central_id, 'byWiki' => $block->gb_by_wiki ];
+			$blockOptions['parentBlockId'] = $block->gb_autoblock_parent_id;
 		}
 
 		return $blockOptions;
@@ -484,5 +492,177 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 			$this->getMutableTestUser( 'steward' )->getUser()
 		);
 		$this->assertStatusError( 'globalblocking-notblocked-id', $unblockStatus );
+	}
+
+	private function assertGlobalBlocksTableEmpty() {
+		$this->newSelectQueryBuilder()
+			->select( 'count(*)' )
+			->from( 'globalblocks' )
+			->caller( __METHOD__ )
+			->assertFieldValue( 0 );
+	}
+
+	/** @dataProvider provideInvalidIPAddresses */
+	public function testAutoblockForInvalidIP( $invalidIP ) {
+		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager();
+		$actualStatus = $globalBlockManager->autoblock( 0, $invalidIP );
+		$this->assertInstanceOf( RawMessage::class, $actualStatus->getMessages()[0] );
+		$this->assertSame(
+			'IP provided for autoblocking is invalid.',
+			$actualStatus->getMessages()[0]->fetchMessage()
+		);
+		$this->assertGlobalBlocksTableEmpty();
+	}
+
+	public static function provideInvalidIPAddresses() {
+		return [
+			'String which is not in any IP format' => [ 'abc' ],
+			'IP range' => [ '1.2.3.4/23' ],
+		];
+	}
+
+	public function testAutoblockForGloballyExemptIP() {
+		// Mock the GlobalBlockingGlobalAutoblockExemptionListProvider service to say that the IP is exempt
+		$mockGlobalAutoblockExemptionListProvider = $this->createMock(
+			GlobalBlockingGlobalAutoblockExemptionListProvider::class
+		);
+		$mockGlobalAutoblockExemptionListProvider->method( 'isExempt' )
+			->with( '1.2.3.4' )
+			->willReturn( true );
+		$this->setService(
+			'GlobalBlocking.GlobalBlockingGlobalAutoblockExemptionListProvider',
+			$mockGlobalAutoblockExemptionListProvider
+		);
+		// Call the method under test
+		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager();
+		$this->assertStatusGood( $globalBlockManager->autoblock( 0, '1.2.3.4' ) );
+		$this->assertGlobalBlocksTableEmpty();
+	}
+
+	public function testAutoblockForMissingParentBlock() {
+		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager();
+		$this->assertStatusError( 'globalblocking-notblocked-id', $globalBlockManager->autoblock( 0, '1.2.3.4' ) );
+		$this->assertGlobalBlocksTableEmpty();
+	}
+
+	private function assertNoAutoblockCreated() {
+		$this->newSelectQueryBuilder()
+			->select( 'count(*)' )
+			->from( 'globalblocks' )
+			->where( $this->getDb()->expr( 'gb_autoblock_parent_id', '!=', 0 ) )
+			->caller( __METHOD__ )
+			->assertFieldValue( 0 );
+	}
+
+	public function testAutoblockWhenParentBlockDoesNotHaveAutoblocksEnabled() {
+		// Create a parent global block with autoblocking disabled
+		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager();
+		$parentBlockStatus = $globalBlockManager->block(
+			$this->getTestUser()->getUserIdentity()->getName(), 'test', 'infinity',
+			$this->getTestUser( 'steward' )->getUser()
+		);
+		$this->assertStatusGood( $parentBlockStatus );
+		$parentBlockId = $parentBlockStatus->getValue()['id'];
+		// Call the method under test
+		$this->assertStatusGood( $globalBlockManager->autoblock( $parentBlockId, '1.2.3.4' ) );
+		$this->assertNoAutoblockCreated();
+	}
+
+	public function testAutoblockWhenIPAlreadyManuallyBlocked() {
+		// Create a parent global block with autoblocking enabled
+		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager();
+		$parentBlockStatus = $globalBlockManager->block(
+			$this->getTestUser()->getUserIdentity()->getName(), 'test', 'infinity',
+			$this->getTestUser( 'steward' )->getUser(), [ 'enable-autoblock' ]
+		);
+		$this->assertStatusGood( $parentBlockStatus );
+		$parentBlockId = $parentBlockStatus->getValue()['id'];
+		// Create a block on the IP address that will will attempt to autoblock later in the test
+		$ipBlockStatus = $globalBlockManager->block(
+			'1.2.3.4', 'test IP block', '1 week',
+			$this->getTestUser( 'steward' )->getUser(), []
+		);
+		$this->assertStatusGood( $ipBlockStatus );
+		$ipBlockId = $ipBlockStatus->getValue()['id'];
+		// Call the method under test
+		$this->assertStatusGood( $globalBlockManager->autoblock( $parentBlockId, '1.2.3.4' ) );
+		$this->assertNoAutoblockCreated();
+		// Check that the non-autoblock block on the IP remains untouched after calling the method under test.
+		$ipBlockStillExists = (bool)$this->getDb()->newSelectQueryBuilder()
+			->select( '1' )
+			->from( 'globalblocks' )
+			->where( [ 'gb_id' => $ipBlockId ] )
+			->caller( __METHOD__ )
+			->fetchField();
+		$this->assertTrue( $ipBlockStillExists );
+	}
+
+	public function testAutoblock() {
+		$this->overrideConfigValue( MainConfigNames::LanguageCode, 'qqx' );
+		$this->overrideConfigValue( 'GlobalBlockingAutoblockExpiry', 86400 );
+		// Create a parent global block with autoblocking enabled
+		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager();
+		$parentBlockTarget = $this->getMutableTestUser()->getUserIdentity()->getName();
+		$performer = $this->getTestUser( 'steward' )->getUser();
+		$parentBlockStatus = $globalBlockManager->block(
+			$parentBlockTarget, 'test', 'infinity', $performer, [ 'enable-autoblock' ]
+		);
+		$this->assertStatusGood( $parentBlockStatus );
+		$parentBlockId = $parentBlockStatus->getValue()['id'];
+		// Create an autoblock on the target, asserting that the autoblock worked.
+		$firstAutoblockStatus = $globalBlockManager->autoblock( $parentBlockId, '1.2.3.4' );
+		$this->assertStatusGood( $firstAutoblockStatus );
+		$firstAutoblockId = $firstAutoblockStatus->getValue()['id'];
+		$this->assertArrayEquals(
+			[
+				'reason' => "(globalblocking-autoblocker: $parentBlockTarget, test)", 'anon-only' => '0',
+				'allow-account-creation' => '0', 'enable-autoblock' => '0', 'parentBlockId' => $parentBlockId,
+				'expiry' => '2021-03-03T22:00:00Z', 'timestamp' => '2021-03-02T22:00:00Z',
+				'blocker' => [ 'byCentralId' => $performer->getId(), 'byWiki' => WikiMap::getCurrentWikiId() ],
+			],
+			$this->getGlobalBlock( '#' . $firstAutoblockId ),
+			false,
+			true
+		);
+		// Try to create another autoblock on the same IP, but for a different parent block that expires before the
+		// current autoblock ends.
+		$secondParentBlockStatus = $globalBlockManager->block(
+			$this->getMutableTestUser()->getUserIdentity()->getName(), 'test', '4 hours',
+			$performer, [ 'enable-autoblock' ]
+		);
+		$this->assertStatusGood( $secondParentBlockStatus );
+		$secondParentBlockId = $secondParentBlockStatus->getValue()['id'];
+		$secondAutoblockStatus = $globalBlockManager->autoblock( $secondParentBlockId, '1.2.3.4' );
+		$this->assertStatusGood( $secondAutoblockStatus );
+		$this->assertStatusValue( null, $secondAutoblockStatus );
+		// Check that the attempt to autoblock the IP again has not caused any changes to the first autoblock.
+		$this->assertArrayEquals(
+			[
+				'reason' => "(globalblocking-autoblocker: $parentBlockTarget, test)", 'anon-only' => '0',
+				'allow-account-creation' => '0', 'enable-autoblock' => '0', 'parentBlockId' => $parentBlockId,
+				'expiry' => '2021-03-03T22:00:00Z', 'timestamp' => '2021-03-02T22:00:00Z',
+				'blocker' => [ 'byCentralId' => $performer->getId(), 'byWiki' => WikiMap::getCurrentWikiId() ],
+			],
+			$this->getGlobalBlock( '#' . $firstAutoblockId ),
+			false,
+			true
+		);
+		// Call ::autoblock again, after moving the time on and check that the autoblock expiry and timestamp have
+		// been updated.
+		ConvertibleTimestamp::setFakeTime( '2021-03-03T12:00:00Z' );
+		$thirdAutoblockStatus = $globalBlockManager->autoblock( $parentBlockId, '1.2.3.4' );
+		$this->assertStatusGood( $thirdAutoblockStatus );
+		$this->assertStatusValue( null, $secondAutoblockStatus );
+		$this->assertArrayEquals(
+			[
+				'reason' => "(globalblocking-autoblocker: $parentBlockTarget, test)", 'anon-only' => '0',
+				'allow-account-creation' => '0', 'enable-autoblock' => '0', 'parentBlockId' => $parentBlockId,
+				'expiry' => '2021-03-04T12:00:00Z', 'timestamp' => '2021-03-03T12:00:00Z',
+				'blocker' => [ 'byCentralId' => $performer->getId(), 'byWiki' => WikiMap::getCurrentWikiId() ],
+			],
+			$this->getGlobalBlock( '#' . $firstAutoblockId ),
+			false,
+			true
+		);
 	}
 }
