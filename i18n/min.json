@@ -9,7 +9,6 @@
 	"globalblocking-list": "Daftar sakek global alamaik IP",
 	"globalblocking-search-legend": "Pancarian sakek global",
 	"globalblocking-search-submit": "Cari nan tasakek",
-	"globalblocking-list-expiry": "sampai $1",
 	"globalblocking-list-anononly": "hanyo pangguno anonim",
 	"globalblocking-list-unblock": "hapuih",
 	"globalblocking-list-whitelisted": "dinon-aktifkan di wiki lokal dek $1: $2",

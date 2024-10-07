@@ -24,8 +24,6 @@
 	"globalblocking-modify-success": "ការរាំងខ្ទប់ជាសាកលទៅលើ $1 ត្រូវបានកែប្រែបានសំរេច។",
 	"globalblocking-search-legend": "ស្វែងរក​ការរាំងខ្ទប់​សកល",
 	"globalblocking-search-submit": "ស្វែងរកចំពោះការហាមឃាត់",
-	"globalblocking-search-errors": "ការស្វែងរក​របស់​អ្នក​មិន​ទទួល​បាន​ជោគជ័យ​ទេ, សម្រាប់ {{PLURAL:$1|ហេតុផល|ហេតុផល}}​ដូចតទៅ:",
-	"globalblocking-list-expiry": "ផុតកំណត់ $1",
 	"globalblocking-list-anononly": "អនាមិកជនប៉ុណ្ណោះ",
 	"globalblocking-list-unblock": "ដកហូត",
 	"globalblocking-list-whitelisted": "បាន​បិទ​ជា​មូលដ្ឋាន​ដោយ $1: $2",

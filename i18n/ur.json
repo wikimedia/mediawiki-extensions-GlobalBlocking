@@ -22,7 +22,6 @@
 	"globalblocking-list": "عالمی سطح پر بلاک IP پتے کی فہرست",
 	"globalblocking-search-legend": "عالمی پابندی کی تلاش",
 	"globalblocking-search-submit": "پابندیوں میں تلاش کریں",
-	"globalblocking-list-expiry": "اختتام بوقت $1",
 	"globalblocking-list-anononly": "گمنام صرف",
 	"globalblocking-list-unblock": "حذف کریں",
 	"globalblocking-list-whitelist": "مقامی حیثیت",

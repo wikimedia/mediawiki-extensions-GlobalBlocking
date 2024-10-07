@@ -17,7 +17,6 @@
 	"globalblocking-list": "د نړېوال بنديز لگېدلو آي پي پتو لړليک",
 	"globalblocking-search-legend": "د يوه نړېوال بنديز پلټل",
 	"globalblocking-search-submit": "د بنديزونو لپاره پلټل",
-	"globalblocking-list-expiry": "پای نېټه $1",
 	"globalblocking-list-anononly": "يوازې ورکنومی",
 	"globalblocking-list-unblock": "غورځول",
 	"globalblocking-list-whitelist": "سيمه ايز دريځ",

@@ -23,7 +23,6 @@
 	"globalblocking-block-failure": "Wénten galat rikala ngindayang antuk kacadel sacara global $1. Durus indayang malih.",
 	"globalblocking-search-legend": "Selehin antuk pacadelan global",
 	"globalblocking-search-submit": "Panyelehan pacadelan",
-	"globalblocking-list-expiry": "kadaluwarsa $1",
 	"globalblocking-list-anononly": "wantah anganggé anonim",
 	"globalblocking-list-unblock": "apus",
 	"globalblocking-list-whitelisted": "kamatiang ring wiki lokal olih $1: $2",

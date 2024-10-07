@@ -14,7 +14,6 @@
 	"globalblocking-block-legend": "Bloķēt IP adresi globāli",
 	"globalblocking-ipbanononly": "Bloķēt tikai anonīmos lietotājus",
 	"globalblocking-list": "Globāli bloķēto IP adrešu saraksts",
-	"globalblocking-list-ipinvalid": "IP adrese, ko tu ievadīji ($1), ir nederīga.\nLūdzu, ievadiet derīgu IP adresi.",
 	"globalblocking-list-whitelist": "lokālais statuss",
 	"globalblocking-unblock-reason": "Iemesls:",
 	"globalblocking-whitelist-legend": "Mainīt lokālo statusu",
