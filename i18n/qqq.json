@@ -163,6 +163,8 @@
 	"globalblocking-blockedtext-ip-range": "Used as a component of a global block message.\n\nParameters:\n* $1 - the blocked range.",
 	"globalblocking-blockedtext-proxy": "Used as a component of a global block message.\n\nParameters:\n* $1 - the blocked proxy address.",
 	"globalblocking-blockedtext-username": "Used as a component of a global block message.\n\nParameters:\n* $1 - the blocked user.",
+	"globalblocking-autoblocker": "Used as the reason for a global autoblock of an IP address.\n\nParameters:\n* $1 - The target of the block that caused the global autoblock, which will be a username\n* $2 - The reason given for the block that caused this global autoblock.\n\nSee also: {{msg-mw|globalblocking-autoblocker-hidden-block}}, which is used instead of this message if the target of the block is hidden.",
+	"globalblocking-autoblocker-hidden-block": "Used as the reason for a global autoblock of an IP address if the target of the block is hidden from public view.\n* $1 - The global block ID of the block that caused the autoblock.\n\nSee also: {{msg-mw|globalblocking-autoblocker}}, which is used instead of this message if the target username is publicly viewable.",
 	"globalblocking-centralauth-admin-info-globalblock": "Used as a label on Special:CentralAuth for the global account information field that displays if the user is globally blocked or not globally blocked.",
 	"globalblocking-globalautoblock-exemptionlist": "{{notranslate}}"
 }

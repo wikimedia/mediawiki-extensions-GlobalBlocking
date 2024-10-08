@@ -7,6 +7,7 @@ use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\MainConfigNames;
+use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentityValue;
@@ -22,6 +23,7 @@ use Wikimedia\Timestamp\ConvertibleTimestamp;
 class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 
 	use TempUserTestTrait;
+	use MockAuthorityTrait;
 
 	protected function setUp(): void {
 		// Set a fake time such that the expiry of all blocks is after this date (otherwise the lookup may
@@ -165,7 +167,7 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 		);
 		// Assert that the GlobalBlock returned has the correct properties for a selected fields.
 		$rowFromTheDb = (array)$this->getDb()->newSelectQueryBuilder()
-			->select( [ 'gb_by_central_id', 'gb_address', 'gb_reason', 'gb_timestamp' ] )
+			->select( [ 'gb_by_central_id', 'gb_address', 'gb_timestamp' ] )
 			->from( 'globalblocks' )
 			->where( [ 'gb_id' => $expectedGlobalBlockId ] )
 			->fetchRow();
@@ -186,6 +188,8 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 			$actualGlobalBlockObject->getTimestamp(),
 			'The GlobalBlock object returned by ::getUserBlock does not have the expected timestamp.'
 		);
+		// Return the $actualGlobalBlockObject so that tests which extend this one can perform further assertions.
+		return $actualGlobalBlockObject;
 	}
 
 	public static function provideGetUserBlock() {
@@ -209,14 +213,29 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testGetUserBlockForIPWithAutoblockAndManualIPBlock() {
-		$this->testGetUserBlock(
+		$actualGlobalBlockObject = $this->testGetUserBlock(
 			'192.0.2.1', 7,
 			$this->getServiceContainer()->getUserFactory()->newAnonymous( '192.0.2.1' )
 		);
+		$reasonFromDb = $this->getDb()->newSelectQueryBuilder()
+			->select( [ 'gb_reason' ] )
+			->from( 'globalblocks' )
+			->where( [ 'gb_id' => 7 ] )
+			->fetchField();
+		$this->assertSame( $reasonFromDb, $actualGlobalBlockObject->getReasonComment()->text );
 	}
 
 	public function testGetUserBlockForIPWithAutoblock() {
-		$this->testGetUserBlock( '9.8.7.6', 10, $this->getTestUser()->getUser() );
+		// Use qqx as the content language to make it easier to compare against the auto-generated reason
+		$this->overrideConfigValue( MainConfigNames::LanguageCode, 'qqx' );
+		$targetUserIdentity = $this->getGloballyBlockedTestUser();
+		$actualGlobalBlockObject = $this->testGetUserBlock( '9.8.7.6', 10, $this->getTestUser()->getUser() );
+		$this->assertSame(
+			"(globalblocking-autoblocker: $targetUserIdentity, test)",
+			$actualGlobalBlockObject->getReasonComment()->text,
+			'The reason for the autoblock should be replaced with the autoblocker message in the content language ' .
+			'of the wiki, ignoring the value of gb_reason set in the autoblock row.'
+		);
 	}
 
 	public function testGetUserBlockGlobalBlockingAllowedRanges() {
@@ -566,6 +585,72 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 			'Target is a hash sign followed by letters' => [ '#abc', false ],
 			'Target is a global block ID' => [ '#123', 123 ],
 		];
+	}
+
+	/** @dataProvider provideGetAutoblockReason */
+	public function testGetAutoblockReason( $forDisplayInBlockNotice, $targetHidden ) {
+		$this->overrideConfigValue( MainConfigNames::LanguageCode, 'qqx' );
+		// Fetch a global block on a user to use as the parent block
+		$blockRow = $this->getDb()->newSelectQueryBuilder()
+			->select( GlobalBlockLookup::selectFields() )
+			->from( 'globalblocks' )
+			->where( [ 'gb_id' => 5 ] )
+			->fetchRow();
+		$this->assertNotFalse( $blockRow );
+		// Get the target of the block
+		$targetUserIdentity = $this->getGloballyBlockedTestUser();
+		if ( $targetHidden ) {
+			$expectedReturnValue = '(globalblocking-autoblocker-hidden-block: 5)';
+			// If the target should be hidden, then block the target user locally with 'hideuser' set so that the
+			// LocalIdLookup class will return the username for a public audience.
+			$this->getServiceContainer()->getBlockUserFactory()->newBlockUser(
+				$targetUserIdentity, $this->mockRegisteredUltimateAuthority(), 'indefinite', 'test hide',
+				[ 'isHideUser' => true ]
+			)->placeBlock();
+		} else {
+			$targetName = $targetUserIdentity->getName();
+			$expectedReturnValue = "(globalblocking-autoblocker: $targetName, test)";
+		}
+		$globalBlockLookup = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockLookup();
+		$this->assertSame(
+			$expectedReturnValue,
+			$globalBlockLookup->getAutoblockReason( $blockRow, $forDisplayInBlockNotice )
+		);
+	}
+
+	public static function provideGetAutoblockReason() {
+		return [
+			'Autoblock reason for use in block notice' => [ true, false ],
+			'Autoblock reason for use in block notice and parent block has hidden target' => [ true, true ],
+			'Parent block has hidden target' => [ false, true ],
+		];
+	}
+
+	public function testAutoblockWhenCentralWikiContentLanguageSet() {
+		// Set the content language as 'en', so that if the autoblock reason uses the content language then the test
+		// fails.
+		$this->overrideConfigValue( MainConfigNames::LanguageCode, 'en' );
+		// Set the central wiki content language, using 'qqx' so that it's easy to assert against.
+		$this->overrideConfigValue( 'GlobalBlockingCentralWikiContentLanguage', 'qqx' );
+		// Fetch a global block on a user to use as the parent block
+		$blockRow = $this->getDb()->newSelectQueryBuilder()
+			->select( GlobalBlockLookup::selectFields() )
+			->from( 'globalblocks' )
+			->where( [ 'gb_id' => 5 ] )
+			->fetchRow();
+		$this->assertNotFalse( $blockRow );
+		// Get the target of the block
+		$targetUserIdentity = $this->getServiceContainer()->getCentralIdLookup()
+			->localUserFromCentralId( $blockRow->gb_target_central_id );
+		$this->assertNotNull( $targetUserIdentity );
+		$targetName = $targetUserIdentity->getName();
+		// Create an autoblock on the target, asserting that the reason for the autoblock is in the 'qqx' language
+		// (and therefore the content language was not used).
+		$globalBlockLookup = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockLookup();
+		$this->assertSame(
+			"(globalblocking-autoblocker: $targetName, test)",
+			$globalBlockLookup->getAutoblockReason( $blockRow, false )
+		);
 	}
 
 	public function addDBDataOnce() {

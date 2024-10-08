@@ -30,6 +30,7 @@ class GlobalBlockLookup {
 		'GlobalBlockingAllowedRanges',
 		'GlobalBlockingBlockXFF',
 		'GlobalBlockingCIDRLimit',
+		'GlobalBlockingCentralWikiContentLanguage',
 	];
 
 	private const TYPE_USER = 1;
@@ -93,6 +94,23 @@ class GlobalBlockLookup {
 
 		if ( $details['block'] ) {
 			$row = $details['block'];
+
+			$reason = $row->gb_reason;
+			if ( $row->gb_autoblock_parent_id ) {
+				// If the block is an autoblock, then replace the reason used for the autoblock with the autoblock
+				// reason but in the content language.
+				// This means that the user seeing the block notice will get the reason for the block in a language
+				// that they understand (as opposed to seeing it in English).
+				$parentBlock = $this->globalBlockingConnectionProvider->getReplicaGlobalBlockingDatabase()
+					->newSelectQueryBuilder()
+					->select( [ 'gb_reason', 'gb_target_central_id', 'gb_id' ] )
+					->from( 'globalblocks' )
+					->where( [ 'gb_id' => $row->gb_autoblock_parent_id ] )
+					->caller( __METHOD__ )
+					->fetchRow();
+				$reason = $this->getAutoblockReason( $parentBlock, true );
+			}
+
 			return new GlobalBlock(
 				[
 					'id' => $row->gb_id,
@@ -101,7 +119,7 @@ class GlobalBlockLookup {
 					'byCentralId' => $row->gb_by_central_id,
 					'byWiki' => $row->gb_by_wiki,
 					'address' => $row->gb_address,
-					'reason' => $row->gb_reason,
+					'reason' => $reason,
 					'timestamp' => $row->gb_timestamp,
 					'anonOnly' => $row->gb_anon_only,
 					'expiry' => $row->gb_expiry,
@@ -112,6 +130,35 @@ class GlobalBlockLookup {
 		}
 
 		return null;
+	}
+
+	/**
+	 * Get the reason for the autoblock suitable for use in a "globalblocks" table database row, or for
+	 * display to the user in a global auto block notice.
+	 *
+	 * @since 1.43
+	 * @param stdClass $block The globalblock row of the parent block that is causing the autoblock.
+	 *   Should include at least the gb_id, gb_target_central_id, and gb_reason fields.
+	 * @param bool $forDisplayInBlockNotice Whether the autoblock reason will be displayed in a block
+	 *   notice? If so, then the reason is always set to use the content language of the wiki.
+	 * @return string
+	 */
+	public function getAutoblockReason( stdClass $block, bool $forDisplayInBlockNotice ): string {
+		// Hide the target username of the parent block if it is not publicly viewable. This is to prevent leaking
+		// hidden usernames. Users can refer to the parent global block via the ID in this case.
+		$target = $this->centralIdLookup->nameFromCentralId( $block->gb_target_central_id ) ?? '';
+		if ( $target ) {
+			$autoBlockReasonMsg = wfMessage( 'globalblocking-autoblocker', $target, $block->gb_reason );
+		} else {
+			$autoBlockReasonMsg = wfMessage( 'globalblocking-autoblocker-hidden-block', $block->gb_id );
+		}
+
+		if ( $this->options->get( 'GlobalBlockingCentralWikiContentLanguage' ) && !$forDisplayInBlockNotice ) {
+			$autoBlockReasonMsg->inLanguage( $this->options->get( 'GlobalBlockingCentralWikiContentLanguage' ) );
+		} else {
+			$autoBlockReasonMsg->inContentLanguage();
+		}
+		return $autoBlockReasonMsg->plain();
 	}
 
 	/**

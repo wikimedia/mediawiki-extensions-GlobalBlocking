@@ -266,6 +266,10 @@
 		"GlobalBlockingCentralWiki": {
 			"description": "The ID of the central wiki where global blocks are performed. Used to provide a link to the global block log which is likely to have entries, instead of the local log which is unlikely to contain entries. If the value is false, then the local log is used.",
 			"value": false
+		},
+		"GlobalBlockingCentralWikiContentLanguage": {
+			"description": "The content language of the central wiki specified in $wgGlobalBlockingCentralWiki. Used to appropriately set the language for reason used for autoblocks. If unset, the content language of the wiki where the autoblock was triggered will be used.",
+			"value": false
 		}
 	},
 	"ServiceWiringFiles": [
