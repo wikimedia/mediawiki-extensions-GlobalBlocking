@@ -274,6 +274,10 @@
 		"GlobalBlockingAutoblockExpiry": {
 			"description": "The maximum number of seconds that an autoblock can last. If the parent block expires before this maximum, the expiry will the expiry of the parent block. Default 86400 = 1 day.",
 			"value": "86400"
+		},
+		"GlobalBlockingEnableAutoblocks": {
+			"description": "Whether the GlobalBlocking extension should be allowed to create autoblocks. Used as a temporary feature flag while some blockers for releasing this to WMF production are sorted out.",
+			"value": false
 		}
 	},
 	"ServiceWiringFiles": [

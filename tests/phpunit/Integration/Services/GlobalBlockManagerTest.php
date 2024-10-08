@@ -28,6 +28,9 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
 		// to be the local provider.
 		$this->overrideConfigValue( MainConfigNames::CentralIdLookupProvider, 'local' );
+		// By default, set the feature config flag for autoblocks to be true. Tests which test what happens when this
+		// is disabled will set the config value to false.
+		$this->overrideConfigValue( 'GlobalBlockingEnableAutoblocks', true );
 	}
 
 	/**
@@ -536,6 +539,14 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 		// Call the method under test
 		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager();
 		$this->assertStatusGood( $globalBlockManager->autoblock( 0, '1.2.3.4' ) );
+		$this->assertGlobalBlocksTableEmpty();
+	}
+
+	public function testAutoblockWhenFeatureFlagDisabled() {
+		$this->overrideConfigValue( 'GlobalBlockingEnableAutoblocks', false );
+		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager();
+		$actualStatus = $globalBlockManager->autoblock( 0, '1.2.3.4' );
+		$this->assertStatusGood( $actualStatus );
 		$this->assertGlobalBlocksTableEmpty();
 	}
 
