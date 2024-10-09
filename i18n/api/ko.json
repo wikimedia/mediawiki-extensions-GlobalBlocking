@@ -18,7 +18,11 @@
 	"apihelp-query+globalblocks-param-end": "나열을 끝낼 타임스탬프",
 	"apihelp-query+globalblocks-param-ids": "나열할 차단 ID, 파이프로 분리",
 	"apihelp-query+globalblocks-param-addresses": "검색할 IP 주소, 파이프로 분리",
+	"apihelp-query+globalblocks-param-limit": "나열한 최대 차단 수입니다.",
 	"apihelp-query+globalblocks-param-prop": "가져올 속성입니다.",
 	"apihelp-query+globalblocks-example-1": "모든 전역 차단 나열",
+	"apihelp-query+globalblocks-example-2": "IP 주소 192.0.2.18에 해당하는 전역 차단을 나열합니다",
+	"apihelp-globalblock-param-localblockstalk": "로컬에서 토론 문서의 접근 권한을 박탈합니다",
+	"apihelp-globalblock-param-localblocksemail": "로컬에서 이메일 접근 권한을 박탈합니다",
 	"apihelp-globalblock-param-localanononly": "로그아웃한 사용자만 로컬로 영향을 미치도록 하려면 지정하십시오."
 }

@@ -39,8 +39,10 @@
 	"globalblocking-local-failed": "주어진 IP 주소는 이미 이 위키에서 차단되어 있어서 로컬로 차단하지 못했습니다.",
 	"globalblocking-block-failure": "$1의 전역 차단을 시도하는 동안 오류가 발생했습니다. 다시 시도해 주십시오.",
 	"globalblocking-block-alreadyblocked": "IP 주소 $1은(는) 이미 전역 차단되었습니다.\n[[Special:GlobalBlockList|전역 차단된 사용자의 목록]]에서 현재 차단된 IP를 보거나,\n이 양식을 사용하여 이미 차단된 IP의 차단 설정을 바꿀 수 있습니다.",
+	"globalblocking-bigrange": "지정한 대역($1)이 제한을 초과합니다.\n$2 제한은 / $3 대역입니다.",
 	"globalblocking-also-local": "또한 이 위키에서 주어진 IP 주소를 로컬로 차단하기",
 	"globalblocking-also-local-talk": "사용자가 로컬에서 자신의 토론 문서를 편집하지 못하도록 차단",
+	"globalblocking-also-local-email": "사용자가 로컬로 이메일을 보내는 것을 차단합니다",
 	"globalblocking-also-local-soft": "익명 사용자만 로컬 차단",
 	"globalblocking-list-intro": "현재 유효한 모든 전역 차단의 목록입니다.\n전역 차단은 로컬의 관리자의 권한으로 무효화할 수 있습니다. 단 로컬에서 무효화하더라도 다른 위키에서는 차단 상태가 지속됩니다.",
 	"globalblocking-list": "모든 위키에서 차단된 IP 목록",
@@ -122,5 +124,12 @@
 	"log-action-filter-gblblock-modify": "전역 차단 변경",
 	"log-action-filter-gblblock-whitelist": "전역 차단 화이트리스트 추가",
 	"log-action-filter-gblblock-dwhitelist": "전역 차단 화이트리스트 제거",
-	"grant-globalblock": "IP 주소 전역 차단 또는 차단 해제"
+	"grant-globalblock": "IP 주소 전역 차단 또는 차단 해제",
+	"globalblocking-blockedtext-all-wikis": "당신의 IP 주소는 모든 위키에서 차단되어 있습니다.",
+	"globalblocking-blockedtext-on-range": "당신의 IP 주소는 모든 위키에서 차단된 대역에 속합니다.",
+	"globalblocking-blockedtext-on-proxy": "요청에 사용된 하나 이상의 프록시 서버가 전역적으로 차단되었습니다",
+	"globalblocking-blockedtext-blocker-admin": "$1에 연락하여 차단에 관해 논의할 수 있습니다.",
+	"globalblocking-blockedtext-email-feature": "[[Special:Preferences|계정 환경 설정]]에 유효한 이메일 주소가 지정되어 있고 해당 기능 사용이 차단되지 않은 경우에만 \"{{int:emailuser}}\" 기능을 사용할 수 있습니다.",
+	"globalblocking-blockedtext-ip-range": "차단된 대역은 $1입니다.",
+	"globalblocking-blockedtext-proxy": "차단된 프록시 주소는 $1입니다."
 }

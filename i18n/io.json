@@ -33,5 +33,10 @@
 	"globalblocking-loglink": "La IP-adreso $1 blokusesis omnaloke ([[{{#Special:GlobalBlockList}}/$1|plusa detali]]).",
 	"globalblocklist": "Listo pri IP-adresi globale blokusata",
 	"globalblockstatus": "Lokala stando di globala blokusi",
-	"log-action-filter-gblblock": "Tipo di blokusado globala:"
+	"log-action-filter-gblblock": "Tipo di blokusado globala:",
+	"log-action-filter-gblblock-gblock": "Globala blokuso",
+	"log-action-filter-gblblock-gunblock": "Globala desblokuso",
+	"log-action-filter-gblblock-modify": "Modifiko en globala blokuso",
+	"log-action-filter-gblblock-whitelist": "Lokala desblokusado di konto globale blokusita",
+	"log-action-filter-gblblock-dwhitelist": "Rifuncionigar la globala listo di blokusi, ante desmuntita"
 }
