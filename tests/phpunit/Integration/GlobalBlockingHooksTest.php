@@ -49,7 +49,8 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 			'globalBlockLocalStatusLookup' => $globalBlockingServices->getGlobalBlockLocalStatusLookup(),
 			'userNameUtils' => $this->getServiceContainer()->getUserNameUtils(),
 			'globalBlockingUserVisibilityLookup' => $globalBlockingServices->getGlobalBlockingUserVisibilityLookup(),
-			'userIdentityLookup' => $this->getServiceContainer()->getUserIdentityLookup()
+			'userIdentityLookup' => $this->getServiceContainer()->getUserIdentityLookup(),
+			'globalBlockManager' => $globalBlockingServices->getGlobalBlockManager()
 		];
 	}
 

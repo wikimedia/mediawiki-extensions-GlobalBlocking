@@ -6,6 +6,7 @@ use MediaWiki\Block\AbstractBlock;
 use MediaWiki\Block\Block;
 use MediaWiki\Block\CompositeBlock;
 use MediaWiki\Block\Hook\GetUserBlockHook;
+use MediaWiki\Block\Hook\SpreadAnyEditBlockHook;
 use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\RequestContext;
@@ -14,6 +15,7 @@ use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingUserVisibilityLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockManager;
 use MediaWiki\Extension\GlobalBlocking\Special\GlobalBlockListPager;
 use MediaWiki\Hook\ContributionsToolLinksHook;
 use MediaWiki\Hook\GetBlockErrorMessageKeyHook;
@@ -44,7 +46,8 @@ class GlobalBlockingHooks implements
 	OtherBlockLogLinkHook,
 	SpecialContributionsBeforeMainOutputHook,
 	GetLogTypesOnUserHook,
-	ContributionsToolLinksHook
+	ContributionsToolLinksHook,
+	SpreadAnyEditBlockHook
 {
 	private Config $config;
 	private CommentFormatter $commentFormatter;
@@ -56,19 +59,8 @@ class GlobalBlockingHooks implements
 	private UserNameUtils $userNameUtils;
 	private GlobalBlockingUserVisibilityLookup $globalBlockingUserVisibilityLookup;
 	private UserIdentityLookup $userIdentityLookup;
+	private GlobalBlockManager $globalBlockManager;
 
-	/**
-	 * @param Config $mainConfig
-	 * @param CommentFormatter $commentFormatter
-	 * @param CentralIdLookup $lookup
-	 * @param GlobalBlockingLinkBuilder $globalBlockLinkBuilder
-	 * @param GlobalBlockLookup $globalBlockLookup
-	 * @param GlobalBlockingConnectionProvider $globalBlockingConnectionProvider
-	 * @param GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup
-	 * @param UserNameUtils $userNameUtils
-	 * @param GlobalBlockingUserVisibilityLookup $globalBlockingUserVisibilityLookup
-	 * @param UserIdentityLookup $userIdentityLookup
-	 */
 	public function __construct(
 		Config $mainConfig,
 		CommentFormatter $commentFormatter,
@@ -79,7 +71,8 @@ class GlobalBlockingHooks implements
 		GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup,
 		UserNameUtils $userNameUtils,
 		GlobalBlockingUserVisibilityLookup $globalBlockingUserVisibilityLookup,
-		UserIdentityLookup $userIdentityLookup
+		UserIdentityLookup $userIdentityLookup,
+		GlobalBlockManager $globalBlockManager
 	) {
 		$this->config = $mainConfig;
 		$this->commentFormatter = $commentFormatter;
@@ -91,6 +84,7 @@ class GlobalBlockingHooks implements
 		$this->userNameUtils = $userNameUtils;
 		$this->globalBlockingUserVisibilityLookup = $globalBlockingUserVisibilityLookup;
 		$this->userIdentityLookup = $userIdentityLookup;
+		$this->globalBlockManager = $globalBlockManager;
 	}
 
 	/**
@@ -342,5 +336,27 @@ class GlobalBlockingHooks implements
 		$types[] = 'gblblock';
 
 		return true;
+	}
+
+	/** @inheritDoc */
+	public function onSpreadAnyEditBlock( $user, bool &$blockWasSpread ) {
+		// Check if the local $user is globally blocked and that the global block enables autoblocks, returning
+		// that no blocks were spread if both are not the case.
+		// The IP is not specified because ::getUserBlock can only return one global block and we always want a
+		// user block. An IP block may be selected by ::getUserBlock if it disables account creation but
+		// the user block does not.
+		$globalBlock = $this->globalBlockLookup->getUserBlock( $user, null );
+		if ( !$globalBlock || !$globalBlock->isAutoblocking() ) {
+			return;
+		}
+
+		// Actually perform the autoblock for the user's current IP address.
+		$autoblockStatus = $this->globalBlockManager->autoblock( $globalBlock->getId(), $user->getRequest()->getIP() );
+
+		// Indicate to the caller that a block was spread if a global autoblock was actually performed.
+		$wasGlobalAutoBlockCreated = $autoblockStatus->isGood() && ( $autoblockStatus->getValue()['id'] ?? 0 );
+		if ( $wasGlobalAutoBlockCreated ) {
+			$blockWasSpread = true;
+		}
 	}
 }

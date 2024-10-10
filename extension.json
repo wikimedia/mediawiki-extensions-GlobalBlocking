@@ -208,7 +208,8 @@
 		"GetBlockErrorMessageKey": "main",
 		"GetLogTypesOnUser": "main",
 		"ContributionsToolLinks": "main",
-		"CentralAuthInfoFields": "centralauth"
+		"CentralAuthInfoFields": "centralauth",
+		"SpreadAnyEditBlock": "main"
 	},
 	"HookHandlers": {
 		"main": {
@@ -223,7 +224,8 @@
 				"GlobalBlocking.GlobalBlockLocalStatusLookup",
 				"UserNameUtils",
 				"GlobalBlocking.GlobalBlockingUserVisibilityLookup",
-				"UserIdentityLookup"
+				"UserIdentityLookup",
+				"GlobalBlocking.GlobalBlockManager"
 			]
 		},
 		"usermerge": {

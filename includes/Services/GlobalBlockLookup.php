@@ -146,25 +146,38 @@ class GlobalBlockLookup {
 	}
 
 	/**
+	 * Gets a key to access ->getUserBlockDetailsCache for a given user and IP.
+	 *
+	 * @param UserIdentity $userIdentity
+	 * @param string|null $ip
+	 * @return string The associated cache key
+	 */
+	private function getUserBlockDetailsCacheKey( UserIdentity $userIdentity, ?string $ip ): string {
+		return $userIdentity->getName() . ( $ip ?? '' );
+	}
+
+	/**
 	 * Add the $result to the instance cache under the username of the given $user.
 	 *
 	 * @param array $result
 	 * @param UserIdentity $user
+	 * @param string|null $ip
 	 * @return array The value of $result
 	 */
-	private function addToUserBlockDetailsCache( array $result, UserIdentity $user ): array {
-		$this->getUserBlockDetailsCache[$user->getName()] = $result;
+	private function addToUserBlockDetailsCache( array $result, UserIdentity $user, ?string $ip ): array {
+		$this->getUserBlockDetailsCache[$this->getUserBlockDetailsCacheKey( $user, $ip )] = $result;
 		return $result;
 	}
 
 	/**
-	 * Get the cached result of ::getUserBlockDetails for the given user.
+	 * Get the cached result of ::getUserBlockDetails for the given user and IP.
 	 *
 	 * @param UserIdentity $userIdentity
+	 * @param string|null $ip
 	 * @return array|null Array if the result is cached, null if there is no cached result
 	 */
-	protected function getUserBlockDetailsCacheResult( UserIdentity $userIdentity ): ?array {
-		return $this->getUserBlockDetailsCache[$userIdentity->getName()] ?? null;
+	protected function getUserBlockDetailsCacheResult( UserIdentity $userIdentity, ?string $ip ): ?array {
+		return $this->getUserBlockDetailsCache[$this->getUserBlockDetailsCacheKey( $userIdentity, $ip )] ?? null;
 	}
 
 	/**
@@ -181,7 +194,7 @@ class GlobalBlockLookup {
 	 */
 	private function getUserBlockDetails( User $user, ?string $ip ): array {
 		// Check first if the instance cache has the result.
-		$cachedResult = $this->getUserBlockDetailsCacheResult( $user );
+		$cachedResult = $this->getUserBlockDetailsCacheResult( $user, $ip );
 		if ( $cachedResult !== null ) {
 			return $cachedResult;
 		}
@@ -217,7 +230,7 @@ class GlobalBlockLookup {
 
 		$block = $this->getGlobalBlockingBlock( $ip, $centralId, $flags );
 		if ( $block ) {
-			return $this->addToUserBlockDetailsCache( [ 'block' => $block, 'xff' => false ], $user );
+			return $this->addToUserBlockDetailsCache( [ 'block' => $block, 'xff' => false ], $user, $ip );
 		}
 
 		// We should only check XFF blocks if we are checking blocks for the session user. The exception to this is
@@ -238,12 +251,12 @@ class GlobalBlockLookup {
 				$xffFlags = $flags | self::SKIP_ALLOWED_RANGES_CHECK;
 				$block = $this->chooseMostSpecificBlock( $this->checkIpsForBlock( $xffIps, $xffFlags ), $xffFlags );
 				if ( $block !== null ) {
-					return $this->addToUserBlockDetailsCache( [ 'block' => $block, 'xff' => true ], $user );
+					return $this->addToUserBlockDetailsCache( [ 'block' => $block, 'xff' => true ], $user, $ip );
 				}
 			}
 		}
 
-		return $this->addToUserBlockDetailsCache( [ 'block' => null, 'xff' => false ], $user );
+		return $this->addToUserBlockDetailsCache( [ 'block' => null, 'xff' => false ], $user, $ip );
 	}
 
 	/**
