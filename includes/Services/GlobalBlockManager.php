@@ -5,6 +5,9 @@ namespace MediaWiki\Extension\GlobalBlocking\Services;
 use ManualLogEntry;
 use MediaWiki\Block\BlockUser;
 use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Extension\GlobalBlocking\GlobalBlock;
+use MediaWiki\Extension\GlobalBlocking\Hooks\HookRunner;
+use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Language\RawMessage;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\Title\Title;
@@ -17,6 +20,7 @@ use Psr\Log\LoggerInterface;
 use RuntimeException;
 use StatusValue;
 use Wikimedia\IPUtils;
+use Wikimedia\Rdbms\RawSQLValue;
 
 /**
  * A service for creating, updating, and removing global blocks.
@@ -29,6 +33,7 @@ class GlobalBlockManager {
 		'GlobalBlockingCIDRLimit',
 		'GlobalBlockingAutoblockExpiry',
 		'GlobalBlockingEnableAutoblocks',
+		'GlobalBlockingMaximumIPsToRetroactivelyAutoblock',
 	];
 
 	private ServiceOptions $options;
@@ -39,6 +44,7 @@ class GlobalBlockManager {
 	private CentralIdLookup $centralIdLookup;
 	private UserFactory $userFactory;
 	private LoggerInterface $logger;
+	private HookRunner $hookRunner;
 
 	public function __construct(
 		ServiceOptions $options,
@@ -48,7 +54,8 @@ class GlobalBlockManager {
 		GlobalBlockingGlobalAutoblockExemptionListProvider $globalAutoblockExemptionListProvider,
 		CentralIdLookup $centralIdLookup,
 		UserFactory $userFactory,
-		LoggerInterface $logger
+		LoggerInterface $logger,
+		HookContainer $hookContainer
 	) {
 		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
 		$this->options = $options;
@@ -59,6 +66,7 @@ class GlobalBlockManager {
 		$this->centralIdLookup = $centralIdLookup;
 		$this->userFactory = $userFactory;
 		$this->logger = $logger;
+		$this->hookRunner = new HookRunner( $hookContainer );
 	}
 
 	/**
@@ -181,6 +189,72 @@ class GlobalBlockManager {
 		if ( !$blockId ) {
 			// Race condition?
 			return StatusValue::newFatal( 'globalblocking-block-failure', $data['targetForDisplay'] );
+		}
+
+		// Delete any corresponding global autoblocks if autoblocking is disabled for an existing block, as it may
+		// have been enabled previously.
+		if ( ( $data['existingBlockId'] ?? 0 ) && !$data['enableAutoblock'] ) {
+			$dbw->newDeleteQueryBuilder()
+				->deleteFrom( 'globalblocks' )
+				->where( [ 'gb_autoblock_parent_id' => $blockId ] )
+				->caller( __METHOD__ )
+				->execute();
+		}
+
+		if ( $data['enableAutoblock'] ) {
+			// If autoblocks are enabled for this block, then perform retroactive autoblocks and update existing
+			// autoblock expiry times.
+			// Fetch the newly inserted or updated row for use in autoblocking. We need to read from primary, as
+			// the changes are likely not applied to replicas yet.
+			$blockRow = $dbw->newSelectQueryBuilder()
+				->select( GlobalBlockLookup::selectFields() )
+				->from( 'globalblocks' )
+				->where( [ 'gb_id' => $blockId ] )
+				->caller( __METHOD__ )
+				->fetchRow();
+
+			if ( $data['existingBlockId'] ?? 0 ) {
+				// Update corresponding global autoblock(s) if the block is modified to match the relevant settings
+				// from the modified parent block.
+				$dbw->newUpdateQueryBuilder()
+					->update( 'globalblocks' )
+					->set( [
+						'gb_by_central_id' => $data['byCentralId'],
+						'gb_by_wiki' => $data['byWiki'],
+						'gb_create_account' => !$data['allowAccountCreation'],
+						'gb_reason' => $this->globalBlockLookup->getAutoblockReason( $blockRow, false ),
+						// Shorten the autoblock expiry if the parent block expiry is sooner, but don't lengthen.
+						// Taken from DatabaseBlockStore::getArrayForAutoblockUpdate.
+						'gb_expiry' => new RawSQLValue( $dbw->conditional(
+							$dbw->expr( 'gb_expiry', '>', $dbw->encodeExpiry( $data['expiry'] ) ),
+							$dbw->addQuotes( $dbw->encodeExpiry( $data['expiry'] ) ),
+							'gb_expiry'
+						) ),
+					] )
+					->where( [ 'gb_autoblock_parent_id' => $blockId ] )
+					->caller( __METHOD__ )->execute();
+			}
+
+			// Sanity check that autoblocking is enabled for this block. Use GlobalBlock::isAutoblocking as it also
+			// performs extra checks to determine if the block should cause autoblocks.
+			$blockObject = GlobalBlock::newFromRow( $blockRow, false );
+			if ( $blockObject->isAutoblocking() ) {
+				// Fetch the list of IP addresses to retroactively autoblock, which are provided by other extensions
+				// through handling the hook below (e.g. CheckUser).
+				$ipsToAutoBlock = [];
+				$maxIPsToAutoBlock = $this->options->get( 'GlobalBlockingMaximumIPsToRetroactivelyAutoblock' );
+				$this->hookRunner->onGlobalBlockingGetRetroactiveAutoblockIPs(
+					$blockObject,
+					$maxIPsToAutoBlock,
+					$ipsToAutoBlock
+				);
+				$ipsToAutoBlock = array_slice( $ipsToAutoBlock, 0, $maxIPsToAutoBlock );
+
+				// Retroactively autoblock the provided IP addresses.
+				foreach ( $ipsToAutoBlock as $ip ) {
+					$this->autoblock( $blockId, $ip );
+				}
+			}
 		}
 
 		return StatusValue::newGood( [

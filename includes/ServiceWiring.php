@@ -106,7 +106,8 @@ return [
 			$globalBlockingServices->getGlobalAutoblockExemptionListProvider(),
 			$services->getCentralIdLookup(),
 			$services->getUserFactory(),
-			LoggerFactory::getInstance( 'GlobalBlocking' )
+			LoggerFactory::getInstance( 'GlobalBlocking' ),
+			$services->getHookContainer()
 		);
 	},
 	'GlobalBlocking.GlobalBlockingLinkBuilder' => static function (
