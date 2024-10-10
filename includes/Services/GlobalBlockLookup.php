@@ -95,7 +95,6 @@ class GlobalBlockLookup {
 		if ( $details['block'] ) {
 			$row = $details['block'];
 
-			$reason = $row->gb_reason;
 			if ( $row->gb_autoblock_parent_id ) {
 				// If the block is an autoblock, then replace the reason used for the autoblock with the autoblock
 				// reason but in the content language.
@@ -108,25 +107,10 @@ class GlobalBlockLookup {
 					->where( [ 'gb_id' => $row->gb_autoblock_parent_id ] )
 					->caller( __METHOD__ )
 					->fetchRow();
-				$reason = $this->getAutoblockReason( $parentBlock, true );
+				$row->gb_reason = $this->getAutoblockReason( $parentBlock, true );
 			}
 
-			return new GlobalBlock(
-				[
-					'id' => $row->gb_id,
-					'isAutoblock' => boolval( $row->gb_autoblock_parent_id ),
-					'enableAutoblock' => $row->gb_enable_autoblock,
-					'byCentralId' => $row->gb_by_central_id,
-					'byWiki' => $row->gb_by_wiki,
-					'address' => $row->gb_address,
-					'reason' => $reason,
-					'timestamp' => $row->gb_timestamp,
-					'anonOnly' => $row->gb_anon_only,
-					'expiry' => $row->gb_expiry,
-					'createAccount' => $row->gb_create_account,
-					'xff' => $details['xff'],
-				]
-			);
+			return GlobalBlock::newFromRow( $row, $details['xff'] );
 		}
 
 		return null;

@@ -41,20 +41,8 @@ class GlobalBlockTest extends MediaWikiIntegrationTestCase {
 		return $row;
 	}
 
-	private function getGlobalBlockObject( stdClass $row, array $overriddenOptions = [] ) {
-		return new GlobalBlock(
-			array_merge(
-				[
-					'id' => $row->gb_id, 'address' => $row->gb_address, 'reason' => $row->gb_reason,
-					'byCentralId' => $row->gb_by_central_id, 'byWiki' => $row->gb_by_wiki,
-					'timestamp' => $row->gb_timestamp, 'anonOnly' => $row->gb_anon_only, 'expiry' => $row->gb_expiry,
-					'createAccount' => $row->gb_create_account, 'xff' => false,
-					'isAutoblock' => boolval( $row->gb_autoblock_parent_id ),
-					'enableAutoblock' => $row->gb_enable_autoblock,
-				],
-				$overriddenOptions
-			)
-		);
+	private function getGlobalBlockObject( stdClass $row, bool $xffValue = false ): GlobalBlock {
+		return GlobalBlock::newFromRow( $row, $xffValue );
 	}
 
 	public function testGetBy() {
@@ -164,7 +152,7 @@ class GlobalBlockTest extends MediaWikiIntegrationTestCase {
 	public function testGetXff( bool $xffOption ) {
 		// Get the block on 1.2.3.4, but mock that this block matched because of the XFF header.
 		$row = $this->getGlobalBlockRowForTarget( '1.2.3.4', null );
-		$globalBlock = $this->getGlobalBlockObject( $row, [ 'xff' => $xffOption ] );
+		$globalBlock = $this->getGlobalBlockObject( $row, $xffOption );
 		$this->assertSame( $xffOption, $globalBlock->getXff(), '::getXff did not return the expected value' );
 	}
 

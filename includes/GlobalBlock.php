@@ -8,6 +8,7 @@ use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserIdentityValue;
 use MediaWiki\WikiMap\WikiMap;
+use stdClass;
 
 class GlobalBlock extends AbstractBlock {
 	private int $id;
@@ -15,6 +16,33 @@ class GlobalBlock extends AbstractBlock {
 	private bool $isAutoBlock;
 	private bool $isAutoblocking;
 	private ?UserIdentity $blocker;
+
+	/**
+	 * Constructs a GlobalBlock instance from a database returned row returned by GlobalBlockLookup.
+	 *
+	 * @param stdClass $row The database row
+	 * @param bool $xff Whether this was triggered by the XFF header containing a globally blocked IP address
+	 * @return GlobalBlock
+	 * @internal You should get a GlobalBlock instance through the {@link GlobalBlockLookup} service in most cases
+	 */
+	public static function newFromRow( stdClass $row, bool $xff ): GlobalBlock {
+		return new GlobalBlock(
+			[
+				'id' => $row->gb_id,
+				'isAutoblock' => boolval( $row->gb_autoblock_parent_id ),
+				'enableAutoblock' => $row->gb_enable_autoblock,
+				'byCentralId' => $row->gb_by_central_id,
+				'byWiki' => $row->gb_by_wiki,
+				'address' => $row->gb_address,
+				'reason' => $row->gb_reason,
+				'timestamp' => $row->gb_timestamp,
+				'anonOnly' => $row->gb_anon_only,
+				'expiry' => $row->gb_expiry,
+				'createAccount' => $row->gb_create_account,
+				'xff' => $xff,
+			]
+		);
+	}
 
 	/**
 	 * @param array $options Parameters of the block, with options supported by {@link AbstractBlock::__construct} and:
