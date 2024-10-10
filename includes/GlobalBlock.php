@@ -104,8 +104,11 @@ class GlobalBlock extends AbstractBlock {
 		return $this->getId( $wikiId );
 	}
 
-	/** @inheritDoc */
-	public function getId( $wikiId = self::LOCAL ): ?int {
+	/**
+	 * @inheritDoc
+	 * @return int
+	 */
+	public function getId( $wikiId = self::LOCAL ): int {
 		return $this->id;
 	}
 
