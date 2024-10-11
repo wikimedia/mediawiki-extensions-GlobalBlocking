@@ -110,9 +110,10 @@ class SpecialGlobalBlockList extends FormSpecialPage {
 		$optionsMessages = [
 			'globalblocking-list-tempblocks' => 'tempblocks',
 			'globalblocking-list-indefblocks' => 'indefblocks',
+			'globalblocking-list-autoblocks' => 'autoblocks',
+			'globalblocking-list-userblocks' => 'userblocks',
 			'globalblocking-list-addressblocks' => 'addressblocks',
 			'globalblocking-list-rangeblocks' => 'rangeblocks',
-			'globalblocking-list-userblocks' => 'userblocks',
 		];
 		return [
 			'target' => [
@@ -161,7 +162,8 @@ class SpecialGlobalBlockList extends FormSpecialPage {
 					$centralId = $this->lookup->centralIdFromName( $this->target, $this->getAuthority() );
 				}
 				$targetExpr = $this->globalBlockLookup->getGlobalBlockLookupConditions(
-					$ip, $centralId, GlobalBlockLookup::SKIP_ALLOWED_RANGES_CHECK
+					$ip, $centralId,
+					GlobalBlockLookup::SKIP_ALLOWED_RANGES_CHECK | GlobalBlockLookup::SKIP_AUTOBLOCKS
 				);
 			}
 			if ( $targetExpr === null ) {
@@ -174,8 +176,9 @@ class SpecialGlobalBlockList extends FormSpecialPage {
 		$hideIP = in_array( 'addressblocks', $this->options );
 		$hideRange = in_array( 'rangeblocks', $this->options );
 		$hideUser = in_array( 'userblocks', $this->options );
+		$hideAutoblocks = in_array( 'autoblocks', $this->options );
 
-		if ( $hideIP && $hideRange && $hideUser ) {
+		if ( $hideIP && $hideRange && $hideUser && $hideAutoblocks ) {
 			$this->queryValid = false;
 		}
 		if ( $hideIP ) {
@@ -189,6 +192,9 @@ class SpecialGlobalBlockList extends FormSpecialPage {
 		}
 		if ( $hideUser ) {
 			$conds['gb_target_central_id'] = 0;
+		}
+		if ( $hideAutoblocks ) {
+			$conds['gb_autoblock_parent_id'] = 0;
 		}
 
 		$hideTemp = in_array( 'tempblocks', $this->options );

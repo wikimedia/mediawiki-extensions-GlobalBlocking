@@ -103,11 +103,15 @@ class GlobalBlockListPager extends TablePager {
 			case 'target':
 				return $this->formatTarget( $row );
 			case 'gb_expiry':
+				$targetForUrl = $row->gb_address;
+				if ( $row->gb_autoblock_parent_id ) {
+					$targetForUrl = '#' . $row->gb_id;
+				}
 				$actionLinks = Html::rawElement(
 					'span',
 					[ 'class' => 'mw-globalblocking-globalblocklist-actions' ],
 					$this->globalBlockingLinkBuilder->getActionLinks(
-						$this->getAuthority(), $row->gb_address, $this->getContext()
+						$this->getAuthority(), $targetForUrl, $this->getContext()
 					)
 				);
 				return $this->msg( 'globalblocking-list-table-cell-expiry' )
@@ -167,6 +171,12 @@ class GlobalBlockListPager extends TablePager {
 	 * @return string
 	 */
 	private function formatTarget( $row ) {
+		// Return early if the global block is an autoblock, as we should just use the ID to reference the block target
+		// to avoid exposing the IP addres that was globally autoblocked.
+		if ( $row->gb_autoblock_parent_id ) {
+			return $this->msg( 'globalblocking-global-autoblock-id', $row->gb_id )->parse();
+		}
+
 		// Get the target of the block from the database row. If the target is a user, then the code will determine
 		// whether the username is hidden from the current authority.
 		if ( $row->gb_target_central_id ) {
