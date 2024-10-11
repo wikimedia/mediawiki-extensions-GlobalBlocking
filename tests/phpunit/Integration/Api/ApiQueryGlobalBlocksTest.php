@@ -73,7 +73,7 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 		$this->assertSameSize( $expectedBlockTargets, $result['query']['globalblocks'] );
 		foreach ( $result['query']['globalblocks'] as $block ) {
 			$this->assertArrayEquals(
-				[ 'address', 'anononly', 'account-creation-disabled' ],
+				[ 'address', 'anononly', 'account-creation-disabled', 'autoblocking-enabled', 'automatic' ],
 				array_keys( $block ), false, false,
 				'The properties returned by the API were not as expected'
 			);
@@ -82,13 +82,23 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 				'The API returned a block that was not expected.'
 			);
 			$this->assertSame(
-				$block['anononly'], $expectedBlockTargets[$block['address']]['anon-only'],
+				$expectedBlockTargets[$block['address']]['anon-only'], $block['anononly'],
 				'Anon only flag is not the expected value'
 			);
 			$this->assertSame(
-				$block['account-creation-disabled'],
 				$expectedBlockTargets[$block['address']]['account-creation-disabled'],
+				$block['account-creation-disabled'],
 				'Anon only flag is not the expected value'
+			);
+			$this->assertSame(
+				$expectedBlockTargets[$block['address']]['enable-autoblock'],
+				$block['autoblocking-enabled'],
+				'Autoblocking enabled flag is not the expected value'
+			);
+			$this->assertSame(
+				$expectedBlockTargets[$block['address']]['automatic'],
+				$block['automatic'],
+				'Automatic flag is not the expected value'
 			);
 		}
 	}
@@ -102,20 +112,44 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 				2,
 				// The expected block targets as keys and what block flags should be set as keys
 				[
-					'127.0.0.1' => [ 'anon-only' => true, 'account-creation-disabled' => true ],
-					'127.0.0.0/24' => [ 'anon-only' => false, 'account-creation-disabled' => true ]
+					'127.0.0.1' => [
+						'anon-only' => true, 'account-creation-disabled' => true,
+						'enable-autoblock' => false, 'automatic' => false,
+					],
+					'127.0.0.0/24' => [
+						'anon-only' => false, 'account-creation-disabled' => true,
+						'enable-autoblock' => false, 'automatic' => false,
+					],
 				],
 			],
 			'Single IPv4, limit 1' => [
-				'127.0.0.1', 1, [ '127.0.0.1' => [ 'anon-only' => true, 'account-creation-disabled' => true ] ],
+				'127.0.0.1', 1,
+				[
+					'127.0.0.1' => [
+						'anon-only' => true, 'account-creation-disabled' => true,
+						'enable-autoblock' => false, 'automatic' => false,
+					],
+				],
 			],
 			'IPv4 range, limit 1' => [
-				'127.0.0.0/25', 1, [ '127.0.0.0/24' => [ 'anon-only' => false, 'account-creation-disabled' => true ] ],
+				'127.0.0.0/25', 1,
+				[
+					'127.0.0.0/24' => [
+						'anon-only' => false, 'account-creation-disabled' => true,
+						'enable-autoblock' => false, 'automatic' => false,
+					],
+				],
 			],
 			'IPv6 range, limit 2' => [
 				'2000:ABCD:ABCD:A:0:0:0:0/108', 2,
-				[ '2000:ABCD:ABCD:A:0:0:0:0/108' => [ 'anon-only' => false, 'account-creation-disabled' => false ] ],
+				[
+					'2000:ABCD:ABCD:A:0:0:0:0/108' => [
+						'anon-only' => false, 'account-creation-disabled' => false,
+						'enable-autoblock' => false, 'automatic' => false,
+					],
+				],
 			],
+			'IPv4 that is only autoblocked' => [ '77.8.9.11', 2, [] ],
 		];
 	}
 
@@ -174,14 +208,15 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 				'expiry' => wfTimestamp( TS_ISO_8601, '20250405060708' ),
 				'reason' => 'test1', 'rangeend' => '127.0.0.255', 'rangestart' => '127.0.0.0',
 				'account-creation-disabled' => true, 'anononly' => false,
+				'autoblocking-enabled' => false, 'automatic' => false,
 			],
 			$result['query']['globalblocks'][0],
 			false, true, 'The returned global block entry was not as expected.'
 		);
 	}
 
-	/** @dataProvider provideExecuteWithRangeProp */
-	public function testExecuteWithRangeProp( $id, $expectedArrayItem ) {
+	/** @dataProvider provideExecuteForIdsLookupWithRangeProp */
+	public function testExecuteForIdsLookupWithRangeProp( $id, $expectedArrayItem ) {
 		// Validate that the 'range' prop works for both blocks on IPv4 and IPv6 addresses/ranges.
 		[ $result ] = $this->doApiRequest( [
 			'action' => 'query', 'list' => 'globalblocks', 'bgids' => $id,
@@ -197,13 +232,14 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 		);
 	}
 
-	public static function provideExecuteWithRangeProp() {
+	public static function provideExecuteForIdsLookupWithRangeProp() {
 		return [
 			'IPV4' => [
 				'1',
 				[
 					'id' => 1, 'target' => '127.0.0.0/24', 'rangeend' => '127.0.0.255', 'rangestart' => '127.0.0.0',
-					'account-creation-disabled' => true, 'anononly' => false,
+					'account-creation-disabled' => true, 'anononly' => false, 'autoblocking-enabled' => false,
+					'automatic' => false,
 				],
 			],
 			'IPv6' => [
@@ -211,7 +247,17 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 				[
 					'id' => 3, 'target' => '2000:ABCD:ABCD:A:0:0:0:0/108',
 					'rangeend' => '2000:ABCD:ABCD:A:0:0:F:FFFF', 'rangestart' => '2000:ABCD:ABCD:A:0:0:0:0',
-					'account-creation-disabled' => false, 'anononly' => false,
+					'account-creation-disabled' => false, 'anononly' => false, 'autoblocking-enabled' => false,
+					'automatic' => false,
+				],
+			],
+			'IPv4 autoblock' => [
+				'8',
+				// The 'rangestart', 'rangeend', and 'target' props should not be returned, even if requested, when
+				// the target is an autoblock.
+				[
+					'id' => '8', 'anononly' => false, 'autoblocking-enabled' => false,
+					'account-creation-disabled' => true, 'automatic' => true,
 				],
 			],
 		];
@@ -226,9 +272,31 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 		$this->assertArrayHasKey( 'globalblocks', $result['query'] );
 		$this->assertCount( 1, $result['query']['globalblocks'] );
 		$this->assertArrayEquals(
-			[ 'address' => '127.0.0.0/24', 'account-creation-disabled' => true, 'anononly' => false ],
+			[
+				'address' => '127.0.0.0/24', 'account-creation-disabled' => true, 'anononly' => false,
+				'autoblocking-enabled' => false, 'automatic' => false,
+			],
 			$result['query']['globalblocks'][0],
 			false, true, 'The returned global block entry was not as expected.'
+		);
+	}
+
+	public function testExecuteWithDeprecatedAddressPropForAutoblock() {
+		[ $result ] = $this->doApiRequest( [
+			'action' => 'query', 'list' => 'globalblocks', 'bgids' => '8',
+			'bgprop' => 'address',
+		] );
+		$this->assertArrayHasKey( 'query', $result );
+		$this->assertArrayHasKey( 'globalblocks', $result['query'] );
+		$this->assertCount( 1, $result['query']['globalblocks'] );
+		$this->assertArrayEquals(
+			[
+				'account-creation-disabled' => true, 'anononly' => false,
+				'autoblocking-enabled' => false, 'automatic' => true,
+			],
+			$result['query']['globalblocks'][0],
+			false, true,
+			'The address property should not be included if the target is an autoblock'
 		);
 	}
 
@@ -268,6 +336,7 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 			'Single IPv4, limit 1' => [ '127.0.0.1', 1, [ '4' ] ],
 			'IPv4 range, limit 1' => [ '127.0.0.0/24', 1, [ '1' ] ],
 			'IPv6 range, limit 2' => [ '2000:ABCD:ABCD:A:0:0:0:0/108', 2, [ '3' ] ],
+			'IPv4 that is only autoblocked' => [ '77.8.9.11', 2, [] ],
 		];
 	}
 
@@ -321,6 +390,8 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 	}
 
 	public function addDBDataOnce() {
+		// Allow global autoblocks, so that we can check that global autoblocks are properly handled by the API
+		$this->overrideConfigValue( 'GlobalBlockingEnableAutoblocks', true );
 		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
 		// to be the local provider.
 		$this->overrideConfigValue( MainConfigNames::CentralIdLookupProvider, 'local' );
@@ -353,7 +424,14 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 		// Insert a global block on a username target
 		ConvertibleTimestamp::setFakeTime( '20230205060713' );
 		$testUser = $this->getMutableTestUser()->getUserIdentity();
-		$globalBlockManager->block( $testUser->getName(), 'test5', '20240705060708', $testPerformer );
+		$userBlockStatus = $globalBlockManager->block(
+			$testUser->getName(), 'test5', '20240705060708', $testPerformer,
+			[ 'enable-autoblock' ]
+		);
+		$this->assertStatusGood( $userBlockStatus );
+		$userBlockId = $userBlockStatus->getValue()['id'];
+		// Insert an autoblock for the global block on the username target
+		$globalBlockManager->autoblock( $userBlockId, '77.8.9.11' );
 		// Store the $testPerformer for later use
 		static::$testPerformer = $testPerformer;
 		static::$testTarget = $testUser;
