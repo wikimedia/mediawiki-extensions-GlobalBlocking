@@ -11,6 +11,7 @@ use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockManager;
 use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\HTMLForm;
+use MediaWiki\Message\Message;
 use MediaWiki\SpecialPage\FormSpecialPage;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
@@ -124,7 +125,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 		if ( $this->target ) {
 			$dbr = $this->globalBlockingConnectionProvider->getReplicaGlobalBlockingDatabase();
 			$queryBuilder = $dbr->newSelectQueryBuilder()
-				->select( [ 'gb_anon_only', 'gb_reason', 'gb_expiry', 'gb_create_account' ] )
+				->select( [ 'gb_anon_only', 'gb_reason', 'gb_expiry', 'gb_create_account', 'gb_enable_autoblock' ] )
 				->from( 'globalblocks' );
 			if ( IPUtils::isIPAddress( $this->target ) ) {
 				$queryBuilder->where( [ 'gb_address' => $this->target ] );
@@ -145,6 +146,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 				$blockOptions['anononly'] = $block->gb_anon_only;
 				$blockOptions['createAccount'] = $block->gb_create_account;
 				$blockOptions['reason'] = $block->gb_reason;
+				$blockOptions['enableAutoblock'] = $block->gb_enable_autoblock;
 				$blockOptions['expiry'] = ( $block->gb_expiry === 'infinity' )
 					? 'indefinite'
 					: wfTimestamp( TS_ISO_8601, $block->gb_expiry );
@@ -197,6 +199,16 @@ class SpecialGlobalBlock extends FormSpecialPage {
 				'label-message' => 'globalblocking-block-disable-account-creation',
 				'default' => true,
 			],
+			'AutoBlock' => [
+				'type' => 'check',
+				'label-message' => [
+					'globalblocking-block-enable-autoblock',
+					Message::numParam( $this->getConfig()->get( 'GlobalBlockingMaximumIPsToRetroactivelyAutoblock' ) ),
+					Message::durationParam( $this->getConfig()->get( 'GlobalBlockingAutoblockExpiry' ) ),
+				],
+				'id' => 'mw-globalblock-enable-autoblock',
+				'default' => true,
+			],
 			'Modify' => [
 				'type' => 'hidden',
 				'default' => '',
@@ -214,6 +226,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 			$fields['Reason']['default'] = $blockOptions['reason'];
 			$fields['AnonOnly']['default'] = $blockOptions['anononly'];
 			$fields['CreateAccount']['default'] = $blockOptions['createAccount'];
+			$fields['AutoBlock']['default'] = $blockOptions['enableAutoblock'];
 			if ( $this->getRequest()->getVal( 'Previous' ) !== $this->target ) {
 				// Let the user know about it and re-submit to modify
 				$fields['Modify']['default'] = 1;
@@ -313,6 +326,10 @@ class SpecialGlobalBlock extends FormSpecialPage {
 
 		if ( !$data['CreateAccount'] ) {
 			$options[] = 'allow-account-creation';
+		}
+
+		if ( $data['AutoBlock'] ) {
+			$options[] = 'enable-autoblock';
 		}
 
 		if ( $this->modifyForm && $data['Modify']

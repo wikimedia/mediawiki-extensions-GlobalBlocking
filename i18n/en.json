@@ -20,6 +20,7 @@
 	"globalblocking-target-with-block-ids": "Username, IP address, IP range, or block ID:",
 	"globalblocking-ipbanononly": "Globally block anonymous users only",
 	"globalblocking-block-disable-account-creation": "Globally disable account creation",
+	"globalblocking-block-enable-autoblock": "Automatically globally block the {{PLURAL:$1|last IP address|last $1 IP addresses}} used by this user, and any subsequent IP addresses they try to edit from, for a period of $2",
 	"globalblocking-block-target-invalid": "The username, IP address, or IP range ($1) you entered is invalid.",
 	"globalblocking-block-expiryinvalid": "The expiration you entered is invalid.",
 	"globalblocking-block-anononly-on-account": "Blocks on accounts cannot only apply to anonymous users.",
