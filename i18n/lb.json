@@ -35,7 +35,6 @@
 	"globalblocklist-summary": "Dëst ass eng Lëscht vun alle globale Spärendéi elo aktiv sinn.\nE puer Spären sinn lokal ausgeschalt: dat heescht si si just op anere Site gëlteg, well e lokalen Administrateur entscheed huet se op dëser Wiki ze desaktivéieren.",
 	"globalblocking-list": "Lëscht vun de global gespaarten IP-Adressen",
 	"globalblocking-search-legend": "No enger globaler Spär sichen",
-	"globalblocking-search-target": "Benotzernumm, IP-Adress oder IP-Adressberäich:",
 	"globalblocking-search-submit": "Späre sichen",
 	"globalblocking-list-target-invalid": "De Benotzer, no deem Dir gesicht hutt, ($1) ass net gülteg.\nGitt wgl. eng gülteg IP-Adress oder ee gültege Benotzernumm an.",
 	"globalblocking-list-anononly": "nëmmen anonym Benotzer",

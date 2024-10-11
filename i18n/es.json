@@ -60,7 +60,6 @@
 	"globalblocklist-summary": "Esta es una lista de todos los bloqueos globales que están actualmente activos.\nAlgunos están marcados como desactivados localmente: esto significa que dichos bloqueos están activos para el resto de los proyectos, pero un administrador de esta wiki ha decidido desactivarlo para este sitio en concreto.",
 	"globalblocking-list": "Lista de direcciones IP bloqueadas globalmente",
 	"globalblocking-search-legend": "Buscar un bloqueo global",
-	"globalblocking-search-target": "Nombre de usuario, dirección IP o rango de IP:",
 	"globalblocking-search-submit": "Buscar bloqueos",
 	"globalblocking-list-target-invalid": "El usuario que buscaste ($1) es inválido.\nPor favor ingrese una dirección IP o nombre de usuario válido.",
 	"globalblocking-list-item": "$1: <strong class=\"plainlinks\">$3</strong> <i>$4</i> {{GENDER:$2|bloqueó}} globalmente a {{GENDER:$5|$6}} con un tiempo de caducidad de $7 $8 $9 $10",

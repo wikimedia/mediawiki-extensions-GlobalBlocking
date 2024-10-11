@@ -50,7 +50,6 @@
 	"globalblocklist-summary": "Dit is een lijst met alle globale blokkades die op het moment actief zijn.\nSommige blokkades zijn gemarkeerd als lokaal opgeheven.\nDit betekent dat ze op andere sites van toepassing zijn, maar dat een lokale beheerder heeft besloten dat de blokkade op deze wiki niet van toepassing is.",
 	"globalblocking-list": "Lijst met globaal geblokkeerde IP-adressen",
 	"globalblocking-search-legend": "Naar een globale blokkade zoeken",
-	"globalblocking-search-target": "Gebruikersnaam, IP-adres of IP-bereik:",
 	"globalblocking-search-submit": "Naar blokkades zoeken",
 	"globalblocking-list-target-invalid": "De gebruiker waarnaar u zocht ($1) is ongeldig.\nVoer een geldig IP-adres of een geldige gebruikersnaam in.",
 	"globalblocking-list-item": "$1: <span class=\"plainlinks\"><strong>$3</strong></span> <i>$4</i> heeft $6 globaal geblokkeerd met als vervaltijd $7 $8 $9 $10{{GENDER:$2|}}{{GENDER:$5|}}",

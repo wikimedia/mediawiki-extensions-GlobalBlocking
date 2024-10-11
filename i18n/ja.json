@@ -57,7 +57,6 @@
 	"globalblocklist-summary": "これは現在有効なすべてのグローバルブロックの一覧です。\n「ローカルで無効」の印が付いたブロックがいくつかあります。この印があるグローバルブロックは他のサイトでは有効ですが、このウィキではローカル管理者が無効とすることにしたことを意味します。",
 	"globalblocking-list": "グローバルブロックを受けているIPアドレスおよびアカウント一覧",
 	"globalblocking-search-legend": "グローバルブロックの検索",
-	"globalblocking-search-target": "利用者名、IPアドレスまたはIPアドレス範囲:",
 	"globalblocking-search-submit": "ブロックを検索",
 	"globalblocking-list-target-invalid": "あなたが検索した利用者 ($1) には誤りがあります。\n有効なIPアドレスまたは利用者名を入力してください。",
 	"globalblocking-list-item": "$1: <span class=\"plainlinks\"><strong>$3</strong></span> <i>$4</i> が {{GENDER:$5|$6}} を有効期限は $7 としてグローバル{{GENDER:$2|ブロックしました}} $8 $9 $10",

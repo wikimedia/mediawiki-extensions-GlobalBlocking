@@ -37,7 +37,6 @@
 	"globalblocklist-summary": "Dette er en liste over nåværende globale blokkeringer. Noen blokkeringer er slått av lokalt; dette betyr at den gjelder andre steder, men at en lokal administrator har bestemt seg for å slå av blokkeringen på sin wiki.",
 	"globalblocking-list": "Liste over globalt blokkerte IP-adresser",
 	"globalblocking-search-legend": "Søk etter en global blokkering",
-	"globalblocking-search-target": "Brukernavn, IP-adresse eller IP-intervall:",
 	"globalblocking-search-submit": "Søk etter blokkeringer",
 	"globalblocking-list-target-invalid": "Brukeren du søkte etter ($1) er ugyldig. Skriv inn en gyldig IP-adresse eller et gyldig brukernavn.",
 	"globalblocking-list-anononly": "kun uregistrerte",

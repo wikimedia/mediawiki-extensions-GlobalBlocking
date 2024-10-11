@@ -37,7 +37,6 @@
 	"globalblocklist-summary": "To je seznam vseh globalnih blokiranj, ki so trenutno v veljavi.\nNekatera blokiranja so označena kot lokalno onemogočena: to pomeni, da so v uporabi na drugih straneh, vendar se je lokalni administrator odločil, da jih bo onemogočil v tem vikiju.",
 	"globalblocking-list": "Seznam globalno blokiranih IP-naslovov",
 	"globalblocking-search-legend": "Iskanje globalnega blokiranja",
-	"globalblocking-search-target": "Uporabniško ime, IP-naslov ali IP-razpon:",
 	"globalblocking-search-submit": "Iskanje blokiranj",
 	"globalblocking-list-target-invalid": "Uporabnik, ki ste ga iskali ($1), je neveljaven. Prosimo, vnesite veljaven IP-naslov ali uporabniško ime.",
 	"globalblocking-list-anononly": "samo brezimneži",

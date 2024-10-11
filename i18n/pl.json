@@ -50,7 +50,6 @@
 	"globalblocklist-summary": "Poniżej znajduje się lista wszystkich obecnie nałożone globalnych blokad.\nNiektóre blokady zostały oznaczone jako odblokowane lokalnie – oznacza to, że jeden z lokalnych administratorów zdecydował się zdjąć blokadę na tej wiki, ale wciąż obowiązuje ona na innych projektach.",
 	"globalblocking-list": "Spis globalnie zablokowanych adresów IP",
 	"globalblocking-search-legend": "Szukaj globalnej blokady",
-	"globalblocking-search-target": "Nazwa użytkownika, adres IP lub zakres IP:",
 	"globalblocking-search-submit": "Szukaj blokad",
 	"globalblocking-list-target-invalid": "Użytkownik, którego szukasz ($1) jest nieprawidłowy.\nWprowadź poprawny adres IP lub nazwę użytkownika.",
 	"globalblocking-list-item": "$1: <span class=\"plainlinks\"><strong>$3</strong></span> <i>$4</i> {{GENDER:$2|zablokował|zablokowała}} globalnie {{GENDER:$5|$6}} do $7 $8 $9 $10",

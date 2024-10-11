@@ -37,7 +37,6 @@
 	"globalblocklist-summary": "Isto es un lista de tote le blocadas global actualmente in effecto. Alcun blocadas es marcate como localmente disactivate: isto significa que illos es applicabile in altere sitos, sed un administrator local ha decidite a disactivar los in iste wiki.",
 	"globalblocking-list": "Lista de adresses IP blocate globalmente",
 	"globalblocking-search-legend": "Cercar un blocada global",
-	"globalblocking-search-target": "Nomine de usator, adresse IP o gamma de adresses IP:",
 	"globalblocking-search-submit": "Cercar blocadas",
 	"globalblocking-list-target-invalid": "Le usator que tu cercava ($1) es invalide.\nPer favor entra un adresse IP o nomine de usator valide.",
 	"globalblocking-list-item": "$1: <span class=\"plainlinks\"><strong>$3</strong></span> <i>$4</i> globalmente {{GENDER:$2|ha blocate}} {{GENDER:$5|$6}} con un tempore de expiration de $7 $8 $9 $10",

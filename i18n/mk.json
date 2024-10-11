@@ -37,7 +37,6 @@
 	"globalblocklist-summary": "Ова е список на сите моментални глобални блокови во дејство.\nНекои блокови се означени како месно оневозможени: ова значи дека тие важат за други страници, но месниот администратор решил да ги оневозможи на ова вики.",
 	"globalblocking-list": "Список на глобално блокирани IP-адреси",
 	"globalblocking-search-legend": "Пребарај глобален блок",
-	"globalblocking-search-target": "Корисничко име, IP-адреса или IP-опсег:",
 	"globalblocking-search-submit": "Пребарај блокирања",
 	"globalblocking-list-target-invalid": "Корисникот кој го пребаравте ($1) е неважечки.\nВнесете важечка IP-адреса или корисничко име.",
 	"globalblocking-list-item": "$1: <span class=\"plainlinks\"><strong>$3</strong></span> <i>$4</i> глобално {{GENDER:$2|го блокираше}} {{GENDER:$5|$6}} со истек $7 $8 $9 $10",

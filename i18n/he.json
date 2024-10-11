@@ -44,7 +44,6 @@
 	"globalblocklist-summary": "זוהי רשימה של כל החסימות הגלובליות הקיימות כרגע. חלק מהחסימות מסומנות כחסימות מוגבלות באופן מקומי: פירוש הדבר שהן תקפות באתרים אחרים, אך אחד ממפעילי המערכת המקומיים החליט לבטלן באתר זה.",
 	"globalblocking-list": "רשימת כתובות IP שנחסמו גלובלית",
 	"globalblocking-search-legend": "חיפוש חסימה גלובלית",
-	"globalblocking-search-target": "שם משתמש, כתובת IP, או טווח IP:",
 	"globalblocking-search-submit": "חיפוש חסימות",
 	"globalblocking-list-target-invalid": "המשתמש שחיפשת ($1) אינו תקין.\nנא להזין כתובת IP תקינה.",
 	"globalblocking-list-item": "$1: <span class=\"plainlinks\"><strong>$3</strong></span> <i>$4</i> {{GENDER:$2|חסם|חסמה}} גלובלית את {{GENDER:$5|$6}} עם זמן פקיעה של $7 $8 $9 $10",

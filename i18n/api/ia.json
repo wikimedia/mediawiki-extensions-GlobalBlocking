@@ -6,7 +6,7 @@
 	},
 	"globalblocking-apierror-badip": "Le adresse IP $1 non es valide",
 	"apihelp-globalblock-summary": "Blocar o disblocar globalmente un usator.",
-	"apihelp-globalblock-param-target": "Le adresse IP o nomine de usator de destination.",
+	"apihelp-globalblock-param-target": "Le adresse IP o nomine de usator de destination. Non pote esser usate insimul con <var>$1id</var>.",
 	"apihelp-globalblock-param-expiry": "Si es specificate, bloca o re-bloca le usator. Determina le duration del blocada, p.ex. \"5 menses\" o \"2 spetimanas\". Si es mittite a \"infinite\" o \"indefinite\", le blocada non expirara jammais.",
 	"apihelp-globalblock-param-unblock": "Si es specificate, disbloca le usator.",
 	"apihelp-globalblock-param-reason": "Le motivo pro blocar/disblocar.",
@@ -33,9 +33,9 @@
 	"apihelp-query+globalblocks-paramvalue-prop-range": "Adde le intervallo de adresses IP blocate globalmente. (Isto non es includite si le blocada non es visate a adresses IP.)",
 	"apihelp-query+globalblocks-example-1": "Listar tote le blocadas global",
 	"apihelp-query+globalblocks-example-2": "Listar blocadas global que se applica al adresse IP 192.0.2.18",
-	"apihelp-globalblock-param-alsolocal": "Blocar le usator localmente tamben",
-	"apihelp-globalblock-param-localblockstalk": "Revocar localmente le accesso al pagina de discussion",
-	"apihelp-globalblock-param-localblocksemail": "Revocar localmente le accesso per e-mail",
-	"apihelp-globalblock-param-localanononly": "Specifica isto si le blocada debe localmente affectar solo le usatores sin session aperte.",
-	"apihelp-globalblock-param-local-allow-account-creation": "Specifica isto si le blocada local non debe impedir le creation de contos."
+	"apihelp-globalblock-param-alsolocal": "Blocar le usator localmente tamben. Non pote esser usate insimul con <var>$1id</var>.",
+	"apihelp-globalblock-param-localblockstalk": "Revocar localmente le accesso al pagina de discussion. Non pote esser usate insimul con <var>$1id</var>.",
+	"apihelp-globalblock-param-localblocksemail": "Revocar localmente le accesso per e-mail. Non pote esser usate insimul con <var>$1id</var>.",
+	"apihelp-globalblock-param-localanononly": "Specifica isto si le blocada debe localmente affectar solo le usatores sin session aperte. Non pote esser usate insimul con <var>$1id</var>.",
+	"apihelp-globalblock-param-local-allow-account-creation": "Specifica isto si le blocada local non debe impedir le creation de contos. Non pote esser usate insimul con <var>$1id</var>."
 }

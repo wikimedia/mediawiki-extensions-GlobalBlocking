@@ -11,7 +11,8 @@
 	},
 	"globalblocking-apierror-badip": "Die IP-Adresse $1 ist ungültig",
 	"apihelp-globalblock-summary": "Sperrt global einen Benutzer oder gibt ihn frei.",
-	"apihelp-globalblock-param-target": "Die Ziel-IP-Adresse oder der Benutzername.",
+	"apihelp-globalblock-param-id": "ID der globalen Sperre, die geändert oder entsperrt werden soll (erhalten über <kbd>list=globalblocks</kbd> ). Kann nicht zusammen mit <var>$1target</var> verwendet werden.",
+	"apihelp-globalblock-param-target": "Die Ziel-IP-Adresse oder der Benutzername. Kann nicht zusammen mit <var>$1id</var> verwendet werden.",
 	"apihelp-globalblock-param-expiry": "Wird, wenn angegeben, Benutzer sperren oder erneut sperren. Bestimmt, wie lange die Sperre dauert. Zum Beispiel \"5 Monate\" oder \"2 Wochen\". Falls auf \"unendlich\" oder \"unbestimmt\" gesetzt, wird die Sperre niemals aufgehoben.",
 	"apihelp-globalblock-param-unblock": "Falls angegeben, wird der Benutzer entsperrt.",
 	"apihelp-globalblock-param-reason": "Der Grund für das Sperren/Entsperren.",
@@ -38,9 +39,9 @@
 	"apihelp-query+globalblocks-paramvalue-prop-range": "Fügt den Bereich der IP-Adressen hinzu, die von der globalen Sperre betroffen sind (nicht enthalten, wenn die Sperre nicht auf IP-Adressen abzielt).",
 	"apihelp-query+globalblocks-example-1": "Alle globale Sperren auflisten",
 	"apihelp-query+globalblocks-example-2": "Listet globale Sperren der IP-Adresse 192.0.2.18 auf",
-	"apihelp-globalblock-param-alsolocal": "Sperre den Benutzer auch lokal",
-	"apihelp-globalblock-param-localblockstalk": "Lokalen Zugang zur Diskussionsseite aufheben",
-	"apihelp-globalblock-param-localblocksemail": "E-Mail-Zugang lokal sperren",
-	"apihelp-globalblock-param-localanononly": "Gib dies an, falls die Sperre nur lokal abgemeldete Benutzer betreffen soll.",
-	"apihelp-globalblock-param-local-allow-account-creation": "Gibt an, wenn die lokale Sperre die Kontoerstellung nicht verhindern soll."
+	"apihelp-globalblock-param-alsolocal": "Sperre den Benutzer auch lokal. Kann nicht zusammen mit <var>$1id</var> verwendet werden.",
+	"apihelp-globalblock-param-localblockstalk": "Lokalen Zugang zur Diskussionsseite aufheben. Kann nicht zusammen mit <var>$1id</var> verwendet werden.",
+	"apihelp-globalblock-param-localblocksemail": "E-Mail-Zugang lokal sperren. Kann nicht zusammen mit <var>$1id</var> verwendet werden.",
+	"apihelp-globalblock-param-localanononly": "Gib dies an, falls die Sperre nur lokal abgemeldete Benutzer betreffen soll. Kann nicht zusammen mit <var>$1id</var> verwendet werden.",
+	"apihelp-globalblock-param-local-allow-account-creation": "Gibt an, wenn die lokale Sperre die Kontoerstellung nicht verhindern soll. Kann nicht zusammen mit <var>$1id</var> verwendet werden."
 }

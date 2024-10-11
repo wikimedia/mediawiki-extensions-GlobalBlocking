@@ -55,7 +55,6 @@
 	"globalblocklist-summary": "Tämä luettelo sisältää kaikki järjestelmänlaajuiset estot (global blocks), jotka ovat tällä hetkellä voimassa.\n\nJotkut estoista on voitu merkitä paikallisesti poistetuiksi: tämä tarkoittaa, että esto on voimassa muualla, mutta paikallinen ylläpitäjä on päättänyt poistaa eston vaikutuksen tässä wikissä.",
 	"globalblocking-list": "Järjestelmänlaajuisesti estetyt IP-osoitteet ja tunnukset",
 	"globalblocking-search-legend": "Etsi järjestelmänlaajuisia estoja",
-	"globalblocking-search-target": "Käyttäjänimi, IP-osoite tai IP-alue:",
 	"globalblocking-search-submit": "Hae estot",
 	"globalblocking-list-target-invalid": "Haettu käyttäjä ($1) on virheellinen.\nAnna kelvollinen IP-osoite tai käyttäjänimi.",
 	"globalblocking-list-item": "$1: <span class=\"plainlinks\"><strong>$3</strong></span> <i>$4</i> {{GENDER:$2|esti}} järjestelmänlaajuisesti käyttäjän {{GENDER:$5|$6}}. Esto päättyy $7 $8 $9 $10",

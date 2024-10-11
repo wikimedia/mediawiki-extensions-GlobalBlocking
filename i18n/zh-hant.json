@@ -65,7 +65,6 @@
 	"globalblocklist-summary": "此為所有目前有效的全域封鎖清單。有部份封鎖己被標記在本地停用：代表該封鎖僅適用於其他網站，本地管理員決定在此wiki停用該封鎖。",
 	"globalblocking-list": "全域封鎖IP位址清單",
 	"globalblocking-search-legend": "搜尋全域封鎖",
-	"globalblocking-search-target": "使用者名稱、IP 位址、或 IP 範圍：",
 	"globalblocking-search-submit": "搜尋封鎖",
 	"globalblocking-list-target-invalid": "您搜尋的使用者（$1）無效。\n請輸入一個有效的 IP 位址或使用者名稱。",
 	"globalblocking-list-item": "$1：<span class=\"plainlinks\"><strong>$3</strong></span> <i>$4</i> 全域{{GENDER:$2|封鎖了}} {{GENDER:$5|$6}}，到期時間為$7 $8 $9 $10",

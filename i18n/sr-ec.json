@@ -39,7 +39,6 @@
 	"globalblocklist-summary": "Ово је списак свих глобалних блокада на снази.\nНеке блокаде су означене као локално онемогућене: то значи да оне важе за друге странице, али локални администратор је решио да их онемогући на овом викију.",
 	"globalblocking-list": "Списак глобално блокираних IP адреса",
 	"globalblocking-search-legend": "Претражите глобалне блокове",
-	"globalblocking-search-target": "Корисничко име, IP адреса, опсег IP адреса:",
 	"globalblocking-search-submit": "Претражите блокове",
 	"globalblocking-list-item": "$1: <span class=\"plainlinks\"><strong>$3</strong></span> <i>$4</i> је глобално {{GENDER:$2|блокирао|блокирала}} {{GENDER:$5|$6}} до $7 $8 $9 $10",
 	"globalblocking-list-anononly": "само анонимне",

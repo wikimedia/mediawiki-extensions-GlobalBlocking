@@ -42,7 +42,6 @@
 	"globalblocklist-summary": "Di seguito sono elencati tutti i blocchi globali che sono attualmente attivi. Alcuni blocchi sono segnati come disattivati localmente: ciò significa che questi sono attivi su altri siti, ma un amministratore locale ha deciso di disattivarli su quella wiki.",
 	"globalblocking-list": "Elenco degli indirizzi IP bloccati globalmente",
 	"globalblocking-search-legend": "Ricerca un blocco globale",
-	"globalblocking-search-target": "Nome utente, indirizzo IP o intervallo di IP:",
 	"globalblocking-search-submit": "Ricerca blocchi",
 	"globalblocking-list-target-invalid": "L'utente che hai cercato ($1) non è valido. Inserisci un indirizzo IP o un nome utente valido.",
 	"globalblocking-list-anononly": "solo anonimi",

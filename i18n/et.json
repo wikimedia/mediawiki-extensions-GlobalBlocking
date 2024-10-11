@@ -40,7 +40,6 @@
 	"globalblocklist-summary": "Siin on loetletud globaalsed blokeeringud, mis on praegu jõus.\nMõned blokeeringud on märgitud kui siin vikis välja lülitatud – see tähendab, et blokeering kehtib teistes vikides, aga siinne administraator on otsustanud, et siin pole vastavat blokeeringut vaja.",
 	"globalblocking-list": "Globaalselt blokeeritud IP-aadresside loend",
 	"globalblocking-search-legend": "Globaalse blokeeringu otsimine",
-	"globalblocking-search-target": "Kasutajanimi, IP-aadress või IP-vahemik:",
 	"globalblocking-search-submit": "Otsi blokeeringuid",
 	"globalblocking-list-target-invalid": "Otsitav kasutaja ($1) on sisestatud vigaselt.\nPalun sisesta sobiv IP-aadress või kasutajanimi.",
 	"globalblocking-list-item": "$1: <span class=\"plainlinks\"><strong>$3</strong></span> <i>$4</i> {{GENDER:$2|blokeeris}} globaalselt kasutaja {{GENDER:$5|$6}} aegumistähtajaga $7 $8 $9 $10",
