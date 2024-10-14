@@ -139,6 +139,6 @@
 	"globalblocking-blockedtext-proxy": "Die gesperrte Proxyadresse war $1.",
 	"globalblocking-blockedtext-username": "Dein Benutzername ist $1 .",
 	"globalblocking-autoblocker": "Global automatisch gesperrt, da deine IP-Adresse kürzlich von „[[User:$1|$1]]“ verwendet wurde.\nDer angegebene Grund für die Sperre von $1 ist „$2“.",
-	"globalblocking-autoblocker-hidden-block": "Global automatisch gesperrt, da deine IP-Adresse vor Kurzem von einem Benutzer mit der Sperr-ID Nr. $1 gesperrt wurde.",
+	"globalblocking-autoblocker-hidden-block": "Global automatisch gesperrt, da deine IP-Adresse vor Kurzem von einem Benutzer verwendet wurde, der durch die Sperr-ID Nr. $1 gesperrt ist.",
 	"globalblocking-centralauth-admin-info-globalblock": "Global gesperrt:"
 }

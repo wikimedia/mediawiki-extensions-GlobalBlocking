@@ -34,6 +34,7 @@
 	"globalblocking-block-expiry-selector-other": "Muu aika:",
 	"globalblocking-block-legend": "Estä IP-osoite järjestelmänlaajuisesti",
 	"globalblocking-target": "Käyttäjänimi, IP-osoite tai IP-alue:",
+	"globalblocking-target-with-block-ids": "Käyttäjätunnus, IP-osoite, IP-alue tai eston tunniste:",
 	"globalblocking-ipbanononly": "Estä järjestelmänlaajuisesti vain rekisteröitymättömät käyttäjät",
 	"globalblocking-block-disable-account-creation": "Estä tunnusten luominen järjestelmänlaajuisesti",
 	"globalblocking-block-target-invalid": "Annettu käyttäjänimi, IP-osoite tai IP-alue ($1) ei kelpaa.",

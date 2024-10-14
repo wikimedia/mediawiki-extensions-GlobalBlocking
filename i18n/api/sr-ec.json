@@ -6,5 +6,5 @@
 		]
 	},
 	"globalblocking-apierror-badip": "IP адреса $1 није важећа",
-	"apihelp-globalblock-param-alsolocal": "Такође блокирај корисника и локално"
+	"apihelp-globalblock-param-alsolocal": "Такође блокирај корисника локално. Не може се користити заједно са <var>$1id</var>."
 }

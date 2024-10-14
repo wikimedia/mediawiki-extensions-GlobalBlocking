@@ -8,7 +8,7 @@
 	},
 	"globalblocking-apierror-badip": "L'indirizzo IP $1 non è valido",
 	"apihelp-globalblock-summary": "Blocca o sblocca globalmente un utente.",
-	"apihelp-globalblock-param-target": "L'indirizzo IP o il nome utente di destinazione.",
+	"apihelp-globalblock-param-target": "L'indirizzo IP o il nome utente di destinazione. Non può essere utilizzato insieme a <var>$1id</var>.",
 	"apihelp-globalblock-param-unblock": "Se specificato, sarà sbloccato l'utente.",
 	"apihelp-globalblock-param-reason": "Il motivo del blocco/sblocco.",
 	"apihelp-globalblock-param-anononly": "Indica se questo blocco dovrebbe riguardare solo gli utenti che non hanno effettuato l'accesso globale.",
@@ -19,7 +19,7 @@
 	"apihelp-query+globalblocks-param-prop": "Quali proprietà ottenere.",
 	"apihelp-query+globalblocks-example-1": "Elenca tutti i blocchi globali",
 	"apihelp-query+globalblocks-example-2": "Elenca i blocchi globali che si applicano all'indirizzo IP 192.0.2.18",
-	"apihelp-globalblock-param-alsolocal": "Blocca l'utente anche localmente",
-	"apihelp-globalblock-param-localblockstalk": "Revoca localmente l'accesso alla propria pagina di discussione",
-	"apihelp-globalblock-param-localanononly": "Indica se questo blocco dovrebbe riguardare solo gli utenti che non hanno effettuato l'accesso locale."
+	"apihelp-globalblock-param-alsolocal": "Blocca l'utente anche localmente. Non può essere utilizzato insieme a <var>$1id</var>.",
+	"apihelp-globalblock-param-localblockstalk": "Revoca localmente l'accesso alla propria pagina di discussione. Non può essere utilizzato insieme a <var>$1id</var>.",
+	"apihelp-globalblock-param-localanononly": "Indica se questo blocco dovrebbe riguardare solo gli utenti che non hanno effettuato l'accesso locale. Non può essere utilizzato insieme a <var>$1id</var>."
 }

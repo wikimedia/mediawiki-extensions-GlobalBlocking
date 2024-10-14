@@ -108,5 +108,6 @@
 	"globalblocking-blockedtext-email-feature": "Možnosti »{{int:emailuser}}« ne morete uporabljati, razen če veljaven e-poštni naslov ni naveden v vaših [[Special:Preferences|nastavitvah računa]] in če vam uporaba ni bila blokirana.",
 	"globalblocking-blockedtext-ip-range": "Blokirani razpon je $1.",
 	"globalblocking-blockedtext-proxy": "Blokirani posredniški naslov je $1.",
-	"globalblocking-blockedtext-username": "Vaše uporabniško ime je $1."
+	"globalblocking-blockedtext-username": "Vaše uporabniško ime je $1.",
+	"globalblocking-autoblocker-hidden-block": "Globalno samodejno blokiranje, ker je vaš IP-naslov pred kratkim uporabil uporabnik, ki je  blokiran z ID-jem blokiranja št. $1."
 }

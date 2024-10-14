@@ -8,7 +8,8 @@
 	},
 	"globalblocking-apierror-badip": "כתובת ה־IP‏ $1 אינה תקינה",
 	"apihelp-globalblock-summary": "חסימה גלובלית או שחרור חסימה גלובלית של משתמש.",
-	"apihelp-globalblock-param-target": "כתובת ה־IP או שם המשתמש של היעד.",
+	"apihelp-globalblock-param-id": "מזהה החסימה הגלובלית לשינוי או שחרור (מתקבל דרך <kbd>list=globalblocks</kbd>). לא יכול לשמש יחד עם <var>$1target</var>.",
+	"apihelp-globalblock-param-target": "כתובת ה־IP או שם המשתמש של היעד. לא יכול לשמש יחד עם <var>$1id</var>.",
 	"apihelp-globalblock-param-expiry": "אם זה מצוין, זה יחסום או יבטל את החסימה של המשתמש. זה מגדיר למשך כמה זמן החסימה תימשך, למשל \"5 months\" או \"2 weeks\". אם מוגדר \"infinite\" או \"indefinite\", החסימה לעולם לא תפוג.",
 	"apihelp-globalblock-param-unblock": "אם זה מצוין, המשתמש ישוחרר.",
 	"apihelp-globalblock-param-reason": "הסיבה לחסימה או לשחרור.",
@@ -35,9 +36,9 @@
 	"apihelp-query+globalblocks-paramvalue-prop-range": "הוספת טווח כתובות ה־IP המושפעות מהחסימה הגלובלית (לא כלול אם החסימה אינה מכוונת לכתובות IP).",
 	"apihelp-query+globalblocks-example-1": "רשימת כל החסימות הגלובליות",
 	"apihelp-query+globalblocks-example-2": "רשימת חסימות גלובלית של כתובת IP של 192.0.2.18",
-	"apihelp-globalblock-param-alsolocal": "לחסום את המשתמש גם מקומית",
-	"apihelp-globalblock-param-localblockstalk": "לשלול גישה לדפי שיחה מקומית",
-	"apihelp-globalblock-param-localblocksemail": "לשלול גישה מקומית לדואר אלקטרוני",
-	"apihelp-globalblock-param-localanononly": "יש לציין את זה אם החסימה צריכה להשפיע מקומית רק על משתמשים שלא נכנסו לחשבון.",
-	"apihelp-globalblock-param-local-allow-account-creation": "יש להגדיר את זה אם החסימה המקומית לא צריכה למנוע יצירת חשבון."
+	"apihelp-globalblock-param-alsolocal": "לחסום את המשתמש גם מקומית. לא יכול לשמש יחד עם <var>$1id</var>.",
+	"apihelp-globalblock-param-localblockstalk": "לשלול מקומית גישה לדפי שיחה. לא יכול לשמש יחד עם <var>$1id</var>.",
+	"apihelp-globalblock-param-localblocksemail": "לשלול מקומית גישה לדואר אלקטרוני. לא יכול לשמש יחד עם <var>$1id</var>.",
+	"apihelp-globalblock-param-localanononly": "יש לציין את זה אם החסימה צריכה להשפיע על משתמשים שלא נכנסו לחשבון רק מקומית. לא יכול לשמש יחד עם <var>$1id</var>.",
+	"apihelp-globalblock-param-local-allow-account-creation": "יש לציין את זה אם החסימה המקומית לא צריכה למנוע יצירת חשבון. לא יכול לשמש יחד עם <var>$1id</var>."
 }

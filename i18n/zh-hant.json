@@ -44,6 +44,7 @@
 	"globalblocking-block-expiry-selector-other": "其他時間：",
 	"globalblocking-block-legend": "全域封鎖 IP 位址",
 	"globalblocking-target": "使用者名稱、IP位址、或IP範圍：",
+	"globalblocking-target-with-block-ids": "使用者名稱、IP位址、IP範圍或封鎖ID：",
 	"globalblocking-ipbanononly": "僅全域封鎖匿名使用者",
 	"globalblocking-block-disable-account-creation": "全域停用帳號建立",
 	"globalblocking-block-target-invalid": "您輸入的使用者名稱、IP 位址、或 IP 範圍無效（$1）。",
@@ -147,5 +148,6 @@
 	"globalblocking-blockedtext-ip-range": "被封鎖的位址段為$1。",
 	"globalblocking-blockedtext-proxy": "被封鎖的代理伺服器位址是$1。",
 	"globalblocking-blockedtext-username": "您的使用者名稱是$1。",
+	"globalblocking-autoblocker": "您的IP位址因最近被「[[User:$1|$1]]」使用過而被自動全域封鎖。封鎖$1的原因為「$2」",
 	"globalblocking-centralauth-admin-info-globalblock": "全域封鎖："
 }
