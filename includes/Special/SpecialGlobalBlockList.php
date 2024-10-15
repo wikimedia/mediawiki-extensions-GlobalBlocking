@@ -10,7 +10,6 @@ use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingUserVisibilityLook
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\Extension\GlobalBlocking\Widget\HTMLUserTextFieldAllowingGlobalBlockIds;
-use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Message\Message;
 use MediaWiki\SpecialPage\FormSpecialPage;
@@ -221,20 +220,11 @@ class SpecialGlobalBlockList extends FormSpecialPage {
 			$this->globalBlockingUserVisibilityLookup
 		);
 
-		$out = $this->getOutput();
-		if ( $this->queryValid ) {
-			$body = $pager->getBody();
-			if ( $body != '' ) {
-				$out->addHTML(
-					$pager->getNavigationBar() .
-					Html::rawElement( 'ul', [], $body ) .
-					$pager->getNavigationBar()
-				);
-				return;
-			}
+		if ( $this->queryValid && $pager->getNumRows() ) {
+			$this->getOutput()->addParserOutputContent( $pager->getFullOutput() );
+		} else {
+			$this->noResults();
 		}
-
-		$this->noResults();
 	}
 
 	/**

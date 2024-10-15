@@ -169,6 +169,13 @@
 				"mediawiki.widgets.UserInputWidget",
 				"mediawiki.htmlform"
 			]
+		},
+		"ext.globalBlocking.styles": {
+			"localBasePath": "modules/ext.globalBlocking.styles",
+			"remoteExtPath": "GlobalBlocking/modules/ext.globalBlocking.styles",
+			"styles": [
+				"special.globalBlock.less"
+			]
 		}
 	},
 	"QUnitTestModule": {

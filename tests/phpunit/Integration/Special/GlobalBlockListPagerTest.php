@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Test\Integration\Specials;
 
+use InvalidArgumentException;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
@@ -54,8 +55,6 @@ class GlobalBlockListPagerTest extends MediaWikiIntegrationTestCase {
 			->fetchRow();
 		// Call the method we are testing
 		$actual = $objectUnderTest->formatRow( $row );
-		// Verify that the correct message is used to construct the line
-		$this->assertStringContainsString( 'globalblocking-list-item', $actual );
 		// Verify that the username of the blocking user is present in the output
 		$this->assertStringContainsString( self::$testPerformer->getName(), $actual );
 		// Verify that the expected strings are present in the output
@@ -129,6 +128,11 @@ class GlobalBlockListPagerTest extends MediaWikiIntegrationTestCase {
 			'Globally blocked user is hidden from the current user' => [ true ],
 			'Globally blocked user is not hidden from the current user' => [ false ],
 		];
+	}
+
+	public function testFormatValueForUnhandledName() {
+		$this->expectException( InvalidArgumentException::class );
+		$this->getObjectUnderTest()->formatValue( 'unknown-name', 'test' );
 	}
 
 	public function addDBDataOnce() {

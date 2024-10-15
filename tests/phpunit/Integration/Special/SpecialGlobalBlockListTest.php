@@ -58,6 +58,13 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 		// Verify that the special title and description are correct
 		$this->assertStringContainsString( '(globalblocking-list', $html );
 		$this->assertStringContainsString( '(globalblocklist-summary', $html );
+		// Verify that the table headings are present
+		$this->assertStringContainsString( '(globalblocking-list-table-heading-timestamp', $html );
+		$this->assertStringContainsString( '(globalblocking-list-table-heading-target', $html );
+		$this->assertStringContainsString( '(globalblocking-list-table-heading-expiry', $html );
+		$this->assertStringContainsString( '(globalblocking-list-table-heading-by', $html );
+		$this->assertStringContainsString( '(globalblocking-list-table-heading-params', $html );
+		$this->assertStringContainsString( '(globalblocking-list-table-heading-reason', $html );
 		// Verify that a list of all active global blocks is shown (even though the form has not been submitted)
 		foreach ( self::$blockedTargets as $target ) {
 			$this->assertStringContainsString( $target, $html );
