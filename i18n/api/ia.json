@@ -6,6 +6,7 @@
 	},
 	"globalblocking-apierror-badip": "Le adresse IP $1 non es valide",
 	"apihelp-globalblock-summary": "Blocar o disblocar globalmente un usator.",
+	"apihelp-globalblock-param-id": "Le ID del blocada global a modificar o levar (obtenite per medio de <kbd>list=globalblocks</kbd>). Non pote esser usate insimul con <var>$1target</var>.",
 	"apihelp-globalblock-param-target": "Le adresse IP o nomine de usator de destination. Non pote esser usate insimul con <var>$1id</var>.",
 	"apihelp-globalblock-param-expiry": "Si es specificate, bloca o re-bloca le usator. Determina le duration del blocada, p.ex. \"5 menses\" o \"2 spetimanas\". Si es mittite a \"infinite\" o \"indefinite\", le blocada non expirara jammais.",
 	"apihelp-globalblock-param-unblock": "Si es specificate, disbloca le usator.",

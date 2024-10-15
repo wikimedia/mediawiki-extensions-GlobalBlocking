@@ -75,7 +75,7 @@
 	"globalblocking-return": "Zurück zur Liste der globalen Sperren",
 	"globalblocking-add-block": "Eine weitere globale Sperre hinzufügen",
 	"globalblocking-notblocked": "Die eingegebene IP-Adresse ($1) ist nicht global gesperrt.",
-	"globalblocking-notblocked-id": "Es existiert keine globaler Sperre mit der ID $1 .",
+	"globalblocking-notblocked-id": "Es existiert keine globale Sperre mit der ID $1.",
 	"globalblocking-unblock": "Globale Sperre aufheben",
 	"globalblocking-unblock-legend": "Global entsperren",
 	"globalblocking-unblock-submit": "Global entsperren",
