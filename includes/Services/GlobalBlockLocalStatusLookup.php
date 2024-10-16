@@ -29,6 +29,34 @@ class GlobalBlockLocalStatusLookup {
 	}
 
 	/**
+	 * Returns whether the given global block ID has been locally disabled on the given wiki.
+	 *
+	 * @param int $id Block ID
+	 * @param string|false $wikiId The wiki where the where the whitelist info should be looked up.
+	 *   Use false for the local wiki.
+	 * @return array|false false if the block is not locally disabled, otherwise an array containing the
+	 *   user ID of the user who disabled the block and the reason for the block being disabled.
+	 * @phan-return array{user:int,reason:string}|false
+	 */
+	public function getLocalStatusInfo( int $id, $wikiId = false ) {
+		$row = $this->dbProvider->getReplicaDatabase( $wikiId )
+			->newSelectQueryBuilder()
+			->select( [ 'gbw_by', 'gbw_reason' ] )
+			->from( 'global_block_whitelist' )
+			->where( [ 'gbw_id' => $id ] )
+			->caller( __METHOD__ )
+			->fetchRow();
+
+		if ( $row === false ) {
+			// Not locally disabled.
+			return false;
+		} else {
+			// Block has been locally disabled.
+			return [ 'user' => (int)$row->gbw_by, 'reason' => $row->gbw_reason ];
+		}
+	}
+
+	/**
 	 * Returns whether the given global block ID or block on a specific target has been
 	 * locally disabled.
 	 *
@@ -39,6 +67,9 @@ class GlobalBlockLocalStatusLookup {
 	 *   Use false for the local wiki.
 	 * @return array|false false if the block is not locally disabled, otherwise an array containing the
 	 *   user ID of the user who disabled the block and the reason for the block being disabled.
+	 * @deprecated Since 1.43. Use {@link GlobalBlockLocalStatusLookup::getLocalStatusInfo}, which no longer accepts
+	 *   a target parameter but returns the same data when passed a global block ID. To get the global block ID use the
+	 *   {@link GlobalBlockLookup::getGlobalBlockId} method.
 	 * @phan-return array{user:int,reason:string}|false
 	 */
 	public function getLocalWhitelistInfo( ?int $id = null, ?string $target = null, $wikiId = false ) {
@@ -72,21 +103,7 @@ class GlobalBlockLocalStatusLookup {
 			}
 		}
 
-		$row = $this->dbProvider->getReplicaDatabase( $wikiId )
-			->newSelectQueryBuilder()
-			->select( [ 'gbw_by', 'gbw_reason' ] )
-			->from( 'global_block_whitelist' )
-			->where( [ 'gbw_id' => $id ] )
-			->caller( __METHOD__ )
-			->fetchRow();
-
-		if ( $row === false ) {
-			// Not locally disabled.
-			return false;
-		} else {
-			// Block has been locally disabled.
-			return [ 'user' => (int)$row->gbw_by, 'reason' => $row->gbw_reason ];
-		}
+		return $this->getLocalStatusInfo( $id, $wikiId );
 	}
 
 	/**
