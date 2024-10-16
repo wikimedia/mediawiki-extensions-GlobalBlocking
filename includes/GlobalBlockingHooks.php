@@ -147,7 +147,13 @@ class GlobalBlockingHooks implements
 	 */
 	public function onGetBlockErrorMessageKey( Block $block, string &$key ) {
 		if ( $block instanceof GlobalBlock ) {
-			if ( $block->getXff() ) {
+			if ( $block->getType() === Block::TYPE_AUTO ) {
+				$key = 'globalblocking-blockedtext-autoblock';
+				if ( $block->getXff() ) {
+					// Generates globalblocking-blockedtext-autoblock-xff
+					$key .= '-xff';
+				}
+			} elseif ( $block->getXff() ) {
 				$key = 'globalblocking-blockedtext-xff';
 			} elseif ( IPUtils::isValid( $block->getTargetName() ) ) {
 				$key = 'globalblocking-blockedtext-ip';
@@ -185,8 +191,9 @@ class GlobalBlockingHooks implements
 
 		// Check to see if the target is globally blocked, skipping the local disable check as we're only interested
 		// if a global block exists for this target (as opposed to whether it actually is applied for this user).
+		// Also exclude global autoblocks so we don't reveal the IP address being autoblocked.
 		$block = $this->globalBlockLookup->getGlobalBlockingBlock(
-			$ip, $centralId, GlobalBlockLookup::SKIP_LOCAL_DISABLE_CHECK
+			$ip, $centralId, GlobalBlockLookup::SKIP_LOCAL_DISABLE_CHECK | GlobalBlockLookup::SKIP_AUTOBLOCKS
 		);
 		if ( $block ) {
 			// If the target is globally blocked, then add a link to the global block list for this target.
@@ -227,7 +234,11 @@ class GlobalBlockingHooks implements
 			$ip = null;
 			$centralId = $this->lookup->centralIdFromName( $name, $sp->getAuthority() );
 		}
-		$block = $this->globalBlockLookup->getGlobalBlockingBlock( $ip, $centralId );
+		// Always skip autoblocks, otherwise we would leak the IP address target of global autoblocks which is
+		// private data.
+		$block = $this->globalBlockLookup->getGlobalBlockingBlock(
+			$ip, $centralId, GlobalBlockLookup::SKIP_AUTOBLOCKS
+		);
 
 		if ( $block ) {
 			$pager = new GlobalBlockListPager(

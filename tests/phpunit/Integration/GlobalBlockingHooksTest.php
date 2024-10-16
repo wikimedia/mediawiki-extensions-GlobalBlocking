@@ -134,6 +134,7 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 			'Special:Contributions for 1.2.3.4' => [ '1.2.3.4', true, true, '1.2.3.4' ],
 			'Special:Contributions for 1.2.3.5' => [ '1.2.3.5', true, true, '1.2.3.0/24' ],
 			'Special:Contributions for 127.0.0.2' => [ '127.0.0.2', true, false, null ],
+			'Special:Contributions for 7.8.9.0 (target of a global autoblock)' => [ '7.8.9.0', true, false, null ],
 			'Special:Contributions for non-existent user' => [ 'Non-existent-test-user-1234', true, false, null ],
 			'Special:Contributions for invalid username' => [ ':', true, false, null ],
 			'Special:Contributions for 1.2.3.4 when block log extract hidden' => [ '1.2.3.4', false, false, null ],
@@ -250,6 +251,7 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 			'Target is 1.2.3.4' => [ '1.2.3.4', true ],
 			'Target is 1.2.3.5'	=> [ '1.2.3.5', true ],
 			'Target is 127.0.0.2' => [ '127.0.0.2', false ],
+			'Target is 7.8.9.0 (target of a global autoblock)' => [ '7.8.9.0', false ],
 			'Target is a non-existent user' => [ 'Non-existent-test-user-1234', false ],
 			'Target is an invalid username' => [ ':', false ],
 		];
@@ -428,6 +430,7 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function addDBDataOnce() {
+		$this->overrideConfigValue( 'GlobalBlockingEnableAutoblocks', true );
 		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
 		// to be the local provider.
 		$this->overrideConfigValue( MainConfigNames::CentralIdLookupProvider, 'local' );
@@ -443,9 +446,12 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 		$this->assertStatusGood(
 			$globalBlockManager->block( '1.2.3.4/24', 'Test reason2', '1 month', $testPerformer )
 		);
-		$this->assertStatusGood( $globalBlockManager->block(
-			$testGloballyBlockedUser->getName(), 'Test reason3', '3 days', $testPerformer
-		) );
+		$firstGlobalAccountBlockStatus = $globalBlockManager->block(
+			$testGloballyBlockedUser->getName(), 'Test reason3', '3 days', $testPerformer,
+			[ 'enable-autoblock' ]
+		);
+		$this->assertStatusGood( $firstGlobalAccountBlockStatus );
+		$firstGlobalAccountBlockId = $firstGlobalAccountBlockStatus->getValue()['id'];
 		$this->assertStatusGood( $globalBlockManager->block(
 			$hiddenUser->getName(), 'Test reason4', '1 week', $testPerformer
 		) );
@@ -456,6 +462,10 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 				'infinity', 'block to hide the test user', [ 'isHideUser' => true ]
 			)->placeBlockUnsafe();
 		$this->assertStatusGood( $blockStatus );
+		// Create an autoblock for the global block on the non-hidden user, and check it was actually created.
+		$autoBlockStatus = $globalBlockManager->autoblock( $firstGlobalAccountBlockId, '7.8.9.0' );
+		$this->assertStatusGood( $autoBlockStatus );
+		$this->assertArrayHasKey( 'id', $autoBlockStatus->getValue() );
 		self::$testGloballyBlockedUser = $testGloballyBlockedUser;
 		self::$hiddenUser = $hiddenUser;
 		self::$unblockedUser = $this->getMutableTestUser()->getUserIdentity();
