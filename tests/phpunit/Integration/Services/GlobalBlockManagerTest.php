@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Test\Integration\Services;
 
+use MediaWiki\Extension\GlobalBlocking\GlobalBlock;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingGlobalAutoblockExemptionListProvider;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
@@ -295,10 +296,22 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 
 	/** @dataProvider provideBlockForExistingUser */
 	public function testBlockForExistingUser( array $data, string $expectedError ) {
+		$this->overrideConfigValue( 'GlobalBlockingMaximumIPsToRetroactivelyAutoblock', 2 );
 		$testUser = $this->getTestUser()->getUser();
+		// Define a GlobalBlockingGetRetroactiveAutoblockIPs hook handler which will always return 1.2.3.4, so that
+		// we can test retroactive autoblocking.
+		$this->setTemporaryHook(
+			'GlobalBlockingGetRetroactiveAutoblockIPs',
+			function ( GlobalBlock $blockObject, $maxIPsToAutoblock, &$ipsToAutoblock ) use ( $testUser ) {
+				$this->assertTrue( $testUser->equals( $blockObject->getTargetUserIdentity() ) );
+				$this->assertSame( 2, $maxIPsToAutoblock );
+				$ipsToAutoblock[] = '1.2.3.4';
+			}
+		);
+		// Perform the global block on the target user
 		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )
 			->getGlobalBlockManager();
-		$errors = $globalBlockManager->block(
+		$status = $globalBlockManager->block(
 			$testUser->getName(),
 			$data['reason'],
 			$data['expiry'],
@@ -306,7 +319,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 			$data['options']
 		);
 		if ( $expectedError !== '' ) {
-			$this->assertStatusMessage( $expectedError, $errors );
+			$this->assertStatusMessage( $expectedError, $status );
 		} else {
 			$actual = $this->getGlobalBlock( $testUser->getName() );
 			$this->assertSame( $data['reason'], $actual['reason'] );
@@ -319,6 +332,23 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 				$testUser->getName(), 'gblock',
 				'A logging entry for the global block was not found in the logging table.'
 			);
+			if ( in_array( 'enable-autoblock', $data['options'] ) ) {
+				// Check that if autoblocking was enabled, a retroactive global autoblock is created on 1.2.3.4
+				$this->newSelectQueryBuilder()
+					->select( '1' )
+					->from( 'globalblocks' )
+					->where( [ 'gb_address' => '1.2.3.4', 'gb_autoblock_parent_id' => $status->getValue()['id'] ] )
+					->caller( __METHOD__ )
+					->assertFieldValue( 1 );
+			} else {
+				// Assert that no autoblocks were created if autoblocking is disabled
+				$this->newSelectQueryBuilder()
+					->select( '1' )
+					->from( 'globalblocks' )
+					->where( [ 'gb_address' => '1.2.3.4' ] )
+					->caller( __METHOD__ )
+					->assertEmptyResult();
+			}
 		}
 	}
 
@@ -393,6 +423,121 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 		$this->assertThatLogWasAdded(
 			'#' . $globalBlockId, 'modify',
 			'A logging entry for the global block was not found in the logging table.'
+		);
+	}
+
+	public function testBlockModificationToDisableAutoblocking() {
+		// Create a test global block on an existing user which enables autoblocks.
+		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )
+			->getGlobalBlockManager();
+		$targetUserIdentity = $this->getTestUser()->getUserIdentity();
+		$parentBlockStatus = $globalBlockManager->block(
+			$targetUserIdentity->getName(), 'testing', 'infinity', $this->getTestUser( 'steward' )->getUser(),
+			[ 'enable-autoblock' ]
+		);
+		$this->assertStatusGood( $parentBlockStatus );
+		$parentBlockId = $parentBlockStatus->getValue()['id'];
+		// Create an autoblock for the user block created above
+		$autoblockStatus = $globalBlockManager->autoblock( $parentBlockId, '1.2.3.6' );
+		$this->assertStatusGood( $autoblockStatus );
+		$autoblockId = $autoblockStatus->getValue()['id'];
+		// Verify that the autoblock actually exists in the DB, so that we can be sure we saw a change in the DB later
+		// in the test.
+		$this->newSelectQueryBuilder()
+			->select( '1' )
+			->from( 'globalblocks' )
+			->where( [ 'gb_id' => $autoblockId ] )
+			->assertFieldValue( 1 );
+		// Modify the parent block to now disable autoblocking.
+		$parentBlockModifyStatus = $globalBlockManager->block(
+			'#' . $parentBlockId, 'modify test', 'infinity', $this->getTestUser( 'steward' )->getUser(),
+			[ 'modify' ]
+		);
+		$this->assertStatusGood( $parentBlockModifyStatus );
+		// Check that the autoblock we created has been removed as a consequence of modifying the block to remove
+		// autoblocking.
+		$this->newSelectQueryBuilder()
+			->select( '1' )
+			->from( 'globalblocks' )
+			->where( [ 'gb_id' => $autoblockId ] )
+			->assertEmptyResult();
+	}
+
+	private function assertAutoblockParametersAreAsExpected( $autoblockIds, $expectedRows ) {
+		$this->newSelectQueryBuilder()
+			->select( [ 'gb_id', 'gb_by_central_id', 'gb_create_account', 'gb_reason', 'gb_expiry' ] )
+			->from( 'globalblocks' )
+			->where( [ 'gb_id' => $autoblockIds ] )
+			->caller( __METHOD__ )
+			->assertResultSet( $expectedRows );
+	}
+
+	public function testBlockModificationAlsoModifiesPropertiesOfAssociatedGlobalAutoblocks() {
+		$this->overrideConfigValue( MainConfigNames::LanguageCode, 'qqx' );
+		$this->overrideConfigValue( 'GlobalBlockingAutoblockExpiry', "86400" );
+		// Create a test global block on an existing user which enables autoblocks.
+		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager();
+		$targetUserIdentity = $this->getTestUser()->getUserIdentity();
+		$firstPerformer = $this->getTestUser( 'steward' )->getUser();
+		$parentBlockStatus = $globalBlockManager->block(
+			$targetUserIdentity->getName(), 'testing', 'infinity', $firstPerformer,
+			[ 'enable-autoblock' ]
+		);
+		$this->assertStatusGood( $parentBlockStatus );
+		$parentBlockId = $parentBlockStatus->getValue()['id'];
+		// Create an autoblock for the user block created above
+		$firstAutoblockStatus = $globalBlockManager->autoblock( $parentBlockId, '1.2.3.6' );
+		$this->assertStatusGood( $firstAutoblockStatus );
+		$firstAutoblockId = $firstAutoblockStatus->getValue()['id'];
+		// Create an another autoblock for the user block created above with a short expiry. Set the autoblock expiry
+		// maximum length to a short value to make the expiry short.
+		$this->overrideConfigValue( 'GlobalBlockingAutoblockExpiry', "10" );
+		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager();
+		$secondAutoblockStatus = $globalBlockManager->autoblock( $parentBlockId, '1.2.3.7' );
+		$this->assertStatusGood( $secondAutoblockStatus );
+		$secondAutoblockId = $secondAutoblockStatus->getValue()['id'];
+		// Verify that the autoblock actually exists in the DB and that the properties are expected. This is necessary
+		// so that we can check for a change in the autoblock parameters after the parent block modification later in
+		// this test.
+		$expectedAutoblockReason = "(globalblocking-autoblocker: {$targetUserIdentity->getName()}, testing)";
+		$this->assertAutoblockParametersAreAsExpected(
+			[ $firstAutoblockId, $secondAutoblockId ],
+			[
+				[ $firstAutoblockId, $firstPerformer->getId(), 1, $expectedAutoblockReason, '20210303220000' ],
+				[ $secondAutoblockId, $firstPerformer->getId(), 1, $expectedAutoblockReason, '20210302220010' ],
+			]
+		);
+		// Modify the parent block to change most properties but keep the same target and autoblocking enabled.
+		$this->overrideConfigValue( 'GlobalBlockingAutoblockExpiry', "86400" );
+		$secondPerformer = $this->getMutableTestUser( 'steward' )->getUser();
+		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager();
+		$parentBlockModifyStatus = $globalBlockManager->block(
+			'#' . $parentBlockId, 'modify test', '2 hours', $secondPerformer,
+			[ 'modify', 'enable-autoblock', 'allow-account-creation' ]
+		);
+		$this->assertStatusGood( $parentBlockModifyStatus );
+		// Check that the autoblock still exists, but has been modified to match the changed parameters of the
+		// parent block
+		$expectedAutoblockReason = "(globalblocking-autoblocker: {$targetUserIdentity->getName()}, modify test)";
+		$this->assertAutoblockParametersAreAsExpected(
+			[ $firstAutoblockId, $secondAutoblockId ],
+			[
+				[ $firstAutoblockId, $secondPerformer->getId(), 0, $expectedAutoblockReason, '20210303000000' ],
+				[ $secondAutoblockId, $secondPerformer->getId(), 0, $expectedAutoblockReason, '20210302220010' ],
+			]
+		);
+		// Modify the parent block to again have an infinite expiry and check that nothing changed for the autoblocks.
+		$parentBlockModifyStatus = $globalBlockManager->block(
+			'#' . $parentBlockId, 'modify test', 'infinity', $secondPerformer,
+			[ 'modify', 'enable-autoblock', 'allow-account-creation' ]
+		);
+		$this->assertStatusGood( $parentBlockModifyStatus );
+		$this->assertAutoblockParametersAreAsExpected(
+			[ $firstAutoblockId, $secondAutoblockId ],
+			[
+				[ $firstAutoblockId, $secondPerformer->getId(), 0, $expectedAutoblockReason, '20210303000000' ],
+				[ $secondAutoblockId, $secondPerformer->getId(), 0, $expectedAutoblockReason, '20210302220010' ],
+			]
 		);
 	}
 
