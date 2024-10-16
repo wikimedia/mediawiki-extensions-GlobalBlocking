@@ -31,6 +31,7 @@
 		]
 	},
 	"globalblocking-apierror-badip": "{{doc-apierror}}\nParameters:\n* $1 - IP address or IP range that is not valid",
+	"globalblocking-apierror-cannot-modify-global-autoblock": "{{doc-apierror}}",
 	"apihelp-globalblock-summary": "{{doc-apihelp-summary|globalblock}}",
 	"apihelp-globalblock-param-id": "{{doc-apihelp-param|globalblock|id}}",
 	"apihelp-globalblock-param-target": "{{doc-apihelp-param|globalblock|target}}",
