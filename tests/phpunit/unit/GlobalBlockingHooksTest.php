@@ -3,6 +3,7 @@
 namespace MediaWiki\Extension\GlobalBlocking\Test\Unit;
 
 use MediaWiki\Block\AbstractBlock;
+use MediaWiki\Block\Block;
 use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Config\Config;
 use MediaWiki\Config\HashConfig;
@@ -46,13 +47,15 @@ class GlobalBlockingHooksTest extends MediaWikiUnitTestCase {
 	/**
 	 * @dataProvider provideOnGetBlockErrorMessageKey
 	 */
-	public function testOnGetBlockErrorMessageKey( $xff, $target, $expectedKey ) {
+	public function testOnGetBlockErrorMessageKey( $xff, $target, $type, $expectedKey ) {
 		$key = 'blockedtext';
 		$block = $this->createMock( GlobalBlock::class );
 		$block->method( 'getXff' )
 			->willReturn( $xff );
 		$block->method( 'getTargetName' )
 			->willReturn( $target );
+		$block->method( 'getType' )
+			->willReturn( $type );
 
 		$hooks = $this->getGlobalBlockingHooks();
 		$result = $hooks->onGetBlockErrorMessageKey( $block, $key );
@@ -66,22 +69,38 @@ class GlobalBlockingHooksTest extends MediaWikiUnitTestCase {
 			'IP block' => [
 				'xff' => false,
 				'target' => '1.2.3.4',
+				'type' => Block::TYPE_IP,
 				'expectedKey' => 'globalblocking-blockedtext-ip',
 			],
 			'IP range block' => [
 				'xff' => false,
 				'target' => '1.2.3.4/24',
+				'type' => Block::TYPE_RANGE,
 				'expectedKey' => 'globalblocking-blockedtext-range',
 			],
 			'XFF block' => [
 				'xff' => true,
 				'target' => '1.2.3.4',
+				'type' => Block::TYPE_IP,
 				'expectedKey' => 'globalblocking-blockedtext-xff',
 			],
 			'Account block' => [
 				'xff' => false,
 				'target' => 'Test',
+				'type' => Block::TYPE_USER,
 				'expectedKey' => 'globalblocking-blockedtext-user',
+			],
+			'Global autoblock' => [
+				'xff' => false,
+				'target' => '1.2.3.4',
+				'type' => Block::TYPE_AUTO,
+				'expectedKey' => 'globalblocking-blockedtext-autoblock',
+			],
+			'Global autoblock applied via XFF match' => [
+				'xff' => true,
+				'target' => '1.2.3.4',
+				'type' => Block::TYPE_AUTO,
+				'expectedKey' => 'globalblocking-blockedtext-autoblock-xff',
 			],
 		];
 	}
