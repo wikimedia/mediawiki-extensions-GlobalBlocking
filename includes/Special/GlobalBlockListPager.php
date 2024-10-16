@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Special;
 
+use InvalidArgumentException;
 use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
@@ -12,14 +13,15 @@ use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\Html\Html;
 use MediaWiki\Linker\Linker;
 use MediaWiki\Linker\LinkRenderer;
-use MediaWiki\Pager\ReverseChronologicalPager;
+use MediaWiki\Pager\IndexPager;
+use MediaWiki\Pager\TablePager;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\User\CentralId\CentralIdLookup;
-use MediaWiki\User\User;
 use MediaWiki\User\UserIdentityLookup;
 use MediaWiki\WikiMap\WikiMap;
+use stdClass;
 
-class GlobalBlockListPager extends ReverseChronologicalPager {
+class GlobalBlockListPager extends TablePager {
 	private array $queryConds;
 
 	private CommentFormatter $commentFormatter;
@@ -65,39 +67,106 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 		$this->userIdentityLookup = $userIdentityLookup;
 		$this->globalBlockingUserVisibilityLookup = $globalBlockingUserVisibilityLookup;
 
-		// Add a module used to provide styling to the reason for global blocks.
-		$this->getOutput()->addModuleStyles( 'mediawiki.interface.helpers.styles' );
+		$this->getOutput()->addModuleStyles( [ 'mediawiki.interface.helpers.styles', 'ext.globalBlocking.styles' ] );
+		$this->mDefaultDirection = IndexPager::DIR_DESCENDING;
 	}
 
-	public function formatRow( $row ) {
-		// Construct a list of block options that are relevant to the block in this $row.
-		$options = [];
+	protected function getFieldNames() {
+		return [
+			'gb_timestamp' => $this->msg( 'globalblocking-list-table-heading-timestamp' )->text(),
+			'target' => $this->msg( 'globalblocking-list-table-heading-target' )->text(),
+			'gb_expiry' => $this->msg( 'globalblocking-list-table-heading-expiry' )->text(),
+			'by' => $this->msg( 'globalblocking-list-table-heading-by' )->text(),
+			'params' => $this->msg( 'globalblocking-list-table-heading-params' )->text(),
+			'gb_reason' => $this->msg( 'globalblocking-list-table-heading-reason' )->text(),
+		];
+	}
 
-		// Check for the block being locally disabled, and if it is disabled then add that as an option.
-		$wlinfo = $this->globalBlockLocalStatusLookup->getLocalWhitelistInfo( $row->gb_id );
-		if ( $wlinfo ) {
-			$options[] = $this->msg(
-				'globalblocking-list-whitelisted',
-				User::whois( $wlinfo['user'] ), $wlinfo['reason']
-			)->text();
+	/**
+	 * @param string $name
+	 * @param string|null $value
+	 * @return string
+	 */
+	public function formatValue( $name, $value ) {
+		$row = $this->mCurrentRow;
+
+		switch ( $name ) {
+			case 'gb_timestamp':
+				// Link the timestamp to the block ID. This allows users without permissions to change blocks
+				// to be able to generate a link to a specific block.
+				return $this->getLinkRenderer()->makeKnownLink(
+					SpecialPage::getTitleFor( 'GlobalBlockList' ),
+					$this->getLanguage()->userTimeAndDate( $value, $this->getUser() ),
+					[],
+					[ 'target' => "#{$row->gb_id}" ],
+				);
+			case 'target':
+				return $this->formatTarget( $row );
+			case 'gb_expiry':
+				$actionLinks = Html::rawElement(
+					'span',
+					[ 'class' => 'mw-globalblocking-globalblocklist-actions' ],
+					$this->globalBlockingLinkBuilder->getActionLinks(
+						$this->getAuthority(), $row->gb_address, $this->getContext()
+					)
+				);
+				return $this->msg( 'globalblocking-list-table-cell-expiry' )
+					->expiryParams( $value )
+					->rawParams( $actionLinks )
+					->parse();
+			case 'by':
+				// Get the performer of the block, along with the wiki they performed the block. If a user page link
+				// can be generated, then it is added.
+				$performerUsername = $this->lookup->nameFromCentralId( $row->gb_by_central_id ) ?? '';
+				$performerWiki = WikiMap::getWikiName( $row->gb_by_wiki );
+				$performerLink = $this->globalBlockingLinkBuilder->maybeLinkUserpage(
+					$row->gb_by_wiki, $performerUsername
+				);
+
+				return $this->msg(
+					'globalblocking-list-table-cell-by', $performerLink, $performerWiki
+				)->parse();
+			case 'gb_reason':
+				return $this->commentFormatter->format( $value );
+			case 'params':
+				// Construct a list of block options that are relevant to the block in this $row.
+				$options = [];
+
+				$wlinfo = $this->globalBlockLocalStatusLookup->getLocalWhitelistInfo( $row->gb_id );
+				if ( $wlinfo ) {
+					$options[] = $this->msg(
+						'globalblocking-list-whitelisted',
+						$this->userIdentityLookup->getUserIdentityByUserId( $wlinfo['user'] ), $wlinfo['reason']
+					)->text();
+				}
+
+				// If the block is set to target only anonymous users, then indicate this in the options list.
+				if ( $row->gb_anon_only ) {
+					$options[] = $this->msg( 'globalblocking-list-anononly' )->text();
+				}
+
+				// If the block is set to prevent account creation, then indicate this in the options list.
+				if ( $row->gb_create_account ) {
+					$options[] = $this->msg( 'globalblocking-block-flag-account-creation-disabled' )->text();
+				}
+
+				// Wrap the options in <li> HTML tags to make the options into a list.
+				$options = array_map( static function ( $prop ) {
+					return Html::rawElement( 'li', [], $prop );
+				}, $options );
+
+				return Html::rawElement( 'ul', [], implode( '', $options ) );
+			default:
+				throw new InvalidArgumentException( "Unable to format $name" );
 		}
+	}
 
-		// If the block is set to target only anonymous users, then indicate this in the options list.
-		if ( $row->gb_anon_only ) {
-			$options[] = $this->msg( 'globalblocking-list-anononly' )->text();
-		}
-
-		// If the block is set to prevent account creation, then indicate this in the options list.
-		if ( $row->gb_create_account ) {
-			$options[] = $this->msg( 'globalblocking-block-flag-account-creation-disabled' )->text();
-		}
-
-		// Get the performer of the block, along with the wiki they performed the block. If a user page link
-		// can be generated, then it is added.
-		$performerUsername = $this->lookup->nameFromCentralId( $row->gb_by_central_id ) ?? '';
-		$performerWiki = WikiMap::getWikiName( $row->gb_by_wiki );
-		$performerLink = $this->globalBlockingLinkBuilder->maybeLinkUserpage( $row->gb_by_wiki, $performerUsername );
-
+	/**
+	 * Format the target field
+	 * @param stdClass $row
+	 * @return string
+	 */
+	private function formatTarget( $row ) {
 		// Get the target of the block from the database row. If the target is a user, then the code will determine
 		// whether the username is hidden from the current authority.
 		if ( $row->gb_target_central_id ) {
@@ -144,35 +213,7 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 			);
 		}
 
-		// Combine the options specified for the block and wrap them in parentheses. If no options are specified,
-		// then just use empty text to avoid stray parentheses.
-		$optionsAsText = '';
-		if ( count( $options ) ) {
-			$optionsAsText = $this->msg( 'parentheses', $this->getLanguage()->commaList( $options ) )->text();
-		}
-
-		$blockTimestamp = $this->getLinkRenderer()->makeKnownLink(
-			SpecialPage::getTitleFor( 'GlobalBlockList' ),
-			$this->getLanguage()->userTimeAndDate( $row->gb_timestamp, $this->getUser() ),
-			[],
-			[ 'target' => "#{$row->gb_id}" ],
-		);
-
-		$msg = $this->msg( 'globalblocking-list-item' )
-			->rawParams( $blockTimestamp )
-			->params( $performerUsername, $performerLink, $performerWiki, $targetName )
-			->rawParams( $targetUserLink )
-			->expiryParams( $row->gb_expiry )
-			->params( $optionsAsText )
-			->rawParams(
-				$this->commentFormatter->formatBlock( $row->gb_reason ),
-				$this->globalBlockingLinkBuilder->getActionLinks(
-					$this->getAuthority(), $row->gb_address, $this->getContext()
-				)
-			)
-			->parse();
-
-		return Html::rawElement( 'li', [], $msg );
+		return $targetUserLink;
 	}
 
 	public function getQueryInfo() {
@@ -185,5 +226,17 @@ class GlobalBlockListPager extends ReverseChronologicalPager {
 
 	public function getIndexField() {
 		return 'gb_timestamp';
+	}
+
+	protected function getTableClass() {
+		return parent::getTableClass() . ' mw-globalblocking-globalblocklist';
+	}
+
+	public function getDefaultSort() {
+		return '';
+	}
+
+	protected function isFieldSortable( $name ) {
+		return false;
 	}
 }
