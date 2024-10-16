@@ -52,7 +52,7 @@ class SpecialGlobalBlockTest extends FormSpecialPageTestCase {
 
 	/** @dataProvider provideLoadExistingBlockWithExistingBlock */
 	public function testLoadExistingBlockWithExistingBlock( $target, $existingBlockOptions, $expectedReturnArray ) {
-		// Perform a block on 127.0.0.1 so that we can test the loadExistingBlock method returning
+		// Perform a block on $target so that we can test the loadExistingBlock method returning
 		// data on an existing block.
 		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager();
 		$existingBlockStatus = $globalBlockManager->block(
@@ -137,6 +137,25 @@ class SpecialGlobalBlockTest extends FormSpecialPageTestCase {
 			'IP address' => [ '127.0.0.1' ],
 			'Non-existent user' => [ 'Non-existent test user1234' ],
 		];
+	}
+
+	public function testLoadExistingBlockForIPThatIsGloballyAutoblocked() {
+		$this->overrideConfigValue( 'GlobalBlockingEnableAutoblocks', true );
+		// Perform a block on a test user and then perform a global autoblock on an IP using the global user block
+		// as the parent block.
+		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager();
+		$globalAccountBlockStatus = $globalBlockManager->block(
+			$this->getTestUser()->getUserIdentity()->getName(), 'test1234', 'infinite',
+			$this->getTestUser( [ 'steward' ] )->getUser(), [ 'enable-autoblock' ]
+		);
+		$this->assertStatusGood( $globalAccountBlockStatus );
+		$accountGlobalBlockId = $globalAccountBlockStatus->getValue()['id'];
+		$autoBlockStatus = $globalBlockManager->autoblock( $accountGlobalBlockId, '7.8.9.0' );
+		// Set the target as the IP that is globally autoblocked.
+		$specialGlobalBlock = TestingAccessWrapper::newFromObject( $this->newSpecialPage() );
+		$specialGlobalBlock->setParameter( '7.8.9.0' );
+		// Call the loadExistingBlock method, and expect that nothing is returned.
+		$this->assertArrayEquals( [], $specialGlobalBlock->loadExistingBlock() );
 	}
 
 	private function getUserForSuccess( array $additionalGroups = [] ) {

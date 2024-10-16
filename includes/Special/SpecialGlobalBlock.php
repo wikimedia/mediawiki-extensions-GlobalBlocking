@@ -128,7 +128,10 @@ class SpecialGlobalBlock extends FormSpecialPage {
 				->select( [ 'gb_anon_only', 'gb_reason', 'gb_expiry', 'gb_create_account', 'gb_enable_autoblock' ] )
 				->from( 'globalblocks' );
 			if ( IPUtils::isIPAddress( $this->target ) ) {
-				$queryBuilder->where( [ 'gb_address' => $this->target ] );
+				// Exclude global autoblocks from the lookup to avoid exposing the IP address being autoblocked.
+				$queryBuilder->where( [
+					'gb_address' => $this->target, 'gb_autoblock_parent_id' => 0,
+				] );
 			} else {
 				$centralId = $this->centralIdLookup->centralIdFromName( $this->target );
 				if ( !$centralId ) {
@@ -137,7 +140,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 				$queryBuilder->where( [ 'gb_target_central_id' => $centralId ] );
 			}
 			$block = $queryBuilder
-				->andWhere( [ $dbr->expr( 'gb_expiry', '>', $dbr->timestamp() ) ] )
+				->andWhere( $dbr->expr( 'gb_expiry', '>', $dbr->timestamp() ) )
 				->caller( __METHOD__ )
 				->fetchRow();
 			if ( $block ) {
