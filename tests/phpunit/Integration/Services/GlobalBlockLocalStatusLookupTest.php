@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\GlobalBlocking\Test\Integration\Services;
 use InvalidArgumentException;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\MainConfigNames;
+use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
 use MediaWikiIntegrationTestCase;
 use Wikimedia\IPUtils;
@@ -77,6 +78,25 @@ class GlobalBlockLocalStatusLookupTest extends MediaWikiIntegrationTestCase {
 		$this->testGetLocalWhitelistInfo( null, $testUserName, [ 'user' => 123, 'reason' => 'Test reason2' ] );
 	}
 
+	/** @dataProvider provideIsGlobalBlockLocallyDisabledForBlockApplication */
+	public function testIsGlobalBlockLocallyDisabledForBlockApplication( $id, $expectedReturnValue ) {
+		// Allow the MediaWiki message override for the local autoblocking exemption list to take effect.
+		$this->getServiceContainer()->getMessageCache()->enable();
+		$this->assertSame(
+			$expectedReturnValue,
+			GlobalBlockingServices::wrap( $this->getServiceContainer() )
+				->getGlobalBlockLocalStatusLookup()
+				->isGlobalBlockLocallyDisabledForBlockApplication( $id )
+		);
+	}
+
+	public static function provideIsGlobalBlockLocallyDisabledForBlockApplication() {
+		return [
+			'IP range which is not locally disabled' => [ 123456, false ],
+			'Global autoblock which is locally disabled via local autoblocking exemption list' => [ 12345, true ],
+		];
+	}
+
 	public function addDBDataOnce() {
 		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
 		// to be the local provider.
@@ -100,6 +120,7 @@ class GlobalBlockLocalStatusLookupTest extends MediaWikiIntegrationTestCase {
 				'gb_expiry' => $this->getDb()->getInfinity(),
 				'gb_range_start' => IPUtils::toHex( '127.0.0.1' ),
 				'gb_range_end' => IPUtils::toHex( '127.0.0.1' ),
+				'gb_autoblock_parent_id' => 0,
 				'gb_id' => 1234,
 			] )
 			->row( [
@@ -116,7 +137,40 @@ class GlobalBlockLocalStatusLookupTest extends MediaWikiIntegrationTestCase {
 				'gb_expiry' => $this->getDb()->timestamp( '20240405030201' ),
 				'gb_range_start' => '',
 				'gb_range_end' => '',
+				'gb_autoblock_parent_id' => 0,
 				'gb_id' => 123,
+			] )
+			->row( [
+				'gb_address' => '7.8.9.40',
+				'gb_target_central_id' => 0,
+				'gb_by_central_id' => $this->getServiceContainer()
+					->getCentralIdLookup()
+					->centralIdFromLocalUser( $testPerformer ),
+				'gb_by_wiki' => WikiMap::getCurrentWikiId(),
+				'gb_reason' => 'test',
+				'gb_timestamp' => $this->getDb()->timestamp( '20230405060709' ),
+				'gb_anon_only' => 0,
+				'gb_expiry' => $this->getDb()->getInfinity(),
+				'gb_range_start' => IPUtils::toHex( '7.8.9.40' ),
+				'gb_range_end' => IPUtils::toHex( '7.8.9.40' ),
+				'gb_autoblock_parent_id' => 123,
+				'gb_id' => 12345,
+			] )
+			->row( [
+				'gb_address' => '1.2.3.0/24',
+				'gb_target_central_id' => 0,
+				'gb_by_central_id' => $this->getServiceContainer()
+					->getCentralIdLookup()
+					->centralIdFromLocalUser( $testPerformer ),
+				'gb_by_wiki' => WikiMap::getCurrentWikiId(),
+				'gb_reason' => 'test',
+				'gb_timestamp' => $this->getDb()->timestamp( '20230405060710' ),
+				'gb_anon_only' => 0,
+				'gb_expiry' => $this->getDb()->timestamp( '20230506060710' ),
+				'gb_range_start' => IPUtils::toHex( '1.2.3.0' ),
+				'gb_range_end' => IPUtils::toHex( '1.2.3.255' ),
+				'gb_autoblock_parent_id' => 0,
+				'gb_id' => 123456,
 			] )
 			->caller( __METHOD__ )
 			->execute();
@@ -138,5 +192,11 @@ class GlobalBlockLocalStatusLookupTest extends MediaWikiIntegrationTestCase {
 			] )
 			->caller( __METHOD__ )
 			->execute();
+		// Define the local autoblock exemption list for the tests.
+		$this->editPage(
+			Title::newFromText( 'block-autoblock-exemptionlist', NS_MEDIAWIKI ),
+			'[[Test]]. This is a autoblocking exemption list description.' .
+			"\n\n* 7.8.9.0/24"
+		);
 	}
 }

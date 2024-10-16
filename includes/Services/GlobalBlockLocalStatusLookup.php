@@ -3,6 +3,7 @@
 namespace MediaWiki\Extension\GlobalBlocking\Services;
 
 use InvalidArgumentException;
+use MediaWiki\Block\AutoblockExemptionList;
 use MediaWiki\User\CentralId\CentralIdLookup;
 use Wikimedia\IPUtils;
 use Wikimedia\Rdbms\IConnectionProvider;
@@ -17,15 +18,58 @@ class GlobalBlockLocalStatusLookup {
 	private IConnectionProvider $dbProvider;
 	private GlobalBlockingConnectionProvider $globalBlockingConnectionProvider;
 	private CentralIdLookup $centralIdLookup;
+	private AutoblockExemptionList $localAutoblockExemptionList;
 
 	public function __construct(
 		IConnectionProvider $dbProvider,
 		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
-		CentralIdLookup $centralIdLookup
+		CentralIdLookup $centralIdLookup,
+		AutoblockExemptionList $autoblockExemptionList
 	) {
 		$this->dbProvider = $dbProvider;
 		$this->globalBlockingConnectionProvider = $globalBlockingConnectionProvider;
 		$this->centralIdLookup = $centralIdLookup;
+		$this->localAutoblockExemptionList = $autoblockExemptionList;
+	}
+
+	/**
+	 * Used to lookup whether a given global block ID is locally disabled on the current wiki when applying
+	 * global blocks.
+	 *
+	 * @param int $id Block ID
+	 * @return bool Whether the global block is locally disabled
+	 * @internal You probably want to use {@link GlobalBlockLocalStatusLookup::getLocalStatusInfo} instead.
+	 *    Only use this method for checking the local status of a global block when you are applying it to
+	 *    a user.
+	 */
+	public function isGlobalBlockLocallyDisabledForBlockApplication( int $id ): bool {
+		// Check if the global block with the ID $id is a global autoblock. If it is, then locally disable the block
+		// if the autoblocked IP is on the local autoblock exemption list.
+		$globalBlockingDbr = $this->globalBlockingConnectionProvider->getReplicaGlobalBlockingDatabase();
+		$isGlobalBlockAnAutoblock = $globalBlockingDbr->newSelectQueryBuilder()
+			->select( 'gb_autoblock_parent_id' )
+			->from( 'globalblocks' )
+			->where( [ 'gb_id' => $id ] )
+			->caller( __METHOD__ )
+			->fetchField();
+
+		if ( $isGlobalBlockAnAutoblock ) {
+			$globallyAutoblockedIPAddress = $globalBlockingDbr->newSelectQueryBuilder()
+				->select( 'gb_address' )
+				->from( 'globalblocks' )
+				->where( [ 'gb_id' => $id ] )
+				->caller( __METHOD__ )
+				->fetchField();
+
+			$isLocallyExempt = $this->localAutoblockExemptionList->isExempt( $globallyAutoblockedIPAddress );
+			if ( $isLocallyExempt ) {
+				return true;
+			}
+		}
+
+		// If the global autoblock local disable checks either did not match or are not applicable, then call
+		// ::getLocalStatusInfo to check for the global block being locally disabled through the database table.
+		return (bool)$this->getLocalStatusInfo( $id );
 	}
 
 	/**
