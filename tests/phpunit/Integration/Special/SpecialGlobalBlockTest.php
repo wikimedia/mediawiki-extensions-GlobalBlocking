@@ -6,8 +6,10 @@ use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
+use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Tests\SpecialPage\FormSpecialPageTestCase;
 use Wikimedia\TestingAccessWrapper;
+use Wikimedia\Timestamp\ConvertibleTimestamp;
 
 /**
  * @covers \MediaWiki\Extension\GlobalBlocking\Special\SpecialGlobalBlock
@@ -49,18 +51,18 @@ class SpecialGlobalBlockTest extends FormSpecialPageTestCase {
 	}
 
 	/** @dataProvider provideLoadExistingBlockWithExistingBlock */
-	public function testLoadExistingBlockWithExistingBlock( $existingBlockOptions, $expectedReturnArray ) {
+	public function testLoadExistingBlockWithExistingBlock( $target, $existingBlockOptions, $expectedReturnArray ) {
 		// Perform a block on 127.0.0.1 so that we can test the loadExistingBlock method returning
 		// data on an existing block.
 		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager();
 		$existingBlockStatus = $globalBlockManager->block(
-			'127.0.0.1', 'test', 'infinite', $this->getTestUser( [ 'steward' ] )->getUser(),
+			$target, 'test', 'infinite', $this->getTestUser( [ 'steward' ] )->getUser(),
 			$existingBlockOptions
 		);
 		$this->assertStatusGood( $existingBlockStatus );
 		// Set the target to the user which was blocked.
 		$specialGlobalBlock = TestingAccessWrapper::newFromObject( $this->newSpecialPage() );
-		$specialGlobalBlock->setParameter( '127.0.0.1' );
+		$specialGlobalBlock->setParameter( $target );
 		// Call the loadExistingBlock method
 		$this->assertArrayEquals(
 			$expectedReturnArray,
@@ -73,17 +75,52 @@ class SpecialGlobalBlockTest extends FormSpecialPageTestCase {
 	public static function provideLoadExistingBlockWithExistingBlock() {
 		return [
 			'Existing block disables account creation, anon-only' => [
+				'127.0.0.1',
 				[ 'anon-only' ],
-				[ 'anononly' => 1, 'createAccount' => 1, 'reason' => 'test', 'expiry' => 'indefinite' ],
+				[
+					'anononly' => 1, 'createAccount' => 1, 'enableAutoblock' => 0,
+					'reason' => 'test', 'expiry' => 'indefinite',
+				],
 			],
 			'Existing block allows account creation' => [
+				'127.0.0.1',
 				[ 'allow-account-creation' ],
-				[ 'anononly' => 0, 'createAccount' => 0, 'reason' => 'test', 'expiry' => 'indefinite' ],
+				[
+					'anononly' => 0, 'createAccount' => 0, 'enableAutoblock' => 0,
+					'reason' => 'test', 'expiry' => 'indefinite',
+				],
 			],
 			'Existing block with no options provided' => [
-				[], [ 'anononly' => 0, 'createAccount' => 1, 'reason' => 'test', 'expiry' => 'indefinite' ],
+				'127.0.0.1',
+				[],
+				[
+					'anononly' => 0, 'createAccount' => 1, 'enableAutoblock' => 0,
+					'reason' => 'test', 'expiry' => 'indefinite',
+				],
 			],
 		];
+	}
+
+	public function testLoadExistingBlockWithUserBlockThatEnablesAutoblocking() {
+		$this->testLoadExistingBlockWithExistingBlock(
+			$this->getTestUser()->getUserIdentity()->getName(),
+			[ 'enable-autoblock' ],
+			[
+				'anononly' => 0, 'createAccount' => 1, 'enableAutoblock' => 1,
+				'reason' => 'test', 'expiry' => 'indefinite',
+			]
+		);
+	}
+
+	public function testLoadExistingBlockWithUserBlockThatDoesNotEnableAutoblocking() {
+		$this->testLoadExistingBlockWithExistingBlock(
+			$this->getTestUser()->getUserIdentity()->getName(),
+			[],
+			[
+				'anononly' => 0, 'createAccount' => 1, 'enableAutoblock' => 0,
+				'reason' => 'test', 'expiry' => 'indefinite',
+			]
+		);
 	}
 
 	/** @dataProvider provideTargetsWhichAreNotBlocked */
@@ -196,7 +233,7 @@ class SpecialGlobalBlockTest extends FormSpecialPageTestCase {
 		RequestContext::getMain()->setUser( $testPerformer );
 		$fauxRequest = new FauxRequest(
 			[
-				// Test with a single target user, with both notices being added.
+				// Test with a single target user
 				'wpAddress' => '1.2.3.4', 'wpExpiry' => '1 day',
 				'wpReason' => 'other', 'wpReason-other' => 'Test reason',
 				'wpAnonOnly' => 1, 'wpCreateAccount' => 1,
@@ -230,6 +267,48 @@ class SpecialGlobalBlockTest extends FormSpecialPageTestCase {
 		$actualGlobalBlock = $globalBlockLookup->getGlobalBlockingBlock( '1.2.3.4', 0 );
 		$this->assertTrue( (bool)$actualGlobalBlock->gb_create_account );
 		$this->assertTrue( (bool)$actualGlobalBlock->gb_anon_only );
+		$this->assertFalse( (bool)$actualGlobalBlock->gb_enable_autoblock );
+	}
+
+	public function testSubmitForIPTargetWhenModifyingBlock() {
+		ConvertibleTimestamp::setFakeTime( '20210405060708' );
+		$testPerformer = $this->getUserForSuccess();
+		RequestContext::getMain()->setUser( $testPerformer );
+		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
+		// Perform a block on the IP target, so that we can modify it using the special page.
+		$globalBlockManager = $globalBlockingServices->getGlobalBlockManager();
+		$globalBlockManager->block( '1.2.3.4', 'test block to modify', '1 hour', $testPerformer );
+		// Set-up the valid request to modify the block
+		$fauxRequest = new FauxRequest(
+			[
+				// Test with a single target user
+				'wpAddress' => '1.2.3.4', 'wpExpiry' => '1 day',
+				'wpReason' => 'other', 'wpReason-other' => 'Test reason',
+				'wpAnonOnly' => 0, 'wpCreateAccount' => 0, 'wpModify' => 1,
+				'wpPrevious' => '1.2.3.4', 'wpEditToken' => $testPerformer->getEditToken(),
+			],
+			true,
+			RequestContext::getMain()->getRequest()->getSession()
+		);
+		// Assign the fake valid request to the main request context, as well as updating the session user
+		// so that the CSRF token is a valid token for the request user.
+		RequestContext::getMain()->setRequest( $fauxRequest );
+		RequestContext::getMain()->getRequest()->getSession()->setUser( $testPerformer );
+		RequestContext::getMain()->setTitle( SpecialPage::getTitleFor( 'GlobalBlock' ) );
+		// Execute the special page.
+		[ $html ] = $this->executeSpecialPage( '1.2.3.4', $fauxRequest, null, $this->getUserForSuccess() );
+		// Verify that the form does submits successfully and displays the messages added by ::onSuccess
+		$this->assertStringContainsString( '(globalblocking-modify-success', $html );
+		$this->assertStringContainsString( '(globalblocking-add-block', $html );
+		// Double check that the global block was actually updated.
+		$globalBlockLookup = $globalBlockingServices->getGlobalBlockLookup();
+		$this->assertSame( 1, $globalBlockLookup->getGlobalBlockId( '1.2.3.4' ) );
+		// Verify that the global block settings are as expected.
+		$actualGlobalBlock = $globalBlockLookup->getGlobalBlockingBlock( '1.2.3.4', 0 );
+		$this->assertFalse( (bool)$actualGlobalBlock->gb_create_account );
+		$this->assertFalse( (bool)$actualGlobalBlock->gb_anon_only );
+		$this->assertFalse( (bool)$actualGlobalBlock->gb_enable_autoblock );
+		$this->assertSame( '20210406060708', $this->getDb()->decodeExpiry( $actualGlobalBlock->gb_expiry ) );
 	}
 
 	public function testSubmitForUserTargetWhenLocalBlockSpecified() {
@@ -242,7 +321,7 @@ class SpecialGlobalBlockTest extends FormSpecialPageTestCase {
 				// Test with a single target user, with both notices being added.
 				'wpAddress' => $testTarget->getName(), 'wpExpiry' => 'indefinite',
 				'wpReason' => 'other', 'wpReason-other' => 'Test reason for account block',
-				'wpAlsoLocal' => 1, 'wpEditToken' => $testPerformer->getEditToken(),
+				'wpAlsoLocal' => 1, 'wpAutoBlock' => 1, 'wpEditToken' => $testPerformer->getEditToken(),
 			],
 			true,
 			RequestContext::getMain()->getRequest()->getSession()
@@ -257,12 +336,13 @@ class SpecialGlobalBlockTest extends FormSpecialPageTestCase {
 		$this->assertStringContainsString( '(globalblocking-block-success', $html );
 		$this->assertStringContainsString( '(globalblocking-add-block', $html );
 		// Double check that the global and local block was actually performed
-		$this->assertSame(
-			1,
-			GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockLookup()
-				->getGlobalBlockId( $testTarget->getName() ),
-			'A block on 1.2.3.4 should have been applied as the form was successfully submitted.'
-		);
+		$globalBlockLookup = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockLookup();
+		$this->assertSame( 1, $globalBlockLookup->getGlobalBlockId( $testTarget->getName() ) );
+		// Verify that the global block settings are as expected.
+		$actualGlobalBlock = $globalBlockLookup->getGlobalBlockingBlock( null, $testTarget->getId() );
+		$this->assertFalse( (bool)$actualGlobalBlock->gb_create_account );
+		$this->assertFalse( (bool)$actualGlobalBlock->gb_anon_only );
+		$this->assertTrue( (bool)$actualGlobalBlock->gb_enable_autoblock );
 		// Verify that the local block settings are as expected.
 		$actualLocalBlock = $this->getServiceContainer()->getDatabaseBlockStore()->newFromTarget( $testTarget );
 		$this->assertNotNull( $actualLocalBlock );

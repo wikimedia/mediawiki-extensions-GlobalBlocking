@@ -12,7 +12,7 @@ module.exports = function () {
 		return OO.ui.infuse( $el );
 	}
 
-	var blockTargetWidget, anonOnlyWidget, alsoLocalSoftWidget, localBlockWidget;
+	var blockTargetWidget, anonOnlyWidget, alsoLocalSoftWidget, localBlockWidget, enableAutoblockWidget;
 
 	function preserveSelectedStateOnDisable( widget ) {
 		var widgetWasSelected;
@@ -46,6 +46,7 @@ module.exports = function () {
 
 		anonOnlyWidget.setDisabled( !isIp && !isEmpty );
 		alsoLocalSoftWidget.setDisabled( !isIp && !isEmpty );
+		enableAutoblockWidget.setDisabled( isIp && !isEmpty );
 	}
 
 	// This code is also loaded on the "block succeeded" page where there is no form,
@@ -55,11 +56,13 @@ module.exports = function () {
 	if ( blockTargetWidget ) {
 		// Always present if blockTargetWidget is present
 		anonOnlyWidget = OO.ui.infuse( $( '#mw-globalblock-anon-only' ) );
+		enableAutoblockWidget = OO.ui.infuse( $( '#mw-globalblock-enable-autoblock' ) );
 
 		blockTargetWidget.on( 'change', updateBlockOptions );
 
 		// When disabling checkboxes, preserve their selected state in case they are re-enabled
 		preserveSelectedStateOnDisable( anonOnlyWidget );
+		preserveSelectedStateOnDisable( enableAutoblockWidget );
 
 		localBlockWidget = infuseIfExists( $( '#mw-globalblock-local' ) );
 		if ( localBlockWidget ) {

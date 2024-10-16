@@ -3,24 +3,28 @@
 		"target": "",
 		"anonOnlyCheckboxShouldBeDisabled": false,
 		"alsoLocalSoftCheckboxShouldBeDisabled": false,
+		"enableAutoblocksCheckboxShouldBeDisabled": false,
 		"msg": "No text in the target input"
 	},
 	{
 		"target": "1.2.3.4",
 		"anonOnlyCheckboxShouldBeDisabled": false,
 		"alsoLocalSoftCheckboxShouldBeDisabled": false,
+		"enableAutoblocksCheckboxShouldBeDisabled": true,
 		"msg": "IP in the target input"
 	},
 	{
 		"target": "1.2.3.4/24",
 		"anonOnlyCheckboxShouldBeDisabled": false,
 		"alsoLocalSoftCheckboxShouldBeDisabled": false,
+		"enableAutoblocksCheckboxShouldBeDisabled": true,
 		"msg": "IP range in the target input"
 	},
 	{
 		"target": "Test-globally-blocked",
 		"anonOnlyCheckboxShouldBeDisabled": true,
 		"alsoLocalSoftCheckboxShouldBeDisabled": true,
+		"enableAutoblocksCheckboxShouldBeDisabled": false,
 		"msg": "Username in the target input"
 	}
 ]
