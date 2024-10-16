@@ -39,6 +39,7 @@
 	"apihelp-globalblock-param-reason": "{{doc-apihelp-param|globalblock|reason}}",
 	"apihelp-globalblock-param-anononly": "{{doc-apihelp-param|globalblock|anononly}}",
 	"apihelp-globalblock-param-allow-account-creation": "{{doc-apihelp-param|globalblock|allow-account-creation}}",
+	"apihelp-globalblock-param-enable-autoblock": "{{doc-apihelp-param|globalblock|enable-autoblock}}",
 	"apihelp-globalblock-param-modify": "{{doc-apihelp-param|globalblock|modify}}",
 	"apihelp-globalblock-example-1": "{{doc-apihelp-example|globalblock}}",
 	"apihelp-query+globalblocks-summary": "{{doc-apihelp-summary|query+globalblocks}}",

@@ -75,7 +75,10 @@ class ApiGlobalBlockTest extends ApiTestCase {
 		);
 		// Call the API to block the target
 		[ $result ] = $this->doApiRequestWithToken(
-			[ 'action' => 'globalblock', 'target' => $target, 'reason' => 'test', 'expiry' => '1 month' ],
+			[
+				'action' => 'globalblock', 'target' => $target, 'reason' => 'test', 'expiry' => '1 month',
+				'allow-account-creation' => 0,
+			],
 			null, $this->getAuthorityForSuccess()
 		);
 		// Verify that the API response indicates that the target was already blocked.
@@ -101,7 +104,29 @@ class ApiGlobalBlockTest extends ApiTestCase {
 		$this->assertSame(
 			'1',
 			$actualBlock->gb_create_account,
-			'The block was not correctly updated by the API call.'
+			'The block should not have been modified by the API call.'
+		);
+	}
+
+	/** @dataProvider provideIPBlockTargets */
+	public function testExecuteForEnablingAutoblocksOnNonUserBlock( $target ) {
+		// Call the API to block the target
+		[ $result ] = $this->doApiRequestWithToken(
+			[
+				'action' => 'globalblock', 'target' => $target, 'reason' => 'test', 'expiry' => '1 month',
+				'enable-autoblock' => 1,
+			],
+			null, $this->getAuthorityForSuccess()
+		);
+		// Verify that the API response indicates that only user blocks can trigger autoblocks
+		$this->assertArrayHasKey( 'error', $result );
+		$this->assertArrayHasKey( 'globalblock', $result['error'] );
+		$this->assertCount( 1, $result['error']['globalblock'] );
+		$this->assertArrayHasKey( 'code', $result['error']['globalblock'][0] );
+		$this->assertSame(
+			'globalblocking-block-enable-autoblock-on-ip',
+			$result['error']['globalblock'][0]['code'],
+			'The error code was not as expected.'
 		);
 	}
 
@@ -200,7 +225,7 @@ class ApiGlobalBlockTest extends ApiTestCase {
 				'blockedlocally' => true, 'allow-account-creation' => '',
 			],
 			$result['globalblock'], false, true,
-			'The response was not as expected and suggests that the target was not successfully unblocked.'
+			'The response was not as expected and suggests that the target was not successfully blocked.'
 		);
 		// Verify that there is an active global block on the target
 		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
@@ -219,6 +244,8 @@ class ApiGlobalBlockTest extends ApiTestCase {
 			$actualBlock->gb_create_account,
 			'The block was not correctly updated by the API call.'
 		);
+		// Check that autoblocking has not been enabled, as it was not requested.
+		$this->assertSame( '0', $actualBlock->gb_enable_autoblock );
 		// Verify that there is an active local block on the target
 		$actualLocalBlock = $this->getServiceContainer()->getDatabaseBlockStore()->newFromTarget( $target );
 		$this->assertNotNull( $actualLocalBlock, 'A local block should have been performed' );
@@ -256,6 +283,43 @@ class ApiGlobalBlockTest extends ApiTestCase {
 			->from( 'globalblocks' )
 			->where( [ 'gb_id' => $globalBlockStatus->getValue()['id'] ] )
 			->assertRowValue( [ '1', '1.2.3.7' ] );
+	}
+
+	/** @dataProvider provideUserBlockTargets */
+	public function testExecuteForUserBlockWhenAutoblockingEnabled( $target ) {
+		// Fix the time to ensure that the provided expiry remains the same between test runs
+		ConvertibleTimestamp::setFakeTime( '20200305060708' );
+		// Call the API to block the target
+		[ $result ] = $this->doApiRequestWithToken(
+			[
+				'action' => 'globalblock', 'target' => $target, 'reason' => 'test', 'expiry' => '1 month',
+				'enable-autoblock' => 1,
+			],
+			null, $this->getAuthorityForSuccess()
+		);
+		$this->assertArrayHasKey( 'globalblock', $result );
+		$this->assertArrayEquals(
+			[
+				'user' => $target, 'blocked' => '',
+				'expiry' => ApiResult::formatExpiry( '20200405060708' ), 'enable-autoblock' => '',
+			],
+			$result['globalblock'], false, true,
+			'The response was not as expected and suggests that the target was not successfully blocked.'
+		);
+		// Verify that there is an active global block on the target
+		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
+		if ( IPUtils::isIPAddress( $target ) ) {
+			$actualBlock = $globalBlockingServices->getGlobalBlockLookup()->getGlobalBlockingBlock( $target, 0 );
+		} else {
+			$actualBlock = $globalBlockingServices->getGlobalBlockLookup()
+				->getGlobalBlockingBlock(
+					null,
+					$this->getServiceContainer()->getCentralIdLookup()->centralIdFromName( $target )
+				);
+		}
+		$this->assertNotNull( $actualBlock );
+		// Check that autoblocking has been enabled.
+		$this->assertSame( '1', $actualBlock->gb_enable_autoblock );
 	}
 
 	/**

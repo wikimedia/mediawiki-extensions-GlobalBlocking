@@ -58,6 +58,10 @@ class ApiGlobalBlock extends ApiBase {
 				$options[] = 'allow-account-creation';
 			}
 
+			if ( $this->getParameter( 'enable-autoblock' ) ) {
+				$options[] = 'enable-autoblock';
+			}
+
 			if ( $this->getParameter( 'modify' ) ) {
 				$options[] = 'modify';
 			}
@@ -101,6 +105,9 @@ class ApiGlobalBlock extends ApiBase {
 				}
 				if ( $this->getParameter( 'allow-account-creation' ) ) {
 					$result->addValue( 'globalblock', 'allow-account-creation', '' );
+				}
+				if ( $this->getParameter( 'enable-autoblock' ) ) {
+					$result->addValue( 'globalblock', 'enable-autoblock', '' );
 				}
 				$expiry = ApiResult::formatExpiry( $this->getParameter( 'expiry' ), 'infinite' );
 				$result->addValue( 'globalblock', 'expiry', $expiry );
@@ -169,6 +176,9 @@ class ApiGlobalBlock extends ApiBase {
 				ParamValidator::PARAM_TYPE => 'boolean'
 			],
 			'allow-account-creation' => [
+				ParamValidator::PARAM_TYPE => 'boolean',
+			],
+			'enable-autoblock' => [
 				ParamValidator::PARAM_TYPE => 'boolean',
 			],
 			'modify' => [
