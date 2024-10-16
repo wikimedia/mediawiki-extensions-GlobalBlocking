@@ -13,6 +13,7 @@ use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingUserVisibilityLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockManager;
 use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentityLookup;
@@ -34,7 +35,8 @@ class GlobalBlockingHooksTest extends MediaWikiUnitTestCase {
 			$this->createMock( GlobalBlockLocalStatusLookup::class ),
 			$this->createMock( UserNameUtils::class ),
 			$this->createMock( GlobalBlockingUserVisibilityLookup::class ),
-			$this->createMock( UserIdentityLookup::class )
+			$this->createMock( UserIdentityLookup::class ),
+			$this->createMock( GlobalBlockManager::class )
 		);
 	}
 
@@ -111,5 +113,41 @@ class GlobalBlockingHooksTest extends MediaWikiUnitTestCase {
 			'::onGetUserBlock should always return true.'
 		);
 		$this->assertNull( $block, 'The block should not be modified if global blocks are disabled.' );
+	}
+
+	public function testOnSpreadAnyEditBlockWhenGlobalBlockNoFound() {
+		// Create a mock GlobalBlockLookup service that will always return null from ::getUserBlock
+		$mockUser = $this->createMock( User::class );
+		$mockGlobalBlockLookup = $this->createMock( GlobalBlockLookup::class );
+		$mockGlobalBlockLookup->method( 'getUserBlock' )
+			->with( $mockUser, null )
+			->willReturn( null );
+		// Call the method under test with the mock GlobalBlockLookup service being used.
+		$hooks = $this->getGlobalBlockingHooks( [ 'globalBlockLookup' => $mockGlobalBlockLookup ] );
+		$blockWasSpread = false;
+		$hooks->onSpreadAnyEditBlock( $mockUser, $blockWasSpread );
+		// Check that the hook handler did not say that the block was spread, as it should have caused an autoblock
+		// for that to occur.
+		$this->assertFalse( $blockWasSpread );
+	}
+
+	public function testOnSpreadAnyEditBlockWhenGlobalBlockDoesNotCauseAutoblocks() {
+		// Create a mock GlobalBlock instance which will always say that the global block does not cause autoblocks.
+		$mockGlobalBlock = $this->createMock( GlobalBlock::class );
+		$mockGlobalBlock->method( 'isAutoblocking' )
+			->willReturn( false );
+		// Create a mock GlobalBlockLookup service that will always return the mock GlobalBlock from ::getUserBlock
+		$mockUser = $this->createMock( User::class );
+		$mockGlobalBlockLookup = $this->createMock( GlobalBlockLookup::class );
+		$mockGlobalBlockLookup->method( 'getUserBlock' )
+			->with( $mockUser, null )
+			->willReturn( null );
+		// Call the method under test with the mock GlobalBlockLookup service being used.
+		$hooks = $this->getGlobalBlockingHooks( [ 'globalBlockLookup' => $mockGlobalBlockLookup ] );
+		$blockWasSpread = false;
+		$hooks->onSpreadAnyEditBlock( $mockUser, $blockWasSpread );
+		// Check that the hook handler did not say that the block was spread, as it should not autoblock if the
+		// global block found does not cause global autoblocks.
+		$this->assertFalse( $blockWasSpread );
 	}
 }
