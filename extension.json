@@ -226,11 +226,11 @@
 				"CentralIdLookup",
 				"GlobalBlocking.GlobalBlockingLinkBuilder",
 				"GlobalBlocking.GlobalBlockLookup",
-				"GlobalBlocking.GlobalBlockingConnectionProvider",
 				"UserNameUtils",
 				"GlobalBlocking.GlobalBlockingUserVisibilityLookup",
 				"GlobalBlocking.GlobalBlockManager",
-				"GlobalBlocking.GlobalBlockingGlobalBlockDetailsRenderer"
+				"GlobalBlocking.GlobalBlockingGlobalBlockDetailsRenderer",
+				"GlobalBlocking.GlobalBlockingLinkBuilder"
 			]
 		},
 		"usermerge": {

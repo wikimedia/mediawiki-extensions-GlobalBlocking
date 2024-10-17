@@ -108,6 +108,7 @@
 	"globalblocking-block-flag-autoblock-disabled": "autoblock disabled",
 	"globalblocking-loglink": "The user $1 is blocked globally ([[{{#Special:GlobalBlockList}}/$1|full details]]).",
 	"globalblocking-contribs-notice": "This user is currently globally blocked.\nThe global block log entry is provided below for reference:",
+	"globalblocking-contribs-mock-log-line": "$1: $3 globally {{GENDER:$2|blocked}} {{GENDER:$4|$5}} with an expiration time of $6 $7 $8 $9",
 	"globalblocking-showlog": "This user has been blocked previously.\nThe block log is provided below for reference:",
 	"globalblocking-contribs-log": "global block log",
 	"globalblocking-contribs-block": "global block",

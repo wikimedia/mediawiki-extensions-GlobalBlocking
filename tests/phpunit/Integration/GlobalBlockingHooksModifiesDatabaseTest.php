@@ -28,11 +28,11 @@ class GlobalBlockingHooksModifiesDatabaseTest extends MediaWikiIntegrationTestCa
 			$this->getServiceContainer()->getCentralIdLookup(),
 			$globalBlockingServices->getGlobalBlockingLinkBuilder(),
 			$globalBlockingServices->getGlobalBlockLookup(),
-			$globalBlockingServices->getGlobalBlockingConnectionProvider(),
 			$this->getServiceContainer()->getUserNameUtils(),
 			$globalBlockingServices->getGlobalBlockingUserVisibilityLookup(),
 			$globalBlockingServices->getGlobalBlockManager(),
-			$globalBlockingServices->getGlobalBlockDetailsRenderer()
+			$globalBlockingServices->getGlobalBlockDetailsRenderer(),
+			$globalBlockingServices->getGlobalBlockingLinkBuilder()
 		);
 	}
 

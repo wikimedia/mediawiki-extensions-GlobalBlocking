@@ -52,26 +52,7 @@ class GlobalBlockingGlobalBlockDetailsRenderer {
 			return $context->msg( 'globalblocking-global-autoblock-id', $row->gb_id )->parse();
 		}
 
-		// Get the target of the block from the database row. If the target is a user, then the code will determine
-		// whether the username is hidden from the current authority.
-		if ( $row->gb_target_central_id ) {
-			// Get the target name using the CentralIdLookup if the target is a user. A raw lookup is done, as we
-			// need to separately know if the user is hidden (as opposed to does not exist).
-			// GlobalBlockingUserVisibility::checkAuthorityCanSeeUser method will appropriately hide the user.
-			$targetName = $this->centralIdLookup->nameFromCentralId(
-				$row->gb_target_central_id, CentralIdLookup::AUDIENCE_RAW
-			) ?? '';
-			$targetUserVisible = $this->globalBlockingUserVisibilityLookup
-				->checkAuthorityCanSeeUser( $targetName, $context->getAuthority() );
-			if ( !$targetUserVisible ) {
-				$targetName = '';
-			}
-		} else {
-			// If the target is an IP, then we can use the gb_address column and also can assume that the username
-			// will always be visible.
-			$targetName = $row->gb_address;
-			$targetUserVisible = true;
-		}
+		[ $targetName, $targetUserVisible ] = $this->getTargetUsername( $row, $context );
 
 		// Generate the user link / tool links for the target unless the target is hidden from the current authority.
 		if ( $targetUserVisible ) {
@@ -99,6 +80,45 @@ class GlobalBlockingGlobalBlockDetailsRenderer {
 		}
 
 		return $targetUserLink;
+	}
+
+	/**
+	 * Gets the target username for a given global block, along with whether that username is hidden from the
+	 * current authority.
+	 *
+	 * @param stdClass $row The globalblocks database row
+	 * @param IContextSource $context Context to use for message generation and authority.
+	 * @return array The target username suitable for use as the first item, and whether the target is visible to the
+	 *   current user as the second item. The target username will be an empty string if the user cannot view it.
+	 */
+	public function getTargetUsername( stdClass $row, IContextSource $context ): array {
+		// The target username is always hidden if it is an autoblock.
+		if ( $row->gb_autoblock_parent_id ) {
+			return [ '', false ];
+		}
+
+		// Get the target of the block from the database row. If the target is a user, then the code will determine
+		// whether the username is hidden from the current authority.
+		if ( $row->gb_target_central_id ) {
+			// Get the target name using the CentralIdLookup if the target is a user. A raw lookup is done, as we
+			// need to separately know if the user is hidden (as opposed to does not exist).
+			// GlobalBlockingUserVisibility::checkAuthorityCanSeeUser method will appropriately hide the user.
+			$targetName = $this->centralIdLookup->nameFromCentralId(
+				$row->gb_target_central_id, CentralIdLookup::AUDIENCE_RAW
+			) ?? '';
+			$targetUserVisible = $this->globalBlockingUserVisibilityLookup
+				->checkAuthorityCanSeeUser( $targetName, $context->getAuthority() );
+			if ( !$targetUserVisible ) {
+				$targetName = '';
+			}
+		} else {
+			// If the target is an IP, then we can use the gb_address column and also can assume that the username
+			// will always be visible.
+			$targetName = $row->gb_address;
+			$targetUserVisible = true;
+		}
+
+		return [ $targetName, $targetUserVisible ];
 	}
 
 	/**
