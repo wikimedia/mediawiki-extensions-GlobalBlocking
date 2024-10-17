@@ -55,7 +55,7 @@
 	"globalblocking-block-legend": "Used as legend for the fieldset around the input form of Special:GlobalBlock.\n\nSee also:\n* {{msg-mw|globalblocking-block-legend-new}}",
 	"globalblocking-block-legend-new": "Used as legend for the fieldset around the input form of Special:GlobalBlock when global blocks on accounts are enabled.",
 	"globalblocking-ipaddress": "Form label for ip-address.\n{{Identical|IP address}}",
-	"globalblocking-target": "Form label for the target of the block.\nIdentical to {{msg-mw|block-target}}.",
+	"globalblocking-target": "Form label for the target of the block.\nIdentical to {{msg-mw|block-target}}.\nSee also {{msg-mw|globalblocking-target-with-block-ids}}.",
 	"globalblocking-ipbanononly": "Label for checkbox asking if the blocker wants to globally block anonymous users only. The checkbox is disabled if the target of the block is a username.\nSimilar to {{msg-mw|ipb-hardblock}}.",
 	"globalblocking-block-ipinvalid": "{{Identical|The IP address ($1) ...}}",
 	"globalblocking-block-target-invalid": "Used as error message on Special:GlobalBlock if the target entered was invalid.\n\nParameters:\n* $1 - The target entered by the user, which is invalid.",
