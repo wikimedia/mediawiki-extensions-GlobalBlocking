@@ -94,11 +94,14 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 
 		// Add the fields dependent on whether a given prop was requested
 		$this->addFieldsIf( 'gb_id', $fld_id );
-		$this->addFieldsIf( [ 'gb_address', 'gb_anon_only', 'gb_create_account' ], $fld_target );
+		$this->addFieldsIf(
+			[ 'gb_address', 'gb_anon_only', 'gb_create_account', 'gb_autoblock_parent_id', 'gb_enable_autoblock' ],
+			$fld_target
+		);
 		$this->addFieldsIf( [ 'gb_by_central_id', 'gb_by_wiki' ], $fld_by );
 		$this->addFieldsIf( 'gb_expiry', $fld_expiry );
 		$this->addFieldsIf( 'gb_reason', $fld_reason );
-		$this->addFieldsIf( [ 'gb_range_start', 'gb_range_end' ], $fld_range );
+		$this->addFieldsIf( [ 'gb_range_start', 'gb_range_end', 'gb_autoblock_parent_id' ], $fld_range );
 
 		// The timestamp is always needed in case we need to return a continue value.
 		$this->addFields( 'gb_timestamp' );
@@ -145,7 +148,12 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 			} elseif ( count( $centralIds ) ) {
 				$this->addWhereFld( 'gb_target_central_id', $centralIds );
 			} elseif ( count( $ipTargets ) ) {
-				$this->addWhereFld( 'gb_address', $ipTargets );
+				// Exclude autoblocks from the results, as we do not want to expose the IP address target of the
+				// autoblock as that is hidden.
+				$this->addWhere(
+					$this->getDB()->expr( 'gb_address', '=', $ipTargets )
+						->and( 'gb_autoblock_parent_id', '=', 0 )
+				);
 			} elseif ( $nonExistingUsernameSeen && ( !isset( $params['ids'] ) || !count( $params['ids'] ) ) ) {
 				// If the targets parameter contained a non-existing username, no other valid targets
 				// were provided, and the `ids` filter is not set, then return no global blocks.
@@ -177,7 +185,8 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 			// @phan-suppress-next-line PhanTypeMismatchArgumentNullable
 			$this->addWhere( $this->globalBlockLookup->getGlobalBlockLookupConditions(
 				$params['ip'], 0,
-				GlobalBlockLookup::SKIP_LOCAL_DISABLE_CHECK | GlobalBlockLookup::SKIP_ALLOWED_RANGES_CHECK
+				GlobalBlockLookup::SKIP_LOCAL_DISABLE_CHECK | GlobalBlockLookup::SKIP_ALLOWED_RANGES_CHECK |
+				GlobalBlockLookup::SKIP_AUTOBLOCKS
 			) );
 		} else {
 			// We need to exclude expired blocks to avoid them appearing in the list of active global blocks.
@@ -207,9 +216,14 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 				$block['id'] = $row->gb_id;
 			}
 			if ( $fld_target ) {
-				$block[$targetPropName] = $row->gb_address;
+				// Hide the target if the block is an autoblock
+				if ( !$row->gb_autoblock_parent_id ) {
+					$block[$targetPropName] = $row->gb_address;
+				}
 				$block['anononly'] = (bool)$row->gb_anon_only;
 				$block['account-creation-disabled'] = (bool)$row->gb_create_account;
+				$block['autoblocking-enabled'] = (bool)$row->gb_enable_autoblock;
+				$block['automatic'] = (bool)$row->gb_autoblock_parent_id;
 			}
 			if ( $fld_by ) {
 				$block['by'] = $this->lookup->nameFromCentralId( $row->gb_by_central_id );
@@ -225,8 +239,11 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 				$block['reason'] = $row->gb_reason;
 			}
 			if ( $fld_range && $row->gb_range_start ) {
-				$block['rangestart'] = IPUtils::formatHex( $row->gb_range_start );
-				$block['rangeend'] = IPUtils::formatHex( $row->gb_range_end );
+				// Hide the target if the block is an autoblock
+				if ( !$row->gb_autoblock_parent_id ) {
+					$block['rangestart'] = IPUtils::formatHex( $row->gb_range_start );
+					$block['rangeend'] = IPUtils::formatHex( $row->gb_range_end );
+				}
 			}
 			$data[] = $block;
 		}
