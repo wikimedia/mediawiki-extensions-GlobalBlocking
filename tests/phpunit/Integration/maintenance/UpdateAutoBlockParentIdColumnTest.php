@@ -6,6 +6,7 @@ use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Extension\GlobalBlocking\Maintenance\UpdateAutoBlockParentIdColumn;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Tests\Maintenance\MaintenanceBaseTestCase;
+use Wikimedia\Rdbms\IMaintainableDatabase;
 use Wikimedia\Rdbms\SelectQueryBuilder;
 
 /**
@@ -64,6 +65,11 @@ class UpdateAutoBlockParentIdColumnTest extends MaintenanceBaseTestCase {
 	}
 
 	public function testExecute() {
+		// The schema change for SQLite to allow NULL in gb_autoblock_parent_id is too brittle, so skip tests for
+		// SQLite. The schema change for postgres does not work, so skip that too.
+		$this->markTestSkippedIfDbType( 'sqlite' );
+		$this->markTestSkippedIfDbType( 'postgres' );
+
 		$firstGlobalBlockId = $this->getTestingGlobalBlock( '1.2.3.4' );
 		$secondGlobalBlockId = $this->getTestingGlobalBlock( '1.2.3.5' );
 		$thirdGlobalBlockId = $this->getTestingGlobalBlock( $this->getTestUser()->getUserIdentity()->getName() );
@@ -100,6 +106,11 @@ class UpdateAutoBlockParentIdColumnTest extends MaintenanceBaseTestCase {
 	}
 
 	public function testExecuteWithCollidingRows() {
+		// The schema change for SQLite to allow NULL in gb_autoblock_parent_id is too brittle, so skip tests for
+		// SQLite. The schema change for postgres does not work, so skip that too.
+		$this->markTestSkippedIfDbType( 'sqlite' );
+		$this->markTestSkippedIfDbType( 'postgres' );
+
 		// Get two globalblocks rows with the same target and gb_autoblock_parent_id as NULL
 		$firstGlobalBlockId = $this->getTestingGlobalBlock( '1.2.3.4' );
 		$secondGlobalBlockId = $this->getTestingGlobalBlock( '1.2.3.7' );
@@ -151,5 +162,20 @@ class UpdateAutoBlockParentIdColumnTest extends MaintenanceBaseTestCase {
 			->assertResultSet( [
 				[ $firstGlobalBlockId, 0 ], [ $secondGlobalBlockId, null ], [ $thirdGlobalBlockId, 0 ],
 			] );
+	}
+
+	protected function getSchemaOverrides( IMaintainableDatabase $db ) {
+		if ( $db->getType() !== 'mysql' ) {
+			return [];
+		}
+		return [
+			'scripts' => [
+				__DIR__ . '/patches/' . $db->getType() .
+				'/patch-globalblocks-change-gb_autoblock_parent_id-null-default.sql',
+			],
+			'drop' => [],
+			'create' => [],
+			'alter' => [ 'globalblocks' ],
+		];
 	}
 }
