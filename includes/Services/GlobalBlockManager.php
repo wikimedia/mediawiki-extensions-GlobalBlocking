@@ -115,7 +115,7 @@ class GlobalBlockManager {
 		}
 
 		// Check for an existing block in the primary database database
-		$existingBlock = $this->globalBlockLookup->getGlobalBlockId( $data[ 'target' ], DB_PRIMARY );
+		$existingBlock = $this->globalBlockLookup->getGlobalBlockId( $data['targetForLookup'], DB_PRIMARY );
 		if ( !$modify && $existingBlock ) {
 			return StatusValue::newFatal( 'globalblocking-block-alreadyblocked', $data['targetForDisplay'] );
 		}
@@ -493,7 +493,7 @@ class GlobalBlockManager {
 
 		$data = $status->getValue();
 
-		$id = $this->globalBlockLookup->getGlobalBlockId( $data[ 'target' ], DB_PRIMARY );
+		$id = $this->globalBlockLookup->getGlobalBlockId( $data['targetForLookup'], DB_PRIMARY );
 		if ( $id === 0 ) {
 			return StatusValue::newFatal( 'globalblocking-notblocked', $data['targetForDisplay'] );
 		}
@@ -525,10 +525,14 @@ class GlobalBlockManager {
 	 * @param string $target An IP address, IP range, a username, or global block ID
 	 * @param UserIdentity $performer The performer of the action, used to appropriately hide the target if
 	 *   necessary.
-	 * @return StatusValue Fatal if errors, Good if no errors
+	 * @return StatusValue Fatal if the target is not valid, along with a message to use for displaying to
+	 *   the user. A good status otherwise, where the value of the status contains information about the
+	 *   valid target with keys 'target', 'targetForDisplay', 'targetForLookup', 'targetCentralId',
+	 *   'rangeStart', and 'rangeEnd'.
 	 */
 	private function validateInput( string $target, UserIdentity $performer ): StatusValue {
 		$targetForDisplay = $target;
+		$targetForLookup = null;
 
 		if ( GlobalBlockLookup::isAGlobalBlockId( $target ) ) {
 			// If the $target is prefixed with "#" followed by digits, then this is a global block ID. Validate that
@@ -544,6 +548,7 @@ class GlobalBlockManager {
 				return StatusValue::newFatal( 'globalblocking-notblocked-id', $target );
 			}
 
+			$targetForLookup = $target;
 			$target = $targetForBlockId;
 		}
 
@@ -558,6 +563,7 @@ class GlobalBlockManager {
 			return StatusValue::newGood( [
 				'target' => $target,
 				'targetForDisplay' => $targetForDisplay,
+				'targetForLookup' => $targetForLookup ?? $target,
 				'targetCentralId' => $centralIdForTarget,
 				// 'rangeStart' and 'rangeEnd' have to be strings and not null
 				// due to the type of the DB columns.
@@ -584,7 +590,9 @@ class GlobalBlockManager {
 		// The IP address target is valid, so return the sanitized target along with
 		// the start and the end of the range in hexadecimal (for a single IP address
 		// this is hexadecimal representation of the single IP address).
-		$data = [ 'targetCentralId' => 0, 'targetForDisplay' => $targetForDisplay ];
+		$data = [
+			'targetCentralId' => 0, 'targetForDisplay' => $targetForDisplay,
+		];
 
 		[ $data[ 'rangeStart' ], $data[ 'rangeEnd' ] ] = IPUtils::parseRange( $target );
 
@@ -593,6 +601,8 @@ class GlobalBlockManager {
 		} else {
 			$data[ 'target' ] = $target;
 		}
+
+		$data['targetForLookup'] = $targetForLookup ?? $data[ 'target' ];
 
 		return StatusValue::newGood( $data );
 	}
