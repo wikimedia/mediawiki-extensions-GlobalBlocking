@@ -650,6 +650,33 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 			->assertFieldValue( 0 );
 	}
 
+	public function testUnblockForAccountBlockWithAssociatedGlobalAutoblocks() {
+		// Create a testing block on a user and then create an autoblock for that user block.
+		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager();
+		$testTarget = $this->getTestUser()->getUserIdentity()->getName();
+		$testPerformer = $this->getTestUser( [ 'steward' ] )->getUser();
+		$globalAccountBlockStatus = $globalBlockManager->block(
+			$testTarget, 'test1234', 'infinite', $testPerformer,
+			[ 'enable-autoblock' ]
+		);
+		$this->assertStatusGood( $globalAccountBlockStatus );
+		$accountGlobalBlockId = $globalAccountBlockStatus->getValue()['id'];
+		$autoBlockStatus = $globalBlockManager->autoblock( $accountGlobalBlockId, '7.8.9.0' );
+		$this->assertStatusGood( $autoBlockStatus );
+		$autoBlockId = $autoBlockStatus->getValue()['id'];
+		// Validate that the global account block and autoblock exist, so that we can check that they get deleted
+		// by the code we are testing
+		$this->newSelectQueryBuilder()
+			->select( 'gb_id' )
+			->from( 'globalblocks' )
+			->caller( __METHOD__ )
+			->assertFieldValues( [ (string)$accountGlobalBlockId, (string)$autoBlockId ] );
+		// Call ::unblock on the global account block
+		$globalBlockManager->unblock( $testTarget, 'testing', $testPerformer );
+		// Check that both the account block and autoblock are now deleted from the globalblocks database table.
+		$this->assertGlobalBlocksTableEmpty();
+	}
+
 	/** @dataProvider provideInvalidIPAddresses */
 	public function testAutoblockForInvalidIP( $invalidIP ) {
 		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager();

@@ -498,10 +498,10 @@ class GlobalBlockManager {
 			return StatusValue::newFatal( 'globalblocking-notblocked', $data['targetForDisplay'] );
 		}
 
-		$this->globalBlockingConnectionProvider->getPrimaryGlobalBlockingDatabase()
-			->newDeleteQueryBuilder()
+		$dbw = $this->globalBlockingConnectionProvider->getPrimaryGlobalBlockingDatabase();
+		$dbw->newDeleteQueryBuilder()
 			->deleteFrom( 'globalblocks' )
-			->where( [ 'gb_id' => $id ] )
+			->where( $dbw->expr( 'gb_id', '=', $id )->or( 'gb_autoblock_parent_id', '=', $id ) )
 			->caller( __METHOD__ )
 			->execute();
 
