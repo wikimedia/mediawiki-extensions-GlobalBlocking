@@ -110,7 +110,9 @@ class GlobalBlockingSchemaHooks implements LoadExtensionSchemaUpdatesHook {
 			false, "$base/sql/$type/patch-globalblocks-modify-gb_address-index.sql", true,
 		] );
 		// We can skip running the update script if the column is not nullable, as it means that it has been
-		// ran before or does not need to be run because there is no data to update.
+		// ran before or does not need to be run because there is no data to update. We also need to skip the schema
+		// change on gb_autoblock_parent_id to make it not NULLable if the field already is NOT NULL, because
+		// modifyField does not handle this correctly.
 		$autoBlockParentIdFieldInfo = $virtualGlobalBlockingDb->fieldInfo( 'globalblocks', 'gb_autoblock_parent_id' );
 		if ( $autoBlockParentIdFieldInfo && $autoBlockParentIdFieldInfo->isNullable() ) {
 			$updater->addExtensionUpdateOnVirtualDomain( [
@@ -118,10 +120,10 @@ class GlobalBlockingSchemaHooks implements LoadExtensionSchemaUpdatesHook {
 				'runMaintenance',
 				UpdateAutoBlockParentIdColumn::class
 			] );
+			$updater->addExtensionUpdateOnVirtualDomain( [
+				'virtual-globalblocking', 'modifyField', 'globalblocks', 'gb_autoblock_parent_id',
+				"$base/sql/$type/patch-globalblocks-modify-gb_autoblock_parent_id-default.sql", true,
+			] );
 		}
-		$updater->addExtensionUpdateOnVirtualDomain( [
-			'virtual-globalblocking', 'modifyField', 'globalblocks', 'gb_autoblock_parent_id',
-			"$base/sql/$type/patch-globalblocks-modify-gb_autoblock_parent_id-default.sql", true,
-		] );
 	}
 }
