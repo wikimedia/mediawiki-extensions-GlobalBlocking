@@ -305,7 +305,7 @@ class GlobalBlockLookup {
 			// Check for local whitelisting, unless the flag is set to skip the check.
 			if (
 				!( $flags & self::SKIP_LOCAL_DISABLE_CHECK ) &&
-				$this->globalBlockLocalStatusLookup->getLocalWhitelistInfo( $block->gb_id )
+				$this->globalBlockLocalStatusLookup->isGlobalBlockLocallyDisabledForBlockApplication( $block->gb_id )
 			) {
 				continue;
 			}
