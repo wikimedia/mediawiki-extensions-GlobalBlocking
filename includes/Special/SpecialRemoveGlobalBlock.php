@@ -4,6 +4,7 @@ namespace MediaWiki\Extension\GlobalBlocking\Special;
 
 use MediaWiki\Block\BlockUtils;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockManager;
 use MediaWiki\Extension\GlobalBlocking\Widget\HTMLUserTextFieldAllowingGlobalBlockIds;
 use MediaWiki\HTMLForm\HTMLForm;
@@ -80,7 +81,19 @@ class SpecialRemoveGlobalBlock extends FormSpecialPage {
 	}
 
 	public function onSuccess() {
-		$msg = $this->msg( 'globalblocking-unblock-unblocked', $this->target )->parseAsBlock();
+		$successMsgKey = 'globalblocking-unblock-unblocked';
+		$target = $this->target;
+
+		// Display the global block ID specific message if the target is a global block ID.
+		$globalBlockId = GlobalBlockLookup::isAGlobalBlockId( $this->target );
+		if ( $globalBlockId ) {
+			$successMsgKey .= '-for-id-target';
+			// Use the ID without the "#" prefix, as this is added by the message.
+			$target = $globalBlockId;
+		}
+
+		// Display the success message and also a link to go to Special:GlobalBlockList
+		$msg = $this->msg( $successMsgKey, $target )->parseAsBlock();
 		$link = $this->getLinkRenderer()->makeKnownLink(
 			SpecialPage::getTitleFor( 'GlobalBlockList' ),
 			$this->msg( 'globalblocking-return' )->text()

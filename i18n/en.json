@@ -76,6 +76,7 @@
 	"globalblocking-unblock-submit": "Remove global block",
 	"globalblocking-unblock-reason": "Reason:",
 	"globalblocking-unblock-unblocked": "You have removed the global block on the user '''$1'''.",
+	"globalblocking-unblock-unblocked-for-id-target": "You have removed the global block '''#$1'''.",
 	"globalblocking-unblock-intro": "You can use this form to remove a global block.",
 	"globalblocking-whitelist": "Local status of global blocks",
 	"globalblocking-whitelist-notapplied": "Global blocks are not applied at this wiki,\nso the local status of global blocks cannot be modified.",

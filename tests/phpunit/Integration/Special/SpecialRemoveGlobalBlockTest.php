@@ -13,6 +13,14 @@ use MediaWiki\Tests\SpecialPage\FormSpecialPageTestCase;
  * @group Database
  */
 class SpecialRemoveGlobalBlockTest extends FormSpecialPageTestCase {
+
+	protected function setUp(): void {
+		parent::setUp();
+		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
+		// to be the local provider.
+		$this->overrideConfigValue( MainConfigNames::CentralIdLookupProvider, 'local' );
+	}
+
 	protected function newSpecialPage() {
 		return $this->getServiceContainer()->getSpecialPageFactory()->getPage( 'RemoveGlobalBlock' );
 	}
@@ -76,7 +84,7 @@ class SpecialRemoveGlobalBlockTest extends FormSpecialPageTestCase {
 		RequestContext::getMain()->setRequest( $fauxRequest );
 		RequestContext::getMain()->getRequest()->getSession()->setUser( $testPerformer );
 		// Execute the special page.
-		[ $html ] = $this->executeSpecialPage( '', $fauxRequest, null, $this->getUserForSuccess() );
+		[ $html ] = $this->executeSpecialPage( '', $fauxRequest, null, $testPerformer );
 		// Verify that the 'globalblocking-unblock-unblocked' success message is present.
 		$this->assertStringContainsString( "(globalblocking-unblock-unblocked: $target", $html );
 		// Verify that the 'globalblocking-return' link is present.
@@ -95,5 +103,46 @@ class SpecialRemoveGlobalBlockTest extends FormSpecialPageTestCase {
 		// to be the local provider.
 		$this->overrideConfigValue( MainConfigNames::CentralIdLookupProvider, 'local' );
 		$this->testSuccessfulSubmissionOfForm( $this->getMutableTestUser()->getUser()->getName() );
+	}
+
+	public function testSuccessfulSubmissionOfFormForGlobalAutoblock() {
+		$this->overrideConfigValue( 'GlobalBlockingEnableAutoblocks', true );
+		$testPerformer = $this->getUserForSuccess();
+		RequestContext::getMain()->setUser( $testPerformer );
+		// Get a global autoblock to test with.
+		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager();
+		$globalAccountBlockStatus = $globalBlockManager->block(
+			$this->getTestUser()->getUserIdentity()->getName(), 'test', 'infinite',
+			$this->getTestUser( [ 'steward' ] )->getUser(), [ 'enable-autoblock' ]
+		);
+		$this->assertStatusGood( $globalAccountBlockStatus );
+		$accountGlobalBlockId = $globalAccountBlockStatus->getValue()['id'];
+		$autoBlockStatus = $globalBlockManager->autoblock( $accountGlobalBlockId, '7.8.9.0' );
+		$this->assertStatusGood( $autoBlockStatus );
+		$autoBlockId = $autoBlockStatus->getValue()['id'];
+		// Set-up the valid request to remove the global autoblock.
+		$fauxRequest = new FauxRequest(
+			[
+				'target' => '#' . $autoBlockId, 'wpReason' => 'testing',
+				'wpEditToken' => $testPerformer->getEditToken(),
+			],
+			true,
+			RequestContext::getMain()->getRequest()->getSession()
+		);
+		// Assign the fake valid request to the main request context, as well as updating the session user
+		// so that the CSRF token is a valid token for the request user.
+		RequestContext::getMain()->setRequest( $fauxRequest );
+		RequestContext::getMain()->getRequest()->getSession()->setUser( $testPerformer );
+		// Execute the special page.
+		[ $html ] = $this->executeSpecialPage( '', $fauxRequest, null, $testPerformer );
+		// Verify that the correct success message is shown
+		$this->assertStringContainsString( "(globalblocking-unblock-unblocked-for-id-target: " . $autoBlockId, $html );
+		// Check that the autoblock was actually removed.
+		$this->newSelectQueryBuilder()
+			->select( '1' )
+			->from( 'globalblocks' )
+			->where( [ 'gb_id' => $autoBlockId ] )
+			->caller( __METHOD__ )
+			->assertEmptyResult();
 	}
 }
