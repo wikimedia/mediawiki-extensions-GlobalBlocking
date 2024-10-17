@@ -41,7 +41,6 @@
 	"globalblocking-search-legend": "Пребарај глобален блок",
 	"globalblocking-search-submit": "Пребарај блокирања",
 	"globalblocking-list-target-invalid": "Корисникот кој го пребаравте ($1) е неважечки.\nВнесете важечка IP-адреса или корисничко име.",
-	"globalblocking-list-item": "$1: <span class=\"plainlinks\"><strong>$3</strong></span> <i>$4</i> глобално {{GENDER:$2|го блокираше}} {{GENDER:$5|$6}} со истек $7 $8 $9 $10",
 	"globalblocking-list-anononly": "само анонимни",
 	"globalblocking-list-unblock": "отстрани",
 	"globalblocking-list-whitelisted": "месно оневозможено од $1: $2",

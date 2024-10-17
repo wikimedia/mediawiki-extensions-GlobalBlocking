@@ -48,7 +48,6 @@
 	"globalblocking-search-legend": "חיפוש חסימה גלובלית",
 	"globalblocking-search-submit": "חיפוש חסימות",
 	"globalblocking-list-target-invalid": "המשתמש שחיפשת ($1) אינו תקין.\nנא להזין כתובת IP תקינה.",
-	"globalblocking-list-item": "$1: <span class=\"plainlinks\"><strong>$3</strong></span> <i>$4</i> {{GENDER:$2|חסם|חסמה}} גלובלית את {{GENDER:$5|$6}} עם זמן פקיעה של $7 $8 $9 $10",
 	"globalblocking-list-anononly": "משתמשים אנונימיים בלבד",
 	"globalblocking-list-unblock": "הסרה",
 	"globalblocking-list-whitelisted": "בוטל באופן מקומי על־ידי $1: $2",

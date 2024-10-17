@@ -68,7 +68,6 @@
 	"globalblocking-search-legend": "搜尋全域封鎖",
 	"globalblocking-search-submit": "搜尋封鎖",
 	"globalblocking-list-target-invalid": "您搜尋的使用者（$1）無效。\n請輸入一個有效的 IP 位址或使用者名稱。",
-	"globalblocking-list-item": "$1：<span class=\"plainlinks\"><strong>$3</strong></span> <i>$4</i> 全域{{GENDER:$2|封鎖了}} {{GENDER:$5|$6}}，到期時間為$7 $8 $9 $10",
 	"globalblocking-list-anononly": "僅限匿名使用者",
 	"globalblocking-list-unblock": "移除",
 	"globalblocking-list-whitelisted": "由 $1 設定本地停用：$2",

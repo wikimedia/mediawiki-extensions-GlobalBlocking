@@ -47,7 +47,6 @@
 	"globalblocking-search-legend": "Qlobal blok axtar",
 	"globalblocking-search-submit": "Blok axtar",
 	"globalblocking-list-target-invalid": "Axtardığınız istifadəçi ($1) etibarsızdır.\nZəhmət olmasa, düzgün IP ünvanı və ya istifadəçi adı daxil edin.",
-	"globalblocking-list-item": "$1: <span class=\"plainlinks\"><strong>$3</strong></span> <i>$4</i> {{GENDER:$5|$6}} istifadəçisini $7 bitmə müddətinə qlobal olaraq {{GENDER:$2|blokladı}} $8 $9 $10",
 	"globalblocking-list-anononly": "sadəcə anonimlər",
 	"globalblocking-list-unblock": "çıxar",
 	"globalblocking-list-whitelisted": "lokal olaraq $1 tərəfindən söndürülüb: $2",

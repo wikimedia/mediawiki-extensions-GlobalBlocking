@@ -52,7 +52,6 @@
 	"globalblocking-search-legend": "Szukaj globalnej blokady",
 	"globalblocking-search-submit": "Szukaj blokad",
 	"globalblocking-list-target-invalid": "Użytkownik, którego szukasz ($1) jest nieprawidłowy.\nWprowadź poprawny adres IP lub nazwę użytkownika.",
-	"globalblocking-list-item": "$1: <span class=\"plainlinks\"><strong>$3</strong></span> <i>$4</i> {{GENDER:$2|zablokował|zablokowała}} globalnie {{GENDER:$5|$6}} do $7 $8 $9 $10",
 	"globalblocking-list-anononly": "tylko niezalogowani",
 	"globalblocking-list-unblock": "odblokowanie",
 	"globalblocking-list-whitelisted": "lokalnie zniesiona przez $1: $2",

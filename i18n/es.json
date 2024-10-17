@@ -62,7 +62,6 @@
 	"globalblocking-search-legend": "Buscar un bloqueo global",
 	"globalblocking-search-submit": "Buscar bloqueos",
 	"globalblocking-list-target-invalid": "El usuario que buscaste ($1) es inválido.\nPor favor ingrese una dirección IP o nombre de usuario válido.",
-	"globalblocking-list-item": "$1: <strong class=\"plainlinks\">$3</strong> <i>$4</i> {{GENDER:$2|bloqueó}} globalmente a {{GENDER:$5|$6}} con un tiempo de caducidad de $7 $8 $9 $10",
 	"globalblocking-list-anononly": "solo anónimos",
 	"globalblocking-list-unblock": "desbloquear",
 	"globalblocking-list-whitelisted": "desactivado localmente por $1: $2",

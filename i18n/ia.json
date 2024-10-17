@@ -41,7 +41,6 @@
 	"globalblocking-search-legend": "Cercar un blocada global",
 	"globalblocking-search-submit": "Cercar blocadas",
 	"globalblocking-list-target-invalid": "Le usator que tu cercava ($1) es invalide.\nPer favor entra un adresse IP o nomine de usator valide.",
-	"globalblocking-list-item": "$1: <span class=\"plainlinks\"><strong>$3</strong></span> <i>$4</i> globalmente {{GENDER:$2|ha blocate}} {{GENDER:$5|$6}} con un tempore de expiration de $7 $8 $9 $10",
 	"globalblocking-list-anononly": "anon-solmente",
 	"globalblocking-list-unblock": "remover",
 	"globalblocking-list-whitelisted": "disactivate localmente per $1: $2",

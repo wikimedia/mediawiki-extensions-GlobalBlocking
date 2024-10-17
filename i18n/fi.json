@@ -58,7 +58,6 @@
 	"globalblocking-search-legend": "Etsi järjestelmänlaajuisia estoja",
 	"globalblocking-search-submit": "Hae estot",
 	"globalblocking-list-target-invalid": "Haettu käyttäjä ($1) on virheellinen.\nAnna kelvollinen IP-osoite tai käyttäjänimi.",
-	"globalblocking-list-item": "$1: <span class=\"plainlinks\"><strong>$3</strong></span> <i>$4</i> {{GENDER:$2|esti}} järjestelmänlaajuisesti käyttäjän {{GENDER:$5|$6}}. Esto päättyy $7 $8 $9 $10",
 	"globalblocking-list-anononly": "vain kirjautumattomat",
 	"globalblocking-list-unblock": "poista",
 	"globalblocking-list-whitelisted": "paikallisesti eston on poistanut käyttäjä $1: $2",

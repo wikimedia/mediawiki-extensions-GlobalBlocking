@@ -52,7 +52,6 @@
 	"globalblocking-search-legend": "Пошук глобального блокування",
 	"globalblocking-search-submit": "Знайти блокування",
 	"globalblocking-list-target-invalid": "Користувач, якого ви шукали ($1), недійсний.\nБудь ласка, введіть правильну IP-адресу або ім'я користувача.",
-	"globalblocking-list-item": "$1: <span class=\"plainlinks\"><strong>$3</strong></span> <i>$4</i> глобально {{GENDER:$2|заблокований|заблокована}} {{GENDER:$5|$6}} на термін до $7 $8 $9 $10",
 	"globalblocking-list-anononly": "тільки анонімів",
 	"globalblocking-list-unblock": "розблокувати",
 	"globalblocking-list-whitelisted": "локально відключив $1: $2",

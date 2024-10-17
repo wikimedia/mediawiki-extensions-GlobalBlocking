@@ -40,7 +40,6 @@
 	"globalblocking-list": "Списак глобално блокираних IP адреса",
 	"globalblocking-search-legend": "Претражите глобалне блокове",
 	"globalblocking-search-submit": "Претражите блокове",
-	"globalblocking-list-item": "$1: <span class=\"plainlinks\"><strong>$3</strong></span> <i>$4</i> је глобално {{GENDER:$2|блокирао|блокирала}} {{GENDER:$5|$6}} до $7 $8 $9 $10",
 	"globalblocking-list-anononly": "само анонимне",
 	"globalblocking-list-unblock": "уклони",
 	"globalblocking-list-whitelisted": "локално онемогућио $1: $2",

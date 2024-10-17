@@ -36,7 +36,6 @@
 	"globalblocking-search-legend": "Глобалан блоктохарш лахар",
 	"globalblocking-search-submit": "Лаха блоктоьхнарш",
 	"globalblocking-list-target-invalid": "Лоьху декъашхочун цӀе ($1) нийса йац.\nДехар до, нийса IP-адрес йа аккаунтан цӀе йазйе.",
-	"globalblocking-list-item": "$1: <span class=\"plainlinks\"><strong>$3</strong></span> <i>$4</i> глобалан {{GENDER:$2|блоктоьхна}} {{GENDER:$5|$6}} чекхйолу $7 $8 $9 $10",
 	"globalblocking-list-anononly": "аноним декъашхойн бен",
 	"globalblocking-list-unblock": "дӀайаккхаблок",
 	"globalblocking-list-whitelisted": "локалан дӀайайина $1: $2",

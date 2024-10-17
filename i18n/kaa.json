@@ -8,7 +8,6 @@
 	"globalblocking-search-submit": "Bloklawlardı izlew",
 	"globalblocking-list-anononly": "tek ǵana anonimli",
 	"globalblocking-list-whitelist": "jergilikli statusı",
-	"globalblocking-blockedtext-ip": "Siziń IP mánzilińiz barlıq Wikilerda bloklanǵan.'''\n\nBloklaw $1 tárepinen ámelge asırıldı.\nKórsetilgen sebep ''$2''.\n\n* Bloktıń baslanıwı : $8\n* Bloktıń ámel qılıw múddeti: $6 \n\nBloktı talqılaw ushın $1 menen baylanısıwıńız múmkin.\nEger [[Special:Preferences|akkaunt sazlamaları]]nda durıs elektron pochta adresi kórsetilmegen bolsa hám onnan paydalanıw sizge bloklanbaǵan bolsa, siz \"{{int:emailuser}}\" funkciyasınan paydalana almaysız. \nSiziń ámeldegi IP adresińiz $3.\nMárhámát, joqarıdaǵı barlıq maǵlıwmatlardı sorawıńızǵa tolıq kirgiziń.",
 	"globalblocking-logpage": "Globallıq bloklaw jurnalı",
 	"globalblocking-contribs-log": "globallıq bloklaw jurnalı",
 	"globalblocking-blockedtext-on-range": "Siziń IP mánzilińiz barlıq Wikilarda bloklanǵan diapazonda.",
