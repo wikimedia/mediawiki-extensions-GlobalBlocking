@@ -17,6 +17,7 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 
 	private static array $blockedTargets;
 	private static string $globallyBlockedUser;
+	private static int $autoBlockId;
 
 	protected function setUp(): void {
 		parent::setUp();
@@ -69,6 +70,8 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 		foreach ( self::$blockedTargets as $target ) {
 			$this->assertStringContainsString( $target, $html );
 		}
+		// Assert that the autoblock target is never displayed
+		$this->assertStringNotContainsString( '77.8.9.11', $html );
 	}
 
 	/** @dataProvider provideTargetParam */
@@ -97,6 +100,7 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 			'wider IPv6 range' => [ '::1/18', false ],
 			'unblocked IP' => [ '6.7.8.9', false ],
 			'non-existing global block ID' => [ '#123456789', false ],
+			'IP that is only globally autoblocked' => [ '77.8.9.11', false ],
 		];
 	}
 
@@ -133,13 +137,16 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 
 	/** @dataProvider provideViewPageWithOptionsSelected */
 	public function testViewPageWithOptionsSelected(
-		$selectedOptions, $expectedTargets, $accountIsAnExpectedTargets
+		$selectedOptions, $expectedTargets, $accountIsAnExpectedTargets, $autoblockIsAnExpectedTarget
 	) {
 		// Add the globally blocked account to the $expectedTargets array if $accountIsAnExpectedTargets is true.
 		// This is required because we do not have access to the globally blocked account name in the data provider,
 		// but do once this test runs.
 		if ( $accountIsAnExpectedTargets ) {
 			$expectedTargets[] = self::$globallyBlockedUser;
+		}
+		if ( $autoblockIsAnExpectedTarget ) {
+			$expectedTargets[] = '(globalblocking-global-autoblock-id: ' . self::$autoBlockId;
 		}
 		// Load the special page with the selected options.
 		[ $html ] = $this->executeSpecialPage( '', new FauxRequest( [ 'wpOptions' => $selectedOptions ] ) );
@@ -148,10 +155,12 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 			$this->assertStringContainsString( $target, $html );
 		}
 		// Assert that no other targets are listed in the page
-		$targetsExpectedToNotBePresent = array_diff( $expectedTargets, self::$blockedTargets );
+		$targetsExpectedToNotBePresent = array_diff( self::$blockedTargets, $expectedTargets );
 		foreach ( $targetsExpectedToNotBePresent as $target ) {
 			$this->assertStringNotContainsString( $target, $html );
 		}
+		// Assert that the autoblock target is never displayed
+		$this->assertStringNotContainsString( '77.8.9.11', $html );
 		// If no targets are expected, verify that the no results message is shown.
 		if ( count( $expectedTargets ) === 0 ) {
 			$this->assertStringContainsString(
@@ -168,19 +177,26 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 				// The targets that should appear in the special page once submitting the form.
 				[ '1.2.3.0/24', '0:0:0:0:0:0:0:0/19' ],
 				// Whether the globally blocked account should also be a target that appears in the special page.
-				true
+				true,
+				// Whether the autoblock should also be a target that appears in the results list.
+				false,
 			],
-			'Hide range blocks' => [ [ 'rangeblocks' ], [ '1.2.3.4' ], true ],
-			'Hide user blocks' => [ [ 'userblocks' ], [ '1.2.3.4', '1.2.3.0/24', '0:0:0:0:0:0:0:0/19' ], false ],
-			'Hide IP and range blocks' => [ [ 'addressblocks', 'rangeblocks' ], [], true ],
-			'Hide user, IP, and range blocks' => [ [ 'addressblocks', 'rangeblocks', 'userblocks' ], [], false ],
-			'Hide temporary blocks' => [ [ 'tempblocks' ], [ '1.2.3.4', '0:0:0:0:0:0:0:0/19' ], true ],
-			'Hide indefinite blocks' => [ [ 'indefblocks' ], [ '1.2.3.0/24' ], false ],
-			'Hide temporary and indefinite blocks' => [ [ 'tempblocks', 'indefblocks' ], [], false ],
+			'Hide range blocks' => [ [ 'rangeblocks' ], [ '1.2.3.4' ], true, true ],
+			'Hide user blocks' => [ [ 'userblocks' ], [ '1.2.3.4', '1.2.3.0/24', '0:0:0:0:0:0:0:0/19' ], false, true ],
+			'Hide IP and range blocks' => [ [ 'addressblocks', 'rangeblocks' ], [], true, false ],
+			'Hide user, IP, and range blocks' => [ [ 'addressblocks', 'rangeblocks', 'userblocks' ], [], false, false ],
+			'Hide user, IP, auto, and range blocks' => [
+				[ 'addressblocks', 'rangeblocks', 'userblocks', 'autoblocks' ], [], false, false,
+			],
+			'Hide temporary blocks' => [ [ 'tempblocks' ], [ '1.2.3.4', '0:0:0:0:0:0:0:0/19' ], true, false ],
+			'Hide indefinite blocks' => [ [ 'indefblocks' ], [ '1.2.3.0/24' ], false, true ],
+			'Hide temporary and indefinite blocks' => [ [ 'tempblocks', 'indefblocks' ], [], false, false ],
 		];
 	}
 
 	public function addDBDataOnce() {
+		// Allow global autoblocks, so that we can check that global autoblocks are properly handled by the API
+		$this->overrideConfigValue( 'GlobalBlockingEnableAutoblocks', true );
 		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
 		// to be the local provider.
 		$this->overrideConfigValue( MainConfigNames::CentralIdLookupProvider, 'local' );
@@ -199,9 +215,23 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 		);
 		// Globally block a username to test handling global account blocks
 		$globallyBlockedUser = $this->getMutableTestUser()->getUserIdentity()->getName();
-		$this->assertStatusGood(
-			$globalBlockManager->block( $globallyBlockedUser, 'Test reason4', 'infinite', $testPerformer )
+		$userBlockStatus = $globalBlockManager->block(
+			$globallyBlockedUser, 'Test reason4', 'infinite', $testPerformer,
+			[ 'enable-autoblock' ]
 		);
+		$this->assertStatusGood( $userBlockStatus );
+		// Insert an autoblock for a user block which is not the same as the user block we check for when testing.
+		// This avoids test failures when the username is matched in the autoblock reason.
+		$secondUserBlockStatus = $globalBlockManager->block(
+			$this->getMutableTestUser()->getUserIdentity()->getName(), 'Test reason4', 'infinite',
+			$testPerformer, [ 'enable-autoblock' ]
+		);
+		$this->assertStatusGood( $secondUserBlockStatus );
+		$secondUserBlockId = $secondUserBlockStatus->getValue()['id'];
+		$autoblockStatus = $globalBlockManager->autoblock( $secondUserBlockId, '77.8.9.11' );
+		$this->assertStatusGood( $autoblockStatus );
+		$this->assertArrayHasKey( 'id', $autoblockStatus->getValue() );
+		self::$autoBlockId = $autoblockStatus->getValue()['id'];
 		self::$blockedTargets = [ '1.2.3.4', '1.2.3.0/24', '0:0:0:0:0:0:0:0/19', $globallyBlockedUser ];
 		self::$globallyBlockedUser = $globallyBlockedUser;
 	}

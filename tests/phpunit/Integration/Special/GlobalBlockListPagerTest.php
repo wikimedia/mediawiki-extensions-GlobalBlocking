@@ -8,6 +8,8 @@ use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\Extension\GlobalBlocking\Special\GlobalBlockListPager;
 use MediaWiki\MainConfigNames;
+use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWiki\User\UserIdentity;
 use MediaWikiIntegrationTestCase;
 
@@ -16,6 +18,8 @@ use MediaWikiIntegrationTestCase;
  * @covers \MediaWiki\Extension\GlobalBlocking\Special\GlobalBlockListPager
  */
 class GlobalBlockListPagerTest extends MediaWikiIntegrationTestCase {
+
+	use MockAuthorityTrait;
 
 	private static UserIdentity $testPerformer;
 	private static string $globallyBlockedUser;
@@ -48,11 +52,16 @@ class GlobalBlockListPagerTest extends MediaWikiIntegrationTestCase {
 	public function testFormatRow( $target, $expectedStrings, $notExpectedStrings ) {
 		$objectUnderTest = $this->getObjectUnderTest();
 		// Get the row data for the target
-		$row = $this->getDb()->newSelectQueryBuilder()
+		$queryBuilder = $this->getDb()->newSelectQueryBuilder()
 			->select( GlobalBlockLookup::selectFields() )
-			->from( 'globalblocks' )
-			->where( [ 'gb_address' => $target ] )
-			->fetchRow();
+			->from( 'globalblocks' );
+		$globalBlockId = GlobalBlockLookup::isAGlobalBlockId( $target );
+		if ( $globalBlockId ) {
+			$queryBuilder->where( [ 'gb_id' => $globalBlockId ] );
+		} else {
+			$queryBuilder->where( [ 'gb_address' => $target ] );
+		}
+		$row = $queryBuilder->fetchRow();
 		// Call the method we are testing
 		$actual = $objectUnderTest->formatRow( $row );
 		// Verify that the username of the blocking user is present in the output
@@ -130,12 +139,36 @@ class GlobalBlockListPagerTest extends MediaWikiIntegrationTestCase {
 		];
 	}
 
+	/** @dataProvider provideFormatRowWhenViewingUserHasActionLinks */
+	public function testFormatRowWhenViewingUserHasActionLinks( $target, $expectedStrings, $notExpectedStrings ) {
+		RequestContext::getMain()->setAuthority( $this->mockRegisteredUltimateAuthority() );
+		RequestContext::getMain()->setTitle( SpecialPage::getTitleFor( 'GlobalBlockList' ) );
+		$this->testFormatRow( $target, $expectedStrings, $notExpectedStrings );
+	}
+
+	public static function provideFormatRowWhenViewingUserHasActionLinks() {
+		return [
+			'IPv4 block' => [
+				'1.2.3.4',
+				[ '(globalblocking-list-unblock', 'Test reason1' ],
+				[ 'Test reason2', 'Test reason3', 'Globally autoblocked' ],
+			],
+			'IPv4 autoblock' => [
+				'#5',
+				[ '(globalblocking-list-unblock', 'Globally autoblocked' ],
+				[ '77.8.9.11' ],
+			],
+		];
+	}
+
 	public function testFormatValueForUnhandledName() {
 		$this->expectException( InvalidArgumentException::class );
 		$this->getObjectUnderTest()->formatValue( 'unknown-name', 'test' );
 	}
 
 	public function addDBDataOnce() {
+		// Allow global autoblocks, so that we can check that global autoblocks are properly handled by the API
+		$this->overrideConfigValue( 'GlobalBlockingEnableAutoblocks', true );
 		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
 		// to be the local provider.
 		$this->overrideConfigValue( MainConfigNames::CentralIdLookupProvider, 'local' );
@@ -153,10 +186,18 @@ class GlobalBlockListPagerTest extends MediaWikiIntegrationTestCase {
 		$this->assertStatusGood(
 			$globalBlockManager->block( '0:0:0:0:0:0:0:0/19', 'Test reason3', 'infinite', $testPerformer )
 		);
+		// Globally block a username to test handling global account blocks
 		$globallyBlockedUser = $this->getMutableTestUser()->getUserIdentity()->getName();
-		$this->assertStatusGood(
-			$globalBlockManager->block( $globallyBlockedUser, 'Test reason4', 'infinite', $testPerformer )
+		$userBlockStatus = $globalBlockManager->block(
+			$globallyBlockedUser, 'Test reason4', 'infinite', $testPerformer,
+			[ 'enable-autoblock' ]
 		);
+		$this->assertStatusGood( $userBlockStatus );
+		$userBlockId = $userBlockStatus->getValue()['id'];
+		// Insert an autoblock for the global block on the username target
+		$autoblockStatus = $globalBlockManager->autoblock( $userBlockId, '77.8.9.11' );
+		$this->assertStatusGood( $autoblockStatus );
+		$this->assertArrayHasKey( 'id', $autoblockStatus->getValue() );
 		// Insert a local disable entry to test the local disable status
 		$globalBlockLocalStatusManager = $globalBlockingServices->getGlobalBlockLocalStatusManager();
 		$this->assertStatusGood( $globalBlockLocalStatusManager->locallyDisableBlock(

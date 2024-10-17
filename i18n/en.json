@@ -56,6 +56,7 @@
 	"globalblocking-list-addressblocks": "Hide single IP blocks",
 	"globalblocking-list-rangeblocks": "Hide range blocks",
 	"globalblocking-list-userblocks": "Hide account blocks",
+	"globalblocking-list-autoblocks": "Hide autoblocks",
 	"globalblocking-list-table-heading-timestamp": "Timestamp",
 	"globalblocking-list-table-heading-target": "Target",
 	"globalblocking-list-table-heading-expiry": "Expires",
@@ -144,5 +145,6 @@
 	"globalblocking-autoblocker": "Globally autoblocked because your IP address has been recently used by \"[[User:$1|$1]]\".\nThe reason given for $1's block is \"$2\"",
 	"globalblocking-autoblocker-hidden-block": "Globally autoblocked because your IP address has been recently used by a user blocked by block ID #$1.",
 	"globalblocking-centralauth-admin-info-globalblock": "Globally blocked:",
-	"globalblocking-globalautoblock-exemptionlist": ""
+	"globalblocking-globalautoblock-exemptionlist": "",
+	"globalblocking-global-autoblock-id": "Global autoblock #$1"
 }

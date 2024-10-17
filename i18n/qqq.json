@@ -91,6 +91,7 @@
 	"globalblocking-list-addressblocks": "Used as the label for the multi-select checkbox in the form on [[Special:GlobalBlockList]]. When checked, this hides all blocks where the target is a single IP address.\n\nSee also:\n*{{msg-mw|blocklist-addressblocks}}",
 	"globalblocking-list-rangeblocks": "Used as the label for the multi-select checkbox in the form on [[Special:GlobalBlockList]]. When checked, this hides all blocks where the target is a IP address range.\n\nSee also:\n*{{msg-mw|blocklist-rangeblocks}}",
 	"globalblocking-list-userblocks": "Used as the label for the multi-select checkbox in the form on [[Special:GlobalBlockList]]. When checked, this hides all blocks where the target is an account.\n\nSee also:\n*{{msg-mw|blocklist-userblocks}}",
+	"globalblocking-list-autoblocks": "Used as the label for the multi-select checkbox in the form on [[Special:GlobalBlockList]]. When checked, this hides all global autoblocks.\n\nSee also:\n*{{msg-mw|blocklist-autoblocks}}",
 	"globalblocking-list-table-heading-timestamp": "This is a column header for dates and times in the table on the page [[Special:GlobalBlockList]]. Similar to {{msg-mw|blocklist-timestamp}}. \n{{Identical|Timestamp}}",
 	"globalblocking-list-table-heading-target": "The table header for the column containing the block targets, that is usernames or IP addresses linked to their respective user pages, in the table on the page [[Special:GlobalBlockList]]. Similar to {{msg-mw|blocklist-target}}. \n{{Identical|Target}}",
 	"globalblocking-list-table-heading-expiry": "This is a column header in the table on the page [[Special:GlobalBlockList]]. Similar to {{msg-mw|blocklist-expiry}}.\n{{Identical|Expire}}",
@@ -179,5 +180,6 @@
 	"globalblocking-autoblocker": "Used as the reason for a global autoblock of an IP address.\n\nParameters:\n* $1 - The target of the block that caused the global autoblock, which will be a username\n* $2 - The reason given for the block that caused this global autoblock.\n\nSee also: {{msg-mw|globalblocking-autoblocker-hidden-block}}, which is used instead of this message if the target of the block is hidden.",
 	"globalblocking-autoblocker-hidden-block": "Used as the reason for a global autoblock of an IP address if the target of the block is hidden from public view.\n* $1 - The global block ID of the block that caused the autoblock.\n\nSee also: {{msg-mw|globalblocking-autoblocker}}, which is used instead of this message if the target username is publicly viewable.",
 	"globalblocking-centralauth-admin-info-globalblock": "Used as a label on Special:CentralAuth for the global account information field that displays if the user is globally blocked or not globally blocked.",
-	"globalblocking-globalautoblock-exemptionlist": "{{notranslate}}"
+	"globalblocking-globalautoblock-exemptionlist": "{{notranslate}}",
+	"globalblocking-global-autoblock-id": "Used as the target of an global autoblock, instead of displaying the autoblocked IP. Similar to {{msg-mw|autoblockid}}.\n\nParameters:\n* $1 - autoblock ID"
 }
