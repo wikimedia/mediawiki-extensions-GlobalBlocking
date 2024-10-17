@@ -285,6 +285,31 @@ class ApiGlobalBlockTest extends ApiTestCase {
 			->assertRowValue( [ '1', '1.2.3.7' ] );
 	}
 
+	public function testExecuteForBlockModificationSpecifyingGlobalAutoblockId() {
+		$this->overrideConfigValue( 'GlobalBlockingEnableAutoblocks', true );
+		// Perform a block on a test user and then perform a global autoblock on an IP using the global user block
+		// as the parent block.
+		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager();
+		$globalAccountBlockStatus = $globalBlockManager->block(
+			$this->getTestUser()->getUserIdentity()->getName(), 'test1234', 'infinite',
+			$this->getTestUser( [ 'steward' ] )->getUser(), [ 'enable-autoblock' ]
+		);
+		$this->assertStatusGood( $globalAccountBlockStatus );
+		$accountGlobalBlockId = $globalAccountBlockStatus->getValue()['id'];
+		$autoBlockStatus = $globalBlockManager->autoblock( $accountGlobalBlockId, '7.8.9.0' );
+		$this->assertStatusGood( $autoBlockStatus );
+		$autoBlockId = $autoBlockStatus->getValue()['id'];
+		// Attempt to modify the global autoblock and expect that this fails
+		$this->expectApiErrorCode( 'cannot-modify-global-autoblock' );
+		$this->doApiRequestWithToken(
+			[
+				'action' => 'globalblock', 'id' => $autoBlockId, 'reason' => 'test', 'modify' => '1',
+				'anononly' => 1, 'expiry' => 'infinity',
+			],
+			null, $this->getAuthorityForSuccess()
+		);
+	}
+
 	/** @dataProvider provideUserBlockTargets */
 	public function testExecuteForUserBlockWhenAutoblockingEnabled( $target ) {
 		// Fix the time to ensure that the provided expiry remains the same between test runs
@@ -403,7 +428,8 @@ class ApiGlobalBlockTest extends ApiTestCase {
 			new ApiMain( $this->apiContext, true ),
 			'globalblock',
 			$this->getServiceContainer()->getBlockUserFactory(),
-			$globalBlockingServices->getGlobalBlockManager()
+			$globalBlockingServices->getGlobalBlockManager(),
+			$globalBlockingServices->getGlobalBlockingConnectionProvider()
 		);
 		$apiGlobalBlockModule = TestingAccessWrapper::newFromObject( $apiGlobalBlockModule );
 		$examplesMessages = $apiGlobalBlockModule->getExamplesMessages();

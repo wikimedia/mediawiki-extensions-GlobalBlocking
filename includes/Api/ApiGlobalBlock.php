@@ -6,6 +6,8 @@ use ApiBase;
 use ApiMain;
 use ApiResult;
 use MediaWiki\Block\BlockUserFactory;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockManager;
 use MediaWiki\ParamValidator\TypeDef\UserDef;
 use MediaWiki\Status\Status;
@@ -15,23 +17,27 @@ use Wikimedia\ParamValidator\ParamValidator;
 class ApiGlobalBlock extends ApiBase {
 	private BlockUserFactory $blockUserFactory;
 	private GlobalBlockManager $globalBlockManager;
+	private GlobalBlockingConnectionProvider $globalBlockingConnectionProvider;
 
 	/**
 	 * @param ApiMain $mainModule
 	 * @param string $moduleName
 	 * @param BlockUserFactory $blockUserFactory
 	 * @param GlobalBlockManager $globalBlockManager
+	 * @param GlobalBlockingConnectionProvider $globalBlockingConnectionProvider
 	 */
 	public function __construct(
 		ApiMain $mainModule,
 		$moduleName,
 		BlockUserFactory $blockUserFactory,
-		GlobalBlockManager $globalBlockManager
+		GlobalBlockManager $globalBlockManager,
+		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider
 	) {
 		parent::__construct( $mainModule, $moduleName );
 
 		$this->blockUserFactory = $blockUserFactory;
 		$this->globalBlockManager = $globalBlockManager;
+		$this->globalBlockingConnectionProvider = $globalBlockingConnectionProvider;
 	}
 
 	public function execute() {
@@ -48,6 +54,25 @@ class ApiGlobalBlock extends ApiBase {
 		$result = $this->getResult();
 
 		if ( $this->getParameter( 'expiry' ) ) {
+			// Prevent modification of global autoblocks, as these are managed by the software.
+			$globalBlockId = GlobalBlockLookup::isAGlobalBlockId( $target );
+			if ( $globalBlockId ) {
+				$globalBlockingDbr = $this->globalBlockingConnectionProvider->getReplicaGlobalBlockingDatabase();
+				$isGlobalBlockAnAutoblock = $globalBlockingDbr->newSelectQueryBuilder()
+					->select( 'gb_autoblock_parent_id' )
+					->from( 'globalblocks' )
+					->where( [ 'gb_id' => $globalBlockId ] )
+					->caller( __METHOD__ )
+					->fetchField();
+
+				if ( $isGlobalBlockAnAutoblock ) {
+					$this->dieWithError(
+						'globalblocking-apierror-cannot-modify-global-autoblock',
+						'cannot-modify-global-autoblock'
+					);
+				}
+			}
+
 			$options = [];
 
 			if ( $this->getParameter( 'anononly' ) ) {

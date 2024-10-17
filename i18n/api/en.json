@@ -5,6 +5,7 @@
 		]
 	},
 	"globalblocking-apierror-badip": "IP address $1 is not valid",
+	"globalblocking-apierror-cannot-modify-global-autoblock": "You cannot modify global autoblocks",
 	"apihelp-globalblock-summary": "Globally block or unblock a user.",
 	"apihelp-globalblock-param-id": "ID of the global block to modify or unblock (obtained through <kbd>list=globalblocks</kbd>). Cannot be used together with <var>$1target</var>.",
 	"apihelp-globalblock-param-target": "The target IP address or username. Cannot be used together with <var>$1id</var>.",
