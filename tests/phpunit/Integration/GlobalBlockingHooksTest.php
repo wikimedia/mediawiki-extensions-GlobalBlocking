@@ -46,11 +46,10 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 			'globalBlockLinkBuilder' => $globalBlockingServices->getGlobalBlockingLinkBuilder(),
 			'globalBlockLookup' => $globalBlockingServices->getGlobalBlockLookup(),
 			'globalBlockingConnectionProvider' => $globalBlockingServices->getGlobalBlockingConnectionProvider(),
-			'globalBlockLocalStatusLookup' => $globalBlockingServices->getGlobalBlockLocalStatusLookup(),
 			'userNameUtils' => $this->getServiceContainer()->getUserNameUtils(),
 			'globalBlockingUserVisibilityLookup' => $globalBlockingServices->getGlobalBlockingUserVisibilityLookup(),
-			'userIdentityLookup' => $this->getServiceContainer()->getUserIdentityLookup(),
-			'globalBlockManager' => $globalBlockingServices->getGlobalBlockManager()
+			'globalBlockManager' => $globalBlockingServices->getGlobalBlockManager(),
+			'globalBlockDetailsRenderer' => $globalBlockingServices->getGlobalBlockDetailsRenderer(),
 		];
 	}
 

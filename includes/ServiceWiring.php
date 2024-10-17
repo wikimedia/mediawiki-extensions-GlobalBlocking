@@ -6,6 +6,7 @@ use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingBlockPurger;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingGlobalAutoblockExemptionListProvider;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingGlobalBlockDetailsRenderer;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingUserVisibilityLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusLookup;
@@ -143,6 +144,18 @@ return [
 			$services->getSiteLookup(),
 			$services->getFormatterFactory()->getStatusFormatter( RequestContext::getMain() ),
 			LoggerFactory::getInstance( 'GlobalBlocking' )
+		);
+	},
+	'GlobalBlocking.GlobalBlockingGlobalBlockDetailsRenderer' => static function (
+		MediaWikiServices $services
+	): GlobalBlockingGlobalBlockDetailsRenderer {
+		$globalBlockingServices = GlobalBlockingServices::wrap( $services );
+		return new GlobalBlockingGlobalBlockDetailsRenderer(
+			$services->getCentralIdLookup(),
+			$services->getUserIdentityLookup(),
+			$globalBlockingServices->getGlobalBlockingUserVisibilityLookup(),
+			$globalBlockingServices->getGlobalBlockLocalStatusLookup(),
+			$globalBlockingServices->getGlobalBlockingLinkBuilder()
 		);
 	}
 ];

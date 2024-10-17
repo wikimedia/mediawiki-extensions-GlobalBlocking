@@ -39,9 +39,7 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 			$globalBlockingServices->getGlobalBlockLookup(),
 			$globalBlockingServices->getGlobalBlockingLinkBuilder(),
 			$globalBlockingServices->getGlobalBlockingConnectionProvider(),
-			$globalBlockingServices->getGlobalBlockLocalStatusLookup(),
-			$services->getUserIdentityLookup(),
-			$globalBlockingServices->getGlobalBlockingUserVisibilityLookup()
+			$globalBlockingServices->getGlobalBlockDetailsRenderer()
 		);
 	}
 

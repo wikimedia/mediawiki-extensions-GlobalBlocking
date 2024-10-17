@@ -5,9 +5,8 @@ namespace MediaWiki\Extension\GlobalBlocking\Special;
 use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Context\DerivativeContext;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingGlobalBlockDetailsRenderer;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
-use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingUserVisibilityLookup;
-use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\Extension\GlobalBlocking\Widget\HTMLUserTextFieldAllowingGlobalBlockIds;
 use MediaWiki\HTMLForm\HTMLForm;
@@ -15,7 +14,6 @@ use MediaWiki\Message\Message;
 use MediaWiki\SpecialPage\FormSpecialPage;
 use MediaWiki\Status\Status;
 use MediaWiki\User\CentralId\CentralIdLookup;
-use MediaWiki\User\UserIdentityLookup;
 use MediaWiki\User\UserNameUtils;
 use Wikimedia\IPUtils;
 use Wikimedia\Rdbms\RawSQLExpression;
@@ -32,21 +30,8 @@ class SpecialGlobalBlockList extends FormSpecialPage {
 	private GlobalBlockLookup $globalBlockLookup;
 	private GlobalBlockingLinkBuilder $globalBlockingLinkBuilder;
 	private GlobalBlockingConnectionProvider $globalBlockingConnectionProvider;
-	private GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup;
-	private UserIdentityLookup $userIdentityLookup;
-	private GlobalBlockingUserVisibilityLookup $globalBlockingUserVisibilityLookup;
+	private GlobalBlockingGlobalBlockDetailsRenderer $globalBlockDetailsRenderer;
 
-	/**
-	 * @param UserNameUtils $userNameUtils
-	 * @param CommentFormatter $commentFormatter
-	 * @param CentralIdLookup $lookup
-	 * @param GlobalBlockLookup $globalBlockLookup
-	 * @param GlobalBlockingLinkBuilder $globalBlockingLinkBuilder
-	 * @param GlobalBlockingConnectionProvider $globalBlockingConnectionProvider
-	 * @param GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup
-	 * @param UserIdentityLookup $userIdentityLookup
-	 * @param GlobalBlockingUserVisibilityLookup $globalBlockingUserVisibilityLookup
-	 */
 	public function __construct(
 		UserNameUtils $userNameUtils,
 		CommentFormatter $commentFormatter,
@@ -54,9 +39,7 @@ class SpecialGlobalBlockList extends FormSpecialPage {
 		GlobalBlockLookup $globalBlockLookup,
 		GlobalBlockingLinkBuilder $globalBlockingLinkBuilder,
 		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
-		GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup,
-		UserIdentityLookup $userIdentityLookup,
-		GlobalBlockingUserVisibilityLookup $globalBlockingUserVisibilityLookup
+		GlobalBlockingGlobalBlockDetailsRenderer $globalBlockDetailsRenderer
 	) {
 		parent::__construct( 'GlobalBlockList' );
 
@@ -66,9 +49,7 @@ class SpecialGlobalBlockList extends FormSpecialPage {
 		$this->globalBlockLookup = $globalBlockLookup;
 		$this->globalBlockingLinkBuilder = $globalBlockingLinkBuilder;
 		$this->globalBlockingConnectionProvider = $globalBlockingConnectionProvider;
-		$this->globalBlockLocalStatusLookup = $globalBlockLocalStatusLookup;
-		$this->userIdentityLookup = $userIdentityLookup;
-		$this->globalBlockingUserVisibilityLookup = $globalBlockingUserVisibilityLookup;
+		$this->globalBlockDetailsRenderer = $globalBlockDetailsRenderer;
 	}
 
 	/**
@@ -218,12 +199,9 @@ class SpecialGlobalBlockList extends FormSpecialPage {
 			$this->conds,
 			$this->getLinkRenderer(),
 			$this->commentFormatter,
-			$this->lookup,
 			$this->globalBlockingLinkBuilder,
 			$this->globalBlockingConnectionProvider,
-			$this->globalBlockLocalStatusLookup,
-			$this->userIdentityLookup,
-			$this->globalBlockingUserVisibilityLookup
+			$this->globalBlockDetailsRenderer
 		);
 
 		if ( $this->queryValid && $pager->getNumRows() ) {

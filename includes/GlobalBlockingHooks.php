@@ -11,9 +11,9 @@ use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingGlobalBlockDetailsRenderer;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingUserVisibilityLookup;
-use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockManager;
 use MediaWiki\Extension\GlobalBlocking\Special\GlobalBlockListPager;
@@ -30,7 +30,6 @@ use MediaWiki\Title\Title;
 use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\Hook\UserIsBlockedGloballyHook;
 use MediaWiki\User\User;
-use MediaWiki\User\UserIdentityLookup;
 use MediaWiki\User\UserNameUtils;
 use Wikimedia\IPUtils;
 
@@ -55,11 +54,10 @@ class GlobalBlockingHooks implements
 	private GlobalBlockingLinkBuilder $globalBlockLinkBuilder;
 	private GlobalBlockLookup $globalBlockLookup;
 	private GlobalBlockingConnectionProvider $globalBlockingConnectionProvider;
-	private GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup;
 	private UserNameUtils $userNameUtils;
 	private GlobalBlockingUserVisibilityLookup $globalBlockingUserVisibilityLookup;
-	private UserIdentityLookup $userIdentityLookup;
 	private GlobalBlockManager $globalBlockManager;
+	private GlobalBlockingGlobalBlockDetailsRenderer $globalBlockDetailsRenderer;
 
 	public function __construct(
 		Config $mainConfig,
@@ -68,11 +66,10 @@ class GlobalBlockingHooks implements
 		GlobalBlockingLinkBuilder $globalBlockLinkBuilder,
 		GlobalBlockLookup $globalBlockLookup,
 		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
-		GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup,
 		UserNameUtils $userNameUtils,
 		GlobalBlockingUserVisibilityLookup $globalBlockingUserVisibilityLookup,
-		UserIdentityLookup $userIdentityLookup,
-		GlobalBlockManager $globalBlockManager
+		GlobalBlockManager $globalBlockManager,
+		GlobalBlockingGlobalBlockDetailsRenderer $globalBlockDetailsRenderer
 	) {
 		$this->config = $mainConfig;
 		$this->commentFormatter = $commentFormatter;
@@ -80,11 +77,10 @@ class GlobalBlockingHooks implements
 		$this->globalBlockLinkBuilder = $globalBlockLinkBuilder;
 		$this->globalBlockLookup = $globalBlockLookup;
 		$this->globalBlockingConnectionProvider = $globalBlockingConnectionProvider;
-		$this->globalBlockLocalStatusLookup = $globalBlockLocalStatusLookup;
 		$this->userNameUtils = $userNameUtils;
 		$this->globalBlockingUserVisibilityLookup = $globalBlockingUserVisibilityLookup;
-		$this->userIdentityLookup = $userIdentityLookup;
 		$this->globalBlockManager = $globalBlockManager;
+		$this->globalBlockDetailsRenderer = $globalBlockDetailsRenderer;
 	}
 
 	/**
@@ -248,12 +244,9 @@ class GlobalBlockingHooks implements
 				[],
 				$sp->getLinkRenderer(),
 				$this->commentFormatter,
-				$this->lookup,
 				$this->globalBlockLinkBuilder,
 				$this->globalBlockingConnectionProvider,
-				$this->globalBlockLocalStatusLookup,
-				$this->userIdentityLookup,
-				$this->globalBlockingUserVisibilityLookup
+				$this->globalBlockDetailsRenderer
 			);
 			$body = $pager->formatRow( $block );
 
