@@ -208,7 +208,10 @@ class GlobalBlockingLinkBuilder {
 			);
 		}
 
-		if ( $canBlock ) {
+		// Special:GlobalBlock does not support global block IDs, so don't display the link if the target is a
+		// global block ID. This also hides the link for global autoblocks (which are only ever referenced by
+		// their global block ID), which is good because we don't support modifying global autoblocks at all.
+		if ( $canBlock && !GlobalBlockLookup::isAGlobalBlockId( $target ) ) {
 			$globalBlockLinkMessage = $targetIsBlocked ? 'globalblocking-list-modify' : 'globalblocking-list-block';
 			$links[] = $this->getLinkToCentralWikiSpecialPage(
 				'GlobalBlock',

@@ -7,6 +7,7 @@ use MediaWiki\Context\DerivativeContext;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\MainConfigNames;
 use MediaWiki\SpecialPage\SpecialPage;
@@ -25,6 +26,7 @@ class GlobalBlockingLinkBuilderTest extends MediaWikiIntegrationTestCase {
 
 	private static UserIdentity $testGloballyBlockedUser;
 	private static UserIdentity $testUnblockedUser;
+	private static int $testGloballyBlockedUserGlobalBlockId;
 
 	protected function setUp(): void {
 		parent::setUp();
@@ -183,7 +185,7 @@ class GlobalBlockingLinkBuilderTest extends MediaWikiIntegrationTestCase {
 			->getGlobalBlockingLinkBuilder();
 		$actualActionLinks = $globalBlockingLinkBuilder->getActionLinks(
 			$this->mockRegisteredAuthorityWithPermissions( [ 'globalblock-whitelist' ] ),
-			$targetCallback()->getName(),
+			$targetCallback(),
 			RequestContext::getMain(),
 			$shouldCheckBlockStatus
 		);
@@ -217,11 +219,14 @@ class GlobalBlockingLinkBuilderTest extends MediaWikiIntegrationTestCase {
 
 	public static function provideGetActionLinks() {
 		return [
-			'User is not blocked' => [ fn () => self::$testUnblockedUser, true, false ],
+			'User is not blocked' => [ fn () => self::$testUnblockedUser->getName(), true, false ],
 			'User is not blocked, but set to not check block status' => [
-				fn () => self::$testUnblockedUser, false, true,
+				fn () => self::$testUnblockedUser->getName(), false, true,
 			],
-			'User is blocked' => [ fn () => self::$testGloballyBlockedUser, true, true ],
+			'User is blocked' => [ fn () => self::$testGloballyBlockedUser->getName(), true, true ],
+			'User is blocked, target is global block ID' => [
+				fn () => '#' . self::$testGloballyBlockedUserGlobalBlockId, true, true,
+			]
 		];
 	}
 
@@ -239,7 +244,7 @@ class GlobalBlockingLinkBuilderTest extends MediaWikiIntegrationTestCase {
 			->getGlobalBlockingLinkBuilder();
 		$actualActionLinks = $globalBlockingLinkBuilder->getActionLinks(
 			$this->mockRegisteredAuthorityWithPermissions( [ 'globalblock' ] ),
-			$targetCallback()->getName(),
+			$targetCallback(),
 			$context,
 			$shouldCheckBlockStatus
 		);
@@ -251,11 +256,19 @@ class GlobalBlockingLinkBuilderTest extends MediaWikiIntegrationTestCase {
 			'not have the right to use that special page.'
 		);
 		if ( $shouldDisplayActionLinksForBlockedUser ) {
-			$this->assertStringContainsString(
-				'(globalblocking-list-modify)',
-				$actualActionLinks,
-				'Expected ::getActionLinks to return a modify block link'
-			);
+			if ( GlobalBlockLookup::isAGlobalBlockId( $targetCallback() ) ) {
+				$this->assertStringNotContainsString(
+					'(globalblocking-list-modify)',
+					$actualActionLinks,
+					'Expected ::getActionLinks to not have a modify block link'
+				);
+			} else {
+				$this->assertStringContainsString(
+					'(globalblocking-list-modify)',
+					$actualActionLinks,
+					'Expected ::getActionLinks to return a modify block link'
+				);
+			}
 			$this->assertStringContainsString(
 				'(globalblocking-list-unblock)',
 				$actualActionLinks,
@@ -277,11 +290,19 @@ class GlobalBlockingLinkBuilderTest extends MediaWikiIntegrationTestCase {
 				$actualActionLinks,
 				'Expected ::getActionLinks to have no remove block link'
 			);
-			$this->assertStringContainsString(
-				'(globalblocking-list-block)',
-				$actualActionLinks,
-				'Expected ::getActionLinks to have a block link'
-			);
+			if ( GlobalBlockLookup::isAGlobalBlockId( $targetCallback() ) ) {
+				$this->assertStringNotContainsString(
+					'(globalblocking-list-block)',
+					$actualActionLinks,
+					'Expected ::getActionLinks to not have a block link'
+				);
+			} else {
+				$this->assertStringContainsString(
+					'(globalblocking-list-block)',
+					$actualActionLinks,
+					'Expected ::getActionLinks to have a block link'
+				);
+			}
 		}
 	}
 
@@ -369,9 +390,11 @@ class GlobalBlockingLinkBuilderTest extends MediaWikiIntegrationTestCase {
 		// Get a globally blocked user so that we can test with
 		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
 		$globallyBlockedTestUser = $this->getMutableTestUser()->getUserIdentity();
-		$globalBlockingServices->getGlobalBlockManager()->block(
+		$globalBlockStatus = $globalBlockingServices->getGlobalBlockManager()->block(
 			$globallyBlockedTestUser, 'test', 'indefinite', $this->getTestUser( [ 'steward' ] )->getUser()
 		);
+		$this->assertStatusGood( $globalBlockStatus );
+		self::$testGloballyBlockedUserGlobalBlockId = $globalBlockStatus->getValue()['id'];
 		self::$testGloballyBlockedUser = $globallyBlockedTestUser;
 		self::$testUnblockedUser = $this->getMutableTestUser()->getUserIdentity();
 	}
