@@ -87,6 +87,8 @@
 	"globalblocking-whitelist-submit": "Change local status",
 	"globalblocking-whitelist-whitelisted": "You have disabled the global block #$2 on the user '''$1''' on {{SITENAME}}.",
 	"globalblocking-whitelist-dewhitelisted": "You have re-enabled the global block #$2 on the user '''$1''' on {{SITENAME}}.",
+	"globalblocking-whitelist-whitelisted-target-is-id": "You have disabled the global block #$1 on {{SITENAME}}.",
+	"globalblocking-whitelist-dewhitelisted-target-is-id": "You have re-enabled the global block #$1 on {{SITENAME}}.",
 	"globalblocking-whitelist-nochange": "You made no change to the local status of this block.",
 	"globalblocking-whitelist-intro": "You can use this form to edit the local status of a global block.\nIf a global block is disabled on this wiki, affected users will be able to edit normally.",
 	"globalblocking-blockedtext-ip": "'''{{int:globalblocking-blockedtext-all-wikis}}'''\n\n{{int:blockedtext-made-by|$1}}\n{{int:blockedtext-reason-comment|$2}}\n\n* {{int:blockedtext-start-time|$8}}\n* {{int:blockedtext-expiration-time|$6}}\n\n{{int:globalblocking-blockedtext-blocker-admin|$1}}\n{{int:globalblocking-blockedtext-email-feature}}\n{{int:blockedtext-block-ip|$3}}\n{{int:blockedtext-include-details-queries}}",

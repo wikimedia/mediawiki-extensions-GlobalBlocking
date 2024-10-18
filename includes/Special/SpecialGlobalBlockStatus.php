@@ -147,32 +147,45 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 			// Locally disable the block
 			$status = $this->globalBlockLocalStatusManager
 				->locallyDisableBlock( $this->mTarget, $data['Reason'], $this->getUser() );
-			$successMsg = 'globalblocking-whitelist-whitelisted';
 		} else {
 			// Locally re-enable the block
 			$status = $this->globalBlockLocalStatusManager
 				->locallyEnableBlock( $this->mTarget, $data['Reason'], $this->getUser() );
-			$successMsg = 'globalblocking-whitelist-dewhitelisted';
 		}
 
 		if ( !$status->isGood() ) {
 			return $status;
 		}
 
-		return $this->showSuccess( $this->mTarget, $status->getValue()['id'], $successMsg );
+		return $this->showSuccess( $status->getValue()['id'] );
 	}
 
 	/**
 	 * Show a message indicating that the change in the local status of the global block was successful.
 	 *
-	 * @param string $target The target of the global block that had its local status modified
 	 * @param int $id The ID of the global block that had its local status modified (same as the ID in gbw_id).
-	 * @param string $successMsg The message key used as the success message.
 	 * @return true
 	 */
-	protected function showSuccess( string $target, int $id, string $successMsg ): bool {
+	private function showSuccess( int $id ): bool {
+		// Generate the appropriate message to display
+		if ( $this->mWhitelistStatus ) {
+			$successMsg = 'globalblocking-whitelist-whitelisted';
+		} else {
+			$successMsg = 'globalblocking-whitelist-dewhitelisted';
+		}
+
 		$out = $this->getOutput();
-		$out->addWikiMsg( $successMsg, $target, $id );
+		if ( GlobalBlockLookup::isAGlobalBlockId( $this->mTarget ) ) {
+			// Generates:
+			// * globalblocking-whitelist-whitelisted-target-is-id
+			// * globalblocking-whitelist-dewhitelisted-target-is-id
+			$successMsg .= '-target-is-id';
+			$out->addWikiMsg( $successMsg, $id );
+		} else {
+			$out->addWikiMsg( $successMsg, $this->mTarget, $id );
+		}
+
+		// Add the link to go to Special:GlobalBlockList to see a list of global blocks.
 		$out->addHTML( $this->getLinkRenderer()->makeKnownLink(
 			SpecialPage::getTitleFor( 'GlobalBlockList' ),
 			$this->msg( 'globalblocking-return' )->text()

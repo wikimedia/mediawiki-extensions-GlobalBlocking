@@ -129,6 +129,75 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 		$this->assertStringContainsString( 'globalblocking-return', $html, 'The success message was not present' );
 	}
 
+	public function testLocallyEnableGlobalAutoblock() {
+		$this->overrideConfigValue( 'GlobalBlockingEnableAutoblocks', true );
+		// Get a testing global autoblock which we can locally disable, and then use the special page to re-enable.
+		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
+		$globalBlockManager = $globalBlockingServices->getGlobalBlockManager();
+		$globalAccountBlockStatus = $globalBlockManager->block(
+			$this->getTestUser()->getUserIdentity()->getName(), 'test1234', 'infinite',
+			$this->getTestUser( [ 'steward' ] )->getUser(), [ 'enable-autoblock' ]
+		);
+		$this->assertStatusGood( $globalAccountBlockStatus );
+		$accountGlobalBlockId = $globalAccountBlockStatus->getValue()['id'];
+		$autoBlockStatus = $globalBlockManager->autoblock( $accountGlobalBlockId, '7.8.9.0' );
+		$this->assertStatusGood( $autoBlockStatus );
+		$autoBlockId = $autoBlockStatus->getValue()['id'];
+		// Locally disable the autoblock
+		$performer = $this->getTestSysop()->getUser();
+		$globalBlockingServices->getGlobalBlockLocalStatusManager()
+			->locallyDisableBlock( '#' . $autoBlockId, 'test', $performer );
+
+		// Use the special page to locally re-enable the global autoblock.
+		$request = new FauxRequest(
+			[
+				// wpWhitelistStatus not being present in the fake request data means the checkbox was unchecked.
+				'address' => '#' . $autoBlockId, 'wpReason' => 'removing local disable',
+				'wpEditToken' => $performer->getEditToken(),
+			],
+			true
+		);
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		// Check that the correct success message is present
+		$this->assertStringContainsString( '(globalblocking-whitelist-dewhitelisted-target-is-id', $html );
+		$this->assertFalse(
+			$globalBlockingServices->getGlobalBlockLocalStatusLookup()->getLocalStatusInfo( $autoBlockId ),
+			'Block should be locally enabled after using the special page'
+		);
+	}
+
+	public function testLocallyDisableGlobalAutoblock() {
+		$this->overrideConfigValue( 'GlobalBlockingEnableAutoblocks', true );
+		// Get a testing global autoblock which we can use the special page to locally disable
+		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
+		$globalBlockManager = $globalBlockingServices->getGlobalBlockManager();
+		$globalAccountBlockStatus = $globalBlockManager->block(
+			$this->getTestUser()->getUserIdentity()->getName(), 'test1234', 'infinite',
+			$this->getTestUser( [ 'steward' ] )->getUser(), [ 'enable-autoblock' ]
+		);
+		$this->assertStatusGood( $globalAccountBlockStatus );
+		$accountGlobalBlockId = $globalAccountBlockStatus->getValue()['id'];
+		$autoBlockStatus = $globalBlockManager->autoblock( $accountGlobalBlockId, '7.8.9.0' );
+		$this->assertStatusGood( $autoBlockStatus );
+		$autoBlockId = $autoBlockStatus->getValue()['id'];
+		// Use the special page to locally disable the global autoblock.
+		$performer = $this->getTestSysop()->getUser();
+		$request = new FauxRequest(
+			[
+				'address' => '#' . $autoBlockId, 'wpReason' => 'local disable', 'wpWhitelistStatus' => 1,
+				'wpEditToken' => $performer->getEditToken(),
+			],
+			true
+		);
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		// Check that the correct success message is present
+		$this->assertStringContainsString( '(globalblocking-whitelist-whitelisted-target-is-id', $html );
+		$this->assertArrayEquals(
+			[ 'user' => $performer->getId(), 'reason' => 'local disable' ],
+			$globalBlockingServices->getGlobalBlockLocalStatusLookup()->getLocalStatusInfo( $autoBlockId )
+		);
+	}
+
 	public function testDisabledIfApplyGlobalBlocksIsFalse() {
 		$this->overrideConfigValue( 'ApplyGlobalBlocks', false );
 		$this->expectException( ErrorPageError::class );
