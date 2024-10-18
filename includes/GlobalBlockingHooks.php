@@ -10,13 +10,11 @@ use MediaWiki\Block\Hook\SpreadAnyEditBlockHook;
 use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\RequestContext;
-use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingGlobalBlockDetailsRenderer;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingUserVisibilityLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockManager;
-use MediaWiki\Extension\GlobalBlocking\Special\GlobalBlockListPager;
 use MediaWiki\Hook\ContributionsToolLinksHook;
 use MediaWiki\Hook\GetBlockErrorMessageKeyHook;
 use MediaWiki\Hook\GetLogTypesOnUserHook;
@@ -31,6 +29,7 @@ use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\Hook\UserIsBlockedGloballyHook;
 use MediaWiki\User\User;
 use MediaWiki\User\UserNameUtils;
+use stdClass;
 use Wikimedia\IPUtils;
 
 /**
@@ -53,11 +52,11 @@ class GlobalBlockingHooks implements
 	private CentralIdLookup $lookup;
 	private GlobalBlockingLinkBuilder $globalBlockLinkBuilder;
 	private GlobalBlockLookup $globalBlockLookup;
-	private GlobalBlockingConnectionProvider $globalBlockingConnectionProvider;
 	private UserNameUtils $userNameUtils;
 	private GlobalBlockingUserVisibilityLookup $globalBlockingUserVisibilityLookup;
 	private GlobalBlockManager $globalBlockManager;
 	private GlobalBlockingGlobalBlockDetailsRenderer $globalBlockDetailsRenderer;
+	private GlobalBlockingLinkBuilder $globalBlockingLinkBuilder;
 
 	public function __construct(
 		Config $mainConfig,
@@ -65,22 +64,22 @@ class GlobalBlockingHooks implements
 		CentralIdLookup $lookup,
 		GlobalBlockingLinkBuilder $globalBlockLinkBuilder,
 		GlobalBlockLookup $globalBlockLookup,
-		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
 		UserNameUtils $userNameUtils,
 		GlobalBlockingUserVisibilityLookup $globalBlockingUserVisibilityLookup,
 		GlobalBlockManager $globalBlockManager,
-		GlobalBlockingGlobalBlockDetailsRenderer $globalBlockDetailsRenderer
+		GlobalBlockingGlobalBlockDetailsRenderer $globalBlockDetailsRenderer,
+		GlobalBlockingLinkBuilder $globalBlockingLinkBuilder
 	) {
 		$this->config = $mainConfig;
 		$this->commentFormatter = $commentFormatter;
 		$this->lookup = $lookup;
 		$this->globalBlockLinkBuilder = $globalBlockLinkBuilder;
 		$this->globalBlockLookup = $globalBlockLookup;
-		$this->globalBlockingConnectionProvider = $globalBlockingConnectionProvider;
 		$this->userNameUtils = $userNameUtils;
 		$this->globalBlockingUserVisibilityLookup = $globalBlockingUserVisibilityLookup;
 		$this->globalBlockManager = $globalBlockManager;
 		$this->globalBlockDetailsRenderer = $globalBlockDetailsRenderer;
+		$this->globalBlockingLinkBuilder = $globalBlockingLinkBuilder;
 	}
 
 	/**
@@ -237,26 +236,12 @@ class GlobalBlockingHooks implements
 		);
 
 		if ( $block ) {
-			$pager = new GlobalBlockListPager(
-				$sp->getContext(),
-				// Unused as we're not actually querying the database using the GlobalBlockListPager
-				// because the query was made in GlobalBlockLookup::getGlobalBlockingBlock.
-				[],
-				$sp->getLinkRenderer(),
-				$this->commentFormatter,
-				$this->globalBlockLinkBuilder,
-				$this->globalBlockingConnectionProvider,
-				$this->globalBlockDetailsRenderer
-			);
-			$body = $pager->formatRow( $block );
-
-			$out = $sp->getOutput();
 			// Add the active global block to a warning box that is displayed at the top of Special:Contributions.
 			$blockNoticeHtml = $sp->msg( 'globalblocking-contribs-notice', $name )->parseAsBlock();
 			$blockNoticeHtml .= Html::rawElement(
 				'ul',
 				[ 'class' => 'mw-logevent-loglines' ],
-				$body
+				$this->getMockLogLineFromActiveGlobalBlock( $block, $sp )
 			);
 
 			// Add a 'View full logs' link that goes to the global block log on the central wiki, or the local wiki
@@ -266,10 +251,50 @@ class GlobalBlockingHooks implements
 				[ 'type' => 'gblblock', 'page' => $block->gb_address ]
 			);
 
+			$out = $sp->getOutput();
 			$out->addHTML( Html::warningBox( $blockNoticeHtml, 'mw-warning-with-logexcerpt' ) );
 		}
 
 		return true;
+	}
+
+	private function getMockLogLineFromActiveGlobalBlock( stdClass $block, SpecialPage $sp ): string {
+		$context = $sp->getContext();
+
+		// Get the performer of the block.
+		$performerUsername = $this->lookup->nameFromCentralId( $block->gb_by_central_id ) ?? '';
+		$performerUserLink = $this->globalBlockDetailsRenderer->getPerformerForDisplay( $block, $context );
+
+		// Combine the options specified for the block and wrap them in parentheses. If no options are specified,
+		// then just use empty text to avoid stray parentheses.
+		$options = $this->globalBlockDetailsRenderer->getBlockOptionsForDisplay( $block, $context );
+		$optionsAsText = '';
+		if ( count( $options ) ) {
+			$optionsAsText = $context->msg( 'parentheses', $context->getLanguage()->commaList( $options ) )->text();
+		}
+
+		$blockTimestamp = $sp->getLinkRenderer()->makeKnownLink(
+			SpecialPage::getTitleFor( 'GlobalBlockList' ),
+			$context->getLanguage()->userTimeAndDate( $block->gb_timestamp, $context->getUser() ),
+			[],
+			[ 'target' => "#$block->gb_id" ],
+		);
+
+		[ $targetName ] = $this->globalBlockDetailsRenderer->getTargetUsername( $block, $context );
+
+		$msg = $context->msg( 'globalblocking-contribs-mock-log-line' )
+			->rawParams( $blockTimestamp )
+			->params( $performerUsername, $performerUserLink, $targetName )
+			->rawParams( $this->globalBlockDetailsRenderer->formatTargetForDisplay( $block, $context ) )
+			->expiryParams( $block->gb_expiry )
+			->params( $optionsAsText )
+			->rawParams(
+				$this->commentFormatter->formatBlock( $block->gb_reason ),
+				$this->globalBlockingLinkBuilder->getActionLinks( $context->getAuthority(), $targetName, $context )
+			)
+			->parse();
+
+		return Html::rawElement( 'li', [], $msg );
 	}
 
 	/**

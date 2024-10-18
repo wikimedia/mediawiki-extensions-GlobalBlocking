@@ -45,11 +45,11 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 			'lookup' => $this->getServiceContainer()->getCentralIdLookup(),
 			'globalBlockLinkBuilder' => $globalBlockingServices->getGlobalBlockingLinkBuilder(),
 			'globalBlockLookup' => $globalBlockingServices->getGlobalBlockLookup(),
-			'globalBlockingConnectionProvider' => $globalBlockingServices->getGlobalBlockingConnectionProvider(),
 			'userNameUtils' => $this->getServiceContainer()->getUserNameUtils(),
 			'globalBlockingUserVisibilityLookup' => $globalBlockingServices->getGlobalBlockingUserVisibilityLookup(),
 			'globalBlockManager' => $globalBlockingServices->getGlobalBlockManager(),
 			'globalBlockDetailsRenderer' => $globalBlockingServices->getGlobalBlockDetailsRenderer(),
+			'globalBlockingLinkBuilder' => $globalBlockingServices->getGlobalBlockingLinkBuilder(),
 		];
 	}
 
@@ -103,6 +103,10 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 			$this->assertStringContainsString(
 				'(globalblocking-contribs-notice', $html,
 				'Expected block banner to be displayed for IP on Special:Contributions'
+			);
+			$this->assertStringContainsString(
+				'(globalblocking-contribs-mock-log-line', $html,
+				'Expected the log line to be present in the block banner.'
 			);
 			$this->assertStringContainsString(
 				$expectedBlockTarget, $html,
