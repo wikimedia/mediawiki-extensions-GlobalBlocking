@@ -57,9 +57,7 @@
 				"GlobalBlocking.GlobalBlockLookup",
 				"GlobalBlocking.GlobalBlockingLinkBuilder",
 				"GlobalBlocking.GlobalBlockingConnectionProvider",
-				"GlobalBlocking.GlobalBlockLocalStatusLookup",
-				"UserIdentityLookup",
-				"GlobalBlocking.GlobalBlockingUserVisibilityLookup"
+				"GlobalBlocking.GlobalBlockingGlobalBlockDetailsRenderer"
 			]
 		},
 		"GlobalBlockStatus": {
@@ -229,11 +227,10 @@
 				"GlobalBlocking.GlobalBlockingLinkBuilder",
 				"GlobalBlocking.GlobalBlockLookup",
 				"GlobalBlocking.GlobalBlockingConnectionProvider",
-				"GlobalBlocking.GlobalBlockLocalStatusLookup",
 				"UserNameUtils",
 				"GlobalBlocking.GlobalBlockingUserVisibilityLookup",
-				"UserIdentityLookup",
-				"GlobalBlocking.GlobalBlockManager"
+				"GlobalBlocking.GlobalBlockManager",
+				"GlobalBlocking.GlobalBlockingGlobalBlockDetailsRenderer"
 			]
 		},
 		"usermerge": {

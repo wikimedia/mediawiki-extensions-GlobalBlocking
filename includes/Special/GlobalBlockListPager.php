@@ -6,54 +6,30 @@ use InvalidArgumentException;
 use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingGlobalBlockDetailsRenderer;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
-use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingUserVisibilityLookup;
-use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\Html\Html;
-use MediaWiki\Linker\Linker;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Pager\IndexPager;
 use MediaWiki\Pager\TablePager;
 use MediaWiki\SpecialPage\SpecialPage;
-use MediaWiki\User\CentralId\CentralIdLookup;
-use MediaWiki\User\UserIdentityLookup;
-use MediaWiki\WikiMap\WikiMap;
-use stdClass;
 
 class GlobalBlockListPager extends TablePager {
 	private array $queryConds;
 
 	private CommentFormatter $commentFormatter;
-	private CentralIdLookup $lookup;
 	private GlobalBlockingLinkBuilder $globalBlockingLinkBuilder;
-	private GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup;
-	private UserIdentityLookup $userIdentityLookup;
-	private GlobalBlockingUserVisibilityLookup $globalBlockingUserVisibilityLookup;
+	private GlobalBlockingGlobalBlockDetailsRenderer $globalBlockDetailsRenderer;
 
-	/**
-	 * @param IContextSource $context
-	 * @param array $conds
-	 * @param LinkRenderer $linkRenderer
-	 * @param CommentFormatter $commentFormatter
-	 * @param CentralIdLookup $lookup
-	 * @param GlobalBlockingLinkBuilder $globalBlockingLinkBuilder
-	 * @param GlobalBlockingConnectionProvider $globalBlockingConnectionProvider
-	 * @param GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup
-	 * @param UserIdentityLookup $userIdentityLookup
-	 * @param GlobalBlockingUserVisibilityLookup $globalBlockingUserVisibilityLookup
-	 */
 	public function __construct(
 		IContextSource $context,
 		array $conds,
 		LinkRenderer $linkRenderer,
 		CommentFormatter $commentFormatter,
-		CentralIdLookup $lookup,
 		GlobalBlockingLinkBuilder $globalBlockingLinkBuilder,
 		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
-		GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup,
-		UserIdentityLookup $userIdentityLookup,
-		GlobalBlockingUserVisibilityLookup $globalBlockingUserVisibilityLookup
+		GlobalBlockingGlobalBlockDetailsRenderer $globalBlockDetailsRenderer
 	) {
 		// Set database before parent constructor so that the DB that has the globalblocks table is used
 		// over the local database which may not be the same database.
@@ -61,11 +37,8 @@ class GlobalBlockListPager extends TablePager {
 		parent::__construct( $context, $linkRenderer );
 		$this->queryConds = $conds;
 		$this->commentFormatter = $commentFormatter;
-		$this->lookup = $lookup;
 		$this->globalBlockingLinkBuilder = $globalBlockingLinkBuilder;
-		$this->globalBlockLocalStatusLookup = $globalBlockLocalStatusLookup;
-		$this->userIdentityLookup = $userIdentityLookup;
-		$this->globalBlockingUserVisibilityLookup = $globalBlockingUserVisibilityLookup;
+		$this->globalBlockDetailsRenderer = $globalBlockDetailsRenderer;
 
 		$this->getOutput()->addModuleStyles( [ 'mediawiki.interface.helpers.styles', 'ext.globalBlocking.styles' ] );
 		$this->mDefaultDirection = IndexPager::DIR_DESCENDING;
@@ -101,7 +74,7 @@ class GlobalBlockListPager extends TablePager {
 					[ 'target' => "#{$row->gb_id}" ],
 				);
 			case 'target':
-				return $this->formatTarget( $row );
+				return $this->globalBlockDetailsRenderer->formatTargetForDisplay( $row, $this->getContext() );
 			case 'gb_expiry':
 				$targetForUrl = $row->gb_address;
 				if ( $row->gb_autoblock_parent_id ) {
@@ -119,40 +92,11 @@ class GlobalBlockListPager extends TablePager {
 					->rawParams( $actionLinks )
 					->parse();
 			case 'by':
-				// Get the performer of the block, along with the wiki they performed the block. If a user page link
-				// can be generated, then it is added.
-				$performerUsername = $this->lookup->nameFromCentralId( $row->gb_by_central_id ) ?? '';
-				$performerWiki = WikiMap::getWikiName( $row->gb_by_wiki );
-				$performerLink = $this->globalBlockingLinkBuilder->maybeLinkUserpage(
-					$row->gb_by_wiki, $performerUsername
-				);
-
-				return $this->msg(
-					'globalblocking-list-table-cell-by', $performerLink, $performerWiki
-				)->parse();
+				return $this->globalBlockDetailsRenderer->getPerformerForDisplay( $row, $this->getContext() );
 			case 'gb_reason':
 				return $this->commentFormatter->format( $value );
 			case 'params':
-				// Construct a list of block options that are relevant to the block in this $row.
-				$options = [];
-
-				$wlinfo = $this->globalBlockLocalStatusLookup->getLocalWhitelistInfo( $row->gb_id );
-				if ( $wlinfo ) {
-					$options[] = $this->msg(
-						'globalblocking-list-whitelisted',
-						$this->userIdentityLookup->getUserIdentityByUserId( $wlinfo['user'] ), $wlinfo['reason']
-					)->text();
-				}
-
-				// If the block is set to target only anonymous users, then indicate this in the options list.
-				if ( $row->gb_anon_only ) {
-					$options[] = $this->msg( 'globalblocking-list-anononly' )->text();
-				}
-
-				// If the block is set to prevent account creation, then indicate this in the options list.
-				if ( $row->gb_create_account ) {
-					$options[] = $this->msg( 'globalblocking-block-flag-account-creation-disabled' )->text();
-				}
+				$options = $this->globalBlockDetailsRenderer->getBlockOptionsForDisplay( $row, $this->getContext() );
 
 				// Wrap the options in <li> HTML tags to make the options into a list.
 				$options = array_map( static function ( $prop ) {
@@ -163,67 +107,6 @@ class GlobalBlockListPager extends TablePager {
 			default:
 				throw new InvalidArgumentException( "Unable to format $name" );
 		}
-	}
-
-	/**
-	 * Format the target field
-	 * @param stdClass $row
-	 * @return string
-	 */
-	private function formatTarget( $row ) {
-		// Return early if the global block is an autoblock, as we should just use the ID to reference the block target
-		// to avoid exposing the IP addres that was globally autoblocked.
-		if ( $row->gb_autoblock_parent_id ) {
-			return $this->msg( 'globalblocking-global-autoblock-id', $row->gb_id )->parse();
-		}
-
-		// Get the target of the block from the database row. If the target is a user, then the code will determine
-		// whether the username is hidden from the current authority.
-		if ( $row->gb_target_central_id ) {
-			// Get the target name using the CentralIdLookup if the target is a user. A raw lookup is done, as we
-			// need to separately know if the user is hidden (as opposed to does not exist).
-			// GlobalBlockingUserVisibility::checkAuthorityCanSeeUser method will appropriately hide the user.
-			$targetName = $this->lookup->nameFromCentralId(
-				$row->gb_target_central_id, CentralIdLookup::AUDIENCE_RAW
-			) ?? '';
-			$targetUserVisible = $this->globalBlockingUserVisibilityLookup
-				->checkAuthorityCanSeeUser( $targetName, $this->getAuthority() );
-			if ( !$targetUserVisible ) {
-				$targetName = '';
-			}
-		} else {
-			// If the target is an IP, then we can use the gb_address column and also can assume that the username
-			// will always be visible.
-			$targetName = $row->gb_address;
-			$targetUserVisible = true;
-		}
-
-		// Generate the user link / tool links for the target unless the target is hidden from the current authority.
-		if ( $targetUserVisible ) {
-			// If the central ID refers to a valid name, then try to get the local ID of that user.
-			$targetUserId = 0;
-			if ( $targetName ) {
-				$targetLocalUserIdentity = $this->userIdentityLookup->getUserIdentityByName( $targetName );
-				if ( $targetLocalUserIdentity ) {
-					$targetUserId = $targetLocalUserIdentity->getId();
-				}
-			}
-			// Generate the user link and user tool links.
-			$targetUserLink = Linker::userLink( $targetUserId, $targetName );
-			if ( $targetName ) {
-				$targetUserLink .= Linker::userToolLinks(
-					$targetUserId, $targetName, true, Linker::TOOL_LINKS_NOBLOCK
-				);
-			}
-		} else {
-			$targetUserLink = Html::element(
-				'span',
-				[ 'class' => 'history-deleted' ],
-				$this->msg( 'rev-deleted-user' )->text()
-			);
-		}
-
-		return $targetUserLink;
 	}
 
 	public function getQueryInfo() {

@@ -16,6 +16,7 @@ use MediaWikiIntegrationTestCase;
 /**
  * @group Database
  * @covers \MediaWiki\Extension\GlobalBlocking\Special\GlobalBlockListPager
+ * @covers \MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingGlobalBlockDetailsRenderer
  */
 class GlobalBlockListPagerTest extends MediaWikiIntegrationTestCase {
 
@@ -39,12 +40,9 @@ class GlobalBlockListPagerTest extends MediaWikiIntegrationTestCase {
 			[],
 			$this->getServiceContainer()->getLinkRenderer(),
 			$this->getServiceContainer()->getCommentFormatter(),
-			$this->getServiceContainer()->getCentralIdLookup(),
 			$globalBlockingServices->getGlobalBlockingLinkBuilder(),
 			$globalBlockingServices->getGlobalBlockingConnectionProvider(),
-			$globalBlockingServices->getGlobalBlockLocalStatusLookup(),
-			$this->getServiceContainer()->getUserIdentityLookup(),
-			$globalBlockingServices->getGlobalBlockingUserVisibilityLookup()
+			$globalBlockingServices->getGlobalBlockDetailsRenderer()
 		);
 	}
 

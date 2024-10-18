@@ -6,6 +6,7 @@ use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingBlockPurger;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingGlobalAutoblockExemptionListProvider;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingGlobalBlockDetailsRenderer;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingUserVisibilityLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusLookup;
@@ -48,6 +49,9 @@ class GlobalBlockingServicesTest extends MediaWikiIntegrationTestCase {
 			],
 			'::getGlobalAutoblockExemptionListProvider' => [
 				'getGlobalAutoblockExemptionListProvider', GlobalBlockingGlobalAutoblockExemptionListProvider::class,
+			],
+			'::getGlobalBlockDetailsRenderer' => [
+				'getGlobalBlockDetailsRenderer', GlobalBlockingGlobalBlockDetailsRenderer::class,
 			],
 		];
 	}
