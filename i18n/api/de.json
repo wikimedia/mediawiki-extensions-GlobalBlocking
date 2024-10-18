@@ -10,6 +10,7 @@
 		]
 	},
 	"globalblocking-apierror-badip": "Die IP-Adresse $1 ist ungültig",
+	"globalblocking-apierror-cannot-modify-global-autoblock": "Du kannst globale automatische Sperren nicht ändern",
 	"apihelp-globalblock-summary": "Sperrt global einen Benutzer oder gibt ihn frei.",
 	"apihelp-globalblock-param-id": "ID der globalen Sperre, die geändert oder entsperrt werden soll (erhalten über <kbd>list=globalblocks</kbd> ). Kann nicht zusammen mit <var>$1target</var> verwendet werden.",
 	"apihelp-globalblock-param-target": "Die Ziel-IP-Adresse oder der Benutzername. Kann nicht zusammen mit <var>$1id</var> verwendet werden.",
@@ -18,6 +19,7 @@
 	"apihelp-globalblock-param-reason": "Der Grund für das Sperren/Entsperren.",
 	"apihelp-globalblock-param-anononly": "Gib dies an, falls die Sperre nur global abgemeldete Benutzer betreffen soll.",
 	"apihelp-globalblock-param-allow-account-creation": "Gibt an, wenn die globale Sperre die Kontoerstellung nicht verhindern soll.",
+	"apihelp-globalblock-param-enable-autoblock": "Angeben, wenn die globale Sperre globale automatische Sperren auslösen soll.",
 	"apihelp-globalblock-param-modify": "Gib dies an, falls die vorhandene Sperre des Ziels verändert werden soll.",
 	"apihelp-globalblock-example-1": "Sperre 192.0.2.1 auf unbestimmte Zeit mit dem Grund „Cross-Wiki-Vandalismus”",
 	"apihelp-query+globalblocks-summary": "Alle global gesperrten IP-Adressen auflisten.",
