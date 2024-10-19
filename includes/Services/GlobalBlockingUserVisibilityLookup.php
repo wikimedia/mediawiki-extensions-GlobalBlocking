@@ -2,9 +2,9 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Services;
 
-use ExtensionRegistry;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Permissions\Authority;
+use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\User\UserFactory;
 
 /**

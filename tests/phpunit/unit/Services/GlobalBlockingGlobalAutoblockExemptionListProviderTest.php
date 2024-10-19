@@ -9,8 +9,8 @@ use MediaWiki\Site\SiteLookup;
 use MediaWiki\Status\StatusFormatter;
 use MediaWikiUnitTestCase;
 use Psr\Log\LoggerInterface;
-use WANObjectCache;
 use Wikimedia\Message\ITextFormatter;
+use Wikimedia\ObjectCache\WANObjectCache;
 
 /**
  * @covers \MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingGlobalAutoblockExemptionListProvider

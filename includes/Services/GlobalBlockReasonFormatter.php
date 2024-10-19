@@ -20,12 +20,12 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Services;
 
-use FormatJson;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Http\HttpRequestFactory;
+use MediaWiki\Json\FormatJson;
 use Psr\Log\LoggerInterface;
 use RuntimeException;
-use WANObjectCache;
+use Wikimedia\ObjectCache\WANObjectCache;
 
 /**
  * @author Taavi "Majavah" Väänänen <hi@taavi.wtf>

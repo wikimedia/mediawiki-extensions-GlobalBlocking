@@ -11,11 +11,11 @@ use MediaWiki\Status\StatusFormatter;
 use MediaWiki\Title\Title;
 use Psr\Log\LoggerInterface;
 use RuntimeException;
-use WANObjectCache;
 use Wikimedia\IPUtils;
 use Wikimedia\LightweightObjectStore\ExpirationAwareness;
 use Wikimedia\Message\ITextFormatter;
 use Wikimedia\Message\MessageValue;
+use Wikimedia\ObjectCache\WANObjectCache;
 
 /**
  * Provides access to the list of IP addresses which are exempt from global autoblocks.

@@ -2,8 +2,8 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Maintenance;
 
-use LoggedUpdateMaintenance;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
+use MediaWiki\Maintenance\LoggedUpdateMaintenance;
 use Wikimedia\Rdbms\SelectQueryBuilder;
 
 // @codeCoverageIgnoreStart

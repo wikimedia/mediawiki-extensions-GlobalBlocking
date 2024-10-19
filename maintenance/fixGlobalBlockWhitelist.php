@@ -2,8 +2,8 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Maintenance;
 
-use Maintenance;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
+use MediaWiki\Maintenance\Maintenance;
 
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {

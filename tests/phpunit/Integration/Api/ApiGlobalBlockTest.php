@@ -2,8 +2,8 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Test\Integration\Api;
 
-use ApiMain;
-use ApiResult;
+use MediaWiki\Api\ApiMain;
+use MediaWiki\Api\ApiResult;
 use MediaWiki\Extension\GlobalBlocking\Api\ApiGlobalBlock;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\MainConfigNames;

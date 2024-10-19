@@ -27,7 +27,7 @@ use MediaWiki\Status\Status;
 use MediaWikiIntegrationTestCase;
 use MWHttpRequest;
 use Psr\Log\LoggerInterface;
-use WANObjectCache;
+use Wikimedia\ObjectCache\WANObjectCache;
 use Wikimedia\TestingAccessWrapper;
 
 /**

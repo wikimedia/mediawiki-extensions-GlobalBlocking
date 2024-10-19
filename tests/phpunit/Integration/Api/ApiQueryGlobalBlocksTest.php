@@ -2,8 +2,8 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Test\Integration\Api;
 
-use ApiMain;
-use ApiQuery;
+use MediaWiki\Api\ApiMain;
+use MediaWiki\Api\ApiQuery;
 use MediaWiki\Extension\GlobalBlocking\Api\ApiQueryGlobalBlocks;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\MainConfigNames;
