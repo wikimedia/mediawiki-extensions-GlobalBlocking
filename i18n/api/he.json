@@ -7,6 +7,7 @@
 		]
 	},
 	"globalblocking-apierror-badip": "כתובת ה־IP‏ $1 אינה תקינה",
+	"globalblocking-apierror-cannot-modify-global-autoblock": "אין לך אפשרות לשנות חסימות גלובליות אוטומטיות",
 	"apihelp-globalblock-summary": "חסימה גלובלית או שחרור חסימה גלובלית של משתמש.",
 	"apihelp-globalblock-param-id": "מזהה החסימה הגלובלית לשינוי או שחרור (מתקבל דרך <kbd>list=globalblocks</kbd>). לא יכול לשמש יחד עם <var>$1target</var>.",
 	"apihelp-globalblock-param-target": "כתובת ה־IP או שם המשתמש של היעד. לא יכול לשמש יחד עם <var>$1id</var>.",
@@ -15,6 +16,7 @@
 	"apihelp-globalblock-param-reason": "הסיבה לחסימה או לשחרור.",
 	"apihelp-globalblock-param-anononly": "יש לציין את זה אם החסימה צריכה להשפיע גלובלית רק על משתמשים שלא נכנסו לחשבון.",
 	"apihelp-globalblock-param-allow-account-creation": "יש להגדיר את זה אם החסימה הגלובלית לא צריכה למנוע יצירת חשבון.",
+	"apihelp-globalblock-param-enable-autoblock": "יש לציין את זה אם החסימה הגלובלית צריכה להפעיל חסימות אוטומטיות גלובליות.",
 	"apihelp-globalblock-param-modify": "יש להגדיר את זה אם חסימה קיימת ביעד צריכה להשתנות",
 	"apihelp-globalblock-example-1": "לחסום את 192.0.2.1 לצמיתות עם הסיבה \"Cross-wiki abuse\"",
 	"apihelp-query+globalblocks-summary": "רשימה של כתובות ה־IP שחסומות גלובלית.",

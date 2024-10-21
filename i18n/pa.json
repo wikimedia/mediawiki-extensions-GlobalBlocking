@@ -5,5 +5,12 @@
 		]
 	},
 	"globalblocking-list-block": "ਪਾਬੰਦੀ ਲਾਓ",
+	"globalblocking-list-table-heading-timestamp": "ਵਕਤ ਦੀ ਮੋਹਰ",
+	"globalblocking-list-table-heading-target": "ਨਿਸ਼ਾਨਾ",
+	"globalblocking-list-table-heading-expiry": "ਮਿਆਦ ਪੁੱਗਦੀ ਹੈ",
+	"globalblocking-list-table-heading-by": "ਰੋਕ-ਲੱਗਿਆ",
+	"globalblocking-list-table-heading-reason": "ਕਾਰਨ",
+	"globalblocking-contribs-mock-log-line": "$1 : $3 ਵਿਸ਼ਵ ਪੱਧਰ 'ਤੇ {{GENDER:$2|ਪਾਬੰਦੀ ਲਾਈ ਗਈ}} {{GENDER:$4|$5}} $6 $7 $8 $9 ਦੀ ਮਿਆਦ ਪੁੱਗਣ ਦੇ ਸਮੇਂ ਦੇ ਨਾਲ",
+	"globalblocking-blockedtext-autoblock-reason": "ਦਿੱਤਾ ਗਿਆ ਕਾਰਨ <em>$1</em> ਹੈ।",
 	"globalblocking-centralauth-admin-info-globalblock": "ਵਿਸ਼ਵ ਪੱਧਰ 'ਤੇ ਪਾਬੰਦੀ ਲਾਈ ਗਈ:"
 }

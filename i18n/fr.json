@@ -69,6 +69,8 @@
 	"globalblocking-list-addressblocks": "Masquer les blocages d’adresses IP individuelles",
 	"globalblocking-list-rangeblocks": "Masquer les blocages d’intervalles",
 	"globalblocking-list-userblocks": "Masquer les blocages de compte",
+	"globalblocking-list-table-heading-target": "Cible",
+	"globalblocking-list-table-heading-reason": "Motif",
 	"globalblocking-list-noresults": "Aucun résultat trouvé avec les paramètres fournis.",
 	"globalblocking-goto-block": "Bloquer globalement une adresse IP",
 	"globalblocking-goto-unblock": "Retirer un blocage global",

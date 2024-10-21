@@ -33,6 +33,7 @@
 	"globalblocking-list-whitelisted": "analluogwyd yn lleol gan $1, $2",
 	"globalblocking-list-whitelist": "statws lleol",
 	"globalblocking-list-modify": "addasu",
+	"globalblocking-list-table-heading-by": "Blociwr",
 	"globalblocking-list-noresults": "Nid yw cyfeiriad IP yr ymholiad wedi'i rwystro.",
 	"globalblocking-goto-block": "Blocio cyfeiriad IP yn fyd-eang",
 	"globalblocking-goto-unblock": "Dod â'r bloc cyd-wici i ben",

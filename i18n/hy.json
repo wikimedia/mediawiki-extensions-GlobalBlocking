@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kareyac"
+		]
+	},
+	"globalblocking-list-autoblocks": "Թաքցնել ավտոմատ արգելափակումները",
+	"globalblocking-list-table-heading-target": "Նպատակ",
+	"globalblocking-list-table-heading-expiry": "Լրանում է",
+	"globalblocking-list-table-heading-by": "Արգելափակիչ",
+	"globalblocking-list-table-heading-reason": "Պատճառ",
+	"globalblocking-whitelist-dewhitelisted-target-is-id": "Դուք կրկին ակտիվացրել եք #$1 գլոբալ բլոկը {{SITENAME}}-ում:"
+}

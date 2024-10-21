@@ -5,6 +5,7 @@
 		]
 	},
 	"globalblocking-apierror-badip": "IP-адресата $1 е неважечка",
+	"globalblocking-apierror-cannot-modify-global-autoblock": "Не можете да менувате глобални автоблокови",
 	"apihelp-globalblock-summary": "Глобално блокирајте или одблокирајте корисник.",
 	"apihelp-globalblock-param-id": "Назнака на глобалниот блок што се менува или одблокира (се добива преку <kbd>list=globalblocks</kbd>). Не може да се користи заедно со <var>$1target</var>.",
 	"apihelp-globalblock-param-target": "Целната IP-адреса или корисничко име. Не може да се користи заедно со <var>$1id</var>.",
@@ -13,6 +14,7 @@
 	"apihelp-globalblock-param-reason": "Причина за блокирање/одблокирање.",
 	"apihelp-globalblock-param-anononly": "Укажете го ова ако сакате блокот да важи само за одјавени корисници глобално.",
 	"apihelp-globalblock-param-allow-account-creation": "Укажете дали овој глобален блок да спречува создавање на сметки.",
+	"apihelp-globalblock-param-enable-autoblock": "Укажете го ова ако глобалниот блок треба да повлече глобални автоблокови.",
 	"apihelp-globalblock-param-modify": "Укажете го ова ако треба да се измени постоечки блок врз целта",
 	"apihelp-globalblock-example-1": "Блокирај го 192.0.2.1 бесконечно со причината „злоупотреба на повеќе викија“",
 	"apihelp-query+globalblocks-summary": "Испиши ги сите глобално блокирани IP-адреси.",
