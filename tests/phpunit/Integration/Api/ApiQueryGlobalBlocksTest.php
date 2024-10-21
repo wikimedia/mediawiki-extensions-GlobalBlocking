@@ -300,6 +300,17 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 		);
 	}
 
+	public function testExecuteForAutoblockWhenAPIConfiguredToHideAutoblocks() {
+		$this->overrideConfigValue( 'GlobalBlockingHideAutoblocksInGlobalBlocksAPIResponse', true );
+		[ $result ] = $this->doApiRequest( [
+			'action' => 'query', 'list' => 'globalblocks', 'bgids' => '8',
+			'bgprop' => 'target|range',
+		] );
+		// Assert that no global blocks are found when the API is configured to hide global autoblocks, as the ID
+		// passed is for a global autoblock.
+		$this->assertCount( 0, $result['query']['globalblocks'] );
+	}
+
 	/** @dataProvider provideExecuteWithTargetsParam */
 	public function testExecuteWithTargetsParam( $targets, $limit, $expectedBlockIds ) {
 		[ $result ] = $this->doApiRequest( [

@@ -195,6 +195,13 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 			$this->addWhere( $dbr->expr( 'gb_expiry', '>', $dbr->timestamp() ) );
 		}
 
+		// Hide global autoblocks from the API response to not break code which relies on this API on WMF wikis.
+		// Only used as a temporary feature flag, and will be removed once code which calls WMF wikis is properly
+		// updated.
+		if ( $this->getConfig()->get( 'GlobalBlockingHideAutoblocksInGlobalBlocksAPIResponse' ) ) {
+			$this->addWhere( [ 'gb_autoblock_parent_id' => 0 ] );
+		}
+
 		$res = $this->select( __METHOD__ );
 
 		$data = [];
