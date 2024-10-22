@@ -169,6 +169,9 @@ class GlobalBlockingGlobalBlockDetailsRenderer {
 			$row->gb_by_wiki, $performerUsername
 		);
 
-		return $context->msg( 'globalblocking-list-table-cell-by', $performerLink, $performerWiki )->parse();
+		return $context->msg( 'globalblocking-list-table-cell-by' )
+			->rawParams( $performerLink )
+			->params( $performerWiki )
+			->parse();
 	}
 }
