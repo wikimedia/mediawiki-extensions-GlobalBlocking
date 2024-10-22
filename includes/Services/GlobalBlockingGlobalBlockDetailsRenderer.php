@@ -166,7 +166,7 @@ class GlobalBlockingGlobalBlockDetailsRenderer {
 		$performerUsername = $this->centralIdLookup->nameFromCentralId( $row->gb_by_central_id ) ?? '';
 		$performerWiki = WikiMap::getWikiName( $row->gb_by_wiki );
 		$performerLink = $this->globalBlockingLinkBuilder->maybeLinkUserpage(
-			$row->gb_by_wiki, $performerUsername
+			$row->gb_by_wiki, $performerUsername, $context->getTitle()
 		);
 
 		return $context->msg( 'globalblocking-list-table-cell-by' )

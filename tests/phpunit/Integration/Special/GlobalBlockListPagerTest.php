@@ -48,6 +48,7 @@ class GlobalBlockListPagerTest extends MediaWikiIntegrationTestCase {
 
 	/** @dataProvider provideFormatRow */
 	public function testFormatRow( $target, $expectedStrings, $notExpectedStrings ) {
+		RequestContext::getMain()->setTitle( SpecialPage::getTitleFor( 'GlobalBlockList' ) );
 		$objectUnderTest = $this->getObjectUnderTest();
 		// Get the row data for the target
 		$queryBuilder = $this->getDb()->newSelectQueryBuilder()

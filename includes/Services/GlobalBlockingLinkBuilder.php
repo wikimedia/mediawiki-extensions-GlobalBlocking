@@ -97,13 +97,14 @@ class GlobalBlockingLinkBuilder {
 	 *
 	 * @param string $wikiID
 	 * @param string $user
-	 * @return string Wikitext which may contain a external link to the user page on the given wiki.
+	 * @param LinkTarget $currentPage
+	 * @return string HTML which is the link to the user page, or plaintext if no URL could be generated.
 	 */
-	public function maybeLinkUserpage( string $wikiID, string $user ): string {
+	public function maybeLinkUserpage( string $wikiID, string $user, LinkTarget $currentPage ): string {
 		$wiki = WikiMap::getWiki( $wikiID );
 
 		if ( $wiki ) {
-			return "[" . $wiki->getFullUrl( "User:$user" ) . " $user]";
+			return $this->linkRenderer->makeExternalLink( $wiki->getFullUrl( "User:$user" ), $user, $currentPage );
 		}
 		return $user;
 	}
