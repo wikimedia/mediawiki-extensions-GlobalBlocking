@@ -284,7 +284,9 @@ class GlobalBlockingHooks implements
 
 		$msg = $context->msg( 'globalblocking-contribs-mock-log-line' )
 			->rawParams( $blockTimestamp )
-			->params( $performerUsername, $performerUserLink, $targetName )
+			->params( $performerUsername )
+			->rawParams( $performerUserLink )
+			->params( $targetName )
 			->rawParams( $this->globalBlockDetailsRenderer->formatTargetForDisplay( $block, $context ) )
 			->expiryParams( $block->gb_expiry )
 			->params( $optionsAsText )

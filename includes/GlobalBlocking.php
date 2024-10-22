@@ -3,6 +3,7 @@
 namespace MediaWiki\Extension\GlobalBlocking;
 
 use Exception;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\SpecialPage\SpecialPage;
@@ -189,7 +190,7 @@ class GlobalBlocking {
 		wfDeprecated( __METHOD__, '1.42' );
 		return GlobalBlockingServices::wrap( MediaWikiServices::getInstance() )
 			->getGlobalBlockingLinkBuilder()
-			->maybeLinkUserpage( $wiki_id, $user );
+			->maybeLinkUserpage( $wiki_id, $user, RequestContext::getMain()->getTitle() );
 	}
 
 	/**
