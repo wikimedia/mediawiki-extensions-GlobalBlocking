@@ -359,6 +359,10 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 		$this->testExecuteWithTargetsParam( static::$testTarget->getName(), 2, [ '7' ] );
 	}
 
+	public function testExecuteWithTargetsParamForBlockedUsernameAndGlobalAutoblock() {
+		$this->testExecuteWithTargetsParam( static::$testTarget->getName() . '|77.8.9.11', 2, [ '7' ] );
+	}
+
 	public function testExecuteWithTargetsParamWithNonExistingUsername() {
 		$this->testExecuteWithTargetsParam( 'NonExistingUsername', 1, [] );
 	}
