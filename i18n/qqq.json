@@ -38,7 +38,8 @@
 			"Jack who built the house",
 			"Cookai1205",
 			"Amire80",
-			"Woytecr"
+			"Woytecr",
+			"Nemoralis"
 		]
 	},
 	"globalblocking-desc": "{{desc|name=Global Blocking|url=https://www.mediawiki.org/wiki/Extension:GlobalBlocking}}",
@@ -113,7 +114,7 @@
 	"globalblocking-unblock-legend": "Used as legend for the fieldset around the input form of Special:GlobalUnblock.\n\nSee also:\n* {{msg-mw|globalblocking-block-legend}}",
 	"globalblocking-unblock-submit": "Used as submit button text on Special:GlobalUnblock form.\n\nSee also:\n* {{msg-mw|globalblocking-block-submit}}\n* {{msg-mw|ipusubmit}}",
 	"globalblocking-unblock-reason": "{{Identical|Reason}}",
-	"globalblocking-unblock-unblocked": "Used as success message in [[Special:GlobalUnblock]]. Parameters:\n* $1 - Username, IP address, or IP range",
+	"globalblocking-unblock-unblocked": "Used as success message in [[Special:GlobalUnblock]].\nSimilar to {{msg-mw|globalblocking-unblock-unblocked-for-id-target}}\n\nParameters:\n* $1 - Username, IP address, or IP range",
 	"globalblocking-unblock-intro": "Used as an introductory text on Special:GlobalUnblock form.\n\nSee also:\n* {{msg-mw|globalblocking-block-intro}}",
 	"globalblocking-whitelist": "Title of Special:GlobalBlockWhitelist",
 	"globalblocking-whitelist-notapplied": "Error message shown on Special:GlobalBlockWhitelist when global blocks are not applied on the wiki.",
