@@ -6,9 +6,6 @@
 		]
 	},
 	"globalblocking-apierror-badip": "আইপি ঠিকানা $1 বৈধ নয়",
-	"apihelp-globalblock-param-id": "পরিবর্তন বা আনব্লক করার জন্য গ্লোবাল ব্লকের আইডি (List = global blocks) । $1 টার্গেট এর সাথে একসাথে ব্যবহার করা যাবে না।",
-	"apihelp-globalblock-param-alsolocal": "ব্যবহারকারীকেও স্থানীয়ভাবে ব্লক করুন। $1ID এর সাথে ব্যবহার করা যাবে না।",
 	"apihelp-globalblock-param-localblockstalk": "স্থানীয়ভাবে আলাপ পাতার প্রবেশাধিকার প্রত্যাহার করুন। <var>$1id</var> এর সাথে একসাথে ব্যবহার করা যাবে না।",
-	"apihelp-globalblock-param-localanononly": "বাধাটি শুধুমাত্র স্থানীয়ভাবে লগ-আউট ব্যবহারকারীদের প্রভাবিত করবে কিনা তা নির্দিষ্ট করুন। <var>$1id</var> এর সাথে একসাথে ব্যবহার করা যাবে না",
-	"apihelp-globalblock-param-local-allow-account-creation": "স্থানীয় ব্লক যদি অ্যাকাউন্ট তৈরিতে বাধা না দেয় তবে এটি নির্দিষ্ট করুন। <var>$1 আইডির</var> সাথে একসাথে ব্যবহার করা যাবে না।"
+	"apihelp-globalblock-param-localanononly": "বাধাটি শুধুমাত্র স্থানীয়ভাবে লগ-আউট ব্যবহারকারীদের প্রভাবিত করবে কিনা তা নির্দিষ্ট করুন। <var>$1id</var> এর সাথে একসাথে ব্যবহার করা যাবে না"
 }

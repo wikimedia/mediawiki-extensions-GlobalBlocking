@@ -36,7 +36,7 @@
 	"globalblocking-also-local-email": "Blocar localmente le invio de e-mail per le usator",
 	"globalblocking-also-local-soft": "Blocar localmente solo usatores anonyme",
 	"globalblocking-also-local-disable-account-creation": "Disactivar localmente le creation de contos",
-	"globalblocklist-summary": "Isto es un lista de tote le blocadas global actualmente in effecto. Alcun blocadas es marcate como localmente disactivate: isto significa que illos es applicabile in altere sitos, sed un administrator local ha decidite a disactivar los in iste wiki.",
+	"globalblocklist-summary": "Isto es un lista de tote le blocadas global actualmente in effecto. Alcun blocadas es marcate como localmente disactivate: isto significa que illos es applicabile in altere sitos, sed un administrator local ha decidite a disactivar los in iste wiki. Le blocadas automatic global es automaticamente disactivate localmente si le adresse IP del objectivo es listate in [[MediaWiki:Block-autoblock-exemptionlist]]. Si un blocada automatic es automaticamente disactivate localmente perque le adresse IP es listate in [[MediaWiki:Block-autoblock-exemptionlist]], isto non es divulgate publicamente.",
 	"globalblocking-list": "Lista de adresses IP blocate globalmente",
 	"globalblocking-search-legend": "Cercar un blocada global",
 	"globalblocking-search-submit": "Cercar blocadas",
