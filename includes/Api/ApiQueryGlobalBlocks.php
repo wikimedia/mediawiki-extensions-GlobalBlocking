@@ -50,16 +50,9 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 	private CentralIdLookup $lookup;
 	private GlobalBlockLookup $globalBlockLookup;
 
-	/**
-	 * @param ApiQuery $query
-	 * @param string $moduleName
-	 * @param CentralIdLookup $lookup
-	 * @param GlobalBlockLookup $globalBlockLookup
-	 * @param GlobalBlockingConnectionProvider $globalBlockingConnectionProvider
-	 */
 	public function __construct(
 		ApiQuery $query,
-		$moduleName,
+		string $moduleName,
 		CentralIdLookup $lookup,
 		GlobalBlockLookup $globalBlockLookup,
 		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider

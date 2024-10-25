@@ -19,16 +19,9 @@ class ApiGlobalBlock extends ApiBase {
 	private GlobalBlockManager $globalBlockManager;
 	private GlobalBlockingConnectionProvider $globalBlockingConnectionProvider;
 
-	/**
-	 * @param ApiMain $mainModule
-	 * @param string $moduleName
-	 * @param BlockUserFactory $blockUserFactory
-	 * @param GlobalBlockManager $globalBlockManager
-	 * @param GlobalBlockingConnectionProvider $globalBlockingConnectionProvider
-	 */
 	public function __construct(
 		ApiMain $mainModule,
-		$moduleName,
+		string $moduleName,
 		BlockUserFactory $blockUserFactory,
 		GlobalBlockManager $globalBlockManager,
 		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider
