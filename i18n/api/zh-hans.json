@@ -7,12 +7,14 @@
 			"Liuxinyu970226",
 			"Stang",
 			"Yfdyh000",
-			"Zazzzz"
+			"Zazzzz",
+			"沈澄心"
 		]
 	},
 	"globalblocking-apierror-badip": "IP地址 $1 无效",
+	"globalblocking-apierror-cannot-modify-global-autoblock": "您无法修改全域自动封禁",
 	"apihelp-globalblock-summary": "全域封禁或解封一位用户。",
-	"apihelp-globalblock-param-target": "目标IP地址或用户名。",
+	"apihelp-globalblock-param-target": "目标IP地址或用户名。不能与<var>$1id</var>同时使用。",
 	"apihelp-globalblock-param-expiry": "如果指定，将封禁或重新封禁该用户。指定封禁将持续多久，例如“5 months”或者“2 weeks”。如果设置为“infinite”或者“indefinite”，该封禁将不会过期。",
 	"apihelp-globalblock-param-unblock": "如果指定，将解封用户。",
 	"apihelp-globalblock-param-reason": "封禁/解封原因。",
@@ -29,8 +31,9 @@
 	"apihelp-query+globalblocks-param-prop": "要获得的属性。",
 	"apihelp-query+globalblocks-example-1": "列出所有全域封禁",
 	"apihelp-query+globalblocks-example-2": "列出对IP地址192.0.2.18做出的全域封禁",
-	"apihelp-globalblock-param-alsolocal": "在本地也封禁此用户",
-	"apihelp-globalblock-param-localblockstalk": "在本地阻止编辑讨论页",
-	"apihelp-globalblock-param-localblocksemail": "撤销本地电子邮件访问权限",
-	"apihelp-globalblock-param-localanononly": "如果封禁应该只影响已退出登录用户，指定此项。"
+	"apihelp-globalblock-param-alsolocal": "在本地也封禁此用户。不能与<var>$1id</var>同时使用。",
+	"apihelp-globalblock-param-localblockstalk": "在本地阻止编辑讨论页。不能与<var>$1id</var>同时使用。",
+	"apihelp-globalblock-param-localblocksemail": "撤销本地电子邮件访问权限。不能与<var>$1id</var>同时使用。",
+	"apihelp-globalblock-param-localanononly": "如果封禁应该只影响已退出登录用户，指定此项。不能与<var>$1id</var>同时使用。",
+	"apihelp-globalblock-param-local-allow-account-creation": "如果本地封禁不应阻止创建账号，请指定此项。不能与<var>$1id</var>同时使用。"
 }
