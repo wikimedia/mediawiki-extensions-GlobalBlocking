@@ -396,7 +396,7 @@ class GlobalBlockManager {
 					// This is so that the autoblock is refreshed when a blocked user tries to use the IP again.
 					$autoblockExpiry = $dbw->decodeExpiry( $block->gb_expiry );
 
-					if ( $parentBlockExpiry !== 'infinity' && $parentBlockExpiry < $autoblockExpiry ) {
+					if ( $parentBlockExpiry !== 'infinity' && $parentBlockExpiry <= $autoblockExpiry ) {
 						continue;
 					}
 
@@ -404,7 +404,7 @@ class GlobalBlockManager {
 						->update( 'globalblocks' )
 						->set( [
 							'gb_timestamp' => $timestamp,
-							'gb_expiry' => $this->getAutoblockExpiry( $timestamp ),
+							'gb_expiry' => $this->getAutoblockExpiry( $timestamp, $parentBlockExpiry ),
 						] )
 						->where( [ 'gb_id' => $block->gb_id ] )
 						->caller( __METHOD__ )

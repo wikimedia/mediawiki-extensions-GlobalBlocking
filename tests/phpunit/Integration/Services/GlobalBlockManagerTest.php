@@ -541,6 +541,47 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 		);
 	}
 
+	public function testBlockModificationAffectsAutoblockWhenParentBlockExpiryNotModified() {
+		$this->overrideConfigValue( MainConfigNames::LanguageCode, 'qqx' );
+		$this->overrideConfigValue( 'GlobalBlockingAutoblockExpiry', '86400' );
+		// Create a test global block on an existing user which enables autoblocks.
+		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager();
+		$targetUserIdentity = $this->getTestUser()->getUserIdentity();
+		$firstPerformer = $this->getTestUser( 'steward' )->getUser();
+		$parentBlockStatus = $globalBlockManager->block(
+			$targetUserIdentity->getName(), 'testing', '2 hours', $firstPerformer,
+			[ 'enable-autoblock' ]
+		);
+		$this->assertStatusGood( $parentBlockStatus );
+		$parentBlockId = $parentBlockStatus->getValue()['id'];
+		// Create an autoblock for the user block created above
+		$firstAutoblockStatus = $globalBlockManager->autoblock( $parentBlockId, '1.2.3.6' );
+		$this->assertStatusGood( $firstAutoblockStatus );
+		$firstAutoblockId = $firstAutoblockStatus->getValue()['id'];
+		// Verify that the autoblock actually exists in the DB and that the properties are expected. This is necessary
+		// so that we can check for a change in the autoblock parameters after the parent block modification later in
+		// this test.
+		$expectedAutoblockReason = "(globalblocking-autoblocker: {$targetUserIdentity->getName()}, testing)";
+		$this->assertAutoblockParametersAreAsExpected(
+			[ $firstAutoblockId ],
+			[ [ $firstAutoblockId, $firstPerformer->getId(), 1, $expectedAutoblockReason, '20210303000000' ] ]
+		);
+		// Modify the parent block to change most properties but keep the same target and autoblocking enabled.
+		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager();
+		$parentBlockModifyStatus = $globalBlockManager->block(
+			$targetUserIdentity->getName(), 'modify test', '2 hours', $firstPerformer,
+			[ 'modify', 'enable-autoblock', 'allow-account-creation' ]
+		);
+		$this->assertStatusGood( $parentBlockModifyStatus );
+		// Check that the autoblock still exists, but has been modified to match the changed parameters of the
+		// parent block
+		$expectedAutoblockReason = "(globalblocking-autoblocker: {$targetUserIdentity->getName()}, modify test)";
+		$this->assertAutoblockParametersAreAsExpected(
+			[ $firstAutoblockId ],
+			[ [ $firstAutoblockId, $firstPerformer->getId(), 0, $expectedAutoblockReason, '20210303000000' ] ]
+		);
+	}
+
 	/** @dataProvider provideUnblock */
 	public function testUnblock( array $data, string $expectedError ) {
 		// Prepare target
@@ -808,6 +849,38 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 			->caller( __METHOD__ )
 			->fetchField();
 		$this->assertTrue( $ipBlockStillExists );
+	}
+
+	public function testAutoblockWhenIPAlreadyAutoblockedForSameLengthAsParentBlock() {
+		$this->overrideConfigValue( MainConfigNames::LanguageCode, 'qqx' );
+		// Create a parent global block with autoblocking enabled
+		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager();
+		$performer = $this->getTestUser( 'steward' )->getUser();
+		$targetUserIdentity = $this->getTestUser()->getUserIdentity();
+		$parentBlockStatus = $globalBlockManager->block(
+			$targetUserIdentity->getName(), 'test', '2 hours',
+			$performer, [ 'enable-autoblock' ]
+		);
+		$this->assertStatusGood( $parentBlockStatus );
+		$parentBlockId = $parentBlockStatus->getValue()['id'];
+		// Create an autoblock on an IP with the parent block we created above, such that it should have an expiry
+		// of 2 hours.
+		$autoblockStatus = $globalBlockManager->autoblock( $parentBlockId, '1.2.3.4' );
+		$this->assertStatusGood( $autoblockStatus );
+		$autoblockId = $autoblockStatus->getValue()['id'];
+		$expectedAutoblockReason = "(globalblocking-autoblocker: {$targetUserIdentity->getName()}, test)";
+		$this->assertAutoblockParametersAreAsExpected(
+			[ $autoblockId ],
+			[ [ $autoblockId, $performer->getId(), 1, $expectedAutoblockReason, '20210303000000' ] ]
+		);
+		// Call the ::autoblock method again, and expect that the autoblock created above is not modified.
+		$secondAutoblockStatus = $globalBlockManager->autoblock( $parentBlockId, '1.2.3.4' );
+		$this->assertStatusGood( $secondAutoblockStatus );
+		$this->assertNull( $secondAutoblockStatus->getValue() );
+		$this->assertAutoblockParametersAreAsExpected(
+			[ $autoblockId ],
+			[ [ $autoblockId, $performer->getId(), 1, $expectedAutoblockReason, '20210303000000' ] ]
+		);
 	}
 
 	public function testAutoblock() {
