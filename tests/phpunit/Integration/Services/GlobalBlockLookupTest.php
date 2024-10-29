@@ -238,6 +238,16 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 		);
 	}
 
+	public function testGetUserBlockForIPWithAutoblockWhenParentBlockHasExpired() {
+		$actualGlobalBlockObject = $this->testGetUserBlock( '9.8.7.7', 11, $this->getTestUser()->getUser() );
+		$this->assertSame(
+			'test',
+			$actualGlobalBlockObject->getReasonComment()->text,
+			'The reason for the auto-block should not be displayed in the content language if the ' .
+			'parent block no longer exists.'
+		);
+	}
+
 	public function testGetUserBlockGlobalBlockingAllowedRanges() {
 		$this->overrideConfigValue( 'GlobalBlockingAllowedRanges', [ '1.2.3.4/30', '5.6.7.8/24' ] );
 		$this->testGetUserBlockOnNoBlock(
@@ -844,6 +854,24 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 				'gb_range_end' => IPUtils::toHex( '9.8.7.6' ),
 				'gb_create_account' => 0,
 				'gb_autoblock_parent_id' => 5,
+				'gb_enable_autoblock' => 0,
+			] )
+			->row( [
+				'gb_id' => 11,
+				'gb_address' => '9.8.7.7',
+				'gb_target_central_id' => 0,
+				'gb_by_central_id' => $this->getServiceContainer()
+					->getCentralIdLookup()
+					->centralIdFromLocalUser( $testUser ),
+				'gb_by_wiki' => WikiMap::getCurrentWikiId(),
+				'gb_reason' => 'test',
+				'gb_timestamp' => $this->getDb()->timestamp( '20230405060708' ),
+				'gb_anon_only' => 0,
+				'gb_expiry' => $this->getDb()->encodeExpiry( '20240405060708' ),
+				'gb_range_start' => IPUtils::toHex( '9.8.7.7' ),
+				'gb_range_end' => IPUtils::toHex( '9.8.7.7' ),
+				'gb_create_account' => 0,
+				'gb_autoblock_parent_id' => 12345,
 				'gb_enable_autoblock' => 0,
 			] )
 			->caller( __METHOD__ )

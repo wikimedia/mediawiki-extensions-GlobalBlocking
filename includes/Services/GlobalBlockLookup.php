@@ -107,7 +107,9 @@ class GlobalBlockLookup {
 					->where( [ 'gb_id' => $row->gb_autoblock_parent_id ] )
 					->caller( __METHOD__ )
 					->fetchRow();
-				$row->gb_reason = $this->getAutoblockReason( $parentBlock, true );
+				if ( $parentBlock ) {
+					$row->gb_reason = $this->getAutoblockReason( $parentBlock, true );
+				}
 			}
 
 			return GlobalBlock::newFromRow( $row, $details['xff'] );
