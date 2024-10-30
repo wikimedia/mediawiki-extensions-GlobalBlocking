@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Rachmat04"
+			"Rachmat04",
+			"Daud I.F. Argana"
 		]
 	},
 	"apihelp-globalblock-summary": "Blokir atau buka pemblokiran global seorang pengguna.",

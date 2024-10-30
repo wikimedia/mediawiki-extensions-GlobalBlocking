@@ -7,7 +7,6 @@
 			"Minh Nguyen",
 			"Tryvix1509",
 			"Vinhtantran",
-			"Amire80",
 			"Hide on Rosé",
 			"NguyenHung"
 		]
@@ -46,7 +45,7 @@
 	"globalblocking-search-errors": "Thất bại khi tìm kiếm vì {{PLURAL:$1|lý do|các lý do}} sau:",
 	"globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> (''$3'') đã cấm [[Special:Contributions/$4|$4]] trên toàn hệ thống ''($5)''",
 	"globalblocking-list-expiry": "hết hạn $1",
-	"globalblocking-list-anononly": "chỉ cấm vô danh",
+	"globalblocking-list-anononly": "chỉ cấm người dùng vô danh",
 	"globalblocking-list-unblock": "bỏ cấm",
 	"globalblocking-list-whitelisted": "bị tắt cục bộ bởi $1: $2",
 	"globalblocking-list-whitelist": "trạng thái cục bộ",

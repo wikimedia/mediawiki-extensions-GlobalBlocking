@@ -1,6 +1,8 @@
 {
 	"@metadata": {
-		"authors": []
+		"authors": [
+			"Kareyac"
+		]
 	},
 	"globalblocking-expiringblock": "կմարվի $1 $2"
 }
