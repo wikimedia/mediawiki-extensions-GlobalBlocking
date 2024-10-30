@@ -143,7 +143,10 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 				$this->addWhere(
 					$this->getDB()
 						->expr( 'gb_target_central_id', '=', $centralIds )
-						->or( 'gb_address', '=', $ipTargets )
+						->orExpr(
+							$this->getDB()->expr( 'gb_address', '=', $ipTargets )
+								->and( 'gb_autoblock_parent_id', '=', 0 )
+						)
 				);
 			} elseif ( count( $centralIds ) ) {
 				$this->addWhereFld( 'gb_target_central_id', $centralIds );
