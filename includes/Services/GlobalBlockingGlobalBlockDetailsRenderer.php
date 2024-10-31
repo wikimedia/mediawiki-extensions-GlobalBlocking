@@ -150,6 +150,11 @@ class GlobalBlockingGlobalBlockDetailsRenderer {
 			$options[] = $context->msg( 'globalblocking-block-flag-account-creation-disabled' )->text();
 		}
 
+		// If the block is an account block and does not enable global autoblocking, then indicate this.
+		if ( !$row->gb_enable_autoblock && $row->gb_target_central_id ) {
+			$options[] = $context->msg( 'globalblocking-block-flag-autoblock-disabled' )->text();
+		}
+
 		return $options;
 	}
 
