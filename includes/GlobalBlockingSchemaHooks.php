@@ -2,7 +2,6 @@
 
 namespace MediaWiki\Extension\GlobalBlocking;
 
-use MediaWiki\Extension\GlobalBlocking\Maintenance\PopulateCentralId;
 use MediaWiki\Extension\GlobalBlocking\Maintenance\UpdateAutoBlockParentIdColumn;
 use MediaWiki\Installer\DatabaseUpdater;
 use MediaWiki\Installer\Hook\LoadExtensionSchemaUpdatesHook;
@@ -33,23 +32,6 @@ class GlobalBlockingSchemaHooks implements LoadExtensionSchemaUpdatesHook {
 			'global_block_whitelist',
 			"$base/sql/$type/tables-generated-global_block_whitelist.sql"
 		);
-
-		// 1.38
-		$updater->addExtensionUpdateOnVirtualDomain( [
-			'virtual-globalblocking', 'addField', 'globalblocks', 'gb_by_central_id',
-			"$base/sql/$type/patch-add-gb_by_central_id.sql", true,
-		] );
-		$updater->addExtensionUpdateOnVirtualDomain( [
-			'virtual-globalblocking',
-			'runMaintenance',
-			PopulateCentralId::class
-		] );
-		if ( $virtualGlobalBlockingDb->fieldExists( 'globalblocks', 'gb_by', __METHOD__ ) ) {
-			$updater->addExtensionUpdateOnVirtualDomain( [
-				'virtual-globalblocking', 'modifyField', 'globalblocks', 'gb_anon_only',
-				"$base/sql/$type/patch-globalblocks-gb_anon_only.sql", true,
-			] );
-		}
 
 		// 1.39
 		if ( $virtualGlobalBlockingDb->fieldExists( 'globalblocks', 'gb_by', __METHOD__ ) ) {
