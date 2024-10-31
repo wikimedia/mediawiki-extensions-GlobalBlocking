@@ -53,11 +53,6 @@ class GlobalBlockingSchemaHooks implements LoadExtensionSchemaUpdatesHook {
 			'virtual-globalblocking', 'addField', 'globalblocks', 'gb_target_central_id',
 			"$base/sql/$type/patch-add-gb_target_central_id.sql", true,
 		] );
-		$updater->addExtensionField(
-			'global_block_whitelist',
-			'gbw_target_central_id',
-			"$base/sql/$type/patch-add-gbw_target_central_id.sql"
-		);
 		if ( $virtualGlobalBlockingDb->fieldExists( 'globalblocks', 'gb_by', __METHOD__ ) ) {
 			$updater->addExtensionUpdateOnVirtualDomain( [
 				'virtual-globalblocking', 'modifyField', 'globalblocks', 'gb_by',
@@ -113,6 +108,11 @@ class GlobalBlockingSchemaHooks implements LoadExtensionSchemaUpdatesHook {
 			'global_block_whitelist',
 			'gbw_address',
 			"$base/sql/$type/patch-global_block_whitelist-drop-gbw_address.sql"
+		);
+		$updater->dropExtensionField(
+			'global_block_whitelist',
+			'gbw_target_central_id',
+			"$base/sql/$type/patch-global_block_whitelist-drop-gbw_target_central_id.sql"
 		);
 	}
 }
