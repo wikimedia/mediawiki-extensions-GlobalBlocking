@@ -10,12 +10,6 @@
 				"options": { "notnull": true }
 			},
 			{
-				"name": "gbw_address",
-				"comment": "The target of the block which has been locally disabled. One of an IP address, IP range, or account.",
-				"type": "binary",
-				"options": { "length": 255, "notnull": true, "default": "" }
-			},
-			{
 				"name": "gbw_target_central_id",
 				"comment": "The central ID for the target of the block that has been locally disabled. 0 if the target is an IP address or IP range.",
 				"type": "integer",
