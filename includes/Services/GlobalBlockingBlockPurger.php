@@ -6,6 +6,7 @@ use MediaWiki\Config\ServiceOptions;
 use MediaWiki\MainConfigNames;
 use Wikimedia\Rdbms\IConnectionProvider;
 use Wikimedia\Rdbms\ReadOnlyMode;
+use Wikimedia\Rdbms\SelectQueryBuilder;
 
 /**
  * Purges expired block rows from the globalblocks and global_block_whitelist tables.
@@ -20,6 +21,7 @@ class GlobalBlockingBlockPurger {
 
 	private ServiceOptions $options;
 	private GlobalBlockingConnectionProvider $globalBlockingConnectionProvider;
+	private GlobalBlockLookup $globalBlockLookup;
 	private IConnectionProvider $connectionProvider;
 	private ReadOnlyMode $readOnlyMode;
 
@@ -27,13 +29,15 @@ class GlobalBlockingBlockPurger {
 		ServiceOptions $options,
 		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
 		IConnectionProvider $connectionProvider,
-		ReadOnlyMode $readOnlyMode
+		ReadOnlyMode $readOnlyMode,
+		GlobalBlockLookup $globalBlockLookup
 	) {
 		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
 		$this->options = $options;
 		$this->globalBlockingConnectionProvider = $globalBlockingConnectionProvider;
 		$this->connectionProvider = $connectionProvider;
 		$this->readOnlyMode = $readOnlyMode;
+		$this->globalBlockLookup = $globalBlockLookup;
 	}
 
 	/**
@@ -44,24 +48,53 @@ class GlobalBlockingBlockPurger {
 	 *
 	 * This acts similarly to DatabaseBlockStore::purgeExpiredBlocks, but the purge is not performed
 	 * on POSTSEND.
+	 *
+	 * @param null|string $target If this is called in the context of creating or managing a global block,
+	 *   provide the name of the target to ensure that expired global blocks are removed for this target.
 	 */
-	public function purgeExpiredBlocks() {
+	public function purgeExpiredBlocks( ?string $target = null ) {
+		$targetGlobalBlockIds = [];
+
 		$globaldbw = $this->globalBlockingConnectionProvider->getPrimaryGlobalBlockingDatabase();
 		if ( !$this->readOnlyMode->isReadOnly( $globaldbw->getDomainID() ) ) {
-			$deleteIds = $globaldbw->newSelectQueryBuilder()
-				->select( 'gb_id' )
-				->from( 'globalblocks' )
-				->where( $globaldbw->expr( 'gb_expiry', '<=', $globaldbw->timestamp() ) )
-				->limit( $this->options->get( MainConfigNames::UpdateRowsPerQuery ) )
-				->caller( __METHOD__ )
-				->fetchFieldValues();
-			if ( $deleteIds !== [] ) {
-				$deleteIds = array_map( 'intval', $deleteIds );
-				$globaldbw->newDeleteQueryBuilder()
-					->deleteFrom( 'globalblocks' )
-					->where( [ 'gb_id' => $deleteIds ] )
+			// Add IDs that are for blocks that are for the given $target, if one is provided. This means that
+			// block modifications of expired blocks are skipped.
+			$totalLimitLeft = $this->options->get( MainConfigNames::UpdateRowsPerQuery );
+			if ( $target !== null ) {
+				$targetGlobalBlockId = $this->globalBlockLookup->getGlobalBlockId(
+					$target, DB_REPLICA, GlobalBlockLookup::SKIP_EXPIRY_CHECK
+				);
+
+				if ( $targetGlobalBlockId ) {
+					$globaldbw->newDeleteQueryBuilder()
+						->deleteFrom( 'globalblocks' )
+						->where(
+							$globaldbw->expr( 'gb_expiry', '<=', $globaldbw->timestamp() )
+								->and( 'gb_id', '=', $targetGlobalBlockId )
+						)
+						->caller( __METHOD__ )
+						->execute();
+					$totalLimitLeft -= $globaldbw->affectedRows();
+				}
+			}
+
+			if ( $totalLimitLeft > 0 ) {
+				$deleteIds = $globaldbw->newSelectQueryBuilder()
+					->select( 'gb_id' )
+					->from( 'globalblocks' )
+					->where( $globaldbw->expr( 'gb_expiry', '<=', $globaldbw->timestamp() ) )
+					->orderBy( 'gb_expiry', SelectQueryBuilder::SORT_ASC )
+					->limit( $totalLimitLeft )
 					->caller( __METHOD__ )
-					->execute();
+					->fetchFieldValues();
+				if ( count( $deleteIds ) ) {
+					$deleteIds = array_map( 'intval', $deleteIds );
+					$globaldbw->newDeleteQueryBuilder()
+						->deleteFrom( 'globalblocks' )
+						->where( [ 'gb_id' => $deleteIds ] )
+						->caller( __METHOD__ )
+						->execute();
+				}
 			}
 		}
 
@@ -76,10 +109,15 @@ class GlobalBlockingBlockPurger {
 				->select( 'gbw_id' )
 				->from( 'global_block_whitelist' )
 				->where( $dbw->expr( 'gbw_expiry', '<=', $dbw->timestamp() ) )
+				->orderBy( 'gbw_expiry', SelectQueryBuilder::SORT_ASC )
 				->limit( $this->options->get( MainConfigNames::UpdateRowsPerQuery ) )
 				->caller( __METHOD__ )
 				->fetchFieldValues();
-			if ( $deleteWhitelistIds !== [] ) {
+			$deleteWhitelistIds = array_slice(
+				array_merge( $targetGlobalBlockIds, $deleteWhitelistIds ), 0,
+				$this->options->get( MainConfigNames::UpdateRowsPerQuery )
+			);
+			if ( count( $deleteWhitelistIds ) ) {
 				$deleteWhitelistIds = array_map( 'intval', $deleteWhitelistIds );
 				$dbw->newDeleteQueryBuilder()
 					->deleteFrom( 'global_block_whitelist' )

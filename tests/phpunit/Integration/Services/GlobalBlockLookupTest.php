@@ -406,33 +406,38 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/** @dataProvider provideGetGlobalBlockId */
-	public function testGetGlobalBlockId( $target, $queryFlags, $expectedResult ) {
+	public function testGetGlobalBlockId( $target, $dbtype, $flags, $expectedResult ) {
 		$this->assertSame(
 			$expectedResult,
 			GlobalBlockingServices::wrap( $this->getServiceContainer() )
 				->getGlobalBlockLookup()
-				->getGlobalBlockId( $target, $queryFlags ),
+				->getGlobalBlockId( $target, $dbtype, $flags ),
 			'The global block ID returned by the method under test is not as expected.'
 		);
 	}
 
 	public static function provideGetGlobalBlockId() {
 		return [
-			'No global block on given IP target' => [ '1.2.3.4', DB_REPLICA, 0 ],
-			'Temporary global block on given IP target while reading from primary' => [ '127.0.0.1', DB_PRIMARY, 1 ],
-			'Indefinite global block on given IP target' => [ '192.0.2.1', DB_REPLICA, 7 ],
-			'Temporary global block on given IP range target' => [ '127.0.0.0/24', DB_REPLICA, 2 ],
-			'No global block on an non-existing account' => [ 'Test-does-not-exist', DB_REPLICA, 0 ],
-			'No global block on an IP target with an expired block' => [ '192.0.2.2', DB_REPLICA, 0 ],
-			'Global block for target in global block ID format' => [ '#1', DB_REPLICA, 1 ],
-			'No global block for target in global block ID format' => [ '#154443', DB_REPLICA, 0 ],
-			'Autoblock excluded when querying IP that is autoblocked' => [ '9.8.7.6', DB_REPLICA, 0 ],
-			'Manual IP block chosen instead of autoblock' => [ '192.0.2.1', DB_REPLICA, 7 ],
+			'No global block on given IP target' => [ '1.2.3.4', DB_REPLICA, 0, 0 ],
+			'Temporary global block on given IP target while reading from primary' => [
+				'127.0.0.1', DB_PRIMARY, 0, 1,
+			],
+			'Indefinite global block on given IP target' => [ '192.0.2.1', DB_REPLICA, 0, 7 ],
+			'Temporary global block on given IP range target' => [ '127.0.0.0/24', DB_REPLICA, 0, 2 ],
+			'No global block on an non-existing account' => [ 'Test-does-not-exist', DB_REPLICA, 0, 0 ],
+			'No global block on an IP target with an expired block' => [ '192.0.2.2', DB_REPLICA, 0, 0 ],
+			'Global block on a target with an expired block when skipping expiry check' => [
+				'192.0.2.2', DB_REPLICA, GlobalBlockLookup::SKIP_AUTOBLOCKS, 0,
+			],
+			'Global block for target in global block ID format' => [ '#1', DB_REPLICA, 0, 1 ],
+			'No global block for target in global block ID format' => [ '#154443', DB_REPLICA, 0, 0 ],
+			'Autoblock excluded when querying IP that is autoblocked' => [ '9.8.7.6', DB_REPLICA, 0, 0 ],
+			'Manual IP block chosen instead of autoblock' => [ '192.0.2.1', DB_REPLICA, 0, 7 ],
 		];
 	}
 
 	public function testGetGlobalBlockIdForGloballyBlockedAccount() {
-		$this->testGetGlobalBlockId( $this->getGloballyBlockedTestUser()->getName(), DB_REPLICA, 5 );
+		$this->testGetGlobalBlockId( $this->getGloballyBlockedTestUser()->getName(), DB_REPLICA, 0, 5 );
 	}
 
 	public static function provideGetGlobalBlockLookupConditions() {
@@ -469,6 +474,7 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 				" AND (gb_range_start LIKE '01%' ESCAPE '`'"
 				. " AND gb_range_start <= '" . IPUtils::toHex( '1.0.0.0' ) . "'"
 				. " AND gb_range_end >= '" . IPUtils::toHex( '1.3.255.255' ) . "'))",
+				true,
 				10
 			],
 			'Single IPv6' => [
@@ -488,6 +494,7 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 				" AND (gb_range_start LIKE 'v6-20%' ESCAPE '`'"
 				. " AND gb_range_start <= '" . IPUtils::toHex( '2000:DEAD:BEEF:A:0:0:0:0' ) . "'"
 				. " AND gb_range_end >= '" . IPUtils::toHex( '2000:DEAD:BEEF:A:0:0:000F:FFFF' ) . "'))",
+				true,
 				16,
 				10
 			],
@@ -511,20 +518,31 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 				. " AND gb_range_end >= '" . IPUtils::toHex( '1.2.3.4' ) . "'"
 				. " AND gb_autoblock_parent_id = 0))",
 			],
+			'IPv4 when including expired global blocks' => [
+				'1.2.3.4', 0, GlobalBlockLookup::SKIP_EXPIRY_CHECK,
+				"(gb_range_start LIKE '0102%' ESCAPE '`'"
+				. " AND gb_range_start <= '" . IPUtils::toHex( '1.2.3.4' ) . "'"
+				. " AND gb_range_end >= '" . IPUtils::toHex( '1.2.3.4' ) . "')",
+				false,
+			],
 		];
 	}
 
 	/** @dataProvider provideGetGlobalBlockLookupConditions */
 	public function testGetGlobalBlockLookupConditions(
-		$ipOrRange, $centralId, $flags, $expected, $ipV4Limit = 16, $ipV6Limit = 19
+		$ipOrRange, $centralId, $flags, $expected, $prefixedWithExpiryCondition = true,
+		$ipV4Limit = 16, $ipV6Limit = 19
 	) {
 		$this->overrideConfigValue( 'GlobalBlockingCIDRLimit', [
 			'IPv4' => $ipV4Limit,
 			'IPv6' => $ipV6Limit,
 		] );
 		ConvertibleTimestamp::setFakeTime( '20240219050403' );
+		if ( $prefixedWithExpiryCondition ) {
+			$expected = "(gb_expiry > '" . $this->getDb()->timestamp( '20240219050403' ) . "'" . $expected;
+		}
 		$this->assertSame(
-			"(gb_expiry > '" . $this->getDb()->timestamp( '20240219050403' ) . "'" . $expected,
+			$expected,
 			GlobalBlockingServices::wrap( $this->getServiceContainer() )
 				->getGlobalBlockLookup()
 				->getGlobalBlockLookupConditions( $ipOrRange, $centralId, $flags )

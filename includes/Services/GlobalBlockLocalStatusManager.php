@@ -61,7 +61,7 @@ class GlobalBlockLocalStatusManager {
 	): StatusValue {
 		// We need to purge expired blocks so we can be sure that the block we are locally disabling isn't
 		// already expired.
-		$this->globalBlockingBlockPurger->purgeExpiredBlocks();
+		$this->globalBlockingBlockPurger->purgeExpiredBlocks( $target );
 
 		// Check that a block exists on the given $target.
 		$globalBlockId = $this->globalBlockLookup->getGlobalBlockId( $target );

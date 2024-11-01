@@ -51,7 +51,8 @@ return [
 			),
 			$globalBlockingServices->getGlobalBlockingConnectionProvider(),
 			$services->getDBLoadBalancerFactory(),
-			$services->getReadOnlyMode()
+			$services->getReadOnlyMode(),
+			$globalBlockingServices->getGlobalBlockLookup()
 		);
 	},
 	'GlobalBlocking.GlobalBlockLocalStatusLookup' => static function (
