@@ -187,11 +187,9 @@ class GlobalBlockingGlobalAutoblockExemptionListProvider {
 
 		[ $errorStatus, $warningStatus ] = $status->splitByErrorType();
 		if ( !$warningStatus->isGood() ) {
-			[ $errorText, $context ] = $this->statusFormatter->getPsr3MessageAndContext( $warningStatus );
-			$this->logger->warning(
-				$errorText,
-				array_merge( $context, [ 'exception' => new RuntimeException() ] )
-			);
+			$this->logger->warning( ...$this->statusFormatter->getPsr3MessageAndContext( $warningStatus, [
+				'exception' => new RuntimeException(),
+			] ) );
 		}
 
 		if ( $errorStatus->isGood() ) {
@@ -211,8 +209,9 @@ class GlobalBlockingGlobalAutoblockExemptionListProvider {
 
 		// If we could not fetch the exempt list from the central wiki, then return false so that a new attempt
 		// to fetch the IPs is made the next time this method is called.
-		[ $errorText, $context ] = $this->statusFormatter->getPsr3MessageAndContext( $errorStatus );
-		$this->logger->error( $errorText, array_merge( [ 'exception' => new RuntimeException() ], $context ) );
+		$this->logger->error( ...$this->statusFormatter->getPsr3MessageAndContext( $errorStatus, [
+			'exception' => new RuntimeException(),
+		] ) );
 		return false;
 	}
 }
