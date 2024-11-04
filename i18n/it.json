@@ -49,6 +49,7 @@
 	"globalblocking-list-whitelisted": "disattivato localmente da $1: $2",
 	"globalblocking-list-whitelist": "stato locale",
 	"globalblocking-list-modify": "modifica",
+	"globalblocking-list-block": "blocca",
 	"globalblocking-list-tempblocks": "Nascondi blocchi temporanei",
 	"globalblocking-list-indefblocks": "Nascondi blocchi infiniti",
 	"globalblocking-list-addressblocks": "Nascondi blocchi di un solo IP",
@@ -124,5 +125,6 @@
 	"globalblocking-blockedtext-email-feature": "Non puoi utilizzare la funzione \"{{int:emailuser}}\" finché non hai specificato un indirizzo email valido nelle tue [[Special:Preferences|preferenze utente]] e non ti sia stato impedito di utilizzarla.",
 	"globalblocking-blockedtext-ip-range": "L'intervallo bloccato è $1.",
 	"globalblocking-blockedtext-proxy": "L'indirizzo proxy bloccato è $1.",
-	"globalblocking-blockedtext-username": "Il tuo nome utente è $1."
+	"globalblocking-blockedtext-username": "Il tuo nome utente è $1.",
+	"globalblocking-centralauth-admin-info-globalblock": "Bloccata globalmente:"
 }
