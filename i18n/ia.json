@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Macofe",
-			"McDutchie"
+			"McDutchie",
+			"Karmwiki"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permitte]] que adresses IP sia [[Special:GlobalBlockList|blocate trans plure wikis]]",

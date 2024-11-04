@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Max20091",
-			"Minh Nguyen"
+			"Minh Nguyen",
+			"Vinhtantran"
 		]
 	},
 	"apihelp-globalblock-param-target": "Địa chỉ IP mục tiêu.",
