@@ -48,6 +48,8 @@ class GlobalBlockLookup {
 	public const SKIP_ALLOWED_RANGES_CHECK = 8;
 	/** @var int Flag to ignore all autoblocks. Is implicitly set if ::SKIP_IP_BLOCKS is set. */
 	public const SKIP_AUTOBLOCKS = 16;
+	/** @var int Flag to skip excluding expired global blocks. */
+	public const SKIP_EXPIRY_CHECK = 32;
 
 	private ServiceOptions $options;
 	private GlobalBlockingConnectionProvider $globalBlockingConnectionProvider;
@@ -475,9 +477,13 @@ class GlobalBlockLookup {
 			// In this case, we can assume the user or their IP is not affected by any global block.
 			return null;
 		}
-		// @todo expiry shouldn't be in this function
-		return $dbr->expr( 'gb_expiry', '>', $dbr->timestamp() )
-			->andExpr( $targetExpr );
+
+		// Exclude expired global blocks, unless the caller has asked to include these.
+		if ( !( $flags & self::SKIP_EXPIRY_CHECK ) ) {
+			$targetExpr = $dbr->expr( 'gb_expiry', '>', $dbr->timestamp() )
+				->andExpr( $targetExpr );
+		}
+		return $targetExpr;
 	}
 
 	/**
@@ -548,9 +554,11 @@ class GlobalBlockLookup {
 	 *   range block, the range block will not be returned. This also means that autoblocks cannot be queried by the
 	 *   IP that they target. Use ::getGlobalBlockingBlock to include these blocks.
 	 * @param int $dbtype Either DB_REPLICA or DB_PRIMARY.
+	 * @param int $flags Flags which control what conditions are returned. Currently ignores all flags but the
+	 *   ::SKIP_EXPIRY_CHECK flag.
 	 * @return int
 	 */
-	public function getGlobalBlockId( string $target, int $dbtype = DB_REPLICA ): int {
+	public function getGlobalBlockId( string $target, int $dbtype = DB_REPLICA, int $flags = 0 ): int {
 		if ( $dbtype === DB_PRIMARY ) {
 			$db = $this->globalBlockingConnectionProvider->getPrimaryGlobalBlockingDatabase();
 		} else {
@@ -559,8 +567,11 @@ class GlobalBlockLookup {
 
 		$queryBuilder = $db->newSelectQueryBuilder()
 			->select( 'gb_id' )
-			->from( 'globalblocks' )
-			->where( $db->expr( 'gb_expiry', '>', $db->timestamp() ) );
+			->from( 'globalblocks' );
+
+		if ( !( $flags & self::SKIP_EXPIRY_CHECK ) ) {
+			$queryBuilder->where( $db->expr( 'gb_expiry', '>', $db->timestamp() ) );
+		}
 
 		$globalBlockId = self::isAGlobalBlockId( $target );
 		if ( $globalBlockId ) {

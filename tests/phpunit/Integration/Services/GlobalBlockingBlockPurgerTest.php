@@ -17,7 +17,7 @@ use Wikimedia\Timestamp\ConvertibleTimestamp;
 class GlobalBlockingBlockPurgerTest extends MediaWikiIntegrationTestCase {
 	/** @dataProvider providePurgeExpiredBlocks */
 	public function testPurgeExpiredBlocks(
-		$fakeTime, $expectedGlobalBlocksCount, $expectedGlobalBlockWhitelistCount, $limit
+		$target, $fakeTime, $expectedTargetsAfterPurge, $expectedGlobalBlockWhitelistCount, $limit
 	) {
 		// Set a fake time such that the expiry of all blocks is after this date.
 		ConvertibleTimestamp::setFakeTime( $fakeTime );
@@ -25,15 +25,17 @@ class GlobalBlockingBlockPurgerTest extends MediaWikiIntegrationTestCase {
 		// Call the method under test
 		GlobalBlockingServices::wrap( $this->getServiceContainer() )
 			->getGlobalBlockingBlockPurger()
-			->purgeExpiredBlocks();
-		// Check that no rows were deleted
-		$this->assertSame(
-			$expectedGlobalBlocksCount,
-			(int)$this->getDb()->newSelectQueryBuilder()
-				->select( 'COUNT(*)' )
+			->purgeExpiredBlocks( $target );
+		// Check that the correct rows were purged
+		$this->assertArrayEquals(
+			$expectedTargetsAfterPurge,
+			$this->getDb()->newSelectQueryBuilder()
+				->select( 'gb_address' )
 				->from( 'globalblocks' )
-				->fetchField(),
-			'The globalblocks table has an unexpected number of rows after calling the purge method.'
+				->fetchFieldValues(),
+			false,
+			false,
+			'The globalblocks table is not as expected after the purge.'
 		);
 		$this->assertSame(
 			$expectedGlobalBlockWhitelistCount,
@@ -48,18 +50,25 @@ class GlobalBlockingBlockPurgerTest extends MediaWikiIntegrationTestCase {
 	public static function providePurgeExpiredBlocks() {
 		return [
 			'No blocks to purge' => [
+				// The value of the $target parameter
+				null,
 				// The time to be set for the test
 				'20220405060708',
-				// How many rows should be left in the globalblocks table after the test
-				2,
+				// What rows should be left in the table after the purge
+				[ '127.0.0.0/24', '127.0.0.1' ],
 				// How many rows should be left in the global_block_whitelist table after the test
 				1,
 				// The limit to be passed to the method under test
 				1000,
 			],
-			'One block to purge' => [ '20240505060708', 1, 1, 1000 ],
-			'All blocks have expired' => [ '20250405060708', 0, 0, 1000 ],
-			'All blocks have expired, but UpdateRowsPerQuery is 1' => [ '20260505060708', 1, 0, 1 ],
+			'One block to purge' => [ null, '20240505060708', [ '127.0.0.0/24' ], 1, 1000 ],
+			'All blocks have expired' => [ null, '20250405060708', [], 0, 1000 ],
+			'All blocks have expired, but UpdateRowsPerQuery is 1' => [
+				null, '20260505060708', [ '127.0.0.0/24' ], 0, 1,
+			],
+			'All blocks have expired, UpdateRowsPerQuery is 1, target set as the /24' => [
+				'127.0.0.0/24', '20260505060708', [ '127.0.0.1' ], 0, 1,
+			],
 		];
 	}
 
@@ -77,8 +86,9 @@ class GlobalBlockingBlockPurgerTest extends MediaWikiIntegrationTestCase {
 			return $mockReadOnlyMode;
 		} );
 		$this->testPurgeExpiredBlocks(
+			null,
 			'20260505060708',
-			$centralDbInReadOnlyMode ? 2 : 0,
+			$centralDbInReadOnlyMode ? [ '127.0.0.1', '127.0.0.0/24' ] : [],
 			$localDbInReadOnlyMode ? 1 : 0,
 			1000
 		);
@@ -109,6 +119,7 @@ class GlobalBlockingBlockPurgerTest extends MediaWikiIntegrationTestCase {
 				'gb_expiry' => $this->getDb()->encodeExpiry( '20240405060708' ),
 				'gb_range_start' => IPUtils::toHex( '127.0.0.1' ),
 				'gb_range_end' => IPUtils::toHex( '127.0.0.1' ),
+				'gb_autoblock_parent_id' => 0,
 			] )
 			->row( [
 				'gb_address' => '127.0.0.0/24',
@@ -122,6 +133,7 @@ class GlobalBlockingBlockPurgerTest extends MediaWikiIntegrationTestCase {
 				'gb_expiry' => $this->getDb()->encodeExpiry( '20250405060708' ),
 				'gb_range_start' => IPUtils::toHex( '127.0.0.0' ),
 				'gb_range_end' => IPUtils::toHex( '127.0.0.255' ),
+				'gb_autoblock_parent_id' => 0,
 			] )
 			->caller( __METHOD__ )
 			->execute();

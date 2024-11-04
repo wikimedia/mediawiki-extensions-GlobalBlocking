@@ -83,10 +83,6 @@ class GlobalBlockManager {
 	public function insertBlock(
 		string $target, string $reason, $expiry, UserIdentity $blocker, array $options = []
 	): StatusValue {
-		// As we are inserting a block and therefore will be using a primary DB connection,
-		// we can purge expired blocks from the primary DB.
-		$this->globalBlockingBlockPurger->purgeExpiredBlocks();
-
 		if ( $expiry === false ) {
 			return StatusValue::newFatal( 'globalblocking-block-expiryinvalid' );
 		}
@@ -103,6 +99,10 @@ class GlobalBlockManager {
 		$anonOnly = in_array( 'anon-only', $options );
 		$allowAccountCreation = in_array( 'allow-account-creation', $options );
 		$enableAutoblock = in_array( 'enable-autoblock', $options );
+
+		// As we are inserting a block and therefore will be using a primary DB connection,
+		// we can purge expired blocks from the primary DB.
+		$this->globalBlockingBlockPurger->purgeExpiredBlocks( $data['target'] );
 
 		if ( $anonOnly && !IPUtils::isIPAddress( $data['target'] ) ) {
 			// Anon-only blocks on an account does not make any sense, so reject them.
