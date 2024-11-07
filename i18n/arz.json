@@ -6,7 +6,7 @@
 			"Ramsis II"
 		]
 	},
-	"globalblocking-desc": "[[Special:GlobalBlock| بيسمح]] بمنع عناوين الاى بى [[Special:GlobalBlockList|على اكتر من ويكي]]",
+	"globalblocking-desc": "[[Special:GlobalBlock|يسمح]] بمنع عناوين الأيبي [[Special:GlobalBlockList|عبر ويكيات متعددة]]",
 	"globalblocking-block": "اعمل منع عام لعنوان اى بي",
 	"globalblocking-block-intro": "ممكن تستعمل الصفحة دى هلشان تمنع عنوان اى بى من على كل الويكيهات.",
 	"globalblocking-block-reason": "السبب:",
@@ -52,7 +52,7 @@
 	"globalblocking-whitelist-whitelisted": "إنتا عطلت بنجاح المنع العام #$2 على عنوان الأيبى '''$1''' فى {{SITENAME}}.",
 	"globalblocking-whitelist-dewhitelisted": "انت فعلت تانى بنجاح المنع العام #$2 على عنوان الاى بى  '''$1''' فى {{SITENAME}}.",
 	"globalblocking-whitelist-nochange": "انت ما عملتش اى تغيير فى للحالة المحلية للمنع دا.",
-	"globalblocking-whitelist-intro": "ممكن تستعمل الاستمارة دى علشان تعدل الحالة المحلية للمنع العام.لو  فى منع عام متعطل على الويكى دا ،اليوزرز على عنوان الاى بى المتاثر ح يقدرو يعملو تعديل بشكل طبيعى.",
+	"globalblocking-whitelist-intro": "ممكن تستخدم هذا النموذج علشان تحرير الحالة المحلية للكتل العالمية. لو تم تعطيل حظر عالمي على هذا الويكي، ممكن المستخدمين المتضررين يحرروا بشكل طبيعي.",
 	"globalblocking-logpage": "سجل المنع العام",
 	"globalblocking-logpagetext": "دا سجل بعمليات المنع العام اللى اتعملت و اتشالت فى الويكى دا.\nلازم تاخد بالك ان عمليات المنع العام ممكن تتعمل و تتشال على الويكيهات التانية، و ان عمليات المنع العام دى ممكن تاثر على الويكى دا.\nعلشان تشوف  كل عمليات المنع العام النشيطة، بص على [[Special:GlobalBlockList|لستة المنع العام]].",
 	"globalblocklist": "لستة عناوين الاى بى الممنوعة منع عام",
