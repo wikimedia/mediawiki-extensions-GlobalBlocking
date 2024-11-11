@@ -2,8 +2,8 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Maintenance;
 
-use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Maintenance\LoggedUpdateMaintenance;
+use Wikimedia\Rdbms\IMaintainableDatabase;
 use Wikimedia\Rdbms\SelectQueryBuilder;
 
 // @codeCoverageIgnoreStart
@@ -39,8 +39,16 @@ class UpdateAutoBlockParentIdColumn extends LoggedUpdateMaintenance {
 
 	/** @inheritDoc */
 	public function doDbUpdates() {
-		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
-		$dbr = $globalBlockingServices->getGlobalBlockingConnectionProvider()->getReplicaGlobalBlockingDatabase();
+		$connectionProvider = $this->getServiceContainer()->getConnectionProvider();
+		$dbr = $connectionProvider->getReplicaDatabase( 'virtual-globalblocking' );
+		if ( !( $dbr instanceof IMaintainableDatabase ) ) {
+			throw new \RuntimeException( 'Wrong database class' );
+		}
+		$autoBlockParentIdFieldInfo = $dbr->fieldInfo( 'globalblocks', 'gb_autoblock_parent_id' );
+		if ( !$autoBlockParentIdFieldInfo || !$autoBlockParentIdFieldInfo->isNullable() ) {
+			$this->output( "The field globalblocks.gb_autoblock_parent_id is not nullable, nothing to do.\n" );
+			return true;
+		}
 
 		$hasRowsToUpdate = $dbr->newSelectQueryBuilder()
 			->select( '1' )
@@ -56,7 +64,7 @@ class UpdateAutoBlockParentIdColumn extends LoggedUpdateMaintenance {
 		$success = 0;
 		$failed = 0;
 		$lastProcessedRowId = 0;
-		$dbw = $globalBlockingServices->getGlobalBlockingConnectionProvider()->getPrimaryGlobalBlockingDatabase();
+		$dbw = $connectionProvider->getPrimaryDatabase( 'virtual-globalblocking' );
 		do {
 			// Fetch a batch of rows with gb_autoblock_parent_id as NULL
 			$batchToProcess = $dbr->newSelectQueryBuilder()
