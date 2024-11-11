@@ -40,7 +40,7 @@
 	"globalblocking-local-failed": "لم ينجح منع عنوان IP محلياً لأن هذا العنوان ممنوع حالياً على هذا الويكي.",
 	"globalblocking-block-failure": "حدث خطأ أثناء محاولة منع $1 عالميا; حاول مرة اخرى.",
 	"globalblocking-block-alreadyblocked": "عنوان الأيبي $1 ممنوع منعا عاما بالفعل.\nيمكنك رؤية المنع الموجود في [[Special:GlobalBlockList|قائمة عمليات المنع العامة]]،\nأو تعديل إعدادات المنع الموجود عن طريق إعادة تنفيذ هذه الاستمارة.",
-	"globalblocking-bigrange": "النطاق الذي حددته ( $1 ) يتجاوز الحدود.! N! الحد $2 هو / $3 نطاق.",
+	"globalblocking-bigrange": "المدى الذي حددت ($1) يتجاوز الحدود. الحد $2 هو نطاق / $3.",
 	"globalblocking-also-local": "امنع أيضاً عنوان IP محلياً على هذا الويكي",
 	"globalblocking-also-local-talk": "منع المستخدم من تحرير صفحة الحديث الخاصة به محليًا",
 	"globalblocking-also-local-email": "منع المستخدم من إرسال البريد الإلكتروني محليًا",
