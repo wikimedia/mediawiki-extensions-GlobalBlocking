@@ -112,7 +112,7 @@ class GlobalBlock extends AbstractBlock {
 		return $this->id;
 	}
 
-	public function getXff() {
+	public function getXff(): bool {
 		return $this->xff;
 	}
 
