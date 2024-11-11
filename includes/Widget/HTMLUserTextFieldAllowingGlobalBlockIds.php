@@ -12,6 +12,7 @@ use MediaWiki\HTMLForm\Field\HTMLUserTextField;
  * @since 1.43
  */
 class HTMLUserTextFieldAllowingGlobalBlockIds extends HTMLUserTextField {
+	/** @inheritDoc */
 	public function validate( $value, $alldata ) {
 		if ( GlobalBlockLookup::isAGlobalBlockId( $value ) ) {
 			return true;

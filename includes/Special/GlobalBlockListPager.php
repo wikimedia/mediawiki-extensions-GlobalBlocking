@@ -44,6 +44,7 @@ class GlobalBlockListPager extends TablePager {
 		$this->mDefaultDirection = IndexPager::DIR_DESCENDING;
 	}
 
+	/** @inheritDoc */
 	protected function getFieldNames() {
 		return [
 			'gb_timestamp' => $this->msg( 'globalblocking-list-table-heading-timestamp' )->text(),
@@ -109,6 +110,7 @@ class GlobalBlockListPager extends TablePager {
 		}
 	}
 
+	/** @inheritDoc */
 	public function getQueryInfo() {
 		return [
 			'tables' => 'globalblocks',
@@ -117,18 +119,22 @@ class GlobalBlockListPager extends TablePager {
 		];
 	}
 
+	/** @inheritDoc */
 	public function getIndexField() {
 		return 'gb_timestamp';
 	}
 
+	/** @inheritDoc */
 	protected function getTableClass() {
 		return parent::getTableClass() . ' mw-globalblocking-globalblocklist';
 	}
 
+	/** @inheritDoc */
 	public function getDefaultSort() {
 		return '';
 	}
 
+	/** @inheritDoc */
 	protected function isFieldSortable( $name ) {
 		return false;
 	}

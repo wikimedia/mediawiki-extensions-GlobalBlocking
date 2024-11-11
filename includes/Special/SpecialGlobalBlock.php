@@ -68,10 +68,12 @@ class SpecialGlobalBlock extends FormSpecialPage {
 		$this->userNameUtils = $userNameUtils;
 	}
 
+	/** @inheritDoc */
 	public function doesWrites() {
 		return true;
 	}
 
+	/** @inheritDoc */
 	public function execute( $par ) {
 		parent::execute( $par );
 		$this->addHelpLink( 'Extension:GlobalBlocking' );
@@ -429,14 +431,17 @@ class SpecialGlobalBlock extends FormSpecialPage {
 		return $options;
 	}
 
+	/** @inheritDoc */
 	protected function getGroupName() {
 		return 'users';
 	}
 
+	/** @inheritDoc */
 	protected function getDisplayFormat() {
 		return 'ooui';
 	}
 
+	/** @inheritDoc */
 	public function getDescription() {
 		return $this->msg( 'globalblocking-block' );
 	}

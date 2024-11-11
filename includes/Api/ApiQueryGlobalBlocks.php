@@ -256,10 +256,12 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 		$result->addValue( 'query', $this->getModuleName(), $data );
 	}
 
+	/** @inheritDoc */
 	public function getCacheMode( $params ) {
 		return 'public';
 	}
 
+	/** @inheritDoc */
 	public function getAllowedParams() {
 		return [
 			'start' => [
@@ -314,6 +316,7 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 		];
 	}
 
+	/** @inheritDoc */
 	protected function getDB() {
 		return $this->globalBlockingDb;
 	}

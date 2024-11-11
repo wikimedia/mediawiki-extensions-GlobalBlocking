@@ -111,12 +111,14 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 		$this->mWhitelistStatus = $request->getCheck( 'wpWhitelistStatus' );
 	}
 
+	/** @inheritDoc */
 	protected function alterForm( HTMLForm $form ) {
 		$form->setPreHtml( $this->msg( 'globalblocking-whitelist-intro' )->parse() );
 		$form->setWrapperLegendMsg( 'globalblocking-whitelist-legend' );
 		$form->setSubmitTextMsg( 'globalblocking-whitelist-submit' );
 	}
 
+	/** @inheritDoc */
 	protected function getFormFields() {
 		return [
 			'address' => [
@@ -142,6 +144,7 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 		];
 	}
 
+	/** @inheritDoc */
 	public function onSubmit( array $data ) {
 		if ( $this->mWhitelistStatus ) {
 			// Locally disable the block
@@ -193,22 +196,27 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 		return true;
 	}
 
+	/** @inheritDoc */
 	public function doesWrites() {
 		return true;
 	}
 
+	/** @inheritDoc */
 	protected function getGroupName() {
 		return 'users';
 	}
 
+	/** @inheritDoc */
 	protected function getDisplayFormat() {
 		return 'ooui';
 	}
 
+	/** @inheritDoc */
 	public function getDescription() {
 		return $this->msg( 'globalblocking-whitelist' );
 	}
 
+	/** @inheritDoc */
 	protected function checkExecutePermissions( User $user ) {
 		parent::checkExecutePermissions( $user );
 		// If wgApplyGlobalBlocks is false, the user should not be able to access this special page.

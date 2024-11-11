@@ -42,6 +42,7 @@ class SpecialRemoveGlobalBlock extends FormSpecialPage {
 		$this->globalBlockingLinkBuilder = $globalBlockingLinkBuilder;
 	}
 
+	/** @inheritDoc */
 	public function execute( $par ) {
 		parent::execute( $par );
 		$this->addHelpLink( 'Extension:GlobalBlocking' );
@@ -58,6 +59,7 @@ class SpecialRemoveGlobalBlock extends FormSpecialPage {
 		}
 	}
 
+	/** @inheritDoc */
 	protected function setParameter( $par ) {
 		parent::setParameter( $par );
 
@@ -80,6 +82,7 @@ class SpecialRemoveGlobalBlock extends FormSpecialPage {
 		return Status::wrap( $this->globalBlockManager->unblock( $this->target, $data['reason'], $this->getUser() ) );
 	}
 
+	/** @inheritDoc */
 	public function onSuccess() {
 		$successMsgKey = 'globalblocking-unblock-unblocked';
 		$target = $this->target;
@@ -102,12 +105,14 @@ class SpecialRemoveGlobalBlock extends FormSpecialPage {
 		$this->getOutput()->addHTML( $msg . $link );
 	}
 
+	/** @inheritDoc */
 	protected function alterForm( HTMLForm $form ) {
 		$form->setWrapperLegendMsg( 'globalblocking-unblock-legend' );
 		$form->setSubmitTextMsg( 'globalblocking-unblock-submit' );
 		$form->setPreHtml( $this->msg( 'globalblocking-unblock-intro' )->parse() );
 	}
 
+	/** @inheritDoc */
 	protected function getFormFields() {
 		return [
 			'target' => [
@@ -129,14 +134,17 @@ class SpecialRemoveGlobalBlock extends FormSpecialPage {
 		];
 	}
 
+	/** @inheritDoc */
 	public function doesWrites() {
 		return true;
 	}
 
+	/** @inheritDoc */
 	protected function getGroupName() {
 		return 'users';
 	}
 
+	/** @inheritDoc */
 	protected function getDisplayFormat() {
 		return 'ooui';
 	}

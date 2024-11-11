@@ -87,6 +87,7 @@ class SpecialGlobalBlockList extends FormSpecialPage {
 		$this->options = $request->getArray( 'wpOptions', [] );
 	}
 
+	/** @inheritDoc */
 	protected function getFormFields() {
 		$optionsMessages = [
 			'globalblocking-list-tempblocks' => 'tempblocks',
@@ -115,6 +116,7 @@ class SpecialGlobalBlockList extends FormSpecialPage {
 		];
 	}
 
+	/** @inheritDoc */
 	protected function alterForm( HTMLForm $form ) {
 		$context = new DerivativeContext( $this->getContext() );
 		$context->setTitle( $this->getPageTitle() ); // remove subpage
@@ -124,6 +126,7 @@ class SpecialGlobalBlockList extends FormSpecialPage {
 			->setContext( $context );
 	}
 
+	/** @inheritDoc */
 	public function onSubmit( array $data ) {
 		$this->queryValid = true;
 		// Build a list of blocks.
@@ -192,6 +195,7 @@ class SpecialGlobalBlockList extends FormSpecialPage {
 		return true;
 	}
 
+	/** @inheritDoc */
 	public function onSuccess() {
 		// If the form data was valid, then use the WHERE conditions generated from it to get a page of results.
 		$pager = new GlobalBlockListPager(
@@ -222,18 +226,22 @@ class SpecialGlobalBlockList extends FormSpecialPage {
 		);
 	}
 
+	/** @inheritDoc */
 	public function getShowAlways(): bool {
 		return true;
 	}
 
+	/** @inheritDoc */
 	protected function getDisplayFormat(): string {
 		return 'ooui';
 	}
 
+	/** @inheritDoc */
 	public function getDescription(): Message {
 		return $this->msg( 'globalblocking-list' );
 	}
 
+	/** @inheritDoc */
 	public function requiresPost(): bool {
 		return false;
 	}

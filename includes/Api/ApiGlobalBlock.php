@@ -171,6 +171,7 @@ class ApiGlobalBlock extends ApiBase {
 		$result->addValue( 'error', 'globalblock', $legacyErrors );
 	}
 
+	/** @inheritDoc */
 	public function getAllowedParams() {
 		return [
 			'id' => [
@@ -235,14 +236,17 @@ class ApiGlobalBlock extends ApiBase {
 		];
 	}
 
+	/** @inheritDoc */
 	public function mustBePosted() {
 		return true;
 	}
 
+	/** @inheritDoc */
 	public function isWriteMode() {
 		return true;
 	}
 
+	/** @inheritDoc */
 	public function needsToken() {
 		return 'csrf';
 	}
