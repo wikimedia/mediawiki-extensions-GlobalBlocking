@@ -24,7 +24,8 @@
 			"Verdy p",
 			"Wladek92",
 			"Wyz",
-			"Zetud"
+			"Zetud",
+			"Thibaut120094"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permet]] aux comptes, aux adresses IP et aux plages d'adresses IP d’être [[Special:GlobalBlockList|bloqués à travers plusieurs wikis]]",
@@ -104,7 +105,7 @@
 	"globalblocking-loglink": "L’utilisateur $1 est bloqué globalement ([[{{#Special:GlobalBlockList}}/$1|détails]]).",
 	"globalblocking-contribs-notice": "Cet utilisateur est actuellement bloqué de manière globale.\nL’entrée de journal du blocage global est fournie ci-dessous à titre d’information :",
 	"globalblocking-showlog": "Cet utilisateur a été bloqué antérieurement.\nLe journal des blocages est disponible ci-dessous :",
-	"globalblocking-contribs-log": "Journal des blocages globaux",
+	"globalblocking-contribs-log": "journal des blocages globaux",
 	"globalblocking-contribs-block": "blocage global",
 	"globalblocking-contribs-modify": "Modifier le blocage global",
 	"globalblocking-contribs-remove": "retirer le blocage global",

@@ -53,6 +53,7 @@
 	"globalblocking-logentry-whitelist": "$1 喺本地{{GENDER:$2|停咗}}對 {{GENDER:$4|$3}} 嘅全域封鎖",
 	"globalblocking-block-flag-anon-only": "只限匿名用戶",
 	"globalblocking-loglink": "用戶 $1 全域封鎖咗（[[{{#Special:GlobalBlockList}}/$1|詳情]]）。",
+	"globalblocking-contribs-log": "全域封鎖日誌",
 	"globalblocklist": "全域封鎖IP地址一覽",
 	"globalblock": "全域封鎖一個IP地址",
 	"globalblockstatus": "全域封鎖嘅本地狀態",

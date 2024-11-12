@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Arystanbek"
+			"Arystanbek",
+			"Casserium"
 		]
 	},
 	"globalblocking-block-reason": "Себебі:",
@@ -18,5 +19,6 @@
 	"globalblocking-whitelist-reason": "СебебІ:",
 	"globalblocking-whitelist-status": "Жергілікті статусы:",
 	"globalblocking-whitelist-submit": "Жергілікті статусты өзгерту",
-	"globalblocking-logpage": "Ғаламдық бұғаттау журналы"
+	"globalblocking-logpage": "Ғаламдық бұғаттау журналы",
+	"globalblocking-contribs-log": "ғаламдық бұғаттау журналы"
 }

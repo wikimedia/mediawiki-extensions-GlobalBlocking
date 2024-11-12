@@ -39,7 +39,8 @@
 			"Xiplus",
 			"Yekrats",
 			"Ата",
-			"Тест"
+			"Тест",
+			"Stjn"
 		]
 	},
 	"globalblocking-desc": "{{desc|name=Global Blocking|url=https://www.mediawiki.org/wiki/Extension:GlobalBlocking}}",
@@ -144,7 +145,7 @@
 	"globalblocking-logentry-dewhitelist": "{{Logentry|[[m:Special:Log/gblblock]]}}\n* $4 - (optional) the username, IP range, or IP address who is the target of the block that was locally re-enabled (to be used with GENDER)",
 	"globalblocking-block-flag-anon-only": "Used as a block log flag in the log entry of a global block.\nSee also:\n* {{msg-mw|block-log-flags-anononly}}",
 	"globalblocking-block-flag-account-creation-disabled": "Used as a block log flag in the log entry of a global block.\nSee also:\n* {{msg-mw|block-log-flags-nocreate}}",
-	"globalblocking-block-flag-autoblock-disabled": "Used a block log flag in the log entry of a global block. Indicates the autoblocks were disabled for the block.\nIdentical to:\n* {{msg-mw|noautoblock}}",
+	"globalblocking-block-flag-autoblock-disabled": "Used a block log flag in the log entry of a global block. Indicates the autoblocks were disabled for the block.\nIdentical to:\n* {{msg-mw|Noautoblockblock}}",
 	"globalblocking-loglink": "Shown on [[Special:Block]] when a user is blocked globally.\n\nParameters:\n* $1: Username, IP address, or IP range",
 	"globalblocking-contribs-notice": "Displayed on [[Special:Contributions]] for currently globally blocked accounts, IP addresses, and IP ranges. Parameters:\n* $1 - (Optional) the username, IP address, or IP range\nSee also:\n* {{msg-mw|Sp-contributions-blocked-notice}}\n* {{msg-mw|Sp-contributions-blocked-notice-anon}}",
 	"globalblocking-contribs-mock-log-line": "Displayed on [[Special:Contributions]] for currently globally blocked accounts, IP addresses, and IP ranges. Used to describe the active global block on the target of the Special:Contributions page.\n\nParameters:\n* $1 - The pre-formatted timestamp that the global block was performed, with a link\n* $2 - The username of the performer of the global block for GENDER\n* $3 - HTML user link for the performer of the global block\n* $4 - The username of the target of the global block, which may be empty if the user cannot see the current target. Used for GENDER.\n* $5 - The formatted HTML for a user link to the target, or HTML indicating that the target is hidden\n* $6 - The expiration time of the global block\n* $7 - Block options in parentheses\n* $8 - The reason given for the global block\n* $9 - Action links for managing the global block (may or may not be present depending on the user rights of the user).",

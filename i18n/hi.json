@@ -48,6 +48,7 @@
 	"globalblocking-list-indefblocks": "अनिश्चितकालीन अवरोध छिपाएँ",
 	"globalblocking-list-addressblocks": "एकल IP अवरोध छिपाएँ",
 	"globalblocking-list-rangeblocks": "रेंज अवरोध छिपाएँ",
+	"globalblocking-list-table-heading-target": "लक्ष्य",
 	"globalblocking-list-table-heading-reason": "कारण",
 	"globalblocking-list-noresults": "निर्धारित पैरामीटर्स से कोई परिणाम नहीं मिला।",
 	"globalblocking-goto-block": "किसी IP पते को ग्लोबल रूप से अवरोधित करें",

@@ -8,7 +8,7 @@
 	},
 	"globalblocking-apierror-badip": "عنوان الآيبي $1 غير صالح",
 	"apihelp-globalblock-summary": "منع أو رفع منع مستخدم عالميا.",
-	"apihelp-globalblock-param-target": "عنوان IP المستهدف.",
+	"apihelp-globalblock-param-target": "عنوان IP المستهدف أو اسم المستخدم. لا يمكن استخدامها مع <var>$1id</var>.",
 	"apihelp-globalblock-param-expiry": "في حال التحديد سيتم منع المستخدم أو إعادة منعه. يحدد مدة استمرار المنع، مثلاً «أسبوعين» أو «5 أشهر». في حال تعيين قيمة «لانهائي» أو «غير محدد» لن تنتهي مدة المنع أبداً.",
 	"apihelp-globalblock-param-unblock": "في حال التحديد سيتم رفع المنع عن المستخدم.",
 	"apihelp-globalblock-param-reason": "سبب المنع/رفع المنع.",
@@ -20,13 +20,13 @@
 	"apihelp-query+globalblocks-param-end": "الطابع الزمني لوقف التعداد فيه.",
 	"apihelp-query+globalblocks-param-ids": "قائمة مفصولة بأنبوب بمعرفات المنع للإدراج.",
 	"apihelp-query+globalblocks-param-addresses": "قائمة مفصولة بعناوين الآيبي للبحث عنها.",
-	"apihelp-query+globalblocks-param-ip": "احصل على كل المنع الذي ينطبق على عنوان الآيبي أو نطاق CIDR، بما في ذلك منع النطاق، لا يمكن استخدامها مع $1addresses، لا يتم قبول CIDR أوسع من/16.",
+	"apihelp-query+globalblocks-param-ip": "الحصول على جميع الكتل التي تنطبق على هذا عنوان IP أو مجموعة CIDR، بما في ذلك الكتل المدى. لا يمكن استخدامها مع عنوانات $1 أو أهداف $1 فالمناطق الواسعة من /16 لا تقبل.",
 	"apihelp-query+globalblocks-param-limit": "الحد الأقصى لعدد مرات المنع للإدراج.",
 	"apihelp-query+globalblocks-param-prop": "أي الخصائص تريد الحصول عليها.",
 	"apihelp-query+globalblocks-example-1": "ادرج جميع عمليات المنع العالمية",
 	"apihelp-query+globalblocks-example-2": "ادرج جميع عمليات المنع العالمية التي تنطبق على عنوان الآيبي 192.0.2.18",
-	"apihelp-globalblock-param-alsolocal": "منع عنوان IP محليًا أيضًا",
-	"apihelp-globalblock-param-localblockstalk": "إبطال الوصول إلى صفحة الحديث محليًا",
-	"apihelp-globalblock-param-localblocksemail": "إبطال الوصول إلى البريد الإلكتروني محليًا",
-	"apihelp-globalblock-param-localanononly": "حدد هذا الخيار إذا كان الحظر سيؤثر فقط على المستخدمين المسجلين محليًا."
+	"apihelp-globalblock-param-alsolocal": "قم بحظر المستخدم محلياً أيضاً لا يمكن استخدامها مع <var>$1id</var>.",
+	"apihelp-globalblock-param-localblockstalk": "إلغاء الوصول إلى صفحة المحادثات محلياً. لا يمكن استخدامها مع <var>$1id</var>.",
+	"apihelp-globalblock-param-localblocksemail": "إلغاء الوصول إلى البريد الإلكتروني محلياً لا يمكن استخدامها مع <var>$1id</var>.",
+	"apihelp-globalblock-param-localanononly": "حدد هذا إذا كان الحظر يجب أن يؤثر فقط على المستخدمين الذين خرجوا من التسجيلات محلياً. لا يمكن استخدامها مع <var>$1id</var>."
 }

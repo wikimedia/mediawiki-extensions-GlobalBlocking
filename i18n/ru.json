@@ -110,14 +110,17 @@
 	"globalblocking-logentry-whitelist": "$1 локально {{GENDER:$2|отключил|отключила}} глобальную блокировку {{GENDER:$4|$3}}",
 	"globalblocking-logentry-dewhitelist": "$1 повторно {{GENDER:$2|включил|включила}} локально глобальную блокировку {{GENDER:$4|$3}}",
 	"globalblocking-block-flag-anon-only": "только анонимных участников",
+	"globalblocking-block-flag-account-creation-disabled": "запрещена регистрация учётных записей",
+	"globalblocking-block-flag-autoblock-disabled": "автоблокировка отключена",
 	"globalblocking-loglink": "Участник (адрес, диапазон) $1 заблокирован глобально ([[{{#Special:GlobalBlockList}}/$1|подробнее]]).",
 	"globalblocking-contribs-notice": "Этот участник в данный момент глобально заблокирован.\nНиже приведена последняя запись из журнала глобальных блокировок:",
+	"globalblocking-contribs-mock-log-line": "$1: $3 глобально {{GENDER:$2|заблокировал|заблокировала}} {{GENDER:$4|$5}} до $6 $7 $8 $9",
 	"globalblocking-showlog": "Этот участник уже был заблокирован ранее.\nНиже для справки приведён журнал блокировок:",
 	"globalblocking-contribs-log": "глобальные блокировки",
 	"globalblocking-contribs-block": "глобальная блокировка",
 	"globalblocking-contribs-modify": "изменить параметры глобальной блокировки",
 	"globalblocking-contribs-remove": "снять глобальную блокировку",
-	"globalblocklist": "Список заблокированных глобально IP-адресов",
+	"globalblocklist": "Список глобально заблокированных участников",
 	"globalblock": "Глобально заблокировать участника",
 	"globalblockstatus": "Локальные состояния глобальных блокировок",
 	"removeglobalblock": "Снять глобальную блокировку",
@@ -145,5 +148,7 @@
 	"globalblocking-blockedtext-email-feature": "Вы не можете использовать функцию «{{int:emailuser}}», если в ваших [[Special:Preferences|персональных настройках]] не указан действующий адрес электронной почты и вам не заблокировано его использование.",
 	"globalblocking-blockedtext-ip-range": "Заблокированный диапазон — $1.",
 	"globalblocking-blockedtext-proxy": "Заблокированный прокси-адрес был $1.",
-	"globalblocking-blockedtext-username": "Имя вашей учётной записи — $1 ."
+	"globalblocking-blockedtext-username": "Имя вашей учётной записи — $1 .",
+	"globalblocking-centralauth-admin-info-globalblock": "Глобально заблокирован(а):",
+	"globalblocking-global-autoblock-id": "Глобальная автоблокировка #$1"
 }
