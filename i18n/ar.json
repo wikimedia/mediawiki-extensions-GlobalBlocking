@@ -40,7 +40,7 @@
 	"globalblocking-local-failed": "لم ينجح منع عنوان IP محلياً لأن هذا العنوان ممنوع حالياً على هذا الويكي.",
 	"globalblocking-block-failure": "حدث خطأ أثناء محاولة منع $1 عالميا; حاول مرة اخرى.",
 	"globalblocking-block-alreadyblocked": "عنوان الأيبي $1 ممنوع منعا عاما بالفعل.\nيمكنك رؤية المنع الموجود في [[Special:GlobalBlockList|قائمة عمليات المنع العامة]]،\nأو تعديل إعدادات المنع الموجود عن طريق إعادة تنفيذ هذه الاستمارة.",
-	"globalblocking-bigrange": "النطاق الذي حددته ( $1 ) يتجاوز الحدود.! N! الحد $2 هو / $3 نطاق.",
+	"globalblocking-bigrange": "المدى الذي حددت ($1) يتجاوز الحدود. الحد $2 هو نطاق / $3.",
 	"globalblocking-also-local": "امنع أيضاً عنوان IP محلياً على هذا الويكي",
 	"globalblocking-also-local-talk": "منع المستخدم من تحرير صفحة الحديث الخاصة به محليًا",
 	"globalblocking-also-local-email": "منع المستخدم من إرسال البريد الإلكتروني محليًا",
@@ -133,7 +133,7 @@
 	"globalblocking-blockedtext-on-range": "عنوان IP الخاص بك موجود في نطاق تم حظره على جميع مواقع الويكي.",
 	"globalblocking-blockedtext-on-proxy": "تم حظر خادم وكيل واحد أو أكثر يستخدمه طلبك بشكل عام",
 	"globalblocking-blockedtext-blocker-admin": "يمكنك الاتصال بـ $1 لمناقشة الحظر.",
-	"globalblocking-blockedtext-email-feature": "لا يمكنك استخدام ميزة \"{{int: emailuser}}\" ما لم يتم تحديد عنوان بريد إلكتروني صالح في [[Special: Preferences | تفضيلات الحساب]] ولم يتم منعك من استخدامها.",
+	"globalblocking-blockedtext-email-feature": "لا يمكنك استخدام ميزة \"{{int:emailuser}}\" ما لم يتم تحديد عنوان بريد إلكتروني صالح في [[Special:Preferences|تفضيلات الحساب]] ولم يتم منعك من استخدامها.",
 	"globalblocking-blockedtext-ip-range": "النطاق المحظور هو $1 .",
 	"globalblocking-blockedtext-proxy": "كان عنوان الوكيل المحظور $1 ."
 }
