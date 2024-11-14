@@ -134,10 +134,14 @@ class GlobalBlockingGlobalBlockDetailsRenderer {
 
 		$wlinfo = $this->globalBlockLocalStatusLookup->getLocalStatusInfo( $row->gb_id );
 		if ( $wlinfo ) {
-			$options[] = $context->msg(
-				'globalblocking-list-whitelisted',
-				$this->userIdentityLookup->getUserIdentityByUserId( $wlinfo['user'] ), $wlinfo['reason']
-			)->text();
+			$user = $this->userIdentityLookup->getUserIdentityByUserId( $wlinfo['user'] );
+			if ( $user ) {
+				$options[] = $context->msg(
+					'globalblocking-list-whitelisted',
+					$user->getName(),
+					$wlinfo['reason']
+				)->text();
+			}
 		}
 
 		// If the block is set to target only anonymous users, then indicate this in the options list.
