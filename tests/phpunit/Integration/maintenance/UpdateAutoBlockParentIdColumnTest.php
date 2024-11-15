@@ -165,9 +165,6 @@ class UpdateAutoBlockParentIdColumnTest extends MaintenanceBaseTestCase {
 	}
 
 	protected function getSchemaOverrides( IMaintainableDatabase $db ) {
-		if ( $db->getType() !== 'mysql' ) {
-			return [];
-		}
 		return [
 			'scripts' => [
 				__DIR__ . '/patches/' . $db->getType() .
