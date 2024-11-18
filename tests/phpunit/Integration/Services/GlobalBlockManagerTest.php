@@ -156,12 +156,22 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 			[ 'anon-only' ]
 		);
 
+		$hookCalled = false;
+		$this->setTemporaryHook( 'GlobalBlockingGlobalBlockAudit', static function () use ( &$hookCalled ) {
+			$hookCalled = true;
+		} );
+
 		$errors = $globalBlockManager->block(
 			$data[ 'target' ],
 			$data[ 'reason' ],
 			$data[ 'expiry' ],
 			$this->getMutableTestUser( 'steward' )->getUser(),
 			$data[ 'options' ]
+		);
+		$this->assertSame(
+			$expectedError === '',
+			$hookCalled,
+			'GlobalBlockingGlobalBlockAudit hook was not called as expected'
 		);
 		if ( $expectedError !== '' ) {
 			$this->assertStatusMessage( $expectedError, $errors );

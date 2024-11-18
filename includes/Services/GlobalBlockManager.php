@@ -201,18 +201,20 @@ class GlobalBlockManager {
 				->execute();
 		}
 
+		// Fetch the newly inserted or updated row for use to construct a GlobalBlock object for use in autoblocks and
+		// the GlobalBlockingGlobalBlockAudit hook. We need to read from primary, as the changes are likely not
+		// applied to replicas yet.
+		$blockRow = $dbw->newSelectQueryBuilder()
+			->select( GlobalBlockLookup::selectFields() )
+			->from( 'globalblocks' )
+			->where( [ 'gb_id' => $blockId ] )
+			->caller( __METHOD__ )
+			->fetchRow();
+		$blockObject = GlobalBlock::newFromRow( $blockRow, false );
+
 		if ( $data['enableAutoblock'] ) {
 			// If autoblocks are enabled for this block, then perform retroactive autoblocks and update existing
 			// autoblock expiry times.
-			// Fetch the newly inserted or updated row for use in autoblocking. We need to read from primary, as
-			// the changes are likely not applied to replicas yet.
-			$blockRow = $dbw->newSelectQueryBuilder()
-				->select( GlobalBlockLookup::selectFields() )
-				->from( 'globalblocks' )
-				->where( [ 'gb_id' => $blockId ] )
-				->caller( __METHOD__ )
-				->fetchRow();
-
 			if ( $data['existingBlockId'] ?? 0 ) {
 				// Update corresponding global autoblock(s) if the block is modified to match the relevant settings
 				// from the modified parent block.
@@ -237,7 +239,6 @@ class GlobalBlockManager {
 
 			// Sanity check that autoblocking is enabled for this block. Use GlobalBlock::isAutoblocking as it also
 			// performs extra checks to determine if the block should cause autoblocks.
-			$blockObject = GlobalBlock::newFromRow( $blockRow, false );
 			if ( $blockObject->isAutoblocking() ) {
 				// Fetch the list of IP addresses to retroactively autoblock, which are provided by other extensions
 				// through handling the hook below (e.g. CheckUser).
@@ -256,6 +257,8 @@ class GlobalBlockManager {
 				}
 			}
 		}
+
+		$this->hookRunner->onGlobalBlockingGlobalBlockAudit( $blockObject );
 
 		return StatusValue::newGood( [
 			'id' => $blockId,
