@@ -53,12 +53,10 @@ class GlobalBlockingBlockPurger {
 	 *   provide the name of the target to ensure that expired global blocks are removed for this target.
 	 */
 	public function purgeExpiredBlocks( ?string $target = null ) {
-		$targetGlobalBlockIds = [];
-
 		$globaldbw = $this->globalBlockingConnectionProvider->getPrimaryGlobalBlockingDatabase();
 		if ( !$this->readOnlyMode->isReadOnly( $globaldbw->getDomainID() ) ) {
-			// Add IDs that are for blocks that are for the given $target, if one is provided. This means that
-			// block modifications of expired blocks are skipped.
+			// Prioritise removing any expired global block on the current target, so that block modifications on
+			// expired blocks are skipped and instead a new global block is created.
 			$totalLimitLeft = $this->options->get( MainConfigNames::UpdateRowsPerQuery );
 			if ( $target !== null ) {
 				$targetGlobalBlockId = $this->globalBlockLookup->getGlobalBlockId(
@@ -68,9 +66,10 @@ class GlobalBlockingBlockPurger {
 				if ( $targetGlobalBlockId ) {
 					$globaldbw->newDeleteQueryBuilder()
 						->deleteFrom( 'globalblocks' )
-						->where(
-							$globaldbw->expr( 'gb_expiry', '<=', $globaldbw->timestamp() )
-								->and( 'gb_id', '=', $targetGlobalBlockId )
+						->where( $globaldbw->expr( 'gb_expiry', '<=', $globaldbw->timestamp() ) )
+						->andWhere(
+							$globaldbw->expr( 'gb_id', '=', $targetGlobalBlockId )
+								->or( 'gb_autoblock_parent_id', '=', $targetGlobalBlockId )
 						)
 						->caller( __METHOD__ )
 						->execute();
@@ -113,10 +112,6 @@ class GlobalBlockingBlockPurger {
 				->limit( $this->options->get( MainConfigNames::UpdateRowsPerQuery ) )
 				->caller( __METHOD__ )
 				->fetchFieldValues();
-			$deleteWhitelistIds = array_slice(
-				array_merge( $targetGlobalBlockIds, $deleteWhitelistIds ), 0,
-				$this->options->get( MainConfigNames::UpdateRowsPerQuery )
-			);
 			if ( count( $deleteWhitelistIds ) ) {
 				$deleteWhitelistIds = array_map( 'intval', $deleteWhitelistIds );
 				$dbw->newDeleteQueryBuilder()
