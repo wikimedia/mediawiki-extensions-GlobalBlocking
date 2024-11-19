@@ -27,7 +27,8 @@
 			"Umherirrender",
 			"Urhixidur",
 			"Yekrats",
-			"Тест"
+			"Тест",
+			"McDutchie"
 		]
 	},
 	"globalblocking-apierror-badip": "{{doc-apierror}}\nParameters:\n* $1 - IP address or IP range that is not valid",
@@ -55,7 +56,7 @@
 	"apihelp-query+globalblocks-paramvalue-prop-id": "{{doc-apihelp-paramvalue|query+globalblocks|prop|id}}",
 	"apihelp-query+globalblocks-paramvalue-prop-target": "{{doc-apihelp-paramvalue|query+globalblocks|prop|target}}",
 	"apihelp-query+globalblocks-paramvalue-prop-address": "{{doc-apihelp-paramvalue|query+globalblocks|prop|address}}",
-	"apihelp-query+globalblocks-paramvalue-prop-by": "{{doc-apihelp-paramvalue|query+globalblocks|prop|by}}",
+	"apihelp-query+globalblocks-paramvalue-prop-by": "{{doc-singularthey}}\n{{doc-apihelp-paramvalue|query+globalblocks|prop|by}}",
 	"apihelp-query+globalblocks-paramvalue-prop-timestamp": "{{doc-apihelp-paramvalue|query+globalblocks|prop|timestamp}}",
 	"apihelp-query+globalblocks-paramvalue-prop-expiry": "{{doc-apihelp-paramvalue|query+globalblocks|prop|expiry}}",
 	"apihelp-query+globalblocks-paramvalue-prop-reason": "{{doc-apihelp-paramvalue|query+globalblocks|prop|reason}}",
