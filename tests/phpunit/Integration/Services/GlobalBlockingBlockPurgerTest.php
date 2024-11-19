@@ -55,19 +55,26 @@ class GlobalBlockingBlockPurgerTest extends MediaWikiIntegrationTestCase {
 				// The time to be set for the test
 				'20220405060708',
 				// What rows should be left in the table after the purge
-				[ '127.0.0.0/24', '127.0.0.1' ],
+				[ '127.0.0.0/24', '127.0.0.1', '127.0.0.2' ],
 				// How many rows should be left in the global_block_whitelist table after the test
 				1,
 				// The limit to be passed to the method under test
 				1000,
 			],
-			'One block to purge' => [ null, '20240505060708', [ '127.0.0.0/24' ], 1, 1000 ],
+			'One block to purge' => [ null, '20240505060708', [ '127.0.0.0/24', '127.0.0.2' ], 1, 1000 ],
 			'All blocks have expired' => [ null, '20250405060708', [], 0, 1000 ],
 			'All blocks have expired, but UpdateRowsPerQuery is 1' => [
-				null, '20260505060708', [ '127.0.0.0/24' ], 0, 1,
+				null, '20260505060708', [ '127.0.0.0/24', '127.0.0.2' ], 0, 1,
 			],
 			'All blocks have expired, UpdateRowsPerQuery is 1, target set as the /24' => [
-				'127.0.0.0/24', '20260505060708', [ '127.0.0.1' ], 0, 1,
+				'127.0.0.0/24', '20260505060708', [ '127.0.0.1', '127.0.0.2' ], 0, 1,
+			],
+			'All blocks have expired, UpdateRowsPerQuery is 1, target set as 127.0.0.1' => [
+				'127.0.0.1', '20260505060708',
+				// 127.0.0.2 is not expected here, even though the limit is 1, because any autoblock attached
+				// to the target block should be dropped too irrespective of the UpdateRowsPerQuery limit
+				[ '127.0.0.0/24' ],
+				0, 1,
 			],
 		];
 	}
@@ -88,7 +95,7 @@ class GlobalBlockingBlockPurgerTest extends MediaWikiIntegrationTestCase {
 		$this->testPurgeExpiredBlocks(
 			null,
 			'20260505060708',
-			$centralDbInReadOnlyMode ? [ '127.0.0.1', '127.0.0.0/24' ] : [],
+			$centralDbInReadOnlyMode ? [ '127.0.0.1', '127.0.0.0/24', '127.0.0.2' ] : [],
 			$localDbInReadOnlyMode ? 1 : 0,
 			1000
 		);
@@ -134,6 +141,20 @@ class GlobalBlockingBlockPurgerTest extends MediaWikiIntegrationTestCase {
 				'gb_range_start' => IPUtils::toHex( '127.0.0.0' ),
 				'gb_range_end' => IPUtils::toHex( '127.0.0.255' ),
 				'gb_autoblock_parent_id' => 0,
+			] )
+			->row( [
+				'gb_address' => '127.0.0.2',
+				'gb_by_central_id' => $this->getServiceContainer()
+					->getCentralIdLookup()
+					->centralIdFromLocalUser( $testUser ),
+				'gb_by_wiki' => WikiMap::getCurrentWikiId(),
+				'gb_reason' => 'test',
+				'gb_timestamp' => $this->getDb()->timestamp( '20230405060708' ),
+				'gb_anon_only' => 0,
+				'gb_expiry' => $this->getDb()->encodeExpiry( '20240605060708' ),
+				'gb_range_start' => IPUtils::toHex( '127.0.0.2' ),
+				'gb_range_end' => IPUtils::toHex( '127.0.0.2' ),
+				'gb_autoblock_parent_id' => 1,
 			] )
 			->caller( __METHOD__ )
 			->execute();
