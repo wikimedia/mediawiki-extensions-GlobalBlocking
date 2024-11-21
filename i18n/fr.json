@@ -25,7 +25,8 @@
 			"Alien333",
 			"Goombiis",
 			"Méthodes Bulebe Hangi",
-			"Thibaut120094"
+			"Thibaut120094",
+			"Mahabarata"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permet]] aux comptes, aux adresses IP et aux plages d'adresses IP d’être [[Special:GlobalBlockList|bloqués à travers plusieurs wikis]]",
@@ -42,6 +43,7 @@
 	"globalblocking-target": "Nom d’utilisateur, adresse IP ou plage d’adresses IP :",
 	"globalblocking-ipbanononly": "Ne bloquer globalement que les utilisateurs anonymes",
 	"globalblocking-block-ipinvalid": "L’adresse IP ($1) que vous avez entrée est incorrecte.\nVeuillez noter que vous ne pouvez pas inscrire un nom d’utilisateur !",
+	"globalblocking-block-target-invalid": "Le nom d'utilisateur, l'adresse IP ou la plage d'adresses IP ($1) que vous avez saisi n'est pas valide.",
 	"globalblocking-block-expiryinvalid": "La durée d’expiration que vous avez entrée est incorrecte.",
 	"globalblocking-block-submit": "Bloquer globalement cette adresse IP",
 	"globalblocking-modify-submit": "Modifier ce blocage global",
@@ -113,6 +115,11 @@
 	"globalblocking-blocked-nopassreset": "Vous ne pouvez pas réinitialiser les mots de passe utilisateur parce que votre adresse IP est bloquée globalement.",
 	"globalblocking-logpage": "Journal des blocages globaux",
 	"globalblocking-logpagetext": "Voici un journal des blocages globaux qui ont été faits et retirés sur ce wiki.\nNotez que les blocages globaux peuvent être faits ou annulés sur d’autres wikis, et que ces blocages globaux sont de nature à interférer sur ce wiki.\nPour visionner tous les blocages globaux actifs, vous pouvez visiter la [[Special:GlobalBlockList|liste des blocages globaux]].",
+	"globalblocking-logentry-block-old-format": "$1 {{GENDER:$2|}}a bloqué globalement {{GENDER:$4|}}$3 ($5)",
+	"globalblocking-logentry-block": "$1 {{GENDER:$2|}}a bloqué globalement {{GENDER:$4|}}$3 avec une date d'expiration au $5 $6",
+	"globalblocking-logentry-modify-old-format": "$1 {{GENDER:$2|}}a modifié les paramètres du blocage global de {{GENDER:$4|}}$3 ($5)",
+	"globalblocking-logentry-modify": "$1 {{GENDER:$2|}}a modifié les paramètres du blocage global de {{GENDER:$4|}}$3 avec une date d'expiration au $5 $6",
+	"globalblocking-logentry-unblock": "$1 {{GENDER:$2|}}a supprimé le blocage global de {{GENDER:$4|}}$3",
 	"globalblocking-logentry-whitelist": "$1{{GENDER:$2|}} a désactivé localement le blocage global sur {{GENDER:$4|$3}}",
 	"globalblocking-logentry-dewhitelist": "$1{{GENDER:$2|}} a de nouveau autorisé localement le blocage global sur {{GENDER:$4|$3}}",
 	"globalblocking-block-flag-anon-only": "utilisateurs anonymes seulement",
