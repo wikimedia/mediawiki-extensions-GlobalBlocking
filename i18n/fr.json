@@ -25,6 +25,7 @@
 			"Urhixidur",
 			"Verdy p",
 			"Wladek92",
+			"Woytecr",
 			"Wyz",
 			"Zetud"
 		]
@@ -152,7 +153,7 @@
 	"globalblocking-blockedtext-on-range": "Votre adresse IP est dans une plage qui a été bloquée sur tous les wikis de la Fondation Wikimedia.",
 	"globalblocking-blockedtext-on-proxy": "Un ou plusieurs serveurs mandataires utilisés par votre requête sont globalement bloqués.",
 	"globalblocking-blockedtext-on-user": "Votre compte a été bloqué sur tous les wikis.",
-	"globalblocking-blockedtext-autoblock-reason": "La raison invoquée est :\n\n:<em>$1</em>.",
+	"globalblocking-blockedtext-autoblock-reason": "La raison invoquée est:\n\n:<em>$1</em>.",
 	"globalblocking-blockedtext-autoblock-intro": "Votre adresse IP a été automatiquement et globalement bloquée car elle a été utilisée par un autre utilisateur qui a été bloqué par $1.",
 	"globalblocking-blockedtext-autoblock-intro-xff": "Un ou plusieurs serveurs proxy utilisés lors de votre demande ont été automatiquement et globalement bloqués car ils ont été utilisés par un autre utilisateur qui a été bloqué par $1.",
 	"globalblocking-blockedtext-blocker-admin": "Vous pouvez contacter $1 pour discuter du blocage.",
