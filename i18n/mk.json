@@ -73,7 +73,7 @@
 	"globalblocking-unblock-submit": "Отстрани го глобалниот блок",
 	"globalblocking-unblock-reason": "Причина:",
 	"globalblocking-unblock-unblocked": "Го отстранивте глобалниот блок на корисникот '''$1'''",
-	"globalblocking-unblock-unblocked-for-id-target": "Го остранивте глобалниот блок '''бр. $1'''.",
+	"globalblocking-unblock-unblocked-for-id-target": "Го отстранивте глобалниот блок '''бр. $1'''.",
 	"globalblocking-unblock-intro": "Овој образец служи за отстранување на глобални блокови.",
 	"globalblocking-whitelist": "Месен статус на глобални блокирања",
 	"globalblocking-whitelist-notapplied": "На ова вики не се применуваат глобални блокиви,\nпа затоа месниот статус на глобалните блокови не може да се менува.",

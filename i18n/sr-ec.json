@@ -26,6 +26,7 @@
 	"globalblocking-block-expiry-selector-other": "Друго време:",
 	"globalblocking-block-legend": "Блокирање IP адресе глобално",
 	"globalblocking-target": "Корисничко име, IP адреса, опсег IP адреса:",
+	"globalblocking-target-with-block-ids": "Корисничко име, IP адреса, IP опсег или ID блока:",
 	"globalblocking-ipbanononly": "Глобално блокирај само анонимне кориснике",
 	"globalblocking-block-target-invalid": "Корисничко име, IP адреса или опсег IP адреса ($1) који сте навели није ваљан.",
 	"globalblocking-block-expiryinvalid": "Време истека блока које сте унели није исправно.",
@@ -45,6 +46,7 @@
 	"globalblocking-list-whitelisted": "локално онемогућио $1: $2",
 	"globalblocking-list-whitelist": "локални статус",
 	"globalblocking-list-modify": "измени",
+	"globalblocking-list-block": "блокирај",
 	"globalblocking-list-tempblocks": "Сакриј привремене блокаде",
 	"globalblocking-list-indefblocks": "Сакриј трајне блокаде",
 	"globalblocking-list-addressblocks": "Сакриј блокаде појединачних IP адреса",
@@ -125,5 +127,7 @@
 	"globalblocking-blockedtext-email-feature": "Не можете користити функцију „{{int:emailuser}}” ако нисте навели ваљану имејл адресу у вашим [[Special:Preferences|подешавањима]] и ако вам иста није блокирана.",
 	"globalblocking-blockedtext-ip-range": "Блокирани опсег је $1.",
 	"globalblocking-blockedtext-proxy": "Блокирана прокси адреса је $1.",
-	"globalblocking-blockedtext-username": "Ваше корисничко име је $1."
+	"globalblocking-blockedtext-username": "Ваше корисничко име је $1.",
+	"globalblocking-centralauth-admin-info-globalblock": "Глобално блокиран:",
+	"globalblocking-global-autoblock-id": "Глобална аутоматска блокада #$1"
 }
