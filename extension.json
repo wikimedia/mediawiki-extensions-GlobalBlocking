@@ -80,6 +80,17 @@
 				"GlobalBlocking.GlobalBlockManager",
 				"GlobalBlocking.GlobalBlockingLinkBuilder"
 			]
+		},
+		"MassGlobalBlock": {
+			"class": "MediaWiki\\Extension\\GlobalBlocking\\Special\\SpecialMassGlobalBlock",
+			"services": [
+				"UserIdentityLookup",
+				"GlobalBlocking.GlobalBlockManager",
+				"GlobalBlocking.GlobalBlockLookup",
+				"GlobalBlocking.GlobalBlockingLinkBuilder",
+				"GlobalBlocking.GlobalBlockingGlobalBlockDetailsRenderer",
+				"GlobalBlocking.GlobalBlockingConnectionProvider"
+			]
 		}
 	},
 	"LogTypes": [
@@ -176,7 +187,8 @@
 			"remoteExtPath": "GlobalBlocking/modules/ext.globalBlocking.styles",
 			"styles": [
 				"special.globalBlockList.less",
-				"special.globalBlock.less"
+				"special.globalBlock.less",
+				"special.massGlobalBlock.less"
 			]
 		}
 	},
