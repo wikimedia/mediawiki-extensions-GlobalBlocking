@@ -45,7 +45,8 @@
 				"GlobalBlocking.GlobalBlockManager",
 				"GlobalBlocking.GlobalBlockingLinkBuilder",
 				"CentralIdLookup",
-				"UserNameUtils"
+				"UserNameUtils",
+				"GlobalBlocking.GlobalBlockingExpirySelectorBuilder"
 			]
 		},
 		"GlobalBlockList": {

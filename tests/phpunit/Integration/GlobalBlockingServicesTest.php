@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\GlobalBlocking\Test\Integration\Services;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingBlockPurger;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingExpirySelectorBuilder;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingGlobalAutoblockExemptionListProvider;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingGlobalBlockDetailsRenderer;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
@@ -52,6 +53,9 @@ class GlobalBlockingServicesTest extends MediaWikiIntegrationTestCase {
 			],
 			'::getGlobalBlockDetailsRenderer' => [
 				'getGlobalBlockDetailsRenderer', GlobalBlockingGlobalBlockDetailsRenderer::class,
+			],
+			'::getGlobalBlockingExpirySelectorBuilder' => [
+				'getGlobalBlockingExpirySelectorBuilder', GlobalBlockingExpirySelectorBuilder::class,
 			],
 		];
 	}

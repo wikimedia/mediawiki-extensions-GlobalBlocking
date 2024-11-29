@@ -22,6 +22,7 @@ namespace MediaWiki\Extension\GlobalBlocking;
 
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingBlockPurger;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingExpirySelectorBuilder;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingGlobalAutoblockExemptionListProvider;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingGlobalBlockDetailsRenderer;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
@@ -99,5 +100,9 @@ class GlobalBlockingServices {
 
 	public function getGlobalBlockDetailsRenderer(): GlobalBlockingGlobalBlockDetailsRenderer {
 		return $this->serviceContainer->get( 'GlobalBlocking.GlobalBlockingGlobalBlockDetailsRenderer' );
+	}
+
+	public function getGlobalBlockingExpirySelectorBuilder(): GlobalBlockingExpirySelectorBuilder {
+		return $this->serviceContainer->get( 'GlobalBlocking.GlobalBlockingExpirySelectorBuilder' );
 	}
 }

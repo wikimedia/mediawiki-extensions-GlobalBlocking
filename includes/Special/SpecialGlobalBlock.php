@@ -7,6 +7,7 @@ use MediaWiki\Block\BlockUserFactory;
 use MediaWiki\Block\BlockUtils;
 use MediaWiki\CommentStore\CommentStore;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingExpirySelectorBuilder;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockManager;
 use MediaWiki\Html\Html;
@@ -39,16 +40,8 @@ class SpecialGlobalBlock extends FormSpecialPage {
 	private GlobalBlockingLinkBuilder $globalBlockingLinkBuilder;
 	private CentralIdLookup $centralIdLookup;
 	private UserNameUtils $userNameUtils;
+	private GlobalBlockingExpirySelectorBuilder $globalBlockingExpirySelectorBuilder;
 
-	/**
-	 * @param BlockUserFactory $blockUserFactory
-	 * @param BlockUtils $blockUtils
-	 * @param GlobalBlockingConnectionProvider $globalBlockingConnectionProvider
-	 * @param GlobalBlockManager $globalBlockManager
-	 * @param GlobalBlockingLinkBuilder $globalBlockingLinkBuilder
-	 * @param CentralIdLookup $centralIdLookup
-	 * @param UserNameUtils $userNameUtils
-	 */
 	public function __construct(
 		BlockUserFactory $blockUserFactory,
 		BlockUtils $blockUtils,
@@ -56,7 +49,8 @@ class SpecialGlobalBlock extends FormSpecialPage {
 		GlobalBlockManager $globalBlockManager,
 		GlobalBlockingLinkBuilder $globalBlockingLinkBuilder,
 		CentralIdLookup $centralIdLookup,
-		UserNameUtils $userNameUtils
+		UserNameUtils $userNameUtils,
+		GlobalBlockingExpirySelectorBuilder $globalBlockingExpirySelectorBuilder
 	) {
 		parent::__construct( 'GlobalBlock', 'globalblock' );
 		$this->blockUserFactory = $blockUserFactory;
@@ -66,6 +60,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 		$this->globalBlockingLinkBuilder = $globalBlockingLinkBuilder;
 		$this->centralIdLookup = $centralIdLookup;
 		$this->userNameUtils = $userNameUtils;
+		$this->globalBlockingExpirySelectorBuilder = $globalBlockingExpirySelectorBuilder;
 	}
 
 	/** @inheritDoc */
@@ -79,6 +74,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 		$this->addHelpLink( 'Extension:GlobalBlocking' );
 		$out = $this->getOutput();
 		$out->addModules( 'ext.globalBlocking' );
+		$out->addModuleStyles( 'ext.globalBlocking.styles' );
 		$out->setSubtitle( $this->globalBlockingLinkBuilder->buildSubtitleLinks( $this ) );
 	}
 
@@ -165,7 +161,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 	 * @return array
 	 */
 	protected function getFormFields() {
-		$getExpiry = self::buildExpirySelector();
+		$getExpiry = $this->globalBlockingExpirySelectorBuilder->buildExpirySelector( $this->getContext() );
 		$targetIsAnAccount = $this->target && !IPUtils::isIPAddress( $this->target );
 		$fields = [
 			'Address' => [
@@ -396,39 +392,6 @@ class SpecialGlobalBlock extends FormSpecialPage {
 			$this->msg( 'globalblocking-add-block' )->text()
 		);
 		$this->getOutput()->addHTML( $link );
-	}
-
-	/**
-	 * Get an array of suggested block durations. Retrieved from
-	 * 'globalblocking-expiry-options' and if it's disabled (default),
-	 * retrieve it from SpecialBlock's 'ipboptions' message.
-	 *
-	 * @return array Expiry options, empty if messages are disabled.
-	 * @see SpecialBlock::getSuggestedDurations()
-	 */
-	protected function buildExpirySelector() {
-		$msg = $this->msg( 'globalblocking-expiry-options' )->inContentLanguage();
-		if ( $msg->isDisabled() ) {
-			$msg = $this->msg( 'ipboptions' )->inContentLanguage();
-			if ( $msg->isDisabled() ) {
-				// Do not assume that 'ipboptions' exists forever.
-				$msg = false;
-			}
-		}
-
-		$options = [];
-		if ( $msg !== false ) {
-			$msg = $msg->text();
-			foreach ( explode( ',', $msg ) as $option ) {
-				if ( strpos( $option, ':' ) === false ) {
-					$option = "$option:$option";
-				}
-
-				[ $show, $value ] = explode( ':', $option );
-				$options[$show] = $value;
-			}
-		}
-		return $options;
 	}
 
 	/** @inheritDoc */

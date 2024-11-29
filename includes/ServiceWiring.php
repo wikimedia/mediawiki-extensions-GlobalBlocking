@@ -5,6 +5,7 @@ use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingBlockPurger;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingExpirySelectorBuilder;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingGlobalAutoblockExemptionListProvider;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingGlobalBlockDetailsRenderer;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
@@ -158,6 +159,9 @@ return [
 			$globalBlockingServices->getGlobalBlockLocalStatusLookup(),
 			$globalBlockingServices->getGlobalBlockingLinkBuilder()
 		);
+	},
+	'GlobalBlocking.GlobalBlockingExpirySelectorBuilder' => static function (): GlobalBlockingExpirySelectorBuilder {
+		return new GlobalBlockingExpirySelectorBuilder();
 	}
 ];
 
