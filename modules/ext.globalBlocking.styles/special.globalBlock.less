@@ -1,6 +1,8 @@
-/* Matches the styling used for Special:BlockList, where the tool links are a bit smaller and on a new line. */
-.mw-globalblocking-globalblocklist .mw-usertoollinks,
-.mw-globalblocking-globalblocklist-actions {
-	white-space: nowrap;
-	font-size: 90%;
+// Special:GlobalBlock uses form fields which are initially hidden using 'hide-if'. However, these elements
+// don't get hidden until the JS has loaded which causes the elements to flash into and out of existence on load.
+// Hiding them until JS is loaded avoids this flash.
+.client-js .mw-special-GlobalBlock {
+	.mw-htmlform-hide-if:not( .mw-globalblocking-js-loaded ) {
+		display: none;
+	}
 }

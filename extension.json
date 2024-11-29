@@ -159,7 +159,8 @@
 			"remoteExtPath": "GlobalBlocking/modules/ext.globalBlocking",
 			"packageFiles": [
 				"dispatcher.js",
-				"special.globalBlock.js"
+				"special.globalBlock.js",
+				"preventFlashFromHideIfFields.js"
 			],
 			"dependencies": [
 				"oojs-ui-core",
@@ -174,6 +175,7 @@
 			"localBasePath": "modules/ext.globalBlocking.styles",
 			"remoteExtPath": "GlobalBlocking/modules/ext.globalBlocking.styles",
 			"styles": [
+				"special.globalBlockList.less",
 				"special.globalBlock.less"
 			]
 		}
@@ -185,7 +187,9 @@
 			"tests/qunit/index.js",
 			"tests/qunit/ext.globalBlocking/special.globalBlock.test.js",
 			"tests/qunit/ext.globalBlocking/cases/checkboxDisabledState.json",
-			"modules/ext.globalBlocking/special.globalBlock.js"
+			"tests/qunit/ext.globalBlocking/preventFlashFromHideIfFields.test.js",
+			"modules/ext.globalBlocking/special.globalBlock.js",
+			"modules/ext.globalBlocking/preventFlashFromHideIfFields.js"
 		],
 		"dependencies": [
 			"mediawiki.qunit-testrunner",
