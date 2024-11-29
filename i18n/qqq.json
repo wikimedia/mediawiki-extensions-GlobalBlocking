@@ -62,6 +62,7 @@
 	"globalblocking-block-expiryinvalid": "Used as error message on Special:GlobalBlock if expiry time entered was invalid.",
 	"globalblocking-block-anononly-on-account": "Used as error message on Special:GlobalBlock if the blocker tries to globally block an account when they have specified that the block should only apply to anonymous users.",
 	"globalblocking-block-enable-autoblock-on-ip": "Used as an error message on Special:GlobalBlock if the blocker tries to globally block an IP address or IP range with autoblocks enabled.",
+	"globalblocking-block-modifying-global-autoblock": "Used as an error message on Special:GlobalBlock if the blocker tries to modify a global autoblock.",
 	"globalblocking-block-submit": "Used as submit button text on Special:GlobalBlock form.\n\nSee also:\n* {{msg-mw|globalblocking-modify-submit}}\n* {{msg-mw|ipbsubmit}}\n* {{msg-mw|globalblocking-block-submit-new}}",
 	"globalblocking-modify-submit": "Used as submit button text on Special:GlobalBlock form when modifying an existing global block.\n\nSee also:\n* {{msg-mw|globalblocking-modify-submit}}\n* {{msg-mw|ipb-change-block}}",
 	"globalblocking-block-success": "Used in [[Special:GlobalBlock]]. Parameters:\n* $1 - IP address, IP range, or username\n\nSee also: {{msg-mw|globalblocking-modify-success}}",

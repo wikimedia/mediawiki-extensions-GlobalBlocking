@@ -87,7 +87,7 @@ class GlobalBlockManager {
 			return StatusValue::newFatal( 'globalblocking-block-expiryinvalid' );
 		}
 
-		$status = $this->validateInput( $target, $blocker );
+		$status = $this->validateGlobalBlockTarget( $target, $blocker );
 
 		if ( !$status->isOK() ) {
 			return $status;
@@ -114,10 +114,25 @@ class GlobalBlockManager {
 			return StatusValue::newFatal( 'globalblocking-block-enable-autoblock-on-ip', $data['targetForDisplay'] );
 		}
 
-		// Check for an existing block in the primary database database
-		$existingBlock = $this->globalBlockLookup->getGlobalBlockId( $data['targetForLookup'], DB_PRIMARY );
-		if ( !$modify && $existingBlock ) {
+		// Look to see if this target is already globally blocked.
+		$existingGlobalBlockId = $this->globalBlockLookup->getGlobalBlockId( $data['targetForLookup'], DB_PRIMARY );
+		if ( !$modify && $existingGlobalBlockId ) {
 			return StatusValue::newFatal( 'globalblocking-block-alreadyblocked', $data['targetForDisplay'] );
+		}
+
+		// Prevent modifications of global autoblocks. This check is not performed when calling ::unblock, so that
+		// autoblocks can be removed.
+		$isExistingGlobalBlockAnAutoblock = $this->globalBlockingConnectionProvider->getPrimaryGlobalBlockingDatabase()
+			->newSelectQueryBuilder()
+			->select( 'gb_autoblock_parent_id' )
+			->from( 'globalblocks' )
+			->where( [ 'gb_id' => $existingGlobalBlockId ] )
+			->caller( __METHOD__ )
+			->fetchField();
+		if ( $isExistingGlobalBlockAnAutoblock ) {
+			return StatusValue::newFatal(
+				'globalblocking-block-modifying-global-autoblock', $data['targetForDisplay']
+			);
 		}
 
 		// At this point, we have validated that a block can be inserted or updated.
@@ -130,7 +145,7 @@ class GlobalBlockManager {
 			'anonOnly' => $anonOnly,
 			'allowAccountCreation' => $allowAccountCreation,
 			'enableAutoblock' => $enableAutoblock,
-			'existingBlockId' => $existingBlock,
+			'existingBlockId' => $existingGlobalBlockId,
 		], $data ) );
 	}
 
@@ -488,7 +503,7 @@ class GlobalBlockManager {
 	 * @return StatusValue An empty or fatal status
 	 */
 	public function unblock( string $target, string $reason, UserIdentity $performer ): StatusValue {
-		$status = $this->validateInput( $target, $performer );
+		$status = $this->validateGlobalBlockTarget( $target, $performer );
 
 		if ( !$status->isOK() ) {
 			return $status;
@@ -533,7 +548,7 @@ class GlobalBlockManager {
 	 *   valid target with keys 'target', 'targetForDisplay', 'targetForLookup', 'targetCentralId',
 	 *   'rangeStart', and 'rangeEnd'.
 	 */
-	private function validateInput( string $target, UserIdentity $performer ): StatusValue {
+	public function validateGlobalBlockTarget( string $target, UserIdentity $performer ): StatusValue {
 		$targetForDisplay = $target;
 		$targetForLookup = null;
 

@@ -473,6 +473,41 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 			->assertEmptyResult();
 	}
 
+	public function testAutoblockModificationFails() {
+		// Create a test global block on an existing user which enables autoblocks.
+		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager();
+		$targetUserIdentity = $this->getTestUser()->getUserIdentity();
+		$parentBlockStatus = $globalBlockManager->block(
+			$targetUserIdentity->getName(), 'testing', 'infinity', $this->getTestUser( 'steward' )->getUser(),
+			[ 'enable-autoblock' ]
+		);
+		$this->assertStatusGood( $parentBlockStatus );
+		$parentBlockId = $parentBlockStatus->getValue()['id'];
+		// Create an autoblock for the user block created above
+		$autoblockStatus = $globalBlockManager->autoblock( $parentBlockId, '1.2.3.6' );
+		$this->assertStatusGood( $autoblockStatus );
+		$autoblockId = $autoblockStatus->getValue()['id'];
+		// Verify that the autoblock actually exists in the DB and get the properties of the autoblock, so that we
+		// can check that they have not changed after the call to ::block.
+		$autoblockRowBeforeCallToBlock = $this->newSelectQueryBuilder()
+			->select( [ 'gb_expiry', 'gb_reason' ] )
+			->from( 'globalblocks' )
+			->where( [ 'gb_id' => $autoblockId ] )
+			->fetchRow();
+		$this->assertNotFalse( $autoblockRowBeforeCallToBlock );
+		// Attempt to modify the global autoblock, and assert that it should fail.
+		$parentBlockModifyStatus = $globalBlockManager->block(
+			'#' . $autoblockId, 'modify test', 'infinity', $this->getTestUser( 'steward' )->getUser(), [ 'modify' ]
+		);
+		$this->assertStatusError( 'globalblocking-block-modifying-global-autoblock', $parentBlockModifyStatus );
+		// Check that the autoblock has not been modified in the DB.
+		$this->newSelectQueryBuilder()
+			->select( [ 'gb_expiry', 'gb_reason' ] )
+			->from( 'globalblocks' )
+			->where( [ 'gb_id' => $autoblockId ] )
+			->assertRowValue( array_values( (array)$autoblockRowBeforeCallToBlock ) );
+	}
+
 	private function assertAutoblockParametersAreAsExpected( $autoblockIds, $expectedRows ) {
 		$this->newSelectQueryBuilder()
 			->select( [ 'gb_id', 'gb_by_central_id', 'gb_create_account', 'gb_reason', 'gb_expiry' ] )
