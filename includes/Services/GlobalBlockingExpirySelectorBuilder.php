@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Services;
 
+use MediaWiki\Xml\XmlSelect;
 use MessageLocalizer;
 
 /**
@@ -29,18 +30,10 @@ class GlobalBlockingExpirySelectorBuilder {
 			}
 		}
 
-		$options = [];
-		if ( $msg !== false ) {
-			$msg = $msg->text();
-			foreach ( explode( ',', $msg ) as $option ) {
-				if ( strpos( $option, ':' ) === false ) {
-					$option = "$option:$option";
-				}
-
-				[ $show, $value ] = explode( ':', $option );
-				$options[$show] = $value;
-			}
+		if ( $msg ) {
+			return XmlSelect::parseOptionsMessage( $msg->text() );
+		} else {
+			return [];
 		}
-		return $options;
 	}
 }
