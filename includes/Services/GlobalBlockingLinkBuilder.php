@@ -65,6 +65,12 @@ class GlobalBlockingLinkBuilder {
 				$title, $sp->msg( 'globalblocking-goto-block' )->text()
 			);
 		}
+		if ( $pagetype !== 'MassGlobalBlock' && $canBlock ) {
+			$title = SpecialPage::getTitleFor( 'MassGlobalBlock' );
+			$links[] = $this->linkRenderer->makeKnownLink(
+				$title, $sp->msg( 'globalblocking-goto-mass-block' )->text()
+			);
+		}
 		if ( $pagetype !== 'RemoveGlobalBlock' && $canBlock ) {
 			$title = SpecialPage::getTitleFor( 'RemoveGlobalBlock' );
 			$links[] = $this->linkRenderer->makeKnownLink(

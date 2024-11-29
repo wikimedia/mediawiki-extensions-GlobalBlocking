@@ -68,6 +68,7 @@
 	"globalblocking-goto-block": "Globally block a user",
 	"globalblocking-goto-unblock": "Remove a global block",
 	"globalblocking-goto-status": "Change local status for a global block",
+	"globalblocking-goto-mass-block": "Globally block multiple users",
 	"globalblocking-return": "Return to the list of global blocks",
 	"globalblocking-add-block": "Add another global block",
 	"globalblocking-notblocked": "The user ($1) you entered is not globally blocked.",

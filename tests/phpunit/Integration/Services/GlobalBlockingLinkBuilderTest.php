@@ -134,6 +134,11 @@ class GlobalBlockingLinkBuilderTest extends MediaWikiIntegrationTestCase {
 			$actualSubtitleLinks,
 			'Expected ::buildSubtitleLinks to not return a link to Special:RemoveGlobalBlock'
 		);
+		$this->assertStringNotContainsString(
+			SpecialPage::getTitleFor( 'MassGlobalBlock' )->getText(),
+			$actualSubtitleLinks,
+			'Expected ::buildSubtitleLinks to not return a link to Special:MassGlobalBlock'
+		);
 	}
 
 	public function testBuildSubtitleLinksWithGlobalBlockAndGlobalBlockWhitelistRights() {
@@ -160,6 +165,11 @@ class GlobalBlockingLinkBuilderTest extends MediaWikiIntegrationTestCase {
 			SpecialPage::getTitleFor( 'RemoveGlobalBlock' )->getText(),
 			$actualSubtitleLinks,
 			'Expected ::buildSubtitleLinks to return a link to Special:RemoveGlobalBlock'
+		);
+		$this->assertStringContainsString(
+			SpecialPage::getTitleFor( 'MassGlobalBlock' )->getText(),
+			$actualSubtitleLinks,
+			'Expected ::buildSubtitleLinks to return a link to Special:MassGlobalBlock'
 		);
 	}
 
