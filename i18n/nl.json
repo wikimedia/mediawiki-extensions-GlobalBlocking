@@ -37,6 +37,7 @@
 	"globalblocking-block-expiryinvalid": "De vervaldatum/tijd die u hebt opgegeven is ongeldig.",
 	"globalblocking-block-anononly-on-account": "Het blokkeren van accounts kan niet uitsluitend van toepassing zijn op anonieme gebruikers.",
 	"globalblocking-block-enable-autoblock-on-ip": "Automatische blokkades kunnen alleen worden ingeschakeld voor het blokkeren van accounts.",
+	"globalblocking-block-modifying-global-autoblock": "Automatische blokkades kunnen alleen worden verwijderd en niet gewijzigd.",
 	"globalblocking-block-submit": "Dit IP-adres globaal blokkeren",
 	"globalblocking-modify-submit": "Deze globale blokkade wijzigen",
 	"globalblocking-block-success": "'''$1''' is geblokkeerd op alle wiki's.",

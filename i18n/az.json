@@ -30,6 +30,7 @@
 	"globalblocking-block-expiryinvalid": "Daxil etdiyiniz bitmə müddəti etibarsızdır.",
 	"globalblocking-block-anononly-on-account": "Hesabların bloklanması yalnız anonim istifadəçilərə tətbiq edilə bilməz.",
 	"globalblocking-block-enable-autoblock-on-ip": "Avtobloklar yalnız hesablardakı bloklar üçün aktivləşdirilə bilər.",
+	"globalblocking-block-modifying-global-autoblock": "Avtobloklar yalnız ləğv edilə bilər, redaktə edilə bilməz.",
 	"globalblocking-block-submit": "Bu istifadəçini qlobal olaraq blokla",
 	"globalblocking-modify-submit": "Bu qlobal bloku redaktə et",
 	"globalblocking-block-success": "'''$1''' bütün vikilərdə bloklanıb.",

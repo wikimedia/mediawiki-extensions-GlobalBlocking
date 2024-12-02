@@ -31,6 +31,7 @@
 	"globalblocking-block-target-invalid": "Корисничко име, IP адреса или опсег IP адреса ($1) који сте навели није ваљан.",
 	"globalblocking-block-expiryinvalid": "Време истека блока које сте унели није исправно.",
 	"globalblocking-block-anononly-on-account": "Блокирање налога не може се применити само на анонимне кориснике.",
+	"globalblocking-block-modifying-global-autoblock": "Аутоблокови се могу само уклањати не и мењати.",
 	"globalblocking-block-submit": "Блокирај ову IP адресу глобално",
 	"globalblocking-modify-submit": "Промени овај глобални блок",
 	"globalblocking-block-success": "'''$1''' је блокирана на свим викијима.",

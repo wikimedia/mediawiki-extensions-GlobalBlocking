@@ -116,6 +116,7 @@
 	"globalblocking-block-flag-account-creation-disabled": "tunnusten luonti estetty",
 	"globalblocking-loglink": "Käyttäjä $1 on estetty järjestelmänlaajuisesti ([[{{#Special:GlobalBlockList}}/$1|tiedot]]).",
 	"globalblocking-contribs-notice": "Tämä käyttäjä on tällä hetkellä estetty järjestelmänlaajuisesti.\nAlla on järjestelmänlaajusen estolokin tapahtuma:",
+	"globalblocking-contribs-mock-log-line": "$1: $3 {{GENDER:$2|esti}} käyttäjän {{GENDER:$4|$5}}. Eston kesto on $6 $7 $8 $9",
 	"globalblocking-showlog": "Tämä käyttäjä on ollut estettynä.\nAlla on ote estolokista.",
 	"globalblocking-contribs-log": "järjestelmänlaajuisten estojen loki",
 	"globalblocking-contribs-block": "järjestelmänlaajuinen esto",

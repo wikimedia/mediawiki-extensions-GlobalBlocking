@@ -35,6 +35,7 @@
 	"globalblocking-block-target-invalid": "입력한 사용자 이름, IP 주소 또는 IP 대역($1)이 잘못되었습니다.",
 	"globalblocking-block-expiryinvalid": "입력한 기한이 잘못되었습니다.",
 	"globalblocking-block-anononly-on-account": "계정 차단은 익명 사용자에게만 적용될 수 없습니다.",
+	"globalblocking-block-modifying-global-autoblock": "자동 차단은 제거만 가능하며 수정은 불가능합니다.",
 	"globalblocking-block-submit": "이 IP 주소를 전역 차단",
 	"globalblocking-modify-submit": "전역 차단 설정 바꾸기",
 	"globalblocking-block-success": "'''$1'''는 모든 위키에서 차단되었습니다.",

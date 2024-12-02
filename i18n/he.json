@@ -31,6 +31,7 @@
 	"globalblocking-block-expiryinvalid": "זמן הפקיעה שהזנת אינו תקין.",
 	"globalblocking-block-anononly-on-account": "חסימות בחשבונות לא יכולות לחול רק על משתמשים אלמוניים.",
 	"globalblocking-block-enable-autoblock-on-ip": "ניתן להפעיל חסימות אוטומטיות רק עבור חסימות בחשבונות.",
+	"globalblocking-block-modifying-global-autoblock": "ניתן רק להסיר חסימות אוטומטיות ולא לשנות אותן.",
 	"globalblocking-block-submit": "חסימה גלובלית של כתובת ה־IP הזאת",
 	"globalblocking-modify-submit": "שינוי החסימה הגלובלית הזאת",
 	"globalblocking-block-success": "'''$1''' נחסם בכל אתרי הוויקי.",

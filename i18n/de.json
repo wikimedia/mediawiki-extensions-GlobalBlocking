@@ -39,6 +39,7 @@
 	"globalblocking-block-expiryinvalid": "Die eingegebene Sperrdauer ist ungültig.",
 	"globalblocking-block-anononly-on-account": "Sperrungen von Accounts können sich nicht nur auf anonyme Nutzer beziehen.",
 	"globalblocking-block-enable-autoblock-on-ip": "Autoblocks können nur für Kontosperrungen aktiviert werden.",
+	"globalblocking-block-modifying-global-autoblock": "Automatische Sperren können nur entfernt, aber nicht verändert werden.",
 	"globalblocking-block-submit": "IP-Adresse global sperren",
 	"globalblocking-modify-submit": "Globale Sperre ändern",
 	"globalblocking-block-success": "'''$1''' wurde auf allen Wikis gesperrt.",
