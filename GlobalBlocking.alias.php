@@ -45,6 +45,14 @@ $specialPageAliases['av'] = [
 	'RemoveGlobalBlock' => [ 'Глобальная_разблокировка' ],
 ];
 
+/** Azerbaijani (azərbaycanca) */
+$specialPageAliases['az'] = [
+	'GlobalBlock' => [ 'QlobalBlok' ],
+	'GlobalBlockList' => [ 'QlobalBlokSiyahısı', 'QlobalBloklar' ],
+	'RemoveGlobalBlock' => [ 'QlobalBlokuAç' ],
+	'GlobalBlockStatus' => [ 'QlobalBlokAğSiyahı', 'QlobalBlokStatusu' ],
+];
+
 /** Bashkir (башҡортса) */
 $specialPageAliases['ba'] = [
 	'GlobalBlock' => [ 'GlobalBlock' ],
