@@ -118,9 +118,18 @@
 	"globalblocking-contribs-block": "global block",
 	"globalblocking-contribs-modify": "modify the global block",
 	"globalblocking-contribs-remove": "remove the global block",
+	"globalblocking-mass-block-legend": "Globally block or unblock multiple targets",
+	"globalblocking-mass-block-blocked": "Yes",
+	"globalblocking-mass-block-not-blocked": "No",
+	"globalblocking-mass-block-header-status": "Globally blocked",
+	"globalblocking-mass-block-query-legend": "Query targets to globally block or unblock",
+	"globalblocking-mass-block-query-placeholder": "Enter one or more IP addresses, IP ranges, accounts, or global block IDs. Each should be separated by a new-line.",
+	"globalblocking-mass-block-query-submit": "Search",
+	"massglobalblock-summary": "You can use this page to block multiple users and/or IP addresses on all wikis.",
 	"globalblocklist": "List of globally blocked users",
 	"globalblock": "Globally block a user",
 	"globalblockstatus": "Local status of global blocks",
+	"massglobalblock": "Globally block multiple users",
 	"removeglobalblock": "Remove a global block",
 	"right-globalblock": "Make and remove global blocks",
 	"action-globalblock": "make and remove global blocks",
@@ -151,5 +160,6 @@
 	"globalblocking-autoblocker-hidden-block": "Globally autoblocked because your IP address has been recently used by a user blocked by block ID #$1.",
 	"globalblocking-centralauth-admin-info-globalblock": "Globally blocked:",
 	"globalblocking-globalautoblock-exemptionlist": "",
-	"globalblocking-global-autoblock-id": "Global autoblock #$1"
+	"globalblocking-global-autoblock-id": "Global autoblock #$1",
+	"globalblocking-global-block-id": "Global block #$1"
 }

@@ -155,10 +155,19 @@
 	"globalblocking-contribs-block": "Used as link title in [[Special:Contributions]] and in [[Special:DeletedContributions]] leading to the block form.\n\nSee also:\n* {{msg-mw|blocklink}}",
 	"globalblocking-contribs-modify": "Used as link title in [[Special:Contributions]] and in [[Special:DeletedContributions]].\n\nSee also:\n* {{msg-mw|change-blocklink}}",
 	"globalblocking-contribs-remove": "Used as link title in [[Special:Contributions]] and in [[Special:DeletedContributions]].\n\nSee also:\n* {{msg-mw|unblocklink}}",
+	"globalblocking-mass-block-legend": "Legend for the form that allows performing the mass global blocks or unblocks. Target refers to any or all of a username, IP address, IP range, or global block ID.",
+	"globalblocking-mass-block-blocked": "Used to indicate that a given target is currently globally blocked.\n\n{{Identical|yes}}",
+	"globalblocking-mass-block-not-blocked": "Used to indicate that a given target is currently not globally blocked.\n\n{{Identical|no}}",
+	"globalblocking-mass-block-header-status": "Used as a heading for a table that indicates the global block status of several targets. A target is a username, IP address, IP range, or global block ID.",
+	"globalblocking-mass-block-query-legend": "Legend text used in the form that allows a user to enter usernames, IP addresses, IP ranges, and/or global block IDs to globally block or unblock.",
+	"globalblocking-mass-block-query-placeholder": "Placeholder text for an input which accepts targets separated by a new line character. A target is a username, IP address, IP range, or global block ID.",
+	"globalblocking-mass-block-query-submit": "Submit button text for a form that allows a user to lookup targets to globally block or unblock. A target is a username, IP address, IP range, or global block ID.",
+	"massglobalblock-summary": "Text used to describe the function of the Special:MassGlobalBlock page.",
 	"globalblocklist": "{{doc-special|GlobalBlockList}}",
 	"globalblock": "{{doc-special|GlobalBlock}}",
 	"globalblockstatus": "{{doc-special|GlobalBlockStatus}}",
 	"removeglobalblock": "{{doc-special|RemoveGlobalBlock}}",
+	"massglobalblock": "{{doc-special|MassGlobalBlock}}",
 	"right-globalblock": "{{doc-right|globalblock}}",
 	"action-globalblock": "{{doc-action|globalblock}}",
 	"right-globalblock-whitelist": "{{doc-right|globalblock-whitelist}}",
@@ -188,5 +197,6 @@
 	"globalblocking-autoblocker-hidden-block": "Used as the reason for a global autoblock of an IP address if the target of the block is hidden from public view.\n* $1 - The global block ID of the block that caused the autoblock.\n\nSee also: {{msg-mw|globalblocking-autoblocker}}, which is used instead of this message if the target username is publicly viewable.",
 	"globalblocking-centralauth-admin-info-globalblock": "Used as a label on Special:CentralAuth for the global account information field that displays if the user is globally blocked or not globally blocked.",
 	"globalblocking-globalautoblock-exemptionlist": "{{notranslate}}",
-	"globalblocking-global-autoblock-id": "Used as the target of an global autoblock, instead of displaying the autoblocked IP. Similar to {{msg-mw|autoblockid}}.\n\nParameters:\n* $1 - autoblock ID"
+	"globalblocking-global-autoblock-id": "Used as the target of an global autoblock, instead of displaying the autoblocked IP. Similar to {{msg-mw|autoblockid}}.\n\nParameters:\n* $1 - autoblock ID",
+	"globalblocking-global-block-id": "Used on Special:MassGlobalBlock table for a global block ID in the target table.\n\nParameters:\n* $1 - global block ID."
 }
