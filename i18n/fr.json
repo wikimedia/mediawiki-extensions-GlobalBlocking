@@ -48,6 +48,7 @@
 	"globalblocking-block-expiryinvalid": "La durée d’expiration que vous avez entrée est incorrecte.",
 	"globalblocking-block-anononly-on-account": "Les blocages de comptes ne peuvent pas s'appliquer uniquement aux utilisateurs anonymes.",
 	"globalblocking-block-enable-autoblock-on-ip": "Les blocages automatiques ne peuvent être activés que pour des blocages de comptes.",
+	"globalblocking-block-modifying-global-autoblock": "Les blocages automatiques ne peuvent être que supprimés, pas modifiés.",
 	"globalblocking-block-submit": "Bloquer globalement cette adresse IP",
 	"globalblocking-modify-submit": "Modifier ce blocage global",
 	"globalblocking-block-success": "'''$1''' a été bloqué sur tous les wikis.",
