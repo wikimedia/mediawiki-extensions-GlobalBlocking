@@ -99,5 +99,12 @@ class GlobalBlockingSchemaHooks implements LoadExtensionSchemaUpdatesHook {
 			'gbw_target_central_id',
 			"$base/sql/$type/patch-global_block_whitelist-drop-gbw_target_central_id.sql"
 		);
+		if ( $type === 'mysql' ) {
+			$updater->modifyExtensionField(
+				'global_block_whitelist',
+				'gbw_expiry',
+				"$base/sql/$type/patch-global_block_whitelist-gbw_expiry-type.sql"
+			);
+		}
 	}
 }
