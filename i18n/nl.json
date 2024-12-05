@@ -122,9 +122,18 @@
 	"globalblocking-contribs-block": "globale blokkade",
 	"globalblocking-contribs-modify": "de globale blokkade wijzigen",
 	"globalblocking-contribs-remove": "de globale blokkade opheffen",
+	"globalblocking-mass-block-legend": "Meerdere doelwitten globaal blokkeren of deblokkeren",
+	"globalblocking-mass-block-blocked": "Ja",
+	"globalblocking-mass-block-not-blocked": "Nee",
+	"globalblocking-mass-block-header-status": "Globaal geblokkeerd",
+	"globalblocking-mass-block-query-legend": "Doelwitten opvragen om globaal te blokkeren of te deblokkeren",
+	"globalblocking-mass-block-query-placeholder": "Voer een of meer IP-adressen, IP-bereiken, accounts of globale blokkade-ID’s in. Elk moet worden gescheiden door een nieuwe regel.",
+	"globalblocking-mass-block-query-submit": "Zoeken",
+	"massglobalblock-summary": "Met deze pagina kunt u meerdere gebruikers en/of IP-adressen op alle wiki’s blokkeren.",
 	"globalblocklist": "Lijst met globaal geblokkeerde gebruikers",
 	"globalblock": "Een gebruiker globaal blokkeren",
 	"globalblockstatus": "Lokale status van globale blokkades",
+	"massglobalblock": "Meerdere gebruikers globaal blokkeren",
 	"removeglobalblock": "Globale blokkade verwijderen",
 	"right-globalblock": "Globale blokkades instellen en verwijderen",
 	"action-globalblock": "globale blokkades in te stellen en te verwijderen",
@@ -154,5 +163,6 @@
 	"globalblocking-autoblocker": "Automatisch globaal geblokkeerd omdat uw IP-adres onlangs gebruikt is “[[User:$1|$1]]”.\nDe opgegeven reden voor blokkade van $1 is “$2”",
 	"globalblocking-autoblocker-hidden-block": "Automatisch globaal geblokkeerd omdat uw IP-adres onlangs is gebruikt door een gebruiker die is geblokkeerd door blokkade-ID #$1.",
 	"globalblocking-centralauth-admin-info-globalblock": "Globaal geblokkeerd:",
-	"globalblocking-global-autoblock-id": "Automatische globale blokkade #$1"
+	"globalblocking-global-autoblock-id": "Automatische globale blokkade #$1",
+	"globalblocking-global-block-id": "Globale blokkade #$1"
 }

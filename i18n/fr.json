@@ -133,9 +133,18 @@
 	"globalblocking-contribs-block": "blocage global",
 	"globalblocking-contribs-modify": "Modifier le blocage global",
 	"globalblocking-contribs-remove": "retirer le blocage global",
+	"globalblocking-mass-block-legend": "Bloquer ou débloquer globalement plusieurs cibles",
+	"globalblocking-mass-block-blocked": "Oui",
+	"globalblocking-mass-block-not-blocked": "Non",
+	"globalblocking-mass-block-header-status": "Bloqués globalement",
+	"globalblocking-mass-block-query-legend": "Cibles de la demande de blocage ou déblocage global",
+	"globalblocking-mass-block-query-placeholder": "Saisissez une ou plusieurs adresses IP, plages d'adresses IP, comptes ou identifiants de blocages globaux. Chacun doit être indiqué sur des lignes distinctes.",
+	"globalblocking-mass-block-query-submit": "Rechercher",
+	"massglobalblock-summary": "Vous pouvez utiliser cette page pour bloquer plusieurs utilisateurs et/ou adresses IP sur tous les wikis.",
 	"globalblocklist": "Liste des utilisateurs bloquées globalement",
 	"globalblock": "Bloquer globalement un utilisateur",
 	"globalblockstatus": "Statuts locaux des blocages globaux",
+	"massglobalblock": "Bloquer globalement plusieurs utilisateurs",
 	"removeglobalblock": "Retirer un blocage global",
 	"right-globalblock": "Créer et retirer des blocages globaux",
 	"action-globalblock": "créer et retirer des blocages globaux",
@@ -165,5 +174,6 @@
 	"globalblocking-autoblocker": "Vous avez été automatiquement bloqué globalement parce que votre adresse IP a été récemment utilisée par « [[User:$1|$1]] ».\nLe motif fourni pour le blocage de $1 est « $2 »",
 	"globalblocking-autoblocker-hidden-block": "Vous avez été automatiquement bloqué globalement parce que votre adresse IP a été récemment utilisée par un utilisateur bloqué par l'identifiant de blocage #$1.",
 	"globalblocking-centralauth-admin-info-globalblock": "Bloqué globalement :",
-	"globalblocking-global-autoblock-id": "Blocage automatique global #$1"
+	"globalblocking-global-autoblock-id": "Blocage automatique global #$1",
+	"globalblocking-global-block-id": "Blocage global #$1"
 }

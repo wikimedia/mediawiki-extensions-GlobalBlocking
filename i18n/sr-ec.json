@@ -100,6 +100,10 @@
 	"globalblocking-showlog": "Овај корисник је раније био блокирана.\nДневник блокирања је наведен испод као референца:",
 	"globalblocking-contribs-log": "дневник глобалног блокирања",
 	"globalblocking-contribs-block": "глобално блокирај",
+	"globalblocking-mass-block-blocked": "Да",
+	"globalblocking-mass-block-not-blocked": "Не",
+	"globalblocking-mass-block-header-status": "Глобално блокиран",
+	"globalblocking-mass-block-query-submit": "Претрага",
 	"globalblocklist": "Списак глобално блокираних корисника",
 	"globalblock": "Глобално блокирајте корисника",
 	"globalblockstatus": "Локално стање глобалних блокада",
@@ -130,5 +134,6 @@
 	"globalblocking-blockedtext-proxy": "Блокирана прокси адреса је $1.",
 	"globalblocking-blockedtext-username": "Ваше корисничко име је $1.",
 	"globalblocking-centralauth-admin-info-globalblock": "Глобално блокиран:",
-	"globalblocking-global-autoblock-id": "Глобална аутоматска блокада #$1"
+	"globalblocking-global-autoblock-id": "Глобална аутоматска блокада #$1",
+	"globalblocking-global-block-id": "Глобални блок #$1"
 }

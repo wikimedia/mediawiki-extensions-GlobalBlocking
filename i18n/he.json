@@ -116,9 +116,18 @@
 	"globalblocking-contribs-block": "חסימה גלובלית",
 	"globalblocking-contribs-modify": "לשנות את החסימה הגלובלית",
 	"globalblocking-contribs-remove": "להסיר את החסימה הגלובלית",
+	"globalblocking-mass-block-legend": "חסום או שחרור מחסימה של יעדים מרובים באופן גלובלי",
+	"globalblocking-mass-block-blocked": "כן",
+	"globalblocking-mass-block-not-blocked": "לא",
+	"globalblocking-mass-block-header-status": "חשבון חסום גלובלית",
+	"globalblocking-mass-block-query-legend": "שאילתה לחיפוש יעדים לחסימה או שחרור חסימה גלובלית",
+	"globalblocking-mass-block-query-placeholder": "נא להזין כתובת IP אחת או יותר, טווחי IP, חשבונות או מזהי חסימה גלובלית. כל אחד מהם צריך להיות מופרד בשורה חדשה.",
+	"globalblocking-mass-block-query-submit": "חיפוש",
+	"massglobalblock-summary": "באפשרותך להשתמש בדף הזה כדי לחסום כמה משתמשים או כתובות IP בכל אתרי הוויקי.",
 	"globalblocklist": "רשימת משתמשים חסומים גלובלית",
 	"globalblock": "חסימה גלובלית של משתמש",
 	"globalblockstatus": "המצב המקומי של החסימות הגלובליות",
+	"massglobalblock": "חסימה גלובלית של כמה משתמשים באופן",
 	"removeglobalblock": "הסרת חסימה גלובלית",
 	"right-globalblock": "יצירה והסרה של חסימות גלובליות",
 	"action-globalblock": "להפעיל או להסיר חסימות גלובליות",
@@ -148,5 +157,6 @@
 	"globalblocking-autoblocker": "נחסמת באופן אוטומטי וגלובלי משום שכתובת ה־IP שלך שימושה לאחרונה את [[User:$1|$1]].\nהסיבה שניתנה לחסימת $1 היא \"$2\"",
 	"globalblocking-autoblocker-hidden-block": "נחסמת באופן אוטומטי וגלובלי משום שכתובת ה־IP שלך שימה לאחרונה משתמש שנחסם בחסימה עם המזהה #$1.",
 	"globalblocking-centralauth-admin-info-globalblock": "חשבון חסום גלובלית:",
-	"globalblocking-global-autoblock-id": "חסימה אוטומטית גלובלית מס' $1"
+	"globalblocking-global-autoblock-id": "חסימה אוטומטית גלובלית מס' $1",
+	"globalblocking-global-block-id": "חסימה גלובלית #$1"
 }

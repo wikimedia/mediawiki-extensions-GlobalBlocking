@@ -115,9 +115,18 @@
 	"globalblocking-contribs-block": "qlobal blok",
 	"globalblocking-contribs-modify": "qlobal bloku redaktə et",
 	"globalblocking-contribs-remove": "qlobal bloku aç",
+	"globalblocking-mass-block-legend": "Qlobal olaraq birdən çox hədəfi blokla və ya blokunu aç",
+	"globalblocking-mass-block-blocked": "Bəli",
+	"globalblocking-mass-block-not-blocked": "Xeyr",
+	"globalblocking-mass-block-header-status": "Qlobal bloklanıb",
+	"globalblocking-mass-block-query-legend": "Qlobal olaraq bloklamaq və ya bloku açmaq üçün hədəfləri axtar",
+	"globalblocking-mass-block-query-placeholder": "Bir və ya daha çox IP ünvanı, IP diapazonu, hesab və ya qlobal blok ID-ləri daxil edin. Hər biri yeni sətirlə ayrılmalıdır.",
+	"globalblocking-mass-block-query-submit": "Axtar",
+	"massglobalblock-summary": "Siz bütün vikilərdə birdən çox istifadəçini və/yaxud IP ünvanlarını bloklamaq üçün bu səhifədən istifadə edə bilərsiniz.",
 	"globalblocklist": "Qlobal olaraq bloklanmış istifadəçilərin siyahısı",
 	"globalblock": "İstifadəçini qlobal blokla",
 	"globalblockstatus": "Qlobal blokların lokal statusu",
+	"massglobalblock": "Qlobal olaraq birdən çox istifadəçini blokla",
 	"removeglobalblock": "Qlobal bloku aç",
 	"right-globalblock": "Qlobal bloklar tətbiq etmək və açmaq",
 	"action-globalblock": "qlobal bloklar tətbiq etmək və açmaq",
@@ -147,5 +156,6 @@
 	"globalblocking-autoblocker": "IP ünvanınız bu yaxınlarda \"[[User:$1|$1]]\" tərəfindən istifadə edildiyi üçün qlobal olaraq avtomatik bloklanıb.\n$1 istifadəçisinin bloklanma səbəbi: \"$2\"",
 	"globalblocking-autoblocker-hidden-block": "Qlobal olaraq avtomatik bloklanmısınız çünki IP ünvanınız bu yaxınlarda blok ID #$1 ilə bloklanmış istifadəçi tərəfindən istifadə edilib.",
 	"globalblocking-centralauth-admin-info-globalblock": "Qlobal bloklanıb:",
-	"globalblocking-global-autoblock-id": "Qlobal avtoblok #$1"
+	"globalblocking-global-autoblock-id": "Qlobal avtoblok #$1",
+	"globalblocking-global-block-id": "Qlobal blok #$1"
 }

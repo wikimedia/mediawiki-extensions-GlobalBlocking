@@ -99,6 +99,10 @@
 	"globalblocking-contribs-block": "blocco globale",
 	"globalblocking-contribs-modify": "modifica il blocco globale",
 	"globalblocking-contribs-remove": "rimuovi il blocco globale",
+	"globalblocking-mass-block-blocked": "Sì",
+	"globalblocking-mass-block-not-blocked": "No",
+	"globalblocking-mass-block-header-status": "Bloccato globalmente",
+	"globalblocking-mass-block-query-submit": "Cerca",
 	"globalblocklist": "Elenco delle utenze bloccate globalmente",
 	"globalblock": "Blocca globalmente un'utenza",
 	"globalblockstatus": "Stato locale di blocchi globali",
@@ -126,5 +130,6 @@
 	"globalblocking-blockedtext-ip-range": "L'intervallo bloccato è $1.",
 	"globalblocking-blockedtext-proxy": "L'indirizzo proxy bloccato è $1.",
 	"globalblocking-blockedtext-username": "Il tuo nome utente è $1.",
-	"globalblocking-centralauth-admin-info-globalblock": "Bloccata globalmente:"
+	"globalblocking-centralauth-admin-info-globalblock": "Bloccata globalmente:",
+	"globalblocking-global-block-id": "Blocco globale $1"
 }

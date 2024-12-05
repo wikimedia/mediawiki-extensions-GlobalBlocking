@@ -122,6 +122,10 @@
 	"globalblocking-contribs-block": "järjestelmänlaajuinen esto",
 	"globalblocking-contribs-modify": "muuta järjestelmänlaajuista estoa",
 	"globalblocking-contribs-remove": "poista järjestelmänlaajuinen esto",
+	"globalblocking-mass-block-blocked": "Kyllä",
+	"globalblocking-mass-block-not-blocked": "Ei",
+	"globalblocking-mass-block-header-status": "Järjestelmänlaajuisesti estetty",
+	"globalblocking-mass-block-query-submit": "Hae",
 	"globalblocklist": "Järjestelmänlaajuisesti estetyt käyttäjät",
 	"globalblock": "Estä käyttäjä järjestelmänlaajuisesti",
 	"globalblockstatus": "Järjestelmänlaajuisten estojen paikallinen tila",
@@ -152,5 +156,6 @@
 	"globalblocking-autoblocker": "Olet automaattisesti estetty järjestelmänlaajuisesti, koska jaat IP-osoitteen käyttäjän [[User:$1|$1]] kanssa. \nKäyttäjän $1 saaman eston syy on: ”$2”.",
 	"globalblocking-autoblocker-hidden-block": "Olet automaattisesti estetty järjestelmänlaajuisesti, koska jaat IP-osoitteen käyttäjän kanssa, joka on estetty estotunnuksella #$1.",
 	"globalblocking-centralauth-admin-info-globalblock": "Järjestelmänlaajuisesti estetty:",
-	"globalblocking-global-autoblock-id": "Järjestelmänlaajuinen automaattinen esto #$1"
+	"globalblocking-global-autoblock-id": "Järjestelmänlaajuinen automaattinen esto #$1",
+	"globalblocking-global-block-id": "Järjestelmänlaajuinen esto #$1"
 }
