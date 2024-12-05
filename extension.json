@@ -84,12 +84,15 @@
 		"MassGlobalBlock": {
 			"class": "MediaWiki\\Extension\\GlobalBlocking\\Special\\SpecialMassGlobalBlock",
 			"services": [
+				"BlockUserFactory",
+				"PermissionManager",
 				"UserIdentityLookup",
 				"GlobalBlocking.GlobalBlockManager",
 				"GlobalBlocking.GlobalBlockLookup",
 				"GlobalBlocking.GlobalBlockingLinkBuilder",
 				"GlobalBlocking.GlobalBlockingGlobalBlockDetailsRenderer",
-				"GlobalBlocking.GlobalBlockingConnectionProvider"
+				"GlobalBlocking.GlobalBlockingConnectionProvider",
+				"GlobalBlocking.GlobalBlockingExpirySelectorBuilder"
 			]
 		}
 	},
@@ -310,6 +313,10 @@
 		"GlobalBlockingHideAutoblocksInGlobalBlocksAPIResponse": {
 			"description": "If true, then hide all global autoblocks in the response of the globalblocks API. This is used as a temporary feature flag so that WMF wikis can avoid breaking code which relies on the API, and would break if global autoblocks appear in the results.",
 			"value": false
+		},
+		"GlobalBlockingMassGlobalBlockMaxTargets": {
+			"description": "The maximum number of targets that can be globally blocked or unblocked in one submission of Special:MassGlobalBlock",
+			"value": 200
 		}
 	},
 	"ServiceWiringFiles": [

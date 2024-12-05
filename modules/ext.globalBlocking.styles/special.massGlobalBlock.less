@@ -5,4 +5,26 @@
 	#mw-globalblocking-mass-block-table {
 		margin: 1em 0 0;
 	}
+
+	// Make the "other reason" field appear below the dropdown in a similar way to Special:Block.
+	.mw-htmlform-select-and-other-field {
+		.oo-ui-textInputWidget,
+		.oo-ui-dropdownInputWidget {
+			display: block;
+			max-width: 50em;
+		}
+
+		.oo-ui-textInputWidget {
+			margin-top: 0.5em;
+		}
+	}
+}
+
+// Special:MassGlobalBlock uses form fields which are initially hidden using 'hide-if'. However, these elements
+// don't get hidden until the JS has loaded which causes the elements to flash into and out of existence on load.
+// Hiding them until JS is loaded avoids this flash.
+.client-js .mw-special-MassGlobalBlock {
+	.mw-htmlform-hide-if:not( .mw-globalblocking-js-loaded ) {
+		display: none;
+	}
 }
