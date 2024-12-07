@@ -119,7 +119,8 @@ class SpecialGlobalBlockList extends FormSpecialPage {
 	/** @inheritDoc */
 	protected function alterForm( HTMLForm $form ) {
 		$context = new DerivativeContext( $this->getContext() );
-		$context->setTitle( $this->getPageTitle() ); // remove subpage
+		 // remove subpage
+		$context->setTitle( $this->getPageTitle() );
 		$form->setName( 'globalblocklist-search' )
 			->setSubmitTextMsg( 'globalblocking-search-submit' )
 			->setWrapperLegendMsg( 'globalblocking-search-legend' )
