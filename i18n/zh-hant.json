@@ -132,6 +132,7 @@
 	"globalblocking-contribs-block": "全域封鎖",
 	"globalblocking-contribs-modify": "修改全域封鎖",
 	"globalblocking-contribs-remove": "移除全域封鎖",
+	"globalblocking-mass-block-query-submit": "搜尋",
 	"globalblocklist": "全域封鎖使用者清單",
 	"globalblock": "全域封鎖一個使用者",
 	"globalblockstatus": "全域封鎖的本地狀態",
@@ -161,5 +162,6 @@
 	"globalblocking-blockedtext-username": "您的使用者名稱是$1。",
 	"globalblocking-autoblocker": "您的IP位址因最近被「[[User:$1|$1]]」使用過而被全域自動封鎖。封鎖$1的原因為「$2」",
 	"globalblocking-centralauth-admin-info-globalblock": "全域封鎖：",
-	"globalblocking-global-autoblock-id": "全域自動封鎖 #$1"
+	"globalblocking-global-autoblock-id": "全域自動封鎖 #$1",
+	"globalblocking-global-block-id": "全域封鎖 #$1"
 }

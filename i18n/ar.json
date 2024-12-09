@@ -15,6 +15,7 @@
 			"Maroen1990",
 			"Meno25",
 			"Mido",
+			"Mohammed Qays",
 			"OsamaK",
 			"بهتين شوكت",
 			"ديفيد"
@@ -91,6 +92,9 @@
 	"globalblocking-contribs-block": "منع عالمي",
 	"globalblocking-contribs-modify": "تعديل المنع العام",
 	"globalblocking-contribs-remove": "إزالة منع عام",
+	"globalblocking-mass-block-blocked": "نعم",
+	"globalblocking-mass-block-not-blocked": "لا",
+	"globalblocking-mass-block-query-submit": "بحث",
 	"globalblocklist": "قائمة عناوين الأيبي الممنوعة",
 	"globalblock": "منع اساسي لعنوان أيبي الخاص بلمستخدم",
 	"globalblockstatus": "الحالة المحلية للمنع العام",

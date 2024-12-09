@@ -13,5 +13,8 @@
 	"globalblocking-list-table-heading-reason": "وجہ",
 	"globalblocking-goto-block": "ورتݨ آلے کوں عالمی طور تے بلاک کرو",
 	"globalblocking-contribs-log": "عالمی پابندی لاگ",
+	"globalblocking-mass-block-blocked": "جیا",
+	"globalblocking-mass-block-not-blocked": "کو",
+	"globalblocking-mass-block-query-submit": "ڳولو",
 	"globalblock": "ورتݨ آلے کوں عالمی طور تے بلاک کرو"
 }

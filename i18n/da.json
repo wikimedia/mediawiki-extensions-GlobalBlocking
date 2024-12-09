@@ -73,6 +73,7 @@
 	"globalblocking-loglink": "IP-adressen $1 er blokeret globalt ([[{{#Special:GlobalBlockList}}/$1|detaljer]]).",
 	"globalblocking-contribs-notice": "Denne IP-adresse er i øjeblikket globalt blokeret. \nDen globale blokeringslogspost er angivet nedenfor til reference:",
 	"globalblocking-showlog": "Denne IP-adresse er tidligere blevet blokeret.\nBlokeringsloggen vises nedenfor som reference:",
+	"globalblocking-contribs-log": "global blokeringslog",
 	"globalblocking-contribs-block": "bloker denne IP globalt",
 	"globalblocklist": "Liste over globalt blokerede IP-adresser",
 	"globalblock": "Bloker en IP-adresse globalt",
