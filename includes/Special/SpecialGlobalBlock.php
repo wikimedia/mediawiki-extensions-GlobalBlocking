@@ -343,7 +343,8 @@ class SpecialGlobalBlock extends FormSpecialPage {
 
 		// This handles validation too...
 		$globalBlockStatus = $this->globalBlockManager->block(
-			$this->target, // $this->target is sanitized; $data['Address'] isn't
+			// $this->target is sanitized; $data['Address'] isn't
+			$this->target,
 			$data['Reason'][0],
 			$data['Expiry'],
 			$performer,
