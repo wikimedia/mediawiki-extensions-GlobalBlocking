@@ -13,6 +13,12 @@
 	"globalblocking-list-table-heading-reason": "ਕਾਰਨ",
 	"globalblocking-goto-mass-block": "ਵਿਸ਼ਵ ਪੱਧਰ 'ਤੇ ਕਈ ਵਰਤੋਂਕਾਰਾਂ ਤੇ ਪਾਬੰਦੀ ਲਾਓ",
 	"globalblocking-contribs-mock-log-line": "$1 : $3 ਵਿਸ਼ਵ ਪੱਧਰ 'ਤੇ {{GENDER:$2|ਪਾਬੰਦੀ ਲਾਈ ਗਈ}} {{GENDER:$4|$5}} $6 $7 $8 $9 ਦੀ ਮਿਆਦ ਪੁੱਗਣ ਦੇ ਸਮੇਂ ਦੇ ਨਾਲ",
+	"globalblocking-mass-block-legend": "ਵਿਸ਼ਵ ਪੱਧਰ 'ਤੇ ਕਈ ਟੀਚਿਆਂ ਤੇ ਪਾਬੰਦੀਆਂ ਲਾਓ ਜਾਂ ਪਾਬੰਦੀਆਂ ਹਟਾਓ ਕਰੋ",
+	"globalblocking-mass-block-blocked": "ਹਾਂ",
+	"globalblocking-mass-block-not-blocked": "ਨਹੀਂ",
+	"globalblocking-mass-block-header-status": "ਵਿਸ਼ਵ ਪੱਧਰੀ ਪਾਬੰਦੀ ਲਾਈ ਗਈ",
+	"globalblocking-mass-block-query-submit": "ਲੱਭੋ",
+	"massglobalblock": "ਵਿਸ਼ਵ ਪੱਧਰ 'ਤੇ ਕਈ ਵਰਤੋਂਕਾਰਾਂ ਤੇ ਪਾਬੰਦੀ ਲਾਓ",
 	"globalblocking-blockedtext-autoblock-reason": "ਦਿੱਤਾ ਗਿਆ ਕਾਰਨ <em>$1</em> ਹੈ।",
 	"globalblocking-centralauth-admin-info-globalblock": "ਵਿਸ਼ਵ ਪੱਧਰ 'ਤੇ ਪਾਬੰਦੀ ਲਾਈ ਗਈ:"
 }
