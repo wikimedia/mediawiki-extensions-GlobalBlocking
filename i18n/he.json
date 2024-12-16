@@ -22,7 +22,7 @@
 	"globalblocking-block-expiry": "זמן פקיעה:",
 	"globalblocking-block-expiry-selector-other": "זמן אחר:",
 	"globalblocking-block-legend": "חסימה גלובלית של כתובת IP",
-	"globalblocking-target": "שם משתמש, כתובת IP, או טווח IP:",
+	"globalblocking-target": "שם משתמש, כתובת IP או טווח IP:",
 	"globalblocking-target-with-block-ids": "שם משתמש, כתובת IP, טווח IP או מזהה חסימה:",
 	"globalblocking-ipbanononly": "לחסום גלובלית רק משתמשים אלמוניים",
 	"globalblocking-block-disable-account-creation": "השבתה גלובלית של יצירת חשבונות",
