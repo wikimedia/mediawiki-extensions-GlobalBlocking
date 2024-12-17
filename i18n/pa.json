@@ -4,6 +4,13 @@
 			"Cabal"
 		]
 	},
+	"globalblocking-block": "ਵਿਸ਼ਵ ਪੱਧਰ ਉੱਤੇ ਇੱਕ ਵਰਤੋਂਕਾਰ 'ਤੇ ਪਾਬੰਦੀ ਲਾਓ",
+	"globalblocking-block-intro": "ਤੁਸੀਂ ਇਸ ਸਫ਼ੇ ਦੀ ਵਰਤੋਂ ਕਰ ਕੇ ਸਾਰੇ ਵਿਕੀਆਂ ਉੱਤੇ ਕਿਸੇ ਵਰਤੋਂਕਾਰ ਜਾਂ IP ਪਤੇ ਤੇ ਪਾਬੰਦੀਆਂ ਲਾ ਸਕਦੇ ਹੋ।",
+	"globalblocking-block-reason": "ਕਾਰਨ:",
+	"globalblocking-block-reason-dropdown": "* ਆਮ ਪਾਬੰਦੀ ਕਾਰਨ\n** ਅੰਤਰਵਿਕੀ ਬੇਲੋੜੇ ਸੁਨੇਹੇ (ਸਪੈਮ) \n** ਅੰਤਰਵਿਕੀ ਦੁਰਵਰਤੋਂ\n** ਬਰਬਾਦੀ/ਭੰਨ-ਤੋਡ਼",
+	"globalblocking-block-edit-dropdown": "ਪਾਬੰਦੀ ਲਾਉਣ ਦੇ ਕਾਰਨ ਸੋਧੋ",
+	"globalblocking-block-expiry": "ਮਿਆਦ ਪੁੱਗਣੀ:",
+	"globalblocking-block-expiry-selector-other": "ਹੋਰ ਸਮਾਂ:",
 	"globalblocking-list-block": "ਪਾਬੰਦੀ ਲਾਓ",
 	"globalblocking-list-table-heading-timestamp": "ਵਕਤ ਦੀ ਮੋਹਰ",
 	"globalblocking-list-table-heading-target": "ਨਿਸ਼ਾਨਾ",
@@ -11,7 +18,14 @@
 	"globalblocking-list-table-heading-by": "ਰੋਕ-ਲੱਗਿਆ",
 	"globalblocking-list-table-heading-params": "ਮਾਪਦੰਡਾਂ 'ਤੇ ਪਾਬੰਦੀ ਲਾਓ",
 	"globalblocking-list-table-heading-reason": "ਕਾਰਨ",
+	"globalblocking-whitelist-reason": "ਕਾਰਨ:",
 	"globalblocking-contribs-mock-log-line": "$1 : $3 ਵਿਸ਼ਵ ਪੱਧਰ 'ਤੇ {{GENDER:$2|ਪਾਬੰਦੀ ਲਾਈ ਗਈ}} {{GENDER:$4|$5}} $6 $7 $8 $9 ਦੀ ਮਿਆਦ ਪੁੱਗਣ ਦੇ ਸਮੇਂ ਦੇ ਨਾਲ",
+	"globalblocking-contribs-block": "ਵਿਸ਼ਵ ਪੱਧਰੀ ਰੋਕ",
+	"globalblock": "ਵਿਸ਼ਵ ਪੱਧਰ ਉੱਤੇ ਇੱਕ ਵਰਤੋਂਕਾਰ 'ਤੇ ਪਾਬੰਦੀ ਲਾਓ",
+	"log-action-filter-gblblock": "ਵਿਸ਼ਵ ਪੱਧਰੀ ਰੋਕ ਦੀ ਕਿਸਮ:",
+	"log-action-filter-gblblock-gblock": "ਵਿਸ਼ਵ ਪੱਧਰੀ ਰੋਕ",
+	"log-action-filter-gblblock-gunblock": "ਵਿਸ਼ਵ ਪੱਧਰੀ ਪਾਬੰਦੀ ਹਟਾਓ",
 	"globalblocking-blockedtext-autoblock-reason": "ਦਿੱਤਾ ਗਿਆ ਕਾਰਨ <em>$1</em> ਹੈ।",
+	"globalblocking-blockedtext-username": "ਤੁਹਾਡਾ ਵਰਤੋਂਕਾਰ ਨਾਂ $1 ਹੈ।",
 	"globalblocking-centralauth-admin-info-globalblock": "ਵਿਸ਼ਵ ਪੱਧਰ 'ਤੇ ਪਾਬੰਦੀ ਲਾਈ ਗਈ:"
 }
