@@ -26,7 +26,7 @@
 	"globalblocking-block-legend": "חסימה גלובלית של כתובת IP",
 	"globalblocking-block-legend-new": "לחסום את המשתמש גלובלית",
 	"globalblocking-ipaddress": "כתובת IP:",
-	"globalblocking-target": "שם משתמש, כתובת IP, או טווח IP:",
+	"globalblocking-target": "שם משתמש, כתובת IP או טווח IP:",
 	"globalblocking-ipbanononly": "לחסום גלובלית רק משתמשים אלמוניים",
 	"globalblocking-block-ipinvalid": "כתובת ה־IP שהזנת ($1) אינה תקינה.\nנא לשים לב לכך שלא ניתן להזין שם משתמש!",
 	"globalblocking-block-target-invalid": "הזנת ערך בלתי־תקין עבור שם המשתמש, כתובת ה־IP או טווח ה־IP‏ ($1).",
