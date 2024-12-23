@@ -4,5 +4,14 @@
 			"Cabal"
 		]
 	},
-	"globalblocking-expiringblock": "ਮਿਆਦ ਖ਼ਤਮ $1 ਨੂੰ $2 ’ਤੇ"
+	"globalblocking-block-reason": "ਕਾਰਨ:",
+	"globalblocking-block-reason-dropdown": "* ਆਮ ਪਾਬੰਦੀ ਕਾਰਨ\n** ਅੰਤਰਵਿਕੀ ਬੇਲੋੜੇ ਸੁਨੇਹੇ (ਸਪੈਮ) \n** ਅੰਤਰਵਿਕੀ ਦੁਰਵਰਤੋਂ\n** ਬਰਬਾਦੀ/ਭੰਨ-ਤੋਡ਼",
+	"globalblocking-block-edit-dropdown": "ਪਾਬੰਦੀ ਲਾਉਣ ਦੇ ਕਾਰਨ ਸੋਧੋ",
+	"globalblocking-block-expiry": "ਮਿਆਦ ਪੁੱਗਣੀ:",
+	"globalblocking-block-expiry-selector-other": "ਹੋਰ ਸਮਾਂ:",
+	"globalblocking-expiringblock": "ਮਿਆਦ ਖ਼ਤਮ $1 ਨੂੰ $2 ’ਤੇ",
+	"globalblocking-whitelist-reason": "ਕਾਰਨ:",
+	"log-action-filter-gblblock": "ਵਿਸ਼ਵ ਪੱਧਰੀ ਰੋਕ ਦੀ ਕਿਸਮ:",
+	"log-action-filter-gblblock-gblock": "ਵਿਸ਼ਵ ਪੱਧਰੀ ਰੋਕ",
+	"log-action-filter-gblblock-gunblock": "ਵਿਸ਼ਵ ਪੱਧਰੀ ਪਾਬੰਦੀ ਹਟਾਓ"
 }
