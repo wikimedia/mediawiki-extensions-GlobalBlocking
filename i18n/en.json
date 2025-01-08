@@ -55,6 +55,7 @@
 	"globalblocking-list-tempblocks": "Hide temporary blocks",
 	"globalblocking-list-indefblocks": "Hide indefinite blocks",
 	"globalblocking-list-addressblocks": "Hide single IP blocks",
+	"globalblocking-list-tempaccountblocks": "Hide temporary account blocks",
 	"globalblocking-list-rangeblocks": "Hide range blocks",
 	"globalblocking-list-userblocks": "Hide account blocks",
 	"globalblocking-list-autoblocks": "Hide autoblocks",

@@ -14,8 +14,10 @@ use MediaWiki\Message\Message;
 use MediaWiki\SpecialPage\FormSpecialPage;
 use MediaWiki\Status\Status;
 use MediaWiki\User\CentralId\CentralIdLookup;
+use MediaWiki\User\TempUser\TempUserConfig;
 use MediaWiki\User\UserNameUtils;
 use Wikimedia\IPUtils;
+use Wikimedia\Rdbms\IExpression;
 use Wikimedia\Rdbms\RawSQLExpression;
 
 class SpecialGlobalBlockList extends FormSpecialPage {
@@ -27,6 +29,7 @@ class SpecialGlobalBlockList extends FormSpecialPage {
 	private UserNameUtils $userNameUtils;
 	private CommentFormatter $commentFormatter;
 	private CentralIdLookup $lookup;
+	private TempUserConfig $tempUserConfig;
 	private GlobalBlockLookup $globalBlockLookup;
 	private GlobalBlockingLinkBuilder $globalBlockingLinkBuilder;
 	private GlobalBlockingConnectionProvider $globalBlockingConnectionProvider;
@@ -36,6 +39,7 @@ class SpecialGlobalBlockList extends FormSpecialPage {
 		UserNameUtils $userNameUtils,
 		CommentFormatter $commentFormatter,
 		CentralIdLookup $lookup,
+		TempUserConfig $tempUserConfig,
 		GlobalBlockLookup $globalBlockLookup,
 		GlobalBlockingLinkBuilder $globalBlockingLinkBuilder,
 		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
@@ -46,6 +50,7 @@ class SpecialGlobalBlockList extends FormSpecialPage {
 		$this->userNameUtils = $userNameUtils;
 		$this->commentFormatter = $commentFormatter;
 		$this->lookup = $lookup;
+		$this->tempUserConfig = $tempUserConfig;
 		$this->globalBlockLookup = $globalBlockLookup;
 		$this->globalBlockingLinkBuilder = $globalBlockingLinkBuilder;
 		$this->globalBlockingConnectionProvider = $globalBlockingConnectionProvider;
@@ -97,6 +102,11 @@ class SpecialGlobalBlockList extends FormSpecialPage {
 			'globalblocking-list-addressblocks' => 'addressblocks',
 			'globalblocking-list-rangeblocks' => 'rangeblocks',
 		];
+
+		if ( $this->tempUserConfig->isKnown() ) {
+			$optionsMessages['globalblocking-list-tempaccountblocks'] = 'tempaccountblocks';
+		}
+
 		return [
 			'target' => [
 				'class' => HTMLUserTextFieldAllowingGlobalBlockIds::class,
@@ -162,10 +172,25 @@ class SpecialGlobalBlockList extends FormSpecialPage {
 		$hideRange = in_array( 'rangeblocks', $this->options );
 		$hideUser = in_array( 'userblocks', $this->options );
 		$hideAutoblocks = in_array( 'autoblocks', $this->options );
+		$hideEverything = ( $hideIP && $hideRange && $hideUser && $hideAutoblocks );
 
-		if ( $hideIP && $hideRange && $hideUser && $hideAutoblocks ) {
+		if ( $this->tempUserConfig->isKnown() ) {
+			$hideTempAccounts = in_array( 'tempaccountblocks', $this->options );
+			$hideEverything = ( $hideEverything && $hideTempAccounts );
+
+			if ( $hideTempAccounts ) {
+				$conds[] = $this->tempUserConfig->getMatchCondition(
+					$dbr,
+					'gb_address',
+					IExpression::NOT_LIKE
+				);
+			}
+		}
+
+		if ( $hideEverything ) {
 			$this->queryValid = false;
 		}
+
 		if ( $hideIP ) {
 			$conds[] = $dbr->orExpr( [
 				new RawSQLExpression( 'gb_range_end > gb_range_start' ),
@@ -182,13 +207,13 @@ class SpecialGlobalBlockList extends FormSpecialPage {
 			$conds['gb_autoblock_parent_id'] = 0;
 		}
 
-		$hideTemp = in_array( 'tempblocks', $this->options );
-		$hideIndef = in_array( 'indefblocks', $this->options );
-		if ( $hideTemp && $hideIndef ) {
+		$hideTempExpiryBlocks = in_array( 'tempblocks', $this->options );
+		$hideIndefBlocks = in_array( 'indefblocks', $this->options );
+		if ( $hideTempExpiryBlocks && $hideIndefBlocks ) {
 			$this->queryValid = false;
-		} elseif ( $hideTemp ) {
+		} elseif ( $hideTempExpiryBlocks ) {
 			$conds['gb_expiry'] = $dbr->getInfinity();
-		} elseif ( $hideIndef ) {
+		} elseif ( $hideIndefBlocks ) {
 			$conds[] = $dbr->expr( 'gb_expiry', '!=', $dbr->getInfinity() );
 		}
 		$this->conds = $conds;
