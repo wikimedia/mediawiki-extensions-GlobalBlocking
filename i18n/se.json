@@ -5,10 +5,23 @@
 			"Kimberli Mäkäräinen (WMNO)"
 		]
 	},
+	"globalblocking-block-reason": "Sivva:",
 	"globalblocking-ipaddress": "IP-čujuhus:",
+	"globalblocking-search-legend": "Oza vuogádatviidosaš hehttemiid",
 	"globalblocking-search-ip": "IP-čujuhus:",
+	"globalblocking-search-submit": "Oza hehttemiid",
 	"globalblocking-list-unblock": "sihko",
 	"globalblocking-list-tempblocks": "Čiega gaskaboddosaš hehttemiid",
 	"globalblocking-list-indefblocks": "Čiega bissovaš hehttemiid",
-	"globalblocking-expiringblock": "boarásnuvvá $1 dii. $2"
+	"globalblocking-list-addressblocks": "Čiega ovttaskas IP-hehttemiid",
+	"globalblocking-list-rangeblocks": "Čiega IP-čujuhusráidduid hehttemiid",
+	"globalblocking-expiringblock": "boarásnuvvá $1 dii. $2",
+	"globalblocking-goto-unblock": "Fámuhuhte vuogádatviidosaš hehttema",
+	"globalblocking-unblock": "Fámuhuhte vuogádatviidosaš hehttema",
+	"globalblocking-unblock-legend": "Vuogádatviidosaš hehttema fámuhuhttin",
+	"globalblocking-unblock-submit": "Fámuhuhte vuogádatviidosaš hehttema",
+	"globalblocking-logpage": "Vuogádatviidosaš hehttemiid logga",
+	"globalblocking-contribs-remove": "fámuhuhte vuogádatviidosaš hehttema",
+	"removeglobalblock": "Fámuhuhte vuogádatviidosaš hehttema",
+	"log-action-filter-gblblock-gblock": "Vuogádatviidosaš hehtten"
 }
