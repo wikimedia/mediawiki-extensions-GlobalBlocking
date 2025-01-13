@@ -64,6 +64,7 @@
 	"globalblocking-loglink": "Stanket eo ar c'homlec'h IP $1 en un doare hollek ([[{{#Special:GlobalBlockList}}/$1|muioc'h a ditouroù]]).",
 	"globalblocking-contribs-notice": "Stanket eo an implijer-mañ en un doare hollek.\nDindan emañ merket moned diwezhañ marilh ar stankadennoù, d'ho kelaouiñ:",
 	"globalblocking-showlog": "Stanket eo bet an implijer-mañ c'hoazh.\nA-is emañ marilh ar stankadennoù :",
+	"globalblocking-mass-block-legend": "Stankañ pe distankañ meur a bal en un doare hollek",
 	"globalblocklist": "Roll ar chomlec'hioù IP stanket en un doare hollek",
 	"globalblock": "Stankañ ur chomlec'h IP en un doare hollek",
 	"globalblockstatus": "Statud lec'hel ar stankadennoù hollek",
@@ -75,5 +76,6 @@
 	"right-globalblock-exempt": "Mont dreist d'ar stankadennoù hollek",
 	"action-globalblock-exempt": "mont dreist d'ar stankadennoù IP hollek",
 	"log-action-filter-gblblock": "Seurt stankadenn hollek :",
+	"grant-globalblock": "Stankañ pe distankañ un implijer en un doare hollek",
 	"globalblocking-blockedtext-username": "$1 eo hoc'h anv implijer."
 }
