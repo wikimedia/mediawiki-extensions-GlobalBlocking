@@ -12,7 +12,11 @@ module.exports = function () {
 		return OO.ui.infuse( $el );
 	}
 
-	var blockTargetWidget, anonOnlyWidget, alsoLocalSoftWidget, localBlockWidget, enableAutoblockWidget;
+	var blockTargetWidget,
+		anonOnlyWidget,
+		alsoLocalSoftWidget,
+		localBlockWidget,
+		enableAutoblockWidget;
 
 	function preserveSelectedStateOnDisable( widget ) {
 		var widgetWasSelected;
