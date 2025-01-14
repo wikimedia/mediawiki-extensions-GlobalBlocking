@@ -75,5 +75,6 @@
 	"right-globalblock-exempt": "Mont dreist d'ar stankadennoù hollek",
 	"action-globalblock-exempt": "mont dreist d'ar stankadennoù IP hollek",
 	"log-action-filter-gblblock": "Seurt stankadenn hollek :",
+	"grant-globalblock": "Stankañ pe distankañ un implijer en un doare hollek",
 	"globalblocking-blockedtext-username": "$1 eo hoc'h anv implijer."
 }
