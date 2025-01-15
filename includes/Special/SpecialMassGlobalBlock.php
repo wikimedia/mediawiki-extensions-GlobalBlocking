@@ -101,7 +101,7 @@ class SpecialMassGlobalBlock extends SpecialPage {
 
 		$blockFormAlsoShown = false;
 		if ( $request->wasPosted() ) {
-			$method = $request->getRawVal( 'wpMethod', '' );
+			$method = $request->getRawVal( 'wpMethod' ) ?? '';
 			if ( $method === 'search' && count( $this->targetsForLookup ) ) {
 				$this->showBlockForm();
 				$blockFormAlsoShown = true;
@@ -447,7 +447,7 @@ class SpecialMassGlobalBlock extends SpecialPage {
 
 		// If we are blocking or unblocking too many targets at once, then show an error.
 		$request = $this->getRequest();
-		$action = $request->getRawVal( 'wpAction', 'block' );
+		$action = $request->getRawVal( 'wpAction' ) ?? 'block';
 
 		$maxTargets = $this->getConfig()->get( 'GlobalBlockingMassGlobalBlockMaxTargets' );
 		if ( $maxTargets < count( $this->targets ) ) {
