@@ -55,6 +55,7 @@
 				"UserNameUtils",
 				"CommentFormatter",
 				"CentralIdLookup",
+				"TempUserConfig",
 				"GlobalBlocking.GlobalBlockLookup",
 				"GlobalBlocking.GlobalBlockingLinkBuilder",
 				"GlobalBlocking.GlobalBlockingConnectionProvider",

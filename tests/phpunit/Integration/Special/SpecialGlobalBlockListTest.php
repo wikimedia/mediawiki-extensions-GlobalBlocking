@@ -6,6 +6,7 @@ use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Extension\GlobalBlocking\Special\SpecialGlobalBlockList;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
+use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
 use SpecialPageTestBase;
 
 /**
@@ -14,6 +15,11 @@ use SpecialPageTestBase;
  * @covers \MediaWiki\Extension\GlobalBlocking\Special\GlobalBlockListPager
  */
 class SpecialGlobalBlockListTest extends SpecialPageTestBase {
+
+	use TempUserTestTrait;
+
+	private const TEMP_USER_PATTERN = '~global-blocking-test-$1';
+	private const TEMP_USER_NAME = '~global-blocking-test-2025-01';
 
 	private static array $blockedTargets;
 	private static string $globallyBlockedUser;
@@ -24,6 +30,10 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
 		// to be the local provider.
 		$this->overrideConfigValue( MainConfigNames::CentralIdLookupProvider, 'local' );
+
+		$this->enableAutoCreateTempUser(
+			[ 'genPattern' => self::TEMP_USER_PATTERN ]
+		);
 	}
 
 	/**
@@ -36,6 +46,7 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 			$services->getUserNameUtils(),
 			$services->getCommentFormatter(),
 			$services->getCentralIdLookup(),
+			$services->getTempUserConfig(),
 			$globalBlockingServices->getGlobalBlockLookup(),
 			$globalBlockingServices->getGlobalBlockingLinkBuilder(),
 			$globalBlockingServices->getGlobalBlockingConnectionProvider(),
@@ -50,7 +61,10 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 		$this->assertStringContainsString( '(globalblocking-target-with-block-ids', $html );
 		$this->assertStringContainsString( '(globalblocking-list-tempblocks', $html );
 		$this->assertStringContainsString( '(globalblocking-list-indefblocks', $html );
+		$this->assertStringContainsString( '(globalblocking-list-autoblocks', $html );
+		$this->assertStringContainsString( '(globalblocking-list-userblocks', $html );
 		$this->assertStringContainsString( '(globalblocking-list-addressblocks', $html );
+		$this->assertStringContainsString( '(globalblocking-list-tempaccountblocks', $html );
 		$this->assertStringContainsString( '(globalblocking-list-rangeblocks', $html );
 		// Verify that the form title is present
 		$this->assertStringContainsString( '(globalblocking-search-legend', $html );
@@ -95,6 +109,7 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 			'single IPv6' => [ '::1', '0:0:0:0:0:0:0:0/19' ],
 			'exact IPv6 range' => [ '::1/19', '0:0:0:0:0:0:0:0/19' ],
 			'narrower IPv6 range' => [ '::1/20', '0:0:0:0:0:0:0:0/19' ],
+			'temporary account username' => [ self::TEMP_USER_NAME, self::TEMP_USER_NAME ],
 			'wider IPv6 range' => [ '::1/18', false ],
 			'unblocked IP' => [ '6.7.8.9', false ],
 			'non-existing global block ID' => [ '#123456789', false ],
@@ -135,7 +150,10 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 
 	/** @dataProvider provideViewPageWithOptionsSelected */
 	public function testViewPageWithOptionsSelected(
-		$selectedOptions, $expectedTargets, $accountIsAnExpectedTargets, $autoblockIsAnExpectedTarget
+		array $selectedOptions,
+		array $expectedTargets,
+		bool $accountIsAnExpectedTargets,
+		bool $autoblockIsAnExpectedTarget
 	) {
 		// Add the globally blocked account to the $expectedTargets array if $accountIsAnExpectedTargets is true.
 		// This is required because we do not have access to the globally blocked account name in the data provider,
@@ -173,20 +191,37 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 				// The value of the wgOptions parameter
 				[ 'addressblocks' ],
 				// The targets that should appear in the special page once submitting the form.
-				[ '1.2.3.0/24', '0:0:0:0:0:0:0:0/19' ],
+				[ '1.2.3.0/24', '0:0:0:0:0:0:0:0/19', self::TEMP_USER_NAME ],
 				// Whether the globally blocked account should also be a target that appears in the special page.
 				true,
 				// Whether the autoblock should also be a target that appears in the results list.
 				false,
 			],
-			'Hide range blocks' => [ [ 'rangeblocks' ], [ '1.2.3.4' ], true, true ],
+			'Hide range blocks' => [ [ 'rangeblocks' ], [ '1.2.3.4', self::TEMP_USER_NAME ], true, true ],
 			'Hide user blocks' => [ [ 'userblocks' ], [ '1.2.3.4', '1.2.3.0/24', '0:0:0:0:0:0:0:0/19' ], false, true ],
-			'Hide IP and range blocks' => [ [ 'addressblocks', 'rangeblocks' ], [], true, false ],
+			'Hide IP and range blocks' => [ [ 'addressblocks', 'rangeblocks' ], [ self::TEMP_USER_NAME ], true, false ],
 			'Hide user, IP, and range blocks' => [ [ 'addressblocks', 'rangeblocks', 'userblocks' ], [], false, false ],
+			'Hide user, IP, range and Temp Account blocks' => [
+				[ 'addressblocks', 'rangeblocks', 'userblocks', 'tempaccountblocks' ],
+				[],
+				false,
+				false
+			],
 			'Hide user, IP, auto, and range blocks' => [
 				[ 'addressblocks', 'rangeblocks', 'userblocks', 'autoblocks' ], [], false, false,
 			],
-			'Hide temporary blocks' => [ [ 'tempblocks' ], [ '1.2.3.4', '0:0:0:0:0:0:0:0/19' ], true, false ],
+			'Hide temporary account blocks' => [
+				[ 'tempaccountblocks' ],
+				[ '1.2.3.4', '1.2.3.0/24', '0:0:0:0:0:0:0:0/19' ],
+				true,
+				true
+			],
+			'Hide temporary blocks' => [
+				[ 'tempblocks' ],
+				[ '1.2.3.4', '0:0:0:0:0:0:0:0/19', self::TEMP_USER_NAME ],
+				true,
+				false
+			],
 			'Hide indefinite blocks' => [ [ 'indefblocks' ], [ '1.2.3.0/24' ], false, true ],
 			'Hide temporary and indefinite blocks' => [ [ 'tempblocks', 'indefblocks' ], [], false, false ],
 		];
@@ -230,7 +265,32 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 		$this->assertStatusGood( $autoblockStatus );
 		$this->assertArrayHasKey( 'id', $autoblockStatus->getValue() );
 		self::$autoBlockId = $autoblockStatus->getValue()['id'];
-		self::$blockedTargets = [ '1.2.3.4', '1.2.3.0/24', '0:0:0:0:0:0:0:0/19', $globallyBlockedUser ];
+
+		$this->enableAutoCreateTempUser(
+			[ 'genPattern' => self::TEMP_USER_PATTERN ]
+		);
+
+		$tempUser = $this->getServiceContainer()
+			->getTempUserCreator()
+			->create( self::TEMP_USER_NAME, new FauxRequest() )
+			->getUser();
+
 		self::$globallyBlockedUser = $globallyBlockedUser;
+		self::$blockedTargets = [
+			'1.2.3.4',
+			'1.2.3.0/24',
+			'0:0:0:0:0:0:0:0/19',
+			$globallyBlockedUser,
+			$tempUser->getName()
+		];
+
+		$thirdUserBlockStatus = $globalBlockManager->block(
+			$tempUser->getName(),
+			'Test reason5',
+			'infinite',
+			$testPerformer,
+			[ 'enable-autoblock' ]
+		);
+		$this->assertStatusGood( $thirdUserBlockStatus );
 	}
 }
