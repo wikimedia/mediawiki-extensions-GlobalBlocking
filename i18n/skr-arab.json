@@ -1,13 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Saraiki"
+			"Saraiki",
+			"Umar Shahid"
 		]
 	},
 	"globalblocking-block": "ورتݨ آلے کوں عالمی طور تے بلاک کرو",
 	"globalblocking-block-legend": "ورتݨ آلے کوں عالمی طور تے بلاک کرو",
 	"globalblocking-block-submit": "ایں ورتݨ آلے کوں عالمی طور تے بلاک کرو",
 	"globalblocking-list-block": "پابندی لاؤ",
+	"globalblocking-list-tempaccountblocks": "عارضی بلاک  اکاؤنٹاں کوں لُکاؤ",
 	"globalblocking-list-table-heading-target": "نشانہ",
 	"globalblocking-list-table-heading-expiry": "مُکسی",
 	"globalblocking-list-table-heading-reason": "وجہ",

@@ -67,6 +67,7 @@
 	"globalblocking-list-tempblocks": "Befristete Sperren ausblenden",
 	"globalblocking-list-indefblocks": "Unbefristete Sperren ausblenden",
 	"globalblocking-list-addressblocks": "Sperren einzelner IP-Adressen ausblenden",
+	"globalblocking-list-tempaccountblocks": "Verbergen von temporären Benutzerkonten-Sperren",
 	"globalblocking-list-rangeblocks": "Bereichssperren ausblenden",
 	"globalblocking-list-userblocks": "Benutzersperren ausblenden",
 	"globalblocking-list-autoblocks": "Automatische Sperren ausblenden",

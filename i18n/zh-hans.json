@@ -86,6 +86,7 @@
 	"globalblocking-list-tempblocks": "隐藏临时封禁",
 	"globalblocking-list-indefblocks": "隐藏无限期封禁",
 	"globalblocking-list-addressblocks": "隐藏单个IP封禁",
+	"globalblocking-list-tempaccountblocks": "隐藏临时账号封禁",
 	"globalblocking-list-rangeblocks": "隐藏段封禁",
 	"globalblocking-list-userblocks": "隐藏账号封禁",
 	"globalblocking-list-autoblocks": "隐藏自动封禁",

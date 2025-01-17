@@ -59,6 +59,7 @@
 	"globalblocking-list-tempblocks": "הסתרת חסימות זמניות",
 	"globalblocking-list-indefblocks": "הסתרת חסימות בלתי־מוגבלות בזמן",
 	"globalblocking-list-addressblocks": "הסתרת חסימות של כתובות IP בודדות",
+	"globalblocking-list-tempaccountblocks": "הסתרת חסימות של חשבונות זמניים",
 	"globalblocking-list-rangeblocks": "הסתרת חסימות טווחים",
 	"globalblocking-list-userblocks": "הסתרת חסימות של משתמשים רשומים",
 	"globalblocking-list-autoblocks": "להסתיר חסימות אוטומטיות",

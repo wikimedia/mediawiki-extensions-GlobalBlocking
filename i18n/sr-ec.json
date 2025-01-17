@@ -51,6 +51,7 @@
 	"globalblocking-list-tempblocks": "Сакриј привремене блокаде",
 	"globalblocking-list-indefblocks": "Сакриј трајне блокаде",
 	"globalblocking-list-addressblocks": "Сакриј блокаде појединачних IP адреса",
+	"globalblocking-list-tempaccountblocks": "Сакриј блокаде привремених налога",
 	"globalblocking-list-rangeblocks": "Сакриј блокаде опсега",
 	"globalblocking-list-userblocks": "Сакриј блокаде налога",
 	"globalblocking-list-table-heading-timestamp": "Временска ознака",

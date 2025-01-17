@@ -60,6 +60,7 @@
 	"globalblocking-list-tempblocks": "Ukryj blokady tymczasowe",
 	"globalblocking-list-indefblocks": "Ukryj blokady nałożone na czas nieokreślony",
 	"globalblocking-list-addressblocks": "Ukryj blokady pojedynczych adresów IP",
+	"globalblocking-list-tempaccountblocks": "Ukryj tymczasowe blokady kont",
 	"globalblocking-list-rangeblocks": "Ukryj blokady zakresów",
 	"globalblocking-list-userblocks": "Ukryj blokady kont zarejestrowanych",
 	"globalblocking-list-noresults": "Nie znaleziono wyników dla podanych parametrów.",

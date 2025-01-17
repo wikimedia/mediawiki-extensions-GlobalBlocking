@@ -53,6 +53,7 @@
 	"globalblocking-list-tempblocks": "Nascondi blocchi temporanei",
 	"globalblocking-list-indefblocks": "Nascondi blocchi infiniti",
 	"globalblocking-list-addressblocks": "Nascondi blocchi di un solo IP",
+	"globalblocking-list-tempaccountblocks": "Nascondi i blocchi temporanei dell'utenza",
 	"globalblocking-list-rangeblocks": "Nascondi blocchi di range",
 	"globalblocking-list-autoblocks": "Nascondi autoblocchi",
 	"globalblocking-list-table-heading-timestamp": "Data e ora",

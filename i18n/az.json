@@ -58,6 +58,7 @@
 	"globalblocking-list-tempblocks": "Müvəqqəti blokları gizlə",
 	"globalblocking-list-indefblocks": "Müddətsiz blokları gizlə",
 	"globalblocking-list-addressblocks": "Tək IP bloklarını gizlə",
+	"globalblocking-list-tempaccountblocks": "Müvəqqəti hesab bloklarını gizlət",
 	"globalblocking-list-rangeblocks": "Diapazon bloklarını gizlə",
 	"globalblocking-list-userblocks": "Hesab bloklarını gizlə",
 	"globalblocking-list-autoblocks": "Avtoblokları gizlət",
