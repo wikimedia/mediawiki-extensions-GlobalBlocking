@@ -59,6 +59,7 @@
 	"globalblocking-list-tempblocks": "نفهتن قطع دسترسی‌های موقت",
 	"globalblocking-list-indefblocks": "نهفتن قطع دسترسی‌های بی‌پایان",
 	"globalblocking-list-addressblocks": "نهفتن قطع دسترسی‌های تکی آی‌پی",
+	"globalblocking-list-tempaccountblocks": "نهفتن قطع دسترسی‌های حساب‌های موقت",
 	"globalblocking-list-rangeblocks": "نفهتن قطع دسترسی‌های بازه",
 	"globalblocking-list-userblocks": "نهفتن قطع دسترسی‌های حساب",
 	"globalblocking-list-noresults": "نتیجه‌ای با پارامترهای ارائه‌شده یافت نشد.",

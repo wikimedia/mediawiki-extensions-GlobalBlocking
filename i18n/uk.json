@@ -65,6 +65,7 @@
 	"globalblocking-list-tempblocks": "Сховати тимчасові блокування",
 	"globalblocking-list-indefblocks": "Сховати безстрокові блокування",
 	"globalblocking-list-addressblocks": "Приховати блокування окремих IP-адрес",
+	"globalblocking-list-tempaccountblocks": "Приховати блокування тимчасових облікових записів",
 	"globalblocking-list-rangeblocks": "Приховати блокування діапазонів",
 	"globalblocking-list-userblocks": "Сховати блокування облікових записів",
 	"globalblocking-list-autoblocks": "Приховати автоблокування",

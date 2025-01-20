@@ -63,6 +63,7 @@
 	"globalblocking-list-tempblocks": "기한이 정해진 차단을 숨기기",
 	"globalblocking-list-indefblocks": "무기한 차단 숨기기",
 	"globalblocking-list-addressblocks": "단일 IP 차단을 숨기기",
+	"globalblocking-list-tempaccountblocks": "임시 계정 차단 숨기기",
 	"globalblocking-list-rangeblocks": "대역 차단을 숨기기",
 	"globalblocking-list-userblocks": "계정에 대한 차단 숨기기",
 	"globalblocking-list-autoblocks": "자동 차단 숨기기",
