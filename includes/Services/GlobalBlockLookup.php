@@ -3,7 +3,6 @@
 namespace MediaWiki\Extension\GlobalBlocking\Services;
 
 use InvalidArgumentException;
-use Liuggio\StatsdClient\Factory\StatsdDataFactoryInterface;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlock;
@@ -18,6 +17,7 @@ use Wikimedia\Rdbms\FakeResultWrapper;
 use Wikimedia\Rdbms\IExpression;
 use Wikimedia\Rdbms\IResultWrapper;
 use Wikimedia\Rdbms\LikeValue;
+use Wikimedia\Stats\StatsFactory;
 
 /**
  * Allows looking up global blocks in the globalblocks table.
@@ -53,7 +53,7 @@ class GlobalBlockLookup {
 
 	private ServiceOptions $options;
 	private GlobalBlockingConnectionProvider $globalBlockingConnectionProvider;
-	private StatsdDataFactoryInterface $statsdFactory;
+	private StatsFactory $statsFactory;
 	private CentralIdLookup $centralIdLookup;
 	private GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup;
 	private TempUserConfig $tempUserConfig;
@@ -64,7 +64,7 @@ class GlobalBlockLookup {
 	public function __construct(
 		ServiceOptions $options,
 		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
-		StatsdDataFactoryInterface $statsdFactory,
+		StatsFactory $statsFactory,
 		CentralIdLookup $centralIdLookup,
 		GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup,
 		TempUserConfig $tempUserConfig,
@@ -73,7 +73,7 @@ class GlobalBlockLookup {
 		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
 		$this->options = $options;
 		$this->globalBlockingConnectionProvider = $globalBlockingConnectionProvider;
-		$this->statsdFactory = $statsdFactory;
+		$this->statsFactory = $statsFactory;
 		$this->centralIdLookup = $centralIdLookup;
 		$this->globalBlockLocalStatusLookup = $globalBlockLocalStatusLookup;
 		$this->tempUserConfig = $tempUserConfig;
@@ -203,7 +203,13 @@ class GlobalBlockLookup {
 			return $cachedResult;
 		}
 
-		$this->statsdFactory->increment( 'global_blocking.get_user_block' );
+		$this->statsFactory->withComponent( 'GlobalBlocking' )
+			->getCounter( 'get_user_block_calls_total' )
+			->copyToStatsdAt( [
+				'global_blocking.get_user_block',
+				'global_blocking.get_user_block_db_query'
+			] )
+			->increment();
 
 		// We have callers from different code paths which may leave $ip as null when providing an
 		// IP address as the $user where the IP address is not the session user. In this case, populate
@@ -229,8 +235,6 @@ class GlobalBlockLookup {
 		if ( $user->isRegistered() ) {
 			$centralId = $this->centralIdLookup->centralIdFromLocalUser( $user, CentralIdLookup::AUDIENCE_RAW );
 		}
-
-		$this->statsdFactory->increment( 'global_blocking.get_user_block_db_query' );
 
 		$block = $this->getGlobalBlockingBlock( $ip, $centralId, $flags );
 		if ( $block ) {
