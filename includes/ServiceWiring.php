@@ -22,25 +22,8 @@ use MediaWiki\MediaWikiServices;
 // It is covered though, see GlobalBlockingServiceWiringTest.
 // @codeCoverageIgnoreStart
 
+/** @phpcs-require-sorted-array */
 return [
-	'GlobalBlocking.GlobalBlockReasonFormatter' => static function (
-		MediaWikiServices $services
-	): GlobalBlockReasonFormatter {
-		return new GlobalBlockReasonFormatter(
-			new ServiceOptions(
-				GlobalBlockReasonFormatter::CONSTRUCTOR_OPTIONS,
-				$services->getMainConfig()
-			),
-			$services->getMainWANObjectCache(),
-			$services->getHttpRequestFactory(),
-			LoggerFactory::getInstance( 'GlobalBlockReasonFormatter' )
-		);
-	},
-	'GlobalBlocking.GlobalBlockingConnectionProvider' => static function (
-		MediaWikiServices $services
-	): GlobalBlockingConnectionProvider {
-		return new GlobalBlockingConnectionProvider( $services->getConnectionProvider() );
-	},
 	'GlobalBlocking.GlobalBlockingBlockPurger' => static function (
 		MediaWikiServices $services
 	): GlobalBlockingBlockPurger {
@@ -55,6 +38,60 @@ return [
 			$services->getReadOnlyMode(),
 			$globalBlockingServices->getGlobalBlockLookup()
 		);
+	},
+	'GlobalBlocking.GlobalBlockingConnectionProvider' => static function (
+		MediaWikiServices $services
+	): GlobalBlockingConnectionProvider {
+		return new GlobalBlockingConnectionProvider( $services->getConnectionProvider() );
+	},
+	'GlobalBlocking.GlobalBlockingExpirySelectorBuilder' => static function (): GlobalBlockingExpirySelectorBuilder {
+		return new GlobalBlockingExpirySelectorBuilder();
+	},
+	'GlobalBlocking.GlobalBlockingGlobalAutoblockExemptionListProvider' => static function (
+		MediaWikiServices $services
+	): GlobalBlockingGlobalAutoblockExemptionListProvider {
+		return new GlobalBlockingGlobalAutoblockExemptionListProvider(
+			new ServiceOptions(
+				GlobalBlockingGlobalAutoblockExemptionListProvider::CONSTRUCTOR_OPTIONS,
+				$services->getMainConfig()
+			),
+			$services->getMessageFormatterFactory()->getTextFormatter( $services->getContentLanguage()->getCode() ),
+			$services->getMainWANObjectCache(),
+			$services->getHttpRequestFactory(),
+			$services->getSiteLookup(),
+			$services->getFormatterFactory()->getStatusFormatter( RequestContext::getMain() ),
+			LoggerFactory::getInstance( 'GlobalBlocking' )
+		);
+	},
+	'GlobalBlocking.GlobalBlockingGlobalBlockDetailsRenderer' => static function (
+		MediaWikiServices $services
+	): GlobalBlockingGlobalBlockDetailsRenderer {
+		$globalBlockingServices = GlobalBlockingServices::wrap( $services );
+		return new GlobalBlockingGlobalBlockDetailsRenderer(
+			$services->getCentralIdLookup(),
+			$services->getUserIdentityLookup(),
+			$globalBlockingServices->getGlobalBlockingUserVisibilityLookup(),
+			$globalBlockingServices->getGlobalBlockLocalStatusLookup(),
+			$globalBlockingServices->getGlobalBlockingLinkBuilder()
+		);
+	},
+	'GlobalBlocking.GlobalBlockingLinkBuilder' => static function (
+		MediaWikiServices $services
+	): GlobalBlockingLinkBuilder {
+		$globalBlockingServices = GlobalBlockingServices::wrap( $services );
+		return new GlobalBlockingLinkBuilder(
+			new ServiceOptions(
+				GlobalBlockingLinkBuilder::CONSTRUCTOR_OPTIONS,
+				$services->getMainConfig()
+			),
+			$services->getLinkRenderer(),
+			$globalBlockingServices->getGlobalBlockLookup()
+		);
+	},
+	'GlobalBlocking.GlobalBlockingUserVisibilityLookup' => static function (
+		MediaWikiServices $services
+	): GlobalBlockingUserVisibilityLookup {
+		return new GlobalBlockingUserVisibilityLookup( $services->getUserFactory() );
 	},
 	'GlobalBlocking.GlobalBlockLocalStatusLookup' => static function (
 		MediaWikiServices $services
@@ -114,55 +151,19 @@ return [
 			$services->getHookContainer()
 		);
 	},
-	'GlobalBlocking.GlobalBlockingLinkBuilder' => static function (
+	'GlobalBlocking.GlobalBlockReasonFormatter' => static function (
 		MediaWikiServices $services
-	): GlobalBlockingLinkBuilder {
-		$globalBlockingServices = GlobalBlockingServices::wrap( $services );
-		return new GlobalBlockingLinkBuilder(
+	): GlobalBlockReasonFormatter {
+		return new GlobalBlockReasonFormatter(
 			new ServiceOptions(
-				GlobalBlockingLinkBuilder::CONSTRUCTOR_OPTIONS,
+				GlobalBlockReasonFormatter::CONSTRUCTOR_OPTIONS,
 				$services->getMainConfig()
 			),
-			$services->getLinkRenderer(),
-			$globalBlockingServices->getGlobalBlockLookup()
-		);
-	},
-	'GlobalBlocking.GlobalBlockingUserVisibilityLookup' => static function (
-		MediaWikiServices $services
-	): GlobalBlockingUserVisibilityLookup {
-		return new GlobalBlockingUserVisibilityLookup( $services->getUserFactory() );
-	},
-	'GlobalBlocking.GlobalBlockingGlobalAutoblockExemptionListProvider' => static function (
-		MediaWikiServices $services
-	): GlobalBlockingGlobalAutoblockExemptionListProvider {
-		return new GlobalBlockingGlobalAutoblockExemptionListProvider(
-			new ServiceOptions(
-				GlobalBlockingGlobalAutoblockExemptionListProvider::CONSTRUCTOR_OPTIONS,
-				$services->getMainConfig()
-			),
-			$services->getMessageFormatterFactory()->getTextFormatter( $services->getContentLanguage()->getCode() ),
 			$services->getMainWANObjectCache(),
 			$services->getHttpRequestFactory(),
-			$services->getSiteLookup(),
-			$services->getFormatterFactory()->getStatusFormatter( RequestContext::getMain() ),
-			LoggerFactory::getInstance( 'GlobalBlocking' )
+			LoggerFactory::getInstance( 'GlobalBlockReasonFormatter' )
 		);
 	},
-	'GlobalBlocking.GlobalBlockingGlobalBlockDetailsRenderer' => static function (
-		MediaWikiServices $services
-	): GlobalBlockingGlobalBlockDetailsRenderer {
-		$globalBlockingServices = GlobalBlockingServices::wrap( $services );
-		return new GlobalBlockingGlobalBlockDetailsRenderer(
-			$services->getCentralIdLookup(),
-			$services->getUserIdentityLookup(),
-			$globalBlockingServices->getGlobalBlockingUserVisibilityLookup(),
-			$globalBlockingServices->getGlobalBlockLocalStatusLookup(),
-			$globalBlockingServices->getGlobalBlockingLinkBuilder()
-		);
-	},
-	'GlobalBlocking.GlobalBlockingExpirySelectorBuilder' => static function (): GlobalBlockingExpirySelectorBuilder {
-		return new GlobalBlockingExpirySelectorBuilder();
-	}
 ];
 
 // @codeCoverageIgnoreEnd
