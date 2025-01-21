@@ -88,7 +88,7 @@ return [
 				$services->getMainConfig()
 			),
 			$globalBlockingServices->getGlobalBlockingConnectionProvider(),
-			$services->getStatsdDataFactory(),
+			$services->getStatsFactory(),
 			$services->getCentralIdLookup(),
 			$globalBlockingServices->getGlobalBlockLocalStatusLookup(),
 			$services->getTempUserConfig(),
