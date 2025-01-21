@@ -5,7 +5,7 @@
 		]
 	},
 	"globalblocking-block-reason": "Себеп:",
-	"globalblocking-block-reason-dropdown": "Бөгөттөөнүн кадимки себептери\n** Вики аралык жарнама жайылтуу\n** Вики аралык кыянаттык\n** Вандализм",
+	"globalblocking-block-reason-dropdown": "Бөгөттүн негизги себептери\n* Вики аралык жарнама жайылтуу\n* Вики аралык кыянаттык\n* Вандализм",
 	"globalblocking-block-success": "$1 IP дареги бардык долбоорлордо бөгөттөлгөн.",
 	"globalblocking-list-modify": "түзөтүү",
 	"globalblocking-list-indefblocks": "Мөөнөтсүз бөгөттөрдү жашыруу",

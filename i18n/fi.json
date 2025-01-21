@@ -101,6 +101,8 @@
 	"globalblocking-whitelist-submit": "Vaihda paikallinen tila",
 	"globalblocking-whitelist-whitelisted": "Olet poiskytkenyt käyttäjän '''$1''' järjestelmänlaajuisen eston #$2 {{GRAMMAR:inessive|{{SITENAME}}}}.",
 	"globalblocking-whitelist-dewhitelisted": "Olet uudelleenkytkenyt käyttäjän '''$1''' järjestelmänlaajuisen eston #$2 {{GRAMMAR:inessive|{{SITENAME}}}}.",
+	"globalblocking-whitelist-whitelisted-target-is-id": "Olet poiskytkenyt järjestelmänlaajuisen eston #$1 {{GRAMMAR:inessive|{{SITENAME}}}}.",
+	"globalblocking-whitelist-dewhitelisted-target-is-id": "Olet poiskytkenyt järjestelmänlaajuisen eston #$1 {{GRAMMAR:inessive|{{SITENAME}}}}.",
 	"globalblocking-whitelist-nochange": "Et tehnyt muutoksia tämän eston paikalliseen tilaan.",
 	"globalblocking-whitelist-intro": "Voit käyttää tätä lomaketta järjestelmänlaajuisen eston paikallisten vaikutusten muuttamiseen. \n\nJos järjestelmänlaajuinen esto poistetaan käytöstä tässä wikissä, käyttäjät, joihin esto vaikuttaa voivat muokata normaalisti.",
 	"globalblocking-logpage": "Järjestelmänlaajuisten estojen loki",
