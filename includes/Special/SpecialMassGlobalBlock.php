@@ -67,6 +67,14 @@ class SpecialMassGlobalBlock extends SpecialPage {
 		return true;
 	}
 
+	/**
+	 * @inheritDoc
+	 * @codeCoverageIgnore Merely declarative
+	 */
+	protected function getGroupName() {
+		return 'users';
+	}
+
 	/** @inheritDoc */
 	public function execute( $subPage ) {
 		$this->checkReadOnly();
