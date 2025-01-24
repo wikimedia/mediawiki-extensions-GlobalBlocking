@@ -352,9 +352,12 @@ class GlobalBlockingHooks implements
 			}
 		}
 
-		$tools['globalblocklog'] = $this->globalBlockLinkBuilder->getLinkToCentralWikiSpecialPage(
-			'Log', $specialPage->msg( 'globalblocking-contribs-log' )->text(),
-			$specialPage->getFullTitle(), [ 'type' => 'gblblock', 'page' => $target ]
+		$tools['globalblocklog'] = Html::rawElement(
+			'span', [ 'class' => 'plainlinks' ],
+			$this->globalBlockLinkBuilder->getLinkToCentralWikiSpecialPage(
+				'Log', $specialPage->msg( 'globalblocking-contribs-log' )->text(),
+				$specialPage->getFullTitle(), [ 'type' => 'gblblock', 'page' => $target ]
+			)
 		);
 	}
 
