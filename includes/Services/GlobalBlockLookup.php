@@ -383,21 +383,6 @@ class GlobalBlockLookup {
 	}
 
 	/**
-	 * Get the SQL WHERE conditions that allow looking up all blocks from the
-	 * `globalblocks` table that apply to the given IP address or range.
-	 *
-	 * @param string $ip The IP address or range
-	 * @deprecated Since 1.42. Use ::getGlobalBlockLookupConditions.
-	 * @return IExpression
-	 */
-	public function getRangeCondition( string $ip ): IExpression {
-		wfDeprecated( __METHOD__, '1.42' );
-		// This method does not return null if an IP is provided and the allowed ranges check is skipped.
-		// @phan-suppress-next-line PhanTypeMismatchReturnNullable
-		return $this->getGlobalBlockLookupConditions( $ip, 0, self::SKIP_ALLOWED_RANGES_CHECK );
-	}
-
-	/**
 	 * Get the SQL WHERE conditions that allow looking up all blocks from the `globalblocks` table.
 	 *
 	 * @param ?string $ip The IP address or range. If null, then no IP blocks will be checked.

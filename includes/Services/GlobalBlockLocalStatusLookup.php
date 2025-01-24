@@ -149,20 +149,4 @@ class GlobalBlockLocalStatusLookup {
 
 		return $this->getLocalStatusInfo( $id, $wikiId );
 	}
-
-	/**
-	 * Returns whether a global block on the given IP address has been locally disabled.
-	 *
-	 * @param string $block_ip
-	 * @param string|false $wikiId The wiki where the where the whitelist info should be looked up.
-	 *    Use false for the local wiki.
-	 * @return array|false false if the block is not locally disabled, otherwise an array containing the
-	 *    user ID of the user who disabled the block and the reason for the block being disabled.
-	 * @phan-return array{user:int,reason:string}|false
-	 * @deprecated since 1.42. Use ::getLocalWhitelistInfo.
-	 */
-	public function getLocalWhitelistInfoByIP( string $block_ip, $wikiId = false ) {
-		wfDeprecated( __METHOD__, '1.42' );
-		return $this->getLocalWhitelistInfo( null, $block_ip, $wikiId );
-	}
 }
