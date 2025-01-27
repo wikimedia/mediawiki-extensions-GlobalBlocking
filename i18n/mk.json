@@ -52,6 +52,7 @@
 	"globalblocking-list-tempblocks": "Скриј привремени блокирања",
 	"globalblocking-list-indefblocks": "Скриј бесконечни блокови",
 	"globalblocking-list-addressblocks": "Скри блокирања на поединечни IP-адреси",
+	"globalblocking-list-tempaccountblocks": "Скриј блокови на привремени сметки",
 	"globalblocking-list-rangeblocks": "Скриј опсежни блокови",
 	"globalblocking-list-userblocks": "Скриј блокови на сметката",
 	"globalblocking-list-autoblocks": "Скриј автоблокови",
