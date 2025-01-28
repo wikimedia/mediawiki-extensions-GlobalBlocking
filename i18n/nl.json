@@ -65,6 +65,7 @@
 	"globalblocking-list-tempblocks": "Tijdelijke blokkades verbergen",
 	"globalblocking-list-indefblocks": "Verberg blokkades met een oneindige loopduur",
 	"globalblocking-list-addressblocks": "Blokkades van één IP-adres verbergen",
+	"globalblocking-list-tempaccountblocks": "Blokkades van tijdelijke accounts verbergen",
 	"globalblocking-list-rangeblocks": "IP-adresblokken verbergen",
 	"globalblocking-list-userblocks": "Accountblokkades verbergen",
 	"globalblocking-list-autoblocks": "Automatische blokkades verbergen",
