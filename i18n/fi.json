@@ -68,6 +68,7 @@
 	"globalblocking-list-tempblocks": "Piilota väliaikaiset estot",
 	"globalblocking-list-indefblocks": "Piilota ikuiset estot",
 	"globalblocking-list-addressblocks": "Piilota yksittäiset IP-estot",
+	"globalblocking-list-tempaccountblocks": "Piilota tilapäisten tunnusten estot",
 	"globalblocking-list-rangeblocks": "Piilota avaruusestot",
 	"globalblocking-list-userblocks": "Piilota tunnusten estot",
 	"globalblocking-list-autoblocks": "Piilota automaattiset estot",
