@@ -29,10 +29,10 @@ class GlobalBlockLocalStatusManagerTest extends MediaWikiIntegrationTestCase {
 	public static function provideValidTargets() {
 		return [
 			'Target specified via IP address' => [
-				fn () => '127.0.0.1', fn () => static::$globalBlockId,
+				static fn () => '127.0.0.1', static fn () => static::$globalBlockId,
 			],
 			'Target specified via global block ID' => [
-				fn () => '#' . static::$globalBlockId, fn () => static::$globalBlockId,
+				static fn () => '#' . static::$globalBlockId, static fn () => static::$globalBlockId,
 			],
 		];
 	}

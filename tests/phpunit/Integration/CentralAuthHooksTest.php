@@ -81,8 +81,8 @@ class CentralAuthHooksTest extends MediaWikiIntegrationTestCase {
 
 	public static function provideOnCentralAuthInfoFields() {
 		return [
-			'Special:CentralAuth for unblocked user' => [ fn () => self::$testUnblockedUser, false ],
-			'Special:CentralAuth for globally blocked user' => [ fn () => self::$testGloballyBlockedUser, true ],
+			'Special:CentralAuth for unblocked user' => [ static fn () => self::$testUnblockedUser, false ],
+			'Special:CentralAuth for globally blocked user' => [ static fn () => self::$testGloballyBlockedUser, true ],
 		];
 	}
 

@@ -249,13 +249,13 @@ class GlobalBlockingLinkBuilderTest extends MediaWikiIntegrationTestCase {
 
 	public static function provideGetActionLinks() {
 		return [
-			'User is not blocked' => [ fn () => self::$testUnblockedUser->getName(), true, false ],
+			'User is not blocked' => [ static fn () => self::$testUnblockedUser->getName(), true, false ],
 			'User is not blocked, but set to not check block status' => [
-				fn () => self::$testUnblockedUser->getName(), false, true,
+				static fn () => self::$testUnblockedUser->getName(), false, true,
 			],
-			'User is blocked' => [ fn () => self::$testGloballyBlockedUser->getName(), true, true ],
+			'User is blocked' => [ static fn () => self::$testGloballyBlockedUser->getName(), true, true ],
 			'User is blocked, target is global block ID' => [
-				fn () => '#' . self::$testGloballyBlockedUserGlobalBlockId, true, true,
+				static fn () => '#' . self::$testGloballyBlockedUserGlobalBlockId, true, true,
 			]
 		];
 	}
