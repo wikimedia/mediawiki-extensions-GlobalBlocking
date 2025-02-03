@@ -76,6 +76,7 @@
 	"globalblocking-list-tempblocks": "Masquer les blocages temporaires",
 	"globalblocking-list-indefblocks": "Masquer les blocages infinis",
 	"globalblocking-list-addressblocks": "Masquer les blocages d’adresses IP individuelles",
+	"globalblocking-list-tempaccountblocks": "Masquer les blocages des comptes temporaires",
 	"globalblocking-list-rangeblocks": "Masquer les blocages d’intervalles",
 	"globalblocking-list-userblocks": "Masquer les blocages de compte",
 	"globalblocking-list-autoblocks": "Masquer les blocages automatiques",

@@ -3,6 +3,7 @@
 		"authors": [
 			"Ajeje Brazorf",
 			"Aushulz",
+			"GianAntonucci",
 			"Gmelfi",
 			"Macofe",
 			"Melos",
@@ -46,7 +47,7 @@
 	"globalblocking-whitelist-reason": "Mutivu:",
 	"globalblocking-whitelist-status": "Statu lucali:",
 	"globalblocking-whitelist-submit": "Cancia lu statu lucali",
-	"globalblocklist": "Elencu dê nnirizzi IP bluccati glubbalmenti",
+	"globalblocklist": "Lista dî ndrizzi IP bluccati glubbali",
 	"globalblockstatus": "Statu lucali di blocca glubbali",
 	"right-globalblock-exempt": "Bypassa li blocchi globali"
 }
