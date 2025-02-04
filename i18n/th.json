@@ -20,6 +20,7 @@
 	"globalblocking-block-expiry-selector-other": "เวลาอื่น:",
 	"globalblocking-block-legend": "บล็อกที่อยู่ไอพีข้ามโครงการ",
 	"globalblocking-target": "ชื่อผู้ใช้ ที่อยู่ไอพี หรือช่วงไอพี:",
+	"globalblocking-target-with-block-ids": "ชื่อผู้ใช้ ที่อยู่ไอพี ช่วงไอพี หรือหมายเลขบล็อก:",
 	"globalblocking-ipbanononly": "บล็อกผู้ใช้นิรนามข้ามโครงการเท่านั้น",
 	"globalblocking-block-disable-account-creation": "ปิดการใช้งานการสร้างบัญชีข้ามโครงการ",
 	"globalblocking-block-expiryinvalid": "วันที่หมดอายุที่คุณใส่ไม่ถูกต้อง",
