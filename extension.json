@@ -223,7 +223,8 @@
 	},
 	"AutoloadClasses": {
 		"MediaWiki\\Extension\\GlobalBlocking\\Maintenance\\FixGlobalBlockWhitelist": "maintenance/fixGlobalBlockWhitelist.php",
-		"MediaWiki\\Extension\\GlobalBlocking\\Maintenance\\UpdateAutoBlockParentIdColumn": "maintenance/UpdateAutoBlockParentIdColumn.php"
+		"MediaWiki\\Extension\\GlobalBlocking\\Maintenance\\UpdateAutoBlockParentIdColumn": "maintenance/UpdateAutoBlockParentIdColumn.php",
+		"MediaWiki\\Extension\\GlobalBlocking\\Maintenance\\GloballyBlock": "maintenance/globallyBlock.php"
 	},
 	"Hooks": {
 		"GetUserBlock": "main",
