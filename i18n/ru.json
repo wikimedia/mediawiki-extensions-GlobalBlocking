@@ -39,7 +39,7 @@
 	"globalblocking-ipbanononly": "Блокировать глобально только анонимных пользователей",
 	"globalblocking-block-target-invalid": "Введенные вами имя пользователя, IP-адрес или диапазон IP-адресов ($1) недействительны.",
 	"globalblocking-block-expiryinvalid": "Введён некорректный срок окончания.",
-	"globalblocking-block-anononly-on-account": "Вы не можете заблокировать анонимных пользователей только при блокировке пользователя.",
+	"globalblocking-block-anononly-on-account": "Блокировки учётных записей не могут применяться только к анонимным участникам.",
 	"globalblocking-block-submit": "Заблокировать этот IP-адрес глобально",
 	"globalblocking-modify-submit": "Изменить эту глобальную блокировку",
 	"globalblocking-block-success": "IP-адрес '''$1''' был заблокирован во всех вики.",
