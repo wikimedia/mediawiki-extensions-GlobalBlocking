@@ -144,7 +144,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/** @dataProvider provideBlock */
-	public function testBlock( array $data, string $expectedError ) {
+	public function testBlock( array $data, array $expected ) {
 		// Create a testing block on 1.2.3.6 so that we can test block modification.
 		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )
 			->getGlobalBlockManager();
@@ -169,12 +169,12 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 			$data[ 'options' ]
 		);
 		$this->assertSame(
-			$expectedError === '',
+			!isset( $expected['expectedError'] ),
 			$hookCalled,
 			'GlobalBlockingGlobalBlockAudit hook was not called as expected'
 		);
-		if ( $expectedError !== '' ) {
-			$this->assertStatusMessage( $expectedError, $errors );
+		if ( isset( $expected['expectedError'] ) ) {
+			$this->assertStatusMessage( $expected['expectedError'], $errors );
 		} else {
 			$actual = $this->getGlobalBlock( $data[ 'target' ] );
 			$this->assertSame( $data[ 'reason' ], $actual[ 'reason' ] );
@@ -185,7 +185,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 			// Assert that a log entry was added to the 'logging' table for the block
 			$this->assertThatLogWasAdded(
 				$data[ 'target' ],
-				in_array( 'modify', $data['options'] ) ? 'modify' : 'gblock',
+				$expected['expectedLogAction'],
 				'A logging entry for the global block was not found in the logging table.'
 			);
 		}
@@ -200,7 +200,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'expiry' => 'infinity',
 					'options' => [ 'anon-only' ],
 				],
-				'expectedError' => '',
+				'expected' => [ 'expectedLogAction' => 'gblock' ],
 			],
 			'good with account creation enabled' => [
 				'data' => [
@@ -209,7 +209,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'expiry' => 'infinity',
 					'options' => [ 'anon-only', 'allow-account-creation' ],
 				],
-				'expectedError' => '',
+				'expected' => [ 'expectedLogAction' => 'gblock' ]
 			],
 			'good range' => [
 				'data' => [
@@ -218,7 +218,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'expiry' => 'infinity',
 					'options' => [ 'anon-only' ],
 				],
-				'expectedError' => '',
+				'expected' => [ 'expectedLogAction' => 'gblock' ],
 			],
 			'good modify' => [
 				'data' => [
@@ -227,7 +227,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'expiry' => '2021-03-06T23:00:00Z',
 					'options' => [ 'anon-only', 'modify' ],
 				],
-				'expectedError' => '',
+				'expected' => [ 'expectedLogAction' => 'modify' ],
 			],
 			'good modify with account creation enabled' => [
 				'data' => [
@@ -236,7 +236,16 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'expiry' => '2021-03-06T23:00:00Z',
 					'options' => [ 'anon-only', 'modify', 'allow-account-creation' ],
 				],
-				'expectedError' => '',
+				'expected' => [ 'expectedLogAction' => 'modify' ],
+			],
+			'Global block modification but no global block to modify' => [
+				'data' => [
+					'target' => '1.2.3.7',
+					'reason' => 'Test block1',
+					'expiry' => '2021-03-06T23:00:00Z',
+					'options' => [ 'anon-only', 'modify', 'allow-account-creation' ],
+				],
+				'expected' => [ 'expectedLogAction' => 'gblock' ],
 			],
 			'Invalid username' => [
 				'data' => [
@@ -245,7 +254,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'expiry' => 'infinity',
 					'options' => [],
 				],
-				'expectedError' => 'globalblocking-block-target-invalid',
+				'expected' => [ 'expectedError' => 'globalblocking-block-target-invalid' ],
 			],
 			'no such user target' => [
 				'data' => [
@@ -254,7 +263,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'expiry' => 'infinity',
 					'options' => [ 'anon-only' ],
 				],
-				'expectedError' => 'globalblocking-block-target-invalid',
+				'expected' => [ 'expectedError' => 'globalblocking-block-target-invalid' ],
 			],
 			'no such global block ID' => [
 				'data' => [
@@ -263,7 +272,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'expiry' => 'infinity',
 					'options' => [ 'anon-only', 'modify' ],
 				],
-				'expectedError' => 'globalblocking-notblocked-id',
+				'expected' => [ 'expectedError' => 'globalblocking-notblocked-id' ],
 			],
 			'bad expiry' => [
 				'data' => [
@@ -272,7 +281,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'expiry' => '2021-03-06T25:00:00Z',
 					'options' => [ 'anon-only' ],
 				],
-				'expectedError' => 'globalblocking-block-expiryinvalid',
+				'expected' => [ 'expectedError' => 'globalblocking-block-expiryinvalid' ],
 			],
 			'bad range' => [
 				'data' => [
@@ -281,7 +290,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'expiry' => 'infinity',
 					'options' => [ 'anon-only' ],
 				],
-				'expectedError' => 'globalblocking-bigrange',
+				'expected' => [ 'expectedError' => 'globalblocking-bigrange' ],
 			],
 			'no modify' => [
 				'data' => [
@@ -290,7 +299,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'expiry' => 'infinity',
 					'options' => [ 'anon-only' ],
 				],
-				'expectedError' => 'globalblocking-block-alreadyblocked',
+				'expected' => [ 'expectedError' => 'globalblocking-block-alreadyblocked' ],
 			],
 			'Attempting to autoblock an IP address' => [
 				'data' => [
@@ -299,7 +308,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'expiry' => 'infinity',
 					'options' => [ 'enable-autoblock' ],
 				],
-				'expectedError' => 'globalblocking-block-enable-autoblock-on-ip',
+				'expected' => [ 'expectedError' => 'globalblocking-block-enable-autoblock-on-ip' ],
 			],
 		];
 	}

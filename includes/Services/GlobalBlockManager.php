@@ -70,86 +70,6 @@ class GlobalBlockManager {
 	}
 
 	/**
-	 * @param string $target See ::block for details.
-	 * @param string $reason See ::block for details.
-	 * @param string|false $expiry See ::block for details.
-	 * @param UserIdentity $blocker See ::block for details.
-	 * @param array $options See ::block for details.
-	 * @return StatusValue
-	 * @internal Use ::block instead. This is public to allow the deprecated static method in
-	 *   GlobalBlocking to call this method. This will be made private once the deprecated method
-	 *   is removed.
-	 */
-	public function insertBlock(
-		string $target, string $reason, $expiry, UserIdentity $blocker, array $options = []
-	): StatusValue {
-		if ( $expiry === false ) {
-			return StatusValue::newFatal( 'globalblocking-block-expiryinvalid' );
-		}
-
-		$status = $this->validateGlobalBlockTarget( $target, $blocker );
-
-		if ( !$status->isOK() ) {
-			return $status;
-		}
-
-		$data = $status->getValue();
-
-		$modify = in_array( 'modify', $options );
-		$anonOnly = in_array( 'anon-only', $options );
-		$allowAccountCreation = in_array( 'allow-account-creation', $options );
-		$enableAutoblock = in_array( 'enable-autoblock', $options );
-
-		// As we are inserting a block and therefore will be using a primary DB connection,
-		// we can purge expired blocks from the primary DB.
-		$this->globalBlockingBlockPurger->purgeExpiredBlocks( $data['target'] );
-
-		if ( $anonOnly && !IPUtils::isIPAddress( $data['target'] ) ) {
-			// Anon-only blocks on an account does not make any sense, so reject them.
-			return StatusValue::newFatal( 'globalblocking-block-anononly-on-account', $data['targetForDisplay'] );
-		}
-
-		if ( $enableAutoblock && !$data['targetCentralId'] ) {
-			// Global blocks can only be autoblocking if they target a user.
-			return StatusValue::newFatal( 'globalblocking-block-enable-autoblock-on-ip', $data['targetForDisplay'] );
-		}
-
-		// Look to see if this target is already globally blocked.
-		$existingGlobalBlockId = $this->globalBlockLookup->getGlobalBlockId( $data['targetForLookup'], DB_PRIMARY );
-		if ( !$modify && $existingGlobalBlockId ) {
-			return StatusValue::newFatal( 'globalblocking-block-alreadyblocked', $data['targetForDisplay'] );
-		}
-
-		// Prevent modifications of global autoblocks. This check is not performed when calling ::unblock, so that
-		// autoblocks can be removed.
-		$isExistingGlobalBlockAnAutoblock = $this->globalBlockingConnectionProvider->getPrimaryGlobalBlockingDatabase()
-			->newSelectQueryBuilder()
-			->select( 'gb_autoblock_parent_id' )
-			->from( 'globalblocks' )
-			->where( [ 'gb_id' => $existingGlobalBlockId ] )
-			->caller( __METHOD__ )
-			->fetchField();
-		if ( $isExistingGlobalBlockAnAutoblock ) {
-			return StatusValue::newFatal(
-				'globalblocking-block-modifying-global-autoblock', $data['targetForDisplay']
-			);
-		}
-
-		// At this point, we have validated that a block can be inserted or updated.
-		return $this->insertBlockAfterChecks( array_merge( [
-			'byCentralId' => $this->centralIdLookup->centralIdFromLocalUser( $blocker ),
-			'byWiki' => WikiMap::getCurrentWikiId(),
-			'reason' => $reason,
-			'timestamp' => wfTimestampNow(),
-			'expiry' => $expiry,
-			'anonOnly' => $anonOnly,
-			'allowAccountCreation' => $allowAccountCreation,
-			'enableAutoblock' => $enableAutoblock,
-			'existingBlockId' => $existingGlobalBlockId,
-		], $data ) );
-	}
-
-	/**
 	 * Insert or update a global block with the properties specified in $data.
 	 *
 	 * @param array $data Attributes to be set for the block.
@@ -302,17 +222,81 @@ class GlobalBlockManager {
 		string $target, string $reason, string $expiry, UserIdentity $blocker, array $options = []
 	): StatusValue {
 		$expiry = BlockUser::parseExpiryInput( $expiry );
-		$status = $this->insertBlock( $target, $reason, $expiry, $blocker, $options );
+		if ( $expiry === false ) {
+			return StatusValue::newFatal( 'globalblocking-block-expiryinvalid' );
+		}
+
+		$status = $this->validateGlobalBlockTarget( $target, $blocker );
+
+		if ( !$status->isOK() ) {
+			return $status;
+		}
+
+		$data = $status->getValue();
+
+		$modify = in_array( 'modify', $options );
+		$anonOnly = in_array( 'anon-only', $options );
+		$allowAccountCreation = in_array( 'allow-account-creation', $options );
+		$enableAutoblock = in_array( 'enable-autoblock', $options );
+
+		// As we are inserting a block and therefore will be using a primary DB connection,
+		// we can purge expired blocks from the primary DB.
+		$this->globalBlockingBlockPurger->purgeExpiredBlocks( $data['target'] );
+
+		if ( $anonOnly && !IPUtils::isIPAddress( $data['target'] ) ) {
+			// Anon-only blocks on an account does not make any sense, so reject them.
+			return StatusValue::newFatal( 'globalblocking-block-anononly-on-account', $data['targetForDisplay'] );
+		}
+
+		if ( $enableAutoblock && !$data['targetCentralId'] ) {
+			// Global blocks can only be autoblocking if they target a user.
+			return StatusValue::newFatal( 'globalblocking-block-enable-autoblock-on-ip', $data['targetForDisplay'] );
+		}
+
+		// Look to see if this target is already globally blocked.
+		$existingGlobalBlockId = $this->globalBlockLookup->getGlobalBlockId( $data['targetForLookup'], DB_PRIMARY );
+		if ( !$modify && $existingGlobalBlockId ) {
+			return StatusValue::newFatal( 'globalblocking-block-alreadyblocked', $data['targetForDisplay'] );
+		}
+
+		// Prevent modifications of global autoblocks. This check is not performed when calling ::unblock, so that
+		// autoblocks can be removed.
+		$isExistingGlobalBlockAnAutoblock = $this->globalBlockingConnectionProvider->getPrimaryGlobalBlockingDatabase()
+			->newSelectQueryBuilder()
+			->select( 'gb_autoblock_parent_id' )
+			->from( 'globalblocks' )
+			->where( [ 'gb_id' => $existingGlobalBlockId ] )
+			->caller( __METHOD__ )
+			->fetchField();
+		if ( $isExistingGlobalBlockAnAutoblock ) {
+			return StatusValue::newFatal(
+				'globalblocking-block-modifying-global-autoblock', $data['targetForDisplay']
+			);
+		}
+
+		// If no global block exists, set the modify flag to false so the correct log entry is created (T386235).
+		if ( !$existingGlobalBlockId && $modify ) {
+			$modify = false;
+		}
+
+		// At this point, we have validated that a block can be inserted or updated.
+		$status = $this->insertBlockAfterChecks( array_merge( [
+			'byCentralId' => $this->centralIdLookup->centralIdFromLocalUser( $blocker ),
+			'byWiki' => WikiMap::getCurrentWikiId(),
+			'reason' => $reason,
+			'timestamp' => wfTimestampNow(),
+			'expiry' => $expiry,
+			'anonOnly' => $anonOnly,
+			'allowAccountCreation' => $allowAccountCreation,
+			'enableAutoblock' => $enableAutoblock,
+			'existingBlockId' => $existingGlobalBlockId,
+		], $data ) );
 
 		if ( !$status->isOK() ) {
 			return $status;
 		}
 
 		$blockId = $status->getValue()['id'];
-		$anonOnly = in_array( 'anon-only', $options );
-		$modify = in_array( 'modify', $options );
-		$allowAccountCreation = in_array( 'allow-account-creation', $options );
-		$enableAutoblock = in_array( 'enable-autoblock', $options );
 
 		// Log it.
 		$logAction = $modify ? 'modify' : 'gblock';
