@@ -2,7 +2,6 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Test\Integration\Services;
 
-use InvalidArgumentException;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Title\Title;
@@ -25,57 +24,31 @@ class GlobalBlockLocalStatusLookupTest extends MediaWikiIntegrationTestCase {
 		$this->overrideConfigValue( MainConfigNames::CentralIdLookupProvider, 'local' );
 	}
 
-	public function testGetLocalWhitelistInfoThrowsExceptionOnInvalidArguments() {
-		// Call the method under test and verify that an exception is thrown when null is provided
-		// for both arguments.
-		$this->expectException( InvalidArgumentException::class );
-		GlobalBlockingServices::wrap( $this->getServiceContainer() )
-			->getGlobalBlockLocalStatusLookup()
-			// The default arguments are null (which throw the exception).
-			->getLocalWhitelistInfo();
-	}
-
-	/** @dataProvider provideGetLocalWhitelistInfo */
-	public function testGetLocalWhitelistInfo( $id, $target, $expectedResult ) {
-		// Tests ::getLocalWhitelistInfo for a variety of arguments. If updating the
-		// data provider, make sure to update the ::addDBDataOnce method as well.
+	/** @dataProvider provideGetLocalStatusInfo */
+	public function testGetLocalStatusInfo( $id, $expectedResult ) {
 		$this->assertSame(
 			$expectedResult,
 			GlobalBlockingServices::wrap( $this->getServiceContainer() )
 				->getGlobalBlockLocalStatusLookup()
-				->getLocalWhitelistInfo( $id, $target ),
-			'::getLocalWhitelistInfo did not return the expected result.'
+				->getLocalStatusInfo( $id ),
+			'::getLocalStatusInfo did not return the expected result.'
 		);
 	}
 
-	public static function provideGetLocalWhitelistInfo() {
+	public static function provideGetLocalStatusInfo() {
 		return [
-			'ID provided, target is null' => [
-				// The $id argument to the method under test
+			'Provided global block ID is a locally disabled global block on an IP' => [
+				// The $id argument to the method under test.
 				1234,
-				// The $target argument to the method under test
-				null,
 				// The expected result of the method under test
 				[ 'user' => 123, 'reason' => 'Test reason' ],
 			],
-			'No ID provided, but IP target is provided' => [
-				null, '127.0.0.1', [ 'user' => 123, 'reason' => 'Test reason' ],
+			'Provided global block ID is a locally disabled global block on a user' => [
+				123, [ 'user' => 123, 'reason' => 'Test reason2' ],
 			],
-			'No ID provided, IP target is provided but no row found' => [ null, '127.0.0.2', false ],
-			'ID provided, target is null but no row found' => [ 12345, null, false ],
-			'ID provided and IP target provided but no row found' => [ 12345, '1.2.3.4', false ],
-			'IP range target provided with no row found' => [ null, '1.2.3.4/24', false ],
-			'Non-existent user target provided' => [ null, 'Test-non-existent-user', false ],
+			'Provided global block ID exists but is not locally disabled' => [ 12345, false ],
+			'No such global block ID' => [ 3458484, false ],
 		];
-	}
-
-	public function testGetLocalWhitelistInfoForUser() {
-		$testUserName = $this->getDb()->newSelectQueryBuilder()
-			->select( 'gb_address' )
-			->from( 'globalblocks' )
-			->where( [ 'gb_id' => 123 ] )
-			->fetchField();
-		$this->testGetLocalWhitelistInfo( null, $testUserName, [ 'user' => 123, 'reason' => 'Test reason2' ] );
 	}
 
 	/** @dataProvider provideIsGlobalBlockLocallyDisabledForBlockApplication */

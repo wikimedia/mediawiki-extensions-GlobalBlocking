@@ -76,7 +76,7 @@ class GlobalBlockLocalStatusLookup {
 	 * Returns whether the given global block ID has been locally disabled on the given wiki.
 	 *
 	 * @param int $id Block ID
-	 * @param string|false $wikiId The wiki where the where the whitelist info should be looked up.
+	 * @param string|false $wikiId The wiki where the where the local disable status should be looked up.
 	 *   Use false for the local wiki.
 	 * @return array|false false if the block is not locally disabled, otherwise an array containing the
 	 *   user ID of the user who disabled the block and the reason for the block being disabled.
@@ -117,6 +117,7 @@ class GlobalBlockLocalStatusLookup {
 	 * @phan-return array{user:int,reason:string}|false
 	 */
 	public function getLocalWhitelistInfo( ?int $id = null, ?string $target = null, $wikiId = false ) {
+		wfDeprecated( __METHOD__, '1.43' );
 		if ( $target === null && $id === null ) {
 			throw new InvalidArgumentException(
 				'Both $target and $id are null when attempting to retrieve whitelist status'

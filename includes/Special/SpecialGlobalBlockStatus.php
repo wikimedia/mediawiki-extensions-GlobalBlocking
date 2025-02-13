@@ -107,7 +107,7 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 		}
 
 		$this->mCurrentStatus = (bool)$this->globalBlockLocalStatusLookup
-			->getLocalWhitelistInfo( $this->globalBlockLookup->getGlobalBlockId( $this->mTarget ) );
+			->getLocalStatusInfo( $this->globalBlockLookup->getGlobalBlockId( $this->mTarget ) );
 		$this->mWhitelistStatus = $request->getCheck( 'wpWhitelistStatus' );
 	}
 

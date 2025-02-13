@@ -72,7 +72,7 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 		[ $html ] = $this->executeSpecialPage( $target, $request, 'qqx', $performer );
 
 		$this->assertNotFalse(
-			$globalBlockingServices->getGlobalBlockLocalStatusLookup()->getLocalWhitelistInfo( $globalBlockId ),
+			$globalBlockingServices->getGlobalBlockLocalStatusLookup()->getLocalStatusInfo( $globalBlockId ),
 			'Block should be locally disabled after using the special page'
 		);
 
@@ -100,7 +100,7 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 		$globalBlockingServices->getGlobalBlockLocalStatusManager()
 			->locallyDisableBlock( '1.2.3.4', 'test', $performer );
 		$this->assertNotFalse(
-			$globalBlockingServices->getGlobalBlockLocalStatusLookup()->getLocalWhitelistInfo( $globalBlockId ),
+			$globalBlockingServices->getGlobalBlockLocalStatusLookup()->getLocalStatusInfo( $globalBlockId ),
 			'Block should be locally disabled for the test'
 		);
 
@@ -123,7 +123,7 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 		);
 
 		$this->assertFalse(
-			$globalBlockingServices->getGlobalBlockLocalStatusLookup()->getLocalWhitelistInfo( $globalBlockId ),
+			$globalBlockingServices->getGlobalBlockLocalStatusLookup()->getLocalStatusInfo( $globalBlockId ),
 			'Block should be locally enabled after using the special page'
 		);
 		$this->assertStringContainsString( 'globalblocking-return', $html, 'The success message was not present' );
