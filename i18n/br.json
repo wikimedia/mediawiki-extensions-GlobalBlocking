@@ -83,7 +83,7 @@
 	"action-globalblock": "Ober ha dizober stankadennoù hollek",
 	"right-globalblock-whitelist": "Diweredekaat en un doare lec'hel ar stankadennoù hollek",
 	"action-globalblock-whitelist": "Diweredekaat en un doare lec'hel ar stankadennoù hollek",
-	"right-globalblock-exempt": "Mont dreist d'ar stankadennoù hollek",
+	"right-globalblock-exempt": "Mont dreist d'ar stankadennoù IP hollek",
 	"action-globalblock-exempt": "mont dreist d'ar stankadennoù IP hollek",
 	"log-action-filter-gblblock": "Seurt stankadenn hollek :",
 	"grant-globalblock": "Stankañ pe distankañ un implijer en un doare hollek",
