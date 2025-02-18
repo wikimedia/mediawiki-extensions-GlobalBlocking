@@ -5,6 +5,7 @@
 		]
 	},
 	"globalblocking-apierror-badip": "Le adresse IP $1 non es valide",
+	"globalblocking-apierror-cannot-modify-global-autoblock": "Non es possibile modificar blocadas global automatic",
 	"apihelp-globalblock-summary": "Blocar o disblocar globalmente un usator.",
 	"apihelp-globalblock-param-id": "Le ID del blocada global a modificar o levar (obtenite per medio de <kbd>list=globalblocks</kbd>). Non pote esser usate insimul con <var>$1target</var>.",
 	"apihelp-globalblock-param-target": "Le adresse IP o nomine de usator de destination. Non pote esser usate insimul con <var>$1id</var>.",
@@ -13,6 +14,7 @@
 	"apihelp-globalblock-param-reason": "Le motivo pro blocar/disblocar.",
 	"apihelp-globalblock-param-anononly": "Specifica isto si le blocada debe globalmente affectar solo le usatores sin session aperte.",
 	"apihelp-globalblock-param-allow-account-creation": "Specifica isto si le blocada global non debe impedir le creation de contos.",
+	"apihelp-globalblock-param-enable-autoblock": "Specifica isto si le blocada global debe activar blocadas global automatic.",
 	"apihelp-globalblock-param-modify": "Specifica isto si le blocada existente del destination debe esser modificate.",
 	"apihelp-globalblock-example-1": "Blocar 192.0.2.1 indefinitemente con motivo \"Abuso sur plure wikis\"",
 	"apihelp-query+globalblocks-summary": "Listar tote le adresses IP blocate globalmente.",
