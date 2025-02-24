@@ -55,7 +55,9 @@ return [
 				GlobalBlockingGlobalAutoblockExemptionListProvider::CONSTRUCTOR_OPTIONS,
 				$services->getMainConfig()
 			),
-			$services->getMessageFormatterFactory()->getTextFormatter( $services->getContentLanguage()->getCode() ),
+			$services->getMessageFormatterFactory()->getTextFormatter(
+				$services->getContentLanguageCode()->toString()
+			),
 			$services->getMainWANObjectCache(),
 			$services->getHttpRequestFactory(),
 			$services->getSiteLookup(),
