@@ -11,6 +11,7 @@
 	"apihelp-globalblock-param-unblock": "Če je določeno, bo uporabnik odblokiran.",
 	"apihelp-globalblock-param-reason": "Razlog za blokiranje/odblokiranje.",
 	"apihelp-globalblock-param-anononly": "Določite, ali naj to blokiranje velja samo za globalno neprijavljene uporabnike.",
+	"apihelp-globalblock-param-allow-account-creation": "Določite, ali naj globalno blokiranje ne prepreči ustvarjanja računov.",
 	"apihelp-globalblock-param-modify": "Določite, ali naj se spremeni obstoječe blokiranje cilja",
 	"apihelp-globalblock-example-1": "Neomejeno blokiranje 192.0.2.1 z razlogom »Cross-wiki abuse« (navzkrižna zloraba vikijev)",
 	"apihelp-query+globalblocks-summary": "Navede vse globalno blokirane IP-naslove.",
