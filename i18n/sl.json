@@ -102,6 +102,7 @@
 	"globalblocking-blocked-nopassreset-user": "Gesla uporabnika ne morete ponastaviti, ker je vaš IP-naslov globalno blokiran.",
 	"globalblocking-logpage": "Dnevnik globalnih blokiranj",
 	"globalblocking-logpagetext": "To je dnevnik globalnih blokiranj, ki so bila izvedena ali odstranjena v tem vikiju.\nTreba je opozoriti, da je globalna blokiranja mogoče izvesti ali odpraviti v drugih vikijih in da omenjena blokiranja lahko vplivajo na ta viki.\nČe si želite ogledati vsa dejavna globalna blokiranja, pojdite na [[Special:GlobalBlockList|seznam globalnih blokiranj]].",
+	"globalblocking-logentry-unblock": "$1 je {{GENDER:$2|odstranil globalno blokiranje|odstranila globalno blokiranje|odstranil_a globalno blokiranje}} uporabnika_ce {{GENDER:$4|$3}}",
 	"globalblocking-logentry-whitelist": "$1 je lokalno {{GENDER:$2|preklical|preklicala|preklical_a}} globalno blokiranje $3",
 	"globalblocking-logentry-dewhitelist": "$1 je lokalno znova {{GENDER:$2|uveljavil|uveljavila|uveljavil_a}} globalno blokiranje $3",
 	"globalblocking-loglink": "Uporabnik $1 je globalno blokiran ([[{{#Special:GlobalBlockList}}/$1|vse podrobnosti]]).",
