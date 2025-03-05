@@ -237,6 +237,7 @@ class SpecialGlobalBlockTest extends FormSpecialPageTestCase {
 		// Verify that the form does not submit and displays an error about the target
 		$this->assertStringContainsString( '(globalblocking-block-target-invalid', $html );
 		$this->assertStringNotContainsString( '(globalblocking-block-success', $html );
+		$this->assertStringNotContainsString( '(globalblocking-local-failed', $html );
 		// Double check that no block was performed.
 		$this->assertSame(
 			0,
@@ -366,5 +367,36 @@ class SpecialGlobalBlockTest extends FormSpecialPageTestCase {
 		$actualLocalBlock = $this->getServiceContainer()->getDatabaseBlockStore()->newFromTarget( $testTarget );
 		$this->assertNotNull( $actualLocalBlock );
 		$this->assertFalse( $actualLocalBlock->isCreateAccountBlocked() );
+	}
+
+	public function testSubmitLocalFailure() {
+		$this->overrideConfigValue( MainConfigNames::EnableMultiBlocks, false );
+		$testPerformer = $this->getUserForSuccess();
+		RequestContext::getMain()->setUser( $testPerformer );
+		$testTarget = $this->getTestUser()->getUser();
+
+		$this->getServiceContainer()->getDatabaseBlockStore()
+			->insertBlockWithParams( [
+				'targetUser' => $testTarget,
+				'by' => $testPerformer,
+			] );
+
+		$fauxRequest = new FauxRequest(
+			[
+				'wpAddress' => $testTarget->getName(), 'wpExpiry' => 'indefinite',
+				'wpReason' => 'other', 'wpReason-other' => 'Test reason for account block',
+				'wpAlsoLocal' => 1, 'wpEditToken' => $testPerformer->getEditToken(),
+			],
+			true,
+			RequestContext::getMain()->getRequest()->getSession()
+		);
+		// Assign the fake valid request to the main request context, as well as updating the session user
+		// so that the CSRF token is a valid token for the request user.
+		RequestContext::getMain()->setRequest( $fauxRequest );
+		RequestContext::getMain()->getRequest()->getSession()->setUser( $testPerformer );
+		// Execute the special page.
+		[ $html ] = $this->executeSpecialPage( '1.2.3.4', $fauxRequest, null, $this->getUserForSuccess( [ 'sysop' ] ) );
+		$this->assertStringContainsString( '(globalblocking-local-failed', $html );
+		$this->assertStringContainsString( '(globalblocking-block-success', $html );
 	}
 }

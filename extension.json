@@ -39,7 +39,6 @@
 		"GlobalBlock": {
 			"class": "MediaWiki\\Extension\\GlobalBlocking\\Special\\SpecialGlobalBlock",
 			"services": [
-				"BlockUserFactory",
 				"BlockUtils",
 				"GlobalBlocking.GlobalBlockingConnectionProvider",
 				"GlobalBlocking.GlobalBlockManager",
@@ -85,7 +84,6 @@
 		"MassGlobalBlock": {
 			"class": "MediaWiki\\Extension\\GlobalBlocking\\Special\\SpecialMassGlobalBlock",
 			"services": [
-				"BlockUserFactory",
 				"PermissionManager",
 				"UserIdentityLookup",
 				"GlobalBlocking.GlobalBlockManager",
@@ -143,7 +141,6 @@
 		"globalblock": {
 			"class": "MediaWiki\\Extension\\GlobalBlocking\\Api\\ApiGlobalBlock",
 			"services": [
-				"BlockUserFactory",
 				"GlobalBlocking.GlobalBlockManager",
 				"GlobalBlocking.GlobalBlockingConnectionProvider"
 			]

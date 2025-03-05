@@ -150,7 +150,9 @@ return [
 			$services->getCentralIdLookup(),
 			$services->getUserFactory(),
 			LoggerFactory::getInstance( 'GlobalBlocking' ),
-			$services->getHookContainer()
+			$services->getHookContainer(),
+			$services->getDatabaseBlockStore(),
+			$services->getBlockUserFactory()
 		);
 	},
 	'GlobalBlocking.GlobalBlockReasonFormatter' => static function (

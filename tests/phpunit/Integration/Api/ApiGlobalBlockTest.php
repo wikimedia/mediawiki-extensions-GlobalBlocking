@@ -26,9 +26,13 @@ class ApiGlobalBlockTest extends ApiTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();
-		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
-		// to be the local provider.
-		$this->overrideConfigValue( MainConfigNames::CentralIdLookupProvider, 'local' );
+		$this->overrideConfigValues( [
+			// We don't want to test specifically the CentralAuth implementation
+			// of the CentralIdLookup. As such, force it to be the local provider.
+			MainConfigNames::CentralIdLookupProvider => 'local',
+			// Disable multiblocks by default
+			MainConfigNames::EnableMultiBlocks => false,
+		] );
 	}
 
 	private function getAuthorityForSuccess(): Authority {
@@ -427,7 +431,6 @@ class ApiGlobalBlockTest extends ApiTestCase {
 		$apiGlobalBlockModule = new ApiGlobalBlock(
 			new ApiMain( $this->apiContext, true ),
 			'globalblock',
-			$this->getServiceContainer()->getBlockUserFactory(),
 			$globalBlockingServices->getGlobalBlockManager(),
 			$globalBlockingServices->getGlobalBlockingConnectionProvider()
 		);

@@ -3,7 +3,6 @@
 namespace MediaWiki\Extension\GlobalBlocking\Special;
 
 use LogEventsList;
-use MediaWiki\Block\BlockUserFactory;
 use MediaWiki\Block\BlockUtils;
 use MediaWiki\CommentStore\CommentStore;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
@@ -33,7 +32,6 @@ class SpecialGlobalBlock extends FormSpecialPage {
 	 */
 	private bool $modifyForm = false;
 
-	private BlockUserFactory $blockUserFactory;
 	private BlockUtils $blockUtils;
 	private GlobalBlockingConnectionProvider $globalBlockingConnectionProvider;
 	private GlobalBlockManager $globalBlockManager;
@@ -43,7 +41,6 @@ class SpecialGlobalBlock extends FormSpecialPage {
 	private GlobalBlockingExpirySelectorBuilder $globalBlockingExpirySelectorBuilder;
 
 	public function __construct(
-		BlockUserFactory $blockUserFactory,
 		BlockUtils $blockUtils,
 		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
 		GlobalBlockManager $globalBlockManager,
@@ -53,7 +50,6 @@ class SpecialGlobalBlock extends FormSpecialPage {
 		GlobalBlockingExpirySelectorBuilder $globalBlockingExpirySelectorBuilder
 	) {
 		parent::__construct( 'GlobalBlock', 'globalblock' );
-		$this->blockUserFactory = $blockUserFactory;
 		$this->blockUtils = $blockUtils;
 		$this->globalBlockingConnectionProvider = $globalBlockingConnectionProvider;
 		$this->globalBlockManager = $globalBlockManager;
@@ -319,7 +315,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 	/** @inheritDoc */
 	public function onSubmit( array $data ) {
 		$options = [];
-		$performer = $this->getUser();
+		$performer = $this->getAuthority();
 
 		if ( $data['AnonOnly'] ) {
 			$options[] = 'anon-only';
@@ -341,40 +337,35 @@ class SpecialGlobalBlock extends FormSpecialPage {
 			$options[] = 'modify';
 		}
 
+		if ( $performer->isAllowed( 'block' ) && $data['AlsoLocal'] ) {
+			$localOptions = [
+				'isCreateAccountBlocked' => $data['AlsoLocalAccountCreation'],
+				'isEmailBlocked' => $data['AlsoLocalEmail'],
+				'isUserTalkEditBlocked' => $data['AlsoLocalTalk'],
+				'isHardBlock' => !$data['AlsoLocalSoft'],
+				'isAutoblocking' => true,
+			];
+		} else {
+			$localOptions = null;
+		}
+
 		// This handles validation too...
-		$globalBlockStatus = $this->globalBlockManager->block(
+		$status = $this->globalBlockManager->block(
 			// $this->target is sanitized; $data['Address'] isn't
 			$this->target,
 			$data['Reason'][0],
 			$data['Expiry'],
 			$performer,
-			$options
+			$options,
+			$localOptions
 		);
 
-		if ( !$globalBlockStatus->isOK() ) {
-			// Show the error message(s) to the user if an error occurred.
-			return Status::wrap( $globalBlockStatus );
+		// Show the error message(s) to the user if an error occurred.
+		if ( $status->hasLocalBlockError() ) {
+			$this->getOutput()->addWikiMsg( 'globalblocking-local-failed' );
 		}
-
-		// Add a local block if the user asked for that
-		if ( $performer->isAllowed( 'block' ) && $data['AlsoLocal'] ) {
-			$localBlockStatus = $this->blockUserFactory->newBlockUser(
-				$this->target,
-				$performer,
-				$data['Expiry'],
-				$data['Reason'][0],
-				[
-					'isCreateAccountBlocked' => $data['AlsoLocalAccountCreation'],
-					'isEmailBlocked' => $data['AlsoLocalEmail'],
-					'isUserTalkEditBlocked' => $data['AlsoLocalTalk'],
-					'isHardBlock' => !$data['AlsoLocalSoft'],
-					'isAutoblocking' => true,
-				]
-			)->placeBlock( $data['Modify'] );
-
-			if ( !$localBlockStatus->isOK() ) {
-				$this->getOutput()->addWikiMsg( 'globalblocking-local-failed' );
-			}
+		if ( !$status->isGlobalBlockOK() ) {
+			return Status::wrap( $status->getGlobalStatus() );
 		}
 
 		return Status::newGood();

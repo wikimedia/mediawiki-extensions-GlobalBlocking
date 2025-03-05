@@ -26,9 +26,13 @@ class SpecialMassGlobalBlockTest extends SpecialPageTestBase {
 
 	protected function setUp(): void {
 		parent::setUp();
-		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
-		// to be the local provider.
-		$this->overrideConfigValue( MainConfigNames::CentralIdLookupProvider, 'local' );
+		$this->overrideConfigValues( [
+			// We don't want to test specifically the CentralAuth implementation
+			// of the CentralIdLookup. As such, force it to be the local provider.
+			MainConfigNames::CentralIdLookupProvider => 'local',
+			// Don't test multiblocks by default
+			MainConfigNames::EnableMultiBlocks => false,
+		] );
 	}
 
 	protected function newSpecialPage() {
@@ -45,7 +49,7 @@ class SpecialMassGlobalBlockTest extends SpecialPageTestBase {
 		$performer = $this->getMutableTestUser( [ 'steward' ] )->getUser();
 		$blockStatus = $this->getServiceContainer()->getBlockUserFactory()
 			->newBlockUser( $performer->getName(), $this->mockRegisteredUltimateAuthority(), 'indefinite' )
-			->placeBlock( true );
+			->placeBlock();
 		$this->assertStatusGood( $blockStatus );
 		// Expect that the blocked user cannot see the special page is they are blocked.
 		$this->expectException( UserBlockedError::class );

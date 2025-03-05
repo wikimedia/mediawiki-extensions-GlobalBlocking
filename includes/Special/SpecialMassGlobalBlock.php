@@ -2,7 +2,6 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Special;
 
-use MediaWiki\Block\BlockUserFactory;
 use MediaWiki\CommentStore\CommentStore;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingExpirySelectorBuilder;
@@ -26,7 +25,6 @@ class SpecialMassGlobalBlock extends SpecialPage {
 	private array $targetsForLookup;
 	private array $targets;
 
-	private BlockUserFactory $blockUserFactory;
 	private PermissionManager $permissionManager;
 	private UserIdentityLookup $userIdentityLookup;
 	private GlobalBlockManager $globalBlockManager;
@@ -37,7 +35,6 @@ class SpecialMassGlobalBlock extends SpecialPage {
 	private GlobalBlockingExpirySelectorBuilder $globalBlockingExpirySelectorBuilder;
 
 	public function __construct(
-		BlockUserFactory $blockUserFactory,
 		PermissionManager $permissionManager,
 		UserIdentityLookup $userIdentityLookup,
 		GlobalBlockManager $globalBlockManager,
@@ -48,7 +45,6 @@ class SpecialMassGlobalBlock extends SpecialPage {
 		GlobalBlockingExpirySelectorBuilder $globalBlockingExpirySelectorBuilder
 	) {
 		parent::__construct( 'MassGlobalBlock', 'globalblock' );
-		$this->blockUserFactory = $blockUserFactory;
 		$this->permissionManager = $permissionManager;
 		$this->userIdentityLookup = $userIdentityLookup;
 		$this->globalBlockManager = $globalBlockManager;
@@ -523,37 +519,31 @@ class SpecialMassGlobalBlock extends SpecialPage {
 					$options[] = 'enable-autoblock';
 				}
 
+				$alsoLocal = $request->getCheck( 'wpAlsoLocal' );
+				if ( $alsoLocal ) {
+					$localOptions = [
+						'isCreateAccountBlocked' => $request->getCheck( 'wpAlsoLocalAccountCreation' ),
+						'isEmailBlocked' => $request->getCheck( 'wpAlsoLocalEmail' ),
+						'isUserTalkEditBlocked' => $request->getCheck( 'wpAlsoLocalTalk' ),
+						'isHardBlock' => !$request->getCheck( 'wpAlsoLocalSoft' ),
+						'isAutoblocking' => true,
+					];
+				} else {
+					$localOptions = null;
+				}
+
 				$globalBlockStatus = $this->globalBlockManager->block(
-					$target, $reason, $request->getVal( 'wpExpiry' ), $performer, $options
+					$target, $reason, $request->getVal( 'wpExpiry' ), $performer,
+					$options, $localOptions
 				);
-				if ( $globalBlockStatus->isOK() ) {
+
+				if ( $globalBlockStatus->isGlobalBlockOK() ) {
 					$globalSuccess[] = $target;
 				} else {
 					$globalFailure[] = $target;
 				}
-
-				if ( $request->getCheck( 'wpAlsoLocal' ) ) {
-					$localBlockStatus = null;
-
-					// Only perform the local block if the target is valid and the global block succeeded to avoid
-					// half the intended actions being performed on the target.
-					if ( $globalBlockStatus->isOK() ) {
-						$localBlockStatus = $this->blockUserFactory->newBlockUser(
-							$targetData['target'],
-							$performer,
-							$request->getVal( 'wpExpiry' ),
-							$reason,
-							[
-								'isCreateAccountBlocked' => $request->getCheck( 'wpAlsoLocalAccountCreation' ),
-								'isEmailBlocked' => $request->getCheck( 'wpAlsoLocalEmail' ),
-								'isUserTalkEditBlocked' => $request->getCheck( 'wpAlsoLocalTalk' ),
-								'isHardBlock' => !$request->getCheck( 'wpAlsoLocalSoft' ),
-								'isAutoblocking' => true,
-							]
-						)->placeBlock( true );
-					}
-
-					if ( $localBlockStatus && $localBlockStatus->isOK() ) {
+				if ( $alsoLocal ) {
+					if ( $globalBlockStatus->isLocalBlockOK() ) {
 						$localSuccess[] = $target;
 					} else {
 						$localFailure[] = $target;

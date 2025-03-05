@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Test\Integration\Services;
 
+use InvalidArgumentException;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlock;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingGlobalAutoblockExemptionListProvider;
@@ -14,6 +15,7 @@ use MediaWiki\Title\Title;
 use MediaWiki\Title\TitleValue;
 use MediaWiki\WikiMap\WikiMap;
 use MediaWikiIntegrationTestCase;
+use stdClass;
 use Wikimedia\IPUtils;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
 
@@ -634,6 +636,106 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 			[ $firstAutoblockId ],
 			[ [ $firstAutoblockId, $firstPerformer->getId(), 0, $expectedAutoblockReason, '20210303000000' ] ]
 		);
+	}
+
+	/**
+	 * Test for multiblocks integration (T387730)
+	 *
+	 * @dataProvider provideLocalBlock
+	 * @param bool $multi
+	 */
+	public function testLocalBlock( $multi ) {
+		$this->overrideConfigValue( MainConfigNames::EnableMultiBlocks, $multi );
+		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )
+			->getGlobalBlockManager();
+		$blockStore = $this->getServiceContainer()->getDatabaseBlockStore();
+		$target = $this->getTestUser()->getUserIdentity();
+		$performer1 = $this->getMutableTestUser( [ 'steward', 'sysop' ] )->getUser();
+		$performer2 = $this->getMutableTestUser( [ 'steward', 'sysop' ] )->getUser();
+
+		// Create a conflicting local block
+		$blockStore->insertBlockWithParams( [
+			'by' => $performer1,
+			'targetUser' => $target
+		] );
+		$this->assertCount( 1, $blockStore->newListFromTarget( $target ) );
+
+		// Create global block
+		$status = $globalBlockManager->block(
+			$target->getName(), 'old reason', 'infinity', $performer2,
+			[], [] );
+		$this->assertTrue( $status->isGlobalBlockOK() );
+		$localBlocks = $blockStore->newListFromTarget( $target );
+		if ( $multi ) {
+			// Block was inserted anyway
+			$this->assertStatusGood( $status );
+			$this->assertTrue( $status->isLocalBlockOK() );
+			$this->assertCount( 2, $localBlocks );
+		} else {
+			// Conflicting block prevented insert
+			$this->assertStatusError( 'ipb_already_blocked', $status );
+			$this->assertFalse( $status->isLocalBlockOK() );
+			$this->assertCount( 1, $localBlocks );
+		}
+
+		// Modify the block
+		$status = $globalBlockManager->block(
+			$target->getName(), 'new reason', 'infinity', $performer2,
+			[ 'modify' ], [] );
+		$this->assertStatusGood( $status );
+		$this->assertTrue( $status->isGlobalBlockOK() );
+		$this->assertTrue( $status->isLocalBlockOK() );
+		$localBlocks = $this->getServiceContainer()->getDatabaseBlockStore()
+			->newListFromTarget( $target );
+		$this->assertCount( $multi ? 2 : 1, $localBlocks );
+		$this->assertSame( 'new reason', end( $localBlocks )->getReasonComment()->text );
+	}
+
+	public static function provideLocalBlock() {
+		return [
+			'Multiblocks disabled' => [ false ],
+			'Multiblocks enabled' => [ true ],
+		];
+	}
+
+	/**
+	 * @dataProvider provideLocalBlockPerformerType
+	 * @param string $type
+	 */
+	public function testLocalBlockPerformerType( $type ) {
+		$this->overrideConfigValue( MainConfigNames::EnableMultiBlocks, true );
+		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )
+			->getGlobalBlockManager();
+		$target = $this->getTestUser()->getUserIdentity();
+		$testPerformer = $this->getMutableTestUser( [ 'steward', 'sysop' ] );
+		if ( $type === 'UserIdentityValue' ) {
+			$performer = $testPerformer->getUserIdentity();
+		} elseif ( $type === 'Authority' ) {
+			$performer = $testPerformer->getAuthority();
+		} else {
+			$performer = new stdClass;
+			$this->expectException( InvalidArgumentException::class );
+		}
+		// Globally block with no local option
+		$status = $globalBlockManager->block(
+			$target->getName(), 'reason', 'infinity', $performer,
+			[], null );
+		$this->assertStatusGood( $status );
+
+		// Modify the global block with local option, to cover the case where
+		// the local block is not found
+		$status = $globalBlockManager->block(
+			$target->getName(), 'reason', 'infinity', $performer,
+			[ 'modify' ], [] );
+		$this->assertStatusGood( $status );
+	}
+
+	public static function provideLocalBlockPerformerType() {
+		return [
+			[ 'UserIdentityValue' ],
+			[ 'Authority' ],
+			[ 'invalid' ],
+		];
 	}
 
 	/** @dataProvider provideUnblock */
