@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Aram",
 			"Calak",
 			"Épine"
 		]
@@ -10,6 +11,7 @@
 	"globalblocking-unblock-reason": "هۆکار:",
 	"globalblocking-whitelist-reason": "هۆکار:",
 	"globalblocking-logpage": "لۆگی بەربەستنی سەرانسەری",
+	"globalblocking-contribs-log": "لۆگی بەربەستنی سەرانسەری",
 	"right-globalblock": "دروستکردن و لابردنی بەربەستنە جیھانییەکان",
 	"right-globalblock-whitelist": "ناچالاککردنی خۆماڵیی بەربەستنە سەرانسەرییەکان"
 }
