@@ -21,7 +21,7 @@
 	"globalblocking-block-expiry-selector-other": "Más időtartam:",
 	"globalblocking-block-legend": "IP-cím globális blokkolása",
 	"globalblocking-ipaddress": "IP-cím:",
-	"globalblocking-ipbanononly": "Csak anonim felhasználók blokkolása",
+	"globalblocking-ipbanononly": "Csak anonim felhasználók globális blokkolása",
 	"globalblocking-block-ipinvalid": "Az általad megadott IP-cím ($1) érvénytelen.\nNem adhatsz meg felhasználói nevet!",
 	"globalblocking-block-expiryinvalid": "A megadott lejárati idő érvénytelen.",
 	"globalblocking-block-submit": "IP-cím blokkolása globálisan",
