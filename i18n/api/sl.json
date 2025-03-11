@@ -5,13 +5,16 @@
 		]
 	},
 	"globalblocking-apierror-badip": "IP-naslov $1 ni veljaven",
+	"globalblocking-apierror-cannot-modify-global-autoblock": "Globalni avtoblokiranj ne morete spreminjati",
 	"apihelp-globalblock-summary": "Globalno blokirajte ali odblokirajte uporabnika.",
-	"apihelp-globalblock-param-target": "Ciljni IP-naslov ali uporabniško ime.",
+	"apihelp-globalblock-param-id": "ID globalnega blokiranja za spremembo ali odblokiranje (pridobljen z  <kbd>list=globalblocks</kbd>). Ni ga mogoče uporabljati skupaj z <var>$1target</var>.",
+	"apihelp-globalblock-param-target": "Ciljni IP-naslov ali uporabniško ime. Tega ni mogoče uporabljati skupaj z <var>$1id</var>.",
 	"apihelp-globalblock-param-expiry": "Če je določeno, bo uporabnik blokiran ali odblokiran. Določa, kako dolgo naj blokiranje traja (npr. »5 mesecev« ali »2 tedna«). Če je nastavljeno na »neskončno« ali »neomejeno«, se blokiranje ne bo nikoli izteklo.",
 	"apihelp-globalblock-param-unblock": "Če je določeno, bo uporabnik odblokiran.",
 	"apihelp-globalblock-param-reason": "Razlog za blokiranje/odblokiranje.",
 	"apihelp-globalblock-param-anononly": "Določite, ali naj to blokiranje velja samo za globalno neprijavljene uporabnike.",
 	"apihelp-globalblock-param-allow-account-creation": "Določite, ali naj globalno blokiranje ne prepreči ustvarjanja računov.",
+	"apihelp-globalblock-param-enable-autoblock": "Določite, ali naj globalno blokiranje sproži samodejna globalna blokiranja.",
 	"apihelp-globalblock-param-modify": "Določite, ali naj se spremeni obstoječe blokiranje cilja",
 	"apihelp-globalblock-example-1": "Neomejeno blokiranje 192.0.2.1 z razlogom »Cross-wiki abuse« (navzkrižna zloraba vikijev)",
 	"apihelp-query+globalblocks-summary": "Navede vse globalno blokirane IP-naslove.",
@@ -33,8 +36,9 @@
 	"apihelp-query+globalblocks-paramvalue-prop-range": "Dodajanje razpona IP-naslovov, na katere vpliva globalno blokiranje (ni vključeno, če blok ne cilja na IP-naslove).",
 	"apihelp-query+globalblocks-example-1": "Navedi vsa globalna blokiranja",
 	"apihelp-query+globalblocks-example-2": "Navedi globalna blokiranja, ki veljajo za IP-naslov 192.0.2.18",
-	"apihelp-globalblock-param-alsolocal": "Blokiraj uporabnika tudi lokalno",
-	"apihelp-globalblock-param-localblockstalk": "Lokalno odvzemi dostop do pogovornih strani",
-	"apihelp-globalblock-param-localblocksemail": "Lokalno prepreči dostop do e-pošte",
-	"apihelp-globalblock-param-localanononly": "Določite, ali naj to blokiranje velja samo za lokalno neprijavljene uporabnike."
+	"apihelp-globalblock-param-alsolocal": "Blokiranje uporabnika tudi lokalno. Tega ni mogoče uporabljati skupaj z <var>$1id</var>",
+	"apihelp-globalblock-param-localblockstalk": "Lokalni odvzem dostopa do pogovornih strani. Tega ni mogoče uporabljati skupaj z <var>$1id</var>.",
+	"apihelp-globalblock-param-localblocksemail": "Lokalna preprečitev dostopa do e-pošte. Tega ni mogoče uporabljati skupaj z <var>$1id</var>.",
+	"apihelp-globalblock-param-localanononly": "Določite, ali naj to blokiranje velja samo za lokalno neprijavljene uporabnike. Tega ni mogoče uporabljati skupaj z <var>$1id</var>.",
+	"apihelp-globalblock-param-local-allow-account-creation": "Določitev, da naj lokalno blokiranje ne prepreči ustvarjanja računov. Tega ni mogoče uporabljati skupaj z <var>$1id</var>."
 }
