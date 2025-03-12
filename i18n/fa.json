@@ -42,8 +42,13 @@
 	"globalblocking-block-success": "دسترسی نشانی آی‌پی $1 در تمام پروژه‌ها قطع شد.",
 	"globalblocking-modify-success": "بستن سراسری $1 تغییر یافت",
 	"globalblocking-local-failed": "بستن محلی نشانی آی‌پی شکست خورد به این دلیل که آی‌پی داده‌شده در حال حاضر در این ویکی بسته شده است",
+	"globalblocking-block-failure": "هنگام تلاش برای قطع دسترسی سراسری $1 خطایی رخ داد. لطفاً دوباره تلاش کنید.",
 	"globalblocking-block-alreadyblocked": "دسترسی نشانی آی‌پی $1 از قبل به طور سراسری بسته است.\nشما می‌توانید قطع دسترسی موجود را در [[Special:GlobalBlockList|فهرست قطع دسترسی‌های سراسری]] ببینید،\nیا تنظیمات قطع دسترسی فعلی را با ارسال دوباره این فرم تغییر دهید.",
+	"globalblocking-bigrange": "بازه‌ای که وارد کرده‌اید ($1) از محدودیت‌ها گذر می‌کند.\nبازهٔ $2 به /$3 محدود شده است.",
 	"globalblocking-also-local": "هم‌چنین بستن نشانی آی‌پی داده‌شدۀ محلی در این ویکی",
+	"globalblocking-also-local-talk": "قطع دسترسی محلی کاربر از ویرایش صفحهٔ بحث خودش",
+	"globalblocking-also-local-email": "قطع دسترسی محلی کاربر به ارسال ایمیل",
+	"globalblocking-also-local-soft": "قطع دسترسی محلی تنها برای کاربران ناشناس",
 	"globalblocking-list-intro": "این فهرستی از تمام قطع دسترسی‌های سراسری است که در حال حاضر فعال هستند.\nبرخی قطع دسترسی‌ها ممکن است به طور محلی غیرفعال شده باشند: این به آن معنی است که آن‌ها روی دیگر وبگاه‌ها اثر می‌گذارند، اما یک مدیر محلی تصمیم گرفته است که آن‌ها را در این ویکی غیرفعال کند.",
 	"globalblocking-list": "فهرست نشانی‌های اینترنتی که دسترسی‌شان به طور سراسری قطع شده است",
 	"globalblocking-search-legend": "جستجو برای یک بستن دسترسی سراسری",
@@ -122,5 +127,12 @@
 	"log-action-filter-gblblock-modify": "تغییر وضعیت بستن سراسری",
 	"log-action-filter-gblblock-whitelist": "افزودن به فهرست سفید بستن سراسری",
 	"log-action-filter-gblblock-dwhitelist": "حذف از فهرست سفید بستن سراسری",
-	"grant-globalblock": "بستن یا بازکردن یک نشانی آی‌پی به‌ طور‌ سراسری"
+	"grant-globalblock": "بستن یا بازکردن یک نشانی آی‌پی به‌ طور‌ سراسری",
+	"globalblocking-blockedtext-all-wikis": "نشانی آی‌پی شما در تمام ویکی‌ها بسته شده است.",
+	"globalblocking-blockedtext-on-range": "نشانی آی‌پی شما در بازه‌ای قرار دارد که در تمام ویکی‌ها بسته شده است.",
+	"globalblocking-blockedtext-on-proxy": "یک یا چند مورد از سرورهای پروکسی مورد استفادهٔ درخواست شما به‌صورت سراسری بسته شده‌اند",
+	"globalblocking-blockedtext-blocker-admin": "برای گفتگو پیرامون این قطع دسترسی می‌توانید با $1 تماس بگیرید.",
+	"globalblocking-blockedtext-email-feature": "شما نمی‌توانید از ویژگی «{{int:emailuser}}» استفاده کنید، مگر آن که یک نشانی ایمیل معتبر در [[Special:Preferences|ترجیحات حساب شما]] وارد شده باشد و دسترسی شما به استفاده از آن قطع نشده باشد.",
+	"globalblocking-blockedtext-ip-range": "بازهٔ بسته‌شده $1 است.",
+	"globalblocking-blockedtext-proxy": "نشانی پروکسی بسته‌شده $1 است."
 }
