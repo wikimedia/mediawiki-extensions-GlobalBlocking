@@ -5,7 +5,6 @@ namespace MediaWiki\Extension\GlobalBlocking\Api;
 use MediaWiki\Api\ApiBase;
 use MediaWiki\Api\ApiMain;
 use MediaWiki\Api\ApiResult;
-use MediaWiki\Block\BlockUserFactory;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockManager;
@@ -15,20 +14,17 @@ use StatusValue;
 use Wikimedia\ParamValidator\ParamValidator;
 
 class ApiGlobalBlock extends ApiBase {
-	private BlockUserFactory $blockUserFactory;
 	private GlobalBlockManager $globalBlockManager;
 	private GlobalBlockingConnectionProvider $globalBlockingConnectionProvider;
 
 	public function __construct(
 		ApiMain $mainModule,
 		string $moduleName,
-		BlockUserFactory $blockUserFactory,
 		GlobalBlockManager $globalBlockManager,
 		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider
 	) {
 		parent::__construct( $mainModule, $moduleName );
 
-		$this->blockUserFactory = $blockUserFactory;
 		$this->globalBlockManager = $globalBlockManager;
 		$this->globalBlockingConnectionProvider = $globalBlockingConnectionProvider;
 	}
@@ -84,34 +80,26 @@ class ApiGlobalBlock extends ApiBase {
 				$options[] = 'modify';
 			}
 
+			if ( $this->getParameter( 'alsolocal' ) ) {
+				$localOptions = [
+					'isCreateAccountBlocked' => !$this->getParameter( 'local-allow-account-creation' ),
+					'isEmailBlocked' => $this->getParameter( 'localblocksemail' ),
+					'isUserTalkEditBlocked' => $this->getParameter( 'localblockstalk' ),
+					'isHardBlock' => !$this->getParameter( 'localanononly' ),
+					'isAutoblocking' => true,
+				];
+			} else {
+				$localOptions = null;
+			}
+
 			$status = $this->globalBlockManager->block(
 				$target,
 				$this->getParameter( 'reason' ),
 				$this->getParameter( 'expiry' ),
 				$this->getUser(),
-				$options
+				$options,
+				$localOptions
 			);
-
-			if ( $this->getParameter( 'alsolocal' ) && $status->isOK() ) {
-				$localBlockStatus = $this->blockUserFactory->newBlockUser(
-					$this->getParameter( 'target' ),
-					$this->getUser(),
-					$this->getParameter( 'expiry' ),
-					$this->getParameter( 'reason' ),
-					[
-						'isCreateAccountBlocked' => !$this->getParameter( 'local-allow-account-creation' ),
-						'isEmailBlocked' => $this->getParameter( 'localblocksemail' ),
-						'isUserTalkEditBlocked' => $this->getParameter( 'localblockstalk' ),
-						'isHardBlock' => !$this->getParameter( 'localanononly' ),
-						'isAutoblocking' => true,
-					]
-				)->placeBlock( $this->getParameter( 'modify' ) );
-				if ( !$localBlockStatus->isOK() ) {
-					$this->addLegacyErrorsFromStatus( $localBlockStatus, $result );
-				} else {
-					$result->addValue( 'globalblock', 'blockedlocally', true );
-				}
-			}
 
 			if ( !$status->isOK() ) {
 				$this->addLegacyErrorsFromStatus( $status, $result );
@@ -129,6 +117,10 @@ class ApiGlobalBlock extends ApiBase {
 				}
 				$expiry = ApiResult::formatExpiry( $this->getParameter( 'expiry' ), 'infinite' );
 				$result->addValue( 'globalblock', 'expiry', $expiry );
+
+				if ( $status->isLocalBlockOK() ) {
+					$result->addValue( 'globalblock', 'blockedlocally', true );
+				}
 			}
 		} elseif ( $this->getParameter( 'unblock' ) ) {
 			$status = $this->globalBlockManager->unblock(

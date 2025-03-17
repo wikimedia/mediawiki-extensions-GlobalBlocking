@@ -2,14 +2,21 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Services;
 
+use InvalidArgumentException;
 use ManualLogEntry;
 use MediaWiki\Block\BlockUser;
+use MediaWiki\Block\BlockUserFactory;
+use MediaWiki\Block\DatabaseBlock;
+use MediaWiki\Block\DatabaseBlockStore;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlock;
+use MediaWiki\Extension\GlobalBlocking\GlobalBlockStatus;
 use MediaWiki\Extension\GlobalBlocking\Hooks\HookRunner;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Language\RawMessage;
 use MediaWiki\Linker\LinkTarget;
+use MediaWiki\MainConfigNames;
+use MediaWiki\Permissions\Authority;
 use MediaWiki\Title\Title;
 use MediaWiki\Title\TitleValue;
 use MediaWiki\User\CentralId\CentralIdLookup;
@@ -34,6 +41,7 @@ class GlobalBlockManager {
 		'GlobalBlockingAutoblockExpiry',
 		'GlobalBlockingEnableAutoblocks',
 		'GlobalBlockingMaximumIPsToRetroactivelyAutoblock',
+		MainConfigNames::EnableMultiBlocks,
 	];
 
 	private ServiceOptions $options;
@@ -45,6 +53,8 @@ class GlobalBlockManager {
 	private UserFactory $userFactory;
 	private LoggerInterface $logger;
 	private HookRunner $hookRunner;
+	private DatabaseBlockStore $localBlockStore;
+	private BlockUserFactory $localBlockUserFactory;
 
 	public function __construct(
 		ServiceOptions $options,
@@ -55,7 +65,9 @@ class GlobalBlockManager {
 		CentralIdLookup $centralIdLookup,
 		UserFactory $userFactory,
 		LoggerInterface $logger,
-		HookContainer $hookContainer
+		HookContainer $hookContainer,
+		DatabaseBlockStore $localBlockStore,
+		BlockUserFactory $localBlockUserFactory
 	) {
 		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
 		$this->options = $options;
@@ -67,6 +79,8 @@ class GlobalBlockManager {
 		$this->userFactory = $userFactory;
 		$this->logger = $logger;
 		$this->hookRunner = new HookRunner( $hookContainer );
+		$this->localBlockStore = $localBlockStore;
+		$this->localBlockUserFactory = $localBlockUserFactory;
 	}
 
 	/**
@@ -78,9 +92,9 @@ class GlobalBlockManager {
 	 *       expiry (any valid timestamp or infinity), anonOnly (bool), allowAccountCreation (bool),
 	 *       enableAutoblock (bool)
 	 *    Optional: parentBlockId (int, default 0), existingBlockId (int, default 0)
-	 * @return StatusValue
+	 * @return GlobalBlockStatus
 	 */
-	private function insertBlockAfterChecks( array $data ): StatusValue {
+	private function insertBlockAfterChecks( array $data ): GlobalBlockStatus {
 		$dbw = $this->globalBlockingConnectionProvider->getPrimaryGlobalBlockingDatabase();
 		$row = [
 			'gb_address' => $data['target'],
@@ -123,7 +137,7 @@ class GlobalBlockManager {
 
 		if ( !$blockId ) {
 			// Race condition?
-			return StatusValue::newFatal( 'globalblocking-block-failure', $data['targetForDisplay'] );
+			return GlobalBlockStatus::newFatal( 'globalblocking-block-failure', $data['targetForDisplay'] );
 		}
 
 		// Delete any corresponding global autoblocks if autoblocking is disabled for an existing block, as it may
@@ -195,7 +209,7 @@ class GlobalBlockManager {
 
 		$this->hookRunner->onGlobalBlockingGlobalBlockAudit( $blockObject );
 
-		return StatusValue::newGood( [
+		return GlobalBlockStatus::newGood( [
 			'id' => $blockId,
 		] );
 	}
@@ -206,8 +220,9 @@ class GlobalBlockManager {
 	 * @param string $target The IP address, IP range, username, or block ID which is prefixed with "#".
 	 * @param string $reason The public reason to be shown in the global block log,
 	 *   on the global block list, and potentially to the blocked user when they try to edit.
+	 *   If $localOptions is set, it will also be used for the local block reason.
 	 * @param string $expiry Any expiry that can be parsed by BlockUser::parseExpiryInput, including infinite.
-	 * @param UserIdentity $blocker The user performing the block. The caller of this method is
+	 * @param Authority|UserIdentity $blocker The user performing the block. The caller of this method is
 	 *    responsible for determining if the performer has the necessary rights to perform the block.
 	 * @param array $options An array of options provided as values with numeric keys. This accepts:
 	 *   - 'anon-only': If set, only anonymous users will be affected by the block
@@ -216,17 +231,27 @@ class GlobalBlockManager {
 	 *   - 'allow-account-creation': If set, the block will allow account creation. Otherwise,
 	 *       the block will prevent account creation.
 	 *   - 'enable-autoblock': If set, the block will cause autoblocks.
-	 * @return StatusValue A status object, with errors if the block failed.
+	 * @param array|null $localOptions An array with local block options to pass through to
+	 *   BlockUser, or null to skip local blocking
+	 * @return GlobalBlockStatus A status object, with errors if the block failed.
 	 */
 	public function block(
-		string $target, string $reason, string $expiry, UserIdentity $blocker, array $options = []
-	): StatusValue {
+		string $target, string $reason, string $expiry, $blocker, array $options = [],
+		?array $localOptions = null
+	): GlobalBlockStatus {
+		if ( $blocker instanceof Authority ) {
+			$blockerUser = $blocker->getUser();
+		} elseif ( $blocker instanceof UserIdentity ) {
+			$blockerUser = $blocker;
+		} else {
+			throw new InvalidArgumentException( '$blocker must be an Authority or UserIdentity' );
+		}
 		$expiry = BlockUser::parseExpiryInput( $expiry );
 		if ( $expiry === false ) {
-			return StatusValue::newFatal( 'globalblocking-block-expiryinvalid' );
+			return GlobalBlockStatus::newFatal( 'globalblocking-block-expiryinvalid' );
 		}
 
-		$status = $this->validateGlobalBlockTarget( $target, $blocker );
+		$status = $this->validateGlobalBlockTarget( $target, $blockerUser );
 
 		if ( !$status->isOK() ) {
 			return $status;
@@ -245,43 +270,61 @@ class GlobalBlockManager {
 
 		if ( $anonOnly && !IPUtils::isIPAddress( $data['target'] ) ) {
 			// Anon-only blocks on an account does not make any sense, so reject them.
-			return StatusValue::newFatal( 'globalblocking-block-anononly-on-account', $data['targetForDisplay'] );
+			return GlobalBlockStatus::newFatal( 'globalblocking-block-anononly-on-account', $data['targetForDisplay'] );
 		}
 
 		if ( $enableAutoblock && !$data['targetCentralId'] ) {
 			// Global blocks can only be autoblocking if they target a user.
-			return StatusValue::newFatal( 'globalblocking-block-enable-autoblock-on-ip', $data['targetForDisplay'] );
+			return GlobalBlockStatus::newFatal(
+				'globalblocking-block-enable-autoblock-on-ip', $data['targetForDisplay'] );
 		}
 
 		// Look to see if this target is already globally blocked.
 		$existingGlobalBlockId = $this->globalBlockLookup->getGlobalBlockId( $data['targetForLookup'], DB_PRIMARY );
 		if ( !$modify && $existingGlobalBlockId ) {
-			return StatusValue::newFatal( 'globalblocking-block-alreadyblocked', $data['targetForDisplay'] );
+			return GlobalBlockStatus::newFatal( 'globalblocking-block-alreadyblocked', $data['targetForDisplay'] );
 		}
 
-		// Prevent modifications of global autoblocks. This check is not performed when calling ::unblock, so that
-		// autoblocks can be removed.
-		$isExistingGlobalBlockAnAutoblock = $this->globalBlockingConnectionProvider->getPrimaryGlobalBlockingDatabase()
+		$existingBlockRow = $this->globalBlockingConnectionProvider->getPrimaryGlobalBlockingDatabase()
 			->newSelectQueryBuilder()
-			->select( 'gb_autoblock_parent_id' )
+			->select( [
+				'gb_address',
+				'gb_by_central_id',
+				'gb_timestamp',
+				'gb_autoblock_parent_id'
+			] )
 			->from( 'globalblocks' )
 			->where( [ 'gb_id' => $existingGlobalBlockId ] )
 			->caller( __METHOD__ )
-			->fetchField();
-		if ( $isExistingGlobalBlockAnAutoblock ) {
-			return StatusValue::newFatal(
-				'globalblocking-block-modifying-global-autoblock', $data['targetForDisplay']
-			);
-		}
+			->fetchRow();
 
-		// If no global block exists, set the modify flag to false so the correct log entry is created (T386235).
-		if ( !$existingGlobalBlockId && $modify ) {
-			$modify = false;
+		$localBlock = null;
+		if ( $existingBlockRow ) {
+			// Prevent modifications of global autoblocks. This check is not performed when calling
+			// ::unblock, so that autoblocks can be removed.
+			if ( $existingBlockRow->gb_autoblock_parent_id ) {
+				return GlobalBlockStatus::newFatal(
+					'globalblocking-block-modifying-global-autoblock', $data['targetForDisplay']
+				);
+			}
+			// If we're modifying a local block, find the block (T387730)
+			if ( $localOptions !== null && $modify ) {
+				$localBlock = $this->findLocalBlock(
+					$existingBlockRow->gb_address,
+					$existingBlockRow->gb_by_central_id,
+					$existingBlockRow->gb_timestamp
+				);
+			}
+		} else {
+			// If no global block exists, set the modify flag to false so the correct log entry is created (T386235).
+			if ( $modify ) {
+				$modify = false;
+			}
 		}
 
 		// At this point, we have validated that a block can be inserted or updated.
 		$status = $this->insertBlockAfterChecks( array_merge( [
-			'byCentralId' => $this->centralIdLookup->centralIdFromLocalUser( $blocker ),
+			'byCentralId' => $this->centralIdLookup->centralIdFromLocalUser( $blockerUser ),
 			'byWiki' => WikiMap::getCurrentWikiId(),
 			'reason' => $reason,
 			'timestamp' => wfTimestampNow(),
@@ -302,7 +345,7 @@ class GlobalBlockManager {
 		$logAction = $modify ? 'modify' : 'gblock';
 
 		$logEntry = new ManualLogEntry( 'gblblock', $logAction );
-		$logEntry->setPerformer( $blocker );
+		$logEntry->setPerformer( $blockerUser );
 		$logEntry->setTarget( $this->getTargetForLogEntry( $target ) );
 		$logEntry->setComment( $reason );
 
@@ -327,7 +370,70 @@ class GlobalBlockManager {
 		$logId = $logEntry->insert();
 		$logEntry->publish( $logId );
 
+		// Insert or modify the local block
+		if ( $localOptions !== null ) {
+			if ( $blocker instanceof Authority ) {
+				$blockerAuthority = $blocker;
+			} else {
+				$blockerAuthority = $this->userFactory->newFromUserIdentity( $blocker );
+			}
+
+			if ( $localBlock ) {
+				$blockUser = $this->localBlockUserFactory->newUpdateBlock(
+					$localBlock, $blockerAuthority, $expiry, $reason, $localOptions
+				);
+			} else {
+				$blockUser = $this->localBlockUserFactory->newBlockUser(
+					$data['target'], $blockerAuthority, $expiry, $reason, $localOptions
+				);
+			}
+
+			$localStatus = $blockUser->placeBlock( BlockUser::CONFLICT_NEW );
+			$status = $status->withLocalStatus( $localStatus );
+		}
+
 		return $status;
+	}
+
+	/**
+	 * Find the local block which was created in the same action as an existing global block
+	 *
+	 * @param string $target
+	 * @param int $performerCentralId
+	 * @param string $timestamp
+	 * @return DatabaseBlock|null
+	 */
+	private function findLocalBlock( string $target, int $performerCentralId, string $timestamp ) {
+		$existingPerformer = $this->centralIdLookup->localUserFromCentralId( $performerCentralId );
+		$localBlocks = $this->localBlockStore->newListFromTarget( $target, null, true );
+		if ( $this->options->get( MainConfigNames::EnableMultiBlocks ) ) {
+			// Find the matching block
+			foreach ( $localBlocks as $localBlock ) {
+				if ( $localBlock->getTargetName() === $target
+					&& $localBlock->getBlocker()->equals( $existingPerformer )
+					&& $this->isCloseTimestamp( $localBlock->getTimestamp(), $timestamp )
+				) {
+					return $localBlock;
+				}
+			}
+			return null;
+		} else {
+			return $localBlocks[0] ?? null;
+		}
+	}
+
+	/**
+	 * Compare two MediaWiki timestamps, checking whether they are close enough
+	 * to have been part of the same global block action
+	 *
+	 * @param string $ts1
+	 * @param string $ts2
+	 * @return bool
+	 */
+	private function isCloseTimestamp( string $ts1, string $ts2 ) {
+		$ts1Unix = wfTimestamp( TS_UNIX, $ts1 );
+		$ts2Unix = wfTimestamp( TS_UNIX, $ts2 );
+		return abs( (int)$ts1Unix - (int)$ts2Unix ) < 60;
 	}
 
 	/**
@@ -527,12 +633,12 @@ class GlobalBlockManager {
 	 * @param string $target An IP address, IP range, a username, or global block ID
 	 * @param UserIdentity $performer The performer of the action, used to appropriately hide the target if
 	 *   necessary.
-	 * @return StatusValue Fatal if the target is not valid, along with a message to use for displaying to
+	 * @return GlobalBlockStatus Fatal if the target is not valid, along with a message to use for displaying to
 	 *   the user. A good status otherwise, where the value of the status contains information about the
 	 *   valid target with keys 'target', 'targetForDisplay', 'targetForLookup', 'targetCentralId',
 	 *   'rangeStart', and 'rangeEnd'.
 	 */
-	public function validateGlobalBlockTarget( string $target, UserIdentity $performer ): StatusValue {
+	public function validateGlobalBlockTarget( string $target, UserIdentity $performer ): GlobalBlockStatus {
 		$targetForDisplay = $target;
 		$targetForLookup = null;
 
@@ -547,7 +653,7 @@ class GlobalBlockManager {
 				->fetchField();
 
 			if ( !$targetForBlockId ) {
-				return StatusValue::newFatal( 'globalblocking-notblocked-id', $target );
+				return GlobalBlockStatus::newFatal( 'globalblocking-notblocked-id', $target );
 			}
 
 			$targetForLookup = $target;
@@ -560,9 +666,9 @@ class GlobalBlockManager {
 				$this->userFactory->newFromUserIdentity( $performer )
 			);
 			if ( $centralIdForTarget === 0 ) {
-				return StatusValue::newFatal( 'globalblocking-block-target-invalid', $targetForDisplay );
+				return GlobalBlockStatus::newFatal( 'globalblocking-block-target-invalid', $targetForDisplay );
 			}
-			return StatusValue::newGood( [
+			return GlobalBlockStatus::newGood( [
 				'target' => $target,
 				'targetForDisplay' => $targetForDisplay,
 				'targetForLookup' => $targetForLookup ?? $target,
@@ -583,7 +689,7 @@ class GlobalBlockManager {
 			$limit = $this->options->get( 'GlobalBlockingCIDRLimit' );
 			$ipVersion = IPUtils::isIPv4( $prefix ) ? 'IPv4' : 'IPv6';
 			if ( (int)$range < $limit[ $ipVersion ] ) {
-				return StatusValue::newFatal(
+				return GlobalBlockStatus::newFatal(
 					'globalblocking-bigrange', $targetForDisplay, $ipVersion, $limit[ $ipVersion ]
 				);
 			}
@@ -606,6 +712,6 @@ class GlobalBlockManager {
 
 		$data['targetForLookup'] = $targetForLookup ?? $data[ 'target' ];
 
-		return StatusValue::newGood( $data );
+		return GlobalBlockStatus::newGood( $data );
 	}
 }
