@@ -11,6 +11,7 @@ use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\Extension\GlobalBlocking\Widget\HTMLUserTextFieldAllowingGlobalBlockIds;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Message\Message;
+use MediaWiki\Parser\ParserOptions;
 use MediaWiki\SpecialPage\FormSpecialPage;
 use MediaWiki\Status\Status;
 use MediaWiki\User\CentralId\CentralIdLookup;
@@ -235,7 +236,10 @@ class SpecialGlobalBlockList extends FormSpecialPage {
 		);
 
 		if ( $this->queryValid && $pager->getNumRows() ) {
-			$this->getOutput()->addParserOutputContent( $pager->getFullOutput() );
+			$this->getOutput()->addParserOutputContent(
+				$pager->getFullOutput(),
+				ParserOptions::newFromContext( $this->getContext() )
+			);
 		} else {
 			$this->noResults();
 		}
