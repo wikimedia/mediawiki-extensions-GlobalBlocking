@@ -112,6 +112,7 @@ class GloballyBlock extends Maintenance {
 			} else {
 				$this->output( "Globally $action '$line' succeeded.\n" );
 			}
+			$this->waitForReplication();
 		}
 	}
 }
