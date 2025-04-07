@@ -56,6 +56,7 @@
 	"globalblocking-list-addressblocks": "Nascondi blocchi di un solo IP",
 	"globalblocking-list-tempaccountblocks": "Nascondi i blocchi temporanei dell'utenza",
 	"globalblocking-list-rangeblocks": "Nascondi blocchi di range",
+	"globalblocking-list-userblocks": "Nascondi blocchi degli utenti registrati",
 	"globalblocking-list-autoblocks": "Nascondi autoblocchi",
 	"globalblocking-list-table-heading-timestamp": "Data e ora",
 	"globalblocking-list-table-heading-target": "Destinazione",
@@ -137,5 +138,6 @@
 	"globalblocking-blockedtext-proxy": "L'indirizzo proxy bloccato è $1.",
 	"globalblocking-blockedtext-username": "Il tuo nome utente è $1.",
 	"globalblocking-centralauth-admin-info-globalblock": "Bloccata globalmente:",
+	"globalblocking-global-autoblock-id": "Autoblocco globale #$1",
 	"globalblocking-global-block-id": "Blocco globale $1"
 }
