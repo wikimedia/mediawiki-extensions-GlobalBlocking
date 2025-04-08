@@ -53,7 +53,7 @@
 	"globalblocking-list-indefblocks": "Celar blocadas infinite",
 	"globalblocking-list-addressblocks": "Celar blocadas de singule adresse IP",
 	"globalblocking-list-tempaccountblocks": "Celar blocadas de contos temporari",
-	"globalblocking-list-rangeblocks": "Celar blocadas de gruppos de adresses IP",
+	"globalblocking-list-rangeblocks": "Celar blocadas de intervallos",
 	"globalblocking-list-userblocks": "Celar blocadas de conto",
 	"globalblocking-list-autoblocks": "Celar blocadas automatic",
 	"globalblocking-list-table-heading-timestamp": "Data e hora",
