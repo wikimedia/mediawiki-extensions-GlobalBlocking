@@ -42,12 +42,17 @@
 	"globalblocking-list-whitelisted": "diweredekaet en un doare lec'hel gant $1 : $2",
 	"globalblocking-list-whitelist": "statud lec'hel",
 	"globalblocking-list-modify": "kemmañ",
+	"globalblocking-list-tempblocks": "Kuzhat ar stankadennoù berrbad",
+	"globalblocking-list-indefblocks": "Kuzhat ar stankadennoù didermen",
+	"globalblocking-list-addressblocks": "Kuzhat stankadennoù ar chomlec'hioù IP en o-unan",
+	"globalblocking-list-rangeblocks": "Kuzhat ar stankadennoù lijorennoù",
 	"globalblocking-expiringblock": "a zeu d'e dermen d'an $1 da $2",
 	"globalblocking-list-noresults": "N’ez eus bet kavet disoc’h ebet gant an arventennoù pourvezet.",
 	"globalblocking-goto-block": "Stankañ ur chomlec'h IP en un doare hollek",
 	"globalblocking-goto-unblock": "Lemel kuit ur stankadenn hollek",
 	"globalblocking-goto-status": "Kemmañ statud lec'hel ur stankadenn hollek",
 	"globalblocking-return": "Distreiñ da roll ar stankadennoù hollek",
+	"globalblocking-add-block": "Ouzhpennañ ur stankadenn hollek all",
 	"globalblocking-notblocked": "N'eo ket stanket en un doare hollek ar chomlec'h IP ($1) ho peus lakaet.",
 	"globalblocking-unblock": "Lemel kuit ur stankadenn hollek",
 	"globalblocking-unblock-legend": "Lemel kuit ur stankadenn hollek",
@@ -87,5 +92,9 @@
 	"action-globalblock-whitelist": "Diweredekaat en un doare lec'hel ar stankadennoù hollek",
 	"right-globalblock-exempt": "Mont dreist d'ar stankadennoù hollek",
 	"action-globalblock-exempt": "Mont dreist d'ar stankadennoù hollek",
-	"log-action-filter-gblblock": "Seurt stankadenn hollek :"
+	"log-action-filter-gblblock": "Seurt stankadenn hollek :",
+	"globalblocking-blockedtext-blocker-admin": "Gallout a rit mont e darempred gant $1 evit kaozeal diwar-benn ar stankadenn.",
+	"globalblocking-blockedtext-email-feature": "Ne c'hallit implijout an arc'hweladur \"{{int:emailuser}}\" nemet m’ho peus spisaet ur chomlec'h postel reizh en ho [[Special:Preferences|penndibaboù kont]] ha n'oc’h ket bet difennet deoc’h implijout anezhi.",
+	"globalblocking-blockedtext-ip-range": "$1 eo al lijorenn stanket.",
+	"globalblocking-blockedtext-proxy": "$1 a oa ar chomlec'h proksi stanket."
 }
