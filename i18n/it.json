@@ -11,7 +11,8 @@
 			"Melos",
 			"Nemo bis",
 			"Ricordisamoa",
-			"Sakretsu"
+			"Sakretsu",
+			"Titore"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permette]] di [[Special:GlobalBlockList|bloccare su più wiki]] utenze, indirizzi IP e intervalli di IP",
@@ -66,6 +67,7 @@
 	"globalblocking-list-indefblocks": "Nascondi blocchi infiniti",
 	"globalblocking-list-addressblocks": "Nascondi blocchi di un solo IP",
 	"globalblocking-list-rangeblocks": "Nascondi blocchi di range",
+	"globalblocking-list-userblocks": "Nascondi blocchi degli utenti registrati",
 	"globalblocking-expiringblock": "scade {{PLURAL:$1|1=l'$1|8=l'$1|11=l'$1|il $1}} alle $2",
 	"globalblocking-infiniteblock": "infinito",
 	"globalblocking-list-noresults": "Non è stato trovato alcun risultato con i parametri forniti.",

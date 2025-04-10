@@ -60,7 +60,7 @@
 	"globalblocking-list-tempblocks": "Celar blocadas temporari",
 	"globalblocking-list-indefblocks": "Celar blocadas infinite",
 	"globalblocking-list-addressblocks": "Celar blocadas de singule adresse IP",
-	"globalblocking-list-rangeblocks": "Celar blocadas de gruppos de adresses IP",
+	"globalblocking-list-rangeblocks": "Celar blocadas de intervallos",
 	"globalblocking-list-userblocks": "Celar blocadas de conto",
 	"globalblocking-expiringblock": "expira le $1 a $2",
 	"globalblocking-infiniteblock": "infinite",
