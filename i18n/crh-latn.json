@@ -1,6 +1,9 @@
 {
 	"@metadata": {
-		"authors": []
+		"authors": [
+			"Don Alessandro"
+		]
 	},
-	"globalblocking-expiringblock": "$1 $2 tarihında bitecek"
+	"globalblocking-expiringblock": "$1 $2 tarihında bitecek",
+	"globalblocking-logpage": "Global blok jurnalı"
 }
