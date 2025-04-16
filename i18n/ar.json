@@ -131,6 +131,7 @@
 	"log-action-filter-gblblock-whitelist": "إضافة قائمة منع بيضاء عالمية",
 	"log-action-filter-gblblock-dwhitelist": "إزالة قائمة منع بيضاء عالمية",
 	"grant-globalblock": "منع أو إلغاء منع عنوان أيبي عالميا",
+	"globalblocking-blockedtext-all-wikis": "لقد تم حظر عنوان IP الخاص بك على كافة الويكيات.",
 	"globalblocking-blockedtext-on-range": "عنوان IP الخاص بك موجود في نطاق تم حظره على جميع مواقع الويكي.",
 	"globalblocking-blockedtext-on-proxy": "تم حظر خادم وكيل واحد أو أكثر يستخدمه طلبك بشكل عام",
 	"globalblocking-blockedtext-blocker-admin": "يمكنك الاتصال بـ $1 لمناقشة الحظر.",
