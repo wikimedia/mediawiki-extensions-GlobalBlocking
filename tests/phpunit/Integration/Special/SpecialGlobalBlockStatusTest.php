@@ -64,7 +64,6 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 				'address' => $target,
 				'wpReason' => '',
 				'wpWhitelistStatus' => 1,
-				'wpEditToken' => $performer->getEditToken(),
 			],
 			true,
 			RequestContext::getMain()->getRequest()->getSession()
@@ -111,7 +110,6 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 				// wpWhitelistStatus not being present in the fake request data means the checkbox was unchecked.
 				'address' => '1.2.3.4',
 				'wpReason' => 'removing local disable',
-				'wpEditToken' => $performer->getEditToken(),
 			],
 			true,
 			RequestContext::getMain()->getRequest()->getSession()
@@ -155,7 +153,6 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 			[
 				// wpWhitelistStatus not being present in the fake request data means the checkbox was unchecked.
 				'address' => '#' . $autoBlockId, 'wpReason' => 'removing local disable',
-				'wpEditToken' => $performer->getEditToken(),
 			],
 			true,
 			RequestContext::getMain()->getRequest()->getSession()
@@ -188,7 +185,6 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 		$request = new FauxRequest(
 			[
 				'address' => '#' . $autoBlockId, 'wpReason' => 'local disable', 'wpWhitelistStatus' => 1,
-				'wpEditToken' => $performer->getEditToken(),
 			],
 			true,
 			RequestContext::getMain()->getRequest()->getSession()
@@ -220,7 +216,6 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 				'address' => '#',
 				'wpReason' => 'local disable',
 				'wpWhitelistStatus' => 1,
-				'wpEditToken' => $performer->getEditToken(),
 			],
 			true,
 			RequestContext::getMain()->getRequest()->getSession()
@@ -248,7 +243,6 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 				'address' => '#1234',
 				'wpReason' => 'local disable',
 				'wpWhitelistStatus' => 1,
-				'wpEditToken' => $performer->getEditToken(),
 			],
 			true,
 			RequestContext::getMain()->getRequest()->getSession()
