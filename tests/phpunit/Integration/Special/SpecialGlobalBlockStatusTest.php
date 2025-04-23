@@ -66,7 +66,8 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 				'wpWhitelistStatus' => 1,
 				'wpEditToken' => $performer->getEditToken(),
 			],
-			true
+			true,
+			RequestContext::getMain()->getRequest()->getSession()
 		);
 
 		[ $html ] = $this->executeSpecialPage( $target, $request, 'qqx', $performer );
@@ -112,7 +113,8 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 				'wpReason' => 'removing local disable',
 				'wpEditToken' => $performer->getEditToken(),
 			],
-			true
+			true,
+			RequestContext::getMain()->getRequest()->getSession()
 		);
 
 		[ $html ] = $this->executeSpecialPage(
@@ -155,7 +157,8 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 				'address' => '#' . $autoBlockId, 'wpReason' => 'removing local disable',
 				'wpEditToken' => $performer->getEditToken(),
 			],
-			true
+			true,
+			RequestContext::getMain()->getRequest()->getSession()
 		);
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
 		// Check that the correct success message is present
@@ -187,7 +190,8 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 				'address' => '#' . $autoBlockId, 'wpReason' => 'local disable', 'wpWhitelistStatus' => 1,
 				'wpEditToken' => $performer->getEditToken(),
 			],
-			true
+			true,
+			RequestContext::getMain()->getRequest()->getSession()
 		);
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
 		// Check that the correct success message is present
@@ -218,7 +222,8 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 				'wpWhitelistStatus' => 1,
 				'wpEditToken' => $performer->getEditToken(),
 			],
-			true
+			true,
+			RequestContext::getMain()->getRequest()->getSession()
 		);
 
 		[ $html ] = $this->executeSpecialPage(
@@ -245,7 +250,8 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 				'wpWhitelistStatus' => 1,
 				'wpEditToken' => $performer->getEditToken(),
 			],
-			true
+			true,
+			RequestContext::getMain()->getRequest()->getSession()
 		);
 
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
