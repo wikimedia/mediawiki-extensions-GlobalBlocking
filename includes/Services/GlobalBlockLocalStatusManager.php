@@ -2,8 +2,8 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Services;
 
-use ManualLogEntry;
 use MediaWiki\Linker\LinkTarget;
+use MediaWiki\Logging\ManualLogEntry;
 use MediaWiki\Title\Title;
 use MediaWiki\Title\TitleValue;
 use MediaWiki\User\UserIdentity;

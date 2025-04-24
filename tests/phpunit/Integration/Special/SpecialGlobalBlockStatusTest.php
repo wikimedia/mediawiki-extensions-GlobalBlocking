@@ -2,14 +2,14 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Test\Integration\Special;
 
-use ErrorPageError;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\Exception\ErrorPageError;
+use MediaWiki\Exception\PermissionsError;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Tests\SpecialPage\FormSpecialPageTestCase;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
-use PermissionsError;
 
 /**
  * @covers \MediaWiki\Extension\GlobalBlocking\Special\SpecialGlobalBlockStatus

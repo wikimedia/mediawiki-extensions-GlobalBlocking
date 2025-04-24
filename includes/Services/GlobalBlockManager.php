@@ -3,7 +3,6 @@
 namespace MediaWiki\Extension\GlobalBlocking\Services;
 
 use InvalidArgumentException;
-use ManualLogEntry;
 use MediaWiki\Block\BlockUser;
 use MediaWiki\Block\BlockUserFactory;
 use MediaWiki\Block\DatabaseBlock;
@@ -15,6 +14,7 @@ use MediaWiki\Extension\GlobalBlocking\Hooks\HookRunner;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Language\RawMessage;
 use MediaWiki\Linker\LinkTarget;
+use MediaWiki\Logging\ManualLogEntry;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Permissions\Authority;
 use MediaWiki\Title\Title;

@@ -3,15 +3,15 @@
 namespace MediaWiki\Extension\GlobalBlocking\Test\Integration\Special;
 
 use MediaWiki\Context\RequestContext;
+use MediaWiki\Exception\PermissionsError;
+use MediaWiki\Exception\ReadOnlyError;
+use MediaWiki\Exception\UserBlockedError;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWiki\User\User;
-use PermissionsError;
-use ReadOnlyError;
 use SpecialPageTestBase;
-use UserBlockedError;
 use Wikimedia\Parsoid\Utils\DOMCompat;
 use Wikimedia\Parsoid\Utils\DOMUtils;
 use Wikimedia\Timestamp\ConvertibleTimestamp;

@@ -2,8 +2,8 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Maintenance;
 
-use Maintenance;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
+use MediaWiki\Maintenance\Maintenance;
 use MediaWiki\User\User;
 use Wikimedia\IPUtils;
 

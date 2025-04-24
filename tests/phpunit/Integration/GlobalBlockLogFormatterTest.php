@@ -3,10 +3,10 @@
 namespace MediaWiki\Extension\GlobalBlocking\Test\Integration;
 
 use CentralAuthTestUser;
-use LogFormatter;
 use LogFormatterTestCase;
-use LogPage;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Logging\LogFormatter;
+use MediaWiki\Logging\LogPage;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWiki\WikiMap\WikiMap;
 use TestUserRegistry;

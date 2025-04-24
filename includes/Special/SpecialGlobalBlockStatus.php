@@ -2,9 +2,9 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Special;
 
-use ErrorPageError;
 use Exception;
 use MediaWiki\Block\BlockUtils;
+use MediaWiki\Exception\ErrorPageError;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusManager;

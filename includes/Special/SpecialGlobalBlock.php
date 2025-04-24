@@ -2,7 +2,6 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Special;
 
-use LogEventsList;
 use MediaWiki\Block\BlockUtils;
 use MediaWiki\CommentStore\CommentStore;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
@@ -11,6 +10,7 @@ use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockManager;
 use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\HTMLForm;
+use MediaWiki\Logging\LogEventsList;
 use MediaWiki\Message\Message;
 use MediaWiki\SpecialPage\FormSpecialPage;
 use MediaWiki\Status\Status;

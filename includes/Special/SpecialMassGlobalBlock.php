@@ -3,6 +3,7 @@
 namespace MediaWiki\Extension\GlobalBlocking\Special;
 
 use MediaWiki\CommentStore\CommentStore;
+use MediaWiki\Exception\UserBlockedError;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingExpirySelectorBuilder;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingGlobalBlockDetailsRenderer;
@@ -16,7 +17,6 @@ use MediaWiki\Message\Message;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\User\UserIdentityLookup;
-use UserBlockedError;
 use Wikimedia\IPUtils;
 use Wikimedia\ScopedCallback;
 

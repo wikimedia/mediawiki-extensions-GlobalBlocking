@@ -2,14 +2,14 @@
 
 namespace MediaWiki\Extension\GlobalBlocking;
 
-use LogEntry;
-use LogFormatter;
-use LogPage;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingUserVisibilityLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\Html\Html;
 use MediaWiki\Linker\Linker;
+use MediaWiki\Logging\LogEntry;
+use MediaWiki\Logging\LogFormatter;
+use MediaWiki\Logging\LogPage;
 use MediaWiki\Message\Message;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserIdentityLookup;
