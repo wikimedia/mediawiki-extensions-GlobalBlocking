@@ -41,7 +41,7 @@
 	"globalblocking-block-disable-account-creation": "グローバルにアカウント作成も禁止",
 	"globalblocking-block-enable-autoblock": "この利用者が使用した{{PLURAL:$1|最後のIPアドレス|最後の$1つのIPアドレス}}と、その後編集を試みたすべてのIPアドレスを$2、自動的にグローバルブロック",
 	"globalblocking-block-target-invalid": "入力した利用者名、IPアドレス、またはIP範囲 ($1) は無効です。",
-	"globalblocking-block-expiryinvalid": "入力した期限 に誤りがあります。",
+	"globalblocking-block-expiryinvalid": "入力した期限に誤りがあります。",
 	"globalblocking-block-anononly-on-account": "アカウントのブロックは、匿名利用者だけに適用することはできません。",
 	"globalblocking-block-enable-autoblock-on-ip": "自動ブロックはアカウントのブロックに対してのみ有効にできます。",
 	"globalblocking-block-modifying-global-autoblock": "自動ブロックは削除のみ可能で、変更することはできません。",
