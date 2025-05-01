@@ -43,7 +43,7 @@
 	"globalblocking-ipbanononly": "匿名利用者のみグローバルブロック",
 	"globalblocking-block-ipinvalid": "入力したIPアドレス ($1) は無効です。\n利用者名は入力できないことにご注意ください!",
 	"globalblocking-block-target-invalid": "入力した利用者名、IPアドレス、またはIP範囲 ($1) は無効です。",
-	"globalblocking-block-expiryinvalid": "入力した期限 に誤りがあります。",
+	"globalblocking-block-expiryinvalid": "入力した期限に誤りがあります。",
 	"globalblocking-block-anononly-on-account": "利用者をブロックする時は、匿名利用者のみブロックすることはできません。",
 	"globalblocking-block-submit": "このIPアドレスをグローバルブロック",
 	"globalblocking-block-submit-new": "利用者をグローバルブロック",
