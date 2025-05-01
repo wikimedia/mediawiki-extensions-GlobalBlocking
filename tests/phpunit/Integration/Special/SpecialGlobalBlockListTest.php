@@ -102,7 +102,7 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 		}
 	}
 
-	public function provideTargetParam() {
+	public static function provideTargetParam() {
 		return [
 			'single IPv4' => [ '1.2.3.4', '1.2.3.4' ],
 			'exact IPv4 range' => [ '1.2.3.4/24', '1.2.3.0/24' ],
@@ -185,7 +185,7 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 		}
 	}
 
-	public function provideViewPageWithOptionsSelected() {
+	public static function provideViewPageWithOptionsSelected() {
 		return [
 			'Hide IP blocks' => [
 				// The value of the wgOptions parameter

@@ -75,7 +75,7 @@ class GlobalBlockListPagerTest extends MediaWikiIntegrationTestCase {
 		}
 	}
 
-	public function provideFormatRow() {
+	public static function provideFormatRow() {
 		return [
 			'IPv4 block' => [
 				// The target of the row in the globalblocks table that should be passed to ::formatRow
