@@ -12,21 +12,22 @@ module.exports = function () {
 		return OO.ui.infuse( $el );
 	}
 
-	var blockTargetWidget,
+	// eslint-disable-next-line prefer-const
+	let blockTargetWidget,
 		anonOnlyWidget,
 		alsoLocalSoftWidget,
 		localBlockWidget,
 		enableAutoblockWidget;
 
 	function preserveSelectedStateOnDisable( widget ) {
-		var widgetWasSelected;
+		let widgetWasSelected;
 
 		if ( !widget ) {
 			return;
 		}
 
 		// 'disable' event fires if disabled state changes
-		widget.on( 'disable', function ( disabled ) {
+		widget.on( 'disable', ( disabled ) => {
 			if ( disabled ) {
 				// Disabling an enabled widget
 				// Save selected and set selected to false
@@ -44,7 +45,7 @@ module.exports = function () {
 	}
 
 	function updateBlockOptions() {
-		var blockTarget = blockTargetWidget.getValue().trim(),
+		const blockTarget = blockTargetWidget.getValue().trim(),
 			isEmpty = blockTarget === '',
 			isIp = mw.util.isIPAddress( blockTarget, true );
 
