@@ -160,10 +160,10 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 		if ( isset( $params['ip'] ) ) {
 			$blockCIDRLimit = $this->getConfig()->get( 'GlobalBlockingCIDRLimit' );
 			if ( IPUtils::isIPv4( $params['ip'] ) ) {
-				$type = 'IPv4';
+				$ipVersion = 'IPv4';
 				$cidrLimit = $blockCIDRLimit['IPv4'];
 			} elseif ( IPUtils::isIPv6( $params['ip'] ) ) {
-				$type = 'IPv6';
+				$ipVersion = 'IPv6';
 				$cidrLimit = $blockCIDRLimit['IPv6'];
 			} else {
 				$this->dieWithError( 'apierror-badip', 'invalidip' );
@@ -172,7 +172,7 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 			// Check range validity, if it's a CIDR
 			[ $ip, $range ] = IPUtils::parseCIDR( $params['ip'] );
 			if ( $ip !== false && $range !== false && $range < $cidrLimit ) {
-				$this->dieWithError( [ 'apierror-cidrtoobroad', $type, $cidrLimit ] );
+				$this->dieWithError( [ 'apierror-cidrtoobroad', $ipVersion, $cidrLimit ] );
 			}
 
 			// Attempt to get an IExpression of conditions for the IP, and die if none were returned.
