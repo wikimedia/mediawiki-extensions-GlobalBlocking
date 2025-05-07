@@ -1,7 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Winston Sung"
+			"Winston Sung",
+			"BadDog",
+			"Vlad5250"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Omogućuje]] [[Special:GlobalBlockList|globalno blokiranje]] IP-adresa na više vikija",
@@ -114,8 +116,8 @@
 	"log-action-filter-gblblock-whitelist": "Dodavanje na globalnu bijelu listu blokiranja",
 	"log-action-filter-gblblock-dwhitelist": "Uklanjanje s globalne bijele liste blokiranja",
 	"grant-globalblock": "Globalno blokirajte ili deblokirajte IP-adresu",
-	"globalblocking-blockedtext-all-wikis": "Vaša IP-adresa je blokirana na svim vikijima.",
-	"globalblocking-blockedtext-on-range": "Vaša IP-adresa je u rasponu blokiran na svim vikijima.",
+	"globalblocking-blockedtext-all-wikis": "Vaša IP adresa je blokirana na svim projektima.",
+	"globalblocking-blockedtext-on-range": "Vaša IP adresa je u rasponu blokiranom na svim projektima.",
 	"globalblocking-blockedtext-on-proxy": "Jedan ili više proksi servera koje koristite su globalno blokirani",
 	"globalblocking-blockedtext-blocker-admin": "Možete kontaktirati $1 da razgovarate o blokadi.",
 	"globalblocking-blockedtext-email-feature": "Ne možete koristiti opciju \"{{int:emailuser}}\" ako niste naveli važeću imejl adresu u [[Special:Preferences|vašim postavkama]] i ako je vam zabranjeno koristiti je."
