@@ -26,6 +26,7 @@ class GlobalBlock extends AbstractBlock {
 	 * @internal You should get a GlobalBlock instance through the {@link GlobalBlockLookup} service in most cases
 	 */
 	public static function newFromRow( stdClass $row, bool $xff ): GlobalBlock {
+		$blockTarget = MediaWikiServices::getInstance()->getBlockTargetFactory()->newFromString( $row->gb_address );
 		return new GlobalBlock(
 			[
 				'id' => $row->gb_id,
@@ -33,7 +34,7 @@ class GlobalBlock extends AbstractBlock {
 				'enableAutoblock' => $row->gb_enable_autoblock,
 				'byCentralId' => $row->gb_by_central_id,
 				'byWiki' => $row->gb_by_wiki,
-				'address' => $row->gb_address,
+				'target' => $blockTarget,
 				'reason' => $row->gb_reason,
 				'timestamp' => $row->gb_timestamp,
 				'anonOnly' => $row->gb_anon_only,

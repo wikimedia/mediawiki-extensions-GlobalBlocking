@@ -4,6 +4,7 @@ namespace MediaWiki\Extension\GlobalBlocking\Test\Unit;
 
 use MediaWiki\Block\AbstractBlock;
 use MediaWiki\Block\Block;
+use MediaWiki\Block\BlockTargetFactory;
 use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Config\Config;
 use MediaWiki\Config\HashConfig;
@@ -25,6 +26,7 @@ use MediaWikiUnitTestCase;
 class GlobalBlockingHooksTest extends MediaWikiUnitTestCase {
 	private function getGlobalBlockingHooks( $overrides = [] ): GlobalBlockingHooks {
 		return new GlobalBlockingHooks(
+			$this->createMock( BlockTargetFactory::class ),
 			$overrides['config'] ?? $this->createMock( Config::class ),
 			$this->createMock( CommentFormatter::class ),
 			$this->createMock( CentralIdLookup::class ),

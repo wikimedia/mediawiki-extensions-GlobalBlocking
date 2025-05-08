@@ -23,6 +23,7 @@ class GlobalBlockingHooksModifiesDatabaseTest extends MediaWikiIntegrationTestCa
 	private function getGlobalBlockingHooks(): GlobalBlockingHooks {
 		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
 		return new GlobalBlockingHooks(
+			$this->getServiceContainer()->getBlockTargetFactory(),
 			$this->getServiceContainer()->getMainConfig(),
 			$this->getServiceContainer()->getCommentFormatter(),
 			$this->getServiceContainer()->getCentralIdLookup(),
