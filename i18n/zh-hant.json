@@ -31,7 +31,8 @@
 			"列维劳德",
 			"捍粵者",
 			"铁桶",
-			"Cookai1205"
+			"Cookai1205",
+			"U.T."
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|允許]]封鎖[[Special:GlobalBlockList|於多個 Wiki 中]]的帳號、IP 位址及 IP 範圍",
@@ -56,7 +57,7 @@
 	"globalblocking-block-submit-new": "全域封鎖此位使用者",
 	"globalblocking-modify-submit": "修改此全域封鎖",
 	"globalblocking-block-success": "已在所有wiki封鎖 IP 位址 '''$1'''。",
-	"globalblocking-modify-success": "己修改 '''$1''' 的全域封鎖。",
+	"globalblocking-modify-success": "已修改 '''$1''' 的全域封鎖。",
 	"globalblocking-local-failed": "指定的 IP 位址已被此 Wiki 封鎖，本地封鎖 IP 位址失敗。",
 	"globalblocking-local-failed-new": "本地封鎖該使用者失敗，因為指定的使用者已被此 wiki 封鎖。",
 	"globalblocking-block-failure": "嘗試全域封鎖 $1 時發生錯誤。請重試。",
