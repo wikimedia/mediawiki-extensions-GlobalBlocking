@@ -240,6 +240,7 @@
 		"main": {
 			"class": "MediaWiki\\Extension\\GlobalBlocking\\GlobalBlockingHooks",
 			"services": [
+				"BlockTargetFactory",
 				"MainConfig",
 				"CommentFormatter",
 				"CentralIdLookup",

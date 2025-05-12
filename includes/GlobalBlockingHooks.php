@@ -4,6 +4,7 @@ namespace MediaWiki\Extension\GlobalBlocking;
 
 use MediaWiki\Block\AbstractBlock;
 use MediaWiki\Block\Block;
+use MediaWiki\Block\BlockTargetFactory;
 use MediaWiki\Block\CompositeBlock;
 use MediaWiki\Block\Hook\GetUserBlockHook;
 use MediaWiki\Block\Hook\SpreadAnyEditBlockHook;
@@ -47,6 +48,7 @@ class GlobalBlockingHooks implements
 	ContributionsToolLinksHook,
 	SpreadAnyEditBlockHook
 {
+	private BlockTargetFactory $blockTargetFactory;
 	private Config $config;
 	private CommentFormatter $commentFormatter;
 	private CentralIdLookup $lookup;
@@ -59,6 +61,7 @@ class GlobalBlockingHooks implements
 	private GlobalBlockingLinkBuilder $globalBlockingLinkBuilder;
 
 	public function __construct(
+		BlockTargetFactory $blockTargetFactory,
 		Config $mainConfig,
 		CommentFormatter $commentFormatter,
 		CentralIdLookup $lookup,
@@ -70,6 +73,7 @@ class GlobalBlockingHooks implements
 		GlobalBlockingGlobalBlockDetailsRenderer $globalBlockDetailsRenderer,
 		GlobalBlockingLinkBuilder $globalBlockingLinkBuilder
 	) {
+		$this->blockTargetFactory = $blockTargetFactory;
 		$this->config = $mainConfig;
 		$this->commentFormatter = $commentFormatter;
 		$this->lookup = $lookup;
@@ -109,8 +113,9 @@ class GlobalBlockingHooks implements
 		// User is locally blocked and globally blocked. We need a CompositeBlock.
 		$allBlocks = $block->toArray();
 		$allBlocks[] = $globalBlock;
+		$blockTarget = $this->blockTargetFactory->newFromString( $ip ?? $user->getName() );
 		$block = new CompositeBlock( [
-			'address' => $ip ?? $user->getName(),
+			'target' => $blockTarget,
 			'reason' => new Message( 'blockedtext-composite-reason' ),
 			'originalBlocks' => $allBlocks,
 		] );

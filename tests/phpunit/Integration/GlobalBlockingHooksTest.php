@@ -40,6 +40,7 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 	private function getGlobalBlockingHooksConstructorArguments(): array {
 		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
 		return [
+			'blockTargetFactory' => $this->getServiceContainer()->getBlockTargetFactory(),
 			'mainConfig' => $this->getServiceContainer()->getMainConfig(),
 			'commentFormatter' => $this->getServiceContainer()->getCommentFormatter(),
 			'lookup' => $this->getServiceContainer()->getCentralIdLookup(),
