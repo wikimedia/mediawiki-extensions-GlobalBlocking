@@ -22,7 +22,7 @@
 	"globalblocking-ipbanononly": "Nëmmen anonym Benotzer global spären",
 	"globalblocking-block-disable-account-creation": "Opmaache vu Konte global desaktivéieren",
 	"globalblocking-block-target-invalid": "De Benotzernumm, d'IP-Adress oder den IP-Beräich, deen Dir aginn hutt, ($1) ass ongülteg.",
-	"globalblocking-block-expiryinvalid": "D'Dauer déi dir aginn hutt ass ongëlteg.",
+	"globalblocking-block-expiryinvalid": "D'Oflafdauer, déi Dir aginn hutt, ass ongülteg.",
 	"globalblocking-block-submit": "Dës IP-Adress global spären",
 	"globalblocking-modify-submit": "Dës global Spär änneren",
 	"globalblocking-block-success": "'''$1''' gouf op alle Wikie gespaart.",
