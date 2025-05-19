@@ -20,7 +20,7 @@
 	"globalblocking-ipaddress": "IP-Adress:",
 	"globalblocking-ipbanononly": "Nëmmen anonym Benotzer global spären",
 	"globalblocking-block-ipinvalid": "Dir hutt eng ongëlteg IP-Adress ($1) aginn.\nDenkt wgl. drun datt Dir och e Benotzernumm agi kënnt!",
-	"globalblocking-block-expiryinvalid": "D'Dauer déi dir aginn hutt ass ongëlteg.",
+	"globalblocking-block-expiryinvalid": "D'Oflafdauer, déi Dir aginn hutt, ass ongülteg.",
 	"globalblocking-block-submit": "Dës IP-Adress global spären",
 	"globalblocking-modify-submit": "Dës global Spär änneren",
 	"globalblocking-block-success": "D'IP-Adress $1 gouf op alle Projete gespaart.",
