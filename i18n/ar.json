@@ -166,6 +166,7 @@
 	"globalblocking-blockedtext-ip-range": "النطاق المحظور هو $1 .",
 	"globalblocking-blockedtext-proxy": "كان عنوان الوكيل المحظور $1 .",
 	"globalblocking-blockedtext-username": "اسم المستخدم الخاص بك هو $1.",
+	"globalblocking-autoblocker": "تم حظره عالميًا تلقائيًا لأن عنوان IP الخاص بك تم استخدامه مؤخرًا بواسطة \"[[User:$1|$1]]\".\nالسبب المذكور لحظر $1 هو \"$2\"",
 	"globalblocking-autoblocker-hidden-block": "تم حظره عالميًا تلقائيًا لأن عنوان IP الخاص بك تم استخدامه مؤخرًا بواسطة مستخدم محظور بواسطة معرف الكتلة #$1.",
 	"globalblocking-centralauth-admin-info-globalblock": "محظور عالميًا:",
 	"globalblocking-global-autoblock-id": "الحظر التلقائي العالمي #$1",
