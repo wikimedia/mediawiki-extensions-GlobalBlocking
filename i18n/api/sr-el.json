@@ -2,5 +2,6 @@
 	"@metadata": {
 		"authors": []
 	},
-	"globalblocking-apierror-badip": "IP adresa $1 nije važeća"
+	"globalblocking-apierror-badip": "IP adresa $1 nije važeća",
+	"apihelp-globalblock-param-alsolocal": "Takođe blokiraj korisnika lokalno. Ne može se koristiti zajedno sa <var>$1id</var>."
 }
