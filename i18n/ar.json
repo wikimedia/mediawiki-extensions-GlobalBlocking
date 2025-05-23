@@ -124,6 +124,7 @@
 	"globalblocking-mass-block-not-blocked": "لا",
 	"globalblocking-mass-block-block": "حظر الأهداف المحددة عالميًا",
 	"globalblocking-mass-block-unblock": "إلغاء حظر الأهداف المحددة عالميًا",
+	"globalblocking-mass-block-bot": "قم بوضع علامة على الإدخالات في [[{{#special:RecentChanges}}|{{int:recentchanges}}]] كإدخالات بوت.",
 	"globalblocking-mass-block-header-status": "محظور عالميًا",
 	"globalblocking-mass-block-failure-block": "فشل في حظر $1 عالميًا",
 	"globalblocking-mass-block-failure-local": "فشل في حظر $1 محليًا",
