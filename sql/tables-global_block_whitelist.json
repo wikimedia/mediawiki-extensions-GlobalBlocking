@@ -7,7 +7,7 @@
 				"name": "gbw_id",
 				"comment": "Key to gb_id in globalblocks database",
 				"type": "integer",
-				"options": { "notnull": true }
+				"options": { "notnull": true, "unsigned": true }
 			},
 			{
 				"name": "gbw_by",

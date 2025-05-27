@@ -114,5 +114,12 @@ class GlobalBlockingSchemaHooks implements LoadExtensionSchemaUpdatesHook {
 				"$base/sql/$type/patch-globalblocks-modify-gb_id-unsigned.sql", true,
 			] );
 		}
+		if ( $type !== 'postgres' ) {
+			$updater->modifyExtensionField(
+				'global_block_whitelist',
+				'gbw_id',
+				"$base/sql/$type/patch-global_block_whitelist-modify-gbw_id-unsigned.sql"
+			);
+		}
 	}
 }

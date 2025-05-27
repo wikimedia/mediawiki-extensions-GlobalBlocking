@@ -3,7 +3,7 @@
 -- Do not modify this file directly.
 -- See https://www.mediawiki.org/wiki/Manual:Schema_changes
 CREATE TABLE /*_*/global_block_whitelist (
-  gbw_id INT NOT NULL,
+  gbw_id INT UNSIGNED NOT NULL,
   gbw_by INT NOT NULL,
   gbw_by_text VARBINARY(255) NOT NULL,
   gbw_reason VARBINARY(767) NOT NULL,
