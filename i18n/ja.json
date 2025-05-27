@@ -48,7 +48,7 @@
 	"globalblocking-modify-submit": "このグローバルブロックを修正",
 	"globalblocking-block-success": "'''$1''' を全ウィキでブロックしました。",
 	"globalblocking-modify-success": "'''$1''' のグローバルブロックを変更しました。",
-	"globalblocking-local-failed": "指定した利用者はこのウィキですでにブロックされているため、ローカルにブロックすることはできません。",
+	"globalblocking-local-failed": "指定した利用者はこのウィキで既にブロックされているため、ローカルでブロックできません。",
 	"globalblocking-block-failure": "$1 のブロック中にエラーが発生しました。もう一度お試しください。",
 	"globalblocking-block-alreadyblocked": "$1 は既にグローバルブロックされています。\n現在のブロックの状態は[[Special:GlobalBlockList|グローバルブロック一覧]]で確認できます。\nまた、このフォームから再投稿することで、ブロック設定を修正できます。",
 	"globalblocking-bigrange": "指定した範囲 ($1) は制限を超えています。\n$2の制限は/$3範囲までです。",
