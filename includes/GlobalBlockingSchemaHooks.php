@@ -106,5 +106,13 @@ class GlobalBlockingSchemaHooks implements LoadExtensionSchemaUpdatesHook {
 				"$base/sql/$type/patch-global_block_whitelist-gbw_expiry-type.sql"
 			);
 		}
+
+		// 1.45
+		if ( $type === 'mysql' ) {
+			$updater->addExtensionUpdateOnVirtualDomain( [
+				'virtual-globalblocking', 'modifyField', 'globalblocks', 'gb_id',
+				"$base/sql/$type/patch-globalblocks-modify-gb_id-unsigned.sql", true,
+			] );
+		}
 	}
 }
