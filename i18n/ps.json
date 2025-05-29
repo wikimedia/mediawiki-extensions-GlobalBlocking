@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ahmed-Najib-Biabani-Ibrahimkhel"
+			"Ahmed-Najib-Biabani-Ibrahimkhel",
+			"شاه زمان پټان"
 		]
 	},
 	"globalblocking-block": "په يوې آی پي پتې نړېواله بنديز لگول",
@@ -11,7 +12,7 @@
 	"globalblocking-block-expiry": "د پای نېټه:",
 	"globalblocking-block-expiry-selector-other": "بل وخت:",
 	"globalblocking-block-legend": "په يوې آي پي پتې نړېوال بنديز لگول",
-	"globalblocking-ipbanononly": "يواځې په ورکنومو کارنانو بنديز لگول",
+	"globalblocking-ipbanononly": "په ټوليز ډول يوازې په ورکنومو کارنانو بنديز لگول",
 	"globalblocking-block-submit": "په دې آي پي پتې نړېوال بنديز لگول",
 	"globalblocking-modify-submit": "دا نړېوال بنديز بدلول",
 	"globalblocking-list": "د نړېوال بنديز لگېدلو آي پي پتو لړليک",
@@ -21,7 +22,7 @@
 	"globalblocking-list-unblock": "غورځول",
 	"globalblocking-list-whitelist": "سيمه ايز دريځ",
 	"globalblocking-list-modify": "بدلول",
-	"globalblocking-list-noresults": "په غوښتلې آي پي پتې بنديز نه دی.",
+	"globalblocking-list-noresults": "ورکړل شوي پاراميټرونو سره هيڅ پايلې ونه موندل شوې.",
 	"globalblocking-goto-block": "په يوې آی پي پتې نړېواله بنديز لگول",
 	"globalblocking-goto-unblock": "يو نړيوال بنديز غورځول",
 	"globalblocking-return": "د نړېوالو بنديزونو لړليک ته ورستنېدل.",
@@ -38,8 +39,8 @@
 	"globalblocking-whitelist-statuslabel": "په {{SITENAME}} کې نړېوال بنديز ناچارنول",
 	"globalblocking-whitelist-submit": "سيمه ايز دريځ بدلول",
 	"globalblocking-logpage": "د نړېوال بنديز يادښت",
-	"globalblocklist": "د نړېوال بنديز لگېدلو آي پي پتو لړليک",
-	"globalblock": "په يوې آی پي پتې نړېواله بنديز لگول",
+	"globalblocklist": "په ټوليز ډول د بنديز لگېدلي کارنانو نوملړ",
+	"globalblock": "په يو کارن ټوليز بنديز لگول",
 	"globalblockstatus": "د نړېوالو بنديزونو سيمه ايز دريځ",
 	"removeglobalblock": "يو نړيوال بنديز غورځول",
 	"right-globalblock": "نړېوال بنديز لگول او ليرې کول",
