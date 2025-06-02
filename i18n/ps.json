@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ahmed-Najib-Biabani-Ibrahimkhel"
+			"Ahmed-Najib-Biabani-Ibrahimkhel",
+			"شاه زمان پټان"
 		]
 	},
 	"globalblocking-block": "په يوې آی پي پتې نړېواله بنديز لگول",
@@ -12,7 +13,7 @@
 	"globalblocking-block-expiry-selector-other": "بل وخت:",
 	"globalblocking-block-legend": "په يوې آي پي پتې نړېوال بنديز لگول",
 	"globalblocking-ipaddress": "IP پته:",
-	"globalblocking-ipbanononly": "يواځې په ورکنومو کارنانو بنديز لگول",
+	"globalblocking-ipbanononly": "په ټوليز ډول يوازې په ورکنومو کارنانو بنديز لگول",
 	"globalblocking-block-submit": "په دې آي پي پتې نړېوال بنديز لگول",
 	"globalblocking-modify-submit": "دا نړېوال بنديز بدلول",
 	"globalblocking-list": "د نړېوال بنديز لگېدلو آي پي پتو لړليک",
@@ -25,7 +26,7 @@
 	"globalblocking-list-whitelist": "سيمه ايز دريځ",
 	"globalblocking-list-modify": "بدلول",
 	"globalblocking-expiringblock": "په $1 نېټه، $2 بجو پای ته رسېږي",
-	"globalblocking-list-noresults": "په غوښتلې آي پي پتې بنديز نه دی.",
+	"globalblocking-list-noresults": "ورکړل شوي پاراميټرونو سره هيڅ پايلې ونه موندل شوې.",
 	"globalblocking-goto-block": "په يوې آی پي پتې نړېواله بنديز لگول",
 	"globalblocking-goto-unblock": "يو نړيوال بنديز غورځول",
 	"globalblocking-return": "د نړېوالو بنديزونو لړليک ته ورستنېدل.",
