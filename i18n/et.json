@@ -13,7 +13,7 @@
 	"globalblocking-block": "Blokeeri IP-aadress globaalselt",
 	"globalblocking-block-intro": "Sellel leheküljel saad blokeerida IP-aadressi kõigis vikides.",
 	"globalblocking-block-reason": "Põhjus:",
-	"globalblocking-block-reason-dropdown": "* Tavalised blokeerimispõhjused\n** Rämpspostitamine erinevates vikides\n** Rikkumised erinevates vikides\n** Vandalism",
+	"globalblocking-block-reason-dropdown": "* Tavalised blokeerimispõhjused\n** Rämpspostitamine eri vikides\n** Rikkumised eri vikides\n** Vandalism",
 	"globalblocking-block-edit-dropdown": "Muuda blokeerimispõhjuseid",
 	"globalblocking-block-expiry": "Aegumistähtaeg:",
 	"globalblocking-block-expiry-selector-other": "Muu aeg:",
