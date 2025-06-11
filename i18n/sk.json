@@ -60,6 +60,7 @@
 	"globalblocking-logpagetext": "Toto je záznam globálnych blokovaní, ktoré boli vytvorené a zrušené na tejto wiki.\nMali by ste pamätať na to, že globálne blokovania je možné vytvoriť a odstrániť na iných wiki a tieto globálne blokovania môžu ovplyvniť túto wiki.\nVšetky aktívne blokovania si môžete pozrieť na [[Special:GlobalBlockList|zozname globálnych blokovaní]].",
 	"globalblocking-loglink": "IP adresa $1 je globálne zablokovaná ([[{{#Special:GlobalBlockList}}/$1|podrobnosti]]).",
 	"globalblocking-showlog": "IP adresa bola v minulosti zablokovaná.\nDolu je pre informáciu záznam blokovaní:",
+	"globalblocking-contribs-log": "záznam globálnych blokovaní",
 	"globalblocklist": "Zoznam globálne zablokovaných IP adries",
 	"globalblock": "Globálne zablokovať IP adresu",
 	"globalblockstatus": "Lokálny stav globálnych blokovaní",
