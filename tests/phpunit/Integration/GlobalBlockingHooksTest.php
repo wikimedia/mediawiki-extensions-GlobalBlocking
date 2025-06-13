@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Test\Integration;
 
+use MediaWiki\Block\Block;
 use MediaWiki\Block\CompositeBlock;
 use MediaWiki\Block\SystemBlock;
 use MediaWiki\Context\RequestContext;
@@ -13,6 +14,7 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\SpecialPage\ContributionsSpecialPage;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
+use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserIdentity;
@@ -25,6 +27,7 @@ use MediaWikiIntegrationTestCase;
 class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 
 	use MockAuthorityTrait;
+	use TempUserTestTrait;
 
 	private static UserIdentity $testGloballyBlockedUser;
 	private static UserIdentity $hiddenUser;
@@ -473,5 +476,28 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 		self::$testGloballyBlockedUser = $testGloballyBlockedUser;
 		self::$hiddenUser = $hiddenUser;
 		self::$unblockedUser = $this->getMutableTestUser()->getUserIdentity();
+	}
+
+	/**
+	 * Tests the correct blocked error message key is used when the blocked user is a temporary
+	 * user. See GlobalBlockingHooksTest unit test for cases with other block target types.
+	 */
+	public function testOnGetBlockErrorMessageKeyForTemporaryUser() {
+		$this->enableAutoCreateTempUser();
+
+		$key = 'blockedtext';
+		$block = $this->createMock( GlobalBlock::class );
+		$block->method( 'getXff' )
+			->willReturn( false );
+		$block->method( 'getTargetName' )
+			->willReturn( '~2024-1' );
+		$block->method( 'getType' )
+			->willReturn( Block::TYPE_USER );
+
+		$hooks = $this->getGlobalBlockingHooks();
+		$result = $hooks->onGetBlockErrorMessageKey( $block, $key );
+
+		$this->assertFalse( $result );
+		$this->assertSame( 'globalblocking-blockedtext-temp', $key );
 	}
 }

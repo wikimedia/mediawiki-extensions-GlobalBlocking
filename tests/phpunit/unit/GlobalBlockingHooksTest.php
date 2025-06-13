@@ -66,6 +66,7 @@ class GlobalBlockingHooksTest extends MediaWikiUnitTestCase {
 	}
 
 	public static function provideOnGetBlockErrorMessageKey() {
+		// See GlobalBlockingHooksTest integration test for temporary user case
 		return [
 			'IP block' => [
 				'xff' => false,
