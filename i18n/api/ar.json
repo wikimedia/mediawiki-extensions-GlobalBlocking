@@ -3,7 +3,8 @@
 		"authors": [
 			"Abanima",
 			"Meno25",
-			"ديفيد"
+			"ديفيد",
+			"علاء"
 		]
 	},
 	"globalblocking-apierror-badip": "عنوان الآيبي $1 غير صالح",
@@ -24,7 +25,7 @@
 	"apihelp-query+globalblocks-param-end": "الطابع الزمني لوقف التعداد فيه.",
 	"apihelp-query+globalblocks-param-ids": "قائمة مفصولة بأنبوب بمعرفات المنع للإدراج.",
 	"apihelp-query+globalblocks-param-addresses": "قائمة مفصولة بعناوين الآيبي للبحث عنها.",
-	"apihelp-query+globalblocks-param-targets": "قائمة منفصلة بخطوط مائلة لأسماء المستخدمين أو عناوين IP أو نطاقات IP للبحث عنها. للبحث عن كتل IP داخل نطاق معين، استخدم $1 ip بدلاً من ذلك.",
+	"apihelp-query+globalblocks-param-targets": "قائمة منفصلة بخطوط مائلة لأسماء المستخدمين أو عناوين بروتوكول الإنترنت (IP) أو نطاقاتها للبحث عنها. للبحث عن أي منعٍ لبروتوكول إنترنت (IP) داخل نطاق معين، استخدم $1ip بدلًا من ذلك.",
 	"apihelp-query+globalblocks-param-ip": "الحصول على جميع الكتل التي تنطبق على هذا عنوان IP أو مجموعة CIDR، بما في ذلك الكتل المدى. لا يمكن استخدامها مع عنوانات $1 أو أهداف $1 فالمناطق الواسعة من /16 لا تقبل.",
 	"apihelp-query+globalblocks-param-limit": "الحد الأقصى لعدد مرات المنع للإدراج.",
 	"apihelp-query+globalblocks-param-prop": "أي الخصائص تريد الحصول عليها.",
