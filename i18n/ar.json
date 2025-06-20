@@ -69,7 +69,7 @@
 	"globalblocking-list-addressblocks": "أخف منع عنوان أيبي واحد",
 	"globalblocking-list-tempaccountblocks": "إخفاء حظر الحسابات المؤقتة",
 	"globalblocking-list-rangeblocks": "أخف منع النطاقات",
-	"globalblocking-list-userblocks": "إخفاء حظر الحسابات",
+	"globalblocking-list-userblocks": "إخفاء منع الحسابات",
 	"globalblocking-list-autoblocks": "إخفاء الحظر التلقائي",
 	"globalblocking-list-table-heading-timestamp": "الطابع الزمني",
 	"globalblocking-list-table-heading-target": "هدف",
