@@ -8,7 +8,8 @@
 			"Glanthor Reviol",
 			"Macofe",
 			"TK-999",
-			"Tacsipacsi"
+			"Tacsipacsi",
+			"Bean49"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Lehetővé teszi]] felhasználói fiókok, IP-címek és IP-cím-tartományok [[Special:GlobalBlockList|blokkolását]] egyszerre több wikiben",
@@ -75,6 +76,7 @@
 	"globalblocking-loglink": "A(z) $1 IP-cím globálisan blokkolva van ([[{{#Special:GlobalBlockList}}/$1|részletek]]).",
 	"globalblocking-contribs-notice": "Ez az IP-cím blokkolva van globálisan.\nA globális blokknapló legutóbbi ide vonatkozó bejegyzése a következő:",
 	"globalblocking-showlog": "Ez az IP-cím korábban már blokkolva volt.\nA blokkolási napló alább látható tájékoztatásul:",
+	"globalblocking-contribs-log": "globális blokknapló",
 	"globalblocklist": "Globálisan blokkolt IP-címek listája",
 	"globalblock": "IP-cím globális blokkolása",
 	"globalblockstatus": "Globális blokkok helyi állapota",
