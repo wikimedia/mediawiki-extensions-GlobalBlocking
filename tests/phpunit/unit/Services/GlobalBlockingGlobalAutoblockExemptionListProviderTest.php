@@ -8,7 +8,7 @@ use MediaWiki\Http\HttpRequestFactory;
 use MediaWiki\Site\SiteLookup;
 use MediaWiki\Status\StatusFormatter;
 use MediaWikiUnitTestCase;
-use Psr\Log\LoggerInterface;
+use Psr\Log\NullLogger;
 use Wikimedia\Message\ITextFormatter;
 use Wikimedia\ObjectCache\WANObjectCache;
 
@@ -28,7 +28,7 @@ class GlobalBlockingGlobalAutoblockExemptionListProviderTest extends MediaWikiUn
 				$this->createMock( HttpRequestFactory::class ),
 				$this->createMock( SiteLookup::class ),
 				$this->createMock( StatusFormatter::class ),
-				$this->createMock( LoggerInterface::class ),
+				new NullLogger(),
 			] )
 			->getMock();
 		$mockObject->method( 'getExemptIPAddresses' )
