@@ -18,22 +18,14 @@ class GlobalBlockingExpirySelectorBuilder {
 	 * Retrieved from 'globalblocking-expiry-options'. If this message is disabled (the default), then
 	 * retrieve it from SpecialBlock's 'ipboptions' message.
 	 *
-	 * @return array Expiry options, empty if both messages are disabled.
+	 * @return array<string,string> Expiry options, empty if both messages are disabled.
 	 */
 	public function buildExpirySelector( MessageLocalizer $messageLocalizer ): array {
 		$msg = $messageLocalizer->msg( 'globalblocking-expiry-options' )->inContentLanguage();
 		if ( $msg->isDisabled() ) {
 			$msg = $messageLocalizer->msg( 'ipboptions' )->inContentLanguage();
-			if ( $msg->isDisabled() ) {
-				// Do not assume that 'ipboptions' exists forever.
-				$msg = false;
-			}
 		}
-
-		if ( $msg ) {
-			return XmlSelect::parseOptionsMessage( $msg->text() );
-		} else {
-			return [];
-		}
+		return $msg->isDisabled() ? [] : XmlSelect::parseOptionsMessage( $msg->text() );
 	}
+
 }
