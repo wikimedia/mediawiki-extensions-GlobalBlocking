@@ -27,6 +27,7 @@ use MediaWiki\Status\Status;
 use MediaWikiIntegrationTestCase;
 use MWHttpRequest;
 use Psr\Log\LoggerInterface;
+use Psr\Log\NullLogger;
 use Wikimedia\ObjectCache\WANObjectCache;
 use Wikimedia\TestingAccessWrapper;
 
@@ -47,7 +48,7 @@ class GlobalBlockReasonFormatterTest extends MediaWikiIntegrationTestCase {
 				),
 				$this->createMock( WANObjectCache::class ),
 				$this->createMock( HttpRequestFactory::class ),
-				$this->createMock( LoggerInterface::class )
+				new NullLogger()
 			)
 		);
 	}
@@ -63,7 +64,7 @@ class GlobalBlockReasonFormatterTest extends MediaWikiIntegrationTestCase {
 				),
 				$this->createMock( WANObjectCache::class ),
 				$this->createNoOpMock( HttpRequestFactory::class ),
-				$this->createMock( LoggerInterface::class )
+				new NullLogger()
 			)
 		);
 
