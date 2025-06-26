@@ -42,9 +42,6 @@ class GlobalBlockingServices {
 	/** @var MediaWikiServices */
 	private $serviceContainer;
 
-	/**
-	 * @param MediaWikiServices $serviceContainer
-	 */
 	public function __construct( MediaWikiServices $serviceContainer ) {
 		$this->serviceContainer = $serviceContainer;
 	}

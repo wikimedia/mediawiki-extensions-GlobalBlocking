@@ -30,14 +30,6 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 	private GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup;
 	private GlobalBlockingLinkBuilder $globalBlockingLinkBuilder;
 
-	/**
-	 * @param BlockUtils $blockUtils
-	 * @param UserNameUtils $userNameUtils
-	 * @param GlobalBlockLookup $globalBlockLookup
-	 * @param GlobalBlockLocalStatusManager $globalBlockLocalStatusManager
-	 * @param GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup
-	 * @param GlobalBlockingLinkBuilder $globalBlockingLinkBuilder
-	 */
 	public function __construct(
 		BlockUtils $blockUtils,
 		UserNameUtils $userNameUtils,

@@ -23,12 +23,6 @@ class SpecialRemoveGlobalBlock extends FormSpecialPage {
 	private GlobalBlockManager $globalBlockManager;
 	private GlobalBlockingLinkBuilder $globalBlockingLinkBuilder;
 
-	/**
-	 * @param BlockUtils $blockUtils
-	 * @param UserNameUtils $userNameUtils
-	 * @param GlobalBlockManager $globalBlockManager
-	 * @param GlobalBlockingLinkBuilder $globalBlockingLinkBuilder
-	 */
 	public function __construct(
 		BlockUtils $blockUtils,
 		UserNameUtils $userNameUtils,
