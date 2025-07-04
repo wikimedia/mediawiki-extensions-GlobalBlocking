@@ -5,7 +5,7 @@
 			"Huñvreüs"
 		]
 	},
-	"apihelp-globalblock-param-modify": "Da resisaat ma tlefe ar bloc'had er gwenn bezañ kemmet",
+	"apihelp-globalblock-param-modify": "Da resisaat ma tlefe stankadenn ar pal bezañ kemmet",
 	"apihelp-globalblock-param-alsolocal": "Stankañ an implijer ent lec'hel ivez. Ne c’hall ket bezañ implijet asambles gant <var>$1id</var>.",
 	"apihelp-globalblock-param-localblockstalk": "Mirout da gemmañ ar bajenn gaozeal ent lec’hel. Ne c’hall ket bezañ implijet asambles gant <var>$1id</var>."
 }
