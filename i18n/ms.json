@@ -41,7 +41,7 @@
 	"globalblocking-search-errors": "Carian anda tidak dapat dilakukan kerana {{PLURAL:$1|sebab|sebab-sebab}} berikut:",
 	"globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> (''$3'') menyekat [[Special:Contributions/$4|$4]] di semua wiki ''($5)''",
 	"globalblocking-list-expiry": "tamat $1",
-	"globalblocking-list-anononly": "pengguna tanpa nama sahaja",
+	"globalblocking-list-anononly": "pengguna awanama sahaja",
 	"globalblocking-list-unblock": "nyahsekat",
 	"globalblocking-list-whitelisted": "dimatikan di wiki tempatan oleh $1: $2",
 	"globalblocking-list-whitelist": "status tempatan",
