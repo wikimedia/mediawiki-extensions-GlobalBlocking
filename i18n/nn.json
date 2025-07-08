@@ -33,6 +33,7 @@
 	"globalblocking-list-whitelisted": "slegi av lokalt av $1: $2",
 	"globalblocking-list-whitelist": "lokal status",
 	"globalblocking-list-modify": "endra",
+	"globalblocking-list-indefblocks": "Gøym endelause blokkeringar",
 	"globalblocking-goto-block": "Blokker ei IP-adressa globalt",
 	"globalblocking-goto-unblock": "Fjern ei global blokkering",
 	"globalblocking-goto-status": "Endra lokal status for ei global blokkering",
