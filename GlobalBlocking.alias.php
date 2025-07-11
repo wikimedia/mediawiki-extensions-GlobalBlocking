@@ -571,18 +571,29 @@ $specialPageAliases['yue'] = [
 	'GlobalBlockStatus' => [ '全域封禁白名單' ],
 ];
 
-/** Simplified Chinese (中文（简体）‎) */
-$specialPageAliases['zh-hans'] = [
-	'GlobalBlock' => [ '全域封禁' ],
-	'GlobalBlockList' => [ '全域封禁列表' ],
-	'RemoveGlobalBlock' => [ '全域解禁', '移除全域封禁' ],
-	'GlobalBlockStatus' => [ '全域封禁白名单', '全域封禁状态', '禁用全域封禁' ],
+/** Chinese (中文) */
+$specialPageAliases['zh'] = [
+	'GlobalBlock' => [ 'GlobalBlock' ],
+	'GlobalBlockList' => [ 'GlobalBlockList' ],
+	'RemoveGlobalBlock' => [ 'GlobalUnblock' ],
+	'GlobalBlockStatus' => [ 'GlobalBlockWhitelist' ],
+	'MassGlobalBlock' => [ 'MassGlobalBlock' ],
 ];
 
-/** Traditional Chinese (中文（繁體）‎) */
+/** Simplified Chinese (中文（简体）) */
+$specialPageAliases['zh-hans'] = [
+	'GlobalBlock' => [ '全域封禁' ],
+	'GlobalBlockList' => [ '全域封禁列表', '列出全域封禁' ],
+	'RemoveGlobalBlock' => [ '全域解禁', '移除全域封禁' ],
+	'GlobalBlockStatus' => [ '全域封禁白名单', '全域封禁状态', '禁用全域封禁' ],
+	'MassGlobalBlock' => [ '批量全域封禁' ],
+];
+
+/** Traditional Chinese (中文（繁體）) */
 $specialPageAliases['zh-hant'] = [
 	'GlobalBlock' => [ '全域封鎖' ],
-	'GlobalBlockList' => [ '全域封鎖清單' ],
-	'RemoveGlobalBlock' => [ '解除全域封鎖' ],
+	'GlobalBlockList' => [ '全域封鎖清單', '列出全域封鎖' ],
+	'RemoveGlobalBlock' => [ '全域解除封鎖', '解除全域封鎖' ],
 	'GlobalBlockStatus' => [ '全域封鎖白名單', '全域封鎖狀態', '停用全域封鎖' ],
+	'MassGlobalBlock' => [ '批次全域封鎖' ],
 ];
