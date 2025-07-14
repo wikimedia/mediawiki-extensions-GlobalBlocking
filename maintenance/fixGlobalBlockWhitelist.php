@@ -5,11 +5,13 @@ namespace MediaWiki\Extension\GlobalBlocking\Maintenance;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Maintenance\Maintenance;
 
+// @codeCoverageIgnoreStart
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
 require_once "$IP/maintenance/Maintenance.php";
+// @codeCoverageIgnoreEnd
 
 /**
  * This script can be used to purge global_block_whitelist rows which have no
@@ -116,5 +118,7 @@ class FixGlobalBlockWhitelist extends Maintenance {
 	}
 }
 
+// @codeCoverageIgnoreStart
 $maintClass = FixGlobalBlockWhitelist::class;
 require_once RUN_MAINTENANCE_IF_MAIN;
+// @codeCoverageIgnoreEnd
