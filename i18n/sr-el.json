@@ -37,7 +37,7 @@
 	"globalblocking-list": "Spisak globalno blokiranih IP adresa",
 	"globalblocking-search-legend": "Pretražite globalne blokove",
 	"globalblocking-search-submit": "Pretražite blokove",
-	"globalblocking-list-anononly": "samo anonimne",
+	"globalblocking-list-anononly": "samo anonimni korisnici",
 	"globalblocking-list-unblock": "ukloni",
 	"globalblocking-list-whitelisted": "lokalno onemogućio $1: $2",
 	"globalblocking-list-whitelist": "lokalni status",

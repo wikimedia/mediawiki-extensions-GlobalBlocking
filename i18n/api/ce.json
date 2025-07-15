@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Умар"
+		]
+	},
+	"globalblocking-apierror-badip": "IP-адрес $1 нийса дац",
+	"apihelp-globalblock-summary": "Глобалан блоктоха йа блокдӀайаккха декъашхочун тӀера.",
+	"apihelp-query+globalblocks-summary": "Глобалан блоктоьхна массо а IP-адресийн могӀам.",
+	"apihelp-query+globalblocks-param-start": "Дагарйар дӀадолийна йолу ханна билгало.",
+	"apihelp-query+globalblocks-param-end": "Дагарйар чекхдаьлла йолу ханна билгало.",
+	"apihelp-query+globalblocks-param-ids": "Турбанашца къаьстина блокан идентификаторийн могӀам, могӀамехь.",
+	"apihelp-query+globalblocks-param-addresses": "IP-адресийн могӀам леха, дӀасакъаьстина вертикалца.",
+	"apihelp-query+globalblocks-param-limit": "Максималан дукхаллин блокаш могӀамна.",
+	"apihelp-query+globalblocks-param-prop": "Муьлха билгалонаш схьаоьцу:",
+	"apihelp-query+globalblocks-example-1": "Йерриге а глобалан блокаш гайта",
+	"apihelp-query+globalblocks-example-2": "IP-адресца йоьзна йолу йерриг глобалан блокаш гайта 192.0.2.18"
+}

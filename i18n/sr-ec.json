@@ -42,7 +42,7 @@
 	"globalblocking-list": "Списак глобално блокираних IP адреса",
 	"globalblocking-search-legend": "Претражите глобалне блокове",
 	"globalblocking-search-submit": "Претражите блокове",
-	"globalblocking-list-anononly": "само анонимне",
+	"globalblocking-list-anononly": "само анонимни корисници",
 	"globalblocking-list-unblock": "уклони",
 	"globalblocking-list-whitelisted": "локално онемогућио $1: $2",
 	"globalblocking-list-whitelist": "локални статус",
