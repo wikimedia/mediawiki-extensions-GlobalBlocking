@@ -133,6 +133,8 @@
 	"globalblocking-contribs-block": "全域封鎖",
 	"globalblocking-contribs-modify": "修改全域封鎖",
 	"globalblocking-contribs-remove": "移除全域封鎖",
+	"globalblocking-mass-block-blocked": "是",
+	"globalblocking-mass-block-not-blocked": "否",
 	"globalblocking-mass-block-query-submit": "搜尋",
 	"globalblocklist": "全域封鎖使用者清單",
 	"globalblock": "全域封鎖一個使用者",
