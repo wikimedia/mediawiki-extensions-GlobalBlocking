@@ -39,7 +39,7 @@
 	"globalblocking-search-errors": "Vaša pretraga nije uspela zbog {{PLURAL:$1|sledećeg razloga|sledećih razloga}}:",
 	"globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">$2</span> ($3) globalno je blokirao/-la korisnika [[Special:Contributions/$4|$4]] ($5)",
 	"globalblocking-list-expiry": "ističe $1",
-	"globalblocking-list-anononly": "samo anonimne",
+	"globalblocking-list-anononly": "samo anonimni korisnici",
 	"globalblocking-list-unblock": "ukloni",
 	"globalblocking-list-whitelisted": "lokalno onemogućio $1: $2",
 	"globalblocking-list-whitelist": "lokalni status",

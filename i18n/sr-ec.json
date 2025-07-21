@@ -44,7 +44,7 @@
 	"globalblocking-search-errors": "Ваша претрага није успела због {{PLURAL:$1|следећег разлога|следећих разлога}}:",
 	"globalblocking-list-blockitem": "$1: <span class=\"plainlinks\">'''$2'''</span> (''$3'') глобално је блокирао/ла корисника [[Special:Contributions/$4|$4]] ''($5)''",
 	"globalblocking-list-expiry": "истиче $1",
-	"globalblocking-list-anononly": "само анонимне",
+	"globalblocking-list-anononly": "само анонимни",
 	"globalblocking-list-unblock": "уклони",
 	"globalblocking-list-whitelisted": "локално онемогућио $1: $2",
 	"globalblocking-list-whitelist": "локални статус",
