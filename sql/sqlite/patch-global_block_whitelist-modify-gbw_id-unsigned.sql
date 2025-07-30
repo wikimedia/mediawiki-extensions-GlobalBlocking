@@ -10,21 +10,23 @@ SELECT
   gbw_reason,
   gbw_expiry
 FROM /*_*/global_block_whitelist;
+
 DROP TABLE /*_*/global_block_whitelist;
 
 
 CREATE TABLE /*_*/global_block_whitelist (
-    gbw_id INTEGER UNSIGNED NOT NULL,
-    gbw_by INTEGER NOT NULL,
-    gbw_by_text BLOB NOT NULL,
-    gbw_reason BLOB NOT NULL,
-    gbw_expiry BLOB NOT NULL,
-    PRIMARY KEY(gbw_id)
-  );
+  gbw_id INTEGER UNSIGNED NOT NULL,
+  gbw_by INTEGER NOT NULL,
+  gbw_by_text BLOB NOT NULL,
+  gbw_reason BLOB NOT NULL,
+  gbw_expiry BLOB NOT NULL,
+  PRIMARY KEY(gbw_id)
+);
+
 INSERT INTO /*_*/global_block_whitelist (
-    gbw_id, gbw_by, gbw_by_text, gbw_reason,
-    gbw_expiry
-  )
+  gbw_id, gbw_by, gbw_by_text, gbw_reason,
+  gbw_expiry
+)
 SELECT
   gbw_id,
   gbw_by,
@@ -33,6 +35,7 @@ SELECT
   gbw_expiry
 FROM
   /*_*/__temp__global_block_whitelist;
+
 DROP TABLE /*_*/__temp__global_block_whitelist;
 
 CREATE INDEX gbw_by ON /*_*/global_block_whitelist (gbw_by);

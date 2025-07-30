@@ -80,7 +80,7 @@
 				"type": "mwtimestamp",
 				"options": {
 					"notnull": true,
-					"CustomSchemaOptions": {
+					"PlatformOptions": {
 						"allowInfinite": true
 					}
 				}

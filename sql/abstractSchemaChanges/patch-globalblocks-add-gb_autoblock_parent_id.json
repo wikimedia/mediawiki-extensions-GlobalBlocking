@@ -69,7 +69,7 @@
 				"type": "mwtimestamp",
 				"options": {
 					"notnull": true,
-					"CustomSchemaOptions": {
+					"PlatformOptions": {
 						"allowInfinite": true
 					}
 				}
@@ -197,7 +197,7 @@
 				"type": "mwtimestamp",
 				"options": {
 					"notnull": true,
-					"CustomSchemaOptions": {
+					"PlatformOptions": {
 						"allowInfinite": true
 					}
 				}
