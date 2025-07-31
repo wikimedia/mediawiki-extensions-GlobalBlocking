@@ -201,13 +201,11 @@ class GlobalBlockLookup {
 
 		$this->statsdFactory->increment( 'global_blocking.get_user_block' );
 
-		// We have callers from different code paths which may leave $ip as null when providing an
-		// IP address as the $user where the IP address is not the session user. In this case, populate
-		// the $ip argument with the IP provided in $user to get all the blocks that apply to the IP.
+		// We have callers which may leave $ip as null when providing an IP address as the $user.
+		// In this case, populate the $ip argument with the IP provided in $user so that block checking works
+		// for the IP (a $user which does not have a central ID is ignored).
 		$context = RequestContext::getMain();
-		$isSessionUser = $user->equals( $context->getUser() );
-		if ( $ip === null && !$isSessionUser && IPUtils::isIPAddress( $user->getName() ) ) {
-			// Populate the IP for checking blocks against non-session users.
+		if ( $ip === null && IPUtils::isIPAddress( $user->getName() ) ) {
 			$ip = $user->getName();
 		}
 
@@ -236,22 +234,22 @@ class GlobalBlockLookup {
 		// We should only check XFF blocks if we are checking blocks for the session user. The exception to this is
 		// that we should also check XFF blocks when the name is the temporary account placeholder, as this is used
 		// when a logged out user is making edit on a wiki with temporary accounts enabled (T353564).
-		if (
-			$this->options->get( 'GlobalBlockingBlockXFF' ) &&
-			(
-				$isSessionUser ||
-				( $this->tempUserConfig->isEnabled() && $this->userFactory->newTempPlaceholder()->equals( $user ) )
-			)
-		) {
-			$xffIps = $context->getRequest()->getHeader( 'X-Forwarded-For' );
-			if ( $xffIps ) {
-				$xffIps = array_map( 'trim', explode( ',', $xffIps ) );
-				// Always skip the allowed ranges check when checking the XFF IPs as the value of this header
-				// is easy to spoof.
-				$xffFlags = $flags | self::SKIP_ALLOWED_RANGES_CHECK;
-				$block = $this->chooseMostSpecificBlock( $this->checkIpsForBlock( $xffIps, $xffFlags ), $xffFlags );
-				if ( $block !== null ) {
-					return $this->addToUserBlockDetailsCache( [ 'block' => $block, 'xff' => true ], $user, $ip );
+		if ( $this->options->get( 'GlobalBlockingBlockXFF' ) ) {
+			$sessionUser = $context->getUser()->isSafeToLoad() ? $context->getUser() : new User();
+			if (
+				( $this->tempUserConfig->isEnabled() && $this->userFactory->newTempPlaceholder()->equals( $user ) ) ||
+				$user->equals( $sessionUser )
+			) {
+				$xffIps = $context->getRequest()->getHeader( 'X-Forwarded-For' );
+				if ( $xffIps ) {
+					$xffIps = array_map( 'trim', explode( ',', $xffIps ) );
+					// Always skip the allowed ranges check when checking the XFF IPs as the value of this header
+					// is easy to spoof.
+					$xffFlags = $flags | self::SKIP_ALLOWED_RANGES_CHECK;
+					$block = $this->chooseMostSpecificBlock( $this->checkIpsForBlock( $xffIps, $xffFlags ), $xffFlags );
+					if ( $block !== null ) {
+						return $this->addToUserBlockDetailsCache( [ 'block' => $block, 'xff' => true ], $user, $ip );
+					}
 				}
 			}
 		}

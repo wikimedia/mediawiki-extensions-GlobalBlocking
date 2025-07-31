@@ -151,6 +151,25 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 		$this->commonTestGetUserBlockForXffBlock( $xffHeader, $this->getTestUser()->getUser(), null );
 	}
 
+	/** @dataProvider provideBlockedXffHeaders */
+	public function testGetUserBlockForAnonSessionUserWhenXffBlocked() {
+		RequestContext::getMain()->getRequest()->setIP( '1.2.3.4' );
+
+		// Mock that the RequestContext User object is unsafe to load
+		$unsafeToLoadUser = $this->createMock( User::class );
+		$unsafeToLoadUser->method( 'isSafeToLoad' )
+			->willReturn( false );
+		$unsafeToLoadUser->expects( $this->never() )
+			->method( 'equals' );
+		RequestContext::getMain()->setUser( $unsafeToLoadUser );
+
+		// If the context source user was unsafe to load, then a default User object should have been used that
+		// matches the request IP.
+		$this->commonTestGetUserBlockForXffBlock(
+			'4.5.6.7', $this->getServiceContainer()->getUserFactory()->newAnonymous( '1.2.3.4' ), 6
+		);
+	}
+
 	/** @dataProvider provideGetUserBlock */
 	public function testGetUserBlock( $ip, $expectedGlobalBlockId, ?User $user = null ) {
 		$actualGlobalBlockObject = GlobalBlockingServices::wrap( $this->getServiceContainer() )
@@ -235,6 +254,14 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 			$actualGlobalBlockObject->getReasonComment()->text,
 			'The reason for the autoblock should be replaced with the autoblocker message in the content language ' .
 			'of the wiki, ignoring the value of gb_reason set in the autoblock row.'
+		);
+	}
+
+	public function testGetUserBlockWhenIPIsNullAndUserIsNotSessionUser() {
+		// Tests that the IP in the $user object gets used as the $ip for block checking, as long as the
+		// IP is not the session user.
+		$this->testGetUserBlock(
+			null, 3, $this->getServiceContainer()->getUserFactory()->newAnonymous( '77.8.9.10' )
 		);
 	}
 
