@@ -6,7 +6,8 @@
 			"Kosovastar",
 			"Macofe",
 			"Mikullovci11",
-			"Olsi"
+			"Olsi",
+			"Xhulianoo"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Lejon]] adresat IP të jenë [[Special:GlobalBlockList|të bllokuara në shumë wiki]]",
@@ -60,7 +61,12 @@
 	"globalblocking-logpage": "Regjistri i bllokimeve globale",
 	"globalblocking-logpagetext": "Ky është një regjistër i bllokimeve globale që janë bërë dhe hequr në këtë wiki.\nDuhet të theksohet se bllokimet globale mund të bëhen dhe të hiqen në wiki-t e tjerë, dhe këtë bllokime globale mund të ndikojnë në këtë wiki.\nPër të parë të gjitha bllokimet globale aktive, ju mund të shikoni [[Special:GlobalBlockList|listën e bllokimeve globale]].",
 	"globalblocking-loglink": "Adresa IP $1 është bllokuar globalisht ([[{{#Special:GlobalBlockList}}/$1|detajet e plota]]).",
+	"globalblocking-contribs-notice": "Ky përdorues është aktualisht i bllokuar globalisht.\nHyrja e regjistrit global të bllokimeve është dhënë më poshtë për referencë:",
 	"globalblocking-showlog": "Kjo adresë IP është bllokuar më parë.\nRegjistri i bllokimit është poshtë për referncë:",
+	"globalblocking-contribs-log": "regjistri global i bllokimeve",
+	"globalblocking-contribs-block": "bllokim global",
+	"globalblocking-contribs-modify": "modifiko bllokimin global",
+	"globalblocking-contribs-remove": "hiq bllokimin global",
 	"globalblocklist": "Lista e adresave IP të bllokuara globalisht",
 	"globalblock": "Bllokoni globalisht një adresë IP",
 	"globalblockstatus": "Statusi lokal i bllokimeve globale",
