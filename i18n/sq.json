@@ -6,7 +6,8 @@
 			"Kosovastar",
 			"Macofe",
 			"Mikullovci11",
-			"Olsi"
+			"Olsi",
+			"Xhulianoo"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Lejon]] adresat IP të jenë [[Special:GlobalBlockList|të bllokuara në shumë wiki]]",
@@ -77,6 +78,8 @@
 	"globalblocking-logentry-noexpiry": "nuk u vendos afat",
 	"globalblocking-loglink": "Adresa IP $1 është bllokuar globalisht ([[{{#Special:GlobalBlockList}}/$1|detajet e plota]]).",
 	"globalblocking-showlog": "Kjo adresë IP është bllokuar më parë.\nRegjistri i bllokimit është poshtë për referncë:",
+	"globalblocking-contribs-modify": "modifiko bllokimin global",
+	"globalblocking-contribs-remove": "hiq bllokimin global",
 	"globalblocklist": "Lista e adresave IP të bllokuara globalisht",
 	"globalblock": "Bllokoni globalisht një adresë IP",
 	"globalblockstatus": "Statusi lokal i bllokimeve globale",

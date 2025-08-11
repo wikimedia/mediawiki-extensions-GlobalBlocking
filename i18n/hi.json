@@ -105,7 +105,7 @@
 	"globalblock": "किसी IP पते को ग्लोबल रूप से अवरोधित करें",
 	"globalblockstatus": "ग्लोबल अवरोधों की लोकल स्थितियाँ",
 	"removeglobalblock": "एक ग्लोबल अवरोध हटाएँ",
-	"right-globalblock": "ग्लोबल अवरोध जोड़ें और हटाएँ",
+	"right-globalblock": "ग्लोबल अवरोध जोड़ना और हटाना",
 	"action-globalblock": "ग्लोबल अवरोध जोड़ने और हटाने",
 	"right-globalblock-whitelist": "ग्लोबल अवरोध लोकल रूप से सक्षम करें",
 	"action-globalblock-whitelist": "ग्लोबल अवरोध लोकल रूप से सक्षम करने",
