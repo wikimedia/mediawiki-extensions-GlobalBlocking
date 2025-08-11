@@ -7,6 +7,9 @@ use StatusValue;
 /**
  * The status of a global block operation, optionally providing separate global
  * and local components.
+ *
+ * @template T
+ * @inherits StatusValue<T>
  */
 class GlobalBlockStatus extends StatusValue {
 	private ?StatusValue $globalStatus = null;
@@ -16,8 +19,8 @@ class GlobalBlockStatus extends StatusValue {
 	 * @internal Can be constructed with no parameters by the parent class. The parameters
 	 *   are just for withLocalStatus().
 	 *
-	 * @param StatusValue|null $globalStatus
-	 * @param StatusValue|null $localStatus
+	 * @param StatusValue<T>|null $globalStatus
+	 * @param StatusValue<T>|null $localStatus
 	 */
 	public function __construct( ?StatusValue $globalStatus = null, ?StatusValue $localStatus = null ) {
 		if ( $globalStatus ) {
