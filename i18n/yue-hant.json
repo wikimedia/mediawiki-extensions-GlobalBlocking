@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"H78c67c",
-			"Winston Sung"
+			"Winston Sung",
+			"Yueman"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|容許]]IP地址可以[[Special:GlobalBlockList|響多個wiki度封鎖]]",
@@ -61,6 +62,8 @@
 	"right-globalblock": "整一個全域封鎖",
 	"right-globalblock-whitelist": "響本地停用全域封鎖",
 	"log-action-filter-gblblock": "全域封鎖類型：",
+	"log-action-filter-gblblock-gblock": "全域封鎖",
+	"log-action-filter-gblblock-gunblock": "全域解封",
 	"grant-globalblock": "全域封鎖或解封用戶",
 	"globalblocking-blockedtext-username": "你嘅用戶名係$1。"
 }
