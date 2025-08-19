@@ -225,7 +225,6 @@
 	},
 	"Hooks": {
 		"GetUserBlock": "main",
-		"UserIsBlockedGlobally": "main",
 		"OtherBlockLogLink": "main",
 		"SpecialContributionsBeforeMainOutput": "main",
 		"UserMergeAccountFields": "usermerge",

@@ -184,58 +184,6 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 		];
 	}
 
-	public static function provideUserAndIPCombinations() {
-		return [
-			'User logged out using IP 1.2.3.4' => [ '1.2.3.4', '1.2.3.4', '1.2.3.4' ],
-			'User logged out using IP 1.2.3.5'	=> [ '1.2.3.5', '1.2.3.5', '1.2.3.0/24' ],
-			'User logged out using IP 127.0.0.2' => [ '127.0.0.2', '127.0.0.2', null ],
-			'Non-existent user with no IP' => [ 'Non-existent-test-user-1234', null, null ],
-			'Non-existent user with IP 127.0.0.2' => [ 'Non-existent-test-user-1234', '127.0.0.2', null ],
-			'Invalid username with no IP' => [ ':', null, null ],
-		];
-	}
-
-	/** @dataProvider provideUserAndIPCombinations */
-	public function testOnUserIsBlockedGlobally( $username, $ip, $expectedBlockTarget ) {
-		// Call the method under test.
-		$blocked = false;
-		$block = null;
-		$hookReturnValue = $this->getGlobalBlockingHooks()->onUserIsBlockedGlobally(
-			$this->getServiceContainer()->getUserFactory()->newFromName( $username, UserFactory::RIGOR_NONE ),
-			$ip, $blocked, $block
-		);
-		// Verify that the return value and the $blocked boolean are as expected. They should be the opposite of
-		// each other always, and $blocked should be true if $expectedBlockTarget is not null.
-		$shouldBeBlocked = $expectedBlockTarget !== null;
-		$this->assertSame( !$shouldBeBlocked, $hookReturnValue, 'The hook did not return the expected value' );
-		$this->assertSame( $shouldBeBlocked, $blocked, 'The blocked status was not expected.' );
-		if ( $shouldBeBlocked ) {
-			$this->assertNotNull( $block, 'A block object should be defined.' );
-			$this->assertSame(
-				GlobalBlockingServices::wrap( $this->getServiceContainer() )
-					->getGlobalBlockLookup()->getGlobalBlockId( $expectedBlockTarget ),
-				$block->getId(),
-				'The block returned by onUserIsBlockedGlobally was not the expected block.'
-			);
-		} else {
-			$this->assertNull( $block, 'No block object should have been provided.' );
-		}
-	}
-
-	public function testOnUserIsBlockedGloballyForGloballyBlockedUser() {
-		$this->testOnUserIsBlockedGlobally(
-			self::$testGloballyBlockedUser->getName(), '127.0.0.2', self::$testGloballyBlockedUser->getName()
-		);
-	}
-
-	public function testOnUserIsBlockedGloballyForNotBlockedUserButBlockedViaIP() {
-		$this->testOnUserIsBlockedGlobally( self::$unblockedUser->getName(), '1.2.3.6', '1.2.3.0/24' );
-	}
-
-	public function testOnUserIsBlockedGloballyForNotBlockedUser() {
-		$this->testOnUserIsBlockedGlobally( self::$unblockedUser->getName(), null, null );
-	}
-
 	/** @dataProvider provideOnOtherBlockLogLink */
 	public function testOnOtherBlockLogLink( $target, $shouldDisplayMessage ) {
 		$this->setUserLang( 'qqx' );

@@ -27,7 +27,6 @@ use MediaWiki\SpecialPage\ContributionsSpecialPage;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use MediaWiki\User\CentralId\CentralIdLookup;
-use MediaWiki\User\Hook\UserIsBlockedGloballyHook;
 use MediaWiki\User\User;
 use MediaWiki\User\UserNameUtils;
 use stdClass;
@@ -40,7 +39,6 @@ use Wikimedia\IPUtils;
  */
 class GlobalBlockingHooks implements
 	GetUserBlockHook,
-	UserIsBlockedGloballyHook,
 	GetBlockErrorMessageKeyHook,
 	OtherBlockLogLinkHook,
 	SpecialContributionsBeforeMainOutputHook,
@@ -119,23 +117,6 @@ class GlobalBlockingHooks implements
 			'reason' => new Message( 'blockedtext-composite-reason' ),
 			'originalBlocks' => $allBlocks,
 		] );
-		return true;
-	}
-
-	/**
-	 * @param User $user
-	 * @param string $ip
-	 * @param bool &$blocked
-	 * @param AbstractBlock|null &$block
-	 *
-	 * @return bool
-	 */
-	public function onUserIsBlockedGlobally( $user, $ip, &$blocked, &$block ) {
-		$block = $this->globalBlockLookup->getUserBlock( $user, $ip );
-		if ( $block !== null ) {
-			$blocked = true;
-			return false;
-		}
 		return true;
 	}
 
