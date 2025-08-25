@@ -1,6 +1,10 @@
 {
 	"@metadata": {
-		"authors": []
+		"authors": [
+			"Ideophagous"
+		]
 	},
-	"globalblocking-expiringblock": "غايسالي نهار $1 معا $2"
+	"globalblocking-expiringblock": "غايسالي نهار $1 معا $2",
+	"globalblocking-add-block": "زيد بلوك عالمي خور",
+	"globalblocking-logpage": "لوحة د لبلوك لعالمية"
 }
