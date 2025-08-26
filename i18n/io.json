@@ -37,5 +37,6 @@
 	"log-action-filter-gblblock-gunblock": "Globala desblokuso",
 	"log-action-filter-gblblock-modify": "Modifiko en globala blokuso",
 	"log-action-filter-gblblock-whitelist": "Lokala desblokusado di konto globale blokusita",
-	"log-action-filter-gblblock-dwhitelist": "Rifuncionigar la globala listo di blokusi, ante desmuntita"
+	"log-action-filter-gblblock-dwhitelist": "Rifuncionigar la globala listo di blokusi, ante desmuntita",
+	"grant-globalblock": "Blokusar o desblokusar uzero globale"
 }
