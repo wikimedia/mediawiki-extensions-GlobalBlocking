@@ -28,7 +28,8 @@
 			"Ryo567",
 			"Sanbec",
 			"Translationista",
-			"Vivaelcelta"
+			"Vivaelcelta",
+			"Codename Noreste"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permite]] bloquear direcciones IP [[Special:GlobalBlockList|simultáneamente en varios wikis]]",
@@ -107,7 +108,7 @@
 	"globalblocking-logentry-dewhitelist": "$1 {{GENDER:$2|reactivó}} el bloqueo global de $3 localmente",
 	"globalblocking-block-flag-anon-only": "Solo usuarios anónimos",
 	"globalblocking-loglink": "La dirección IP $1 está bloqueada globalmente ([[{{#Special:GlobalBlockList}}/$1|detalles]]).",
-	"globalblocking-contribs-notice": "Esta dirección IP se bloqueó globalmente.\nComo referencia, se proporciona la entrada del registro correspondiente:",
+	"globalblocking-contribs-notice": "{{GENDER:$1|Este usuario|Esta usuaria}} se encuentra bloquead{{GENDER:$1|o|a}} globalmente.\nA continuación se muestra la última entrada del registro de bloqueos para más información:",
 	"globalblocking-showlog": "Esta dirección IP ha sido bloqueada previamente.\nEl registro de bloqueos se proporciona a continuación como referencia:",
 	"globalblocking-contribs-log": "registro de bloqueo global",
 	"globalblocking-contribs-block": "bloquear globalmente esta IP",
