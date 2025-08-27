@@ -108,7 +108,7 @@
 	"globalblocking-logentry-dewhitelist": "$1 {{GENDER:$2|reactivó}} el bloqueo global de $3 localmente",
 	"globalblocking-block-flag-anon-only": "Solo usuarios anónimos",
 	"globalblocking-loglink": "La dirección IP $1 está bloqueada globalmente ([[{{#Special:GlobalBlockList}}/$1|detalles]]).",
-	"globalblocking-contribs-notice": "{{GENDER:$1|Este usuario|Esta usuaria}} se encuentra bloquead{{GENDER:$1|o|a}} globalmente.\nA continuación se muestra la última entrada del registro de bloqueos para más información:",
+	"globalblocking-contribs-notice": "{{GENDER:$1|Este usuario|Esta usuaria|Esta cuenta}} se encuentra actualmente bloquead{{GENDER:$1|o|a|a}} globalmente.\nA continuación se muestra la última entrada del registro de bloqueos para más información:",
 	"globalblocking-showlog": "Esta dirección IP ha sido bloqueada previamente.\nEl registro de bloqueos se proporciona a continuación como referencia:",
 	"globalblocking-contribs-log": "registro de bloqueo global",
 	"globalblocking-contribs-block": "bloquear globalmente esta IP",
