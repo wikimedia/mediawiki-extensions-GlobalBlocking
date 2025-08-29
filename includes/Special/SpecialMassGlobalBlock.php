@@ -25,34 +25,17 @@ class SpecialMassGlobalBlock extends SpecialPage {
 	private array $targetsForLookup;
 	private array $targets;
 
-	private PermissionManager $permissionManager;
-	private UserIdentityLookup $userIdentityLookup;
-	private GlobalBlockManager $globalBlockManager;
-	private GlobalBlockLookup $globalBlockLookup;
-	private GlobalBlockingLinkBuilder $globalBlockingLinkBuilder;
-	private GlobalBlockingGlobalBlockDetailsRenderer $globalBlockDetailsRenderer;
-	private GlobalBlockingConnectionProvider $globalBlockingConnectionProvider;
-	private GlobalBlockingExpirySelectorBuilder $globalBlockingExpirySelectorBuilder;
-
 	public function __construct(
-		PermissionManager $permissionManager,
-		UserIdentityLookup $userIdentityLookup,
-		GlobalBlockManager $globalBlockManager,
-		GlobalBlockLookup $globalBlockLookup,
-		GlobalBlockingLinkBuilder $globalBlockingLinkBuilder,
-		GlobalBlockingGlobalBlockDetailsRenderer $globalBlockDetailsRenderer,
-		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
-		GlobalBlockingExpirySelectorBuilder $globalBlockingExpirySelectorBuilder
+		private readonly PermissionManager $permissionManager,
+		private readonly UserIdentityLookup $userIdentityLookup,
+		private readonly GlobalBlockManager $globalBlockManager,
+		private readonly GlobalBlockLookup $globalBlockLookup,
+		private readonly GlobalBlockingLinkBuilder $globalBlockingLinkBuilder,
+		private readonly GlobalBlockingGlobalBlockDetailsRenderer $globalBlockDetailsRenderer,
+		private readonly GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
+		private readonly GlobalBlockingExpirySelectorBuilder $globalBlockingExpirySelectorBuilder,
 	) {
 		parent::__construct( 'MassGlobalBlock', 'globalblock' );
-		$this->permissionManager = $permissionManager;
-		$this->userIdentityLookup = $userIdentityLookup;
-		$this->globalBlockManager = $globalBlockManager;
-		$this->globalBlockLookup = $globalBlockLookup;
-		$this->globalBlockingLinkBuilder = $globalBlockingLinkBuilder;
-		$this->globalBlockDetailsRenderer = $globalBlockDetailsRenderer;
-		$this->globalBlockingConnectionProvider = $globalBlockingConnectionProvider;
-		$this->globalBlockingExpirySelectorBuilder = $globalBlockingExpirySelectorBuilder;
 	}
 
 	/**

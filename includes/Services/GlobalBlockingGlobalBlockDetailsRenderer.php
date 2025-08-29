@@ -17,24 +17,13 @@ use stdClass;
  * @since 1.43
  */
 class GlobalBlockingGlobalBlockDetailsRenderer {
-	private CentralIdLookup $centralIdLookup;
-	private UserIdentityLookup $userIdentityLookup;
-	private GlobalBlockingUserVisibilityLookup $globalBlockingUserVisibilityLookup;
-	private GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup;
-	private GlobalBlockingLinkBuilder $globalBlockingLinkBuilder;
-
 	public function __construct(
-		CentralIdLookup $centralIdLookup,
-		UserIdentityLookup $userIdentityLookup,
-		GlobalBlockingUserVisibilityLookup $globalBlockingUserVisibilityLookup,
-		GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup,
-		GlobalBlockingLinkBuilder $globalBlockingLinkBuilder
+		private readonly CentralIdLookup $centralIdLookup,
+		private readonly UserIdentityLookup $userIdentityLookup,
+		private readonly GlobalBlockingUserVisibilityLookup $globalBlockingUserVisibilityLookup,
+		private readonly GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup,
+		private readonly GlobalBlockingLinkBuilder $globalBlockingLinkBuilder,
 	) {
-		$this->centralIdLookup = $centralIdLookup;
-		$this->userIdentityLookup = $userIdentityLookup;
-		$this->globalBlockingUserVisibilityLookup = $globalBlockingUserVisibilityLookup;
-		$this->globalBlockLocalStatusLookup = $globalBlockLocalStatusLookup;
-		$this->globalBlockingLinkBuilder = $globalBlockingLinkBuilder;
 	}
 
 	/**

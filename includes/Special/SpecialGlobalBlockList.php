@@ -27,35 +27,17 @@ class SpecialGlobalBlockList extends FormSpecialPage {
 	private array $conds;
 	private bool $queryValid;
 
-	private UserNameUtils $userNameUtils;
-	private CommentFormatter $commentFormatter;
-	private CentralIdLookup $lookup;
-	private TempUserConfig $tempUserConfig;
-	private GlobalBlockLookup $globalBlockLookup;
-	private GlobalBlockingLinkBuilder $globalBlockingLinkBuilder;
-	private GlobalBlockingConnectionProvider $globalBlockingConnectionProvider;
-	private GlobalBlockingGlobalBlockDetailsRenderer $globalBlockDetailsRenderer;
-
 	public function __construct(
-		UserNameUtils $userNameUtils,
-		CommentFormatter $commentFormatter,
-		CentralIdLookup $lookup,
-		TempUserConfig $tempUserConfig,
-		GlobalBlockLookup $globalBlockLookup,
-		GlobalBlockingLinkBuilder $globalBlockingLinkBuilder,
-		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
-		GlobalBlockingGlobalBlockDetailsRenderer $globalBlockDetailsRenderer
+		private readonly UserNameUtils $userNameUtils,
+		private readonly CommentFormatter $commentFormatter,
+		private readonly CentralIdLookup $lookup,
+		private readonly TempUserConfig $tempUserConfig,
+		private readonly GlobalBlockLookup $globalBlockLookup,
+		private readonly GlobalBlockingLinkBuilder $globalBlockingLinkBuilder,
+		private readonly GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
+		private readonly GlobalBlockingGlobalBlockDetailsRenderer $globalBlockDetailsRenderer,
 	) {
 		parent::__construct( 'GlobalBlockList' );
-
-		$this->userNameUtils = $userNameUtils;
-		$this->commentFormatter = $commentFormatter;
-		$this->lookup = $lookup;
-		$this->tempUserConfig = $tempUserConfig;
-		$this->globalBlockLookup = $globalBlockLookup;
-		$this->globalBlockingLinkBuilder = $globalBlockingLinkBuilder;
-		$this->globalBlockingConnectionProvider = $globalBlockingConnectionProvider;
-		$this->globalBlockDetailsRenderer = $globalBlockDetailsRenderer;
 	}
 
 	/**

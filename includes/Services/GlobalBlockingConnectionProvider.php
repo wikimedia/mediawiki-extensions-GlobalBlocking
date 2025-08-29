@@ -14,10 +14,7 @@ use Wikimedia\Rdbms\IReadableDatabase;
  */
 class GlobalBlockingConnectionProvider {
 
-	private IConnectionProvider $connectionProvider;
-
-	public function __construct( IConnectionProvider $connectionProvider ) {
-		$this->connectionProvider = $connectionProvider;
+	public function __construct( private readonly IConnectionProvider $connectionProvider ) {
 	}
 
 	public function getPrimaryGlobalBlockingDatabase(): IDatabase {

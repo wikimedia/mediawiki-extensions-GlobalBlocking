@@ -39,35 +39,13 @@ class GlobalBlockReasonFormatter {
 		'GlobalBlockRemoteReasonUrl',
 	];
 
-	/** @var ServiceOptions */
-	private $options;
-
-	/** @var WANObjectCache */
-	private $wanObjectCache;
-
-	/** @var HttpRequestFactory */
-	private $httpRequestFactory;
-
-	/** @var LoggerInterface */
-	private $logger;
-
-	/**
-	 * @param ServiceOptions $options
-	 * @param WANObjectCache $wanObjectCache
-	 * @param HttpRequestFactory $httpRequestFactory
-	 * @param LoggerInterface $logger
-	 */
 	public function __construct(
-		ServiceOptions $options,
-		WANObjectCache $wanObjectCache,
-		HttpRequestFactory $httpRequestFactory,
-		LoggerInterface $logger
+		private readonly ServiceOptions $options,
+		private readonly WANObjectCache $wanObjectCache,
+		private readonly HttpRequestFactory $httpRequestFactory,
+		private readonly LoggerInterface $logger,
 	) {
 		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
-		$this->options = $options;
-		$this->wanObjectCache = $wanObjectCache;
-		$this->httpRequestFactory = $httpRequestFactory;
-		$this->logger = $logger;
 	}
 
 	/**

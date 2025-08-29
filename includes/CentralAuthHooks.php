@@ -16,24 +16,13 @@ use MessageLocalizer;
  * Hook handlers for hooks provided by the CentralAuth extension.
  */
 class CentralAuthHooks implements CentralAuthInfoFieldsHook {
-	private GlobalBlockLookup $globalBlockLookup;
-	private GlobalBlockingLinkBuilder $globalBlockingLinkBuilder;
-	private LinkRenderer $linkRenderer;
 	private MessageLocalizer $messageLocalizer;
 
-	/**
-	 * @param GlobalBlockLookup $globalBlockLookup
-	 * @param GlobalBlockingLinkBuilder $globalBlockingLinkBuilder
-	 * @param LinkRenderer $linkRenderer
-	 */
 	public function __construct(
-		GlobalBlockLookup $globalBlockLookup,
-		GlobalBlockingLinkBuilder $globalBlockingLinkBuilder,
-		LinkRenderer $linkRenderer
+		private readonly GlobalBlockLookup $globalBlockLookup,
+		private readonly GlobalBlockingLinkBuilder $globalBlockingLinkBuilder,
+		private readonly LinkRenderer $linkRenderer,
 	) {
-		$this->globalBlockLookup = $globalBlockLookup;
-		$this->globalBlockingLinkBuilder = $globalBlockingLinkBuilder;
-		$this->linkRenderer = $linkRenderer;
 		$this->messageLocalizer = RequestContext::getMain();
 	}
 

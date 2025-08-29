@@ -15,21 +15,12 @@ use Wikimedia\Rdbms\IConnectionProvider;
  */
 class GlobalBlockLocalStatusLookup {
 
-	private IConnectionProvider $dbProvider;
-	private GlobalBlockingConnectionProvider $globalBlockingConnectionProvider;
-	private CentralIdLookup $centralIdLookup;
-	private AutoblockExemptionList $localAutoblockExemptionList;
-
 	public function __construct(
-		IConnectionProvider $dbProvider,
-		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
-		CentralIdLookup $centralIdLookup,
-		AutoblockExemptionList $autoblockExemptionList
+		private readonly IConnectionProvider $dbProvider,
+		private readonly GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
+		private readonly CentralIdLookup $centralIdLookup,
+		private readonly AutoblockExemptionList $localAutoblockExemptionList,
 	) {
-		$this->dbProvider = $dbProvider;
-		$this->globalBlockingConnectionProvider = $globalBlockingConnectionProvider;
-		$this->centralIdLookup = $centralIdLookup;
-		$this->localAutoblockExemptionList = $autoblockExemptionList;
 	}
 
 	/**

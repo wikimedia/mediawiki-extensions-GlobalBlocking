@@ -18,27 +18,20 @@ use MediaWiki\SpecialPage\SpecialPage;
 class GlobalBlockListPager extends TablePager {
 	private array $queryConds;
 
-	private CommentFormatter $commentFormatter;
-	private GlobalBlockingLinkBuilder $globalBlockingLinkBuilder;
-	private GlobalBlockingGlobalBlockDetailsRenderer $globalBlockDetailsRenderer;
-
 	public function __construct(
 		IContextSource $context,
 		array $conds,
 		LinkRenderer $linkRenderer,
-		CommentFormatter $commentFormatter,
-		GlobalBlockingLinkBuilder $globalBlockingLinkBuilder,
+		private readonly CommentFormatter $commentFormatter,
+		private readonly GlobalBlockingLinkBuilder $globalBlockingLinkBuilder,
 		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
-		GlobalBlockingGlobalBlockDetailsRenderer $globalBlockDetailsRenderer
+		private readonly GlobalBlockingGlobalBlockDetailsRenderer $globalBlockDetailsRenderer
 	) {
 		// Set database before parent constructor so that the DB that has the globalblocks table is used
 		// over the local database which may not be the same database.
 		$this->mDb = $globalBlockingConnectionProvider->getReplicaGlobalBlockingDatabase();
 		parent::__construct( $context, $linkRenderer );
 		$this->queryConds = $conds;
-		$this->commentFormatter = $commentFormatter;
-		$this->globalBlockingLinkBuilder = $globalBlockingLinkBuilder;
-		$this->globalBlockDetailsRenderer = $globalBlockDetailsRenderer;
 
 		$this->getOutput()->addModuleStyles( [ 'mediawiki.interface.helpers.styles', 'ext.globalBlocking.styles' ] );
 		$this->mDefaultDirection = IndexPager::DIR_DESCENDING;

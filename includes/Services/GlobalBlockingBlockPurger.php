@@ -19,25 +19,14 @@ class GlobalBlockingBlockPurger {
 		MainConfigNames::UpdateRowsPerQuery,
 	];
 
-	private ServiceOptions $options;
-	private GlobalBlockingConnectionProvider $globalBlockingConnectionProvider;
-	private GlobalBlockLookup $globalBlockLookup;
-	private IConnectionProvider $connectionProvider;
-	private ReadOnlyMode $readOnlyMode;
-
 	public function __construct(
-		ServiceOptions $options,
-		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
-		IConnectionProvider $connectionProvider,
-		ReadOnlyMode $readOnlyMode,
-		GlobalBlockLookup $globalBlockLookup
+		private readonly ServiceOptions $options,
+		private readonly GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
+		private readonly IConnectionProvider $connectionProvider,
+		private readonly ReadOnlyMode $readOnlyMode,
+		private readonly GlobalBlockLookup $globalBlockLookup,
 	) {
 		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
-		$this->options = $options;
-		$this->globalBlockingConnectionProvider = $globalBlockingConnectionProvider;
-		$this->connectionProvider = $connectionProvider;
-		$this->readOnlyMode = $readOnlyMode;
-		$this->globalBlockLookup = $globalBlockLookup;
 	}
 
 	/**

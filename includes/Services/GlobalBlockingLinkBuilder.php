@@ -25,19 +25,12 @@ class GlobalBlockingLinkBuilder {
 		'GlobalBlockingCentralWiki',
 	];
 
-	private ServiceOptions $options;
-	private LinkRenderer $linkRenderer;
-	private GlobalBlockLookup $globalBlockLookup;
-
 	public function __construct(
-		ServiceOptions $options,
-		LinkRenderer $linkRenderer,
-		GlobalBlockLookup $globalBlockLookup
+		private readonly ServiceOptions $options,
+		private readonly LinkRenderer $linkRenderer,
+		private readonly GlobalBlockLookup $globalBlockLookup,
 	) {
 		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
-		$this->options = $options;
-		$this->linkRenderer = $linkRenderer;
-		$this->globalBlockLookup = $globalBlockLookup;
 	}
 
 	/**

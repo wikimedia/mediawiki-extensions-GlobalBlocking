@@ -32,31 +32,16 @@ class SpecialGlobalBlock extends FormSpecialPage {
 	 */
 	private bool $modifyForm = false;
 
-	private BlockUtils $blockUtils;
-	private GlobalBlockingConnectionProvider $globalBlockingConnectionProvider;
-	private GlobalBlockManager $globalBlockManager;
-	private GlobalBlockingLinkBuilder $globalBlockingLinkBuilder;
-	private CentralIdLookup $centralIdLookup;
-	private UserNameUtils $userNameUtils;
-	private GlobalBlockingExpirySelectorBuilder $globalBlockingExpirySelectorBuilder;
-
 	public function __construct(
-		BlockUtils $blockUtils,
-		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
-		GlobalBlockManager $globalBlockManager,
-		GlobalBlockingLinkBuilder $globalBlockingLinkBuilder,
-		CentralIdLookup $centralIdLookup,
-		UserNameUtils $userNameUtils,
-		GlobalBlockingExpirySelectorBuilder $globalBlockingExpirySelectorBuilder
+		private readonly BlockUtils $blockUtils,
+		private readonly GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
+		private readonly GlobalBlockManager $globalBlockManager,
+		private readonly GlobalBlockingLinkBuilder $globalBlockingLinkBuilder,
+		private readonly CentralIdLookup $centralIdLookup,
+		private readonly UserNameUtils $userNameUtils,
+		private readonly GlobalBlockingExpirySelectorBuilder $globalBlockingExpirySelectorBuilder,
 	) {
 		parent::__construct( 'GlobalBlock', 'globalblock' );
-		$this->blockUtils = $blockUtils;
-		$this->globalBlockingConnectionProvider = $globalBlockingConnectionProvider;
-		$this->globalBlockManager = $globalBlockManager;
-		$this->globalBlockingLinkBuilder = $globalBlockingLinkBuilder;
-		$this->centralIdLookup = $centralIdLookup;
-		$this->userNameUtils = $userNameUtils;
-		$this->globalBlockingExpirySelectorBuilder = $globalBlockingExpirySelectorBuilder;
 	}
 
 	/** @inheritDoc */

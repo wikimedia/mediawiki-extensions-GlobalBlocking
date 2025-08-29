@@ -46,42 +46,19 @@ class GlobalBlockingHooks implements
 	ContributionsToolLinksHook,
 	SpreadAnyEditBlockHook
 {
-	private BlockTargetFactory $blockTargetFactory;
-	private Config $config;
-	private CommentFormatter $commentFormatter;
-	private CentralIdLookup $lookup;
-	private GlobalBlockingLinkBuilder $globalBlockLinkBuilder;
-	private GlobalBlockLookup $globalBlockLookup;
-	private UserNameUtils $userNameUtils;
-	private GlobalBlockingUserVisibilityLookup $globalBlockingUserVisibilityLookup;
-	private GlobalBlockManager $globalBlockManager;
-	private GlobalBlockingGlobalBlockDetailsRenderer $globalBlockDetailsRenderer;
-	private GlobalBlockingLinkBuilder $globalBlockingLinkBuilder;
-
 	public function __construct(
-		BlockTargetFactory $blockTargetFactory,
-		Config $mainConfig,
-		CommentFormatter $commentFormatter,
-		CentralIdLookup $lookup,
-		GlobalBlockingLinkBuilder $globalBlockLinkBuilder,
-		GlobalBlockLookup $globalBlockLookup,
-		UserNameUtils $userNameUtils,
-		GlobalBlockingUserVisibilityLookup $globalBlockingUserVisibilityLookup,
-		GlobalBlockManager $globalBlockManager,
-		GlobalBlockingGlobalBlockDetailsRenderer $globalBlockDetailsRenderer,
-		GlobalBlockingLinkBuilder $globalBlockingLinkBuilder
+		private readonly BlockTargetFactory $blockTargetFactory,
+		private readonly Config $config,
+		private readonly CommentFormatter $commentFormatter,
+		private readonly CentralIdLookup $lookup,
+		private readonly GlobalBlockingLinkBuilder $globalBlockLinkBuilder,
+		private readonly GlobalBlockLookup $globalBlockLookup,
+		private readonly UserNameUtils $userNameUtils,
+		private readonly GlobalBlockingUserVisibilityLookup $globalBlockingUserVisibilityLookup,
+		private readonly GlobalBlockManager $globalBlockManager,
+		private readonly GlobalBlockingGlobalBlockDetailsRenderer $globalBlockDetailsRenderer,
+		private readonly GlobalBlockingLinkBuilder $globalBlockingLinkBuilder,
 	) {
-		$this->blockTargetFactory = $blockTargetFactory;
-		$this->config = $mainConfig;
-		$this->commentFormatter = $commentFormatter;
-		$this->lookup = $lookup;
-		$this->globalBlockLinkBuilder = $globalBlockLinkBuilder;
-		$this->globalBlockLookup = $globalBlockLookup;
-		$this->userNameUtils = $userNameUtils;
-		$this->globalBlockingUserVisibilityLookup = $globalBlockingUserVisibilityLookup;
-		$this->globalBlockManager = $globalBlockManager;
-		$this->globalBlockDetailsRenderer = $globalBlockDetailsRenderer;
-		$this->globalBlockingLinkBuilder = $globalBlockingLinkBuilder;
 	}
 
 	/**

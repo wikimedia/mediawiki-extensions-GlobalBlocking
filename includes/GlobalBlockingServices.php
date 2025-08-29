@@ -39,11 +39,7 @@ use MediaWiki\MediaWikiServices;
  */
 class GlobalBlockingServices {
 
-	/** @var MediaWikiServices */
-	private $serviceContainer;
-
-	public function __construct( MediaWikiServices $serviceContainer ) {
-		$this->serviceContainer = $serviceContainer;
+	public function __construct( private readonly MediaWikiServices $serviceContainer ) {
 	}
 
 	/**

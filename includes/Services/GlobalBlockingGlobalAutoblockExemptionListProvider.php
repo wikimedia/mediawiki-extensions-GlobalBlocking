@@ -29,31 +29,16 @@ class GlobalBlockingGlobalAutoblockExemptionListProvider {
 		'GlobalBlockingCentralWiki',
 	];
 
-	private ServiceOptions $options;
-	private ITextFormatter $textFormatter;
-	private WANObjectCache $wanObjectCache;
-	private HttpRequestFactory $httpRequestFactory;
-	private SiteLookup $siteLookup;
-	private StatusFormatter $statusFormatter;
-	private LoggerInterface $logger;
-
 	public function __construct(
-		ServiceOptions $options,
-		ITextFormatter $textFormatter,
-		WANObjectCache $wanObjectCache,
-		HttpRequestFactory $httpRequestFactory,
-		SiteLookup $siteLookup,
-		StatusFormatter $statusFormatter,
-		LoggerInterface $logger
+		private readonly ServiceOptions $options,
+		private readonly ITextFormatter $textFormatter,
+		private readonly WANObjectCache $wanObjectCache,
+		private readonly HttpRequestFactory $httpRequestFactory,
+		private readonly SiteLookup $siteLookup,
+		private readonly StatusFormatter $statusFormatter,
+		private readonly LoggerInterface $logger,
 	) {
 		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
-		$this->options = $options;
-		$this->textFormatter = $textFormatter;
-		$this->wanObjectCache = $wanObjectCache;
-		$this->httpRequestFactory = $httpRequestFactory;
-		$this->siteLookup = $siteLookup;
-		$this->statusFormatter = $statusFormatter;
-		$this->logger = $logger;
 	}
 
 	/**

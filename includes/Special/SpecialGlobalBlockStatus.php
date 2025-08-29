@@ -23,28 +23,15 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 	private ?bool $mCurrentStatus;
 	private ?bool $mWhitelistStatus;
 
-	private BlockUtils $blockUtils;
-	private UserNameUtils $userNameUtils;
-	private GlobalBlockLookup $globalBlockLookup;
-	private GlobalBlockLocalStatusManager $globalBlockLocalStatusManager;
-	private GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup;
-	private GlobalBlockingLinkBuilder $globalBlockingLinkBuilder;
-
 	public function __construct(
-		BlockUtils $blockUtils,
-		UserNameUtils $userNameUtils,
-		GlobalBlockLookup $globalBlockLookup,
-		GlobalBlockLocalStatusManager $globalBlockLocalStatusManager,
-		GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup,
-		GlobalBlockingLinkBuilder $globalBlockingLinkBuilder
+		private readonly BlockUtils $blockUtils,
+		private readonly UserNameUtils $userNameUtils,
+		private readonly GlobalBlockLookup $globalBlockLookup,
+		private readonly GlobalBlockLocalStatusManager $globalBlockLocalStatusManager,
+		private readonly GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup,
+		private readonly GlobalBlockingLinkBuilder $globalBlockingLinkBuilder,
 	) {
 		parent::__construct( 'GlobalBlockStatus', 'globalblock-whitelist' );
-		$this->blockUtils = $blockUtils;
-		$this->userNameUtils = $userNameUtils;
-		$this->globalBlockLookup = $globalBlockLookup;
-		$this->globalBlockLocalStatusManager = $globalBlockLocalStatusManager;
-		$this->globalBlockLocalStatusLookup = $globalBlockLocalStatusLookup;
-		$this->globalBlockingLinkBuilder = $globalBlockingLinkBuilder;
 	}
 
 	/** @inheritDoc */

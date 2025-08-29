@@ -44,43 +44,23 @@ class GlobalBlockManager {
 		MainConfigNames::EnableMultiBlocks,
 	];
 
-	private ServiceOptions $options;
-	private GlobalBlockingBlockPurger $globalBlockingBlockPurger;
-	private GlobalBlockLookup $globalBlockLookup;
-	private GlobalBlockingConnectionProvider $globalBlockingConnectionProvider;
-	private GlobalBlockingGlobalAutoblockExemptionListProvider $globalAutoblockExemptionListProvider;
-	private CentralIdLookup $centralIdLookup;
-	private UserFactory $userFactory;
-	private LoggerInterface $logger;
-	private HookRunner $hookRunner;
-	private DatabaseBlockStore $localBlockStore;
-	private BlockUserFactory $localBlockUserFactory;
+	private readonly HookRunner $hookRunner;
 
 	public function __construct(
-		ServiceOptions $options,
-		GlobalBlockingBlockPurger $globalBlockingBlockPurger,
-		GlobalBlockLookup $globalBlockLookup,
-		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
-		GlobalBlockingGlobalAutoblockExemptionListProvider $globalAutoblockExemptionListProvider,
-		CentralIdLookup $centralIdLookup,
-		UserFactory $userFactory,
-		LoggerInterface $logger,
+		private readonly ServiceOptions $options,
+		private readonly GlobalBlockingBlockPurger $globalBlockingBlockPurger,
+		private readonly GlobalBlockLookup $globalBlockLookup,
+		private readonly GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
+		private readonly GlobalBlockingGlobalAutoblockExemptionListProvider $globalAutoblockExemptionListProvider,
+		private readonly CentralIdLookup $centralIdLookup,
+		private readonly UserFactory $userFactory,
+		private readonly LoggerInterface $logger,
 		HookContainer $hookContainer,
-		DatabaseBlockStore $localBlockStore,
-		BlockUserFactory $localBlockUserFactory
+		private readonly DatabaseBlockStore $localBlockStore,
+		private readonly BlockUserFactory $localBlockUserFactory,
 	) {
 		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
-		$this->options = $options;
-		$this->globalBlockingBlockPurger = $globalBlockingBlockPurger;
-		$this->globalBlockLookup = $globalBlockLookup;
-		$this->globalBlockingConnectionProvider = $globalBlockingConnectionProvider;
-		$this->globalAutoblockExemptionListProvider = $globalAutoblockExemptionListProvider;
-		$this->centralIdLookup = $centralIdLookup;
-		$this->userFactory = $userFactory;
-		$this->logger = $logger;
 		$this->hookRunner = new HookRunner( $hookContainer );
-		$this->localBlockStore = $localBlockStore;
-		$this->localBlockUserFactory = $localBlockUserFactory;
 	}
 
 	/**

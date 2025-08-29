@@ -51,33 +51,18 @@ class GlobalBlockLookup {
 	/** @var int Flag to skip excluding expired global blocks. */
 	public const SKIP_EXPIRY_CHECK = 32;
 
-	private ServiceOptions $options;
-	private GlobalBlockingConnectionProvider $globalBlockingConnectionProvider;
-	private StatsFactory $statsFactory;
-	private CentralIdLookup $centralIdLookup;
-	private GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup;
-	private TempUserConfig $tempUserConfig;
-	private UserFactory $userFactory;
-
 	private array $getUserBlockDetailsCache = [];
 
 	public function __construct(
-		ServiceOptions $options,
-		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
-		StatsFactory $statsFactory,
-		CentralIdLookup $centralIdLookup,
-		GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup,
-		TempUserConfig $tempUserConfig,
-		UserFactory $userFactory
+		private readonly ServiceOptions $options,
+		private readonly GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
+		private readonly StatsFactory $statsFactory,
+		private readonly CentralIdLookup $centralIdLookup,
+		private readonly GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup,
+		private readonly TempUserConfig $tempUserConfig,
+		private readonly UserFactory $userFactory,
 	) {
 		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
-		$this->options = $options;
-		$this->globalBlockingConnectionProvider = $globalBlockingConnectionProvider;
-		$this->statsFactory = $statsFactory;
-		$this->centralIdLookup = $centralIdLookup;
-		$this->globalBlockLocalStatusLookup = $globalBlockLocalStatusLookup;
-		$this->tempUserConfig = $tempUserConfig;
-		$this->userFactory = $userFactory;
 	}
 
 	/**

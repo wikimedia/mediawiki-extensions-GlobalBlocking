@@ -12,24 +12,13 @@ use Wikimedia\Rdbms\IConnectionProvider;
 
 class GlobalBlockLocalStatusManager {
 
-	private GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup;
-	private GlobalBlockLookup $globalBlockLookup;
-	private GlobalBlockingBlockPurger $globalBlockingBlockPurger;
-	private GlobalBlockingConnectionProvider $globalBlockingConnectionProvider;
-	private IConnectionProvider $localDbProvider;
-
 	public function __construct(
-		GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup,
-		GlobalBlockLookup $globalBlockLookup,
-		GlobalBlockingBlockPurger $globalBlockingBlockPurger,
-		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
-		IConnectionProvider $localDbProvider
+		private readonly GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup,
+		private readonly GlobalBlockLookup $globalBlockLookup,
+		private readonly GlobalBlockingBlockPurger $globalBlockingBlockPurger,
+		private readonly GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
+		private readonly IConnectionProvider $localDbProvider,
 	) {
-		$this->globalBlockLocalStatusLookup = $globalBlockLocalStatusLookup;
-		$this->globalBlockLookup = $globalBlockLookup;
-		$this->globalBlockingBlockPurger = $globalBlockingBlockPurger;
-		$this->globalBlockingConnectionProvider = $globalBlockingConnectionProvider;
-		$this->localDbProvider = $localDbProvider;
 	}
 
 	/**

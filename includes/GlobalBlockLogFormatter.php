@@ -22,26 +22,13 @@ use Wikimedia\IPUtils;
  */
 class GlobalBlockLogFormatter extends LogFormatter {
 
-	private UserIdentityLookup $userIdentityLookup;
-	private GlobalBlockingLinkBuilder $globalBlockingLinkBuilder;
-	private GlobalBlockingUserVisibilityLookup $globalBlockingUserVisibilityLookup;
-
-	/**
-	 * @param LogEntry $entry
-	 * @param UserIdentityLookup $userIdentityLookup
-	 * @param GlobalBlockingLinkBuilder $globalBlockingLinkBuilder
-	 * @param GlobalBlockingUserVisibilityLookup $globalBlockingUserVisibilityLookup
-	 */
 	public function __construct(
 		LogEntry $entry,
-		UserIdentityLookup $userIdentityLookup,
-		GlobalBlockingLinkBuilder $globalBlockingLinkBuilder,
-		GlobalBlockingUserVisibilityLookup $globalBlockingUserVisibilityLookup
+		private readonly UserIdentityLookup $userIdentityLookup,
+		private readonly GlobalBlockingLinkBuilder $globalBlockingLinkBuilder,
+		private readonly GlobalBlockingUserVisibilityLookup $globalBlockingUserVisibilityLookup,
 	) {
 		parent::__construct( $entry );
-		$this->userIdentityLookup = $userIdentityLookup;
-		$this->globalBlockingLinkBuilder = $globalBlockingLinkBuilder;
-		$this->globalBlockingUserVisibilityLookup = $globalBlockingUserVisibilityLookup;
 	}
 
 	protected function getMessageKey(): string {

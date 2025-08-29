@@ -47,19 +47,14 @@ use Wikimedia\Rdbms\IReadableDatabase;
 class ApiQueryGlobalBlocks extends ApiQueryBase {
 	private IReadableDatabase $globalBlockingDb;
 
-	private CentralIdLookup $lookup;
-	private GlobalBlockLookup $globalBlockLookup;
-
 	public function __construct(
 		ApiQuery $query,
 		string $moduleName,
-		CentralIdLookup $lookup,
-		GlobalBlockLookup $globalBlockLookup,
+		private readonly CentralIdLookup $lookup,
+		private readonly GlobalBlockLookup $globalBlockLookup,
 		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider
 	) {
 		parent::__construct( $query, $moduleName, 'bg' );
-		$this->lookup = $lookup;
-		$this->globalBlockLookup = $globalBlockLookup;
 		$this->globalBlockingDb = $globalBlockingConnectionProvider->getReplicaGlobalBlockingDatabase();
 	}
 

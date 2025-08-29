@@ -14,10 +14,9 @@ use MediaWiki\User\UserFactory;
  */
 class GlobalBlockingUserVisibilityLookup {
 
-	private UserFactory $userFactory;
-
-	public function __construct( UserFactory $userFactory ) {
-		$this->userFactory = $userFactory;
+	public function __construct(
+		private readonly UserFactory $userFactory,
+	) {
 	}
 
 	/**

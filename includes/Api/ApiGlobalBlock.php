@@ -14,19 +14,13 @@ use StatusValue;
 use Wikimedia\ParamValidator\ParamValidator;
 
 class ApiGlobalBlock extends ApiBase {
-	private GlobalBlockManager $globalBlockManager;
-	private GlobalBlockingConnectionProvider $globalBlockingConnectionProvider;
-
 	public function __construct(
 		ApiMain $mainModule,
 		string $moduleName,
-		GlobalBlockManager $globalBlockManager,
-		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider
+		private readonly GlobalBlockManager $globalBlockManager,
+		private readonly GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
 	) {
 		parent::__construct( $mainModule, $moduleName );
-
-		$this->globalBlockManager = $globalBlockManager;
-		$this->globalBlockingConnectionProvider = $globalBlockingConnectionProvider;
 	}
 
 	public function execute() {

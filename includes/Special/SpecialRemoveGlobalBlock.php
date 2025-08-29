@@ -18,22 +18,13 @@ use Wikimedia\IPUtils;
 class SpecialRemoveGlobalBlock extends FormSpecialPage {
 	private string $target;
 
-	private BlockUtils $blockUtils;
-	private UserNameUtils $userNameUtils;
-	private GlobalBlockManager $globalBlockManager;
-	private GlobalBlockingLinkBuilder $globalBlockingLinkBuilder;
-
 	public function __construct(
-		BlockUtils $blockUtils,
-		UserNameUtils $userNameUtils,
-		GlobalBlockManager $globalBlockManager,
-		GlobalBlockingLinkBuilder $globalBlockingLinkBuilder
+		private readonly BlockUtils $blockUtils,
+		private readonly UserNameUtils $userNameUtils,
+		private readonly GlobalBlockManager $globalBlockManager,
+		private readonly GlobalBlockingLinkBuilder $globalBlockingLinkBuilder,
 	) {
 		parent::__construct( 'RemoveGlobalBlock', 'globalblock' );
-		$this->blockUtils = $blockUtils;
-		$this->userNameUtils = $userNameUtils;
-		$this->globalBlockManager = $globalBlockManager;
-		$this->globalBlockingLinkBuilder = $globalBlockingLinkBuilder;
 	}
 
 	/** @inheritDoc */
