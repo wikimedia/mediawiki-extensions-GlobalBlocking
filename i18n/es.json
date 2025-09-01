@@ -28,7 +28,8 @@
 			"Translationista",
 			"Vivaelcelta",
 			"Eulalio",
-			"No se"
+			"No se",
+			"Codename Noreste"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permite]] bloquear direcciones IP [[Special:GlobalBlockList|simultáneamente en varios wikis]]",
@@ -43,7 +44,7 @@
 	"globalblocking-ipaddress": "Dirección IP:",
 	"globalblocking-ipbanononly": "Bloquear globalmente solo a usuarios anónimos",
 	"globalblocking-block-ipinvalid": "La dirección IP ($1) que escribiste no es válida. Ten en cuenta que no puedes escribir un nombre de usuario.",
-	"globalblocking-block-expiryinvalid": "La caducidad que escribiste no es válida.",
+	"globalblocking-block-expiryinvalid": "La caducidad que ingresaste no es válida.",
 	"globalblocking-block-submit": "Bloquear esta dirección IP globalmente",
 	"globalblocking-modify-submit": "Modificar este bloqueo global",
 	"globalblocking-block-success": "La dirección IP $1 ha sido bloqueada en todos los proyectos.",
@@ -51,7 +52,7 @@
 	"globalblocking-local-failed": "Falló el bloqueo local de la dirección IP debido a que la dirección proporcionada ya está bloqueada en esta wiki.",
 	"globalblocking-block-failure": "Ocurrió un error al intentar bloquear globalmente a $1. Inténtalo de nuevo.",
 	"globalblocking-block-alreadyblocked": "La dirección IP $1 ya está bloqueada globalmente.\nPuede ver el bloqueo existente en la [[Special:GlobalBlockList|lista de bloqueos globales]], o modificar las configuraciones del bloqueo existente reeenviando este formulario.",
-	"globalblocking-bigrange": "El intervalo de direcciones IP que tratas de bloquear ($1) excede del máximo permitido.\nEl intervalo máximo que se permite para las direcciones $2 es /$3.",
+	"globalblocking-bigrange": "El rango que usted especificó ($1) excede los límites.\nEl intervalo máximo que se permite para las direcciones $2 es /$3.",
 	"globalblocking-also-local": "Bloquear también la dirección IP proporcionada en esta wiki",
 	"globalblocking-also-local-talk": "Impedir que el usuario pueda editar su propia página de discusión localmente",
 	"globalblocking-also-local-email": "Bloquear al usuario para que tampoco pueda enviar correos electrónicos de forma local",
