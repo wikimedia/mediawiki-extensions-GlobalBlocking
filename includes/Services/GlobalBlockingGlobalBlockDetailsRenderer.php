@@ -137,17 +137,17 @@ class GlobalBlockingGlobalBlockDetailsRenderer {
 			$options[] = $context->msg(
 				'globalblocking-list-whitelisted',
 				$this->userIdentityLookup->getUserIdentityByUserId( $wlinfo['user'] ), $wlinfo['reason']
-			)->text();
+			)->escaped();
 		}
 
 		// If the block is set to target only anonymous users, then indicate this in the options list.
 		if ( $row->gb_anon_only ) {
-			$options[] = $context->msg( 'globalblocking-list-anononly' )->text();
+			$options[] = $context->msg( 'globalblocking-list-anononly' )->escaped();
 		}
 
 		// If the block is set to prevent account creation, then indicate this in the options list.
 		if ( $row->gb_create_account ) {
-			$options[] = $context->msg( 'globalblocking-block-flag-account-creation-disabled' )->text();
+			$options[] = $context->msg( 'globalblocking-block-flag-account-creation-disabled' )->escaped();
 		}
 
 		return $options;
