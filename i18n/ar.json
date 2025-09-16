@@ -35,7 +35,7 @@
 	"globalblocking-ipbanononly": "امنع المستخدمين المجهولين فقط",
 	"globalblocking-block-disable-account-creation": "تعطيل إنشاء الحساب عالميًا",
 	"globalblocking-block-enable-autoblock": "امنع تلقائيا {{PLURAL:$1|عنوان الأيبي الأخير|آخر $1 عنوان أيبي}} الذي يستخدمه هذا المستخدم، وأي عناوين أيبي لاحقة يحاول تحريرها، لمدة $2",
-	"globalblocking-block-target-invalid": "اسم المستخدم أو عنوان IP أو نطاق IP ( $1 ) الذي أدخلته غير صالح.",
+	"globalblocking-block-target-invalid": "اسم المستخدم أو عنوان الآيبي أو نطاق الآيبي ($1) الذي أدخلته غير صالح.",
 	"globalblocking-block-expiryinvalid": "تاريخ الانتهاء الذي أدخلته غير صحيح.",
 	"globalblocking-block-anononly-on-account": "لا يمكن تطبيق حظر الحسابات على المستخدمين المجهولين فقط.",
 	"globalblocking-block-enable-autoblock-on-ip": "لا يمكن تفعيل الحظر التلقائي إلا للحظر على الحسابات.",
