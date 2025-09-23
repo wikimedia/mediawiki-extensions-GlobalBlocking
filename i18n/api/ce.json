@@ -28,6 +28,17 @@
 	"apihelp-query+globalblocks-param-prop": "Муьлха билгалонаш схьаоьцу:",
 	"apihelp-query+globalblocks-paramvalue-prop-id": "Глобалан блокан ID тӀетуху.",
 	"apihelp-query+globalblocks-paramvalue-prop-target": "Глобалан блокан Ӏалашо тӀетуху.",
+	"apihelp-query+globalblocks-paramvalue-prop-address": "Глобалан блокан Ӏалашо тӀетуху. ХӀара функци ширйелла, цуьнан метта «target» башхалла хӀоттийна.",
+	"apihelp-query+globalblocks-paramvalue-prop-by": "ТӀетуху блоктухучу декъашхочун цӀе, глобалан блоктохар кхочушдинчу викица цхьаьна.",
+	"apihelp-query+globalblocks-paramvalue-prop-timestamp": "ТӀетуху хенан билгало, цо гойту маца йелла глобалан блок.",
+	"apihelp-query+globalblocks-paramvalue-prop-expiry": "Глобалан блокан хан маца чекхйолу хенан билгало тӀетуху.",
+	"apihelp-query+globalblocks-paramvalue-prop-reason": "Глобалан блоктохаран бахьана тӀетуху.",
+	"apihelp-query+globalblocks-paramvalue-prop-range": "ТӀетуху глобалан блоко Ӏаткъам бина IP-адресийн диапазон (йукъа ца йоккху, нагахь санна блок IP-адресашна тӀе ца хьажийна йацахь).",
 	"apihelp-query+globalblocks-example-1": "Йерриге а глобалан блокаш гайта",
-	"apihelp-query+globalblocks-example-2": "IP-адресца йоьзна йолу йерриг глобалан блокаш гайта 192.0.2.18"
+	"apihelp-query+globalblocks-example-2": "IP-адресца йоьзна йолу йерриг глобалан блокаш гайта 192.0.2.18",
+	"apihelp-globalblock-param-alsolocal": "Иштта локалан декъашхочун блоктоха йиш йу. <var>$1id</var>-ца цхьаьна лело мегар дац.",
+	"apihelp-globalblock-param-localblockstalk": "Локалан дийцарийн агӀонна тӀекхачар йухадаккха. <var>$1id</var>-ца цхьаьна лело мегар дац.",
+	"apihelp-globalblock-param-localblocksemail": "Локалан электронан поштан тӀекхачар йухадаккха. <var>$1id</var>-ца цхьаьна лело мегар дац.",
+	"apihelp-globalblock-param-localanononly": "ХӀара параметр билгалйаккха, нагахь санна блоко локалан бен Ӏаткъам бан безаш бацахь системин чуьра ара боьвллачу декъашхошна. <var>$1id</var>-ца цхьаьна лело мегар дац.",
+	"apihelp-globalblock-param-local-allow-account-creation": "Иза билгалдаккха, нагахь санна локалан блоко новкъарло йан ца йеза аккаунт кхолла. <var>$1id</var>-ца цхьаьна лело мегар дац."
 }
