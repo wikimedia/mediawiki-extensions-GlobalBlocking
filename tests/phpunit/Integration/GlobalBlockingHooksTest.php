@@ -79,6 +79,7 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 					$services->getUserFactory(),
 					$services->getUserIdentityLookup(),
 					$services->getDatabaseBlockStore(),
+					$services->getUserGroupAssignmentService(),
 					'contributions'
 				);
 				$this->shouldShowBlockLogExtractMockValue = $shouldShowBlockLogExtractMockValue;
