@@ -143,7 +143,7 @@
 	"globalblocking-blockedtext-all-wikis": "لقد تم حظر عنوان IP الخاص بك على كافة الويكيات.",
 	"globalblocking-blockedtext-on-range": "عنوان IP الخاص بك موجود في نطاق تم حظره على جميع مواقع الويكي.",
 	"globalblocking-blockedtext-on-proxy": "تم حظر خادم وكيل واحد أو أكثر يستخدمه طلبك بشكل عام",
-	"globalblocking-blockedtext-on-user": "لقد تم حظر حسابك على كافة الويكيات.",
+	"globalblocking-blockedtext-on-user": "لقد مُنع حسابك على كافة الويكيات.",
 	"globalblocking-blockedtext-autoblock-reason": "السبب المذكور هو:\n\n:<em>$1</em>.",
 	"globalblocking-blockedtext-autoblock-intro": "لقد تم حظر عنوان IP الخاص بك تلقائيًا عالميًا لأنه تم استخدامه بواسطة مستخدم آخر، والذي تم حظره بواسطة $1 .",
 	"globalblocking-blockedtext-autoblock-intro-xff": "تم حظر خادم وكيل واحد أو أكثر يستخدمه طلبك تلقائيًا عالميًا لأنه تم استخدامه بواسطة مستخدم آخر، والذي تم حظره بواسطة $1 .",
