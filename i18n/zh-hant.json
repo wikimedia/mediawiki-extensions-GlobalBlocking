@@ -32,7 +32,8 @@
 			"Zhxy 519",
 			"列维劳德",
 			"捍粵者",
-			"铁桶"
+			"铁桶",
+			"阿南之人"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|允許]]封鎖[[Special:GlobalBlockList|於多個 Wiki 中]]的帳號、IP 位址及 IP 範圍",
@@ -65,7 +66,7 @@
 	"globalblocking-also-local-soft": "僅本地封鎖匿名使用者",
 	"globalblocking-also-local-disable-account-creation": "本地停用帳號建立",
 	"globalblocklist-summary": "此為所有目前有效的全域封鎖清單。有部份封鎖己被標記在本地停用：代表該封鎖僅適用於其他網站，本地管理員決定在此wiki停用該封鎖。",
-	"globalblocking-list": "全域封鎖IP位址清單",
+	"globalblocking-list": "全域封鎖IP位址和帳號清單",
 	"globalblocking-search-legend": "搜尋全域封鎖",
 	"globalblocking-search-submit": "搜尋封鎖",
 	"globalblocking-list-target-invalid": "您搜尋的使用者（$1）無效。\n請輸入一個有效的 IP 位址或使用者名稱。",
