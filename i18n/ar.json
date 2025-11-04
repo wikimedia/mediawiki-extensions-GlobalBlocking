@@ -18,7 +18,8 @@
 			"OsamaK",
 			"بهتين شوكت",
 			"ديفيد",
-			"Mohammed Qays"
+			"Mohammed Qays",
+			"علاء"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|يسمح]] بمنع عناوين الأيبي [[Special:GlobalBlockList|عبر ويكيات متعددة]]",
@@ -117,7 +118,7 @@
 	"globalblocking-block-flag-autoblock-disabled": "تم تعطيل الحظر التلقائي",
 	"globalblocking-loglink": "عنوان الأيبي $1 ممنوع منعا عاما ([[{{#Special:GlobalBlockList}}/$1|تفاصيل كاملة]]).",
 	"globalblocking-contribs-notice": "هذا العنوان IP ممنوع منعاً شاملاً حاليا.\nمدخلة سجل المنع الشامل معروضة فيما يلي لاستشارتها:",
-	"globalblocking-contribs-mock-log-line": "$1: $3 على مستوى العالم {{GENDER:$2|منع}} {{GENDER:$4|$5}} مع وقت انتهاء صلاحية $6 $7 $8 $9",
+	"globalblocking-contribs-mock-log-line": "$1: $3 {{GENDER:$2|منع}} عالميًّا {{GENDER:$4|$5}} مع وقت انتهاء صلاحية $6 $7 $8 $9",
 	"globalblocking-showlog": "عنوان الأيبي هذا تم منعه مسبقا.\nسجل المنع معروض بالأسفل كمرجع:",
 	"globalblocking-contribs-log": "سجل المنع العالمي",
 	"globalblocking-contribs-block": "منع عالمي",
