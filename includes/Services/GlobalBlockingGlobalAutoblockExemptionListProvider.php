@@ -69,9 +69,7 @@ class GlobalBlockingGlobalAutoblockExemptionListProvider {
 		$exemptIPsAndRanges = $this->wanObjectCache->getWithSetCallback(
 			$this->getCacheKey(),
 			ExpirationAwareness::TTL_HOUR,
-			function () {
-				return $this->fetchExemptIPAddresses();
-			},
+			$this->fetchExemptIPAddresses( ... ),
 			[ 'version' => self::CACHE_VERSION, 'pcTTL' => ExpirationAwareness::TTL_PROC_SHORT ]
 		);
 		// If we failed to get the list of exempt IP addresses, then try using the local message.
