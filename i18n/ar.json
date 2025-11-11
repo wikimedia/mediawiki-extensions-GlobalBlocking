@@ -119,7 +119,7 @@
 	"globalblocking-loglink": "عنوان الأيبي $1 ممنوع منعا عاما ([[{{#Special:GlobalBlockList}}/$1|تفاصيل كاملة]]).",
 	"globalblocking-contribs-notice": "هذا العنوان IP ممنوع منعاً شاملاً حاليا.\nمدخلة سجل المنع الشامل معروضة فيما يلي لاستشارتها:",
 	"globalblocking-contribs-mock-log-line": "$1: $3 {{GENDER:$2|منع}} عالميًّا {{GENDER:$4|$5}} مع وقت انتهاء صلاحية $6 $7 $8 $9",
-	"globalblocking-showlog": "عنوان الأيبي هذا تم منعه مسبقا.\nسجل المنع معروض بالأسفل كمرجع:",
+	"globalblocking-showlog": "عنوان الأيبي هذا مُنع مسبقًا.\nسجل المنع معروض بالأسفل باعتباره مرجعًا:",
 	"globalblocking-contribs-log": "سجل المنع العالمي",
 	"globalblocking-contribs-block": "منع عالمي",
 	"globalblocking-contribs-modify": "تعديل المنع العام",

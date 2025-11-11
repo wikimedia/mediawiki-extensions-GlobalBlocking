@@ -8,7 +8,7 @@
 	},
 	"globalblocking-apierror-badip": "$1 IP adresi geçerli değil",
 	"apihelp-globalblock-summary": "Bir kullanıcıyı küresel olarak engelleyin veya engelini kaldırın.",
-	"apihelp-globalblock-param-target": "Hedef IP adresi.",
+	"apihelp-globalblock-param-target": "Hedef IP adresi veya kullanıcı adı. <var>$1id</var> ile birlikte kullanılamaz.",
 	"apihelp-globalblock-param-expiry": "Belirtilirse kullanıcıyı engeller veya yeniden engeller. Bloğun ne kadar süreceğini belirler; ör. \"5 months\" veya \"2 weeks\". \"infinite\" veya \"indefinite\" olarak ayarlanırsa, engel asla sona ermez",
 	"apihelp-globalblock-param-unblock": "Belirtilirse, kullanıcının engellemesini kaldırır.",
 	"apihelp-globalblock-param-reason": "Engelleme/engellemeyi kaldırma nedeni.",
@@ -20,11 +20,11 @@
 	"apihelp-query+globalblocks-param-end": "Numaralandırmayı durdurmak için zaman damgası.",
 	"apihelp-query+globalblocks-param-ids": "Listelenecek blok kimliğinin boru ile ayrılmış listesi.",
 	"apihelp-query+globalblocks-param-addresses": "Aranacak IP adreslerinin kanalla ayrılmış listesi.",
-	"apihelp-query+globalblocks-param-ip": "Aralık engelleri dahil, bu IP adresine veya CIDR aralığına uygulanan tüm engelleri alın. $1addresses ile birlikte kullanılamaz. /16'dan daha büyük CIDR aralıkları kabul edilmez.",
+	"apihelp-query+globalblocks-param-ip": "Bu IP adresine veya CIDR aralığına uygulanan tüm engelleri (aralık engelleri dahil) alın. $1addresses veya $1targets ile birlikte kullanılamaz. /16'dan geniş CIDR aralıkları kabul edilmez.",
 	"apihelp-query+globalblocks-param-limit": "Listelenecek maksimum engel sayısı.",
 	"apihelp-query+globalblocks-param-prop": "Hangi özelliklere sahip olunur.",
 	"apihelp-query+globalblocks-example-1": "Tüm küresel engelleri listeleyin",
 	"apihelp-query+globalblocks-example-2": "192.0.2.18 IP adresine uygulanan küresel engellerini listeleyin",
-	"apihelp-globalblock-param-alsolocal": "IP'yi yerel olarak da engelleyin",
-	"apihelp-globalblock-param-localblockstalk": "Tartışma sayfası erişimini yerel olarak iptal et"
+	"apihelp-globalblock-param-alsolocal": "Kullanıcıyı yerel olarak da engelleyin. <var>$1id</var> ile birlikte kullanılamaz.",
+	"apihelp-globalblock-param-localblockstalk": "Tartışma sayfası erişimini yerel olarak kaldırın. <var>$1id</var> ile birlikte kullanılamaz."
 }
