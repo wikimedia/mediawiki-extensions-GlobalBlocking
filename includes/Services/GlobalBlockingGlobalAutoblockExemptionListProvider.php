@@ -26,6 +26,7 @@ class GlobalBlockingGlobalAutoblockExemptionListProvider {
 	private const CACHE_VERSION = 0;
 
 	public const CONSTRUCTOR_OPTIONS = [
+		'GlobalBlockingAutoblockExemptions',
 		'GlobalBlockingCentralWiki',
 	];
 
@@ -63,9 +64,25 @@ class GlobalBlockingGlobalAutoblockExemptionListProvider {
 	 * The result of this method is cached to improve performance. Call ::clearCache to clear the cache if the
 	 * exempt list has been recently edited and needs a refresh.
 	 *
-	 * @return array
+	 * @return string[]
 	 */
 	public function getExemptIPAddresses(): array {
+		return array_merge(
+			$this->options->get( 'GlobalBlockingAutoblockExemptions' ),
+			$this->getOnWikiExemptIPAddresses(),
+		);
+	}
+
+	/**
+	 * Gets the list of IP addresses that are exempt from global autoblocks
+	 * using the on-wiki exemption mechanism.
+	 *
+	 * The result of this method is cached to improve performance. Call ::clearCache to clear the cache if the
+	 * exempt list has been recently edited and needs a refresh.
+	 *
+	 * @return string[]
+	 */
+	public function getOnWikiExemptIPAddresses(): array {
 		$exemptIPsAndRanges = $this->wanObjectCache->getWithSetCallback(
 			$this->getCacheKey(),
 			ExpirationAwareness::TTL_HOUR,

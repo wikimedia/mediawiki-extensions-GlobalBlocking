@@ -17,12 +17,20 @@ use Wikimedia\ObjectCache\WANObjectCache;
  */
 class GlobalBlockingGlobalAutoblockExemptionListProviderTest extends MediaWikiUnitTestCase {
 
-	/** @dataProvider provideIsExempt */
-	public function testIsExempt( $exemptIPs, $ip, $expectedReturnValue ) {
+	private function getProvider(
+		array $configExemptIPs,
+		array $onWikiExemptIPs,
+	): GlobalBlockingGlobalAutoblockExemptionListProvider {
 		$mockObject = $this->getMockBuilder( GlobalBlockingGlobalAutoblockExemptionListProvider::class )
-			->onlyMethods( [ 'getExemptIPAddresses' ] )
+			->onlyMethods( [ 'getOnWikiExemptIPAddresses' ] )
 			->setConstructorArgs( [
-				$this->createMock( ServiceOptions::class ),
+				new ServiceOptions(
+					GlobalBlockingGlobalAutoblockExemptionListProvider::CONSTRUCTOR_OPTIONS,
+					[
+						'GlobalBlockingCentralWiki' => null,
+						'GlobalBlockingAutoblockExemptions' => $configExemptIPs,
+					]
+				),
 				$this->createMock( ITextFormatter::class ),
 				$this->createMock( WANObjectCache::class ),
 				$this->createMock( HttpRequestFactory::class ),
@@ -31,9 +39,21 @@ class GlobalBlockingGlobalAutoblockExemptionListProviderTest extends MediaWikiUn
 				new NullLogger(),
 			] )
 			->getMock();
-		$mockObject->method( 'getExemptIPAddresses' )
-			->willReturn( $exemptIPs );
-		$this->assertSame( $expectedReturnValue, $mockObject->isExempt( $ip ) );
+		$mockObject->method( 'getOnWikiExemptIPAddresses' )
+			->willReturn( $onWikiExemptIPs );
+		return $mockObject;
+	}
+
+	/** @dataProvider provideIsExempt */
+	public function testIsExemptConfig( $exemptIPs, $ip, $expectedReturnValue ) {
+		$provider = $this->getProvider( $exemptIPs, [] );
+		$this->assertSame( $expectedReturnValue, $provider->isExempt( $ip ) );
+	}
+
+	/** @dataProvider provideIsExempt */
+	public function testIsExemptOnWiki( $exemptIPs, $ip, $expectedReturnValue ) {
+		$provider = $this->getProvider( [], $exemptIPs );
+		$this->assertSame( $expectedReturnValue, $provider->isExempt( $ip ) );
 	}
 
 	public static function provideIsExempt() {

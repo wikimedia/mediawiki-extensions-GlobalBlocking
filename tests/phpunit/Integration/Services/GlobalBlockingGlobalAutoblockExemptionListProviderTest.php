@@ -35,6 +35,14 @@ class GlobalBlockingGlobalAutoblockExemptionListProviderTest extends MediaWikiIn
 		$sitesTable->saveSite( $site );
 	}
 
+	public function testGetExemptIPAddressesInConfig() {
+		$this->overrideConfigValue( 'GlobalBlockingCentralWiki', false );
+		$this->overrideConfigValue( 'GlobalBlockingAutoblockExemptions', [ '192.0.2.0/24' ] );
+		$objectUnderTest = GlobalBlockingServices::wrap( $this->getServiceContainer() )
+			->getGlobalAutoblockExemptionListProvider();
+		$this->assertSame( [ '192.0.2.0/24' ], $objectUnderTest->getExemptIPAddresses() );
+	}
+
 	public function testGetExemptIPAddressesWhenNoCentralWiki() {
 		$this->overrideConfigValue( 'GlobalBlockingCentralWiki', false );
 		$this->overrideConfigValue( MainConfigNames::UseDatabaseMessages, true );
