@@ -3,11 +3,13 @@
 		"authors": [
 			"MITO",
 			"Pyscowicz",
+			"Samoasambia",
 			"Valtlai",
 			"Valtlait"
 		]
 	},
-	"globalblocking-apierror-badip": "IP-osoite $1 on virheellinen",
+	"globalblocking-apierror-badip": "IP-osoite $1 ei ole kelvollinen",
+	"globalblocking-apierror-cannot-modify-global-autoblock": "Et voi muokata järjestelmänlaajuisia automaattisia estoja",
 	"apihelp-globalblock-example-1": "Estä 192.0.2.1 ikuisesti syyllä ”Cross-wiki abuse”",
 	"apihelp-query+globalblocks-example-1": "Luettelo kaikista järjestelmänlaajuisista estoista",
 	"apihelp-query+globalblocks-example-2": "Luettelo kaikista järjestelmänlaajuisista estoista koskien IP-osoitetta 192.0.2.18",
