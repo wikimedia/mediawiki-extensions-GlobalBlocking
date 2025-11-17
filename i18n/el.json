@@ -7,6 +7,7 @@
 			"Dead3y3",
 			"Geraki",
 			"Glavkos",
+			"Jimkats",
 			"Macofe",
 			"Omnipaedista",
 			"Protnet",
@@ -69,13 +70,13 @@
 	"globalblocking-showlog": "Αυτή η διεύθυνση IP έχει φραγεί προηγουμένως.\nΤο αρχείο καταγραφής φραγών παρουσιάζεται παρακάτω:",
 	"globalblocking-contribs-log": "αρχείο καταγραφών καθολικών φραγών",
 	"globalblocklist": "Κατάλογος καθολικά φραγμένων διευθύνσεων IP",
-	"globalblock": "Καθολική φραγή μιας διεύθυνσης IP",
+	"globalblock": "Καθολική φραγή ενός χρήστη",
 	"globalblockstatus": "Τοπική κατάσταση καθολικών φραγών",
 	"removeglobalblock": "Αφαίρεση μιας καθολικής φραγής",
-	"right-globalblock": "Δημιουργία καθολικών φραγών",
-	"action-globalblock": "Δημιουργία καθολικών φραγών",
+	"right-globalblock": "Δημιουργία και αφαίρεση καθολικών φραγών",
+	"action-globalblock": "δημιουργία και αφαίρεση καθολικών φραγών",
 	"right-globalblock-whitelist": "Απενεργοποίηση καθολικών φραγών τοπικά",
 	"action-globalblock-whitelist": "απενεργοποίηση καθολικών φραγών τοπικά",
-	"right-globalblock-exempt": "Παράκαμψη καθολικών φραγών",
-	"action-globalblock-exempt": "παράκαμψη καθολικών φραγών"
+	"right-globalblock-exempt": "Παράκαμψη καθολικών φραγών IP",
+	"action-globalblock-exempt": "παράκαμψη καθολικών φραγών IP"
 }
