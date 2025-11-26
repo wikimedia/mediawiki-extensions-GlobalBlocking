@@ -49,7 +49,7 @@
 	"globalblocking-whitelist-status": "Statws lleol:",
 	"globalblocking-whitelist-statuslabel": "Analluogi'r bloc cyd-wici ar {{SITENAME}}",
 	"globalblocking-whitelist-submit": "Newid y statws lleol",
-	"globalblocking-logpage": "Lòg blocio cydwici",
+	"globalblocking-logpage": "Log blocio cydwici",
 	"globalblocking-contribs-log": "Log blocio cydwici",
 	"globalblocklist": "Rhestr o ddefnyddwyr sydd wedi eu blocio'n gydwici",
 	"globalblockstatus": "Statws lleol y blociau cyd-wici"
