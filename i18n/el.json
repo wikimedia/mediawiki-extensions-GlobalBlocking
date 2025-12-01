@@ -12,7 +12,8 @@
 			"Protnet",
 			"ZaDiak",
 			"Απεργός",
-			"Warudo"
+			"Warudo",
+			"Jimkats"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Επιτρέπει]] διευθύνσεις IP να [[Special:GlobalBlockList|φραγούν σε πολλαπλά wikis]]",
@@ -86,8 +87,8 @@
 	"globalblock": "Καθολική φραγή μιας διεύθυνσης IP",
 	"globalblockstatus": "Τοπική κατάσταση καθολικών φραγών",
 	"removeglobalblock": "Αφαίρεση μιας καθολικής φραγής",
-	"right-globalblock": "Δημιουργία καθολικών φραγών",
-	"action-globalblock": "Δημιουργία καθολικών φραγών",
+	"right-globalblock": "Δημιουργία και αφαίρεση καθολικών φραγών",
+	"action-globalblock": "δημιουργία και αφαίρεση καθολικών φραγών",
 	"right-globalblock-whitelist": "Απενεργοποίηση καθολικών φραγών τοπικά",
 	"action-globalblock-whitelist": "απενεργοποίηση καθολικών φραγών τοπικά",
 	"right-globalblock-exempt": "Παράκαμψη καθολικών φραγών",

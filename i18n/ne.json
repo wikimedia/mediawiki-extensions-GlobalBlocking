@@ -19,7 +19,7 @@
 	"globalblocking-whitelist-reason": "कारण:",
 	"globalblocking-whitelist-statuslabel": "{{SITENAME}}मा यो विश्वव्यापी अवरोध असक्षम गर्नुहोस्",
 	"globalblocking-whitelist-submit": "स्थानीय स्थिति परिवर्तन गर्नुहोस्",
-	"globalblocking-logpage": "विश्वव्यापी रोक अभिलेख",
+	"globalblocking-logpage": "विश्वव्यापी निषेध अभिलेख",
 	"globalblockstatus": "विश्वव्यापी अवरोधहरूको स्थानीय स्थिति",
 	"log-action-filter-gblblock-modify": "विश्वव्यापी निषेध परिमार्जन"
 }
