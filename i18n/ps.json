@@ -81,6 +81,8 @@
 	"action-globalblock": "ټوليز بنديزونه لگول او لرې کول",
 	"right-globalblock-whitelist": "په سيمه‌ييزه توگه ټوليز بنديزونه ناچارنول",
 	"action-globalblock-whitelist": "په سيمه‌ييزه توگه ټوليز بنديزونه ناچارنول",
+	"right-globalblock-exempt": "د ټوليزه ويب‌پتې بنديزونو څخه تېرېدل",
+	"action-globalblock-exempt": "د ټوليزه ويب‌پتې بنديزونو څخه تېرېدل",
 	"log-action-filter-gblblock": "د ټوليز بنديز ډول:",
 	"log-action-filter-gblblock-gblock": "ټوليز بنديز",
 	"log-action-filter-gblblock-gunblock": "ټوليز نابنديز",
