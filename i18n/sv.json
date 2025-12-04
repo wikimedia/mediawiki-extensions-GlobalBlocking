@@ -16,7 +16,8 @@
 			"Psl85",
 			"Rotsee",
 			"Technic2",
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Yupik"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Gör det möjligt]] att blockera IP-adresser [[Special:GlobalBlockList|över flera wikier]]",
@@ -89,6 +90,7 @@
 	"globalblocking-contribs-block": "blockera denna IP-adress globalt",
 	"globalblocking-contribs-modify": "modifiera den globala blockeringen",
 	"globalblocking-contribs-remove": "ta bort den globala blockeringen",
+	"globalblocking-mass-block-query-submit": "Sök",
 	"globalblocklist": "Lista över globalt blockerade IP-adresser",
 	"globalblock": "Blockera en IP-adress globalt",
 	"globalblockstatus": "Lokal status för globala blockeringar",
