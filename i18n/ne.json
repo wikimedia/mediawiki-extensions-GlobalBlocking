@@ -9,7 +9,7 @@
 	"globalblocking-block-reason": "कारण:",
 	"globalblocking-ipaddress": "आइपी ठेगाना",
 	"globalblocking-search-ip": "आइपी ठेगाना",
-	"globalblocking-list-unblock": "हटाउने",
+	"globalblocking-list-unblock": "हटाउनुहोस्",
 	"globalblocking-list-modify": "सच्याउने",
 	"globalblocking-expiringblock": "$1 को दिन  $2 मा सकिनेछ",
 	"globalblocking-goto-status": "विश्वव्यापी अवरोधको लागि स्थानीय स्थिति परिवर्तन गर्नुहोस्",
