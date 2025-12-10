@@ -11,5 +11,6 @@
 	"globalblocking-list-indefblocks": "Čievâ pisovijd iästuid",
 	"globalblocking-list-autoblocks": "Čievâ automaatlijd iästuid",
 	"globalblocking-unblock-reason": "Suijâ:",
-	"globalblocking-whitelist-reason": "Suijâ:"
+	"globalblocking-whitelist-reason": "Suijâ:",
+	"globalblocking-mass-block-query-submit": "Uusâ"
 }

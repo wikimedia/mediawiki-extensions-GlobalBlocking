@@ -5,7 +5,8 @@
 			"Jon Harald Søby",
 			"Laaknor",
 			"Macofe",
-			"Nghtwlkr"
+			"Nghtwlkr",
+			"Yupik"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Gjør det mulig]] å blokkere kontoer, IP-adresser og IP-intervaller på [[Special:GlobalBlockList|alle wikier]]",
@@ -110,6 +111,7 @@
 	"globalblocking-contribs-block": "blokker globalt",
 	"globalblocking-contribs-modify": "endre den globale blokkeringen",
 	"globalblocking-contribs-remove": "fjern den globale blokkeringen",
+	"globalblocking-mass-block-query-submit": "Søk",
 	"globalblocklist": "Liste over globalt blokkerte brukere",
 	"globalblock": "Blokker en bruker globalt",
 	"globalblockstatus": "Lokal status for globale blokkeringer",
