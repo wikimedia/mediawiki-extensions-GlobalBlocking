@@ -71,7 +71,7 @@
 	"globalblocking-whitelist-legend": "Mengubah status di wiki setempat",
 	"globalblocking-whitelist-reason": "Alasan:",
 	"globalblocking-whitelist-status": "Status setempat:",
-	"globalblocking-whitelist-statuslabel": "Menon-aktifkan pemblokiran global ini di {{SITENAME}}",
+	"globalblocking-whitelist-statuslabel": "Matikan pemblokiran global ini di {{SITENAME}}",
 	"globalblocking-whitelist-submit": "Mengubah status di wiki setempat",
 	"globalblocking-whitelist-whitelisted": "Anda telah menonaktifkan pemblokiran global #$2 pada alamat IP '''$1''' di {{SITENAME}}.",
 	"globalblocking-whitelist-dewhitelisted": "Anda telah mengaktifkan kembali pemblokiran global #$2 pada alamat IP '''$1''' di {{SITENAME}}.",
