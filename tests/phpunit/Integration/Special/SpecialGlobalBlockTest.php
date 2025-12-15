@@ -140,7 +140,6 @@ class SpecialGlobalBlockTest extends FormSpecialPageTestCase {
 	}
 
 	public function testLoadExistingBlockForIPThatIsGloballyAutoblocked() {
-		$this->overrideConfigValue( 'GlobalBlockingEnableAutoblocks', true );
 		// Perform a block on a test user and then perform a global autoblock on an IP using the global user block
 		// as the parent block.
 		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager();

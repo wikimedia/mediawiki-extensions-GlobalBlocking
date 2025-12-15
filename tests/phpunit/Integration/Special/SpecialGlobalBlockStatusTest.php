@@ -130,7 +130,6 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 	}
 
 	public function testLocallyEnableGlobalAutoblock() {
-		$this->overrideConfigValue( 'GlobalBlockingEnableAutoblocks', true );
 		// Get a testing global autoblock which we can locally disable, and then use the special page to re-enable.
 		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
 		$globalBlockManager = $globalBlockingServices->getGlobalBlockManager();
@@ -167,7 +166,6 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 	}
 
 	public function testLocallyDisableGlobalAutoblock() {
-		$this->overrideConfigValue( 'GlobalBlockingEnableAutoblocks', true );
 		// Get a testing global autoblock which we can use the special page to locally disable
 		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
 		$globalBlockManager = $globalBlockingServices->getGlobalBlockManager();

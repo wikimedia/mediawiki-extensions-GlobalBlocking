@@ -386,7 +386,6 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function addDBDataOnce() {
-		$this->overrideConfigValue( 'GlobalBlockingEnableAutoblocks', true );
 		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
 		// to be the local provider.
 		$this->overrideConfigValue( MainConfigNames::CentralIdLookupProvider, 'local' );

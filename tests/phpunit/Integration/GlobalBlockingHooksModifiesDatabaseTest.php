@@ -38,14 +38,12 @@ class GlobalBlockingHooksModifiesDatabaseTest extends MediaWikiIntegrationTestCa
 	}
 
 	public function testOnSpreadAnyEditBlockForNoSuchBlock() {
-		$this->overrideConfigValue( 'GlobalBlockingEnableAutoblocks', true );
 		$blockWasSpread = false;
 		$this->getGlobalBlockingHooks()->onSpreadAnyEditBlock( $this->getTestUser()->getUser(), $blockWasSpread );
 		$this->assertFalse( $blockWasSpread );
 	}
 
 	public function testOnSpreadAnyEditBlockWhenAutoblockShouldBeCreated() {
-		$this->overrideConfigValue( 'GlobalBlockingEnableAutoblocks', true );
 		RequestContext::getMain()->getRequest()->setIP( '1.2.3.4' );
 		// Create a global block on a target which causes autoblocks
 		$testGloballyBlockedUser = $this->getMutableTestUser()->getUser();

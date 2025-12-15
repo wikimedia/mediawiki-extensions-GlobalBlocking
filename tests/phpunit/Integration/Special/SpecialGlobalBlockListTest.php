@@ -228,8 +228,6 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 	}
 
 	public function addDBDataOnce() {
-		// Allow global autoblocks, so that we can check that global autoblocks are properly handled by the API
-		$this->overrideConfigValue( 'GlobalBlockingEnableAutoblocks', true );
 		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
 		// to be the local provider.
 		$this->overrideConfigValue( MainConfigNames::CentralIdLookupProvider, 'local' );

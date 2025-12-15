@@ -39,7 +39,6 @@ class GlobalBlockManager {
 	public const CONSTRUCTOR_OPTIONS = [
 		'GlobalBlockingCIDRLimit',
 		'GlobalBlockingAutoblockExpiry',
-		'GlobalBlockingEnableAutoblocks',
 		'GlobalBlockingMaximumIPsToRetroactivelyAutoblock',
 		MainConfigNames::EnableMultiBlocks,
 	];
@@ -433,10 +432,6 @@ class GlobalBlockManager {
 		}
 
 		if ( $this->globalAutoblockExemptionListProvider->isExempt( $ip ) ) {
-			return StatusValue::newGood();
-		}
-
-		if ( !$this->options->get( 'GlobalBlockingEnableAutoblocks' ) ) {
 			return StatusValue::newGood();
 		}
 

@@ -106,7 +106,6 @@ class SpecialRemoveGlobalBlockTest extends FormSpecialPageTestCase {
 	}
 
 	public function testSuccessfulSubmissionOfFormForGlobalAutoblock() {
-		$this->overrideConfigValue( 'GlobalBlockingEnableAutoblocks', true );
 		$testPerformer = $this->getUserForSuccess();
 		RequestContext::getMain()->setUser( $testPerformer );
 		// Get a global autoblock to test with.
