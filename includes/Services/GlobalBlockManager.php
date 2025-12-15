@@ -630,6 +630,7 @@ class GlobalBlockManager {
 				->select( 'gb_address' )
 				->from( 'globalblocks' )
 				->where( [ 'gb_id' => substr( $target, 1 ) ] )
+				->caller( __METHOD__ )
 				->fetchField();
 
 			if ( !$targetForBlockId ) {
