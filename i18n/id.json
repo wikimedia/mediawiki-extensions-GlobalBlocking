@@ -82,7 +82,7 @@
 	"globalblocking-logpagetext": "Ini adalah log pemblokiran global yang dibuat dan dihapuskan di wiki ini.\nSebagai catatan, pemblokiran global dapat dibuat dan dihapuskan di wiki lain yang akan juga mempengaruhi wiki ini.\nUntuk menampilkan seluruh pemblokiran global yang aktif saat ini, Anda dapat melihat [[Special:GlobalBlockList|daftar pemblokiran global]].",
 	"globalblocking-logentry-whitelist": "$1 {{GENDER:$2|menonaktifkan}} pemblokiran global di $3 secara lokal",
 	"globalblocking-logentry-dewhitelist": "$1 {{GENDER:$2|diaktifkan kembali}} global blokir $3 di lokal",
-	"globalblocking-loglink": "Alamat IP $1 diblokir secara global ([[{{#Special:GlobalBlockList}}/$1|detail lengkap]]).",
+	"globalblocking-loglink": "Pengguna $1 diblokir secara global ([[{{#Special:GlobalBlockList}}/$1|rincian penuh]]).",
 	"globalblocking-contribs-notice": "Alamat IP ini saat ini diblokir secara global.\nEntri log pemblokiran global disediakan di bawah sebagai referensi:",
 	"globalblocking-showlog": "Alamat IP ini telah diblokir sebelumnya.\nLog pemblokiran disediakan di bawah ini sebagai rujukan:",
 	"globalblocking-contribs-block": "blokir secara global IP ini",
