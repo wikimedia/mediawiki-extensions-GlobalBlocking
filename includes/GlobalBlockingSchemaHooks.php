@@ -121,5 +121,11 @@ class GlobalBlockingSchemaHooks implements LoadExtensionSchemaUpdatesHook {
 				"$base/sql/$type/patch-global_block_whitelist-modify-gbw_id-unsigned.sql"
 			);
 		}
+
+		// 1.46
+		$updater->addExtensionUpdateOnVirtualDomain( [
+			'virtual-globalblocking', 'addField', 'globalblocks', 'gb_block_email',
+			"$base/sql/$type/patch-globalblocks-add-gb_block_email.sql", true,
+		] );
 	}
 }
