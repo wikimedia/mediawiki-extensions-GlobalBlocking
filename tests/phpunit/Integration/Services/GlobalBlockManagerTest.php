@@ -527,7 +527,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 
 	public function testBlockModificationAlsoModifiesPropertiesOfAssociatedGlobalAutoblocks() {
 		$this->overrideConfigValue( MainConfigNames::LanguageCode, 'qqx' );
-		$this->overrideConfigValue( 'GlobalBlockingAutoblockExpiry', "86400" );
+		$this->overrideConfigValue( 'GlobalBlockingAutoblockExpiry', 86400 );
 		// Create a test global block on an existing user which enables autoblocks.
 		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager();
 		$targetUserIdentity = $this->getTestUser()->getUserIdentity();
@@ -544,7 +544,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 		$firstAutoblockId = $firstAutoblockStatus->getValue()['id'];
 		// Create an another autoblock for the user block created above with a short expiry. Set the autoblock expiry
 		// maximum length to a short value to make the expiry short.
-		$this->overrideConfigValue( 'GlobalBlockingAutoblockExpiry', "10" );
+		$this->overrideConfigValue( 'GlobalBlockingAutoblockExpiry', 10 );
 		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager();
 		$secondAutoblockStatus = $globalBlockManager->autoblock( $parentBlockId, '1.2.3.7' );
 		$this->assertStatusGood( $secondAutoblockStatus );
@@ -561,7 +561,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 			]
 		);
 		// Modify the parent block to change most properties but keep the same target and autoblocking enabled.
-		$this->overrideConfigValue( 'GlobalBlockingAutoblockExpiry', "86400" );
+		$this->overrideConfigValue( 'GlobalBlockingAutoblockExpiry', 86400 );
 		$secondPerformer = $this->getMutableTestUser( 'steward' )->getUser();
 		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager();
 		$parentBlockModifyStatus = $globalBlockManager->block(
@@ -596,7 +596,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 
 	public function testBlockModificationAffectsAutoblockWhenParentBlockExpiryNotModified() {
 		$this->overrideConfigValue( MainConfigNames::LanguageCode, 'qqx' );
-		$this->overrideConfigValue( 'GlobalBlockingAutoblockExpiry', '86400' );
+		$this->overrideConfigValue( 'GlobalBlockingAutoblockExpiry', 86400 );
 		// Create a test global block on an existing user which enables autoblocks.
 		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager();
 		$targetUserIdentity = $this->getTestUser()->getUserIdentity();

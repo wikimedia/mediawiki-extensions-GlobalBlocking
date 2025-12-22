@@ -303,7 +303,7 @@
 		},
 		"GlobalBlockingAutoblockExpiry": {
 			"description": "The maximum number of seconds that an autoblock can last. If the parent block expires before this maximum, the expiry will the expiry of the parent block. Default 86400 = 1 day.",
-			"value": "86400"
+			"value": 86400
 		},
 		"GlobalBlockingMaximumIPsToRetroactivelyAutoblock": {
 			"description": "The number of IP addresses to retroactively globally autoblock when a global block is created with autoblocking enabled.",
