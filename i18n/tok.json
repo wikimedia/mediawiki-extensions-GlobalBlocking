@@ -4,5 +4,7 @@
 			"Tamzin"
 		]
 	},
-	"globalblocking-logpage": "weka ken pi ma ale la pini"
+	"globalblocking-logpage": "weka ken pi ma ale la pini",
+	"right-globalblock": "ona li ken weka anu sin e ken pali tan sijelo pi ma ale",
+	"right-globalblock-whitelist": "ken pali sijelo li weka lon ma ale la, ona li ken e pali lon ma ni taso"
 }
