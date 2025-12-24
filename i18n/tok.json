@@ -5,5 +5,8 @@
 		]
 	},
 	"globalblocking-logpage": "weka ken pi ma ale la pini",
-	"globalblocking-contribs-log": "pini pi weka ken lon ma ale"
+	"globalblocking-contribs-log": "pini pi weka ken lon ma ale",
+	"right-globalblock": "ona li ken weka anu sin e ken pali tan sijelo pi ma ale",
+	"right-globalblock-whitelist": "ken pali sijelo li weka lon ma ale la, ona li ken e pali lon ma ni taso",
+	"right-globalblock-exempt": "weka ken pi nanpa IP lon ma ale li ala tawa ona"
 }
