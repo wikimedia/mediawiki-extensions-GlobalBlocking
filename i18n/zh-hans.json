@@ -39,7 +39,8 @@
 			"沈澄心",
 			"LittlePaw365",
 			"列维劳德",
-			"Wilf233"
+			"Wilf233",
+			"Peterxy12"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|允许]][[Special:GlobalBlockList|在多个wiki中封禁]]IP地址",
@@ -116,7 +117,7 @@
 	"globalblocking-ipblocked-xff": "'''您要使用的一个或更多的代理服务器已被全域封禁'''\n\n封禁由$1 ($2)执行。给出的原因是''$3''。\n\n* 封禁开始时间：$4\n* 封禁结束时间：$5\n\n您可以与$1联系以讨论此次封禁。您不能使用“{{int:emailuser}}”功能，除非在您的[[Special:Preferences|帐户参数设置]]中设定了一个有效的电子邮件地址，并且此次封禁未禁用该功能。您当前的代理地址是 $6。请在提出任何异议时提供上述所有信息。",
 	"globalblocking-blocked-nopassreset": "您无法重置用户密码，因为您的IP地址已被全域封禁。",
 	"globalblocking-logpage": "全域封禁日志",
-	"globalblocking-logpagetext": "这个是在这个wiki中的全域封锁日志。要留意的是全域封锁可以在其它的wiki中创建和移除，并且会影响到本wiki。要查看活跃的全域封锁，您可以去参阅[[Special:GlobalBlockList|全域封锁名单]]。",
+	"globalblocking-logpagetext": "这个是在这个wiki中的全域封禁日志。要留意的是全域封禁可以在其它的wiki中创建和移除，并且会影响到本wiki。要查看活跃的全域封禁，您可以去参阅[[Special:GlobalBlockList|全域封禁列表]]。",
 	"globalblocking-block-logentry": "已全域封禁[[$1]]，到期时间为$2",
 	"globalblocking-block2-logentry": "已全域封禁[[$1]]（$2）",
 	"globalblocking-unblock-logentry": "移除[[$1]]的全域封禁",
