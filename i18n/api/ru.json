@@ -7,12 +7,13 @@
 			"Putnik",
 			"Tanzun",
 			"Vlad5250",
+			"Vonavy",
 			"Камалист"
 		]
 	},
 	"globalblocking-apierror-badip": "IP-адрес $1 недействителен",
 	"apihelp-globalblock-summary": "Глобально заблокировать или разблокировать участника.",
-	"apihelp-globalblock-param-target": "Целевой IP-адрес или имя участника.",
+	"apihelp-globalblock-param-target": "Целевой IP-адрес или имя участника. Не может быть использовано вместе с <var>$1id</var>.",
 	"apihelp-globalblock-param-expiry": "Если указано, заблокирует или разблокирует пользователя. Определяет, как долго будет продолжаться блок, например. «5 месяцев» или «2 недели». Если установлено значение «бесконечный» или «неопределенный», блок никогда не истечет.",
 	"apihelp-globalblock-param-unblock": "Если указано, разблокирует пользователя.",
 	"apihelp-globalblock-param-reason": "Причина блокировки/разблокировки",
@@ -25,11 +26,11 @@
 	"apihelp-query+globalblocks-param-end": "Временная метка, на которой закончить перечисление.",
 	"apihelp-query+globalblocks-param-ids": "Список идентификаторов блоков, разделенных трубами, в список.",
 	"apihelp-query+globalblocks-param-addresses": "Список IP-адресов для поиска, разделённых вертикальной чертой.",
-	"apihelp-query+globalblocks-param-ip": "Получить все блокировки, применённые к этому IP-адресу или диапазону CIDR, включая блокировки диапазонов.\nНе может быть использовано одновременно с $1addresses. Диапазоны CIDR шире /16 не поддерживаются.",
+	"apihelp-query+globalblocks-param-ip": "Получить все блокировки, применённые к этому IP-адресу или диапазону CIDR, включая блокировки диапазонов.\nНе может быть использовано одновременно с $1addresses или $1targets. Диапазоны CIDR шире /16 не поддерживаются.",
 	"apihelp-query+globalblocks-param-limit": "Максимальное количество блоков для списка.",
 	"apihelp-query+globalblocks-param-prop": "Какие свойства необходимо получить.",
 	"apihelp-query+globalblocks-example-1": "Перечислить все глобальные блокировки",
 	"apihelp-query+globalblocks-example-2": "Перечислить все глобальные блокировки, относящиеся к IP-адресу 192.0.2.18",
-	"apihelp-globalblock-param-localanononly": "Указывайте это, если блок должен влиять локально только на отключённых пользователей.",
-	"apihelp-globalblock-param-local-allow-account-creation": "Укажите это, если локальная блокировка не должна препятствовать созданию учетной записи."
+	"apihelp-globalblock-param-localanononly": "Указывайте это, если блок должен влиять локально только на отключённых пользователей. Не может быть использовано вместе с <var>$1id</var>.",
+	"apihelp-globalblock-param-local-allow-account-creation": "Укажите это, если локальная блокировка не должна препятствовать созданию учетной записи. Не может быть использовано вместе с <var>$1id</var>."
 }
