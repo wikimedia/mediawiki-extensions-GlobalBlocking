@@ -14,7 +14,7 @@
 	"apihelp-globalblock-param-expiry": "Jeżeli określone, zablokuje lub zablokuje ponownie użytkownika. Określa, jak długo blokada będzie trwała, np. \"5 months\" lub \"2 weeks\". Jeżeli ustawisz na \"infinite\" lub \"indefinite\", blokada nigdy nie wygaśnie.",
 	"apihelp-globalblock-param-unblock": "Jeżeli określony, odblokuje użytkownika.",
 	"apihelp-globalblock-param-reason": "Powód zablokowania/odblokowania.",
-	"apihelp-globalblock-param-anononly": "Określ go, jeżeli blokada ma dotyczyć tylko użytkowników niezalogowanych.",
+	"apihelp-globalblock-param-anononly": "Określ go, jeżeli blokada ma dotyczyć tylko użytkowników niezalogowanych globalnie.",
 	"apihelp-globalblock-param-modify": "Określ go, jeżeli mają zostać wprowadzone zmiany w istniejącej blokadzie na ten sam cel.",
 	"apihelp-globalblock-example-1": "Zablokuj na zawsze 192.0.2.1 z powodem \"Cross-wiki abuse\"",
 	"apihelp-query+globalblocks-description": "Spis globalnie zablokowanych adresów IP.",
