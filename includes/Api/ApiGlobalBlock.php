@@ -70,6 +70,10 @@ class ApiGlobalBlock extends ApiBase {
 				$options[] = 'enable-autoblock';
 			}
 
+			if ( $this->getParameter( 'block-email' ) ) {
+				$options[] = 'block-email';
+			}
+
 			if ( $this->getParameter( 'modify' ) ) {
 				$options[] = 'modify';
 			}
@@ -184,6 +188,9 @@ class ApiGlobalBlock extends ApiBase {
 				ParamValidator::PARAM_TYPE => 'boolean',
 			],
 			'enable-autoblock' => [
+				ParamValidator::PARAM_TYPE => 'boolean',
+			],
+			'block-email' => [
 				ParamValidator::PARAM_TYPE => 'boolean',
 			],
 			'modify' => [

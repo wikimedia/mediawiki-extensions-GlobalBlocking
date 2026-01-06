@@ -104,7 +104,14 @@ class SpecialGlobalBlock extends FormSpecialPage {
 		if ( $this->target ) {
 			$dbr = $this->globalBlockingConnectionProvider->getReplicaGlobalBlockingDatabase();
 			$queryBuilder = $dbr->newSelectQueryBuilder()
-				->select( [ 'gb_anon_only', 'gb_reason', 'gb_expiry', 'gb_create_account', 'gb_enable_autoblock' ] )
+				->select( [
+					'gb_anon_only',
+					'gb_reason',
+					'gb_expiry',
+					'gb_create_account',
+					'gb_enable_autoblock',
+					'gb_block_email',
+				] )
 				->from( 'globalblocks' );
 			if ( IPUtils::isIPAddress( $this->target ) ) {
 				// Exclude global autoblocks from the lookup to avoid exposing the IP address being autoblocked.
@@ -127,6 +134,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 
 				$blockOptions['anononly'] = $block->gb_anon_only;
 				$blockOptions['createAccount'] = $block->gb_create_account;
+				$blockOptions['blockEmail'] = $block->gb_block_email;
 				$blockOptions['reason'] = $block->gb_reason;
 				$blockOptions['enableAutoblock'] = $block->gb_enable_autoblock;
 				$blockOptions['expiry'] = ( $block->gb_expiry === 'infinity' )
@@ -181,6 +189,12 @@ class SpecialGlobalBlock extends FormSpecialPage {
 				'label-message' => 'globalblocking-block-disable-account-creation',
 				'default' => true,
 			],
+			'BlockEmail' => [
+				'type' => 'check',
+				'id' => 'mw-globalblock-block-email',
+				'label-message' => 'globalblocking-block-block-email',
+				'default' => false,
+			],
 			'AutoBlock' => [
 				'type' => 'check',
 				'label-message' => [
@@ -208,6 +222,7 @@ class SpecialGlobalBlock extends FormSpecialPage {
 			$fields['Reason']['default'] = $blockOptions['reason'];
 			$fields['AnonOnly']['default'] = $blockOptions['anononly'];
 			$fields['CreateAccount']['default'] = $blockOptions['createAccount'];
+			$fields['BlockEmail']['default'] = $blockOptions['blockEmail'];
 			$fields['AutoBlock']['default'] = $blockOptions['enableAutoblock'];
 			if ( $this->getRequest()->getVal( 'Previous' ) !== $this->target ) {
 				// Let the user know about it and re-submit to modify
@@ -309,6 +324,10 @@ class SpecialGlobalBlock extends FormSpecialPage {
 
 		if ( $data['AutoBlock'] ) {
 			$options[] = 'enable-autoblock';
+		}
+
+		if ( $data['BlockEmail'] ) {
+			$options[] = 'block-email';
 		}
 
 		if ( $this->modifyForm && $data['Modify']

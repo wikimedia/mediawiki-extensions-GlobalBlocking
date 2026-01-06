@@ -81,7 +81,7 @@ class ApiGlobalBlockTest extends ApiTestCase {
 		[ $result ] = $this->doApiRequestWithToken(
 			[
 				'action' => 'globalblock', 'target' => $target, 'reason' => 'test', 'expiry' => '1 month',
-				'allow-account-creation' => 0,
+				'allow-account-creation' => 0, 'block-email' => 1,
 			],
 			null, $this->getAuthorityForSuccess()
 		);
@@ -108,6 +108,11 @@ class ApiGlobalBlockTest extends ApiTestCase {
 		$this->assertSame(
 			'1',
 			$actualBlock->gb_create_account,
+			'The block should not have been modified by the API call.'
+		);
+		$this->assertSame(
+			'0',
+			$actualBlock->gb_block_email,
 			'The block should not have been modified by the API call.'
 		);
 	}
@@ -215,7 +220,8 @@ class ApiGlobalBlockTest extends ApiTestCase {
 				'action' => 'globalblock', 'target' => $target, 'reason' => 'test',
 				'expiry' => '20200505060708', 'alsolocal' => '1', 'localblocksemail' => '1',
 				'localblockstalk' => '1', 'localanononly' => IPUtils::isIPAddress( $target ) ? '1' : '',
-				'allow-account-creation' => 1, 'local-allow-account-creation' => 1
+				'allow-account-creation' => 1, 'local-allow-account-creation' => 1,
+				'block-email' => 1,
 			],
 			// The user needs to have the sysop and steward groups to locally block while performing a global block.
 			null, $this->getTestUser( [ 'steward', 'sysop' ] )->getAuthority()
@@ -248,6 +254,7 @@ class ApiGlobalBlockTest extends ApiTestCase {
 			$actualBlock->gb_create_account,
 			'The block was not correctly updated by the API call.'
 		);
+		$this->assertSame( '1', $actualBlock->gb_block_email );
 		// Check that autoblocking has not been enabled, as it was not requested.
 		$this->assertSame( '0', $actualBlock->gb_enable_autoblock );
 		// Verify that there is an active local block on the target

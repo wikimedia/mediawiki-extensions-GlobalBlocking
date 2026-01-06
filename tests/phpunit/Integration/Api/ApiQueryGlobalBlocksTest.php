@@ -73,7 +73,10 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 		$this->assertSameSize( $expectedBlockTargets, $result['query']['globalblocks'] );
 		foreach ( $result['query']['globalblocks'] as $block ) {
 			$this->assertArrayEquals(
-				[ 'address', 'anononly', 'account-creation-disabled', 'autoblocking-enabled', 'automatic' ],
+				[
+					'address', 'anononly', 'account-creation-disabled', 'block-email',
+					'autoblocking-enabled', 'automatic',
+				],
 				array_keys( $block ), false, false,
 				'The properties returned by the API were not as expected'
 			);
@@ -84,6 +87,11 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 			$this->assertSame(
 				$expectedBlockTargets[$block['address']]['anon-only'], $block['anononly'],
 				'Anon only flag is not the expected value'
+			);
+			$this->assertSame(
+				$expectedBlockTargets[$block['address']]['block-email'],
+				$block['block-email'],
+				'Block email flag is not the expected value'
 			);
 			$this->assertSame(
 				$expectedBlockTargets[$block['address']]['account-creation-disabled'],
@@ -115,10 +123,12 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 					'127.0.0.1' => [
 						'anon-only' => true, 'account-creation-disabled' => true,
 						'enable-autoblock' => false, 'automatic' => false,
+						'block-email' => false,
 					],
 					'127.0.0.0/24' => [
 						'anon-only' => false, 'account-creation-disabled' => true,
 						'enable-autoblock' => false, 'automatic' => false,
+						'block-email' => false,
 					],
 				],
 			],
@@ -128,6 +138,7 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 					'127.0.0.1' => [
 						'anon-only' => true, 'account-creation-disabled' => true,
 						'enable-autoblock' => false, 'automatic' => false,
+						'block-email' => false,
 					],
 				],
 			],
@@ -137,6 +148,7 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 					'127.0.0.0/24' => [
 						'anon-only' => false, 'account-creation-disabled' => true,
 						'enable-autoblock' => false, 'automatic' => false,
+						'block-email' => false,
 					],
 				],
 			],
@@ -146,6 +158,7 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 					'2000:ABCD:ABCD:A:0:0:0:0/108' => [
 						'anon-only' => false, 'account-creation-disabled' => false,
 						'enable-autoblock' => false, 'automatic' => false,
+						'block-email' => false,
 					],
 				],
 			],
@@ -209,6 +222,7 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 				'reason' => 'test1', 'rangeend' => '127.0.0.255', 'rangestart' => '127.0.0.0',
 				'account-creation-disabled' => true, 'anononly' => false,
 				'autoblocking-enabled' => false, 'automatic' => false,
+				'block-email' => false,
 			],
 			$result['query']['globalblocks'][0],
 			false, true, 'The returned global block entry was not as expected.'
@@ -239,7 +253,7 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 				[
 					'id' => 1, 'target' => '127.0.0.0/24', 'rangeend' => '127.0.0.255', 'rangestart' => '127.0.0.0',
 					'account-creation-disabled' => true, 'anononly' => false, 'autoblocking-enabled' => false,
-					'automatic' => false,
+					'automatic' => false, 'block-email' => false,
 				],
 			],
 			'IPv6' => [
@@ -248,7 +262,7 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 					'id' => 3, 'target' => '2000:ABCD:ABCD:A:0:0:0:0/108',
 					'rangeend' => '2000:ABCD:ABCD:A:0:0:F:FFFF', 'rangestart' => '2000:ABCD:ABCD:A:0:0:0:0',
 					'account-creation-disabled' => false, 'anononly' => false, 'autoblocking-enabled' => false,
-					'automatic' => false,
+					'automatic' => false, 'block-email' => false,
 				],
 			],
 			'IPv4 autoblock' => [
@@ -258,6 +272,7 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 				[
 					'id' => '8', 'anononly' => false, 'autoblocking-enabled' => false,
 					'account-creation-disabled' => true, 'automatic' => true,
+					'block-email' => false,
 				],
 			],
 		];
@@ -274,7 +289,7 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 		$this->assertArrayEquals(
 			[
 				'address' => '127.0.0.0/24', 'account-creation-disabled' => true, 'anononly' => false,
-				'autoblocking-enabled' => false, 'automatic' => false,
+				'autoblocking-enabled' => false, 'automatic' => false, 'block-email' => false,
 			],
 			$result['query']['globalblocks'][0],
 			false, true, 'The returned global block entry was not as expected.'
@@ -293,6 +308,7 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 			[
 				'account-creation-disabled' => true, 'anononly' => false,
 				'autoblocking-enabled' => false, 'automatic' => true,
+				'block-email' => false,
 			],
 			$result['query']['globalblocks'][0],
 			false, true,
@@ -354,6 +370,29 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 
 	public function testExecuteWithTargetsParamWithNonExistingUsername() {
 		$this->testExecuteWithTargetsParam( 'NonExistingUsername', 1, [] );
+	}
+
+	public function testExecuteWithTargetsParamOfBlockedUsernameForTargetProp() {
+		[ $result ] = $this->doApiRequest( [
+			'action' => 'query', 'list' => 'globalblocks',
+			'bgtargets' => self::$testTarget->getName(), 'bgprop' => 'target',
+		] );
+		$this->assertArrayHasKey( 'query', $result );
+		$this->assertArrayHasKey( 'globalblocks', $result['query'] );
+		$this->assertArrayEquals(
+			[ [
+				'target' => self::$testTarget->getName(),
+				'anononly' => false,
+				'account-creation-disabled' => true,
+				'block-email' => true,
+				'autoblocking-enabled' => true,
+				'automatic' => false,
+			] ],
+			$result['query']['globalblocks'],
+			false,
+			true,
+			'Returned globalblocks were not as expected'
+		);
 	}
 
 	public function testExecuteWithAddressesParamWithInvalidUser() {
@@ -428,7 +467,7 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 		$testUser = $this->getMutableTestUser()->getUserIdentity();
 		$userBlockStatus = $globalBlockManager->block(
 			$testUser->getName(), 'test5', '20240705060708', $testPerformer,
-			[ 'enable-autoblock' ]
+			[ 'enable-autoblock', 'block-email' ]
 		);
 		$this->assertStatusGood( $userBlockStatus );
 		$userBlockId = $userBlockStatus->getValue()['id'];

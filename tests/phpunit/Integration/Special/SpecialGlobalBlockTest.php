@@ -79,7 +79,7 @@ class SpecialGlobalBlockTest extends FormSpecialPageTestCase {
 				[ 'anon-only' ],
 				[
 					'anononly' => 1, 'createAccount' => 1, 'enableAutoblock' => 0,
-					'reason' => 'test', 'expiry' => 'indefinite',
+					'reason' => 'test', 'expiry' => 'indefinite', 'blockEmail' => 0,
 				],
 			],
 			'Existing block allows account creation' => [
@@ -87,7 +87,15 @@ class SpecialGlobalBlockTest extends FormSpecialPageTestCase {
 				[ 'allow-account-creation' ],
 				[
 					'anononly' => 0, 'createAccount' => 0, 'enableAutoblock' => 0,
-					'reason' => 'test', 'expiry' => 'indefinite',
+					'reason' => 'test', 'expiry' => 'indefinite', 'blockEmail' => 0,
+				],
+			],
+			'Existing block disables email access' => [
+				'127.0.0.1',
+				[ 'block-email' ],
+				[
+					'anononly' => 0, 'createAccount' => 1, 'enableAutoblock' => 0,
+					'reason' => 'test', 'expiry' => 'indefinite', 'blockEmail' => 1,
 				],
 			],
 			'Existing block with no options provided' => [
@@ -95,7 +103,7 @@ class SpecialGlobalBlockTest extends FormSpecialPageTestCase {
 				[],
 				[
 					'anononly' => 0, 'createAccount' => 1, 'enableAutoblock' => 0,
-					'reason' => 'test', 'expiry' => 'indefinite',
+					'reason' => 'test', 'expiry' => 'indefinite', 'blockEmail' => 0,
 				],
 			],
 		];
@@ -107,7 +115,7 @@ class SpecialGlobalBlockTest extends FormSpecialPageTestCase {
 			[ 'enable-autoblock' ],
 			[
 				'anononly' => 0, 'createAccount' => 1, 'enableAutoblock' => 1,
-				'reason' => 'test', 'expiry' => 'indefinite',
+				'reason' => 'test', 'expiry' => 'indefinite', 'blockEmail' => 0,
 			]
 		);
 	}
@@ -118,7 +126,7 @@ class SpecialGlobalBlockTest extends FormSpecialPageTestCase {
 			[],
 			[
 				'anononly' => 0, 'createAccount' => 1, 'enableAutoblock' => 0,
-				'reason' => 'test', 'expiry' => 'indefinite',
+				'reason' => 'test', 'expiry' => 'indefinite', 'blockEmail' => 0,
 			]
 		);
 	}
@@ -169,6 +177,8 @@ class SpecialGlobalBlockTest extends FormSpecialPageTestCase {
 		$this->assertStringContainsString( '(globalblocking-block-expiry', $html );
 		$this->assertStringContainsString( '(globalblocking-block-reason', $html );
 		$this->assertStringContainsString( '(globalblocking-ipbanononly', $html );
+		$this->assertStringContainsString( '(globalblocking-block-disable-account-creation', $html );
+		$this->assertStringContainsString( '(globalblocking-block-block-email', $html );
 		$this->assertStringContainsString( '(globalblocking-block-submit', $html );
 		// The also local checkboxes should not be present unless the user has the 'block' right on the local wiki
 		$this->assertStringNotContainsString( '(globalblocking-also-local', $html );
@@ -186,6 +196,8 @@ class SpecialGlobalBlockTest extends FormSpecialPageTestCase {
 		$this->assertStringContainsString( '(globalblocking-block-expiry', $html );
 		$this->assertStringContainsString( '(globalblocking-block-reason', $html );
 		$this->assertStringContainsString( '(globalblocking-ipbanononly', $html );
+		$this->assertStringContainsString( '(globalblocking-block-disable-account-creation', $html );
+		$this->assertStringContainsString( '(globalblocking-block-block-email', $html );
 		$this->assertStringContainsString( '(globalblocking-block-submit', $html );
 		// The also local checkboxes should be present as the user has 'block' right on the local wiki
 		$this->assertStringContainsString( '(globalblocking-also-local', $html );
@@ -287,6 +299,7 @@ class SpecialGlobalBlockTest extends FormSpecialPageTestCase {
 		$this->assertTrue( (bool)$actualGlobalBlock->gb_create_account );
 		$this->assertTrue( (bool)$actualGlobalBlock->gb_anon_only );
 		$this->assertFalse( (bool)$actualGlobalBlock->gb_enable_autoblock );
+		$this->assertFalse( (bool)$actualGlobalBlock->gb_block_email );
 	}
 
 	public function testSubmitForIPTargetWhenModifyingBlock() {
@@ -327,6 +340,7 @@ class SpecialGlobalBlockTest extends FormSpecialPageTestCase {
 		$this->assertFalse( (bool)$actualGlobalBlock->gb_create_account );
 		$this->assertFalse( (bool)$actualGlobalBlock->gb_anon_only );
 		$this->assertFalse( (bool)$actualGlobalBlock->gb_enable_autoblock );
+		$this->assertFalse( (bool)$actualGlobalBlock->gb_block_email );
 		$this->assertSame( '20210406060708', $this->getDb()->decodeExpiry( $actualGlobalBlock->gb_expiry ) );
 	}
 
@@ -341,6 +355,7 @@ class SpecialGlobalBlockTest extends FormSpecialPageTestCase {
 				'wpAddress' => $testTarget->getName(), 'wpExpiry' => 'indefinite',
 				'wpReason' => 'other', 'wpReason-other' => 'Test reason for account block',
 				'wpAlsoLocal' => 1, 'wpAutoBlock' => 1, 'wpEditToken' => $testPerformer->getEditToken(),
+				'wpBlockEmail' => 1,
 			],
 			true,
 			RequestContext::getMain()->getRequest()->getSession()
@@ -362,6 +377,7 @@ class SpecialGlobalBlockTest extends FormSpecialPageTestCase {
 		$this->assertFalse( (bool)$actualGlobalBlock->gb_create_account );
 		$this->assertFalse( (bool)$actualGlobalBlock->gb_anon_only );
 		$this->assertTrue( (bool)$actualGlobalBlock->gb_enable_autoblock );
+		$this->assertTrue( (bool)$actualGlobalBlock->gb_block_email );
 		// Verify that the local block settings are as expected.
 		$actualLocalBlock = $this->getServiceContainer()->getDatabaseBlockStore()->newFromTarget( $testTarget );
 		$this->assertNotNull( $actualLocalBlock );

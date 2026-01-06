@@ -139,6 +139,7 @@ class SpecialMassGlobalBlockTest extends SpecialPageTestBase {
 		$this->assertStringContainsString( '(globalblocking-block-reason', $html );
 		$this->assertStringContainsString( '(globalblocking-ipbanononly', $html );
 		$this->assertStringContainsString( '(globalblocking-block-disable-account-creation', $html );
+		$this->assertStringContainsString( '(globalblocking-block-block-email', $html );
 		$this->assertStringContainsString( '(globalblocking-block-enable-autoblock', $html );
 		$this->assertStringContainsString( '(globalblocking-mass-block-bot', $html );
 		if ( $viewerHasSysopGroup ) {
@@ -345,7 +346,7 @@ class SpecialMassGlobalBlockTest extends SpecialPageTestBase {
 		[ $fauxRequest, $performer ] = $this->getFauxRequestForMassBlockSubmission( [
 			'wpActionTarget' => [ $testTargetUsername, '1.2.3.4', '1.2.4.0/24' ], 'wpAction' => 'block',
 			'wpAnonOnly' => 1, 'wpAutoBlock' => 1, 'wpExpiry' => '1 day', 'wpReason-other' => 'test',
-			'wpReason' => 'Testing',
+			'wpReason' => 'Testing', 'wpBlockEmail' => 1,
 		] );
 		// Execute the special page.
 		[ $html ] = $this->executeSpecialPage( '', $fauxRequest, null, $performer );
@@ -359,14 +360,14 @@ class SpecialMassGlobalBlockTest extends SpecialPageTestBase {
 		$this->newSelectQueryBuilder()
 			->select( [
 				'gb_id', 'gb_address', 'gb_enable_autoblock', 'gb_create_account',
-				'gb_anon_only', 'gb_expiry', 'gb_reason',
+				'gb_anon_only', 'gb_block_email', 'gb_expiry', 'gb_reason'
 			] )
 			->from( 'globalblocks' )
 			->caller( __METHOD__ )
 			->assertResultSet( [
-				[ '1', $testTargetUsername, '1', '0', '0', '20240507070809', 'Testing: test' ],
-				[ '2', '1.2.3.4', '0', '0', '1', '20240507070809', 'Testing: test' ],
-				[ '3', '1.2.4.0/24', '0', '0', '1', '20240507070809', 'Testing: test' ],
+				[ '1', $testTargetUsername, '1', '0', '0', '1', '20240507070809', 'Testing: test' ],
+				[ '2', '1.2.3.4', '0', '0', '1', '1', '20240507070809', 'Testing: test' ],
+				[ '3', '1.2.4.0/24', '0', '0', '1', '1', '20240507070809', 'Testing: test' ],
 			] );
 	}
 
@@ -440,6 +441,7 @@ class SpecialMassGlobalBlockTest extends SpecialPageTestBase {
 		$this->assertFalse( $localBlock->appliesToUsertalk() );
 		$this->assertFalse( $localBlock->isEmailBlocked() );
 		$this->assertFalse( $localBlock->isCreateAccountBlocked() );
+		$this->assertFalse( $localBlock->isEmailBlocked() );
 		// Check that the local block was marked as a bot action
 		$this->newSelectQueryBuilder()
 			->select( 'rc_bot' )

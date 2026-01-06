@@ -148,6 +148,9 @@ class GlobalBlockLogFormatter extends LogFormatter {
 			) {
 				$flags[] = $this->msg( 'globalblocking-block-flag-autoblock-disabled' )->text();
 			}
+			if ( in_array( 'block-email', $params[5] ) ) {
+				$flags[] = $this->msg( 'globalblocking-block-flag-email-blocked' )->text();
+			}
 			// Only display the flags if there are any set.
 			if ( count( $flags ) ) {
 				$params[5] = $this->msg(

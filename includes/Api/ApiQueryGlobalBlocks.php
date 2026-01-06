@@ -83,7 +83,11 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 		// Add the fields dependent on whether a given prop was requested
 		$this->addFieldsIf( 'gb_id', $fld_id );
 		$this->addFieldsIf(
-			[ 'gb_address', 'gb_anon_only', 'gb_create_account', 'gb_autoblock_parent_id', 'gb_enable_autoblock' ],
+			[
+				'gb_address', 'gb_anon_only', 'gb_create_account',
+				'gb_block_email', 'gb_autoblock_parent_id',
+				'gb_enable_autoblock',
+			],
 			$fld_target
 		);
 		$this->addFieldsIf( [ 'gb_by_central_id', 'gb_by_wiki' ], $fld_by );
@@ -213,6 +217,7 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 				}
 				$block['anononly'] = (bool)$row->gb_anon_only;
 				$block['account-creation-disabled'] = (bool)$row->gb_create_account;
+				$block['block-email'] = (bool)$row->gb_block_email;
 				$block['autoblocking-enabled'] = (bool)$row->gb_enable_autoblock;
 				$block['automatic'] = (bool)$row->gb_autoblock_parent_id;
 			}

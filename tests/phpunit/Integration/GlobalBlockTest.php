@@ -213,6 +213,31 @@ class GlobalBlockTest extends MediaWikiIntegrationTestCase {
 		];
 	}
 
+	/** @dataProvider provideEmailBlocked */
+	public function testAppliesToRightForSendEmail( bool $emailBlocked ) {
+		$row = $this->getGlobalBlockRowForTarget( '6.7.8.9', self::$globallyBlockedUser );
+		$row->gb_block_email = (int)$emailBlocked;
+		$globalBlock = $this->getGlobalBlockObject( $row );
+
+		$this->assertSame( $emailBlocked, $globalBlock->appliesToRight( 'sendemail' ) );
+	}
+
+	/** @dataProvider provideEmailBlocked */
+	public function testIsEmailBlocked( bool $emailBlocked ) {
+		$row = $this->getGlobalBlockRowForTarget( '6.7.8.9', self::$globallyBlockedUser );
+		$row->gb_block_email = (int)$emailBlocked;
+		$globalBlock = $this->getGlobalBlockObject( $row );
+
+		$this->assertSame( $emailBlocked, $globalBlock->isEmailBlocked() );
+	}
+
+	public static function provideEmailBlocked(): array {
+		return [
+			'Account creation is disabled' => [ true ],
+			'Account creation is not disabled' => [ false ],
+		];
+	}
+
 	/** @dataProvider provideIsAutoblocking */
 	public function testIsAutoblocking( $isAutoblocking ) {
 		$row = $this->getGlobalBlockRowForTarget( '6.7.8.9', self::$globallyBlockedUser );

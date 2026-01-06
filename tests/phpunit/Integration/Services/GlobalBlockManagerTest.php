@@ -63,6 +63,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 		if ( $block ) {
 			$blockOptions['anon-only'] = $block->gb_anon_only;
 			$blockOptions['allow-account-creation'] = (string)intval( !$block->gb_create_account );
+			$blockOptions['block-email'] = $block->gb_block_email;
 			$blockOptions['enable-autoblock'] = $block->gb_enable_autoblock;
 			$blockOptions['reason'] = $block->gb_reason;
 			$blockOptions['expiry'] = ( $block->gb_expiry === 'infinity' )
@@ -180,6 +181,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 			$this->assertSame( $data[ 'expiry' ], $actual[ 'expiry' ] );
 			$this->assertGlobalBlockOptionApplied( $data, 'anon-only', '1', '0', $actual );
 			$this->assertGlobalBlockOptionApplied( $data, 'allow-account-creation', '1', '0', $actual );
+			$this->assertGlobalBlockOptionApplied( $data, 'block-email', '1', '0', $actual );
 			$this->assertGlobalBlockOptionApplied( $data, 'enable-autoblock', '1', '0', $actual );
 			// Assert that a log entry was added to the 'logging' table for the block
 			$this->assertThatLogWasAdded(
@@ -207,6 +209,15 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'reason' => 'Test block',
 					'expiry' => 'infinity',
 					'options' => [ 'anon-only', 'allow-account-creation' ],
+				],
+				'expected' => [ 'expectedLogAction' => 'gblock' ]
+			],
+			'good with email blocked' => [
+				'data' => [
+					'target' => '1.2.3.4',
+					'reason' => 'Test block',
+					'expiry' => 'infinity',
+					'options' => [ 'block-email' ],
 				],
 				'expected' => [ 'expectedLogAction' => 'gblock' ]
 			],
@@ -343,6 +354,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 			$this->assertSame( $data['reason'], $actual['reason'] );
 			$this->assertSame( $data['expiry'], $actual['expiry'] );
 			$this->assertSame( 0, (int)$actual['anon-only'] );
+			$this->assertGlobalBlockOptionApplied( $data, 'block-email', '1', '0', $actual );
 			$this->assertGlobalBlockOptionApplied( $data, 'allow-account-creation', '1', '0', $actual );
 			$this->assertGlobalBlockOptionApplied( $data, 'enable-autoblock', '1', '0', $actual );
 			// Assert that a log entry was added to the 'logging' table for the block
@@ -393,6 +405,14 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 					'reason' => 'Test block',
 					'expiry' => 'infinity',
 					'options' => [ 'enable-autoblock' ],
+				],
+				'expectedError' => '',
+			],
+			'good with email blocked' => [
+				'data' => [
+					'reason' => 'Test block',
+					'expiry' => 'infinity',
+					'options' => [ 'block-email' ],
 				],
 				'expectedError' => '',
 			],
@@ -1050,6 +1070,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 				'allow-account-creation' => '0', 'enable-autoblock' => '0', 'parentBlockId' => $parentBlockId,
 				'expiry' => '2021-03-03T22:00:00Z', 'timestamp' => '2021-03-02T22:00:00Z',
 				'blocker' => [ 'byCentralId' => $performer->getId(), 'byWiki' => WikiMap::getCurrentWikiId() ],
+				'block-email' => '0',
 			],
 			$this->getGlobalBlock( '#' . $firstAutoblockId ),
 			false,
@@ -1073,6 +1094,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 				'allow-account-creation' => '0', 'enable-autoblock' => '0', 'parentBlockId' => $parentBlockId,
 				'expiry' => '2021-03-03T22:00:00Z', 'timestamp' => '2021-03-02T22:00:00Z',
 				'blocker' => [ 'byCentralId' => $performer->getId(), 'byWiki' => WikiMap::getCurrentWikiId() ],
+				'block-email' => '0',
 			],
 			$this->getGlobalBlock( '#' . $firstAutoblockId ),
 			false,
@@ -1090,6 +1112,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 				'allow-account-creation' => '0', 'enable-autoblock' => '0', 'parentBlockId' => $parentBlockId,
 				'expiry' => '2021-03-04T12:00:00Z', 'timestamp' => '2021-03-03T12:00:00Z',
 				'blocker' => [ 'byCentralId' => $performer->getId(), 'byWiki' => WikiMap::getCurrentWikiId() ],
+				'block-email' => '0',
 			],
 			$this->getGlobalBlock( '#' . $firstAutoblockId ),
 			false,

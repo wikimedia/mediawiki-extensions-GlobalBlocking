@@ -35,6 +35,7 @@ class GloballyBlock extends Maintenance {
 		$this->addOption( 'unblock', 'If the targets should be unblocked instead of blocked' );
 		$this->addOption( 'expiry', 'Expiry of the global blocks', false, true );
 		$this->addOption( 'allow-createaccount', 'Set the blocks to allow account creation' );
+		$this->addOption( 'block-email', 'If the blocks prevent the use of Special:EmailUser' );
 		$this->addOption(
 			'disable-hardblock',
 			"Don't block logged in accounts from a globally blocked IP address (will still block temporary accounts)"
@@ -73,6 +74,10 @@ class GloballyBlock extends Maintenance {
 
 		if ( $this->hasOption( 'allow-createaccount' ) ) {
 			$options[] = 'allow-account-creation';
+		}
+
+		if ( $this->hasOption( 'block-email' ) ) {
+			$options[] = 'block-email';
 		}
 
 		$unblock = $this->hasOption( 'unblock' );

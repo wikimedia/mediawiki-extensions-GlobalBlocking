@@ -14,6 +14,7 @@
 	"apihelp-globalblock-param-reason": "The reason for blocking/unblocking.",
 	"apihelp-globalblock-param-anononly": "Specify this if the block should only affect logged-out users globally.",
 	"apihelp-globalblock-param-allow-account-creation": "Specify this if the global block should not prevent account creation.",
+	"apihelp-globalblock-param-block-email": "Specify this if the global block should prevent the user from sending email.",
 	"apihelp-globalblock-param-enable-autoblock": "Specify this if the global block should trigger global autoblocks.",
 	"apihelp-globalblock-param-modify": "Specify this if the existing block on the target should be modified",
 	"apihelp-globalblock-example-1": "Block 192.0.2.1 indefinitely with reason \"Cross-wiki abuse\"",

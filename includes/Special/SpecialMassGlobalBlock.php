@@ -192,6 +192,13 @@ class SpecialMassGlobalBlock extends SpecialPage {
 				'default' => true,
 				'hide-if' => [ '!==', 'Action', 'block' ],
 			],
+			'BlockEmail' => [
+				'type' => 'check',
+				'id' => 'mw-globalblocking-mass-block-block-email',
+				'label-message' => 'globalblocking-block-block-email',
+				'default' => false,
+				'hide-if' => [ '!==', 'Action', 'block' ],
+			],
 			'AutoBlock' => [
 				'type' => 'check',
 				'label-message' => [
@@ -496,6 +503,10 @@ class SpecialMassGlobalBlock extends SpecialPage {
 
 				if ( !$request->getCheck( 'wpCreateAccount' ) ) {
 					$options[] = 'allow-account-creation';
+				}
+
+				if ( $request->getCheck( 'wpBlockEmail' ) ) {
+					$options[] = 'block-email';
 				}
 
 				if ( $request->getCheck( 'wpAutoBlock' ) && $targetData['targetCentralId'] !== 0 ) {

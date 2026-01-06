@@ -109,6 +109,19 @@ class GlobalBlockLogFormatterTest extends LogFormatterTestCase {
 					'api' => [ 'expiry' => 'infinite', 'flags' => [ 'allow-account-creation' ] ],
 				],
 			],
+			'Global block on account with non-infinite expiry and email access disabled' => [
+				'row' => [
+					'type' => 'gblblock', 'action' => 'gblock', 'user_text' => 'Sysop',
+					'title' => 'Test-globally-blocked', 'namespace' => NS_USER,
+					'params' => [ '5::expiry' => '20260504020201', '6::flags' => [ 'block-email' ] ],
+				],
+				'extra' => [
+					'text' => 'Sysop globally blocked Test-globally-blocked with an ' .
+						'expiration time of 02:02, 4 May 2026 (account creation disabled, ' .
+						'autoblock disabled, email disabled)',
+					'api' => [ 'expiry' => '20260504020201', 'flags' => [ 'block-email' ] ],
+				],
+			],
 			'Legacy log for global block on IP range with non-infinite expiry' => [
 				'row' => [
 					'type' => 'gblblock', 'action' => 'gblock', 'user_text' => 'Sysop',

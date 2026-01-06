@@ -69,7 +69,7 @@ class GlobalBlockManager {
 	 *    Required: target (string), targetForDisplay (string), targetCentralId (int), rangeStart (string),
 	 *       rangeEnd (string), byCentralId (int), byWiki (string), reason (string), timestamp (any valid timestamp),
 	 *       expiry (any valid timestamp or infinity), anonOnly (bool), allowAccountCreation (bool),
-	 *       enableAutoblock (bool)
+	 *       enableAutoblock (bool), blockEmail (bool)
 	 *    Optional: parentBlockId (int, default 0), existingBlockId (int, default 0)
 	 * @return GlobalBlockStatus
 	 */
@@ -84,6 +84,7 @@ class GlobalBlockManager {
 			'gb_timestamp' => $dbw->timestamp( $data['timestamp'] ),
 			'gb_anon_only' => $data['anonOnly'],
 			'gb_create_account' => !$data['allowAccountCreation'],
+			'gb_block_email' => $data['blockEmail'],
 			'gb_expiry' => $dbw->encodeExpiry( $data['expiry'] ),
 			'gb_range_start' => $data['rangeStart'],
 			'gb_range_end' => $data['rangeEnd'],
@@ -210,6 +211,7 @@ class GlobalBlockManager {
 	 *   - 'allow-account-creation': If set, the block will allow account creation. Otherwise,
 	 *       the block will prevent account creation.
 	 *   - 'enable-autoblock': If set, the block will cause autoblocks.
+	 *   - 'block-email': If set, the block will prevent the use of Special:EmailUser.
 	 * @param array|null $localOptions An array with local block options to pass through to
 	 *   BlockUser, or null to skip local blocking
 	 * @return GlobalBlockStatus A status object, with errors if the block failed.
@@ -242,6 +244,7 @@ class GlobalBlockManager {
 		$anonOnly = in_array( 'anon-only', $options );
 		$allowAccountCreation = in_array( 'allow-account-creation', $options );
 		$enableAutoblock = in_array( 'enable-autoblock', $options );
+		$blockEmail = in_array( 'block-email', $options );
 
 		// As we are inserting a block and therefore will be using a primary DB connection,
 		// we can purge expired blocks from the primary DB.
@@ -310,6 +313,7 @@ class GlobalBlockManager {
 			'expiry' => $expiry,
 			'anonOnly' => $anonOnly,
 			'allowAccountCreation' => $allowAccountCreation,
+			'blockEmail' => $blockEmail,
 			'enableAutoblock' => $enableAutoblock,
 			'existingBlockId' => $existingGlobalBlockId,
 		], $data ) );
@@ -337,6 +341,9 @@ class GlobalBlockManager {
 		}
 		if ( $enableAutoblock ) {
 			$flags[] = 'enable-autoblock';
+		}
+		if ( $blockEmail ) {
+			$flags[] = 'block-email';
 		}
 
 		// The 4th parameter is the target as plaintext used for GENDER support and is added by the log formatter.
@@ -513,6 +520,8 @@ class GlobalBlockManager {
 			// Global autoblocks should target logged-in users, like local autoblocks do.
 			'anonOnly' => false,
 			'allowAccountCreation' => !$parentBlock->gb_create_account,
+			// Like local autoblocks, global autoblocks should not prevent email access
+			'blockEmail' => false,
 			// Global autoblocks should not trigger new autoblocks
 			'enableAutoblock' => false,
 			'parentBlockId' => $parentBlock->gb_id,

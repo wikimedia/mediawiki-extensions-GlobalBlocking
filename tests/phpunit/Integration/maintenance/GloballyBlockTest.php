@@ -43,7 +43,10 @@ class GloballyBlockTest extends MaintenanceBaseTestCase {
 	}
 
 	/** @dataProvider provideExecuteForBlock */
-	public function testExecuteForBlock( $target, $options, $shouldBeAnonOnly, $shouldAllowAccountCreation ) {
+	public function testExecuteForBlock(
+		string $target, array $options, bool $shouldBeAnonOnly, bool $shouldAllowAccountCreation,
+		bool $shouldBlockEmail
+	) {
 		// Run the maintenance script with the $options and $target user
 		$this->maintenance->setArg( 'file', $this->getFileWithContent( $target ) );
 		foreach ( $options as $name => $value ) {
@@ -60,15 +63,26 @@ class GloballyBlockTest extends MaintenanceBaseTestCase {
 		$this->assertInstanceOf( GlobalBlock::class, $block );
 		$this->assertSame( !$shouldBeAnonOnly, $block->isHardblock() );
 		$this->assertSame( !$shouldAllowAccountCreation, $block->isCreateAccountBlocked() );
+		$this->assertSame( $shouldBlockEmail, $block->isEmailBlocked() );
 		// Return the block to allow other tests to perform further assertions.
 		return $block;
 	}
 
 	public static function provideExecuteForBlock() {
 		return [
-			'Blocking an IP range' => [ '1.2.3.4/24', [], false, false ],
+			'Blocking an IP range' => [
+				'target' => '1.2.3.4/24',
+				'options' => [],
+				'shouldBeAnonOnly' => false,
+				'shouldAllowAccountCreation' => false,
+				'shouldBlockEmail' => false,
+			],
 			'Blocking an IP address with hard block disabled and account creation enabled' => [
-				'1.2.3.4', [ 'disable-hardblock' => 1, 'allow-createaccount' => 1 ], true, true,
+				'target' => '1.2.3.4',
+				'options' => [ 'disable-hardblock' => 1, 'allow-createaccount' => 1 ],
+				'shouldBeAnonOnly' => true,
+				'shouldAllowAccountCreation' => true,
+				'shouldBlockEmail' => false,
 			],
 		];
 	}
@@ -80,8 +94,11 @@ class GloballyBlockTest extends MaintenanceBaseTestCase {
 		// Run the maintenance script
 		$block = $this->testExecuteForBlock(
 			$targetUser,
-			[ 'performer' => $testPerformer->getName(), 'expiry' => '1 week', 'reason' => 'abc', 'reblock' => 1 ],
-			false, false
+			[
+				'performer' => $testPerformer->getName(), 'expiry' => '1 week',
+				'reason' => 'abc', 'reblock' => 1, 'block-email' => true,
+			],
+			false, false, true
 		);
 		$this->assertTrue( $testPerformer->equals( $block->getBlocker() ) );
 		$this->assertSame( '20240513070809', $block->getExpiry() );

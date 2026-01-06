@@ -143,6 +143,11 @@ class GlobalBlockingGlobalBlockDetailsRenderer {
 			$options[] = $context->msg( 'globalblocking-block-flag-account-creation-disabled' )->escaped();
 		}
 
+		// If the block is set to block email access, then indicate this in the options list.
+		if ( $row->gb_block_email ) {
+			$options[] = $context->msg( 'globalblocking-block-flag-email-blocked' )->escaped();
+		}
+
 		// If the block is an account block and does not enable global autoblocking, then indicate this.
 		if ( !$row->gb_enable_autoblock && $row->gb_target_central_id ) {
 			$options[] = $context->msg( 'globalblocking-block-flag-autoblock-disabled' )->escaped();

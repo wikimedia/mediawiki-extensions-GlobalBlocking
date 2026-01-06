@@ -40,6 +40,7 @@ class GlobalBlock extends AbstractBlock {
 				'anonOnly' => $row->gb_anon_only,
 				'expiry' => $row->gb_expiry,
 				'createAccount' => $row->gb_create_account,
+				'blockEmail' => $row->gb_block_email,
 				'xff' => $xff,
 			]
 		);
@@ -53,6 +54,7 @@ class GlobalBlock extends AbstractBlock {
 	 *   - expiry: (string) Database timestamp of expiration of the block or 'infinity'
 	 *   - anonOnly: (bool) Only disallow anonymous actions
 	 *   - createAccount: (bool) Disallow creation of new accounts
+	 *   - blockEmail: (bool) Whether access to Special:EmailUser is blocked
 	 *   - byCentralId: (int) Central ID of the blocker
 	 *   - byWiki: (string) Wiki ID of the wiki where the blocker performed the block
 	 *   - xff: (bool) Did this block match the current user because one of their XFF IPs were blocked?
@@ -73,6 +75,7 @@ class GlobalBlock extends AbstractBlock {
 		$this->xff = (bool)$options['xff'];
 		$this->isAutoblocking = (bool)$options['enableAutoblock'];
 		$this->isCreateAccountBlocked( (bool)$options['createAccount'] );
+		$this->isEmailBlocked( (bool)$options['blockEmail'] );
 		$this->setGlobalBlocker( $options );
 	}
 
