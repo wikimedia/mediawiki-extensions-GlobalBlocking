@@ -10,7 +10,8 @@
 			"Yonidebest",
 			"אור שפירא",
 			"לואיקה",
-			"ערן"
+			"ערן",
+			"Neriah"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|אפשרות]] ל[[Special:GlobalBlockList|חסימה גלובלית בין אתרי הוויקי]] של חשבונות, כתובות IP וטווחי IP",
@@ -144,7 +145,7 @@
 	"globalblocking-blockedtext-ip-range": "הטווח החסום הוא $1.",
 	"globalblocking-blockedtext-proxy": "כתובת השרת המתווך החסום הייתה $1.",
 	"globalblocking-blockedtext-username": "שם המשתמש שלך הוא $1.",
-	"globalblocking-autoblocker": "נחסמת באופן אוטומטי וגלובלי משום שכתובת ה־IP שלך שימושה לאחרונה את [[User:$1|$1]].\nהסיבה שניתנה לחסימת $1 היא \"$2\"",
+	"globalblocking-autoblocker": "נחסמת באופן אוטומטי וגלובלי משום שכתובת ה־IP שלך שימשה לאחרונה את [[User:$1|$1]].\nהסיבה שניתנה לחסימת $1 היא \"$2\"",
 	"globalblocking-autoblocker-hidden-block": "נחסמת באופן אוטומטי וגלובלי משום שכתובת ה־IP שלך שימה לאחרונה משתמש שנחסם בחסימה עם המזהה #$1.",
 	"globalblocking-centralauth-admin-info-globalblock": "חשבון חסום גלובלית:",
 	"globalblocking-global-autoblock-id": "חסימה אוטומטית גלובלית מס' $1"
