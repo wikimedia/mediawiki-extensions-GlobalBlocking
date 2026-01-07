@@ -10,11 +10,11 @@
 	},
 	"globalblocking-apierror-badip": "Adres IP $1 jest nieprawidłowy",
 	"apihelp-globalblock-summary": "Zablokuj lub odblokuj użytkownika globalnie.",
-	"apihelp-globalblock-param-target": "Docelowy adres IP.",
+	"apihelp-globalblock-param-target": "Docelowy adres IP lub nazwa użytkownika. Nie można używać tego parametru wraz z <var>$1id</var>.",
 	"apihelp-globalblock-param-expiry": "Jeżeli określone, zablokuje lub zablokuje ponownie użytkownika. Określa, jak długo blokada będzie trwała, np. \"5 months\" lub \"2 weeks\". Jeżeli ustawisz na \"infinite\" lub \"indefinite\", blokada nigdy nie wygaśnie.",
 	"apihelp-globalblock-param-unblock": "Jeżeli określony, odblokuje użytkownika.",
 	"apihelp-globalblock-param-reason": "Powód zablokowania/odblokowania.",
-	"apihelp-globalblock-param-anononly": "Określ go, jeżeli blokada ma dotyczyć tylko użytkowników niezalogowanych.",
+	"apihelp-globalblock-param-anononly": "Określ go, jeżeli blokada ma dotyczyć tylko użytkowników niezalogowanych globalnie.",
 	"apihelp-globalblock-param-modify": "Określ go, jeżeli mają zostać wprowadzone zmiany w istniejącej blokadzie na ten sam cel.",
 	"apihelp-globalblock-example-1": "Zablokuj na zawsze 192.0.2.1 z powodem \"Cross-wiki abuse\"",
 	"apihelp-query+globalblocks-summary": "Lista wszystkich globalnie zablokowanych adresów IP.",
@@ -22,11 +22,11 @@
 	"apihelp-query+globalblocks-param-end": "Znacznik czasu, na którym zakończyć wyliczanie.",
 	"apihelp-query+globalblocks-param-ids": "Lista identyfikatorów blokad, które wyświetlić, oddzielana znakami pionowej kreski.",
 	"apihelp-query+globalblocks-param-addresses": "Lista adresów IP oddzielanych pionowymi kreskami, które wyszukać.",
-	"apihelp-query+globalblocks-param-ip": "Pobierz listę wszystkich blokad zastosowanych dla tego adresu IP lub zakresu CIDR, zawierającą także odpowiadające blokady zakresów. Nie może być używany równocześnie z $1addresses. Zakresy CIDR szersze niż /16 nie są akceptowane.",
+	"apihelp-query+globalblocks-param-ip": "Pobierz listę wszystkich blokad zastosowanych dla tego adresu IP lub zakresu CIDR, zawierającą także odpowiadające blokady zakresów. Nie może być używany równocześnie z $1addresses ani $1targets. Zakresy CIDR szersze niż /16 nie są akceptowane.",
 	"apihelp-query+globalblocks-param-limit": "Maksymalna liczba blokad do wylistowania.",
 	"apihelp-query+globalblocks-param-prop": "Jakie właściwości uzyskać.",
 	"apihelp-query+globalblocks-example-1": "Lista wszystkich globalnych blokad",
 	"apihelp-query+globalblocks-example-2": "Lista globalnych blokad mających zastosowanie dla adresu IP 192.0.2.18",
-	"apihelp-globalblock-param-alsolocal": "Zablokuj IP również lokalnie",
-	"apihelp-globalblock-param-localblockstalk": "Cofnij lokalnie dostęp do strony dyskusji"
+	"apihelp-globalblock-param-alsolocal": "Zablokuj użytkownika również lokalnie. Nie można używać tego parametru wraz z <var>$1id</var>.",
+	"apihelp-globalblock-param-localblockstalk": "Cofnij lokalnie możliwość edytowania strony dyskusji. Nie można używać tego parametru wraz z <var>$1id</var>."
 }
