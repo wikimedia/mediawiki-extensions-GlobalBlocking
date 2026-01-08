@@ -16,6 +16,7 @@
 	"apihelp-globalblock-param-reason": "Motivo para bloquear/desbloquear.",
 	"apihelp-globalblock-param-anononly": "Especificar isto se o bloqueo debería afectar globalmente só aos usuarios non conectados.",
 	"apihelp-globalblock-param-allow-account-creation": "Especificar isto se o bloqueo global non debería impedir a creación de contas.",
+	"apihelp-globalblock-param-block-email": "Especificar isto se o bloqueo global debería impedir que o usuario envíe correos electrónicos.",
 	"apihelp-globalblock-param-enable-autoblock": "Especificar isto se o bloqueo global debería activar bloqueos automáticos globais.",
 	"apihelp-globalblock-param-modify": "Especificar isto se o bloqueo existente no obxectivo debe modificarse",
 	"apihelp-globalblock-example-1": "Bloquear 192.0.2.1 de forma indefinida co motivo \"Cross-wiki abuse\"",

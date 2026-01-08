@@ -19,6 +19,7 @@
 	"apihelp-globalblock-param-reason": "Der Grund für das Sperren/Entsperren.",
 	"apihelp-globalblock-param-anononly": "Gib dies an, falls die Sperre nur global abgemeldete Benutzer betreffen soll.",
 	"apihelp-globalblock-param-allow-account-creation": "Gibt an, wenn die globale Sperre die Kontoerstellung nicht verhindern soll.",
+	"apihelp-globalblock-param-block-email": "Diese Option sollte ausgewählt werden, wenn die globale Sperre den Benutzer daran hindern soll, E-Mails zu versenden.",
 	"apihelp-globalblock-param-enable-autoblock": "Angeben, wenn die globale Sperre globale automatische Sperren auslösen soll.",
 	"apihelp-globalblock-param-modify": "Gib dies an, falls die vorhandene Sperre des Ziels verändert werden soll.",
 	"apihelp-globalblock-example-1": "Sperre 192.0.2.1 auf unbestimmte Zeit mit dem Grund „Cross-Wiki-Vandalismus”",

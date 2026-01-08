@@ -16,6 +16,7 @@
 	"apihelp-globalblock-param-reason": "封鎖/解封的原因。",
 	"apihelp-globalblock-param-anononly": "若封鎖僅對全域未登入的使用者有效，請指定此。",
 	"apihelp-globalblock-param-allow-account-creation": "如果不要讓全域封鎖阻止建立帳號，請指定此項目。",
+	"apihelp-globalblock-param-block-email": "若全域封鎖應禁止使用者傳送電子郵件，請指定此項。",
 	"apihelp-globalblock-param-enable-autoblock": "如果進行全域封鎖時應觸發全域自動封鎖，請指定此項目。",
 	"apihelp-globalblock-param-modify": "若應對在目標的現有封鎖做出修改，請指定此。",
 	"apihelp-globalblock-example-1": "無限期封鎖 192.0.2.1，原因「跨 wiki 濫用」",
