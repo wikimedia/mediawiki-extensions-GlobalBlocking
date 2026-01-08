@@ -4,12 +4,13 @@
 			"Ayaibrahim",
 			"Lokal Profil",
 			"Psl85",
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Stefan2255"
 		]
 	},
 	"globalblocking-apierror-badip": "IP-adressen $1 är inte giltig",
 	"apihelp-globalblock-summary": "Blockera eller avblockera en användare globalt.",
-	"apihelp-globalblock-param-target": "Mål-IP-adressen.",
+	"apihelp-globalblock-param-target": "Mål-IP-adressen eller användarnamnet. Kan inte användas tillsammans med <var>$1id</var>.",
 	"apihelp-globalblock-param-expiry": "Om angivet, blockeras eller återblockeras användaren. Avgör hur länge blockeringen pågår, t.ex. \"5 months\" eller \"2 weeks\". Om satt till \"infinite\" eller \"indefinite\" löper blockeringen aldrig ut.",
 	"apihelp-globalblock-param-unblock": "Om angivet, avblockeras användaren.",
 	"apihelp-globalblock-param-reason": "Motivationen för blockering/avblockering.",
@@ -21,13 +22,13 @@
 	"apihelp-query+globalblocks-param-end": "Tidsstämpeln att sluta räkna upp vid.",
 	"apihelp-query+globalblocks-param-ids": "Lodsträcksseparerad lista av blockerings-ID att lista.",
 	"apihelp-query+globalblocks-param-addresses": "Lodsträcksseparerad lista av IP-adresser att söka efter.",
-	"apihelp-query+globalblocks-param-ip": "Hämta alla blockeringar som gäller för denna IP-address eller CIDR-intervall, inklusive intervallblockeringar. Kan inte användas tillsammans med $1users. CIDR-intervaller bredare än /16 accepteras inte.",
+	"apihelp-query+globalblocks-param-ip": "Hämta alla blockeringar som gäller för denna IP-address eller CIDR-intervall, inklusive intervallblockeringar. Kan inte användas tillsammans med $1-adresser eller $1-mål. CIDR-intervaller bredare än /16 accepteras inte.",
 	"apihelp-query+globalblocks-param-limit": "Det maximala antalet blockeringar att lista.",
 	"apihelp-query+globalblocks-param-prop": "Vilka egenskaper att hämta.",
 	"apihelp-query+globalblocks-example-1": "Lista alla globala blockerinar",
 	"apihelp-query+globalblocks-example-2": "Lista globala blockeringar som gäller för IP-adress 192.0.2.18",
-	"apihelp-globalblock-param-alsolocal": "Blockera även IP-adressen lokalt",
-	"apihelp-globalblock-param-localblockstalk": "Återkalla åtkomst till samtalssidan lokalt",
-	"apihelp-globalblock-param-localblocksemail": "Återkalla e-poståtkomst lokalt",
-	"apihelp-globalblock-param-localanononly": "Ange detta ifall blockeringen enbart ska påverka utloggade användare lokalt."
+	"apihelp-globalblock-param-alsolocal": "Blockera även användaren lokalt. Kan inte användas tillsammans med <var>$1id</var> .",
+	"apihelp-globalblock-param-localblockstalk": "Återkalla lokal åtkomst till diskussionssidan. Kan inte användas tillsammans med <var>$1id</var>.",
+	"apihelp-globalblock-param-localblocksemail": "Återkalla e-poståtkomst lokalt. Kan inte användas tillsammans med <var>$1id</var>.",
+	"apihelp-globalblock-param-localanononly": "Ange detta om blockeringen endast ska påverka utloggade användare lokalt. Kan inte användas tillsammans med <var>$1id</var>."
 }
