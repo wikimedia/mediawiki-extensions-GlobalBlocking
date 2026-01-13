@@ -127,6 +127,7 @@
 	"globalblocking-block-flag-anon-only": "utilisateurs anonymes seulement",
 	"globalblocking-block-flag-account-creation-disabled": "création de compte bloquée",
 	"globalblocking-block-flag-autoblock-disabled": "blocage automatique désactivé",
+	"globalblocking-block-flag-email-blocked": "Courriel désactivé",
 	"globalblocking-loglink": "L’utilisateur $1 est bloqué globalement ([[{{#Special:GlobalBlockList}}/$1|détails]]).",
 	"globalblocking-contribs-notice": "Cet utilisateur est actuellement bloqué de manière globale.\nL’entrée de journal du blocage global est fournie ci-dessous à titre d’information :",
 	"globalblocking-contribs-mock-log-line": "$1 : $3 a globalement {{GENDER:$2|}}bloqué {{GENDER:$4|}}$5 avec une date d'expiration au $6 $7 $8 $9",
