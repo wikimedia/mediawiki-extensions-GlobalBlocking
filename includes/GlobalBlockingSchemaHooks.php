@@ -27,21 +27,6 @@ class GlobalBlockingSchemaHooks implements LoadExtensionSchemaUpdatesHook {
 			"$base/sql/$type/tables-generated-global_block_whitelist.sql"
 		);
 
-		// 1.39
-		$updater->addExtensionUpdateOnVirtualDomain( [
-			'virtual-globalblocking', 'modifyTableIfFieldNotExists',
-			'globalblocks', 'gb_target_central_id',
-			"$base/sql/$type/patch-globalblocks-timestamps.sql", true,
-			'gb_expiry'
-		] );
-		if ( $type === 'postgres' ) {
-			$updater->modifyExtensionField(
-				'global_block_whitelist',
-				'gbw_expiry',
-				"$base/sql/$type/patch-global_block_whitelist-timestamps.sql"
-			);
-		}
-
 		// 1.42
 		$updater->addExtensionUpdateOnVirtualDomain( [
 			'virtual-globalblocking', 'addField', 'globalblocks', 'gb_target_central_id',
