@@ -33,8 +33,9 @@ class GlobalBlockingSchemaHooks implements LoadExtensionSchemaUpdatesHook {
 			"$base/sql/$type/patch-add-gb_target_central_id.sql", true,
 		] );
 		$updater->addExtensionUpdateOnVirtualDomain( [
-			'virtual-globalblocking', 'modifyField', 'globalblocks', 'gb_by',
-			"$base/sql/$type/patch-modify-gb_by-default.sql", true,
+			'virtual-globalblocking', 'modifyTableIfFieldNotExists', 'globalblocks',
+			'gb_create_account', "$base/sql/$type/patch-modify-gb_by-default.sql", true,
+			'gb_by',
 		] );
 
 		// 1.43
@@ -111,6 +112,10 @@ class GlobalBlockingSchemaHooks implements LoadExtensionSchemaUpdatesHook {
 		$updater->addExtensionUpdateOnVirtualDomain( [
 			'virtual-globalblocking', 'addField', 'globalblocks', 'gb_block_email',
 			"$base/sql/$type/patch-globalblocks-add-gb_block_email.sql", true,
+		] );
+		$updater->addExtensionUpdateOnVirtualDomain( [
+			'virtual-globalblocking', 'modifyField', 'globalblocks', 'gb_address',
+			"$base/sql/$type/patch-globalblocks-modify-gb_address-type.sql", true,
 		] );
 	}
 }

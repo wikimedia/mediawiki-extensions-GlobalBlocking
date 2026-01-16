@@ -4,7 +4,7 @@
 -- See https://www.mediawiki.org/wiki/Manual:Schema_changes
 CREATE TABLE /*_*/globalblocks (
   gb_id INT UNSIGNED AUTO_INCREMENT NOT NULL,
-  gb_address VARCHAR(255) NOT NULL,
+  gb_address VARBINARY(255) NOT NULL,
   gb_target_central_id INT UNSIGNED DEFAULT 0 NOT NULL,
   gb_by_central_id INT UNSIGNED NOT NULL,
   gb_by_wiki VARBINARY(255) NOT NULL,

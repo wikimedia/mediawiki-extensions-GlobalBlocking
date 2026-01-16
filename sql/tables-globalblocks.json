@@ -12,7 +12,7 @@
 			{
 				"name": "gb_address",
 				"comment": "The target of the global block. An IP address, IP range, or account.",
-				"type": "string",
+				"type": "binary",
 				"options": { "length": 255, "notnull": true }
 			},
 			{
