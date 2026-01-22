@@ -17,6 +17,7 @@
 	"apihelp-globalblock-param-reason": "سبب المنع/رفع المنع.",
 	"apihelp-globalblock-param-anononly": "حدد هذا إذا كان الحظر سيؤثر فقط على المستخدمين المسجلين عالميًا.",
 	"apihelp-globalblock-param-allow-account-creation": "حدد هذا إذا كان الحظر العالمي لا ينبغي أن يمنع إنشاء الحساب.",
+	"apihelp-globalblock-param-block-email": "حدد هذا إذا كان الحظر العام يجب أن يمنع المستخدم من إرسال البريد الإلكتروني.",
 	"apihelp-globalblock-param-enable-autoblock": "حدد هذا إذا كان يجب على الكتلة العالمية أن تؤدي إلى تشغيل عمليات الحظر التلقائية العالمية.",
 	"apihelp-globalblock-param-modify": "حدد هذا إذا كان يجب تعديل المنع الموجود على الهدف",
 	"apihelp-globalblock-example-1": "امنع 192.0.2.1 لمدة غير محددة بسبب «سوء المعاملة على ويكيات متعددة»",
