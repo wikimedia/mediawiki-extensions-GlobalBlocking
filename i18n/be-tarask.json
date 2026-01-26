@@ -6,12 +6,13 @@
 			"Macofe",
 			"Red Winged Duck",
 			"Renessaince",
+			"Ucukor",
 			"Vlad5250",
 			"Wizardist",
 			"Zedlik"
 		]
 	},
-	"globalblocking-desc": "[[Special:GlobalBlock|Дазваляе]] блякаваньне уліковых запісаў, IP-адрасоў і дыяпазонаў у [[Special:GlobalBlockList|некалькіх вікі]]",
+	"globalblocking-desc": "[[Special:GlobalBlock|Дазваляе]] блякаваньне рахункаў, IP-адрасоў і дыяпазонаў у [[Special:GlobalBlockList|некалькіх вікі]]",
 	"globalblocking-block": "Глябальнае блякаваньне IP-адрасу",
 	"globalblocking-block-intro": "Вы можаце выкарыстоўваць гэту старонку для блякаваньня ІР-адрасу на ўсіх вікі.",
 	"globalblocking-block-reason": "Прычына:",
