@@ -5,10 +5,14 @@
 		]
 	},
 	"globalblocking-list": "عالمي طور تي بندش وڌل آئپي پتن جي فھرست",
+	"globalblocking-logpage": "عالمي بندش لاگ",
+	"globalblocking-contribs-log": "عالمي بندش لاگ",
+	"globalblocking-contribs-block": "عالمي بندش",
 	"globalblocklist": "عالمي طور تي بندش وڌل آئپي پتن جي فھرست",
 	"right-globalblock-whitelist": "مقامي طور تي عالمي بندشن کي غير فعال ڪريو",
 	"action-globalblock-whitelist": "مقامي طور تي عالمي بندشن کي غير فعال ڪريو",
 	"right-globalblock-exempt": "عالمي آئپي بندشن کي باءِپاس ڪريو",
 	"action-globalblock-exempt": "عالمي آئپي بندشن کي باءِپاس ڪريو",
+	"log-action-filter-gblblock-gblock": "عالمي بندش",
 	"grant-globalblock": "عالمي طور تي ڪنھن واپرائيندڙ تي بندش وجهو يا ختم ڪريو."
 }
