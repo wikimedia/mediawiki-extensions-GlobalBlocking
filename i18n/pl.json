@@ -35,6 +35,7 @@
 	"globalblocking-target-with-block-ids": "Nazwa użytkownika, adres IP, zakres adresów IP lub identyfikator bloku:",
 	"globalblocking-ipbanononly": "Blokuj globalnie wyłącznie niezalogowanych użytkowników",
 	"globalblocking-block-disable-account-creation": "Globalnie zablokuj tworzenie kont",
+	"globalblocking-block-block-email": "Globalnie zablokuj użytkownikowi możliwość wysyłania maili (przez wiki)",
 	"globalblocking-block-enable-autoblock": "Automatycznie zablokuj globalnie {{PLURAL:$1|ostatni adres IP|ostatnie $1 adresy IP|ostatnie $1 adresów IP}} używane przez tego użytkownika oraz wszystkie kolejne adresy IP, z których będzie próbował edytować, na okres $2",
 	"globalblocking-block-target-invalid": "Wprowadzona nazwa użytkownika, adres IP lub zakres adresów IP ($1) są nieprawidłowe.",
 	"globalblocking-block-expiryinvalid": "Czas obowiązywania blokady jest nieprawidłowy.",
@@ -119,6 +120,7 @@
 	"globalblocking-block-flag-anon-only": "tylko anonimowi",
 	"globalblocking-block-flag-account-creation-disabled": "blokada tworzenia kont",
 	"globalblocking-block-flag-autoblock-disabled": "automatyczne blokowanie wyłączone",
+	"globalblocking-block-flag-email-blocked": "wysyłanie e-maili wyłączone",
 	"globalblocking-loglink": "Użytkownik $1 jest zablokowany globalnie ([[{{#Special:GlobalBlockList}}/$1|pełny opis]]).",
 	"globalblocking-contribs-notice": "Ten użytkownik jest obecnie globalnie zablokowany.\nWpis rejestru blokad globalnych jest pokazany poniżej.",
 	"globalblocking-contribs-mock-log-line": "$1: $3 {{GENDER:$2|zablokował|zablokowała|zablokował(a)}} {{GENDER:$4|$5}} na czas $6 $7 $8 $9",
@@ -176,5 +178,10 @@
 	"globalblocking-blockedtext-email-feature": "Nie możesz korzystać z funkcji „{{int:emailuser}}”, dopóki w [[Special:Preferences|preferencjach konta]] nie określono prawidłowego adresu e-mail i nie zablokowano Ci możliwości korzystania z tej możliwości.",
 	"globalblocking-blockedtext-ip-range": "Zablokowany zakres to $1 .",
 	"globalblocking-blockedtext-proxy": "Zablokowany adres proxy to $1.",
-	"globalblocking-blockedtext-username": "Twoja nazwa użytkownika to $1."
+	"globalblocking-blockedtext-username": "Twoja nazwa użytkownika to $1.",
+	"globalblocking-autoblocker": "Zablokowano Cię automatycznie, ponieważ Twój adres IP był ostatnio używany przez użytkownika „[[User:$1|$1]]”.\nPrzyczyna blokady konta „$1” to: „$2”",
+	"globalblocking-autoblocker-hidden-block": "Automatycznie zablokowany globalnie, ponieważ Twój adres IP został ostatnio użyty przez użytkownika zablokowanego przez blokadę o identyfikatorze #$1.",
+	"globalblocking-centralauth-admin-info-globalblock": "Zablokowano globalnie:",
+	"globalblocking-global-autoblock-id": "automatyczna blokada globalna nr $1",
+	"globalblocking-global-block-id": "Blokada globalna #$1"
 }
