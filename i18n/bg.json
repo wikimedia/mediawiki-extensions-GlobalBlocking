@@ -46,6 +46,7 @@
 	"globalblocking-list-addressblocks": "Скриване на отделни блокирания на IP адреси",
 	"globalblocking-list-rangeblocks": "Скриване на блокиранията по IP диапазон",
 	"globalblocking-list-userblocks": "Скриване на блокиранията на потребителски сметки",
+	"globalblocking-list-table-heading-reason": "Причина",
 	"globalblocking-list-noresults": "Няма намерени резултати по указаните параметри.",
 	"globalblocking-goto-block": "Глобално блокиране на IP-адрес",
 	"globalblocking-goto-unblock": "Премахване на глобално блокиране",
