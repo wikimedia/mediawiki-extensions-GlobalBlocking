@@ -88,6 +88,9 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 			public function shouldShowBlockLogExtract( UserIdentity $target ): bool {
 				return $this->shouldShowBlockLogExtractMockValue;
 			}
+
+			public function getPager( $targetUser ) {
+			}
 		};
 	}
 
