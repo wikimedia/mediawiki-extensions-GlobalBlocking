@@ -16,6 +16,7 @@
 	"apihelp-globalblock-param-reason": "De reden voor het blokkeren/deblokkeren.",
 	"apihelp-globalblock-param-anononly": "Geef dit op als de blokkering alleen globaal uitgelogde gebruikers moet betreffen.",
 	"apihelp-globalblock-param-allow-account-creation": "Geef dit op als de globale blokkade het aanmaken van een account niet mag verhinderen.",
+	"apihelp-globalblock-param-block-email": "Geef dit op als de globale blokkade moet voorkomen dat de gebruiker e-mails kan verzenden.",
 	"apihelp-globalblock-param-enable-autoblock": "Geef dit op als de globale blokkade de automatische globale blokkades moet activeren.",
 	"apihelp-globalblock-param-modify": "Geef dit op als de bestaande blokkering van het doel moet worden gewijzigd.",
 	"apihelp-globalblock-example-1": "192.0.2.1 voor onbepaalde tijd blokkeren met als reden “Cross-wiki abuse”",
