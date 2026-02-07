@@ -243,7 +243,8 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 		$this->setUserLang( 'qqx' );
 		// Call the method under test
 		$tools = [];
-		$specialPage = new SpecialPage();
+		$specialPage = new class() extends SpecialPage {
+		};
 		RequestContext::getMain()->setTitle( Title::makeTitle( NS_SPECIAL, 'Contributions/1.2.3.4' ) );
 		$specialPage->setContext( RequestContext::getMain() );
 		$userObject = $this->getServiceContainer()->getUserFactory()->newFromName( $target, UserFactory::RIGOR_NONE );
