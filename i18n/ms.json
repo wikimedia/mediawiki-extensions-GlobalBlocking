@@ -26,7 +26,7 @@
 	"globalblocking-ipbanononly": "Sekat pengguna tanpa nama sahaja",
 	"globalblocking-block-expiryinvalid": "Tarikh tamat yang anda nyatakan tidak sah.",
 	"globalblocking-block-submit": "Sekat alamat IP ini di semua wiki",
-	"globalblocking-modify-submit": "Ubah penyekatan global ini",
+	"globalblocking-modify-submit": "Ubah penyekatan sejagat ini",
 	"globalblocking-block-success": "Alamat IP $1 telah disekat di semua projek wiki.",
 	"globalblocking-modify-success": "Sekatan sejagat pada $1 telah berjaya diubah",
 	"globalblocking-block-alreadyblocked": "Alamat IP $1 telah pun disekat di semua wiki.\nAnda boleh melihat sekatan ini di [[Special:GlobalBlockList|senarai sekatan sejagat]], atau ubah tetapan untuk sekatan ini dengan menghantar semula borang ini.",
