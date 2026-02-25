@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Dream Star.cn",
+			"Ouclie"
+		]
+	},
+	"globalblocking-block-reason": "因：",
+	"globalblocking-block-legend": "眾境禁一簿",
+	"globalblocking-block-submit": "眾境禁此簿",
+	"globalblocking-list": "列眾境禁IP址与簿",
+	"globalblocking-search-legend": "尋眾境禁",
+	"globalblocking-logpage": "誌眾境禁",
+	"globalblocking-logentry-block": "$1已{{GENDER:$2|眾境禁}}{{GENDER:$4|$3}}，屆時$5$6",
+	"globalblocking-logentry-modify": "$1已{{GENDER:$2|易}}{{GENDER:$4|$3}}眾境禁之设，屆時$5$6",
+	"globalblocking-contribs-notice": "此簿現眾境禁矣。\n近誌眾境禁之項如下示之：",
+	"globalblocking-contribs-mock-log-line": "$1：$3已{{GENDER:$2|眾境禁}}{{GENDER:$4|$5}}，屆時$6$7$8$9",
+	"globalblocking-contribs-log": "誌眾境禁",
+	"globalblocklist": "列眾境禁之簿",
+	"globalblocking-blockedtext-on-user": "子簿舉典皆禁。",
+	"globalblocking-blockedtext-username": "子名$1。"
+}
