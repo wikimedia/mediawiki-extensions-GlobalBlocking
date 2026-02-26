@@ -6,6 +6,7 @@
 		]
 	},
 	"globalblocking-block-reason": "Motivo:",
+	"globalblocking-block-expiry": "Fino-datoː",
 	"globalblocking-block-expiry-selector-other": "Altra tempo:",
 	"globalblocking-block-alreadyblocked": "Ca IP-adreso $1 ja esas blokusata omnaloke.\nVu povas lektar pri la blokuso en la [[Special:GlobalBlockList|listo pri globala blokusi]],\no modifikar l'ajusti en l'existanta blokuso, tra nova sendo di ca pagino.",
 	"globalblocking-also-local-talk": "Impedar ke uzero editez lua lokala diskuto-pagino",
