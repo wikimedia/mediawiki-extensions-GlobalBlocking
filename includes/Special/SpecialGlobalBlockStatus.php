@@ -13,6 +13,7 @@ use MediaWiki\Extension\GlobalBlocking\Widget\HTMLUserTextFieldAllowingGlobalBlo
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\SpecialPage\FormSpecialPage;
 use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\Status\Status;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserNameUtils;
@@ -136,7 +137,7 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 		}
 
 		if ( !$status->isGood() ) {
-			return $status;
+			return Status::wrap( $status );
 		}
 
 		return $this->showSuccess( $status->getValue()['id'] );
