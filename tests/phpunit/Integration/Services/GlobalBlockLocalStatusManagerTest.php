@@ -73,8 +73,7 @@ class GlobalBlockLocalStatusManagerTest extends MediaWikiIntegrationTestCase {
 	public function testLocallyDisableBlockOnNonexistentBlock( $target, $expectedErrorMessageKey ) {
 		$status = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockLocalStatusManager()
 			->locallyDisableBlock( $target, 'test', $this->getTestSysop()->getUser() );
-		$this->assertStatusNotOK( $status, 'The returned status should be fatal.' );
-		$this->assertStatusMessage(
+		$this->assertStatusError(
 			$expectedErrorMessageKey, $status, 'The returned status did not indicate that no block existed.'
 		);
 	}
@@ -93,8 +92,7 @@ class GlobalBlockLocalStatusManagerTest extends MediaWikiIntegrationTestCase {
 			->locallyDisableBlock( '127.0.0.1', 'test', $testSysop );
 		$status = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockLocalStatusManager()
 			->locallyDisableBlock( '127.0.0.1', 'test', $testSysop );
-		$this->assertStatusNotOK( $status, 'The returned status should be fatal.' );
-		$this->assertStatusMessage(
+		$this->assertStatusError(
 			'globalblocking-whitelist-nochange', $status,
 			'The returned status did not indicate that the block was already locally disabled.'
 		);
@@ -161,8 +159,7 @@ class GlobalBlockLocalStatusManagerTest extends MediaWikiIntegrationTestCase {
 	public function testLocallyEnableBlockOnNonexistentBlock( $target, $expectedErrorMessageKey ) {
 		$status = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockLocalStatusManager()
 			->locallyEnableBlock( $target, 'test', $this->getTestSysop()->getUser() );
-		$this->assertStatusNotOK( $status, 'The returned status should be fatal.' );
-		$this->assertStatusMessage(
+		$this->assertStatusError(
 			$expectedErrorMessageKey, $status, 'The returned status did not indicate that no block existed.'
 		);
 	}
@@ -171,8 +168,7 @@ class GlobalBlockLocalStatusManagerTest extends MediaWikiIntegrationTestCase {
 		$testSysop = $this->getTestSysop()->getUser();
 		$status = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockLocalStatusManager()
 			->locallyEnableBlock( '127.0.0.1', 'test', $testSysop );
-		$this->assertStatusNotOK( $status, 'The returned status should be fatal.' );
-		$this->assertStatusMessage(
+		$this->assertStatusError(
 			'globalblocking-whitelist-nochange', $status,
 			'The returned status did not indicate that the block was already locally enabled.'
 		);

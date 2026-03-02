@@ -174,7 +174,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 			'GlobalBlockingGlobalBlockAudit hook was not called as expected'
 		);
 		if ( isset( $expected['expectedError'] ) ) {
-			$this->assertStatusMessage( $expected['expectedError'], $errors );
+			$this->assertStatusError( $expected['expectedError'], $errors );
 		} else {
 			$actual = $this->getGlobalBlock( $data[ 'target' ] );
 			$this->assertSame( $data[ 'reason' ], $actual[ 'reason' ] );
@@ -348,7 +348,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 			$data['options']
 		);
 		if ( $expectedError !== '' ) {
-			$this->assertStatusMessage( $expectedError, $status );
+			$this->assertStatusError( $expectedError, $status );
 		} else {
 			$actual = $this->getGlobalBlock( $testUser->getName() );
 			$this->assertSame( $data['reason'], $actual['reason'] );
@@ -779,7 +779,7 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 			$this->getMutableTestUser( 'steward' )->getUser()
 		);
 		if ( $expectedError !== '' ) {
-			$this->assertStatusMessage( $expectedError, $errors );
+			$this->assertStatusError( $expectedError, $errors );
 		} else {
 			$actual = $this->getGlobalBlock( $data[ 'target' ] );
 			$this->assertArrayEquals( [], $actual );

@@ -17,14 +17,13 @@ class GlobalBlockStatusTest extends MediaWikiUnitTestCase {
 		$this->assertTrue( $status->isGlobalBlockOK() );
 		$this->assertFalse( $status->isLocalBlockOK() );
 		$this->assertFalse( $status->hasLocalBlockError() );
-		$this->assertStatusOK( $status->getGlobalStatus() );
+		$this->assertStatusGood( $status->getGlobalStatus() );
 	}
 
 	public function testNewFatal() {
 		$status = GlobalBlockStatus::newFatal( 'some-message' );
 		$this->assertInstanceOf( GlobalBlockStatus::class, $status );
-		$this->assertStatusMessage( 'some-message', $status );
-		$this->assertStatusNotOK( $status );
+		$this->assertStatusError( 'some-message', $status );
 		$this->assertFalse( $status->isGlobalBlockOK() );
 		$this->assertFalse( $status->isLocalBlockOK() );
 		$this->assertFalse( $status->hasLocalBlockError() );
@@ -38,19 +37,19 @@ class GlobalBlockStatusTest extends MediaWikiUnitTestCase {
 		$this->assertTrue( $status->isGlobalBlockOK() );
 		$this->assertFalse( $status->isLocalBlockOK() );
 		$this->assertTrue( $status->hasLocalBlockError() );
-		$this->assertStatusMessage( 'some-message', $status );
+		$this->assertStatusError( 'some-message', $status );
 		$this->assertStatusValue( 'value', $status );
-		$this->assertStatusOK( $status->getGlobalStatus() );
+		$this->assertStatusGood( $status->getGlobalStatus() );
 	}
 
 	public function testWithLocalStatusGood() {
 		$status = GlobalBlockStatus::newGood( 'value' );
 		$status = $status->withLocalStatus( StatusValue::newGood( 'local-value' ) );
-		$this->assertStatusOK( $status );
+		$this->assertStatusGood( $status );
 		$this->assertTrue( $status->isGlobalBlockOK() );
 		$this->assertTrue( $status->isLocalBlockOK() );
 		$this->assertFalse( $status->hasLocalBlockError() );
 		$this->assertStatusValue( 'value', $status );
-		$this->assertStatusOK( $status->getGlobalStatus() );
+		$this->assertStatusGood( $status->getGlobalStatus() );
 	}
 }
