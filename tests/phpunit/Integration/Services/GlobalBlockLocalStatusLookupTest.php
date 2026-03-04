@@ -70,6 +70,25 @@ class GlobalBlockLocalStatusLookupTest extends MediaWikiIntegrationTestCase {
 		];
 	}
 
+	/** @dataProvider provideGetLocallyDisabledGlobalBlockIds */
+	public function testGetLocallyDisabledGlobalBlockIds( array $ids, array $expectedIds ): void {
+		$this->assertArrayEquals(
+			$expectedIds,
+			GlobalBlockingServices::wrap( $this->getServiceContainer() )
+				->getGlobalBlockLocalStatusLookup()
+				->getLocallyDisabledGlobalBlockIds( $ids )
+		);
+	}
+
+	public static function provideGetLocallyDisabledGlobalBlockIds(): array {
+		return [
+			'Empty input' => [ 'ids' => [], 'expectedIds' => [] ],
+			'No global block IDs are disabled' => [ 'ids' => [ 12345, 123456 ], 'expectedIds' => [] ],
+			'Some global block IDs are disabled' => [ 'ids' => [ 123, 12345, 123456 ], 'expectedIds' => [ 123 ] ],
+			'All global block IDs are disabled' => [ 'ids' => [ 123, 1234 ], 'expectedIds' => [ 123, 1234 ] ],
+		];
+	}
+
 	public function addDBDataOnce() {
 		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
 		// to be the local provider.

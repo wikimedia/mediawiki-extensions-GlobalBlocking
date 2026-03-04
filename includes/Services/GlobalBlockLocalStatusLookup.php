@@ -88,4 +88,29 @@ class GlobalBlockLocalStatusLookup {
 			return [ 'user' => (int)$row->gbw_by, 'reason' => $row->gbw_reason ];
 		}
 	}
+
+	/**
+	 * Returns a list of global block IDs that are disabled given a list of global block IDs to check
+	 * and a wiki to check on.
+	 *
+	 * @since 1.46
+	 * @param int[] $ids A list of global block IDs to check
+	 * @param string|false $wikiId The wiki where the local status should be checked,
+	 *   or false for the local wiki
+	 * @return int[] The list of global block IDs from $ids that are locally disabled
+	 */
+	public function getLocallyDisabledGlobalBlockIds( array $ids, string|false $wikiId = false ): array {
+		if ( count( $ids ) === 0 ) {
+			return [];
+		}
+
+		$locallyDisabledGlobalBlockIds = $this->dbProvider->getReplicaDatabase( $wikiId )
+			->newSelectQueryBuilder()
+			->select( 'gbw_id' )
+			->from( 'global_block_whitelist' )
+			->where( [ 'gbw_id' => $ids ] )
+			->caller( __METHOD__ )
+			->fetchFieldValues();
+		return array_map( 'intval', $locallyDisabledGlobalBlockIds );
+	}
 }

@@ -366,6 +366,80 @@ class GlobalBlockLookup {
 	}
 
 	/**
+	 * Gets global block rows that apply to the current wiki for the provided list of central IDs.
+	 * These central IDs should be attached to the associated local users on the wiki.
+	 *
+	 * Used to batch check if users are globally blocked on the wiki, for the purposes of displaying
+	 * this information on user lists to other users. This should not be used to check if the request user
+	 * is globally blocked. Use {@link self::getUserBlock} for that.
+	 *
+	 * @since 1.46
+	 * @stable to call
+	 * @param int[] $centralIds
+	 * @param int $flags Flags to control the behavior of the block lookup
+	 * @return GlobalBlock[] Global blocks affecting any of the provided central IDs.
+	 */
+	public function getGlobalBlocksForCentralIds( array $centralIds, int $flags = 0 ): array {
+		$targetConds = [];
+		foreach ( $centralIds as $centralId ) {
+			$conds = $this->getGlobalBlockLookupConditions( null, $centralId, $flags );
+			if ( $conds !== null ) {
+				$targetConds[] = $conds;
+			}
+		}
+		if ( count( $targetConds ) === 0 ) {
+			// No conditions means none of the central IDs are valid, which means
+			// none of them can be globally blocked
+			return [];
+		}
+
+		// Fetch all the global blocks targeting any of the central IDs
+		$dbr = $this->globalBlockingConnectionProvider->getReplicaGlobalBlockingDatabase();
+		$globalBlockRows = $dbr->newSelectQueryBuilder()
+			->select( self::selectFields() )
+			->from( 'globalblocks' )
+			->where( $dbr->orExpr( $targetConds ) )
+			->caller( __METHOD__ )
+			->fetchResultSet();
+		$globalBlockRows = $this->excludeLocallyDisabledGlobalBlockRows(
+			iterator_to_array( $globalBlockRows ), $flags
+		);
+		return $this->getGlobalBlockObjectsFromRows( $globalBlockRows );
+	}
+
+	/**
+	 * Given a list of rows from the globalblocks table, the method returns those which are not locally
+	 * disabled on this wiki. If the flags are set to skip this check, then the array is returned unmodified.
+	 *
+	 * @param stdClass[] $globalBlockRows
+	 * @param int $flags
+	 * @return stdClass[]
+	 */
+	private function excludeLocallyDisabledGlobalBlockRows( array $globalBlockRows, int $flags ): array {
+		if ( $flags & self::SKIP_LOCAL_DISABLE_CHECK ) {
+			return $globalBlockRows;
+		}
+		$locallyDisabledGlobalBlockIds = $this->globalBlockLocalStatusLookup->getLocallyDisabledGlobalBlockIds(
+			array_map( static fn ( $row ) => (int)$row->gb_id, $globalBlockRows )
+		);
+
+		return array_filter(
+			$globalBlockRows,
+			static fn ( $row ) => !in_array( (int)$row->gb_id, $locallyDisabledGlobalBlockIds, true )
+		);
+	}
+
+	/**
+	 * Given a list of globalblock table rows, return these represented as {@link GlobalBlock} objects.
+	 *
+	 * @param stdClass[] $rows
+	 * @return GlobalBlock[]
+	 */
+	private function getGlobalBlockObjectsFromRows( array $rows ): array {
+		return array_map( static fn ( $row ) => GlobalBlock::newFromRow( $row, false ), $rows );
+	}
+
+	/**
 	 * Get the SQL WHERE conditions that allow looking up all blocks from the `globalblocks` table.
 	 *
 	 * @param ?string $ip The IP address or range. If null, then no IP blocks will be checked.
