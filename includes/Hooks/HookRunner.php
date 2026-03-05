@@ -5,7 +5,11 @@ namespace MediaWiki\Extension\GlobalBlocking\Hooks;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlock;
 use MediaWiki\HookContainer\HookContainer;
 
-class HookRunner implements GlobalBlockingGetRetroactiveAutoblockIPsHook, GlobalBlockingGlobalBlockAuditHook {
+class HookRunner implements
+	GlobalBlockingGetRetroactiveAutoblockIPsHook,
+	GlobalBlockingGlobalBlockAuditHook,
+	GlobalBlockingGlobalUnblockAuditHook
+{
 
 	public function __construct( private readonly HookContainer $container ) {
 	}
@@ -22,6 +26,14 @@ class HookRunner implements GlobalBlockingGetRetroactiveAutoblockIPsHook, Global
 	public function onGlobalBlockingGlobalBlockAudit( GlobalBlock $globalBlock ) {
 		$this->container->run(
 			'GlobalBlockingGlobalBlockAudit',
+			[ $globalBlock ]
+		);
+	}
+
+	/** @inheritDoc */
+	public function onGlobalBlockingGlobalUnblockAudit( GlobalBlock $globalBlock ) {
+		$this->container->run(
+			'GlobalBlockingGlobalUnblockAudit',
 			[ $globalBlock ]
 		);
 	}

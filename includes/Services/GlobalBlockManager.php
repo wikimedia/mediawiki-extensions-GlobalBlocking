@@ -591,6 +591,16 @@ class GlobalBlockManager {
 		}
 
 		$dbw = $this->globalBlockingConnectionProvider->getPrimaryGlobalBlockingDatabase();
+
+		// Load the full block row before deleting, so we can pass a GlobalBlock to the audit hook.
+		$blockRow = $dbw->newSelectQueryBuilder()
+			->select( GlobalBlockLookup::selectFields() )
+			->from( 'globalblocks' )
+			->where( [ 'gb_id' => $id ] )
+			->caller( __METHOD__ )
+			->fetchRow();
+		$globalBlock = GlobalBlock::newFromRow( $blockRow, false );
+
 		$dbw->newDeleteQueryBuilder()
 			->deleteFrom( 'globalblocks' )
 			->where( $dbw->expr( 'gb_id', '=', $id )->or( 'gb_autoblock_parent_id', '=', $id ) )
@@ -604,6 +614,8 @@ class GlobalBlockManager {
 		$logEntry->setRelations( [ 'gb_id' => $id ] );
 		$logId = $logEntry->insert();
 		$logEntry->publish( $logId );
+
+		$this->hookRunner->onGlobalBlockingGlobalUnblockAudit( $globalBlock );
 
 		return StatusValue::newGood();
 	}

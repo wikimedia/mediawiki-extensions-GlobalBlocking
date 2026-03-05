@@ -921,6 +921,49 @@ class GlobalBlockManagerTest extends MediaWikiIntegrationTestCase {
 			->assertFieldValue( $accountGlobalBlockId );
 	}
 
+	public function testUnblockFiresGlobalUnblockAuditHook() {
+		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )
+			->getGlobalBlockManager();
+		$testPerformer = $this->getMutableTestUser( 'steward' )->getUser();
+		$globalBlockManager->block( '1.2.3.4', 'Test block', 'infinity', $testPerformer, [ 'anon-only' ] );
+
+		$hookCalled = false;
+		$hookTarget = null;
+		$this->setTemporaryHook(
+			'GlobalBlockingGlobalUnblockAudit',
+			static function ( GlobalBlock $globalBlock ) use ( &$hookCalled, &$hookTarget ) {
+				$hookCalled = true;
+				$hookTarget = $globalBlock->getTargetName();
+			}
+		);
+
+		$globalBlockManager->unblock( '1.2.3.4', 'Test unblock', $testPerformer );
+
+		$this->assertTrue( $hookCalled, 'GlobalBlockingGlobalUnblockAudit hook was not called' );
+		$this->assertSame( '1.2.3.4', $hookTarget );
+	}
+
+	public function testUnblockDoesNotFireGlobalUnblockAuditHookOnFailure() {
+		$hookCalled = false;
+		$this->setTemporaryHook(
+			'GlobalBlockingGlobalUnblockAudit',
+			static function () use ( &$hookCalled ) {
+				$hookCalled = true;
+			}
+		);
+
+		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )
+			->getGlobalBlockManager();
+		// Attempt to unblock a target that is not blocked
+		$globalBlockManager->unblock(
+			'1.2.3.5',
+			'Test unblock',
+			$this->getMutableTestUser( 'steward' )->getUser()
+		);
+
+		$this->assertFalse( $hookCalled, 'GlobalBlockingGlobalUnblockAudit hook should not be called on failure' );
+	}
+
 	/** @dataProvider provideInvalidIPAddresses */
 	public function testAutoblockForInvalidIP( $invalidIP ) {
 		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager();
