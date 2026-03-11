@@ -7,7 +7,7 @@
 		]
 	},
 	"globalblocking-block-reason": "因：",
-	"globalblocking-block-reason-dropdown": "*常因\n**越維基發灌\n**越維基濫\n**毁文貌",
+	"globalblocking-block-reason-dropdown": "* 禁制事由常例\n** 越境濫發穢雜\n** 越境濫伸權界\n** 毁文貌",
 	"globalblocking-block-legend": "眾境禁一簿",
 	"globalblocking-block-submit": "眾境禁此簿",
 	"globalblocking-block-success": "'''$1'''眾境禁矣。",
