@@ -2,11 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Dream Star.cn",
-			"Ouclie"
+			"Ouclie",
+			"Davidzdh"
 		]
 	},
 	"globalblocking-block-reason": "因：",
-	"globalblocking-block-reason-dropdown": "*常因\n**越維基發灌\n**越維基濫\n**毁文貌",
+	"globalblocking-block-reason-dropdown": "* 禁制事由常例\n** 越境濫發穢雜\n** 越境濫伸權界\n** 毁文貌",
 	"globalblocking-block-legend": "眾境禁一簿",
 	"globalblocking-block-submit": "眾境禁此簿",
 	"globalblocking-block-success": "'''$1'''眾境禁矣。",
@@ -28,7 +29,7 @@
 	"globalblocklist": "列眾境禁之簿",
 	"action-globalblock": "增與除眾境禁",
 	"globalblocking-blockedtext-on-user": "子簿舉典皆禁。",
-	"globalblocking-blockedtext-autoblock-reason": "以其：<em>$1</em>",
+	"globalblocking-blockedtext-autoblock-reason": "以其：\n\n:<em>$1</em>。",
 	"globalblocking-blockedtext-autoblock-intro": "子IP址见自眾境禁矣，因另一簿用之，而其被$1禁矣。",
 	"globalblocking-blockedtext-username": "子名$1。",
 	"globalblocking-autoblocker": "子IP址见自眾境禁矣，因「[[User:$1|$1]]」用之。禁$1之因為「$2」"
