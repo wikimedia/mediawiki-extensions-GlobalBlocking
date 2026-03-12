@@ -147,7 +147,7 @@
 	"globalblocking-block-flag-email-blocked": "禁用电子邮件",
 	"globalblocking-loglink": "用户$1被全域封禁（[[{{#Special:GlobalBlockList}}/$1|详细信息]]）。",
 	"globalblocking-contribs-notice": "此用户目前已被全域封禁。以下提供全域封禁日志供参考：",
-	"globalblocking-contribs-mock-log-line": "$1：$3{{GENDER:$2|已全域封禁}}{{GENDER:$4|$5}}，到期时间为$6$7$8$9",
+	"globalblocking-contribs-mock-log-line": "$1：$3{{GENDER:$2|全域封禁了}}{{GENDER:$4|$5}}，到期时间为$6$7$8$9",
 	"globalblocking-showlog": "此用户曾被封禁。以下提供封禁日志供参考：",
 	"globalblocking-contribs-log": "全域封禁日志",
 	"globalblocking-contribs-block": "全域封禁",
