@@ -65,6 +65,7 @@
 	"globalblocking-whitelist-statuslabel": "په {{SITENAME}} کې ټوليز بنديز ناچارنول",
 	"globalblocking-whitelist-submit": "سيمه‌ييز دريځ بدلول",
 	"globalblocking-whitelist-whitelisted-target-is-id": "تاسو په {{SITENAME}} کې #$1 ټوليز بنديز ناچارن کړی دی.",
+	"globalblocking-whitelist-intro": "تاسو کولی شئ دا فورمه د ټوليز بنديز د ځايي دريځ سمولو لپاره وکاروئ.\nکه په دې ويکي کې يو ټوليز بنديز ناچارن شي؛ نو اغېزمن کارن به په نورمال ډول د سمون کولو جوگه شي.",
 	"globalblocking-logpage": "د ټوليز بنديز يادښت",
 	"globalblocking-block-flag-anon-only": "يوازې ورکنومي کارنان",
 	"globalblocking-block-flag-account-creation-disabled": "گڼون جوړول ناچارن‌شوي",
