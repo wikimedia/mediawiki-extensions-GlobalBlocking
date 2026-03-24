@@ -23,7 +23,7 @@
 	"globalblocking-block-expiryinvalid": "Įvestas galiojimo laikas neteisingas.",
 	"globalblocking-block-submit": "Visuotinai blokuoti šį IP adresą",
 	"globalblocking-modify-submit": "Keisti šį pasaulini blokavimą",
-	"globalblocking-block-success": "IP adresas $1 buvo užblokuotas visuose projektuose.",
+	"globalblocking-block-success": "'''$1''' buvo užblokuotas visuose viki projektuose.",
 	"globalblocking-modify-success": "Visuotinis $1 blokavimas pakeistas.",
 	"globalblocking-local-failed": "Užblokuoti IP adresą lokaliai nepavyko, nes nurodytas IP adresas jau yra užblokuotas šiame viki.",
 	"globalblocking-block-failure": "Bandant visuotinai blokuoti $1 įvyko klaida. Pabandykite dar kartą.",
