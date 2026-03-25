@@ -25,7 +25,7 @@
 	"globalblocking-block-success": "'''$1''' je blokiran na svim vikijima.",
 	"globalblocking-modify-success": "Globalna blokada na '''$1''' je promijenjena.",
 	"globalblocking-local-failed": "Lokalno blokiranje korisnika nije uspjelo jer je navedeni korisnik već blokiran na ovom vikiju.",
-	"globalblocking-block-failure": "Došlo je do greške prilikom pokušaja globalno blokirati $1. Pokušajte ponovno.",
+	"globalblocking-block-failure": "Došlo je do greške pri pokušaju globalnog blokiranja $1. Pokušajte ponovno.",
 	"globalblocking-block-alreadyblocked": "$1 je već globalno blokiran.\nMožete pogledati postojeću blokadu na [[Special:GlobalBlockList|listi globalnih blokiranja]],\nili pak promijeniti postavke postojeće blokade putem ponovnog slanja ovog obrasca.",
 	"globalblocking-bigrange": "Raspon koji ste naveli ($1) premašuje ograničenja.\nOgraničenje od $2 je raspon /$3.",
 	"globalblocking-also-local": "Također blokiraj navedenu IP-adresu lokalno na ovom vikiju",
@@ -111,5 +111,5 @@
 	"globalblocking-blockedtext-on-range": "Vaša IP adresa je u rasponu blokiranom na svim projektima.",
 	"globalblocking-blockedtext-on-proxy": "Jedan ili više proksi servera koje koristite su globalno blokirani",
 	"globalblocking-blockedtext-blocker-admin": "Možete kontaktirati $1 da razgovarate o blokadi.",
-	"globalblocking-blockedtext-email-feature": "Ne možete koristiti opciju \"{{int:emailuser}}\" ako niste naveli važeću imejl adresu u [[Special:Preferences|vašim postavkama]] i ako je vam zabranjeno koristiti je."
+	"globalblocking-blockedtext-email-feature": "Ne možete koristiti opciju \"{{int:emailuser}}\" ako niste naveli ispravnu e-adresu u [[Special:Preferences|postavkama]] i ako je vam zabranjeno koristiti je."
 }
