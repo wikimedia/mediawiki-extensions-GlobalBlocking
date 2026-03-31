@@ -43,7 +43,8 @@
 			"Peterxy12",
 			"Lakejason0",
 			"Ouclie",
-			"ShuQizhe"
+			"ShuQizhe",
+			"Srapoj"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|允许]][[Special:GlobalBlockList|在多个wiki中封禁]]账号、IP地址和IP段",
@@ -135,8 +136,8 @@
 	"globalblocking-logentry-modify-old-format": "$1{{GENDER:$2|更改了}}{{GENDER:$4|$3}}的全域封禁设置（$5）",
 	"globalblocking-logentry-modify": "$1{{GENDER:$2|更改了}}{{GENDER:$4|$3}}的全域封禁设置，到期时间为$5$6",
 	"globalblocking-logentry-unblock": "$1{{GENDER:$2|移除了}}{{GENDER:$4|$3}}的全域封禁",
-	"globalblocking-logentry-whitelist": "$1在{{GENDER:$4|$3}}本地{{GENDER:$2|禁用}}了全域封禁",
-	"globalblocking-logentry-dewhitelist": "$1在{{GENDER:$4|$3}}本地{{GENDER:$2|重新启用}}了全域封禁",
+	"globalblocking-logentry-whitelist": "$1在本地的{{GENDER:$4|$3}}已{{GENDER:$2|禁用}}全域封禁",
+	"globalblocking-logentry-dewhitelist": "$1在本地的{{GENDER:$4|$3}}已{{GENDER:$2|重新启用}}全域封禁",
 	"globalblocking-block-flag-anon-only": "仅匿名用户",
 	"globalblocking-block-flag-account-creation-disabled": "禁用账号创建",
 	"globalblocking-block-flag-autoblock-disabled": "禁用自动封禁",
