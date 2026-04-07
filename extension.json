@@ -312,6 +312,10 @@
 		"GlobalBlockingMassGlobalBlockMaxTargets": {
 			"description": "The maximum number of targets that can be globally blocked or unblocked in one submission of Special:MassGlobalBlock",
 			"value": 200
+		},
+		"GlobalBlockingWikisWhereGlobalBlocksDoNotApply": {
+			"description": "List of wiki IDs where the $wgApplyGlobalBlocks setting is not enabled or the GlobalBlocking extension is not installed. This is used to avoid implying a global block applies to a user on a wiki where global blocks are not enabled.",
+			"value": []
 		}
 	},
 	"ServiceWiringFiles": [
