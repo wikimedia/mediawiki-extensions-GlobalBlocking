@@ -3,7 +3,6 @@
 namespace MediaWiki\Extension\GlobalBlocking\Services;
 
 use MediaWiki\Block\AutoblockExemptionList;
-use MediaWiki\User\CentralId\CentralIdLookup;
 use Wikimedia\Rdbms\IConnectionProvider;
 
 /**
@@ -16,7 +15,6 @@ class GlobalBlockLocalStatusLookup {
 	public function __construct(
 		private readonly IConnectionProvider $dbProvider,
 		private readonly GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
-		private readonly CentralIdLookup $centralIdLookup,
 		private readonly AutoblockExemptionList $localAutoblockExemptionList,
 	) {
 	}
