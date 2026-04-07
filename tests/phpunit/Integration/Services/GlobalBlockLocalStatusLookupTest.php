@@ -51,6 +51,15 @@ class GlobalBlockLocalStatusLookupTest extends MediaWikiIntegrationTestCase {
 		];
 	}
 
+	public function testGetLocalStatusInfoWhenGlobalBlocksDoNotApply(): void {
+		$this->overrideConfigValue( 'ApplyGlobalBlocks', false );
+		$this->setUserLang( 'qqx' );
+		$this->testGetLocalStatusInfo(
+			12345,
+			[ 'user' => 0, 'reason' => '(globalblocking-all-global-blocks-disabled-locally)' ]
+		);
+	}
+
 	/** @dataProvider provideIsGlobalBlockLocallyDisabledForBlockApplication */
 	public function testIsGlobalBlockLocallyDisabledForBlockApplication( $id, $expectedReturnValue ) {
 		// Allow the MediaWiki message override for the local autoblocking exemption list to take effect.
@@ -87,6 +96,34 @@ class GlobalBlockLocalStatusLookupTest extends MediaWikiIntegrationTestCase {
 			'Some global block IDs are disabled' => [ 'ids' => [ 123, 12345, 123456 ], 'expectedIds' => [ 123 ] ],
 			'All global block IDs are disabled' => [ 'ids' => [ 123, 1234 ], 'expectedIds' => [ 123, 1234 ] ],
 		];
+	}
+
+	public function testGetLocallyDisabledGlobalBlockIdsWhenGlobalBlocksDoNotApply(): void {
+		$this->overrideConfigValue( 'ApplyGlobalBlocks', false );
+		$this->testGetLocallyDisabledGlobalBlockIds( [ 123, 1234 ], [ 123, 1234 ] );
+	}
+
+	public function testGetLocallyDisabledGlobalBlockIdsWhenNonLocalWikiDoesNotApplyGlobalBlocks(): void {
+		$this->overrideConfigValue(
+			'GlobalBlockingWikisWhereGlobalBlocksDoNotApply',
+			[ 'third-wiki' ]
+		);
+		$this->assertArrayEquals(
+			[ 123, 1234 ],
+			GlobalBlockingServices::wrap( $this->getServiceContainer() )
+				->getGlobalBlockLocalStatusLookup()
+				->getLocallyDisabledGlobalBlockIds( [ 123, 1234 ], 'third-wiki' )
+		);
+	}
+
+	public function testGetLocallyDisabledGlobalBlockIdsWhenAllWikisApplyGlobalBlocks(): void {
+		$this->overrideConfigValue( 'GlobalBlockingWikisWhereGlobalBlocksDoNotApply', [] );
+		$this->assertArrayEquals(
+			[],
+			GlobalBlockingServices::wrap( $this->getServiceContainer() )
+				->getGlobalBlockLocalStatusLookup()
+				->getLocallyDisabledGlobalBlockIds( [], 'third-wiki' )
+		);
 	}
 
 	public function addDBDataOnce() {

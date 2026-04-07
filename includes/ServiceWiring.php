@@ -101,7 +101,12 @@ return [
 		return new GlobalBlockLocalStatusLookup(
 			$services->getConnectionProvider(),
 			GlobalBlockingServices::wrap( $services )->getGlobalBlockingConnectionProvider(),
-			$services->getAutoblockExemptionList()
+			$services->getAutoblockExemptionList(),
+			RequestContext::getMain(),
+			new ServiceOptions(
+				GlobalBlockLocalStatusLookup::CONSTRUCTOR_OPTIONS,
+				$services->getMainConfig()
+			)
 		);
 	},
 	'GlobalBlocking.GlobalBlockLocalStatusManager' => static function (
