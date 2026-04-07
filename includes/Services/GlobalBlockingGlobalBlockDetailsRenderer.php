@@ -124,10 +124,16 @@ class GlobalBlockingGlobalBlockDetailsRenderer {
 		$wlinfo = $this->globalBlockLocalStatusLookup->getLocalStatusInfo( $row->gb_id );
 		if ( $wlinfo ) {
 			$user = $this->userIdentityLookup->getUserIdentityByUserId( $wlinfo['user'] );
+
 			if ( $user ) {
 				$options[] = $context->msg(
 					'globalblocking-list-whitelisted',
 					$user->getName(),
+					$wlinfo['reason']
+				)->escaped();
+			} else {
+				$options[] = $context->msg(
+					'globalblocking-list-locally-disabled-without-performer',
 					$wlinfo['reason']
 				)->escaped();
 			}

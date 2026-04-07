@@ -3,6 +3,9 @@
 namespace MediaWiki\Extension\GlobalBlocking\Services;
 
 use MediaWiki\Block\AutoblockExemptionList;
+use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Language\MessageLocalizer;
+use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\Rdbms\IConnectionProvider;
 
 /**
@@ -12,11 +15,19 @@ use Wikimedia\Rdbms\IConnectionProvider;
  */
 class GlobalBlockLocalStatusLookup {
 
+	public const CONSTRUCTOR_OPTIONS = [
+		'GlobalBlockingWikisWhereGlobalBlocksDoNotApply',
+		'ApplyGlobalBlocks',
+	];
+
 	public function __construct(
 		private readonly IConnectionProvider $dbProvider,
 		private readonly GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
 		private readonly AutoblockExemptionList $localAutoblockExemptionList,
+		private readonly MessageLocalizer $messageLocalizer,
+		private readonly ServiceOptions $options,
 	) {
+		$this->options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
 	}
 
 	/**
@@ -65,11 +76,21 @@ class GlobalBlockLocalStatusLookup {
 	 * @param int $id Block ID
 	 * @param string|false $wikiId The wiki where the where the local disable status should be looked up.
 	 *   Use false for the local wiki.
-	 * @return array|false false if the block is not locally disabled, otherwise an array containing the
-	 *   user ID of the user who disabled the block and the reason for the block being disabled.
+	 * @return array|false false if the block is not locally disabled, otherwise an array containing:
+	 *   * The user ID of the user who disabled the block, or 0 if the local disable was performed by the system
+	 *   * The reason for the global block being disabled on the wiki
 	 * @phan-return array{user:int,reason:string}|false
 	 */
-	public function getLocalStatusInfo( int $id, $wikiId = false ) {
+	public function getLocalStatusInfo( int $id, string|false $wikiId = false ): array|false {
+		if ( !$this->doGlobalBlocksApplyOnWiki( $wikiId ) ) {
+			return [
+				'user' => 0,
+				'reason' => $this->messageLocalizer->msg(
+					'globalblocking-all-global-blocks-disabled-locally'
+				)->parse(),
+			];
+		}
+
 		$row = $this->dbProvider->getReplicaDatabase( $wikiId )
 			->newSelectQueryBuilder()
 			->select( [ 'gbw_by', 'gbw_reason' ] )
@@ -98,6 +119,10 @@ class GlobalBlockLocalStatusLookup {
 	 * @return int[] The list of global block IDs from $ids that are locally disabled
 	 */
 	public function getLocallyDisabledGlobalBlockIds( array $ids, string|false $wikiId = false ): array {
+		if ( !$this->doGlobalBlocksApplyOnWiki( $wikiId ) ) {
+			return $ids;
+		}
+
 		if ( count( $ids ) === 0 ) {
 			return [];
 		}
@@ -110,5 +135,18 @@ class GlobalBlockLocalStatusLookup {
 			->caller( __METHOD__ )
 			->fetchFieldValues();
 		return array_map( 'intval', $locallyDisabledGlobalBlockIds );
+	}
+
+	private function doGlobalBlocksApplyOnWiki( false|string $wikiId ): bool {
+		if ( $wikiId === false || WikiMap::isCurrentWikiId( $wikiId ) ) {
+			return $this->options->get( 'ApplyGlobalBlocks' );
+		} else {
+			$wikiId = $wikiId ?: WikiMap::getCurrentWikiId();
+			return !in_array(
+				$wikiId,
+				$this->options->get( 'GlobalBlockingWikisWhereGlobalBlocksDoNotApply' ),
+				true
+			);
+		}
 	}
 }
