@@ -87,7 +87,7 @@ class GlobalBlockLocalStatusLookup {
 				'user' => 0,
 				'reason' => $this->messageLocalizer->msg(
 					'globalblocking-all-global-blocks-disabled-locally'
-				)->parse(),
+				)->text(),
 			];
 		}
 
