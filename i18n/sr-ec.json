@@ -46,6 +46,7 @@
 	"globalblocking-list-anononly": "само анонимни",
 	"globalblocking-list-unblock": "уклони",
 	"globalblocking-list-whitelisted": "локално онемогућио $1: $2",
+	"globalblocking-list-locally-disabled-without-performer": "локално онемогућено: $1",
 	"globalblocking-list-whitelist": "локални статус",
 	"globalblocking-list-modify": "измени",
 	"globalblocking-list-block": "блокирај",
