@@ -73,6 +73,7 @@ class GlobalBlockLocalStatusLookup {
 	/**
 	 * Returns whether the given global block ID has been locally disabled on the given wiki.
 	 *
+	 * @stable to call since 1.46
 	 * @param int $id Block ID
 	 * @param string|false $wikiId The wiki where the where the local disable status should be looked up.
 	 *   Use false for the local wiki.
@@ -137,7 +138,16 @@ class GlobalBlockLocalStatusLookup {
 		return array_map( 'intval', $locallyDisabledGlobalBlockIds );
 	}
 
-	private function doGlobalBlocksApplyOnWiki( false|string $wikiId ): bool {
+	/**
+	 * Returns whether the given wiki ID applies global blocks.
+	 *
+	 * This should return `false` when $wgApplyGlobalBlocks is false on that
+	 * wiki or if GlobalBlocking is not installed on that wiki.
+	 *
+	 * @since 1.46
+	 * @stable to call
+	 */
+	public function doGlobalBlocksApplyOnWiki( false|string $wikiId ): bool {
 		if ( $wikiId === false || WikiMap::isCurrentWikiId( $wikiId ) ) {
 			return $this->options->get( 'ApplyGlobalBlocks' );
 		} else {
