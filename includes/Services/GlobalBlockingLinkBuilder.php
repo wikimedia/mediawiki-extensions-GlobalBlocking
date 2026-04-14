@@ -2,7 +2,6 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Services;
 
-use HtmlArmor;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Linker\LinkRenderer;
@@ -11,6 +10,7 @@ use MediaWiki\Permissions\Authority;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
+use Wikimedia\HtmlArmor\HtmlArmor;
 
 /**
  * A service that builds links to other global blocking special pages and also

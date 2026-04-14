@@ -8,9 +8,9 @@ use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthInfoFieldsHook;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
+use MediaWiki\Language\MessageLocalizer;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\SpecialPage\SpecialPage;
-use MessageLocalizer;
 
 /**
  * Hook handlers for hooks provided by the CentralAuth extension.

@@ -2,8 +2,8 @@
 
 namespace MediaWiki\Extension\GlobalBlocking\Services;
 
+use MediaWiki\Language\MessageLocalizer;
 use MediaWiki\Xml\XmlSelect;
-use MessageLocalizer;
 
 /**
  * Provides a list of expiry options which can be displayed in a form for use when globally blocking.

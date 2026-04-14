@@ -6,8 +6,8 @@ use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Extension\GlobalBlocking\Special\SpecialGlobalBlockList;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
+use MediaWiki\Tests\Specials\SpecialPageTestBase;
 use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
-use SpecialPageTestBase;
 
 /**
  * @group Database

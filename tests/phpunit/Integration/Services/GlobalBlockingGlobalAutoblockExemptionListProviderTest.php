@@ -3,6 +3,7 @@
 namespace MediaWiki\Extension\GlobalBlocking\Test\Integration\Services;
 
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
+use MediaWiki\Http\MWHttpRequest;
 use MediaWiki\Json\FormatJson;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Site\MediaWikiSite;
@@ -10,7 +11,6 @@ use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
 use MediaWikiIntegrationTestCase;
 use MockHttpTrait;
-use MWHttpRequest;
 use Psr\Log\LoggerInterface;
 use StatusValue;
 use Wikimedia\TestingAccessWrapper;
