@@ -41,7 +41,12 @@ class SpecialGlobalBlock extends FormSpecialPage {
 		private readonly UserNameUtils $userNameUtils,
 		private readonly GlobalBlockingExpirySelectorBuilder $globalBlockingExpirySelectorBuilder,
 	) {
-		parent::__construct( 'GlobalBlock', 'globalblock' );
+		parent::__construct( 'GlobalBlock' );
+	}
+
+	/** @inheritDoc */
+	public function getRestriction(): string {
+		return 'globalblock';
 	}
 
 	/** @inheritDoc */

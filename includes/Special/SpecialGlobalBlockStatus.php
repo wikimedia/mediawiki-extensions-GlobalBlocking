@@ -32,7 +32,12 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 		private readonly GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup,
 		private readonly GlobalBlockingLinkBuilder $globalBlockingLinkBuilder,
 	) {
-		parent::__construct( 'GlobalBlockStatus', 'globalblock-whitelist' );
+		parent::__construct( 'GlobalBlockStatus' );
+	}
+
+	/** @inheritDoc */
+	public function getRestriction(): string {
+		return 'globalblock-whitelist';
 	}
 
 	/** @inheritDoc */

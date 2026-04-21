@@ -35,7 +35,12 @@ class SpecialMassGlobalBlock extends SpecialPage {
 		private readonly GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
 		private readonly GlobalBlockingExpirySelectorBuilder $globalBlockingExpirySelectorBuilder,
 	) {
-		parent::__construct( 'MassGlobalBlock', 'globalblock' );
+		parent::__construct( 'MassGlobalBlock' );
+	}
+
+	/** @inheritDoc */
+	public function getRestriction(): string {
+		return 'globalblock';
 	}
 
 	/**

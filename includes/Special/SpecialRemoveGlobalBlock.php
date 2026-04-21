@@ -24,7 +24,12 @@ class SpecialRemoveGlobalBlock extends FormSpecialPage {
 		private readonly GlobalBlockManager $globalBlockManager,
 		private readonly GlobalBlockingLinkBuilder $globalBlockingLinkBuilder,
 	) {
-		parent::__construct( 'RemoveGlobalBlock', 'globalblock' );
+		parent::__construct( 'RemoveGlobalBlock' );
+	}
+
+	/** @inheritDoc */
+	public function getRestriction(): string {
+		return 'globalblock';
 	}
 
 	/** @inheritDoc */
