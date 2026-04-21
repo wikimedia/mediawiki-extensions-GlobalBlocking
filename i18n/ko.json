@@ -16,7 +16,8 @@
 			"Priviet",
 			"Revi",
 			"Ykhwong",
-			"아라"
+			"아라",
+			"Tensama0415"
 		]
 	},
 	"globalblocking-desc": "계정, IP 주소, IP 대역을 [[Special:GlobalBlockList|다수의 위키]]에서 [[Special:GlobalBlock|차단]]할 수 있습니다",
@@ -35,6 +36,7 @@
 	"globalblocking-block-target-invalid": "입력한 사용자 이름, IP 주소 또는 IP 대역($1)이 잘못되었습니다.",
 	"globalblocking-block-expiryinvalid": "입력한 기한이 잘못되었습니다.",
 	"globalblocking-block-anononly-on-account": "계정 차단은 익명 사용자에게만 적용될 수 없습니다.",
+	"globalblocking-block-enable-autoblock-on-ip": "자동 차단은 계정 차단에 대해서만 가능합니다.",
 	"globalblocking-block-submit": "이 IP 주소를 전역 차단",
 	"globalblocking-modify-submit": "전역 차단 설정 바꾸기",
 	"globalblocking-block-success": "'''$1'''는 모든 위키에서 차단되었습니다.",
@@ -107,6 +109,7 @@
 	"globalblocking-logentry-dewhitelist": "$1님이 {{GENDER:$4|$3}}님의 전역 차단을 로컬에서 {{GENDER:$2|다시 활성화함}}",
 	"globalblocking-block-flag-anon-only": "익명 사용자만",
 	"globalblocking-block-flag-account-creation-disabled": "계정 만들기 금지됨",
+	"globalblocking-block-flag-autoblock-disabled": "자동 차단 비활성화됨",
 	"globalblocking-loglink": "$1 사용자는 모든 위키에서 차단되었습니다. ([[{{#Special:GlobalBlockList}}/$1|자세한 정보]])",
 	"globalblocking-contribs-notice": "이 사용자는 현재 전역 차단되어 있습니다. 전역 차단 기록은 다음과 같습니다:",
 	"globalblocking-contribs-mock-log-line": "$1: $3님이 {{GENDER:$4|$5}}님을 만료 시간 $6 $7 $8 $9으로 전역 {{GENDER:$2|차단함}}",
