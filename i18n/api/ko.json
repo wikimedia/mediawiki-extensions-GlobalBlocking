@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Revi",
-			"Ykhwong"
+			"Ykhwong",
+			"Tensama0415"
 		]
 	},
 	"globalblocking-apierror-badip": "$1 IP 주소는 유효하지 않습니다",
@@ -17,8 +18,8 @@
 	"apihelp-globalblock-param-modify": "기존의 대상 블록을 수정해야 한다면 이것을 지정하세요",
 	"apihelp-globalblock-example-1": "192.0.2.1 IP를 \"여러 위키에서의 문제 행동\"으로 무기한 차단",
 	"apihelp-query+globalblocks-summary": "모든 위키에서 차단된 IP 주소를 나열합니다.",
-	"apihelp-query+globalblocks-param-start": "나열을 시작할 타임스탬프",
-	"apihelp-query+globalblocks-param-end": "나열을 끝낼 타임스탬프",
+	"apihelp-query+globalblocks-param-start": "나열을 시작할 타임스탬프입니다.",
+	"apihelp-query+globalblocks-param-end": "나열을 중단할 타임스탬프입니다.",
 	"apihelp-query+globalblocks-param-ids": "나열할 차단 ID, 파이프로 분리",
 	"apihelp-query+globalblocks-param-addresses": "검색할 IP 주소, 파이프로 분리",
 	"apihelp-query+globalblocks-param-limit": "나열한 최대 차단 수입니다.",

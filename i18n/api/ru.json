@@ -8,7 +8,8 @@
 			"Tanzun",
 			"Vlad5250",
 			"Камалист",
-			"Vonavy"
+			"Vonavy",
+			"Ivan-r"
 		]
 	},
 	"globalblocking-apierror-badip": "IP-адрес $1 недействителен",
@@ -22,7 +23,7 @@
 	"apihelp-globalblock-param-anononly": "Указывайте это, если блок должен влиять глобально только на всех отключённых пользователей.",
 	"apihelp-globalblock-param-allow-account-creation": "Укажите это, если глобальная блокировка не должна препятствовать созданию учетной записи.",
 	"apihelp-globalblock-param-modify": "Укажите это, если необходимо изменить существующий блок на целевом объекте",
-	"apihelp-globalblock-example-1": "Блок 192.0.2.1 неопределенно с разумом «Перекрестное вики-злоупотребление»",
+	"apihelp-globalblock-example-1": "Блокировка 192.0.2.1 бессрочно по причине «Кросс-вики злоупотребление».",
 	"apihelp-query+globalblocks-summary": "Список всех IP-адресов, заблокированных глобально.",
 	"apihelp-query+globalblocks-param-start": "Временная метка, с которой начать перечисление.",
 	"apihelp-query+globalblocks-param-end": "Временная метка, на которой закончить перечисление.",
