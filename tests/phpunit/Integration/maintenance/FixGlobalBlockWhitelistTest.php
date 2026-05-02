@@ -16,40 +16,40 @@ class FixGlobalBlockWhitelistTest extends MaintenanceBaseTestCase {
 		return FixGlobalBlockWhitelist::class;
 	}
 
-	public function testExecuteWhenNoWhitelistRows() {
+	public function testExecuteWhenNoLocalDisableRows() {
 		$this->maintenance->execute();
-		// Expect that the maintenance script exits early if no whitelist entries are found.
-		$this->expectOutputString( "No whitelist entries.\n" );
+		// Expect that the maintenance script exits early if no entries are found.
+		$this->expectOutputString( "No local disable entries.\n" );
 	}
 
-	public function testExecuteWhenNoBrokenWhitelistRows() {
+	public function testExecuteWhenNoBrokenLocalDisableRows() {
 		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
-		// Create a whitelist entry for the global block
+		// Locally disable the global block
 		$disableStatus = $globalBlockingServices->getGlobalBlockLocalStatusManager()
 			->locallyDisableBlock( '127.0.0.1', 'Test disable', $this->getTestUser()->getUser() );
 		$this->assertStatusGood( $disableStatus );
 		// Run the maintenance script
 		$this->maintenance->execute();
-		$this->expectOutputString( "All whitelist entries have corresponding global blocks.\n" );
+		$this->expectOutputString( "All entries have corresponding global blocks.\n" );
 	}
 
 	/** @dataProvider provideExecuteWhenDeleteOptionProvided */
 	public function testExecuteWhenDeleteOptionProvided( $dryRun ) {
 		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
-		// Insert a block which will be removed after creating the whitelist entry
+
+		// Create a row in global_block_whitelist which has no associated globalblock row
 		$globalBlockStatus = $globalBlockingServices->getGlobalBlockManager()
 			->block( '1.2.3.4', 'Test block', 'infinite', $this->getTestUser()->getUser() );
 		$this->assertStatusGood( $globalBlockStatus );
 		$globalBlockId = $globalBlockStatus->getValue()['id'];
-		// Create a whitelist entry which has no associated global block.
 		$disableStatus = $globalBlockingServices->getGlobalBlockLocalStatusManager()
 			->locallyDisableBlock( '1.2.3.4', 'Test disable', $this->getTestUser()->getUser() );
 		$this->assertStatusGood( $disableStatus );
-		// Remove the global block on 1.2.3.4 by manually deleting the row.
 		$this->getDb()->newDeleteQueryBuilder()
 			->table( 'globalblocks' )
 			->where( [ 'gb_address' => '1.2.3.4' ] )
 			->execute();
+
 		// Run the maintenance script
 		$this->maintenance->setOption( 'dry-run', $dryRun );
 		$this->maintenance->setOption( 'delete', 1 );
@@ -63,8 +63,8 @@ class FixGlobalBlockWhitelistTest extends MaintenanceBaseTestCase {
 				->fetchField()
 		);
 		$this->expectOutputString(
-			"Found 1 whitelist entries with no corresponding global blocks with IDs:\n" . "$globalBlockId\n" .
-			( $dryRun ? "" : "Finished deleting whitelist entries with no corresponding global blocks.\n" )
+			"Found 1 entries with no corresponding global blocks with IDs:\n" . "$globalBlockId\n" .
+			( $dryRun ? "" : "Finished deleting entries with no corresponding global blocks.\n" )
 		);
 	}
 
@@ -77,7 +77,7 @@ class FixGlobalBlockWhitelistTest extends MaintenanceBaseTestCase {
 
 	public function testExecuteWhenDeleteOptionProvidedButNoRowsToDelete() {
 		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
-		// Create a whitelist entry for the global block
+		// Locally disable the global block
 		$disableStatus = $globalBlockingServices->getGlobalBlockLocalStatusManager()
 			->locallyDisableBlock( '127.0.0.1', 'Test disable', $this->getTestUser()->getUser() );
 		$this->assertStatusGood( $disableStatus );
@@ -93,7 +93,7 @@ class FixGlobalBlockWhitelistTest extends MaintenanceBaseTestCase {
 				->where( [ 'gbw_id' => $globalBlockId ] )
 				->fetchField()
 		);
-		$this->expectOutputString( "All whitelist entries have corresponding global blocks.\n" );
+		$this->expectOutputString( "All entries have corresponding global blocks.\n" );
 	}
 
 	public function addDBDataOnce() {

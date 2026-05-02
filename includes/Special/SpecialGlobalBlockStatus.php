@@ -22,7 +22,7 @@ use Wikimedia\IPUtils;
 class SpecialGlobalBlockStatus extends FormSpecialPage {
 	private ?string $mTarget;
 	private ?bool $mCurrentStatus;
-	private ?bool $mWhitelistStatus;
+	private ?bool $newStatus;
 
 	public function __construct(
 		private readonly BlockUtils $blockUtils,
@@ -66,7 +66,7 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 			// is the most common action).
 			$this->mTarget = $target;
 			$this->mCurrentStatus = true;
-			$this->mWhitelistStatus = false;
+			$this->newStatus = false;
 			return;
 		}
 
@@ -93,7 +93,10 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 
 		$this->mCurrentStatus = (bool)$this->globalBlockLocalStatusLookup
 			->getLocalStatusInfo( $this->globalBlockLookup->getGlobalBlockId( $this->mTarget ) );
-		$this->mWhitelistStatus = $request->getCheck( 'wpWhitelistStatus' );
+		$this->newStatus = $request->getCheck( 'wpNewStatus' );
+		if ( !$this->newStatus ) {
+			$this->newStatus = $request->getCheck( 'wpWhitelistStatus' );
+		}
 	}
 
 	/** @inheritDoc */
@@ -121,7 +124,7 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 				'type' => 'text',
 				'label-message' => 'globalblocking-whitelist-reason'
 			],
-			'WhitelistStatus' => [
+			'NewStatus' => [
 				'type' => 'check',
 				'label-message' => 'globalblocking-whitelist-statuslabel',
 				'default' => $this->mCurrentStatus
@@ -131,7 +134,7 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 
 	/** @inheritDoc */
 	public function onSubmit( array $data ) {
-		if ( $this->mWhitelistStatus ) {
+		if ( $this->newStatus ) {
 			// Locally disable the block
 			$status = $this->globalBlockLocalStatusManager
 				->locallyDisableBlock( $this->mTarget, $data['Reason'], $this->getUser() );
@@ -156,7 +159,7 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 	 */
 	private function showSuccess( int $id ): bool {
 		// Generate the appropriate message to display
-		if ( $this->mWhitelistStatus ) {
+		if ( $this->newStatus ) {
 			$successMsg = 'globalblocking-whitelist-whitelisted';
 		} else {
 			$successMsg = 'globalblocking-whitelist-dewhitelisted';

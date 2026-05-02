@@ -59,9 +59,9 @@ class GlobalBlockLocalStatusManager {
 		}
 
 		// Assert that the block is not already locally disabled.
-		$localWhitelistInfo = $this->globalBlockLocalStatusLookup
+		$localStatusInfo = $this->globalBlockLocalStatusLookup
 			->getLocalStatusInfo( $globalBlockId, $wikiId );
-		if ( $localWhitelistInfo !== false ) {
+		if ( $localStatusInfo !== false ) {
 			return StatusValue::newFatal( 'globalblocking-whitelist-nochange', $target );
 		}
 
@@ -109,9 +109,9 @@ class GlobalBlockLocalStatusManager {
 		}
 
 		// Assert that the block is locally disabled.
-		$localWhitelistInfo = $this->globalBlockLocalStatusLookup
+		$localStatusInfo = $this->globalBlockLocalStatusLookup
 			->getLocalStatusInfo( $globalBlockId, $wikiId );
-		if ( $localWhitelistInfo === false ) {
+		if ( $localStatusInfo === false ) {
 			return StatusValue::newFatal( 'globalblocking-whitelist-nochange', $target );
 		}
 

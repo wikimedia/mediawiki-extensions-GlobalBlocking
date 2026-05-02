@@ -397,7 +397,7 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 	public static function provideGetGlobalBlockingBlock() {
 		return [
 			'Single IP target is subject to two blocks, but $flags disable checking for soft blocks ' .
-			'and local whitelist status' => [
+			'and local status' => [
 				// The target IP or IP range provided as the $ip argument to ::getGlobalBlockingBlock
 				'127.0.0.1',
 				// The $centralId argument provided to ::getGlobalBlockingBlock
@@ -997,7 +997,7 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 			] )
 			->caller( __METHOD__ )
 			->execute();
-		// Insert a whitelist entry for the range block and second user block
+		// Locally disable the range block and second user block
 		$this->getDb()->newInsertQueryBuilder()
 			->insertInto( 'global_block_whitelist' )
 			->row( [

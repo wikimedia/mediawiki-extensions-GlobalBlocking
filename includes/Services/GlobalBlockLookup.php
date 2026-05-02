@@ -293,7 +293,7 @@ class GlobalBlockLookup {
 		// Lower will be better
 		$bestBlockScore = 100;
 		foreach ( $blocks as $block ) {
-			// Check for local whitelisting, unless the flag is set to skip the check.
+			// Check if the block is disabled locally, unless the flag is set to skip the check.
 			if (
 				!( $flags & self::SKIP_LOCAL_DISABLE_CHECK ) &&
 				$this->globalBlockLocalStatusLookup->isGlobalBlockLocallyDisabledForBlockApplication( $block->gb_id )

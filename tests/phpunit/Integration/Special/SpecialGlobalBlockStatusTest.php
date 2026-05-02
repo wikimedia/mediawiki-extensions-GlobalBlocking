@@ -63,7 +63,7 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 			[
 				'address' => $target,
 				'wpReason' => '',
-				'wpWhitelistStatus' => 1,
+				'wpNewStatus' => 1,
 			],
 			true,
 			RequestContext::getMain()->getRequest()->getSession()
@@ -182,7 +182,7 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 		$performer = $this->getTestSysop()->getUser();
 		$request = new FauxRequest(
 			[
-				'address' => '#' . $autoBlockId, 'wpReason' => 'local disable', 'wpWhitelistStatus' => 1,
+				'address' => '#' . $autoBlockId, 'wpReason' => 'local disable', 'wpNewStatus' => 1,
 			],
 			true,
 			RequestContext::getMain()->getRequest()->getSession()
@@ -213,7 +213,7 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 				// The username # is invalid.
 				'address' => '#',
 				'wpReason' => 'local disable',
-				'wpWhitelistStatus' => 1,
+				'wpNewStatus' => 1,
 			],
 			true,
 			RequestContext::getMain()->getRequest()->getSession()
@@ -240,7 +240,7 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 			[
 				'address' => '#1234',
 				'wpReason' => 'local disable',
-				'wpWhitelistStatus' => 1,
+				'wpNewStatus' => 1,
 			],
 			true,
 			RequestContext::getMain()->getRequest()->getSession()

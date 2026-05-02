@@ -47,14 +47,14 @@ class FixGlobalBlockWhitelist extends Maintenance {
 			->fetchRowCount();
 
 		if ( !$rowsExist ) {
-			$this->output( "No whitelist entries.\n" );
+			$this->output( "No local disable entries.\n" );
 			return;
 		}
 
 		$lastGlobalBlockId = 0;
 		$broken = [];
 		do {
-			// Select a batch of whitelist entries to check which start from a gbw_id greater than the greatest gbw_id
+			// Select a batch of entries to check which start from a gbw_id greater than the greatest gbw_id
 			// from the last batch.
 			$localWhitelistIds = $localDbr->newSelectQueryBuilder()
 				->select( 'gbw_id' )
@@ -65,12 +65,12 @@ class FixGlobalBlockWhitelist extends Maintenance {
 				->caller( __METHOD__ )
 				->fetchFieldValues();
 
-			// If there were no whitelist entries in the batch, then exit now as there is nothing more to do.
+			// If there were no entries in the batch, then exit now as there is nothing more to do.
 			if ( !count( $localWhitelistIds ) ) {
 				break;
 			}
 
-			// Find the associated global block rows for the whitelist entries in this batch.
+			// Find the associated global block rows for the entries in this batch.
 			$globalBlockingDbr = GlobalBlockingServices::wrap( $this->getServiceContainer() )
 				->getGlobalBlockingConnectionProvider()
 				->getReplicaGlobalBlockingDatabase();
@@ -88,7 +88,7 @@ class FixGlobalBlockWhitelist extends Maintenance {
 	}
 
 	/**
-	 * Handles the deletion of whitelist entries which have no corresponding global block.
+	 * Handles the deletion of global_block_whitelist rows which have no corresponding global block.
 	 *
 	 * @param array $nonExistent An array of gbw_ids which have no corresponding global block
 	 * @return void
@@ -96,16 +96,15 @@ class FixGlobalBlockWhitelist extends Maintenance {
 	protected function handleDeletions( array $nonExistent ) {
 		$nonExistentCount = count( $nonExistent );
 		if ( $nonExistentCount === 0 ) {
-			// Return early if there are no whitelist entries to be deleted.
-			$this->output( "All whitelist entries have corresponding global blocks.\n" );
+			// Return early if there are no entries to be deleted.
+			$this->output( "All entries have corresponding global blocks.\n" );
 			return;
 		}
-		$this->output( "Found $nonExistentCount whitelist entries with no corresponding global blocks with IDs:\n"
+		$this->output( "Found $nonExistentCount entries with no corresponding global blocks with IDs:\n"
 			. implode( "\n", $nonExistent ) . "\n"
 		);
 		if ( !$this->dryRun ) {
-			// Delete the whitelist entries which have no corresponding global block in batches of 'batch-size'
-			// targets.
+			// Delete the entries which have no corresponding global block in batches of 'batch-size' targets
 			foreach ( array_chunk( $nonExistent, $this->getBatchSize() ?? 500 ) as $chunk ) {
 				$this->getPrimaryDB()->newDeleteQueryBuilder()
 					->deleteFrom( 'global_block_whitelist' )
@@ -113,7 +112,7 @@ class FixGlobalBlockWhitelist extends Maintenance {
 					->caller( __METHOD__ )
 					->execute();
 			}
-			$this->output( "Finished deleting whitelist entries with no corresponding global blocks.\n" );
+			$this->output( "Finished deleting entries with no corresponding global blocks.\n" );
 		}
 	}
 }

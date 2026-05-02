@@ -17,7 +17,7 @@ use Wikimedia\Timestamp\ConvertibleTimestamp;
 class GlobalBlockingBlockPurgerTest extends MediaWikiIntegrationTestCase {
 	/** @dataProvider providePurgeExpiredBlocks */
 	public function testPurgeExpiredBlocks(
-		$target, $fakeTime, $expectedTargetsAfterPurge, $expectedGlobalBlockWhitelistCount, $limit
+		$target, $fakeTime, $expectedTargetsAfterPurge, $expectedCountOfLocallyDisabledBlocks, $limit
 	) {
 		// Set a fake time such that the expiry of all blocks is after this date.
 		ConvertibleTimestamp::setFakeTime( $fakeTime );
@@ -38,7 +38,7 @@ class GlobalBlockingBlockPurgerTest extends MediaWikiIntegrationTestCase {
 			'The globalblocks table is not as expected after the purge.'
 		);
 		$this->assertSame(
-			$expectedGlobalBlockWhitelistCount,
+			$expectedCountOfLocallyDisabledBlocks,
 			(int)$this->getDb()->newSelectQueryBuilder()
 				->select( 'COUNT(*)' )
 				->from( 'global_block_whitelist' )
@@ -158,7 +158,7 @@ class GlobalBlockingBlockPurgerTest extends MediaWikiIntegrationTestCase {
 			] )
 			->caller( __METHOD__ )
 			->execute();
-		// Insert a whitelist entry for the range block
+		// Insert a local disable entry for the range block
 		$this->getDb()->newInsertQueryBuilder()
 			->insertInto( 'global_block_whitelist' )
 			->row( [
