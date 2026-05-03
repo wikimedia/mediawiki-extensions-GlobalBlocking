@@ -202,7 +202,7 @@ class GlobalBlockingLinkBuilder {
 		) {
 			$links[] = $this->linkRenderer->makeKnownLink(
 				SpecialPage::getTitleFor( 'GlobalBlockStatus' ),
-				new HtmlArmor( $context->msg( 'globalblocking-list-whitelist' )->parse() ),
+				new HtmlArmor( $context->msg( 'globalblocking-list-local-status' )->parse() ),
 				[],
 				[ 'address' => $target ]
 			);

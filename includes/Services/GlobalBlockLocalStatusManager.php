@@ -62,7 +62,7 @@ class GlobalBlockLocalStatusManager {
 		$localStatusInfo = $this->globalBlockLocalStatusLookup
 			->getLocalStatusInfo( $globalBlockId, $wikiId );
 		if ( $localStatusInfo !== false ) {
-			return StatusValue::newFatal( 'globalblocking-whitelist-nochange', $target );
+			return StatusValue::newFatal( 'globalblocking-local-status-nochange', $target );
 		}
 
 		// Find the expiry of the block. This is important so that we can store it in the
@@ -112,7 +112,7 @@ class GlobalBlockLocalStatusManager {
 		$localStatusInfo = $this->globalBlockLocalStatusLookup
 			->getLocalStatusInfo( $globalBlockId, $wikiId );
 		if ( $localStatusInfo === false ) {
-			return StatusValue::newFatal( 'globalblocking-whitelist-nochange', $target );
+			return StatusValue::newFatal( 'globalblocking-local-status-nochange', $target );
 		}
 
 		// Locally re-enable the block by removing the associated global_block_whitelist row.

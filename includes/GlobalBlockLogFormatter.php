@@ -36,9 +36,9 @@ class GlobalBlockLogFormatter extends LogFormatter {
 		$subtype = $this->entry->getSubtype();
 
 		if ( $subtype === 'whitelist' ) {
-			$key = 'globalblocking-logentry-whitelist';
+			$key = 'globalblocking-logentry-locally-disabled';
 		} elseif ( $subtype === 'dwhitelist' ) {
-			$key = 'globalblocking-logentry-dewhitelist';
+			$key = 'globalblocking-logentry-locally-enabled';
 		} elseif ( $subtype === 'gunblock' ) {
 			$key = 'globalblocking-logentry-unblock';
 		} elseif ( $subtype === 'gblock' ) {

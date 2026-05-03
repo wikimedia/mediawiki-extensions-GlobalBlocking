@@ -101,9 +101,9 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 
 	/** @inheritDoc */
 	protected function alterForm( HTMLForm $form ) {
-		$form->setPreHtml( $this->msg( 'globalblocking-whitelist-intro' )->parse() );
-		$form->setWrapperLegendMsg( 'globalblocking-whitelist-legend' );
-		$form->setSubmitTextMsg( 'globalblocking-whitelist-submit' );
+		$form->setPreHtml( $this->msg( 'globalblocking-local-status-intro' )->parse() );
+		$form->setWrapperLegendMsg( 'globalblocking-local-status-legend' );
+		$form->setSubmitTextMsg( 'globalblocking-local-status-submit' );
 	}
 
 	/** @inheritDoc */
@@ -122,11 +122,11 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 			],
 			'Reason' => [
 				'type' => 'text',
-				'label-message' => 'globalblocking-whitelist-reason'
+				'label-message' => 'globalblocking-local-status-reason'
 			],
 			'NewStatus' => [
 				'type' => 'check',
-				'label-message' => 'globalblocking-whitelist-statuslabel',
+				'label-message' => 'globalblocking-local-status-status-label',
 				'default' => $this->mCurrentStatus
 			]
 		];
@@ -160,16 +160,16 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 	private function showSuccess( int $id ): bool {
 		// Generate the appropriate message to display
 		if ( $this->newStatus ) {
-			$successMsg = 'globalblocking-whitelist-whitelisted';
+			$successMsg = 'globalblocking-local-status-disabled-success';
 		} else {
-			$successMsg = 'globalblocking-whitelist-dewhitelisted';
+			$successMsg = 'globalblocking-local-status-enabled-success';
 		}
 
 		$out = $this->getOutput();
 		if ( GlobalBlockLookup::isAGlobalBlockId( $this->mTarget ) ) {
 			// Generates:
-			// * globalblocking-whitelist-whitelisted-target-is-id
-			// * globalblocking-whitelist-dewhitelisted-target-is-id
+			// * globalblocking-local-status-disabled-success-target-is-id
+			// * globalblocking-local-status-enabled-success-target-is-id
 			$successMsg .= '-target-is-id';
 			$out->addWikiMsg( $successMsg, $id );
 		} else {
@@ -201,7 +201,7 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 
 	/** @inheritDoc */
 	public function getDescription() {
-		return $this->msg( 'globalblocking-whitelist' );
+		return $this->msg( 'globalblocking-local-status' );
 	}
 
 	/** @inheritDoc */
@@ -209,7 +209,7 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 		parent::checkExecutePermissions( $user );
 		// If wgApplyGlobalBlocks is false, the user should not be able to access this special page.
 		if ( !$this->getConfig()->get( 'ApplyGlobalBlocks' ) ) {
-			throw new ErrorPageError( $this->getDescription(), 'globalblocking-whitelist-notapplied' );
+			throw new ErrorPageError( $this->getDescription(), 'globalblocking-local-status-notapplied' );
 		}
 	}
 }

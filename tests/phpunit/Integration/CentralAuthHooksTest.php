@@ -72,7 +72,7 @@ class CentralAuthHooksTest extends MediaWikiIntegrationTestCase {
 		$this->assertSame( 'globalblocking-centralauth-admin-info-globalblock', $attribs['globalblock']['label'] );
 		if ( $shouldBeBlocked ) {
 			$this->assertStringContainsString( 'centralauth-admin-yes', $attribs['globalblock']['data'] );
-			$this->assertStringContainsString( 'globalblocking-list-whitelist', $attribs['globalblock']['data'] );
+			$this->assertStringContainsString( 'globalblocking-list-local-status', $attribs['globalblock']['data'] );
 		} else {
 			$this->assertStringContainsString( 'centralauth-admin-no', $attribs['globalblock']['data'] );
 			$this->assertStringContainsString( 'globalblocking-list-block', $attribs['globalblock']['data'] );

@@ -127,7 +127,7 @@ class GlobalBlockingGlobalBlockDetailsRenderer {
 
 			if ( $user ) {
 				$options[] = $context->msg(
-					'globalblocking-list-whitelisted',
+					'globalblocking-list-locally-disabled',
 					$user->getName(),
 					$wlinfo['reason']
 				)->escaped();

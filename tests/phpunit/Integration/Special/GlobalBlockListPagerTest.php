@@ -82,7 +82,7 @@ class GlobalBlockListPagerTest extends MediaWikiIntegrationTestCase {
 				'1.2.3.4',
 				// The expected strings that should be present in the output of ::formatRow
 				[
-					'(infiniteblock', '(globalblocking-list-whitelisted', 'Test local disable reason',
+					'(infiniteblock', '(globalblocking-list-locally-disabled', 'Test local disable reason',
 					'(globalblocking-list-anononly', '(globalblocking-block-flag-account-creation-disabled',
 					'Test reason1',
 				],
@@ -93,13 +93,13 @@ class GlobalBlockListPagerTest extends MediaWikiIntegrationTestCase {
 				'1.2.3.0/24',
 				[ '(july) 2136', 'Test reason2' ],
 				[
-					'(infiniteblock', 'Test reason1', 'Test reason3', '(globalblocking-list-whitelisted',
+					'(infiniteblock', 'Test reason1', 'Test reason3', '(globalblocking-list-locally-disabled',
 					'(globalblocking-block-flag-account-creation-disabled',
 				],
 			],
 			'IPv6 range block' => [
 				'0:0:0:0:0:0:0:0/19', [ '(infiniteblock', 'Test reason3' ],
-				[ 'Test reason1', 'Test reason2', '(globalblocking-list-whitelisted' ],
+				[ 'Test reason1', 'Test reason2', '(globalblocking-list-locally-disabled' ],
 			],
 		];
 	}

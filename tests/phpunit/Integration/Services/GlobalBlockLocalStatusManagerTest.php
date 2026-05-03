@@ -93,7 +93,7 @@ class GlobalBlockLocalStatusManagerTest extends MediaWikiIntegrationTestCase {
 		$status = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockLocalStatusManager()
 			->locallyDisableBlock( '127.0.0.1', 'test', $testSysop );
 		$this->assertStatusError(
-			'globalblocking-whitelist-nochange', $status,
+			'globalblocking-local-status-nochange', $status,
 			'The returned status did not indicate that the block was already locally disabled.'
 		);
 	}
@@ -169,7 +169,7 @@ class GlobalBlockLocalStatusManagerTest extends MediaWikiIntegrationTestCase {
 		$status = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockLocalStatusManager()
 			->locallyEnableBlock( '127.0.0.1', 'test', $testSysop );
 		$this->assertStatusError(
-			'globalblocking-whitelist-nochange', $status,
+			'globalblocking-local-status-nochange', $status,
 			'The returned status did not indicate that the block was already locally enabled.'
 		);
 	}

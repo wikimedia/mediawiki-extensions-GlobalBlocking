@@ -158,7 +158,7 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 		);
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
 		// Check that the correct success message is present
-		$this->assertStringContainsString( '(globalblocking-whitelist-dewhitelisted-target-is-id', $html );
+		$this->assertStringContainsString( '(globalblocking-local-status-enabled-success-target-is-id', $html );
 		$this->assertFalse(
 			$globalBlockingServices->getGlobalBlockLocalStatusLookup()->getLocalStatusInfo( $autoBlockId ),
 			'Block should be locally enabled after using the special page'
@@ -189,7 +189,7 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 		);
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
 		// Check that the correct success message is present
-		$this->assertStringContainsString( '(globalblocking-whitelist-whitelisted-target-is-id', $html );
+		$this->assertStringContainsString( '(globalblocking-local-status-disabled-success-target-is-id', $html );
 		$this->assertArrayEquals(
 			[ 'user' => $performer->getId(), 'reason' => 'local disable' ],
 			$globalBlockingServices->getGlobalBlockLocalStatusLookup()->getLocalStatusInfo( $autoBlockId )
@@ -199,7 +199,7 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 	public function testDisabledIfApplyGlobalBlocksIsFalse() {
 		$this->overrideConfigValue( 'ApplyGlobalBlocks', false );
 		$this->expectException( ErrorPageError::class );
-		$this->expectExceptionMessage( wfMessage( 'globalblocking-whitelist-notapplied' )->text() );
+		$this->expectExceptionMessage( wfMessage( 'globalblocking-local-status-notapplied' )->text() );
 		RequestContext::getMain()->setUser( $this->getTestSysop()->getUser() );
 		$this->newSpecialPage()->execute( '' );
 	}

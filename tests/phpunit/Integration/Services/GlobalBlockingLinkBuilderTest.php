@@ -222,13 +222,13 @@ class GlobalBlockingLinkBuilderTest extends MediaWikiIntegrationTestCase {
 		// Perform assertions to verify that the expected action links are present in the returned HTML
 		if ( $shouldDisplayLocalDisableActionLink ) {
 			$this->assertStringContainsString(
-				'(globalblocking-list-whitelist)',
+				'(globalblocking-list-local-status)',
 				$actualActionLinks,
 				'Expected ::getActionLinks to return a link to Special:GlobalBlockStatus'
 			);
 		} else {
 			$this->assertStringNotContainsString(
-				'(globalblocking-list-whitelist)',
+				'(globalblocking-list-local-status)',
 				$actualActionLinks,
 				'Expected ::getActionLinks to not have a link to Special:GlobalBlockStatus'
 			);
@@ -280,7 +280,7 @@ class GlobalBlockingLinkBuilderTest extends MediaWikiIntegrationTestCase {
 		);
 		// Perform assertions to verify that the expected action links are present in the returned HTML
 		$this->assertStringNotContainsString(
-			'(globalblocking-list-whitelist)',
+			'(globalblocking-list-local-status)',
 			$actualActionLinks,
 			'Expected ::getActionLinks to not return a link to Special:GlobalBlockStatus as the authority ' .
 			'not have the right to use that special page.'

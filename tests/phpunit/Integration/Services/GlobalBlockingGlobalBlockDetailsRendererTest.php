@@ -90,7 +90,7 @@ class GlobalBlockingGlobalBlockDetailsRendererTest extends MediaWikiIntegrationT
 		$user = $this->getTestUser()->getUserIdentity();
 		$this->testGetBlockOptionsForDisplayForLocallyDisabledBlock(
 			[ 'user' => $user->getId(), 'reason' => 'Test reason' ],
-			[ '(globalblocking-list-whitelisted: ' . $user->getName() . ', Test reason)' ]
+			[ '(globalblocking-list-locally-disabled: ' . $user->getName() . ', Test reason)' ]
 		);
 	}
 }
