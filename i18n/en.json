@@ -154,6 +154,8 @@
 	"action-globalblock": "make and remove global blocks",
 	"right-globalblock-whitelist": "Disable global blocks locally",
 	"action-globalblock-whitelist": "disable global blocks locally",
+	"right-globalblock-local-status": "Change local status of global blocks",
+	"action-globalblock-local-status": "change local status of global blocks",
 	"right-globalblock-exempt": "Bypass global IP blocks",
 	"action-globalblock-exempt": "bypass global IP blocks",
 	"log-action-filter-gblblock": "Type of global block:",

@@ -192,6 +192,8 @@
 	"action-globalblock": "{{doc-action|globalblock}}",
 	"right-globalblock-whitelist": "{{doc-right|globalblock-whitelist}}",
 	"action-globalblock-whitelist": "{{doc-action|globalblock-whitelist}}",
+	"right-globalblock-local-status": "{{doc-right|globalblock-local-status}}",
+	"action-globalblock-local-status": "{{doc-action|globalblock-local-status}}",
 	"right-globalblock-exempt": "{{doc-right|globalblock-exempt}}",
 	"action-globalblock-exempt": "{{doc-action|globalblock-exempt}}",
 	"log-action-filter-gblblock": "{{doc-log-action-filter-type|gblblock}}\n{{Related|Log-action-filter}}",

@@ -13,7 +13,8 @@
 			"globalblock": true
 		},
 		"sysop": {
-			"globalblock-whitelist": true
+			"globalblock-whitelist": true,
+			"globalblock-local-status": true
 		}
 	},
 	"GrantPermissions": {
@@ -33,6 +34,7 @@
 	"AvailableRights": [
 		"globalblock",
 		"globalblock-whitelist",
+		"globalblock-local-status",
 		"globalblock-exempt"
 	],
 	"SpecialPages": {
