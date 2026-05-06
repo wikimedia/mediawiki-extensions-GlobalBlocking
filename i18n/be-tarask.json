@@ -81,5 +81,6 @@
 	"action-globalblock-exempt": "ігнараваньне глябальных блякаваньняў IP",
 	"log-action-filter-gblblock": "Тып глябальнага блякаваньня:",
 	"log-action-filter-gblblock-gblock": "Глябальнае блякаваньне",
-	"log-action-filter-gblblock-gunblock": "Глябальнае разблякаваньне"
+	"log-action-filter-gblblock-gunblock": "Глябальнае разблякаваньне",
+	"globalblocking-blockedtext-ip-range": "Заблякаваны дыяпазон — $1."
 }
