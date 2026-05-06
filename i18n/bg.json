@@ -78,6 +78,7 @@
 	"globalblocking-contribs-notice": "Този IP-адрес понастоящем е глобално блокиран.\nПо-долу е посочен последният запис от дневника на блокиранията:",
 	"globalblocking-showlog": "Този IP-адрес е бил блокиран преди.\nЗа справка по-долу следва дневник на блокирането:",
 	"globalblocking-contribs-log": "дневник на глобални блокирания",
+	"globalblocking-mass-block-query-submit": "Търсене",
 	"globalblocklist": "Списък на глобално блокираните IP-адреси",
 	"globalblock": "Глобално блокиране на потребител",
 	"globalblockstatus": "Локално състояние на глобалните блокирания",
