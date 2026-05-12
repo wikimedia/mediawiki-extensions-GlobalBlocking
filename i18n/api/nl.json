@@ -6,7 +6,7 @@
 			"Siebrand"
 		]
 	},
-	"globalblocking-apierror-badip": "IP-adres $1 is ongeldig.",
+	"globalblocking-apierror-badip": "IP-adres $1 is onjuist.",
 	"globalblocking-apierror-cannot-modify-global-autoblock": "U kunt automatische globale blokkades niet wijzigen",
 	"apihelp-globalblock-summary": "Een gebruiker globaal blokkeren of deblokkeren.",
 	"apihelp-globalblock-param-id": "ID van de globale blokkade die moet worden gewijzigd of opgeheven (verkregen via <kbd>list=globalblocks</kbd>). Kan niet samen met <var>$1target</var> worden gebruikt.",
