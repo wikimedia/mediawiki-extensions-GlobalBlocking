@@ -35,7 +35,7 @@
 	"globalblocking-block-block-email": "Gebruiker globaal blokkeren voor het versturen van e-mail",
 	"globalblocking-block-enable-autoblock": "Automatisch globaal {{PLURAL:$1|het laatste IP-adres dat door deze gebruiker is|de laatste $1 IP-adressen die door deze gebruiker zijn}} gebruikt, en alle daaropvolgende IP-adressen waarvandaan deze gebruiker probeert te bewerken, blokkeren voor een periode van $2",
 	"globalblocking-block-target-invalid": "De ingevoerde gebruikersnaam of het ingevoerde IP-adres of -bereik ($1) is niet geldig.",
-	"globalblocking-block-expiryinvalid": "De vervaldatum/tijd die u hebt opgegeven is ongeldig.",
+	"globalblocking-block-expiryinvalid": "De vervaldatum/tijd die u hebt opgegeven is onjuist.",
 	"globalblocking-block-anononly-on-account": "Het blokkeren van accounts kan niet uitsluitend van toepassing zijn op anonieme gebruikers.",
 	"globalblocking-block-enable-autoblock-on-ip": "Automatische blokkades kunnen alleen worden ingeschakeld voor het blokkeren van accounts.",
 	"globalblocking-block-modifying-global-autoblock": "Automatische blokkades kunnen alleen worden verwijderd en niet gewijzigd.",
