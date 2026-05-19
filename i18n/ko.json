@@ -158,6 +158,8 @@
 	"action-globalblock": "전역 차단과 차단 해제",
 	"right-globalblock-whitelist": "로컬에서 전역 차단을 비활성화",
 	"action-globalblock-whitelist": "로컬에서 전역 차단을 비활성화",
+	"right-globalblock-local-status": "전역 차단의 로컬 상태 바꾸기",
+	"action-globalblock-local-status": "전역 차단의 로컬 상태 바꾸기",
 	"right-globalblock-exempt": "전역 IP 차단을 우회",
 	"action-globalblock-exempt": "전역 IP 차단을 우회",
 	"log-action-filter-gblblock": "전역 차단의 유형:",

@@ -144,6 +144,8 @@
 	"action-globalblock": "blocar o disblocar globalmente",
 	"right-globalblock-whitelist": "Disactivar blocadas global localmente",
 	"action-globalblock-whitelist": "disactivar blocadas global localmente",
+	"right-globalblock-local-status": "Cambiar le stato local de blocadas global",
+	"action-globalblock-local-status": "cambiar le stato local de blocadas global",
 	"right-globalblock-exempt": "Contornar blocadas global de adresses IP",
 	"action-globalblock-exempt": "contornar blocadas global de adresses IP",
 	"log-action-filter-gblblock": "Typo de blocada global:",

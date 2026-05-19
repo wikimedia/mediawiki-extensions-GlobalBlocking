@@ -150,6 +150,8 @@
 	"action-globalblock": "qlobal bloklar tətbiq etmək və açmaq",
 	"right-globalblock-whitelist": "Qlobal blokları lokal olaraq deaktiv etmək",
 	"action-globalblock-whitelist": "qlobal blokları lokal olaraq deaktiv etmək",
+	"right-globalblock-local-status": "Qlobal blokların lokal statusunu dəyişdirmək",
+	"action-globalblock-local-status": "qlobal blokların lokal statusunu dəyişdirmək",
 	"right-globalblock-exempt": "Qlobal IP bloklarından təsirlənməmək",
 	"action-globalblock-exempt": "qlobal IP bloklarından təsirlənməmək",
 	"log-action-filter-gblblock": "Qlobal blok növü:",
