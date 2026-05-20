@@ -122,6 +122,7 @@
 	"action-globalblock": "global Spären ze maachen an opzehiewen",
 	"right-globalblock-whitelist": "Global Späre lokal ausschalten",
 	"action-globalblock-whitelist": "global Späre lokal ze desaktivéieren",
+	"action-globalblock-local-status": "de lokale Status vu globale Spären z'änneren",
 	"right-globalblock-exempt": "Global IP-Spären ëmgoen",
 	"action-globalblock-exempt": "global IP-Spären ëmgoen",
 	"log-action-filter-gblblock": "Typ vun der globaler Spär:",
