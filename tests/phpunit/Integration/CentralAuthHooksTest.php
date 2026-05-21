@@ -1,4 +1,5 @@
 <?php
+declare( strict_types=1 );
 
 namespace MediaWiki\Extension\GlobalBlocking\Test\Integration;
 
@@ -95,7 +96,8 @@ class CentralAuthHooksTest extends MediaWikiIntegrationTestCase {
 		$testGloballyBlockedUser = $this->getMutableTestUser()->getUserIdentity();
 		$testUnblockedUser = $this->getTestUser()->getUserIdentity();
 		$this->assertStatusGood( $globalBlockManager->block(
-			$testGloballyBlockedUser, 'Test reason3', '3 days', $this->getTestUser( [ 'steward' ] )->getUser()
+			$testGloballyBlockedUser->getName(), 'Test reason3', '3 days',
+			$this->getTestUser( [ 'steward' ] )->getUser()
 		) );
 		self::$testGloballyBlockedUser = $testGloballyBlockedUser;
 		self::$testUnblockedUser = $testUnblockedUser;

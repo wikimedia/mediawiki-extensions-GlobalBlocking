@@ -1,4 +1,5 @@
 <?php
+declare( strict_types=1 );
 
 namespace MediaWiki\Extension\GlobalBlocking\Test\Integration\Services;
 
@@ -421,7 +422,7 @@ class GlobalBlockingLinkBuilderTest extends MediaWikiIntegrationTestCase {
 		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
 		$globallyBlockedTestUser = $this->getMutableTestUser()->getUserIdentity();
 		$globalBlockStatus = $globalBlockingServices->getGlobalBlockManager()->block(
-			$globallyBlockedTestUser, 'test', 'indefinite', $this->getTestUser( [ 'steward' ] )->getUser()
+			$globallyBlockedTestUser->getName(), 'test', 'indefinite', $this->getTestUser( [ 'steward' ] )->getUser()
 		);
 		$this->assertStatusGood( $globalBlockStatus );
 		self::$testGloballyBlockedUserGlobalBlockId = $globalBlockStatus->getValue()['id'];

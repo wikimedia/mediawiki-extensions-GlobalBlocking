@@ -1,4 +1,5 @@
 <?php
+declare( strict_types=1 );
 
 namespace MediaWiki\Extension\GlobalBlocking\Services;
 
@@ -121,7 +122,7 @@ class GlobalBlockingGlobalBlockDetailsRenderer {
 		// Construct a list of block options that are relevant to the block in this $row.
 		$options = [];
 
-		$wlinfo = $this->globalBlockLocalStatusLookup->getLocalStatusInfo( $row->gb_id );
+		$wlinfo = $this->globalBlockLocalStatusLookup->getLocalStatusInfo( (int)$row->gb_id );
 		if ( $wlinfo ) {
 			$user = $this->userIdentityLookup->getUserIdentityByUserId( $wlinfo['user'] );
 

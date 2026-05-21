@@ -1,4 +1,5 @@
 <?php
+declare( strict_types=1 );
 
 namespace MediaWiki\Extension\GlobalBlocking\Services;
 
@@ -293,7 +294,7 @@ class GlobalBlockManager {
 			if ( $localOptions !== null && $modify ) {
 				$localBlock = $this->findLocalBlock(
 					$existingBlockRow->gb_address,
-					$existingBlockRow->gb_by_central_id,
+					(int)$existingBlockRow->gb_by_central_id,
 					$existingBlockRow->gb_timestamp
 				);
 			}

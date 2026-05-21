@@ -1,4 +1,5 @@
 <?php
+declare( strict_types=1 );
 
 namespace MediaWiki\Extension\GlobalBlocking\Test\Integration;
 
@@ -160,7 +161,7 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 
 	public function testOnSpecialContributionsBeforeMainOutputForNotBlockedUser() {
 		$this->testOnSpecialContributionsBeforeMainOutput(
-			self::$unblockedUser, true, false, null
+			self::$unblockedUser->getName(), true, false, null
 		);
 	}
 

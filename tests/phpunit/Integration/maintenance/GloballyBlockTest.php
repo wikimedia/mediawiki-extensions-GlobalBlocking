@@ -1,4 +1,5 @@
 <?php
+declare( strict_types=1 );
 
 namespace MediaWiki\Extension\GlobalBlocking\Test\Integration\Maintenance;
 
@@ -93,7 +94,7 @@ class GloballyBlockTest extends MaintenanceBaseTestCase {
 		$testPerformer = $this->getTestUser( [ 'steward' ] )->getUserIdentity();
 		// Run the maintenance script
 		$block = $this->testExecuteForBlock(
-			$targetUser,
+			$targetUser->getName(),
 			[
 				'performer' => $testPerformer->getName(), 'expiry' => '1 week',
 				'reason' => 'abc', 'reblock' => 1, 'block-email' => true,

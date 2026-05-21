@@ -1,4 +1,5 @@
 <?php
+declare( strict_types=1 );
 
 namespace MediaWiki\Extension\GlobalBlocking\Test\Integration\Services;
 
@@ -102,11 +103,11 @@ class GlobalBlockLocalStatusManagerTest extends MediaWikiIntegrationTestCase {
 		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
 		$target = $this->getTestUser()->getUser();
 		$globalBlockStatus = $globalBlockingServices->getGlobalBlockManager()
-			->block( $target, 'test', 'infinite', $this->getTestSysop()->getUser() );
+			->block( $target->getName(), 'test', 'infinite', $this->getTestSysop()->getUser() );
 		$this->assertStatusGood( $globalBlockStatus );
 		$globalBlockId = $globalBlockStatus->getValue()['id'];
 		$status = $globalBlockingServices->getGlobalBlockLocalStatusManager()
-			->locallyDisableBlock( $target, 'test', $this->getTestSysop()->getUser() );
+			->locallyDisableBlock( $target->getName(), 'test', $this->getTestSysop()->getUser() );
 		$this->assertStatusGood( $status, 'The returned status should be good.' );
 		$this->assertNotFalse(
 			$this->getDb()->newSelectQueryBuilder()

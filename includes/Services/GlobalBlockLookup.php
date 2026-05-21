@@ -1,4 +1,5 @@
 <?php
+declare( strict_types=1 );
 
 namespace MediaWiki\Extension\GlobalBlocking\Services;
 
@@ -296,7 +297,8 @@ class GlobalBlockLookup {
 			// Check if the block is disabled locally, unless the flag is set to skip the check.
 			if (
 				!( $flags & self::SKIP_LOCAL_DISABLE_CHECK ) &&
-				$this->globalBlockLocalStatusLookup->isGlobalBlockLocallyDisabledForBlockApplication( $block->gb_id )
+				$this->globalBlockLocalStatusLookup
+					->isGlobalBlockLocallyDisabledForBlockApplication( (int)$block->gb_id )
 			) {
 				continue;
 			}

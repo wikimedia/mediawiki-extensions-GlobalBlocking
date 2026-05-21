@@ -1,4 +1,5 @@
 <?php
+declare( strict_types=1 );
 
 namespace MediaWiki\Extension\GlobalBlocking\Maintenance;
 
@@ -90,7 +91,11 @@ class GloballyBlock extends Maintenance {
 
 		// Start globally (un)blocking the target users
 		while ( !feof( $file ) ) {
-			$line = trim( fgets( $file ) );
+			$rawLine = fgets( $file );
+			if ( $rawLine === false ) {
+				continue;
+			}
+			$line = trim( $rawLine );
 			if ( $line == '' ) {
 				continue;
 			}
