@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"AhmedG612"
+		]
+	},
+	"globalblocking-block-intro": "Waxaad isticmaali kartaa boggan si aad uga xannibto isticmaale ama cinwaan IP dhammaan wikis-ka.",
+	"globalblocking-block-success": "'''$1''' waa la xannibay dhammaan wikis-ka.",
+	"globalblocking-modify-success": "Xannibaadda caalamiga ah ee '''$1''' waa la beddelay.",
+	"globalblocking-block-failure": "Khalad ayaa dhacay markii la isku dayayay in si caalami ah loo xannibo $1. Fadlan mar kale isku day.",
+	"globalblocking-block-alreadyblocked": "$1 hore ayaa si caalami ah loo xanibay.\nWaxaad ka arki kartaa xannibaadda jirta [[Special:GlobalBlockList|liiska xannibaadaha caalamiga ah]],\nama waxaad wax ka beddeli kartaa dejimaha xannibaadda jirta adigoo mar kale gudbinaya foomkan.",
+	"globalblocking-logpagetext": "Kani waa diiwaanka xannibaadaha caalamiga ah ee lagu sameeyay lagana qaaday wiki-kan.\nWaa in la ogaadaa in xannibaadaha caalamiga ah laga samayn karo lagana qaadi karo wikis kale, isla markaana xannibaadahani ay saameyn ku yeelan karaan wiki-kan.\nSi aad u aragto dhammaan xannibaadaha caalamiga ah ee firfircoon, waxaad eegi kartaa [[Special:GlobalBlockList|liiska xannibaadaha caalamiga ah]].",
+	"globalblocking-loglink": "Isticmaalaha $1 waa la xannibay caalami ahaan ([[{{#Special:GlobalBlockList}}/$1|faahfaahinta oo dhammaystiran]]).",
+	"globalblocking-contribs-notice": "Isticmaalahani hadda waa mid caalami ahaan la xannibay.\nGelitaanka diiwaanka xannibaadda caalamiga ah ayaa hoos ku qoran si loo tixraaco:",
+	"globalblocking-showlog": "Isticmaalahaan hore ayaa loo xannibay.  \nDiiwaanka xannibaadda ayaa hoos lagu soo bandhigay tixraac ahaan:",
+	"globalblocking-blockedtext-on-range": "Cinwaankaaga IP-ga wuxuu ku jiraa xad la xannibay dhammaan wikis-ka.",
+	"globalblocking-blockedtext-blocker-admin": "Waxaad la xiriiri kartaa $1 si aad ugala hadasho xannibaadda.",
+	"globalblocking-centralauth-admin-info-globalblock": "Caalami ahaan waa la xannibay:"
+}
