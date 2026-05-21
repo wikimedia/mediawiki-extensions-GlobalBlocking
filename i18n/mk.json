@@ -144,6 +144,8 @@
 	"action-globalblock": "задавање и отстранување на глобални блокови",
 	"right-globalblock-whitelist": "Месно оневозможување на глобални блокови",
 	"action-globalblock-whitelist": "месно оневозможување на глобални блокови",
+	"right-globalblock-local-status": "Промена на месен статус на глобални блокови",
+	"action-globalblock-local-status": "промена на месен статус на глобални блокови",
 	"right-globalblock-exempt": "Заобиколување глобални IP-блокови",
 	"action-globalblock-exempt": "заобиколување на глобални IP-блокови",
 	"log-action-filter-gblblock": "Тип на глобален блок:",
