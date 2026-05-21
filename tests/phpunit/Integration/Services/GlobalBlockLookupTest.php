@@ -764,6 +764,25 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 		);
 	}
 
+	public function testNewFromIdReturnsBlockWhenFound(): void {
+		$factory = GlobalBlockingServices::wrap( $this->getServiceContainer() );
+		$globalBlockLookup = $factory->getGlobalBlockLookup();
+
+		$block = $globalBlockLookup->newFromId( 1 );
+
+		$this->assertNotNull( $block );
+		$this->assertSame( 1, $block->getId() );
+	}
+
+	public function testNewFromIdReturnsNullWhenNotFound(): void {
+		$factory = GlobalBlockingServices::wrap( $this->getServiceContainer() );
+		$globalBlockLookup = $factory->getGlobalBlockLookup();
+
+		$block = $globalBlockLookup->newFromId( 9999 );
+
+		$this->assertNull( $block );
+	}
+
 	public function addDBDataOnce() {
 		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
 		// to be the local provider.

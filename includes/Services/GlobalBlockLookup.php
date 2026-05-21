@@ -660,6 +660,25 @@ class GlobalBlockLookup {
 	}
 
 	/**
+	 * Look up a GlobalBlock by its ID.
+	 *
+	 * @param int $id The ID of the global block from the 'globalblocks' table
+	 * @return GlobalBlock|null The GlobalBlock with the given ID, or null if not found
+	 */
+	public function newFromId( int $id ): ?GlobalBlock {
+		$row = $this->globalBlockingConnectionProvider
+			->getReplicaGlobalBlockingDatabase()
+			->newSelectQueryBuilder()
+			->select( self::selectFields() )
+			->from( 'globalblocks' )
+			->where( [ 'gb_id' => $id ] )
+			->caller( __METHOD__ )
+			->fetchRow();
+
+		return $row ? GlobalBlock::newFromRow( $row, false ) : null;
+	}
+
+	/**
 	 * @return string[] The fields needed to construct a GlobalBlock object
 	 */
 	public static function selectFields(): array {
