@@ -13,12 +13,11 @@
 	"globalblocking-search-submit": "Бұғаттауларды іздеу",
 	"globalblocking-list-anononly": "анонимус тек",
 	"globalblocking-list-unblock": "аластау",
-	"globalblocking-list-whitelist": "ортақ статусы",
+	"globalblocking-list-local-status": "ортақ статусы",
 	"globalblocking-list-modify": "жаңарту",
 	"globalblocking-unblock-reason": "Себебі:",
-	"globalblocking-whitelist-reason": "СебебІ:",
-	"globalblocking-whitelist-status": "Жергілікті статусы:",
-	"globalblocking-whitelist-submit": "Жергілікті статусты өзгерту",
+	"globalblocking-local-status-reason": "СебебІ:",
+	"globalblocking-local-status-submit": "Жергілікті статусты өзгерту",
 	"globalblocking-logpage": "Ғаламдық бұғаттау журналы",
 	"globalblocking-contribs-log": "ғаламдық бұғаттау журналы"
 }

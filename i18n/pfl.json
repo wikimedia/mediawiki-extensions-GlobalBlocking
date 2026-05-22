@@ -5,6 +5,6 @@
 		]
 	},
 	"globalblocking-ipbanononly": "Bloos ubekonde Benudza schberre",
-	"globalblocking-list-whitelisted": "lokal abgschdeld vun $1: $2",
+	"globalblocking-list-locally-disabled": "lokal abgschdeld vun $1: $2",
 	"globalblocking-list-modify": "ännare"
 }

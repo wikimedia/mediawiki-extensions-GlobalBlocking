@@ -6,5 +6,5 @@
 	},
 	"globalblocking-block-reason": "理由：",
 	"globalblocking-unblock-reason": "理由：",
-	"globalblocking-whitelist-reason": "理由："
+	"globalblocking-local-status-reason": "理由："
 }

@@ -10,6 +10,6 @@
 	"globalblocking-block-expiry-selector-other": "Kipindi kingine:",
 	"globalblocking-list-unblock": "ondoa",
 	"globalblocking-unblock-reason": "Sababu:",
-	"globalblocking-whitelist-reason": "Sababu:",
+	"globalblocking-local-status-reason": "Sababu:",
 	"globalblocking-blockedtext-proxy": "Anwani ya proksi iliyozuiwa ilikuwa $1."
 }

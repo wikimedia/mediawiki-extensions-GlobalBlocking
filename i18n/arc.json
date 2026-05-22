@@ -10,10 +10,10 @@
 	"globalblocking-list": "ܡܟܬܒܘܬܐ ܕܡܘ̈ܢܥܐ ܕܐܝܦܝ (IP) ܚܪ̈ܝܡܐ ܓܘܢܐܝܬ",
 	"globalblocking-list-anononly": "ܠܐ ܝܕ̈ܝܥܐ ܒܠܚܘܕ",
 	"globalblocking-list-unblock": "ܠܚܝ",
-	"globalblocking-list-whitelist": "ܐܝܟܢܝܘܬܐ ܕܘܟܬܢܝܬܐ",
+	"globalblocking-list-local-status": "ܐܝܟܢܝܘܬܐ ܕܘܟܬܢܝܬܐ",
 	"globalblocking-unblock-reason": "ܥܠܬܐ:",
-	"globalblocking-whitelist": "ܐܝܟܢܝܘܬܐ ܕܘܟܬܢܝܬܐ ܕܚܪܡܐ ܓܘܢܝܐ",
-	"globalblocking-whitelist-reason": "ܥܠܬܐ:",
+	"globalblocking-local-status": "ܐܝܟܢܝܘܬܐ ܕܘܟܬܢܝܬܐ ܕܚܪܡܐ ܓܘܢܝܐ",
+	"globalblocking-local-status-reason": "ܥܠܬܐ:",
 	"globalblocking-logpage": "ܣܓܠܐ ܓܘܢܝܐ ܕܚܪܡܐ",
 	"globalblocklist": "ܡܟܬܒܘܬܐ ܕܡܘ̈ܢܥܐ ܕܐܝܦܝ (IP) ܚܪ̈ܝܡܐ ܓܘܢܐܝܬ"
 }

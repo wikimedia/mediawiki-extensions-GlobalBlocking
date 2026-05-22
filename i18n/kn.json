@@ -12,7 +12,7 @@
 	"globalblocking-list-modify": "ಪರಿಷ್ಕರಿಸು",
 	"globalblocking-list-noresults": "ಕೋರಿದ IP ವಿಳಾಸ ಅಥವ ಬಳಕೆದಾರ ಹೆಸರು ತಡೆಹಿಡಿಯಲಾಗಿಲ್ಲ.",
 	"globalblocking-unblock-reason": "ಕಾರಣ:",
-	"globalblocking-whitelist-reason": "ಕಾರಣ:",
-	"globalblocking-whitelist-submit": "ಪ್ರಾದೇಶಿಕ ಸ್ಥಿತಿಯನ್ನು ಬದಲಾಯಿಸಿ",
+	"globalblocking-local-status-reason": "ಕಾರಣ:",
+	"globalblocking-local-status-submit": "ಪ್ರಾದೇಶಿಕ ಸ್ಥಿತಿಯನ್ನು ಬದಲಾಯಿಸಿ",
 	"globalblocking-logpage": "ಜಾಗತಿಕ ತಡೆಹಿಡಿಯಲ್ಪಟ್ಟ ದಾಖಲೆ"
 }

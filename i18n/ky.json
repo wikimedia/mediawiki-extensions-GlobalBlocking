@@ -11,6 +11,5 @@
 	"globalblocking-list-modify": "түзөтүү",
 	"globalblocking-list-indefblocks": "Мөөнөтсүз бөгөттөрдү жашыруу",
 	"globalblocking-unblock-reason": "Себеп:",
-	"globalblocking-whitelist-reason": "Себеп:",
-	"globalblocking-whitelist-status": "Жергиликтүү абалы:"
+	"globalblocking-local-status-reason": "Себеп:"
 }

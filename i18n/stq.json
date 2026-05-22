@@ -22,8 +22,8 @@
 	"globalblocking-search-submit": "Speeren säike",
 	"globalblocking-list-anononly": "bloot Anonyme",
 	"globalblocking-list-unblock": "äntspeere",
-	"globalblocking-list-whitelisted": "lokoal ouskalted fon $1: $2",
-	"globalblocking-list-whitelist": "lokoalen Stoatus",
+	"globalblocking-list-locally-disabled": "lokoal ouskalted fon $1: $2",
+	"globalblocking-list-local-status": "lokoalen Stoatus",
 	"globalblocking-list-modify": "annerje",
 	"globalblocking-goto-block": "IP-Adresse globoal speere",
 	"globalblocking-goto-unblock": "Globoale Speere aphieuwje",
@@ -36,11 +36,10 @@
 	"globalblocking-unblock-reason": "Gruund:",
 	"globalblocking-unblock-unblocked": "Du hääst mäd Ärfoulch ju IP-Adresse '''$1''' (Speer-ID $2) äntspeerd",
 	"globalblocking-unblock-intro": "Mäd dit Formular koast du ne globoale Speere aphieuwje.",
-	"globalblocking-whitelist": "Lokoalen Stoatus fon ne globoale Speere",
-	"globalblocking-whitelist-legend": "Lokoalen Stoatus beoarbaidje",
-	"globalblocking-whitelist-reason": "Gruund:",
-	"globalblocking-whitelist-status": "Lokoalen Stoatus:",
-	"globalblocking-whitelist-statuslabel": "Disse globoale Speere ap {{SITENAME}} aphieuwje",
-	"globalblocking-whitelist-submit": "Lokoalen Stoatus annerje",
-	"globalblocking-whitelist-whitelisted": "Du hääst mäd Ärfoulch ju globoale Speere fon ju IP-Adresse '''$1''' (Speer-ID $2) ap {{SITENAME}} aphieuwed."
+	"globalblocking-local-status": "Lokoalen Stoatus fon ne globoale Speere",
+	"globalblocking-local-status-legend": "Lokoalen Stoatus beoarbaidje",
+	"globalblocking-local-status-reason": "Gruund:",
+	"globalblocking-local-status-status-label": "Disse globoale Speere ap {{SITENAME}} aphieuwje",
+	"globalblocking-local-status-submit": "Lokoalen Stoatus annerje",
+	"globalblocking-local-status-disabled-success": "Du hääst mäd Ärfoulch ju globoale Speere fon ju IP-Adresse '''$1''' (Speer-ID $2) ap {{SITENAME}} aphieuwed."
 }

@@ -14,8 +14,7 @@
 	"globalblocking-goto-unblock": "Heitta kogonaz blokiruind",
 	"globalblocking-unblock-legend": "Heitta kogonaz blokiruind",
 	"globalblocking-unblock-reason": "Sü:",
-	"globalblocking-whitelist-reason": "Sü:",
-	"globalblocking-whitelist-status": "Lokaline status:",
-	"globalblocking-whitelist-submit": "Toižetada lokaline status",
+	"globalblocking-local-status-reason": "Sü:",
+	"globalblocking-local-status-submit": "Toižetada lokaline status",
 	"globalblockstatus": "Kogonaz-blokiruindoiden lokaline status"
 }

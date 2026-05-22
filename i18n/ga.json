@@ -7,5 +7,5 @@
 	"globalblocking-block-reason": "Fáth:",
 	"globalblocking-block-expiry": "Am éaga:",
 	"globalblocking-unblock-reason": "Fáth:",
-	"globalblocking-whitelist-reason": "Fáth:"
+	"globalblocking-local-status-reason": "Fáth:"
 }

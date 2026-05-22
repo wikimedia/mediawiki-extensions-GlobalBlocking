@@ -20,7 +20,7 @@
 	"globalblocking-unblock-legend": "Blokeo global bat kendu",
 	"globalblocking-unblock-submit": "Blokeo globala kendu",
 	"globalblocking-unblock-reason": "Arrazoia:",
-	"globalblocking-whitelist-reason": "Arrazoia:",
+	"globalblocking-local-status-reason": "Arrazoia:",
 	"globalblocking-loglink": "$1 IP helbidea proiektu guztietarako blokeatuta dago ([[{{#Special:GlobalBlockList}}/$1|ikus xehetasun guztiak]]).",
 	"globalblocklist": "Globalki blokeatutako IP helbideen zerrenda"
 }
