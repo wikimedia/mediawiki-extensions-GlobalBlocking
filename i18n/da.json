@@ -16,7 +16,7 @@
 			"Tjernobyl"
 		]
 	},
-	"globalblocking-desc": "[[Special:GlobalBlock|Tillader]] at IP-adresser bliver [[Special:GlobalBlockList|blokeret på tværs af talrige wikier]]",
+	"globalblocking-desc": "[[Special:GlobalBlock|Gør det muligt]] at konti, IP-adresser og IP-intervaller [[Special:GlobalBlockList|blokeres på tværs af flere wikier]]",
 	"globalblocking-block": "Bloker en IP-adresse globalt",
 	"globalblocking-block-intro": "Du kan bruge denne side til at blokere en IP-adresse på alle wikier.",
 	"globalblocking-block-reason": "Begrundelse:",
@@ -29,8 +29,8 @@
 	"globalblocking-block-expiryinvalid": "Den udløbstid, du valgte er ugyldigt",
 	"globalblocking-block-submit": "Blokér denne ip-adresse globalt",
 	"globalblocking-modify-submit": "Redigér denne globale blokering",
-	"globalblocking-block-success": "IP-adressen $1 er blevet blokeret på alle projekter.",
-	"globalblocking-modify-success": "Den globale blokering på $1 er blevet ændret.",
+	"globalblocking-block-success": "''' $1 ''' er blevet blokeret på alle wikier.",
+	"globalblocking-modify-success": "Den globale blokering på '''$1''' er blevet ændret.",
 	"globalblocking-local-failed": "Blokering af IP-adressen lokalt mislykkedes fordi den givne IP-adresse allerede er blokeret på denne wiki.",
 	"globalblocking-block-failure": "En fejl opstod under global blokering af $1. Prøv igen.",
 	"globalblocking-block-alreadyblocked": "IP-adressen $1 er allerede blokeret globalt.\nDu kan få vist eksisterende blokeringer på [[Special:GlobalBlockList|listen af globale blokeringer]], eller ændre indstillingerne for den eksisterende blok ved at accepterer denne form.",
@@ -66,7 +66,7 @@
 	"globalblocking-local-status-disabled-success": "Du har fjernet den globale blokering #$2 af IP-adressen '''$1''' på {{SITENAME}}.",
 	"globalblocking-local-status-enabled-success": "Du har fjernet den globale blokering #$2 af IP-adressen '''$1''' på {{SITENAME}}.",
 	"globalblocking-local-status-nochange": "Du har ikke foretaget nogen ændring af den lokale status for denne blokering.",
-	"globalblocking-local-status-intro": "Du kan bruge denne formular til at ophæve en global blokering lokalt. Hvis blokeringen bliver ophævet, kan den globalt blokerede bruger redigere sider normalt.",
+	"globalblocking-local-status-intro": "Du kan bruge denne formular til at redigere den lokale status for en global blokering.\nHvis en global blokering bliver ophævet på denne wiki, vil berørte brugere kunne redigere normalt.",
 	"globalblocking-logpage": "Global blokeringslog",
 	"globalblocking-logpagetext": "Dette er en log over globale blokeringer, der er blevet gennemført eller fjernet på denne wiki.\nDet skal bemærkes, at globale blokeringer kan foretages og fjernet på andre wiki'er, og at disse globale blokeringer kan påvirke denne wiki.\nFor at få vist alle aktive globale blokeringer, kan du få vist [[Special:GlobalBlockList|den globale blokringsliste]].",
 	"globalblocking-loglink": "IP-adressen $1 er blokeret globalt ([[{{#Special:GlobalBlockList}}/$1|detaljer]]).",
