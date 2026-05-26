@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kallmemel"
+		]
+	},
+	"globalblocking-block": "Globalmente blòkia un usadó",
+	"globalblocking-block-intro": "Bo por usa e página aki pa blòkia un usadó òf un IP adrès riba tur wiki.",
+	"globalblocking-block-reason": "Motibu:",
+	"globalblocking-block-reason-dropdown": "* Motibu komun di blokeo\n** Spam entre vários wiki\n** Abuso entre vários wiki\n** Vandalismo",
+	"globalblocking-block-edit-dropdown": "Rason pa ku blokeo di editá",
+	"globalblocking-block-expiry": "Kaduká:",
+	"globalblocking-block-expiry-selector-other": "Otro durashon:",
+	"globalblocking-block-legend": "Blòkia un usadó globalmente",
+	"globalblocking-target": "Nòmber di usadó, IP adrès òf rango di IP:",
+	"globalblocking-target-with-block-ids": "Nòmber di usadó, IP adrès, rango di IP òf blokeo di ID:",
+	"globalblocking-ipbanononly": "Globalmente blòkia solamente usadónan anonimo",
+	"globalblocking-block-disable-account-creation": "Hasi kreashon di kuenta globalmente imposibel",
+	"globalblocking-list-modify": "modifiká",
+	"globalblocking-list-block": "blòkia",
+	"globalblocking-blockedtext-username": "Bo nòmber di usadó ta $1.",
+	"globalblocking-centralauth-admin-info-globalblock": "Globalmente Blòkiá:",
+	"globalblocking-global-autoblock-id": "Outoblokeo global #$1"
+}
