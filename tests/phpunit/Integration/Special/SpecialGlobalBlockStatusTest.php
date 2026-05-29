@@ -33,7 +33,7 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 
 	public function testUserDoesNotHaveRequiredRight() {
 		$this->expectException( PermissionsError::class );
-		// The "normal" test user should not have the globalblock-whitelist right
+		// The "normal" test user should not have the globalblock-local-status right
 		RequestContext::getMain()->setUser( $this->getTestUser()->getUser() );
 		$this->newSpecialPage()->execute( '127.0.0.1/24' );
 	}

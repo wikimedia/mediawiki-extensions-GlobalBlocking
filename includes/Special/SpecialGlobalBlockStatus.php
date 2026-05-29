@@ -38,7 +38,7 @@ class SpecialGlobalBlockStatus extends FormSpecialPage {
 
 	/** @inheritDoc */
 	public function getRestriction(): string {
-		return 'globalblock-whitelist';
+		return 'globalblock-local-status';
 	}
 
 	/** @inheritDoc */
