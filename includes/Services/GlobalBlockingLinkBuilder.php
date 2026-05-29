@@ -70,7 +70,7 @@ class GlobalBlockingLinkBuilder {
 			$links[] = $this->linkRenderer->makeKnownLink(
 				$title, $sp->msg( 'globalblocking-goto-unblock' )->text() );
 		}
-		if ( $pagetype !== 'GlobalBlockStatus' && $sp->getAuthority()->isAllowed( 'globalblock-whitelist' ) ) {
+		if ( $pagetype !== 'GlobalBlockStatus' && $sp->getAuthority()->isAllowed( 'globalblock-local-status' ) ) {
 			$title = SpecialPage::getTitleFor( 'GlobalBlockStatus' );
 			$links[] = $this->linkRenderer->makeKnownLink(
 				$title, $sp->msg( 'globalblocking-goto-status' )->text() );
@@ -198,7 +198,7 @@ class GlobalBlockingLinkBuilder {
 
 		if (
 			$this->options->get( 'ApplyGlobalBlocks' ) &&
-			$authority->isAllowed( 'globalblock-whitelist' ) &&
+			$authority->isAllowed( 'globalblock-local-status' ) &&
 			$targetIsBlocked
 		) {
 			$links[] = $this->linkRenderer->makeKnownLink(

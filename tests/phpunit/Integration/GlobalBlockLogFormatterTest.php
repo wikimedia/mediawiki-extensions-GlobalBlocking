@@ -291,7 +291,7 @@ class GlobalBlockLogFormatterTest extends LogFormatterTestCase {
 		$targetUser = $this->getMutableTestUser()->getUser();
 		if ( $logViewerHasHideUser ) {
 			$logViewAuthority = $this->mockRegisteredAuthorityWithPermissions( [
-				'viewsuppressed', 'globalblock-whitelist'
+				'viewsuppressed', 'globalblock-local-status'
 			] );
 		} else {
 			$logViewAuthority = $this->mockRegisteredAuthorityWithoutPermissions( [
@@ -357,7 +357,7 @@ class GlobalBlockLogFormatterTest extends LogFormatterTestCase {
 		$blockingUser = $this->getTestUser( [ 'sysop', 'suppress' ] )->getUser();
 		if ( $logViewerHasSuppress ) {
 			$logViewAuthority = $this->mockRegisteredAuthorityWithPermissions(
-				[ 'hideuser', 'globalblock-whitelist' ]
+				[ 'hideuser', 'globalblock-local-status' ]
 			);
 		} else {
 			$logViewAuthority = $this->mockRegisteredAuthorityWithoutPermissions( [ 'hideuser' ] );
@@ -424,7 +424,7 @@ class GlobalBlockLogFormatterTest extends LogFormatterTestCase {
 		$this->markTestSkippedIfExtensionNotLoaded( 'CentralAuth' );
 		if ( $logViewerHasSuppress ) {
 			$logViewAuthority = $this->mockRegisteredAuthorityWithPermissions( [
-				'centralauth-suppress', 'globalblock-whitelist'
+				'centralauth-suppress', 'globalblock-local-status'
 			] );
 		} else {
 			$logViewAuthority = $this->mockRegisteredAuthorityWithoutPermissions( [ 'centralauth-suppress' ] );
