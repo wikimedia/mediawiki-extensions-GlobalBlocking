@@ -50,7 +50,10 @@ class SpecialGlobalBlock extends FormSpecialPage {
 		return 'globalblock';
 	}
 
-	/** @inheritDoc */
+	/**
+	 * @codeCoverageIgnore Merely declarative
+	 * @inheritDoc
+	 */
 	public function doesWrites() {
 		return true;
 	}
@@ -393,7 +396,10 @@ class SpecialGlobalBlock extends FormSpecialPage {
 		$this->getOutput()->addHTML( $link );
 	}
 
-	/** @inheritDoc */
+	/**
+	 * @codeCoverageIgnore Merely declarative
+	 * @inheritDoc
+	 */
 	protected function getGroupName() {
 		return 'users';
 	}
