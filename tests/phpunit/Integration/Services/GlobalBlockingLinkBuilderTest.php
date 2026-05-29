@@ -110,13 +110,13 @@ class GlobalBlockingLinkBuilderTest extends MediaWikiIntegrationTestCase {
 		);
 	}
 
-	public function testBuildSubtitleLinksWithGlobalBlockWhitelistRight() {
+	public function testBuildSubtitleLinksWithGlobalBlockLocalStatusRight() {
 		// Call the method under test
 		$globalBlockingLinkBuilder = GlobalBlockingServices::wrap( $this->getServiceContainer() )
 			->getGlobalBlockingLinkBuilder();
 		$specialPage = $this->getMockSpecialPage(
 			'RemoveGlobalBlock',
-			$this->mockRegisteredAuthorityWithPermissions( [ 'globalblock-whitelist' ] )
+			$this->mockRegisteredAuthorityWithPermissions( [ 'globalblock-local-status' ] )
 		);
 		$actualSubtitleLinks = $globalBlockingLinkBuilder->buildSubtitleLinks( $specialPage );
 		// Perform assertions to verify that the method under test provided the expected subtitle links.
@@ -142,13 +142,13 @@ class GlobalBlockingLinkBuilderTest extends MediaWikiIntegrationTestCase {
 		);
 	}
 
-	public function testBuildSubtitleLinksWithGlobalBlockAndGlobalBlockWhitelistRights() {
+	public function testBuildSubtitleLinksWithGlobalBlockAndGlobalBlockLocalStatusRights() {
 		// Call the method under test
 		$globalBlockingLinkBuilder = GlobalBlockingServices::wrap( $this->getServiceContainer() )
 			->getGlobalBlockingLinkBuilder();
 		$specialPage = $this->getMockSpecialPage(
 			'GlobalBlockStatus',
-			$this->mockRegisteredAuthorityWithPermissions( [ 'globalblock-whitelist', 'globalblock' ] )
+			$this->mockRegisteredAuthorityWithPermissions( [ 'globalblock-local-status', 'globalblock' ] )
 		);
 		$actualSubtitleLinks = $globalBlockingLinkBuilder->buildSubtitleLinks( $specialPage );
 		// Perform assertions to verify that the method under test provided the expected subtitle links.
@@ -215,7 +215,7 @@ class GlobalBlockingLinkBuilderTest extends MediaWikiIntegrationTestCase {
 		$globalBlockingLinkBuilder = GlobalBlockingServices::wrap( $this->getServiceContainer() )
 			->getGlobalBlockingLinkBuilder();
 		$actualActionLinks = $globalBlockingLinkBuilder->getActionLinks(
-			$this->mockRegisteredAuthorityWithPermissions( [ 'globalblock-whitelist' ] ),
+			$this->mockRegisteredAuthorityWithPermissions( [ 'globalblock-local-status' ] ),
 			$targetCallback(),
 			RequestContext::getMain(),
 			$shouldCheckBlockStatus
