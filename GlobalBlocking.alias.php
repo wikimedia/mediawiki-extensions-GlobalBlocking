@@ -14,7 +14,7 @@ $specialPageAliases['en'] = [
 	'GlobalBlock' => [ 'GlobalBlock' ],
 	'GlobalBlockList' => [ 'GlobalBlockList', 'ListGlobalBlocks' ],
 	'RemoveGlobalBlock' => [ 'GlobalUnblock', 'RemoveGlobalBlock' ],
-	'GlobalBlockStatus' => [ 'GlobalBlockWhitelist', 'GlobalBlockStatus', 'DisableGlobalBlock' ],
+	'GlobalBlockStatus' => [ 'GlobalBlockStatus', 'GlobalBlockWhitelist', 'DisableGlobalBlock' ],
 	'MassGlobalBlock' => [ 'MassGlobalBlock', 'MultiGlobalBlock' ],
 ];
 
