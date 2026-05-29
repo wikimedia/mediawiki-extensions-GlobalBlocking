@@ -108,7 +108,7 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 		// Simulate the user using Special:GlobalBlockStatus to locally enable the block
 		$request = new FauxRequest(
 			[
-				// wpWhitelistStatus not being present in the fake request data means the checkbox was unchecked.
+				// wpNewStatus not being present in the fake request data means the checkbox was unchecked.
 				'address' => '1.2.3.4',
 				'wpReason' => 'removing local disable',
 			],
@@ -151,7 +151,7 @@ class SpecialGlobalBlockStatusTest extends FormSpecialPageTestCase {
 		// Use the special page to locally re-enable the global autoblock.
 		$request = new FauxRequest(
 			[
-				// wpWhitelistStatus not being present in the fake request data means the checkbox was unchecked.
+				// wpNewStatus not being present in the fake request data means the checkbox was unchecked.
 				'address' => '#' . $autoBlockId, 'wpReason' => 'removing local disable',
 			],
 			true,
