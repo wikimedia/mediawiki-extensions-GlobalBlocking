@@ -23,7 +23,8 @@
 			"Vlad5250",
 			"Zpizza",
 			"Александр Сигачёв",
-			"Камалист"
+			"Камалист",
+			"Ouclie"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Разрешает]] блокировку учётных записей, IP-адресов и их диапазонов [[Special:GlobalBlockList|в нескольких вики]]",
@@ -162,7 +163,7 @@
 	"globalblocking-blockedtext-ip-range": "Заблокированный диапазон — $1.",
 	"globalblocking-blockedtext-proxy": "Заблокированный прокси-адрес был $1.",
 	"globalblocking-blockedtext-username": "Имя вашей учётной записи — $1 .",
-	"globalblocking-autoblocker": "Глобальная автоблокировка из-за того, что ваш IP-адрес недавно использовал «[[User:$1|$1]]».\nПричина блокировки $1: \"$2\"",
+	"globalblocking-autoblocker": "Глобальная автоблокировка из-за того, что ваш IP-адрес недавно использовал «[[User:$1|$1]]».\nПричина блокировки $1: «$2»",
 	"globalblocking-centralauth-admin-info-globalblock": "Глобально заблокирован(а):",
 	"globalblocking-global-autoblock-id": "Глобальная автоблокировка #$1",
 	"globalblocking-global-block-id": "Глобальная блокировка #$1"
