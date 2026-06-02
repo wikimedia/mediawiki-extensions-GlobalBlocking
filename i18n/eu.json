@@ -9,6 +9,7 @@
 		]
 	},
 	"globalblocking-block-reason": "Arrazoia:",
+	"globalblocking-block-reason-dropdown": "* Blokeatzeko arrazoi ohikoenak\n** Hainbat wikitan spam egitea\n** Hainbat wikitan gehiegikeriaz aritzea\n** Bandalismoa egitea",
 	"globalblocking-block-expiry": "Blokeoaren iraupena:",
 	"globalblocking-search-legend": "Blokeo global bat bilatu",
 	"globalblocking-search-submit": "Blokeoak bilatu",

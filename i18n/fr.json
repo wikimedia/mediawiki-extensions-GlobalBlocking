@@ -3,6 +3,7 @@
 		"authors": [
 			"0x010C",
 			"Alien333",
+			"Antimuonium",
 			"Crochet.david",
 			"Diti",
 			"Escargot bleu",
@@ -166,6 +167,8 @@
 	"action-globalblock": "créer et retirer des blocages globaux",
 	"right-globalblock-whitelist": "Désactiver localement des blocages globaux",
 	"action-globalblock-whitelist": "désactiver localement des blocages globaux",
+	"right-globalblock-local-status": "Changer le statut local des blocages globaux",
+	"action-globalblock-local-status": "changer le statut local des blocages globaux",
 	"right-globalblock-exempt": "Outrepasser les blocages IP globaux",
 	"action-globalblock-exempt": "outrepasser les blocages IP globaux",
 	"log-action-filter-gblblock": "Type de blocage global :",
