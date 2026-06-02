@@ -151,8 +151,6 @@
 	"removeglobalblock": "Remove a global block",
 	"right-globalblock": "Make and remove global blocks",
 	"action-globalblock": "make and remove global blocks",
-	"right-globalblock-whitelist": "Disable global blocks locally",
-	"action-globalblock-whitelist": "disable global blocks locally",
 	"right-globalblock-local-status": "Change local status of global blocks",
 	"action-globalblock-local-status": "change local status of global blocks",
 	"right-globalblock-exempt": "Bypass global IP blocks",

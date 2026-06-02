@@ -189,8 +189,6 @@
 	"removeglobalblock": "{{doc-special|RemoveGlobalBlock}}",
 	"right-globalblock": "{{doc-right|globalblock}}",
 	"action-globalblock": "{{doc-action|globalblock}}",
-	"right-globalblock-whitelist": "{{doc-right|globalblock-whitelist}}",
-	"action-globalblock-whitelist": "{{doc-action|globalblock-whitelist}}",
 	"right-globalblock-local-status": "{{doc-right|globalblock-local-status}}",
 	"action-globalblock-local-status": "{{doc-action|globalblock-local-status}}",
 	"right-globalblock-exempt": "{{doc-right|globalblock-exempt}}",

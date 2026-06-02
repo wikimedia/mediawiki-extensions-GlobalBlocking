@@ -32,7 +32,6 @@
 	},
 	"AvailableRights": [
 		"globalblock",
-		"globalblock-whitelist",
 		"globalblock-local-status",
 		"globalblock-exempt"
 	],
