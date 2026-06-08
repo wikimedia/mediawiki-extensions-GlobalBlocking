@@ -53,7 +53,7 @@ class GlobalBlockLocalStatusManagerTest extends MediaWikiIntegrationTestCase {
 			->fetchRow();
 		$this->assertNotFalse( $row, 'The global_block_whitelist table should have one row.' );
 		// Verify that the row has the expected data
-		$this->assertArraySubmapSame(
+		$this->assertArrayContains(
 			[
 				'gbw_by' => (string)$performer->getId(),
 				'gbw_by_text' => $performer->getName(),
