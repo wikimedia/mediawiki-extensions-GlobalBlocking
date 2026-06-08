@@ -159,8 +159,6 @@
 	"removeglobalblock": "Poista järjestelmänlaajuinen esto",
 	"right-globalblock": "Estää järjestelmänlaajuisesti",
 	"action-globalblock": "estää järjestelmänlaajuisesti",
-	"right-globalblock-whitelist": "Poistaa käytöstä järjestelmänlaajuisia estoja paikallisesti",
-	"action-globalblock-whitelist": "poistaa käytöstä järjestelmänlaajuisia estoja paikallisesti",
 	"right-globalblock-local-status": "Vaihtaa järjestelmänlaajuisen eston paikallista tilaa",
 	"action-globalblock-local-status": "vaihtaa järjestelmänlaajuisen eston paikallista tilaa",
 	"right-globalblock-exempt": "Ohittaa järjestelmänlaajuiset IP-estot",

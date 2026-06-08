@@ -154,8 +154,6 @@
 	"removeglobalblock": "Globale blokkade verwijderen",
 	"right-globalblock": "Globale blokkades instellen en verwijderen",
 	"action-globalblock": "globale blokkades in te stellen en te verwijderen",
-	"right-globalblock-whitelist": "Globale blokkades lokaal negeren",
-	"action-globalblock-whitelist": "globale blokkades lokaal te negeren",
 	"right-globalblock-local-status": "Lokale status van een globale blokkades wijzigen",
 	"action-globalblock-local-status": "lokale status van een globale blokkades te wijzigen",
 	"right-globalblock-exempt": "Globale blokkades op IP-adres omzeilen",

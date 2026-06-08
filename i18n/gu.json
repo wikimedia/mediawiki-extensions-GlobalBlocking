@@ -65,8 +65,6 @@
 	"removeglobalblock": "વૈશ્વીક પ્રતિબંધ હટાવો",
 	"right-globalblock": "વૈશ્વીક પ્રતિબંધો બનાવો અને હટાવો",
 	"action-globalblock": "વૈશ્વીક પ્રતિબંધો બનાવો અને હટાવો",
-	"right-globalblock-whitelist": "વૈશ્વીક પ્રતિબંધને સ્થાનીય સ્તરે હટાવો",
-	"action-globalblock-whitelist": "વૈશ્વીક પ્રતિબંધને સ્થાનીય સ્તરે નિષ્ક્રીય કરો",
 	"right-globalblock-exempt": "વૈશ્વીક પ્રતિબંધો દરગુજર કરો",
 	"action-globalblock-exempt": "વૈશ્વીક પ્રતિબંધો દરગુજર કરો"
 }

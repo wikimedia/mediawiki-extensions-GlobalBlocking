@@ -142,8 +142,6 @@
 	"removeglobalblock": "Bỏ cấm toàn cục",
 	"right-globalblock": "Cấm và bỏ cấm toàn cục",
 	"action-globalblock": "cấm và bỏ cấm toàn cục",
-	"right-globalblock-whitelist": "Tắt tác vụ cấm toàn cục tại địa phương",
-	"action-globalblock-whitelist": "tắt tác vụ cấm toàn cục tại địa phương",
 	"right-globalblock-exempt": "Bỏ qua các lệnh cấm IP toàn cục",
 	"action-globalblock-exempt": "bỏ qua các lệnh cấm IP toàn cục",
 	"log-action-filter-gblblock": "Kiểu cấm toàn cục:",

@@ -68,8 +68,6 @@
 	"removeglobalblock": "Глобаль бикте алырға",
 	"right-globalblock": "Глобаль бикләүҙәр ҡуйыу һәм алып ташлау",
 	"action-globalblock": "глобаль бикләүҙәр ҡуйыу һәм алып ташлау",
-	"right-globalblock-whitelist": "Глобаль биктәрҙе локаль һүндереү",
-	"action-globalblock-whitelist": "глобаль биктәрҙе локаль һүндереү",
 	"right-globalblock-exempt": "Глобаль биктәрҙе урап үтеү",
 	"action-globalblock-exempt": "глобаль биктәрҙе урап үтеү"
 }

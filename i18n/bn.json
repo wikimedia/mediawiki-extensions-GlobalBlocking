@@ -100,8 +100,6 @@
 	"removeglobalblock": "একটি বৈশ্বিক বাধা তুলে নাও",
 	"right-globalblock": "বৈশ্বিক বাধা তৈরি বা বাতিল করো",
 	"action-globalblock": "বৈশ্বিক বাধা তৈরি বা বাতিল করো",
-	"right-globalblock-whitelist": "স্থানীয়ভাবে বৈশ্বিক বাধাদান নিষ্ক্রিয় করো",
-	"action-globalblock-whitelist": "স্থানীয়ভাবে বৈশ্বিক বাধাদান নিষ্ক্রিয় করো",
 	"right-globalblock-exempt": "বৈশ্বিক আইপি বাধা বাইপাস করো",
 	"action-globalblock-exempt": "বৈশ্বিক আইপি বাধা বাইপাস করার",
 	"log-action-filter-gblblock": "বৈশ্বিক বাধার ধরন:",

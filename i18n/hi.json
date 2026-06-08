@@ -96,8 +96,6 @@
 	"removeglobalblock": "एक वैश्विक अवरोध हटाएँ",
 	"right-globalblock": "वैश्विक अवरोध जोड़ना और हटाना",
 	"action-globalblock": "वैश्विक अवरोध जोड़ने और हटाने",
-	"right-globalblock-whitelist": "वैश्विक अवरोध स्थानीय रूप से अक्षम करना",
-	"action-globalblock-whitelist": "वैश्विक अवरोध स्थानीय रूप से अक्षम करने",
 	"right-globalblock-exempt": "वैश्विक IP अवरोध बाइपास करना",
 	"action-globalblock-exempt": "वैश्विक IP अवरोध बाइपास करने",
 	"log-action-filter-gblblock": "वैश्विक अवरोध का प्रकार:",

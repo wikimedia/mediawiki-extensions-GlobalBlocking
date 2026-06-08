@@ -95,8 +95,6 @@
 	"removeglobalblock": "Ukloni globalnu blokadu",
 	"right-globalblock": "Postavljanje i uklanjanje globalnih blokada",
 	"action-globalblock": "postavljate i uklanjate globalne blokade",
-	"right-globalblock-whitelist": "Lokalno onemogućavanje globalnih blokada",
-	"action-globalblock-whitelist": "lokalno onemogućavanje globalnih blokada",
 	"right-globalblock-exempt": "Zaobilaženje globalnih IP blokada",
 	"action-globalblock-exempt": "zaobilazite globalne IP blokade",
 	"log-action-filter-gblblock": "Vrsta globalnog blokiranja:",

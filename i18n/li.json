@@ -65,8 +65,6 @@
 	"removeglobalblock": "Globaal blok wisse",
 	"right-globalblock": "Globaal bloks instelle",
 	"action-globalblock": "maak wikiwiej bloks",
-	"right-globalblock-whitelist": "Globaal bloks lokaal negere",
-	"action-globalblock-whitelist": "negeer wikiwiej bloks",
 	"right-globalblock-exempt": "Loup globaal bloks óm",
 	"action-globalblock-exempt": "loup wikiwiej bloks óm"
 }

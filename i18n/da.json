@@ -151,8 +151,6 @@
 	"removeglobalblock": "Ophæv en global blokering",
 	"right-globalblock": "Tilføje og fjerne globale blokeringer",
 	"action-globalblock": "tilføje og ophæve globale blokeringer",
-	"right-globalblock-whitelist": "Ophæve globale blokeringer lokalt",
-	"action-globalblock-whitelist": "deaktivere globale blokeringer lokalt",
 	"right-globalblock-local-status": "Ændre lokal status for globale blokeringer",
 	"action-globalblock-local-status": "ændre lokal status for globale blokeringer",
 	"right-globalblock-exempt": "Omgå globale IP-blokeringer",

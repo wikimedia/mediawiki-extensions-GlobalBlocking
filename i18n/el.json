@@ -74,8 +74,6 @@
 	"removeglobalblock": "Αφαίρεση μιας καθολικής φραγής",
 	"right-globalblock": "Δημιουργία και αφαίρεση καθολικών φραγών",
 	"action-globalblock": "δημιουργία και αφαίρεση καθολικών φραγών",
-	"right-globalblock-whitelist": "Απενεργοποίηση καθολικών φραγών τοπικά",
-	"action-globalblock-whitelist": "απενεργοποίηση καθολικών φραγών τοπικά",
 	"right-globalblock-exempt": "Παράκαμψη καθολικών φραγών IP",
 	"action-globalblock-exempt": "παράκαμψη καθολικών φραγών IP"
 }

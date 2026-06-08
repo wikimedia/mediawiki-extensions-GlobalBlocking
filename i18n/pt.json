@@ -98,8 +98,6 @@
 	"removeglobalblock": "Remover um bloqueio global",
 	"right-globalblock": "Fazer e remover bloqueios globais",
 	"action-globalblock": "fazer e remover bloqueios globais",
-	"right-globalblock-whitelist": "Desativar bloqueios globais localmente",
-	"action-globalblock-whitelist": "desativar bloqueios globais localmente",
 	"right-globalblock-exempt": "Contornar bloqueios globais",
 	"action-globalblock-exempt": "contornar bloqueios globais",
 	"log-action-filter-gblblock": "Tipo de bloqueio global:",

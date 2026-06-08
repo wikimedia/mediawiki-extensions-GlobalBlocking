@@ -70,8 +70,6 @@
 	"removeglobalblock": "Live 'nu blocche globale",
 	"right-globalblock": "Sckaffe e live le blocche globbale",
 	"action-globalblock": "sckaffe e live le blocche globbale",
-	"right-globalblock-whitelist": "Disabbilete le blocche globale localmende",
-	"action-globalblock-whitelist": "disabbilete le blocche globbale localmende",
 	"right-globalblock-exempt": "Zumbe le blocche globale",
 	"action-globalblock-exempt": "zumbe le blocche globbale",
 	"log-action-filter-gblblock": "Tipe de blocche globbale:",

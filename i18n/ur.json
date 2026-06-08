@@ -49,8 +49,6 @@
 	"globalblock": "عالمی سطح پر ایک آئی پی ایڈریس بلاک",
 	"globalblockstatus": "عالمی پابندیوں کی مقامی صورت حال",
 	"right-globalblock": "عالمی پابندیوں کی تخلیق و حذف",
-	"right-globalblock-whitelist": "عالمی بلاکس کے مقامی غیر فعال کریں",
-	"action-globalblock-whitelist": "عالمی بلاکس کے مقامی غیر فعال کریں",
 	"right-globalblock-exempt": "عالمی بلاکس کو چھوڑنے والے",
 	"action-globalblock-exempt": "عالمی بلاکس کو چھوڑنے والے",
 	"log-action-filter-gblblock": "عالمی پابندی کی نوعیت:",

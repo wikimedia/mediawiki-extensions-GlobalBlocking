@@ -66,8 +66,6 @@
 	"removeglobalblock": "გლობალური ბლოკირების მოხსნა",
 	"right-globalblock": "გლობალური ბლოკის დადება და მოხსნა",
 	"action-globalblock": "გლობალური ბლოკის დადება და მოხსნა",
-	"right-globalblock-whitelist": "გლობალური ბლოკირების ლოკალური გამორთვა",
-	"action-globalblock-whitelist": "გლობალური ბლოკირების ლოკალური გამორთვა",
 	"right-globalblock-exempt": "გლობალური ბლოკირების გვერდის ავლა",
 	"action-globalblock-exempt": "გლობალური ბლოკირების გვერდის ავლა"
 }

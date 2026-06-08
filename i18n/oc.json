@@ -61,6 +61,5 @@
 	"globalblockstatus": "Estatuts locals dels blocatges globals",
 	"removeglobalblock": "Suprimir un blocatge global",
 	"right-globalblock": "Posicionar e suprimir los blocatges globals",
-	"right-globalblock-whitelist": "Desactivar localament los blocatges globals",
 	"right-globalblock-exempt": "Passar otra los blocatges globals"
 }

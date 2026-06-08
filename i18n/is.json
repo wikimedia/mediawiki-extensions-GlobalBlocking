@@ -67,8 +67,6 @@
 	"removeglobalblock": "Fjarlægja altæka hindrun",
 	"right-globalblock": "Búa til og fjarlægja altækar hindranir",
 	"action-globalblock": "búa til og fjarlægja altækar hindranir",
-	"right-globalblock-whitelist": "Óvirkja altækar hindranir staðbundið",
-	"action-globalblock-whitelist": "óvirkja altækar hindranir staðbundið",
 	"right-globalblock-exempt": "Sneiða hjá altækum hindrunum",
 	"action-globalblock-exempt": "sneiða hjá altækum hindrunum"
 }

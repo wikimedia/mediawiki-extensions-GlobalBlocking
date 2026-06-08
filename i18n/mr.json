@@ -68,8 +68,6 @@
 	"removeglobalblock": "वैश्विक रोध हटवा",
 	"right-globalblock": "वैश्विक ब्लॉक तयार करा व हटवा",
 	"action-globalblock": "वैश्विक ब्लॉक तयार करा व हटवा",
-	"right-globalblock-whitelist": "वैश्विक ब्लॉक स्थानिक पातळीवर रद्द करा",
-	"action-globalblock-whitelist": "वैश्विक ब्लॉक स्थानिक पातळीवर अक्षम करा",
 	"right-globalblock-exempt": "वैश्विक रोधास बगल द्या",
 	"action-globalblock-exempt": "वैश्विक रोधास बगल द्या"
 }

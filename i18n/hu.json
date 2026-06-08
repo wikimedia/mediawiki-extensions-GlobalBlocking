@@ -83,8 +83,6 @@
 	"removeglobalblock": "Globális blokk eltávolítása",
 	"right-globalblock": "globális blokkok készítése és eltávolítása",
 	"action-globalblock": "globális blokkok készítése és eltávolítása",
-	"right-globalblock-whitelist": "globális blokkok kikapcsolása helyileg",
-	"action-globalblock-whitelist": "globális blokkok kikapcsolása helyileg",
 	"right-globalblock-exempt": "globális blokkok figyelmen kívül hagyása",
 	"action-globalblock-exempt": "globális blokkok figyelmen kívül hagyása",
 	"log-action-filter-gblblock": "Globális blokk típusa:",

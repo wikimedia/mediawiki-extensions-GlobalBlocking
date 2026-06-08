@@ -76,8 +76,6 @@
 	"globalblockstatus": "Mjesni status globalnih blokiranja",
 	"removeglobalblock": "Ukloni globalno blokiranje",
 	"right-globalblock": "Postavljanje i uklanjanje globalnog blokiranja",
-	"right-globalblock-whitelist": "Mjesno uklanjanje globalnog blokiranja",
-	"action-globalblock-whitelist": "onemogućavanje globalnih blokada na lokalnoj razini",
 	"right-globalblock-exempt": "Zaobilaženje globalnih blokada",
 	"action-globalblock-exempt": "zaobilaženje globalnih blokada",
 	"log-action-filter-gblblock": "Vrsta globalnog blokiranja:",

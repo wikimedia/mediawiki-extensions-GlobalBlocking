@@ -96,8 +96,6 @@
 	"removeglobalblock": "Menghapuskan pemblokiran global",
 	"right-globalblock": "Buat dan hapus pemblokiran global",
 	"action-globalblock": "buat dan hapus pemblokiran global",
-	"right-globalblock-whitelist": "Matikan pemblokiran global secara lokal",
-	"action-globalblock-whitelist": "mematikan pemblokiran global secara lokal",
 	"right-globalblock-exempt": "Tidak dikenakan pemblokiran global",
 	"action-globalblock-exempt": "lewati pemblokiran global",
 	"log-action-filter-gblblock": "Tipe blokir global:",

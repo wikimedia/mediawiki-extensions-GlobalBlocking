@@ -118,8 +118,6 @@
 	"removeglobalblock": "Rimuovi un blocco globale",
 	"right-globalblock": "Effettua e rimuove blocchi globali",
 	"action-globalblock": "effettuare o rimuovere blocchi globali",
-	"right-globalblock-whitelist": "Disattiva blocchi globali localmente",
-	"action-globalblock-whitelist": "disattivare blocchi globali localmente",
 	"right-globalblock-exempt": "Bypassa i blocchi IP globali",
 	"action-globalblock-exempt": "bypassare i blocchi IP globali",
 	"log-action-filter-gblblock": "Tipo di blocco globale:",

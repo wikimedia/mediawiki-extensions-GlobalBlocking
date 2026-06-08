@@ -98,8 +98,6 @@
 	"removeglobalblock": "Odstrani globalno blokiranje",
 	"right-globalblock": "Ustvarjanje in odstranjevanje globalnih blokiranj",
 	"action-globalblock": "ustvarjanje in odstranjevanje globalnih blokiranj",
-	"right-globalblock-whitelist": "Onemogočanje globalnih blokiranj na lokalni ravni",
-	"action-globalblock-whitelist": "onemogočanje globalnih blokiranj na lokalni ravni",
 	"right-globalblock-exempt": "Izognitev globalnemu IP-blokiranju",
 	"action-globalblock-exempt": "izognitev globalnemu IP-blokiranju",
 	"log-action-filter-gblblock": "Vrsta globalnega blokiranja:",

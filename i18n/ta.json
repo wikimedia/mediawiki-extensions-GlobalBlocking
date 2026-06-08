@@ -61,8 +61,6 @@
 	"removeglobalblock": "ஒரு உலகளாவிய தடையை நீக்கு",
 	"right-globalblock": "உலகளாவிய தடையை உருவாக்கு",
 	"action-globalblock": "உலகளாவிய தடையை உருவாக்கு",
-	"right-globalblock-whitelist": "உள்ளமைவில் உலகளாவிய தடைகளை செயல்நீக்கவும்",
-	"action-globalblock-whitelist": "உள்ளமைவில் உலகளாவிய தடைகளை செயல்நீக்கவும்",
 	"right-globalblock-exempt": "உலகளாவிய தடையை மீறு",
 	"action-globalblock-exempt": "உலகளாவிய தடையை மீறு"
 }

@@ -155,8 +155,6 @@
 	"removeglobalblock": "Usuwanie globalnej blokady",
 	"right-globalblock": "Zakładanie i zdejmowanie globalnych blokad",
 	"action-globalblock": "nakładania i zdejmowania globalnych blokad",
-	"right-globalblock-whitelist": "Lokalne odblokowywanie globalnych blokad",
-	"action-globalblock-whitelist": "lokalne odblokowywanie globalnych blokad",
 	"right-globalblock-exempt": "Ignorowanie globalnych blokad IP",
 	"action-globalblock-exempt": "ignorowania globalnych blokad IP",
 	"log-action-filter-gblblock": "Typ globalnej blokady:",

@@ -117,8 +117,6 @@
 	"removeglobalblock": "Eemalda globaalne blokeering",
 	"right-globalblock": "Lisada ja eemaldada globaalseid blokeeringuid",
 	"action-globalblock": "globaalseid blokeeringuid lisada ega eemaldada",
-	"right-globalblock-whitelist": "Kohalikus vikis globaalseid blokeeringuid välja lülitada",
-	"action-globalblock-whitelist": "kohalikus vikis globaalseid blokeeringuid välja lülitada",
 	"right-globalblock-local-status": "Muuta globaalse blokeeringu kohalikku olekut",
 	"action-globalblock-local-status": "globaalse blokeeringu kohalikku olekut muuta",
 	"right-globalblock-exempt": "Mööduda globaalsetest IP-blokeeringutest",

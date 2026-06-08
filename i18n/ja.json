@@ -160,8 +160,6 @@
 	"removeglobalblock": "グローバルブロックを解除",
 	"right-globalblock": "グローバルブロックの実行および解除",
 	"action-globalblock": "グローバルブロックの実行と解除",
-	"right-globalblock-whitelist": "グローバルブロックをローカルで無効化",
-	"action-globalblock-whitelist": "グローバルブロックのローカルでの無効化",
 	"right-globalblock-exempt": "グローバルブロックを回避",
 	"action-globalblock-exempt": "グローバルブロックの回避",
 	"log-action-filter-gblblock": "グローバルブロックの種類:",

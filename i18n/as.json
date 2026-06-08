@@ -63,8 +63,6 @@
 	"removeglobalblock": "এটা গোলকীয় প্ৰতিবন্ধক আঁতৰাওক",
 	"right-globalblock": "গোলকীয় প্ৰতিবন্ধক সৃষ্টি কৰক",
 	"action-globalblock": "গোলকীয় প্ৰতিবন্ধক সৃষ্টি কৰক",
-	"right-globalblock-whitelist": "স্থানীয়ভাৱে গোলকীয় প্ৰতিবন্ধক নিষ্ক্ৰিয় কৰক",
-	"action-globalblock-whitelist": "স্থানীয়ভাৱে গোলকীয় প্ৰতিবন্ধক নিষ্ক্ৰিয় কৰক",
 	"right-globalblock-exempt": "গোলকীয় প্ৰতিবন্ধক বাইপাছ কৰক",
 	"action-globalblock-exempt": "গোলকীয় প্ৰতিবন্ধক বাইপাছ কৰক"
 }

@@ -22,7 +22,5 @@
 	"globalblocking-logpage": "Globālais bloķēšanas žurnāls",
 	"globalblocklist": "Globāli bloķēto IP adrešu saraksts",
 	"globalblock": "Globāli bloķēt IP adresi",
-	"right-globalblock": "Veikt lietotāju globālu bloķēšanu",
-	"right-globalblock-whitelist": "Lokāli atspējot globālo bloķēšanu",
-	"action-globalblock-whitelist": "lokāli atspējot globālo bloķēšanu"
+	"right-globalblock": "Veikt lietotāju globālu bloķēšanu"
 }

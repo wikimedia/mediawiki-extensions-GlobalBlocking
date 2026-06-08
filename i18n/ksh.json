@@ -66,8 +66,6 @@
 	"removeglobalblock": "En Sperr för en IP-Address en alle Wikis ophevve",
 	"right-globalblock": "en Schpärr för en <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"Internet Protocol\">IP</i>-Adräß en alle Wikis enreeschte un ophävve",
 	"action-globalblock": "jemeinsamme Schpärre för alle Wikis enreeschte un ophävve",
-	"right-globalblock-whitelist": "En Sperr för en IP-Address en alle Wikis ophevve, ävver nur för hee dat Wiki",
-	"action-globalblock-whitelist": "Jemeinsamme Sperre fun alle Wikis en enem einzel Wiki widder ophevve",
 	"right-globalblock-exempt": "Jemeinsam Schpärre ömjonn",
 	"action-globalblock-exempt": "Jemeinsamme Sperre fun alle Wikis ömjonn"
 }

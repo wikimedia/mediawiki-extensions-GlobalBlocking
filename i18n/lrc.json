@@ -57,7 +57,5 @@
 	"globalblockstatus": "حال و بال ولات نشینی نهاگرتن سرتاسری",
 	"removeglobalblock": "ؤرداشتن یه گل نهاگرتن سرتاسری",
 	"right-globalblock": "راس کردن و ؤرداشتن یه نهاگریا سرتاسری",
-	"action-globalblock": "راس کردن و ؤرداشتن یه نهاگریا سرتاسری",
-	"right-globalblock-whitelist": "ناکشتگر کردن ولات نشینی نهاگریا سرتاسری",
-	"action-globalblock-whitelist": "ناکشتگر کردن ولات نشینی نهاگریا سرتاسری"
+	"action-globalblock": "راس کردن و ؤرداشتن یه نهاگریا سرتاسری"
 }

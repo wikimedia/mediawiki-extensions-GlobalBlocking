@@ -84,8 +84,6 @@
 	"removeglobalblock": "Премахване на глобално блокиране",
 	"right-globalblock": "Създаване и премахване на глобални блокирания",
 	"action-globalblock": "създаване и премахване на глобални блокирания",
-	"right-globalblock-whitelist": "Локално спиране на глобалните блокирания",
-	"action-globalblock-whitelist": "локално спиране на глобалните блокирания",
 	"right-globalblock-exempt": "Пренебрегване на глобалните блокирания по IP адрес",
 	"action-globalblock-exempt": "пренебрегване на глобалните блокирания по IP адрес",
 	"log-action-filter-gblblock": "Вид глобално блокиране:",

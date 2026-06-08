@@ -102,8 +102,6 @@
 	"removeglobalblock": "เอาการบล็อกข้ามโครงการออก",
 	"right-globalblock": "ทำการบล็อกข้ามโครงการและเอาการบล็อกข้ามโครงการออก",
 	"action-globalblock": "ทำการบล็อกข้ามโครงการและเอาการบล็อกข้ามโครงการออก",
-	"right-globalblock-whitelist": "ปิดใช้งานการบล็อกข้ามโครงการในท้องถิ่น",
-	"action-globalblock-whitelist": "ปิดใช้งานการบล็อกข้ามโครงการในท้องถิ่น",
 	"right-globalblock-exempt": "เลี่ยงผ่านการบล็อกไอพีข้ามโครงการ",
 	"action-globalblock-exempt": "เลี่ยงผ่านการบล็อกไอพีข้ามโครงการ",
 	"log-action-filter-gblblock": "ประเภทของบล็อกข้ามโครงการ:",

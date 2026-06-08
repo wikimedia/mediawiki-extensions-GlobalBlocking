@@ -74,8 +74,6 @@
 	"removeglobalblock": "Batalkan sekatan sejagat",
 	"right-globalblock": "Mengenakan dan menarik balik sekatan sejagat",
 	"action-globalblock": "membuat dan menarik balik sekatan sejagat",
-	"right-globalblock-whitelist": "Mematikan sekatan sejagat di wiki tempatan",
-	"action-globalblock-whitelist": "mematikan sekatan sejagat secara setempat",
 	"right-globalblock-exempt": "Mengatasi sekatan sejagat",
 	"action-globalblock-exempt": "memintas sekatan sejagat",
 	"globalblocking-centralauth-admin-info-globalblock": "Disekat sejagat:"

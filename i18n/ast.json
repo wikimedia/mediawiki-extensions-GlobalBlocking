@@ -73,8 +73,6 @@
 	"removeglobalblock": "Desaniciar un bloquéu global",
 	"right-globalblock": "Facer y quitar bloqueos globales",
 	"action-globalblock": "facer y quitar bloqueos globales",
-	"right-globalblock-whitelist": "Desactivar llocalmente bloqueos globales",
-	"action-globalblock-whitelist": "desactivar llocalmente bloqueos globales",
 	"right-globalblock-exempt": "Saltar los bloqueos globales",
 	"action-globalblock-exempt": "saltar los bloqueos globales",
 	"log-action-filter-gblblock": "Tipu de bloquéu global:",

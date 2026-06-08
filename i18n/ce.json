@@ -136,8 +136,6 @@
 	"removeglobalblock": "ДӀайаккха глобалан блоктохар",
 	"right-globalblock": "Глобалан блоктохар а, блокдӀайаккхар а",
 	"action-globalblock": "глобалан блоктохар а, блокдӀайаккхар а",
-	"right-globalblock-whitelist": "Глобалан блоктохарш локалан дӀайахар",
-	"action-globalblock-whitelist": "глобалан блоктохарш цхьанхьа дӀайахар",
 	"right-globalblock-exempt": "Глобалан  IP-блоктохарийн чекхбовлар",
 	"action-globalblock-exempt": "глобалан  IP-блоктохарийн чекхбовлар",
 	"log-action-filter-gblblock": "Глобалан блокан тайпа:",

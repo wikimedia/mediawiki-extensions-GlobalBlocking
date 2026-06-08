@@ -72,8 +72,6 @@
 	"removeglobalblock": "Elimină o blocare globală",
 	"right-globalblock": "Efectuează și înlătură blocări globale",
 	"action-globalblock": "efectuează și înlătură blocări globale",
-	"right-globalblock-whitelist": "Dezactivează local blocările globale",
-	"action-globalblock-whitelist": "dezactivați local blocări globale",
 	"right-globalblock-exempt": "Ocolește blocările globale",
 	"action-globalblock-exempt": "treceți peste blocările globale",
 	"log-action-filter-gblblock": "Tipul blocării globale:",

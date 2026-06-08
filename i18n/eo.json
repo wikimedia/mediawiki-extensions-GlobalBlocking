@@ -65,8 +65,6 @@
 	"removeglobalblock": "Forigi ĝeneralan forbaron",
 	"right-globalblock": "Fari ĝeneralajn forbarojn",
 	"action-globalblock": "fari kaj forigi ĝeneralajn forbarojn",
-	"right-globalblock-whitelist": "Malŝalti ĝeneralajn forbarojn ĉi-loke",
-	"action-globalblock-whitelist": "malŝalti ĝeneralajn forbarojn ĉi-loke",
 	"right-globalblock-exempt": "Preterigi ĝeneralajn forbarojn",
 	"action-globalblock-exempt": "preterigi ĝeneralajn forbarojn"
 }

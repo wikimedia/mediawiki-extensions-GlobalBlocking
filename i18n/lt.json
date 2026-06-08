@@ -85,8 +85,6 @@
 	"removeglobalblock": "Pašalinti pasaulini blokavimą",
 	"right-globalblock": "Kurti ir šalinti visuotinius blokavimus",
 	"action-globalblock": "kurti ir šalinti visuotinius blokavimus",
-	"right-globalblock-whitelist": "Išjungti visuotinius blokavimus lokaliai",
-	"action-globalblock-whitelist": "išjungti visuotinius blokavimus lokaliai",
 	"right-globalblock-exempt": "Apeiti visuotinius blokavimus",
 	"action-globalblock-exempt": "apeiti visuotinius blokavimus",
 	"log-action-filter-gblblock": "Visuotinio bloko tipas:",

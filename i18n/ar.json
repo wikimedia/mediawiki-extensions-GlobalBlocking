@@ -157,8 +157,6 @@
 	"removeglobalblock": "إزالة منع عام",
 	"right-globalblock": "أضف وأزل عمليات المنع العامة",
 	"action-globalblock": "أضف وأزل عمليات المنع العامة",
-	"right-globalblock-whitelist": "تعطيل عمليات المنع العامة محليا",
-	"action-globalblock-whitelist": "تعطيل عمليات المنع العامة محليا",
 	"right-globalblock-exempt": "تجاوز عمليات المنع العامة",
 	"action-globalblock-exempt": "تجاوز عمليات المنع العامة",
 	"log-action-filter-gblblock": "نوع المنع العالمي:",

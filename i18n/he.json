@@ -147,8 +147,6 @@
 	"removeglobalblock": "הסרת חסימה גלובלית",
 	"right-globalblock": "יצירה והסרה של חסימות גלובליות",
 	"action-globalblock": "להפעיל או להסיר חסימות גלובליות",
-	"right-globalblock-whitelist": "ביטול חסימות גלובליות באופן מקומי",
-	"action-globalblock-whitelist": "לבטל חסימות גלובליות באופן מקומי",
 	"right-globalblock-exempt": "עקיפת חסימות IP גלובליות",
 	"action-globalblock-exempt": "לעקוף חסימות IP גלובליות",
 	"log-action-filter-gblblock": "סוג החסימות הגלובליות:",

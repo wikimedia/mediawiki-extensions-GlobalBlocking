@@ -154,8 +154,6 @@
 	"removeglobalblock": "Зняти глобальне блокування",
 	"right-globalblock": "Накладання та зняття глобальних блокувань",
 	"action-globalblock": "накладення і зняття глобальних блокувань",
-	"right-globalblock-whitelist": "Локальне відключення глобального блокування",
-	"action-globalblock-whitelist": "локальне відключення глобального блокування",
 	"right-globalblock-local-status": "Зміна локального стану глобального блокування",
 	"action-globalblock-local-status": "зміну локального стану глобального блокування",
 	"right-globalblock-exempt": "Обхід глобальних блокувань IP",

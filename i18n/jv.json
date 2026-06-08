@@ -71,8 +71,6 @@
 	"removeglobalblock": "Busak penggakan global",
 	"right-globalblock": "Nggawé lang mbusak pamblokiran global",
 	"action-globalblock": "gawé lan busak blokiran global",
-	"right-globalblock-whitelist": "Jabel blokade global sacara lokal",
-	"action-globalblock-whitelist": "patèni blokiran global sacara lokal",
 	"right-globalblock-exempt": "Liwati blokiran global",
 	"action-globalblock-exempt": "liwati blokiran global",
 	"log-action-filter-gblblock-gblock": "Penggakan global"

@@ -64,8 +64,6 @@
 	"removeglobalblock": "Tanggalin ang isang pandaigdigang paghahadlang",
 	"right-globalblock": "Gumawa ng pandaigdigang mga pagharang",
 	"action-globalblock": "gumawa ng pandaigdigang mga pagharang",
-	"right-globalblock-whitelist": "Pampook (lokal) lamang na hindi paganahin/huwag paandarin ang mga pandaigdigang pagharang",
-	"action-globalblock-whitelist": "pampook na huwag paganahin ang pandaigdigang mga pagharang",
 	"right-globalblock-exempt": "Laktawan ang mga pagharang na pandaigdigan",
 	"action-globalblock-exempt": "laktawan ang mga pagharang na pandaigdigan"
 }

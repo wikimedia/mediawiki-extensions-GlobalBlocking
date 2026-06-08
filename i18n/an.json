@@ -62,8 +62,6 @@
 	"removeglobalblock": "Sacar un bloqueyo global",
 	"right-globalblock": "Fer bloqueyos globals",
 	"action-globalblock": "Fer bloqueyos globals",
-	"right-globalblock-whitelist": "Desactivar localment os bloqueyos globals",
-	"action-globalblock-whitelist": "Desactivar localment os bloqueyos globals",
 	"right-globalblock-exempt": "Eludir bloqueyos globals",
 	"action-globalblock-exempt": "Eludir os bloqueyos globals"
 }

@@ -55,6 +55,5 @@
 	"globalblock": "En IP-Adress global sperren",
 	"globalblockstatus": "Lokalen Status vun de globale Sperr",
 	"removeglobalblock": "Globale Sperr opheven",
-	"right-globalblock": "Globale Sperren maken un wegmaken",
-	"right-globalblock-whitelist": "Globale Sperren lokal afschalten"
+	"right-globalblock": "Globale Sperren maken un wegmaken"
 }

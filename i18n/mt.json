@@ -64,8 +64,6 @@
 	"removeglobalblock": "Neħħi blokk globali",
 	"right-globalblock": "Jagħmel blokk globali",
 	"action-globalblock": "tagħmel blokki globali",
-	"right-globalblock-whitelist": "Jiddiżattiva blokki globali lokalment",
-	"action-globalblock-whitelist": "tiddiżattiva blokki globali lokalment",
 	"right-globalblock-exempt": "Jaqbeż blokki globali",
 	"action-globalblock-exempt": "taqbeż blokki globali"
 }

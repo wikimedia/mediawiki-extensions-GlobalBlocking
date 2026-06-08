@@ -139,8 +139,6 @@
 	"removeglobalblock": "Снять глобальную блокировку",
 	"right-globalblock": "Наложение и снятие глобальных блокировок",
 	"action-globalblock": "установку глобальных ограничений на редактирование",
-	"right-globalblock-whitelist": "Локальное отключение глобальных блокировок",
-	"action-globalblock-whitelist": "локальное отключение глобальных блокировок",
 	"right-globalblock-exempt": "Обход глобальных IP-блокировок",
 	"action-globalblock-exempt": "обход глобальных IP-блокировок",
 	"log-action-filter-gblblock": "Тип глобального блока:",

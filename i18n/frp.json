@@ -63,8 +63,6 @@
 	"removeglobalblock": "Enlevar un blocâjo globâl",
 	"right-globalblock": "Blocar des usanciérs dens l’ensemblo",
 	"action-globalblock": "fâre des blocâjos globâls",
-	"right-globalblock-whitelist": "Dèsactivar localament los blocâjos globâls",
-	"action-globalblock-whitelist": "dèsactivar localament los blocâjos globâls",
 	"right-globalblock-exempt": "Passar per-dessus los blocâjos globâls",
 	"action-globalblock-exempt": "passar per-dessus los blocâjos globâls"
 }

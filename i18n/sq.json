@@ -84,8 +84,6 @@
 	"removeglobalblock": "Hiq një bllokim global",
 	"right-globalblock": "Krijo dhe hiq bllokime globale",
 	"action-globalblock": "krijosh dhe heqësh bllokime globale",
-	"right-globalblock-whitelist": "Çaktivizoni bllokimet globale në nivel lokal",
-	"action-globalblock-whitelist": "pamundëso lokalisht bllokimet e përgjithshme",
 	"right-globalblock-exempt": "anashkalosh bllokime globale të IP-së",
 	"action-globalblock-exempt": "anashkalosh bllokime globale të IP-së",
 	"grant-globalblock": "Blloko ose zhblloko globalisht një përdorues"

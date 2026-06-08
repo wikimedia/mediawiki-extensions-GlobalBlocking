@@ -156,8 +156,6 @@
 	"removeglobalblock": "Globale Sperre aufheben",
 	"right-globalblock": "Globale Sperren erstellen und entfernen",
 	"action-globalblock": "globale Sperren einzurichten und zu entfernen",
-	"right-globalblock-whitelist": "Globale Sperren lokal aufheben",
-	"action-globalblock-whitelist": "globale Sperren lokal aufzuheben",
 	"right-globalblock-local-status": "Lokalen Status globaler Sperren ändern",
 	"action-globalblock-local-status": "lokalen Status globaler Sperren zu ändern",
 	"right-globalblock-exempt": "Globale IP-Sperren umgehen",

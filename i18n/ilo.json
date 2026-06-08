@@ -65,8 +65,6 @@
 	"removeglobalblock": "Ikkaten ti maysa a sangalubongan a serra",
 	"right-globalblock": "Agaramid ken agikkat kadagiti sangalubongan a serra",
 	"action-globalblock": "agaramid ken agikkat kadagiti sanglubongan a serra",
-	"right-globalblock-whitelist": "Ibaldado a lokal dagiti sangalubongan a serra",
-	"action-globalblock-whitelist": "ibaldado a lokal dagiti sanglubongan a serra",
 	"right-globalblock-exempt": "Palabsan dagiti sangalubongan a serra",
 	"action-globalblock-exempt": "palabsan dagiti sangalubongan a serra",
 	"grant-globalblock": "Global a serraan wenno ikkaten ti serra ti maysa nga adres ti IP"

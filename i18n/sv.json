@@ -97,8 +97,6 @@
 	"removeglobalblock": "Ta bort en global blockering",
 	"right-globalblock": "Skapa och ta bort globala blockeringar",
 	"action-globalblock": "skapa och ta bort globala blockeringar",
-	"right-globalblock-whitelist": "Slå av globala blockeringar lokalt",
-	"action-globalblock-whitelist": "Inaktivera globala blockeringar lokalt",
 	"right-globalblock-exempt": "Kringgå globala IP-blockeringar",
 	"action-globalblock-exempt": "Gå runt globala IP-blockeringar",
 	"log-action-filter-gblblock": "Typ av global blockering:",

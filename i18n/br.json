@@ -93,8 +93,6 @@
 	"removeglobalblock": "Lemel ur stankadur hollek",
 	"right-globalblock": "Stankañ pe distankañ implijerien en un doare hollek",
 	"action-globalblock": "Ober ha dizober stankadennoù hollek",
-	"right-globalblock-whitelist": "Diweredekaat en un doare lec'hel ar stankadennoù hollek",
-	"action-globalblock-whitelist": "Diweredekaat en un doare lec'hel ar stankadennoù hollek",
 	"right-globalblock-exempt": "Mont dreist d'ar stankadennoù IP hollek",
 	"action-globalblock-exempt": "mont dreist d'ar stankadennoù IP hollek",
 	"log-action-filter-gblblock": "Seurt stankadenn hollek :",

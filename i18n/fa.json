@@ -155,8 +155,6 @@
 	"removeglobalblock": "حذف یک بستن دسترسی سراسری",
 	"right-globalblock": "ایجاد و حذف بستن‌های سراسری",
 	"action-globalblock": "ایجاد و حذف قطع دسترسی‌های سراسری",
-	"right-globalblock-whitelist": "غیرفعال کردن قطع دسترسی‌های سراسری به طور محلی",
-	"action-globalblock-whitelist": "غیرفعال کردن قطع دسترسی‌های سراسری به‌صورت محلی",
 	"right-globalblock-exempt": "گذر از قطع دسترسی‌های سراسری آی‌پی",
 	"action-globalblock-exempt": "گذر از قطع دسترسی‌های سراسری آی‌پی",
 	"log-action-filter-gblblock": "نوع بستن دسترسی سراسری:",

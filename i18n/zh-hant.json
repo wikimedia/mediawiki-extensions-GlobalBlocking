@@ -172,8 +172,6 @@
 	"removeglobalblock": "移除一個全域封鎖",
 	"right-globalblock": "新增與移除全域封鎖",
 	"action-globalblock": "新增與移除全域封鎖",
-	"right-globalblock-whitelist": "本地停用全域封鎖",
-	"action-globalblock-whitelist": "本地停用全域封鎖",
 	"right-globalblock-exempt": "忽略全域IP封鎖",
 	"action-globalblock-exempt": "忽略全域IP封鎖",
 	"log-action-filter-gblblock": "全域封鎖類型：",

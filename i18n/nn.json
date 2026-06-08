@@ -62,6 +62,5 @@
 	"globalblock": "Blokker ei IP-adressa globalt",
 	"globalblockstatus": "Lokal status for globale blokkeringar",
 	"removeglobalblock": "Fjern ei global blokkering",
-	"right-globalblock": "Gjennomføra globale blokkeringar",
-	"right-globalblock-whitelist": "Slå av globale blokkeringar lokalt"
+	"right-globalblock": "Gjennomføra globale blokkeringar"
 }

@@ -51,6 +51,5 @@
 	"globalblock": "منع عام لعنوان أى بي",
 	"globalblockstatus": "الحالة المحلية للمنع العام",
 	"removeglobalblock": "شيل منع عام",
-	"right-globalblock": "اعمل منع عام",
-	"right-globalblock-whitelist": "عطل المنع العام على المستوى المحلي"
+	"right-globalblock": "اعمل منع عام"
 }

@@ -139,8 +139,6 @@
 	"removeglobalblock": "Ka saar xannibaad caalami ah",
 	"right-globalblock": "Samee oo ka saar xannibaadaha caalamiga ah",
 	"action-globalblock": "Samee oo ka saar xannibaadaha caalamiga ah",
-	"right-globalblock-whitelist": "Si maxalli ah u jooji xannibaadaha caalamiga ah",
-	"action-globalblock-whitelist": "Si maxalli ah u jooji xannibaadaha caalamiga ah",
 	"right-globalblock-local-status": "Beddel xaaladda maxalliga ah ee xannibaadaha caalamiga ah",
 	"action-globalblock-local-status": "Beddel xaaladda maxalliga ah ee xannibaadaha caalamiga ah",
 	"right-globalblock-exempt": "Ka gudub xannibaadaha IP-ga caalamiga ah",

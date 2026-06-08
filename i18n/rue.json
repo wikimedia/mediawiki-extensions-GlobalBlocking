@@ -68,8 +68,6 @@
 	"removeglobalblock": "Зняти ґлобалне блокованя",
 	"right-globalblock": "Ґлобалне блокованя",
 	"action-globalblock": "ґлобално блоковати",
-	"right-globalblock-whitelist": "Дефінованя вынятків з ґлобалного блокованя",
-	"action-globalblock-whitelist": "дефіновати выняткы з ґловалного блокованя",
 	"right-globalblock-exempt": "Обходжаня ґлобалных блоковань",
 	"action-globalblock-exempt": "обходити ґлобалне блокованя",
 	"log-action-filter-gblblock-gblock": "Ґлобалне блокованя",

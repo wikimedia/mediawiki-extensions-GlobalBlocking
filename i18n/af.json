@@ -64,6 +64,5 @@
 	"globalblockstatus": "Lokale status van globale blokkades",
 	"removeglobalblock": "Verwyder 'n globale blokkade",
 	"right-globalblock": "Rig globale versperrings op",
-	"right-globalblock-whitelist": "Skakel globale versperrings lokaal af",
 	"right-globalblock-exempt": "Omseil globale blokkades"
 }
