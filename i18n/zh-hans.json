@@ -183,6 +183,8 @@
 	"removeglobalblock": "移除全域封禁",
 	"right-globalblock": "新增和移除全域封禁",
 	"action-globalblock": "新增和移除全域封禁",
+	"right-globalblock-local-status": "更改全域封禁的本地状态",
+	"action-globalblock-local-status": "更改全域封禁的本地状态",
 	"right-globalblock-exempt": "绕过全域IP封禁",
 	"action-globalblock-exempt": "绕过全域IP封禁",
 	"log-action-filter-gblblock": "全域封禁的类型：",
