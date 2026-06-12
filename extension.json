@@ -4,7 +4,7 @@
 	"url": "https://www.mediawiki.org/wiki/Extension:GlobalBlocking",
 	"descriptionmsg": "globalblocking-desc",
 	"license-name": "GPL-2.0-or-later",
-	"type": "other",
+	"type": "wikifamily",
 	"requires": {
 		"MediaWiki": ">= 1.47.0"
 	},
