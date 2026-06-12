@@ -9,6 +9,7 @@ use MediaWiki\Extension\GlobalBlocking\Maintenance\GloballyBlock;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Tests\Maintenance\MaintenanceBaseTestCase;
 use MediaWiki\User\UserFactory;
+use Wikimedia\TestingAccessWrapper;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
 
 /**
@@ -129,5 +130,19 @@ class GloballyBlockTest extends MaintenanceBaseTestCase {
 		$this->maintenance->setOption( 'unblock', 1 );
 		$this->expectOutputRegex( "/Globally unblocking '1.2.3.4' failed.*is not globally blocked/" );
 		$this->maintenance->execute();
+	}
+
+	public function testExecuteWhenStdinIsEmpty(): void {
+		// Mock ::getStdin as we cannot easily provide stdin input during the test
+		$maintenance = $this->getMockBuilder( GloballyBlock::class )
+			->onlyMethods( [ 'getStdin' ] )
+			->getMock();
+		$maintenance->method( 'getStdin' )
+			->willReturn( false );
+		TestingAccessWrapper::newFromObject( $maintenance )->isTesting = true;
+
+		$this->expectOutputRegex( '/Unable to read file, exiting/' );
+		$this->expectCallToFatalError();
+		$maintenance->execute();
 	}
 }

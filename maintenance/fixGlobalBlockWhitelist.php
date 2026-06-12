@@ -66,23 +66,20 @@ class FixGlobalBlockWhitelist extends Maintenance {
 				->caller( __METHOD__ )
 				->fetchFieldValues();
 
-			// If there were no entries in the batch, then exit now as there is nothing more to do.
-			if ( !count( $localWhitelistIds ) ) {
-				break;
-			}
-
 			// Find the associated global block rows for the entries in this batch.
-			$globalBlockingDbr = GlobalBlockingServices::wrap( $this->getServiceContainer() )
-				->getGlobalBlockingConnectionProvider()
-				->getReplicaGlobalBlockingDatabase();
-			$matchingGlobalBlockIds = $globalBlockingDbr->newSelectQueryBuilder()
-				->select( 'gb_id' )
-				->from( 'globalblocks' )
-				->where( [ 'gb_id' => $localWhitelistIds ] )
-				->caller( __METHOD__ )
-				->fetchFieldValues();
+			if ( count( $localWhitelistIds ) ) {
+				$globalBlockingDbr = GlobalBlockingServices::wrap( $this->getServiceContainer() )
+					->getGlobalBlockingConnectionProvider()
+					->getReplicaGlobalBlockingDatabase();
+				$matchingGlobalBlockIds = $globalBlockingDbr->newSelectQueryBuilder()
+					->select( 'gb_id' )
+					->from( 'globalblocks' )
+					->where( [ 'gb_id' => $localWhitelistIds ] )
+					->caller( __METHOD__ )
+					->fetchFieldValues();
 
-			$broken = array_merge( $broken, array_diff( $localWhitelistIds, $matchingGlobalBlockIds ) );
+				$broken = array_merge( $broken, array_diff( $localWhitelistIds, $matchingGlobalBlockIds ) );
+			}
 		} while ( count( $localWhitelistIds ) === ( $this->getBatchSize() ?? 500 ) );
 
 		$this->handleDeletions( $broken );
