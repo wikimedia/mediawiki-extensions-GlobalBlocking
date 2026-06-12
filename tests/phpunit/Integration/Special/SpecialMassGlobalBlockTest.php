@@ -288,9 +288,10 @@ class SpecialMassGlobalBlockTest extends SpecialPageTestBase {
 		$this->assertGlobalBlocksTableEmpty();
 	}
 
-	public function testSubmitWithNoActionTargets() {
+	/** @dataProvider provideSubmitWithNoActionTargets */
+	public function testSubmitWithNoActionTargets( ?string $actionTargetValue ) {
 		[ $fauxRequest, $performer ] = $this->getFauxRequestForMassBlockSubmission( [
-			'wpActionTarget' => '', 'wpAction' => 'block', 'wpTargets' => "1.2.3.4\n5.6.7.9",
+			'wpActionTarget' => $actionTargetValue, 'wpAction' => 'block', 'wpTargets' => "1.2.3.4\n5.6.7.9",
 		] );
 		// Execute the special page.
 		[ $html ] = $this->executeSpecialPage( '', $fauxRequest, null, $performer );
@@ -302,6 +303,13 @@ class SpecialMassGlobalBlockTest extends SpecialPageTestBase {
 		// Verify that the page does not indicate any blocks were made.
 		$this->assertStringNotContainsString( '(globalblocking-mass-success-block', $html );
 		$this->assertGlobalBlocksTableEmpty();
+	}
+
+	public static function provideSubmitWithNoActionTargets(): array {
+		return [
+			'wpActionTarget is an empty string' => [ '' ],
+			'wpActionTarget is null (not provided)' => [ null ],
+		];
 	}
 
 	public function testSubmitForBlockOfNonExistentUser() {

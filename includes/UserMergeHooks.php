@@ -16,6 +16,7 @@ class UserMergeHooks implements
 {
 	/**
 	 * @param array &$updateFields
+	 * @codeCoverageIgnore Merely declarative
 	 */
 	public function onUserMergeAccountFields( array &$updateFields ): void {
 		$updateFields[] = [ 'global_block_whitelist', 'gbw_by', 'gbw_by_text' ];

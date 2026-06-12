@@ -223,6 +223,12 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 				true,
 				false
 			],
+			'Hiding all blocks' => [
+				[ 'addressblocks', 'rangeblocks', 'userblocks', 'autoblocks', 'tempaccountblocks' ],
+				[],
+				false,
+				false,
+			],
 			'Hide indefinite blocks' => [ [ 'indefblocks' ], [ '1.2.3.0/24' ], false, true ],
 			'Hide temporary and indefinite blocks' => [ [ 'tempblocks', 'indefblocks' ], [], false, false ],
 		];

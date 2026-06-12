@@ -27,16 +27,19 @@ use MediaWiki\Http\HttpRequestFactory;
 use MediaWiki\Http\MWHttpRequest;
 use MediaWiki\Status\Status;
 use MediaWikiIntegrationTestCase;
+use MockHttpTrait;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 use Wikimedia\ObjectCache\WANObjectCache;
-use Wikimedia\TestingAccessWrapper;
 
 /**
  * @author Taavi "Majavah" Väänänen <hi@taavi.wtf>
  * @covers MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockReasonFormatter
  */
 class GlobalBlockReasonFormatterTest extends MediaWikiIntegrationTestCase {
+
+	use MockHttpTrait;
+
 	public function testConstructor() {
 		$this->assertInstanceOf(
 			GlobalBlockReasonFormatter::class,
@@ -55,21 +58,19 @@ class GlobalBlockReasonFormatterTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testExpandWithoutUrl() {
-		$formatter = TestingAccessWrapper::newFromObject(
-			new GlobalBlockReasonFormatter(
-				new ServiceOptions(
-					GlobalBlockReasonFormatter::CONSTRUCTOR_OPTIONS,
-					[
-						'GlobalBlockRemoteReasonUrl' => null,
-					]
-				),
-				$this->createMock( WANObjectCache::class ),
-				$this->createNoOpMock( HttpRequestFactory::class ),
-				new NullLogger()
-			)
+		$formatter = new GlobalBlockReasonFormatter(
+			new ServiceOptions(
+				GlobalBlockReasonFormatter::CONSTRUCTOR_OPTIONS,
+				[
+					'GlobalBlockRemoteReasonUrl' => null,
+				]
+			),
+			$this->getServiceContainer()->getMainWANObjectCache(),
+			$this->createNoOpMock( HttpRequestFactory::class ),
+			new NullLogger()
 		);
 
-		$this->assertEquals( 'foo {{bar}}', $formatter->expandRemoteTemplates( 'foo {{bar}}', 'en' ) );
+		$this->assertEquals( 'foo {{bar}}', $formatter->format( 'foo {{bar}}', 'en' ) );
 	}
 
 	public function testExpandHttpFailure() {
@@ -90,21 +91,19 @@ class GlobalBlockReasonFormatterTest extends MediaWikiIntegrationTestCase {
 		$logger->expects( $this->once() )
 			->method( 'error' );
 
-		$formatter = TestingAccessWrapper::newFromObject(
-			new GlobalBlockReasonFormatter(
-				new ServiceOptions(
-					GlobalBlockReasonFormatter::CONSTRUCTOR_OPTIONS,
-					[
-						'GlobalBlockRemoteReasonUrl' => 'http://foo.invalid/w/api.php',
-					]
-				),
-				$this->createMock( WANObjectCache::class ),
-				$httpRequestFactory,
-				$logger
-			)
+		$formatter = new GlobalBlockReasonFormatter(
+			new ServiceOptions(
+				GlobalBlockReasonFormatter::CONSTRUCTOR_OPTIONS,
+				[
+					'GlobalBlockRemoteReasonUrl' => 'http://foo.invalid/w/api.php',
+				]
+			),
+			$this->getServiceContainer()->getMainWANObjectCache(),
+			$httpRequestFactory,
+			$logger
 		);
 
-		$this->assertEquals( 'foo {{bar}}', $formatter->expandRemoteTemplates( 'foo {{bar}}', 'en' ) );
+		$this->assertEquals( 'foo {{bar}}', $formatter->format( 'foo {{bar}}', 'en' ) );
 	}
 
 	public function testExpandHttpWarning() {
@@ -128,21 +127,19 @@ class GlobalBlockReasonFormatterTest extends MediaWikiIntegrationTestCase {
 		$logger->expects( $this->once() )
 			->method( 'warning' );
 
-		$formatter = TestingAccessWrapper::newFromObject(
-			new GlobalBlockReasonFormatter(
-				new ServiceOptions(
-					GlobalBlockReasonFormatter::CONSTRUCTOR_OPTIONS,
-					[
-						'GlobalBlockRemoteReasonUrl' => 'http://foo.invalid/w/api.php',
-					]
-				),
-				$this->createMock( WANObjectCache::class ),
-				$httpRequestFactory,
-				$logger
-			)
+		$formatter = new GlobalBlockReasonFormatter(
+			new ServiceOptions(
+				GlobalBlockReasonFormatter::CONSTRUCTOR_OPTIONS,
+				[
+					'GlobalBlockRemoteReasonUrl' => 'http://foo.invalid/w/api.php',
+				]
+			),
+			$this->getServiceContainer()->getMainWANObjectCache(),
+			$httpRequestFactory,
+			$logger
 		);
 
-		$this->assertEquals( 'foo baz', $formatter->expandRemoteTemplates( 'foo {{bar}}', 'en' ) );
+		$this->assertEquals( 'foo baz', $formatter->format( 'foo {{bar}}', 'en' ) );
 	}
 
 	public function testExpandInvalidJson() {
@@ -166,21 +163,19 @@ class GlobalBlockReasonFormatterTest extends MediaWikiIntegrationTestCase {
 		$logger->expects( $this->once() )
 			->method( 'warning' );
 
-		$formatter = TestingAccessWrapper::newFromObject(
-			new GlobalBlockReasonFormatter(
-				new ServiceOptions(
-					GlobalBlockReasonFormatter::CONSTRUCTOR_OPTIONS,
-					[
-						'GlobalBlockRemoteReasonUrl' => 'http://foo.invalid/w/api.php',
-					]
-				),
-				$this->createMock( WANObjectCache::class ),
-				$httpRequestFactory,
-				$logger
-			)
+		$formatter = new GlobalBlockReasonFormatter(
+			new ServiceOptions(
+				GlobalBlockReasonFormatter::CONSTRUCTOR_OPTIONS,
+				[
+					'GlobalBlockRemoteReasonUrl' => 'http://foo.invalid/w/api.php',
+				]
+			),
+			$this->getServiceContainer()->getMainWANObjectCache(),
+			$httpRequestFactory,
+			$logger
 		);
 
-		$this->assertEquals( 'foo {{bar}}', $formatter->expandRemoteTemplates( 'foo {{bar}}', 'en' ) );
+		$this->assertEquals( 'foo {{bar}}', $formatter->format( 'foo {{bar}}', 'en' ) );
 	}
 
 	public function testExpandWorksFine() {
@@ -200,20 +195,44 @@ class GlobalBlockReasonFormatterTest extends MediaWikiIntegrationTestCase {
 			->method( 'create' )
 			->willReturn( $httpRequest );
 
-		$formatter = TestingAccessWrapper::newFromObject(
-			new GlobalBlockReasonFormatter(
-				new ServiceOptions(
-					GlobalBlockReasonFormatter::CONSTRUCTOR_OPTIONS,
-					[
-						'GlobalBlockRemoteReasonUrl' => 'http://foo.invalid/w/api.php',
-					]
-				),
-				$this->createMock( WANObjectCache::class ),
-				$httpRequestFactory,
-				$this->createNoOpMock( LoggerInterface::class )
-			)
+		$formatter = new GlobalBlockReasonFormatter(
+			new ServiceOptions(
+				GlobalBlockReasonFormatter::CONSTRUCTOR_OPTIONS,
+				[
+					'GlobalBlockRemoteReasonUrl' => 'http://foo.invalid/w/api.php',
+				]
+			),
+			$this->getServiceContainer()->getMainWANObjectCache(),
+			$httpRequestFactory,
+			$this->createNoOpMock( LoggerInterface::class )
 		);
 
-		$this->assertEquals( 'foo baz', $formatter->expandRemoteTemplates( 'foo {{bar}}', 'en' ) );
+		$this->assertEquals( 'foo baz', $formatter->format( 'foo {{bar}}', 'en' ) );
+	}
+
+	public function testFormatCache(): void {
+		$httpRequest = $this->createMock( MWHttpRequest::class );
+		$httpRequest->expects( $this->once() )
+			->method( 'execute' )
+			->willReturn( Status::newGood() );
+		$httpRequest->expects( $this->once() )
+			->method( 'getContent' )
+			->willReturn( '{"expandtemplates": {"wikitext": "foo baz"}}' );
+		$this->installMockHttp( $httpRequest );
+
+		$formatter = new GlobalBlockReasonFormatter(
+			new ServiceOptions(
+				GlobalBlockReasonFormatter::CONSTRUCTOR_OPTIONS,
+				[
+					'GlobalBlockRemoteReasonUrl' => 'http://foo.invalid/w/api.php',
+				]
+			),
+			$this->getServiceContainer()->getMainWANObjectCache(),
+			$this->getServiceContainer()->getHttpRequestFactory(),
+			$this->createNoOpMock( LoggerInterface::class )
+		);
+
+		$this->assertEquals( 'foo baz', $formatter->format( 'foo {{bar}}', 'en' ) );
+		$this->assertEquals( 'foo baz', $formatter->format( 'foo {{bar}}', 'en' ) );
 	}
 }
