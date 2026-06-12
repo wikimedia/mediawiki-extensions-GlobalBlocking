@@ -14,7 +14,8 @@
 			"SaldırganSincap",
 			"Suelnur",
 			"Uncitoyen",
-			"Vito Genovese"
+			"Vito Genovese",
+			"HakanIST"
 		]
 	},
 	"globalblocking-desc": "Hesapların, IP adreslerinin ve IP aralıklarının [[Special:GlobalBlockList|birden fazla vikide engellenmesine]] [[Special:GlobalBlock|izin verir]]",
@@ -81,6 +82,9 @@
 	"globalblocking-contribs-notice": "Bu kullanıcı şu anda küresel olarak engellendi.\nKüresel engel günlüğü, kaynak amacıyla aşağıda verilmiştir:",
 	"globalblocking-showlog": "Bu kullanıcı daha önce engellenmiş.\nEngelleme günlüğü kaynak için aşağıda verilmiştir:",
 	"globalblocking-contribs-log": "küresel engelleme günlüğü",
+	"globalblocking-mass-block-blocked": "Evet",
+	"globalblocking-mass-block-not-blocked": "Hayır",
+	"globalblocking-mass-block-query-submit": "Ara",
 	"globalblocklist": "Küresel olarak engellenen kullanıcıların listesi",
 	"globalblock": "Bir kullanıcıya küresel olarak engelle",
 	"globalblockstatus": "Küresel engellemelerin yerel durumları",
