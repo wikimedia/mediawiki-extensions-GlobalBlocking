@@ -224,7 +224,7 @@ class GlobalBlockLocalStatusLookupTest extends MediaWikiIntegrationTestCase {
 			->execute();
 		// Define the local autoblock exemption list for the tests.
 		$this->editPage(
-			Title::newFromText( 'block-autoblock-exemptionlist', NS_MEDIAWIKI ),
+			Title::makeTitle( NS_MEDIAWIKI, 'Block-autoblock-exemptionlist' ),
 			'[[Test]]. This is a autoblocking exemption list description.' .
 			"\n\n* 7.8.9.0/24"
 		);

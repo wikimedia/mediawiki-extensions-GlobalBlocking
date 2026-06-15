@@ -251,7 +251,7 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 		$userObject = $this->getServiceContainer()->getUserFactory()->newFromName( $target, UserFactory::RIGOR_NONE );
 		$targetId = $userObject !== null ? $userObject->getId() : 0;
 		$this->getGlobalBlockingHooks()->onContributionsToolLinks(
-			$targetId, Title::newFromText( $target, NS_USER ), $tools, $specialPage
+			$targetId, Title::makeTitle( NS_USER, $target ), $tools, $specialPage
 		);
 		if ( count( $expectedLinkTexts ) ) {
 			// Verify that the expected links are present in the $tools array

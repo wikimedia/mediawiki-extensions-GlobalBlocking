@@ -49,7 +49,7 @@ class GlobalBlockingGlobalAutoblockExemptionListProviderTest extends MediaWikiIn
 		$this->overrideConfigValue( MainConfigNames::UseDatabaseMessages, true );
 		// Initially have two IP addresses be listed in the list of exempt IP addresses.
 		$this->editPage(
-			Title::newFromText( 'globalblocking-globalautoblock-exemptionlist', NS_MEDIAWIKI ),
+			Title::makeTitle( NS_MEDIAWIKI, 'Globalblocking-globalautoblock-exemptionlist' ),
 			"# List of exempt IPs\n* 1.2.3.4\n* 3.4.5.6/24\n"
 		);
 		// Check that the service was able to parse the list of IP addresses
@@ -58,7 +58,7 @@ class GlobalBlockingGlobalAutoblockExemptionListProviderTest extends MediaWikiIn
 		$this->assertSame( [ '1.2.3.4', '3.4.5.6/24' ], $objectUnderTest->getExemptIPAddresses() );
 		// Edit the message again to remove one of the IP addresses
 		$this->editPage(
-			Title::newFromText( 'globalblocking-globalautoblock-exemptionlist', NS_MEDIAWIKI ),
+			Title::makeTitle( NS_MEDIAWIKI, 'Globalblocking-globalautoblock-exemptionlist' ),
 			"# List of exempt IPs\n* 1.2.3.4"
 		);
 		// Check that the service still has the cached version of the list
@@ -76,7 +76,7 @@ class GlobalBlockingGlobalAutoblockExemptionListProviderTest extends MediaWikiIn
 		// Set the "local" message to be something different, so that we know that the code used the API request
 		// instead of choosing the local message.
 		$this->editPage(
-			Title::newFromText( 'globalblocking-globalautoblock-exemptionlist', NS_MEDIAWIKI ),
+			Title::makeTitle( NS_MEDIAWIKI, 'Globalblocking-globalautoblock-exemptionlist' ),
 			"# List of exempt IPs\n* 1.2.3.4\n* 3.4.5.6/24\n"
 		);
 		// Respond with a mock response for the "revisions" query API. We test that the correct URL is used in
@@ -101,7 +101,7 @@ class GlobalBlockingGlobalAutoblockExemptionListProviderTest extends MediaWikiIn
 		// Set the "local" message to be something different, so that we know that the code used the API request
 		// instead of choosing the local message.
 		$this->editPage(
-			Title::newFromText( 'globalblocking-globalautoblock-exemptionlist', NS_MEDIAWIKI ),
+			Title::makeTitle( NS_MEDIAWIKI, 'Globalblocking-globalautoblock-exemptionlist' ),
 			"# List of exempt IPs\n* 1.2.3.4\n* 3.4.5.6/24\n"
 		);
 		// Respond with a mock response for the "revisions" query API. We test that the correct URL is used in
@@ -126,7 +126,7 @@ class GlobalBlockingGlobalAutoblockExemptionListProviderTest extends MediaWikiIn
 		$this->overrideConfigValue( MainConfigNames::UseDatabaseMessages, true );
 		// Set the "local" message to be something, as it should fall back to the local message on the API failure.
 		$this->editPage(
-			Title::newFromText( 'globalblocking-globalautoblock-exemptionlist', NS_MEDIAWIKI ),
+			Title::makeTitle( NS_MEDIAWIKI, 'Globalblocking-globalautoblock-exemptionlist' ),
 			"# List of exempt IPs\n* 1.2.3.4\n* 3.4.5.6/24\n"
 		);
 		// Respond with a 404 to indicate a failure in the request.

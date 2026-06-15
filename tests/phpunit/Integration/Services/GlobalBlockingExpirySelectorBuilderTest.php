@@ -19,9 +19,9 @@ class GlobalBlockingExpirySelectorBuilderTest extends MediaWikiIntegrationTestCa
 		// Define overrides for the two messages used to hold the options to be shown.
 		$this->overrideConfigValue( MainConfigNames::UseDatabaseMessages, true );
 		$this->editPage(
-			Title::newFromText( 'globalblocking-expiry-options', NS_MEDIAWIKI ), $globalBlockingMessageText
+			Title::makeTitle( NS_MEDIAWIKI, 'Globalblocking-expiry-options' ), $globalBlockingMessageText
 		);
-		$this->editPage( Title::newFromText( 'ipboptions', NS_MEDIAWIKI ), $coreMessageText );
+		$this->editPage( Title::makeTitle( NS_MEDIAWIKI, 'Ipboptions' ), $coreMessageText );
 		// Call the method under test and verify that the options returned are as expected.
 		$globalBlockingExpirySelectorBuilder = new GlobalBlockingExpirySelectorBuilder();
 		$this->assertArrayEquals(
