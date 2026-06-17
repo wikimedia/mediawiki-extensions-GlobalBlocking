@@ -32,6 +32,7 @@ use MediaWiki\User\User;
 use MediaWiki\User\UserNameUtils;
 use stdClass;
 use Wikimedia\IPUtils;
+use Wikimedia\Rdbms\IConnectionProvider;
 
 /**
  * MediaWiki hook handlers for the GlobalBlocking extension
@@ -59,6 +60,7 @@ class GlobalBlockingHooks implements
 		private readonly GlobalBlockManager $globalBlockManager,
 		private readonly GlobalBlockingGlobalBlockDetailsRenderer $globalBlockDetailsRenderer,
 		private readonly GlobalBlockingLinkBuilder $globalBlockingLinkBuilder,
+		private readonly IConnectionProvider $connectionProvider,
 	) {
 	}
 
@@ -212,16 +214,42 @@ class GlobalBlockingHooks implements
 
 			// Add a 'View full logs' link that goes to the global block log on the central wiki, or the local wiki
 			// if no central wiki is defined.
-			$blockNoticeHtml .= $this->globalBlockLinkBuilder->getLinkToCentralWikiSpecialPage(
-				'Log', $sp->msg( 'log-fulllog' )->text(), $sp->getFullTitle(),
-				[ 'type' => 'gblblock', 'page' => $block->gb_address ]
-			);
+			if ( $this->hasMultipleGlobalBlockLogs( $name ) ) {
+				$blockNoticeHtml .= $this->globalBlockLinkBuilder->getLinkToCentralWikiSpecialPage(
+					'Log', $sp->msg( 'log-fulllog' )->text(), $sp->getFullTitle(),
+					[ 'type' => 'gblblock', 'page' => $block->gb_address ]
+				);
+			}
 
 			$out = $sp->getOutput();
 			$out->addHTML( Html::warningBox( $blockNoticeHtml, 'mw-warning-with-logexcerpt' ) );
 		}
 
 		return true;
+	}
+
+	/**
+	 * Returns whether the given target has 2 or more 'gblblock' log entries on the wiki the
+	 * "View full log" link points to (the central wiki, or the local wiki if none is configured).
+	 * Used to decide whether to show that link in the global block log extract on Special:Contributions.
+	 *
+	 * @param string $target The global block target (IP, range, or username)
+	 * @return bool
+	 */
+	private function hasMultipleGlobalBlockLogs( string $target ): bool {
+		$count = $this->connectionProvider
+			->getReplicaDatabase( $this->config->get( 'GlobalBlockingCentralWiki' ) )
+			->newSelectQueryBuilder()
+			->from( 'logging' )
+			->where( [
+				'log_type' => 'gblblock',
+				'log_namespace' => NS_USER,
+				'log_title' => Title::makeTitle( NS_USER, $target )->getDBkey(),
+			] )
+			->limit( 2 )
+			->caller( __METHOD__ )
+			->fetchRowCount();
+		return $count > 1;
 	}
 
 	private function getMockLogLineFromActiveGlobalBlock( stdClass $block, SpecialPage $sp ): string {

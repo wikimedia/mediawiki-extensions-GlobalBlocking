@@ -55,6 +55,7 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 			'globalBlockManager' => $globalBlockingServices->getGlobalBlockManager(),
 			'globalBlockDetailsRenderer' => $globalBlockingServices->getGlobalBlockDetailsRenderer(),
 			'globalBlockingLinkBuilder' => $globalBlockingServices->getGlobalBlockingLinkBuilder(),
+			'connectionProvider' => $this->getServiceContainer()->getConnectionProvider(),
 		];
 	}
 
@@ -104,9 +105,7 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 		$specialPage = $this->getContributionsSpecialPage( $shouldShowBlockLogExtract );
 		$specialPage->setContext( RequestContext::getMain() );
 		$user = $this->getServiceContainer()->getUserFactory()->newFromName( $username, UserFactory::RIGOR_NONE );
-		// Call the method under test
 		$this->getGlobalBlockingHooks()->onSpecialContributionsBeforeMainOutput( $user->getId(), $user, $specialPage );
-		// Assert that the HTML output in the OutputPage instance is as expected
 		$html = $specialPage->getOutput()->getHTML();
 		if ( $shouldDisplayBlockBanner ) {
 			$this->assertStringContainsString(
@@ -121,17 +120,9 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 				$expectedBlockTarget, $html,
 				'The block displayed on Special:Contributions was not the expected block.'
 			);
-			$this->assertStringContainsString(
+			$this->assertStringNotContainsString(
 				'(log-fulllog', $html,
-				'The block banner should contain a link to the global block log.'
-			);
-			$this->assertStringContainsString(
-				'type=gblblock', $html,
-				'The logs link should be filtered to just global blocks.'
-			);
-			$this->assertStringContainsString(
-				'page=' . urlencode( $expectedBlockTarget ), $html,
-				'The logs link should be filtered to just the target user.'
+				'The full log link should be hidden when the target has only one global block log entry.'
 			);
 		} else {
 			$this->assertStringNotContainsString(
@@ -151,6 +142,30 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 			'Special:Contributions for invalid username' => [ ':', true, false, null ],
 			'Special:Contributions for 1.2.3.4 when block log extract hidden' => [ '1.2.3.4', false, false, null ],
 		];
+	}
+
+	public function testOnSpecialContributionsBeforeMainOutputShowsFullLogLinkWithMultipleLogEntries(): void {
+		$performer = $this->getTestUser( 'steward' )->getUser();
+		$globalBlockManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager();
+		// Two gblblock log entries for the same target ⇒ the "View full log" link should show.
+		$globalBlockManager->block( '8.8.8.8', 'First reason', 'infinity', $performer );
+		$globalBlockManager->block( '8.8.8.8', 'Updated reason', 'infinity', $performer, [ 'modify' ] );
+
+		$this->setUserLang( 'qqx' );
+		RequestContext::getMain()->setTitle( Title::makeTitle( NS_SPECIAL, 'Contributions/8.8.8.8' ) );
+		$specialPage = $this->getContributionsSpecialPage( true );
+		$specialPage->setContext( RequestContext::getMain() );
+		$user = $this->getServiceContainer()->getUserFactory()->newFromName( '8.8.8.8', UserFactory::RIGOR_NONE );
+
+		$this->getGlobalBlockingHooks()->onSpecialContributionsBeforeMainOutput( $user->getId(), $user, $specialPage );
+
+		$html = $specialPage->getOutput()->getHTML();
+		$this->assertStringContainsString( '(globalblocking-contribs-notice', $html );
+		$this->assertStringContainsString(
+			'(log-fulllog', $html,
+			'The full log link should show when the target has more than one global block log entry.'
+		);
+		$this->assertStringContainsString( 'type=gblblock', $html );
 	}
 
 	public function testOnSpecialContributionsBeforeMainOutputForGloballyBlockedUser() {

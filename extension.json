@@ -249,7 +249,8 @@
 				"GlobalBlocking.GlobalBlockingUserVisibilityLookup",
 				"GlobalBlocking.GlobalBlockManager",
 				"GlobalBlocking.GlobalBlockingGlobalBlockDetailsRenderer",
-				"GlobalBlocking.GlobalBlockingLinkBuilder"
+				"GlobalBlocking.GlobalBlockingLinkBuilder",
+				"ConnectionProvider"
 			]
 		},
 		"usermerge": {
