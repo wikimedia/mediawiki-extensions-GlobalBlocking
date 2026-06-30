@@ -35,6 +35,7 @@
 			"Zhxy 519",
 			"列维劳德",
 			"捍粵者",
+			"臺灣象象",
 			"铁桶",
 			"阿南之人"
 		]
@@ -80,6 +81,7 @@
 	"globalblocking-list-anononly": "僅限匿名使用者",
 	"globalblocking-list-unblock": "移除",
 	"globalblocking-list-locally-disabled": "由 $1 設定本地停用：$2",
+	"globalblocking-list-locally-disabled-without-performer": "本地禁用：$1",
 	"globalblocking-list-local-status": "本地狀態",
 	"globalblocking-list-modify": "修改",
 	"globalblocking-list-block": "封鎖",
@@ -124,6 +126,7 @@
 	"globalblocking-local-status-enabled-success-target-is-id": "您已經重新開啟在{{SITENAME}}的全域封鎖 #$1。",
 	"globalblocking-local-status-nochange": "您未對此封鎖中的本地狀態做變更。",
 	"globalblocking-local-status-intro": "您可以使用此表單編輯全域封鎖的本地狀態。若全域封鎖已於此wiki停用，受影響的使用者將可以正常進行編輯。",
+	"globalblocking-all-global-blocks-disabled-locally": "全域封鎖不適用於此維基。",
 	"globalblocking-logpage": "全域封鎖日誌",
 	"globalblocking-logpagetext": "此日誌包含了此 Wiki 中新增與移除的全域封鎖。要特別說明，全域封鎖可由其他 Wiki 新增與移除，其他 Wiki 對全域封鎖的設定會影響此 Wiki。要檢視所有使用中的全域封鎖，您可檢視[[Special:GlobalBlockList|全域封鎖清單]]。",
 	"globalblocking-logentry-block-old-format": "$1{{GENDER:$2|全域封鎖了}}{{GENDER:$4|$3}}（$5）",
@@ -172,6 +175,8 @@
 	"removeglobalblock": "移除一個全域封鎖",
 	"right-globalblock": "新增與移除全域封鎖",
 	"action-globalblock": "新增與移除全域封鎖",
+	"right-globalblock-local-status": "修改全域封鎖的本地狀態",
+	"action-globalblock-local-status": "修改全域封鎖的本地狀態",
 	"right-globalblock-exempt": "忽略全域IP封鎖",
 	"action-globalblock-exempt": "忽略全域IP封鎖",
 	"log-action-filter-gblblock": "全域封鎖類型：",

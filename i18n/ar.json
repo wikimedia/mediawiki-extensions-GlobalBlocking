@@ -157,6 +157,8 @@
 	"removeglobalblock": "إزالة منع عام",
 	"right-globalblock": "أضف وأزل عمليات المنع العامة",
 	"action-globalblock": "أضف وأزل عمليات المنع العامة",
+	"right-globalblock-local-status": "تغيير الحالة المحلية للكتل العالمية",
+	"action-globalblock-local-status": "تغيير الوضع المحلي للبلوك العالمي",
 	"right-globalblock-exempt": "تجاوز عمليات المنع العامة",
 	"action-globalblock-exempt": "تجاوز عمليات المنع العامة",
 	"log-action-filter-gblblock": "نوع المنع العالمي:",
