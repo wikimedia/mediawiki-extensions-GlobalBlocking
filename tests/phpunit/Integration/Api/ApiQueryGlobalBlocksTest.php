@@ -8,6 +8,7 @@ use MediaWiki\Api\ApiQuery;
 use MediaWiki\Extension\GlobalBlocking\Api\ApiQueryGlobalBlocks;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\MainConfigNames;
+use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\Tests\Api\Query\ApiQueryTestBase;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWiki\User\UserIdentity;
@@ -416,6 +417,7 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 		$apiQueryGlobalBlocksModule = new ApiQueryGlobalBlocks(
 			$query, 'globalblock',
 			$this->getServiceContainer()->getCentralIdLookup(),
+			$this->getServiceContainer()->getExtensionRegistry(),
 			$globalBlockingServices->getGlobalBlockLookup(),
 			$globalBlockingServices->getGlobalBlockingConnectionProvider()
 		);
@@ -431,6 +433,46 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 				"The message key $messageKey does not exist."
 			);
 		}
+	}
+
+	/** @dataProvider provideSummaryMessage */
+	public function testGetSummaryMessage( bool $centralAuthInstalled, string $expectedSummaryMessage ): void {
+		$mockExtensionRegistry = $this->createMock( ExtensionRegistry::class );
+		$mockExtensionRegistry->method( 'isLoaded' )
+			->with( 'CentralAuth' )
+			->willReturn( $centralAuthInstalled );
+
+		$this->apiContext->setLanguage( 'qqx' );
+
+		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
+		$main = new ApiMain( $this->apiContext, true );
+		/** @var ApiQuery $query */
+		$query = $main->getModuleManager()->getModule( 'query' );
+		$apiQueryGlobalBlocksModule = new ApiQueryGlobalBlocks(
+			$query, 'globalblock',
+			$this->getServiceContainer()->getCentralIdLookup(),
+			$mockExtensionRegistry,
+			$globalBlockingServices->getGlobalBlockLookup(),
+			$globalBlockingServices->getGlobalBlockingConnectionProvider()
+		);
+
+		$this->assertSame(
+			'(' . $expectedSummaryMessage . ': bg, globalblock, query+globalblock)',
+			$apiQueryGlobalBlocksModule->getFinalSummary()->text()
+		);
+	}
+
+	public static function provideSummaryMessage(): array {
+		return [
+			'CentralAuth is installed' => [
+				'centralAuthInstalled' => true,
+				'expectedSummaryMessageKey' => 'apihelp-query+globalblocks-summary-with-central-auth'
+			],
+			'CentralAuth is not installed' => [
+				'centralAuthInstalled' => false,
+				'expectedSummaryMessageKey' => 'apihelp-query+globalblocks-summary'
+			],
+		];
 	}
 
 	public function addDBDataOnce() {

@@ -32,6 +32,7 @@ use MediaWiki\Api\ApiQueryBase;
 use MediaWiki\Api\ApiResult;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
+use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\User\CentralId\CentralIdLookup;
 use Wikimedia\IPUtils;
 use Wikimedia\ParamValidator\ParamValidator;
@@ -52,11 +53,20 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 		ApiQuery $query,
 		string $moduleName,
 		private readonly CentralIdLookup $lookup,
+		private readonly ExtensionRegistry $extensionRegistry,
 		private readonly GlobalBlockLookup $globalBlockLookup,
-		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider
+		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
 	) {
 		parent::__construct( $query, $moduleName, 'bg' );
 		$this->globalBlockingDb = $globalBlockingConnectionProvider->getReplicaGlobalBlockingDatabase();
+	}
+
+	protected function getSummaryMessage(): string {
+		if ( $this->extensionRegistry->isLoaded( 'CentralAuth' ) ) {
+			return 'apihelp-query+globalblocks-summary-with-central-auth';
+		} else {
+			return 'apihelp-query+globalblocks-summary';
+		}
 	}
 
 	public function execute() {
