@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"IJzeren Jan"
+		]
+	},
+	"globalblocking-block-reason": "Pričina:",
+	"globalblocking-block-reason-dropdown": "* Standardne pričiny blokad\n** Spamovanje po mnogyh vikiprojektah\n** Zloupotrěba po mnogyh vikiprojektah\n** Vandalizm",
+	"globalblocking-block-edit-dropdown": "Praviti pričiny za blokovanje",
+	"globalblocking-block-expiry": "Čas trvanja:",
+	"globalblocking-block-expiry-selector-other": "Drugy čas:",
+	"globalblocking-list": "Spisok globalno zablokovanyh IP-adresov i koristničskyh kont"
+}
