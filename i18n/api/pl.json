@@ -3,6 +3,7 @@
 		"authors": [
 			"Chrumps",
 			"Matik7",
+			"PanWor",
 			"Rail",
 			"Railfail536",
 			"Woytecr"
@@ -17,7 +18,7 @@
 	"apihelp-globalblock-param-anononly": "Określ go, jeżeli blokada ma dotyczyć tylko użytkowników niezalogowanych globalnie.",
 	"apihelp-globalblock-param-modify": "Określ go, jeżeli mają zostać wprowadzone zmiany w istniejącej blokadzie na ten sam cel.",
 	"apihelp-globalblock-example-1": "Zablokuj na zawsze 192.0.2.1 z powodem \"Cross-wiki abuse\"",
-	"apihelp-query+globalblocks-summary": "Lista wszystkich globalnie zablokowanych adresów IP.",
+	"apihelp-query+globalblocks-summary": "Lista wszystkich globalnie zablokowanych kont i adresów IP.",
 	"apihelp-query+globalblocks-param-start": "Znacznik czasu, od którego zacząć wyliczanie.",
 	"apihelp-query+globalblocks-param-end": "Znacznik czasu, na którym zakończyć wyliczanie.",
 	"apihelp-query+globalblocks-param-ids": "Lista identyfikatorów blokad, które wyświetlić, oddzielana znakami pionowej kreski.",

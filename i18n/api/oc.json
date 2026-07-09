@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"COMISSIONTOPOC",
 			"Cedric31"
 		]
 	},
+	"apihelp-query+globalblocks-summary": "Listar totei leis adreças IP e lei còmptes globalament blocats.",
+	"apihelp-query+globalblocks-summary-with-central-auth": "Listar totei leis adreças IP e lei comptes globalament blocats. Nòta: Leis utilizaires que son blocats en utilizant CentralAuth son pas comprés dins aquesta lista levat se son tanben globalament blocats.",
 	"apihelp-query+globalblocks-param-prop": "Quinas proprietats obténer."
 }

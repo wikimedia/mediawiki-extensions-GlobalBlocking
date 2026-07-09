@@ -3,6 +3,7 @@
 		"authors": [
 			"Revi",
 			"Tensama0415",
+			"YeBoy371",
 			"Ykhwong"
 		]
 	},
@@ -20,7 +21,8 @@
 	"apihelp-globalblock-param-enable-autoblock": "전역 차단이 전역 자동 차단을 트리거해야 할 경우에 지정하세요.",
 	"apihelp-globalblock-param-modify": "기존의 대상 블록을 수정해야 한다면 이것을 지정하세요",
 	"apihelp-globalblock-example-1": "192.0.2.1 IP를 \"여러 위키에서의 문제 행동\"으로 무기한 차단",
-	"apihelp-query+globalblocks-summary": "모든 위키에서 차단된 IP 주소를 나열합니다.",
+	"apihelp-query+globalblocks-summary": "모든 위키에서 차단된 IP 주소와 계정을 나열합니다.",
+	"apihelp-query+globalblocks-summary-with-central-auth": "전역적으로 차단된 모든 IP 주소 및 계정을 나열합니다. 참고: CentralAuth를 사용하여 잠긴 사용자는 전역적으로 차단되지 않는 한 이 목록에 포함되지 않습니다.",
 	"apihelp-query+globalblocks-param-start": "나열을 시작할 타임스탬프입니다.",
 	"apihelp-query+globalblocks-param-end": "나열을 중단할 타임스탬프입니다.",
 	"apihelp-query+globalblocks-param-ids": "나열할 차단 ID, 파이프로 분리",

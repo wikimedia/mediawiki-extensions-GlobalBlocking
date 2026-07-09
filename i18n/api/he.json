@@ -21,7 +21,7 @@
 	"apihelp-globalblock-param-enable-autoblock": "יש לציין את זה אם החסימה הגלובלית צריכה להפעיל חסימות אוטומטיות גלובליות.",
 	"apihelp-globalblock-param-modify": "יש להגדיר את זה אם חסימה קיימת ביעד צריכה להשתנות",
 	"apihelp-globalblock-example-1": "לחסום את 192.0.2.1 לצמיתות עם הסיבה \"Cross-wiki abuse\"",
-	"apihelp-query+globalblocks-summary": "רשימה של כתובות ה־IP שחסומות גלובלית.",
+	"apihelp-query+globalblocks-summary": "רשימה של החשבונות וכתובות ה־IP שחסומות גלובלית.",
 	"apihelp-query+globalblocks-param-start": "חותם־הזמן שהמנייה תתחיל ממנו.",
 	"apihelp-query+globalblocks-param-end": "חותם־הזמן שהמנייה תסתיים בו.",
 	"apihelp-query+globalblocks-param-ids": "רשימה מופרדת בקווים ניצבים של מזהי חסימה לרשום.",

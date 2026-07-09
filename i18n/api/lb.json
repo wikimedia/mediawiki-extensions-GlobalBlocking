@@ -9,7 +9,7 @@
 	"apihelp-globalblock-param-target": "D'Zil-IP-Adress oder de Benotzernumm.",
 	"apihelp-globalblock-param-anononly": "Spezifizéiert ob d'Spär sech nëmmen op ausgeloggt Benotzer global applizéiere soll.",
 	"apihelp-globalblock-param-modify": "Gitt dëst un, wann d'Spär (wann et esou eng gëtt) vum Zil geännert gi soll.",
-	"apihelp-query+globalblocks-summary": "All global gespaarten IP-Adressen opzielen.",
+	"apihelp-query+globalblocks-summary": "All global gespaarten IP-Adressen a Konten opzielen.",
 	"apihelp-globalblock-param-alsolocal": "De Benotzer och lokal spären",
 	"apihelp-globalblock-param-localanononly": "Spezifizéiert ob d'Spär sech nëmmen op ausgeloggt Benotzer lokal applizéiere soll."
 }
