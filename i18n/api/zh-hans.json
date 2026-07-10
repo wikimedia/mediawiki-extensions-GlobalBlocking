@@ -28,6 +28,7 @@
 	"apihelp-globalblock-param-modify": "在现有目标封禁应被修改时指定它",
 	"apihelp-globalblock-example-1": "无限期封禁192.0.2.1，原因“Cross-wiki abuse”",
 	"apihelp-query+globalblocks-summary": "列出所有全域封禁的IP地址和账号。",
+	"apihelp-query+globalblocks-summary-with-central-auth": "列出所有全域封禁的IP地址和账号。注意：使用CentralAuth封禁的用户不包含在此列表中，除非他们也被全域封禁。",
 	"apihelp-query+globalblocks-param-start": "枚举的起始时间戳。",
 	"apihelp-query+globalblocks-param-end": "停止枚举的时间戳。",
 	"apihelp-query+globalblocks-param-ids": "要列举的以逗号分隔的封禁ID列表。",
