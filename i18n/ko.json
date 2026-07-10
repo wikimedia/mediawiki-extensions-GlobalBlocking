@@ -180,7 +180,7 @@
 	"globalblocking-blockedtext-proxy": "차단된 프록시 주소는 $1입니다.",
 	"globalblocking-blockedtext-username": "당신의 사용자 이름은 $1입니다.",
 	"globalblocking-autoblocker": "당신의 IP 주소는 최근에 \"[[User:$1|$1]]\" 님이 사용하였기 때문에 자동으로 전역 차단되었습니다.\n$1 님이 차단된 이유는 다음과 같습니다: \"$2\"",
-	"globalblocking-autoblocker-hidden-block": "당신의 IP 주소는 최근에 #$1 ID로 인해 블락된 사용자가 사용하였기 때문에 자동으로 전역 차단되었습니다.",
+	"globalblocking-autoblocker-hidden-block": "당신의 IP 주소는 최근에 #$1 ID로 인해 차단된 사용자가 사용하였기 때문에 자동으로 전역 차단되었습니다.",
 	"globalblocking-centralauth-admin-info-globalblock": "전역 차단 여부:",
 	"globalblocking-global-autoblock-id": "전역 자동 차단 #$1",
 	"globalblocking-global-block-id": "전역 차단 #$1"

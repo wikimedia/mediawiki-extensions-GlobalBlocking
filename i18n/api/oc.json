@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Cedric31"
+			"Cedric31",
+			"COMISSIONTOPOC"
 		]
 	},
 	"apihelp-query+globalblocks-param-prop": "Quinas proprietats obténer."

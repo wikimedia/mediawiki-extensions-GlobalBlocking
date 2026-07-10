@@ -36,7 +36,8 @@
 			"列维劳德",
 			"捍粵者",
 			"铁桶",
-			"阿南之人"
+			"阿南之人",
+			"臺灣象象"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|允許]]封鎖[[Special:GlobalBlockList|於多個 Wiki 中]]的帳號、IP 位址及 IP 範圍",
@@ -80,6 +81,7 @@
 	"globalblocking-list-anononly": "僅限匿名使用者",
 	"globalblocking-list-unblock": "移除",
 	"globalblocking-list-whitelisted": "由 $1 設定本地停用：$2",
+	"globalblocking-list-locally-disabled-without-performer": "本地禁用：$1",
 	"globalblocking-list-whitelist": "本地狀態",
 	"globalblocking-list-modify": "修改",
 	"globalblocking-list-block": "封鎖",
@@ -125,6 +127,7 @@
 	"globalblocking-whitelist-dewhitelisted-target-is-id": "您已經重新開啟在{{SITENAME}}的全域封鎖 #$1。",
 	"globalblocking-whitelist-nochange": "您未對此封鎖中的本地狀態做變更。",
 	"globalblocking-whitelist-intro": "您可以使用此表單編輯全域封鎖的本地狀態。若全域封鎖已於此wiki停用，受影響的使用者將可以正常進行編輯。",
+	"globalblocking-all-global-blocks-disabled-locally": "全域封鎖不適用於此維基。",
 	"globalblocking-logpage": "全域封鎖日誌",
 	"globalblocking-logpagetext": "此日誌包含了此 Wiki 中新增與移除的全域封鎖。要特別說明，全域封鎖可由其他 Wiki 新增與移除，其他 Wiki 對全域封鎖的設定會影響此 Wiki。要檢視所有使用中的全域封鎖，您可檢視[[Special:GlobalBlockList|全域封鎖清單]]。",
 	"globalblocking-logentry-block-old-format": "$1{{GENDER:$2|全域封鎖了}}{{GENDER:$4|$3}}（$5）",
