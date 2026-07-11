@@ -191,10 +191,6 @@ class GlobalBlockLookup {
 
 		$this->statsFactory->withComponent( 'GlobalBlocking' )
 			->getCounter( 'get_user_block_calls_total' )
-			->copyToStatsdAt( [
-				'global_blocking.get_user_block',
-				'global_blocking.get_user_block_db_query'
-			] )
 			->increment();
 
 		// We have callers which may leave $ip as null when providing an IP address as the $user.
