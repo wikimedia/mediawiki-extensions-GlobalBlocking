@@ -21,6 +21,7 @@
 	"apihelp-globalblock-param-modify": "Geef dit op als de bestaande blokkade van het doel moet worden gewijzigd.",
 	"apihelp-globalblock-example-1": "192.0.2.1 voor onbepaalde tijd blokkeren met als reden “Cross-wiki abuse”",
 	"apihelp-query+globalblocks-summary": "Alle globaal geblokkeerde IP-adressen en accounts weergeven.",
+	"apihelp-query+globalblocks-summary-with-central-auth": "Alle wereldwijd geblokkeerde IP-adressen en accounts weergeven. Let op: gebruikers die via CentralAuth zijn geblokkeerd, worden niet in deze lijst opgenomen, tenzij ze ook wereldwijd zijn geblokkeerd.",
 	"apihelp-query+globalblocks-param-start": "Het tijdstip waar de opsomming begint.",
 	"apihelp-query+globalblocks-param-end": "Het tijdstip waar de opsomming eindigt.",
 	"apihelp-query+globalblocks-param-ids": "Door sluistekens gescheiden lijst met blokkade-ID’s die moeten worden weergegeven.",
