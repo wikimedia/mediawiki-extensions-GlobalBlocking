@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Base",
+			"Movses",
 			"Piramidion",
 			"Ата"
 		]
@@ -15,7 +16,7 @@
 	"apihelp-globalblock-param-anononly": "Вкажіть це, якщо блокування повинно вплинути лише на користувачів, що глобально не ввійшли до системи.",
 	"apihelp-globalblock-param-modify": "Вкажіть це, якщо наявний блок на цільовій сторінці треба змінити",
 	"apihelp-globalblock-example-1": "Заблокувати 192.0.2.1 безстроково з причиною «Cross-wiki abuse»",
-	"apihelp-query+globalblocks-summary": "Список глобально заблокованих IP-адрес.",
+	"apihelp-query+globalblocks-summary": "Список усіх глобально заблокованих IP-адрес та облікових записів.",
 	"apihelp-query+globalblocks-param-start": "Часова мітка початку переліку.",
 	"apihelp-query+globalblocks-param-end": "Часова мітка закінчення переліку.",
 	"apihelp-query+globalblocks-param-ids": "Розділений вертикальною рискою список ідентифікаторів блокувань для перелічення.",
