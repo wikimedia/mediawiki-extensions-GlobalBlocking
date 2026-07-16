@@ -9,5 +9,10 @@
 	"globalblocking-block-edit-dropdown": "Praviti pričiny za blokovanje",
 	"globalblocking-block-expiry": "Čas trvanja:",
 	"globalblocking-block-expiry-selector-other": "Drugy čas:",
-	"globalblocking-list": "Spisok globalno zablokovanyh IP-adresov i koristničskyh kont"
+	"globalblocking-list": "Spisok globalno zablokovanyh IP-adresov i koristničskyh kont",
+	"globalblocking-local-status": "Lokalny status globalnyh blokad",
+	"globalblocking-local-status-notapplied": "V tutoj viki ne priměnjajut se globalne blokady,\nzato izměnjenje lokalnogo statusa globalnyh blokad jest nemožno.",
+	"globalblockstatus": "Lokalny status globalnyh blokad",
+	"right-globalblock-local-status": "Izměnjenje lokalnogo statusa globalnyh blokad",
+	"action-globalblock-local-status": "Izměnjenje lokalnogo statusa globalnyh blokad"
 }
