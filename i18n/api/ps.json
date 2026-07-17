@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"شاه زمان پټان"
+		]
+	},
+	"globalblocking-apierror-badip": "$1 وېب پته سمه نه ده",
+	"globalblocking-apierror-cannot-modify-global-autoblock": "تاسو نشئ کولی چې ټوليز خپلکاره بنديزونه بدل کړئ",
+	"apihelp-globalblock-summary": "په ټوليز ډول په يو کارن بنديز لگول يا لرې‌کول.",
+	"apihelp-globalblock-param-unblock": "که مشخص شي؛ نو له کارن به بنديز لرې شي.",
+	"apihelp-globalblock-param-reason": "بنديز لگولو/لرې‌کولو لامل.",
+	"apihelp-query+globalblocks-param-start": "هغه مهالوېش چې له هغه څخه شمېرل پيلېږي.",
+	"apihelp-query+globalblocks-param-limit": "لړليکولو لپاره د بنديزونو ډېر شمېر.",
+	"apihelp-query+globalblocks-param-prop": "کومې ځانتياوې بايد ترلاسه شي.",
+	"apihelp-query+globalblocks-example-1": "ټول ټوليز بنديزونه لړليکول",
+	"apihelp-query+globalblocks-example-2": "د ۱۹۲.۰.۲.۱۸ وېب‌پتې لپاره د پلې‌کېدونکو ټوليزو بنديزونو لړليک",
+	"apihelp-globalblock-param-alsolocal": "په کارن په سيمه‌ييزه توگه هم بنديز ولگوئ. له <var>$1id</var> سره يوځای نشي کارېدای.",
+	"apihelp-globalblock-param-localblockstalk": "په سيمه‌ييزه کچه د خبرو اترو مخ ته لاسرسی لغوه کړئ. له <var>$1id</var> سره يوځای نشي کارېدای.",
+	"apihelp-globalblock-param-localblocksemail": "په سيمه‌ييزه توگه برېښليک لاسرسی لغوه کړئ. له <var>$1id</var> سره يوځای نشي کارېدای."
+}
