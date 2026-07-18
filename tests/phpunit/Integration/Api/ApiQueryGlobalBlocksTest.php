@@ -436,7 +436,7 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 	}
 
 	/** @dataProvider provideSummaryMessage */
-	public function testGetSummaryMessage( bool $centralAuthInstalled, string $expectedSummaryMessage ): void {
+	public function testGetSummaryMessage( bool $centralAuthInstalled, string $expectedSummaryMessageKey ): void {
 		$mockExtensionRegistry = $this->createMock( ExtensionRegistry::class );
 		$mockExtensionRegistry->method( 'isLoaded' )
 			->with( 'CentralAuth' )
@@ -457,7 +457,7 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 		);
 
 		$this->assertSame(
-			'(' . $expectedSummaryMessage . ': bg, globalblock, query+globalblock)',
+			'(' . $expectedSummaryMessageKey . ': bg, globalblock, query+globalblock)',
 			$apiQueryGlobalBlocksModule->getFinalSummary()->text()
 		);
 	}
