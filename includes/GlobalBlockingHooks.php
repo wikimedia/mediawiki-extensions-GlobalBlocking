@@ -222,7 +222,10 @@ class GlobalBlockingHooks implements
 			}
 
 			$out = $sp->getOutput();
-			$out->addHTML( Html::warningBox( $blockNoticeHtml, 'mw-warning-with-logexcerpt' ) );
+			$out->addHTML( Html::warningBox(
+				$blockNoticeHtml,
+				'mw-warning-with-logexcerpt mw-globalblocking-contribs-notice'
+			) );
 		}
 
 		return true;

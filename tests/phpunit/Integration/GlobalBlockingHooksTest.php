@@ -161,6 +161,7 @@ class GlobalBlockingHooksTest extends MediaWikiIntegrationTestCase {
 
 		$html = $specialPage->getOutput()->getHTML();
 		$this->assertStringContainsString( '(globalblocking-contribs-notice', $html );
+		$this->assertStringContainsString( 'mw-globalblocking-contribs-notice', $html );
 		$this->assertStringContainsString(
 			'(log-fulllog', $html,
 			'The full log link should show when the target has more than one global block log entry.'
