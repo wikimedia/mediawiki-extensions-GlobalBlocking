@@ -1,0 +1,43 @@
+{
+	"@metadata": {
+		"authors": [
+			"شاه زمان پټان"
+		]
+	},
+	"globalblocking-apierror-badip": "$1 وېب پته سمه نه ده",
+	"globalblocking-apierror-cannot-modify-global-autoblock": "تاسو نشئ کولی چې ټوليز خپلکاره بنديزونه بدل کړئ",
+	"apihelp-globalblock-summary": "په ټوليز ډول په يو کارن بنديز لگول يا لرې‌کول.",
+	"apihelp-globalblock-param-id": "د ټوليز بنديز پېژند چې بدلېږي يا بنديز ترې لرې کېږي (د <kbd>list=globalblocks</kbd> له لارې ترلاسه شوی) <var>$1target</var> سره يوځای نشي کارېدای.",
+	"apihelp-globalblock-param-target": "د موخې وېب پته يا کارن‌نوم. له <var>$1id</var> سره يوځای نشي کارېدای.",
+	"apihelp-globalblock-param-expiry": "که مشخص شي؛ نو په کارن به بنديز ولگول شي يا به پرې بيا بنديز ولگول شي. دا ټاکي چې بنديز به څومره وخت دوام وکړي، د بېلگې په توگه \"۵ مياشتې\" يا \"۲ ورځې\". که \"بې‌پايه\" يا \"ناټاکلی\" وټاکل شي؛ نو بنديز به هېڅکله پای ته ونه رسېږي.",
+	"apihelp-globalblock-param-unblock": "که مشخص شي؛ نو له کارن به بنديز لرې شي.",
+	"apihelp-globalblock-param-reason": "بنديز لگولو/لرې‌کولو لامل.",
+	"apihelp-globalblock-param-anononly": "دا څرگنده کړئ که چېرې بنديز يوازې په ټوليزه کچه وتلي کارنان اغېزمن کړي.",
+	"apihelp-globalblock-param-allow-account-creation": "دا څرگنده کړئ که چېرې ټوليز بنديز د گڼون جوړولو مخه ونه نيسي.",
+	"apihelp-globalblock-param-enable-autoblock": "دا څرگنده کړئ که چېرې ټوليز بنديز ښايي يوازې خپلکاري ‌بنديزونه پيل کړي.",
+	"apihelp-globalblock-param-modify": "دا څرگنده کړئ که چېرې په موخه کې شته بنديز بدل شي",
+	"apihelp-globalblock-example-1": "د \"ټول ويکي ناوړه گټه اخيستنې\" له کبله پر ۱۹۲.۰.۲.۱ تر نامعلومې نېټې بنديز لگول",
+	"apihelp-query+globalblocks-param-start": "د شمېرنې پيلولو وخت‌ټاپه.",
+	"apihelp-query+globalblocks-param-end": "د شمېرنې بندولو وخت‌ټاپه.",
+	"apihelp-query+globalblocks-param-ids": "لړليکولو لپاره پايپ نښې سره جلا شويو بنديز پېژندونو لړليک.",
+	"apihelp-query+globalblocks-param-addresses": "پلټلو لپاره پايپ نښې سره جلا شويو وېب پتو لړليک.",
+	"apihelp-query+globalblocks-param-targets": "پلټلو لپاره پايپ نښې سره جلا شويو کارن‌نومونو، وېب پتو، يا وېب لړيو لړليک. د ورکړل شوې لړۍ دننه د وېبپتې بنديزونو پلټلو لپاره يې پرځای $1ip وکاروئ.",
+	"apihelp-query+globalblocks-param-ip": "ټول هغه بنديزونه ترلاسه کړئ چې په دې وېب پته يا CIDR لړۍ کې پلې کېږي، د بنديزونو د لړۍ په شمول. له $1addresses يا $1targets سره يوځای نشي کارېدای. د /16 څخه پراخه CIDR لړۍ نه منل کېږي.",
+	"apihelp-query+globalblocks-param-limit": "لړليکولو لپاره د بنديزونو ډېر شمېر.",
+	"apihelp-query+globalblocks-param-prop": "کومې ځانتياوې بايد ترلاسه شي.",
+	"apihelp-query+globalblocks-paramvalue-prop-id": "د ټوليزو بنديز پېژند ورگډوي.",
+	"apihelp-query+globalblocks-paramvalue-prop-target": "د ټوليز بنديز موخه ورگډوي.",
+	"apihelp-query+globalblocks-paramvalue-prop-address": "د ټوليز بنديز موخه ورگډوي. دا له پامه غورځول شوی او له 'موخې' سره بدل شوی دی.",
+	"apihelp-query+globalblocks-paramvalue-prop-by": "د بنديز لگوونکي کارن کارن‌نوم، د هغه ويکي سره يوځای ورگډوي چېرې چې دوی ټوليز بنديز ترسره کوي.",
+	"apihelp-query+globalblocks-paramvalue-prop-timestamp": "د ټوليز بنديز د ورکړل شوي وخت وخت‌ټاپه ورگډوي.",
+	"apihelp-query+globalblocks-paramvalue-prop-expiry": "د ټوليز بنديز د پای نېټې وخت‌ټاپه ورگډوي.",
+	"apihelp-query+globalblocks-paramvalue-prop-reason": "د ټوليز بنديز لپاره ورکړل شوی لامل ورگډوي.",
+	"apihelp-query+globalblocks-paramvalue-prop-range": "د ټوليز بنديز له خوا اغېزمن شوې وېبپتو لړۍ ورگډوي (که چېرې بنديز وېبپتې په نښه کړې نه وي؛ نو وېبپتې لړۍ پکې شامل نه دي).",
+	"apihelp-query+globalblocks-example-1": "ټول ټوليز بنديزونه لړليکول",
+	"apihelp-query+globalblocks-example-2": "د ۱۹۲.۰.۲.۱۸ وېب‌پتې لپاره د پلې‌کېدونکو ټوليزو بنديزونو لړليک",
+	"apihelp-globalblock-param-alsolocal": "په کارن په سيمه‌ييزه توگه هم بنديز ولگوئ. له <var>$1id</var> سره يوځای نشي کارېدای.",
+	"apihelp-globalblock-param-localblockstalk": "په سيمه‌ييزه کچه د خبرو اترو مخ ته لاسرسی لغوه کړئ. له <var>$1id</var> سره يوځای نشي کارېدای.",
+	"apihelp-globalblock-param-localblocksemail": "په سيمه‌ييزه توگه برېښليک لاسرسی لغوه کړئ. له <var>$1id</var> سره يوځای نشي کارېدای.",
+	"apihelp-globalblock-param-localanononly": "څرگنده کړئ که چېرې دا بنديز يوازې هغه کارنان اغېزمنوي چې په سيمه‌ييز ډول وتلې دي. <var>$1id</var> سره يوځای نشي کارېدای.",
+	"apihelp-globalblock-param-local-allow-account-creation": "څرگنده کړئ که چېرې سيمه‌ييز بنديز د گڼون جوړولو مخه ونه نيسي. <var>$1id</var> سره يوځای نشي کارېدای."
+}
