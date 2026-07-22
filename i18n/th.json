@@ -7,6 +7,7 @@
 			"Geonuch",
 			"Horus",
 			"Octahedron80",
+			"Ouclie",
 			"Passawuth"
 		]
 	},
@@ -89,6 +90,7 @@
 	"globalblocking-block-flag-account-creation-disabled": "ปิดใช้งานการสร้างบัญชี",
 	"globalblocking-loglink": "ผู้ใช้ $1 ถูกบล็อกข้ามโครงการ ([[{{#Special:GlobalBlockList}}/$1|รายละเอียดแบบเต็ม]])",
 	"globalblocking-contribs-notice": "ผู้ใช้นี้ถูกบล็อกข้ามโครงการในขณะนี้\nรายการปูมการบล็อกข้ามโครงการถูกแสดงไว้ด้านล่างเพื่อใช้สำหรับการอ้างอิง:",
+	"globalblocking-contribs-mock-log-line": "$1: $3 บล็อก $5 จากโครงการทั้งหมด โดยมีเวลาหมดอายุ $6 $7 $8 $9",
 	"globalblocking-showlog": "ผู้ใช้นี้เคยถูกบล็อก\nปูมการบล็อกแสดงไว้ด้านล่างนี้เพื่อการอ้างอิง:",
 	"globalblocking-contribs-log": "ปูมการบล็อกข้ามโครงการ",
 	"globalblocking-contribs-block": "บล็อกข้ามโครงการ",
