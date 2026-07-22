@@ -9,5 +9,6 @@
 	"globalblocking-block-edit-dropdown": "Praviti pričiny za blokovanje",
 	"globalblocking-block-expiry": "Čas trvanja:",
 	"globalblocking-block-expiry-selector-other": "Drugy čas:",
-	"globalblocking-list": "Spisok globalno zablokovanyh IP-adresov i koristničskyh kont"
+	"globalblocking-list": "Spisok globalno zablokovanyh IP-adresov i koristničskyh kont",
+	"globalblockstatus": "Lokalny status globalnyh blokad"
 }

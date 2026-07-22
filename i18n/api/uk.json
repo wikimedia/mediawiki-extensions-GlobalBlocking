@@ -3,7 +3,8 @@
 		"authors": [
 			"Base",
 			"Piramidion",
-			"Ата"
+			"Ата",
+			"Movses"
 		]
 	},
 	"globalblocking-apierror-badip": "IP-адреса $1 — недійсна",
