@@ -35,7 +35,7 @@ return [
 				$services->getMainConfig()
 			),
 			$globalBlockingServices->getGlobalBlockingConnectionProvider(),
-			$services->getDBLoadBalancerFactory(),
+			$services->getConnectionProvider(),
 			$services->getReadOnlyMode(),
 			$globalBlockingServices->getGlobalBlockLookup()
 		);
