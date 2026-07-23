@@ -13,8 +13,6 @@ use MediaWiki\Request\FauxRequest;
 use MediaWiki\Tests\Specials\SpecialPageTestBase;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWiki\User\User;
-use Wikimedia\Parsoid\Core\DOMCompat;
-use Wikimedia\Parsoid\Ext\DOMUtils;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
 
 /**
@@ -67,24 +65,9 @@ class SpecialMassGlobalBlockTest extends SpecialPageTestBase {
 		$this->executeSpecialPage( '', new FauxRequest(), null, $this->getUserForSuccess() );
 	}
 
-	/**
-	 * Calls DOMCompat::getElementById, expects that it returns a valid Element object and then returns
-	 * the HTML of that Element.
-	 *
-	 * @param string $html The HTML to search through
-	 * @param string $id The ID to search for, excluding the "#" character
-	 * @return string
-	 */
-	private function assertAndGetByElementId( string $html, string $id ): string {
-		$specialPageDocument = DOMUtils::parseHTML( $html );
-		$element = DOMCompat::getElementById( $specialPageDocument, $id );
-		$this->assertNotNull( $element, "Could not find element with ID $id in $html" );
-		return DOMCompat::getOuterHTML( $element );
-	}
-
 	private function verifyQueryFormPresent( string $html ) {
 		// Check that the query form is present on the page, along with the form fields.
-		$queryFormHtml = $this->assertAndGetByElementId( $html, 'mw-globalblocking-mass-block-query' );
+		$queryFormHtml = $this->assertSelectorMatchesOneElement( $html, '#mw-globalblocking-mass-block-query' );
 		$this->assertStringContainsString( '(globalblocking-mass-block-query-legend', $queryFormHtml );
 		$this->assertStringContainsString( '(globalblocking-mass-block-query-submit', $queryFormHtml );
 		$this->assertStringContainsString( '(globalblocking-mass-block-query-placeholder', $queryFormHtml );
@@ -107,22 +90,8 @@ class SpecialMassGlobalBlockTest extends SpecialPageTestBase {
 		$this->assertStringNotContainsString( 'mw-globalblocking-mass-block-table', $html );
 	}
 
-	/**
-	 * Helper method used to expect that one element matches the given selector inside the given parent element.
-	 *
-	 * @param string $html The HTML to search through
-	 * @param string $selector The CSS selector which should match only one element
-	 * @return string
-	 */
-	private function getAndExpectSingleMatchingElement( string $html, string $selector ): string {
-		$htmlElement = DOMUtils::parseHTML( $html );
-		$matchingElement = DOMCompat::querySelectorAll( $htmlElement, $selector );
-		$this->assertCount( 1, $matchingElement, "One element was expected to match $selector" );
-		return DOMCompat::getInnerHTML( $matchingElement[0] );
-	}
-
 	private function verifyMassGlobalBlockTableShown( string $html ): string {
-		$queryResultTableHtml = $this->assertAndGetByElementId( $html, 'mw-globalblocking-mass-block-table' );
+		$queryResultTableHtml = $this->assertSelectorMatchesOneElement( $html, '#mw-globalblocking-mass-block-table' );
 		// Verify that the table headings are all present
 		$this->assertStringContainsString( '(globalblocking-list-table-heading-target', $queryResultTableHtml );
 		$this->assertStringContainsString( '(globalblocking-mass-block-header-status', $queryResultTableHtml );
@@ -212,7 +181,7 @@ class SpecialMassGlobalBlockTest extends SpecialPageTestBase {
 			$expectedTargetNameForDisplay = $expectedTargetData[1];
 			$expectedExpiry = $expectedTargetData[2];
 			// Find the row for this target
-			$rowHtml = $this->getAndExpectSingleMatchingElement(
+			$rowHtml = $this->assertSelectorMatchesOneElement(
 				$massGlobalBlockTableHtml, "[data-mw-globalblocking-target=\"$expectedTargetName\"]"
 			);
 			// Check that the row has the target name present, along with the checkbox to select the user for
@@ -230,15 +199,13 @@ class SpecialMassGlobalBlockTest extends SpecialPageTestBase {
 		}
 		// Verify that the invalid targets have a row in the table, which indicates the reason for the target not
 		// being valid.
-		$rowHtml = $this->getAndExpectSingleMatchingElement(
+		$rowHtml = $this->assertSelectorMatchesOneElement(
 			$html, "[data-mw-globalblocking-target=\"Non-existent-test-user-1\"]"
 		);
 		$this->assertStringContainsString(
 			'(globalblocking-block-target-invalid: Non-existent-test-user-1', $rowHtml
 		);
-		$rowHtml = $this->getAndExpectSingleMatchingElement(
-			$html, "[data-mw-globalblocking-target=\"#12345\"]"
-		);
+		$rowHtml = $this->assertSelectorMatchesOneElement( $html, "[data-mw-globalblocking-target=\"#12345\"]" );
 		$this->assertStringContainsString( '(globalblocking-notblocked-id: #12345', $rowHtml );
 	}
 
