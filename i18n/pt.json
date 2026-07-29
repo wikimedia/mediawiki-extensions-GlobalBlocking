@@ -19,7 +19,8 @@
 			"SandroHc",
 			"Vitorvicentevalente",
 			"Waldir",
-			"Waldyrious"
+			"Waldyrious",
+			"Ouclie"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permite]] que endereços IP sejam [[Special:GlobalBlockList|bloqueados em várias wikis]]",
@@ -88,6 +89,7 @@
 	"globalblocking-logentry-dewhitelist": "$1 {{GENDER:$2|reativou localmente}} o bloqueio global de $3",
 	"globalblocking-loglink": "O endereço IP $1 está bloqueado globalmente ([[{{#Special:GlobalBlockList}}/$1|detalhes completos]]).",
 	"globalblocking-contribs-notice": "Este endereço IP está bloqueado globalmente.\nPara sua referência é apresentado abaixo o registo de bloqueios:",
+	"globalblocking-contribs-mock-log-line": "$1: $3 bloqueou $5 globalmente com um tempo de expiração de $6 $7 $8 $9",
 	"globalblocking-showlog": "Este endereço IP já foi bloqueado anteriormente.\nPara sua referência, é apresentado abaixo o registo de bloqueios:",
 	"globalblocking-contribs-log": "registo de bloqueios globais",
 	"globalblocking-contribs-block": "Bloqueio global",
