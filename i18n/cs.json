@@ -81,5 +81,6 @@
 	"grant-globalblock": "Globálně blokovat a odblokovávat uživatele",
 	"globalblocking-blockedtext-all-wikis": "Vaše IP adresa byla zablokována na všech wiki.",
 	"globalblocking-blockedtext-on-range": "Vaše IP adresa je v rozsahu, který byl zablokován na všech wiki.",
+	"globalblocking-blockedtext-ip-range": "Blokovaný rozsah je $1.",
 	"globalblocking-blockedtext-proxy": "IP adresa zablokované proxy je $1."
 }
