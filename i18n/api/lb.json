@@ -5,11 +5,12 @@
 			"Volvox"
 		]
 	},
+	"globalblocking-apierror-badip": "D'IP-Adress $1 ass net gülteg",
 	"apihelp-globalblock-summary": "E Benotzer global spären oder d'Spär global ophiewen.",
-	"apihelp-globalblock-param-target": "D'Zil-IP-Adress oder de Benotzernumm.",
+	"apihelp-globalblock-param-target": "D'Zil-IP-Adress oder -Benotzernumm. Kann net zesumme mat <var>$1id</var> benotzt ginn.",
 	"apihelp-globalblock-param-anononly": "Spezifizéiert ob d'Spär sech nëmmen op ausgeloggt Benotzer global applizéiere soll.",
 	"apihelp-globalblock-param-modify": "Gitt dëst un, wann d'Spär (wann et esou eng gëtt) vum Zil geännert gi soll.",
 	"apihelp-query+globalblocks-summary": "All global gespaarten IP-Adressen opzielen.",
-	"apihelp-globalblock-param-alsolocal": "De Benotzer och lokal spären",
-	"apihelp-globalblock-param-localanononly": "Spezifizéiert ob d'Spär sech nëmmen op ausgeloggt Benotzer lokal applizéiere soll."
+	"apihelp-globalblock-param-alsolocal": "De Benotzer och lokal spären. Kann net zesumme mat <var>$1id</var> benotzt ginn.",
+	"apihelp-globalblock-param-localanononly": "Fir ze spezifizéieren, datt d'Spär sech nëmme lokal op ausgeloggt Benotzer applizéiere soll. Kann net zesumme mat <var>$1id</var> benotzt ginn."
 }
