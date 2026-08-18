@@ -165,6 +165,8 @@
 	"removeglobalblock": "Quitar un bloqueo global",
 	"right-globalblock": "Aplicar y quitar bloqueos globales",
 	"action-globalblock": "aplicar y quitar bloqueos globales",
+	"right-globalblock-local-status": "Cambiar el estado local de bloqueos globales",
+	"action-globalblock-local-status": "cambiar el estado local de bloqueos globales",
 	"right-globalblock-exempt": "Eludir bloqueos de IP globales",
 	"action-globalblock-exempt": "eludir bloqueos de IP globales",
 	"log-action-filter-gblblock": "Tipo de bloqueo global:",
