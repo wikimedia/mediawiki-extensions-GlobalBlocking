@@ -7,6 +7,7 @@ use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Http\MWHttpRequest;
 use MediaWiki\Json\FormatJson;
 use MediaWiki\MainConfigNames;
+use MediaWiki\Site\HashSiteStore;
 use MediaWiki\Site\MediaWikiSite;
 use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
@@ -26,14 +27,12 @@ class GlobalBlockingGlobalAutoblockExemptionListProviderTest extends MediaWikiIn
 
 	protected function setUp(): void {
 		parent::setUp();
-		// Add the current site to the SiteStore so that we can get a URL for the site.
-		$sitesTable = $this->getServiceContainer()->getSiteStore();
-		$site = $sitesTable->getSite( WikiMap::getCurrentWikiId() ) ?? new MediaWikiSite();
+
+		$site = new MediaWikiSite();
 		$site->setGlobalId( WikiMap::getCurrentWikiId() );
-		// We need to set a page path, otherwise this is not considered a valid site. Use enwiki's path as a mock value.
-		$site->setPath( MediaWikiSite::PATH_PAGE, "https://en.wikipedia.org/wiki/$1" );
+		$site->setPath( MediaWikiSite::PATH_PAGE, 'https://en.wikipedia.org/wiki/$1' );
 		$site->setPath( MediaWikiSite::PATH_FILE, "https://en.wikipedia.org/w/$1" );
-		$sitesTable->saveSite( $site );
+		$this->setService( 'SiteLookup', new HashSiteStore( [ $site ] ) );
 	}
 
 	public function testGetExemptIPAddressesInConfig() {

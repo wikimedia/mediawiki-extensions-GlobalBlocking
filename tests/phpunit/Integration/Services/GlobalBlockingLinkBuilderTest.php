@@ -11,6 +11,7 @@ use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\MainConfigNames;
+use MediaWiki\Site\HashSiteStore;
 use MediaWiki\Site\MediaWikiSite;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
@@ -35,14 +36,13 @@ class GlobalBlockingLinkBuilderTest extends MediaWikiIntegrationTestCase {
 		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
 		// to be the local provider.
 		$this->overrideConfigValue( 'CentralIdLookupProvider', 'local' );
+
 		// Add the current site to the SiteStore so that we can get a URL for the site.
-		$sitesTable = $this->getServiceContainer()->getSiteStore();
 		$site = new MediaWikiSite();
 		$site->setGlobalId( 'enwiki' );
-		// We need to set a page path, otherwise this is not considered a valid site. Use enwiki's path as a mock value.
-		$site->setPath( MediaWikiSite::PATH_PAGE, "https://en.wikipedia.org/wiki/$1" );
+		$site->setPath( MediaWikiSite::PATH_PAGE, 'https://en.wikipedia.org/wiki/$1' );
 		$site->setPath( MediaWikiSite::PATH_FILE, "https://en.wikipedia.org/w/$1" );
-		$sitesTable->saveSite( $site );
+		$this->setService( 'SiteLookup', new HashSiteStore( [ $site ] ) );
 	}
 
 	/** @dataProvider provideMaybeLinkUserpage */
