@@ -155,7 +155,7 @@
 				"CentralIdLookup",
 				"ExtensionRegistry",
 				"GlobalBlocking.GlobalBlockLookup",
-				"GlobalBlocking.GlobalBlockingConnectionProvider"
+				"GlobalBlocking.GlobalBlockLocalStatusLookup"
 			]
 		}
 	},
