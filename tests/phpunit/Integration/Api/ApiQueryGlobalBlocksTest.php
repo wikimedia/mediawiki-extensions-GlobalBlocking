@@ -407,6 +407,34 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 		$this->assertCount( 0, $result['query']['globalblocks'] );
 	}
 
+	/** @dataProvider provideExecuteWithLocalStatusProp */
+	public function testExecuteWithLocalStatusProp( bool $applyGlobalBlocks, array $expectedLocalStatuses ): void {
+		$this->overrideConfigValue( 'ApplyGlobalBlocks', $applyGlobalBlocks );
+		[ $result ] = $this->doApiRequest( [
+			'action' => 'query',
+			'list' => 'globalblocks',
+			'bgip' => '127.0.0.1',
+			'bgprop' => 'localstatus|target',
+		] );
+		$this->assertSame(
+			$expectedLocalStatuses,
+			array_column( $result['query']['globalblocks'], 'localstatus', 'target' )
+		);
+	}
+
+	public static function provideExecuteWithLocalStatusProp(): array {
+		return [
+			'Global blocks apply on this wiki' => [
+				'applyGlobalBlocks' => true,
+				'expectedLocalStatuses' => [ '127.0.0.1' => 'disabled', '127.0.0.0/24' => 'enabled' ],
+			],
+			'Global blocks do not apply on this wiki' => [
+				'applyGlobalBlocks' => false,
+				'expectedLocalStatuses' => [ '127.0.0.1' => 'disabled', '127.0.0.0/24' => 'disabled' ],
+			],
+		];
+	}
+
 	public function testGetExamplesMessages() {
 		// Test that all the items in ::getExamplesMessages have keys which is a string and values which are valid
 		// message keys.
@@ -419,7 +447,7 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 			$this->getServiceContainer()->getCentralIdLookup(),
 			$this->getServiceContainer()->getExtensionRegistry(),
 			$globalBlockingServices->getGlobalBlockLookup(),
-			$globalBlockingServices->getGlobalBlockingConnectionProvider()
+			$globalBlockingServices->getGlobalBlockLocalStatusLookup()
 		);
 		$apiQueryGlobalBlocksModule = TestingAccessWrapper::newFromObject( $apiQueryGlobalBlocksModule );
 		$examplesMessages = $apiQueryGlobalBlocksModule->getExamplesMessages();
@@ -453,7 +481,7 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 			$this->getServiceContainer()->getCentralIdLookup(),
 			$mockExtensionRegistry,
 			$globalBlockingServices->getGlobalBlockLookup(),
-			$globalBlockingServices->getGlobalBlockingConnectionProvider()
+			$globalBlockingServices->getGlobalBlockLocalStatusLookup()
 		);
 
 		$this->assertSame(
@@ -500,6 +528,11 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 		// Insert some single IP blocks
 		ConvertibleTimestamp::setFakeTime( '20230205060711' );
 		$globalBlockManager->block( '127.0.0.1', 'test3', '20240605060708', $testPerformer, [ 'anon-only' ] );
+		$globalBlockingServices->getGlobalBlockLocalStatusManager()->locallyDisableBlock(
+			'127.0.0.1',
+			'Test local disable',
+			$testPerformer
+		);
 		ConvertibleTimestamp::setFakeTime( '20230205060712' );
 		$globalBlockManager->block( '77.8.9.10', 'test4', '20240405060708', $testPerformer );
 		// Insert a IP block that should not be displayed in the results ever because it is expired
