@@ -29,14 +29,13 @@ use MediaWiki\Api\ApiBase;
 use MediaWiki\Api\ApiQuery;
 use MediaWiki\Api\ApiQueryBase;
 use MediaWiki\Api\ApiResult;
-use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLocalStatusLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\User\CentralId\CentralIdLookup;
 use Wikimedia\IPUtils;
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\ParamValidator\TypeDef\EnumDef;
 use Wikimedia\ParamValidator\TypeDef\IntegerDef;
-use Wikimedia\Rdbms\IReadableDatabase;
 
 /**
  * Query module to enumerate all global blocks.
@@ -45,17 +44,16 @@ use Wikimedia\Rdbms\IReadableDatabase;
  * @ingroup Extensions
  */
 class ApiQueryGlobalBlocks extends ApiQueryBase {
-	private IReadableDatabase $globalBlockingDb;
 
 	public function __construct(
 		ApiQuery $query,
 		string $moduleName,
 		private readonly CentralIdLookup $lookup,
 		private readonly GlobalBlockLookup $globalBlockLookup,
-		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider
+		private readonly GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup,
 	) {
 		parent::__construct( $query, $moduleName, 'bg' );
-		$this->globalBlockingDb = $globalBlockingConnectionProvider->getReplicaGlobalBlockingDatabase();
+		$this->setVirtualDomain( 'virtual-globalblocking' );
 	}
 
 	public function execute() {
@@ -70,6 +68,7 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 		$fld_expiry = isset( $prop['expiry'] );
 		$fld_reason = isset( $prop['reason'] );
 		$fld_range = isset( $prop['range'] );
+		$localStatusField = isset( $prop['localstatus'] );
 
 		// Treat the deprecated 'address' prop as 'target', unless 'target' is also set
 		$targetPropName = 'target';
@@ -80,8 +79,8 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 
 		$this->addTables( 'globalblocks' );
 
-		// Add the fields dependent on whether a given prop was requested
-		$this->addFieldsIf( 'gb_id', $fld_id );
+		// Add the fields dependent on whether they are needed for a requested prop
+		$this->addFieldsIf( 'gb_id', $fld_id || $localStatusField );
 		$this->addFieldsIf(
 			[
 				'gb_address', 'gb_anon_only', 'gb_create_account',
@@ -192,6 +191,13 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 
 		$res = $this->select( __METHOD__ );
 
+		$locallyDisabledGlobalBlockIds = [];
+		if ( $localStatusField ) {
+			$locallyDisabledGlobalBlockIds = $this->globalBlockLocalStatusLookup->getLocallyDisabledGlobalBlockIds(
+				array_map( static fn ( $row ) => (int)$row->gb_id, iterator_to_array( $res ) )
+			);
+		}
+
 		$data = [];
 		$count = 0;
 		foreach ( $res as $row ) {
@@ -240,6 +246,10 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 					$block['rangestart'] = IPUtils::formatHex( $row->gb_range_start );
 					$block['rangeend'] = IPUtils::formatHex( $row->gb_range_end );
 				}
+			}
+			if ( $localStatusField ) {
+				$locallyDisabled = in_array( (int)$row->gb_id, $locallyDisabledGlobalBlockIds, true );
+				$block['localstatus'] = $locallyDisabled ? 'disabled' : 'enabled';
 			}
 			$data[] = $block;
 		}
@@ -301,17 +311,13 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 					'expiry',
 					'reason',
 					'range',
+					'localstatus',
 				],
 				ParamValidator::PARAM_ISMULTI => true,
 				ApiBase::PARAM_HELP_MSG_PER_VALUE => [],
 				EnumDef::PARAM_DEPRECATED_VALUES => [ 'address' => true ],
 			]
 		];
-	}
-
-	/** @inheritDoc */
-	protected function getDB() {
-		return $this->globalBlockingDb;
 	}
 
 	/**
