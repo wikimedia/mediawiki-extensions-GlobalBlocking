@@ -3,6 +3,7 @@
 		"authors": [
 			"Cwlin0416",
 			"Kly",
+			"LowensteinYang",
 			"列维劳德"
 		]
 	},
@@ -20,7 +21,7 @@
 	"apihelp-globalblock-param-enable-autoblock": "如果進行全域封鎖時應觸發全域自動封鎖，請指定此項目。",
 	"apihelp-globalblock-param-modify": "若應對在目標的現有封鎖做出修改，請指定此。",
 	"apihelp-globalblock-example-1": "無限期封鎖 192.0.2.1，原因「跨 wiki 濫用」",
-	"apihelp-query+globalblocks-summary": "列出所有全域封鎖 IP 位址。",
+	"apihelp-query+globalblocks-summary": "列出所有被全域封鎖的IP位址和帳號。",
 	"apihelp-query+globalblocks-param-start": "起始列舉的時間戳記。",
 	"apihelp-query+globalblocks-param-end": "結束列舉的時間戳記。",
 	"apihelp-query+globalblocks-param-ids": "要列出的以豎線符號做分隔的封鎖 ID 清單。",
