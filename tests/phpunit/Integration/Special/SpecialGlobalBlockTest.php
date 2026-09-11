@@ -9,6 +9,7 @@ use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Tests\SpecialPage\FormSpecialPageTestCase;
+use MediaWiki\Title\Title;
 use Wikimedia\TestingAccessWrapper;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
 
@@ -301,6 +302,37 @@ class SpecialGlobalBlockTest extends FormSpecialPageTestCase {
 		$this->assertTrue( (bool)$actualGlobalBlock->gb_anon_only );
 		$this->assertFalse( (bool)$actualGlobalBlock->gb_enable_autoblock );
 		$this->assertFalse( (bool)$actualGlobalBlock->gb_block_email );
+	}
+
+	public function testSubmitForIPTargetWithLinkInSuccessMessage(): void {
+		// A wiki can customise the success message to put $1 in a link target. The target must therefore be
+		// substituted before the message is parsed, and must be escaped as wikitext (T437748).
+		$this->overrideConfigValue( MainConfigNames::UseDatabaseMessages, true );
+		$this->editPage(
+			Title::makeTitle( NS_MEDIAWIKI, 'Globalblocking-block-success' ),
+			'$1 is blocked. [[Special:Block/$1|Block locally]].'
+		);
+		// Set-up the valid request and get a test user which has the necessary rights.
+		$testPerformer = $this->getUserForSuccess();
+		RequestContext::getMain()->setUser( $testPerformer );
+		$fauxRequest = new FauxRequest(
+			[
+				'wpAddress' => '1.2.3.4', 'wpExpiry' => '1 day',
+				'wpReason' => 'other', 'wpReason-other' => 'Test reason',
+				'wpEditToken' => $testPerformer->getEditToken(),
+			],
+			true,
+			RequestContext::getMain()->getRequest()->getSession()
+		);
+		// Assign the fake valid request to the main request context, as well as updating the session user
+		// so that the CSRF token is a valid token for the request user.
+		RequestContext::getMain()->setRequest( $fauxRequest );
+		RequestContext::getMain()->getRequest()->getSession()->setUser( $testPerformer );
+		// Execute the special page.
+		[ $html ] = $this->executeSpecialPage( '1.2.3.4', $fauxRequest, 'en', $this->getUserForSuccess() );
+		// Verify that the success message has a link to the target, and not a link to a parameter marker.
+		$linkHtml = $this->assertSelectorMatchesOneElement( $html, 'a[href$="Special:Block/1.2.3.4"]' );
+		$this->assertStringContainsString( 'Block locally', $linkHtml );
 	}
 
 	public function testSubmitForIPTargetWhenModifyingBlock() {

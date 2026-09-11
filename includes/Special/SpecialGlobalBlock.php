@@ -384,10 +384,10 @@ class SpecialGlobalBlock extends FormSpecialPage {
 	public function onSuccess() {
 		$successMsg = $this->modifyForm ?
 			'globalblocking-modify-success' : 'globalblocking-block-success';
-		// The username must be escaped here, as it's user input and could contain wikitext.
-		$this->getOutput()->addHTML(
-			$this->msg( $successMsg )->plaintextParams( $this->target )->parseAsBlock()
-		);
+		// Escape the target, because it is user input and could contain wikitext.
+		// Do not use Message::plaintextParams here. It substitutes the parameter after the parse,
+		// which breaks on-wiki customisations that put $1 in a link target (T437748).
+		$this->getOutput()->addWikiMsg( $successMsg, wfEscapeWikiText( (string)$this->target ) );
 
 		$link = $this->getLinkRenderer()->makeKnownLink(
 			$this->getPageTitle(),
