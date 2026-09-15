@@ -4,11 +4,12 @@ declare( strict_types=1 );
 namespace MediaWiki\Extension\GlobalBlocking\Test\Integration\Specials;
 
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
-use MediaWiki\Extension\GlobalBlocking\Special\SpecialGlobalBlockList;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Tests\Specials\SpecialPageTestBase;
 use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
+use MediaWiki\User\UserIdentityLookup;
+use MediaWiki\User\UserSelectQueryBuilder;
 
 /**
  * @group Database
@@ -23,6 +24,7 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 	private const TEMP_USER_NAME = '~global-blocking-test-2025-01';
 
 	private static array $blockedTargets;
+	private static array $blockedUserTargets;
 	private static string $globallyBlockedUser;
 	private static int $autoBlockId;
 
@@ -41,18 +43,7 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 	 * @inheritDoc
 	 */
 	protected function newSpecialPage() {
-		$services = $this->getServiceContainer();
-		$globalBlockingServices = GlobalBlockingServices::wrap( $services );
-		return new SpecialGlobalBlockList(
-			$services->getUserNameUtils(),
-			$services->getCommentFormatter(),
-			$services->getCentralIdLookup(),
-			$services->getTempUserConfig(),
-			$globalBlockingServices->getGlobalBlockLookup(),
-			$globalBlockingServices->getGlobalBlockingLinkBuilder(),
-			$globalBlockingServices->getGlobalBlockingConnectionProvider(),
-			$globalBlockingServices->getGlobalBlockDetailsRenderer()
-		);
+		return $this->getServiceContainer()->getSpecialPageFactory()->getPage( 'GlobalBlockList' );
 	}
 
 	public function testViewPageBeforeSubmission() {
@@ -234,6 +225,43 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 		];
 	}
 
+	public function testViewWhenShowingAccountWithNoLocalAccount(): void {
+		$actualUserIdentityLookup = $this->getServiceContainer()->getUserIdentityLookup();
+
+		// Mock that only one of the test users exists locally
+		$mockUserSelectQueryBuilder = $this->createMock( UserSelectQueryBuilder::class );
+		$mockUserSelectQueryBuilder->expects( $this->once() )
+			->method( 'whereUserNames' )
+			->with( $this->callback( static function ( $actualUsernames ) {
+				$expectedUsernames = static::$blockedUserTargets;
+				sort( $expectedUsernames );
+				sort( $actualUsernames );
+				return $expectedUsernames === $actualUsernames;
+			} ) )
+			->willReturnSelf();
+		$mockUserSelectQueryBuilder->method( 'caller' )
+			->willReturnSelf();
+		$mockUserSelectQueryBuilder->expects( $this->once() )
+			->method( 'fetchUserIdentities' )
+			->willReturnCallback( static function () use ( $actualUserIdentityLookup ) {
+				yield from [
+					$actualUserIdentityLookup->getUserIdentityByName( static::$globallyBlockedUser ),
+				];
+			} );
+
+		$mockUserIdentityLookup = $this->createMock( UserIdentityLookup::class );
+		$mockUserIdentityLookup->method( 'newSelectQueryBuilder' )
+			->willReturn( $mockUserSelectQueryBuilder );
+
+		$this->setService( 'UserIdentityLookup', $mockUserIdentityLookup );
+
+		[ $html ] = $this->executeSpecialPage( '', new FauxRequest( [] ) );
+
+		foreach ( static::$blockedTargets as $target ) {
+			$this->assertStringContainsString( $target, $html );
+		}
+	}
+
 	public function addDBDataOnce() {
 		// We don't want to test specifically the CentralAuth implementation of the CentralIdLookup. As such, force it
 		// to be the local provider.
@@ -260,8 +288,9 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 		$this->assertStatusGood( $userBlockStatus );
 		// Insert an autoblock for a user block which is not the same as the user block we check for when testing.
 		// This avoids test failures when the username is matched in the autoblock reason.
+		$secondBlockedUser = $this->getMutableTestUser()->getUserIdentity()->getName();
 		$secondUserBlockStatus = $globalBlockManager->block(
-			$this->getMutableTestUser()->getUserIdentity()->getName(), 'Test reason4', 'infinite',
+			$secondBlockedUser, 'Test reason4', 'infinite',
 			$testPerformer, [ 'enable-autoblock' ]
 		);
 		$this->assertStatusGood( $secondUserBlockStatus );
@@ -281,6 +310,11 @@ class SpecialGlobalBlockListTest extends SpecialPageTestBase {
 			->getUser();
 
 		self::$globallyBlockedUser = $globallyBlockedUser;
+		self::$blockedUserTargets = [
+			$tempUser->getName(),
+			$globallyBlockedUser,
+			$secondBlockedUser,
+		];
 		self::$blockedTargets = [
 			'1.2.3.4',
 			'1.2.3.0/24',

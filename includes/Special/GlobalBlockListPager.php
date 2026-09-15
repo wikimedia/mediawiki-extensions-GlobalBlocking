@@ -12,9 +12,13 @@ use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingLinkBuilder;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\Html\Html;
 use MediaWiki\Linker\LinkRenderer;
+use MediaWiki\Page\LinkBatchFactory;
 use MediaWiki\Pager\IndexPager;
 use MediaWiki\Pager\TablePager;
 use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\User\CentralId\CentralIdLookup;
+use MediaWiki\User\UserIdentityLookup;
+use MediaWiki\User\UserIdentityValue;
 
 class GlobalBlockListPager extends TablePager {
 	private array $queryConds;
@@ -24,6 +28,9 @@ class GlobalBlockListPager extends TablePager {
 		array $conds,
 		LinkRenderer $linkRenderer,
 		private readonly CommentFormatter $commentFormatter,
+		private readonly LinkBatchFactory $linkBatchFactory,
+		private readonly CentralIdLookup $centralIdLookup,
+		private readonly UserIdentityLookup $userIdentityLookup,
 		private readonly GlobalBlockingLinkBuilder $globalBlockingLinkBuilder,
 		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
 		private readonly GlobalBlockingGlobalBlockDetailsRenderer $globalBlockDetailsRenderer
@@ -111,6 +118,54 @@ class GlobalBlockListPager extends TablePager {
 			'fields' => GlobalBlockLookup::selectFields(),
 			'conds' => $this->queryConds,
 		];
+	}
+
+	/** @inheritDoc */
+	protected function doBatchLookups(): void {
+		$linkBatch = $this->linkBatchFactory->newLinkBatch()->setCaller( __METHOD__ );
+
+		// Preload the userpage and toollinks for the targets displayed in the pager
+		$targetCentralIds = [];
+		foreach ( $this->mResult as $row ) {
+			// No need to preload the target if not displaying the target
+			if ( $row->gb_autoblock_parent_id ) {
+				continue;
+			}
+
+			if ( $row->gb_target_central_id ) {
+				$targetCentralIds[] = $row->gb_target_central_id;
+			} else {
+				$linkBatch->addUser( UserIdentityValue::newAnonymous( $row->gb_address ) );
+			}
+		}
+
+		if ( $targetCentralIds ) {
+			$usernames = $this->centralIdLookup->namesFromCentralIds(
+				$targetCentralIds,
+				CentralIdLookup::AUDIENCE_RAW
+			);
+
+			if ( $usernames ) {
+				// For users with local accounts, get a UserIdentity for them and add these to the link batch.
+				// Users without local accounts will be added to the link batch as an UserIdentity without an ID.
+				$localUserIdentities = $this->userIdentityLookup->newSelectQueryBuilder()
+					->whereUserNames( $usernames )
+					->caller( __METHOD__ )
+					->fetchUserIdentities();
+
+				$usernamesHandled = [];
+				foreach ( $localUserIdentities as $userIdentity ) {
+					$linkBatch->addUser( $userIdentity );
+					$usernamesHandled[] = $userIdentity->getName();
+				}
+
+				foreach ( array_diff( $usernames, $usernamesHandled ) as $username ) {
+					$linkBatch->addUser( UserIdentityValue::newAnonymous( $username ) );
+				}
+			}
+		}
+
+		$linkBatch->execute();
 	}
 
 	/** @inheritDoc */

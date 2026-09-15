@@ -55,6 +55,8 @@
 				"CommentFormatter",
 				"CentralIdLookup",
 				"TempUserConfig",
+				"LinkBatchFactory",
+				"UserIdentityLookup",
 				"GlobalBlocking.GlobalBlockLookup",
 				"GlobalBlocking.GlobalBlockingLinkBuilder",
 				"GlobalBlocking.GlobalBlockingConnectionProvider",

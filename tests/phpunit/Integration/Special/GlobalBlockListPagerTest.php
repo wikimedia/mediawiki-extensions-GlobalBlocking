@@ -41,6 +41,9 @@ class GlobalBlockListPagerTest extends MediaWikiIntegrationTestCase {
 			[],
 			$this->getServiceContainer()->getLinkRenderer(),
 			$this->getServiceContainer()->getCommentFormatter(),
+			$this->getServiceContainer()->getLinkBatchFactory(),
+			$this->getServiceContainer()->getCentralIdLookup(),
+			$this->getServiceContainer()->getUserIdentityLookup(),
 			$globalBlockingServices->getGlobalBlockingLinkBuilder(),
 			$globalBlockingServices->getGlobalBlockingConnectionProvider(),
 			$globalBlockingServices->getGlobalBlockDetailsRenderer()

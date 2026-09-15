@@ -12,11 +12,13 @@ use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\Extension\GlobalBlocking\Widget\HTMLUserTextFieldAllowingGlobalBlockIds;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Message\Message;
+use MediaWiki\Page\LinkBatchFactory;
 use MediaWiki\Parser\ParserOptions;
 use MediaWiki\SpecialPage\FormSpecialPage;
 use MediaWiki\Status\Status;
 use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\TempUser\TempUserConfig;
+use MediaWiki\User\UserIdentityLookup;
 use MediaWiki\User\UserNameUtils;
 use Wikimedia\IPUtils;
 use Wikimedia\Rdbms\IExpression;
@@ -33,6 +35,8 @@ class SpecialGlobalBlockList extends FormSpecialPage {
 		private readonly CommentFormatter $commentFormatter,
 		private readonly CentralIdLookup $lookup,
 		private readonly TempUserConfig $tempUserConfig,
+		private readonly LinkBatchFactory $linkBatchFactory,
+		private readonly UserIdentityLookup $userIdentityLookup,
 		private readonly GlobalBlockLookup $globalBlockLookup,
 		private readonly GlobalBlockingLinkBuilder $globalBlockingLinkBuilder,
 		private readonly GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
@@ -213,6 +217,9 @@ class SpecialGlobalBlockList extends FormSpecialPage {
 			$this->conds,
 			$this->getLinkRenderer(),
 			$this->commentFormatter,
+			$this->linkBatchFactory,
+			$this->lookup,
+			$this->userIdentityLookup,
 			$this->globalBlockingLinkBuilder,
 			$this->globalBlockingConnectionProvider,
 			$this->globalBlockDetailsRenderer
