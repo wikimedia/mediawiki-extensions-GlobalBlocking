@@ -13,6 +13,7 @@
 			"NGC 54",
 			"Paloi Sciurala",
 			"Stelistcristi",
+			"Vellion Eagle",
 			"WebSourceContentRO"
 		]
 	},
@@ -71,7 +72,7 @@
 	"globalblockstatus": "Statutul local al blocărilor globale",
 	"removeglobalblock": "Elimină o blocare globală",
 	"right-globalblock": "Efectuează și înlătură blocări globale",
-	"action-globalblock": "efectuează și înlătură blocări globale",
+	"action-globalblock": "efectuați și înlăturați blocări globale",
 	"right-globalblock-exempt": "Ocolește blocările globale",
 	"action-globalblock-exempt": "treceți peste blocările globale",
 	"log-action-filter-gblblock": "Tipul blocării globale:",
