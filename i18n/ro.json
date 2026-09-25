@@ -13,7 +13,8 @@
 			"NGC 54",
 			"Paloi Sciurala",
 			"Stelistcristi",
-			"WebSourceContentRO"
+			"WebSourceContentRO",
+			"Vellion Eagle"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Permite]] ca adresele IP să fie [[Special:GlobalBlockList|blocate pe mai multe wikiuri]]",
@@ -72,7 +73,7 @@
 	"globalblockstatus": "Statutul local al blocărilor globale",
 	"removeglobalblock": "Elimină o blocare globală",
 	"right-globalblock": "Efectuează și înlătură blocări globale",
-	"action-globalblock": "efectuează și înlătură blocări globale",
+	"action-globalblock": "efectuați și înlăturați blocări globale",
 	"right-globalblock-whitelist": "Dezactivează local blocările globale",
 	"action-globalblock-whitelist": "dezactivați local blocări globale",
 	"right-globalblock-exempt": "Ocolește blocările globale",
