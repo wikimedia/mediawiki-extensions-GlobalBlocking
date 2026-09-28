@@ -76,6 +76,8 @@
 	"removeglobalblock": "Odstranit globální zablokování",
 	"right-globalblock": "Tvorba a rušení globálních zablokování",
 	"action-globalblock": "globálně blokovat a odblokovávat",
+	"right-globalblock-local-status": "Měnění místního stavu globálních zablokování",
+	"action-globalblock-local-status": "měnit místní stav globálních zablokování",
 	"right-globalblock-exempt": "Obcházení globálního blokování IP adres",
 	"action-globalblock-exempt": "obcházet globální blokování IP adres",
 	"grant-globalblock": "Globálně blokovat a odblokovávat uživatele",
