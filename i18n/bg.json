@@ -22,6 +22,7 @@
 	"globalblocking-block-expiry-selector-other": "Друг срок:",
 	"globalblocking-block-legend": "Глобално блокиране на IP-адрес",
 	"globalblocking-target": "Потребителско име, IP адрес или IP диапазон:",
+	"globalblocking-target-with-block-ids": "Потребителско име, IP адрес, IP диапазон или номер на блокиране:",
 	"globalblocking-ipbanononly": "Глобално блокиране само на нерегистрирани потребители",
 	"globalblocking-block-expiryinvalid": "Въведеният краен срок е невалиден.",
 	"globalblocking-block-submit": "Блокиране на този IP-адрес глобално",
