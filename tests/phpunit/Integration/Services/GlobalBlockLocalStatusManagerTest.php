@@ -3,6 +3,7 @@ declare( strict_types=1 );
 
 namespace MediaWiki\Extension\GlobalBlocking\Test\Integration\Services;
 
+use MediaWiki\Extension\GlobalBlocking\GlobalBlock;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\Linker\LinkTarget;
@@ -173,6 +174,45 @@ class GlobalBlockLocalStatusManagerTest extends MediaWikiIntegrationTestCase {
 			'globalblocking-local-status-nochange', $status,
 			'The returned status did not indicate that the block was already locally enabled.'
 		);
+	}
+
+	public function testLocalStatusChangesRunHook() {
+		$hookCalls = [];
+		$this->setTemporaryHook(
+			'GlobalBlockingGlobalBlockLocalStatusChangeAudit',
+			static function ( GlobalBlock $globalBlock, bool $isLocallyDisabled, $wikiId ) use ( &$hookCalls ) {
+				$hookCalls[] = [ $globalBlock->getId(), $isLocallyDisabled, $wikiId ];
+			}
+		);
+
+		$localStatusManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )
+			->getGlobalBlockLocalStatusManager();
+		$testSysop = $this->getTestSysop()->getUser();
+		$this->assertStatusGood( $localStatusManager->locallyDisableBlock( '127.0.0.1', 'test', $testSysop ) );
+		$this->assertStatusGood( $localStatusManager->locallyEnableBlock( '127.0.0.1', 'test', $testSysop ) );
+
+		$this->assertSame(
+			[
+				[ self::$globalBlockId, true, false ],
+				[ self::$globalBlockId, false, false ],
+			],
+			$hookCalls
+		);
+	}
+
+	public function testFailedLocalStatusChangesDoNotRunHook() {
+		$this->setTemporaryHook(
+			'GlobalBlockingGlobalBlockLocalStatusChangeAudit',
+			function () {
+				$this->fail( 'The hook should not run when the local status does not change.' );
+			}
+		);
+
+		$localStatusManager = GlobalBlockingServices::wrap( $this->getServiceContainer() )
+			->getGlobalBlockLocalStatusManager();
+		$testSysop = $this->getTestSysop()->getUser();
+		$this->assertStatusNotGood( $localStatusManager->locallyEnableBlock( '127.0.0.1', 'test', $testSysop ) );
+		$this->assertStatusNotGood( $localStatusManager->locallyDisableBlock( '1.2.3.4', 'test', $testSysop ) );
 	}
 
 	private function getTargetForLogEntry( string $target ): LinkTarget {

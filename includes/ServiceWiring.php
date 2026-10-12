@@ -119,7 +119,8 @@ return [
 			$globalBlockingServices->getGlobalBlockLookup(),
 			$globalBlockingServices->getGlobalBlockingBlockPurger(),
 			$globalBlockingServices->getGlobalBlockingConnectionProvider(),
-			$services->getConnectionProvider()
+			$services->getConnectionProvider(),
+			$services->getHookContainer()
 		);
 	},
 	'GlobalBlocking.GlobalBlockLookup' => static function (

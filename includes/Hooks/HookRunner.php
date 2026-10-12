@@ -9,6 +9,7 @@ use MediaWiki\HookContainer\HookContainer;
 class HookRunner implements
 	GlobalBlockingGetRetroactiveAutoblockIPsHook,
 	GlobalBlockingGlobalBlockAuditHook,
+	GlobalBlockingGlobalBlockLocalStatusChangeAuditHook,
 	GlobalBlockingGlobalUnblockAuditHook
 {
 
@@ -28,6 +29,17 @@ class HookRunner implements
 		$this->container->run(
 			'GlobalBlockingGlobalBlockAudit',
 			[ $globalBlock ]
+		);
+	}
+
+	/** @inheritDoc */
+	public function onGlobalBlockingGlobalBlockLocalStatusChangeAudit(
+		GlobalBlock $globalBlock, bool $isLocallyDisabled, string|false $wikiId
+	): void {
+		$this->container->run(
+			'GlobalBlockingGlobalBlockLocalStatusChangeAudit',
+			[ $globalBlock, $isLocallyDisabled, $wikiId ],
+			[ 'abortable' => false ]
 		);
 	}
 

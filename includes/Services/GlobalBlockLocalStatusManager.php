@@ -3,6 +3,8 @@ declare( strict_types=1 );
 
 namespace MediaWiki\Extension\GlobalBlocking\Services;
 
+use MediaWiki\Extension\GlobalBlocking\Hooks\HookRunner;
+use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\Logging\ManualLogEntry;
 use MediaWiki\Title\Title;
@@ -13,13 +15,17 @@ use Wikimedia\Rdbms\IConnectionProvider;
 
 class GlobalBlockLocalStatusManager {
 
+	private readonly HookRunner $hookRunner;
+
 	public function __construct(
 		private readonly GlobalBlockLocalStatusLookup $globalBlockLocalStatusLookup,
 		private readonly GlobalBlockLookup $globalBlockLookup,
 		private readonly GlobalBlockingBlockPurger $globalBlockingBlockPurger,
 		private readonly GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
 		private readonly IConnectionProvider $localDbProvider,
+		HookContainer $hookContainer,
 	) {
+		$this->hookRunner = new HookRunner( $hookContainer );
 	}
 
 	/**
@@ -88,6 +94,7 @@ class GlobalBlockLocalStatusManager {
 			->execute();
 
 		$this->addLogEntry( 'whitelist', $target, $reason, $performer );
+		$this->runLocalStatusChangeHook( $globalBlockId, true, $wikiId );
 		return StatusValue::newGood( [ 'id' => $globalBlockId ] );
 	}
 
@@ -124,7 +131,19 @@ class GlobalBlockLocalStatusManager {
 			->execute();
 
 		$this->addLogEntry( 'dwhitelist', $target, $reason, $performer );
+		$this->runLocalStatusChangeHook( $globalBlockId, false, $wikiId );
 		return StatusValue::newGood( [ 'id' => $globalBlockId ] );
+	}
+
+	private function runLocalStatusChangeHook(
+		int $globalBlockId, bool $isLocallyDisabled, string|false $wikiId
+	): void {
+		$globalBlock = $this->globalBlockLookup->newFromId( $globalBlockId );
+		if ( $globalBlock !== null ) {
+			$this->hookRunner->onGlobalBlockingGlobalBlockLocalStatusChangeAudit(
+				$globalBlock, $isLocallyDisabled, $wikiId
+			);
+		}
 	}
 
 	/**
