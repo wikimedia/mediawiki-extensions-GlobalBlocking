@@ -397,6 +397,45 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 		);
 	}
 
+	/** @dataProvider provideExecuteShowsHiddenUsernameOnlyWithHideuser */
+	public function testExecuteShowsHiddenUsernameOnlyWithHideuser(
+		array $performerRights,
+		bool $usernameVisible
+	): void {
+		$target = $this->getMutableTestUser()->getUser();
+		$globalBlockStatus = GlobalBlockingServices::wrap( $this->getServiceContainer() )->getGlobalBlockManager()
+			->block( $target->getName(), 'global block on the test user', 'infinity', static::$testPerformer );
+		$this->assertStatusGood( $globalBlockStatus );
+		$hideUserBlockStatus = $this->getServiceContainer()->getBlockUserFactory()
+			->newBlockUser(
+				$target, $this->getTestUser( [ 'sysop', 'suppress' ] )->getUser(), 'infinity',
+				'block to hide the test user', [ 'isHideUser' => true ]
+			)->placeBlock();
+		$this->assertStatusGood( $hideUserBlockStatus );
+
+		[ $result ] = $this->doApiRequest(
+			[
+				'action' => 'query', 'list' => 'globalblocks',
+				'bgids' => $globalBlockStatus->getValue()['id'], 'bgprop' => 'target',
+			],
+			performer: $this->mockRegisteredAuthorityWithPermissions( $performerRights )
+		);
+
+		$block = $result['query']['globalblocks'][0];
+		if ( $usernameVisible ) {
+			$this->assertSame( $target->getName(), $block['target'], 'Hidden target should be shown with hideuser' );
+		} else {
+			$this->assertArrayNotHasKey( 'target', $block, 'Hidden target should be omitted without hideuser' );
+		}
+	}
+
+	public static function provideExecuteShowsHiddenUsernameOnlyWithHideuser(): array {
+		return [
+			'Authority lacks hideuser' => [ 'performerRights' => [], 'usernameVisible' => false ],
+			'Authority has hideuser' => [ 'performerRights' => [ 'hideuser' ], 'usernameVisible' => true ],
+		];
+	}
+
 	public function testExecuteWithAddressesParamWithInvalidUser() {
 		[ $result ] = $this->doApiRequest( [
 			'action' => 'query', 'list' => 'globalblocks', 'bgaddresses' => 'Template:Test#test',
@@ -447,7 +486,8 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 			$this->getServiceContainer()->getCentralIdLookup(),
 			$this->getServiceContainer()->getExtensionRegistry(),
 			$globalBlockingServices->getGlobalBlockLookup(),
-			$globalBlockingServices->getGlobalBlockLocalStatusLookup()
+			$globalBlockingServices->getGlobalBlockLocalStatusLookup(),
+			$globalBlockingServices->getGlobalBlockingUserVisibilityLookup()
 		);
 		$apiQueryGlobalBlocksModule = TestingAccessWrapper::newFromObject( $apiQueryGlobalBlocksModule );
 		$examplesMessages = $apiQueryGlobalBlocksModule->getExamplesMessages();
@@ -481,7 +521,8 @@ class ApiQueryGlobalBlocksTest extends ApiQueryTestBase {
 			$this->getServiceContainer()->getCentralIdLookup(),
 			$mockExtensionRegistry,
 			$globalBlockingServices->getGlobalBlockLookup(),
-			$globalBlockingServices->getGlobalBlockLocalStatusLookup()
+			$globalBlockingServices->getGlobalBlockLocalStatusLookup(),
+			$globalBlockingServices->getGlobalBlockingUserVisibilityLookup()
 		);
 
 		$this->assertSame(
