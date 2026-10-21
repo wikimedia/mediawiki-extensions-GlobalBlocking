@@ -30,6 +30,7 @@ use MediaWiki\Api\ApiQuery;
 use MediaWiki\Api\ApiQueryBase;
 use MediaWiki\Api\ApiResult;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingUserVisibilityLookup;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\User\CentralId\CentralIdLookup;
 use Wikimedia\IPUtils;
@@ -52,7 +53,8 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 		string $moduleName,
 		private readonly CentralIdLookup $lookup,
 		private readonly GlobalBlockLookup $globalBlockLookup,
-		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider
+		GlobalBlockingConnectionProvider $globalBlockingConnectionProvider,
+		private readonly GlobalBlockingUserVisibilityLookup $userVisibilityLookup,
 	) {
 		parent::__construct( $query, $moduleName, 'bg' );
 		$this->globalBlockingDb = $globalBlockingConnectionProvider->getReplicaGlobalBlockingDatabase();
@@ -83,7 +85,11 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 		// Add the fields dependent on whether a given prop was requested
 		$this->addFieldsIf( 'gb_id', $fld_id );
 		$this->addFieldsIf(
-			[ 'gb_address', 'gb_anon_only', 'gb_create_account', 'gb_autoblock_parent_id', 'gb_enable_autoblock' ],
+			[
+				'gb_address', 'gb_anon_only', 'gb_create_account',
+				'gb_autoblock_parent_id',
+				'gb_enable_autoblock', 'gb_target_central_id',
+			],
 			$fld_target
 		);
 		$this->addFieldsIf( [ 'gb_by_central_id', 'gb_by_wiki' ], $fld_by );
@@ -214,9 +220,20 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 				$block['id'] = $row->gb_id;
 			}
 			if ( $fld_target ) {
-				// Hide the target if the block is an autoblock
+				// Hide the target if the block is an autoblock or the target user is hidden from the authority
+				// copied from GlobalBlockingGlobalBlockDetailsRenderer::getTargetUsername()
 				if ( !$row->gb_autoblock_parent_id ) {
-					$block[$targetPropName] = $row->gb_address;
+					// Use the current name, as gb_address is not updated when the account is renamed
+					if ( $row->gb_target_central_id ) {
+						$targetName = $this->lookup->nameFromCentralId(
+							$row->gb_target_central_id, CentralIdLookup::AUDIENCE_RAW
+						) ?? '';
+					} else {
+						$targetName = $row->gb_address;
+					}
+					if ( $this->userVisibilityLookup->checkAuthorityCanSeeUser( $targetName, $this->getAuthority() ) ) {
+						$block[$targetPropName] = $row->gb_address;
+					}
 				}
 				$block['anononly'] = (bool)$row->gb_anon_only;
 				$block['account-creation-disabled'] = (bool)$row->gb_create_account;
@@ -253,7 +270,7 @@ class ApiQueryGlobalBlocks extends ApiQueryBase {
 
 	/** @inheritDoc */
 	public function getCacheMode( $params ) {
-		return 'public';
+		return 'anon-public-user-private';
 	}
 
 	/** @inheritDoc */
