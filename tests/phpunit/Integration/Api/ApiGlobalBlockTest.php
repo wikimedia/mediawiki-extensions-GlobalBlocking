@@ -4,6 +4,9 @@ namespace MediaWiki\Extension\GlobalBlocking\Test\Integration\Api;
 
 use MediaWiki\Api\ApiMain;
 use MediaWiki\Api\ApiResult;
+use MediaWiki\Block\AbstractBlock;
+use MediaWiki\Block\BlockManager;
+use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Extension\GlobalBlocking\Api\ApiGlobalBlock;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\MainConfigNames;
@@ -452,6 +455,29 @@ class ApiGlobalBlockTest extends ApiTestCase {
 				"The message key $messageKey does not exist."
 			);
 		}
+	}
+
+	public function testBlockedUserCantExecute(): void {
+		$blockComment = CommentStoreComment::newUnsavedComment( '' );
+		$blockMock = $this->createMock( AbstractBlock::class );
+		$blockMock->method( 'isSitewide' )
+			->willReturn( true );
+		$blockMock->method( 'getReasonComment' )
+			->willReturn( $blockComment );
+		$blockManager = $this->createMock( BlockManager::class );
+		$blockManager->method( 'getBlock' )
+			->willReturn( $blockMock );
+		$this->setService( 'BlockManager', $blockManager );
+
+		$authority = $this->mockRegisteredAuthorityWithPermissions( [ 'globalblock' ] );
+		$parameters = [
+			'action' => 'globalblock',
+			'target' => 'User',
+			'expiry' => 'indefinite',
+			'reason' => 'reasontext',
+		];
+		$this->expectApiErrorCode( 'blocked' );
+		$this->doApiRequestWithToken( $parameters, null, $authority );
 	}
 
 	public function addDBData() {

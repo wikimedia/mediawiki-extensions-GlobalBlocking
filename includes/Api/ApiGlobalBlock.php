@@ -32,6 +32,12 @@ class ApiGlobalBlock extends ApiBase {
 		$this->requireOnlyOneParameter( $params, 'expiry', 'unblock' );
 		$this->requireMaxOneParameter( $params, 'id', 'alsolocal' );
 
+		// Don't allow sitewide blocked users to use the form, to be consistent with Special:GlobalBlock.
+		$block = $this->getUser()->getBlock();
+		if ( $block && $block->isSitewide() ) {
+			$this->dieBlocked( $block );
+		}
+
 		$target = $this->getParameter( 'target' ) ?? '#' . $this->getParameter( 'id' );
 
 		$result = $this->getResult();
