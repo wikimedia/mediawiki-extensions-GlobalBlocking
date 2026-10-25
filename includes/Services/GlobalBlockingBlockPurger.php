@@ -50,7 +50,7 @@ class GlobalBlockingBlockPurger {
 			$totalLimitLeft = $this->options->get( MainConfigNames::UpdateRowsPerQuery );
 			if ( $target !== null ) {
 				$targetGlobalBlockId = $this->globalBlockLookup->getGlobalBlockId(
-					$target, DB_REPLICA, GlobalBlockLookup::SKIP_EXPIRY_CHECK
+					$target, false, GlobalBlockLookup::SKIP_EXPIRY_CHECK
 				);
 
 				if ( $targetGlobalBlockId ) {

@@ -263,7 +263,7 @@ class GlobalBlockManager {
 		}
 
 		// Look to see if this target is already globally blocked.
-		$existingGlobalBlockId = $this->globalBlockLookup->getGlobalBlockId( $data['targetForLookup'], DB_PRIMARY );
+		$existingGlobalBlockId = $this->globalBlockLookup->getGlobalBlockId( $data['targetForLookup'], true );
 		if ( !$modify && $existingGlobalBlockId ) {
 			return GlobalBlockStatus::newFatal( 'globalblocking-block-alreadyblocked', $data['targetForDisplay'] );
 		}
@@ -586,7 +586,7 @@ class GlobalBlockManager {
 
 		$data = $status->getValue();
 
-		$id = $this->globalBlockLookup->getGlobalBlockId( $data['targetForLookup'], DB_PRIMARY );
+		$id = $this->globalBlockLookup->getGlobalBlockId( $data['targetForLookup'], true );
 		if ( $id === 0 ) {
 			return StatusValue::newFatal( 'globalblocking-notblocked', $data['targetForDisplay'] );
 		}

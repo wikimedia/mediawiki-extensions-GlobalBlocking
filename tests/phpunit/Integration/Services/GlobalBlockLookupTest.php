@@ -489,38 +489,38 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/** @dataProvider provideGetGlobalBlockId */
-	public function testGetGlobalBlockId( $target, $dbtype, $flags, $expectedResult ) {
+	public function testGetGlobalBlockId( $target, $fromPrimary, $flags, $expectedResult ) {
 		$this->assertSame(
 			$expectedResult,
 			GlobalBlockingServices::wrap( $this->getServiceContainer() )
 				->getGlobalBlockLookup()
-				->getGlobalBlockId( $target, $dbtype, $flags ),
+				->getGlobalBlockId( $target, $fromPrimary, $flags ),
 			'The global block ID returned by the method under test is not as expected.'
 		);
 	}
 
 	public static function provideGetGlobalBlockId() {
 		return [
-			'No global block on given IP target' => [ '1.2.3.4', DB_REPLICA, 0, 0 ],
+			'No global block on given IP target' => [ '1.2.3.4', false, 0, 0 ],
 			'Temporary global block on given IP target while reading from primary' => [
-				'127.0.0.1', DB_PRIMARY, 0, 1,
+				'127.0.0.1', true, 0, 1,
 			],
-			'Indefinite global block on given IP target' => [ '192.0.2.1', DB_REPLICA, 0, 7 ],
-			'Temporary global block on given IP range target' => [ '127.0.0.0/24', DB_REPLICA, 0, 2 ],
-			'No global block on an non-existing account' => [ 'Test-does-not-exist', DB_REPLICA, 0, 0 ],
-			'No global block on an IP target with an expired block' => [ '192.0.2.2', DB_REPLICA, 0, 0 ],
+			'Indefinite global block on given IP target' => [ '192.0.2.1', false, 0, 7 ],
+			'Temporary global block on given IP range target' => [ '127.0.0.0/24', false, 0, 2 ],
+			'No global block on an non-existing account' => [ 'Test-does-not-exist', false, 0, 0 ],
+			'No global block on an IP target with an expired block' => [ '192.0.2.2', false, 0, 0 ],
 			'Global block on a target with an expired block when skipping expiry check' => [
-				'192.0.2.2', DB_REPLICA, GlobalBlockLookup::SKIP_AUTOBLOCKS, 0,
+				'192.0.2.2', false, GlobalBlockLookup::SKIP_AUTOBLOCKS, 0,
 			],
-			'Global block for target in global block ID format' => [ '#1', DB_REPLICA, 0, 1 ],
-			'No global block for target in global block ID format' => [ '#154443', DB_REPLICA, 0, 0 ],
-			'Autoblock excluded when querying IP that is autoblocked' => [ '9.8.7.6', DB_REPLICA, 0, 0 ],
-			'Manual IP block chosen instead of autoblock' => [ '192.0.2.1', DB_REPLICA, 0, 7 ],
+			'Global block for target in global block ID format' => [ '#1', false, 0, 1 ],
+			'No global block for target in global block ID format' => [ '#154443', false, 0, 0 ],
+			'Autoblock excluded when querying IP that is autoblocked' => [ '9.8.7.6', false, 0, 0 ],
+			'Manual IP block chosen instead of autoblock' => [ '192.0.2.1', false, 0, 7 ],
 		];
 	}
 
 	public function testGetGlobalBlockIdForGloballyBlockedAccount() {
-		$this->testGetGlobalBlockId( $this->getGloballyBlockedTestUser()->getName(), DB_REPLICA, 0, 5 );
+		$this->testGetGlobalBlockId( $this->getGloballyBlockedTestUser()->getName(), false, 0, 5 );
 	}
 
 	public static function provideGetGlobalBlockLookupConditions() {

@@ -597,13 +597,13 @@ class GlobalBlockLookup {
 	 *   may or may not exist. The target being specific means that if you provide a single IP which is covered by a
 	 *   range block, the range block will not be returned. This also means that autoblocks cannot be queried by the
 	 *   IP that they target. Use ::getGlobalBlockingBlock to include these blocks.
-	 * @param int $dbtype Either DB_REPLICA or DB_PRIMARY.
+	 * @param bool $fromPrimary Whether to read from the primary database
 	 * @param int $flags Flags which control what conditions are returned. Currently ignores all flags but the
 	 *   ::SKIP_EXPIRY_CHECK flag.
 	 * @return int
 	 */
-	public function getGlobalBlockId( string $target, int $dbtype = DB_REPLICA, int $flags = 0 ): int {
-		if ( $dbtype === DB_PRIMARY ) {
+	public function getGlobalBlockId( string $target, bool $fromPrimary = false, int $flags = 0 ): int {
+		if ( $fromPrimary ) {
 			$db = $this->globalBlockingConnectionProvider->getPrimaryGlobalBlockingDatabase();
 		} else {
 			$db = $this->globalBlockingConnectionProvider->getReplicaGlobalBlockingDatabase();
