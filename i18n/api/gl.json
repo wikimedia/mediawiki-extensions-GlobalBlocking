@@ -27,7 +27,7 @@
 	"apihelp-query+globalblocks-param-targets": "Lista de nomes de usuario, enderezos IP ou rangos de IP a procurar, separados por barras verticais. Para buscar bloqueos de IP dentro dun rango determinado, utiliza $1ip.",
 	"apihelp-query+globalblocks-param-ip": "Obter todos os bloqueos aplicables a este enderezo IP ou a este rango CIDR, incluíndo bloqueos de rangos. Non pode usarse xunto con $1addresses ou $1targets. Os rangos CIDR maiores que /16 non se aceptan.",
 	"apihelp-query+globalblocks-param-limit": "Número máximo de bloqueos a listar.",
-	"apihelp-query+globalblocks-param-prop": "Que propiedades obter.",
+	"apihelp-query+globalblocks-param-prop": "Que propiedades recuperar.",
 	"apihelp-query+globalblocks-paramvalue-prop-id": "Engade o identificador do bloqueo global.",
 	"apihelp-query+globalblocks-paramvalue-prop-target": "Engade o obxectivo do bloqueo global.",
 	"apihelp-query+globalblocks-paramvalue-prop-address": "Engade o obxectivo do bloqueo global. Isto está obsoleto e foi substituído pola propiedade \"target\".",
