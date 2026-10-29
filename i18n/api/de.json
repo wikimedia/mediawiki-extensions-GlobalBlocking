@@ -41,6 +41,7 @@
 	"apihelp-query+globalblocks-paramvalue-prop-expiry": "Fügt den Zeitstempel hinzu, wann die globale Sperre abläuft.",
 	"apihelp-query+globalblocks-paramvalue-prop-reason": "Fügt den Grund für die globale Sperre hinzu.",
 	"apihelp-query+globalblocks-paramvalue-prop-range": "Fügt den Bereich der IP-Adressen hinzu, die von der globalen Sperre betroffen sind (nicht enthalten, wenn die Sperre nicht auf IP-Adressen abzielt).",
+	"apihelp-query+globalblocks-paramvalue-prop-localstatus": "Fügt hinzu, ob die globale Sperre in diesem Wiki deaktiviert (<samp>disabled</samp>) oder nicht (<samp>enabled</samp>) ist.",
 	"apihelp-query+globalblocks-example-1": "Alle globale Sperren auflisten",
 	"apihelp-query+globalblocks-example-2": "Listet globale Sperren der IP-Adresse 192.0.2.18 auf",
 	"apihelp-globalblock-param-alsolocal": "Sperre den Benutzer auch lokal. Kann nicht zusammen mit <var>$1id</var> verwendet werden.",
