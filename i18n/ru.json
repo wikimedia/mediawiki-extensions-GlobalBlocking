@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Alex NB IT",
 			"DR",
 			"Dim Grits",
 			"Diman Russkov",
@@ -139,6 +140,7 @@
 	"removeglobalblock": "Снять глобальную блокировку",
 	"right-globalblock": "Наложение и снятие глобальных блокировок",
 	"action-globalblock": "установку глобальных ограничений на редактирование",
+	"right-globalblock-local-status": "Локальное отключение глобальных блокировок",
 	"right-globalblock-exempt": "Обход глобальных IP-блокировок",
 	"action-globalblock-exempt": "обход глобальных IP-блокировок",
 	"log-action-filter-gblblock": "Тип глобального блока:",
