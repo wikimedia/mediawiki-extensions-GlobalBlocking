@@ -20,7 +20,7 @@ class GlobalBlockingSchemaHooks implements LoadExtensionSchemaUpdatesHook {
 
 		$updater->addExtensionUpdateOnVirtualDomain( [
 			'virtual-globalblocking', 'addTable', 'globalblocks',
-			"$base/sql/$type/tables-generated-globalblocks.sql", true,
+			"$base/sql/$type/tables-generated.sql", true,
 		] );
 
 		$updater->addExtensionTable(
@@ -117,6 +117,12 @@ class GlobalBlockingSchemaHooks implements LoadExtensionSchemaUpdatesHook {
 		$updater->addExtensionUpdateOnVirtualDomain( [
 			'virtual-globalblocking', 'modifyField', 'globalblocks', 'gb_address',
 			"$base/sql/$type/patch-globalblocks-modify-gb_address-type.sql", true,
+		] );
+
+		// 1.48
+		$updater->addExtensionUpdateOnVirtualDomain( [
+			'virtual-globalblocking', 'addTable', 'global_block_local_status',
+			"$base/sql/$type/global_block_local_status.sql", true,
 		] );
 	}
 }

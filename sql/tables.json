@@ -138,5 +138,37 @@
 			}
 		],
 		"pk": [ "gb_id" ]
+	},
+	{
+		"name": "global_block_local_status",
+		"comment": "A central table that stores global blocks which are currently disabled on local wikis.",
+		"columns": [
+			{
+				"name": "gbls_gb_id",
+				"comment": "Foreign key to globalblocks.gb_id. Part of the composite primary key.",
+				"type": "integer",
+				"options": { "notnull": true, "unsigned": true }
+			},
+			{
+				"name": "gbls_wiki",
+				"comment": "The ID of the wiki where the global block is disabled. Part of the composite primary key.",
+				"type": "binary",
+				"options": { "length": 255, "notnull": true }
+			},
+			{
+				"name": "gbls_by_central_id",
+				"comment": "The central ID of the user who disabled the block locally.",
+				"type": "integer",
+				"options": { "notnull": true, "unsigned": true }
+			},
+			{
+				"name": "gbls_reason",
+				"comment": "The reason given for disabling the global block locally.",
+				"type": "binary",
+				"options": { "length": 767, "notnull": true }
+			}
+		],
+		"indexes": [],
+		"pk": [ "gbls_gb_id", "gbls_wiki" ]
 	}
 ]
