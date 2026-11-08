@@ -257,7 +257,7 @@ class SpecialMassGlobalBlockTest extends SpecialPageTestBase {
 			array_merge(
 				[
 					'wpEditToken' => RequestContext::getMain()->getCsrfTokenSet()->getToken(),
-					'wpMethod' => 'block', 'wpExpiry' => '1 day', 'wpReason' => 'other',
+					'wpMethod' => 'block', 'wpExpiry' => 'other', 'wpExpiry-other' => '4 hours', 'wpReason' => 'other',
 					'wpReason-other' => 'Test reason',
 				],
 				$data
