@@ -485,6 +485,11 @@ class SpecialMassGlobalBlock extends SpecialPage {
 			$reason .= $this->msg( 'colon-separator' )->inContentLanguage()->text() . $reasonDetail;
 		}
 
+		$expiry = $request->getText( 'wpExpiry' );
+		if ( $expiry === 'other' ) {
+			$expiry = $request->getText( 'wpExpiry-other' );
+		}
+
 		if ( $action === 'block' ) {
 			foreach ( $this->targets as $target ) {
 				// Validate that the target is valid for a global block. This also gets the type of target if
@@ -532,7 +537,7 @@ class SpecialMassGlobalBlock extends SpecialPage {
 				}
 
 				$globalBlockStatus = $this->globalBlockManager->block(
-					$target, $reason, $request->getVal( 'wpExpiry' ), $performer,
+					$target, $reason, $expiry, $performer,
 					$options, $localOptions
 				);
 
