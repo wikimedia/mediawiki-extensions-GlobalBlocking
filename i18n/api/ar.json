@@ -39,6 +39,7 @@
 	"apihelp-query+globalblocks-paramvalue-prop-expiry": "يضيف طابعًا زمنيًا لوقت انتهاء صلاحية الكتلة العالمية.",
 	"apihelp-query+globalblocks-paramvalue-prop-reason": "يضيف السبب المقدم للحظر العالمي.",
 	"apihelp-query+globalblocks-paramvalue-prop-range": "يضيف نطاق عناوين IP المتأثرة بالكتلة العالمية (غير مضمن إذا كانت الكتلة لا تستهدف عناوين IP).",
+	"apihelp-query+globalblocks-paramvalue-prop-localstatus": "يضيف ما إذا كان الحظر العام قد تم تعطيله في هذه الويكي ( <samp>معطل</samp> ) أم لا ( <samp>مفعل</samp> ).",
 	"apihelp-query+globalblocks-example-1": "ادرج جميع عمليات المنع العالمية",
 	"apihelp-query+globalblocks-example-2": "ادرج جميع عمليات المنع العالمية التي تنطبق على عنوان الآيبي 192.0.2.18",
 	"apihelp-globalblock-param-alsolocal": "قم بحظر المستخدم محلياً أيضاً لا يمكن استخدامها مع <var>$1id</var>.",
