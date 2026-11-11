@@ -24,7 +24,8 @@
 			"Vlad5250",
 			"Zpizza",
 			"Александр Сигачёв",
-			"Камалист"
+			"Камалист",
+			"Alex NB IT"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Разрешает]] блокировку учётных записей, IP-адресов и их диапазонов [[Special:GlobalBlockList|в нескольких вики]]",
@@ -139,6 +140,7 @@
 	"removeglobalblock": "Снять глобальную блокировку",
 	"right-globalblock": "Наложение и снятие глобальных блокировок",
 	"action-globalblock": "установку глобальных ограничений на редактирование",
+	"right-globalblock-local-status": "Локальное отключение глобальных блокировок",
 	"right-globalblock-exempt": "Обход глобальных IP-блокировок",
 	"action-globalblock-exempt": "обход глобальных IP-блокировок",
 	"log-action-filter-gblblock": "Тип глобального блока:",

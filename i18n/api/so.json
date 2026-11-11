@@ -36,6 +36,7 @@
 	"apihelp-query+globalblocks-paramvalue-prop-expiry": "Waxay ku daraysaa waqtiga uu dhacayo xannibaadda caalamiga ah.",
 	"apihelp-query+globalblocks-paramvalue-prop-reason": "Waxay ku daraysaa sababta loo bixiyay xannibaadda caalamiga ah.",
 	"apihelp-query+globalblocks-paramvalue-prop-range": "Waxay ku daraysaa xadka cinwaannada IP ee uu saameeyo xannibaadda caalamiga ah (lama soo daro haddii xannibaaddu aysan bartilmaameedsan cinwaanno IP ah).",
+	"apihelp-query+globalblocks-paramvalue-prop-localstatus": "Waxay ku dartaa in xannibaadda caalamiga ah laga joojiyay wikigan (<samp>disabled</samp>) iyo in kale (<samp>enabled</samp>).",
 	"apihelp-query+globalblocks-example-1": "Liis garee dhammaan xannibaadaha caalamiga ah.",
 	"apihelp-query+globalblocks-example-2": "Liis garee xannibaadaha caalamiga ah ee ku khuseeya cinwaanka IP 192.0.2.18",
 	"apihelp-globalblock-param-alsolocal": "Isticmaalaha sidoo kale si maxalli ah u xannib. Lama adeegsan karo isla mar ahaanta <var>$1id</var>.",

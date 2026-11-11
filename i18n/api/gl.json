@@ -38,6 +38,7 @@
 	"apihelp-query+globalblocks-paramvalue-prop-expiry": "Engade o selo de tempo de cando remata o bloqueo global.",
 	"apihelp-query+globalblocks-paramvalue-prop-reason": "Engade a razón dada para o bloqueo global.",
 	"apihelp-query+globalblocks-paramvalue-prop-range": "Engade o rango de enderezos IP afectados polo bloqueo global (unicamente se o bloqueo non se dirixe aos enderezos IP).",
+	"apihelp-query+globalblocks-paramvalue-prop-localstatus": "Engade se o bloqueo global foi desactivado neste wiki (<samp>disabled</samp>) ou non (<samp>enabled</samp>).",
 	"apihelp-query+globalblocks-example-1": "Listar tódolos bloqueos globais",
 	"apihelp-query+globalblocks-example-2": "Listar os bloqueos globais aplicados ao enderezo IP 192.0.2.18",
 	"apihelp-globalblock-param-alsolocal": "Bloquear o usuario localmente tamén. Non se pode usar xunto con <var>$1id</var>.",
