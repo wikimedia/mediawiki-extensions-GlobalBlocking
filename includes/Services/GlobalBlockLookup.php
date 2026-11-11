@@ -85,9 +85,8 @@ class GlobalBlockLookup {
 
 			if ( $row->gb_autoblock_parent_id ) {
 				// If the block is an autoblock, then replace the reason used for the autoblock with the autoblock
-				// reason but in the content language.
-				// This means that the user seeing the block notice will get the reason for the block in a language
-				// that they understand (as opposed to seeing it in English).
+				// reason but in the interface language so they should be able to understand the language the block
+				// reason is shown in
 				$parentBlock = $this->globalBlockingConnectionProvider->getReplicaGlobalBlockingDatabase()
 					->newSelectQueryBuilder()
 					->select( [ 'gb_reason', 'gb_target_central_id', 'gb_id' ] )
@@ -114,7 +113,8 @@ class GlobalBlockLookup {
 	 * @param stdClass $block The globalblock row of the parent block that is causing the autoblock.
 	 *   Should include at least the gb_id, gb_target_central_id, and gb_reason fields.
 	 * @param bool $forDisplayInBlockNotice Whether the autoblock reason will be displayed in a block
-	 *   notice? If so, then the reason is always set to use the content language of the wiki.
+	 *   notice? If not, then the reason will be in the content language for the wiki or the
+	 *   content language for the central wiki (if defined)
 	 * @return string
 	 */
 	public function getAutoblockReason( stdClass $block, bool $forDisplayInBlockNotice ): string {
@@ -127,11 +127,14 @@ class GlobalBlockLookup {
 			$autoBlockReasonMsg = wfMessage( 'globalblocking-autoblocker-hidden-block', $block->gb_id );
 		}
 
-		if ( $this->options->get( 'GlobalBlockingCentralWikiContentLanguage' ) && !$forDisplayInBlockNotice ) {
-			$autoBlockReasonMsg->inLanguage( $this->options->get( 'GlobalBlockingCentralWikiContentLanguage' ) );
-		} else {
-			$autoBlockReasonMsg->inContentLanguage();
+		if ( !$forDisplayInBlockNotice ) {
+			if ( $this->options->get( 'GlobalBlockingCentralWikiContentLanguage' ) ) {
+				$autoBlockReasonMsg->inLanguage( $this->options->get( 'GlobalBlockingCentralWikiContentLanguage' ) );
+			} else {
+				$autoBlockReasonMsg->inContentLanguage();
+			}
 		}
+
 		return $autoBlockReasonMsg->plain();
 	}
 

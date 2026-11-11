@@ -248,15 +248,16 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testGetUserBlockForIPWithAutoblock() {
-		// Use qqx as the content language to make it easier to compare against the auto-generated reason
-		$this->overrideConfigValue( MainConfigNames::LanguageCode, 'qqx' );
+		$this->overrideConfigValue( MainConfigNames::LanguageCode, 'en' );
+		// Use qqx as the language to make it easier to compare against the auto-generated reason
+		$this->setUserLang( 'qqx' );
 		$targetUserIdentity = $this->getGloballyBlockedTestUser();
 		$actualGlobalBlockObject = $this->testGetUserBlock( '9.8.7.6', 10, $this->getTestUser()->getUser() );
 		$this->assertSame(
 			"(globalblocking-autoblocker: $targetUserIdentity, test)",
 			$actualGlobalBlockObject->getReasonComment()->text,
-			'The reason for the autoblock should be replaced with the autoblocker message in the content language ' .
-			'of the wiki, ignoring the value of gb_reason set in the autoblock row.'
+			'The reason for the autoblock should be replaced with the autoblocker message' .
+			' in the interface language for the viewer'
 		);
 	}
 
