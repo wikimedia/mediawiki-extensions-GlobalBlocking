@@ -18,7 +18,8 @@
 			"Rex",
 			"Sumbukompor",
 			"William Surya Permana",
-			"AF1011"
+			"AF1011",
+			"Exploraz"
 		]
 	},
 	"globalblocking-desc": "[[Special:GlobalBlock|Memungkinkan]] akun, alamat IP, dan rentang IP untuk [[Special:GlobalBlockList|diblokir di beberapa wiki]]",
@@ -120,7 +121,7 @@
 	"globalblocking-contribs-notice": "Pengguna tersebut saat ini diblokir secara global.\nEntri log pemblokiran global disediakan di bawah ini untuk referensi:",
 	"globalblocking-contribs-mock-log-line": "$1: $3 secara global {{GENDER:$2| diblokir}} {{GENDER:$4|$5}} dengan waktu kedaluwarsa $6 $7 $8 $9",
 	"globalblocking-showlog": "Pengguna ini telah diblokir sebelumnya.\nLog pemblokiran disediakan di bawah ini untuk referensi:",
-	"globalblocking-contribs-log": "Log blokir global",
+	"globalblocking-contribs-log": "log blokir global",
 	"globalblocking-contribs-block": "pemblokiran global",
 	"globalblocking-contribs-modify": "ubah pemblokiran global",
 	"globalblocking-contribs-remove": "hilangkan blokir global",

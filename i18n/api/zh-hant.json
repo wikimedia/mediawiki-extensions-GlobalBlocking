@@ -3,7 +3,8 @@
 		"authors": [
 			"Cwlin0416",
 			"Kly",
-			"列维劳德"
+			"列维劳德",
+			"LowensteinYang"
 		]
 	},
 	"globalblocking-apierror-badip": "IP 位址 $1 無效",

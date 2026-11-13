@@ -35,6 +35,7 @@
 	"apihelp-query+globalblocks-paramvalue-prop-expiry": "Го додава времето и датумот на глобалниот блок истекува.",
 	"apihelp-query+globalblocks-paramvalue-prop-reason": "Ја додава причината за задавање на глобалниот блок.",
 	"apihelp-query+globalblocks-paramvalue-prop-range": "Го додава опсегот на IP-адреси засегнати од глобалниот блок (не е вклучено ако блокот не е зададен на IP-адреси).",
+	"apihelp-query+globalblocks-paramvalue-prop-localstatus": "Додава дали глобалниот блок е оневозможен на ова вики (<samp>disabled</samp>) или не (<samp>enabled</samp>).",
 	"apihelp-query+globalblocks-example-1": "Список на сите глобални блокови",
 	"apihelp-query+globalblocks-example-2": "Испиши ги глобалните блокови што се однесуват на IP-адресата 192.0.2.18",
 	"apihelp-globalblock-param-alsolocal": "Блокирај го корисникот и месно. Не може да се користи заедно со <var>$1id</var>.",

@@ -9,7 +9,8 @@
 			"Stang",
 			"Yfdyh000",
 			"Zazzzz",
-			"沈澄心"
+			"沈澄心",
+			"Peterxy"
 		]
 	},
 	"globalblocking-apierror-badip": "IP地址 $1 无效",
@@ -43,6 +44,7 @@
 	"apihelp-query+globalblocks-paramvalue-prop-expiry": "添加全域封禁截止时的时间戳。",
 	"apihelp-query+globalblocks-paramvalue-prop-reason": "添加全域封禁原因。",
 	"apihelp-query+globalblocks-paramvalue-prop-range": "添加受全域封禁影响的IP地址范围（如果封禁目标不是IP地址，则不包含在内）。",
+	"apihelp-query+globalblocks-paramvalue-prop-localstatus": "添加本wiki是否已禁用（<samp>disabled</samp>）或未禁用（<samp>enabled</samp>）全域封禁。",
 	"apihelp-query+globalblocks-example-1": "列出所有全域封禁",
 	"apihelp-query+globalblocks-example-2": "列出对IP地址192.0.2.18做出的全域封禁",
 	"apihelp-globalblock-param-alsolocal": "在本地也封禁此用户。不能与<var>$1id</var>同时使用。",
