@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\GlobalBlocking\Test\Integration\Services;
 use InvalidArgumentException;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockingConnectionProvider;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
@@ -515,6 +516,33 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testGetGlobalBlocksForCentralIdsWhenLocalDisableCheckSkipped() {
+		$this->testGetGlobalBlocksForCentralIds(
+			[
+				$this->getTargetUserForGlobalBlockId( 5 )->getId(),
+				$this->getTargetUserForGlobalBlockId( 12 )->getId(),
+				1234,
+			],
+			GlobalBlockLookup::SKIP_LOCAL_DISABLE_CHECK,
+			[ 5, 12 ]
+		);
+	}
+
+	public function testGetGlobalBlocksForCentralIdsWhenGlobalBlocksDoNotApply(): void {
+		$this->overrideConfigValue( 'ApplyGlobalBlocks', false );
+		$centralIds = [
+			$this->getTargetUserForGlobalBlockId( 5 )->getId(),
+			$this->getTargetUserForGlobalBlockId( 12 )->getId(),
+		];
+		$globalBlockingConnectionProvider = $this->createMock( GlobalBlockingConnectionProvider::class );
+		$globalBlockingConnectionProvider->expects( $this->never() )
+			->method( 'getReplicaGlobalBlockingDatabase' );
+		$this->setService( 'GlobalBlocking.GlobalBlockingConnectionProvider', $globalBlockingConnectionProvider );
+
+		$this->testGetGlobalBlocksForCentralIds( $centralIds, 0, [] );
+	}
+
+	public function testGetGlobalBlocksForCentralIdsWhenGlobalBlocksDoNotApplyAndLocalDisableCheckSkipped(): void {
+		$this->overrideConfigValue( 'ApplyGlobalBlocks', false );
 		$this->testGetGlobalBlocksForCentralIds(
 			[
 				$this->getTargetUserForGlobalBlockId( 5 )->getId(),

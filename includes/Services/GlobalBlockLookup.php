@@ -390,6 +390,11 @@ class GlobalBlockLookup {
 	 * @return GlobalBlock[] Global blocks affecting any of the provided central IDs.
 	 */
 	public function getGlobalBlocksForCentralIds( array $centralIds, int $flags = 0 ): array {
+		$skipsLocalDisableCheck = ( $flags & self::SKIP_LOCAL_DISABLE_CHECK ) !== 0;
+		if ( !$skipsLocalDisableCheck && !$this->globalBlockLocalStatusLookup->doGlobalBlocksApplyOnWiki( false ) ) {
+			return [];
+		}
+
 		$targetConds = [];
 		foreach ( $centralIds as $centralId ) {
 			$conds = $this->getGlobalBlockLookupConditions( null, $centralId, $flags );
