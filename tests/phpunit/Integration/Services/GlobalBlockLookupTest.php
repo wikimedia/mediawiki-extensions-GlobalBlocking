@@ -311,6 +311,43 @@ class GlobalBlockLookupTest extends MediaWikiIntegrationTestCase {
 		];
 	}
 
+	/** @dataProvider provideGetUserBlockForUnregisteredUserOnAnonOnlyBlock */
+	public function testGetUserBlockForUnregisteredUserOnAnonOnlyBlock(
+		bool $hasGlobalAccount, bool $exemptGlobalAccounts, bool $expectBlock
+	): void {
+		$this->overrideConfigValue( 'GlobalBlockingExemptGlobalAccountsFromAnonOnlyBlocks', $exemptGlobalAccounts );
+		$userMock = $this->createMock( User::class );
+		$userMock->method( 'isRegistered' )->willReturn( false );
+		$userMock->method( 'isNamed' )->willReturn( false );
+		$userMock->method( 'getName' )->willReturn(
+			$hasGlobalAccount ? $this->getTestSysop()->getUser()->getName() : 'No such global account'
+		);
+		$block = GlobalBlockingServices::wrap( $this->getServiceContainer() )
+			->getGlobalBlockLookup()
+			->getUserBlock( $userMock, '192.0.2.1' );
+		$this->assertSame( $expectBlock, $block !== null );
+	}
+
+	public static function provideGetUserBlockForUnregisteredUserOnAnonOnlyBlock(): array {
+		return [
+			'Global account, exempt config true, should not block' => [
+				'hasGlobalAccount' => true,
+				'exemptGlobalAccounts' => true,
+				'expectBlock' => false,
+			],
+			'Global account, exempt config false, should block' => [
+				'hasGlobalAccount' => true,
+				'exemptGlobalAccounts' => false,
+				'expectBlock' => true,
+			],
+			'No global account, exempt config true, should block' => [
+				'hasGlobalAccount' => false,
+				'exemptGlobalAccounts' => true,
+				'expectBlock' => true,
+			],
+		];
+	}
+
 	/** @dataProvider provideGetUserBlockOnNoBlock */
 	public function testGetUserBlockOnNoBlock( $userIdentity, $ip, $message = null ) {
 		$this->assertNull(
