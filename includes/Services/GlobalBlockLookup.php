@@ -32,6 +32,7 @@ class GlobalBlockLookup {
 		'GlobalBlockingBlockXFF',
 		'GlobalBlockingCIDRLimit',
 		'GlobalBlockingCentralWikiContentLanguage',
+		'GlobalBlockingExemptGlobalAccountsFromAnonOnlyBlocks',
 	];
 
 	private const TYPE_USER = 1;
@@ -211,6 +212,14 @@ class GlobalBlockLookup {
 		}
 		if ( $user->isNamed() ) {
 			// User is a named account, so skip anon-only (soft) IP blocks.
+			$flags |= self::SKIP_SOFT_IP_BLOCKS;
+		} elseif (
+			$this->options->get( 'GlobalBlockingExemptGlobalAccountsFromAnonOnlyBlocks' ) &&
+			!IPUtils::isIPAddress( $user->getName() ) &&
+			!$this->tempUserConfig->isTempName( $user->getName() ) &&
+			$this->centralIdLookup->centralIdFromName( $user->getName(), CentralIdLookup::AUDIENCE_RAW ) !== 0
+		) {
+			// Global account without a local account yet, e.g. during auto-creation. See T427732.
 			$flags |= self::SKIP_SOFT_IP_BLOCKS;
 		}
 

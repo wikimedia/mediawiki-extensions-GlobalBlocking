@@ -275,6 +275,10 @@
 		"ApplyGlobalBlocks": {
 			"value": true
 		},
+		"GlobalBlockingExemptGlobalAccountsFromAnonOnlyBlocks": {
+			"description": "If true, anon-only global IP blocks do not apply to global accounts that do not yet have a local account. This is useful if the wiki wants account auto-creation to work for registered users visiting the wiki under a blocked IP. See T427732.",
+			"value": false
+		},
 		"GlobalBlockingBlockXFF": {
 			"value": true
 		},
