@@ -49,6 +49,7 @@
 	"globalblocking-list-tempblocks": "Skrij začasna blokiranja",
 	"globalblocking-list-indefblocks": "Skrij neomejena blokiranja",
 	"globalblocking-list-addressblocks": "Skrij blokiranja posameznih IP-naslovov",
+	"globalblocking-list-tempaccountblocks": "Skrij blokiranja začasnih računov",
 	"globalblocking-list-rangeblocks": "Skrij blokiranja razponov",
 	"globalblocking-list-userblocks": "Skrij blokiranja računov",
 	"globalblocking-list-table-heading-params": "Parametri blokiranja",
